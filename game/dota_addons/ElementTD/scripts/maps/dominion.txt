@@ -1,0 +1,11 @@
+"Dominion"
+{
+	"CreepSpawnPoints"
+	{
+		"1"
+		{
+			"SpawnerName"	"radiant_spawner_1"
+			"Target"		"dominion_tower_2"
+		}
+	}
+}

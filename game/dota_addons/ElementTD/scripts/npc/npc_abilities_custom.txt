@@ -1,0 +1,4113 @@
+// Dota Heroes File
+"DOTAAbilities"
+{
+	"Version"		"1"
+
+
+	"player_movespeed_applier"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			""
+		"Modifiers"
+		{
+			"modifier_base_movespeed"
+			{
+				"IsHidden"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BASE_OVERRIDE"		"522"
+				}
+			}
+		}
+	}
+
+	//a passive ability for dummy units
+	"dummy_passive_applier"
+	{	
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			""
+
+		"Modifiers"
+		{
+			"modifier_dummy_passive"
+			{
+				"IsHidden"	"0"
+				"States"
+				{
+					"MODIFIER_STATE_UNSELECTABLE"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NOT_ON_MINIMAP" 		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVULNERABLE"  			"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+
+	//============================================================//
+	// Block all damage so we can manually do damage calculations //
+	//============================================================//
+	"creep_damage_block_applier"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			""
+		"Modifiers"
+		{
+			"modifier_damage_block"
+			{
+				"IsHidden"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK"			"9999999999"
+				}
+			}
+
+			"modifier_creep_armor_buff"
+			{
+				"TextureName"		"armor"
+				"IsHidden"			"0"
+				"IsPurgable"		"0"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+		}
+	}
+
+	//============================================================//
+	// draws range indicator around towers
+	//============================================================//
+	"show_tower_range"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BUILDING"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityCooldown"				"0"
+		"MaxLevel"						"1"
+		"AbilityCastRange"				"5000"
+		"AbilityTextureName"			"show_tower_range"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"TARGET"
+				"ScriptFile"		"scripts/vscripts/util/util.lua"
+				"Function"			"DrawTowerRangeIndicator"
+			}
+		}
+	}
+
+
+
+//============================================================================================//
+//============================================================================================//
+//============================================================================================//
+
+	//============================================================//
+	// Creep Ability: Fast									      //
+	//============================================================//
+	"creep_ability_fast"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"dark_seer_surge"
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" 			"CASTER"
+				"ModifierName"		"creep_haste_modifier"
+			}
+			"ApplyModifier"
+			{
+				"Target" 			"CASTER"
+				"ModifierName"		"creep_haste_delay"
+			}
+		}
+		"Modifiers"
+		{
+			"creep_haste_modifier"
+			{
+				"IsHidden"		"0"
+				"Duration"		"%duration"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" 			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_dark_seer/dark_seer_surge.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"500"
+				}
+			}
+			"creep_haste_delay"
+			{
+				"IsHidden"		"1"
+				"Passive"		"0"
+				"Duration"		"%interval"
+				"ThinkInterval"	"%interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"Target"			"CASTER"
+						"ScriptFile"		"scripts/vscripts/creeps/creepevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"CastHasteSpell"
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"interval"				"3"	
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"interval_tooltip"		"2"	
+			}
+		}
+	}
+
+	//============================================================//
+	// Creep Ability: Mechanical								  //
+	//============================================================//
+	"creep_ability_mechanical"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"tinker_rearm"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"interval"				"9"	
+			}
+		}
+		"Modifiers"
+		{
+			"mechanical_buff"
+			{
+				"IsHidden"			"1"
+				"Passive"			"0"
+				"Duration"			"%duration"
+				"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_repel_buff.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
+		}
+	}
+
+	//============================================================//
+	// Creep Ability: Heal										  //
+	//============================================================//
+	"creep_ability_heal"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"witch_doctor_voodoo_restoration"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"300"
+			}
+		}
+
+		"Modifiers"
+		{
+			"creep_heal_modifier"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"Target"			"CASTER"
+						"ScriptFile"		"scripts/vscripts/creeps/creepevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"HealNearbyCreeps"
+
+						"heal_amount"		"%heal_amount"
+						"aoe"				"%aoe"
+					}
+					"ApplyModifier"
+					{
+						"Target" 
+						{
+							"Center"		"CASTER"
+							"Radius"		"%aoe"
+							"Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+						}
+						"ModifierName"		"heal_effect_modifier"
+					}
+
+				}
+			}
+			"heal_effect_modifier"
+			{
+				"IsHidden"	"0"
+				"Duration"	"1"
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" 			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+				}
+			}
+		}
+	}
+
+	//============================================================//
+	// Creep Ability: Image										  //
+	//============================================================//
+	"creep_ability_image"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"modifier_illusion"
+		"AbilityCooldown"				"15"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"		"10"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"		"TARGET"
+				"ModifierName"	"modifier_image_slow"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_image_passive"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"Target"			"CASTER"
+						"ScriptFile"		"scripts/vscripts/creeps/creepevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnTakeDamage"
+						"ImageDuration"		"%duration"
+					}
+				}
+			}
+			"modifier_image_slow"
+			{
+				"IsHidden"			"1"
+				"Duration"			"3"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-80"
+				}
+			}
+		}
+	}
+
+
+	//============================================================//
+	// Creep Ability: Undead								      //
+	//============================================================//
+	"creep_ability_undead"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"skeleton_king_reincarnation"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"delay"					"3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health"				"50"
+			}
+		}
+	}
+
+
+
+
+
+//============================================================================================//
+//============================================================================================//
+//============================================================================================//
+
+
+
+
+
+
+	//============================================================//
+	// Previous Page 
+	//============================================================//
+	"prev_page"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"prev_page"
+		"AbilityCooldown"				"0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"CASTER"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"			"PrevPageCast"
+			}
+		}
+	}
+
+	//============================================================//
+	// Next Page
+	//============================================================//
+	"next_page"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"next_page"
+		"AbilityCooldown"				"0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"CASTER"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"			"NextPageCast"
+			}
+		}
+	}
+
+
+
+
+
+
+//============================================================================================//
+//============================================================================================//
+//============================================================================================//
+
+
+	//============================================================//
+	// Build Arrow Tower
+	//============================================================//
+	"build_arrow_tower"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"build_arrow_tower"
+		"AbilityCooldown"				"0"
+		"AbilityCastRange"				"128"
+		"AbilityCastPoint"				"0.3"
+		"Cost"							"7"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"POINT"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"			"PlaceTower"
+				"tower"				"basic_arrow_tower"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_phantom"
+			{
+				"States"
+			    {
+			        "MODIFIER_STATE_UNSELECTABLE" 					"MODIFIER_STATE_VALUE_ENABLED"
+			        "MODIFIER_STATE_NO_UNIT_COLLISION" 				"MODIFIER_STATE_VALUE_ENABLED"
+			        "MODIFIER_STATE_OUT_OF_GAME" 					"MODIFIER_STATE_VALUE_ENABLED"
+			        "MODIFIER_STATE_NOT_ON_MINIMAP"					"MODIFIER_STATE_VALUE_ENABLED"
+			        "MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES"		"MODIFIER_STATE_VALUE_ENABLED"
+			        "MODIFIER_STATE_NO_HEALTH_BAR"					"MODIFIER_STATE_VALUE_ENABLED"
+			    } 
+			}
+		}
+	}
+
+	//============================================================//
+	// Build Cannon Tower
+	//============================================================//
+	"build_cannon_tower"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"build_cannon_tower"
+		"AbilityCooldown"				"0"
+		"AbilityCastRange"				"128"
+		"AbilityCastPoint"				"0.3"
+		"Cost"							"7"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"POINT"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"			"PlaceTower"
+				"tower"				"basic_cannon_tower"
+			}
+		}
+	}
+
+	//============================================================//
+	// Build Water Tower
+	//============================================================//
+	"build_water_tower"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"build_water_tower"
+		"AbilityCooldown"				"0"
+		"AbilityCastRange"				"128"
+		"AbilityCastPoint"				"0.3"
+		"Cost"							"175"
+		"Requirements"
+		{
+			"water"	"1"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"POINT"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"			"PlaceTower"
+				"tower"				"water_tower"
+			}
+		}
+	}
+
+	//============================================================//
+	// Build Fire Tower
+	//============================================================//
+	"build_fire_tower"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"build_fire_tower"
+		"AbilityCooldown"				"0"
+		"AbilityCastRange"				"128"
+		"AbilityCastPoint"				"0.3"
+		"Cost"							"175"
+
+		"Requirements"
+		{
+			"fire"	"1"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"POINT"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"			"PlaceTower"
+				"tower"				"fire_tower"
+			}
+		}
+	}
+
+	//============================================================//
+	// Build Nature Tower
+	//============================================================//
+	"build_nature_tower"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"build_nature_tower"
+		"AbilityCooldown"				"0"
+		"AbilityCastRange"				"128"
+		"AbilityCastPoint"				"0.3"
+		"Cost"							"175"
+		"Requirements"
+		{
+			"nature"	"1"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"POINT"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"			"PlaceTower"
+				"tower"				"nature_tower"
+			}
+		}
+	}
+
+	//============================================================//
+	// Build Earth Tower
+	//============================================================//
+	"build_earth_tower"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"build_earth_tower"
+		"AbilityCooldown"				"0"
+		"AbilityCastRange"				"128"
+		"AbilityCastPoint"				"0.3"
+		"Cost"							"175"
+		"Requirements"
+		{
+			"earth"	"1"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"POINT"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"			"PlaceTower"
+				"tower"				"earth_tower"
+			}
+		}
+	}
+
+	//============================================================//
+	// Build Light Tower
+	//============================================================//
+	"build_light_tower"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"build_light_tower"
+		"AbilityCooldown"				"0"
+		"AbilityCastRange"				"128"
+		"AbilityCastPoint"				"0.3"
+		"Cost"							"175"
+		"Requirements"
+		{
+			"light"	"1"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"POINT"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"			"PlaceTower"
+				"tower"				"light_tower"
+			}
+		}
+	}
+
+	//============================================================//
+	// Build Dark Tower
+	//============================================================//
+	"build_dark_tower"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"build_dark_tower"
+		"AbilityCooldown"				"0"
+		"AbilityCastRange"				"128"
+		"AbilityCastPoint"				"0.3"
+		"Cost"							"175"
+		"Requirements"
+		{
+			"dark"	"1"
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"POINT"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"			"PlaceTower"
+				"tower"				"dark_tower"
+			}
+		}
+	}
+
+
+	//============================================================//
+	// Sell Tower 100%
+	//============================================================//
+	"sell_tower_100"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"sell_tower"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"CASTER"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"			"SellTowerCast"
+				"SellAmount"		"1"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"sell_amount_tooltip"	"100"
+			}
+		}
+	}
+
+	//============================================================//
+	// Sell Tower 75%
+	//============================================================//
+	"sell_tower_75"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"sell_tower"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"CASTER"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"			"SellTowerCast"
+				"SellAmount"		"0.75"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"sell_amount_tooltip"	"75"
+			}
+		}
+	}
+
+	//============================================================//
+	// Sell Tower 0%
+	//============================================================//
+	"sell_tower_0"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"sell_tower_clone"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"CASTER"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"			"SellTowerCast"
+				"SellAmount"		"0"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"sell_amount_tooltip"	"0"
+			}
+		}
+	}
+
+
+
+
+
+
+//============================================================================================//
+//============================================================================================//
+//============================================================================================//
+
+
+
+
+
+
+
+	//============================================================//
+	// AOE Damage Attack Modifier
+	//============================================================//
+	"splash_damage_orb"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"splash_damage_orb"
+	}
+
+
+
+	//============================================================//
+	// Composite Passive
+	//============================================================//
+	"composite_passive"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"elements/composite"
+
+		"Modifiers"
+		{
+			"composite_passive"
+			{
+				"IsHidden"		"1"
+				"Passive"		"1"
+				"TextureName"	"elements/composite"
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackLanded"
+						"DamageType"		"composite"
+					}
+				}
+			}
+		}
+	}
+
+	//============================================================//
+	// Fire Passive
+	//============================================================//
+	"fire_passive"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"elements/fire"
+
+		"Modifiers"
+		{
+			"fire_passive"
+			{
+				"IsHidden"		"1"
+				"Passive"		"1"
+				"TextureName"	"elements/fire"
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackLanded"
+						"DamageType"		"fire"
+					}
+				}
+			}
+		}
+	}
+
+
+	//============================================================//
+	// Water Passive
+	//============================================================//
+	"water_passive"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"elements/water"
+
+		"Modifiers"
+		{
+			"fire_passive"
+			{
+				"IsHidden"		"1"
+				"Passive"		"1"
+				"TextureName"	"elements/water"
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackLanded"
+						"DamageType"		"water"
+					}
+				}
+			}
+		}
+	}
+
+	//============================================================//
+	// Water Passive AOE
+	//============================================================//
+	"water_passive_aoe"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"elements/water"
+
+		"Modifiers"
+		{
+			"fire_passive"
+			{
+				"IsHidden"		"1"
+				"Passive"		"1"
+				"TextureName"	"elements/water"
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackLanded"
+						"DamageType"		"water"
+					}
+				}
+			}
+		}
+	}
+
+	//============================================================//
+	// Nature Passive
+	//============================================================//
+	"nature_passive"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"elements/nature"
+
+		"Modifiers"
+		{
+			"fire_passive"
+			{
+				"IsHidden"		"1"
+				"Passive"		"1"
+				"TextureName"	"elements/nature"
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackLanded"
+						"DamageType"		"nature"
+					}
+				}
+			}
+		}
+	}
+
+	//============================================================//
+	// Nature Passive AOE
+	//============================================================//
+	"nature_passive_aoe"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"elements/nature"
+
+		"Modifiers"
+		{
+			"fire_passive"
+			{
+				"IsHidden"		"1"
+				"Passive"		"1"
+				"TextureName"	"elements/nature"
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackLanded"
+						"DamageType"		"nature"
+					}
+				}
+			}
+		}
+	}
+
+	//============================================================//
+	// Earth Passive
+	//============================================================//
+	"earth_passive"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"elements/earth"
+
+		"Modifiers"
+		{
+			"earth_passive"
+			{
+				"IsHidden"		"1"
+				"Passive"		"1"
+				"TextureName"	"elements/nature"
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackLanded"
+						"DamageType"		"earth"
+					}
+				}
+			}
+		}
+	}
+
+	//============================================================//
+	// Earth Passive AOE
+	//============================================================//
+	"earth_passive_aoe"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"elements/earth"
+
+		"Modifiers"
+		{
+			"earth_passive"
+			{
+				"IsHidden"		"1"
+				"Passive"		"1"
+				"TextureName"	"elements/earth"
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackLanded"
+						"DamageType"		"earth"
+					}
+				}
+			}
+		}
+	}
+
+	//============================================================//
+	// Light Passive
+	//============================================================//
+	"light_passive"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"elements/light"
+
+		"Modifiers"
+		{
+			"light_passive"
+			{
+				"IsHidden"		"1"
+				"Passive"		"1"
+				"TextureName"	"elements/light"
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackLanded"
+						"DamageType"		"light"
+					}
+				}
+			}
+		}
+	}
+
+	//============================================================//
+	// Light Passive AOE
+	//============================================================//
+	"light_passive_aoe"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"elements/light"
+
+		"Modifiers"
+		{
+			"light_passive"
+			{
+				"IsHidden"		"1"
+				"Passive"		"1"
+				"TextureName"	"elements/light"
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackLanded"
+						"DamageType"		"light"
+					}
+				}
+			}
+		}
+	}
+
+	//============================================================//
+	// Dark Passive
+	//============================================================//
+	"dark_passive"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"elements/dark"
+
+		"Modifiers"
+		{
+			"dark_passive"
+			{
+				"IsHidden"		"1"
+				"Passive"		"1"
+				"TextureName"	"elements/dark"
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackLanded"
+						"DamageType"		"dark"
+					}
+				}
+			}
+		}
+	}
+
+	//============================================================//
+	// Dark Passive AOE
+	//============================================================//
+	"dark_passive_aoe"
+	{
+		// General
+		//-----------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"elements/dark"
+
+		"Modifiers"
+		{
+			"dark_passive"
+			{
+				"IsHidden"		"1"
+				"Passive"		"1"
+				"TextureName"	"elements/dark"
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackLanded"
+						"DamageType"		"dark"
+					}
+				}
+			}
+		}
+	}
+
+
+
+
+
+//============================================================================================//
+//============================================================================================//
+//============================================================================================//
+
+
+
+
+	//============================================================//
+	// Composite Armor
+	//============================================================//
+	"composite_armor"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"elements/composite"
+		"Modifiers"
+		{
+			"composite_armor"
+			{
+				"Passive"		"1"
+				"TextureName"	"elements/composite"
+			}
+		}
+	}
+
+	//============================================================//
+	// Earth Armor
+	//============================================================//
+	"earth_armor"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"elements/earth"
+		"Modifiers"
+		{
+			"earth_armor"
+			{
+				"Passive"		"1"
+				"TextureName"	"elements/earth"
+			}
+		}
+	}
+
+	//============================================================//
+	// Water Armor
+	//============================================================//
+	"water_armor"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"elements/water"
+		"Modifiers"
+		{
+			"water_armor"
+			{
+				"Passive"		"1"
+				"TextureName"	"elements/water"
+			}
+		}
+	}
+
+	//============================================================//
+	// Fire Armor
+	//============================================================//
+	"fire_armor"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"elements/fire"
+		"Modifiers"
+		{
+			"fire_armor"
+			{
+				"Passive"		"1"
+				"TextureName"	"elements/fire"
+			}
+		}
+	}
+
+	//============================================================//
+	// Nature Armor
+	//============================================================//
+	"nature_armor"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"elements/nature"
+		"Modifiers"
+		{
+			"nature_armor"
+			{
+				"Passive"		"1"
+				"TextureName"	"elements/nature"
+			}
+		}
+	}
+
+	//============================================================//
+	// Dark Armor
+	//============================================================//
+	"dark_armor"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"elements/dark"
+		"Modifiers"
+		{
+			"dark_armor"
+			{
+				"Passive"		"1"
+				"TextureName"	"elements/dark"
+			}
+		}
+	}
+
+	//============================================================//
+	// Light Armor
+	//============================================================//
+	"light_armor"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"elements/light"
+		"Modifiers"
+		{
+			"light_armor"
+			{
+				"Passive"		"1"
+				"TextureName"	"elements/light"
+			}
+		}
+	}
+
+
+
+
+//============================================================================================//
+//============================================================================================//
+//============================================================================================//
+
+
+
+
+	//============================================================//
+	// Summon Water Elemental
+	//============================================================//
+	"summon_water_elemental"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"3"
+		"AbilityTextureName"			"elements/water"
+		"LumberCost"					"1"
+		"Element"						"water"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"level"					"1 2 3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health"				"300 1500 7500"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"CASTER"
+				"ScriptFile"		"scripts/vscripts/summoner.lua"
+				"Function"			"SummonElemental"
+				"Elemental"			"water_elemental"
+			}
+		}
+	}
+
+	//============================================================//
+	// Summon Fire Elemental
+	//============================================================//
+	"summon_fire_elemental"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"3"
+		"AbilityTextureName"			"elements/fire"
+		"LumberCost"					"1"
+		"Element"						"fire"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"level"					"1 2 3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health"				"300 1500 7500"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"CASTER"
+				"ScriptFile"		"scripts/vscripts/summoner.lua"
+				"Function"			"SummonElemental"
+				"Elemental"			"fire_elemental"
+			}
+		}
+	}
+
+	//============================================================//
+	// Summon Nature Elemental
+	//============================================================//
+	"summon_nature_elemental"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"3"
+		"AbilityTextureName"			"elements/nature"
+		"LumberCost"					"1"
+		"Element"						"nature"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"level"					"1 2 3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health"				"300 1500 7500"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"CASTER"
+				"ScriptFile"		"scripts/vscripts/summoner.lua"
+				"Function"			"SummonElemental"
+				"Elemental"			"nature_elemental"
+			}
+		}
+	}
+
+	//============================================================//
+	// Summon Earth Elemental
+	//============================================================//
+	"summon_earth_elemental"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"3"
+		"AbilityTextureName"			"elements/earth"
+		"LumberCost"					"1"
+		"Element"						"earth"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"level"					"1 2 3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health"				"300 1500 7500"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"CASTER"
+				"ScriptFile"		"scripts/vscripts/summoner.lua"
+				"Function"			"SummonElemental"
+				"Elemental"			"earth_elemental"
+			}
+		}
+	}
+
+	//============================================================//
+	// Summon Light Elemental
+	//============================================================//
+	"summon_light_elemental"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"3"
+		"AbilityTextureName"			"elements/light"
+		"LumberCost"					"1"
+		"Element"						"light"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"level"					"1 2 3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health"				"300 1500 7500"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"CASTER"
+				"ScriptFile"		"scripts/vscripts/summoner.lua"
+				"Function"			"SummonElemental"
+				"Elemental"			"light_elemental"
+			}
+		}
+	}
+
+	//============================================================//
+	// Summon Dark Elemental
+	//============================================================//
+	"summon_dark_elemental"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"3"
+		"AbilityTextureName"			"elements/dark"
+		"LumberCost"					"1"
+		"Element"						"dark"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"level"					"1 2 3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health"				"300 1500 7500"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"CASTER"
+				"ScriptFile"		"scripts/vscripts/summoner.lua"
+				"Function"			"SummonElemental"
+				"Elemental"			"dark_elemental"
+			}
+		}
+	}
+
+
+
+
+//============================================================================================//
+//============================================================================================//
+//============================================================================================//
+
+	//============================================================//
+	// Support Tower Modifier Applier
+	//============================================================//
+	"support_tower_modifier_applier"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"support_modifier"
+		
+		"Modifiers"
+		{
+			"modifier_support_tower"
+			{
+				"TextureName"	"support_modifier"
+			}
+		}
+	}
+
+
+	//============================================================//
+	// Magic Tower: Increase Range
+	//============================================================//
+	"magic_tower_increase_range"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"5"
+		"AbilityCastRange"				"500 625 750 1000 1375"
+		"AbilityTextureName"			"towers/magic_tower_increase_range"
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"CASTER"
+				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+				"Function"			"TriggerEvent"
+				"Event"				"ChangeRange"
+				"Amount"			"1"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_magic_tower_attack_range"
+			{
+				"Passive"		"1"
+				"IsHidden"		"0"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"	"%range"
+				}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"0 125 250 500 875"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_reduction"		"0 15 30 50 75"	
+			}
+		}
+	}
+
+	//============================================================//
+	// Magic Tower: Decrease Range
+	//============================================================//
+	"magic_tower_decrease_range"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"5"
+		"AbilityCastRange"				"500 625 750 1000 1375"
+		"AbilityTextureName"			"towers/magic_tower_decrease_range"
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"CASTER"
+				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+				"Function"			"TriggerEvent"
+				"Event"				"ChangeRange"
+				"Amount"			"-1"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"0 125 250 500 875"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_reduction"		"0 15 30 50 75"	
+			}
+		}
+	}
+
+	//============================================================//
+	// Disease Tower: Soul Reaper
+	//============================================================//
+	"disease_tower_soul_reaper"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"towers/disease_tower_soul_reaper"
+	}
+
+	//============================================================//
+	// Mushroom Tower: Spore
+	//============================================================//
+	"mushroom_tower_spore"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"brewmaster_earth_pulverize"
+	}
+
+	//============================================================//
+	// Well Tower: Spring Forward
+	//============================================================//
+	"well_tower_spring_forward"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BUILDING"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityCooldown"				"15"
+		"MaxLevel"						"3"
+		"AbilityTextureName"			"morphling_waveform"
+		"AbilityCastRange"				"750"
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"TARGET"
+				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+				"Function"			"TriggerEvent"
+				"Event"				"OnSpringForwardCast"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_spring_forward"
+			{
+				"Duration" 		"%duration"
+				"IsHidden"		"0"
+				"TextureName"	"morphling_waveform"
+				"EffectName"		"particles/items_fx/healing_clarity.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" 	"%attack_speed"
+				}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed"			"15 30 90"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"60"	
+			}
+		}
+	}
+
+	//============================================================//
+	// Blacksmith Tower: Fire Up
+	//============================================================//
+	"blacksmith_tower_fire_up"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BUILDING"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityCooldown"				"15"
+		"MaxLevel"						"3"
+		"AbilityTextureName"			"towers/blacksmith_tower_fire_up"
+		"AbilityCastRange"				"750"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"TARGET"
+				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+				"Function"			"TriggerEvent"
+				"Event"				"OnFireUpCast"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_fire_up_1"
+			{
+				"Duration" 			"%duration"
+				"IsHidden"			"0"
+				"TextureName"		"towers/blacksmith_tower_fire_up"
+				"EffectName"		"particles/units/heroes/hero_jakiro/jakiro_liquid_fire_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"15"
+				}
+			}
+			"modifier_fire_up_2"
+			{
+				"Duration" 			"%duration"
+				"IsHidden"			"0"
+				"TextureName"		"towers/blacksmith_tower_fire_up"
+				"EffectName"		"particles/units/heroes/hero_jakiro/jakiro_liquid_fire_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"30"
+				}
+			}
+			"modifier_fire_up_3"
+			{
+				"Duration" 			"%duration"
+				"IsHidden"			"0"
+				"TextureName"		"towers/blacksmith_tower_fire_up"
+				"EffectName"		"particles/units/heroes/hero_jakiro/jakiro_liquid_fire_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"90"
+				}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"15 30 90"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"60"	
+			}
+		}
+	}
+
+	//============================================================//
+	// Quark Tower: Quantum Beam
+	//============================================================//
+	"quark_tower_quantum_beam"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"3"
+		"AbilityTextureName"			"towers/quark_tower_quantum_beam"
+		
+		"Modifiers"
+		{
+			"modifier_quantum_beam"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackStart"
+					}
+				}
+			}
+			"modifier_quantum_beam_indicator"
+			{
+				"AbilityTextureName"		"towers/quark_tower_quantum_beam"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"50"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Electricity Tower: Arc Lightning Passive
+	//=================================================================================================================
+	"electricity_tower_arc_lightning_passive"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+	
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityTextureName"			"towers/electricty_tower_conjure_lightning"
+		"MaxLevel"						"3"
+		
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0"
+
+		"Modifiers"
+		{
+			"modifier_arc_lightning_passive"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackStart"
+					}
+				}
+
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"180 900 4500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"jump_count"			"3"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_decrease"		"10"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Electricity Tower: Arc Lightning
+	//=================================================================================================================
+	"electricity_tower_arc_lightning"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		//"ID"							"5110"		
+		"BaseClass"						"zuus_arc_lightning"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"MaxLevel"						"3"
+
+		"AbilityCastRange"				"1500"
+		"AbilityCastPoint"				"0"
+		"AbilityDamage"					"1"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"jump_count"			"3"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"jump_delay"			"0"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Flame Tower: Sunburn
+	//=================================================================================================================
+	"flame_tower_sunburn"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+	
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"	
+		"AbilityTextureName"			"towers/flame_tower_sunburn"
+		"MaxLevel"						"3"
+		"AbilityCastPoint"				"0"
+
+		"Modifiers"
+		{
+			"modifier_sunburn_passive"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"Target" 			"TARGET"
+						"ModifierName"		"modifier_sunburn"
+					}
+				}
+			}
+
+			"modifier_sunburn"
+			{
+				"Duration"		"%duration"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval"	"1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"DealBurnDamage"
+					}
+				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" 			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_ember_spirit/ember_spirit_flameGuard_column.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+				}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"33 165 825"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"4"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Vapor Tower: Evaporate
+	//=================================================================================================================
+	"vapor_tower_evaporate"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+	
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityTextureName"			"morphling_adaptive_strike"
+		"MaxLevel"						"3"
+		"AbilityCastRange"				"625"
+
+		"Modifiers"
+		{
+			"modifier_evaporate_passive"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackStart"
+					}
+				}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"30 150 750"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aftershock_damage"		"30 150 750"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"625"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aftershock_aoe"		"300"
+			}
+		}
+	}
+
+	//============================================================//
+	// Poison Tower: Contamination
+	//============================================================//
+	"poison_tower_contamination"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"towers/poison_tower_contamination"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_mult"					"300"
+			}
+		}
+	}
+
+	//============================================================//
+	// Life Tower: Afterlife
+	//============================================================//
+	"life_tower_afterlife"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"3"
+		"AbilityTextureName"			"towers/life_tower_afterlife"
+		"Modifiers"
+		{
+			"modifier_afterlife_passive"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"OnKill"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"CreepKilled"
+					}
+				}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"kills_required"				"3 2 1"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"heal_amount"					"1"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"points_per_kill"				"1 2 3"
+			}
+		}
+	}
+
+	//============================================================//
+	// Life Tower: Heal
+	//============================================================//
+	"life_tower_heal"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityCooldown"				"0"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"towers/life_tower_afterlife"
+		"AbilityCastRange"				"25000"
+		"precache"
+		{
+			"particlefile" "particles/generic_gameplay.pcf"
+		}
+		"Modifiers"
+		{
+			"modifier_heal_effect"
+			{
+				"IsHidden"		"1"
+				"Duration"		"1"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" 			"TARGET"
+						"EffectName"		"particles/generic_gameplay/generic_lifesteal.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+				}
+			}
+		}
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" 			"TARGET"
+				"ModifierName"		"modifier_heal_effect"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Hydro Tower: Ability
+	//=================================================================================================================
+	"hydro_tower_ability"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+	
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"puck_illusory_orb"
+		"MaxLevel"						"3"
+		"AbilityCastRange"				"625"
+		"Modifiers"
+		{
+			"modifier_hydro_passive"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackStart"
+					}
+				}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_damage"			"140 700 3500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_aoe"			"400"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Hydro Tower: Choose Target
+	//=================================================================================================================
+	"hydro_tower_choose_target"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+	
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"			"towers/hydro_tower_choose_target"
+		"MaxLevel"						"1"
+		"AbilityCastRange"				"700"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"AbilityCastPoint"				"0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"POINT"
+				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+				"Function"			"TriggerEvent"
+				"Event"				"ChooseTarget"
+			}
+		}
+	}
+
+	//============================================================//
+	// Hydro Tower: Reset Target
+	//============================================================//
+	"hydro_tower_reset_target"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"towers/hydro_tower_reset_target"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"AbilityCastPoint"				"0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"CASTER"
+				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+				"Function"			"TriggerEvent"
+				"Event"				"ResetTarget"
+			}
+		}
+	}
+
+	//============================================================//
+	// Trickery Tower: Conjure
+	//============================================================//
+	"trickery_tower_conjure"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BUILDING"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityCooldown"				"5"
+		"MaxLevel"						"3"
+		"AbilityCastRange"				"750"
+		"AbilityTextureName"			"modifier_illusion"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"TARGET"
+				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+				"Function"			"TriggerEvent"
+				"Event"				"OnConjureCast"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_conjure_prevent_cloning"
+			{
+				"TextureName"	"modifier_illusion"
+				"Duration"		"60"
+				"IsDebuff"		"1"
+				"IsPurgable"	"0"
+			}
+			"modifier_clone"
+			{
+				"TextureName"		"modifier_illusion"
+				"Duration"			"%duration"
+				"ThinkInterval"		"%duration"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnCloneExpire"
+					}
+				}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"10 20 60"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Gunpowder Tower: Shrapnade
+	//=================================================================================================================
+	"gunpowder_tower_shrapnade"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+	
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"techies_suicide"
+		"MaxLevel"						"3"
+		"AbilityCastRange"				"1375"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"33 165 825"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_aoe"			"200"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Muck Tower: Sludge
+	//=================================================================================================================
+	"muck_tower_sludge_passive"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+	
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"bristleback_viscous_nasal_goo"
+		"MaxLevel"						"2"
+
+
+		"Modifiers"
+		{
+			"modifier_sludge_passive"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"Target"
+						{
+							"Center"		"TARGET"
+							"Radius"		"%aoe"
+							"Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+							"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
+						}
+						"ModifierName"		"modifier_sludge_slow"
+					}
+				}
+			}
+			"modifier_sludge_slow"
+			{
+				"Duration"		"%duration"
+				"IsDebuff"		"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" 			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_meepo/meepo_geostrike.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+				}	
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_tooltip"			"7.5 22.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"400"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-7.5 -22.5"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Gold Tower: Arbitrage
+	//=================================================================================================================
+	"gold_tower_arbitrage"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+	
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"towers/gold_tower_arbitrage"
+		"MaxLevel"						"2"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_gold"			"33 66"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Windstorm Tower: Tornado
+	//=================================================================================================================
+	"windstorm_tower_tornado"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+	
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityTextureName"			"towers/windstorm_tower_tornado"
+		"MaxLevel"						"2"
+		"AbilityCastRange"				"750"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"AbilityCastPoint"				"0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"POINT"
+				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+				"Function"			"TriggerEvent"
+				"Event"				"SpawnTornado"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_tornado_summoned"
+			{
+				"IsHidden"		"0"
+				"TextureName"	"towers/windstorm_tower_tornado"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_tooltip"			"7.5 22.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"240 1200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"500"
+			}
+		}
+	}
+
+	"windstorm_tower_tornado_creator"
+	{
+		"BaseClass"						"enraged_wildkin_tornado"
+		"ID"							"5312"												
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityCastRange"				"750"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0"
+		"AbilityChannelTime"			"-1"
+		"AbilityManaCost"				"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"0"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Tornado: Slow
+	//=================================================================================================================
+	"windstorm_tornado_slow"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+	
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"tornado_tempest"
+		"MaxLevel"						"1"
+		"AbilityCastRange"				"700"
+
+		"Modifiers"
+		{
+			"modifier_tornado_aura"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"Aura"					"modifier_tornado_slow"
+				"Aura_Radius"			"%radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_ALL"
+			}
+			"modifier_tornado_slow"
+			{
+				"IsDebuff"		"1"
+				"TextureName"	"tornado_tempest"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_tooltip"			"7.5 22.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-7.5 -22.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"240 1200"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Quake Tower: Pulverize
+	//=================================================================================================================
+	"quake_tower_pulverize"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+	
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"earthshaker_aftershock"
+		"MaxLevel"						"2"
+		"AbilityCastRange"				"500"
+
+		"Modifiers"
+		{
+			"modifier_pulverize_passive"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"Target"			"POINT"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackStart"
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance"				"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"600 3000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"500"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Enchantment Tower: Faerie Fire
+	//=================================================================================================================
+	"enchantment_tower_faerie_fire"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityCooldown"				"1"
+		"MaxLevel"						"2"
+		"AbilityTextureName"			"leshrac_diabolic_edict"
+		"AbilityCastRange"				"750"
+
+
+		"Modifiers"
+		{
+			"modifier_faerie_fire"
+			{
+				"Duration"		"%duration"
+				"ThinkInterval"	"%duration"
+				"IsDebuff"		"1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnFaerieFireExpire"
+					}
+				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" 			"TARGET"
+						"EffectName"		"particles/items2_fix/veil_of_discord_debuff.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+				}	
+			}
+		}
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" 			"TARGET"
+				"ModifierName"		"modifier_faerie_fire"
+			}
+			"RunScript"
+			{
+				"Target"			"TARGET"
+				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+				"Function"			"TriggerEvent"
+				"Event"				"OnFaerieFireCast"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_amp"			"10 30"
+			}
+		}
+	}
+
+	//============================================================//
+	// Flooding Tower: Increase Splash
+	//============================================================//
+	"flooding_tower_increase_splash"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"4"
+		"AbilityTextureName"			"towers/flooding_tower_increase_splash"
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"CASTER"
+				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+				"Function"			"TriggerEvent"
+				"Event"				"ChangeSplash"
+				"Amount"			"1"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_aoe"			"0 100 150 200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_aoe_2"			"0 200 300 400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bat"					"0.31 0.66 1 1.5"	
+			}
+		}
+	}
+
+	//============================================================//
+	// Flooding Tower: Decrease Splash
+	//============================================================//
+	"flooding_tower_decrease_splash"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"4"
+		"AbilityTextureName"			"towers/flooding_tower_decrease_splash"
+		
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"CASTER"
+				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+				"Function"			"TriggerEvent"
+				"Event"				"ChangeSplash"
+				"Amount"			"-1"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_aoe"			"0 100 150 200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_aoe_2"			"0 200 300 400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bat"					"0.31 0.66 1 1.5"	
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ice Tower: Ice Blast
+	//=================================================================================================================
+	"ice_tower_ice_blast"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+	
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"ancient_apparition_ice_blast"
+		"MaxLevel"						"3"
+
+		"Modifiers"
+		{
+			"modifier_ice_blast_passive"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"Target"			"POINT"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackStart"
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"75 375 1875"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"1000"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Laser Tower: Laser
+	//=================================================================================================================
+	"laser_tower_laser"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+	
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"tinker_laser"
+		"MaxLevel"						"2"
+
+		"Modifiers"
+		{
+			"modifier_laser"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"Target"			"POINT"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackStart"
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_reduction"		"10"
+			}
+		}
+	}
+
+	"laser_tower_laser_effect"
+	{
+		"BaseClass"						"tinker_laser"													
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"MaxLevel"						"2"
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0"
+		"AbilityDamage"					"0"
+		"AbilityManaCost"				"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration_hero"			"0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration_creep"		"0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"miss_rate"				"0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"900"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Hail Tower: Storm
+	//=================================================================================================================
+	"hail_tower_storm"
+	{	
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityTextureName"			"crystal_maiden_freezing_field"
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"9"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"POINT"
+				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+				"Function"			"TriggerEvent"
+				"Event"				"OnStormCast"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_storm_passive"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"Target"			"POINT"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackStart"
+					}
+				}
+			}
+			"modifier_storm"
+			{
+				"Duration"		"%duration"
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"6"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"targets"				"3"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Runic Tower: Magic Attack
+	//=================================================================================================================
+	"runic_tower_magic_attack"
+	{	
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityTextureName"			"visage_gravekeepers_cloak"
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"9"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"POINT"
+				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+				"Function"			"TriggerEvent"
+				"Event"				"OnMagicAttackCast"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_magic_attack"
+			{
+				"Duration"		"%duration"
+			}
+			"modifier_magic_attack_passive"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"Target"			"POINT"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackStart"
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"3"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Impulse Tower: Impetus
+	//=================================================================================================================
+	"impulse_tower_impetus"
+	{
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"enchantress_impetus"
+		"AbilityCastRange"				"1375"
+		"MaxLevel"						"2"
+
+		"Modifiers"
+		{
+			"modifier_impetus"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"Target"			"POINT"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackStart"
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"multiplier"			"2250 11250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"min_range"				"0"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Obliteration Tower: Obliterate
+	//=================================================================================================================
+	"obliteration_tower_obliterate"
+	{
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"obsidian_destroyer_sanity_eclipse"
+		"AbilityCastRange"				"1000"
+		"MaxLevel"						"2"
+
+		"Modifiers"
+		{
+			"modifier_obliterate_passive"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"Target"			"POINT"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackStart"
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_aoe"				"400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"4.5"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ephemeral Tower: Phasing
+	//=================================================================================================================
+	"ephemeral_tower_phasing"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "towers/ephemeral_tower_phasing"
+		"AbilityCooldown"				"2"
+		"AbilityManaCost"				"0"
+		"AbilityChannelTime"			"2"
+		
+		"OnChannelSucceeded"
+		{	
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_reset_damage"
+			}
+			"RunScript"
+			{
+				"Target"			"CASTER"
+				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+				"Function"			"TriggerEvent"
+				"Event"				"ResetDamage"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_phasing_passive"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"Target"			"POINT"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackStart"
+					}
+				}
+			}
+			"modifier_reset_damage"
+			{
+				"IsDebuff"		"1"
+				"Duration"		"%reset_time"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"channel_time"		"1.5"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_reduction"	"5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"reset_time"		"3"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_reduction"		"80"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Flamethrower Tower: Napalm
+	//=================================================================================================================
+	"flamethrower_tower_napalm"
+	{
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"batrider_sticky_napalm"
+		
+		"MaxLevel"						"2"
+		"Modifiers"
+		{
+			"modifier_napalm"
+			{
+				"IsDebuff"			"1"
+				"EffectName"		"particles/units/heroes/hero_batrider/batrider_stickynapalm_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnNapalmCreepDied"
+					}
+				}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"300 1500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"400"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Haste Tower: Wrath
+	//=================================================================================================================
+	"haste_tower_wrath"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "troll_warlord_fervor"
+
+		"Modifiers"
+		{
+			"modifier_wrath_passive"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"Target"			"POINT"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackStart"
+					}
+				}
+			}
+
+			"modifier_wrath_reset"
+			{
+				"IsDebuff"		"1"
+				"Duration"		"%reset_time"
+			}
+
+			"modifier_wrath"
+			{
+				"TextureName"	"troll_warlord_fervor"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"IsHidden"		"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed"
+				}
+			}
+
+			"modifier_wrath_indicator"
+			{
+				"TextureName"	"troll_warlord_fervor"
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"reset_time"		"4"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attack_speed"		"11"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cap"				"17"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Torrent Tower: Douse Level 1
+	//=================================================================================================================
+	"torrent_tower_douse_1"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "towers/torrent_tower_douse"
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"0"
+		"MaxLevel"						"10"
+		
+		"OnSpellStart"
+		{	
+			"RunScript"
+			{
+				"Target"			"CASTER"
+				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+				"Function"			"TriggerEvent"
+				"Event"				"OnDouseCast"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_douse_passive"
+			{
+				"Passive"	"1"
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackStart"
+					}
+				}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"240 525 894 1284 1788 2382 3105 3963 5001 6201"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aoe"				"750"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lvlup_attacks"		"10"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Torrent Tower: Douse Level 2
+	//=================================================================================================================
+	"torrent_tower_douse_2"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "towers/torrent_tower_douse"
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"0"
+		"MaxLevel"						"10"
+		
+		"OnSpellStart"
+		{	
+			"RunScript"
+			{
+				"Target"			"CASTER"
+				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+				"Function"			"TriggerEvent"
+				"Event"				"OnDouseCast"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_douse_passive"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackStart"
+					}
+				}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"1200 2625 4470 6420 8940 11910 15525 19815 25005 31005"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aoe"				"750"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lvlup_attacks"		"10"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Nova Tower: Explode
+	//=================================================================================================================
+	"nova_tower_explode"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityTextureName"            "phoenix_supernova"
+		"MaxLevel"						"2"
+		"AbilityCastRange"				"625"
+
+		"Modifiers"
+		{
+			"modifier_explode_passive"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"Explode"
+					}
+					"ApplyModifier"
+					{
+						"Target"
+						{
+							"Center"		"CASTER"
+							"Radius"		"%aoe"
+							"Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+							"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
+						}
+						"ModifierName"	"modifier_explode_slow"
+					}
+				}
+			}
+			"modifier_explode_slow"
+			{
+				"Duration"		"%duration"
+				"IsDebuff"		"1"
+				"TextureName"	"phoenix_supernova"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" 			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_phoenix/phoenix_fire_spirit_burn.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+				}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"336 1680"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aoe"				"625"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"3"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"slow"				"-7.5 -22.5"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"slow_tooltip"		"7.5 22.5"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Polar Tower: Frostbite
+	//=================================================================================================================
+	"polar_tower_frostbite"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityCooldown"				"1"
+		"MaxLevel"						"2"
+		"AbilityTextureName"			"crystal_maiden_crystal_nova"
+		"AbilityCastRange"				"750"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"Target"			"TARGET"
+				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+				"Function"			"TriggerEvent"
+				"Event"				"OnFrostbiteCast"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_polar_frostbite"
+			{
+				"Duration"			"%duration"
+				"IsDebuff"			"1"
+				"EffectName"		"particles/units/heroes/hero_ancient_apparition/ancient_apparition_ice_blast_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/triples/PolarTower.lua"
+						"Function"			"OnFrostbiteExpire"
+					}
+				}
+			}
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_burn"			"10 30"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_taken_pcnt"		"5 15"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Erosion Tower: Acid Attack
+	//=================================================================================================================
+	"erosion_tower_acid_attack"
+	{
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"towers/erosion_tower_acid_attack"
+		"MaxLevel"						"2"
+
+		"Modifiers"
+		{
+			"modifier_acid_attack_passive"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackStart"
+					}
+				}
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"Target"
+						{
+							"Center"		"TARGET"
+							"Radius"		"%aoe"
+							"Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+							"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
+						}
+						"ModifierName"	"modifier_acid_attack_dot"
+					}
+					"ApplyModifier"
+					{
+						"Target"
+						{
+							"Center"		"TARGET"
+							"Radius"		"%aoe"
+							"Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+							"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
+						}
+						"ModifierName"	"modifier_acid_attack_damage_amp"
+					}
+				}
+			}
+			"modifier_acid_attack_dot"
+			{
+				"IsDebuff"		"1"
+				"Duration"		"%duration"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"ThinkInterval" "1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAcidDot"
+					}
+				}
+			}
+			"modifier_acid_attack_damage_amp"
+			{
+				"IsDebuff"		"1"
+				"Duration"		"%duration"
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnDamageAmpExpire"
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_amp"			"10 30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dot"					"105 525"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"300"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Jinx Tower: Maledict
+	//=================================================================================================================
+	"jinx_tower_maledict"
+	{
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"witch_doctor_maledict"
+		"MaxLevel"						"2"
+
+		"Modifiers"
+		{
+			"modifier_jinx_maledict_passive"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"Target"
+						{
+							"Center"		"TARGET"
+							"Radius"		"%aoe"
+							"Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+							"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
+						}
+						"ModifierName"	"modifier_jinx_maledict"
+					}
+				}
+			}
+			"modifier_jinx_maledict"
+			{
+				"IsDebuff"		"1"
+				"Duration"		"%duration"
+				"ThinkInterval" "%tick_interval"
+				"OnIntervalThink"
+				{
+					"AttachEffect"
+					{
+						"Target" 			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_witchdoctor/witchdoctor_maledict_g.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnMaledictTick"
+					}
+				}
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" 			"TARGET"
+						"EffectName"		"particles/items2_fx/veil_of_discord_debuff.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnMaledictApplied"
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tick_interval"			"3"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_taken"			"10 30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ticks"					"3"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"300"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Roots Tower: Gaia's Wrath
+	//=================================================================================================================
+	"roots_tower_gaias_wrath"
+	{
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"treant_leech_seed"
+		"MaxLevel"						"2"
+
+		"Modifiers"
+		{
+			"modifier_gaias_wrath_passive"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnAttackStart"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackStart"
+					}
+				}
+			}
+			"modifier_gaias_wrath_slow"
+			{
+				"Duration"			"%duration"
+				"IsDebuff"			"1"
+				"TextureName"		"treant_leech_seed"
+				"EffectName"		"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast_debuff.vpcf"
+				"EffectTargetType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+				}
+			}
+			"modifier_gaias_wrath_damage"
+			{
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Duration"		"%duration"
+				"ThinkInterval"	"1"
+				"IsDebuff"		"1"
+				"TextureName"	"treant_leech_seed"
+				
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnDamageTick"
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_tooltip"			"7.5 22.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-7.5 -22.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dps"					"105 525"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"300"
+			}
+		}
+	}
+}
