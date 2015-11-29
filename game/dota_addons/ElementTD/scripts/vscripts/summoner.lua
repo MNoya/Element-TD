@@ -53,7 +53,7 @@ function SummonElemental(keys)
 	local playerID = summoner:GetOwner():GetPlayerID();
 	local playerData = GetPlayerData(playerID);
 	local element = GetUnitKeyValue(keys.Elemental, "Element");
-
+	PrintTable(playerData)
 	if not WAVE_1_STARTED then
 		BuyElement(playerID, element);
 		return;
@@ -75,6 +75,7 @@ function SummonElemental(keys)
 	local level = playerData.elements[element] + 1;
 	local health = ElementalBaseHealth[level] * math.pow(1.5, (math.floor(playerData.wave / 5) - 1));
 	elemental:SetMaxHealth(health);
+	elemental:SetBaseMaxHealth(health); -- This is needed to properly set the max health otherwise it won't work sometimes
 	elemental:SetHealth(health);
 	elemental:SetActualModelScale(elemental:GetModelScale() + ((level - 1) * 0.1));
 	elemental:SetForwardVector(Vector(0, -1, 0));

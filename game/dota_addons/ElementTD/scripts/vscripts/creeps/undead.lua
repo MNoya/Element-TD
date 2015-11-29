@@ -17,31 +17,33 @@ CreepBasic);
 function CreepUndead:OnSpawned() 
 	self.creep:SetMaximumGoldBounty(0);
     self.creep:SetMinimumGoldBounty(0);
+    print("UNDEAD: OnSpawned")
 end
 
 function CreepUndead:OnDeath()
 	local creep = self.creep;
 	local playerID = creep.playerID;
 	local creepClass = self.creepClass;
-
-	local newCreep = CreateUnitByName(creepClass, creep:GetOrigin(), false, nil, nil, DOTA_TEAM_NOTEAM);
+	print(self.creepClass, creep:GetOrigin())
+	local newCreep = CreateUnitByName(creepClass, creep:GetAbsOrigin() , false, nil, nil, DOTA_TEAM_NOTEAM);
 	newCreep.class = creepClass;
 	newCreep.playerID = creep.playerID;
-	newCreep.waveObj = creep.waveObj;
-	
+	newCreep.waveObject = creep.waveObject;
+	print("t0")
 	newCreep:AddNewModifier(nil, nil, "modifier_phased", {});
 	newCreep:AddNewModifier(nil, nil, "modifier_invulnerable", {});
 	newCreep:AddNewModifier(nil, nil, "modifier_riki_permanent_invisibility", {});
-
+	print("t1")
 	newCreep:RemoveAbility("creep_undead_reanimate"); --don't allow this new creep to respawn
 	newCreep:SetMaxHealth(creep:GetMaxHealth());
+	newCreep:SetBaseMaxHealth(creep:GetMaxHealth());
 	creep.scriptObject = self;
-
+	print("t2")
 	newCreep:SetContextThink("RespawnThinker", function()
 		self:UndeadCreepRespawn()
 		return nil;
 	end, 3);
-
+	print("t3")
 	self.creep = newCreep;
 	CREEP_SCRIPT_OBJECTS[newCreep:entindex()] = self;
 end

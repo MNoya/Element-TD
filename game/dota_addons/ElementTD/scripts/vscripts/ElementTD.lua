@@ -25,6 +25,8 @@ function ElementTD:new(o)
 end
 
 function ElementTD:InitGameMode()
+    ElementTD = self
+
     EntityUtils:Load();
     GenerateAllTowerGrids() -- create tower grids
     GenerateAllConstants(); -- generate all constant tables
@@ -34,11 +36,12 @@ function ElementTD:InitGameMode()
     self.gameStarted = false;
     self.playerSpawnIndexes = {};
 
-    self.gameStartTriggers = 0;
+    self.gameStartTriggers = 1;
 
     self.direPlayers = 0;
     self.radiantPlayers = 0;
     self.playerIDMap = {}; --maps userIDs to playerID
+    self.vPlayerIDToHero = {}; -- Maps playerID to hero
     self.dummyCreated = false; -- has the global caster dummy been initialized
 
     GameRules:SetHeroRespawnEnabled(false);
@@ -47,6 +50,9 @@ function ElementTD:InitGameMode()
     GameRules:SetPreGameTime(0);
     GameRules:SetHeroSelectionTime(0);
     GameRules:SetGoldPerTick(0);
+
+    --GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 8 ) -- Moves all players onto one team
+    --GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 0 )
 
     ListenToGameEvent('player_connect_full', Dynamic_Wrap(ElementTD, 'PlayerConnectedFull'), self);
     ListenToGameEvent('entity_killed', Dynamic_Wrap(ElementTD, 'EntityKilled'), self);
@@ -62,18 +68,21 @@ function ElementTD:InitGameMode()
     base_game_mode:SetRecommendedItemsDisabled(true); -- no recommended items panel
     base_game_mode:SetFogOfWarDisabled(true); -- no fog
     base_game_mode:SetCameraDistanceOverride(1500); -- move the camera higher up
+    base_game_mode:SetCustomGameForceHero( "npc_dota_hero_keeper_of_the_light" ) -- Skip hero pick screen
     ------------------------------------------------------
 
     print("\n\nLoaded Element Tower Defense!\n\n");
 end
 
 function ElementTD:OnGameStateChange(keys)
+    print("GameState Changed: "..GameRules:State_Get())
     if GameRules:State_Get() == DOTA_GAMERULES_STATE_HERO_SELECTION then
+
         self.gameStartTriggers = self.gameStartTriggers + 1;
         if self.gameStartTriggers < 2 then return end
 
         for _, player in pairs(players) do    
-            local hero = CreateHeroForPlayer('npc_dota_hero_keeper_of_the_light', player);
+            --local hero = CreateHeroForPlayer('npc_dota_hero_keeper_of_the_light', player);
             CreatePhantomUnitManager(player:GetPlayerID());
         end
 
@@ -124,6 +133,7 @@ end
 -- let's start the actual game
 -- call this after the players have been move to their proper spawn locations
 function ElementTD:StartGame()
+        print("ElementTD Started!")
         CreateTimer("StartGameDelay", DURATION, {
         duration = 3,
 
@@ -189,6 +199,8 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:SetModelScale(0.75);
     hero:AddNewModifier(nil, nil, "modifier_silence", {}); -- silence this player until break time is started
 
+    self.vPlayerIDToHero[playerID] = hero; -- Store hero for player in here GetAssignedHero can be flakey
+
     local playerData = GetPlayerData(playerID);
     local spells = SpellPages[playerData.page];
     playerData.spells = {};
@@ -217,8 +229,8 @@ function ElementTD:EntityKilled(keys)
         ModifyElementValue(entity.playerID, entity.element, 1);
     else
         local playerID = entity.playerID;
-        if entity.waveObj then 
-            entity.waveObj:OnCreepKilled(index);
+        if entity.waveObject then 
+            entity.waveObject:OnCreepKilled(index);
         end
         CREEP_SCRIPT_OBJECTS[index] = nil;
         --for towerID,_ in pairs(GetPlayerData(pID).towers) do

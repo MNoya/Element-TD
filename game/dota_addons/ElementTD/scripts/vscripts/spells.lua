@@ -50,7 +50,7 @@ end
 
 function UpdatePlayerSpells(playerID)
 	local playerData = GetPlayerData(playerID);
-	local hero = PlayerResource:GetPlayer(playerID):GetAssignedHero();
+	local hero = ElementTD.vPlayerIDToHero[playerID];
 	if hero then
 		for _, spellName in pairs(SpellPages[playerData.page]) do
 			local spell = hero:FindAbilityByName(spellName);
@@ -172,7 +172,7 @@ function UpgradeTower(keys)
 	local tower = keys.caster;
 	local hero = tower:GetOwner();
 	local newClass = keys.tower; -- the class of the tower to upgrade to
-	local cost = GetCostForTower(newClass);
+	local cost = GetUnitKeyValue(newClass, "Cost"); -- Old GetCostForTower(newClass);
 	local playerData = GetPlayerData(hero:GetPlayerID());
 	
 	if not MeetsItemElementRequirements(keys.ability, hero:GetPlayerID()) then

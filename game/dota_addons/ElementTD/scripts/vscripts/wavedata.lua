@@ -67,7 +67,7 @@ function StartBreakTime(playerID, breakTime)
 
         callback = function(t)
             local data = GetPlayerData(t.playerID);
-            Log:info("Spawning wave " .. wave .. " for " .. data.name);
+            Log:info("Spawning wave " .. wave .. " for ["..t.playerID.."] ".. data.name);
             ShowMessage(playerID, "Wave " .. GetPlayerData(playerID).nextWave, 3);
             SpawnWaveForPlayer(t.playerID, wave); -- spawn dat wave
             WAVE_1_STARTED = true;
@@ -166,7 +166,6 @@ function CreateMoveTimerForCreep(creep, sector)
             OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
             Position = destination
         });
-
         if (creep:GetOrigin() - destination):Length2D() <= 150 then
             local playerID = creep.playerID;
             local playerData = PlayerData[playerID];
@@ -180,7 +179,8 @@ function CreateMoveTimerForCreep(creep, sector)
                 hero:SetHealth(hero:GetHealth() - 1);
             end
 
-            creep:SetAbsOrigin(EntityStartLocations[playerID + 1]);
+            FindClearSpaceForUnit(creep, EntityStartLocations[playerID + 1], true) -- remove interp frames on client
+            --creep:SetAbsOrigin(EntityStartLocations[playerID + 1]);
             creep:SetForwardVector(Vector(0, -1, 0));
         end
         return 1;
