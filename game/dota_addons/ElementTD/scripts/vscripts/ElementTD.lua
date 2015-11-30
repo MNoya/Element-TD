@@ -75,9 +75,7 @@ function ElementTD:InitGameMode()
 end
 
 function ElementTD:OnGameStateChange(keys)
-    print("GameState Changed: "..GameRules:State_Get())
     if GameRules:State_Get() == DOTA_GAMERULES_STATE_HERO_SELECTION then
-
         self.gameStartTriggers = self.gameStartTriggers + 1;
         if self.gameStartTriggers < 2 then return end
 
@@ -164,14 +162,40 @@ end
 
 function ElementTD:EndGameForPlayer( playerID )
     local playerData = GetPlayerData(playerID);
-    Log:info("Player "..playerID.." has been defeated on wave "..playerData.nextWave - 1..".");
+    Log:info("Player "..playerID.." has been defeated on wave "..playerData.nextWave..".");
+    GameRules:SendCustomMessage(playerData.name.." has been defeated on wave "..playerData.nextWave..".", 0, 0);
 
     -- Clean up
-    for _,v in ipairs(playerData.towers) do
-        UTIL_RemoveImmediate(v);
+    UpdatePlayerSpells(playerID);
+    PrintTable(playerData.towers);
+    for i,v in pairs(playerData.towers) do
+        print(i)
+        UTIL_RemoveImmediate(EntIndexToHScript(i));
     end
-    for _,j in ipairs(playerData.clones) do
-        UTIL_RemoveImmediate(j);
+    for j,k in pairs(playerData.clones) do
+        UTIL_RemoveImmediate(EntIndexToHScript(j));
+    end
+    for l,m in pairs(playerData.waveObject.creeps) do
+        EntIndexToHScript(l):ForceKill(false);
+    end
+    ElementTD:CheckGameEnd();
+end
+
+-- Check if all players are dead or have completed all the waves so we can end the game
+function ElementTD:CheckGameEnd()
+    local endGame = true;
+    for k, ply in pairs(players) do
+        local playerData = GetPlayerData(ply:GetPlayerID());
+        if playerData.health ~= 0 or playerData.completedWaves < WAVE_COUNT then
+            endGame = false;
+        end
+    end
+    if endGame then
+        Log:info("All players have lost! Game Ending");
+        GameRules:SendCustomMessage("Thank you for playing <font color='#70EA72'>Element Tower Defense</font>!", 0, 0)
+
+        GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
+        GameRules:SetSafeToLeave( true )
     end
 end
 
@@ -228,7 +252,8 @@ end
 function ElementTD:EntityKilled(keys)
     local index = keys.entindex_killed;
     local entity = EntIndexToHScript(index);
-    
+    local playerData = GetPlayerData(entity.playerID);
+
     if entity.scriptObject and entity.scriptObject.OnDeath then
         entity.scriptObject:OnDeath();
     end
@@ -236,7 +261,6 @@ function ElementTD:EntityKilled(keys)
     if entity.isElemental then
         -- an elemental was killed :O
         DeleteTimer("MoveElemental"..index);
-        local playerData = GetPlayerData(entity.playerID);
         Log:info(playerData.name .. " has killed a " .. entity.element .. " elemental");
         playerData.elementalActive = false;
         ModifyElementValue(entity.playerID, entity.element, 1);
@@ -249,7 +273,7 @@ function ElementTD:EntityKilled(keys)
         --for towerID,_ in pairs(GetPlayerData(pID).towers) do
             --UpdateUpgrades(EntIndexToHScript(towerID));
         --end
-        UpdatePlayerSpells(pID);
+        UpdatePlayerSpells(playerID);
         DeleteTimer("MoveUnit"..index);
     end
 end

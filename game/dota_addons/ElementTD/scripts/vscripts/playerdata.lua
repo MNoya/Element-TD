@@ -21,6 +21,7 @@ function CreateDataForPlayer(playerID)
 	data["completedWaves"] = 0;
 	data["nextWave"] = 1;
 	data["activeWaves"] = {};
+	data["waveObject"] = {};
 	
 	return data;
 end

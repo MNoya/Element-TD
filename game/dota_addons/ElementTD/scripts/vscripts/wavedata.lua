@@ -117,6 +117,9 @@ function SpawnWaveForPlayer(playerID, wave)
     local waveObj = Wave(playerID, wave);
     local sector = playerID + 1;
     local startPos = EntityStartLocations[sector];
+    local playerData = GetPlayerData(playerID);
+    playerData.waveObject = waveObj;
+
     FireGameEvent("etd_update_wave_info", {playerID = playerID, nextWave = wave + 1, nextWaveCreep = WAVE_CREEPS[wave + 1]});
 
     if not InterestManager:IsStarted() then
@@ -125,9 +128,14 @@ function SpawnWaveForPlayer(playerID, wave)
 
     waveObj:SetOnCompletedCallback(function() 
         print("Player has completed a wave");
-        local playerData = GetPlayerData(playerID);
         playerData.completedWaves = playerData.completedWaves + 1;
         playerData.nextWave = playerData.nextWave + 1;
+
+        if playerData.completedWaves >= WAVE_COUNT then
+            Log:info("Player ["..playerData.playerID.."] has completed the game.");
+            ElementTD:CheckGameEnd();
+            return
+        end
 
         if playerData.nextWave > CURRENT_WAVE then
             for _, ply in pairs(players) do
@@ -180,12 +188,13 @@ function CreateMoveTimerForCreep(creep, sector)
             local playerData = PlayerData[playerID];
 
             local hero = PlayerResource:GetPlayer(playerID):GetAssignedHero();
-            playerData.health = playerData.health - 1;
-                    
+            
             if hero:GetHealth() == 1 then
+                playerData.health = 0;
                 hero:ForceKill(false);
                 ElementTD:EndGameForPlayer(hero:GetPlayerID()); -- End the game for the dead player
-            else
+            elseif hero:IsAlive() then
+                playerData.health = playerData.health - 1;
                 hero:SetHealth(hero:GetHealth() - 1);
             end
 

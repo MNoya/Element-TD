@@ -21,7 +21,6 @@ function Wave:SetOnCompletedCallback(func)
 end
 
 function Wave:OnCreepKilled(index)
-	print(index)
 	if self.creeps[index] then
 		self.creeps[index] = nil;
 		self.creepsRemaining = self.creepsRemaining - 1;

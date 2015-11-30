@@ -61,6 +61,9 @@ function UpdatePlayerSpells(playerID)
 			if spellName == "show_tower_range" then
 				spell:SetActivated(true);
 			end
+			if not hero:IsAlive() then
+				spell:SetActivated(false);
+			end
 		end
 	end
 end

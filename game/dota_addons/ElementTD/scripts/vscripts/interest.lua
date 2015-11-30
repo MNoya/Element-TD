@@ -14,7 +14,7 @@ function InterestManager:StartInterestTimer()
 		for _,ply in pairs(players) do
 			if ply then
 				local hero = ply:GetAssignedHero();
-				if hero then
+				if hero and GetPlayerData(ply:GetPlayerID()).health ~= 0 then
 					local interest = math.ceil(hero:GetGold() * INTEREST_RATE);
 					local gold = hero:GetGold() + interest;
 					hero:SetGold(0, false);
