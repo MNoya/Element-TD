@@ -73,7 +73,7 @@ function SummonElemental(keys)
 	ApplyArmorModifier(elemental, GetPlayerDifficulty(playerID):GetArmorValue() * 100);
 	
 	local level = playerData.elements[element] + 1;
-	local health = ElementalBaseHealth[level] * math.pow(1.5, (math.floor(playerData.wave / 5) - 1));
+	local health = ElementalBaseHealth[level] * math.pow(1.5, (math.floor(playerData.nextWave / 5) - 1));
 	elemental:SetMaxHealth(health);
 	elemental:SetBaseMaxHealth(health); -- This is needed to properly set the max health otherwise it won't work sometimes
 	elemental:SetHealth(health);

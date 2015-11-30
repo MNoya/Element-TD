@@ -5,9 +5,9 @@ CreepUndead = createClass({
 		creepClass = "",
 
 		constructor = function(self, creep, creepClass)
-            self.creep = creep;
-            self.creepClass = creepClass or self.creepClass
-        end
+			self.creep = creep;
+			self.creepClass = creepClass or self.creepClass
+		end
 	},
 	{
 		className = "CreepUndead"
@@ -16,34 +16,36 @@ CreepBasic);
 
 function CreepUndead:OnSpawned() 
 	self.creep:SetMaximumGoldBounty(0);
-    self.creep:SetMinimumGoldBounty(0);
-    print("UNDEAD: OnSpawned")
+	self.creep:SetMinimumGoldBounty(0);
 end
 
 function CreepUndead:OnDeath()
 	local creep = self.creep;
 	local playerID = creep.playerID;
 	local creepClass = self.creepClass;
-	print(self.creepClass, creep:GetOrigin())
+
 	local newCreep = CreateUnitByName(creepClass, creep:GetAbsOrigin() , false, nil, nil, DOTA_TEAM_NOTEAM);
 	newCreep.class = creepClass;
 	newCreep.playerID = creep.playerID;
 	newCreep.waveObject = creep.waveObject;
-	print("t0")
-	newCreep:AddNewModifier(nil, nil, "modifier_phased", {});
-	newCreep:AddNewModifier(nil, nil, "modifier_invulnerable", {});
-	newCreep:AddNewModifier(nil, nil, "modifier_riki_permanent_invisibility", {});
-	print("t1")
-	newCreep:RemoveAbility("creep_undead_reanimate"); --don't allow this new creep to respawn
+	creep.waveObject:RegisterCreep(newCreep:entindex());
+	creep.waveObject.creepsRemaining = creep.waveObject.creepsRemaining + 1 -- Increment creep count
+	newCreep:AddNewModifier(newCreep, nil, "modifier_phased", {});
+	newCreep:AddNewModifier(newCreep, nil, "modifier_invulnerable", {});
+	newCreep:AddNewModifier(newCreep, nil, "modifier_invisible", {});
+	if newCreep:HasModifier("creep_undead_reanimate") then
+		newCreep:RemoveAbility("creep_undead_reanimate"); --don't allow this new creep to respawn
+	end
 	newCreep:SetMaxHealth(creep:GetMaxHealth());
 	newCreep:SetBaseMaxHealth(creep:GetMaxHealth());
+	newCreep:SetForwardVector(creep:GetForwardVector())
 	creep.scriptObject = self;
-	print("t2")
+
 	newCreep:SetContextThink("RespawnThinker", function()
 		self:UndeadCreepRespawn()
 		return nil;
 	end, 3);
-	print("t3")
+
 	self.creep = newCreep;
 	CREEP_SCRIPT_OBJECTS[newCreep:entindex()] = self;
 end
@@ -56,7 +58,7 @@ function CreepUndead:UndeadCreepRespawn()
 	local creepClass = WAVE_CREEPS[wave];
 
 	creep:RemoveAbility("creep_ability_undead");
-	creep:RemoveModifierByName("modifier_riki_permanent_invisibility");
+	creep:RemoveModifierByName("modifier_invisible");
 	creep:RemoveModifierByName("modifier_invulnerable");
 
 	creep:SetMaximumGoldBounty(GetPlayerDifficulty(playerID):GetBountyForWave(wave));

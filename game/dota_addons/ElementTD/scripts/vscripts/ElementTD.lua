@@ -162,6 +162,19 @@ function ElementTD:StartGame()
     });
 end
 
+function ElementTD:EndGameForPlayer( playerID )
+    local playerData = GetPlayerData(playerID);
+    Log:info("Player "..playerID.." has been defeated on wave "..playerData.nextWave - 1..".");
+
+    -- Clean up
+    for _,v in ipairs(playerData.towers) do
+        UTIL_RemoveImmediate(v);
+    end
+    for _,j in ipairs(playerData.clones) do
+        UTIL_RemoveImmediate(j);
+    end
+end
+
 function ElementTD:OnUnitSpawned(keys)
     local unit = EntIndexToHScript(keys.entindex);
     EntityUtils:Fix(unit);

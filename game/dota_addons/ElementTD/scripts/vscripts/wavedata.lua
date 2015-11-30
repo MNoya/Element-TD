@@ -135,6 +135,15 @@ function SpawnWaveForPlayer(playerID, wave)
             end
             CURRENT_WAVE = playerData.nextWave;
         end
+
+        if playerData.completedWaves % 5 == 0 then
+            ModifyLumber(playerID, 1); -- give 1 lumber every 5 waves
+            if GameSettings.elementsOrderName == "AllPick" then
+                Log:info("Giving 1 lumber to " .. playerData.name);
+            elseif playerData.elementsOrder[playerData.completedWaves] then
+                SummonElemental({caster = playerData.summoner, Elemental = playerData.elementsOrder[playerData.completedWaves] .. "_elemental"});
+            end
+        end
     end);
     waveObj:SpawnWave();
     
@@ -175,6 +184,7 @@ function CreateMoveTimerForCreep(creep, sector)
                     
             if hero:GetHealth() == 1 then
                 hero:ForceKill(false);
+                ElementTD:EndGameForPlayer(hero:GetPlayerID()); -- End the game for the dead player
             else
                 hero:SetHealth(hero:GetHealth() - 1);
             end
