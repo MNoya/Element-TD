@@ -168,6 +168,9 @@ function ElementTD:EndGameForPlayer( playerID )
     -- Clean up
     UpdatePlayerSpells(playerID);
     PrintTable(playerData.towers);
+    if playerData.elementalUnit and not playerData.elementUnit:IsNull() and playerData.elementalUnit:IsAlive() then
+        playerData.elementalUnit:ForceKill(false);
+    end
     for i,v in pairs(playerData.towers) do
         print(i)
         UTIL_RemoveImmediate(EntIndexToHScript(i));

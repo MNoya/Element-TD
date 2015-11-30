@@ -69,6 +69,8 @@ function SummonElemental(keys)
 	elemental["playerID"] = playerID;
 	elemental["class"] = keys.Elemental;
 
+	playerData.elementalUnit = elemental;
+
 	GlobalCasterDummy:ApplyModifierToTarget(elemental, "creep_damage_block_applier", "modifier_damage_block");
 	ApplyArmorModifier(elemental, GetPlayerDifficulty(playerID):GetArmorValue() * 100);
 	
@@ -110,7 +112,9 @@ function SummonElemental(keys)
                 local hero = PlayerResource:GetPlayer(playerID):GetAssignedHero();
 				hero:SetHealth(hero:GetHealth() - 3);
                 --Say(nil, playerData.name .. "'s Health: " .. playerData.health, false);
-                entity:SetOrigin(EntityStartLocations[playerID + 1]);
+
+                FindClearSpaceForUnit(creep, EntityStartLocations[playerID + 1], true) -- remove interp frames on client
+                --entity:SetOrigin(EntityStartLocations[playerID + 1]);
                 entity:SetForwardVector(Vector(0, -1, 0));
             end
         end)

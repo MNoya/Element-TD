@@ -389,6 +389,7 @@ function BuildTower(tower, baseScale)
 	tower:SetActualModelScale(baseScale);
 	tower:SetHealth(1);
 	tower:SetMaxHealth(buildTime * 20);
+	tower:SetBaseMaxHealth(buildTime * 20);
 
 	-- create a timer to build up the tower slowly
 	tower:SetContextThink("BuildTower", function()
@@ -403,8 +404,10 @@ function BuildTower(tower, baseScale)
 
         	if tower:GetBaseDamageMax() <= 0 then
         		tower:SetMaxHealth(100);
+        		tower:SetBaseMaxHealth(100);
         	else
 				tower:SetMaxHealth(tower:GetBaseDamageMax());
+				tower:SetBaseMaxHealth(tower:GetBaseDamageMax());
 			end
         	tower:SetHealth(tower:GetMaxHealth());
         	return nil;
