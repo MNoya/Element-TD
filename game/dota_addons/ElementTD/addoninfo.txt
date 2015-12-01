@@ -14,4 +14,11 @@
 
      // short description that appears in the Add-on list screen...
      addonDescription        "A Dota 2 port of the classic Warcraft 3 tower defense map."
+
+     "maps"                   "element_td"
+     "IsPlayable"             "1"
+     "element_td"
+     {
+          "MaxPlayers"        "8"
+     }
 }

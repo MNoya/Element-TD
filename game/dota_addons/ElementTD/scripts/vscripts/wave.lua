@@ -39,10 +39,11 @@ function Wave:RegisterCreep(index)
 end
 
 function Wave:SpawnWave()
-	local difficulty = GetPlayerData(self.playerID).difficulty;
-	local startPos = EntityStartLocations[self.playerID + 1];
+	local playerData = GetPlayerData(self.playerID)
+	local difficulty = playerData.difficulty;
+	local startPos = EntityStartLocations[playerData.sector + 1];
 	local entitiesSpawned = 0;
-	local sector = self.playerID + 1
+	local sector = playerData.sector + 1
 
 	GameRules:GetGameModeEntity():SetContextThink("SpawnWave" .. self.waveNumber .. self.playerID, function()
 		local entity = SpawnEntity(WAVE_CREEPS[self.waveNumber], self.playerID, startPos);

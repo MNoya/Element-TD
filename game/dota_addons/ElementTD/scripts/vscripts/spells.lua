@@ -115,7 +115,7 @@ function SellTowerCast(keys)
 					if IsValidEntity(clone) then
 						CreateIllusionKilledParticles(clone);
 						playerData.towers[clone:entindex()] = nil; -- remove this tower index from the player's tower list
-						AddTowerPosition(playerID + 1, clone:GetOrigin()); -- re-add this position to the list of valid locations
+						AddTowerPosition(playerData.sector + 1, clone:GetOrigin()); -- re-add this position to the list of valid locations
 						if clone.creatorClass then
 							clone.creatorClass.clones[clone:entindex()] = nil;
 						end
@@ -136,9 +136,10 @@ function SellTowerCast(keys)
 		end
 
 		playerData.towers[tower:entindex()] = nil; -- remove this tower index from the player's tower list
-		AddTowerPosition(playerID + 1, tower:GetOrigin()); -- re-add this position to the list of valid locations
+		AddTowerPosition(playerData.sector + 1, tower:GetOrigin()); -- re-add this position to the list of valid locations
 		UTIL_RemoveImmediate(tower); -- instantly remove the actual tower entity
 		Log:debug(playerData.name .. " has sold a tower");
+		UpdatePlayerSpells(hero:GetPlayerID());
 	end
 end
 
@@ -253,7 +254,7 @@ function UpgradeTower(keys)
 				if IsValidEntity(clone) then
 					CreateIllusionKilledParticles(clone);
 					playerData.towers[clone:entindex()] = nil; -- remove this tower index from the player's tower list
-					AddTowerPosition(hero:GetPlayerID() + 1, clone:GetOrigin()); -- re-add this position to the list of valid locations
+					AddTowerPosition(playerData.sector + 1, clone:GetOrigin()); -- re-add this position to the list of valid locations
 					if clone.creatorClass then
 						clone.creatorClass.clones[clone:entindex()] = nil;
 					end
@@ -271,7 +272,8 @@ end
 
 function PlaceTower(keys)
 	local target = keys.target_points[1];
-	local sector = keys.caster:GetPlayerID() + 1; -- sector ID is always player ID + 1
+	local playerData = GetPlayerData(keys.caster:GetPlayerID())
+	local sector = playerData.sector + 1; -- sector ID is always player ID + 1
 	local pos = FindClosestTowerPosition(sector, target, 96);
 	local hero = keys.caster;
 	local playerID = hero:GetPlayerID();

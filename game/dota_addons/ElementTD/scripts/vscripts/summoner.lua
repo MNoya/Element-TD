@@ -53,7 +53,7 @@ function SummonElemental(keys)
 	local playerID = summoner:GetOwner():GetPlayerID();
 	local playerData = GetPlayerData(playerID);
 	local element = GetUnitKeyValue(keys.Elemental, "Element");
-	PrintTable(playerData)
+
 	if not WAVE_1_STARTED then
 		BuyElement(playerID, element);
 		return;
@@ -62,7 +62,7 @@ function SummonElemental(keys)
 	playerData.elementalActive = true;
 	ModifyLumber(playerID, -1);
 
-	local elemental = CreateUnitByName(keys.Elemental, EntityStartLocations[playerID + 1], true, nil, nil, DOTA_TEAM_NOTEAM);
+	local elemental = CreateUnitByName(keys.Elemental, EntityStartLocations[playerData.sector + 1], true, nil, nil, DOTA_TEAM_NOTEAM);
 	elemental:AddNewModifier(nil, nil, "modifier_phased", {});
 	elemental["element"] = element;
 	elemental["isElemental"] = true;
@@ -93,7 +93,7 @@ function SummonElemental(keys)
         loops = -1,
         interval = 1,
         executeImmediately = true,
-        destination = EntityEndLocations[playerID + 1],
+        destination = EntityEndLocations[playerData.sector + 1],
         playerID = playerID,
         unit = elemental,
 
@@ -108,12 +108,19 @@ function SummonElemental(keys)
 
             if dist2D(entity:GetOrigin(), timer.destination) <= 150 then
                 local playerData = PlayerData[timer.playerID];
+
                 playerData.health = playerData.health - 3;
                 local hero = PlayerResource:GetPlayer(playerID):GetAssignedHero();
-				hero:SetHealth(hero:GetHealth() - 3);
+                if hero:GetHealth() <= 3 then
+                	playerData.health = 0;
+                	hero:ForceKill(false);
+					ElementTD:EndGameForPlayer(hero:GetPlayerID()); -- End the game for the dead player
+                else
+					hero:SetHealth(hero:GetHealth() - 3);
+				end
                 --Say(nil, playerData.name .. "'s Health: " .. playerData.health, false);
 
-                FindClearSpaceForUnit(creep, EntityStartLocations[playerID + 1], true) -- remove interp frames on client
+                FindClearSpaceForUnit(entity, EntityStartLocations[playerData.sector + 1], true) -- remove interp frames on client
                 --entity:SetOrigin(EntityStartLocations[playerID + 1]);
                 entity:SetForwardVector(Vector(0, -1, 0));
             end

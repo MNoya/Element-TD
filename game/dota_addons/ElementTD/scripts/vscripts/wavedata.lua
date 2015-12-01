@@ -115,9 +115,10 @@ end
 -- spawn the wave for the specified player
 function SpawnWaveForPlayer(playerID, wave)
     local waveObj = Wave(playerID, wave);
-    local sector = playerID + 1;
-    local startPos = EntityStartLocations[sector];
     local playerData = GetPlayerData(playerID);
+    local sector = playerData.sector + 1;
+    local startPos = EntityStartLocations[sector];
+
     playerData.waveObject = waveObj;
 
     FireGameEvent("etd_update_wave_info", {playerID = playerID, nextWave = wave + 1, nextWaveCreep = WAVE_CREEPS[wave + 1]});
@@ -198,7 +199,7 @@ function CreateMoveTimerForCreep(creep, sector)
                 hero:SetHealth(hero:GetHealth() - 1);
             end
 
-            FindClearSpaceForUnit(creep, EntityStartLocations[playerID + 1], true) -- remove interp frames on client
+            FindClearSpaceForUnit(creep, EntityStartLocations[playerData.sector + 1], true) -- remove interp frames on client
             --creep:SetAbsOrigin(EntityStartLocations[playerID + 1]);
             creep:SetForwardVector(Vector(0, -1, 0));
         end

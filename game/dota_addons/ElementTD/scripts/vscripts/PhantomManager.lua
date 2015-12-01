@@ -11,6 +11,7 @@ PhantomUnitManager = class({
 
 	constructor = function(self, playerID)
         self.playerID = playerID;
+        self.sector = GetPlayerData(playerID).sector;
     end
 },	
 {}, nil);
@@ -45,7 +46,7 @@ function PhantomUnitManager:hide(ability)
 end
 
 function PhantomUnitManager:update(v)
-	local sector = self.playerID + 1;
+	local sector = self.sector + 1;
 	local pos = FindClosestTowerPosition(sector, v, 96);
 	local validPos = false;
 

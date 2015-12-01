@@ -7,6 +7,16 @@ NPC_ABILITIES_CUSTOM = LoadKeyValues("scripts/npc/npc_abilities_custom.txt");
 NPC_ITEMS_CUSTOM = LoadKeyValues("scripts/npc/npc_items_custom.txt");
 ADDON_ENGLISH = LoadKeyValues("resource/addon_english.txt");
 
+TEAM_TO_SECTOR = {};
+TEAM_TO_SECTOR[2] = 0;
+TEAM_TO_SECTOR[3] = 1;
+TEAM_TO_SECTOR[6] = 2;
+TEAM_TO_SECTOR[7] = 3;
+TEAM_TO_SECTOR[8] = 4;
+TEAM_TO_SECTOR[9] = 5;
+TEAM_TO_SECTOR[10] = 6;
+TEAM_TO_SECTOR[11] = 7;
+ 
 GAME_IS_PAUSED = false;
 SKIP_VOTING = false; -- assigns default game settings if true
 DEV_MODE = false;
@@ -51,8 +61,15 @@ function ElementTD:InitGameMode()
     GameRules:SetHeroSelectionTime(0);
     GameRules:SetGoldPerTick(0);
 
-    --GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 8 ) -- Moves all players onto one team
-    --GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 0 )
+    -- Setup Teams
+    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 1 )
+    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 1 )
+    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_1, 1 )
+    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_2, 1 )
+    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_3, 1 )
+    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_4, 1 )
+    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_5, 1 )
+    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_6, 1 )
 
     ListenToGameEvent('player_connect_full', Dynamic_Wrap(ElementTD, 'PlayerConnectedFull'), self);
     ListenToGameEvent('entity_killed', Dynamic_Wrap(ElementTD, 'EntityKilled'), self);
@@ -79,11 +96,6 @@ function ElementTD:OnGameStateChange(keys)
         self.gameStartTriggers = self.gameStartTriggers + 1;
         if self.gameStartTriggers < 2 then return end
 
-        for _, player in pairs(players) do    
-            --local hero = CreateHeroForPlayer('npc_dota_hero_keeper_of_the_light', player);
-            CreatePhantomUnitManager(player:GetPlayerID());
-        end
-
         GameRules:SendCustomMessage("Welcome to <font color='#70EA72'>Element Tower Defense</font>!", 0, 0);
         
         self.gameStarted = true;
@@ -108,13 +120,15 @@ function ElementTD:MoveHeroesToSpawns()
         duration = 1,
         callback = function(timer)
             for k, ply in pairs(players) do
+                local playerData = GetPlayerData(ply:GetPlayerID());
                 if self.playerSpawnIndexes[ply:GetPlayerID()] then
                     local hero = ply:GetAssignedHero();
+
                     hero:SetAbsOrigin(SpawnLocations[self.playerSpawnIndexes[ply:GetPlayerID()]]); 
 
                     -- we must create the Elemental Summoner for this player
-                    local sector = ply:GetPlayerID() + 1;
-                    local summoner = CreateUnitByName("elemental_summoner", ElementalSummonerLocations[sector], false, nil, nil, ply:GetTeam()); 
+                    local sector = playerData.sector + 1;
+                    local summoner = CreateUnitByName("elemental_summoner", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber()); 
                     summoner:SetOwner(ply:GetAssignedHero());
                     summoner:SetControllableByPlayer(ply:GetPlayerID(), true);
                     summoner:SetAngles(0, 270, 0);
@@ -167,12 +181,12 @@ function ElementTD:EndGameForPlayer( playerID )
 
     -- Clean up
     UpdatePlayerSpells(playerID);
-    PrintTable(playerData.towers);
-    if playerData.elementalUnit and not playerData.elementUnit:IsNull() and playerData.elementalUnit:IsAlive() then
+
+    if playerData.elementalUnit ~= nil and not playerData.elementalUnit:IsNull() and playerData.elementalUnit:IsAlive() then
+        print("Elemental Removed")
         playerData.elementalUnit:ForceKill(false);
     end
     for i,v in pairs(playerData.towers) do
-        print(i)
         UTIL_RemoveImmediate(EntIndexToHScript(i));
     end
     for j,k in pairs(playerData.clones) do
@@ -194,7 +208,7 @@ function ElementTD:CheckGameEnd()
         end
     end
     if endGame then
-        Log:info("All players have lost! Game Ending");
+        Log:info("Game end condition reached.");
         GameRules:SendCustomMessage("Thank you for playing <font color='#70EA72'>Element Tower Defense</font>!", 0, 0)
 
         GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
@@ -216,16 +230,18 @@ function ElementTD:OnUnitSpawned(keys)
                 GlobalCasterDummy:Init();
                 self.dummyCreated = true;
             end
-            GetPlayerData(playerID).name = PlayerResource:GetPlayerName(playerID);
+            local playerData = GetPlayerData(playerID);
+            playerData.name = PlayerResource:GetPlayerName(playerID);
             self:InitializeHero(player:GetPlayerID(), unit);
-            self.playerSpawnIndexes[player:GetPlayerID()] = player:GetPlayerID() + 1;
-            self.availableSpawnIndex = self.availableSpawnIndex + 1;    
+            self.playerSpawnIndexes[player:GetPlayerID()] = playerData.sector + 1;
+            self.availableSpawnIndex = self.availableSpawnIndex + 1;
         end
     end
 end
 
 -- initializes a player's hero
 function ElementTD:InitializeHero(playerID, hero)
+    print("OnInitHero PID:"..playerID);
     hero:AddNewModifier(nil, nil, "modifier_disarmed", {});
     GlobalCasterDummy:ApplyModifierToTarget(hero, "player_movespeed_applier", "modifier_base_movespeed");
     hero:SetAbilityPoints(0);
@@ -245,10 +261,13 @@ function ElementTD:InitializeHero(playerID, hero)
     local spells = SpellPages[playerData.page];
     playerData.spells = {};
 
+    playerData.sector = TEAM_TO_SECTOR[hero:GetTeamNumber()];
+
     for k, name in pairs(spells) do
         hero:AddAbility(name);
         hero:FindAbilityByName(name):SetLevel(1);
     end
+    CreatePhantomUnitManager(hero:GetPlayerID());
     UpdatePlayerSpells(playerID);
 end
 
@@ -266,6 +285,7 @@ function ElementTD:EntityKilled(keys)
         DeleteTimer("MoveElemental"..index);
         Log:info(playerData.name .. " has killed a " .. entity.element .. " elemental");
         playerData.elementalActive = false;
+        playerData.elementalUnit = nil;
         ModifyElementValue(entity.playerID, entity.element, 1);
     else
         local playerID = entity.playerID;
