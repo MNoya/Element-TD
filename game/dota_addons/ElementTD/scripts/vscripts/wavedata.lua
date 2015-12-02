@@ -133,7 +133,7 @@ function SpawnWaveForPlayer(playerID, wave)
         playerData.nextWave = playerData.nextWave + 1;
 
         if playerData.completedWaves >= WAVE_COUNT then
-            Log:info("Player ["..playerData.playerID.."] has completed the game.");
+            Log:info("Player ["..playerID.."] has completed the game.");
             ElementTD:CheckGameEnd();
             return
         end

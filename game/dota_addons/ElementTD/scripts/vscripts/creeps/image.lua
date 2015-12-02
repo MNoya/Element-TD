@@ -28,7 +28,8 @@ function CreepImage:OnTakeDamage(keys)
 		image:SetForwardVector(self.creep:GetForwardVector());
 		AddAbility(image, "creep_ability_image");
 
-		local destination = EntityEndLocations[self.creep.playerID + 1];
+		local playerData = GetPlayerData(self.creep.playerID)
+		local destination = EntityEndLocations[playerData.sector + 1];
 
     	image:SetContextThink("MoveUnit" .. image:entindex(), function()
         	ExecuteOrderFromTable({

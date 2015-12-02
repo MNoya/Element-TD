@@ -65,7 +65,7 @@ function CreepUndead:UndeadCreepRespawn()
 	creep:SetMinimumGoldBounty(GetPlayerDifficulty(playerID):GetBountyForWave(wave));
 
 	creep:SetHealth(creep:GetMaxHealth() * 0.5); -- it spawns at a percentage of its max health
-	CreateMoveTimerForCreep(creep, playerID + 1); --create a timer for this creep so it continues walking to the destination
+	CreateMoveTimerForCreep(creep, playerData.sector + 1); --create a timer for this creep so it continues walking to the destination
 
 	local h = ParticleManager:CreateParticle("particles/units/heroes/hero_skeletonking/skeletonking_reincarnation.vpcf", 2, creep); --play a cool particle effect :D
 	ParticleManager:SetParticleControlEnt(h, 0, creep, 5, "attach_hitloc", creep:GetOrigin(), true);
