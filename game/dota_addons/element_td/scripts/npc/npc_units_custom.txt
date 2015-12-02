@@ -8629,12 +8629,24 @@
 		"Model"		"models/heroes/morphling/morphling.mdl"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Hero_Morphling"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
 		"Portrait"		"vgui/hud/heroportraits/portrait_morphling"
 		"particle_folder"		"particles/units/heroes/hero_morphling"
 		"ConsideredHero"		"1"
 		"precache"
 		{
 			"particlefile"		"particles/units/heroes/hero_morphling.pcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+		}
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"507"
+				}
+			}
 		}
 		"Level"		"1"
 		"ModelScale"		"1.0"
@@ -8671,12 +8683,24 @@
 		"Model"		"models/heroes/phoenix/phoenix_bird.mdl"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Hero_Phoenix"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
 		"Portrait"		"vgui/hud/heroportraits/portrait_phoenix"
 		"particle_folder"		"particles/units/heroes/hero_phoenix"
 		"ConsideredHero"		"1"
 		"precache"
 		{
 			"particlefile"		"particles/units/heroes/hero_phoenix.pcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
+		}
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"535"
+				}
+			}
 		}
 		"Level"		"1"
 		"ModelScale"		"1.1"
@@ -8710,12 +8734,50 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/furion/treant.mdl"
+		"Model"		"models/heroes/furion/furion.vmdl"
 		"BaseClass"		"npc_dota_creature"
-		"SoundSet"		""
+		"SoundSet"		"Hero_Furion"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
+		"Portrait"		"vgui/hud/heroportraits/portrait_furion"
+		"particle_folder"		"particles/units/heroes/hero_furion"
 		"ConsideredHero"		"1"
+		"precache"
+		{
+			"model"		"models/heroes/furion/furion.vmdl"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
+		}
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"29"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"30"
+				}
+				"Wearable3"
+				{
+					"ItemDef"		"31"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"32"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"33"
+				}
+				"Wearable6"
+				{
+					"ItemDef"		"49"
+				}
+			}
+		}
 		"Level"		"1"
-		"ModelScale"		"1.3"
+		"ModelScale"		"1.1"
 		"BountyGoldMin"		"0"		// Gold earned min"
 		"BountyGoldMax"		"0"		// Gold earned max"
 		"StatusHealth"		"75"	// Base health"
@@ -8746,10 +8808,45 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/creeps/neutral_creeps/n_creep_golem_b/n_creep_golem_b.mdl"
+		"Model"		"models/heroes/tiny_01/tiny_01.vmdl"
 		"BaseClass"		"npc_dota_creature"
-		"SoundSet"		"n_creep_Melee"
+		"SoundSet"		"Hero_Tiny"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
 		"ConsideredHero"		"1"
+		"precache"
+		{
+			"model"		"models/heroes/tiny_01/tiny_01.vmdl"
+			"model"		"models/heroes/tiny_02/tiny_02.vmdl"
+			"model"		"models/heroes/tiny_03/tiny_03.vmdl"
+			"model"		"models/heroes/tiny_04/tiny_04.vmdl"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
+		}
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"516"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"493"
+				}
+				"Wearable3"
+				{
+					"ItemDef"		"494"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"495"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"496"
+				}
+			}
+		}
 		"Level"		"1"
 		"ModelScale"		"1.3"
 		"BountyGoldMin"		"0"		// Gold earned min"
@@ -8782,17 +8879,51 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/courier/snowleopard/snowleopard_courier.mdl"
+		"Model"		"models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"
 		"BaseClass"		"npc_dota_creature"
-		"SoundSet"		""
+		"SoundSet"		"Hero_Keeper_Of_The_Light"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+		"Portrait"		"vgui/hud/heroportraits/portrait_keeper_of_the_light"
 		"particle_folder"		"particles/units/heroes/hero_keeper_of_the_light"
 		"ConsideredHero"		"1"
 		"precache"
 		{
 			"particlefile"		"particles/units/heroes/hero_keeper_of_the_light.pcf"
+			"model"		"models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+		}
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"252"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"253"
+				}
+				"Wearable3"
+				{
+					"ItemDef"		"254"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"255"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"256"
+				}
+				"Wearable6"
+				{
+					"ItemDef"		"528"
+				}
+			}
 		}
 		"Level"		"1"
-		"ModelScale"		"1.3"
+		"ModelScale"		"1.1"
 		"BountyGoldMin"		"0"
 		"BountyGoldMax"		"0"
 		"StatusHealth"		"75"
@@ -8823,12 +8954,43 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/courier/mega_greevil_courier/mega_greevil_courier.mdl"
+		"Model"		"models/heroes/shadow_fiend/shadow_fiend.vmdl"
 		"BaseClass"		"npc_dota_creature"
-		"SoundSet"		""
+		"SoundSet"		"Hero_Shadow_Fiend"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_shadow_fiend.vsndevts"
+		"Portrait"		"vgui/hud/heroportraits/portrait_shadow_fiend"
+		"particle_folder"		"particles/units/heroes/hero_shadow_fiend"
 		"ConsideredHero"		"1"
+		"precache"
+		{
+			"particlefile"		"particles/units/heroes/hero_shadow_fiend.pcf"
+			"model"		"models/heroes/shadow_fiend/shadow_fiend.vmdl"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_shadow_fiend.vsndevts"
+		}
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"488"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"486"
+				}
+				"Wearable3"
+				{
+					"ItemDef"		"387"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"509"
+				}
+			}
+		}
 		"Level"		"1"
-		"ModelScale"		"2.1"
+		"ModelScale"		"1.1"
 		"BountyGoldMin"		"0"
 		"BountyGoldMax"		"0"
 		"StatusHealth"		"75"
@@ -9952,6 +10114,10 @@
 				{
 					"ItemDef"		"402"
 				}
+				"Wearable8"
+				{
+					"ItemDef"		"537"
+				}
 			}
 		}
 	}
@@ -10003,6 +10169,10 @@
 				"Wearable4"
 				{
 					"ItemDef"		"294"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"518"
 				}
 			}
 		}
@@ -10304,6 +10474,10 @@
 				{
 					"ItemDef"		"440"
 				}
+				"Wearable6"
+				{
+					"ItemDef"		"520"
+				}
 			}
 		}
 	}
@@ -10587,6 +10761,10 @@
 				{
 					"ItemDef"		"225"
 				}
+				"Wearable7"
+				{
+					"ItemDef"		"521"
+				}
 			}
 		}
 	}
@@ -10734,6 +10912,10 @@
 				"Wearable5"
 				{
 					"ItemDef"		"4540"
+				}
+				"Wearable6"
+				{
+					"ItemDef"		"502"
 				}
 			}
 		}
@@ -10906,6 +11088,10 @@
 				"Wearable4"
 				{
 					"ItemDef"		"482"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"526"
 				}
 			}
 		}
@@ -11200,6 +11386,10 @@
 				"Wearable5"
 				{
 					"ItemDef"		"344"
+				}
+				"Wearable6"
+				{
+					"ItemDef"		"513"
 				}
 			}
 		}

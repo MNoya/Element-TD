@@ -1,7 +1,7 @@
 -- summoner.lua
 -- manages the Elemental Summoner and Elementals
 
-ElementalBaseHealth = {300, 1500, 7500};
+ElementalBaseHealth = {1000, 5000, 25000};
 Particles = {
 	water_elemental = "morphling_ambient",
 	fire_elemental = "phoenix_ambient",
