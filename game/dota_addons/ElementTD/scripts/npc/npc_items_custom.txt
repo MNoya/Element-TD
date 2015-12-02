@@ -4374,12 +4374,12 @@
 		"Cost"		"3500"
 		"Requirements"
 		{
-			"dark"		"1"
-			"dark"		"1"
-			"earth"		"1"
-			"earth"		"1"
-			"light"		"1"
-			"light"		"1"
+			"dark"		"2"
+			"dark"		"2"
+			"earth"		"2"
+			"earth"		"2"
+			"light"		"2"
+			"light"		"2"
 		}
 	}
 	"item_upgrade_to_laser_tower_2_disabled"
@@ -4396,12 +4396,12 @@
 		"Cost"		"3500"
 		"Requirements"
 		{
-			"dark"		"1"
-			"dark"		"1"
-			"earth"		"1"
-			"earth"		"1"
-			"light"		"1"
-			"light"		"1"
+			"dark"		"2"
+			"dark"		"2"
+			"earth"		"2"
+			"earth"		"2"
+			"light"		"2"
+			"light"		"2"
 		}
 	}
 	"item_upgrade_to_hail_tower_2"

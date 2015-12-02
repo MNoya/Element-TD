@@ -5520,7 +5520,7 @@
 		"AttackAcquisitionRange"		"1000"
 		"AttackRate"		"1.5"
 		"ProjectileModel"		"particles/units/heroes/hero_venomancer/venomancer_base_attack.vpcf"
-		"ProjectileSpeed"		"900"
+		"ProjectileSpeed"		"1800"
 		"Model"		"models/props_structures/tower_good.mdl"
 		"ModelScale"		"0.8"
 		"UpgradeIcon"		"towers/gold_tower_arbitrage"
@@ -6269,9 +6269,9 @@
 		"BuildTime"		"4"
 		"Requirements"
 		{
-			"dark"		"1"
-			"earth"		"1"
-			"light"		"1"
+			"dark"		"2"
+			"earth"		"2"
+			"light"		"2"
 		}
 		"Upgrades"
 		{
@@ -8835,7 +8835,7 @@
 		"Element"		"dark"
 		"Ability1"		"dark_armor"
 	}
-	"timber_wolf"
+	"stoneboar"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -8859,163 +8859,13 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/lycan/summon_wolves.mdl"
-		"ModelScale"		"0.9"
-		"BaseClass"		"npc_dota_creature"
-		"SoundSet"		""
-		"Ability1"		"composite_armor"
-	}
-	"potato_bear"
-	{
-		"ArmorPhysical"		"0"
-		"MagicalResistance"		"0"
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"0"
-		"AttackDamageMax"		"0"
-		"AttackRate"		"0"
-		"AttackAnimationPoint"		"0"
-		"AttackAcquisitionRange"		"0"
-		"AttackRange"		"0"
-		"ProjectileModel"		""
-		"ProjectileSpeed"		"0"
-		"RingRadius"		"70"
-		"HealthBarOffset"		"160"
-		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
-		"BountyXP"		"0"
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"		"300"
-		"StatusHealthRegen"		"0"
-		"StatusMana"		"0"
-		"StatusManaRegen"		"0"
-		"VisionDaytimeRange"		"1200"
-		"VisionNighttimeRange"		"800"
-		"Model"		"models/creeps/neutral_creeps/n_creep_beast/n_creep_beast.mdl"
-		"ModelScale"		"0.7"
-		"BaseClass"		"npc_dota_creature"
-		"SoundSet"		""
-		"Ability1"		"composite_armor"
-	}
-	"satyr_trickster"
-	{
-		"ArmorPhysical"		"0"
-		"MagicalResistance"		"0"
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"0"
-		"AttackDamageMax"		"0"
-		"AttackRate"		"0"
-		"AttackAnimationPoint"		"0"
-		"AttackAcquisitionRange"		"0"
-		"AttackRange"		"0"
-		"ProjectileModel"		""
-		"ProjectileSpeed"		"0"
-		"RingRadius"		"70"
-		"HealthBarOffset"		"160"
-		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
-		"BountyXP"		"0"
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"		"300"
-		"StatusHealthRegen"		"0"
-		"StatusMana"		"0"
-		"StatusManaRegen"		"0"
-		"VisionDaytimeRange"		"1200"
-		"VisionNighttimeRange"		"800"
-		"Model"		"models/creeps/neutral_creeps/n_creep_satyr_b/n_creep_satyr_b.mdl"
-		"ModelScale"		"0.9"
-		"BaseClass"		"npc_dota_creature"
-		"SoundSet"		""
-		"Ability1"		"composite_armor"
-	}
-	"ghoul"
-	{
-		"ArmorPhysical"		"0"
-		"MagicalResistance"		"0"
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"0"
-		"AttackDamageMax"		"0"
-		"AttackRate"		"0"
-		"AttackAnimationPoint"		"0"
-		"AttackAcquisitionRange"		"0"
-		"AttackRange"		"0"
-		"ProjectileModel"		""
-		"ProjectileSpeed"		"0"
-		"RingRadius"		"70"
-		"HealthBarOffset"		"160"
-		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
-		"BountyXP"		"0"
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"		"300"
-		"StatusHealthRegen"		"0"
-		"StatusMana"		"0"
-		"StatusManaRegen"		"0"
-		"VisionDaytimeRange"		"1200"
-		"VisionNighttimeRange"		"800"
-		"Model"		"models/creeps/neutral_creeps/n_creep_ghost_b/n_creep_ghost_b.mdl"
-		"ModelScale"		"1.1"
-		"BaseClass"		"npc_dota_creature"
-		"SoundSet"		""
-		"Ability1"		"composite_armor"
-	}
-	"forest_troll"
-	{
-		"ArmorPhysical"		"0"
-		"MagicalResistance"		"0"
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"0"
-		"AttackDamageMax"		"0"
-		"AttackRate"		"0"
-		"AttackAnimationPoint"		"0"
-		"AttackAcquisitionRange"		"0"
-		"AttackRange"		"0"
-		"ProjectileModel"		""
-		"ProjectileSpeed"		"0"
-		"RingRadius"		"70"
-		"HealthBarOffset"		"160"
-		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
-		"BountyXP"		"0"
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"		"300"
-		"StatusHealthRegen"		"0"
-		"StatusMana"		"0"
-		"StatusManaRegen"		"0"
-		"VisionDaytimeRange"		"1200"
-		"VisionNighttimeRange"		"800"
-		"Model"		"models/creeps/neutral_creeps/n_creep_troll_dark_a/n_creep_troll_dark_a.mdl"
-		"ModelScale"		"0.8"
-		"BaseClass"		"npc_dota_creature"
-		"SoundSet"		""
-		"Ability1"		"composite_armor"
-	}
-	"quillboar"
-	{
-		"ArmorPhysical"		"0"
-		"MagicalResistance"		"0"
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"0"
-		"AttackDamageMax"		"0"
-		"AttackRate"		"0"
-		"AttackAnimationPoint"		"0"
-		"AttackAcquisitionRange"		"0"
-		"AttackRange"		"0"
-		"ProjectileModel"		""
-		"ProjectileSpeed"		"0"
-		"RingRadius"		"70"
-		"HealthBarOffset"		"160"
-		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
-		"BountyXP"		"0"
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"		"300"
-		"StatusHealthRegen"		"0"
-		"StatusMana"		"0"
-		"StatusManaRegen"		"0"
-		"VisionDaytimeRange"		"1200"
-		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/beastmaster/beastmaster_beast.mdl"
+		"Model"		"models/courier/yak/yak.vmdl"
 		"ModelScale"		"0.7"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"Ability1"		"earth_armor"
 	}
-	"deepseer"
+	"flying_imp"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -9039,39 +8889,13 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/siren/siren.mdl"
+		"Model"		"models/courier/smeevil_magic_carpet/smeevil_magic_carpet_flying.vmdl"
 		"ModelScale"		"1"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"Ability1"		"water_armor"
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1"
-				{
-					"ItemDef"		"312"
-				}
-				"Wearable2"
-				{
-					"ItemDef"		"191"
-				}
-				"Wearable3"
-				{
-					"ItemDef"		"192"
-				}
-				"Wearable4"
-				{
-					"ItemDef"		"193"
-				}
-				"Wearable5"
-				{
-					"ItemDef"		"194"
-				}
-			}
-		}
 	}
-	"succubus"
+	"lava_spawn"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -9095,35 +8919,13 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/queenofpain/queenofpain.vmdl"
+		"Model"		"models/items/courier/vaal_the_animated_constructdire/vaal_the_animated_constructdire.vmdl"
 		"ModelScale"		"0.9"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"Ability1"		"fire_armor"
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1"
-				{
-					"ItemDef"		"82"
-				}
-				"Wearable2"
-				{
-					"ItemDef"		"83"
-				}
-				"Wearable3"
-				{
-					"ItemDef"		"84"
-				}
-				"Wearable4"
-				{
-					"ItemDef"		"26"
-				}
-			}
-		}
 	}
-	"undead_treant"
+	"shroomling"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -9147,7 +8949,7 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/furion/treant.mdl"
+		"Model"		"models/items/furion/treant/shroomling_treant/shroomling_treant.vmdl"
 		"ModelScale"		"1.0"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
@@ -9155,7 +8957,7 @@
 		"Ability1"		"nature_armor"
 		"Ability2"		"creep_ability_undead"
 	}
-	"paladin"
+	"snowy_owl"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -9179,41 +8981,11 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/omniknight/omniknight.mdl"
-		"ModelScale"		"0.8"
+		"Model"		"models/items/courier/snowl/snowl_flying.vmdl"
+		"ModelScale"		"1"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"Ability1"		"light_armor"
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1"
-				{
-					"ItemDef"		"13"
-				}
-				"Wearable2"
-				{
-					"ItemDef"		"42"
-				}
-				"Wearable3"
-				{
-					"ItemDef"		"43"
-				}
-				"Wearable4"
-				{
-					"ItemDef"		"44"
-				}
-				"Wearable5"
-				{
-					"ItemDef"		"45"
-				}
-				"Wearable6"
-				{
-					"ItemDef"		"46"
-				}
-			}
-		}
 	}
 	"centaur"
 	{
@@ -9239,15 +9011,45 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/creeps/neutral_creeps/n_creep_centaur_lrg/n_creep_centaur_lrg.mdl"
-		"ModelScale"		"0.9"
+		"Model"		"models/heroes/centaur/centaur.vmdl"
+		"ModelScale"		"0.7"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepFast"
 		"Ability1"		"earth_armor"
 		"Ability2"		"creep_ability_fast"
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"358"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"363"
+				}
+				"Wearable3"
+				{
+					"ItemDef"		"361"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"4845"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"359"
+				}
+				"Wearable6"
+				{
+					"ItemDef"		"362"
+				}
+			}
+		}
 	}
-	"sludge_minion"
+	"zombie"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -9271,14 +9073,13 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/enigma/eidelon.mdl"
+		"Model"		"models/creeps/lane_creeps/creep_bad_melee_diretide/creep_bad_melee_diretide.vmdl"
 		"ModelScale"		"1.15"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
-		"ParticleEffect"		"particles/units/heroes/hero_enigma/enigma_eidolon_ambient.vpcf"
 		"Ability1"		"dark_armor"
 	}
-	"naga_myrmidon"
+	"shimmering_spirit"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -9302,37 +9103,15 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/slardar/slardar.mdl"
-		"ModelScale"		"0.75"
+		"Model"		"models/heroes/elder_titan/ancestral_spirit.vmdl"
+		"ModelScale"		"0.6"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepImage"
 		"Ability1"		"water_armor"
 		"Ability2"		""
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1"
-				{
-					"ItemDef"		"273"
-				}
-				"Wearable2"
-				{
-					"ItemDef"		"274"
-				}
-				"Wearable3"
-				{
-					"ItemDef"		"275"
-				}
-				"Wearable4"
-				{
-					"ItemDef"		"276"
-				}
-			}
-		}
 	}
-	"fel_beast"
+	"torchbearer"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -9356,45 +9135,15 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/blood_seeker/blood_seeker.mdl"
-		"ModelScale"		"1"
+		"Model"		"models/items/warlock/golem/the_torchbearer/the_torchbearer.vmdl"
+		"ModelScale"		"0.7"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepHeal"
 		"Ability1"		"fire_armor"
 		"Ability2"		"creep_ability_heal"
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1"
-				{
-					"ItemDef"		"69"
-				}
-				"Wearable2"
-				{
-					"ItemDef"		"70"
-				}
-				"Wearable3"
-				{
-					"ItemDef"		"71"
-				}
-				"Wearable4"
-				{
-					"ItemDef"		"72"
-				}
-				"Wearable5"
-				{
-					"ItemDef"		"73"
-				}
-				"Wearable6"
-				{
-					"ItemDef"		"74"
-				}
-			}
-		}
 	}
-	"crystal_arachnid"
+	"ivory_beast"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -9418,13 +9167,13 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/items/broodmother/spiderling/spiderling_dlotus_red/spiderling_dlotus_red.vmdl"
+		"Model"		"models/creeps/neutral_creeps/n_creep_thunder_lizard/n_creep_thunder_lizard_big.vmdl"
 		"ModelScale"		"0.55"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"Ability1"		"light_armor"
 	}
-	"dark_minion"
+	"skeletal_corruptor"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -9448,7 +9197,7 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/dark_seer/dark_seer.vmdl"
+		"Model"		"models/heroes/pugna/pugna.vmdl"
 		"ModelScale"		"1.1"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
@@ -9461,19 +9210,27 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"		"349"
+					"ItemDef"		"153"
 				}
 				"Wearable2"
 				{
-					"ItemDef"		"350"
+					"ItemDef"		"157"
 				}
 				"Wearable3"
 				{
-					"ItemDef"		"351"
+					"ItemDef"		"155"
 				}
 				"Wearable4"
 				{
-					"ItemDef"		"352"
+					"ItemDef"		"154"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"167"
+				}
+				"Wearable6"
+				{
+					"ItemDef"		"156"
 				}
 			}
 		}
@@ -9508,7 +9265,7 @@
 		"SoundSet"		""
 		"Ability1"		"nature_armor"
 	}
-	"rogue_knight"
+	"Satyr"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -9532,41 +9289,15 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/sven/sven.vmdl"
+		"Model"		"models/creeps/neutral_creeps/n_creep_satyr_c/n_creep_satyr_c.vmdl"
 		"ModelScale"		"1"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepFast"
 		"Ability1"		"composite_armor"
 		"Ability2"		"creep_ability_fast"
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1"
-				{
-					"ItemDef"		"16"
-				}
-				"Wearable2"
-				{
-					"ItemDef"		"17"
-				}
-				"Wearable3"
-				{
-					"ItemDef"		"18"
-				}
-				"Wearable4"
-				{
-					"ItemDef"		"19"
-				}
-				"Wearable5"
-				{
-					"ItemDef"		"20"
-				}
-			}
-		}
 	}
-	"priest"
+	"paladin"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -9590,8 +9321,8 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/dazzle/dazzle.vmdl"
-		"ModelScale"		"1"
+		"Model"		"models/heroes/omniknight/omniknight.mdl"
+		"ModelScale"		"0.8"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepHeal"
@@ -9603,24 +9334,32 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"		"263"
+					"ItemDef"		"13"
 				}
 				"Wearable2"
 				{
-					"ItemDef"		"264"
+					"ItemDef"		"42"
 				}
 				"Wearable3"
 				{
-					"ItemDef"		"266"
+					"ItemDef"		"43"
 				}
 				"Wearable4"
 				{
-					"ItemDef"		"265"
+					"ItemDef"		"44"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"45"
+				}
+				"Wearable6"
+				{
+					"ItemDef"		"46"
 				}
 			}
 		}
 	}
-	"siege_catapult"
+	"rock_monster"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -9644,7 +9383,7 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/creeps/lane_creeps/creep_good_siege/creep_good_siege.vmdl"
+		"Model"		"models/creeps/neutral_creeps/n_creep_golem_a/neutral_creep_golem_a.vmdl"
 		"ModelScale"		"0.65"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
@@ -9652,7 +9391,7 @@
 		"Ability1"		"earth_armor"
 		"Ability2"		"creep_ability_mechanical"
 	}
-	"fire_revenant"
+	"fire_acolyte"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -9676,37 +9415,15 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/brewmaster/brewmaster_firespirit.vmdl"
+		"Model"		"models/creeps/lane_creeps/creep_bad_ranged/lane_dire_ranged.vmdl"
 		"ModelScale"		"1.3"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepUndead"
 		"Ability1"		"fire_armor"
 		"Ability2"		"creep_ability_undead"
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1"
-				{
-					"ItemDef"		"462"
-				}
-				"Wearable2"
-				{
-					"ItemDef"		"469"
-				}
-				"Wearable3"
-				{
-					"ItemDef"		"471"
-				}
-				"Wearable4"
-				{
-					"ItemDef"		"474"
-				}
-			}
-		}
 	}
-	"bandit"
+	"robot_soldier"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -9730,8 +9447,8 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/bounty_hunter/bounty_hunter.vmdl"
-		"ModelScale"		"1.1"
+		"Model"		"models/heroes/rattletrap/rattletrap.vmdl"
+		"ModelScale"		"1.0"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"Ability1"		"composite_armor"
@@ -9741,20 +9458,24 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"		"53"
+					"ItemDef"		"484"
 				}
 				"Wearable2"
 				{
-					"ItemDef"		"54"
+					"ItemDef"		"485"
 				}
 				"Wearable3"
 				{
-					"ItemDef"		"55"
+					"ItemDef"		"231"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"446"
 				}
 			}
 		}
 	}
-	"corrupted_treant"
+	"treant"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -9818,7 +9539,7 @@
 		"Ability1"		"water_armor"
 		"Ability2"		"creep_ability_mechanical"
 	}
-	"doomguard"
+	"black_wyvern"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -9842,45 +9563,75 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/doom/doom.vmdl"
-		"ModelScale"		"0.8"
+		"Model"		"models/creeps/neutral_creeps/n_creep_black_dragon/n_creep_black_dragon.vmdl"
+		"ModelScale"		"0.7"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepFast"
 		"Ability1"		"dark_armor"
 		"Ability2"		"creep_ability_fast"
+	}
+	"crimson_slayer"
+	{
+		"ArmorPhysical"		"0"
+		"MagicalResistance"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"0"
+		"AttackDamageMax"		"0"
+		"AttackRate"		"0"
+		"AttackAnimationPoint"		"0"
+		"AttackAcquisitionRange"		"0"
+		"AttackRange"		"0"
+		"ProjectileModel"		""
+		"ProjectileSpeed"		"0"
+		"RingRadius"		"70"
+		"HealthBarOffset"		"160"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"BountyXP"		"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"		"300"
+		"StatusHealthRegen"		"0"
+		"StatusMana"		"0"
+		"StatusManaRegen"		"0"
+		"VisionDaytimeRange"		"1200"
+		"VisionNighttimeRange"		"800"
+		"Model"		"models/heroes/dragon_knight/dragon_knight.vmdl"
+		"ModelScale"		"1.0"
+		"BaseClass"		"npc_dota_creature"
+		"SoundSet"		""
+		"Ability1"		"fire_armor"
 		"Creature"
 		{
 			"AttachWearables"
 			{
 				"Wearable1"
 				{
-					"ItemDef"		"233"
+					"ItemDef"		"4443"
 				}
 				"Wearable2"
 				{
-					"ItemDef"		"234"
+					"ItemDef"		"65"
 				}
 				"Wearable3"
 				{
-					"ItemDef"		"235"
+					"ItemDef"		"67"
 				}
 				"Wearable4"
 				{
-					"ItemDef"		"236"
+					"ItemDef"		"64"
 				}
 				"Wearable5"
 				{
-					"ItemDef"		"237"
+					"ItemDef"		"63"
 				}
 				"Wearable6"
 				{
-					"ItemDef"		"238"
+					"ItemDef"		"68"
 				}
 			}
 		}
 	}
-	"fel_guard"
+	"solar_templar"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -9904,45 +9655,37 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/courier/imp/imp.vmdl"
-		"ModelScale"		"1.25"
-		"BaseClass"		"npc_dota_creature"
-		"SoundSet"		""
-		"Ability1"		"fire_armor"
-	}
-	"snowy_owl"
-	{
-		"ArmorPhysical"		"0"
-		"MagicalResistance"		"0"
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"0"
-		"AttackDamageMax"		"0"
-		"AttackRate"		"0"
-		"AttackAnimationPoint"		"0"
-		"AttackAcquisitionRange"		"0"
-		"AttackRange"		"0"
-		"ProjectileModel"		""
-		"ProjectileSpeed"		"0"
-		"RingRadius"		"70"
-		"HealthBarOffset"		"160"
-		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
-		"BountyXP"		"0"
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"		"300"
-		"StatusHealthRegen"		"0"
-		"StatusMana"		"0"
-		"StatusManaRegen"		"0"
-		"VisionDaytimeRange"		"1200"
-		"VisionNighttimeRange"		"800"
-		"Model"		"models/items/courier/snowl/snowl_flying.vmdl"
-		"ModelScale"		"1.25"
+		"Model"		"models/heroes/silencer/silencer.vmdl"
+		"ModelScale"		"1"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepImage"
 		"Ability1"		"light_armor"
 		"Ability2"		""
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"301"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"302"
+				}
+				"Wearable3"
+				{
+					"ItemDef"		"303"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"304"
+				}
+			}
+		}
 	}
-	"furbolg_tracker"
+	"tribal_priest"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -9966,7 +9709,7 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/creeps/neutral_creeps/n_creep_gnoll/n_creep_gnoll_frost.vmdl"
+		"Model"		"models/creeps/lane_creeps/creep_radiant_ranged/radiant_ranged.vmdl"
 		"ModelScale"		"1.15"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
@@ -9974,7 +9717,7 @@
 		"Ability1"		"nature_armor"
 		"Ability2"		"creep_ability_heal"
 	}
-	"draenei_protector"
+	"void_incarnate"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -9998,13 +9741,27 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/creeps/neutral_creeps/n_creep_troll_dark_b/n_creep_troll_dark_frost.vmdl"
-		"ModelScale"		"1"
+		"Model"		"models/heroes/enigma/enigma.vmdl"
+		"ModelScale"		"0.9"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"Ability1"		"dark_armor"
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"498"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"559"
+				}
+			}
+		}
 	}
-	"plague_rat"
+	"frankenstein"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10028,13 +9785,27 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/enigma/eidelon.mdl"
-		"ModelScale"		"1.15"
+		"Model"		"models/heroes/pudge/pudge.vmdl"
+		"ModelScale"		"0.9"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepUndead"
 		"Ability1"		"earth_armor"
 		"Ability2"		"creep_ability_undead"
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"260"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"259"
+				}
+			}
+		}
 	}
 	"admiral"
 	{
@@ -10160,7 +9931,7 @@
 			}
 		}
 	}
-	"giant_spider"
+	"giant_cobra"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10184,7 +9955,7 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/broodmother/broodmother.vmdl"
+		"Model"		"models/heroes/venomancer/venomancer.vmdl"
 		"ModelScale"		"1"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
@@ -10195,20 +9966,24 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"		"101"
+					"ItemDef"		"291"
 				}
 				"Wearable2"
 				{
-					"ItemDef"		"102"
+					"ItemDef"		"292"
 				}
 				"Wearable3"
 				{
-					"ItemDef"		"103"
+					"ItemDef"		"293"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"294"
 				}
 			}
 		}
 	}
-	"red_dragon"
+	"ember_spirit"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10232,13 +10007,39 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/twin_headed_dragon/twin_headed_dragon.vmdl"
-		"ModelScale"		"0.8"
+		"Model"		"models/heroes/ember_spirit/ember_spirit.vmdl"
+		"ModelScale"		"0.9"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"Ability1"		"fire_armor"
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"471"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"472"
+				}
+				"Wearable3"
+				{
+					"ItemDef"		"473"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"474"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"469"
+				}
+			}
+		}
 	}
-	"shadow_wolf"
+	"necromancer"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10262,15 +10063,41 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/enigma/eidelon.mdl"
-		"ModelScale"		"1.15"
+		"Model"		"models/heroes/lich/lich.vmdl"
+		"ModelScale"		"1.0"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepHeal"
 		"Ability1"		"dark_armor"
 		"Ability2"		"creep_ability_heal"
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"331"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"332"
+				}
+				"Wearable3"
+				{
+					"ItemDef"		"333"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"334"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"506"
+				}
+			}
+		}
 	}
-	"parrot"
+	"ancient_apparition"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10294,13 +10121,23 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/courier/skippy_parrot/skippy_parrot_flying.vmdl"
-		"ModelScale"		"1.15"
+		"Model"		"models/heroes/ancient_apparition/ancient_apparition.vmdl"
+		"ModelScale"		"1.0"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"Ability1"		"water_armor"
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"501"
+				}
+			}
+		}
 	}
-	"lockjaw"
+	"radiant_golem"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10324,15 +10161,15 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/courier/lockjaw/lockjaw.vmdl"
-		"ModelScale"		"1.15"
+		"Model"		"models/items/courier/vaal_the_animated_constructradiant/vaal_the_animated_constructradiant.vmdl"
+		"ModelScale"		"1.3"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepMechanical"
 		"Ability1"		"light_armor"
 		"Ability2"		"creep_ability_mechanical"
 	}
-	"battle_golem"
+	"phantom_lancer"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10356,15 +10193,41 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/creeps/neutral_creeps/n_creep_golem_a/neutral_creep_golem_a.vmdl"
+		"Model"		"models/heroes/phantom_lancer/phantom_lancer.vmdl"
 		"ModelScale"		"1"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepImage"
 		"Ability1"		"composite_armor"
 		"Ability2"		""
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"127"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"128"
+				}
+				"Wearable3"
+				{
+					"ItemDef"		"129"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"130"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"4242"
+				}
+			}
+		}
 	}
-	"kobold_shoveler"
+	"mountain_porcupine"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10388,13 +10251,39 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/creeps/neutral_creeps/n_creep_kobold/kobold_a/n_creep_kobold_a.vmdl"
-		"ModelScale"		"1.15"
+		"Model"		"models/heroes/bristleback/bristleback.vmdl"
+		"ModelScale"		"1.0"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"Ability1"		"earth_armor"
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"436"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"437"
+				}
+				"Wearable3"
+				{
+					"ItemDef"		"438"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"439"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"440"
+				}
+			}
+		}
 	}
-	"thunder_lizard"
+	"elf_ranger"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10418,15 +10307,41 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/creeps/neutral_creeps/n_creep_thunder_lizard/n_creep_thunder_lizard_big.vmdl"
-		"ModelScale"		"0.6"
+		"Model"		"models/heroes/windrunner/windrunner.vmdl"
+		"ModelScale"		"1.0"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepFast"
 		"Ability1"		"nature_armor"
 		"Ability2"		"creep_ability_fast"
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"21"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"22"
+				}
+				"Wearable3"
+				{
+					"ItemDef"		"23"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"24"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"25"
+				}
+			}
+		}
 	}
-	"sea_dragon"
+	"leviathan"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10450,15 +10365,37 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/items/courier/green_jade_dragon/green_jade_dragon.vmdl"
-		"ModelScale"		"1.15"
+		"Model"		"models/heroes/tidehunter/tidehunter.vmdl"
+		"ModelScale"		"1.0"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepUndead"
 		"Ability1"		"water_armor"
 		"Ability2"		"creep_ability_undead"
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"34"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"35"
+				}
+				"Wearable3"
+				{
+					"ItemDef"		"36"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"37"
+				}
+			}
+		}
 	}
-	"dreadlord"
+	"dark_stalker"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10513,7 +10450,7 @@
 			}
 		}
 	}
-	"sand_lobster"
+	"tauren"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10537,8 +10474,8 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/sand_king/sand_king.vmdl"
-		"ModelScale"		"0.8"
+		"Model"		"models/heroes/earthshaker/earthshaker.vmdl"
+		"ModelScale"		"0.9"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepHeal"
@@ -10550,28 +10487,24 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"		"180"
+					"ItemDef"		"459"
 				}
 				"Wearable2"
 				{
-					"ItemDef"		"198"
+					"ItemDef"		"460"
 				}
 				"Wearable3"
 				{
-					"ItemDef"		"199"
+					"ItemDef"		"461"
 				}
 				"Wearable4"
 				{
-					"ItemDef"		"200"
-				}
-				"Wearable5"
-				{
-					"ItemDef"		"201"
+					"ItemDef"		"462"
 				}
 			}
 		}
 	}
-	"wisp"
+	"sun_chaser"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10595,15 +10528,45 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/wisp/wisp.vmdl"
-		"ModelScale"		"1.15"
+		"Model"		"models/heroes/chen/chen.vmdl"
+		"ModelScale"		"1.0"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepFast"
 		"Ability1"		"light_armor"
 		"Ability2"		"creep_ability_fast"
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"220"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"221"
+				}
+				"Wearable3"
+				{
+					"ItemDef"		"222"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"223"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"224"
+				}
+				"Wearable6"
+				{
+					"ItemDef"		"225"
+				}
+			}
+		}
 	}
-	"vengeful_spirit"
+	"rogue_knight"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10627,7 +10590,7 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/vengeful/vengeful.vmdl"
+		"Model"		"models/heroes/sven/sven.vmdl"
 		"ModelScale"		"1"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
@@ -10638,24 +10601,28 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"		"441"
+					"ItemDef"		"16"
 				}
 				"Wearable2"
 				{
-					"ItemDef"		"5344"
+					"ItemDef"		"17"
 				}
 				"Wearable3"
 				{
-					"ItemDef"		"445"
+					"ItemDef"		"18"
 				}
 				"Wearable4"
 				{
-					"ItemDef"		"447"
+					"ItemDef"		"19"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"20"
 				}
 			}
 		}
 	}
-	"demolisher"
+	"inferno_golem"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10679,7 +10646,7 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/items/courier/starladder_grillhound/starladder_grillhound.vmdl"
+		"Model"		"models/items/warlock/golem/obsidian_golem/obsidian_golem.vmdl"
 		"ModelScale"		"1.15"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
@@ -10687,7 +10654,7 @@
 		"Ability1"		"fire_armor"
 		"Ability2"		"creep_ability_mechanical"
 	}
-	"octopus"
+	"crystal_maiden"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10711,13 +10678,39 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/courier/octopus/octopus.vmdl"
-		"ModelScale"		"1.15"
+		"Model"		"models/heroes/crystal_maiden/crystal_maiden.vmdl"
+		"ModelScale"		"1.2"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"Ability1"		"water_armor"
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"38"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"39"
+				}
+				"Wearable3"
+				{
+					"ItemDef"		"40"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"41"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"20"
+				}
+			}
+		}
 	}
-	"ghost"
+	"immortal"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10741,15 +10734,45 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/creeps/neutral_creeps/n_creep_ghost_a/n_creep_ghost_a.vmdl"
+		"Model"		"models/heroes/skywrath_mage/skywrath_mage.vmdl"
 		"ModelScale"		"1.15"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepUndead"
 		"Ability1"		"light_armor"
 		"Ability2"		"creep_ability_undead"
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"420"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"421"
+				}
+				"Wearable3"
+				{
+					"ItemDef"		"422"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"423"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"424"
+				}
+				"Wearable6"
+				{
+					"ItemDef"		"425"
+				}
+			}
+		}
 	}
-	"black_drake"
+	"shadow_hunter"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10773,13 +10796,39 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/creeps/neutral_creeps/n_creep_black_drake/n_creep_black_drake.vmdl"
-		"ModelScale"		"0.9"
+		"Model"		"models/heroes/faceless_void/faceless_void.vmdl"
+		"ModelScale"		"1.0"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"Ability1"		"dark_armor"
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"90"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"91"
+				}
+				"Wearable3"
+				{
+					"ItemDef"		"92"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"93"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"4264"
+				}
+			}
+		}
 	}
-	"mechanical_mediary"
+	"gaias_titan"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10803,15 +10852,37 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/courier/courier_mech/courier_mech.vmdl"
+		"Model"		"models/heroes/earth_spirit/earth_spirit.vmdl"
 		"ModelScale"		"1.15"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepMechanical"
 		"Ability1"		"nature_armor"
 		"Ability2"		"creep_ability_mechanical"
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"479"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"480"
+				}
+				"Wearable3"
+				{
+					"ItemDef"		"481"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"482"
+				}
+			}
+		}
 	}
-	"harpy_rogue"
+	"desert_giant"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10835,15 +10906,41 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/creeps/neutral_creeps/n_creep_harpy_a/n_creep_harpy_a.vmdl"
-		"ModelScale"		"0.9"
+		"Model"		"models/heroes/elder_titan/elder_titan.vmdl"
+		"ModelScale"		"0.8"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepImage"
 		"Ability1"		"earth_armor"
 		"Ability2"		""
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"426"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"427"
+				}
+				"Wearable3"
+				{
+					"ItemDef"		"428"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"429"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"430"
+				}
+			}
+		}
 	}
-	"batrider"
+	"speed_demon"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10867,7 +10964,7 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/batrider/batrider.vmdl"
+		"Model"		"models/heroes/doom/doom.vmdl"
 		"ModelScale"		"0.8"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
@@ -10880,19 +10977,31 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"		"375"
+					"ItemDef"		"232"
 				}
 				"Wearable2"
 				{
-					"ItemDef"		"376"
+					"ItemDef"		"233"
 				}
 				"Wearable3"
 				{
-					"ItemDef"		"377"
+					"ItemDef"		"234"
 				}
 				"Wearable4"
 				{
-					"ItemDef"		"378"
+					"ItemDef"		"235"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"236"
+				}
+				"Wearable6"
+				{
+					"ItemDef"		"237"
+				}
+				"Wearable7"
+				{
+					"ItemDef"		"238"
 				}
 			}
 		}
@@ -10957,7 +11066,7 @@
 			}
 		}
 	}
-	"green_dragon"
+	"forest_guardian"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -10981,13 +11090,35 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/courier/sillydragon/sillydragon_flying.vmdl"
-		"ModelScale"		"1.05"
+		"Model"		"models/heroes/treant_protector/treant_protector.vmdl"
+		"ModelScale"		"1.0"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"Ability1"		"nature_armor"
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"227"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"228"
+				}
+				"Wearable3"
+				{
+					"ItemDef"		"229"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"230"
+				}
+			}
+		}
 	}
-	"leviathan"
+	"poseidon"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -11011,8 +11142,8 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/tidehunter/tidehunter.vmdl"
-		"ModelScale"		"0.85"
+		"Model"		"models/heroes/razor/razor.vmdl"
+		"ModelScale"		"1.0"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepHeal"
@@ -11024,24 +11155,28 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"		"34"
+					"ItemDef"		"340"
 				}
 				"Wearable2"
 				{
-					"ItemDef"		"35"
+					"ItemDef"		"341"
 				}
 				"Wearable3"
 				{
-					"ItemDef"		"36"
+					"ItemDef"		"342"
 				}
 				"Wearable4"
 				{
-					"ItemDef"		"37"
+					"ItemDef"		"343"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"344"
 				}
 			}
 		}
 	}
-	"dragon_knight"
+	"death_knight"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -11065,7 +11200,7 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/dragon_knight/dragon_knight.vmdl"
+		"Model"		"models/heroes/abaddon/abaddon.vmdl"
 		"ModelScale"		"1"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
@@ -11078,32 +11213,28 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"		"63"
+					"ItemDef"		"454"
 				}
 				"Wearable2"
 				{
-					"ItemDef"		"64"
+					"ItemDef"		"455"
 				}
 				"Wearable3"
 				{
-					"ItemDef"		"65"
+					"ItemDef"		"456"
 				}
 				"Wearable4"
 				{
-					"ItemDef"		"66"
+					"ItemDef"		"457"
 				}
 				"Wearable5"
 				{
-					"ItemDef"		"67"
-				}
-				"Wearable6"
-				{
-					"ItemDef"		"68"
+					"ItemDef"		"458"
 				}
 			}
 		}
 	}
-	"lava_runner"
+	"chaos_rider"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -11127,15 +11258,41 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/invoker/forge_spirit.vmdl"
+		"Model"		"models/heroes/chaos_knight/chaos_knight.vmdl"
 		"ModelScale"		"1"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepImage"
 		"Ability1"		"fire_armor"
 		"Ability2"		""
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"181"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"183"
+				}
+				"Wearable3"
+				{
+					"ItemDef"		"184"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"185"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"186"
+				}
+			}
+		}
 	}
-	"infernal_contraption"
+	"dreadlord"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -11159,7 +11316,7 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/creeps/lane_creeps/creep_bad_siege/creep_bad_siege.vmdl"
+		"Model"		"models/heroes/terrorblade/demon.vmdl"
 		"ModelScale"		"1"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
@@ -11167,7 +11324,7 @@
 		"Ability1"		"dark_armor"
 		"Ability2"		"creep_ability_mechanical"
 	}
-	"mountain_giant"
+	"sand_king"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -11191,42 +11348,12 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/tiny_03/tiny_03.vmdl"
-		"ModelScale"		"1"
-		"BaseClass"		"npc_dota_creature"
-		"SoundSet"		""
-		"Ability1"		"earth_armor"
-	}
-	"necrolyte"
-	{
-		"ArmorPhysical"		"0"
-		"MagicalResistance"		"0"
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"0"
-		"AttackDamageMax"		"0"
-		"AttackRate"		"0"
-		"AttackAnimationPoint"		"0"
-		"AttackAcquisitionRange"		"0"
-		"AttackRange"		"0"
-		"ProjectileModel"		""
-		"ProjectileSpeed"		"0"
-		"RingRadius"		"70"
-		"HealthBarOffset"		"160"
-		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
-		"BountyXP"		"0"
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"		"300"
-		"StatusHealthRegen"		"0"
-		"StatusMana"		"0"
-		"StatusManaRegen"		"0"
-		"VisionDaytimeRange"		"1200"
-		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/necrolyte/necrolyte.vmdl"
-		"ModelScale"		"1.15"
+		"Model"		"models/heroes/sand_king/sand_king.vmdl"
+		"ModelScale"		"0.8"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepHeal"
-		"Ability1"		"composite_armor"
+		"Ability1"		"earth_armor"
 		"Ability2"		"creep_ability_heal"
 		"Creature"
 		{
@@ -11234,22 +11361,58 @@
 			{
 				"Wearable1"
 				{
-					"ItemDef"		"211"
+					"ItemDef"		"180"
 				}
 				"Wearable2"
 				{
-					"ItemDef"		"212"
+					"ItemDef"		"198"
 				}
 				"Wearable3"
 				{
-					"ItemDef"		"213"
+					"ItemDef"		"199"
 				}
 				"Wearable4"
 				{
-					"ItemDef"		"214"
+					"ItemDef"		"200"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"201"
 				}
 			}
 		}
+	}
+	"roshan"
+	{
+		"ArmorPhysical"		"0"
+		"MagicalResistance"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"0"
+		"AttackDamageMax"		"0"
+		"AttackRate"		"0"
+		"AttackAnimationPoint"		"0"
+		"AttackAcquisitionRange"		"0"
+		"AttackRange"		"0"
+		"ProjectileModel"		""
+		"ProjectileSpeed"		"0"
+		"RingRadius"		"70"
+		"HealthBarOffset"		"160"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"BountyXP"		"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"		"300"
+		"StatusHealthRegen"		"0"
+		"StatusMana"		"0"
+		"StatusManaRegen"		"0"
+		"VisionDaytimeRange"		"1200"
+		"VisionNighttimeRange"		"800"
+		"Model"		"models/creeps/roshan/roshan.vmdl"
+		"ModelScale"		"0.9"
+		"BaseClass"		"npc_dota_creature"
+		"SoundSet"		""
+		"ScriptClass"		"CreepHeal"
+		"Ability1"		"composite_armor"
+		"Ability2"		"creep_ability_heal"
 	}
 	"icefrog"
 	{
@@ -11276,7 +11439,7 @@
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
 		"Model"		"models/courier/frog/frog.vmdl"
-		"ModelScale"		"1.15"
+		"ModelScale"		"1.2"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"Ability1"		"composite_armor"
