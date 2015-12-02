@@ -1,0 +1,20 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/custom_loading_screen.css" />
+    </styles>
+    <script>
+        $.Msg( "Compiled Panorama Loading Screen!" );
+    </script>
+    <Panel class="ETDLoadingRoot">
+        <Panel id="seq" >
+            <Image id="seq_bg" class="SeqBg" src="file://{images}/custom_game/loading_screen/karawasa_bg.png" />
+            <Image id="seq_light" class="SeqImg" src="file://{images}/custom_game/loading_screen/light.png" />
+            <Image id="seq_dark" class="SeqImg" src="file://{images}/custom_game/loading_screen/dark.png" />
+            <Image id="seq_water" class="SeqImg" src="file://{images}/custom_game/loading_screen/water.png" />
+            <Image id="seq_fire" class="SeqImg" src="file://{images}/custom_game/loading_screen/fire.png" />
+            <Image id="seq_nature" class="SeqImg" src="file://{images}/custom_game/loading_screen/nature.png" />
+            <Image id="seq_earth" class="SeqImg" src="file://{images}/custom_game/loading_screen/earth.png" />
+            <Image id="seq_fg" class="SeqBg" src="file://{images}/custom_game/loading_screen/karawasa.png" />
+        </Panel>
+    </Panel>
+</root>
