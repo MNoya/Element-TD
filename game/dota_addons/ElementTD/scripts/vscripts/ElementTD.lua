@@ -88,6 +88,12 @@ function ElementTD:InitGameMode()
     base_game_mode:SetCustomGameForceHero( "npc_dota_hero_keeper_of_the_light" ) -- Skip hero pick screen
     ------------------------------------------------------
 
+    -- Allow cosmetic swapping
+    SendToServerConsole( "dota_combine_models 0" )
+
+    -- Don't end the game if everyone is unassigned
+    SendToServerConsole("dota_surrender_on_disconnect 0")
+
     print("\n\nLoaded Element Tower Defense!\n\n");
 end
 
