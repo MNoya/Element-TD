@@ -1,0 +1,134 @@
+@define TotalLength: 30s;
+@define LengthLight: 4s;
+@define TimingFunc: linear;
+@define IterationCount: 1;
+
+.ETDLoadingRoot
+{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    overflow: clip;
+}
+
+#GameModeDescription
+{
+    font-size: 27px;
+	text-transform: uppercase;
+	color: #cccccc;
+}
+
+#GameModeHints
+{
+	margin: 10px;
+	font-size: 18px;
+	color: #8f9092;
+}
+
+#GameModeImage
+{
+	horizontal-align: center;
+	width: 200px;
+	height: 150px;
+
+	box-shadow: inset black 5px 5px 10px 10px;
+}
+
+#TitlePanel
+{
+	horizontal-align: left;
+	vertical-align: bottom;
+	margin-bottom: 120px;
+	margin-left: 80px;
+	flow-children: right;
+}
+
+#ETDTitle
+{
+	margin-bottom: -15px;
+	vertical-align: center;
+	text-transform: uppercase;
+	font-size: 74px;
+	color: #cccccc;
+	text-shadow: 2px 2px 2px #000000;
+}
+
+.SeqImg
+{
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100% 100%;
+	opacity: 0;
+}
+
+.SeqBg
+{
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100% 100%;
+}
+
+#seq
+{
+    overflow: clip;
+}
+
+#seq_light
+{
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100% 100%;
+	animation-name: seq_l;
+	animation-duration: LengthLight;
+	animation-timing-function: TimingFunc;
+	animation-iteration-count: IterationCount;
+}
+
+#seq_dark
+{
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100% 100%;
+	opacity: 0;
+}
+
+#seq_water
+{
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100% 100%;
+}
+
+#seq_fire
+{
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100% 100%;
+}
+
+#seq_nature
+{
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100% 100%;
+}
+
+#seq_earth
+{
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100% 100%;
+}
+
+@keyframes 'seq_l'
+{
+	0%
+	{
+	    transform: translateY( 100px );
+	    pre-transform-scale2d: 0.8, 0.8;
+	}
+
+	100%
+	{
+	}
+}
