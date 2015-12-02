@@ -3,10 +3,7 @@
 
 ElementalBaseHealth = {1000, 5000, 25000};
 Particles = {
-	water_elemental = "morphling_ambient",
-	fire_elemental = "phoenix_ambient",
-	light_elemental = "keeper_of_the_light_spirit_form_ambient",
-	dark_elemental = "obsidian_destroyer_smoke"
+	light_elemental = "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_spirit_form_ambient.vpcf",
 };
 
 function ModifyLumber(playerID, amount)
