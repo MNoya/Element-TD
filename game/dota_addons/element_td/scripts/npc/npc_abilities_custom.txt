@@ -298,6 +298,11 @@
 						"Target" 			"TARGET"
 						"EffectName"		"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf"
 						"EffectAttachType"	"follow_origin"
+						"ControlPointEntities"
+						{
+							"TARGET" "attach_origin"
+							"TARGET" "attach_origin"
+						}
 					}
 				}
 			}
@@ -392,18 +397,54 @@
 		}
 	}
 
+	//============================================================//
+	// Creep Ability: Swarm										  //
+	//============================================================//
+	"creep_ability_swarm"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"phantom_lancer_juxtapose"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bounty"				"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health"				"50"
+			}
+		}
 
+		"Modifiers"
+		{
+			"modifier_swarm_passive"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
 
-
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"Target"			"CASTER"
+						"ScriptFile"		"scripts/vscripts/creeps/creepevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnTakeDamage"
+					}
+				}
+			}
+		}
+	}
 
 //============================================================================================//
 //============================================================================================//
 //============================================================================================//
-
-
-
-
-
 
 	//============================================================//
 	// Previous Page 

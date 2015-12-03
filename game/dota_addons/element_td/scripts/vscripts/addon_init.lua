@@ -80,6 +80,7 @@ function ImportAllScripts()
         import("creeps/heal");
         import("creeps/fast");
         import("creeps/image");
+        import("creeps/swarm");
         
         import("PhantomManager");
         import('wave');

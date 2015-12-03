@@ -163,14 +163,15 @@ function SpawnWaveForPlayer(playerID, wave)
         local hero = player:GetAssignedHero();
 
         player:SetContextThink("HasteWaveThinker" .. wave, function()
-            local creeps = GetCreepsInArea(hero:GetOrigin(), 10000);
+            local creeps = playerData.waveObject.creeps;
             for _, creep in pairs(creeps) do
-                if creep:GetUnitName() == WAVE_CREEPS[wave] and creep.playerID == playerID then
-                    creep:CastAbilityImmediately(creep:FindAbilityByName("creep_ability_fast"), playerID);
+                local unit = EntIndexToHScript(creep);
+                if unit:GetUnitName() == WAVE_CREEPS[wave] and unit.playerID == playerID then
+                    unit:CastAbilityImmediately(unit:FindAbilityByName("creep_ability_fast"), playerID);
                 end
             end
-            return 4 + math.random(3, 10);
-        end, math.random(3, 10));
+            return 3;
+        end, 3);
         
     end
     ----------------------------

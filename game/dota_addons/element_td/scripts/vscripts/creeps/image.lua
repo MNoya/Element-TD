@@ -23,6 +23,7 @@ function CreepImage:OnTakeDamage(keys)
 		local image = SpawnEntity(self.creep:GetUnitName(), self.creep.playerID, self.creep:GetOrigin());
 		image.isImage = true;
 		image:SetMaxHealth(self.creep:GetMaxHealth());
+		image:SetBaseMaxHealth(self.creep:GetMaxHealth());
 		image:SetDeathXP(0);
 		image:SetHealth(self.creep:GetHealth());
 		image:SetForwardVector(self.creep:GetForwardVector());
