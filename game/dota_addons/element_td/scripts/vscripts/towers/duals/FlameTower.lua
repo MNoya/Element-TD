@@ -53,16 +53,14 @@ function FlameTower:OnAttackLanded(keys)
 	};
 	target.SunburnData.StackCount = target.SunburnData.StackCount + 1;
 
-	CreateTimer(stackID .. "Timer", DURATION, {
-		duration = self.sunburnDuration,
-
-		callback = function(timer) 
+	Timers:CreateTimer(stackID.."Timer", {
+		endTime = self.sunburnDuration,
+		callback = function()
 			if IsValidEntity(target) and target.SunburnData then
 				target.SunburnData.Stacks[stackID] = nil;
 				target.SunburnData.StackCount = target.SunburnData.StackCount - 1;
 			end
 		end
-
 	});
 end
 

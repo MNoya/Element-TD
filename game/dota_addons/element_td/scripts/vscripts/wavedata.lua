@@ -61,15 +61,14 @@ function StartBreakTime(playerID, breakTime)
     ShowMessage(playerID, "Wave "..wave.." in "..breakTime.." seconds", msgTime);
 
     -- create the actual timer
-    CreateTimer("SpawnWaveDelay"..playerID, DURATION, {
-        duration = breakTime,
-        playerID = playerID, 
+    Timers:CreateTimer("SpawnWaveDelay"..playerID, {
+        endTime = breakTime,
 
-        callback = function(t)
-            local data = GetPlayerData(t.playerID);
-            Log:info("Spawning wave " .. wave .. " for ["..t.playerID.."] ".. data.name);
+        callback = function()
+            local data = GetPlayerData(playerID);
+            Log:info("Spawning wave " .. wave .. " for ["..playerID.."] ".. data.name);
             ShowMessage(playerID, "Wave " .. GetPlayerData(playerID).nextWave, 3);
-            SpawnWaveForPlayer(t.playerID, wave); -- spawn dat wave
+            SpawnWaveForPlayer(playerID, wave); -- spawn dat wave
             WAVE_1_STARTED = true;
         end
     });
@@ -172,13 +171,42 @@ function SpawnWaveForPlayer(playerID, wave)
             end
             return 3;
         end, 3);
-        
     end
     ----------------------------
 end
 
 function CreateMoveTimerForCreep(creep, sector)
     local destination = EntityEndLocations[sector];
+--    Timers:CreateTimer("MoveUnit"..creep:entindex(), {
+--        callback = function()
+--            ExecuteOrderFromTable({
+--                UnitIndex = creep:entindex(),
+--                OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+--                Position = destination
+--            });
+--            if (creep:GetOrigin() - destination):Length2D() <= 150 then
+--                local playerID = creep.playerID;
+--                local playerData = PlayerData[playerID];
+--
+--                local hero = PlayerResource:GetPlayer(playerID):GetAssignedHero();
+--
+--                if hero:GetHealth() == 1 then
+--                    playerData.health = 0;
+--                    hero:ForceKill(false);
+--                    ElementTD:EndGameForPlayer(hero:GetPlayerID()); -- End the game for the dead player
+--                elseif hero:IsAlive() then
+--                    playerData.health = playerData.health - 1;
+--                    hero:SetHealth(hero:GetHealth() - 1);
+--                end
+--
+--                FindClearSpaceForUnit(creep, EntityStartLocations[playerData.sector + 1], true) -- remove interp frames on client
+--                --creep:SetAbsOrigin(EntityStartLocations[playerID + 1]);
+--                creep:SetForwardVector(Vector(0, -1, 0));
+--            end
+--            return 1;
+--        end
+--    });
+
     creep:SetContextThink("MoveUnit" .. creep:entindex(), function()
         ExecuteOrderFromTable({
             UnitIndex = creep:entindex(),

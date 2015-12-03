@@ -22,16 +22,18 @@ function StartVoteTimer()
 	GameRules:SendCustomMessage("<font color='#70EA72'>Voting has begun!</font>", 0, 0);
 
 	local loops = 60;
-	GameRules:GetGameModeEntity():SetContextThink("VoteThinker", function()
-		loops = loops - 1;
-		FireGameEvent("etd_update_vote_timer", {time = loops});
-		if loops == 0 then
-			Log:info("Vote timer ran out");
-			FinalizeVotes(); --time has run out, finalize votes
-			return nil;
+	Timers:CreateTimer("VoteThinker", {
+		callback = function()
+			loops = loops - 1;
+			FireGameEvent("etd_update_vote_timer", {time = loops});
+			if loops == 0 then
+				Log:info("Vote timer ran out");
+				FinalizeVotes(); --time has run out, finalize votes
+				return nil;
+			end
+			return 1;
 		end
-		return 1;
-	end, 0);
+	});
 end
 
 function GetWinningDifficulty()
@@ -84,10 +86,9 @@ end
 
 -- calculate which settings won the vote
 function FinalizeVotes()
-	GameRules:GetGameModeEntity():SetContextThink("VoteThinker", nil, 0);
 	
 	Log:info("All players have finished voting");
-	DeleteTimer("VoteTimer");
+	Timers:RemoveTimer("VoteThinker");
 	FireGameEvent("etd_toggle_vote_dialog", {visible = false});
 
 	for _,v in pairs(PLAYERS_NOT_VOTED) do 
@@ -134,13 +135,13 @@ function FinalizeVotes()
 	end
 
 	Log:trace("Creating post vote timer");
-	CreateTimer("PostVoteTimer", DURATION, {
-		duration = 1,
-		callback = (function(timer)
+	Timers:CreateTimer("PostVoteTimer", {
+		endTime = 1,
+		callback = function()
 			for _, ply in pairs(players) do
-    			StartBreakTime(ply:GetPlayerID(), GameSettings.length.PregameTime);
-    		end
-		end)
+				StartBreakTime(ply:GetPlayerID(), GameSettings.length.PregameTime);
+			end
+		end
 	});
 end
 

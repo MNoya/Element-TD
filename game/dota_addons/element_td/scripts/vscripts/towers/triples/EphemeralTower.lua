@@ -17,7 +17,7 @@ EphemeralTower = createClass({
 nil);
 
 function EphemeralTower:ResetDamage(keys)
-	DeleteTimer(self.timerName);
+	Timers:RemoveTimer(self.timerName);
 	self.currentDamageReduction = 0;
 	self.tower:SetBaseDamageMax(self.baseDamage);
 	self.tower:SetBaseDamageMin(self.baseDamage);
@@ -59,17 +59,17 @@ function EphemeralTower:OnAttackStart(keys)
 
 	end
 	
-	DeleteTimer(self.timerName);
-	CreateTimer(self.timerName, DURATION, {
-		duration = self.resetTime,
-		callback = function(timer)
+	Timers:RemoveTimer(self.timerName);
+	Timers:CreateTimer(self.timerName, {
+		endTime = self.resetTime,
+		callback = function()
 			self:ResetDamage({});
 		end
 	});
 end
 
 function EphemeralTower:OnDestroyed()
-	DeleteTimer(self.timerName);
+	Timers:RemoveTimer(self.timerName);
 end
 
 function EphemeralTower:OnAttackLanded(keys)

@@ -36,8 +36,8 @@ function LaserTower:OnAttackStart(keys)
 
 	damage = damage * (1 - reduction);
 	
-	CreateTimer(DoUniqueString("LaserDamage"), DURATION, {
-		duration = 0.2,
+	Timers:CreateTimer(DoUniqueString("LaserDamage"), {
+		endTime = 0.2,
 		callback = function()
 			DamageEntity(keys.target, self.tower, damage);
 		end

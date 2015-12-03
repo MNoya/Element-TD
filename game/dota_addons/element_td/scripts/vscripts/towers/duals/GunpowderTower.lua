@@ -24,24 +24,22 @@ function GunpowderTower:OnAttackLanded(keys)
     local damage = ApplyAbilityDamageFromModifiers(self.splashDamage[self.tower:GetLevel()], self.tower);
     DamageEntitiesInArea(target:GetOrigin(), self.splashAOE, self.tower, damage)
 
-      --spawn random explosions around the initial point
-      for i = 1, 3, 1 do
-        CreateTimer("CreateExplosion" .. self.tower:entindex() .. i, DURATION, {
-          duration = RandomFloat(0.15, 0.50),
-          pos = RandomPositionInCircle(target:GetAbsOrigin(), 300),
-          callback = function(timer)
-              
-              local p = ParticleManager:CreateParticle("particles/units/heroes/hero_phoenix/phoenix_supernova_reborn_star_sphere.vpcf", PATTACH_CUSTOMORIGIN, self.tower);
-              ParticleManager:SetParticleControl(p, 0, timer.pos);
+    --spawn random explosions around the initial point
+    for i = 1, 3, 1 do
+      Timers:CreateTimer("CreateExplosion"..self.tower:entindex()..i, {
+        endTime = RandomFloat(0.15, 0.5),
+        pos = RandomPositionInCircle(target:GetAbsOrigin(), 300),
+        callback = function()
+            local p = ParticleManager:CreateParticle("particles/units/heroes/hero_phoenix/phoenix_supernova_reborn_star_sphere.vpcf", PATTACH_CUSTOMORIGIN, self.tower);
+            ParticleManager:SetParticleControl(p, 0, timer.pos);
 
-              if IsValidEntity(self.tower) then
-                local damage = ApplyAbilityDamageFromModifiers(self.splashDamage[self.tower:GetLevel()], self.tower);
-                DamageEntitiesInArea(timer.pos, self.splashAOE, self.tower, damage);
-              end
-      
-          end
-        });
-      end
+            if IsValidEntity(self.tower) then
+              local damage = ApplyAbilityDamageFromModifiers(self.splashDamage[self.tower:GetLevel()], self.tower);
+              DamageEntitiesInArea(timer.pos, self.splashAOE, self.tower, damage);
+            end
+        end
+      });
+    end
 end
 
 function GunpowderTower:OnCreated()

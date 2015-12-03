@@ -9025,9 +9025,7 @@
 		"ModelScale"		"0.7"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
-		"ScriptClass"		"CreepSwarm"
 		"Ability1"		"earth_armor"
-		"Ability2"		"creep_ability_swarm"
 	}
 	"flying_imp"
 	{

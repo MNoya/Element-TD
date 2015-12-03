@@ -81,7 +81,6 @@ function ElementTD:InitGameMode()
 
     ------------------------------------------------------
     local base_game_mode = GameRules:GetGameModeEntity();
-    base_game_mode:SetContextThink("ElementTD:Think", function() self:Think(); return 0.1; end, 0.1);
     base_game_mode:SetRecommendedItemsDisabled(true); -- no recommended items panel
     base_game_mode:SetFogOfWarDisabled(true); -- no fog
     base_game_mode:SetCameraDistanceOverride(1500); -- move the camera higher up
@@ -122,9 +121,9 @@ end
 
 -- move all heroes to their proper spawn locations
 function ElementTD:MoveHeroesToSpawns()
-    CreateTimer("MovePlayersToSpawn", DURATION, {
-        duration = 1,
-        callback = function(timer)
+    Timers:CreateTimer("MovePlayersToSpawn", {
+        endTime = 1,
+        callback = function()
             for k, ply in pairs(players) do
                 local playerData = GetPlayerData(ply:GetPlayerID());
                 if self.playerSpawnIndexes[ply:GetPlayerID()] then
@@ -152,32 +151,32 @@ end
 -- call this after the players have been move to their proper spawn locations
 function ElementTD:StartGame()
         print("ElementTD Started!")
-        CreateTimer("StartGameDelay", DURATION, {
-        duration = 3,
+        Timers:CreateTimer("StartGameDelay", {
+        endTime = 3,
 
-        callback = function(timer)
+        callback = function()
             Log:info("The game has started!");
-                FireGameEvent("etd_game_started", {});
-                
-                if not SKIP_VOTING then
-                    FireGameEvent("etd_toggle_vote_dialog", {visible = true}); -- show that vote ui
-                    StartVoteTimer();
+            FireGameEvent("etd_game_started", {});
+            
+            if not SKIP_VOTING then
+                FireGameEvent("etd_toggle_vote_dialog", {visible = true}); -- show that vote ui
+                StartVoteTimer();
+            else
+                -- voting should never be skipped in real games
+                if DEV_MODE then
+                    GameSettings:SetGameLength("Developer");
                 else
-                    -- voting should never be skipped in real games
-                    if DEV_MODE then
-                        GameSettings:SetGameLength("Developer");
-                    else
-                        GameSettings:SetGameLength("Normal");
-                    end
-                    Log:info("Skipping voting");
-                    GameSettings:SetDifficulty("Normal");
-                    GameSettings:SetCreepOrder("Normal");
-                    for _, ply in pairs(players) do
-                        StartBreakTime(ply:GetPlayerID()); -- begin the break time for wave 1 :D
-                    end
+                    GameSettings:SetGameLength("Normal");
                 end
+                Log:info("Skipping voting");
+                GameSettings:SetDifficulty("Normal");
+                GameSettings:SetCreepOrder("Normal");
+                for _, ply in pairs(players) do
+                    StartBreakTime(ply:GetPlayerID()); -- begin the break time for wave 1 :D
+                end
+            end
         end
-    });
+        });
 end
 
 function ElementTD:EndGameForPlayer( playerID )
@@ -288,7 +287,7 @@ function ElementTD:EntityKilled(keys)
 
     if entity.isElemental then
         -- an elemental was killed :O
-        DeleteTimer("MoveElemental"..index);
+        Timers:RemoveTimer("MoveElemental"..index);
         Log:info(playerData.name .. " has killed a " .. entity.element .. " elemental");
         playerData.elementalActive = false;
         playerData.elementalUnit = nil;
@@ -303,7 +302,7 @@ function ElementTD:EntityKilled(keys)
             --UpdateUpgrades(EntIndexToHScript(towerID));
         --end
         UpdatePlayerSpells(playerID);
-        DeleteTimer("MoveUnit"..index);
+        Timers:RemoveTimer("MoveUnit"..index);
     end
 end
 
@@ -327,19 +326,9 @@ function ElementTD:EntityHurt(keys)
 
 end
 
-local lastGameTime = nil;
-
 --called every 0.1 seconds
 function ElementTD:Think()
-	if not lastGameTime then
-		lastGameTime = GameRules:GetGameTime();
-	end
-    local gt = GameRules:GetGameTime();
-    GAME_IS_PAUSED = (gt == lastGameTime);
-    lastGameTime = gt;
-    if not GAME_IS_PAUSED then
-        UpdateTimers();
-    end
+    -- DEPRECIATED
 end
 
 -- helper function

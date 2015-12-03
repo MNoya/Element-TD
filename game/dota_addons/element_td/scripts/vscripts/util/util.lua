@@ -97,19 +97,16 @@ function ShowMessage(playerID, msg, duration)
     };
     FireGameEvent("etd_show_message", messageData);
 
-    CreateTimer("ShowMessage"..playerID, DURATION, {
-        duration = duration,
-        playerID = playerID, 
-
-        callback = function(timer)
+    Timers:CreateTimer("ShowMessage"..playerID, {
+        endTime = duration,
+        callback = function()
             local data = {
                 msg = "",
-                playerID = timer.playerID
+                playerID = playerID
             };
             
             FireGameEvent("etd_show_message", data);
         end
-
     });
 end
 

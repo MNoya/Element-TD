@@ -25,10 +25,9 @@ function WindstormTower:SpawnTornado(keys)
 		self.tower:CastAbilityOnPosition(keys.target_points[1], tornadoCaster, 1);
 		self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_tornado_summoned", {}); 
 		
-		CreateTimer("WaitForTornado" .. self.tower:entindex(), DURATION, {
-			duration = 0.2,
-			callback = function(timer)
-
+		Timers:CreateTimer("WaitForTornado"..self.tower:entindex(), {
+			endTime = 0.2,
+			callback = function()
 				local entities = Entities:FindAllByClassnameWithin("npc_dota_base_additive", self.tower:GetOrigin(), 750);
 				for _, tornado in pairs(entities) do
 					if not tornado.isTornado then
@@ -42,9 +41,12 @@ function WindstormTower:SpawnTornado(keys)
 						AddAbility(self.tornado, "windstorm_tornado_slow", self.tower:GetLevel());
 
 						tornadoCaster:SetHidden(true);
-						CreateTimer("DeleteCaster" .. self.tower:entindex(), DURATION, { duration = 1, callback = function(timer) 
-							self.tower:RemoveAbility("windstorm_tower_tornado_creator"); 
-						end});
+						Timers:CreateTimer("DeleteCaster" .. self.tower:entindex(), {
+							endTime = 1,
+							callback = function()
+								self.tower:RemoveAbility("windstorm_tower_tornado_creator"); 
+							end
+						});
 
 						local sector = self.tower:GetOwner():GetPlayerID() + 1;
 						local damage = GetAbilitySpecialValue("windstorm_tower_tornado", "damage")[self.tower:GetLevel()];
@@ -68,10 +70,8 @@ function WindstormTower:SpawnTornado(keys)
 							end
 							return 1;
 						end, 1);
-
 					end
 				end
-
 			end
 		});
 		

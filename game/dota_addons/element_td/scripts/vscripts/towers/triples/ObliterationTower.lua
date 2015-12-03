@@ -85,12 +85,12 @@ function ObliterationTower:OnAttackStart(keys)
 				DamageEntity(proj.target, self.tower, ApplyAttackDamageFromModifiers(self.tower:GetBaseDamageMax(), self.tower));
        		end
 
-	    	CreateTimer("DeleteDummy".. dummy:entindex(), DURATION, {
-	    		duration = 2,
-	    		callback = function(timer)
-	    			UTIL_RemoveImmediate(dummy);
-	    		end
-	    	});
+       		Timers:CreateTimer("DeleteDummy"..dummy:entindex(), {
+       			endTime = 2,
+       			callback = function()
+					UTIL_RemoveImmediate(dummy);
+       			end
+       		});
 
 			self.projectiles[proj:entindex()] = nil;
 			UTIL_RemoveImmediate(proj);

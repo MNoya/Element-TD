@@ -38,9 +38,9 @@ function RunicTower:OnAttackStart(keys)
 
 				local distance = (creep:GetOrigin() - self.attackOrigin):Length()
 				local time = distance / self.projectileSpeed;
-				CreateTimer(DoUniqueString("RunicTowerDelay" .. creep:entindex()), DURATION, {
-					duration = time - 0.1,
-					callback = function(timer)
+				Timers:CreateTimer(DoUniqueString("RunicTowerDelay" .. creep:entindex()), {
+					endTime = time - 0.1,
+					callback = function()
 						self:OnAttackLanded({target = creep, isBonus = true});
 					end
 				});

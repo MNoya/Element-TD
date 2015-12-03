@@ -36,9 +36,9 @@ function HailTower:OnAttackStart(keys)
 
 				local distance = (creep:GetOrigin() - self.attackOrigin):Length()
 				local time = distance / self.projectileSpeed;
-				CreateTimer(DoUniqueString("HailTowerDelay" .. creep:entindex()), DURATION, {
-					duration = time - 0.1,
-					callback = function(timer)
+				Timers:CreateTimer(DoUniqueString("HailTowerDelay" .. creep:entindex()), {
+					endTime = time - 0.1,
+					callback = function()
 						self:OnAttackLanded({target_entities = {[1] = creep}});
 					end
 				});

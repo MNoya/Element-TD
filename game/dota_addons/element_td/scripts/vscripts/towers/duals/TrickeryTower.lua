@@ -208,10 +208,10 @@ function CreateIllusionKilledParticles(tower)
 	local particle = ParticleManager:CreateParticle("particles/generic_gameplay/illusion_killed.vpcf", PATTACH_ABSORIGIN, dummy);
     ParticleManager:SetParticleControl(particle, 0, dummy:GetAbsOrigin());
 
-    CreateTimer("DeleteCloneDummy"..dummy:entindex(), DURATION, {
-    	duration = 2,
-    	callback = function(t) 
-    		UTIL_RemoveImmediate(dummy);
+    Timers:CreateTimer("DeleteCloneDummy"..dummy:entindex(), {
+    	endTime = 2,
+    	callback = function()
+			UTIL_RemoveImmediate(dummy);
     	end
     });
 end

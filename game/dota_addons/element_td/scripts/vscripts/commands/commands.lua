@@ -25,15 +25,13 @@ end
 function TestTower(text, playerID)
 	local entity = SpawnEntity("timber_wolf", playerID, PlayerResource:GetPlayer(playerID):GetAssignedHero():GetOrigin());
 	if entity then
-		CreateTimer("TestTower", INTERVAL, {
-	        loops  = -1,
-	        interval = 0.3,
-	        entity = entity,
-	        callback = function(timer)
-	            timer.entity:SetBaseDamageMax(2047);
-	            timer.entity:SetBaseDamageMin(2047);
-	        end
-	    });
+		Timers:CreateTimer("TestTower", {
+			callback = function()
+				entity:SetBaseDamageMax(2047);
+				entity:SetBaseDamageMin(2047);
+				return 0.3
+			end
+		});
 	end
 end
 

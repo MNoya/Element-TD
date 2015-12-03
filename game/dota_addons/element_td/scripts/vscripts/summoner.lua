@@ -86,25 +86,19 @@ function SummonElemental(keys)
 		ParticleManager:SetParticleControlEnt(h, 0, elemental, 5, "attach_origin", elemental:GetOrigin(), true);
 	end
 
-	CreateTimer("MoveElemental" .. elemental:entindex(), INTERVAL, {
-        loops = -1,
-        interval = 1,
-        executeImmediately = true,
-        destination = EntityEndLocations[playerData.sector + 1],
-        playerID = playerID,
-        unit = elemental,
-
-        callback = (function(timer)
-            local entity = timer.unit;
-        
+	Timers:CreateTimer("MoveElemental" .. elemental:entindex(), {
+		callback = function()
+            local entity = elemental;
+            local destination = EntityEndLocations[playerData.sector + 1];
+            
             ExecuteOrderFromTable({
                 UnitIndex = entity:entindex(),
                 OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
-                Position = timer.destination
+                Position = destination
             });
 
-            if dist2D(entity:GetOrigin(), timer.destination) <= 150 then
-                local playerData = PlayerData[timer.playerID];
+            if dist2D(entity:GetOrigin(), destination) <= 150 then
+                local playerData = PlayerData[playerID];
 
                 playerData.health = playerData.health - 3;
                 local hero = PlayerResource:GetPlayer(playerID):GetAssignedHero();
@@ -121,7 +115,7 @@ function SummonElemental(keys)
                 --entity:SetOrigin(EntityStartLocations[playerID + 1]);
                 entity:SetForwardVector(Vector(0, -1, 0));
             end
-        end)
-
-    });
+			return 1;
+		end
+	});
 end

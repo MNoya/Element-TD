@@ -18,7 +18,7 @@ function CreepMechanical:OnSpawned()
 	creep:SetContextThink("MechanicalThinker", function()
 		creep:FindAbilityByName("creep_ability_mechanical"):ApplyDataDrivenModifier(creep, creep, "mechanical_buff", {});
 		creep:AddNewModifier(nil, nil, "modifier_invulnerable", {duration = 3});
-		return 12;
+		return 9;
 	end, math.random(3, 12));
 end
 

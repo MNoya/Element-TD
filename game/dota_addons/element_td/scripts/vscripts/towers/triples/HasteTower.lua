@@ -36,10 +36,10 @@ function HasteTower:OnAttackStart(keys)
 	self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_wrath_reset", {});
 	self.tower:SetModifierStackCount("modifier_wrath_indicator", self.ability, self.wrathStacks);
 
-	DeleteTimer(self.timerName);
-	CreateTimer(self.timerName, DURATION, {
-		duration = self.resetTime,
-		callback = function(timer)
+	Timers:RemoveTimer(self.timerName);
+	Timers:CreateTimer(self.timerName, {
+		endTime = self.resetTime,
+		callback = function()
 			self:ResetAttackSpeed();
 		end
 	});

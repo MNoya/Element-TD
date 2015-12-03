@@ -4,7 +4,7 @@
 MaxPages = 2; --max number of spell pages
 SpellPages = {}; --holds the array of spells that players can swaps through
 SpellPages[1] = {"build_arrow_tower", "build_cannon_tower", "build_water_tower", "build_fire_tower", "build_nature_tower", "next_page"}; --first spell page
-SpellPages[2] = {"prev_page", "build_earth_tower", "build_light_tower", "build_dark_tower", "rubick_empty1", "show_tower_range"}; -- second spell page
+SpellPages[2] = {"build_earth_tower", "build_light_tower", "build_dark_tower", "rubick_empty1", "show_tower_range", "prev_page"}; -- second spell page
 local towersKV = LoadKeyValues("scripts/kv/towers.kv");
 
 --===================================================================================================--
@@ -394,28 +394,29 @@ function BuildTower(tower, baseScale)
 	tower:SetBaseMaxHealth(buildTime * 20);
 
 	-- create a timer to build up the tower slowly
-	tower:SetContextThink("BuildTower", function()
-		tower:SetHealth(tower:GetHealth() + 1);
-        tower:SetActualModelScale(tower:GetModelScale() + scaleIncrement);
+	Timers:CreateTimer("BuildTower"..tower:entindex(), {
+		endTime = 0.05,
+		callback = function()
+			tower:SetHealth(tower:GetHealth() + 1);
+	        tower:SetActualModelScale(tower:GetModelScale() + scaleIncrement);
 
-		if tower:GetHealth() == tower:GetMaxHealth() then
-        	tower:RemoveModifierByName("modifier_disarmed");
-        	tower:RemoveModifierByName("modifier_silence");
-        	tower:AddNewModifier(nil, nil, "modifier_invulnerable", {});
-        	tower:NoHealthBar();
+			if tower:GetHealth() == tower:GetMaxHealth() then
+	        	tower:RemoveModifierByName("modifier_disarmed");
+	        	tower:RemoveModifierByName("modifier_silence");
+	        	tower:AddNewModifier(nil, nil, "modifier_invulnerable", {});
+	        	tower:NoHealthBar();
 
-        	if tower:GetBaseDamageMax() <= 0 then
-        		tower:SetMaxHealth(100);
-        		tower:SetBaseMaxHealth(100);
-        	else
-				tower:SetMaxHealth(tower:GetBaseDamageMax());
-				tower:SetBaseMaxHealth(tower:GetBaseDamageMax());
-			end
-        	tower:SetHealth(tower:GetMaxHealth());
-        	return nil;
-        end
-
-		return 0.05;
-	end, 0.05);
-
+	        	if tower:GetBaseDamageMax() <= 0 then
+	        		tower:SetMaxHealth(100);
+	        		tower:SetBaseMaxHealth(100);
+	        	else
+					tower:SetMaxHealth(tower:GetBaseDamageMax());
+					tower:SetBaseMaxHealth(tower:GetBaseDamageMax());
+				end
+	        	tower:SetHealth(tower:GetMaxHealth());
+	        	return nil;
+	        end
+	        return 0.05;
+		end
+	});
 end
