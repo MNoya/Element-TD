@@ -48,7 +48,7 @@ function DamageEntity(entity, attacker, damage)
 	if not entity or not entity:IsAlive() then return end
 	
 	if entity:HasModifier("modifier_invulnerable") then return end
-	damage = ApplyDifficultyArmor(damage, attacker);
+	--damage = ApplyDifficultyArmor(damage, attacker);
 	damage = ApplyElementalDamageModifier(damage, GetDamageType(attacker), GetArmorType(entity));
 	damage = ApplyDamageAmplification(damage, entity);
 
@@ -71,7 +71,7 @@ function DamageEntity(entity, attacker, damage)
 		end
 
 		if entity.SunburnData and entity.SunburnData.StackCount > 0 then
-			local team;
+			local team = DOTA_TEAM_BADGUYS;
 			if attacker:GetTeam() == DOTA_TEAM_GOODGUYS then team = DOTA_TEAM_BADGUYS; end
 			if attacker:GetTeam() == DOTA_TEAM_BADGUYS then team = DOTA_TEAM_GOODGUYS; end
 			CreateSunburnRemnant(entity, team);

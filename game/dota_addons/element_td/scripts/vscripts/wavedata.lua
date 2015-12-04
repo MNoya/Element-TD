@@ -15,26 +15,34 @@ local creepsKV = LoadKeyValues("scripts/kv/creeps.kv");
 WAVE_COUNT = kv["WaveCount"];
 
 -- loads the creep and health data for each wave. Randomizes the creep order if 'chaos' is set to true
-function loadWaveData(chaos) 
+function loadWaveData(chaos)
+    if EXPRESS_MODE then
+        WAVE_COUNT = kv["WaveCountExpress"]
+    end
     WAVE_CREEPS = {};
     WAVE_HEALTH = {};
     for k, v in pairs(kv) do
-    	if tonumber(k) then
-    		WAVE_CREEPS[tonumber(k)] = v.Creep;
-    		WAVE_HEALTH[tonumber(k)] = v.Health;
-    	end
-    end
-    if chaos then 
-        local first5Waves = {};
-        for i = 1, 5, 1 do
-            first5Waves[i] =  WAVE_CREEPS[i];
-            WAVE_CREEPS[i] = nil;
+        if tonumber(k) and tonumber(k) <= WAVE_COUNT then
+        	WAVE_CREEPS[tonumber(k)] = v.Creep;
+        	WAVE_HEALTH[tonumber(k)] = v.Health;
         end
-        WAVE_CREEPS = shuffle(WAVE_CREEPS); 
-        for i = 5, 1, -1 do
-            table.insert(WAVE_CREEPS, 1, first5Waves[i]);
-        end 
     end
+    if chaos then
+        local lastWaves = {};
+        if not EXPRESS_MODE then
+            for i = 55, 56, 1 do
+                lastWaves[i] =  WAVE_CREEPS[i];
+                WAVE_CREEPS[i] = nil;
+            end
+        end
+        WAVE_CREEPS = shuffle(WAVE_CREEPS);
+        if not EXPRESS_MODE then
+            for i = 55, 56, 1 do
+                table.insert(WAVE_CREEPS, lastWaves[i]);
+            end
+        end
+    end
+    PrintTable(WAVE_CREEPS);
 end
 
 -- starts the break timer for the specified player.
@@ -49,7 +57,7 @@ function StartBreakTime(playerID, breakTime)
     -- let's figure out how long the break is
     local wave = GetPlayerData(playerID).nextWave;
     local msgTime = 5; -- how long to show the message for
-    if (wave - 1) % 5 == 0 then
+    if (wave - 1) % 5 == 0 and not EXPRESS_MODE then
         breakTime = 30;
     end
 
@@ -82,7 +90,8 @@ function SpawnEntity(entityClass, playerID, position)
         entity:SetDeathXP(0);
         entity.class = entityClass;
         entity.playerID = playerID;
-        ApplyArmorModifier(entity, GetPlayerDifficulty(playerID):GetArmorValue() * 100);
+        --Repurpose for game difficulty
+        --ApplyArmorModifier(entity, GetPlayerDifficulty(playerID):GetArmorValue() * 100);
 
         -- create a script object for this entity
         -- see /vscripts/creeps/basic.lua
@@ -144,8 +153,8 @@ function SpawnWaveForPlayer(playerID, wave)
             CURRENT_WAVE = playerData.nextWave;
         end
 
-        if playerData.completedWaves % 5 == 0 then
-            ModifyLumber(playerID, 1); -- give 1 lumber every 5 waves
+        if (playerData.completedWaves % 5 == 0 and playerData.completedWaves < 55 and not EXPRESS_MODE) or (playerData.completedWaves % 3 == 0 and playerData.completedWaves < 30 and EXPRESS_MODE) then
+            ModifyLumber(playerID, 1); -- give 1 lumber every 5 waves or every 3 if express mode ignoring the last wave 55 and 30.
             if GameSettings.elementsOrderName == "AllPick" then
                 Log:info("Giving 1 lumber to " .. playerData.name);
             elseif playerData.elementsOrder[playerData.completedWaves] then

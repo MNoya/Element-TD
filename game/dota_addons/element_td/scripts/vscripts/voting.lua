@@ -124,8 +124,8 @@ function FinalizeVotes()
 	print("Length: " .. length);
 	print("----------\n");
 
-	GameSettings:SetCreepOrder(order);
 	GameSettings:SetGameLength(length);
+	GameSettings:SetCreepOrder(order);
 	GameSettings:SetElementOrder(elements);
 
 	for k, ply in pairs(players) do 

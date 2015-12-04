@@ -17,9 +17,26 @@ function UpdateSummonerSpells(playerID)
 	local summoner = GetPlayerData(playerID).summoner;
 	local playerData = GetPlayerData(playerID);
 
-	if playerData.elementalActive then
+	if EXPRESS_MODE and not playerData.elementalActive then
 		for k, v in pairs(NPC_ABILITIES_CUSTOM) do
-			if summoner:HasAbility(k) and v["LumberCost"]  then
+			if summoner:HasAbility(k) and v["LumberCost"] then
+				local level = playerData.elements[v["Element"]] + 1;
+				local ability = summoner:FindAbilityByName(k);
+				if level == 1 then
+					ability:SetActivated(lumber >= v["LumberCost"] and level <= 3);
+				elseif level == 2 and playerData.completedWaves >= 6 then
+					ability:SetActivated(lumber >= v["LumberCost"] and level <= 3);
+				elseif level == 3 and playerData.completedWaves >= 15 then
+					ability:SetActivated(lumber >= v["LumberCost"] and level <= 3);
+				else
+					ability:SetActivated(false);
+				end
+				ability:SetLevel(level);
+			end
+		end
+	elseif playerData.elementalActive then
+		for k, v in pairs(NPC_ABILITIES_CUSTOM) do
+			if summoner:HasAbility(k) and v["LumberCost"] then
 				local ability = summoner:FindAbilityByName(k);
 				ability:SetActivated(false);
 				ability:SetLevel(playerData.elements[v["Element"]] + 1);
@@ -51,7 +68,7 @@ function SummonElemental(keys)
 	local playerData = GetPlayerData(playerID);
 	local element = GetUnitKeyValue(keys.Elemental, "Element");
 
-	if not WAVE_1_STARTED then
+	if not WAVE_1_STARTED or EXPRESS_MODE then
 		BuyElement(playerID, element);
 		return;
 	end
@@ -90,7 +107,7 @@ function SummonElemental(keys)
 		callback = function()
             local entity = elemental;
             local destination = EntityEndLocations[playerData.sector + 1];
-            
+
             ExecuteOrderFromTable({
                 UnitIndex = entity:entindex(),
                 OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,

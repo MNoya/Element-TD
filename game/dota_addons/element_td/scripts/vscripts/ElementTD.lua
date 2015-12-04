@@ -20,6 +20,7 @@ TEAM_TO_SECTOR[11] = 7;
 GAME_IS_PAUSED = false;
 SKIP_VOTING = false; -- assigns default game settings if true
 DEV_MODE = false;
+EXPRESS_MODE = false;
 
 if ElementTD == nil then
     ElementTD = {};

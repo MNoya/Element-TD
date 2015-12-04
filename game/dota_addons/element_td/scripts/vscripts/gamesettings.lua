@@ -9,11 +9,18 @@ DifficultyObject = createClass({
 {}, nil);
 
 function DifficultyObject:GetBountyForWave(wave)
-	return math.floor(math.pow(self.data.BaseBounty, wave - 1));
+	local bounty = math.floor(math.pow(self.data.BaseBounty, wave - 1 + 4));
+	if EXPRESS_MODE then
+		bounty = math.floor(math.pow(self.data.BaseBountyExpress, wave - 1 + 9));
+	end
+	return bounty;
 end
 
 function DifficultyObject:GetWaveBreakTime(wave)
 	local times = self.data.WaveTimers;
+	if EXPRESS_MODE then
+		times = self.data.WaveTimersExpress;
+	end
 	for k, v in pairs(times) do
 		local startNum = split(k, "-")[1];
 		local endNum = split(k, "-")[2];
@@ -32,9 +39,6 @@ end
 function DifficultyObject:GetArmorValue()
 	return tonumber(self.data.Armor);
 end
-
-
-
 
 
 -- gamesettings.lua
@@ -85,6 +89,10 @@ function GameSettings:SetGameLength(length)
 			end
 			DEV_MODE = true;
 		end
+
+		if length == "Express" then
+			EXPRESS_MODE = true;
+    	end
 	end
 	Log:info("Set game length to " .. length);
 end
@@ -104,7 +112,9 @@ local elements = {"water", "fire", "earth", "nature", "dark", "light"};
 function getRandomElement(wave)
 	local element = elements[math.random(#elements)];
 
-	if (wave < 15 and usedElements[element] == 1) or (wave < 35 and usedElements[element] == 2) or usedElements[element] == 3 then
+	if EXPRESS_MODE and ((wave < 9 and usedElements[element] == 1) or (wave < 18 and usedElements[element] == 2) or usedElements[element] == 3 ) then
+		return getRandomElement(wave);
+	elseif not EXPRESS_MODE and ((wave < 15 and usedElements[element] == 1) or (wave < 30 and usedElements[element] == 2) or usedElements[element] == 3) then
 		return getRandomElement(wave);
 	else
 		usedElements[element] = usedElements[element] + 1;
@@ -126,10 +136,18 @@ function GameSettings:SetElementOrder(order)
 		usedElements = {["water"] = 0, ["fire"] = 0, ["earth"] = 0, ["nature"] = 0, ["dark"] = 0, ["light"] = 0};
 		local elementsOrder = {};
 
-		for i = 5, 55, 5 do
-			local element = getRandomElement(i);
-			print("[" .. i .. "] " .. element);
-			elementsOrder[i] = element;
+		if EXPRESS_MODE then
+			for i = 3, 27, 3 do
+				local element = getRandomElement(i);
+				print("[" .. i .. "] " .. element);
+				elementsOrder[i] = element;
+			end
+		else
+			for i = 5, 50, 5 do
+				local element = getRandomElement(i);
+				print("[" .. i .. "] " .. element);
+				elementsOrder[i] = element;
+			end
 		end
 
 		for _, player in pairs(players) do    
@@ -144,10 +162,18 @@ function GameSettings:SetElementOrder(order)
 			usedElements = {["water"] = 0, ["fire"] = 0, ["earth"] = 0, ["nature"] = 0, ["dark"] = 0, ["light"] = 0};
 			local elementsOrder = {};
 
-			for i = 5, 55, 5 do
-				local element = getRandomElement(i);
-				--print("[" .. i .. "] " .. element);
-				elementsOrder[i] = element;
+			if EXPRESS_MODE then
+				for i = 3, 27, 3 do
+					local element = getRandomElement(i);
+					--print("[" .. i .. "] " .. element);
+					elementsOrder[i] = element;
+				end
+			else
+				for i = 5, 50, 5 do
+					local element = getRandomElement(i);
+					--print("[" .. i .. "] " .. element);
+					elementsOrder[i] = element;
+				end
 			end
 
 			print("Order for " .. GetPlayerName(player:GetPlayerID()));
@@ -156,9 +182,6 @@ function GameSettings:SetElementOrder(order)
         end
 	end
 end
-
-
-
 
 ----------------------------------------------------
 ----------------------------------------------------

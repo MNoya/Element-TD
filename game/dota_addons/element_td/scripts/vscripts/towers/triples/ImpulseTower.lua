@@ -15,6 +15,9 @@ ImpulseTower = createClass({
 	},
 nil);
 
+function ImpulseTower:OnAttackStart(keys)
+end
+
 function ImpulseTower:OnAttackLanded(keys)
 	local target = keys.target;
 	local distance = (self.tower:GetOrigin() - target:GetOrigin()):Length2D();

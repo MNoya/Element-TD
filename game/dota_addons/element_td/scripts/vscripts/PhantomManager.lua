@@ -21,7 +21,6 @@ function PhantomUnitManager:show(ability, team)
 	self:hide(ability);
 
 	local towerClass = GetAbilityKeyValue(self.currentAbility, "OnSpellStart")["RunScript"]["tower"];
-	
 	self.phantomUnit = CreateUnitByName(towerClass, Vector(0, 0, 0), false, nil, nil, team);
 	self.phantomUnit:AddNewModifier(nil, nil, "modifier_disarmed", {});
 	self.phantomUnit:AddNewModifier(nil, nil, "modifier_invulnerable", {});
@@ -87,9 +86,9 @@ Convars:RegisterCommand("etd_ability_selected", function(cmdname, abilityIndex)
 	local abilityName = SpellPages[playerData.page][abilityIndex + 1];
 	local ability = player:GetAssignedHero():FindAbilityByName(abilityName);
 	
-	if IsValidEntity(ability) then
+	if IsValidEntity(ability) and abilityName ~= "show_tower_range" then
 		--print("Player " .. player:GetPlayerID() .. " pressed ability " .. ability:GetAbilityName());
-		GetPhantomUnitManager(player:GetPlayerID()):show(ability, player:GetTeam());
+		GetPhantomUnitManager(player:GetPlayerID()):show(ability, player:GetTeamNumber());
 	end
 
 end, "", 0);
