@@ -22,6 +22,7 @@ function InterestManager:StartInterestTimer()
 						hero:SetGold(gold, true);
 						PopupGoldGain(hero, interest);
 						goldEarnedData["player" .. ply:GetPlayerID()] = interest;
+						CustomGameEventManager:Send_ServerToPlayer( ply, "etd_earned_interest", { goldEarned=interest } )
 					end
 				end
 			end
@@ -31,6 +32,7 @@ function InterestManager:StartInterestTimer()
 			return INTEREST_INTERVAL;
 		end
 	});
+	CustomGameEventManager:Send_ServerToAllClients("etd_display_interest", { interval=INTEREST_INTERVAL, rate=INTEREST_RATE, enabled=true } )
 	FireGameEvent("etd_start_interest_timer", {duration = INTEREST_INTERVAL});
 
 end

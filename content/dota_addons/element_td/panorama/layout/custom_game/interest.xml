@@ -1,0 +1,23 @@
+<root>
+  <styles>
+    <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+    <include src="file://{resources}/styles/custom_game/interest.css" />
+  </styles>
+  <scripts>
+    <include src="file://{resources}/scripts/custom_game/interest.js" /> 
+  </scripts>
+  <Panel hittest="false" class="BaseHud">
+    <Panel hittest="false" id="Interest">
+      <Panel hittest="false" id="InterestBar" onmouseover="RemoveStyle(InterestTooltip, hide)" onmouseout="AddStyle(InterestTooltip, hide)">
+        <Panel hittest="false" id="InterestBarGold"/>
+        <Panel hittest="false" id="InterestBarOverlay"/>
+        <Image id="InterestCoin" src="file://{images}/custom_game/interest/gold.png"/>
+        <Label id="InterestLabel" text="Interest (2%)"/>
+      </Panel>
+      <Panel hittest="false" id="InterestTooltip" class="hide">
+        <Label id="TooltipLabel" text="Total Gold From Interest"/>
+        <Label id="TooltipAmount" text="0"/>
+      </Panel>
+    </Panel>
+  </Panel>
+</root>
