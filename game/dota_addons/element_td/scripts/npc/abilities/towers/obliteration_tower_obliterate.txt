@@ -1,0 +1,43 @@
+//=================================================================================================================
+// Obliteration Tower: Obliterate
+//=================================================================================================================
+"obliteration_tower_obliterate"
+{
+	"BaseClass"						"ability_datadriven"											
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"obsidian_destroyer_sanity_eclipse"
+	"AbilityCastRange"				"1000"
+	"MaxLevel"						"2"
+
+	"Modifiers"
+	{
+		"modifier_obliterate_passive"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			"OnAttackStart"
+			{
+				"RunScript"
+				{
+					"Target"			"POINT"
+					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+					"Function"			"TriggerEvent"
+					"Event"				"OnAttackStart"
+				}
+			}
+		}
+	}
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"max_aoe"				"400"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"4.5"
+		}
+	}
+}

@@ -1,6 +1,3 @@
-// Dota Heroes File
-// NOTE: This isn't for creating new heroes, this is for taking a currently existing hero as a template and overriding
-// the specified key-value combinations.  Use override_hero <hero_to_override> for this.
 "DOTAHeroes"
 {
 	//===============================================================================================================
@@ -8,9 +5,9 @@
 	//===============================================================================================================
 	"npc_dota_hero_wisp_etd"
 	{
-		"override_hero"				"npc_dota_hero_keeper_of_the_light"
+		"override_hero"				"npc_dota_hero_wisp"
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
-
+	
 		"AbilityLayout"				"6"
 		"Ability1"					""	
 		"Ability2"					""	
@@ -19,42 +16,21 @@
 		"Ability5"					""	
 		"Ability6"					""		
 		"Ability7"					""	
-
+	
 		"StatusHealth"				"31"	
 		"StatusHealthRegen"			"0"			
 		"StatusMana"				"0"	
 		"MovementTurnRate"			"20"
-
+	
 		"ArmorPhysical"				"0"			
 		"MagicalResistance"			"0"			
-
+	
 		"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
 		"AttributeBaseStrength"		"1"			
 		"AttributeStrengthGain"		"0"			
 		"AttributeBaseIntelligence"	"1"			
 		"AttributeIntelligenceGain"	"0"			
 		"AttributeBaseAgility"		"1"			
-		"AttributeAgilityGain"		"0"		
-
-		"Creature"
-		{
-			"AttachWearables"
-			{
-
-				"Wearable1"
-				{
-					"ItemDef"			"254"		
-				}
-				"Wearable2"
-				{
-					"ItemDef"			"5317"
-				}
-				"Wearable4"
-				{
-					"ItemDef"			"253"
-				}
-			}
-		}
-
+		"AttributeAgilityGain"		"0"
 	}
 }

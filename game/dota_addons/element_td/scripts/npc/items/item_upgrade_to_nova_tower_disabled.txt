@@ -1,0 +1,22 @@
+"item_upgrade_to_nova_tower_disabled"
+{
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"BaseClass"		"item_datadriven"
+	"AbilityManaCost"		"0"
+	"ItemShareability"		"ITEM_NOT_SHAREABLE"
+	"ItemSellable"		"0"
+	"ItemKillable"		"0"
+	"ItemPurchasable"		"0"
+	"ItemDroppable"		"0"
+	"AbilityTextureName"		"item_phoenix_supernova_disabled"
+	"Cost"		"1000"
+	"Requirements"
+	{
+		"fire"		"1"
+		"fire"		"1"
+		"nature"		"1"
+		"nature"		"1"
+		"light"		"1"
+		"light"		"1"
+	}
+}

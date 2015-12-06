@@ -1,0 +1,88 @@
+//=================================================================================================================
+// Roots Tower: Gaia's Wrath
+//=================================================================================================================
+"roots_tower_gaias_wrath"
+{
+	"BaseClass"						"ability_datadriven"											
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"treant_leech_seed"
+	"MaxLevel"						"2"
+
+	"Modifiers"
+	{
+		"modifier_gaias_wrath_passive"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			"OnAttackStart"
+			{
+				"RunScript"
+				{
+					"Target"			"TARGET"
+					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+					"Function"			"TriggerEvent"
+					"Event"				"OnAttackStart"
+				}
+			}
+		}
+		"modifier_gaias_wrath_slow"
+		{
+			"Duration"			"%duration"
+			"IsDebuff"			"1"
+			"TextureName"		"treant_leech_seed"
+			"EffectName"		"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast_debuff.vpcf"
+			"EffectTargetType"	"follow_origin"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+			}
+		}
+		"modifier_gaias_wrath_damage"
+		{
+			"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"Duration"		"%duration"
+			"ThinkInterval"	"1"
+			"IsDebuff"		"1"
+			"TextureName"	"treant_leech_seed"
+			
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"Target"			"TARGET"
+					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+					"Function"			"TriggerEvent"
+					"Event"				"OnDamageTick"
+				}
+			}
+		}
+	}
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"5"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"slow_tooltip"			"7.5 22.5"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"slow"					"-7.5 -22.5"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"dps"					"105 525"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"width"					"300"
+		}
+	}
+}

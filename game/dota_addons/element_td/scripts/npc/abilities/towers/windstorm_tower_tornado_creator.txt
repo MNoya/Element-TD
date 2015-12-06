@@ -1,0 +1,22 @@
+"windstorm_tower_tornado_creator"
+{
+	"BaseClass"						"enraged_wildkin_tornado"
+	"ID"							"5312"												
+	"MaxLevel"						"1"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastRange"				"750"
+	"AbilityCastPoint"				"0"
+	"AbilityCooldown"				"0"
+	"AbilityChannelTime"			"-1"
+	"AbilityManaCost"				"0"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"0"
+		}
+	}
+}

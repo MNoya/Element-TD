@@ -1,0 +1,58 @@
+"desert_giant"
+{
+	"ArmorPhysical"		"0"
+	"MagicalResistance"		"0"
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"		"0"
+	"AttackDamageMax"		"0"
+	"AttackRate"		"0"
+	"AttackAnimationPoint"		"0"
+	"AttackAcquisitionRange"		"0"
+	"AttackRange"		"0"
+	"ProjectileModel"		""
+	"ProjectileSpeed"		"0"
+	"RingRadius"		"70"
+	"HealthBarOffset"		"160"
+	"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+	"BountyXP"		"0"
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"		"300"
+	"StatusHealthRegen"		"0"
+	"StatusMana"		"0"
+	"StatusManaRegen"		"0"
+	"VisionDaytimeRange"		"1200"
+	"VisionNighttimeRange"		"800"
+	"Model"		"models/heroes/elder_titan/elder_titan.vmdl"
+	"ModelScale"		"0.8"
+	"BaseClass"		"npc_dota_creature"
+	"SoundSet"		""
+	"ScriptClass"		"CreepImage"
+	"Ability1"		"earth_armor"
+	"Ability2"		""
+	"Creature"
+	{
+		"AttachWearables"
+		{
+			"Wearable1"
+			{
+				"ItemDef"		"426"
+			}
+			"Wearable2"
+			{
+				"ItemDef"		"427"
+			}
+			"Wearable3"
+			{
+				"ItemDef"		"428"
+			}
+			"Wearable4"
+			{
+				"ItemDef"		"429"
+			}
+			"Wearable5"
+			{
+				"ItemDef"		"430"
+			}
+		}
+	}
+}

@@ -1,0 +1,32 @@
+"item_upgrade_to_gold_tower_2"
+{
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"BaseClass"		"item_datadriven"
+	"AbilityManaCost"		"0"
+	"ItemShareability"		"ITEM_NOT_SHAREABLE"
+	"ItemSellable"		"0"
+	"ItemKillable"		"0"
+	"ItemPurchasable"		"0"
+	"ItemDroppable"		"0"
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"TARGET"		"CASTER"
+			"ScriptFile"		"scripts/vscripts/spells.lua"
+			"Function"		"UpgradeTower"
+			"tower"		"gold_tower_2"
+		}
+	}
+	"AbilityTextureName"		"item_towers_gold_tower_arbitrage"
+	"Cost"		"3500"
+	"Requirements"
+	{
+		"fire"		"2"
+		"fire"		"2"
+		"earth"		"2"
+		"earth"		"2"
+		"light"		"2"
+		"light"		"2"
+	}
+}

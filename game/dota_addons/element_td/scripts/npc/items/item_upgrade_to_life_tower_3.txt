@@ -1,0 +1,30 @@
+"item_upgrade_to_life_tower_3"
+{
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"BaseClass"		"item_datadriven"
+	"AbilityManaCost"		"0"
+	"ItemShareability"		"ITEM_NOT_SHAREABLE"
+	"ItemSellable"		"0"
+	"ItemKillable"		"0"
+	"ItemPurchasable"		"0"
+	"ItemDroppable"		"0"
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"TARGET"		"CASTER"
+			"ScriptFile"		"scripts/vscripts/spells.lua"
+			"Function"		"UpgradeTower"
+			"tower"		"life_tower_3"
+		}
+	}
+	"AbilityTextureName"		"item_towers_life_tower_afterlife"
+	"Cost"		"1900"
+	"Requirements"
+	{
+		"light"		"3"
+		"light"		"3"
+		"nature"		"3"
+		"nature"		"3"
+	}
+}

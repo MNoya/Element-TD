@@ -1,0 +1,22 @@
+//=================================================================================================================
+// Gold Tower: Arbitrage
+//=================================================================================================================
+"gold_tower_arbitrage"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"											
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"towers/gold_tower_arbitrage"
+	"MaxLevel"						"2"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_gold"			"33 66"
+		}
+	}
+}

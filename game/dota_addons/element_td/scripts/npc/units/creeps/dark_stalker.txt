@@ -1,0 +1,55 @@
+"dark_stalker"
+{
+	"ArmorPhysical"		"0"
+	"MagicalResistance"		"0"
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"		"0"
+	"AttackDamageMax"		"0"
+	"AttackRate"		"0"
+	"AttackAnimationPoint"		"0"
+	"AttackAcquisitionRange"		"0"
+	"AttackRange"		"0"
+	"ProjectileModel"		""
+	"ProjectileSpeed"		"0"
+	"RingRadius"		"70"
+	"HealthBarOffset"		"160"
+	"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+	"BountyXP"		"0"
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"		"300"
+	"StatusHealthRegen"		"0"
+	"StatusMana"		"0"
+	"StatusManaRegen"		"0"
+	"VisionDaytimeRange"		"1200"
+	"VisionNighttimeRange"		"800"
+	"Model"		"models/heroes/terrorblade/terrorblade_arcana.vmdl"
+	"ModelScale"		"1"
+	"BaseClass"		"npc_dota_creature"
+	"SoundSet"		""
+	"ScriptClass"		"CreepImage"
+	"Ability1"		"dark_armor"
+	"Ability2"		""
+	"ParticleEffect"		"particles/econs/items/terrorblade/terrorblade_horns_arcana/terrorblade_ambient_horns_arcana.vpcf"
+	"Creature"
+	{
+		"AttachWearables"
+		{
+			"Wearable1"
+			{
+				"ItemDef"		"306"
+			}
+			"Wearable2"
+			{
+				"ItemDef"		"307"
+			}
+			"Wearable3"
+			{
+				"ItemDef"		"476"
+			}
+			"Wearable4"
+			{
+				"ItemDef"		"478"
+			}
+		}
+	}
+}

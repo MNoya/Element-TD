@@ -1,0 +1,85 @@
+//============================================================================================//
+//============================================================================================//
+//============================================================================================//
+
+//============================================================//
+// Creep Ability: Fast									      //
+//============================================================//
+"creep_ability_fast"
+{
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel"						"1"
+	"AbilityTextureName"			"dark_seer_surge"
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"Target" 			"CASTER"
+			"ModifierName"		"creep_haste_modifier"
+		}
+		"ApplyModifier"
+		{
+			"Target" 			"CASTER"
+			"ModifierName"		"creep_haste_delay"
+		}
+	}
+	"Modifiers"
+	{
+		"creep_haste_modifier"
+		{
+			"IsHidden"		"0"
+			"Duration"		"%duration"
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"Target" 			"TARGET"
+					"EffectName"		"particles/units/heroes/hero_dark_seer/dark_seer_surge.vpcf"
+					"EffectAttachType"	"follow_origin"
+				}
+			}
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"500"
+			}
+		}
+		"creep_haste_delay"
+		{
+			"IsHidden"		"1"
+			"Passive"		"0"
+			"Duration"		"%interval"
+			"ThinkInterval"	"%interval"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"Target"			"CASTER"
+					"ScriptFile"		"scripts/vscripts/creeps/creepevents.lua"
+					"Function"			"TriggerEvent"
+					"Event"				"CastHasteSpell"
+				}
+			}
+		}
+	}
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"1"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"interval"				"3"	
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"interval_tooltip"		"2"	
+		}
+	}
+}

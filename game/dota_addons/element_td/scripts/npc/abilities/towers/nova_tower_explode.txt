@@ -1,0 +1,89 @@
+//=================================================================================================================
+// Nova Tower: Explode
+//=================================================================================================================
+"nova_tower_explode"
+{
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"BaseClass" 					"ability_datadriven"
+	"AbilityTextureName"            "phoenix_supernova"
+	"MaxLevel"						"2"
+	"AbilityCastRange"				"625"
+
+	"Modifiers"
+	{
+		"modifier_explode_passive"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			"OnAttackStart"
+			{
+				"RunScript"
+				{
+					"Target"			"TARGET"
+					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+					"Function"			"TriggerEvent"
+					"Event"				"Explode"
+				}
+				"ApplyModifier"
+				{
+					"Target"
+					{
+						"Center"		"CASTER"
+						"Radius"		"%aoe"
+						"Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+						"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
+					}
+					"ModifierName"	"modifier_explode_slow"
+				}
+			}
+		}
+		"modifier_explode_slow"
+		{
+			"Duration"		"%duration"
+			"IsDebuff"		"1"
+			"TextureName"	"phoenix_supernova"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+			}
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"Target" 			"TARGET"
+					"EffectName"		"particles/units/heroes/hero_phoenix/phoenix_fire_spirit_burn.vpcf"
+					"EffectAttachType"	"follow_origin"
+				}
+			}
+		}
+	}
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage"			"336 1680"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"aoe"				"625"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"duration"			"3"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"slow"				"-7.5 -22.5"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"slow_tooltip"		"7.5 22.5"
+		}
+	}
+}
