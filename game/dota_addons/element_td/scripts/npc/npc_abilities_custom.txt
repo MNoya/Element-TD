@@ -64,54 +64,161 @@
 			}
 		}
 	}
-	//============================================================================================//
-	//============================================================================================//
-	//============================================================================================//
+	// move_to_point abilities are for BuildingHelper.
+	"move_to_point_100"
+	{
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityCastPoint"              "0"
+	    "AbilityCooldown"               "0"
+	    "AbilityCastRange"              "100"
+	    "MaxLevel"                      "1"
 	
+	    "AbilityManaCost"               "0"
 	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "Target"        "POINT"
+	            "ScriptFile"    "builder.lua"
+	            "Function"      "StartBuilding"
+	        }
+	    }
+	}
+	
+	"move_to_point_150"
+	{
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityCastPoint"              "0"
+	    "AbilityCooldown"               "0"
+	    "AbilityCastRange"              "150"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityManaCost"               "0"
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "Target"        "POINT"
+	            "ScriptFile"    "builder.lua"
+	            "Function"      "StartBuilding"
+	        }
+	    }
+	}
+	
+	"move_to_point_200"
+	{
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityCastPoint"              "0"
+	    "AbilityCooldown"               "0"
+	    "AbilityCastRange"              "200"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityManaCost"               "0"
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "Target"        "POINT"
+	            "ScriptFile"    "builder.lua"
+	            "Function"      "StartBuilding"
+	        }
+	    }
+	}
+	
+	"move_to_point_250"
+	{
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityCastPoint"              "0"
+	    "AbilityCooldown"               "0"
+	    "AbilityCastRange"              "250"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityManaCost"               "0"
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "Target"        "POINT"
+	            "ScriptFile"    "builder.lua"
+	            "Function"      "StartBuilding"
+	        }
+	    }
+	}
+	
+	"move_to_point_300"
+	{
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityCastPoint"              "0"
+	    "AbilityCooldown"               "0"
+	    "AbilityCastRange"              "300"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityManaCost"               "0"
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "Target"        "POINT"
+	            "ScriptFile"    "builder.lua"
+	            "Function"      "StartBuilding"
+	        }
+	    }
+	}
 	//============================================================//
 	// Build Arrow Tower
 	//============================================================//
 	"build_arrow_tower"
 	{
-		// General
-		//-----------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel"						"1"
-		"AbilityTextureName"			"build_arrow_tower"
-		"AbilityCooldown"				"0"
-		"AbilityCastRange"				"128"
-		"AbilityCastPoint"				"0.3"
-		"Cost"							"7"
+	    // General
+	    //-----------------------------
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+	    "MaxLevel"                      "1"
+	    "AbilityTextureName"            "build_arrow_tower"
+	    
+	    "Building"                      "1"
+	    "BuildingSize"                  "2"
+	    "BuildTime"                     "2.0"
+	    "AbilityCastRange"              "200"
+	    "Scale"                         "1"
+	    "PlayerCanControl"              "1"
 	
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"Target"			"POINT"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
-				"Function"			"PlaceTower"
-				"tower"				"basic_arrow_tower"
-			}
-		}
+	    "UnitName"                      "basic_arrow_tower"
+	    "AbilityGoldCost"               "7"
 	
-		"Modifiers"
-		{
-			"modifier_phantom"
-			{
-				"States"
-			    {
-			        "MODIFIER_STATE_UNSELECTABLE" 					"MODIFIER_STATE_VALUE_ENABLED"
-			        "MODIFIER_STATE_NO_UNIT_COLLISION" 				"MODIFIER_STATE_VALUE_ENABLED"
-			        "MODIFIER_STATE_OUT_OF_GAME" 					"MODIFIER_STATE_VALUE_ENABLED"
-			        "MODIFIER_STATE_NOT_ON_MINIMAP"					"MODIFIER_STATE_VALUE_ENABLED"
-			        "MODIFIER_STATE_NOT_ON_MINIMAP_FOR_ENEMIES"		"MODIFIER_STATE_VALUE_ENABLED"
-			        "MODIFIER_STATE_NO_HEALTH_BAR"					"MODIFIER_STATE_VALUE_ENABLED"
-			    } 
-			}
-		}
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "build_time"            "2.0"
+	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "gold_cost"             "7"
+	        }
+	    }
+	    
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "builder.lua"
+	            "Function"          "Build"
+	        }
+	    }
 	}
 	//============================================================//
 	// Build Cannon Tower

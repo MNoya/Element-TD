@@ -4,11 +4,16 @@ if not ElementTD then
 end
 ---------------------------------------------------------------------------
 
+require('libraries/timers')
+require('libraries/popups')
+require('libraries/notifications')
+require('libraries/buildinghelper')
+require('mechanics/selection')
+require('mechanics/messages')
+
 require('util/util')
 require('util/class')
 require('util/log')
-require('util/popup')
-require('util/entityutils')
 require('commands/commands')
 
 require("towers/GlobalCasterDummy")
@@ -67,7 +72,6 @@ require("creeps/fast")
 require("creeps/image")
 require("creeps/swarm")
 
-require("PhantomManager")
 require('wave')
 require('voting')
 require('interest')
@@ -79,7 +83,6 @@ require('elements')
 require('spells')
 require('towergrid')
 require('playerdata')
-require('timers')
 require('ElementTD')
 
 function Precache(context)
@@ -99,9 +102,6 @@ function Precache(context)
 	for k, v in pairs(units) do
 		PrecacheUnitByNameAsync(k, function(...) end)
 	end
-
-
-	--PrecacheResource("particle", "particles/nova/phoenix_supernova_reborn.vpcf", context)
 end
 
 function Activate()

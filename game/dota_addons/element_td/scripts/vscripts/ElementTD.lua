@@ -24,7 +24,6 @@ EXPRESS_MODE = false
 
 function ElementTD:InitGameMode()
 
-    EntityUtils:Load()
     GenerateAllTowerGrids() -- create tower grids
     GenerateAllConstants() -- generate all constant tables
 
@@ -58,12 +57,20 @@ function ElementTD:InitGameMode()
     GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_5, 1 )
     GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_6, 1 )
 
+    -- Event Hooks
     ListenToGameEvent('player_connect_full', Dynamic_Wrap(ElementTD, 'PlayerConnectedFull'), self)
     ListenToGameEvent('entity_killed', Dynamic_Wrap(ElementTD, 'EntityKilled'), self)
     ListenToGameEvent('player_chat', Dynamic_Wrap(ElementTD, 'OnPlayerChat'), self)
     ListenToGameEvent('entity_hurt', Dynamic_Wrap(ElementTD, 'EntityHurt'), self)
     ListenToGameEvent('npc_spawned', Dynamic_Wrap(ElementTD, 'OnUnitSpawned'), self)
     ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(ElementTD, 'OnGameStateChange'), self)
+
+    -- Register Listener
+    CustomGameEventManager:RegisterListener( "update_selected_entities", Dynamic_Wrap(ElementTD, 'OnPlayerSelectedEntities'))
+    GameRules.SELECTED_UNITS = {}
+
+    -- Filters
+    GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( ElementTD, "FilterExecuteOrder" ), self )
 
     ------------------------------------------------------
     local base_game_mode = GameRules:GetGameModeEntity()
@@ -209,7 +216,6 @@ end
 
 function ElementTD:OnUnitSpawned(keys)
     local unit = EntIndexToHScript(keys.entindex)
-    EntityUtils:Fix(unit)
 
     if unit:IsRealHero() then
         local playerID = unit:GetPlayerOwnerID()
@@ -258,7 +264,7 @@ function ElementTD:InitializeHero(playerID, hero)
         hero:AddAbility(name)
         hero:FindAbilityByName(name):SetLevel(1)
     end
-    CreatePhantomUnitManager(hero:GetPlayerID())
+    --CreatePhantomUnitManager(hero:GetPlayerID())
     UpdatePlayerSpells(playerID)
 end
 
@@ -309,13 +315,58 @@ function ElementTD:EntityHurt(keys)
             end
         end
     end
-
 end
 
---called every 0.1 seconds
-function ElementTD:Think()
-    -- DEPRECIATED
+function ElementTD:OnPlayerSelectedEntities( event )
+    local pID = event.pID
+
+    GameRules.SELECTED_UNITS[pID] = event.selected_entities
+
+    -- This is for Building Helper to know which is the currently active builder
+    local mainSelected = GetMainSelectedEntity(pID)
+    if IsValidEntity(mainSelected) and IsBuilder(mainSelected) then
+        local player = BuildingHelper:GetPlayerTable(pID)
+        player.activeBuilder = mainSelected
+    end
 end
+
+function ElementTD:FilterExecuteOrder( filterTable )
+    local units = filterTable["units"]
+    local order_type = filterTable["order_type"]
+    local issuer = filterTable["issuer_player_id_const"]
+    local abilityIndex = filterTable["entindex_ability"]
+    local targetIndex = filterTable["entindex_target"]
+    local x = tonumber(filterTable["position_x"])
+    local y = tonumber(filterTable["position_y"])
+    local z = tonumber(filterTable["position_z"])
+    local point = Vector(x,y,z)
+
+    local queue = tobool(filterTable["queue"])
+
+     ------------------------------------------------
+    --              ClearQueue Order              --
+    ------------------------------------------------
+    -- Cancel queue on Stop and Hold
+    if order_type == DOTA_UNIT_ORDER_STOP or order_type == DOTA_UNIT_ORDER_HOLD_POSITION then
+        for n, unit_index in pairs(units) do 
+            local unit = EntIndexToHScript(unit_index)
+            if IsBuilder(unit) then
+                BuildingHelper:ClearQueue(unit)
+            end
+        end
+        return true
+
+    -- Cancel builder queue when casting non building abilities
+    elseif (abilityIndex and abilityIndex ~= 0) and unit and IsBuilder(unit) then
+        local ability = EntIndexToHScript(abilityIndex)
+        if not IsBuildingAbility(ability) then
+            BuildingHelper:ClearQueue(unit)
+        end
+    end
+
+    return true
+end
+
 
 -- helper function
 function GetUnitKeyValue(unitName, key)
