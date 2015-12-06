@@ -1074,15 +1074,6 @@ end
       * Sends onConstructionFailed if invalid
 ]]--
 function BuildingHelper:ValidPosition(size, location, unit, callbacks)
-
-    -- TD height
-    if location.z < 300 then 
-        if callbacks.onConstructionFailed then
-            callbacks.onConstructionFailed()
-            return false
-        end
-    end
-
     local originX = GridNav:WorldToGridPosX(location.x)
     local originY = GridNav:WorldToGridPosY(location.y)
 

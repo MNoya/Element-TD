@@ -10,6 +10,7 @@ require('libraries/notifications')
 require('libraries/buildinghelper')
 require('mechanics/selection')
 require('mechanics/messages')
+require('mechanics/keyvalues')
 
 require('util/util')
 require('util/class')

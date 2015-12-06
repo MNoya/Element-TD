@@ -44,15 +44,11 @@ function Build( event )
 	-- Additional checks to confirm a valid building position can be performed here
 	event:OnPreConstruction(function(vPos)
 
-		-- Enemy unit check
-    	local target_type = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
-    	local flags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS
-    	local enemies = FindUnitsInRadius(teamNumber, vPos, nil, construction_size, DOTA_UNIT_TARGET_TEAM_ENEMY, target_type, flags, FIND_ANY_ORDER, false)
-
-		if #enemies > 0 then
-			SendErrorMessage(caster:GetPlayerOwnerID(), "#error_invalid_build_position")
+	    -- TD height
+	    if vPos.z < 380 then
+	    	SendErrorMessage(caster:GetPlayerOwnerID(), "#error_invalid_build_position")
 			return false
-		end
+	    end
 
        	-- If not enough resources to queue, stop
        	if PlayerResource:GetGold(playerID) < gold_cost then
@@ -135,11 +131,46 @@ function Build( event )
     	-- Remove invulnerability on npc_dota_building baseclass
     	unit:RemoveModifierByName("modifier_invulnerable")
 
+		local playerData = GetPlayerData(playerID)
+		local gold = hero:GetGold()
+		local tower = unit
+		tower.class = building_name
+		tower.element = GetUnitKeyValue(building_name, "Element")
+		tower.damageType = GetUnitKeyValue(building_name, "DamageType")
+
+		UpdateUpgrades(tower)
+		UpdatePlayerSpells(playerID)
+
+		-- create a script object for this tower
+        local scriptClassName = GetUnitKeyValue(building_name, "ScriptClass")
+        if not scriptClassName then scriptClassName = "BasicTower" end
+        if TOWER_CLASSES[scriptClassName] then
+	        local scriptObject = TOWER_CLASSES[scriptClassName](tower, building_name)
+	        tower.scriptClass = scriptClassName
+	        tower.scriptObject = scriptObject
+	        tower.scriptObject:OnCreated()
+	    else
+	    	Log:error("Unknown script class, " .. scriptClassName .. " for tower " .. building_name)
+		end
+
+		ApplySupportModifier(tower)
+
+		if string.find(building_name, "arrow_tower") ~= nil or string.find(building_name, "cannon_tower") ~= nil or string.find(GameSettings.elementsOrderName, "Random") ~= nil then
+			AddAbility(tower, "sell_tower_100")
+		else
+			AddAbility(tower, "sell_tower_75")
+		end
+
+		AddAbility(tower, tower.damageType .. "_passive")
+		if GetUnitKeyValue(building_name, "AOE_Full") and GetUnitKeyValue(building_name, "AOE_Half") then
+			AddAbility(tower, "splash_damage_orb")
+		end
+
 	end)
 
 	-- A building finished construction
 	event:OnConstructionCompleted(function(unit)
-		BuildingHelper:print("Completed construction of " .. unit:GetUnitName() .. " " .. unit:GetEntityIndex())
+		BuildingHelper:print("Completed construction of " .. building_name .. " " .. unit:GetEntityIndex())
 		
 		-- Play construction complete sound
 
@@ -149,7 +180,8 @@ function Build( event )
 		-- Let the building cast abilities
 		unit:RemoveModifierByName("modifier_construction")
 
-		local building_name = unit:GetUnitName()
+		-- No Health Bar
+		unit:AddNewModifier(unit, nil, "modifier_no_health_bar", {})
 
 	end)
 
