@@ -1,11 +1,12 @@
 "elemental_summoner"
 {
 	"BaseClass"		"npc_dota_building"
-	"Model"		"models/fof_altar_prop/fof_altar_prop.vmdl"
+	"Model"			"models/rune_point.vmdl"
+
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_racks90"
 	"HealthBarOffset"		"250"
-	"ModelScale"		"0.5"
+	"ModelScale"		"1.3"
 	"AbilityLayout"		"6"
 	"Ability1"		"summon_water_elemental"
 	"Ability2"		"summon_fire_elemental"
