@@ -62,5 +62,5 @@ function UpdateElementsHUD(playerID)
 		data[k] = v
 	end
 
-	FireGameEvent("etd_update_elements", data)
+	CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_elements", data )
 end

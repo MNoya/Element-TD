@@ -9,7 +9,7 @@ Particles = {
 function ModifyLumber(playerID, amount)
 	GetPlayerData(playerID).lumber = GetPlayerData(playerID).lumber + amount
 	UpdateSummonerSpells(playerID)
-	FireGameEvent("etd_update_lumber", {playerID = playerID, amount = GetPlayerData(playerID).lumber})
+	CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_lumber", { lumber = GetPlayerData(playerID).lumber } )
 end
 
 function UpdateSummonerSpells(playerID)

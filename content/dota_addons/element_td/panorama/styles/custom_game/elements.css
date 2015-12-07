@@ -1,0 +1,186 @@
+.BaseHud
+{
+    width: 100%;
+    height: 100%;
+}
+
+#Elements
+{
+    margin-top: 60px;
+    width: 158px;
+    height: 260px;
+    background-image: url("file://{resources}/images/custom_game/elements/backgroundLarge.png");
+    background-size: 100%;
+    flow-children: down;
+}
+
+#Elements.small
+{
+    height: 100px;
+    background-image: url("file://{resources}/images/custom_game/elements/backgroundSmall.png");
+}
+
+#ElementButton
+{
+    width: 30px;
+    height: 20px;
+    background-image: url("file://{resources}/images/custom_game/elements/button_up.png");
+    background-size: 100%;
+    margin-top: 18px;
+    margin-left: 55px;
+}
+
+#ElementButton:hover
+{
+    background-image: url("file://{resources}/images/custom_game/elements/button_up_over.png");
+}
+
+#ElementButton:active
+{
+    background-image: url("file://{resources}/images/custom_game/elements/button_up_down.png");
+}
+
+
+#ElementButton2
+{
+    width: 30px;
+    height: 20px;
+    background-image: url("file://{resources}/images/custom_game/elements/button_down.png");
+    background-size: 100%;
+    margin-top: 18px;
+    margin-left: 55px;
+}
+
+#ElementButton2:hover
+{
+    background-image: url("file://{resources}/images/custom_game/elements/button_down_over.png");
+}
+
+#ElementButton2:active
+{
+    background-image: url("file://{resources}/images/custom_game/elements/button_down_down.png");
+}
+
+#ElementButtonHolder
+{
+    width: 100%;
+    height: 50px;
+}
+
+#ResourceLumber
+{
+    margin-top: -20px;
+}
+
+#LumberDisplay
+{
+    margin-top: 95px;
+    margin-left: 170px;
+    color: #009900;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px 4.0 #000;
+
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#LumberDisplay.newResource
+{
+    animation-name: NewResource;
+}
+
+#Secondary
+{
+    width: 100%;
+    height: 100%;
+    flow-children: down;
+}
+
+#Divider
+{
+    margin-top: -8px;
+    width: 100%;
+    height: 35px;
+    background-image: url("file://{resources}/images/custom_game/elements/divider.png");
+    background-size: 100%;
+    contrast: 1.1;
+}
+
+#Water
+{
+    color: #0094FF;
+}
+
+#Fire
+{
+    color: #CC0000;
+}
+
+#Nature
+{
+    color: #19AC19;
+}
+
+#Earth
+{
+    color: #C9861B;
+}
+
+#Light
+{
+    color: #E6E600;
+}
+
+#Dark
+{
+    color:  #6C05B1;
+}
+
+.label
+{
+    font-size: 22px;
+    color: #FFF;
+}
+
+.value
+{
+    horizontal-align: right;
+    font-size: 22px;
+    color: #FFF;
+}
+
+.resource, .element
+{
+    width: 100%;
+    padding-left: 6px;
+    padding-right: 30px;
+}
+
+.element
+{
+    margin-top: -5px;
+}
+
+.hide
+{
+    visibility: collapse;
+}
+
+@keyframes 'NewResource'
+{
+    0%
+    {
+        transform: translateX( -4px ) rotateZ( -5deg );
+    }
+
+    50%
+    {
+        transform: translateX( 4px ) rotateZ( 5deg );
+    }
+    
+    100%
+    {
+        transform: translateX( -4px ) rotateZ( -5deg );
+    }
+}

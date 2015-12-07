@@ -2,33 +2,13 @@
 {
    "1"
    {
-      "File"  	"elements"
-      "Depth" 	"10"
-   }
-   "2"
-   {
       "File"  	"center_message"
       "Depth" 	"20"
    }
-   "3"
-   {
-      "File"   "etd"
-      "Depth"  "9"
-   }
-   "4"
+   "2"
    {
       "File"   "Voting"
       "Depth"  "23"
-   }
-   "5"
-   {
-      "File"   "Interest"
-      "Depth"  "52"
-   }
-   "6"
-   {
-      "File"   "Multiboard"
-      "Depth"  "51"
    }
 }
 

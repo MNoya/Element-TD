@@ -49,8 +49,19 @@ function UpdateWaveInfo( table ) {
 	else
 		currentAbility2.visible = false;
 
-	nextWave.text = "Wave " + table.nextWave;
-	nextAbility1.abilityname = table.nextAbility1;
+	if (table.nextWave != "")
+		nextWave.text = "Wave " + table.nextWave;
+	else
+		nextWave.text = "";
+	if (table.nextAbility1 === undefined || table.nextAbility1 == "") {
+		nextAbility1.abilityname = "";
+		nextAbility1.visible = false;
+	}
+	else{
+		nextAbility1.abilityname = table.nextAbility1;
+		nextAbility1.visible = true;
+	}
+
 	if (nextAbility1.abilityname != "")
 		nextAbility1.visible = true;
 	if (table.nextAbility2 === undefined || table.nextAbility2 == "") {
