@@ -1,0 +1,43 @@
+//=================================================================================================================
+// Impulse Tower: Impetus
+//=================================================================================================================
+"impulse_tower_impetus"
+{
+	"BaseClass"						"ability_datadriven"											
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"enchantress_impetus"
+	"AbilityCastRange"				"1375"
+	"MaxLevel"						"2"
+
+	"Modifiers"
+	{
+		"modifier_impetus"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			"OnAttackStart"
+			{
+				"RunScript"
+				{
+					"Target"			"POINT"
+					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+					"Function"			"TriggerEvent"
+					"Event"				"OnAttackStart"
+				}
+			}
+		}
+	}
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"multiplier"			"2250 11250"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"min_range"				"0"
+		}
+	}
+}

@@ -1,0 +1,42 @@
+//============================================================//
+// Quark Tower: Quantum Beam
+//============================================================//
+"quark_tower_quantum_beam"
+{
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel"						"3"
+	"AbilityTextureName"			"towers/quark_tower_quantum_beam"
+	
+	"Modifiers"
+	{
+		"modifier_quantum_beam"
+		{
+			"Passive"		"1"
+			"IsHidden"		"1"
+			"OnAttackStart"
+			{
+				"RunScript"
+				{
+					"Target"			"TARGET"
+					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+					"Function"			"TriggerEvent"
+					"Event"				"OnAttackStart"
+				}
+			}
+		}
+		"modifier_quantum_beam_indicator"
+		{
+			"AbilityTextureName"		"towers/quark_tower_quantum_beam"
+		}
+	}
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"50"
+		}
+	}
+}

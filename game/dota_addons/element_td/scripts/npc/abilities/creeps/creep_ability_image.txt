@@ -1,0 +1,61 @@
+//============================================================//
+// Creep Ability: Image										  //
+//============================================================//
+"creep_ability_image"
+{
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
+	"MaxLevel"						"1"
+	"AbilityTextureName"			"modifier_illusion"
+	"AbilityCooldown"				"15"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"		"10"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"Target"		"TARGET"
+			"ModifierName"	"modifier_image_slow"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_image_passive"
+		{
+			"IsHidden"	"1"
+			"Passive"	"1"
+
+			"OnTakeDamage"
+			{
+				"RunScript"
+				{
+					"Target"			"CASTER"
+					"ScriptFile"		"scripts/vscripts/creeps/creepevents.lua"
+					"Function"			"TriggerEvent"
+					"Event"				"OnTakeDamage"
+					"ImageDuration"		"%duration"
+				}
+			}
+		}
+		"modifier_image_slow"
+		{
+			"IsHidden"			"1"
+			"Duration"			"3"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-80"
+			}
+		}
+	}
+}

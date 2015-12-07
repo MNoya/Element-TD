@@ -1,0 +1,20 @@
+"item_upgrade_to_electricity_tower_3_disabled"
+{
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"BaseClass"		"item_datadriven"
+	"AbilityManaCost"		"0"
+	"ItemShareability"		"ITEM_NOT_SHAREABLE"
+	"ItemSellable"		"0"
+	"ItemKillable"		"0"
+	"ItemPurchasable"		"0"
+	"ItemDroppable"		"0"
+	"AbilityTextureName"		"item_towers_electricty_tower_conjure_lightning_disabled"
+	"Cost"		"1900"
+	"Requirements"
+	{
+		"fire"		"3"
+		"fire"		"3"
+		"light"		"3"
+		"light"		"3"
+	}
+}

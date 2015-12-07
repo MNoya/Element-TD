@@ -1,0 +1,59 @@
+//=================================================================================================================
+// Tornado: Slow
+//=================================================================================================================
+"windstorm_tornado_slow"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"											
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"tornado_tempest"
+	"MaxLevel"						"1"
+	"AbilityCastRange"				"700"
+
+	"Modifiers"
+	{
+		"modifier_tornado_aura"
+		{
+			"Passive"				"1"
+			"IsHidden"				"1"
+			"Aura"					"modifier_tornado_slow"
+			"Aura_Radius"			"%radius"
+			"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_ALL"
+		}
+		"modifier_tornado_slow"
+		{
+			"IsDebuff"		"1"
+			"TextureName"	"tornado_tempest"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+			}
+		}
+	}
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"slow_tooltip"			"7.5 22.5"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"slow"					"-7.5 -22.5"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"500"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"240 1200"
+		}
+	}
+}

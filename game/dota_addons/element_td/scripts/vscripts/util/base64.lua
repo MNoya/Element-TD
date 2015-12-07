@@ -17,7 +17,7 @@ function rsh(value,shift)
 end
 
 -- return single bit (for OR)
-function bit(x,b)
+local function bit(x,b)
     return (x % 2^b - x % 2^(b-1) > 0)
 end
 

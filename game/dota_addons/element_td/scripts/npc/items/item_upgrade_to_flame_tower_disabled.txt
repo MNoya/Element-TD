@@ -1,0 +1,20 @@
+"item_upgrade_to_flame_tower_disabled"
+{
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"BaseClass"		"item_datadriven"
+	"AbilityManaCost"		"0"
+	"ItemShareability"		"ITEM_NOT_SHAREABLE"
+	"ItemSellable"		"0"
+	"ItemKillable"		"0"
+	"ItemPurchasable"		"0"
+	"ItemDroppable"		"0"
+	"AbilityTextureName"		"item_towers_flame_tower_sunburn_disabled"
+	"Cost"		"325"
+	"Requirements"
+	{
+		"fire"		"1"
+		"fire"		"1"
+		"nature"		"1"
+		"nature"		"1"
+	}
+}

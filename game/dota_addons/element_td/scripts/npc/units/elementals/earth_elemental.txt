@@ -1,0 +1,71 @@
+"earth_elemental"
+{
+	"ArmorPhysical"		"0"
+	"MagicalResistance"		"0"
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"		"0"
+	"AttackDamageMax"		"0"
+	"AttackRate"		"0"
+	"AttackAnimationPoint"		"0"
+	"AttackAcquisitionRange"		"0"
+	"AttackRange"		"0"
+	"ProjectileModel"		""
+	"ProjectileSpeed"		"0"
+	"RingRadius"		"70"
+	"HealthBarOffset"		"160"
+	"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+	"BountyXP"		"0"
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"		"300"
+	"StatusHealthRegen"		"0"
+	"StatusMana"		"0"
+	"StatusManaRegen"		"0"
+	"VisionDaytimeRange"		"1200"
+	"VisionNighttimeRange"		"800"
+	"Model"		"models/heroes/tiny_01/tiny_01.vmdl"
+	"BaseClass"		"npc_dota_creature"
+	"SoundSet"		"Hero_Tiny"
+	"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
+	"ConsideredHero"		"1"
+	"precache"
+	{
+		"model"		"models/heroes/tiny_01/tiny_01.vmdl"
+		"model"		"models/heroes/tiny_02/tiny_02.vmdl"
+		"model"		"models/heroes/tiny_03/tiny_03.vmdl"
+		"model"		"models/heroes/tiny_04/tiny_04.vmdl"
+		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
+	}
+	"Creature"
+	{
+		"AttachWearables"
+		{
+			"Wearable1"
+			{
+				"ItemDef"		"516"
+			}
+			"Wearable2"
+			{
+				"ItemDef"		"493"
+			}
+			"Wearable3"
+			{
+				"ItemDef"		"494"
+			}
+			"Wearable4"
+			{
+				"ItemDef"		"495"
+			}
+			"Wearable5"
+			{
+				"ItemDef"		"496"
+			}
+		}
+	}
+	"Level"		"1"
+	"ModelScale"		"1.3"
+	"BountyGoldMin"		"0"		// Gold earned min"
+	"BountyGoldMax"		"0"		// Gold earned max"
+	"StatusHealth"		"75"	// Base health"
+	"Element"		"earth"
+	"Ability1"		"earth_armor"
+}

@@ -1,66 +1,44 @@
--- Element Tower Defense
--- programmed by Vlad Marica (Quintinity)
+players = {}
 
-players = {};
-NPC_UNITS_CUSTOM = LoadKeyValues("scripts/npc/npc_units_custom.txt");
-NPC_ABILITIES_CUSTOM = LoadKeyValues("scripts/npc/npc_abilities_custom.txt");
-NPC_ITEMS_CUSTOM = LoadKeyValues("scripts/npc/npc_items_custom.txt");
-ADDON_ENGLISH = LoadKeyValues("resource/addon_english.txt");
-
-TEAM_TO_SECTOR = {};
-TEAM_TO_SECTOR[2] = 0;
-TEAM_TO_SECTOR[3] = 1;
-TEAM_TO_SECTOR[6] = 2;
-TEAM_TO_SECTOR[7] = 3;
-TEAM_TO_SECTOR[8] = 4;
-TEAM_TO_SECTOR[9] = 5;
-TEAM_TO_SECTOR[10] = 6;
-TEAM_TO_SECTOR[11] = 7;
+TEAM_TO_SECTOR = {}
+TEAM_TO_SECTOR[2] = 0
+TEAM_TO_SECTOR[3] = 1
+TEAM_TO_SECTOR[6] = 2
+TEAM_TO_SECTOR[7] = 3
+TEAM_TO_SECTOR[8] = 4
+TEAM_TO_SECTOR[9] = 5
+TEAM_TO_SECTOR[10] = 6
+TEAM_TO_SECTOR[11] = 7
  
-GAME_IS_PAUSED = false;
-SKIP_VOTING = false; -- assigns default game settings if true
-DEV_MODE = false;
-EXPRESS_MODE = false;
-
-if ElementTD == nil then
-    ElementTD = {};
-    ElementTD.szEntityClassName = "ElementTD";
-    ElementTD.szNativeClassName = "dota_base_game_mode";
-    ElementTD.__index = ElementTD;
-end
-
-function ElementTD:new(o)
-    o = o or {};
-    setmetatable(o, self);
-    return o;
-end
+GAME_IS_PAUSED = false
+SKIP_VOTING = false -- assigns default game settings if true
+DEV_MODE = false
+EXPRESS_MODE = false
 
 function ElementTD:InitGameMode()
-    ElementTD = self
 
-    EntityUtils:Load();
     GenerateAllTowerGrids() -- create tower grids
-    GenerateAllConstants(); -- generate all constant tables
+    GenerateAllConstants() -- generate all constant tables
 
-    self.availableSpawnIndex = 1; -- the index of the next available sector
-    self.playersCount = 0;
-    self.gameStarted = false;
-    self.playerSpawnIndexes = {};
+    self.availableSpawnIndex = 1 -- the index of the next available sector
+    self.playersCount = 0
+    self.gameStarted = false
+    self.playerSpawnIndexes = {}
 
-    self.gameStartTriggers = 1;
+    self.gameStartTriggers = 1
 
-    self.direPlayers = 0;
-    self.radiantPlayers = 0;
-    self.playerIDMap = {}; --maps userIDs to playerID
-    self.vPlayerIDToHero = {}; -- Maps playerID to hero
-    self.dummyCreated = false; -- has the global caster dummy been initialized
+    self.direPlayers = 0
+    self.radiantPlayers = 0
+    self.playerIDMap = {} --maps userIDs to playerID
+    self.vPlayerIDToHero = {} -- Maps playerID to hero
+    self.dummyCreated = false -- has the global caster dummy been initialized
 
-    GameRules:SetHeroRespawnEnabled(false);
-    GameRules:SetSameHeroSelectionEnabled(true);
-    GameRules:SetPostGameTime(30);
-    GameRules:SetPreGameTime(0);
-    GameRules:SetHeroSelectionTime(0);
-    GameRules:SetGoldPerTick(0);
+    GameRules:SetHeroRespawnEnabled(false)
+    GameRules:SetSameHeroSelectionEnabled(true)
+    GameRules:SetPostGameTime(30)
+    GameRules:SetPreGameTime(0)
+    GameRules:SetHeroSelectionTime(0)
+    GameRules:SetGoldPerTick(0)
 
     -- Setup Teams
     GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 1 )
@@ -72,23 +50,33 @@ function ElementTD:InitGameMode()
     GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_5, 1 )
     GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_6, 1 )
 
-    ListenToGameEvent('player_connect_full', Dynamic_Wrap(ElementTD, 'PlayerConnectedFull'), self);
-    ListenToGameEvent('entity_killed', Dynamic_Wrap(ElementTD, 'EntityKilled'), self);
-    ListenToGameEvent('player_chat', Dynamic_Wrap(ElementTD, 'OnPlayerChat'), self);
-    ListenToGameEvent('entity_hurt', Dynamic_Wrap(ElementTD, 'EntityHurt'), self);
-    ListenToGameEvent('npc_spawned', Dynamic_Wrap(ElementTD, 'OnUnitSpawned'), self);
-    ListenToGameEvent('player_chat', Dynamic_Wrap(ElementTD, 'OnPlayerChat'), self);
-    ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(ElementTD, 'OnGameStateChange'), self);
+    -- Event Hooks
+    ListenToGameEvent('player_connect_full', Dynamic_Wrap(ElementTD, 'PlayerConnectedFull'), self)
+    ListenToGameEvent('entity_killed', Dynamic_Wrap(ElementTD, 'EntityKilled'), self)
+    ListenToGameEvent('player_chat', Dynamic_Wrap(ElementTD, 'OnPlayerChat'), self)
+    ListenToGameEvent('entity_hurt', Dynamic_Wrap(ElementTD, 'EntityHurt'), self)
+    ListenToGameEvent('npc_spawned', Dynamic_Wrap(ElementTD, 'OnUnitSpawned'), self)
+    ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(ElementTD, 'OnGameStateChange'), self)
+
+    -- Register Listener
+    CustomGameEventManager:RegisterListener( "update_selected_entities", Dynamic_Wrap(ElementTD, 'OnPlayerSelectedEntities'))
+    GameRules.SELECTED_UNITS = {}
+
+    -- Filters
+    GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( ElementTD, "FilterExecuteOrder" ), self )
+
+    -- Lua Modifiers
+    LinkLuaModifier("modifier_no_health_bar", "libraries/modifiers/modifier_no_health_bar", LUA_MODIFIER_MOTION_NONE)
 
     -- Register Listener   
     CustomGameEventManager:RegisterListener( "next_wave", Dynamic_Wrap(ElementTD, "OnNextWave")) -- wave info
 
     ------------------------------------------------------
-    local base_game_mode = GameRules:GetGameModeEntity();
-    base_game_mode:SetRecommendedItemsDisabled(true); -- no recommended items panel
-    base_game_mode:SetFogOfWarDisabled(true); -- no fog
-    base_game_mode:SetCameraDistanceOverride(1500); -- move the camera higher up
-    base_game_mode:SetCustomGameForceHero( "npc_dota_hero_keeper_of_the_light" ) -- Skip hero pick screen
+    local base_game_mode = GameRules:GetGameModeEntity()
+    base_game_mode:SetRecommendedItemsDisabled(true) -- no recommended items panel
+    base_game_mode:SetFogOfWarDisabled(true) -- no fog
+    base_game_mode:SetCameraDistanceOverride(1500) -- move the camera higher up
+    base_game_mode:SetCustomGameForceHero( "npc_dota_hero_wisp" ) -- Skip hero pick screen
     ------------------------------------------------------
 
     -- Allow cosmetic swapping
@@ -97,30 +85,30 @@ function ElementTD:InitGameMode()
     -- Don't end the game if everyone is unassigned
     SendToServerConsole("dota_surrender_on_disconnect 0")
 
-    print("\n\nLoaded Element Tower Defense!\n\n");
+    print("Loaded Element Tower Defense!")
 end
 
 function ElementTD:OnGameStateChange(keys)
     if GameRules:State_Get() == DOTA_GAMERULES_STATE_HERO_SELECTION then
-        self.gameStartTriggers = self.gameStartTriggers + 1;
+        self.gameStartTriggers = self.gameStartTriggers + 1
         if self.gameStartTriggers < 2 then return end
 
-        GameRules:SendCustomMessage("Welcome to <font color='#70EA72'>Element Tower Defense</font>!", 0, 0);
+        GameRules:SendCustomMessage("Welcome to <font color='#70EA72'>Element Tower Defense</font>!", 0, 0)
         
-        self.gameStarted = true;
-        self:MoveHeroesToSpawns();
-        self:StartGame();
+        self.gameStarted = true
+        self:MoveHeroesToSpawns()
+        self:StartGame()
     end
 end
 
 function ElementTD:PlayerConnectedFull(keys)
-    local player = PlayerInstanceFromIndex(keys.index + 1);
-    table.insert(players, player);
+    local player = PlayerInstanceFromIndex(keys.index + 1)
+    table.insert(players, player)
 end
 
 function ElementTD:OnPlayerChat(keys)
-    PrintTable(keys);
-    OnPlayerChatEvent(keys.text, self.playerIDMap[keys.userid]);
+    PrintTable(keys)
+    OnPlayerChatEvent(keys.text, self.playerIDMap[keys.userid])
 end
 
 -- move all heroes to their proper spawn locations
@@ -129,26 +117,26 @@ function ElementTD:MoveHeroesToSpawns()
         endTime = 1,
         callback = function()
             for k, ply in pairs(players) do
-                local playerData = GetPlayerData(ply:GetPlayerID());
+                local playerData = GetPlayerData(ply:GetPlayerID())
                 if self.playerSpawnIndexes[ply:GetPlayerID()] then
-                    local hero = ply:GetAssignedHero();
+                    local hero = ply:GetAssignedHero()
 
-                    hero:SetAbsOrigin(SpawnLocations[self.playerSpawnIndexes[ply:GetPlayerID()]]); 
+                    hero:SetAbsOrigin(SpawnLocations[self.playerSpawnIndexes[ply:GetPlayerID()]]) 
 
                     -- we must create the Elemental Summoner for this player
-                    local sector = playerData.sector + 1;
-                    local summoner = CreateUnitByName("elemental_summoner", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber()); 
-                    summoner:SetOwner(ply:GetAssignedHero());
-                    summoner:SetControllableByPlayer(ply:GetPlayerID(), true);
-                    summoner:SetAngles(0, 270, 0);
+                    local sector = playerData.sector + 1
+                    local summoner = CreateUnitByName("elemental_summoner", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber()) 
+                    summoner:SetOwner(ply:GetAssignedHero())
+                    summoner:SetControllableByPlayer(ply:GetPlayerID(), true)
+                    summoner:SetAngles(0, 270, 0)
 
-                    GetPlayerData(ply:GetPlayerID())["summoner"] = summoner;
-                    ModifyLumber(ply:GetPlayerID(), 0);  -- updates summoner spells
-                    UpdatePlayerSpells(ply:GetPlayerID());
+                    GetPlayerData(ply:GetPlayerID())["summoner"] = summoner
+                    ModifyLumber(ply:GetPlayerID(), 0)  -- updates summoner spells
+                    UpdatePlayerSpells(ply:GetPlayerID())
                 end
             end
         end
-    });
+    })
 end
 
 -- let's start the actual game
@@ -159,28 +147,28 @@ function ElementTD:StartGame()
         endTime = 3,
 
         callback = function()
-            Log:info("The game has started!");
-            FireGameEvent("etd_game_started", {});
+            Log:info("The game has started!")
+            FireGameEvent("etd_game_started", {})
             
             if not SKIP_VOTING then
-                FireGameEvent("etd_toggle_vote_dialog", {visible = true}); -- show that vote ui
-                StartVoteTimer();
+                FireGameEvent("etd_toggle_vote_dialog", {visible = true}) -- show that vote ui
+                StartVoteTimer()
             else
                 -- voting should never be skipped in real games
                 if DEV_MODE then
-                    GameSettings:SetGameLength("Developer");
+                    GameSettings:SetGameLength("Developer")
                 else
-                    GameSettings:SetGameLength("Normal");
+                    GameSettings:SetGameLength("Normal")
                 end
-                Log:info("Skipping voting");
-                GameSettings:SetDifficulty("Normal");
-                GameSettings:SetCreepOrder("Normal");
+                Log:info("Skipping voting")
+                GameSettings:SetDifficulty("Normal")
+                GameSettings:SetCreepOrder("Normal")
                 for _, ply in pairs(players) do
-                    StartBreakTime(ply:GetPlayerID()); -- begin the break time for wave 1 :D
+                    StartBreakTime(ply:GetPlayerID()) -- begin the break time for wave 1 :D
                 end
             end
         end
-    });
+    })
 end
 
 function ElementTD:OnNextWave( keys )
@@ -195,40 +183,40 @@ function ElementTD:OnNextWave( keys )
 end
 
 function ElementTD:EndGameForPlayer( playerID )
-    local playerData = GetPlayerData(playerID);
-    Log:info("Player "..playerID.." has been defeated on wave "..playerData.nextWave..".");
-    GameRules:SendCustomMessage(playerData.name.." has been defeated on wave "..playerData.nextWave..".", 0, 0);
+    local playerData = GetPlayerData(playerID)
+    Log:info("Player "..playerID.." has been defeated on wave "..playerData.nextWave..".")
+    GameRules:SendCustomMessage(playerData.name.." has been defeated on wave "..playerData.nextWave..".", 0, 0)
 
     -- Clean up
-    UpdatePlayerSpells(playerID);
+    UpdatePlayerSpells(playerID)
 
     if playerData.elementalUnit ~= nil and not playerData.elementalUnit:IsNull() and playerData.elementalUnit:IsAlive() then
         print("Elemental Removed")
-        playerData.elementalUnit:ForceKill(false);
+        playerData.elementalUnit:ForceKill(false)
     end
     for i,v in pairs(playerData.towers) do
-        UTIL_RemoveImmediate(EntIndexToHScript(i));
+        UTIL_RemoveImmediate(EntIndexToHScript(i))
     end
     for j,k in pairs(playerData.clones) do
-        UTIL_RemoveImmediate(EntIndexToHScript(j));
+        UTIL_RemoveImmediate(EntIndexToHScript(j))
     end
     for l,m in pairs(playerData.waveObject.creeps) do
-        EntIndexToHScript(l):ForceKill(false);
+        EntIndexToHScript(l):ForceKill(false)
     end
-    ElementTD:CheckGameEnd();
+    ElementTD:CheckGameEnd()
 end
 
 -- Check if all players are dead or have completed all the waves so we can end the game
 function ElementTD:CheckGameEnd()
-    local endGame = true;
+    local endGame = true
     for k, ply in pairs(players) do
-        local playerData = GetPlayerData(ply:GetPlayerID());
+        local playerData = GetPlayerData(ply:GetPlayerID())
         if playerData.health ~= 0 or playerData.completedWaves < WAVE_COUNT then
-            endGame = false;
+            endGame = false
         end
     end
     if endGame then
-        Log:info("Game end condition reached.");
+        Log:info("Game end condition reached.")
         GameRules:SendCustomMessage("Thank you for playing <font color='#70EA72'>Element Tower Defense</font>!", 0, 0)
 
         GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
@@ -237,181 +225,154 @@ function ElementTD:CheckGameEnd()
 end
 
 function ElementTD:OnUnitSpawned(keys)
-    local unit = EntIndexToHScript(keys.entindex);
-    EntityUtils:Fix(unit);
+    local unit = EntIndexToHScript(keys.entindex)
 
     if unit:IsRealHero() then
-        local playerID = unit:GetPlayerOwnerID();
-        local player = PlayerResource:GetPlayer(playerID);
-        CreateDataForPlayer(playerID);
+        local playerID = unit:GetPlayerOwnerID()
+        local player = PlayerResource:GetPlayer(playerID)
+        CreateDataForPlayer(playerID)
 
         if playerID >= 0 then
             if not self.dummyCreated then
-                GlobalCasterDummy:Init();
-                self.dummyCreated = true;
+                GlobalCasterDummy:Init()
+                self.dummyCreated = true
             end
-            local playerData = GetPlayerData(playerID);
-            playerData.name = PlayerResource:GetPlayerName(playerID);
-            self:InitializeHero(player:GetPlayerID(), unit);
-            self.playerSpawnIndexes[player:GetPlayerID()] = playerData.sector + 1;
-            self.availableSpawnIndex = self.availableSpawnIndex + 1;
+            local playerData = GetPlayerData(playerID)
+            playerData.name = PlayerResource:GetPlayerName(playerID)
+            self:InitializeHero(player:GetPlayerID(), unit)
+            self.playerSpawnIndexes[player:GetPlayerID()] = playerData.sector + 1
+            self.availableSpawnIndex = self.availableSpawnIndex + 1
         end
     end
 end
 
 -- initializes a player's hero
 function ElementTD:InitializeHero(playerID, hero)
-    print("OnInitHero PID:"..playerID);
-    hero:AddNewModifier(nil, nil, "modifier_disarmed", {});
-    GlobalCasterDummy:ApplyModifierToTarget(hero, "player_movespeed_applier", "modifier_base_movespeed");
-    hero:SetAbilityPoints(0);
-    hero:SetMaxHealth(50);
-    hero:SetHealth(50);
-    hero:SetBaseDamageMin(0);
-    hero:SetBaseDamageMax(0);
-    hero:SetBaseHealthRegen(-0.03); -- we need to counteract base regen that 1 strength give you. volvo pls.
-    hero:SetGold(0, false);
-    hero:SetGold(70, true);
-    hero:SetModelScale(0.75);
-    hero:AddNewModifier(nil, nil, "modifier_silence", {}); -- silence this player until break time is started
+    print("OnInitHero PID:"..playerID)
+    hero:AddNewModifier(nil, nil, "modifier_disarmed", {})
+    GlobalCasterDummy:ApplyModifierToTarget(hero, "player_movespeed_applier", "modifier_base_movespeed")
+    hero:SetAbilityPoints(0)
+    hero:SetMaxHealth(50)
+    hero:SetHealth(50)
+    hero:SetBaseDamageMin(0)
+    hero:SetBaseDamageMax(0)
+    hero:SetBaseHealthRegen(-0.03) -- we need to counteract base regen that 1 strength give you. volvo pls.
+    hero:SetGold(0, false)
+    hero:SetGold(70, true)
+    hero:SetModelScale(0.75)
+    hero:AddNewModifier(nil, nil, "modifier_silence", {}) -- silence this player until break time is started
 
-    self.vPlayerIDToHero[playerID] = hero; -- Store hero for player in here GetAssignedHero can be flakey
+    self.vPlayerIDToHero[playerID] = hero -- Store hero for player in here GetAssignedHero can be flakey
 
-    local playerData = GetPlayerData(playerID);
-    local spells = SpellPages[playerData.page];
-    playerData.spells = {};
+    local playerData = GetPlayerData(playerID)
+    local spells = SpellPages[playerData.page]
+    playerData.spells = {}
 
-    playerData.sector = TEAM_TO_SECTOR[hero:GetTeamNumber()];
+    playerData.sector = TEAM_TO_SECTOR[hero:GetTeamNumber()]
 
     for k, name in pairs(spells) do
-        hero:AddAbility(name);
-        hero:FindAbilityByName(name):SetLevel(1);
+        hero:AddAbility(name)
+        hero:FindAbilityByName(name):SetLevel(1)
     end
-    CreatePhantomUnitManager(hero:GetPlayerID());
-    UpdatePlayerSpells(playerID);
+    --CreatePhantomUnitManager(hero:GetPlayerID())
+    UpdatePlayerSpells(playerID)
 end
 
 function ElementTD:EntityKilled(keys)
-    local index = keys.entindex_killed;
-    local entity = EntIndexToHScript(index);
-    local playerData = GetPlayerData(entity.playerID);
+    local index = keys.entindex_killed
+    local entity = EntIndexToHScript(index)
+    local playerData = GetPlayerData(entity.playerID)
 
     if entity.scriptObject and entity.scriptObject.OnDeath then
-        entity.scriptObject:OnDeath();
+        entity.scriptObject:OnDeath()
     end
 
     if entity.isElemental then
         -- an elemental was killed :O
-        Timers:RemoveTimer("MoveElemental"..index);
-        Log:info(playerData.name .. " has killed a " .. entity.element .. " elemental");
-        playerData.elementalActive = false;
-        playerData.elementalUnit = nil;
-        ModifyElementValue(entity.playerID, entity.element, 1);
+        Timers:RemoveTimer("MoveElemental"..index)
+        Log:info(playerData.name .. " has killed a " .. entity.element .. " elemental")
+        playerData.elementalActive = false
+        playerData.elementalUnit = nil
+        ModifyElementValue(entity.playerID, entity.element, 1)
     else
-        local playerID = entity.playerID;
+        local playerID = entity.playerID
         if entity.waveObject then 
-            entity.waveObject:OnCreepKilled(index);
+            entity.waveObject:OnCreepKilled(index)
         end
-        CREEP_SCRIPT_OBJECTS[index] = nil;
+        CREEP_SCRIPT_OBJECTS[index] = nil
         --for towerID,_ in pairs(GetPlayerData(pID).towers) do
-            --UpdateUpgrades(EntIndexToHScript(towerID));
+            --UpdateUpgrades(EntIndexToHScript(towerID))
         --end
-        UpdatePlayerSpells(playerID);
-        Timers:RemoveTimer("MoveUnit"..index);
+        UpdatePlayerSpells(playerID)
+        Timers:RemoveTimer("MoveUnit"..index)
     end
 end
 
 function ElementTD:EntityHurt(keys)
-    local entity = EntIndexToHScript(keys.entindex_killed);
-    local attacker = nil;
+    local entity = EntIndexToHScript(keys.entindex_killed)
+    local attacker = nil
     if keys.entindex_attacker then
-        attacker = EntIndexToHScript(keys.entindex_attacker);
+        attacker = EntIndexToHScript(keys.entindex_attacker)
     end
 
 
     if entity and attacker then
         if attacker.dummyParent then
-            local tower = attacker.dummyParent;
+            local tower = attacker.dummyParent
 
             if tower.scriptClass == "ElectricityTower" then -- handle electricity tower chain lightning damage
-                tower.scriptObject:OnLightningHitEntity(entity);
+                tower.scriptObject:OnLightningHitEntity(entity)
             end
         end
     end
-
 end
 
---called every 0.1 seconds
-function ElementTD:Think()
-    -- DEPRECIATED
-end
+function ElementTD:OnPlayerSelectedEntities( event )
+    local pID = event.pID
 
--- helper function
-function GetUnitKeyValue(unitName, key)
-    if NPC_UNITS_CUSTOM[unitName] then
-        if not NPC_UNITS_CUSTOM[unitName][key] then
-            --Log:warn("Key " .. key .. " does not exist for " .. unitName);
-        end
-        return NPC_UNITS_CUSTOM[unitName][key];
-    else
-        --Log:warn("Unknown unit type: " .. tostring(unitName) .. " [Key: " .. key .. "]");
-        return nil;
+    GameRules.SELECTED_UNITS[pID] = event.selected_entities
+
+    -- This is for Building Helper to know which is the currently active builder
+    local mainSelected = GetMainSelectedEntity(pID)
+    if IsValidEntity(mainSelected) and IsBuilder(mainSelected) then
+        local player = BuildingHelper:GetPlayerTable(pID)
+        player.activeBuilder = mainSelected
     end
 end
 
--- helper function
-function GetAbilityKeyValue(abilityName, key)
-    if NPC_ABILITIES_CUSTOM[abilityName] then
-        if not NPC_ABILITIES_CUSTOM[abilityName][key] then
-            --Log:warn("Key " .. key .. " does not exist for " .. abilityName);
-        end
-        return NPC_ABILITIES_CUSTOM[abilityName][key];
-    else
-        --Log:warn("Unknown ability: " .. tostring(abilityName) .. " [Key: " .. key .. "]");
-        return nil;
-    end
-end
+function ElementTD:FilterExecuteOrder( filterTable )
+    local units = filterTable["units"]
+    local order_type = filterTable["order_type"]
+    local issuer = filterTable["issuer_player_id_const"]
+    local abilityIndex = filterTable["entindex_ability"]
+    local targetIndex = filterTable["entindex_target"]
+    local x = tonumber(filterTable["position_x"])
+    local y = tonumber(filterTable["position_y"])
+    local z = tonumber(filterTable["position_z"])
+    local point = Vector(x,y,z)
 
-function GetEnglishTranslation(key)
-    return ADDON_ENGLISH.Tokens[key];
-end
+    local queue = tobool(filterTable["queue"])
 
--- helper function
-function GetItemKeyValue(itemName, key)
-    if NPC_ITEMS_CUSTOM[itemName] then
-        if not NPC_ITEMS_CUSTOM[itemName][key] then
-            --Log:warn("Key " .. key .. " does not exist for " .. itemName);
-        end
-        return NPC_ITEMS_CUSTOM[itemName][key];
-    else
-        Log:warn("Unknown item: " .. tostring(itemName) .. " [Key: " .. key .. "]");
-        return nil;
-    end
-end
-
---helper function
-function GetAbilitySpecialValue(abilityName, specialValue)
-    if NPC_ABILITIES_CUSTOM[abilityName] then
-        local kv = NPC_ABILITIES_CUSTOM[abilityName];
-        if kv.AbilitySpecial then
-            for k, v in pairs(kv.AbilitySpecial) do
-                if v[specialValue] then
-                    local result = nil;
-                    if string.find(v[specialValue], " ") then -- is this value an array?
-                        result = split(v[specialValue], " ");
-                        for k2, v2 in pairs(result) do
-                            result[k2] = tonumber(v2);
-                        end
-                    else
-                        result = tonumber(v[specialValue]);
-                    end
-                    return result;
-                end
+     ------------------------------------------------
+    --              ClearQueue Order              --
+    ------------------------------------------------
+    -- Cancel queue on Stop and Hold
+    if order_type == DOTA_UNIT_ORDER_STOP or order_type == DOTA_UNIT_ORDER_HOLD_POSITION then
+        for n, unit_index in pairs(units) do 
+            local unit = EntIndexToHScript(unit_index)
+            if IsBuilder(unit) then
+                BuildingHelper:ClearQueue(unit)
             end
         end
-        return nil;
-    else
-        Log:warn("Unknown ability: " .. tostring(abilityName) .. " [SpecialValue: " .. specialValue .. "]");
-        return nil;
+        return true
+
+    -- Cancel builder queue when casting non building abilities
+    elseif (abilityIndex and abilityIndex ~= 0) and unit and IsBuilder(unit) then
+        local ability = EntIndexToHScript(abilityIndex)
+        if not IsBuildingAbility(ability) then
+            BuildingHelper:ClearQueue(unit)
+        end
     end
+
+    return true
 end

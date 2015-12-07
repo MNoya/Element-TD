@@ -1,4 +1,6 @@
-GlobalCasterDummy = {};
+if not GlobalCasterDummy then
+	GlobalCasterDummy = {}
+end
 
 function GlobalCasterDummy:Init()
 	GlobalCasterDummy.dummy = CreateUnitByName("global_caster_dummy", Vector(0, 0, 0), false, nil, nil, DOTA_TEAM_GOODGUYS); 

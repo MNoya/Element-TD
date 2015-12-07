@@ -1,0 +1,30 @@
+//============================================================//
+// Block all damage so we can manually do damage calculations //
+//============================================================//
+"creep_damage_block_applier"
+{
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel"						"1"
+	"AbilityTextureName"			""
+	"Modifiers"
+	{
+		"modifier_damage_block"
+		{
+			"IsHidden"	"1"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK"			"9999999999"
+			}
+		}
+
+		"modifier_creep_armor_buff"
+		{
+			"TextureName"		"armor"
+			"IsHidden"			"0"
+			"IsPurgable"		"0"
+			"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+		}
+	}
+}

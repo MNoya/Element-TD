@@ -1,0 +1,19 @@
+"player_movespeed_applier"
+{
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel"						"1"
+	"AbilityTextureName"			""
+	"Modifiers"
+	{
+		"modifier_base_movespeed"
+		{
+			"IsHidden"	"1"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BASE_OVERRIDE"		"522"
+			}
+		}
+	}
+}

@@ -1,0 +1,44 @@
+//=================================================================================================================
+// Flamethrower Tower: Napalm
+//=================================================================================================================
+"flamethrower_tower_napalm"
+{
+	"BaseClass"						"ability_datadriven"											
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"batrider_sticky_napalm"
+	
+	"MaxLevel"						"2"
+	"Modifiers"
+	{
+		"modifier_napalm"
+		{
+			"IsDebuff"			"1"
+			"EffectName"		"particles/units/heroes/hero_batrider/batrider_stickynapalm_debuff.vpcf"
+			"EffectAttachType"	"follow_origin"
+			"OnDeath"
+			{
+				"RunScript"
+				{
+					"Target"			"TARGET"
+					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+					"Function"			"TriggerEvent"
+					"Event"				"OnNapalmCreepDied"
+				}
+			}
+		}
+	}
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"300 1500"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aoe"					"400"
+		}
+	}
+}

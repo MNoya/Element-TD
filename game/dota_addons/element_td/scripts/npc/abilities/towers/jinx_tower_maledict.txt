@@ -1,0 +1,99 @@
+//=================================================================================================================
+// Jinx Tower: Maledict
+//=================================================================================================================
+"jinx_tower_maledict"
+{
+	"BaseClass"						"ability_datadriven"											
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"witch_doctor_maledict"
+	"MaxLevel"						"2"
+
+	"Modifiers"
+	{
+		"modifier_jinx_maledict_passive"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			"OnAttackLanded"
+			{
+				"ApplyModifier"
+				{
+					"Target"
+					{
+						"Center"		"TARGET"
+						"Radius"		"%aoe"
+						"Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+						"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
+					}
+					"ModifierName"	"modifier_jinx_maledict"
+				}
+			}
+		}
+		"modifier_jinx_maledict"
+		{
+			"IsDebuff"		"1"
+			"Duration"		"%duration"
+			"ThinkInterval" "%tick_interval"
+			"OnIntervalThink"
+			{
+				"AttachEffect"
+				{
+					"Target" 			"TARGET"
+					"EffectName"		"particles/units/heroes/hero_witchdoctor/witchdoctor_maledict_g.vpcf"
+					"EffectAttachType"	"follow_origin"
+				}
+				"RunScript"
+				{
+					"Target"			"TARGET"
+					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+					"Function"			"TriggerEvent"
+					"Event"				"OnMaledictTick"
+				}
+			}
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"Target" 			"TARGET"
+					"EffectName"		"particles/items2_fx/veil_of_discord_debuff.vpcf"
+					"EffectAttachType"	"follow_origin"
+				}
+				"RunScript"
+				{
+					"Target"			"TARGET"
+					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+					"Function"			"TriggerEvent"
+					"Event"				"OnMaledictApplied"
+				}
+			}
+		}
+	}
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"10"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"tick_interval"			"3"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_taken"			"10 30"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"ticks"					"3"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aoe"					"300"
+		}
+	}
+}

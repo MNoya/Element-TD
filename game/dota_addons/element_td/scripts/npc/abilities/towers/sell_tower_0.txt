@@ -1,0 +1,32 @@
+//============================================================//
+// Sell Tower 0%
+//============================================================//
+"sell_tower_0"
+{
+	// General
+	//-----------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel"						"1"
+	"AbilityTextureName"			"sell_tower_clone"
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"Target"			"CASTER"
+			"ScriptFile"		"scripts/vscripts/spells.lua"
+			"Function"			"SellTowerCast"
+			"SellAmount"		"0"
+		}
+	}
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"sell_amount_tooltip"	"0"
+		}
+	}
+}

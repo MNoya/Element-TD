@@ -1,12 +1,14 @@
-CREEP_CLASSES = {};
+if not CREEP_CLASSES then
+	CREEP_CLASSES = {}
+end
 
 function RegisterCreepClass(class, name)
 	if class and name then
-		CREEP_CLASSES[name] = class;
+		CREEP_CLASSES[name] = class
 	elseif not class then
-		Log:warn("Class " .. name .. " cannot be nil");
+		Log:warn("Class " .. name .. " cannot be nil")
 	elseif not name then
-		Log:warn("Class name cannot be nil");
+		Log:warn("Class name cannot be nil")
 	end
 end
 
@@ -16,14 +18,14 @@ CreepBasic = createClass({
 		creepClass = "",
 
 		constructor = function(self, creep, creepClass)
-            self.creep = creep;
+            self.creep = creep
             self.creepClass = creepClass or self.creepClass
         end
 	},
 	{
 		className = "CreepBasic"
 	},
-nil);
+nil)
 
 function CreepBasic:OnSpawned()
 end
@@ -31,4 +33,4 @@ end
 function CreepBasic:OnDeath() 
 end
 
-RegisterCreepClass(CreepBasic, CreepBasic.className);
+RegisterCreepClass(CreepBasic, CreepBasic.className)

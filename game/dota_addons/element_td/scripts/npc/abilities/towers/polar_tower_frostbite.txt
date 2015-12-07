@@ -1,0 +1,66 @@
+//=================================================================================================================
+// Polar Tower: Frostbite
+//=================================================================================================================
+"polar_tower_frostbite"
+{
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+	"AbilityCooldown"				"1"
+	"MaxLevel"						"2"
+	"AbilityTextureName"			"crystal_maiden_crystal_nova"
+	"AbilityCastRange"				"750"
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"Target"			"TARGET"
+			"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+			"Function"			"TriggerEvent"
+			"Event"				"OnFrostbiteCast"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_polar_frostbite"
+		{
+			"Duration"			"%duration"
+			"IsDebuff"			"1"
+			"EffectName"		"particles/units/heroes/hero_ancient_apparition/ancient_apparition_ice_blast_debuff.vpcf"
+			"EffectAttachType"	"follow_origin"
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"Target"			"TARGET"
+					"ScriptFile"		"scripts/vscripts/towers/triples/PolarTower.lua"
+					"Function"			"OnFrostbiteExpire"
+				}
+			}
+		}
+	}
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"15"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"health_burn"			"10 30"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_taken_pcnt"		"5 15"
+		}
+	}
+}

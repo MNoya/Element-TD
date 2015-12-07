@@ -1,0 +1,54 @@
+//=================================================================================================================
+// Windstorm Tower: Tornado
+//=================================================================================================================
+"windstorm_tower_tornado"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"											
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityTextureName"			"towers/windstorm_tower_tornado"
+	"MaxLevel"						"2"
+	"AbilityCastRange"				"750"
+	"AbilityCooldown"				"0"
+	"AbilityManaCost"				"0"
+	"AbilityCastPoint"				"0"
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"Target"			"POINT"
+			"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+			"Function"			"TriggerEvent"
+			"Event"				"SpawnTornado"
+		}
+	}
+	"Modifiers"
+	{
+		"modifier_tornado_summoned"
+		{
+			"IsHidden"		"0"
+			"TextureName"	"towers/windstorm_tower_tornado"
+		}
+	}
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"slow_tooltip"			"7.5 22.5"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"240 1200"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"500"
+		}
+	}
+}

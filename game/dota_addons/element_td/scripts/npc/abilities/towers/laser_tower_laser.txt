@@ -1,0 +1,45 @@
+//=================================================================================================================
+// Laser Tower: Laser
+//=================================================================================================================
+"laser_tower_laser"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"											
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"tinker_laser"
+	"MaxLevel"						"2"
+
+	"Modifiers"
+	{
+		"modifier_laser"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			"OnAttackStart"
+			{
+				"RunScript"
+				{
+					"Target"			"POINT"
+					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+					"Function"			"TriggerEvent"
+					"Event"				"OnAttackStart"
+				}
+			}
+		}
+	}
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aoe"					"400"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_reduction"		"10"
+		}
+	}
+}

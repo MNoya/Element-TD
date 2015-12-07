@@ -1,0 +1,77 @@
+//============================================================//
+// Creep Ability: Heal										  //
+//============================================================//
+"creep_ability_heal"
+{
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel"						"1"
+	"AbilityTextureName"			"witch_doctor_voodoo_restoration"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"heal_amount"			"20"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aoe"					"300"
+		}
+	}
+
+	"Modifiers"
+	{
+		"creep_heal_modifier"
+		{
+			"IsHidden"	"1"
+			"Passive"	"1"
+			"OnDeath"
+			{
+				"RunScript"
+				{
+					"Target"			"CASTER"
+					"ScriptFile"		"scripts/vscripts/creeps/creepevents.lua"
+					"Function"			"TriggerEvent"
+					"Event"				"HealNearbyCreeps"
+
+					"heal_amount"		"%heal_amount"
+					"aoe"				"%aoe"
+				}
+				"ApplyModifier"
+				{
+					"Target" 
+					{
+						"Center"		"CASTER"
+						"Radius"		"%aoe"
+						"Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					}
+					"ModifierName"		"heal_effect_modifier"
+				}
+
+			}
+		}
+		"heal_effect_modifier"
+		{
+			"IsHidden"	"0"
+			"Duration"	"1"
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"Target" 			"TARGET"
+					"EffectName"		"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"ControlPointEntities"
+					{
+						"TARGET" "attach_origin"
+						"TARGET" "attach_origin"
+					}
+				}
+			}
+		}
+	}
+}

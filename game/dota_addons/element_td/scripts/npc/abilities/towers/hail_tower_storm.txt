@@ -1,0 +1,58 @@
+//=================================================================================================================
+// Hail Tower: Storm
+//=================================================================================================================
+"hail_tower_storm"
+{	
+	"BaseClass"						"ability_datadriven"											
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+	"AbilityTextureName"			"crystal_maiden_freezing_field"
+	"MaxLevel"						"1"
+	"AbilityCooldown"				"9"
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"Target"			"POINT"
+			"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+			"Function"			"TriggerEvent"
+			"Event"				"OnStormCast"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_storm_passive"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			"OnAttackStart"
+			{
+				"RunScript"
+				{
+					"Target"			"POINT"
+					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+					"Function"			"TriggerEvent"
+					"Event"				"OnAttackStart"
+				}
+			}
+		}
+		"modifier_storm"
+		{
+			"Duration"		"%duration"
+		}
+	}
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"6"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"targets"				"3"
+		}
+	}
+}

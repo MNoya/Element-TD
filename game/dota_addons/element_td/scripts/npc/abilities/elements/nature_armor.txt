@@ -1,0 +1,19 @@
+//============================================================//
+// Nature Armor
+//============================================================//
+"nature_armor"
+{
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel"						"1"
+	"AbilityTextureName"			"elements/nature"
+	"Modifiers"
+	{
+		"nature_armor"
+		{
+			"Passive"		"1"
+			"TextureName"	"elements/nature"
+		}
+	}
+}
