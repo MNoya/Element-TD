@@ -7,12 +7,12 @@
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
 
 	"AbilityLayout"				"6"
-	"Ability1"					""	
-	"Ability2"					""	
-	"Ability3"					""	
-	"Ability4"					""	
-	"Ability5"					""	
-	"Ability6"					""		
+	"Ability1"					"build_water_tower"	
+	"Ability2"					"build_fire_tower"	
+	"Ability3"					"build_nature_tower"	
+	"Ability4"					"build_earth_tower"	
+	"Ability5"					"build_light_tower"	
+	"Ability6"					"build_dark_tower"		
 	"Ability7"					""	
 
 	"StatusHealth"				"31"	

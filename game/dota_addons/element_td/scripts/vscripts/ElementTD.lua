@@ -1,19 +1,21 @@
-players = {}
+if not players then
+    players = {}
 
-TEAM_TO_SECTOR = {}
-TEAM_TO_SECTOR[2] = 0
-TEAM_TO_SECTOR[3] = 1
-TEAM_TO_SECTOR[6] = 2
-TEAM_TO_SECTOR[7] = 3
-TEAM_TO_SECTOR[8] = 4
-TEAM_TO_SECTOR[9] = 5
-TEAM_TO_SECTOR[10] = 6
-TEAM_TO_SECTOR[11] = 7
- 
-GAME_IS_PAUSED = false
-SKIP_VOTING = false -- assigns default game settings if true
-DEV_MODE = false
-EXPRESS_MODE = false
+    TEAM_TO_SECTOR = {}
+    TEAM_TO_SECTOR[2] = 0
+    TEAM_TO_SECTOR[3] = 1
+    TEAM_TO_SECTOR[6] = 2
+    TEAM_TO_SECTOR[7] = 3
+    TEAM_TO_SECTOR[8] = 4
+    TEAM_TO_SECTOR[9] = 5
+    TEAM_TO_SECTOR[10] = 6
+    TEAM_TO_SECTOR[11] = 7
+     
+    GAME_IS_PAUSED = false
+    SKIP_VOTING = false -- assigns default game settings if true
+    DEV_MODE = false
+    EXPRESS_MODE = false
+end
 
 function ElementTD:InitGameMode()
 
@@ -80,7 +82,7 @@ function ElementTD:InitGameMode()
     ------------------------------------------------------
 
     -- Allow cosmetic swapping
-    SendToServerConsole( "dota_combine_models 0" )
+    SendToServerConsole( "dota_combine_models 1" )
 
     -- Don't end the game if everyone is unassigned
     SendToServerConsole("dota_surrender_on_disconnect 0")
@@ -265,16 +267,21 @@ function ElementTD:InitializeHero(playerID, hero)
     self.vPlayerIDToHero[playerID] = hero -- Store hero for player in here GetAssignedHero can be flakey
 
     local playerData = GetPlayerData(playerID)
-    local spells = SpellPages[playerData.page]
-    playerData.spells = {}
 
     playerData.sector = TEAM_TO_SECTOR[hero:GetTeamNumber()]
 
-    for k, name in pairs(spells) do
-        hero:AddAbility(name)
-        hero:FindAbilityByName(name):SetLevel(1)
+    -- Teach building abilities
+    for i=0,15 do
+        local ability = hero:GetAbilityByIndex(i)
+        if ability then
+            ability:SetLevel(1)
+        end
     end
-    --CreatePhantomUnitManager(hero:GetPlayerID())
+
+    -- Give building items
+    hero:AddItem(CreateItem("item_build_arrow_tower", hero, hero))
+    hero:AddItem(CreateItem("item_build_cannon_tower", hero, hero))
+    
     UpdatePlayerSpells(playerID)
 end
 

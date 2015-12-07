@@ -16,10 +16,10 @@ function Build( event )
 
 	-- Handle the name for item-ability build
 	local building_name
-	if event.ItemUnitName then
-		building_name = event.ItemUnitName --Directly passed through the runscript
+	if ability:IsItem() then
+		building_name = GetItemKeyValue(ability_name, "UnitName")
 	else
-		building_name = AbilityKV[ability_name].UnitName --Building Helper value
+		building_name = GetAbilityKeyValue(ability_name, "UnitName")
 	end
 
 	local construction_size = BuildingHelper:GetConstructionSize(building_name)
@@ -27,7 +27,7 @@ function Build( event )
 
 	-- Checks if there is enough custom resources to start the building, else stop.
 	local unit_table = UnitKV[building_name]
-	local gold_cost = ability:GetSpecialValueFor("gold_cost")
+	local gold_cost = ability:GetGoldCost(1)
 
 	local hero = caster:GetPlayerOwner():GetAssignedHero()
 	local playerID = hero:GetPlayerID()
@@ -120,14 +120,6 @@ function Build( event )
 	    unit.original_attack = unit:GetAttackCapability()
 		unit:SetAttackCapability(DOTA_UNIT_CAP_NO_ATTACK)
 
-		-- Give item to cancel
-		local item = CreateItem("item_building_cancel", playersHero, playersHero)
-		unit:AddItem(item)
-
-		-- FindClearSpace for the builder
-		FindClearSpaceForUnit(caster, caster:GetAbsOrigin(), true)
-		caster:AddNewModifier(caster, nil, "modifier_phased", {duration=0.03})
-
     	-- Remove invulnerability on npc_dota_building baseclass
     	unit:RemoveModifierByName("modifier_invulnerable")
 
@@ -155,7 +147,7 @@ function Build( event )
 
 		ApplySupportModifier(tower)
 
-		if string.find(building_name, "arrow_tower") ~= nil or string.find(building_name, "cannon_tower") ~= nil or string.find(GameSettings.elementsOrderName, "Random") ~= nil then
+		if string.match(building_name, "arrow_tower") or string.match(building_name, "cannon_tower") or (GameSettings.elementsOrderName and string.match(GameSettings.elementsOrderName, "Random")) then
 			AddAbility(tower, "sell_tower_100")
 		else
 			AddAbility(tower, "sell_tower_75")
@@ -165,6 +157,9 @@ function Build( event )
 		if GetUnitKeyValue(building_name, "AOE_Full") and GetUnitKeyValue(building_name, "AOE_Half") then
 			AddAbility(tower, "splash_damage_orb")
 		end
+
+		-- Cast angles and various building-creature properties
+    	--AddAbility(tower, "ability_building")
 
 	end)
 
@@ -180,7 +175,7 @@ function Build( event )
 		-- Let the building cast abilities
 		unit:RemoveModifierByName("modifier_construction")
 
-		-- No Health Bar
+		-- Building ability
 		unit:AddNewModifier(unit, nil, "modifier_no_health_bar", {})
 
 	end)

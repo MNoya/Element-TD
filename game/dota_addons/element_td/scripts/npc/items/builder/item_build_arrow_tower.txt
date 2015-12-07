@@ -1,25 +1,23 @@
 //============================================================//
-// Build Earth Tower
+// Build Arrow Tower (Item Version)
 //============================================================//
-"build_earth_tower"
+"item_build_arrow_tower"
 {
-    "BaseClass"                     "ability_datadriven"
+    "BaseClass"                     "item_datadriven"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
     "MaxLevel"                      "1"
-    "AbilityTextureName"            "build_earth_tower"
+    "AbilityTextureName"            "build_arrow_tower"
+
+    "ItemDroppable"                 "0"
+    "ItemPurchasable"               "0"
     
     "Building"                      "1"
     "AbilityCastRange"              "200"
     "Scale"                         "1"
     "PlayerCanControl"              "1"
 
-    "UnitName"                      "earth_tower"
-    "Cost"                          "175"
-
-    "Requirements"
-    {
-        "dark"    "1"
-    }
+    "UnitName"                      "basic_arrow_tower"
+    "AbilityGoldCost"               "7"
     
     "OnSpellStart"
     {

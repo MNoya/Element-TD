@@ -1,76 +1,20 @@
 -- spells.lua
--- handles player spell pages, tower placement and upgrading
+-- handles player spell upgrading
 
-MaxPages = 2 --max number of spell pages
-SpellPages = {} --holds the array of spells that players can swaps through
-SpellPages[1] = {"build_arrow_tower", "build_cannon_tower", "build_water_tower", "build_fire_tower", "build_nature_tower", "next_page"} --first spell page
-SpellPages[2] = {"build_earth_tower", "build_light_tower", "build_dark_tower", "rubick_empty1", "show_tower_range", "prev_page"} -- second spell page
 local towersKV = LoadKeyValues("scripts/kv/towers.kv")
-
---===================================================================================================--
---=========================================================================================================--
---=========================================================================================================--
---called when a user casts the Previous Page spell
-function PrevPageCast(keys)
-	local hero = keys.caster
-	local id = hero:GetPlayerID()
-	playerData = PlayerData[id]
-	if playerData.page > 1 then
-		playerData.page = playerData.page - 1
-		ChangeSpellPage(hero, playerData.page + 1, playerData.page)
-	end
-end
-
---called when a user casts the Next Page spell
-function NextPageCast(keys)
-	local hero = keys.caster
-	local id = hero:GetPlayerID()
-	playerData = PlayerData[id]
-	if playerData.page < MaxPages then
-		playerData.page = playerData.page + 1
-		ChangeSpellPage(hero, playerData.page - 1, playerData.page)
-	end
-end
-
---Changes the spell page for the specified hero
-function ChangeSpellPage(hero, oldPage, newPage)
-	local newSpells = SpellPages[newPage]
-	local oldSpells = SpellPages[oldPage]
-
-	for k, s in pairs(oldSpells) do
-		hero:RemoveAbility(s)
-	end
-
-	for k, s in pairs(newSpells) do
-		hero:AddAbility(s)
-		hero:FindAbilityByName(s):SetLevel(1)
-	end
-	UpdatePlayerSpells(hero:GetPlayerID())
-end
 
 function UpdatePlayerSpells(playerID)
 	local playerData = GetPlayerData(playerID)
 	local hero = ElementTD.vPlayerIDToHero[playerID]
 	if hero then
-		for _, spellName in pairs(SpellPages[playerData.page]) do
-			local spell = hero:FindAbilityByName(spellName)
-			local cost = tonumber(GetAbilityKeyValue(spellName, "Cost"))
-			if not cost then cost = 0 end
-			spell:SetActivated(MeetsAbilityElementRequirements(spellName, playerID) and PlayerResource:GetGold(playerID) >= cost)
-
-			if spellName == "show_tower_range" then
-				spell:SetActivated(true)
-			end
-			if not hero:IsAlive() then
-				spell:SetActivated(false)
+		for i=0,15 do
+			local ability = hero:GetAbilityByIndex(i)
+			if ability then
+				ability:SetActivated(MeetsAbilityElementRequirements(spellName, playerID))
 			end
 		end
 	end
 end
-
---=========================================================================================================--
---=========================================================================================================--
---=========================================================================================================--
 
 --called when a Sell Tower ability is cast
 function SellTowerCast(keys)

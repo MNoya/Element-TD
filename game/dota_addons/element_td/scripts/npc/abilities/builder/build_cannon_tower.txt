@@ -3,26 +3,25 @@
 //============================================================//
 "build_cannon_tower"
 {
-	// General
-	//-----------------------------
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"MaxLevel"						"1"
-	"AbilityTextureName"			"build_cannon_tower"
-	"AbilityCooldown"				"0"
-	"AbilityCastRange"				"128"
-	"AbilityCastPoint"				"0.3"
-	"Cost"							"7"
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "MaxLevel"                      "1"
+    "AbilityTextureName"            "build_cannon_tower"
 
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"Target"			"POINT"
-			"ScriptFile"		"scripts/vscripts/spells.lua"
-			"Function"			"PlaceTower"
-			"tower"				"basic_cannon_tower"
-		}
-	}
+    "Building"                      "1"
+    "AbilityCastRange"              "200"
+    "Scale"                         "1"
+    "PlayerCanControl"              "1"
+
+    "UnitName"                      "basic_cannon_tower"
+    "AbilityGoldCost"               "7"
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"        "builder.lua"
+            "Function"          "Build"
+        }
+    }
 }

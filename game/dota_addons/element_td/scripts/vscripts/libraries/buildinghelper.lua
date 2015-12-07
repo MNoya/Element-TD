@@ -392,8 +392,8 @@ function BuildingHelper:SetupBuildingTable( abilityName )
 
     local construction_size = unitTable["ConstructionSize"]
     if not construction_size then
-        BuildingHelper:print('Error: Unit ' .. unitName .. ' does not have a ConstructionSize KeyValue.')
-        return
+        BuildingHelper:print('Warning: Unit ' .. unitName .. ' does not have a ConstructionSize KeyValue. Defaulting to 1')
+        construction_size = 2
     end
     buildingTable:SetVal("ConstructionSize", construction_size)
 
@@ -403,6 +403,19 @@ function BuildingHelper:SetupBuildingTable( abilityName )
         pathing_size = 0
     end
     buildingTable:SetVal("BlockPathingSize", pathing_size)
+
+    local buildTime = unitTable["BuildTime"]
+    if not buildTime then
+        BuildingHelper:print('Warning: Unit ' .. unitName .. ' does not have a BuildTime KeyValue. Defaulting to 1')
+        buildTime = 0
+    end
+    buildingTable:SetVal("BuildTime", buildTime)
+
+    local modelRotation = unitTable["ModelRotation"]
+    if not modelRotation then
+        modelRotation = 0
+    end
+    buildingTable:SetVal("ModelRotation", modelRotation)
 
     local castRange = buildingTable:GetVal("AbilityCastRange", "number")
     if not castRange then
@@ -689,7 +702,7 @@ function BuildingHelper:StartBuilding( keys )
                         callbacks.onConstructionCompleted(building)
                     end
                     
-                    BuildingHelper:print("HP was off by:", fMaxHealth - fAddedHealth)
+                    BuildingHelper:print("HP was off by: ".. (fMaxHealth - fAddedHealth))
 
                     -- Eject Builder
                     if bBuilderInside then
@@ -799,7 +812,7 @@ function BuildingHelper:StartBuilding( keys )
         local repair_ability_name = race.."_gather"
         local repair_ability = builder:FindAbilityByName(repair_ability_name)
         if not repair_ability then
-            BuildingHelper:print("Error, can't find "..repair_ability_name.." on the builder ", builder:GetUnitName(), builder:GetEntityIndex())
+            BuildingHelper:print("Error, can't find "..repair_ability_name.." on the builder "..builder:GetUnitName().." - "..builder:GetEntityIndex())
             return
         end
 
@@ -843,7 +856,7 @@ function BuildingHelper:StartBuilding( keys )
                     end
                 else
                     
-                    BuildingHelper:print("Scale was off by:", fMaxScale - fCurrentScale)
+                    BuildingHelper:print("Scale was off by: "..(fMaxScale - fCurrentScale))
                     building:SetModelScale(fMaxScale)
                     return
                 end
