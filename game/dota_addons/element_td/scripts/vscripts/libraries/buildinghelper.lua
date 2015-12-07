@@ -264,6 +264,12 @@ function BuildingHelper:AddBuilding(keys)
     playerTable.activeBuildingTable = buildingTable
     playerTable.activeCallbacks = callbacks
 
+    -- npc_dota_creature doesn't render cosmetics on the particle ghost, use hero names instead
+    local overrideGhost = buildingTable:GetVal("OverrideBuildingGhost", "string")
+    if overrideGhost then
+        unitName = overrideGhost
+    end
+
     -- Remove old ghost model dummy
     UTIL_Remove(playerTable.activeBuildingTable.mgd)
 
@@ -391,6 +397,18 @@ function BuildingHelper:SetupBuildingTable( abilityName )
         BuildingHelper:print('Error: Definition for Unit ' .. unitName .. ' could not be found in the KeyValue files.')
         return
     end
+
+    -- OverrideBuildingGhost
+    local override_ghost = BuildingHelper.KV[abilityName]["OverrideBuildingGhost"]
+    if override_ghost then
+        buildingTable:SetVal("OverrideBuildingGhost", override_ghost)
+    end
+
+    local attack_range = unitTable["AttackRange"]
+    if not attack_range then
+        attack_range = 0
+    end
+    buildingTable:SetVal("AttackRange", attack_range)
 
     local construction_size = unitTable["ConstructionSize"]
     if not construction_size then
@@ -1171,6 +1189,13 @@ function BuildingHelper:AddToQueue( builder, location, bQueued )
     -- Position chosen is initially valid, send callback to spend gold
     callbacks.onBuildingPosChosen(location)
 
+    -- npc_dota_creature doesn't render cosmetics on the particle ghost, use hero names instead
+    local overrideGhost = buildingTable:GetVal("OverrideBuildingGhost", "string")
+    local unitName = building
+    if overrideGhost then
+        building = overrideGhost
+    end
+
     -- Create model ghost dummy out of the map, then make pretty particles
     local mgd = CreateUnitByName(building, OutOfWorldVector, false, nil, nil, builder:GetTeam())
 
@@ -1189,6 +1214,8 @@ function BuildingHelper:AddToQueue( builder, location, bQueued )
         color = Vector(0,255,0)
     end
     ParticleManager:SetParticleControl(modelParticle, 2, color) -- Color
+
+    building = unitName
 
     -- If the ability wasn't queued, override the building queue
     if not bQueued then

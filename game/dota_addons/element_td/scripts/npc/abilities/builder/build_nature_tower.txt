@@ -14,6 +14,7 @@
     "PlayerCanControl"              "1"
 
     "UnitName"                      "nature_tower"
+    "OverrideBuildingGhost"         "npc_dota_hero_furion"
     "Cost"                          "175"
 
     "Requirements"

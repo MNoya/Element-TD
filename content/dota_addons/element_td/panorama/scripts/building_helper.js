@@ -37,7 +37,7 @@ function StartBuildingHelper( params )
         // Set the parameters passed by AddBuilding
         state = params.state;
         size = params.size;
-        range = 900//params.range;
+        range = params.range;
         overlay_size = size*2;
         grid_alpha = Number(params.grid_alpha);
         model_alpha = Number(params.model_alpha);

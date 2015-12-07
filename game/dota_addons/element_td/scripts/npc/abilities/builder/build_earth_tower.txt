@@ -14,6 +14,7 @@
     "PlayerCanControl"              "1"
 
     "UnitName"                      "earth_tower"
+    "OverrideBuildingGhost"         "npc_dota_hero_tiny"
     "Cost"                          "175"
 
     "Requirements"
