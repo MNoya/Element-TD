@@ -2,11 +2,6 @@
 {
    "1"
    {
-      "File"  	"center_message"
-      "Depth" 	"20"
-   }
-   "2"
-   {
       "File"   "Voting"
       "Depth"  "23"
    }

@@ -91,31 +91,14 @@ function shuffle(array)
 end
 
 function ShowMessage(playerID, msg, duration)
-    local messageData = {
-        msg = msg,
-        playerID = playerID
-    };
-    FireGameEvent("etd_show_message", messageData);
-
-    Timers:CreateTimer("ShowMessage"..playerID, {
-        endTime = duration,
-        callback = function()
-            local data = {
-                msg = "",
-                playerID = playerID
-            };
-            
-            FireGameEvent("etd_show_message", data);
-        end
-    });
+    Notifications:ClearTop(playerID)
+    Notifications:Top(playerID, {text=msg, style={["font-size"]="90px"}, duration=duration})
 end
 
 function ShowWarnMessage(playerID, msg)
-    local messageData = {
-        msg = msg,
-        playerID = playerID
-    };
-    FireGameEvent("etd_warn_message", messageData);
+    Notifications:ClearBottom(playerID)
+    Notifications:Bottom(playerID, {text=msg, style={color='#E62020'}, duration=2})
+    EmitSoundOnClient("General.Cancel", PlayerResource:GetPlayer(playerID))
 end
 
 function RandomPositionInCircle(origin, radius)
