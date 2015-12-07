@@ -80,6 +80,9 @@ function ElementTD:InitGameMode()
     ListenToGameEvent('player_chat', Dynamic_Wrap(ElementTD, 'OnPlayerChat'), self);
     ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(ElementTD, 'OnGameStateChange'), self);
 
+    -- Register Listener   
+    CustomGameEventManager:RegisterListener( "next_wave", Dynamic_Wrap(ElementTD, "OnNextWave")) -- wave info
+
     ------------------------------------------------------
     local base_game_mode = GameRules:GetGameModeEntity();
     base_game_mode:SetRecommendedItemsDisabled(true); -- no recommended items panel
@@ -151,8 +154,8 @@ end
 -- let's start the actual game
 -- call this after the players have been move to their proper spawn locations
 function ElementTD:StartGame()
-        print("ElementTD Started!")
-        Timers:CreateTimer("StartGameDelay", {
+    print("ElementTD Started!")
+    Timers:CreateTimer("StartGameDelay", {
         endTime = 3,
 
         callback = function()
@@ -177,7 +180,18 @@ function ElementTD:StartGame()
                 end
             end
         end
-        });
+    });
+end
+
+function ElementTD:OnNextWave( keys )
+    local playerID = keys.PlayerID
+    local data = GetPlayerData(playerID)
+    Timers:RemoveTimer("SpawnWaveDelay"..playerID)
+    print(data.nextWave)
+    Log:info("Spawning wave " .. data.nextWave .. " for ["..playerID.."] ".. data.name)
+    ShowMessage(playerID, "Wave " .. data.nextWave, 3)
+    SpawnWaveForPlayer(playerID, data.nextWave) -- spawn dat wave
+    WAVE_1_STARTED = true
 end
 
 function ElementTD:EndGameForPlayer( playerID )

@@ -9056,6 +9056,7 @@
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"Ability1"		"water_armor"
+		"Ability2"		""
 	}
 	"lava_spawn"
 	{
@@ -9275,7 +9276,6 @@
 		"SoundSet"		""
 		"ScriptClass"		"CreepImage"
 		"Ability1"		"water_armor"
-		"Ability2"		""
 	}
 	"torchbearer"
 	{
@@ -9435,7 +9435,7 @@
 		"SoundSet"		""
 		"Ability1"		"nature_armor"
 	}
-	"Satyr"
+	"satyr"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -9675,7 +9675,6 @@
 		"SoundSet"		""
 		"ScriptClass"		"CreepImage"
 		"Ability1"		"nature_armor"
-		"Ability2"		""
 	}
 	"battleship"
 	{
@@ -9831,7 +9830,6 @@
 		"SoundSet"		""
 		"ScriptClass"		"CreepImage"
 		"Ability1"		"light_armor"
-		"Ability2"		""
 		"Creature"
 		{
 			"AttachWearables"
@@ -10393,7 +10391,6 @@
 		"SoundSet"		""
 		"ScriptClass"		"CreepImage"
 		"Ability1"		"composite_armor"
-		"Ability2"		""
 		"Creature"
 		{
 			"AttachWearables"
@@ -10623,7 +10620,6 @@
 		"SoundSet"		""
 		"ScriptClass"		"CreepImage"
 		"Ability1"		"dark_armor"
-		"Ability2"		""
 		"ParticleEffect"		"particles/econs/items/terrorblade/terrorblade_horns_arcana/terrorblade_ambient_horns_arcana.vpcf"
 		"Creature"
 		{
@@ -11126,7 +11122,6 @@
 		"SoundSet"		""
 		"ScriptClass"		"CreepImage"
 		"Ability1"		"earth_armor"
-		"Ability2"		""
 		"Creature"
 		{
 			"AttachWearables"
@@ -11482,7 +11477,6 @@
 		"SoundSet"		""
 		"ScriptClass"		"CreepImage"
 		"Ability1"		"fire_armor"
-		"Ability2"		""
 		"Creature"
 		{
 			"AttachWearables"

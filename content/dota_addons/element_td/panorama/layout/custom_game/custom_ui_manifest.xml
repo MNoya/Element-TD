@@ -13,5 +13,6 @@
 	</script>
 	<Panel>
 		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/interest.xml" />
+		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/wave_info.xml" />
 	</Panel>
 </root>

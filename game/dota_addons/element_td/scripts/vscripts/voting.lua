@@ -131,7 +131,7 @@ function FinalizeVotes()
 	for k, ply in pairs(players) do 
 		local data = {playerID = ply:GetPlayerID(), gamemode = gamemode, difficulty = PLAYER_DIFFICULTY_CHOICES[ply:GetPlayerID()], elements = elements, order = order, length = length};
 		FireGameEvent("etd_vote_results", data);
-		FireGameEvent("etd_update_wave_info", {playerID = ply:GetPlayerID(), nextWave = GameSettings:GetGameLength().Wave, nextWaveCreep = WAVE_CREEPS[GameSettings:GetGameLength().Wave]});
+		CustomGameEventManager:Send_ServerToPlayer( ply, "etd_next_wave_info", { nextWave = GameSettings:GetGameLength().Wave, nextAbility1 = creepsKV[WAVE_CREEPS[GameSettings:GetGameLength().Wave]].Ability1, nextAbility2 = creepsKV[WAVE_CREEPS[GameSettings:GetGameLength().Wave]].Ability2 } );
 	end
 
 	Log:trace("Creating post vote timer");

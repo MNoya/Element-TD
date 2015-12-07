@@ -1,0 +1,37 @@
+<root>
+  <styles>
+    <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+    <include src="file://{resources}/styles/custom_game/wave_info.css" />
+  </styles>
+  <scripts>
+    <include src="file://{resources}/scripts/custom_game/wave_info.js" /> 
+  </scripts>
+  <Panel hittest="false" class="BaseHud">
+    <Panel hittest="false" id="WaveInfoBase">
+      <Panel hittest="true" id="StartWave">
+        <Button id="StartNextWaveButton" onactivate="OnStartNextWave()">
+          <Label id="StartWaveLabel" text="Next\nWave"/>
+        </Button>
+      </Panel>
+      <Panel hittest="false" id="WaveInfo">
+        <Panel hittest="false" id="CurrentWave" class="wave">
+          <Label id="CurrentLabel" text="Current:"/>
+          <Label id="CurrentWaveLabel" text="Wave 1"/>
+          <DOTAAbilityImage id="CurrentAbility1" class="ability1" abilityname="" onmouseover="AbilityShowTooltip('CurrentAbility1')"
+                onmouseout="AbilityHideTooltip('CurrentAbility1')"/>
+          <DOTAAbilityImage id="CurrentAbility2" class="ability2" abilityname="" onmouseover="AbilityShowTooltip('CurrentAbility2')"
+                onmouseout="AbilityHideTooltip('CurrentAbility2')"/>
+        </Panel>
+        <Panel hittest="false" id="NextWave" class="wave">
+          <Label id="NextLabel" text="Next:"/>
+          <Label id="NextWaveLabel" text="Wave 2"/>
+          <DOTAAbilityImage id="NextAbility1" class="ability1" abilityname="" onmouseover="AbilityShowTooltip('NextAbility1')"
+                onmouseout="AbilityHideTooltip('NextAbility1')"/>
+          <DOTAAbilityImage id="NextAbility2" class="ability2" abilityname="" onmouseover="AbilityShowTooltip('NextAbility2')"
+                onmouseout="AbilityHideTooltip('NextAbility2')"/>
+          <Label id="Countdown" text="60"/>
+        </Panel>
+      </Panel>
+    </Panel>
+  </Panel>
+</root>

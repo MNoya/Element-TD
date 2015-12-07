@@ -11,7 +11,7 @@ WAVE_1_STARTED = false;
 CURRENT_WAVE = 1;
 
 local kv = LoadKeyValues("scripts/kv/waves.kv");
-local creepsKV = LoadKeyValues("scripts/kv/creeps.kv");
+creepsKV = LoadKeyValues("scripts/npc/npc_units_custom.txt");
 WAVE_COUNT = kv["WaveCount"];
 
 -- loads the creep and health data for each wave. Randomizes the creep order if 'chaos' is set to true
@@ -61,7 +61,7 @@ function StartBreakTime(playerID, breakTime)
         breakTime = 30;
     end
 
-    FireGameEvent("etd_update_wave_timer", {playerID = playerID, time = breakTime});
+    CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_wave_timer", { time = breakTime } );
 
     if msgTime >= breakTime then
         msgTime = breakTime - 0.5;
@@ -129,7 +129,7 @@ function SpawnWaveForPlayer(playerID, wave)
 
     playerData.waveObject = waveObj;
 
-    FireGameEvent("etd_update_wave_info", {playerID = playerID, nextWave = wave + 1, nextWaveCreep = WAVE_CREEPS[wave + 1]});
+    CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_next_wave_info", { nextWave=wave + 1, nextAbility1=creepsKV[WAVE_CREEPS[wave+1]].Ability1, nextAbility2=creepsKV[WAVE_CREEPS[wave+1]].Ability2 } );
 
     if not InterestManager:IsStarted() then
         InterestManager:StartInterestTimer();
