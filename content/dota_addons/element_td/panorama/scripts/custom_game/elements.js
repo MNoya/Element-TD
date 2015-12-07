@@ -76,8 +76,6 @@ function ToggleCollapse()
 		secondary.visible = false;
 		elementUI.AddClass('small');
 	}
-	var data = {lumber: 1+parseInt(lumberDisplay.text)};
-	ModifyLumber(data);
 }
 
 (function () {
