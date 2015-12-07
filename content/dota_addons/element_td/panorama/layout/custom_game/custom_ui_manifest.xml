@@ -14,8 +14,8 @@
 		GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_CUSTOM_6] = "#64BEC8;";
 	</script>
 	<Panel>
-		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/interest.xml" />
 		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/wave_info.xml" />
+		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/interest.xml" />
 		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/scripts.xml" />
 		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/notifications.xml" />
 	</Panel>
