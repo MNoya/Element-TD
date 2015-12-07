@@ -253,6 +253,8 @@ function BuildingHelper:AddBuilding(keys)
     end
     buildingTable:SetVal("MaxScale", fMaxScale)
 
+    local attackRange = buildingTable:GetVal("AttackRange", "number")
+
     -- Set the active variables and callbacks
     local playerID = builder:GetMainControllingPlayer()
     local player = PlayerResource:GetPlayer(playerID)
@@ -274,7 +276,7 @@ function BuildingHelper:AddBuilding(keys)
 
     -- Position is CP0, model attach is CP1, color is CP2, alpha is CP3.x, scale is CP4.x
     playerTable.activeBuildingTable.modelParticle = ParticleManager:CreateParticleForPlayer("particles/buildinghelper/ghost_model.vpcf", PATTACH_ABSORIGIN, playerTable.activeBuildingTable.mgd, player)
-    ParticleManager:SetParticleControlEnt(playerTable.activeBuildingTable.modelParticle, 1, playerTable.activeBuildingTable.mgd, 1, "follow_origin", playerTable.activeBuildingTable.mgd:GetAbsOrigin(), true)            
+    ParticleManager:SetParticleControlEnt(playerTable.activeBuildingTable.modelParticle, 1, playerTable.activeBuildingTable.mgd, 1, "attach_hitloc", playerTable.activeBuildingTable.mgd:GetAbsOrigin(), true)            
     ParticleManager:SetParticleControl(playerTable.activeBuildingTable.modelParticle, 3, Vector(MODEL_ALPHA,0,0))
     ParticleManager:SetParticleControl(playerTable.activeBuildingTable.modelParticle, 4, Vector(fMaxScale,0,0))
 
@@ -284,7 +286,7 @@ function BuildingHelper:AddBuilding(keys)
     end
     ParticleManager:SetParticleControl(playerTable.activeBuildingTable.modelParticle, 2, color)
 
-    local paramsTable = { state = "active", size = size, scale = fMaxScale, 
+    local paramsTable = { state = "active", size = size, scale = fMaxScale, range = attackRange,
                           grid_alpha = GRID_ALPHA, model_alpha = MODEL_ALPHA, recolor_ghost = RECOLOR_GHOST_MODEL,
                           entindex = playerTable.activeBuildingTable.mgd:GetEntityIndex(), builderIndex = builder:GetEntityIndex()
                         }
