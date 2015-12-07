@@ -152,8 +152,11 @@ function BuildingHelper:InitGNV()
     BuildingHelper.squareY = squareY
 end
 
-function BuildingHelper:SendGNV()
-    CustomGameEventManager:Send_ServerToAllClients("gnv", {gnv=BuildingHelper.Encoded, squareX = BuildingHelper.squareX, squareY = BuildingHelper.squareY})
+function BuildingHelper:SendGNV( args )
+    local playerID = args.PlayerID
+    local player = PlayerResource:GetPlayer(playerID)
+    BuildingHelper:print("Sending GNV to player "..playerID)
+    CustomGameEventManager:Send_ServerToPlayer(player, "gnv_register", {gnv=BuildingHelper.Encoded, squareX = BuildingHelper.squareX, squareY = BuildingHelper.squareY})
 end
 
 --[[

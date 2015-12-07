@@ -247,7 +247,7 @@ function SendCancelCommand( params )
     GameEvents.SendCustomGameEventToServer( "building_helper_cancel_command", {} );
 }
 
-function GNV(msg){
+function RegisterGNV(msg){
     var GridNav = [];
     var squareX = msg.squareX
     var squareY = msg.squareY
@@ -289,12 +289,19 @@ function GNV(msg){
     $.Msg("Free: ",tab["1"]," Blocked: ",tab["2"])
 }
 
+// Ask the server for the Terrain grid
+function RequestGNV () {
+    GameEvents.SendCustomGameEventToServer( "gnv_request", {} )
+}
+
 (function () {    
+    RequestGNV()
+
     GameEvents.Subscribe( "building_helper_enable", StartBuildingHelper);
     GameEvents.Subscribe( "building_helper_end", EndBuildingHelper);
-    GameEvents.Subscribe( "gnv", GNV);
+    
+    GameEvents.Subscribe( "gnv_register", RegisterGNV);
 })();
-
 //-----------------------------------
 
 function SnapToGrid(vec, size) {
