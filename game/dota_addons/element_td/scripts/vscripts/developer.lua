@@ -73,7 +73,8 @@ end
 function ElementTD:SetLives(playerID, value)
     if not value then value = 50 end
     GetPlayerData(playerID).health = value
-    self.vPlayerIDToHero[playerID]:SetHealth(tonumber(value))
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    hero:SetHealth(tonumber(value))
 end
 
 function ElementTD:StopWaves(playerID)
@@ -85,6 +86,7 @@ function ElementTD:StopWaves(playerID)
 end
 
 function ElementTD:ClearWave(playerID)
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     local playerData = GetPlayerData(playerID)
     local wave = playerData.waveObject
     local creeps = wave.creeps
@@ -93,13 +95,14 @@ function ElementTD:ClearWave(playerID)
         for k,v in pairs(creeps) do
             local unit = EntIndexToHScript(v)
             if IsValidEntity(unit) then
-                unit:ForceKill(true)
+                unit:Kill(nil, hero)
+
             end
         end
     end
 
     local elemental = playerData.elementalUnit
-    if elemental then elemental:ForceKill(true) end
+    if elemental then elemental:Kill(nil, hero) end
 
     -- Complete the wave
     wave:callback()

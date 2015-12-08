@@ -68,6 +68,7 @@ function ElementTD:InitGameMode()
 
     -- Filters
     GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( ElementTD, "FilterExecuteOrder" ), self )
+    GameRules:GetGameModeEntity():SetDamageFilter( Dynamic_Wrap( ElementTD, "DamageFilter" ), self )
 
     -- Lua Modifiers
     LinkLuaModifier("modifier_no_health_bar", "libraries/modifiers/modifier_no_health_bar", LUA_MODIFIER_MOTION_NONE)
@@ -318,6 +319,7 @@ function ElementTD:EntityHurt(keys)
 
 
     if entity and attacker then
+
         if attacker.dummyParent then
             local tower = attacker.dummyParent
 
@@ -390,6 +392,37 @@ function ElementTD:FilterExecuteOrder( filterTable )
         local ability = EntIndexToHScript(abilityIndex)
         if not IsBuildingAbility(ability) then
             BuildingHelper:ClearQueue(unit)
+        end
+    end
+
+    return true
+end
+
+function ElementTD:DamageFilter( filterTable )
+    local victim_index = filterTable["entindex_victim_const"]
+    local attacker_index = filterTable["entindex_attacker_const"]
+    if not victim_index or not attacker_index then
+        return true
+    end
+
+    local victim = EntIndexToHScript( victim_index )
+    local attacker = EntIndexToHScript( attacker_index )
+    local damagetype = filterTable["damagetype_const"]
+
+    -- Cheat code
+    if GameRules.WhosYourDaddy then
+        local victimID = victim:GetPlayerOwnerID()
+        local victimTeam = victim:GetTeamNumber()
+        local attackerID = attacker:GetPlayerOwnerID()
+
+        if GameRules.WhosYourDaddy then
+            if attackerID and PlayerResource:IsValidPlayerID(attackerID) then
+                filterTable["damage"] = 99999
+            end
+        end
+
+        if victimID and PlayerResource:IsValidPlayerID(victimID) then
+            filterTable["damage"] = 0
         end
     end
 
