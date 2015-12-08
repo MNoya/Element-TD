@@ -44,6 +44,12 @@ end
 
 function ModifyElementValue(playerID, element, change)
 	local playerData = GetPlayerData(playerID)
+
+	if not playerData.elements[element] then 
+		Log:error(element.. ' is not a valid element')
+		return
+	end
+
 	playerData.elements[element] = playerData.elements[element] + change
 	UpdateElementsHUD(playerID)
 	UpdatePlayerSpells(playerID)

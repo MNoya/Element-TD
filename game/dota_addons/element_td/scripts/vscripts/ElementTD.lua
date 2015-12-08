@@ -31,6 +31,8 @@ function ElementTD:InitGameMode()
 
     self.direPlayers = 0
     self.radiantPlayers = 0
+    self.vUserIds = {}
+    self.vPlayerUserIds = {}
     self.playerIDMap = {} --maps userIDs to playerID
     self.vPlayerIDToHero = {} -- Maps playerID to hero
     self.dummyCreated = false -- has the global caster dummy been initialized
@@ -53,7 +55,7 @@ function ElementTD:InitGameMode()
     GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_6, 1 )
 
     -- Event Hooks
-    ListenToGameEvent('player_connect_full', Dynamic_Wrap(ElementTD, 'PlayerConnectedFull'), self)
+    ListenToGameEvent('player_connect_full', Dynamic_Wrap(ElementTD, 'OnConnectFull'), self)
     ListenToGameEvent('entity_killed', Dynamic_Wrap(ElementTD, 'EntityKilled'), self)
     ListenToGameEvent('player_chat', Dynamic_Wrap(ElementTD, 'OnPlayerChat'), self)
     ListenToGameEvent('entity_hurt', Dynamic_Wrap(ElementTD, 'EntityHurt'), self)
@@ -101,16 +103,6 @@ function ElementTD:OnGameStateChange(keys)
         self:MoveHeroesToSpawns()
         self:StartGame()
     end
-end
-
-function ElementTD:PlayerConnectedFull(keys)
-    local player = PlayerInstanceFromIndex(keys.index + 1)
-    table.insert(players, player)
-end
-
-function ElementTD:OnPlayerChat(keys)
-    PrintTable(keys)
-    OnPlayerChatEvent(keys.text, self.playerIDMap[keys.userid])
 end
 
 -- move all heroes to their proper spawn locations
@@ -177,7 +169,6 @@ function ElementTD:OnNextWave( keys )
     local playerID = keys.PlayerID
     local data = GetPlayerData(playerID)
     Timers:RemoveTimer("SpawnWaveDelay"..playerID)
-    print(data.nextWave)
     Log:info("Spawning wave " .. data.nextWave .. " for ["..playerID.."] ".. data.name)
     ShowMessage(playerID, "Wave " .. data.nextWave, 3)
     SpawnWaveForPlayer(playerID, data.nextWave) -- spawn dat wave
@@ -333,6 +324,24 @@ function ElementTD:EntityHurt(keys)
             end
         end
     end
+end
+
+-- This function is called once when the player fully connects and becomes "Ready" during Loading
+function ElementTD:OnConnectFull(keys)
+    
+    local entIndex = keys.index+1
+    -- The Player entity of the joining user
+    local ply = EntIndexToHScript(entIndex)
+
+    -- The Player ID of the joining player
+    local playerID = ply:GetPlayerID()
+
+    table.insert(players, ply)
+
+    -- Update the user ID table with this user
+    self.vUserIds[keys.userid] = ply
+    self.vPlayerUserIds[playerID] = keys.userid
+
 end
 
 function ElementTD:OnPlayerSelectedEntities( event )
