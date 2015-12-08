@@ -12,7 +12,7 @@ var altDown = false;
 var modelParticle;
 var gridParticles;
 var rangeOverlay;
-var overlayActive = true;
+var overlayActive;
 var range = 0;
 var numberParticle;
 var builderIndex;
@@ -85,12 +85,7 @@ function StartBuildingHelper( params )
             gridParticles.push(particle)
         }
 
-        // Range overlay
-        rangeOverlay = Particles.CreateParticle("particles/buildinghelper/range_overlay.vpcf", ParticleAttachment_t.PATTACH_ABSORIGIN, localHeroIndex);
-        Particles.SetParticleControl(rangeOverlay, 1, [range,0,0])
-        Particles.SetParticleControl(rangeOverlay, 2, [255,255,255])
-        Particles.SetParticleControl(rangeOverlay, 3, [overlay_alpha,0,0])
-        
+        overlayActive = false;     
     }
 
     if (state == 'active')
@@ -149,7 +144,7 @@ function StartBuildingHelper( params )
         {
             SnapToGrid(GamePos, size)
 
-            var invalid;
+            var invalid = false;
             var color = [0,255,0]
             var part = 0
             var halfSide = (size/2)*64
@@ -189,35 +184,30 @@ function StartBuildingHelper( params )
             // Update the particle model
             Particles.SetParticleControl(modelParticle, 0, GamePos)
 
-           
-
             // Destroy the overlay if its not a valid building location
-            if (invalid && overlayActive)
+            if (invalid)
             {
-                Particles.DestroyParticleEffect(rangeOverlay, true)
-                overlayActive = false
+                if (overlayActive && rangeOverlay !== undefined)
+                {
+                    Particles.DestroyParticleEffect(rangeOverlay, true)
+                    overlayActive = false
+                }
             }
-            else if (!invalid)
+            else
             {
                 if (!overlayActive)
                 {
                     var localHeroIndex = Players.GetPlayerHeroEntityIndex(Players.GetLocalPlayer())
                     rangeOverlay = Particles.CreateParticle("particles/buildinghelper/range_overlay.vpcf", ParticleAttachment_t.PATTACH_ABSORIGIN, localHeroIndex)
-                    Particles.SetParticleControl(rangeOverlay, 0, GamePos)
                     Particles.SetParticleControl(rangeOverlay, 1, [range,0,0])
                     Particles.SetParticleControl(rangeOverlay, 2, [255,255,255])
                     Particles.SetParticleControl(rangeOverlay, 3, [overlay_alpha,0,0])
                     overlayActive = true
-                }
-                else
-                {
-                    // Update the range overlay, a bit below
-                    Particles.SetParticleControl(rangeOverlay, 0, GamePos)
-                }                
+                }              
             }
-                
-        
-    Particles.SetParticleControl(rangeOverlay, 3, [overlay_alpha,0,0])
+
+            if (rangeOverlay !== undefined)
+                Particles.SetParticleControl(rangeOverlay, 0, GamePos)
 
             // Turn the model red if we can't build there
             if (recolor_ghost){
