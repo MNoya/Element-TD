@@ -4,6 +4,7 @@ CHEAT_CODES = {
     ["whosyourdaddy"] = function(...) ElementTD:WhosYourDaddy(...) end, -- God Mode
     ["spawn"] = function(...) ElementTD:SpawnWave(...) end,             -- Spawns a certain wave by number, continues
     ["setwave"] = function(...) ElementTD:SetWave(...) end,             -- Sets the next current wave to spawn
+    ["lives"] = function(...) ElementTD:SetLives(...) end,              -- Sets the current lives of the hero
     ["stop"] = function(...) ElementTD:StopWaves(...) end,              -- Stops spawning waves
     ["clear"] = function(...) ElementTD:ClearWave(...) end,             -- Kills the whole wave
     ["element"] = function(...) ElementTD:SetElementLevel(...) end,     -- Sets the level of an element
@@ -67,6 +68,12 @@ function ElementTD:SetWave(playerID, value)
 
     ElementTD:StopWaves(playerID)
     GetPlayerData(playerID).nextWave = value
+end
+
+function ElementTD:SetLives(playerID, value)
+    if not value then value = 50 end
+    GetPlayerData(playerID).health = value
+    self.vPlayerIDToHero[playerID]:SetHealth(tonumber(value))
 end
 
 function ElementTD:StopWaves(playerID)
