@@ -68,8 +68,9 @@ function ElementTD:InitGameMode()
     -- Lua Modifiers
     LinkLuaModifier("modifier_no_health_bar", "libraries/modifiers/modifier_no_health_bar", LUA_MODIFIER_MOTION_NONE)
 
-    -- Register Listener   
+    -- Register UI Listener   
     CustomGameEventManager:RegisterListener( "next_wave", Dynamic_Wrap(ElementTD, "OnNextWave")) -- wave info
+    CustomGameEventManager:RegisterListener( "etd_player_voted", Dynamic_Wrap(ElementTD, "OnPlayerVoted")) -- voting ui
 
     ------------------------------------------------------
     local base_game_mode = GameRules:GetGameModeEntity()
@@ -151,7 +152,7 @@ function ElementTD:StartGame()
             FireGameEvent("etd_game_started", {})
             
             if not SKIP_VOTING then
-                FireGameEvent("etd_toggle_vote_dialog", {visible = true}) -- show that vote ui
+                CustomGameEventManager:Send_ServerToAllClients( "etd_toggle_vote_dialog", {visible = true} )
                 StartVoteTimer()
             else
                 -- voting should never be skipped in real games

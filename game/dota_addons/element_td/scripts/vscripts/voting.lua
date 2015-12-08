@@ -22,13 +22,15 @@ function StartVoteTimer()
 		PLAYERS_NOT_VOTED[v:GetPlayerID()] = 1
 	end
 
+	CustomGameEventManager:Send_ServerToAllClients("etd_populate_vote_table", gameSettingsKV )
+
 	GameRules:SendCustomMessage("<font color='#70EA72'>Voting has begun!</font>", 0, 0)
 
 	local loops = 60
 	Timers:CreateTimer("VoteThinker", {
 		callback = function()
 			loops = loops - 1
-			FireGameEvent("etd_update_vote_timer", {time = loops})
+			CustomGameEventManager:Send_ServerToAllClients("etd_update_vote_timer", { time = loops } )
 			if loops == 0 then
 				Log:info("Vote timer ran out")
 				FinalizeVotes() --time has run out, finalize votes
@@ -92,7 +94,7 @@ function FinalizeVotes()
 	
 	Log:info("All players have finished voting")
 	Timers:RemoveTimer("VoteThinker")
-	FireGameEvent("etd_toggle_vote_dialog", {visible = false})
+	CustomGameEventManager:Send_ServerToAllClients( "etd_toggle_vote_dialog", {visible = false} )
 
 	for _,v in pairs(PLAYERS_NOT_VOTED) do 
 		AddVote(VOTE_RESULTS.gamemode, "Competitive")
@@ -131,9 +133,10 @@ function FinalizeVotes()
 	GameSettings:SetCreepOrder(order)
 	GameSettings:SetElementOrder(elements)
 
-	for k, ply in pairs(players) do 
-		local data = {playerID = ply:GetPlayerID(), gamemode = gamemode, difficulty = PLAYER_DIFFICULTY_CHOICES[ply:GetPlayerID()], elements = elements, order = order, length = length}
-		FireGameEvent("etd_vote_results", data)
+	for k, ply in pairs(players) do
+		local data = {playerID = ply:GetPlayerID(), gamemode = gamemode, difficulty = GetPlayerData(ply:GetPlayerID()).difficulty.difficultyName, elements = elements, order = order, length = length}
+		PrintTable(data)
+		CustomGameEventManager:Send_ServerToPlayer( ply, "etd_vote_results", data )
 		CustomGameEventManager:Send_ServerToPlayer( ply, "etd_next_wave_info", { nextWave = GameSettings:GetGameLength().Wave, nextAbility1 = creepsKV[WAVE_CREEPS[GameSettings:GetGameLength().Wave]].Ability1, nextAbility2 = creepsKV[WAVE_CREEPS[GameSettings:GetGameLength().Wave]].Ability2 } )
 	end
 
@@ -148,12 +151,9 @@ function FinalizeVotes()
 	})
 end
 
--- the command that allows users to vote
--- gets called from ActionScript in vote_menu.as
-Convars:RegisterCommand("etd_player_voted", (function(name, voteData)
-
-	voteData = JSON:decode(DecodeBase64(voteData))
-	local playerID = voteData.playerID
+function ElementTD:OnPlayerVoted( table )
+	--voteData = JSON:decode(DecodeBase64(voteData))
+	local playerID = tonumber(table.PlayerID)
 	local playerName = GetPlayerName(playerID)
 
 	if not PLAYERS_NOT_VOTED[playerID] then
@@ -162,13 +162,13 @@ Convars:RegisterCommand("etd_player_voted", (function(name, voteData)
 		Log:info(playerName .. " has voted!")
 		GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerName .. "</font> has voted!", 0, 0)
 		PLAYERS_NOT_VOTED[playerID] = nil
-		PLAYER_DIFFICULTY_CHOICES[playerID] = voteData.difficultyVote
+		PLAYER_DIFFICULTY_CHOICES[playerID] = table.data.difficultyVote
 
-		AddVote(VOTE_RESULTS.gamemode, voteData.gamemodeVote)
-		AddVote(VOTE_RESULTS.difficulty, voteData.difficultyVote)
-		AddVote(VOTE_RESULTS.elements, voteData.elementsVote)
-		AddVote(VOTE_RESULTS.order, voteData.orderVote)
-		AddVote(VOTE_RESULTS.length, voteData.lengthVote)
+		AddVote(VOTE_RESULTS.gamemode, table.data.gamemodeVote)
+		AddVote(VOTE_RESULTS.difficulty, table.data.difficultyVote)
+		AddVote(VOTE_RESULTS.elements, table.data.elementsVote)
+		AddVote(VOTE_RESULTS.order, table.data.orderVote)
+		AddVote(VOTE_RESULTS.length, table.data.lengthVote)
 
 		--check to see if all players have finished voting
 		local count = 0
@@ -179,5 +179,4 @@ Convars:RegisterCommand("etd_player_voted", (function(name, voteData)
 			FinalizeVotes() -- all players have finished voting
 		end
 	end
-
-end), "", 0)
+end

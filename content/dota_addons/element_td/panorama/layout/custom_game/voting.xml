@@ -1,0 +1,77 @@
+<root>
+  <styles>
+    <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+    <include src="file://{resources}/styles/custom_game/voting.css" />
+  </styles>
+  <scripts>
+    <include src="file://{resources}/scripts/custom_game/voting.js" /> 
+  </scripts>
+  <Panel hittest="false" class="BaseHud">
+    <Panel hittest="true" id="Voting">
+      <Label id="Title" text="Vote on Game Settings"/>
+      <Panel hittest="false"  id="Gamemode" class="setting">
+        <Label id="GamemodeLabel" text="Gamemode:" class="label"/>
+        <DropDown id="GamemodeDD" oninputsubmit="OnDropDownChanged('gamemode')" class="dropdown">
+        </DropDown>
+        <Label id="GamemodeDesc" text="[gamemode descriptions]" class="desc"/>
+      </Panel>
+      <Panel hittest="false"  id="Difficulty" class="setting">
+        <Label id="DifficultyLabel" text="Difficulty:" class="label"/>
+        <DropDown id="DifficultyDD" oninputsubmit="OnDropDownChanged('difficulty')" class="dropdown">
+        </DropDown>
+        <Label id="DifficultyDesc" text="[difficulty descriptions]" class="desc"/>
+      </Panel>
+      <Panel hittest="false"  id="Elements" class="setting">
+        <Label id="ElementsLabel" text="Elements:" class="label"/>
+        <DropDown id="ElementsDD" oninputsubmit="OnDropDownChanged('elements')" class="dropdown">
+        </DropDown>
+        <Label id="ElementsDesc" text="[elements descriptions]" class="desc"/>
+      </Panel>
+      <Panel hittest="false"  id="Order" class="setting">
+        <Label id="OrderLabel" text="Order:" class="label"/>
+        <DropDown id="OrderDD" oninputsubmit="OnDropDownChanged('order')" class="dropdown">
+        </DropDown>
+        <Label id="OrderDesc" text="[order descriptions]" class="desc"/>
+      </Panel>
+      <Panel hittest="false"  id="Length" class="setting">
+        <Label id="LengthLabel" text="Length:" class="label"/>
+        <DropDown id="LengthDD" oninputsubmit="OnDropDownChanged('length')" class="dropdown">
+        </DropDown>
+        <Label id="LengthDesc" text="[length descriptions]" class="desc"/>
+      </Panel>
+      <Panel id="Bottom">
+        <Label id="Info" text="Waiting for others to finish voting..."/>
+        <Button id="Vote" onactivate="ConfirmVote()">
+          <Label id="ButtonLabel" text="Confirm Vote"/>
+        </Button>
+        <Label id="Countdown" text="60"/>   
+      </Panel>
+    </Panel>
+    <Panel hittest="true" id="VoteResults">
+      <Label id="ResultsTitle" text="Vote Results"/>
+      <Panel id="GM" class="result">
+        <Label id="GMTitle" text="Gamemode" class="resultsLabel"/>
+        <Label id="GamemodeResult" text="[gamemode]" class="resultsValue"/>
+      </Panel>
+      <Panel id="D" class="result">
+        <Label id="DTitle" text="Difficulty" class="resultsLabel"/>
+        <Label id="DifficultyResult" text="[difficulty]" class="resultsValue"/>
+      </Panel>
+      <Panel id="E" class="result">
+        <Label id="ETitle" text="Elements" class="resultsLabel"/>
+        <Label id="ElementsResult" text="[elements]" class="resultsValue"/>
+      </Panel>
+      <Panel id="O" class="result">
+        <Label id="OTitle" text="Order" class="resultsLabel"/>
+        <Label id="OrderResult" text="[order]" class="resultsValue"/>
+      </Panel>
+      <Panel id="L" class="result">
+        <Label id="LTitle" text="Length" class="resultsLabel"/>
+        <Label id="LengthResult" text="[length]" class="resultsValue"/>
+      </Panel>
+      <Button id="ResultsButton" onactivate="ResultsClose()">
+        <Label id="ButtonLabel" text="Ok"/>
+      </Button>
+    </Panel>
+  </Panel>
+</root>

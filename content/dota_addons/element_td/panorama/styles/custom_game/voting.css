@@ -1,0 +1,334 @@
+.BaseHud
+{
+    width: 100%;
+    height: 100%;
+}
+
+#Voting
+{
+    horizontal-align: center;
+    position: 0px 15% 0px;
+    width: 560px;
+    height: 640px;
+    padding: 20px 20px 0px 20px;
+    background-color: #000000DD;
+    border: 2px solid #484A48;
+    box-shadow: #000 -4px -4px 3px 8px;
+    flow-children: down;
+}
+
+#VoteResults
+{
+    horizontal-align: center;
+    position: 0px 28% 0px;
+    width: 420px;
+    height: 330px;
+    padding: 10px 30px 0px 30px;
+    background-color: #000000DD;
+    border: 2px solid #484A48;
+    box-shadow: #000 -4px -4px 3px 8px;
+    flow-children: down;
+}
+
+#Title, #ResultsTitle
+{
+    color: #FFF;
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 0px 0px 3px 3.0 #000;
+    width: 100%;
+    text-align: center;
+}
+
+#Title
+{
+    margin-top: -10px;
+}
+
+#ResultsTitle
+{
+    margin-bottom: 10px;
+}
+
+#Info
+{
+    color: #FFF;
+    font-size: 16px;
+    text-shadow: 0px 0px 3px 3.0 #000;
+}
+
+#Bottom
+{
+    width: 100%;
+    height: 35px;
+}
+
+#Vote
+{
+    horizontal-align: right;
+    width: 160px;
+    height: 30px;
+    margin-right: 40px;
+}
+
+#ButtonLabel
+{
+    width: 100%;
+    text-align: center;
+    text-shadow: 0px 0px 3px 2.0 #000;
+    text-transform: uppercase;
+}
+
+#ButtonLabel:hover
+{
+    color: #FFF;
+}
+
+#Countdown
+{
+    horizontal-align: right;
+    text-shadow: 0px 0px 3px 2.0 #000;
+}
+
+#ResultsButton
+{
+    horizontal-align: center;
+    width: 40px;
+    margin-top: 15px;
+}
+
+.setting
+{
+    width: 100%;
+    height: 110px;
+}
+
+.label
+{
+    color: #FFF;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 0px 0px 3px 3.0 #000;
+    width: 40%;
+    height: 30px;
+}
+
+.desc
+{
+    horizontal-align: right;
+    width: 60%;
+    height: 80px;
+    font-size: 20px;
+    color: #FFF;
+    text-shadow: 0px 0px 3px 3.0 #000;
+    margin-top: 30px;
+}
+
+.results
+{
+    width: 100%;
+}
+
+.result
+{
+    width: 100%;
+    height: 44px;
+}
+
+.resultsLabel
+{
+    color: #FFF;
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 0px 0px 3px 3.0 #000;
+}
+
+.resultsValue
+{
+    color: #FFF;
+    font-size: 20px;
+    text-shadow: 0px 0px 3px 3.0 #000;
+    horizontal-align: center;
+}
+
+DropDown
+{
+    width: 200px;
+    font-size: 18px;
+    color: #FFF;
+}
+DropDownMenu
+{
+    width: 200px;
+}
+
+#Elements.small
+{
+    height: 100px;
+    background-image: url("file://{resources}/images/custom_game/elements/backgroundSmall.png");
+}
+
+#ElementButton
+{
+    width: 30px;
+    height: 20px;
+    background-image: url("file://{resources}/images/custom_game/elements/button_up.png");
+    background-size: 100%;
+    margin-top: 18px;
+    margin-left: 55px;
+}
+
+#ElementButton:hover
+{
+    background-image: url("file://{resources}/images/custom_game/elements/button_up_over.png");
+}
+
+#ElementButton:active
+{
+    background-image: url("file://{resources}/images/custom_game/elements/button_up_down.png");
+}
+
+
+#ElementButton2
+{
+    width: 30px;
+    height: 20px;
+    background-image: url("file://{resources}/images/custom_game/elements/button_down.png");
+    background-size: 100%;
+    margin-top: 18px;
+    margin-left: 55px;
+}
+
+#ElementButton2:hover
+{
+    background-image: url("file://{resources}/images/custom_game/elements/button_down_over.png");
+}
+
+#ElementButton2:active
+{
+    background-image: url("file://{resources}/images/custom_game/elements/button_down_down.png");
+}
+
+#ElementButtonHolder
+{
+    width: 100%;
+    height: 50px;
+}
+
+#ResourceLumber
+{
+    margin-top: -20px;
+}
+
+#LumberDisplay
+{
+    margin-top: 95px;
+    margin-left: 170px;
+    color: #009900;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px 4.0 #000;
+
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#LumberDisplay.newResource
+{
+    animation-name: NewResource;
+}
+
+#Secondary
+{
+    width: 100%;
+    height: 100%;
+    flow-children: down;
+}
+
+#Divider
+{
+    margin-top: -8px;
+    width: 100%;
+    height: 35px;
+    background-image: url("file://{resources}/images/custom_game/elements/divider.png");
+    background-size: 100%;
+    contrast: 1.1;
+}
+
+#Water
+{
+    color: #0094FF;
+}
+
+#Fire
+{
+    color: #CC0000;
+}
+
+#Nature
+{
+    color: #19AC19;
+}
+
+#Earth
+{
+    color: #C9861B;
+}
+
+#Light
+{
+    color: #E6E600;
+}
+
+#Dark
+{
+    color:  #6C05B1;
+}
+
+.label
+{
+    font-size: 22px;
+    color: #FFF;
+}
+
+.value
+{
+    horizontal-align: right;
+    font-size: 22px;
+    color: #FFF;
+}
+
+.resource, .element
+{
+    width: 100%;
+    padding-left: 6px;
+    padding-right: 30px;
+}
+
+.element
+{
+    margin-top: -5px;
+}
+
+.hide
+{
+    visibility: collapse;
+}
+
+@keyframes 'NewResource'
+{
+    0%
+    {
+        transform: translateX( -4px ) rotateZ( -5deg );
+    }
+
+    50%
+    {
+        transform: translateX( 4px ) rotateZ( 5deg );
+    }
+    
+    100%
+    {
+        transform: translateX( -4px ) rotateZ( -5deg );
+    }
+}
