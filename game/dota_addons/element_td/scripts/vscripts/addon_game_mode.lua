@@ -4,111 +4,124 @@ if not ElementTD then
 end
 ---------------------------------------------------------------------------
 
-require('libraries/timers')
-require('libraries/popups')
-require('libraries/notifications')
-require('libraries/buildinghelper')
-require('mechanics/selection')
-require('mechanics/messages')
-require('mechanics/keyvalues')
+local requires =
+{
+    -- libraries
+    "libraries/timers",
+    "libraries/popups",
+    "libraries/notifications",
+    "libraries/buildinghelper",
 
-require('util/util')
-require('util/class')
-require('util/log')
+    -- mechanics
+    "mechanics/selection",
+    "mechanics/messages",
+    "mechanics/keyvalues",
 
-require("towers/GlobalCasterDummy")
-require("towers/TowersManager")
-require("towers/towerevents")
-require("towers/BasicTower")
-require("towers/BasicTowerAOE")
-require("towers/CannonTower")
+    -- utils
+    "util/util",
+    "util/class",
+    "util/log",
 
--- dual towers
-require("towers/duals/MagicTower")
-require("towers/duals/DiseaseTower")
-require("towers/duals/MushroomTower")
-require("towers/duals/LifeTower")
-require("towers/duals/WellTower")
-require("towers/duals/BlacksmithTower")
-require("towers/duals/QuarkTower")
-require("towers/duals/ElectricityTower")
-require("towers/duals/FlameTower")
-require("towers/duals/VaporTower")
-require("towers/duals/PoisonTower")
-require("towers/duals/HydroTower")
-require("towers/duals/TrickeryTower")
-require("towers/duals/GunpowderTower")
-require("towers/duals/IceTower")
+    -- tower blueprints
+    "towers/GlobalCasterDummy",
+    "towers/TowersManager",
+    "towers/towerevents",
+    "towers/BasicTower",
+    "towers/BasicTowerAOE",
+    "towers/CannonTower",
 
--- triple towers
-require("towers/triples/MuckTower")
-require("towers/triples/GoldTower")
-require("towers/triples/WindstormTower")
-require("towers/triples/QuakeTower")
-require("towers/triples/EnchantmentTower")
-require("towers/triples/FloodingTower")
-require("towers/triples/LaserTower")
-require("towers/triples/HailTower")
-require("towers/triples/RunicTower")
-require("towers/triples/ImpulseTower")
-require("towers/triples/ObliterationTower")
-require("towers/triples/EphemeralTower")
-require("towers/triples/FlamethrowerTower")
-require("towers/triples/HasteTower")
-require("towers/triples/TorrentTower")
-require("towers/triples/NovaTower")
-require("towers/triples/PolarTower")
-require("towers/triples/JinxTower")
-require("towers/triples/RootsTower")
-require("towers/triples/ErosionTower")
+    -- dual towers
+    "towers/duals/MagicTower",
+    "towers/duals/DiseaseTower",
+    "towers/duals/MushroomTower",
+    "towers/duals/LifeTower",
+    "towers/duals/WellTower",
+    "towers/duals/BlacksmithTower",
+    "towers/duals/QuarkTower",
+    "towers/duals/ElectricityTower",
+    "towers/duals/FlameTower",
+    "towers/duals/VaporTower",
+    "towers/duals/PoisonTower",
+    "towers/duals/HydroTower",
+    "towers/duals/TrickeryTower",
+    "towers/duals/GunpowderTower",
+    "towers/duals/IceTower",
 
--- creep classes
-require("creeps/basic")
-require("creeps/creepevents")
-require("creeps/mechanical")
-require("creeps/undead")
-require("creeps/heal")
-require("creeps/fast")
-require("creeps/image")
-require("creeps/swarm")
+    -- triple towers
+    "towers/triples/MuckTower",
+    "towers/triples/GoldTower",
+    "towers/triples/WindstormTower",
+    "towers/triples/QuakeTower",
+    "towers/triples/EnchantmentTower",
+    "towers/triples/FloodingTower",
+    "towers/triples/LaserTower",
+    "towers/triples/HailTower",
+    "towers/triples/RunicTower",
+    "towers/triples/ImpulseTower",
+    "towers/triples/ObliterationTower",
+    "towers/triples/EphemeralTower",
+    "towers/triples/FlamethrowerTower",
+    "towers/triples/HasteTower",
+    "towers/triples/TorrentTower",
+    "towers/triples/NovaTower",
+    "towers/triples/PolarTower",
+    "towers/triples/JinxTower",
+    "towers/triples/RootsTower",
+    "towers/triples/ErosionTower",
 
-require('wave')
-require('voting')
-require('interest')
-require('gamesettings')
-require('summoner')
-require('constants')
-require('wavedata')
-require('elements')
-require('spells')
-require('towergrid')
-require('playerdata')
-require('developer')
-require('ElementTD')
+    -- creep classes
+    "creeps/basic",
+    "creeps/creepevents",
+    "creeps/mechanical",
+    "creeps/undead",
+    "creeps/heal",
+    "creeps/fast",
+    "creeps/image",
+    "creeps/swarm",
+
+    -- misc
+    "wave",
+    "voting",
+    "interest",
+    "gamesettings",
+    "summoner",
+    "constants",
+    "wavedata",
+    "elements",
+    "spells",
+    "towergrid",
+    "playerdata",
+    "developer",
+    "ElementTD",
+}
+
+for _, r in pairs(requires) do
+    require(r)
+end
 
 function Precache(context)
-	local units = LoadKeyValues("scripts/npc/npc_units_custom.txt")
-	local precache = LoadKeyValues("scripts/kv/precache.kv")
+    local units = LoadKeyValues("scripts/npc/npc_units_custom.txt")
+    local precache = LoadKeyValues("scripts/kv/precache.kv")
 
-	for k, a in pairs(precache) do
-		for _, v in pairs(a) do
-			if k == "unit" then
-				PrecacheUnitByNameAsync(v, function(...) end)
-			else
-				PrecacheResource(k, v, context)
-			end
-		end
-	end
+    for k, a in pairs(precache) do
+        for _, v in pairs(a) do
+            if k == "unit" then
+                PrecacheUnitByNameAsync(v, function(...) end)
+            else
+                PrecacheResource(k, v, context)
+            end
+        end
+    end
 
-	for k, v in pairs(units) do
-		PrecacheUnitByNameAsync(k, function(...) end)
-	end
+    for k, v in pairs(units) do
+        PrecacheUnitByNameAsync(k, function(...) end)
+    end
 end
 
 function Activate()
-	
-	Log:SetLogLevel(TRACE)
-	
-	ElementTD:InitGameMode()
+    
+    Log:SetLogLevel(TRACE)
+    
+    ElementTD:InitGameMode()
 end
 
