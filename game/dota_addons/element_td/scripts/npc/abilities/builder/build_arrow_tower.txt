@@ -3,37 +3,18 @@
 //============================================================//
 "build_arrow_tower"
 {
-    // General
-    //-----------------------------
     "BaseClass"                     "ability_datadriven"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
     "MaxLevel"                      "1"
     "AbilityTextureName"            "build_arrow_tower"
     
     "Building"                      "1"
-    "BuildingSize"                  "2"
-    "BuildTime"                     "2.0"
     "AbilityCastRange"              "200"
     "Scale"                         "1"
     "PlayerCanControl"              "1"
 
     "UnitName"                      "basic_arrow_tower"
     "AbilityGoldCost"               "7"
-
-    "AbilitySpecial"
-    {
-        "01"
-        {
-            "var_type"              "FIELD_FLOAT"
-            "build_time"            "2.0"
-        }
-        "02"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "gold_cost"             "7"
-        }
-    }
     
     "OnSpellStart"
     {

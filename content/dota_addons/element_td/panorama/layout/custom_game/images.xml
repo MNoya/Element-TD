@@ -1,0 +1,14 @@
+<root>
+    <script>
+        $.Msg( "Images compiled" );
+    </script>     
+    <Panel hittest="false" class="ImagesRoot">
+        <Image style="opacity:0;" src="file://{images}/spellicons/elements/composite.png" />
+        <Image style="opacity:0;" src="file://{images}/spellicons/elements/dark.png" />
+        <Image style="opacity:0;" src="file://{images}/spellicons/elements/earth.png" />
+        <Image style="opacity:0;" src="file://{images}/spellicons/elements/fire.png" />
+        <Image style="opacity:0;" src="file://{images}/spellicons/elements/light.png" />
+        <Image style="opacity:0;" src="file://{images}/spellicons/elements/nature.png" />
+        <Image style="opacity:0;" src="file://{images}/spellicons/elements/water.png" />
+    </Panel>
+</root>

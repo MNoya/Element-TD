@@ -22,7 +22,7 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/heroes/morphling/morphling.mdl"
+	"Model"		"models/heroes/morphling/morphling.vmdl"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Hero_Morphling"
 	"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
@@ -31,17 +31,14 @@
 	"ConsideredHero"		"1"
 	"precache"
 	{
-		"particlefile"		"particles/units/heroes/hero_morphling.pcf"
+		"particlefile"		"particles/units/heroes/hero_morphling.vpcf"
 		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
 	}
 	"Creature"
 	{
 		"AttachWearables"
 		{
-			"Wearable1"
-			{
-				"ItemDef"		"507"
-			}
+			"Wearable1" { "ItemDef"	"507" }
 		}
 	}
 	"Level"		"1"

@@ -47,16 +47,13 @@ function BuildingHelper:Init()
 
     CustomGameEventManager:RegisterListener("building_helper_build_command", Dynamic_Wrap(BuildingHelper, "BuildCommand"))
     CustomGameEventManager:RegisterListener("building_helper_cancel_command", Dynamic_Wrap(BuildingHelper, "CancelCommand"))
+    CustomGameEventManager:RegisterListener("gnv_request", Dynamic_Wrap(BuildingHelper, "SendGNV"))
 
     ListenToGameEvent('game_rules_state_change', function()
         local newState = GameRules:State_Get()
         if newState == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
             -- The base terrain GridNav is obtained directly from the vmap
             BuildingHelper:InitGNV()
-        elseif newState == DOTA_GAMERULES_STATE_PRE_GAME then
-            Timers:CreateTimer(1, function()
-                BuildingHelper:SendGNV()
-            end)
         end
     end, nil)
 
@@ -152,8 +149,11 @@ function BuildingHelper:InitGNV()
     BuildingHelper.squareY = squareY
 end
 
-function BuildingHelper:SendGNV()
-    CustomGameEventManager:Send_ServerToAllClients("gnv", {gnv=BuildingHelper.Encoded, squareX = BuildingHelper.squareX, squareY = BuildingHelper.squareY})
+function BuildingHelper:SendGNV( args )
+    local playerID = args.PlayerID
+    local player = PlayerResource:GetPlayer(playerID)
+    BuildingHelper:print("Sending GNV to player "..playerID)
+    CustomGameEventManager:Send_ServerToPlayer(player, "gnv_register", {gnv=BuildingHelper.Encoded, squareX = BuildingHelper.squareX, squareY = BuildingHelper.squareY})
 end
 
 --[[
@@ -253,6 +253,8 @@ function BuildingHelper:AddBuilding(keys)
     end
     buildingTable:SetVal("MaxScale", fMaxScale)
 
+    local attackRange = buildingTable:GetVal("AttackRange", "number")
+
     -- Set the active variables and callbacks
     local playerID = builder:GetMainControllingPlayer()
     local player = PlayerResource:GetPlayer(playerID)
@@ -261,6 +263,12 @@ function BuildingHelper:AddBuilding(keys)
     playerTable.activeBuilding = unitName
     playerTable.activeBuildingTable = buildingTable
     playerTable.activeCallbacks = callbacks
+
+    -- npc_dota_creature doesn't render cosmetics on the particle ghost, use hero names instead
+    local overrideGhost = buildingTable:GetVal("OverrideBuildingGhost", "string")
+    if overrideGhost then
+        unitName = overrideGhost
+    end
 
     -- Remove old ghost model dummy
     UTIL_Remove(playerTable.activeBuildingTable.mgd)
@@ -274,7 +282,7 @@ function BuildingHelper:AddBuilding(keys)
 
     -- Position is CP0, model attach is CP1, color is CP2, alpha is CP3.x, scale is CP4.x
     playerTable.activeBuildingTable.modelParticle = ParticleManager:CreateParticleForPlayer("particles/buildinghelper/ghost_model.vpcf", PATTACH_ABSORIGIN, playerTable.activeBuildingTable.mgd, player)
-    ParticleManager:SetParticleControlEnt(playerTable.activeBuildingTable.modelParticle, 1, playerTable.activeBuildingTable.mgd, 1, "follow_origin", playerTable.activeBuildingTable.mgd:GetAbsOrigin(), true)            
+    ParticleManager:SetParticleControlEnt(playerTable.activeBuildingTable.modelParticle, 1, playerTable.activeBuildingTable.mgd, 1, "attach_hitloc", playerTable.activeBuildingTable.mgd:GetAbsOrigin(), true)            
     ParticleManager:SetParticleControl(playerTable.activeBuildingTable.modelParticle, 3, Vector(MODEL_ALPHA,0,0))
     ParticleManager:SetParticleControl(playerTable.activeBuildingTable.modelParticle, 4, Vector(fMaxScale,0,0))
 
@@ -284,7 +292,7 @@ function BuildingHelper:AddBuilding(keys)
     end
     ParticleManager:SetParticleControl(playerTable.activeBuildingTable.modelParticle, 2, color)
 
-    local paramsTable = { state = "active", size = size, scale = fMaxScale, 
+    local paramsTable = { state = "active", size = size, scale = fMaxScale, range = attackRange,
                           grid_alpha = GRID_ALPHA, model_alpha = MODEL_ALPHA, recolor_ghost = RECOLOR_GHOST_MODEL,
                           entindex = playerTable.activeBuildingTable.mgd:GetEntityIndex(), builderIndex = builder:GetEntityIndex()
                         }
@@ -390,10 +398,22 @@ function BuildingHelper:SetupBuildingTable( abilityName )
         return
     end
 
+    -- OverrideBuildingGhost
+    local override_ghost = BuildingHelper.KV[abilityName]["OverrideBuildingGhost"]
+    if override_ghost then
+        buildingTable:SetVal("OverrideBuildingGhost", override_ghost)
+    end
+
+    local attack_range = unitTable["AttackRange"]
+    if not attack_range then
+        attack_range = 0
+    end
+    buildingTable:SetVal("AttackRange", attack_range)
+
     local construction_size = unitTable["ConstructionSize"]
     if not construction_size then
-        BuildingHelper:print('Error: Unit ' .. unitName .. ' does not have a ConstructionSize KeyValue.')
-        return
+        BuildingHelper:print('Warning: Unit ' .. unitName .. ' does not have a ConstructionSize KeyValue. Defaulting to 1')
+        construction_size = 2
     end
     buildingTable:SetVal("ConstructionSize", construction_size)
 
@@ -403,6 +423,19 @@ function BuildingHelper:SetupBuildingTable( abilityName )
         pathing_size = 0
     end
     buildingTable:SetVal("BlockPathingSize", pathing_size)
+
+    local buildTime = unitTable["BuildTime"]
+    if not buildTime then
+        BuildingHelper:print('Warning: Unit ' .. unitName .. ' does not have a BuildTime KeyValue. Defaulting to 1')
+        buildTime = 0
+    end
+    buildingTable:SetVal("BuildTime", buildTime)
+
+    local modelRotation = unitTable["ModelRotation"]
+    if not modelRotation then
+        modelRotation = 0
+    end
+    buildingTable:SetVal("ModelRotation", modelRotation)
 
     local castRange = buildingTable:GetVal("AbilityCastRange", "number")
     if not castRange then
@@ -689,7 +722,7 @@ function BuildingHelper:StartBuilding( keys )
                         callbacks.onConstructionCompleted(building)
                     end
                     
-                    BuildingHelper:print("HP was off by:", fMaxHealth - fAddedHealth)
+                    BuildingHelper:print("HP was off by: ".. (fMaxHealth - fAddedHealth))
 
                     -- Eject Builder
                     if bBuilderInside then
@@ -799,7 +832,7 @@ function BuildingHelper:StartBuilding( keys )
         local repair_ability_name = race.."_gather"
         local repair_ability = builder:FindAbilityByName(repair_ability_name)
         if not repair_ability then
-            BuildingHelper:print("Error, can't find "..repair_ability_name.." on the builder ", builder:GetUnitName(), builder:GetEntityIndex())
+            BuildingHelper:print("Error, can't find "..repair_ability_name.." on the builder "..builder:GetUnitName().." - "..builder:GetEntityIndex())
             return
         end
 
@@ -843,7 +876,7 @@ function BuildingHelper:StartBuilding( keys )
                     end
                 else
                     
-                    BuildingHelper:print("Scale was off by:", fMaxScale - fCurrentScale)
+                    BuildingHelper:print("Scale was off by: "..(fMaxScale - fCurrentScale))
                     building:SetModelScale(fMaxScale)
                     return
                 end
@@ -1156,6 +1189,13 @@ function BuildingHelper:AddToQueue( builder, location, bQueued )
     -- Position chosen is initially valid, send callback to spend gold
     callbacks.onBuildingPosChosen(location)
 
+    -- npc_dota_creature doesn't render cosmetics on the particle ghost, use hero names instead
+    local overrideGhost = buildingTable:GetVal("OverrideBuildingGhost", "string")
+    local unitName = building
+    if overrideGhost then
+        building = overrideGhost
+    end
+
     -- Create model ghost dummy out of the map, then make pretty particles
     local mgd = CreateUnitByName(building, OutOfWorldVector, false, nil, nil, builder:GetTeam())
 
@@ -1174,6 +1214,8 @@ function BuildingHelper:AddToQueue( builder, location, bQueued )
         color = Vector(0,255,0)
     end
     ParticleManager:SetParticleControl(modelParticle, 2, color) -- Color
+
+    building = unitName
 
     -- If the ability wasn't queued, override the building queue
     if not bQueued then

@@ -1,0 +1,30 @@
+//============================================================//
+// Build Cannon Tower (Item Version)
+//============================================================//
+"item_build_cannon_tower"
+{
+    "BaseClass"                     "item_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "MaxLevel"                      "1"
+    "AbilityTextureName"            "build_cannon_tower"
+
+    "ItemDroppable"                 "0"
+    "ItemPurchasable"               "0"
+    
+    "Building"                      "1"
+    "AbilityCastRange"              "200"
+    "Scale"                         "1"
+    "PlayerCanControl"              "1"
+
+    "UnitName"                      "basic_cannon_tower"
+    "AbilityGoldCost"               "7"
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"        "builder.lua"
+            "Function"          "Build"
+        }
+    }
+}

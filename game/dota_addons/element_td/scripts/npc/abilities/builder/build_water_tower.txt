@@ -3,29 +3,31 @@
 //============================================================//
 "build_water_tower"
 {
-	// General
-	//-----------------------------
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"MaxLevel"						"1"
-	"AbilityTextureName"			"build_water_tower"
-	"AbilityCooldown"				"0"
-	"AbilityCastRange"				"128"
-	"AbilityCastPoint"				"0.3"
-	"Cost"							"175"
-	"Requirements"
-	{
-		"water"	"1"
-	}
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"Target"			"POINT"
-			"ScriptFile"		"scripts/vscripts/spells.lua"
-			"Function"			"PlaceTower"
-			"tower"				"water_tower"
-		}
-	}
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "MaxLevel"                      "1"
+    "AbilityTextureName"            "build_water_tower"
+    
+    "Building"                      "1"
+    "AbilityCastRange"              "200"
+    "Scale"                         "1"
+    "PlayerCanControl"              "1"
+
+    "UnitName"                      "water_tower"
+    "OverrideBuildingGhost"         "npc_dota_hero_morphling"
+    "Cost"                          "175"
+
+    "Requirements"
+    {
+        "dark"    "1"
+    }
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"        "builder.lua"
+            "Function"          "Build"
+        }
+    }
 }

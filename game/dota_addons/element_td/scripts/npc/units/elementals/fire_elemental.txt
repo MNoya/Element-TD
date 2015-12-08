@@ -22,7 +22,7 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/heroes/phoenix/phoenix_bird.mdl"
+	"Model"		"models/heroes/phoenix/phoenix_bird.vmdl"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Hero_Phoenix"
 	"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
