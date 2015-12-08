@@ -3,77 +3,77 @@
 //=================================================================================================================
 "muck_tower_sludge_passive"
 {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
+    // General
+    //-------------------------------------------------------------------------------------------------------------
 
-	"BaseClass"						"ability_datadriven"											
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"bristleback_viscous_nasal_goo"
-	"MaxLevel"						"2"
+    "BaseClass"                     "ability_datadriven"                                            
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "bristleback_viscous_nasal_goo"
+    "MaxLevel"                      "2"
 
 
-	"Modifiers"
-	{
-		"modifier_sludge_passive"
-		{
-			"Passive"	"1"
-			"IsHidden"	"1"
-			"OnAttackLanded"
-			{
-				"ApplyModifier"
-				{
-					"Target"
-					{
-						"Center"		"TARGET"
-						"Radius"		"%aoe"
-						"Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
-						"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
-					}
-					"ModifierName"		"modifier_sludge_slow"
-				}
-			}
-		}
-		"modifier_sludge_slow"
-		{
-			"Duration"		"%duration"
-			"IsDebuff"		"1"
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
-			}
-			"OnCreated"
-			{
-				"AttachEffect"
-				{
-					"Target" 			"TARGET"
-					"EffectName"		"particles/units/heroes/hero_meepo/meepo_geostrike.vpcf"
-					"EffectAttachType"	"follow_origin"
-				}
-			}	
-		}
-	}
+    "Modifiers"
+    {
+        "modifier_sludge_passive"
+        {
+            "Passive"   "1"
+            "IsHidden"  "1"
+            "OnAttackLanded"
+            {
+                "ApplyModifier"
+                {
+                    "Target"
+                    {
+                        "Center"        "TARGET"
+                        "Radius"        "%aoe"
+                        "Types"         "DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+                        "ExcludeFlags"  "DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
+                    }
+                    "ModifierName"      "modifier_sludge_slow"
+                }
+            }
+        }
+        "modifier_sludge_slow"
+        {
+            "Duration"      "%duration"
+            "IsDebuff"      "1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%slow"
+            }
+            "OnCreated"
+            {
+                "AttachEffect"
+                {
+                    "Target"            "TARGET"
+                    "EffectName"        "particles/units/heroes/hero_meepo/meepo_geostrike.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                }
+            }   
+        }
+    }
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"5"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"slow_tooltip"			"7.5 22.5"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"aoe"					"400"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"slow"					"-7.5 -22.5"
-		}
-	}
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "duration"              "5"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "slow_tooltip"          "7.5 22.5"
+        }
+        "03"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "aoe"                   "400"
+        }
+        "04"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "slow"                  "-7.5 -22.5"
+        }
+    }
 }

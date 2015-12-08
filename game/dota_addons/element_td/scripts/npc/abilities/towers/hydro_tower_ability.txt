@@ -3,44 +3,44 @@
 //=================================================================================================================
 "hydro_tower_ability"
 {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
+    // General
+    //-------------------------------------------------------------------------------------------------------------
 
-	"BaseClass"						"ability_datadriven"											
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"puck_illusory_orb"
-	"MaxLevel"						"3"
-	"AbilityCastRange"				"625"
-	"Modifiers"
-	{
-		"modifier_hydro_passive"
-		{
-			"Passive"		"1"
-			"IsHidden"		"1"
-			"OnAttackStart"
-			{
-				"RunScript"
-				{
-					"Target"			"TARGET"
-					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-					"Function"			"TriggerEvent"
-					"Event"				"OnAttackStart"
-				}
-			}
-		}
-	}
+    "BaseClass"                     "ability_datadriven"                                            
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "puck_illusory_orb"
+    "MaxLevel"                      "3"
+    "AbilityCastRange"              "625"
+    "Modifiers"
+    {
+        "modifier_hydro_passive"
+        {
+            "Passive"       "1"
+            "IsHidden"      "1"
+            "OnAttackStart"
+            {
+                "RunScript"
+                {
+                    "Target"            "TARGET"
+                    "ScriptFile"        "scripts/vscripts/towers/towerevents.lua"
+                    "Function"          "TriggerEvent"
+                    "Event"             "OnAttackStart"
+                }
+            }
+        }
+    }
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"splash_damage"			"140 700 3500"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"splash_aoe"			"400"
-		}
-	}
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "splash_damage"         "140 700 3500"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "splash_aoe"            "400"
+        }
+    }
 }

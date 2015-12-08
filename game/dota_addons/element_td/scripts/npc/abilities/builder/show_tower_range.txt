@@ -3,24 +3,24 @@
 //============================================================//
 "show_tower_range"
 {
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BUILDING"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-	"AbilityCooldown"				"0"
-	"MaxLevel"						"1"
-	"AbilityCastRange"				"5000"
-	"AbilityTextureName"			"show_tower_range"
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_BUILDING"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+    "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+    "AbilityCooldown"               "0"
+    "MaxLevel"                      "1"
+    "AbilityCastRange"              "5000"
+    "AbilityTextureName"            "show_tower_range"
 
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"Target"			"TARGET"
-			"ScriptFile"		"scripts/vscripts/util/util.lua"
-			"Function"			"DrawTowerRangeIndicator"
-		}
-	}
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "Target"            "TARGET"
+            "ScriptFile"        "scripts/vscripts/util/util.lua"
+            "Function"          "DrawTowerRangeIndicator"
+        }
+    }
 }

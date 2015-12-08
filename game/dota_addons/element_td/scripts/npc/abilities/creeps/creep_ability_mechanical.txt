@@ -1,36 +1,36 @@
 //============================================================//
-// Creep Ability: Mechanical								  //
+// Creep Ability: Mechanical                                  //
 //============================================================//
 "creep_ability_mechanical"
 {
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"MaxLevel"						"1"
-	"AbilityTextureName"			"tinker_rearm"
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"                      "1"
+    "AbilityTextureName"            "tinker_rearm"
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"3"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"interval"				"9"	
-		}
-	}
-	"Modifiers"
-	{
-		"mechanical_buff"
-		{
-			"IsHidden"			"1"
-			"Passive"			"0"
-			"Duration"			"%duration"
-			"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_repel_buff.vpcf"
-			"EffectAttachType"	"follow_origin"
-		}
-	}
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "duration"              "3"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "interval"              "9" 
+        }
+    }
+    "Modifiers"
+    {
+        "mechanical_buff"
+        {
+            "IsHidden"          "1"
+            "Passive"           "0"
+            "Duration"          "%duration"
+            "EffectName"        "particles/units/heroes/hero_omniknight/omniknight_repel_buff.vpcf"
+            "EffectAttachType"  "follow_origin"
+        }
+    }
 }

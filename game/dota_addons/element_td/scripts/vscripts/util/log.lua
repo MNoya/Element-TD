@@ -10,31 +10,31 @@ ERROR = 5;
 Log = {};
 
 function Log:SetLogLevel(level)
-	LOG_LEVEL = level;
+    LOG_LEVEL = level;
 end
 
 function Log:trace(msg)
-	Log:log("[TRACE] " .. msg, TRACE);
+    Log:log("[TRACE] " .. msg, TRACE);
 end
 
 function Log:debug(msg)
-	Log:log("[DEBUG] " .. msg, DEBUG);
+    Log:log("[DEBUG] " .. msg, DEBUG);
 end
 
 function Log:info(msg)
-	Log:log("[INFO] " .. msg, INFO);
+    Log:log("[INFO] " .. msg, INFO);
 end
 
 function Log:warn(msg)
-	Log:log("[WARNING!] " .. msg, WARN);
+    Log:log("[WARNING!] " .. msg, WARN);
 end
 
 function Log:error(msg)
-	Log:log("[ERROR!] " .. msg, ERROR);
+    Log:log("[ERROR!] " .. msg, ERROR);
 end
 
 function Log:log(msg, level)
-	if level >= LOG_LEVEL then
-		print(msg);
-	end
+    if level >= LOG_LEVEL then
+        print(msg);
+    end
 end

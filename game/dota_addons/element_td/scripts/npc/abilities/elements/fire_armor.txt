@@ -3,17 +3,17 @@
 //============================================================//
 "fire_armor"
 {
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"MaxLevel"						"1"
-	"AbilityTextureName"			"elements/fire"
-	"Modifiers"
-	{
-		"fire_armor"
-		{
-			"Passive"		"1"
-			"TextureName"	"elements/fire"
-		}
-	}
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"                      "1"
+    "AbilityTextureName"            "elements/fire"
+    "Modifiers"
+    {
+        "fire_armor"
+        {
+            "Passive"       "1"
+            "TextureName"   "elements/fire"
+        }
+    }
 }

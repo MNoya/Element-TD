@@ -1,30 +1,30 @@
 "item_upgrade_to_hydro_tower"
 {
-	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	"BaseClass"		"item_datadriven"
-	"AbilityManaCost"		"0"
-	"ItemShareability"		"ITEM_NOT_SHAREABLE"
-	"ItemSellable"		"0"
-	"ItemKillable"		"0"
-	"ItemPurchasable"		"0"
-	"ItemDroppable"		"0"
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"TARGET"		"CASTER"
-			"ScriptFile"		"scripts/vscripts/spells.lua"
-			"Function"		"UpgradeTower"
-			"tower"		"hydro_tower"
-		}
-	}
-	"AbilityTextureName"		"item_puck_illusory_orb"
-	"Cost"		"325"
-	"Requirements"
-	{
-		"water"		"1"
-		"water"		"1"
-		"earth"		"1"
-		"earth"		"1"
-	}
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "BaseClass"     "item_datadriven"
+    "AbilityManaCost"       "0"
+    "ItemShareability"      "ITEM_NOT_SHAREABLE"
+    "ItemSellable"      "0"
+    "ItemKillable"      "0"
+    "ItemPurchasable"       "0"
+    "ItemDroppable"     "0"
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "TARGET"        "CASTER"
+            "ScriptFile"        "scripts/vscripts/spells.lua"
+            "Function"      "UpgradeTower"
+            "tower"     "hydro_tower"
+        }
+    }
+    "AbilityTextureName"        "item_puck_illusory_orb"
+    "Cost"      "325"
+    "Requirements"
+    {
+        "water"     "1"
+        "water"     "1"
+        "earth"     "1"
+        "earth"     "1"
+    }
 }

@@ -1,70 +1,70 @@
 "goblin_shredder"
 {
-	"ArmorPhysical"		"0"
-	"MagicalResistance"		"0"
-	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"		"0"
-	"AttackDamageMax"		"0"
-	"AttackRate"		"0"
-	"AttackAnimationPoint"		"0"
-	"AttackAcquisitionRange"		"0"
-	"AttackRange"		"0"
-	"ProjectileModel"		""
-	"ProjectileSpeed"		"0"
-	"RingRadius"		"70"
-	"HealthBarOffset"		"160"
-	"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
-	"BountyXP"		"0"
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"		"300"
-	"StatusHealthRegen"		"0"
-	"StatusMana"		"0"
-	"StatusManaRegen"		"0"
-	"VisionDaytimeRange"		"1200"
-	"VisionNighttimeRange"		"800"
-	"Model"		"models/heroes/shredder/shredder.vmdl"
-	"ModelScale"		"1"
-	"BaseClass"		"npc_dota_creature"
-	"SoundSet"		""
-	"ScriptClass"		"CreepMechanical"
-	"Ability1"		"composite_armor"
-	"Ability2"		"creep_ability_mechanical"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"		"386"
-			}
-			"Wearable2"
-			{
-				"ItemDef"		"388"
-			}
-			"Wearable3"
-			{
-				"ItemDef"		"389"
-			}
-			"Wearable4"
-			{
-				"ItemDef"		"390"
-			}
-			"Wearable5"
-			{
-				"ItemDef"		"400"
-			}
-			"Wearable6"
-			{
-				"ItemDef"		"401"
-			}
-			"Wearable7"
-			{
-				"ItemDef"		"402"
-			}
-			"Wearable8"
-			{
-				"ItemDef"		"537"
-			}
-		}
-	}
+    "ArmorPhysical"     "0"
+    "MagicalResistance"     "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"       "0"
+    "AttackDamageMax"       "0"
+    "AttackRate"        "0"
+    "AttackAnimationPoint"      "0"
+    "AttackAcquisitionRange"        "0"
+    "AttackRange"       "0"
+    "ProjectileModel"       ""
+    "ProjectileSpeed"       "0"
+    "RingRadius"        "70"
+    "HealthBarOffset"       "160"
+    "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
+    "BountyXP"      "0"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"     "300"
+    "StatusHealthRegen"     "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"       "0"
+    "VisionDaytimeRange"        "1200"
+    "VisionNighttimeRange"      "800"
+    "Model"     "models/heroes/shredder/shredder.vmdl"
+    "ModelScale"        "1"
+    "BaseClass"     "npc_dota_creature"
+    "SoundSet"      ""
+    "ScriptClass"       "CreepMechanical"
+    "Ability1"      "composite_armor"
+    "Ability2"      "creep_ability_mechanical"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"       "386"
+            }
+            "Wearable2"
+            {
+                "ItemDef"       "388"
+            }
+            "Wearable3"
+            {
+                "ItemDef"       "389"
+            }
+            "Wearable4"
+            {
+                "ItemDef"       "390"
+            }
+            "Wearable5"
+            {
+                "ItemDef"       "400"
+            }
+            "Wearable6"
+            {
+                "ItemDef"       "401"
+            }
+            "Wearable7"
+            {
+                "ItemDef"       "402"
+            }
+            "Wearable8"
+            {
+                "ItemDef"       "537"
+            }
+        }
+    }
 }

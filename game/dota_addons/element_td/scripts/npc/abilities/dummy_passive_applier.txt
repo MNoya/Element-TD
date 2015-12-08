@@ -1,22 +1,22 @@
 //a passive ability for dummy units
 "dummy_passive_applier"
-{	
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"MaxLevel"						"1"
-	"AbilityTextureName"			""
+{   
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "MaxLevel"                      "1"
+    "AbilityTextureName"            ""
 
-	"Modifiers"
-	{
-		"modifier_dummy_passive"
-		{
-			"IsHidden"	"0"
-			"States"
-			{
-				"MODIFIER_STATE_UNSELECTABLE"			"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_NOT_ON_MINIMAP" 		"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_INVULNERABLE"  			"MODIFIER_STATE_VALUE_ENABLED"
-			}
-		}
-	}
+    "Modifiers"
+    {
+        "modifier_dummy_passive"
+        {
+            "IsHidden"  "0"
+            "States"
+            {
+                "MODIFIER_STATE_UNSELECTABLE"           "MODIFIER_STATE_VALUE_ENABLED"
+                "MODIFIER_STATE_NOT_ON_MINIMAP"         "MODIFIER_STATE_VALUE_ENABLED"
+                "MODIFIER_STATE_INVULNERABLE"           "MODIFIER_STATE_VALUE_ENABLED"
+            }
+        }
+    }
 }

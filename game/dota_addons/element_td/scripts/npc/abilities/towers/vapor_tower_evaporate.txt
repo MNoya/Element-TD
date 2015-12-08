@@ -3,57 +3,57 @@
 //=================================================================================================================
 "vapor_tower_evaporate"
 {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
+    // General
+    //-------------------------------------------------------------------------------------------------------------
 
-	"BaseClass"						"ability_datadriven"											
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-	"AbilityTextureName"			"morphling_adaptive_strike"
-	"MaxLevel"						"3"
-	"AbilityCastRange"				"625"
+    "BaseClass"                     "ability_datadriven"                                            
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
+    "AbilityTextureName"            "morphling_adaptive_strike"
+    "MaxLevel"                      "3"
+    "AbilityCastRange"              "625"
 
-	"Modifiers"
-	{
-		"modifier_evaporate_passive"
-		{
-			"Passive"		"1"
-			"IsHidden"		"1"
-			"OnAttackStart"
-			{
-				"RunScript"
-				{
-					"Target"			"TARGET"
-					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-					"Function"			"TriggerEvent"
-					"Event"				"OnAttackStart"
-				}
-			}
-		}
-	}
+    "Modifiers"
+    {
+        "modifier_evaporate_passive"
+        {
+            "Passive"       "1"
+            "IsHidden"      "1"
+            "OnAttackStart"
+            {
+                "RunScript"
+                {
+                    "Target"            "TARGET"
+                    "ScriptFile"        "scripts/vscripts/towers/towerevents.lua"
+                    "Function"          "TriggerEvent"
+                    "Event"             "OnAttackStart"
+                }
+            }
+        }
+    }
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"30 150 750"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"aftershock_damage"		"30 150 750"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"aoe"					"625"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"aftershock_aoe"		"300"
-		}
-	}
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "damage"                "30 150 750"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "aftershock_damage"     "30 150 750"
+        }
+        "03"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "aoe"                   "625"
+        }
+        "04"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "aftershock_aoe"        "300"
+        }
+    }
 }

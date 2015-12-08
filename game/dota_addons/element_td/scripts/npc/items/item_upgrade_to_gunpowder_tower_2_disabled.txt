@@ -1,20 +1,20 @@
 "item_upgrade_to_gunpowder_tower_2_disabled"
 {
-	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"BaseClass"		"item_datadriven"
-	"AbilityManaCost"		"0"
-	"ItemShareability"		"ITEM_NOT_SHAREABLE"
-	"ItemSellable"		"0"
-	"ItemKillable"		"0"
-	"ItemPurchasable"		"0"
-	"ItemDroppable"		"0"
-	"AbilityTextureName"		"item_techies_suicide_disabled"
-	"Cost"		"750"
-	"Requirements"
-	{
-		"earth"		"2"
-		"earth"		"2"
-		"dark"		"2"
-		"dark"		"2"
-	}
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"     "item_datadriven"
+    "AbilityManaCost"       "0"
+    "ItemShareability"      "ITEM_NOT_SHAREABLE"
+    "ItemSellable"      "0"
+    "ItemKillable"      "0"
+    "ItemPurchasable"       "0"
+    "ItemDroppable"     "0"
+    "AbilityTextureName"        "item_techies_suicide_disabled"
+    "Cost"      "750"
+    "Requirements"
+    {
+        "earth"     "2"
+        "earth"     "2"
+        "dark"      "2"
+        "dark"      "2"
+    }
 }

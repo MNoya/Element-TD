@@ -3,58 +3,58 @@
 //=================================================================================================================
 "torrent_tower_douse_1"
 {
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
-	"BaseClass" 					"ability_datadriven"
-	"AbilityTextureName"            "towers/torrent_tower_douse"
-	"AbilityCooldown"				"5"
-	"AbilityManaCost"				"0"
-	"MaxLevel"						"10"
-	
-	"OnSpellStart"
-	{	
-		"RunScript"
-		{
-			"Target"			"CASTER"
-			"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-			"Function"			"TriggerEvent"
-			"Event"				"OnDouseCast"
-		}
-	}
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "towers/torrent_tower_douse"
+    "AbilityCooldown"               "5"
+    "AbilityManaCost"               "0"
+    "MaxLevel"                      "10"
+    
+    "OnSpellStart"
+    {   
+        "RunScript"
+        {
+            "Target"            "CASTER"
+            "ScriptFile"        "scripts/vscripts/towers/towerevents.lua"
+            "Function"          "TriggerEvent"
+            "Event"             "OnDouseCast"
+        }
+    }
 
-	"Modifiers"
-	{
-		"modifier_douse_passive"
-		{
-			"Passive"	"1"
-			"OnAttackStart"
-			{
-				"RunScript"
-				{
-					"Target"			"TARGET"
-					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-					"Function"			"TriggerEvent"
-					"Event"				"OnAttackStart"
-				}
-			}
-		}
-	}
+    "Modifiers"
+    {
+        "modifier_douse_passive"
+        {
+            "Passive"   "1"
+            "OnAttackStart"
+            {
+                "RunScript"
+                {
+                    "Target"            "TARGET"
+                    "ScriptFile"        "scripts/vscripts/towers/towerevents.lua"
+                    "Function"          "TriggerEvent"
+                    "Event"             "OnAttackStart"
+                }
+            }
+        }
+    }
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"damage"			"240 525 894 1284 1788 2382 3105 3963 5001 6201"
-		}
-		"02"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"aoe"				"750"
-		}
-		"03"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"lvlup_attacks"		"10"
-		}
-	}
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "damage"            "240 525 894 1284 1788 2382 3105 3963 5001 6201"
+        }
+        "02"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "aoe"               "750"
+        }
+        "03"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "lvlup_attacks"     "10"
+        }
+    }
 }

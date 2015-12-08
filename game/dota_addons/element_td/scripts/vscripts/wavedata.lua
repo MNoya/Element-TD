@@ -25,8 +25,8 @@ function loadWaveData(chaos)
     WAVE_HEALTH = {}
     for k, v in pairs(kv) do
         if tonumber(k) and tonumber(k) <= WAVE_COUNT then
-        	WAVE_CREEPS[tonumber(k)] = v.Creep
-        	WAVE_HEALTH[tonumber(k)] = v.Health
+            WAVE_CREEPS[tonumber(k)] = v.Creep
+            WAVE_HEALTH[tonumber(k)] = v.Health
         end
     end
     if chaos then
@@ -275,16 +275,16 @@ function WaitForWaveToFinish(playerID)
                 if playerData.wave >= WAVE_COUNT then
                     print("The game has ended for " .. playerData.name)
                 else
-                	if playerData.wave % 5 == 0 then
-                		
-                		ModifyLumber(timer.playerID, 1) -- give 1 lumber every 5 waves
+                    if playerData.wave % 5 == 0 then
+                        
+                        ModifyLumber(timer.playerID, 1) -- give 1 lumber every 5 waves
                         if GameSettings.elementsOrderName == "AllPick" then
-                			Log:info("Giving 1 lumber to " .. playerData.name)
-                		elseif playerData.elementsOrder[playerData.wave] then
-                			SummonElemental({caster = playerData.summoner, Elemental = playerData.elementsOrder[playerData.wave] .. "_elemental"})
+                            Log:info("Giving 1 lumber to " .. playerData.name)
+                        elseif playerData.elementsOrder[playerData.wave] then
+                            SummonElemental({caster = playerData.summoner, Elemental = playerData.elementsOrder[playerData.wave] .. "_elemental"})
                         end
 
-                	end
+                    end
                     playerData.wave = playerData.wave + 1
                     StartBreakTime(playerID)
                 end

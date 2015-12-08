@@ -8,7 +8,7 @@
 {
     width: 100%;
     height: 100%;
-	flow-children: right;
+    flow-children: right;
     //background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.01, #202327 ), color-stop( 0.2, #141619 ), to( #000000 ) );
 }
 
@@ -34,15 +34,15 @@
 
 @keyframes 'TeamsListAppear'
 {
-	0%
-	{
-		transform: translatex( 100% );
-	}
+    0%
+    {
+        transform: translatex( 100% );
+    }
 
-	100%
-	{
-		transform: translatex( 0px );
-	}
+    100%
+    {
+        transform: translatex( 0px );
+    }
 }
     
 #TeamsListGroup 
@@ -56,18 +56,18 @@
 {
     width: 100%;
     flow-children: right;
-	color: #323232;
-//	border: 2px solid red;	
+    color: #323232;
+//  border: 2px solid red;  
 }
 
 #TeamListHeaderLabel
 {
-	text-transform: uppercase;
+    text-transform: uppercase;
     font-size: 22px;
-	letter-spacing: 1px;
+    letter-spacing: 1px;
     color: #667273;
-	//margin-top: 16px;
-	margin-left: 8px;
+    //margin-top: 16px;
+    margin-left: 8px;
 }
 
 #TeamListLockedIcon 
@@ -87,7 +87,7 @@
 
 #TeamsListRoot
 {
-	width: 100%;
+    width: 100%;
     flow-children: down;
     overflow: clip scroll;
 }
@@ -110,7 +110,7 @@
 #ShuffleTeamAssignmentButton Label
 {
     font-size: 24px;
-	text-transform: uppercase;
+    text-transform: uppercase;
     margin-top: 2px;
     margin-right: 5px;
     color: #6e6f6f;
@@ -119,25 +119,25 @@
 
 #ShuffleTeamAssignmentButton:hover Label
 {
-	color: white;
+    color: white;
 }
 
 #ShuffleTeamAssignmentButton:active
 {
-	sound: "ui_team_select_shuffle";
+    sound: "ui_team_select_shuffle";
 }
 
 #ShuffleTeamAssignmentButton Image
 {
     width: 24px;
-	height: 24px;
-	wash-color: #888888;
+    height: 24px;
+    wash-color: #888888;
     vertical-align: center;
 }
 
 #ShuffleTeamAssignmentButton:hover Image
 {
-	wash-color: white;
+    wash-color: white;
 }
 
 #GameAndPlayersRoot
@@ -145,7 +145,7 @@
     width: 400px;
     height: 100%;
     flow-children: down;
- 	background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.01, #202327 ), color-stop( 0.2, #141619 ), to( #000000 ) );
+    background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.01, #202327 ), color-stop( 0.2, #141619 ), to( #000000 ) );
     box-shadow: black -4px -4px 16px 16px;
 }
 
@@ -158,27 +158,27 @@
 #GameModeNameLabel 
 {
     font-size: 32px;
-	text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 #MapInfoLabel
 {
     color: #a9aaaa;
-	text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 #StartGameCountdownTimer
 {
-	width: 96px;
-	margin-top: 32px;
+    width: 96px;
+    margin-top: 32px;
 }
 
 #TeamSelectTimer
 {
-	margin-top: 8px;
+    margin-top: 8px;
     font-size: 48px;
     color: #CCCCCC;
-	horizontal-align: center;
+    horizontal-align: center;
 }
 
 #StartGameCountdownTimer.countdown_inactive #TeamSelectTimer 
@@ -188,23 +188,23 @@
 
 #TimerBg
 {
-	wash-color: #222222;
+    wash-color: #222222;
 }
 
 #TimerBg,
 #TimerRing
 {
-	width: 70px;
-	height: 70px;
-	margin-top: 2px;
-	horizontal-align: center;
+    width: 70px;
+    height: 70px;
+    margin-top: 2px;
+    horizontal-align: center;
     transition-property: opacity;
     transition-duration: 0.2s;
 }
 
 #TimerLabelBox 
 {
-	margin-top: 76px;
+    margin-top: 76px;
     height: 20px;
     width: 100%;
 }
@@ -213,8 +213,8 @@
 {
     color: #a9aaaa;
     font-size: 16px;
-	text-transform: uppercase;
-	horizontal-align: center;
+    text-transform: uppercase;
+    horizontal-align: center;
     visibility: collapse;
     transition-property: opacity;
     transition-duration: 0.2s;
@@ -229,8 +229,8 @@
 {
     color: #a9aaaa;
     font-size: 16px;
-	text-transform: uppercase;
-	horizontal-align: center;
+    text-transform: uppercase;
+    horizontal-align: center;
     visibility: collapse;
     transition-property: opacity;
     transition-duration: 0.2s;
@@ -254,65 +254,65 @@
 #UnassignedPlayerPanel
 {
     width: 100%;
-	height: fill-parent-flow (1);
+    height: fill-parent-flow (1);
     flow-children: down;
-	margin-left: 16px;
-	margin-right: 58px;
+    margin-left: 16px;
+    margin-right: 58px;
 }
 
 #UnassignedPlayersButton
 {
     flow-children: down;
-	height: fill-parent-flow (1);
-	max-height: 80%;
-	width: 100%;
-	background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.00, #272b30 ), color-stop( 0.6, #181a1e ), to( #181a1e ) );
-	box-shadow: inset #000000 0px 2px 6px 3px;
+    height: fill-parent-flow (1);
+    max-height: 80%;
+    width: 100%;
+    background-color: gradient( linear, 100% 0%, 100% 100%, from( #111111 ), color-stop( 0.00, #272b30 ), color-stop( 0.6, #181a1e ), to( #181a1e ) );
+    box-shadow: inset #000000 0px 2px 6px 3px;
     border-bottom: 1px solid #404b4a11;
 }
 
 #UnassignedPlayersHeader
 {
     horizontal-align: left;
-	margin-top: 16px;
-	margin-left: 16px;
+    margin-top: 16px;
+    margin-left: 16px;
 }
 
 #UnassignedPlayersHeader Label
 {
     font-size: 20px;
-	letter-spacing: 1px;
-	color: #667273;
+    letter-spacing: 1px;
+    color: #667273;
     text-transform: uppercase;
 
     transition-property: color;
-	transition-duration: 0.2s;
+    transition-duration: 0.2s;
 }
 
 
 #UnassignedPlayersButton:hover #UnassignedPlayersHeader Label
 {
     font-size: 20px;
-	letter-spacing: 1px;
-	color: white;
+    letter-spacing: 1px;
+    color: white;
 }
 
 
 #UnassignedPlayersDivider 
-{	
+{   
     width: 100%;
-	height: 2px;
+    height: 2px;
     margin-left: 8px;
     margin-right: 8px;
-	background-color: #49525555;
+    background-color: #49525555;
 }
 
 #UnassignedPlayersContainer
 {
-	width: 100%;
+    width: 100%;
     flow-children: down;
     overflow: clip scroll;
-	margin: 16px;
+    margin: 16px;
 }
 
 #AutoAssignButton
@@ -334,7 +334,7 @@
 #AutoAssignButton Label
 {
     font-size: 24px;
-	text-transform: uppercase;
+    text-transform: uppercase;
     margin-top: 2px;
     margin-left: 5px;
     color: #6e6f6f;
@@ -343,34 +343,34 @@
 
 .unassigned_players #AutoAssignButton:hover Label
 {
-	color: white;
+    color: white;
 }
 
 .unassigned_players #AutoAssignButton:active 
 {    
-	sound: "ui_team_select_auto_assign";
+    sound: "ui_team_select_auto_assign";
 }
 
 #AutoAssignButton Image
 {
     width: 24px;
-	height: 24px;
-	wash-color: #888888;
+    height: 24px;
+    wash-color: #888888;
     vertical-align: center;
 }
 
 .unassigned_players #AutoAssignButton:hover Image
 {
-	wash-color: white;
+    wash-color: white;
 }
 
 #LockAndStartButton
 { 
     horizontal-align: right;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #486ca9cc ) );
-	box-shadow: fill #486ca922 -4px -4px 8px 8px;
-	border-top: 1px solid #ffffff03;
-	border-left: 1px solid #ffffff03; 
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #486ca9cc ) );
+    box-shadow: fill #486ca922 -4px -4px 8px 8px;
+    border-top: 1px solid #ffffff03;
+    border-left: 1px solid #ffffff03; 
     visibility: collapse;
 }
 
@@ -406,8 +406,8 @@
 
 .no_unassigned_players #LockAndStartButton:hover
 {
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #84acff ) );
-	box-shadow: fill #486ca966 -4px -4px 18px 8px;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d4881cc ), to( #84acff ) );
+    box-shadow: fill #486ca966 -4px -4px 18px 8px;
 }
 
 .no_unassigned_players #LockAndStartButton:active
@@ -419,33 +419,33 @@
 { 
     horizontal-align: right;
     //background-color: gradient( linear, 0% 0%, 0% 100%, from( #722217 ), to( #DD4A29 ) );
-	//box-shadow: fill #DD4A2922 -4px -4px 8px 8px;
-	//border-top: 1px solid #ffffff03;
-	//border-left: 1px solid #ffffff03; 
+    //box-shadow: fill #DD4A2922 -4px -4px 8px 8px;
+    //border-top: 1px solid #ffffff03;
+    //border-left: 1px solid #ffffff03; 
     visibility: collapse;
 
     background-color: gradient( linear, 0% 0%, 0% 100%, from( #2c1b1b ), to( #482e2f ) );
     box-shadow: fill #552e2f00 -4px -4px 8px 9px;
-	
-	border-top: 1px solid #3d2929;
-	border-right: 1px solid #372121;
-	border-left: 1px solid #372121;
-	border-bottom: 1px solid #2e1f21;
+    
+    border-top: 1px solid #3d2929;
+    border-right: 1px solid #372121;
+    border-left: 1px solid #372121;
+    border-bottom: 1px solid #2e1f21;
 }
 
 #CancelAndUnlockButton:hover
 {
     background-color: gradient( linear, 0% 0%, 0% 100%, from( #492121 ), to( #9d4c4f ) );
-	border-top: 1px solid #7d4141;
-	border-right: 1px solid #7a3535;
-	border-left: 1px solid #7a3535;
-	border-bottom: 1px solid #2e1f21;
-	box-shadow: fill #552e2f66 -4px -4px 8px 9px;
+    border-top: 1px solid #7d4141;
+    border-right: 1px solid #7a3535;
+    border-left: 1px solid #7a3535;
+    border-bottom: 1px solid #2e1f21;
+    box-shadow: fill #552e2f66 -4px -4px 8px 9px;
 }
 
 #CancelAndUnlockButton:active
 {
-	//sound: "ui_custom_lobby_quit";
+    //sound: "ui_custom_lobby_quit";
     sound: "ui_team_select_cancel_and_lock";
 }
 
@@ -461,13 +461,13 @@
 {
     width: 100%;
     margin: 6px;
-	background-color: gradient( linear, 100% 0%, 100% 100%, from( #272b30 ), color-stop( 0.6, #181a1e ), to( #181a1e ) );
+    background-color: gradient( linear, 100% 0%, 100% 100%, from( #272b30 ), color-stop( 0.6, #181a1e ), to( #181a1e ) );
     
     //box-shadow: fill #44444430 -5px -5px 9px 9px;
     //border-top: 1px solid #ffffff10;
-	//border-right: 1px solid #000000ff;
-	//border-left: 1px solid #ffffff10;
-	//border-bottom: 1px solid #000000ff;
+    //border-right: 1px solid #000000ff;
+    //border-left: 1px solid #ffffff10;
+    //border-bottom: 1px solid #000000ff;
 }
 
 .TeamSelectTeam.local_player_on_this_team
@@ -506,7 +506,7 @@
 
 #TeamGroup 
 {
-	background-color: transparent;
+    background-color: transparent;
     width: 100%;
     padding: 4px;
     flow-children: down;
@@ -520,33 +520,33 @@
 
 #TeamNameLabel
 {
-	font-size: 20px;
-	vertical-align: top;
-	text-shadow: 2px 2px 2px black;
-   	margin-left: 1px;
+    font-size: 20px;
+    vertical-align: top;
+    text-shadow: 2px 2px 2px black;
+    margin-left: 1px;
     margin-top: 1px;    
-	text-transform: uppercase;
-	white-space: nowrap;
-	width: 100%;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: 100%;
 }
 
 #JoinTeamLabel
 {
     color: #444444;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px;
     horizontal-align: right;
-	vertical-align: center;
-	margin-top: 4px;
-	
-	transition-property: color;
-	transition-duration: 0.2s;
+    vertical-align: center;
+    margin-top: 4px;
+    
+    transition-property: color;
+    transition-duration: 0.2s;
 }
 
 .teams_unlocked .TeamSelectTeam:hover #JoinTeamLabel
 {
-	color: white;
+    color: white;
 }
 
 .TeamSelectTeam.team_is_full #JoinTeamLabel
@@ -566,10 +566,10 @@
 
 #TeamPlayerDivider 
 {
-	width: 100%;
+    width: 100%;
     margin: 2px;
-	height: 1px;
-	background-color: #49525555;
+    height: 1px;
+    background-color: #49525555;
 }
 
 #PlayerList
@@ -581,7 +581,7 @@
 
 #player_root
 {
-	width: 100%;
+    width: 100%;
 }
 
 .player_slot
@@ -608,7 +608,7 @@ DOTAAvatarImage
     width: 32px;
     height: 32px;
     background-color: black;
-	vertical-align:middle;
+    vertical-align:middle;
 }
 
 #PlayerIsHostPanel
@@ -633,25 +633,25 @@ DOTAAvatarImage
 
 #PlayerName
 {
-	color: white;
-	vertical-align:middle;
+    color: white;
+    vertical-align:middle;
     margin: 3px;
     text-shadow: 2px 2px 2px black;
     width: fill-parent-flow( 1 );
-	white-space: nowrap;
+    white-space: nowrap;
 }
 
 #PlayerLeaveTeamButton 
 {
-	width: 24px;
-	height: 24px;
-	wash-color: #aa0000ee;
-	
-	background-image: url("file://{images}/control_icons/x_close.png");
-	background-size: 24px 24px;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	margin: 4px;
+    width: 24px;
+    height: 24px;
+    wash-color: #aa0000ee;
+    
+    background-image: url("file://{images}/control_icons/x_close.png");
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    margin: 4px;
         
     visibility: collapse;
 }
@@ -673,19 +673,19 @@ DOTAAvatarImage
 
 .TeamSelectEmptySlot #PlayerName
 {
-	color: #454545;
-	letter-spacing: 1px;
-	font-size: 18px;
+    color: #454545;
+    letter-spacing: 1px;
+    font-size: 18px;
 }
 
 #EmptySlotIcon 
-{	
+{   
     width: 32px;
-	height: 32px;
+    height: 32px;
     opacity: 0.7;
     background-image: url("file://{images}/custom_game/empty_slot_avatar.png");
     background-size: 32px 32px;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 }
 

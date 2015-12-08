@@ -3,48 +3,48 @@
 //=================================================================================================================
 "ice_tower_ice_blast"
 {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
+    // General
+    //-------------------------------------------------------------------------------------------------------------
 
-	"BaseClass"						"ability_datadriven"											
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"ancient_apparition_ice_blast"
-	"MaxLevel"						"3"
+    "BaseClass"                     "ability_datadriven"                                            
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "ancient_apparition_ice_blast"
+    "MaxLevel"                      "3"
 
-	"Modifiers"
-	{
-		"modifier_ice_blast_passive"
-		{
-			"Passive"	"1"
-			"IsHidden"	"1"
-			"OnAttackStart"
-			{
-				"RunScript"
-				{
-					"Target"			"POINT"
-					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-					"Function"			"TriggerEvent"
-					"Event"				"OnAttackStart"
-				}
-			}
-		}
-	}
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"75 375 1875"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"aoe"					"300"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"distance"				"1000"
-		}
-	}
+    "Modifiers"
+    {
+        "modifier_ice_blast_passive"
+        {
+            "Passive"   "1"
+            "IsHidden"  "1"
+            "OnAttackStart"
+            {
+                "RunScript"
+                {
+                    "Target"            "POINT"
+                    "ScriptFile"        "scripts/vscripts/towers/towerevents.lua"
+                    "Function"          "TriggerEvent"
+                    "Event"             "OnAttackStart"
+                }
+            }
+        }
+    }
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "damage"                "75 375 1875"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "aoe"                   "300"
+        }
+        "03"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "distance"              "1000"
+        }
+    }
 }

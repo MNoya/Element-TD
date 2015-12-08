@@ -3,48 +3,48 @@
 //============================================================//
 "magic_tower_increase_range"
 {
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"MaxLevel"						"5"
-	"AbilityCastRange"				"500 625 750 1000 1375"
-	"AbilityTextureName"			"towers/magic_tower_increase_range"
-	
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"Target"			"CASTER"
-			"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-			"Function"			"TriggerEvent"
-			"Event"				"ChangeRange"
-			"Amount"			"1"
-		}
-	}
-	"Modifiers"
-	{
-		"modifier_magic_tower_attack_range"
-		{
-			"Passive"		"1"
-			"IsHidden"		"0"
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"	"%range"
-			}
-		}
-	}
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"                      "5"
+    "AbilityCastRange"              "500 625 750 1000 1375"
+    "AbilityTextureName"            "towers/magic_tower_increase_range"
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "Target"            "CASTER"
+            "ScriptFile"        "scripts/vscripts/towers/towerevents.lua"
+            "Function"          "TriggerEvent"
+            "Event"             "ChangeRange"
+            "Amount"            "1"
+        }
+    }
+    "Modifiers"
+    {
+        "modifier_magic_tower_attack_range"
+        {
+            "Passive"       "1"
+            "IsHidden"      "0"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"  "%range"
+            }
+        }
+    }
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"range"					"0 125 250 500 875"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_reduction"		"0 15 30 50 75"	
-		}
-	}
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "range"                 "0 125 250 500 875"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "damage_reduction"      "0 15 30 50 75" 
+        }
+    }
 }
