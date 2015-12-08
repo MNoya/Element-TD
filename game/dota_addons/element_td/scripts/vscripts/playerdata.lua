@@ -42,6 +42,10 @@ function GetPlayerName(playerID)
 	return PlayerData[playerID].name
 end
 
+function GetPlayerElementLevel( playerID, element )
+	return GetPlayerData(playerID).elements[element]
+end
+
 function ModifyElementValue(playerID, element, change)
 	local playerData = GetPlayerData(playerID)
 

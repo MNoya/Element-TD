@@ -17,6 +17,8 @@ function UpdateSummonerSpells(playerID)
 	local summoner = GetPlayerData(playerID).summoner
 	local playerData = GetPlayerData(playerID)
 
+	UpdateRunes(playerID)
+
 	if EXPRESS_MODE and not playerData.elementalActive then
 		for k, v in pairs(NPC_ABILITIES_CUSTOM) do
 			if summoner:HasAbility(k) and v["LumberCost"] then
@@ -51,6 +53,62 @@ function UpdateSummonerSpells(playerID)
 			end
 		end
 	end
+end
+
+RUNES = {
+	["water"] = { model = "models/props_gameplay/rune_doubledamage01.vmdl", animation = "rune_doubledamage_anim" },
+	["fire"] = { model = "models/props_gameplay/rune_haste01.vmdl", animation = "rune_haste_idle" },
+	["nature"] = { model = "models/props_gameplay/rune_regeneration01.vmdl", animation = "rune_regeneration_anim" },
+	["earth"] = { model = "models/props_gameplay/rune_illusion01.vmdl", animation = "rune_illusion_idle" },
+	["light"] = { model = "models/props_gameplay/rune_goldxp.vmdl", animation = "rune_goldxp_anim" },
+	["dark"] = { model = "models/props_gameplay/rune_invisibility01.vmdl", animation = "rune_invisibility_idle" }
+}
+
+function UpdateRunes(playerID)
+	local summoner = GetPlayerData(playerID).summoner
+	local origin = summoner:GetAbsOrigin()
+	local angle = 360/6
+	local rotate_pos = origin + Vector(1,0,0) * 90
+	summoner.runes = summoner.runes or {["water"] = {}, ["fire"] = {}, ["nature"] = {}, ["earth"] = {}, ["light"] = {}, ["dark"] = {}}
+
+	local i = 0
+	for element,value in pairs(summoner.runes) do
+		local level = GetPlayerElementLevel(playerID, element)
+		if level > 0 then
+			local position = RotatePosition(origin, QAngle(0, angle*i, 0), rotate_pos)
+			if not value.level then
+				summoner.runes[element].props = CreateRune( element, position, level )
+			elseif value.level ~= level then
+				ClearRunes(summoner.runes[element].props)
+				summoner.runes[element].props = CreateRune( element, position, level )
+			end
+            summoner.runes[element].level = level
+		end
+		i=i+1
+	end   
+end
+
+function CreateRune( element, position, level )
+    local angle = 360/level
+    local rotate_pos = position + Vector(1,0,0) * 20
+    local props = {}
+
+    for i=1,level do
+        local rune = SpawnEntityFromTableSynchronous("prop_dynamic", {model = RUNES[element].model, DefaultAnim = RUNES[element].animation})
+        local pos = RotatePosition(position, QAngle(0, angle*(i-1), 0), rotate_pos)
+        rune:SetModelScale(1-level*0.1)
+        rune:SetAbsOrigin(pos)
+
+        table.insert(props, rune)
+    end
+
+    return props
+end
+
+function ClearRunes( propsTable )
+    for k,v in pairs(propsTable) do
+        v:RemoveSelf()
+    end
 end
 
 function BuyElement(playerID, element)
