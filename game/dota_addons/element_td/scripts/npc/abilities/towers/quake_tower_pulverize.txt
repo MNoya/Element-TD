@@ -3,49 +3,49 @@
 //=================================================================================================================
 "quake_tower_pulverize"
 {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
+    // General
+    //-------------------------------------------------------------------------------------------------------------
 
-	"BaseClass"						"ability_datadriven"											
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"earthshaker_aftershock"
-	"MaxLevel"						"2"
-	"AbilityCastRange"				"500"
+    "BaseClass"                     "ability_datadriven"                                            
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "earthshaker_aftershock"
+    "MaxLevel"                      "2"
+    "AbilityCastRange"              "500"
 
-	"Modifiers"
-	{
-		"modifier_pulverize_passive"
-		{
-			"Passive"	"1"
-			"IsHidden"	"1"
-			"OnAttackStart"
-			{
-				"RunScript"
-				{
-					"Target"			"POINT"
-					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-					"Function"			"TriggerEvent"
-					"Event"				"OnAttackStart"
-				}
-			}
-		}
-	}
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"chance"				"50"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"600 3000"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"aoe"					"500"
-		}
-	}
+    "Modifiers"
+    {
+        "modifier_pulverize_passive"
+        {
+            "Passive"   "1"
+            "IsHidden"  "1"
+            "OnAttackStart"
+            {
+                "RunScript"
+                {
+                    "Target"            "POINT"
+                    "ScriptFile"        "scripts/vscripts/towers/towerevents.lua"
+                    "Function"          "TriggerEvent"
+                    "Event"             "OnAttackStart"
+                }
+            }
+        }
+    }
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "chance"                "50"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "damage"                "600 3000"
+        }
+        "03"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "aoe"                   "500"
+        }
+    }
 }

@@ -15,34 +15,34 @@ var enabled = false;
 var timerStart = 0;
 
 function UpdateInterest() {
-	if (enabled) {
-		if ( Game.GetGameTime() > timerEnd ) {
-			timerStart = timerEnd;
-			timerEnd += INTEREST_INTERVAL;
-		}
-		var widthPercentage = 100 - Math.floor((timerEnd - Game.GetGameTime())/INTEREST_INTERVAL * 100);
-		interestBarGold.style["width"] = widthPercentage+"%";
-	}
-	$.Schedule(INTEREST_REFRESH, function(){UpdateInterest();});
+    if (enabled) {
+        if ( Game.GetGameTime() > timerEnd ) {
+            timerStart = timerEnd;
+            timerEnd += INTEREST_INTERVAL;
+        }
+        var widthPercentage = 100 - Math.floor((timerEnd - Game.GetGameTime())/INTEREST_INTERVAL * 100);
+        interestBarGold.style["width"] = widthPercentage+"%";
+    }
+    $.Schedule(INTEREST_REFRESH, function(){UpdateInterest();});
 }
 
 function DisplayInterest( table ) {
-	timerStart = Game.GetGameTime();
-	timerEnd = Game.GetGameTime() + INTEREST_INTERVAL;
-	interest.visible = true;
-	enabled = table.enabled;
-	INTEREST_INTERVAL = table.interval;
-	INTEREST_RATE = table.rate;
+    timerStart = Game.GetGameTime();
+    timerEnd = Game.GetGameTime() + INTEREST_INTERVAL;
+    interest.visible = true;
+    enabled = table.enabled;
+    INTEREST_INTERVAL = table.interval;
+    INTEREST_RATE = table.rate;
 }
 
 function InterestEarned( table ) {
-	enabled = true;
-	interest.visible = true;
-	// Sync
-	timerStart = Game.GetGameTime();
-	timerEnd = timerStart + INTEREST_INTERVAL;
-	totalGoldEarned += table.goldEarned;
-	tooltipAmount.text = totalGoldEarned;
+    enabled = true;
+    interest.visible = true;
+    // Sync
+    timerStart = Game.GetGameTime();
+    timerEnd = timerStart + INTEREST_INTERVAL;
+    totalGoldEarned += table.goldEarned;
+    tooltipAmount.text = totalGoldEarned;
 }
 
 (function () {

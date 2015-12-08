@@ -3,26 +3,26 @@
 //=================================================================================================================
 "hydro_tower_choose_target"
 {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
+    // General
+    //-------------------------------------------------------------------------------------------------------------
 
-	"BaseClass"						"ability_datadriven"											
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
-	"AbilityTextureName"			"towers/hydro_tower_choose_target"
-	"MaxLevel"						"1"
-	"AbilityCastRange"				"700"
-	"AbilityCooldown"				"0"
-	"AbilityManaCost"				"0"
-	"AbilityCastPoint"				"0"
+    "BaseClass"                     "ability_datadriven"                                            
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+    "AbilityTextureName"            "towers/hydro_tower_choose_target"
+    "MaxLevel"                      "1"
+    "AbilityCastRange"              "700"
+    "AbilityCooldown"               "0"
+    "AbilityManaCost"               "0"
+    "AbilityCastPoint"              "0"
 
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"Target"			"POINT"
-			"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-			"Function"			"TriggerEvent"
-			"Event"				"ChooseTarget"
-		}
-	}
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "Target"            "POINT"
+            "ScriptFile"        "scripts/vscripts/towers/towerevents.lua"
+            "Function"          "TriggerEvent"
+            "Event"             "ChooseTarget"
+        }
+    }
 }

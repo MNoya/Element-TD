@@ -1,27 +1,27 @@
 "item_etd_modifier_master"
 {
-	"ID"		"1337"
-	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	"BaseClass"		"item_datadriven"
-	"AbilityCastRange"		"99999999"
-	"AbilityCastPoint"		"0.0"
-	"Modifiers"
-	{
-		"modifier_roots_tower_dot"
-		{
-			"TextureName"		"treant_leach_seed"
-			"Duration"		"5"
-			"ThinkInterval"		"1"
-			"OnIntervalThink"
-			{
-				"RunScript"
-				{
-					"Target"		"TARGET"
-					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-					"Function"		"TriggerEvent"
-					"Event"		"OnDOTTick"
-				}
-			}
-		}
-	}
+    "ID"        "1337"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "BaseClass"     "item_datadriven"
+    "AbilityCastRange"      "99999999"
+    "AbilityCastPoint"      "0.0"
+    "Modifiers"
+    {
+        "modifier_roots_tower_dot"
+        {
+            "TextureName"       "treant_leach_seed"
+            "Duration"      "5"
+            "ThinkInterval"     "1"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "Target"        "TARGET"
+                    "ScriptFile"        "scripts/vscripts/towers/towerevents.lua"
+                    "Function"      "TriggerEvent"
+                    "Event"     "OnDOTTick"
+                }
+            }
+        }
+    }
 }

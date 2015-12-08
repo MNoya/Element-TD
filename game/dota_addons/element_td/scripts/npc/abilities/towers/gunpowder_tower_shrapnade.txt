@@ -3,26 +3,26 @@
 //=================================================================================================================
 "gunpowder_tower_shrapnade"
 {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
+    // General
+    //-------------------------------------------------------------------------------------------------------------
 
-	"BaseClass"						"ability_datadriven"											
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"techies_suicide"
-	"MaxLevel"						"3"
-	"AbilityCastRange"				"1375"
+    "BaseClass"                     "ability_datadriven"                                            
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "techies_suicide"
+    "MaxLevel"                      "3"
+    "AbilityCastRange"              "1375"
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"33 165 825"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"splash_aoe"			"200"
-		}
-	}
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "damage"                "33 165 825"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "splash_aoe"            "200"
+        }
+    }
 }

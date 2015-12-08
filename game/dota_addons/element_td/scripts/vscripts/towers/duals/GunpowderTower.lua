@@ -3,17 +3,17 @@
 -- You can think of this sort of like a cluster grenade.
 
 GunpowderTower = createClass({
-		tower = nil,
-		towerClass = "",
+        tower = nil,
+        towerClass = "",
 
-		constructor = function(self, tower, towerClass)
+        constructor = function(self, tower, towerClass)
             self.tower = tower;
             self.towerClass = towerClass or self.towerClass;
         end
-	},
-	{
-		className = "GunpowderTower";
-	},
+    },
+    {
+        className = "GunpowderTower";
+    },
 nil);
 
 function GunpowderTower:OnAttackLanded(keys) 

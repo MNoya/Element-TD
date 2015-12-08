@@ -3,107 +3,107 @@
 //=================================================================================================================
 "erosion_tower_acid_attack"
 {
-	"BaseClass"						"ability_datadriven"											
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"towers/erosion_tower_acid_attack"
-	"MaxLevel"						"2"
+    "BaseClass"                     "ability_datadriven"                                            
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "towers/erosion_tower_acid_attack"
+    "MaxLevel"                      "2"
 
-	"Modifiers"
-	{
-		"modifier_acid_attack_passive"
-		{
-			"Passive"	"1"
-			"IsHidden"	"1"
-			"OnAttackStart"
-			{
-				"RunScript"
-				{
-					"Target"			"TARGET"
-					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-					"Function"			"TriggerEvent"
-					"Event"				"OnAttackStart"
-				}
-			}
-			"OnAttackLanded"
-			{
-				"ApplyModifier"
-				{
-					"Target"
-					{
-						"Center"		"TARGET"
-						"Radius"		"%aoe"
-						"Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
-						"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
-					}
-					"ModifierName"	"modifier_acid_attack_dot"
-				}
-				"ApplyModifier"
-				{
-					"Target"
-					{
-						"Center"		"TARGET"
-						"Radius"		"%aoe"
-						"Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
-						"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
-					}
-					"ModifierName"	"modifier_acid_attack_damage_amp"
-				}
-			}
-		}
-		"modifier_acid_attack_dot"
-		{
-			"IsDebuff"		"1"
-			"Duration"		"%duration"
-			"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-			"ThinkInterval" "1"
-			"OnIntervalThink"
-			{
-				"RunScript"
-				{
-					"Target"			"TARGET"
-					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-					"Function"			"TriggerEvent"
-					"Event"				"OnAcidDot"
-				}
-			}
-		}
-		"modifier_acid_attack_damage_amp"
-		{
-			"IsDebuff"		"1"
-			"Duration"		"%duration"
-			"OnDestroy"
-			{
-				"RunScript"
-				{
-					"Target"			"TARGET"
-					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-					"Function"			"TriggerEvent"
-					"Event"				"OnDamageAmpExpire"
-				}
-			}
-		}
-	}
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_amp"			"10 30"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"dot"					"105 525"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"5"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"aoe"					"300"
-		}
-	}
+    "Modifiers"
+    {
+        "modifier_acid_attack_passive"
+        {
+            "Passive"   "1"
+            "IsHidden"  "1"
+            "OnAttackStart"
+            {
+                "RunScript"
+                {
+                    "Target"            "TARGET"
+                    "ScriptFile"        "scripts/vscripts/towers/towerevents.lua"
+                    "Function"          "TriggerEvent"
+                    "Event"             "OnAttackStart"
+                }
+            }
+            "OnAttackLanded"
+            {
+                "ApplyModifier"
+                {
+                    "Target"
+                    {
+                        "Center"        "TARGET"
+                        "Radius"        "%aoe"
+                        "Types"         "DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+                        "ExcludeFlags"  "DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
+                    }
+                    "ModifierName"  "modifier_acid_attack_dot"
+                }
+                "ApplyModifier"
+                {
+                    "Target"
+                    {
+                        "Center"        "TARGET"
+                        "Radius"        "%aoe"
+                        "Types"         "DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+                        "ExcludeFlags"  "DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
+                    }
+                    "ModifierName"  "modifier_acid_attack_damage_amp"
+                }
+            }
+        }
+        "modifier_acid_attack_dot"
+        {
+            "IsDebuff"      "1"
+            "Duration"      "%duration"
+            "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+            "ThinkInterval" "1"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "Target"            "TARGET"
+                    "ScriptFile"        "scripts/vscripts/towers/towerevents.lua"
+                    "Function"          "TriggerEvent"
+                    "Event"             "OnAcidDot"
+                }
+            }
+        }
+        "modifier_acid_attack_damage_amp"
+        {
+            "IsDebuff"      "1"
+            "Duration"      "%duration"
+            "OnDestroy"
+            {
+                "RunScript"
+                {
+                    "Target"            "TARGET"
+                    "ScriptFile"        "scripts/vscripts/towers/towerevents.lua"
+                    "Function"          "TriggerEvent"
+                    "Event"             "OnDamageAmpExpire"
+                }
+            }
+        }
+    }
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "damage_amp"            "10 30"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "dot"                   "105 525"
+        }
+        "03"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "duration"              "5"
+        }
+        "04"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "aoe"                   "300"
+        }
+    }
 }

@@ -10,36 +10,36 @@
 //============================================================//
 "summon_water_elemental"
 {
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"MaxLevel"						"3"
-	"AbilityTextureName"			"elements/water"
-	"LumberCost"					"1"
-	"Element"						"water"
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"                      "3"
+    "AbilityTextureName"            "elements/water"
+    "LumberCost"                    "1"
+    "Element"                       "water"
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"level"					"1 2 3"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"health"				"300 1500 7500"
-		}
-	}
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "level"                 "1 2 3"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "health"                "300 1500 7500"
+        }
+    }
 
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"Target"			"CASTER"
-			"ScriptFile"		"scripts/vscripts/summoner.lua"
-			"Function"			"SummonElemental"
-			"Elemental"			"water_elemental"
-		}
-	}
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "Target"            "CASTER"
+            "ScriptFile"        "scripts/vscripts/summoner.lua"
+            "Function"          "SummonElemental"
+            "Elemental"         "water_elemental"
+        }
+    }
 }

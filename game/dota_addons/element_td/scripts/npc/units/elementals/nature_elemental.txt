@@ -1,74 +1,74 @@
 "nature_elemental"
 {
-	"ArmorPhysical"		"0"
-	"MagicalResistance"		"0"
-	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"		"0"
-	"AttackDamageMax"		"0"
-	"AttackRate"		"0"
-	"AttackAnimationPoint"		"0"
-	"AttackAcquisitionRange"		"0"
-	"AttackRange"		"0"
-	"ProjectileModel"		""
-	"ProjectileSpeed"		"0"
-	"RingRadius"		"70"
-	"HealthBarOffset"		"160"
-	"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
-	"BountyXP"		"0"
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"		"300"
-	"StatusHealthRegen"		"0"
-	"StatusMana"		"0"
-	"StatusManaRegen"		"0"
-	"VisionDaytimeRange"		"1200"
-	"VisionNighttimeRange"		"800"
-	"Model"		"models/heroes/furion/furion.vmdl"
-	"BaseClass"		"npc_dota_creature"
-	"SoundSet"		"Hero_Furion"
-	"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
-	"Portrait"		"vgui/hud/heroportraits/portrait_furion"
-	"particle_folder"		"particles/units/heroes/hero_furion"
-	"ConsideredHero"		"1"
-	"precache"
-	{
-		"model"		"models/heroes/furion/furion.vmdl"
-		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
-	}
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"		"29"
-			}
-			"Wearable2"
-			{
-				"ItemDef"		"30"
-			}
-			"Wearable3"
-			{
-				"ItemDef"		"31"
-			}
-			"Wearable4"
-			{
-				"ItemDef"		"32"
-			}
-			"Wearable5"
-			{
-				"ItemDef"		"33"
-			}
-			"Wearable6"
-			{
-				"ItemDef"		"49"
-			}
-		}
-	}
-	"Level"		"1"
-	"ModelScale"		"1.1"
-	"BountyGoldMin"		"0"		// Gold earned min"
-	"BountyGoldMax"		"0"		// Gold earned max"
-	"StatusHealth"		"75"	// Base health"
-	"Element"		"nature"
-	"Ability1"		"nature_armor"
+    "ArmorPhysical"     "0"
+    "MagicalResistance"     "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"       "0"
+    "AttackDamageMax"       "0"
+    "AttackRate"        "0"
+    "AttackAnimationPoint"      "0"
+    "AttackAcquisitionRange"        "0"
+    "AttackRange"       "0"
+    "ProjectileModel"       ""
+    "ProjectileSpeed"       "0"
+    "RingRadius"        "70"
+    "HealthBarOffset"       "160"
+    "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
+    "BountyXP"      "0"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"     "300"
+    "StatusHealthRegen"     "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"       "0"
+    "VisionDaytimeRange"        "1200"
+    "VisionNighttimeRange"      "800"
+    "Model"     "models/heroes/furion/furion.vmdl"
+    "BaseClass"     "npc_dota_creature"
+    "SoundSet"      "Hero_Furion"
+    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
+    "Portrait"      "vgui/hud/heroportraits/portrait_furion"
+    "particle_folder"       "particles/units/heroes/hero_furion"
+    "ConsideredHero"        "1"
+    "precache"
+    {
+        "model"     "models/heroes/furion/furion.vmdl"
+        "soundfile"     "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
+    }
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"       "29"
+            }
+            "Wearable2"
+            {
+                "ItemDef"       "30"
+            }
+            "Wearable3"
+            {
+                "ItemDef"       "31"
+            }
+            "Wearable4"
+            {
+                "ItemDef"       "32"
+            }
+            "Wearable5"
+            {
+                "ItemDef"       "33"
+            }
+            "Wearable6"
+            {
+                "ItemDef"       "49"
+            }
+        }
+    }
+    "Level"     "1"
+    "ModelScale"        "1.1"
+    "BountyGoldMin"     "0"     // Gold earned min"
+    "BountyGoldMax"     "0"     // Gold earned max"
+    "StatusHealth"      "75"    // Base health"
+    "Element"       "nature"
+    "Ability1"      "nature_armor"
 }

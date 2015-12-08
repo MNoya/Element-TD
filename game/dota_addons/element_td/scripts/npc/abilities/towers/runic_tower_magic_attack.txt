@@ -2,52 +2,52 @@
 // Runic Tower: Magic Attack
 //=================================================================================================================
 "runic_tower_magic_attack"
-{	
-	"BaseClass"						"ability_datadriven"											
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
-	"AbilityTextureName"			"visage_gravekeepers_cloak"
-	"MaxLevel"						"1"
-	"AbilityCooldown"				"9"
+{   
+    "BaseClass"                     "ability_datadriven"                                            
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+    "AbilityTextureName"            "visage_gravekeepers_cloak"
+    "MaxLevel"                      "1"
+    "AbilityCooldown"               "9"
 
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"Target"			"POINT"
-			"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-			"Function"			"TriggerEvent"
-			"Event"				"OnMagicAttackCast"
-		}
-	}
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "Target"            "POINT"
+            "ScriptFile"        "scripts/vscripts/towers/towerevents.lua"
+            "Function"          "TriggerEvent"
+            "Event"             "OnMagicAttackCast"
+        }
+    }
 
-	"Modifiers"
-	{
-		"modifier_magic_attack"
-		{
-			"Duration"		"%duration"
-		}
-		"modifier_magic_attack_passive"
-		{
-			"Passive"	"1"
-			"IsHidden"	"1"
-			"OnAttackStart"
-			{
-				"RunScript"
-				{
-					"Target"			"POINT"
-					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-					"Function"			"TriggerEvent"
-					"Event"				"OnAttackStart"
-				}
-			}
-		}
-	}
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"3"
-		}
-	}
+    "Modifiers"
+    {
+        "modifier_magic_attack"
+        {
+            "Duration"      "%duration"
+        }
+        "modifier_magic_attack_passive"
+        {
+            "Passive"   "1"
+            "IsHidden"  "1"
+            "OnAttackStart"
+            {
+                "RunScript"
+                {
+                    "Target"            "POINT"
+                    "ScriptFile"        "scripts/vscripts/towers/towerevents.lua"
+                    "Function"          "TriggerEvent"
+                    "Event"             "OnAttackStart"
+                }
+            }
+        }
+    }
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "duration"              "3"
+        }
+    }
 }

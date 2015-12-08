@@ -1,30 +1,30 @@
 "item_upgrade_to_poison_tower_2"
 {
-	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	"BaseClass"		"item_datadriven"
-	"AbilityManaCost"		"0"
-	"ItemShareability"		"ITEM_NOT_SHAREABLE"
-	"ItemSellable"		"0"
-	"ItemKillable"		"0"
-	"ItemPurchasable"		"0"
-	"ItemDroppable"		"0"
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"TARGET"		"CASTER"
-			"ScriptFile"		"scripts/vscripts/spells.lua"
-			"Function"		"UpgradeTower"
-			"tower"		"poison_tower_2"
-		}
-	}
-	"AbilityTextureName"		"item_towers_poison_tower_contamination"
-	"Cost"		"750"
-	"Requirements"
-	{
-		"dark"		"2"
-		"dark"		"2"
-		"water"		"2"
-		"water"		"2"
-	}
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "BaseClass"     "item_datadriven"
+    "AbilityManaCost"       "0"
+    "ItemShareability"      "ITEM_NOT_SHAREABLE"
+    "ItemSellable"      "0"
+    "ItemKillable"      "0"
+    "ItemPurchasable"       "0"
+    "ItemDroppable"     "0"
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "TARGET"        "CASTER"
+            "ScriptFile"        "scripts/vscripts/spells.lua"
+            "Function"      "UpgradeTower"
+            "tower"     "poison_tower_2"
+        }
+    }
+    "AbilityTextureName"        "item_towers_poison_tower_contamination"
+    "Cost"      "750"
+    "Requirements"
+    {
+        "dark"      "2"
+        "dark"      "2"
+        "water"     "2"
+        "water"     "2"
+    }
 }

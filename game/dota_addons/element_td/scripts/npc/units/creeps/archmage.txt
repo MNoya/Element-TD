@@ -1,60 +1,60 @@
 "archmage"
 {
-	"ArmorPhysical"		"0"
-	"MagicalResistance"		"0"
-	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"		"0"
-	"AttackDamageMax"		"0"
-	"AttackRate"		"0"
-	"AttackAnimationPoint"		"0"
-	"AttackAcquisitionRange"		"0"
-	"AttackRange"		"0"
-	"ProjectileModel"		""
-	"ProjectileSpeed"		"0"
-	"RingRadius"		"70"
-	"HealthBarOffset"		"160"
-	"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
-	"BountyXP"		"0"
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"		"300"
-	"StatusHealthRegen"		"0"
-	"StatusMana"		"0"
-	"StatusManaRegen"		"0"
-	"VisionDaytimeRange"		"1200"
-	"VisionNighttimeRange"		"800"
-	"Model"		"models/heroes/invoker/invoker.vmdl"
-	"ModelScale"		"0.9"
-	"BaseClass"		"npc_dota_creature"
-	"SoundSet"		""
-	"Ability1"		"light_armor"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"		"48"
-			}
-			"Wearable2"
-			{
-				"ItemDef"		"89"
-			}
-			"Wearable3"
-			{
-				"ItemDef"		"98"
-			}
-			"Wearable4"
-			{
-				"ItemDef"		"99"
-			}
-			"Wearable5"
-			{
-				"ItemDef"		"100"
-			}
-			"Wearable6"
-			{
-				"ItemDef"		"305"
-			}
-		}
-	}
+    "ArmorPhysical"     "0"
+    "MagicalResistance"     "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"       "0"
+    "AttackDamageMax"       "0"
+    "AttackRate"        "0"
+    "AttackAnimationPoint"      "0"
+    "AttackAcquisitionRange"        "0"
+    "AttackRange"       "0"
+    "ProjectileModel"       ""
+    "ProjectileSpeed"       "0"
+    "RingRadius"        "70"
+    "HealthBarOffset"       "160"
+    "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
+    "BountyXP"      "0"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"     "300"
+    "StatusHealthRegen"     "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"       "0"
+    "VisionDaytimeRange"        "1200"
+    "VisionNighttimeRange"      "800"
+    "Model"     "models/heroes/invoker/invoker.vmdl"
+    "ModelScale"        "0.9"
+    "BaseClass"     "npc_dota_creature"
+    "SoundSet"      ""
+    "Ability1"      "light_armor"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"       "48"
+            }
+            "Wearable2"
+            {
+                "ItemDef"       "89"
+            }
+            "Wearable3"
+            {
+                "ItemDef"       "98"
+            }
+            "Wearable4"
+            {
+                "ItemDef"       "99"
+            }
+            "Wearable5"
+            {
+                "ItemDef"       "100"
+            }
+            "Wearable6"
+            {
+                "ItemDef"       "305"
+            }
+        }
+    }
 }

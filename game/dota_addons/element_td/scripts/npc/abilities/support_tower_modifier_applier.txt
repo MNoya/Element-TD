@@ -7,17 +7,17 @@
 //============================================================//
 "support_tower_modifier_applier"
 {
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"MaxLevel"						"1"
-	"AbilityTextureName"			"support_modifier"
-	
-	"Modifiers"
-	{
-		"modifier_support_tower"
-		{
-			"TextureName"	"support_modifier"
-		}
-	}
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"                      "1"
+    "AbilityTextureName"            "support_modifier"
+    
+    "Modifiers"
+    {
+        "modifier_support_tower"
+        {
+            "TextureName"   "support_modifier"
+        }
+    }
 }

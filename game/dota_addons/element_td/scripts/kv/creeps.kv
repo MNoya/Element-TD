@@ -3,801 +3,801 @@
 //===========================================================================================================
 "elemental_summoner"
 {
-	// General
-	"BaseClass"					"npc_dota_building"	
-	"Model"						"models/fof_altar_prop/fof_altar_prop.vmdl"	
-	"SoundSet"					""					
-	"MinimapIcon"				"minimap_racks90"
-	"HealthBarOffset"			"250"
-	"ModelScale"				"0.5"
-	
-	// Abilities
-	//----------------------------------------------------------------
-	
-	"AbilityLayout"				"6"
-	"Ability1"					"summon_water_elemental"			
-	"Ability2"					"summon_fire_elemental"			
-	"Ability3"					"summon_nature_elemental"			
-	"Ability4"					"summon_earth_elemental"			
-	"Ability5"					"summon_light_elemental"			
-	"Ability6"					"summon_dark_elemental"			
-	"Ability7"					""			
-	"Ability8"					""			
+    // General
+    "BaseClass"                 "npc_dota_building" 
+    "Model"                     "models/fof_altar_prop/fof_altar_prop.vmdl" 
+    "SoundSet"                  ""                  
+    "MinimapIcon"               "minimap_racks90"
+    "HealthBarOffset"           "250"
+    "ModelScale"                "0.5"
+    
+    // Abilities
+    //----------------------------------------------------------------
+    
+    "AbilityLayout"             "6"
+    "Ability1"                  "summon_water_elemental"            
+    "Ability2"                  "summon_fire_elemental"         
+    "Ability3"                  "summon_nature_elemental"           
+    "Ability4"                  "summon_earth_elemental"            
+    "Ability5"                  "summon_light_elemental"            
+    "Ability6"                  "summon_dark_elemental"         
+    "Ability7"                  ""          
+    "Ability8"                  ""          
 
-	// Armor
-	//----------------------------------------------------------------
-	"ArmorPhysical"				"0"		// Physical protection.
-	"MagicalResistance"			"0"		// Magical protection.
+    // Armor
+    //----------------------------------------------------------------
+    "ArmorPhysical"             "0"     // Physical protection.
+    "MagicalResistance"         "0"     // Magical protection.
 
-	// Attack
-	//----------------------------------------------------------------
-	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-	"AttackDamageMin"			"0"			// Damage range min.
-	"AttackDamageMax"			"0"			// Damage range max.
-	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-	"AttackRate"				"0"			// Speed of attack.
-	"AttackAnimationPoint"		"0"			// Normalized time in animation cycle to attack.
-	"AttackAcquisitionRange"	"0"			// Range within a target can be acquired.
-	"AttackRange"				"0"			// Range within a target can be attacked.
-	"ProjectileModel"			""			// Particle system model for projectile.
-	"ProjectileSpeed"			"0"			// Speed of projectile.
+    // Attack
+    //----------------------------------------------------------------
+    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+    "AttackDamageMin"           "0"         // Damage range min.
+    "AttackDamageMax"           "0"         // Damage range max.
+    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+    "AttackRate"                "0"         // Speed of attack.
+    "AttackAnimationPoint"      "0"         // Normalized time in animation cycle to attack.
+    "AttackAcquisitionRange"    "0"         // Range within a target can be acquired.
+    "AttackRange"               "0"         // Range within a target can be attacked.
+    "ProjectileModel"           ""          // Particle system model for projectile.
+    "ProjectileSpeed"           "0"         // Speed of projectile.
 
-	// Attributes
-	//----------------------------------------------------------------
-	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"0"			// Base strength
-	"AttributeStrengthGain"		"0"			// Strength bonus per level.
-	"AttributeBaseIntelligence"	"0"			// Base intelligence
-	"AttributeIntelligenceGain"	"0"			// Intelligence bonus per level.
-	"AttributeBaseAgility"		"0"			// Base agility
-	"AttributeAgilityGain"		"0"			// Agility bonus per level.
+    // Attributes
+    //----------------------------------------------------------------
+    "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"     "0"         // Base strength
+    "AttributeStrengthGain"     "0"         // Strength bonus per level.
+    "AttributeBaseIntelligence" "0"         // Base intelligence
+    "AttributeIntelligenceGain" "0"         // Intelligence bonus per level.
+    "AttributeBaseAgility"      "0"         // Base agility
+    "AttributeAgilityGain"      "0"         // Agility bonus per level.
 
-	// Movement
-	//----------------------------------------------------------------
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			
-	"MovementSpeed"				"0"			// Speed
-	"MovementTurnRate"			"0"			// Turning rate.
+    // Movement
+    //----------------------------------------------------------------
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"           
+    "MovementSpeed"             "0"         // Speed
+    "MovementTurnRate"          "0"         // Turning rate.
 
-	// Status
-	//----------------------------------------------------------------
-	"StatusHealth"				"1000"		// Base health.
-	"StatusHealthRegen"			"0"			// Health regeneration rate.
-	"StatusMana"				"0"			// Base mana.
-	"StatusManaRegen"			"0"			// Mana regeneration rate.
+    // Status
+    //----------------------------------------------------------------
+    "StatusHealth"              "1000"      // Base health.
+    "StatusHealthRegen"         "0"         // Health regeneration rate.
+    "StatusMana"                "0"         // Base mana.
+    "StatusManaRegen"           "0"         // Mana regeneration rate.
 
-	"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"			
-	"ProjectileCollisionSize"	"50"
-	"RingRadius"				"180"
-	
-	// Vision
-	//----------------------------------------------------------------
-	"VisionDaytimeRange"		"1500"		// Range of vision during day light.
-	"VisionNighttimeRange"		"1500"		// Range of vision at night time.
-}	
+    "BoundsHullName"            "DOTA_HULL_SIZE_TOWER"          
+    "ProjectileCollisionSize"   "50"
+    "RingRadius"                "180"
+    
+    // Vision
+    //----------------------------------------------------------------
+    "VisionDaytimeRange"        "1500"      // Range of vision during day light.
+    "VisionNighttimeRange"      "1500"      // Range of vision at night time.
+}   
 
 "etd_phantom_validator"
 {
-	"BaseClass"					"npc_dota_creep"
-	"Model"						"models/tower_validator_green.vmdl"
-	"Level"						"1"
-	"ModelScale"				"9"
-	"Ability1"					"phantom_passive"	
+    "BaseClass"                 "npc_dota_creep"
+    "Model"                     "models/tower_validator_green.vmdl"
+    "Level"                     "1"
+    "ModelScale"                "9"
+    "Ability1"                  "phantom_passive"   
 
-	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-	"AttackDamageMin"			"0"		
-	"AttackDamageMax"			"0"	
-	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-	"AttackRate"				"0"			
-	"AttackAnimationPoint"		"0"		
-	"AttackAcquisitionRange"	"0"		
-	"AttackRange"				"0"		
+    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+    "AttackDamageMin"           "0"     
+    "AttackDamageMax"           "0" 
+    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+    "AttackRate"                "0"         
+    "AttackAnimationPoint"      "0"     
+    "AttackAcquisitionRange"    "0"     
+    "AttackRange"               "0"     
 
-	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"0"			
-	"AttributeStrengthGain"		"0"			
-	"AttributeBaseIntelligence"	"0"			
-	"AttributeIntelligenceGain"	"0"			
-	"AttributeBaseAgility"		"0"			
-	"AttributeAgilityGain"		"0"			
+    "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"     "0"         
+    "AttributeStrengthGain"     "0"         
+    "AttributeBaseIntelligence" "0"         
+    "AttributeIntelligenceGain" "0"         
+    "AttributeBaseAgility"      "0"         
+    "AttributeAgilityGain"      "0"         
 
-	"BountyXP"					"0"		
-	"BountyGoldMin"				"0"		
-	"BountyGoldMax"				"0"		
+    "BountyXP"                  "0"     
+    "BountyGoldMin"             "0"     
+    "BountyGoldMax"             "0"     
 
-	"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"		
-	"ProjectileCollisionSize"	"50"
-	"RingRadius"				"130"
-	"HealthBarOffset"			"260"
+    "BoundsHullName"            "DOTA_HULL_SIZE_TOWER"      
+    "ProjectileCollisionSize"   "50"
+    "RingRadius"                "130"
+    "HealthBarOffset"           "260"
 
-	
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			
-	"MovementSpeed"				"0"			
-	"MovementTurnRate"			"1.0"		
+    
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"           
+    "MovementSpeed"             "0"         
+    "MovementTurnRate"          "1.0"       
 
 
-	"StatusHealth"				"1"		
-	"StatusHealthRegen"			"0"			
-	"StatusMana"				"0"			
-	"StatusManaRegen"			"0"			
+    "StatusHealth"              "1"     
+    "StatusHealthRegen"         "0"         
+    "StatusMana"                "0"         
+    "StatusManaRegen"           "0"         
 
-	"TeamName"					"DOTA_TEAM_GOODGUYS"			
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
-	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	
-	"VisionDaytimeRange"		"0"		
-	"VisionNighttimeRange"		"0"		
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"            
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    
+    "VisionDaytimeRange"        "0"     
+    "VisionNighttimeRange"      "0"     
 }
 
 
 "tower_dummy"
 {
-	"BaseClass"					"npc_dota_creep"	
-	"Model"						"models/development/invisiblebox.mdl"				
-	"Level"						"1"
+    "BaseClass"                 "npc_dota_creep"    
+    "Model"                     "models/development/invisiblebox.mdl"               
+    "Level"                     "1"
 
-	"Ability1"					""		
-	"Ability2"					""		
-	"Ability3"					""			
-	"Ability4"					""			
-	"Ability5"					""			
-	"Ability6"					""			
-	"Ability7"					""			
-	"Ability8"					""			
+    "Ability1"                  ""      
+    "Ability2"                  ""      
+    "Ability3"                  ""          
+    "Ability4"                  ""          
+    "Ability5"                  ""          
+    "Ability6"                  ""          
+    "Ability7"                  ""          
+    "Ability8"                  ""          
 
-	"ArmorPhysical"				"0"		
-	"MagicalResistance"			"0"			
-	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"0"			
-	"AttributeStrengthGain"		"0"			
-	"AttributeBaseIntelligence"	"0"			
-	"AttributeIntelligenceGain"	"0"			
-	"AttributeBaseAgility"		"0"			
-	"AttributeAgilityGain"		"0"			
+    "ArmorPhysical"             "0"     
+    "MagicalResistance"         "0"         
+    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+    "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"     "0"         
+    "AttributeStrengthGain"     "0"         
+    "AttributeBaseIntelligence" "0"         
+    "AttributeIntelligenceGain" "0"         
+    "AttributeBaseAgility"      "0"         
+    "AttributeAgilityGain"      "0"         
 
-	"BountyXP"					"0"			
-	"BountyGoldMin"				"0"			
-	"BountyGoldMax"				"0"			
+    "BountyXP"                  "0"         
+    "BountyGoldMin"             "0"         
+    "BountyGoldMax"             "0"         
 
-	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"		
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			
-	"MovementSpeed"				"0"		
-	"MovementTurnRate"			"10"		
+    "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"      
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"           
+    "MovementSpeed"             "0"     
+    "MovementTurnRate"          "10"        
 
-	"StatusHealth"				"1"			
-	"StatusHealthRegen"			"0"			
-	"StatusMana"				"0"			
-	"StatusManaRegen"			"0"	
-	"TeamName"					"DOTA_TEAM_GOODGUYS"		
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
-	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+    "StatusHealth"              "1"         
+    "StatusHealthRegen"         "0"         
+    "StatusMana"                "0"         
+    "StatusManaRegen"           "0" 
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"        
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_SOFT"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 
-	"VisionDaytimeRange"		"0"	
-	"VisionNighttimeRange"		"0"		
+    "VisionDaytimeRange"        "0" 
+    "VisionNighttimeRange"      "0"     
 }
 
 "hail_tower_dummy"
 {
-	"BaseClass"					"npc_dota_creep"	
-	"Model"						"models/development/invisiblebox.mdl"				
-	"Level"						"1"
+    "BaseClass"                 "npc_dota_creep"    
+    "Model"                     "models/development/invisiblebox.mdl"               
+    "Level"                     "1"
 
-	"Ability1"					""		
-	"Ability2"					""		
-	"Ability3"					""			
-	"Ability4"					""			
-	"Ability5"					""			
-	"Ability6"					""			
-	"Ability7"					""			
-	"Ability8"					""			
+    "Ability1"                  ""      
+    "Ability2"                  ""      
+    "Ability3"                  ""          
+    "Ability4"                  ""          
+    "Ability5"                  ""          
+    "Ability6"                  ""          
+    "Ability7"                  ""          
+    "Ability8"                  ""          
 
-	"ArmorPhysical"				"0"		
-	"MagicalResistance"			"0"			
-	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"0"			
-	"AttributeStrengthGain"		"0"			
-	"AttributeBaseIntelligence"	"0"			
-	"AttributeIntelligenceGain"	"0"			
-	"AttributeBaseAgility"		"0"			
-	"AttributeAgilityGain"		"0"			
+    "ArmorPhysical"             "0"     
+    "MagicalResistance"         "0"         
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"     "0"         
+    "AttributeStrengthGain"     "0"         
+    "AttributeBaseIntelligence" "0"         
+    "AttributeIntelligenceGain" "0"         
+    "AttributeBaseAgility"      "0"         
+    "AttributeAgilityGain"      "0"         
 
-	"BountyXP"					"0"			
-	"BountyGoldMin"				"0"			
-	"BountyGoldMax"				"0"			
+    "BountyXP"                  "0"         
+    "BountyGoldMin"             "0"         
+    "BountyGoldMax"             "0"         
 
-	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"		
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			
-	"MovementSpeed"				"0"		
-	"MovementTurnRate"			"10"		
+    "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"      
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"           
+    "MovementSpeed"             "0"     
+    "MovementTurnRate"          "10"        
 
-	"StatusHealth"				"1"			
-	"StatusHealthRegen"			"0"			
-	"StatusMana"				"0"			
-	"StatusManaRegen"			"0"	
-	"TeamName"					"DOTA_TEAM_GOODGUYS"		
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
-	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+    "StatusHealth"              "1"         
+    "StatusHealthRegen"         "0"         
+    "StatusMana"                "0"         
+    "StatusManaRegen"           "0" 
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"        
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_SOFT"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 
-	"VisionDaytimeRange"		"0"	
-	"VisionNighttimeRange"		"0"	
+    "VisionDaytimeRange"        "0" 
+    "VisionNighttimeRange"      "0" 
 
-	"AttackRange"				"1125"
-	"AttackAcquisitionRange"	"1125"
-	"AttackRate"				"0.31"
-	"particle_folder"			"particles/units/heroes/hero_ancient_apparition"
-	"ProjectileModel"			"particles/units/heroes/hero_ancient_apparition/ancient_apparition_base_attack.vpcf"
-	"ProjectileSpeed"			"900"	
+    "AttackRange"               "1125"
+    "AttackAcquisitionRange"    "1125"
+    "AttackRate"                "0.31"
+    "particle_folder"           "particles/units/heroes/hero_ancient_apparition"
+    "ProjectileModel"           "particles/units/heroes/hero_ancient_apparition/ancient_apparition_base_attack.vpcf"
+    "ProjectileSpeed"           "900"   
 }
 
 "conjure_tower_clone_dummy"
 {
 
-	"BaseClass"					"npc_dota_creep"	
-	"Model"						"models/development/invisiblebox.mdl"				
-	"Level"						"1"
+    "BaseClass"                 "npc_dota_creep"    
+    "Model"                     "models/development/invisiblebox.mdl"               
+    "Level"                     "1"
 
-	"Ability1"					"dummy_passive"		
-	"Ability2"					""		
-	"Ability3"					""			
-	"Ability4"					""			
-	"Ability5"					""			
-	"Ability6"					""				
+    "Ability1"                  "dummy_passive"     
+    "Ability2"                  ""      
+    "Ability3"                  ""          
+    "Ability4"                  ""          
+    "Ability5"                  ""          
+    "Ability6"                  ""              
 
-	"ArmorPhysical"				"0"		
-	"MagicalResistance"			"0"			
-	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"0"			
-	"AttributeStrengthGain"		"0"			
-	"AttributeBaseIntelligence"	"0"			
-	"AttributeIntelligenceGain"	"0"			
-	"AttributeBaseAgility"		"0"			
-	"AttributeAgilityGain"		"0"			
+    "ArmorPhysical"             "0"     
+    "MagicalResistance"         "0"         
+    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+    "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"     "0"         
+    "AttributeStrengthGain"     "0"         
+    "AttributeBaseIntelligence" "0"         
+    "AttributeIntelligenceGain" "0"         
+    "AttributeBaseAgility"      "0"         
+    "AttributeAgilityGain"      "0"         
 
-	"BountyXP"					"0"			
-	"BountyGoldMin"				"0"			
-	"BountyGoldMax"				"0"			
+    "BountyXP"                  "0"         
+    "BountyGoldMin"             "0"         
+    "BountyGoldMax"             "0"         
 
-	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"		
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			
-	"MovementSpeed"				"0"		
-	"MovementTurnRate"			"10"		
+    "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"      
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"           
+    "MovementSpeed"             "0"     
+    "MovementTurnRate"          "10"        
 
-	"StatusHealth"				"1"			
-	"StatusHealthRegen"			"0"			
-	"StatusMana"				"0"			
-	"StatusManaRegen"			"0"	
-	"TeamName"					"DOTA_TEAM_GOODGUYS"		
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
-	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+    "StatusHealth"              "1"         
+    "StatusHealthRegen"         "0"         
+    "StatusMana"                "0"         
+    "StatusManaRegen"           "0" 
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"        
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_SOFT"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 
-	"VisionDaytimeRange"		"0"	
-	"VisionNighttimeRange"		"0"		
-}	
+    "VisionDaytimeRange"        "0" 
+    "VisionNighttimeRange"      "0"     
+}   
 
 "windstorm_tornado"
 {
-	"BaseClass"					"npc_dota_base_additive"
-	"Model"						"models/heroes/attachto_ghost/attachto_ghost.mdl"
-	"SoundSet"					"Creep_Good_Melee"	
-	"ModelScale"				"16.0"
-	"Level"						"1"
-	"IsSummoned"				"1"
-			
-	"Ability1"					"windstorm_tornado_passive"		
-	"Ability2"					""			
-	"Ability3"					""			
-	"Ability4"					""			
-	"Ability5"					""			
-	"Ability6"					""			
-	"Ability7"					""			
-	"Ability8"					""			
+    "BaseClass"                 "npc_dota_base_additive"
+    "Model"                     "models/heroes/attachto_ghost/attachto_ghost.mdl"
+    "SoundSet"                  "Creep_Good_Melee"  
+    "ModelScale"                "16.0"
+    "Level"                     "1"
+    "IsSummoned"                "1"
+            
+    "Ability1"                  "windstorm_tornado_passive"     
+    "Ability2"                  ""          
+    "Ability3"                  ""          
+    "Ability4"                  ""          
+    "Ability5"                  ""          
+    "Ability6"                  ""          
+    "Ability7"                  ""          
+    "Ability8"                  ""          
 
-	"ArmorPhysical"				"0"			
-	"MagicalResistance"			"0"			
+    "ArmorPhysical"             "0"         
+    "MagicalResistance"         "0"         
 
-	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-	"BountyXP"					"0"			
-	"BountyGoldMin"				"0"			
-	"BountyGoldMax"				"0"			
-	"BoundsHullName"			"DOTA_HULL_SIZE_REGULAR"			
-	"HealthBarOffset"			"140"
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"		
-	"MovementSpeed"				"125"		
-	"MovementTurnRate"			"0.5"		
+    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+    "BountyXP"                  "0"         
+    "BountyGoldMin"             "0"         
+    "BountyGoldMax"             "0"         
+    "BoundsHullName"            "DOTA_HULL_SIZE_REGULAR"            
+    "HealthBarOffset"           "140"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_FLY"        
+    "MovementSpeed"             "125"       
+    "MovementTurnRate"          "0.5"       
 
-	"StatusHealth"				"500"		
-	"StatusHealthRegen"			"0"		
-	"StatusMana"				"0"			
-	"StatusManaRegen"			"0"			
+    "StatusHealth"              "500"       
+    "StatusHealthRegen"         "0"     
+    "StatusMana"                "0"         
+    "StatusManaRegen"           "0"         
 
-	"TeamName"					"DOTA_TEAM_GOODGUYS"			
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
-	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
-	
-	"VisionDaytimeRange"		"300"	
-	"VisionNighttimeRange"		"300"	
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"            
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+    
+    "VisionDaytimeRange"        "300"   
+    "VisionNighttimeRange"      "300"   
 }
 
 //use for global spells
 "global_caster_dummy"
 {
-	"BaseClass"					"npc_dota_creep"	
-	"Model"						"models/development/invisiblebox.mdl"				
-	"Level"						"1"
-	"MinimapIcon"				""
+    "BaseClass"                 "npc_dota_creep"    
+    "Model"                     "models/development/invisiblebox.mdl"               
+    "Level"                     "1"
+    "MinimapIcon"               ""
 
-	"Ability1"					""		
-	"Ability2"					""		
-	"Ability3"					""			
-	"Ability4"					""			
-	"Ability5"					""			
-	"Ability6"					""			
-	"Ability7"					""			
-	"Ability8"					""			
+    "Ability1"                  ""      
+    "Ability2"                  ""      
+    "Ability3"                  ""          
+    "Ability4"                  ""          
+    "Ability5"                  ""          
+    "Ability6"                  ""          
+    "Ability7"                  ""          
+    "Ability8"                  ""          
 
-	"ArmorPhysical"				"0"		
-	"MagicalResistance"			"0"			
-	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"0"			
-	"AttributeStrengthGain"		"0"			
-	"AttributeBaseIntelligence"	"0"			
-	"AttributeIntelligenceGain"	"0"			
-	"AttributeBaseAgility"		"0"			
-	"AttributeAgilityGain"		"0"			
-	"BountyXP"					"0"			
-	"BountyGoldMin"				"0"			
-	"BountyGoldMax"				"0"			
-	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"		
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			
-	"MovementSpeed"				"0"		
-	"MovementTurnRate"			"10"		
-	"StatusHealth"				"1"			
-	"StatusHealthRegen"			"0"			
-	"StatusMana"				"0"			
-	"StatusManaRegen"			"0"	
-	"TeamName"					"DOTA_TEAM_GOODGUYS"		
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
-	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
-	"VisionDaytimeRange"		"0"	
-	"VisionNighttimeRange"		"0"		
+    "ArmorPhysical"             "0"     
+    "MagicalResistance"         "0"         
+    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+    "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"     "0"         
+    "AttributeStrengthGain"     "0"         
+    "AttributeBaseIntelligence" "0"         
+    "AttributeIntelligenceGain" "0"         
+    "AttributeBaseAgility"      "0"         
+    "AttributeAgilityGain"      "0"         
+    "BountyXP"                  "0"         
+    "BountyGoldMin"             "0"         
+    "BountyGoldMax"             "0"         
+    "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"      
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"           
+    "MovementSpeed"             "0"     
+    "MovementTurnRate"          "10"        
+    "StatusHealth"              "1"         
+    "StatusHealthRegen"         "0"         
+    "StatusMana"                "0"         
+    "StatusManaRegen"           "0" 
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"        
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_SOFT"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+    "VisionDaytimeRange"        "0" 
+    "VisionNighttimeRange"      "0"     
 }
 
 "hydro_tower_projectile"
 {
 
-	"BaseClass"					"npc_dota_creep"
-	"Model"						"models/development/invisiblebox.mdl"
-	"ModelScale"				"0.3"			
-	"Level"						"1"
+    "BaseClass"                 "npc_dota_creep"
+    "Model"                     "models/development/invisiblebox.mdl"
+    "ModelScale"                "0.3"           
+    "Level"                     "1"
 
-	"Ability1"					""		
-	"Ability2"					""		
-	"Ability3"					""			
-	"Ability4"					""			
-	"Ability5"					""			
-	"Ability6"					""			
-	"Ability7"					""			
-	"Ability8"					""			
+    "Ability1"                  ""      
+    "Ability2"                  ""      
+    "Ability3"                  ""          
+    "Ability4"                  ""          
+    "Ability5"                  ""          
+    "Ability6"                  ""          
+    "Ability7"                  ""          
+    "Ability8"                  ""          
 
-	"ArmorPhysical"				"0"		
-	"MagicalResistance"			"0"			
-	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"0"			
-	"AttributeStrengthGain"		"0"			
-	"AttributeBaseIntelligence"	"0"			
-	"AttributeIntelligenceGain"	"0"			
-	"AttributeBaseAgility"		"0"			
-	"AttributeAgilityGain"		"0"			
+    "ArmorPhysical"             "0"     
+    "MagicalResistance"         "0"         
+    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+    "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"     "0"         
+    "AttributeStrengthGain"     "0"         
+    "AttributeBaseIntelligence" "0"         
+    "AttributeIntelligenceGain" "0"         
+    "AttributeBaseAgility"      "0"         
+    "AttributeAgilityGain"      "0"         
 
-	"BountyXP"					"0"			
-	"BountyGoldMin"				"0"			
-	"BountyGoldMax"				"0"			
+    "BountyXP"                  "0"         
+    "BountyGoldMin"             "0"         
+    "BountyGoldMax"             "0"         
 
-	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"		
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			
-	"MovementSpeed"				"100"		
-	"MovementTurnRate"			"10"		
+    "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"      
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"         
+    "MovementSpeed"             "100"       
+    "MovementTurnRate"          "10"        
 
-	"StatusHealth"				"1"			
-	"StatusHealthRegen"			"0"			
-	"StatusMana"				"0"			
-	"StatusManaRegen"			"0"	
-	"TeamName"					"DOTA_TEAM_GOODGUYS"		
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
-	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+    "StatusHealth"              "1"         
+    "StatusHealthRegen"         "0"         
+    "StatusMana"                "0"         
+    "StatusManaRegen"           "0" 
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"        
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_SOFT"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 
-	"VisionDaytimeRange"		"0"	
-	"VisionNighttimeRange"		"0"		
+    "VisionDaytimeRange"        "0" 
+    "VisionNighttimeRange"      "0"     
 }
 
 "gunpowder_tower_projectile"
 {
 
-	"BaseClass"					"npc_dota_creep"
-	"Model"						"models/particle/meteor.mdl"
-	"ModelScale"				"0.25"			
-	"Level"						"1"
+    "BaseClass"                 "npc_dota_creep"
+    "Model"                     "models/particle/meteor.mdl"
+    "ModelScale"                "0.25"          
+    "Level"                     "1"
 
-	"Ability1"					""		
-	"Ability2"					""		
-	"Ability3"					""			
-	"Ability4"					""			
-	"Ability5"					""			
-	"Ability6"					""			
-	"Ability7"					""			
-	"Ability8"					""			
+    "Ability1"                  ""      
+    "Ability2"                  ""      
+    "Ability3"                  ""          
+    "Ability4"                  ""          
+    "Ability5"                  ""          
+    "Ability6"                  ""          
+    "Ability7"                  ""          
+    "Ability8"                  ""          
 
-	"ArmorPhysical"				"0"		
-	"MagicalResistance"			"0"			
-	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"0"			
-	"AttributeStrengthGain"		"0"			
-	"AttributeBaseIntelligence"	"0"			
-	"AttributeIntelligenceGain"	"0"			
-	"AttributeBaseAgility"		"0"			
-	"AttributeAgilityGain"		"0"			
+    "ArmorPhysical"             "0"     
+    "MagicalResistance"         "0"         
+    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+    "AttributePrimary"          "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"     "0"         
+    "AttributeStrengthGain"     "0"         
+    "AttributeBaseIntelligence" "0"         
+    "AttributeIntelligenceGain" "0"         
+    "AttributeBaseAgility"      "0"         
+    "AttributeAgilityGain"      "0"         
 
-	"BountyXP"					"0"			
-	"BountyGoldMin"				"0"			
-	"BountyGoldMax"				"0"			
+    "BountyXP"                  "0"         
+    "BountyGoldMin"             "0"         
+    "BountyGoldMax"             "0"         
 
-	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"		
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			
-	"MovementSpeed"				"100"		
-	"MovementTurnRate"			"10"		
+    "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"      
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"         
+    "MovementSpeed"             "100"       
+    "MovementTurnRate"          "10"        
 
-	"StatusHealth"				"1"			
-	"StatusHealthRegen"			"0"			
-	"StatusMana"				"0"			
-	"StatusManaRegen"			"0"	
-	"TeamName"					"DOTA_TEAM_GOODGUYS"		
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_SOFT"
-	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+    "StatusHealth"              "1"         
+    "StatusHealthRegen"         "0"         
+    "StatusMana"                "0"         
+    "StatusManaRegen"           "0" 
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"        
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_SOFT"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 
-	"VisionDaytimeRange"		"0"	
-	"VisionNighttimeRange"		"0"		
-}	
+    "VisionDaytimeRange"        "0" 
+    "VisionNighttimeRange"      "0"     
+}   
 
 //===========================================================================================================
 // Water Elemental ==========================================================================================
 //===========================================================================================================
 "water_elemental"
-{										
-	// General
-	//----------------------------------------------------------------
-	"Model"						"models/heroes/morphling/morphling.mdl"	
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					"Hero_Morphling"
-	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
-	"Portrait"					"vgui/hud/heroportraits/portrait_morphling"
-	"particle_folder"			"particles/units/heroes/hero_morphling"
-	"ConsideredHero"			"1"
+{                                       
+    // General
+    //----------------------------------------------------------------
+    "Model"                     "models/heroes/morphling/morphling.mdl" 
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  "Hero_Morphling"
+    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+    "Portrait"                  "vgui/hud/heroportraits/portrait_morphling"
+    "particle_folder"           "particles/units/heroes/hero_morphling"
+    "ConsideredHero"            "1"
 
-	"precache"
-	{
-		"particlefile" "particles/units/heroes/hero_morphling.pcf"
-		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
-	}
+    "precache"
+    {
+        "particlefile" "particles/units/heroes/hero_morphling.pcf"
+        "soundfile"     "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+    }
 
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"507"
-			}
-		}
-	}
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "507"
+            }
+        }
+    }
 
-	//IMPORTANT STUFF================================================
-	"Level"						"1"
-	"ModelScale" 				"1.0"
-	"BountyGoldMin"				"0"		// Gold earned min.
-	"BountyGoldMax"				"0"		// Gold earned max.
-	"StatusHealth"				"75"	// Base health.
-	"Element"					"water"
-	"Ability1"					"water_armor"
-	//===============================================================
+    //IMPORTANT STUFF================================================
+    "Level"                     "1"
+    "ModelScale"                "1.0"
+    "BountyGoldMin"             "0"     // Gold earned min.
+    "BountyGoldMax"             "0"     // Gold earned max.
+    "StatusHealth"              "75"    // Base health.
+    "Element"                   "water"
+    "Ability1"                  "water_armor"
+    //===============================================================
 }
 
 //===========================================================================================================
 // Fire Elemental ===========================================================================================
 //===========================================================================================================
 "fire_elemental"
-{										
-	// General
-	//----------------------------------------------------------------
-	"Model"						"models/heroes/phoenix/phoenix_bird.mdl"	
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					"Hero_Phoenix"
-	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
-	"Portrait"					"vgui/hud/heroportraits/portrait_phoenix"	
-	"particle_folder"			"particles/units/heroes/hero_phoenix"
-	"ConsideredHero"			"1"
+{                                       
+    // General
+    //----------------------------------------------------------------
+    "Model"                     "models/heroes/phoenix/phoenix_bird.mdl"    
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  "Hero_Phoenix"
+    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
+    "Portrait"                  "vgui/hud/heroportraits/portrait_phoenix"   
+    "particle_folder"           "particles/units/heroes/hero_phoenix"
+    "ConsideredHero"            "1"
 
-	"precache"
-	{
-		"particlefile" "particles/units/heroes/hero_phoenix.pcf"
-		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
-	}
+    "precache"
+    {
+        "particlefile" "particles/units/heroes/hero_phoenix.pcf"
+        "soundfile"     "soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
+    }
 
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"535"
-			}
-		}
-	}
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "535"
+            }
+        }
+    }
 
-	//IMPORTANT STUFF================================================
-	"Level"						"1"
-	"ModelScale" 				"1.1"
-	"BountyGoldMin"				"0"		// Gold earned min.
-	"BountyGoldMax"				"0"		// Gold earned max.
-	"StatusHealth"				"75"	// Base health.
-	"Element"					"fire"
-	"Ability1"					"fire_armor"	
-	//===============================================================
+    //IMPORTANT STUFF================================================
+    "Level"                     "1"
+    "ModelScale"                "1.1"
+    "BountyGoldMin"             "0"     // Gold earned min.
+    "BountyGoldMax"             "0"     // Gold earned max.
+    "StatusHealth"              "75"    // Base health.
+    "Element"                   "fire"
+    "Ability1"                  "fire_armor"    
+    //===============================================================
 }
 
 //===========================================================================================================
 // Nature Elemental ==========================================================================================
 //===========================================================================================================
 "nature_elemental"
-{										
-	// General
-	//----------------------------------------------------------------
-	"Model"						"models/heroes/furion/furion.vmdl"	
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					"Hero_Furion"
-	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
-	"Portrait"					"vgui/hud/heroportraits/portrait_furion"	
-	"particle_folder"			"particles/units/heroes/hero_furion"
-	"ConsideredHero"			"1"
+{                                       
+    // General
+    //----------------------------------------------------------------
+    "Model"                     "models/heroes/furion/furion.vmdl"  
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  "Hero_Furion"
+    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
+    "Portrait"                  "vgui/hud/heroportraits/portrait_furion"    
+    "particle_folder"           "particles/units/heroes/hero_furion"
+    "ConsideredHero"            "1"
 
-	"precache"
-	{
-		"model"			"models/heroes/furion/furion.vmdl"
-		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
-	}
+    "precache"
+    {
+        "model"         "models/heroes/furion/furion.vmdl"
+        "soundfile"     "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
+    }
 
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"29"
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"30"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"31"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"32"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"33"
-			}
-			"Wearable6"
-			{
-				"ItemDef"			"49"
-			}
-		}
-	}
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "29"
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "30"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "31"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "32"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "33"
+            }
+            "Wearable6"
+            {
+                "ItemDef"           "49"
+            }
+        }
+    }
 
-	//IMPORTANT STUFF================================================
-	"Level"						"1"
-	"ModelScale" 				"1.1"
-	"BountyGoldMin"				"0"		// Gold earned min.
-	"BountyGoldMax"				"0"		// Gold earned max.
-	"StatusHealth"				"75"	// Base health.
-	"Element"					"nature"
-	"Ability1"					"nature_armor"
-	//===============================================================
+    //IMPORTANT STUFF================================================
+    "Level"                     "1"
+    "ModelScale"                "1.1"
+    "BountyGoldMin"             "0"     // Gold earned min.
+    "BountyGoldMax"             "0"     // Gold earned max.
+    "StatusHealth"              "75"    // Base health.
+    "Element"                   "nature"
+    "Ability1"                  "nature_armor"
+    //===============================================================
 }
 
 //===========================================================================================================
 // Earth Elemental ==========================================================================================
 //===========================================================================================================
 "earth_elemental"
-{										
-	// General
-	//----------------------------------------------------------------
-	"Model"						"models/heroes/tiny_01/tiny_01.vmdl"	
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					"Hero_Tiny"
-	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
-	"ConsideredHero"			"1"
+{                                       
+    // General
+    //----------------------------------------------------------------
+    "Model"                     "models/heroes/tiny_01/tiny_01.vmdl"    
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  "Hero_Tiny"
+    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
+    "ConsideredHero"            "1"
 
-	"precache"
-	{
-		"model"			"models/heroes/tiny_01/tiny_01.vmdl"
-		"model"			"models/heroes/tiny_02/tiny_02.vmdl"
-		"model"			"models/heroes/tiny_03/tiny_03.vmdl"
-		"model"			"models/heroes/tiny_04/tiny_04.vmdl"
-		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
-	}
+    "precache"
+    {
+        "model"         "models/heroes/tiny_01/tiny_01.vmdl"
+        "model"         "models/heroes/tiny_02/tiny_02.vmdl"
+        "model"         "models/heroes/tiny_03/tiny_03.vmdl"
+        "model"         "models/heroes/tiny_04/tiny_04.vmdl"
+        "soundfile"     "soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
+    }
 
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"516"
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"493"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"494"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"495"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"496"
-			}
-		}
-	}
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "516"
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "493"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "494"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "495"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "496"
+            }
+        }
+    }
 
-	//IMPORTANT STUFF================================================
-	"Level"						"1"
-	"ModelScale" 				"1.3"
-	"BountyGoldMin"				"0"		// Gold earned min.
-	"BountyGoldMax"				"0"		// Gold earned max.
-	"StatusHealth"				"75"	// Base health.
-	"Element"					"earth"
-	"Ability1"					"earth_armor"
-	//===============================================================
+    //IMPORTANT STUFF================================================
+    "Level"                     "1"
+    "ModelScale"                "1.3"
+    "BountyGoldMin"             "0"     // Gold earned min.
+    "BountyGoldMax"             "0"     // Gold earned max.
+    "StatusHealth"              "75"    // Base health.
+    "Element"                   "earth"
+    "Ability1"                  "earth_armor"
+    //===============================================================
 }
 
 //===========================================================================================================
 // Light Elemental ==========================================================================================
 //===========================================================================================================
 "light_elemental"
-{										
-	// General
-	//----------------------------------------------------------------
-	"Model"						"models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"	
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					"Hero_Keeper_Of_The_Light"
-	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
-	"Portrait"					"vgui/hud/heroportraits/portrait_keeper_of_the_light"
-	"particle_folder"			"particles/units/heroes/hero_keeper_of_the_light"
-	"ConsideredHero"			"1"
+{                                       
+    // General
+    //----------------------------------------------------------------
+    "Model"                     "models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"    
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  "Hero_Keeper_Of_The_Light"
+    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+    "Portrait"                  "vgui/hud/heroportraits/portrait_keeper_of_the_light"
+    "particle_folder"           "particles/units/heroes/hero_keeper_of_the_light"
+    "ConsideredHero"            "1"
 
-	"precache"
-	{
-		"particlefile"	"particles/units/heroes/hero_keeper_of_the_light.pcf"
-		"model"			"models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"
-		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
-	}
+    "precache"
+    {
+        "particlefile"  "particles/units/heroes/hero_keeper_of_the_light.pcf"
+        "model"         "models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"
+        "soundfile"     "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+    }
 
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"252"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"253"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"254"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"255"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"256"
-			}
-			"Wearable6"
-			{
-				"ItemDef"			"528"
-			}
-		}
-	}
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "252"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "253"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "254"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "255"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "256"
+            }
+            "Wearable6"
+            {
+                "ItemDef"           "528"
+            }
+        }
+    }
 
-	//IMPORTANT STUFF================================================
-	"Level"						"1"
-	"ModelScale" 				"1.1"
-	"BountyGoldMin"				"0"		
-	"BountyGoldMax"				"0"		
-	"StatusHealth"				"75"	
-	"Element"					"light"
-	"Ability1"					"light_armor"
-	//===============================================================
+    //IMPORTANT STUFF================================================
+    "Level"                     "1"
+    "ModelScale"                "1.1"
+    "BountyGoldMin"             "0"     
+    "BountyGoldMax"             "0"     
+    "StatusHealth"              "75"    
+    "Element"                   "light"
+    "Ability1"                  "light_armor"
+    //===============================================================
 }
 
 //===========================================================================================================
 // Dark Elemental ===========================================================================================
 //===========================================================================================================
 "dark_elemental"
-{										
-	// General
-	//----------------------------------------------------------------
-	"Model"						"models/heroes/shadow_fiend/shadow_fiend.vmdl"	
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					"Hero_Shadow_Fiend"
-	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_shadow_fiend.vsndevts"
-	"Portrait"					"vgui/hud/heroportraits/portrait_shadow_fiend"
-	"particle_folder"			"particles/units/heroes/hero_shadow_fiend"
-	"ConsideredHero"			"1"
+{                                       
+    // General
+    //----------------------------------------------------------------
+    "Model"                     "models/heroes/shadow_fiend/shadow_fiend.vmdl"  
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  "Hero_Shadow_Fiend"
+    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_shadow_fiend.vsndevts"
+    "Portrait"                  "vgui/hud/heroportraits/portrait_shadow_fiend"
+    "particle_folder"           "particles/units/heroes/hero_shadow_fiend"
+    "ConsideredHero"            "1"
 
-	"precache"
-	{
-		"particlefile"	"particles/units/heroes/hero_shadow_fiend.pcf"
-		"model"			"models/heroes/shadow_fiend/shadow_fiend.vmdl"
-		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_shadow_fiend.vsndevts"
-	}
+    "precache"
+    {
+        "particlefile"  "particles/units/heroes/hero_shadow_fiend.pcf"
+        "model"         "models/heroes/shadow_fiend/shadow_fiend.vmdl"
+        "soundfile"     "soundevents/game_sounds_heroes/game_sounds_shadow_fiend.vsndevts"
+    }
 
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"488"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"486"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"387"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"509"
-			}
-		}
-	}
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "488"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "486"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "387"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "509"
+            }
+        }
+    }
 
-	//IMPORTANT STUFF================================================
-	"Level"						"1"
-	"ModelScale" 				"1.1"
-	"BountyGoldMin"				"0"		
-	"BountyGoldMax"				"0"		
-	"StatusHealth"				"75"	
-	"Element"					"dark"
-	"Ability1"					"dark_armor"
-	//===============================================================	
+    //IMPORTANT STUFF================================================
+    "Level"                     "1"
+    "ModelScale"                "1.1"
+    "BountyGoldMin"             "0"     
+    "BountyGoldMax"             "0"     
+    "StatusHealth"              "75"    
+    "Element"                   "dark"
+    "Ability1"                  "dark_armor"
+    //===============================================================   
 }
 
 //============================================================================================================
@@ -812,42 +812,42 @@
 // Creep: Stoneboar (Wave 1) =======================================================================================
 //===========================================================================================================
 "stoneboar"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/courier/yak/yak.vmdl"	
-	"ModelScale" 				"0.7"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"Ability1"					"earth_armor"
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/courier/yak/yak.vmdl"   
+    "ModelScale"                "0.7"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "Ability1"                  "earth_armor"
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Flying Imp (Wave 2) =========================================================================================
 //===========================================================================================================
 "flying_imp"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/courier/smeevil_magic_carpet/smeevil_magic_carpet_flying.vmdl"	
-	"ModelScale" 				"1"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"Ability1"					"water_armor"
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/courier/smeevil_magic_carpet/smeevil_magic_carpet_flying.vmdl"  
+    "ModelScale"                "1"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "Ability1"                  "water_armor"
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Lava Spawn (Wave 3)  =========================================================================================
 //===========================================================================================================
 "lava_spawn"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/items/courier/vaal_the_animated_constructdire/vaal_the_animated_constructdire.vmdl"	
-	"ModelScale" 				"0.9"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"Ability1"					"fire_armor"
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/items/courier/vaal_the_animated_constructdire/vaal_the_animated_constructdire.vmdl" 
+    "ModelScale"                "0.9"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "Ability1"                  "fire_armor"
+    //===============================================================
 }
 
 
@@ -855,1718 +855,1718 @@
 // Creep: Shroomling (Wave 4) ====================================================================================
 //===========================================================================================================
 "shroomling"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/items/furion/treant/shroomling_treant/shroomling_treant.vmdl"	
-	"ModelScale" 				"1.0"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepUndead"
-	"Ability1"					"nature_armor"
-	"Ability2"					"creep_ability_undead"	
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/items/furion/treant/shroomling_treant/shroomling_treant.vmdl"   
+    "ModelScale"                "1.0"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepUndead"
+    "Ability1"                  "nature_armor"
+    "Ability2"                  "creep_ability_undead"  
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Snowy Owl (Wave 5) ====================================================================================
 //===========================================================================================================
 "snowy_owl"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/items/courier/snowl/snowl_flying.vmdl"	
-	"ModelScale" 				"1"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"Ability1"					"light_armor"
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/items/courier/snowl/snowl_flying.vmdl"  
+    "ModelScale"                "1"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "Ability1"                  "light_armor"
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Centaur (Wave 6) ==========================================================================================
 //===========================================================================================================
 "centaur"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/centaur/centaur.vmdl"	
-	"ModelScale" 				"0.7"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepFast"
-	"Ability1"					"earth_armor"
-	"Ability2"					"creep_ability_fast"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"358"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"363"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"361"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"4845"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"359"
-			}
-			"Wearable6"
-			{
-				"ItemDef"			"362"
-			}
-			"Wearable7"
-			{
-				"ItemDef"			"4849"
-			}
-		}
-	}
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/centaur/centaur.vmdl"    
+    "ModelScale"                "0.7"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepFast"
+    "Ability1"                  "earth_armor"
+    "Ability2"                  "creep_ability_fast"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "358"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "363"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "361"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "4845"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "359"
+            }
+            "Wearable6"
+            {
+                "ItemDef"           "362"
+            }
+            "Wearable7"
+            {
+                "ItemDef"           "4849"
+            }
+        }
+    }
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Zombie (Wave 7) ====================================================================================
 //===========================================================================================================
 "zombie"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/creeps/lane_creeps/creep_bad_melee_diretide/creep_bad_melee_diretide.vmdl"	
-	"ModelScale" 				"1.15"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"Ability1"					"dark_armor"
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/creeps/lane_creeps/creep_bad_melee_diretide/creep_bad_melee_diretide.vmdl"  
+    "ModelScale"                "1.15"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "Ability1"                  "dark_armor"
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Shimmering Spirit (Wave 8) ====================================================================================
 //===========================================================================================================
 "shimmering_spirit"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/elder_titan/ancestral_spirit.vmdl"
-	"ModelScale" 				"0.6"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepImage"
-	"Ability1"					"water_armor"
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/elder_titan/ancestral_spirit.vmdl"
+    "ModelScale"                "0.6"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepImage"
+    "Ability1"                  "water_armor"
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Torchbearer (Wave 9) ===============================================================================
 //===========================================================================================================
 "torchbearer"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/items/warlock/golem/the_torchbearer/the_torchbearer.vmdl"	
-	"ModelScale" 				"0.7"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepHeal"
-	"Ability1"					"fire_armor"
-	"Ability2"					"creep_ability_heal"
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/items/warlock/golem/the_torchbearer/the_torchbearer.vmdl"   
+    "ModelScale"                "0.7"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepHeal"
+    "Ability1"                  "fire_armor"
+    "Ability2"                  "creep_ability_heal"
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Ivory Beast (Wave 10) ========================================================================
 //===========================================================================================================
 "ivory_beast"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/creeps/neutral_creeps/n_creep_thunder_lizard/n_creep_thunder_lizard_big.vmdl"	
-	"ModelScale" 				"0.55"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"Ability1"					"light_armor"
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/creeps/neutral_creeps/n_creep_thunder_lizard/n_creep_thunder_lizard_big.vmdl"   
+    "ModelScale"                "0.55"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "Ability1"                  "light_armor"
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Skeletal Corruptor (Wave 11) ===============================================================================
 //===========================================================================================================
 "skeletal_corruptor"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/pugna/pugna.vmdl"	
-	"ModelScale" 				"1.1"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepUndead"
-	"Ability1"					"dark_armor"
-	"Ability2"					"creep_ability_undead"	
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"153"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"157"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"155"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"154"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"167"
-			}
-			"Wearable6"
-			{
-				"ItemDef"			"156"
-			}
-			"Wearable7"
-			{
-				"ItemDef"			"511"
-			}
-		}
-	}	
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/pugna/pugna.vmdl"    
+    "ModelScale"                "1.1"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepUndead"
+    "Ability1"                  "dark_armor"
+    "Ability2"                  "creep_ability_undead"  
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "153"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "157"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "155"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "154"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "167"
+            }
+            "Wearable6"
+            {
+                "ItemDef"           "156"
+            }
+            "Wearable7"
+            {
+                "ItemDef"           "511"
+            }
+        }
+    }   
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Raccoon (Wave 12) ==================================================================================
 //===========================================================================================================
 "badger"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/courier/badger/courier_badger.vmdl"	
-	"ModelScale" 				"1.15"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"Ability1"					"nature_armor"
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/courier/badger/courier_badger.vmdl" 
+    "ModelScale"                "1.15"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "Ability1"                  "nature_armor"
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Satyr (Wave 13) ============================================================================
 //===========================================================================================================
 "satyr"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/creeps/neutral_creeps/n_creep_satyr_c/n_creep_satyr_c.vmdl"	
-	"ModelScale" 				"1"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepFast"
-	"Ability1"					"composite_armor"
-	"Ability2"					"creep_ability_fast"
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/creeps/neutral_creeps/n_creep_satyr_c/n_creep_satyr_c.vmdl" 
+    "ModelScale"                "1"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepFast"
+    "Ability1"                  "composite_armor"
+    "Ability2"                  "creep_ability_fast"
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Paladin (Wave 14) ==================================================================================
 //===========================================================================================================
 "paladin"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/omniknight/omniknight.mdl"	
-	"ModelScale" 				"0.8"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepHeal"
-	"Ability1"					"light_armor"
-	"Ability2"					"creep_ability_heal"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"13"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"42"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"43"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"44"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"45"
-			}
-			"Wearable6"
-			{
-				"ItemDef"			"46"
-			}
-		}
-	}	
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/omniknight/omniknight.mdl"   
+    "ModelScale"                "0.8"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepHeal"
+    "Ability1"                  "light_armor"
+    "Ability2"                  "creep_ability_heal"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "13"        
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "42"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "43"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "44"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "45"
+            }
+            "Wearable6"
+            {
+                "ItemDef"           "46"
+            }
+        }
+    }   
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Rock Monster (Wave 15) ==========================================================================
 //===========================================================================================================
 "rock_monster"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/creeps/neutral_creeps/n_creep_golem_a/neutral_creep_golem_a.vmdl"	
-	"ModelScale" 				"0.8"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepMechanical"
-	"Ability1"					"earth_armor"
-	"Ability2"					"creep_ability_mechanical"		
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/creeps/neutral_creeps/n_creep_golem_a/neutral_creep_golem_a.vmdl"   
+    "ModelScale"                "0.8"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepMechanical"
+    "Ability1"                  "earth_armor"
+    "Ability2"                  "creep_ability_mechanical"      
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Fire Acolyte (Wave 16) ====================================================================================
 //===========================================================================================================
 "fire_acolyte"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/creeps/lane_creeps/creep_bad_ranged/lane_dire_ranged.vmdl"	
-	"ModelScale" 				"1.3"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepUndead"
-	"Ability1"					"fire_armor"
-	"Ability2"					"creep_ability_undead"		
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/creeps/lane_creeps/creep_bad_ranged/lane_dire_ranged.vmdl"  
+    "ModelScale"                "1.3"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepUndead"
+    "Ability1"                  "fire_armor"
+    "Ability2"                  "creep_ability_undead"      
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Robot Soldier (Wave 17) ====================================================================================
 //===========================================================================================================
 "robot_soldier"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/rattletrap/rattletrap.vmdl"	
-	"ModelScale" 				"1.0"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"Ability1"					"composite_armor"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"484"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"485"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"231"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"446"
-			}
-		}
-	}	
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/rattletrap/rattletrap.vmdl"  
+    "ModelScale"                "1.0"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "Ability1"                  "composite_armor"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "484"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "485"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "231"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "446"
+            }
+        }
+    }   
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Treant (Wave 18) ====================================================================================
 //===========================================================================================================
 "treant"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/items/furion/treant/treant_cis/treant_cis.vmdl"	
-	"ModelScale" 				"1"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepImage"
-	"Ability1"					"nature_armor"
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/items/furion/treant/treant_cis/treant_cis.vmdl" 
+    "ModelScale"                "1"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepImage"
+    "Ability1"                  "nature_armor"
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Battleship (Wave 19) ==============================================================================
 //===========================================================================================================
 "battleship"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/items/courier/corsair_ship/corsair_ship.vmdl"	
-	"ModelScale" 				"1.8"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepMechanical"
-	"Ability1"					"water_armor"
-	"Ability2"					"creep_ability_mechanical"		
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/items/courier/corsair_ship/corsair_ship.vmdl"   
+    "ModelScale"                "1.8"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepMechanical"
+    "Ability1"                  "water_armor"
+    "Ability2"                  "creep_ability_mechanical"      
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Black Wyvern (Wave 20) ====================================================================================
 //===========================================================================================================
 "black_wyvern"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/creeps/neutral_creeps/n_creep_black_dragon/n_creep_black_dragon.vmdl"	
-	"ModelScale" 				"0.7"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepFast"
-	"Ability1"					"dark_armor"
-	"Ability2"					"creep_ability_fast"	
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/creeps/neutral_creeps/n_creep_black_dragon/n_creep_black_dragon.vmdl"   
+    "ModelScale"                "0.7"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepFast"
+    "Ability1"                  "dark_armor"
+    "Ability2"                  "creep_ability_fast"    
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Crimson Slayer (Wave 21) ====================================================================================
 //===========================================================================================================
 "crimson_slayer"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/dragon_knight/dragon_knight.vmdl"	
-	"ModelScale" 				"1.0"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"Ability1"					"fire_armor"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"4443"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"65"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"67"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"64"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"63"
-			}
-			"Wearable6"
-			{
-				"ItemDef"			"68"
-			}
-		}
-	}
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/dragon_knight/dragon_knight.vmdl"    
+    "ModelScale"                "1.0"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "Ability1"                  "fire_armor"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "4443"      
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "65"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "67"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "64"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "63"
+            }
+            "Wearable6"
+            {
+                "ItemDef"           "68"
+            }
+        }
+    }
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Solar Templar (Wave 22) ====================================================================================
 //===========================================================================================================
 "solar_templar"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/silencer/silencer.vmdl"	
-	"ModelScale" 				"1"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepImage"
-	"Ability1"					"light_armor"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"301"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"302"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"303"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"304"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"27"
-			}
-			"Wearable6"
-			{
-				"ItemDef"			"28"
-			}
-		}
-	}
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/silencer/silencer.vmdl"  
+    "ModelScale"                "1"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepImage"
+    "Ability1"                  "light_armor"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "301"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "302"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "303"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "304"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "27"
+            }
+            "Wearable6"
+            {
+                "ItemDef"           "28"
+            }
+        }
+    }
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Tribal Priest (Wave 23) ====================================================================================
 //===========================================================================================================
 "tribal_priest"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/creeps/lane_creeps/creep_radiant_ranged/radiant_ranged.vmdl"	
-	"ModelScale" 				"1.15"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepHeal"
-	"Ability1"					"nature_armor"
-	"Ability2"					"creep_ability_heal"		
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/creeps/lane_creeps/creep_radiant_ranged/radiant_ranged.vmdl"    
+    "ModelScale"                "1.15"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepHeal"
+    "Ability1"                  "nature_armor"
+    "Ability2"                  "creep_ability_heal"        
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Void Incarnate (Wave 24) ====================================================================================
 //===========================================================================================================
 "void_incarnate"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/enigma/enigma.vmdl"	
-	"ModelScale" 				"0.9"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"Ability1"					"dark_armor"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"498"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"559"
-			}
-		}
-	}
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/enigma/enigma.vmdl"  
+    "ModelScale"                "0.9"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "Ability1"                  "dark_armor"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "498"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "559"
+            }
+        }
+    }
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Frankenstein (Wave 25) ====================================================================================
 //===========================================================================================================
 "frankenstein"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/pudge/pudge.vmdl"	
-	"ModelScale" 				"0.9"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepUndead"
-	"Ability1"					"earth_armor"
-	"Ability2"					"creep_ability_undead"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"260"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"259"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"47"
-			}
-		}
-	}
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/pudge/pudge.vmdl"    
+    "ModelScale"                "0.9"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepUndead"
+    "Ability1"                  "earth_armor"
+    "Ability2"                  "creep_ability_undead"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "260"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "259"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "47"
+            }
+        }
+    }
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Admiral (Wave 26) ====================================================================================
 //===========================================================================================================
 "admiral"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/kunkka/kunkka.vmdl"	
-	"ModelScale" 				"1"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepFast"
-	"Ability1"					"water_armor"
-	"Ability2"					"creep_ability_fast"	
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"10"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"11"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"14"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"357"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"81"
-			}
-			"Wearable6"
-			{
-				"ItemDef"			"12"
-			}
-		}
-	}			
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/kunkka/kunkka.vmdl"  
+    "ModelScale"                "1"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepFast"
+    "Ability1"                  "water_armor"
+    "Ability2"                  "creep_ability_fast"    
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "10"        
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "11"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "14"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "357"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "81"
+            }
+            "Wearable6"
+            {
+                "ItemDef"           "12"
+            }
+        }
+    }           
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Goblin Shredder (Wave 27) ====================================================================================
 //===========================================================================================================
 "goblin_shredder"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/shredder/shredder.vmdl"	
-	"ModelScale" 				"1"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepMechanical"
-	"Ability1"					"composite_armor"
-	"Ability2"					"creep_ability_mechanical"		
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"386"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"388"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"389"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"390"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"400"
-			}
-			"Wearable6"
-			{
-				"ItemDef"			"401"
-			}
-			"Wearable7"
-			{
-				"ItemDef"			"402"
-			}
-			"Wearable8"
-			{
-				"ItemDef"			"537"
-			}
-		}
-	}
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/shredder/shredder.vmdl"  
+    "ModelScale"                "1"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepMechanical"
+    "Ability1"                  "composite_armor"
+    "Ability2"                  "creep_ability_mechanical"      
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "386"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "388"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "389"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "390"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "400"
+            }
+            "Wearable6"
+            {
+                "ItemDef"           "401"
+            }
+            "Wearable7"
+            {
+                "ItemDef"           "402"
+            }
+            "Wearable8"
+            {
+                "ItemDef"           "537"
+            }
+        }
+    }
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Giant Cobra (Wave 28) ====================================================================================
 //===========================================================================================================
 "giant_cobra"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/venomancer/venomancer.vmdl"	
-	"ModelScale" 				"1"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"Ability1"					"nature_armor"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"291"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"292"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"293"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"294"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"518"
-			}
-		}
-	}
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/venomancer/venomancer.vmdl"  
+    "ModelScale"                "1"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "Ability1"                  "nature_armor"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "291"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "292"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "293"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "294"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "518"
+            }
+        }
+    }
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Ember Spirit (Wave 29) ====================================================================================
 //===========================================================================================================
 "ember_spirit"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/ember_spirit/ember_spirit.vmdl"	
-	"ModelScale" 				"1.1"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"Ability1"					"fire_armor"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"471"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"472"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"473"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"474"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"469"
-			}
-		}
-	}
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/ember_spirit/ember_spirit.vmdl"  
+    "ModelScale"                "1.1"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "Ability1"                  "fire_armor"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "471"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "472"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "473"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "474"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "469"
+            }
+        }
+    }
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Necromancer (Wave 30) ====================================================================================
 //===========================================================================================================
 "necromancer"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/lich/lich.vmdl"	
-	"ModelScale" 				"1.0"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepHeal"
-	"Ability1"					"dark_armor"
-	"Ability2"					"creep_ability_heal"	
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"331"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"332"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"333"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"334"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"506"
-			}
-		}
-	}
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/lich/lich.vmdl"  
+    "ModelScale"                "1.0"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepHeal"
+    "Ability1"                  "dark_armor"
+    "Ability2"                  "creep_ability_heal"    
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "331"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "332"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "333"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "334"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "506"
+            }
+        }
+    }
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Ancient Apparition (Wave 31) ====================================================================================
 //===========================================================================================================
 "ancient_apparition"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/ancient_apparition/ancient_apparition.vmdl"	
-	"ModelScale" 				"1.0"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"Ability1"					"water_armor"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"501"		
-			}
-		}
-	}
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/ancient_apparition/ancient_apparition.vmdl"  
+    "ModelScale"                "1.0"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "Ability1"                  "water_armor"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "501"       
+            }
+        }
+    }
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Radiant Golem (Wave 32) ====================================================================================
 //===========================================================================================================
 "radiant_golem"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/items/courier/vaal_the_animated_constructradiant/vaal_the_animated_constructradiant.vmdl"
-	"ModelScale" 				"1.5"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepMechanical"
-	"Ability1"					"light_armor"
-	"Ability2"					"creep_ability_mechanical"		
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/items/courier/vaal_the_animated_constructradiant/vaal_the_animated_constructradiant.vmdl"
+    "ModelScale"                "1.5"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepMechanical"
+    "Ability1"                  "light_armor"
+    "Ability2"                  "creep_ability_mechanical"      
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Phantom Lancer (Wave 33) ====================================================================================
 //===========================================================================================================
 "phantom_lancer"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/phantom_lancer/phantom_lancer.vmdl"	
-	"ModelScale" 				"1"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepImage"
-	"Ability1"					"composite_armor"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"127"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"128"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"129"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"130"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"4242"
-			}
-		}
-	}
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/phantom_lancer/phantom_lancer.vmdl"  
+    "ModelScale"                "1"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepImage"
+    "Ability1"                  "composite_armor"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "127"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "128"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "129"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "130"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "4242"
+            }
+        }
+    }
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Mountain Porcupine (Wave 34) ====================================================================================
 //===========================================================================================================
 "mountain_porcupine"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/bristleback/bristleback.vmdl"	
-	"ModelScale" 				"1.0"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"Ability1"					"earth_armor"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"436"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"437"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"438"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"439"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"440"
-			}
-			"Wearable6"
-			{
-				"ItemDef"			"520"
-			}
-		}
-	}
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/bristleback/bristleback.vmdl"    
+    "ModelScale"                "1.0"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "Ability1"                  "earth_armor"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "436"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "437"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "438"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "439"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "440"
+            }
+            "Wearable6"
+            {
+                "ItemDef"           "520"
+            }
+        }
+    }
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Elf Ranger (Wave 35) ====================================================================================
 //===========================================================================================================
 "elf_ranger"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/windrunner/windrunner.vmdl"	
-	"ModelScale" 				"1.0"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepFast"
-	"Ability1"					"nature_armor"
-	"Ability2"					"creep_ability_fast"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"21"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"22"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"23"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"24"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"25"
-			}
-		}
-	}	
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/windrunner/windrunner.vmdl"  
+    "ModelScale"                "1.0"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepFast"
+    "Ability1"                  "nature_armor"
+    "Ability2"                  "creep_ability_fast"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "21"        
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "22"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "23"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "24"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "25"
+            }
+        }
+    }   
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Leviathan (Wave 36) ====================================================================================
 //===========================================================================================================
 "leviathan"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/tidehunter/tidehunter.vmdl"	
-	"ModelScale" 				"1.0"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepUndead"
-	"Ability1"					"water_armor"
-	"Ability2"					"creep_ability_undead"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"34"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"35"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"36"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"37"
-			}
-		}
-	}			
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/tidehunter/tidehunter.vmdl"  
+    "ModelScale"                "1.0"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepUndead"
+    "Ability1"                  "water_armor"
+    "Ability2"                  "creep_ability_undead"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "34"        
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "35"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "36"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "37"
+            }
+        }
+    }           
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Dark Stalker (Wave 37) ====================================================================================
 //===========================================================================================================
 "dark_stalker"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/terrorblade/terrorblade_arcana.vmdl"	
-	"ModelScale" 				"1"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepImage"
-	"Ability1"					"dark_armor"
-	"ParticleEffect"			"particles/econs/items/terrorblade/terrorblade_horns_arcana/terrorblade_ambient_horns_arcana.vpcf"		
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"306"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"307"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"476"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"478"
-			}
-		}
-	}
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/terrorblade/terrorblade_arcana.vmdl" 
+    "ModelScale"                "1"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepImage"
+    "Ability1"                  "dark_armor"
+    "ParticleEffect"            "particles/econs/items/terrorblade/terrorblade_horns_arcana/terrorblade_ambient_horns_arcana.vpcf"      
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "306"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "307"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "476"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "478"
+            }
+        }
+    }
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Tauren (Wave 38) ====================================================================================
 //===========================================================================================================
 "tauren"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/earthshaker/earthshaker.vmdl"	
-	"ModelScale" 				"0.9"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepHeal"
-	"Ability1"					"earth_armor"
-	"Ability2"					"creep_ability_heal"	
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"459"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"460"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"461"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"462"
-			}
-		}
-	}	
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/earthshaker/earthshaker.vmdl"    
+    "ModelScale"                "0.9"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepHeal"
+    "Ability1"                  "earth_armor"
+    "Ability2"                  "creep_ability_heal"    
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "459"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "460"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "461"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "462"
+            }
+        }
+    }   
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Sun Chaser (Wave 39) ====================================================================================
 //===========================================================================================================
 "sun_chaser"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/chen/chen.vmdl"	
-	"ModelScale" 				"1.0"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepFast"
-	"Ability1"					"light_armor"
-	"Ability2"					"creep_ability_fast"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"220"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"221"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"222"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"223"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"224"
-			}
-			"Wearable6"
-			{
-				"ItemDef"			"225"
-			}
-			"Wearable7"
-			{
-				"ItemDef"			"521"
-			}
-		}
-	}		
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/chen/chen.vmdl"  
+    "ModelScale"                "1.0"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepFast"
+    "Ability1"                  "light_armor"
+    "Ability2"                  "creep_ability_fast"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "220"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "221"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "222"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "223"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "224"
+            }
+            "Wearable6"
+            {
+                "ItemDef"           "225"
+            }
+            "Wearable7"
+            {
+                "ItemDef"           "521"
+            }
+        }
+    }       
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Rogue Knight (Wave 40) ====================================================================================
 //===========================================================================================================
 "rogue_knight"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/sven/sven.vmdl"	
-	"ModelScale" 				"1"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"Ability1"					"composite_armor"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"16"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"17"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"18"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"19"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"20"
-			}
-		}
-	}	
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/sven/sven.vmdl"  
+    "ModelScale"                "1"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "Ability1"                  "composite_armor"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "16"        
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "17"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "18"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "19"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "20"
+            }
+        }
+    }   
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Inferno Golem (Wave 41) ====================================================================================
 //===========================================================================================================
 "inferno_golem"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/items/warlock/golem/obsidian_golem/obsidian_golem.vmdl"
-	"ModelScale" 				"0.8"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepMechanical"
-	"Ability1"					"fire_armor"
-	"Ability2"					"creep_ability_mechanical"		
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/items/warlock/golem/obsidian_golem/obsidian_golem.vmdl"
+    "ModelScale"                "0.8"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepMechanical"
+    "Ability1"                  "fire_armor"
+    "Ability2"                  "creep_ability_mechanical"      
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Crystal Maiden (Wave 42) ====================================================================================
 //===========================================================================================================
 "crystal_maiden"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/crystal_maiden/crystal_maiden.vmdl"	
-	"ModelScale" 				"1.2"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"Ability1"					"water_armor"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"38"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"39"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"40"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"41"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"20"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"4540"
-			}
-			"Wearable6"
-			{
-				"ItemDef"			"502"
-			}
-		}
-	}	
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/crystal_maiden/crystal_maiden.vmdl"  
+    "ModelScale"                "1.2"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "Ability1"                  "water_armor"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "38"        
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "39"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "40"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "41"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "20"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "4540"
+            }
+            "Wearable6"
+            {
+                "ItemDef"           "502"
+            }
+        }
+    }   
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Immortal (Wave 43) ====================================================================================
 //===========================================================================================================
 "immortal"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/skywrath_mage/skywrath_mage.vmdl"	
-	"ModelScale" 				"0.7"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepUndead"
-	"Ability1"					"light_armor"
-	"Ability2"					"creep_ability_undead"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"420"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"421"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"422"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"423"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"424"
-			}
-			"Wearable6"
-			{
-				"ItemDef"			"425"
-			}
-		}
-	}	
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/skywrath_mage/skywrath_mage.vmdl"    
+    "ModelScale"                "0.7"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepUndead"
+    "Ability1"                  "light_armor"
+    "Ability2"                  "creep_ability_undead"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "420"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "421"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "422"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "423"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "424"
+            }
+            "Wearable6"
+            {
+                "ItemDef"           "425"
+            }
+        }
+    }   
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Shadow Hunter (Wave 44) ====================================================================================
 //===========================================================================================================
 "shadow_hunter"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/faceless_void/faceless_void.vmdl"	
-	"ModelScale" 				"1.0"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"Ability1"					"dark_armor"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"90"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"91"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"92"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"93"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"4264"
-			}
-		}
-	}
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/faceless_void/faceless_void.vmdl"    
+    "ModelScale"                "1.0"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "Ability1"                  "dark_armor"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "90"        
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "91"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "92"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "93"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "4264"
+            }
+        }
+    }
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Gaia's Titan (Wave 45) ====================================================================================
 //===========================================================================================================
 "gaias_titan"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/earth_spirit/earth_spirit.vmdl"	
-	"ModelScale" 				"1.15"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepMechanical"
-	"Ability1"					"nature_armor"
-	"Ability2"					"creep_ability_mechanical"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"479"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"480"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"481"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"482"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"526"
-			}
-		}
-	}
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/earth_spirit/earth_spirit.vmdl"  
+    "ModelScale"                "1.15"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepMechanical"
+    "Ability1"                  "nature_armor"
+    "Ability2"                  "creep_ability_mechanical"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "479"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "480"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "481"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "482"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "526"
+            }
+        }
+    }
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Desert Giant (Wave 46) ====================================================================================
 //===========================================================================================================
 "desert_giant"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/elder_titan/elder_titan.vmdl"	
-	"ModelScale" 				"0.8"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepImage"
-	"Ability1"					"earth_armor"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"426"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"427"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"428"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"429"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"430"
-			}
-		}
-	}
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/elder_titan/elder_titan.vmdl"    
+    "ModelScale"                "0.8"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepImage"
+    "Ability1"                  "earth_armor"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "426"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "427"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "428"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "429"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "430"
+            }
+        }
+    }
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Speed Demon (Wave 47) ====================================================================================
 //===========================================================================================================
 "speed_demon"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/doom/doom.vmdl"	
-	"ModelScale" 				"0.8"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepFast"
-	"Ability1"					"fire_armor"
-	"Ability2"					"creep_ability_fast"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"232"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"233"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"234"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"235"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"236"
-			}
-			"Wearable6"
-			{
-				"ItemDef"			"237"
-			}
-			"Wearable7"
-			{
-				"ItemDef"			"238"
-			}
-		}
-	}			
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/doom/doom.vmdl"  
+    "ModelScale"                "0.8"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepFast"
+    "Ability1"                  "fire_armor"
+    "Ability2"                  "creep_ability_fast"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "232"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "233"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "234"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "235"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "236"
+            }
+            "Wearable6"
+            {
+                "ItemDef"           "237"
+            }
+            "Wearable7"
+            {
+                "ItemDef"           "238"
+            }
+        }
+    }           
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Archmage (Wave 48) ====================================================================================
 //===========================================================================================================
 "archmage"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/invoker/invoker.vmdl"	
-	"ModelScale" 				"0.9"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"Ability1"					"light_armor"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"48"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"89"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"98"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"99"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"100"
-			}
-			"Wearable6"
-			{
-				"ItemDef"			"305"
-			}
-		}
-	}	
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/invoker/invoker.vmdl"    
+    "ModelScale"                "0.9"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "Ability1"                  "light_armor"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "48"        
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "89"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "98"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "99"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "100"
+            }
+            "Wearable6"
+            {
+                "ItemDef"           "305"
+            }
+        }
+    }   
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Forest Guardian (Wave 49) ====================================================================================
 //===========================================================================================================
 "forest_guardian"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/treant_protector/treant_protector.vmdl"	
-	"ModelScale" 				"1.0"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"Ability1"					"nature_armor"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"227"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"228"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"229"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"230"
-			}
-		}
-	}	
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/treant_protector/treant_protector.vmdl"  
+    "ModelScale"                "1.0"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "Ability1"                  "nature_armor"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "227"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "228"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "229"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "230"
+            }
+        }
+    }   
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Poseidon (Wave 50) ====================================================================================
 //===========================================================================================================
 "poseidon"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/razor/razor.vmdl"	
-	"ModelScale" 				"1.0"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepHeal"
-	"Ability1"					"water_armor"
-	"Ability2"					"creep_ability_heal"		
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"340"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"341"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"342"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"343"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"344"
-			}
-			"Wearable6"
-			{
-				"ItemDef"			"513"
-			}
-		}
-	}	
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/razor/razor.vmdl"    
+    "ModelScale"                "1.0"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepHeal"
+    "Ability1"                  "water_armor"
+    "Ability2"                  "creep_ability_heal"        
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "340"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "341"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "342"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "343"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "344"
+            }
+            "Wearable6"
+            {
+                "ItemDef"           "513"
+            }
+        }
+    }   
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Death Knight (Wave 51) ====================================================================================
 //===========================================================================================================
 "death_knight"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/abaddon/abaddon.vmdl"	
-	"ModelScale" 				"1"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepUndead"
-	"Ability1"					"composite_armor"
-	"Ability2"					"creep_ability_undead"		
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"454"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"455"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"456"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"457"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"458"
-			}
-		}
-	}	
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/abaddon/abaddon.vmdl"    
+    "ModelScale"                "1"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepUndead"
+    "Ability1"                  "composite_armor"
+    "Ability2"                  "creep_ability_undead"      
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "454"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "455"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "456"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "457"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "458"
+            }
+        }
+    }   
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Chaos Rider (Wave 52) ====================================================================================
 //===========================================================================================================
 "chaos_rider"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/chaos_knight/chaos_knight.vmdl"
-	"ModelScale" 				"1"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepImage"
-	"Ability1"					"fire_armor"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"181"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"183"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"184"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"185"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"186"
-			}
-		}
-	}	
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/chaos_knight/chaos_knight.vmdl"
+    "ModelScale"                "1"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepImage"
+    "Ability1"                  "fire_armor"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "181"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "183"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "184"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "185"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "186"
+            }
+        }
+    }   
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Dreadlord (Wave 53) ====================================================================================
 //===========================================================================================================
 "dreadlord"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/terrorblade/demon.vmdl"	
-	"ModelScale" 				"1"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepMechanical"
-	"Ability1"					"dark_armor"
-	"Ability2"					"creep_ability_mechanical"		
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/terrorblade/demon.vmdl"  
+    "ModelScale"                "1"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepMechanical"
+    "Ability1"                  "dark_armor"
+    "Ability2"                  "creep_ability_mechanical"      
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Sand King (Wave 54) ====================================================================================
 //===========================================================================================================
 "sand_king"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/heroes/sand_king/sand_king.vmdl"	
-	"ModelScale" 				"0.8"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepHeal"
-	"Ability1"					"earth_armor"
-	"Ability2"					"creep_ability_heal"	
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"			"180"		
-			}
-			"Wearable2"
-			{
-				"ItemDef"			"198"
-			}
-			"Wearable3"
-			{
-				"ItemDef"			"199"
-			}
-			"Wearable4"
-			{
-				"ItemDef"			"200"
-			}
-			"Wearable5"
-			{
-				"ItemDef"			"201"
-			}
-		}
-	}	
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/heroes/sand_king/sand_king.vmdl"    
+    "ModelScale"                "0.8"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepHeal"
+    "Ability1"                  "earth_armor"
+    "Ability2"                  "creep_ability_heal"    
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"           "180"       
+            }
+            "Wearable2"
+            {
+                "ItemDef"           "198"
+            }
+            "Wearable3"
+            {
+                "ItemDef"           "199"
+            }
+            "Wearable4"
+            {
+                "ItemDef"           "200"
+            }
+            "Wearable5"
+            {
+                "ItemDef"           "201"
+            }
+        }
+    }   
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Roshan (Wave 55) ====================================================================================
 //===========================================================================================================
 "roshan"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/creeps/roshan/roshan.vmdl"	
-	"ModelScale" 				"0.6"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"ScriptClass"				"CreepHeal"
-	"Ability1"					"composite_armor"
-	"Ability2"					"creep_ability_heal"		
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/creeps/roshan/roshan.vmdl"  
+    "ModelScale"                "0.6"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "ScriptClass"               "CreepHeal"
+    "Ability1"                  "composite_armor"
+    "Ability2"                  "creep_ability_heal"        
+    //===============================================================
 }
 
 //===========================================================================================================
 // Creep: Icefrog (Wave Boss) ====================================================================================
 //===========================================================================================================
 "icefrog"
-{										
-	//IMPORTANT STUFF================================================
-	"Model"						"models/courier/frog/frog.vmdl"	
-	"ModelScale" 				"1.2"
-	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					""
-	"Ability1"					"composite_armor"
-	//===============================================================
+{                                       
+    //IMPORTANT STUFF================================================
+    "Model"                     "models/courier/frog/frog.vmdl" 
+    "ModelScale"                "1.2"
+    "BaseClass"                 "npc_dota_creature"
+    "SoundSet"                  ""
+    "Ability1"                  "composite_armor"
+    //===============================================================
 }

@@ -1,36 +1,36 @@
 "upgrade"
 {
-	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	"BaseClass"				"item_datadriven"
-	"AbilityManaCost"		"0"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "BaseClass"             "item_datadriven"
+    "AbilityManaCost"       "0"
 
-	"ItemShareability" 		"ITEM_NOT_SHAREABLE"
-	"ItemSellable"			"0"
-	"ItemKillable"			"0"
-	"ItemPurchasable"		"0"
-	"ItemDroppable"			"0"
+    "ItemShareability"      "ITEM_NOT_SHAREABLE"
+    "ItemSellable"          "0"
+    "ItemKillable"          "0"
+    "ItemPurchasable"       "0"
+    "ItemDroppable"         "0"
 
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"TARGET"		"CASTER"
-			"ScriptFile"	"scripts/vscripts/spells.lua"
-			"Function"		"UpgradeTower"
-			//the generator will add which tower this is here
-			//"tower"		"arrow_tower"
-		}
-	}
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "TARGET"        "CASTER"
+            "ScriptFile"    "scripts/vscripts/spells.lua"
+            "Function"      "UpgradeTower"
+            //the generator will add which tower this is here
+            //"tower"       "arrow_tower"
+        }
+    }
 }
 "disabled_upgrade"
 {
-	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"BaseClass"				"item_datadriven"
-	"AbilityManaCost"		"0"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"             "item_datadriven"
+    "AbilityManaCost"       "0"
 
-	"ItemShareability" 		"ITEM_NOT_SHAREABLE"
-	"ItemSellable"			"0"
-	"ItemKillable"			"0"
-	"ItemPurchasable"		"0"
-	"ItemDroppable"			"0"
+    "ItemShareability"      "ITEM_NOT_SHAREABLE"
+    "ItemSellable"          "0"
+    "ItemKillable"          "0"
+    "ItemPurchasable"       "0"
+    "ItemDroppable"         "0"
 }

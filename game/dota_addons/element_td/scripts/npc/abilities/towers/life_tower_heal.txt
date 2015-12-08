@@ -3,42 +3,42 @@
 //============================================================//
 "life_tower_heal"
 {
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"AbilityCooldown"				"0"
-	"MaxLevel"						"1"
-	"AbilityTextureName"			"towers/life_tower_afterlife"
-	"AbilityCastRange"				"25000"
-	"precache"
-	{
-		"particlefile" "particles/generic_gameplay.pcf"
-	}
-	"Modifiers"
-	{
-		"modifier_heal_effect"
-		{
-			"IsHidden"		"1"
-			"Duration"		"1"
-			"OnCreated"
-			{
-				"AttachEffect"
-				{
-					"Target" 			"TARGET"
-					"EffectName"		"particles/generic_gameplay/generic_lifesteal.vpcf"
-					"EffectAttachType"	"follow_origin"
-				}
-			}
-		}
-	}
-	"OnSpellStart"
-	{
-		"ApplyModifier"
-		{
-			"Target" 			"TARGET"
-			"ModifierName"		"modifier_heal_effect"
-		}
-	}
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+    "AbilityCooldown"               "0"
+    "MaxLevel"                      "1"
+    "AbilityTextureName"            "towers/life_tower_afterlife"
+    "AbilityCastRange"              "25000"
+    "precache"
+    {
+        "particlefile" "particles/generic_gameplay.pcf"
+    }
+    "Modifiers"
+    {
+        "modifier_heal_effect"
+        {
+            "IsHidden"      "1"
+            "Duration"      "1"
+            "OnCreated"
+            {
+                "AttachEffect"
+                {
+                    "Target"            "TARGET"
+                    "EffectName"        "particles/generic_gameplay/generic_lifesteal.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                }
+            }
+        }
+    }
+    "OnSpellStart"
+    {
+        "ApplyModifier"
+        {
+            "Target"            "TARGET"
+            "ModifierName"      "modifier_heal_effect"
+        }
+    }
 }
