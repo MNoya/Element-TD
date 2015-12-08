@@ -97,6 +97,7 @@ function SummonElemental(keys)
 	elemental:SetModelScale(scale)
 	elemental:SetForwardVector(Vector(0, -1, 0))
 	elemental:SetCustomHealthLabel(GetEnglishTranslation(keys.Elemental), ElementColors[element][1], ElementColors[element][2], ElementColors[element][3])
+	elemental.level = level
 
 	local particle = Particles[keys.Elemental]
 	if particle then
@@ -136,4 +137,38 @@ function SummonElemental(keys)
 			return 1
 		end
 	})
+end
+
+function AddElementalTrophy(playerID, elementalEntity)
+	local team = PlayerResource:GetTeam(playerID)
+	local unitName = elementalEntity:GetUnitName()
+	local health = elementalEntity:GetMaxHealth()
+	local scale = elementalEntity:GetModelScale()
+	local element = elementalEntity.element
+	local playerData = GetPlayerData(playerID)
+	local summoner = playerData.summoner
+
+	-- Elementals are placed from east to west X, at the same Y of the summoner
+	playerData.elemCount = playerData.elemCount or 0 --Number of elementals killed
+	local count = playerData.elemCount
+
+	-- At 9 we make another row
+	local Y = -100
+	if count >= 9 then 
+		Y = 100
+		count = count - 9
+	end
+
+	local position = summoner:GetAbsOrigin() + Vector(1700,Y,0) - count * Vector(130,0,0)
+	playerData.elemCount = playerData.elemCount + 1
+
+	local elemental = CreateUnitByName(unitName, position, false, nil, nil, team)
+	elemental:SetMaxHealth(health)
+	elemental:SetBaseMaxHealth(health)
+	elemental:SetHealth(health)
+	elemental:SetModelScale(scale*0.75)
+	elemental:SetForwardVector(Vector(0, -1, 0))
+	elemental:SetCustomHealthLabel(GetEnglishTranslation(unitName), ElementColors[element][1], ElementColors[element][2], ElementColors[element][3])
+
+	elemental:AddNewModifier(elemental, nil, "modifier_disabled", {})
 end

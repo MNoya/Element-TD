@@ -72,6 +72,7 @@ function ElementTD:InitGameMode()
 
     -- Lua Modifiers
     LinkLuaModifier("modifier_no_health_bar", "libraries/modifiers/modifier_no_health_bar", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_disabled", "libraries/modifiers/modifier_disabled", LUA_MODIFIER_MOTION_NONE)
 
     -- Register UI Listener   
     CustomGameEventManager:RegisterListener( "next_wave", Dynamic_Wrap(ElementTD, "OnNextWave")) -- wave info
@@ -252,7 +253,6 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:SetHealth(50)
     hero:SetBaseDamageMin(0)
     hero:SetBaseDamageMax(0)
-    hero:SetBaseHealthRegen(-0.03) -- we need to counteract base regen that 1 strength give you. volvo pls.
     hero:SetGold(0, false)
     hero:SetGold(70, true)
     hero:SetModelScale(0.75)
@@ -291,10 +291,11 @@ function ElementTD:EntityKilled(keys)
     if entity.isElemental then
         -- an elemental was killed :O
         Timers:RemoveTimer("MoveElemental"..index)
-        Log:info(playerData.name .. " has killed a " .. entity.element .. " elemental")
+        Log:info(playerData.name .. " has killed a " .. entity.element .. " elemental level ".. entity.level)
         playerData.elementalActive = false
         playerData.elementalUnit = nil
         ModifyElementValue(entity.playerID, entity.element, 1)
+        AddElementalTrophy(entity.playerID, entity)
     else
         local playerID = entity.playerID
         if entity.waveObject then 
