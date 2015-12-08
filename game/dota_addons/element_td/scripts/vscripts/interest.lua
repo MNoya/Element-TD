@@ -29,15 +29,10 @@ function InterestManager:StartInterestTimer()
 					end
 				end
 			end
-
-			FireGameEvent("etd_interest_earned", goldEarnedData)
-			FireGameEvent("etd_start_interest_timer", {duration = INTEREST_INTERVAL})
 			return INTEREST_INTERVAL
 		end
 	})
 	CustomGameEventManager:Send_ServerToAllClients("etd_display_interest", { interval=INTEREST_INTERVAL, rate=INTEREST_RATE, enabled=true } )
-	FireGameEvent("etd_start_interest_timer", {duration = INTEREST_INTERVAL})
-
 end
 
 function InterestManager:IsStarted()

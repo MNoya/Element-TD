@@ -144,7 +144,6 @@ function ElementTD:StartGame()
 
         callback = function()
             Log:info("The game has started!")
-            FireGameEvent("etd_game_started", {})
             
             if not SKIP_VOTING then
                 CustomGameEventManager:Send_ServerToAllClients( "etd_toggle_vote_dialog", {visible = true} )
