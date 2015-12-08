@@ -247,6 +247,7 @@ function ElementTD:InitializeHero(playerID, hero)
     GlobalCasterDummy:ApplyModifierToTarget(hero, "player_movespeed_applier", "modifier_base_movespeed")
     hero:SetAbilityPoints(0)
     hero:SetMaxHealth(50)
+    hero:SetBaseMaxHealth(50)
     hero:SetHealth(50)
     hero:SetBaseDamageMin(0)
     hero:SetBaseDamageMax(0)
@@ -263,7 +264,7 @@ function ElementTD:InitializeHero(playerID, hero)
     playerData.sector = TEAM_TO_SECTOR[hero:GetTeamNumber()]
 
     -- Teach building abilities
-    for i=0,15 do
+    for i=0,5 do
         local ability = hero:GetAbilityByIndex(i)
         if ability then
             ability:SetLevel(1)
