@@ -3,67 +3,67 @@
 //=================================================================================================================
 "haste_tower_wrath"
 {
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"BaseClass" 					"ability_datadriven"
-	"AbilityTextureName"            "troll_warlord_fervor"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "troll_warlord_fervor"
 
-	"Modifiers"
-	{
-		"modifier_wrath_passive"
-		{
-			"Passive"	"1"
-			"IsHidden"	"1"
-			"OnAttackStart"
-			{
-				"RunScript"
-				{
-					"Target"			"POINT"
-					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-					"Function"			"TriggerEvent"
-					"Event"				"OnAttackStart"
-				}
-			}
-		}
+    "Modifiers"
+    {
+        "modifier_wrath_passive"
+        {
+            "Passive"   "1"
+            "IsHidden"  "1"
+            "OnAttackStart"
+            {
+                "RunScript"
+                {
+                    "Target"            "POINT"
+                    "ScriptFile"        "scripts/vscripts/towers/towerevents.lua"
+                    "Function"          "TriggerEvent"
+                    "Event"             "OnAttackStart"
+                }
+            }
+        }
 
-		"modifier_wrath_reset"
-		{
-			"IsDebuff"		"1"
-			"Duration"		"%reset_time"
-		}
+        "modifier_wrath_reset"
+        {
+            "IsDebuff"      "1"
+            "Duration"      "%reset_time"
+        }
 
-		"modifier_wrath"
-		{
-			"TextureName"	"troll_warlord_fervor"
-			"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-			"IsHidden"		"1"
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed"
-			}
-		}
+        "modifier_wrath"
+        {
+            "TextureName"   "troll_warlord_fervor"
+            "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+            "IsHidden"      "1"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%attack_speed"
+            }
+        }
 
-		"modifier_wrath_indicator"
-		{
-			"TextureName"	"troll_warlord_fervor"
-		}
-	}
+        "modifier_wrath_indicator"
+        {
+            "TextureName"   "troll_warlord_fervor"
+        }
+    }
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"reset_time"		"4"
-		}
-		"02"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"attack_speed"		"11"
-		}
-		"03"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"cap"				"17"
-		}
-	}
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "reset_time"        "4"
+        }
+        "02"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "attack_speed"      "11"
+        }
+        "03"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "cap"               "17"
+        }
+    }
 }

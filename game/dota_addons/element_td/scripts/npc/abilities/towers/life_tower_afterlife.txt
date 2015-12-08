@@ -3,46 +3,46 @@
 //============================================================//
 "life_tower_afterlife"
 {
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"MaxLevel"						"3"
-	"AbilityTextureName"			"towers/life_tower_afterlife"
-	"Modifiers"
-	{
-		"modifier_afterlife_passive"
-		{
-			"Passive"		"1"
-			"IsHidden"		"1"
-			"OnKill"
-			{
-				"RunScript"
-				{
-					"Target"			"TARGET"
-					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-					"Function"			"TriggerEvent"
-					"Event"				"CreepKilled"
-				}
-			}
-		}
-	}
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"                      "3"
+    "AbilityTextureName"            "towers/life_tower_afterlife"
+    "Modifiers"
+    {
+        "modifier_afterlife_passive"
+        {
+            "Passive"       "1"
+            "IsHidden"      "1"
+            "OnKill"
+            {
+                "RunScript"
+                {
+                    "Target"            "TARGET"
+                    "ScriptFile"        "scripts/vscripts/towers/towerevents.lua"
+                    "Function"          "TriggerEvent"
+                    "Event"             "CreepKilled"
+                }
+            }
+        }
+    }
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"kills_required"				"3 2 1"
-		}
-		"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"heal_amount"					"1"
-		}
-		"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"points_per_kill"				"1 2 3"
-		}
-	}
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "kills_required"                "3 2 1"
+        }
+        "02"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "heal_amount"                   "1"
+        }
+        "03"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "points_per_kill"               "1 2 3"
+        }
+    }
 }

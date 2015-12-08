@@ -3,17 +3,17 @@
 //============================================================//
 "poison_tower_contamination"
 {
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"MaxLevel"						"1"
-	"AbilityTextureName"			"towers/poison_tower_contamination"
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage_mult"					"300"
-		}
-	}
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"                      "1"
+    "AbilityTextureName"            "towers/poison_tower_contamination"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "damage_mult"                   "300"
+        }
+    }
 }

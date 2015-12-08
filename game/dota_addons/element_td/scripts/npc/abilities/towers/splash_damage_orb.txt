@@ -13,11 +13,11 @@
 //============================================================//
 "splash_damage_orb"
 {
-	// General
-	//-----------------------------
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"MaxLevel"						"1"
-	"AbilityTextureName"			"splash_damage_orb"
+    // General
+    //-----------------------------
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"                      "1"
+    "AbilityTextureName"            "splash_damage_orb"
 }

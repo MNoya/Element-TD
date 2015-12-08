@@ -1,71 +1,71 @@
 "dota_shops"
 {
-	"consumables"
-	{
+    "consumables"
+    {
 
-	}
+    }
 
-	"attributes"
-	{
+    "attributes"
+    {
 
-	}
+    }
 
-	"weapons_armor"
-	{
+    "weapons_armor"
+    {
 
-	}
+    }
 
-	"misc"
-	{
+    "misc"
+    {
 
-	}	
+    }   
 
-	// Level 1 - Green Recipes
-	"basics"
-	{
+    // Level 1 - Green Recipes
+    "basics"
+    {
 
-	}
+    }
 
-	// Level 2 - Blue Recipes
-	"support"
-	{
+    // Level 2 - Blue Recipes
+    "support"
+    {
 
-	}
+    }
 
-	"magics"
-	{
+    "magics"
+    {
 
-	}
+    }
 
-	// Level 3 - Purple Recipes
-	"defense"
-	{
+    // Level 3 - Purple Recipes
+    "defense"
+    {
 
-	}
+    }
 
-	"weapons"
-	{
+    "weapons"
+    {
 
-	}
+    }
 
-	// Level 4 - Orange / Orb / Artifacts
-	"artifacts"
-	{
+    // Level 4 - Orange / Orb / Artifacts
+    "artifacts"
+    {
 
-	}
+    }
 
-	"sideshop1"
-	{
+    "sideshop1"
+    {
 
-	}
+    }
 
-	"sideshop2"
-	{
+    "sideshop2"
+    {
 
-	}
+    }
 
-	"secretshop"
-	{
+    "secretshop"
+    {
 
-	}
+    }
 }

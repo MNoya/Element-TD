@@ -1,66 +1,66 @@
 "sun_chaser"
 {
-	"ArmorPhysical"		"0"
-	"MagicalResistance"		"0"
-	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"		"0"
-	"AttackDamageMax"		"0"
-	"AttackRate"		"0"
-	"AttackAnimationPoint"		"0"
-	"AttackAcquisitionRange"		"0"
-	"AttackRange"		"0"
-	"ProjectileModel"		""
-	"ProjectileSpeed"		"0"
-	"RingRadius"		"70"
-	"HealthBarOffset"		"160"
-	"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
-	"BountyXP"		"0"
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"		"300"
-	"StatusHealthRegen"		"0"
-	"StatusMana"		"0"
-	"StatusManaRegen"		"0"
-	"VisionDaytimeRange"		"1200"
-	"VisionNighttimeRange"		"800"
-	"Model"		"models/heroes/chen/chen.vmdl"
-	"ModelScale"		"1.0"
-	"BaseClass"		"npc_dota_creature"
-	"SoundSet"		""
-	"ScriptClass"		"CreepFast"
-	"Ability1"		"light_armor"
-	"Ability2"		"creep_ability_fast"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"		"220"
-			}
-			"Wearable2"
-			{
-				"ItemDef"		"221"
-			}
-			"Wearable3"
-			{
-				"ItemDef"		"222"
-			}
-			"Wearable4"
-			{
-				"ItemDef"		"223"
-			}
-			"Wearable5"
-			{
-				"ItemDef"		"224"
-			}
-			"Wearable6"
-			{
-				"ItemDef"		"225"
-			}
-			"Wearable7"
-			{
-				"ItemDef"		"521"
-			}
-		}
-	}
+    "ArmorPhysical"     "0"
+    "MagicalResistance"     "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"       "0"
+    "AttackDamageMax"       "0"
+    "AttackRate"        "0"
+    "AttackAnimationPoint"      "0"
+    "AttackAcquisitionRange"        "0"
+    "AttackRange"       "0"
+    "ProjectileModel"       ""
+    "ProjectileSpeed"       "0"
+    "RingRadius"        "70"
+    "HealthBarOffset"       "160"
+    "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
+    "BountyXP"      "0"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"     "300"
+    "StatusHealthRegen"     "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"       "0"
+    "VisionDaytimeRange"        "1200"
+    "VisionNighttimeRange"      "800"
+    "Model"     "models/heroes/chen/chen.vmdl"
+    "ModelScale"        "1.0"
+    "BaseClass"     "npc_dota_creature"
+    "SoundSet"      ""
+    "ScriptClass"       "CreepFast"
+    "Ability1"      "light_armor"
+    "Ability2"      "creep_ability_fast"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"       "220"
+            }
+            "Wearable2"
+            {
+                "ItemDef"       "221"
+            }
+            "Wearable3"
+            {
+                "ItemDef"       "222"
+            }
+            "Wearable4"
+            {
+                "ItemDef"       "223"
+            }
+            "Wearable5"
+            {
+                "ItemDef"       "224"
+            }
+            "Wearable6"
+            {
+                "ItemDef"       "225"
+            }
+            "Wearable7"
+            {
+                "ItemDef"       "521"
+            }
+        }
+    }
 }

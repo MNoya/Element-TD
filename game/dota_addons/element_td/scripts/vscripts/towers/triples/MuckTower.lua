@@ -3,32 +3,32 @@
 -- Buff does not stack. Buff lasts X seconds.
 
 MuckTower = createClass({
-		tower = nil,
-		towerClass = "",
+        tower = nil,
+        towerClass = "",
 
-		constructor = function(self, tower, towerClass)
+        constructor = function(self, tower, towerClass)
             self.tower = tower;
             self.towerClass = towerClass or self.towerClass;
         end
-	},
-	{
-		className = "MuckTower"
-	},
+    },
+    {
+        className = "MuckTower"
+    },
 nil);
 
 function MuckTower:OnAttackLanded(keys)
-	local target = keys.target;
-	local damage = ApplyAttackDamageFromModifiers(self.tower:GetBaseDamageMax(), self.tower);
+    local target = keys.target;
+    local damage = ApplyAttackDamageFromModifiers(self.tower:GetBaseDamageMax(), self.tower);
 
-	DamageEntitiesInArea(target:GetOrigin(), self.halfAOE, self.tower, damage / 2);
-	DamageEntitiesInArea(target:GetOrigin(), self.fullAOE, self.tower, damage / 2);
+    DamageEntitiesInArea(target:GetOrigin(), self.halfAOE, self.tower, damage / 2);
+    DamageEntitiesInArea(target:GetOrigin(), self.fullAOE, self.tower, damage / 2);
 end
 
 function MuckTower:OnCreated()
-	self.ability = AddAbility(self.tower, "muck_tower_sludge_passive", self.tower:GetLevel()); 
-	self.slowAOE = GetAbilitySpecialValue("muck_tower_sludge_passive", "aoe");
-	self.fullAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"));
-	self.halfAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"));
+    self.ability = AddAbility(self.tower, "muck_tower_sludge_passive", self.tower:GetLevel()); 
+    self.slowAOE = GetAbilitySpecialValue("muck_tower_sludge_passive", "aoe");
+    self.fullAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"));
+    self.halfAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"));
 end
 
 RegisterTowerClass(MuckTower, MuckTower.className);

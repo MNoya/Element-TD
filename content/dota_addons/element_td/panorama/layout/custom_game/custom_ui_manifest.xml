@@ -1,25 +1,25 @@
 <root>
-	<script>
-		GameUI.SetRenderBottomInsetOverride( 0 );
+    <script>
+        GameUI.SetRenderBottomInsetOverride( 0 );
 
-		// These lines set up the panorama colors used by each team (for game select/setup, etc)
-		GameUI.CustomUIConfig().team_colors = {}
-		GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_GOODGUYS] = "#3164DA;";
-		GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_BADGUYS] = "#57E19A;";
-		GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_CUSTOM_1] = "#AA00A0;";
-		GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_CUSTOM_2] = "#D3CB14;";
-		GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_CUSTOM_3] = "#D65705;";
-		GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_CUSTOM_4] = "#D26496;";
-		GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_CUSTOM_5] = "#829650;";
-		GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_CUSTOM_6] = "#64BEC8;";
-	</script>
-	<Panel>
-		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/wave_info.xml" />
-		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/interest.xml" />
-		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/images.xml" />
-		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/elements.xml" />
-		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/scripts.xml" />
-		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/notifications.xml" />
-		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/voting.xml" />
-	</Panel>
+        // These lines set up the panorama colors used by each team (for game select/setup, etc)
+        GameUI.CustomUIConfig().team_colors = {}
+        GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_GOODGUYS] = "#3164DA;";
+        GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_BADGUYS] = "#57E19A;";
+        GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_CUSTOM_1] = "#AA00A0;";
+        GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_CUSTOM_2] = "#D3CB14;";
+        GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_CUSTOM_3] = "#D65705;";
+        GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_CUSTOM_4] = "#D26496;";
+        GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_CUSTOM_5] = "#829650;";
+        GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_CUSTOM_6] = "#64BEC8;";
+    </script>
+    <Panel>
+        <CustomUIElement type="Hud"     layoutfile="file://{resources}/layout/custom_game/wave_info.xml" />
+        <CustomUIElement type="Hud"     layoutfile="file://{resources}/layout/custom_game/interest.xml" />
+        <CustomUIElement type="Hud"     layoutfile="file://{resources}/layout/custom_game/images.xml" />
+        <CustomUIElement type="Hud"     layoutfile="file://{resources}/layout/custom_game/elements.xml" />
+        <CustomUIElement type="Hud"     layoutfile="file://{resources}/layout/custom_game/scripts.xml" />
+        <CustomUIElement type="Hud"     layoutfile="file://{resources}/layout/custom_game/notifications.xml" />
+        <CustomUIElement type="Hud"     layoutfile="file://{resources}/layout/custom_game/voting.xml" />
+    </Panel>
 </root>

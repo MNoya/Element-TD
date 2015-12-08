@@ -18,119 +18,119 @@ var startTime = 0;
 var m_QueryUnit = -1;
 
 function Setup() {
-	waveinfo.visible = false;
-	button.visible = false;
-	currentAbility1.abilityname = "";
-	currentAbility2.abilityname = "";
-	nextAbility1.abilityname = "";
-	nextAbility2.abilityname = "";
-	currentAbility1.visible = false;
-	currentAbility2.visible = false;
-	nextAbility1.visible = false;
-	nextAbility2.visible = false;
-	currentWave.text = "";
-	nextWave.text = "";
+    waveinfo.visible = false;
+    button.visible = false;
+    currentAbility1.abilityname = "";
+    currentAbility2.abilityname = "";
+    nextAbility1.abilityname = "";
+    nextAbility2.abilityname = "";
+    currentAbility1.visible = false;
+    currentAbility2.visible = false;
+    nextAbility1.visible = false;
+    nextAbility2.visible = false;
+    currentWave.text = "";
+    nextWave.text = "";
 }
 
 function UpdateWaveInfo( table ) {
-	$.Msg(table.nextWave,table.nextAbility1, table.nextAbility2);
-	currentWave.text = nextWave.text;
-	if (nextAbility1.abilityname != "") {
-		currentAbility1.abilityname = nextAbility1.abilityname;
-		currentAbility1.visible = true;
-	}
-	else
-		currentAbility1.visible = false;
+    $.Msg(table.nextWave,table.nextAbility1, table.nextAbility2);
+    currentWave.text = nextWave.text;
+    if (nextAbility1.abilityname != "") {
+        currentAbility1.abilityname = nextAbility1.abilityname;
+        currentAbility1.visible = true;
+    }
+    else
+        currentAbility1.visible = false;
 
-	if (nextAbility2.abilityname != "") {
-		currentAbility2.abilityname = nextAbility2.abilityname;
-		currentAbility2.visible = true;
-	}
-	else
-		currentAbility2.visible = false;
+    if (nextAbility2.abilityname != "") {
+        currentAbility2.abilityname = nextAbility2.abilityname;
+        currentAbility2.visible = true;
+    }
+    else
+        currentAbility2.visible = false;
 
-	if (table.nextWave != "")
-		nextWave.text = "Wave " + table.nextWave;
-	else
-		nextWave.text = "";
-	if (table.nextAbility1 === undefined || table.nextAbility1 == "") {
-		nextAbility1.abilityname = "";
-		nextAbility1.visible = false;
-	}
-	else{
-		nextAbility1.abilityname = table.nextAbility1;
-		nextAbility1.visible = true;
-	}
+    if (table.nextWave != "")
+        nextWave.text = "Wave " + table.nextWave;
+    else
+        nextWave.text = "";
+    if (table.nextAbility1 === undefined || table.nextAbility1 == "") {
+        nextAbility1.abilityname = "";
+        nextAbility1.visible = false;
+    }
+    else{
+        nextAbility1.abilityname = table.nextAbility1;
+        nextAbility1.visible = true;
+    }
 
-	if (nextAbility1.abilityname != "")
-		nextAbility1.visible = true;
-	if (table.nextAbility2 === undefined || table.nextAbility2 == "") {
-		nextAbility2.abilityname = "";
-		nextAbility2.visible = false;
-	}
-	else {
-		nextAbility2.abilityname = table.nextAbility2;
-		nextAbility2.visible = true;
-	}
+    if (nextAbility1.abilityname != "")
+        nextAbility1.visible = true;
+    if (table.nextAbility2 === undefined || table.nextAbility2 == "") {
+        nextAbility2.abilityname = "";
+        nextAbility2.visible = false;
+    }
+    else {
+        nextAbility2.abilityname = table.nextAbility2;
+        nextAbility2.visible = true;
+    }
 }
 
 function UpdateTimer() {
-	var time = Game.GetGameTime() - startTime;
-	var remaining = Math.ceil(timerDuration - time);
+    var time = Game.GetGameTime() - startTime;
+    var remaining = Math.ceil(timerDuration - time);
 
-	if (remaining >= 0)
-		countdown.text = remaining;
+    if (remaining >= 0)
+        countdown.text = remaining;
 
-	if (time < timerDuration)
-		$.Schedule(TIMER_REFRESH, function(){UpdateTimer();});
-	else {
-		countdown.text = 0;
-		button.visible = false;
-		$.Schedule(1, function(){countdown.text = "";});
-	}
+    if (time < timerDuration)
+        $.Schedule(TIMER_REFRESH, function(){UpdateTimer();});
+    else {
+        countdown.text = 0;
+        button.visible = false;
+        $.Schedule(1, function(){countdown.text = "";});
+    }
 }
 
 function UpdateWaveTimer( table ) {
-	waveinfo.visible = true;
-	button.visible = true;
-	timerDuration = table.time;
-	startTime = Game.GetGameTime();
-	UpdateTimer();
+    waveinfo.visible = true;
+    button.visible = true;
+    timerDuration = table.time;
+    startTime = Game.GetGameTime();
+    UpdateTimer();
 }
 
 function OnStartNextWave( table ) {
-	$.Msg('OnStartNextWave');
-	Game.EmitSound("ui_generic_button_click");
-	button.visible = false;
-	// End timer
-	timerDuration = 0;
-	startTime = Game.GetGameTime();
-	var PlayerID = Players.GetLocalPlayer();
-	GameEvents.SendCustomGameEventToServer( "next_wave", { "PlayerID" : PlayerID } );
+    $.Msg('OnStartNextWave');
+    Game.EmitSound("ui_generic_button_click");
+    button.visible = false;
+    // End timer
+    timerDuration = 0;
+    startTime = Game.GetGameTime();
+    var PlayerID = Players.GetLocalPlayer();
+    GameEvents.SendCustomGameEventToServer( "next_wave", { "PlayerID" : PlayerID } );
 }
 
 function FadeIn() {
-	button.AddClass("FadeIn");
+    button.AddClass("FadeIn");
 }
 
 function FadeOut() {
-	button.RemoveClass("FadeIn");
+    button.RemoveClass("FadeIn");
 }
 
 // Ability tooltip stuff
 function AbilityShowTooltip( ability ) {
-	var abilityButton = $( '#' + ability );
-	var abilityName = abilityButton.abilityname;
-	// If you don't have an entity, you can still show a tooltip that doesn't account for the entity
-	//$.DispatchEvent( "DOTAShowAbilityTooltip", abilityButton, abilityName );
-	
-	// If you have an entity index, this will let the tooltip show the correct level / upgrade information
-	$.DispatchEvent( "DOTAShowAbilityTooltipForEntityIndex", abilityButton, abilityName, m_QueryUnit );
+    var abilityButton = $( '#' + ability );
+    var abilityName = abilityButton.abilityname;
+    // If you don't have an entity, you can still show a tooltip that doesn't account for the entity
+    //$.DispatchEvent( "DOTAShowAbilityTooltip", abilityButton, abilityName );
+    
+    // If you have an entity index, this will let the tooltip show the correct level / upgrade information
+    $.DispatchEvent( "DOTAShowAbilityTooltipForEntityIndex", abilityButton, abilityName, m_QueryUnit );
 }
 
 function AbilityHideTooltip( ability ) {
-	var abilityButton = $( '#' + ability );
-	$.DispatchEvent( "DOTAHideAbilityTooltip", abilityButton );
+    var abilityButton = $( '#' + ability );
+    $.DispatchEvent( "DOTAHideAbilityTooltip", abilityButton );
 }
 
 (function () {

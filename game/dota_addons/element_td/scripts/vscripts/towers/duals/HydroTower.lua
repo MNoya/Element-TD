@@ -1,17 +1,17 @@
 -- Hydro Tower class (Water + Earth)
 -- This tower has a slow and non-homing projectile that does splash damage upon impact. Tower has an ability that makes it attack a point over and over again.
 HydroTower = createClass({
-		tower = nil,
-		towerClass = "",
+        tower = nil,
+        towerClass = "",
 
-		constructor = function(self, tower, towerClass)
+        constructor = function(self, tower, towerClass)
             self.tower = tower;
             self.towerClass = towerClass or self.towerClass;
         end
-	},
-	{
-		className = "HydroTower";
-	},
+    },
+    {
+        className = "HydroTower";
+    },
 nil);
 
 function HydroTower:ChooseTarget(keys)
@@ -43,7 +43,7 @@ function HydroTower:ResetTarget(keys)
 end
 
 function HydroTower:OnAttackStart(keys)
-	self:ShootProjectileAt(keys.target:GetAbsOrigin());
+    self:ShootProjectileAt(keys.target:GetAbsOrigin());
 end
 
 function HydroTower:ShootProjectileAt(targetPos)

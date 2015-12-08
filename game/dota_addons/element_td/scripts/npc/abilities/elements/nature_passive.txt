@@ -3,32 +3,32 @@
 //============================================================//
 "nature_passive"
 {
-	// General
-	//-----------------------------
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"MaxLevel"						"1"
-	"AbilityTextureName"			"elements/nature"
+    // General
+    //-----------------------------
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"                      "1"
+    "AbilityTextureName"            "elements/nature"
 
-	"Modifiers"
-	{
-		"fire_passive"
-		{
-			"IsHidden"		"1"
-			"Passive"		"1"
-			"TextureName"	"elements/nature"
-			"OnAttackLanded"
-			{
-				"RunScript"
-				{
-					"Target"			"TARGET"
-					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-					"Function"			"TriggerEvent"
-					"Event"				"OnAttackLanded"
-					"DamageType"		"nature"
-				}
-			}
-		}
-	}
+    "Modifiers"
+    {
+        "fire_passive"
+        {
+            "IsHidden"      "1"
+            "Passive"       "1"
+            "TextureName"   "elements/nature"
+            "OnAttackLanded"
+            {
+                "RunScript"
+                {
+                    "Target"            "TARGET"
+                    "ScriptFile"        "scripts/vscripts/towers/towerevents.lua"
+                    "Function"          "TriggerEvent"
+                    "Event"             "OnAttackLanded"
+                    "DamageType"        "nature"
+                }
+            }
+        }
+    }
 }

@@ -1,44 +1,44 @@
 //============================================================//
-// Creep Ability: Swarm										  //
+// Creep Ability: Swarm                                       //
 //============================================================//
 "creep_ability_swarm"
 {
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"MaxLevel"						"1"
-	"AbilityTextureName"			"phantom_lancer_juxtapose"
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bounty"				"50"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"health"				"50"
-		}
-	}
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"                      "1"
+    "AbilityTextureName"            "phantom_lancer_juxtapose"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "bounty"                "50"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "health"                "50"
+        }
+    }
 
-	"Modifiers"
-	{
-		"modifier_swarm_passive"
-		{
-			"IsHidden"	"1"
-			"Passive"	"1"
+    "Modifiers"
+    {
+        "modifier_swarm_passive"
+        {
+            "IsHidden"  "1"
+            "Passive"   "1"
 
-			"OnTakeDamage"
-			{
-				"RunScript"
-				{
-					"Target"			"CASTER"
-					"ScriptFile"		"scripts/vscripts/creeps/creepevents.lua"
-					"Function"			"TriggerEvent"
-					"Event"				"OnTakeDamage"
-				}
-			}
-		}
-	}
+            "OnTakeDamage"
+            {
+                "RunScript"
+                {
+                    "Target"            "CASTER"
+                    "ScriptFile"        "scripts/vscripts/creeps/creepevents.lua"
+                    "Function"          "TriggerEvent"
+                    "Event"             "OnTakeDamage"
+                }
+            }
+        }
+    }
 }

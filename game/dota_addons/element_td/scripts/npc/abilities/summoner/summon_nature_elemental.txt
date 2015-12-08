@@ -3,36 +3,36 @@
 //============================================================//
 "summon_nature_elemental"
 {
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"MaxLevel"						"3"
-	"AbilityTextureName"			"elements/nature"
-	"LumberCost"					"1"
-	"Element"						"nature"
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"                      "3"
+    "AbilityTextureName"            "elements/nature"
+    "LumberCost"                    "1"
+    "Element"                       "nature"
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"level"					"1 2 3"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"health"				"300 1500 7500"
-		}
-	}
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "level"                 "1 2 3"
+        }
+        "02"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "health"                "300 1500 7500"
+        }
+    }
 
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"Target"			"CASTER"
-			"ScriptFile"		"scripts/vscripts/summoner.lua"
-			"Function"			"SummonElemental"
-			"Elemental"			"nature_elemental"
-		}
-	}
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "Target"            "CASTER"
+            "ScriptFile"        "scripts/vscripts/summoner.lua"
+            "Function"          "SummonElemental"
+            "Elemental"         "nature_elemental"
+        }
+    }
 }
