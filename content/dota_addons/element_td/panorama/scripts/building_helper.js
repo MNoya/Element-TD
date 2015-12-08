@@ -12,6 +12,7 @@ var altDown = false;
 var modelParticle;
 var gridParticles;
 var rangeOverlay;
+var overlayActive = true;
 var range = 0;
 var numberParticle;
 var builderIndex;
@@ -188,15 +189,39 @@ function StartBuildingHelper( params )
             // Update the particle model
             Particles.SetParticleControl(modelParticle, 0, GamePos)
 
-            // Update the range overlay, a bit below
-            Particles.SetParticleControl(rangeOverlay, 0, GamePos)
+           
+
+            // Destroy the overlay if its not a valid building location
+            if (invalid && overlayActive)
+            {
+                Particles.DestroyParticleEffect(rangeOverlay, true)
+                overlayActive = false
+            }
+            else if (!invalid)
+            {
+                if (!overlayActive)
+                {
+                    var localHeroIndex = Players.GetPlayerHeroEntityIndex(Players.GetLocalPlayer())
+                    rangeOverlay = Particles.CreateParticle("particles/buildinghelper/range_overlay.vpcf", ParticleAttachment_t.PATTACH_ABSORIGIN, localHeroIndex)
+                    Particles.SetParticleControl(rangeOverlay, 0, GamePos)
+                    Particles.SetParticleControl(rangeOverlay, 1, [range,0,0])
+                    Particles.SetParticleControl(rangeOverlay, 2, [255,255,255])
+                    Particles.SetParticleControl(rangeOverlay, 3, [overlay_alpha,0,0])
+                    overlayActive = true
+                }
+                else
+                {
+                    // Update the range overlay, a bit below
+                    Particles.SetParticleControl(rangeOverlay, 0, GamePos)
+                }                
+            }
+                
+        
+    Particles.SetParticleControl(rangeOverlay, 3, [overlay_alpha,0,0])
 
             // Turn the model red if we can't build there
             if (recolor_ghost){
-                if (invalid)
-                    Particles.SetParticleControl(modelParticle, 2, [255,0,0])
-                else
-                    Particles.SetParticleControl(modelParticle, 2, [255,255,255])
+                invalid ? Particles.SetParticleControl(modelParticle, 2, [255,0,0]) : Particles.SetParticleControl(modelParticle, 2, [255,255,255])
             }
         }
 
