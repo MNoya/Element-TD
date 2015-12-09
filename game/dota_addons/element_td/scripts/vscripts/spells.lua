@@ -10,7 +10,7 @@ function UpdatePlayerSpells(playerID)
 		for i=0,15 do
 			local ability = hero:GetAbilityByIndex(i)
 			if ability then
-				ability:SetActivated(MeetsAbilityElementRequirements(spellName, playerID))
+				ability:SetActivated(MeetsAbilityElementRequirements(ability:GetAbilityName(), playerID))
 			end
 		end
 	end

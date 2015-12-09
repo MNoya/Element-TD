@@ -16,7 +16,7 @@ function OnRightButtonPressed()
     if ( IsBuilder( mainSelected ) )
     {
         // Cancel BH
-        SendCancelCommand();
+        if (!pressedShift) SendCancelCommand();
     }
 
     return false;

@@ -15,11 +15,11 @@
 
     "UnitName"                      "fire_tower"
     "OverrideBuildingGhost"         "npc_dota_hero_lina"
-    "Cost"                          "175"
+    "AbilityGoldCost"               "175"
 
     "Requirements"
     {
-        "dark"    "1"
+        "fire"    "1"
     }
     
     "OnSpellStart"

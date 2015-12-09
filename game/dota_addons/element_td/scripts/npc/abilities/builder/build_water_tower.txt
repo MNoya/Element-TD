@@ -15,11 +15,11 @@
 
     "UnitName"                      "water_tower"
     "OverrideBuildingGhost"         "npc_dota_hero_morphling"
-    "Cost"                          "175"
+    "AbilityGoldCost"               "175"
 
     "Requirements"
     {
-        "dark"    "1"
+        "water"    "1"
     }
     
     "OnSpellStart"

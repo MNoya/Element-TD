@@ -89,7 +89,7 @@ function StartBuildingHelper( params )
     }
 
     if (state == 'active')
-    {   
+    {
         $.Schedule(1/60, StartBuildingHelper);
 
         // Get all the creature entities on the screen
@@ -104,7 +104,7 @@ function StartBuildingHelper( params )
         entityGrid = []
         for (var i = 0; i < entities.length; i++)
         {
-            if (!Entities.IsAlive(entities[i])) continue
+            if (!Entities.IsAlive(entities[i]) || Entities.IsOutOfGame(entities[i])) continue
             var entPos = Entities.GetAbsOrigin( entities[i] )
             var squares = GetConstructionSize(entities[i])
 
@@ -348,9 +348,6 @@ function SnapToGrid32(coord) {
 function IsBlocked(position) {
     var x = WorldToGridPosX(position[0]) + Root.squareX/2
     var y = WorldToGridPosY(position[1]) + Root.squareY/2
-
-    $.Msg(x, y)
-    $.Msg(Root.GridNav)
     
     return position[2] < 380 || Root.GridNav[x][y] == BLOCKED || IsEntityGridBlocked(x,y)
 }
