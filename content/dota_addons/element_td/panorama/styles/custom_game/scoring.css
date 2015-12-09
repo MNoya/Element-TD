@@ -1,0 +1,60 @@
+.BaseHud
+{
+    width: 100%;
+    height: 100%;
+}
+
+.ScoringNotifications
+{
+    width: 100%;
+    height: 100%;
+    flow-children: down;
+}
+
+.NotificationLine
+{
+    flow-children: right;
+    horizontal-align: left;
+    vertical-align: middle;
+    animation-name: scalein;
+    animation-duration: .2s;
+    animation-timing-function: ease-in-out;
+}
+
+#ScoringNotifications
+{
+    flow-children: down;
+    horizontal-align: right;
+    vertical-align: top;
+    width: 345px;
+    opacity: 1;
+    margin-top: 160px;
+    visibility: visible;
+    border: 0px solid blue;
+}
+
+.NotificationMessage
+{
+    color: white;
+    vertical-align: center;
+    horizontal-align: left;
+    font-family: Tahoma;
+    text-shadow: 1px 1px 4px 3.0 #121212;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+@keyframes 'scalein' {
+  from {
+    opacity:0;
+    transform: scaleX(.75) scaleY(.75);
+  }
+
+  to {
+    opacity:1;
+    transform: scaleX(1) scaleY(1);
+  }
+}

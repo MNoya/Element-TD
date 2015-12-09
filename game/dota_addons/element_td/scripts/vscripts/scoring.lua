@@ -29,57 +29,76 @@ function ScoringObject:UpdateScore( const )
 
 	if ( const == SCORING_WAVE_CLEAR ) then
 		scoreTable = self:GetWaveCleared()
-		table.insert(processed, 'Wave ' .. playerData.completedWaves .. ' cleared!' )
+		table.insert(processed, {'Wave ' .. playerData.completedWaves .. ' cleared!', '#FFF0F5'} )
 	elseif ( const == SCORING_WAVE_LOST ) then
 		scoreTable = self:GetWaveLost()
-		table.insert(processed, 'Game over! Lost on wave ' .. playerData.completedWaves + 1 )
+		table.insert(processed, {'Game over! Lost on wave ' .. playerData.completedWaves + 1, '#FFF0F5'} )
 	elseif ( const == SCORING_GAME_CLEAR ) then
 		scoreTable = self:GetGameCleared()
-		table.insert(processed, 'Game cleared! Your score ' .. self.totalScore )
+		table.insert(processed, {'Game cleared! Your score ' .. self.totalScore, '#FFF0F5'} )
 	else
 		return false
 	end
 
 	-- Process Score Table keeping ordering below
 	if scoreTable['clearBonus'] then
-		table.insert(processed, 'Wave ' .. playerData.completedWaves .. ' clear bonus: ' .. scoreTable['clearBonus'] )
+		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Wave ' .. playerData.completedWaves .. ' clear bonus: ' .. scoreTable['clearBonus'], '#00FFFF'} )
 	end
 	if scoreTable['cleanBonus'] then
 		if scoreTable['cleanBonus'] ~= 0 then
-			table.insert(processed, 'Clean bonus: ' .. GetPctString(scoreTable['cleanBonus']) )
+			table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Clean bonus: ' .. GetPctString(scoreTable['cleanBonus']), '#00FF00'} )
 		else
-			table.insert(processed, playerData.waveObject.leaks .. ' Lives lost' )
+			table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;'..playerData.waveObject.leaks .. ' Lives lost', '#FF0000'} )
 		end
 	end
 	if scoreTable['speedBonus'] then
-		table.insert(processed, 'Speed bonus: ' .. GetPctString(scoreTable['speedBonus']) )
+		local speedColor = '#FFFF00'
+		if scoreTable['speedBonus'] < 0 then
+			speedColor = '#FF0000'
+		end
+		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Speed bonus: ' .. GetPctString(scoreTable['speedBonus']), speedColor} )
 	end
 	if scoreTable['cleanWaves'] then
-		table.insert(processed, 'Clean waves: ' .. scoreTable['cleanWaves'] )
+		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Clean waves: ' .. scoreTable['cleanWaves'], '#00FFFF'})
 	end
 	if scoreTable['under30'] then
-		table.insert(processed, 'Under 30 waves: ' .. scoreTable['under30'] )
+		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Under 30 waves: ' .. scoreTable['under30'], '#FFFF00'} )
 	end
 	if scoreTable['networthBonus'] and EXPRESS_MODE then
-		table.insert(processed, 'Networth bonus: '.. GetPctString(scoreTable['networthBonus']) )
+		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Networth bonus: '.. GetPctString(scoreTable['networthBonus']), '#00FFFF'} )
 	end
 	if scoreTable['bossBonus'] and not EXPRESS_MODE then
-		table.insert(processed, 'Boss bonus: '.. GetPctString(scoreTable['bossBonus']) )
+		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Boss bonus: '.. GetPctString(scoreTable['bossBonus']), '#00FFFF' })
 	end
 	if scoreTable['difficultyBonus'] then
-		table.insert(processed, GetPlayerDifficulty( self.playerID ).difficultyName .. ' difficulty: '.. GetPctString(scoreTable['difficultyBonus']) )
+		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;'..GetPlayerDifficulty( self.playerID ).difficultyName .. ' difficulty: '.. GetPctString(scoreTable['difficultyBonus']), '#00FF00' } )
 	end
 	if scoreTable['totalScore'] then
-		table.insert(processed, 'Total score: ' .. scoreTable['totalScore'] )
+		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Total score: ' .. scoreTable['totalScore'], '#FF8C00'})
 		self.totalScore = self.totalScore + scoreTable['totalScore']		
 	end
-	PrintTable(processed)
+	--PrintTable(processed)
 	self:ShowScore(processed)
 	return true
 end
 
 function ScoringObject:ShowScore( table )
+	local delay = 0.0
+	for i,v in pairs(table) do
+		Timers:CreateTimer(delay, function()
+			if i == 1 then
+				self:Display({text=v[1], style={color=v[2], ['font-size']="22px"}, duration=10.0-(0.2*(i-1))})
+			else
+				self:Display({text=v[1], style={color=v[2]}, duration=10.0-(0.2*(i-1))})
+			end
+		end)
+		delay = delay + 0.2
+	end
+end
 
+function ScoringObject:Display( table )
+	local player = PlayerResource:GetPlayer(self.playerID)
+	CustomGameEventManager:Send_ServerToPlayer(player, "scoring_notification", {text=table.text, duration=table.duration, class=table.class, style=table.style, continue=table.continue} )
 end
 
 function GetPctString( number )
