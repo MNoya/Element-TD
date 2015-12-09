@@ -134,56 +134,66 @@ function GameSettings:SetElementOrder(order)
 
 	--same random, all players get the same element order
 	if order == "SameRandom" then
-		usedElements = {["water"] = 0, ["fire"] = 0, ["earth"] = 0, ["nature"] = 0, ["dark"] = 0, ["light"] = 0}
-		local elementsOrder = {}
-
-		if EXPRESS_MODE then
-			for i = 3, 27, 3 do
-				local element = getRandomElement(i)
-				print("[" .. i .. "] " .. element)
-				elementsOrder[i] = element
-			end
-		else
-			for i = 5, 50, 5 do
-				local element = getRandomElement(i)
-				print("[" .. i .. "] " .. element)
-				elementsOrder[i] = element
-			end
-		end
+		local elementsOrder = getRandomElementOrder()
 
 		for _, player in pairs(players) do    
 			print("Order for " .. GetPlayerName(player:GetPlayerID()))
 			PrintTable(elementsOrder)
             GetPlayerData(player:GetPlayerID()).elementsOrder = elementsOrder
+            if elementsOrder[0] then
+            	for _,v in pairs(elementsOrder[0]) do
+            		BuyElement(player:GetPlayerID(), v)
+            	end
+        	end
         end
 
 	--all random, all players their own element order
 	elseif order == "AllRandom" then
 		for _, player in pairs(players) do    
-			usedElements = {["water"] = 0, ["fire"] = 0, ["earth"] = 0, ["nature"] = 0, ["dark"] = 0, ["light"] = 0}
-			local elementsOrder = {}
-
-			if EXPRESS_MODE then
-				for i = 3, 27, 3 do
-					local element = getRandomElement(i)
-					--print("[" .. i .. "] " .. element)
-					elementsOrder[i] = element
-				end
-			else
-				for i = 5, 50, 5 do
-					local element = getRandomElement(i)
-					--print("[" .. i .. "] " .. element)
-					elementsOrder[i] = element
-				end
-			end
+			local elementsOrder = getRandomElementOrder()
 
 			print("Order for " .. GetPlayerName(player:GetPlayerID()))
 			PrintTable(elementsOrder)
             GetPlayerData(player:GetPlayerID()).elementsOrder = elementsOrder
+            if elementsOrder[0] then
+            	for _,v in pairs(elementsOrder[0]) do
+            		BuyElement(player:GetPlayerID(), v)
+            	end
+        	end
         end
 	end
 end
 
+
+function getRandomElementOrder()
+	usedElements = {["water"] = 0, ["fire"] = 0, ["earth"] = 0, ["nature"] = 0, ["dark"] = 0, ["light"] = 0}
+	local elementsOrder = {}
+	local startingElements = {}
+	local lumber = GameSettings.length.Lumber
+
+	if EXPRESS_MODE then
+		elementsOrder[0] = startingElements
+		for i = 0, lumber - 1 do
+			startingElements[i] = getRandomElement(0)
+		end
+		for i = 3, 27, 3 do
+			local element = getRandomElement(i)
+			print("[" .. i .. "] " .. element)
+			elementsOrder[i] = element
+		end
+	else
+		elementsOrder[0] = startingElements
+		for i = 0, lumber - 1 do
+			startingElements[i] = getRandomElement(0)
+		end
+		for i = 5, 50, 5 do
+			local element = getRandomElement(i)
+			print("[" .. i .. "] " .. element)
+			elementsOrder[i] = element
+		end
+	end
+	return elementsOrder
+end
 ----------------------------------------------------
 ----------------------------------------------------
 ----------------------------------------------------
