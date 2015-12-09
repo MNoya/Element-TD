@@ -89,7 +89,7 @@ function StartBuildingHelper( params )
     }
 
     if (state == 'active')
-    {   
+    {
         $.Schedule(1/60, StartBuildingHelper);
 
         // Get all the creature entities on the screen
@@ -104,7 +104,7 @@ function StartBuildingHelper( params )
         entityGrid = []
         for (var i = 0; i < entities.length; i++)
         {
-            if (!Entities.IsAlive(entities[i])) continue
+            if (!Entities.IsAlive(entities[i]) || Entities.IsOutOfGame(entities[i])) continue
             var entPos = Entities.GetAbsOrigin( entities[i] )
             var squares = GetConstructionSize(entities[i])
 

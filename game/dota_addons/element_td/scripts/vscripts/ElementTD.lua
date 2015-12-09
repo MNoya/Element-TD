@@ -359,9 +359,14 @@ function ElementTD:OnPlayerSelectedEntities( event )
 
     -- This is for Building Helper to know which is the currently active builder
     local mainSelected = GetMainSelectedEntity(pID)
+    local player = BuildingHelper:GetPlayerTable(pID)
     if IsValidEntity(mainSelected) and IsBuilder(mainSelected) then
-        local player = BuildingHelper:GetPlayerTable(pID)
         player.activeBuilder = mainSelected
+    else
+        if player.activeBuilder then
+            -- Clear queue when swapping to a non-builder
+            BuildingHelper:ClearQueue(player.activeBuilder)
+        end
     end
 end
 
