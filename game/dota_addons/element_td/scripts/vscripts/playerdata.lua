@@ -9,6 +9,7 @@ function CreateDataForPlayer(playerID)
 	PlayerData[playerID] = {}
 	local data = PlayerData[playerID]
 	data["health"] = 50
+	data["scoreObject"] = {}
 	data["sector"] = -1
 	data["page"] = 1
 	data["lumber"] = 0

@@ -141,16 +141,22 @@ function SpawnWaveForPlayer(playerID, wave)
         InterestManager:StartInterestTimer()
     end
 
-    waveObj:SetOnCompletedCallback(function() 
+    waveObj:SetOnCompletedCallback(function()
+        if playerData.health == 0 then
+            return
+        end
         print("Player has completed a wave")
         playerData.completedWaves = playerData.completedWaves + 1
         playerData.nextWave = playerData.nextWave + 1
 
         if playerData.completedWaves >= WAVE_COUNT then
+            playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
             Log:info("Player ["..playerID.."] has completed the game.")
             ElementTD:CheckGameEnd()
             return
         end
+
+        playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR )
 
         if playerData.nextWave > CURRENT_WAVE then
             for _, ply in pairs(players) do
@@ -230,13 +236,14 @@ function CreateMoveTimerForCreep(creep, sector)
         })
         if (creep:GetOrigin() - destination):Length2D() <= 150 then
             local playerID = creep.playerID
-            local playerData = PlayerData[playerID]
+            local playerData = GetPlayerData(playerID)
 
             local hero = PlayerResource:GetPlayer(playerID):GetAssignedHero()
             
             if hero:GetHealth() == 1 then
                 playerData.health = 0
                 hero:ForceKill(false)
+                playerData.scoreObject:UpdateScore( SCORING_WAVE_LOST )
                 ElementTD:EndGameForPlayer(hero:GetPlayerID()) -- End the game for the dead player
             elseif hero:IsAlive() then
                 playerData.health = playerData.health - 1

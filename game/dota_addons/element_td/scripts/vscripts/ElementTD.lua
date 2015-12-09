@@ -264,6 +264,9 @@ function ElementTD:InitializeHero(playerID, hero)
 
     playerData.sector = TEAM_TO_SECTOR[hero:GetTeamNumber()]
 
+    SCORING_OBJECTS[playerID] = ScoringObject(playerID)
+    playerData.scoreObject = SCORING_OBJECTS[playerID]
+
     -- Teach building abilities
     for i=0,5 do
         local ability = hero:GetAbilityByIndex(i)

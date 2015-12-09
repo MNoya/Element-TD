@@ -93,6 +93,7 @@ local requires =
     "playerdata",
     "developer",
     "ElementTD",
+    "scoring",
 }
 
 for _, r in pairs(requires) do
