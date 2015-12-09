@@ -383,6 +383,49 @@ function ElementTD:FilterExecuteOrder( filterTable )
 
     local queue = tobool(filterTable["queue"])
 
+    -- Skip Prevents order loops
+    local unit = EntIndexToHScript(units["0"])
+    if unit and unit.skip then
+        unit.skip = false
+        return true
+    end
+
+    ------------------------------------------------
+    --           Ability Multi Order              --
+    ------------------------------------------------
+    if abilityIndex and abilityIndex > 0 then
+        print(abilityIndex)
+        local ability = EntIndexToHScript(abilityIndex)
+        local abilityName = ability:GetAbilityName()
+
+        if GetAbilityKeyValue(abilityName, "AbilityMultiOrder") then
+            local entityList = GetSelectedEntities(unit:GetPlayerOwnerID())
+            if not entityList then return true end
+            for _,entityIndex in pairs(entityList) do
+                local caster = EntIndexToHScript(entityIndex)
+                -- Make sure the original caster unit doesn't cast twice
+                if caster and caster ~= unit and caster:HasAbility(abilityName) then
+                    local abil = caster:FindAbilityByName(abilityName)
+                    if abil and abil:IsFullyCastable() then
+
+                        caster.skip = true
+                        if order_type == DOTA_UNIT_ORDER_CAST_POSITION then
+                            ExecuteOrderFromTable({ UnitIndex = entityIndex, OrderType = order_type, Position = point, AbilityIndex = abil:GetEntityIndex(), Queue = queue})
+
+                        elseif order_type == DOTA_UNIT_ORDER_CAST_TARGET then
+                            ExecuteOrderFromTable({ UnitIndex = entityIndex, OrderType = order_type, TargetIndex = targetIndex, AbilityIndex = abil:GetEntityIndex(), Queue = queue})
+
+                        else --order_type == DOTA_UNIT_ORDER_CAST_NO_TARGET or order_type == DOTA_UNIT_ORDER_CAST_TOGGLE or order_type == DOTA_UNIT_ORDER_CAST_TOGGLE_AUTO
+                            ExecuteOrderFromTable({ UnitIndex = entityIndex, OrderType = order_type, AbilityIndex = abil:GetEntityIndex(), Queue = queue})
+                        end
+                    end
+                end
+            end
+        end
+        return true
+    end
+
+
      ------------------------------------------------
     --              ClearQueue Order              --
     ------------------------------------------------
