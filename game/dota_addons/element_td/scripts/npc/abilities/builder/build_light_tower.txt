@@ -15,7 +15,7 @@
 
     "UnitName"                      "light_tower"
     "OverrideBuildingGhost"         "npc_dota_hero_keeper_of_the_light"
-    "Cost"                          "175"
+    "AbilityGoldCost"               "175"
 
     "Requirements"
     {

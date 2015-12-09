@@ -15,7 +15,7 @@
 
     "UnitName"                      "dark_tower"
     "OverrideBuildingGhost"         "npc_dota_hero_nevermore"
-    "Cost"                          "175"
+    "AbilityGoldCost"               "175"
 
     "Requirements"
     {

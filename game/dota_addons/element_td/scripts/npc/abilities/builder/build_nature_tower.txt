@@ -15,7 +15,7 @@
 
     "UnitName"                      "nature_tower"
     "OverrideBuildingGhost"         "npc_dota_hero_furion"
-    "Cost"                          "175"
+    "AbilityGoldCost"               "175"
 
     "Requirements"
     {

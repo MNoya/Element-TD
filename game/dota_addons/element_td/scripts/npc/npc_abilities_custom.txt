@@ -245,7 +245,8 @@
 	
 	    "UnitName"                      "dark_tower"
 	    "OverrideBuildingGhost"         "npc_dota_hero_nevermore"
-	    "Cost"                          "175"
+	    //"AbilityGoldCost"               "175"
+	    "Cost"               "175"
 	
 	    "Requirements"
 	    {
@@ -278,7 +279,7 @@
 	
 	    "UnitName"                      "earth_tower"
 	    "OverrideBuildingGhost"         "npc_dota_hero_tiny"
-	    "Cost"                          "175"
+	    "AbilityGoldCost"               "175"
 	
 	    "Requirements"
 	    {
@@ -311,7 +312,7 @@
 	
 	    "UnitName"                      "fire_tower"
 	    "OverrideBuildingGhost"         "npc_dota_hero_lina"
-	    "Cost"                          "175"
+	    "AbilityGoldCost"               "175"
 	
 	    "Requirements"
 	    {
@@ -344,7 +345,7 @@
 	
 	    "UnitName"                      "light_tower"
 	    "OverrideBuildingGhost"         "npc_dota_hero_keeper_of_the_light"
-	    "Cost"                          "175"
+	    "AbilityGoldCost"               "175"
 	
 	    "Requirements"
 	    {
@@ -377,7 +378,7 @@
 	
 	    "UnitName"                      "nature_tower"
 	    "OverrideBuildingGhost"         "npc_dota_hero_furion"
-	    "Cost"                          "175"
+	    "AbilityGoldCost"               "175"
 	
 	    "Requirements"
 	    {
@@ -410,7 +411,7 @@
 	
 	    "UnitName"                      "water_tower"
 	    "OverrideBuildingGhost"         "npc_dota_hero_morphling"
-	    "Cost"                          "175"
+	    "AbilityGoldCost"               "175"
 	
 	    "Requirements"
 	    {
