@@ -149,14 +149,14 @@ function SpawnWaveForPlayer(playerID, wave)
         playerData.completedWaves = playerData.completedWaves + 1
         playerData.nextWave = playerData.nextWave + 1
 
+        playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR )
+
         if playerData.completedWaves >= WAVE_COUNT then
             playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
             Log:info("Player ["..playerID.."] has completed the game.")
             ElementTD:CheckGameEnd()
             return
         end
-
-        playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR )
 
         if playerData.nextWave > CURRENT_WAVE then
             for _, ply in pairs(players) do
@@ -247,6 +247,7 @@ function CreateMoveTimerForCreep(creep, sector)
                 ElementTD:EndGameForPlayer(hero:GetPlayerID()) -- End the game for the dead player
             elseif hero:IsAlive() then
                 playerData.health = playerData.health - 1
+                playerData.waveObject.leaks = playerData.waveObject.leaks + 1
                 hero:SetHealth(hero:GetHealth() - 1)
             end
 

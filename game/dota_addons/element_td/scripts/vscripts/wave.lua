@@ -8,7 +8,7 @@ Wave = createClass({
 			self.creeps = {}
 			self.startTime = 0
 			self.endTime = 0
-			self.healthWave = 0
+			self.leaks = 0
 			self.callback = nil
 		end
 	},
@@ -54,7 +54,7 @@ function Wave:SpawnWave()
 	local sector = playerData.sector + 1
 
 	self.startTime = GameRules:GetGameTime() + 0.5
-	self.healthWave = playerData.health
+	self.leaks = 0
 
 	self.spawnTimer = Timers:CreateTimer("SpawnWave"..self.waveNumber..self.playerID, {
 		endTime = 0.5,

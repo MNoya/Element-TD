@@ -13,6 +13,8 @@ ScoringObject = createClass({
 			self.totalScore = 0
 			self.cleanWaves = 0
 			self.under30 = 0
+			self.cleanWavesStreak = 0
+			self.under30Streak = 0
 		end
 	},
 {}, nil)
@@ -46,8 +48,7 @@ function ScoringObject:UpdateScore( const )
 		if scoreTable['cleanBonus'] ~= 0 then
 			table.insert(processed, 'Clean bonus: ' .. GetPctString(scoreTable['cleanBonus']) )
 		else
-			local livesDiff = playerData.waveObject.healthWave - playerData.health 
-			table.insert(processed, livesDiff .. ' Lives lost' )
+			table.insert(processed, playerData.waveObject.leaks .. ' Lives lost' )
 		end
 	end
 	if scoreTable['speedBonus'] then
@@ -59,21 +60,26 @@ function ScoringObject:UpdateScore( const )
 	if scoreTable['under30'] then
 		table.insert(processed, 'Under 30 waves: ' .. scoreTable['under30'] )
 	end
-	if scoreTable['networthBonus'] then
-		table.insert(processed, 'Networth bonus: '.. scoreTable['networthBonus'] )
+	if scoreTable['networthBonus'] and EXPRESS_MODE then
+		table.insert(processed, 'Networth bonus: '.. GetPctString(scoreTable['networthBonus']) )
 	end
-	if scoreTable['bossBonus'] then
+	if scoreTable['bossBonus'] and not EXPRESS_MODE then
 		table.insert(processed, 'Boss bonus: '.. GetPctString(scoreTable['bossBonus']) )
 	end
 	if scoreTable['difficultyBonus'] then
-		table.insert(processed, GetPlayerDifficulty( self.playerID ) .. ' difficulty: '.. GetPctString(scoreTable['difficultyBonus']) )
+		table.insert(processed, GetPlayerDifficulty( self.playerID ).difficultyName .. ' difficulty: '.. GetPctString(scoreTable['difficultyBonus']) )
 	end
 	if scoreTable['totalScore'] then
 		table.insert(processed, 'Total score: ' .. scoreTable['totalScore'] )
 		self.totalScore = self.totalScore + scoreTable['totalScore']		
 	end
 	PrintTable(processed)
+	self:ShowScore(processed)
 	return true
+end
+
+function ScoringObject:ShowScore( table )
+
 end
 
 function GetPctString( number )
@@ -89,7 +95,7 @@ end
 function ScoringObject:GetWaveCleared()
 	local playerData = GetPlayerData( self.playerID )
 	local waveClearScore = self:GetWaveClearBonus( playerData.completedWaves )
-	local cleanBonus = self:GetCleanBonus( playerData.waveObject.healthWave <= playerData.health )
+	local cleanBonus = self:GetCleanBonus( playerData.waveObject.leaks == 0 )
 	local time = playerData.waveObject.endTime - playerData.waveObject.startTime
 	local speedBonus = self:GetSpeedBonus( time )
 	local totalScore = math.ceil(waveClearScore * (cleanBonus + speedBonus + 1))
@@ -111,9 +117,9 @@ end
 function ScoringObject:GetGameCleared()
 	local score = self.totalScore
 	local totalScore = 0
-	local networthBonus = 1
+	local networthBonus = 0
 	local difficultyBonus = 1
-	local bossBonus = 1
+	local bossBonus = 0
 
 	if EXPRESS_MODE then
 		networthBonus = self:GetNetworthBonus()
@@ -132,7 +138,10 @@ function ScoringObject:GetCleanBonus( bool )
 	local bonus = 0
 	if bool then
 		self.cleanWaves = self.cleanWaves + 1
-		bonus = 0.2
+		bonus = 0.2 + (self.cleanWavesStreak * 0.05)
+		self.cleanWavesStreak = self.cleanWavesStreak + 1
+	else -- End streak
+		self.cleanWavesStreak = 0
 	end
 	return bonus
 end
@@ -141,10 +150,14 @@ end
 function ScoringObject:GetSpeedBonus( time )
 	local bonus = 1
 	if time > 30 then
-		bonus = bonus - ( time - 30 )*0.01 
+		bonus = bonus - ( time - 30 )*0.01
+		self.under30Streak = 0
 	elseif time < 30 then
 		self.under30 = self.under30 + 1
-		bonus = bonus + ( 30 - time )*0.02
+		bonus = bonus + ( 30 - time )*0.02 + (self.under30Streak * 0.01)
+		self.under30Streak = self.under30Streak + 1
+	elseif time == 30 then -- End Streak
+		self.under30Streak = 0
 	end
 	return bonus - 1
 end
@@ -162,14 +175,14 @@ end
 --					Insane=127770
 function ScoringObject:GetNetworthBonus()
 	local playerData = GetPlayerData( self.playerID )
-	local difficulty = GetPlayerDifficulty( self.playerID )
-	local playerNetworth = 0
+	local difficulty = GetPlayerDifficulty( self.playerID ).difficultyName
+	local playerNetworth = ElementTD.vPlayerIDToHero[self.playerID]:GetGold()
 	local baseWorth = 88170
 	for i,v in pairs( playerData.towers ) do
 		local tower = EntIndexToHScript( i )
 		if tower:GetHealth() == tower:GetMaxHealth() then
 			for i=0,16 do
-				local ability = tower:GetAbilityByIndex( 0 )
+				local ability = tower:GetAbilityByIndex( i )
 				if ability then
 					local name = ability:GetAbilityName()
 					if ( name == "sell_tower_100" ) then
@@ -203,7 +216,7 @@ end
 -- Normal (1x), Hard (1.5x), Very Hard (2x), Insane (2.5x)
 function ScoringObject:GetDifficultyBonus()
 	local bonus = 0 -- Normal
-	local difficulty = GetPlayerDifficulty( self.playerID )
+	local difficulty = GetPlayerDifficulty( self.playerID ).difficultyName
 	if ( difficulty == "Hard" ) then
 		bonus = 0.5
 	elseif ( difficulty == "VeryHard" ) then
