@@ -217,7 +217,7 @@ function AddElementalTrophy(playerID, elementalEntity)
 		count = count - 9
 	end
 
-	local position = summoner:GetAbsOrigin() + Vector(1700,Y,0) - count * Vector(130,0,0)
+	local position = summoner:GetAbsOrigin() + Vector(750,Y,0) + count * Vector(120,0,0)
 	playerData.elemCount = playerData.elemCount + 1
 
 	local elemental = CreateUnitByName(unitName, position, false, nil, nil, team)

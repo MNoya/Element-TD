@@ -268,6 +268,10 @@ function RegisterGNV(msg){
     var squareY = msg.squareY
     $.Msg("Registering GNV ["+squareX+","+squareY+"]")
 
+    // Handle odd sizes
+    if (squareX % 2) squareX+=1
+    if (squareY % 2) squareX+=1
+
     var arr = [];
     // Thanks to BMD for this method
     for (var i=0; i<msg.gnv.length; i++){
@@ -344,8 +348,11 @@ function SnapToGrid32(coord) {
 function IsBlocked(position) {
     var x = WorldToGridPosX(position[0]) + Root.squareX/2
     var y = WorldToGridPosY(position[1]) + Root.squareY/2
+
+    $.Msg(x, y)
+    $.Msg(Root.GridNav)
     
-    return (position[2] < 380 || Root.GridNav[x][y] == BLOCKED) || IsEntityGridBlocked(x,y)
+    return position[2] < 380 || Root.GridNav[x][y] == BLOCKED || IsEntityGridBlocked(x,y)
 }
 
 function IsEntityGridBlocked(x,y) {
