@@ -19,7 +19,7 @@
 
     "Requirements"
     {
-        "dark"    "1"
+        "light"    "1"
     }
     
     "OnSpellStart"

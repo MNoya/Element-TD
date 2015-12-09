@@ -19,7 +19,7 @@
 
     "Requirements"
     {
-        "dark"    "1"
+        "water"    "1"
     }
     
     "OnSpellStart"

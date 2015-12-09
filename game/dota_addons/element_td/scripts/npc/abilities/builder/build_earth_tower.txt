@@ -19,7 +19,7 @@
 
     "Requirements"
     {
-        "dark"    "1"
+        "earth"    "1"
     }
     
     "OnSpellStart"

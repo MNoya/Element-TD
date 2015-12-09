@@ -19,7 +19,7 @@
 
     "Requirements"
     {
-        "dark"    "1"
+        "nature"    "1"
     }
     
     "OnSpellStart"

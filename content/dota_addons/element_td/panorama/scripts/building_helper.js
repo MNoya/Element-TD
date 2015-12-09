@@ -348,9 +348,6 @@ function SnapToGrid32(coord) {
 function IsBlocked(position) {
     var x = WorldToGridPosX(position[0]) + Root.squareX/2
     var y = WorldToGridPosY(position[1]) + Root.squareY/2
-
-    $.Msg(x, y)
-    $.Msg(Root.GridNav)
     
     return position[2] < 380 || Root.GridNav[x][y] == BLOCKED || IsEntityGridBlocked(x,y)
 }
