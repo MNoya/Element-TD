@@ -3570,96 +3570,96 @@
 	//============================================================//
 	"sell_tower_0"
 	{
-		// General
-		//-----------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel"						"1"
-		"AbilityTextureName"			"sell_tower_clone"
+	    // General
+	    //-----------------------------
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	    "MaxLevel"                      "1"
+	    "AbilityTextureName"            "sell_tower_clone"
 	
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"Target"			"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
-				"Function"			"SellTowerCast"
-				"SellAmount"		"0"
-			}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"sell_amount_tooltip"	"0"
-			}
-		}
+	    "AbilityMultiOrder"             "1"
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "spells.lua"
+	            "Function"          "SellTowerCast"
+	            "SellAmount"        "0"
+	        }
+	    }
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "sell_amount_tooltip"   "0"
+	        }
+	    }
 	}
 	//============================================================//
 	// Sell Tower 100%
 	//============================================================//
 	"sell_tower_100"
 	{
-		// General
-		//-----------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel"						"1"
-		"AbilityTextureName"			"sell_tower"
+	    // General
+	    //-----------------------------
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	    "MaxLevel"                      "1"
+	    "AbilityTextureName"            "sell_tower"
 	
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"Target"			"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
-				"Function"			"SellTowerCast"
-				"SellAmount"		"1"
-			}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"sell_amount_tooltip"	"100"
-			}
-		}
+	    "AbilityMultiOrder"             "1"
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "spells.lua"
+	            "Function"          "SellTowerCast"
+	            "SellAmount"        "1"
+	        }
+	    }
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "sell_amount_tooltip"   "100"
+	        }
+	    }
 	}
 	//============================================================//
 	// Sell Tower 75%
 	//============================================================//
 	"sell_tower_75"
 	{
-		// General
-		//-----------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel"						"1"
-		"AbilityTextureName"			"sell_tower"
+	    // General
+	    //-----------------------------
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	    "MaxLevel"                      "1"
+	    "AbilityTextureName"            "sell_tower"
 	
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"Target"			"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
-				"Function"			"SellTowerCast"
-				"SellAmount"		"0.75"
-			}
-		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"sell_amount_tooltip"	"75"
-			}
-		}
+	    "AbilityMultiOrder"             "1"
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "spells.lua"
+	            "Function"          "SellTowerCast"
+	            "SellAmount"        "0.75"
+	        }
+	    }
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "sell_amount_tooltip"   "75"
+	        }
+	    }
 	}
 	//============================================================================================//
 	//============================================================================================//
