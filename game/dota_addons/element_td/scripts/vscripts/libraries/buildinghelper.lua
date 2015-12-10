@@ -276,7 +276,7 @@ function BuildingHelper:AddBuilding(keys)
 
     -- Make a model dummy to pass it to panorama
     local mgd = CreateUnitByName(unitName, builder:GetAbsOrigin(), false, nil, nil, builder:GetTeam())
-    mgd:AddNoDraw()
+    mgd:AddEffects(EF_NODRAW)
     mgd:AddNewModifier(mgd, nil, "modifier_out_of_world", {})
     playerTable.activeBuildingTable.mgd = mgd
 
@@ -570,6 +570,7 @@ function BuildingHelper:StartBuilding( keys )
     local playerID = builder:GetMainControllingPlayer()
     local work = builder.work
     local callbacks = work.callbacks
+    local building = work.entity -- The building entity
     local unitName = work.name
     local location = work.location
     local player = PlayerResource:GetPlayer(playerID)
@@ -617,8 +618,10 @@ function BuildingHelper:StartBuilding( keys )
         end
     end
 
-    -- Spawn the building
-    local building = CreateUnitByName(unitName, location, false, playersHero, player, builder:GetTeam())
+    -- Initialize the building --CreateUnitByName(unitName, location, false, playersHero, player, builder:GetTeam())
+    building:RemoveModifierByName("modifier_out_of_world")
+    building:SetAbsOrigin(location)
+    building:RemoveEffects(EF_NODRAW)
     building:SetControllableByPlayer(playerID, true)
     building.blockers = gridNavBlockers
     building.construction_size = construction_size
@@ -745,6 +748,7 @@ function BuildingHelper:StartBuilding( keys )
         local fHPAdjustment = 0
 
         building.updateHealthTimer = Timers:CreateTimer(function()
+            building:RemoveEffects(EF_NODRAW)
             if IsValidEntity(building) and building:IsAlive() then
                 local timesUp = GameRules:GetGameTime() >= fTimeBuildingCompleted
                 if not timesUp then
@@ -1079,6 +1083,7 @@ end
       * Spawns a square of point_simple_obstruction entities at a location
 ]]--
 function BuildingHelper:BlockPSO(size, location)
+    if size == 0 then return {} end
     local pos = Vector(location.x, location.y, location.z)
     BuildingHelper:SnapToGrid(size, pos)
 
@@ -1210,7 +1215,7 @@ function BuildingHelper:AddToQueue( builder, location, bQueued )
     local playerID = builder:GetMainControllingPlayer()
     local player = PlayerResource:GetPlayer(playerID)
     local playerTable = BuildingHelper:GetPlayerTable(playerID)
-    local building = playerTable.activeBuilding
+    local buildingName = playerTable.activeBuilding
     local buildingTable = playerTable.activeBuildingTable
     local fMaxScale = buildingTable:GetVal("MaxScale", "float")
     local size = buildingTable:GetVal("ConstructionSize", "number")
@@ -1239,19 +1244,19 @@ function BuildingHelper:AddToQueue( builder, location, bQueued )
 
     -- npc_dota_creature doesn't render cosmetics on the particle ghost, use hero names instead
     local overrideGhost = buildingTable:GetVal("OverrideBuildingGhost", "string")
-    local unitName = building
+    local unitName = buildingName
     if overrideGhost then
-        building = overrideGhost
+        unitName = overrideGhost
     end
 
-    -- Create model ghost dummy out of the map, then make pretty particles
-    local mgd = CreateUnitByName(building, location, false, nil, nil, builder:GetTeam())
-    mgd:AddNoDraw()
-    mgd:AddNewModifier(mgd, nil, "modifier_out_of_world", {})
+    -- Create the building entity that will be used to start construction and project the queue particles
+    local entity = CreateUnitByName(unitName, location, false, nil, nil, builder:GetTeam())
+    entity:AddEffects(EF_NODRAW)
+    entity:AddNewModifier(entity, nil, "modifier_out_of_world", {})
 
-    local modelParticle = ParticleManager:CreateParticleForPlayer("particles/buildinghelper/ghost_model.vpcf", PATTACH_ABSORIGIN, mgd, player)
+    local modelParticle = ParticleManager:CreateParticleForPlayer("particles/buildinghelper/ghost_model.vpcf", PATTACH_ABSORIGIN, entity, player)
     ParticleManager:SetParticleControl(modelParticle, 0, location)
-    ParticleManager:SetParticleControlEnt(modelParticle, 1, mgd, 1, "follow_origin", mgd:GetAbsOrigin(), true) -- Model attach          
+    ParticleManager:SetParticleControlEnt(modelParticle, 1, entity, 1, "attach_hitloc", entity:GetAbsOrigin(), true) -- Model attach          
     ParticleManager:SetParticleControl(modelParticle, 3, Vector(MODEL_ALPHA,0,0)) -- Alpha
     ParticleManager:SetParticleControl(modelParticle, 4, Vector(fMaxScale,0,0)) -- Scale
 
@@ -1260,16 +1265,16 @@ function BuildingHelper:AddToQueue( builder, location, bQueued )
     local offset = buildingTable:GetVal("PedestalOffset", "float") or 0
     if pedestal then
         local prop = SpawnEntityFromTableSynchronous("prop_dynamic", {model = pedestal})
-        local scale = buildingTable:GetVal("PedestalModelScale", "float") or mgd:GetModelScale()
+        local scale = buildingTable:GetVal("PedestalModelScale", "float") or entity:GetModelScale()
         local offset_location = Vector(location.x, location.y, location.z + offset)
         prop:SetModelScale(scale)
         prop:SetAbsOrigin(offset_location)
-        mgd.prop = prop -- Store the pedestal prop
+        entity.prop = prop -- Store the pedestal prop
 
         prop:AddEffects(EF_NODRAW)
         prop.pedestalParticle = ParticleManager:CreateParticleForPlayer("particles/buildinghelper/ghost_model.vpcf", PATTACH_ABSORIGIN, prop, player)
         ParticleManager:SetParticleControl(prop.pedestalParticle, 0, offset_location)
-        ParticleManager:SetParticleControlEnt(prop.pedestalParticle, 1, prop, 1, "follow_origin", prop:GetAbsOrigin(), true) -- Model attach          
+        ParticleManager:SetParticleControlEnt(prop.pedestalParticle, 1, prop, 1, "attach_hitloc", prop:GetAbsOrigin(), true) -- Model attach          
         ParticleManager:SetParticleControl(prop.pedestalParticle, 3, Vector(MODEL_ALPHA,0,0)) -- Alpha
         ParticleManager:SetParticleControl(prop.pedestalParticle, 4, Vector(scale,0,0)) -- Scale
 
@@ -1279,12 +1284,10 @@ function BuildingHelper:AddToQueue( builder, location, bQueued )
 
     -- Adjust the Model Orientation
     local yaw = buildingTable:GetVal("ModelRotation", "float")
-    mgd:SetAngles(0, -yaw, 0)
+    entity:SetAngles(0, -yaw, 0)
     
     local color = RECOLOR_BUILDING_PLACED and Vector(0,255,0) or Vector(255,255,255)
     ParticleManager:SetParticleControl(modelParticle, 2, color) -- Color
-
-    building = unitName
 
     -- If the ability wasn't queued, override the building queue
     if not bQueued then
@@ -1292,7 +1295,7 @@ function BuildingHelper:AddToQueue( builder, location, bQueued )
     end
 
     -- Add this to the builder queue
-    table.insert(builder.buildingQueue, {["location"] = location, ["name"] = building, ["buildingTable"] = buildingTable, ["particleIndex"] = modelParticle, ["entity"] = mgd, ["callbacks"] = callbacks})
+    table.insert(builder.buildingQueue, {["location"] = location, ["name"] = buildingName, ["buildingTable"] = buildingTable, ["particleIndex"] = modelParticle, ["entity"] = entity, ["callbacks"] = callbacks})
 
     -- If the builder doesn't have a current work, start the queue
     -- Extra check for builder-inside behaviour, those abilities are always queued

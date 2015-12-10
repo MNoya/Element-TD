@@ -111,6 +111,22 @@ function Build( event )
         -- Remove invulnerability on npc_dota_building baseclass
         unit:RemoveModifierByName("modifier_invulnerable")
 
+        -- Cast angles and various building-creature properties
+        --AddAbility(tower, "ability_building")
+
+    end)
+
+    -- A building finished construction
+    event:OnConstructionCompleted(function(unit)
+        BuildingHelper:print("Completed construction of " .. building_name .. " " .. unit:GetEntityIndex())
+        
+        -- Play construction complete sound
+        -- Give the unit their original attack capability
+        unit:SetAttackCapability(unit.original_attack)
+
+        -- Building abilities
+        unit:AddNewModifier(unit, nil, "modifier_no_health_bar", {})
+        
         local playerData = GetPlayerData(playerID)
         local gold = hero:GetGold()
         local tower = unit
@@ -146,26 +162,6 @@ function Build( event )
             AddAbility(tower, "splash_damage_orb")
         end
 
-        -- Cast angles and various building-creature properties
-        --AddAbility(tower, "ability_building")
-
-    end)
-
-    -- A building finished construction
-    event:OnConstructionCompleted(function(unit)
-        BuildingHelper:print("Completed construction of " .. building_name .. " " .. unit:GetEntityIndex())
-        
-        -- Play construction complete sound
-
-        -- Give the unit their original attack capability
-        unit:SetAttackCapability(unit.original_attack)
-
-        -- Let the building cast abilities
-        unit:RemoveModifierByName("modifier_construction")
-
-        -- Building ability
-        unit:AddNewModifier(unit, nil, "modifier_no_health_bar", {})
-
         -- Add the tower to the player data
         local playerData = GetPlayerData(playerID)
         playerData.towers[unit:GetEntityIndex()] = building_name
@@ -176,11 +172,6 @@ function Build( event )
     -- i.e. it won't fire multiple times unnecessarily.
     event:OnBelowHalfHealth(function(unit)
         BuildingHelper:print("" .. unit:GetUnitName() .. " is below half health.")
-                
-        local item = CreateItem("item_apply_modifiers", nil, nil)
-        item:ApplyDataDrivenModifier(unit, unit, "modifier_onfire", {})
-        item = nil
-
     end)
 
     event:OnAboveHalfHealth(function(unit)
