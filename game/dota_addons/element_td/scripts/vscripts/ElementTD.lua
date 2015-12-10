@@ -287,6 +287,10 @@ function ElementTD:EntityKilled(keys)
     local entity = EntIndexToHScript(index)
     local playerData = GetPlayerData(entity.playerID)
 
+    if playerData and playerData.health == 0 then
+        return
+    end
+
     if entity.scriptObject and entity.scriptObject.OnDeath then
         entity.scriptObject:OnDeath()
     end
@@ -384,6 +388,10 @@ function ElementTD:FilterExecuteOrder( filterTable )
     local queue = tobool(filterTable["queue"])
 
     -- Skip Prevents order loops
+    if not units["0"] then
+        return true
+    end
+
     local unit = EntIndexToHScript(units["0"])
     if unit and unit.skip then
         unit.skip = false
