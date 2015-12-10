@@ -16,6 +16,7 @@ local requires =
     "mechanics/selection",
     "mechanics/messages",
     "mechanics/keyvalues",
+    "mechanics/items",
 
     -- utils
     "util/util",

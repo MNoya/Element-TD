@@ -10,8 +10,6 @@
     "MaxLevel"                      "1"
     "AbilityTextureName"            "sell_tower"
 
-    "AbilityMultiOrder"             "1"
-
     "OnSpellStart"
     {
         "RunScript"

@@ -394,35 +394,44 @@ function ElementTD:FilterExecuteOrder( filterTable )
     --           Ability Multi Order              --
     ------------------------------------------------
     if abilityIndex and abilityIndex > 0 then
-        print(abilityIndex)
         local ability = EntIndexToHScript(abilityIndex)
         local abilityName = ability:GetAbilityName()
+        local entityList = GetSelectedEntities(unit:GetPlayerOwnerID())
+        if not entityList then return true end
 
-        if GetAbilityKeyValue(abilityName, "AbilityMultiOrder") then
-            local entityList = GetSelectedEntities(unit:GetPlayerOwnerID())
-            if not entityList then return true end
+        if string.match(abilityName, "sell_tower_") then
+            
             for _,entityIndex in pairs(entityList) do
                 local caster = EntIndexToHScript(entityIndex)
                 -- Make sure the original caster unit doesn't cast twice
                 if caster and caster ~= unit and caster:HasAbility(abilityName) then
                     local abil = caster:FindAbilityByName(abilityName)
-                    if abil and abil:IsFullyCastable() then
+                    if abil and abil:IsFullyCastable() then --CHECK GOLD
 
+                        -- Only NO_TARGET
                         caster.skip = true
-                        if order_type == DOTA_UNIT_ORDER_CAST_POSITION then
-                            ExecuteOrderFromTable({ UnitIndex = entityIndex, OrderType = order_type, Position = point, AbilityIndex = abil:GetEntityIndex(), Queue = queue})
-
-                        elseif order_type == DOTA_UNIT_ORDER_CAST_TARGET then
-                            ExecuteOrderFromTable({ UnitIndex = entityIndex, OrderType = order_type, TargetIndex = targetIndex, AbilityIndex = abil:GetEntityIndex(), Queue = queue})
-
-                        else --order_type == DOTA_UNIT_ORDER_CAST_NO_TARGET or order_type == DOTA_UNIT_ORDER_CAST_TOGGLE or order_type == DOTA_UNIT_ORDER_CAST_TOGGLE_AUTO
-                            ExecuteOrderFromTable({ UnitIndex = entityIndex, OrderType = order_type, AbilityIndex = abil:GetEntityIndex(), Queue = queue})
-                        end
+                        ExecuteOrderFromTable({ UnitIndex = entityIndex, OrderType = order_type, AbilityIndex = abil:GetEntityIndex(), Queue = queue})
                     end
                 end
             end
+
+        elseif string.match(abilityName, "item_upgrade_to_") then
+
+             for _,entityIndex in pairs(entityList) do
+                local caster = EntIndexToHScript(entityIndex)
+                -- Make sure the original caster unit doesn't cast twice
+                if caster and caster ~= unit and caster:HasItemInInventory(abilityName) then
+                    local item = GetItemByName(caster, abilityName)
+                    if item and item:IsFullyCastable() then
+
+                        -- Only NO_TARGET
+                        caster.skip = true
+                        ExecuteOrderFromTable({ UnitIndex = entityIndex, OrderType = order_type, AbilityIndex = item:GetEntityIndex(), Queue = queue})
+                    end
+                end
+            end
+
         end
-        return true
     end
 
 

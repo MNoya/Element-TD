@@ -427,58 +427,6 @@
 	    }
 	}
 	//============================================================//
-	// Next Page
-	//============================================================//
-	"next_page"
-	{
-		// General
-		//-----------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel"						"1"
-		"AbilityTextureName"			"next_page"
-		"AbilityCooldown"				"0"
-	
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"Target"			"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
-				"Function"			"NextPageCast"
-			}
-		}
-	}
-	//============================================================================================//
-	//============================================================================================//
-	//============================================================================================//
-	
-	//============================================================//
-	// Previous Page 
-	//============================================================//
-	"prev_page"
-	{
-		// General
-		//-----------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel"						"1"
-		"AbilityTextureName"			"prev_page"
-		"AbilityCooldown"				"0"
-	
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"Target"			"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
-				"Function"			"PrevPageCast"
-			}
-		}
-	}
-	//============================================================//
 	// draws range indicator around towers
 	//============================================================//
 	"show_tower_range"
@@ -3577,8 +3525,6 @@
 	    "MaxLevel"                      "1"
 	    "AbilityTextureName"            "sell_tower_clone"
 	
-	    "AbilityMultiOrder"             "1"
-	
 	    "OnSpellStart"
 	    {
 	        "RunScript"
@@ -3609,8 +3555,6 @@
 	    "MaxLevel"                      "1"
 	    "AbilityTextureName"            "sell_tower"
 	
-	    "AbilityMultiOrder"             "1"
-	
 	    "OnSpellStart"
 	    {
 	        "RunScript"
@@ -3640,8 +3584,6 @@
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 	    "MaxLevel"                      "1"
 	    "AbilityTextureName"            "sell_tower"
-	
-	    "AbilityMultiOrder"             "1"
 	
 	    "OnSpellStart"
 	    {
