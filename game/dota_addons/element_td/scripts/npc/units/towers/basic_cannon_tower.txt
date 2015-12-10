@@ -2,9 +2,11 @@
 {
     // Visual
     //-----------------------------
-    "Model"                     "models/props_structures/tower_dragon_white.vmdl"
+    "Model"                     "models/tower_white_top.vmdl"
     "ModelScale"                "0.575"
-    "ModelRotation"             "180"
+    "ModelRotation"             "90"
+    "PedestalModel"             "models/tower_white_pedestal.vmdl"
+    "DestructionModel"          "particles/radiant_fx/radiant_tower002_destruction.vpcf"
     "ProjectileModel"           "particles/units/heroes/hero_jakiro/jakiro_base_attack_fire.vpcf"
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"

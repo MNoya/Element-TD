@@ -19,6 +19,8 @@ var builderIndex;
 var entityGrid;
 var cutTrees = [];
 var BLOCKED = 2;
+var propParticle;
+var offsetZ;
 var Root = $.GetContextPanel()
 var constructionSize = CustomNetTables.GetAllTableValues( "construction_size" )
 
@@ -46,6 +48,8 @@ function StartBuildingHelper( params )
         builderIndex = params.builderIndex;
         var scale = params.scale;
         var entindex = params.entindex;
+        var propScale = params.propScale;
+        offsetZ = params.offsetZ;
         
         // If we chose to not recolor the ghost model, set it white
         var ghost_color = [0, 255, 0]
@@ -58,6 +62,9 @@ function StartBuildingHelper( params )
 
         if (modelParticle !== undefined) {
             Particles.DestroyParticleEffect(modelParticle, true)
+        }
+        if (propParticle !== undefined) {
+            Particles.DestroyParticleEffect(propParticle, true)
         }
         if (gridParticles !== undefined) {
             for (var i in gridParticles) {
@@ -85,6 +92,16 @@ function StartBuildingHelper( params )
             gridParticles.push(particle)
         }
 
+        // Prop particle attachment
+        if (params.propIndex !== undefined)
+        {
+            propParticle = Particles.CreateParticle("particles/buildinghelper/ghost_model.vpcf", ParticleAttachment_t.PATTACH_ABSORIGIN, localHeroIndex);
+            Particles.SetParticleControlEnt(propParticle, 1, params.propIndex, ParticleAttachment_t.PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", Entities.GetAbsOrigin(params.propIndex), true)
+            Particles.SetParticleControl(propParticle, 2, ghost_color)
+            Particles.SetParticleControl(propParticle, 3, [model_alpha,0,0])
+            Particles.SetParticleControl(propParticle, 4, [propScale,0,0])
+        }
+            
         overlayActive = false;     
     }
 
@@ -183,6 +200,7 @@ function StartBuildingHelper( params )
 
             // Update the particle model
             Particles.SetParticleControl(modelParticle, 0, GamePos)
+            if (propParticle !== undefined) Particles.SetParticleControl(propParticle, 0, [GamePos[0],GamePos[1],GamePos[2]+offsetZ])
 
             // Destroy the overlay if its not a valid building location
             if (invalid)
@@ -212,6 +230,8 @@ function StartBuildingHelper( params )
             // Turn the model red if we can't build there
             if (recolor_ghost){
                 invalid ? Particles.SetParticleControl(modelParticle, 2, [255,0,0]) : Particles.SetParticleControl(modelParticle, 2, [255,255,255])
+                if (propParticle !== undefined)
+                    invalid ? Particles.SetParticleControl(propParticle, 2, [255,0,0]) : Particles.SetParticleControl(propParticle, 2, [255,255,255])
             }
         }
 
@@ -227,6 +247,9 @@ function EndBuildingHelper()
     state = 'disabled'
     if (modelParticle !== undefined){
          Particles.DestroyParticleEffect(modelParticle, true)
+    }
+    if (propParticle !== undefined){
+         Particles.DestroyParticleEffect(propParticle, true)
     }
     if (rangeOverlay !== undefined){
         Particles.DestroyParticleEffect(rangeOverlay, true)

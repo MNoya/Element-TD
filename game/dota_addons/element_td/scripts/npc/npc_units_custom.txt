@@ -3278,6 +3278,8 @@
 	    //-----------------------------
 	    "Model"                     "models/props_structures/tower_good.vmdl"
 	    "ModelScale"                "0.575"
+	    "PedestalModel"             "models/props_structures/radiant_tower_base002.vmdl"
+	    "PedestalModelScale"        "0.7"
 	    "ProjectileModel"           "particles/units/heroes/hero_mirana/mirana_base_attack.vpcf"  
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
@@ -3341,9 +3343,11 @@
 	{
 	    // Visual
 	    //-----------------------------
-	    "Model"                     "models/props_structures/tower_dragon_white.vmdl"
+	    "Model"                     "models/tower_white_top.vmdl"
 	    "ModelScale"                "0.575"
-	    "ModelRotation"             "180"
+	    "ModelRotation"             "90"
+	    "PedestalModel"             "models/tower_white_pedestal.vmdl"
+	    "DestructionModel"          "particles/radiant_fx/radiant_tower002_destruction.vpcf"
 	    "ProjectileModel"           "particles/units/heroes/hero_jakiro/jakiro_base_attack_fire.vpcf"
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
@@ -3667,6 +3671,10 @@
 	    //-----------------------------
 	    "Model"                     "models/heroes/shadow_fiend/shadow_fiend.vmdl"
 	    "ModelScale"                "0.8"
+	    "ModelRotation"             "90"
+	    "PedestalModel"             "models/heroes/phantom_assassin/arcana_pedestal.vmdl"
+	    "PedestalModelScale"        "0.75"
+	    "PedestalOffset"            "30"
 	    "ProjectileModel"           "particles/units/heroes/hero_shadow_demon/shadow_demon_base_attack.vpcf"
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
@@ -3969,6 +3977,10 @@
 	    //-----------------------------
 	    "Model"                     "models/heroes/tiny_01/tiny_01.vmdl"
 	    "ModelScale"                "0.8"
+	    "ModelRotation"             "90"
+	    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_radiant.vmdl"
+	    "PedestalModelScale"        "0.7"
+	    "PedestalOffset"            "20"
 	    "ProjectileModel"           "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
@@ -4725,6 +4737,10 @@
 	    //-----------------------------
 	    "Model"                     "models/heroes/lina/lina.vmdl"
 	    "ModelScale"                "0.8"
+	    "ModelRotation"             "90"
+	    "PedestalModel"             "models/heroes/shadow_fiend/pedestal_sf.vmdl"
+	    "PedestalModelScale"        "1"
+	    "PedestalOffset"            "20"
 	    "ProjectileModel"           "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
@@ -7626,6 +7642,9 @@
 	    //-----------------------------
 	    "Model"                     "models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"
 	    "ModelScale"                "0.8"
+	    "ModelRotation"             "90"
+	    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_ti5.vmdl"
+	    "PedestalOffset"            "20"
 	    "ProjectileModel"           "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
@@ -8305,6 +8324,10 @@
 	    //-----------------------------
 	    "Model"                     "models/heroes/furion/furion.vmdl"
 	    "ModelScale"                "0.8"
+	    "ModelRotation"             "90"
+	    "PedestalModel"             "models/heroes/pedestal/pedestal_effigy_jade.vmdl"
+	    "PedestalModelScale"        "0.7"
+	    "PedestalOffset"            "20"
 	    "ProjectileModel"           "particles/units/heroes/hero_furion/furion_base_attack.vpcf"
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
@@ -11227,6 +11250,10 @@
 	    //-----------------------------
 	    "Model"                     "models/heroes/morphling/morphling.vmdl"
 	    "ModelScale"                "0.8"
+	    "ModelRotation"             "90"
+	    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_frost_radiant.vmdl"
+	    "PedestalModelScale"        "0.7"
+	    "PedestalOffset"            "20"
 	    "ProjectileModel"           "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf" 
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"

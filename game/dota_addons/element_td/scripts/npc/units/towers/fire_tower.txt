@@ -4,6 +4,10 @@
     //-----------------------------
     "Model"                     "models/heroes/lina/lina.vmdl"
     "ModelScale"                "0.8"
+    "ModelRotation"             "90"
+    "PedestalModel"             "models/heroes/shadow_fiend/pedestal_sf.vmdl"
+    "PedestalModelScale"        "1"
+    "PedestalOffset"            "20"
     "ProjectileModel"           "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"

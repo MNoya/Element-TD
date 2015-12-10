@@ -4,6 +4,8 @@
     //-----------------------------
     "Model"                     "models/props_structures/tower_good.vmdl"
     "ModelScale"                "0.575"
+    "PedestalModel"             "models/props_structures/radiant_tower_base002.vmdl"
+    "PedestalModelScale"        "0.7"
     "ProjectileModel"           "particles/units/heroes/hero_mirana/mirana_base_attack.vpcf"  
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"

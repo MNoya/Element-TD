@@ -4,6 +4,10 @@
     //-----------------------------
     "Model"                     "models/heroes/shadow_fiend/shadow_fiend.vmdl"
     "ModelScale"                "0.8"
+    "ModelRotation"             "90"
+    "PedestalModel"             "models/heroes/phantom_assassin/arcana_pedestal.vmdl"
+    "PedestalModelScale"        "0.75"
+    "PedestalOffset"            "30"
     "ProjectileModel"           "particles/units/heroes/hero_shadow_demon/shadow_demon_base_attack.vpcf"
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"

@@ -67,14 +67,6 @@ function Build( event )
         -- Play a sound
         EmitSoundOnClient("DOTA_Item.ObserverWard.Activate", player)
 
-        -- Create pedestal
-        local building_model = GetUnitKeyValue(building_name, "Model")
-        if building_model == "models/tower_white_top.vmdl" then
-            local prop = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/tower_white_pedestal.vmdl"})
-            prop:SetModelScale(GetUnitKeyValue(building_name, "ModelScale"))
-            prop:SetAbsOrigin(vPos)
-        end
-
     end)
 
     -- The construction failed and was never confirmed due to the gridnav being blocked in the attempted area
