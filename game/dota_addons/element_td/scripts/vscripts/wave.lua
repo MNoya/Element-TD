@@ -76,6 +76,13 @@ function Wave:SpawnWave()
 				entity:SetBaseMaxHealth(WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier())
 				entity:SetHealth(entity:GetMaxHealth())
 
+				-- Boss mode
+				if self.waveNumber == WAVE_COUNT and not EXPRESS_MODE then
+					entity:SetMaxHealth(WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier() * (math.pow(1.1,playerData.bossWaves)))
+					entity:SetBaseMaxHealth(WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier() * (math.pow(1.1,playerData.bossWaves)))
+					entity:SetHealth(entity:GetMaxHealth())
+				end
+
 				entity.scriptObject:OnSpawned() -- called the OnSpawned event
 
 				--RegisterCreep(entity, playerID)

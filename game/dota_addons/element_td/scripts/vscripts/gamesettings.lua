@@ -24,6 +24,8 @@ function DifficultyObject:GetBountyForWave(wave)
 	local bounty = math.floor(math.pow(self.data.BaseBounty, wave - 1 + 4))
 	if EXPRESS_MODE then
 		bounty = math.floor(math.pow(self.data.BaseBountyExpress, wave - 1 + 9))
+	elseif wave == WAVE_COUNT then -- boss wave
+		bounty = 0
 	end
 	return bounty
 end

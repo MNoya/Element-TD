@@ -145,9 +145,20 @@ function SpawnWaveForPlayer(playerID, wave)
         if playerData.health == 0 then
             return
         end
+
         print("Player has completed a wave")
         playerData.completedWaves = playerData.completedWaves + 1
         playerData.nextWave = playerData.nextWave + 1
+
+        -- Boss Waves
+        if playerData.completedWaves >= WAVE_COUNT and not EXPRESS_MODE then
+            print("Player has completed a boss wave")
+            Log:info("Spawning boss wave " .. WAVE_COUNT .. " for ["..playerID.."] ".. playerData.name)
+            playerData.bossWaves = playerData.bossWaves + 1
+            ShowMessage(playerID, "Boss Wave " .. playerData.bossWaves + 1, 3)
+            SpawnWaveForPlayer(playerID, WAVE_COUNT) -- spawn dat boss wave
+            return
+        end
 
         playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR )
 
@@ -250,7 +261,11 @@ function CreateMoveTimerForCreep(creep, sector)
             if hero:GetHealth() == 1 then
                 playerData.health = 0
                 hero:ForceKill(false)
-                playerData.scoreObject:UpdateScore( SCORING_WAVE_LOST )
+                if playerData.completedWaves >= WAVE_COUNT and not EXPRESS_MODE then
+                    playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
+                else
+                    playerData.scoreObject:UpdateScore( SCORING_WAVE_LOST )
+                end
                 ElementTD:EndGameForPlayer(hero:GetPlayerID()) -- End the game for the dead player
             elseif hero:IsAlive() then
                 playerData.health = playerData.health - 1

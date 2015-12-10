@@ -25,6 +25,7 @@ function CreateDataForPlayer(playerID)
 	data["clones"] = {}
 	data["difficulty"] = nil
 	data["completedWaves"] = 0
+	data["bossWaves"] = 0
 	data["nextWave"] = 1
 	data["activeWaves"] = {}
 	data["waveObject"] = {}

@@ -190,7 +190,11 @@ function SummonElemental(keys)
                 if hero:GetHealth() <= 3 then
                 	playerData.health = 0
                 	hero:ForceKill(false)
-       				playerData.scoreObject:UpdateScore( SCORING_WAVE_LOST )
+                	if playerData.completedWaves >= WAVE_COUNT and not EXPRESS_MODE then
+                		playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
+                	else
+       					playerData.scoreObject:UpdateScore( SCORING_WAVE_LOST )
+       				end
 					ElementTD:EndGameForPlayer(hero:GetPlayerID()) -- End the game for the dead player
                 else
 					hero:SetHealth(hero:GetHealth() - 3)

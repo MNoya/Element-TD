@@ -156,6 +156,7 @@ end
 
 -- Total Score, BossBonus, DifficultyBonus, TotalScore after bonus
 function ScoringObject:GetGameCleared()
+	local playerData = GetPlayerData( self.playerID )
 	local score = self.totalScore
 	local totalScore = 0
 	local networthBonus = 0
@@ -165,7 +166,7 @@ function ScoringObject:GetGameCleared()
 	if EXPRESS_MODE then
 		networthBonus = self:GetNetworthBonus()
 	else
-		bossBonus = self:GetBossBonus()
+		bossBonus = self:GetBossBonus(playerData.bossWaves)
 	end
 	difficultyBonus = self:GetDifficultyBonus()
 

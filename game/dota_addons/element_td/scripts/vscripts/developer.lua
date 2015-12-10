@@ -67,7 +67,7 @@ function ElementTD:SetWave(playerID, value)
     if not value then value = 1 end
 
     ElementTD:StopWaves(playerID)
-    GetPlayerData(playerID).nextWave = value
+    GetPlayerData(playerID).nextWave = tonumber(value)
 end
 
 function ElementTD:SetLives(playerID, value)
@@ -96,7 +96,6 @@ function ElementTD:ClearWave(playerID)
             local unit = EntIndexToHScript(v)
             if IsValidEntity(unit) then
                 unit:Kill(nil, hero)
-
             end
         end
     end
