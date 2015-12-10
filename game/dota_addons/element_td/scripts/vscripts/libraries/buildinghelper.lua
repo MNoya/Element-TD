@@ -539,6 +539,12 @@ function BuildingHelper:RemoveBuilding( building, bForcedKill )
         building:ForceKill(bForcedKill)
     end
 
+    local particleName = GetUnitKeyValue(building:GetUnitName(), "DestructionEffect")
+    if particleName then
+        local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, building)
+        ParticleManager:SetParticleControl(particle, 0, building:GetAbsOrigin())
+    end
+
     if building.prop then
         UTIL_Remove(building.prop)
     end

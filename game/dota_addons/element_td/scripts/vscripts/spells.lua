@@ -62,7 +62,6 @@ function SellTowerCast(keys)
 					if IsValidEntity(clone) then
 						CreateIllusionKilledParticles(clone)
 						playerData.towers[clone:entindex()] = nil -- remove this tower index from the player's tower list
-						AddTowerPosition(playerData.sector + 1, clone:GetOrigin()) -- re-add this position to the list of valid locations
 						if clone.creatorClass then
 							clone.creatorClass.clones[clone:entindex()] = nil
 						end
@@ -83,8 +82,7 @@ function SellTowerCast(keys)
 		end
 
 		playerData.towers[tower:entindex()] = nil -- remove this tower index from the player's tower list
-		AddTowerPosition(playerData.sector + 1, tower:GetOrigin()) -- re-add this position to the list of valid locations
-		UTIL_RemoveImmediate(tower) -- instantly remove the actual tower entity
+		UTIL_Remove(tower) -- instantly remove the actual tower entity
 		Log:debug(playerData.name .. " has sold a tower")
 		UpdatePlayerSpells(hero:GetPlayerID())
 	end

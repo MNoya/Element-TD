@@ -6,6 +6,7 @@
     "ModelScale"                "0.575"
     "PedestalModel"             "models/props_structures/radiant_tower_base002.vmdl"
     "PedestalModelScale"        "0.7"
+    "DestructionEffect"         "particles/radiant_fx/tower_good3_dest_lvl3_hit.vpcf"
     "ProjectileModel"           "particles/units/heroes/hero_mirana/mirana_base_attack.vpcf"  
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"

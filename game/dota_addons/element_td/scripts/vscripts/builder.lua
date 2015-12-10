@@ -166,6 +166,10 @@ function Build( event )
         -- Building ability
         unit:AddNewModifier(unit, nil, "modifier_no_health_bar", {})
 
+        -- Add the tower to the player data
+        local playerData = GetPlayerData(playerID)
+        playerData.towers[unit:GetEntityIndex()] = building_name
+
     end)
 
     -- These callbacks will only fire when the state between below half health/above half health changes.

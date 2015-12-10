@@ -6,7 +6,7 @@
     "ModelScale"                "0.575"
     "ModelRotation"             "90"
     "PedestalModel"             "models/tower_white_pedestal.vmdl"
-    "DestructionModel"          "particles/radiant_fx/radiant_tower002_destruction.vpcf"
+    "DestructionEffect"         "particles/econ/items/effigies/status_fx_effigies/base_statue_destruction_generic.vpcf"
     "ProjectileModel"           "particles/units/heroes/hero_jakiro/jakiro_base_attack_fire.vpcf"
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"
