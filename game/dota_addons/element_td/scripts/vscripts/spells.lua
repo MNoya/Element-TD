@@ -65,7 +65,7 @@ function SellTowerCast(keys)
 						if clone.creatorClass then
 							clone.creatorClass.clones[clone:entindex()] = nil
 						end
-						UTIL_RemoveImmediate(clone) -- instantly remove the actual tower entity
+						UTIL_Remove(clone) -- instantly remove the actual tower entity
 					else
 						Log:error("Invalid clone")
 					end
@@ -139,6 +139,16 @@ function UpgradeTower(keys)
 		newTower.element = GetUnitKeyValue(newClass, "Element")
 		newTower.damageType = GetUnitKeyValue(newClass, "DamageType")
 
+		-- keep building visuals
+		local angles = tower:GetAngles()
+		newTower:SetAngles(angles.x, angles.y, angles.z)
+		if tower.prop then
+			newTower.prop = tower.prop
+			local scale = GetUnitKeyValue(newClass, "PedestalModelScale") or newTower:GetModelScale()
+			newTower.prop:SetModelScale(scale)
+		end
+		newTower.construction_size = tower.construction_size
+
 		-- set this new tower's owner
 		newTower:SetOwner(hero)
 		newTower:SetControllableByPlayer(hero:GetPlayerID(), true)
@@ -203,7 +213,7 @@ function UpgradeTower(keys)
 					if clone.creatorClass then
 						clone.creatorClass.clones[clone:entindex()] = nil
 					end
-					UTIL_RemoveImmediate(clone) -- instantly remove the actual tower entity
+					UTIL_Remove(clone) -- instantly remove the actual tower entity
 				else
 					Log:error("Invalid clone")
 				end
@@ -211,7 +221,7 @@ function UpgradeTower(keys)
 		end
 
 		BuildTower(newTower, tower:GetModelScale()) --start the tower building animation
-		UTIL_RemoveImmediate(tower) --delete the old tower entity
+		UTIL_Remove(tower) --delete the old tower entity
 	end
 end
 
@@ -286,7 +296,7 @@ function UpdateUpgrades(tower)
 	for i = 0, 5, 1 do
 		local item = tower:GetItemInSlot(i)
 		if item then
-			UTIL_RemoveImmediate(item)
+			UTIL_Remove(item)
 		end
 	end
 

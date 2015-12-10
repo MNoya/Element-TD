@@ -445,7 +445,7 @@ function BuildingHelper:SetupBuildingTable( abilityName )
 
     local construction_size = unitTable["ConstructionSize"]
     if not construction_size then
-        BuildingHelper:print('Warning: Unit ' .. unitName .. ' does not have a ConstructionSize KeyValue. Defaulting to 1')
+        BuildingHelper:print('Warning: Unit ' .. unitName .. ' does not have a ConstructionSize KeyValue. Defaulting to 2')
         construction_size = 2
     end
     buildingTable:SetVal("ConstructionSize", construction_size)
