@@ -6,6 +6,7 @@ var button2 = $( "#ElementButton2" );
 var secondary = $( '#Secondary' );
 
 var lumber = $( '#LumberValue' );
+var pureEssence = $( '#PureEssenceValue' );
 
 var lumberDisplay = $( '#LumberDisplay' );
 
@@ -29,6 +30,11 @@ function ModifyLumber( data )
 	}
 	else
 		lumber.text = 0;
+}
+
+function ModifyPureEssence( data )
+{
+	pureEssence.text = data.pureEssence
 }
 
 function UpdateElements( data )
@@ -83,5 +89,6 @@ function ToggleCollapse()
   button2.visible = false;
   lumberDisplay.visible = false;
   GameEvents.Subscribe( "etd_update_lumber", ModifyLumber );
+  GameEvents.Subscribe( "etd_update_pure_essence", ModifyPureEssence );
   GameEvents.Subscribe( "etd_update_elements", UpdateElements );
 })();

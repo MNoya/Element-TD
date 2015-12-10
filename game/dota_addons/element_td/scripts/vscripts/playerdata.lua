@@ -13,6 +13,7 @@ function CreateDataForPlayer(playerID)
 	data["sector"] = -1
 	data["page"] = 1
 	data["lumber"] = 0
+	data["pureEssence"] = 0
 	data["elementalActive"] = false
 	data["elementalUnit"] = nil
 	data["LifeTowerKills"] = 0

@@ -16,6 +16,10 @@
         <Label id="Lumber"  text="Lumber" class="label"/>
         <Label id="LumberValue" text="0" class="value"/>
       </Panel>
+      <Panel hittest="false" id="ResourcePureEssence" class="resource">
+        <Label id="PureEssence"  text="Pure Ess." class="label"/>
+        <Label id="PureEssenceValue" text="0" class="value"/>
+      </Panel>
       <Panel hittest="false"  id="Secondary">
         <Panel hittest="false"  id="Divider"/>
         <Panel hittest="false"  id="ElementWater" class="element">

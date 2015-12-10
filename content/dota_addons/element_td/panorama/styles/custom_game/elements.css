@@ -8,7 +8,7 @@
 {
     margin-top: 60px;
     width: 158px;
-    height: 260px;
+    height: 290px;
     background-image: url("file://{resources}/images/custom_game/elements/backgroundLarge.png");
     background-size: 100%;
     flow-children: down;
@@ -16,7 +16,7 @@
 
 #Elements.small
 {
-    height: 100px;
+    height: 120px;
     background-image: url("file://{resources}/images/custom_game/elements/backgroundSmall.png");
 }
 

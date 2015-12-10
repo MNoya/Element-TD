@@ -12,6 +12,12 @@ function ModifyLumber(playerID, amount)
 	CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_lumber", { lumber = GetPlayerData(playerID).lumber } )
 end
 
+function ModifyPureEssence(playerID, amount)
+	GetPlayerData(playerID).pureEssence = GetPlayerData(playerID).pureEssence + amount
+	UpdatePlayerSpells(playerID)
+	CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_pure_essence", { pureEssence = GetPlayerData(playerID).pureEssence } )
+end
+
 function UpdateSummonerSpells(playerID)
 	local lumber = GetPlayerData(playerID).lumber
 	local summoner = GetPlayerData(playerID).summoner
