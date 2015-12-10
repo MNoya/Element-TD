@@ -144,7 +144,7 @@ function SummonElemental(keys)
 	playerData.elementalUnit = elemental
 
 	GlobalCasterDummy:ApplyModifierToTarget(elemental, "creep_damage_block_applier", "modifier_damage_block")
-	ApplyArmorModifier(elemental, GetPlayerDifficulty(playerID):GetArmorValue() * 100)
+	--ApplyArmorModifier(elemental, GetPlayerDifficulty(playerID):GetArmorValue() * 100)
 	
 	local level = playerData.elements[element] + 1
 	local health = ElementalBaseHealth[level] * math.pow(1.5, (math.floor(playerData.nextWave / 5) - 1))
