@@ -298,7 +298,7 @@ function ElementTD:EntityKilled(keys)
         playerData.elementalActive = false
         playerData.elementalUnit = nil
         ModifyElementValue(entity.playerID, entity.element, 1)
-        AddElementalTrophy(entity.playerID, entity)
+        AddElementalTrophy(entity.playerID, entity.element)
     else
         local playerID = entity.playerID
         if entity.waveObject then 

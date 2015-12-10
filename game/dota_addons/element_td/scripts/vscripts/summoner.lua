@@ -117,6 +117,8 @@ function BuyElement(playerID, element)
 	if playerData.lumber > 0 then
 		ModifyLumber(playerID, -1)
 		ModifyElementValue(playerID, element, 1)
+
+        AddElementalTrophy(playerID, element)
 	end
 end
 
@@ -198,12 +200,11 @@ function SummonElemental(keys)
 	})
 end
 
-function AddElementalTrophy(playerID, elementalEntity)
+function AddElementalTrophy(playerID, element)
 	local team = PlayerResource:GetTeam(playerID)
-	local unitName = elementalEntity:GetUnitName()
-	local health = elementalEntity:GetMaxHealth()
-	local scale = elementalEntity:GetModelScale()
-	local element = elementalEntity.element
+	local unitName = element.."_elemental"
+    local level = GetPlayerElementLevel(playerID, element)
+    local scale = GetUnitKeyValue(unitName, "ModelScale") + ((level - 1) * 0.1)
 	local playerData = GetPlayerData(playerID)
 	local summoner = playerData.summoner
 
@@ -222,10 +223,7 @@ function AddElementalTrophy(playerID, elementalEntity)
 	playerData.elemCount = playerData.elemCount + 1
 
 	local elemental = CreateUnitByName(unitName, position, false, nil, nil, team)
-	elemental:SetMaxHealth(health)
-	elemental:SetBaseMaxHealth(health)
-	elemental:SetHealth(health)
-	elemental:SetModelScale(scale*0.75)
+	elemental:SetModelScale(scale)
 	elemental:SetForwardVector(Vector(0, -1, 0))
 	elemental:SetCustomHealthLabel(GetEnglishTranslation(unitName), ElementColors[element][1], ElementColors[element][2], ElementColors[element][3])
 
