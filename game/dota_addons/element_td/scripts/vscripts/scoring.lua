@@ -35,14 +35,14 @@ function ScoringObject:UpdateScore( const )
 		table.insert(processed, {'Game over! Lost on wave ' .. playerData.completedWaves + 1, '#FFF0F5'} )
 	elseif ( const == SCORING_GAME_CLEAR ) then
 		scoreTable = self:GetGameCleared()
-		table.insert(processed, {'Game cleared! Your score ' .. self.totalScore, '#FFF0F5'} )
+		table.insert(processed, {'Game cleared! Your score ' .. comma_value(self.totalScore), '#FFF0F5'} )
 	else
 		return false
 	end
 
 	-- Process Score Table keeping ordering below
 	if scoreTable['clearBonus'] then
-		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Wave ' .. playerData.completedWaves .. ' clear bonus: ' .. scoreTable['clearBonus'], '#00FFFF'} )
+		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Wave ' .. playerData.completedWaves .. ' clear bonus: ' .. comma_value(scoreTable['clearBonus']), '#00FFFF'} )
 	end
 	if scoreTable['cleanBonus'] then
 		if scoreTable['cleanBonus'] ~= 0 then
@@ -74,7 +74,7 @@ function ScoringObject:UpdateScore( const )
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;'..GetPlayerDifficulty( self.playerID ).difficultyName .. ' difficulty: '.. GetPctString(scoreTable['difficultyBonus']), '#00FF00' } )
 	end
 	if scoreTable['totalScore'] then
-		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Total score: ' .. scoreTable['totalScore'], '#FF8C00'})
+		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Total score: ' .. comma_value(scoreTable['totalScore']), '#FF8C00'})
 		self.totalScore = self.totalScore + scoreTable['totalScore']		
 	end
 	--PrintTable(processed)
@@ -87,18 +87,28 @@ function ScoringObject:ShowScore( table )
 	for i,v in pairs(table) do
 		Timers:CreateTimer(delay, function()
 			if i == 1 then
-				self:Display({text=v[1], style={color=v[2], ['font-size']="22px"}, duration=10.0-(0.2*(i-1))})
+				self:Display({text=v[1], style={color=v[2], ['font-size']="22px"}, duration=10.2-(0.2*(i-1))})
 			else
-				self:Display({text=v[1], style={color=v[2]}, duration=10.0-(0.2*(i-1))})
+				self:Display({text=v[1], style={color=v[2]}, duration=10.2-(0.2*(i-1))})
 			end
 		end)
 		delay = delay + 0.2
 	end
+	Timers:CreateTimer(10, function()
+		self:ClearDisplay()
+	end)
 end
 
+-- Displays the score using the panorama ui
 function ScoringObject:Display( table )
 	local player = PlayerResource:GetPlayer(self.playerID)
 	CustomGameEventManager:Send_ServerToPlayer(player, "scoring_notification", {text=table.text, duration=table.duration, class=table.class, style=table.style, continue=table.continue} )
+end
+
+function ScoringObject:ClearDisplay()
+	local player = PlayerResource:GetPlayer(self.playerID)
+	local count = 50
+	CustomGameEventManager:Send_ServerToPlayer(player, "scoring_remove_notification", {count=count} )
 end
 
 function GetPctString( number )
@@ -108,6 +118,18 @@ function GetPctString( number )
 		processed = '+' .. percent
 	end
 	return processed .. '%'
+end
+
+-- Adds thousands comma to number
+function comma_value( number )
+	local formatted = number
+	while true do  
+		formatted, k = string.gsub(formatted, "^(-?%d+)(%d%d%d)", '%1,%2')
+		if (k==0) then
+			break
+		end
+	end
+	return formatted
 end
 
 -- Returns WaveClearBonus, CleanBonus/Lives lost/SpeedBonus/TotalScore for the round.

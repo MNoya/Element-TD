@@ -2,6 +2,26 @@ function ScoringNotification(msg) {
   AddNotification(msg, $('#ScoringNotifications'));
 }
 
+function ScoringRemoveNotification(msg){
+  RemoveNotification(msg, $('#ScoringNotifications'));
+}
+
+function RemoveNotification(msg, panel){
+  var count = msg.count;
+  if (count > 0 && panel.GetChildCount() > 0){
+    var start = panel.GetChildCount() - count;
+    if (start < 0)
+      start = 0;
+
+    for (i=start;i<panel.GetChildCount(); i++){
+      var lastPanel = panel.GetChild(i);
+      //lastPanel.SetAttributeInt("deleted", 1);
+      lastPanel.deleted = true;
+      lastPanel.DeleteAsync(0);
+    }
+  }
+}
+
 function AddNotification(msg, panel) {
   var newNotification = true;
   var lastNotification = panel.GetChild(panel.GetChildCount() - 1)
@@ -83,4 +103,5 @@ function AddNotification(msg, panel) {
 
 (function () {
   GameEvents.Subscribe( "scoring_notification", ScoringNotification );
+  GameEvents.Subscribe( "scoring_remove_notification", ScoringRemoveNotification );
 })();
