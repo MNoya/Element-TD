@@ -367,9 +367,9 @@ function ElementTD:OnPlayerSelectedEntities( event )
     if IsValidEntity(mainSelected) and IsBuilder(mainSelected) then
         player.activeBuilder = mainSelected
     else
-        if player.activeBuilder then
-            -- Clear queue when swapping to a non-builder
-            BuildingHelper:ClearQueue(player.activeBuilder)
+        if IsValidEntity(player.activeBuilder) then
+            -- Clear ghost particles when swapping to a non-builder
+            BuildingHelper:StopGhost(player.activeBuilder)
         end
     end
 end
