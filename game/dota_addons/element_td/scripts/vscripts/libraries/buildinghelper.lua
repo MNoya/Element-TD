@@ -618,10 +618,17 @@ function BuildingHelper:StartBuilding( keys )
         end
     end
 
-    -- Initialize the building --CreateUnitByName(unitName, location, false, playersHero, player, builder:GetTeam())
-    building:RemoveModifierByName("modifier_out_of_world")
+    -- For overriden ghosts we need to create another unit and remove the fake hero ghost
+    if building:GetUnitName() ~= unitName then
+        UTIL_Remove(mgd)
+        building = CreateUnitByName(unitName, location, false, playersHero, player, builder:GetTeam())
+    else
+        building:RemoveModifierByName("modifier_out_of_world")
+        building:RemoveEffects(EF_NODRAW)
+    end
+
+    -- Initialize the building
     building:SetAbsOrigin(location)
-    building:RemoveEffects(EF_NODRAW)
     building:SetControllableByPlayer(playerID, true)
     building.blockers = gridNavBlockers
     building.construction_size = construction_size

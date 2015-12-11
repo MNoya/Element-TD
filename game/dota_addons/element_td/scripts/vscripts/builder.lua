@@ -105,8 +105,7 @@ function Build( event )
         end
 
         -- Units can't attack while building
-        unit.original_attack = unit:GetAttackCapability()
-        unit:SetAttackCapability(DOTA_UNIT_CAP_NO_ATTACK)
+        unit:AddNewModifier(unit, nil, "modifier_attack_disabled", {})
 
         -- Remove invulnerability on npc_dota_building baseclass
         unit:RemoveModifierByName("modifier_invulnerable")
@@ -118,12 +117,12 @@ function Build( event )
 
     -- A building finished construction
     event:OnConstructionCompleted(function(unit)
-        BuildingHelper:print("Completed construction of " .. building_name .. " " .. unit:GetEntityIndex())
+        BuildingHelper:print("Completed construction of " .. unit:GetUnitName() .. " " .. unit:GetEntityIndex())
         
         -- Play construction complete sound
         -- Give the unit their original attack capability
-        unit:SetAttackCapability(unit.original_attack)
-
+        unit:RemoveModifierByName("modifier_attack_disabled")
+        
         -- Building abilities
         unit:AddNewModifier(unit, nil, "modifier_no_health_bar", {})
         
