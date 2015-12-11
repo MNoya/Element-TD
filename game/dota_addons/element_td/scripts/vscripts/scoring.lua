@@ -166,7 +166,7 @@ function ScoringObject:GetGameCleared()
 	if EXPRESS_MODE then
 		networthBonus = self:GetNetworthBonus()
 	else
-		bossBonus = self:GetBossBonus(playerData.bossWaves)
+		bossBonus = self:GetBossBonus(playerData.bossWaves-1)
 	end
 	difficultyBonus = self:GetDifficultyBonus()
 
