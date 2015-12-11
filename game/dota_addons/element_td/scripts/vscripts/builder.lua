@@ -36,7 +36,7 @@ function Build( event )
 
     -- If the ability has an AbilityGoldCost, it's impossible to not have enough gold the first time it's cast
     -- Always refund the gold here, as the building hasn't been placed yet
-    hero:ModifyGold(gold_cost, false, 0)
+    hero:ModifyGold(gold_cost, true, 0)
 
     -- Makes a building dummy and starts panorama ghosting
     BuildingHelper:AddBuilding(event)
@@ -62,7 +62,7 @@ function Build( event )
     event:OnBuildingPosChosen(function(vPos)
         
         -- Spend resources
-        hero:ModifyGold(-gold_cost, false, 0)
+        hero:ModifyGold(-gold_cost, true, 0)
 
         -- Play a sound
         EmitSoundOnClient("DOTA_Item.ObserverWard.Activate", player)
