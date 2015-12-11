@@ -200,140 +200,74 @@ function SpawnWaveForPlayer(playerID, wave)
         local player = PlayerResource:GetPlayer(playerID)
         local hero = player:GetAssignedHero()
 
-        player:SetContextThink("HasteWaveThinker" .. wave, function()
+        Timers:CreateTimer(3, function()
             local creeps = playerData.waveObject.creeps
             for _, creep in pairs(creeps) do
                 local unit = EntIndexToHScript(creep)
-                if unit:GetUnitName() == WAVE_CREEPS[wave] and unit.playerID == playerID then
+                if IsValidEntity(unit) and unit:GetUnitName() == WAVE_CREEPS[wave] and unit.playerID == playerID then
                     unit:CastAbilityImmediately(unit:FindAbilityByName("creep_ability_fast"), playerID)
                 end
             end
             return 3
-        end, 3)
+        end)
     end
     ----------------------------
 end
 
 function CreateMoveTimerForCreep(creep, sector)
     local destination = EntityEndLocations[sector]
---    Timers:CreateTimer("MoveUnit"..creep:entindex(), {
---        callback = function()
---            ExecuteOrderFromTable({
---                UnitIndex = creep:entindex(),
---                OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
---                Position = destination
---            })
---            if (creep:GetOrigin() - destination):Length2D() <= 150 then
---                local playerID = creep.playerID
---                local playerData = PlayerData[playerID]
---
---                local hero = PlayerResource:GetPlayer(playerID):GetAssignedHero()
---
---                if hero:GetHealth() == 1 then
---                    playerData.health = 0
---                    hero:ForceKill(false)
---                    ElementTD:EndGameForPlayer(hero:GetPlayerID()) -- End the game for the dead player
---                elseif hero:IsAlive() then
---                    playerData.health = playerData.health - 1
---                    hero:SetHealth(hero:GetHealth() - 1)
---                end
---
---                FindClearSpaceForUnit(creep, EntityStartLocations[playerData.sector + 1], true) -- remove interp frames on client
---                --creep:SetAbsOrigin(EntityStartLocations[playerID + 1])
---                creep:SetForwardVector(Vector(0, -1, 0))
---            end
---            return 1
---        end
---    })
+    Timers:CreateTimer(0.1, function()
+        if IsValidEntity(creep) then
+            ExecuteOrderFromTable({
+                UnitIndex = creep:GetEntityIndex(),
+                OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+                Position = destination,
+                Queue = false
+            })
+            if (creep:GetOrigin() - destination):Length2D() <= 150 then
+                local playerID = creep.playerID
+                local playerData = GetPlayerData(playerID)
+                
+                ReduceLivesForPlayer(playerID)
 
-    creep:SetContextThink("MoveUnit" .. creep:entindex(), function()
-        ExecuteOrderFromTable({
-            UnitIndex = creep:entindex(),
-            OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
-            Position = destination
-        })
-        if (creep:GetOrigin() - destination):Length2D() <= 150 then
-            local playerID = creep.playerID
-            local playerData = GetPlayerData(playerID)
-
-            local hero = PlayerResource:GetPlayer(playerID):GetAssignedHero()
-
-            local lives = 1
-
-            -- Boss Wave leaks = 3 lives
-            if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then
-                lives = 3
+                FindClearSpaceForUnit(creep, EntityStartLocations[playerData.sector + 1], true)
+                creep:SetForwardVector(Vector(0, -1, 0))
             end
-
-            -- Cheats can melt steel beams
-            if GameRules.WhosYourDaddy then
-                lives = 0
-            end
-
-            if hero:GetHealth() == lives then
-                playerData.health = 0
-                hero:ForceKill(false)
-                if playerData.completedWaves >= WAVE_COUNT and not EXPRESS_MODE then
-                    playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
-                else
-                    playerData.scoreObject:UpdateScore( SCORING_WAVE_LOST )
-                end
-                ElementTD:EndGameForPlayer(hero:GetPlayerID()) -- End the game for the dead player
-            elseif hero:IsAlive() then
-                playerData.health = playerData.health - lives
-                playerData.waveObject.leaks = playerData.waveObject.leaks + lives
-                hero:SetHealth(hero:GetHealth() - lives)
-            end
-
-            FindClearSpaceForUnit(creep, EntityStartLocations[playerData.sector + 1], true) -- remove interp frames on client
-            --creep:SetAbsOrigin(EntityStartLocations[playerID + 1])
-            creep:SetForwardVector(Vector(0, -1, 0))
+            return 1
+        else
+            return
         end
-        return 1
-    end, 0)
+    end)
 end
 
--- waits for the wave to finish for the specified player
--- starts break time once the wave is over
+function ReduceLivesForPlayer( playerID )
+    local playerData = GetPlayerData(playerID)
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 
---UNUSED
---[[
-function WaitForWaveToFinish(playerID)
-    CreateTimer("WaitForWaveToFinish"..playerID, INTERVAL, {
-        loops = -1,
-        interval = 1,
-        playerID = playerID, 
+    local lives = 1
 
-        callback = function(timer)
+    -- Boss Wave leaks = 3 lives
+    if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then
+        lives = 3
+    end
 
-            local count = 0
-            for k, v in pairs(WAVE_ENTITIES_PLAYER[timer.playerID]) do
-                count = count + 1
-            end
-            if count == 0 then
-                local playerData = GetPlayerData(timer.playerID)
-                PlayerResource:GetPlayer(playerID):SetContextThink("HasteWaveThinker" .. playerData.wave, nil, 0)
-                Log:info("Wave " .. playerData.wave .. " has ended for " .. playerData.name)
-                if playerData.wave >= WAVE_COUNT then
-                    print("The game has ended for " .. playerData.name)
-                else
-                	if playerData.wave % 5 == 0 then
-                		
-                		ModifyLumber(timer.playerID, 1) -- give 1 lumber every 5 waves
-                        if GameSettings.elementsOrderName == "AllPick" then
-                			Log:info("Giving 1 lumber to " .. playerData.name)
-                		elseif playerData.elementsOrder[playerData.wave] then
-                			SummonElemental({caster = playerData.summoner, Elemental = playerData.elementsOrder[playerData.wave] .. "_elemental"})
-                        end
+    -- Cheats can melt steel beams
+    if GameRules.WhosYourDaddy then
+        lives = 0
+    end
 
-                	end
-                    playerData.wave = playerData.wave + 1
-                    StartBreakTime(playerID)
-                end
-                DeleteTimer(timer.name)
-            end
-
+    if hero:GetHealth() == lives then
+        playerData.health = 0
+        hero:ForceKill(false)
+        if playerData.completedWaves >= WAVE_COUNT and not EXPRESS_MODE then
+            playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
+        else
+            playerData.scoreObject:UpdateScore( SCORING_WAVE_LOST )
         end
-    })
+        ElementTD:EndGameForPlayer(playerID) -- End the game for the dead player
+    elseif hero:IsAlive() then
+        playerData.health = playerData.health - lives
+        playerData.waveObject.leaks = playerData.waveObject.leaks + lives
+        hero:SetHealth(hero:GetHealth() - lives)
+    end
 end
-]]--
