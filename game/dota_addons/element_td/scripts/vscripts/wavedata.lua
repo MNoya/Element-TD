@@ -257,8 +257,14 @@ function CreateMoveTimerForCreep(creep, sector)
             local playerData = GetPlayerData(playerID)
 
             local hero = PlayerResource:GetPlayer(playerID):GetAssignedHero()
-            
-            if hero:GetHealth() == 1 then
+
+            local lives = 1
+
+            -- Boss Wave leaks = 3 lives
+            if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then
+                lives = 3
+            end
+            if hero:GetHealth() == lives then
                 playerData.health = 0
                 hero:ForceKill(false)
                 if playerData.completedWaves >= WAVE_COUNT and not EXPRESS_MODE then
@@ -268,9 +274,9 @@ function CreateMoveTimerForCreep(creep, sector)
                 end
                 ElementTD:EndGameForPlayer(hero:GetPlayerID()) -- End the game for the dead player
             elseif hero:IsAlive() then
-                playerData.health = playerData.health - 1
-                playerData.waveObject.leaks = playerData.waveObject.leaks + 1
-                hero:SetHealth(hero:GetHealth() - 1)
+                playerData.health = playerData.health - lives
+                playerData.waveObject.leaks = playerData.waveObject.leaks + lives
+                hero:SetHealth(hero:GetHealth() - lives)
             end
 
             FindClearSpaceForUnit(creep, EntityStartLocations[playerData.sector + 1], true) -- remove interp frames on client
