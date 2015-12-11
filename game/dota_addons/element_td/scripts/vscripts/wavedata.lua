@@ -264,6 +264,12 @@ function CreateMoveTimerForCreep(creep, sector)
             if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then
                 lives = 3
             end
+
+            -- Cheats can melt steel beams
+            if GameRules.WhosYourDaddy then
+                lives = 0
+            end
+
             if hero:GetHealth() == lives then
                 playerData.health = 0
                 hero:ForceKill(false)
