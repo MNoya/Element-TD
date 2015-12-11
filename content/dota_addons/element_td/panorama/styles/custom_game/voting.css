@@ -69,6 +69,7 @@
     width: 160px;
     height: 30px;
     margin-right: 40px;
+    margin-top: -8px;
 }
 
 #ButtonLabel
@@ -93,8 +94,8 @@
 #ResultsButton
 {
     horizontal-align: center;
-    width: 40px;
-    margin-top: 15px;
+    max-width: 60px;
+    height: 30px;
 }
 
 .setting

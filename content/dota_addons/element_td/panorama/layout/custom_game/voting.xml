@@ -41,7 +41,7 @@
       </Panel>
       <Panel id="Bottom">
         <Label id="Info" text="Waiting for others to finish voting..."/>
-        <Button id="Vote" onactivate="ConfirmVote()">
+        <Button id="Vote" onactivate="ConfirmVote()" class="ButtonBevel">
           <Label id="ButtonLabel" text="Confirm Vote"/>
         </Button>
         <Label id="Countdown" text="60"/>   
@@ -69,7 +69,7 @@
         <Label id="LTitle" text="Length" class="resultsLabel"/>
         <Label id="LengthResult" text="[length]" class="resultsValue"/>
       </Panel>
-      <Button id="ResultsButton" onactivate="ResultsClose()">
+      <Button id="ResultsButton" onactivate="ResultsClose()" class="ButtonBevel">
         <Label id="ButtonLabel" text="Ok"/>
       </Button>
     </Panel>
