@@ -65,7 +65,7 @@ function Build( event )
         hero:ModifyGold(-gold_cost, true, 0)
 
         -- Play a sound
-        EmitSoundOnClient("DOTA_Item.ObserverWard.Activate", player)
+        Sounds:EmitSoundOnClient(playerID, "DOTA_Item.ObserverWard.Activate")
 
     end)
 
@@ -84,7 +84,7 @@ function Build( event )
 
         -- Refund resources for this cancelled work
         if work.refund then
-            hero:ModifyGold(-gold_cost, false, 0)
+            hero:ModifyGold(gold_cost, true, 0)
         end
     end)
 

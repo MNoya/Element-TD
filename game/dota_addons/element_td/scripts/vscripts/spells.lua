@@ -31,17 +31,16 @@ function SellTowerCast(keys)
 		local refundAmount = round(GetUnitKeyValue(tower.class, "TotalCost") * sellPercentage)
 		-- create a dummy unit to show the gold particles
 		if sellPercentage > 0  then
-			local dummy = CreateUnitByName("npc_dota_creep_badguys_ranged", tower:GetOrigin(), false, nil, nil, DOTA_TEAM_NOTEAM) 
-			dummy:SetDeathXP(0)
-			dummy:SetMaximumGoldBounty(refundAmount)
-			dummy:SetMinimumGoldBounty(refundAmount)
-			dummy:SetModel("") --make this creep invisible
-			dummy:Kill(nil, hero)
+			Sounds:EmitSoundOnClient(playerID, "General.Coins")	
+			PopupAlchemistGold(tower, refundAmount)
 
-			-- let's convert all this gold to reliable
+		    local coins = ParticleManager:CreateParticle("particles/econ/items/alchemist/alchemist_midas_knuckles/alch_knuckles_lasthit_coins.vpcf", PATTACH_CUSTOMORIGIN, tower)
+		    ParticleManager:SetParticleControl(coins, 1, tower:GetAbsOrigin())
+
+			-- Add gold
 			local gold = hero:GetGold()
 			hero:SetGold(0, false)
-			hero:SetGold(gold, true)
+			hero:SetGold(gold+refundAmount, true)
 		end
 
 		if tower.isClone then

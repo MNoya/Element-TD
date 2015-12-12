@@ -97,9 +97,9 @@ function PopupNumbers(target, pfx, color, lifetime, number, presymbol, postsymbo
     local pfxPath = string.format("particles/msg_fx/msg_%s.vpcf", pfx)
     local pidx
     if pfx == "gold" or pfx == "lumber" then
-        pidx = ParticleManager:CreateParticleForTeam(pfxPath, PATTACH_ABSORIGIN_FOLLOW, target, target:GetTeamNumber())
+        pidx = ParticleManager:CreateParticleForTeam(pfxPath, PATTACH_CUSTOMORIGIN, target, target:GetTeamNumber())
     else
-        pidx = ParticleManager:CreateParticle(pfxPath, PATTACH_ABSORIGIN_FOLLOW, target)
+        pidx = ParticleManager:CreateParticle(pfxPath, PATTACH_CUSTOMORIGIN, target)
     end
 
     local digits = 0
@@ -113,6 +113,7 @@ function PopupNumbers(target, pfx, color, lifetime, number, presymbol, postsymbo
         digits = digits + 1
     end
 
+    ParticleManager:SetParticleControl(pidx, 0, target:GetAbsOrigin())
     ParticleManager:SetParticleControl(pidx, 1, Vector(tonumber(presymbol), tonumber(number), tonumber(postsymbol)))
     ParticleManager:SetParticleControl(pidx, 2, Vector(lifetime, digits, 0))
     ParticleManager:SetParticleControl(pidx, 3, color)
@@ -140,6 +141,19 @@ function PopupLegion(target, number)
     ParticleManager:SetParticleControl( particle, 1, Vector( 10, number, 0) )
     ParticleManager:SetParticleControl( particle, 2, Vector( digits, 0, 0) )
     ParticleManager:SetParticleControl( particle, 3, Vector(targetPos.x, targetPos.y, targetPos.z+322) )
+end
+
+function PopupAlchemistGold(target, number)
+    local symbol = 0 -- "+" presymbol
+    local color = Vector(255, 200, 33) -- Gold
+    local lifetime = 3
+    local digits = string.len(number) + 1
+    local particleName = "particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf"
+    local particle = ParticleManager:CreateParticleForPlayer( particleName, PATTACH_CUSTOMORIGIN, target, target:GetPlayerOwner() )
+    ParticleManager:SetParticleControl(particle, 0, target:GetAbsOrigin())
+    ParticleManager:SetParticleControl(particle, 1, Vector(symbol, number, symbol))
+    ParticleManager:SetParticleControl(particle, 2, Vector(lifetime, digits, 0))
+    ParticleManager:SetParticleControl(particle, 3, color)
 end
 
 function PopupKillbanner(target, name)
