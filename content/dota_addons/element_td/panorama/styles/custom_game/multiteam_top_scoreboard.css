@@ -176,10 +176,19 @@
     background-color: gradient( linear, 0% 0%, 100% 0%, from( #00000096 ), color-stop( 0.25, #00000000 ), color-stop( 0.75, #00000000 ), to( #00000096 ) );
 }
 
-#HeroIcon
+#PlayerBG
 {
     width: 64px;
     height: 36px;
+    background-color: black;
+}
+
+#HeroIcon
+{
+    margin-top: -36px;
+    margin-left: 36px;
+    width: 28px;
+    height: 16px;
     background-color: black;
 }
 
@@ -200,13 +209,30 @@
     saturation: 0;
 }
 
+DOTAAvatarImage
+{
+    margin-top: -16px;
+    width: 36px;
+    height: 36px;
+    background-color: black;
+}
+
+#PlayerWave
+{
+    color: white;
+    margin-top: -20px;
+    margin-left: 36px;
+    width: 28px;
+    text-align: center;
+}
+
 #DisconnectionIndicator
 {
     opacity: 0;
     width: 100%;
     height: 18px;
     vertical-align: top;
-    margin-top: 21px;
+    margin-top: 38px;
 }
 
 .player_connection_abandoned #DisconnectionIndicator,

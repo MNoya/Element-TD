@@ -134,6 +134,8 @@ function SpawnWaveForPlayer(playerID, wave)
 
     playerData.waveObject = waveObj
 
+    CustomGameEventManager:Send_ServerToAllClients("SetTopBarWaveValue", {playerId=playerID, wave=wave} )
+
     if (wave < WAVE_COUNT) then
         CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_next_wave_info", { nextWave=wave + 1, nextAbility1=creepsKV[WAVE_CREEPS[wave+1]].Ability1, nextAbility2=creepsKV[WAVE_CREEPS[wave+1]].Ability2 } )
     else

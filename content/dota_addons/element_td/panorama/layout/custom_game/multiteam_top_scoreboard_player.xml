@@ -21,7 +21,10 @@
 			<Button class="PlayerPortraitWrapper" onmouseactivate="PortraitClicked();">
 				<Panel hittest="false" id="PlayerColorBar" />
 				<Panel hittest="false" class="PlayerColorBarMask" />
+				<Panel hittest="false" id="PlayerBG"/>
 				<Image hittest="false" id="HeroIcon" />
+				<DOTAAvatarImage id="AvatarImage" steamid="" />
+				<Label hittest="false" id="PlayerWave" text=""/>
 			</Button>
 			<Image hittest="false" id="DisconnectionIndicator" src="s2r://panorama/images/custom_game/icon_disconnect_png.vtex" />
 		</Panel>

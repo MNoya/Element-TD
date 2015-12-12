@@ -2,6 +2,8 @@
 
 var teamScores = [0,0,0,0];
 
+var playerWave = [0,0,0,0,0,0,0,0];
+
 //=============================================================================
 //=============================================================================
 function _ScoreboardUpdater_SetTextSafe( panel, childName, textValue )
@@ -115,6 +117,11 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
                 var playerColor = "#999999";
                 playerColorBar.style.backgroundColor = playerColor;
             }
+        }
+        var playerWavePanel = playerPanel.FindChildInLayoutFile( "PlayerWave" );
+        if ( playerWavePanel !== null )
+        {
+            playerWavePanel.text = playerWave[playerId];
         }
     }
     else
@@ -350,6 +357,12 @@ function SetTopBarValue( data )
     teamScores[data.teamId] = data.teamScore;
 }
 
+function SetTopBarWaveValue( data )
+{
+    playerWave[data.playerId] = data.wave;
+}
+
 (function () {
     GameEvents.Subscribe( "SetTopBarScoreValue", SetTopBarValue );
+    GameEvents.Subscribe( "SetTopBarWaveValue", SetTopBarWaveValue);
 })();
