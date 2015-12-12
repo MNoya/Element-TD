@@ -28,7 +28,8 @@ function ObliterationTower:OnAttackStart(keys)
   	proj:AddNewModifier(nil, nil, "modifier_invulnerable", {});
   	proj:AddNewModifier(nil, nil, "modifier_phased", {});
  	
-  	ApplyDummyPassive(proj);
+  	-- hopefully this works as intended
+	proj:AddNewModifier(proj, nil, "modifier_out_of_world", {});
 
   	proj.parent = self.tower;
   	proj.startOrigin = self.projOrigin;
@@ -67,7 +68,9 @@ function ObliterationTower:OnAttackStart(keys)
 			dummy:SetAbsOrigin(dummyPos);
 			dummy:AddNewModifier(nil, nil, "modifier_invulnerable", {});
   			dummy:AddNewModifier(nil, nil, "modifier_phased", {});
- 			ApplyDummyPassive(dummy);
+ 			
+ 			-- hopefully this works as intended
+			dummy:AddNewModifier(dummy, nil, "modifier_out_of_world", {});
 
 			local explosionParticle = ParticleManager:CreateParticle("particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_area.vpcf", PATTACH_ABSORIGIN, dummy);
 	    	ParticleManager:SetParticleControl(explosionParticle, 0, dummyPos);

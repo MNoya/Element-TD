@@ -32,7 +32,9 @@ function ElectricityTower:OnCreated()
 	self.dummy:SetOwner(self.tower:GetOwner());
 	self.dummy:AddNewModifier(nil, nil, "modifier_invulnerable", {});
 	self.dummy.dummyParent = self.tower;
-	ApplyDummyPassive(self.dummy);
+
+	-- hopefully this works as intended
+	self.dummy:AddNewModifier(self.dummy, nil, "modifier_out_of_world", {})
 
 	self.dummyAbility = AddAbility(self.dummy, "electricity_tower_arc_lightning");
 	self.lightningDamage = GetAbilitySpecialValue("electricity_tower_arc_lightning_passive", "damage");

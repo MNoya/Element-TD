@@ -67,7 +67,8 @@ end
 function CreateSunburnRemnant(entity, team)
 	local remnant = CreateUnitByName("tower_dummy", entity:GetAbsOrigin() + Vector(0, 0, 64), false, nil, nil, team);
 	remnant:SetAbsOrigin(entity:GetAbsOrigin() + Vector(0, 0, 64));
-	ApplyDummyPassive(remnant);
+	-- hopefully this works as intended
+	remnant:AddNewModifier(remnant, nil, "modifier_out_of_world", {})
 
 	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_ember_spirit/ember_spirit_flameGuard_column.vpcf", PATTACH_ABSORIGIN, remnant);
     ParticleManager:SetParticleControl(particle, 0, remnant:GetAbsOrigin());

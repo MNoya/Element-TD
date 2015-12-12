@@ -25,7 +25,6 @@ local requires =
     "util/log",
 
     -- tower blueprints
-    "towers/GlobalCasterDummy",
     "towers/TowersManager",
     "towers/towerevents",
     "towers/BasicTower",

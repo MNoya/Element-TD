@@ -24,7 +24,10 @@ function IceTower:OnAttackStart(keys)
   	proj:SetOwner(self.tower:GetOwner());
   	proj:AddNewModifier(nil, nil, "modifier_invulnerable", {});
   	proj:AddNewModifier(nil, nil, "modifier_phased", {});
- 	ApplyDummyPassive(proj);
+ 	
+ 	-- hopefully this works as intended
+	proj:AddNewModifier(proj, nil, "modifier_out_of_world", {});
+  	
   	proj.parent = self.tower;
   	proj.startOrigin = self.projOrigin;
   	proj.hitByInner = {};

@@ -148,7 +148,10 @@ function Build( event )
             Log:error("Unknown script class, " .. scriptClassName .. " for tower " .. building_name)
         end
 
-        ApplySupportModifier(tower)
+        -- mark this tower as a support tower if necessary
+        if IsSupportTower(tower) then
+            tower:AddNewModifier(tower, nil, "modifier_support_tower", {})
+        end
 
         if string.match(building_name, "arrow_tower") or string.match(building_name, "cannon_tower") or (GameSettings.elementsOrderName and string.match(GameSettings.elementsOrderName, "Random")) then
             AddAbility(tower, "sell_tower_100")

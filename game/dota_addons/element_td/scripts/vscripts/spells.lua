@@ -177,9 +177,10 @@ function UpgradeTower(keys)
 	    	Log:error("Unknown script class, " .. scriptClassName .. " for tower " .. newTower.class)
     	end
 
-    	ApplySupportModifier(newTower)
+    	if IsSupportTower(newTower) then
+            newTower:AddNewModifier(newTower, nil, "modifier_support_tower", {})
+        end
 		
-
 		if string.find(newTower.class, "arrow_tower") ~= nil or string.find(newTower.class, "cannon_tower") ~= nil or string.find(GameSettings.elementsOrderName, "Random") ~= nil then
 			AddAbility(newTower, "sell_tower_100")
 		else
@@ -266,7 +267,9 @@ function PlaceTower(keys)
 	    	Log:error("Unknown script class, " .. scriptClassName .. " for tower " .. tower.class)
 		end
 
-		ApplySupportModifier(tower)
+		if IsSupportTower(tower) then
+            tower:AddNewModifier(tower, nil, "modifier_support_tower", {})
+        end
 
 		if string.find(tower.class, "arrow_tower") ~= nil or string.find(tower.class, "cannon_tower") ~= nil or string.find(GameSettings.elementsOrderName, "Random") ~= nil then
 			AddAbility(tower, "sell_tower_100")

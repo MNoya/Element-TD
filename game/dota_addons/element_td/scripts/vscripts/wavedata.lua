@@ -91,7 +91,8 @@ function SpawnEntity(entityClass, playerID, position)
     local entity = CreateUnitByName(entityClass, position, true, nil, nil, DOTA_TEAM_NOTEAM)
     if entity then
         entity:AddNewModifier(nil, nil, "modifier_phased", {})
-        GlobalCasterDummy:ApplyModifierToTarget(entity, "creep_damage_block_applier", "modifier_damage_block")
+        entity:AddNewModifier(entity, nil, "modifier_damage_block", {})
+
         entity:SetDeathXP(0)
         entity.class = entityClass
         entity.playerID = playerID

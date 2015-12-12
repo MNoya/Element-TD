@@ -203,7 +203,9 @@ function CreateIllusionKilledParticles(tower)
 	local particleOrigin = tower:GetAbsOrigin();
 	particleOrigin.z = particleOrigin.z + 75;
 	dummy:SetAbsOrigin(particleOrigin);
-	ApplyDummyPassive(dummy);
+
+	-- hopefully this works as intended
+	dummy:AddNewModifier(dummy, nil, "modifier_out_of_world", {});
 	
 	local particle = ParticleManager:CreateParticle("particles/generic_gameplay/illusion_killed.vpcf", PATTACH_ABSORIGIN, dummy);
     ParticleManager:SetParticleControl(particle, 0, dummy:GetAbsOrigin());

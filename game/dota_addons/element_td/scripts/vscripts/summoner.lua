@@ -187,7 +187,8 @@ function SummonElemental(keys)
 
     playerData.elementalUnit = elemental
 
-    GlobalCasterDummy:ApplyModifierToTarget(elemental, "creep_damage_block_applier", "modifier_damage_block")
+    elemental:AddNewModifier(elemental, nil, "modifier_damage_block", {});
+    --GlobalCasterDummy:ApplyModifierToTarget(elemental, "creep_damage_block_applier", "modifier_damage_block")
     --ApplyArmorModifier(elemental, GetPlayerDifficulty(playerID):GetArmorValue() * 100)
     
     local level = playerData.elements[element] + 1

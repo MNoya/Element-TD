@@ -36,7 +36,6 @@ function ElementTD:InitGameMode()
     self.vPlayerUserIds = {}
     self.playerIDMap = {} --maps userIDs to playerID
     self.vPlayerIDToHero = {} -- Maps playerID to hero
-    self.dummyCreated = false -- has the global caster dummy been initialized
 
     GameRules:SetHeroRespawnEnabled(false)
     GameRules:SetSameHeroSelectionEnabled(true)
@@ -75,7 +74,9 @@ function ElementTD:InitGameMode()
     LinkLuaModifier("modifier_no_health_bar", "libraries/modifiers/modifier_no_health_bar", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_disabled", "libraries/modifiers/modifier_disabled", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_attack_disabled", "libraries/modifiers/modifier_attack_disabled", LUA_MODIFIER_MOTION_NONE)
-
+    LinkLuaModifier("modifier_damage_block", "libraries/modifiers/modifier_damage_block", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_support_tower", "libraries/modifiers/modifier_support_tower", LUA_MODIFIER_MOTION_NONE)
+    
     -- Register UI Listener   
     CustomGameEventManager:RegisterListener( "next_wave", Dynamic_Wrap(ElementTD, "OnNextWave")) -- wave info
     CustomGameEventManager:RegisterListener( "etd_player_voted", Dynamic_Wrap(ElementTD, "OnPlayerVoted")) -- voting ui
@@ -237,10 +238,6 @@ function ElementTD:OnUnitSpawned(keys)
         CreateDataForPlayer(playerID)
 
         if playerID >= 0 then
-            if not self.dummyCreated then
-                GlobalCasterDummy:Init()
-                self.dummyCreated = true
-            end
             local playerData = GetPlayerData(playerID)
             playerData.name = PlayerResource:GetPlayerName(playerID)
             self:InitializeHero(player:GetPlayerID(), unit)
@@ -254,7 +251,6 @@ end
 function ElementTD:InitializeHero(playerID, hero)
     print("OnInitHero PID:"..playerID)
     hero:AddNewModifier(nil, nil, "modifier_disarmed", {})
-    GlobalCasterDummy:ApplyModifierToTarget(hero, "player_movespeed_applier", "modifier_base_movespeed")
     hero:SetAbilityPoints(0)
     hero:SetMaxHealth(50)
     hero:SetBaseMaxHealth(50)
