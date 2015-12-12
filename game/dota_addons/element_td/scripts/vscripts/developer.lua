@@ -31,19 +31,19 @@ function ElementTD:OnPlayerChat(keys)
 end
 
 function ElementTD:GreedIsGood(playerID, value)
-    if not value then value = 500 end
+    value = value or 500
     
     PlayerResource:ModifyGold(playerID, tonumber(value), true, 0)
-    ModifyLumber(playerID, value)
+    ModifyLumber(playerID, tonumber(value))
     UpdatePlayerSpells(playerID)
     
     GameRules:SendCustomMessage("Cheat enabled!", 0, 0)
 end
 
 function ElementTD:GiveLumber(playerID, value)
-    if not value then value = 1 end
+    value = value or 1
     
-    ModifyLumber(playerID, value)
+    ModifyLumber(playerID, tonumber(value))
     UpdatePlayerSpells(playerID)
     
     GameRules:SendCustomMessage("Cheat enabled!", 0, 0)
@@ -57,14 +57,14 @@ function ElementTD:WhosYourDaddy()
 end
 
 function ElementTD:SpawnWave(playerID, waveNumber)
-    if not waveNumber then waveNumber = GetPlayerData(playerID).nextWave end
+    waveNumber = waveNumber or GetPlayerData(playerID).nextWave
 
     ElementTD:StopWaves(playerID)
     SpawnWaveForPlayer(playerID, tonumber(waveNumber))
 end
 
 function ElementTD:SetWave(playerID, value)
-    if not value then value = 1 end
+    value = value or 1
 
     ElementTD:StopWaves(playerID)
     GetPlayerData(playerID).nextWave = tonumber(value)
@@ -72,8 +72,8 @@ function ElementTD:SetWave(playerID, value)
 end
 
 function ElementTD:SetLives(playerID, value)
-    if not value then value = 50 end
-    GetPlayerData(playerID).health = value
+    value = value or 50
+    GetPlayerData(playerID).health = tonumber(value)
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     hero:SetHealth(tonumber(value))
 end
@@ -110,8 +110,7 @@ function ElementTD:ClearWave(playerID)
 end
 
 function ElementTD:SetElementLevel(playerID, elem, level)
-    if not level then level = 1 end
-    
+    level = level or 1
     ModifyElementValue(playerID, elem, level)
 end
 
