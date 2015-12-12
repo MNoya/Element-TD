@@ -220,8 +220,11 @@ function UpgradeTower(keys)
 			end
 		end
 
-		BuildTower(newTower, tower:GetModelScale()) --start the tower building animation
-		UTIL_Remove(tower) --delete the old tower entity
+		local modelScale = tower:GetModelScale()
+		BuildTower(newTower, modelScale) --start the tower building animation
+		Timers:CreateTimer(function() 
+			UTIL_Remove(tower) --delete the old tower entity
+		end)
 	end
 end
 
