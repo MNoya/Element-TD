@@ -15,6 +15,7 @@ if not players then
     SKIP_VOTING = false -- assigns default game settings if true
     DEV_MODE = false
     EXPRESS_MODE = false
+    MAX_ELETD_PLAYERS = 8
 end
 
 function ElementTD:InitGameMode()
@@ -105,38 +106,43 @@ function ElementTD:OnGameStateChange(keys)
         GameRules:SendCustomMessage("Welcome to <font color='#70EA72'>Element Tower Defense</font>!", 0, 0)
         
         self.gameStarted = true
-        self:MoveHeroesToSpawns()
+
+        -- Need to wait some time for the spawn location to be properly set
+        Timers:CreateTimer(0.5, function()
+            self:MoveHeroesToSpawns()
+        end)
         self:StartGame()
     end
 end
 
 -- move all heroes to their proper spawn locations
 function ElementTD:MoveHeroesToSpawns()
-    Timers:CreateTimer("MovePlayersToSpawn", {
-        endTime = 1,
-        callback = function()
-            for k, ply in pairs(players) do
-                local playerData = GetPlayerData(ply:GetPlayerID())
-                if self.playerSpawnIndexes[ply:GetPlayerID()] then
-                    local hero = ply:GetAssignedHero()
+    for playerID=0,MAX_ELETD_PLAYERS-1 do
+        if PlayerResource:IsValidPlayerID(playerID) then     
+            local playerData = GetPlayerData(playerID)
+            if self.playerSpawnIndexes[playerID] then
+                local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 
-                    --hero:SetAbsOrigin(SpawnLocations[self.playerSpawnIndexes[ply:GetPlayerID()]]) 
+                hero:SetAbsOrigin(SpawnLocations[self.playerSpawnIndexes[playerID]])
 
-                    -- we must create the Elemental Summoner for this player
-                    local sector = playerData.sector + 1
-                    local summoner = CreateUnitByName("elemental_summoner", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber()) 
-                    summoner:SetOwner(ply:GetAssignedHero())
-                    summoner:SetControllableByPlayer(ply:GetPlayerID(), true)
-                    summoner:SetAngles(0, 270, 0)
-                    summoner:AddItem(CreateItem("item_buy_pure_essence", summoner, summoner))
+                -- reposition the camera
+                PlayerResource:SetCameraTarget(playerID, hero)
+                Timers:CreateTimer(1, function() PlayerResource:SetCameraTarget(playerID, nil) end)
 
-                    GetPlayerData(ply:GetPlayerID())["summoner"] = summoner
-                    ModifyLumber(ply:GetPlayerID(), 0)  -- updates summoner spells
-                    UpdatePlayerSpells(ply:GetPlayerID())
-                end
+                -- we must create the Elemental Summoner for this player
+                local sector = playerData.sector + 1
+                local summoner = CreateUnitByName("elemental_summoner", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber()) 
+                summoner:SetOwner(hero)
+                summoner:SetControllableByPlayer(playerID, true)
+                summoner:SetAngles(0, 270, 0)
+                summoner:AddItem(CreateItem("item_buy_pure_essence", summoner, summoner))
+
+                GetPlayerData(playerID)["summoner"] = summoner
+                ModifyLumber(playerID, 0)  -- updates summoner spells
+                UpdatePlayerSpells(playerID)
             end
         end
-    })
+    end
 end
 
 -- let's start the actual game
