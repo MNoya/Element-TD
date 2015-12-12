@@ -108,41 +108,7 @@ function ElementTD:OnGameStateChange(keys)
         
         self.gameStarted = true
 
-        -- Need to wait some time for the spawn location to be properly set
-        Timers:CreateTimer(0.5, function()
-            self:MoveHeroesToSpawns()
-        end)
         self:StartGame()
-    end
-end
-
--- move all heroes to their proper spawn locations
-function ElementTD:MoveHeroesToSpawns()
-    for playerID=0,MAX_ELETD_PLAYERS-1 do
-        if PlayerResource:IsValidPlayerID(playerID) then     
-            local playerData = GetPlayerData(playerID)
-            if self.playerSpawnIndexes[playerID] then
-                local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-
-                hero:SetAbsOrigin(SpawnLocations[self.playerSpawnIndexes[playerID]])
-
-                -- reposition the camera
-                PlayerResource:SetCameraTarget(playerID, hero)
-                Timers:CreateTimer(1, function() PlayerResource:SetCameraTarget(playerID, nil) end)
-
-                -- we must create the Elemental Summoner for this player
-                local sector = playerData.sector + 1
-                local summoner = CreateUnitByName("elemental_summoner", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber()) 
-                summoner:SetOwner(hero)
-                summoner:SetControllableByPlayer(playerID, true)
-                summoner:SetAngles(0, 270, 0)
-                summoner:AddItem(CreateItem("item_buy_pure_essence", summoner, summoner))
-
-                GetPlayerData(playerID)["summoner"] = summoner
-                ModifyLumber(playerID, 0)  -- updates summoner spells
-                UpdatePlayerSpells(playerID)
-            end
-        end
     end
 end
 
@@ -233,7 +199,8 @@ function ElementTD:OnUnitSpawned(keys)
     local unit = EntIndexToHScript(keys.entindex)
 
     if unit:IsRealHero() then
-        local playerID = unit:GetPlayerOwnerID()
+        local hero = unit
+        local playerID = hero:GetPlayerOwnerID()
         local player = PlayerResource:GetPlayer(playerID)
         CreateDataForPlayer(playerID)
 
@@ -243,6 +210,22 @@ function ElementTD:OnUnitSpawned(keys)
             self:InitializeHero(player:GetPlayerID(), unit)
             self.playerSpawnIndexes[player:GetPlayerID()] = playerData.sector + 1
             self.availableSpawnIndex = self.availableSpawnIndex + 1
+
+            -- reposition the camera
+            PlayerResource:SetCameraTarget(playerID, hero)
+            Timers:CreateTimer(1, function() PlayerResource:SetCameraTarget(playerID, nil) end)
+
+            -- we must create the Elemental Summoner for this player
+            local sector = playerData.sector + 1
+            local summoner = CreateUnitByName("elemental_summoner", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber()) 
+            summoner:SetOwner(hero)
+            summoner:SetControllableByPlayer(playerID, true)
+            summoner:SetAngles(0, 270, 0)
+            summoner:AddItem(CreateItem("item_buy_pure_essence", summoner, summoner))
+
+            GetPlayerData(playerID)["summoner"] = summoner
+            ModifyLumber(playerID, 0)  -- updates summoner spells
+            UpdatePlayerSpells(playerID)
         end
     end
 end

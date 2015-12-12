@@ -45,7 +45,9 @@ function CreepImage:OnTakeDamage(keys)
 
         -- Image Timer
         Timers:CreateTimer(tonumber(keys.ImageDuration), function()
-            image:ForceKill(false)
+            if IsValidEntity(image) and image:IsAlive() then
+                image:ForceKill(false)
+            end
         end)
 
         if math.random(0, 1) == 0 then
