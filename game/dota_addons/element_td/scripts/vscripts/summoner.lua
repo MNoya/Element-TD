@@ -143,6 +143,7 @@ function BuyPureEssence( keys )
 		if hasLvl3 or hasLvl1 then
 			ModifyLumber(playerID, -1)
 			ModifyPureEssence(playerID, 1)
+			Sounds:EmitSoundOnClient(playerID, "General.Buy")
 		else
             Log:info("Player " .. playerID .. " does not meet the pure essence purchase requirements.")
             ShowWarnMessage(playerID, "You need to have at least one of every element or lvl 3 of one element before purchase.")

@@ -5145,6 +5145,7 @@
 	
 	    "ItemDroppable"                 "0"
 	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
 	    
 	    "Building"                      "1"
 	    "AbilityCastRange"              "200"
@@ -5175,6 +5176,7 @@
 	
 	    "ItemDroppable"                 "0"
 	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
 	    
 	    "Building"                      "1"
 	    "AbilityCastRange"              "200"
