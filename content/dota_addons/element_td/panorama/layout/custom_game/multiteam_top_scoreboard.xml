@@ -1,0 +1,117 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/multiteam_top_scoreboard.vcss_c" />
+		<include src="s2r://panorama/styles/custom_game/shared_scoreboard_styles.vcss_c" />
+	</styles>
+
+	<scripts>
+		<include src="s2r://panorama/scripts/custom_game/shared_scoreboard_updater.vjs_c" />
+		<include src="s2r://panorama/scripts/custom_game/multiteam_top_scoreboard.vjs_c" />
+	</scripts>
+	<script>
+		$( "#_dynamic_team_2" ).SetAttributeInt( "team_id", 2 );
+		$( "#_dynamic_team_3" ).SetAttributeInt( "team_id", 3 );
+		$( "#_dynamic_team_6" ).SetAttributeInt( "team_id", 6 );
+		$( "#_dynamic_team_7" ).SetAttributeInt( "team_id", 7 );
+		$( "#_dynamic_team_8" ).SetAttributeInt( "team_id", 8 );
+		$( "#_dynamic_team_9" ).SetAttributeInt( "team_id", 9 );
+		$( "#_dynamic_team_10" ).SetAttributeInt( "team_id", 10 );
+		$( "#_dynamic_team_11" ).SetAttributeInt( "team_id", 11 );
+	</script>
+
+	<Panel hittest="false" class="CustomHudRoot">
+		<Panel hittest="false" id="TopBarScoreboard">
+			<Panel hittest="false" id="ScoreboardContainer">
+				<Panel hittest="false" id="MultiteamScoreboard">
+					<Panel hittest="false" id="LeftSideTeams">
+						<Panel hittest="false" id="LeftSideInner">
+							<Panel hittest="false" class="ScoreboardTeamWrapper" id="_dynamic_team_2">
+								<Panel hittest="false" id="ScoreboardTeam">
+									<Panel hittest="false" id="TeamPadding"/>
+									<Panel hittest="false" id="PlayersContainer"/>
+									<Panel hittest="false" id="LogoAndScore">
+										<Panel hittest="false" id="TeamLogo" />
+										<Label hittest="false" id="TeamScore" text="999"/>
+									</Panel>
+								</Panel>
+							</Panel>
+							<Panel hittest="false" class="ScoreboardTeamWrapper" id="_dynamic_team_3">
+								<Panel hittest="false" id="ScoreboardTeam">
+									<Panel hittest="false" id="PlayersContainer"/>
+									<Panel hittest="false" id="TeamPadding"/>
+									<Panel hittest="false" id="LogoAndScore">
+										<Panel hittest="false" id="TeamLogo" />
+										<Label hittest="false" id="TeamScore" text="999"/>
+									</Panel>
+								</Panel>
+							</Panel>
+							<Panel hittest="false" class="ScoreboardTeamWrapper" id="_dynamic_team_6">
+								<Panel hittest="false" id="ScoreboardTeam">
+									<Panel hittest="false" id="PlayersContainer"/>
+									<Panel hittest="false" id="TeamPadding"/>
+									<Panel hittest="false" id="LogoAndScore">
+										<Panel hittest="false" id="TeamLogo" />
+										<Label hittest="false" id="TeamScore" text="999"/>
+									</Panel>
+								</Panel>
+							</Panel>
+							<Panel hittest="false" class="ScoreboardTeamWrapper" id="_dynamic_team_7">
+								<Panel hittest="false" id="ScoreboardTeam">
+									<Panel hittest="false" id="PlayersContainer"/>
+									<Panel hittest="false" id="TeamPadding"/>
+									<Panel hittest="false" id="LogoAndScore">
+										<Panel hittest="false" id="TeamLogo" />
+										<Label hittest="false" id="TeamScore" text="999"/>
+									</Panel>
+								</Panel>
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel hittest="false" id="RightSideTeams">
+						<Panel hittest="false" class="ScoreboardTeamWrapper" id="_dynamic_team_8">
+							<Panel hittest="false" id="ScoreboardTeam">
+								<Panel hittest="false" id="PlayersContainer"/>
+								<Panel hittest="false" id="TeamPadding"/>
+								<Panel hittest="false" id="LogoAndScore">
+									<Panel hittest="false" id="TeamLogo" />
+									<Label hittest="false" id="TeamScore" text="999"/>
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel hittest="false" class="ScoreboardTeamWrapper" id="_dynamic_team_9">
+							<Panel hittest="false" id="ScoreboardTeam">
+								<Panel hittest="false" id="PlayersContainer"/>
+								<Panel hittest="false" id="TeamPadding"/>
+								<Panel hittest="false" id="LogoAndScore">
+									<Panel hittest="false" id="TeamLogo" />
+									<Label hittest="false" id="TeamScore" text="999"/>
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel hittest="false" class="ScoreboardTeamWrapper" id="_dynamic_team_10">
+							<Panel hittest="false" id="ScoreboardTeam">
+								<Panel hittest="false" id="PlayersContainer"/>
+								<Panel hittest="false" id="TeamPadding"/>
+								<Panel hittest="false" id="LogoAndScore">
+									<Panel hittest="false" id="TeamLogo" />
+									<Label hittest="false" id="TeamScore" text="999"/>
+								</Panel>
+							</Panel>
+						</Panel>
+						<Panel hittest="false" class="ScoreboardTeamWrapper" id="_dynamic_team_11">
+							<Panel hittest="false" id="ScoreboardTeam">
+								<Panel hittest="false" id="PlayersContainer"/>
+								<Panel hittest="false" id="TeamPadding"/>
+								<Panel hittest="false" id="LogoAndScore">
+									<Panel hittest="false" id="TeamLogo" />
+									<Label hittest="false" id="TeamScore" text="999"/>
+								</Panel>
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

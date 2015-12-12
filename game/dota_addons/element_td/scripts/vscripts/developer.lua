@@ -68,6 +68,7 @@ function ElementTD:SetWave(playerID, value)
 
     ElementTD:StopWaves(playerID)
     GetPlayerData(playerID).nextWave = tonumber(value)
+    GetPlayerData(playerID).completedWaves = tonumber(value) - 1
 end
 
 function ElementTD:SetLives(playerID, value)
