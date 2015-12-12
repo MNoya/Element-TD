@@ -1,0 +1,26 @@
+//============================================================//
+// Buy Pure Essence
+//============================================================//
+"item_buy_pure_essence"
+{
+    "BaseClass"                     "item_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "MaxLevel"                      "1"
+    "AbilityTextureName"            "buy_pure_essence"
+
+    "ItemDroppable"                 "0"
+    "ItemPurchasable"               "0"
+    "ItemSellable"                  "0"
+
+    "LumberCost"             "1"
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "Target"            "CASTER"
+            "ScriptFile"        "scripts/vscripts/summoner.lua"
+            "Function"          "BuyPureEssence"
+        }
+    }
+}

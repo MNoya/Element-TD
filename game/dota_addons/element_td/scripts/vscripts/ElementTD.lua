@@ -128,6 +128,7 @@ function ElementTD:MoveHeroesToSpawns()
                     summoner:SetOwner(ply:GetAssignedHero())
                     summoner:SetControllableByPlayer(ply:GetPlayerID(), true)
                     summoner:SetAngles(0, 270, 0)
+                    summoner:AddItem(CreateItem("item_buy_pure_essence", summoner, summoner))
 
                     GetPlayerData(ply:GetPlayerID())["summoner"] = summoner
                     ModifyLumber(ply:GetPlayerID(), 0)  -- updates summoner spells

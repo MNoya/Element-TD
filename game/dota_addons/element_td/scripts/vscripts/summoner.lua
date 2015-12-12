@@ -9,12 +9,18 @@ Particles = {
 function ModifyLumber(playerID, amount)
     GetPlayerData(playerID).lumber = GetPlayerData(playerID).lumber + amount
     UpdateSummonerSpells(playerID)
+    if amount > 0 then
+        PopupLumber(ElementTD.vPlayerIDToHero[playerID], amount)
+    end
     CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_lumber", { lumber = GetPlayerData(playerID).lumber } )
 end
 
 function ModifyPureEssence(playerID, amount)
     GetPlayerData(playerID).pureEssence = GetPlayerData(playerID).pureEssence + amount
     UpdatePlayerSpells(playerID)
+    if amount > 0 then
+        PopupEssence(ElementTD.vPlayerIDToHero[playerID], amount)
+    end
     CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_pure_essence", { pureEssence = GetPlayerData(playerID).pureEssence } )
 end
 
@@ -114,6 +120,35 @@ end
 function ClearRunes( propsTable )
     for k,v in pairs(propsTable) do
         v:RemoveSelf()
+    end
+end
+
+function BuyPureEssence( keys )
+	local summoner = keys.caster
+	local playerID = summoner:GetOwner():GetPlayerID()
+	local playerData = GetPlayerData(playerID)
+	local elements = playerData.elements
+
+	if playerData.lumber > 0 then
+		local hasLvl3 = false
+		local hasLvl1 = true
+		for i,v in pairs(elements) do
+			if v == 3 then -- if level 3 of element
+				hasLvl3 = true
+			end
+			if v == 0 then
+				hasLvl1 = false
+			end
+		end
+		if hasLvl3 or hasLvl1 then
+			ModifyLumber(playerID, -1)
+			ModifyPureEssence(playerID, 1)
+		else
+            Log:info("Player " .. playerID .. " does not meet the pure essence purchase requirements.")
+            ShowWarnMessage(playerID, "You need to have at least one of every element or lvl 3 of one element before purchase.")
+		end
+	else
+        ShowWarnMessage(playerID, "Need more lumber.")
     end
 end
 
