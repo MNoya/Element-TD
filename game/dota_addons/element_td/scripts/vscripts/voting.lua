@@ -105,6 +105,7 @@ function FinalizeVotes()
 	end
 
 	local gamemode = GetWinningChoice(VOTE_RESULTS.gamemode)
+	GameSettings:SetGamemode(gamemode)
 	local difficulty
 	if gamemode == "Competitive" or gamemode == "Extreme" then
 		difficulty = GetWinningDifficulty()

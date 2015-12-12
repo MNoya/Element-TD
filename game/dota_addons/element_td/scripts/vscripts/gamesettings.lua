@@ -5,6 +5,7 @@ GameSettingsKV = LoadKeyValues("scripts/kv/gamesettings.kv")
 if not GameSettings then
 	GameSettings = {}
 	GameSettings.__index = GameSettings
+	GameSettings.gamemode = ""
 	GameSettings.order = "Normal"
 	GameSettings.length = ""
 	GameSettings.elements = ""
@@ -64,6 +65,13 @@ function GameSettings:SetDifficulty(playerID, difficulty)
 	Log:info("Set " .. GetPlayerName(playerID) .. "'s difficulty to " .. difficulty)
 end
 
+function GameSettings:SetGamemode(gamemode)
+	self.gamemode = gamemode
+end
+
+function GameSettings:GetGamemode()
+	return GameSettings.gamemode
+end
 
 function GameSettings:GetGameLength()
 	return GameSettings.length

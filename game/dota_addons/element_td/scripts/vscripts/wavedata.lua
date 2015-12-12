@@ -54,8 +54,6 @@ function StartBreakTime(playerID, breakTime)
     
     PlayerResource:GetPlayer(playerID):GetAssignedHero():RemoveModifierByName("modifier_silence")
 
-    Log:debug("Starting break time for " .. GetPlayerName(playerID))
-
     -- let's figure out how long the break is
     local wave = GetPlayerData(playerID).nextWave
     local msgTime = 5 -- how long to show the message for
@@ -63,12 +61,17 @@ function StartBreakTime(playerID, breakTime)
         breakTime = 30
     end
 
-    CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_wave_timer", { time = breakTime } )
-
     if msgTime >= breakTime then
         msgTime = breakTime - 0.5
     end
-    ShowMessage(playerID, "Wave "..wave.." in "..breakTime.." seconds", msgTime)
+
+    if GameSettings:GetGamemode() == "Extreme" and wave > 1 then
+        breakTime = 0
+    else
+        Log:debug("Starting break time for " .. GetPlayerName(playerID))
+        CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_wave_timer", { time = breakTime } )
+        ShowMessage(playerID, "Wave "..wave.." in "..breakTime.." seconds", msgTime)
+    end
 
     -- create the actual timer
     Timers:CreateTimer("SpawnWaveDelay"..playerID, {

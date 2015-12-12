@@ -120,7 +120,7 @@ function ElementTD:MoveHeroesToSpawns()
                 if self.playerSpawnIndexes[ply:GetPlayerID()] then
                     local hero = ply:GetAssignedHero()
 
-                    hero:SetAbsOrigin(SpawnLocations[self.playerSpawnIndexes[ply:GetPlayerID()]]) 
+                    --hero:SetAbsOrigin(SpawnLocations[self.playerSpawnIndexes[ply:GetPlayerID()]]) 
 
                     -- we must create the Elemental Summoner for this player
                     local sector = playerData.sector + 1
