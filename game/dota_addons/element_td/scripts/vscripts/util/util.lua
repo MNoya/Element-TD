@@ -1,10 +1,23 @@
-JSON = require("util/json");
-require("util/base64");
+JSON = require("util/json")
+require("util/base64")
 
 playerColors = {
     [0] = "#3375FF", [1] = "#66FFBF", [2] = "#BF00BF", [3] = "#F3F00B", [4] = "#FF6B00", --radiant
     [5] = "#FE86C2", [6] = "#FE86C2", [7] = "#65D9F7", [8] = "#008321", [9] = "#A46900"  --dire 
-};
+}
+
+-- PLAYER COLORS
+m_TeamColors = {}
+m_TeamColors[0] = { 50, 100, 220 } -- 49:100:218 / #3164DA
+m_TeamColors[1] = { 90, 225, 155 } -- 87:224:154 / #57E19A
+m_TeamColors[2] = { 170, 0, 160 } -- 171:0:156 / #AA00A0
+m_TeamColors[3] = { 210, 200, 20 } -- 211:203:16 / #D3CB14
+m_TeamColors[4] = { 215, 90, 5 } -- 214:87:8 / #D65705
+m_TeamColors[5] = { 210, 100, 150 } -- 210:97:153 / #D26496
+m_TeamColors[6] = { 130, 150, 80 } -- 130:154:80 / #829650
+m_TeamColors[7] = { 100, 190, 200 } -- 99:188:206 / #64BEC8
+m_TeamColors[8] = { 5, 110, 50 } -- 7:109:44 / #056E32
+m_TeamColors[9] = { 130, 80, 5 } -- 124:75:6 / #825005
 
 function PrintTable(t, indent, done)
     if type(t) ~= "table" then return end

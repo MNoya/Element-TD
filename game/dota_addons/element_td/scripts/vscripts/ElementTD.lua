@@ -15,7 +15,6 @@ if not players then
     SKIP_VOTING = false -- assigns default game settings if true
     DEV_MODE = false
     EXPRESS_MODE = false
-    MAX_ELETD_PLAYERS = 8
 end
 
 function ElementTD:InitGameMode()
@@ -244,6 +243,8 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:SetGold(70, true)
     hero:SetModelScale(0.75)
     hero:AddNewModifier(nil, nil, "modifier_silence", {}) -- silence this player until break time is started
+
+    PlayerResource:SetCustomPlayerColor(playerID, m_TeamColors[playerID][1], m_TeamColors[playerID][2], m_TeamColors[playerID][3])
 
     self.vPlayerIDToHero[playerID] = hero -- Store hero for player in here GetAssignedHero can be flakey
 

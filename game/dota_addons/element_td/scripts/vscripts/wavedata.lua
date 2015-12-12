@@ -175,12 +175,7 @@ function SpawnWaveForPlayer(playerID, wave)
             return
         end
 
-        if playerData.nextWave > playerData.activeWaves then
-            for _, ply in pairs(players) do
-                StartBreakTime(ply:GetPlayerID(), GetPlayerDifficulty(playerID):GetWaveBreakTime(playerData.nextWave))
-            end
-            playerData.activeWaves = playerData.nextWave
-        end
+        StartBreakTime(playerID, GetPlayerDifficulty(playerID):GetWaveBreakTime(playerData.nextWave))  
 
         -- lumber
         if (playerData.completedWaves % 5 == 0 and playerData.completedWaves < 55 and not EXPRESS_MODE) or (playerData.completedWaves % 3 == 0 and playerData.completedWaves < 30 and EXPRESS_MODE) then
@@ -213,7 +208,7 @@ function SpawnWaveForPlayer(playerID, wave)
             local creeps = playerData.waveObject.creeps
             for _, creep in pairs(creeps) do
                 local unit = EntIndexToHScript(creep)
-                if not unit:IsNull() and IsValidEntity(unit) and unit:GetUnitName() == WAVE_CREEPS[wave] and unit.playerID == playerID then
+                if IsValidEntity(unit) and unit:GetUnitName() == WAVE_CREEPS[wave] and unit.playerID == playerID then
                     unit:CastAbilityImmediately(unit:FindAbilityByName("creep_ability_fast"), playerID)
                 end
             end
