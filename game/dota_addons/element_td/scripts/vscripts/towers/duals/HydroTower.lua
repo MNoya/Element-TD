@@ -61,6 +61,8 @@ function HydroTower:ShootProjectileAt(targetPos)
     ParticleManager:SetParticleControl(particle, 3, projectile.origin)
 
     Timers:CreateTimer(function()
+        if not IsValidEntity(self.tower) then return end
+        
         local pos = projectile.origin
         pos.x = pos.x + projectile.velocity.x
         pos.y = pos.y + projectile.velocity.y

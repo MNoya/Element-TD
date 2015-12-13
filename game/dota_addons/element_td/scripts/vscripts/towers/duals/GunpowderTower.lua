@@ -26,19 +26,16 @@ function GunpowderTower:OnAttackLanded(keys)
 
     --spawn random explosions around the initial point
     for i = 1, 3, 1 do
-      Timers:CreateTimer("CreateExplosion"..self.tower:entindex()..i, {
-        endTime = RandomFloat(0.15, 0.5),
-        pos = RandomPositionInCircle(target:GetAbsOrigin(), 300),
-        callback = function()
+        Timers:CreateTimer(RandomFloat(0.15, 0.5), function()
             local p = ParticleManager:CreateParticle("particles/units/heroes/hero_phoenix/phoenix_supernova_reborn_star_sphere.vpcf", PATTACH_CUSTOMORIGIN, self.tower)    
-            ParticleManager:SetParticleControl(p, 0, timer.pos)    
+            pos = RandomPositionInCircle(target:GetAbsOrigin(), 300)
+            ParticleManager:SetParticleControl(p, 0, pos)    
 
             if IsValidEntity(self.tower) then
-              local damage = ApplyAbilityDamageFromModifiers(self.splashDamage[self.tower:GetLevel()], self.tower)    
-              DamageEntitiesInArea(timer.pos, self.splashAOE, self.tower, damage)    
+                local damage = ApplyAbilityDamageFromModifiers(self.splashDamage[self.tower:GetLevel()], self.tower)    
+                DamageEntitiesInArea(pos, self.splashAOE, self.tower, damage)    
             end
-        end
-      })
+        end)
     end
 end
 

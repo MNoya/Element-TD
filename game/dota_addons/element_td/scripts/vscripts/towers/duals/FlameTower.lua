@@ -53,15 +53,12 @@ function FlameTower:OnAttackLanded(keys)
     }    
     target.SunburnData.StackCount = target.SunburnData.StackCount + 1    
 
-    Timers:CreateTimer(stackID.."Timer", {
-        endTime = self.sunburnDuration,
-        callback = function()
-            if IsValidEntity(target) and target.SunburnData then
-                target.SunburnData.Stacks[stackID] = nil    
-                target.SunburnData.StackCount = target.SunburnData.StackCount - 1    
-            end
+    Timers:CreateTimer(self.sunburnDuration, function()
+        if IsValidEntity(target) and target.SunburnData then
+            target.SunburnData.Stacks[stackID] = nil    
+            target.SunburnData.StackCount = target.SunburnData.StackCount - 1    
         end
-    })    
+    end)    
 end
 
 function CreateSunburnRemnant(entity, team)
@@ -95,6 +92,7 @@ function CreateSunburnRemnant(entity, team)
             local ticks = timeRemaining    
 
             Timers:CreateTimer(1, function()
+                if not IsValidEntity(remnant) then return end
                 DamageEntitiesInArea(remnant:GetOrigin(), entity.SunburnData.AOE, v.source, v.damage)    
                 ticks = ticks - 1    
                 if ticks == 0 then
