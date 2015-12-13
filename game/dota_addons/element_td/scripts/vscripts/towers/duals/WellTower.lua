@@ -1,6 +1,7 @@
 -- Well Tower class (Nature + Water)
 -- This is a support tower. It has an autocast ability which increases the speed (by a percentage) of non-support towers (this distinction is important). 
 -- Autocast prefers targets with higher value (i.e. more powerful towers first).
+
 WellTower = createClass({
         tower = nil,
         towerClass = "",
@@ -18,8 +19,9 @@ nil)
 -- the thinker function for the well_tower_spring_forward spell
 function WellTower:SpringForwardThink()
     if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() then
-        -- let's find a target to autocast on
-        local towers = Entities:FindAllByClassnameWithin("npc_dota_tower", self.tower:GetOrigin(), self.ability:GetCastRange())
+        
+        -- let's find a target to cast on
+        local towers = Entities:FindAllByClassnameWithin("npc_dota_creature", self.tower:GetOrigin(), self.castRange)
         local highestDamage = 0
         local theChosenOne = nil
 
@@ -34,38 +36,9 @@ function WellTower:SpringForwardThink()
         end
 
         if theChosenOne then
-            self.tower:CastAbilityOnTarget(theChosenOne, self.ability, 1)
+            self.tower:CastAbilityOnTarget(theChosenOne, self.ability, self.playerID)
         end
     end
-end
-
--- called when the Spring Forward ability is cast
-function WellTower:OnSpringForwardCast(keys)
-    -- this spell doesn't actually apply the modifier itself because we need to validate the target first
-    local target = keys.target
-    local playerID = self.tower:GetOwner():GetPlayerID()
-
-    if not IsTower(target) then
-        self.ability:EndCooldown()
-        ShowWarnMessage(playerID, "Ability can only target towers!")
-        return
-    end
-
-    if target:GetOwner():GetPlayerID() ~= self.playerID then
-        self.ability:EndCooldown()
-        ShowWarnMessage(playerID, "Ability can only target your own towers!")
-        return
-    end
-
-    if IsSupportTower(target) then
-        self.ability:EndCooldown()
-        ShowWarnMessage(playerID, "Ability can't target support towers!")
-        return
-    end
-
-    -- create the applier method
-    target:RemoveModifierByName("modifier_spring_forward")
-    self.ability:ApplyDataDrivenModifier(self.tower, target, "modifier_spring_forward", {}) 
 end
 
 function WellTower:OnAttackLanded(keys)
@@ -76,13 +49,16 @@ end
 
 function WellTower:OnCreated()
     self.ability = AddAbility(self.tower, "well_tower_spring_forward", GetUnitKeyValue(self.towerClass, "Level"))
+    self.castRange = self.ability:GetCastRange(self.tower:GetAbsOrigin(), self.tower)
+
     Timers:CreateTimer(function()
         if IsValidEntity(self.tower) then
             self:SpringForwardThink()
             return 1
         end
     end)
-    self.ability:ToggleAutoCast()
+
+    self.ability:ToggleAutoCast() -- turn on autocast by default
     self.playerID = self.tower:GetOwner():GetPlayerID()
 end
 
