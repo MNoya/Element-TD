@@ -75,7 +75,12 @@ function ScoringObject:UpdateScore( const )
 	end
 	if scoreTable['totalScore'] then
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Total score: ' .. comma_value(scoreTable['totalScore']), '#FF8C00'})
-		self.totalScore = self.totalScore + scoreTable['totalScore']		
+		if const == SCORING_WAVE_LOST or const == SCORING_GAME_CLEAR then
+			self.totalScore = scoreTable['totalScore']
+		else
+			table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Total score: ' .. comma_value(scoreTable['totalScore']), '#FF8C00'})
+			self.totalScore = self.totalScore + scoreTable['totalScore']
+		end	
 	end
 	--PrintTable(processed)
 	self:ShowScore(processed)
