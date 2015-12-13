@@ -166,11 +166,13 @@ end
 function ElementTD:OnNextWave( keys )
     local playerID = keys.PlayerID
     local data = GetPlayerData(playerID)
-    Timers:RemoveTimer("SpawnWaveDelay"..playerID)
-    Log:info("Spawning wave " .. data.nextWave .. " for ["..playerID.."] ".. data.name)
-    ShowMessage(playerID, "Wave " .. data.nextWave, 3)
-    SpawnWaveForPlayer(playerID, data.nextWave) -- spawn dat wave
-    WAVE_1_STARTED = true
+    if (data.waveObject and data.waveObject.creepsRemaining == 0) or data.nextWave == 1 then
+        Timers:RemoveTimer("SpawnWaveDelay"..playerID)
+        Log:info("Spawning wave " .. data.nextWave .. " for ["..playerID.."] ".. data.name)
+        ShowMessage(playerID, "Wave " .. data.nextWave, 3)
+        SpawnWaveForPlayer(playerID, data.nextWave) -- spawn dat wave
+        WAVE_1_STARTED = true
+    end
 end
 
 function ElementTD:EndGameForPlayer( playerID )
