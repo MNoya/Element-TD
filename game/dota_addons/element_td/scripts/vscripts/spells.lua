@@ -241,7 +241,7 @@ function UpgradeTower(keys)
 		BuildTower(newTower, modelScale) --start the tower building animation
 		Timers:CreateTimer(function() 
 			AddUnitToSelection(newTower)
-			RemoveTower(tower) --delete the old tower entity
+			RemoveTower(tower, true) --delete the old tower entity
 		end)
 	end
 end
@@ -336,9 +336,9 @@ function BuildTower(tower, baseScale)
 end
 
 -- Kills and hides the tower, so that its running timers can still execute until it gets removed by the engine
-function RemoveTower( unit )
+function RemoveTower( unit, bKeepPedestal )
 	unit:AddEffects(EF_NODRAW)
-	if IsValidEntity(unit.prop) then unit.prop:RemoveSelf() end
+	if not bKeepPedestal and IsValidEntity(unit.prop) then unit.prop:RemoveSelf() end
 	unit:ForceKill(false)
 end
 
