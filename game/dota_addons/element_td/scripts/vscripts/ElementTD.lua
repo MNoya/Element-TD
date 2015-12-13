@@ -232,8 +232,8 @@ function ElementTD:OnUnitSpawned(keys)
             self.availableSpawnIndex = self.availableSpawnIndex + 1
 
             -- reposition the camera
-            PlayerResource:SetCameraTarget(playerID, hero)
-            Timers:CreateTimer(1, function() PlayerResource:SetCameraTarget(playerID, nil) end)
+            --PlayerResource:SetCameraTarget(playerID, hero)
+            --Timers:CreateTimer(1, function() PlayerResource:SetCameraTarget(playerID, nil) end)
 
             -- we must create the Elemental Summoner for this player
             local sector = playerData.sector + 1

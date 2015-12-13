@@ -1,0 +1,8 @@
+"CustomUI"
+{
+    "1"
+    {
+        "File"      "killcam_nuke"
+        "Depth"     "1"
+    }  
+}
