@@ -57,10 +57,12 @@ function TorrentTower:OnCreated()
     self.ability = AddAbility(self.tower, "torrent_tower_douse_" .. self.tower:GetLevel())
     self.ability:SetLevel(0)
 
-    self.ability:SetContextThink("DouseModifierDelay", function()
-        self.tower:SetModifierStackCount("modifier_douse_passive", self.ability, 0)
-        return nil
-    end, 1)
+    Timers:CreateTimer(1, function()
+        if IsValidEntity(self.tower) then
+            self.tower:SetModifierStackCount("modifier_douse_passive", self.ability, 0)
+            return nil
+        end
+    end)
 
     self.ability:ToggleAutoCast()
 

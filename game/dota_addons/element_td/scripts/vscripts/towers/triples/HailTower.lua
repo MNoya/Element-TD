@@ -64,10 +64,12 @@ end
 
 function HailTower:OnCreated()
     self.ability = AddAbility(self.tower, "hail_tower_storm")
-    self.ability:SetContextThink("StormThink", function()
-        self:OnStormThink()
-        return 1
-    end, 1)
+    Timers:CreateTimer(1, function()
+        if IsValidEntity(self.tower) then
+            self:OnStormThink()
+            return 1
+        end
+    end)
     self.ability:ToggleAutoCast()
     self.projectileSpeed = tonumber(GetUnitKeyValue(self.towerClass, "ProjectileSpeed"))
     self.attackOrigin = self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_attack1"))

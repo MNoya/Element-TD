@@ -53,23 +53,25 @@ function WindstormTower:SpawnTornado(keys)
                         local aoe = GetAbilitySpecialValue("windstorm_tower_tornado", "radius")
 
                         --create the tornado thinker
-                        self.tornado:SetContextThink("TornadoThink",  function()
-                            local pos = self.tornado:GetAbsOrigin()
-                            local bounds = SectorBounds[sector]
+                        Timers:CreateTimer(1, function()
+                            if IsValidEntity(self.tower) and IsValidEntity(self.tornado) then
+                                local pos = self.tornado:GetAbsOrigin()
+                                local bounds = SectorBounds[sector]
 
-                            local creeps = GetCreepsInArea(self.tornado:GetAbsOrigin(), aoe)
-                            for _,v in pairs(creeps) do
-                                DamageEntity(v, self.tower, damage)
-                            end    
+                                local creeps = GetCreepsInArea(self.tornado:GetAbsOrigin(), aoe)
+                                for _,v in pairs(creeps) do
+                                    DamageEntity(v, self.tower, damage)
+                                end    
 
-                            if not (pos.x > bounds.left + 400 and pos.x < bounds.right - 400 and pos.y < bounds.top - 400 and pos.y > bounds.bottom + 400) then
-                                UTIL_RemoveImmediate(self.tornado)
-                                self.ability:SetActivated(true)
-                                self.tower:RemoveModifierByName("modifier_tornado_summoned")
-                                return
+                                if not (pos.x > bounds.left + 400 and pos.x < bounds.right - 400 and pos.y < bounds.top - 400 and pos.y > bounds.bottom + 400) then
+                                    UTIL_RemoveImmediate(self.tornado)
+                                    self.ability:SetActivated(true)
+                                    self.tower:RemoveModifierByName("modifier_tornado_summoned")
+                                    return
+                                end
+                                return 1
                             end
-                            return 1
-                        end, 1)
+                        end)
                     end
                 end
             end

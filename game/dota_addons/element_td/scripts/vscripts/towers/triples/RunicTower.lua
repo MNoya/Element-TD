@@ -63,10 +63,12 @@ end
 
 function RunicTower:OnCreated()
     self.ability = AddAbility(self.tower, "runic_tower_magic_attack")
-    self.ability:SetContextThink("MagicAttackThink", function()
-        self:OnMagicAttackThink()
-        return 1
-    end, 1)
+    Timers:CreateTimer(1, function()
+        if IsValidEntity(self.tower) then
+            self:OnMagicAttackThink()
+            return 1
+        end
+    end)
     self.ability:ToggleAutoCast()
     
     self.projectileSpeed = tonumber(GetUnitKeyValue(self.towerClass, "ProjectileSpeed"))

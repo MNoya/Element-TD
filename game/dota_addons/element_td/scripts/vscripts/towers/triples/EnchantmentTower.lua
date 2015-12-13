@@ -75,10 +75,12 @@ function EnchantmentTower:OnCreated()
     self.halfAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
 
     self.ability = AddAbility(self.tower, "enchantment_tower_faerie_fire", self.tower:GetLevel())
-    self.ability:SetContextThink("FaerieFireThinker", function()
-        self:FaerieFireThink()
-        return 1
-    end, 1)
+    Timers:CreateTimer(1, function()
+        if IsValidEntity(self.tower) then
+            self:FaerieFireThink()
+            return 1
+        end
+    end)
     self.ability:ToggleAutoCast()
 end
 

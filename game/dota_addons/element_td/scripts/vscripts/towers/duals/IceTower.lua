@@ -44,6 +44,8 @@ function IceTower:OnAttackStart(keys)
     ParticleManager:SetParticleControl(proj.particleEffect, 3, proj:GetAbsOrigin())    
 
     Timers:CreateTimer(function()
+        if not IsValidEntity(self.tower) then return end
+
         local pos = proj:GetAbsOrigin()    
 
         pos.x = pos.x + proj.velocity.x    
@@ -88,7 +90,7 @@ function IceTower:OnAttackStart(keys)
             return
         end
         return 0.01    
-    end)    
+    end)
 end
 
 function IceTower:OnCreated()

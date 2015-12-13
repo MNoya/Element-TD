@@ -66,10 +66,12 @@ end
 
 function PolarTower:OnCreated()
     self.ability = AddAbility(self.tower, "polar_tower_frostbite", self.tower:GetLevel())
-    self.ability:SetContextThink("FrostbiteAbilityThink", function()
-        self:FrostbiteThink()
-        return 1
-    end, 1)
+    Timers:CreateTimer(1, function()
+        if IsValidEntity(self.tower) then
+            self:FrostbiteThink()
+            return 1
+        end
+    end)
     self.ability:ToggleAutoCast()
     
     self.fullAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))

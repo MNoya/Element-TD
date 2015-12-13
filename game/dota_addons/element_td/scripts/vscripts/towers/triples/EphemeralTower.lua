@@ -43,19 +43,21 @@ function EphemeralTower:OnAttackStart(keys)
     if not self.hasAttackThinker then 
         self.hasAttackThinker = true
 
-        self.tower:SetContextThink("AttackThinker", function()
-            if GameRules:GetGameTime() - self.lastAttackTime <= 1 then
-                if self.currentDamageReduction < self.maxDamageReduction then
-                    local newDamage    = self.tower:GetBaseDamageMax() - self.damageReductionPerAttack
-                    self.tower:SetBaseDamageMax(newDamage)
-                    self.tower:SetBaseDamageMin(newDamage)
-                    self.currentDamageReduction = self.currentDamageReduction + self.damageReductionPerAttackPercent
-                elseif self.currentDamageReduction >= self.maxDamageReduction then
-                    self:ResetDamage()
+        Timers:CreateTimer(1, function()
+            if IsValidEntity(self.tower) then
+                if GameRules:GetGameTime() - self.lastAttackTime <= 1 then
+                    if self.currentDamageReduction < self.maxDamageReduction then
+                        local newDamage    = self.tower:GetBaseDamageMax() - self.damageReductionPerAttack
+                        self.tower:SetBaseDamageMax(newDamage)
+                        self.tower:SetBaseDamageMin(newDamage)
+                        self.currentDamageReduction = self.currentDamageReduction + self.damageReductionPerAttackPercent
+                    elseif self.currentDamageReduction >= self.maxDamageReduction then
+                        self:ResetDamage()
+                    end
                 end
+                return 1
             end
-            return 1
-        end, 1)
+        end)
 
     end
     
