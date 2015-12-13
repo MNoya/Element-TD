@@ -4,9 +4,21 @@ well_tower_spring_forward = class({})
 LinkLuaModifier("modifier_spring_forward", "towers/duals/well/modifier_spring_forward", LUA_MODIFIER_MOTION_NONE)
 
 function well_tower_spring_forward:OnSpellStart()
+	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 	EmitSoundOn("DOTA_Item.ClarityPotion.Activate", self:GetCaster())
-	target:AddNewModifier(self:GetCaster(), self, "modifier_spring_forward", {
+
+	local particle1 = ParticleManager:CreateParticle("particles/items3_fx/mango_active.vpcf", PATTACH_ABSORIGIN, caster)
+    ParticleManager:SetParticleControl(particle1, 0, caster:GetAbsOrigin())
+
+    local particle2 = ParticleManager:CreateParticle("particles/items3_fx/mango_active.vpcf", PATTACH_ABSORIGIN, target)
+    ParticleManager:SetParticleControl(particle2, 0, target:GetAbsOrigin())
+
+    if target:HasModifier("modifier_spring_forward") then
+    	target:RemoveModifierByName("modifier_spring_forward")
+    end
+
+	target:AddNewModifier(caster, self, "modifier_spring_forward", {
 		duration = self:GetSpecialValueFor("duration")
 	})
 end

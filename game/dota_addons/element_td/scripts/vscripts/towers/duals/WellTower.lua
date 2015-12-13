@@ -27,10 +27,15 @@ function WellTower:SpringForwardThink()
 
         -- find out the tower with the highest damage. Is this a bad choosing algorithm?
         for _, tower in pairs(towers) do
-            if IsTower(tower) and tower:GetOwner():GetPlayerID() == self.playerID and not IsSupportTower(tower) then
-                if not tower:HasModifier("modifier_spring_forward") and tower:GetBaseDamageMax() >= highestDamage then
-                    highestDamage = tower:GetBaseDamageMax()
-                    theChosenOne = tower
+            if IsTower(tower) and tower:GetOwner():GetPlayerID() == self.playerID and not IsSupportTower(tower) and tower:IsAlive() and not tower.deleted then
+                if tower:GetBaseDamageMax() >= highestDamage then
+            
+                    local modifier = tower:FindModifierByName("modifier_spring_forward")
+                    if not modifier or self.level > modifier.level then 
+                        highestDamage = tower:GetBaseDamageMax()
+                        theChosenOne = tower
+                    end
+
                 end
             end
         end
@@ -50,7 +55,13 @@ end
 function WellTower:OnCreated()
     self.ability = AddAbility(self.tower, "well_tower_spring_forward", GetUnitKeyValue(self.towerClass, "Level"))
     self.castRange = self.ability:GetCastRange(self.tower:GetAbsOrigin(), self.tower)
+    self.level = self.ability:GetLevel()
+    self.ability:ToggleAutoCast() -- turn on autocast by default
+    self.playerID = self.tower:GetOwner():GetPlayerID()
+end
 
+function WellTower:OnBuildingFinished()
+    print("Finished building well tower!")
     Timers:CreateTimer(function()
         if IsValidEntity(self.tower) then
             self:SpringForwardThink()
@@ -58,8 +69,6 @@ function WellTower:OnCreated()
         end
     end)
 
-    self.ability:ToggleAutoCast() -- turn on autocast by default
-    self.playerID = self.tower:GetOwner():GetPlayerID()
 end
 
 function WellTower:ApplyUpgradeData(data)

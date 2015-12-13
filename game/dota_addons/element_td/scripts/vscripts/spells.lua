@@ -238,10 +238,11 @@ function UpgradeTower(keys)
 		end
 
 		local modelScale = tower:GetModelScale()
+		tower.deleted = true --mark the old tower for deletion
+		RemoveTower(tower, true) --delete the old tower entity
 		BuildTower(newTower, modelScale) --start the tower building animation
 		Timers:CreateTimer(function() 
 			AddUnitToSelection(newTower)
-			RemoveTower(tower, true) --delete the old tower entity
 		end)
 	end
 end
@@ -328,6 +329,7 @@ function BuildTower(tower, baseScale)
 					tower:SetBaseMaxHealth(tower:GetBaseDamageMax())
 				end
 	        	tower:SetHealth(tower:GetMaxHealth())
+	        	tower.scriptObject:OnBuildingFinished()
 	        	return nil
 	        end
 	        return 0.05

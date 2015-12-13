@@ -7,8 +7,8 @@ function modifier_spring_forward:DeclareFunctions()
 end
 
 function modifier_spring_forward:OnCreated()
-	print("spring forward modifier created")
 	self.attack_speed_bonus = self:GetAbility():GetSpecialValueFor("attack_speed")
+	self.level = self:GetAbility():GetLevel()
 end
 
 function modifier_spring_forward:GetModifierAttackSpeedBonus_Constant()

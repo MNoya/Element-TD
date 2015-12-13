@@ -3822,67 +3822,10 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"AbilityCooldown"				"1"
-		"MaxLevel"						"3"
-		"AbilityTextureName"			"morphling_waveform"
-		"AbilityCastRange"				"750"
-	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"15 30 90"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"60"	
-			}
-		}
-	}
-	//============================================================//
-	// Well Tower: Spring Forward
-	//============================================================//
-	"well_tower_spring_forward_old"
-	{
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"AbilityCooldown"				"15"
 		"MaxLevel"						"3"
 		"AbilityTextureName"			"morphling_waveform"
-		"AbilityCastRange"				"750"
-		
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"Target"			"TARGET"
-				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-				"Function"			"TriggerEvent"
-				"Event"				"OnSpringForwardCast"
-			}
-		}
-	
-		"Modifiers"
-		{
-			"modifier_spring_forward"
-			{
-				"Duration" 			"%duration"
-				"IsHidden"			"0"
-				"TextureName"		"morphling_waveform"
-				"EffectName"		"particles/items_fx/healing_clarity.vpcf"
-				"EffectAttachType"	"follow_origin"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" 	"%attack_speed"
-				}
-			}
-		}
+		"AbilityCastRange"				"900"
 	
 		"AbilitySpecial"
 		{
