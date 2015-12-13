@@ -32,7 +32,8 @@ function CreepUndead:OnDeath()
     creep.waveObject.creepsRemaining = creep.waveObject.creepsRemaining + 1 -- Increment creep count
     newCreep:AddNewModifier(newCreep, nil, "modifier_phased", {})
     newCreep:AddNewModifier(newCreep, nil, "modifier_invulnerable", {})
-    newCreep:AddNewModifier(newCreep, nil, "modifier_invisible", {})
+    newCreep:AddNoDraw()
+
     if newCreep:HasModifier("creep_undead_reanimate") then
         newCreep:RemoveAbility("creep_undead_reanimate") --don't allow this new creep to respawn
     end
@@ -41,8 +42,11 @@ function CreepUndead:OnDeath()
     newCreep:SetForwardVector(creep:GetForwardVector())
     creep.scriptObject = self
 
+    local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_skeletonking/wraith_king_death_e_reincarnate.vpcf", PATTACH_ABSORIGIN_FOLLOW, creep)
+
     -- Respawn Timer
     Timers:CreateTimer(3, function()
+        ParticleManager:DestroyParticle(particle, true)
         self:UndeadCreepRespawn()
     end)
 
@@ -57,8 +61,7 @@ function CreepUndead:UndeadCreepRespawn()
     local wave = creep.waveObject:GetWaveNumber()
     local creepClass = WAVE_CREEPS[wave]
 
-    creep:RemoveAbility("creep_ability_undead")
-    creep:RemoveModifierByName("modifier_invisible")
+    creep:RemoveNoDraw()
     creep:RemoveModifierByName("modifier_invulnerable")
 
     creep:SetMaximumGoldBounty(GetPlayerDifficulty(playerID):GetBountyForWave(wave))
@@ -67,8 +70,9 @@ function CreepUndead:UndeadCreepRespawn()
     creep:SetHealth(creep:GetMaxHealth() * 0.5) -- it spawns at a percentage of its max health
     CreateMoveTimerForCreep(creep, playerData.sector + 1) --create a timer for this creep so it continues walking to the destination
 
-    local h = ParticleManager:CreateParticle("particles/units/heroes/hero_skeletonking/skeletonking_reincarnation.vpcf", 2, creep) --play a cool particle effect :D
-    ParticleManager:SetParticleControlEnt(h, 0, creep, 5, "attach_hitloc", creep:GetOrigin(), true)
+    local h = ParticleManager:CreateParticle("particles/units/heroes/hero_skeletonking/skeletonking_reincarnation.vpcf", PATTACH_CUSTOMORIGIN, creep) --play a cool particle effect :D
+    ParticleManager:SetParticleControl(h, 0, creep:GetAbsOrigin())
+    ParticleManager:SetParticleControlEnt(h, 0, creep, PATTACH_POINT_FOLLOW, "attach_hitloc", creep:GetOrigin(), true)
 end
 
 RegisterCreepClass(CreepUndead, CreepUndead.className)
