@@ -42,7 +42,8 @@ function CreepUndead:OnDeath()
     newCreep:SetForwardVector(creep:GetForwardVector())
     creep.scriptObject = self
 
-    local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_skeletonking/wraith_king_death_e_reincarnate.vpcf", PATTACH_ABSORIGIN_FOLLOW, creep)
+    local particle = ParticleManager:CreateParticle("particles/generic_hero_status/death_tombstone.vpcf", PATTACH_ABSORIGIN, creep)
+    ParticleManager:SetParticleControl(particle, 2, Vector(3,0,0))
 
     -- Respawn Timer
     Timers:CreateTimer(3, function()
