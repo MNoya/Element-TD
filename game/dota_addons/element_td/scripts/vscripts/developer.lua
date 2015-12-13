@@ -73,9 +73,11 @@ end
 
 function ElementTD:SetLives(playerID, value)
     value = value or 50
-    GetPlayerData(playerID).health = tonumber(value)
+    local playerData = GetPlayerData(playerID)
+    playerData.health = tonumber(value)
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     hero:SetHealth(tonumber(value))
+    CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=playerData.health/hero:GetMaxHealth() * 100} )
 end
 
 function ElementTD:StopWaves(playerID)

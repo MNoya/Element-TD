@@ -274,4 +274,5 @@ function ReduceLivesForPlayer( playerID )
         playerData.waveObject.leaks = playerData.waveObject.leaks + lives
         hero:SetHealth(hero:GetHealth() - lives)
     end
+    CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=playerData.health/hero:GetMaxHealth() * 100} )
 end

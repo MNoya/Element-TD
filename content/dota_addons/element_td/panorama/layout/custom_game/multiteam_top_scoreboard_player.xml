@@ -17,8 +17,14 @@
 		<Panel hittest="false" id="HealthIndicatorContainer">
 			<Panel hittest="false" id="HealthIndicatorHealth"/>
 		</Panel>
+		<Panel hittest="false" id="ArrowUpContainer" class="hide">
+			<Panel hittest="false" id="ArrowUp"/>
+		</Panel>
+		<Panel hittest="false" id="ScoreTooltipContainer" class="hide">
+			<Label hittest="false" id="ScoreTooltip" text="0"/>
+		</Panel>
 		<Panel hittest="false" class="ScoreboardPlayer">
-			<Button class="PlayerPortraitWrapper" onmouseactivate="PortraitClicked();">
+			<Button class="PlayerPortraitWrapper" onmouseactivate="PortraitClicked();" onmouseover="RemoveStyle(ScoreTooltipContainer, hide);RemoveStyle(ArrowUpContainer, hide)" onmouseout="AddStyle(ScoreTooltipContainer, hide);AddStyle(ArrowUpContainer, hide)">
 				<Panel hittest="false" id="PlayerColorBar" />
 				<Panel hittest="false" class="PlayerColorBarMask" />
 				<Panel hittest="false" id="PlayerBG"/>

@@ -79,6 +79,7 @@ function ScoringObject:UpdateScore( const )
 	end
 	--PrintTable(processed)
 	self:ShowScore(processed)
+	CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerScore", {playerId=self.playerID, score=comma_value( self.totalScore )} )
 	return true
 end
 

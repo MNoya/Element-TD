@@ -233,6 +233,8 @@ function SummonElemental(keys)
             else
                 hero:SetHealth(hero:GetHealth() - 3)
             end
+            CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=playerData.health/hero:GetMaxHealth() * 100} )
+
             --Say(nil, playerData.name .. "'s Health: " .. playerData.health, false)
 
             FindClearSpaceForUnit(entity, EntityStartLocations[playerData.sector + 1], true)

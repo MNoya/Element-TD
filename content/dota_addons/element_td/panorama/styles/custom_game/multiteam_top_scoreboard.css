@@ -270,7 +270,7 @@ DOTAAvatarImage
     margin-top: 40px;
     width: 100%;
     background-color: black;
-    height: 13px;
+    height: 11px;
     horizontal-align: center;
     border-radius: 2px;
     box-shadow: -1px -1px 2px 2px black;
@@ -287,11 +287,18 @@ DOTAAvatarImage
     opacity: 0;
 }
 
+.ScoreboardPlayerWrapper.is_player #HealthIndicatorContainer
+{
+    visibility: visible;
+}
+
 #HealthIndicatorHealth
 {
     background-color: white;
     height: 100%;
+    width: 100%;
     horizontal-align: left;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #529a52 ), color-stop( 0.5, #0d570d ), color-stop( 0.75, #186510 ), to( #084e08 ) );
 }
 
 #_dynamic_team_2 #HealthIndicatorHealth
@@ -299,9 +306,70 @@ DOTAAvatarImage
     background-color: gradient( linear, 0% 0%, 0% 100%, from( #529a52 ), color-stop( 0.5, #0d570d ), color-stop( 0.75, #186510 ), to( #084e08 ) );
 }
 
-#_dynamic_team_3 #HealthIndicatorHealth
+#HealthIndicatorHealth.low_health
 {
     background-color: gradient( linear, 0% 0%, 0% 100%, from( #b06652 ), color-stop( 0.5, #88270d ), color-stop( 0.75, #852c1b ), to( #631609 ) );
+}
+
+#ScoreTooltipContainer
+{
+    margin-top: 60px;
+    width: 100%;
+    background-color: black;
+    height: 30px;
+    horizontal-align: center;
+    border-radius: 2px;
+    visibility: collapse;
+}
+
+.ScoreboardPlayerWrapper.is_player #ScoreTooltipContainer
+{
+    visibility: visible;
+}
+
+.ScoreboardPlayerWrapper.is_player #ScoreTooltipContainer.hide
+{
+    visibility: collapse;
+}
+
+#ScoreTooltip
+{
+    margin-top: 1px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 16px;
+}
+
+#ArrowUpContainer
+{
+    margin-top: 53px;
+    width: 100%;
+    visibility: collapse;
+}
+
+.ScoreboardPlayerWrapper.is_player #ArrowUpContainer
+{
+    visibility: visible;
+}
+
+.ScoreboardPlayerWrapper.is_player #ArrowUpContainer.hide
+{
+    visibility: collapse;
+}
+
+#ArrowUp
+{
+    horizontal-align: center;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    
+    border-bottom: 8px solid black;
+}
+
+.PlayerPortraitWrapper:hover #ArrowUpContainer
+{
+    visibility: visible;
 }
 
 #RespawnTimer

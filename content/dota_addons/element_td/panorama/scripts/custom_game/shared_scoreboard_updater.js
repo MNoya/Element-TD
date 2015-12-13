@@ -3,6 +3,8 @@
 var teamScores = [0,0,0,0];
 
 var playerWave = [0,0,0,0,0,0,0,0];
+var playerHealth = [100,100,100,100,100,100,100,100];
+var playerScore = [0,0,0,0,0,0,0,0];
 
 //=============================================================================
 //=============================================================================
@@ -47,6 +49,7 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
             ultStateOrTime = Game.GetPlayerUltimateStateOrTime( playerId );
             _ScoreboardUpdater_SetTextSafe( playerPanel, "TeammateGoldAmount", goldValue );
         }
+        playerPanel.SetHasClass( "is_player", true );
         playerPanel.SetHasClass( "player_dead", ( playerInfo.player_respawn_seconds >= 0 ) );
         playerPanel.SetHasClass( "local_player_teammate", isTeammate && ( playerId != Game.GetLocalPlayerID() ) );
 
@@ -123,9 +126,21 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
         {
             playerWavePanel.text = playerWave[playerId];
         }
+        var playerHealthBar = playerPanel.FindChildInLayoutFile( "HealthIndicatorHealth" );
+        if ( playerHealthBar !== null )
+        {
+            playerHealthBar.SetHasClass( "low_health", (playerHealth[playerId] <= 30) );
+            playerHealthBar.style.width = playerHealth[playerId] + "%";
+        }
+        var playerScoreLabel = playerPanel.FindChildInLayoutFile( "ScoreTooltip" );
+        if ( playerScoreLabel !== null )
+        {
+            playerScoreLabel.text = playerScore[playerId];
+        }
     }
     else
-    {                   
+    {
+        playerPanel.SetHasClass( "is_player", false );
         _ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerName", "" );
         _ScoreboardUpdater_SetTextSafe( playerPanel, "HeroName", "")
         _ScoreboardUpdater_SetTextSafe( playerPanel, "Level", "" );
@@ -135,7 +150,7 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
         _ScoreboardUpdater_SetTextSafe( playerPanel, "HeroNameAndDescription", "" );
         _ScoreboardUpdater_SetTextSafe( playerPanel, "TeammateGoldAmount", "0" );
     }
-    
+
     var playerItemsContainer = playerPanel.FindChildInLayoutFile( "PlayerItemsContainer" );
     if ( playerItemsContainer )
     {
@@ -362,7 +377,19 @@ function SetTopBarWaveValue( data )
     playerWave[data.playerId] = data.wave;
 }
 
+function SetTopBarPlayerHealth( data )
+{
+    playerHealth[data.playerId] = data.health;
+}
+
+function SetTopBarPlayerScore( data )
+{
+    playerScore[data.playerId] = data.score;
+}
+
 (function () {
     GameEvents.Subscribe( "SetTopBarScoreValue", SetTopBarValue );
-    GameEvents.Subscribe( "SetTopBarWaveValue", SetTopBarWaveValue);
+    GameEvents.Subscribe( "SetTopBarWaveValue", SetTopBarWaveValue );
+    GameEvents.Subscribe( "SetTopBarPlayerHealth", SetTopBarPlayerHealth );
+    GameEvents.Subscribe( "SetTopBarPlayerScore", SetTopBarPlayerScore );
 })();
