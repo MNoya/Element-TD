@@ -98,6 +98,27 @@ function ElementTD:InitGameMode()
     print("Loaded Element Tower Defense!")
 end
 
+-- called when 'script_reload' is run
+-- TODO: make with work with the :OnCreated function
+function ElementTD:OnScriptReload()
+    for _, player in pairs(players) do
+
+        -- loop over the player's towers
+        for towerID, _ in pairs(GetPlayerData(player:GetPlayerID()).towers) do
+            local tower = EntIndexToHScript(towerID)
+            local scriptObject = getmetatable(tower.scriptObject).__index
+
+            -- replace the old functions in the script objects with the new ones
+            for name, value in pairs(TOWER_CLASSES[tower.scriptClass]) do
+                if type(value) == "function" then
+                    scriptObject[name] = value
+                end
+            end
+        end
+
+    end
+end
+
 function ElementTD:OnGameStateChange(keys)
     if GameRules:State_Get() == DOTA_GAMERULES_STATE_HERO_SELECTION then
         self.gameStartTriggers = self.gameStartTriggers + 1
@@ -486,3 +507,4 @@ function ElementTD:DamageFilter( filterTable )
 
     return true
 end
+

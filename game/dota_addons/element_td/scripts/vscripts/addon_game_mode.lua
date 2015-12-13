@@ -121,9 +121,11 @@ function Precache(context)
 end
 
 function Activate()
-    
     Log:SetLogLevel(TRACE)
-    
     ElementTD:InitGameMode()
+    ElementTD.HasRunOnce = true
 end
 
+if ElementTD.HasRunOnce then
+    ElementTD:OnScriptReload()
+end

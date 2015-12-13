@@ -5,7 +5,6 @@ if not TOWER_CLASSES then
 end
 
 function RegisterTowerClass(class, name)
-	if TOWER_CLASSES[name] then return end
 	if not class and name then
 		Log:warn("Attemped to create nil class: " .. name)
 	else
