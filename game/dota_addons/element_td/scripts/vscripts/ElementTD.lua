@@ -186,7 +186,7 @@ function ElementTD:EndGameForPlayer( playerID )
         playerData.elementalUnit:ForceKill(false)
     end
     for i,v in pairs(playerData.towers) do
-        UTIL_RemoveImmediate(EntIndexToHScript(i))
+        RemoveTower(EntIndexToHScript(i))
     end
     for j,k in pairs(playerData.clones) do
         UTIL_RemoveImmediate(EntIndexToHScript(j))

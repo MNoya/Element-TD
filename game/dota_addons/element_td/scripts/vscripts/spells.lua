@@ -64,7 +64,7 @@ function SellTowerCast(keys)
 						if clone.creatorClass then
 							clone.creatorClass.clones[clone:entindex()] = nil
 						end
-						UTIL_Remove(clone) -- instantly remove the actual tower entity
+						RemoveTower(clone)
 					else
 						Log:error("Invalid clone")
 					end
@@ -81,7 +81,7 @@ function SellTowerCast(keys)
 		end
 
 		playerData.towers[tower:entindex()] = nil -- remove this tower index from the player's tower list
-		UTIL_Remove(tower) -- instantly remove the actual tower entity
+		RemoveTower(tower)
 		Log:debug(playerData.name .. " has sold a tower")
 		UpdatePlayerSpells(hero:GetPlayerID())
 	end
@@ -121,15 +121,16 @@ function UpgradeTower(keys)
 	local hero = tower:GetOwner()
 	local newClass = keys.tower -- the class of the tower to upgrade to
 	local cost = GetUnitKeyValue(newClass, "Cost") -- Old GetCostForTower(newClass)
-	local playerData = GetPlayerData(hero:GetPlayerID())
+	local playerID = hero:GetPlayerID()
+	local playerData = GetPlayerData(playerID)
 	
-	if not MeetsItemElementRequirements(keys.ability, hero:GetPlayerID()) then
-		ShowWarnMessage(hero:GetPlayerID(), "Incomplete Element Requirements!")
+	if not MeetsItemElementRequirements(keys.ability, playerID) then
+		ShowWarnMessage(playerID, "Incomplete Element Requirements!")
 	elseif cost > hero:GetGold() then
-		ShowWarnMessage(hero:GetPlayerID(), "Not Enough Gold!")
+		ShowWarnMessage(playerID, "Not Enough Gold!")
 	elseif tower:GetHealth() == tower:GetMaxHealth() then
 		hero:SpendGold(cost, DOTA_ModifyGold_PurchaseItem)
-		GetPlayerData(hero:GetPlayerID()).towers[tower:entindex()] = nil --and remove it from the player's tower list
+		GetPlayerData(playerID).towers[tower:entindex()] = nil --and remove it from the player's tower list
 
 		local newTower = CreateUnitByName(newClass, tower:GetOrigin(), false, nil, nil, hero:GetTeam()) 
 
@@ -142,7 +143,24 @@ function UpgradeTower(keys)
 		local angles = tower:GetAngles()
 		newTower:SetAngles(angles.x, angles.y, angles.z)
 		if tower.prop then
-			newTower.prop = tower.prop
+			-- If its a different main element type, change the pedestal
+			local oldDamageType = GetUnitKeyValue(tower:GetUnitName(), "DamageType")
+			if newTower.damageType ~= oldDamageType then
+				if IsValidEntity(tower.prop) then tower.prop:RemoveSelf() end
+
+				-- Create the basic element tower pedestal model
+				local origin = tower:GetAbsOrigin()
+				local pedestal = GetUnitKeyValue(newClass, "PedestalModelScale") or GetUnitKeyValue(newTower.damageType.."_tower", "PedestalModel")
+				local offset = GetUnitKeyValue(newClass, "PedestalModelScale") or GetUnitKeyValue(newTower.damageType.."_tower", "PedestalOffset") or 0
+				local prop = SpawnEntityFromTableSynchronous("prop_dynamic", {model = pedestal})
+				local offset_location = Vector(origin.x, origin.y, origin.z + offset)
+				prop:SetAbsOrigin(offset_location)
+				newTower.prop = prop -- Store the pedestal prop
+
+			else
+				newTower.prop = tower.prop
+			end
+
 			local scale = GetUnitKeyValue(newClass, "PedestalModelScale") or newTower:GetModelScale()
 			newTower.prop:SetModelScale(scale)
 		end
@@ -150,11 +168,11 @@ function UpgradeTower(keys)
 
 		-- set this new tower's owner
 		newTower:SetOwner(hero)
-		newTower:SetControllableByPlayer(hero:GetPlayerID(), true)
+		newTower:SetControllableByPlayer(playerID, true)
 
-		GetPlayerData(hero:GetPlayerID()).towers[newTower:entindex()] = newClass --add this tower to the player's tower list
+		GetPlayerData(playerID).towers[newTower:entindex()] = newClass --add this tower to the player's tower list
 		UpdateUpgrades(newTower) --update this tower's upgrades
-		UpdatePlayerSpells(hero:GetPlayerID()) --update the player's spells
+		UpdatePlayerSpells(playerID) --update the player's spells
 
 		local upgradeData = {}
 		if tower.scriptObject and tower.scriptObject["GetUpgradeData"] then
@@ -209,11 +227,10 @@ function UpgradeTower(keys)
 				if IsValidEntity(clone) then
 					CreateIllusionKilledParticles(clone)
 					playerData.towers[clone:entindex()] = nil -- remove this tower index from the player's tower list
-					AddTowerPosition(playerData.sector + 1, clone:GetOrigin()) -- re-add this position to the list of valid locations
 					if clone.creatorClass then
 						clone.creatorClass.clones[clone:entindex()] = nil
 					end
-					UTIL_Remove(clone) -- instantly remove the actual tower entity
+					RemoveTower(clone)
 				else
 					Log:error("Invalid clone")
 				end
@@ -223,72 +240,9 @@ function UpgradeTower(keys)
 		local modelScale = tower:GetModelScale()
 		BuildTower(newTower, modelScale) --start the tower building animation
 		Timers:CreateTimer(function() 
-			UTIL_Remove(tower) --delete the old tower entity
+			AddUnitToSelection(newTower)
+			RemoveTower(tower) --delete the old tower entity
 		end)
-	end
-end
-
-function PlaceTower(keys)
-	local target = keys.target_points[1]
-	local playerData = GetPlayerData(keys.caster:GetPlayerID())
-	local sector = playerData.sector + 1 -- sector ID is always player ID + 1
-	local pos = FindClosestTowerPosition(sector, target, 96)
-	local hero = keys.caster
-	local playerID = hero:GetPlayerID()
-
-	if target.z == 384 and pos then -- this is the only height we allow towers to be built at
-		local gold = hero:GetGold()
-
-		if gold < GetUnitKeyValue(keys.tower, "Cost") then
-			ShowWarnMessage(playerID, "Not Enough Gold!")
-			return
-		end
-
-		hero:SpendGold(GetUnitKeyValue(keys.tower, "Cost"), DOTA_ModifyGold_PurchaseItem)
-		RemoveTowerPosition(sector, pos)
-
-		local tower = CreateUnitByName(keys.tower, pos, false, nil, nil, hero:GetTeam())
-		tower.class = keys.tower
-		tower.element = GetUnitKeyValue(tower.class, "Element")
-		tower.damageType = GetUnitKeyValue(tower.class, "DamageType")
-
-		tower:SetOwner(hero)
-		tower:SetControllableByPlayer(hero:GetPlayerID(), true)
-		UpdateUpgrades(tower)
-		UpdatePlayerSpells(playerID)
-
-		-- create a script object for this tower
-        local scriptClassName = GetUnitKeyValue(keys.tower, "ScriptClass")
-        if not scriptClassName then scriptClassName = "BasicTower" end
-        if TOWER_CLASSES[scriptClassName] then
-	        local scriptObject = TOWER_CLASSES[scriptClassName](tower, keys.tower)
-	        tower.scriptClass = scriptClassName
-	        tower.scriptObject = scriptObject
-	        tower.scriptObject:OnCreated()
-	    else
-	    	Log:error("Unknown script class, " .. scriptClassName .. " for tower " .. tower.class)
-		end
-
-		if IsSupportTower(tower) then
-            tower:AddNewModifier(tower, nil, "modifier_support_tower", {})
-        end
-
-		if string.find(tower.class, "arrow_tower") ~= nil or string.find(tower.class, "cannon_tower") ~= nil or string.find(GameSettings.elementsOrderName, "Random") ~= nil then
-			AddAbility(tower, "sell_tower_100")
-		else
-			AddAbility(tower, "sell_tower_75")
-		end
-
-
-		AddAbility(tower, tower.damageType .. "_passive")
-		if GetUnitKeyValue(tower.class, "AOE_Full") and GetUnitKeyValue(tower.class, "AOE_Half") then
-			AddAbility(tower, "splash_damage_orb")
-		end
-
-		GetPlayerData(hero:GetPlayerID()).towers[tower:entindex()] = keys.tower
-		BuildTower(tower, 0.2)
-	else
-		ShowWarnMessage(playerID, "Invalid Tower Location!")
 	end
 end
 
@@ -380,3 +334,75 @@ function BuildTower(tower, baseScale)
 		end
 	})
 end
+
+-- Kills and hides the tower, so that its running timers can still execute until it gets removed by the engine
+function RemoveTower( unit )
+	unit:AddEffects(EF_NODRAW)
+	if IsValidEntity(unit.prop) then unit.prop:RemoveSelf() end
+	unit:ForceKill(false)
+end
+
+--[[Deprecated
+function PlaceTower(keys)
+	local target = keys.target_points[1]
+	local playerData = GetPlayerData(keys.caster:GetPlayerID())
+	local sector = playerData.sector + 1 -- sector ID is always player ID + 1
+	local pos = FindClosestTowerPosition(sector, target, 96)
+	local hero = keys.caster
+	local playerID = hero:GetPlayerID()
+
+	if target.z == 384 and pos then -- this is the only height we allow towers to be built at
+		local gold = hero:GetGold()
+
+		if gold < GetUnitKeyValue(keys.tower, "Cost") then
+			ShowWarnMessage(playerID, "Not Enough Gold!")
+			return
+		end
+
+		hero:SpendGold(GetUnitKeyValue(keys.tower, "Cost"), DOTA_ModifyGold_PurchaseItem)
+		RemoveTowerPosition(sector, pos)
+
+		local tower = CreateUnitByName(keys.tower, pos, false, nil, nil, hero:GetTeam())
+		tower.class = keys.tower
+		tower.element = GetUnitKeyValue(tower.class, "Element")
+		tower.damageType = GetUnitKeyValue(tower.class, "DamageType")
+
+		tower:SetOwner(hero)
+		tower:SetControllableByPlayer(hero:GetPlayerID(), true)
+		UpdateUpgrades(tower)
+		UpdatePlayerSpells(playerID)
+
+		-- create a script object for this tower
+        local scriptClassName = GetUnitKeyValue(keys.tower, "ScriptClass")
+        if not scriptClassName then scriptClassName = "BasicTower" end
+        if TOWER_CLASSES[scriptClassName] then
+	        local scriptObject = TOWER_CLASSES[scriptClassName](tower, keys.tower)
+	        tower.scriptClass = scriptClassName
+	        tower.scriptObject = scriptObject
+	        tower.scriptObject:OnCreated()
+	    else
+	    	Log:error("Unknown script class, " .. scriptClassName .. " for tower " .. tower.class)
+		end
+
+		if IsSupportTower(tower) then
+            tower:AddNewModifier(tower, nil, "modifier_support_tower", {})
+        end
+
+		if string.find(tower.class, "arrow_tower") ~= nil or string.find(tower.class, "cannon_tower") ~= nil or string.find(GameSettings.elementsOrderName, "Random") ~= nil then
+			AddAbility(tower, "sell_tower_100")
+		else
+			AddAbility(tower, "sell_tower_75")
+		end
+
+
+		AddAbility(tower, tower.damageType .. "_passive")
+		if GetUnitKeyValue(tower.class, "AOE_Full") and GetUnitKeyValue(tower.class, "AOE_Half") then
+			AddAbility(tower, "splash_damage_orb")
+		end
+
+		GetPlayerData(hero:GetPlayerID()).towers[tower:entindex()] = keys.tower
+		BuildTower(tower, 0.2)
+	else
+		ShowWarnMessage(playerID, "Invalid Tower Location!")
+	end
+end]]
