@@ -34,7 +34,7 @@ function CreepImage:OnTakeDamage(keys)
 
         -- Move Timer
         Timers:CreateTimer(function()
-            if not IsValidEntity(entity) or not entity:IsAlive() then return end
+            if not IsValidEntity(image) or not image:IsAlive() then return end
             
             ExecuteOrderFromTable({ UnitIndex = image:GetEntityIndex(), OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION, Position = destination, Queue = false })
             if (image:GetOrigin() - destination):Length2D() <= 150 then
