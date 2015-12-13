@@ -6,13 +6,41 @@ Particles = {
     light_elemental = "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_spirit_form_ambient.vpcf",
 }
 
+ExplosionParticles = {
+    water = "particles/custom/elements/water/explosion.vpcf",
+    fire = "particles/custom/elements/fire/explosion.vpcf",
+    nature = "particles/custom/elements/nature/explosion.vpcf",
+    earth = "particles/custom/elements/earth/explosion.vpcf",
+    light = "particles/custom/elements/light/explosion.vpcf",
+    dark = "particles/custom/elements/dark/explosion.vpcf",
+}
+
 function ModifyLumber(playerID, amount)
     GetPlayerData(playerID).lumber = GetPlayerData(playerID).lumber + amount
     UpdateSummonerSpells(playerID)
     if amount > 0 then
         PopupLumber(ElementTD.vPlayerIDToHero[playerID], amount)
     end
-    CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_lumber", { lumber = GetPlayerData(playerID).lumber } )
+
+    local current_lumber = GetPlayerData(playerID).lumber
+    local summoner = GetPlayerData(playerID).summoner
+    if current_lumber > 0 then
+        if not summoner.particle then
+            local origin = summoner:GetAbsOrigin()
+            local particleName = "particles/econ/courier/courier_trail_01/courier_trail_01.vpcf"
+            summoner.particle = ParticleManager:CreateParticleForPlayer(particleName, PATTACH_CUSTOMORIGIN, summoner, PlayerResource:GetPlayer(playerID))
+            ParticleManager:SetParticleControl(summoner.particle, 0, Vector(origin.x, origin.y, origin.z+30))
+            ParticleManager:SetParticleControl(summoner.particle, 15, Vector(255,255,255))
+            ParticleManager:SetParticleControl(summoner.particle, 16, Vector(1,0,0))
+        end        
+    else
+        if summoner.particle then
+            ParticleManager:DestroyParticle(summoner.particle, false)
+            summoner.particle = nil
+        end
+    end
+
+    CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_lumber", { lumber = current_lumber } )
 end
 
 function ModifyPureEssence(playerID, amount)
@@ -169,6 +197,12 @@ function SummonElemental(keys)
     local playerID = summoner:GetOwner():GetPlayerID()
     local playerData = GetPlayerData(playerID)
     local element = GetUnitKeyValue(keys.Elemental, "Element")
+
+    -- Explosion cast effect for each element
+    local explosion = ParticleManager:CreateParticle(ExplosionParticles[element], PATTACH_CUSTOMORIGIN, summoner)
+    local origin = summoner:GetAbsOrigin()
+    origin.z = origin.z + 20
+    ParticleManager:SetParticleControl(explosion, 0, origin)
 
     if not WAVE_1_STARTED or EXPRESS_MODE then
         BuyElement(playerID, element)
