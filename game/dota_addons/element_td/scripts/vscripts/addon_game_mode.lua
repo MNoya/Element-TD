@@ -108,7 +108,7 @@ function Precache(context)
     for k, a in pairs(precache) do
         for _, v in pairs(a) do
             if k == "unit" then
-                PrecacheUnitByNameAsync(v, function(...) end)
+                PrecacheUnitByNameSync(v, context)
             else
                 PrecacheResource(k, v, context)
             end

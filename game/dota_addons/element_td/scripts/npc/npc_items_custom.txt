@@ -5138,6 +5138,7 @@
 	//============================================================//
 	"item_build_arrow_tower"
 	{
+	    "ID"                            "2001"
 	    "BaseClass"                     "item_datadriven"
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	    "MaxLevel"                      "1"
@@ -5169,6 +5170,7 @@
 	//============================================================//
 	"item_build_cannon_tower"
 	{
+	    "ID"                            "2000"
 	    "BaseClass"                     "item_datadriven"
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	    "MaxLevel"                      "1"
