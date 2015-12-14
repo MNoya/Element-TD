@@ -190,7 +190,7 @@
 
 #PureEssenceText
 {
-    color: white;
+    color: DeepSkyBlue;
     font-size: 20px;
     font-family: Radiance;
     font-weight: bold;
@@ -205,9 +205,10 @@
 
 #PureEssenceIcon 
 {   
-    width:30px; 
-    height:30px; 
-    background-image: url("file://{resources}/images/custom_game/resources/pure_essence.png"); 
+    margin-top: -3px;
+    width:36px; 
+    height:32px; 
+    background-image: url("file://{resources}/images/custom_game/resources/mango.png");
     background-size: 100% 100%;
 }
 
