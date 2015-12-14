@@ -16,7 +16,7 @@ CreepBasic)
 function CreepMechanical:OnSpawned() 
     local creep = self.creep
 
-    Timers:CreateTimer(math.random(3, 12), function()
+    Timers:CreateTimer(math.random(1, 5), function()
         if not IsValidEntity(creep) or not creep:IsAlive() then return end
 
         creep:FindAbilityByName("creep_ability_mechanical"):ApplyDataDrivenModifier(creep, creep, "mechanical_buff", {})

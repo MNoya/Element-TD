@@ -1,4 +1,4 @@
-"badger"
+"siege_machine"
 {
 	"ArmorPhysical"		"0"
 	"MagicalResistance"		"0"
@@ -22,9 +22,11 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/courier/badger/courier_badger.vmdl"
-	"ModelScale"		"1.15"
+	"Model"		"models/creeps/lane_creeps/creep_good_siege/creep_good_siege.vmdl"
+	"ModelScale"		"0.6"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
-	"Ability1"		"nature_armor"
+	"ScriptClass"		"CreepMechanical"
+	"Ability1"		"composite_armor"
+	"Ability2"		"creep_ability_mechanical"
 }

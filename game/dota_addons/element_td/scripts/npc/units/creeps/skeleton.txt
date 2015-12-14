@@ -1,4 +1,4 @@
-"gaias_titan"
+"skeleton"
 {
 	"ArmorPhysical"		"0"
 	"MagicalResistance"		"0"
@@ -22,11 +22,11 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/items/furion/treant/father_treant/father_treant.vmdl"
-	"ModelScale"		"1.3"
+	"Model"		"models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl"
+	"ModelScale"		"1.1"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
-	"ScriptClass"		"CreepMechanical"
-	"Ability1"		"nature_armor"
-	"Ability2"		"creep_ability_mechanical"
+	"ScriptClass"		"CreepUndead"
+	"Ability1"		"dark_armor"
+	"Ability2"		"creep_ability_undead"
 }

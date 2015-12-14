@@ -22,41 +22,11 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/heroes/razor/razor.vmdl"
-	"ModelScale"		"1.0"
+	"Model"		"models/heroes/elder_titan/ancestral_spirit.vmdl"
+	"ModelScale"		"0.8"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
 	"ScriptClass"		"CreepHeal"
 	"Ability1"		"water_armor"
 	"Ability2"		"creep_ability_heal"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"		"340"
-			}
-			"Wearable2"
-			{
-				"ItemDef"		"341"
-			}
-			"Wearable3"
-			{
-				"ItemDef"		"342"
-			}
-			"Wearable4"
-			{
-				"ItemDef"		"343"
-			}
-			"Wearable5"
-			{
-				"ItemDef"		"344"
-			}
-			"Wearable6"
-			{
-				"ItemDef"		"513"
-			}
-		}
-	}
 }

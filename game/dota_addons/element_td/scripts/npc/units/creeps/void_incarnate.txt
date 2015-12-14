@@ -22,22 +22,20 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/heroes/enigma/enigma.vmdl"
+	"Model"		"models/heroes/enigma/eidelon.vmdl"
 	"ModelScale"		"0.9"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
-	"Ability1"		"dark_armor"
+	"ScriptClass"		"CreepUndead"
+	"Ability1"		"composite_armor"
+	"Ability2"		"creep_ability_undead"
 	"Creature"
 	{
 		"AttachWearables"
 		{
 			"Wearable1"
 			{
-				"ItemDef"		"498"
-			}
-			"Wearable2"
-			{
-				"ItemDef"		"559"
+				"ItemDef"		"6480"
 			}
 		}
 	}

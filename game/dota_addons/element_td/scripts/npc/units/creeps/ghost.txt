@@ -1,4 +1,4 @@
-"gaias_titan"
+"ghost"
 {
 	"ArmorPhysical"		"0"
 	"MagicalResistance"		"0"
@@ -22,11 +22,11 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/items/furion/treant/father_treant/father_treant.vmdl"
-	"ModelScale"		"1.3"
+	"Model"		"models/items/death_prophet/exorcism/raven_vesture_ghost/raven_vesture_ghost.vmdl"
+	"ModelScale"		"1"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
-	"ScriptClass"		"CreepMechanical"
-	"Ability1"		"nature_armor"
-	"Ability2"		"creep_ability_mechanical"
+	"ScriptClass"		"CreepImage"
+	"Ability1"		"composite_armor"
+	"Ability2"		""
 }

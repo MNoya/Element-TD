@@ -1,4 +1,4 @@
-"shimmering_spirit"
+"solar_hellion"
 {
 	"ArmorPhysical"		"0"
 	"MagicalResistance"		"0"
@@ -22,11 +22,11 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/heroes/elder_titan/ancestral_spirit.vmdl"
-	"ModelScale"		"0.6"
+	"Model"		"models/heroes/visage/visage_familiar.vmdl"
+	"ModelScale"		"1"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
 	"ScriptClass"		"CreepImage"
-	"Ability1"		"water_armor"
+	"Ability1"		"light_armor"
 	"Ability2"		""
 }

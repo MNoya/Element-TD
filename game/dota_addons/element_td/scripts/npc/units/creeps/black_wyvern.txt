@@ -23,7 +23,7 @@
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
 	"Model"		"models/creeps/neutral_creeps/n_creep_black_dragon/n_creep_black_dragon.vmdl"
-	"ModelScale"		"0.7"
+	"ModelScale"		"0.8"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
 	"ScriptClass"		"CreepFast"

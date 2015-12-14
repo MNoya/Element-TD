@@ -1,4 +1,4 @@
-"robot_soldier"
+"mummy"
 {
 	"ArmorPhysical"		"0"
 	"MagicalResistance"		"0"
@@ -22,31 +22,9 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/heroes/rattletrap/rattletrap.vmdl"
+	"Model"		"models/items/undying/idol_of_ruination/ruin_wight_minion_gold.vmdl"
 	"ModelScale"		"1.0"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
 	"Ability1"		"composite_armor"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"		"484"
-			}
-			"Wearable2"
-			{
-				"ItemDef"		"485"
-			}
-			"Wearable3"
-			{
-				"ItemDef"		"231"
-			}
-			"Wearable4"
-			{
-				"ItemDef"		"446"
-			}
-		}
-	}
 }

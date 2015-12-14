@@ -22,41 +22,11 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/heroes/kunkka/kunkka.vmdl"
+	"Model"		"models/heroes/brewmaster/brewmaster_windspirit.vmdl"
 	"ModelScale"		"1"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
 	"ScriptClass"		"CreepFast"
 	"Ability1"		"water_armor"
 	"Ability2"		"creep_ability_fast"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"		"10"
-			}
-			"Wearable2"
-			{
-				"ItemDef"		"11"
-			}
-			"Wearable3"
-			{
-				"ItemDef"		"14"
-			}
-			"Wearable4"
-			{
-				"ItemDef"		"357"
-			}
-			"Wearable5"
-			{
-				"ItemDef"		"81"
-			}
-			"Wearable6"
-			{
-				"ItemDef"		"12"
-			}
-		}
-	}
 }
