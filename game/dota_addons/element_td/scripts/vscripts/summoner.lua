@@ -15,6 +15,15 @@ ExplosionParticles = {
     dark = "particles/custom/elements/dark/explosion.vpcf",
 }
 
+TrailParticles = {
+    water = "particles/econ/items/lion/fish_stick/fish_stick_spell_ambient.vpcf",
+    fire = "particles/econ/courier/courier_trail_lava/courier_trail_lava.vpcf",
+    nature = "particles/custom/elements/nature/courier_greevil_green_ambient_3.vpcf",
+    earth = "particles/custom/elements/earth/trail.vpcf",
+    light = "particles/econ/courier/courier_trail_05/courier_trail_05.vpcf",
+    dark = "particles/econ/courier/courier_greevil_purple/courier_greevil_purple_ambient_3.vpcf",
+}
+
 function ModifyLumber(playerID, amount)
     GetPlayerData(playerID).lumber = GetPlayerData(playerID).lumber + amount
     UpdateSummonerSpells(playerID)
@@ -218,6 +227,9 @@ function SummonElemental(keys)
     elemental["isElemental"] = true
     elemental["playerID"] = playerID
     elemental["class"] = keys.Elemental
+
+    -- Trail effect
+    local particle = ParticleManager:CreateParticle(TrailParticles[element], PATTACH_ABSORIGIN_FOLLOW, elemental)
 
     playerData.elementalUnit = elemental
 

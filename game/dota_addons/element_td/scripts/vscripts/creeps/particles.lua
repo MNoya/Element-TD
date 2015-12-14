@@ -1,3 +1,11 @@
+function LavaSpawn( event )
+    local target = event.target
+
+    local particle = ParticleManager:CreateParticle("particles/custom/creeps/lava/ambient_esl.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+    ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+    ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+end
+
 function WindSpirit( event )
     local unit = event.unit
 

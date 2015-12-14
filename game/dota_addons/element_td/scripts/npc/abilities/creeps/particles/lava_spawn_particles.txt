@@ -5,11 +5,6 @@
 
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 
-    "precache"
-    {
-        "particle"  "particles/econ/items/invoker/glorious_inspiration/invoker_forge_spirit_ambient_esl.vpcf"
-    }
-
     "Modifiers"
     {
         "modifier_lava_spawn"
@@ -19,16 +14,10 @@
 
             "OnCreated"
             {
-                "AttachEffect"
+                "RunScript"
                 {
-                    "EffectName"        "particles/econ/items/invoker/glorious_inspiration/invoker_forge_spirit_ambient_esl.vpcf"
-                    "EffectAttachType"  "follow_origin"
-                    "Target"            "CASTER"
-                    "ControlPointEntities"
-                    {
-                        "CASTER"    "attach_hitloc"
-                        "CASTER"    "attach_hitloc"
-                    }
+                    "ScriptFile"    "creeps/particles"
+                    "Function"      "LavaSpawn"
                 }
             }
         }
