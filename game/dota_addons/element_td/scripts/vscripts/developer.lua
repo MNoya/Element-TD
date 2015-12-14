@@ -203,5 +203,5 @@ function GenerateAttachWearablesBlock(setname, bundle)
 end
 
 function GenerateItemDefLine( i, itemID, comment )
-    print("            \""..tostring(i).."\" { ".."\"ItemDef\" "..itemID.."\" } // "..comment)
+    print("            \""..tostring(i).."\" { ".."\"ItemDef\" \""..itemID.."\" } // "..comment)
 end
