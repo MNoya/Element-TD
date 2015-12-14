@@ -9,6 +9,7 @@ CHEAT_CODES = {
     ["clear"] = function(...) ElementTD:ClearWave(...) end,             -- Kills the whole wave
     ["element"] = function(...) ElementTD:SetElementLevel(...) end,     -- Sets the level of an element
     ["synergy"] = function(...) ElementTD:Synergy(...) end,             -- Disable tech tree requirements
+    ["setlist"] = function(...) ElementTD:MakeSets(...) end,            -- Creates full AttachWearables entries by set names
 }
 
 -- A player has typed something into the chat
@@ -129,4 +130,53 @@ function ElementTD:Synergy(playerID)
     UpdateSummonerSpells(playerID)
 
     GameRules:SendCustomMessage("Cheat enabled!", 0, 0)
+end
+
+function ElementTD:MakeSets()
+    local items = LoadKeyValues("scripts/items/items_game.txt")['items']
+
+    GameRules.modelmap = {}
+    for k,v in pairs(items) do
+        if v.name and v.prefab ~= "loading_screen" then
+            GameRules.modelmap[v.name] = k
+        end
+    end
+
+    local setNames = {
+        "Shards of Polymorphia Set", "The Roiling Surge", "Shard of the Lost Star", --Morphling
+        "Light of the Solar Divine", "Divine Flame", --Lina, 3rd tier is arcana+Fire Lotus Belt
+        "The Regal Forest Lord Set", "Primeval Prophet", "Fungal Lord Set", --Furion, 3rd tier is "Fluttering Staff"
+    }
+    
+    local sets = {}
+    for k,v in pairs(setNames) do
+        sets[v] = v
+    end
+
+    for code,values in pairs(items) do
+        if values.name and values.bundle and values.prefab and values.prefab == "bundle" and sets[values.name] and sets[values.name] == values.name then
+            GenerateAttachWearablesBlock(values.name, values.bundle)   
+        end
+    end
+end
+
+function GenerateAttachWearablesBlock(setname, bundle)
+    print("    \"Creature\"")
+    print("    {")
+    print("       \"AttachWearables\" ".."// "..setname)
+    print("       {")
+    local wearableCount = 1
+    for k,v in pairs(bundle) do
+        local itemID = GameRules.modelmap[k]
+        if itemID then
+            GenerateItemDefLine(wearableCount, itemID, k)
+            wearableCount = wearableCount+1
+        end
+    end
+    print("       }")
+    print("    }")
+end
+
+function GenerateItemDefLine( i, itemID, comment )
+    print("            \""..tostring(i).."\" { ".."\"ItemDef\" "..itemID.."\" } // "..comment)
 end
