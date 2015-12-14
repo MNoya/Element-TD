@@ -22,7 +22,7 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/creeps/lane_creeps/creep_bad_ranged/lane_dire_ranged.vmdl"
+	"Model"		"models/creeps/lane_creeps/creep_bad_ranged/lane_dire_ranged_mega.vmdl"
 	"ModelScale"		"1.3"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""

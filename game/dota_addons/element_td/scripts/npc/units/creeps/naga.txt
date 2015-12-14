@@ -22,9 +22,21 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/creeps/nian/nian_creep.vmdl"
-	"ModelScale"		"0.5"
+	"Model"		"models/heroes/slark/slark.vmdl"
+	"ModelScale"		"1.2"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
 	"Ability1"		"water_armor"
+
+	"Creature"
+	{
+		"AttachWearables"
+		{
+			"Wearable1"		{	"ItemDef"		"6871" 		} //Skadi
+			"Wearable2"		{	"ItemDef"		"6406" 		}
+			"Wearable3" 	{	"ItemDef"		"4882" 		} //naked head	
+			"Wearable4"		{	"ItemDef"		"6392"		}
+			"Wearable5"		{	"ItemDef"		"5101" 		} //wavecutter back
+		}
+	}
 }

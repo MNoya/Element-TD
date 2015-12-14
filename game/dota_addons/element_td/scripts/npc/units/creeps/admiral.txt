@@ -29,4 +29,5 @@
 	"ScriptClass"		"CreepFast"
 	"Ability1"		"water_armor"
 	"Ability2"		"creep_ability_fast"
+	"Ability3"		"windspirit_particles"
 }

@@ -1,0 +1,39 @@
+"hellsworn_particles"
+{
+    "BaseClass"                     "ability_datadriven"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+    "precache"
+    {
+        "particle"  "particles/econ/items/warlock/warlock_hellsworn_construct/golem_hellsworn_ambient.vpcf"
+        "particle"  "particles/units/heroes/hero_warlock/warlock_death.vpcf"
+    }
+
+    "Modifiers"
+    {
+        "modifier_hellsworn"
+        {
+            "Passive"           "1"
+            "IsHidden"          "1"
+
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "creeps/particles.lua"
+                    "Function"      "HellSworn"
+                }
+            }
+            "OnDeath"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "creeps/particles.lua"
+                    "Function"      "HellSwornDeath"
+                }
+            }
+        }
+    }
+}

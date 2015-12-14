@@ -1,0 +1,43 @@
+"icefrog_particles"
+{
+    "BaseClass"                     "ability_datadriven"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+    "precache"
+    {
+        "particle"  "particles/econ/courier/courier_murrissey_the_smeevil/courier_murrissey_the_smeevil_death.vpcf"
+        "particle"  "particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"
+    }
+
+    "Modifiers"
+    {
+        "modifier_icefrog"
+        {
+            "Passive"           "1"
+            "IsHidden"          "1"
+
+            "EffectName"        "particles/custom/creeps/icefrog.vpcf"
+            "EffectAttachType"  "follow_origin"
+
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "creeps/particles.lua"
+                    "Function"      "IceFrog"
+                }
+            }
+
+            "OnDeath"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "creeps/particles"
+                    "Function"      "IceFrogDeath"
+                }
+            }
+        }
+    }
+}

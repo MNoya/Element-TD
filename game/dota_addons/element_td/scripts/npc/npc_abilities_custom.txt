@@ -715,6 +715,184 @@
 			}
 		}
 	}
+	"death_prophet_particles"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	
+	    "precache"
+	    {
+	        "particle"  "particles/units/heroes/hero_death_prophet/death_prophet_death.vpcf"
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_death_prophet"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	
+	            "OnDeath"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "creeps/particles.lua"
+	                    "Function"      "DeathProphet"
+	                }
+	            }
+	        }
+	    }
+	}
+	"hellsworn_particles"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	
+	    "precache"
+	    {
+	        "particle"  "particles/econ/items/warlock/warlock_hellsworn_construct/golem_hellsworn_ambient.vpcf"
+	        "particle"  "particles/units/heroes/hero_warlock/warlock_death.vpcf"
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_hellsworn"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "creeps/particles.lua"
+	                    "Function"      "HellSworn"
+	                }
+	            }
+	            "OnDeath"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "creeps/particles.lua"
+	                    "Function"      "HellSwornDeath"
+	                }
+	            }
+	        }
+	    }
+	}
+	"icefrog_particles"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	
+	    "precache"
+	    {
+	        "particle"  "particles/econ/courier/courier_murrissey_the_smeevil/courier_murrissey_the_smeevil_death.vpcf"
+	        "particle"  "particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_icefrog"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	
+	            "EffectName"        "particles/custom/creeps/icefrog.vpcf"
+	            "EffectAttachType"  "follow_origin"
+	
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "creeps/particles.lua"
+	                    "Function"      "IceFrog"
+	                }
+	            }
+	
+	            "OnDeath"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "creeps/particles"
+	                    "Function"      "IceFrogDeath"
+	                }
+	            }
+	        }
+	    }
+	}
+	"lava_spawn_particles"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	
+	    "precache"
+	    {
+	        "particle"  "particles/econ/items/invoker/glorious_inspiration/invoker_forge_spirit_ambient_esl.vpcf"
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_lava_spawn"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	
+	            "OnCreated"
+	            {
+	                "AttachEffect"
+	                {
+	                    "EffectName"        "particles/econ/items/invoker/glorious_inspiration/invoker_forge_spirit_ambient_esl.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                    "Target"            "CASTER"
+	                    "ControlPointEntities"
+	                    {
+	                        "CASTER"    "attach_hitloc"
+	                        "CASTER"    "attach_hitloc"
+	                    }
+	                }
+	            }
+	        }
+	    }
+	}
+	"windspirit_particles"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	
+	    "precache"
+	    {
+	        "particle"  "particles/units/heroes/hero_brewmaster/brewmaster_storm_death.vpcf"
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_wind_spirit"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	
+	            "OnDeath"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "creeps/particles.lua"
+	                    "Function"      "WindSpirit"
+	                }
+	            }
+	        }
+	    }
+	}
 	//============================================================================================//
 	//============================================================================================//
 	//============================================================================================//

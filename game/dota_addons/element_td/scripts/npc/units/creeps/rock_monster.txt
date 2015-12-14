@@ -22,7 +22,7 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/creeps/neutral_creeps/n_creep_golem_a/neutral_creep_golem_a.vmdl"
+	"Model"		"models/creeps/neutral_creeps/n_creep_golem_b/n_creep_golem_b.vmdl"
 	"ModelScale"		"0.8"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""

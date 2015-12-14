@@ -22,11 +22,24 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/items/death_prophet/exorcism/raven_vesture_ghost/raven_vesture_ghost.vmdl"
+	"Model"                     "models/heroes/death_prophet/death_prophet.vmdl"
 	"ModelScale"		"1"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
 	"ScriptClass"		"CreepImage"
 	"Ability1"		"composite_armor"
-	"Ability2"		""
+	"Ability2"		"death_prophet_particles"
+
+ 	"Creature"
+    {
+        "DisableClumpingBehavior"   "1"
+        "AttachWearables"
+        {
+            "Wearable1"     {   "ItemDef"       "6694"      } //dress
+            "Wearable2"     {   "ItemDef"       "5959"      } //head
+            "Wearable3"     {   "ItemDef"       "170"       }
+            "Wearable4"     {   "ItemDef"       "171"       }
+			"Wearable5"		{   "ItemDef"       "505"       } //ambient
+        }
+    }
 }

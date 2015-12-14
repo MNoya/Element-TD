@@ -27,4 +27,5 @@
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
 	"Ability1"		"composite_armor"
+	"Ability2"		"icefrog_particles"
 }

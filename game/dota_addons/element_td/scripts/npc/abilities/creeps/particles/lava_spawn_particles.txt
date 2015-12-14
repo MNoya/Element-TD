@@ -1,0 +1,36 @@
+"lava_spawn_particles"
+{
+    "BaseClass"                     "ability_datadriven"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+    "precache"
+    {
+        "particle"  "particles/econ/items/invoker/glorious_inspiration/invoker_forge_spirit_ambient_esl.vpcf"
+    }
+
+    "Modifiers"
+    {
+        "modifier_lava_spawn"
+        {
+            "Passive"           "1"
+            "IsHidden"          "1"
+
+            "OnCreated"
+            {
+                "AttachEffect"
+                {
+                    "EffectName"        "particles/econ/items/invoker/glorious_inspiration/invoker_forge_spirit_ambient_esl.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                    "Target"            "CASTER"
+                    "ControlPointEntities"
+                    {
+                        "CASTER"    "attach_hitloc"
+                        "CASTER"    "attach_hitloc"
+                    }
+                }
+            }
+        }
+    }
+}
