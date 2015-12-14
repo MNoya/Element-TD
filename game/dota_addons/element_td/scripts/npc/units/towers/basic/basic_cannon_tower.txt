@@ -14,9 +14,9 @@
  
     // Stats
     //-----------------------------
-    "AttackDamageMin"           "3"
-    "AttackDamageMax"           "3"
-    "Damage"                    "3"
+    "AttackDamageMin"           "9"
+    "AttackDamageMax"           "9"
+    "Damage"                    "9"
     "AttackRange"               "625"
     "AttackAcquisitionRange"    "625"
     "AOE_Full"                  "125"
@@ -25,8 +25,8 @@
     "ProjectileSpeed"           "800" 
 
     "Level"                     "1"
-    "Cost"                      "7"
-    "TotalCost"                 "7"
+    "Cost"                      "27"
+    "TotalCost"                 "27"
     "BuildTime"                 "1"
     "Element"                   "none" 
     "DamageType"                "composite"

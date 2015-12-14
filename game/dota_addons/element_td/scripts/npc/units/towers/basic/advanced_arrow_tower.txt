@@ -14,17 +14,17 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "9"
-    "AttackDamageMax"           "9"
-    "Damage"                    "9"
+    "AttackDamageMin"           "27"
+    "AttackDamageMax"           "27"
+    "Damage"                    "27"
     "AttackRange"               "750"
     "AttackAcquisitionRange"    "750"
     "AttackRate"                "0.66"
     "ProjectileSpeed"           "1000" 
 
     "Level"                     "2"
-    "Cost"                      "13"
-    "TotalCost"                 "20"
+    "Cost"                      "30"
+    "TotalCost"                 "57"
     "BuildTime"                 "1"
     "Element"                   "none"
     "DamageType"                "composite"
@@ -33,8 +33,6 @@
     
     "Upgrades"
     {
-        "Count" "1"
-        "1"     "super_arrow_tower"
     }
 
     // General
