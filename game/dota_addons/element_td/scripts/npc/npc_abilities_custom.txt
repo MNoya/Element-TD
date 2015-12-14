@@ -834,11 +834,6 @@
 	
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 	
-	    "precache"
-	    {
-	        "particle"  "particles/econ/items/invoker/glorious_inspiration/invoker_forge_spirit_ambient_esl.vpcf"
-	    }
-	
 	    "Modifiers"
 	    {
 	        "modifier_lava_spawn"

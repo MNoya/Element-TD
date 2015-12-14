@@ -22,45 +22,11 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/heroes/centaur/centaur.vmdl"
+	"Model"		"models/creeps/neutral_creeps/n_creep_centaur_med/n_creep_centaur_med.vmdl"
 	"ModelScale"		"0.7"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
 	"ScriptClass"		"CreepFast"
 	"Ability1"		"earth_armor"
 	"Ability2"		"creep_ability_fast"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"		"358"
-			}
-			"Wearable2"
-			{
-				"ItemDef"		"363"
-			}
-			"Wearable3"
-			{
-				"ItemDef"		"361"
-			}
-			"Wearable4"
-			{
-				"ItemDef"		"4845"
-			}
-			"Wearable5"
-			{
-				"ItemDef"		"359"
-			}
-			"Wearable6"
-			{
-				"ItemDef"		"362"
-			}
-			"Wearable7"
-			{
-				"ItemDef"		"4849"
-			}
-		}
-	}
 }

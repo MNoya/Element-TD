@@ -285,47 +285,13 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/centaur/centaur.vmdl"
+		"Model"		"models/creeps/neutral_creeps/n_creep_centaur_med/n_creep_centaur_med.vmdl"
 		"ModelScale"		"0.7"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepFast"
 		"Ability1"		"earth_armor"
 		"Ability2"		"creep_ability_fast"
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1"
-				{
-					"ItemDef"		"358"
-				}
-				"Wearable2"
-				{
-					"ItemDef"		"363"
-				}
-				"Wearable3"
-				{
-					"ItemDef"		"361"
-				}
-				"Wearable4"
-				{
-					"ItemDef"		"4845"
-				}
-				"Wearable5"
-				{
-					"ItemDef"		"359"
-				}
-				"Wearable6"
-				{
-					"ItemDef"		"362"
-				}
-				"Wearable7"
-				{
-					"ItemDef"		"4849"
-				}
-			}
-		}
 	}
 	"chaos_beast"
 	{
@@ -1283,31 +1249,13 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/pudge/pudge.vmdl"
-		"ModelScale"		"0.9"
+		"Model"		"models/creeps/neutral_creeps/n_creep_golem_b/n_creep_golem_b.vmdl"
+		"ModelScale"		"1.2"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepUndead"
 		"Ability1"		"earth_armor"
 		"Ability2"		"creep_ability_undead"
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1"
-				{
-					"ItemDef"		"260"
-				}
-				"Wearable2"
-				{
-					"ItemDef"		"259"
-				}
-				"Wearable3"
-				{
-					"ItemDef"		"47"
-				}
-			}
-		}
 	}
 	"gaias_titan"
 	{
