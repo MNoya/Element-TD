@@ -61,19 +61,20 @@ function WellTower:OnCreated()
 end
 
 function WellTower:OnBuildingFinished()
-    print("Finished building well tower!")
     Timers:CreateTimer(function()
         if IsValidEntity(self.tower) then
             self:SpringForwardThink()
             return 1
         end
     end)
-
 end
 
 function WellTower:ApplyUpgradeData(data)
     if data.cooldown and data.cooldown > 1 then
         self.ability:StartCooldown(data.cooldown)
+    end
+    if data.autocast == false then
+        self.ability:ToggleAutoCast()
     end
 end
 

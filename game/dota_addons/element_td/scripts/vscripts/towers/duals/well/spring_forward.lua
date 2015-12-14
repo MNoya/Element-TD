@@ -25,18 +25,36 @@ end
 
 function well_tower_spring_forward:CastFilterResultTarget(target)
 	local result = UnitFilter(target, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, self:GetCaster():GetTeamNumber())
+	
 	if result ~= UF_SUCCESS then
-		return result;
+		return result
 	end
+	
 	if target:HasModifier("modifier_support_tower") then
-		return UF_FAIL_CUSTOM;
+		return UF_FAIL_CUSTOM
 	end
+	
+	if IsServer() then
+		local modifier = target:FindModifierByName("modifier_spring_forward")
+		if modifier and modifier.level > self:GetLevel() then
+			return UF_FAIL_CUSTOM;
+		end
+	end
+
 	return UF_SUCCESS;
 end
 
 function well_tower_spring_forward:GetCustomCastErrorTarget(target)
 	if target:HasModifier("modifier_support_tower") then
-		return "#etd_error_support_tower";
+		return "#etd_error_support_tower"
 	end
-	return "";
+
+	if IsServer() then
+		local modifier = target:FindModifierByName("modifier_spring_forward")
+		if modifier and modifier.level > self:GetLevel() then
+			return "#etd_error_higher_level_buff"
+		end
+	end
+
+	return ""
 end
