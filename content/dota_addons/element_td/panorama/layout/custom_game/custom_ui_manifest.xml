@@ -40,7 +40,7 @@
 		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/wave_info.xml" />
 		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/interest.xml" />
 		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/images.xml" />
-		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/elements.xml" />
+		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/resources.xml" />
 		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/scripts.xml" />
 		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/notifications.xml" />
 		<CustomUIElement type="Hud" 	layoutfile="file://{resources}/layout/custom_game/scoring.xml" />

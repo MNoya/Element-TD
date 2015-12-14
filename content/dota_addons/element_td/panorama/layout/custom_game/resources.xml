@@ -1,0 +1,44 @@
+<root>
+  <styles>
+    <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+    <include src="file://{resources}/styles/custom_game/resources.css" />
+  </styles>
+  <scripts>
+    <include src="file://{resources}/scripts/custom_game/resources.js" /> 
+  </scripts>
+  <Panel hittest="false" class="BaseHud">
+    <Panel hittest="true" id='ResourceLumber' onmouseover="ShowTooltip('Lumber')" onmouseout="DOTAHideTitleTextTooltip()">
+      <Label hittest="false" id="LumberText" text="0" class="TitleFont" />
+      <Image hittest="false" id="LumberIcon"/>
+    </Panel>
+    <Panel hittest="true" id='ResourceEssence' onmouseover="ShowTooltip('Pure Essence')" onmouseout="DOTAHideTitleTextTooltip()">
+      <Image hittest="false" id="PureEssenceIcon"/>
+      <Label hittest="false" id="PureEssenceText" text="0" class="TitleFont" />
+    </Panel>
+    <Panel hittest="true" id='ResourceScore' onmouseover="ShowTooltip('Total Score')" onmouseout="DOTAHideTitleTextTooltip()">
+      <Label hittest="false" id="ScoreLabel" text="Score:" class="TitleFont" />
+      <Label hittest="false" id="ScoreText" text="0" class="TitleFont" />
+    </Panel>
+    <Panel hittest="true" id="ResourceElements">
+      <Panel hittest="false"  id="ElementWater" class="element no_element_levels" onmouseover="ShowTooltip('Water')" onmouseout="DOTAHideTitleTextTooltip()">
+        <Label id="WaterValue"  text="0" class="value"/>
+      </Panel>
+      <Panel hittest="false"  id="ElementFire" class="element  no_element_levels" onmouseover="ShowTooltip('Fire')" onmouseout="DOTAHideTitleTextTooltip()">
+        <Label id="FireValue"  text="0" class="value"/>
+      </Panel>
+      <Panel hittest="false"  id="ElementNature" class="element  no_element_levels" onmouseover="ShowTooltip('Nature')" onmouseout="DOTAHideTitleTextTooltip()">
+        <Label id="NatureValue"  text="0" class="value"/>
+      </Panel>
+      <Panel hittest="false"  id="ElementEarth" class="element  no_element_levels" onmouseover="ShowTooltip('Earth')" onmouseout="DOTAHideTitleTextTooltip()">
+        <Label id="EarthValue"  text="0" class="value"/>
+      </Panel>
+      <Panel hittest="false"  id="ElementLight" class="element  no_element_levels" onmouseover="ShowTooltip('Light')" onmouseout="DOTAHideTitleTextTooltip()">
+        <Label id="LightValue"  text="0" class="value"/>
+      </Panel>
+      <Panel hittest="false"  id="ElementDark" class="element  no_element_levels" onmouseover="ShowTooltip('Dark')" onmouseout="DOTAHideTitleTextTooltip()">
+        <Label id="DarkValue"  text="0" class="value"/>
+      </Panel>
+    </Panel>
+    <Label id="LumberDisplay" text="+1 Lumber"/>
+  </Panel>
+</root>
