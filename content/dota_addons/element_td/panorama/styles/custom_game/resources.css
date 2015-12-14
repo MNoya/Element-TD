@@ -14,10 +14,24 @@
     vertical-align: bottom;
 }
 
+.AspectRatio4x3 #ResourceElements, .AspectRatio5x4 #ResourceElements
+{
+    margin-bottom: 148px;
+    margin-right: 12px;
+    height: 64px;
+    width: 160px;
+}
+
 #ResourceElements .element
 {
     width: 50px;
     height: 32px;
+}
+
+.AspectRatio4x3 #ResourceElements .element, .AspectRatio5x4 #ResourceElements .element
+{
+    width: 44px;
+    height: 28px;
 }
 
 #ElementWater
@@ -73,6 +87,17 @@
     background-repeat: no-repeat;
 }
 
+.AspectRatio4x3 #ElementWater, .AspectRatio5x4 #ElementWater,
+.AspectRatio4x3 #ElementFire, .AspectRatio5x4 #ElementFire,
+.AspectRatio4x3 #ElementNature, .AspectRatio5x4 #ElementNature,
+.AspectRatio4x3 #ElementEarth, .AspectRatio5x4 #ElementEarth,
+.AspectRatio4x3 #ElementLight, .AspectRatio5x4 #ElementLight,
+.AspectRatio4x3 #ElementDark, .AspectRatio5x4 #ElementDark,
+{
+    background-size: 26px 26px;
+    background-position: left 0px top 3px;
+}
+
 .no_element_levels
 {
     saturation: 0.7;
@@ -119,6 +144,12 @@
     margin-right: 40px;
 }
 
+.AspectRatio4x3 #ResourceLumber, .AspectRatio5x4 #ResourceLumber
+{
+    margin-bottom: 140px;
+    margin-right: 204px;
+}
+
 #LumberText
 {
     color: green;
@@ -149,6 +180,12 @@
     horizontal-align: right;
 
     margin-bottom: 157px;
+}
+
+.AspectRatio4x3 #ResourceEssence, .AspectRatio5x4 #ResourceEssence
+{
+    margin-bottom: 140px;
+    margin-right: 172px;
 }
 
 #PureEssenceText
@@ -184,6 +221,12 @@
 
     margin-bottom: 50px;
     margin-right: 80px;
+}
+
+.AspectRatio4x3 #ResourceScore, .AspectRatio5x4 #ResourceScore
+{
+    margin-bottom: 206px;
+    margin-right: 30px;
 }
 
 #ScoreLabel 
