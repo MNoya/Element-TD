@@ -28,5 +28,6 @@
 	"SoundSet"		""
 	"ScriptClass"		"CreepImage"
 	"Ability1"		"fire_armor"
-	"Ability2"		"hellsworn_particles"
+	"Ability2"		""
+	"Ability3"		"hellsworn_particles"
 }

@@ -28,7 +28,8 @@
 	"SoundSet"		""
 	"ScriptClass"		"CreepImage"
 	"Ability1"		"composite_armor"
-	"Ability2"		"death_prophet_particles"
+    "Ability2"      ""
+	"Ability3"		"death_prophet_particles"
 
  	"Creature"
     {
