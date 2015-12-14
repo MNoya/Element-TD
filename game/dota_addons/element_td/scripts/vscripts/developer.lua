@@ -133,31 +133,56 @@ function ElementTD:Synergy(playerID)
 end
 
 function ElementTD:MakeSets()
-    local items = LoadKeyValues("scripts/items/items_game.txt")['items']
-
-    GameRules.modelmap = {}
-    for k,v in pairs(items) do
-        if v.name and v.prefab ~= "loading_screen" then
-            GameRules.modelmap[v.name] = k
+    if not GameRules.modelmap then
+        GameRules.items = LoadKeyValues("scripts/items/items_game.txt")['items']
+        GameRules.modelmap = {}
+        for k,v in pairs(GameRules.items) do
+            if v.name and v.prefab ~= "loading_screen" then
+                GameRules.modelmap[v.name] = k
+            end
         end
     end
 
+    GenerateDefaultBlock("npc_dota_hero_lina")
+
+    -- Sets
     local setNames = {
         "Shards of Polymorphia Set", "The Roiling Surge", "Shard of the Lost Star", --Morphling
         "Light of the Solar Divine", "Divine Flame", --Lina, 3rd tier is arcana+Fire Lotus Belt
         "The Regal Forest Lord Set", "Primeval Prophet", "Fungal Lord Set", --Furion, 3rd tier is "Fluttering Staff"
     }
-    
+
     local sets = {}
     for k,v in pairs(setNames) do
         sets[v] = v
     end
 
-    for code,values in pairs(items) do
+    for code,values in pairs(GameRules.items) do
         if values.name and values.bundle and values.prefab and values.prefab == "bundle" and sets[values.name] and sets[values.name] == values.name then
             GenerateAttachWearablesBlock(values.name, values.bundle)   
         end
     end
+end
+
+function GenerateDefaultBlock( heroName )
+    print("    \"Creature\"")
+    print("    {")
+    print("       \"AttachWearables\" ".."// Default "..heroName)
+    print("       {")
+    local defCount = 1
+    for code,values in pairs(GameRules.items) do
+        if values.name and values.prefab == "default_item" and values.used_by_heroes then
+            for k,v in pairs(values.used_by_heroes) do
+                if k == heroName then
+                    local itemID = GameRules.modelmap[values.name]
+                    GenerateItemDefLine( defCount, itemID, values.name )
+                    defCount = defCount + 1
+                end
+            end
+        end
+    end
+    print("       }")
+    print("    }")
 end
 
 function GenerateAttachWearablesBlock(setname, bundle)
