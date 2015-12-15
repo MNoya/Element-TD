@@ -3,25 +3,25 @@
     // Visual
     //-----------------------------
     "Model"                     "models/heroes/furion/furion.vmdl"
-    "ModelScale"                "0.8"
+    "ModelScale"                "0.7"
     "ModelRotation"             "90"
     "PedestalModel"             "models/heroes/pedestal/pedestal_effigy_jade.vmdl"
     "PedestalModelScale"        "0.7"
     "PedestalOffset"            "20"
-    "ProjectileModel"           "particles/units/heroes/hero_furion/furion_base_attack.vpcf"
+    "ProjectileModel"           "particles/units/heroes/hero_rubick/rubick_base_attack.vpcf"
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"
     "MinimapIconSize"           "320"
     "Creature"
     {
-        "AttachWearables"
+        "AttachWearables" // Default npc_dota_hero_furion
         {
-            "Wearable1" { "ItemDef" "4108" } //"Staff of the Eagle"
-            "Wearable2" { "ItemDef" "30" } //Horns
-            "Wearable3" { "ItemDef" "31" } //Beard
-            "Wearable4" { "ItemDef" "32" } //Cape
-            "Wearable5" { "ItemDef" "33" } //Necklace
-            "Wearable6" { "ItemDef" "49" } //Bracers
+            "1" { "ItemDef" "33" } // Nature's Prophet Necklace
+            "2" { "ItemDef" "32" } // Nature's Prophet Cape
+            "3" { "ItemDef" "49" } // Nature's Prophet Bracers
+            "4" { "ItemDef" "31" } // Nature's Prophet Beard
+            "5" { "ItemDef" "29" } // Nature's Prophet Staff
+            "6" { "ItemDef" "30" } // Nature's Prophet Horns
         }
     }
 
@@ -86,5 +86,5 @@
 
     // Building Size
     "ConstructionSize"          "2"
-    "BlockPathingSize"          "2"
+    "BlockPathingSize"          "0"
 }

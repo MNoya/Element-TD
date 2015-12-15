@@ -14,7 +14,7 @@
     "PlayerCanControl"              "1"
 
     "UnitName"                      "earth_tower"
-    "OverrideBuildingGhost"         "npc_dota_hero_tiny"
+    "OverrideBuildingGhost"         "earth_tower_dummy" //Uses Tiny deathsim model
     "AbilityGoldCost"               "175"
 
     "Requirements"

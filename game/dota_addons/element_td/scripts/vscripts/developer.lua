@@ -9,6 +9,7 @@ CHEAT_CODES = {
     ["clear"] = function(...) ElementTD:ClearWave(...) end,             -- Kills the whole wave
     ["element"] = function(...) ElementTD:SetElementLevel(...) end,     -- Sets the level of an element
     ["synergy"] = function(...) ElementTD:Synergy(...) end,             -- Disable tech tree requirements
+    ["dev"] = function(...) ElementTD:Dev(...) end,                 -- Everything
     ["setlist"] = function(...) ElementTD:MakeSets(...) end,            -- Creates full AttachWearables entries by set names
 }
 
@@ -132,6 +133,12 @@ function ElementTD:Synergy(playerID)
     GameRules:SendCustomMessage("Cheat enabled!", 0, 0)
 end
 
+function ElementTD:Dev(playerID)
+    ElementTD:Synergy(playerID)
+    ElementTD:WhosYourDaddy(playerID)
+    ElementTD:GreedIsGood(playerID, 999999)
+end
+
 function ElementTD:MakeSets()
     if not GameRules.modelmap then
         GameRules.items = LoadKeyValues("scripts/items/items_game.txt")['items']
@@ -143,14 +150,11 @@ function ElementTD:MakeSets()
         end
     end
 
-    GenerateDefaultBlock("npc_dota_hero_lina")
+    -- Default hero set to generate
+    GenerateDefaultBlock("npc_dota_hero_keeper_of_the_light")
 
-    -- Sets
-    local setNames = {
-        "Shards of Polymorphia Set", "The Roiling Surge", "Shard of the Lost Star", --Morphling
-        "Light of the Solar Divine", "Divine Flame", --Lina, 3rd tier is arcana+Fire Lotus Belt
-        "The Regal Forest Lord Set", "Primeval Prophet", "Fungal Lord Set", --Furion, 3rd tier is "Fluttering Staff"
-    }
+    -- Sets to generate
+    local setNames = {}
 
     local sets = {}
     for k,v in pairs(setNames) do
@@ -167,8 +171,8 @@ end
 function GenerateDefaultBlock( heroName )
     print("    \"Creature\"")
     print("    {")
-    print("       \"AttachWearables\" ".."// Default "..heroName)
-    print("       {")
+    print("        \"AttachWearables\" ".."// Default "..heroName)
+    print("        {")
     local defCount = 1
     for code,values in pairs(GameRules.items) do
         if values.name and values.prefab == "default_item" and values.used_by_heroes then
@@ -181,15 +185,15 @@ function GenerateDefaultBlock( heroName )
             end
         end
     end
-    print("       }")
+    print("        }")
     print("    }")
 end
 
 function GenerateAttachWearablesBlock(setname, bundle)
     print("    \"Creature\"")
     print("    {")
-    print("       \"AttachWearables\" ".."// "..setname)
-    print("       {")
+    print("        \"AttachWearables\" ".."// "..setname)
+    print("        {")
     local wearableCount = 1
     for k,v in pairs(bundle) do
         local itemID = GameRules.modelmap[k]
@@ -198,7 +202,7 @@ function GenerateAttachWearablesBlock(setname, bundle)
             wearableCount = wearableCount+1
         end
     end
-    print("       }")
+    print("        }")
     print("    }")
 end
 

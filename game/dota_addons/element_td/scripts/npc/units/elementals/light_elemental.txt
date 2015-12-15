@@ -1,75 +1,161 @@
-"light_elemental"
+"light_elemental1"
 {
-	"ArmorPhysical"		"0"
-	"MagicalResistance"		"0"
-	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"		"0"
-	"AttackDamageMax"		"0"
-	"AttackRate"		"0"
-	"AttackAnimationPoint"		"0"
-	"AttackAcquisitionRange"		"0"
-	"AttackRange"		"0"
-	"ProjectileModel"		""
-	"ProjectileSpeed"		"0"
-	"RingRadius"		"70"
-	"HealthBarOffset"		"160"
-	"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
-	"BountyXP"		"0"
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"		"300"
-	"StatusHealthRegen"		"0"
-	"StatusMana"		"0"
-	"StatusManaRegen"		"0"
-	"VisionDaytimeRange"		"1200"
-	"VisionNighttimeRange"		"800"
-	"Model"		"models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"
-	"BaseClass"		"npc_dota_creature"
-	"SoundSet"		"Hero_Keeper_Of_The_Light"
-	"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
-	"Portrait"		"vgui/hud/heroportraits/portrait_keeper_of_the_light"
-	"particle_folder"		"particles/units/heroes/hero_keeper_of_the_light"
-	"ConsideredHero"		"1"
-	"precache"
-	{
-		"particlefile"		"particles/units/heroes/hero_keeper_of_the_light.pcf"
-		"model"		"models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"
-		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
-	}
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"		"252"
-			}
-			"Wearable2"
-			{
-				"ItemDef"		"253"
-			}
-			"Wearable3"
-			{
-				"ItemDef"		"254"
-			}
-			"Wearable4"
-			{
-				"ItemDef"		"255"
-			}
-			"Wearable5"
-			{
-				"ItemDef"		"256"
-			}
-			"Wearable6"
-			{
-				"ItemDef"		"528"
-			}
-		}
-	}
-	"Level"		"1"
-	"ModelScale"		"1.1"
-	"BountyGoldMin"		"0"
-	"BountyGoldMax"		"0"
-	"StatusHealth"		"75"
-	"Element"		"light"
-	"Ability1"		"light_armor"
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"        "0"
+    "AttackDamageMax"        "0"
+    "AttackRate"        "0"
+    "AttackAnimationPoint"        "0"
+    "AttackAcquisitionRange"        "0"
+    "AttackRange"        "0"
+    "ProjectileModel"        ""
+    "ProjectileSpeed"        "0"
+    "RingRadius"        "70"
+    "HealthBarOffset"        "160"
+    "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
+    "BountyXP"        "0"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"        "300"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "VisionDaytimeRange"        "1200"
+    "VisionNighttimeRange"        "800"
+    "Model"        "models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"
+    "BaseClass"        "npc_dota_creature"
+    "SoundSet"        "Hero_Keeper_Of_The_Light"
+    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+    "Portrait"        "vgui/hud/heroportraits/portrait_keeper_of_the_light"
+    "particle_folder"        "particles/units/heroes/hero_keeper_of_the_light"
+    "ConsideredHero"        "1"
+
+    "Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_keeper_of_the_light
+        {
+            "1" { "ItemDef" "256" } // Keeper of the Light Horse Armor
+            "2" { "ItemDef" "528" } // Keeper of the Light's Ambient Effects
+            "3" { "ItemDef" "253" } // Keeper of the Light Staff
+            "4" { "ItemDef" "255" } // Keeper of the Light Skirt
+            "5" { "ItemDef" "252" } // Keeper of the Light Horse
+            "6" { "ItemDef" "254" } // Keeper of the Light Hood
+        }
+    }
+
+    "Level"        "1"
+    "ModelScale"        "1.1"
+    "BountyGoldMin"        "0"
+    "BountyGoldMax"        "0"
+    "StatusHealth"        "75"
+    "Element"        "light"
+    "Ability1"        "light_armor"
+}
+
+"light_elemental2"
+{
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"        "0"
+    "AttackDamageMax"        "0"
+    "AttackRate"        "0"
+    "AttackAnimationPoint"        "0"
+    "AttackAcquisitionRange"        "0"
+    "AttackRange"        "0"
+    "ProjectileModel"        ""
+    "ProjectileSpeed"        "0"
+    "RingRadius"        "70"
+    "HealthBarOffset"        "160"
+    "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
+    "BountyXP"        "0"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"        "300"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "VisionDaytimeRange"        "1200"
+    "VisionNighttimeRange"        "800"
+    "Model"        "models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"
+    "BaseClass"        "npc_dota_creature"
+    "SoundSet"        "Hero_Keeper_Of_The_Light"
+    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+    "Portrait"        "vgui/hud/heroportraits/portrait_keeper_of_the_light"
+    "particle_folder"        "particles/units/heroes/hero_keeper_of_the_light"
+    "ConsideredHero"        "1"
+
+    "Creature"
+    {
+        "AttachWearables" // Crucible of Light
+        {
+            "1" { "ItemDef" "7676" } // Tendrillar
+            "2" { "ItemDef" "7677" } // The Crucible of Light Staff
+            "3" { "ItemDef" "7675" } // Horns of Tendrillar
+            "4" { "ItemDef" "6071" } // Repose of the Defiant
+            "5" { "ItemDef" "7678" } // Crucible of Light's Robes
+            "6" { "ItemDef" "528" } // Keeper of the Light's Ambient Effects
+        }
+    }
+    
+    "Level"        "1"
+    "ModelScale"        "1.1"
+    "BountyGoldMin"        "0"
+    "BountyGoldMax"        "0"
+    "StatusHealth"        "75"
+    "Element"        "light"
+    "Ability1"        "light_armor"
+}
+
+"light_elemental3"
+{
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"        "0"
+    "AttackDamageMax"        "0"
+    "AttackRate"        "0"
+    "AttackAnimationPoint"        "0"
+    "AttackAcquisitionRange"        "0"
+    "AttackRange"        "0"
+    "ProjectileModel"        ""
+    "ProjectileSpeed"        "0"
+    "RingRadius"        "70"
+    "HealthBarOffset"        "160"
+    "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
+    "BountyXP"        "0"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"        "300"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "VisionDaytimeRange"        "1200"
+    "VisionNighttimeRange"        "800"
+    "Model"        "models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"
+    "BaseClass"        "npc_dota_creature"
+    "SoundSet"        "Hero_Keeper_Of_The_Light"
+    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+    "Portrait"        "vgui/hud/heroportraits/portrait_keeper_of_the_light"
+    "particle_folder"        "particles/units/heroes/hero_keeper_of_the_light"
+    "ConsideredHero"        "1"
+
+    "Creature"
+    {
+        "AttachWearables" // Empowered Vestments of the Gods Set
+        {
+            "1" { "ItemDef" "4803" } // Arcane Staff of the Ancients
+            "2" { "ItemDef" "4868" } // Empowered Hood of the Gods
+            "3" { "ItemDef" "4864" } // Empowered Barding of the Gods
+            "4" { "ItemDef" "4867" } // Roehrin the Pale Stallion
+            "5" { "ItemDef" "4864" } // Empowered Barding of the Gods
+            "6" { "ItemDef" "528" } // Keeper of the Light's Ambient Effects
+        }
+    }
+    
+    "Level"        "1"
+    "ModelScale"        "1.1"
+    "BountyGoldMin"        "0"
+    "BountyGoldMax"        "0"
+    "StatusHealth"        "75"
+    "Element"        "light"
+    "Ability1"        "light_armor"
 }

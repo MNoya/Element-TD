@@ -150,8 +150,8 @@ function UpgradeTower(keys)
 
 				-- Create the basic element tower pedestal model
 				local origin = tower:GetAbsOrigin()
-				local pedestal = GetUnitKeyValue(newClass, "PedestalModelScale") or GetUnitKeyValue(newTower.damageType.."_tower", "PedestalModel")
-				local offset = GetUnitKeyValue(newClass, "PedestalModelScale") or GetUnitKeyValue(newTower.damageType.."_tower", "PedestalOffset") or 0
+				local pedestal = GetUnitKeyValue(newTower.damageType.."_tower", "PedestalModel")
+				local offset = GetUnitKeyValue(newTower.damageType.."_tower", "PedestalOffset") or 0
 				local prop = SpawnEntityFromTableSynchronous("prop_dynamic", {model = pedestal})
 				local offset_location = Vector(origin.x, origin.y, origin.z + offset)
 				prop:SetAbsOrigin(offset_location)
@@ -161,7 +161,7 @@ function UpgradeTower(keys)
 				newTower.prop = tower.prop
 			end
 
-			local scale = GetUnitKeyValue(newClass, "PedestalModelScale") or newTower:GetModelScale()
+			local scale = GetUnitKeyValue(newTower.damageType.."_tower", "PedestalModelScale") or newTower.prop:GetModelScale()
 			newTower.prop:SetModelScale(scale)
 		end
 		newTower.construction_size = tower.construction_size

@@ -205,7 +205,7 @@ function SummonElemental(keys)
     local summoner = keys.caster
     local playerID = summoner:GetOwner():GetPlayerID()
     local playerData = GetPlayerData(playerID)
-    local element = GetUnitKeyValue(keys.Elemental, "Element")
+    local element = GetUnitKeyValue(keys.Elemental.."1", "Element")
 
     -- Explosion cast effect for each element
     local explosion = ParticleManager:CreateParticle(ExplosionParticles[element], PATTACH_CUSTOMORIGIN, summoner)
@@ -221,7 +221,10 @@ function SummonElemental(keys)
     playerData.elementalActive = true
     ModifyLumber(playerID, -1)
 
-    local elemental = CreateUnitByName(keys.Elemental, EntityStartLocations[playerData.sector + 1], true, nil, nil, DOTA_TEAM_NOTEAM)
+    local level = playerData.elements[element] + 1
+    local name = keys.Elemental..level
+
+    local elemental = CreateUnitByName(name, EntityStartLocations[playerData.sector + 1], true, nil, nil, DOTA_TEAM_NOTEAM)
     elemental:AddNewModifier(nil, nil, "modifier_phased", {})
     elemental["element"] = element
     elemental["isElemental"] = true
@@ -237,7 +240,6 @@ function SummonElemental(keys)
     --GlobalCasterDummy:ApplyModifierToTarget(elemental, "creep_damage_block_applier", "modifier_damage_block")
     --ApplyArmorModifier(elemental, GetPlayerDifficulty(playerID):GetArmorValue() * 100)
     
-    local level = playerData.elements[element] + 1
     local health = ElementalBaseHealth[level] * math.pow(1.5, (math.floor(playerData.nextWave / 5) - 1))
     local scale = elemental:GetModelScale() + ((level - 1) * 0.1)
     elemental:SetMaxHealth(health)
@@ -292,8 +294,8 @@ end
 
 function AddElementalTrophy(playerID, element)
     local team = PlayerResource:GetTeam(playerID)
-    local unitName = element.."_elemental"
     local level = GetPlayerElementLevel(playerID, element)
+    local unitName = element.."_elemental"..level
     local scale = GetUnitKeyValue(unitName, "ModelScale") + ((level - 1) * 0.1)
     local playerData = GetPlayerData(playerID)
     local summoner = playerData.summoner
@@ -315,7 +317,8 @@ function AddElementalTrophy(playerID, element)
     local elemental = CreateUnitByName(unitName, position, false, nil, nil, team)
     elemental:SetModelScale(scale)
     elemental:SetForwardVector(Vector(0, -1, 0))
-    elemental:SetCustomHealthLabel(GetEnglishTranslation(unitName), ElementColors[element][1], ElementColors[element][2], ElementColors[element][3])
+    elemental:SetCustomHealthLabel(GetEnglishTranslation(element.."_elemental"), ElementColors[element][1], ElementColors[element][2], ElementColors[element][3])
 
     elemental:AddNewModifier(elemental, nil, "modifier_disabled", {})
+
 end

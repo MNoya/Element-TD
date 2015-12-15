@@ -1,54 +1,155 @@
-"fire_elemental"
+"fire_elemental1"
 {
-	"ArmorPhysical"		"0"
-	"MagicalResistance"		"0"
-	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"		"0"
-	"AttackDamageMax"		"0"
-	"AttackRate"		"0"
-	"AttackAnimationPoint"		"0"
-	"AttackAcquisitionRange"		"0"
-	"AttackRange"		"0"
-	"ProjectileModel"		""
-	"ProjectileSpeed"		"0"
-	"RingRadius"		"70"
-	"HealthBarOffset"		"160"
-	"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
-	"BountyXP"		"0"
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"		"300"
-	"StatusHealthRegen"		"0"
-	"StatusMana"		"0"
-	"StatusManaRegen"		"0"
-	"VisionDaytimeRange"		"1200"
-	"VisionNighttimeRange"		"800"
-	"Model"		"models/heroes/phoenix/phoenix_bird.vmdl"
-	"BaseClass"		"npc_dota_creature"
-	"SoundSet"		"Hero_Phoenix"
-	"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
-	"Portrait"		"vgui/hud/heroportraits/portrait_phoenix"
-	"particle_folder"		"particles/units/heroes/hero_phoenix"
-	"ConsideredHero"		"1"
-	"precache"
-	{
-		"particlefile"		"particles/units/heroes/hero_phoenix.pcf"
-		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
-	}
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"		"535"
-			}
-		}
-	}
-	"Level"		"1"
-	"ModelScale"		"1.1"
-	"BountyGoldMin"		"0"		// Gold earned min"
-	"BountyGoldMax"		"0"		// Gold earned max"
-	"StatusHealth"		"75"	// Base health"
-	"Element"		"fire"
-	"Ability1"		"fire_armor"
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"        "0"
+    "AttackDamageMax"        "0"
+    "AttackRate"        "0"
+    "AttackAnimationPoint"        "0"
+    "AttackAcquisitionRange"        "0"
+    "AttackRange"        "0"
+    "ProjectileModel"        ""
+    "ProjectileSpeed"        "0"
+    "RingRadius"        "70"
+    "HealthBarOffset"        "160"
+    "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
+    "BountyXP"        "0"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"        "300"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "VisionDaytimeRange"        "1200"
+    "VisionNighttimeRange"        "800"
+    "Model"        "models/heroes/lina/lina.vmdl"
+    "BaseClass"        "npc_dota_creature"
+    "SoundSet"        "Hero_Lina"
+    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+    "Portrait"        "vgui/hud/heroportraits/portrait_lina"
+
+    "ConsideredHero"        "1"
+
+    "Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_lina
+        {
+            "1" { "ItemDef" "320" } // Lina's Sleeves
+            "2" { "ItemDef" "318" } // Lina's Jewelry
+            "3" { "ItemDef" "321" } // Lina's Dress
+            "4" { "ItemDef" "504" } // Lina's Ambient Effects
+            "5" { "ItemDef" "319" } // Lina's Hair
+        }
+    }
+
+    "Level"        "1"
+    "ModelScale"        "1.1"
+    "BountyGoldMin"        "0"        // Gold earned min"
+    "BountyGoldMax"        "0"        // Gold earned max"
+    "StatusHealth"        "75"    // Base health"
+    "Element"        "fire"
+    "Ability1"        "fire_armor"
+}
+
+"fire_elemental2"
+{
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"        "0"
+    "AttackDamageMax"        "0"
+    "AttackRate"        "0"
+    "AttackAnimationPoint"        "0"
+    "AttackAcquisitionRange"        "0"
+    "AttackRange"        "0"
+    "ProjectileModel"        ""
+    "ProjectileSpeed"        "0"
+    "RingRadius"        "70"
+    "HealthBarOffset"        "160"
+    "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
+    "BountyXP"        "0"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"        "300"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "VisionDaytimeRange"        "1200"
+    "VisionNighttimeRange"        "800"
+    "Model"        "models/heroes/lina/lina.vmdl"
+    "BaseClass"        "npc_dota_creature"
+    "SoundSet"        "Hero_Lina"
+    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+    "Portrait"        "vgui/hud/heroportraits/portrait_lina"
+    "ConsideredHero"        "1"
+
+    "Creature"
+    {
+        "AttachWearables" // Light of the Solar Divine
+        {
+            "1" { "ItemDef" "4756" } // Arc of the Solar Divine
+            "2" { "ItemDef" "4754" } // Sleeves of the Solar Divine
+            "3" { "ItemDef" "4755" } // Flares of the Solar Divine
+            "4" { "ItemDef" "4753" } // Blessings of the Solar Divine
+        }
+    }
+
+    "Level"        "1"
+    "ModelScale"        "1.1"
+    "BountyGoldMin"        "0"        // Gold earned min"
+    "BountyGoldMax"        "0"        // Gold earned max"
+    "StatusHealth"        "75"    // Base health"
+    "Element"        "fire"
+    "Ability1"        "fire_armor"
+}
+
+
+"fire_elemental3"
+{
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"        "0"
+    "AttackDamageMax"        "0"
+    "AttackRate"        "0"
+    "AttackAnimationPoint"        "0"
+    "AttackAcquisitionRange"        "0"
+    "AttackRange"        "0"
+    "ProjectileModel"        ""
+    "ProjectileSpeed"        "0"
+    "RingRadius"        "70"
+    "HealthBarOffset"        "160"
+    "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
+    "BountyXP"        "0"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"        "300"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "VisionDaytimeRange"        "1200"
+    "VisionNighttimeRange"        "800"
+    "Model"        "models/heroes/lina/lina.vmdl"
+    "BaseClass"        "npc_dota_creature"
+    "SoundSet"        "Hero_Lina"
+    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+    "Portrait"        "vgui/hud/heroportraits/portrait_lina"
+    "ConsideredHero"        "1"
+
+    "Creature"
+    {
+        "AttachWearables" //Arcana
+        {
+            "1" {    "ItemDef"        "4794"        } //"Fiery Soul of the Slayer"
+            "2" {    "ItemDef"        "6339"        } //"Fire Lotus Belt"
+            "3" {    "ItemDef"        "5941"        } //"Wings of the Ember Crane"
+            "4" {    "ItemDef"        "4756"        } //"Arc of the Solar Divine"
+        }
+    }
+
+    "Level"        "1"
+    "ModelScale"        "1.1"
+    "BountyGoldMin"        "0"        // Gold earned min"
+    "BountyGoldMax"        "0"        // Gold earned max"
+    "StatusHealth"        "75"    // Base health"
+    "Element"        "fire"
+    "Ability1"        "fire_armor"
 }

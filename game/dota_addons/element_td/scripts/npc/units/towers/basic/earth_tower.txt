@@ -3,10 +3,10 @@
     // Visual
     //-----------------------------
     "Model"                     "models/heroes/tiny_01/tiny_01.vmdl"
-    "ModelScale"                "0.8"
+    "ModelScale"                "1.0"
     "ModelRotation"             "90"
     "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_radiant.vmdl"
-    "PedestalModelScale"        "0.7"
+    "PedestalModelScale"        "0.9"
     "PedestalOffset"            "20"
     "ProjectileModel"           "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
     "SoundSet"                  "Tower.Water"
@@ -25,7 +25,7 @@
 
     // Stats
     //----------------------------- 
-   "AttackDamageMin"            "50"
+    "AttackDamageMin"           "50"
     "AttackDamageMax"           "50"
     "Damage"                    "50"  
     "AOE_Full"                  "150"
@@ -86,5 +86,5 @@
 
     // Building Size
     "ConstructionSize"          "2"
-    "BlockPathingSize"          "2"
+    "BlockPathingSize"          "0"
 }

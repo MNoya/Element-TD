@@ -1,67 +1,152 @@
-"dark_elemental"
+"dark_elemental1"
 {
-	"ArmorPhysical"		"0"
-	"MagicalResistance"		"0"
-	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"		"0"
-	"AttackDamageMax"		"0"
-	"AttackRate"		"0"
-	"AttackAnimationPoint"		"0"
-	"AttackAcquisitionRange"		"0"
-	"AttackRange"		"0"
-	"ProjectileModel"		""
-	"ProjectileSpeed"		"0"
-	"RingRadius"		"70"
-	"HealthBarOffset"		"160"
-	"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
-	"BountyXP"		"0"
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"		"300"
-	"StatusHealthRegen"		"0"
-	"StatusMana"		"0"
-	"StatusManaRegen"		"0"
-	"VisionDaytimeRange"		"1200"
-	"VisionNighttimeRange"		"800"
-	"Model"		"models/heroes/shadow_fiend/shadow_fiend.vmdl"
-	"BaseClass"		"npc_dota_creature"
-	"SoundSet"		"Hero_Shadow_Fiend"
-	"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_shadow_fiend.vsndevts"
-	"Portrait"		"vgui/hud/heroportraits/portrait_shadow_fiend"
-	"particle_folder"		"particles/units/heroes/hero_shadow_fiend"
-	"ConsideredHero"		"1"
-	"precache"
-	{
-		"particlefile"		"particles/units/heroes/hero_shadow_fiend.pcf"
-		"model"		"models/heroes/shadow_fiend/shadow_fiend.vmdl"
-		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_shadow_fiend.vsndevts"
-	}
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"		"488"
-			}
-			"Wearable2"
-			{
-				"ItemDef"		"486"
-			}
-			"Wearable3"
-			{
-				"ItemDef"		"387"
-			}
-			"Wearable4"
-			{
-				"ItemDef"		"509"
-			}
-		}
-	}
-	"Level"		"1"
-	"ModelScale"		"1.1"
-	"BountyGoldMin"		"0"
-	"BountyGoldMax"		"0"
-	"StatusHealth"		"75"
-	"Element"		"dark"
-	"Ability1"		"dark_armor"
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"        "0"
+    "AttackDamageMax"        "0"
+    "AttackRate"        "0"
+    "AttackAnimationPoint"        "0"
+    "AttackAcquisitionRange"        "0"
+    "AttackRange"        "0"
+    "ProjectileModel"        ""
+    "ProjectileSpeed"        "0"
+    "RingRadius"        "70"
+    "HealthBarOffset"        "160"
+    "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
+    "BountyXP"        "0"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"        "300"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "VisionDaytimeRange"        "1200"
+    "VisionNighttimeRange"        "800"
+    "Model"        "models/heroes/shadow_fiend/shadow_fiend.vmdl"
+    "BaseClass"        "npc_dota_creature"
+    "SoundSet"        "Hero_Shadow_Fiend"
+    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_shadow_fiend.vsndevts"
+    "Portrait"        "vgui/hud/heroportraits/portrait_shadow_fiend"
+    "particle_folder"        "particles/units/heroes/hero_shadow_fiend"
+    "ConsideredHero"        "1"
+
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "1"  { "ItemDef" "387" } //Head
+            "2"  { "ItemDef" "486" } //Shoulder
+            "3"  { "ItemDef" "488" } //Arms
+            "4"  { "ItemDef" "509" } //Ambient
+        }
+    }
+    "Level"        "1"
+    "ModelScale"        "1.1"
+    "BountyGoldMin"        "0"
+    "BountyGoldMax"        "0"
+    "StatusHealth"        "75"
+    "Element"        "dark"
+    "Ability1"        "dark_armor"
+}
+
+"dark_elemental2"
+{
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"        "0"
+    "AttackDamageMax"        "0"
+    "AttackRate"        "0"
+    "AttackAnimationPoint"        "0"
+    "AttackAcquisitionRange"        "0"
+    "AttackRange"        "0"
+    "ProjectileModel"        ""
+    "ProjectileSpeed"        "0"
+    "RingRadius"        "70"
+    "HealthBarOffset"        "160"
+    "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
+    "BountyXP"        "0"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"        "300"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "VisionDaytimeRange"        "1200"
+    "VisionNighttimeRange"        "800"
+    "Model"        "models/heroes/shadow_fiend/shadow_fiend.vmdl"
+    "BaseClass"        "npc_dota_creature"
+    "SoundSet"        "Hero_Shadow_Fiend"
+    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_shadow_fiend.vsndevts"
+    "Portrait"        "vgui/hud/heroportraits/portrait_shadow_fiend"
+    "particle_folder"        "particles/units/heroes/hero_shadow_fiend"
+    "ConsideredHero"        "1"
+
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "1"  { "ItemDef" "387" } //Head
+            "2"  { "ItemDef" "486" } //Shoulder
+            "3"  { "ItemDef" "8259" } // Arms of Desolation
+            "4"  { "ItemDef" "509" } //Ambient
+        }
+    }
+    "Level"        "1"
+    "ModelScale"        "1.1"
+    "BountyGoldMin"        "0"
+    "BountyGoldMax"        "0"
+    "StatusHealth"        "75"
+    "Element"        "dark"
+    "Ability1"        "dark_armor"
+}
+
+"dark_elemental3"
+{
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"        "0"
+    "AttackDamageMax"        "0"
+    "AttackRate"        "0"
+    "AttackAnimationPoint"        "0"
+    "AttackAcquisitionRange"        "0"
+    "AttackRange"        "0"
+    "ProjectileModel"        ""
+    "ProjectileSpeed"        "0"
+    "RingRadius"        "70"
+    "HealthBarOffset"        "160"
+    "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
+    "BountyXP"        "0"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"        "300"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "VisionDaytimeRange"        "1200"
+    "VisionNighttimeRange"        "800"
+    "Model"        "models/heroes/shadow_fiend/shadow_fiend_arcana.vmdl"
+    "BaseClass"        "npc_dota_creature"
+    "SoundSet"        "Hero_Shadow_Fiend"
+    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_shadow_fiend.vsndevts"
+    "Portrait"        "vgui/hud/heroportraits/portrait_shadow_fiend"
+    "particle_folder"        "particles/units/heroes/hero_shadow_fiend"
+    "ConsideredHero"        "1"
+
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "1"  { "ItemDef" "6996" } //Demon Eater Arcana
+            "2"  { "ItemDef" "486" } //Shoulder
+            "3"  { "ItemDef" "8259" } // Arms of Desolation
+            "4"  { "ItemDef" "509" } //Ambient
+        }
+    }
+    "Level"        "1"
+    "ModelScale"        "1.1"
+    "BountyGoldMin"        "0"
+    "BountyGoldMax"        "0"
+    "StatusHealth"        "75"
+    "Element"        "dark"
+    "Ability1"        "dark_armor"
 }

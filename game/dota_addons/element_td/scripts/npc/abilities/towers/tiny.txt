@@ -1,0 +1,77 @@
+"tiny_model02"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"                      "1"
+
+    "Modifiers"
+    {
+        "modifier_tiny_model"
+        {
+            "Passive"           "1"
+            "IsHidden"          "1"
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "creeps/tiny_model.lua"
+                    "Function"      "GrowModel"
+                    "Level"         "2"
+                }
+            }
+        }
+    }
+}
+
+"tiny_model03"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"                      "1"
+
+    "Modifiers"
+    {
+        "modifier_tiny_model"
+        {
+            "Passive"           "1"
+            "IsHidden"          "1"
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "creeps/tiny_model.lua"
+                    "Function"      "GrowModel"
+                    "Level"         "3"
+                }
+            }
+        }
+    }
+}
+
+"tiny_model04"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"                      "1"
+
+    "Modifiers"
+    {
+        "modifier_tiny_model"
+        {
+            "Passive"           "1"
+            "IsHidden"          "1"
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "creeps/tiny_model.lua"
+                    "Function"      "GrowModel"
+                    "Level"         "4"
+                }
+            }
+        }
+    }
+}

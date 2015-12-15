@@ -3,7 +3,7 @@
     // Visual
     //-----------------------------
     "Model"                     "models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"
-    "ModelScale"                "0.8"
+    "ModelScale"                "0.7"
     "ModelRotation"             "90"
     "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_ti5.vmdl"
     "PedestalOffset"            "20"
@@ -13,13 +13,14 @@
     "MinimapIconSize"           "320"
     "Creature"
     {
-        "AttachWearables"
+        "AttachWearables" // Default npc_dota_hero_keeper_of_the_light
         {
-            "1" { "ItemDef" "7676" } //Tendrillar
-            "2" { "ItemDef" "4803" } //Legendary staff
-            "3" { "ItemDef" "5320" } //Robes
-            "4" { "ItemDef" "5316" } //Gandalf Hat
-            "5" { "ItemDef" "7675" } //Horns
+            "1" { "ItemDef" "256" } // Keeper of the Light Horse Armor
+            "2" { "ItemDef" "528" } // Keeper of the Light's Ambient Effects
+            "3" { "ItemDef" "253" } // Keeper of the Light Staff
+            "4" { "ItemDef" "255" } // Keeper of the Light Skirt
+            "5" { "ItemDef" "252" } // Keeper of the Light Horse
+            "6" { "ItemDef" "254" } // Keeper of the Light Hood
         }
     }
 
@@ -84,5 +85,5 @@
 
     // Building Size
     "ConstructionSize"          "2"
-    "BlockPathingSize"          "2"
+    "BlockPathingSize"          "0"
 }

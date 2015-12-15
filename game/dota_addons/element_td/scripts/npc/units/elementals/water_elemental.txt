@@ -1,51 +1,154 @@
-"water_elemental"
+"water_elemental1"
 {
-	"ArmorPhysical"		"0"
-	"MagicalResistance"		"0"
-	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"		"0"
-	"AttackDamageMax"		"0"
-	"AttackRate"		"0"
-	"AttackAnimationPoint"		"0"
-	"AttackAcquisitionRange"		"0"
-	"AttackRange"		"0"
-	"ProjectileModel"		""
-	"ProjectileSpeed"		"0"
-	"RingRadius"		"70"
-	"HealthBarOffset"		"160"
-	"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
-	"BountyXP"		"0"
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"		"300"
-	"StatusHealthRegen"		"0"
-	"StatusMana"		"0"
-	"StatusManaRegen"		"0"
-	"VisionDaytimeRange"		"1200"
-	"VisionNighttimeRange"		"800"
-	"Model"		"models/heroes/morphling/morphling.vmdl"
-	"BaseClass"		"npc_dota_creature"
-	"SoundSet"		"Hero_Morphling"
-	"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
-	"Portrait"		"vgui/hud/heroportraits/portrait_morphling"
-	"particle_folder"		"particles/units/heroes/hero_morphling"
-	"ConsideredHero"		"1"
-	"precache"
-	{
-		"particlefile"		"particles/units/heroes/hero_morphling.vpcf"
-		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
-	}
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1" { "ItemDef"	"507" }
-		}
-	}
-	"Level"		"1"
-	"ModelScale"		"1.0"
-	"BountyGoldMin"		"0"		// Gold earned min"
-	"BountyGoldMax"		"0"		// Gold earned max"
-	"StatusHealth"		"75"	// Base health"
-	"Element"		"water"
-	"Ability1"		"water_armor"
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"        "0"
+    "AttackDamageMax"        "0"
+    "AttackRate"        "0"
+    "AttackAnimationPoint"        "0"
+    "AttackAcquisitionRange"        "0"
+    "AttackRange"        "0"
+    "ProjectileModel"        ""
+    "ProjectileSpeed"        "0"
+    "RingRadius"        "70"
+    "HealthBarOffset"        "160"
+    "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
+    "BountyXP"        "0"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"        "300"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "VisionDaytimeRange"        "1200"
+    "VisionNighttimeRange"        "800"
+    "Model"        "models/heroes/morphling/morphling.vmdl"
+    "BaseClass"        "npc_dota_creature"
+    "SoundSet"        "Hero_Morphling"
+    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+    "Portrait"        "vgui/hud/heroportraits/portrait_morphling"
+    "particle_folder"        "particles/units/heroes/hero_morphling"
+    "ConsideredHero"        "1"
+
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1" { "ItemDef"    "507" }
+        }
+    }
+    "Level"        "1"
+    "ModelScale"        "1.0"
+    "BountyGoldMin"        "0"        // Gold earned min"
+    "BountyGoldMax"        "0"        // Gold earned max"
+    "StatusHealth"        "75"    // Base health"
+    "Element"        "water"
+    "Ability1"        "water_armor"
+}
+
+"water_elemental2"
+{
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"        "0"
+    "AttackDamageMax"        "0"
+    "AttackRate"        "0"
+    "AttackAnimationPoint"        "0"
+    "AttackAcquisitionRange"        "0"
+    "AttackRange"        "0"
+    "ProjectileModel"        ""
+    "ProjectileSpeed"        "0"
+    "RingRadius"        "70"
+    "HealthBarOffset"        "160"
+    "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
+    "BountyXP"        "0"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"        "300"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "VisionDaytimeRange"        "1200"
+    "VisionNighttimeRange"        "800"
+    "Model"        "models/heroes/morphling/morphling.vmdl"
+    "BaseClass"        "npc_dota_creature"
+    "SoundSet"        "Hero_Morphling"
+    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+    "Portrait"        "vgui/hud/heroportraits/portrait_morphling"
+    "particle_folder"        "particles/units/heroes/hero_morphling"
+    "ConsideredHero"        "1"
+
+    "Creature"
+    {
+        "AttachWearables" // Shards of Polymorphia Set
+        {
+            "1" { "ItemDef" "4403" } // Crests of Polymorphia
+            "2" { "ItemDef" "4410" } // Pauldrons of Polymorphia
+            "3" { "ItemDef" "4404" } // Crown of Polymorphia
+            "4" { "ItemDef" "4422" } // Bracers of Polymorphia
+            "5" { "ItemDef" "507" } // Morphling's Ambient Effects
+        }
+    }
+    
+    "Level"        "1"
+    "ModelScale"        "1.0"
+    "BountyGoldMin"        "0"        // Gold earned min"
+    "BountyGoldMax"        "0"        // Gold earned max"
+    "StatusHealth"        "75"    // Base health"
+    "Element"        "water"
+    "Ability1"        "water_armor"
+}
+
+"water_elemental3"
+{
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"        "0"
+    "AttackDamageMax"        "0"
+    "AttackRate"        "0"
+    "AttackAnimationPoint"        "0"
+    "AttackAcquisitionRange"        "0"
+    "AttackRange"        "0"
+    "ProjectileModel"        ""
+    "ProjectileSpeed"        "0"
+    "RingRadius"        "70"
+    "HealthBarOffset"        "160"
+    "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
+    "BountyXP"        "0"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"        "300"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "VisionDaytimeRange"        "1200"
+    "VisionNighttimeRange"        "800"
+    "Model"        "models/heroes/morphling/morphling.vmdl"
+    "BaseClass"        "npc_dota_creature"
+    "SoundSet"        "Hero_Morphling"
+    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+    "Portrait"        "vgui/hud/heroportraits/portrait_morphling"
+    "particle_folder"        "particles/units/heroes/hero_morphling"
+    "ConsideredHero"        "1"
+
+    "Creature"
+    {
+        "AttachWearables" // Shard of the Lost Star
+        {
+            "1" { "ItemDef" "7561" } // Spines of the Lost Star
+            "2" { "ItemDef" "7560" } // Scowl of the Lost Star
+            "3" { "ItemDef" "7562" } // Bracers of the Lost Star
+            "4" { "ItemDef" "7559" } // Eye of the Lost Star
+            "5" { "ItemDef" "7558" } // Grip of the Lost Star
+            "6" { "ItemDef" "507" } // Morphling's Ambient Effects
+        }
+    }
+
+    "Level"        "1"
+    "ModelScale"        "1.0"
+    "BountyGoldMin"        "0"        // Gold earned min"
+    "BountyGoldMax"        "0"        // Gold earned max"
+    "StatusHealth"        "75"    // Base health"
+    "Element"        "water"
+    "Ability1"        "water_armor"
 }

@@ -84,5 +84,5 @@
 
     // Building Size
     "ConstructionSize"          "2"
-    "BlockPathingSize"          "2"
+    "BlockPathingSize"          "0"
 }

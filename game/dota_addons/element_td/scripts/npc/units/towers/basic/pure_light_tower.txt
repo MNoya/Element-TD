@@ -1,59 +1,82 @@
 "pure_light_tower"
 {
-	"BaseClass"		"npc_dota_tower"
-	"SoundSet"		"Tower.Water"
-	"MinimapIcon"		"minimap_tower90"
-	"MinimapIconSize"		"320"
-	"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
-	"particle_folder"		"particles/units/heroes/hero_mirana"
-	"particle_folder"		"particles/units/heroes/hero_keeper_of_the_light"
-	"ArmorPhysical"		"0"
-	"MagicalResistance"		"0"
-	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-	"AttackAnimationPoint"		"0"
-	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"0"
-	"AttributeStrengthGain"		"0"
-	"AttributeBaseIntelligence"		"0"
-	"AttributeIntelligenceGain"		"0"
-	"AttributeBaseAgility"		"0"
-	"AttributeAgilityGain"		"0"
-	"BoundsHullName"		"DOTA_HULL_SIZE_TOWER"
-	"ProjectileCollisionSize"		"50"
-	"RingRadius"		"80"
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
-	"MovementSpeed"		"0"
-	"MovementTurnRate"		"1.0"
-	"StatusHealth"		"1000"
-	"StatusHealthRegen"		"0"
-	"StatusMana"		"0"
-	"StatusManaRegen"		"0"
-	"TeamName"		"DOTA_TEAM_GOODGUYS"
-	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-	"CombatClassDefend"		"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
-	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	"VisionDaytimeRange"		"1900"
-	"VisionNighttimeRange"		"1900"
-	"Level"		"4"
-	"Cost"		"9075"
-	"TotalCost"		"11000"
-	"Element"		"light"
-	"Damage"		"47250"
-	"DamageType"		"light"
-	"ScriptClass"		"BasicTower"
-	"TowerType"		"Normal"
-	"AttackRange"		"1375"
-	"AttackAcquisitionRange"		"1375"
-	"AttackRate"		"1"
-	"ProjectileModel"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
-	"ProjectileSpeed"		"1000"
-	"Model"		"models/props_structures/good_statue008.mdl"
-	"ModelScale"		"1.1"
-	"BuildTime"		"2"
-	"Upgrades"
-	{
-	}
-	"AttackDamageMin"		"47250"
-	"AttackDamageMax"		"47250"
+    // Visual
+    //-----------------------------
+    "Model"                     "models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"
+    "ModelScale"                "1.2"
+    "ModelRotation"             "90"
+    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_ti5.vmdl"
+    "PedestalOffset"            "20"
+    "ProjectileModel"           "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
+    "SoundSet"                  "Tower.Water"
+    "MinimapIcon"               "minimap_tower90"
+    "MinimapIconSize"           "320"
+    "Creature"
+    {
+        "AttachWearables" // Empowered Vestments of the Gods Set
+        {
+            "1" { "ItemDef" "4803" } // Arcane Staff of the Ancients
+            "2" { "ItemDef" "4868" } // Empowered Hood of the Gods
+            "3" { "ItemDef" "4864" } // Empowered Barding of the Gods
+            "4" { "ItemDef" "4867" } // Roehrin the Pale Stallion
+            "5" { "ItemDef" "4706" } // One Horn
+            "6" { "ItemDef" "528" } // Keeper of the Light's Ambient Effects
+        }
+    }
+
+    // Stats
+    //----------------------------- 
+    "AttackDamageMin"           "47250"
+    "AttackDamageMax"           "47250"
+    "Damage"                    "47250"  
+    "AttackRange"               "1375"
+    "AttackAcquisitionRange"    "1375"
+    "AttackRate"                "1"
+    "ProjectileSpeed"           "2000"
+
+    "Level"                     "4"
+    "Cost"                      "9075"
+    "TotalCost"                 "11000"
+    "BuildTime"                 "2"
+    "Element"                   "light"
+    "DamageType"                "light"
+    "ScriptClass"               "BasicTower"
+    "TowerType"                 "Normal"
+    
+    "Requirements"
+    {
+        "light"     "3"
+    }
+    "Upgrades"
+    {
+    }
+    
+    // General
+    //-----------------------------
+    "BaseClass"                 "npc_dota_creature"
+    "ArmorPhysical"             "0"
+    "MagicalResistance"         "0"
+    "BoundsHullName"            "DOTA_HULL_SIZE_TOWER"
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"      "1900"  
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"      "0"
+    "ProjectileCollisionSize"   "50"
+    "RingRadius"                "80"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"             "0"
+    "MovementTurnRate"          "1.0"
+    "StatusHealth"              "1000"
+    "StatusHealthRegen"         "0"
+    "StatusMana"                "0"
+    "StatusManaRegen"           "0"
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

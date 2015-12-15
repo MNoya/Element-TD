@@ -20,9 +20,7 @@ function DeathProphet( event )
 
     local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_death_prophet/death_prophet_death.vpcf", PATTACH_CUSTOMORIGIN, unit)
     ParticleManager:SetParticleControlEnt(particle, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetAbsOrigin(), true)
-    Timers:CreateTimer(0.5, function()
-        unit:AddNoDraw() 
-    end)
+    unit:AddNoDraw()
 end
 
 function HellSworn( event )

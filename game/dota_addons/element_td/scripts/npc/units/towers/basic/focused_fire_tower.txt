@@ -1,67 +1,85 @@
 "focused_fire_tower"
 {
-	"BaseClass"		"npc_dota_tower"
-	"SoundSet"		"Tower.Water"
-	"MinimapIcon"		"minimap_tower90"
-	"MinimapIconSize"		"320"
-	"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
-	"particle_folder"		"particles/units/heroes/hero_mirana"
-	"particle_folder"		"particles/units/heroes/hero_lina"
-	"ArmorPhysical"		"0"
-	"MagicalResistance"		"0"
-	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-	"AttackAnimationPoint"		"0"
-	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"0"
-	"AttributeStrengthGain"		"0"
-	"AttributeBaseIntelligence"		"0"
-	"AttributeIntelligenceGain"		"0"
-	"AttributeBaseAgility"		"0"
-	"AttributeAgilityGain"		"0"
-	"BoundsHullName"		"DOTA_HULL_SIZE_TOWER"
-	"ProjectileCollisionSize"		"50"
-	"RingRadius"		"80"
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
-	"MovementSpeed"		"0"
-	"MovementTurnRate"		"1.0"
-	"StatusHealth"		"1000"
-	"StatusHealthRegen"		"0"
-	"StatusMana"		"0"
-	"StatusManaRegen"		"0"
-	"TeamName"		"DOTA_TEAM_GOODGUYS"
-	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-	"CombatClassDefend"		"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
-	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	"VisionDaytimeRange"		"1900"
-	"VisionNighttimeRange"		"1900"
-	"Level"		"2"
-	"Cost"		"450"
-	"TotalCost"		"625"
-	"Element"		"fire"
-	"Damage"		"105"
-	"DamageType"		"fire"
-	"AOE_Full"		"150"
-	"AOE_Half"		"300"
-	"ScriptClass"		"BasicTowerAOE"
-	"TowerType"		"Normal"
-	"AttackRange"		"500"
-	"AttackAcquisitionRange"		"500"
-	"AttackRate"		"0.31"
-	"ProjectileModel"		"particles/units/heroes/hero_lina/lina_base_attack.vpcf"
-	"ProjectileSpeed"		"2000"
-	"Model"		"models/props_structures/good_statue008.mdl"
-	"ModelScale"		"0.9"
-	"BuildTime"		"2"
-	"Requirements"
-	{
-		"fire"		"2"
-	}
-	"Upgrades"
-	{
-		"Count"		"1"
-		"1"		"refined_fire_tower"
-	}
-	"AttackDamageMin"		"105"
-	"AttackDamageMax"		"105"
+    // Visual
+    //-----------------------------
+    "Model"                     "models/heroes/lina/lina.vmdl"
+    "ModelScale"                "1.0"
+    "ModelRotation"             "90"
+    "PedestalModel"             "models/heroes/shadow_fiend/pedestal_sf.vmdl"
+    "PedestalModelScale"        "1"
+    "PedestalOffset"            "20"
+    "ProjectileModel"           "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+    "SoundSet"                  "Tower.Water"
+    "MinimapIcon"               "minimap_tower90"
+    "MinimapIconSize"           "320"
+    "Creature"
+    {
+        "AttachWearables" // Light of the Solar Divine
+        {
+            "1" { "ItemDef" "4756" } // Arc of the Solar Divine
+            "2" { "ItemDef" "4754" } // Sleeves of the Solar Divine
+            "3" { "ItemDef" "4755" } // Flares of the Solar Divine
+            "4" { "ItemDef" "4753" } // Blessings of the Solar Divine
+        }
+    }
+
+    // Stats
+    //----------------------------- 
+    "AttackDamageMin"           "105"
+    "AttackDamageMax"           "105"
+    "Damage"                    "105"  
+    "AOE_Full"                  "150"
+    "AOE_Half"                  "300" 
+    "AttackRange"               "500"
+    "AttackAcquisitionRange"    "500"
+    "AttackRate"                "0.31"
+    "ProjectileSpeed"           "2000"
+
+    "Level"                     "2"
+    "Cost"                      "450"
+    "TotalCost"                 "625"
+    "BuildTime"                 "2"
+    "Element"                   "fire"
+    "DamageType"                "fire"
+    "ScriptClass"               "BasicTowerAOE"
+    "TowerType"                 "Normal"
+    
+    "Requirements"
+    {
+        "fire"      "2"
+    }
+    "Upgrades"
+    {
+        "Count"     "1"
+        "1"     "refined_fire_tower"
+    }
+
+    // General
+    //-----------------------------
+    "BaseClass"                 "npc_dota_creature"
+    "ArmorPhysical"             "0"
+    "MagicalResistance"         "0"
+    "BoundsHullName"            "DOTA_HULL_SIZE_TOWER"
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"      "1900"  
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"      "0"
+    "ProjectileCollisionSize"   "50"
+    "RingRadius"                "80"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"             "0"
+    "MovementTurnRate"          "1.0"
+    "StatusHealth"              "1000"
+    "StatusHealthRegen"         "0"
+    "StatusMana"                "0"
+    "StatusManaRegen"           "0"
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

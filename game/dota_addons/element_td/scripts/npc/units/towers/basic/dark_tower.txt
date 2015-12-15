@@ -3,7 +3,7 @@
     // Visual
     //-----------------------------
     "Model"                     "models/heroes/shadow_fiend/shadow_fiend.vmdl"
-    "ModelScale"                "0.8"
+    "ModelScale"                "0.7"
     "ModelRotation"             "90"
     "PedestalModel"             "models/heroes/phantom_assassin/arcana_pedestal.vmdl"
     "PedestalModelScale"        "0.75"
@@ -84,5 +84,5 @@
 
     // Building Size
     "ConstructionSize"          "2"
-    "BlockPathingSize"          "2"
+    "BlockPathingSize"          "0"
 }

@@ -1,0 +1,5 @@
+"earth_tower_dummy"
+{
+    "BaseClass" "npc_dota_creature"
+    "Model"     "models/heroes/tiny_01/tiny01_deathsim.vmdl"
+}
