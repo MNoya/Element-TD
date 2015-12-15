@@ -174,14 +174,6 @@ function UpdateNotVoted()
 			notVoted.AddClass('VotingAvatar');
 			notVoted.AddClass('NotVoted');
 			notVoted.steamid = playerData.player_steamid;
-			if (position == 1 || position == 5)
-				notVoted.AddClass('Col1');
-			else if (position == 2 || position == 6)
-				notVoted.AddClass('Col2');
-			else if (position == 3 || position == 7)
-				notVoted.AddClass('Col3');
-			if (position == 4 || position == 5 || position == 6 || position == 7)
-				notVoted.AddClass('SecondLine');
 			position += 1;
 		}
 	};
@@ -262,6 +254,7 @@ function ShowVoteResults( data )
 {
 	votingUI.visible = false;
 	voteResultsUI.visible = true;
+	votingLiveUI.AddClass("hidden");
 
 	gamemodeResults.text = gamesettings['GameModes'][data.gamemode].Name;
 	difficultyResults.text = gamesettings['Difficulty'][data.difficulty].Name;

@@ -31,7 +31,7 @@
     opacity: 1;
     transform: translatex( -200px );
     transition-property: transform, opacity;
-    transition-duration: 0.1s;
+    transition-duration: 0.3s;
 }
 
 #VotingLive.hidden
@@ -58,6 +58,7 @@
     width: 100%;
     height: 100%;
     padding: 5px 0px 5px 0px;
+    flow-children: right-wrap;
 }
 
 #Voted
@@ -92,41 +93,6 @@
 .NotVoted
 {
     margin: 4px;
-}
-
-.Col1
-{
-    position: 38px 0px 0px;
-}
-
-.Col2
-{
-    position: 76px 0px 0px;
-}
-
-.Col3
-{
-    position: 114px 0px 0px;
-}
-
-.SecondLine
-{
-    position: 0px 38px 0px;
-}
-
-.Col1.SecondLine
-{
-    position: 38px 38px 0px;
-}
-
-.Col2.SecondLine
-{
-    position: 76px 38px 0px;
-}
-
-.Col3.SecondLine
-{
-    position: 114px 38px 0px;
 }
 
 .VotedPlayer
