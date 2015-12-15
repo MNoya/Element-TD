@@ -151,7 +151,7 @@ function ElementTD:MakeSets()
     end
 
     -- Default hero set to generate
-    GenerateDefaultBlock("npc_dota_hero_keeper_of_the_light")
+    GenerateDefaultBlock("npc_dota_hero_earth_spirit")
 
     -- Sets to generate
     local setNames = {}

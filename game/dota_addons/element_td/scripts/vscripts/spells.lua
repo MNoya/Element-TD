@@ -251,7 +251,8 @@ function UpdateUpgrades(tower)
 	local class = tower.class
 	local playerID = tower:GetOwner():GetPlayerID()
 	local data = GetPlayerData(playerID)
-	local upgrades = towersKV[class].Upgrades
+	local upgrades = NPC_UNITS_CUSTOM[class].Upgrades
+
 	-- delete all items first
 	for i = 0, 5, 1 do
 		local item = tower:GetItemInSlot(i)

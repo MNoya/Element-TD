@@ -2,8 +2,13 @@ function LavaSpawn( event )
     local target = event.target
 
     local particle = ParticleManager:CreateParticle("particles/custom/creeps/lava/ambient_esl.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
-    ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
-    ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+end
+
+function LavaSpawnDeath( event )
+    local unit = event.unit
+
+    local particle = ParticleManager:CreateParticle("particles/custom/creeps/lava/death_esl.vpcf", PATTACH_CUSTOMORIGIN, unit)
+    ParticleManager:SetParticleControl(particle, 0, unit:GetAbsOrigin())
 end
 
 function WindSpirit( event )

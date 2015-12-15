@@ -77,4 +77,8 @@
             "5" { "ItemDef" "6142" } // Horns of the Malignant Corruption
        }
     }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

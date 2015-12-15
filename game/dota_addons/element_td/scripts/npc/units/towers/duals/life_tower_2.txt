@@ -77,4 +77,8 @@
 			"5" { "ItemDef" "46" } // Hair
        }
     }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

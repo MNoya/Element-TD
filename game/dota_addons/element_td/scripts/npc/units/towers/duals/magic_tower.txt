@@ -80,4 +80,8 @@
             "4" { "ItemDef" "369" } // Arm
        }
     }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

@@ -78,6 +78,11 @@
             "4" { "ItemDef" "6432" } // Vanquishing Demons Geomagnetic Arm Guard
             "5" { "ItemDef" "6435" } // Vanquishing Demons Ornaments of Annihilation
             "6" { "ItemDef" "6434" } // Vanquishing Demons Ritual Headgear
+            "7" { "ItemDef" "482" } // Earth Spirit's Head
        }
     }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

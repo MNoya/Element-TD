@@ -64,4 +64,8 @@
 	}
 	"AttackDamageMin"		"1650"
 	"AttackDamageMax"		"1650"
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

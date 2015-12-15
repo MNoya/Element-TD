@@ -72,34 +72,23 @@
 	}
 	"AttackDamageMin"		"100"
 	"AttackDamageMax"		"100"
+    
 	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"		"479"
-			}
-			"Wearable2"
-			{
-				"ItemDef"		"480"
-			}
-			"Wearable3"
-			{
-				"ItemDef"		"481"
-			}
-			"Wearable4"
-			{
-				"ItemDef"		"482"
-			}
-			"Wearable5"
-			{
-				"ItemDef"		"526" // Ambient
-			}
-			"Wearable6"
-			{
-				"ItemDef"		"475"
-			}
-		}
-	}
+    {
+        "AttachWearables" // Default npc_dota_hero_earth_spirit
+        {
+            "1" { "ItemDef" "475" } // Earth Spirit's Staff
+            "2" { "ItemDef" "480" } // Earth Spirit's Neck
+            "3" { "ItemDef" "481" } // Earth Spirit's Arms
+            "4" { "ItemDef" "526" } // Earth Spirit's Ambient Effects
+            "5" { "ItemDef" "479" } // Earth Spirit's Belt
+            "6" { "ItemDef" "482" } // Earth Spirit's Head
+            "7" { "ItemDef" "477" } // Earth Spirit's Head Accessory
+            "8" { "ItemDef" "8654" } // Earth Spirit's Stone Remnant
+        }
+    }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

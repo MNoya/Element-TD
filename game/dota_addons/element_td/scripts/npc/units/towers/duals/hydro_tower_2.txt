@@ -80,4 +80,8 @@
             "8" { "ItemDef" "5464" } // Admiral's Stash
        }
     }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

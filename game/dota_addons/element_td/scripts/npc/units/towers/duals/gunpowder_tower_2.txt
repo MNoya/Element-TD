@@ -77,4 +77,8 @@
             "5" { "ItemDef" "5434" } // Hare Hunt Cape
        }
     }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

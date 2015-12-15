@@ -101,6 +101,12 @@ end
 -- called when 'script_reload' is run
 -- TODO: make with work with the :OnCreated function
 function ElementTD:OnScriptReload()
+    -- Reload files
+    NPC_UNITS_CUSTOM = LoadKeyValues("scripts/npc/npc_units_custom.txt")
+    NPC_ABILITIES_CUSTOM = LoadKeyValues("scripts/npc/npc_abilities_custom.txt")
+    NPC_ITEMS_CUSTOM = LoadKeyValues("scripts/npc/npc_items_custom.txt")
+    ADDON_ENGLISH = LoadKeyValues("resource/addon_english.txt")
+
     for _, player in pairs(players) do
 
         -- loop over the player's towers

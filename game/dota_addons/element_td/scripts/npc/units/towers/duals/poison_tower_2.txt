@@ -80,4 +80,8 @@
             "6" { "ItemDef" "518" } // Ambient
        }
     }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

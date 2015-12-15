@@ -51,7 +51,7 @@
 	"ProjectileModel"		""
 	"ProjectileSpeed"		"800"
 	"Model"		"models/heroes/slardar/slardar.vmdl"
-	"ModelScale"		"0.65"
+	"ModelScale"		"0.7"
 	"UpgradeIcon"		"morphling_adaptive_strike"
 	"BuildTime"		"3"
 	"Requirements"
@@ -96,4 +96,8 @@
 			}
 		}
 	}
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

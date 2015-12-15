@@ -1,6 +1,6 @@
 "mushroom_tower_3"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"MinimapIcon"		"minimap_tower90"
 	"MinimapIconSize"		"320"
@@ -79,6 +79,11 @@
             "4" { "ItemDef" "6004" } // Mane of the Demon Stone
             "5" { "ItemDef" "6008" } // Warriors of the Demon Stone
             "6" { "ItemDef" "6002" } // Plated Bracers of the Demon Stone
+            "7" { "ItemDef" "482" } // Earth Spirit's Head
        }
     }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

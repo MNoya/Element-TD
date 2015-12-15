@@ -80,4 +80,8 @@
 			"8" { "ItemDef" "221"} // Mount
        }
     }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

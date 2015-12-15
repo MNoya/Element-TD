@@ -5097,7 +5097,7 @@
 	    "ModelScale"                "1.0"
 	    "ModelRotation"             "90"
 	    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_radiant.vmdl"
-	    "PedestalModelScale"        "0.9"
+	    "PedestalModelScale"        "0.8"
 	    "PedestalOffset"            "20"
 	    "ProjectileModel"           "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
 	    "SoundSet"                  "Tower.Water"
@@ -5366,7 +5366,7 @@
 	    "ModelScale"                "1"
 	    "ModelRotation"             "90"
 	    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_radiant.vmdl"
-	    "PedestalModelScale"        "0.9"
+	    "PedestalModelScale"        "0.8"
 	    "PedestalOffset"            "20"
 	    "ProjectileModel"           "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
 	    "SoundSet"                  "Tower.Water"
@@ -6049,7 +6049,7 @@
 	    "ModelScale"                "1.2"
 	    "ModelRotation"             "90"
 	    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_radiant.vmdl"
-	    "PedestalModelScale"        "0.9"
+	    "PedestalModelScale"        "0.8"
 	    "PedestalOffset"            "20"
 	    "ProjectileModel"           "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
 	    "SoundSet"                  "Tower.Water"
@@ -6532,7 +6532,7 @@
 	    "ModelScale"                "1.2"
 	    "ModelRotation"             "90"
 	    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_radiant.vmdl"
-	    "PedestalModelScale"        "0.9"
+	    "PedestalModelScale"        "0.8"
 	    "PedestalOffset"            "20"
 	    "ProjectileModel"           "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
 	    "SoundSet"                  "Tower.Water"
@@ -7232,6 +7232,10 @@
 		}
 		"AttackDamageMin"		"210"
 		"AttackDamageMax"		"210"
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"blacksmith_tower_2"
 	{
@@ -7301,6 +7305,10 @@
 		}
 		"AttackDamageMin"		"1050"
 		"AttackDamageMax"		"1050"
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"blacksmith_tower_3"
 	{
@@ -7368,6 +7376,10 @@
 		}
 		"AttackDamageMin"		"5250"
 		"AttackDamageMax"		"5250"
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"conjure_tower_clone_dummy"
 	{
@@ -7480,6 +7492,10 @@
 		}
 		"AttackDamageMin"		"66"
 		"AttackDamageMax"		"66"
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"disease_tower_2"
 	{
@@ -7549,6 +7565,10 @@
 		}
 		"AttackDamageMin"		"330"
 		"AttackDamageMax"		"330"
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"disease_tower_3"
 	{
@@ -7616,6 +7636,10 @@
 		}
 		"AttackDamageMin"		"1650"
 		"AttackDamageMax"		"1650"
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"electricity_tower"
 	{
@@ -7707,6 +7731,10 @@
 				}
 			}
 		}
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"electricity_tower_2"
 	{
@@ -7785,6 +7813,10 @@
 	            "3" { "ItemDef" "6022" } // Ornate Hat of Good Fortune
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"electricity_tower_3"
 	{
@@ -7861,6 +7893,10 @@
 	            "3" { "ItemDef" "8247" } // Virtuous Roar Hair
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"flame_tower"
 	{
@@ -7960,6 +7996,10 @@
 				}
 			}
 		}
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"flame_tower_2"
 	{
@@ -8042,6 +8082,10 @@
 	            "7" { "ItemDef" "469" } // Ambient
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"flame_tower_3"
 	{
@@ -8122,6 +8166,10 @@
 	            "7" { "ItemDef" "469" } // Ambient
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"gunpowder_tower"
 	{
@@ -8206,6 +8254,10 @@
 	            "5" { "ItemDef" "285" } // Bracers
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"gunpowder_tower_2"
 	{
@@ -8286,6 +8338,10 @@
 	            "5" { "ItemDef" "5434" } // Hare Hunt Cape
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"gunpowder_tower_3"
 	{
@@ -8364,6 +8420,10 @@
 	            "5" { "ItemDef" "7187" } // Perforator
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"gunpowder_tower_projectile"
 	{
@@ -8509,6 +8569,10 @@
 				}
 			}
 		}
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"hydro_tower_2"
 	{
@@ -8592,6 +8656,10 @@
 	            "8" { "ItemDef" "5464" } // Admiral's Stash
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"hydro_tower_3"
 	{
@@ -8673,6 +8741,10 @@
 	            "8" { "ItemDef" "6779" } // Epaulets of the Divine Anchor
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"hydro_tower_projectile"
 	{
@@ -8822,6 +8894,10 @@
 				}
 			}
 		}
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"ice_tower_2"
 	{
@@ -8903,6 +8979,10 @@
 	            "6" { "ItemDef" "502" } // Ambient
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"ice_tower_3"
 	{
@@ -8982,6 +9062,10 @@
 	           	"6" { "ItemDef" "502" } // Ambient
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"life_tower"
 	{
@@ -9085,6 +9169,10 @@
 				}
 			}
 		}
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"life_tower_2"
 	{
@@ -9165,6 +9253,10 @@
 				"5" { "ItemDef" "46" } // Hair
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"life_tower_3"
 	{
@@ -9243,6 +9335,10 @@
 				"5" { "ItemDef" "45" } // Head
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"magic_tower"
 	{
@@ -9326,6 +9422,10 @@
 	            "4" { "ItemDef" "369" } // Arm
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"magic_tower_2"
 	{
@@ -9406,6 +9506,10 @@
 	            "5" { "ItemDef" "6142" } // Horns of the Malignant Corruption
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"magic_tower_3"
 	{
@@ -9484,6 +9588,10 @@
 	            "5" { "ItemDef" "6944" } // Infernal Wings Mace
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"mushroom_tower"
 	{
@@ -9559,36 +9667,25 @@
 		}
 		"AttackDamageMin"		"100"
 		"AttackDamageMax"		"100"
+	    
 		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1"
-				{
-					"ItemDef"		"479"
-				}
-				"Wearable2"
-				{
-					"ItemDef"		"480"
-				}
-				"Wearable3"
-				{
-					"ItemDef"		"481"
-				}
-				"Wearable4"
-				{
-					"ItemDef"		"482"
-				}
-				"Wearable5"
-				{
-					"ItemDef"		"526" // Ambient
-				}
-				"Wearable6"
-				{
-					"ItemDef"		"475"
-				}
-			}
-		}
+	    {
+	        "AttachWearables" // Default npc_dota_hero_earth_spirit
+	        {
+	            "1" { "ItemDef" "475" } // Earth Spirit's Staff
+	            "2" { "ItemDef" "480" } // Earth Spirit's Neck
+	            "3" { "ItemDef" "481" } // Earth Spirit's Arms
+	            "4" { "ItemDef" "526" } // Earth Spirit's Ambient Effects
+	            "5" { "ItemDef" "479" } // Earth Spirit's Belt
+	            "6" { "ItemDef" "482" } // Earth Spirit's Head
+	            "7" { "ItemDef" "477" } // Earth Spirit's Head Accessory
+	            "8" { "ItemDef" "8654" } // Earth Spirit's Stone Remnant
+	        }
+	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"mushroom_tower_2"
 	{
@@ -9670,12 +9767,17 @@
 	            "4" { "ItemDef" "6432" } // Vanquishing Demons Geomagnetic Arm Guard
 	            "5" { "ItemDef" "6435" } // Vanquishing Demons Ornaments of Annihilation
 	            "6" { "ItemDef" "6434" } // Vanquishing Demons Ritual Headgear
+	            "7" { "ItemDef" "482" } // Earth Spirit's Head
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"mushroom_tower_3"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"MinimapIcon"		"minimap_tower90"
 		"MinimapIconSize"		"320"
@@ -9754,8 +9856,13 @@
 	            "4" { "ItemDef" "6004" } // Mane of the Demon Stone
 	            "5" { "ItemDef" "6008" } // Warriors of the Demon Stone
 	            "6" { "ItemDef" "6002" } // Plated Bracers of the Demon Stone
+	            "7" { "ItemDef" "482" } // Earth Spirit's Head
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"poison_tower"
 	{
@@ -9857,6 +9964,10 @@
 				}
 			}
 		}
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"poison_tower_2"
 	{
@@ -9940,6 +10051,10 @@
 	            "6" { "ItemDef" "518" } // Ambient
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"poison_tower_3"
 	{
@@ -10022,6 +10137,10 @@
 	            "7" { "ItemDef" "518" } // Ambient
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"quark_tower"
 	{
@@ -10129,6 +10248,10 @@
 				}
 			}
 		}
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"quark_tower_2"
 	{
@@ -10212,6 +10335,10 @@
 				"8" { "ItemDef" "221"} // Mount
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"quark_tower_3"
 	{
@@ -10293,6 +10420,10 @@
 	            "8" { "ItemDef" "521" } // Ambient
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"trickery_tower"
 	{
@@ -10392,6 +10523,10 @@
 				}
 			}
 		}
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"trickery_tower_2"
 	{
@@ -10472,6 +10607,10 @@
 	            "5" { "ItemDef" "544" } // Ambient
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"trickery_tower_3"
 	{
@@ -10550,6 +10689,10 @@
 	            "5" { "ItemDef" "544" } // Ambient
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"vapor_tower"
 	{
@@ -10604,7 +10747,7 @@
 		"ProjectileModel"		""
 		"ProjectileSpeed"		"800"
 		"Model"		"models/heroes/slardar/slardar.vmdl"
-		"ModelScale"		"0.65"
+		"ModelScale"		"0.7"
 		"UpgradeIcon"		"morphling_adaptive_strike"
 		"BuildTime"		"3"
 		"Requirements"
@@ -10649,6 +10792,10 @@
 				}
 			}
 		}
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"vapor_tower_2"
 	{
@@ -10729,6 +10876,10 @@
 	            "5" { "ItemDef" "512" } // Ambient
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"vapor_tower_3"
 	{
@@ -10807,6 +10958,10 @@
 	            "5" { "ItemDef" "512" } // Ambient
 	       }
 	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"well_tower"
 	{

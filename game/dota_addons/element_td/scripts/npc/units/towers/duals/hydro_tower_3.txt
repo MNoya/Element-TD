@@ -78,4 +78,8 @@
             "8" { "ItemDef" "6779" } // Epaulets of the Divine Anchor
        }
     }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

@@ -81,4 +81,8 @@
             "5" { "ItemDef" "285" } // Bracers
        }
     }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

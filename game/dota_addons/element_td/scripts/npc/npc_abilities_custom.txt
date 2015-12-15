@@ -845,8 +845,17 @@
 	            {
 	                "RunScript"
 	                {
-	                    "ScriptFile"    "creeps/particles"
+	                    "ScriptFile"    "creeps/particles.lua"
 	                    "Function"      "LavaSpawn"
+	                }
+	            }
+	
+	            "OnDeath"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "creeps/particles.lua"
+	                    "Function"      "LavaSpawnDeath"
 	                }
 	            }
 	        }

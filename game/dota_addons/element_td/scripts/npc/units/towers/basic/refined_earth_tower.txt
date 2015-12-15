@@ -6,7 +6,7 @@
     "ModelScale"                "1.2"
     "ModelRotation"             "90"
     "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_radiant.vmdl"
-    "PedestalModelScale"        "0.9"
+    "PedestalModelScale"        "0.8"
     "PedestalOffset"            "20"
     "ProjectileModel"           "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
     "SoundSet"                  "Tower.Water"
