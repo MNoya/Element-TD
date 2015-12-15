@@ -33,6 +33,7 @@
     "AttackRange"               "500"
     "AttackAcquisitionRange"    "500"
     "AttackRate"                "0.31"
+    "AttackAnimationPoint"      "0"
     "ProjectileSpeed"           "2000"
 
     "Level"                     "4"
@@ -62,8 +63,7 @@
     "VisionNighttimeRange"      "1900"  
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-    "AttackAnimationPoint"      "0"
-    "ProjectileCollisionSize"   "50"
+        "ProjectileCollisionSize"   "50"
     "RingRadius"                "80"
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
     "MovementSpeed"             "0"
