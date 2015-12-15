@@ -51,7 +51,7 @@
 	"ProjectileModel"		"particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
 	"ProjectileSpeed"		"800"
 	"Model"		"models/heroes/ember_spirit/ember_spirit.vmdl"
-	"ModelScale"		"0.6"
+	"ModelScale"		"0.9"
 	"UpgradeIcon"		"towers/flame_tower_sunburn"
 	"BuildTime"		"3"
 	"Requirements"
