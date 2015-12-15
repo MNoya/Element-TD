@@ -25,14 +25,16 @@ function LifeTower:CreepKilled(keys)
     if playerData.health < 50 and playerData.LifeTowerKills >= 3 then --when health is less than 50
         playerData.LifeTowerKills = playerData.LifeTowerKills - 3    
         playerData.health = playerData.health + 1    
-        heroOwner:SetHealth(playerData.health)    
+        heroOwner:SetHealth(playerData.health)
+        CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=heroOwner:GetPlayerID(), health=playerData.health/heroOwner:GetMaxHealth() * 100} )
 
     elseif playerData.health >= 50 and playerData.LifeTowerKills >= 9 then --when health is greater than or equal to 50
         playerData.LifeTowerKills = playerData.LifeTowerKills - 9    
         playerData.health = playerData.health + 1    
-    
+
         heroOwner:SetMaxHealth(playerData.health)    
-        heroOwner:SetHealth(playerData.health)    
+        heroOwner:SetHealth(playerData.health)
+        CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=heroOwner:GetPlayerID(), health=playerData.health/heroOwner:GetMaxHealth() * 100} )
     end
 end
 
