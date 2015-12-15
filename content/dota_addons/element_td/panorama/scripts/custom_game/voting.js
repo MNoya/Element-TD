@@ -121,6 +121,8 @@ function Populate( data )
 	{
 		var gameLength = gamesettings['GameLength'][lnth];
 		var desc = "Start at wave " + gameLength.Wave + " with " + gameLength.Gold + " Gold and " + gameLength.Lumber + " Lumber."
+		if (lnth == "Express")
+			desc += " This mode has 30 waves and no boss.";
 		lengthModes[parseInt(gameLength['Index'])] = [ gameLength['Name'], desc, lnth ];
 	}
 
