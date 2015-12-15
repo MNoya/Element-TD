@@ -51,7 +51,7 @@
 	"ProjectileModel"		"particles/units/heroes/hero_wisp/wisp_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
 	"Model"		"models/heroes/omniknight/omniknight.vmdl"
-	"ModelScale"		"1.0"
+	"ModelScale"		"1.1"
 	"UpgradeIcon"		"towers/life_tower_afterlife"
 	"BuildTime"		"3"
 	"Requirements"
@@ -70,7 +70,7 @@
        {
             "1" { "ItemDef" "4507" } // Cape of Thunderwrath's Calling
             "2" { "ItemDef" "4515" } // Armor of Thunderwrath's Calling
-            "3" { "ItemDef" "4514" } // Hammer of Thunderwrath's Calling
+            "3" { "ItemDef" "6587" } // Guard of Basilius
             "4" { "ItemDef" "4508" } // Helm of Thunderwrath's Calling
 			"5" { "ItemDef" "45" } // Head
        }

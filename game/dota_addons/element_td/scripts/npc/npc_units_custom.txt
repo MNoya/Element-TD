@@ -9120,7 +9120,7 @@
 		"ProjectileModel"		"particles/units/heroes/hero_wisp/wisp_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
 		"Model"		"models/heroes/omniknight/omniknight.vmdl"
-		"ModelScale"		"0.6"
+		"ModelScale"		"0.8"
 		"UpgradeIcon"		"towers/life_tower_afterlife"
 		"BuildTime"		"3"
 		"Requirements"
@@ -9227,7 +9227,7 @@
 		"ProjectileModel"		"particles/units/heroes/hero_wisp/wisp_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
 		"Model"		"models/heroes/omniknight/omniknight.vmdl"
-		"ModelScale"		"0.8"
+		"ModelScale"		"0.9"
 		"UpgradeIcon"		"towers/life_tower_afterlife"
 		"BuildTime"		"3"
 		"Requirements"
@@ -9244,15 +9244,16 @@
 		"AttackDamageMax"		"465"
 	    "Creature"
 	    {
-	       "AttachWearables" // Armor of Renewed Faith Set
-	       {
-	            "1" { "ItemDef" "4485" } // Ornate Mantle of Renewed Faith
-	            "2" { "ItemDef" "4496" } // Warhammer of Renewed Faith
-	            "3" { "ItemDef" "4497" } // Armlet of Renewed Faith
-				"4" { "ItemDef" "45" } // Head
-				"5" { "ItemDef" "46" } // Hair
-	       }
-	    }
+	       "AttachWearables" // Armor of the Stalwart Soul
+	        {
+	            "1" { "ItemDef" "7094" } // Pauldrons of the Stalwart Soul
+	            "2" { "ItemDef" "7093" } // Plate of the Stalwart Soul
+	            "3" { "ItemDef" "5877" } // Omnivus
+	            "4" { "ItemDef" "7090" } // Armguards of the Stalwart
+	            "5" { "ItemDef" "7092" } // Coiffure of the Stalwart Soul
+	            "6" { "ItemDef" "45" } // Head
+	        }
+	    }        
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -9311,7 +9312,7 @@
 		"ProjectileModel"		"particles/units/heroes/hero_wisp/wisp_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
 		"Model"		"models/heroes/omniknight/omniknight.vmdl"
-		"ModelScale"		"1.0"
+		"ModelScale"		"1.1"
 		"UpgradeIcon"		"towers/life_tower_afterlife"
 		"BuildTime"		"3"
 		"Requirements"
@@ -9330,7 +9331,7 @@
 	       {
 	            "1" { "ItemDef" "4507" } // Cape of Thunderwrath's Calling
 	            "2" { "ItemDef" "4515" } // Armor of Thunderwrath's Calling
-	            "3" { "ItemDef" "4514" } // Hammer of Thunderwrath's Calling
+	            "3" { "ItemDef" "6587" } // Guard of Basilius
 	            "4" { "ItemDef" "4508" } // Helm of Thunderwrath's Calling
 				"5" { "ItemDef" "45" } // Head
 	       }

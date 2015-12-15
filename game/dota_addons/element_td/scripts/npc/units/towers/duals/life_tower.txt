@@ -51,7 +51,7 @@
 	"ProjectileModel"		"particles/units/heroes/hero_wisp/wisp_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
 	"Model"		"models/heroes/omniknight/omniknight.vmdl"
-	"ModelScale"		"0.6"
+	"ModelScale"		"0.8"
 	"UpgradeIcon"		"towers/life_tower_afterlife"
 	"BuildTime"		"3"
 	"Requirements"
