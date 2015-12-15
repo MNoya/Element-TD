@@ -17,6 +17,131 @@
     flow-children: down;
 }
 
+#VotingLive
+{
+    horizontal-align: center;
+    position: 380px 15% 0px;
+    width: 185px;
+    height: 640px;
+    padding: 10px;
+    background-color: #000000DD;
+    border: 2px solid #484A48;
+    box-shadow: #000 -4px -4px 3px 8px;
+    flow-children: down;
+}
+
+#NotVoted
+{
+    width: 100%;
+    height: 18%;
+    flow-children: down;
+}
+
+#NotVotedLabel
+{
+    width: 100%;
+    height: 20px;
+}
+
+#NotVotedPlayers
+{
+    width: 100%;
+    height: 100%;
+    padding: 5px 0px 5px 0px;
+}
+
+#Voted
+{
+    width: 100%;
+    height: 82%;
+    flow-children: down;
+}
+
+#HasVotedLabel
+{
+    width: 100%;
+    height: 24px;
+}
+
+#HasVotedPlayers
+{
+    width: 100%;
+    height: 100%;
+    padding: 5px 0px 5px 0px;
+    flow-children: down;
+    overflow: scroll;
+}
+
+.VotingAvatar
+{
+    width: 32px;
+    height: 32px;
+    background-color: #000;
+}
+
+.NotVoted
+{
+    margin: 4px;
+}
+
+.Col1
+{
+    position: 38px 0px 0px;
+}
+
+.Col2
+{
+    position: 76px 0px 0px;
+}
+
+.Col3
+{
+    position: 114px 0px 0px;
+}
+
+.SecondLine
+{
+    position: 0px 38px 0px;
+}
+
+.Col1.SecondLine
+{
+    position: 38px 38px 0px;
+}
+
+.Col2.SecondLine
+{
+    position: 76px 38px 0px;
+}
+
+.Col3.SecondLine
+{
+    position: 114px 38px 0px;
+}
+
+.VotedPlayer
+{
+    width: 100%;
+    padding: 4px;
+    background-color: #000000DD;
+    margin-bottom: 4px;
+}
+
+.VotedPlayerVotes
+{
+    margin-left: 42px;
+    width: 70%;
+    flow-children: down;
+    margin-top: -4px;
+}
+
+.PlayerVote
+{
+    color: white;
+    font-size: 16px;
+    height: 16px;
+}
+
 #VoteResults
 {
     horizontal-align: center;

@@ -47,6 +47,18 @@
         <Label id="Countdown" text="60"/>   
       </Panel>
     </Panel>
+    <Panel hittest="true" id="VotingLive">
+      <Panel id="NotVoted">
+        <Label id="NotVotedLabel" text="Not Voted:" class="label"/>
+        <Panel id="NotVotedPlayers">
+        </Panel>
+      </Panel>
+      <Panel id="Voted">
+        <Label id="HasVotedLabel" text="Voted:" class="label"/>
+        <Panel id="HasVotedPlayers">
+        </Panel>
+      </Panel>
+    </Panel>
     <Panel hittest="true" id="VoteResults">
       <Label id="ResultsTitle" text="Vote Results"/>
       <Panel id="GM" class="result">

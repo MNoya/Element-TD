@@ -13,6 +13,13 @@ var voteResultsUI = $( '#VoteResults' );
 var buttonVote = $( "#Vote" );
 var buttonResults = $( "#ResultsButton" );
 var info = $( '#Info' );
+var votingLiveUI = $( '#VotingLive' );
+
+var notVotedUI = $( '#NotVoted' );
+
+var votingLiveNotVoted = $( '#NotVotedPlayers' );
+var votingLiveHasVoted = $( '#HasVotedPlayers' );
+var playerVotes = {};
 
 var gamemodeDD = $( '#GamemodeDD' );
 var difficultyDD = $( '#DifficultyDD' );
@@ -45,11 +52,15 @@ function Setup()
 	voteResultsUI.visible = false;
 	votingUI.visible = false;
 	info.visible = false;
+	votingLiveUI.visible = false;
+	UpdateNotVoted();
 }
 
 function ToggleVoteDialog( data )
 {
 	votingUI.visible = data.visible;
+	if (Game.GetAllPlayerIDs().length > 1)
+		votingLiveUI.visible = true;
 }
 
 function Populate( data )
@@ -71,7 +82,7 @@ function Populate( data )
 	for (var df in gamesettings.Difficulty)
 	{
 		var difficulty = gamesettings['Difficulty'][df];
-		var desc = (parseFloat(difficulty.Health) * 1000) / 10 + "% Creep Health, " + parseInt(difficulty.BaseBounty * 1000)/1000+ " Base Bounty";
+		var desc = (parseFloat(difficulty.Health) * 1000) / 10 + "% Creep Health, " + parseInt(difficulty.BaseBounty * 1000)/1000+ " Base Bounty (Express Mode: " + parseInt(difficulty.BaseBountyExpress * 1000)/1000+ " Base Bounty)";
 		difficultyModes[parseInt(difficulty['Index'])] = [ difficulty['Name'], desc, df ];
 	}
 
@@ -143,9 +154,81 @@ function UpdateVoteTimer( data )
 	timer.text = data.time;
 }
 
+function UpdateNotVoted()
+{
+	var players = Game.GetAllPlayerIDs();
+	$.Msg("IDs: " + players);
+	votingLiveNotVoted.RemoveAndDeleteChildren();
+	var position = 0;
+	for (var playerID in players) {
+		if (!playerVotes[playerID]) {
+			var playerData = Game.GetPlayerInfo(parseInt(playerID));
+			$.Msg(playerData);
+			var notVoted = $.CreatePanel('DOTAAvatarImage', votingLiveNotVoted, '');
+			notVoted.AddClass('VotingAvatar');
+			notVoted.AddClass('NotVoted');
+			notVoted.steamid = playerData.player_steamid;
+			if (position == 1 || position == 5)
+				notVoted.AddClass('Col1');
+			else if (position == 2 || position == 6)
+				notVoted.AddClass('Col2');
+			else if (position == 3 || position == 7)
+				notVoted.AddClass('Col3');
+			if (position == 4 || position == 5 || position == 6 || position == 7)
+				notVoted.AddClass('SecondLine');
+			position += 1;
+		}
+	};
+	if (position == 0)
+	{
+		notVotedUI.style['visibility'] = "collapse";
+		$.Schedule(3, function(){votingLiveUI.visible = false;});
+	}
+}
+
+function PlayerVoted( data )
+{
+	$.Msg(data);
+	var playerID = data.playerID;
+	var playerData = Game.GetPlayerInfo(parseInt(playerID));
+	var vote = $.CreatePanel('Panel', votingLiveHasVoted, '');
+	vote.AddClass('VotedPlayer');
+
+	var avatar = $.CreatePanel('DOTAAvatarImage', vote, '');
+	avatar.AddClass('VotingAvatar');
+	avatar.steamid = playerData.player_steamid;
+
+	var votes = $.CreatePanel('Panel', vote, '');
+	votes.AddClass('VotedPlayerVotes');
+
+	var gamemode = $.CreatePanel('Label', votes, '');
+	gamemode.AddClass('PlayerVote');
+	gamemode.text = data.gamemode;
+
+	var difficulty = $.CreatePanel('Label', votes, '');
+	difficulty.AddClass('PlayerVote');
+	difficulty.text = data.difficulty;
+
+	var elements = $.CreatePanel('Label', votes, '');
+	elements.AddClass('PlayerVote');
+	elements.text = data.elements;
+
+	var order = $.CreatePanel('Label', votes, '');
+	order.AddClass('PlayerVote');
+	order.text = data.order;
+
+	var length = $.CreatePanel('Label', votes, '');
+	length.AddClass('PlayerVote');
+	length.text = data.length;
+
+	playerVotes[playerID] = true;
+	UpdateNotVoted();
+}
+
 function ConfirmVote()
 {
 	Game.EmitSound("ui_generic_button_click");
+
 	buttonVote.visible = false;
 	info.visible = true;
 
@@ -184,6 +267,7 @@ function ResultsClose()
 {
 	Game.EmitSound("ui_generic_button_click");
 	voteResultsUI.visible = false;
+	votingLiveUI.visible = false;
 }
 
 (function () {
@@ -191,5 +275,6 @@ function ResultsClose()
 	GameEvents.Subscribe( "etd_toggle_vote_dialog", ToggleVoteDialog );
   	GameEvents.Subscribe( "etd_update_vote_timer", UpdateVoteTimer );
   	GameEvents.Subscribe( "etd_populate_vote_table", Populate );
+  	GameEvents.Subscribe( "etd_vote_display", PlayerVoted );
   	GameEvents.Subscribe( "etd_vote_results", ShowVoteResults );
 })();

@@ -171,6 +171,9 @@ function ElementTD:OnPlayerVoted( table )
 		AddVote(VOTE_RESULTS.order, table.data.orderVote)
 		AddVote(VOTE_RESULTS.length, table.data.lengthVote)
 
+		local data = {playerID = playerID, gamemode = table.data.gamemodeVote, difficulty = table.data.difficultyVote, elements = table.data.elementsVote, order = table.data.orderVote, length = table.data.lengthVote}
+		CustomGameEventManager:Send_ServerToAllClients( "etd_vote_display", data )
+
 		--check to see if all players have finished voting
 		local count = 0
 		for k, v in pairs(PLAYERS_NOT_VOTED) do
