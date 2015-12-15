@@ -20,7 +20,7 @@
 #VotingLive
 {
     horizontal-align: center;
-    position: 380px 15% 0px;
+    position: 580px 15% 0px;
     width: 185px;
     height: 640px;
     padding: 10px;
@@ -28,6 +28,16 @@
     border: 2px solid #484A48;
     box-shadow: #000 -4px -4px 3px 8px;
     flow-children: down;
+    opacity: 1;
+    transform: translatex( -200px );
+    transition-property: transform, opacity;
+    transition-duration: 0.1s;
+}
+
+#VotingLive.hidden
+{
+    transform: translatey( 0px );
+    opacity: 0;
 }
 
 #NotVoted

@@ -53,6 +53,7 @@ function Setup()
 	votingUI.visible = false;
 	info.visible = false;
 	votingLiveUI.visible = false;
+	votingLiveUI.AddClass("hidden");
 	UpdateNotVoted();
 }
 
@@ -60,7 +61,10 @@ function ToggleVoteDialog( data )
 {
 	votingUI.visible = data.visible;
 	if (Game.GetAllPlayerIDs().length > 1)
+	{
 		votingLiveUI.visible = true;
+		votingLiveUI.RemoveClass("hidden");
+	}
 }
 
 function Populate( data )
@@ -203,25 +207,26 @@ function PlayerVoted( data )
 
 	var gamemode = $.CreatePanel('Label', votes, '');
 	gamemode.AddClass('PlayerVote');
-	gamemode.text = data.gamemode;
+	gamemode.text = data.gamemode.replace(/([a-z])([A-Z])/g, '$1 $2');
 
 	var difficulty = $.CreatePanel('Label', votes, '');
 	difficulty.AddClass('PlayerVote');
-	difficulty.text = data.difficulty;
+	difficulty.text = data.difficulty.replace(/([a-z])([A-Z])/g, '$1 $2');
 
 	var elements = $.CreatePanel('Label', votes, '');
 	elements.AddClass('PlayerVote');
-	elements.text = data.elements;
+	elements.text = data.elements.replace(/([a-z])([A-Z])/g, '$1 $2');
 
 	var order = $.CreatePanel('Label', votes, '');
 	order.AddClass('PlayerVote');
-	order.text = data.order;
+	order.text = data.order.replace(/([a-z])([A-Z])/g, '$1 $2');
 
 	var length = $.CreatePanel('Label', votes, '');
 	length.AddClass('PlayerVote');
-	length.text = data.length;
+	length.text = data.length.replace(/([a-z])([A-Z])/g, '$1 $2');
 
 	playerVotes[playerID] = true;
+	votingLiveHasVoted.ScrollToBottom();
 	UpdateNotVoted();
 }
 
@@ -267,7 +272,7 @@ function ResultsClose()
 {
 	Game.EmitSound("ui_generic_button_click");
 	voteResultsUI.visible = false;
-	votingLiveUI.visible = false;
+	votingLiveUI.AddClass("hidden");
 }
 
 (function () {
