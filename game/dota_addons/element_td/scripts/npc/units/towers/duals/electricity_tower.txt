@@ -1,34 +1,31 @@
 "electricity_tower"
 {
-	"BaseClass"		"npc_dota_tower"
-	"SoundSet"		"Tower.Water"
-	"MinimapIcon"		"minimap_tower90"
-	"MinimapIconSize"		"320"
-	"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
-	"particle_folder"		"particles/units/heroes/hero_mirana"
-	"particle_folder"		""
-	"ArmorPhysical"		"0"
-	"MagicalResistance"		"0"
-	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-	"AttackAnimationPoint"		"0"
-	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"0"
-	"AttributeStrengthGain"		"0"
-	"AttributeBaseIntelligence"		"0"
-	"AttributeIntelligenceGain"		"0"
-	"AttributeBaseAgility"		"0"
-	"AttributeAgilityGain"		"0"
-	"BoundsHullName"		"DOTA_HULL_SIZE_TOWER"
-	"ProjectileCollisionSize"		"50"
-	"RingRadius"		"80"
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
-	"MovementSpeed"		"0"
-	"MovementTurnRate"		"1.0"
-	"StatusHealth"		"1000"
-	"StatusHealthRegen"		"0"
-	"StatusMana"		"0"
-	"StatusManaRegen"		"0"
+    "BaseClass"                 "npc_dota_creature" 
+	"SoundSet"					"Tower.Water"
+	"MinimapIcon"				"minimap_tower90"
+	"MinimapIconSize"			"320"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+    "ArmorPhysical"             "0"
+    "MagicalResistance"         "0"
+    "BoundsHullName"            "DOTA_HULL_SIZE_TOWER"
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"      "1900"  
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"      "0"
+    "ProjectileCollisionSize"   "50"
+    "RingRadius"                "90"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"             "0"
+    "MovementTurnRate"          "1.0"
+    "StatusHealth"              "1000"
+    "StatusHealthRegen"         "0"
+    "StatusMana"                "0"
+    "StatusManaRegen"           "0"
 	"TeamName"		"DOTA_TEAM_GOODGUYS"
 	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	"CombatClassDefend"		"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -53,8 +50,8 @@
 	"AttackRate"		"1"
 	"ProjectileModel"		""
 	"ProjectileSpeed"		"1000"
-	"Model"		"models/fof_psychonic_prop/fof_psychonic_prop.vmdl"
-	"ModelScale"		"0.75"
+	"Model"		"models/heroes/storm_spirit/storm_spirit.vmdl"
+	"ModelScale"		"0.6"
 	"UpgradeIcon"		"towers/electricty_tower_conjure_lightning"
 	"BuildTime"		"3"
 	"Requirements"
@@ -73,4 +70,22 @@
 	}
 	"AttackDamageMin"		"0"
 	"AttackDamageMax"		"0"
+	"Creature"
+	{
+		"AttachWearables"
+		{
+			"Wearable1"
+			{
+				"ItemDef"		"308" // Hat
+			}
+			"Wearable2"
+			{
+				"ItemDef"		"309" // Shoulder
+			}
+			"Wearable3"
+			{
+				"ItemDef"		"310" // Shirt
+			}
+		}
+	}
 }

@@ -1,34 +1,31 @@
 "quark_tower_3"
 {
-	"BaseClass"		"npc_dota_tower"
-	"SoundSet"		"Tower.Water"
-	"MinimapIcon"		"minimap_tower90"
-	"MinimapIconSize"		"320"
-	"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
-	"particle_folder"		"particles/units/heroes/hero_mirana"
-	"particle_folder"		"particles/units/heroes/hero_keeper_of_the_light"
-	"ArmorPhysical"		"0"
-	"MagicalResistance"		"0"
-	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-	"AttackAnimationPoint"		"0"
-	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"0"
-	"AttributeStrengthGain"		"0"
-	"AttributeBaseIntelligence"		"0"
-	"AttributeIntelligenceGain"		"0"
-	"AttributeBaseAgility"		"0"
-	"AttributeAgilityGain"		"0"
-	"BoundsHullName"		"DOTA_HULL_SIZE_TOWER"
-	"ProjectileCollisionSize"		"50"
-	"RingRadius"		"80"
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
-	"MovementSpeed"		"0"
-	"MovementTurnRate"		"1.0"
-	"StatusHealth"		"1000"
-	"StatusHealthRegen"		"0"
-	"StatusMana"		"0"
-	"StatusManaRegen"		"0"
+    "BaseClass"                 "npc_dota_creature" 
+	"SoundSet"					"Tower.Water"
+	"MinimapIcon"				"minimap_tower90"
+	"MinimapIconSize"			"320"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+    "ArmorPhysical"             "0"
+    "MagicalResistance"         "0"
+    "BoundsHullName"            "DOTA_HULL_SIZE_TOWER"
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"      "1900"  
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"      "0"
+    "ProjectileCollisionSize"   "50"
+    "RingRadius"                "90"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"             "0"
+    "MovementTurnRate"          "1.0"
+    "StatusHealth"              "1000"
+    "StatusHealthRegen"         "0"
+    "StatusMana"                "0"
+    "StatusManaRegen"           "0"
 	"TeamName"		"DOTA_TEAM_GOODGUYS"
 	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	"CombatClassDefend"		"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -53,8 +50,8 @@
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
 	"ProjectileSpeed"		"1000"
-	"Model"		"models/props_structures/good_statue008.mdl"
-	"ModelScale"		"0.8"
+	"Model"		"models/heroes/chen/chen.vmdl"
+	"ModelScale"		"1.0"
 	"UpgradeIcon"		"towers/quark_tower_quantum_beam"
 	"BuildTime"		"3"
 	"Requirements"
@@ -67,4 +64,18 @@
 	}
 	"AttackDamageMin"		"8750"
 	"AttackDamageMax"		"8750"
+    "Creature"
+    {
+       "AttachWearables" // Gemmed Armor of the Priest Kings Set
+       {
+            "1" { "ItemDef" "5037" } // Ruling Staff of the Priest Kings
+            "2" { "ItemDef" "5036" } // Scarab Pendant of the Priest Kings
+            "3" { "ItemDef" "5035" } // Gemmed Bracers of the Priest Kings
+            "4" { "ItemDef" "5033" } // Thrice-Gemmed Barding of Sanurok
+            "5" { "ItemDef" "5032" } // Gemmed Pauldrons of the Priest Kings
+            "6" { "ItemDef" "5034" } // Gemmed Mitre of the Priest Kings
+            "7" { "ItemDef" "5031" } // Sanurok the Ever Able
+            "8" { "ItemDef" "521" } // Ambient
+       }
+    }
 }

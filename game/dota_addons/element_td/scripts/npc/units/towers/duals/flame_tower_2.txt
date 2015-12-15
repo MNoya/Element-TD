@@ -1,34 +1,31 @@
 "flame_tower_2"
 {
-	"BaseClass"		"npc_dota_tower"
-	"SoundSet"		"Tower.Water"
-	"MinimapIcon"		"minimap_tower90"
-	"MinimapIconSize"		"320"
-	"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
-	"particle_folder"		"particles/units/heroes/hero_mirana"
-	"particle_folder"		"particles/units/heroes/hero_phoenix"
-	"ArmorPhysical"		"0"
-	"MagicalResistance"		"0"
-	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-	"AttackAnimationPoint"		"0"
-	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"0"
-	"AttributeStrengthGain"		"0"
-	"AttributeBaseIntelligence"		"0"
-	"AttributeIntelligenceGain"		"0"
-	"AttributeBaseAgility"		"0"
-	"AttributeAgilityGain"		"0"
-	"BoundsHullName"		"DOTA_HULL_SIZE_TOWER"
-	"ProjectileCollisionSize"		"50"
-	"RingRadius"		"80"
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
-	"MovementSpeed"		"0"
-	"MovementTurnRate"		"1.0"
-	"StatusHealth"		"1000"
-	"StatusHealthRegen"		"0"
-	"StatusMana"		"0"
-	"StatusManaRegen"		"0"
+    "BaseClass"                 "npc_dota_creature" 
+	"SoundSet"					"Tower.Water"
+	"MinimapIcon"				"minimap_tower90"
+	"MinimapIconSize"			"320"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+    "ArmorPhysical"             "0"
+    "MagicalResistance"         "0"
+    "BoundsHullName"            "DOTA_HULL_SIZE_TOWER"
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"      "1900"  
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"      "0"
+    "ProjectileCollisionSize"   "50"
+    "RingRadius"                "90"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"             "0"
+    "MovementTurnRate"          "1.0"
+    "StatusHealth"              "1000"
+    "StatusHealthRegen"         "0"
+    "StatusMana"                "0"
+    "StatusManaRegen"           "0"
 	"TeamName"		"DOTA_TEAM_GOODGUYS"
 	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	"CombatClassDefend"		"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -53,8 +50,8 @@
 	"AttackRate"		"0.66"
 	"ProjectileModel"		"particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
 	"ProjectileSpeed"		"800"
-	"Model"		"models/props_structures/good_statue008.mdl"
-	"ModelScale"		"0.85"
+	"Model"		"models/heroes/ember_spirit/ember_spirit.vmdl"
+	"ModelScale"		"0.8"
 	"UpgradeIcon"		"towers/flame_tower_sunburn"
 	"BuildTime"		"3"
 	"Requirements"
@@ -69,4 +66,17 @@
 	}
 	"AttackDamageMin"		"165"
 	"AttackDamageMax"		"165"
+    "Creature"
+    {
+       "AttachWearables" // Mentor of the High Plains
+       {
+            "1" { "ItemDef" "6761" } // Mentor of the High Plains Guard
+            "2" { "ItemDef" "6764" } // Mentor of the High Plains Left Tiger Hook
+            "3" { "ItemDef" "6762" } // Mentor of the High Plains Decorated Pauldrons
+            "4" { "ItemDef" "6759" } // Mentor of the High Plains Ceremonial Banner
+            "5" { "ItemDef" "6763" } // Mentor of the High Plains Right Tiger Hook
+            "6" { "ItemDef" "6760" } // Mentor of the High Plains Great Cuirass
+            "7" { "ItemDef" "469" } // Ambient
+       }
+    }
 }

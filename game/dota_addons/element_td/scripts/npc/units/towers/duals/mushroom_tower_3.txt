@@ -55,8 +55,8 @@
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_furion/furion_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
-	"Model"		"models/heroes/undying/undying_tower.mdl"
-	"ModelScale"		"0.8"
+	"Model"		"models/heroes/earth_spirit/earth_spirit.vmdl"
+	"ModelScale"		"1.0"
 	"UpgradeIcon"		"brewmaster_earth_pulverize"
 	"BuildTime"		"3"
 	"Requirements"
@@ -69,4 +69,16 @@
 	}
 	"AttackDamageMin"		"2500"
 	"AttackDamageMax"		"2500"
+    "Creature"
+    {
+       "AttachWearables" // Strength of the Demon Stone Set
+       {
+            "1" { "ItemDef" "6005" } // Necklace of the Demon Stone
+            "2" { "ItemDef" "6003" } // Plackart of the Demon Stone
+            "3" { "ItemDef" "6006" } // Staff of the Demon Stone
+            "4" { "ItemDef" "6004" } // Mane of the Demon Stone
+            "5" { "ItemDef" "6008" } // Warriors of the Demon Stone
+            "6" { "ItemDef" "6002" } // Plated Bracers of the Demon Stone
+       }
+    }
 }

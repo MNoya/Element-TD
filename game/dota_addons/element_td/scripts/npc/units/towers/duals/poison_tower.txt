@@ -1,35 +1,31 @@
 "poison_tower"
 {
-	"BaseClass"		"npc_dota_tower"
-	"SoundSet"		"Tower.Water"
-	"SoundSet"		"Hero_VenomancerWard"
-	"MinimapIcon"		"minimap_tower90"
-	"MinimapIconSize"		"320"
-	"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
-	"particle_folder"		"particles/units/heroes/hero_mirana"
-	"particle_folder"		"particles/units/heroes/hero_viper"
-	"ArmorPhysical"		"0"
-	"MagicalResistance"		"0"
-	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-	"AttackAnimationPoint"		"0"
-	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"		"0"
-	"AttributeStrengthGain"		"0"
-	"AttributeBaseIntelligence"		"0"
-	"AttributeIntelligenceGain"		"0"
-	"AttributeBaseAgility"		"0"
-	"AttributeAgilityGain"		"0"
-	"BoundsHullName"		"DOTA_HULL_SIZE_TOWER"
-	"ProjectileCollisionSize"		"50"
-	"RingRadius"		"80"
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
-	"MovementSpeed"		"0"
-	"MovementTurnRate"		"1.0"
-	"StatusHealth"		"1000"
-	"StatusHealthRegen"		"0"
-	"StatusMana"		"0"
-	"StatusManaRegen"		"0"
+    "BaseClass"                 "npc_dota_creature" 
+	"SoundSet"					"Tower.Water"
+	"MinimapIcon"				"minimap_tower90"
+	"MinimapIconSize"			"320"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+    "ArmorPhysical"             "0"
+    "MagicalResistance"         "0"
+    "BoundsHullName"            "DOTA_HULL_SIZE_TOWER"
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"      "1900"  
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"      "0"
+    "ProjectileCollisionSize"   "50"
+    "RingRadius"                "90"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"             "0"
+    "MovementTurnRate"          "1.0"
+    "StatusHealth"              "1000"
+    "StatusHealthRegen"         "0"
+    "StatusMana"                "0"
+    "StatusManaRegen"           "0"
 	"TeamName"		"DOTA_TEAM_GOODGUYS"
 	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	"CombatClassDefend"		"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -54,8 +50,8 @@
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_viper/viper_base_attack.vpcf"
 	"ProjectileSpeed"		"1800"
-	"Model"		"models/props_structures/good_statue008.mdl"
-	"ModelScale"		"0.7"
+	"Model"		"models/heroes/venomancer/venomancer.vmdl"
+	"ModelScale"		"0.6"
 	"AOE_Full"		"100"
 	"AOE_Half"		"200"
 	"UpgradeIcon"		"towers/poison_tower_contamination"
@@ -76,4 +72,30 @@
 	}
 	"AttackDamageMin"		"100"
 	"AttackDamageMax"		"100"
+	"Creature"
+	{
+		"AttachWearables"
+		{
+			"Wearable1"
+			{
+				"ItemDef"		"291"
+			}
+			"Wearable2"
+			{
+				"ItemDef"		"292"
+			}
+			"Wearable3"
+			{
+				"ItemDef"		"293"
+			}
+			"Wearable4"
+			{
+				"ItemDef"		"294"
+			}
+			"Wearable4"
+			{
+				"ItemDef"		"518"
+			}
+		}
+	}
 }
