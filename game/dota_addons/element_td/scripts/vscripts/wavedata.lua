@@ -139,7 +139,8 @@ function SpawnWaveForPlayer(playerID, wave)
 
     if (wave < WAVE_COUNT) then
         CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_next_wave_info", { nextWave=wave + 1, nextAbility1=creepsKV[WAVE_CREEPS[wave+1]].Ability1, nextAbility2=creepsKV[WAVE_CREEPS[wave+1]].Ability2 } )
-    else
+    elseif (playerData.completedWaves + 1  == WAVE_COUNT) then
+
         CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_next_wave_info", { nextWave=0, nextAbility1="", nextAbility2="" } )
     end
 
@@ -260,10 +261,10 @@ function ReduceLivesForPlayer( playerID )
         lives = 0
     end
 
-    if hero:GetHealth() == lives then
+    if hero:GetHealth() <= lives then
         playerData.health = 0
         hero:ForceKill(false)
-        if playerData.completedWaves >= WAVE_COUNT and not EXPRESS_MODE then
+        if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then
             playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
         else
             playerData.scoreObject:UpdateScore( SCORING_WAVE_LOST )

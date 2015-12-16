@@ -254,9 +254,9 @@ end
 
 -- Classic Only: 1.05 + 0.01 per additional wave
 function ScoringObject:GetBossBonus( waves )
-	local bonus = 0.05
-	if waves > 0 then
-		bonus = bonus + waves*0.01
+	local bonus = 0
+	if waves >= 0 then
+		bonus = 0.05 + waves*0.01
 	end
 	return bonus
 end

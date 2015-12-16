@@ -238,7 +238,7 @@
 		"SoundSet"		""
 		"ScriptClass"		"CreepHeal"
 		"Ability1"		"dark_armor"
-		"Ability2"		"creep_ability_Heal"
+		"Ability2"		"creep_ability_heal"
 	}
 	"blazing_axman"
 	{
