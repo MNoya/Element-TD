@@ -23,7 +23,7 @@
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
 	"Model"		"models/heroes/elder_titan/elder_titan.vmdl"
-	"ModelScale"		"0.9"
+	"ModelScale"		"0.8"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
 	"ScriptClass"		"CreepMechanical"
