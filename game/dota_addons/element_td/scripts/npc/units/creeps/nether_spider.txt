@@ -22,11 +22,22 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/items/broodmother/spiderling/thistle_crawler/thistle_crawler.vmdl"
-	"ModelScale"		"1.0"
+	"Model"		"models/heroes/weaver/weaver.vmdl"
+	"ModelScale"		"0.9"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
 	"ScriptClass"		"CreepFast"
 	"Ability1"		"dark_armor"
 	"Ability2"		"creep_ability_fast"
+    "Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_weaver
+        {
+            "1" { "ItemDef" "280" } // Weaver's Back
+            "2" { "ItemDef" "278" } // Weaver's Legs
+            "3" { "ItemDef" "277" } // Weaver's Antennae
+            "4" { "ItemDef" "585" } // Weaver's Miscellaneous
+            "5" { "ItemDef" "279" } // Weaver's Arms
+        }
+    }
 }

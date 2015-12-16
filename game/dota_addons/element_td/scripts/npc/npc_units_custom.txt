@@ -24,46 +24,27 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/undying/undying_flesh_golem.vmdl"
-		"ModelScale"		"0.7"
+		"Model"		"models/heroes/pudge/pudge.vmdl"
+		"ModelScale"		"0.9"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
-		"ScriptClass"		"CreepImage"
+		"ScriptClass"	"CreepSwarm"
 		"Ability1"		"dark_armor"
-		"Ability2"		""
-	}
-	"admiral"
-	{
-		"ArmorPhysical"		"0"
-		"MagicalResistance"		"0"
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"0"
-		"AttackDamageMax"		"0"
-		"AttackRate"		"0"
-		"AttackAnimationPoint"		"0"
-		"AttackAcquisitionRange"		"0"
-		"AttackRange"		"0"
-		"ProjectileModel"		""
-		"ProjectileSpeed"		"0"
-		"RingRadius"		"70"
-		"HealthBarOffset"		"160"
-		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
-		"BountyXP"		"0"
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"		"300"
-		"StatusHealthRegen"		"0"
-		"StatusMana"		"0"
-		"StatusManaRegen"		"0"
-		"VisionDaytimeRange"		"1200"
-		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/brewmaster/brewmaster_windspirit.vmdl"
-		"ModelScale"		"1"
-		"BaseClass"		"npc_dota_creature"
-		"SoundSet"		""
-		"ScriptClass"		"CreepFast"
-		"Ability1"		"water_armor"
-		"Ability2"		"creep_ability_fast"
-		"Ability3"		"windspirit_particles"
+		"Ability2"		"creep_ability_swarm"
+	    "Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_pudge
+	        {
+	            "1" { "ItemDef" "470" } // Pudge's Belt
+	            "2" { "ItemDef" "260" } // Pudge's Left Arm
+	            "3" { "ItemDef" "258" } // Pudge's Back Rings and Apron
+	            "4" { "ItemDef" "259" } // Pudge's Cleaver
+	            "5" { "ItemDef" "261" } // Pudge's Bracer
+	            "6" { "ItemDef" "262" } // Pudge's Toupee
+	            "7" { "ItemDef" "47" } // Pudge's Rusty Meathook
+	            "8" { "ItemDef" "391" } // Pudge's Ambient Effects
+	        }
+	    }
 	}
 	"ancient_apparition"
 	{
@@ -165,6 +146,36 @@
 			}
 		}
 	}
+	"balthazar"
+	{
+		"ArmorPhysical"		"0"
+		"MagicalResistance"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"0"
+		"AttackDamageMax"		"0"
+		"AttackRate"		"0"
+		"AttackAnimationPoint"		"0"
+		"AttackAcquisitionRange"		"0"
+		"AttackRange"		"0"
+		"ProjectileModel"		""
+		"ProjectileSpeed"		"0"
+		"RingRadius"		"70"
+		"HealthBarOffset"		"160"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"BountyXP"		"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"		"300"
+		"StatusHealthRegen"		"0"
+		"StatusMana"		"0"
+		"StatusManaRegen"		"0"
+		"VisionDaytimeRange"		"1200"
+		"VisionNighttimeRange"		"800"
+		"Model"		"models/heroes/terrorblade/demon.vmdl"
+		"ModelScale"		"0.8"
+		"BaseClass"		"npc_dota_creature"
+		"SoundSet"		""
+		"Ability1"		"dark_armor"
+	}
 	"battleship"
 	{
 		"ArmorPhysical"		"0"
@@ -225,9 +236,9 @@
 		"ModelScale"		"0.8"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
-		"ScriptClass"		"CreepFast"
+		"ScriptClass"		"CreepHeal"
 		"Ability1"		"dark_armor"
-		"Ability2"		"creep_ability_fast"
+		"Ability2"		"creep_ability_Heal"
 	}
 	"blazing_axman"
 	{
@@ -318,12 +329,12 @@
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
 		"Model"		"models/items/warlock/golem/hellsworn_golem/hellsworn_golem.vmdl"
-		"ModelScale"		"0.8"
+		"ModelScale"		"0.7"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
-		"ScriptClass"		"CreepImage"
+		"ScriptClass"	"CreepSwarm"
 		"Ability1"		"fire_armor"
-		"Ability2"		""
+		"Ability2"		"creep_ability_swarm"
 		"Ability3"		"hellsworn_particles"
 	}
 	"chaos_rider"
@@ -409,7 +420,7 @@
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
 		"Model"		"models/creeps/lane_creeps/creep_bad_melee/creep_bad_melee_mega.vmdl"
-		"ModelScale"		"1.0"
+		"ModelScale"		"1.1"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"Ability1"		"fire_armor"
@@ -657,11 +668,23 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/items/broodmother/spiderling/perceptive_spiderling/perceptive_spiderling.vmdl"
-		"ModelScale"		"0.9"
+		"Model"		"models/heroes/abaddon/abaddon.vmdl"
+		"ModelScale"		"0.8"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"Ability1"		"composite_armor"
+	    "Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_abaddon
+	        {
+	            "1" { "ItemDef" "455" } // Abaddon's Helmet
+	            "2" { "ItemDef" "522" } // Abaddon's Ambient Effects
+	            "3" { "ItemDef" "454" } // Abaddon's Weapon
+	            "4" { "ItemDef" "457" } // Abaddon's Shoulder Armor
+	            "5" { "ItemDef" "456" } // Abaddon's Cape
+	            "6" { "ItemDef" "458" } // Abaddon's Mount
+	        }
+	    }
 	}
 	"death_knight"
 	{
@@ -811,6 +834,50 @@
 			}
 		}
 	}
+	"desert_rogue"
+	{
+		"ArmorPhysical"		"0"
+		"MagicalResistance"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"0"
+		"AttackDamageMax"		"0"
+		"AttackRate"		"0"
+		"AttackAnimationPoint"		"0"
+		"AttackAcquisitionRange"		"0"
+		"AttackRange"		"0"
+		"ProjectileModel"		""
+		"ProjectileSpeed"		"0"
+		"RingRadius"		"70"
+		"HealthBarOffset"		"160"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"BountyXP"		"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"		"300"
+		"StatusHealthRegen"		"0"
+		"StatusMana"		"0"
+		"StatusManaRegen"		"0"
+		"VisionDaytimeRange"		"1200"
+		"VisionNighttimeRange"		"800"
+		"Model"		"models/heroes/juggernaut/juggernaut.vmdl"
+		"ModelScale"		"1.0"
+		"BaseClass"		"npc_dota_creature"
+		"SoundSet"		""
+		"ScriptClass"		"CreepHeal"
+		"Ability1"		"earth_armor"
+		"Ability2"		"creep_ability_heal"
+	    "Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_juggernaut
+	        {
+	            "1" { "ItemDef" "62" } // Juggernaut's Legs
+	            "2" { "ItemDef" "7" } // Juggernaut's Weapon
+	            "3" { "ItemDef" "9" } // Juggernaut's Bracers
+	            "4" { "ItemDef" "6" } // Juggernaut's Mask
+	            "5" { "ItemDef" "8" } // Juggernaut's Cape
+	            "6" { "ItemDef" "560" } // Juggernaut's Healing Ward
+	        }
+	    }
+	}
 	"dreadlord"
 	{
 		"ArmorPhysical"		"0"
@@ -835,13 +902,67 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/terrorblade/demon.vmdl"
-		"ModelScale"		"1"
+		"Model"		"models/heroes/nightstalker/nightstalker.vmdl"
+		"ModelScale"		"0.9"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepMechanical"
 		"Ability1"		"dark_armor"
 		"Ability2"		"creep_ability_mechanical"
+	    "Creature"
+	    {
+	        "AttachWearables" // Black Nihility
+	        {
+	            "1" { "ItemDef" "5083" } // Strap of Black Nihility
+	            "2" { "ItemDef" "5086" } // Span of Black Nihility
+	            "3" { "ItemDef" "5085" } // Talons of Black Nihility
+	            "4" { "ItemDef" "5088" } // Crown of Black Nihility
+	            "5" { "ItemDef" "5087" } // Sweep of Black Nihility
+	        }
+	    }
+	}
+	"dust_fiend"
+	{
+		"ArmorPhysical"		"0"
+		"MagicalResistance"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"0"
+		"AttackDamageMax"		"0"
+		"AttackRate"		"0"
+		"AttackAnimationPoint"		"0"
+		"AttackAcquisitionRange"		"0"
+		"AttackRange"		"0"
+		"ProjectileModel"		""
+		"ProjectileSpeed"		"0"
+		"RingRadius"		"70"
+		"HealthBarOffset"		"160"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"BountyXP"		"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"		"300"
+		"StatusHealthRegen"		"0"
+		"StatusMana"		"0"
+		"StatusManaRegen"		"0"
+		"VisionDaytimeRange"		"1200"
+		"VisionNighttimeRange"		"800"
+		"Model"		"models/heroes/life_stealer/life_stealer.vmdl"
+		"ModelScale"		"1.0"
+		"BaseClass"		"npc_dota_creature"
+		"SoundSet"		""
+		"ScriptClass"		"CreepUndead"
+		"Ability1"		"earth_armor"
+		"Ability2"		"creep_ability_undead"
+	    "Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_life_stealer
+	        {
+	            "1" { "ItemDef" "444" } // Lifestealer's Chains
+	            "2" { "ItemDef" "530" } // Lifestealer's Ambient Effects
+	            "3" { "ItemDef" "443" } // Lifestealer's Belt
+	            "4" { "ItemDef" "8659" } // Lifestealer's Back
+	            "5" { "ItemDef" "8658" } // Lifestealer's Head
+	        }
+	    }
 	}
 	"earth_spirit"
 	{
@@ -1121,6 +1242,38 @@
 			}
 		}
 	}
+	"father_treant"
+	{
+		"ArmorPhysical"		"0"
+		"MagicalResistance"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"0"
+		"AttackDamageMax"		"0"
+		"AttackRate"		"0"
+		"AttackAnimationPoint"		"0"
+		"AttackAcquisitionRange"		"0"
+		"AttackRange"		"0"
+		"ProjectileModel"		""
+		"ProjectileSpeed"		"0"
+		"RingRadius"		"70"
+		"HealthBarOffset"		"160"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"BountyXP"		"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"		"300"
+		"StatusHealthRegen"		"0"
+		"StatusMana"		"0"
+		"StatusManaRegen"		"0"
+		"VisionDaytimeRange"		"1200"
+		"VisionNighttimeRange"		"800"
+		"Model"		"models/items/furion/treant/father_treant/father_treant.vmdl"
+		"ModelScale"		"1.3"
+		"BaseClass"		"npc_dota_creature"
+		"SoundSet"		""
+		"ScriptClass"		"CreepMechanical"
+		"Ability1"		"nature_armor"
+		"Ability2"		"creep_ability_mechanical"
+	}
 	"fire_acolyte"
 	{
 		"ArmorPhysical"		"0"
@@ -1152,6 +1305,38 @@
 		"ScriptClass"		"CreepUndead"
 		"Ability1"		"fire_armor"
 		"Ability2"		"creep_ability_undead"
+	}
+	"abomination"
+	{
+		"ArmorPhysical"		"0"
+		"MagicalResistance"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"0"
+		"AttackDamageMax"		"0"
+		"AttackRate"		"0"
+		"AttackAnimationPoint"		"0"
+		"AttackAcquisitionRange"		"0"
+		"AttackRange"		"0"
+		"ProjectileModel"		""
+		"ProjectileSpeed"		"0"
+		"RingRadius"		"70"
+		"HealthBarOffset"		"160"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"BountyXP"		"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"		"300"
+		"StatusHealthRegen"		"0"
+		"StatusMana"		"0"
+		"StatusManaRegen"		"0"
+		"VisionDaytimeRange"		"1200"
+		"VisionNighttimeRange"		"800"
+		"Model"		"models/heroes/undying/undying_flesh_golem.vmdl"
+		"ModelScale"		"0.7"
+		"BaseClass"		"npc_dota_creature"
+		"SoundSet"		""
+		"ScriptClass"		"CreepImage"
+		"Ability1"		"dark_armor"
+		"Ability2"		""
 	}
 	"flying_imp"
 	{
@@ -1226,6 +1411,47 @@
 			}
 		}
 	}
+	"forest_warlock"
+	{
+		"ArmorPhysical"		"0"
+		"MagicalResistance"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"0"
+		"AttackDamageMax"		"0"
+		"AttackRate"		"0"
+		"AttackAnimationPoint"		"0"
+		"AttackAcquisitionRange"		"0"
+		"AttackRange"		"0"
+		"ProjectileModel"		""
+		"ProjectileSpeed"		"0"
+		"RingRadius"		"70"
+		"HealthBarOffset"		"160"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"BountyXP"		"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"		"300"
+		"StatusHealthRegen"		"0"
+		"StatusMana"		"0"
+		"StatusManaRegen"		"0"
+		"VisionDaytimeRange"		"1200"
+		"VisionNighttimeRange"		"800"
+		"Model"		"models/heroes/necrolyte/necrolyte.vmdl"
+		"ModelScale"		"1.0"
+		"BaseClass"		"npc_dota_creature"
+		"SoundSet"		""
+		"Ability1"		"nature_armor"
+	    "Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_necrolyte
+	        {
+	            "1" { "ItemDef" "213" } // Necrophos' Headdress
+	            "2" { "ItemDef" "508" } // Necrophos' Ambient Effects
+	            "3" { "ItemDef" "212" } // Necrophos' Beard
+	            "4" { "ItemDef" "214" } // Necrophos' Vestments
+	            "5" { "ItemDef" "211" } // Necrophos' Sickle
+	        }
+	    }
+	}
 	"frankenstein"
 	{
 		"ArmorPhysical"		"0"
@@ -1282,13 +1508,24 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/items/furion/treant/father_treant/father_treant.vmdl"
-		"ModelScale"		"1.3"
+		"Model"		"models/heroes/elder_titan/elder_titan.vmdl"
+		"ModelScale"		"0.9"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepMechanical"
 		"Ability1"		"nature_armor"
 		"Ability2"		"creep_ability_mechanical"
+	    "Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_elder_titan
+	        {
+	            "1" { "ItemDef" "430" } // Elder Titan's Back Totem
+	            "2" { "ItemDef" "426" } // Elder Titan's Weapon
+	            "3" { "ItemDef" "428" } // Elder Titan's Head
+	            "4" { "ItemDef" "427" } // Elder Titan's Bracers
+	            "5" { "ItemDef" "429" } // Elder Titan's Shoulders
+	        }
+	    }
 	}
 	"gargoyle"
 	{
@@ -1346,27 +1583,13 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"                     "models/heroes/death_prophet/death_prophet.vmdl"
+		"Model"                     "models/creeps/neutral_creeps/n_creep_ghost_a/n_creep_ghost_a.vmdl"
 		"ModelScale"		"1"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
-		"ScriptClass"		"CreepImage"
+		"ScriptClass"	"CreepSwarm"
 		"Ability1"		"composite_armor"
-	    "Ability2"      ""
-		"Ability3"		"death_prophet_particles"
-	
-	 	"Creature"
-	    {
-	        "DisableClumpingBehavior"   "1"
-	        "AttachWearables"
-	        {
-	            "Wearable1"     {   "ItemDef"       "6694"      } //dress
-	            "Wearable2"     {   "ItemDef"       "5959"      } //head
-	            "Wearable3"     {   "ItemDef"       "170"       }
-	            "Wearable4"     {   "ItemDef"       "171"       }
-				"Wearable5"		{   "ItemDef"       "505"       } //ambient
-	        }
-	    }
+		"Ability2"		"creep_ability_swarm"
 	}
 	"giant_cobra"
 	{
@@ -1525,6 +1748,51 @@
 		"ScriptClass"		"CreepHeal"
 		"Ability1"		"earth_armor"
 		"Ability2"		"creep_ability_heal"
+	}
+	"holy_bomber"
+	{
+		"ArmorPhysical"		"0"
+		"MagicalResistance"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"0"
+		"AttackDamageMax"		"0"
+		"AttackRate"		"0"
+		"AttackAnimationPoint"		"0"
+		"AttackAcquisitionRange"		"0"
+		"AttackRange"		"0"
+		"ProjectileModel"		""
+		"ProjectileSpeed"		"0"
+		"RingRadius"		"70"
+		"HealthBarOffset"		"160"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"BountyXP"		"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"		"300"
+		"StatusHealthRegen"		"0"
+		"StatusMana"		"0"
+		"StatusManaRegen"		"0"
+		"VisionDaytimeRange"		"1200"
+		"VisionNighttimeRange"		"800"
+		"Model"		"models/heroes/gyro/gyro.vmdl"
+		"ModelScale"		"0.9"
+		"BaseClass"		"npc_dota_creature"
+		"SoundSet"		""
+		"ScriptClass"		"CreepMechanical"
+		"Ability1"		"light_armor"
+		"Ability2"		"creep_ability_mechanical"
+	    "Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_gyrocopter
+	        {
+	            "1" { "ItemDef" "126" } // Gyrocopter's Bottles
+	            "2" { "ItemDef" "527" } // Gyrocopter's Ambient Effects
+	            "3" { "ItemDef" "177" } // Gyrocopter's Guns
+	            "4" { "ItemDef" "178" } // Gyrocopter's Propeller
+	            "5" { "ItemDef" "176" } // Gyrocopter's Goggles
+	            "6" { "ItemDef" "131" } // Gyrocopter's head
+	            "7" { "ItemDef" "179" } // Gyrocopter's Homing Missile
+	        }
+	    }
 	}
 	"icefrog"
 	{
@@ -1830,6 +2098,68 @@
 			}
 		}
 	}
+	"lightning_angel"
+	{
+		"ArmorPhysical"		"0"
+		"MagicalResistance"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"0"
+		"AttackDamageMax"		"0"
+		"AttackRate"		"0"
+		"AttackAnimationPoint"		"0"
+		"AttackAcquisitionRange"		"0"
+		"AttackRange"		"0"
+		"ProjectileModel"		""
+		"ProjectileSpeed"		"0"
+		"RingRadius"		"70"
+		"HealthBarOffset"		"160"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"BountyXP"		"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"		"300"
+		"StatusHealthRegen"		"0"
+		"StatusMana"		"0"
+		"StatusManaRegen"		"0"
+		"VisionDaytimeRange"		"1200"
+		"VisionNighttimeRange"		"800"
+		"Model"		"models/heroes/skywrath_mage/skywrath_mage.vmdl"
+		"ModelScale"		"0.7"
+		"BaseClass"		"npc_dota_creature"
+		"SoundSet"		""
+		"ScriptClass"		"CreepFast"
+		"Ability1"		"light_armor"
+		"Ability2"		"creep_ability_fast"
+		"Creature"
+		{
+			"AttachWearables"
+			{
+				"Wearable1"
+				{
+					"ItemDef"		"420"
+				}
+				"Wearable2"
+				{
+					"ItemDef"		"421"
+				}
+				"Wearable3"
+				{
+					"ItemDef"		"422"
+				}
+				"Wearable4"
+				{
+					"ItemDef"		"423"
+				}
+				"Wearable5"
+				{
+					"ItemDef"		"424"
+				}
+				"Wearable6"
+				{
+					"ItemDef"		"425"
+				}
+			}
+		}
+	}
 	"lightning_horse"
 	{
 		"ArmorPhysical"		"0"
@@ -1977,10 +2307,54 @@
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
 		"Model"		"models/items/undying/idol_of_ruination/ruin_wight_minion_gold.vmdl"
-		"ModelScale"		"1.0"
+		"ModelScale"		"1.15"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"Ability1"		"composite_armor"
+	}
+	"murloc"
+	{
+		"ArmorPhysical"		"0"
+		"MagicalResistance"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"0"
+		"AttackDamageMax"		"0"
+		"AttackRate"		"0"
+		"AttackAnimationPoint"		"0"
+		"AttackAcquisitionRange"		"0"
+		"AttackRange"		"0"
+		"ProjectileModel"		""
+		"ProjectileSpeed"		"0"
+		"RingRadius"		"70"
+		"HealthBarOffset"		"160"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"BountyXP"		"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"		"300"
+		"StatusHealthRegen"		"0"
+		"StatusMana"		"0"
+		"StatusManaRegen"		"0"
+		"VisionDaytimeRange"		"1200"
+		"VisionNighttimeRange"		"800"
+		"Model"		"models/heroes/slark/slark.vmdl"
+		"ModelScale"		"1"
+		"BaseClass"		"npc_dota_creature"
+		"SoundSet"		""
+		"ScriptClass"		"CreepFast"
+		"Ability1"		"water_armor"
+		"Ability2"		"creep_ability_fast"
+	    "Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_slark
+	        {
+	            "1" { "ItemDef" "356" } // Slark's Hood
+	            "2" { "ItemDef" "336" } // Slark's Weapon
+	            "3" { "ItemDef" "538" } // Slark's Ambient Effects
+	            "4" { "ItemDef" "355" } // Slark's Cape
+	            "5" { "ItemDef" "354" } // Slark's Shoulder Armor
+	            "6" { "ItemDef" "353" } // Slark's Bracers
+	        }
+	    }
 	}
 	"naga"
 	{
@@ -2136,13 +2510,64 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/items/broodmother/spiderling/thistle_crawler/thistle_crawler.vmdl"
-		"ModelScale"		"1.0"
+		"Model"		"models/heroes/weaver/weaver.vmdl"
+		"ModelScale"		"0.9"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepFast"
 		"Ability1"		"dark_armor"
 		"Ability2"		"creep_ability_fast"
+	    "Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_weaver
+	        {
+	            "1" { "ItemDef" "280" } // Weaver's Back
+	            "2" { "ItemDef" "278" } // Weaver's Legs
+	            "3" { "ItemDef" "277" } // Weaver's Antennae
+	            "4" { "ItemDef" "585" } // Weaver's Miscellaneous
+	            "5" { "ItemDef" "279" } // Weaver's Arms
+	        }
+	    }
+	}
+	"ocean_fairy"
+	{
+		"ArmorPhysical"		"0"
+		"MagicalResistance"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"0"
+		"AttackDamageMax"		"0"
+		"AttackRate"		"0"
+		"AttackAnimationPoint"		"0"
+		"AttackAcquisitionRange"		"0"
+		"AttackRange"		"0"
+		"ProjectileModel"		""
+		"ProjectileSpeed"		"0"
+		"RingRadius"		"70"
+		"HealthBarOffset"		"160"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"BountyXP"		"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"		"300"
+		"StatusHealthRegen"		"0"
+		"StatusMana"		"0"
+		"StatusManaRegen"		"0"
+		"VisionDaytimeRange"		"1200"
+		"VisionNighttimeRange"		"800"
+		"Model"		"models/heroes/puck/puck.vmdl"
+		"ModelScale"		"1.0"
+		"BaseClass"		"npc_dota_creature"
+		"SoundSet"		""
+		"Ability1"		"water_armor"
+	    "Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_puck
+	        {
+	            "1" { "ItemDef" "372" } // Puck's Head
+	            "2" { "ItemDef" "510" } // Puck's Ambient Effects
+	            "3" { "ItemDef" "370" } // Puck's Wings
+	            "4" { "ItemDef" "371" } // Puck's Tail
+	        }
+	    }
 	}
 	"paladin"
 	{
@@ -2307,56 +2732,6 @@
 			}
 		}
 	}
-	"pudge"
-	{
-		"ArmorPhysical"		"0"
-		"MagicalResistance"		"0"
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"0"
-		"AttackDamageMax"		"0"
-		"AttackRate"		"0"
-		"AttackAnimationPoint"		"0"
-		"AttackAcquisitionRange"		"0"
-		"AttackRange"		"0"
-		"ProjectileModel"		""
-		"ProjectileSpeed"		"0"
-		"RingRadius"		"70"
-		"HealthBarOffset"		"160"
-		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
-		"BountyXP"		"0"
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"		"300"
-		"StatusHealthRegen"		"0"
-		"StatusMana"		"0"
-		"StatusManaRegen"		"0"
-		"VisionDaytimeRange"		"1200"
-		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/pudge/pudge.vmdl"
-		"ModelScale"		"0.9"
-		"BaseClass"		"npc_dota_creature"
-		"SoundSet"		""
-		"ScriptClass"		"CreepUndead"
-		"Ability1"		"earth_armor"
-		"Ability2"		"creep_ability_undead"
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1"
-				{
-					"ItemDef"		"260"
-				}
-				"Wearable2"
-				{
-					"ItemDef"		"259"
-				}
-				"Wearable3"
-				{
-					"ItemDef"		"47"
-				}
-			}
-		}
-	}
 	"raccoon"
 	{
 		"ArmorPhysical"		"0"
@@ -2412,12 +2787,12 @@
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
 		"Model"		"models/items/courier/vaal_the_animated_constructradiant/vaal_the_animated_constructradiant.vmdl"
-		"ModelScale"		"1.5"
+		"ModelScale"		"1.4"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
-		"ScriptClass"		"CreepMechanical"
+		"ScriptClass"		"CreepHeal"
 		"Ability1"		"light_armor"
-		"Ability2"		"creep_ability_mechanical"
+		"Ability2"		"creep_ability_Heal"
 	}
 	"razor"
 	{
@@ -2558,7 +2933,7 @@
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
 		"Model"		"models/creeps/neutral_creeps/n_creep_golem_b/n_creep_golem_b.vmdl"
-		"ModelScale"		"0.8"
+		"ModelScale"		"0.9"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepMechanical"
@@ -2678,12 +3053,11 @@
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
 		"Model"		"models/heroes/sand_king/sand_king.vmdl"
-		"ModelScale"		"0.8"
+		"ModelScale"		"1.0"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepHeal"
 		"Ability1"		"earth_armor"
-		"Ability2"		"creep_ability_heal"
 		"Creature"
 		{
 			"AttachWearables"
@@ -2742,6 +3116,37 @@
 		"ScriptClass"		"CreepFast"
 		"Ability1"		"composite_armor"
 		"Ability2"		"creep_ability_fast"
+	}
+	"sea_phantom"
+	{
+		"ArmorPhysical"		"0"
+		"MagicalResistance"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"0"
+		"AttackDamageMax"		"0"
+		"AttackRate"		"0"
+		"AttackAnimationPoint"		"0"
+		"AttackAcquisitionRange"		"0"
+		"AttackRange"		"0"
+		"ProjectileModel"		""
+		"ProjectileSpeed"		"0"
+		"RingRadius"		"70"
+		"HealthBarOffset"		"160"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"BountyXP"		"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"		"300"
+		"StatusHealthRegen"		"0"
+		"StatusMana"		"0"
+		"StatusManaRegen"		"0"
+		"VisionDaytimeRange"		"1200"
+		"VisionNighttimeRange"		"800"
+		"Model"		"models/heroes/brewmaster/brewmaster_windspirit.vmdl"
+		"ModelScale"		"1"
+		"BaseClass"		"npc_dota_creature"
+		"SoundSet"		""
+		"Ability1"		"water_armor"
+		"Ability3"		"windspirit_particles"
 	}
 	"shadow_hunter"
 	{
@@ -2961,68 +3366,6 @@
 		"Ability1"		"dark_armor"
 		"Ability2"		"creep_ability_undead"
 	}
-	"skywrath_mage"
-	{
-		"ArmorPhysical"		"0"
-		"MagicalResistance"		"0"
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"		"0"
-		"AttackDamageMax"		"0"
-		"AttackRate"		"0"
-		"AttackAnimationPoint"		"0"
-		"AttackAcquisitionRange"		"0"
-		"AttackRange"		"0"
-		"ProjectileModel"		""
-		"ProjectileSpeed"		"0"
-		"RingRadius"		"70"
-		"HealthBarOffset"		"160"
-		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
-		"BountyXP"		"0"
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"		"300"
-		"StatusHealthRegen"		"0"
-		"StatusMana"		"0"
-		"StatusManaRegen"		"0"
-		"VisionDaytimeRange"		"1200"
-		"VisionNighttimeRange"		"800"
-		"Model"		"models/heroes/skywrath_mage/skywrath_mage.vmdl"
-		"ModelScale"		"0.7"
-		"BaseClass"		"npc_dota_creature"
-		"SoundSet"		""
-		"ScriptClass"		"CreepUndead"
-		"Ability1"		"light_armor"
-		"Ability2"		"creep_ability_undead"
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1"
-				{
-					"ItemDef"		"420"
-				}
-				"Wearable2"
-				{
-					"ItemDef"		"421"
-				}
-				"Wearable3"
-				{
-					"ItemDef"		"422"
-				}
-				"Wearable4"
-				{
-					"ItemDef"		"423"
-				}
-				"Wearable5"
-				{
-					"ItemDef"		"424"
-				}
-				"Wearable6"
-				{
-					"ItemDef"		"425"
-				}
-			}
-		}
-	}
 	"snowy_owl"
 	{
 		"ArmorPhysical"		"0"
@@ -3081,9 +3424,9 @@
 		"ModelScale"		"1"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
-		"ScriptClass"		"CreepImage"
+		"ScriptClass"	"CreepSwarm"
 		"Ability1"		"light_armor"
-		"Ability2"		""
+		"Ability2"		"creep_ability_swarm"
 	}
 	"solar_templar"
 	{
@@ -3213,6 +3556,38 @@
 			}
 		}
 	}
+	"spider"
+	{
+		"ArmorPhysical"		"0"
+		"MagicalResistance"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"0"
+		"AttackDamageMax"		"0"
+		"AttackRate"		"0"
+		"AttackAnimationPoint"		"0"
+		"AttackAcquisitionRange"		"0"
+		"AttackRange"		"0"
+		"ProjectileModel"		""
+		"ProjectileSpeed"		"0"
+		"RingRadius"		"70"
+		"HealthBarOffset"		"160"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"BountyXP"		"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"		"300"
+		"StatusHealthRegen"		"0"
+		"StatusMana"		"0"
+		"StatusManaRegen"		"0"
+		"VisionDaytimeRange"		"1200"
+		"VisionNighttimeRange"		"800"
+		"Model"		"models/items/broodmother/spiderling/thistle_crawler/thistle_crawler.vmdl"
+		"ModelScale"		"1.0"
+		"BaseClass"		"npc_dota_creature"
+		"SoundSet"		""
+		"ScriptClass"		"CreepFast"
+		"Ability1"		"dark_armor"
+		"Ability2"		"creep_ability_fast"
+	}
 	"spirit_bear"
 	{
 		"ArmorPhysical"		"0"
@@ -3241,9 +3616,9 @@
 		"ModelScale"		"0.8"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
-		"ScriptClass"		"CreepSwarm"
+		"ScriptClass"	"CreepSwarm"
 		"Ability1"		"earth_armor"
-		"Ability2"		""
+		"Ability2"		"creep_ability_swarm"
 	}
 	"stoneboar"
 	{
@@ -3341,6 +3716,51 @@
 			}
 		}
 	}
+	"swamp_witch"
+	{
+		"ArmorPhysical"		"0"
+		"MagicalResistance"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"0"
+		"AttackDamageMax"		"0"
+		"AttackRate"		"0"
+		"AttackAnimationPoint"		"0"
+		"AttackAcquisitionRange"		"0"
+		"AttackRange"		"0"
+		"ProjectileModel"		""
+		"ProjectileSpeed"		"0"
+		"RingRadius"		"70"
+		"HealthBarOffset"		"160"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"BountyXP"		"0"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"		"300"
+		"StatusHealthRegen"		"0"
+		"StatusMana"		"0"
+		"StatusManaRegen"		"0"
+		"VisionDaytimeRange"		"1200"
+		"VisionNighttimeRange"		"800"
+		"Model"		"models/heroes/medusa/medusa.vmdl"
+		"ModelScale"		"1.0"
+		"BaseClass"		"npc_dota_creature"
+		"SoundSet"		""
+		"ScriptClass"		"CreepHeal"
+		"Ability1"		"water_armor"
+		"Ability2"		"creep_ability_heal"
+	
+	    "Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_medusa
+	        {
+	            "1" { "ItemDef" "531" } // Medusa's Ambient Effects
+	            "2" { "ItemDef" "382" } // Medusa's Veil
+	            "3" { "ItemDef" "383" } // Medusa's Chest Armor
+	            "4" { "ItemDef" "384" } // Medusa's Bracers
+	            "5" { "ItemDef" "385" } // Medusa's Tail
+	            "6" { "ItemDef" "381" } // Medusa's Bow
+	        }
+	    }
+	}
 	"tauren"
 	{
 		"ArmorPhysical"		"0"
@@ -3423,9 +3843,9 @@
 		"ModelScale"		"0.8"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
-		"ScriptClass"		"CreepHeal"
+		"ScriptClass"		"CreepFast"
 		"Ability1"		"fire_armor"
-		"Ability2"		"creep_ability_heal"
+		"Ability2"		"creep_ability_fast"
 	}
 	"treant"
 	{
@@ -3455,9 +3875,9 @@
 		"ModelScale"		"1"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
-		"ScriptClass"		"CreepImage"
+		"ScriptClass"	"CreepSwarm"
 		"Ability1"		"nature_armor"
-		"Ability2"		""
+		"Ability2"		"creep_ability_swarm"
 	}
 	"treant_protector"
 	{
@@ -3630,7 +4050,7 @@
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
 		"Model"		"models/heroes/enigma/enigma.vmdl"
-		"ModelScale"		"1.1"
+		"ModelScale"		"0.9"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
 		"ScriptClass"		"CreepUndead"
@@ -3670,10 +4090,10 @@
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
 		"Model"		"models/courier/baby_winter_wyvern/baby_winter_wyvern.vmdl"
-		"ModelScale"		"0.8"
+		"ModelScale"		"1.0"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
-		"ScriptClass"		"CreepSwarm"
+		"ScriptClass"	"CreepSwarm"
 		"Ability1"		"water_armor"
 		"Ability2"		"creep_ability_swarm"
 	}

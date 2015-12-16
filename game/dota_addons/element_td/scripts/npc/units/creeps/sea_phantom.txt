@@ -1,4 +1,4 @@
-"torchbearer"
+"sea_phantom"
 {
 	"ArmorPhysical"		"0"
 	"MagicalResistance"		"0"
@@ -22,11 +22,10 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/items/warlock/golem/the_torchbearer/the_torchbearer.vmdl"
-	"ModelScale"		"0.8"
+	"Model"		"models/heroes/brewmaster/brewmaster_windspirit.vmdl"
+	"ModelScale"		"1"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
-	"ScriptClass"		"CreepFast"
-	"Ability1"		"fire_armor"
-	"Ability2"		"creep_ability_fast"
+	"Ability1"		"water_armor"
+	"Ability3"		"windspirit_particles"
 }

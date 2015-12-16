@@ -23,10 +23,10 @@
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
 	"Model"		"models/items/courier/vaal_the_animated_constructradiant/vaal_the_animated_constructradiant.vmdl"
-	"ModelScale"		"1.5"
+	"ModelScale"		"1.4"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
-	"ScriptClass"		"CreepMechanical"
+	"ScriptClass"		"CreepHeal"
 	"Ability1"		"light_armor"
-	"Ability2"		"creep_ability_mechanical"
+	"Ability2"		"creep_ability_Heal"
 }

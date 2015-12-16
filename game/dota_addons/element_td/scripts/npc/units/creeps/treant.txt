@@ -26,7 +26,7 @@
 	"ModelScale"		"1"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
-	"ScriptClass"		"CreepImage"
+	"ScriptClass"	"CreepSwarm"
 	"Ability1"		"nature_armor"
-	"Ability2"		""
+	"Ability2"		"creep_ability_swarm"
 }

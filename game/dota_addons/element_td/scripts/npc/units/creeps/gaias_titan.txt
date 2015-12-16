@@ -22,11 +22,22 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/items/furion/treant/father_treant/father_treant.vmdl"
-	"ModelScale"		"1.3"
+	"Model"		"models/heroes/elder_titan/elder_titan.vmdl"
+	"ModelScale"		"0.9"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
 	"ScriptClass"		"CreepMechanical"
 	"Ability1"		"nature_armor"
 	"Ability2"		"creep_ability_mechanical"
+    "Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_elder_titan
+        {
+            "1" { "ItemDef" "430" } // Elder Titan's Back Totem
+            "2" { "ItemDef" "426" } // Elder Titan's Weapon
+            "3" { "ItemDef" "428" } // Elder Titan's Head
+            "4" { "ItemDef" "427" } // Elder Titan's Bracers
+            "5" { "ItemDef" "429" } // Elder Titan's Shoulders
+        }
+    }
 }

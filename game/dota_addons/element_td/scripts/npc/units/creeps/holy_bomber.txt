@@ -1,4 +1,4 @@
-"abomination"
+"holy_bomber"
 {
 	"ArmorPhysical"		"0"
 	"MagicalResistance"		"0"
@@ -22,25 +22,24 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/heroes/pudge/pudge.vmdl"
+	"Model"		"models/heroes/gyro/gyro.vmdl"
 	"ModelScale"		"0.9"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
-	"ScriptClass"	"CreepSwarm"
-	"Ability1"		"dark_armor"
-	"Ability2"		"creep_ability_swarm"
+	"ScriptClass"		"CreepMechanical"
+	"Ability1"		"light_armor"
+	"Ability2"		"creep_ability_mechanical"
     "Creature"
     {
-        "AttachWearables" // Default npc_dota_hero_pudge
+        "AttachWearables" // Default npc_dota_hero_gyrocopter
         {
-            "1" { "ItemDef" "470" } // Pudge's Belt
-            "2" { "ItemDef" "260" } // Pudge's Left Arm
-            "3" { "ItemDef" "258" } // Pudge's Back Rings and Apron
-            "4" { "ItemDef" "259" } // Pudge's Cleaver
-            "5" { "ItemDef" "261" } // Pudge's Bracer
-            "6" { "ItemDef" "262" } // Pudge's Toupee
-            "7" { "ItemDef" "47" } // Pudge's Rusty Meathook
-            "8" { "ItemDef" "391" } // Pudge's Ambient Effects
+            "1" { "ItemDef" "126" } // Gyrocopter's Bottles
+            "2" { "ItemDef" "527" } // Gyrocopter's Ambient Effects
+            "3" { "ItemDef" "177" } // Gyrocopter's Guns
+            "4" { "ItemDef" "178" } // Gyrocopter's Propeller
+            "5" { "ItemDef" "176" } // Gyrocopter's Goggles
+            "6" { "ItemDef" "131" } // Gyrocopter's head
+            "7" { "ItemDef" "179" } // Gyrocopter's Homing Missile
         }
     }
 }

@@ -1,4 +1,4 @@
-"admiral"
+"murloc"
 {
 	"ArmorPhysical"		"0"
 	"MagicalResistance"		"0"
@@ -22,12 +22,23 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/heroes/brewmaster/brewmaster_windspirit.vmdl"
+	"Model"		"models/heroes/slark/slark.vmdl"
 	"ModelScale"		"1"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
 	"ScriptClass"		"CreepFast"
 	"Ability1"		"water_armor"
 	"Ability2"		"creep_ability_fast"
-	"Ability3"		"windspirit_particles"
+    "Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_slark
+        {
+            "1" { "ItemDef" "356" } // Slark's Hood
+            "2" { "ItemDef" "336" } // Slark's Weapon
+            "3" { "ItemDef" "538" } // Slark's Ambient Effects
+            "4" { "ItemDef" "355" } // Slark's Cape
+            "5" { "ItemDef" "354" } // Slark's Shoulder Armor
+            "6" { "ItemDef" "353" } // Slark's Bracers
+        }
+    }
 }

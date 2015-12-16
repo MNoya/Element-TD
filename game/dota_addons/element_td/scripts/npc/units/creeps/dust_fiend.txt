@@ -1,4 +1,4 @@
-"torchbearer"
+"dust_fiend"
 {
 	"ArmorPhysical"		"0"
 	"MagicalResistance"		"0"
@@ -22,11 +22,22 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/items/warlock/golem/the_torchbearer/the_torchbearer.vmdl"
-	"ModelScale"		"0.8"
+	"Model"		"models/heroes/life_stealer/life_stealer.vmdl"
+	"ModelScale"		"1.0"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
-	"ScriptClass"		"CreepFast"
-	"Ability1"		"fire_armor"
-	"Ability2"		"creep_ability_fast"
+	"ScriptClass"		"CreepUndead"
+	"Ability1"		"earth_armor"
+	"Ability2"		"creep_ability_undead"
+    "Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_life_stealer
+        {
+            "1" { "ItemDef" "444" } // Lifestealer's Chains
+            "2" { "ItemDef" "530" } // Lifestealer's Ambient Effects
+            "3" { "ItemDef" "443" } // Lifestealer's Belt
+            "4" { "ItemDef" "8659" } // Lifestealer's Back
+            "5" { "ItemDef" "8658" } // Lifestealer's Head
+        }
+    }
 }

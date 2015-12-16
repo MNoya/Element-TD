@@ -1,4 +1,4 @@
-"pudge"
+"forest_warlock"
 {
 	"ArmorPhysical"		"0"
 	"MagicalResistance"		"0"
@@ -22,29 +22,20 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/heroes/pudge/pudge.vmdl"
-	"ModelScale"		"0.9"
+	"Model"		"models/heroes/necrolyte/necrolyte.vmdl"
+	"ModelScale"		"1.0"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
-	"ScriptClass"		"CreepUndead"
-	"Ability1"		"earth_armor"
-	"Ability2"		"creep_ability_undead"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"		"260"
-			}
-			"Wearable2"
-			{
-				"ItemDef"		"259"
-			}
-			"Wearable3"
-			{
-				"ItemDef"		"47"
-			}
-		}
-	}
+	"Ability1"		"nature_armor"
+    "Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_necrolyte
+        {
+            "1" { "ItemDef" "213" } // Necrophos' Headdress
+            "2" { "ItemDef" "508" } // Necrophos' Ambient Effects
+            "3" { "ItemDef" "212" } // Necrophos' Beard
+            "4" { "ItemDef" "214" } // Necrophos' Vestments
+            "5" { "ItemDef" "211" } // Necrophos' Sickle
+        }
+    }
 }

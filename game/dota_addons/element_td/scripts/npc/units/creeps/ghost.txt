@@ -22,25 +22,11 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"                     "models/heroes/death_prophet/death_prophet.vmdl"
+	"Model"                     "models/creeps/neutral_creeps/n_creep_ghost_a/n_creep_ghost_a.vmdl"
 	"ModelScale"		"1"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
-	"ScriptClass"		"CreepImage"
+	"ScriptClass"	"CreepSwarm"
 	"Ability1"		"composite_armor"
-    "Ability2"      ""
-	"Ability3"		"death_prophet_particles"
-
- 	"Creature"
-    {
-        "DisableClumpingBehavior"   "1"
-        "AttachWearables"
-        {
-            "Wearable1"     {   "ItemDef"       "6694"      } //dress
-            "Wearable2"     {   "ItemDef"       "5959"      } //head
-            "Wearable3"     {   "ItemDef"       "170"       }
-            "Wearable4"     {   "ItemDef"       "171"       }
-			"Wearable5"		{   "ItemDef"       "505"       } //ambient
-        }
-    }
+	"Ability2"		"creep_ability_swarm"
 }

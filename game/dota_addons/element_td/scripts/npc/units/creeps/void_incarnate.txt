@@ -23,7 +23,7 @@
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
 	"Model"		"models/heroes/enigma/enigma.vmdl"
-	"ModelScale"		"1.1"
+	"ModelScale"		"0.9"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
 	"ScriptClass"		"CreepUndead"

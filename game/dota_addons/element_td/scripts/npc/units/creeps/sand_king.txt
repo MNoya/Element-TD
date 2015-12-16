@@ -23,12 +23,11 @@
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
 	"Model"		"models/heroes/sand_king/sand_king.vmdl"
-	"ModelScale"		"0.8"
+	"ModelScale"		"1.0"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
 	"ScriptClass"		"CreepHeal"
 	"Ability1"		"earth_armor"
-	"Ability2"		"creep_ability_heal"
 	"Creature"
 	{
 		"AttachWearables"

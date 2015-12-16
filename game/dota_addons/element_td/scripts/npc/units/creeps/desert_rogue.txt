@@ -1,4 +1,4 @@
-"torchbearer"
+"desert_rogue"
 {
 	"ArmorPhysical"		"0"
 	"MagicalResistance"		"0"
@@ -22,11 +22,23 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/items/warlock/golem/the_torchbearer/the_torchbearer.vmdl"
-	"ModelScale"		"0.8"
+	"Model"		"models/heroes/juggernaut/juggernaut.vmdl"
+	"ModelScale"		"1.0"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
-	"ScriptClass"		"CreepFast"
-	"Ability1"		"fire_armor"
-	"Ability2"		"creep_ability_fast"
+	"ScriptClass"		"CreepHeal"
+	"Ability1"		"earth_armor"
+	"Ability2"		"creep_ability_heal"
+    "Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_juggernaut
+        {
+            "1" { "ItemDef" "62" } // Juggernaut's Legs
+            "2" { "ItemDef" "7" } // Juggernaut's Weapon
+            "3" { "ItemDef" "9" } // Juggernaut's Bracers
+            "4" { "ItemDef" "6" } // Juggernaut's Mask
+            "5" { "ItemDef" "8" } // Juggernaut's Cape
+            "6" { "ItemDef" "560" } // Juggernaut's Healing Ward
+        }
+    }
 }

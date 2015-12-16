@@ -22,9 +22,21 @@
 	"StatusManaRegen"		"0"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
-	"Model"		"models/items/broodmother/spiderling/perceptive_spiderling/perceptive_spiderling.vmdl"
-	"ModelScale"		"0.9"
+	"Model"		"models/heroes/abaddon/abaddon.vmdl"
+	"ModelScale"		"0.8"
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		""
 	"Ability1"		"composite_armor"
+    "Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_abaddon
+        {
+            "1" { "ItemDef" "455" } // Abaddon's Helmet
+            "2" { "ItemDef" "522" } // Abaddon's Ambient Effects
+            "3" { "ItemDef" "454" } // Abaddon's Weapon
+            "4" { "ItemDef" "457" } // Abaddon's Shoulder Armor
+            "5" { "ItemDef" "456" } // Abaddon's Cape
+            "6" { "ItemDef" "458" } // Abaddon's Mount
+        }
+    }
 }
