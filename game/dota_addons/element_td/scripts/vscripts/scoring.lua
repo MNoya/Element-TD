@@ -35,7 +35,7 @@ function ScoringObject:UpdateScore( const )
 		table.insert(processed, {'Game over! Lost on wave ' .. playerData.completedWaves + 1, '#FFF0F5'} )
 	elseif ( const == SCORING_GAME_CLEAR ) then
 		scoreTable = self:GetGameCleared()
-		table.insert(processed, {'Game cleared! Your score ' .. comma_value(self.totalScore), '#FFF0F5'} )
+		table.insert(processed, {'Game cleared!', '#FFF0F5'} )
 	else
 		return false
 	end
@@ -82,9 +82,17 @@ function ScoringObject:UpdateScore( const )
 		end	
 	end
 	--PrintTable(processed)
-	self:ShowScore(processed)
-	CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerScore", {playerId=self.playerID, score=comma_value( self.totalScore )} )
-	CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(self.playerID), "etd_update_score", { score = comma_value( self.totalScore ) } )
+	if (const == SCORING_GAME_CLEAR) then -- Delay Screen
+		Timers:CreateTimer(1.2, function()
+		self:ShowScore(processed)
+			CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerScore", {playerId=self.playerID, score=comma_value( self.totalScore )} )
+			CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(self.playerID), "etd_update_score", { score = comma_value( self.totalScore ) } )			
+		end)
+	else
+		self:ShowScore(processed)
+		CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerScore", {playerId=self.playerID, score=comma_value( self.totalScore )} )
+		CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(self.playerID), "etd_update_score", { score = comma_value( self.totalScore ) } )
+	end
 	return true
 end
 
@@ -229,7 +237,7 @@ function ScoringObject:GetNetworthBonus()
 	for i,v in pairs( playerData.towers ) do
 		local tower = EntIndexToHScript( i )
 		if tower:GetHealth() == tower:GetMaxHealth() then
-			for i=0,16 do
+			for i=0,15 do
 				local ability = tower:GetAbilityByIndex( i )
 				if ability then
 					local name = ability:GetAbilityName()
