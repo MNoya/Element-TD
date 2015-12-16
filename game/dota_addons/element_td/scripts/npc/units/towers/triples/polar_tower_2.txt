@@ -1,6 +1,6 @@
 "polar_tower_2"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,22 @@
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_lich/lich_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.7"
+
+    "Model"             "models/heroes/lich/lich.vmdl"
+    "ModelScale"        "1.2"
+	"Creature"
+    {
+        "AttachWearables" // Eldritch Ice Set
+        {
+            "1" { "ItemDef" "4853" } // Dead Winter Sash
+            "2" { "ItemDef" "4852" } // Dead Winter Soul
+            "3" { "ItemDef" "4851" } // Dead Winter Mantle
+            "4" { "ItemDef" "4854" } // Dead Winter Grasp
+            "5" { "ItemDef" "571" } // Lich's Head
+            "6" { "ItemDef" "506" } // Lich's Ambient Effects
+        }
+    }
+
 	"AOE_Full"		"100"
 	"AOE_Half"		"200"
 	"UpgradeIcon"		"crystal_maiden_crystal_nova"
@@ -72,4 +86,8 @@
 	}
 	"AttackDamageMin"		"4500"
 	"AttackDamageMax"		"4500"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

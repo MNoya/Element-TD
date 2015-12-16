@@ -1,6 +1,6 @@
 "roots_tower_2"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,20 @@
 	"AttackRate"		"1"
 	"ProjectileModel"		""
 	"ProjectileSpeed"		"900"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.8"
+
+    "Model"             "models/heroes/treant_protector/treant_protector.vmdl"
+    "ModelScale"        "1.2"
+	"Creature"
+    {
+        "AttachWearables" // Agaric Flourish
+        {
+            "1" { "ItemDef" "7059" } // Embrace of the Agaric Flourish
+            "2" { "ItemDef" "7062" } // Canopy of the Agaric Flourish
+            "3" { "ItemDef" "7060" } // Countenance of the Agaric Flourish
+            "4" { "ItemDef" "7061" } // Stride of the Agaric Flourish
+        }
+    }
+
 	"UpgradeIcon"		"treant_leech_seed"
 	"BuildTime"		"4"
 	"Requirements"
@@ -70,4 +82,8 @@
 	}
 	"AttackDamageMin"		"0"
 	"AttackDamageMax"		"0"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

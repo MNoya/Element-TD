@@ -1,6 +1,6 @@
 "flamethrower_tower"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,20 @@
 	"AttackRate"		"0.66"
 	"ProjectileModel"		"particles/units/heroes/hero_batrider/batrider_base_attack.vpcf"
 	"ProjectileSpeed"		"2500"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.75"
+	
+	"Model"             "models/heroes/batrider/batrider.vmdl"
+    "ModelScale"        "0.8"
+	"Creature"
+    {
+        "AttachWearables" // Flamestitched Suitings Set
+        {
+        	"1" { "ItemDef" "375" } // Batrider's Head
+            "2" { "ItemDef" "5143" } // Flamestitched Suitings Bandana
+            "3" { "ItemDef" "5145" } // Flamestitched Suitings Cape
+            "4" { "ItemDef" "5144" } // Flamestitched Suitings Wrap and Molotov
+            "5" { "ItemDef" "5142" } // Rachel the Morde-bat
+        }
+    }
 	"AOE_Half"		"300"
 	"AOE_Full"		"150"
 	"UpgradeIcon"		"batrider_sticky_napalm"
@@ -74,4 +86,8 @@
 	}
 	"AttackDamageMin"		"300"
 	"AttackDamageMax"		"300"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

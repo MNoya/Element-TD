@@ -1,6 +1,6 @@
 "roots_tower"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,20 @@
 	"AttackRate"		"1"
 	"ProjectileModel"		""
 	"ProjectileSpeed"		"900"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.7"
+
+    "Model"             "models/heroes/treant_protector/treant_protector.vmdl"
+    "ModelScale"        "1.0"
+	"Creature"
+    {
+        "AttachWearables" // Splintering Awe
+        {
+            "1" { "ItemDef" "8184" } // Carvings of the Splintering Awe
+            "2" { "ItemDef" "8181" } // Arms of the Splintering Awe
+            "3" { "ItemDef" "8182" } // Mask of the Splintering Awe
+            "4" { "ItemDef" "8183" } // Stock of the Splintering Awe
+        }
+    }
+
 	"UpgradeIcon"		"treant_leech_seed"
 	"BuildTime"		"4"
 	"Requirements"
@@ -72,4 +84,8 @@
 	}
 	"AttackDamageMin"		"0"
 	"AttackDamageMax"		"0"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

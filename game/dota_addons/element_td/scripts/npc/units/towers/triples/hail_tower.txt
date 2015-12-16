@@ -1,6 +1,6 @@
 "hail_tower"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,23 @@
 	"AttackRate"		"0.31"
 	"ProjectileModel"		"particles/units/heroes/hero_ancient_apparition/ancient_apparition_base_attack.vpcf"
 	"ProjectileSpeed"		"1250"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.75"
+
+    "Model"             "models/heroes/drow/drow.vmdl"
+    "ModelScale"        "1.2"
+	"Creature"
+    {
+        "AttachWearables" // Guise of the Winged Bolt
+        {
+            "1" { "ItemDef" "7238" } // Bow of the Winged Bolt
+            "2" { "ItemDef" "7245" } // Mask of the Winged Bolt
+            "3" { "ItemDef" "7243" } // Cape of the Winged Bolt
+            "4" { "ItemDef" "7242" } // Bracers of the Winged Bolt
+            "5" { "ItemDef" "7232" } // Boots of the Winged Bolt
+            "6" { "ItemDef" "7246" } // Quiver of the Winged Bolt
+            "7" { "ItemDef" "7244" } // Guards of the Winged Bolt
+        }
+    }
+
 	"UpgradeIcon"		"crystal_maiden_freezing_field"
 	"BuildTime"		"4"
 	"Requirements"
@@ -72,4 +87,8 @@
 	}
 	"AttackDamageMin"		"390"
 	"AttackDamageMax"		"390"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

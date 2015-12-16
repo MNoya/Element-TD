@@ -1,6 +1,6 @@
 "ephemeral_tower"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -54,9 +54,21 @@
 	"AttackAcquisitionRange"		"625"
 	"AttackRate"		"0.31"
 	"ProjectileModel"		"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf"
-	"ProjectileSpeed"		"2400"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.75"
+	"ProjectileSpeed"		"900"
+
+    "Model"             "models/heroes/windrunner/windrunner.vmdl"
+    "ModelScale"        "1.2"
+	"Creature"
+    {
+        "AttachWearables" // Array of Tranquility
+        {
+            "1" { "ItemDef" "6837" } // Quiver of Tranquility
+            "2" { "ItemDef" "6831" } // Braid of Tranquility
+            "3" { "ItemDef" "6836" } // Cloak of Tranquility
+            "4" { "ItemDef" "6835" } // Bow of Tranquility
+            "5" { "ItemDef" "6838" } // Sentry of Tranquility
+        }
+    }
 	"UpgradeIcon"		"towers/ephemeral_tower_phasing"
 	"BuildTime"		"4"
 	"Requirements"
@@ -72,4 +84,8 @@
 	}
 	"AttackDamageMin"		"1800"
 	"AttackDamageMax"		"1800"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

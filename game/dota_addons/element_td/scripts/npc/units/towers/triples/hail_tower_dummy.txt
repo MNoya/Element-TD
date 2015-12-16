@@ -1,7 +1,7 @@
 "hail_tower_dummy"
 {
 	"BaseClass"		"npc_dota_creep"
-	"Model"		"models/development/invisiblebox.mdl"
+    "Model"             "models/development/invisiblebox.mdl"
 	"Level"		"1"
 	"Ability1"		""
 	"Ability2"		""

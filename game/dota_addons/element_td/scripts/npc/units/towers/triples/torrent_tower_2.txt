@@ -1,12 +1,10 @@
 "torrent_tower_2"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
 	"MinimapIconSize"		"320"
-	"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
-	"particle_folder"		"particles/units/heroes/hero_mirana"
 	"particle_folder"		"particles/units/heroes/hero_morphling"
 	"ArmorPhysical"		"0"
 	"MagicalResistance"		"0"
@@ -55,8 +53,23 @@
 	"AttackRate"		"0.31"
 	"ProjectileModel"		"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.8"
+
+    "Model"             "models/heroes/siren/siren.vmdl"
+    "ModelScale"        "1.2"
+	"Creature"
+    {
+        "AttachWearables" // Iceborn Trinity
+        {
+            "1" { "ItemDef" "7041" } // Cutlass of the Iceborn Trinity
+            "2" { "ItemDef" "7042" } // Offhand Cutlass of the Iceborn Trinity
+            "3" { "ItemDef" "7043" } // Scales of the Iceborn Trinity
+            "4" { "ItemDef" "7040" } // Crown of the Iceborn Trinity
+            "5" { "ItemDef" "7039" } // Clasp of the Iceborn Trinity
+            "6" { "ItemDef" "532" } // Naga Siren's Ambient Effects
+            "7" { "ItemDef" "191" } // Naga Siren's Head
+        }
+    }
+
 	"UpgradeIcon"		"towers/torrent_tower_douse"
 	"BuildTime"		"4"
 	"Requirements"
@@ -70,4 +83,8 @@
 	}
 	"AttackDamageMin"		"2100"
 	"AttackDamageMax"		"2100"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

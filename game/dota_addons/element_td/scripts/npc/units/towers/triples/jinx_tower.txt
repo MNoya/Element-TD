@@ -1,6 +1,6 @@
 "jinx_tower"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,21 @@
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_witchdoctor/witchdoctor_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
-	"Model"		"models/heroes/witchdoctor/witchdoctor_ward.vmdl"
-	"ModelScale"		"0.85"
+
+    "Model"             "models/heroes/witchdoctor/witchdoctor.vmdl"
+    "ModelScale"        "1.0"
+	"Creature"
+    {
+        "AttachWearables" // The Stormcrow's Spirit Set
+        {
+            "1" { "ItemDef" "4710" } // Tail of the Stormcrow
+            "2" { "ItemDef" "4707" } // Egg of the Stormcrow
+            "3" { "ItemDef" "4709" } // Cloak of the Stormcrow
+            "4" { "ItemDef" "4708" } // Beak of the Stormcrow
+            "5" { "ItemDef" "4711" } // Sigil of the Stormcrow
+        }
+    }
+
 	"UpgradeIcon"		"witch_doctor_maledict"
 	"BuildTime"		"4"
 	"Requirements"
@@ -72,4 +85,8 @@
 	}
 	"AttackDamageMin"		"2100"
 	"AttackDamageMax"		"2100"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

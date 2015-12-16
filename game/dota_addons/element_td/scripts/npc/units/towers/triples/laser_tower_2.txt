@@ -1,6 +1,6 @@
 "laser_tower_2"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -54,8 +54,24 @@
 	"AttackAcquisitionRange"		"750"
 	"AttackRate"		"1"
 	"ProjectileSpeed"		"900"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.8"
+
+    "Model"             "models/heroes/tinker/tinker.vmdl"
+    "ModelScale"        "1.2"
+	"Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_tinker
+        {
+            "1" { "ItemDef" "466" } // Tinker's Head
+            "2" { "ItemDef" "467" } // Tinker's Cape
+            "3" { "ItemDef" "464" } // Tinker's Shoulders
+            "4" { "ItemDef" "465" } // Tinker's Helmet
+            "5" { "ItemDef" "515" } // Tinker's Ambient Effects
+            "6" { "ItemDef" "463" } // Tinker's Left Arm
+            "7" { "ItemDef" "367" } // Tinker's Right Arm
+            "8" { "ItemDef" "6224" } // Mecha Boots of Travel Mk III
+        }
+    }
+    
 	"UpgradeIcon"		"tinker_laser"
 	"BuildTime"		"4"
 	"Requirements"
@@ -69,4 +85,8 @@
 	}
 	"AttackDamageMin"		"30000"
 	"AttackDamageMax"		"30000"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

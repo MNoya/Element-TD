@@ -11656,7 +11656,7 @@
 	}
 	"enchantment_tower"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -11711,8 +11711,21 @@
 		"AttackRate"		"0.31"
 		"ProjectileModel"		"particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.75"
+		
+	    "Model"             "models/heroes/oracle/oracle.vmdl"
+	    "ModelScale"        "1.0"
+		"Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_oracle
+	        {
+	            "1" { "ItemDef" "546" } // Oracle's Armor
+	            "2" { "ItemDef" "547" } // Oracle's Back Item
+	            "3" { "ItemDef" "549" } // Oracle's Weapon
+	            "4" { "ItemDef" "548" } // Oracle's Head Item
+	            "5" { "ItemDef" "550" } // Oracle's Ambient Effects
+	        }
+	    }
+	    
 		"AOE_Full"		"100"
 		"AOE_Half"		"200"
 		"UpgradeIcon"		"leshrac_diabolic_edict"
@@ -11730,10 +11743,14 @@
 		}
 		"AttackDamageMin"		"279"
 		"AttackDamageMax"		"279"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"enchantment_tower_2"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -11788,8 +11805,21 @@
 		"AttackRate"		"0.31"
 		"ProjectileModel"		"particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.8"
+	
+	    "Model"             "models/heroes/oracle/oracle.vmdl"
+	    "ModelScale"        "1.2"
+		"Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_oracle
+	        {
+	            "1" { "ItemDef" "546" } // Oracle's Armor
+	            "2" { "ItemDef" "547" } // Oracle's Back Item
+	            "3" { "ItemDef" "549" } // Oracle's Weapon
+	            "4" { "ItemDef" "548" } // Oracle's Head Item
+	            "5" { "ItemDef" "550" } // Oracle's Ambient Effects
+	        }
+	    }
+	
 		"AOE_Full"		"100"
 		"AOE_Half"		"200"
 		"UpgradeIcon"		"leshrac_diabolic_edict"
@@ -11805,10 +11835,14 @@
 		}
 		"AttackDamageMin"		"1395"
 		"AttackDamageMax"		"1395"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"ephemeral_tower"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -11862,9 +11896,21 @@
 		"AttackAcquisitionRange"		"625"
 		"AttackRate"		"0.31"
 		"ProjectileModel"		"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf"
-		"ProjectileSpeed"		"2400"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.75"
+		"ProjectileSpeed"		"900"
+	
+	    "Model"             "models/heroes/windrunner/windrunner.vmdl"
+	    "ModelScale"        "1.2"
+		"Creature"
+	    {
+	        "AttachWearables" // Array of Tranquility
+	        {
+	            "1" { "ItemDef" "6837" } // Quiver of Tranquility
+	            "2" { "ItemDef" "6831" } // Braid of Tranquility
+	            "3" { "ItemDef" "6836" } // Cloak of Tranquility
+	            "4" { "ItemDef" "6835" } // Bow of Tranquility
+	            "5" { "ItemDef" "6838" } // Sentry of Tranquility
+	        }
+	    }
 		"UpgradeIcon"		"towers/ephemeral_tower_phasing"
 		"BuildTime"		"4"
 		"Requirements"
@@ -11880,10 +11926,14 @@
 		}
 		"AttackDamageMin"		"1800"
 		"AttackDamageMax"		"1800"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"ephemeral_tower_2"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -11938,8 +11988,21 @@
 		"AttackRate"		"0.31"
 		"ProjectileModel"		"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.8"
+	
+	    "Model"             "models/heroes/windrunner/windrunner.vmdl"
+	    "ModelScale"        "1.4"
+		"Creature"
+	    {
+	        "AttachWearables" // Falconside Armor
+	        {
+	            "1" { "ItemDef" "6687" } // Sylvan Cascade
+	            "2" { "ItemDef" "8585" } // Quiver of Falconside Armor
+	            "3" { "ItemDef" "6758" } // Rainmaker
+	            "4" { "ItemDef" "8584" } // Tiara of Falconside Armor
+	            "5" { "ItemDef" "8582" } // Pauldrons of Falconside Armor
+	        }
+	    }
+	
 		"UpgradeIcon"		"towers/ephemeral_tower_phasing"
 		"BuildTime"		"4"
 		"Requirements"
@@ -11953,10 +12016,14 @@
 		}
 		"AttackDamageMin"		"9000"
 		"AttackDamageMax"		"9000"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"erosion_tower"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -12011,8 +12078,21 @@
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_warlock/warlock_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.7"
+	
+	    "Model"             "models/heroes/shadow_demon/shadow_demon.vmdl"
+	    "ModelScale"        "1.0"
+		"Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_shadow_demon
+	        {
+	            "1" { "ItemDef" "396" } // Shadow Demon's Cape
+	            "2" { "ItemDef" "545" } // Shadow Demon's Ambient Effects
+	            "3" { "ItemDef" "398" } // Shadow Demon's Belt
+	            "4" { "ItemDef" "397" } // Shadow Demon's Armor
+	            "5" { "ItemDef" "399" } // Shadow Demon's Tail
+	        }
+	    }
+	
 		"AOE_Full"		"400"
 		"AOE_Half"		"400"
 		"UpgradeIcon"		"towers/erosion_tower_acid_attack"
@@ -12030,10 +12110,14 @@
 		}
 		"AttackDamageMin"		"0"
 		"AttackDamageMax"		"0"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"erosion_tower_2"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -12088,8 +12172,21 @@
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.8"
+	
+	    "Model"             "models/heroes/shadow_demon/shadow_demon.vmdl"
+	    "ModelScale"        "1.2"
+		"Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_shadow_demon
+	        {
+	            "1" { "ItemDef" "545" } // Shadow Demon's Ambient Effects
+	            "2" { "ItemDef" "7181" } // Armor of the Umbral Descent
+	            "3" { "ItemDef" "7180" } // Belt of the Umbral Descent
+	            "4" { "ItemDef" "7179" } // Tail of the Umbral Descent
+	            "5" { "ItemDef" "7182" } // Form of the Umbral Descent
+	        }
+	    }
+	
 		"AOE_Full"		"400"
 		"AOE_Half"		"400"
 		"UpgradeIcon"		"towers/erosion_tower_acid_attack"
@@ -12105,10 +12202,14 @@
 		}
 		"AttackDamageMin"		"0"
 		"AttackDamageMax"		"0"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"flamethrower_tower"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -12163,8 +12264,20 @@
 		"AttackRate"		"0.66"
 		"ProjectileModel"		"particles/units/heroes/hero_batrider/batrider_base_attack.vpcf"
 		"ProjectileSpeed"		"2500"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.75"
+		
+		"Model"             "models/heroes/batrider/batrider.vmdl"
+	    "ModelScale"        "0.8"
+		"Creature"
+	    {
+	        "AttachWearables" // Flamestitched Suitings Set
+	        {
+	        	"1" { "ItemDef" "375" } // Batrider's Head
+	            "2" { "ItemDef" "5143" } // Flamestitched Suitings Bandana
+	            "3" { "ItemDef" "5145" } // Flamestitched Suitings Cape
+	            "4" { "ItemDef" "5144" } // Flamestitched Suitings Wrap and Molotov
+	            "5" { "ItemDef" "5142" } // Rachel the Morde-bat
+	        }
+	    }
 		"AOE_Half"		"300"
 		"AOE_Full"		"150"
 		"UpgradeIcon"		"batrider_sticky_napalm"
@@ -12182,10 +12295,14 @@
 		}
 		"AttackDamageMin"		"300"
 		"AttackDamageMax"		"300"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"flamethrower_tower_2"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -12240,8 +12357,21 @@
 		"AttackRate"		"0.66"
 		"ProjectileModel"		"particles/units/heroes/hero_batrider/batrider_base_attack.vpcf"
 		"ProjectileSpeed"		"2500"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.8"
+	
+	    "Model"             "models/heroes/batrider/batrider.vmdl"
+	    "ModelScale"        "1.0"
+		"Creature"
+	    {
+	        "AttachWearables" // Flamestitched Suitings Set
+	        {
+	        	"1" { "ItemDef" "375" } // Batrider's Head
+	            "2" { "ItemDef" "9376" } // Mask of the Marauding Pyro
+	            "3" { "ItemDef" "9388" } // Glider of the Marauding Pyro
+	            "4" { "ItemDef" "9386" } // Cocktail of the Marauding Pyro
+	            "5" { "ItemDef" "9387" } // Torch
+	        }
+	    }
+	
 		"AOE_Half"		"300"
 		"AOE_Full"		"150"
 		"UpgradeIcon"		"batrider_sticky_napalm"
@@ -12257,10 +12387,14 @@
 		}
 		"AttackDamageMin"		"1500"
 		"AttackDamageMax"		"1500"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"flooding_tower"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -12315,8 +12449,22 @@
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.75"
+	
+	    "Model"             "models/heroes/tidehunter/tidehunter.vmdl"
+	    "ModelScale"        "1.0"
+		"Creature"
+	    {
+	        "AttachWearables" // Deepweed Drowner
+	        {
+	            "1" { "ItemDef" "6469" } // Belt of the Deepweed Drowner
+	            "2" { "ItemDef" "6468" } // Back Fins of the Deepweed Drowner
+	            "3" { "ItemDef" "6470" } // Head Fins of the Deepweed Drowner
+	            "4" { "ItemDef" "6340" } // Wrecking Ball
+	            "5" { "ItemDef" "6467" } // Arm Fins of the Deepweed Drowner
+	            "6" { "ItemDef" "6471" } // Conch Cudgel
+	        }
+	    }	
+	
 		"BuildTime"		"4"
 		"UpgradeIcon"		"naga_siren_rip_tide"
 		"Requirements"
@@ -12332,10 +12480,14 @@
 		}
 		"AttackDamageMin"		"950"
 		"AttackDamageMax"		"950"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"flooding_tower_2"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -12390,8 +12542,22 @@
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.8"
+		
+	    "Model"             "models/heroes/tidehunter/tidehunter.vmdl"
+	    "ModelScale"        "1.2"
+		"Creature"
+	    {
+	        "AttachWearables" // Relics of the Drowning Trench
+	        {
+	            "1" { "ItemDef" "7774" } // Grip of the Drowning Trench
+	            "2" { "ItemDef" "7776" } // Headshell of the Drowning Trench
+	            "3" { "ItemDef" "7777" } // Leashed Rockshark
+	            "4" { "ItemDef" "7775" } // Carapace of the Drowning Trench
+	            "5" { "ItemDef" "7773" } // Belt of the Drowning Trench
+	            "6" { "ItemDef" "7778" } // Aquemerald Blade
+	        }
+	    }
+	
 		"BuildTime"		"4"
 		"UpgradeIcon"		"naga_siren_rip_tide"
 		"Requirements"
@@ -12405,10 +12571,14 @@
 		}
 		"AttackDamageMin"		"4750"
 		"AttackDamageMax"		"4750"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"gold_tower"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -12463,8 +12633,25 @@
 		"AttackRate"		"1.5"
 		"ProjectileModel"		"particles/units/heroes/hero_venomancer/venomancer_base_attack.vpcf"
 		"ProjectileSpeed"		"1800"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.75"
+	
+	    "Model"             "models/heroes/alchemist/alchemist.vmdl"
+	    "ModelScale"        "1.0"
+		"Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_alchemist
+	        {
+	            "1" { "ItemDef" "9568" } // Razzil's Midas Knuckles
+	            "2" { "ItemDef" "119" } // Alchemist's Saddle
+	            "3" { "ItemDef" "121" } // Alchemist's Goblin Hat
+	            "4" { "ItemDef" "124" } // Alchemist's Ogre Head
+	            "5" { "ItemDef" "117" } // Alchemist's Goblin Body
+	            "6" { "ItemDef" "118" } // Alchemist's Weapon
+	            "7" { "ItemDef" "122" } // Alchemist's Left Bottle
+	            "8" { "ItemDef" "125" } // Alchemist's Shoulder Bottle
+	            "9" { "ItemDef" "123" } // Alchemist's Goblin Head
+	        }
+	    }
+	
 		"UpgradeIcon"		"towers/gold_tower_arbitrage"
 		"BuildTime"		"4"
 		"Requirements"
@@ -12480,10 +12667,14 @@
 		}
 		"AttackDamageMin"		"3000"
 		"AttackDamageMax"		"3000"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"gold_tower_2"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -12538,8 +12729,25 @@
 		"AttackRate"		"1.5"
 		"ProjectileModel"		"particles/units/heroes/hero_venomancer/venomancer_base_attack.vpcf"
 		"ProjectileSpeed"		"1800"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.8"
+	
+	    "Model"             "models/heroes/alchemist/alchemist.vmdl"
+	    "ModelScale"        "1.2"
+		"Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_alchemist
+	        {
+	            "1" { "ItemDef" "9568" } // Razzil's Midas Knuckles
+	            "2" { "ItemDef" "119" } // Alchemist's Saddle
+	            "3" { "ItemDef" "121" } // Alchemist's Goblin Hat
+	            "4" { "ItemDef" "124" } // Alchemist's Ogre Head
+	            "5" { "ItemDef" "117" } // Alchemist's Goblin Body
+	            "6" { "ItemDef" "7627" } // Eternal Radiance Blades
+	            "7" { "ItemDef" "122" } // Alchemist's Left Bottle
+	            "8" { "ItemDef" "125" } // Alchemist's Shoulder Bottle
+	            "9" { "ItemDef" "123" } // Alchemist's Goblin Head
+	        }
+	    }
+	
 		"UpgradeIcon"		"towers/gold_tower_arbitrage"
 		"BuildTime"		"4"
 		"Requirements"
@@ -12553,10 +12761,14 @@
 		}
 		"AttackDamageMin"		"15000"
 		"AttackDamageMax"		"15000"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"hail_tower"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -12611,8 +12823,23 @@
 		"AttackRate"		"0.31"
 		"ProjectileModel"		"particles/units/heroes/hero_ancient_apparition/ancient_apparition_base_attack.vpcf"
 		"ProjectileSpeed"		"1250"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.75"
+	
+	    "Model"             "models/heroes/drow/drow.vmdl"
+	    "ModelScale"        "1.2"
+		"Creature"
+	    {
+	        "AttachWearables" // Guise of the Winged Bolt
+	        {
+	            "1" { "ItemDef" "7238" } // Bow of the Winged Bolt
+	            "2" { "ItemDef" "7245" } // Mask of the Winged Bolt
+	            "3" { "ItemDef" "7243" } // Cape of the Winged Bolt
+	            "4" { "ItemDef" "7242" } // Bracers of the Winged Bolt
+	            "5" { "ItemDef" "7232" } // Boots of the Winged Bolt
+	            "6" { "ItemDef" "7246" } // Quiver of the Winged Bolt
+	            "7" { "ItemDef" "7244" } // Guards of the Winged Bolt
+	        }
+	    }
+	
 		"UpgradeIcon"		"crystal_maiden_freezing_field"
 		"BuildTime"		"4"
 		"Requirements"
@@ -12628,10 +12855,14 @@
 		}
 		"AttackDamageMin"		"390"
 		"AttackDamageMax"		"390"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"hail_tower_2"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -12686,8 +12917,23 @@
 		"AttackRate"		"0.31"
 		"ProjectileModel"		"particles/units/heroes/hero_ancient_apparition/ancient_apparition_base_attack.vpcf"
 		"ProjectileSpeed"		"1250"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.8"
+	
+	    "Model"             "models/heroes/drow/drow.vmdl"
+	    "ModelScale"        "1.4"
+		"Creature"
+	    {
+	        "AttachWearables" // Eldwurm's Touch
+	        {
+	            "1" { "ItemDef" "7058" } // Bow of the Eldwurm's Touch
+	            "2" { "ItemDef" "7057" } // Pauldrons of the Eldwurm's Touch
+	            "3" { "ItemDef" "7056" } // Quiver of the Eldwurm's Touch
+	            "4" { "ItemDef" "7053" } // Cape of the Eldwurm's Touch
+	            "5" { "ItemDef" "7052" } // Bracers of the Eldwurm's Touch
+	            "6" { "ItemDef" "7055" } // Boots of the Eldwurm's Touch
+	            "7" { "ItemDef" "7054" } // Helmet of the Eldwurm's Touch
+	        }
+	    }
+	
 		"UpgradeIcon"		"crystal_maiden_freezing_field"
 		"BuildTime"		"4"
 		"Requirements"
@@ -12701,11 +12947,15 @@
 		}
 		"AttackDamageMin"		"1950"
 		"AttackDamageMax"		"1950"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"hail_tower_dummy"
 	{
 		"BaseClass"		"npc_dota_creep"
-		"Model"		"models/development/invisiblebox.mdl"
+	    "Model"             "models/development/invisiblebox.mdl"
 		"Level"		"1"
 		"Ability1"		""
 		"Ability2"		""
@@ -12751,7 +13001,7 @@
 	}
 	"haste_tower"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -12806,8 +13056,21 @@
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_batrider/batrider_base_attack.vpcf"
 		"ProjectileSpeed"		"1200"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.75"
+	
+	    "Model"             "models/heroes/troll_warlord/troll_warlord.vmdl"
+	    "ModelScale"        "1.0"
+		"Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_troll_warlord
+	        {
+	            "1" { "ItemDef" "411" } // Troll Warlord's Default Head
+	            "2" { "ItemDef" "410" } // Troll Warlord's Default Shoulders
+	            "3" { "ItemDef" "374" } // Troll Warlord's Default Off-Hand Weapon
+	            "4" { "ItemDef" "373" } // Troll Warlord's Default Weapon
+	            "5" { "ItemDef" "412" } // Troll Warlord's Default Arms
+	        }
+	    }
+	
 		"UpgradeIcon"		"troll_warlord_fervor"
 		"BuildTime"		"4"
 		"Requirements"
@@ -12823,10 +13086,14 @@
 		}
 		"AttackDamageMin"		"1020"
 		"AttackDamageMax"		"1020"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"haste_tower_2"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -12881,8 +13148,21 @@
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_batrider/batrider_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.8"
+	
+	    "Model"             "models/heroes/troll_warlord/troll_warlord.vmdl"
+	    "ModelScale"        "1.2"
+		"Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_troll_warlord
+	        {
+	            "1" { "ItemDef" "411" } // Troll Warlord's Default Head
+	            "2" { "ItemDef" "410" } // Troll Warlord's Default Shoulders
+	            "3" { "ItemDef" "374" } // Troll Warlord's Default Off-Hand Weapon
+	            "4" { "ItemDef" "373" } // Troll Warlord's Default Weapon
+	            "5" { "ItemDef" "412" } // Troll Warlord's Default Arms
+	        }
+	    }
+	
 		"UpgradeIcon"		"troll_warlord_fervor"
 		"BuildTime"		"4"
 		"Requirements"
@@ -12896,10 +13176,14 @@
 		}
 		"AttackDamageMin"		"5100"
 		"AttackDamageMax"		"5100"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"impulse_tower"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -12954,8 +13238,21 @@
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_enchantress/enchantress_impetus.vpcf"
 		"ProjectileSpeed"		"2000"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.75"
+	
+	    "Model"             "models/heroes/enchantress/enchantress.vmdl"
+	    "ModelScale"        "1.0"
+		"Creature"
+	    {
+	        "AttachWearables" // Aspects of Summer
+	        {
+	            "1" { "ItemDef" "5023" } // Summer's Light
+	            "2" { "ItemDef" "5024" } // Summer's Charm
+	            "3" { "ItemDef" "5022" } // Summer's Mirth
+	            "4" { "ItemDef" "5025" } // Summer's Warmth
+	            "5" { "ItemDef" "5021" } // Summer's Bounty
+	        }
+	    }
+	    
 		"UpgradeIcon"		"enchantress_impetus"
 		"BuildTime"		"4"
 		"Requirements"
@@ -12971,10 +13268,14 @@
 		}
 		"AttackDamageMin"		"0"
 		"AttackDamageMax"		"0"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"impulse_tower_2"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -13029,8 +13330,21 @@
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_enchantress/enchantress_impetus.vpcf"
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.8"
+		
+	    "Model"             "models/heroes/enchantress/enchantress.vmdl"
+	    "ModelScale"        "1.2"
+		"Creature"
+	    {
+	        "AttachWearables" // Blessings of the Wildwing
+	        {
+	            "1" { "ItemDef" "6857" } // Flourishing Lodestar
+	            "2" { "ItemDef" "4787" } // Wingbelt of the Wildwing's Blessing
+	            "3" { "ItemDef" "4678" } // Necklace of the Wildwing's Blessing
+	            "4" { "ItemDef" "4785" } // Spear of the Wildwing's Blessing
+	            "5" { "ItemDef" "4676" } // Bangles of the Wildwing's Blessing
+	        }
+	    }
+	
 		"UpgradeIcon"		"enchantress_impetus"
 		"BuildTime"		"4"
 		"Requirements"
@@ -13044,10 +13358,14 @@
 		}
 		"AttackDamageMin"		"0"
 		"AttackDamageMax"		"0"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"jinx_tower"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -13102,8 +13420,21 @@
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_witchdoctor/witchdoctor_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
-		"Model"		"models/heroes/witchdoctor/witchdoctor_ward.vmdl"
-		"ModelScale"		"0.85"
+	
+	    "Model"             "models/heroes/witchdoctor/witchdoctor.vmdl"
+	    "ModelScale"        "1.0"
+		"Creature"
+	    {
+	        "AttachWearables" // The Stormcrow's Spirit Set
+	        {
+	            "1" { "ItemDef" "4710" } // Tail of the Stormcrow
+	            "2" { "ItemDef" "4707" } // Egg of the Stormcrow
+	            "3" { "ItemDef" "4709" } // Cloak of the Stormcrow
+	            "4" { "ItemDef" "4708" } // Beak of the Stormcrow
+	            "5" { "ItemDef" "4711" } // Sigil of the Stormcrow
+	        }
+	    }
+	
 		"UpgradeIcon"		"witch_doctor_maledict"
 		"BuildTime"		"4"
 		"Requirements"
@@ -13119,10 +13450,14 @@
 		}
 		"AttackDamageMin"		"2100"
 		"AttackDamageMax"		"2100"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"jinx_tower_2"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -13177,8 +13512,21 @@
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_witchdoctor/witchdoctor_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
-		"Model"		"models/heroes/witchdoctor/witchdoctor_ward.vmdl"
-		"ModelScale"		"0.95"
+		
+	    "Model"             "models/heroes/witchdoctor/witchdoctor.vmdl"
+	    "ModelScale"        "1.2"
+		"Creature"
+	    {
+	        "AttachWearables" // Twilight's Rest
+	        {
+	            "1" { "ItemDef" "7550" } // Cloak of Twilight's Rest
+	            "2" { "ItemDef" "7551" } // Mantle of Twilight's Rest
+	            "3" { "ItemDef" "7553" } // Mask of Twilight's Rest
+	            "4" { "ItemDef" "7552" } // Scourge of Twilight's Rest
+	            "5" { "ItemDef" "7554" } // Wrap of Twilight's Rest
+	        }
+	    }
+	
 		"UpgradeIcon"		"witch_doctor_maledict"
 		"BuildTime"		"4"
 		"Requirements"
@@ -13192,10 +13540,14 @@
 		}
 		"AttackDamageMin"		"10500"
 		"AttackDamageMax"		"10500"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"laser_tower"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -13249,8 +13601,23 @@
 		"AttackAcquisitionRange"		"750"
 		"AttackRate"		"1"
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.75"
+	
+	    "Model"             "models/heroes/tinker/tinker.vmdl"
+	    "ModelScale"        "1.0"
+		"Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_tinker
+	        {
+	            "1" { "ItemDef" "466" } // Tinker's Head
+	            "2" { "ItemDef" "467" } // Tinker's Cape
+	            "3" { "ItemDef" "464" } // Tinker's Shoulders
+	            "4" { "ItemDef" "465" } // Tinker's Helmet
+	            "5" { "ItemDef" "515" } // Tinker's Ambient Effects
+	            "6" { "ItemDef" "463" } // Tinker's Left Arm
+	            "7" { "ItemDef" "367" } // Tinker's Right Arm
+	        }
+	    }
+	
 		"UpgradeIcon"		"tinker_laser"
 		"BuildTime"		"4"
 		"Requirements"
@@ -13266,10 +13633,14 @@
 		}
 		"AttackDamageMin"		"6000"
 		"AttackDamageMax"		"6000"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"laser_tower_2"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -13323,8 +13694,24 @@
 		"AttackAcquisitionRange"		"750"
 		"AttackRate"		"1"
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.8"
+	
+	    "Model"             "models/heroes/tinker/tinker.vmdl"
+	    "ModelScale"        "1.2"
+		"Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_tinker
+	        {
+	            "1" { "ItemDef" "466" } // Tinker's Head
+	            "2" { "ItemDef" "467" } // Tinker's Cape
+	            "3" { "ItemDef" "464" } // Tinker's Shoulders
+	            "4" { "ItemDef" "465" } // Tinker's Helmet
+	            "5" { "ItemDef" "515" } // Tinker's Ambient Effects
+	            "6" { "ItemDef" "463" } // Tinker's Left Arm
+	            "7" { "ItemDef" "367" } // Tinker's Right Arm
+	            "8" { "ItemDef" "6224" } // Mecha Boots of Travel Mk III
+	        }
+	    }
+	    
 		"UpgradeIcon"		"tinker_laser"
 		"BuildTime"		"4"
 		"Requirements"
@@ -13338,10 +13725,14 @@
 		}
 		"AttackDamageMin"		"30000"
 		"AttackDamageMax"		"30000"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"muck_tower"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -13396,8 +13787,22 @@
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_venomancer/venomancer_base_attack.vpcf"
 		"ProjectileSpeed"		"1800"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.75"
+	
+	    "Model"             "models/heroes/bristleback/bristleback.vmdl"
+	    "ModelScale"        "1.0"
+		"Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_bristleback
+	        {
+	            "1" { "ItemDef" "520" } // Bristleback's Ambient Effects
+	            "2" { "ItemDef" "5762" } // Heavy Barbed Arms
+	            "3" { "ItemDef" "5763" } // Heavy Barbed Back
+	            "4" { "ItemDef" "5766" } // Heavy Barbed Morning Star
+	            "5" { "ItemDef" "5764" } // Heavy Barbed Head
+	            "6" { "ItemDef" "5765" } // Heavy Barbed Collar
+	        }
+	    }
+	
 		"AOE_Full"		"150"
 		"AOE_Half"		"300"
 		"UpgradeIcon"		"bristleback_viscous_nasal_goo"
@@ -13415,10 +13820,14 @@
 		}
 		"AttackDamageMin"		"600"
 		"AttackDamageMax"		"600"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"muck_tower_2"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -13473,8 +13882,21 @@
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_venomancer/venomancer_base_attack.vpcf"
 		"ProjectileSpeed"		"1800"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.85"
+	
+	    "Model"             "models/heroes/bristleback/bristleback.vmdl"
+	    "ModelScale"        "1.2"
+		"Creature"
+	    {
+	        "AttachWearables" // Emerald Frenzy Set
+	        {
+	            "1" { "ItemDef" "5407" } // Emerald Frenzy Flail
+	            "2" { "ItemDef" "5410" } // Emerald Frenzy Amulet
+	            "3" { "ItemDef" "5409" } // Emerald Frenzy Glove
+	            "4" { "ItemDef" "8391" } // Piston Impaler
+	            "5" { "ItemDef" "5408" } // Emerald Frenzy Helmet
+	        }
+	    }
+	
 		"AOE_Full"		"150"
 		"AOE_Half"		"300"
 		"UpgradeIcon"		"bristleback_viscous_nasal_goo"
@@ -13490,10 +13912,14 @@
 		}
 		"AttackDamageMin"		"3000"
 		"AttackDamageMax"		"3000"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"nova_tower"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -13548,8 +13974,10 @@
 		"AttackRate"		"1.5"
 		"ProjectileModel"		""
 		"ProjectileSpeed"		"900"
-		"Model"		"models/heroes/phoenix/phoenix_egg.vmdl"
-		"ModelScale"		"0.6"
+	
+	    "Model"             "models/heroes/phoenix/phoenix_egg.vmdl"
+	    "ModelScale"        "0.6"
+		
 		"UpgradeIcon"		"phoenix_supernova"
 		"BuildTime"		"4"
 		"Requirements"
@@ -13565,10 +13993,14 @@
 		}
 		"AttackDamageMin"		"0"
 		"AttackDamageMax"		"0"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"nova_tower_2"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -13623,8 +14055,10 @@
 		"AttackRate"		"1.5"
 		"ProjectileModel"		""
 		"ProjectileSpeed"		"900"
-		"Model"		"models/heroes/phoenix/phoenix_egg.vmdl"
-		"ModelScale"		"0.7"
+	
+	    "Model"             "models/heroes/phoenix/phoenix_egg.vmdl"
+	    "ModelScale"        "0.7"
+	
 		"UpgradeIcon"		"phoenix_supernova"
 		"BuildTime"		"4"
 		"Requirements"
@@ -13638,10 +14072,14 @@
 		}
 		"AttackDamageMin"		"0"
 		"AttackDamageMax"		"0"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"obliteration_tower"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -13696,8 +14134,22 @@
 		"AttackRate"		"1.5"
 		"ProjectileModel"		""
 		"ProjectileSpeed"		"1000"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.75"
+	
+	    "Model"             "models/heroes/obsidian_destroyer/obsidian_destroyer.vmdl"
+	    "ModelScale"        "0.8"
+		"Creature"
+	    {
+	        "AttachWearables" // Harbinger of the Inauspicious Abyss Set
+	        {
+	            "1" { "ItemDef" "4642" } // Thyrsus of the Inauspicious Abyss
+	            "2" { "ItemDef" "4641" } // Auspex of the Inauspicious Abyss
+	            "3" { "ItemDef" "4586" } // Heart of the Inauspicious Abyss
+	            "4" { "ItemDef" "4587" } // Wings of the Inauspicious Abyss
+	            "5" { "ItemDef" "533" } // Outworld Devourer's Ambient Effects
+	            "6" { "ItemDef" "226" } // Outworld Devourer's Head
+	        }
+	    }
+	
 		"UpgradeIcon"		"obsidian_destroyer_sanity_eclipse"
 		"BuildTime"		"4"
 		"Requirements"
@@ -13713,10 +14165,14 @@
 		}
 		"AttackDamageMin"		"2500"
 		"AttackDamageMax"		"2500"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"obliteration_tower_2"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -13771,8 +14227,22 @@
 		"AttackRate"		"1.5"
 		"ProjectileModel"		""
 		"ProjectileSpeed"		"1000"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.8"
+	
+	    "Model"             "models/heroes/obsidian_destroyer/obsidian_destroyer.vmdl"
+	    "ModelScale"        "1.0"
+		"Creature"
+	    {
+	        "AttachWearables" // Herald of Measureless Ruin
+	        {
+	            "1" { "ItemDef" "9370" } // Grasp of Measureless Ruin
+	            "2" { "ItemDef" "8376" } // Shards of Exile
+	            "3" { "ItemDef" "9367" } // Apex of Measureless Ruin
+	            "4" { "ItemDef" "9368" } // Expanse of Measureless Ruin
+	            "5" { "ItemDef" "533" } // Outworld Devourer's Ambient Effects
+	            "6" { "ItemDef" "226" } // Outworld Devourer's Head
+	        }
+	    }
+	
 		"UpgradeIcon"		"obsidian_destroyer_sanity_eclipse"
 		"BuildTime"		"4"
 		"Requirements"
@@ -13786,10 +14256,14 @@
 		}
 		"AttackDamageMin"		"12500"
 		"AttackDamageMax"		"12500"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"polar_tower"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -13844,8 +14318,22 @@
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_lich/lich_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.7"
+	
+	    "Model"             "models/heroes/lich/lich.vmdl"
+	    "ModelScale"        "1.0"            
+	    "Creature"
+	    {
+	        "AttachWearables" // Eldritch Ice Set
+	        {
+	            "1" { "ItemDef" "4897" } // Mantle of Eldritch Ice
+	            "2" { "ItemDef" "4896" } // Glacier of Eldritch Ice
+	            "3" { "ItemDef" "4895" } // Bindings of Eldritch Ice
+	            "4" { "ItemDef" "4898" } // Bracers of Eldritch Ice
+	            "5" { "ItemDef" "571" } // Lich's Head
+	            "6" { "ItemDef" "506" } // Lich's Ambient Effects
+	        }
+	    }
+	
 		"AOE_Full"		"100"
 		"AOE_Half"		"200"
 		"UpgradeIcon"		"crystal_maiden_crystal_nova"
@@ -13863,10 +14351,14 @@
 		}
 		"AttackDamageMin"		"900"
 		"AttackDamageMax"		"900"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"polar_tower_2"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -13921,8 +14413,22 @@
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_lich/lich_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.7"
+	
+	    "Model"             "models/heroes/lich/lich.vmdl"
+	    "ModelScale"        "1.2"
+		"Creature"
+	    {
+	        "AttachWearables" // Eldritch Ice Set
+	        {
+	            "1" { "ItemDef" "4853" } // Dead Winter Sash
+	            "2" { "ItemDef" "4852" } // Dead Winter Soul
+	            "3" { "ItemDef" "4851" } // Dead Winter Mantle
+	            "4" { "ItemDef" "4854" } // Dead Winter Grasp
+	            "5" { "ItemDef" "571" } // Lich's Head
+	            "6" { "ItemDef" "506" } // Lich's Ambient Effects
+	        }
+	    }
+	
 		"AOE_Full"		"100"
 		"AOE_Half"		"200"
 		"UpgradeIcon"		"crystal_maiden_crystal_nova"
@@ -13938,10 +14444,14 @@
 		}
 		"AttackDamageMin"		"4500"
 		"AttackDamageMax"		"4500"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"quake_tower"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -13996,8 +14506,20 @@
 		"AttackRate"		"0.66"
 		"ProjectileModel"		"particles/units/heroes/hero_furion/furion_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.75"
+	
+	    "Model"             "models/heroes/earthshaker/earthshaker.vmdl"
+	    "ModelScale"        "1.0"
+		"Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_earthshaker
+	        {
+	            "1" { "ItemDef" "8144" } // Great Helm of the Behemoth
+	            "2" { "ItemDef" "8145" } // Tine of the Behemoth
+	            "3" { "ItemDef" "8142" } // Bracers of the Behemoth
+	            "4" { "ItemDef" "8143" } // Belt of the Behemoth
+	        }
+	    }
+	
 		"UpgradeIcon"		"earthshaker_aftershock"
 		"BuildTime"		"4"
 		"Requirements"
@@ -14013,10 +14535,14 @@
 		}
 		"AttackDamageMin"		"600"
 		"AttackDamageMax"		"600"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"quake_tower_2"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -14071,8 +14597,20 @@
 		"AttackRate"		"0.66"
 		"ProjectileModel"		"particles/units/heroes/hero_furion/furion_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.75"
+		
+	    "Model"             "models/heroes/earthshaker/earthshaker.vmdl"
+	    "ModelScale"        "1.2"
+		"Creature"
+	    {
+	        "AttachWearables" // Bindings of Deep Magma
+	        {
+	            "1" { "ItemDef" "5640" } // Helm of Impasse
+	            "2" { "ItemDef" "6401" } // Belt of Deep Magma
+	            "3" { "ItemDef" "6820" } // Gravelmaw
+	            "4" { "ItemDef" "6400" } // Arms of Deep Magma
+	        }
+	    }
+	
 		"UpgradeIcon"		"earthshaker_aftershock"
 		"BuildTime"		"4"
 		"Requirements"
@@ -14086,10 +14624,14 @@
 		}
 		"AttackDamageMin"		"3000"
 		"AttackDamageMax"		"3000"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"roots_tower"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -14144,8 +14686,20 @@
 		"AttackRate"		"1"
 		"ProjectileModel"		""
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.7"
+	
+	    "Model"             "models/heroes/treant_protector/treant_protector.vmdl"
+	    "ModelScale"        "1.0"
+		"Creature"
+	    {
+	        "AttachWearables" // Splintering Awe
+	        {
+	            "1" { "ItemDef" "8184" } // Carvings of the Splintering Awe
+	            "2" { "ItemDef" "8181" } // Arms of the Splintering Awe
+	            "3" { "ItemDef" "8182" } // Mask of the Splintering Awe
+	            "4" { "ItemDef" "8183" } // Stock of the Splintering Awe
+	        }
+	    }
+	
 		"UpgradeIcon"		"treant_leech_seed"
 		"BuildTime"		"4"
 		"Requirements"
@@ -14161,10 +14715,14 @@
 		}
 		"AttackDamageMin"		"0"
 		"AttackDamageMax"		"0"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"roots_tower_2"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -14219,8 +14777,20 @@
 		"AttackRate"		"1"
 		"ProjectileModel"		""
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.8"
+	
+	    "Model"             "models/heroes/treant_protector/treant_protector.vmdl"
+	    "ModelScale"        "1.2"
+		"Creature"
+	    {
+	        "AttachWearables" // Agaric Flourish
+	        {
+	            "1" { "ItemDef" "7059" } // Embrace of the Agaric Flourish
+	            "2" { "ItemDef" "7062" } // Canopy of the Agaric Flourish
+	            "3" { "ItemDef" "7060" } // Countenance of the Agaric Flourish
+	            "4" { "ItemDef" "7061" } // Stride of the Agaric Flourish
+	        }
+	    }
+	
 		"UpgradeIcon"		"treant_leech_seed"
 		"BuildTime"		"4"
 		"Requirements"
@@ -14234,10 +14804,14 @@
 		}
 		"AttackDamageMin"		"0"
 		"AttackDamageMax"		"0"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"runic_tower"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -14292,8 +14866,23 @@
 		"AttackRate"		"0.66"
 		"ProjectileModel"		"particles/units/heroes/hero_visage/visage_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.75"
+		
+	    "Model"             "models/heroes/doom/doom.vmdl"
+	    "ModelScale"        "0.8"
+		"Creature"
+	    {
+	        "AttachWearables" // Crown of Hells
+	        {
+	            "1" { "ItemDef" "6102" } // Blade of Soul Hunger
+	            "2" { "ItemDef" "6097" } // Belt of All Hells
+	            "3" { "ItemDef" "6098" } // Crown of Gore
+	            "4" { "ItemDef" "6100" } // Shoulders of Damnation
+	            "5" { "ItemDef" "6095" } // Hell at Arms
+	            "6" { "ItemDef" "6101" } // Tail of Defilement
+	            "7" { "ItemDef" "6096" } // The Burning Banner
+	        }
+	    }
+	
 		"AOE_Full"		"150"
 		"AOE_Half"		"250"
 		"UpgradeIcon"		"visage_gravekeepers_cloak"
@@ -14311,10 +14900,14 @@
 		}
 		"AttackDamageMin"		"400"
 		"AttackDamageMax"		"400"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"runic_tower_2"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
@@ -14369,8 +14962,23 @@
 		"AttackRate"		"0.66"
 		"ProjectileModel"		"particles/units/heroes/hero_visage/visage_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.8"
+	
+	    "Model"             "models/heroes/doom/doom.vmdl"
+	    "ModelScale"        "1.0"
+		"Creature"
+	    {
+	        "AttachWearables" // Fires of Vashundol
+	        {
+	            "1" { "ItemDef" "6947" } // Skull of Vashundol
+	            "2" { "ItemDef" "6887" } // Cloak of Vashundol
+	            "3" { "ItemDef" "6632" } // Bindings of Vashundol
+	            "4" { "ItemDef" "6821" } // Tail of Vashundol
+	            "5" { "ItemDef" "6888" } // Wings of Vashundol
+	            "6" { "ItemDef" "6822" } // Belt of Vashundol
+	            "7" { "ItemDef" "6885" } // Broken Blade of Vashundol
+	        }
+	    }
+	
 		"AOE_Full"		"150"
 		"AOE_Half"		"250"
 		"UpgradeIcon"		"visage_gravekeepers_cloak"
@@ -14386,16 +14994,18 @@
 		}
 		"AttackDamageMin"		"2000"
 		"AttackDamageMax"		"2000"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"torrent_tower"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
 		"MinimapIconSize"		"320"
-		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
-		"particle_folder"		"particles/units/heroes/hero_mirana"
 		"particle_folder"		"particles/units/heroes/hero_morphling"
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -14444,8 +15054,23 @@
 		"AttackRate"		"0.31"
 		"ProjectileModel"		"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.75"
+	
+	    "Model"             "models/heroes/siren/siren.vmdl"
+	    "ModelScale"        "1.0"
+		"Creature"
+	    {
+	        "AttachWearables" // The Slithereen Knight Set
+	        {
+	            "1" { "ItemDef" "5326" } // Might of the Slithereen Knight
+	            "2" { "ItemDef" "5322" } // Breastplate of the Slithereen Knight
+	            "3" { "ItemDef" "5323" } // Helm of the Slithereen Knight
+	            "4" { "ItemDef" "5324" } // Bite of the Slithereen Knight - Off-Hand
+	            "5" { "ItemDef" "5325" } // Tail of the Slithereen Knight
+	            "6" { "ItemDef" "532" } // Naga Siren's Ambient Effects
+	            "7" { "ItemDef" "191" } // Naga Siren's Head
+	        }
+	    }
+	
 		"UpgradeIcon"		"towers/torrent_tower_douse"
 		"BuildTime"		"4"
 		"Requirements"
@@ -14461,16 +15086,18 @@
 		}
 		"AttackDamageMin"		"420"
 		"AttackDamageMax"		"420"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"torrent_tower_2"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
 		"MinimapIconSize"		"320"
-		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
-		"particle_folder"		"particles/units/heroes/hero_mirana"
 		"particle_folder"		"particles/units/heroes/hero_morphling"
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -14519,8 +15146,23 @@
 		"AttackRate"		"0.31"
 		"ProjectileModel"		"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.8"
+	
+	    "Model"             "models/heroes/siren/siren.vmdl"
+	    "ModelScale"        "1.2"
+		"Creature"
+	    {
+	        "AttachWearables" // Iceborn Trinity
+	        {
+	            "1" { "ItemDef" "7041" } // Cutlass of the Iceborn Trinity
+	            "2" { "ItemDef" "7042" } // Offhand Cutlass of the Iceborn Trinity
+	            "3" { "ItemDef" "7043" } // Scales of the Iceborn Trinity
+	            "4" { "ItemDef" "7040" } // Crown of the Iceborn Trinity
+	            "5" { "ItemDef" "7039" } // Clasp of the Iceborn Trinity
+	            "6" { "ItemDef" "532" } // Naga Siren's Ambient Effects
+	            "7" { "ItemDef" "191" } // Naga Siren's Head
+	        }
+	    }
+	
 		"UpgradeIcon"		"towers/torrent_tower_douse"
 		"BuildTime"		"4"
 		"Requirements"
@@ -14534,13 +15176,17 @@
 		}
 		"AttackDamageMin"		"2100"
 		"AttackDamageMax"		"2100"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"windstorm_tornado"
 	{
 		"BaseClass"		"npc_dota_base_additive"
-		"Model"		"models/heroes/attachto_ghost/attachto_ghost.mdl"
+	    "Model"             "models/heroes/attachto_ghost/attachto_ghost.mdl"
 		"SoundSet"		"Creep_Good_Melee"
-		"ModelScale"		"16.0"
+	    "ModelScale"        "16.0"
 		"Level"		"1"
 		"IsSummoned"		"1"
 		"Ability1"		"windstorm_tornado_passive"
@@ -14575,14 +15221,11 @@
 	}
 	"windstorm_tower"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
 		"MinimapIconSize"		"320"
-		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
-		"particle_folder"		"particles/units/heroes/hero_mirana"
-		"particle_folder"		""
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -14630,8 +15273,23 @@
 		"AttackRate"		"1"
 		"ProjectileModel"		""
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.75"
+	
+	    "Model"             "models/heroes/razor/razor.vmdl"
+	    "ModelScale"        "1"
+		"Creature"
+	    {
+	        "AttachWearables" // Bindings of the Storm-Stealer Set
+	        {
+	            "1" { "ItemDef" "5342" } // Storm-Stealer's Armor
+	            "2" { "ItemDef" "5380" } // Storm-Stealer's Whip
+	            "3" { "ItemDef" "5349" } // Storm-Stealer's Bracers
+	            "4" { "ItemDef" "5362" } // Storm-Stealer's Helm
+	            "5" { "ItemDef" "5357" } // Storm-Stealer's Belt
+	            "6" { "ItemDef" "513" } // Razor's Ambient Effects
+	        }
+	    }
+	
+	
 		"UpgradeIcon"		"towers/windstorm_tower_tornado"
 		"BuildTime"		"4"
 		"Requirements"
@@ -14647,17 +15305,18 @@
 		}
 		"AttackDamageMin"		"0"
 		"AttackDamageMax"		"0"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 	"windstorm_tower_2"
 	{
-		"BaseClass"		"npc_dota_tower"
+		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
 		"SoundSet"		""
 		"MinimapIcon"		"minimap_tower90"
 		"MinimapIconSize"		"320"
-		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
-		"particle_folder"		"particles/units/heroes/hero_mirana"
-		"particle_folder"		""
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -14705,8 +15364,23 @@
 		"AttackRate"		"1"
 		"ProjectileModel"		""
 		"ProjectileSpeed"		"900"
-		"Model"		"models/props_structures/tower_good.mdl"
-		"ModelScale"		"0.8"
+		
+	    "Model"             "models/heroes/razor/razor.vmdl"
+	    "ModelScale"        "1.2"
+		"Creature"
+	    {
+	        "AttachWearables" // Empire of the Lightning Lord
+	        {
+	            "1" { "ItemDef" "6646" } // Severing Crest
+	            "2" { "ItemDef" "9354" } // Plate of the Lightning Lord
+	            "3" { "ItemDef" "9356" } // Rings of the Lightning Lord
+	            "4" { "ItemDef" "9357" } // Spark of the Lightning Lord
+	            "5" { "ItemDef" "9355" } // Conduit of the Lightning Lord
+	            "6" { "ItemDef" "513" } // Razor's Ambient Effects
+	        }
+	    }
+	
+	
 		"UpgradeIcon"		"towers/windstorm_tower_tornado"
 		"BuildTime"		"4"
 		"Requirements"
@@ -14720,5 +15394,9 @@
 		}
 		"AttackDamageMin"		"0"
 		"AttackDamageMax"		"0"
+	
+		// Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
 	}
 }

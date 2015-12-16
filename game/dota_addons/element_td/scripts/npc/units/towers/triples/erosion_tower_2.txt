@@ -1,6 +1,6 @@
 "erosion_tower_2"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,21 @@
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.8"
+
+    "Model"             "models/heroes/shadow_demon/shadow_demon.vmdl"
+    "ModelScale"        "1.2"
+	"Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_shadow_demon
+        {
+            "1" { "ItemDef" "545" } // Shadow Demon's Ambient Effects
+            "2" { "ItemDef" "7181" } // Armor of the Umbral Descent
+            "3" { "ItemDef" "7180" } // Belt of the Umbral Descent
+            "4" { "ItemDef" "7179" } // Tail of the Umbral Descent
+            "5" { "ItemDef" "7182" } // Form of the Umbral Descent
+        }
+    }
+
 	"AOE_Full"		"400"
 	"AOE_Half"		"400"
 	"UpgradeIcon"		"towers/erosion_tower_acid_attack"
@@ -72,4 +85,8 @@
 	}
 	"AttackDamageMin"		"0"
 	"AttackDamageMax"		"0"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

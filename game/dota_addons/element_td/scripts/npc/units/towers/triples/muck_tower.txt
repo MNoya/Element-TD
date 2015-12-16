@@ -1,6 +1,6 @@
 "muck_tower"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,22 @@
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_venomancer/venomancer_base_attack.vpcf"
 	"ProjectileSpeed"		"1800"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.75"
+
+    "Model"             "models/heroes/bristleback/bristleback.vmdl"
+    "ModelScale"        "1.0"
+	"Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_bristleback
+        {
+            "1" { "ItemDef" "520" } // Bristleback's Ambient Effects
+            "2" { "ItemDef" "5762" } // Heavy Barbed Arms
+            "3" { "ItemDef" "5763" } // Heavy Barbed Back
+            "4" { "ItemDef" "5766" } // Heavy Barbed Morning Star
+            "5" { "ItemDef" "5764" } // Heavy Barbed Head
+            "6" { "ItemDef" "5765" } // Heavy Barbed Collar
+        }
+    }
+
 	"AOE_Full"		"150"
 	"AOE_Half"		"300"
 	"UpgradeIcon"		"bristleback_viscous_nasal_goo"
@@ -74,4 +88,8 @@
 	}
 	"AttackDamageMin"		"600"
 	"AttackDamageMax"		"600"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

@@ -1,6 +1,6 @@
 "haste_tower"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,21 @@
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_batrider/batrider_base_attack.vpcf"
 	"ProjectileSpeed"		"1200"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.75"
+
+    "Model"             "models/heroes/troll_warlord/troll_warlord.vmdl"
+    "ModelScale"        "1.0"
+	"Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_troll_warlord
+        {
+            "1" { "ItemDef" "411" } // Troll Warlord's Default Head
+            "2" { "ItemDef" "410" } // Troll Warlord's Default Shoulders
+            "3" { "ItemDef" "374" } // Troll Warlord's Default Off-Hand Weapon
+            "4" { "ItemDef" "373" } // Troll Warlord's Default Weapon
+            "5" { "ItemDef" "412" } // Troll Warlord's Default Arms
+        }
+    }
+
 	"UpgradeIcon"		"troll_warlord_fervor"
 	"BuildTime"		"4"
 	"Requirements"
@@ -72,4 +85,8 @@
 	}
 	"AttackDamageMin"		"1020"
 	"AttackDamageMax"		"1020"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

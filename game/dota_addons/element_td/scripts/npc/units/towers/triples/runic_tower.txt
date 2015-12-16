@@ -1,6 +1,6 @@
 "runic_tower"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,23 @@
 	"AttackRate"		"0.66"
 	"ProjectileModel"		"particles/units/heroes/hero_visage/visage_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.75"
+	
+    "Model"             "models/heroes/doom/doom.vmdl"
+    "ModelScale"        "0.8"
+	"Creature"
+    {
+        "AttachWearables" // Crown of Hells
+        {
+            "1" { "ItemDef" "6102" } // Blade of Soul Hunger
+            "2" { "ItemDef" "6097" } // Belt of All Hells
+            "3" { "ItemDef" "6098" } // Crown of Gore
+            "4" { "ItemDef" "6100" } // Shoulders of Damnation
+            "5" { "ItemDef" "6095" } // Hell at Arms
+            "6" { "ItemDef" "6101" } // Tail of Defilement
+            "7" { "ItemDef" "6096" } // The Burning Banner
+        }
+    }
+
 	"AOE_Full"		"150"
 	"AOE_Half"		"250"
 	"UpgradeIcon"		"visage_gravekeepers_cloak"
@@ -74,4 +89,8 @@
 	}
 	"AttackDamageMin"		"400"
 	"AttackDamageMax"		"400"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

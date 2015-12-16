@@ -1,6 +1,6 @@
 "gold_tower_2"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,25 @@
 	"AttackRate"		"1.5"
 	"ProjectileModel"		"particles/units/heroes/hero_venomancer/venomancer_base_attack.vpcf"
 	"ProjectileSpeed"		"1800"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.8"
+
+    "Model"             "models/heroes/alchemist/alchemist.vmdl"
+    "ModelScale"        "1.2"
+	"Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_alchemist
+        {
+            "1" { "ItemDef" "9568" } // Razzil's Midas Knuckles
+            "2" { "ItemDef" "119" } // Alchemist's Saddle
+            "3" { "ItemDef" "121" } // Alchemist's Goblin Hat
+            "4" { "ItemDef" "124" } // Alchemist's Ogre Head
+            "5" { "ItemDef" "117" } // Alchemist's Goblin Body
+            "6" { "ItemDef" "7627" } // Eternal Radiance Blades
+            "7" { "ItemDef" "122" } // Alchemist's Left Bottle
+            "8" { "ItemDef" "125" } // Alchemist's Shoulder Bottle
+            "9" { "ItemDef" "123" } // Alchemist's Goblin Head
+        }
+    }
+
 	"UpgradeIcon"		"towers/gold_tower_arbitrage"
 	"BuildTime"		"4"
 	"Requirements"
@@ -70,4 +87,8 @@
 	}
 	"AttackDamageMin"		"15000"
 	"AttackDamageMax"		"15000"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

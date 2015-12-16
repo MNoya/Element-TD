@@ -1,6 +1,6 @@
 "obliteration_tower"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,22 @@
 	"AttackRate"		"1.5"
 	"ProjectileModel"		""
 	"ProjectileSpeed"		"1000"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.75"
+
+    "Model"             "models/heroes/obsidian_destroyer/obsidian_destroyer.vmdl"
+    "ModelScale"        "0.8"
+	"Creature"
+    {
+        "AttachWearables" // Harbinger of the Inauspicious Abyss Set
+        {
+            "1" { "ItemDef" "4642" } // Thyrsus of the Inauspicious Abyss
+            "2" { "ItemDef" "4641" } // Auspex of the Inauspicious Abyss
+            "3" { "ItemDef" "4586" } // Heart of the Inauspicious Abyss
+            "4" { "ItemDef" "4587" } // Wings of the Inauspicious Abyss
+            "5" { "ItemDef" "533" } // Outworld Devourer's Ambient Effects
+            "6" { "ItemDef" "226" } // Outworld Devourer's Head
+        }
+    }
+
 	"UpgradeIcon"		"obsidian_destroyer_sanity_eclipse"
 	"BuildTime"		"4"
 	"Requirements"
@@ -72,4 +86,8 @@
 	}
 	"AttackDamageMin"		"2500"
 	"AttackDamageMax"		"2500"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

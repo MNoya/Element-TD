@@ -1,6 +1,6 @@
 "nova_tower_2"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,10 @@
 	"AttackRate"		"1.5"
 	"ProjectileModel"		""
 	"ProjectileSpeed"		"900"
-	"Model"		"models/heroes/phoenix/phoenix_egg.vmdl"
-	"ModelScale"		"0.7"
+
+    "Model"             "models/heroes/phoenix/phoenix_egg.vmdl"
+    "ModelScale"        "0.7"
+
 	"UpgradeIcon"		"phoenix_supernova"
 	"BuildTime"		"4"
 	"Requirements"
@@ -70,4 +72,8 @@
 	}
 	"AttackDamageMin"		"0"
 	"AttackDamageMax"		"0"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

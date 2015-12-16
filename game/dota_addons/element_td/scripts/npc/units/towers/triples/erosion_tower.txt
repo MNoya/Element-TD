@@ -1,6 +1,6 @@
 "erosion_tower"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,21 @@
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_warlock/warlock_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.7"
+
+    "Model"             "models/heroes/shadow_demon/shadow_demon.vmdl"
+    "ModelScale"        "1.0"
+	"Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_shadow_demon
+        {
+            "1" { "ItemDef" "396" } // Shadow Demon's Cape
+            "2" { "ItemDef" "545" } // Shadow Demon's Ambient Effects
+            "3" { "ItemDef" "398" } // Shadow Demon's Belt
+            "4" { "ItemDef" "397" } // Shadow Demon's Armor
+            "5" { "ItemDef" "399" } // Shadow Demon's Tail
+        }
+    }
+
 	"AOE_Full"		"400"
 	"AOE_Half"		"400"
 	"UpgradeIcon"		"towers/erosion_tower_acid_attack"
@@ -74,4 +87,8 @@
 	}
 	"AttackDamageMin"		"0"
 	"AttackDamageMax"		"0"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

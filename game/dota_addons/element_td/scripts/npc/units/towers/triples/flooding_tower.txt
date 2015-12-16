@@ -1,6 +1,6 @@
 "flooding_tower"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,22 @@
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.75"
+
+    "Model"             "models/heroes/tidehunter/tidehunter.vmdl"
+    "ModelScale"        "1.0"
+	"Creature"
+    {
+        "AttachWearables" // Deepweed Drowner
+        {
+            "1" { "ItemDef" "6469" } // Belt of the Deepweed Drowner
+            "2" { "ItemDef" "6468" } // Back Fins of the Deepweed Drowner
+            "3" { "ItemDef" "6470" } // Head Fins of the Deepweed Drowner
+            "4" { "ItemDef" "6340" } // Wrecking Ball
+            "5" { "ItemDef" "6467" } // Arm Fins of the Deepweed Drowner
+            "6" { "ItemDef" "6471" } // Conch Cudgel
+        }
+    }	
+
 	"BuildTime"		"4"
 	"UpgradeIcon"		"naga_siren_rip_tide"
 	"Requirements"
@@ -72,4 +86,8 @@
 	}
 	"AttackDamageMin"		"950"
 	"AttackDamageMax"		"950"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

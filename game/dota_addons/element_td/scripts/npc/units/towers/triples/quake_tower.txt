@@ -1,6 +1,6 @@
 "quake_tower"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,20 @@
 	"AttackRate"		"0.66"
 	"ProjectileModel"		"particles/units/heroes/hero_furion/furion_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.75"
+
+    "Model"             "models/heroes/earthshaker/earthshaker.vmdl"
+    "ModelScale"        "1.0"
+	"Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_earthshaker
+        {
+            "1" { "ItemDef" "8144" } // Great Helm of the Behemoth
+            "2" { "ItemDef" "8145" } // Tine of the Behemoth
+            "3" { "ItemDef" "8142" } // Bracers of the Behemoth
+            "4" { "ItemDef" "8143" } // Belt of the Behemoth
+        }
+    }
+
 	"UpgradeIcon"		"earthshaker_aftershock"
 	"BuildTime"		"4"
 	"Requirements"
@@ -72,4 +84,8 @@
 	}
 	"AttackDamageMin"		"600"
 	"AttackDamageMax"		"600"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

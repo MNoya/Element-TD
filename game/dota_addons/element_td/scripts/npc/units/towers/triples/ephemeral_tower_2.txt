@@ -1,6 +1,6 @@
 "ephemeral_tower_2"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,21 @@
 	"AttackRate"		"0.31"
 	"ProjectileModel"		"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.8"
+
+    "Model"             "models/heroes/windrunner/windrunner.vmdl"
+    "ModelScale"        "1.4"
+	"Creature"
+    {
+        "AttachWearables" // Falconside Armor
+        {
+            "1" { "ItemDef" "6687" } // Sylvan Cascade
+            "2" { "ItemDef" "8585" } // Quiver of Falconside Armor
+            "3" { "ItemDef" "6758" } // Rainmaker
+            "4" { "ItemDef" "8584" } // Tiara of Falconside Armor
+            "5" { "ItemDef" "8582" } // Pauldrons of Falconside Armor
+        }
+    }
+
 	"UpgradeIcon"		"towers/ephemeral_tower_phasing"
 	"BuildTime"		"4"
 	"Requirements"
@@ -70,4 +83,8 @@
 	}
 	"AttackDamageMin"		"9000"
 	"AttackDamageMax"		"9000"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

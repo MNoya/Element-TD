@@ -1,6 +1,6 @@
 "hail_tower_2"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,23 @@
 	"AttackRate"		"0.31"
 	"ProjectileModel"		"particles/units/heroes/hero_ancient_apparition/ancient_apparition_base_attack.vpcf"
 	"ProjectileSpeed"		"1250"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.8"
+
+    "Model"             "models/heroes/drow/drow.vmdl"
+    "ModelScale"        "1.4"
+	"Creature"
+    {
+        "AttachWearables" // Eldwurm's Touch
+        {
+            "1" { "ItemDef" "7058" } // Bow of the Eldwurm's Touch
+            "2" { "ItemDef" "7057" } // Pauldrons of the Eldwurm's Touch
+            "3" { "ItemDef" "7056" } // Quiver of the Eldwurm's Touch
+            "4" { "ItemDef" "7053" } // Cape of the Eldwurm's Touch
+            "5" { "ItemDef" "7052" } // Bracers of the Eldwurm's Touch
+            "6" { "ItemDef" "7055" } // Boots of the Eldwurm's Touch
+            "7" { "ItemDef" "7054" } // Helmet of the Eldwurm's Touch
+        }
+    }
+
 	"UpgradeIcon"		"crystal_maiden_freezing_field"
 	"BuildTime"		"4"
 	"Requirements"
@@ -70,4 +85,8 @@
 	}
 	"AttackDamageMin"		"1950"
 	"AttackDamageMax"		"1950"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

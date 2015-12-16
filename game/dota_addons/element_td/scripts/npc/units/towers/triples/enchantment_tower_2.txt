@@ -1,6 +1,6 @@
 "enchantment_tower_2"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,21 @@
 	"AttackRate"		"0.31"
 	"ProjectileModel"		"particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.8"
+
+    "Model"             "models/heroes/oracle/oracle.vmdl"
+    "ModelScale"        "1.2"
+	"Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_oracle
+        {
+            "1" { "ItemDef" "546" } // Oracle's Armor
+            "2" { "ItemDef" "547" } // Oracle's Back Item
+            "3" { "ItemDef" "549" } // Oracle's Weapon
+            "4" { "ItemDef" "548" } // Oracle's Head Item
+            "5" { "ItemDef" "550" } // Oracle's Ambient Effects
+        }
+    }
+
 	"AOE_Full"		"100"
 	"AOE_Half"		"200"
 	"UpgradeIcon"		"leshrac_diabolic_edict"
@@ -72,4 +85,8 @@
 	}
 	"AttackDamageMin"		"1395"
 	"AttackDamageMax"		"1395"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

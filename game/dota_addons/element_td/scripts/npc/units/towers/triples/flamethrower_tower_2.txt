@@ -1,6 +1,6 @@
 "flamethrower_tower_2"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,21 @@
 	"AttackRate"		"0.66"
 	"ProjectileModel"		"particles/units/heroes/hero_batrider/batrider_base_attack.vpcf"
 	"ProjectileSpeed"		"2500"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.8"
+
+    "Model"             "models/heroes/batrider/batrider.vmdl"
+    "ModelScale"        "1.0"
+	"Creature"
+    {
+        "AttachWearables" // Flamestitched Suitings Set
+        {
+        	"1" { "ItemDef" "375" } // Batrider's Head
+            "2" { "ItemDef" "9376" } // Mask of the Marauding Pyro
+            "3" { "ItemDef" "9388" } // Glider of the Marauding Pyro
+            "4" { "ItemDef" "9386" } // Cocktail of the Marauding Pyro
+            "5" { "ItemDef" "9387" } // Torch
+        }
+    }
+
 	"AOE_Half"		"300"
 	"AOE_Full"		"150"
 	"UpgradeIcon"		"batrider_sticky_napalm"
@@ -72,4 +85,8 @@
 	}
 	"AttackDamageMin"		"1500"
 	"AttackDamageMax"		"1500"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

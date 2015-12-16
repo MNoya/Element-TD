@@ -1,6 +1,6 @@
 "runic_tower_2"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,23 @@
 	"AttackRate"		"0.66"
 	"ProjectileModel"		"particles/units/heroes/hero_visage/visage_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.8"
+
+    "Model"             "models/heroes/doom/doom.vmdl"
+    "ModelScale"        "1.0"
+	"Creature"
+    {
+        "AttachWearables" // Fires of Vashundol
+        {
+            "1" { "ItemDef" "6947" } // Skull of Vashundol
+            "2" { "ItemDef" "6887" } // Cloak of Vashundol
+            "3" { "ItemDef" "6632" } // Bindings of Vashundol
+            "4" { "ItemDef" "6821" } // Tail of Vashundol
+            "5" { "ItemDef" "6888" } // Wings of Vashundol
+            "6" { "ItemDef" "6822" } // Belt of Vashundol
+            "7" { "ItemDef" "6885" } // Broken Blade of Vashundol
+        }
+    }
+
 	"AOE_Full"		"150"
 	"AOE_Half"		"250"
 	"UpgradeIcon"		"visage_gravekeepers_cloak"
@@ -72,4 +87,8 @@
 	}
 	"AttackDamageMin"		"2000"
 	"AttackDamageMax"		"2000"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

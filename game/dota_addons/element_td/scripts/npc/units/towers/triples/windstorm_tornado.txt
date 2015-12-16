@@ -1,9 +1,9 @@
 "windstorm_tornado"
 {
 	"BaseClass"		"npc_dota_base_additive"
-	"Model"		"models/heroes/attachto_ghost/attachto_ghost.mdl"
+    "Model"             "models/heroes/attachto_ghost/attachto_ghost.mdl"
 	"SoundSet"		"Creep_Good_Melee"
-	"ModelScale"		"16.0"
+    "ModelScale"        "16.0"
 	"Level"		"1"
 	"IsSummoned"		"1"
 	"Ability1"		"windstorm_tornado_passive"

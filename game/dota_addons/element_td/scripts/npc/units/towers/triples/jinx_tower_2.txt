@@ -1,6 +1,6 @@
 "jinx_tower_2"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,21 @@
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_witchdoctor/witchdoctor_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
-	"Model"		"models/heroes/witchdoctor/witchdoctor_ward.vmdl"
-	"ModelScale"		"0.95"
+	
+    "Model"             "models/heroes/witchdoctor/witchdoctor.vmdl"
+    "ModelScale"        "1.2"
+	"Creature"
+    {
+        "AttachWearables" // Twilight's Rest
+        {
+            "1" { "ItemDef" "7550" } // Cloak of Twilight's Rest
+            "2" { "ItemDef" "7551" } // Mantle of Twilight's Rest
+            "3" { "ItemDef" "7553" } // Mask of Twilight's Rest
+            "4" { "ItemDef" "7552" } // Scourge of Twilight's Rest
+            "5" { "ItemDef" "7554" } // Wrap of Twilight's Rest
+        }
+    }
+
 	"UpgradeIcon"		"witch_doctor_maledict"
 	"BuildTime"		"4"
 	"Requirements"
@@ -70,4 +83,8 @@
 	}
 	"AttackDamageMin"		"10500"
 	"AttackDamageMax"		"10500"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

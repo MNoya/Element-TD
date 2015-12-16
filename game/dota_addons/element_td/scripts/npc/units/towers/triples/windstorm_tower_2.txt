@@ -1,13 +1,10 @@
 "windstorm_tower_2"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
 	"MinimapIconSize"		"320"
-	"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
-	"particle_folder"		"particles/units/heroes/hero_mirana"
-	"particle_folder"		""
 	"ArmorPhysical"		"0"
 	"MagicalResistance"		"0"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -55,8 +52,23 @@
 	"AttackRate"		"1"
 	"ProjectileModel"		""
 	"ProjectileSpeed"		"900"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.8"
+	
+    "Model"             "models/heroes/razor/razor.vmdl"
+    "ModelScale"        "1.2"
+	"Creature"
+    {
+        "AttachWearables" // Empire of the Lightning Lord
+        {
+            "1" { "ItemDef" "6646" } // Severing Crest
+            "2" { "ItemDef" "9354" } // Plate of the Lightning Lord
+            "3" { "ItemDef" "9356" } // Rings of the Lightning Lord
+            "4" { "ItemDef" "9357" } // Spark of the Lightning Lord
+            "5" { "ItemDef" "9355" } // Conduit of the Lightning Lord
+            "6" { "ItemDef" "513" } // Razor's Ambient Effects
+        }
+    }
+
+
 	"UpgradeIcon"		"towers/windstorm_tower_tornado"
 	"BuildTime"		"4"
 	"Requirements"
@@ -70,4 +82,8 @@
 	}
 	"AttackDamageMin"		"0"
 	"AttackDamageMax"		"0"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

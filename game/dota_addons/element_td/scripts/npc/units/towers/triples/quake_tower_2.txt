@@ -1,6 +1,6 @@
 "quake_tower_2"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,20 @@
 	"AttackRate"		"0.66"
 	"ProjectileModel"		"particles/units/heroes/hero_furion/furion_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.75"
+	
+    "Model"             "models/heroes/earthshaker/earthshaker.vmdl"
+    "ModelScale"        "1.2"
+	"Creature"
+    {
+        "AttachWearables" // Bindings of Deep Magma
+        {
+            "1" { "ItemDef" "5640" } // Helm of Impasse
+            "2" { "ItemDef" "6401" } // Belt of Deep Magma
+            "3" { "ItemDef" "6820" } // Gravelmaw
+            "4" { "ItemDef" "6400" } // Arms of Deep Magma
+        }
+    }
+
 	"UpgradeIcon"		"earthshaker_aftershock"
 	"BuildTime"		"4"
 	"Requirements"
@@ -70,4 +82,8 @@
 	}
 	"AttackDamageMin"		"3000"
 	"AttackDamageMax"		"3000"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

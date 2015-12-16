@@ -1,6 +1,6 @@
 "impulse_tower"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,21 @@
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_enchantress/enchantress_impetus.vpcf"
 	"ProjectileSpeed"		"2000"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.75"
+
+    "Model"             "models/heroes/enchantress/enchantress.vmdl"
+    "ModelScale"        "1.0"
+	"Creature"
+    {
+        "AttachWearables" // Aspects of Summer
+        {
+            "1" { "ItemDef" "5023" } // Summer's Light
+            "2" { "ItemDef" "5024" } // Summer's Charm
+            "3" { "ItemDef" "5022" } // Summer's Mirth
+            "4" { "ItemDef" "5025" } // Summer's Warmth
+            "5" { "ItemDef" "5021" } // Summer's Bounty
+        }
+    }
+    
 	"UpgradeIcon"		"enchantress_impetus"
 	"BuildTime"		"4"
 	"Requirements"
@@ -72,4 +85,8 @@
 	}
 	"AttackDamageMin"		"0"
 	"AttackDamageMax"		"0"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }

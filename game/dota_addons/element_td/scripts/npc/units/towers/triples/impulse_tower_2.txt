@@ -1,6 +1,6 @@
 "impulse_tower_2"
 {
-	"BaseClass"		"npc_dota_tower"
+	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
 	"SoundSet"		""
 	"MinimapIcon"		"minimap_tower90"
@@ -55,8 +55,21 @@
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_enchantress/enchantress_impetus.vpcf"
 	"ProjectileSpeed"		"900"
-	"Model"		"models/props_structures/tower_good.mdl"
-	"ModelScale"		"0.8"
+	
+    "Model"             "models/heroes/enchantress/enchantress.vmdl"
+    "ModelScale"        "1.2"
+	"Creature"
+    {
+        "AttachWearables" // Blessings of the Wildwing
+        {
+            "1" { "ItemDef" "6857" } // Flourishing Lodestar
+            "2" { "ItemDef" "4787" } // Wingbelt of the Wildwing's Blessing
+            "3" { "ItemDef" "4678" } // Necklace of the Wildwing's Blessing
+            "4" { "ItemDef" "4785" } // Spear of the Wildwing's Blessing
+            "5" { "ItemDef" "4676" } // Bangles of the Wildwing's Blessing
+        }
+    }
+
 	"UpgradeIcon"		"enchantress_impetus"
 	"BuildTime"		"4"
 	"Requirements"
@@ -70,4 +83,8 @@
 	}
 	"AttackDamageMin"		"0"
 	"AttackDamageMax"		"0"
+
+	// Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
 }
