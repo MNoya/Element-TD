@@ -1,4 +1,4 @@
-"abomination"
+"flesh_golem"
 {
 	"ArmorPhysical"		"0"
 	"MagicalResistance"		"0"

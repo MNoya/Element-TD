@@ -1306,7 +1306,7 @@
 		"Ability1"		"fire_armor"
 		"Ability2"		"creep_ability_undead"
 	}
-	"abomination"
+	"flesh_golem"
 	{
 		"ArmorPhysical"		"0"
 		"MagicalResistance"		"0"
@@ -2792,7 +2792,7 @@
 		"SoundSet"		""
 		"ScriptClass"		"CreepHeal"
 		"Ability1"		"light_armor"
-		"Ability2"		"creep_ability_Heal"
+		"Ability2"		"creep_ability_heal"
 	}
 	"razor"
 	{

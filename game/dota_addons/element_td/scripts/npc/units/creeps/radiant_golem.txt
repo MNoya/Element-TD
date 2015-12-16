@@ -28,5 +28,5 @@
 	"SoundSet"		""
 	"ScriptClass"		"CreepHeal"
 	"Ability1"		"light_armor"
-	"Ability2"		"creep_ability_Heal"
+	"Ability2"		"creep_ability_heal"
 }

@@ -25,8 +25,13 @@ function loadWaveData(chaos)
     WAVE_HEALTH = {}
     for k, v in pairs(kv) do
         if tonumber(k) and tonumber(k) <= WAVE_COUNT then
-        	WAVE_CREEPS[tonumber(k)] = v.Creep
-        	WAVE_HEALTH[tonumber(k)] = v.Health
+            if EXPRESS_MODE then
+               WAVE_CREEPS[tonumber(k)] = v.CreepExpress
+               WAVE_HEALTH[tonumber(k)] = v.HealthExpress
+            else
+        	   WAVE_CREEPS[tonumber(k)] = v.Creep
+        	   WAVE_HEALTH[tonumber(k)] = v.Health
+            end
         end
     end
     if chaos then
