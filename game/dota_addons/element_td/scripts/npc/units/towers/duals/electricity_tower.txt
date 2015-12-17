@@ -50,8 +50,10 @@
 	"AttackRate"		"1"
 	"ProjectileModel"		""
 	"ProjectileSpeed"		"1000"
-	"Model"		"models/heroes/storm_spirit/storm_spirit.vmdl"
-	"ModelScale"		"0.9"
+
+    "Model"            "models/heroes/zuus/zuus.vmdl"
+    "ModelScale"       "0.9"
+
 	"UpgradeIcon"		"towers/electricty_tower_conjure_lightning"
 	"BuildTime"		"3"
 	"Requirements"
@@ -70,24 +72,6 @@
 	}
 	"AttackDamageMin"		"0"
 	"AttackDamageMax"		"0"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"		"308" // Hat
-			}
-			"Wearable2"
-			{
-				"ItemDef"		"309" // Shoulder
-			}
-			"Wearable3"
-			{
-				"ItemDef"		"310" // Shirt
-			}
-		}
-	}
 
     // Building Size
     "ConstructionSize"          "2"

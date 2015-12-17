@@ -50,8 +50,22 @@
 	"AttackRate"		"1"
 	"ProjectileModel"		""
 	"ProjectileSpeed"		"1000"
-	"Model"		"models/heroes/storm_spirit/storm_spirit.vmdl"
-	"ModelScale"		"1.3"
+
+    "Model"            "models/heroes/zeus/zeus_arcana.vmdl"
+    "ModelScale"       "1.2"
+    "Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_zuus
+        {
+            "1" { "ItemDef" "605" } // Zeus Ambient Effects
+            "2" { "ItemDef" "606" } // Zeus' Belt
+            "3" { "ItemDef" "607" } // Zeus' Back
+            "4" { "ItemDef" "6914" } // Tempest Helm of the Thundergod
+            "5" { "ItemDef" "8693" } // Thundergod's Bare Chest
+            "6" { "ItemDef" "8692" } // Thundergod's Bare Arms
+        }
+    }
+
 	"UpgradeIcon"		"towers/electricty_tower_conjure_lightning"
 	"BuildTime"		"3"
 	"Requirements"

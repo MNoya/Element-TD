@@ -8116,8 +8116,10 @@
 		"AttackRate"		"1"
 		"ProjectileModel"		""
 		"ProjectileSpeed"		"1000"
-		"Model"		"models/heroes/storm_spirit/storm_spirit.vmdl"
-		"ModelScale"		"0.9"
+	
+	    "Model"            "models/heroes/zuus/zuus.vmdl"
+	    "ModelScale"       "0.9"
+	
 		"UpgradeIcon"		"towers/electricty_tower_conjure_lightning"
 		"BuildTime"		"3"
 		"Requirements"
@@ -8136,24 +8138,6 @@
 		}
 		"AttackDamageMin"		"0"
 		"AttackDamageMax"		"0"
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1"
-				{
-					"ItemDef"		"308" // Hat
-				}
-				"Wearable2"
-				{
-					"ItemDef"		"309" // Shoulder
-				}
-				"Wearable3"
-				{
-					"ItemDef"		"310" // Shirt
-				}
-			}
-		}
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -8211,8 +8195,21 @@
 		"AttackRate"		"1"
 		"ProjectileModel"		""
 		"ProjectileSpeed"		"1000"
-		"Model"		"models/heroes/storm_spirit/storm_spirit.vmdl"
-		"ModelScale"		"1.1"
+	
+	    "Model"            "models/heroes/zeus/zeus.vmdl"
+	    "ModelScale"       "1.0"
+	    "Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_zuus
+	        {
+	            "1" { "ItemDef" "589" } // Zeus' Arms
+	            "2" { "ItemDef" "604" } // Zeus' Head
+	            "3" { "ItemDef" "605" } // Zeus Ambient Effects
+	            "4" { "ItemDef" "606" } // Zeus' Belt
+	            "5" { "ItemDef" "607" } // Zeus' Back
+	        }
+	    }
+	
 		"UpgradeIcon"		"towers/electricty_tower_conjure_lightning"
 		"BuildTime"		"3"
 		"Requirements"
@@ -8227,15 +8224,6 @@
 		}
 		"AttackDamageMin"		"0"
 		"AttackDamageMax"		"0"
-	    "Creature"
-	    {
-	       "AttachWearables" // Gifts of Fortune Set
-	       {
-	            "1" { "ItemDef" "6023" } // Scale Pauldrons of Good Fortune
-	            "2" { "ItemDef" "6019" } // Festive Robes of Good Fortune
-	            "3" { "ItemDef" "6022" } // Ornate Hat of Good Fortune
-	       }
-	    }
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -8293,8 +8281,22 @@
 		"AttackRate"		"1"
 		"ProjectileModel"		""
 		"ProjectileSpeed"		"1000"
-		"Model"		"models/heroes/storm_spirit/storm_spirit.vmdl"
-		"ModelScale"		"1.3"
+	
+	    "Model"            "models/heroes/zeus/zeus_arcana.vmdl"
+	    "ModelScale"       "1.2"
+	    "Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_zuus
+	        {
+	            "1" { "ItemDef" "605" } // Zeus Ambient Effects
+	            "2" { "ItemDef" "606" } // Zeus' Belt
+	            "3" { "ItemDef" "607" } // Zeus' Back
+	            "4" { "ItemDef" "6914" } // Tempest Helm of the Thundergod
+	            "5" { "ItemDef" "8693" } // Thundergod's Bare Chest
+	            "6" { "ItemDef" "8692" } // Thundergod's Bare Arms
+	        }
+	    }
+	
 		"UpgradeIcon"		"towers/electricty_tower_conjure_lightning"
 		"BuildTime"		"3"
 		"Requirements"
@@ -11806,17 +11808,16 @@
 		"ProjectileModel"		"particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
 	
-	    "Model"             "models/heroes/oracle/oracle.vmdl"
+	    "Model"             "models/heroes/arc_warden/arc_warden.vmdl"
 	    "ModelScale"        "1.2"
-		"Creature"
+	    "Creature"
 	    {
-	        "AttachWearables" // Default npc_dota_hero_oracle
+	        "AttachWearables" // Default npc_dota_hero_arc_warden
 	        {
-	            "1" { "ItemDef" "546" } // Oracle's Armor
-	            "2" { "ItemDef" "547" } // Oracle's Back Item
-	            "3" { "ItemDef" "549" } // Oracle's Weapon
-	            "4" { "ItemDef" "548" } // Oracle's Head Item
-	            "5" { "ItemDef" "550" } // Oracle's Ambient Effects
+	            "1" { "ItemDef" "598" } // Arc Warden's Back
+	            "2" { "ItemDef" "601" } // Arc Warden's Ambient Effects
+	            "3" { "ItemDef" "556" } // Arc Warden's Bracers
+	            "4" { "ItemDef" "557" } // Arc Warden's Shoulders
 	        }
 	    }
 	

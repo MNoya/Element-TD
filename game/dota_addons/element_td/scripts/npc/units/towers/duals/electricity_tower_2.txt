@@ -50,8 +50,21 @@
 	"AttackRate"		"1"
 	"ProjectileModel"		""
 	"ProjectileSpeed"		"1000"
-	"Model"		"models/heroes/storm_spirit/storm_spirit.vmdl"
-	"ModelScale"		"1.1"
+
+    "Model"            "models/heroes/zeus/zeus.vmdl"
+    "ModelScale"       "1.0"
+    "Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_zuus
+        {
+            "1" { "ItemDef" "589" } // Zeus' Arms
+            "2" { "ItemDef" "604" } // Zeus' Head
+            "3" { "ItemDef" "605" } // Zeus Ambient Effects
+            "4" { "ItemDef" "606" } // Zeus' Belt
+            "5" { "ItemDef" "607" } // Zeus' Back
+        }
+    }
+
 	"UpgradeIcon"		"towers/electricty_tower_conjure_lightning"
 	"BuildTime"		"3"
 	"Requirements"
@@ -66,15 +79,6 @@
 	}
 	"AttackDamageMin"		"0"
 	"AttackDamageMax"		"0"
-    "Creature"
-    {
-       "AttachWearables" // Gifts of Fortune Set
-       {
-            "1" { "ItemDef" "6023" } // Scale Pauldrons of Good Fortune
-            "2" { "ItemDef" "6019" } // Festive Robes of Good Fortune
-            "3" { "ItemDef" "6022" } // Ornate Hat of Good Fortune
-       }
-    }
 
     // Building Size
     "ConstructionSize"          "2"

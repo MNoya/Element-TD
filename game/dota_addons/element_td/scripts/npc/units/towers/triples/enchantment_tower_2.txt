@@ -56,17 +56,16 @@
 	"ProjectileModel"		"particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
 
-    "Model"             "models/heroes/oracle/oracle.vmdl"
+    "Model"             "models/heroes/arc_warden/arc_warden.vmdl"
     "ModelScale"        "1.2"
-	"Creature"
+    "Creature"
     {
-        "AttachWearables" // Default npc_dota_hero_oracle
+        "AttachWearables" // Default npc_dota_hero_arc_warden
         {
-            "1" { "ItemDef" "546" } // Oracle's Armor
-            "2" { "ItemDef" "547" } // Oracle's Back Item
-            "3" { "ItemDef" "549" } // Oracle's Weapon
-            "4" { "ItemDef" "548" } // Oracle's Head Item
-            "5" { "ItemDef" "550" } // Oracle's Ambient Effects
+            "1" { "ItemDef" "598" } // Arc Warden's Back
+            "2" { "ItemDef" "601" } // Arc Warden's Ambient Effects
+            "3" { "ItemDef" "556" } // Arc Warden's Bracers
+            "4" { "ItemDef" "557" } // Arc Warden's Shoulders
         }
     }
 
