@@ -15,58 +15,37 @@ BlacksmithTower = createClass({
     },
 nil)    
 
+-- the thinker function for the blacksmith_tower_fire_up spell
 function BlacksmithTower:FireUpThink()
     if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() then
-        -- let's find a target to autocast on
-        local towers = Entities:FindAllByClassnameWithin("npc_dota_tower", self.tower:GetOrigin(), self.ability:GetCastRange())    
-        local highestDamage = 0    
-        local theChosenOne = nil    
+        
+        -- let's find a target to cast on
+        local towers = FindUnitsInRadius(self.tower:GetTeamNumber(), self.tower:GetOrigin(), nil, self.castRange, 
+                        DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
+        local highestDamage = 0
+        local theChosenOne = nil
 
-        -- find out the tower with the highest damage. Is this a bad choosing algorithm?
+        -- find out the tower with the highest damage
         for _, tower in pairs(towers) do
-            if IsTower(tower) and tower:GetOwner():GetPlayerID() == self.playerID and not IsSupportTower(tower) then
+            if IsTower(tower) and tower:GetOwner():GetPlayerID() == self.playerID and not IsSupportTower(tower) and tower:IsAlive() and not tower.deleted then
                 if tower:GetBaseDamageMax() >= highestDamage then
-                    if not HasAnyModifier(tower, {"modifier_fire_up_1", "modifier_fire_up_2", "modifier_fire_up_3"}) then
-                        highestDamage = tower:GetBaseDamageMax()    
-                        theChosenOne = tower    
+            
+                    local modifier = tower:FindModifierByName("modifier_fire_up")
+                    if not modifier or self.level > modifier.level then 
+                        highestDamage = tower:GetBaseDamageMax()
+                        theChosenOne = tower
                     end
+
                 end
             end
         end
 
         if theChosenOne then
-            self.tower:CastAbilityOnTarget(theChosenOne, self.ability, 1)    
+            self.tower:CastAbilityOnTarget(theChosenOne, self.ability, self.playerID)
         end
     end
 end
 
-function BlacksmithTower:OnFireUpCast(keys)
-    local target = keys.target    
-    local playerID = self.tower:GetOwner():GetPlayerID()    
-
-    if not IsTower(target) then
-        self.ability:EndCooldown()    
-        ShowWarnMessage(playerID, "Ability can only target towers!")    
-        return    
-    end
-
-    if target:GetOwner():GetPlayerID() ~= self.playerID then
-        self.ability:EndCooldown()    
-        ShowWarnMessage(playerID, "Ability can only target your own towers!")    
-        return    
-    end
-
-    if IsSupportTower(target) then
-        self.ability:EndCooldown()    
-        ShowWarnMessage(playerID, "Ability can't target support towers!")    
-        return    
-    end
-
-    target:RemoveModifierByName("modifier_fire_up_1")    
-    target:RemoveModifierByName("modifier_fire_up_2")    
-    target:RemoveModifierByName("modifier_fire_up_3")    
-    self.ability:ApplyDataDrivenModifier(self.tower, target, "modifier_fire_up_" .. self.ability:GetLevel(), {})    
-end
 
 function BlacksmithTower:OnAttackLanded(keys)
     local target = keys.target    
@@ -76,19 +55,27 @@ end
 
 function BlacksmithTower:OnCreated()
     self.ability = AddAbility(self.tower, "blacksmith_tower_fire_up", GetUnitKeyValue(self.towerClass, "Level"))    
+    self.castRange = self.ability:GetCastRange(self.tower:GetAbsOrigin(), self.tower)
+    self.level = self.ability:GetLevel()
+    self.ability:ToggleAutoCast() -- turn on autocast by default
+    self.playerID = self.tower:GetOwner():GetPlayerID()    
+end
+
+function BlacksmithTower:OnBuildingFinished()
     Timers:CreateTimer(function()
         if IsValidEntity(self.tower) then
             self:FireUpThink()
             return 1
         end
     end)
-    self.ability:ToggleAutoCast()    
-    self.playerID = self.tower:GetOwner():GetPlayerID()    
 end
 
 function BlacksmithTower:ApplyUpgradeData(data)
     if data.cooldown and data.cooldown > 1 then
-        self.ability:StartCooldown(data.cooldown)    
+        self.ability:StartCooldown(data.cooldown)
+    end
+    if data.autocast == false then
+        self.ability:ToggleAutoCast()
     end
 end
 
@@ -99,16 +86,4 @@ function BlacksmithTower:GetUpgradeData()
     }    
 end
 
-RegisterTowerClass(BlacksmithTower, BlacksmithTower.className)    
-RegisterModifier("modifier_fire_up_1", {
-    bonus_damage_percent = 15,
-    bonus_ability_damage_percent = 15
-})    
-RegisterModifier("modifier_fire_up_2", {
-    bonus_damage_percent = 30,
-    bonus_ability_damage_percent = 30
-})    
-RegisterModifier("modifier_fire_up_3", {
-    bonus_damage_percent = 90,
-    bonus_ability_damage_percent = 90
-})    
+RegisterTowerClass(BlacksmithTower, BlacksmithTower.className)

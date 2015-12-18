@@ -21,11 +21,12 @@ function WellTower:SpringForwardThink()
     if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() then
         
         -- let's find a target to cast on
-        local towers = Entities:FindAllByClassnameWithin("npc_dota_creature", self.tower:GetOrigin(), self.castRange)
+        local towers = FindUnitsInRadius(self.tower:GetTeamNumber(), self.tower:GetOrigin(), nil, self.castRange, 
+                        DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
         local highestDamage = 0
         local theChosenOne = nil
 
-        -- find out the tower with the highest damage. Is this a bad choosing algorithm?
+        -- find out the tower with the highest damage
         for _, tower in pairs(towers) do
             if IsTower(tower) and tower:GetOwner():GetPlayerID() == self.playerID and not IsSupportTower(tower) and tower:IsAlive() and not tower.deleted then
                 if tower:GetBaseDamageMax() >= highestDamage then

@@ -37,7 +37,7 @@ function well_tower_spring_forward:CastFilterResultTarget(target)
 	if IsServer() then
 		local modifier = target:FindModifierByName("modifier_spring_forward")
 		if modifier and modifier.level > self:GetLevel() then
-			return UF_FAIL_CUSTOM;
+			return UF_FAIL_CUSTOM
 		end
 	end
 
