@@ -184,9 +184,14 @@ end
 
 function ElementTD:EndGameForPlayer( playerID )
     local playerData = GetPlayerData(playerID)
-    Log:info("Player "..playerID.." has been defeated on wave "..playerData.nextWave..".")
-    GameRules:SendCustomMessage(playerData.name.." has been defeated on wave "..playerData.nextWave..".", 0, 0)
 
+    if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then
+        Log:info("Player "..playerID.." has been defeated on the boss wave "..playerData.nextWave..".")
+        GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerData.name.."</font> has completed the game!", 0, 0)
+    else
+        Log:info("Player "..playerID.." has been defeated on wave "..playerData.nextWave..".")
+        GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerData.name.."</font> has been defeated on wave "..playerData.nextWave.."!", 0, 0)
+    end
     -- Clean up
     UpdatePlayerSpells(playerID)
 
@@ -211,16 +216,18 @@ function ElementTD:CheckGameEnd()
     local endGame = true
     for k, ply in pairs(players) do
         local playerData = GetPlayerData(ply:GetPlayerID())
-        if playerData.health ~= 0 or playerData.completedWaves < WAVE_COUNT then
+        print(#players, playerData.health, playerData.completedWaves)
+        if playerData.health ~= 0 or (playerData.health ~= 0 and playerData.completedWaves < WAVE_COUNT and EXPRESS_MODE) then
             endGame = false
         end
     end
     if endGame then
         Log:info("Game end condition reached.")
         GameRules:SendCustomMessage("Thank you for playing <font color='#70EA72'>Element Tower Defense</font>!", 0, 0)
-
-        GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
-        GameRules:SetSafeToLeave( true )
+        Timers:CreateTimer(5, function()
+            GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
+            GameRules:SetSafeToLeave( true )
+        end)
     end
 end
 
@@ -298,6 +305,7 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:AddItem(CreateItem("item_build_cannon_tower", hero, hero))
     
     UpdatePlayerSpells(playerID)
+    UpdateScoreboard(playerID)
 end
 
 function ElementTD:EntityKilled(keys)

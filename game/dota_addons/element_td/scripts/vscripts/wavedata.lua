@@ -177,6 +177,7 @@ function SpawnWaveForPlayer(playerID, wave)
         if playerData.completedWaves >= WAVE_COUNT then
             playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
             Log:info("Player ["..playerID.."] has completed the game.")
+            GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerData.name .. "</font> has completed the game.!", 0, 0)
             ElementTD:CheckGameEnd()
             return
         end
@@ -284,4 +285,5 @@ function ReduceLivesForPlayer( playerID )
     end
     hero:CalculateStatBonus()
     CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=playerData.health/hero:GetMaxHealth() * 100} )
+    UpdateScoreboard(playerID)
 end

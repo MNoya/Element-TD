@@ -91,3 +91,16 @@ function UpdateElementsHUD(playerID)
 
 	CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_elements", data )
 end
+
+function UpdateScoreboard(playerID)
+	local playerData = GetPlayerData(playerID)
+	local health = playerData.health
+	local towers = tablelength(playerData.towers)
+	local lumber = playerData.lumber
+	local pureEssence = playerData.pureEssence
+	local difficulty = "NA"
+	if playerData.difficulty then
+		difficulty = playerData.difficulty.difficultyName
+	end
+	CustomGameEventManager:Send_ServerToAllClients( "etd_update_scoreboard", {playerID=playerID, data = {lives=health, lumber=lumber, towers=towers, pureEssence=pureEssence,difficulty=difficulty}} )
+end

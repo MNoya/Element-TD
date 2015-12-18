@@ -1,0 +1,45 @@
+<root>
+    <styles>
+ 		<include src="file://{resources}/styles/dotastyles.css" />
+        <include src="file://{resources}/styles/custom_game/multiteam_end_screen.css" />
+    </styles>
+	<Panel class="PlayerRow">
+		<Panel id="PlayerRowContainer">
+			<Panel id="Avatar" class="ScoreCol_Avatar ScoreboardPanel">
+				<DOTAAvatarImage id="AvatarImage" steamid="local" />
+			</Panel>
+			<Panel id="Hero" class="ScoreCol_Hero ScoreboardPanel">
+				<Image id="HeroIcon" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+			<Panel id="PlayerDetailsContainer" class="ScoreCol_PlayerDetails ScoreboardPanel">
+				<Panel id="PlayerAndHeroName">
+					<Label id="PlayerName" text="AAAAA" />
+					<Label id="HeroNameAndDescription" text="#custom_scoreboard_hero_name_and_desc" />
+				</Panel>
+			</Panel>
+			<Panel id="GoldContainer" class="ScoreCol_Gold ScoreboardPanel">
+				<Label id="PlayerGoldAmount" text="99999" />
+			</Panel>
+			<Panel id="ScoreContainer" class="ScoreCol_Score ScoreboardPanel">
+				<Label id="Score" text="50" />
+			</Panel>
+			<Panel id="LivesContainer" class="ScoreCol_Lives ScoreboardPanel">
+				<Label id="Lives" text="50" />
+			</Panel>
+			<Panel id="WaveContainer" class="ScoreCol_Wave ScoreboardPanel">
+				<Label id="Wave" text="56" />
+			</Panel>
+
+			<Panel id="KillsContainer" class="ScoreCol_Kills ScoreboardPanel">
+				<Label id="Kills" text="999" />
+			</Panel>
+			<Panel id="TowersContainer" class="ScoreCol_Towers ScoreboardPanel">
+				<Label id="Towers" text="999" />
+			</Panel>
+			<Panel id="DifficultyContainer" class="ScoreCol_Difficulty ScoreboardPanel">
+				<Label id="Difficulty" text="VH"/>
+			</Panel>
+			<Panel id="ElementsContainer" class="ScoreCol_Elements ScoreboardPanel"/>
+		</Panel>
+	</Panel>
+</root>

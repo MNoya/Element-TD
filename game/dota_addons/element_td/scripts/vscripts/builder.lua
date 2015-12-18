@@ -167,7 +167,7 @@ function Build( event )
         -- Add the tower to the player data
         local playerData = GetPlayerData(playerID)
         playerData.towers[unit:GetEntityIndex()] = building_name
-
+        UpdateScoreboard(playerID)
     end)
 
     -- These callbacks will only fire when the state between below half health/above half health changes.

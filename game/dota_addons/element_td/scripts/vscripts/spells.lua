@@ -82,6 +82,7 @@ function SellTowerCast(keys)
 
 		playerData.towers[tower:entindex()] = nil -- remove this tower index from the player's tower list
 		RemoveTower(tower)
+		UpdateScoreboard(hero:GetPlayerID())
 		Log:debug(playerData.name .. " has sold a tower")
 		UpdatePlayerSpells(hero:GetPlayerID())
 	end

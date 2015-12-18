@@ -52,6 +52,12 @@ function PrintTable(t, indent, done)
     end
 end
 
+function tablelength(T)
+  local count = 0
+  for _ in pairs(T) do count = count + 1 end
+  return count
+end
+
 function dist2D(v1, v2)
     return math.sqrt(math.pow(v1.x - v2.x, 2) + math.pow(v1.y - v2.y, 2));
 end

@@ -1,0 +1,109 @@
+<root>
+    <styles>
+ 		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+        <include src="s2r://panorama/styles/custom_game/multiteam_end_screen.vcss_c" />
+    </styles>
+
+    <scripts>
+         <include src="s2r://panorama/scripts/custom_game/shared_scoreboard_updater.vjs_c" />
+       <include src="s2r://panorama/scripts/custom_game/multiteam_end_screen.vjs_c" />
+    </scripts>
+
+	<Panel hittest="false" class="EndScreenRoot">
+		<Panel hittest="false" class="EndScreenWindow">
+			<Panel id="VictoryRow">
+				<Panel id="WinningTeamLogo" />
+				<Label id="EndScreenVictory" text="#custom_end_screen_victory_message" />
+			</Panel>
+			<Panel id="TeamsContainer">
+				<Panel class="Legend" id="RadiantHeader">
+					<Panel class="LegendPanel ScoreCol_TeamInfoAndHero">
+						<Label id="RadiantLabel" class="TeamLabel" text="Builders"/>
+					</Panel>
+					<Label class="LegendPanel ScoreCol_Gold" text="Gold" />
+					<Label class="LegendPanel ScoreCol_Score" text="Score" />
+					<Label class="LegendPanel ScoreCol_Lives" text="Lives" />
+					<Label class="LegendPanel ScoreCol_Wave" text="Wave" />
+					<Label class="LegendPanel ScoreCol_Kills" text="Kills" />
+					<Label class="LegendPanel ScoreCol_Towers" text="Towers" />
+					<Label class="LegendPanel ScoreCol_Difficulty" text="Difficulty" />
+				</Panel>
+				<Panel hittest="false" id="_dynamic_team_2" class="FlyoutTeam">
+					<Panel class="FlyoutTeamData">
+						<Panel class="TeamInfo ScoreCol_TeamInfo">
+							<Panel id="TeamColor_GradentFromTransparentLeft" />
+							<Panel id="TeamLogo" />
+						</Panel>
+						<Panel id="PlayersContainer" />
+					</Panel>
+				</Panel>
+				<Panel hittest="false" id="_dynamic_team_3" class="FlyoutTeam">
+					<Panel class="FlyoutTeamData">
+						<Panel class="TeamInfo ScoreCol_TeamInfo">
+							<Panel id="TeamColor_GradentFromTransparentLeft" />
+							<Panel id="TeamLogo" />
+						</Panel>
+						<Panel id="PlayersContainer" />
+					</Panel>
+				</Panel>
+				<Panel hittest="false" id="_dynamic_team_6" class="FlyoutTeam">
+					<Panel class="FlyoutTeamData">
+						<Panel class="TeamInfo ScoreCol_TeamInfo">
+							<Panel id="TeamColor_GradentFromTransparentLeft" />
+							<Panel id="TeamLogo" />
+						</Panel>
+						<Panel id="PlayersContainer" />
+					</Panel>
+				</Panel>
+				<Panel hittest="false" id="_dynamic_team_7" class="FlyoutTeam">
+					<Panel class="FlyoutTeamData">
+						<Panel class="TeamInfo ScoreCol_TeamInfo">
+							<Panel id="TeamColor_GradentFromTransparentLeft" />
+							<Panel id="TeamLogo" />
+						</Panel>
+						<Panel id="PlayersContainer" />
+					</Panel>
+				</Panel>
+				<Panel hittest="false" id="_dynamic_team_8" class="FlyoutTeam">
+					<Panel class="FlyoutTeamData">
+						<Panel class="TeamInfo ScoreCol_TeamInfo">
+							<Panel id="TeamColor_GradentFromTransparentLeft" />
+							<Panel id="TeamLogo" />
+						</Panel>
+						<Panel id="PlayersContainer" />
+					</Panel>
+				</Panel>
+				<Panel hittest="false" id="_dynamic_team_9" class="FlyoutTeam">
+					<Panel class="FlyoutTeamData">
+						<Panel class="TeamInfo ScoreCol_TeamInfo">
+							<Panel id="TeamColor_GradentFromTransparentLeft" />
+							<Panel id="TeamLogo" />
+						</Panel>
+						<Panel id="PlayersContainer" />
+					</Panel>
+				</Panel>
+				<Panel hittest="false" id="_dynamic_team_10" class="FlyoutTeam">
+					<Panel class="FlyoutTeamData">
+						<Panel class="TeamInfo ScoreCol_TeamInfo">
+							<Panel id="TeamColor_GradentFromTransparentLeft" />
+							<Panel id="TeamLogo" />
+						</Panel>
+						<Panel id="PlayersContainer" />
+					</Panel>
+				</Panel>
+				<Panel hittest="false" id="_dynamic_team_11" class="FlyoutTeam">
+					<Panel class="FlyoutTeamData">
+						<Panel class="TeamInfo ScoreCol_TeamInfo">
+							<Panel id="TeamColor_GradentFromTransparentLeft" />
+							<Panel id="TeamLogo" />
+						</Panel>
+						<Panel id="PlayersContainer" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<Button id="CloseButton" onactivate="Game.FinishGame();">
+				<Label text="#CustomEndScreenClose" />
+			</Button>
+		</Panel>
+	</Panel>
+</root>

@@ -53,6 +53,7 @@ function AddOneLife(tower, playerData)
     ParticleManager:SetParticleControl(particle, 1, Vector(100, 100, 100))
 
     CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=hero:GetPlayerID(), health= hero:GetHealthPercent() } )
+    UpdateScoreboard(hero:GetPlayerID())
 end
 
 function LifeTower:OnAttackLanded(keys)

@@ -5,6 +5,7 @@ var teamScores = [0,0,0,0];
 var playerWave = [0,0,0,0,0,0,0,0];
 var playerHealth = [100,100,100,100,100,100,100,100];
 var playerScore = [0,0,0,0,0,0,0,0];
+var playerData = {};
 
 //=============================================================================
 //=============================================================================
@@ -44,11 +45,10 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
     {
         goldValue = playerInfo.player_gold;
         isTeammate = ( playerInfo.player_team_id == localPlayerTeamId );
-        if ( isTeammate )
-        {
-            ultStateOrTime = Game.GetPlayerUltimateStateOrTime( playerId );
-            _ScoreboardUpdater_SetTextSafe( playerPanel, "TeammateGoldAmount", goldValue );
-        }
+        
+        ultStateOrTime = Game.GetPlayerUltimateStateOrTime( playerId );
+        _ScoreboardUpdater_SetTextSafe( playerPanel, "TeammateGoldAmount", goldValue );
+
         playerPanel.SetHasClass( "is_player", true );
         playerPanel.SetHasClass( "player_dead", ( playerInfo.player_respawn_seconds >= 0 ) );
         playerPanel.SetHasClass( "local_player_teammate", isTeammate && ( playerId != Game.GetLocalPlayerID() ) );
@@ -56,9 +56,46 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
         _ScoreboardUpdater_SetTextSafe( playerPanel, "RespawnTimer", ( playerInfo.player_respawn_seconds + 1 ) ); // value is rounded down so just add one for rounded-up
         _ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerName", playerInfo.player_name );
         _ScoreboardUpdater_SetTextSafe( playerPanel, "Level", playerInfo.player_level );
-        _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", playerInfo.player_kills );
+        _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", Players.GetLastHits(playerId) );
         _ScoreboardUpdater_SetTextSafe( playerPanel, "Deaths", playerInfo.player_deaths );
         _ScoreboardUpdater_SetTextSafe( playerPanel, "Assists", playerInfo.player_assists );
+        _ScoreboardUpdater_SetTextSafe( playerPanel, "Score", playerScore[playerId] );
+        _ScoreboardUpdater_SetTextSafe( playerPanel, "Wave", playerWave[playerId] );
+        _ScoreboardUpdater_SetTextSafe( playerPanel, "Health", playerHealth[playerId] );
+
+        if ( playerData[playerId] )
+        {
+            _ScoreboardUpdater_SetTextSafe( playerPanel, "Lives", playerData[playerId].lives);
+            _ScoreboardUpdater_SetTextSafe( playerPanel, "TeammateLumberAmount", playerData[playerId].lumber);
+            _ScoreboardUpdater_SetTextSafe( playerPanel, "TeammateEssenceAmount", playerData[playerId].pureEssence);
+            _ScoreboardUpdater_SetTextSafe( playerPanel, "Towers", playerData[playerId].towers);
+            var difficulty = playerData[playerId].difficulty;
+            var diff = "-";
+            if (difficulty == "Normal")
+                diff = "N";
+            else if (difficulty == "Hard")
+                diff = "H";
+            else if (difficulty == "VeryHard")
+                diff = "VH";
+            else if (difficulty == "Insane")
+                diff = "I";
+            _ScoreboardUpdater_SetTextSafe( playerPanel, "Difficulty", diff);
+            var diffPanel = playerPanel.FindChildInLayoutFile( "Difficulty" );
+            if ( diffPanel )
+            {
+                diffPanel.SetHasClass( "Normal", diff == "N");
+                diffPanel.SetHasClass( "Hard", diff == "H");
+                diffPanel.SetHasClass( "VeryHard", diff == "VH");
+                diffPanel.SetHasClass( "Insane", diff == "I");
+            }
+        }
+
+        var playerName = playerPanel.FindChildInLayoutFile( "PlayerName" );
+        if ( playerName )
+        {
+            var playerColor = GameUI.CustomUIConfig().player_colors[playerId];
+            playerName.style['color'] = playerColor;
+        }
 
         var playerPortrait = playerPanel.FindChildInLayoutFile( "HeroIcon" );
         if ( playerPortrait )
@@ -250,6 +287,13 @@ function _ScoreboardUpdater_UpdateTeamPanel( scoreboardConfig, containerPanel, t
                 _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContainer, 10, -1 );
             }
         }
+        else
+        {
+            for (var player of teamPlayers)
+            {
+                _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContainer, player, localPlayerTeamId );
+            }  
+        }
     }
     
     teamPanel.SetHasClass( "no_players", (teamPlayers.length == 0) )
@@ -261,7 +305,7 @@ function _ScoreboardUpdater_UpdateTeamPanel( scoreboardConfig, containerPanel, t
         teamsInfo.max_team_players = teamPlayers.length;
     }
 
-    _ScoreboardUpdater_SetTextSafe( teamPanel, "TeamScore", teamScores[teamId] )
+    //_ScoreboardUpdater_SetTextSafe( teamPanel, "TeamScore", teamScores[teamId] )
     _ScoreboardUpdater_SetTextSafe( teamPanel, "TeamName", $.Localize( teamDetails.team_name ) )
     
     if ( GameUI.CustomUIConfig().team_colors )
@@ -387,9 +431,15 @@ function SetTopBarPlayerScore( data )
     playerScore[data.playerId] = data.score;
 }
 
+function SetUpdateScoreboard( data )
+{
+    playerData[data.playerID] = data.data;
+}
+
 (function () {
     GameEvents.Subscribe( "SetTopBarScoreValue", SetTopBarValue );
     GameEvents.Subscribe( "SetTopBarWaveValue", SetTopBarWaveValue );
     GameEvents.Subscribe( "SetTopBarPlayerHealth", SetTopBarPlayerHealth );
     GameEvents.Subscribe( "SetTopBarPlayerScore", SetTopBarPlayerScore );
+    GameEvents.Subscribe( "etd_update_scoreboard", SetUpdateScoreboard );
 })();

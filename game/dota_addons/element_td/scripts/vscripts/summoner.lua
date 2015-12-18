@@ -50,6 +50,7 @@ function ModifyLumber(playerID, amount)
     end
 
     CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_lumber", { lumber = current_lumber } )
+    UpdateScoreboard(playerID)
 end
 
 function ModifyPureEssence(playerID, amount)
@@ -59,6 +60,7 @@ function ModifyPureEssence(playerID, amount)
         PopupEssence(ElementTD.vPlayerIDToHero[playerID], amount)
     end
     CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_pure_essence", { pureEssence = GetPlayerData(playerID).pureEssence } )
+    UpdateScoreboard(playerID)
 end
 
 function UpdateSummonerSpells(playerID)
