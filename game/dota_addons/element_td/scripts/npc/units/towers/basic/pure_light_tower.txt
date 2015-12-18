@@ -19,8 +19,7 @@
             "2" { "ItemDef" "4868" } // Empowered Hood of the Gods
             "3" { "ItemDef" "4864" } // Empowered Barding of the Gods
             "4" { "ItemDef" "4867" } // Roehrin the Pale Stallion
-            "5" { "ItemDef" "4706" } // One Horn
-            "6" { "ItemDef" "528" } // Keeper of the Light's Ambient Effects
+            "5" { "ItemDef" "528" } // Keeper of the Light's Ambient Effects
         }
     }
 
