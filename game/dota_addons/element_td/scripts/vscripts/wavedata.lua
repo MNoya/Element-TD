@@ -190,6 +190,7 @@ function SpawnWaveForPlayer(playerID, wave)
             if GameSettings.elementsOrderName == "AllPick" then
                 Log:info("Giving 1 lumber to " .. playerData.name)
             elseif playerData.elementsOrder[playerData.completedWaves] then
+                SendEssenceMessage(playerID, "An elemental has been randomed for you!")
                 SummonElemental({caster = playerData.summoner, Elemental = playerData.elementsOrder[playerData.completedWaves] .. "_elemental"})
             end
         end

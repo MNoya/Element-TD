@@ -25,14 +25,18 @@ TrailParticles = {
 }
 
 function ModifyLumber(playerID, amount)
-    GetPlayerData(playerID).lumber = GetPlayerData(playerID).lumber + amount
+    local playerData = GetPlayerData(playerID)
+    playerData.lumber = playerData.lumber + amount
     UpdateSummonerSpells(playerID)
     if amount > 0 then
         PopupLumber(ElementTD.vPlayerIDToHero[playerID], amount)
+        if GameSettings.elementsOrderName == "AllPick" then
+            SendLumberMessage(playerID, "You have been given +"..amount.." Lumber!")
+        end
     end
 
-    local current_lumber = GetPlayerData(playerID).lumber
-    local summoner = GetPlayerData(playerID).summoner
+    local current_lumber = playerData.lumber
+    local summoner = playerData.summoner
     if current_lumber > 0 then
         if not summoner.particle then
             local origin = summoner:GetAbsOrigin()
@@ -58,6 +62,7 @@ function ModifyPureEssence(playerID, amount)
     UpdatePlayerSpells(playerID)
     if amount > 0 then
         PopupEssence(ElementTD.vPlayerIDToHero[playerID], amount)
+        SendEssenceMessage(playerID, "You have been given +"..amount.." Pure Essence!")
     end
     CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_pure_essence", { pureEssence = GetPlayerData(playerID).pureEssence } )
     UpdateScoreboard(playerID)
