@@ -119,10 +119,31 @@ function GameSettings:SetCreepOrder(order)
 	end
 end
 
-local usedElements = {["water"] = 0, ["fire"] = 0, ["earth"] = 0, ["nature"] = 0, ["dark"] = 0, ["light"] = 0}
-local elements = {"water", "fire", "earth", "nature", "dark", "light"}
+local usedElements = {["water"] = 0, ["fire"] = 0, ["earth"] = 0, ["nature"] = 0, ["dark"] = 0, ["light"] = 0, ["pure"] = 0 }
+local elements = {"water", "fire", "earth", "nature", "dark", "light", "pure"}
 function getRandomElement(wave)
 	local element = elements[math.random(#elements)]
+
+	if element == "pure" then
+		if usedElements[element] < 2 then
+			local hasLvl3 = false
+			local hasLvl1 = true
+			for i,v in pairs(usedElements) do
+				if v == 3 then -- if level 3 of element
+					hasLvl3 = true
+				end
+				if v == 0 then
+					hasLvl1 = false
+				end
+			end
+			if hasLvl3 or hasLvl1 then
+				usedElements[element] = usedElements[element] + 1
+				return element
+			else
+				return getRandomElement(wave)
+			end
+		end
+	end
 
 	if EXPRESS_MODE and ((wave < 9 and usedElements[element] == 1) or (wave < 18 and usedElements[element] == 2) or usedElements[element] == 3 ) then
 		return getRandomElement(wave)
@@ -168,7 +189,11 @@ function GameSettings:SetElementOrder(order)
             GetPlayerData(player:GetPlayerID()).elementsOrder = elementsOrder
             if elementsOrder[0] then
             	for _,v in pairs(elementsOrder[0]) do
-            		BuyElement(player:GetPlayerID(), v)
+            		if v == "pure" then
+            			ModifyElementValue(player:GetPlayerID(), 1)
+            		else
+            			BuyElement(player:GetPlayerID(), v)
+            		end
             	end
         	end
         end
@@ -177,7 +202,7 @@ end
 
 
 function getRandomElementOrder()
-	usedElements = {["water"] = 0, ["fire"] = 0, ["earth"] = 0, ["nature"] = 0, ["dark"] = 0, ["light"] = 0}
+	usedElements = {["water"] = 0, ["fire"] = 0, ["earth"] = 0, ["nature"] = 0, ["dark"] = 0, ["light"] = 0, ["pure"] = 0}
 	local elementsOrder = {}
 	local startingElements = {}
 	local lumber = GameSettings.length.Lumber

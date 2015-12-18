@@ -222,7 +222,7 @@ function ElementTD:CheckGameEnd()
         end
     end
     if endGame then
-        Log:info("Game end condition reached.")
+        Log:info("Game end condition reached. Ending game in 5 seconds.")
         GameRules:SendCustomMessage("Thank you for playing <font color='#70EA72'>Element Tower Defense</font>!", 0, 0)
         Timers:CreateTimer(5, function()
             GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
