@@ -277,7 +277,7 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:SetBaseDamageMin(0)
     hero:SetBaseDamageMax(0)
     hero:SetGold(0, false)
-    hero:SetGold(70, true)
+    hero:SetGold(0, true)
     hero:SetModelScale(0.75)
     hero:AddNewModifier(nil, nil, "modifier_silence", {}) -- silence this player until break time is started
 
