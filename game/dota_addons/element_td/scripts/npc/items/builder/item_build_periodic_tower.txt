@@ -1,0 +1,32 @@
+//============================================================//
+// Build Periodic Tower (Item Version)
+//============================================================//
+"item_build_periodic_tower"
+{
+    "ID"                            "2002"
+    "BaseClass"                     "item_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "MaxLevel"                      "1"
+    "AbilityTextureName"            "build_periodic_tower"
+
+    "ItemDroppable"                 "0"
+    "ItemPurchasable"               "0"
+    "ItemSellable"                  "0"
+    
+    "Building"                      "1"
+    "AbilityCastRange"              "200"
+    "Scale"                         "1"
+    "PlayerCanControl"              "1"
+
+    "UnitName"                      "periodic_tower"
+    "AbilityGoldCost"               "11225"
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"        "builder.lua"
+            "Function"          "Build"
+        }
+    }
+}

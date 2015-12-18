@@ -37,6 +37,7 @@
     "Level"                     "4"
     "Cost"                      "9075"
     "TotalCost"                 "11000"
+    "PureEssence"               "1"
     "BuildTime"                 "2"
     "Element"                   "dark"
     "DamageType"                "dark"

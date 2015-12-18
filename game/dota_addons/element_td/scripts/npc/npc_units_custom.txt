@@ -6385,6 +6385,87 @@
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
 	}
+	"periodic_tower"
+	{
+	    // Visual
+	    //-----------------------------
+	    "Model"                     "models/heroes/invoker/invoker.vmdl"
+	    "ModelScale"                "1.1"
+	    "ModelRotation"             "90"
+	    "PedestalModel"             "models/props_structures/radiant_tower_base002.vmdl"
+	    "PedestalModelScale"        "0.70"
+	    "ProjectileModel"           "particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
+	    "SoundSet"                  "Tower.Water"
+	    "MinimapIcon"               "minimap_tower90"
+	    "MinimapIconSize"           "320"
+	    "Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_invoker
+	        {
+	            "1" { "ItemDef" "8626" } // Invoker's Forge Spirits
+	            "2" { "ItemDef" "48" } // Invoker's Cape
+	            "3" { "ItemDef" "89" } // Invoker's Shoulder
+	            "4" { "ItemDef" "98" } // Invoker's Head
+	            "5" { "ItemDef" "305" } // Invoker's Belt
+	            "6" { "ItemDef" "99" } // Invoker's Hair
+	            "7" { "ItemDef" "100" } // Invoker's Bracer
+	        }
+	    }
+	
+	    // Stats
+	    //-----------------------------
+	    "AttackDamageMin"           "24000"
+	    "AttackDamageMax"           "24000"
+	    "Damage"                    "24000"
+	    "AttackRange"               "1100"
+	    "AttackAcquisitionRange"    "1100"
+	    "AOE_Full"                  "100"
+	    "AOE_Half"                  "200"
+	    "AttackRate"                "1.0"
+	    "ProjectileSpeed"           "800" 
+	
+	    "Level"                     "1"
+	    "Cost"                      "11225"
+	    "TotalCost"                 "11225"
+	    "PureEssence"               "1"
+	    "BuildTime"                 "1"
+	    "Element"                   "none"
+	    "DamageType"                "composite"
+	    "ScriptClass"               "CannonTower"
+	    "TowerType"                 "Normal"
+	    
+	    "Upgrades"
+	    {
+	    }
+	
+	    // General
+	    //-----------------------------
+	    "BaseClass"                 "npc_dota_creature"
+	    "ArmorPhysical"             "0"
+	    "MagicalResistance"         "0"
+	    "BoundsHullName"            "DOTA_HULL_SIZE_TOWER"
+	    "TeamName"                  "DOTA_TEAM_GOODGUYS"
+	    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "1900"
+	    "VisionNighttimeRange"      "1900"  
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackAnimationPoint"      "0"
+	    "ProjectileCollisionSize"   "50"
+	    "RingRadius"                "80"
+	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"             "0"
+	    "MovementTurnRate"          "1.0"
+	    "StatusHealth"              "1000"
+	    "StatusHealthRegen"         "0"
+	    "StatusMana"                "0"
+	    "StatusManaRegen"           "0"
+	
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+	}
 	"pure_dark_tower"
 	{
 	    // Visual
@@ -6424,6 +6505,7 @@
 	    "Level"                     "4"
 	    "Cost"                      "9075"
 	    "TotalCost"                 "11000"
+	    "PureEssence"               "1"
 	    "BuildTime"                 "2"
 	    "Element"                   "dark"
 	    "DamageType"                "dark"
@@ -6504,6 +6586,7 @@
 	    "Level"                     "4"
 	    "Cost"                      "9075"
 	    "TotalCost"                 "11000"
+	    "PureEssence"               "1"
 	    "BuildTime"                 "2"
 	    "Element"                   "earth"
 	    "DamageType"                "earth"
@@ -6583,6 +6666,7 @@
 	    "Level"                     "4"
 	    "Cost"                      "9075"
 	    "TotalCost"                 "11000"
+	    "PureEssence"               "1"
 	    "BuildTime"                 "2"
 	    "Element"                   "fire"
 	    "DamageType"                "fire"
@@ -6661,6 +6745,7 @@
 	    "Level"                     "4"
 	    "Cost"                      "9075"
 	    "TotalCost"                 "11000"
+	    "PureEssence"               "1"
 	    "BuildTime"                 "2"
 	    "Element"                   "light"
 	    "DamageType"                "light"
@@ -6744,6 +6829,7 @@
 	    "Level"                     "4"
 	    "Cost"                      "9075"
 	    "TotalCost"                 "11000"
+	    "PureEssence"               "1"
 	    "BuildTime"                 "2"
 	    "Element"                   "nature"
 	    "DamageType"                "nature"
@@ -6825,6 +6911,7 @@
 	    "Level"                     "4"
 	    "Cost"                      "9075"
 	    "TotalCost"                 "11000"
+	    "PureEssence"               "1"
 	    "BuildTime"                 "2"
 	    "Element"                   "water"
 	
@@ -6916,6 +7003,8 @@
 	    }
 	    "Upgrades"
 	    {
+	        "Count"     "1"
+	        "1"         "pure_dark_tower"
 	    }
 	    
 	    // General
@@ -7000,6 +7089,8 @@
 	    }
 	    "Upgrades"
 	    {
+	        "Count"     "1"
+	        "1"         "pure_earth_tower"
 	    }
 	    
 	    // General
@@ -7083,6 +7174,8 @@
 	    }
 	    "Upgrades"
 	    {
+	        "Count"     "1"
+	        "1"         "pure_fire_tower"
 	    }
 	
 	    // General
@@ -7165,6 +7258,8 @@
 	    }
 	    "Upgrades"
 	    {
+	        "Count"     "1"
+	        "1"         "pure_light_tower"
 	    }
 	    
 	    // General
@@ -7249,6 +7344,8 @@
 	    }
 	    "Upgrades"
 	    {
+	        "Count"     "1"
+	        "1"         "pure_nature_tower"
 	    }
 	
 	    // General
@@ -7332,6 +7429,8 @@
 	    }
 	    "Upgrades"
 	    {
+	        "Count"     "1"
+	        "1"         "pure_water_tower"
 	    }
 	
 	    // General

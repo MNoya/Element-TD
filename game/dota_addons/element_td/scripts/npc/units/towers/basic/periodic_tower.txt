@@ -1,55 +1,53 @@
-"pure_water_tower"
+"periodic_tower"
 {
-	// Visual
+    // Visual
     //-----------------------------
-    "Model"                     "models/heroes/morphling/morphling.vmdl"
-    "ModelScale"                "1.4"
+    "Model"                     "models/heroes/invoker/invoker.vmdl"
+    "ModelScale"                "1.1"
     "ModelRotation"             "90"
-    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_frost_radiant.vmdl"
-    "PedestalModelScale"        "0.7"
-    "PedestalOffset"            "20"
-    "ProjectileModel"           "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf" 
+    "PedestalModel"             "models/props_structures/radiant_tower_base002.vmdl"
+    "PedestalModelScale"        "0.70"
+    "ProjectileModel"           "particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"
     "MinimapIconSize"           "320"
     "Creature"
     {
-        "AttachWearables" // Shard of the Lost Star
+        "AttachWearables" // Default npc_dota_hero_invoker
         {
-            "1" { "ItemDef" "7561" } // Spines of the Lost Star
-            "2" { "ItemDef" "7560" } // Scowl of the Lost Star
-            "3" { "ItemDef" "7562" } // Bracers of the Lost Star
-            "4" { "ItemDef" "7559" } // Eye of the Lost Star
-            "5" { "ItemDef" "7558" } // Grip of the Lost Star
-            "6" { "ItemDef" "507" } // Morphling's Ambient Effects
+            "1" { "ItemDef" "8626" } // Invoker's Forge Spirits
+            "2" { "ItemDef" "48" } // Invoker's Cape
+            "3" { "ItemDef" "89" } // Invoker's Shoulder
+            "4" { "ItemDef" "98" } // Invoker's Head
+            "5" { "ItemDef" "305" } // Invoker's Belt
+            "6" { "ItemDef" "99" } // Invoker's Hair
+            "7" { "ItemDef" "100" } // Invoker's Bracer
         }
     }
 
     // Stats
-    //----------------------------- 
-    "AttackDamageMin"           "20250"
-    "AttackDamageMax"           "20250"
-    "Damage"                    "20250"
+    //-----------------------------
+    "AttackDamageMin"           "24000"
+    "AttackDamageMax"           "24000"
+    "Damage"                    "24000"
+    "AttackRange"               "1100"
+    "AttackAcquisitionRange"    "1100"
     "AOE_Full"                  "100"
     "AOE_Half"                  "200"
-    "AttackRange"               "750"
-    "AttackAcquisitionRange"    "750"
-    "AttackRate"                "0.66"
-    "AttackAnimationPoint"      "0.66"
-    "ProjectileSpeed"           "2000"
+    "AttackRate"                "1.0"
+    "ProjectileSpeed"           "800" 
 
-    "Level"                     "4"
-    "Cost"                      "9075"
-    "TotalCost"                 "11000"
+    "Level"                     "1"
+    "Cost"                      "11225"
+    "TotalCost"                 "11225"
     "PureEssence"               "1"
-    "BuildTime"                 "2"
-    "Element"                   "water"
-
-    "DamageType"                "water"
-    "ScriptClass"               "BasicTowerAOE"
+    "BuildTime"                 "1"
+    "Element"                   "none"
+    "DamageType"                "composite"
+    "ScriptClass"               "CannonTower"
     "TowerType"                 "Normal"
-
-	"Upgrades"
+    
+    "Upgrades"
     {
     }
 
@@ -78,7 +76,6 @@
     "StatusMana"                "0"
     "StatusManaRegen"           "0"
 
-    // Building Size
     "ConstructionSize"          "2"
     "BlockPathingSize"          "0"
 }

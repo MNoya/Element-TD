@@ -51,6 +51,8 @@
     }
     "Upgrades"
     {
+        "Count"     "1"
+        "1"         "pure_water_tower"
     }
 
     // General

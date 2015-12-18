@@ -18,26 +18,26 @@
 				</Panel>
 			</Panel>
 			<Panel id="GoldContainer" class="ScoreCol_Gold ScoreboardPanel">
-				<Label id="PlayerGoldAmount" text="99999" />
+				<Label id="PlayerGoldAmount" text="0" />
 			</Panel>
 			<Panel id="ScoreContainer" class="ScoreCol_Score ScoreboardPanel">
-				<Label id="Score" text="50" />
+				<Label id="Score" text="0" />
 			</Panel>
 			<Panel id="LivesContainer" class="ScoreCol_Lives ScoreboardPanel">
 				<Label id="Lives" text="50" />
 			</Panel>
 			<Panel id="WaveContainer" class="ScoreCol_Wave ScoreboardPanel">
-				<Label id="Wave" text="56" />
+				<Label id="Wave" text="0" />
 			</Panel>
 
 			<Panel id="KillsContainer" class="ScoreCol_Kills ScoreboardPanel">
-				<Label id="Kills" text="999" />
+				<Label id="Kills" text="0" />
 			</Panel>
 			<Panel id="TowersContainer" class="ScoreCol_Towers ScoreboardPanel">
-				<Label id="Towers" text="999" />
+				<Label id="Towers" text="0" />
 			</Panel>
 			<Panel id="DifficultyContainer" class="ScoreCol_Difficulty ScoreboardPanel">
-				<Label id="Difficulty" text="VH"/>
+				<Label id="Difficulty" text="-"/>
 			</Panel>
 			<Panel id="ElementsContainer" class="ScoreCol_Elements ScoreboardPanel"/>
 		</Panel>

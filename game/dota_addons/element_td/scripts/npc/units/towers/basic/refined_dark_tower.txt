@@ -49,6 +49,8 @@
     }
     "Upgrades"
     {
+        "Count"     "1"
+        "1"         "pure_dark_tower"
     }
     
     // General

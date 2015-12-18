@@ -50,6 +50,8 @@
     }
     "Upgrades"
     {
+        "Count"     "1"
+        "1"         "pure_light_tower"
     }
     
     // General

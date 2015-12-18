@@ -3645,6 +3645,174 @@
 			"earth"		"1"
 		}
 	}
+	"item_upgrade_to_pure_dark_tower"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"pure_dark_tower"
+			}
+		}
+		"AbilityTextureName"		"item_dark"
+		"Cost"		"11225"
+		"Requirements"
+		{
+			"dark"		"3"
+			"dark"		"3"
+		}
+	}
+	"item_upgrade_to_pure_earth_tower"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"pure_earth_tower"
+			}
+		}
+		"AbilityTextureName"		"item_earth"
+		"Cost"		"11225"
+		"Requirements"
+		{
+			"earth"		"3"
+			"earth"		"3"
+		}
+	}
+	"item_upgrade_to_pure_fire_tower"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"pure_fire_tower"
+			}
+		}
+		"AbilityTextureName"		"item_fire"
+		"Cost"		"11225"
+		"Requirements"
+		{
+			"fire"		"3"
+			"fire"		"3"
+		}
+	}
+	"item_upgrade_to_pure_light_tower"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"pure_light_tower"
+			}
+		}
+		"AbilityTextureName"		"item_light"
+		"Cost"		"11225"
+		"Requirements"
+		{
+			"light"		"3"
+			"light"		"3"
+		}
+	}
+	"item_upgrade_to_pure_nature_tower"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"pure_nature_tower"
+			}
+		}
+		"AbilityTextureName"		"item_nature"
+		"Cost"		"11225"
+		"Requirements"
+		{
+			"nature"		"3"
+			"nature"		"3"
+		}
+	}
+	"item_upgrade_to_pure_water_tower"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"pure_water_tower"
+			}
+		}
+		"AbilityTextureName"		"item_water"
+		"Cost"		"11225"
+		"Requirements"
+		{
+			"water"		"3"
+			"water"		"3"
+		}
+	}
 	"item_upgrade_to_quake_tower"
 	{
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -5187,6 +5355,38 @@
 	
 	    "UnitName"                      "basic_cannon_tower"
 	    "AbilityGoldCost"               "7"
+	    
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "builder.lua"
+	            "Function"          "Build"
+	        }
+	    }
+	}
+	//============================================================//
+	// Build Periodic Tower (Item Version)
+	//============================================================//
+	"item_build_periodic_tower"
+	{
+	    "ID"                            "2002"
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "MaxLevel"                      "1"
+	    "AbilityTextureName"            "build_periodic_tower"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	    
+	    "Building"                      "1"
+	    "AbilityCastRange"              "200"
+	    "Scale"                         "1"
+	    "PlayerCanControl"              "1"
+	
+	    "UnitName"                      "periodic_tower"
+	    "AbilityGoldCost"               "11225"
 	    
 	    "OnSpellStart"
 	    {
