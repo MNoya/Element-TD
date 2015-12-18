@@ -6431,7 +6431,7 @@
 	    "BuildTime"                 "1"
 	    "Element"                   "none"
 	    "DamageType"                "composite"
-	    "ScriptClass"               "CannonTower"
+	    "ScriptClass"               "BasicTowerAOE"
 	    "TowerType"                 "Normal"
 	    
 	    "Upgrades"
