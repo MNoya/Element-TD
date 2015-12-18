@@ -4,8 +4,8 @@
 	
 	// Visual
     //-----------------------------
-	"Model"					"models\props_structures\radiant_statue001.vmdl"
-	"ModelScale"			"0.65"
+	"Model"					"models/props_structures/radiant_statue001.vmdl"
+	"ModelScale"			"0.8"
 	"ProjectileModel"		"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 	"ProjectileSpeed"		"800"
 	"SoundSet"				"Tower.Water"

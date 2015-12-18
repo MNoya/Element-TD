@@ -51,7 +51,7 @@
 	"ProjectileModel"		"particles/units/heroes/hero_techies/techies_base_attack.vpcf"
 	"ProjectileSpeed"		"800"
 	"Model"		"models/heroes/sniper/sniper.vmdl"
-	"ModelScale"		"1.05"
+	"ModelScale"		"1.25"
 	"UpgradeIcon"		"techies_suicide"
 	"BuildTime"		"3"
 	"Requirements"

@@ -51,7 +51,7 @@
 	"ProjectileModel"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
 	"ProjectileSpeed"		"2000"
 	"Model"		"models/heroes/chen/chen.vmdl"
-	"ModelScale"		"0.6"
+	"ModelScale"		"0.8"
 	"UpgradeIcon"		"towers/quark_tower_quantum_beam"
 	"BuildTime"		"3"
 	"Requirements"

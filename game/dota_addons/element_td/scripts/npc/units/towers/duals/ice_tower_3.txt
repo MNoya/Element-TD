@@ -51,7 +51,7 @@
 	"ProjectileModel"		""
 	"ProjectileSpeed"		"900"
 	"Model"		"models/heroes/crystal_maiden/crystal_maiden.vmdl"
-	"ModelScale"		"1.0"
+	"ModelScale"		"1.2"
 	"UpgradeIcon"		"ancient_apparition_ice_blast"
 	"BuildTime"		"3"
 	"Requirements"

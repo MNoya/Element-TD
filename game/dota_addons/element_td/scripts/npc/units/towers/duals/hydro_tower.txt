@@ -51,7 +51,7 @@
 	"ProjectileModel"		""
 	"ProjectileSpeed"		"900"
 	"Model"		"models/heroes/kunkka/kunkka.vmdl"
-	"ModelScale"		"0.6"
+	"ModelScale"		"0.9"
 	"UpgradeIcon"		"puck_illusory_orb"
 	"BuildTime"		"3"
 	"Requirements"

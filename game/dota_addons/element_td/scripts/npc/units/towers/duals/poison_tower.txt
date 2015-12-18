@@ -51,7 +51,7 @@
 	"ProjectileModel"		"particles/units/heroes/hero_viper/viper_base_attack.vpcf"
 	"ProjectileSpeed"		"1800"
 	"Model"		"models/heroes/venomancer/venomancer.vmdl"
-	"ModelScale"		"0.6"
+	"ModelScale"		"0.8"
 	"AOE_Full"		"100"
 	"AOE_Half"		"200"
 	"UpgradeIcon"		"towers/poison_tower_contamination"

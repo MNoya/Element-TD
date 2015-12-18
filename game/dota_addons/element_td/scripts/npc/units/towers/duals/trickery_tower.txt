@@ -51,7 +51,7 @@
 	"ProjectileModel"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
 	"Model"		"models/heroes/rubick/rubick.vmdl"
-	"ModelScale"		"0.65"
+	"ModelScale"		"0.8"
 	"UpgradeIcon"		"modifier_illusion"
 	"BuildTime"		"3"
 	"Requirements"

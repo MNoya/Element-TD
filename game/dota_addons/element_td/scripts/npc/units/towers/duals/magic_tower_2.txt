@@ -51,7 +51,7 @@
 	"ProjectileModel"		"particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
 	"ProjectileSpeed"		"1000"
 	"Model"		"models/heroes/lion/lion.vmdl"
-	"ModelScale"		"0.8"
+	"ModelScale"		"1.05"
 	"UpgradeIcon"		"towers/magic_tower"
 	"BuildTime"		"3"
 	"Requirements"
