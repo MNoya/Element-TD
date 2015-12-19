@@ -126,7 +126,7 @@
 	    "PlayerCanControl"              "1"
 	
 	    "UnitName"                      "basic_arrow_tower"
-	    "AbilityGoldCost"               "7"
+	    "AbilityGoldCost"               "25"
 	    
 	    "OnSpellStart"
 	    {
@@ -153,7 +153,7 @@
 	    "PlayerCanControl"              "1"
 	
 	    "UnitName"                      "basic_cannon_tower"
-	    "AbilityGoldCost"               "7"
+	    "AbilityGoldCost"               "25"
 	    
 	    "OnSpellStart"
 	    {

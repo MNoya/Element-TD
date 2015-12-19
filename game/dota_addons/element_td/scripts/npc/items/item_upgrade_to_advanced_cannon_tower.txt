@@ -19,5 +19,13 @@
 		}
 	}
 	"AbilityTextureName"		"item_composite"
-	"Cost"		"13"
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"		"FIELD_INTEGER"
+			"cost"			"30"
+		}
+	}
 }

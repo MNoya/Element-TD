@@ -24,7 +24,7 @@
 
     "Level"                     "2"
     "Cost"                      "30"
-    "TotalCost"                 "57"
+    "TotalCost"                 "55"
     "BuildTime"                 "1"
     "Element"                   "none"
     "DamageType"                "composite"

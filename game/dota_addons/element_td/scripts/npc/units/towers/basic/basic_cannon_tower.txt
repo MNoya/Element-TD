@@ -25,8 +25,8 @@
     "ProjectileSpeed"           "800" 
 
     "Level"                     "1"
-    "Cost"                      "27"
-    "TotalCost"                 "27"
+    "Cost"                      "25"
+    "TotalCost"                 "25"
     "BuildTime"                 "1"
     "Element"                   "none" 
     "DamageType"                "composite"

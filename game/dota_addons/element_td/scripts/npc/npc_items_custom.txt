@@ -48,7 +48,15 @@
 			}
 		}
 		"AbilityTextureName"		"item_composite"
-		"Cost"		"13"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"cost"			"30"
+			}
+		}
 	}
 	"item_upgrade_to_advanced_arrow_tower_disabled"
 	{
@@ -84,7 +92,15 @@
 			}
 		}
 		"AbilityTextureName"		"item_composite"
-		"Cost"		"13"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"cost"			"30"
+			}
+		}
 	}
 	"item_upgrade_to_advanced_cannon_tower_disabled"
 	{
