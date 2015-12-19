@@ -13928,7 +13928,7 @@
 		"AttackRange"		"625"
 		"AttackAcquisitionRange"		"625"
 		"AttackRate"		"1"
-		"ProjectileModel"		"particles/units/heroes/hero_venomancer/venomancer_base_attack.vpcf"
+		"ProjectileModel"		"particles/units/heroes/hero_bristleback/bristleback_viscous_nasal_goo.vpcf"
 		"ProjectileSpeed"		"1800"
 	
 	    "Model"             "models/heroes/bristleback/bristleback.vmdl"

@@ -1891,14 +1891,14 @@
 			{
 				"Passive"	"1"
 				"IsHidden"	"1"
-				"OnAttackStart"
+				"OnAttack"
 				{
 					"RunScript"
 					{
 						"Target"			"POINT"
 						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
 						"Function"			"TriggerEvent"
-						"Event"				"OnAttackStart"
+						"Event"				"OnAttack"
 					}
 				}
 			}
@@ -3033,17 +3033,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow_tooltip"			"7.5 22.5"
+				"slow_tooltip"			"10 30"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"400"
+				"aoe"					"300"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-7.5 -22.5"
+				"slow"					"-10 -30"
 			}
 		}
 	}

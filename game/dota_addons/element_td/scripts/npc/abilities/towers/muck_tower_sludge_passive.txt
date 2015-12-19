@@ -63,17 +63,17 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"slow_tooltip"			"7.5 22.5"
+			"slow_tooltip"			"10 30"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aoe"					"400"
+			"aoe"					"300"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"slow"					"-7.5 -22.5"
+			"slow"					"-10 -30"
 		}
 	}
 }

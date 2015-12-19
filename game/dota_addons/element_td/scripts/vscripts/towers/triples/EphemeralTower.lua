@@ -30,7 +30,7 @@ function EphemeralTower:ResetDamage(keys)
     self.hasAttackThinker = false
 end
 
-function EphemeralTower:OnAttackStart(keys)
+function EphemeralTower:OnAttack(keys)
     if not self.particleActive then
         self.particleID = ParticleManager:CreateParticle("particles/units/heroes/hero_windrunner/windrunner_windrun.vpcf", PATTACH_ABSORIGIN, self.tower)
         ParticleManager:SetParticleControl(self.particleID, 0, self.tower:GetAbsOrigin() + Vector(0, 0, 16))
