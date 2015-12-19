@@ -48,6 +48,17 @@
 			"IsDebuff"		"1"
 			"Duration"		"%reset_time"
 		}
+
+		"modifier_phasing_stack"
+		{
+			"IsDebuff"		"1"
+			"Duration"		"%reset_time"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%damage_reduction"
+			}
+		}
 	}
 
 	"AbilitySpecial"
@@ -60,7 +71,7 @@
 		"02"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"damage_reduction"	"5"
+			"damage_reduction"	"-5"
 		}
 		"03"
 		{
