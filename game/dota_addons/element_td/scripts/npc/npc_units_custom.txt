@@ -7714,6 +7714,8 @@
 	}
 	"blacksmith_tower"
 	{
+	    "DisableTurning"            "1"
+	    
 	    "BaseClass"                 "npc_dota_creature" 
 		"SoundSet"					"Tower.Water"
 		"MinimapIcon"				"minimap_tower90"
@@ -7791,6 +7793,7 @@
 	}
 	"blacksmith_tower_2"
 	{
+	    "DisableTurning"            "1"
 	    "BaseClass"                 "npc_dota_creature" 
 		"SoundSet"					"Tower.Water"
 		"MinimapIcon"				"minimap_tower90"
@@ -7864,6 +7867,8 @@
 	}
 	"blacksmith_tower_3"
 	{
+	    "DisableTurning"            "1"
+	    
 	    "BaseClass"                 "npc_dota_creature" 
 		"SoundSet"					"Tower.Water"
 		"MinimapIcon"				"minimap_tower90"
@@ -7974,6 +7979,7 @@
 	}
 	"disease_tower"
 	{
+	    "DisableTurning"            "1"
 	    "BaseClass"                 "npc_dota_creature" 
 		"SoundSet"					"Tower.Water"
 		"MinimapIcon"				"minimap_tower90"
@@ -8051,6 +8057,7 @@
 	}
 	"disease_tower_2"
 	{
+	    "DisableTurning"            "1"
 	    "BaseClass"                 "npc_dota_creature" 
 		"SoundSet"					"Tower.Water"
 		"MinimapIcon"				"minimap_tower90"
@@ -8124,6 +8131,7 @@
 	}
 	"disease_tower_3"
 	{
+	    "DisableTurning"            "1"
 	    "BaseClass"                 "npc_dota_creature" 
 		"SoundSet"					"Tower.Water"
 		"MinimapIcon"				"minimap_tower90"
@@ -10526,6 +10534,7 @@
 	}
 	"poison_tower_2"
 	{
+	    "DisableTurning"            "1"
 	    "BaseClass"                 "npc_dota_creature" 
 		"SoundSet"					"Tower.Water"
 		"MinimapIcon"				"minimap_tower90"
@@ -10613,6 +10622,7 @@
 	}
 	"poison_tower_3"
 	{
+	    "DisableTurning"            "1"
 	    "BaseClass"                 "npc_dota_creature" 
 		"SoundSet"					"Tower.Water"
 		"MinimapIcon"				"minimap_tower90"
@@ -11531,6 +11541,7 @@
 		"SoundSet"				"Tower.Water"
 		"MinimapIcon"			"minimap_tower90"
 		"MinimapIconSize"		"320"
+		"DisableTurning"		"1"
 	
 		// Stats
 	    //----------------------------- 
@@ -11622,6 +11633,7 @@
 		"SoundSet"					"Tower.Water"
 		"MinimapIcon"				"minimap_tower90"
 		"MinimapIconSize"			"320"
+		"DisableTurning"			"1"
 	
 		// Stats
 	    //----------------------------- 
@@ -11710,6 +11722,7 @@
 		"SoundSet"					"Tower.Water"
 		"MinimapIcon"				"minimap_tower90"
 		"MinimapIconSize"			"320"
+		"DisableTurning"			"1"
 	
 		// Stats
 	    //----------------------------- 

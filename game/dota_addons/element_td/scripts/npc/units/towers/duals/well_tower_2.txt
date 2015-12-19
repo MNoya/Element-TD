@@ -9,6 +9,7 @@
 	"SoundSet"					"Tower.Water"
 	"MinimapIcon"				"minimap_tower90"
 	"MinimapIconSize"			"320"
+	"DisableTurning"			"1"
 
 	// Stats
     //----------------------------- 

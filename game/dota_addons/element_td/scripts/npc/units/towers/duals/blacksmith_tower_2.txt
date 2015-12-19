@@ -1,5 +1,6 @@
 "blacksmith_tower_2"
 {
+    "DisableTurning"            "1"
     "BaseClass"                 "npc_dota_creature" 
 	"SoundSet"					"Tower.Water"
 	"MinimapIcon"				"minimap_tower90"

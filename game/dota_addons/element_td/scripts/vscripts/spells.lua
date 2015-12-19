@@ -242,7 +242,13 @@ function UpgradeTower(keys)
 		tower.deleted = true --mark the old tower for deletion
 		RemoveTower(tower, true) --delete the old tower entity
 		BuildTower(newTower, modelScale) --start the tower building animation
-		Timers:CreateTimer(function() 
+
+		if GetUnitKeyValue(newClass, "DisableTurning") then
+            newTower:AddNewModifier(newTower, nil, "modifier_disable_turning", {})
+        end
+
+		Timers:CreateTimer(function()
+			RemoveUnitFromSelection( tower )
 			AddUnitToSelection(newTower)
 		end)
 	end

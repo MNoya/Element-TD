@@ -111,8 +111,9 @@ function Build( event )
         unit:RemoveModifierByName("modifier_invulnerable")
 
         -- Cast angles and various building-creature properties
-        --AddAbility(tower, "ability_building")
-
+        if GetUnitKeyValue(building_name, "DisableTurning") then
+            unit:AddNewModifier(unit, nil, "modifier_disable_turning", {})
+        end
     end)
 
     -- A building finished construction
