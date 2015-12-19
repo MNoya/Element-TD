@@ -35,7 +35,7 @@ function IceTower:OnAttackStart(keys)
     self.projectiles[proj:entindex()] = 1    
 
     local direction = (targetPos - self.projOrigin):Normalized()    
-    proj.velocity = direction * (self.projectile_speed/60)
+    proj.velocity = direction * (self.projectile_speed/30)
     proj.velocity.z = 0    
     proj.target = targetEntity    
     proj.targetPos = targetEntity:GetAbsOrigin()    
