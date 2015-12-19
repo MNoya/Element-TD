@@ -2686,6 +2686,8 @@
 				"IsDebuff"		"1"
 				"Duration"		"%duration"
 				"ThinkInterval" "%tick_interval"
+				"StatusEffectName"	"particles/status_fx/status_effect_maledict.vpcf"
+				"StatusEffectPriority" "15"
 				"OnIntervalThink"
 				{
 					"AttachEffect"
