@@ -1,6 +1,7 @@
 -- Gunpowder Tower class (Dark + Earth)
--- This is a long range tower that shoots a projectile which does splash damage. Upon exploding the projectile creates three more that scatter randomly around the impact point. 
--- You can think of this sort of like a cluster grenade.
+-- Splash damage tower that does 30/150/750 damage with 1500 range and 0.66 attack speed with 100/200 AoE.
+-- Upon impact the projectile splits into four more projectiles that scatter in a diagonal pattern (100 range from center, so one top, one bottom, one on each side)
+-- around the impact point. Additional projectiles have same damage/AoE.
 
 GunpowderTower = createClass({
         tower = nil,
@@ -18,24 +19,24 @@ nil)
 
 function GunpowderTower:OnAttackLanded(keys) 
     local target = keys.target    
-    local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_phoenix/phoenix_supernova_reborn_star_sphere.vpcf", PATTACH_CUSTOMORIGIN, self.tower)    
-    ParticleManager:SetParticleControl(particle, 0, target:GetAbsOrigin())    
+    local origin = target:GetAbsOrigin()
+    local particle = ParticleManager:CreateParticle("particles/custom/towers/gunpowder/shrapnel.vpcf", PATTACH_CUSTOMORIGIN, self.tower)    
+    ParticleManager:SetParticleControl(particle, 0, origin)
+    ParticleManager:SetParticleControl(particle, 1, Vector(self.splashAOE, 1, 1))
+    Timers:CreateTimer(1, function() ParticleManager:DestroyParticle(particle, true) end)
       
     local damage = ApplyAbilityDamageFromModifiers(self.splashDamage[self.tower:GetLevel()], self.tower)    
     DamageEntitiesInArea(target:GetOrigin(), self.splashAOE, self.tower, damage)
 
     --spawn random explosions around the initial point
-    for i = 1, 3, 1 do
-        Timers:CreateTimer(RandomFloat(0.15, 0.5), function()
-            local p = ParticleManager:CreateParticle("particles/units/heroes/hero_phoenix/phoenix_supernova_reborn_star_sphere.vpcf", PATTACH_CUSTOMORIGIN, self.tower)    
-            pos = RandomPositionInCircle(target:GetAbsOrigin(), 300)
-            ParticleManager:SetParticleControl(p, 0, pos)    
+    local rotate_pos = origin + Vector(1,0,0) * 100
+    for i = 1, 4 do          
+        local pos = RotatePosition(origin, QAngle(0, 90*i, 0), rotate_pos)
 
-            if IsValidEntity(self.tower) then
-                local damage = ApplyAbilityDamageFromModifiers(self.splashDamage[self.tower:GetLevel()], self.tower)    
-                DamageEntitiesInArea(pos, self.splashAOE, self.tower, damage)    
-            end
-        end)
+        if IsValidEntity(self.tower) then
+            local damage = ApplyAbilityDamageFromModifiers(self.splashDamage[self.tower:GetLevel()], self.tower)    
+            DamageEntitiesInArea(pos, self.splashAOE, self.tower, damage)
+        end
     end
 end
 
