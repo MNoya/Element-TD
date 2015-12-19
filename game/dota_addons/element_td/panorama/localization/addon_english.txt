@@ -1,15 +1,19 @@
 "addon"
 {
-	"addonname"										"Element TD"
-	"addon_game_name"								"Element TD"
+    "Language"        "English"
+    "Tokens"
+    {
+        "addonname"                                 "Element TD"
+        "addon_game_name"                           "Element TD"
 
-	"custom_end_screen_legend_lives"				"Lives"
-	"custom_end_screen_legend_wave"					"Wave"
-	"custom_end_screen_legend_score"				"Score"
-	"custom_end_screen_legend_elements"				"Elements"
-	"custom_end_screen_legend_last_hits"			"Kills"
-	"custom_end_screen_legend_towers"				"Towers"
-	"custom_end_screen_legend_difficulty"			"Difficulty"
+        "custom_end_screen_legend_lives"            "Lives"
+        "custom_end_screen_legend_wave"             "Wave"
+        "custom_end_screen_legend_score"            "Score"
+        "custom_end_screen_legend_elements"         "Elements"
+        "custom_end_screen_legend_last_hits"        "Kills"
+        "custom_end_screen_legend_towers"           "Towers"
+        "custom_end_screen_legend_difficulty"       "Difficulty"
 
-	"error_not_enough_gold"					"Not Enough Gold"
+        "error_not_enough_gold"                     "Not Enough Gold"
+    }
 }
