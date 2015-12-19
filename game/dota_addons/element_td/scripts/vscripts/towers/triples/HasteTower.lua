@@ -16,33 +16,24 @@ HasteTower = createClass({
 nil)
 
 function HasteTower:ResetAttackSpeed()
-    for i = 1, self.wrathStacks, 1 do
-        self.tower:RemoveModifierByName("modifier_wrath")
-    end
+    self.tower:RemoveModifierByName("modifier_wrath")
     self.wrathStacks = 0
-    self.tower:RemoveModifierByName("modifier_wrath_indicator")
 end
 
-function HasteTower:OnAttackStart(keys)
+function HasteTower:OnAttack(keys)
     if self.wrathStacks < self.wrathCap then
         self.wrathStacks = self.wrathStacks + 1
-        self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_wrath", {})
     end
 
-    if self.wrathStacks == 1 then
-        self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_wrath_indicator", {})
+    self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_wrath", {})
+    self.tower:SetModifierStackCount("modifier_wrath", self.ability, self.wrathStacks)
+
+    if self.timer then
+        Timers:RemoveTimer(self.timer)
     end
-
-    self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_wrath_reset", {})
-    self.tower:SetModifierStackCount("modifier_wrath_indicator", self.ability, self.wrathStacks)
-
-    Timers:RemoveTimer(self.timerName)
-    Timers:CreateTimer(self.timerName, {
-        endTime = self.resetTime,
-        callback = function()
-            self:ResetAttackSpeed()
-        end
-    })
+    self.timer = Timers:CreateTimer(self.resetTime, function()
+        self:ResetAttackSpeed()
+    end)
 end
 
 function HasteTower:OnAttackLanded(keys)
@@ -56,7 +47,7 @@ function HasteTower:OnCreated()
     self.wrathCap = GetAbilitySpecialValue("haste_tower_wrath", "cap")
     self.resetTime = GetAbilitySpecialValue("haste_tower_wrath", "reset_time")
     self.wrathStacks = 0
-    self.timerName = "HasteResetSpeed" .. self.tower:entindex()
+    self.timer = nil
 end
 
 RegisterTowerClass(HasteTower, HasteTower.className)
