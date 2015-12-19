@@ -1166,7 +1166,31 @@ end
       * Checks GridNav square of certain size at a location
       * Sends onConstructionFailed if invalid
 ]]--
-function BuildingHelper:ValidPosition(size, location, unit, callbacks)
+function BuildingHelper:ValidPosition(size, location, unit, callbacks)    
+    local bBlocked = BuildingHelper:IsAreaBlocked(size, location)
+    if bBlocked then
+        if callbacks.onConstructionFailed then
+            callbacks.onConstructionFailed()
+            return false
+        end
+    end
+
+    -- Check enemy units blocking the area
+    local construction_radius = size * 64 - 32
+    local target_type = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
+    local flags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS
+    local enemies = FindUnitsInRadius(unit:GetTeamNumber(), location, nil, size, DOTA_UNIT_TARGET_TEAM_ENEMY, target_type, flags, FIND_ANY_ORDER, false)
+    if #enemies > 0 then
+        if callbacks.onConstructionFailed then
+            callbacks.onConstructionFailed()
+            return false
+        end
+    end
+
+    return true
+end
+
+function BuildingHelper:IsAreaBlocked( size, location )
     local originX = GridNav:WorldToGridPosX(location.x)
     local originY = GridNav:WorldToGridPosY(location.y)
 
@@ -1189,27 +1213,11 @@ function BuildingHelper:ValidPosition(size, location, unit, callbacks)
     for x = lowerBoundX, upperBoundX do
         for y = lowerBoundY, upperBoundY do
             if BuildingHelper.Grid[x][y] == GRID_BLOCKED then
-                if callbacks.onConstructionFailed then
-                    callbacks.onConstructionFailed()
-                    return false
-                end
+                return true
             end
         end
     end
-
-    -- Check enemy units blocking the area
-    local construction_radius = size * 64 - 32
-    local target_type = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
-    local flags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS
-    local enemies = FindUnitsInRadius(unit:GetTeamNumber(), location, nil, size, DOTA_UNIT_TARGET_TEAM_ENEMY, target_type, flags, FIND_ANY_ORDER, false)
-    if #enemies > 0 then
-        if callbacks.onConstructionFailed then
-            callbacks.onConstructionFailed()
-            return false
-        end
-    end
-
-    return true
+    return false
 end
 
 --[[
@@ -1493,6 +1501,55 @@ end
 function BuildingHelper:GetBlockPathingSize(unit)
     local unitTable = (type(unit) == "table") and BuildingHelper.UnitKVs[unit:GetUnitName()] or BuildingHelper.UnitKVs[unit]
     return unitTable["BlockPathingSize"]
+end
+
+-- Find the closest position of construction_size, within maxDistance
+function BuildingHelper:FindClosestEmptyPositionNearby( location, construction_size, maxDistance )
+    local originX = GridNav:WorldToGridPosX(location.x)
+    local originY = GridNav:WorldToGridPosY(location.y)
+
+    local boundX1 = originX + math.floor(maxDistance/64)
+    local boundX2 = originX - math.floor(maxDistance/64)
+    local boundY1 = originY + math.floor(maxDistance/64)
+    local boundY2 = originY - math.floor(maxDistance/64)
+
+    local lowerBoundX = math.min(boundX1, boundX2)
+    local upperBoundX = math.max(boundX1, boundX2)
+    local lowerBoundY = math.min(boundY1, boundY2)
+    local upperBoundY = math.max(boundY1, boundY2)
+
+    -- Restrict to the map edges
+    lowerBoundX = math.max(lowerBoundX, -BuildingHelper.squareX/2+1)
+    upperBoundX = math.min(upperBoundX, BuildingHelper.squareX/2-1)
+    lowerBoundY = math.max(lowerBoundY, -BuildingHelper.squareY/2+1)
+    upperBoundY = math.min(upperBoundY, BuildingHelper.squareY/2-1)
+
+    -- Adjust even size
+    if (construction_size % 2) == 0 then
+        upperBoundX = upperBoundX-1
+        upperBoundY = upperBoundY-1
+    end
+
+    local towerPos = nil
+    local closestDistance = maxDistance
+
+    for x = lowerBoundX, upperBoundX do
+        for y = lowerBoundY, upperBoundY do
+            if BuildingHelper.Grid[x][y] == GRID_FREE then
+                local pos = Vector(GridNav:GridPosToWorldCenterX(x), GridNav:GridPosToWorldCenterY(y), 0)
+                BuildingHelper:SnapToGrid(construction_size, pos)
+                if not BuildingHelper:IsAreaBlocked(construction_size, pos) then
+                    local distance = (pos - location):Length2D()
+                    if distance < closestDistance then
+                        towerPos = pos
+                        closestDistance = distance
+                    end
+                end
+            end
+        end
+    end
+    BuildingHelper:SnapToGrid(construction_size, towerPos)
+    return towerPos
 end
 
 -- A BuildingHelper ability is identified by the "Building" key.

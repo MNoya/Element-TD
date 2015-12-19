@@ -13,7 +13,11 @@ function trickery_tower_conjure:OnSpellStart()
     target:AddNewModifier(caster, self, "modifier_conjure_prevent_cloning", {duration=60})
     
     local sector = playerID + 1
-    local clonePos = target:GetAbsOrigin() + RandomVector(300) --FindClosestTowerPosition(sector, target:GetOrigin(), 10000)
+    local clonePos = BuildingHelper:FindClosestEmptyPositionNearby( target:GetAbsOrigin(), target.construction_size, 2000 )
+    if not clonePos then
+        Log:error("No Valid Position for Clone!")
+        return
+    end
 
     -- Create Tower Building
     local clone = CreateUnitByName(target.class, clonePos, false, nil, nil, target:GetTeam()) 
@@ -63,7 +67,6 @@ function trickery_tower_conjure:OnSpellStart()
     UpdateScoreboard(playerID)
 
     -- apply the clone modifier to the clone
-    print("Making a clone for "..self.clone_duration.." seconds")
     clone:AddNewModifier(caster, nil, "modifier_no_health_bar", {})
     clone:AddNewModifier(caster, self, "modifier_clone", {duration=self.clone_duration})
     clone:AddNewModifier(caster, self, "modifier_kill", {duration=self.clone_duration})
