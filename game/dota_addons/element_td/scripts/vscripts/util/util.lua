@@ -151,13 +151,18 @@ function AreaOfTriangle(a, b, c)
 end
 
 function GetCreepsInArea(center, radius)
-    local creeps = Entities:FindAllByClassnameWithin("npc_dota_creature", center, radius);
+    local creeps = FindUnitsInRadius(0, center, nil, radius, 
+                        DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
     for k, v in pairs(creeps) do
         if v:GetTeam() ~= DOTA_TEAM_NOTEAM then
             creeps[k] = nil;
         end
     end
     return creeps;
+end
+
+function IsValidAlive( entity )
+    return IsValidEntity(entity) and entity:IsAlive()
 end
 
 function DrawTowerRangeIndicator(keys)
