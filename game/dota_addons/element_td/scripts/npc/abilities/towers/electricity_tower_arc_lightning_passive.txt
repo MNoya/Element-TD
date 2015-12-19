@@ -13,7 +13,7 @@
 	"AbilityTextureName"			"towers/electricty_tower_conjure_lightning"
 	"MaxLevel"						"3"
 	
-	"AbilityCastRange"				"1000"
+	"AbilityCastRange"				"1100"
 	"AbilityCastPoint"				"0"
 
 	"Modifiers"
@@ -22,14 +22,14 @@
 		{
 			"Passive"		"1"
 			"IsHidden"		"1"
-			"OnAttackStart"
+			"OnAttack"
 			{
 				"RunScript"
 				{
 					"Target"			"TARGET"
 					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
 					"Function"			"TriggerEvent"
-					"Event"				"OnAttackStart"
+					"Event"				"OnAttack"
 				}
 			}
 
@@ -52,6 +52,11 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"damage_decrease"		"10"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"bounce_range"			"500"
 		}
 	}
 }
