@@ -44,38 +44,19 @@ function SellTowerCast(keys)
 		end
 
 		if tower.isClone then
-			playerData.clones[tower.class][tower:entindex()] = nil
-			CreateIllusionKilledParticles(tower)
+			RemoveClone(tower)
 		else
 			-- we must delete a random clone of this type
 			if playerData.clones[tower.class] and tower:HasModifier("modifier_conjure_prevent_cloning") then
-				local entIDs, i = {}, 1
-				for id,_ in pairs(playerData.clones[tower.class]) do
-					entIDs[i] = id
-					i = i + 1
-				end
-				if #entIDs > 0 then
-					local ranIndex = math.random(#entIDs)
-					local entindex = entIDs[ranIndex]
-					local clone = EntIndexToHScript(entindex)
-					if IsValidEntity(clone) then
-						CreateIllusionKilledParticles(clone)
-						playerData.towers[clone:entindex()] = nil -- remove this tower index from the player's tower list
-						if clone.creatorClass then
-							clone.creatorClass.clones[clone:entindex()] = nil
-						end
-						RemoveTower(clone)
-					else
-						Log:error("Invalid clone")
-					end
-				end
+				RemoveRandomClone(playerData, tower.class)
 			end
 		end
 
-		for towerID,_ in pairs(playerData.towers) do
+		--[[for towerID,_ in pairs(playerData.towers) do
 			UpdateUpgrades(EntIndexToHScript(towerID))
-		end
+		end]]
 
+		tower.sold = true
 		if tower.scriptObject["OnDestroyed"] then
 			tower.scriptObject:OnDestroyed()
 		end
@@ -214,28 +195,10 @@ function UpgradeTower(keys)
 			tower.scriptObject:OnDestroyed()
 		end
 
+		-- When you sell/upgrade a tower that has been cloned in the last 60 seconds, you lose a random clone of that tower type (this is to prevent abuse with 100% sell).
 		-- we must delete a random clone of this type
 		if playerData.clones[tower.class] and tower:HasModifier("modifier_conjure_prevent_cloning") then
-			local entIDs, i = {}, 1
-			for id,_ in pairs(playerData.clones[tower.class]) do
-				entIDs[i] = id
-				i = i + 1
-			end
-			if #entIDs > 0 then
-				local ranIndex = math.random(#entIDs)
-				local entindex = entIDs[ranIndex]
-				local clone = EntIndexToHScript(entindex)
-				if IsValidEntity(clone) then
-					CreateIllusionKilledParticles(clone)
-					playerData.towers[clone:entindex()] = nil -- remove this tower index from the player's tower list
-					if clone.creatorClass then
-						clone.creatorClass.clones[clone:entindex()] = nil
-					end
-					RemoveTower(clone)
-				else
-					Log:error("Invalid clone")
-				end
-			end
+			RemoveRandomClone(playerData, tower.class)
 		end
 
 		local modelScale = tower:GetModelScale()
@@ -251,6 +214,26 @@ function UpgradeTower(keys)
 			RemoveUnitFromSelection( tower )
 			AddUnitToSelection(newTower)
 		end)
+	end
+end
+
+function RemoveRandomClone( playerData, name )
+	local clones = {}
+	local i = 0
+	for entindex,_ in pairs(playerData.clones[name]) do
+		local clone = EntIndexToHScript(entindex)
+		if IsValidEntity(clone) and clone:GetClassname() == "npc_dota_creature" and clone:IsAlive() then
+			i = i + 1
+			clones[i] = clone
+		else
+			playerData.clones[name][entindex] = nil
+		end
+	end
+
+	if #clones > 0 then
+		local ranIndex = RandomInt(1,i)
+		local clone = clones[ranIndex]
+		RemoveClone(clone)
 	end
 end
 
@@ -351,68 +334,3 @@ function RemoveTower( unit, bKeepPedestal )
 	if not bKeepPedestal and IsValidEntity(unit.prop) then unit.prop:RemoveSelf() end
 	unit:ForceKill(false)
 end
-
---[[Deprecated
-function PlaceTower(keys)
-	local target = keys.target_points[1]
-	local playerData = GetPlayerData(keys.caster:GetPlayerID())
-	local sector = playerData.sector + 1 -- sector ID is always player ID + 1
-	local pos = FindClosestTowerPosition(sector, target, 96)
-	local hero = keys.caster
-	local playerID = hero:GetPlayerID()
-
-	if target.z == 384 and pos then -- this is the only height we allow towers to be built at
-		local gold = hero:GetGold()
-
-		if gold < GetUnitKeyValue(keys.tower, "Cost") then
-			ShowWarnMessage(playerID, "Not Enough Gold!")
-			return
-		end
-
-		hero:SpendGold(GetUnitKeyValue(keys.tower, "Cost"), DOTA_ModifyGold_PurchaseItem)
-		RemoveTowerPosition(sector, pos)
-
-		local tower = CreateUnitByName(keys.tower, pos, false, nil, nil, hero:GetTeam())
-		tower.class = keys.tower
-		tower.element = GetUnitKeyValue(tower.class, "Element")
-		tower.damageType = GetUnitKeyValue(tower.class, "DamageType")
-
-		tower:SetOwner(hero)
-		tower:SetControllableByPlayer(hero:GetPlayerID(), true)
-		UpdateUpgrades(tower)
-		UpdatePlayerSpells(playerID)
-
-		-- create a script object for this tower
-        local scriptClassName = GetUnitKeyValue(keys.tower, "ScriptClass")
-        if not scriptClassName then scriptClassName = "BasicTower" end
-        if TOWER_CLASSES[scriptClassName] then
-	        local scriptObject = TOWER_CLASSES[scriptClassName](tower, keys.tower)
-	        tower.scriptClass = scriptClassName
-	        tower.scriptObject = scriptObject
-	        tower.scriptObject:OnCreated()
-	    else
-	    	Log:error("Unknown script class, " .. scriptClassName .. " for tower " .. tower.class)
-		end
-
-		if IsSupportTower(tower) then
-            tower:AddNewModifier(tower, nil, "modifier_support_tower", {})
-        end
-
-		if string.find(tower.class, "arrow_tower") ~= nil or string.find(tower.class, "cannon_tower") ~= nil or string.find(GameSettings.elementsOrderName, "Random") ~= nil then
-			AddAbility(tower, "sell_tower_100")
-		else
-			AddAbility(tower, "sell_tower_75")
-		end
-
-
-		AddAbility(tower, tower.damageType .. "_passive")
-		if GetUnitKeyValue(tower.class, "AOE_Full") and GetUnitKeyValue(tower.class, "AOE_Half") then
-			AddAbility(tower, "splash_damage_orb")
-		end
-
-		GetPlayerData(hero:GetPlayerID()).towers[tower:entindex()] = keys.tower
-		BuildTower(tower, 0.2)
-	else
-		ShowWarnMessage(playerID, "Invalid Tower Location!")
-	end
-end]]
