@@ -22,30 +22,31 @@ function PoisonTower:OnAttackLanded(keys)
     local damage = self.tower:GetBaseDamageMax()    
     local fullDamageAOE = self.fullAOE    
 
-    if self.attacks == 4 then
+    if self.attacks == 3 then
         damage = damage * (self.damageMultiplier / 100)    
         self.attacks = 0    
-        fullDamageAOE = 300    
+        fullDamageAOE = 200
+
+        local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_venomancer/venomancer_venomousgale_explosion_flash_b.vpcf", PATTACH_ABSORIGIN, target)    
+        ParticleManager:SetParticleControl(particle, 0, Vector(0, 0, 0))
+        ParticleManager:SetParticleControl(particle, 3, target:GetOrigin())
 
         local particleA = ParticleManager:CreateParticle("particles/units/heroes/hero_venomancer/venomancer_ward_cast.vpcf", PATTACH_ABSORIGIN, self.tower)    
         ParticleManager:SetParticleControl(particleA, 0, target:GetAttachmentOrigin(target:ScriptLookupAttachment("attach_hitloc")))
         ParticleManager:SetParticleControl(particleA, 1, self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_hitloc")))
     end
     damage = ApplyAttackDamageFromModifiers(damage, self.tower)
-    local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_venomancer/venomancer_venomousgale_explosion_flash_b.vpcf", PATTACH_ABSORIGIN, target)    
-    ParticleManager:SetParticleControl(particle, 0, Vector(0, 0, 0))    
-    ParticleManager:SetParticleControl(particle, 3, target:GetOrigin())    
 
     DamageEntitiesInArea(target:GetOrigin(), fullDamageAOE, self.tower, damage / 2)    
     DamageEntitiesInArea(target:GetOrigin(), fullDamageAOE / 2, self.tower, damage / 2)    
 end
 
 function PoisonTower:OnCreated()
-    AddAbility(self.tower, "poison_tower_contamination")    
-    self.attacks = 0    
-    self.damageMultiplier = GetAbilitySpecialValue("poison_tower_contamination", "damage_mult")    
-    self.fullAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))    
-    self.halfAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))    
+    AddAbility(self.tower, "poison_tower_contamination")
+    self.attacks = 0
+    self.damageMultiplier = GetAbilitySpecialValue("poison_tower_contamination", "damage_mult")
+    self.fullAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))
+    self.halfAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
 end
 
 RegisterTowerClass(PoisonTower, PoisonTower.className)    
