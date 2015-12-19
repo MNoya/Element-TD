@@ -2068,6 +2068,8 @@
 			"modifier_napalm"
 			{
 				"IsDebuff"			"1"
+				"StatusEffectName"	"particles/status_fx/status_effect_stickynapalm.vpcf"
+				"StatusEffectPriority"	"15"
 				"EffectName"		"particles/units/heroes/hero_batrider/batrider_stickynapalm_debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
 				"OnDeath"
@@ -2093,7 +2095,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"400"
+				"aoe"					"300"
 			}
 		}
 	}
