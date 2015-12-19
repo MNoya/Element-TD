@@ -15,7 +15,7 @@ QuakeTower = createClass({
     },
 nil)
 --
-function QuakeTower:OnAttackStart(keys)
+function QuakeTower:OnAttack(keys)
     if math.random(100) > self.chance then
         local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start_f.vpcf", PATTACH_ABSORIGIN, self.tower)
         ParticleManager:SetParticleControl(particle, 0, self.tower:GetAbsOrigin())
