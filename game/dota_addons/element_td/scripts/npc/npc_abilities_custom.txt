@@ -1822,7 +1822,7 @@
 					"AttachEffect"
 					{
 						"Target" 			"TARGET"
-						"EffectName"		"particles/items2_fix/veil_of_discord_debuff.vpcf"
+						"EffectName"		"particles/items2_fx/veil_of_discord_debuff.vpcf"
 						"EffectAttachType"	"follow_origin"
 					}
 				}	

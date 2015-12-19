@@ -50,7 +50,7 @@ function EnchantmentTower:OnFaerieFireCast(keys)
 
     self.debuffedCreeps[target:entindex()] = "BibleThump"
 
-    local particle = ParticleManager:CreateParticle("centaur_return_thin", PATTACH_ABSORIGIN, self.tower)
+    local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_centaur/centaur_return_thin.vpcf", PATTACH_ABSORIGIN, self.tower)
     ParticleManager:SetParticleControl(particle, 0, self.attackLoc)
     ParticleManager:SetParticleControl(particle, 1, target:GetOrigin())
 end
@@ -66,7 +66,7 @@ end
 function EnchantmentTower:OnCreated()
     self.modifierName = "modifier_faerie_fire"
 
-    self.attackLoc = self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_attack1"))
+    self.attackLoc = self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_hitloc"))
     self.damageAmp = GetAbilitySpecialValue("enchantment_tower_faerie_fire", "damage_amp")[self.tower:GetLevel()]
     self.debuffedCreeps = {}
     self.range = tonumber(GetAbilityKeyValue("enchantment_tower_faerie_fire", "AbilityCastRange"))
@@ -75,10 +75,10 @@ function EnchantmentTower:OnCreated()
     self.halfAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
 
     self.ability = AddAbility(self.tower, "enchantment_tower_faerie_fire", self.tower:GetLevel())
-    Timers:CreateTimer(1, function()
+    Timers:CreateTimer(0.1, function()
         if IsValidEntity(self.tower) then
             self:FaerieFireThink()
-            return 1
+            return 0.1
         end
     end)
     self.ability:ToggleAutoCast()
