@@ -19,7 +19,6 @@ end
 
 function ElementTD:InitGameMode()
 
-    GenerateAllTowerGrids() -- create tower grids
     GenerateAllConstants() -- generate all constant tables
 
     self.availableSpawnIndex = 1 -- the index of the next available sector

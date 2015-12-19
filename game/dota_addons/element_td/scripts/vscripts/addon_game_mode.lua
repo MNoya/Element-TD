@@ -90,7 +90,6 @@ local requires =
     "wavedata",
     "elements",
     "spells",
-    "towergrid",
     "playerdata",
     "developer",
     "ElementTD",
