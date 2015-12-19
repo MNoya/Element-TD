@@ -3899,25 +3899,6 @@
 		"MaxLevel"						"3"
 		"AbilityCastRange"				"625"
 	
-		"Modifiers"
-		{
-			"modifier_evaporate_passive"
-			{
-				"Passive"		"1"
-				"IsHidden"		"1"
-				"OnAttackStart"
-				{
-					"RunScript"
-					{
-						"Target"			"TARGET"
-						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-						"Function"			"TriggerEvent"
-						"Event"				"OnAttackStart"
-					}
-				}
-			}
-		}
-	
 		"AbilitySpecial"
 		{
 			"01"

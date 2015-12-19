@@ -14,7 +14,7 @@
     "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
     "VisionDaytimeRange"        "1900"
     "VisionNighttimeRange"      "1900"  
-    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
     "AttackAnimationPoint"      "0"
     "ProjectileCollisionSize"   "50"
