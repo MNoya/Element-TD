@@ -27,14 +27,11 @@ function PoisonTower:OnAttackLanded(keys)
         self.attacks = 0    
         fullDamageAOE = 300    
 
-
-        local particleA = ParticleManager:CreateParticle("particles/units/heroes/hero_venomancer/venomancer_ward_cast_b.vpcf", PATTACH_ABSORIGIN, self.tower)    
-        ParticleManager:SetParticleControl(particleA, 0, Vector(0, 0, 0))    
-        ParticleManager:SetParticleControl(particleA, 1, self.tower:GetOrigin())    
-
+        local particleA = ParticleManager:CreateParticle("particles/units/heroes/hero_venomancer/venomancer_ward_cast.vpcf", PATTACH_ABSORIGIN, self.tower)    
+        ParticleManager:SetParticleControl(particleA, 0, target:GetAttachmentOrigin(target:ScriptLookupAttachment("attach_hitloc")))
+        ParticleManager:SetParticleControl(particleA, 1, self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_hitloc")))
     end
-    damage = ApplyAttackDamageFromModifiers(damage, self.tower)    
-
+    damage = ApplyAttackDamageFromModifiers(damage, self.tower)
     local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_venomancer/venomancer_venomousgale_explosion_flash_b.vpcf", PATTACH_ABSORIGIN, target)    
     ParticleManager:SetParticleControl(particle, 0, Vector(0, 0, 0))    
     ParticleManager:SetParticleControl(particle, 3, target:GetOrigin())    
