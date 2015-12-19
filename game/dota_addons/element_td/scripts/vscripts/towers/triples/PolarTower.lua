@@ -66,10 +66,10 @@ end
 
 function PolarTower:OnCreated()
     self.ability = AddAbility(self.tower, "polar_tower_frostbite", self.tower:GetLevel())
-    Timers:CreateTimer(1, function()
+    Timers:CreateTimer(0.1, function()
         if IsValidEntity(self.tower) then
             self:FrostbiteThink()
-            return 1
+            return 0.1
         end
     end)
     self.ability:ToggleAutoCast()
@@ -87,7 +87,7 @@ end
 
 function OnFrostbiteExpire(keys)
     local target = keys.target
-    if target.FrostbiteData then
+    if target.FrostbiteData and target:IsAlive() then
         local healAmount = math.floor(target.FrostbiteData.HealthBurnAmount - ((target.FrostbiteData.ResultingHealth - target:GetHealth()) * (target.FrostbiteData.DamageTakenPercent / 100)))
         target:SetHealth(target:GetHealth() + healAmount)
         target.FrostbiteData = nil
