@@ -466,7 +466,6 @@ function ElementTD:FilterExecuteOrder( filterTable )
                     end
                 end
             end
-
         end
     end
 
@@ -505,6 +504,17 @@ function ElementTD:DamageFilter( filterTable )
     local victim = EntIndexToHScript( victim_index )
     local attacker = EntIndexToHScript( attacker_index )
     local damagetype = filterTable["damagetype_const"]
+
+    if damagetype == DAMAGE_TYPE_PHYSICAL then
+        local original_damage = filterTable["damage"] --Post reduction
+        local inflictor = filterTable["entindex_inflictor_const"]
+
+        -- Deny autoattack damage on towers that are projectile-based
+        if not inflictor and attacker.no_autoattack_damage then
+            filterTable["damage"] = 0
+            return true
+        end
+    end
 
     -- Cheat code
     if GameRules.WhosYourDaddy then

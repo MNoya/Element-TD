@@ -15,88 +15,50 @@ IceTower = createClass({
     },
 nil)    
 
-function IceTower:OnAttackStart(keys)
-    local targetEntity = keys.target    
-    local targetPos = targetEntity:GetAbsOrigin()    
-    local proj = CreateUnitByName("hydro_tower_projectile", self.projOrigin, false, nil, nil, self.tower:GetTeam())
+function IceTower:OnAttack(keys)
+    local target = keys.target
+    local projectileTable = {
+        Ability = self.ability,
+        EffectName = "particles/custom/towers/ice/projectile.vpcf",
+        vSpawnOrigin = self.projOrigin,
+        fDistance = self.distance,
+        fStartRadius = self.aoe_start,
+        fEndRadius = self.aoe_end,
+        Source = self.tower,
+        bHasFrontalCone = true,
+        bReplaceExisting = false,
+        bProvidesVision = false,
+        iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
+        iUnitTargetType = DOTA_UNIT_TARGET_BASIC,
+    }
+   
+    local diff = target:GetAbsOrigin() - self.tower:GetAbsOrigin()
+    diff.z = 0
+    projectileTable.vVelocity = diff:Normalized() * self.projectile_speed
 
-    proj:SetAbsOrigin(self.projOrigin)    
-    proj:SetOwner(self.tower:GetOwner())    
-    proj:AddNewModifier(nil, nil, "modifier_invulnerable", {})    
-    proj:AddNewModifier(nil, nil, "modifier_phased", {})    
+    ProjectileManager:CreateLinearProjectile( projectileTable )
+end
 
-     -- hopefully this works as intended
-    proj:AddNewModifier(proj, nil, "modifier_out_of_world", {})    
-      
-    proj.parent = self.tower    
-    proj.startOrigin = self.projOrigin    
-    proj.hitByInner = {}    
-    proj.hitByOuter = {}    
-    self.projectiles[proj:entindex()] = 1    
-
-    local direction = (targetPos - self.projOrigin):Normalized()    
-    proj.velocity = direction * (self.projectile_speed/30)
-    proj.velocity.z = 0    
-    proj.target = targetEntity    
-    proj.targetPos = targetEntity:GetAbsOrigin()    
-    proj.particleEffect = ParticleManager:CreateParticle("particles/units/heroes/hero_ancient_apparition/ancient_apparition_ice_blast_main.vpcf", PATTACH_ABSORIGIN_FOLLOW, proj)
-    ParticleManager:SetParticleControl(proj.particleEffect, 0, Vector(0, 0, 0))    
-    ParticleManager:SetParticleControl(proj.particleEffect, 3, proj:GetAbsOrigin())    
-
-    Timers:CreateTimer(function()
-        if not IsValidEntity(self.tower) then return end
-
-        local pos = proj:GetAbsOrigin()    
-        local aoe = self.aoe_start + (dist2D(proj.startOrigin, pos)*((self.aoe_end-self.aoe_start)/self.distance))
-
-        pos.x = pos.x + proj.velocity.x    
-        pos.y = pos.y + proj.velocity.y    
-        local groundPos = GetGroundPosition(pos, nil)    
-        groundPos.z = groundPos.z + 128    
-        proj:SetAbsOrigin(groundPos)    
-        ParticleManager:SetParticleControl(proj.particleEffect, 3, proj:GetAbsOrigin())    
-
-        ------------------------------
-        -- deal damage to creeps
-        local creeps = GetCreepsInArea(proj:GetOrigin(), aoe)    
-        for _, creep in pairs(creeps) do
-            if IsValidEntity(creep) then
-                if not proj.hitByOuter[creep:entindex()] then
-                    DamageEntity(creep, self.tower, self.damage)    
-                    proj.hitByOuter[creep:entindex()] = true    
-                end
-            end
-        end
-        -------------------------------------------
-    
-        local distance = dist2D(proj.startOrigin, pos)    
-        if distance >= self.distance then
-            
-            -- End Particle 
-
-            self.projectiles[proj:entindex()] = nil    
-            UTIL_Remove(proj)    
-            return
-        end
-        return 0.01    
-    end)
+function IceTower:OnProjectileHit(keys)
+    local damage = ApplyAbilityDamageFromModifiers(self.damage, self.tower)
+    local target = keys.target
+    DamageEntity(target, self.tower, damage)
+    local particleName = "particles/econ/items/keeper_of_the_light/kotl_weapon_arcane_staff/keeper_base_attack_arcane_staff_explosion_b.vpcf"
+    local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, self.tower)
+    ParticleManager:SetParticleControlEnt(particle, 3, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
 end
 
 function IceTower:OnCreated()
     self.ability = AddAbility(self.tower, "ice_tower_ice_blast", self.tower:GetLevel())    
     self.projOrigin = self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_attack1"))    
-    self.damage = GetAbilitySpecialValue("ice_tower_ice_blast", "damage")[self.tower:GetLevel()]    
+    self.damage = GetAbilitySpecialValue("ice_tower_ice_blast", "damage")[self.tower:GetLevel()]
     self.aoe_start = GetAbilitySpecialValue("ice_tower_ice_blast", "aoe_start")
     self.aoe_end = GetAbilitySpecialValue("ice_tower_ice_blast", "aoe_end")
     self.distance = GetAbilitySpecialValue("ice_tower_ice_blast", "distance")
     self.projectile_speed = GetAbilitySpecialValue("ice_tower_ice_blast", "projectile_speed")
-    self.projectiles = {}    
-end
 
-function IceTower:OnDestroyed()
-    for id,_ in pairs(self.projectiles) do
-        UTIL_Remove(EntIndexToHScript(id))    
-    end
+    -- Deny autoattack damage through damage filter
+    self.tower.no_autoattack_damage = true
 end
 
 function IceTower:OnAttackLanded(keys) end
