@@ -2593,17 +2593,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"75 375 1875"
+				"damage"				"150 750 3750"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"300"
+				"aoe_start"				"150"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"distance"				"1000"
+				"aoe_end"				"450"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"900"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"450"
 			}
 		}
 	}

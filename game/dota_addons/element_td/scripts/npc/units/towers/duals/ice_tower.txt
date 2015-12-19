@@ -40,13 +40,13 @@
 		"1"		"water"
 		"2"		"light"
 	}
-	"Damage"		"0"
+	"Damage"		"150"
 	"DamageType"		"light"
 	"ScriptClass"		"IceTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
-	"AttackRange"		"625"
-	"AttackAcquisitionRange"		"625"
+	"AttackRange"		"900"
+	"AttackAcquisitionRange"		"900"
 	"AttackRate"		"1.5"
 	"ProjectileModel"		""
 	"ProjectileSpeed"		"900"
@@ -68,8 +68,8 @@
 		"4"		"torrent_tower"
 		"5"		"polar_tower"
 	}
-	"AttackDamageMin"		"0"
-	"AttackDamageMax"		"0"
+	"AttackDamageMin"		"150"
+	"AttackDamageMax"		"150"
 	"Creature"
 	{
 		"AttachWearables"

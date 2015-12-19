@@ -18,7 +18,7 @@ nil)
 function IceTower:OnAttackStart(keys)
     local targetEntity = keys.target    
     local targetPos = targetEntity:GetAbsOrigin()    
-    local proj = CreateUnitByName("hydro_tower_projectile", self.projOrigin, false, nil, nil, self.tower:GetTeam())    
+    local proj = CreateUnitByName("hydro_tower_projectile", self.projOrigin, false, nil, nil, self.tower:GetTeam())
 
     proj:SetAbsOrigin(self.projOrigin)    
     proj:SetOwner(self.tower:GetOwner())    
@@ -35,7 +35,7 @@ function IceTower:OnAttackStart(keys)
     self.projectiles[proj:entindex()] = 1    
 
     local direction = (targetPos - self.projOrigin):Normalized()    
-    proj.velocity = direction * 25    
+    proj.velocity = direction * (self.projectile_speed/60)
     proj.velocity.z = 0    
     proj.target = targetEntity    
     proj.targetPos = targetEntity:GetAbsOrigin()    
@@ -47,6 +47,7 @@ function IceTower:OnAttackStart(keys)
         if not IsValidEntity(self.tower) then return end
 
         local pos = proj:GetAbsOrigin()    
+        local aoe = self.aoe_start + (dist2D(proj.startOrigin, pos)*((self.aoe_end-self.aoe_start)/self.distance))
 
         pos.x = pos.x + proj.velocity.x    
         pos.y = pos.y + proj.velocity.y    
@@ -57,7 +58,7 @@ function IceTower:OnAttackStart(keys)
 
         ------------------------------
         -- deal damage to creeps
-        local creeps = GetCreepsInArea(proj:GetOrigin(), 150)    
+        local creeps = GetCreepsInArea(proj:GetOrigin(), aoe)    
         for _, creep in pairs(creeps) do
             if IsValidEntity(creep) then
                 if not proj.hitByOuter[creep:entindex()] then
@@ -66,24 +67,12 @@ function IceTower:OnAttackStart(keys)
                 end
             end
         end
-        local creeps2 = GetCreepsInArea(proj:GetOrigin(), 100)    
-        for _, creep in pairs(creeps2) do
-            if IsValidEntity(creep) then
-                if not proj.hitByInner[creep:entindex()] then
-                    DamageEntity(creep, self.tower, self.damage)    
-                    proj.hitByInner[creep:entindex()] = true    
-                end        
-            end
-        end
         -------------------------------------------
     
         local distance = dist2D(proj.startOrigin, pos)    
-        if distance >= 1000 then
-            DamageEntitiesInArea(proj:GetOrigin(), self.aoe, self.tower, self.damage * 2)    
+        if distance >= self.distance then
             
-            local explosionParticle = ParticleManager:CreateParticle("particles/units/heroes/hero_ancient_apparition/ancient_apparition_ice_blast_explode.vpcf", PATTACH_ABSORIGIN, self.tower)    
-            ParticleManager:SetParticleControl(explosionParticle, 0, Vector(0, 0, 0))    
-            ParticleManager:SetParticleControl(explosionParticle, 3, proj:GetAbsOrigin())    
+            -- End Particle 
 
             self.projectiles[proj:entindex()] = nil    
             UTIL_Remove(proj)    
@@ -97,7 +86,10 @@ function IceTower:OnCreated()
     self.ability = AddAbility(self.tower, "ice_tower_ice_blast", self.tower:GetLevel())    
     self.projOrigin = self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_attack1"))    
     self.damage = GetAbilitySpecialValue("ice_tower_ice_blast", "damage")[self.tower:GetLevel()]    
-    self.aoe = GetAbilitySpecialValue("ice_tower_ice_blast", "aoe")    
+    self.aoe_start = GetAbilitySpecialValue("ice_tower_ice_blast", "aoe_start")
+    self.aoe_end = GetAbilitySpecialValue("ice_tower_ice_blast", "aoe_end")
+    self.distance = GetAbilitySpecialValue("ice_tower_ice_blast", "distance")
+    self.projectile_speed = GetAbilitySpecialValue("ice_tower_ice_blast", "projectile_speed")
     self.projectiles = {}    
 end
 
