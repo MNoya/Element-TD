@@ -30,6 +30,8 @@ var tooltipsUI = {'Lumber': LumberUI, 'Pure Essence': LumberUI, 'Total Score': S
 				  'Light':ElementsUI,'Dark':ElementsUI,
 				};
 
+var AspectRatio21x9 = false;
+
 function ModifyLumber( data )
 {
 	var prev = parseInt(lumber.text);
@@ -81,7 +83,27 @@ function ShowTooltip( str )
 	$.DispatchEvent("DOTAShowTitleTextTooltip", tooltipUI, title, tooltip);
 }
 
+//Karawasa Resolution 21x9
+function CheckAspectRatio()
+{
+	var rootHud = LumberUI.GetParent();
+
+	var width = rootHud.actuallayoutwidth;
+	var height = rootHud.actuallayoutheight;
+
+	var ratio = (width/height).toFixed(2);
+
+	// 21x9
+	if (ratio == 2.35)
+	{
+		AspectRatio21x9 = true;
+		rootHud.SetHasClass( "AspectRatio21x9", AspectRatio21x9 );
+		$.Msg('Karawasa screen resolution enabled!');
+	}
+}
+
 (function () {
+  $.Schedule(1, function(){  CheckAspectRatio();});
   lumberDisplay.visible = false;
   GameEvents.Subscribe( "etd_update_lumber", ModifyLumber );
   GameEvents.Subscribe( "etd_update_pure_essence", ModifyPureEssence );

@@ -22,6 +22,14 @@
     width: 160px;
 }
 
+.AspectRatio21x9 #ResourceElements
+{
+    margin-bottom: 135px;
+    margin-right: 50px;
+    height: 64px;
+    width: 200px;
+}
+
 #ResourceElements .element
 {
     width: 50px;
@@ -150,6 +158,12 @@
     margin-right: 204px;
 }
 
+.AspectRatio21x9 #ResourceLumber
+{
+    margin-bottom: 214px;
+    margin-right: 40px;
+}
+
 #LumberText
 {
     color: green;
@@ -186,6 +200,12 @@
 {
     margin-bottom: 140px;
     margin-right: 172px;
+}
+
+.AspectRatio21x9 #ResourceEssence
+{
+    margin-bottom: 214px;
+    margin-right: 4px;
 }
 
 #PureEssenceText
@@ -228,6 +248,12 @@
 {
     margin-bottom: 206px;
     margin-right: 30px;
+}
+
+.AspectRatio21x9 #ResourceScore
+{
+    margin-bottom: 70px;
+    margin-right: 130px;
 }
 
 #ScoreLabel 
