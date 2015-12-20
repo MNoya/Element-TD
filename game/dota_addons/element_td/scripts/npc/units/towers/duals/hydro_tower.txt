@@ -23,7 +23,6 @@
             "8" { "ItemDef" "10" } // Kunkka's Boots
         }
     }
-    "AttackAnimationPoint"      "0.4"
 
     // Stats
     //----------------------------- 

@@ -92,6 +92,7 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/vapor/tako_shake.vpcf"
+			m_bDisableChild = true
 		},
 	]
 }
