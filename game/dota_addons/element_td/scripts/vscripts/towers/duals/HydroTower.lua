@@ -1,5 +1,8 @@
 -- Hydro Tower class (Water + Earth)
--- This tower has a slow and non-homing projectile that does splash damage upon impact. Tower has an ability that makes it attack a point over and over again.
+-- Single target tower that does 200/1000/5000 damage with 700 range and 1 attack speed.
+-- Each attack has a 33% to mark the target with an effect. 1.5 seconds after being marked, the effect does 200/1000/5000 damage in 250 (full damage) AoE. 
+-- Creep can be marked again if already marked. 
+
 HydroTower = createClass({
         tower = nil,
         towerClass = "",
@@ -14,93 +17,36 @@ HydroTower = createClass({
     },
 nil)
 
-function HydroTower:ChooseTarget(keys)
-    if keys.target_points[1] then
-        self.fixedTarget = keys.target_points[1]
+function HydroTower:OnAttackLanded(keys)
+    local caster = keys.caster
+    local target = keys.target
 
-        local resetAbility = AddAbility(self.tower, "hydro_tower_reset_target") 
-        self.tower:SwapAbilities("hydro_tower_reset_target", "hydro_tower_choose_target", true, true)
-        self.tower:RemoveAbility("hydro_tower_choose_target")
-
-        resetAbility:StartCooldown(2)
-        self.tower:AddNewModifier(nil, nil, "modifier_disarmed", {})
-        self.attackTimer = Timers:CreateTimer(1, function()
-            if IsValidEntity(self.tower) then
-                self:ShootProjectileAt(self.fixedTarget)
-                return 1
-            end
-        end)
+    if RollPercentage(self.chance) then
+        self.ability:ApplyDataDrivenModifier(caster, target, "modifier_hydro_delay", {duration=self.delay})
     end
-end
-
-function HydroTower:ResetTarget(keys)
-    self.tower:RemoveModifierByName("modifier_disarmed")
-    Timers:RemoveTimer(self.attackTimer)
-
-    local chooseAbility = AddAbility(self.tower, "hydro_tower_choose_target") 
-    self.tower:SwapAbilities("hydro_tower_reset_target", "hydro_tower_choose_target", true, true)
-    self.tower:RemoveAbility("hydro_tower_reset_target")
-    chooseAbility:StartCooldown(2)
-end
-
-function HydroTower:OnAttackStart(keys)
-    self:ShootProjectileAt(keys.target:GetAbsOrigin())
-end
-
-function HydroTower:ShootProjectileAt(targetPos)
-    local projOrigin = self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_attack1"))
-
-    local projectile = {id = DoUniqueString("HydroTowerProjectile")}
-    projectile.direction = (targetPos - projOrigin):Normalized()
-    projectile.velocity = projectile.direction * 20
-    projectile.target = targetPos
-    projectile.origin = projOrigin
-
-    local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_puck/puck_illusory_orb_main.vpcf", PATTACH_ABSORIGIN, self.tower)
-    ParticleManager:SetParticleControl(particle, 0, Vector(0, 0, 0))
-    ParticleManager:SetParticleControl(particle, 3, projectile.origin)
 
     Timers:CreateTimer(function()
-        if not IsValidEntity(self.tower) then return end
-        
-        local pos = projectile.origin
-        pos.x = pos.x + projectile.velocity.x
-        pos.y = pos.y + projectile.velocity.y
-        pos.z = pos.z + projectile.velocity.z
-        projectile.origin = pos
-        ParticleManager:SetParticleControl(particle, 3, pos)
-
-        local distance = (projectile.target - pos):Length()
-        if distance <= 50 then
-            ParticleManager:DestroyParticle(particle, true)
-
-            -- create explosion particle effect
-            local e_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_puck/puck_illusory_orb_explode.vpcf", PATTACH_ABSORIGIN, self.tower)
-            ParticleManager:SetParticleControl(e_particle, 0, Vector(0, 0, 0))
-            ParticleManager:SetParticleControl(e_particle, 3, projectile.origin) -- position
-
-            --deal aoe damage
-            local damage = ApplyAbilityDamageFromModifiers(self.splashDamage[self.tower:GetLevel()], self.tower)
-            DamageEntitiesInArea(pos, 400, self.tower, damage / 4)
-            DamageEntitiesInArea(pos, 250, self.tower, damage / 4)
-            DamageEntitiesInArea(pos, 125, self.tower, damage / 2)
-            return
-        end
-        return 0.01
+        local damage = ApplyAbilityDamageFromModifiers(self.splashDamage, self.tower)
+        DamageEntity(target, self.tower, damage)
     end)
 end
 
-function HydroTower:OnCreated()
-    self.ability = AddAbility(self.tower, "hydro_tower_ability") 
-    AddAbility(self.tower, "hydro_tower_choose_target") 
+function HydroTower:OnDelayEnd(keys)
+    local target = keys.target
+    local damage = ApplyAttackDamageFromModifiers(self.splashDamage, self.tower)
+    DamageEntitiesInArea(target:GetAbsOrigin(), self.splashAOE, self.tower, damage)
 
-    self.splashDamage = GetAbilitySpecialValue("hydro_tower_ability", "splash_damage")
-    self.splashAOE = GetAbilitySpecialValue("hydro_tower_ability", "splash_aoe")
-
-    self.targetingType = HYDRO_AUTO_TARGET
-    self.fixedTarget = Vector(0, 0, 0)
+    local torrent = ParticleManager:CreateParticle("particles/custom/towers/hydro/torrent_splash.vpcf", PATTACH_CUSTOMORIGIN, self.tower)
+    ParticleManager:SetParticleControl(torrent, 0, target:GetAbsOrigin())
+    ParticleManager:SetParticleControl(torrent, 1, target:GetAbsOrigin())
 end
 
-function HydroTower:OnAttackLanded(keys) end
+function HydroTower:OnCreated()
+    self.ability = AddAbility(self.tower, "hydro_tower_ability")
+    self.splashDamage = self.ability:GetLevelSpecialValueFor("splash_damage", self.ability:GetLevel() - 1)
+    self.splashAOE = GetAbilitySpecialValue("hydro_tower_ability", "splash_aoe")
+    self.chance = GetAbilitySpecialValue("hydro_tower_ability", "chance_pct")
+    self.delay = GetAbilitySpecialValue("hydro_tower_ability", "delay")
+end
 
 RegisterTowerClass(HydroTower, HydroTower.className)

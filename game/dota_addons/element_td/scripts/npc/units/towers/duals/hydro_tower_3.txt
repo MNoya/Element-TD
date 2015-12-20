@@ -1,69 +1,14 @@
 "hydro_tower_3"
 {
-    "BaseClass"                 "npc_dota_creature" 
-	"SoundSet"					"Tower.Water"
-	"MinimapIcon"				"minimap_tower90"
-	"MinimapIconSize"			"320"
-	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
-    "ArmorPhysical"             "0"
-    "MagicalResistance"         "0"
-    "BoundsHullName"            "DOTA_HULL_SIZE_TOWER"
-    "TeamName"                  "DOTA_TEAM_GOODGUYS"
-    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
-    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-    "VisionDaytimeRange"        "1900"
-    "VisionNighttimeRange"      "1900"  
-    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
-    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+    // Visual
+    //-----------------------------
+    "Model"                     "models/heroes/kunkka/kunkka.vmdl"
+    "ModelScale"                "1.3"
+    "ProjectileModel"           "particles/custom/towers/hydro/attack.vpcf"  
+    "SoundSet"                  "Tower.Water"
+    "MinimapIcon"               "minimap_tower90"
+    "MinimapIconSize"           "320"
     "AttackAnimationPoint"      "0.4"
-    "ProjectileCollisionSize"   "50"
-    "RingRadius"                "90"
-    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
-    "MovementSpeed"             "0"
-    "MovementTurnRate"          "1.0"
-    "StatusHealth"              "1000"
-    "StatusHealthRegen"         "0"
-    "StatusMana"                "0"
-    "StatusManaRegen"           "0"
-	"TeamName"		"DOTA_TEAM_GOODGUYS"
-	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-	"CombatClassDefend"		"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
-	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	"VisionDaytimeRange"		"1900"
-	"VisionNighttimeRange"		"1900"
-	"Level"		"3"
-	"Cost"		"1900"
-	"TotalCost"		"3150"
-	"Element"
-	{
-		"1"		"water"
-		"2"		"earth"
-	}
-	"Damage"		"0"
-	"DamageType"		"earth"
-	"ScriptClass"		"HydroTower"
-	"TowerType"		"Normal"
-	"HasAbilityDesc"		"1"
-	"AttackRange"		"625"
-	"AttackAcquisitionRange"		"725"
-	"AttackRate"		"1"
-	"ProjectileModel"		""
-	"ProjectileSpeed"		"900"
-	"Model"		"models/heroes/kunkka/kunkka.vmdl"
-	"ModelScale"		"1.3"
-	"UpgradeIcon"		"puck_illusory_orb"
-	"BuildTime"		"3"
-	"Requirements"
-	{
-		"water"		"3"
-		"earth"		"3"
-	}
-	"Upgrades"
-	{
-	}
-	"AttackDamageMin"		"0"
-	"AttackDamageMax"		"0"
     "Creature"
     {
        "AttachWearables" // Bestowments of the Divine Anchor
@@ -78,6 +23,58 @@
             "8" { "ItemDef" "6779" } // Epaulets of the Divine Anchor
        }
     }
+
+    // Stats
+    //----------------------------- 
+    "AttackDamageMin"           "5000"
+    "AttackDamageMax"           "5000"
+    "Damage"                    "5000"
+    "AttackRange"               "700"
+    "AttackAcquisitionRange"    "700"
+    "AttackRate"                "1"
+    "ProjectileSpeed"           "900" 
+
+    "Level"                     "3"
+    "Cost"                      "1900"
+    "TotalCost"                 "3150"
+    "BuildTime"                 "3"
+
+    "DamageType"                "earth"
+    "ScriptClass"               "HydroTower"
+    "TowerType"                 "Normal"
+    
+    "Requirements"
+    {
+        "water"     "3"
+        "earth"     "3"
+    }
+    "Upgrades"
+    {
+    }
+
+    // General
+    //-----------------------------
+    "BaseClass"                 "npc_dota_creature"
+    "ArmorPhysical"             "0"
+    "MagicalResistance"         "0"
+    "BoundsHullName"            "DOTA_HULL_SIZE_TOWER"
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"      "1900"  
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+    "ProjectileCollisionSize"   "50"
+    "RingRadius"                "80"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"             "0"
+    "MovementTurnRate"          "1.0"
+    "StatusHealth"              "1000"
+    "StatusHealthRegen"         "0"
+    "StatusMana"                "0"
+    "StatusManaRegen"           "0"
 
     // Building Size
     "ConstructionSize"          "2"

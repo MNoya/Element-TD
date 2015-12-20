@@ -2435,23 +2435,41 @@
 	
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"puck_illusory_orb"
+		"AbilityTextureName"			"kunkka_torrent"
 		"MaxLevel"						"3"
-		"AbilityCastRange"				"625"
+		"AbilityCastRange"				"700"
+	
 		"Modifiers"
 		{
 			"modifier_hydro_passive"
 			{
 				"Passive"		"1"
 				"IsHidden"		"1"
-				"OnAttackStart"
+				"OnAttackLanded"
 				{
 					"RunScript"
 					{
-						"Target"			"TARGET"
-						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"ScriptFile"		"towers/towerevents.lua"
 						"Function"			"TriggerEvent"
-						"Event"				"OnAttackStart"
+						"Event"				"OnAttackLanded"
+					}
+				}
+			}
+	
+			"modifier_hydro_delay"
+			{
+				"EffectName"		"particles/units/heroes/hero_kunkka/kunkka_spell_x_spot.vpcf"
+				"EffectAttachType"	"follow_origin"
+	
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"IsDebuff"	"1"
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnDelayEnd"
 					}
 				}
 			}
@@ -2461,66 +2479,23 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"140 700 3500"
+				"var_type"			"FIELD_INTEGER"
+				"chance_pct"		"33"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"splash_aoe"			"400"
+				"var_type"			"FIELD_INTEGER"
+				"splash_damage"		"200 1000 5000"
 			}
-		}
-	}
-	//=================================================================================================================
-	// Hydro Tower: Choose Target
-	//=================================================================================================================
-	"hydro_tower_choose_target"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-	
-		"BaseClass"						"ability_datadriven"											
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityTextureName"			"towers/hydro_tower_choose_target"
-		"MaxLevel"						"1"
-		"AbilityCastRange"				"700"
-		"AbilityCooldown"				"0"
-		"AbilityManaCost"				"0"
-		"AbilityCastPoint"				"0"
-	
-		"OnSpellStart"
-		{
-			"RunScript"
+			"03"
 			{
-				"Target"			"POINT"
-				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-				"Function"			"TriggerEvent"
-				"Event"				"ChooseTarget"
+				"var_type"			"FIELD_INTEGER"
+				"splash_aoe"		"250"
 			}
-		}
-	}
-	//============================================================//
-	// Hydro Tower: Reset Target
-	//============================================================//
-	"hydro_tower_reset_target"
-	{
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel"						"1"
-		"AbilityTextureName"			"towers/hydro_tower_reset_target"
-		"AbilityCooldown"				"0"
-		"AbilityManaCost"				"0"
-		"AbilityCastPoint"				"0"
-	
-		"OnSpellStart"
-		{
-			"RunScript"
+			"04"
 			{
-				"Target"			"CASTER"
-				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-				"Function"			"TriggerEvent"
-				"Event"				"ResetTarget"
+				"var_type"			"FIELD_FLOAT"
+				"delay"				"1.5"
 			}
 		}
 	}

@@ -1,10 +1,67 @@
 "hydro_tower"
 {
-    "BaseClass"                 "npc_dota_creature" 
-	"SoundSet"					"Tower.Water"
-	"MinimapIcon"				"minimap_tower90"
-	"MinimapIconSize"			"320"
-	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+    // Visual
+    //-----------------------------
+    "Model"                     "models/heroes/kunkka/kunkka.vmdl"
+    "ModelScale"                "0.9"
+    "ProjectileModel"           "particles/custom/towers/hydro/attack.vpcf"  
+    "SoundSet"                  "Tower.Water"
+    "MinimapIcon"               "minimap_tower90"
+    "MinimapIconSize"           "320"
+    "AttackAnimationPoint"      "0.4"
+    "Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_kunkka
+        {
+            "1" { "ItemDef" "14" } // Kunkka's Hair
+            "2" { "ItemDef" "12" } // Kunkka's Sword
+            "3" { "ItemDef" "11" } // Kunkka's Hands
+            "4" { "ItemDef" "357" } // Kunkka's Shoulder Guard
+            "5" { "ItemDef" "81" } // Kunkka's Spyglass
+            "6" { "ItemDef" "8656" } // Kunkka's Back
+            "7" { "ItemDef" "8657" } // Kunkka's Neck
+            "8" { "ItemDef" "10" } // Kunkka's Boots
+        }
+    }
+    "AttackAnimationPoint"      "0.4"
+
+    // Stats
+    //----------------------------- 
+    "AttackDamageMin"           "200"
+    "AttackDamageMax"           "200"
+    "Damage"                    "200"
+    "AttackRange"               "700"
+    "AttackAcquisitionRange"    "700"
+    "AttackRate"                "1"
+    "ProjectileSpeed"           "900" 
+
+    "Level"                     "1"
+    "Cost"                      "325"
+    "TotalCost"                 "500"
+    "BuildTime"                 "3"
+
+    "DamageType"                "earth"
+    "ScriptClass"               "HydroTower"
+    "TowerType"                 "Normal"
+    
+    "Element"
+    {
+        "1"     "water"
+        "2"     "earth"
+    }
+    "Upgrades"
+    {
+        "Count"     "5"
+        "1"     "hydro_tower_2"
+        "2"     "muck_tower"
+        "3"     "ephemeral_tower"
+        "4"     "haste_tower"
+        "5"     "polar_tower"
+    }
+
+    // General
+    //-----------------------------
+    "BaseClass"                 "npc_dota_creature"
     "ArmorPhysical"             "0"
     "MagicalResistance"         "0"
     "BoundsHullName"            "DOTA_HULL_SIZE_TOWER"
@@ -16,9 +73,8 @@
     "VisionNighttimeRange"      "1900"  
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-    "AttackAnimationPoint"      "0.4"
     "ProjectileCollisionSize"   "50"
-    "RingRadius"                "90"
+    "RingRadius"                "80"
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
     "MovementSpeed"             "0"
     "MovementTurnRate"          "1.0"
@@ -26,82 +82,9 @@
     "StatusHealthRegen"         "0"
     "StatusMana"                "0"
     "StatusManaRegen"           "0"
-	"TeamName"		"DOTA_TEAM_GOODGUYS"
-	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-	"CombatClassDefend"		"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
-	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	"VisionDaytimeRange"		"1900"
-	"VisionNighttimeRange"		"1900"
-	"Level"		"1"
-	"Cost"		"325"
-	"TotalCost"		"500"
-	"Element"
-	{
-		"1"		"water"
-		"2"		"earth"
-	}
-	"Damage"		"0"
-	"DamageType"		"earth"
-	"ScriptClass"		"HydroTower"
-	"TowerType"		"Normal"
-	"HasAbilityDesc"		"1"
-	"AttackRange"		"625"
-	"AttackAcquisitionRange"		"725"
-	"AttackRate"		"1"
-	"ProjectileModel"		""
-	"ProjectileSpeed"		"900"
-	"Model"		"models/heroes/kunkka/kunkka.vmdl"
-	"ModelScale"		"0.9"
-	"UpgradeIcon"		"puck_illusory_orb"
-	"BuildTime"		"3"
-	"Requirements"
-	{
-		"water"		"1"
-		"earth"		"1"
-	}
-	"Upgrades"
-	{
-		"Count"		"5"
-		"1"		"hydro_tower_2"
-		"2"		"muck_tower"
-		"3"		"ephemeral_tower"
-		"4"		"haste_tower"
-		"5"		"polar_tower"
-	}
-	"AttackDamageMin"		"0"
-	"AttackDamageMax"		"0"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"		"10"
-			}
-			"Wearable2"
-			{
-				"ItemDef"		"11"
-			}
-			"Wearable3"
-			{
-				"ItemDef"		"14"
-			}
-			"Wearable4"
-			{
-				"ItemDef"		"357"
-			}
-			"Wearable5"
-			{
-				"ItemDef"		"81"
-			}
-			"Wearable6"
-			{
-				"ItemDef"		"12"
-			}
-		}
-	}
 
     // Building Size
     "ConstructionSize"          "2"
     "BlockPathingSize"          "0"
 }
+	
