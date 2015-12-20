@@ -35,8 +35,6 @@ function ElementTD:InitGameMode()
     self.playerIDMap = {} --maps userIDs to playerID
     self.vPlayerIDToHero = {} -- Maps playerID to hero
 
-    self.lastPlayerToFinish = -1
-
     GameRules:SetHeroRespawnEnabled(false)
     GameRules:SetSameHeroSelectionEnabled(true)
     GameRules:SetPostGameTime(30)
@@ -210,7 +208,6 @@ function ElementTD:EndGameForPlayer( playerID )
     for l,m in pairs(playerData.waveObject.creeps) do
         EntIndexToHScript(l):ForceKill(false)
     end
-    self.lastPlayerToFinish = playerID
     ElementTD:CheckGameEnd()
 end
 
@@ -238,7 +235,40 @@ function ElementTD:CheckGameEnd()
             end
         end
     else
-        teamWinner = self.vPlayerIDToHero[self.lastPlayerToFinish]:GetTeamNumber()
+        -- Wave > Difficulty > Score
+        local winnerId = -1
+        local compareWave = 0
+        local compareScore = 0
+        local compareDifficulty = "Normal"
+        for k, ply in pairs(players) do
+            local playerData = GetPlayerData(ply:GetPlayerID())
+            if playerData.completedWaves > compareWave then
+                winnerId = ply:GetPlayerID()
+                compareWave = playerData.completedWaves
+                compareScore = playerData.scoreObject.totalScore
+                compareDifficulty = playerData.difficulty.difficultyName
+            elseif playerData.completedWaves == compareWave then
+                if playerData.difficulty.difficultyName == compareDifficulty then
+                    if playerData.scoreObject.totalScore >  compareScore then
+                        winnerId = ply:GetPlayerID()
+                        compareWave = playerData.completedWaves
+                        compareScore = playerData.scoreObject.totalScore
+                        compareDifficulty = playerData.difficulty.difficultyName
+                    end
+                else
+                    local diff = playerData.difficulty.difficultyName
+                    if diff == "Insane" or (diff == "VeryHard" and (compareDifficulty == "Hard" or compareDifficulty == "Normal")) or (diff == "Hard" and compareDifficulty == "Normal") then
+                        winnerId = ply:GetPlayerID()
+                        compareWave = playerData.completedWaves
+                        compareScore = playerData.scoreObject.totalScore
+                        compareDifficulty = playerData.difficulty.difficultyName
+                    end
+                end
+            end
+        end
+        if winnerId ~= -1 then
+            teamWinner = self.vPlayerIDToHero[winnerId]:GetTeamNumber()
+        end
     end
     if endGame then
         Log:info("Game end condition reached. Ending game in 5 seconds.")
