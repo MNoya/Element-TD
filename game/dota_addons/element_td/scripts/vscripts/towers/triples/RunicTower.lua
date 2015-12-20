@@ -28,25 +28,40 @@ function RunicTower:OnMagicAttackCast(keys)
     self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_magic_attack", {})
 end
 
-function RunicTower:OnAttackStart(keys)
+function RunicTower:OnAttack(keys)
     local target = keys.target
+    local caster = keys.caster
     local creeps = GetCreepsInArea(target:GetOrigin(), self.halfAOE)
     if self.tower:HasModifier("modifier_magic_attack") then
         for _, creep in pairs(creeps) do
             if creep:IsAlive() and creep:entindex() ~= target:entindex() then
-                self.tower:PerformAttack(creep, false, false, true, true)
-
-                local distance = (creep:GetOrigin() - self.attackOrigin):Length()
-                local time = distance / self.projectileSpeed
-                Timers:CreateTimer(DoUniqueString("RunicTowerDelay" .. creep:entindex()), {
-                    endTime = time - 0.1,
-                    callback = function()
-                        self:OnAttackLanded({target = creep, isBonus = true})
-                    end
-                })
+                --self.tower:PerformAttack(creep, false, false, true, true, false)
+                local info = 
+                {
+                    Target = creep,
+                    Source = caster,
+                    Ability = caster:GetAbilityByIndex(0),  
+                    EffectName = "particles/units/heroes/hero_visage/visage_base_attack.vpcf",
+                    iMoveSpeed = 900,
+                    vSourceLoc= caster:GetAbsOrigin(),                -- Optional (HOW)
+                    bDrawsOnMinimap = false,                          -- Optional
+                    bDodgeable = true,                                -- Optional
+                    bIsAttack = false,                                -- Optional
+                    bVisibleToEnemies = true,                         -- Optional
+                    bReplaceExisting = false,                         -- Optional
+                    flExpireTime = GameRules:GetGameTime() + 10,      -- Optional but recommended
+                    bProvidesVision = true,                           -- Optional
+                    iVisionRadius = 400,                              -- Optional
+                    iVisionTeamNumber = caster:GetTeamNumber()        -- Optional
+                }
+                projectile = ProjectileManager:CreateTrackingProjectile(info)
             end
         end
     end
+end
+
+function RunicTower:OnProjectileHit(keys)
+    self:OnAttackLanded({target = keys.target, isBonus = true})
 end
 
 function RunicTower:OnAttackLanded(keys)
@@ -63,10 +78,10 @@ end
 
 function RunicTower:OnCreated()
     self.ability = AddAbility(self.tower, "runic_tower_magic_attack")
-    Timers:CreateTimer(1, function()
+    Timers:CreateTimer(0.1, function()
         if IsValidEntity(self.tower) then
             self:OnMagicAttackThink()
-            return 1
+            return 0.1
         end
     end)
     self.ability:ToggleAutoCast()

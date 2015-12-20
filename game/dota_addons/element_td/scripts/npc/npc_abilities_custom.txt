@@ -3459,6 +3459,8 @@
 		"MaxLevel"						"1"
 		"AbilityCooldown"				"9"
 	
+		"AbilityCastRange"				"1100"
+	
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -3480,14 +3482,14 @@
 			{
 				"Passive"	"1"
 				"IsHidden"	"1"
-				"OnAttackStart"
+				"OnAttack"
 				{
 					"RunScript"
 					{
 						"Target"			"POINT"
 						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
 						"Function"			"TriggerEvent"
-						"Event"				"OnAttackStart"
+						"Event"				"OnAttack"
 					}
 				}
 			}
@@ -3498,6 +3500,17 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"duration"				"3"
+			}
+		}
+	
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"RunScript"
+			{
+				"ScriptFile"		"towers/towerevents.lua"
+				"Function"			"TriggerEvent"
+				"Event"				"OnProjectileHit"
 			}
 		}
 	}
