@@ -91,15 +91,29 @@ function CheckAspectRatio()
 	var width = rootHud.actuallayoutwidth;
 	var height = rootHud.actuallayoutheight;
 
+	var r = gcd(width, height);
+
 	var ratio = (width/height).toFixed(2);
 
+	// Aspect1:Aspect2
+	var Aspect1 = width/r;
+	var Aspect2 = height/r;
+
+	var AspectRatio = Aspect1 + ":" + Aspect2;
+
+	$.Msg(AspectRatio);
+	
 	// 21x9
-	if (ratio == 2.35)
+	if (AspectRatio == "64:27" || AspectRatio == "21:9" || AspectRatio == "43:18")
 	{
 		AspectRatio21x9 = true;
 		rootHud.SetHasClass( "AspectRatio21x9", AspectRatio21x9 );
 		$.Msg('Karawasa screen resolution enabled!');
 	}
+}
+
+function gcd (a, b) {
+	return (b == 0) ? a : gcd (b, a%b);
 }
 
 (function () {
