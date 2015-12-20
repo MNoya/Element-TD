@@ -40,19 +40,19 @@ function RunicTower:OnAttack(keys)
                 {
                     Target = creep,
                     Source = caster,
-                    Ability = caster:GetAbilityByIndex(0),  
+                    Ability = keys.ability,
                     EffectName = "particles/units/heroes/hero_visage/visage_base_attack.vpcf",
                     iMoveSpeed = 900,
-                    vSourceLoc= caster:GetAbsOrigin(),                -- Optional (HOW)
-                    bDrawsOnMinimap = false,                          -- Optional
-                    bDodgeable = true,                                -- Optional
-                    bIsAttack = false,                                -- Optional
-                    bVisibleToEnemies = true,                         -- Optional
-                    bReplaceExisting = false,                         -- Optional
-                    flExpireTime = GameRules:GetGameTime() + 10,      -- Optional but recommended
-                    bProvidesVision = true,                           -- Optional
-                    iVisionRadius = 400,                              -- Optional
-                    iVisionTeamNumber = caster:GetTeamNumber()        -- Optional
+                    vSourceLoc= caster:GetAbsOrigin(),
+                    bDrawsOnMinimap = false,
+                    bDodgeable = true,
+                    bIsAttack = false,
+                    bVisibleToEnemies = true,
+                    bReplaceExisting = false,
+                    flExpireTime = GameRules:GetGameTime() + 10,
+                    bProvidesVision = true,
+                    iVisionRadius = 400,
+                    iVisionTeamNumber = caster:GetTeamNumber()
                 }
                 projectile = ProjectileManager:CreateTrackingProjectile(info)
             end
@@ -78,10 +78,10 @@ end
 
 function RunicTower:OnCreated()
     self.ability = AddAbility(self.tower, "runic_tower_magic_attack")
-    Timers:CreateTimer(0.1, function()
+    Timers:CreateTimer(0.03, function()
         if IsValidEntity(self.tower) then
             self:OnMagicAttackThink()
-            return 0.1
+            return 0.03
         end
     end)
     self.ability:ToggleAutoCast()
