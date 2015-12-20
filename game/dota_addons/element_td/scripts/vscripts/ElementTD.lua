@@ -35,6 +35,8 @@ function ElementTD:InitGameMode()
     self.playerIDMap = {} --maps userIDs to playerID
     self.vPlayerIDToHero = {} -- Maps playerID to hero
 
+    self.lastPlayerToFinish = -1
+
     GameRules:SetHeroRespawnEnabled(false)
     GameRules:SetSameHeroSelectionEnabled(true)
     GameRules:SetPostGameTime(30)
@@ -208,6 +210,7 @@ function ElementTD:EndGameForPlayer( playerID )
     for l,m in pairs(playerData.waveObject.creeps) do
         EntIndexToHScript(l):ForceKill(false)
     end
+    self.lastPlayerToFinish = playerID
     ElementTD:CheckGameEnd()
 end
 
@@ -221,11 +224,27 @@ function ElementTD:CheckGameEnd()
             endGame = false
         end
     end
+    local teamWinner = DOTA_TEAM_BADGUYS
+    if #players == 1 then
+        for k, ply in pairs(players) do
+            local playerData = GetPlayerData(ply:GetPlayerID())
+            -- Lost
+            if (playerData.health == 0 and not EXPRESS_MODE and playerData.completedWaves < WAVE_COUNT) or (EXPRESS_MODE and playerData.health == 0) then
+                if ply:GetTeamNumber() == teamWinner then
+                    teamWinner = DOTA_TEAM_GOODGUYS
+                end
+            else -- Won
+                teamWinner = ply:GetTeamNumber()
+            end
+        end
+    else
+        teamWinner = self.vPlayerIDToHero[self.lastPlayerToFinish]:GetTeamNumber()
+    end
     if endGame then
         Log:info("Game end condition reached. Ending game in 5 seconds.")
         GameRules:SendCustomMessage("Thank you for playing <font color='#70EA72'>Element Tower Defense</font>!", 0, 0)
         Timers:CreateTimer(5, function()
-            GameRules:SetGameWinner( DOTA_TEAM_BADGUYS )
+            GameRules:SetGameWinner( teamWinner )
             GameRules:SetSafeToLeave( true )
         end)
     end

@@ -178,6 +178,7 @@ function SpawnWaveForPlayer(playerID, wave)
             playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
             Log:info("Player ["..playerID.."] has completed the game.")
             GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerData.name .. "</font> has completed the game.!", 0, 0)
+            self.lastPlayerToFinish = playerID
             ElementTD:CheckGameEnd()
             return
         end

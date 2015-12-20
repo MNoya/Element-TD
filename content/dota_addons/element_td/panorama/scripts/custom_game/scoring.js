@@ -1,3 +1,5 @@
+"use strict";
+
 function ScoringNotification(msg) {
   AddNotification(msg, $('#ScoringNotifications'));
 }
