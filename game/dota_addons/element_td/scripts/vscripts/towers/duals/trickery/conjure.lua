@@ -21,6 +21,7 @@ function trickery_tower_conjure:OnSpellStart()
 
     -- Create Tower Building
     local clone = CreateUnitByName(target.class, clonePos, false, nil, nil, target:GetTeam()) 
+    clonePos = GetGroundPosition(clonePos, clone)
 
     --set some variables
     clone.class = target.class
@@ -31,6 +32,19 @@ function trickery_tower_conjure:OnSpellStart()
     clone:SetOwner(PlayerResource:GetPlayer(playerID):GetAssignedHero())
     clone:SetControllableByPlayer(playerID, true)
     clone.construction_size = target.construction_size
+
+    -- Create the basic element tower pedestal model
+    if IsValidEntity(target.prop) then
+        -- Create the basic element tower pedestal model
+        local pedestal = GetUnitKeyValue(clone.damageType.."_tower", "PedestalModel")
+        local offset = GetUnitKeyValue(clone.damageType.."_tower", "PedestalOffset") or 0
+        local prop = SpawnEntityFromTableSynchronous("prop_dynamic", {model = pedestal})
+        local offset_location = Vector(clonePos.x, clonePos.y, clonePos.z + offset)
+        local scale = GetUnitKeyValue(clone.damageType.."_tower", "PedestalModelScale")
+        prop:SetModelScale(scale)
+        prop:SetAbsOrigin(offset_location)
+        clone.prop = prop -- Store the pedestal prop
+    end
 
     --color
     clone:SetRenderColor(0, 148, 255)

@@ -36,7 +36,7 @@ function TrickeryTower:ConjureThink()
         -- find out the tower with the highest value
         for _, tower in pairs(towers) do
             if IsTower(tower) and tower:GetPlayerOwnerID() == self.playerID and not IsSupportTower(tower) and tower:IsAlive() and not tower.deleted then
-                if not tower:HasModifier("modifier_clone") and not tower:HasModifier("modifier_conjure_prevent_cloning") then
+                if tower:GetHealth() == tower:GetMaxHealth() and not tower:HasModifier("modifier_clone") and not tower:HasModifier("modifier_conjure_prevent_cloning") then
                     local towerValue = GetUnitKeyValue(tower:GetUnitName(), "TotalCost")
                     if towerValue > highestValue then
                         highestValue = towerValue
