@@ -330,7 +330,9 @@ end
 
 -- Kills and hides the tower, so that its running timers can still execute until it gets removed by the engine
 function RemoveTower( unit, bKeepPedestal )
-	unit:AddEffects(EF_NODRAW)
-	if not bKeepPedestal and IsValidEntity(unit.prop) then unit.prop:RemoveSelf() end
-	unit:ForceKill(false)
+	if unit then
+		unit:AddEffects(EF_NODRAW)
+		if not bKeepPedestal and IsValidEntity(unit.prop) then unit.prop:RemoveSelf() end
+		unit:ForceKill(false)
+	end
 end
