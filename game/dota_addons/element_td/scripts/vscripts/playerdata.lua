@@ -94,6 +94,9 @@ end
 
 function UpdateScoreboard(playerID)
 	local playerData = GetPlayerData(playerID)
+	if not playerData then
+		return
+	end
 	local health = playerData.health
 	local towers = tablelength(playerData.towers)
 	local lumber = playerData.lumber
@@ -102,5 +105,7 @@ function UpdateScoreboard(playerID)
 	if playerData.difficulty then
 		difficulty = playerData.difficulty.difficultyName
 	end
-	CustomGameEventManager:Send_ServerToAllClients( "etd_update_scoreboard", {playerID=playerID, data = {lives=health, lumber=lumber, towers=towers, pureEssence=pureEssence,difficulty=difficulty}} )
+	local gold = PlayerResource:GetGold(playerID)
+	local lastHits = PlayerResource:GetLastHits(playerID)
+	CustomGameEventManager:Send_ServerToAllClients( "etd_update_scoreboard", {playerID=playerID, data = {lives=health, lumber=lumber, towers=towers, pureEssence=pureEssence, difficulty=difficulty, gold=gold, lastHits=lastHits}} )
 end

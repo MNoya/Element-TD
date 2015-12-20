@@ -56,7 +56,6 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
         _ScoreboardUpdater_SetTextSafe( playerPanel, "RespawnTimer", ( playerInfo.player_respawn_seconds + 1 ) ); // value is rounded down so just add one for rounded-up
         _ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerName", playerInfo.player_name );
         _ScoreboardUpdater_SetTextSafe( playerPanel, "Level", playerInfo.player_level );
-        _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", Players.GetLastHits(playerId) );
         _ScoreboardUpdater_SetTextSafe( playerPanel, "Deaths", playerInfo.player_deaths );
         _ScoreboardUpdater_SetTextSafe( playerPanel, "Assists", playerInfo.player_assists );
         _ScoreboardUpdater_SetTextSafe( playerPanel, "Score", playerScore[playerId] );
@@ -69,6 +68,8 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
             _ScoreboardUpdater_SetTextSafe( playerPanel, "TeammateLumberAmount", playerData[playerId].lumber);
             _ScoreboardUpdater_SetTextSafe( playerPanel, "TeammateEssenceAmount", playerData[playerId].pureEssence);
             _ScoreboardUpdater_SetTextSafe( playerPanel, "Towers", playerData[playerId].towers);
+            _ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerGoldAmount", playerData[playerId].gold );
+            _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", playerData[playerId].lastHits );
             var difficulty = playerData[playerId].difficulty;
             var diff = "-";
             if (difficulty == "Normal")
@@ -218,8 +219,6 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
             }
         }
     }
-
-    _ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerGoldAmount", goldValue );
 
     playerPanel.SetHasClass( "player_ultimate_ready", ( ultStateOrTime == PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_READY ) );
     playerPanel.SetHasClass( "player_ultimate_no_mana", ( ultStateOrTime == PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_NO_MANA) );

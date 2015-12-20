@@ -341,6 +341,7 @@ function ElementTD:EntityKilled(keys)
         --end
 
         UpdatePlayerSpells(playerID)
+        UpdateScoreboard(playerID)
         Timers:RemoveTimer("MoveUnit"..index)
     end
 end
