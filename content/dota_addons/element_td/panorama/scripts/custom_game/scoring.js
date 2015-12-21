@@ -15,7 +15,7 @@ function RemoveNotification(msg, panel){
     if (start < 0)
       start = 0;
 
-    for (i=start;i<panel.GetChildCount(); i++){
+    for (var i=start;i<panel.GetChildCount(); i++){
       var lastPanel = panel.GetChild(i);
       //lastPanel.SetAttributeInt("deleted", 1);
       lastPanel.deleted = true;
