@@ -24,7 +24,7 @@ function CreepUndead:OnDeath()
     local playerID = creep.playerID
     local creepClass = self.creepClass
 
-    local newCreep = CreateUnitByName(creepClass, creep:GetAbsOrigin() , false, nil, nil, DOTA_TEAM_NOTEAM)
+    local newCreep = CreateUnitByName(creepClass, creep:GetAbsOrigin() , false, nil, nil, DOTA_TEAM_NEUTRAL)
     newCreep.class = creepClass
     newCreep.playerID = creep.playerID
     newCreep.waveObject = creep.waveObject
