@@ -154,7 +154,7 @@ function GetCreepsInArea(center, radius)
     local creeps = FindUnitsInRadius(0, center, nil, radius, 
                         DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
     for k, v in pairs(creeps) do
-        if v:GetTeam() ~= DOTA_TEAM_NEUTRAL then
+        if v:GetTeam() ~= DOTA_TEAM_NEUTRALS then
             creeps[k] = nil;
         end
     end

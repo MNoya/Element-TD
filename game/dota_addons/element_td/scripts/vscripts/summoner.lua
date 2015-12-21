@@ -231,7 +231,7 @@ function SummonElemental(keys)
     local level = playerData.elements[element] + 1
     local name = keys.Elemental..level
 
-    local elemental = CreateUnitByName(name, EntityStartLocations[playerData.sector + 1], true, nil, nil, DOTA_TEAM_NEUTRAL)
+    local elemental = CreateUnitByName(name, EntityStartLocations[playerData.sector + 1], true, nil, nil, DOTA_TEAM_NEUTRALS)
     elemental:AddNewModifier(nil, nil, "modifier_phased", {})
     elemental["element"] = element
     elemental["isElemental"] = true

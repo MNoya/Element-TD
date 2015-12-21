@@ -77,14 +77,14 @@ function GetTowerTarget(tower, type)
 		local creeps = FindUnitsInRadius(0, center, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, find_type, false)
 		if type == TOWER_TARGETING_FARTHEST or type == TOWER_TARGETING_CLOSEST then
 			for k, v in pairs(creeps) do
-				if v:GetTeam() == DOTA_TEAM_NEUTRAL then
+				if v:GetTeam() == DOTA_TEAM_NEUTRALS then
 					return k
 				end
 			end
 		elseif type == TOWER_TARGETING_LOWEST_HP or type == TOWER_TARGETING_HIGHEST_HP then
 			local unit = nil
 			for k, v in pairs(creeps) do
-				if v:GetTeam() == DOTA_TEAM_NEUTRAL then
+				if v:GetTeam() == DOTA_TEAM_NEUTRALS then
 					if unit == nil then
 						unit = v
 					elseif type == TOWER_TARGETING_LOWEST_HP and v:GetHealth() < unit:GetHealth() then
