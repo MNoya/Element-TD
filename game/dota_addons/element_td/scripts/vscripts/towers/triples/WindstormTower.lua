@@ -18,7 +18,9 @@ WindstormTower = createClass({
 nil)
 
 function WindstormTower:SpawnTornado(keys)
+    print("Spawn Tornado")
     if keys.target_points[1] then
+        self.ability:SetChanneling(true)
         self.ability:SetActivated(false)
 
         local tornadoCaster = AddAbility(self.tower, "windstorm_tower_tornado_creator")
@@ -48,7 +50,8 @@ function WindstormTower:SpawnTornado(keys)
                             end
                         })
 
-                        local sector = self.tower:GetOwner():GetPlayerID() + 1
+                        local playerData = GetPlayerData(self.tower:GetOwner():GetPlayerID())
+                        local sector = playerData.sector + 1
                         local damage = GetAbilitySpecialValue("windstorm_tower_tornado", "damage")[self.tower:GetLevel()]
                         local aoe = GetAbilitySpecialValue("windstorm_tower_tornado", "radius")
 
@@ -64,6 +67,7 @@ function WindstormTower:SpawnTornado(keys)
                                 end    
 
                                 if not (pos.x > bounds.left + 400 and pos.x < bounds.right - 400 and pos.y < bounds.top - 400 and pos.y > bounds.bottom + 400) then
+                                    print("Tornado being deleted for leaving sector.")
                                     UTIL_RemoveImmediate(self.tornado)
                                     self.ability:SetActivated(true)
                                     self.tower:RemoveModifierByName("modifier_tornado_summoned")
@@ -76,7 +80,19 @@ function WindstormTower:SpawnTornado(keys)
                 end
             end
         })
-        
+    
+        Timers:CreateTimer(5, function()
+            self:RemoveTornado()
+        end)        
+    end
+end
+
+function WindstormTower:RemoveTornado(keys)
+    print("Remove Tornado")
+    self.ability:SetActivated(true)
+    self.ability:SetChanneling(false)
+    if self.tornado then
+        UTIL_RemoveImmediate(self.tornado)
     end
 end
 

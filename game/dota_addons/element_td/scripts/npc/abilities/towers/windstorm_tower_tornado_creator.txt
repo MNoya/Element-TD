@@ -3,7 +3,7 @@
 	"BaseClass"						"enraged_wildkin_tornado"
 	"ID"							"5312"												
 	"MaxLevel"						"1"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCastRange"				"750"
 	"AbilityCastPoint"				"0"

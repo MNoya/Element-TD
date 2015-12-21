@@ -7,13 +7,18 @@
 	//-------------------------------------------------------------------------------------------------------------
 
 	"BaseClass"						"ability_datadriven"											
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 	"AbilityTextureName"			"towers/windstorm_tower_tornado"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 	"MaxLevel"						"2"
 	"AbilityCastRange"				"750"
 	"AbilityCooldown"				"0"
 	"AbilityManaCost"				"0"
 	"AbilityCastPoint"				"0"
+	"AbilityChannelTime"			"5"
 
 	"OnSpellStart"
 	{
@@ -25,6 +30,17 @@
 			"Event"				"SpawnTornado"
 		}
 	}
+
+	"OnChannelFinish"
+	{
+		"RunScript"
+		{
+			"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+			"Function"			"TriggerEvent"
+			"Event"				"RemoveTornado"
+		}
+	}
+
 	"Modifiers"
 	{
 		"modifier_tornado_summoned"
