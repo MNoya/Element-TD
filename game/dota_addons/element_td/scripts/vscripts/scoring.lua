@@ -243,6 +243,8 @@ function ScoringObject:GetNetworthBonus()
 					local name = ability:GetAbilityName()
 					if ( name == "sell_tower_100" ) then
 						playerNetworth = playerNetworth + GetUnitKeyValue( tower.class, "TotalCost" )
+					elseif ( name == "sell_tower_95" ) then
+						playerNetworth = playerNetworth + round( GetUnitKeyValue( tower.class, "TotalCost" ) * 0.95 )
 					elseif ( name == "sell_tower_75" ) then
 						playerNetworth = playerNetworth + round( GetUnitKeyValue( tower.class, "TotalCost" ) * 0.75 )
 					end
