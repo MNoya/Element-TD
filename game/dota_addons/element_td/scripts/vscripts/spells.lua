@@ -312,8 +312,8 @@ function BuildTower(tower, baseScale)
 	        	tower:AddNewModifier(nil, nil, "modifier_invulnerable", {})
 	        	tower:NoHealthBar()
 
-				tower:SetMaxHealth(GetUnitKeyValue(tower.class, "StatusHealth"))
-				tower:SetBaseMaxHealth(GetUnitKeyValue(tower.class, "StatusHealth"))
+				tower:SetMaxHealth(GetUnitKeyValue(tower.class, "TotalCost"))
+				tower:SetBaseMaxHealth(GetUnitKeyValue(tower.class, "TotalCost"))
 
 	        	tower:SetHealth(tower:GetMaxHealth())
 	        	tower.scriptObject:OnBuildingFinished()
