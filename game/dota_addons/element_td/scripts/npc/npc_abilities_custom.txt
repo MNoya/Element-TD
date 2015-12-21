@@ -126,7 +126,7 @@
 	    "PlayerCanControl"              "1"
 	
 	    "UnitName"                      "basic_arrow_tower"
-	    "AbilityGoldCost"               "25"
+	    "AbilityGoldCost"               "20"
 	    
 	    "OnSpellStart"
 	    {
@@ -153,7 +153,7 @@
 	    "PlayerCanControl"              "1"
 	
 	    "UnitName"                      "basic_cannon_tower"
-	    "AbilityGoldCost"               "25"
+	    "AbilityGoldCost"               "20"
 	    
 	    "OnSpellStart"
 	    {
@@ -1687,7 +1687,7 @@
 		"AbilityCooldown"				"15"
 		"MaxLevel"						"3"
 		"AbilityTextureName"			"towers/blacksmith_tower_fire_up"
-		"AbilityCastRange"				"750"
+		"AbilityCastRange"				"900"
 	
 		"precache"
 		{
@@ -1774,7 +1774,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_decrease"		"10"
+				"damage_decrease"		"20"
 			}
 			"04"
 			{
@@ -2172,7 +2172,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"4"
+				"duration"				"5"
 			}
 		}
 	}
@@ -2294,14 +2294,14 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"techies_suicide"
 		"MaxLevel"						"3"
-		"AbilityCastRange"				"1375"
+		"AbilityCastRange"				"1500"
 	
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"33 165 825"
+				"damage"				"30 150 750"
 			}
 			"02"
 			{
@@ -3582,6 +3582,36 @@
 	        }
 	    }
 	}
+	//============================================================//
+	// Sell Tower 95%
+	//============================================================//
+	"sell_tower_95"
+	{
+	    // General
+	    //-----------------------------
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	    "MaxLevel"                      "1"
+	    "AbilityTextureName"            "sell_tower"
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "spells.lua"
+	            "Function"          "SellTowerCast"
+	            "SellAmount"        "0.95"
+	        }
+	    }
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "sell_amount_tooltip"   "95"
+	        }
+	    }
+	}
 	//============================================================================================//
 	//============================================================================================//
 	//============================================================================================//
@@ -3843,7 +3873,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"AbilityTextureName"			"morphling_adaptive_strike"
 		"MaxLevel"						"3"
-		"AbilityCastRange"				"625"
+		"AbilityCastRange"				"700"
 	
 		"AbilitySpecial"
 		{
@@ -3855,17 +3885,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"30 150 750"
+				"aftershock_damage"		"15 75 375"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"625"
+				"aoe"					"700"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aftershock_aoe"		"300"
+				"aftershock_aoe"		"350"
 			}
 		}
 	}

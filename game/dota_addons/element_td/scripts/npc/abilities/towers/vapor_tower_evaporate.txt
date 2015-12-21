@@ -12,7 +12,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 	"AbilityTextureName"			"morphling_adaptive_strike"
 	"MaxLevel"						"3"
-	"AbilityCastRange"				"625"
+	"AbilityCastRange"				"700"
 
 	"AbilitySpecial"
 	{
@@ -24,17 +24,17 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aftershock_damage"		"30 150 750"
+			"aftershock_damage"		"15 75 375"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aoe"					"625"
+			"aoe"					"700"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"aftershock_aoe"		"300"
+			"aftershock_aoe"		"350"
 		}
 	}
 }

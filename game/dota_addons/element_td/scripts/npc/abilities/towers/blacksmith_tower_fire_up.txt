@@ -14,7 +14,7 @@
 	"AbilityCooldown"				"15"
 	"MaxLevel"						"3"
 	"AbilityTextureName"			"towers/blacksmith_tower_fire_up"
-	"AbilityCastRange"				"750"
+	"AbilityCastRange"				"900"
 
 	"precache"
 	{

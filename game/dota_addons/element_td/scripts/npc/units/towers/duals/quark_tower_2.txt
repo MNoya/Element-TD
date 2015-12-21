@@ -22,7 +22,7 @@
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
     "MovementSpeed"             "0"
     "MovementTurnRate"          "1.0"
-    "StatusHealth"              "1000"
+    "StatusHealth"              "1250"
     "StatusHealthRegen"         "0"
     "StatusMana"                "0"
     "StatusManaRegen"           "0"
@@ -40,13 +40,13 @@
 		"1"		"earth"
 		"2"		"light"
 	}
-	"Damage"		"1750"
+	"Damage"		"1800"
 	"DamageType"		"light"
 	"ScriptClass"		"QuarkTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
-	"AttackRange"		"625"
-	"AttackAcquisitionRange"		"625"
+	"AttackRange"		"700"
+	"AttackAcquisitionRange"		"700"
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
 	"ProjectileSpeed"		"1000"
@@ -64,8 +64,8 @@
 		"Count"		"1"
 		"1"		"quark_tower_3"
 	}
-	"AttackDamageMin"		"1750"
-	"AttackDamageMax"		"1750"
+	"AttackDamageMin"		"1800"
+	"AttackDamageMax"		"1800"
     "Creature"
     {
        "AttachWearables" // Desert Gale Set

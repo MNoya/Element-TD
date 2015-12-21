@@ -27,11 +27,11 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "630"
-    "AttackDamageMax"           "630"
-    "Damage"                    "630"  
-    "AttackRange"               "625"
-    "AttackAcquisitionRange"    "625"
+    "AttackDamageMin"           "625"
+    "AttackDamageMax"           "625"
+    "Damage"                    "625"  
+    "AttackRange"               "700"
+    "AttackAcquisitionRange"    "700"
     "AttackRate"                "0.66"
     "AttackAnimationPoint"      "0.4"
     "ProjectileSpeed"           "1500"
@@ -74,7 +74,7 @@
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
     "MovementSpeed"             "0"
     "MovementTurnRate"          "1.0"
-    "StatusHealth"              "1000"
+    "StatusHealth"              "625"
     "StatusHealthRegen"         "0"
     "StatusMana"                "0"
     "StatusManaRegen"           "0"

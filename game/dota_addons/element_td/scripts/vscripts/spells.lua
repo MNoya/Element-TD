@@ -181,7 +181,7 @@ function UpgradeTower(keys)
         end
 		
 		if string.find(newTower.class, "arrow_tower") ~= nil or string.find(newTower.class, "cannon_tower") ~= nil or string.find(GameSettings.elementsOrderName, "Random") ~= nil then
-			AddAbility(newTower, "sell_tower_100")
+			AddAbility(newTower, "sell_tower_95")
 		else
 			AddAbility(newTower, "sell_tower_75")
 		end
@@ -312,13 +312,9 @@ function BuildTower(tower, baseScale)
 	        	tower:AddNewModifier(nil, nil, "modifier_invulnerable", {})
 	        	tower:NoHealthBar()
 
-	        	if tower:GetBaseDamageMax() <= 0 then
-	        		tower:SetMaxHealth(100)
-	        		tower:SetBaseMaxHealth(100)
-	        	else
-					tower:SetMaxHealth(tower:GetBaseDamageMax())
-					tower:SetBaseMaxHealth(tower:GetBaseDamageMax())
-				end
+				tower:SetMaxHealth(GetUnitKeyValue(tower.class, "StatusHealth"))
+				tower:SetBaseMaxHealth(GetUnitKeyValue(tower.class, "StatusHealth"))
+
 	        	tower:SetHealth(tower:GetMaxHealth())
 	        	tower.scriptObject:OnBuildingFinished()
 	        	return nil

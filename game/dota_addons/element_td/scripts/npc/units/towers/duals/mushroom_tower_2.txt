@@ -22,7 +22,7 @@
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
     "MovementSpeed"             "0"
     "MovementTurnRate"          "1.0"
-    "StatusHealth"              "1000"
+    "StatusHealth"              "1250"
     "StatusHealthRegen"         "0"
     "StatusMana"                "0"
     "StatusManaRegen"           "0"
@@ -42,14 +42,14 @@
 	}
 	"AOE_Full"		"150"
 	"AOE_Half"		"300"
-	"Damage"		"500"
+	"Damage"		"250"
 	"DamageType"		"earth"
 	"ScriptClass"		"MushroomTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
-	"AttackRange"		"750"
-	"AttackAcquisitionRange"		"750"
-	"AttackRate"		"1"
+	"AttackRange"		"1100"
+	"AttackAcquisitionRange"		"1100"
+	"AttackRate"		"0.66"
 	"ProjectileModel"		"particles/units/heroes/hero_furion/furion_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
 	"Model"		"models/heroes/earth_spirit/earth_spirit.vmdl"
@@ -66,8 +66,8 @@
 		"Count"		"1"
 		"1"		"mushroom_tower_3"
 	}
-	"AttackDamageMin"		"500"
-	"AttackDamageMax"		"500"
+	"AttackDamageMin"		"250"
+	"AttackDamageMax"		"250"
     "Creature"
     {
        "AttachWearables" // Vanquishing Demons General

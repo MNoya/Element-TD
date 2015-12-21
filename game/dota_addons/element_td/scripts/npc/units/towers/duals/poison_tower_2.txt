@@ -23,7 +23,7 @@
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
     "MovementSpeed"             "0"
     "MovementTurnRate"          "1.0"
-    "StatusHealth"              "1000"
+    "StatusHealth"              "1250"
     "StatusHealthRegen"         "0"
     "StatusMana"                "0"
     "StatusManaRegen"           "0"
@@ -41,13 +41,13 @@
 		"1"		"dark"
 		"2"		"water"
 	}
-	"Damage"		"500"
+	"Damage"		"480"
 	"DamageType"		"water"
 	"ScriptClass"		"PoisonTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
-	"AttackRange"		"1000"
-	"AttackAcquisitionRange"		"1000"
+	"AttackRange"		"900"
+	"AttackAcquisitionRange"		"900"
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_viper/viper_base_attack.vpcf"
 	"ProjectileSpeed"		"1800"
@@ -67,8 +67,8 @@
 		"Count"		"1"
 		"1"		"poison_tower_3"
 	}
-	"AttackDamageMin"		"500"
-	"AttackDamageMax"		"500"
+	"AttackDamageMin"		"480"
+	"AttackDamageMax"		"480"
     "Creature"
     {
        "AttachWearables" // Venomous Deathbringer

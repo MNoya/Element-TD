@@ -1,0 +1,30 @@
+//============================================================//
+// Sell Tower 95%
+//============================================================//
+"sell_tower_95"
+{
+    // General
+    //-----------------------------
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+    "MaxLevel"                      "1"
+    "AbilityTextureName"            "sell_tower"
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"        "spells.lua"
+            "Function"          "SellTowerCast"
+            "SellAmount"        "0.95"
+        }
+    }
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "sell_amount_tooltip"   "95"
+        }
+    }
+}

@@ -10,14 +10,14 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"techies_suicide"
 	"MaxLevel"						"3"
-	"AbilityCastRange"				"1375"
+	"AbilityCastRange"				"1500"
 
 	"AbilitySpecial"
 	{
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"33 165 825"
+			"damage"				"30 150 750"
 		}
 		"02"
 		{

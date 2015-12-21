@@ -25,7 +25,7 @@
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
 	"MovementSpeed"		"0"
 	"MovementTurnRate"		"1.0"
-	"StatusHealth"		"1000"
+	"StatusHealth"		"3150"
 	"StatusHealthRegen"		"0"
 	"StatusMana"		"0"
 	"StatusManaRegen"		"0"
@@ -45,13 +45,13 @@
 	}
 	"AOE_Full"		"150"
 	"AOE_Half"		"300"
-	"Damage"		"2500"
+	"Damage"		"1250"
 	"DamageType"		"earth"
 	"ScriptClass"		"MushroomTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
-	"AttackRange"		"750"
-	"AttackAcquisitionRange"		"750"
+	"AttackRange"		"1100"
+	"AttackAcquisitionRange"		"1100"
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_furion/furion_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
@@ -67,8 +67,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"2500"
-	"AttackDamageMax"		"2500"
+	"AttackDamageMin"		"1250"
+	"AttackDamageMax"		"1250"
     "Creature"
     {
        "AttachWearables" // Strength of the Demon Stone Set

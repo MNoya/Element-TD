@@ -23,7 +23,7 @@
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
     "MovementSpeed"             "0"
     "MovementTurnRate"          "1.0"
-    "StatusHealth"              "1000"
+    "StatusHealth"              "3150"
     "StatusHealthRegen"         "0"
     "StatusMana"                "0"
     "StatusManaRegen"           "0"
@@ -41,13 +41,13 @@
 		"1"		"dark"
 		"2"		"water"
 	}
-	"Damage"		"2500"
+	"Damage"		"2400"
 	"DamageType"		"water"
 	"ScriptClass"		"PoisonTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
-	"AttackRange"		"1000"
-	"AttackAcquisitionRange"		"1000"
+	"AttackRange"		"900"
+	"AttackAcquisitionRange"		"900"
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_venomancer/venomancer_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
@@ -65,8 +65,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"2500"
-	"AttackDamageMax"		"2500"
+	"AttackDamageMin"		"2400"
+	"AttackDamageMax"		"2400"
     "Creature"
     {
        "AttachWearables" // Acid Hydra

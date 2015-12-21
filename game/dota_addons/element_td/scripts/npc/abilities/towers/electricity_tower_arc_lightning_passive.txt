@@ -51,7 +51,7 @@
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"damage_decrease"		"10"
+			"damage_decrease"		"20"
 		}
 		"04"
 		{
