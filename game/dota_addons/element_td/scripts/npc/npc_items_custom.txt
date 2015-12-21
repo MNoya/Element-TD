@@ -5402,6 +5402,7 @@
 	    "PlayerCanControl"              "1"
 	
 	    "UnitName"                      "periodic_tower"
+	    "OverrideBuildingGhost"         "npc_dota_hero_invoker"
 	    "AbilityGoldCost"               "11225"
 	    
 	    "OnSpellStart"
