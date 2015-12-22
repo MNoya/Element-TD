@@ -1797,7 +1797,7 @@
 		"AbilityCooldown"				"1"
 		"MaxLevel"						"2"
 		"AbilityTextureName"			"leshrac_diabolic_edict"
-		"AbilityCastRange"				"750"
+		"AbilityCastRange"				"900"
 	
 	
 		"Modifiers"
@@ -1930,17 +1930,17 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_reduction"	"-5"
+				"damage_reduction"	"-10"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"reset_time"		"3"
+				"reset_time"		"2"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"max_reduction"		"80"
+				"max_reduction"		"60"
 			}
 		}
 	}
@@ -2039,7 +2039,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"105 525"
+				"dot"					"120 600"
 			}
 			"03"
 			{
@@ -2090,7 +2090,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"300 1500"
+				"damage"				"240 1200"
 			}
 			"02"
 			{
@@ -2319,7 +2319,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
 		"AbilityTextureName"			"crystal_maiden_freezing_field"
 		"MaxLevel"						"1"
-		"AbilityCooldown"				"9"
+		"AbilityCooldown"				"6"
 	
 		"OnSpellStart"
 		{
@@ -2359,12 +2359,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"6"
+				"duration"				"3"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"targets"				"3"
+				"targets"				"2"
 			}
 		}
 	}
@@ -2580,7 +2580,7 @@
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"enchantress_impetus"
-		"AbilityCastRange"				"1375"
+		"AbilityCastRange"				"1500"
 		"MaxLevel"						"2"
 	
 		"Modifiers"
@@ -2611,7 +2611,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"min_range"				"0"
+				"min_range"				"500"
 			}
 		}
 	}
@@ -2691,13 +2691,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"10"
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"7.5"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"tick_interval"			"3"
+				"var_type"				"FIELD_FLOAT"
+				"tick_interval"			"2.5"
 			}
 			"03"
 			{
@@ -2752,12 +2752,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"400"
+				"aoe"					"500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_reduction"		"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_reduction_cap"	"70"
 			}
 		}
 	}
@@ -3034,7 +3039,7 @@
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"            "phoenix_supernova"
 		"MaxLevel"						"2"
-		"AbilityCastRange"				"625"
+		"AbilityCastRange"				"700"
 	
 		"Modifiers"
 		{
@@ -3090,12 +3095,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"336 1680"
+				"damage"			"330 1650"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"aoe"				"625"
+				"aoe"				"700"
 			}
 			"03"
 			{
@@ -3105,12 +3110,12 @@
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"slow"				"-7.5 -22.5"
+				"slow"				"-10 -30"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"slow_tooltip"		"7.5 22.5"
+				"slow_tooltip"		"10 30"
 			}
 		}
 	}
@@ -3122,7 +3127,7 @@
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"obsidian_destroyer_sanity_eclipse"
-		"AbilityCastRange"				"1000"
+		"AbilityCastRange"				"1100"
 		"MaxLevel"						"2"
 	
 		"Modifiers"
@@ -3148,7 +3153,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_aoe"				"400"
+				"max_aoe"				"450"
 			}
 			"02"
 			{
@@ -3404,17 +3409,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow_tooltip"			"7.5 22.5"
+				"slow_tooltip"			"10 30"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-7.5 -22.5"
+				"slow"					"-10 -30"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps"					"105 525"
+				"dps"					"120 600"
 			}
 			"05"
 			{

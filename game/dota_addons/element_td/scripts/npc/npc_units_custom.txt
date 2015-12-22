@@ -11821,13 +11821,13 @@
 			"2"		"light"
 			"3"		"nature"
 		}
-		"Damage"		"279"
+		"Damage"		"280"
 		"DamageType"		"nature"
 		"ScriptClass"		"EnchantmentTower"
 		"TowerType"		"Support"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"750"
-		"AttackAcquisitionRange"		"750"
+		"AttackRange"		"900"
+		"AttackAcquisitionRange"		"900"
 		"AttackRate"		"0.31"
 		"ProjectileModel"		"particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
@@ -11846,8 +11846,6 @@
 	        }
 	    }
 	    
-		"AOE_Full"		"100"
-		"AOE_Half"		"200"
 		"UpgradeIcon"		"leshrac_diabolic_edict"
 		"BuildTime"		"4"
 		"Requirements"
@@ -11861,8 +11859,8 @@
 			"Count"		"1"
 			"1"		"enchantment_tower_2"
 		}
-		"AttackDamageMin"		"279"
-		"AttackDamageMax"		"279"
+		"AttackDamageMin"		"280"
+		"AttackDamageMax"		"280"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -11915,13 +11913,13 @@
 			"2"		"light"
 			"3"		"nature"
 		}
-		"Damage"		"1395"
+		"Damage"		"1400"
 		"DamageType"		"nature"
 		"ScriptClass"		"EnchantmentTower"
 		"TowerType"		"Support"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"750"
-		"AttackAcquisitionRange"		"750"
+		"AttackRange"		"900"
+		"AttackAcquisitionRange"		"900"
 		"AttackRate"		"0.31"
 		"ProjectileModel"		"particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
@@ -11939,8 +11937,6 @@
 	        }
 	    }
 	
-		"AOE_Full"		"100"
-		"AOE_Half"		"200"
 		"UpgradeIcon"		"leshrac_diabolic_edict"
 		"BuildTime"		"4"
 		"Requirements"
@@ -11952,8 +11948,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"1395"
-		"AttackDamageMax"		"1395"
+		"AttackDamageMin"		"1400"
+		"AttackDamageMax"		"1400"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -12006,14 +12002,14 @@
 			"2"		"nature"
 			"3"		"water"
 		}
-		"Damage"		"1800"
+		"Damage"		"2100"
 		"DamageType"		"nature"
 		"ScriptClass"		"EphemeralTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"625"
-		"AttackAcquisitionRange"		"625"
-		"AttackRate"		"0.31"
+		"AttackRange"		"700"
+		"AttackAcquisitionRange"		"700"
+		"AttackRate"		"0.66"
 		"ProjectileModel"		"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
 	
@@ -12043,8 +12039,8 @@
 			"Count"		"1"
 			"1"		"ephemeral_tower_2"
 		}
-		"AttackDamageMin"		"1800"
-		"AttackDamageMax"		"1800"
+		"AttackDamageMin"		"2100"
+		"AttackDamageMax"		"2100"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -12097,14 +12093,14 @@
 			"2"		"nature"
 			"3"		"water"
 		}
-		"Damage"		"9000"
+		"Damage"		"10500"
 		"DamageType"		"nature"
 		"ScriptClass"		"EphemeralTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"625"
-		"AttackAcquisitionRange"		"625"
-		"AttackRate"		"0.31"
+		"AttackRange"		"700"
+		"AttackAcquisitionRange"		"700"
+		"AttackRate"		"0.66"
 		"ProjectileModel"		"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
 	
@@ -12133,8 +12129,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"9000"
-		"AttackDamageMax"		"9000"
+		"AttackDamageMin"		"10500"
+		"AttackDamageMax"		"10500"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -12192,8 +12188,8 @@
 		"ScriptClass"		"ErosionTower"
 		"TowerType"		"Support"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"625"
-		"AttackAcquisitionRange"		"625"
+		"AttackRange"		"700"
+		"AttackAcquisitionRange"		"700"
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_warlock/warlock_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
@@ -12212,8 +12208,8 @@
 	        }
 	    }
 	
-		"AOE_Full"		"400"
-		"AOE_Half"		"400"
+		"AOE_Full"		"300"
+		"AOE_Half"		"300"
 		"UpgradeIcon"		"towers/erosion_tower_acid_attack"
 		"BuildTime"		"4"
 		"Requirements"
@@ -12286,8 +12282,8 @@
 		"ScriptClass"		"ErosionTower"
 		"TowerType"		"Support"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"625"
-		"AttackAcquisitionRange"		"625"
+		"AttackRange"		"700"
+		"AttackAcquisitionRange"		"700"
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
@@ -12306,8 +12302,8 @@
 	        }
 	    }
 	
-		"AOE_Full"		"400"
-		"AOE_Half"		"400"
+		"AOE_Full"		"300"
+		"AOE_Half"		"300"
 		"UpgradeIcon"		"towers/erosion_tower_acid_attack"
 		"BuildTime"		"4"
 		"Requirements"
@@ -12373,13 +12369,13 @@
 			"2"		"earth"
 			"3"		"fire"
 		}
-		"Damage"		"300"
+		"Damage"		"360"
 		"DamageType"		"fire"
 		"ScriptClass"		"FlamethrowerTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"625"
-		"AttackAcquisitionRange"		"625"
+		"AttackRange"		"700"
+		"AttackAcquisitionRange"		"700"
 		"AttackRate"		"0.66"
 		"ProjectileModel"		"particles/units/heroes/hero_batrider/batrider_base_attack.vpcf"
 		"ProjectileSpeed"		"2500"
@@ -12412,8 +12408,8 @@
 			"Count"		"1"
 			"1"		"flamethrower_tower_2"
 		}
-		"AttackDamageMin"		"300"
-		"AttackDamageMax"		"300"
+		"AttackDamageMin"		"360"
+		"AttackDamageMax"		"360"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -12466,13 +12462,13 @@
 			"2"		"earth"
 			"3"		"fire"
 		}
-		"Damage"		"1500"
+		"Damage"		"1800"
 		"DamageType"		"fire"
 		"ScriptClass"		"FlamethrowerTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"625"
-		"AttackAcquisitionRange"		"625"
+		"AttackRange"		"700"
+		"AttackAcquisitionRange"		"700"
 		"AttackRate"		"0.66"
 		"ProjectileModel"		"particles/units/heroes/hero_batrider/batrider_base_attack.vpcf"
 		"ProjectileSpeed"		"2500"
@@ -12504,8 +12500,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"1500"
-		"AttackDamageMax"		"1500"
+		"AttackDamageMin"		"1800"
+		"AttackDamageMax"		"1800"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -12932,14 +12928,14 @@
 			"2"		"light"
 			"3"		"water"
 		}
-		"Damage"		"390"
+		"Damage"		"960"
 		"DamageType"		"light"
 		"ScriptClass"		"HailTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"1000"
-		"AttackAcquisitionRange"		"1000"
-		"AttackRate"		"0.31"
+		"AttackRange"		"1100"
+		"AttackAcquisitionRange"		"1100"
+		"AttackRate"		"0.66"
 		"ProjectileModel"		"particles/units/heroes/hero_ancient_apparition/ancient_apparition_base_attack.vpcf"
 		"ProjectileSpeed"		"1250"
 	
@@ -12972,8 +12968,8 @@
 			"Count"		"1"
 			"1"		"hail_tower_2"
 		}
-		"AttackDamageMin"		"390"
-		"AttackDamageMax"		"390"
+		"AttackDamageMin"		"960"
+		"AttackDamageMax"		"960"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -13026,14 +13022,14 @@
 			"2"		"light"
 			"3"		"water"
 		}
-		"Damage"		"1950"
+		"Damage"		"4800"
 		"DamageType"		"light"
 		"ScriptClass"		"HailTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"1000"
-		"AttackAcquisitionRange"		"1000"
-		"AttackRate"		"0.31"
+		"AttackRange"		"1100"
+		"AttackAcquisitionRange"		"1100"
+		"AttackRate"		"0.66"
 		"ProjectileModel"		"particles/units/heroes/hero_ancient_apparition/ancient_apparition_base_attack.vpcf"
 		"ProjectileSpeed"		"1250"
 	
@@ -13064,8 +13060,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"1950"
-		"AttackDamageMax"		"1950"
+		"AttackDamageMin"		"4800"
+		"AttackDamageMax"		"4800"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -13170,8 +13166,8 @@
 		"ScriptClass"		"HasteTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"625"
-		"AttackAcquisitionRange"		"625"
+		"AttackRange"		"900"
+		"AttackAcquisitionRange"		"900"
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_batrider/batrider_base_attack.vpcf"
 		"ProjectileSpeed"		"1200"
@@ -13262,8 +13258,8 @@
 		"ScriptClass"		"HasteTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"625"
-		"AttackAcquisitionRange"		"625"
+		"AttackRange"		"900"
+		"AttackAcquisitionRange"		"900"
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_batrider/batrider_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
@@ -13352,8 +13348,8 @@
 		"ScriptClass"		"ImpulseTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"1375"
-		"AttackAcquisitionRange"		"1375"
+		"AttackRange"		"1500"
+		"AttackAcquisitionRange"		"1500"
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_enchantress/enchantress_impetus.vpcf"
 		"ProjectileSpeed"		"2000"
@@ -13444,8 +13440,8 @@
 		"ScriptClass"		"ImpulseTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"1375"
-		"AttackAcquisitionRange"		"1375"
+		"AttackRange"		"1500"
+		"AttackAcquisitionRange"		"1500"
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_enchantress/enchantress_impetus.vpcf"
 		"ProjectileSpeed"		"900"
@@ -13534,8 +13530,8 @@
 		"ScriptClass"		"JinxTower"
 		"TowerType"		"Support"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"625"
-		"AttackAcquisitionRange"		"625"
+		"AttackRange"		"700"
+		"AttackAcquisitionRange"		"700"
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_witchdoctor/witchdoctor_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
@@ -13626,8 +13622,8 @@
 		"ScriptClass"		"JinxTower"
 		"TowerType"		"Support"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"625"
-		"AttackAcquisitionRange"		"625"
+		"AttackRange"		"700"
+		"AttackAcquisitionRange"		"700"
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_witchdoctor/witchdoctor_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
@@ -13716,8 +13712,8 @@
 		"ScriptClass"		"LaserTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"750"
-		"AttackAcquisitionRange"		"750"
+		"AttackRange"		"900"
+		"AttackAcquisitionRange"		"900"
 		"AttackRate"		"1"
 		"ProjectileSpeed"		"900"
 	
@@ -13809,8 +13805,8 @@
 		"ScriptClass"		"LaserTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"750"
-		"AttackAcquisitionRange"		"750"
+		"AttackRange"		"900"
+		"AttackAcquisitionRange"		"900"
 		"AttackRate"		"1"
 		"ProjectileSpeed"		"900"
 	
@@ -13901,8 +13897,8 @@
 		"ScriptClass"		"MuckTower"
 		"TowerType"		"Support"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"625"
-		"AttackAcquisitionRange"		"625"
+		"AttackRange"		"700"
+		"AttackAcquisitionRange"		"700"
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_bristleback/bristleback_viscous_nasal_goo.vpcf"
 		"ProjectileSpeed"		"1800"
@@ -13996,8 +13992,8 @@
 		"ScriptClass"		"MuckTower"
 		"TowerType"		"Support"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"625"
-		"AttackAcquisitionRange"		"625"
+		"AttackRange"		"700"
+		"AttackAcquisitionRange"		"700"
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_venomancer/venomancer_base_attack.vpcf"
 		"ProjectileSpeed"		"1800"
@@ -14088,8 +14084,8 @@
 		"ScriptClass"		"NovaTower"
 		"TowerType"		"Support"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"625"
-		"AttackAcquisitionRange"		"625"
+		"AttackRange"		"700"
+		"AttackAcquisitionRange"		"700"
 		"AttackRate"		"1.5"
 		"ProjectileModel"		""
 		"ProjectileSpeed"		"900"
@@ -14169,8 +14165,8 @@
 		"ScriptClass"		"NovaTower"
 		"TowerType"		"Support"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"625"
-		"AttackAcquisitionRange"		"625"
+		"AttackRange"		"700"
+		"AttackAcquisitionRange"		"700"
 		"AttackRate"		"1.5"
 		"ProjectileModel"		""
 		"ProjectileSpeed"		"900"
@@ -14243,14 +14239,14 @@
 			"2"		"light"
 			"3"		"nature"
 		}
-		"Damage"		"2500"
+		"Damage"		"1200"
 		"DamageType"		"dark"
 		"ScriptClass"		"ObliterationTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"1000"
-		"AttackAcquisitionRange"		"1000"
-		"AttackRate"		"1.5"
+		"AttackRange"		"1100"
+		"AttackAcquisitionRange"		"1100"
+		"AttackRate"		"0.66"
 		"ProjectileModel"		""
 		"ProjectileSpeed"		"1000"
 	
@@ -14282,8 +14278,8 @@
 			"Count"		"1"
 			"1"		"obliteration_tower_2"
 		}
-		"AttackDamageMin"		"2500"
-		"AttackDamageMax"		"2500"
+		"AttackDamageMin"		"1200"
+		"AttackDamageMax"		"1200"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -14336,14 +14332,14 @@
 			"2"		"light"
 			"3"		"nature"
 		}
-		"Damage"		"12500"
+		"Damage"		"6000"
 		"DamageType"		"dark"
 		"ScriptClass"		"ObliterationTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"1000"
-		"AttackAcquisitionRange"		"1000"
-		"AttackRate"		"1.5"
+		"AttackRange"		"1100"
+		"AttackAcquisitionRange"		"1100"
+		"AttackRate"		"0.66"
 		"ProjectileModel"		""
 		"ProjectileSpeed"		"1000"
 	
@@ -14373,8 +14369,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"12500"
-		"AttackDamageMax"		"12500"
+		"AttackDamageMin"		"6000"
+		"AttackDamageMax"		"6000"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -14427,13 +14423,13 @@
 			"2"		"light"
 			"3"		"earth"
 		}
-		"Damage"		"900"
+		"Damage"		"600"
 		"DamageType"		"earth"
 		"ScriptClass"		"PolarTower"
 		"TowerType"		"Support"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"750"
-		"AttackAcquisitionRange"		"750"
+		"AttackRange"		"900"
+		"AttackAcquisitionRange"		"900"
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_lich/lich_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
@@ -14468,8 +14464,8 @@
 			"Count"		"1"
 			"1"		"polar_tower_2"
 		}
-		"AttackDamageMin"		"900"
-		"AttackDamageMax"		"900"
+		"AttackDamageMin"		"600"
+		"AttackDamageMax"		"600"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -14522,13 +14518,13 @@
 			"2"		"light"
 			"3"		"earth"
 		}
-		"Damage"		"4500"
+		"Damage"		"3000"
 		"DamageType"		"earth"
 		"ScriptClass"		"PolarTower"
 		"TowerType"		"Support"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"750"
-		"AttackAcquisitionRange"		"750"
+		"AttackRange"		"900"
+		"AttackAcquisitionRange"		"900"
 		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_lich/lich_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
@@ -14561,8 +14557,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"4500"
-		"AttackDamageMax"		"4500"
+		"AttackDamageMin"		"3000"
+		"AttackDamageMax"		"3000"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -14800,8 +14796,8 @@
 		"ScriptClass"		"RootsTower"
 		"TowerType"		"Support"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"750"
-		"AttackAcquisitionRange"		"750"
+		"AttackRange"		"900"
+		"AttackAcquisitionRange"		"900"
 		"AttackRate"		"1"
 		"ProjectileModel"		""
 		"ProjectileSpeed"		"900"
@@ -14891,8 +14887,8 @@
 		"ScriptClass"		"RootsTower"
 		"TowerType"		"Support"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"750"
-		"AttackAcquisitionRange"		"750"
+		"AttackRange"		"900"
+		"AttackAcquisitionRange"		"900"
 		"AttackRate"		"1"
 		"ProjectileModel"		""
 		"ProjectileSpeed"		"900"
@@ -14975,14 +14971,14 @@
 			"2"		"fire"
 			"3"		"light"
 		}
-		"Damage"		"400"
+		"Damage"		"840"
 		"DamageType"		"dark"
 		"ScriptClass"		"RunicTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
 		"AttackRange"		"1100"
 		"AttackAcquisitionRange"		"1100"
-		"AttackRate"		"0.66"
+		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_visage/visage_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
 		
@@ -15017,8 +15013,8 @@
 			"Count"		"1"
 			"1"		"runic_tower_2"
 		}
-		"AttackDamageMin"		"400"
-		"AttackDamageMax"		"400"
+		"AttackDamageMin"		"840"
+		"AttackDamageMax"		"840"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -15071,14 +15067,14 @@
 			"2"		"fire"
 			"3"		"light"
 		}
-		"Damage"		"2000"
+		"Damage"		"4200"
 		"DamageType"		"dark"
 		"ScriptClass"		"RunicTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"1000"
-		"AttackAcquisitionRange"		"1000"
-		"AttackRate"		"0.66"
+		"AttackRange"		"1100"
+		"AttackAcquisitionRange"		"1100"
+		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_visage/visage_base_attack.vpcf"
 		"ProjectileSpeed"		"900"
 	
@@ -15098,8 +15094,8 @@
 	        }
 	    }
 	
-		"AOE_Full"		"150"
-		"AOE_Half"		"250"
+		"AOE_Full"		"100"
+		"AOE_Half"		"200"
 		"UpgradeIcon"		"visage_gravekeepers_cloak"
 		"BuildTime"		"4"
 		"Requirements"
@@ -15111,8 +15107,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"2000"
-		"AttackDamageMax"		"2000"
+		"AttackDamageMin"		"4200"
+		"AttackDamageMax"		"4200"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
