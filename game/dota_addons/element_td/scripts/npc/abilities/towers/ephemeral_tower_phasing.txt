@@ -3,28 +3,10 @@
 //=================================================================================================================
 "ephemeral_tower_phasing"
 {
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"BaseClass" 					"ability_datadriven"
 	"AbilityTextureName"            "towers/ephemeral_tower_phasing"
-	"AbilityCooldown"				"2"
 	"AbilityManaCost"				"0"
-	"AbilityChannelTime"			"2"
-	
-	"OnChannelSucceeded"
-	{	
-		"RemoveModifier"
-		{
-			"Target"		"CASTER"
-			"ModifierName"	"modifier_reset_damage"
-		}
-		"RunScript"
-		{
-			"Target"			"CASTER"
-			"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-			"Function"			"TriggerEvent"
-			"Event"				"ResetDamage"
-		}
-	}
 
 	"Modifiers"
 	{

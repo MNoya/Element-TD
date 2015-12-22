@@ -17,7 +17,9 @@ EphemeralTower = createClass({
 nil)
 
 function EphemeralTower:ResetDamage(keys)
-    Timers:RemoveTimer(self.timer)
+    if self.timer then
+        Timers:RemoveTimer(self.timer)
+    end
     self.currentDamageReduction = 0
 
     self.tower:RemoveModifierByName("modifier_reset_damage")
@@ -66,6 +68,11 @@ function EphemeralTower:OnAttack(keys)
                         end
                         self.currentDamageReduction = self.currentDamageReduction + self.damageReductionPerAttackPercent
                         self.tower:FindModifierByName("modifier_phasing_stack"):IncrementStackCount()
+                        if self.currentDamageReduction == self.maxDamageReduction then
+                            Timers:CreateTimer(2, function()
+                                self:ResetDamage()
+                            end)
+                        end
                     end
                 end
                 return 1
