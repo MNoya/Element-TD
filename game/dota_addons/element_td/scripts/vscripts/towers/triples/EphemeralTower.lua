@@ -59,7 +59,7 @@ function EphemeralTower:OnAttack(keys)
 
         self.timer = Timers:CreateTimer(2, function()
             if IsValidEntity(self.tower) then
-                if GameRules:GetGameTime() - self.lastAttackTime <= 1 then
+                if GameRules:GetGameTime() - self.lastAttackTime <= 2 then
                     if self.currentDamageReduction < self.maxDamageReduction then
                         self.tower:RemoveModifierByName("modifier_reset_damage")
                         local phasing_stack = self.tower:FindModifierByName("modifier_phasing_stack")
