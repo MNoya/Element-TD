@@ -74,13 +74,13 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"10"
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"7.5"
 		}
 		"02"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"tick_interval"			"3"
+			"var_type"				"FIELD_FLOAT"
+			"tick_interval"			"2.5"
 		}
 		"03"
 		{

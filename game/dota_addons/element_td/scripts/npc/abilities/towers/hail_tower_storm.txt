@@ -7,7 +7,7 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
 	"AbilityTextureName"			"crystal_maiden_freezing_field"
 	"MaxLevel"						"1"
-	"AbilityCooldown"				"9"
+	"AbilityCooldown"				"6"
 
 	"OnSpellStart"
 	{
@@ -47,12 +47,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"6"
+			"duration"				"3"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"targets"				"3"
+			"targets"				"2"
 		}
 	}
 }

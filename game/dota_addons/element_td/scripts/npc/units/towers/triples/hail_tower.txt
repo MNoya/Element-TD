@@ -45,14 +45,14 @@
 		"2"		"light"
 		"3"		"water"
 	}
-	"Damage"		"390"
+	"Damage"		"960"
 	"DamageType"		"light"
 	"ScriptClass"		"HailTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
-	"AttackRange"		"1000"
-	"AttackAcquisitionRange"		"1000"
-	"AttackRate"		"0.31"
+	"AttackRange"		"1100"
+	"AttackAcquisitionRange"		"1100"
+	"AttackRate"		"0.66"
 	"ProjectileModel"		"particles/units/heroes/hero_ancient_apparition/ancient_apparition_base_attack.vpcf"
 	"ProjectileSpeed"		"1250"
 
@@ -85,8 +85,8 @@
 		"Count"		"1"
 		"1"		"hail_tower_2"
 	}
-	"AttackDamageMin"		"390"
-	"AttackDamageMax"		"390"
+	"AttackDamageMin"		"960"
+	"AttackDamageMax"		"960"
 
 	// Building Size
     "ConstructionSize"          "2"

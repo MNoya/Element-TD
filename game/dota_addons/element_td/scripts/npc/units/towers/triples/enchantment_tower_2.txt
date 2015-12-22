@@ -45,13 +45,13 @@
 		"2"		"light"
 		"3"		"nature"
 	}
-	"Damage"		"1395"
+	"Damage"		"1400"
 	"DamageType"		"nature"
 	"ScriptClass"		"EnchantmentTower"
 	"TowerType"		"Support"
 	"HasAbilityDesc"		"1"
-	"AttackRange"		"750"
-	"AttackAcquisitionRange"		"750"
+	"AttackRange"		"900"
+	"AttackAcquisitionRange"		"900"
 	"AttackRate"		"0.31"
 	"ProjectileModel"		"particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
@@ -69,8 +69,6 @@
         }
     }
 
-	"AOE_Full"		"100"
-	"AOE_Half"		"200"
 	"UpgradeIcon"		"leshrac_diabolic_edict"
 	"BuildTime"		"4"
 	"Requirements"
@@ -82,8 +80,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"1395"
-	"AttackDamageMax"		"1395"
+	"AttackDamageMin"		"1400"
+	"AttackDamageMax"		"1400"
 
 	// Building Size
     "ConstructionSize"          "2"

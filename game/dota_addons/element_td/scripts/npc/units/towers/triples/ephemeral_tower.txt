@@ -45,14 +45,14 @@
 		"2"		"nature"
 		"3"		"water"
 	}
-	"Damage"		"1800"
+	"Damage"		"2100"
 	"DamageType"		"nature"
 	"ScriptClass"		"EphemeralTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
-	"AttackRange"		"625"
-	"AttackAcquisitionRange"		"625"
-	"AttackRate"		"0.31"
+	"AttackRange"		"700"
+	"AttackAcquisitionRange"		"700"
+	"AttackRate"		"0.66"
 	"ProjectileModel"		"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
 
@@ -82,8 +82,8 @@
 		"Count"		"1"
 		"1"		"ephemeral_tower_2"
 	}
-	"AttackDamageMin"		"1800"
-	"AttackDamageMax"		"1800"
+	"AttackDamageMin"		"2100"
+	"AttackDamageMax"		"2100"
 
 	// Building Size
     "ConstructionSize"          "2"

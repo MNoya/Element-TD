@@ -50,8 +50,8 @@
 	"ScriptClass"		"ErosionTower"
 	"TowerType"		"Support"
 	"HasAbilityDesc"		"1"
-	"AttackRange"		"625"
-	"AttackAcquisitionRange"		"625"
+	"AttackRange"		"700"
+	"AttackAcquisitionRange"		"700"
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
@@ -70,8 +70,8 @@
         }
     }
 
-	"AOE_Full"		"400"
-	"AOE_Half"		"400"
+	"AOE_Full"		"300"
+	"AOE_Half"		"300"
 	"UpgradeIcon"		"towers/erosion_tower_acid_attack"
 	"BuildTime"		"4"
 	"Requirements"

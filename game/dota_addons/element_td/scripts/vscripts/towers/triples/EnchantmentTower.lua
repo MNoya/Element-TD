@@ -58,9 +58,7 @@ end
 function EnchantmentTower:OnAttackLanded(keys)
     local target = keys.target
     local damage = ApplyAttackDamageFromModifiers(self.tower:GetBaseDamageMax(), self.tower)
-    
-    DamageEntitiesInArea(target:GetOrigin(), self.halfAOE, self.tower, damage / 2)
-    DamageEntitiesInArea(target:GetOrigin(), self.fullAOE, self.tower, damage / 2)
+    DamageEntity(target, self.tower, damage)
 end
 
 function EnchantmentTower:OnCreated()
@@ -70,9 +68,6 @@ function EnchantmentTower:OnCreated()
     self.damageAmp = GetAbilitySpecialValue("enchantment_tower_faerie_fire", "damage_amp")[self.tower:GetLevel()]
     self.debuffedCreeps = {}
     self.range = tonumber(GetAbilityKeyValue("enchantment_tower_faerie_fire", "AbilityCastRange"))
-
-    self.fullAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))
-    self.halfAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
 
     self.ability = AddAbility(self.tower, "enchantment_tower_faerie_fire", self.tower:GetLevel())
     Timers:CreateTimer(0.1, function()

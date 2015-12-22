@@ -50,8 +50,8 @@
 	"ScriptClass"		"LaserTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
-	"AttackRange"		"750"
-	"AttackAcquisitionRange"		"750"
+	"AttackRange"		"900"
+	"AttackAcquisitionRange"		"900"
 	"AttackRate"		"1"
 	"ProjectileSpeed"		"900"
 

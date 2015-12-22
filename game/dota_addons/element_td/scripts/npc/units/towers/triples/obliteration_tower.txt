@@ -45,14 +45,14 @@
 		"2"		"light"
 		"3"		"nature"
 	}
-	"Damage"		"2500"
+	"Damage"		"1200"
 	"DamageType"		"dark"
 	"ScriptClass"		"ObliterationTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
-	"AttackRange"		"1000"
-	"AttackAcquisitionRange"		"1000"
-	"AttackRate"		"1.5"
+	"AttackRange"		"1100"
+	"AttackAcquisitionRange"		"1100"
+	"AttackRate"		"0.66"
 	"ProjectileModel"		""
 	"ProjectileSpeed"		"1000"
 
@@ -84,8 +84,8 @@
 		"Count"		"1"
 		"1"		"obliteration_tower_2"
 	}
-	"AttackDamageMin"		"2500"
-	"AttackDamageMax"		"2500"
+	"AttackDamageMin"		"1200"
+	"AttackDamageMax"		"1200"
 
 	// Building Size
     "ConstructionSize"          "2"

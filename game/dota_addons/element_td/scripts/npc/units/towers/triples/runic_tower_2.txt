@@ -45,14 +45,14 @@
 		"2"		"fire"
 		"3"		"light"
 	}
-	"Damage"		"2000"
+	"Damage"		"4200"
 	"DamageType"		"dark"
 	"ScriptClass"		"RunicTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
-	"AttackRange"		"1000"
-	"AttackAcquisitionRange"		"1000"
-	"AttackRate"		"0.66"
+	"AttackRange"		"1100"
+	"AttackAcquisitionRange"		"1100"
+	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_visage/visage_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
 
@@ -72,8 +72,8 @@
         }
     }
 
-	"AOE_Full"		"150"
-	"AOE_Half"		"250"
+	"AOE_Full"		"100"
+	"AOE_Half"		"200"
 	"UpgradeIcon"		"visage_gravekeepers_cloak"
 	"BuildTime"		"4"
 	"Requirements"
@@ -85,8 +85,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"2000"
-	"AttackDamageMax"		"2000"
+	"AttackDamageMin"		"4200"
+	"AttackDamageMax"		"4200"
 
 	// Building Size
     "ConstructionSize"          "2"

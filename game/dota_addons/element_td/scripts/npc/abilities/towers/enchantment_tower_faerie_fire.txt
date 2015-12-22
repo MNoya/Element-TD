@@ -12,7 +12,7 @@
 	"AbilityCooldown"				"1"
 	"MaxLevel"						"2"
 	"AbilityTextureName"			"leshrac_diabolic_edict"
-	"AbilityCastRange"				"750"
+	"AbilityCastRange"				"900"
 
 
 	"Modifiers"

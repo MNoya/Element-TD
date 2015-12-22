@@ -42,8 +42,13 @@ function FlamethrowerTower:OnAttackLanded(keys)
             creep.napalmDamage = self.napalmDamage
             creep.napalmStacks = 1
         else
-            creep.napalmDamage = creep.napalmDamage + self.napalmDamage
-            creep.napalmStacks = creep.napalmStacks + 1
+            if self.tower:GetLevel() == 2 then
+                creep.napalmDamage = creep.napalmDamage + (self.napalmDamage * 5)
+                creep.napalmStacks = creep.napalmStacks + 5
+            else
+                creep.napalmDamage = creep.napalmDamage + self.napalmDamage
+                creep.napalmStacks = creep.napalmStacks + 1
+            end
         end
 
         creep:SetModifierStackCount("modifier_napalm", self.ability, creep.napalmStacks)

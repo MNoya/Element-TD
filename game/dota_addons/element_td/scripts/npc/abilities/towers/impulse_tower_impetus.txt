@@ -6,7 +6,7 @@
 	"BaseClass"						"ability_datadriven"											
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"enchantress_impetus"
-	"AbilityCastRange"				"1375"
+	"AbilityCastRange"				"1500"
 	"MaxLevel"						"2"
 
 	"Modifiers"
@@ -37,7 +37,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"min_range"				"0"
+			"min_range"				"500"
 		}
 	}
 }

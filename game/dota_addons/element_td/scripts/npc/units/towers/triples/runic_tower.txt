@@ -45,14 +45,14 @@
 		"2"		"fire"
 		"3"		"light"
 	}
-	"Damage"		"400"
+	"Damage"		"840"
 	"DamageType"		"dark"
 	"ScriptClass"		"RunicTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"1100"
 	"AttackAcquisitionRange"		"1100"
-	"AttackRate"		"0.66"
+	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_visage/visage_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
 	
@@ -87,8 +87,8 @@
 		"Count"		"1"
 		"1"		"runic_tower_2"
 	}
-	"AttackDamageMin"		"400"
-	"AttackDamageMax"		"400"
+	"AttackDamageMin"		"840"
+	"AttackDamageMax"		"840"
 
 	// Building Size
     "ConstructionSize"          "2"

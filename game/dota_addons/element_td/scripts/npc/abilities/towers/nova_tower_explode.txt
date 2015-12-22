@@ -7,7 +7,7 @@
 	"BaseClass" 					"ability_datadriven"
 	"AbilityTextureName"            "phoenix_supernova"
 	"MaxLevel"						"2"
-	"AbilityCastRange"				"625"
+	"AbilityCastRange"				"700"
 
 	"Modifiers"
 	{
@@ -63,12 +63,12 @@
 		"01"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"damage"			"336 1680"
+			"damage"			"330 1650"
 		}
 		"02"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"aoe"				"625"
+			"aoe"				"700"
 		}
 		"03"
 		{
@@ -78,12 +78,12 @@
 		"04"
 		{
 			"var_type"			"FIELD_FLOAT"
-			"slow"				"-7.5 -22.5"
+			"slow"				"-10 -30"
 		}
 		"05"
 		{
 			"var_type"			"FIELD_FLOAT"
-			"slow_tooltip"		"7.5 22.5"
+			"slow_tooltip"		"10 30"
 		}
 	}
 }

@@ -6,7 +6,7 @@
 	"BaseClass"						"ability_datadriven"											
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"obsidian_destroyer_sanity_eclipse"
-	"AbilityCastRange"				"1000"
+	"AbilityCastRange"				"1100"
 	"MaxLevel"						"2"
 
 	"Modifiers"
@@ -32,7 +32,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"max_aoe"				"400"
+			"max_aoe"				"450"
 		}
 		"02"
 		{

@@ -45,13 +45,13 @@
 		"2"		"light"
 		"3"		"earth"
 	}
-	"Damage"		"900"
+	"Damage"		"600"
 	"DamageType"		"earth"
 	"ScriptClass"		"PolarTower"
 	"TowerType"		"Support"
 	"HasAbilityDesc"		"1"
-	"AttackRange"		"750"
-	"AttackAcquisitionRange"		"750"
+	"AttackRange"		"900"
+	"AttackAcquisitionRange"		"900"
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_lich/lich_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
@@ -86,8 +86,8 @@
 		"Count"		"1"
 		"1"		"polar_tower_2"
 	}
-	"AttackDamageMin"		"900"
-	"AttackDamageMax"		"900"
+	"AttackDamageMin"		"600"
+	"AttackDamageMax"		"600"
 
 	// Building Size
     "ConstructionSize"          "2"

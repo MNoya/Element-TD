@@ -34,12 +34,17 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aoe"					"400"
+			"aoe"					"500"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"damage_reduction"		"10"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_reduction_cap"	"70"
 		}
 	}
 }
