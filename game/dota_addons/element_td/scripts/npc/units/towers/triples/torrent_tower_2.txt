@@ -43,13 +43,13 @@
 		"2"		"nature"
 		"3"		"light"
 	}
-	"Damage"		"2100"
+	"Damage"		"1500"
 	"DamageType"		"water"
 	"ScriptClass"		"TorrentTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
-	"AttackRange"		"750"
-	"AttackAcquisitionRange"		"750"
+	"AttackRange"		"900"
+	"AttackAcquisitionRange"		"900"
 	"AttackRate"		"0.31"
 	"ProjectileModel"		"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
@@ -70,6 +70,8 @@
         }
     }
 
+	"AOE_Full"		"200"
+	"AOE_Half"		"400"
 	"UpgradeIcon"		"towers/torrent_tower_douse"
 	"BuildTime"		"4"
 	"Requirements"
@@ -81,8 +83,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"2100"
-	"AttackDamageMax"		"2100"
+	"AttackDamageMin"		"1500"
+	"AttackDamageMax"		"1500"
 
 	// Building Size
     "ConstructionSize"          "2"

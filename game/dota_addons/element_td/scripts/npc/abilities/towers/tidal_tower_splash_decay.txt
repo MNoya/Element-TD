@@ -1,0 +1,43 @@
+//=================================================================================================================
+// Tidal: Decaying Splash
+//=================================================================================================================
+"tidal_tower_splash_decay"
+{
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"BaseClass" 					"ability_datadriven"
+	"AbilityTextureName"            "towers/torrent_tower_douse"
+	"MaxLevel"						"2"
+
+	"Modifiers"
+	{
+		"modifier_tidal_splash_decay"
+		{
+			"IsDebuff"		"1"
+			"Duration"		"%reset_time"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%damage"
+			}
+		}
+	}
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage"			"40 200"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"aoe"				"20"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"reset_time"		"1"
+		}
+	}
+}
