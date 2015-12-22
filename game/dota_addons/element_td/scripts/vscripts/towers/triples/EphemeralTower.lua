@@ -57,7 +57,7 @@ function EphemeralTower:OnAttack(keys)
     if not self.hasAttackThinker then 
         self.hasAttackThinker = true
 
-        self.timer = Timers:CreateTimer(1, function()
+        self.timer = Timers:CreateTimer(2, function()
             if IsValidEntity(self.tower) then
                 if GameRules:GetGameTime() - self.lastAttackTime <= 1 then
                     if self.currentDamageReduction < self.maxDamageReduction then
@@ -75,7 +75,7 @@ function EphemeralTower:OnAttack(keys)
                         end
                     end
                 end
-                return 1
+                return 2
             end
         end)
 
