@@ -143,7 +143,7 @@ function UpgradeTower(keys)
 				newTower.prop = tower.prop
 			end
 
-			local scale = GetUnitKeyValue(newClass, "PedestalModelScale") or newTower.prop:GetModelScale()
+			local scale = GetUnitKeyValue(newClass, "PedestalModelScale") or GetUnitKeyValue(newTower.damageType.."_tower", "PedestalModelScale") or newTower.prop:GetModelScale()
 			newTower.prop:SetModelScale(scale)
 		end
 		newTower.construction_size = tower.construction_size

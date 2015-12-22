@@ -2853,75 +2853,39 @@
 		}
 	}
 	//============================================================//
-	// Magic Tower: Decrease Range
+	// Magic Tower: Range
 	//============================================================//
-	"magic_tower_decrease_range"
+	"magic_tower_range"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"MaxLevel"						"5"
-		"AbilityCastRange"				"500 625 750 1000 1375"
-		"AbilityTextureName"			"towers/magic_tower_decrease_range"
-		
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"Target"			"CASTER"
-				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-				"Function"			"TriggerEvent"
-				"Event"				"ChangeRange"
-				"Amount"			"-1"
-			}
-		}
-	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"0 125 250 500 875"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_reduction"		"0 15 30 50 75"	
-			}
-		}
-	}
-	//============================================================//
-	// Magic Tower: Increase Range
-	//============================================================//
-	"magic_tower_increase_range"
-	{
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel"						"5"
-		"AbilityCastRange"				"500 625 750 1000 1375"
+		"AbilityCastRange"				"1100"
 		"AbilityTextureName"			"towers/magic_tower_increase_range"
-		
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"Target"			"CASTER"
-				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-				"Function"			"TriggerEvent"
-				"Event"				"ChangeRange"
-				"Amount"			"1"
-			}
-		}
+	
 		"Modifiers"
 		{
+			"modifier_magic_tower_range_onattack"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnAttack"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttack"
+					}
+				}
+			}
+	
 			"modifier_magic_tower_attack_range"
 			{
-				"Passive"		"1"
-				"IsHidden"		"0"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"	"%range"
+					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"	"%range_per_stack"
 				}
 			}
 		}
@@ -2931,12 +2895,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range"					"0 125 250 500 875"
+				"range_per_stack"		"20"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_reduction"		"0 15 30 50 75"	
+				"max_stacks"			"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"2"
 			}
 		}
 	}

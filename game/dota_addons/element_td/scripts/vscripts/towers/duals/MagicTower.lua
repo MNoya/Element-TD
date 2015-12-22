@@ -1,6 +1,6 @@
 -- Magic Tower class (Fire + Dark)
--- This tower has two abilities. One increases attack range, the other decreases attack range. 
--- There are five range increments, one for every range in the game. Longer range reduces damage and vice versa.
+--  Every attack adds 20 range. Max of 30 stacks (600 range). Resets on 2 seconds of no attack
+
 MagicTower = createClass({
         tower = nil,
         towerClass = "",
@@ -13,45 +13,34 @@ MagicTower = createClass({
     {
         className = "MagicTower"
     },
-nil)    
+nil)
 
-function MagicTower:ChangeRange(keys)
-    self.rangeLevel = self.rangeLevel + tonumber(keys.Amount)    
-    self.increaseRangeAbility:SetLevel(self.rangeLevel)    
-    self.decreaseRangeAbility:SetLevel(self.rangeLevel)    
-    local newDamage = self.baseDamage - (self.baseDamage * (self.damageReduction[self.rangeLevel] / 100))    
-    self.tower:SetBaseDamageMin(newDamage)    
-    self.tower:SetBaseDamageMax(newDamage)    
-    
-    if self.rangeLevel == 1 then
-        self.decreaseRangeAbility:SetActivated(false)    
-        self.increaseRangeAbility:SetActivated(true)    
-    elseif self.rangeLevel == 5 then
-        self.decreaseRangeAbility:SetActivated(true)    
-        self.increaseRangeAbility:SetActivated(false)    
-    else
-        self.decreaseRangeAbility:SetActivated(true)    
-        self.increaseRangeAbility:SetActivated(true)    
-    end
+function MagicTower:OnAttack(event)
+    local tower = self.tower
+    local ability = self.ability
+    local modifierName = "modifier_magic_tower_attack_range"
+
+    -- Applying refreshes the modifier
+    ability:ApplyDataDrivenModifier(tower, tower, modifierName, {duration=self.duration})
+
+    local stackCount = tower:GetModifierStackCount(modifierName, tower) or 0
+    stackCount = stackCount == self.maxStacks and self.maxStacks or (stackCount + 1)
+
+    tower:SetModifierStackCount(modifierName, tower, stackCount)      
 end
 
 function MagicTower:OnAttackLanded(keys)
-    local target = keys.target    
-    local damage = self.tower:GetBaseDamageMax()    
-    damage = ApplyAttackDamageFromModifiers(damage, self.tower)    
+    local target = keys.target
+    local damage = self.tower:GetBaseDamageMax()
+    damage = ApplyAttackDamageFromModifiers(damage, self.tower)
     DamageEntity(target, self.tower, self.tower:GetBaseDamageMax())    
 end
 
 function MagicTower:OnCreated()
-    self.decreaseRangeAbility = AddAbility(self.tower, "magic_tower_decrease_range")    
-    self.increaseRangeAbility = AddAbility(self.tower, "magic_tower_increase_range")    
-    self.decreaseRangeAbility:SetActivated(false)    
-
-    self.rangeLevel = 1    
-    self.baseDamage = self.tower:GetBaseDamageMax()    
-    self.baseRange = self.tower:GetAttackRange()    
-
-    self.damageReduction = GetAbilitySpecialValue("magic_tower_increase_range", "damage_reduction")    
+    self.ability = AddAbility(self.tower, "magic_tower_range") 
+    self.rangeStacks = 0
+    self.maxStacks = self.ability:GetSpecialValueFor("max_stacks")
+    self.duration = self.ability:GetSpecialValueFor("duration")
 end
 
 RegisterTowerClass(MagicTower, MagicTower.className)    
