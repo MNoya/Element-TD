@@ -18,112 +18,55 @@ ObliterationTower = createClass({
     },
 nil)
 
-function ObliterationTower:OnAttackStart(keys)
-    local targetEntity = keys.target
-    local targetPos = targetEntity:GetOrigin()
-    local proj = CreateUnitByName("hydro_tower_projectile", self.projOrigin, false, nil, nil, self.tower:GetTeam())
+function ObliterationTower:OnAttack(keys)
+    local target = keys.target
+    local caster = keys.caster
 
-    proj:SetAbsOrigin(self.projOrigin)
-    proj:SetOwner(self.tower:GetOwner())
-    proj:AddNewModifier(nil, nil, "modifier_invulnerable", {})
-    proj:AddNewModifier(nil, nil, "modifier_phased", {})
+    local info = 
+    {
+        Target = target,
+        Source = caster,
+        Ability = keys.ability,
+        EffectName = "particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_arcane_orb.vpcf",
+        iMoveSpeed = 900,
+        vSourceLoc= caster:GetAbsOrigin(),
+        bDrawsOnMinimap = false,
+        bDodgeable = true,
+        bIsAttack = false,
+        bVisibleToEnemies = true,
+        bReplaceExisting = false,
+        flExpireTime = GameRules:GetGameTime() + 10,
+        bProvidesVision = true,
+        iVisionRadius = 400,
+        iVisionTeamNumber = caster:GetTeamNumber()
+    }
+    projectile = ProjectileManager:CreateTrackingProjectile(info)
+end
+
+function ObliterationTower:OnProjectileHit(keys)
+    local target = keys.target
+    local distance = dist2D(target:GetAbsOrigin(), self.tower:GetAbsOrigin())
+    local splashAOE = self.initialSplash + ((self.maxSplash-self.initialSplash)/self.attackRange) * distance
+    print(splashAOE)
+
+    local dummy = CreateUnitByName("tower_dummy", target:GetAbsOrigin(), false, nil, nil, self.tower:GetTeam())
+    dummy:SetAbsOrigin(target:GetAbsOrigin())
+    dummy:AddNewModifier(nil, nil, "modifier_invulnerable", {})
+    dummy:AddNewModifier(nil, nil, "modifier_phased", {})
 
     -- hopefully this works as intended
-    proj:AddNewModifier(proj, nil, "modifier_out_of_world", {})
+    dummy:AddNewModifier(dummy, nil, "modifier_out_of_world", {})
 
-    proj.parent = self.tower
-    proj.startOrigin = self.projOrigin
-    proj.splashAOE = 0
-    self.projectiles[proj:entindex()] = 1
+    local explosionParticle = ParticleManager:CreateParticle("particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_area.vpcf", PATTACH_ABSORIGIN, dummy)
+    ParticleManager:SetParticleControl(explosionParticle, 0, target:GetAbsOrigin())
+    ParticleManager:SetParticleControl(explosionParticle, 1, Vector(splashAOE, 0, 1))
+    ParticleManager:SetParticleControl(explosionParticle, 2, Vector(0, 0, 0))
+    ParticleManager:SetParticleControl(explosionParticle, 3, target:GetAbsOrigin())
 
-    local direction = (targetPos - self.projOrigin):Normalized()
-    proj.speed = 40 -- initial speed
-    proj.velocity = direction * proj.speed
-    proj.target = targetEntity
-    proj.targetPos = targetEntity:GetOrigin()
-    proj.particleEffect = ParticleManager:CreateParticle("particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_arcane_orb_core.vpcf", PATTACH_ABSORIGIN_FOLLOW, proj)
-
-    ParticleManager:SetParticleControl(proj.particleEffect, 0, Vector(0, 0, 0))
-    ParticleManager:SetParticleControl(proj.particleEffect, 3, proj:GetAbsOrigin())
-
-    local totalLoops, curLoops = self.projDuration * 10, 0
-    local speedIncr = -(proj.speed / totalLoops)
-    local splashIncr = self.maxSplash / totalLoops
-
-    -- Projectile Thinker 2 --
-    Timers:CreateTimer(0.1, function()
-        if not IsValidEntity(self.tower) then return end
-
-        proj.speed = proj.speed + speedIncr
-        proj.splashAOE = proj.splashAOE + splashIncr
-        if proj.splashAOE > self.maxSplash then
-            proj.splashAOE = self.maxSplash
-        end
-
-        local distanceToTarget = (proj.targetPos - proj:GetAbsOrigin()):Length2D()
-        if proj.speed <= 15 or distanceToTarget <= 100 then
-            proj.speed = 0
-
-            local dummyPos = GetGroundPosition(proj:GetAbsOrigin(), nil)
-            dummyPos.z = dummyPos.z + 16
-            local dummy = CreateUnitByName("tower_dummy", dummyPos, false, nil, nil, self.tower:GetTeam())
-            dummy:SetAbsOrigin(dummyPos)
-            dummy:AddNewModifier(nil, nil, "modifier_invulnerable", {})
-            dummy:AddNewModifier(nil, nil, "modifier_phased", {})
-
-            -- hopefully this works as intended
-            dummy:AddNewModifier(dummy, nil, "modifier_out_of_world", {})
-
-            local explosionParticle = ParticleManager:CreateParticle("particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_area.vpcf", PATTACH_ABSORIGIN, dummy)
-            ParticleManager:SetParticleControl(explosionParticle, 0, dummyPos)
-            ParticleManager:SetParticleControl(explosionParticle, 1, Vector(proj.splashAOE, 0, 1))
-            ParticleManager:SetParticleControl(explosionParticle, 2, Vector(0, 0, 0))
-            ParticleManager:SetParticleControl(explosionParticle, 3, dummyPos)
-
-            local entities = GetCreepsInArea(dummyPos, proj.splashAOE)
-            for _, entity in pairs(entities) do
-                DamageEntity(entity, self.tower, ApplyAttackDamageFromModifiers(self.tower:GetBaseDamageMax(), self.tower))
-            end
-
-            -- damage target even if aoe is too small
-            if distanceToTarget <= 100 and proj.splashAOE < distanceToTarget and IsValidEntity(proj.target) and proj.target:IsAlive() then
-                DamageEntity(proj.target, self.tower, ApplyAttackDamageFromModifiers(self.tower:GetBaseDamageMax(), self.tower))
-            end
-
-            Timers:CreateTimer(2, function()
-                UTIL_Remove(dummy)
-            end)
-
-            self.projectiles[proj:entindex()] = nil
-            UTIL_Remove(proj)
-            return
-        end
-        return 0.1
-    end)
-    ----
-
-    -- Projectile Thinker 1 --
-    Timers:CreateTimer(function()
-        if not IsValidEntity(self.tower) then return end
-        
-        local pos = proj:GetAbsOrigin()
-
-        if IsValidEntity(proj.target) and proj.target:IsAlive() then
-            proj.targetPos = proj.target:GetAbsOrigin()
-        end
-        proj.velocity = (proj.targetPos - pos):Normalized() * proj.speed
-
-        pos.x = pos.x + proj.velocity.x
-        pos.y = pos.y + proj.velocity.y
-        pos.z = pos.z + proj.velocity.z
-        if pos.z < self.groundHeight then
-            pos.z = self.groundHeight
-        end
-        proj:SetAbsOrigin(pos)
-        ParticleManager:SetParticleControl(proj.particleEffect, 3, proj:GetAbsOrigin())
-        return 0.01
-    end)
-    ----
+    local entities = GetCreepsInArea(target:GetAbsOrigin(), splashAOE)
+    for _, entity in pairs(entities) do
+        DamageEntity(entity, self.tower, ApplyAttackDamageFromModifiers(self.tower:GetBaseDamageMax(), self.tower))
+    end
 end
 
 function ObliterationTower:OnCreated()
@@ -131,9 +74,10 @@ function ObliterationTower:OnCreated()
     self.projOrigin = self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_attack1"))
     self.groundHeight = GetGroundPosition(self.tower:GetOrigin(), nil).z + 200
     self.projectiles = {}
-
+    self.attackRange = self.tower:GetAttackRange()
     self.projDuration = GetAbilitySpecialValue("obliteration_tower_obliterate", "duration")
     self.maxSplash = GetAbilitySpecialValue("obliteration_tower_obliterate", "max_aoe")
+    self.initialSplash = GetAbilitySpecialValue("obliteration_tower_obliterate", "initial_aoe")
 end
 
 function ObliterationTower:OnDestroyed()
