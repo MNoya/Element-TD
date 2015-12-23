@@ -29,7 +29,8 @@ function ObliterationTower:OnAttack(keys)
         Ability = keys.ability,
         EffectName = "particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_arcane_orb.vpcf",
         iMoveSpeed = 900,
-        vSourceLoc= caster:GetAbsOrigin(),
+        vSourceLoc = caster:ScriptLookupAttachment("attach_attack1"),
+        iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_1, --DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
         bDrawsOnMinimap = false,
         bDodgeable = true,
         bIsAttack = false,
@@ -47,17 +48,7 @@ function ObliterationTower:OnProjectileHit(keys)
     local target = keys.target
     local distance = dist2D(target:GetAbsOrigin(), self.tower:GetAbsOrigin())
     local splashAOE = self.initialSplash + ((self.maxSplash-self.initialSplash)/self.attackRange) * distance
-    print(splashAOE)
-
-    local dummy = CreateUnitByName("tower_dummy", target:GetAbsOrigin(), false, nil, nil, self.tower:GetTeam())
-    dummy:SetAbsOrigin(target:GetAbsOrigin())
-    dummy:AddNewModifier(nil, nil, "modifier_invulnerable", {})
-    dummy:AddNewModifier(nil, nil, "modifier_phased", {})
-
-    -- hopefully this works as intended
-    dummy:AddNewModifier(dummy, nil, "modifier_out_of_world", {})
-
-    local explosionParticle = ParticleManager:CreateParticle("particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_area.vpcf", PATTACH_ABSORIGIN, dummy)
+    local explosionParticle = ParticleManager:CreateParticle("particles/custom/towers/obliteration/impact_area.vpcf", PATTACH_CUSTOMORIGIN, keys.caster)
     ParticleManager:SetParticleControl(explosionParticle, 0, target:GetAbsOrigin())
     ParticleManager:SetParticleControl(explosionParticle, 1, Vector(splashAOE, 0, 1))
     ParticleManager:SetParticleControl(explosionParticle, 2, Vector(0, 0, 0))
