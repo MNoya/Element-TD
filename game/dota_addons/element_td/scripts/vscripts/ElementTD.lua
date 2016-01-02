@@ -330,7 +330,9 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:SetModelScale(0.75)
     hero:AddNewModifier(nil, nil, "modifier_silence", {}) -- silence this player until break time is started
 
-    PlayerResource:SetCustomPlayerColor(playerID, m_TeamColors[playerID][1], m_TeamColors[playerID][2], m_TeamColors[playerID][3])
+    -- Team location based colors
+    local teamID = PlayerResource:GetTeam(playerID)
+    PlayerResource:SetCustomPlayerColor(playerID, m_TeamColors[teamID][1], m_TeamColors[teamID][2], m_TeamColors[teamID][3])
 
     self.vPlayerIDToHero[playerID] = hero -- Store hero for player in here GetAssignedHero can be flakey
 

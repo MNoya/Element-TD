@@ -14,14 +14,14 @@
         "custom_end_screen_legend_towers"           "Towers"
         "custom_end_screen_legend_difficulty"       "Difficulty"
 
-        "DOTA_GoodGuys"                             "Summer"
-        "DOTA_BadGuys"                              "Autumn"
-        "DOTA_Custom1"                              "Temple"
-        "DOTA_Custom2"                              "Mines"
-        "DOTA_Custom3"                              "Ruins"
-        "DOTA_Custom4"                              "Winter"
-        "DOTA_Custom5"                              "Desert"
-        "DOTA_Custom6"                              "Lava"
+        "DOTA_GoodGuys"                             "Summer" //Lime
+        "DOTA_BadGuys"                              "Autumn" //Orange
+        "DOTA_Custom1"                              "Temple" //Pink
+        "DOTA_Custom2"                              "Mines" //Purple
+        "DOTA_Custom3"                              "Ruins" //Green
+        "DOTA_Custom4"                              "Winter" //Light Blue
+        "DOTA_Custom5"                              "Desert" //Yellow
+        "DOTA_Custom6"                              "Lava" //Red
 
         "error_not_enough_gold"                     "Not Enough Gold"
     }

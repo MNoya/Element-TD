@@ -2,22 +2,26 @@ JSON = require("util/json")
 require("util/base64")
 
 playerColors = {
-    [0] = "#3375FF", [1] = "#66FFBF", [2] = "#BF00BF", [3] = "#F3F00B", [4] = "#FF6B00", --radiant
-    [5] = "#FE86C2", [6] = "#FE86C2", [7] = "#65D9F7", [8] = "#008321", [9] = "#A46900"  --dire 
+    [0] = "#99FF00",
+    [1] = "#FF6C00",
+    [2] = "#C54DA8",
+    [3] = "#8C2AF4",
+    [4] = "#65D413",
+    [5] = "#ADD8E6",
+    [6] = "#F3C909",
+    [7] = "#FF3455",
 }
 
 -- PLAYER COLORS
 m_TeamColors = {}
-m_TeamColors[0] = { 50, 100, 220 } -- 49:100:218 / #3164DA
-m_TeamColors[1] = { 90, 225, 155 } -- 87:224:154 / #57E19A
-m_TeamColors[2] = { 170, 0, 160 } -- 171:0:156 / #AA00A0
-m_TeamColors[3] = { 210, 200, 20 } -- 211:203:16 / #D3CB14
-m_TeamColors[4] = { 215, 90, 5 } -- 214:87:8 / #D65705
-m_TeamColors[5] = { 210, 100, 150 } -- 210:97:153 / #D26496
-m_TeamColors[6] = { 130, 150, 80 } -- 130:154:80 / #829650
-m_TeamColors[7] = { 100, 190, 200 } -- 99:188:206 / #64BEC8
-m_TeamColors[8] = { 5, 110, 50 } -- 7:109:44 / #056E32
-m_TeamColors[9] = { 130, 80, 5 } -- 124:75:6 / #825005
+m_TeamColors[DOTA_TEAM_GOODGUYS] = { 153, 255, 0 }   --  Lime (Summer) #99FF00
+m_TeamColors[DOTA_TEAM_BADGUYS] = { 255, 108, 0 }   --  Orange (Autumn) #FF6C00
+m_TeamColors[DOTA_TEAM_CUSTOM_1] = { 197, 77, 168 }  --  Pink (Temple) #C54DA8
+m_TeamColors[DOTA_TEAM_CUSTOM_2] = { 140, 42, 244 }  --  Purple (Mines) #8C2AF4
+m_TeamColors[DOTA_TEAM_CUSTOM_3] = { 101, 212, 19 }  --  Green (Ruins) #65D413
+m_TeamColors[DOTA_TEAM_CUSTOM_4] = { 173, 216, 230 } --  Light Blue (Winter) #ADD8E6
+m_TeamColors[DOTA_TEAM_CUSTOM_5] = { 243, 201, 9 }   --  Yellow (Desert) #F3C909
+m_TeamColors[DOTA_TEAM_CUSTOM_6] = { 255, 52, 85 }   --  Red (Lava) #FF3455
 
 function PrintTable(t, indent, done)
     if type(t) ~= "table" then return end

@@ -94,7 +94,7 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
         var playerName = playerPanel.FindChildInLayoutFile( "PlayerName" );
         if ( playerName )
         {
-            var playerColor = GameUI.CustomUIConfig().player_colors[playerId];
+            var playerColor = GameUI.CustomUIConfig().team_colors[playerInfo.player_team_id];
             playerName.style['color'] = playerColor;
         }
 
@@ -149,8 +149,7 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
         {
             if ( GameUI.CustomUIConfig().team_colors )
             {   
-                var mapInfo = Game.GetMapInfo();
-                var playerColor = GameUI.CustomUIConfig().player_colors[playerId];
+                var playerColor = GameUI.CustomUIConfig().team_colors[playerInfo.player_team_id];
                 playerColorBar.style.backgroundColor = playerColor;
             }
             else
