@@ -14,6 +14,15 @@
         "custom_end_screen_legend_towers"           "Towers"
         "custom_end_screen_legend_difficulty"       "Difficulty"
 
+        "DOTA_GoodGuys"                             "Summer"
+        "DOTA_BadGuys"                              "Autumn"
+        "DOTA_Custom1"                              "Temple"
+        "DOTA_Custom2"                              "Mines"
+        "DOTA_Custom3"                              "Ruins"
+        "DOTA_Custom4"                              "Winter"
+        "DOTA_Custom5"                              "Desert"
+        "DOTA_Custom6"                              "Lava"
+
         "error_not_enough_gold"                     "Not Enough Gold"
     }
 }
