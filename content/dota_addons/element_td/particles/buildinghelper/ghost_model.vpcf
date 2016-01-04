@@ -147,4 +147,5 @@
 			m_nParticlesToEmit = 1
 		},
 	]
+	m_flCullRadius = -1.000000
 }
