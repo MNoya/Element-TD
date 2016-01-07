@@ -4,5 +4,6 @@
 	[
 		"builders",
         "construction_size",
+        "building_settings",
 	]
 } 

@@ -42,7 +42,7 @@
 		{
 			_class = "C_OP_RenderSprites"
 			m_nOrientationType = 2
-			m_hTexture = resource:"materials/range_overlay2.vtex"
+			m_hTexture = resource:"materials/range_overlay.vtex"
 		},
 		{
 			_class = "C_OP_RenderProjected"
@@ -102,13 +102,13 @@
 			[
 				0.000000,
 				0.000000,
-				-10.000000,
+				5.000000,
 			]
 			m_OffsetMax =
 			[
 				0.000000,
 				0.000000,
-				-10.000000,
+				5.000000,
 			]
 		},
 	]

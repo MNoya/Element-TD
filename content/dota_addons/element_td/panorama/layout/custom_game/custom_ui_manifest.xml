@@ -1,7 +1,5 @@
 <root>
 	<script>
-		GameUI.SetRenderBottomInsetOverride( 0 );
-
 		// These lines set up the panorama colors used by each team (for game select/setup, etc)
 		GameUI.CustomUIConfig().team_colors = {}
 		GameUI.CustomUIConfig().team_colors[DOTATeam_t.DOTA_TEAM_GOODGUYS] = "#99FF00;";

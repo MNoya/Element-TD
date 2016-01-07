@@ -7,8 +7,8 @@ function Build( event )
     local caster = event.caster
     local ability = event.ability
     local ability_name = ability:GetAbilityName()
-    local AbilityKV = BuildingHelper.AbilityKVs
-    local UnitKV = BuildingHelper.UnitKVs
+    local AbilityKV = BuildingHelper.AbilityKV
+    local UnitKV = BuildingHelper.UnitKV
 
     if caster:IsIdle() then
         caster:Interrupt()

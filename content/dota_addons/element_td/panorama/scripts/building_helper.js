@@ -1,28 +1,44 @@
 'use strict';
 
+GameUI.SetRenderBottomInsetOverride( 0 );
+
 var state = 'disabled';
+var frame_rate = 1/30;
 var size = 0;
 var overlay_size = 0;
-var grid_alpha = 30;
-var overlay_alpha = 10;
-var model_alpha = 100;
-var recolor_ghost = false;
+var range = 0;
 var pressedShift = false;
 var altDown = false;
+var requires;
 var modelParticle;
+var propParticle;
+var propScale;
+var offsetZ;
 var gridParticles;
+var overlayParticles;
 var rangeOverlay;
-var overlayActive;
-var range = 0;
-var numberParticle;
+var rangeOverlayActive;
 var builderIndex;
 var entityGrid;
+var distance_to_gold_mine;
 var cutTrees = [];
 var BLOCKED = 2;
-var propParticle;
-var offsetZ;
+var GRID_TYPES = [];
+
+// building_settings.kv options
+var grid_alpha = CustomNetTables.GetTableValue( "building_settings", "grid_alpha").value
+var alt_grid_alpha = CustomNetTables.GetTableValue( "building_settings", "alt_grid_alpha").value
+var range_overlay_alpha = CustomNetTables.GetTableValue( "building_settings", "range_overlay_alpha").value
+var model_alpha = CustomNetTables.GetTableValue( "building_settings", "model_alpha").value
+var recolor_ghost = CustomNetTables.GetTableValue( "building_settings", "recolor_ghost").value;
+var turn_red = CustomNetTables.GetTableValue( "building_settings", "turn_red").value;
+
+var HEIGHT_RESTRICTION
+if (CustomNetTables.GetTableValue( "building_settings", "height_restriction") !== undefined)
+    HEIGHT_RESTRICTION = CustomNetTables.GetTableValue( "building_settings", "height_restriction").value;
+
 var Root = $.GetContextPanel()
-var constructionSize = CustomNetTables.GetAllTableValues( "construction_size" )
+var localHeroIndex = Players.GetPlayerHeroEntityIndex( Players.GetLocalPlayer() );
 
 if (! Root.loaded)
 {
@@ -41,15 +57,21 @@ function StartBuildingHelper( params )
         state = params.state;
         size = params.size;
         range = params.range;
-        overlay_size = size*2;
-        grid_alpha = Number(params.grid_alpha);
-        model_alpha = Number(params.model_alpha);
-        recolor_ghost = Number(params.recolor_ghost);
+        overlay_size = size*3;
         builderIndex = params.builderIndex;
+        requires = params.requires;
         var scale = params.scale;
         var entindex = params.entindex;
         var propScale = params.propScale;
         offsetZ = params.offsetZ;
+
+        if (requires !== undefined)
+        {
+            if (GRID_TYPES[requires] === undefined)
+                GRID_TYPES[requires] = GRID_TYPES.length + BLOCKED + 1
+        }
+
+        distance_to_gold_mine = HasGoldMineDistanceRestriction(entindex)
         
         // If we chose to not recolor the ghost model, set it white
         var ghost_color = [0, 255, 0]
@@ -57,8 +79,6 @@ function StartBuildingHelper( params )
             ghost_color = [255,255,255]
 
         pressedShift = GameUI.IsShiftDown();
-
-        var localHeroIndex = Players.GetPlayerHeroEntityIndex( Players.GetLocalPlayer() );
 
         if (modelParticle !== undefined) {
             Particles.DestroyParticleEffect(modelParticle, true)
@@ -71,13 +91,18 @@ function StartBuildingHelper( params )
                 Particles.DestroyParticleEffect(gridParticles[i], true)
             }
         }
+        if (overlayParticles !== undefined) {
+            for (var i in overlayParticles) {
+                Particles.DestroyParticleEffect(overlayParticles[i], true)
+            }
+        }
         if (rangeOverlay !== undefined) {
             Particles.DestroyParticleEffect(rangeOverlay, true)
         }
 
         // Building Ghost
         modelParticle = Particles.CreateParticle("particles/buildinghelper/ghost_model.vpcf", ParticleAttachment_t.PATTACH_ABSORIGIN, localHeroIndex);
-        Particles.SetParticleControlEnt(modelParticle, 1, entindex, ParticleAttachment_t.PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", Entities.GetAbsOrigin(entindex), true)
+        Particles.SetParticleControlEnt(modelParticle, 1, entindex, ParticleAttachment_t.PATTACH_ABSORIGIN_FOLLOW, "follow_origin", Entities.GetAbsOrigin(entindex), true)
         Particles.SetParticleControl(modelParticle, 2, ghost_color)
         Particles.SetParticleControl(modelParticle, 3, [model_alpha,0,0])
         Particles.SetParticleControl(modelParticle, 4, [scale,0,0])
@@ -102,20 +127,21 @@ function StartBuildingHelper( params )
             Particles.SetParticleControl(propParticle, 4, [propScale,0,0])
         }
             
-        overlayActive = false;     
+        rangeOverlayActive = false;
+        overlayParticles = [];
     }
 
     if (state == 'active')
-    {
-        $.Schedule(1/60, StartBuildingHelper);
+    {   
+        $.Schedule(frame_rate, StartBuildingHelper);
 
         // Get all the creature entities on the screen
-        var entities = Entities.GetAllEntitiesByClassname('npc_dota_creature')
+        var entities = Entities.GetAllEntitiesByClassname('npc_dota_building')
         var hero_entities = Entities.GetAllEntitiesByClassname('npc_dota_hero')
-        var build_entities = Entities.GetAllEntitiesByClassname('npc_dota_building')
+        var creature_entities = Entities.GetAllEntitiesByClassname('npc_dota_creature')
         var tree_entities = Entities.GetAllEntitiesByClassname('ent_dota_tree')
         entities = entities.concat(hero_entities)
-        entities = entities.concat(build_entities)
+        entities = entities.concat(creature_entities)
 
         // Build the entity grid with the construction sizes and entity origins
         entityGrid = []
@@ -124,11 +150,14 @@ function StartBuildingHelper( params )
             if (!Entities.IsAlive(entities[i]) || Entities.IsOutOfGame(entities[i])) continue
             var entPos = Entities.GetAbsOrigin( entities[i] )
             var squares = GetConstructionSize(entities[i])
-
-            if (squares > 0)
+            
+            if (squares > 0 && ( IsCustomBuilding(entities[i]) || IsGoldMine(entities[i])))
             {
-                // Block squares centered on the origin 
-                BlockGridSquares(entPos, squares)
+                if (IsGoldMine(entities[i]))
+                    BlockGridSquares(entPos, squares, requires)
+                else
+                    // Block squares centered on the origin
+                    BlockGridSquares(entPos, squares)
             }
             else
             {
@@ -156,12 +185,11 @@ function StartBuildingHelper( params )
 
         var mPos = GameUI.GetCursorPosition();
         var GamePos = Game.ScreenXYToWorld(mPos[0], mPos[1]);
-        GamePos[2]+=5 //Modify offset on ground based on the origin
         if ( GamePos !== null ) 
         {
             SnapToGrid(GamePos, size)
 
-            var invalid = false;
+            var invalid;
             var color = [0,255,0]
             var part = 0
             var halfSide = (size/2)*64
@@ -172,6 +200,8 @@ function StartBuildingHelper( params )
             boundingRect["bottomBorderY"] = GamePos[1]-halfSide
 
             if (GamePos[0] > 10000000) return
+
+            var closeToGoldMine = TooCloseToGoldmine(GamePos)
 
             // Building Base Grid
             for (var x=boundingRect["leftBorderX"]+32; x <= boundingRect["rightBorderX"]-32; x+=64)
@@ -188,7 +218,7 @@ function StartBuildingHelper( params )
 
                     // Grid color turns red when over invalid position
                     color = [0,255,0]
-                    if (IsBlocked(pos))
+                    if (IsBlocked(pos) || closeToGoldMine)
                     {
                         color = [255,0,0]
                         invalid = true
@@ -196,31 +226,87 @@ function StartBuildingHelper( params )
 
                     Particles.SetParticleControl(gridParticle, 2, color)   
                 }
-            }            
+            }
 
-            // Update the particle model
-            Particles.SetParticleControl(modelParticle, 0, GamePos)
-            if (propParticle !== undefined) Particles.SetParticleControl(propParticle, 0, [GamePos[0],GamePos[1],GamePos[2]+offsetZ])
-
-            // Destroy the overlay if its not a valid building location
-            if (invalid)
+            // Overlay Grid, visible with Alt pressed
+            altDown = GameUI.IsAltDown();
+            if (altDown)
             {
-                if (overlayActive && rangeOverlay !== undefined)
+                // Create the particles
+                if (overlayParticles && overlayParticles.length == 0)
                 {
-                    Particles.DestroyParticleEffect(rangeOverlay, true)
-                    overlayActive = false
+                    for (var y=0; y < overlay_size*overlay_size; y++)
+                    {
+                        var particle = Particles.CreateParticle("particles/buildinghelper/square_overlay.vpcf", ParticleAttachment_t.PATTACH_CUSTOMORIGIN, 0)
+                        Particles.SetParticleControl(particle, 1, [32,0,0])
+                        Particles.SetParticleControl(particle, 3, [alt_grid_alpha,0,0])
+                        overlayParticles.push(particle)
+                    }
+                }
+
+                color = [255,255,255]
+                var part2 = 0
+                var halfSide2 = (overlay_size/2)*64
+                var boundingRect2 = {}
+                boundingRect2["leftBorderX"] = GamePos[0]-halfSide2
+                boundingRect2["rightBorderX"] = GamePos[0]+halfSide2
+                boundingRect2["topBorderY"] = GamePos[1]+halfSide2
+                boundingRect2["bottomBorderY"] = GamePos[1]-halfSide2
+
+                for (var x2=boundingRect2["leftBorderX"]+32; x2 <= boundingRect2["rightBorderX"]-32; x2+=64)
+                {
+                    for (var y2=boundingRect2["topBorderY"]-32; y2 >= boundingRect2["bottomBorderY"]+32; y2-=64)
+                    {
+                        var pos2 = [x2,y2,GamePos[2]]
+                        if (part2>=overlay_size*overlay_size)
+                            return
+
+                        color = [255,255,255] //White on empty positions
+                        var overlayParticle = overlayParticles[part2]
+                        Particles.SetParticleControl(overlayParticle, 0, pos2)     
+                        part2++;
+
+                        if (IsBlocked(pos2) || TooCloseToGoldmine(pos2))
+                            color = [255,0,0]                        
+
+                        Particles.SetParticleControl(overlayParticle, 2, color)
+                    }
                 }
             }
             else
             {
-                if (!overlayActive)
+                // Destroy the particles, only once
+                if (overlayParticles && overlayParticles.length != 0)
                 {
-                    var localHeroIndex = Players.GetPlayerHeroEntityIndex(Players.GetLocalPlayer())
-                    rangeOverlay = Particles.CreateParticle("particles/buildinghelper/range_overlay.vpcf", ParticleAttachment_t.PATTACH_ABSORIGIN, localHeroIndex)
+                    for (var i in overlayParticles) {
+                        Particles.DestroyParticleEffect(overlayParticles[i], true)
+                    }
+                    overlayParticles = [];
+                }
+            }
+
+            // Update the model particle
+            Particles.SetParticleControl(modelParticle, 0, GamePos)
+            if (propParticle !== undefined) Particles.SetParticleControl(propParticle, 0, [GamePos[0],GamePos[1],GamePos[2]+offsetZ])
+
+            // Destroy the range overlay if its not a valid building location
+            if (invalid)
+            {
+                if (rangeOverlayActive && rangeOverlay !== undefined)
+                {
+                    Particles.DestroyParticleEffect(rangeOverlay, true)
+                    rangeOverlayActive = false
+                }
+            }
+            else
+            {
+                if (!rangeOverlayActive)
+                {
+                    rangeOverlay = Particles.CreateParticle("particles/buildinghelper/range_overlay.vpcf", ParticleAttachment_t.PATTACH_CUSTOMORIGIN, localHeroIndex)
                     Particles.SetParticleControl(rangeOverlay, 1, [range,0,0])
                     Particles.SetParticleControl(rangeOverlay, 2, [255,255,255])
-                    Particles.SetParticleControl(rangeOverlay, 3, [overlay_alpha,0,0])
-                    overlayActive = true
+                    Particles.SetParticleControl(rangeOverlay, 3, [range_overlay_alpha,0,0])
+                    rangeOverlayActive = true
                 }              
             }
 
@@ -228,7 +314,7 @@ function StartBuildingHelper( params )
                 Particles.SetParticleControl(rangeOverlay, 0, GamePos)
 
             // Turn the model red if we can't build there
-            if (recolor_ghost){
+            if (turn_red){
                 invalid ? Particles.SetParticleControl(modelParticle, 2, [255,0,0]) : Particles.SetParticleControl(modelParticle, 2, [255,255,255])
                 if (propParticle !== undefined)
                     invalid ? Particles.SetParticleControl(propParticle, 2, [255,0,0]) : Particles.SetParticleControl(propParticle, 2, [255,255,255])
@@ -256,6 +342,9 @@ function EndBuildingHelper()
     }
     for (var i in gridParticles) {
         Particles.DestroyParticleEffect(gridParticles[i], true)
+    }
+    for (var i in overlayParticles) {
+        Particles.DestroyParticleEffect(overlayParticles[i], true)
     }
 }
 
@@ -290,10 +379,6 @@ function RegisterGNV(msg){
     var squareX = msg.squareX
     var squareY = msg.squareY
     $.Msg("Registering GNV ["+squareX+","+squareY+"]")
-
-    // Handle odd sizes
-    if (squareX % 2) squareX+=1
-    if (squareY % 2) squareX+=1
 
     var arr = [];
     // Thanks to BMD for this method
@@ -344,6 +429,7 @@ function RequestGNV () {
     
     GameEvents.Subscribe( "gnv_register", RegisterGNV);
 })();
+
 //-----------------------------------
 
 function SnapToGrid(vec, size) {
@@ -371,24 +457,38 @@ function SnapToGrid32(coord) {
 function IsBlocked(position) {
     var x = WorldToGridPosX(position[0]) + Root.squareX/2
     var y = WorldToGridPosY(position[1]) + Root.squareY/2
-    
-    return position[2] < 380 || Root.GridNav[x][y] == BLOCKED || IsEntityGridBlocked(x,y)
+
+    if (requires !== undefined)
+        return !IsSpecialGrid(x,y, requires)
+
+    var restrictHeight = (HEIGHT_RESTRICTION !== undefined) ? position[2] < HEIGHT_RESTRICTION : false
+
+    return restrictHeight || Root.GridNav[x][y] == BLOCKED || IsEntityGridBlocked(x,y)
 }
 
 function IsEntityGridBlocked(x,y) {
     return (entityGrid[x] && entityGrid[x][y] == BLOCKED)
 }
 
-function BlockEntityGrid(position) {
+function IsSpecialGrid (x,y, gridType) {
+    return (entityGrid[x] && entityGrid[x][y] == GRID_TYPES[gridType])
+}
+
+function BlockEntityGrid(position, gridType) {
     var x = WorldToGridPosX(position[0]) + Root.squareX/2
     var y = WorldToGridPosY(position[1]) + Root.squareY/2
 
     if (entityGrid[x] === undefined) entityGrid[x] = []
 
-    entityGrid[x][y] = BLOCKED
+    if (gridType !== undefined)
+    {
+        entityGrid[x][y] = GRID_TYPES[gridType]
+    }
+    else
+        entityGrid[x][y] = BLOCKED
 }
 
-function BlockGridSquares (position, squares) {
+function BlockGridSquares (position, squares, gridType) {
     var halfSide = (squares/2)*64
     var boundingRect = {}
     boundingRect["leftBorderX"] = position[0]-halfSide
@@ -401,7 +501,7 @@ function BlockGridSquares (position, squares) {
         for (var y=boundingRect["topBorderY"]-32; y >= boundingRect["bottomBorderY"]+32; y-=64)
         {
             var pos = [x,y,0]
-            BlockEntityGrid(pos)
+            BlockEntityGrid(pos, gridType)
         }
     }
 }
@@ -418,6 +518,36 @@ function GetConstructionSize(entIndex) {
     var entName = Entities.GetUnitName(entIndex)
     var table = CustomNetTables.GetTableValue( "construction_size", entName)
     return table ? table.size : 0
+}
+
+function HasGoldMineDistanceRestriction(entIndex) {
+    var entName = Entities.GetUnitName(entIndex)
+    var table = CustomNetTables.GetTableValue( "construction_size", entName)
+    return table ? table.distance_to_gold_mine : 0
+}
+
+function GetClosestDistanceToGoldMine(position) {
+    var building_entities = Entities.GetAllEntitiesByClassname('npc_dota_building')
+
+    var minDistance = 99999
+    for (var i = 0; i < building_entities.length; i++)
+    {
+        if (Entities.GetUnitName(building_entities[i]) == "gold_mine")
+        {
+            var distance_to_this_mine = Length2D(position, Entities.GetAbsOrigin(building_entities[i]))
+            if (distance_to_this_mine < minDistance)
+                minDistance = distance_to_this_mine
+        }
+    }
+    return minDistance
+}
+
+function TooCloseToGoldmine(position) {
+    return (distance_to_gold_mine > 0 && GetClosestDistanceToGoldMine(position) < distance_to_gold_mine)
+}
+
+function Length2D(v1, v2) {
+    return Math.sqrt( (v2[0]-v1[0])*(v2[0]-v1[0]) + (v2[1]-v1[1])*(v2[1]-v1[1]) + (v2[2]-v1[2])*(v2[2]-v1[2]) )
 }
 
 function PrintGridCoords(x,y) {

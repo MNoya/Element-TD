@@ -463,8 +463,7 @@ function ElementTD:FilterExecuteOrder( filterTable )
     local y = tonumber(filterTable["position_y"])
     local z = tonumber(filterTable["position_z"])
     local point = Vector(x,y,z)
-
-    local queue = tobool(filterTable["queue"])
+    local queue = filterTable["queue"] == 1
 
     -- Skip Prevents order loops
     if not units["0"] then
