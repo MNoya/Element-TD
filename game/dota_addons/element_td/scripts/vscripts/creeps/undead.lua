@@ -32,6 +32,8 @@ function CreepUndead:OnDeath()
     creep.waveObject.creepsRemaining = creep.waveObject.creepsRemaining + 1 -- Increment creep count
     newCreep:AddNewModifier(newCreep, nil, "modifier_phased", {})
     newCreep:AddNewModifier(newCreep, nil, "modifier_invulnerable", {})
+    newCreep:AddNewModifier(newCreep, nil, "modifier_invisible_etd", {})
+    newCreep:AddNewModifier(newCreep, nil, "modifier_stunned", {})
     newCreep:AddNoDraw()
 
     if newCreep:HasModifier("creep_undead_reanimate") then
@@ -64,6 +66,8 @@ function CreepUndead:UndeadCreepRespawn()
 
     creep:RemoveNoDraw()
     creep:RemoveModifierByName("modifier_invulnerable")
+    creep:RemoveModifierByName("modifier_invisible_etd")
+    creep:RemoveModifierByName("modifier_stunned")
 
     creep:SetMaximumGoldBounty(GetPlayerDifficulty(playerID):GetBountyForWave(wave))
     creep:SetMinimumGoldBounty(GetPlayerDifficulty(playerID):GetBountyForWave(wave))

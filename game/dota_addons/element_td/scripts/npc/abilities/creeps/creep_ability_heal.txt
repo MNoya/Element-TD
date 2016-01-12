@@ -55,7 +55,7 @@
 		}
 		"heal_effect_modifier"
 		{
-			"IsHidden"	"0"
+			"IsHidden"	"1"
 			"Duration"	"1"
 
 			"OnCreated"
