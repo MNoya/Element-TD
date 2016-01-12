@@ -18,7 +18,7 @@ function GenerateAllConstants()
 end
 
 function generateElementalSummonerLocations()
-	local defX = -6560
+	local defX = -6528
 	local defY = 4352
 	local defZ = 512
 	local xIncr = 4096 -- distance between spawns on the x axis
