@@ -24,5 +24,8 @@
         "DOTA_Custom6"                              "Lava" //Red
 
         "error_not_enough_gold"                     "Not Enough Gold"
+        "error_not_enough_resource"                 "Not Enough Resource"
+        "error_not_enough_essence"                  "Not Enough Pure Essence"
+        "error_invalid_build_position"              "You can't build there"
     }
 }
