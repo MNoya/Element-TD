@@ -79,6 +79,7 @@ local requires =
     "creeps/fast",
     "creeps/image",
     "creeps/swarm",
+    "creeps/boss",
 
     -- misc
     "wave",

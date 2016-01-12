@@ -388,6 +388,25 @@
 			}
 		}
 	}
+	//============================================================//
+	// Creep Ability: Boss									      //
+	//============================================================//
+	"creep_ability_boss"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"necrolyte_death_pulse_boss"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health"				"10"
+			}
+		}
+	}
 	//============================================================================================//
 	//============================================================================================//
 	//============================================================================================//
@@ -530,7 +549,7 @@
 			}
 			"heal_effect_modifier"
 			{
-				"IsHidden"	"0"
+				"IsHidden"	"1"
 				"Duration"	"1"
 	
 				"OnCreated"
@@ -639,7 +658,7 @@
 		{
 			"mechanical_buff"
 			{
-				"IsHidden"			"1"
+				"IsHidden"			"0"
 				"Passive"			"0"
 				"Duration"			"%duration"
 				"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_repel_buff.vpcf"

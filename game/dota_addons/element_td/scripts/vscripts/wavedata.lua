@@ -210,12 +210,13 @@ function SpawnWaveForPlayer(playerID, wave)
     
     ----------------------------------------
     -- create thinker to sync fast creeps --
-    if GetUnitKeyValue(WAVE_CREEPS[wave], "ScriptClass") == "CreepFast" then
+    print(GetUnitKeyValue(WAVE_CREEPS[wave], "ScriptClass") == "CreepBoss")
+    if GetUnitKeyValue(WAVE_CREEPS[wave], "ScriptClass") == "CreepFast" or GetUnitKeyValue(WAVE_CREEPS[wave], "ScriptClass") == "CreepBoss" then
         local player = PlayerResource:GetPlayer(playerID)
         local hero = player:GetAssignedHero()
 
         Timers:CreateTimer(3, function()
-            if GetUnitKeyValue(WAVE_CREEPS[wave], "ScriptClass") ~= "CreepFast" then
+            if GetUnitKeyValue(WAVE_CREEPS[wave], "ScriptClass") ~= "CreepFast" and GetUnitKeyValue(WAVE_CREEPS[wave], "ScriptClass") ~= "CreepBoss" then
                 return
             end
             local creeps = playerData.waveObject.creeps

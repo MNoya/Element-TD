@@ -1822,9 +1822,15 @@
 		"ModelScale"		"1.2"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
+		"ScriptClass"	"CreepBoss"
+		"AbilityLayout"	"6"
 		"Ability1"		"composite_armor"
-		"Ability2"		""
+		"Ability2"		"creep_ability_boss"
 		"Ability3"		"icefrog_particles"
+		"Ability7"		"creep_ability_fast"
+		"Ability8"		"creep_ability_mechanical"
+		"Ability9"		"creep_ability_swarm"
+		"Ability10"		"creep_ability_undead"
 	}
 	"immortal"
 	{
