@@ -127,7 +127,8 @@ function CreepBoss:OnTakeDamage(keys)
         swarm:SetHealth(newMaxHealth)
         swarm:SetDeathXP(0)
         swarm:SetForwardVector(self.creep:GetForwardVector())
-        swarm:OnSpawned()
+
+        swarm.scriptObject:OnSpawned()
 
         self.creep:SetMaxHealth(newMaxHealth)
         self.creep:SetBaseMaxHealth(newMaxHealth)
