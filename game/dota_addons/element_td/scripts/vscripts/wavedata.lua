@@ -274,7 +274,7 @@ function ReduceLivesForPlayer( playerID )
         lives = 0
     end
 
-    if hero:GetHealth() <= lives then
+    if hero:GetHealth() <= lives and hero:GetHealth() > 0 then
         playerData.health = 0
         hero:ForceKill(false)
         if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then

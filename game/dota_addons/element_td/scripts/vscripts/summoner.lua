@@ -276,7 +276,7 @@ function SummonElemental(keys)
 
             playerData.health = playerData.health - 3
             local hero = PlayerResource:GetPlayer(playerID):GetAssignedHero()
-            if hero:GetHealth() <= 3 then
+            if hero:GetHealth() <= 3 and hero:GetHealth() > 0 then
                 playerData.health = 0
                 hero:ForceKill(false)
                 if playerData.completedWaves >= WAVE_COUNT and not EXPRESS_MODE then
