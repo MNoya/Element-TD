@@ -1,6 +1,9 @@
--- Flooding (Darkness + Nature + Water)
--- This tower has two abilities. One increases splash radius, the other decreases splash radius. There are four splash increments, from no splash to huge splash. 
--- Larger splash reduces attack speed and vice versa.
+-- Flooding ( Water + Darkness + Nature )
+-- Attack puts a buff at the point of impact. The buff does 120/600/3000 damage a second in a 400 AoE (full damage)
+-- centerd on the point of impact.
+-- It lasts 5 seconds.
+-- Single target tower, no damage, 900 range and 0.66 attack speed.
+-- Buffs can stack indefinitely
 
 FloodingTower = createClass({
         tower = nil,
@@ -16,51 +19,42 @@ FloodingTower = createClass({
     },
 nil)
 
-function FloodingTower:ChangeSplash(keys)
-    self.splashLevel = self.splashLevel + keys.Amount
-    self.abilityIncrease:SetLevel(self.splashLevel)
-    self.abilityDecrease:SetLevel(self.splashLevel)
-
-    if self.splashLevel == 1 then
-        self.abilityDecrease:SetActivated(false)
-    elseif self.splashLevel == 4 then
-        self.abilityIncrease:SetActivated(false)
-    else
-        self.abilityIncrease:SetActivated(true)
-        self.abilityDecrease:SetActivated(true)
-    end
-    
-    self.tower:SetBaseAttackTime(self.batLevels[self.splashLevel])
-end
-
 function FloodingTower:OnAttackLanded(keys)
     local target = keys.target
-    local damage = ApplyAttackDamageFromModifiers(self.tower:GetBaseDamageMax(), self.tower)
-    local aoe = self.splashLevels[self.splashLevel]
+    local origin = target:GetAbsOrigin()
 
-    if aoe > 0 then
-        DamageEntitiesInArea(target:GetOrigin(), aoe, self.tower, damage / 2)
-        DamageEntitiesInArea(target:GetOrigin(), aoe / 2, self.tower, damage / 2)
+    local flooding = CreateUnitByName("tower_dummy", origin + Vector(0, 0, 64), false, nil, nil, self.tower:GetTeamNumber())    
+    flooding:SetAbsOrigin(origin + Vector(0, 0, 64))
+    flooding:AddNewModifier(flooding, nil, "modifier_out_of_world", {})
+    flooding:AddNewModifier(flodding, nil, "modifier_no_health_bar", {})
 
-        local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_siren/naga_siren_riptide.vpcf", PATTACH_ABSORIGIN, self.tower)
-        ParticleManager:SetParticleControl(particle, 0, target:GetOrigin())
-        ParticleManager:SetParticleControl(particle, 1, Vector(aoe, 0, 1))
-        ParticleManager:SetParticleControl(particle, 3, Vector(0, 0, 0))
+    self.ability:ApplyDataDrivenModifier(self.tower, flooding, "modifier_flood", {})
 
-    else
-        DamageEntity(target, self.tower, damage)
-    end
+    Timers:CreateTimer(self.duration + 1, function()
+        UTIL_Remove(flooding)
+    end)
+end
+
+function FloodingTower:OnFloodDot(keys)
+
+    local target = keys.target
+
+    local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_siren/naga_siren_riptide.vpcf", PATTACH_ABSORIGIN, self.tower)
+    ParticleManager:SetParticleControl(particle, 0, target:GetOrigin())
+    ParticleManager:SetParticleControl(particle, 1, Vector(self.fullAOE, 0, 1))
+    ParticleManager:SetParticleControl(particle, 3, Vector(0, 0, 0))
+
+    DamageEntitiesInArea(target:GetOrigin(), self.fullAOE, self.tower, self.damage)
 end
 
 function FloodingTower:OnCreated()
-    self.abilityDecrease = AddAbility(self.tower, "flooding_tower_decrease_splash")
-    self.abilityIncrease = AddAbility(self.tower, "flooding_tower_increase_splash")
+    self.ability = AddAbility(self.tower, "flooding_tower_flood")
+    self.damage = GetAbilitySpecialValue("flooding_tower_flood", "splash_damage")[self.tower:GetLevel()]
+    self.duration = GetAbilitySpecialValue("flooding_tower_flood", "duration")
+    self.fullAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"));
+    self.tower.no_autoattack_damage = true
 
-    self.abilityDecrease:SetActivated(false)
-
-    self.splashLevel = 1
-    self.splashLevels = GetAbilitySpecialValue("flooding_tower_increase_splash", "splash_aoe")
-    self.batLevels = GetAbilitySpecialValue("flooding_tower_increase_splash", "bat")
+    print(self.damage, self.duration, self.fullAOE)
 end
 
 RegisterTowerClass(FloodingTower, FloodingTower.className)

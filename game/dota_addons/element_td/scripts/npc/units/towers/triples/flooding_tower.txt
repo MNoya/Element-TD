@@ -45,14 +45,14 @@
 		"2"		"nature"
 		"3"		"dark"
 	}
-	"Damage"		"950"
+	"Damage"		"600"
 	"DamageType"		"water"
 	"ScriptClass"		"FloodingTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
-	"AttackRange"		"625"
-	"AttackAcquisitionRange"		"625"
-	"AttackRate"		"1"
+	"AttackRange"		"900"
+	"AttackAcquisitionRange"		"900"
+	"AttackRate"		"0.66"
 	"ProjectileModel"		"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
 
@@ -84,8 +84,9 @@
 		"Count"		"1"
 		"1"		"flooding_tower_2"
 	}
-	"AttackDamageMin"		"950"
-	"AttackDamageMax"		"950"
+	"AttackDamageMin"		"900"
+	"AttackDamageMax"		"900"
+	"AOE_Full"				"400"
 
 	// Building Size
     "ConstructionSize"          "2"

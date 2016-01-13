@@ -1,0 +1,71 @@
+//============================================================//
+// Flooding Tower: Flood
+//============================================================//
+"flooding_tower_flood"
+{
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"MaxLevel"						"2"
+	"AbilityTextureName"			"naga_siren_rip_tide"
+	"AbilityCastRange"				"%full_aoe"
+
+	"Modifiers"
+	{
+		"modifier_flood_passive"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+
+			"OnAttackLanded"
+			{
+				"RunScript"
+				{
+					"Target"			"TARGET"
+					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+					"Function"			"TriggerEvent"
+					"Event"				"OnAttackLanded"
+				}
+			}
+		}
+
+		"modifier_flood"
+		{
+			"IsDebuff"		"1"
+			"Duration"		"%duration"
+			"ThinkInterval" "1"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+					"Function"			"TriggerEvent"
+					"Event"				"OnFloodDot"
+				}
+			}
+		}
+	}
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"splash_damage"			"600 3000"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"full_aoe"				"400"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"5"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"interval"				"1"
+		}
+	}
+}
