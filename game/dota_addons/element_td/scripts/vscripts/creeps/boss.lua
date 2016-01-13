@@ -41,6 +41,7 @@ function CreepBoss:OnDeath()
     newCreep.class = creepClass
     newCreep.playerID = creep.playerID
     newCreep.waveObject = creep.waveObject
+    newCreep.bounty = creep.bounty
     creep.waveObject:RegisterCreep(newCreep:entindex())
     creep.waveObject.creepsRemaining = creep.waveObject.creepsRemaining + 1 -- Increment creep count
     newCreep:AddNewModifier(newCreep, nil, "modifier_phased", {})
@@ -92,8 +93,13 @@ function CreepBoss:UndeadCreepRespawn()
 
     self:OnSpawned()
 
-    creep:SetMaximumGoldBounty(GetPlayerDifficulty(playerID):GetBountyForWave(wave))
-    creep:SetMinimumGoldBounty(GetPlayerDifficulty(playerID):GetBountyForWave(wave))
+    if creep.bounty then
+        creep:SetMaximumGoldBounty(creep.bounty)
+        creep:SetMinimumGoldBounty(creep.bounty)       
+    else
+        creep:SetMaximumGoldBounty(GetPlayerDifficulty(playerID):GetBountyForWave(wave))
+        creep:SetMinimumGoldBounty(GetPlayerDifficulty(playerID):GetBountyForWave(wave))
+    end
 
     creep:SetHealth(creep:GetMaxHealth() * 0.5) -- it spawns at a percentage of its max health
     CreateMoveTimerForCreep(creep, playerData.sector + 1) --create a timer for this creep so it continues walking to the destination
@@ -106,7 +112,6 @@ end
 -- Swarm
 function CreepBoss:OnTakeDamage(keys)
     if self.creep:GetHealth() > 0 and self.creep:GetHealthPercent() <= 50 and not self.creep.isSwarm then
-        print("Creating Swarm")
         self.creep.isSwarm = true
 
         local swarm = SpawnEntity(self.creep:GetUnitName(), self.creep.playerID, self.creep:GetOrigin())
@@ -122,6 +127,7 @@ function CreepBoss:OnTakeDamage(keys)
         swarm:SetHealth(newMaxHealth)
         swarm:SetDeathXP(0)
         swarm:SetForwardVector(self.creep:GetForwardVector())
+        swarm:OnSpawned()
 
         self.creep:SetMaxHealth(newMaxHealth)
         self.creep:SetBaseMaxHealth(newMaxHealth)
@@ -146,11 +152,9 @@ function CreepBoss:OnTakeDamage(keys)
             bounty2 = bounty1 + 1
         end
 
-        self.creep:SetMaximumGoldBounty(bounty1)
-        self.creep:SetMinimumGoldBounty(bounty1)
+        self.creep.bounty = bounty1
 
-        swarm:SetMaximumGoldBounty(bounty2)
-        swarm:SetMinimumGoldBounty(bounty2)
+        swarm.bounty = bounty2
 
         local playerData = GetPlayerData(playerID)
         CreateMoveTimerForCreep(swarm, playerData.sector + 1)
