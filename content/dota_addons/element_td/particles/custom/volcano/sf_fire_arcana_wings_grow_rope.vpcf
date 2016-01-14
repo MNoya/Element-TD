@@ -23,6 +23,12 @@
 		{
 			_class = "C_OP_BasicMovement"
 			m_fDrag = 0.065000
+			m_Gravity =
+			[
+				0.000000,
+				0.000000,
+				-200.000000,
+			]
 		},
 		{
 			_class = "C_OP_ColorInterpolate"

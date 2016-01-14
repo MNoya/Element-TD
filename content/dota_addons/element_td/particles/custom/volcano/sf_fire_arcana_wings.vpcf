@@ -25,6 +25,7 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/volcano/sf_fire_arcana_wings_ground.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/volcano/sf_fire_arcana_wings_ground_cracks.vpcf"
@@ -40,6 +41,7 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/volcano/sf_fire_arcana_wings_soul_hands_pnt.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/volcano/sf_fire_arcana_wings_grow_rope.vpcf"
@@ -96,6 +98,7 @@
 		{
 			_class = "C_OP_StopAfterCPDuration"
 			m_flDuration = 35.000000
+			m_bDisableOperator = true
 		},
 		{
 			_class = "C_OP_EndCapTimedDecay"
