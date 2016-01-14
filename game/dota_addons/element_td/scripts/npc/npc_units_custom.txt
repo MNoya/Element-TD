@@ -12560,7 +12560,7 @@
 			"2"		"nature"
 			"3"		"dark"
 		}
-		"Damage"		"600"
+		"Damage"		"120"
 		"DamageType"		"water"
 		"ScriptClass"		"FloodingTower"
 		"TowerType"		"Normal"
@@ -12599,8 +12599,8 @@
 			"Count"		"1"
 			"1"		"flooding_tower_2"
 		}
-		"AttackDamageMin"		"900"
-		"AttackDamageMax"		"900"
+		"AttackDamageMin"		"120"
+		"AttackDamageMax"		"120"
 		"AOE_Full"				"400"
 	
 		// Building Size
@@ -12654,7 +12654,7 @@
 			"2"		"nature"
 			"3"		"dark"
 		}
-		"Damage"		"3000"
+		"Damage"		"600"
 		"DamageType"		"water"
 		"ScriptClass"		"FloodingTower"
 		"TowerType"		"Normal"
@@ -12691,8 +12691,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"3000"
-		"AttackDamageMax"		"3000"
+		"AttackDamageMin"		"600"
+		"AttackDamageMax"		"600"
 		"AOE_Full"				"400"
 	
 		// Building Size

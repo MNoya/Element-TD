@@ -45,7 +45,7 @@
 		"2"		"nature"
 		"3"		"dark"
 	}
-	"Damage"		"3000"
+	"Damage"		"600"
 	"DamageType"		"water"
 	"ScriptClass"		"FloodingTower"
 	"TowerType"		"Normal"
@@ -82,8 +82,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"3000"
-	"AttackDamageMax"		"3000"
+	"AttackDamageMin"		"600"
+	"AttackDamageMax"		"600"
 	"AOE_Full"				"400"
 
 	// Building Size
