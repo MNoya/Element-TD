@@ -9,13 +9,15 @@
 	"BaseClass"						"ability_datadriven"											
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"tornado_tempest"
-	"MaxLevel"						"1"
-	"AbilityCastRange"				"700"
+	"MaxLevel"						"2"
+	"AbilityCastRange"				"900"
 
 	"Modifiers"
 	{
 		"modifier_tornado_aura"
 		{
+			"EffectName"			"particles/neutral_fx/tornado_ambient.vpcf"
+			"EffectAttachType"		"follow_origin"
 			"Passive"				"1"
 			"IsHidden"				"1"
 			"Aura"					"modifier_tornado_slow"
@@ -38,17 +40,17 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"slow_tooltip"			"7.5 22.5"
+			"slow_tooltip"			"10 30"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"slow"					"-7.5 -22.5"
+			"slow"					"-10 -30"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"radius"				"500"
+			"radius"				"900"
 		}
 		"04"
 		{

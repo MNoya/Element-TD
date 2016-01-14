@@ -3959,13 +3959,15 @@
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"tornado_tempest"
-		"MaxLevel"						"1"
-		"AbilityCastRange"				"700"
+		"MaxLevel"						"2"
+		"AbilityCastRange"				"900"
 	
 		"Modifiers"
 		{
 			"modifier_tornado_aura"
 			{
+				"EffectName"			"particles/neutral_fx/tornado_ambient.vpcf"
+				"EffectAttachType"		"follow_origin"
 				"Passive"				"1"
 				"IsHidden"				"1"
 				"Aura"					"modifier_tornado_slow"
@@ -3988,17 +3990,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow_tooltip"			"7.5 22.5"
+				"slow_tooltip"			"10 30"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-7.5 -22.5"
+				"slow"					"-10 -30"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"500"
+				"radius"				"900"
 			}
 			"04"
 			{
@@ -4016,17 +4018,17 @@
 		//-------------------------------------------------------------------------------------------------------------
 	
 		"BaseClass"						"ability_datadriven"											
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityTextureName"			"towers/windstorm_tower_tornado"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"MaxLevel"						"2"
-		"AbilityCastRange"				"750"
+		"AbilityCastRange"				"900"
 		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"0"
-		"AbilityCastPoint"				"0"
+		"AbilityCastPoint"				"0.1"
 		"AbilityChannelTime"			"5"
 	
 		"OnSpellStart"
@@ -4037,16 +4039,6 @@
 				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
 				"Function"			"TriggerEvent"
 				"Event"				"SpawnTornado"
-			}
-		}
-	
-		"OnChannelFinish"
-		{
-			"RunScript"
-			{
-				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-				"Function"			"TriggerEvent"
-				"Event"				"RemoveTornado"
 			}
 		}
 	
@@ -4063,7 +4055,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow_tooltip"			"7.5 22.5"
+				"slow_tooltip"			"10 30"
 			}
 			"02"
 			{
@@ -4073,7 +4065,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"500"
+				"radius"				"900"
 			}
 		}
 	}
