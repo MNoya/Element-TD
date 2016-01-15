@@ -58,19 +58,19 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
         _ScoreboardUpdater_SetTextSafe( playerPanel, "Level", playerInfo.player_level );
         _ScoreboardUpdater_SetTextSafe( playerPanel, "Deaths", playerInfo.player_deaths );
         _ScoreboardUpdater_SetTextSafe( playerPanel, "Assists", playerInfo.player_assists );
-        _ScoreboardUpdater_SetTextSafe( playerPanel, "Score", playerScore[playerId] );
-        _ScoreboardUpdater_SetTextSafe( playerPanel, "Wave", playerWave[playerId] );
+        _ScoreboardUpdater_SetTextSafe( playerPanel, "Score", GameUI.CustomUIConfig().playerScore[playerId] );
+        _ScoreboardUpdater_SetTextSafe( playerPanel, "Wave", GameUI.CustomUIConfig().playerWave[playerId] );
         _ScoreboardUpdater_SetTextSafe( playerPanel, "Health", playerHealth[playerId] );
 
-        if ( playerData[playerId] )
+        if ( GameUI.CustomUIConfig().playerData[playerId] !== undefined )
         {
-            _ScoreboardUpdater_SetTextSafe( playerPanel, "Lives", playerData[playerId].lives);
-            _ScoreboardUpdater_SetTextSafe( playerPanel, "TeammateLumberAmount", playerData[playerId].lumber);
-            _ScoreboardUpdater_SetTextSafe( playerPanel, "TeammateEssenceAmount", playerData[playerId].pureEssence);
-            _ScoreboardUpdater_SetTextSafe( playerPanel, "Towers", playerData[playerId].towers);
-            _ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerGoldAmount", playerData[playerId].gold );
-            _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", playerData[playerId].lastHits );
-            var difficulty = playerData[playerId].difficulty;
+            _ScoreboardUpdater_SetTextSafe( playerPanel, "Lives", GameUI.CustomUIConfig().playerData[playerId].lives);
+            _ScoreboardUpdater_SetTextSafe( playerPanel, "TeammateLumberAmount", GameUI.CustomUIConfig().playerData[playerId].lumber);
+            _ScoreboardUpdater_SetTextSafe( playerPanel, "TeammateEssenceAmount", GameUI.CustomUIConfig().playerData[playerId].pureEssence);
+            _ScoreboardUpdater_SetTextSafe( playerPanel, "Towers", GameUI.CustomUIConfig().playerData[playerId].towers);
+            _ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerGoldAmount", GameUI.CustomUIConfig().playerData[playerId].gold );
+            _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", GameUI.CustomUIConfig().playerData[playerId].lastHits );
+            var difficulty = GameUI.CustomUIConfig().playerData[playerId].difficulty;
             var diff = "-";
             if (difficulty == "Normal")
                 diff = "N";
@@ -417,24 +417,34 @@ function SetTopBarValue( data )
 function SetTopBarWaveValue( data )
 {
     playerWave[data.playerId] = data.wave;
+    GameUI.CustomUIConfig().playerWave[data.playerId] = data.wave;
 }
 
 function SetTopBarPlayerHealth( data )
 {
     playerHealth[data.playerId] = data.health;
+    GameUI.CustomUIConfig().playerHealth[data.playerId] = data.health;
 }
 
 function SetTopBarPlayerScore( data )
 {
     playerScore[data.playerId] = data.score;
+    GameUI.CustomUIConfig().playerScore[data.playerId] = data.score;
 }
 
 function SetUpdateScoreboard( data )
 {
     playerData[data.playerID] = data.data;
+    GameUI.CustomUIConfig().playerData[data.playerID] = data.data;
 }
 
 (function () {
+    if (GameUI.CustomUIConfig().playerData === undefined) {
+        $.Msg("Initialise PlayerData");
+        GameUI.CustomUIConfig().playerData = {};
+        GameUI.CustomUIConfig().playerWave = [0,0,0,0,0,0,0,0];
+        GameUI.CustomUIConfig().playerScore = [0,0,0,0,0,0,0,0];
+    }
     GameEvents.Subscribe( "SetTopBarScoreValue", SetTopBarValue );
     GameEvents.Subscribe( "SetTopBarWaveValue", SetTopBarWaveValue );
     GameEvents.Subscribe( "SetTopBarPlayerHealth", SetTopBarPlayerHealth );
