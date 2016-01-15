@@ -10,6 +10,8 @@ local requires =
     "libraries/timers",
     "libraries/popups",
     "libraries/notifications",
+    "libraries/animations",
+    "libraries/attachments",
     "libraries/buildinghelper",
 
     -- mechanics

@@ -446,7 +446,7 @@ function Attachments:AttachProp(unit, attachPoint, model, scale, properties)
     local scale = scale or db[unitModel][attachPoint][propModel]['scale'] or 1.0
 
     properties = properties or db[unitModel][attachPoint][propModel]
-    local animation = properties.Animation or db['Animations'][propModel] or ""
+    local animation = properties.Animation
 
     local pitch = tonumber(properties.pitch)
     local yaw = tonumber(properties.yaw)

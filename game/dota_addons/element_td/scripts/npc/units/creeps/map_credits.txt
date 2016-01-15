@@ -1,0 +1,194 @@
+"a_dizzle"
+{
+    "BaseClass"                 "npc_dota_creature"
+    "ArmorPhysical"             "100"
+    "Level"                     "100"
+    "AttackDamageMin"           "10000"
+    "AttackDamageMax"           "10000"
+    "StatusHealth"              "10000"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+    "Ability1"                  "map_setup"
+
+    "Model"                     "models/heroes/omniknight/omniknight.vmdl"
+    "ModelScale"                "1"
+
+    "Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_omniknight
+        {
+            "1" { "ItemDef" "45" } // Omniknight's Head
+            "2" { "ItemDef" "562" } // Omniknight's Miscellaneous
+            "3" { "ItemDef" "43" } // Omniknight's Cape
+            "4" { "ItemDef" "46" } // Omniknight's Hair
+            "5" { "ItemDef" "13" } // Omniknight's Bracers
+            "6" { "ItemDef" "42" } // Omniknight's Shoulders
+        }
+    }
+}
+
+"Azarak"
+{
+    "BaseClass"                 "npc_dota_creature"
+    "ArmorPhysical"             "100"
+    "Level"                     "100"
+    "AttackDamageMin"           "10000"
+    "AttackDamageMax"           "10000"
+    "StatusHealth"              "10000"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+    "Ability1"                  "map_setup"
+
+    "Model"                     "models/heroes/abaddon/abaddon.vmdl"
+    "ModelScale"                "0.8"
+
+    "Creature"
+    {
+        "AttachWearables" // Sermon of the Frozen Apostle Set
+        {
+            "1" { "ItemDef" "5812" } // Rimeheart the Doom Stallion
+            "2" { "ItemDef" "5813" } // Death Shroud of the Frozen Apostle
+            "3" { "ItemDef" "5815" } // Drake Guard of the Frozen Apostle
+            "4" { "ItemDef" "5814" } // Horned Helm of the Frozen Apostle
+            "5" { "ItemDef" "5816" } // Twisted Ghostblade of the Frozen Apostle
+            "6" { "ItemDef" "522" } // Abaddon's Ambient Effects
+        }
+    }
+}
+
+"Quintinity"
+{
+    "BaseClass"                 "npc_dota_creature"
+    "ArmorPhysical"             "100"
+    "Level"                     "100"
+    "AttackDamageMin"           "10000"
+    "AttackDamageMax"           "10000"
+    "StatusHealth"              "10000"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+    "Ability1"                  "map_setup"
+
+    "Model"                     "models/heroes/legion_commander/legion_commander.vmdl"
+    "ModelScale"                "1.1"
+
+    "Creature"
+    {
+        "AttachWearables" // Errant Soldier + Arcana
+        {
+            "1" { "ItemDef" "7223" } // Pauldrons of the Errant Soldier
+            "2" { "ItemDef" "7221" } // Standards of the Errant Soldier
+            "3" { "ItemDef" "7220" } // Bracers of the Errant Soldier
+            "4" { "ItemDef" "5810" } // Blades of Voth Domosh
+            "5" { "ItemDef" "7222" } // Cowl of the Errant Soldier
+        }   
+    }
+}
+
+"Karawasa"
+{
+    "BaseClass"                 "npc_dota_creature"
+    "ArmorPhysical"             "100"
+    "Level"                     "100"
+    "AttackDamageMin"           "10000"
+    "AttackDamageMax"           "10000"
+    "StatusHealth"              "10000"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+    "Ability1"                  "map_setup"    
+
+    "Model"                     "models/heroes/chaos_knight/chaos_knight.vmdl"
+    "ModelScale"                "1.1"
+
+
+    "Creature"
+    {
+        "AttachWearables" // Rising Chaos
+        {
+            "1" { "ItemDef" "5924" } // Rapture
+            "2" { "ItemDef" "5922" } // Caged Fury
+            "3" { "ItemDef" "5923" } // Hellish Maw Spaulders
+            "4" { "ItemDef" "5921" } // Bone Splitter
+            "5" { "ItemDef" "5925" } // Shield of Screaming Souls
+        }
+    }
+}
+
+"Noya"
+{
+    "BaseClass"                 "npc_dota_creature"
+    "ArmorPhysical"             "100"
+    "AttackDamageMin"           "10000"
+    "AttackDamageMax"           "10000"
+    "StatusHealth"              "10000"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+    "Ability1"                  "map_setup"  
+
+    "Model"                     "models/heroes/terrorblade/terrorblade_arcana.vmdl"
+    "ModelScale"                "1.2"
+
+    "Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_terrorblade
+        {
+            "1" { "ItemDef" "307" } // Terrorblade's Weapons
+            "2" { "ItemDef" "476" } // Terrorblade's Armor
+            "3" { "ItemDef" "8650" } // Terrorblade's Demon Form
+            "4" { "ItemDef" "540" } // Terrorblade's Ambient Effects
+            "5" { "ItemDef" "306" } // Terrorblade's Wings
+            "6" { "ItemDef" "478" } // Terrorblade's Head
+            "7" { "ItemDef" "5957" } // Fractal Horns of Inner Abysm
+        }
+    }
+}
+
+"magician"
+{
+    "BaseClass"                 "npc_dota_creature"
+    "Level"                     "100"
+    "ArmorPhysical"             "100"
+    "AttackDamageMin"           "10000"
+    "AttackDamageMax"           "10000"
+    "StatusHealth"              "10000"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+    "Ability1"                  "map_setup"
+
+    "Model"                     "models/heroes/invoker/invoker.vmdl"
+    "ModelScale"                "1"
+
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "1" { "ItemDef" "8746" } // Magus Apex
+            "2" { "ItemDef" "6195" } // Gauntlets of the Arsenal Magus
+            "3" { "ItemDef" "6201" } // Shoulders of the Arsenal Magus
+            "4" { "ItemDef" "6194" } // Cape of the Arsenal Magus
+            "5" { "ItemDef" "6200" } // Belt of the Arsenal Magus
+            "6" { "ItemDef" "98" } // Invoker's Head
+        }
+    }
+}
+
+"villain"
+{
+    "BaseClass"                 "npc_dota_creature"
+    "Level"                     "1"
+    "ArmorPhysical"             "0"
+    "AttackDamageMin"           "0"
+    "AttackDamageMax"           "0"
+    "StatusHealth"              "1"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+    "Ability1"                  "map_setup"
+
+    "Model"                     "models/heroes/rikimaru/rikimaru.vmdl"
+    "ModelScale"                "1"
+
+    "Creature"
+    {
+        "AttachWearables" // Covert Saboteur
+        {
+            "1" { "ItemDef" "8442" } // Whip of the Covert Saboteur
+            "2" { "ItemDef" "8445" } // Spaulder of the Covert Saboteur
+            "3" { "ItemDef" "8441" } // Off-Hand Blade of the Covert Saboteur
+            "4" { "ItemDef" "8443" } // Blade of the Covert Saboteur
+            "5" { "ItemDef" "8446" } // Helm of the Covert Saboteur
+            "6" { "ItemDef" "8444" } // Cuffs of the Covert Saboteur
+        }
+    }
+}

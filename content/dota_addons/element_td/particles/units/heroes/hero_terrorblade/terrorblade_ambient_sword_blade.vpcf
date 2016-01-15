@@ -1,0 +1,99 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 1
+	m_pszSnapshotName = "particles/models/heroes/terrorblade/weapon.psf"
+	m_nSnapshotControlPoint = 6
+	m_BoundingBoxMin =
+	[
+		-32.000000,
+		-32.000000,
+		-32.000000,
+	]
+	m_BoundingBoxMax =
+	[
+		32.000000,
+		32.000000,
+		32.000000,
+	]
+	m_flConstantLifespan = 9999999980506464300.000000
+	m_ConstantColor =
+	[
+		21,
+		165,
+		21,
+		255,
+	]
+	m_flNoDrawTimeToGoToSleep = 2.000000
+	m_bShouldSort = false
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderModels"
+			m_nLOD = 0
+			m_bIgnoreNormal = true
+			m_ModelList =
+			[
+				{
+					m_model = resource:"models/heroes/terrorblade/terrorblade_weapon_planes.vmdl"
+				},
+			]
+			m_bAnimated = true
+			m_bForceDrawInterlevedWithSiblings = true
+		},
+	]
+	m_Operators =
+	[
+		{
+			_class = "C_OP_SetToCP"
+		},
+		{
+			_class = "C_OP_RemapCPOrientationToRotations"
+			m_vecRotation =
+			[
+				0.000000,
+				0.000000,
+				90.000000,
+			]
+		},
+		{
+			_class = "C_OP_EndCapTimedDecay"
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_RemapCPtoVector"
+			m_vOutputMax =
+			[
+				2.000000,
+				2.000000,
+				2.000000,
+			]
+			m_nFieldOutput = 6
+			m_vInputMax =
+			[
+				255.000000,
+				255.000000,
+				255.000000,
+			]
+			m_nCPInput = 15
+			m_nOpScaleCP = 16
+			m_bScaleInitialRange = true
+		},
+		{
+			_class = "C_INIT_RadiusFromCPObject"
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 1
+		},
+	]
+}

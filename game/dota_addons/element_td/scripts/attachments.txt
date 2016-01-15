@@ -1,0 +1,71 @@
+"Attachments"
+{
+	"Particles"
+	{
+		"models/timebreaker.vmdl"
+		{
+			"particles/econ/items/faceless_void/faceless_void_weapon_timebreaker/faceless_void_weapon_glow_timebreaker.vpcf"
+			{
+				"0"		"attach_fx"
+			}
+		}
+	}
+	"models/heroes/zeus/zeus.vmdl"
+	{
+		"attach_attack2"
+		{
+			"models/items/tuskarr/frostiron_raider_axe/frostiron_raider_axe.vmdl"
+			{
+				"scale"		"0.69999998807907"
+				"pitch"		"-30"
+				"roll"		"0"
+				"yaw"		"-140"
+				"YPos"		"0"
+				"ZPos"		"20"
+				"XPos"		"-10"
+			}
+		}
+		"attach_attack1"
+		{
+			"models/items/faceless_void/voidhammer/voidhammer.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-10"
+				"roll"		"-30"
+				"ZPos"		"-77"
+				"YPos"		"116"
+				"yaw"		"70"
+				"XPos"		"-1"
+			}
+			"models/items/omniknight/weapon_rune_hammer.vmdl"
+			{
+				"scale"		"0.80000001192093"
+				"pitch"		"20"
+				"roll"		"25"
+				"yaw"		"180"
+				"YPos"		"119"
+				"ZPos"		"-102"
+				"XPos"		"7"
+			}
+		}
+	}
+	"models/heroes/omniknight/omniknight.vmdl"
+	{
+		"attach_attack1"
+		{
+			"models/timebreaker.vmdl"
+			{
+				"scale"		"1.2999999523163"
+				"pitch"		"0"
+				"yaw"		"0"
+				"XPos"		"-30"
+				"YPos"		"-2"
+				"ZPos"		"-108"
+				"roll"		"0"
+			}
+		}
+	}
+	"Animations"
+	{
+	}
+}

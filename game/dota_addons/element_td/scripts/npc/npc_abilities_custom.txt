@@ -1424,6 +1424,37 @@
 			}
 		}
 	}
+	"map_setup"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "MaxLevel"                      "1"
+	
+	    "Modifiers"
+	    {
+	        "modifier_map_setup"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	            "States"
+	            {
+	                "MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
+	            }
+	
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/wearables.lua"
+	                    "Function"      "AdjustCosmetics"
+	                }
+	            }
+	        }
+	    }
+	}
 	//============================================================//
 	// Summon Dark Elemental
 	//============================================================//
