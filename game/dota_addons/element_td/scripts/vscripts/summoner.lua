@@ -116,7 +116,7 @@ RUNES = {
     ["fire"] = { model = "models/props_gameplay/rune_haste01.vmdl", animation = "rune_haste_idle" },
     ["nature"] = { model = "models/props_gameplay/rune_regeneration01.vmdl", animation = "rune_regeneration_anim" },
     ["earth"] = { model = "models/props_gameplay/rune_illusion01.vmdl", animation = "rune_illusion_idle" },
-    ["light"] = { model = "models/props_gameplay/rune_goldxp.vmdl", animation = "rune_goldxp_anim" },
+    ["light"] = { model = "models/props_gameplay/rune_arcane.vmdl", animation = "rune_arcane_idle" },
     ["dark"] = { model = "models/props_gameplay/rune_invisibility01.vmdl", animation = "rune_invisibility_idle" }
 }
 
