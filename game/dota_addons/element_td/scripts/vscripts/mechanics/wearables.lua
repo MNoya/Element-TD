@@ -4,7 +4,7 @@ function AdjustCosmetics( event )
     local unitName = unit:GetUnitName()
 
     Timers:CreateTimer(1, function()
-        if unitName == "a_dizzle" then
+        if unitName == "A_Dizzle" then
             Attachments:AttachProp(unit, "attach_attack1", "models/timebreaker.vmdl")
         elseif unitName == "Noya" then
             AddAnimationTranslate(unit, "abysm")

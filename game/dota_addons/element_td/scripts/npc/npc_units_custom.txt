@@ -2198,7 +2198,7 @@
 		"Ability1"		"light_armor"
 		"Ability2"		"creep_ability_fast"
 	}
-	"a_dizzle"
+	"A_Dizzle"
 	{
 	    "BaseClass"                 "npc_dota_creature"
 	    "ArmorPhysical"             "100"
@@ -2313,6 +2313,7 @@
 	{
 	    "BaseClass"                 "npc_dota_creature"
 	    "ArmorPhysical"             "100"
+	    "Level"                     "100"
 	    "AttackDamageMin"           "10000"
 	    "AttackDamageMax"           "10000"
 	    "StatusHealth"              "10000"
