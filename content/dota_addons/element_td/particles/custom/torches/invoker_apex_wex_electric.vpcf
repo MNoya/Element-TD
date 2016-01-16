@@ -44,6 +44,7 @@
 			m_flEndTime = 0.140000
 			m_flStartScale = 0.000000
 			m_flBias = 0.950000
+			m_flEndScale = 1.400000
 		},
 		{
 			_class = "C_OP_RampScalarLinearSimple"
