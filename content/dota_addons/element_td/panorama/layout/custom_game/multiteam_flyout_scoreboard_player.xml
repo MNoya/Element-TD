@@ -37,7 +37,7 @@
 				</Panel>
 				<Label id="TeammateEssenceAmount" text="0" />
 				<Label id="TeammateLumberAmount" text="0" />
-				<Label id="TeammateGoldAmount" text="0" />
+				<Label id="PlayerGoldAmount" text="0" />
 				<Button id="MuteButton" onactivate="ToggleMute();" />
 			</Panel>
 			<Panel id="ScoreContainer" class="ScoreCol_Score ScoreboardPanel">
