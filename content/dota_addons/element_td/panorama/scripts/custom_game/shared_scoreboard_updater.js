@@ -423,7 +423,6 @@ function SetTopBarWaveValue( data )
 function SetTopBarPlayerHealth( data )
 {
     playerHealth[data.playerId] = data.health;
-    GameUI.CustomUIConfig().playerHealth[data.playerId] = data.health;
 }
 
 function SetTopBarPlayerScore( data )
