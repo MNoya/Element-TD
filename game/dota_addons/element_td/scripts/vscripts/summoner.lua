@@ -173,6 +173,10 @@ function BuyPureEssence( keys )
 	local playerData = GetPlayerData(playerID)
 	local elements = playerData.elements
 
+    if playerData.health == 0 then
+        return
+    end
+
 	if playerData.lumber > 0 then
 		local hasLvl3 = false
 		local hasLvl1 = true
@@ -213,6 +217,10 @@ function SummonElemental(keys)
     local playerID = summoner:GetOwner():GetPlayerID()
     local playerData = GetPlayerData(playerID)
     local element = GetUnitKeyValue(keys.Elemental.."1", "Element")
+
+    if playerData.health == 0 then
+        return
+    end
 
     -- Explosion cast effect for each element
     local explosion = ParticleManager:CreateParticle(ExplosionParticles[element], PATTACH_CUSTOMORIGIN, summoner)
