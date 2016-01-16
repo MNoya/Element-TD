@@ -216,6 +216,7 @@ end
 
 -- Check if all players are dead or have completed all the waves so we can end the game
 function ElementTD:CheckGameEnd()
+    print("Check Game End")
     local endGame = true
     for k, ply in pairs(players) do
         local playerData = GetPlayerData(ply:GetPlayerID())
@@ -223,6 +224,10 @@ function ElementTD:CheckGameEnd()
         if playerData.health ~= 0 or (playerData.health ~= 0 and playerData.completedWaves < WAVE_COUNT and EXPRESS_MODE) then
             endGame = false
         end
+    end
+    if not endGame then
+        print("Players are still playing the game")
+        return
     end
     local teamWinner = DOTA_TEAM_BADGUYS
     if #players == 1 then
@@ -238,6 +243,7 @@ function ElementTD:CheckGameEnd()
             end
         end
     else
+        print("Multiple players checking for winner")
         -- Wave > Difficulty > Score
         local winnerId = -1
         local compareWave = 0
