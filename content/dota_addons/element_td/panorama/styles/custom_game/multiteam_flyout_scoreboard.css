@@ -335,7 +335,7 @@
     background-image: url("s2r://panorama/images/custom_game/button_audio_off_psd.vtex");
 }
 
-#TeammateGoldAmount
+#TeammateGoldAmount , #PlayerGoldAmount
 {
 	margin-right: -1px;
 	margin-bottom: -2px;
