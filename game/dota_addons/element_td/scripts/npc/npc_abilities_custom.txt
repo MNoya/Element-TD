@@ -4049,17 +4049,17 @@
 		//-------------------------------------------------------------------------------------------------------------
 	
 		"BaseClass"						"ability_datadriven"											
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"towers/windstorm_tower_tornado"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"MaxLevel"						"2"
 		"AbilityCastRange"				"900"
-		"AbilityCooldown"				"0"
+		"AbilityCooldown"				"5"
 		"AbilityManaCost"				"0"
 		"AbilityCastPoint"				"0.1"
+		"AbilityCastAnimation"			"ACT_DOTA_TELEPORT"
 		"AbilityChannelTime"			"5"
 	
 		"OnSpellStart"
@@ -4097,28 +4097,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"radius"				"900"
-			}
-		}
-	}
-	"windstorm_tower_tornado_creator"
-	{
-		"BaseClass"						"enraged_wildkin_tornado"
-		"ID"							"5312"												
-		"MaxLevel"						"1"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityCastRange"				"750"
-		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"0"
-		"AbilityChannelTime"			"-1"
-		"AbilityManaCost"				"0"
-	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"0"
 			}
 		}
 	}

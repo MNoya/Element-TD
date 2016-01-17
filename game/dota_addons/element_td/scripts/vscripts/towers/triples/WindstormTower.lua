@@ -24,7 +24,7 @@ function WindstormTower:SpawnTornado(keys)
         self:RemoveTornado()
 
         self.ability:SetChanneling(true)
-        self.ability:SetActivated(false)
+        self.ability:StartCooldown(self.cooldown)
         self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_tornado_summoned", {})
 
         self.tornado = CreateUnitByName( "windstorm_tornado", keys.target_points[1], false, self.tower, self.tower:GetOwner(), self.tower:GetTeamNumber() )
@@ -105,6 +105,7 @@ end
 function WindstormTower:OnCreated()
     self.ability = AddAbility(self.tower, "windstorm_tower_tornado", self.tower:GetLevel())
     self.aoe = GetAbilitySpecialValue("windstorm_tower_tornado", "radius")
+    self.cooldown = self.ability:GetCooldown(1)
     self.timer = Timers:CreateTimer(0.1, function()
         if IsValidEntity(self.tower) then
             if self.ability:IsFullyCastable() then
