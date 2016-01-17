@@ -187,15 +187,25 @@ function SpawnWaveForPlayer(playerID, wave)
         -- lumber
         if (playerData.completedWaves % 5 == 0 and playerData.completedWaves < 55 and not EXPRESS_MODE) or (playerData.completedWaves % 3 == 0 and playerData.completedWaves < 30 and EXPRESS_MODE) then
             ModifyLumber(playerID, 1) -- give 1 lumber every 5 waves or every 3 if express mode ignoring the last wave 55 and 30.
-            if GameSettings.elementsOrderName == "AllPick" then
+            if GameSettings.elementsOrderName == "AllPick" and not playerData.elementalRandom then
                 Log:info("Giving 1 lumber to " .. playerData.name)
-            elseif playerData.elementsOrder[playerData.completedWaves] then
-                if playerData.elementsOrder[playerData.completedWaves] == "pure" then
+            elseif playerData.elementalRandom or playerData.elementsOrder[playerData.completedWaves] then
+                local element = nil
+                if playerData.elementalRandom then
+                    element = GetRandomElementForWave(playerID, playerData.completedWaves)
+                elseif playerData.elementsOrder[playerData.completedWaves] then
+                    element = playerData.elementsOrder[playerData.completedWaves]
+                else
+                    print("Something horrible went wrong.")
+                end
+
+                if element == "pure" then
                     SendEssenceMessage(playerID, "A pure essence has been randomed for you!")
                     ModifyPureEssence(playerID, 1)
+                    playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
                 else
                     SendEssenceMessage(playerID, "An elemental has been randomed for you!")
-                    SummonElemental({caster = playerData.summoner, Elemental = playerData.elementsOrder[playerData.completedWaves] .. "_elemental"})
+                    SummonElemental({caster = playerData.summoner, Elemental = element .. "_elemental"})
                 end
             end
         end
@@ -204,6 +214,7 @@ function SpawnWaveForPlayer(playerID, wave)
         if ((playerData.completedWaves == 46 or playerData.completedWaves == 51) and not EXPRESS_MODE) or ((playerData.completedWaves == 25 or playerData.completedWaves == 28) and EXPRESS_MODE) then
             ModifyPureEssence(playerID, 1) -- give 1 pure essence after wave 46 and 51 or 25 and 28 on express mode
             Log:info("Giving 1 pure essence to " .. playerData.name)
+            playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
         end
     end)
     waveObj:SpawnWave()

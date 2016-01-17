@@ -13,9 +13,11 @@ function CreateDataForPlayer(playerID)
 	data["sector"] = -1
 	data["page"] = 1
 	data["lumber"] = 0
+	data["pureEssenceTotal"] = 0 -- Keep track of the total amount given to the player
 	data["pureEssence"] = 0
 	data["elementalActive"] = false
 	data["elementalUnit"] = nil
+	data["elementalRandom"] = false
 	data["LifeTowerKills"] = 0
 	data["elements"] = {
 		water = 0, fire = 0, nature = 0,

@@ -12,7 +12,8 @@ CHEAT_CODES = {
     ["synergy"] = function(...) ElementTD:Synergy(...) end,             -- Disable tech tree requirements
     ["dev"] = function(...) ElementTD:Dev(...) end,                 -- Everything
     ["setlist"] = function(...) ElementTD:MakeSets(...) end,            -- Creates full AttachWearables entries by set names
-    ["wherewave"] = function(...) ElementTD:WhereIsTheWave(...) end,    -- Everything
+    ["wherewave"] = function(...) ElementTD:WhereIsTheWave(...) end,    -- Find out information about the current wave
+    ["random"] = function(...) ElementTD:ToggleRandom(...) end,         -- Toggle random for player
 }
 
 -- A player has typed something into the chat
@@ -181,6 +182,20 @@ function ElementTD:WhereIsTheWave(playerID)
             else
                 print("["..k.."]","Entity Not Valid!")
             end
+        end
+    end
+end
+
+function ElementTD:ToggleRandom(playerID)
+    local playerData = GetPlayerData(playerID)
+
+    if GameSettings.elementsOrderName == "AllPick" then
+        playerData.elementalRandom = not playerData.elementalRandom
+        print("Elemental Random set to "..tostring(playerData.elementalRandom).." for player "..playerID)
+        if playerData.elementalRandom then
+            SendEssenceMessage(playerID, "Random elemental picker has been turned on!")
+        else
+            SendEssenceMessage(playerID, "Random elemental picker has been turned off!")
         end
     end
 end

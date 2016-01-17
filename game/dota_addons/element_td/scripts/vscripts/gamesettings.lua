@@ -119,8 +119,8 @@ function GameSettings:SetCreepOrder(order)
 	end
 end
 
-local usedElements = {["water"] = 0, ["fire"] = 0, ["earth"] = 0, ["nature"] = 0, ["dark"] = 0, ["light"] = 0, ["pure"] = 0 }
-local elements = {"water", "fire", "earth", "nature", "dark", "light", "pure"}
+usedElements = {["water"] = 0, ["fire"] = 0, ["earth"] = 0, ["nature"] = 0, ["dark"] = 0, ["light"] = 0, ["pure"] = 0 }
+elements = {"water", "fire", "earth", "nature", "dark", "light", "pure"}
 function getRandomElement(wave)
 	local element = elements[math.random(#elements)]
 
@@ -200,7 +200,6 @@ function GameSettings:SetElementOrder(order)
 	end
 end
 
-
 function getRandomElementOrder()
 	usedElements = {["water"] = 0, ["fire"] = 0, ["earth"] = 0, ["nature"] = 0, ["dark"] = 0, ["light"] = 0, ["pure"] = 0}
 	local elementsOrder = {}
@@ -229,6 +228,15 @@ function getRandomElementOrder()
 		end
 	end
 	return elementsOrder
+end
+
+function GetRandomElementForWave(playerID, wave)
+    local playerData = GetPlayerData(playerID)
+    usedElements = {["water"] = playerData.elements["water"], ["fire"] = playerData.elements["fire"], ["earth"] = playerData.elements["earth"], ["nature"] = playerData.elements["nature"], ["dark"] = playerData.elements["dark"], ["light"] = playerData.elements["light"], ["pure"] = playerData.pureEssenceTotal}
+
+    local element = getRandomElement(wave)
+
+    return element
 end
 ----------------------------------------------------
 ----------------------------------------------------
