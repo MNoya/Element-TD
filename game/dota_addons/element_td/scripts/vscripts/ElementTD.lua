@@ -367,7 +367,6 @@ function ElementTD:InitializeHero(playerID, hero)
 
     UpdatePlayerSpells(playerID)
     UpdateScoreboard(playerID)
-    AddElementOrbs(hero)
 end
 
 function ElementTD:EntityKilled(keys)
