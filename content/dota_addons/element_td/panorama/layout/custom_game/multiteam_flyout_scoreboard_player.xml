@@ -27,13 +27,9 @@
 			<Panel id="Avatar" class="ScoreCol_Avatar ScoreboardPanel">
 				<DOTAAvatarImage id="AvatarImage" steamid="local" />
 			</Panel>
-			<Panel id="Hero" class="ScoreCol_Hero ScoreboardPanel">
-				<Image id="HeroIcon" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
-			</Panel>
 			<Panel id="PlayerDetailsContainer" class="ScoreCol_PlayerDetails ScoreboardPanel">
 				<Panel id="PlayerAndHeroName">
 					<Label id="PlayerName" text="AAAAA" />
-					<Label id="HeroNameAndDescription" text="#custom_scoreboard_hero_name_and_desc" />
 				</Panel>
 				<Label id="TeammateEssenceAmount" text="0" />
 				<Label id="TeammateLumberAmount" text="0" />
