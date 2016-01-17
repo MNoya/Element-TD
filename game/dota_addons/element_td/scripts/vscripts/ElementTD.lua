@@ -110,7 +110,7 @@ function ElementTD:OnScriptReload()
     NPC_ABILITIES_CUSTOM = LoadKeyValues("scripts/npc/npc_abilities_custom.txt")
     NPC_ITEMS_CUSTOM = LoadKeyValues("scripts/npc/npc_items_custom.txt")
     ADDON_ENGLISH = LoadKeyValues("resource/addon_english.txt")
-
+    
     for _, player in pairs(players) do
 
         -- loop over the player's towers
@@ -367,6 +367,7 @@ function ElementTD:InitializeHero(playerID, hero)
 
     UpdatePlayerSpells(playerID)
     UpdateScoreboard(playerID)
+    AddElementOrbs(hero)
 end
 
 function ElementTD:EntityKilled(keys)

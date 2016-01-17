@@ -111,3 +111,30 @@ function UpdateScoreboard(playerID)
 	local lastHits = PlayerResource:GetLastHits(playerID)
 	CustomGameEventManager:Send_ServerToAllClients( "etd_update_scoreboard", {playerID=playerID, data = {lives=health, lumber=lumber, towers=towers, pureEssence=pureEssence, difficulty=difficulty, gold=gold, lastHits=lastHits}} )
 end
+
+function AddElementOrbs(hero)
+	local orbs = { "orb_light.vpcf", "orb_darkness.vpcf", "orb_water.vpcf", "orb_fire.vpcf", "orb_nature.vpcf", "orb_earth.vpcf" }
+	local orb_path = "particles/custom/orbs/"
+
+	hero.orbits = {}
+	local angle = 360 / 6
+	local origin = hero:GetAbsOrigin()
+
+	-- Create
+	for k,v in pairs(orbs) do
+		local particleName = orb_path..v
+		hero.orbits[k] = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, hero)
+	end
+
+	-- Update
+	Timers:CreateTimer(function()
+		for k,particle in pairs(hero.orbits) do
+			local origin = hero:GetAbsOrigin()
+			local rotate_pos = origin + Vector(1,0,0) * 80
+			local pos = RotatePosition(origin, QAngle(0, angle*k, 0), rotate_pos)
+			pos.z = pos.z + 90
+			ParticleManager:SetParticleControl(particle, 0, pos)
+		end
+		return 0.03
+	end)
+end
