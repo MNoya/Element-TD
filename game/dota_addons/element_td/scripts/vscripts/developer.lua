@@ -1,6 +1,7 @@
 CHEAT_CODES = {
     ["greedisgood"] = function(...) ElementTD:GreedIsGood(...) end,     -- Gives you X gold and lumber
     ["lumber"] = function(...) ElementTD:GiveLumber(...) end,           -- Gives you X lumber
+    ["essence"] = function(...) ElementTD:GiveEssence(...) end,         -- Gives you X essence
     ["whosyourdaddy"] = function(...) ElementTD:WhosYourDaddy(...) end, -- God Mode
     ["spawn"] = function(...) ElementTD:SpawnWave(...) end,             -- Spawns a certain wave by number, continues
     ["setwave"] = function(...) ElementTD:SetWave(...) end,             -- Sets the next current wave to spawn
@@ -50,8 +51,13 @@ function ElementTD:GiveLumber(playerID, value)
     
     ModifyLumber(playerID, tonumber(value))
     UpdatePlayerSpells(playerID)
+end
+
+function ElementTD:GiveEssence(playerID, value)
+    value = value or 1
     
-    GameRules:SendCustomMessage("Cheat enabled!", 0, 0)
+    ModifyPureEssence(playerID, tonumber(value))
+    UpdatePlayerSpells(playerID)
 end
 
 function ElementTD:WhosYourDaddy()
@@ -145,7 +151,9 @@ end
 function ElementTD:Dev(playerID)
     ElementTD:Synergy(playerID)
     ElementTD:WhosYourDaddy(playerID)
-    ElementTD:GreedIsGood(playerID, 999999)
+    ElementTD:GiveLumber(playerID, 20)
+    ElementTD:GiveEssence(playerID, 10)
+    ElementTD:SetGold(playerID, 999999)
 end
 
 function ElementTD:MakeSets()
