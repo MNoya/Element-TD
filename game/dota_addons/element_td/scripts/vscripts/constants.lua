@@ -68,11 +68,11 @@ end
 
 function generateEntityLocations()
 	local defX = -6912 -- x-coord of the top-left spawn
-	local defY = 3968 + 300 -- y-coord of the top-left spawn
+	local defY = 4268 -- y-coord of the top-left spawn
 	local defZ =  0 -- z-coord of the top-left spawn
 	local defX2 = -6144 -- x-coord of the top-left endpoint
 	local xIncr = 4096
-	local yIncr = -5245
+	local yIncr = -5100
 
 	for i = 1, 4, 1 do
 		local status, err = pcall(function()
