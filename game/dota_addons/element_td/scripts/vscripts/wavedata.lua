@@ -158,13 +158,13 @@ function SpawnWaveForPlayer(playerID, wave)
             return
         end
 
-        print("Player has completed a wave")
+        print("Player [" .. playerID .. "] has completed a wave")
         playerData.completedWaves = playerData.completedWaves + 1
         playerData.nextWave = playerData.nextWave + 1
 
         -- Boss Waves
         if playerData.completedWaves >= WAVE_COUNT and not EXPRESS_MODE then
-            print("Player has completed a boss wave")
+            print("Player [" .. playerID .. "] has completed a boss wave")
             Log:info("Spawning boss wave " .. WAVE_COUNT .. " for ["..playerID.."] ".. playerData.name)
             playerData.bossWaves = playerData.bossWaves + 1
             ShowMessage(playerID, "Boss Wave " .. playerData.bossWaves + 1, 3)
