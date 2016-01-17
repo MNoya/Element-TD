@@ -11,17 +11,27 @@
 	m_Children =
 	[
 		{
-			m_ChildRef = resource:"particles/custom/orbs/orb_earth_trail.vpcf"
+			m_ChildRef = resource:"particles/custom/pillars/torch_earth_vortex_2.vpcf"
 			m_bDisableChild = true
 		},
 		{
-			m_ChildRef = resource:"particles/custom/orbs/orb_earth_background.vpcf"
+			m_ChildRef = resource:"particles/custom/pillars/torch_earth_vortex.vpcf"
+			m_bDisableChild = true
 		},
 		{
-			m_ChildRef = resource:"particles/custom/orbs/orb_earth_sphere.vpcf"
+			m_ChildRef = resource:"particles/custom/pillars/torch_earth_background.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/orbs/orb_earth_scatter.vpcf"
+			m_ChildRef = resource:"particles/custom/pillars/torch_earth_scatter.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/pillars/torch_earth_background_2.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/pillars/torch_earth_sphere.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/pillars/torch_earth_sphere_2.vpcf"
 		},
 	]
 }

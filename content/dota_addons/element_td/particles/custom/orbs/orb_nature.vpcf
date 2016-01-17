@@ -11,16 +11,17 @@
 	m_Children =
 	[
 		{
-			m_ChildRef = resource:"particles/custom/orbs/orb_nature_trail.vpcf"
+			m_ChildRef = resource:"particles/custom/pillars/torch_nature_vortex.vpcf"
+			m_bDisableChild = true
 		},
 		{
-			m_ChildRef = resource:"particles/custom/orbs/orb_nature_background.vpcf"
+			m_ChildRef = resource:"particles/custom/pillars/torch_nature_background.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/orbs/orb_nature_scatter.vpcf"
+			m_ChildRef = resource:"particles/custom/pillars/torch_nature_scatter.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/orbs/orb_nature_sphere.vpcf"
+			m_ChildRef = resource:"particles/custom/pillars/torch_nature_sphere.vpcf"
 		},
 	]
 }

@@ -11,17 +11,17 @@
 	m_Children =
 	[
 		{
-			m_ChildRef = resource:"particles/custom/orbs/orb_dark_scatter.vpcf"
-		},
-		{
-			m_ChildRef = resource:"particles/custom/orbs/orb_dark_trail.vpcf"
+			m_ChildRef = resource:"particles/custom/pillars/torch_dark_a.vpcf"
 			m_bDisableChild = true
 		},
 		{
-			m_ChildRef = resource:"particles/custom/orbs/orb_dark_background.vpcf"
+			m_ChildRef = resource:"particles/custom/pillars/torch_dark_b.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/orbs/orb_dark_sphere.vpcf"
+			m_ChildRef = resource:"particles/custom/pillars/torch_dark_c.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/pillars/torch_dark_d.vpcf"
 		},
 	]
 }
