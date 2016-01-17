@@ -172,11 +172,15 @@ function ElementTD:WhereIsTheWave(playerID)
         print("PlayerID: "..playerID.." - Wave: "..waveObject.waveNumber)
         print("Wave Started At: "..waveObject.startTime.." EndTime: "..waveObject.endTime) -- endTime should be 0
         print("-------------------------------------")
-        print("Remaining: "..waveObject.creepsRemaining.." Leaks: "..waveObject.leaks)
+        print("Remaining: "..waveObject.creepsRemaining,"Leaks: "..waveObject.leaks,"Kills: "..waveObject.kills)
         for k,v in pairs(waveObject.creeps) do
             local creep = EntIndexToHScript(v)
-            print("["..k.."]".. " Alive: "..tostring(creep:IsAlive()))
-            DebugDrawCircle(creep:GetAbsOrigin(), Vector(255,0,0), 1, 16, true, 5)
+            if IsValidEntity(creep) then
+                print("["..k.."]","Alive:"..tostring(creep:IsAlive()))
+                DebugDrawCircle(creep:GetAbsOrigin(), Vector(255,0,0), 1, 16, true, 5)
+            else
+                print("["..k.."]","Entity Not Valid!")
+            end
         end
     end
 end

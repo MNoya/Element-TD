@@ -9,6 +9,7 @@ Wave = createClass({
 			self.startTime = 0
 			self.endTime = 0
 			self.leaks = 0
+			self.kills = 0
 			self.callback = nil
 		end
 	},
@@ -31,6 +32,7 @@ function Wave:OnCreepKilled(index)
 	if self.creeps[index] then
 		self.creeps[index] = nil
 		self.creepsRemaining = self.creepsRemaining - 1
+		self.kills = self.kills + 1
 		if self.creepsRemaining == 0 and self.callback then
 			self.endTime = GameRules:GetGameTime()
 			self.callback()
@@ -55,6 +57,7 @@ function Wave:SpawnWave()
 
 	self.startTime = GameRules:GetGameTime() + 0.5
 	self.leaks = 0
+	self.kills = 0
 
 	self.spawnTimer = Timers:CreateTimer("SpawnWave"..self.waveNumber..self.playerID, {
 		endTime = 0.5,
