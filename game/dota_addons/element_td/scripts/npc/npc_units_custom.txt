@@ -6735,6 +6735,7 @@
 	
 	    "Level"                     "4"
 	    "Cost"                      "9100"
+	    "EssenceCost"               "1"
 	    "TotalCost"                 "11225"
 	    "PureEssence"               "1"
 	    "BuildTime"                 "2"
@@ -6816,6 +6817,7 @@
 	
 	    "Level"                     "4"
 	    "Cost"                      "9100"
+	    "EssenceCost"               "1"
 	    "TotalCost"                 "11225"
 	    "PureEssence"               "1"
 	    "BuildTime"                 "2"
@@ -6896,6 +6898,7 @@
 	
 	    "Level"                     "4"
 	    "Cost"                      "9100"
+	    "EssenceCost"               "1"
 	    "TotalCost"                 "11225"
 	    "PureEssence"               "1"
 	    "BuildTime"                 "2"
@@ -6975,6 +6978,7 @@
 	
 	    "Level"                     "4"
 	    "Cost"                      "9100"
+	    "EssenceCost"               "1"
 	    "TotalCost"                 "11225"
 	    "PureEssence"               "1"
 	    "BuildTime"                 "2"
@@ -7059,6 +7063,7 @@
 	
 	    "Level"                     "4"
 	    "Cost"                      "9100"
+	    "EssenceCost"               "1"
 	    "TotalCost"                 "11225"
 	    "PureEssence"               "1"
 	    "BuildTime"                 "2"
@@ -7141,6 +7146,7 @@
 	
 	    "Level"                     "4"
 	    "Cost"                      "9100"
+	    "EssenceCost"               "1"
 	    "TotalCost"                 "11225"
 	    "PureEssence"               "1"
 	    "BuildTime"                 "2"

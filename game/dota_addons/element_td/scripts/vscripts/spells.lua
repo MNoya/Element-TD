@@ -105,13 +105,18 @@ function UpgradeTower(keys)
 	local cost = GetUnitKeyValue(newClass, "Cost") -- Old GetCostForTower(newClass)
 	local playerID = hero:GetPlayerID()
 	local playerData = GetPlayerData(playerID)
+	local essenceCost = GetUnitKeyValue(newClass, "EssenceCost") or 0
+	local playerEssence = GetPlayerData(playerID).pureEssence
 	
 	if not MeetsItemElementRequirements(keys.ability, playerID) then
 		ShowWarnMessage(playerID, "Incomplete Element Requirements!")
+	elseif essenceCost > playerEssence then
+		ShowWarnMessage(playerID, "You need 1 Essence! Buy it at the Elemental Summoner")
 	elseif cost > hero:GetGold() then
 		ShowWarnMessage(playerID, "Not Enough Gold!")
 	elseif tower:GetHealth() == tower:GetMaxHealth() then
 		hero:SpendGold(cost, DOTA_ModifyGold_PurchaseItem)
+		ModifyPureEssence(playerID, -essenceCost)
 		GetPlayerData(playerID).towers[tower:entindex()] = nil --and remove it from the player's tower list
 
 		local newTower = CreateUnitByName(newClass, tower:GetOrigin(), false, nil, nil, hero:GetTeam()) 
