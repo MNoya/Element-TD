@@ -12,6 +12,7 @@ CHEAT_CODES = {
     ["synergy"] = function(...) ElementTD:Synergy(...) end,             -- Disable tech tree requirements
     ["dev"] = function(...) ElementTD:Dev(...) end,                 -- Everything
     ["setlist"] = function(...) ElementTD:MakeSets(...) end,            -- Creates full AttachWearables entries by set names
+    ["wherewave"] = function(...) ElementTD:WhereIsTheWave(...) end,    -- Everything
 }
 
 -- A player has typed something into the chat
@@ -160,6 +161,24 @@ function ElementTD:MakeSets()
 
     file:close()    
     
+end
+
+function ElementTD:WhereIsTheWave(playerID)
+    local playerData = GetPlayerData(playerID)
+    local waveObject = playerData.waveObject
+
+    if waveObject and waveObject.waveNumber and waveObject.waveNumber > 0 then
+        print("=====================================")
+        print("PlayerID: "..playerID.." - Wave: "..waveObject.waveNumber)
+        print("Wave Started At: "..waveObject.startTime.." EndTime: "..waveObject.endTime) -- endTime should be 0
+        print("-------------------------------------")
+        print("Remaining: "..waveObject.creepsRemaining.." Leaks: "..waveObject.leaks)
+        for k,v in pairs(waveObject.creeps) do
+            local creep = EntIndexToHScript(v)
+            print("["..k.."]".. " Alive: "..tostring(creep:IsAlive()))
+            DebugDrawCircle(creep:GetAbsOrigin(), Vector(255,0,0), 1, 16, true, 5)
+        end
+    end
 end
 
 function GenerateAllSetsForHero( file, heroName )
