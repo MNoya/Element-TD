@@ -64,9 +64,17 @@ function ToggleVoteDialog( data )
 	votingUI.visible = data.visible;
 	if (Game.GetAllPlayerIDs().length > 1)
 	{
-		votingLiveUI.visible = true;
-		votingLiveUI.RemoveClass("hidden");
+		if (votingUI.visible)
+		{
+			votingLiveUI.visible = true;
+			votingLiveUI.RemoveClass("hidden");
+		}
+		else
+		{
+			votingLiveUI.AddClass("hidden");
+		}
 	}
+
 }
 
 function Populate( data )
