@@ -5,6 +5,7 @@
     "Model"                     "models/heroes/tiny_01/tiny_01.vmdl"
     "ModelScale"                "1.0"
     "ModelRotation"             "90"
+    "ModelOffset"               "10"
     "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_radiant.vmdl"
     "PedestalModelScale"        "0.8"
     "PedestalOffset"            "20"

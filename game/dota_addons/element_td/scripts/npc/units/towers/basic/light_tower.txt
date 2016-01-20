@@ -5,6 +5,7 @@
     "Model"                     "models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"
     "ModelScale"                "0.7"
     "ModelRotation"             "90"
+    "ModelOffset"               "20"
     "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_ti5.vmdl"
     "PedestalModelScale"        "0.8"
     "PedestalOffset"            "20"
