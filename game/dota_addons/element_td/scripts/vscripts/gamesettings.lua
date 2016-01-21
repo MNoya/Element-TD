@@ -85,19 +85,18 @@ function GameSettings:SetGameLength(length)
 		GameSettings:SetGameLength("Normal")
 		return
 	end
-	for _,ply in pairs(players) do
-		local playerID = ply:GetPlayerID()
-		local playerData = GetPlayerData(playerID)
-		local hero = ply:GetAssignedHero()
+	for _,plyID in pairs(playerIDs) do
+		local playerData = GetPlayerData(plyID)
+		local hero = ElementTD.vPlayerIDToHero[plyID]
 
 		hero:SetGold(0, false)
 		hero:SetGold(GameSettings.length.Gold, true)
-		ModifyLumber(playerID, GameSettings.length.Lumber)
+		ModifyLumber(plyID, GameSettings.length.Lumber)
 		playerData.nextWave = GameSettings.length.Wave
 
 		if length == "Developer" then
 			for e,_ in pairs(playerData.elements) do
-				ModifyElementValue(playerID, e, 1)
+				ModifyElementValue(plyID, e, 1)
 			end
 			DEV_MODE = true
 		end
@@ -168,31 +167,31 @@ function GameSettings:SetElementOrder(order)
 	if order == "SameRandom" then
 		local elementsOrder = getRandomElementOrder()
 
-		for _, player in pairs(players) do    
-			print("Order for " .. GetPlayerName(player:GetPlayerID()))
+		for _, plyID in pairs(playerIDs) do    
+			print("Order for " .. GetPlayerName(plyID))
 			PrintTable(elementsOrder)
-            GetPlayerData(player:GetPlayerID()).elementsOrder = elementsOrder
+            GetPlayerData(plyID).elementsOrder = elementsOrder
             if elementsOrder[0] then
             	for _,v in pairs(elementsOrder[0]) do
-            		BuyElement(player:GetPlayerID(), v)
+            		BuyElement(plyID, v)
             	end
         	end
         end
 
 	--all random, all players their own element order
 	elseif order == "AllRandom" then
-		for _, player in pairs(players) do    
+		for _, plyID in pairs(playerIDs) do    
 			local elementsOrder = getRandomElementOrder()
 
-			print("Order for " .. GetPlayerName(player:GetPlayerID()))
+			print("Order for " .. GetPlayerName(plyID))
 			PrintTable(elementsOrder)
-            GetPlayerData(player:GetPlayerID()).elementsOrder = elementsOrder
+            GetPlayerData(plyID).elementsOrder = elementsOrder
             if elementsOrder[0] then
             	for _,v in pairs(elementsOrder[0]) do
             		if v == "pure" then
-            			ModifyElementValue(player:GetPlayerID(), 1)
+            			ModifyElementValue(plyID, 1)
             		else
-            			BuyElement(player:GetPlayerID(), v)
+            			BuyElement(plyID, v)
             		end
             	end
         	end

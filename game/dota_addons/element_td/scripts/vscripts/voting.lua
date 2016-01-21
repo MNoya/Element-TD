@@ -109,12 +109,13 @@ function FinalizeVotes()
 	local difficulty
 	if gamemode == "Competitive" or gamemode == "Extreme" then
 		difficulty = GetWinningDifficulty()
-		for _, ply in pairs(players) do
-    		GameSettings:SetDifficulty(ply:GetPlayerID(), difficulty)
+		for _, plyID in pairs(playerIDs) do
+			print(plyID)
+    		GameSettings:SetDifficulty(plyID, difficulty)
     	end
     else
-		for _, ply in pairs(players) do
-    		GameSettings:SetDifficulty(ply:GetPlayerID(), PLAYER_DIFFICULTY_CHOICES[ply:GetPlayerID()])
+		for _, plyID in pairs(playerIDs) do
+   			GameSettings:SetDifficulty(plyID, PLAYER_DIFFICULTY_CHOICES[plyID])
     	end
 	end
 	
@@ -134,19 +135,22 @@ function FinalizeVotes()
 	GameSettings:SetCreepOrder(order)
 	GameSettings:SetElementOrder(elements)
 
-	for k, ply in pairs(players) do
-		local data = {playerID = ply:GetPlayerID(), gamemode = gamemode, difficulty = GetPlayerData(ply:GetPlayerID()).difficulty.difficultyName, elements = elements, order = order, length = length}
+	for k, plyID in pairs(playerIDs) do
+		local data = {playerID = plyID, gamemode = gamemode, difficulty = GetPlayerData(plyID).difficulty.difficultyName, elements = elements, order = order, length = length}
 		PrintTable(data)
-		CustomGameEventManager:Send_ServerToPlayer( ply, "etd_vote_results", data )
-		CustomGameEventManager:Send_ServerToPlayer( ply, "etd_next_wave_info", { nextWave = GameSettings:GetGameLength().Wave, nextAbility1 = creepsKV[WAVE_CREEPS[GameSettings:GetGameLength().Wave]].Ability1, nextAbility2 = creepsKV[WAVE_CREEPS[GameSettings:GetGameLength().Wave]].Ability2 } )
+		local ply = PlayerResource:GetPlayer(plyID)
+		if not ply:IsNull() then
+			CustomGameEventManager:Send_ServerToPlayer( ply, "etd_vote_results", data )
+			CustomGameEventManager:Send_ServerToPlayer( ply, "etd_next_wave_info", { nextWave = GameSettings:GetGameLength().Wave, nextAbility1 = creepsKV[WAVE_CREEPS[GameSettings:GetGameLength().Wave]].Ability1, nextAbility2 = creepsKV[WAVE_CREEPS[GameSettings:GetGameLength().Wave]].Ability2 } )
+		end
 	end
 
 	Log:trace("Creating post vote timer")
 	Timers:CreateTimer("PostVoteTimer", {
 		endTime = 1,
 		callback = function()
-			for _, ply in pairs(players) do
-				StartBreakTime(ply:GetPlayerID(), GameSettings.length.PregameTime)
+			for _, plyID in pairs(playerIDs) do
+				StartBreakTime(plyID, GameSettings.length.PregameTime)
 			end
 		end
 	})

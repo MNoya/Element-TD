@@ -55,9 +55,11 @@ end
 -- starts the break timer for the specified player.
 -- the next wave spawns once the break time is over
 function StartBreakTime(playerID, breakTime)
-    if not PlayerResource:GetPlayer(playerID):GetAssignedHero():IsAlive() then return end
+    local ply = PlayerResource:GetPlayer(playerID)
+    local hero = ElementTD.vPlayerIDToHero[playerID]
+    if not hero:IsAlive() then return end
     
-    PlayerResource:GetPlayer(playerID):GetAssignedHero():RemoveModifierByName("modifier_silence")
+    hero:RemoveModifierByName("modifier_silence")
 
     -- let's figure out how long the break is
     local wave = GetPlayerData(playerID).nextWave
@@ -74,7 +76,9 @@ function StartBreakTime(playerID, breakTime)
         breakTime = 0
     else
         Log:debug("Starting break time for " .. GetPlayerName(playerID))
-        CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_wave_timer", { time = breakTime } )
+        if not ply:IsNull() then
+            CustomGameEventManager:Send_ServerToPlayer( ply, "etd_update_wave_timer", { time = breakTime } )
+        end
         ShowMessage(playerID, "Wave "..wave.." in "..breakTime.." seconds", msgTime)
     end
 

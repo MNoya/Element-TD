@@ -1,5 +1,6 @@
 if not players then
     players = {}
+    playerIDs = {}
 
     TEAM_TO_SECTOR = {}
     TEAM_TO_SECTOR[2] = 0
@@ -111,10 +112,10 @@ function ElementTD:OnScriptReload()
     NPC_ITEMS_CUSTOM = LoadKeyValues("scripts/npc/npc_items_custom.txt")
     ADDON_ENGLISH = LoadKeyValues("resource/addon_english.txt")
     
-    for _, player in pairs(players) do
+    for _, playerID in pairs(playerIDs) do
 
         -- loop over the player's towers
-        for towerID, _ in pairs(GetPlayerData(player:GetPlayerID()).towers) do
+        for towerID, _ in pairs(GetPlayerData(playerID).towers) do
             local tower = EntIndexToHScript(towerID)
             local scriptObject = getmetatable(tower.scriptObject).__index
 
@@ -165,8 +166,8 @@ function ElementTD:StartGame()
                 Log:info("Skipping voting")
                 GameSettings:SetDifficulty("Normal")
                 GameSettings:SetCreepOrder("Normal")
-                for _, ply in pairs(players) do
-                    StartBreakTime(ply:GetPlayerID()) -- begin the break time for wave 1 :D
+                for _, ply in pairs(playerIDs) do
+                    StartBreakTime(ply) -- begin the break time for wave 1 :D
                 end
             end
         end
@@ -218,9 +219,9 @@ end
 function ElementTD:CheckGameEnd()
     print("Check Game End")
     local endGame = true
-    for k, ply in pairs(players) do
-        local playerData = GetPlayerData(ply:GetPlayerID())
-        print(#players, playerData.health, playerData.completedWaves)
+    for k, ply in pairs(playerIDs) do
+        local playerData = GetPlayerData(ply)
+        print(#playerIDs, playerData.health, playerData.completedWaves)
         if playerData.health ~= 0 or (playerData.health ~= 0 and playerData.completedWaves < WAVE_COUNT and EXPRESS_MODE) then
             endGame = false
         end
@@ -230,16 +231,17 @@ function ElementTD:CheckGameEnd()
         return
     end
     local teamWinner = DOTA_TEAM_BADGUYS
-    if #players == 1 then
-        for k, ply in pairs(players) do
-            local playerData = GetPlayerData(ply:GetPlayerID())
+    if #playerIDs == 1 then
+        for k, ply in pairs(playerIDs) do
+            local hero = self.vPlayerIDToHero[ply]
+            local playerData = GetPlayerData(ply)
             -- Lost
             if (playerData.health == 0 and not EXPRESS_MODE and playerData.completedWaves < WAVE_COUNT) or (EXPRESS_MODE and playerData.health == 0) then
-                if ply:GetTeamNumber() == teamWinner then
+                if hero:GetTeamNumber() == teamWinner then
                     teamWinner = DOTA_TEAM_GOODGUYS
                 end
             else -- Won
-                teamWinner = ply:GetTeamNumber()
+                teamWinner = hero:GetTeamNumber()
             end
         end
     else
@@ -249,17 +251,17 @@ function ElementTD:CheckGameEnd()
         local compareWave = 0
         local compareScore = 0
         local compareDifficulty = "Normal"
-        for k, ply in pairs(players) do
-            local playerData = GetPlayerData(ply:GetPlayerID())
+        for k, ply in pairs(playerIDs) do
+            local playerData = GetPlayerData(ply)
             if playerData.completedWaves > compareWave then
-                winnerId = ply:GetPlayerID()
+                winnerId = ply
                 compareWave = playerData.completedWaves
                 compareScore = playerData.scoreObject.totalScore
                 compareDifficulty = playerData.difficulty.difficultyName
             elseif playerData.completedWaves == compareWave then
                 if playerData.difficulty.difficultyName == compareDifficulty then
                     if playerData.scoreObject.totalScore >  compareScore then
-                        winnerId = ply:GetPlayerID()
+                        winnerId = ply
                         compareWave = playerData.completedWaves
                         compareScore = playerData.scoreObject.totalScore
                         compareDifficulty = playerData.difficulty.difficultyName
@@ -267,7 +269,7 @@ function ElementTD:CheckGameEnd()
                 else
                     local diff = playerData.difficulty.difficultyName
                     if diff == "Insane" or (diff == "VeryHard" and (compareDifficulty == "Hard" or compareDifficulty == "Normal")) or (diff == "Hard" and compareDifficulty == "Normal") then
-                        winnerId = ply:GetPlayerID()
+                        winnerId = ply
                         compareWave = playerData.completedWaves
                         compareScore = playerData.scoreObject.totalScore
                         compareDifficulty = playerData.difficulty.difficultyName
@@ -437,6 +439,11 @@ function ElementTD:OnConnectFull(keys)
     local playerID = ply:GetPlayerID()
 
     table.insert(players, ply)
+    Timers:CreateTimer(0.03, function() -- To prevent it from being -1 when the player is created
+        if ply:GetPlayerID() ~= -1 then
+            table.insert(playerIDs, ply:GetPlayerID())
+        end
+    end)
 
     -- Update the user ID table with this user
     self.vUserIds[keys.userid] = ply

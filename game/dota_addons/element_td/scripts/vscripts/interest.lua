@@ -15,19 +15,21 @@ function InterestManager:StartInterestTimer()
 		endTime = INTEREST_INTERVAL,
 		callback = function()
 			local goldEarnedData = {}
-			for _,ply in pairs(players) do
-				if ply then
-					local hero = ply:GetAssignedHero()
-					local playerID = ply:GetPlayerID()
-					if hero and hero:IsAlive() and GetPlayerData(playerID).health ~= 0 then
+			for _,plyID in pairs(playerIDs) do
+				if plyID then
+					local ply = PlayerResource:GetPlayer(plyID)
+					local hero = ElementTD.vPlayerIDToHero[plyID]
+					if hero and hero:IsAlive() and GetPlayerData(plyID).health ~= 0 then
 						local interest = math.ceil(hero:GetGold() * INTEREST_RATE)
 						local gold = hero:GetGold() + interest
 						hero:SetGold(0, false)
 						hero:SetGold(gold, true)
 						PopupAlchemistGold(hero, interest)
-						Sounds:EmitSoundOnClient(playerID, "DOTA_Item.Hand_Of_Midas")
-						goldEarnedData["player" .. playerID] = interest
-						CustomGameEventManager:Send_ServerToPlayer( ply, "etd_earned_interest", { goldEarned=interest } )
+						Sounds:EmitSoundOnClient(plyID, "DOTA_Item.Hand_Of_Midas")
+						goldEarnedData["player" .. plyID] = interest
+						if not ply:IsNull() then
+							CustomGameEventManager:Send_ServerToPlayer( ply, "etd_earned_interest", { goldEarned=interest } )
+						end
 					end
 				end
 			end
