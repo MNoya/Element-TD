@@ -76,7 +76,7 @@ function StartBreakTime(playerID, breakTime)
         breakTime = 0
     else
         Log:debug("Starting break time for " .. GetPlayerName(playerID))
-        if not ply:IsNull() then
+        if ply and not ply:IsNull() then
             CustomGameEventManager:Send_ServerToPlayer( ply, "etd_update_wave_timer", { time = breakTime } )
         end
         ShowMessage(playerID, "Wave "..wave.." in "..breakTime.." seconds", msgTime)

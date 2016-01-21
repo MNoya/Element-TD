@@ -139,7 +139,7 @@ function FinalizeVotes()
 		local data = {playerID = plyID, gamemode = gamemode, difficulty = GetPlayerData(plyID).difficulty.difficultyName, elements = elements, order = order, length = length}
 		PrintTable(data)
 		local ply = PlayerResource:GetPlayer(plyID)
-		if not ply:IsNull() then
+		if ply and not ply:IsNull() then
 			CustomGameEventManager:Send_ServerToPlayer( ply, "etd_vote_results", data )
 			CustomGameEventManager:Send_ServerToPlayer( ply, "etd_next_wave_info", { nextWave = GameSettings:GetGameLength().Wave, nextAbility1 = creepsKV[WAVE_CREEPS[GameSettings:GetGameLength().Wave]].Ability1, nextAbility2 = creepsKV[WAVE_CREEPS[GameSettings:GetGameLength().Wave]].Ability2 } )
 		end
