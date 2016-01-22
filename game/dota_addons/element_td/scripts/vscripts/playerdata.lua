@@ -51,6 +51,10 @@ function GetPlayerElementLevel( playerID, element )
 	return GetPlayerData(playerID).elements[element]
 end
 
+function IsPlayerUsingRandomMode( playerID )
+	return GetPlayerData(playerID).elementalRandom or (GameSettings.elementsOrderName and string.match(GameSettings.elementsOrderName, "Random"))
+end
+
 function ModifyElementValue(playerID, element, change)
 	local playerData = GetPlayerData(playerID)
 

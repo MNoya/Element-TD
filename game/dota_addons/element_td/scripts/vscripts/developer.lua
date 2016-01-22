@@ -11,9 +11,12 @@ CHEAT_CODES = {
     ["clear"] = function(...) ElementTD:ClearWave(...) end,             -- Kills the whole wave
     ["element"] = function(...) ElementTD:SetElementLevel(...) end,     -- Sets the level of an element
     ["synergy"] = function(...) ElementTD:Synergy(...) end,             -- Disable tech tree requirements
-    ["dev"] = function(...) ElementTD:Dev(...) end,                 -- Everything
+    ["dev"] = function(...) ElementTD:Dev(...) end,                     -- Everything
     ["setlist"] = function(...) ElementTD:MakeSets(...) end,            -- Creates full AttachWearables entries by set names
     ["wherewave"] = function(...) ElementTD:WhereIsTheWave(...) end,    -- Find out information about the current wave
+}
+
+PLAYER_CODES = {
     ["random"] = function(...) ElementTD:ToggleRandom(...) end,         -- Toggle random for player
 }
 
@@ -33,6 +36,8 @@ function ElementTD:OnPlayerChat(keys)
     local command = input[1]
     if CHEAT_CODES[command] then
         CHEAT_CODES[command](playerID, input[2], input[3])
+    elseif PLAYER_CODES[command] then
+        PLAYER_CODES[command](playerID, input[2])
     end
 end
 

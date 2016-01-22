@@ -154,8 +154,11 @@ function Build( event )
             tower:AddNewModifier(tower, nil, "modifier_support_tower", {})
         end
 
-        if string.match(building_name, "arrow_tower") or string.match(building_name, "cannon_tower") or (GameSettings.elementsOrderName and string.match(GameSettings.elementsOrderName, "Random")) then
+        -- sell ability
+        if IsPlayerUsingRandomMode( playerID ) then
             AddAbility(tower, "sell_tower_100")
+        elseif string.match(building_name, "arrow_tower") or string.match(building_name, "cannon_tower") then
+            AddAbility(tower, "sell_tower_95")
         else
             AddAbility(tower, "sell_tower_75")
         end
