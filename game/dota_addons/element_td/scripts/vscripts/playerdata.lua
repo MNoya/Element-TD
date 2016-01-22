@@ -55,6 +55,17 @@ function IsPlayerUsingRandomMode( playerID )
 	return GetPlayerData(playerID).elementalRandom or (GameSettings.elementsOrderName and string.match(GameSettings.elementsOrderName, "Random"))
 end
 
+function CanPlayerEnableRandom( playerID )
+	local elementData = GetPlayerData(playerID).elements
+	local count = 0
+	for elem,level in pairs(elementData) do
+		if level > 0 then
+			return false
+		end
+	end
+	return true
+end
+
 function ModifyElementValue(playerID, element, change)
 	local playerData = GetPlayerData(playerID)
 

@@ -202,9 +202,13 @@ end
 function ElementTD:EnableRandom(playerID)
     local playerData = GetPlayerData(playerID)
 
-    playerData.elementalRandom = true
-    print("Elemental Random set to "..tostring(playerData.elementalRandom).." for player "..playerID)
-    SendEssenceMessage(playerID, "Random elemental picker has been turned on!")
+    if CanPlayerEnableRandom(playerID) then
+        playerData.elementalRandom = true
+        print("Elemental Random set to "..tostring(playerData.elementalRandom).." for player "..playerID)
+        SendEssenceMessage(playerID, "Random elemental picker has been turned on!")
+    else
+        SendErrorMessage(playerID, "Already chosen an element, can't enable -random now!")
+    end
 end
 
 function GenerateAllSetsForHero( file, heroName )
