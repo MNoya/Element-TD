@@ -184,8 +184,10 @@ function UpgradeTower(keys)
     	if IsSupportTower(newTower) then
             newTower:AddNewModifier(newTower, nil, "modifier_support_tower", {})
         end
-		
-		if string.find(newTower.class, "arrow_tower") ~= nil or string.find(newTower.class, "cannon_tower") ~= nil or string.find(GameSettings.elementsOrderName, "Random") ~= nil then
+
+		if string.find(GameSettings.elementsOrderName, "Random") ~= nil then
+			AddAbility(newTower, "sell_tower_100")
+		elseif string.find(newTower.class, "arrow_tower") ~= nil or string.find(newTower.class, "cannon_tower") ~= nil then
 			AddAbility(newTower, "sell_tower_95")
 		else
 			AddAbility(newTower, "sell_tower_75")
