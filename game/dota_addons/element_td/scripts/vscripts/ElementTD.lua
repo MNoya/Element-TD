@@ -455,18 +455,6 @@ function ElementTD:OnPlayerSelectedEntities( event )
     local pID = event.pID
 
     GameRules.SELECTED_UNITS[pID] = event.selected_entities
-
-    -- This is for Building Helper to know which is the currently active builder
-    local mainSelected = GetMainSelectedEntity(pID)
-    local player = BuildingHelper:GetPlayerTable(pID)
-    if IsValidEntity(mainSelected) and IsBuilder(mainSelected) then
-        player.activeBuilder = mainSelected
-    else
-        if IsValidEntity(player.activeBuilder) then
-            -- Clear ghost particles when swapping to a non-builder
-            BuildingHelper:StopGhost(player.activeBuilder)
-        end
-    end
 end
 
 function ElementTD:FilterExecuteOrder( filterTable )
@@ -532,28 +520,6 @@ function ElementTD:FilterExecuteOrder( filterTable )
                     end
                 end
             end
-        end
-    end
-
-
-     ------------------------------------------------
-    --              ClearQueue Order              --
-    ------------------------------------------------
-    -- Cancel queue on Stop and Hold
-    if order_type == DOTA_UNIT_ORDER_STOP or order_type == DOTA_UNIT_ORDER_HOLD_POSITION then
-        for n, unit_index in pairs(units) do 
-            local unit = EntIndexToHScript(unit_index)
-            if IsBuilder(unit) then
-                BuildingHelper:ClearQueue(unit)
-            end
-        end
-        return true
-
-    -- Cancel builder queue when casting non building abilities
-    elseif (abilityIndex and abilityIndex ~= 0) and unit and IsBuilder(unit) then
-        local ability = EntIndexToHScript(abilityIndex)
-        if not IsBuildingAbility(ability) then
-            BuildingHelper:ClearQueue(unit)
         end
     end
 

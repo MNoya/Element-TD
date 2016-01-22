@@ -20,8 +20,6 @@ end
 function SellTowerCast(keys)
 	local tower = keys.caster
 
-	BuildingHelper:RemoveBuilding(tower)
-
 	if tower:GetHealth() == tower:GetMaxHealth() then -- only allow selling if the tower is fully built
 		local hero = tower:GetOwner()
 		local playerID = hero:GetPlayerID()

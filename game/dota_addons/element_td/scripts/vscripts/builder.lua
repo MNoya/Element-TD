@@ -111,6 +111,7 @@ function Build( event )
         unit:RemoveModifierByName("modifier_invulnerable")
 
         -- Cast angles and various building-creature properties
+        AddAbility(unit, "ability_building")
         if GetUnitKeyValue(building_name, "DisableTurning") then
             unit:AddNewModifier(unit, nil, "modifier_disable_turning", {})
         end

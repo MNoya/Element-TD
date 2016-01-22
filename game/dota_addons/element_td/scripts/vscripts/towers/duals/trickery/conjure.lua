@@ -20,8 +20,7 @@ function trickery_tower_conjure:OnSpellStart()
     end
 
     -- Create Tower Building
-    local clone = CreateUnitByName(target.class, clonePos, false, nil, nil, target:GetTeam()) 
-    clonePos = GetGroundPosition(clonePos, clone)
+    local clone = BuildingHelper:PlaceBuilding(PlayerResource:GetPlayer(playerID), target.class, clonePos, 2, 0, 0)
 
     --set some variables
     clone.class = target.class
@@ -29,22 +28,6 @@ function trickery_tower_conjure:OnSpellStart()
     clone.damageType = GetUnitKeyValue(clone.class, "DamageType")
     clone.isClone = true
     clone.ability = self
-    clone:SetOwner(PlayerResource:GetPlayer(playerID):GetAssignedHero())
-    clone:SetControllableByPlayer(playerID, true)
-    clone.construction_size = target.construction_size
-
-    -- Create the basic element tower pedestal model
-    if IsValidEntity(target.prop) then
-        -- Create the basic element tower pedestal model
-        local pedestal = GetUnitKeyValue(clone.damageType.."_tower", "PedestalModel")
-        local offset = GetUnitKeyValue(clone.damageType.."_tower", "PedestalOffset") or 0
-        local prop = SpawnEntityFromTableSynchronous("prop_dynamic", {model = pedestal})
-        local offset_location = Vector(clonePos.x, clonePos.y, clonePos.z + offset)
-        local scale = GetUnitKeyValue(clone.damageType.."_tower", "PedestalModelScale")
-        prop:SetModelScale(scale)
-        prop:SetAbsOrigin(offset_location)
-        clone.prop = prop -- Store the pedestal prop
-    end
 
     --color
     clone:SetRenderColor(0, 148, 255)
@@ -68,6 +51,10 @@ function trickery_tower_conjure:OnSpellStart()
     end
 
     -- Add abilities
+    AddAbility(clone, "ability_building")
+    if GetUnitKeyValue(building_name, "DisableTurning") then
+        unit:AddNewModifier(unit, nil, "modifier_disable_turning", {})
+    end
     AddAbility(clone, "sell_tower_0")
     AddAbility(clone, clone.damageType .. "_passive")
     if GetUnitKeyValue(clone.class, "AOE_Full") and GetUnitKeyValue(clone.class, "AOE_Half") then
