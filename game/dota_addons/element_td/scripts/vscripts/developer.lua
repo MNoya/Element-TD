@@ -17,7 +17,7 @@ CHEAT_CODES = {
 }
 
 PLAYER_CODES = {
-    ["random"] = function(...) ElementTD:ToggleRandom(...) end,         -- Toggle random for player
+    ["random"] = function(...) ElementTD:EnableRandom(...) end,         -- Toggle random for player
 }
 
 -- A player has typed something into the chat
@@ -199,18 +199,12 @@ function ElementTD:WhereIsTheWave(playerID)
     end
 end
 
-function ElementTD:ToggleRandom(playerID)
+function ElementTD:EnableRandom(playerID)
     local playerData = GetPlayerData(playerID)
 
-    if GameSettings.elementsOrderName == "AllPick" then
-        playerData.elementalRandom = not playerData.elementalRandom
-        print("Elemental Random set to "..tostring(playerData.elementalRandom).." for player "..playerID)
-        if playerData.elementalRandom then
-            SendEssenceMessage(playerID, "Random elemental picker has been turned on!")
-        else
-            SendEssenceMessage(playerID, "Random elemental picker has been turned off!")
-        end
-    end
+    playerData.elementalRandom = true
+    print("Elemental Random set to "..tostring(playerData.elementalRandom).." for player "..playerID)
+    SendEssenceMessage(playerID, "Random elemental picker has been turned on!")
 end
 
 function GenerateAllSetsForHero( file, heroName )
