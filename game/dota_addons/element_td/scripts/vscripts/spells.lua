@@ -131,8 +131,8 @@ function UpgradeTower(keys)
 		
 		-- Create the basic element tower pedestal model
 		if IsValidEntity(tower.prop) then tower.prop:RemoveSelf() end
-		local basicName = newTower.damageType.."_tower"			
-		local pedestalName = GetUnitKeyValue(basicName, "PedestalModel")
+		local basicName = newTower.damageType.."_tower"
+		local pedestalName = GetUnitKeyValue(basicName, "PedestalModel") or GetUnitKeyValue(newClass, "PedestalModel")
 		BuildingHelper:CreatePedestalForBuilding(newTower, basicName, GetGroundPosition(position, nil), pedestalName)
 
 		local scale = GetUnitKeyValue(newClass, "PedestalModelScale") or GetUnitKeyValue(newTower.damageType.."_tower", "PedestalModelScale") or newTower.prop:GetModelScale()
