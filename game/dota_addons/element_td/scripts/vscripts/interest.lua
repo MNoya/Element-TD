@@ -19,7 +19,7 @@ function InterestManager:StartInterestTimer()
 				if plyID then
 					local ply = PlayerResource:GetPlayer(plyID)
 					local hero = ElementTD.vPlayerIDToHero[plyID]
-					if hero and hero:IsAlive() and GetPlayerData(plyID).health ~= 0 then
+					if hero and hero:IsAlive() and GetPlayerData(plyID).health ~= 0 and ((GetPlayerData(plyID).completedWaves < WAVE_COUNT - 1 and not EXPRESS_MODE) or (GetPlayerData(plyID).completedWaves < WAVE_COUNT and EXPRESS_MODE)) then
 						local interest = math.ceil(hero:GetGold() * INTEREST_RATE)
 						local gold = hero:GetGold() + interest
 						hero:SetGold(0, false)
