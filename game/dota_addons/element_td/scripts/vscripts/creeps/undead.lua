@@ -28,6 +28,8 @@ function CreepUndead:OnDeath()
     newCreep.class = creepClass
     newCreep.playerID = creep.playerID
     newCreep.waveObject = creep.waveObject
+    newCreep:CreatureLevelUp(newCreep.waveObject.waveNumber-newCreep:GetLevel())
+    
     creep.waveObject:RegisterCreep(newCreep:entindex())
     creep.waveObject.creepsRemaining = creep.waveObject.creepsRemaining + 1 -- Increment creep count
     newCreep:AddNewModifier(newCreep, nil, "modifier_phased", {})

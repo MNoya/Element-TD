@@ -23,6 +23,8 @@ function CreepSwarm:OnTakeDamage(keys)
 		swarm.class = creepClass
 		swarm.playerID = self.creep.playerID
 		swarm.waveObject = self.creep.waveObject
+		swarm:CreatureLevelUp(swarm.waveObject.waveNumber-swarm:GetLevel())
+		
 		self.creep.waveObject:RegisterCreep(swarm:entindex())
 		self.creep.waveObject.creepsRemaining = self.creep.waveObject.creepsRemaining + 1 -- Increment creep count
 		swarm.isSwarm = true
