@@ -27,7 +27,7 @@ function InterestManager:StartInterestTimer()
 						PopupAlchemistGold(hero, interest)
 						Sounds:EmitSoundOnClient(plyID, "DOTA_Item.Hand_Of_Midas")
 						goldEarnedData["player" .. plyID] = interest
-						if ply and not ply:IsNull() then
+						if ply then
 							CustomGameEventManager:Send_ServerToPlayer( ply, "etd_earned_interest", { goldEarned=interest } )
 						end
 					end
