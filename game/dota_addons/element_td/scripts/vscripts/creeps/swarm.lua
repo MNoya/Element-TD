@@ -14,9 +14,7 @@ CreepSwarm = createClass({
 CreepBasic)
 
 function CreepSwarm:OnTakeDamage(keys)
-	print("CreepSwarm:OnHit")
 	if self.creep:GetHealth() > 0 and self.creep:GetHealthPercent() <= 50 and not self.creep.isSwarm then
-		print("Creating Swarm")
 		self.creep.isSwarm = true
 
 		local swarm = SpawnEntity(self.creep:GetUnitName(), self.creep.playerID, self.creep:GetOrigin())

@@ -1,4 +1,4 @@
-BH_VERSION = "1.0"
+BH_VERSION = "1.0.0"
 
 if not BuildingHelper then
     BuildingHelper = class({})

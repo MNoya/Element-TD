@@ -117,7 +117,8 @@ function UpgradeTower(keys)
 		ModifyPureEssence(playerID, -essenceCost)
 		GetPlayerData(playerID).towers[tower:entindex()] = nil --and remove it from the player's tower list
 
-		local newTower = CreateUnitByName(newClass, tower:GetOrigin(), false, nil, nil, hero:GetTeam()) 
+		local position = tower:GetAbsOrigin()
+		local newTower = CreateUnitByName(newClass, position, false, nil, nil, hero:GetTeam()) 
 
 		-- set some basic values to this tower from its KeyValues
 		newTower.class = newClass
@@ -127,28 +128,16 @@ function UpgradeTower(keys)
 		-- keep building visuals
 		local angles = tower:GetAngles()
 		newTower:SetAngles(angles.x, angles.y, angles.z)
-		if tower.prop then
-			-- If its a different main element type, change the pedestal
-			local oldDamageType = GetUnitKeyValue(tower:GetUnitName(), "DamageType")
-			if newTower.damageType ~= oldDamageType then
-				if IsValidEntity(tower.prop) then tower.prop:RemoveSelf() end
+		
+		-- Create the basic element tower pedestal model
+		if IsValidEntity(tower.prop) then tower.prop:RemoveSelf() end
+		local basicName = newTower.damageType.."_tower"			
+		local pedestalName = GetUnitKeyValue(basicName, "PedestalModel")
+		BuildingHelper:CreatePedestalForBuilding(newTower, basicName, GetGroundPosition(position, nil), pedestalName)
 
-				-- Create the basic element tower pedestal model
-				local origin = tower:GetAbsOrigin()
-				local pedestal = GetUnitKeyValue(newTower.damageType.."_tower", "PedestalModel")
-				local offset = GetUnitKeyValue(newTower.damageType.."_tower", "PedestalOffset") or 0
-				local prop = SpawnEntityFromTableSynchronous("prop_dynamic", {model = pedestal})
-				local offset_location = Vector(origin.x, origin.y, origin.z + offset)
-				prop:SetAbsOrigin(offset_location)
-				newTower.prop = prop -- Store the pedestal prop
+		local scale = GetUnitKeyValue(newClass, "PedestalModelScale") or GetUnitKeyValue(newTower.damageType.."_tower", "PedestalModelScale") or newTower.prop:GetModelScale()
+		newTower.prop:SetModelScale(scale)
 
-			else
-				newTower.prop = tower.prop
-			end
-
-			local scale = GetUnitKeyValue(newClass, "PedestalModelScale") or GetUnitKeyValue(newTower.damageType.."_tower", "PedestalModelScale") or newTower.prop:GetModelScale()
-			newTower.prop:SetModelScale(scale)
-		end
 		newTower.construction_size = tower.construction_size
 
 		-- set this new tower's owner
