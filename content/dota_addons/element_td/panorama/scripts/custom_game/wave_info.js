@@ -92,7 +92,7 @@ function UpdateTimer() {
 
 function UpdateWaveTimer( table ) {
 	waveinfo.visible = true;
-	button.visible = true;
+	button.visible = table.button;
 	timerDuration = table.time;
 	startTime = Game.GetGameTime();
 	UpdateTimer();

@@ -63,6 +63,9 @@ function StartBreakTime(playerID, breakTime)
 
     -- let's figure out how long the break is
     local wave = GetPlayerData(playerID).nextWave
+    if GameSettings:GetGamemode() == "Competitive" then
+        wave = CURRENT_WAVE
+    end
     local msgTime = 5 -- how long to show the message for
     if (wave - 1) % 5 == 0 and not EXPRESS_MODE then
         breakTime = 30
@@ -77,7 +80,7 @@ function StartBreakTime(playerID, breakTime)
     else
         Log:debug("Starting break time for " .. GetPlayerName(playerID))
         if ply then
-            CustomGameEventManager:Send_ServerToPlayer( ply, "etd_update_wave_timer", { time = breakTime } )
+            CustomGameEventManager:Send_ServerToPlayer( ply, "etd_update_wave_timer", { time = breakTime, button = (GameSettings:GetGamemode() ~= "Competitive") } )
         end
         ShowMessage(playerID, "Wave "..wave.." in "..breakTime.." seconds", msgTime)
     end
@@ -89,7 +92,7 @@ function StartBreakTime(playerID, breakTime)
         callback = function()
             local data = GetPlayerData(playerID)
             Log:info("Spawning wave " .. wave .. " for ["..playerID.."] ".. data.name)
-            ShowMessage(playerID, "Wave " .. GetPlayerData(playerID).nextWave, 3)
+            ShowMessage(playerID, "Wave " .. wave, 3)
             SpawnWaveForPlayer(playerID, wave) -- spawn dat wave
             WAVE_1_STARTED = true
         end
@@ -143,6 +146,7 @@ function SpawnWaveForPlayer(playerID, wave)
     local startPos = EntityStartLocations[sector]
 
     playerData.waveObject = waveObj
+    playerData.waveObjects[wave] = waveObj
 
     CustomGameEventManager:Send_ServerToAllClients("SetTopBarWaveValue", {playerId=playerID, wave=wave} )
 
@@ -186,7 +190,17 @@ function SpawnWaveForPlayer(playerID, wave)
             return
         end
 
-        StartBreakTime(playerID, GetPlayerDifficulty(playerID):GetWaveBreakTime(playerData.nextWave))  
+        if playerData.completedWaves == CURRENT_WAVE then
+            print("Player: " .. playerData.name .. " [" .. playerID .. "] is the first to complete wave " .. CURRENT_WAVE)
+            CURRENT_WAVE = playerData.nextWave
+            if GameSettings:GetGamemode() == "Competitive" then
+                CompetitiveNextRound(CURRENT_WAVE)
+            end
+        end
+
+        if GameSettings:GetGamemode() ~= "Competitive" then
+            StartBreakTime(playerID, GetPlayerDifficulty(playerID):GetWaveBreakTime(playerData.nextWave))
+        end
 
         -- lumber
         if (playerData.completedWaves % 5 == 0 and playerData.completedWaves < 55 and not EXPRESS_MODE) or (playerData.completedWaves % 3 == 0 and playerData.completedWaves < 30 and EXPRESS_MODE) then
@@ -220,6 +234,8 @@ function SpawnWaveForPlayer(playerID, wave)
             Log:info("Giving 1 pure essence to " .. playerData.name)
             playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
         end
+
+        playerData.waveObjects[waveObj.waveNumber] = nil
     end)
     waveObj:SpawnWave()
     
@@ -271,6 +287,14 @@ function CreateMoveTimerForCreep(creep, sector)
             return
         end
     end)
+end
+
+-- If the game mode is competitive spawn the next wave for all players after breaktime
+function CompetitiveNextRound(wave)
+    for _,v in pairs(playerIDs) do
+        print(v, wave)
+        StartBreakTime(v, GetPlayerDifficulty(v):GetWaveBreakTime(wave))
+    end
 end
 
 function ReduceLivesForPlayer( playerID )

@@ -30,7 +30,8 @@ function CreateDataForPlayer(playerID)
 	data["bossWaves"] = 0
 	data["nextWave"] = 1
 	data["activeWaves"] = 1
-	data["waveObject"] = {}
+	data["waveObject"] = {} -- Current wave object
+	data["waveObjects"] = {} -- All active wave objects
 	
 	return data
 end

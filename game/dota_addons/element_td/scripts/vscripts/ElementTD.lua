@@ -177,6 +177,9 @@ end
 function ElementTD:OnNextWave( keys )
     local playerID = keys.PlayerID
     local data = GetPlayerData(playerID)
+    if GameSettings:GetGamemode() == "Competitive" then
+        return
+    end
     if (data.waveObject and data.waveObject.creepsRemaining == 0) or data.nextWave == 1 then
         Timers:RemoveTimer("SpawnWaveDelay"..playerID)
         Log:info("Spawning wave " .. data.nextWave .. " for ["..playerID.."] ".. data.name)
