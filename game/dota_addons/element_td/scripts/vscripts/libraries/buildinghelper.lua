@@ -1942,9 +1942,9 @@ function BuildingHelper:FindClosestEmptyPositionNearby( location, construction_s
     for x = lowerBoundX, upperBoundX do
         for y = lowerBoundY, upperBoundY do
             if BuildingHelper:CellHasGridType(x,y,"BUILDABLE") then
-                local pos = Vector(GridNav:GridPosToWorldCenterX(x), GridNav:GridPosToWorldCenterY(y), 0)
+                local pos = GetGroundPosition(Vector(GridNav:GridPosToWorldCenterX(x), GridNav:GridPosToWorldCenterY(y), 0), nil)
                 BuildingHelper:SnapToGrid(construction_size, pos)
-                if not BuildingHelper:IsAreaBlocked(construction_size, pos) then
+                if BuildingHelper:MeetsHeightCondition(pos) and not BuildingHelper:IsAreaBlocked(construction_size, pos) then
                     local distance = (pos - location):Length2D()
                     if distance < closestDistance then
                         towerPos = pos
@@ -1954,7 +1954,9 @@ function BuildingHelper:FindClosestEmptyPositionNearby( location, construction_s
             end
         end
     end
-    BuildingHelper:SnapToGrid(construction_size, towerPos)
+    if towerPos then
+        BuildingHelper:SnapToGrid(construction_size, towerPos)
+    end
     return towerPos
 end
 
@@ -1974,6 +1976,13 @@ function BuildingHelper:IsInsideEntityBounds(entity, location)
     local betweenY = Y >= minY and Y <= maxY
 
     return betweenX and betweenY
+end
+
+-- In case a height restriction was defined, checks if the location passes the height test
+function BuildingHelper:MeetsHeightCondition(location)
+    if BuildingHelper.Settings["HEIGHT_RESTRICTION"] ~= "" then
+        return location.z >= BuildingHelper.Settings["HEIGHT_RESTRICTION"]
+    end
 end
 
 -- A BuildingHelper ability is identified by the "Building" key.

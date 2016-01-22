@@ -45,7 +45,7 @@ function Build( event )
     event:OnPreConstruction(function(vPos)
 
         -- TD height
-        if vPos.z < 380 then
+        if not BuildingHelper:MeetsHeightCondition(vPos) then
             SendErrorMessage(caster:GetPlayerOwnerID(), "#error_invalid_build_position")
             return false
         end
