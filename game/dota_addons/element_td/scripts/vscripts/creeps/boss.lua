@@ -17,6 +17,7 @@ CreepBasic)
 function CreepBoss:OnSpawned() 
     self.creep:SetMaximumGoldBounty(0)
     self.creep:SetMinimumGoldBounty(0)
+    self.creep:CreatureLevelUp(self.creep.waveObject.waveNumber-self.creep:GetLevel())
 
     -- Mechanical
     local creep = self.creep
