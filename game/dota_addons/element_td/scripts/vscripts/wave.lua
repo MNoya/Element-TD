@@ -66,6 +66,7 @@ function Wave:SpawnWave()
 			if entity then
 				self:RegisterCreep(entity:entindex())
 				entity:SetForwardVector(Vector(0, -1, 0))
+				entity:CreatureLevelUp(self.waveNumber-entity:GetLevel())
 				entity.waveObject = self
 				entitiesSpawned = entitiesSpawned + 1
 
