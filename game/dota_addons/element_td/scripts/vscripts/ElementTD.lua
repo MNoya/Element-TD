@@ -215,6 +215,11 @@ function ElementTD:EndGameForPlayer( playerID )
     for l,m in pairs(playerData.waveObject.creeps) do
         EntIndexToHScript(l):ForceKill(false)
     end
+    for _,object in pairs(playerData.waveObjects) do
+        for index,_ in pairs(object.creeps) do
+            EntIndexToHScript(index):ForceKill(false)
+        end
+    end
     ElementTD:CheckGameEnd()
 end
 
