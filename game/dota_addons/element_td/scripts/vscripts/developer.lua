@@ -14,6 +14,7 @@ CHEAT_CODES = {
     ["dev"] = function(...) ElementTD:Dev(...) end,                     -- Everything
     ["setlist"] = function(...) ElementTD:MakeSets(...) end,            -- Creates full AttachWearables entries by set names
     ["wherewave"] = function(...) ElementTD:WhereIsTheWave(...) end,    -- Find out information about the current wave
+    ["gg_end"] = function(...) GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS ) end,    -- Find out information about the current wave
 }
 
 PLAYER_CODES = {
