@@ -150,6 +150,8 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
             if ( GameUI.CustomUIConfig().team_colors )
             {   
                 var playerColor = GameUI.CustomUIConfig().team_colors[playerInfo.player_team_id];
+                if (playerColor == null)
+                    playerColor = "#999999";
                 playerColorBar.style.backgroundColor = playerColor;
             }
             else
