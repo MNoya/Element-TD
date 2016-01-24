@@ -45,9 +45,8 @@ function BuildingHelper:Init()
         ListenToGameEvent('tree_cut', Dynamic_Wrap(BuildingHelper, 'OnTreeCut'), self)
     end
 
-    -- Lua modifiers
-    LinkLuaModifier("modifier_out_of_world", "libraries/modifiers/modifier_out_of_world", LUA_MODIFIER_MOTION_NONE)
-    LinkLuaModifier("modifier_builder_hidden", "libraries/modifiers/modifier_builder_hidden", LUA_MODIFIER_MOTION_NONE)
+    -- Modifier applier
+    BuildingHelper.Applier = CreateItem("item_apply_modifiers", nil, nil)
     
     BuildingHelper.KV = {} -- Merge KVs into a single table
     BuildingHelper:ParseKV(BuildingHelper.AbilityKV, BuildingHelper.KV)
@@ -1654,7 +1653,7 @@ function BuildingHelper:AddToQueue( builder, location, bQueued )
         -- Create the building entity that will be used to start construction and project the queue particles
         local entity = CreateUnitByName(unitName, model_location, false, nil, nil, builder:GetTeam())
         entity:AddEffects(EF_NODRAW)
-        entity:AddNewModifier(entity, nil, "modifier_out_of_world", {})
+        ApplyModifier(entity, "modifier_out_of_world")
 
         local modelParticle = ParticleManager:CreateParticleForPlayer("particles/buildinghelper/ghost_model.vpcf", PATTACH_ABSORIGIN, entity, player)
         ParticleManager:SetParticleControl(modelParticle, 0, model_location)
@@ -1879,7 +1878,7 @@ function BuildingHelper:GetOrCreateDummy( unitName )
         BuildingHelper:print("AddBuilding "..unitName)
         local mgd = CreateUnitByName(unitName, Vector(0,0,0), false, nil, nil, 0)
         mgd:AddEffects(EF_NODRAW)
-        mgd:AddNewModifier(mgd, nil, "modifier_out_of_world", {})
+        ApplyModifier(mgd, "modifier_out_of_world")
         BuildingHelper.Dummies[unitName] = mgd
         return mgd
     end
@@ -1936,7 +1935,7 @@ function BuildingHelper:GetBlockPathingSize(unit)
 end
 
 function BuildingHelper:HideBuilder(unit, location, building)
-    unit:AddNewModifier(unit, nil, "modifier_builder_hidden", {})
+    ApplyModifier(unit, "modifier_builder_hidden")
     unit.entrance_to_build = unit:GetAbsOrigin()
 
     local location_builder = Vector(location.x, location.y, location.z - 200)
@@ -2028,6 +2027,10 @@ function BuildingHelper:MeetsHeightCondition(location)
     if BuildingHelper.Settings["HEIGHT_RESTRICTION"] ~= "" then
         return location.z >= BuildingHelper.Settings["HEIGHT_RESTRICTION"]
     end
+end
+
+function ApplyModifier( unit, modifierName )
+    BuildingHelper.Applier:ApplyDataDrivenModifier(unit, unit, modifierName, {})
 end
 
 -- A BuildingHelper ability is identified by the "Building" key.

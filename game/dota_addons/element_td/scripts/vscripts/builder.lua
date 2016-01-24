@@ -105,7 +105,7 @@ function Build( event )
         end
 
         -- Units can't attack while building
-        unit:AddNewModifier(unit, nil, "modifier_attack_disabled", {})
+        ApplyModifier(unit, "modifier_attack_disabled")
 
         -- Remove invulnerability on npc_dota_building baseclass
         unit:RemoveModifierByName("modifier_invulnerable")
@@ -113,7 +113,8 @@ function Build( event )
         -- Cast angles and various building-creature properties
         AddAbility(unit, "ability_building")
         if GetUnitKeyValue(building_name, "DisableTurning") then
-            unit:AddNewModifier(unit, nil, "modifier_disable_turning", {})
+            ApplyModifier(unit, "modifier_disable_turning")
+
         end
     end)
 
@@ -126,7 +127,7 @@ function Build( event )
         unit:RemoveModifierByName("modifier_attack_disabled")
         
         -- Building abilities
-        unit:AddNewModifier(unit, nil, "modifier_no_health_bar", {})
+        ApplyModifier(unit, "modifier_no_health_bar")
         
         local playerData = GetPlayerData(playerID)
         local gold = hero:GetGold()
@@ -152,7 +153,7 @@ function Build( event )
 
         -- mark this tower as a support tower if necessary
         if IsSupportTower(tower) then
-            tower:AddNewModifier(tower, nil, "modifier_support_tower", {})
+            ApplyModifier(tower, "modifier_support_tower")
         end
 
         -- sell ability
