@@ -794,7 +794,7 @@ function BuildingHelper:UpgradeBuilding(building, newName)
     -- Disable turning. If DisableTurning unit KV setting is not defined, use the global setting
     local disableTurning = BuildingHelper.UnitKV[newName]["DisableTurning"]
     if not disableTurning then
-        if BuildingHelper.Settings["DISABLE_BUILDING_TURNING"]) then
+        if BuildingHelper.Settings["DISABLE_BUILDING_TURNING"] then
             BuildingHelper:ApplyModifier(newBuilding, "modifier_disable_turning")
         end
     elseif disableTurning == 1 then

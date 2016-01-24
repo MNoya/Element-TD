@@ -62,23 +62,17 @@ function FlameTower:OnAttackLanded(keys)
 end
 
 function CreateSunburnRemnant(entity, team)
-    local remnant = CreateUnitByName("tower_dummy", entity:GetAbsOrigin() + Vector(0, 0, 64), false, nil, nil, team)    
-    remnant:SetAbsOrigin(entity:GetAbsOrigin() + Vector(0, 0, 64))    
-    -- hopefully this works as intended
-    remnant:AddNewModifier(remnant, nil, "modifier_out_of_world", {})
-    remnant:AddNewModifier(remnant, nil, "modifier_no_health_bar", {})
+    local position = entity:GetAbsOrigin() + Vector(0, 0, 64)
 
-    local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_ember_spirit/ember_spirit_flameGuard_column.vpcf", PATTACH_ABSORIGIN, remnant)    
-    ParticleManager:SetParticleControl(particle, 0, remnant:GetAbsOrigin())    
-    ParticleManager:SetParticleControl(particle, 1, remnant:GetAbsOrigin())    
-    ParticleManager:SetParticleControl(particle, 2, Vector(0, 0, 0))    
-    ParticleManager:SetParticleControl(particle, 3, Vector(0, 0, 0))    
-    ParticleManager:SetParticleControl(particle, 4, Vector(0, 0, 0))    
+    local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_ember_spirit/ember_spirit_flameGuard_column.vpcf", PATTACH_CUSTOMORIGIN, nil)    
+    ParticleManager:SetParticleControl(particle, 0, position)
+    ParticleManager:SetParticleControl(particle, 1, position)
+    ParticleManager:SetParticleControl(particle, 3, Vector(1, 0, 0))  
 
-    local particle2 = ParticleManager:CreateParticle("particles/units/heroes/hero_ember_spirit/ember_spirit_flameGuard_fire_outer.vpcf", PATTACH_ABSORIGIN, remnant)    
-    ParticleManager:SetParticleControl(particle2, 0, Vector(0, 0, 0))    
-    ParticleManager:SetParticleControl(particle2, 1, remnant:GetAbsOrigin())    
-    ParticleManager:SetParticleControl(particle2, 2, Vector(0, 0, 0))    
+    local particle2 = ParticleManager:CreateParticle("particles/units/heroes/hero_ember_spirit/ember_spirit_flameGuard_fire_outer.vpcf", PATTACH_CUSTOMORIGIN, nil)    
+    ParticleManager:SetParticleControl(particle2, 0, position)    
+    ParticleManager:SetParticleControl(particle2, 1, position)
+    ParticleManager:SetParticleControl(particle2, 2, Vector(10, 10, 10))    
 
     local stacks = 0    
     local remnantDuration = 0    
@@ -93,8 +87,7 @@ function CreateSunburnRemnant(entity, team)
             local ticks = timeRemaining    
 
             Timers:CreateTimer(1, function()
-                if not IsValidEntity(remnant) then return end
-                DamageEntitiesInArea(remnant:GetOrigin(), entity.SunburnData.AOE, v.source, v.damage)    
+                DamageEntitiesInArea(position, entity.SunburnData.AOE, v.source, v.damage)    
                 ticks = ticks - 1    
                 if ticks == 0 then
                     return nil    
@@ -108,15 +101,13 @@ function CreateSunburnRemnant(entity, team)
 
     if stacks == 0 then
         ParticleManager:DestroyParticle(particle, true)    
-        ParticleManager:DestroyParticle(particle2, true)    
-        UTIL_Remove(remnant)    
+        ParticleManager:DestroyParticle(particle2, true)     
         return    
     end
 
     Timers:CreateTimer(remnantDuration, function()
         ParticleManager:DestroyParticle(particle, false)    
-        ParticleManager:DestroyParticle(particle2, false)    
-        UTIL_Remove(remnant)
+        ParticleManager:DestroyParticle(particle2, false)
     end)    
 end
 
