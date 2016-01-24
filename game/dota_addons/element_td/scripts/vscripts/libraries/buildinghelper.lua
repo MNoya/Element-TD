@@ -780,9 +780,9 @@ end
 function BuildingHelper:UpgradeBuilding(building, newName)
     BuildingHelper:print("Upgrading Building: "..building:GetUnitName().." -> "..newName)
     local playerID = building:GetPlayerOwnerID()
-    local position = building:GetAbsOrigin()
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     local oldBuildingName = building:GetUnitName()
+    local position = building:GetAbsOrigin()
     local newBuilding = CreateUnitByName(newName, position, false, nil, nil, building:GetTeamNumber()) 
     newBuilding:SetOwner(hero)
     newBuilding:SetControllableByPlayer(playerID, true)
@@ -803,7 +803,8 @@ function BuildingHelper:UpgradeBuilding(building, newName)
 
     -- Block the grid
     newBuilding.construction_size = BuildingHelper:GetConstructionSize(newName)
-    BuildingHelper:BlockGridSquares(newBuilding.construction_size, BuildingHelper:GetBlockPathingSize(newName), position)
+    newBuilding.blockers = BuildingHelper:BlockGridSquares(newBuilding.construction_size, BuildingHelper:GetBlockPathingSize(newName), position)
+    newBuilding:SetAbsOrigin(position)
 
     if not newBuilding:HasAbility("ability_building") then
         newBuilding:AddAbility("ability_building")
