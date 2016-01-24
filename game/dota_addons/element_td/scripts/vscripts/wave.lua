@@ -62,6 +62,9 @@ function Wave:SpawnWave()
 	self.spawnTimer = Timers:CreateTimer("SpawnWave"..self.waveNumber..self.playerID, {
 		endTime = 0.5,
 		callback = function()
+			if playerData.health == 0 then
+				return nil
+			end
 			local entity = SpawnEntity(WAVE_CREEPS[self.waveNumber], self.playerID, startPos)
 			if entity then
 				self:RegisterCreep(entity:entindex())
