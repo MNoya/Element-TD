@@ -128,6 +128,13 @@ function UpgradeTower(keys)
 		newTower.element = GetUnitKeyValue(newClass, "Element")
 		newTower.damageType = GetUnitKeyValue(newClass, "DamageType")
 
+		-- New pedestal if one wasn't created already
+		if not newTower.prop then
+			local basicName = newTower.damageType.."_tower"
+			local pedestalName = GetUnitKeyValue(basicName, "PedestalModel")
+			local prop = BuildingHelper:CreatePedestalForBuilding(newTower, basicName, GetGroundPosition(newTower:GetAbsOrigin(), nil), pedestalName)
+		end
+
 		GetPlayerData(playerID).towers[newTower:entindex()] = newClass --add this tower to the player's tower list
 		UpdateUpgrades(newTower) --update this tower's upgrades
 		UpdatePlayerSpells(playerID) --update the player's spells

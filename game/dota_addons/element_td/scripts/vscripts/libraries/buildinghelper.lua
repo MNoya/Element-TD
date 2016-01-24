@@ -791,7 +791,7 @@ function BuildingHelper:UpgradeBuilding(building, newName)
     local angles = building:GetAngles()
     newBuilding:SetAngles(angles.x, angles.y, angles.z)
     
-    local pedestalName = BuildingHelper.UnitKV[newName]["PedestalModel"] or BuildingHelper.UnitKV[oldBuildingName]["PedestalModel"]
+    local pedestalName = BuildingHelper.UnitKV[newName]["PedestalModel"]
     if pedestalName then
         BuildingHelper:CreatePedestalForBuilding(newBuilding, newName, GetGroundPosition(position, nil), pedestalName)
     end    
