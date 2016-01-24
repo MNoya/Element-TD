@@ -124,7 +124,8 @@ function RemoveClone(clone)
         ability.clones[entIndex] = nil -- remove from the ability
     end
 
-    RemoveTower(clone)
+    clone:AddEffects(EF_NODRAW)
+    clone:ForceKill(true) --This will call RemoveBuilding
 end
 
 RegisterTowerClass(TrickeryTower, TrickeryTower.className)

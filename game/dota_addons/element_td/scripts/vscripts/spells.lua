@@ -59,8 +59,11 @@ function SellTowerCast(keys)
 			tower.scriptObject:OnDestroyed()
 		end
 
+		-- Kills and hide the tower, so that its running timers can still execute until it gets removed by the engine
+		tower:AddEffects(EF_NODRAW)
+		tower:ForceKill(true)
 		playerData.towers[tower:entindex()] = nil -- remove this tower index from the player's tower list
-		RemoveTower(tower)
+
 		UpdateScoreboard(hero:GetPlayerID())
 		Log:debug(playerData.name .. " has sold a tower")
 		UpdatePlayerSpells(hero:GetPlayerID())
@@ -117,32 +120,13 @@ function UpgradeTower(keys)
 		ModifyPureEssence(playerID, -essenceCost)
 		GetPlayerData(playerID).towers[tower:entindex()] = nil --and remove it from the player's tower list
 
-		local position = tower:GetAbsOrigin()
-		local newTower = CreateUnitByName(newClass, position, false, nil, nil, hero:GetTeam()) 
+		-- Replace the tower by a new one
+		local newTower = BuildingHelper:UpgradeBuilding(tower, newClass)
 
 		-- set some basic values to this tower from its KeyValues
 		newTower.class = newClass
 		newTower.element = GetUnitKeyValue(newClass, "Element")
 		newTower.damageType = GetUnitKeyValue(newClass, "DamageType")
-
-		-- keep building visuals
-		local angles = tower:GetAngles()
-		newTower:SetAngles(angles.x, angles.y, angles.z)
-		
-		-- Create the basic element tower pedestal model
-		if IsValidEntity(tower.prop) then tower.prop:RemoveSelf() end
-		local basicName = newTower.damageType.."_tower"
-		local pedestalName = GetUnitKeyValue(basicName, "PedestalModel") or GetUnitKeyValue(newClass, "PedestalModel")
-		BuildingHelper:CreatePedestalForBuilding(newTower, newClass, GetGroundPosition(position, nil), pedestalName)
-
-		local scale = GetUnitKeyValue(newClass, "PedestalModelScale") or GetUnitKeyValue(newTower.damageType.."_tower", "PedestalModelScale") or newTower.prop:GetModelScale()
-		newTower.prop:SetModelScale(scale)
-
-		newTower.construction_size = tower.construction_size
-
-		-- set this new tower's owner
-		newTower:SetOwner(hero)
-		newTower:SetControllableByPlayer(playerID, true)
 
 		GetPlayerData(playerID).towers[newTower:entindex()] = newClass --add this tower to the player's tower list
 		UpdateUpgrades(newTower) --update this tower's upgrades
@@ -197,7 +181,6 @@ function UpgradeTower(keys)
 
 		local modelScale = tower:GetModelScale()
 		tower.deleted = true --mark the old tower for deletion
-		RemoveTower(tower, true) --delete the old tower entity
 		BuildTower(newTower, modelScale) --start the tower building animation
 
 		if GetUnitKeyValue(newClass, "DisableTurning") then
@@ -233,7 +216,7 @@ end
 
 function UpdateUpgrades(tower)
 	local class = tower.class
-	local playerID = tower:GetOwner():GetPlayerID()
+	local playerID = tower:GetPlayerOwnerID()
 	local data = GetPlayerData(playerID)
 	local upgrades = NPC_UNITS_CUSTOM[class].Upgrades
 
@@ -316,13 +299,4 @@ function BuildTower(tower, baseScale)
 	        return 0.05
 		end
 	})
-end
-
--- Kills and hides the tower, so that its running timers can still execute until it gets removed by the engine
-function RemoveTower( unit, bKeepPedestal )
-	if unit then
-		unit:AddEffects(EF_NODRAW)
-		if not bKeepPedestal and IsValidEntity(unit.prop) then unit.prop:RemoveSelf() end
-		unit:ForceKill(false)
-	end
 end

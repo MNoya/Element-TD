@@ -165,7 +165,7 @@ function BuildingHelper:OnEntityKilled(keys)
         BuildingHelper:ClearQueue(killed)
     elseif IsCustomBuilding(killed) or gridTable then
         -- Building Helper grid cleanup
-        BuildingHelper:RemoveBuilding(killed, true)
+        BuildingHelper:RemoveBuilding(killed, false)
 
         if gridTable then
             for grid_type,v in pairs(gridTable) do
@@ -774,22 +774,66 @@ function BuildingHelper:PlaceBuilding(player, name, location, construction_size,
 end
 
 --[[
+    UpgradeBuilding
+    * Replaces a building by a new one by name, updating the necessary references and returning the new created unit
+]]
+function BuildingHelper:UpgradeBuilding(building, newName)
+    BuildingHelper:print("Upgrading Building: "..building:GetUnitName().." -> "..newName)
+    local playerID = building:GetPlayerOwnerID()
+    local position = building:GetAbsOrigin()
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    local oldBuildingName = building:GetUnitName()
+    local newBuilding = CreateUnitByName(newName, position, false, nil, nil, building:GetTeamNumber()) 
+    newBuilding:SetOwner(hero)
+    newBuilding:SetControllableByPlayer(playerID, true)
+    
+    -- Update visuals
+    local angles = building:GetAngles()
+    newBuilding:SetAngles(angles.x, angles.y, angles.z)
+    
+    local pedestalName = BuildingHelper.UnitKV[newName]["PedestalModel"] or BuildingHelper.UnitKV[oldBuildingName]["PedestalModel"]
+    if pedestalName then
+        BuildingHelper:CreatePedestalForBuilding(newBuilding, newName, GetGroundPosition(position, nil), pedestalName)
+    end    
+
+    -- Kill the old building without visual effects
+    building.upgraded = true
+    building:AddEffects(EF_NODRAW)
+    building:ForceKill(true) --This will call RemoveBuilding
+
+    -- Block the grid
+    newBuilding.construction_size = BuildingHelper:GetConstructionSize(newName)
+    BuildingHelper:BlockGridSquares(newBuilding.construction_size, BuildingHelper:GetBlockPathingSize(newName), position)
+
+    if not newBuilding:HasAbility("ability_building") then
+        newBuilding:AddAbility("ability_building")
+    end
+
+    return newBuilding
+end
+
+--[[
     RemoveBuilding
     * Removes a building, removing it from the gridnav, with an optional parameter to kill it
 ]]--
 function BuildingHelper:RemoveBuilding( building, bForcedKill )
-     if bForcedKill then
+    BuildingHelper:print("Removing Building: "..building:GetUnitName())
+
+    if bForcedKill then
         building:ForceKill(bForcedKill)
     end
 
-    local particleName = BuildingHelper.UnitKV[building:GetUnitName()]["DestructionEffect"]
-    if particleName then
-        local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, building)
-        ParticleManager:SetParticleControl(particle, 0, building:GetAbsOrigin())
-    end
+    -- Don't show the destruction effects when it was killed to due UpgradeBuilding
+    if not building.upgraded then
+        local particleName = BuildingHelper.UnitKV[building:GetUnitName()]["DestructionEffect"]
+        if particleName then
+            local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, building)
+            ParticleManager:SetParticleControl(particle, 0, building:GetAbsOrigin())
+        end
 
-    if building.fireEffectParticle then
-        ParticleManager:DestroyParticle(building.fireEffectParticle, false)
+        if building.fireEffectParticle then
+            ParticleManager:DestroyParticle(building.fireEffectParticle, false)
+        end
     end
 
     if building.prop then

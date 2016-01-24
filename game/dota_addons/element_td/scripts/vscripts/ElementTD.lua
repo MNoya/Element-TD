@@ -117,12 +117,14 @@ function ElementTD:OnScriptReload()
         -- loop over the player's towers
         for towerID, _ in pairs(GetPlayerData(playerID).towers) do
             local tower = EntIndexToHScript(towerID)
-            local scriptObject = getmetatable(tower.scriptObject).__index
+            if IsValidEntity(tower) and tower.scriptObject then
+                local scriptObject = getmetatable(tower.scriptObject).__index
 
-            -- replace the old functions in the script objects with the new ones
-            for name, value in pairs(TOWER_CLASSES[tower.scriptClass]) do
-                if type(value) == "function" then
-                    scriptObject[name] = value
+                -- replace the old functions in the script objects with the new ones
+                for name, value in pairs(TOWER_CLASSES[tower.scriptClass]) do
+                    if type(value) == "function" then
+                        scriptObject[name] = value
+                    end
                 end
             end
         end
@@ -207,10 +209,10 @@ function ElementTD:EndGameForPlayer( playerID )
         playerData.elementalUnit:ForceKill(false)
     end
     for i,v in pairs(playerData.towers) do
-        RemoveTower(EntIndexToHScript(i))
+        BuildingHelper:RemoveBuilding(EntIndexToHScript(i), true)
     end
     for j,k in pairs(playerData.clones) do
-        UTIL_RemoveImmediate(EntIndexToHScript(j))
+        RemoveClone(EntIndexToHScript(j))
     end
     for l,m in pairs(playerData.waveObject.creeps) do
         EntIndexToHScript(l):ForceKill(false)
