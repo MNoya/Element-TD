@@ -2,7 +2,67 @@
 {
 	"item_apply_modifiers"
 	{
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"BaseClass"		"item_datadriven"
+	
+		"Modifiers"
+		{
+			"modifier_roots_tower_dot"
+			{
+				"TextureName"		"treant_leach_seed"
+				"Duration"		"5"
+				"ThinkInterval"		"1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"Target"		"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"		"TriggerEvent"
+						"Event"		"OnDOTTick"
+					}
+				}
+			}
+	
+			"modifier_disabled"
+	        {
+	            "IsHidden" "1"
+	            "States"
+	            {
+	                "MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_PASSIVES_DISABLED" "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_COMMAND_RESTRICTED" "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
+	            }
+	        }
+	
+	        "modifier_attack_disabled"
+	        {
+	            "IsHidden" "1"
+	            "States"
+	            {
+	                "MODIFIER_STATE_DISARMED" "MODIFIER_STATE_VALUE_ENABLED"
+	            }
+	        }
+	
+	        "modifier_no_health_bar"
+	        {
+	            "IsHidden" "1"
+	            "States"
+	            {
+	                "MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
+	            }
+	        }
+	
+	        "modifier_support_tower"
+	        {
+	            "TextureName" "support_modifier"
+	        }
+		}
+	}
+	"item_bh_modifiers"
+	{
 	    "BaseClass"                     "item_datadriven"
 	
 	    "Modifiers"
@@ -49,43 +109,6 @@
 	            }
 	        }
 	
-	        "modifier_disabled"
-	        {
-	            "IsHidden" "1"
-	            "States"
-	            {
-	                "MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
-	                "MODIFIER_STATE_PASSIVES_DISABLED" "MODIFIER_STATE_VALUE_ENABLED"
-	                "MODIFIER_STATE_COMMAND_RESTRICTED" "MODIFIER_STATE_VALUE_ENABLED"
-	                "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
-	                "MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
-	                "MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
-	            }
-	        }
-	
-	        "modifier_attack_disabled"
-	        {
-	            "IsHidden" "1"
-	            "States"
-	            {
-	                "MODIFIER_STATE_DISARMED" "MODIFIER_STATE_VALUE_ENABLED"
-	            }
-	        }
-	
-	        "modifier_no_health_bar"
-	        {
-	            "IsHidden" "1"
-	            "States"
-	            {
-	                "MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
-	            }
-	        }
-	
-	        "modifier_support_tower"
-	        {
-	            "TextureName" "support_modifier"
-	        }
-	
 	        "modifier_builder_hidden"
 	        {
 	            "IsHidden"  "1"
@@ -117,33 +140,6 @@
 	                    
 	        }
 	    }
-	}
-	"item_etd_modifier_master"
-	{
-		"ID"		"1337"
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"BaseClass"		"item_datadriven"
-		"AbilityCastRange"		"99999999"
-		"AbilityCastPoint"		"0.0"
-		"Modifiers"
-		{
-			"modifier_roots_tower_dot"
-			{
-				"TextureName"		"treant_leach_seed"
-				"Duration"		"5"
-				"ThinkInterval"		"1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"Target"		"TARGET"
-						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-						"Function"		"TriggerEvent"
-						"Event"		"OnDOTTick"
-					}
-				}
-			}
-		}
 	}
 	"item_upgrade_to_advanced_arrow_tower"
 	{

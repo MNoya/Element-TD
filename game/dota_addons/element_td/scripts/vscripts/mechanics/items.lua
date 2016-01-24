@@ -8,3 +8,8 @@ function GetItemByName( unit, item_name )
     end
     return nil
 end
+
+-- Applies a modifier from item_apply_modifiers
+function ApplyModifier( unit, modifierName )
+    GameRules.Applier:ApplyDataDrivenModifier(unit, unit, modifierName, {})
+end

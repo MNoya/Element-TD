@@ -79,7 +79,10 @@ function ElementTD:InitGameMode()
     LinkLuaModifier("modifier_damage_block", "libraries/modifiers/modifier_damage_block", LUA_MODIFIER_MOTION_NONE)
     --LinkLuaModifier("modifier_support_tower", "libraries/modifiers/modifier_support_tower", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_bonus_life", "libraries/modifiers/modifier_bonus_life", LUA_MODIFIER_MOTION_NONE)    
-    --LinkLuaModifier("modifier_disable_turning", "libraries/modifiers/modifier_disable_turning", LUA_MODIFIER_MOTION_NONE)    
+    --LinkLuaModifier("modifier_disable_turning", "libraries/modifiers/modifier_disable_turning", LUA_MODIFIER_MOTION_NONE)
+
+    -- Datadriven Modifier Applier
+    GameRules.Applier = CreateItem("item_apply_modifiers", nil, nil)
     
     -- Register UI Listener   
     CustomGameEventManager:RegisterListener( "next_wave", Dynamic_Wrap(ElementTD, "OnNextWave")) -- wave info
@@ -578,4 +581,3 @@ function ElementTD:DamageFilter( filterTable )
 
     return true
 end
-

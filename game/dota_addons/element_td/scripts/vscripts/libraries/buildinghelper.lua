@@ -46,7 +46,7 @@ function BuildingHelper:Init()
     end
 
     -- Modifier applier
-    BuildingHelper.Applier = CreateItem("item_apply_modifiers", nil, nil)
+    BuildingHelper.Applier = CreateItem("item_bh_modifiers", nil, nil)
     
     BuildingHelper.KV = {} -- Merge KVs into a single table
     BuildingHelper:ParseKV(BuildingHelper.AbilityKV, BuildingHelper.KV)
@@ -81,6 +81,7 @@ function BuildingHelper:LoadSettings()
     BuildingHelper.Settings["TESTING"] = tobool(BuildingHelper.Settings["TESTING"])
     BuildingHelper.Settings["RECOLOR_BUILDING_PLACED"] = tobool(BuildingHelper.Settings["RECOLOR_BUILDING_PLACED"])
     BuildingHelper.Settings["UPDATE_TREES"] = tobool(BuildingHelper.Settings["UPDATE_TREES"])
+    BuildingHelper.Settings["DISABLE_BUILDING_TURNING"] = tobool(BuildingHelper.Settings["DISABLE_BUILDING_TURNING"])
 
     CustomNetTables:SetTableValue("building_settings", "grid_alpha", { value = BuildingHelper.Settings["GRID_ALPHA"] })
     CustomNetTables:SetTableValue("building_settings", "alt_grid_alpha", { value = BuildingHelper.Settings["ALT_GRID_ALPHA"] })
@@ -789,6 +790,16 @@ function BuildingHelper:UpgradeBuilding(building, newName)
     -- Update visuals
     local angles = building:GetAngles()
     newBuilding:SetAngles(angles.x, angles.y, angles.z)
+
+    -- Disable turning. If DisableTurning unit KV setting is not defined, use the global setting
+    local disableTurning = BuildingHelper.UnitKV[newName]["DisableTurning"]
+    if not disableTurning then
+        if BuildingHelper.Settings["DISABLE_BUILDING_TURNING"]) then
+            BuildingHelper:ApplyModifier(newBuilding, "modifier_disable_turning")
+        end
+    elseif disableTurning == 1 then
+        BuildingHelper:ApplyModifier(newBuilding, "modifier_disable_turning")
+    end
     
     local pedestalName = BuildingHelper.UnitKV[newName]["PedestalModel"]
     if pedestalName then
@@ -923,6 +934,11 @@ function BuildingHelper:StartBuilding( builder )
     -- Adjust the Model Orientation
     local yaw = buildingTable:GetVal("ModelRotation", "float")
     building:SetAngles(0, -yaw, 0)
+
+    -- Disable turning
+    if BuildingHelper.UnitKV[unitName]["DisableTurning"]==1 or BuildingHelper.Settings["DISABLE_BUILDING_TURNING"] then
+        BuildingHelper:ApplyModifier(building, "modifier_disable_turning")
+    end
 
     -- Prevent regen messing with the building spawn hp gain
     local regen = building:GetBaseHealthRegen()
@@ -1653,7 +1669,7 @@ function BuildingHelper:AddToQueue( builder, location, bQueued )
         -- Create the building entity that will be used to start construction and project the queue particles
         local entity = CreateUnitByName(unitName, model_location, false, nil, nil, builder:GetTeam())
         entity:AddEffects(EF_NODRAW)
-        ApplyModifier(entity, "modifier_out_of_world")
+        BuildingHelper:ApplyModifier(entity, "modifier_out_of_world")
 
         local modelParticle = ParticleManager:CreateParticleForPlayer("particles/buildinghelper/ghost_model.vpcf", PATTACH_ABSORIGIN, entity, player)
         ParticleManager:SetParticleControl(modelParticle, 0, model_location)
@@ -1878,7 +1894,7 @@ function BuildingHelper:GetOrCreateDummy( unitName )
         BuildingHelper:print("AddBuilding "..unitName)
         local mgd = CreateUnitByName(unitName, Vector(0,0,0), false, nil, nil, 0)
         mgd:AddEffects(EF_NODRAW)
-        ApplyModifier(mgd, "modifier_out_of_world")
+        BuildingHelper:ApplyModifier(mgd, "modifier_out_of_world")
         BuildingHelper.Dummies[unitName] = mgd
         return mgd
     end
@@ -1935,7 +1951,7 @@ function BuildingHelper:GetBlockPathingSize(unit)
 end
 
 function BuildingHelper:HideBuilder(unit, location, building)
-    ApplyModifier(unit, "modifier_builder_hidden")
+    BuildingHelper:ApplyModifier(unit, "modifier_builder_hidden")
     unit.entrance_to_build = unit:GetAbsOrigin()
 
     local location_builder = Vector(location.x, location.y, location.z - 200)
@@ -2029,7 +2045,8 @@ function BuildingHelper:MeetsHeightCondition(location)
     end
 end
 
-function ApplyModifier( unit, modifierName )
+-- Applies a modifier from item_bh_modifiers
+function BuildingHelper:ApplyModifier( unit, modifierName )
     BuildingHelper.Applier:ApplyDataDrivenModifier(unit, unit, modifierName, {})
 end
 

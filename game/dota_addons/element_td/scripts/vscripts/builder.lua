@@ -110,12 +110,8 @@ function Build( event )
         -- Remove invulnerability on npc_dota_building baseclass
         unit:RemoveModifierByName("modifier_invulnerable")
 
-        -- Cast angles and various building-creature properties
+        -- Add building-creature properties
         AddAbility(unit, "ability_building")
-        if GetUnitKeyValue(building_name, "DisableTurning") then
-            ApplyModifier(unit, "modifier_disable_turning")
-
-        end
     end)
 
     -- A building finished construction
