@@ -2155,48 +2155,6 @@
 		}
 	}
 	//============================================================//
-	// Flooding Tower: Decrease Splash
-	//============================================================//
-	"flooding_tower_decrease_splash"
-	{
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel"						"4"
-		"AbilityTextureName"			"towers/flooding_tower_decrease_splash"
-		
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"Target"			"CASTER"
-				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-				"Function"			"TriggerEvent"
-				"Event"				"ChangeSplash"
-				"Amount"			"-1"
-			}
-		}
-	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"splash_aoe"			"0 100 150 200"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"splash_aoe_2"			"0 200 300 400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bat"					"0.31 0.66 1 1.5"	
-			}
-		}
-	}
-	//============================================================//
 	// Flooding Tower: Flood
 	//============================================================//
 	"flooding_tower_flood"
@@ -2222,22 +2180,6 @@
 						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
 						"Function"			"TriggerEvent"
 						"Event"				"OnAttackLanded"
-					}
-				}
-			}
-	
-			"modifier_flood"
-			{
-				"IsDebuff"		"1"
-				"Duration"		"%duration"
-				"ThinkInterval" "1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-						"Function"			"TriggerEvent"
-						"Event"				"OnFloodDot"
 					}
 				}
 			}

@@ -21,30 +21,29 @@ nil)
 
 function FloodingTower:OnAttackLanded(keys)
     local target = keys.target
-    local origin = target:GetAbsOrigin()
+    local position = target:GetAbsOrigin() + Vector(0, 0, 64)
 
-    local flooding = CreateUnitByName("tower_dummy", origin + Vector(0, 0, 64), false, nil, nil, self.tower:GetTeamNumber())    
-    flooding:SetAbsOrigin(origin + Vector(0, 0, 64))
-    flooding:AddNewModifier(flooding, nil, "modifier_out_of_world", {})
-    flooding:AddNewModifier(flodding, nil, "modifier_no_health_bar", {})
-
-    self.ability:ApplyDataDrivenModifier(self.tower, flooding, "modifier_flood", {})
-
-    Timers:CreateTimer(self.duration + 1, function()
-        UTIL_Remove(flooding)
-    end)
-end
-
-function FloodingTower:OnFloodDot(keys)
-
-    local target = keys.target
-
+    -- Initial attack aoe
     local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_siren/naga_siren_riptide.vpcf", PATTACH_ABSORIGIN, self.tower)
-    ParticleManager:SetParticleControl(particle, 0, target:GetOrigin())
+    ParticleManager:SetParticleControl(particle, 0, position)
     ParticleManager:SetParticleControl(particle, 1, Vector(self.fullAOE, 0, 1))
     ParticleManager:SetParticleControl(particle, 3, Vector(0, 0, 0))
+    DamageEntitiesInArea(position, self.fullAOE, self.tower, self.damage)
 
-    DamageEntitiesInArea(target:GetOrigin(), self.fullAOE, self.tower, self.damage)
+    -- Repeat the effect for the duration
+    Timers:CreateTimer(1, function()
+        if self.duration > 0 then
+            self.duration = self.duration - 1
+
+            local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_siren/naga_siren_riptide.vpcf", PATTACH_ABSORIGIN, self.tower)
+            ParticleManager:SetParticleControl(particle, 0, position)
+            ParticleManager:SetParticleControl(particle, 1, Vector(self.fullAOE, 0, 1))
+            ParticleManager:SetParticleControl(particle, 3, Vector(0, 0, 0))
+            DamageEntitiesInArea(position, self.fullAOE, self.tower, self.damage)
+
+            return 1
+        end
+    end)
 end
 
 function FloodingTower:OnCreated()

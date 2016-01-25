@@ -27,22 +27,6 @@
 				}
 			}
 		}
-
-		"modifier_flood"
-		{
-			"IsDebuff"		"1"
-			"Duration"		"%duration"
-			"ThinkInterval" "1"
-			"OnIntervalThink"
-			{
-				"RunScript"
-				{
-					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-					"Function"			"TriggerEvent"
-					"Event"				"OnFloodDot"
-				}
-			}
-		}
 	}
 
 	"AbilitySpecial"
