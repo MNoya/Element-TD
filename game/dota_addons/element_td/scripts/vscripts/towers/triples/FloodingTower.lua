@@ -31,9 +31,10 @@ function FloodingTower:OnAttackLanded(keys)
     DamageEntitiesInArea(position, self.fullAOE, self.tower, self.damage)
 
     -- Repeat the effect for the duration
+    local hits = self.duration
     Timers:CreateTimer(1, function()
-        if self.duration > 0 then
-            self.duration = self.duration - 1
+        if hits > 0 then
+            hits = hits - 1
 
             local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_siren/naga_siren_riptide.vpcf", PATTACH_ABSORIGIN, self.tower)
             ParticleManager:SetParticleControl(particle, 0, position)
