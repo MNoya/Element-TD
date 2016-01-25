@@ -56,7 +56,7 @@ function ErosionTower:OnAttackStart(keys)
     local creeps = GetCreepsInArea(target:GetOrigin(), self.fullAOE)
     for _, creep in pairs(creeps) do
         if creep:IsAlive() and creep:entindex() ~= target:entindex() then
-            self.tower:PerformAttack(creep, false, false, true, true)
+            self.tower:PerformAttack(creep, false, false, true, true, true)
         end
     end
 end

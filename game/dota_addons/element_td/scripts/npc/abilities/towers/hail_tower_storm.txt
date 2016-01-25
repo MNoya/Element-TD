@@ -52,7 +52,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"targets"				"2"
+			"targets"				"3"
 		}
 	}
 }
