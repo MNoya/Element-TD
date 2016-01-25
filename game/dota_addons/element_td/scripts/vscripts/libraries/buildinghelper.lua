@@ -712,18 +712,14 @@ function BuildingHelper:SetupBuildingTable( abilityName, builderHandle )
     local fMaxScale = buildingTable:GetVal("MaxScale", "float")
     if not fMaxScale then
         -- If no MaxScale is defined, check the Units "ModelScale" KeyValue. Otherwise just default to 1
-        local fModelScale = BuildingHelper.UnitKV[unitName].ModelScale
-        if fModelScale then
-            fMaxScale = fModelScale
-        else
-            fMaxScale = 1
-        end
+        fMaxScale = BuildingHelper.UnitKV[unitName].ModelScale or 1
     end
     buildingTable:SetVal("MaxScale", fMaxScale)
 
     local fModelRotation = buildingTable:GetVal("ModelRotation", "float")
     if not fModelRotation then
-        fModelRotation = 0
+        -- If no defined, check the Units KeyValue. Otherwise just default to 0
+        fModelRotation = BuildingHelper.UnitKV[unitName].ModelRotation or 0
     end
     buildingTable:SetVal("ModelRotation", fModelRotation)
 
@@ -916,7 +912,6 @@ function BuildingHelper:StartBuilding( builder )
     local model_offset = BuildingHelper.UnitKV[unitName]["ModelOffset"] or 0
     location.z = location.z + model_offset
     building:SetAbsOrigin(location)
-    building:SetControllableByPlayer(playerID, true)
     building.blockers = gridNavBlockers
     building.construction_size = construction_size
     building.buildingTable = buildingTable
