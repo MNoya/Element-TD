@@ -53,7 +53,8 @@
 	"AttackRange"		"900"
 	"AttackAcquisitionRange"		"900"
 	"AttackRate"		"1"
-	"ProjectileSpeed"		"900"
+	"ProjectileSpeed"		"2000"
+	"ProjectileModel"		"particles/units/heroes/hero_tinker/tinker_laser.vpcf"
 
     "Model"             "models/heroes/tinker/tinker.vmdl"
     "ModelScale"        "1.2"

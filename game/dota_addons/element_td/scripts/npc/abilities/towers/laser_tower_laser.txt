@@ -17,14 +17,14 @@
 		{
 			"Passive"	"1"
 			"IsHidden"	"1"
-			"OnAttackStart"
+			"OnAttackLanded"
 			{
 				"RunScript"
 				{
 					"Target"			"POINT"
 					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
 					"Function"			"TriggerEvent"
-					"Event"				"OnAttackStart"
+					"Event"				"OnAttackLanded"
 				}
 			}
 		}

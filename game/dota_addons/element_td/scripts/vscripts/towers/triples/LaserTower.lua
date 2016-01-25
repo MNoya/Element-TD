@@ -1,6 +1,8 @@
 -- Laser (Darkness + Earth + Light)
--- This is a single target tower that does very high damage. The more creeps there are in an AoE around the target, the less damage this tower does to that target. 
--- So damage dealt is Base - X*Number of additional creeps. There should be a cap on damage loss. This tower is ideal for creeps that are moving alone.
+-- Single target tower that does 6000/30000 damage with 900 range and 1 attack speed.
+-- For each additional creep within 500 range of the target, damage will linearly drop by 10% per extra creep. Damage loss is capped at 70%. Damage type is Light.
+-- Example is tower shoots creep. There are 3 creeps around the target. Tower does 4200 damage.
+
 LaserTower = createClass({
         tower = nil,
         towerClass = "",
@@ -15,8 +17,8 @@ LaserTower = createClass({
     },
 nil)
 
-function LaserTower:OnAttackStart(keys)
-    self.dummy:CastAbilityOnTarget(keys.target, self.dummyAbility, 1)
+function LaserTower:OnAttackLanded(keys)
+    -- Play lasser effect
     
     local damage = ApplyAbilityDamageFromModifiers(self.tower:GetBaseDamageMax(), self.tower)
     local creeps = GetCreepsInArea(keys.target:GetOrigin(), self.aoe)
@@ -29,39 +31,20 @@ function LaserTower:OnAttackStart(keys)
     end
 
     local reduction = creepCount * self.damage_reduction
-    if reduction > 0.7 then
-        reduction = 0.7
+    if reduction > self.damage_reduction_cap then
+        reduction = self.damage_reduction_cap
     end
-
 
     damage = damage * (1 - reduction)
     
-    Timers:CreateTimer(DoUniqueString("LaserDamage"), {
-        endTime = 0.2,
-        callback = function()
-            DamageEntity(keys.target, self.tower, damage)
-        end
-    })
+    DamageEntity(keys.target, self.tower, damage)
 end
 
 function LaserTower:OnCreated()
     self.ability = AddAbility(self.tower, "laser_tower_laser", self.tower:GetLevel())
-    
-    local towerOrigin = self.tower:GetOrigin()
-    local dummyOrigin = self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_attack1"))
-
-    self.dummy = CreateUnitByName("tower_dummy", dummyOrigin, false, nil, nil, self.tower:GetTeam())
-    self.dummy:SetAbsOrigin(dummyOrigin)
-    self.dummy:SetOwner(self.tower:GetOwner())
-    self.dummy:AddNewModifier(nil, nil, "modifier_invulnerable", {})
-    self.dummy.dummyParent = self.tower
-    
-    -- hopefully this works as intended
-    self.dummy:AddNewModifier(self.dummy, nil, "modifier_out_of_world", {})
-    
-    self.dummyAbility = AddAbility(self.dummy, "laser_tower_laser_effect")
     self.aoe = GetAbilitySpecialValue("laser_tower_laser", "aoe")
     self.damage_reduction = GetAbilitySpecialValue("laser_tower_laser", "damage_reduction") / 100
+    self.damage_reduction_cap = GetAbilitySpecialValue("laser_tower_laser", "damage_reduction_cap")
 end
 
 function LaserTower:OnAttackLanded(keys) end
