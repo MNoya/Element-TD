@@ -21,7 +21,7 @@ function VaporTower:VaporWaveAttack()
     local initial_damage = ApplyAbilityDamageFromModifiers(self.initialDamage[self.level], self.tower)    
     local aftershock_damage = ApplyAbilityDamageFromModifiers(self.aftershockDamage[self.level], self.tower)    
 
-    if #creeps > 0 then
+    if self.tower:GetHealthPercent() == 100 and #creeps > 0 then
         self.tower:StartGesture(ACT_DOTA_CAST_ABILITY_2) --crush
         for _,creep in pairs(creeps) do
             local particle = ParticleManager:CreateParticle("particles/custom/towers/vapor/tako.vpcf", PATTACH_ABSORIGIN, creep)     
