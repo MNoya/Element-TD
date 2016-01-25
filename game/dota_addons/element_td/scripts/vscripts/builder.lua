@@ -1,42 +1,16 @@
-------------------------------------------
---             Build Scripts
-------------------------------------------
-
 -- A build ability is used (not yet confirmed)
 function Build( event )
     local caster = event.caster
     local ability = event.ability
     local ability_name = ability:GetAbilityName()
-    local AbilityKV = BuildingHelper.AbilityKV
-    local UnitKV = BuildingHelper.UnitKV
-
-    if caster:IsIdle() then
-        caster:Interrupt()
-    end
-
-    -- Handle the name for item-ability build
-    local building_name
-    if ability:IsItem() then
-        building_name = GetItemKeyValue(ability_name, "UnitName")
-    else
-        building_name = GetAbilityKeyValue(ability_name, "UnitName")
-    end
-
-    local construction_size = BuildingHelper:GetConstructionSize(building_name)
-    local construction_radius = construction_size * 64 - 32
-
-    -- Checks if there is enough custom resources to start the building, else stop.
-    local unit_table = UnitKV[building_name]
+    local building_name = ability:GetAbilityKeyValues()['UnitName']
     local gold_cost = ability:GetGoldCost(1)
-
-    local hero = caster:GetPlayerOwner():GetAssignedHero()
+    local hero = caster:IsRealHero() and caster or caster:GetOwner()
     local playerID = hero:GetPlayerID()
-    local player = PlayerResource:GetPlayer(playerID)    
-    local teamNumber = hero:GetTeamNumber()
 
     -- If the ability has an AbilityGoldCost, it's impossible to not have enough gold the first time it's cast
     -- Always refund the gold here, as the building hasn't been placed yet
-    hero:ModifyGold(gold_cost, true, 0)
+    hero:ModifyGold(gold_cost, false, 0)
 
     -- Makes a building dummy and starts panorama ghosting
     BuildingHelper:AddBuilding(event)
@@ -44,14 +18,15 @@ function Build( event )
     -- Additional checks to confirm a valid building position can be performed here
     event:OnPreConstruction(function(vPos)
 
-        -- TD height
+        -- Check for minimum height if defined
         if not BuildingHelper:MeetsHeightCondition(vPos) then
-            SendErrorMessage(caster:GetPlayerOwnerID(), "#error_invalid_build_position")
+            SendErrorMessage(playerID, "#error_invalid_build_position")
             return false
         end
 
 		-- If not enough resources to queue, stop
 		if PlayerResource:GetGold(playerID) < gold_cost then
+            SendErrorMessage(playerID, "#error_not_enough_gold")
             return false
         end
 
@@ -60,13 +35,11 @@ function Build( event )
 
     -- Position for a building was confirmed and valid
     event:OnBuildingPosChosen(function(vPos)
-        
         -- Spend resources
         hero:ModifyGold(-gold_cost, true, 0)
 
         -- Play a sound
         Sounds:EmitSoundOnClient(playerID, "DOTA_Item.ObserverWard.Activate")
-
     end)
 
     -- The construction failed and was never confirmed due to the gridnav being blocked in the attempted area

@@ -2068,7 +2068,7 @@ end
 -- Builders are stored in a nettable in addition to the builder label
 function IsBuilder( unit )
     local table = CustomNetTables:GetTableValue("builders", tostring(unit:GetEntityIndex()))
-    return unit:GetUnitLabel() == "builder" or (table and (table["IsBuilder"] == "1")) or false
+    return unit:GetUnitLabel() == "builder" or (table and (table["IsBuilder"] == 1)) or false
 end
 
 function IsCustomBuilding( unit )
