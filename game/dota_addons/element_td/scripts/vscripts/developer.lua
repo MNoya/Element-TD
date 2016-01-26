@@ -49,7 +49,7 @@ function ElementTD:GreedIsGood(playerID, value)
     ModifyLumber(playerID, tonumber(value))
     UpdatePlayerSpells(playerID)
     
-    GameRules:SendCustomMessage("Cheat enabled!", 0, 0)
+    GameRules:SendCustomMessage("#etd_cheats_enabled", 0, 0)
 end
 
 function ElementTD:GiveLumber(playerID, value)
@@ -69,7 +69,7 @@ end
 function ElementTD:WhosYourDaddy()
     GameRules.WhosYourDaddy = not GameRules.WhosYourDaddy
     
-    local message = GameRules.WhosYourDaddy and "Cheat enabled!" or "Cheat disabled!"
+    local message = GameRules.WhosYourDaddy and "#etd_cheats_enabled" or "#etd_cheats_disabled"
     GameRules:SendCustomMessage(message, 0, 0)
 end
 
@@ -151,7 +151,7 @@ function ElementTD:Synergy(playerID)
     UpdatePlayerSpells(playerID)
     UpdateSummonerSpells(playerID)
 
-    GameRules:SendCustomMessage("Cheat enabled!", 0, 0)
+    GameRules:SendCustomMessage("#etd_cheats_enabled", 0, 0)
 end
 
 function ElementTD:Dev(playerID)
@@ -206,9 +206,9 @@ function ElementTD:EnableRandom(playerID)
     if CanPlayerEnableRandom(playerID) then
         playerData.elementalRandom = true
         print("Elemental Random set to "..tostring(playerData.elementalRandom).." for player "..playerID)
-        SendEssenceMessage(playerID, "Random elemental picker has been turned on!")
+        SendEssenceMessage(playerID, "#etd_random_toggle_enable")
     else
-        SendErrorMessage(playerID, "Already chosen an element, can't enable -random now!")
+        SendErrorMessage(playerID, "#etd_random_toggle_error")
     end
 end
 

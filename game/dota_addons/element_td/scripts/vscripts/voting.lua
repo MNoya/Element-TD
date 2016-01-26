@@ -24,7 +24,7 @@ function StartVoteTimer()
 
 	CustomGameEventManager:Send_ServerToAllClients("etd_populate_vote_table", gameSettingsKV )
 
-	GameRules:SendCustomMessage("<font color='#70EA72'>Voting has begun!</font>", 0, 0)
+	GameRules:SendCustomMessage("#etd_voting", 0, 0)
 
 	local loops = 60
 	Timers:CreateTimer("VoteThinker", {

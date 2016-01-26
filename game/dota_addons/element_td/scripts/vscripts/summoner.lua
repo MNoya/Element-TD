@@ -31,7 +31,7 @@ function ModifyLumber(playerID, amount)
     if amount > 0 then
         PopupLumber(ElementTD.vPlayerIDToHero[playerID], amount)
         if GameSettings.elementsOrderName == "AllPick" then
-            SendLumberMessage(playerID, "You have been given +"..amount.." Lumber!")
+            SendLumberMessage(playerID, "#etd_lumber_add")
         end
     end
 
@@ -62,7 +62,7 @@ function ModifyPureEssence(playerID, amount)
     UpdatePlayerSpells(playerID)
     if amount > 0 then
         PopupEssence(ElementTD.vPlayerIDToHero[playerID], amount)
-        SendEssenceMessage(playerID, "You have been given +"..amount.." Pure Essence!")
+        SendEssenceMessage(playerID, "#etd_essence_add")
     end
     CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_pure_essence", { pureEssence = GetPlayerData(playerID).pureEssence } )
     UpdateScoreboard(playerID)
@@ -195,10 +195,10 @@ function BuyPureEssence( keys )
 			Sounds:EmitSoundOnClient(playerID, "General.Buy")
 		else
             Log:info("Player " .. playerID .. " does not meet the pure essence purchase requirements.")
-            ShowWarnMessage(playerID, "You need to have at least one of every element or lvl 3 of one element before purchase.")
+            ShowWarnMessage(playerID, "#etd_essence_buy_warning")
 		end
 	else
-        ShowWarnMessage(playerID, "Need more lumber.")
+        ShowWarnMessage(playerID, "#etd_need_more_lumber")
     end
 end
 

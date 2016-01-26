@@ -218,11 +218,11 @@ function SpawnWaveForPlayer(playerID, wave)
                 end
 
                 if element == "pure" then
-                    SendEssenceMessage(playerID, "A pure essence has been randomed for you!")
+                    SendEssenceMessage(playerID, "#etd_random_essence")
                     ModifyPureEssence(playerID, 1)
                     playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
                 else
-                    SendEssenceMessage(playerID, "An elemental has been randomed for you!")
+                    SendEssenceMessage(playerID, "#etd_random_elemental")
                     SummonElemental({caster = playerData.summoner, Elemental = element .. "_elemental"})
                 end
             end

@@ -140,7 +140,7 @@ function ElementTD:OnGameStateChange(keys)
         self.gameStartTriggers = self.gameStartTriggers + 1
         if self.gameStartTriggers < 2 then return end
 
-        GameRules:SendCustomMessage("Welcome to <font color='#70EA72'>Element Tower Defense</font>!", 0, 0)
+        GameRules:SendCustomMessage("#etd_welcome_message", 0, 0)
         
         self.gameStarted = true
 
@@ -296,7 +296,7 @@ function ElementTD:CheckGameEnd()
     end
     if endGame then
         Log:info("Game end condition reached. Ending game in 5 seconds.")
-        GameRules:SendCustomMessage("Thank you for playing <font color='#70EA72'>Element Tower Defense</font>!", 0, 0)
+        GameRules:SendCustomMessage("#etd_end_message", 0, 0)
         Timers:CreateTimer(5, function()
             GameRules:SetGameWinner( teamWinner )
             GameRules:SetSafeToLeave( true )
