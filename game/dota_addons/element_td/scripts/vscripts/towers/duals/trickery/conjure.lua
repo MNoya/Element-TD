@@ -29,6 +29,13 @@ function trickery_tower_conjure:OnSpellStart()
     clone.isClone = true
     clone.ability = self
 
+    -- New pedestal if one wasn't created already
+    if not clone.prop then
+        local basicName = clone.damageType.."_tower"
+        local pedestalName = GetUnitKeyValue(basicName, "PedestalModel")
+        local prop = BuildingHelper:CreatePedestalForBuilding(clone, basicName, GetGroundPosition(clone:GetAbsOrigin(), nil), pedestalName)
+    end
+
     --color
     clone:SetRenderColor(0, 148, 255)
     local children = clone:GetChildren()
