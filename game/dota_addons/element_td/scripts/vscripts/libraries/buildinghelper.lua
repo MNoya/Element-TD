@@ -779,6 +779,8 @@ function BuildingHelper:UpgradeBuilding(building, newName)
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     local oldBuildingName = building:GetUnitName()
     local position = building:GetAbsOrigin()
+    local model_offset = BuildingHelper.UnitKV[newName]["ModelOffset"] or 0
+    position.z = position.z + model_offset
     local newBuilding = CreateUnitByName(newName, position, false, nil, nil, building:GetTeamNumber()) 
     newBuilding:SetOwner(hero)
     newBuilding:SetControllableByPlayer(playerID, true)

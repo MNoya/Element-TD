@@ -2,8 +2,10 @@
 {
 	// Visual
     //-----------------------------
-	"Model"						"models/props_structures/rock_statue001.vmdl"
+	"Model"						"models/well_tower2.vmdl"
 	"ModelScale"				"0.9"
+	"ModelRotation"				"180"
+	"ModelOffset"				"15"
 	"ProjectileModel"			"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 	"ProjectileSpeed"			"800"
 	"SoundSet"					"Tower.Water"

@@ -11735,12 +11735,10 @@
 	}
 	"well_tower"
 	{
-		
-		
 		// Visual
 	    //-----------------------------
-		"Model"					"models/props_structures/radiant_statue001.vmdl"
-		"ModelScale"			"0.8"
+		"Model"					"models/well_tower1.vmdl"
+		"ModelScale"			"0.75"
 		"ProjectileModel"		"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 		"ProjectileSpeed"		"800"
 		"SoundSet"				"Tower.Water"
@@ -11831,8 +11829,10 @@
 	{
 		// Visual
 	    //-----------------------------
-		"Model"						"models/props_structures/rock_statue001.vmdl"
+		"Model"						"models/well_tower2.vmdl"
 		"ModelScale"				"0.9"
+		"ModelRotation"				"180"
+		"ModelOffset"				"15"
 		"ProjectileModel"			"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 		"ProjectileSpeed"			"800"
 		"SoundSet"					"Tower.Water"
@@ -11920,8 +11920,9 @@
 	{
 		// Visual
 	    //-----------------------------
-		"Model"						"models/props_structures/radiant_statue002.vmdl"
-		"ModelScale"				"1.0"
+		"Model"						"models/well_tower3.vmdl"
+		"ModelScale"				"0.8"
+		"ModelRotation"				"0"
 		"ProjectileModel"			"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 		"ProjectileSpeed"			"800"
 		"SoundSet"					"Tower.Water"
