@@ -212,7 +212,7 @@ function ElementTD:EndGameForPlayer( playerID )
         playerData.elementalUnit:ForceKill(false)
     end
     for i,v in pairs(playerData.towers) do
-        BuildingHelper:RemoveBuilding(EntIndexToHScript(i), true)
+        EntIndexToHScript(i):ForceKill(false)
     end
     for j,k in pairs(playerData.clones) do
         RemoveClone(EntIndexToHScript(j))

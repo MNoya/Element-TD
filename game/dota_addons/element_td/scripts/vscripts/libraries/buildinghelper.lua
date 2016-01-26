@@ -1,4 +1,4 @@
-BH_VERSION = "1.0.0"
+BH_VERSION = "1.0.1"
 
 if not BuildingHelper then
     BuildingHelper = class({})
@@ -98,7 +98,7 @@ function BuildingHelper:LoadSettings()
     end
 end
 
-function BuildingHelper:ParseKV( t, result )
+function BuildingHelper:ParseKV(t, result)
     for name,info in pairs(t) do
         if type(info) == "table" then
             local isBuilding = info["Building"] or info["ConstructionSize"]
@@ -310,7 +310,7 @@ function BuildingHelper:InitGNV()
     BuildingHelper.minBoundY = boundY1
 end
 
-function BuildingHelper:SendGNV( args )
+function BuildingHelper:SendGNV(args)
     local playerID = args.PlayerID
     local player = PlayerResource:GetPlayer(playerID)
     BuildingHelper:print("Sending GNV to player "..playerID)
@@ -321,7 +321,7 @@ end
     BuildCommand
     * Detects a Left Click with a builder through Panorama
 ]]--
-function BuildingHelper:BuildCommand( args )
+function BuildingHelper:BuildCommand(args)
     local playerID = args['PlayerID']
     local x = args['X']
     local y = args['Y']
@@ -342,7 +342,7 @@ end
     CancelCommand
     * Detects a Right Click/Tab with a builder through Panorama
 ]]--
-function BuildingHelper:CancelCommand( args )
+function BuildingHelper:CancelCommand(args)
     local playerID = args['PlayerID']
     local playerTable = BuildingHelper:GetPlayerTable(playerID)
     playerTable.activeBuilding = nil
@@ -444,7 +444,7 @@ function BuildingHelper:InitializeBuilder(builder)
     CustomNetTables:SetTableValue("builders", tostring(builder:GetEntityIndex()), { IsBuilder = true })
 end
 
-function BuildingHelper:RemoveBuilder( builder )
+function BuildingHelper:RemoveBuilder(builder)
     -- Store the builder entity indexes on a net table
     CustomNetTables:SetTableValue("builders", tostring(builder:GetEntityIndex()), { IsBuilder = false })
 end
@@ -550,35 +550,35 @@ end
 function BuildingHelper:SetCallbacks(keys)
     local callbacks = {}
 
-    function keys:OnPreConstruction( callback )
+    function keys:OnPreConstruction(callback)
         callbacks.onPreConstruction = callback -- Return false to abort the build
     end
 
-     function keys:OnBuildingPosChosen( callback )
+     function keys:OnBuildingPosChosen(callback)
         callbacks.onBuildingPosChosen = callback -- Spend resources here
     end
 
-    function keys:OnConstructionFailed( callback ) -- Called if there is a mechanical issue with the building (cant be placed)
+    function keys:OnConstructionFailed(callback) -- Called if there is a mechanical issue with the building (cant be placed)
         callbacks.onConstructionFailed = callback
     end
 
-    function keys:OnConstructionCancelled( callback ) -- Called when player right clicks to cancel a queue
+    function keys:OnConstructionCancelled(callback) -- Called when player right clicks to cancel a queue
         callbacks.onConstructionCancelled = callback
     end
 
-    function keys:OnConstructionStarted( callback )
+    function keys:OnConstructionStarted(callback)
         callbacks.onConstructionStarted = callback
     end
 
-    function keys:OnConstructionCompleted( callback )
+    function keys:OnConstructionCompleted(callback)
         callbacks.onConstructionCompleted = callback
     end
 
-    function keys:OnBelowHalfHealth( callback )
+    function keys:OnBelowHalfHealth(callback)
         callbacks.onBelowHalfHealth = callback
     end
 
-    function keys:OnAboveHalfHealth( callback )
+    function keys:OnAboveHalfHealth(callback)
         callbacks.onAboveHalfHealth = callback
     end
 
@@ -589,11 +589,11 @@ end
     SetupBuildingTable
     * Setup building table, returns a constructed table.
 ]]--
-function BuildingHelper:SetupBuildingTable( abilityName, builderHandle )
+function BuildingHelper:SetupBuildingTable(abilityName, builderHandle)
 
     local buildingTable = BuildingHelper.KV[abilityName]
 
-    function buildingTable:GetVal( key, expectedType )
+    function buildingTable:GetVal(key, expectedType)
         local val = buildingTable[key]
 
         -- Handle missing values.
@@ -619,7 +619,7 @@ function BuildingHelper:SetupBuildingTable( abilityName, builderHandle )
         return sVal
     end
 
-    function buildingTable:SetVal( key, value )
+    function buildingTable:SetVal(key, value)
         buildingTable[key] = value
     end
 
@@ -802,9 +802,9 @@ function BuildingHelper:UpgradeBuilding(building, newName)
         BuildingHelper:CreatePedestalForBuilding(newBuilding, newName, GetGroundPosition(position, nil), pedestalName)
     end    
 
-    -- Kill the old building without visual effects
-    building.upgraded = true
-    building:AddEffects(EF_NODRAW)
+    -- Kill the old building
+    building:AddEffects(EF_NODRAW) --Hide it, so that it's still accessible after this script
+    building.upgraded = true --Skips visual effects
     building:ForceKill(true) --This will call RemoveBuilding
 
     -- Block the grid
@@ -821,17 +821,13 @@ end
 
 --[[
     RemoveBuilding
-    * Removes a building, removing it from the gridnav, with an optional parameter to kill it
+    * Removes a building, removing it from the gridnav, with an optional parameter to skip particle effects
 ]]--
-function BuildingHelper:RemoveBuilding( building, bForcedKill )
+function BuildingHelper:RemoveBuilding(building, bSkipEffects)
     BuildingHelper:print("Removing Building: "..building:GetUnitName())
 
-    if bForcedKill then
-        building:ForceKill(bForcedKill)
-    end
-
-    -- Don't show the destruction effects when it was killed to due UpgradeBuilding
-    if not building.upgraded then
+    -- Don't show the destruction effects when specified or killed to due UpgradeBuilding
+    if not bSkipEffects or building.upgraded == true then
         local particleName = BuildingHelper.UnitKV[building:GetUnitName()]["DestructionEffect"]
         if particleName then
             local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, building)
@@ -863,7 +859,7 @@ end
       StartBuilding
       * Creates the building and starts the construction process
 ]]--
-function BuildingHelper:StartBuilding( builder )
+function BuildingHelper:StartBuilding(builder)
     local playerID = builder:GetMainControllingPlayer()
     local work = builder.work
     local callbacks = work.callbacks
@@ -971,7 +967,7 @@ function BuildingHelper:StartBuilding( builder )
     -- Max and Initial Health factor
     local fMaxHealth = building:GetMaxHealth()
     local fInitialHealthFactor = BuildingHelper.Settings["INITIAL_HEALTH_FACTOR"]
-    local nInitialHealth = math.floor(fInitialHealthFactor * ( fMaxHealth ))
+    local nInitialHealth = math.floor(fInitialHealthFactor * (fMaxHealth))
     local fUpdateHealthInterval = buildTime / math.floor(fMaxHealth-nInitialHealth) -- health to add every tick until build time is completed.
     building:SetHealth(nInitialHealth)
     building.bUpdatingHealth = true
@@ -1141,7 +1137,7 @@ function BuildingHelper:StartBuilding( builder )
     else
 
         -- The building will have to be assisted through a repair ability
-        local repair_ability = BuildingHelper:GetRepairAbility( builder )
+        local repair_ability = BuildingHelper:GetRepairAbility(builder)
         if repair_ability then
             builder:CastAbilityOnTarget(building, repair_ability, playerID)
         end
@@ -1311,7 +1307,7 @@ function BuildingHelper:FreeGridSquares(construction_size, location)
     BuildingHelper:AddGridType(construction_size, location, "BUILDABLE")
 end
 
-function BuildingHelper:NewGridType( grid_type )
+function BuildingHelper:NewGridType(grid_type)
     grid_type = string.upper(grid_type)
     BuildingHelper:print("Adding new Grid Type: ".. grid_type.." ["..BuildingHelper.NextGridValue.."]")
     BuildingHelper.GridTypes[grid_type] = BuildingHelper.NextGridValue
@@ -1324,7 +1320,7 @@ function BuildingHelper:AddGridType(size, location, grid_type, shape)
     -- If it doesn't exist, add it
     grid_type = string.upper(grid_type)
     if not BuildingHelper.GridTypes[grid_type] then
-        BuildingHelper:NewGridType( grid_type )
+        BuildingHelper:NewGridType(grid_type)
     end
 
     if shape == "radius" then
@@ -1487,7 +1483,7 @@ function BuildingHelper:GetCellGridTypes(x,y)
 end
 
 -- Checks if the cell has a certain grid type by name
-function BuildingHelper:CellHasGridType(x,y,grid_type)
+function BuildingHelper:CellHasGridType(x, y, grid_type)
     if BuildingHelper.GridTypes[grid_type] then
         return bit.band(BuildingHelper.Grid[y][x], BuildingHelper.GridTypes[grid_type]) ~= 0
     end
@@ -1541,12 +1537,12 @@ function BuildingHelper:ValidPosition(size, location, unit, callbacks)
 end
 
 -- If not all squares are buildable, the area is blocked
-function BuildingHelper:IsAreaBlocked( size, location )
-    return BuildingHelper:AreaMeetsCriteria( size, location, "BLOCKED", "one" )
+function BuildingHelper:IsAreaBlocked(size, location)
+    return BuildingHelper:AreaMeetsCriteria(size, location, "BLOCKED", "one")
 end
 
 -- Checks that all squares meet each of the passed grid_type criteria (can be multiple, split by spaces)
-function BuildingHelper:AreaMeetsCriteria( size, location, grid_type, option )
+function BuildingHelper:AreaMeetsCriteria(size, location, grid_type, option)
     local originX = GridNav:WorldToGridPosX(location.x)
     local originY = GridNav:WorldToGridPosY(location.y)
     local halfSize = math.floor(size/2)
@@ -1609,7 +1605,7 @@ end
     * bQueued will be true if the command was done with shift pressed
     * If bQueued is false, the queue is cleared and this building is put on top
 ]]--
-function BuildingHelper:AddToQueue( builder, location, bQueued )
+function BuildingHelper:AddToQueue(builder, location, bQueued)
     local playerID = builder:GetMainControllingPlayer()
     local player = PlayerResource:GetPlayer(playerID)
     local playerTable = BuildingHelper:GetPlayerTable(playerID)
@@ -1828,7 +1824,7 @@ end
     StopGhost
     * Stop panorama ghost
 ]]--
-function BuildingHelper:StopGhost( builder )
+function BuildingHelper:StopGhost(builder)
     local player = builder:GetPlayerOwner()
     
     CustomGameEventManager:Send_ServerToPlayer(player, "building_helper_end", {})
@@ -1848,7 +1844,7 @@ function BuildingHelper:PrintQueue(builder)
     BuildingHelper:print("------------------------------------")
 end
 
-function BuildingHelper:SnapToGrid( size, location )
+function BuildingHelper:SnapToGrid(size, location)
     if size % 2 ~= 0 then
         location.x = BuildingHelper:SnapToGrid32(location.x)
         location.y = BuildingHelper:SnapToGrid32(location.y)
@@ -1866,13 +1862,13 @@ function BuildingHelper:SnapToGrid32(coord)
     return 32+64*math.floor(coord/64)
 end
 
-function BuildingHelper:print( ... )
+function BuildingHelper:print(...)
     if BuildingHelper.Settings["TESTING"] then
         print('[BH] '.. ...)
     end
 end
 
-function BuildingHelper:GetPlayerTable( playerID )
+function BuildingHelper:GetPlayerTable(playerID)
     if not BuildingHelper.Players[playerID] then
         BuildingHelper.Players[playerID] = {}
         BuildingHelper.Players[playerID].SelectedEntities = {}
@@ -1882,7 +1878,7 @@ function BuildingHelper:GetPlayerTable( playerID )
 end
 
 -- Creates an out of world dummy at map origin and stores it, reducing load from creating units
-function BuildingHelper:GetOrCreateDummy( unitName )
+function BuildingHelper:GetOrCreateDummy(unitName)
     if BuildingHelper.Dummies[unitName] then
         return BuildingHelper.Dummies[unitName]
     else
@@ -1895,7 +1891,7 @@ function BuildingHelper:GetOrCreateDummy( unitName )
     end
 end
 
-function BuildingHelper:GetOrCreateProp( propName )
+function BuildingHelper:GetOrCreateProp(propName)
     if BuildingHelper.Dummies[propName] then
         return BuildingHelper.Dummies[propName]
     else
@@ -1918,7 +1914,7 @@ function BuildingHelper:CreatePedestalForBuilding(entity, buildingName, location
 end
 
 -- Retrieves the handle of the ability marked as "RepairAbility" on the unit key values
-function BuildingHelper:GetRepairAbility( unit )
+function BuildingHelper:GetRepairAbility(unit)
     local unitName = unit:GetUnitName()
     local abilityName = BuildingHelper.UnitKV[unitName]["RepairAbility"]
     if not abilityName then
@@ -1965,7 +1961,7 @@ function BuildingHelper:ShowBuilder(unit)
 end
 
 -- Find the closest position of construction_size, within maxDistance
-function BuildingHelper:FindClosestEmptyPositionNearby( location, construction_size, maxDistance )
+function BuildingHelper:FindClosestEmptyPositionNearby(location, construction_size, maxDistance)
     local originX = GridNav:WorldToGridPosX(location.x)
     local originY = GridNav:WorldToGridPosY(location.y)
 
@@ -2041,12 +2037,12 @@ function BuildingHelper:MeetsHeightCondition(location)
 end
 
 -- Applies a modifier from item_bh_modifiers
-function BuildingHelper:ApplyModifier( unit, modifierName )
+function BuildingHelper:ApplyModifier(unit, modifierName)
     BuildingHelper.Applier:ApplyDataDrivenModifier(unit, unit, modifierName, {})
 end
 
 -- A BuildingHelper ability is identified by the "Building" key.
-function IsBuildingAbility( ability )
+function IsBuildingAbility(ability)
     if not IsValidEntity(ability) then
         return
     end
@@ -2061,16 +2057,16 @@ function IsBuildingAbility( ability )
 end
 
 -- Builders are stored in a nettable in addition to the builder label
-function IsBuilder( unit )
+function IsBuilder(unit)
     local table = CustomNetTables:GetTableValue("builders", tostring(unit:GetEntityIndex()))
     return unit:GetUnitLabel() == "builder" or (table and (table["IsBuilder"] == 1)) or false
 end
 
-function IsCustomBuilding( unit )
+function IsCustomBuilding(unit)
     return unit:HasAbility("ability_building") or unit:HasAbility("ability_tower")
 end
 
-function PrintGridCoords( pos )
+function PrintGridCoords(pos)
     print('('..string.format("%.1f", pos.x)..','..string.format("%.1f", pos.y)..') = ['.. GridNav:WorldToGridPosX(pos.x)..','..GridNav:WorldToGridPosY(pos.y)..']')
 end
 
@@ -2078,7 +2074,7 @@ function VectorString(v)
     return '[' .. math.floor(v.x) .. ', ' .. math.floor(v.y) .. ', ' .. math.floor(v.z) .. ']'
 end
 
-function StringStartsWith( fullstring, substring )
+function StringStartsWith(fullstring, substring)
     local strlen = string.len(substring)
     local first_characters = string.sub(fullstring, 1 , strlen)
     return (first_characters == substring)
@@ -2104,7 +2100,7 @@ function split(inputstr, sep)
     return t
 end
 
-function DrawGridSquare( x, y, color )
+function DrawGridSquare(x, y, color)
     local pos = Vector(GridNav:GridPosToWorldCenterX(x), GridNav:GridPosToWorldCenterY(y), 0)
     BuildingHelper:SnapToGrid(1, pos)
     pos = GetGroundPosition(pos, nil)
