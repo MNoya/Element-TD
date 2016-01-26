@@ -4764,6 +4764,7 @@
 	    "StatusHealth"        "75"    // Base health"
 	    "Element"        "fire"
 	    "Ability1"        "fire_armor"
+	    "Ability10" "lina_particles"
 	}
 	
 	"fire_elemental2"
@@ -4815,6 +4816,7 @@
 	    "StatusHealth"        "75"    // Base health"
 	    "Element"        "fire"
 	    "Ability1"        "fire_armor"
+	    "Ability10" "lina_particles"
 	}
 	
 	
@@ -4867,6 +4869,7 @@
 	    "StatusHealth"        "75"    // Base health"
 	    "Element"        "fire"
 	    "Ability1"        "fire_armor"
+	    "Ability10" "lina_particles"
 	}
 	"light_elemental1"
 	{

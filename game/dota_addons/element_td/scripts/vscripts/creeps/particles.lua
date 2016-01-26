@@ -20,6 +20,25 @@ function WindSpirit( event )
     unit:AddNoDraw()
 end
 
+function LinaDeath( event )
+    local unit = event.unit
+    
+    local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_lina/lina_death.vpcf", PATTACH_CUSTOMORIGIN, unit)
+    ParticleManager:SetParticleControlEnt(particle, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetAbsOrigin(), true)
+    ParticleManager:SetParticleControlEnt(particle, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetAbsOrigin(), true)
+    unit:AddNoDraw()
+end
+
+function TinyDeath( event )
+    local unit = event.unit
+    local level = event.Level
+
+    local particleName = "particles/units/heroes/hero_tiny/tiny0"..level.."_death.vpcf"
+    local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, unit)
+    ParticleManager:SetParticleControlEnt(particle, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetAbsOrigin(), true)
+    unit:AddNoDraw()
+end
+
 function DeathProphet( event )
     local unit = event.unit
 

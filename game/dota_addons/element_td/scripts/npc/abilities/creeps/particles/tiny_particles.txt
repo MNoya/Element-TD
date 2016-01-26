@@ -20,6 +20,15 @@
                     "Level"         "2"
                 }
             }
+            "OnDeath"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "creeps/particles.lua"
+                    "Function"      "TinyDeath"
+                    "Level"         "2"
+                }
+            }
         }
     }
 }
@@ -46,6 +55,15 @@
                     "Level"         "3"
                 }
             }
+            "OnDeath"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "creeps/particles.lua"
+                    "Function"      "TinyDeath"
+                    "Level"         "3"
+                }
+            }
         }
     }
 }
@@ -69,6 +87,15 @@
                 {
                     "ScriptFile"    "creeps/tiny_model.lua"
                     "Function"      "GrowModel"
+                    "Level"         "4"
+                }
+            }
+            "OnDeath"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "creeps/particles.lua"
+                    "Function"      "TinyDeath"
                     "Level"         "4"
                 }
             }

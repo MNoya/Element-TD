@@ -5,7 +5,7 @@ function modifier_transparency:DeclareFunctions()
 end
 
 function modifier_transparency:GetModifierInvisibilityLevel(params)
-    return 100
+    return 1.0
 end
 
 function modifier_transparency:IsHidden()

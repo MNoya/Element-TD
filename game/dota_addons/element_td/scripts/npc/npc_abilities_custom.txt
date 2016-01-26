@@ -826,6 +826,140 @@
 	        }
 	    }
 	}
+	"lina_particles"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	
+	    "precache"
+	    {
+	        "particle"  "particles/units/heroes/hero_lina/lina_death.vpcf"
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_lina"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	
+	            "OnDeath"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "creeps/particles.lua"
+	                    "Function"      "LinaDeath"
+	                }
+	            }
+	        }
+	    }
+	}
+	"tiny_model02"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+	    "MaxLevel"                      "1"
+	
+	    "Modifiers"
+	    {
+	        "modifier_tiny_model"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "creeps/tiny_model.lua"
+	                    "Function"      "GrowModel"
+	                    "Level"         "2"
+	                }
+	            }
+	            "OnDeath"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "creeps/particles.lua"
+	                    "Function"      "TinyDeath"
+	                    "Level"         "2"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"tiny_model03"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+	    "MaxLevel"                      "1"
+	
+	    "Modifiers"
+	    {
+	        "modifier_tiny_model"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "creeps/tiny_model.lua"
+	                    "Function"      "GrowModel"
+	                    "Level"         "3"
+	                }
+	            }
+	            "OnDeath"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "creeps/particles.lua"
+	                    "Function"      "TinyDeath"
+	                    "Level"         "3"
+	                }
+	            }
+	        }
+	    }
+	}
+	
+	"tiny_model04"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
+	    "MaxLevel"                      "1"
+	
+	    "Modifiers"
+	    {
+	        "modifier_tiny_model"
+	        {
+	            "Passive"           "1"
+	            "IsHidden"          "1"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "creeps/tiny_model.lua"
+	                    "Function"      "GrowModel"
+	                    "Level"         "4"
+	                }
+	            }
+	            "OnDeath"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "creeps/particles.lua"
+	                    "Function"      "TinyDeath"
+	                    "Level"         "4"
+	                }
+	            }
+	        }
+	    }
+	}
 	"windspirit_particles"
 	{
 	    "BaseClass"                     "ability_datadriven"
@@ -3657,83 +3791,6 @@
 				"reset_time"		"1"
 			}
 		}
-	}
-	"tiny_model02"
-	{
-	    "BaseClass"                     "ability_datadriven"
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-	    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
-	    "MaxLevel"                      "1"
-	
-	    "Modifiers"
-	    {
-	        "modifier_tiny_model"
-	        {
-	            "Passive"           "1"
-	            "IsHidden"          "1"
-	            "OnCreated"
-	            {
-	                "RunScript"
-	                {
-	                    "ScriptFile"    "creeps/tiny_model.lua"
-	                    "Function"      "GrowModel"
-	                    "Level"         "2"
-	                }
-	            }
-	        }
-	    }
-	}
-	
-	"tiny_model03"
-	{
-	    "BaseClass"                     "ability_datadriven"
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-	    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
-	    "MaxLevel"                      "1"
-	
-	    "Modifiers"
-	    {
-	        "modifier_tiny_model"
-	        {
-	            "Passive"           "1"
-	            "IsHidden"          "1"
-	            "OnCreated"
-	            {
-	                "RunScript"
-	                {
-	                    "ScriptFile"    "creeps/tiny_model.lua"
-	                    "Function"      "GrowModel"
-	                    "Level"         "3"
-	                }
-	            }
-	        }
-	    }
-	}
-	
-	"tiny_model04"
-	{
-	    "BaseClass"                     "ability_datadriven"
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-	    "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
-	    "MaxLevel"                      "1"
-	
-	    "Modifiers"
-	    {
-	        "modifier_tiny_model"
-	        {
-	            "Passive"           "1"
-	            "IsHidden"          "1"
-	            "OnCreated"
-	            {
-	                "RunScript"
-	                {
-	                    "ScriptFile"    "creeps/tiny_model.lua"
-	                    "Function"      "GrowModel"
-	                    "Level"         "4"
-	                }
-	            }
-	        }
-	    }
 	}
 	//============================================================//
 	// Trickery Tower: Conjure

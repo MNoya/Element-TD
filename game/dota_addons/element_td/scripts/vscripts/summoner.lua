@@ -333,8 +333,6 @@ function AddElementalTrophy(playerID, element)
     local elemental = CreateUnitByName(unitName, position, false, nil, nil, team)
     elemental:SetModelScale(scale)
     elemental:SetForwardVector(Vector(0, -1, 0))
-    elemental:SetCustomHealthLabel(GetEnglishTranslation(element.."_elemental"), ElementColors[element][1], ElementColors[element][2], ElementColors[element][3])
 
-    elemental:AddNewModifier(elemental, nil, "modifier_disabled", {})
-
+    ApplyModifier(elemental, "modifier_disabled")
 end
