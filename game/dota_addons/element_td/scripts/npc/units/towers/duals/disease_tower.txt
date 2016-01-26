@@ -51,7 +51,7 @@
 	"AttackRate"		"0.31"
 	"ProjectileModel"		"particles/units/heroes/hero_bane/bane_projectile.vpcf"
 	"ProjectileSpeed"		"1000"
-	"Model"		"models/heroes/undying/undying_tower.mdl"
+	"Model"		"models/disease_tower1.vmdl"
 	"ModelScale"		"0.6"
 	"UpgradeIcon"		"towers/disease_tower_soul_reaper"
 	"BuildTime"		"3"
