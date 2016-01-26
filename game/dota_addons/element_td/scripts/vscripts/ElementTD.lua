@@ -465,9 +465,8 @@ function ElementTD:OnConnectFull(keys)
 end
 
 function ElementTD:OnPlayerSelectedEntities( event )
-    local pID = event.pID
-
-    GameRules.SELECTED_UNITS[pID] = event.selected_entities
+    local playerID = event.PlayerID
+    GameRules.SELECTED_UNITS[playerID] = event.selected_entities
 end
 
 function ElementTD:FilterExecuteOrder( filterTable )

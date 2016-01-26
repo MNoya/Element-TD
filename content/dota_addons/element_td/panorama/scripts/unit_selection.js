@@ -1,6 +1,7 @@
 "use strict";
 
 var skip = false
+var rangedParticle
 
 function OnUpdateSelectedUnit( event )
 {
@@ -24,6 +25,18 @@ function OnUpdateSelectedUnit( event )
 			}
 		};
 	}
+
+	// Remove old particle
+    if (rangedParticle)
+        Particles.DestroyParticleEffect(rangedParticle, true)
+
+    // Create range display on the selected ranged attacker
+    if (IsCustomBuilding(mainSelected) && Entities.HasAttackCapability(mainSelected))
+    {
+        var range = Entities.GetAttackRange(mainSelected) + Entities.GetHullRadius(mainSelected)
+        rangedParticle = Particles.CreateParticle("particles/custom/ui_mouseactions/range_display.vpcf", ParticleAttachment_t.PATTACH_ABSORIGIN, mainSelected)
+        Particles.SetParticleControl(rangedParticle, 1, [range, 0, 0])
+    }
 
 	if (selectedEntities.length > 1 && IsMixedBuildingSelectionGroup(selectedEntities) ){
 		$.Msg( "IsMixedBuildingSelectionGroup, proceeding to deselect the buildings and get only the units ")
@@ -68,9 +81,8 @@ function GetFirstUnitFromSelectionSkipUnit ( entityList, entIndex ) {
 }
 
 function SendSelectedEntities (params) {
-	var iPlayerID = Players.GetLocalPlayer();
-	var newSelectedEntities = Players.GetSelectedEntities( iPlayerID );
-	GameEvents.SendCustomGameEventToServer( "update_selected_entities", { pID: iPlayerID, selected_entities: newSelectedEntities })
+	var newSelectedEntities = Players.GetSelectedEntities( Players.GetLocalPlayer() );
+	GameEvents.SendCustomGameEventToServer( "update_selected_entities", { selected_entities: newSelectedEntities })
 }
 
 // Returns whether the selection group contains both buildings and non-building units

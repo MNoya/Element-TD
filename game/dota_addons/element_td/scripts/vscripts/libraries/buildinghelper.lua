@@ -830,7 +830,6 @@ function BuildingHelper:RemoveBuilding(building, bSkipEffects)
     BuildingHelper:print("Removing Building: "..building:GetUnitName())
 
     -- Don't show the destruction effects when specified or killed to due UpgradeBuilding
-    print(bSkipEffects, building.upgraded)
     if not bSkipEffects and building.upgraded ~= true then
         local particleName = BuildingHelper.UnitKV[building:GetUnitName()]["DestructionEffect"]
         if particleName then
