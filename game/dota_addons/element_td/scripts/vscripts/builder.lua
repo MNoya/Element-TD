@@ -36,7 +36,7 @@ function Build( event )
     -- Position for a building was confirmed and valid
     event:OnBuildingPosChosen(function(vPos)
         -- Spend resources
-        hero:ModifyGold(-gold_cost, true, 0)
+        hero:ModifyGold(-gold_cost, false, 0)
 
         -- Play a sound
         Sounds:EmitSoundOnClient(playerID, "DOTA_Item.ObserverWard.Activate")
@@ -57,7 +57,7 @@ function Build( event )
 
         -- Refund resources for this cancelled work
         if work.refund then
-            hero:ModifyGold(gold_cost, true, 0)
+            hero:ModifyGold(gold_cost, false, 0)
         end
     end)
 
