@@ -1,5 +1,9 @@
 "water_elemental1"
 {
+    "MinimapIcon"               "minimap_elemental_water"
+    "MinimapIconSize"           "400"
+    "MinimapDisableTint"        "1"
+
     "ArmorPhysical"        "0"
     "MagicalResistance"        "0"
     "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -48,6 +52,10 @@
 
 "water_elemental2"
 {
+    "MinimapIcon"               "minimap_elemental_water"
+    "MinimapIconSize"           "400"
+    "MinimapDisableTint"        "1"
+
     "ArmorPhysical"        "0"
     "MagicalResistance"        "0"
     "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -101,6 +109,10 @@
 
 "water_elemental3"
 {
+    "MinimapIcon"               "minimap_elemental_water"
+    "MinimapIconSize"           "400"
+    "MinimapDisableTint"        "1"
+    
     "ArmorPhysical"        "0"
     "MagicalResistance"        "0"
     "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"

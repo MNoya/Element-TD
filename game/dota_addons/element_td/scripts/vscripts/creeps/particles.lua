@@ -33,6 +33,8 @@ function TinyDeath( event )
     local unit = event.unit
     local level = event.Level
 
+    if unit.upgraded then return end
+
     local particleName = "particles/units/heroes/hero_tiny/tiny0"..level.."_death.vpcf"
     local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, unit)
     ParticleManager:SetParticleControlEnt(particle, 0, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetAbsOrigin(), true)

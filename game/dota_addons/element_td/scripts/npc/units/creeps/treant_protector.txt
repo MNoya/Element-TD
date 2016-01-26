@@ -1,5 +1,9 @@
 "treant_protector"
 {
+    "MinimapIcon"               "minimap_icon_green"
+    "MinimapIconSize"           "200"
+    "MinimapDisableTint"        "1"
+
 	"ArmorPhysical"		"0"
 	"MagicalResistance"		"0"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"

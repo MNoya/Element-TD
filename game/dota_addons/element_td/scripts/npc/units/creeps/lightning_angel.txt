@@ -1,5 +1,8 @@
 "lightning_angel"
 {
+    "MinimapIcon"               "minimap_icon_yellow"
+    "MinimapIconSize"           "200"
+    "MinimapDisableTint"        "1"
 	"ArmorPhysical"		"0"
 	"MagicalResistance"		"0"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"

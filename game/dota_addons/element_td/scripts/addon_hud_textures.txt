@@ -1,0 +1,125 @@
+""
+{
+    "TextureData"
+    {
+        "minimap_icon_red"
+        {
+            "file"      "materials/vgui/hud/minimap_icon_red.vmat"
+            "x"         "0"
+            "y"         "0"
+            "width"     "64"
+            "height"    "64"
+        }
+        "minimap_icon_green"
+        {
+            "file"      "materials/vgui/hud/minimap_icon_green.vmat"
+            "x"         "0"
+            "y"         "0"
+            "width"     "64"
+            "height"    "64"
+        }
+        "minimap_icon_blue"
+        {
+            "file"      "materials/vgui/hud/minimap_icon_blue.vmat"
+            "x"         "0"
+            "y"         "0"
+            "width"     "64"
+            "height"    "64"
+        }
+        "minimap_icon_white"
+        {
+            "file"      "materials/vgui/hud/minimap_icon_white.vmat"
+            "x"         "0"
+            "y"         "0"
+            "width"     "64"
+            "height"    "64"
+        }
+        "minimap_icon_brown"
+        {
+            "file"      "materials/vgui/hud/minimap_icon_brown.vmat"
+            "x"         "0"
+            "y"         "0"
+            "width"     "64"
+            "height"    "64"
+        }
+        "minimap_icon_purple"
+        {
+            "file"      "materials/vgui/hud/minimap_icon_purple.vmat"
+            "x"         "0"
+            "y"         "0"
+            "width"     "64"
+            "height"    "64"
+        }
+        "minimap_icon_yellow"
+        {
+            "file"      "materials/vgui/hud/minimap_icon_yellow.vmat"
+            "x"         "0"
+            "y"         "0"
+            "width"     "64"
+            "height"    "64"
+        }
+
+        "minimap_elemental_dark"
+        {
+            "file"      "materials/vgui/hud/minimap_elemental_dark.vmat"
+            "x"         "0"
+            "y"         "0"
+            "width"     "64"
+            "height"    "64"
+        }
+
+        "minimap_elemental_earth"
+        {
+            "file"      "materials/vgui/hud/minimap_elemental_earth.vmat"
+            "x"         "0"
+            "y"         "0"
+            "width"     "64"
+            "height"    "64"
+        }
+
+        "minimap_elemental_fire"
+        {
+            "file"      "materials/vgui/hud/minimap_elemental_fire.vmat"
+            "x"         "0"
+            "y"         "0"
+            "width"     "64"
+            "height"    "64"
+        }
+
+        "minimap_elemental_light"
+        {
+            "file"      "materials/vgui/hud/minimap_elemental_light.vmat"
+            "x"         "0"
+            "y"         "0"
+            "width"     "64"
+            "height"    "64"
+        }
+
+        "minimap_elemental_nature"
+        {
+            "file"      "materials/vgui/hud/minimap_elemental_nature.vmat"
+            "x"         "0"
+            "y"         "0"
+            "width"     "64"
+            "height"    "64"
+        }
+
+        "minimap_elemental_water"
+        {
+            "file"      "materials/vgui/hud/minimap_elemental_water.vmat"
+            "x"         "0"
+            "y"         "0"
+            "width"     "64"
+            "height"    "64"
+        }
+
+        "minimap_osfrog"
+        {
+            "file"      "materials/vgui/hud/minimap_osfrog.vmat"
+            "x"         "0"
+            "y"         "0"
+            "width"     "64"
+            "height"    "64"
+        }
+    }
+}
