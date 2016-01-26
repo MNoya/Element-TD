@@ -245,14 +245,15 @@ function UpdateUpgrades(tower)
 
 			--[[if cost > PlayerResource:GetGold(playerID) then
 				suffix = "_disabled"
-			end
+			end]]
+			-- Put a _disabled item if the requirement isn't met yet
 			if towersKV[upgrade].Requirements then
 				for element, level in pairs(towersKV[upgrade].Requirements) do
 					if level > data.elements[element] then
 						suffix = "_disabled"
 					end
 				end
-			end]]--
+			end
 
 			local item = CreateItem("item_upgrade_to_" .. upgrade .. suffix, nil, nil)
 			tower:AddItem(item)

@@ -85,6 +85,25 @@ function Build( event )
 
         -- Add building-creature properties
         AddAbility(unit, "ability_building")
+
+        -- set some basic values to this tower from its KeyValues
+        unit.class = building_name
+        unit.element = GetUnitKeyValue(building_name, "Element")
+        unit.damageType = GetUnitKeyValue(building_name, "DamageType")
+        UpdateUpgrades(unit)
+
+        -- create a script object for this tower
+        local scriptClassName = GetUnitKeyValue(building_name, "ScriptClass")
+        if not scriptClassName then scriptClassName = "BasicTower" end
+        if TOWER_CLASSES[scriptClassName] then
+            local scriptObject = TOWER_CLASSES[scriptClassName](unit, building_name)
+            unit.scriptClass = scriptClassName
+            unit.scriptObject = scriptObject
+            unit.scriptObject:OnCreated()
+        else
+            Log:error("Unknown script class, " .. scriptClassName .. " for tower " .. building_name)
+        end
+
     end)
 
     -- A building finished construction
@@ -97,46 +116,24 @@ function Build( event )
         
         -- Building abilities
         ApplyModifier(unit, "modifier_no_health_bar")
-        
-        local playerData = GetPlayerData(playerID)
-        local gold = hero:GetGold()
-        local tower = unit
-        tower.class = building_name
-        tower.element = GetUnitKeyValue(building_name, "Element")
-        tower.damageType = GetUnitKeyValue(building_name, "DamageType")
-
-        UpdateUpgrades(tower)
-        UpdatePlayerSpells(playerID)
-
-        -- create a script object for this tower
-        local scriptClassName = GetUnitKeyValue(building_name, "ScriptClass")
-        if not scriptClassName then scriptClassName = "BasicTower" end
-        if TOWER_CLASSES[scriptClassName] then
-            local scriptObject = TOWER_CLASSES[scriptClassName](tower, building_name)
-            tower.scriptClass = scriptClassName
-            tower.scriptObject = scriptObject
-            tower.scriptObject:OnCreated()
-        else
-            Log:error("Unknown script class, " .. scriptClassName .. " for tower " .. building_name)
-        end
 
         -- mark this tower as a support tower if necessary
-        if IsSupportTower(tower) then
-            ApplyModifier(tower, "modifier_support_tower")
+        if IsSupportTower(unit) then
+            ApplyModifier(unit, "modifier_support_tower")
         end
 
         -- sell ability
         if IsPlayerUsingRandomMode( playerID ) then
-            AddAbility(tower, "sell_tower_100")
+            AddAbility(unit, "sell_tower_100")
         elseif string.match(building_name, "arrow_tower") or string.match(building_name, "cannon_tower") then
-            AddAbility(tower, "sell_tower_95")
+            AddAbility(unit, "sell_tower_95")
         else
-            AddAbility(tower, "sell_tower_75")
+            AddAbility(unit, "sell_tower_75")
         end
 
-        AddAbility(tower, tower.damageType .. "_passive")
+        AddAbility(unit, unit.damageType .. "_passive")
         if GetUnitKeyValue(building_name, "AOE_Full") and GetUnitKeyValue(building_name, "AOE_Half") then
-            AddAbility(tower, "splash_damage_orb")
+            AddAbility(unit, "splash_damage_orb")
         end
 
         -- Add the tower to the player data
