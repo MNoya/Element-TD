@@ -784,8 +784,8 @@ function BuildingHelper:UpgradeBuilding(building, newName)
     newBuilding:SetControllableByPlayer(playerID, true)
     
     -- Update visuals
-    local angles = building:GetAngles()
-    newBuilding:SetAngles(angles.x, angles.y, angles.z)
+    local angles = BuildingHelper.UnitKV[newName]["ModelRotation"] or building:GetAngles().y
+    newBuilding:SetAngles(0, angles, 0)
 
     -- Disable turning. If DisableTurning unit KV setting is not defined, use the global setting
     local disableTurning = BuildingHelper.UnitKV[newName]["DisableTurning"]
