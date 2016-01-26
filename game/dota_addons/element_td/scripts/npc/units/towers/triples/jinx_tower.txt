@@ -58,6 +58,8 @@
 
     "Model"             "models/heroes/witchdoctor/witchdoctor.vmdl"
     "ModelScale"        "1.0"
+    "ModelRotation"     "90"
+    "ModelOffset"       "20"
 	"Creature"
     {
         "AttachWearables" // The Stormcrow's Spirit Set

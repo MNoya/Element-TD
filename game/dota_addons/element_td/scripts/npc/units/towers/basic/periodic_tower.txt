@@ -40,7 +40,7 @@
     "Level"                     "1"
     "Cost"                      "11225"
     "TotalCost"                 "11225"
-    "PureEssence"               "1"
+    "EssenceCost"               "1"
     "BuildTime"                 "8"
     "Element"                   "none"
     "DamageType"                "composite"

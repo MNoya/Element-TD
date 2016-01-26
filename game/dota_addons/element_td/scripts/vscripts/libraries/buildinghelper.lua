@@ -774,19 +774,20 @@ end
     * Replaces a building by a new one by name, updating the necessary references and returning the new created unit
 ]]
 function BuildingHelper:UpgradeBuilding(building, newName)
-    BuildingHelper:print("Upgrading Building: "..building:GetUnitName().." -> "..newName)
+    local oldBuildingName = building:GetUnitName()
+    BuildingHelper:print("Upgrading Building: "..oldBuildingName.." -> "..newName)
     local playerID = building:GetPlayerOwnerID()
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-    local oldBuildingName = building:GetUnitName()
     local position = building:GetAbsOrigin()
     local model_offset = BuildingHelper.UnitKV[newName]["ModelOffset"] or 0
-    position.z = position.z + model_offset
+    local old_offset = BuildingHelper.UnitKV[oldBuildingName]["ModelOffset"] or 0
+    position.z = position.z + model_offset - old_offset
     local newBuilding = CreateUnitByName(newName, position, false, nil, nil, building:GetTeamNumber()) 
     newBuilding:SetOwner(hero)
     newBuilding:SetControllableByPlayer(playerID, true)
     
     -- Update visuals
-    local angles = BuildingHelper.UnitKV[newName]["ModelRotation"] or building:GetAngles().y
+    local angles = BuildingHelper.UnitKV[newName]["ModelRotation"] or -building:GetAngles().y
     newBuilding:SetAngles(0, -angles, 0)
 
     -- Disable turning. If DisableTurning unit KV setting is not defined, use the global setting
@@ -829,7 +830,8 @@ function BuildingHelper:RemoveBuilding(building, bSkipEffects)
     BuildingHelper:print("Removing Building: "..building:GetUnitName())
 
     -- Don't show the destruction effects when specified or killed to due UpgradeBuilding
-    if not bSkipEffects or building.upgraded == true then
+    print(bSkipEffects, building.upgraded)
+    if not bSkipEffects and building.upgraded ~= true then
         local particleName = BuildingHelper.UnitKV[building:GetUnitName()]["DestructionEffect"]
         if particleName then
             local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, building)

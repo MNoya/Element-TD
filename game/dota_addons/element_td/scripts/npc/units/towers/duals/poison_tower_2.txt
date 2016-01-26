@@ -53,6 +53,8 @@
 	"ProjectileSpeed"		"1800"
 	"Model"		"models/heroes/venomancer/venomancer.vmdl"
 	"ModelScale"		"1.0"
+    "ModelRotation"             "90"
+    "ModelOffset"               "10"
 	"AOE_Full"		"100"
 	"AOE_Half"		"200"
 	"UpgradeIcon"		"towers/poison_tower_contamination"

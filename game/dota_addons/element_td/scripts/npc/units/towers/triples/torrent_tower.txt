@@ -56,6 +56,8 @@
 
     "Model"             "models/heroes/siren/siren.vmdl"
     "ModelScale"        "1.0"
+    "ModelRotation"     "90"
+    "ModelOffset"       "15"
 	"Creature"
     {
         "AttachWearables" // The Slithereen Knight Set

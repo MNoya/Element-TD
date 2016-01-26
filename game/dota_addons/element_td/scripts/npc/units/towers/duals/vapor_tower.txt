@@ -52,6 +52,8 @@
 	"ProjectileSpeed"		"800"
 	"Model"		"models/heroes/slardar/slardar.vmdl"
 	"ModelScale"		"0.8"
+    "ModelRotation"     "90"
+    "ModelOffset"       "10"
 	"UpgradeIcon"		"morphling_adaptive_strike"
 	"BuildTime"		"3"
 	"Requirements"

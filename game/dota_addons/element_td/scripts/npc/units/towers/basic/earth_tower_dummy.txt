@@ -2,4 +2,6 @@
 {
     "BaseClass" "npc_dota_creature"
     "Model"     "models/heroes/tiny_01/tiny01_deathsim.vmdl"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackRange"               "900"
 }

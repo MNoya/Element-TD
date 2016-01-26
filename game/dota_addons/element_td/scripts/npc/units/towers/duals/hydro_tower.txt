@@ -4,6 +4,8 @@
     //-----------------------------
     "Model"                     "models/heroes/kunkka/kunkka.vmdl"
     "ModelScale"                "0.9"
+    "ModelRotation"             "90"
+    "ModelOffset"               "15"
     "ProjectileModel"           "particles/custom/towers/hydro/attack.vpcf"  
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"

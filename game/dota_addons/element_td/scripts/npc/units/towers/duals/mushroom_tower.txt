@@ -54,6 +54,8 @@
 	"ProjectileSpeed"		"900"
 	"Model"		"models/heroes/earth_spirit/earth_spirit.vmdl"
 	"ModelScale"		"0.8"
+    "ModelRotation"             "90"
+    "ModelOffset"               "15"
 	"UpgradeIcon"		"brewmaster_earth_pulverize"
 	"BuildTime"		"3"
 	"Requirements"

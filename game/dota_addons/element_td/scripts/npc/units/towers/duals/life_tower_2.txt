@@ -52,6 +52,8 @@
 	"ProjectileSpeed"		"900"
 	"Model"		"models/heroes/omniknight/omniknight.vmdl"
 	"ModelScale"		"0.9"
+    "ModelRotation"             "90"
+    "ModelOffset"               "20"
 	"UpgradeIcon"		"towers/life_tower_afterlife"
 	"BuildTime"		"3"
 	"Requirements"

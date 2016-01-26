@@ -5839,6 +5839,8 @@
 	{
 	    "BaseClass" "npc_dota_creature"
 	    "Model"     "models/heroes/tiny_01/tiny01_deathsim.vmdl"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackRange"               "900"
 	}
 	"fire_tower"
 	{
@@ -6670,7 +6672,7 @@
 	    "Level"                     "1"
 	    "Cost"                      "11225"
 	    "TotalCost"                 "11225"
-	    "PureEssence"               "1"
+	    "EssenceCost"               "1"
 	    "BuildTime"                 "8"
 	    "Element"                   "none"
 	    "DamageType"                "composite"
@@ -8488,6 +8490,8 @@
 	
 	    "Model"            "models/heroes/zuus/zuus.vmdl"
 	    "ModelScale"       "0.9"
+	    "ModelRotation"    "90"
+	    "ModelOffset"      "15"
 	
 		"UpgradeIcon"		"towers/electricty_tower_conjure_lightning"
 		"BuildTime"		"3"
@@ -8567,6 +8571,9 @@
 	
 	    "Model"            "models/heroes/zeus/zeus.vmdl"
 	    "ModelScale"       "1.0"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "15"
+	    
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_zuus
@@ -8653,6 +8660,7 @@
 	
 	    "Model"            "models/heroes/zeus/zeus_arcana.vmdl"
 	    "ModelScale"       "1.2"
+	    "ModelRotation"             "90"
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_zuus
@@ -8745,7 +8753,9 @@
 		"ProjectileModel"		"particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
 		"ProjectileSpeed"		"800"
 		"Model"		"models/heroes/ember_spirit/ember_spirit.vmdl"
-		"ModelScale"		"0.9"
+		"ModelScale"		"1.0"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "20"
 		"UpgradeIcon"		"towers/flame_tower_sunburn"
 		"BuildTime"		"3"
 		"Requirements"
@@ -8848,7 +8858,9 @@
 		"ProjectileModel"		"particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
 		"ProjectileSpeed"		"800"
 		"Model"		"models/heroes/ember_spirit/ember_spirit.vmdl"
-		"ModelScale"		"1.1"
+		"ModelScale"		"1.15"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "20"
 		"UpgradeIcon"		"towers/flame_tower_sunburn"
 		"BuildTime"		"3"
 		"Requirements"
@@ -8935,6 +8947,8 @@
 		"ProjectileSpeed"		"800"
 		"Model"		"models/heroes/ember_spirit/ember_spirit.vmdl"
 		"ModelScale"		"1.3"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "20"
 		"UpgradeIcon"		"towers/flame_tower_sunburn"
 		"BuildTime"		"3"
 		"Requirements"
@@ -9019,6 +9033,8 @@
 		"ProjectileSpeed"		"800"
 		"Model"		"models/heroes/sniper/sniper.vmdl"
 		"ModelScale"		"0.85"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "15"
 		"UpgradeIcon"		"techies_suicide"
 		"BuildTime"		"3"
 		"Requirements"
@@ -9107,6 +9123,8 @@
 		"ProjectileSpeed"		"800"
 		"Model"		"models/heroes/sniper/sniper.vmdl"
 		"ModelScale"		"1.05"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "15"
 		"UpgradeIcon"		"techies_suicide"
 		"BuildTime"		"3"
 		"Requirements"
@@ -9191,6 +9209,8 @@
 		"ProjectileSpeed"		"800"
 		"Model"		"models/heroes/sniper/sniper.vmdl"
 		"ModelScale"		"1.25"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "15"
 		"UpgradeIcon"		"techies_suicide"
 		"BuildTime"		"3"
 		"Requirements"
@@ -9267,6 +9287,8 @@
 	    //-----------------------------
 	    "Model"                     "models/heroes/kunkka/kunkka.vmdl"
 	    "ModelScale"                "0.9"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "15"
 	    "ProjectileModel"           "particles/custom/towers/hydro/attack.vpcf"  
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
@@ -9356,6 +9378,8 @@
 	    //-----------------------------
 	    "Model"                     "models/heroes/kunkka/kunkka.vmdl"
 	    "ModelScale"                "1.1"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "15"
 	    "ProjectileModel"           "particles/custom/towers/hydro/attack.vpcf"  
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
@@ -9440,6 +9464,8 @@
 	    //-----------------------------
 	    "Model"                     "models/heroes/kunkka/kunkka.vmdl"
 	    "ModelScale"                "1.3"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "15"
 	    "ProjectileModel"           "particles/custom/towers/hydro/attack.vpcf"  
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
@@ -9612,6 +9638,9 @@
 		"ProjectileSpeed"		"900"
 		"Model"		"models/heroes/crystal_maiden/crystal_maiden.vmdl"
 		"ModelScale"		"0.8"
+	    "ModelRotation"             "90"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "20"
 		"UpgradeIcon"		"ancient_apparition_ice_blast"
 		"BuildTime"		"3"
 		"Requirements"
@@ -9723,6 +9752,8 @@
 		"ProjectileSpeed"		"900"
 		"Model"		"models/heroes/crystal_maiden/crystal_maiden.vmdl"
 		"ModelScale"		"1.0"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "20"
 		"UpgradeIcon"		"ancient_apparition_ice_blast"
 		"BuildTime"		"3"
 		"Requirements"
@@ -9808,6 +9839,8 @@
 		"ProjectileSpeed"		"900"
 		"Model"		"models/heroes/crystal_maiden/crystal_maiden.vmdl"
 		"ModelScale"		"1.2"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "20"
 		"UpgradeIcon"		"ancient_apparition_ice_blast"
 		"BuildTime"		"3"
 		"Requirements"
@@ -9891,6 +9924,8 @@
 		"ProjectileSpeed"		"900"
 		"Model"		"models/heroes/omniknight/omniknight.vmdl"
 		"ModelScale"		"0.8"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "20"
 		"UpgradeIcon"		"towers/life_tower_afterlife"
 		"BuildTime"		"3"
 		"Requirements"
@@ -9998,6 +10033,8 @@
 		"ProjectileSpeed"		"900"
 		"Model"		"models/heroes/omniknight/omniknight.vmdl"
 		"ModelScale"		"0.9"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "20"
 		"UpgradeIcon"		"towers/life_tower_afterlife"
 		"BuildTime"		"3"
 		"Requirements"
@@ -10083,6 +10120,8 @@
 		"ProjectileSpeed"		"900"
 		"Model"		"models/heroes/omniknight/omniknight.vmdl"
 		"ModelScale"		"1.1"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "20"
 		"UpgradeIcon"		"towers/life_tower_afterlife"
 		"BuildTime"		"3"
 		"Requirements"
@@ -10165,6 +10204,9 @@
 		"ProjectileSpeed"		"1000"
 		"Model"		"models/heroes/lion/lion.vmdl"
 		"ModelScale"		"0.85"
+	    "ModelRotation"    "90"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "15"
 		"UpgradeIcon"		"towers/magic_tower"
 		"BuildTime"		"3"
 		"Requirements"
@@ -10252,6 +10294,8 @@
 		"ProjectileSpeed"		"1000"
 		"Model"		"models/heroes/lion/lion.vmdl"
 		"ModelScale"		"1.05"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "15"
 		"UpgradeIcon"		"towers/magic_tower"
 		"BuildTime"		"3"
 		"Requirements"
@@ -10336,6 +10380,8 @@
 		"ProjectileSpeed"		"1000"
 		"Model"		"models/heroes/lion/lion.vmdl"
 		"ModelScale"		"1.25"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "15"
 		"UpgradeIcon"		"towers/magic_tower"
 		"BuildTime"		"3"
 		"Requirements"
@@ -10420,6 +10466,8 @@
 		"ProjectileSpeed"		"900"
 		"Model"		"models/heroes/earth_spirit/earth_spirit.vmdl"
 		"ModelScale"		"0.8"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "15"
 		"UpgradeIcon"		"brewmaster_earth_pulverize"
 		"BuildTime"		"3"
 		"Requirements"
@@ -10514,6 +10562,8 @@
 		"ProjectileSpeed"		"900"
 		"Model"		"models/heroes/earth_spirit/earth_spirit.vmdl"
 		"ModelScale"		"1.0"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "15"
 		"UpgradeIcon"		"brewmaster_earth_pulverize"
 		"BuildTime"		"3"
 		"Requirements"
@@ -10605,6 +10655,8 @@
 		"ProjectileSpeed"		"900"
 		"Model"		"models/heroes/earth_spirit/earth_spirit.vmdl"
 		"ModelScale"		"1.2"
+		"ModelRotation"             "90"
+	    "ModelOffset"               "15"
 		"UpgradeIcon"		"brewmaster_earth_pulverize"
 		"BuildTime"		"3"
 		"Requirements"
@@ -10689,6 +10741,8 @@
 		"ProjectileSpeed"		"1800"
 		"Model"		"models/heroes/venomancer/venomancer.vmdl"
 		"ModelScale"		"0.8"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "10"
 		"AOE_Full"		"100"
 		"AOE_Half"		"200"
 		"UpgradeIcon"		"towers/poison_tower_contamination"
@@ -10795,6 +10849,8 @@
 		"ProjectileSpeed"		"1800"
 		"Model"		"models/heroes/venomancer/venomancer.vmdl"
 		"ModelScale"		"1.0"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "10"
 		"AOE_Full"		"100"
 		"AOE_Half"		"200"
 		"UpgradeIcon"		"towers/poison_tower_contamination"
@@ -10883,6 +10939,8 @@
 		"ProjectileSpeed"		"900"
 		"Model"		"models/heroes/venomancer/venomancer.vmdl"
 		"ModelScale"		"1.2"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "10"
 		"AOE_Full"		"100"
 		"AOE_Half"		"200"
 		"UpgradeIcon"		"towers/poison_tower_contamination"
@@ -10969,6 +11027,8 @@
 		"ProjectileSpeed"		"2000"
 		"Model"		"models/heroes/chen/chen.vmdl"
 		"ModelScale"		"0.8"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "20"
 		"UpgradeIcon"		"towers/quark_tower_quantum_beam"
 		"BuildTime"		"3"
 		"Requirements"
@@ -11080,6 +11140,8 @@
 		"ProjectileSpeed"		"1000"
 		"Model"		"models/heroes/chen/chen.vmdl"
 		"ModelScale"		"1.0"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "20"
 		"UpgradeIcon"		"towers/quark_tower_quantum_beam"
 		"BuildTime"		"3"
 		"Requirements"
@@ -11167,6 +11229,8 @@
 		"ProjectileSpeed"		"1000"
 		"Model"		"models/heroes/chen/chen.vmdl"
 		"ModelScale"		"1.2"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "20"
 		"UpgradeIcon"		"towers/quark_tower_quantum_beam"
 		"BuildTime"		"3"
 		"Requirements"
@@ -11252,6 +11316,8 @@
 		"ProjectileSpeed"		"900"
 		"Model"		"models/heroes/rubick/rubick.vmdl"
 		"ModelScale"		"0.8"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "20"
 		"UpgradeIcon"		"modifier_illusion"
 		"BuildTime"		"3"
 		"Requirements"
@@ -11355,6 +11421,8 @@
 		"ProjectileSpeed"		"900"
 		"Model"		"models/heroes/rubick/rubick.vmdl"
 		"ModelScale"		"1.0"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "20"
 		"UpgradeIcon"		"modifier_illusion"
 		"BuildTime"		"3"
 		"Requirements"
@@ -11439,6 +11507,8 @@
 		"ProjectileSpeed"		"900"
 		"Model"		"models/heroes/rubick/rubick.vmdl"
 		"ModelScale"		"1.2"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "20"
 		"UpgradeIcon"		"modifier_illusion"
 		"BuildTime"		"3"
 		"Requirements"
@@ -11521,6 +11591,8 @@
 		"ProjectileSpeed"		"800"
 		"Model"		"models/heroes/slardar/slardar.vmdl"
 		"ModelScale"		"0.8"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "10"
 		"UpgradeIcon"		"morphling_adaptive_strike"
 		"BuildTime"		"3"
 		"Requirements"
@@ -11624,6 +11696,8 @@
 		"ProjectileSpeed"		"800"
 		"Model"		"models/heroes/slardar/slardar.vmdl"
 		"ModelScale"		"0.9"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "10"
 		"UpgradeIcon"		"morphling_adaptive_strike"
 		"BuildTime"		"3"
 		"Requirements"
@@ -11708,6 +11782,8 @@
 		"ProjectileSpeed"		"800"
 		"Model"		"models/heroes/slardar/slardar.vmdl"
 		"ModelScale"		"1.1"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "10"
 		"UpgradeIcon"		"morphling_adaptive_strike"
 		"BuildTime"		"3"
 		"Requirements"
@@ -12067,6 +12143,8 @@
 		
 	    "Model"             "models/heroes/oracle/oracle.vmdl"
 	    "ModelScale"        "1.0"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "0"
 		"Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_oracle
@@ -12159,6 +12237,8 @@
 	
 	    "Model"             "models/heroes/arc_warden/arc_warden.vmdl"
 	    "ModelScale"        "1.2"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "0"
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_arc_warden
@@ -12248,6 +12328,8 @@
 	
 	    "Model"             "models/heroes/windrunner/windrunner.vmdl"
 	    "ModelScale"        "1.2"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "20"
 		"Creature"
 	    {
 	        "AttachWearables" // Array of Tranquility
@@ -12339,6 +12421,8 @@
 	
 	    "Model"             "models/heroes/windrunner/windrunner.vmdl"
 	    "ModelScale"        "1.4"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "20"
 		"Creature"
 	    {
 	        "AttachWearables" // Falconside Armor
@@ -12429,6 +12513,9 @@
 	
 	    "Model"             "models/heroes/shadow_demon/shadow_demon.vmdl"
 	    "ModelScale"        "1.0"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "20"
+	
 		"Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_shadow_demon
@@ -12523,6 +12610,9 @@
 	
 	    "Model"             "models/heroes/shadow_demon/shadow_demon.vmdl"
 	    "ModelScale"        "1.2"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "20"
+	
 		"Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_shadow_demon
@@ -12615,6 +12705,9 @@
 		
 		"Model"             "models/heroes/batrider/batrider.vmdl"
 	    "ModelScale"        "0.8"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "-5"
+	
 		"Creature"
 	    {
 	        "AttachWearables" // Flamestitched Suitings Set
@@ -12708,6 +12801,9 @@
 	
 	    "Model"             "models/heroes/batrider/batrider.vmdl"
 	    "ModelScale"        "1.0"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "-5"
+	    
 		"Creature"
 	    {
 	        "AttachWearables" // Flamestitched Suitings Set
@@ -12800,6 +12896,8 @@
 	
 	    "Model"             "models/heroes/tidehunter/tidehunter.vmdl"
 	    "ModelScale"        "1.0"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
 		"Creature"
 	    {
 	        "AttachWearables" // Deepweed Drowner
@@ -12894,6 +12992,8 @@
 		
 	    "Model"             "models/heroes/tidehunter/tidehunter.vmdl"
 	    "ModelScale"        "1.2"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
 		"Creature"
 	    {
 	        "AttachWearables" // Relics of the Drowning Trench
@@ -12986,6 +13086,8 @@
 	
 	    "Model"             "models/heroes/alchemist/alchemist.vmdl"
 	    "ModelScale"        "1.0"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
 		"Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_alchemist
@@ -13082,6 +13184,8 @@
 	
 	    "Model"             "models/heroes/alchemist/alchemist.vmdl"
 	    "ModelScale"        "1.2"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
 		"Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_alchemist
@@ -13176,6 +13280,8 @@
 	
 	    "Model"             "models/heroes/drow/drow.vmdl"
 	    "ModelScale"        "1.2"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
 		"Creature"
 	    {
 	        "AttachWearables" // Guise of the Winged Bolt
@@ -13270,6 +13376,8 @@
 	
 	    "Model"             "models/heroes/drow/drow.vmdl"
 	    "ModelScale"        "1.4"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
 		"Creature"
 	    {
 	        "AttachWearables" // Eldwurm's Touch
@@ -13409,6 +13517,8 @@
 	
 	    "Model"             "models/heroes/troll_warlord/troll_warlord.vmdl"
 	    "ModelScale"        "1.0"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
 		"Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_troll_warlord
@@ -13501,6 +13611,8 @@
 	
 	    "Model"             "models/heroes/troll_warlord/troll_warlord.vmdl"
 	    "ModelScale"        "1.2"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
 		"Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_troll_warlord
@@ -13591,6 +13703,8 @@
 	
 	    "Model"             "models/heroes/enchantress/enchantress.vmdl"
 	    "ModelScale"        "1.0"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
 		"Creature"
 	    {
 	        "AttachWearables" // Aspects of Summer
@@ -13683,6 +13797,8 @@
 		
 	    "Model"             "models/heroes/enchantress/enchantress.vmdl"
 	    "ModelScale"        "1.2"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
 		"Creature"
 	    {
 	        "AttachWearables" // Blessings of the Wildwing
@@ -13773,6 +13889,8 @@
 	
 	    "Model"             "models/heroes/witchdoctor/witchdoctor.vmdl"
 	    "ModelScale"        "1.0"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "20"
 		"Creature"
 	    {
 	        "AttachWearables" // The Stormcrow's Spirit Set
@@ -13865,6 +13983,8 @@
 		
 	    "Model"             "models/heroes/witchdoctor/witchdoctor.vmdl"
 	    "ModelScale"        "1.2"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "20"
 		"Creature"
 	    {
 	        "AttachWearables" // Twilight's Rest
@@ -13955,6 +14075,8 @@
 	
 	    "Model"             "models/heroes/tinker/tinker.vmdl"
 	    "ModelScale"        "1.0"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "20"
 		"Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_tinker
@@ -14049,6 +14171,8 @@
 	
 	    "Model"             "models/heroes/tinker/tinker.vmdl"
 	    "ModelScale"        "1.2"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "20"
 		"Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_tinker
@@ -14142,6 +14266,8 @@
 	
 	    "Model"             "models/heroes/bristleback/bristleback.vmdl"
 	    "ModelScale"        "1.0"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
 		"Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_bristleback
@@ -14237,6 +14363,8 @@
 	
 	    "Model"             "models/heroes/bristleback/bristleback.vmdl"
 	    "ModelScale"        "1.2"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
 		"Creature"
 	    {
 	        "AttachWearables" // Emerald Frenzy Set
@@ -14329,6 +14457,8 @@
 	
 	    "Model"             "models/heroes/phoenix/phoenix_egg.vmdl"
 	    "ModelScale"        "0.6"
+	    "ModelOffset"       "35"
+	    "DisableTurning"    "1"
 		
 		"UpgradeIcon"		"phoenix_supernova"
 		"BuildTime"		"4"
@@ -14410,6 +14540,8 @@
 	
 	    "Model"             "models/heroes/phoenix/phoenix_egg.vmdl"
 	    "ModelScale"        "0.7"
+	    "ModelOffset"       "35"
+	    "DisableTurning"    "1"
 	
 		"UpgradeIcon"		"phoenix_supernova"
 		"BuildTime"		"4"
@@ -14488,7 +14620,9 @@
 		"ProjectileSpeed"		"1000"
 	
 	    "Model"             "models/heroes/obsidian_destroyer/obsidian_destroyer.vmdl"
-	    "ModelScale"        "0.8"
+	    "ModelScale"        "0.7"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "-10"
 		"Creature"
 	    {
 	        "AttachWearables" // Harbinger of the Inauspicious Abyss Set
@@ -14581,7 +14715,9 @@
 		"ProjectileSpeed"		"1000"
 	
 	    "Model"             "models/heroes/obsidian_destroyer/obsidian_destroyer.vmdl"
-	    "ModelScale"        "1.0"
+	    "ModelScale"        "0.9"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "-10"
 		"Creature"
 	    {
 	        "AttachWearables" // Herald of Measureless Ruin
@@ -14672,7 +14808,9 @@
 		"ProjectileSpeed"		"900"
 	
 	    "Model"             "models/heroes/lich/lich.vmdl"
-	    "ModelScale"        "1.0"            
+	    "ModelScale"        "1.0"   
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "0"         
 	    "Creature"
 	    {
 	        "AttachWearables" // Eldritch Ice Set
@@ -14768,6 +14906,8 @@
 	
 	    "Model"             "models/heroes/lich/lich.vmdl"
 	    "ModelScale"        "1.2"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "0"
 		"Creature"
 	    {
 	        "AttachWearables" // Eldritch Ice Set
@@ -14861,6 +15001,8 @@
 	
 	    "Model"             "models/heroes/earthshaker/earthshaker.vmdl"
 	    "ModelScale"        "1.0"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
 		"Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_earthshaker
@@ -14952,6 +15094,9 @@
 		
 	    "Model"             "models/heroes/earthshaker/earthshaker.vmdl"
 	    "ModelScale"        "1.2"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
+	    
 		"Creature"
 	    {
 	        "AttachWearables" // Bindings of Deep Magma
@@ -15041,6 +15186,8 @@
 	
 	    "Model"             "models/heroes/treant_protector/treant_protector.vmdl"
 	    "ModelScale"        "1.0"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "20"
 		"Creature"
 	    {
 	        "AttachWearables" // Splintering Awe
@@ -15132,6 +15279,8 @@
 	
 	    "Model"             "models/heroes/treant_protector/treant_protector.vmdl"
 	    "ModelScale"        "1.2"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "20"
 		"Creature"
 	    {
 	        "AttachWearables" // Agaric Flourish
@@ -15221,6 +15370,8 @@
 		
 	    "Model"             "models/heroes/doom/doom.vmdl"
 	    "ModelScale"        "0.8"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "20"
 		"Creature"
 	    {
 	        "AttachWearables" // Crown of Hells
@@ -15317,6 +15468,8 @@
 	
 	    "Model"             "models/heroes/doom/doom.vmdl"
 	    "ModelScale"        "1.0"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "20"
 		"Creature"
 	    {
 	        "AttachWearables" // Fires of Vashundol
@@ -15409,6 +15562,8 @@
 	
 	    "Model"             "models/heroes/siren/siren.vmdl"
 	    "ModelScale"        "1.0"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
 		"Creature"
 	    {
 	        "AttachWearables" // The Slithereen Knight Set
@@ -15503,6 +15658,8 @@
 	
 	    "Model"             "models/heroes/siren/siren.vmdl"
 	    "ModelScale"        "1.2"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
 		"Creature"
 	    {
 	        "AttachWearables" // Iceborn Trinity
@@ -15633,6 +15790,8 @@
 	
 	    "Model"             "models/heroes/razor/razor.vmdl"
 	    "ModelScale"        "1"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "0"
 		"Creature"
 	    {
 	        "AttachWearables" // Bindings of the Storm-Stealer Set
@@ -15724,6 +15883,8 @@
 		
 	    "Model"             "models/heroes/razor/razor.vmdl"
 	    "ModelScale"        "1.2"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "0"
 		"Creature"
 	    {
 	        "AttachWearables" // Empire of the Lightning Lord

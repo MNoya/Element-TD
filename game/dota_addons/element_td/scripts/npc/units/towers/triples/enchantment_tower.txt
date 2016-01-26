@@ -58,6 +58,8 @@
 	
     "Model"             "models/heroes/oracle/oracle.vmdl"
     "ModelScale"        "1.0"
+    "ModelRotation"     "90"
+    "ModelOffset"       "0"
 	"Creature"
     {
         "AttachWearables" // Default npc_dota_hero_oracle

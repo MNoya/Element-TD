@@ -58,6 +58,8 @@
 	
     "Model"             "models/heroes/tidehunter/tidehunter.vmdl"
     "ModelScale"        "1.2"
+    "ModelRotation"     "90"
+    "ModelOffset"       "15"
 	"Creature"
     {
         "AttachWearables" // Relics of the Drowning Trench

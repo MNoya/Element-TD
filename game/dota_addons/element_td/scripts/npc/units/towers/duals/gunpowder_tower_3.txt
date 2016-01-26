@@ -52,6 +52,8 @@
 	"ProjectileSpeed"		"800"
 	"Model"		"models/heroes/sniper/sniper.vmdl"
 	"ModelScale"		"1.25"
+    "ModelRotation"             "90"
+    "ModelOffset"               "15"
 	"UpgradeIcon"		"techies_suicide"
 	"BuildTime"		"3"
 	"Requirements"

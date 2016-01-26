@@ -52,6 +52,8 @@
 	"ProjectileSpeed"		"800"
 	"Model"		"models/heroes/ember_spirit/ember_spirit.vmdl"
 	"ModelScale"		"1.3"
+    "ModelRotation"             "90"
+    "ModelOffset"               "20"
 	"UpgradeIcon"		"towers/flame_tower_sunburn"
 	"BuildTime"		"3"
 	"Requirements"

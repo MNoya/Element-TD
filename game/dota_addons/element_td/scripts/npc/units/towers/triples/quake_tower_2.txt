@@ -58,6 +58,9 @@
 	
     "Model"             "models/heroes/earthshaker/earthshaker.vmdl"
     "ModelScale"        "1.2"
+    "ModelRotation"     "90"
+    "ModelOffset"       "15"
+    
 	"Creature"
     {
         "AttachWearables" // Bindings of Deep Magma

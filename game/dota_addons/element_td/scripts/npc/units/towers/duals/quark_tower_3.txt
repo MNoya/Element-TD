@@ -52,6 +52,8 @@
 	"ProjectileSpeed"		"1000"
 	"Model"		"models/heroes/chen/chen.vmdl"
 	"ModelScale"		"1.2"
+    "ModelRotation"             "90"
+    "ModelOffset"               "20"
 	"UpgradeIcon"		"towers/quark_tower_quantum_beam"
 	"BuildTime"		"3"
 	"Requirements"

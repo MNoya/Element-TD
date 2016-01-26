@@ -53,6 +53,8 @@
 
     "Model"            "models/heroes/zuus/zuus.vmdl"
     "ModelScale"       "0.9"
+    "ModelRotation"    "90"
+    "ModelOffset"      "15"
 
 	"UpgradeIcon"		"towers/electricty_tower_conjure_lightning"
 	"BuildTime"		"3"

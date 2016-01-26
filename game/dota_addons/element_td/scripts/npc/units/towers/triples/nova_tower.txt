@@ -58,6 +58,8 @@
 
     "Model"             "models/heroes/phoenix/phoenix_egg.vmdl"
     "ModelScale"        "0.6"
+    "ModelOffset"       "35"
+    "DisableTurning"    "1"
 	
 	"UpgradeIcon"		"phoenix_supernova"
 	"BuildTime"		"4"

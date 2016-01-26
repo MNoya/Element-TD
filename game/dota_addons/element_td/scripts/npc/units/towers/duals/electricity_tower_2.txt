@@ -53,6 +53,9 @@
 
     "Model"            "models/heroes/zeus/zeus.vmdl"
     "ModelScale"       "1.0"
+    "ModelRotation"             "90"
+    "ModelOffset"               "15"
+    
     "Creature"
     {
         "AttachWearables" // Default npc_dota_hero_zuus

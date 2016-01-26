@@ -57,7 +57,9 @@
 	"ProjectileSpeed"		"1000"
 
     "Model"             "models/heroes/obsidian_destroyer/obsidian_destroyer.vmdl"
-    "ModelScale"        "0.8"
+    "ModelScale"        "0.7"
+    "ModelRotation"     "90"
+    "ModelOffset"       "-10"
 	"Creature"
     {
         "AttachWearables" // Harbinger of the Inauspicious Abyss Set
