@@ -6,7 +6,7 @@
     "BaseClass"                     "ability_datadriven"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
     "MaxLevel"                      "1"
-    "AbilityTextureName"            "build_nature_tower"
+    "AbilityTextureName"            "elements/nature"
     
     "Building"                      "1"
     "AbilityCastRange"              "200"

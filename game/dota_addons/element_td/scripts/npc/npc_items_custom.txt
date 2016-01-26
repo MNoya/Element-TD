@@ -161,7 +161,7 @@
 				"tower"		"advanced_arrow_tower"
 			}
 		}
-		"AbilityTextureName"		"item_composite"
+		"AbilityTextureName"		"item_arrow"
 		
 		"AbilitySpecial"
 		{
@@ -182,7 +182,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_composite_disabled"
+		"AbilityTextureName"		"item_arrow_disabled"
 		"Cost"		"13"
 	}
 	"item_upgrade_to_advanced_cannon_tower"
@@ -205,7 +205,7 @@
 				"tower"		"advanced_cannon_tower"
 			}
 		}
-		"AbilityTextureName"		"item_composite"
+		"AbilityTextureName"		"item_cannon"
 		
 		"AbilitySpecial"
 		{
@@ -226,7 +226,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_composite_disabled"
+		"AbilityTextureName"		"item_cannon_disabled"
 		"Cost"		"13"
 	}
 	"item_upgrade_to_blacksmith_tower"

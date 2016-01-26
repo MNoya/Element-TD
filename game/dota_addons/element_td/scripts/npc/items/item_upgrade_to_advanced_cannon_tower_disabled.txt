@@ -8,6 +8,6 @@
 	"ItemKillable"		"0"
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
-	"AbilityTextureName"		"item_composite_disabled"
+	"AbilityTextureName"		"item_cannon_disabled"
 	"Cost"		"13"
 }
