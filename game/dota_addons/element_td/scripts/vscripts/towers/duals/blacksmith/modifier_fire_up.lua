@@ -2,7 +2,7 @@ modifier_fire_up = class({})
 
 function modifier_fire_up:DeclareFunctions()
 	return {
-		MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE
+		MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE
 	}
 end
 
@@ -11,8 +11,8 @@ function modifier_fire_up:OnCreated()
 	self.level = self:GetAbility():GetLevel()
 end
 
-function modifier_fire_up:GetModifierDamageOutgoing_Percentage()
-	return self.attack_speed_bonus
+function modifier_fire_up:GetModifierBaseDamageOutgoing_Percentage()
+	return self.damage_bonus
 end
 
 function modifier_fire_up:GetTexture()
