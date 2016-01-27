@@ -18,7 +18,7 @@
 			"tower"		"quake_tower"
 		}
 	}
-	"AbilityTextureName"		"item_earthshaker_aftershock"
+	"AbilityTextureName"		"item_quake"
 	"Cost"		"1000"
 	"Requirements"
 	{

@@ -18,7 +18,7 @@
 			"tower"		"flamethrower_tower_2"
 		}
 	}
-	"AbilityTextureName"		"item_batrider_sticky_napalm"
+	"AbilityTextureName"		"item_flamethrower"
 	"Cost"		"3500"
 	"Requirements"
 	{

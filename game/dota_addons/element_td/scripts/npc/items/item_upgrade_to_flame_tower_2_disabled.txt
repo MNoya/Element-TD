@@ -8,7 +8,7 @@
 	"ItemKillable"		"0"
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
-	"AbilityTextureName"		"item_towers_flame_tower_sunburn_disabled"
+	"AbilityTextureName"		"item_flame_disabled"
 	"Cost"		"750"
 	"Requirements"
 	{

@@ -18,7 +18,7 @@
 			"tower"		"gold_tower_2"
 		}
 	}
-	"AbilityTextureName"		"item_towers_gold_tower_arbitrage"
+	"AbilityTextureName"		"item_gold"
 	"Cost"		"3500"
 	"Requirements"
 	{

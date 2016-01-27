@@ -8,7 +8,7 @@
 	"ItemKillable"		"0"
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
-	"AbilityTextureName"		"item_towers_life_tower_afterlife_disabled"
+	"AbilityTextureName"		"item_life_disabled"
 	"Cost"		"325"
 	"Requirements"
 	{

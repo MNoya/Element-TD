@@ -18,7 +18,7 @@
 			"tower"		"jinx_tower_2"
 		}
 	}
-	"AbilityTextureName"		"item_witch_doctor_maledict"
+	"AbilityTextureName"		"item_jinx"
 	"Cost"		"3500"
 	"Requirements"
 	{

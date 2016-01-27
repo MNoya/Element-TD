@@ -8,7 +8,7 @@
 	"ItemKillable"		"0"
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
-	"AbilityTextureName"		"item_earthshaker_aftershock_disabled"
+	"AbilityTextureName"		"item_quake_disabled"
 	"Cost"		"3500"
 	"Requirements"
 	{

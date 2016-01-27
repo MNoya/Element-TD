@@ -18,7 +18,7 @@
 			"tower"		"electricity_tower_2"
 		}
 	}
-	"AbilityTextureName"		"item_towers_electricty_tower_conjure_lightning"
+	"AbilityTextureName"		"item_electricity"
 	"Cost"		"750"
 	"Requirements"
 	{

@@ -18,7 +18,7 @@
 			"tower"		"disease_tower"
 		}
 	}
-	"AbilityTextureName"		"item_towers_disease_tower_soul_reaper"
+	"AbilityTextureName"		"item_disease"
 	"Cost"		"325"
 	"Requirements"
 	{

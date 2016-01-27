@@ -8,7 +8,7 @@
 	"ItemKillable"		"0"
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
-	"AbilityTextureName"		"item_ancient_apparition_ice_blast_disabled"
+	"AbilityTextureName"		"item_ice_disabled"
 	"Cost"		"325"
 	"Requirements"
 	{

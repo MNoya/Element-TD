@@ -18,7 +18,7 @@
 			"tower"		"ice_tower_2"
 		}
 	}
-	"AbilityTextureName"		"item_ancient_apparition_ice_blast"
+	"AbilityTextureName"		"item_ice"
 	"Cost"		"750"
 	"Requirements"
 	{

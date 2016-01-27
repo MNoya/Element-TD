@@ -8,7 +8,7 @@
 	"ItemKillable"		"0"
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
-	"AbilityTextureName"		"item_bristleback_viscous_nasal_goo_disabled"
+	"AbilityTextureName"		"item_muck_disabled"
 	"Cost"		"1000"
 	"Requirements"
 	{

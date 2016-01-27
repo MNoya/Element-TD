@@ -18,7 +18,7 @@
 			"tower"		"nova_tower"
 		}
 	}
-	"AbilityTextureName"		"item_phoenix_supernova"
+	"AbilityTextureName"		"item_nova"
 	"Cost"		"1000"
 	"Requirements"
 	{

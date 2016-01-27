@@ -18,7 +18,7 @@
 			"tower"		"gunpowder_tower"
 		}
 	}
-	"AbilityTextureName"		"item_techies_suicide"
+	"AbilityTextureName"		"item_gunpowder"
 	"Cost"		"325"
 	"Requirements"
 	{

@@ -249,7 +249,7 @@
 				"tower"		"blacksmith_tower"
 			}
 		}
-		"AbilityTextureName"		"item_towers_blacksmith_tower_fire_up"
+		"AbilityTextureName"		"item_blacksmith"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -279,7 +279,7 @@
 				"tower"		"blacksmith_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_towers_blacksmith_tower_fire_up"
+		"AbilityTextureName"		"item_blacksmith"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -299,7 +299,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_blacksmith_tower_fire_up_disabled"
+		"AbilityTextureName"		"item_blacksmith_disabled"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -329,7 +329,7 @@
 				"tower"		"blacksmith_tower_3"
 			}
 		}
-		"AbilityTextureName"		"item_towers_blacksmith_tower_fire_up"
+		"AbilityTextureName"		"item_blacksmith"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -349,7 +349,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_blacksmith_tower_fire_up_disabled"
+		"AbilityTextureName"		"item_blacksmith_disabled"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -369,7 +369,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_blacksmith_tower_fire_up_disabled"
+		"AbilityTextureName"		"item_blacksmith_disabled"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -399,7 +399,7 @@
 				"tower"		"disease_tower"
 			}
 		}
-		"AbilityTextureName"		"item_towers_disease_tower_soul_reaper"
+		"AbilityTextureName"		"item_disease"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -429,7 +429,7 @@
 				"tower"		"disease_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_towers_disease_tower_soul_reaper"
+		"AbilityTextureName"		"item_disease"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -449,7 +449,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_disease_tower_soul_reaper_disabled"
+		"AbilityTextureName"		"item_disease_disabled"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -479,7 +479,7 @@
 				"tower"		"disease_tower_3"
 			}
 		}
-		"AbilityTextureName"		"item_towers_disease_tower_soul_reaper"
+		"AbilityTextureName"		"item_disease"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -499,7 +499,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_disease_tower_soul_reaper_disabled"
+		"AbilityTextureName"		"item_disease_disabled"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -519,7 +519,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_disease_tower_soul_reaper_disabled"
+		"AbilityTextureName"		"item_disease_disabled"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -549,7 +549,7 @@
 				"tower"		"electricity_tower"
 			}
 		}
-		"AbilityTextureName"		"item_towers_electricty_tower_conjure_lightning"
+		"AbilityTextureName"		"item_electricity"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -579,7 +579,7 @@
 				"tower"		"electricity_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_towers_electricty_tower_conjure_lightning"
+		"AbilityTextureName"		"item_electricity"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -599,7 +599,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_electricty_tower_conjure_lightning_disabled"
+		"AbilityTextureName"		"item_electricity_disabled"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -629,7 +629,7 @@
 				"tower"		"electricity_tower_3"
 			}
 		}
-		"AbilityTextureName"		"item_towers_electricty_tower_conjure_lightning"
+		"AbilityTextureName"		"item_electricity"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -649,7 +649,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_electricty_tower_conjure_lightning_disabled"
+		"AbilityTextureName"		"item_electricity_disabled"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -669,7 +669,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_electricty_tower_conjure_lightning_disabled"
+		"AbilityTextureName"		"item_electricity_disabled"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -699,7 +699,7 @@
 				"tower"		"enchantment_tower"
 			}
 		}
-		"AbilityTextureName"		"item_leshrac_diabolic_edict"
+		"AbilityTextureName"		"item_enchantment"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -731,7 +731,7 @@
 				"tower"		"enchantment_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_leshrac_diabolic_edict"
+		"AbilityTextureName"		"item_enchantment"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -753,7 +753,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_leshrac_diabolic_edict_disabled"
+		"AbilityTextureName"		"item_enchantment_disabled"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -775,7 +775,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_leshrac_diabolic_edict_disabled"
+		"AbilityTextureName"		"item_enchantment_disabled"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -807,7 +807,7 @@
 				"tower"		"ephemeral_tower"
 			}
 		}
-		"AbilityTextureName"		"item_towers_ephemeral_tower_phasing"
+		"AbilityTextureName"		"item_ephemeral"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -839,7 +839,7 @@
 				"tower"		"ephemeral_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_towers_ephemeral_tower_phasing"
+		"AbilityTextureName"		"item_ephemeral"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -861,7 +861,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_ephemeral_tower_phasing_disabled"
+		"AbilityTextureName"		"item_ephemeral_disabled"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -883,7 +883,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_ephemeral_tower_phasing_disabled"
+		"AbilityTextureName"		"item_ephemeral_disabled"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -915,7 +915,7 @@
 				"tower"		"erosion_tower"
 			}
 		}
-		"AbilityTextureName"		"item_towers_erosion_tower_acid_attack"
+		"AbilityTextureName"		"item_erosion"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -947,7 +947,7 @@
 				"tower"		"erosion_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_towers_erosion_tower_acid_attack"
+		"AbilityTextureName"		"item_erosion"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -969,7 +969,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_erosion_tower_acid_attack_disabled"
+		"AbilityTextureName"		"item_erosion_disabled"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -991,7 +991,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_erosion_tower_acid_attack_disabled"
+		"AbilityTextureName"		"item_erosion_disabled"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -1023,7 +1023,7 @@
 				"tower"		"flamethrower_tower"
 			}
 		}
-		"AbilityTextureName"		"item_batrider_sticky_napalm"
+		"AbilityTextureName"		"item_flamethrower"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -1055,7 +1055,7 @@
 				"tower"		"flamethrower_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_batrider_sticky_napalm"
+		"AbilityTextureName"		"item_flamethrower"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -1077,7 +1077,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_batrider_sticky_napalm_disabled"
+		"AbilityTextureName"		"item_flamethrower_disabled"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -1099,7 +1099,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_batrider_sticky_napalm_disabled"
+		"AbilityTextureName"		"item_flamethrower_disabled"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -1131,7 +1131,7 @@
 				"tower"		"flame_tower"
 			}
 		}
-		"AbilityTextureName"		"item_towers_flame_tower_sunburn"
+		"AbilityTextureName"		"item_flame"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -1161,7 +1161,7 @@
 				"tower"		"flame_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_towers_flame_tower_sunburn"
+		"AbilityTextureName"		"item_flame"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -1181,7 +1181,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_flame_tower_sunburn_disabled"
+		"AbilityTextureName"		"item_flame_disabled"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -1211,7 +1211,7 @@
 				"tower"		"flame_tower_3"
 			}
 		}
-		"AbilityTextureName"		"item_towers_flame_tower_sunburn"
+		"AbilityTextureName"		"item_flame"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -1231,7 +1231,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_flame_tower_sunburn_disabled"
+		"AbilityTextureName"		"item_flame_disabled"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -1251,7 +1251,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_flame_tower_sunburn_disabled"
+		"AbilityTextureName"		"item_flame_disabled"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -1281,7 +1281,7 @@
 				"tower"		"flooding_tower"
 			}
 		}
-		"AbilityTextureName"		"item_naga_siren_rip_tide"
+		"AbilityTextureName"		"item_tidal"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -1313,7 +1313,7 @@
 				"tower"		"flooding_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_naga_siren_rip_tide"
+		"AbilityTextureName"		"item_tidal"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -1335,7 +1335,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_naga_siren_rip_tide_disabled"
+		"AbilityTextureName"		"item_tidal_disabled"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -1357,7 +1357,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_naga_siren_rip_tide_disabled"
+		"AbilityTextureName"		"item_tidal_disabled"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -1665,7 +1665,7 @@
 				"tower"		"gold_tower"
 			}
 		}
-		"AbilityTextureName"		"item_towers_gold_tower_arbitrage"
+		"AbilityTextureName"		"item_gold"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -1697,7 +1697,7 @@
 				"tower"		"gold_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_towers_gold_tower_arbitrage"
+		"AbilityTextureName"		"item_gold"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -1719,7 +1719,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_gold_tower_arbitrage_disabled"
+		"AbilityTextureName"		"item_gold_disabled"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -1741,7 +1741,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_gold_tower_arbitrage_disabled"
+		"AbilityTextureName"		"item_gold_disabled"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -1773,7 +1773,7 @@
 				"tower"		"gunpowder_tower"
 			}
 		}
-		"AbilityTextureName"		"item_techies_suicide"
+		"AbilityTextureName"		"item_gunpowder"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -1803,7 +1803,7 @@
 				"tower"		"gunpowder_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_techies_suicide"
+		"AbilityTextureName"		"item_gunpowder"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -1823,7 +1823,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_techies_suicide_disabled"
+		"AbilityTextureName"		"item_gunpowder_disabled"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -1853,7 +1853,7 @@
 				"tower"		"gunpowder_tower_3"
 			}
 		}
-		"AbilityTextureName"		"item_techies_suicide"
+		"AbilityTextureName"		"item_gunpowder"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -1873,7 +1873,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_techies_suicide_disabled"
+		"AbilityTextureName"		"item_gunpowder_disabled"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -1893,7 +1893,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_techies_suicide_disabled"
+		"AbilityTextureName"		"item_gunpowder_disabled"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -1923,7 +1923,7 @@
 				"tower"		"hail_tower"
 			}
 		}
-		"AbilityTextureName"		"item_crystal_maiden_freezing_field"
+		"AbilityTextureName"		"item_hail"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -1955,7 +1955,7 @@
 				"tower"		"hail_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_crystal_maiden_freezing_field"
+		"AbilityTextureName"		"item_hail"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -1977,7 +1977,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_crystal_maiden_freezing_field_disabled"
+		"AbilityTextureName"		"item_hail_disabled"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -1999,7 +1999,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_crystal_maiden_freezing_field_disabled"
+		"AbilityTextureName"		"item_hail_disabled"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -2031,7 +2031,7 @@
 				"tower"		"haste_tower"
 			}
 		}
-		"AbilityTextureName"		"item_troll_warlord_fervor"
+		"AbilityTextureName"		"item_haste"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -2063,7 +2063,7 @@
 				"tower"		"haste_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_troll_warlord_fervor"
+		"AbilityTextureName"		"item_haste"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -2085,7 +2085,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_troll_warlord_fervor_disabled"
+		"AbilityTextureName"		"item_haste_disabled"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -2107,7 +2107,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_troll_warlord_fervor_disabled"
+		"AbilityTextureName"		"item_haste_disabled"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -2139,7 +2139,7 @@
 				"tower"		"hydro_tower"
 			}
 		}
-		"AbilityTextureName"		"item_puck_illusory_orb"
+		"AbilityTextureName"		"item_hydro"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -2169,7 +2169,7 @@
 				"tower"		"hydro_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_puck_illusory_orb"
+		"AbilityTextureName"		"item_hydro"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -2189,7 +2189,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_puck_illusory_orb_disabled"
+		"AbilityTextureName"		"item_hydro_disabled"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -2219,7 +2219,7 @@
 				"tower"		"hydro_tower_3"
 			}
 		}
-		"AbilityTextureName"		"item_puck_illusory_orb"
+		"AbilityTextureName"		"item_hydro"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -2239,7 +2239,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_puck_illusory_orb_disabled"
+		"AbilityTextureName"		"item_hydro_disabled"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -2259,7 +2259,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_puck_illusory_orb_disabled"
+		"AbilityTextureName"		"item_hydro_disabled"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -2289,7 +2289,7 @@
 				"tower"		"ice_tower"
 			}
 		}
-		"AbilityTextureName"		"item_ancient_apparition_ice_blast"
+		"AbilityTextureName"		"item_ice"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -2319,7 +2319,7 @@
 				"tower"		"ice_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_ancient_apparition_ice_blast"
+		"AbilityTextureName"		"item_ice"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -2339,7 +2339,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_ancient_apparition_ice_blast_disabled"
+		"AbilityTextureName"		"item_ice_disabled"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -2369,7 +2369,7 @@
 				"tower"		"ice_tower_3"
 			}
 		}
-		"AbilityTextureName"		"item_ancient_apparition_ice_blast"
+		"AbilityTextureName"		"item_ice"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -2389,7 +2389,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_ancient_apparition_ice_blast_disabled"
+		"AbilityTextureName"		"item_ice_disabled"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -2409,7 +2409,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_ancient_apparition_ice_blast_disabled"
+		"AbilityTextureName"		"item_ice_disabled"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -2439,7 +2439,7 @@
 				"tower"		"impulse_tower"
 			}
 		}
-		"AbilityTextureName"		"item_enchantress_impetus"
+		"AbilityTextureName"		"item_impulse"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -2471,7 +2471,7 @@
 				"tower"		"impulse_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_enchantress_impetus"
+		"AbilityTextureName"		"item_impulse"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -2493,7 +2493,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_enchantress_impetus_disabled"
+		"AbilityTextureName"		"item_impulse_disabled"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -2515,7 +2515,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_enchantress_impetus_disabled"
+		"AbilityTextureName"		"item_impulse_disabled"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -2547,7 +2547,7 @@
 				"tower"		"jinx_tower"
 			}
 		}
-		"AbilityTextureName"		"item_witch_doctor_maledict"
+		"AbilityTextureName"		"item_jinx"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -2579,7 +2579,7 @@
 				"tower"		"jinx_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_witch_doctor_maledict"
+		"AbilityTextureName"		"item_jinx"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -2601,7 +2601,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_witch_doctor_maledict_disabled"
+		"AbilityTextureName"		"item_jinx_disabled"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -2623,7 +2623,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_witch_doctor_maledict_disabled"
+		"AbilityTextureName"		"item_jinx_disabled"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -2763,7 +2763,7 @@
 				"tower"		"life_tower"
 			}
 		}
-		"AbilityTextureName"		"item_towers_life_tower_afterlife"
+		"AbilityTextureName"		"item_life"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -2793,7 +2793,7 @@
 				"tower"		"life_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_towers_life_tower_afterlife"
+		"AbilityTextureName"		"item_life"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -2813,7 +2813,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_life_tower_afterlife_disabled"
+		"AbilityTextureName"		"item_life_disabled"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -2843,7 +2843,7 @@
 				"tower"		"life_tower_3"
 			}
 		}
-		"AbilityTextureName"		"item_towers_life_tower_afterlife"
+		"AbilityTextureName"		"item_life"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -2863,7 +2863,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_life_tower_afterlife_disabled"
+		"AbilityTextureName"		"item_life_disabled"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -2883,7 +2883,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_life_tower_afterlife_disabled"
+		"AbilityTextureName"		"item_life_disabled"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -2913,7 +2913,7 @@
 				"tower"		"magic_tower"
 			}
 		}
-		"AbilityTextureName"		"item_towers_magic_tower"
+		"AbilityTextureName"		"item_magic"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -2943,7 +2943,7 @@
 				"tower"		"magic_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_towers_magic_tower"
+		"AbilityTextureName"		"item_magic"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -2963,7 +2963,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_magic_tower_disabled"
+		"AbilityTextureName"		"item_magic_disabled"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -2993,7 +2993,7 @@
 				"tower"		"magic_tower_3"
 			}
 		}
-		"AbilityTextureName"		"item_towers_magic_tower"
+		"AbilityTextureName"		"item_magic"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -3013,7 +3013,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_magic_tower_disabled"
+		"AbilityTextureName"		"item_magic_disabled"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -3033,7 +3033,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_magic_tower_disabled"
+		"AbilityTextureName"		"item_magic_disabled"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -3063,7 +3063,7 @@
 				"tower"		"muck_tower"
 			}
 		}
-		"AbilityTextureName"		"item_bristleback_viscous_nasal_goo"
+		"AbilityTextureName"		"item_muck"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -3095,7 +3095,7 @@
 				"tower"		"muck_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_bristleback_viscous_nasal_goo"
+		"AbilityTextureName"		"item_muck"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -3117,7 +3117,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_bristleback_viscous_nasal_goo_disabled"
+		"AbilityTextureName"		"item_muck_disabled"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -3139,7 +3139,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_bristleback_viscous_nasal_goo_disabled"
+		"AbilityTextureName"		"item_muck_disabled"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -3171,7 +3171,7 @@
 				"tower"		"mushroom_tower"
 			}
 		}
-		"AbilityTextureName"		"item_brewmaster_earth_pulverize"
+		"AbilityTextureName"		"item_moss"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -3201,7 +3201,7 @@
 				"tower"		"mushroom_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_brewmaster_earth_pulverize"
+		"AbilityTextureName"		"item_moss"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -3221,7 +3221,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_brewmaster_earth_pulverize_disabled"
+		"AbilityTextureName"		"item_moss_disabled"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -3251,7 +3251,7 @@
 				"tower"		"mushroom_tower_3"
 			}
 		}
-		"AbilityTextureName"		"item_brewmaster_earth_pulverize"
+		"AbilityTextureName"		"item_moss"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -3271,7 +3271,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_brewmaster_earth_pulverize_disabled"
+		"AbilityTextureName"		"item_moss_disabled"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -3291,7 +3291,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_brewmaster_earth_pulverize_disabled"
+		"AbilityTextureName"		"item_moss_disabled"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -3321,7 +3321,7 @@
 				"tower"		"nova_tower"
 			}
 		}
-		"AbilityTextureName"		"item_phoenix_supernova"
+		"AbilityTextureName"		"item_nova"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -3353,7 +3353,7 @@
 				"tower"		"nova_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_phoenix_supernova"
+		"AbilityTextureName"		"item_nova"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -3375,7 +3375,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_phoenix_supernova_disabled"
+		"AbilityTextureName"		"item_nova_disabled"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -3397,7 +3397,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_phoenix_supernova_disabled"
+		"AbilityTextureName"		"item_nova_disabled"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -3429,7 +3429,7 @@
 				"tower"		"obliteration_tower"
 			}
 		}
-		"AbilityTextureName"		"item_obsidian_destroyer_sanity_eclipse"
+		"AbilityTextureName"		"item_obliteration"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -3461,7 +3461,7 @@
 				"tower"		"obliteration_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_obsidian_destroyer_sanity_eclipse"
+		"AbilityTextureName"		"item_obliteration"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -3483,7 +3483,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_obsidian_destroyer_sanity_eclipse_disabled"
+		"AbilityTextureName"		"item_obliteration_disabled"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -3505,7 +3505,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_obsidian_destroyer_sanity_eclipse_disabled"
+		"AbilityTextureName"		"item_obliteration_disabled"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -3537,7 +3537,7 @@
 				"tower"		"poison_tower"
 			}
 		}
-		"AbilityTextureName"		"item_towers_poison_tower_contamination"
+		"AbilityTextureName"		"item_poison"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -3567,7 +3567,7 @@
 				"tower"		"poison_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_towers_poison_tower_contamination"
+		"AbilityTextureName"		"item_poison"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -3587,7 +3587,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_poison_tower_contamination_disabled"
+		"AbilityTextureName"		"item_poison_disabled"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -3617,7 +3617,7 @@
 				"tower"		"poison_tower_3"
 			}
 		}
-		"AbilityTextureName"		"item_towers_poison_tower_contamination"
+		"AbilityTextureName"		"item_poison"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -3637,7 +3637,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_poison_tower_contamination_disabled"
+		"AbilityTextureName"		"item_poison_disabled"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -3657,7 +3657,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_poison_tower_contamination_disabled"
+		"AbilityTextureName"		"item_poison_disabled"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -3687,7 +3687,7 @@
 				"tower"		"polar_tower"
 			}
 		}
-		"AbilityTextureName"		"item_crystal_maiden_crystal_nova"
+		"AbilityTextureName"		"item_polar"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -3719,7 +3719,7 @@
 				"tower"		"polar_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_crystal_maiden_crystal_nova"
+		"AbilityTextureName"		"item_polar"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -3741,7 +3741,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_crystal_maiden_crystal_nova_disabled"
+		"AbilityTextureName"		"item_polar_disabled"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -3763,7 +3763,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_crystal_maiden_crystal_nova_disabled"
+		"AbilityTextureName"		"item_polar_disabled"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -3963,7 +3963,7 @@
 				"tower"		"quake_tower"
 			}
 		}
-		"AbilityTextureName"		"item_earthshaker_aftershock"
+		"AbilityTextureName"		"item_quake"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -3995,7 +3995,7 @@
 				"tower"		"quake_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_earthshaker_aftershock"
+		"AbilityTextureName"		"item_quake"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -4017,7 +4017,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_earthshaker_aftershock_disabled"
+		"AbilityTextureName"		"item_quake_disabled"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -4039,7 +4039,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_earthshaker_aftershock_disabled"
+		"AbilityTextureName"		"item_quake_disabled"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -4071,7 +4071,7 @@
 				"tower"		"quark_tower"
 			}
 		}
-		"AbilityTextureName"		"item_towers_quark_tower_quantum_beam"
+		"AbilityTextureName"		"item_quark"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -4101,7 +4101,7 @@
 				"tower"		"quark_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_towers_quark_tower_quantum_beam"
+		"AbilityTextureName"		"item_quark"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -4121,7 +4121,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_quark_tower_quantum_beam_disabled"
+		"AbilityTextureName"		"item_quark_disabled"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -4151,7 +4151,7 @@
 				"tower"		"quark_tower_3"
 			}
 		}
-		"AbilityTextureName"		"item_towers_quark_tower_quantum_beam"
+		"AbilityTextureName"		"item_quark"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -4171,7 +4171,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_quark_tower_quantum_beam_disabled"
+		"AbilityTextureName"		"item_quark_disabled"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -4191,7 +4191,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_quark_tower_quantum_beam_disabled"
+		"AbilityTextureName"		"item_quark_disabled"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -4497,7 +4497,7 @@
 				"tower"		"roots_tower"
 			}
 		}
-		"AbilityTextureName"		"item_treant_leech_seed"
+		"AbilityTextureName"		"item_roots"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -4529,7 +4529,7 @@
 				"tower"		"roots_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_treant_leech_seed"
+		"AbilityTextureName"		"item_roots"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -4551,7 +4551,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_treant_leech_seed_disabled"
+		"AbilityTextureName"		"item_roots_disabled"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -4573,7 +4573,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_treant_leech_seed_disabled"
+		"AbilityTextureName"		"item_roots_disabled"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -4605,7 +4605,7 @@
 				"tower"		"runic_tower"
 			}
 		}
-		"AbilityTextureName"		"item_visage_gravekeepers_cloak"
+		"AbilityTextureName"		"item_runic"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -4637,7 +4637,7 @@
 				"tower"		"runic_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_visage_gravekeepers_cloak"
+		"AbilityTextureName"		"item_runic"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -4659,7 +4659,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_visage_gravekeepers_cloak_disabled"
+		"AbilityTextureName"		"item_runic_disabled"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -4681,7 +4681,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_visage_gravekeepers_cloak_disabled"
+		"AbilityTextureName"		"item_runic_disabled"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -4713,7 +4713,7 @@
 				"tower"		"super_arrow_tower"
 			}
 		}
-		"AbilityTextureName"		"item_composite"
+		"AbilityTextureName"		"item_arrow"
 		"Cost"		"37"
 	}
 	"item_upgrade_to_super_arrow_tower_disabled"
@@ -4726,7 +4726,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_composite_disabled"
+		"AbilityTextureName"		"item_arrow_disabled"
 		"Cost"		"37"
 	}
 	"item_upgrade_to_super_cannon_tower"
@@ -4749,7 +4749,7 @@
 				"tower"		"super_cannon_tower"
 			}
 		}
-		"AbilityTextureName"		"item_composite"
+		"AbilityTextureName"		"item_cannon"
 		"Cost"		"37"
 	}
 	"item_upgrade_to_super_cannon_tower_disabled"
@@ -4762,7 +4762,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_composite_disabled"
+		"AbilityTextureName"		"item_cannon_disabled"
 		"Cost"		"37"
 	}
 	"item_upgrade_to_torrent_tower"
@@ -4785,7 +4785,7 @@
 				"tower"		"torrent_tower"
 			}
 		}
-		"AbilityTextureName"		"item_towers_torrent_tower_douse"
+		"AbilityTextureName"		"item_tidal"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -4817,7 +4817,7 @@
 				"tower"		"torrent_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_towers_torrent_tower_douse"
+		"AbilityTextureName"		"item_tidal"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -4839,7 +4839,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_torrent_tower_douse_disabled"
+		"AbilityTextureName"		"item_tidal_disabled"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -4861,7 +4861,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_torrent_tower_douse_disabled"
+		"AbilityTextureName"		"item_tidal_disabled"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -4893,7 +4893,7 @@
 				"tower"		"trickery_tower"
 			}
 		}
-		"AbilityTextureName"		"item_modifier_illusion"
+		"AbilityTextureName"		"item_trickery"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -4923,7 +4923,7 @@
 				"tower"		"trickery_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_modifier_illusion"
+		"AbilityTextureName"		"item_trickery"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -4943,7 +4943,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_modifier_illusion_disabled"
+		"AbilityTextureName"		"item_trickery_disabled"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -4973,7 +4973,7 @@
 				"tower"		"trickery_tower_3"
 			}
 		}
-		"AbilityTextureName"		"item_modifier_illusion"
+		"AbilityTextureName"		"item_trickery"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -4993,7 +4993,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_modifier_illusion_disabled"
+		"AbilityTextureName"		"item_trickery_disabled"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -5013,7 +5013,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_modifier_illusion_disabled"
+		"AbilityTextureName"		"item_trickery_disabled"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -5043,7 +5043,7 @@
 				"tower"		"vapor_tower"
 			}
 		}
-		"AbilityTextureName"		"item_morphling_adaptive_strike"
+		"AbilityTextureName"		"item_vapor"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -5073,7 +5073,7 @@
 				"tower"		"vapor_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_morphling_adaptive_strike"
+		"AbilityTextureName"		"item_vapor"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -5093,7 +5093,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_morphling_adaptive_strike_disabled"
+		"AbilityTextureName"		"item_vapor_disabled"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -5123,7 +5123,7 @@
 				"tower"		"vapor_tower_3"
 			}
 		}
-		"AbilityTextureName"		"item_morphling_adaptive_strike"
+		"AbilityTextureName"		"item_vapor"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -5143,7 +5143,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_morphling_adaptive_strike_disabled"
+		"AbilityTextureName"		"item_vapor_disabled"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -5163,7 +5163,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_morphling_adaptive_strike_disabled"
+		"AbilityTextureName"		"item_vapor_disabled"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -5193,7 +5193,7 @@
 				"tower"		"well_tower"
 			}
 		}
-		"AbilityTextureName"		"item_morphling_waveform"
+		"AbilityTextureName"		"item_well"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -5223,7 +5223,7 @@
 				"tower"		"well_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_morphling_waveform"
+		"AbilityTextureName"		"item_well"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -5243,7 +5243,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_morphling_waveform_disabled"
+		"AbilityTextureName"		"item_well_disabled"
 		"Cost"		"750"
 		"Requirements"
 		{
@@ -5273,7 +5273,7 @@
 				"tower"		"well_tower_3"
 			}
 		}
-		"AbilityTextureName"		"item_morphling_waveform"
+		"AbilityTextureName"		"item_well"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -5293,7 +5293,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_morphling_waveform_disabled"
+		"AbilityTextureName"		"item_well_disabled"
 		"Cost"		"1900"
 		"Requirements"
 		{
@@ -5313,7 +5313,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_morphling_waveform_disabled"
+		"AbilityTextureName"		"item_well_disabled"
 		"Cost"		"325"
 		"Requirements"
 		{
@@ -5343,7 +5343,7 @@
 				"tower"		"windstorm_tower"
 			}
 		}
-		"AbilityTextureName"		"item_towers_windstorm_tower_tornado"
+		"AbilityTextureName"		"item_windstorm"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -5375,7 +5375,7 @@
 				"tower"		"windstorm_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_towers_windstorm_tower_tornado"
+		"AbilityTextureName"		"item_windstorm"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -5397,7 +5397,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_windstorm_tower_tornado_disabled"
+		"AbilityTextureName"		"item_windstorm_disabled"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -5419,7 +5419,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_towers_windstorm_tower_tornado_disabled"
+		"AbilityTextureName"		"item_windstorm_disabled"
 		"Cost"		"1000"
 		"Requirements"
 		{

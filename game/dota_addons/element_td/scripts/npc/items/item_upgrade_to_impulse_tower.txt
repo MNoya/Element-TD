@@ -18,7 +18,7 @@
 			"tower"		"impulse_tower"
 		}
 	}
-	"AbilityTextureName"		"item_enchantress_impetus"
+	"AbilityTextureName"		"item_impulse"
 	"Cost"		"1000"
 	"Requirements"
 	{

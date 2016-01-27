@@ -18,7 +18,7 @@
 			"tower"		"magic_tower_2"
 		}
 	}
-	"AbilityTextureName"		"item_towers_magic_tower"
+	"AbilityTextureName"		"item_magic"
 	"Cost"		"750"
 	"Requirements"
 	{

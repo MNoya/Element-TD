@@ -18,7 +18,7 @@
 			"tower"		"well_tower_3"
 		}
 	}
-	"AbilityTextureName"		"item_morphling_waveform"
+	"AbilityTextureName"		"item_well"
 	"Cost"		"1900"
 	"Requirements"
 	{

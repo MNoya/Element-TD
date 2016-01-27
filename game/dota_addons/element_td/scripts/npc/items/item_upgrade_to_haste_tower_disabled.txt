@@ -8,7 +8,7 @@
 	"ItemKillable"		"0"
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
-	"AbilityTextureName"		"item_troll_warlord_fervor_disabled"
+	"AbilityTextureName"		"item_haste_disabled"
 	"Cost"		"1000"
 	"Requirements"
 	{

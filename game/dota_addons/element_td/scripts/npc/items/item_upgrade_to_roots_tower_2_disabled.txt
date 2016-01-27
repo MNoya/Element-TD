@@ -8,7 +8,7 @@
 	"ItemKillable"		"0"
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
-	"AbilityTextureName"		"item_treant_leech_seed_disabled"
+	"AbilityTextureName"		"item_roots_disabled"
 	"Cost"		"3500"
 	"Requirements"
 	{

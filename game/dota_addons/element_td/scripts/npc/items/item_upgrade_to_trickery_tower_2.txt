@@ -18,7 +18,7 @@
 			"tower"		"trickery_tower_2"
 		}
 	}
-	"AbilityTextureName"		"item_modifier_illusion"
+	"AbilityTextureName"		"item_trickery"
 	"Cost"		"750"
 	"Requirements"
 	{

@@ -18,7 +18,7 @@
 			"tower"		"flame_tower"
 		}
 	}
-	"AbilityTextureName"		"item_towers_flame_tower_sunburn"
+	"AbilityTextureName"		"item_flame"
 	"Cost"		"325"
 	"Requirements"
 	{

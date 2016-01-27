@@ -18,7 +18,7 @@
 			"tower"		"runic_tower_2"
 		}
 	}
-	"AbilityTextureName"		"item_visage_gravekeepers_cloak"
+	"AbilityTextureName"		"item_runic"
 	"Cost"		"3500"
 	"Requirements"
 	{

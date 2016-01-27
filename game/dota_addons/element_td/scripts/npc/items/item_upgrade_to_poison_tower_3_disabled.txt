@@ -8,7 +8,7 @@
 	"ItemKillable"		"0"
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
-	"AbilityTextureName"		"item_towers_poison_tower_contamination_disabled"
+	"AbilityTextureName"		"item_poison_disabled"
 	"Cost"		"1900"
 	"Requirements"
 	{

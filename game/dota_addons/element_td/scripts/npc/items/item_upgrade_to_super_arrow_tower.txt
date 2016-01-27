@@ -18,6 +18,6 @@
 			"tower"		"super_arrow_tower"
 		}
 	}
-	"AbilityTextureName"		"item_composite"
+	"AbilityTextureName"		"item_arrow"
 	"Cost"		"37"
 }

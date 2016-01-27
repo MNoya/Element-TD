@@ -18,7 +18,7 @@
 			"tower"		"enchantment_tower_2"
 		}
 	}
-	"AbilityTextureName"		"item_leshrac_diabolic_edict"
+	"AbilityTextureName"		"item_enchantment"
 	"Cost"		"3500"
 	"Requirements"
 	{

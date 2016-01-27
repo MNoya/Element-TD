@@ -8,7 +8,7 @@
 	"ItemKillable"		"0"
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
-	"AbilityTextureName"		"item_leshrac_diabolic_edict_disabled"
+	"AbilityTextureName"		"item_enchantment_disabled"
 	"Cost"		"3500"
 	"Requirements"
 	{

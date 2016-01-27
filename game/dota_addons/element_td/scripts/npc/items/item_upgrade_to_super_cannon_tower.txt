@@ -18,6 +18,6 @@
 			"tower"		"super_cannon_tower"
 		}
 	}
-	"AbilityTextureName"		"item_composite"
+	"AbilityTextureName"		"item_cannon"
 	"Cost"		"37"
 }

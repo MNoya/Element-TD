@@ -18,7 +18,7 @@
 			"tower"		"life_tower"
 		}
 	}
-	"AbilityTextureName"		"item_towers_life_tower_afterlife"
+	"AbilityTextureName"		"item_life"
 	"Cost"		"325"
 	"Requirements"
 	{

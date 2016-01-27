@@ -18,7 +18,7 @@
 			"tower"		"hail_tower_2"
 		}
 	}
-	"AbilityTextureName"		"item_crystal_maiden_freezing_field"
+	"AbilityTextureName"		"item_hail"
 	"Cost"		"3500"
 	"Requirements"
 	{

@@ -18,7 +18,7 @@
 			"tower"		"polar_tower_2"
 		}
 	}
-	"AbilityTextureName"		"item_crystal_maiden_crystal_nova"
+	"AbilityTextureName"		"item_polar"
 	"Cost"		"3500"
 	"Requirements"
 	{

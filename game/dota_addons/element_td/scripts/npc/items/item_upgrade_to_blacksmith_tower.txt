@@ -18,7 +18,7 @@
 			"tower"		"blacksmith_tower"
 		}
 	}
-	"AbilityTextureName"		"item_towers_blacksmith_tower_fire_up"
+	"AbilityTextureName"		"item_blacksmith"
 	"Cost"		"325"
 	"Requirements"
 	{

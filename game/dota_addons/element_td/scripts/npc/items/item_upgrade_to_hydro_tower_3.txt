@@ -18,7 +18,7 @@
 			"tower"		"hydro_tower_3"
 		}
 	}
-	"AbilityTextureName"		"item_puck_illusory_orb"
+	"AbilityTextureName"		"item_hydro"
 	"Cost"		"1900"
 	"Requirements"
 	{

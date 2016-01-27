@@ -18,7 +18,7 @@
 			"tower"		"poison_tower_2"
 		}
 	}
-	"AbilityTextureName"		"item_towers_poison_tower_contamination"
+	"AbilityTextureName"		"item_poison"
 	"Cost"		"750"
 	"Requirements"
 	{

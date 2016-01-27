@@ -18,7 +18,7 @@
 			"tower"		"erosion_tower_2"
 		}
 	}
-	"AbilityTextureName"		"item_towers_erosion_tower_acid_attack"
+	"AbilityTextureName"		"item_erosion"
 	"Cost"		"3500"
 	"Requirements"
 	{

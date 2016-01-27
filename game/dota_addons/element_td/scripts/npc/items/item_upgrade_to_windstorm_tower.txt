@@ -18,7 +18,7 @@
 			"tower"		"windstorm_tower"
 		}
 	}
-	"AbilityTextureName"		"item_towers_windstorm_tower_tornado"
+	"AbilityTextureName"		"item_windstorm"
 	"Cost"		"1000"
 	"Requirements"
 	{

@@ -18,7 +18,7 @@
 			"tower"		"muck_tower_2"
 		}
 	}
-	"AbilityTextureName"		"item_bristleback_viscous_nasal_goo"
+	"AbilityTextureName"		"item_muck"
 	"Cost"		"3500"
 	"Requirements"
 	{

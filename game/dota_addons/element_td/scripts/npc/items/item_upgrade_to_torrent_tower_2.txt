@@ -18,7 +18,7 @@
 			"tower"		"torrent_tower_2"
 		}
 	}
-	"AbilityTextureName"		"item_towers_torrent_tower_douse"
+	"AbilityTextureName"		"item_tidal"
 	"Cost"		"3500"
 	"Requirements"
 	{

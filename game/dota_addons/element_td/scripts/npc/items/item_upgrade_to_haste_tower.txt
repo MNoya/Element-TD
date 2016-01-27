@@ -18,7 +18,7 @@
 			"tower"		"haste_tower"
 		}
 	}
-	"AbilityTextureName"		"item_troll_warlord_fervor"
+	"AbilityTextureName"		"item_haste"
 	"Cost"		"1000"
 	"Requirements"
 	{

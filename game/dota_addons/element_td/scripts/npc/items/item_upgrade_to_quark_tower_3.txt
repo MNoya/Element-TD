@@ -18,7 +18,7 @@
 			"tower"		"quark_tower_3"
 		}
 	}
-	"AbilityTextureName"		"item_towers_quark_tower_quantum_beam"
+	"AbilityTextureName"		"item_quark"
 	"Cost"		"1900"
 	"Requirements"
 	{

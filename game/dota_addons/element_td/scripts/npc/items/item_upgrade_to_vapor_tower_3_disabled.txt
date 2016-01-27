@@ -8,7 +8,7 @@
 	"ItemKillable"		"0"
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
-	"AbilityTextureName"		"item_morphling_adaptive_strike_disabled"
+	"AbilityTextureName"		"item_vapor_disabled"
 	"Cost"		"1900"
 	"Requirements"
 	{

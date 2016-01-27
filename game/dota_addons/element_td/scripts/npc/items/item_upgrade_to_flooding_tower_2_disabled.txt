@@ -8,7 +8,7 @@
 	"ItemKillable"		"0"
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
-	"AbilityTextureName"		"item_naga_siren_rip_tide_disabled"
+	"AbilityTextureName"		"item_flooding_disabled"
 	"Cost"		"3500"
 	"Requirements"
 	{

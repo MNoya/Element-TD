@@ -18,7 +18,7 @@
 			"tower"		"mushroom_tower_3"
 		}
 	}
-	"AbilityTextureName"		"item_brewmaster_earth_pulverize"
+	"AbilityTextureName"		"item_moss"
 	"Cost"		"1900"
 	"Requirements"
 	{

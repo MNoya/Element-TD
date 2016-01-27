@@ -8,7 +8,7 @@
 	"ItemKillable"		"0"
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
-	"AbilityTextureName"		"item_brewmaster_earth_pulverize_disabled"
+	"AbilityTextureName"		"item_moss_disabled"
 	"Cost"		"750"
 	"Requirements"
 	{

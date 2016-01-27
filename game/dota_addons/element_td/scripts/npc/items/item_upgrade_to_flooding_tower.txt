@@ -18,7 +18,7 @@
 			"tower"		"flooding_tower"
 		}
 	}
-	"AbilityTextureName"		"item_naga_siren_rip_tide"
+	"AbilityTextureName"		"item_flooding"
 	"Cost"		"1000"
 	"Requirements"
 	{
