@@ -11,7 +11,7 @@
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 	"AbilityCooldown"				"1"
 	"MaxLevel"						"2"
-	"AbilityTextureName"			"crystal_maiden_crystal_nova"
+	"AbilityTextureName"			"towers/polar"
 	"AbilityCastRange"				"750"
 
 	"OnSpellStart"

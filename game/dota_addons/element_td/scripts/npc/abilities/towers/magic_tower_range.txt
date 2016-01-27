@@ -8,7 +8,7 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"MaxLevel"						"5"
 	"AbilityCastRange"				"1100"
-	"AbilityTextureName"			"towers/magic_tower_increase_range"
+	"AbilityTextureName"			"towers/magic"
 
 	"Modifiers"
 	{

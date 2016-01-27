@@ -5,7 +5,7 @@
 {	
 	"BaseClass"						"ability_datadriven"											
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
-	"AbilityTextureName"			"visage_gravekeepers_cloak"
+	"AbilityTextureName"			"towers/runic"
 	"MaxLevel"						"1"
 	"AbilityCooldown"				"9"
 

@@ -1790,7 +1790,7 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"AbilityCooldown"				"1"
 		"MaxLevel"						"2"
-		"AbilityTextureName"			"leshrac_diabolic_edict"
+		"AbilityTextureName"			"towers/enchantment"
 		"AbilityCastRange"				"900"
 	
 	
@@ -2281,7 +2281,7 @@
 	
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"techies_suicide"
+		"AbilityTextureName"			"towers/gunpowder"
 		"MaxLevel"						"3"
 		"AbilityCastRange"				"1500"
 	
@@ -2306,7 +2306,7 @@
 	{	
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
-		"AbilityTextureName"			"crystal_maiden_freezing_field"
+		"AbilityTextureName"			"towers/hail"
 		"MaxLevel"						"1"
 		"AbilityCooldown"				"6"
 	
@@ -2424,7 +2424,7 @@
 	
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"kunkka_torrent"
+		"AbilityTextureName"			"towers/hydro"
 		"MaxLevel"						"3"
 		"AbilityCastRange"				"700"
 	
@@ -2498,7 +2498,7 @@
 	
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"ancient_apparition_ice_blast"
+		"AbilityTextureName"			"towers/ice"
 		"MaxLevel"						"3"
 	
 		"AbilityCastRange"				"%distance"
@@ -2851,7 +2851,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"MaxLevel"						"5"
 		"AbilityCastRange"				"1100"
-		"AbilityTextureName"			"towers/magic_tower_increase_range"
+		"AbilityTextureName"			"towers/magic"
 	
 		"Modifiers"
 		{
@@ -2986,7 +2986,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"MaxLevel"						"1"
-		"AbilityTextureName"			"brewmaster_earth_pulverize"
+		"AbilityTextureName"			"towers/moss"
 	}
 	//=================================================================================================================
 	// Nova Tower: Explode
@@ -3167,7 +3167,7 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"AbilityCooldown"				"1"
 		"MaxLevel"						"2"
-		"AbilityTextureName"			"crystal_maiden_crystal_nova"
+		"AbilityTextureName"			"towers/polar"
 		"AbilityCastRange"				"750"
 	
 		"OnSpellStart"
@@ -3230,7 +3230,7 @@
 	
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"earthshaker_aftershock"
+		"AbilityTextureName"			"towers/quake"
 		"MaxLevel"						"2"
 		"AbilityCastRange"				"500"
 	
@@ -3408,7 +3408,7 @@
 	{	
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
-		"AbilityTextureName"			"visage_gravekeepers_cloak"
+		"AbilityTextureName"			"towers/runic"
 		"MaxLevel"						"1"
 		"AbilityCooldown"				"9"
 	
@@ -3694,7 +3694,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"AbilityTextureName"			"morphling_adaptive_strike"
+		"AbilityTextureName"			"towers/vapor"
 		"MaxLevel"						"3"
 		"AbilityCastRange"				"700"
 	

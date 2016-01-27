@@ -5,7 +5,7 @@
 {	
 	"BaseClass"						"ability_datadriven"											
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
-	"AbilityTextureName"			"crystal_maiden_freezing_field"
+	"AbilityTextureName"			"towers/hail"
 	"MaxLevel"						"1"
 	"AbilityCooldown"				"6"
 

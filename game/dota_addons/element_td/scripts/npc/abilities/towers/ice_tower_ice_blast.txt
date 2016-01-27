@@ -8,7 +8,7 @@
 
 	"BaseClass"						"ability_datadriven"											
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"ancient_apparition_ice_blast"
+	"AbilityTextureName"			"towers/ice"
 	"MaxLevel"						"3"
 
 	"AbilityCastRange"				"%distance"

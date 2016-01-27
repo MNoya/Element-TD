@@ -10,7 +10,7 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-	"AbilityTextureName"			"morphling_adaptive_strike"
+	"AbilityTextureName"			"towers/vapor"
 	"MaxLevel"						"3"
 	"AbilityCastRange"				"700"
 
