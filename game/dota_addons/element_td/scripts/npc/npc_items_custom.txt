@@ -1281,7 +1281,7 @@
 				"tower"		"flooding_tower"
 			}
 		}
-		"AbilityTextureName"		"item_tidal"
+		"AbilityTextureName"		"item_flooding"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -1313,7 +1313,7 @@
 				"tower"		"flooding_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_tidal"
+		"AbilityTextureName"		"item_flooding"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -1335,7 +1335,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_tidal_disabled"
+		"AbilityTextureName"		"item_flooding_disabled"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -1357,7 +1357,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_tidal_disabled"
+		"AbilityTextureName"		"item_flooding_disabled"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -2655,7 +2655,7 @@
 				"tower"		"laser_tower"
 			}
 		}
-		"AbilityTextureName"		"item_tinker_laser"
+		"AbilityTextureName"		"item_laser"
 		"Cost"		"1000"
 		"Requirements"
 		{
@@ -2687,7 +2687,7 @@
 				"tower"		"laser_tower_2"
 			}
 		}
-		"AbilityTextureName"		"item_tinker_laser"
+		"AbilityTextureName"		"item_laser"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -2709,7 +2709,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_tinker_laser_disabled"
+		"AbilityTextureName"		"item_laser_disabled"
 		"Cost"		"3500"
 		"Requirements"
 		{
@@ -2731,7 +2731,7 @@
 		"ItemKillable"		"0"
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_tinker_laser_disabled"
+		"AbilityTextureName"		"item_laser_disabled"
 		"Cost"		"1000"
 		"Requirements"
 		{

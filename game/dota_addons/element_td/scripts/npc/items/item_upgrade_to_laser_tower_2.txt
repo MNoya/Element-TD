@@ -18,7 +18,7 @@
 			"tower"		"laser_tower_2"
 		}
 	}
-	"AbilityTextureName"		"item_tinker_laser"
+	"AbilityTextureName"		"item_laser"
 	"Cost"		"3500"
 	"Requirements"
 	{
