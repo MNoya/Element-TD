@@ -907,6 +907,12 @@ function BuildingHelper:StartBuilding(builder)
         building:RemoveEffects(EF_NODRAW)
     end
 
+    -- Make pedestal
+    local pedestal = BuildingHelper.UnitKV[unitName]["PedestalModel"]
+    if pedestal then
+        BuildingHelper:CreatePedestalForBuilding(building, unitName, location, pedestal)
+    end
+
     -- Initialize the building
     local model_offset = BuildingHelper.UnitKV[unitName]["ModelOffset"] or 0
     location.z = location.z + model_offset
@@ -915,12 +921,6 @@ function BuildingHelper:StartBuilding(builder)
     building.construction_size = construction_size
     building.buildingTable = buildingTable
     building.state = "building"
-
-    -- Make pedestal
-    local pedestal = BuildingHelper.UnitKV[unitName]["PedestalModel"]
-    if pedestal then
-        BuildingHelper:CreatePedestalForBuilding(building, unitName, location, pedestal)
-    end
 
     -- Adjust the Model Orientation
     local yaw = buildingTable:GetVal("ModelRotation", "float")
@@ -1664,7 +1664,7 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
             -- Create the building entity that will be used to start construction and project the queue particles
             entity = CreateUnitByName(unitName, model_location, false, nil, nil, builder:GetTeam())
         end
-        --entity:AddEffects(EF_NODRAW)
+        entity:AddEffects(EF_NODRAW)
         entity:AddNewModifier(entity, nil, "modifier_out_of_world", {})
         work.entity = entity
 
@@ -1903,7 +1903,7 @@ function BuildingHelper:GetOrCreateDummy(unitName)
     else
         BuildingHelper:print("AddBuilding "..unitName)
         local mgd = CreateUnitByName(unitName, Vector(0,0,0), false, nil, nil, 0)
-        --mgd:AddEffects(EF_NODRAW)
+        mgd:AddEffects(EF_NODRAW)
         mgd:AddNewModifier(mgd, nil, "modifier_out_of_world", {})
         BuildingHelper.Dummies[unitName] = mgd
         mgd.BHDUMMY = true -- Skip removing this entity
@@ -1916,7 +1916,7 @@ function BuildingHelper:GetOrCreateProp(propName)
         return BuildingHelper.Dummies[propName]
     else
         local prop = SpawnEntityFromTableSynchronous("prop_dynamic", {model = propName})
-        --prop:AddEffects(EF_NODRAW)
+        prop:AddEffects(EF_NODRAW)
         BuildingHelper.Dummies[propName] = prop
         prop.BHDUMMY = true -- Skip removing this entity
         return prop
