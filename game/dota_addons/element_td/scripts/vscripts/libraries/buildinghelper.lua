@@ -1,4 +1,4 @@
-BH_VERSION = "1.0.1"
+BH_VERSION = "1.0.2"
 
 if not BuildingHelper then
     BuildingHelper = class({})
@@ -44,6 +44,11 @@ function BuildingHelper:Init()
     if BuildingHelper.Settings["UPDATE_TREES"] then
         ListenToGameEvent('tree_cut', Dynamic_Wrap(BuildingHelper, 'OnTreeCut'), self)
     end
+
+    -- Lua Modifiers
+    LinkLuaModifier("modifier_out_of_world", "libraries/modifiers/modifier_out_of_world", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_builder_hidden", "libraries/modifiers/modifier_builder_hidden", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_disable_turning", "libraries/modifiers/modifier_disable_turning", LUA_MODIFIER_MOTION_NONE)
     
     BuildingHelper.KV = {} -- Merge KVs into a single table
     BuildingHelper:ParseKV(BuildingHelper.AbilityKV, BuildingHelper.KV)
@@ -508,9 +513,7 @@ function BuildingHelper:AddBuilding(keys)
 
     -- npc_dota_creature doesn't render cosmetics on the particle ghost, use hero names instead
     local overrideGhost = buildingTable:GetVal("OverrideBuildingGhost", "string")
-    if overrideGhost then
-        unitName = overrideGhost
-    end
+    unitName = overrideGhost or unitName
 
     -- Get a model dummy to pass it to panorama
     local mgd = BuildingHelper:GetOrCreateDummy(unitName)
@@ -877,10 +880,10 @@ function BuildingHelper:StartBuilding(builder)
         
         -- Remove the model particle and Advance Queue
         BuildingHelper:AdvanceQueue(builder)
-        ParticleManager:DestroyParticle(work.particleIndex, true)
+        BuildingHelper:ClearWorkParticles(work)
 
         -- Remove pedestal
-        if work.entity and work.entity.prop then UTIL_Remove(work.entity.prop) end
+        BuildingHelper:RemoveEntity(work.entity.prop)
 
         -- Building canceled, refund resources
         work.refund = true
@@ -896,7 +899,7 @@ function BuildingHelper:StartBuilding(builder)
     -- Spawn point obstructions before placing the building
     local gridNavBlockers = BuildingHelper:BlockGridSquares(construction_size, pathing_size, location)
 
-    -- For overriden ghosts we need to create another unit and remove the fake hero ghost
+    -- For overriden ghosts we need to create another unit
     if building:GetUnitName() ~= unitName then
         building = CreateUnitByName(unitName, location, false, playersHero, player, builder:GetTeam())
     else
@@ -913,13 +916,10 @@ function BuildingHelper:StartBuilding(builder)
     building.buildingTable = buildingTable
     building.state = "building"
 
-    -- Remove the attached prop particle and reveal the entity
-    if work.entity and work.entity.prop and work.entity.prop.pedestalParticle then
-        work.entity.prop:RemoveEffects(EF_NODRAW)
-        ParticleManager:DestroyParticle(work.entity.prop.pedestalParticle, true)
-
-        -- Store the prop on the building itself
-        building.prop = work.entity.prop
+    -- Make pedestal
+    local pedestal = BuildingHelper.UnitKV[unitName]["PedestalModel"]
+    if pedestal then
+        BuildingHelper:CreatePedestalForBuilding(building, unitName, location, pedestal)
     end
 
     -- Adjust the Model Orientation
@@ -1226,8 +1226,8 @@ function BuildingHelper:StartBuilding(builder)
         return .2
     end)
 
-    -- Remove the model particle
-    ParticleManager:DestroyParticle(work.particleIndex, true)
+    -- Remove the work particles
+    BuildingHelper:ClearWorkParticles(work)
 end
 
 --[[
@@ -1632,6 +1632,9 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
     end
 
     BuildingHelper:print("AddToQueue "..builder:GetUnitName().." "..builder:GetEntityIndex().." -> location "..VectorString(location))
+    
+    -- Make the new work entry
+    local work = {["location"] = location, ["name"] = buildingName, ["buildingTable"] = buildingTable, ["callbacks"] = callbacks}
 
     -- Position chosen is initially valid, send callback to spend gold
     callbacks.onBuildingPosChosen(location)
@@ -1640,41 +1643,45 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
     if builder:GetUnitName() == buildingName then
         -- Never queued
         BuildingHelper:ClearQueue(builder)
-        table.insert(builder.buildingQueue, {["location"] = location, ["name"] = buildingName, ["buildingTable"] = buildingTable, ["callbacks"] = callbacks})
+        table.insert(builder.buildingQueue, work)
 
         BuildingHelper:AdvanceQueue(builder)
         BuildingHelper:print("Starting self placement of "..buildingName)
 
     else
-        -- npc_dota_creature doesn't render cosmetics on the particle ghost, use hero names instead
-        local overrideGhost = buildingTable:GetVal("OverrideBuildingGhost", "string")
-        local unitName = buildingName
-        if overrideGhost then
-            unitName = overrideGhost
-        end
-
         -- Adjust the model position z
         local model_offset = BuildingHelper.UnitKV[buildingName]["ModelOffset"] or 0
         local model_location = Vector(location.x, location.y, location.z + model_offset)
 
-        -- Create the building entity that will be used to start construction and project the queue particles
-        local entity = CreateUnitByName(unitName, model_location, false, nil, nil, builder:GetTeam())
-        entity:AddEffects(EF_NODRAW)
+        -- npc_dota_creature doesn't render cosmetics on the particle ghost, use hero names instead
+        local overrideGhost = buildingTable:GetVal("OverrideBuildingGhost", "string")
+        local unitName = overrideGhost or buildingName
+        local entity
+        if overrideGhost then
+            -- Use a hero dummy to project the queue particles
+            entity = BuildingHelper:GetOrCreateDummy(unitName)
+        else
+            -- Create the building entity that will be used to start construction and project the queue particles
+            entity = CreateUnitByName(unitName, model_location, false, nil, nil, builder:GetTeam())
+        end
+        --entity:AddEffects(EF_NODRAW)
         entity:AddNewModifier(entity, nil, "modifier_out_of_world", {})
+        work.entity = entity
 
         local modelParticle = ParticleManager:CreateParticleForPlayer("particles/buildinghelper/ghost_model.vpcf", PATTACH_ABSORIGIN, entity, player)
         ParticleManager:SetParticleControl(modelParticle, 0, model_location)
         ParticleManager:SetParticleControlEnt(modelParticle, 1, entity, 1, "attach_hitloc", entity:GetAbsOrigin(), true) -- Model attach          
         ParticleManager:SetParticleControl(modelParticle, 3, Vector(BuildingHelper.Settings["MODEL_ALPHA"],0,0)) -- Alpha
         ParticleManager:SetParticleControl(modelParticle, 4, Vector(fMaxScale,0,0)) -- Scale
+        work.particleIndex = modelParticle
 
         local color = BuildingHelper.Settings["RECOLOR_BUILDING_PLACED"] and Vector(0,255,0) or Vector(255,255,255)
         ParticleManager:SetParticleControl(modelParticle, 2, color) -- Color
 
-        -- Create pedestal
+        -- Create pedestal for particles
         local pedestal = buildingTable:GetVal("PedestalModel")
         if pedestal then
-            local prop = BuildingHelper:CreatePedestalForBuilding(entity, buildingName, location, pedestal)
+            local prop = BuildingHelper:GetOrCreateProp(pedestal)
             local scale = buildingTable:GetVal("PedestalModelScale", "float") or entity:GetModelScale()
             local offset = buildingTable:GetVal("PedestalOffset", "float") or 0
             local offset_location = Vector(location.x, location.y, location.z + offset)
@@ -1686,6 +1693,7 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
             ParticleManager:SetParticleControl(prop.pedestalParticle, 2, color) -- Color
             ParticleManager:SetParticleControl(prop.pedestalParticle, 3, Vector(BuildingHelper.Settings["MODEL_ALPHA"],0,0)) -- Alpha
             ParticleManager:SetParticleControl(prop.pedestalParticle, 4, Vector(scale,0,0)) -- Scale
+            work.propParticleIndex = prop.pedestalParticle
         end
 
         -- Adjust the Model Orientation
@@ -1698,7 +1706,7 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
         end
 
         -- Add this to the builder queue
-        table.insert(builder.buildingQueue, {["location"] = location, ["name"] = buildingName, ["buildingTable"] = buildingTable, ["particleIndex"] = modelParticle, ["entity"] = entity, ["callbacks"] = callbacks})
+        table.insert(builder.buildingQueue, work)
 
         -- If the builder doesn't have a current work, start the queue
         -- Extra check for builder-inside behaviour, those abilities are always queued
@@ -1791,12 +1799,12 @@ function BuildingHelper:ClearQueue(builder)
 
     -- Main work  
     if work then
-        ParticleManager:DestroyParticle(work.particleIndex, true)
-        if work.entity.prop then UTIL_Remove(work.entity.prop) end
+        BuildingHelper:ClearWorkParticles(work)
+        BuildingHelper:RemoveEntity(work.entity.prop)
 
         -- Only refund work that hasn't been placed yet
         if not work.inProgress then
-            UTIL_Remove(work.entity)
+            BuildingHelper:RemoveEntity(work.entity)
             work.refund = true
         end
 
@@ -1809,15 +1817,27 @@ function BuildingHelper:ClearQueue(builder)
     while #builder.buildingQueue > 0 do
         work = builder.buildingQueue[1]
         work.refund = true --Refund this
-        ParticleManager:DestroyParticle(work.particleIndex, true)
-        if work.entity.prop then UTIL_Remove(work.entity.prop) end
-        UTIL_Remove(work.entity)
+        BuildingHelper:ClearWorkParticles(work)
+        BuildingHelper:RemoveEntity(work.entity.prop)
+        BuildingHelper:RemoveEntity(work.entity)
         table.remove(builder.buildingQueue, 1)
 
         if work.callbacks.onConstructionCancelled ~= nil then
             work.callbacks.onConstructionCancelled(work)
         end
     end
+end
+
+-- Remove the entity if it was not marked as a bh dummy
+function BuildingHelper:RemoveEntity(ent)
+    if ent and not ent.BHDUMMY then
+        UTIL_Remove(ent)
+    end
+end
+
+function BuildingHelper:ClearWorkParticles(work)
+    ParticleManager:DestroyParticle(work.particleIndex, true)
+    if work.propParticleIndex then ParticleManager:DestroyParticle(work.propParticleIndex, true) end
 end
 
 --[[
@@ -1829,7 +1849,6 @@ function BuildingHelper:StopGhost(builder)
     
     CustomGameEventManager:Send_ServerToPlayer(player, "building_helper_end", {})
 end
-
 
 --[[
     PrintQueue
@@ -1884,9 +1903,10 @@ function BuildingHelper:GetOrCreateDummy(unitName)
     else
         BuildingHelper:print("AddBuilding "..unitName)
         local mgd = CreateUnitByName(unitName, Vector(0,0,0), false, nil, nil, 0)
-        mgd:AddEffects(EF_NODRAW)
+        --mgd:AddEffects(EF_NODRAW)
         mgd:AddNewModifier(mgd, nil, "modifier_out_of_world", {})
         BuildingHelper.Dummies[unitName] = mgd
+        mgd.BHDUMMY = true -- Skip removing this entity
         return mgd
     end
 end
@@ -1896,8 +1916,9 @@ function BuildingHelper:GetOrCreateProp(propName)
         return BuildingHelper.Dummies[propName]
     else
         local prop = SpawnEntityFromTableSynchronous("prop_dynamic", {model = propName})
-        prop:AddEffects(EF_NODRAW)
+        --prop:AddEffects(EF_NODRAW)
         BuildingHelper.Dummies[propName] = prop
+        prop.BHDUMMY = true -- Skip removing this entity
         return prop
     end
 end
