@@ -31,7 +31,7 @@ function WindstormTower:SpawnTornado(keys)
         self.tornado.isTornado = true
         self.tornado.tower = self.tower
         self.tornado:SetControllableByPlayer(self.tower:GetOwner():GetPlayerID(), true)
-        ApplyModifier(self.tornado, "modifier_no_health_bar")
+        self.tornado:AddNewModifier(self.tornado, nil, "modifier_no_health_bar", {})
 
         local tornado_ability = self.tornado:FindAbilityByName("windstorm_tornado_slow")
         tornado_ability:SetLevel(self.tower:GetLevel())
