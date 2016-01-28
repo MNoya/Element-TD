@@ -26,9 +26,9 @@ function CreepBoss:OnSpawned()
         if not IsValidEntity(creep) or not creep:IsAlive() then return end
 
         creep:FindAbilityByName("creep_ability_mechanical"):ApplyDataDrivenModifier(creep, creep, "mechanical_buff", {})
-        creep:AddNewModifier(nil, nil, "modifier_invulnerable", {duration = 3})
+        creep:AddNewModifier(nil, nil, "modifier_invulnerable", {duration = 2})
 
-        return 9
+        return 8
     end)
 end
 

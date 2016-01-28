@@ -50,7 +50,7 @@ function GetWinningDifficulty()
 		totalVotes = totalVotes + votes
 	end
 
-	local average = math.floor((totalWeight / totalVotes) + 0.5)
+	local average = math.ceil((totalWeight / totalVotes) + 0.5)
 
 	print("Total number of votes: " .. totalVotes)
 	print("Average: " .. average)

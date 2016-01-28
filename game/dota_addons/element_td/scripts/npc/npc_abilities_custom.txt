@@ -456,12 +456,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"3"
+				"duration"				"2"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"interval"				"9"	
+				"interval"				"8"	
 			}
 		}
 		"Modifiers"
@@ -2557,7 +2557,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"450"
+				"projectile_speed"		"750"
 			}
 		}
 	}
@@ -2884,7 +2884,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_per_stack"		"20"
+				"range_per_stack"		"50"
 			}
 			"02"
 			{

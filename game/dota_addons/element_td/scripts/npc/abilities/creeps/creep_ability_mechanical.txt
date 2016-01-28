@@ -14,12 +14,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"3"
+			"duration"				"2"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"interval"				"9"	
+			"interval"				"8"	
 		}
 	}
 	"Modifiers"
