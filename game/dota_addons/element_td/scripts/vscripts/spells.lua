@@ -26,7 +26,7 @@ function SellTowerCast(keys)
 		local playerData = GetPlayerData(playerID)
 		local sellPercentage = tonumber(keys.SellAmount)
 
-		local refundAmount = round(GetUnitKeyValue(tower.class, "TotalCost") * sellPercentage)
+		local refundAmount = math.ceil(GetUnitKeyValue(tower.class, "TotalCost") * sellPercentage)
 		-- create a dummy unit to show the gold particles
 		if sellPercentage > 0  then
 			Sounds:EmitSoundOnClient(playerID, "General.Coins")	

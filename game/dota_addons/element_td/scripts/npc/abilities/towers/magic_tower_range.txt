@@ -41,7 +41,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"range_per_stack"		"20"
+			"range_per_stack"		"50"
 		}
 		"02"
 		{

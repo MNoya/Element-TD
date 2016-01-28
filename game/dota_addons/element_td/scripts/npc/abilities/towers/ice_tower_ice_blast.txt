@@ -67,7 +67,7 @@
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"projectile_speed"		"450"
+			"projectile_speed"		"750"
 		}
 	}
 }
