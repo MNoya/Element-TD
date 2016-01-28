@@ -1490,7 +1490,7 @@
 		"StatusManaRegen"		"0"
 		"VisionDaytimeRange"		"1200"
 		"VisionNighttimeRange"		"800"
-		"Model"		"models/courier/smeevil_magic_carpet/smeevil_magic_carpet_flying.vmdl"
+		"Model"		"models/courier/smeevil_magic_carpet/smeevil_magic_carpet.vmdl"
 		"ModelScale"		"1"
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		""
