@@ -95,6 +95,11 @@ function Wave:SpawnWave()
 				--RegisterCreep(entity, playerID)
 				CreateMoveTimerForCreep(entity, sector)
 				if entitiesSpawned == CREEPS_PER_WAVE then
+					if GameSettings:GetEndless() == "Endless" then
+						playerData.nextWave = playerData.nextWave + 1
+						print(playerData.nextWave)
+						StartBreakTime(self.playerID, GetPlayerDifficulty(self.playerID):GetWaveBreakTime(playerData.nextWave))
+					end
 					return nil
 				else
 					return 0.5

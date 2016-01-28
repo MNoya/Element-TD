@@ -6,6 +6,7 @@ if not GameSettings then
 	GameSettings = {}
 	GameSettings.__index = GameSettings
 	GameSettings.gamemode = ""
+	GameSettings.endless = "Normal"
 	GameSettings.order = "Normal"
 	GameSettings.length = ""
 	GameSettings.elements = ""
@@ -78,6 +79,10 @@ function GameSettings:GetGameLength()
 	return GameSettings.length
 end
 
+function GameSettings:GetEndless()
+	return GameSettings.endless
+end
+
 function GameSettings:SetGameLength(length)
 	GameSettings.length = GameSettingsKV["GameLength"][length]
 	if not GameSettings.length then
@@ -106,6 +111,10 @@ function GameSettings:SetGameLength(length)
     	end
 	end
 	Log:info("Set game length to " .. length)
+end
+
+function GameSettings:SetEndless(endless)
+	self.endless = endless
 end
 
 function GameSettings:SetCreepOrder(order)

@@ -26,12 +26,14 @@ var playerVotes = {};
 var gamemodeDD = $( '#GamemodeDD' );
 var difficultyDD = $( '#DifficultyDD' );
 var elementDD = $( '#ElementsDD' );
+var endlessDD = $( '#EndlessDD' );
 var orderDD = $( '#OrderDD' );
 var lengthDD = $( '#LengthDD' );
 
 var gamemodeDesc = $( '#GamemodeDesc' );
 var difficultyDesc = $( '#DifficultyDesc' );
 var elementDesc = $( '#ElementsDesc' );
+var endlessDesc = $( '#EndlessDesc' );
 var orderDesc = $( '#OrderDesc' );
 var lengthDesc = $( '#LengthDesc' );
 
@@ -40,12 +42,14 @@ var timer = $( '#Countdown' );
 var gamemodeResults = $( '#GamemodeResult' );
 var difficultyResults = $( '#DifficultyResult' );
 var elementsResults = $( '#ElementsResult' );
+var endlessResults = $( '#EndlessResult' );
 var orderResults = $( '#OrderResult' );
 var lengthResults = $( '#LengthResult' );
 
 var gameModes = {};
 var difficultyModes = {};
 var elementModes = {};
+var endlessModes = {};
 var orderModes = {};
 var lengthModes = {};
 
@@ -115,6 +119,17 @@ function Populate( data )
 	elementDD.SetSelected(0);
 	elementDesc.text = elementModes[0][1]; // Default All Pick
 
+	//=Endless Mode Dropdown
+	for (var end in gamesettings.HordeMode)
+	{
+		var endless = gamesettings['HordeMode'][end];
+		endlessModes[parseInt(endless['Index'])] = [ endless['Name'], endless['Description'], end ];
+	}
+
+	PopulateDropDown(endlessDD, endlessModes);
+	endlessDD.SetSelected(0);
+	endlessDesc.text = endlessModes[0][1]; // Default Normal
+
 	//=Order Dropdown================================================================//
 	for (var ord in gamesettings.CreepOrder)
 	{
@@ -159,6 +174,8 @@ function OnDropDownChanged( setting )
 		difficultyDesc.text = difficultyModes[parseInt(difficultyDD.GetSelected().id)][1];
 	else if (setting == "elements")
 		elementDesc.text = elementModes[parseInt(elementDD.GetSelected().id)][1];
+	else if (setting == "endless")
+		endlessDesc.text = endlessModes[parseInt(endlessDD.GetSelected().id)][1];
 	else if (setting == "order")
 		orderDesc.text = orderModes[parseInt(orderDD.GetSelected().id)][1];
 	else if (setting == "length")
@@ -221,6 +238,10 @@ function PlayerVoted( data )
 	elements.AddClass('PlayerVote');
 	elements.text = data.elements.replace(/([a-z])([A-Z])/g, '$1 $2');
 
+	var endless = $.CreatePanel('Label', votes, '');
+	endless.AddClass('PlayerVote');
+	endless.text = data.endless.replace(/([a-z])([A-Z])/g, '$1 $2');
+
 	var order = $.CreatePanel('Label', votes, '');
 	order.AddClass('PlayerVote');
 	order.text = data.order.replace(/([a-z])([A-Z])/g, '$1 $2');
@@ -252,6 +273,7 @@ function ConfirmVote()
 	data['gamemodeVote'] = gameModes[parseInt(gamemodeDD.GetSelected().id)][2]; 
 	data['difficultyVote'] = difficultyModes[parseInt(difficultyDD.GetSelected().id)][2];
 	data['elementsVote'] = elementModes[parseInt(elementDD.GetSelected().id)][2];
+	data['endlessVote'] = endlessModes[parseInt(endlessDD.GetSelected().id)][2];
 	data['orderVote'] = orderModes[parseInt(orderDD.GetSelected().id)][2];
 	data['lengthVote'] = lengthModes[parseInt(lengthDD.GetSelected().id)][2];
 
@@ -269,6 +291,7 @@ function ShowVoteResults( data )
 	gamemodeResults.text = gamesettings['GameModes'][data.gamemode].Name;
 	difficultyResults.text = gamesettings['Difficulty'][data.difficulty].Name;
 	elementsResults.text = gamesettings['ElementModes'][data.elements].Name;
+	endlessResults.text = gamesettings['HordeMode'][data.endless].Name;
 	orderResults.text = gamesettings['CreepOrder'][data.order].Name;
 	lengthResults.text = gamesettings['GameLength'][data.length].Name;
 }

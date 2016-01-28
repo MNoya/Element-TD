@@ -11,6 +11,7 @@ if not PLAYERS_NOT_VOTED then
 	VOTE_RESULTS.gamemode = {}
 	VOTE_RESULTS.difficulty = {}
 	VOTE_RESULTS.elements = {}
+	VOTE_RESULTS.endless = {}
 	VOTE_RESULTS.order = {}
 	VOTE_RESULTS.length = {}
 
@@ -100,6 +101,7 @@ function FinalizeVotes()
 		AddVote(VOTE_RESULTS.gamemode, "Competitive")
 		AddVote(VOTE_RESULTS.difficulty, "Normal")
 		AddVote(VOTE_RESULTS.elements, "AllPick")
+		AddVote(VOTE_RESULTS.endless, "Normal")
 		AddVote(VOTE_RESULTS.order, "Normal")
 		AddVote(VOTE_RESULTS.length, "Normal")
 	end
@@ -120,6 +122,7 @@ function FinalizeVotes()
 	end
 	
 	local elements = GetWinningChoice(VOTE_RESULTS.elements)
+	local endless = GetWinningChoice(VOTE_RESULTS.endless)
 	local order = GetWinningChoice(VOTE_RESULTS.order)
 	local length = GetWinningChoice(VOTE_RESULTS.length)
 
@@ -127,16 +130,18 @@ function FinalizeVotes()
 	print("Vote Results:")
 	print("Gamemode: " .. gamemode)
 	print("Elements: " .. elements)
+	print("Endless: " .. endless)
 	print("Order: " .. order)
 	print("Length: " .. length)
 	print("----------\n")
 
 	GameSettings:SetGameLength(length)
+	GameSettings:SetEndless(endless)
 	GameSettings:SetCreepOrder(order)
 	GameSettings:SetElementOrder(elements)
 
 	for k, plyID in pairs(playerIDs) do
-		local data = {playerID = plyID, gamemode = gamemode, difficulty = GetPlayerData(plyID).difficulty.difficultyName, elements = elements, order = order, length = length}
+		local data = {playerID = plyID, gamemode = gamemode, difficulty = GetPlayerData(plyID).difficulty.difficultyName, elements = elements, endless = endless, order = order, length = length}
 		PrintTable(data)
 		local ply = PlayerResource:GetPlayer(plyID)
 		if ply then
@@ -172,10 +177,11 @@ function ElementTD:OnPlayerVoted( table )
 		AddVote(VOTE_RESULTS.gamemode, table.data.gamemodeVote)
 		AddVote(VOTE_RESULTS.difficulty, table.data.difficultyVote)
 		AddVote(VOTE_RESULTS.elements, table.data.elementsVote)
+		AddVote(VOTE_RESULTS.endless, table.data.endlessVote)
 		AddVote(VOTE_RESULTS.order, table.data.orderVote)
 		AddVote(VOTE_RESULTS.length, table.data.lengthVote)
 
-		local data = {playerID = playerID, gamemode = table.data.gamemodeVote, difficulty = table.data.difficultyVote, elements = table.data.elementsVote, order = table.data.orderVote, length = table.data.lengthVote}
+		local data = {playerID = playerID, gamemode = table.data.gamemodeVote, difficulty = table.data.difficultyVote, elements = table.data.elementsVote, endless = table.data.endless, order = table.data.orderVote, length = table.data.lengthVote}
 		CustomGameEventManager:Send_ServerToAllClients( "etd_vote_display", data )
 
 		--check to see if all players have finished voting

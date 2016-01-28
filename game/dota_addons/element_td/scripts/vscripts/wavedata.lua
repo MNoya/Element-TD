@@ -63,7 +63,8 @@ function StartBreakTime(playerID, breakTime)
 
     -- let's figure out how long the break is
     local wave = GetPlayerData(playerID).nextWave
-    if GameSettings:GetGamemode() == "Competitive" then
+    print(wave,breakTime)
+    if GameSettings:GetGamemode() == "Competitive" and GameSettings:GetEndless() == "Normal" then
         wave = CURRENT_WAVE
     end
     local msgTime = 5 -- how long to show the message for
@@ -193,12 +194,12 @@ function SpawnWaveForPlayer(playerID, wave)
         if playerData.completedWaves == CURRENT_WAVE then
             print("Player: " .. playerData.name .. " [" .. playerID .. "] is the first to complete wave " .. CURRENT_WAVE)
             CURRENT_WAVE = playerData.nextWave
-            if GameSettings:GetGamemode() == "Competitive" then
+            if GameSettings:GetGamemode() == "Competitive" and GameSettings:GetEndless() ~= "Endless" then
                 CompetitiveNextRound(CURRENT_WAVE)
             end
         end
 
-        if GameSettings:GetGamemode() ~= "Competitive" then
+        if GameSettings:GetGamemode() ~= "Competitive" and GameSettings:GetEndless() ~= "Endless" then
             StartBreakTime(playerID, GetPlayerDifficulty(playerID):GetWaveBreakTime(playerData.nextWave))
         end
 

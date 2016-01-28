@@ -27,6 +27,12 @@
         </DropDown>
         <Label id="ElementsDesc" text="[elements descriptions]" class="desc"/>
       </Panel>
+      <Panel hittest="false"  id="Endless" class="setting">
+        <Label id="EndlessLabel" text="Endless:" class="label"/>
+        <DropDown id="EndlessDD" oninputsubmit="OnDropDownChanged('endless')" class="dropdown">
+        </DropDown>
+        <Label id="EndlessDesc" text="[endless descriptions]" class="desc"/>
+      </Panel>
       <Panel hittest="false"  id="Order" class="setting">
         <Label id="OrderLabel" text="Order:" class="label"/>
         <DropDown id="OrderDD" oninputsubmit="OnDropDownChanged('order')" class="dropdown">
@@ -72,6 +78,10 @@
       <Panel id="E" class="result">
         <Label id="ETitle" text="Elements" class="resultsLabel"/>
         <Label id="ElementsResult" text="[elements]" class="resultsValue"/>
+      </Panel>
+      <Panel id="EL" class="result">
+        <Label id="ELTitle" text="Endless" class="resultsLabel"/>
+        <Label id="EndlessResult" text="[order]" class="resultsValue"/>
       </Panel>
       <Panel id="O" class="result">
         <Label id="OTitle" text="Order" class="resultsLabel"/>
