@@ -96,7 +96,7 @@ function Populate( data )
 	for (var df in gamesettings.Difficulty)
 	{
 		var difficulty = gamesettings['Difficulty'][df];
-		var desc = (parseFloat(difficulty.Health) * 1000) / 10 + "% Creep Health, " + parseInt(difficulty.BaseBounty * 1000)/1000+ " Base Bounty (Express Mode: " + parseInt(difficulty.BaseBountyExpress * 1000)/1000+ " Base Bounty)";
+		var desc = Math.round(parseFloat(difficulty.Health) * 100) + "% Creep Health, " + parseInt(difficulty.BaseBounty * 1000)/1000+ " Base Bounty (Express Mode: " + parseInt(difficulty.BaseBountyExpress * 1000)/1000+ " Base Bounty)";
 		difficultyModes[parseInt(difficulty['Index'])] = [ difficulty['Name'], desc, df ];
 	}
 
