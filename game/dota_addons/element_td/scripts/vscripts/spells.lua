@@ -160,7 +160,7 @@ function UpgradeTower(keys)
     	end
 
     	if IsSupportTower(newTower) then
-            ApplyModifier(newTower, "modifier_support_tower")
+        	newTower:AddNewModifier(newTower, nil, "modifier_support_tower", {})
         end
 
 		if string.find(GameSettings.elementsOrderName, "Random") ~= nil then
@@ -191,7 +191,7 @@ function UpgradeTower(keys)
 		BuildTower(newTower, modelScale) --start the tower building animation
 
 		if GetUnitKeyValue(newClass, "DisableTurning") then
-            ApplyModifier(newTower, "modifier_disable_turning")
+        	newTower:AddNewModifier(newTower, nil, "modifier_disable_turning", {})
         end
 
 		Timers:CreateTimer(function()

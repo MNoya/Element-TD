@@ -44,9 +44,6 @@ function BuildingHelper:Init()
     if BuildingHelper.Settings["UPDATE_TREES"] then
         ListenToGameEvent('tree_cut', Dynamic_Wrap(BuildingHelper, 'OnTreeCut'), self)
     end
-
-    -- Modifier applier
-    BuildingHelper.Applier = CreateItem("item_bh_modifiers", nil, nil)
     
     BuildingHelper.KV = {} -- Merge KVs into a single table
     BuildingHelper:ParseKV(BuildingHelper.AbilityKV, BuildingHelper.KV)
@@ -794,10 +791,10 @@ function BuildingHelper:UpgradeBuilding(building, newName)
     local disableTurning = BuildingHelper.UnitKV[newName]["DisableTurning"]
     if not disableTurning then
         if BuildingHelper.Settings["DISABLE_BUILDING_TURNING"] then
-            BuildingHelper:ApplyModifier(newBuilding, "modifier_disable_turning")
+            newBuilding:AddNewModifier(newBuilding, nil, "modifier_disable_turning", {})
         end
     elseif disableTurning == 1 then
-        BuildingHelper:ApplyModifier(newBuilding, "modifier_disable_turning")
+        newBuilding:AddNewModifier(newBuilding, nil, "modifier_disable_turning", {})
     end
     
     local pedestalName = BuildingHelper.UnitKV[newName]["PedestalModel"]
@@ -931,7 +928,7 @@ function BuildingHelper:StartBuilding(builder)
 
     -- Disable turning
     if BuildingHelper.UnitKV[unitName]["DisableTurning"]==1 or BuildingHelper.Settings["DISABLE_BUILDING_TURNING"] then
-        BuildingHelper:ApplyModifier(building, "modifier_disable_turning")
+        building:AddNewModifier(building, "modifier_disable_turning")
     end
 
     -- Prevent regen messing with the building spawn hp gain
@@ -1663,7 +1660,7 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
         -- Create the building entity that will be used to start construction and project the queue particles
         local entity = CreateUnitByName(unitName, model_location, false, nil, nil, builder:GetTeam())
         entity:AddEffects(EF_NODRAW)
-        BuildingHelper:ApplyModifier(entity, "modifier_out_of_world")
+        entity:AddNewModifier(entity, nil, "modifier_out_of_world", {})
 
         local modelParticle = ParticleManager:CreateParticleForPlayer("particles/buildinghelper/ghost_model.vpcf", PATTACH_ABSORIGIN, entity, player)
         ParticleManager:SetParticleControl(modelParticle, 0, model_location)
@@ -1888,7 +1885,7 @@ function BuildingHelper:GetOrCreateDummy(unitName)
         BuildingHelper:print("AddBuilding "..unitName)
         local mgd = CreateUnitByName(unitName, Vector(0,0,0), false, nil, nil, 0)
         mgd:AddEffects(EF_NODRAW)
-        BuildingHelper:ApplyModifier(mgd, "modifier_out_of_world")
+        mgd:AddNewModifier(mgd, nil, "modifier_out_of_world", {})
         BuildingHelper.Dummies[unitName] = mgd
         return mgd
     end
@@ -1945,7 +1942,7 @@ function BuildingHelper:GetBlockPathingSize(unit)
 end
 
 function BuildingHelper:HideBuilder(unit, location, building)
-    BuildingHelper:ApplyModifier(unit, "modifier_builder_hidden")
+    unit:AddNewModifier(unit, nil, "modifier_builder_hidden", {})
     unit.entrance_to_build = unit:GetAbsOrigin()
 
     local location_builder = Vector(location.x, location.y, location.z - 200)
@@ -2037,11 +2034,6 @@ function BuildingHelper:MeetsHeightCondition(location)
     if BuildingHelper.Settings["HEIGHT_RESTRICTION"] ~= "" then
         return location.z >= BuildingHelper.Settings["HEIGHT_RESTRICTION"]
     end
-end
-
--- Applies a modifier from item_bh_modifiers
-function BuildingHelper:ApplyModifier(unit, modifierName)
-    BuildingHelper.Applier:ApplyDataDrivenModifier(unit, unit, modifierName, {})
 end
 
 -- A BuildingHelper ability is identified by the "Building" key.

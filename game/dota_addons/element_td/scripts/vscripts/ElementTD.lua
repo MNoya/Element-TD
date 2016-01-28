@@ -72,17 +72,13 @@ function ElementTD:InitGameMode()
     -- Lua Modifiers
     LinkLuaModifier("modifier_stunned", "libraries/modifiers/modifier_stunned", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_invisible_etd", "libraries/modifiers/modifier_invisible", LUA_MODIFIER_MOTION_NONE)
-    --LinkLuaModifier("modifier_no_health_bar", "libraries/modifiers/modifier_no_health_bar", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_no_health_bar", "libraries/modifiers/modifier_no_health_bar", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_transparency", "libraries/modifiers/modifier_transparency.lua", LUA_MODIFIER_MOTION_NONE)
-    --LinkLuaModifier("modifier_disabled", "libraries/modifiers/modifier_disabled", LUA_MODIFIER_MOTION_NONE)
-    --LinkLuaModifier("modifier_attack_disabled", "libraries/modifiers/modifier_attack_disabled", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_disabled", "libraries/modifiers/modifier_disabled", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_attack_disabled", "libraries/modifiers/modifier_attack_disabled", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_damage_block", "libraries/modifiers/modifier_damage_block", LUA_MODIFIER_MOTION_NONE)
-    --LinkLuaModifier("modifier_support_tower", "libraries/modifiers/modifier_support_tower", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_support_tower", "libraries/modifiers/modifier_support_tower", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_bonus_life", "libraries/modifiers/modifier_bonus_life", LUA_MODIFIER_MOTION_NONE)    
-    --LinkLuaModifier("modifier_disable_turning", "libraries/modifiers/modifier_disable_turning", LUA_MODIFIER_MOTION_NONE)
-
-    -- Datadriven Modifier Applier
-    GameRules.Applier = CreateItem("item_apply_modifiers", nil, nil)
     
     -- Register UI Listener   
     CustomGameEventManager:RegisterListener( "next_wave", Dynamic_Wrap(ElementTD, "OnNextWave")) -- wave info

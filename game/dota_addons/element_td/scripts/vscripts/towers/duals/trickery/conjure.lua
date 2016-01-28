@@ -60,7 +60,7 @@ function trickery_tower_conjure:OnSpellStart()
     -- Add abilities
     AddAbility(clone, "ability_building")
     if GetUnitKeyValue(building_name, "DisableTurning") then
-        BuildingHelper:ApplyModifier(unit, "modifier_disable_turning")
+        unit:AddNewModifier(unit, nil, "modifier_disable_turning", {})
     end
     AddAbility(clone, "sell_tower_0")
     AddAbility(clone, clone.damageType .. "_passive")
@@ -75,7 +75,7 @@ function trickery_tower_conjure:OnSpellStart()
     UpdateScoreboard(playerID)
 
     -- apply the clone modifier to the clone
-    ApplyModifier(clone, "modifier_no_health_bar")
+    clone:AddNewModifier(clone, nil, "modifier_no_health_bar", {})
     clone:AddNewModifier(caster, self, "modifier_clone", {duration=self.clone_duration})
     clone:AddNewModifier(caster, self, "modifier_kill", {duration=self.clone_duration})
     self.clones[clone:entindex()] = 1 --Clones for this particular tower ability

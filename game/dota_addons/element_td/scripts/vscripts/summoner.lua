@@ -334,5 +334,5 @@ function AddElementalTrophy(playerID, element)
     elemental:SetModelScale(scale)
     elemental:SetForwardVector(Vector(0, -1, 0))
 
-    ApplyModifier(elemental, "modifier_disabled")
+    elemental:AddNewModifier(elemental, nil, "modifier_disabled", {})
 end
