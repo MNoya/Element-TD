@@ -36,17 +36,26 @@ function loadWaveData(chaos)
     end
     if chaos then
         local lastWaves = {}
+        local k = 55
+        if EXPRESS_MODE then
+            k = 30
+        end
         if not EXPRESS_MODE then
-            for i = 55, 56, 1 do
+            for i = k, k + 1, 1 do
                 lastWaves[i] =  WAVE_CREEPS[i]
                 WAVE_CREEPS[i] = nil
             end
+        elseif EXPRESS_MODE then
+            lastWaves[k] = WAVE_CREEPS[k]
+            WAVE_CREEPS[k] = nil
         end
         WAVE_CREEPS = shuffle(WAVE_CREEPS)
         if not EXPRESS_MODE then
-            for i = 55, 56, 1 do
+            for i = k, k + 1, 1 do
                 table.insert(WAVE_CREEPS, lastWaves[i])
             end
+        elseif EXPRESS_MODE then
+            table.insert(WAVE_CREEPS, lastWaves[k])
         end
     end
     PrintTable(WAVE_CREEPS)
@@ -172,15 +181,20 @@ function SpawnWaveForPlayer(playerID, wave)
 
         print("Player [" .. playerID .. "] has completed a wave")
         playerData.completedWaves = playerData.completedWaves + 1
-        playerData.nextWave = playerData.nextWave + 1
+        if GameSettings:GetEndless() == "Normal" then
+            playerData.nextWave = playerData.nextWave + 1
+        end
 
         -- Boss Waves
-        if playerData.completedWaves >= WAVE_COUNT and not EXPRESS_MODE then
+        if playerData.completedWaves >= WAVE_COUNT and not EXPRESS_MODE and GameSettings:GetEndless() == "Normal" then
             print("Player [" .. playerID .. "] has completed a boss wave")
             Log:info("Spawning boss wave " .. WAVE_COUNT .. " for ["..playerID.."] ".. playerData.name)
             playerData.bossWaves = playerData.bossWaves + 1
             ShowMessage(playerID, "Boss Wave " .. playerData.bossWaves + 1, 3)
             SpawnWaveForPlayer(playerID, WAVE_COUNT) -- spawn dat boss wave
+            return
+        end
+        if playerData.completedWaves >= WAVE_COUNT and not EXPRESS_MODE and GameSettings:GetEndless() == "Endless" then
             return
         end
 
