@@ -195,3 +195,7 @@ function GetDamageType(tower)
 		return "composite"
 	end
 end
+
+function GetElementColor(element)
+	return Vector(ElementColors[element][1], ElementColors[element][2], ElementColors[element][3])
+end

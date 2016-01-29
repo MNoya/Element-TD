@@ -8,6 +8,7 @@ if not SpawnLocations then
 	EntityEndEntities = {} 
 	ElementalSummonerLocations = {} -- array of positions for elemental summoners
 	SectorBounds = {}
+	SectorPortals = {}
 end
 
 function GenerateAllConstants()
@@ -15,6 +16,7 @@ function GenerateAllConstants()
 	generateSectorBounds()
 	generateSpawnLocations()
 	generateEntityLocations()
+	generateSectorPortals()
 end
 
 function generateElementalSummonerLocations()
@@ -49,6 +51,13 @@ function generateSectorBounds()
 			top = defY + yIncr,
 			bottom = defY + (yIncr * 2)
 		}
+	end
+end
+
+function generateSectorPortals()
+	for i=1,8 do
+		local portal = Entities:FindByName(nil, "portal_sector"..i)
+		SectorPortals[i] = portal
 	end
 end
 

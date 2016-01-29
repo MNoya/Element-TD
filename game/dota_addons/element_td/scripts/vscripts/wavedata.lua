@@ -63,7 +63,6 @@ function StartBreakTime(playerID, breakTime)
 
     -- let's figure out how long the break is
     local wave = GetPlayerData(playerID).nextWave
-    print(wave,breakTime)
     if GameSettings:GetGamemode() == "Competitive" and GameSettings:GetEndless() == "Normal" then
         wave = CURRENT_WAVE
     end
@@ -246,7 +245,6 @@ function SpawnWaveForPlayer(playerID, wave)
     
     ----------------------------------------
     -- create thinker to sync fast creeps --
-    print(GetUnitKeyValue(WAVE_CREEPS[wave], "ScriptClass") == "CreepBoss")
     if GetUnitKeyValue(WAVE_CREEPS[wave], "ScriptClass") == "CreepFast" or GetUnitKeyValue(WAVE_CREEPS[wave], "ScriptClass") == "CreepBoss" then
         local player = PlayerResource:GetPlayer(playerID)
         local hero = player:GetAssignedHero()
@@ -269,19 +267,25 @@ function SpawnWaveForPlayer(playerID, wave)
 end
 
 function ShowPortalForSector(sector, wave, time)
-    local element = string.gsub(creepsKV[WAVE_CREEPS[wave+1]].Ability1, "_armor", "")
+    local element = string.gsub(creepsKV[WAVE_CREEPS[wave]].Ability1, "_armor", "")
     print("Portal: ",sector, element)
-    local ent = Entities:FindByName(nil, "portal_sector"..sector)
-    local origin = ent:GetAbsOrigin()
+    local portal = SectorPortals[sector]
+    local origin = portal:GetAbsOrigin()
     origin.z = origin.z - 250
-    local particleName = "particles/econ/events/nexon_hero_compendium_2014/teleport_start_d_nexon_hero_cp_2014.vpcf"
-    local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, nil)
-    ParticleManager:SetParticleControl(particle, 0, origin)
-    ParticleManager:SetParticleControlOrientation(particle, 0, Vector(0, 0, 1), Vector(1, 0, 0), Vector(0, -1, 0)) --Rotate 90 pitch
-    if sector > 5 then
+
+    if portal.particle then
+        ParticleManager:DestroyParticle(portal.particle, true)
+    end
+
+    local particleName = "particles/custom/portals/spiral2.vpcf"
+    portal.particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, nil)
+    ParticleManager:SetParticleControl(portal.particle, 0, origin)
+    ParticleManager:SetParticleControl(portal.particle, 15, GetElementColor(element))
+    
+    if sector >= 5 then
         print("Error, can't have more than 4 Speech Bubbles")
     else
-        ent:AddSpeechBubble(sector, "#etd_wave_"..element, time, 0, 0)
+        portal:AddSpeechBubble(sector, "#etd_wave_"..element, time, 0, 0)
     end
 end
 
