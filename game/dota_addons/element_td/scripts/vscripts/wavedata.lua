@@ -277,7 +277,7 @@ function ShowPortalForSector(sector, wave, time)
         ParticleManager:DestroyParticle(portal.particle, true)
     end
 
-    local particleName = "particles/custom/portals/spiral2.vpcf"
+    local particleName = "particles/custom/portals/spiral.vpcf"
     portal.particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, nil)
     ParticleManager:SetParticleControl(portal.particle, 0, origin)
     ParticleManager:SetParticleControl(portal.particle, 15, GetElementColor(element))
