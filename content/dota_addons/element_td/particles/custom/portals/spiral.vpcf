@@ -19,7 +19,10 @@
 			m_hTexture = resource:"materials/particle/smoke_spiral01.vtex"
 			m_flAnimationRate = 1.500000
 			m_nOrientationType = 3
-			m_bDisableZBuffering = true
+			m_bPerVertexLighting = true
+			m_bParticleFeathering = true
+			m_flFeatheringMinDist = 15.000000
+			m_flFeatheringMaxDist = 150.000000
 		},
 	]
 	m_Operators =
@@ -82,7 +85,6 @@
 		},
 		{
 			_class = "C_INIT_RandomRotation"
-			m_bDisableOperator = true
 		},
 		{
 			_class = "C_INIT_CreateWithinBox"
@@ -129,7 +131,7 @@
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
-			m_flEmitRate = 15.000000
+			m_flEmitRate = 25.000000
 		},
 	]
 	m_ConstantNormal =

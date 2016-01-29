@@ -285,11 +285,14 @@ function ShowPortalForSector(sector, wave, time)
     print("Portal: ",sector, element)
     local portal = SectorPortals[sector]
     local origin = portal:GetAbsOrigin()
-    origin.z = origin.z - 250
-
-    if portal.particle then
-        ParticleManager:DestroyParticle(portal.particle, true)
+    origin.z = origin.z - 200
+    if origin.y > 0 then
+        origin.y = origin.y + 70
+    else
+        origin.y = origin.y - 70
     end
+
+    ClosePortalForSector(sector)
 
     local particleName = "particles/custom/portals/spiral.vpcf"
     portal.particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, nil)
@@ -300,6 +303,13 @@ function ShowPortalForSector(sector, wave, time)
         print("Error, can't have more than 4 Speech Bubbles")
     else
         portal:AddSpeechBubble(sector, "#etd_wave_"..element, time, 0, 0)
+    end
+end
+
+function ClosePortalForSector(sector)
+    local portal = SectorPortals[sector]
+    if portal.particle then
+        ParticleManager:DestroyParticle(portal.particle, true)
     end
 end
 
