@@ -84,6 +84,10 @@ function StartBreakTime(playerID, breakTime)
             CustomGameEventManager:Send_ServerToPlayer( ply, "etd_update_wave_timer", { time = breakTime, button = (GameSettings:GetGamemode() ~= "Competitive") } )
         end
         ShowMessage(playerID, "Wave "..wave.." in "..breakTime.." seconds", msgTime)
+
+        local playerData = GetPlayerData(playerID)
+        local sector = playerData.sector + 1
+        ShowPortalForSector(sector, wave, breakTime)
     end
 
     -- create the actual timer
@@ -262,6 +266,23 @@ function SpawnWaveForPlayer(playerID, wave)
         end)
     end
     ----------------------------
+end
+
+function ShowPortalForSector(sector, wave, time)
+    local element = string.gsub(creepsKV[WAVE_CREEPS[wave+1]].Ability1, "_armor", "")
+    print("Portal: ",sector, element)
+    local ent = Entities:FindByName(nil, "portal_sector"..sector)
+    local origin = ent:GetAbsOrigin()
+    origin.z = origin.z - 250
+    local particleName = "particles/econ/events/nexon_hero_compendium_2014/teleport_start_d_nexon_hero_cp_2014.vpcf"
+    local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, nil)
+    ParticleManager:SetParticleControl(particle, 0, origin)
+    ParticleManager:SetParticleControlOrientation(particle, 0, Vector(0, 0, 1), Vector(1, 0, 0), Vector(0, -1, 0)) --Rotate 90 pitch
+    if sector > 5 then
+        print("Error, can't have more than 4 Speech Bubbles")
+    else
+        ent:AddSpeechBubble(sector, "#etd_wave_"..element, time, 0, 0)
+    end
 end
 
 function CreateMoveTimerForCreep(creep, sector)

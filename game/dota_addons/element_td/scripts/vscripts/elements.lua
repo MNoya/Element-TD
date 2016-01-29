@@ -43,6 +43,12 @@ ElementColors = {
 	composite = {255, 255, 255}, water = {1, 162, 255},	fire = {196, 0, 0}, nature = {0, 196, 0},
 	earth = {212, 136, 15}, light = {229, 222, 35}, dark = {132, 51, 200}
 }
+-- Water #01A2FF
+-- Fire #C40000
+-- Nature #00C400
+-- Earth #D4880F
+-- Light #E5DE23
+-- Dark #8733C8
 
 function DamageEntity(entity, attacker, damage)
 	if not entity or not entity:IsAlive() then return end
