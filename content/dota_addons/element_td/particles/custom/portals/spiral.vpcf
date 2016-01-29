@@ -19,7 +19,7 @@
 			m_hTexture = resource:"materials/particle/smoke_spiral01.vtex"
 			m_flAnimationRate = 1.500000
 			m_nOrientationType = 3
-			m_flDepthBias = 10.000000
+			m_bDisableZBuffering = true
 		},
 	]
 	m_Operators =

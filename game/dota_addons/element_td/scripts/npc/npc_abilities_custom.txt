@@ -2846,6 +2846,11 @@
 					}
 				}
 			}
+	
+			"modifier_life_tower_counter"
+			{
+				"TextureName" "towers/life_tower_afterlife"
+			}
 		}
 	
 		"AbilitySpecial"

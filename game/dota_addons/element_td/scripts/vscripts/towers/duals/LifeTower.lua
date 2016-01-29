@@ -27,16 +27,16 @@ function LifeTower:CreepKilled(keys)
     if playerData.health < 50 and playerData.LifeTowerKills >= 3 then --when health is less than 50
         playerData.LifeTowerKills = playerData.LifeTowerKills - 3
 
-        AddOneLife(self.tower, playerData)
+        AddOneLife(self.tower, self.ability, playerData)
 
     elseif playerData.health >= 50 and playerData.LifeTowerKills >= 9 then --when health is greater than or equal to 50
         playerData.LifeTowerKills = playerData.LifeTowerKills - 9
 
-        AddOneLife(self.tower, playerData)        
+        AddOneLife(self.tower, self.ability, playerData)        
     end
 end
 
-function AddOneLife(tower, playerData)
+function AddOneLife(tower, ability, playerData)
     local hero = tower:GetOwner()
 
     playerData.health = playerData.health + 1
@@ -54,6 +54,9 @@ function AddOneLife(tower, playerData)
 
     CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=hero:GetPlayerID(), health= hero:GetHealthPercent() } )
     UpdateScoreboard(hero:GetPlayerID())
+
+    tower.life_counter = tower.life_counter + 1
+    tower:SetModifierStackCount("modifier_life_tower_counter", tower, tower.life_counter)
 end
 
 function LifeTower:OnAttackLanded(keys)
@@ -63,9 +66,24 @@ function LifeTower:OnAttackLanded(keys)
     DamageEntity(target, self.tower, damage)    
 end
 
+function LifeTower:GetUpgradeData()
+    local counter = self.tower.life_counter
+    return { life_counter = counter }
+end
+
+function LifeTower:ApplyUpgradeData(data)
+    DeepPrintTable(data)
+    if data.life_counter and data.life_counter > 0 then
+        self.tower:SetModifierStackCount("modifier_life_tower_counter", self.tower, data.life_counter)
+        self.tower.life_counter = data.life_counter
+    end
+end
+
 function LifeTower:OnCreated()
-    AddAbility(self.tower, "life_tower_afterlife", self.tower:GetLevel())    
+    self.ability = AddAbility(self.tower, "life_tower_afterlife", self.tower:GetLevel())    
     self.pointsPerKill = GetAbilitySpecialValue("life_tower_afterlife", "points_per_kill")[self.tower:GetLevel()]    
+    self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_life_tower_counter", {})
+    self.tower.life_counter = 0
 end
 
 RegisterTowerClass(LifeTower, LifeTower.className)    

@@ -57,7 +57,7 @@ function SellTowerCast(keys)
 			hero:ModifyGold(refundAmount, true, 0)
 
 			-- If a tower costs a Pure Essence (Pure, Periodic), then that essence is refunded upon selling the tower.
-			local essenceCost = GetUnitKeyValue(tower.class, "EssenceCost")
+			local essenceCost = GetUnitKeyValue(tower.class, "EssenceCost") or 0
 			if essenceCost > 0 then
 				ModifyPureEssence(playerID, essenceCost)
 			end
