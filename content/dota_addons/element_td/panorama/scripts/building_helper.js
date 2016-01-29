@@ -244,7 +244,7 @@ function StartBuildingHelper( params )
             {
                 for (var y=boundingRect["topBorderY"]-32; y >= boundingRect["bottomBorderY"]+32; y-=64)
                 {
-                    var pos = [x,y,GamePos[2]]
+                    var pos = SnapHeight(x,y,GamePos[2])
                     if (part>size*size)
                         return
 
@@ -293,7 +293,7 @@ function StartBuildingHelper( params )
                 {
                     for (var y2=boundingRect2["topBorderY"]-32; y2 >= boundingRect2["bottomBorderY"]+32; y2-=64)
                     {
-                        var pos2 = [x2,y2,GamePos[2]]
+                        var pos2 = SnapHeight(x2,y2,GamePos[2])
                         if (part2>=overlay_size*overlay_size)
                             return
 
@@ -322,8 +322,16 @@ function StartBuildingHelper( params )
             }
 
             // Update the model particle
-            Particles.SetParticleControl(modelParticle, 0, [GamePos[0],GamePos[1],GamePos[2]+modelOffset])
-            if (propParticle !== undefined) Particles.SetParticleControl(propParticle, 0, [GamePos[0],GamePos[1],GamePos[2]+offsetZ])
+            var modelPos = SnapHeight(GamePos[0],GamePos[1],GamePos[2])
+            modelPos[2]+=modelOffset
+            Particles.SetParticleControl(modelParticle, 0, modelPos)
+
+            if (propParticle !== undefined)
+            {
+                var pedestalPos = SnapHeight(GamePos[0],GamePos[1],GamePos[2])
+                pedestalPos[2]+=offsetZ
+                Particles.SetParticleControl(propParticle, 0, pedestalPos)
+            }
 
             // Destroy the range overlay if its not a valid building location
             if (invalid)
@@ -347,7 +355,7 @@ function StartBuildingHelper( params )
             }
 
             if (rangeOverlay !== undefined)
-                Particles.SetParticleControl(rangeOverlay, 0, GamePos)
+                Particles.SetParticleControl(rangeOverlay, 0, modelPos)
 
             // Turn the model red if we can't build there
             if (turn_red){
@@ -507,6 +515,10 @@ function SnapToGrid64(coord) {
 
 function SnapToGrid32(coord) {
     return 32+64*Math.floor(coord/64);
+}
+
+function SnapHeight(x,y,z){
+    return [x, y, z - (z%128)]
 }
 
 function IsBlocked(position) {
