@@ -169,6 +169,7 @@ end
 
 function BuyPureEssence( keys )
 	local summoner = keys.caster
+    local item = keys.ability
 	local playerID = summoner:GetOwner():GetPlayerID()
 	local playerData = GetPlayerData(playerID)
 	local elements = playerData.elements
@@ -193,6 +194,10 @@ function BuyPureEssence( keys )
 			ModifyPureEssence(playerID, 1)
             playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
 			Sounds:EmitSoundOnClient(playerID, "General.Buy")
+            item:SetCurrentCharges(item:GetCurrentCharges()-1)
+            if item:GetCurrentCharges() == 0 then
+                item:RemoveSelf()
+            end
 		else
             Log:info("Player " .. playerID .. " does not meet the pure essence purchase requirements.")
             ShowWarnMessage(playerID, "#etd_essence_buy_warning")

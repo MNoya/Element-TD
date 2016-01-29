@@ -207,6 +207,7 @@ function ElementTD:EnableRandom(playerID)
         playerData.elementalRandom = true
         print("Elemental Random set to "..tostring(playerData.elementalRandom).." for player "..playerID)
         SendEssenceMessage(playerID, "#etd_random_toggle_enable")
+        UpdatePlayerSpells(playerID)
     else
         SendErrorMessage(playerID, "#etd_random_toggle_error")
     end

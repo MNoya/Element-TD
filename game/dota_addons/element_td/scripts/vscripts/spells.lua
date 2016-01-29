@@ -5,7 +5,7 @@ local towersKV = LoadKeyValues("scripts/kv/towers.kv")
 
 function UpdatePlayerSpells(playerID)
 	local playerData = GetPlayerData(playerID)
-	local hero = ElementTD.vPlayerIDToHero[playerID]
+	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 	if hero then
 		for i=0,15 do
 			local ability = hero:GetAbilityByIndex(i)
@@ -22,6 +22,14 @@ function UpdatePlayerSpells(playerID)
 					item:RemoveSelf()
 					hero:AddItem(CreateItem("item_build_periodic_tower", hero, hero))
 				end
+			end
+		end
+
+		-- In Random mode, essence purchasing is disabled
+		if IsPlayerUsingRandomMode( playerID ) then
+			local buy_essence = GetItemByName(playerData.summoner, "item_buy_pure_essence")
+			if buy_essence then
+				buy_essence:RemoveSelf()
 			end
 		end
 	end
