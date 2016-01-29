@@ -5,7 +5,7 @@ local towersKV = LoadKeyValues("scripts/kv/towers.kv")
 
 function UpdatePlayerSpells(playerID)
 	local playerData = GetPlayerData(playerID)
-	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+	local hero = ElementTD.vPlayerIDToHero[playerID]
 	if hero then
 		for i=0,15 do
 			local ability = hero:GetAbilityByIndex(i)

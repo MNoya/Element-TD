@@ -89,17 +89,17 @@ function ModifyElementValue(playerID, element, change)
         end
     end
 
-    -- If a new element was added, update orbs
-    if playerData.elements[element] == 0 then
-    	UpdateElementOrbs(playerID, element)
-    end
-
 	playerData.elements[element] = playerData.elements[element] + change
 	UpdateElementsHUD(playerID)
 	UpdatePlayerSpells(playerID)
 	UpdateSummonerSpells(playerID)
 	for towerID,_ in pairs(playerData.towers) do
         UpdateUpgrades(EntIndexToHScript(towerID))
+    end
+
+    -- Update orbs
+    if playerData.elements[element] == 1 then
+    	UpdateElementOrbs(playerID, element)
     end
 end
 
@@ -137,33 +137,46 @@ function UpdateElementOrbs(playerID, new_element)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 	local orb_path = "particles/custom/orbs/"
 
-	if not hero.orbits then
-		hero.orbits = {}
+	if not hero.orbit_entities then
+		hero.orbit_entities = {}
 		hero.orb_count = 0
 	end
+
+	-- Clear orbs
+	if hero.orb_count > 0 then
+		for i=1,hero.orb_count do
+			UTIL_Remove(hero.orbit_entities[i])
+		end
+	end
+
+	-- Build list
+	local elements = {}
+	local playerData = GetPlayerData(playerID)
+	for k,v in pairs(playerData.elements) do
+		if v > 0 then
+			table.insert(elements, k)
+		end
+	end
+
 	hero.orb_count = hero.orb_count + 1
 
-	-- Create new orb
-	local particleName = orb_path.."orb_"..new_element..".vpcf"
-	hero.orbits[hero.orb_count] = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, hero)
+	-- Recreate orbs
+	for k=1,#elements do
+		local ent = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/props_gameplay/red_box.vmdl"})
+		local angle = 360 / hero.orb_count
+		local origin = hero:GetAbsOrigin()
+		local rotate_pos = origin + Vector(1,0,0) * 80
+		local pos = RotatePosition(origin, QAngle(0, angle*k, 0), rotate_pos)
+		pos.z = pos.z + 90
+		ent:SetAbsOrigin(pos)
+		ent:SetParent(hero, "attach_hitloc")
+		ent:AddEffects(EF_NODRAW)
+		hero.orbit_entities[k] = ent
 
-	-- Update
-	if not hero.orbitTimer then
-		hero.orbitTimer = Timers:CreateTimer(function()
-			if hero:IsAlive() then
-				for k,particle in pairs(hero.orbits) do
-					local angle = 360 / hero.orb_count
-					local origin = hero:GetAbsOrigin()
-					local rotate_pos = origin + Vector(1,0,0) * 80
-					local pos = RotatePosition(origin, QAngle(0, angle*k, 0), rotate_pos)
-					pos.z = pos.z + 90
-					ParticleManager:SetParticleControl(particle, 0, pos)
-				end
-				return 0.03
-			else
-				RemoveElementalOrbs(hero)
-			end
-		end)
+		-- Create particle attached to the entity
+		local particleName = orb_path.."orb_"..elements[k]..".vpcf"
+		local particle = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, ent)
+		ParticleManager:SetParticleControlEnt(particle, 3, ent, PATTACH_POINT_FOLLOW, "attach_hitloc", ent:GetAbsOrigin(), true)
 	end
 end
 
