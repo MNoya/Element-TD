@@ -12,6 +12,13 @@ function Build( event )
     -- Always refund the gold here, as the building hasn't been placed yet
     hero:ModifyGold(gold_cost, true, 0)
 
+    -- Check essence cost for periodic tower
+    local essenceCost = GetUnitKeyValue(building_name, "EssenceCost") or 0
+    if essenceCost > GetPlayerData(playerID).pureEssence then
+        ShowWarnMessage(playerID, "You need 1 Essence! Buy it at the Elemental Summoner")
+        return
+    end
+
     -- Makes a building dummy and starts panorama ghosting
     BuildingHelper:AddBuilding(event)
 
@@ -30,13 +37,19 @@ function Build( event )
             return false
         end
 
+        if essenceCost > GetPlayerData(playerID).pureEssence then
+            ShowWarnMessage(playerID, "You need 1 Essence! Buy it at the Elemental Summoner")
+            return false
+        end
+
         return true
     end)
 
     -- Position for a building was confirmed and valid
     event:OnBuildingPosChosen(function(vPos)
         -- Spend resources
-        hero:ModifyGold(-gold_cost, true, 0)
+        ability:PayGoldCost()
+        ModifyPureEssence(playerID, -essenceCost)      
 
         -- Play a sound
         Sounds:EmitSoundOnClient(playerID, "DOTA_Item.ObserverWard.Activate")
@@ -156,12 +169,9 @@ function Build( event )
     end)
 end
 
--- Called when the move_to_point ability starts
-function StartBuilding( keys )
-    BuildingHelper:StartBuilding(keys)
-end
+function PeriodicWarn( event )
+    local caster = event.caster
+    local playerID = caster:GetPlayerOwnerID()
 
--- Called when the Cancel ability-item is used
-function CancelBuilding( keys )
-    BuildingHelper:CancelBuilding(keys)
+    ShowWarnMessage(playerID, "You need at least level 1 on every element to build a Periodic Tower!")
 end

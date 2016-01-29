@@ -13,6 +13,17 @@ function UpdatePlayerSpells(playerID)
 				ability:SetActivated(MeetsAbilityElementRequirements(ability:GetAbilityName(), playerID))
 			end
 		end
+
+		for i=0,5 do
+			local item = hero:GetItemInSlot(i)
+			if item then
+				local itemName = item:GetAbilityName()
+				if itemName == "item_build_periodic_tower_disabled" and MeetsItemElementRequirements(item, playerID) then
+					item:RemoveSelf()
+					hero:AddItem(CreateItem("item_build_periodic_tower", hero, hero))
+				end
+			end
+		end
 	end
 end
 
@@ -27,7 +38,6 @@ function SellTowerCast(keys)
 		local sellPercentage = tonumber(keys.SellAmount)
 
 		local refundAmount = math.ceil(GetUnitKeyValue(tower.class, "TotalCost") * sellPercentage)
-		-- create a dummy unit to show the gold particles
 		if sellPercentage > 0  then
 			Sounds:EmitSoundOnClient(playerID, "General.Coins")	
 			PopupAlchemistGold(tower, refundAmount)
@@ -36,9 +46,13 @@ function SellTowerCast(keys)
 		    ParticleManager:SetParticleControl(coins, 1, tower:GetAbsOrigin())
 
 			-- Add gold
-			local gold = hero:GetGold()
-			hero:SetGold(0, false)
-			hero:SetGold(gold+refundAmount, true)
+			hero:ModifyGold(refundAmount, true, 0)
+
+			-- If a tower costs a Pure Essence (Pure, Periodic), then that essence is refunded upon selling the tower.
+			local essenceCost = GetUnitKeyValue(tower.class, "EssenceCost")
+			if essenceCost > 0 then
+				ModifyPureEssence(playerID, essenceCost)
+			end
 		end
 
 		if tower.isClone then

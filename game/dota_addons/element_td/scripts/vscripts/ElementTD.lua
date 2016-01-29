@@ -374,7 +374,7 @@ function ElementTD:InitializeHero(playerID, hero)
     -- Give building items
     hero:AddItem(CreateItem("item_build_arrow_tower", hero, hero))
     hero:AddItem(CreateItem("item_build_cannon_tower", hero, hero))
-    hero:AddItem(CreateItem("item_build_periodic_tower", hero, hero))
+    hero:AddItem(CreateItem("item_build_periodic_tower_disabled", hero, hero))
 
     UpdatePlayerSpells(playerID)
     UpdateScoreboard(playerID)

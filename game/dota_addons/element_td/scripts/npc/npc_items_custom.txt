@@ -5388,6 +5388,48 @@
 	    }
 	}
 	//============================================================//
+	// Build Periodic Tower (Item Version Disabled)
+	//============================================================//
+	"item_build_periodic_tower_disabled"
+	{
+	    "ID"                            "2002"
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "MaxLevel"                      "1"
+	    "AbilityTextureName"            "build_periodic_tower_disabled"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	    
+	    "Building"                      "1"
+	    "AbilityCastRange"              "200"
+	    "Scale"                         "1"
+	    "PlayerCanControl"              "1"
+	
+	    "UnitName"                      "periodic_tower"
+	    "OverrideBuildingGhost"         "npc_dota_hero_invoker"
+	
+	    "Requirements"
+	    {
+	        "water" "1"
+	        "fire" "1"
+	        "nature" "1"
+	        "earth" "1"
+	        "light" "1"
+	        "dark" "1"
+	    }
+	    
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "builder.lua"
+	            "Function"          "PeriodicWarn"
+	        }
+	    }
+	}
+	//============================================================//
 	// Buy Pure Essence
 	//============================================================//
 	"item_buy_pure_essence"
