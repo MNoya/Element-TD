@@ -223,6 +223,7 @@ function SummonElemental(keys)
     local playerID = summoner:GetOwner():GetPlayerID()
     local playerData = GetPlayerData(playerID)
     local element = GetUnitKeyValue(keys.Elemental.."1", "Element")
+    local difficulty = playerData.difficulty
 
     if playerData.health == 0 then
         return
@@ -261,7 +262,7 @@ function SummonElemental(keys)
     --GlobalCasterDummy:ApplyModifierToTarget(elemental, "creep_damage_block_applier", "modifier_damage_block")
     --ApplyArmorModifier(elemental, GetPlayerDifficulty(playerID):GetArmorValue() * 100)
     
-    local health = ElementalBaseHealth[level] * math.pow(1.5, (math.floor(playerData.nextWave / 5) - 1))
+    local health = ElementalBaseHealth[level] * math.pow(1.5, (math.floor(playerData.nextWave / 5) - 1)) * difficulty:GetHealthMultiplier()
     local scale = elemental:GetModelScale() + ((level - 1) * 0.1)
     elemental:SetMaxHealth(health)
     elemental:SetBaseMaxHealth(health) -- This is needed to properly set the max health otherwise it won't work sometimes
