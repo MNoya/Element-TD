@@ -216,6 +216,17 @@ function UpgradeTower(keys)
         	newTower:AddNewModifier(newTower, nil, "modifier_disable_turning", {})
         end
 
+        -- keep well & blacksmith buffs
+	    local fire_up = tower:FindModifierByName("modifier_fire_up")
+	    if fire_up then
+	        newTower:AddNewModifier(fire_up:GetCaster(), fire_up:GetAbility(), "modifier_fire_up", {duration = fire_up:GetDuration()})
+	    end
+
+	    local spring_forward = tower:FindModifierByName("modifier_spring_forward")
+	    if spring_forward then
+	        newTower:AddNewModifier(spring_forward:GetCaster(), spring_forward:GetAbility(), "modifier_spring_forward", {duration = spring_forward:GetDuration()})
+	    end
+
 		Timers:CreateTimer(function()
 			RemoveUnitFromSelection( tower )
 			AddUnitToSelection(newTower)

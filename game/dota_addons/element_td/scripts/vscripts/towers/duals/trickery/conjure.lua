@@ -11,6 +11,8 @@ function trickery_tower_conjure:OnSpellStart()
 
     -- Prevent the targeted tower from getting cloned again for a duration
     target:AddNewModifier(caster, self, "modifier_conjure_prevent_cloning", {duration=60})
+
+    Sounds:EmitSoundOnClient("Hero_Terrorblade.Reflection")
     
     local sector = playerID + 1
     local clonePos = BuildingHelper:FindClosestEmptyPositionNearby( target:GetAbsOrigin(), target.construction_size, 2000 )
@@ -34,6 +36,17 @@ function trickery_tower_conjure:OnSpellStart()
         local basicName = clone.damageType.."_tower"
         local pedestalName = GetUnitKeyValue(basicName, "PedestalModel")
         local prop = BuildingHelper:CreatePedestalForBuilding(clone, basicName, GetGroundPosition(clone:GetAbsOrigin(), nil), pedestalName)
+    end
+
+    -- keep well & blacksmith buffs
+    local fire_up = target:FindModifierByName("modifier_fire_up")
+    if fire_up then
+        clone:AddNewModifier(fire_up:GetCaster(), fire_up:GetAbility(), "modifier_fire_up", {duration = fire_up:GetDuration()})
+    end
+
+    local spring_forward = target:FindModifierByName("modifier_spring_forward")
+    if spring_forward then
+        clone:AddNewModifier(spring_forward:GetCaster(), spring_forward:GetAbility(), "modifier_spring_forward", {duration = spring_forward:GetDuration()})
     end
 
     --color

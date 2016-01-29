@@ -6,7 +6,7 @@ LinkLuaModifier("modifier_spring_forward", "towers/duals/well/modifier_spring_fo
 function well_tower_spring_forward:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
-	EmitSoundOn("DOTA_Item.ClarityPotion.Activate", self:GetCaster())
+	Sounds:EmitSoundOnClient(caster:GetPlayerOwnerID(), "DOTA_Item.ClarityPotion.Activate")
 
 	local particle1 = ParticleManager:CreateParticle("particles/items3_fx/mango_active.vpcf", PATTACH_ABSORIGIN, caster)
     ParticleManager:SetParticleControl(particle1, 0, caster:GetAbsOrigin())
