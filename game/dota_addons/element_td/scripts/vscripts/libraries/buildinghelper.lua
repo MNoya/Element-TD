@@ -1743,6 +1743,7 @@ function BuildingHelper:AdvanceQueue(builder)
         -- Move towards the point at cast range
         builder:MoveToPosition(location)
         builder.move_to_build_timer = Timers:CreateTimer(0.03, function()
+            builder:MoveToPosition(location)
             if not IsValidEntity(builder) or not builder:IsAlive() then return end
             builder.state = "moving_to_build"
 
