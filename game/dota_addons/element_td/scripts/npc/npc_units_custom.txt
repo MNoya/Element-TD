@@ -12341,7 +12341,7 @@
 		// Building Size
 		//-----------------------------
 	    "ConstructionSize"          "2"
-	    "BlockPathingSize"          "2"	
+	    "BlockPathingSize"          "0"	
 	}
 	"well_tower_2"
 	{
@@ -12432,7 +12432,7 @@
 		// Building Size
 		//-----------------------------
 	    "ConstructionSize"          "2"
-	    "BlockPathingSize"          "2"	
+	    "BlockPathingSize"          "0"	
 	}
 	"well_tower_3"
 	{
@@ -12520,7 +12520,7 @@
 		// Building Size
 		//-----------------------------
 	    "ConstructionSize"          "2"
-	    "BlockPathingSize"          "2"	
+	    "BlockPathingSize"          "0"	
 	}
 	"enchantment_tower"
 	{
