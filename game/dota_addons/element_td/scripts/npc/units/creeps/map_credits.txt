@@ -193,3 +193,32 @@
         }
     }
 }
+
+
+"Windstrike"
+{
+    "BaseClass"                 "npc_dota_creature"
+    "ArmorPhysical"             "100"
+    "Level"                     "100"
+    "AttackDamageMin"           "10000"
+    "AttackDamageMax"           "10000"
+    "StatusHealth"              "10000"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+    "Ability1"                  "map_setup"  
+
+    "Model"                     "models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"
+    "ModelScale"                "1"
+
+    "Creature"
+    {
+        "AttachWearables" // Empowered Vestments of the Gods Set
+        {
+            "1" { "ItemDef" "4803" } // Arcane Staff of the Ancients
+            "2" { "ItemDef" "4868" } // Empowered Hood of the Gods
+            "3" { "ItemDef" "4864" } // Empowered Barding of the Gods
+            "4" { "ItemDef" "4867" } // Roehrin the Pale Stallion
+            "5" { "ItemDef" "4864" } // Empowered Barding of the Gods
+            "6" { "ItemDef" "528" } // Keeper of the Light's Ambient Effects
+        }
+    }
+}
