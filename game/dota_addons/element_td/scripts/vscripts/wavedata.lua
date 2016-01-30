@@ -288,7 +288,7 @@ function ShowPortalForSector(sector, wave, time)
     origin.z = origin.z - 200
     origin.y = origin.y - 70
 
-    ClosePortalForSector(sector)
+    ClosePortalForSector(sector, true)
 
     local particleName = "particles/custom/portals/spiral.vpcf"
     portal.particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, nil)
@@ -302,10 +302,11 @@ function ShowPortalForSector(sector, wave, time)
     end
 end
 
-function ClosePortalForSector(sector)
+function ClosePortalForSector(sector, removeInstantly)
+    removeInstantly = removeInstantly or false
     local portal = SectorPortals[sector]
     if portal.particle then
-        ParticleManager:DestroyParticle(portal.particle, true)
+        ParticleManager:DestroyParticle(portal.particle, removeInstantly)
     end
 end
 
