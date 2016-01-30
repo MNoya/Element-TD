@@ -202,6 +202,7 @@ function ElementTD:EndGameForPlayer( playerID )
     end
     -- Clean up
     UpdatePlayerSpells(playerID)
+    RemoveElementalOrbs(playerID)
 
     if playerData.elementalUnit ~= nil and IsValidEntity(playerData.elementalUnit) and playerData.elementalUnit:IsAlive() then
         print("Elemental Removed")

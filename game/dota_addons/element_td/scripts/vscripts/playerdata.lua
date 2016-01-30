@@ -181,8 +181,11 @@ function UpdateElementOrbs(playerID, new_element)
 	end
 end
 
-function RemoveElementalOrbs(hero)
-	for k,v in pairs(hero.orbits) do
-		ParticleManager:DestroyParticle(v, false)
+function RemoveElementalOrbs(playerID)
+	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+	if hero and hero.orbit_entities then
+		for k,v in pairs(hero.orbit_entities) do
+			v:RemoveSelf()
+		end
 	end
 end
