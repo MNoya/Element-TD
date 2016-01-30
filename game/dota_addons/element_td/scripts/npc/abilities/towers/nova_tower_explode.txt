@@ -7,10 +7,27 @@
 	"BaseClass" 					"ability_datadriven"
 	"AbilityTextureName"            "phoenix_supernova"
 	"MaxLevel"						"2"
-	"AbilityCastRange"				"700"
 
 	"Modifiers"
 	{
+		"modifier_nova_tower_ambient"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName" "particles/custom/towers/nova/ambient_lava.vpcf"
+					"EffectAttachType" "follow_customorigin"
+					"Target"	"CASTER"
+					"ControlPointEntities"
+					{
+						"CASTER"	"attach_hitloc"
+					}
+				}
+			}
+		}
 		"modifier_explode_passive"
 		{
 			"Passive"	"1"

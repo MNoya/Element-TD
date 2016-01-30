@@ -18,12 +18,11 @@ nil)
 
 function NovaTower:Explode()
     if GameRules:GetGameTime() - self.lastExplodeTime > 1 then
-        local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf", PATTACH_ABSORIGIN, self.tower)
-        ParticleManager:SetParticleControl(particle, 0, self.tower:GetOrigin())
-        ParticleManager:SetParticleControl(particle, 1, Vector(0, 0, 0))
+        local particle = ParticleManager:CreateParticle("particles/custom/towers/nova/attack.vpcf", PATTACH_ABSORIGIN, self.tower)
+        ParticleManager:SetParticleControl(particle, 0, self.tower:GetAbsOrigin())
         ParticleManager:ReleaseParticleIndex(particle)
         
-        DamageEntitiesInArea(self.tower:GetOrigin(), self.aoe, self.tower, self.explodeDamage)
+        DamageEntitiesInArea(self.tower:GetAbsOrigin(), self.aoe, self.tower, self.explodeDamage)
         self.lastExplodeTime = GameRules:GetGameTime()
     end
 end
@@ -31,7 +30,7 @@ end
 function NovaTower:OnCreated()
     self.ability = AddAbility(self.tower, "nova_tower_explode", self.tower:GetLevel())
     self.explodeDamage = GetAbilitySpecialValue("nova_tower_explode", "damage")[self.tower:GetLevel()]
-    self.aoe = GetAbilitySpecialValue("nova_tower_explode", "aoe")
+    self.aoe = GetAbilitySpecialValue("nova_tower_explode", "aoe")+self.tower:GetHullRadius()
     self.lastExplodeTime = 0
 end
 

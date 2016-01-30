@@ -10,7 +10,7 @@
 	"particle_folder"		"particles/units/heroes/hero_phoenix"
 	"ArmorPhysical"		"0"
 	"MagicalResistance"		"0"
-	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
 	"AttackAnimationPoint"		"0"
 	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
@@ -53,8 +53,6 @@
 	"AttackRange"		"700"
 	"AttackAcquisitionRange"		"700"
 	"AttackRate"		"1.5"
-	"ProjectileModel"		""
-	"ProjectileSpeed"		"900"
 
     "Model"             "models/heroes/phoenix/phoenix_egg.vmdl"
     "ModelScale"        "0.6"

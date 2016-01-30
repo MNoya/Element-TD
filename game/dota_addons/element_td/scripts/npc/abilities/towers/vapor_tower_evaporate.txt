@@ -12,7 +12,6 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 	"AbilityTextureName"			"towers/vapor"
 	"MaxLevel"						"3"
-	"AbilityCastRange"				"700"
 
 	"AbilitySpecial"
 	{
