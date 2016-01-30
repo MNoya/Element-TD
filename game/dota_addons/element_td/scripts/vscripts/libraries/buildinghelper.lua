@@ -749,6 +749,7 @@ function BuildingHelper:PlaceBuilding(player, name, location, construction_size,
     -- Spawn the building
     local building = CreateUnitByName(name, model_location, false, playersHero, player, playersHero:GetTeamNumber())
     building:SetControllableByPlayer(playerID, true)
+    building:SetNeverMoveToClearSpace(true)
     building:SetOwner(playersHero)
     building.construction_size = construction_size
     building.blockers = gridNavBlockers
@@ -782,9 +783,11 @@ function BuildingHelper:UpgradeBuilding(building, newName)
     local model_offset = BuildingHelper.UnitKV[newName]["ModelOffset"] or 0
     local old_offset = BuildingHelper.UnitKV[oldBuildingName]["ModelOffset"] or 0
     position.z = position.z + model_offset - old_offset
+    
     local newBuilding = CreateUnitByName(newName, position, false, nil, nil, building:GetTeamNumber()) 
     newBuilding:SetOwner(hero)
     newBuilding:SetControllableByPlayer(playerID, true)
+    newBuilding:SetNeverMoveToClearSpace(true)
     
     -- Update visuals
     local angles = BuildingHelper.UnitKV[newName]["ModelRotation"] or -building:GetAngles().y
@@ -813,7 +816,6 @@ function BuildingHelper:UpgradeBuilding(building, newName)
     -- Block the grid
     newBuilding.construction_size = BuildingHelper:GetConstructionSize(newName)
     newBuilding.blockers = BuildingHelper:BlockGridSquares(newBuilding.construction_size, BuildingHelper:GetBlockPathingSize(newName), position)
-    newBuilding:SetAbsOrigin(position)
 
     if not newBuilding:HasAbility("ability_building") then
         newBuilding:AddAbility("ability_building")
@@ -902,6 +904,7 @@ function BuildingHelper:StartBuilding(builder)
     -- For overriden ghosts we need to create another unit
     if building:GetUnitName() ~= unitName then
         building = CreateUnitByName(unitName, location, false, playersHero, player, builder:GetTeam())
+        building:SetNeverMoveToClearSpace(true)
     else
         building:RemoveModifierByName("modifier_out_of_world")
         building:RemoveEffects(EF_NODRAW)
@@ -1247,14 +1250,6 @@ end
 function BuildingHelper:BlockPSO(size, location)
     if size == 0 then return end
 
-    -- Keep the origin of the buildings to put them back in position after spawning point_simple_obstruction entities
-    local buildings = FindUnitsInRadius(DOTA_TEAM_NEUTRALS, location, nil, size*128, DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
-    for k,v in pairs(buildings) do
-        if IsCustomBuilding(v) then
-            v.Origin = v:GetAbsOrigin()
-        end
-    end
-
     local pos = Vector(location.x, location.y, location.z)
     BuildingHelper:SnapToGrid(size, pos)
 
@@ -1288,13 +1283,6 @@ function BuildingHelper:BlockPSO(size, location)
                     table.insert(gridNavBlockers, ent)
                 end
             end
-        end
-    end
-
-    -- Stuck the stuff back in place
-    for k,v in pairs(buildings) do
-        if IsCustomBuilding(v) then
-            v:SetAbsOrigin(v.Origin)
         end
     end
 
@@ -1663,6 +1651,7 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
         else
             -- Create the building entity that will be used to start construction and project the queue particles
             entity = CreateUnitByName(unitName, model_location, false, nil, nil, builder:GetTeam())
+            entity:SetNeverMoveToClearSpace(true)
         end
         entity:AddEffects(EF_NODRAW)
         entity:AddNewModifier(entity, nil, "modifier_out_of_world", {})
