@@ -81,7 +81,7 @@ function PopupIntTome(target, amount)
 end
 
 function PopupHPRemovalDamage(target, amount)
-    PopupNumbers(target, "crit", Vector(154, 46, 254), 3.0, amount, nil, POPUP_SYMBOL_POST_LIGHTNING)
+    PopupNumbers(target, "crit", Vector(154, 46, 254), 1.0, amount, nil, POPUP_SYMBOL_POST_LIGHTNING)
 end
 
 function PopupLumber(target, amount)
@@ -90,6 +90,10 @@ end
 
 function PopupEssence(target, amount)
     PopupNumbers(target, "damage", Vector(255, 255, 255), 3.0, amount, POPUP_SYMBOL_PRE_PLUS, nil)
+end
+
+function PopupGreenCriticalDamage(target, amount)
+    PopupNumbers(target, "crit", Vector(0, 169, 0), 3.0, amount, nil, POPUP_SYMBOL_POST_LIGHTNING)
 end
 
 -- Customizable version.

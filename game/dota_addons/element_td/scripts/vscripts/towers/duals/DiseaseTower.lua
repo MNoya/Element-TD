@@ -17,15 +17,32 @@ nil)
 
 function DiseaseTower:OnAttackLanded(keys)
     local target = keys.target    
-    local damage = self.tower:GetBaseDamageMax()    
+    local damage = self.tower:GetAverageTrueAttackDamage()
     damage = ApplyAttackDamageFromModifiers(damage, self.tower)    
-    damage = (target:GetMaxHealth() / target:GetHealth()) * damage     --do that disease stuff
-    DamageEntity(target, self.tower, damage)    
+    damage = damage * (1+target:GetHealthPercent() * 0.01)
+    if damage >= 1 then
+        PopupHPRemovalDamage(self.tower, math.floor(damage))
+        DamageEntity(target, self.tower, damage)
+    end
 end
 
 function DiseaseTower:OnCreated()
     -- this ability is just for looks, it doesn't actually do anything :P
-    AddAbility(self.tower, "disease_tower_soul_reaper")     
+    AddAbility(self.tower, "disease_tower_soul_reaper")
+
+    local level = self.tower:GetLevel()
+    local particleName
+    print(level)
+    if level == 1 then
+        particleName = "particles/units/heroes/hero_undying/undying_tombstone_ambient.vpcf"
+    elseif level == 2 then
+        particleName = "particles/econ/items/undying/undying_manyone/undying_pale_tombstone_ambient.vpcf"
+    elseif level == 3 then
+        particleName = "particles/econ/items/undying/undying_manyone/undying_pale_gold_tombstone_ambient.vpcf"
+    end
+    local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, self.tower)
+    ParticleManager:SetParticleControlEnt(particle, 0, self.tower, PATTACH_POINT_FOLLOW, "attach_origin", self.tower:GetAbsOrigin(), true)
+    ParticleManager:SetParticleControlEnt(particle, 1, self.tower, PATTACH_POINT_FOLLOW, "attach_origin", self.tower:GetAbsOrigin(), true)
 end
 
 RegisterTowerClass(DiseaseTower, DiseaseTower.className)    
