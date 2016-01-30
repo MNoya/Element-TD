@@ -12,7 +12,7 @@
 	"MagicalResistance"		"0"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-	"AttackAnimationPoint"		"0"
+	"AttackAnimationPoint"		"0.35"
 	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
 	"AttributeBaseStrength"		"0"
 	"AttributeStrengthGain"		"0"

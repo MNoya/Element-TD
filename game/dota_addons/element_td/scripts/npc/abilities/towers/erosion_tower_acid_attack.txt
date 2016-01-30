@@ -55,6 +55,8 @@
 			"IsDebuff"		"1"
 			"Duration"		"%duration"
 			"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"EffectName"	"particles/custom/towers/erosion/debuff.vpcf"
+			"EffectAttackType" "follow_origin"
 			"ThinkInterval" "1"
 			"OnIntervalThink"
 			{
