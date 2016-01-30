@@ -93,7 +93,11 @@ function PopupEssence(target, amount)
 end
 
 function PopupGreenCriticalDamage(target, amount)
-    PopupNumbers(target, "crit", Vector(0, 169, 0), 3.0, amount, nil, POPUP_SYMBOL_POST_LIGHTNING)
+    PopupNumbers(target, "crit", Vector(0, 169, 0), 2.0, amount, nil, POPUP_SYMBOL_POST_LIGHTNING)
+end
+
+function PopupBlueCriticalDamage(target, amount)
+    PopupNumbers(target, "crit", Vector(0, 0, 169), 3.0, amount, nil, POPUP_SYMBOL_POST_LIGHTNING)
 end
 
 function PopupWhiteDamage(target, amount)

@@ -10,7 +10,6 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"towers/hydro"
 	"MaxLevel"						"3"
-	"AbilityCastRange"				"700"
 
 	"Modifiers"
 	{

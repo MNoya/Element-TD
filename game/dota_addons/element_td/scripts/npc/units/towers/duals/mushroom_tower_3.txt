@@ -40,13 +40,13 @@
 	"TotalCost"		"3150"
 	"Element"
 	{
-		"1"		"earth"
-		"2"		"nature"
+		"1"		"nature"
+		"2"		"earth"
 	}
 	"AOE_Full"		"150"
 	"AOE_Half"		"300"
 	"Damage"		"1250"
-	"DamageType"		"earth"
+	"DamageType"		"nature"
 	"ScriptClass"		"MushroomTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"

@@ -19,7 +19,7 @@ function DiseaseTower:OnAttackLanded(keys)
     local target = keys.target    
     local damage = self.tower:GetAverageTrueAttackDamage()
     damage = ApplyAttackDamageFromModifiers(damage, self.tower)    
-    damage = damage * (1+target:GetHealthPercent() * 0.01)
+    damage = damage * (2-target:GetHealthPercent() * 0.01)
     if damage >= 1 then
         PopupHPRemovalDamage(self.tower, math.floor(damage))
         DamageEntity(target, self.tower, damage)

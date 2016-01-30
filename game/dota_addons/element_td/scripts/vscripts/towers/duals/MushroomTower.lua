@@ -19,7 +19,10 @@ nil)
 
 function MushroomTower:OnAttackLanded(keys)
     local target = keys.target    
-    local damage = ApplyAttackDamageFromModifiers(self.tower:GetBaseDamageMax(), self.tower)    
+    local damage = self.tower:GetAverageTrueAttackDamage()
+    local popupDamage = damage * (1+target:GetHealthPercent() * 0.01)
+    PopupGreenCriticalDamage(self.tower, math.floor(popupDamage))
+
     local creepsInHalfAOE = GetCreepsInArea(target:GetOrigin(), self.halfAOE)    
     local creepsInFullAOE = GetCreepsInArea(target:GetOrigin(), self.fullAOE)    
     
@@ -27,7 +30,6 @@ function MushroomTower:OnAttackLanded(keys)
     for _,v in pairs(creepsInHalfAOE) do
         damages[v:entindex()] = damage * (1 + v:GetHealth() / v:GetMaxHealth())    
     end
-
 
     for _,v in pairs(creepsInHalfAOE) do
         DamageEntity(v, self.tower, damages[v:entindex()] / 2)    
