@@ -71,9 +71,11 @@ function DamageEntity(entity, attacker, damage)
 			entity:SetMaximumGoldBounty(goldBounty)
 			entity:SetMinimumGoldBounty(goldBounty)
 
-			local particle = ParticleManager:CreateParticle("particles/items2_fx/hand_of_midas.vpcf", PATTACH_ABSORIGIN, entity)
-    		ParticleManager:SetParticleControl(particle, 0, entity:GetAbsOrigin())
-    		ParticleManager:SetParticleControl(particle, 1, attacker.scriptObject:GetAttackOrigin())
+			local origin = entity:GetAbsOrigin()
+			origin.z = origin.z+128
+			local particle = ParticleManager:CreateParticle("particles/custom/towers/gold/midas.vpcf", PATTACH_ABSORIGIN, entity)
+    		ParticleManager:SetParticleControl(particle, 0, origin)
+    		ParticleManager:SetParticleControlEnt(particle, 1, attacker, PATTACH_POINT_FOLLOW, "attach_attack1", attacker:GetAbsOrigin(), true)
 		end
 
 		if entity.SunburnData and entity.SunburnData.StackCount > 0 then

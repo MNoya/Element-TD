@@ -25,14 +25,9 @@ function GoldTower:ModifyGold(gold)
     return math.floor(gold + (gold * (self.bonusGold / 100)) + 0.5)
 end
 
-function GoldTower:GetAttackOrigin()
-    return self.attackOrigin
-end
-
 function GoldTower:OnCreated()
     self.ability = AddAbility(self.tower, "gold_tower_arbitrage", self.tower:GetLevel())
     self.bonusGold = GetAbilitySpecialValue("gold_tower_arbitrage", "bonus_gold")[self.tower:GetLevel()]
-    self.attackOrigin = self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_attack1"))
 end
 
 RegisterTowerClass(GoldTower, GoldTower.className)
