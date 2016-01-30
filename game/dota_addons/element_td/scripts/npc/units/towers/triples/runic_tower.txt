@@ -12,7 +12,7 @@
 	"MagicalResistance"		"0"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-	"AttackAnimationPoint"		"0"
+	"AttackAnimationPoint"		"0.5"
 	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
 	"AttributeBaseStrength"		"0"
 	"AttributeStrengthGain"		"0"
@@ -53,7 +53,7 @@
 	"AttackRange"		"1100"
 	"AttackAcquisitionRange"		"1100"
 	"AttackRate"		"1"
-	"ProjectileModel"		"particles/units/heroes/hero_visage/visage_base_attack.vpcf"
+	"ProjectileModel"		"particles/custom/towers/runic/attack.vpcf"
 	"ProjectileSpeed"		"900"
 	
     "Model"             "models/heroes/doom/doom.vmdl"

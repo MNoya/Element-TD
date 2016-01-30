@@ -22,6 +22,7 @@ function MuckTower:OnAttackLanded(keys)
 
     DamageEntitiesInArea(target:GetOrigin(), self.halfAOE, self.tower, damage / 2)
     DamageEntitiesInArea(target:GetOrigin(), self.fullAOE, self.tower, damage / 2)
+    ParticleManager:CreateParticle("particles/custom/towers/muck/attack.vpcf", PATTACH_ABSORIGIN, target)
 end
 
 function MuckTower:OnCreated()
