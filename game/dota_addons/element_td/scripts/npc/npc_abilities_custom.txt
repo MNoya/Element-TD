@@ -2743,15 +2743,14 @@
 			"modifier_laser"
 			{
 				"Passive"	"1"
-				"IsHidden"	"1"
-				"OnAttackLanded"
+				"IsHidden"	"0"
+				"OnAttack"
 				{
 					"RunScript"
 					{
-						"Target"			"POINT"
-						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"ScriptFile"		"towers/towerevents.lua"
 						"Function"			"TriggerEvent"
-						"Event"				"OnAttackLanded"
+						"Event"				"OnAttack"
 					}
 				}
 			}
@@ -2772,44 +2771,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_reduction_cap"	"70"
-			}
-		}
-	}
-	"laser_tower_laser_effect"
-	{
-		"BaseClass"						"tinker_laser"													
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_ALL"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
-		"MaxLevel"						"2"
-		"AbilityCastRange"				"900"
-		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"0"
-		"AbilityDamage"					"0"
-		"AbilityManaCost"				"0"
-	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration_hero"			"0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration_creep"		"0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"miss_rate"				"0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"900"
 			}
 		}
 	}
@@ -3447,8 +3408,6 @@
 		"AbilityTextureName"			"towers/runic"
 		"MaxLevel"						"1"
 		"AbilityCooldown"				"9"
-	
-		"AbilityCastRange"				"1100"
 	
 		"OnSpellStart"
 		{

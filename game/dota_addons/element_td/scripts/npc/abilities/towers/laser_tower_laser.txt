@@ -16,15 +16,14 @@
 		"modifier_laser"
 		{
 			"Passive"	"1"
-			"IsHidden"	"1"
-			"OnAttackLanded"
+			"IsHidden"	"0"
+			"OnAttack"
 			{
 				"RunScript"
 				{
-					"Target"			"POINT"
-					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+					"ScriptFile"		"towers/towerevents.lua"
 					"Function"			"TriggerEvent"
-					"Event"				"OnAttackLanded"
+					"Event"				"OnAttack"
 				}
 			}
 		}

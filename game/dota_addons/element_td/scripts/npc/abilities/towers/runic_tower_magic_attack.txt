@@ -9,8 +9,6 @@
 	"MaxLevel"						"1"
 	"AbilityCooldown"				"9"
 
-	"AbilityCastRange"				"1100"
-
 	"OnSpellStart"
 	{
 		"RunScript"

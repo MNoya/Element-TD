@@ -17,9 +17,7 @@ LaserTower = createClass({
     },
 nil)
 
-function LaserTower:OnAttackLanded(keys)
-    -- Play lasser effect
-    
+function LaserTower:OnAttack(keys)
     local damage = ApplyAbilityDamageFromModifiers(self.tower:GetBaseDamageMax(), self.tower)
     local creeps = GetCreepsInArea(keys.target:GetOrigin(), self.aoe)
     local creepCount = 0
@@ -36,7 +34,8 @@ function LaserTower:OnAttackLanded(keys)
     end
 
     damage = damage * (1 - reduction)
-    
+    PopupWhiteDamage(self.tower, math.floor(damage))
+
     DamageEntity(keys.target, self.tower, damage)
 end
 
