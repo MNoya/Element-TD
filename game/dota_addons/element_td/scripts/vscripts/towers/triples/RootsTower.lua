@@ -34,8 +34,8 @@ function RootsTower:OnAttackStart(keys)
     local velocity = dir * 185
 
     local pos = self.tower:GetAbsOrigin()
-    pos.x = pos.x + velocity.x
-    pos.y = pos.y + velocity.y
+    pos.x = pos.x + velocity.x/2
+    pos.y = pos.y + velocity.y/2
 
     local affected = 0
 
@@ -43,8 +43,8 @@ function RootsTower:OnAttackStart(keys)
         pos.x = pos.x + velocity.x
         pos.y = pos.y + velocity.y
 
-        local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_treant/treant_overgrowth_vine_glows_coreSpray.vpcf", PATTACH_ABSORIGIN, self.tower)
-        ParticleManager:SetParticleControl(particle, 0, pos)
+        local particle = ParticleManager:CreateParticle("particles/custom/towers/root/vines_mid.vpcf", PATTACH_ABSORIGIN, self.tower)
+        ParticleManager:SetParticleControl(particle, 0, GetGroundPosition(pos, nil))
         ParticleManager:ReleaseParticleIndex(particle)
 
         local creeps = GetCreepsInArea(pos, self.width / 2)

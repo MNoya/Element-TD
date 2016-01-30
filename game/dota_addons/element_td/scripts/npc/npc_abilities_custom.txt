@@ -3318,7 +3318,7 @@
 			{
 				"Passive"	"1"
 				"IsHidden"	"1"
-				"OnAttackStart"
+				"OnAttack"
 				{
 					"RunScript"
 					{
@@ -3334,7 +3334,7 @@
 				"Duration"			"%duration"
 				"IsDebuff"			"1"
 				"TextureName"		"treant_leech_seed"
-				"EffectName"		"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast_debuff.vpcf"
+				"EffectName"		"particles/custom/towers/roots/debuff.vpcf"
 				"EffectTargetType"	"follow_origin"
 				"Properties"
 				{
