@@ -286,11 +286,7 @@ function ShowPortalForSector(sector, wave, time)
     local portal = SectorPortals[sector]
     local origin = portal:GetAbsOrigin()
     origin.z = origin.z - 200
-    if origin.y > 0 then
-        origin.y = origin.y + 70
-    else
-        origin.y = origin.y - 70
-    end
+    origin.y = origin.y - 70
 
     ClosePortalForSector(sector)
 

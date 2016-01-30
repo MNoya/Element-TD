@@ -235,7 +235,7 @@ function SummonElemental(keys)
     origin.z = origin.z + 20
     ParticleManager:SetParticleControl(explosion, 0, origin)
 
-    if playerData.nextWave == 1 or EXPRESS_MODE then
+    if playerData.elementalCount == 0 or EXPRESS_MODE then
         BuyElement(playerID, element)
         return
     end

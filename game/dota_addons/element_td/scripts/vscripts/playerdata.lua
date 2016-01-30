@@ -11,13 +11,13 @@ function CreateDataForPlayer(playerID)
 	data["health"] = 50
 	data["scoreObject"] = {}
 	data["sector"] = -1
-	data["page"] = 1
 	data["lumber"] = 0
 	data["pureEssenceTotal"] = 0 -- Keep track of the total amount given to the player
 	data["pureEssence"] = 0
 	data["elementalActive"] = false
 	data["elementalUnit"] = nil
 	data["elementalRandom"] = false
+	data["elementalCount"] = 0
 	data["LifeTowerKills"] = 0
 	data["elements"] = {
 		water = 0, fire = 0, nature = 0,
@@ -89,6 +89,7 @@ function ModifyElementValue(playerID, element, change)
         end
     end
 
+   	playerData.elementalCount = playerData.elementalCount + change
 	playerData.elements[element] = playerData.elements[element] + change
 	UpdateElementsHUD(playerID)
 	UpdatePlayerSpells(playerID)
