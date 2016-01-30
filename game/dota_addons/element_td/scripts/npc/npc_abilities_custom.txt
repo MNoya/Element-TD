@@ -1891,7 +1891,7 @@
 					"RunScript"
 					{
 						"Target"			"POINT"
-						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"ScriptFile"		"towers/towerevents.lua"
 						"Function"			"TriggerEvent"
 						"Event"				"OnAttack"
 					}
@@ -1907,6 +1907,8 @@
 			{
 				"IsDebuff"		"1"
 				"Duration"		"%reset_time"
+				"EffectName"        "particles/custom/towers/ephemeral/buff_cascade.vpcf"
+				"EffectAttachType"  "follow_origin"
 	
 				"Properties"
 				{
@@ -3434,7 +3436,7 @@
 			"modifier_magic_attack"
 			{
 				"Duration"		"%duration"
-				"EffectName"		"particles/units/heroes/hero_leshrac/leshrac_ambient_glow.vpcf"
+				"EffectName"		"particles/custom/towers/runic/ambient.vpcf"
 				"EffectAttachType"	"follow_origin"
 	
 			}

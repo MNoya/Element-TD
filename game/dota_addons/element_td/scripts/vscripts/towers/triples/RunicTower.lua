@@ -41,7 +41,7 @@ function RunicTower:OnAttack(keys)
                     Target = creep,
                     Source = caster,
                     Ability = keys.ability,
-                    EffectName = "particles/units/heroes/hero_visage/visage_base_attack.vpcf",
+                    EffectName = "particles/custom/towers/runic/attack.vpcf",
                     iMoveSpeed = 900,
                     vSourceLoc= caster:GetAbsOrigin(),
                     bDrawsOnMinimap = false,

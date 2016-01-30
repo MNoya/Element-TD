@@ -21,12 +21,13 @@ nil)
 
 function FloodingTower:OnAttackLanded(keys)
     local target = keys.target
-    local position = target:GetAbsOrigin() + Vector(0, 0, 64)
+    local position = target:GetAbsOrigin()
 
     -- Initial attack aoe
-    local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_siren/naga_siren_riptide.vpcf", PATTACH_ABSORIGIN, self.tower)
+    local particle = ParticleManager:CreateParticle("particles/custom/towers/flooding/riptide.vpcf", PATTACH_ABSORIGIN, self.tower)
+    local particleRadius = 250
     ParticleManager:SetParticleControl(particle, 0, position)
-    ParticleManager:SetParticleControl(particle, 1, Vector(self.fullAOE, 0, 1))
+    ParticleManager:SetParticleControl(particle, 1, Vector(particleRadius, particleRadius, particleRadius))
     ParticleManager:SetParticleControl(particle, 3, Vector(0, 0, 0))
     DamageEntitiesInArea(position, self.fullAOE, self.tower, self.damage)
 
@@ -35,11 +36,6 @@ function FloodingTower:OnAttackLanded(keys)
     Timers:CreateTimer(1, function()
         if hits > 0 then
             hits = hits - 1
-
-            local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_siren/naga_siren_riptide.vpcf", PATTACH_ABSORIGIN, self.tower)
-            ParticleManager:SetParticleControl(particle, 0, position)
-            ParticleManager:SetParticleControl(particle, 1, Vector(self.fullAOE, 0, 1))
-            ParticleManager:SetParticleControl(particle, 3, Vector(0, 0, 0))
             DamageEntitiesInArea(position, self.fullAOE, self.tower, self.damage)
 
             return 1
@@ -53,8 +49,6 @@ function FloodingTower:OnCreated()
     self.duration = GetAbilitySpecialValue("flooding_tower_flood", "duration")
     self.fullAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"));
     self.tower.no_autoattack_damage = true
-
-    print(self.damage, self.duration, self.fullAOE)
 end
 
 RegisterTowerClass(FloodingTower, FloodingTower.className)
