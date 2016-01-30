@@ -36,7 +36,7 @@ end
 
 function QuarkTower:OnAttackLanded(keys)
     local target = keys.target    
-    local damage = self.tower:GetBaseDamageMax()    
+    local damage = self.tower:GetAverageTrueAttackDamage()
     damage = ApplyAttackDamageFromModifiers(damage, self.tower)    
     DamageEntity(target, self.tower, damage)
 
@@ -44,7 +44,7 @@ function QuarkTower:OnAttackLanded(keys)
     if attacks > 0 then
         local particleName = "particles/units/heroes/hero_chen/chen_cast_"..attacks..".vpcf"
         local particle = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, target)
-        PopupWhiteDamage(self.tower, math.floor(self.tower:GetAverageTrueAttackDamage()))
+        PopupLightDamage(self.tower, math.floor(damage))
     end
 end
 

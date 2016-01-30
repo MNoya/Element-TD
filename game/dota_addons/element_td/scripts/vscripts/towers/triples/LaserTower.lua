@@ -34,8 +34,7 @@ function LaserTower:OnAttack(keys)
     end
 
     damage = damage * (1 - reduction)
-    PopupWhiteDamage(self.tower, math.floor(damage))
-
+    PopupLightDamage(self.tower, math.floor(damage))
     DamageEntity(keys.target, self.tower, damage)
 end
 
