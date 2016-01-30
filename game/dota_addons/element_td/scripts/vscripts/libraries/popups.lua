@@ -96,6 +96,10 @@ function PopupGreenCriticalDamage(target, amount)
     PopupNumbers(target, "crit", Vector(0, 169, 0), 3.0, amount, nil, POPUP_SYMBOL_POST_LIGHTNING)
 end
 
+function PopupWhiteDamage(target, amount)
+    PopupNumbers(target, "crit", Vector(255, 255, 255), 2.0, amount, nil, POPUP_SYMBOL_POST_LIGHTNING)
+end
+
 -- Customizable version.
 function PopupNumbers(target, pfx, color, lifetime, number, presymbol, postsymbol)
     local pfxPath = string.format("particles/msg_fx/msg_%s.vpcf", pfx)

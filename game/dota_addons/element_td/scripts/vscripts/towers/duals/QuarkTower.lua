@@ -19,13 +19,12 @@ function QuarkTower:OnAttackStart(keys)
     local damageIncrease = tonumber(self.ability:GetSpecialValueFor("bonus_damage"))    
     if target:entindex() == self.targetEntIndex then
         local newDamage = self.tower:GetBaseDamageMax() + (self.tower:GetBaseDamageMax() * (damageIncrease / 100))    
-        self.tower:SetBaseDamageMax(newDamage)    
-        self.tower:SetBaseDamageMin(newDamage)    
-        self.consecutiveAttacks = self.consecutiveAttacks + 1    
+        self.tower:SetBaseDamageMax(newDamage)
+        self.tower:SetBaseDamageMin(newDamage)
+        self.consecutiveAttacks = self.consecutiveAttacks + 1
         
         self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_quantum_beam_indicator", {})    
-        self.tower:SetModifierStackCount("modifier_quantum_beam_indicator", self.ability, self.consecutiveAttacks)    
-
+        self.tower:SetModifierStackCount("modifier_quantum_beam_indicator", self.ability, self.consecutiveAttacks)
     else
         self.targetEntIndex = target:entindex()    
         self.tower:SetBaseDamageMin(self.baseDamage)    
@@ -39,7 +38,14 @@ function QuarkTower:OnAttackLanded(keys)
     local target = keys.target    
     local damage = self.tower:GetBaseDamageMax()    
     damage = ApplyAttackDamageFromModifiers(damage, self.tower)    
-    DamageEntity(target, self.tower, damage)    
+    DamageEntity(target, self.tower, damage)
+
+    local attacks = self.consecutiveAttacks < 4 and self.consecutiveAttacks or 4
+    if attacks > 0 then
+        local particleName = "particles/units/heroes/hero_chen/chen_cast_"..attacks..".vpcf"
+        local particle = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, target)
+        PopupWhiteDamage(self.tower, math.floor(self.tower:GetAverageTrueAttackDamage()))
+    end
 end
 
 function QuarkTower:OnCreated()

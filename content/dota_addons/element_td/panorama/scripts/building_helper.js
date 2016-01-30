@@ -321,17 +321,7 @@ function StartBuildingHelper( params )
                 }
             }
 
-            // Update the model particle
             var modelPos = SnapHeight(GamePos[0],GamePos[1],GamePos[2])
-            modelPos[2]+=modelOffset
-            Particles.SetParticleControl(modelParticle, 0, modelPos)
-
-            if (propParticle !== undefined)
-            {
-                var pedestalPos = SnapHeight(GamePos[0],GamePos[1],GamePos[2])
-                pedestalPos[2]+=offsetZ
-                Particles.SetParticleControl(propParticle, 0, pedestalPos)
-            }
 
             // Destroy the range overlay if its not a valid building location
             if (invalid)
@@ -356,6 +346,17 @@ function StartBuildingHelper( params )
 
             if (rangeOverlay !== undefined)
                 Particles.SetParticleControl(rangeOverlay, 0, modelPos)
+
+            // Update the model particle
+            modelPos[2]+=modelOffset
+            Particles.SetParticleControl(modelParticle, 0, modelPos)
+
+            if (propParticle !== undefined)
+            {
+                var pedestalPos = SnapHeight(GamePos[0],GamePos[1],GamePos[2])
+                pedestalPos[2]+=offsetZ
+                Particles.SetParticleControl(propParticle, 0, pedestalPos)
+            }
 
             // Turn the model red if we can't build there
             if (turn_red){

@@ -2907,6 +2907,18 @@
 				{
 					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"	"%range_per_stack"
 				}
+				
+				"EffectName"        "particles/items_fx/armlet.vpcf"
+				"EffectAttachType"  "follow_origin"
+	
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"towers/duals/MagicTower.lua"
+						"Function"			"OnMagicRangeDestroy"
+					}
+				}
 			}
 		}
 	
@@ -3319,7 +3331,7 @@
 			{
 				"Passive"		"1"
 				"IsHidden"		"1"
-				"OnAttackStart"
+				"OnAttackLanded"
 				{
 					"RunScript"
 					{
