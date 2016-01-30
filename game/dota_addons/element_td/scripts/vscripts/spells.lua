@@ -230,7 +230,9 @@ function UpgradeTower(keys)
 		Timers:CreateTimer(function()
 			RemoveUnitFromSelection( tower )
 			AddUnitToSelection(newTower)
-			UpdateSelectedEntities()
+			Timers:CreateTimer(0.03, function()
+				UpdateSelectedEntities()
+			end)
 		end)
 	end
 end

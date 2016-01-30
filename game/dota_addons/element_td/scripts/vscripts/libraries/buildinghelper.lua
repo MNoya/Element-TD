@@ -788,6 +788,7 @@ function BuildingHelper:UpgradeBuilding(building, newName)
     newBuilding:SetOwner(hero)
     newBuilding:SetControllableByPlayer(playerID, true)
     newBuilding:SetNeverMoveToClearSpace(true)
+    newBuilding:SetAbsOrigin(position)
     
     -- Update visuals
     local angles = BuildingHelper.UnitKV[newName]["ModelRotation"] or -building:GetAngles().y
