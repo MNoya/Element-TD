@@ -53,13 +53,13 @@
 	"AttackRange"		"1100"
 	"AttackAcquisitionRange"		"1100"
 	"AttackRate"		"0.66"
-	"ProjectileModel"		"particles/units/heroes/hero_ancient_apparition/ancient_apparition_base_attack.vpcf"
+	"ProjectileModel"		"particles/custom/towers/hail/attack.vpcf"
 	"ProjectileSpeed"		"1250"
 
     "Model"             "models/heroes/drow/drow.vmdl"
     "ModelScale"        "1.2"
     "ModelRotation"     "90"
-    "ModelOffset"       "15"
+    "ModelOffset"       "20"
 	"Creature"
     {
         "AttachWearables" // Guise of the Winged Bolt

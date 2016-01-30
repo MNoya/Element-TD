@@ -2351,6 +2351,8 @@
 			}
 			"modifier_storm"
 			{
+				"EffectName"	"particles/units/heroes/hero_winter_wyvern/wyvern_winters_curse_ring_rope.vpcf"
+				"EffectAttachType" "follow_origin"
 				"Duration"		"%duration"
 			}
 		}
