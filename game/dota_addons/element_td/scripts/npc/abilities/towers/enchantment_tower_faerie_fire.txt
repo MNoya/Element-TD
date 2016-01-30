@@ -32,15 +32,8 @@
 					"Event"				"OnFaerieFireExpire"
 				}
 			}
-			"OnCreated"
-			{
-				"AttachEffect"
-				{
-					"Target" 			"TARGET"
-					"EffectName"		"particles/items2_fx/veil_of_discord_debuff.vpcf"
-					"EffectAttachType"	"follow_origin"
-				}
-			}	
+			"EffectName"		"particles/units/heroes/hero_oracle/oracle_purifyingflames.vpcf"
+			"EffectAttachType"	"follow_origin"
 		}
 	}
 	"OnSpellStart"

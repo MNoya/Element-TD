@@ -29,6 +29,8 @@
 		{
 			"TextureName"	"troll_warlord_fervor"
 			"Duration"		"%reset_time"
+			"EffectName"	"particles/custom/towers/haste/buff.vpcf"
+			"EffectAttachType" "follow_origin"
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed"

@@ -1837,15 +1837,8 @@
 						"Event"				"OnFaerieFireExpire"
 					}
 				}
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"Target" 			"TARGET"
-						"EffectName"		"particles/items2_fx/veil_of_discord_debuff.vpcf"
-						"EffectAttachType"	"follow_origin"
-					}
-				}	
+				"EffectName"		"particles/units/heroes/hero_oracle/oracle_purifyingflames.vpcf"
+				"EffectAttachType"	"follow_origin"
 			}
 		}
 		"OnSpellStart"
@@ -2414,6 +2407,8 @@
 			{
 				"TextureName"	"troll_warlord_fervor"
 				"Duration"		"%reset_time"
+				"EffectName"	"particles/custom/towers/haste/buff.vpcf"
+				"EffectAttachType" "follow_origin"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed"

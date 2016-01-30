@@ -17,12 +17,11 @@ EnchantmentTower = createClass({
 nil)
 
 function EnchantmentTower:FaerieFireThink()
-    if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() then
+    if self.ability:IsFullyCastable() and self.tower:GetHealthPercent() == 100 and self.ability:GetAutoCastState() then
         local creeps = GetCreepsInArea(self.tower:GetOrigin(), self.range)
         local highestHealth = 0
         local theChosenOne = nil
 
-        -- find out the tower with the highest damage. Is this a bad choosing algorithm?
         for _, creep in pairs(creeps) do
             if creep:IsAlive() and not creep:HasModifier("modifier_faerie_fire") and creep:GetHealth() > highestHealth then
                 highesthealth = creep:GetHealth()
