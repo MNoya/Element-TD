@@ -2881,7 +2881,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"MaxLevel"						"5"
-		"AbilityCastRange"				"1100"
 		"AbilityTextureName"			"towers/magic"
 	
 		"Modifiers"
