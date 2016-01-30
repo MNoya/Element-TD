@@ -19,7 +19,7 @@ nil)
 function PoisonTower:OnAttackLanded(keys)
     self.attacks = self.attacks + 1    
     local target = keys.target    
-    local damage = self.tower:GetBaseDamageMax()    
+    local damage = self.tower:GetAverageTrueAttackDamage() 
     local fullDamageAOE = self.fullAOE    
 
     if self.attacks == 3 then
@@ -34,6 +34,8 @@ function PoisonTower:OnAttackLanded(keys)
         local particleA = ParticleManager:CreateParticle("particles/units/heroes/hero_venomancer/venomancer_ward_cast.vpcf", PATTACH_ABSORIGIN, self.tower)    
         ParticleManager:SetParticleControl(particleA, 0, target:GetAttachmentOrigin(target:ScriptLookupAttachment("attach_hitloc")))
         ParticleManager:SetParticleControl(particleA, 1, self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_hitloc")))
+
+        PopupCriticalDamage(self.tower, damage)
     end
     damage = ApplyAttackDamageFromModifiers(damage, self.tower)
 
