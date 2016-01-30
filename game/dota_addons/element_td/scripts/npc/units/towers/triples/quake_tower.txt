@@ -53,7 +53,7 @@
 	"AttackRange"		"525"
 	"AttackAcquisitionRange"		"525"
 	"AttackRate"		"0.66"
-	"ProjectileModel"		"particles/units/heroes/hero_furion/furion_base_attack.vpcf"
+	"ProjectileModel"		"particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
 	"ProjectileSpeed"		"900"
 
     "Model"             "models/heroes/earthshaker/earthshaker.vmdl"

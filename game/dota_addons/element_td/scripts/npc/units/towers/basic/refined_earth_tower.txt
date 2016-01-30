@@ -9,7 +9,7 @@
     "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_radiant.vmdl"
     "PedestalModelScale"        "0.8"
     "PedestalOffset"            "20"
-    "ProjectileModel"           "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
+    "ProjectileModel"           "particles/neutral_fx/mud_golem_hurl_boulder.vpcf"
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"
     "MinimapIconSize"           "320"

@@ -3240,7 +3240,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"towers/quake"
 		"MaxLevel"						"2"
-		"AbilityCastRange"				"500"
 	
 		"Modifiers"
 		{
@@ -3252,8 +3251,7 @@
 				{
 					"RunScript"
 					{
-						"Target"			"POINT"
-						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"ScriptFile"		"towers/towerevents.lua"
 						"Function"			"TriggerEvent"
 						"Event"				"OnAttack"
 					}
@@ -3724,6 +3722,19 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"aftershock_aoe"		"350"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"modifier_name"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
 			}
 		}
 	}

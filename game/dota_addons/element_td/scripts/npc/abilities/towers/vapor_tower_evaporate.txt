@@ -36,4 +36,17 @@
 			"aftershock_aoe"		"350"
 		}
 	}
+
+	"Modifiers"
+	{
+		"modifier_name"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"States"
+			{
+				"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
 }

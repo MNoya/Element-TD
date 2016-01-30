@@ -49,7 +49,7 @@ function VaporTower:OnCreated()
 
     self.initialDamage = GetAbilitySpecialValue(spellName, "damage")    
     self.aftershockDamage = GetAbilitySpecialValue(spellName, "aftershock_damage")    
-    self.initialAOE = GetAbilitySpecialValue(spellName, "aoe")    
+    self.initialAOE = GetAbilitySpecialValue(spellName, "aoe")+self.tower:GetHullRadius()
     self.aftershockAOE = GetAbilitySpecialValue(spellName, "aftershock_aoe")
 
     local time = 1 / self.tower:GetAttacksPerSecond()

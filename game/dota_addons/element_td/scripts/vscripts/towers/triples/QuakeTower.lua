@@ -16,9 +16,10 @@ QuakeTower = createClass({
 nil)
 --
 function QuakeTower:OnAttack(keys)
-    if math.random(100) > self.chance then
-        local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start_f.vpcf", PATTACH_ABSORIGIN, self.tower)
+    if RollPercentage(self.chance) then
+        local particle = ParticleManager:CreateParticle("particles/custom/towers/quake/attack.vpcf", PATTACH_ABSORIGIN, self.tower)
         ParticleManager:SetParticleControl(particle, 0, self.tower:GetAbsOrigin())
+        ParticleManager:SetParticleControl(particle, 1, Vector(self.aoe,1,1))
 
         local pulverizeDamage = ApplyAbilityDamageFromModifiers(self.aoeDamage, self.tower)
         local creeps = GetCreepsInArea(self.tower:GetOrigin(), self.aoe)
@@ -42,6 +43,7 @@ function QuakeTower:OnCreated()
     self.chance = GetAbilitySpecialValue("quake_tower_pulverize", "chance")
     self.aoeDamage = GetAbilitySpecialValue("quake_tower_pulverize", "damage")[self.tower:GetLevel()]
     self.aoe = GetAbilitySpecialValue("quake_tower_pulverize", "aoe")
+    AddAnimationTranslate(self.tower, "enchant_totem")
 end
 
 RegisterTowerClass(QuakeTower, QuakeTower.className)
