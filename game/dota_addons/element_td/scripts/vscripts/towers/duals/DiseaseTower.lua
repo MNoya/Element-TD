@@ -32,7 +32,6 @@ function DiseaseTower:OnCreated()
 
     local level = self.tower:GetLevel()
     local particleName
-    print(level)
     if level == 1 then
         particleName = "particles/units/heroes/hero_undying/undying_tombstone_ambient.vpcf"
     elseif level == 2 then

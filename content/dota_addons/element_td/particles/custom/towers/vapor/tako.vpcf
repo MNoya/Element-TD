@@ -57,12 +57,15 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/vapor/tako_ring_wave.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/vapor/tako_shockwave_ring.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/vapor/tako_puddle.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/vapor/tako_foam.vpcf"
@@ -83,9 +86,11 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/vapor/tako_ground_dust_swirl.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/vapor/tako_rays.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/vapor/tako_center.vpcf"

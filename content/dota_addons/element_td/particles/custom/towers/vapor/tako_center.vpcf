@@ -67,8 +67,8 @@
 		},
 		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMin = 25.000000
-			m_flRadiusMax = 25.000000
+			m_flRadiusMin = 20.000000
+			m_flRadiusMax = 20.000000
 		},
 		{
 			_class = "C_INIT_RandomYawFlip"
@@ -105,7 +105,7 @@
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
-			m_flEmitRate = 120.000000
+			m_flEmitRate = 50.000000
 			m_flEmissionDuration = 0.350000
 		},
 	]

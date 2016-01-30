@@ -23,9 +23,10 @@ function VaporTower:VaporWaveAttack()
 
     if self.tower:GetHealthPercent() == 100 and #creeps > 0 then
         self.tower:StartGesture(ACT_DOTA_CAST_ABILITY_2) --crush
+        self.ability:StartCooldown(1 / self.tower:GetAttacksPerSecond())
         for _,creep in pairs(creeps) do
             local particle = ParticleManager:CreateParticle("particles/custom/towers/vapor/tako.vpcf", PATTACH_ABSORIGIN, creep)     
-            ParticleManager:SetParticleControl(particle, 1, Vector(self.initialAOE/2, 1, 1)) 
+            ParticleManager:SetParticleControl(particle, 1, Vector(self.initialAOE/4, 1, 1)) 
 
             DamageEntity(creep, self.tower, initial_damage)    
 
@@ -44,7 +45,7 @@ end
 function VaporTower:OnCreated()
     self.level = GetUnitKeyValue(self.towerClass, "Level")    
     local spellName = "vapor_tower_evaporate"
-    AddAbility(self.tower, spellName, self.level)        
+    self.ability = AddAbility(self.tower, spellName, self.level)        
 
     self.initialDamage = GetAbilitySpecialValue(spellName, "damage")    
     self.aftershockDamage = GetAbilitySpecialValue(spellName, "aftershock_damage")    
