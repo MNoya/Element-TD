@@ -1,5 +1,5 @@
 -- Magic Tower class (Fire + Dark)
---  Every attack adds 20 range. Max of 30 stacks (600 range). Resets on 2 seconds of no attack
+--  Every attack adds 20 range. Max of 30 stacks (+600 range). Resets on 2 seconds of no attack
 
 MagicTower = createClass({
         tower = nil,
@@ -26,14 +26,24 @@ function MagicTower:OnAttack(event)
     local stackCount = tower:GetModifierStackCount(modifierName, tower) or 0
     stackCount = stackCount == self.maxStacks and self.maxStacks or (stackCount + 1)
 
-    tower:SetModifierStackCount(modifierName, tower, stackCount)      
+    tower:SetModifierStackCount(modifierName, tower, stackCount)
 end
 
 function MagicTower:OnAttackLanded(keys)
     local target = keys.target
     local damage = self.tower:GetBaseDamageMax()
     damage = ApplyAttackDamageFromModifiers(damage, self.tower)
-    DamageEntity(target, self.tower, self.tower:GetBaseDamageMax())    
+    DamageEntity(target, self.tower, self.tower:GetBaseDamageMax())
+    if IsCurrentlySelected(self.tower) then
+        UpdateSelectedEntities()
+    end
+end
+
+function OnMagicRangeDestroy(event)
+    local tower = event.target
+    if IsCurrentlySelected(tower) then
+        UpdateSelectedEntities()
+    end
 end
 
 function MagicTower:OnCreated()
