@@ -226,9 +226,11 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/quake/earthshaker_echoslam_start_innerring_egset.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/quake/earthshaker_echoslam_start_b_egset.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/quake/earthshaker_echoslam_start_d_egset.vpcf"

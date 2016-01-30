@@ -99,6 +99,9 @@ function ElementTD:InitGameMode()
     -- Don't end the game if everyone is unassigned
     SendToServerConsole("dota_surrender_on_disconnect 0")
 
+    -- Less expensive pathing?
+    LimitPathingSearchDepth(0.5)
+
     print("Loaded Element Tower Defense!")
 end
 
