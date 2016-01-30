@@ -55,8 +55,6 @@
 			"IsDebuff"		"1"
 			"Duration"		"%duration"
 			"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-			"EffectName"	"particles/custom/towers/erosion/debuff.vpcf"
-			"EffectAttackType" "follow_origin"
 			"ThinkInterval" "1"
 			"OnIntervalThink"
 			{
@@ -73,16 +71,8 @@
 		{
 			"IsDebuff"		"1"
 			"Duration"		"%duration"
-			"OnDestroy"
-			{
-				"RunScript"
-				{
-					"Target"			"TARGET"
-					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-					"Function"			"TriggerEvent"
-					"Event"				"OnDamageAmpExpire"
-				}
-			}
+			"EffectName"	"particles/custom/towers/erosion/debuff.vpcf"
+			"EffectAttackType" "follow_origin"
 		}
 	}
 	"AbilitySpecial"

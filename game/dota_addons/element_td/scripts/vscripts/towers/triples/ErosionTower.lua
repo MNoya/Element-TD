@@ -64,7 +64,7 @@ end
 function ErosionTower:OnDestroyed()
     for id,_ in pairs(self.debuffedCreeps) do
         local creep = EntIndexToHScript(id)
-        if creep and IsValidEntity(creep) and creep:IsAlive() then
+        if creep and IsValidEntity(creep) and creep:IsAlive() and creep.RemoveModifierByName then
             creep:RemoveModifierByName(self.modifierName)
             RemoveDamageAmpModifierFromCreep(creep, self.modifierName)
         end

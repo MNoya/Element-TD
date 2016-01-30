@@ -6,9 +6,9 @@
 	m_flConstantRadius = 32.000000
 	m_ConstantColor =
 	[
-		230,
-		7,
-		233,
+		255,
+		85,
+		0,
 		100,
 	]
 	m_nConstantSequenceNumber = 6
@@ -103,16 +103,16 @@
 			_class = "C_INIT_RandomColor"
 			m_ColorMin =
 			[
-				231,
-				31,
-				119,
+				255,
+				85,
+				0,
 				255,
 			]
 			m_ColorMax =
 			[
-				226,
-				28,
-				168,
+				255,
+				0,
+				0,
 				255,
 			]
 		},
