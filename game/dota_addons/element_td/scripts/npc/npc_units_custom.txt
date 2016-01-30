@@ -12768,7 +12768,7 @@
 	    "Model"             "models/heroes/windrunner/windrunner.vmdl"
 	    "ModelScale"        "1.2"
 	    "ModelRotation"     "90"
-	    "ModelOffset"       "20"
+	    "ModelOffset"       "15"
 		"Creature"
 	    {
 	        "AttachWearables" // Array of Tranquility
@@ -12861,7 +12861,7 @@
 	    "Model"             "models/heroes/windrunner/windrunner.vmdl"
 	    "ModelScale"        "1.4"
 	    "ModelRotation"     "90"
-	    "ModelOffset"       "20"
+	    "ModelOffset"       "15"
 		"Creature"
 	    {
 	        "AttachWearables" // Falconside Armor

@@ -1891,7 +1891,7 @@
 					"RunScript"
 					{
 						"Target"			"POINT"
-						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"ScriptFile"		"towers/towerevents.lua"
 						"Function"			"TriggerEvent"
 						"Event"				"OnAttack"
 					}
@@ -1907,6 +1907,8 @@
 			{
 				"IsDebuff"		"1"
 				"Duration"		"%reset_time"
+				"EffectName"        "particles/custom/towers/ephemeral/buff_cascade.vpcf"
+				"EffectAttachType"  "follow_origin"
 	
 				"Properties"
 				{

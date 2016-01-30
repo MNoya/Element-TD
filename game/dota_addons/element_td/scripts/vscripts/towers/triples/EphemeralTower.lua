@@ -25,22 +25,10 @@ function EphemeralTower:ResetDamage(keys)
     self.tower:RemoveModifierByName("modifier_reset_damage")
     self.tower:RemoveModifierByName("modifier_phasing_stack")
 
-    if self.particleActive then
-        ParticleManager:DestroyParticle(self.particleID, false)
-        self.particleActive = false
-    end
     self.hasAttackThinker = false
 end
 
 function EphemeralTower:OnAttack(keys)
-    if not self.particleActive then
-        self.particleID = ParticleManager:CreateParticle("particles/units/heroes/hero_windrunner/windrunner_windrun.vpcf", PATTACH_ABSORIGIN, self.tower)
-        ParticleManager:SetParticleControl(self.particleID, 0, self.tower:GetAbsOrigin() + Vector(0, 0, 16))
-        ParticleManager:SetParticleControl(self.particleID, 1, Vector(0, 0, 0))
-        ParticleManager:SetParticleControl(self.particleID, 3, Vector(0, 0, 0))
-        self.particleActive = true
-    end
-
     local phasing_base = self.tower:FindModifierByName("modifier_reset_damage")
     local phasing_stack = self.tower:FindModifierByName("modifier_phasing_stack")
 
@@ -114,7 +102,6 @@ function EphemeralTower:OnCreated()
     self.resetTimer = nil
     self.hasAttackThinker = false
     self.lastAttackTime = nil
-    self.particleActive = false
 end
 
 RegisterTowerClass(EphemeralTower, EphemeralTower.className)
