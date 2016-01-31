@@ -166,6 +166,15 @@ function UpgradeTower(keys)
 			upgradeData = tower.scriptObject:GetUpgradeData()
 		end
 
+		-- Add sell ability
+		if string.find(GameSettings.elementsOrderName, "Random") ~= nil then
+			AddAbility(newTower, "sell_tower_100")
+		elseif string.find(newTower.class, "arrow_tower") ~= nil or string.find(newTower.class, "cannon_tower") ~= nil then
+			AddAbility(newTower, "sell_tower_98")
+		else
+			AddAbility(newTower, "sell_tower_75")
+		end
+
 		-- create a script object for this tower
         local scriptClassName = GetUnitKeyValue(newClass, "ScriptClass")
         if not scriptClassName then scriptClassName = "BasicTower" end
@@ -184,14 +193,6 @@ function UpgradeTower(keys)
     	if IsSupportTower(newTower) then
         	newTower:AddNewModifier(newTower, nil, "modifier_support_tower", {})
         end
-
-		if string.find(GameSettings.elementsOrderName, "Random") ~= nil then
-			AddAbility(newTower, "sell_tower_100")
-		elseif string.find(newTower.class, "arrow_tower") ~= nil or string.find(newTower.class, "cannon_tower") ~= nil then
-			AddAbility(newTower, "sell_tower_98")
-		else
-			AddAbility(newTower, "sell_tower_75")
-		end
 
 		AddAbility(newTower, newTower.damageType .. "_passive")
 		if GetUnitKeyValue(newClass, "AOE_Full") and GetUnitKeyValue(newClass, "AOE_Half") then
