@@ -231,7 +231,7 @@
 	margin-top: -2px;
 }
 
-#PlayerGoldAmount
+#PlayerGoldAmount, #PlayerNetworth
 {
 	color: #ffd300;
 }
@@ -339,7 +339,8 @@
 #Kills,
 #Deaths,
 #Assists,
-#PlayerGoldAmount
+#PlayerGoldAmount,
+#PlayerNetworth
 {
 	horizontal-align: center;
 	vertical-align: center;
@@ -422,7 +423,7 @@
 
 .ScoreCol_TeamInfoAndHero
 {
-	width: 337px;
+	width: 317px;
 }
 
 .ScoreCol_TeamInfo
@@ -431,7 +432,7 @@
 }
 .ScoreCol_PlayerDetails
 {
-	width: 170px;
+	width: 150px;
 }
 
 .ScoreCol_Score
@@ -476,7 +477,7 @@
 
 .ScoreCol_Gold
 {
-	width: 60px;
+	width: 80px;
 	text-align: center;
 }
 

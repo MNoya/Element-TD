@@ -18,7 +18,7 @@
 				</Panel>
 			</Panel>
 			<Panel id="GoldContainer" class="ScoreCol_Gold ScoreboardPanel">
-				<Label id="PlayerGoldAmount" text="0" />
+				<Label id="PlayerNetworth" text="0" />
 			</Panel>
 			<Panel id="ScoreContainer" class="ScoreCol_Score ScoreboardPanel">
 				<Label id="Score" text="0" />

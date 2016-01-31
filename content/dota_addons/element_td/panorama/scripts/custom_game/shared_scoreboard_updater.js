@@ -69,6 +69,7 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
             _ScoreboardUpdater_SetTextSafe( playerPanel, "TeammateEssenceAmount", GameUI.CustomUIConfig().playerData[playerId].pureEssence);
             _ScoreboardUpdater_SetTextSafe( playerPanel, "Towers", GameUI.CustomUIConfig().playerData[playerId].towers);
             _ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerGoldAmount", GameUI.CustomUIConfig().playerData[playerId].gold );
+            _ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerNetworth", GameUI.CustomUIConfig().playerData[playerId].networth );
             _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", GameUI.CustomUIConfig().playerData[playerId].lastHits );
             var difficulty = GameUI.CustomUIConfig().playerData[playerId].difficulty;
             var diff = "-";

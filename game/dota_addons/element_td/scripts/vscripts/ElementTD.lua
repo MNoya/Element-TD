@@ -208,6 +208,8 @@ function ElementTD:EndGameForPlayer( playerID )
     UpdatePlayerSpells(playerID)
     RemoveElementalOrbs(playerID)
 
+    playerData.networth = GetPlayerNetworth( playerID )
+
     if playerData.elementalUnit ~= nil and IsValidEntity(playerData.elementalUnit) and playerData.elementalUnit:IsAlive() then
         print("Elemental Removed")
         playerData.elementalUnit:ForceKill(false)

@@ -52,6 +52,30 @@ function GetPlayerElementLevel( playerID, element )
 	return GetPlayerData(playerID).elements[element]
 end
 
+function GetPlayerNetworth(playerID)
+	local playerData = GetPlayerData( playerID )
+	local playerNetworth = ElementTD.vPlayerIDToHero[playerID]:GetGold()
+	for i,v in pairs( playerData.towers ) do
+		local tower = EntIndexToHScript( i )
+		if tower:GetHealth() == tower:GetMaxHealth() then
+			for i=0,15 do
+				local ability = tower:GetAbilityByIndex( i )
+				if ability then
+					local name = ability:GetAbilityName()
+					if ( name == "sell_tower_100" ) then
+						playerNetworth = playerNetworth + GetUnitKeyValue( tower.class, "TotalCost" )
+					elseif ( name == "sell_tower_95" ) then
+						playerNetworth = playerNetworth + math.ceil( GetUnitKeyValue( tower.class, "TotalCost" ) * 0.95 )
+					elseif ( name == "sell_tower_75" ) then
+						playerNetworth = playerNetworth + math.ceil( GetUnitKeyValue( tower.class, "TotalCost" ) * 0.75 )
+					end
+				end
+			end
+		end
+	end
+	return playerData.networth or playerNetworth
+end
+
 function IsPlayerUsingRandomMode( playerID )
 	return GetPlayerData(playerID).elementalRandom or (GameSettings.elementsOrderName and string.match(GameSettings.elementsOrderName, "Random"))
 end
@@ -130,8 +154,9 @@ function UpdateScoreboard(playerID)
 		difficulty = playerData.difficulty.difficultyName
 	end
 	local gold = PlayerResource:GetGold(playerID)
+	local networth = GetPlayerNetworth(playerID)
 	local lastHits = PlayerResource:GetLastHits(playerID)
-	CustomGameEventManager:Send_ServerToAllClients( "etd_update_scoreboard", {playerID=playerID, data = {lives=health, lumber=lumber, towers=towers, pureEssence=pureEssence, difficulty=difficulty, gold=gold, lastHits=lastHits}} )
+	CustomGameEventManager:Send_ServerToAllClients( "etd_update_scoreboard", {playerID=playerID, data = {lives=health, lumber=lumber, towers=towers, pureEssence=pureEssence, difficulty=difficulty, gold=gold, lastHits=lastHits, networth = networth,}} )
 end
 
 function UpdateElementOrbs(playerID, new_element)

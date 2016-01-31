@@ -230,28 +230,11 @@ end
 --					VeryHard=110790
 --					Insane=127770
 function ScoringObject:GetNetworthBonus()
-	local playerData = GetPlayerData( self.playerID )
+
 	local difficulty = GetPlayerDifficulty( self.playerID ).difficultyName
-	local playerNetworth = ElementTD.vPlayerIDToHero[self.playerID]:GetGold()
+	local playerNetworth = GetPlayerNetworth( self.playerID )
 	local baseWorth = 88170
-	for i,v in pairs( playerData.towers ) do
-		local tower = EntIndexToHScript( i )
-		if tower:GetHealth() == tower:GetMaxHealth() then
-			for i=0,15 do
-				local ability = tower:GetAbilityByIndex( i )
-				if ability then
-					local name = ability:GetAbilityName()
-					if ( name == "sell_tower_100" ) then
-						playerNetworth = playerNetworth + GetUnitKeyValue( tower.class, "TotalCost" )
-					elseif ( name == "sell_tower_95" ) then
-						playerNetworth = playerNetworth + round( GetUnitKeyValue( tower.class, "TotalCost" ) * 0.95 )
-					elseif ( name == "sell_tower_75" ) then
-						playerNetworth = playerNetworth + round( GetUnitKeyValue( tower.class, "TotalCost" ) * 0.75 )
-					end
-				end
-			end
-		end
-	end
+
 	if ( difficulty == "Hard" ) then
 		baseWorth = 96060
 	elseif ( difficulty == "VeryHard" ) then

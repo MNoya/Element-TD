@@ -20,7 +20,7 @@
 					<Panel class="LegendPanel ScoreCol_TeamInfoAndHero">
 						<Label id="RadiantLabel" class="TeamLabel" text="Builders"/>
 					</Panel>
-					<Label class="LegendPanel ScoreCol_Gold" text="Gold" />
+					<Label class="LegendPanel ScoreCol_Gold" text="Networth" />
 					<Label class="LegendPanel ScoreCol_Score" text="Score" />
 					<Label class="LegendPanel ScoreCol_Lives" text="Lives" />
 					<Label class="LegendPanel ScoreCol_Wave" text="Wave" />
