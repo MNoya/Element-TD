@@ -294,6 +294,10 @@ function SummonElemental(keys)
     elemental:SetCustomHealthLabel(GetEnglishTranslation(keys.Elemental), ElementColors[element][1], ElementColors[element][2], ElementColors[element][3])
     elemental.level = level
 
+    -- Adjust health bar
+    CustomNetTables:SetTableValue("elementals", tostring(elemental:GetEntityIndex()), {health_marker=health/4})
+    elemental:AddNewModifier(elemental, nil, "modifier_health_bar_markers", {})
+
     local particle = Particles[keys.Elemental]
     if particle then
         local h = ParticleManager:CreateParticle(particle, 2, elemental) 
