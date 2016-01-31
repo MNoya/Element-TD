@@ -73,6 +73,12 @@ function ScoringObject:UpdateScore( const )
 	if scoreTable['difficultyBonus'] then
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;'..GetPlayerDifficulty( self.playerID ).difficultyName .. ' difficulty: '.. GetPctString(scoreTable['difficultyBonus']), '#00FF00' } )
 	end
+	if scoreTable['chaosBonus'] and scoreTable['chaosBonus'] ~= 0 then
+		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Chaos bonus: '.. GetPctString(scoreTable['chaosBonus']), '#00FF00' } )
+	end
+	if scoreTable['endlessBonus'] and scoreTable['endlessBonus'] ~= 0 then
+		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Endless bonus: '.. GetPctString(scoreTable['endlessBonus']), '#00FF00' } )
+	end
 	if scoreTable['totalScore'] then
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Total score: ' .. comma_value(scoreTable['totalScore']), '#FF8C00'})
 		if const == SCORING_WAVE_LOST or const == SCORING_GAME_CLEAR then
@@ -176,6 +182,8 @@ function ScoringObject:GetGameCleared()
 	local totalScore = 0
 	local networthBonus = 0
 	local difficultyBonus = 1
+	local chaosBonus = 0
+	local endlessBonus = 0
 	local bossBonus = 0
 
 	if EXPRESS_MODE then
@@ -184,10 +192,12 @@ function ScoringObject:GetGameCleared()
 		bossBonus = self:GetBossBonus(playerData.bossWaves-1)
 	end
 	difficultyBonus = self:GetDifficultyBonus()
+	chaosBonus = self:GetCreepOrderBonus()
+	endlessBonus = self:GetEndlessBonus()
 
-	totalScore = math.ceil(score * (networthBonus + difficultyBonus + bossBonus + 1))
+	totalScore = math.ceil(score * (networthBonus + difficultyBonus + chaosBonus + endlessBonus + bossBonus + 1))
 
-	return { networthBonus = networthBonus, difficultyBonus = difficultyBonus, bossBonus = bossBonus, totalScore = totalScore }
+	return { networthBonus = networthBonus, difficultyBonus = difficultyBonus, chaosBonus = chaosBonus, endlessBonus = endlessBonus, bossBonus = bossBonus, totalScore = totalScore }
 end
 
 -- takes leaks (lives) per wave (1.20 multiplier)
@@ -244,6 +254,24 @@ function ScoringObject:GetNetworthBonus()
 		baseWorth = 127770
 	end
 	return (playerNetworth/baseWorth/2)
+end
+
+-- Creep order bonus
+function ScoringObject:GetCreepOrderBonus()
+	local bonus = 0
+	if GameSettings.order == "Chaos" then
+		bonus = 0.25 -- x1.25
+	end
+	return bonus
+end
+
+-- Wave mode bonus
+function ScoringObject:GetEndlessBonus()
+	local bonus = 0
+	if GameSettings:GetEndless() == "Endless" then
+		bonus = 0.5 -- x1.5
+	end
+	return bonus
 end
 
 -- Classic Only: 1.05 + 0.01 per additional wave
