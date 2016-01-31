@@ -195,6 +195,7 @@ end
 
 function ElementTD:EndGameForPlayer( playerID )
     local playerData = GetPlayerData(playerID)
+    local ply = PlayerResource:GetPlayer(playerID)
 
     if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then
         Log:info("Player "..playerID.." has been defeated on the boss wave "..playerData.nextWave..".")
@@ -225,6 +226,12 @@ function ElementTD:EndGameForPlayer( playerID )
             EntIndexToHScript(index):ForceKill(false)
         end
     end
+
+    -- Stop player interest
+    if ply then
+        CustomGameEventManager:Send_ServerToPlayer( ply, "etd_display_interest", { interval=INTEREST_INTERVAL, rate=INTEREST_RATE, enabled=false } )
+    end
+
     ElementTD:CheckGameEnd()
 end
 

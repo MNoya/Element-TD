@@ -33,6 +33,8 @@ function DisplayInterest( table ) {
 	enabled = table.enabled;
 	INTEREST_INTERVAL = table.interval;
 	INTEREST_RATE = table.rate;
+	if (!enabled)
+		interestBarGold.style["width"] = "0%";
 }
 
 function InterestEarned( table ) {
