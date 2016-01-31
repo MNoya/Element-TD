@@ -65,7 +65,7 @@
     "BaseClass"                 "npc_dota_creature"
     "ArmorPhysical"             "0"
     "MagicalResistance"         "0"
-    "BoundsHullName"            "DOTA_HULL_SIZE_TOWER"
+    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
     "TeamName"                  "DOTA_TEAM_GOODGUYS"
     "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
     "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
