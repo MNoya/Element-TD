@@ -11,8 +11,6 @@
 	"AbilityTextureName"			"towers/ice"
 	"MaxLevel"						"3"
 
-	"AbilityCastRange"				"%distance"
-
 	"Modifiers"
 	{
 		"modifier_ice_blast_passive"

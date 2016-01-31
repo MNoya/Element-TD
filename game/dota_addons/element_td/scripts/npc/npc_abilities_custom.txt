@@ -1755,8 +1755,6 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"AbilityTextureName"			"towers/electricty_tower_conjure_lightning"
 		"MaxLevel"						"3"
-		
-		"AbilityCastRange"				"1100"
 		"AbilityCastPoint"				"0"
 	
 		"Modifiers"
@@ -1818,7 +1816,6 @@
 		"MaxLevel"						"2"
 		"AbilityTextureName"			"towers/enchantment"
 		"AbilityCastRange"				"900"
-	
 	
 		"Modifiers"
 		{
@@ -2174,7 +2171,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"						"2"
 		"AbilityTextureName"			"naga_siren_rip_tide"
-		"AbilityCastRange"				"%full_aoe"
 	
 		"Modifiers"
 		{
@@ -2296,7 +2292,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"towers/gunpowder"
 		"MaxLevel"						"3"
-		"AbilityCastRange"				"1500"
 	
 		"AbilitySpecial"
 		{
@@ -2516,8 +2511,6 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"towers/ice"
 		"MaxLevel"						"3"
-	
-		"AbilityCastRange"				"%distance"
 	
 		"Modifiers"
 		{
@@ -3095,7 +3088,6 @@
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"obsidian_destroyer_sanity_eclipse"
-		"AbilityCastRange"				"1100"
 		"MaxLevel"						"2"
 	
 		"Modifiers"
@@ -3178,7 +3170,6 @@
 		"AbilityCooldown"				"1"
 		"MaxLevel"						"2"
 		"AbilityTextureName"			"towers/polar"
-		"AbilityCastRange"				"750"
 	
 		"OnSpellStart"
 		{

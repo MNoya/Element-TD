@@ -10,7 +10,6 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"towers/gunpowder"
 	"MaxLevel"						"3"
-	"AbilityCastRange"				"1500"
 
 	"AbilitySpecial"
 	{

@@ -12,8 +12,6 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 	"AbilityTextureName"			"towers/electricty_tower_conjure_lightning"
 	"MaxLevel"						"3"
-	
-	"AbilityCastRange"				"1100"
 	"AbilityCastPoint"				"0"
 
 	"Modifiers"

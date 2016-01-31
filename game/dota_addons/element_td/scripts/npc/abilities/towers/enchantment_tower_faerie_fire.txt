@@ -14,7 +14,6 @@
 	"AbilityTextureName"			"towers/enchantment"
 	"AbilityCastRange"				"900"
 
-
 	"Modifiers"
 	{
 		"modifier_faerie_fire"

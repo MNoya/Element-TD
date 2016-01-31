@@ -6,7 +6,6 @@
 	"BaseClass"						"ability_datadriven"											
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"obsidian_destroyer_sanity_eclipse"
-	"AbilityCastRange"				"1100"
 	"MaxLevel"						"2"
 
 	"Modifiers"

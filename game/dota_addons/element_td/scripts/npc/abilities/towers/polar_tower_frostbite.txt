@@ -12,7 +12,6 @@
 	"AbilityCooldown"				"1"
 	"MaxLevel"						"2"
 	"AbilityTextureName"			"towers/polar"
-	"AbilityCastRange"				"750"
 
 	"OnSpellStart"
 	{

@@ -7,7 +7,6 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"MaxLevel"						"2"
 	"AbilityTextureName"			"naga_siren_rip_tide"
-	"AbilityCastRange"				"%full_aoe"
 
 	"Modifiers"
 	{
