@@ -167,6 +167,7 @@ function UpgradeTower(keys)
 		end
 
 		-- Add sell ability
+		local scriptClassName = GetUnitKeyValue(newClass, "ScriptClass") or "BasicTower"
 		if string.find(GameSettings.elementsOrderName, "Random") ~= nil then
 			AddAbility(newTower, "sell_tower_100")
 		elseif string.find(newTower.class, "arrow_tower") ~= nil or string.find(newTower.class, "cannon_tower") ~= nil then
@@ -176,8 +177,6 @@ function UpgradeTower(keys)
 		end
 
 		-- create a script object for this tower
-        local scriptClassName = GetUnitKeyValue(newClass, "ScriptClass")
-        if not scriptClassName then scriptClassName = "BasicTower" end
         if TOWER_CLASSES[scriptClassName] then
 	        local scriptObject = TOWER_CLASSES[scriptClassName](newTower, newClass)
 	        newTower.scriptClass = scriptClassName

@@ -209,8 +209,8 @@ end
 function RemoveElementalOrbs(playerID)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 	if hero and hero.orbit_entities then
-		for k,v in pairs(hero.orbit_entities) do
-			v:RemoveSelf()
+		for i=1,hero.orb_count do
+			UTIL_Remove(hero.orbit_entities[i])
 		end
 	end
 end

@@ -143,7 +143,7 @@ function Build( event )
         if IsPlayerUsingRandomMode( playerID ) then
             AddAbility(unit, "sell_tower_100")
         elseif string.match(building_name, "arrow_tower") or string.match(building_name, "cannon_tower") then
-            AddAbility(unit, "sell_tower_95")
+            AddAbility(unit, "sell_tower_98")
         else
             AddAbility(unit, "sell_tower_75")
         end
