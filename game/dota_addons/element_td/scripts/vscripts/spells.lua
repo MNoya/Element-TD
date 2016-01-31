@@ -43,9 +43,10 @@ function SellTowerCast(keys)
 		local hero = tower:GetOwner()
 		local playerID = hero:GetPlayerID()
 		local playerData = GetPlayerData(playerID)
+		local goldCost = GetUnitKeyValue(tower.class, "TotalCost")
 		local sellPercentage = tonumber(keys.SellAmount)
 
-		local refundAmount = math.ceil(GetUnitKeyValue(tower.class, "TotalCost") * sellPercentage)
+		local refundAmount = round(goldCost * sellPercentage)
 		if sellPercentage > 0  then
 			Sounds:EmitSoundOnClient(playerID, "General.Coins")	
 			PopupAlchemistGold(tower, refundAmount)
