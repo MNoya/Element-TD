@@ -519,7 +519,7 @@ function SnapToGrid32(coord) {
 }
 
 function SnapHeight(x,y,z){
-    return [x, y, z - (z%128)]
+    return [x, y, z - ((z+1)%128)]
 }
 
 function IsBlocked(position) {

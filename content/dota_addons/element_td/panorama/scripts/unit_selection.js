@@ -14,18 +14,6 @@ function OnUpdateSelectedUnit( event )
 	var selectedEntities = Players.GetSelectedEntities( iPlayerID );
 	var mainSelected = Players.GetLocalPlayerPortraitUnit();
 
-	if (mainSelected == Players.GetPlayerHeroEntityIndex( iPlayerID )) {
-		//$.Msg("Changing selection to base building")
-		var entities = Entities.GetAllEntities()
-		for (var i = 0; i < entities.length; i++) {
-			if ( (Entities.GetUnitName( entities[i] ) != "") && Entities.IsControllableByPlayer( entities[i], iPlayerID )) {
-				if (IsCityCenter(entities[i])){
-					GameUI.SelectUnit(entities[i], false);
-				}				
-			}
-		};
-	}
-
 	// Remove old particle
     if (rangedParticle)
         Particles.DestroyParticleEffect(rangedParticle, true)
@@ -39,32 +27,31 @@ function OnUpdateSelectedUnit( event )
     }
 
 	if (selectedEntities.length > 1 && IsMixedBuildingSelectionGroup(selectedEntities) ){
-		$.Msg( "IsMixedBuildingSelectionGroup, proceeding to deselect the buildings and get only the units ")
-		$.Schedule(1/60, DeselectBuildings)	
+		$.Schedule(1/60, SelectOnlyBuildings)	
 	}
 
 	$.Schedule(0.03, SendSelectedEntities);
 }
 
-function DeselectBuildings() {
+function SelectOnlyBuildings() {
 	var iPlayerID = Players.GetLocalPlayer();
 	var selectedEntities = Players.GetSelectedEntities( iPlayerID );
 	
 	skip = true;
-	var first = FirstNonBuildingEntityFromSelection(selectedEntities)
+	var first = FirstBuildingEntityFromSelection(selectedEntities)
 	GameUI.SelectUnit(first, false); // Overrides the selection group
 
 	for (var unit of selectedEntities) {
 		skip = true; // Makes it skip an update
-		if (!IsCustomBuilding(unit) && unit != first){
+		if (IsCustomBuilding(unit) && unit != first){
 			GameUI.SelectUnit(unit, true);
 		}
 	}
 }
 
-function FirstNonBuildingEntityFromSelection( entityList ){
+function FirstBuildingEntityFromSelection( entityList ){
 	for (var i = 0; i < entityList.length; i++) {
-		if (!IsCustomBuilding(entityList[i])){
+		if (IsCustomBuilding(entityList[i])){
 			return entityList[i]
 		}
 	}
