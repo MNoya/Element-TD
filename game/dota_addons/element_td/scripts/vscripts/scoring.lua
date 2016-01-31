@@ -79,7 +79,8 @@ function ScoringObject:UpdateScore( const )
 			self.totalScore = scoreTable['totalScore']
 		else
 			self.totalScore = self.totalScore + scoreTable['totalScore']
-		end	
+		end
+		print("Score updated for player [" .. self.playerID .. "] :" .. self.totalScore)
 	end
 	--PrintTable(processed)
 	if (const == SCORING_GAME_CLEAR) then -- Delay Screen
