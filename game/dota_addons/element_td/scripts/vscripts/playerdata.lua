@@ -113,6 +113,10 @@ function ModifyElementValue(playerID, element, change)
         end
     end
 
+    if playerData.elementalCount == 0 then
+   		StopHighlight(playerData.summoner)
+   	end
+
    	playerData.elementalCount = playerData.elementalCount + change
 	playerData.elements[element] = playerData.elements[element] + change
 	UpdateElementsHUD(playerID)
@@ -212,5 +216,19 @@ function RemoveElementalOrbs(playerID)
 		for i=1,hero.orb_count do
 			UTIL_Remove(hero.orbit_entities[i])
 		end
+	end
+end
+
+function Highlight(entity)
+	if not entity.highlight then
+		local particleName = "particles/custom/summoner/highlight_trail_05.vpcf"
+		entity.highlight = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, entity)
+		ParticleManager:SetParticleControl(entity.highlight, 15, Vector(255,255,255))
+	end
+end
+
+function StopHighlight(entity)
+	if entity and entity.highlight then
+		ParticleManager:DestroyParticle(entity.highlight, true)
 	end
 end

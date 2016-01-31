@@ -5113,12 +5113,13 @@
 	}
 	"elemental_summoner"
 	{
-		"BaseClass"		"npc_dota_building"
+		"BaseClass"		"npc_dota_creature"
 		"Model"			"models/rune_point.vmdl"
 	
-		"SoundSet"		""
-		"MinimapIcon"		"minimap_racks90"
-		"HealthBarOffset"		"250"
+		"MinimapIcon"		 "minimap_summoner"
+		"MinimapIconSize"	 "1000"
+		"MinimapDisableTint" "1"
+	
 		"ModelScale"		"1.3"
 		"AbilityLayout"		"6"
 		"Ability1"		"summon_water_elemental"
@@ -5127,7 +5128,7 @@
 		"Ability4"		"summon_earth_elemental"
 		"Ability5"		"summon_light_elemental"
 		"Ability6"		"summon_dark_elemental"
-		"Ability7"		""
+		"Ability7"		"ability_building"
 		"Ability8"		""
 		"ArmorPhysical"		"0"		// Physical protection"
 		"MagicalResistance"		"0"		// Magical protection"

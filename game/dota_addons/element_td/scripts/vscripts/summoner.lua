@@ -52,6 +52,11 @@ function ModifyLumber(playerID, amount)
     UpdateSummonerSpells(playerID)
     if amount > 0 then
         PopupLumber(ElementTD.vPlayerIDToHero[playerID], amount)
+
+        if playerData.elementalCount == 0 then
+            Highlight(playerData.summoner)
+        end
+
         if GameSettings.elementsOrderName == "AllPick" then
             SendLumberMessage(playerID, "#etd_lumber_add")
         end

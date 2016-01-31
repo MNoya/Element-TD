@@ -121,5 +121,14 @@
             "width"     "64"
             "height"    "64"
         }
+
+        "minimap_summoner"
+        {
+            "file"      "materials/vgui/hud/minimap_summoner.vmat"
+            "x"         "0"
+            "y"         "0"
+            "width"     "64"
+            "height"    "64"
+        }
     }
 }
