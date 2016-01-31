@@ -4883,7 +4883,7 @@
 	            "4"  { "ItemDef" "509" } //Ambient
 	        }
 	    }
-	    "Level"        "1"
+	    "Level"        "2"
 	    "ModelScale"        "1.1"
 	    "BountyGoldMin"        "0"
 	    "BountyGoldMax"        "0"
@@ -4938,7 +4938,7 @@
 	            "4"  { "ItemDef" "509" } //Ambient
 	        }
 	    }
-	    "Level"        "1"
+	    "Level"        "3"
 	    "ModelScale"        "1.1"
 	    "BountyGoldMin"        "0"
 	    "BountyGoldMax"        "0"
@@ -5047,7 +5047,7 @@
 	        }
 	    }
 	
-	    "Level"        "1"
+	    "Level"        "2"
 	    "ModelScale"        "1.2"
 	    "BountyGoldMin"        "0"        // Gold earned min"
 	    "BountyGoldMax"        "0"        // Gold earned max"
@@ -5103,7 +5103,7 @@
 	        }
 	    }
 	
-	    "Level"        "1"
+	    "Level"        "3"
 	    "ModelScale"        "1.0"
 	    "BountyGoldMin"        "0"        // Gold earned min"
 	    "BountyGoldMax"        "0"        // Gold earned max"
@@ -5265,7 +5265,7 @@
 	        }
 	    }
 	
-	    "Level"        "1"
+	    "Level"        "2"
 	    "ModelScale"        "1.1"
 	    "BountyGoldMin"        "0"        // Gold earned min"
 	    "BountyGoldMax"        "0"        // Gold earned max"
@@ -5322,7 +5322,7 @@
 	        }
 	    }
 	
-	    "Level"        "1"
+	    "Level"        "3"
 	    "ModelScale"        "1.1"
 	    "BountyGoldMin"        "0"        // Gold earned min"
 	    "BountyGoldMax"        "0"        // Gold earned max"
@@ -5438,7 +5438,7 @@
 	        }
 	    }
 	    
-	    "Level"        "1"
+	    "Level"        "2"
 	    "ModelScale"        "1.1"
 	    "BountyGoldMin"        "0"
 	    "BountyGoldMax"        "0"
@@ -5496,7 +5496,7 @@
 	        }
 	    }
 	    
-	    "Level"        "1"
+	    "Level"        "3"
 	    "ModelScale"        "1.1"
 	    "BountyGoldMin"        "0"
 	    "BountyGoldMax"        "0"
@@ -5609,7 +5609,7 @@
 	        }
 	    }
 	
-	    "Level"        "1"
+	    "Level"        "2"
 	    "ModelScale"        "1.1"
 	    "BountyGoldMin"        "0"        // Gold earned min"
 	    "BountyGoldMax"        "0"        // Gold earned max"
@@ -5666,7 +5666,7 @@
 	        }
 	    }
 	
-	    "Level"        "1"
+	    "Level"        "3"
 	    "ModelScale"        "1.1"
 	    "BountyGoldMin"        "0"        // Gold earned min"
 	    "BountyGoldMax"        "0"        // Gold earned max"
@@ -5774,7 +5774,7 @@
 	        }
 	    }
 	    
-	    "Level"        "1"
+	    "Level"        "2"
 	    "ModelScale"        "1.0"
 	    "BountyGoldMin"        "0"        // Gold earned min"
 	    "BountyGoldMax"        "0"        // Gold earned max"
@@ -5832,7 +5832,7 @@
 	        }
 	    }
 	
-	    "Level"        "1"
+	    "Level"        "3"
 	    "ModelScale"        "1.0"
 	    "BountyGoldMin"        "0"        // Gold earned min"
 	    "BountyGoldMax"        "0"        // Gold earned max"
