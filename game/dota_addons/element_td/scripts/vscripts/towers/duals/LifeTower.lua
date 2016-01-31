@@ -21,7 +21,6 @@ function LifeTower:CreepKilled(keys)
     if (keys.unit:GetTeamNumber() == heroOwner:GetTeamNumber()) then return end --Exit out of killing your own tower
 
     local playerData = GetPlayerData(heroOwner:GetPlayerID())    
-
     playerData.LifeTowerKills = playerData.LifeTowerKills + self.pointsPerKill
 
     if playerData.health < 50 and playerData.LifeTowerKills >= 3 then --when health is less than 50
@@ -33,6 +32,26 @@ function LifeTower:CreepKilled(keys)
         playerData.LifeTowerKills = playerData.LifeTowerKills - 9
 
         AddOneLife(self.tower, self.ability, playerData)        
+    end
+
+    -- Update all tower counters
+    local modifierName = "modifier_life_tower_current_kill_counter"
+    for k,v in pairs(playerData.towers) do
+        local tower = EntIndexToHScript(k)
+        if IsValidEntity(tower) and tower.scriptClass == "LifeTower" then
+            if not tower:HasModifier(modifierName) then
+                self.ability:ApplyDataDrivenModifier(self.tower, self.tower, modifierName, {})
+            end
+            tower:SetModifierStackCount(modifierName, nil, playerData.LifeTowerKills)
+        end
+    end
+    for _,tower in pairs(playerData.clones) do
+        if IsValidEntity(tower) and tower.scriptClass == "LifeTower" then
+            if not tower:HasModifier(modifierName) then
+                self.ability:ApplyDataDrivenModifier(self.tower, self.tower, modifierName, {})
+            end
+            tower:SetModifierStackCount(modifierName, nil, playerData.LifeTowerKills)
+        end
     end
 end
 
@@ -72,7 +91,6 @@ function LifeTower:GetUpgradeData()
 end
 
 function LifeTower:ApplyUpgradeData(data)
-    DeepPrintTable(data)
     if data.life_counter and data.life_counter > 0 then
         self.tower:SetModifierStackCount("modifier_life_tower_counter", self.tower, data.life_counter)
         self.tower.life_counter = data.life_counter
