@@ -25,8 +25,8 @@
     "ProjectileSpeed"           "800" 
 
     "Level"                     "1"
-    "Cost"                      "20"
-    "TotalCost"                 "20"
+    "Cost"                      "50"
+    "TotalCost"                 "50"
     "BuildTime"                 "1"
     "Element"                   "none" 
     "DamageType"                "composite"
@@ -35,8 +35,6 @@
     
     "Upgrades"
     {
-        "Count"   "1"
-        "1"       "advanced_cannon_tower"
     }
 
     // General

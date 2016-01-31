@@ -6000,17 +6000,17 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "9"
-	    "AttackDamageMax"           "9"
-	    "Damage"                    "9"
+	    "AttackDamageMin"           "30"
+	    "AttackDamageMax"           "30"
+	    "Damage"                    "30"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
 	    "ProjectileSpeed"           "1000" 
 	
 	    "Level"                     "1"
-	    "Cost"                      "20"
-	    "TotalCost"                 "20"
+	    "Cost"                      "50"
+	    "TotalCost"                 "50"
 	    "BuildTime"                 "1"
 	    "Element"                   "none"
 	    "DamageType"                "composite"
@@ -6019,8 +6019,6 @@
 	    
 	    "Upgrades"
 	    {
-	        "Count" "1"
-	        "1"     "advanced_arrow_tower"
 	    }
 	
 	    // General
@@ -6079,8 +6077,8 @@
 	    "ProjectileSpeed"           "800" 
 	
 	    "Level"                     "1"
-	    "Cost"                      "20"
-	    "TotalCost"                 "20"
+	    "Cost"                      "50"
+	    "TotalCost"                 "50"
 	    "BuildTime"                 "1"
 	    "Element"                   "none" 
 	    "DamageType"                "composite"
@@ -6089,8 +6087,6 @@
 	    
 	    "Upgrades"
 	    {
-	        "Count"   "1"
-	        "1"       "advanced_cannon_tower"
 	    }
 	
 	    // General

@@ -188,7 +188,7 @@ function UpgradeTower(keys)
 		if string.find(GameSettings.elementsOrderName, "Random") ~= nil then
 			AddAbility(newTower, "sell_tower_100")
 		elseif string.find(newTower.class, "arrow_tower") ~= nil or string.find(newTower.class, "cannon_tower") ~= nil then
-			AddAbility(newTower, "sell_tower_95")
+			AddAbility(newTower, "sell_tower_98")
 		else
 			AddAbility(newTower, "sell_tower_75")
 		end

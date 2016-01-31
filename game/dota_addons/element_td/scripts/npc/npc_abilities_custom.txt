@@ -3558,9 +3558,9 @@
 	    }
 	}
 	//============================================================//
-	// Sell Tower 95%
+	// Sell Tower 98%
 	//============================================================//
-	"sell_tower_95"
+	"sell_tower_98"
 	{
 	    // General
 	    //-----------------------------
@@ -3575,7 +3575,7 @@
 	        {
 	            "ScriptFile"        "spells.lua"
 	            "Function"          "SellTowerCast"
-	            "SellAmount"        "0.95"
+	            "SellAmount"        "0.98"
 	        }
 	    }
 	    "AbilitySpecial"
@@ -3583,7 +3583,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "sell_amount_tooltip"   "95"
+	            "sell_amount_tooltip"   "98"
 	        }
 	    }
 	}
