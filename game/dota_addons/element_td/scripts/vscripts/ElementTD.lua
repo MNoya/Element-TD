@@ -228,6 +228,8 @@ function ElementTD:EndGameForPlayer( playerID )
             EntIndexToHScript(index):ForceKill(false)
         end
     end
+    
+    Sounds:EmitSoundOnClient(playerID,"Hero_Axe.Culling_Blade_Success")
 
     -- Stop player interest
     if ply then
@@ -414,6 +416,7 @@ function ElementTD:EntityKilled(keys)
         playerData.elementalUnit = nil
         ModifyElementValue(entity.playerID, entity.element, 1)
         AddElementalTrophy(entity.playerID, entity.element)
+        Sounds:EmitSoundOnClient( entity.playerID,ElementalSounds[entity.element].."death_"..GetSoundNumber(ElementalSounds[entity.element.."_no"]))
     else
         local playerID = entity.playerID
         if entity.waveObject then 

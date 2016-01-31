@@ -54,6 +54,11 @@ function Wave:SpawnWave()
 	local startPos = EntityStartLocations[playerData.sector + 1]
 	local entitiesSpawned = 0
 	local sector = playerData.sector + 1
+	local ply = PlayerResource:GetPlayer(self.playerID)
+
+	if ply then
+		EmitSoundOnClient("ui.contract_complete", ply)
+	end
 
 	self.startTime = GameRules:GetGameTime() + 0.5
 	self.leaks = 0

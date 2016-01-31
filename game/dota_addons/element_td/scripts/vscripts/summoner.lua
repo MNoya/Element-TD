@@ -24,6 +24,28 @@ TrailParticles = {
     dark = "particles/econ/courier/courier_greevil_purple/courier_greevil_purple_ambient_3.vpcf",
 }
 
+ElementalSounds = {
+    water = "morphling_mrph_",
+    water_no = 8,
+    fire = "lina_lina_",
+    fire_no = 9,
+    nature = "furion_furi_",
+    nature_no = 3,
+    earth = "tiny_tiny_",
+    earth_no = 9,
+    light = "keeper_of_the_light_keep_",
+    light_no = 5,
+    dark = "nevermore_nev_",
+    dark_no = 11,
+}
+
+function GetSoundNumber( max )
+    local rand = math.random(max)
+    local str = ""
+    str = string.format("%02d", rand)
+    return str
+end
+
 function ModifyLumber(playerID, amount)
     local playerData = GetPlayerData(playerID)
     playerData.lumber = playerData.lumber + amount
@@ -278,6 +300,8 @@ function SummonElemental(keys)
         ParticleManager:SetParticleControlEnt(h, 0, elemental, 5, "attach_origin", elemental:GetOrigin(), true)
     end
 
+    Sounds:EmitSoundOnClient(playerID, ElementalSounds[element].."spawn_"..GetSoundNumber(ElementalSounds[element.."_no"]), ply)
+
     Timers:CreateTimer(0.1, function()
         if not IsValidEntity(elemental) or not elemental:IsAlive() then return end
         
@@ -303,6 +327,7 @@ function SummonElemental(keys)
             else
                 hero:SetHealth(hero:GetHealth() - 3)
             end
+            Sounds:EmitSoundOnClient(playerID, "ui.click_back")
             CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=playerData.health/hero:GetMaxHealth() * 100} )
             UpdateScoreboard(playerID)
             --Say(nil, playerData.name .. "'s Health: " .. playerData.health, false)

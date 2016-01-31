@@ -95,7 +95,7 @@ function StartBreakTime(playerID, breakTime)
 
         local playerData = GetPlayerData(playerID)
         local sector = playerData.sector + 1
-        ShowPortalForSector(sector, wave, breakTime)
+        ShowPortalForSector(sector, wave, breakTime, playerID)
     end
 
     -- create the actual timer
@@ -157,6 +157,7 @@ function SpawnWaveForPlayer(playerID, wave)
     local playerData = GetPlayerData(playerID)
     local sector = playerData.sector + 1
     local startPos = EntityStartLocations[sector]
+    local ply = PlayerResource:GetPlayer(playerID)
 
     playerData.waveObject = waveObj
     playerData.waveObjects[wave] = waveObj
@@ -166,7 +167,6 @@ function SpawnWaveForPlayer(playerID, wave)
     if (wave < WAVE_COUNT) then
         CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_next_wave_info", { nextWave=wave + 1, nextAbility1=creepsKV[WAVE_CREEPS[wave+1]].Ability1, nextAbility2=creepsKV[WAVE_CREEPS[wave+1]].Ability2 } )
     elseif (playerData.completedWaves + 1  == WAVE_COUNT) then
-
         CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_next_wave_info", { nextWave=0, nextAbility1="", nextAbility2="" } )
     end
 
@@ -183,6 +183,9 @@ function SpawnWaveForPlayer(playerID, wave)
         playerData.completedWaves = playerData.completedWaves + 1
         if GameSettings:GetEndless() == "Normal" then
             playerData.nextWave = playerData.nextWave + 1
+        end
+        if ply then
+            EmitSoundOnClient("ui.npe_objective_complete", ply)
         end
 
         -- Boss Waves
@@ -256,7 +259,7 @@ function SpawnWaveForPlayer(playerID, wave)
         playerData.waveObjects[waveObj.waveNumber] = nil
     end)
     waveObj:SpawnWave()
-    
+
     ----------------------------------------
     -- create thinker to sync fast creeps --
     if GetUnitKeyValue(WAVE_CREEPS[wave], "ScriptClass") == "CreepFast" or GetUnitKeyValue(WAVE_CREEPS[wave], "ScriptClass") == "CreepBoss" then
@@ -283,7 +286,7 @@ function SpawnWaveForPlayer(playerID, wave)
     ----------------------------
 end
 
-function ShowPortalForSector(sector, wave, time)
+function ShowPortalForSector(sector, wave, time, playerID)
     local element = string.gsub(creepsKV[WAVE_CREEPS[wave]].Ability1, "_armor", "")
     print("Portal: ",sector, element)
     local portal = SectorPortals[sector]
@@ -301,6 +304,7 @@ function ShowPortalForSector(sector, wave, time)
     if sector >= 5 then
         print("Error, can't have more than 4 Speech Bubbles")
     else
+        Sounds:EmitSoundOnClient( playerID, "Tutorial.Notice.Speech" )
         portal:AddSpeechBubble(sector, "#etd_wave_"..element, time, 0, 0)
     end
 end
@@ -350,6 +354,7 @@ end
 function ReduceLivesForPlayer( playerID )
     local playerData = GetPlayerData(playerID)
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    local ply = PlayerResource:GetPlayer(playerID)
 
     local lives = 1
 
@@ -361,6 +366,7 @@ function ReduceLivesForPlayer( playerID )
     -- Cheats can melt steel beams
     if GameRules.WhosYourDaddy then
         lives = 0
+        return
     end
 
     if hero:GetHealth() <= lives and hero:GetHealth() > 0 then
@@ -378,6 +384,9 @@ function ReduceLivesForPlayer( playerID )
         if playerData.health < 50 then --When over 50 health, HP loss is covered by losing modifier_bonus_life
             hero:SetHealth(playerData.health)
         end
+    end
+    if ply then
+        EmitSoundOnClient("ui.click_back", ply)
     end
     hero:CalculateStatBonus()
     CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=playerData.health/hero:GetMaxHealth() * 100} )
