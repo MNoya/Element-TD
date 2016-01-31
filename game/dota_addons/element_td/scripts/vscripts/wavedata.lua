@@ -264,6 +264,9 @@ function SpawnWaveForPlayer(playerID, wave)
         local hero = player:GetAssignedHero()
 
         Timers:CreateTimer(3, function()
+            if playerData.health == 0 then
+                return
+            end
             if GetUnitKeyValue(WAVE_CREEPS[wave], "ScriptClass") ~= "CreepFast" and GetUnitKeyValue(WAVE_CREEPS[wave], "ScriptClass") ~= "CreepBoss" then
                 return
             end
