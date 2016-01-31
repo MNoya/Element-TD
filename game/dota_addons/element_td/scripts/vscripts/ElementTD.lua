@@ -80,7 +80,7 @@ function ElementTD:InitGameMode()
     LinkLuaModifier("modifier_support_tower", "libraries/modifiers/modifier_support_tower", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_bonus_life", "libraries/modifiers/modifier_bonus_life", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_health_bar_markers", "libraries/modifiers/modifier_health_bar_markers", LUA_MODIFIER_MOTION_NONE)
-    LinkLuaModifier("modifier_first_element_available", "libraries/modifiers/modifier_first_element_available", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_not_on_minimap_for_enemies", "libraries/modifiers/modifier_not_on_minimap_for_enemies", LUA_MODIFIER_MOTION_NONE)
     
     -- Register UI Listener   
     CustomGameEventManager:RegisterListener( "next_wave", Dynamic_Wrap(ElementTD, "OnNextWave")) -- wave info
@@ -230,6 +230,8 @@ function ElementTD:EndGameForPlayer( playerID )
             EntIndexToHScript(index):ForceKill(false)
         end
     end
+    UTIL_Remove(playerData.summoner.icon)
+    UTIL_Remove(playerData.summoner)
     
     Sounds:EmitSoundOnClient(playerID,"Hero_Axe.Culling_Blade_Success")
 
@@ -344,10 +346,10 @@ function ElementTD:OnUnitSpawned(keys)
             summoner:SetControllableByPlayer(playerID, true)
             summoner:SetAngles(0, 270, 0)
             summoner:AddItem(CreateItem("item_buy_pure_essence", summoner, summoner))
-            summoner:AddNewModifier(nil, nil, "modifier_no_health_bar", {})
+            summoner.icon = CreateUnitByName("elemental_summoner_icon", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber())
+            summoner.icon:AddNewModifier(nil, nil, "modifier_not_on_minimap_for_enemies", {})
             playerData.summoner = summoner
 
-            GetPlayerData(playerID)["summoner"] = summoner
             ModifyLumber(playerID, 0)  -- updates summoner spells
             UpdatePlayerSpells(playerID)
         end

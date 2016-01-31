@@ -3,10 +3,6 @@
 	"BaseClass"		"npc_dota_creature"
 	"Model"			"models/rune_point.vmdl"
 
-	"MinimapIcon"		 "minimap_summoner"
-	"MinimapIconSize"	 "1000"
-	"MinimapDisableTint" "1"
-
 	"ModelScale"		"1.3"
 	"AbilityLayout"		"6"
 	"Ability1"		"summon_water_elemental"
@@ -15,7 +11,7 @@
 	"Ability4"		"summon_earth_elemental"
 	"Ability5"		"summon_light_elemental"
 	"Ability6"		"summon_dark_elemental"
-	"Ability7"		"ability_building"
+	"Ability7"		"ability_summoner"
 	"Ability8"		""
 	"ArmorPhysical"		"0"		// Physical protection"
 	"MagicalResistance"		"0"		// Magical protection"
@@ -48,4 +44,19 @@
 	"RingRadius"		"180"
 	"VisionDaytimeRange"		"1500"		// Range of vision during day light"
 	"VisionNighttimeRange"		"1500"		// Range of vision at night time"
+}
+
+"elemental_summoner_icon"
+{
+	"MinimapIcon"               "minimap_summoner"
+    "MinimapIconSize"           "400"
+    "MinimapDisableTint"        "1"
+
+	"BaseClass"					"npc_dota_building"
+	"Model"						"models/development/invisiblebox.vmdl"	
+	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+	"VisionDaytimeRange"		"0"	
+	"VisionNighttimeRange"		"0"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
 }

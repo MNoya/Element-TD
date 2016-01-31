@@ -29,3 +29,33 @@
 		}
 	}		
 }
+
+"ability_summoner"
+{
+	"BaseClass"             		"ability_datadriven"
+	"MaxLevel" 						"1"
+
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+
+	"Modifiers"
+	{
+		"modifier_building"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"Attributes"		"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"	
+			"States"
+			{
+				"MODIFIER_STATE_MAGIC_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+			}
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_DISABLE_TURNING" "1"
+				"MODIFIER_PROPERTY_IGNORE_CAST_ANGLE" "1"
+				"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"	"0.1"
+			}
+		}
+	}		
+}
