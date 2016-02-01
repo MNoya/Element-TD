@@ -13,165 +13,165 @@
             <Panel hittest="false" id="ElementsContainer">
                 <Panel hittest="false" id="WaterContainer">
                     <Panel hittest="false" class='Element' id="WaterElement">
-                        <Image class='ElementImage' src="file://{images}/spellicons/elements/water.png"/>
+                        <Image class='ElementImage' id='water' src="file://{images}/spellicons/elements/water.png"/>
                     </Panel>
                     <Panel hittest="false" class='DualsContainer' id="waterDuals">
-                        <Panel hittest="false" class='AbilityContainer' id="vapor">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/vapor.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('vapor','water','fire')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="vapor" src="file://{images}/spellicons/towers/vapor.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="well">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/well.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('well','water','nature')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="well" src="file://{images}/spellicons/towers/well.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="poison">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/poison.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('poison','water','dark')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="poison" src="file://{images}/spellicons/towers/poison.png"/>
                         </Panel>
                     </Panel>
                     <Panel hittest="false" class='TriplesContainer' id="waterTriples">
-                        <Panel hittest="false" class='AbilityContainer' id="windstorm">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/windstorm.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('windstorm','water','fire','light')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="windstorm" src="file://{images}/spellicons/towers/windstorm.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="flooding">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/flooding.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('flooding','water','dark','earth')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="flooding" src="file://{images}/spellicons/towers/flooding.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="polar">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/polar.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('polar','water','light','earth')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="polar" src="file://{images}/spellicons/towers/polar.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="tidal">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/tidal.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('tidal','water','nature','light')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="tidal" src="file://{images}/spellicons/towers/tidal.png"/>
                         </Panel>
                     </Panel>
                 </Panel>
 
                 <Panel hittest="false" id="FireContainer">
                     <Panel hittest="false" class='Element' id="FireElement">
-                        <Image class='ElementImage' src="file://{images}/spellicons/elements/fire.png"/>
+                        <Image class='ElementImage' id='fire' src="file://{images}/spellicons/elements/fire.png"/>
                     </Panel>
                     <Panel hittest="false" class='DualsContainer' id="fireDuals">
-                        <Panel hittest="false" class='AbilityContainer' id="blacksmith">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/blacksmith.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('blacksmith','fire','earth')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="blacksmith" src="file://{images}/spellicons/towers/blacksmith.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="electricity">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/electricity.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('electricity','fire','light')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="electricity" src="file://{images}/spellicons/towers/electricity.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="flame">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/flame.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('flame','fire','nature')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="flame" src="file://{images}/spellicons/towers/flame.png"/>
                         </Panel>
                     </Panel>
-                    <Panel hittest="false" class='TriplesContainer' id="fireTriples">
-                        <Panel hittest="false" class='AbilityContainer' id="haste">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/haste.png"/>
+                    <Panel hittest="false" class='TriplesContainer'>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('haste','fire','earth','water')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="haste" src="file://{images}/spellicons/towers/haste.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="flamethrower">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/flamethrower.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('flamethrower','fire','dark','earth')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="flamethrower" src="file://{images}/spellicons/towers/flamethrower.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="erosion">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/erosion.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('erosion','fire','dark','water')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="erosion" src="file://{images}/spellicons/towers/erosion.png"/>
                         </Panel>
                     </Panel>
                 </Panel>
 
                 <Panel hittest="false" id="NatureContainer">
                     <Panel hittest="false" class='Element' id="NatureElement">
-                        <Image class='ElementImage' src="file://{images}/spellicons/elements/nature.png"/>
+                        <Image class='ElementImage' id='nature' src="file://{images}/spellicons/elements/nature.png"/>
                     </Panel>
                     <Panel hittest="false" class='DualsContainer' id="natureDuals">
-                        <Panel hittest="false" class='AbilityContainer' id="life">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/life.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('life','nature','light')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="life" src="file://{images}/spellicons/towers/life.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="moss">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/moss.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('mushroom','nature','earth')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="mushroom" src="file://{images}/spellicons/towers/moss.png"/>
                         </Panel>
                     </Panel>
-                    <Panel hittest="false" class='TriplesContainer' id="natureTriples">
-                        <Panel hittest="false" class='AbilityContainer' id="impulse">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/impulse.png"/>
+                    <Panel hittest="false" class='TriplesContainer'>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('impulse','nature','fire','water')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="impulse" src="file://{images}/spellicons/towers/impulse.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="roots">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/roots.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('roots','nature','dark','earth')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="roots" src="file://{images}/spellicons/towers/roots.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="ephemeral">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/ephemeral.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('ephemeral','nature','earth','water')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="ephemeral" src="file://{images}/spellicons/towers/ephemeral.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="enchantment">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/enchantment.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('enchantment','nature','light','earth')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="enchantment" src="file://{images}/spellicons/towers/enchantment.png"/>
                         </Panel>
                     </Panel>
                 </Panel>
 
                 <Panel hittest="false" id="EarthContainer">
                     <Panel hittest="false" class='Element' id="EarthElement">
-                        <Image class='ElementImage' src="file://{images}/spellicons/elements/earth.png"/>
+                        <Image class='ElementImage' id='earth' src="file://{images}/spellicons/elements/earth.png"/>
                     </Panel>
                     <Panel hittest="false" class='DualsContainer' id="earthDuals">
-                        <Panel hittest="false" class='AbilityContainer' id="gunpowder">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/gunpowder.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('gunpowder','earth','dark')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="gunpowder" src="file://{images}/spellicons/towers/gunpowder.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="hydro">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/hydro.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('hydro','earth','water')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="hydro" src="file://{images}/spellicons/towers/hydro.png"/>
                         </Panel>
                     </Panel>
-                    <Panel hittest="false" class='TriplesContainer' id="EarthTriples">
-                        <Panel hittest="false" class='AbilityContainer' id="gold">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/gold.png"/>
+                    <Panel hittest="false" class='TriplesContainer'>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('gold','earth','fire','light')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="gold" src="file://{images}/spellicons/towers/gold.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="quake">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/quake.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('quake','earth','fire','nature')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="quake" src="file://{images}/spellicons/towers/quake.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="muck">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/muck.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('muck','earth','dark','water')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="muck" src="file://{images}/spellicons/towers/muck.png"/>
                         </Panel>
                     </Panel>
                 </Panel>
 
                 <Panel hittest="false" id="LightContainer">
                     <Panel hittest="false" class='Element' id="LightElement">
-                        <Image class='ElementImage' src="file://{images}/spellicons/elements/light.png"/>
+                        <Image class='ElementImage' id='light' src="file://{images}/spellicons/elements/light.png"/>
                     </Panel>
                     <Panel hittest="false" class='DualsContainer' id="lightDuals">
-                        <Panel hittest="false" class='AbilityContainer' id="ice">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/ice.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('ice','light','water')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="ice" src="file://{images}/spellicons/towers/ice.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="trickery">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/trickery.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('trickery','light','dark')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="trickery" src="file://{images}/spellicons/towers/trickery.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="quark">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/quark.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('quark','light','earth')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="quark" src="file://{images}/spellicons/towers/quark.png"/>
                         </Panel>
                     </Panel>
-                    <Panel hittest="false" class='TriplesContainer' id="LightTriples">
-                        <Panel hittest="false" class='AbilityContainer' id="hail">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/hail.png"/>
+                    <Panel hittest="false" class='TriplesContainer'>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('hail','light','dark','water')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="hail" src="file://{images}/spellicons/towers/hail.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="nova">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/nova.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('nova','light','fire','nature')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="nova" src="file://{images}/spellicons/towers/nova.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="laser">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/laser.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('laser','light','dark','earth')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="laser" src="file://{images}/spellicons/towers/laser.png"/>
                         </Panel>
                     </Panel>
                 </Panel>
 
                 <Panel hittest="false" id="DarkContainer">
                     <Panel hittest="false" class='Element' id="DarkElement">
-                        <Image class='ElementImage' src="file://{images}/spellicons/elements/dark.png"/>
+                        <Image class='ElementImage' id='dark' src="file://{images}/spellicons/elements/dark.png"/>
                     </Panel>
-                    <Panel hittest="false" class='DualsContainer' id="DarkDuals">
-                        <Panel hittest="false" class='AbilityContainer' id="disease">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/disease.png"/>
+                    <Panel hittest="false" class='DualsContainer' id="darkDuals">
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('disease','dark','nature')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="disease" src="file://{images}/spellicons/towers/disease.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="magic">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/magic.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('magic','dark','fire')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="magic" src="file://{images}/spellicons/towers/magic.png"/>
                         </Panel>
                     </Panel>
-                    <Panel hittest="false" class='TriplesContainer' id="DarkTriples">
-                        <Panel hittest="false" class='AbilityContainer' id="jinx">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/jinx.png"/>
+                    <Panel hittest="false" class='TriplesContainer'>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('jinx','dark','fire','nature')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="jinx" src="file://{images}/spellicons/towers/jinx.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="runic">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/runic.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('runic','dark','fire','light')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="runic" src="file://{images}/spellicons/towers/runic.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' id="obliteration">
-                            <Image class='AbilityImage' src="file://{images}/spellicons/towers/obliteration.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('obliteration','dark','light','nature')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="obliteration" src="file://{images}/spellicons/towers/obliteration.png"/>
                         </Panel>
                     </Panel>
                 </Panel>

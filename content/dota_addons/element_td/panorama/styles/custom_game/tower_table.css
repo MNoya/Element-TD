@@ -109,11 +109,6 @@
     vertical-align: center;
 }
 
-.ElementImage
-{
-    margin-left: 40px;
-}
-
 .DualsContainer
 {
     height: 100%;
@@ -133,6 +128,8 @@
 {
     width: 80px;
     height: 80px;
+    margin-left: 40px;
+    border-radius: 80px;
 }
 
 .AbilityImage
@@ -146,4 +143,45 @@
 {
     width: 30%;
     vertical-align: center;
+}
+
+.Glow_water
+{
+    box-shadow: 0px 0px 100% blue;
+    opacity: 1.5;
+}
+
+.Glow_fire
+{
+    box-shadow: 0px 0px 100% red;
+    opacity: 1.5;
+}
+
+.Glow_nature
+{
+    box-shadow: 0px 0px 100% green;
+    opacity: 1.5;
+}
+
+.Glow_earth
+{
+    box-shadow: 0px 0px 100% chocolate;
+    opacity: 1.5;
+}
+
+.Glow_light
+{
+    box-shadow: 0px 0px 100% yellow;
+    opacity: 1.5;
+}
+
+.Glow_dark
+{
+    box-shadow: 0px 0px 100% purple;
+    opacity: 1.5;
+}
+
+.Glow_white
+{
+    box-shadow: 0px 0px 100% white;
 }

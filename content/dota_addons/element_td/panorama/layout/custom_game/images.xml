@@ -46,5 +46,6 @@
         <Image style="opacity:0;" src="file://{images}/items/magic.png" />
         <Image style="opacity:0;" src="file://{images}/items/jinx.png" />
         <Image style="opacity:0;" src="file://{images}/items/runic.png" />
+        <Image style="opacity:0;" src="file://{images}/items/obliteration.png" />
     </Panel>
 </root>
