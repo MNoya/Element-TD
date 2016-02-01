@@ -11,6 +11,7 @@
                 <Image id="ImageLabel" src="file://{images}/custom_game/tree_tower/button.png"/>
                 <Label id="TowersLabel" text="Towers"/>
             </Panel>
+            <Image id="ToggleGlyph" onactivate="Toggle()" src="file://{images}/custom_game/tree_tower/glyph.png"/>
             <Panel id="ToggleButtonGlyph" onactivate="Toggle()">
                 <Image id="ToggleIcon" src="file://{images}/custom_game/tree_tower/icon.png"/>
             </Panel>

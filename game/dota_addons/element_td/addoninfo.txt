@@ -11,7 +11,7 @@
      {
           "01"
           {
-               "Key"          "T"
+               "Key"          "Space"
                "Command"      "+ToggleTowerTable"
                "Name"         "Hides/Shows the Tower List"
           }
