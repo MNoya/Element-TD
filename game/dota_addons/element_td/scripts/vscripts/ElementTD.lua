@@ -355,6 +355,7 @@ function ElementTD:OnUnitSpawned(keys)
             playerData.summoner = summoner
 
             ModifyLumber(playerID, 0)  -- updates summoner spells
+            UpdateElementsHUD(playerID)
             UpdatePlayerSpells(playerID)
         end
     end
