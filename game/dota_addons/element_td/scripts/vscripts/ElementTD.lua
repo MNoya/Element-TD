@@ -232,7 +232,8 @@ function ElementTD:EndGameForPlayer( playerID )
     end
     UTIL_Remove(playerData.summoner.icon)
     UTIL_Remove(playerData.summoner)
-    
+
+    EmitAnnouncerSound(defeatAnnouncer[playerData.sector])    
     Sounds:EmitSoundOnClient(playerID,"Hero_Axe.Culling_Blade_Success")
 
     -- Stop player interest

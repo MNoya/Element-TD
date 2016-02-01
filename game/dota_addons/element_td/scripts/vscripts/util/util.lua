@@ -12,6 +12,22 @@ playerColors = {
     [7] = "#FF3455",
 }
 
+defeatAnnouncer = {
+    [0] = "announcer_ann_custom_defeated_06", -- Blue
+    [1] = "announcer_ann_custom_defeated_01", -- Teal
+    [2] = "announcer_ann_custom_defeated_05", -- Purple
+    [3] = "announcer_ann_custom_defeated_02", -- Yellow
+    [4] = "announcer_ann_custom_defeated_04", -- Orange
+    [5] = "announcer_ann_custom_defeated_03", -- Pink
+    [6] = "announcer_ann_custom_defeated_07", -- Olive
+    [7] = "announcer_ann_custom_defeated_09", -- Cyan
+    [8] = "announcer_ann_custom_defeated_10", -- Green
+    [9] = "announcer_ann_custom_defeated_08", -- Brown
+    [10] = "announcer_ann_custom_defeated_11", -- Grey
+    [11] = "announcer_ann_custom_defeated_12", -- Silver
+    [12] = "announcer_ann_custom_defeated_13", -- Red
+}
+
 -- PLAYER COLORS
 m_TeamColors = {}
 m_TeamColors[DOTA_TEAM_GOODGUYS] = { 101, 212, 19 }  --  Green (Summer) #65D413
