@@ -4,6 +4,22 @@
     height: 100%;
 }
 
+.Hidden
+{
+    visibility: collapse;
+    opacity: 0;
+}
+
+.DisabledAbility
+{
+    saturation: 0.2;
+}
+
+.DisabledElement
+{
+    saturation: 0.5;
+}
+
 #Container
 {
     width: 60%;

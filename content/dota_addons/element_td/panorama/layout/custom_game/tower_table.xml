@@ -57,7 +57,7 @@
                             <Image class='AbilityImage' id="flame" src="file://{images}/spellicons/towers/flame.png"/>
                         </Panel>
                     </Panel>
-                    <Panel hittest="false" class='TriplesContainer'>
+                    <Panel hittest="false" class='TriplesContainer' id="fireTriples">
                         <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('haste','fire','earth','water')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="haste" src="file://{images}/spellicons/towers/haste.png"/>
                         </Panel>
@@ -82,7 +82,7 @@
                             <Image class='AbilityImage' id="mushroom" src="file://{images}/spellicons/towers/moss.png"/>
                         </Panel>
                     </Panel>
-                    <Panel hittest="false" class='TriplesContainer'>
+                    <Panel hittest="false" class='TriplesContainer' id="natureTriples">
                         <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('impulse','nature','fire','water')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="impulse" src="file://{images}/spellicons/towers/impulse.png"/>
                         </Panel>
@@ -110,7 +110,7 @@
                             <Image class='AbilityImage' id="hydro" src="file://{images}/spellicons/towers/hydro.png"/>
                         </Panel>
                     </Panel>
-                    <Panel hittest="false" class='TriplesContainer'>
+                    <Panel hittest="false" class='TriplesContainer' id="earthTriples">
                         <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('gold','earth','fire','light')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="gold" src="file://{images}/spellicons/towers/gold.png"/>
                         </Panel>
@@ -138,7 +138,7 @@
                             <Image class='AbilityImage' id="quark" src="file://{images}/spellicons/towers/quark.png"/>
                         </Panel>
                     </Panel>
-                    <Panel hittest="false" class='TriplesContainer'>
+                    <Panel hittest="false" class='TriplesContainer' id="lightTriples">
                         <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('hail','light','dark','water')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="hail" src="file://{images}/spellicons/towers/hail.png"/>
                         </Panel>
@@ -163,7 +163,7 @@
                             <Image class='AbilityImage' id="magic" src="file://{images}/spellicons/towers/magic.png"/>
                         </Panel>
                     </Panel>
-                    <Panel hittest="false" class='TriplesContainer'>
+                    <Panel hittest="false" class='TriplesContainer' id="darkTriples">
                         <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('jinx','dark','fire','nature')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="jinx" src="file://{images}/spellicons/towers/jinx.png"/>
                         </Panel>

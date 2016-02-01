@@ -1,9 +1,45 @@
+var Root = $.GetContextPanel()
 var glows = []
 var hovering
+var hidden = true
+var towers = {}
+towers['vapor'] = ['water','fire']
+towers['well']  = ['water','nature']
+towers['poison'] = ['water','dark']
+towers['windstorm'] = ['water','fire','light']
+towers['flooding'] = ['water','dark','earth']
+towers['polar'] = ['water','light','earth']
+towers['tidal'] = ['water','nature','light']
+towers['blacksmith'] = ['fire','earth']
+towers['electricity'] = ['fire','light']
+towers['flame'] = ['fire','nature']
+towers['haste'] = ['fire','earth','water']
+towers['flamethrower'] = ['fire','dark','earth']
+towers['erosion'] = ['fire','dark','water']
+towers['life'] = ['nature','light']
+towers['mushroom'] = ['nature','earth']
+towers['impulse'] = ['nature','fire','water']
+towers['roots'] = ['nature','dark','earth']
+towers['ephemeral'] = ['nature','earth','water']
+towers['enchantment'] = ['nature','light','earth']
+towers['gunpowder'] = ['earth','dark']
+towers['hydro'] = ['earth','water']
+towers['gold'] = ['earth','fire','light']
+towers['quake'] = ['earth','fire','nature']
+towers['muck'] = ['earth','dark','water']
+towers['ice'] = ['light','water']
+towers['trickery'] = ['light','dark']
+towers['quark'] = ['light','earth']
+towers['hail'] = ['light','dark','water']
+towers['nova'] = ['light','fire','nature']
+towers['laser'] = ['light','dark','earth']
+towers['disease'] = ['dark','nature']
+towers['magic'] = ['dark','fire']
+towers['jinx'] = ['dark','fire','nature']
+towers['runic'] = ['dark','fire','light']
+towers['obliteration'] = ['dark','light','nature']
 
 function Hover(name, arg1, arg2, arg3) {
-    $.Msg(name, arg1, arg2)
-
     AddElementGlow(arg1)
     if (arg2) AddElementGlow(arg2)
     if (arg3)
@@ -16,7 +52,11 @@ function Hover(name, arg1, arg2, arg3) {
 
     hovering = $("#"+name)
     hovering.AddClass("Glow_white")
-    $.DispatchEvent( "DOTAShowAbilityTooltip", hovering, "item_upgrade_to_"+name+"_tower" );
+    var tooltip_name = "item_upgrade_to_"+name+"_tower"
+    if (hovering.BHasClass("DisabledAbility"))
+        tooltip_name = tooltip_name+"_disabled"
+
+    $.DispatchEvent( "DOTAShowAbilityTooltip", hovering, tooltip_name);
 }
 
 function AddElementGlow(elem) {
@@ -37,6 +77,47 @@ function AddDualsGlow(elem) {
     };
 }
 
+function Toggle(data) {
+    hidden = !hidden
+    Root.SetHasClass("Hidden", hidden)
+
+    if (!hidden)
+        UpdateElements(data)
+}
+
+function UpdateElements(data){
+    for (var element in data)
+    {
+        var panel = $("#"+element)
+        if (panel)
+        {
+            var level = data[element]
+            panel.SetHasClass("DisabledElement", level==0)
+        }
+    }
+    for (var towerName in towers)
+    {
+        CheckRequirements(towerName, towers[towerName], data)
+    }
+}
+
+function CheckRequirements(towerName, requirements, data) {
+    var panel = $("#"+towerName)
+    if (panel)
+    {
+        var bRequirementFailed = false
+        for (var i in requirements)
+        {
+            if (data[requirements[i]] == 0)
+            {
+                bRequirementFailed = true
+                break
+            }
+        }
+        panel.SetHasClass("DisabledAbility", bRequirementFailed)
+    }
+}
+
 function OnMouseOut() {
     for (var i in glows)
     {
@@ -50,4 +131,7 @@ function OnMouseOut() {
 
 (function(){
     $.Msg("Tower Tree Loaded")
+    Root.AddClass("Hidden")
+    GameEvents.Subscribe("etd_tower_table_toggle", Toggle )
+    GameEvents.Subscribe("etd_update_elements", UpdateElements )
 })()
