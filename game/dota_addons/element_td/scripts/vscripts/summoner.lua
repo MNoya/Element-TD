@@ -26,17 +26,23 @@ TrailParticles = {
 
 ElementalSounds = {
     water = "morphling_mrph_",
-    water_no = 8,
+    water_S = 8,
+    water_D = 12,
     fire = "lina_lina_",
-    fire_no = 9,
+    fire_S = 9,
+    fire_D = 12,
     nature = "furion_furi_",
-    nature_no = 3,
+    nature_S = 3,
+    nature_D = 11,
     earth = "tiny_tiny_",
-    earth_no = 9,
+    earth_S = 9,
+    earth_D = 13,
     light = "keeper_of_the_light_keep_",
-    light_no = 5,
+    light_S = 5,
+    light_D = 15,
     dark = "nevermore_nev_",
-    dark_no = 11,
+    dark_S = 11,
+    dark_D = 19,
 }
 
 function GetSoundNumber( max )
@@ -309,7 +315,7 @@ function SummonElemental(keys)
         ParticleManager:SetParticleControlEnt(h, 0, elemental, 5, "attach_origin", elemental:GetOrigin(), true)
     end
 
-    Sounds:EmitSoundOnClient(playerID, ElementalSounds[element].."spawn_"..GetSoundNumber(ElementalSounds[element.."_no"]), ply)
+    Sounds:EmitSoundOnClient(playerID, ElementalSounds[element].."spawn_"..GetSoundNumber(ElementalSounds[element.."_S"]), ply)
 
     Timers:CreateTimer(0.1, function()
         if not IsValidEntity(elemental) or not elemental:IsAlive() then return end
