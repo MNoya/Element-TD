@@ -130,6 +130,9 @@
     height: 80px;
     margin-left: 40px;
     border-radius: 80px;
+    transition-property: box-shadow;
+    transition-timing-function: ease-in;
+    transition-duration: 0.2s;
 }
 
 .AbilityImage
@@ -137,6 +140,9 @@
     width: 70px;
     height: 70px;
     border: 2px solid #000000;
+    transition-property: box-shadow;
+    transition-timing-function: ease-in;
+    transition-duration: 0.2s;
 }
 
 .AbilityContainer
@@ -147,37 +153,37 @@
 
 .Glow_water
 {
-    box-shadow: 0px 0px 100% blue;
+    box-shadow: 0px 0px 100% #01A2FF;
     opacity: 1.5;
 }
 
 .Glow_fire
 {
-    box-shadow: 0px 0px 100% red;
+    box-shadow: 0px 0px 100% #C40000;
     opacity: 1.5;
 }
 
 .Glow_nature
 {
-    box-shadow: 0px 0px 100% green;
+    box-shadow: 0px 0px 100% #00C400;
     opacity: 1.5;
 }
 
 .Glow_earth
 {
-    box-shadow: 0px 0px 100% chocolate;
+    box-shadow: 0px 0px 100% #D4880F;
     opacity: 1.5;
 }
 
 .Glow_light
 {
-    box-shadow: 0px 0px 100% yellow;
+    box-shadow: 0px 0px 100% #E5DE23;
     opacity: 1.5;
 }
 
 .Glow_dark
 {
-    box-shadow: 0px 0px 100% purple;
+    box-shadow: 0px 0px 100% #8733C8;
     opacity: 1.5;
 }
 
