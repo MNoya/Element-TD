@@ -11274,7 +11274,6 @@
 	{
 	    "DisableTurning"            "1"
 	    "BaseClass"                 "npc_dota_creature" 
-		"SoundSet"					"Tower.Water"
 		"MinimapIcon"				"minimap_tower90"
 		"MinimapIconSize"			"320"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
@@ -11314,7 +11313,7 @@
 			"2"		"water"
 		}
 		"Damage"		"480"
-		"DamageType"		"water"
+		"DamageType"		"dark"
 		"ScriptClass"		"PoisonTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
@@ -11364,7 +11363,6 @@
 	{
 	    "DisableTurning"            "1"
 	    "BaseClass"                 "npc_dota_creature" 
-		"SoundSet"					"Tower.Water"
 		"MinimapIcon"				"minimap_tower90"
 		"MinimapIconSize"			"320"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
@@ -11404,7 +11402,7 @@
 			"2"		"water"
 		}
 		"Damage"		"2400"
-		"DamageType"		"water"
+		"DamageType"		"dark"
 		"ScriptClass"		"PoisonTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"

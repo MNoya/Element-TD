@@ -14,7 +14,7 @@ var lumberDisplay = $( '#LumberDisplay' );
 var elements = {water: '#WaterValue', fire: '#FireValue', nature: '#NatureValue', earth: '#EarthValue', light: '#LightValue', dark:'#DarkValue'};
 
 var tooltips = {'Lumber':'Lumber is used to summon elementals at the summoner.<br>You will recieve lumber every 5 rounds (3 rounds on express mode).',
-				'Pure Essence':'You can buy Pure Essences from the summoner for 1 lumber.<br>You will recieve 1 pure essence on wave 46 and 51 (25 and 28 on express mode).',
+				'Pure Essence':'Essence is used to build your most powerful towers.<br>You can use it to evolve a Level 3 Single-Element Tower, or to build a Periodic Tower if you have all 6 Elements.<br>You can buy Pure Essences from the summoner for 1 lumber.<br>You will recieve 1 pure essence on wave 46 and 51 (25 and 28 on express mode).',
 				'Total Score':'This score will be sent to the leaderboard at the end of the game.',
 				'Water':'Water Element Level',
 				'Fire':'Fire Element Level',

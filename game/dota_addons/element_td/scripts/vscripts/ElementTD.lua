@@ -351,7 +351,6 @@ function ElementTD:OnUnitSpawned(keys)
             summoner:SetAngles(0, 270, 0)
             summoner:AddItem(CreateItem("item_buy_pure_essence", summoner, summoner))
             summoner.icon = CreateUnitByName("elemental_summoner_icon", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber())
-            summoner.icon:AddNewModifier(nil, nil, "modifier_not_on_minimap_for_enemies", {})
             playerData.summoner = summoner
 
             ModifyLumber(playerID, 0)  -- updates summoner spells
@@ -478,6 +477,7 @@ function ElementTD:OnConnectFull(keys)
     Timers:CreateTimer(0.03, function() -- To prevent it from being -1 when the player is created
         if ply:GetPlayerID() ~= -1 then
             table.insert(playerIDs, ply:GetPlayerID())
+            UpdateElementsHUD(playerID)
         end
     end)
 
