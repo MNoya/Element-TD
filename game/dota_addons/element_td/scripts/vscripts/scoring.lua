@@ -22,14 +22,15 @@ ScoringObject = createClass({
 SCORING_WAVE_CLEAR = 0
 SCORING_WAVE_LOST = 1
 SCORING_GAME_CLEAR = 2
-function ScoringObject:UpdateScore( const )
+function ScoringObject:UpdateScore( const , wave )
 	local scoreTable = {}
 	local processed = {}
 	local playerData = GetPlayerData(self.playerID)
+	wave = wave or playerData.completedWaves
 
 	if ( const == SCORING_WAVE_CLEAR ) then
-		scoreTable = self:GetWaveCleared()
-		table.insert(processed, {'Wave ' .. playerData.completedWaves .. ' cleared!', '#FFF0F5'} )
+		scoreTable = self:GetWaveCleared( wave )
+		table.insert(processed, {'Wave ' .. wave .. ' cleared!', '#FFF0F5'} )
 	elseif ( const == SCORING_WAVE_LOST ) then
 		scoreTable = self:GetWaveLost()
 		table.insert(processed, {'Game over! Lost on wave ' .. playerData.completedWaves + 1, '#FFF0F5'} )
@@ -42,13 +43,13 @@ function ScoringObject:UpdateScore( const )
 
 	-- Process Score Table keeping ordering below
 	if scoreTable['clearBonus'] then
-		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Wave ' .. playerData.completedWaves .. ' clear bonus: ' .. comma_value(scoreTable['clearBonus']), '#00FFFF'} )
+		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Wave ' .. wave .. ' clear bonus: ' .. comma_value(scoreTable['clearBonus']), '#00FFFF'} )
 	end
 	if scoreTable['cleanBonus'] then
 		if scoreTable['cleanBonus'] ~= 0 then
 			table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Clean bonus: ' .. GetPctString(scoreTable['cleanBonus']), '#00FF00'} )
 		else
-			table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;'..playerData.waveObject.leaks .. ' Lives lost', '#FF0000'} )
+			table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;'..playerData.waveObjects[wave].leaks .. ' Lives lost', '#FF0000'} )
 		end
 	end
 	if scoreTable['speedBonus'] then
@@ -71,13 +72,23 @@ function ScoringObject:UpdateScore( const )
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Boss bonus: '.. GetPctString(scoreTable['bossBonus']), '#00FFFF' })
 	end
 	if scoreTable['difficultyBonus'] then
-		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;'..GetPlayerDifficulty( self.playerID ).difficultyName .. ' difficulty: '.. GetPctString(scoreTable['difficultyBonus']), '#00FF00' } )
+		local diffColor = '#00FF00'
+		if scoreTable['difficultyBonus'] == 1 then
+			diffColor = '#FF6600'
+		elseif scoreTable['difficultyBonus'] == 2 then
+			diffColor = '#FF0000'
+		elseif scoreTable['difficultyBonus'] == 3 then
+			diffColor = '#999999'
+		end
+		if (const ~= SCORING_WAVE_CLEAR) or (scoreTable['difficultyBonus'] ~= 0 and const == SCORING_WAVE_CLEAR) then
+			table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;'..GetPlayerDifficulty( self.playerID ).difficultyName .. ' difficulty: '.. GetPctString(scoreTable['difficultyBonus']), diffColor } )
+		end
 	end
 	if scoreTable['chaosBonus'] and scoreTable['chaosBonus'] ~= 0 then
-		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Chaos bonus: '.. GetPctString(scoreTable['chaosBonus']), '#00FF00' } )
+		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Chaos bonus: '.. GetPctString(scoreTable['chaosBonus']), '#FF00FF' } )
 	end
 	if scoreTable['endlessBonus'] and scoreTable['endlessBonus'] ~= 0 then
-		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Endless bonus: '.. GetPctString(scoreTable['endlessBonus']), '#00FF00' } )
+		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Endless bonus: '.. GetPctString(scoreTable['endlessBonus']), '#0099FF' } )
 	end
 	if scoreTable['totalScore'] then
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Total score: ' .. comma_value(scoreTable['totalScore']), '#FF8C00'})
@@ -86,7 +97,7 @@ function ScoringObject:UpdateScore( const )
 		else
 			self.totalScore = self.totalScore + scoreTable['totalScore']
 		end
-		print("Score updated for player [" .. self.playerID .. "] :" .. self.totalScore)
+		print("Score updated for player [" .. self.playerID .. "] : " .. self.totalScore)
 	end
 	--PrintTable(processed)
 	if (const == SCORING_GAME_CLEAR) then -- Delay Screen
@@ -154,16 +165,19 @@ function comma_value( number )
 end
 
 -- Returns WaveClearBonus, CleanBonus/Lives lost/SpeedBonus/TotalScore for the round.
-function ScoringObject:GetWaveCleared()
+function ScoringObject:GetWaveCleared( wave )
 	local playerData = GetPlayerData( self.playerID )
-	local waveClearScore = self:GetWaveClearBonus( playerData.completedWaves )
-	local cleanBonus = self:GetCleanBonus( playerData.waveObject.leaks == 0 )
-	local time = playerData.waveObject.endTime - playerData.waveObject.startTime
+	local waveClearScore = self:GetWaveClearBonus( wave )
+	local cleanBonus = self:GetCleanBonus( playerData.waveObjects[wave].leaks == 0 )
+	local time = playerData.waveObjects[wave].endTime - playerData.waveObjects[wave].startTime
 	local speedBonus = self:GetSpeedBonus( time )
-	local totalScore = math.ceil(waveClearScore * (cleanBonus + speedBonus + 1))
+	local difficultyBonus = self:GetDifficultyBonus()
+	local chaosBonus = self:GetCreepOrderBonus()
+	local endlessBonus = self:GetEndlessBonus()
+	local totalScore = math.ceil(waveClearScore * (cleanBonus + speedBonus + difficultyBonus + chaosBonus + endlessBonus + 1))
 
 	print("Time: "..time)
-	return { clearBonus = waveClearScore, cleanBonus = cleanBonus, speedBonus = speedBonus, totalScore = totalScore }
+	return { clearBonus = waveClearScore, cleanBonus = cleanBonus, speedBonus = speedBonus, difficultyBonus = difficultyBonus, chaosBonus = chaosBonus, endlessBonus = endlessBonus, totalScore = totalScore }
 end
 
 -- Returns amount of clean waves and waves under 30 as well as total score
@@ -181,9 +195,6 @@ function ScoringObject:GetGameCleared()
 	local score = self.totalScore
 	local totalScore = 0
 	local networthBonus = 0
-	local difficultyBonus = 1
-	local chaosBonus = 0
-	local endlessBonus = 0
 	local bossBonus = 0
 
 	if EXPRESS_MODE then
@@ -191,13 +202,10 @@ function ScoringObject:GetGameCleared()
 	else
 		bossBonus = self:GetBossBonus(playerData.bossWaves-1)
 	end
-	difficultyBonus = self:GetDifficultyBonus()
-	chaosBonus = self:GetCreepOrderBonus()
-	endlessBonus = self:GetEndlessBonus()
 
-	totalScore = math.ceil(score * (networthBonus + difficultyBonus + chaosBonus + endlessBonus + bossBonus + 1))
+	totalScore = math.ceil(score * (networthBonus + bossBonus + 1))
 
-	return { networthBonus = networthBonus, difficultyBonus = difficultyBonus, chaosBonus = chaosBonus, endlessBonus = endlessBonus, bossBonus = bossBonus, totalScore = totalScore }
+	return { networthBonus = networthBonus, bossBonus = bossBonus, totalScore = totalScore }
 end
 
 -- takes leaks (lives) per wave (1.20 multiplier)

@@ -201,7 +201,7 @@ function SpawnWaveForPlayer(playerID, wave)
             return
         end
 
-        playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR )
+        playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR, wave )
 
         if playerData.completedWaves >= WAVE_COUNT then
             playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
