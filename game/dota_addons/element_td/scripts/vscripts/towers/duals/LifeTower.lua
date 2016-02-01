@@ -101,6 +101,8 @@ function LifeTower:OnCreated()
     self.ability = AddAbility(self.tower, "life_tower_afterlife", self.tower:GetLevel())    
     self.pointsPerKill = GetAbilitySpecialValue("life_tower_afterlife", "points_per_kill")[self.tower:GetLevel()]    
     self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_life_tower_counter", {})
+    self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_life_tower_current_kill_counter", {})
+    self.tower:SetModifierStackCount("modifier_life_tower_current_kill_counter", nil, GetPlayerData(self.tower:GetPlayerOwnerID()).LifeTowerKills)
     self.tower.life_counter = 0
 end
 
