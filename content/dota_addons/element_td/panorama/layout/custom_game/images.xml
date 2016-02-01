@@ -47,5 +47,41 @@
         <Image style="opacity:0;" src="file://{images}/items/jinx.png" />
         <Image style="opacity:0;" src="file://{images}/items/runic.png" />
         <Image style="opacity:0;" src="file://{images}/items/obliteration.png" />
+
+        <Image style="opacity:0;" src="file://{images}/items/vapor_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/well_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/poison_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/windstorm_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/flooding_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/polar_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/tidal_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/blacksmith_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/electricity_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/flame_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/haste_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/flamethrower_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/erosion_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/life_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/moss_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/impulse_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/roots_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/ephemeral_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/enchantment_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/gunpowder_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/hydro_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/gold_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/quake_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/muck_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/ice_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/trickery_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/quark_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/hail_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/nova_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/laser_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/disease_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/magic_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/jinx_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/runic_disabled.png" />
+        <Image style="opacity:0;" src="file://{images}/items/obliteration_disabled.png" />
     </Panel>
 </root>
