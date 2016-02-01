@@ -331,6 +331,9 @@ function ElementTD:OnUnitSpawned(keys)
         if playerID >= 0 then
             local playerData = GetPlayerData(playerID)
             playerData.name = PlayerResource:GetPlayerName(playerID)
+            if playerData.name == "" then -- This normally happens in dev tools
+                playerData.name = 'Placeholder'
+            end
             self:InitializeHero(player:GetPlayerID(), unit)
             self.playerSpawnIndexes[player:GetPlayerID()] = playerData.sector + 1
             self.availableSpawnIndex = self.availableSpawnIndex + 1
