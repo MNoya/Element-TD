@@ -19,6 +19,20 @@ function _ScoreboardUpdater_SetTextSafe( panel, childName, textValue )
     childPanel.text = textValue;
 }
 
+function _ScoreboardUpdater_SetDed( panel, childName )
+{
+    if ( panel === null )
+        return;
+    var childPanel = panel.FindChildInLayoutFile( childName )
+    if ( childPanel === null )
+        return;
+    if (childPanel.ded !== undefined)
+    {
+        childPanel.ded = $.CreatePanel("Image", childPanel, '')
+        ded.AddClass("RIP")
+    }
+}
+
 
 //=============================================================================
 //=============================================================================
@@ -53,7 +67,6 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
         playerPanel.SetHasClass( "player_dead", ( playerInfo.player_respawn_seconds >= 0 ) );
         playerPanel.SetHasClass( "local_player_teammate", isTeammate && ( playerId != Game.GetLocalPlayerID() ) );
 
-        _ScoreboardUpdater_SetTextSafe( playerPanel, "RespawnTimer", ( playerInfo.player_respawn_seconds + 1 ) ); // value is rounded down so just add one for rounded-up
         _ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerName", playerInfo.player_name );
         _ScoreboardUpdater_SetTextSafe( playerPanel, "Level", playerInfo.player_level );
         _ScoreboardUpdater_SetTextSafe( playerPanel, "Deaths", playerInfo.player_deaths );

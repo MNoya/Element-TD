@@ -198,6 +198,18 @@
     saturation: 0;
 }
 
+.player_dead #RespawnTimer
+{
+    
+    margin-top: 20px;
+    margin-left: 8px;
+    width: 90%;
+    height: 100%;
+    background-image: url("file://{resources}/images/custom_game/wave_info/rip.png");
+    background-size: 75% 90%;
+    background-repeat: no-repeat;
+}
+
 .player_connection_disconnected #HeroIcon
 {
     wash-color: #666666;
