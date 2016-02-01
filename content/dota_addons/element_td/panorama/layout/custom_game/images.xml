@@ -10,6 +10,6 @@
         <Image style="opacity:0;" src="file://{images}/spellicons/elements/light.png" />
         <Image style="opacity:0;" src="file://{images}/spellicons/elements/nature.png" />
         <Image style="opacity:0;" src="file://{images}/spellicons/elements/water.png" />
-        <Image style="opacity:0;" src="file://{images}/spellicons/necrolyte_death_pulse_boss.png" />
+        <Image style="opacity:0;" src="file://{images}/spellicons/icefrog_boss.png" />
     </Panel>
 </root>

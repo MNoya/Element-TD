@@ -1,0 +1,149 @@
+.Root
+{
+    width: 100%;
+    height: 100%;
+}
+
+#Container
+{
+    width: 60%;
+    height: 70%;
+    margin-top: 62px;
+    horizontal-align: center;
+    vertical-align: top;
+    z-index: 15;
+    flow-children: down;
+    background-color: #000000DD;
+    border: 2px solid #484A48;
+    box-shadow: #000 -4px -4px 3px 8px;
+}
+
+#TitleContainer
+{
+    width: 100%;
+    height: 10%;
+}
+
+#ElementsContainer
+{
+    width: 100%;
+    height: 90%;
+    flow-children: down;
+}
+
+#Title
+{
+    width: 100%;
+    horizontal-align: center;
+    vertical-align: center;
+    text-align: center;
+    font-weight: bold;
+    color: #FFF;
+    font-size: 30px;
+    text-shadow: 0px 0px 5px 3.0 #000;
+}
+
+#WaterContainer
+{
+    width: 100%;
+    height: 17%;
+
+    flow-children: right;
+    background-color: #01A2FF09;
+    box-shadow: #000 -4px -4px 3px 8px;
+}
+
+#FireContainer
+{
+    width: 100%;
+    height: 17.6%;
+
+    flow-children: right;
+    background-color: #C4000009;
+    box-shadow: #000 -4px -4px 3px 8px;
+}
+
+#NatureContainer
+{
+    width: 100%;
+    height: 17.6%;
+
+    flow-children: right;
+    background-color: #00C40009;
+    box-shadow: #000 -4px -4px 3px 8px;
+}
+
+#EarthContainer
+{
+    width: 100%;
+    height: 17.6%;
+
+    flow-children: right;
+    background-color: #D4880F09;
+    box-shadow: #000 -4px -4px 3px 8px;
+}
+
+#LightContainer
+{
+    width: 100%;
+    height: 17.6%;
+
+    flow-children: right;
+    background-color: #E5DE2309;
+    box-shadow: #000 -4px -4px 3px 8px;
+}
+
+#DarkContainer
+{
+    width: 100%;
+    height: 17.6%;
+
+    flow-children: right;
+    background-color: #8733C809;
+    box-shadow: #000 -4px -4px 3px 8px;
+}
+
+.Element
+{
+    width: 20%;
+    vertical-align: center;
+}
+
+.ElementImage
+{
+    margin-left: 40px;
+}
+
+.DualsContainer
+{
+    height: 100%;
+    width: 30%;
+    flow-children: right;
+}
+
+.TriplesContainer
+{
+    margin-left: 10%;
+    height: 100%;
+    width: 40%;
+    flow-children: right;
+}
+
+.ElementImage
+{
+    width: 80px;
+    height: 80px;
+}
+
+.AbilityImage
+{
+    width: 70px;
+    height: 70px;
+    border: 2px solid #000000;
+}
+
+.AbilityContainer
+{
+    width: 30%;
+    vertical-align: center;
+}
