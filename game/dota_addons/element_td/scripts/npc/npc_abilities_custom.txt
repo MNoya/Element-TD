@@ -2430,10 +2430,6 @@
 				"Duration"		"%reset_time"
 				"EffectName"	"particles/custom/towers/haste/buff.vpcf"
 				"EffectAttachType" "follow_origin"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed"
-				}
 			}
 		}
 	
@@ -2446,8 +2442,8 @@
 			}
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"attack_speed"		"11"
+				"var_type"			"FIELD_FLOAT"
+				"bat_decrease_stack" "0.05"
 			}
 			"03"
 			{

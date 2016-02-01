@@ -1,4 +1,5 @@
 var Root = $.GetContextPanel()
+var Container = $("#Container")
 var glows = []
 var hovering
 var hidden = true
@@ -77,12 +78,9 @@ function AddDualsGlow(elem) {
     };
 }
 
-function Toggle(data) {
+function Toggle() {
     hidden = !hidden
-    Root.SetHasClass("Hidden", hidden)
-
-    if (!hidden)
-        UpdateElements(data)
+    Container.SetHasClass("Hidden", hidden)
 }
 
 function UpdateElements(data){
@@ -131,7 +129,8 @@ function OnMouseOut() {
 
 (function(){
     $.Msg("Tower Tree Loaded")
-    Root.AddClass("Hidden")
-    GameEvents.Subscribe("etd_tower_table_toggle", Toggle )
+    Container.AddClass("Hidden")
     GameEvents.Subscribe("etd_update_elements", UpdateElements )
+
+    Game.AddCommand( "+ToggleTowerTable", Toggle, "", 0 );
 })()

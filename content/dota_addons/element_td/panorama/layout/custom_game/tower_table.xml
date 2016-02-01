@@ -6,6 +6,15 @@
         <include src="s2r://panorama/scripts/tower_table.js" />
     </scripts>
     <Panel hittest="false" class="Root">
+        <Panel hittest="false" class='ToggleButtonRoot'>
+            <Panel id="TowerTableButton" onactivate="Toggle()">
+                <Image id="ImageLabel" src="file://{images}/custom_game/tree_tower/button.png"/>
+                <Label id="TowersLabel" text="Towers"/>
+            </Panel>
+            <Panel id="ToggleButtonGlyph" onactivate="Toggle()">
+                <Image id="ToggleIcon" src="file://{images}/custom_game/tree_tower/icon.png"/>
+            </Panel>
+        </Panel>
         <Panel hittest="false" id="Container">
             <Panel hittest="false" id="TitleContainer">
                 <Label id="Title" text="#etd_tower_table"/>

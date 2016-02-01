@@ -20,6 +20,62 @@
     saturation: 0.5;
 }
 
+.ToggleButtonRoot
+{
+    width: 100%;
+    height: 100%;
+}
+.ToggleButtonRoot:hover
+{
+    opacity: 2;
+}
+
+#ToggleButtonGlyph
+{
+    width: 90px;
+    height: 90px;
+    horizontal-align: right;
+    vertical-align: bottom;
+
+    background-color: #0E3F92;
+    border-radius: 80px;
+    margin-right: -15px;
+    margin-bottom: -10px;
+    box-shadow: #000 -4px -4px 3px 8px;
+}
+
+#ToggleIcon
+{
+    width: 80px;
+    height: 80px;
+    margin-left: 2px;
+    margin-top: 3px;
+}
+
+#TowerTableButton
+{
+    width: 155px;
+    height: 45px;
+    margin-right: 60px;
+    horizontal-align: right;
+    vertical-align: bottom;
+}
+
+#TowersLabel
+{
+    width: 100%;
+    horizontal-align: center;
+    vertical-align: center;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 4px;
+    color: #FFF;
+    font-size: 28px;
+    text-shadow: 0px 0px 5px 3.0 #000;
+    font-family: Radiance;
+    text-transform: uppercase;
+}
+
 #Container
 {
     width: 60%;
@@ -57,6 +113,8 @@
     color: #FFF;
     font-size: 30px;
     text-shadow: 0px 0px 5px 3.0 #000;
+    font-family: Radiance;
+    text-transform: uppercase;
 }
 
 #WaterContainer
