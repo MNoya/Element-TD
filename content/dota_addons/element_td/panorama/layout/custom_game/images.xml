@@ -11,5 +11,40 @@
         <Image style="opacity:0;" src="file://{images}/spellicons/elements/nature.png" />
         <Image style="opacity:0;" src="file://{images}/spellicons/elements/water.png" />
         <Image style="opacity:0;" src="file://{images}/spellicons/icefrog_boss.png" />
+
+        <Image style="opacity:0;" src="file://{images}/items/vapor.png" />
+        <Image style="opacity:0;" src="file://{images}/items/well.png" />
+        <Image style="opacity:0;" src="file://{images}/items/poison.png" />
+        <Image style="opacity:0;" src="file://{images}/items/windstorm.png" />
+        <Image style="opacity:0;" src="file://{images}/items/flooding.png" />
+        <Image style="opacity:0;" src="file://{images}/items/polar.png" />
+        <Image style="opacity:0;" src="file://{images}/items/tidal.png" />
+        <Image style="opacity:0;" src="file://{images}/items/blacksmith.png" />
+        <Image style="opacity:0;" src="file://{images}/items/electricity.png" />
+        <Image style="opacity:0;" src="file://{images}/items/flame.png" />
+        <Image style="opacity:0;" src="file://{images}/items/haste.png" />
+        <Image style="opacity:0;" src="file://{images}/items/flamethrower.png" />
+        <Image style="opacity:0;" src="file://{images}/items/erosion.png" />
+        <Image style="opacity:0;" src="file://{images}/items/life.png" />
+        <Image style="opacity:0;" src="file://{images}/items/moss.png" />
+        <Image style="opacity:0;" src="file://{images}/items/impulse.png" />
+        <Image style="opacity:0;" src="file://{images}/items/roots.png" />
+        <Image style="opacity:0;" src="file://{images}/items/ephemeral.png" />
+        <Image style="opacity:0;" src="file://{images}/items/enchantment.png" />
+        <Image style="opacity:0;" src="file://{images}/items/gunpowder.png" />
+        <Image style="opacity:0;" src="file://{images}/items/hydro.png" />
+        <Image style="opacity:0;" src="file://{images}/items/gold.png" />
+        <Image style="opacity:0;" src="file://{images}/items/quake.png" />
+        <Image style="opacity:0;" src="file://{images}/items/muck.png" />
+        <Image style="opacity:0;" src="file://{images}/items/ice.png" />
+        <Image style="opacity:0;" src="file://{images}/items/trickery.png" />
+        <Image style="opacity:0;" src="file://{images}/items/quark.png" />
+        <Image style="opacity:0;" src="file://{images}/items/hail.png" />
+        <Image style="opacity:0;" src="file://{images}/items/nova.png" />
+        <Image style="opacity:0;" src="file://{images}/items/laser.png" />
+        <Image style="opacity:0;" src="file://{images}/items/disease.png" />
+        <Image style="opacity:0;" src="file://{images}/items/magic.png" />
+        <Image style="opacity:0;" src="file://{images}/items/jinx.png" />
+        <Image style="opacity:0;" src="file://{images}/items/runic.png" />
     </Panel>
 </root>
