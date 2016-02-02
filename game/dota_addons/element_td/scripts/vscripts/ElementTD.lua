@@ -16,6 +16,8 @@ if not players then
     SKIP_VOTING = false -- assigns default game settings if true
     DEV_MODE = false
     EXPRESS_MODE = false
+
+    VERSION = "B020216"
 end
 
 function ElementTD:InitGameMode()

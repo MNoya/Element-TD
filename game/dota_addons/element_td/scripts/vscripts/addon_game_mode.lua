@@ -13,6 +13,7 @@ local requires =
     "libraries/animations",
     "libraries/attachments",
     "libraries/buildinghelper",
+    "statcollection/init",
 
     -- mechanics
     "mechanics/selection",
