@@ -40,7 +40,7 @@
 		"1"		"earth"
 		"2"		"dark"
 	}
-	"Damage"		"0"
+	"Damage"		"125"
 	"DamageType"		"earth"
 	"ScriptClass"		"GunpowderTower"
 	"TowerType"		"Normal"

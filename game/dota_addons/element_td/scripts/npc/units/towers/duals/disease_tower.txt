@@ -46,7 +46,7 @@
 	"ScriptClass"		"DiseaseTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
-	"AttackRange"		"525"
+	"AttackRange"		"500"
 	"AttackAcquisitionRange"		"525"
 	"AttackRate"		"0.31"
 	"ProjectileModel"		"particles/units/heroes/hero_bane/bane_projectile.vpcf"

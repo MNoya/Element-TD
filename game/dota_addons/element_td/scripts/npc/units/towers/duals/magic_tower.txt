@@ -45,7 +45,7 @@
 	"ScriptClass"		"MagicTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
-	"AttackRange"		"525"
+	"AttackRange"		"500"
 	"AttackAcquisitionRange"		"1100"
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"

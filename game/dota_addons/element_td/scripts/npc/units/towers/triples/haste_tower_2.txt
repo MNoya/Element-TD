@@ -45,7 +45,7 @@
 		"2"		"fire"
 		"3"		"water"
 	}
-	"Damage"		"5100"
+	"Damage"		"5000"
 	"DamageType"		"fire"
 	"ScriptClass"		"HasteTower"
 	"TowerType"		"Normal"
