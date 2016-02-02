@@ -477,7 +477,10 @@ function ElementTD:OnConnectFull(keys)
     Timers:CreateTimer(0.03, function() -- To prevent it from being -1 when the player is created
         if ply:GetPlayerID() ~= -1 then
             table.insert(playerIDs, ply:GetPlayerID())
-            UpdateElementsHUD(playerID)
+
+            if PlayerData[playerID] and PlayerData[playerID].elements then
+                UpdateElementsHUD(playerID)
+            end
         end
     end)
 

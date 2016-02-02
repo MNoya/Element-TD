@@ -279,12 +279,15 @@ function SummonElemental(keys)
     local level = playerData.elements[element] + 1
     local name = keys.Elemental..level
 
+    local marker_dummy = CreateUnitByName("tower_dummy", EntityStartLocations[playerData.sector + 1], false, nil, nil, PlayerResource:GetTeam(playerID))
+
     local elemental = CreateUnitByName(name, EntityStartLocations[playerData.sector + 1], true, nil, nil, DOTA_TEAM_NEUTRALS)
     elemental:AddNewModifier(nil, nil, "modifier_phased", {})
     elemental["element"] = element
     elemental["isElemental"] = true
     elemental["playerID"] = playerID
     elemental["class"] = keys.Elemental
+    elemental.marker_dummy = marker_dummy
 
     -- Trail effect
     local particle = ParticleManager:CreateParticle(TrailParticles[element], PATTACH_ABSORIGIN_FOLLOW, elemental)
@@ -295,7 +298,13 @@ function SummonElemental(keys)
     --GlobalCasterDummy:ApplyModifierToTarget(elemental, "creep_damage_block_applier", "modifier_damage_block")
     --ApplyArmorModifier(elemental, GetPlayerDifficulty(playerID):GetArmorValue() * 100)
     
+    -- Adjust health bar
     local health = ElementalBaseHealth[level] * math.pow(1.5, (math.floor(playerData.nextWave / 5) - 1)) * difficulty:GetHealthMultiplier()
+    CustomNetTables:SetTableValue("elementals", tostring(elemental.marker_dummy:GetEntityIndex()), {health_marker=health/4})
+    Timers:CreateTimer(0.03, function()
+        marker_dummy:AddNewModifier(elemental.marker_dummy, nil, "modifier_health_bar_markers", {})
+    end)
+
     local scale = elemental:GetModelScale() + ((level - 1) * 0.1)
     elemental:SetMaxHealth(health)
     elemental:SetBaseMaxHealth(health) -- This is needed to properly set the max health otherwise it won't work sometimes
@@ -305,9 +314,6 @@ function SummonElemental(keys)
     elemental:SetCustomHealthLabel(GetEnglishTranslation(keys.Elemental), ElementColors[element][1], ElementColors[element][2], ElementColors[element][3])
     elemental.level = level
 
-    -- Adjust health bar
-    CustomNetTables:SetTableValue("elementals", tostring(elemental:GetEntityIndex()), {health_marker=health/4})
-    elemental:AddNewModifier(elemental, nil, "modifier_health_bar_markers", {})
 
     local particle = Particles[keys.Elemental]
     if particle then
@@ -318,7 +324,10 @@ function SummonElemental(keys)
     Sounds:EmitSoundOnClient(playerID, ElementalSounds[element].."spawn_"..GetSoundNumber(ElementalSounds[element.."_S"]), ply)
 
     Timers:CreateTimer(0.1, function()
-        if not IsValidEntity(elemental) or not elemental:IsAlive() then return end
+        if not IsValidEntity(elemental) or not elemental:IsAlive() then
+            elemental.marker_dummy:RemoveSelf()
+            return 
+        end
         
         local entity = elemental
         local destination = EntityEndLocations[playerData.sector + 1]
