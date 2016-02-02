@@ -55,9 +55,8 @@ function ElementTD:InitGameMode()
 
     -- Event Hooks
     ListenToGameEvent('player_connect_full', Dynamic_Wrap(ElementTD, 'OnConnectFull'), self)
-    ListenToGameEvent('entity_killed', Dynamic_Wrap(ElementTD, 'EntityKilled'), self)
+    ListenToGameEvent('entity_killed', Dynamic_Wrap(ElementTD, 'OnEntityKilled'), self)
     ListenToGameEvent('player_chat', Dynamic_Wrap(ElementTD, 'OnPlayerChat'), self)
-    ListenToGameEvent('entity_hurt', Dynamic_Wrap(ElementTD, 'EntityHurt'), self)
     ListenToGameEvent('npc_spawned', Dynamic_Wrap(ElementTD, 'OnUnitSpawned'), self)
     ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(ElementTD, 'OnGameStateChange'), self)
 
@@ -405,13 +404,18 @@ function ElementTD:InitializeHero(playerID, hero)
     UpdateScoreboard(playerID)
 end
 
-function ElementTD:EntityKilled(keys)
+function ElementTD:OnEntityKilled(keys)
     local index = keys.entindex_killed
     local entity = EntIndexToHScript(index)
     local playerData = GetPlayerData(entity.playerID)
 
     if playerData and playerData.health == 0 then
         return
+    end
+
+    if IsCustomBuilding(entity) then
+        -- Remove dead units from selection group
+        RemoveUnitFromSelection(entity)
     end
 
     if entity.scriptObject and entity.scriptObject.OnDeath then
@@ -440,26 +444,6 @@ function ElementTD:EntityKilled(keys)
         UpdatePlayerSpells(playerID)
         UpdateScoreboard(playerID)
         Timers:RemoveTimer("MoveUnit"..index)
-    end
-end
-
-function ElementTD:EntityHurt(keys)
-    local entity = EntIndexToHScript(keys.entindex_killed)
-    local attacker = nil
-    if keys.entindex_attacker then
-        attacker = EntIndexToHScript(keys.entindex_attacker)
-    end
-
-
-    if entity and attacker then
-
-        if attacker.dummyParent then
-            local tower = attacker.dummyParent
-
-            if tower.scriptClass == "ElectricityTower" then -- handle electricity tower chain lightning damage
-                tower.scriptObject:OnLightningHitEntity(entity)
-            end
-        end
     end
 end
 

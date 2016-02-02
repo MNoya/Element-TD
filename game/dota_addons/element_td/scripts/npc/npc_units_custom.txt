@@ -6078,15 +6078,15 @@
 	 
 	    // Stats
 	    //-----------------------------
-	    "AttackDamageMin"           "9"
-	    "AttackDamageMax"           "9"
-	    "Damage"                    "9"
-	    "AttackRange"               "600"
-	    "AttackAcquisitionRange"    "600"
+	    "AttackDamageMin"           "35"
+	    "AttackDamageMax"           "35"
+	    "Damage"                    "35"
+	    "AttackRange"               "500"
+	    "AttackAcquisitionRange"    "500"
 	    "AOE_Full"                  "100"
 	    "AOE_Half"                  "200"
 	    "AttackRate"                "1.5"
-	    "ProjectileSpeed"           "800" 
+	    "ProjectileSpeed"           "1000" 
 	
 	    "Level"                     "1"
 	    "Cost"                      "50"
@@ -7633,8 +7633,8 @@
 	    "Damage"                    "22250"
 	    "AOE_Full"                  "100"
 	    "AOE_Half"                  "200"
-	    "AttackRange"               "750"
-	    "AttackAcquisitionRange"    "750"
+	    "AttackRange"               "900"
+	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
 	    "AttackAnimationPoint"      "0.4"
 	    "ProjectileSpeed"           "3000"
