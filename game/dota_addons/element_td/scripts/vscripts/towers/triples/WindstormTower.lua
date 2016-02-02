@@ -23,7 +23,7 @@ function WindstormTower:SpawnTornado(keys)
         -- Clear exisiting tornado (only one exisit per tower at a time)
         self:RemoveTornado()
 
-        self.ability:SetChanneling(true)
+        StartAnimation(self.tower, {duration=4.9, activity=ACT_DOTA_TELEPORT, rate=0.5})
         self.ability:StartCooldown(self.cooldown)
         self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_tornado_summoned", {})
 

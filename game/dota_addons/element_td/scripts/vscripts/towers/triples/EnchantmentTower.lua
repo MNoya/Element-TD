@@ -57,7 +57,8 @@ end
 function EnchantmentTower:OnAttackLanded(keys)
     local target = keys.target
     local damage = ApplyAttackDamageFromModifiers(self.tower:GetBaseDamageMax(), self.tower)
-    DamageEntity(target, self.tower, damage)
+    DamageEntitiesInArea(target:GetAbsOrigin(), self.fullAOE, self.tower, damage / 2)  
+    DamageEntitiesInArea(target:GetAbsOrigin(), self.halfAOE, self.tower, damage / 2)
 end
 
 function EnchantmentTower:OnCreated()
@@ -76,12 +77,15 @@ function EnchantmentTower:OnCreated()
         end
     end)
     self.ability:ToggleAutoCast()
+
+    self.fullAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))
+    self.halfAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
 end
 
 function EnchantmentTower:OnDestroyed()
     for id,_ in pairs(self.debuffedCreeps) do
         local creep = EntIndexToHScript(id)
-        if creep and IsValidEntity(creep) and creep:IsAlive() then
+        if creep and IsValidEntity(creep) and creep:IsAlive() and creep.RemoveModifierByName then
             creep:RemoveModifierByName(self.modifierName)
         end
     end

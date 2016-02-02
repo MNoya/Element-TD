@@ -55,6 +55,9 @@
 	"AttackRate"		"0.31"
 	"ProjectileModel"		"particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
 	"ProjectileSpeed"		"900"
+
+	"AOE_Full"                  "100"
+    "AOE_Half"                  "200"
 	
     "Model"             "models/heroes/oracle/oracle.vmdl"
     "ModelScale"        "1.0"

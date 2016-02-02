@@ -333,7 +333,7 @@ function ElementTD:OnUnitSpawned(keys)
             local playerData = GetPlayerData(playerID)
             playerData.name = PlayerResource:GetPlayerName(playerID)
             if playerData.name == "" then -- This normally happens in dev tools
-                playerData.name = 'Placeholder'
+                playerData.name = 'Developer'
             end
             self:InitializeHero(player:GetPlayerID(), unit)
             self.playerSpawnIndexes[player:GetPlayerID()] = playerData.sector + 1
