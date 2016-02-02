@@ -79,6 +79,7 @@ function AddDualsGlow(elem) {
 }
 
 function Toggle() {
+    Game.EmitSound("ui_generic_button_click");
     hidden = !hidden
     Container.SetHasClass("Hidden", hidden)
 }
