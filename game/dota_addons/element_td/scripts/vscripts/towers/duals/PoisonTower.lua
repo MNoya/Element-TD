@@ -20,27 +20,26 @@ function PoisonTower:OnAttackLanded(keys)
     self.attacks = self.attacks + 1    
     local target = keys.target    
     local damage = self.tower:GetAverageTrueAttackDamage() 
-    local fullDamageAOE = self.fullAOE    
+    local AOE = self.halfAOE
 
     if self.attacks == 3 then
         damage = damage * (self.damageMultiplier / 100)    
         self.attacks = 0    
-        fullDamageAOE = 200
+        AOE = 300
 
-        local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_venomancer/venomancer_venomousgale_explosion_flash_b.vpcf", PATTACH_ABSORIGIN, target)    
-        ParticleManager:SetParticleControl(particle, 0, Vector(0, 0, 0))
-        ParticleManager:SetParticleControl(particle, 3, target:GetOrigin())
+        local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_venomancer/venomancer_venomousgale_explosion_flash_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+        ParticleManager:SetParticleControl(particle, 3, target:GetAbsOrigin())
 
-        local particleA = ParticleManager:CreateParticle("particles/units/heroes/hero_venomancer/venomancer_ward_cast.vpcf", PATTACH_ABSORIGIN, self.tower)    
+        local particleA = ParticleManager:CreateParticle("particles/units/heroes/hero_venomancer/venomancer_ward_cast.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.tower)    
         ParticleManager:SetParticleControl(particleA, 0, target:GetAttachmentOrigin(target:ScriptLookupAttachment("attach_hitloc")))
         ParticleManager:SetParticleControl(particleA, 1, self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_hitloc")))
 
-        PopupBlueCriticalDamage(self.tower, math.floor(damage))
+        PopupDarkCriticalDamage(self.tower, math.floor(damage))
     end
     damage = ApplyAttackDamageFromModifiers(damage, self.tower)
 
-    DamageEntitiesInArea(target:GetOrigin(), fullDamageAOE, self.tower, damage / 2)    
-    DamageEntitiesInArea(target:GetOrigin(), fullDamageAOE / 2, self.tower, damage / 2)    
+    DamageEntitiesInArea(target:GetAbsOrigin(), AOE, self.tower, damage / 2)    
+    DamageEntitiesInArea(target:GetAbsOrigin(), AOE / 2, self.tower, damage / 2)    
 end
 
 function PoisonTower:OnCreated()

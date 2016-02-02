@@ -100,6 +100,10 @@ function PopupBlueCriticalDamage(target, amount)
     PopupNumbers(target, "crit", Vector(0, 0, 169), 3.0, amount, nil, POPUP_SYMBOL_POST_LIGHTNING)
 end
 
+function PopupDarkCriticalDamage(target, amount)
+    PopupNumbers(target, "crit", Vector(132, 51, 200), 3.0, amount, nil, POPUP_SYMBOL_POST_LIGHTNING)
+end
+
 function PopupLightDamage(target, amount)
     PopupNumbers(target, "crit", Vector(200, 200, 50), 2.0, amount, nil, POPUP_SYMBOL_POST_LIGHTNING)
 end

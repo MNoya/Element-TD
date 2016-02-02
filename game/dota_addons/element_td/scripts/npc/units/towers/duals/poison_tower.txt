@@ -41,7 +41,7 @@
 		"2"		"water"
 	}
 	"Damage"		"96"
-	"DamageType"		"water"
+	"DamageType"		"dark"
 	"ScriptClass"		"PoisonTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
