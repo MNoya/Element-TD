@@ -100,7 +100,7 @@ function Wave:SpawnWave()
 				--RegisterCreep(entity, playerID)
 				CreateMoveTimerForCreep(entity, sector)
 				if entitiesSpawned == CREEPS_PER_WAVE then
-					ClosePortalForSector(sector)
+					ClosePortalForSector(self.playerID, sector)
 					if GameSettings:GetEndless() == "Endless" then
 						playerData.nextWave = playerData.nextWave + 1
 						print(playerData.nextWave)

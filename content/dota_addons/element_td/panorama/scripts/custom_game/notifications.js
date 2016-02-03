@@ -110,9 +110,66 @@ function AddNotification(msg, panel) {
   }
 }
 
+var worldPanels = []
+
+function WorldNotification(msg) {
+  var entityIndex = msg.entityIndex;
+  var text = msg.text || "No Text provided";
+
+  var notification = $.CreatePanel('Label', $.GetContextPanel(), "world_"+entityIndex);
+  notification.html = true;
+  notification.text = $.Localize(text);
+  notification.AddClass('WorldBox');
+  worldPanels[entityIndex] = notification
+  notification.entity = entityIndex
+}
+
+function UpdateWorldPanelPositions() {
+  for (var entityIndex in worldPanels)
+  {
+    var panel = worldPanels[entityIndex]
+    var worldPos = GetUnitScreenPosition(panel.entity)
+    var offsetX = panel.actuallayoutwidth
+    var offsetY = panel.actuallayoutheight
+    var newX = worldPos.x-offsetX/2
+    var newY = worldPos.y
+    var maxX = $.GetContextPanel().actuallayoutwidth;
+    var maxY = $.GetContextPanel().actuallayoutheight;
+    if (newX+offsetX < 0 || newY+offsetY < 0 || newX > maxX+offsetX || newY > maxY+offsetY)
+    {
+      panel.visible = false
+    }
+    else
+    {
+      panel.visible = true
+      var newPos = newX + "px " + newY + "px 0px";
+      panel.style["position"] = newPos;
+    }
+  }
+  $.Schedule(1/60, UpdateWorldPanelPositions)
+}
+
+function GetUnitScreenPosition(entIndex){
+  var origin = Entities.GetAbsOrigin(entIndex);
+  return {x:Game.WorldToScreenX(origin[0], origin[1], origin[2]), y:Game.WorldToScreenY(origin[0], origin[1], origin[2])};
+}
+
+function WorldRemoveNotification(msg) {
+  var entityIndex = msg.entityIndex
+  var panel = $("#world_"+entityIndex)
+  if (panel)
+  {
+    worldPanels.splice(entityIndex)
+    panel.DeleteAsync(0)
+  }
+}
+
 (function () {
+  UpdateWorldPanelPositions()
   GameEvents.Subscribe( "top_notification", TopNotification );
   GameEvents.Subscribe( "bottom_notification", BottomNotification );
+  GameEvents.Subscribe( "world_notification", WorldNotification)
   GameEvents.Subscribe( "top_remove_notification", TopRemoveNotification );
   GameEvents.Subscribe( "bottom_remove_notification", BottomRemoveNotification );
+  GameEvents.Subscribe( "world_remove_notification", WorldRemoveNotification)
 })();

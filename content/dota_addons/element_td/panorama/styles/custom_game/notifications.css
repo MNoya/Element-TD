@@ -80,3 +80,13 @@
     transform: scaleX(1) scaleY(1);
   }
 }
+
+.WorldBox
+{
+    z-index: -1;
+    background-color: #000000CC;
+    color: #CCCCCC;
+    border: 2px solid #484A48;
+    box-shadow: #000 -4px -4px 3px 8px;
+    padding: 2px 4px 2px 4px;
+}

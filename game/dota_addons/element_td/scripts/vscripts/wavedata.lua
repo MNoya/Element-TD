@@ -294,27 +294,26 @@ function ShowPortalForSector(sector, wave, time, playerID)
     origin.z = origin.z - 200
     origin.y = origin.y - 70
 
-    ClosePortalForSector(sector, true)
+    ClosePortalForSector(playerID, sector, true)
 
     local particleName = "particles/custom/portals/spiral.vpcf"
     portal.particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, nil)
     ParticleManager:SetParticleControl(portal.particle, 0, origin)
     ParticleManager:SetParticleControl(portal.particle, 15, GetElementColor(element))
     
-    if sector >= 5 then
-        print("Error, can't have more than 4 Speech Bubbles")
-    else
-        Sounds:EmitSoundOnClient( playerID, "Tutorial.Notice.Speech" )
-        portal:AddSpeechBubble(sector, "#etd_wave_"..element, time, 0, 0)
-    end
+    Sounds:EmitSoundOnClient( playerID, "Tutorial.Notice.Speech" )
+
+    -- Portal World Notification
+    CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "world_notification", {entityIndex=portal:GetEntityIndex(), text="#etd_wave_"..element} )
 end
 
-function ClosePortalForSector(sector, removeInstantly)
+function ClosePortalForSector(playerID, sector, removeInstantly)
     removeInstantly = removeInstantly or false
     local portal = SectorPortals[sector]
     if portal.particle then
         ParticleManager:DestroyParticle(portal.particle, removeInstantly)
     end
+    CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "world_remove_notification", {entityIndex=portal:GetEntityIndex()} )
 end
 
 function CreateMoveTimerForCreep(creep, sector)
