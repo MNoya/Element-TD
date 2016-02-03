@@ -94,7 +94,7 @@ function Populate( data )
 
 	PopulateDropDown(gamemodeDD, gameModes);
 	gamemodeDD.SetSelected(0);
-	gamemodeDesc.text = gameModes[0][1]; // Default Competitive
+	gamemodeDesc.text = $.Localize(gameModes[0][1]); // Default Competitive
 
 	//=Difficulty Dropdown================================================================//
 	for (var df in gamesettings.Difficulty)
@@ -106,7 +106,7 @@ function Populate( data )
 
 	PopulateDropDown(difficultyDD, difficultyModes);
 	difficultyDD.SetSelected(0);
-	difficultyDesc.text = difficultyModes[0][1]; // Default Normal
+	difficultyDesc.text = $.Localize(difficultyModes[0][1]); // Default Normal
 
 	//=Elements Dropdown================================================================//
 	for (var ele in gamesettings.ElementModes)
@@ -117,7 +117,7 @@ function Populate( data )
 
 	PopulateDropDown(elementDD, elementModes);
 	elementDD.SetSelected(0);
-	elementDesc.text = elementModes[0][1]; // Default All Pick
+	elementDesc.text = $.Localize(elementModes[0][1]); // Default All Pick
 
 	//=Endless Mode Dropdown
 	for (var end in gamesettings.HordeMode)
@@ -128,7 +128,7 @@ function Populate( data )
 
 	PopulateDropDown(endlessDD, endlessModes);
 	endlessDD.SetSelected(0);
-	endlessDesc.text = endlessModes[0][1]; // Default Normal
+	endlessDesc.text = $.Localize(endlessModes[0][1]); // Default Normal
 
 	//=Order Dropdown================================================================//
 	for (var ord in gamesettings.CreepOrder)
@@ -139,7 +139,7 @@ function Populate( data )
 
 	PopulateDropDown(orderDD, orderModes);
 	orderDD.SetSelected(0);
-	orderDesc.text = orderModes[0][1]; // Default Normal
+	orderDesc.text = $.Localize(orderModes[0][1]); // Default Normal
 
 	//=Length Dropdown================================================================//
 	for (var lnth in gamesettings.GameLength)
@@ -169,17 +169,17 @@ function PopulateDropDown( DropDown, items )
 function OnDropDownChanged( setting )
 {
 	if (setting == "gamemode")
-		gamemodeDesc.text = gameModes[parseInt(gamemodeDD.GetSelected().id)][1]; 
+		gamemodeDesc.text = $.Localize(gameModes[parseInt(gamemodeDD.GetSelected().id)][1]); 
 	else if (setting == "difficulty")
-		difficultyDesc.text = difficultyModes[parseInt(difficultyDD.GetSelected().id)][1];
+		difficultyDesc.text = $.Localize(difficultyModes[parseInt(difficultyDD.GetSelected().id)][1]);
 	else if (setting == "elements")
-		elementDesc.text = elementModes[parseInt(elementDD.GetSelected().id)][1];
+		elementDesc.text = $.Localize(elementModes[parseInt(elementDD.GetSelected().id)][1]);
 	else if (setting == "endless")
-		endlessDesc.text = endlessModes[parseInt(endlessDD.GetSelected().id)][1];
+		endlessDesc.text = e$.Localize(ndlessModes[parseInt(endlessDD.GetSelected().id)][1]);
 	else if (setting == "order")
-		orderDesc.text = orderModes[parseInt(orderDD.GetSelected().id)][1];
+		orderDesc.text = $.Localize(orderModes[parseInt(orderDD.GetSelected().id)][1]);
 	else if (setting == "length")
-		lengthDesc.text = lengthModes[parseInt(lengthDD.GetSelected().id)][1];
+		lengthDesc.text = $.Localize(lengthModes[parseInt(lengthDD.GetSelected().id)][1]);
 }
 
 function UpdateVoteTimer( data )
@@ -288,12 +288,12 @@ function ShowVoteResults( data )
 	voteResultsUI.visible = true;
 	votingLiveUI.AddClass("hidden");
 
-	gamemodeResults.text = gamesettings['GameModes'][data.gamemode].Name;
-	difficultyResults.text = gamesettings['Difficulty'][data.difficulty].Name;
-	elementsResults.text = gamesettings['ElementModes'][data.elements].Name;
-	endlessResults.text = gamesettings['HordeMode'][data.endless].Name;
-	orderResults.text = gamesettings['CreepOrder'][data.order].Name;
-	lengthResults.text = gamesettings['GameLength'][data.length].Name;
+	gamemodeResults.text = $.Localize(gamesettings['GameModes'][data.gamemode].Name);
+	difficultyResults.text = $.Localize(gamesettings['Difficulty'][data.difficulty].Name);
+	elementsResults.text = $.Localize(gamesettings['ElementModes'][data.elements].Name);
+	endlessResults.text = $.Localize(gamesettings['HordeMode'][data.endless].Name);
+	orderResults.text = $.Localize(gamesettings['CreepOrder'][data.order].Name);
+	lengthResults.text = $.Localize(gamesettings['GameLength'][data.length].Name);
 }
 
 function ResultsClose()
