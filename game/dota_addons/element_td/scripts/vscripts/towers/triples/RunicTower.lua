@@ -42,7 +42,7 @@ function RunicTower:OnAttack(keys)
                     Source = caster,
                     Ability = keys.ability,
                     EffectName = "particles/custom/towers/runic/attack.vpcf",
-                    iMoveSpeed = 900,
+                    iMoveSpeed = self.tower:GetProjectileSpeed(),
                     vSourceLoc= caster:GetAbsOrigin(),
                     bDrawsOnMinimap = false,
                     bDodgeable = true,
