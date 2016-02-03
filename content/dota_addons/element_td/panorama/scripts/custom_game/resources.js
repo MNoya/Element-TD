@@ -13,21 +13,21 @@ var lumberDisplay = $( '#LumberDisplay' );
 
 var elements = {water: '#WaterValue', fire: '#FireValue', nature: '#NatureValue', earth: '#EarthValue', light: '#LightValue', dark:'#DarkValue'};
 
-var tooltips = {'Lumber':'Lumber is used to summon elementals at the summoner.<br>You will recieve lumber every 5 rounds (3 rounds on express mode).',
-				'Pure Essence':'Essence is used to build your most powerful towers.<br>You can use it to evolve a Level 3 Single-Element Tower, or to build a Periodic Tower if you have all 6 Elements.<br>You can buy Pure Essences from the summoner for 1 lumber.<br>You will recieve 1 pure essence on wave 46 and 51 (25 and 28 on express mode).',
-				'Total Score':'This score will be sent to the leaderboard at the end of the game.',
-				'Water':'Water Element Level',
-				'Fire':'Fire Element Level',
-				'Nature':'Nature Element Level',
-				'Earth':'Earth Element Level',
-				'Light':'Light Element Level',
-				'Dark':'Dark Element Level',
+var tooltips = {'#lumber':'#tooltip_lumber',
+				'#essence':'#tooltip_essence',
+				'#score':'#tooltip_score',
+				'#water':'#water_level',
+				'#fire':'#fire_level',
+				'#nature':'#nature_level',
+				'#earth':'#earth_level',
+				'#light':'#light_level',
+				'#dark':'#dark_level',
 				};
 
-var tooltipsUI = {'Lumber': LumberUI, 'Pure Essence': LumberUI, 'Total Score': ScoreUI,
-				  'Water':ElementsUI,'Fire':ElementsUI,
-				  'Nature':ElementsUI,'Earth':ElementsUI,
-				  'Light':ElementsUI,'Dark':ElementsUI,
+var tooltipsUI = {'#lumber': LumberUI, '#essence': LumberUI, '#score': ScoreUI,
+				  '#water':ElementsUI,'#fire':ElementsUI,
+				  '#nature':ElementsUI,'#earth':ElementsUI,
+				  '#light':ElementsUI,'#dark':ElementsUI,
 				};
 
 var AspectRatio21x9 = false;

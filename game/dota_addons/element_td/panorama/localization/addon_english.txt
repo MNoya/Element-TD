@@ -14,6 +14,27 @@
         "custom_end_screen_legend_towers"           "Towers"
         "custom_end_screen_legend_difficulty"       "Difficulty"
 
+        "water"     "<font color='#01A2FF'>Water</font>"
+        "fire"      "<font color='#C40000'>Fire</font>"
+        "nature"    "<font color='#00C400'>Nature</font>"
+        "earth"     "<font color='#D4880F'>Earth</font>"
+        "light"     "<font color='#E5DE23'>Light</font>"
+        "dark"      "<font color='#8733C8'>Dark</font>"
+
+        "water_level"   "Water Element Level"
+        "fire_level"    "Fire Element Level"
+        "nature_level"  "Nature Element Level"
+        "earth_level"   "Earth Element Level"
+        "light_level"   "Light Element Level"
+        "dark_level"    "Dark Element Level"
+
+        "lumber"  "<font color='#008000'>Lumber</font>"
+        "tooltip_lumber" "Lumber is used to summon elementals at the summoner.<br>You will recieve lumber every 5 rounds (3 rounds on express mode)."
+        "essence" "<font color='#00BFFF'>Pure Essence</font>"
+        "tooltip_essence" "Essence is used to build your most powerful towers.<br>You can use it to evolve a Level 3 Single-Element Tower, or to build a Periodic Tower if you have all 6 Elements.<br>You can buy Pure Essences from the summoner for 1 lumber.<br>You will recieve 1 pure essence on wave 46 and 51 (25 and 28 on express mode)."
+        "score" "Total Score"
+        "tooltip_score" "This score will be sent to the leaderboard at the end of the game."
+
         "DOTA_GoodGuys"                             "Summer" //Lime
         "DOTA_BadGuys"                              "Autumn" //Orange
         "DOTA_Custom1"                              "Temple" //Pink

@@ -235,7 +235,7 @@ function ElementTD:EndGameForPlayer( playerID )
     UTIL_Remove(playerData.summoner)
 
     --EmitAnnouncerSound(defeatAnnouncer[playerData.sector])    
-    Sounds:EmitSoundOnClient(playerID,"ETD.PlayerLost")
+    EmitGlobalSound("ETD.PlayerLost")
 
     -- Stop player interest
     if ply then
