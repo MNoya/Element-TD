@@ -26,7 +26,7 @@
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
 	"MovementSpeed"		"0"
 	"MovementTurnRate"		"1.0"
-	"StatusHealth"		"1000"
+	"StatusHealth"		"1500"
 	"StatusHealthRegen"		"0"
 	"StatusMana"		"0"
 	"StatusManaRegen"		"0"
@@ -37,7 +37,7 @@
 	"VisionDaytimeRange"		"1900"
 	"VisionNighttimeRange"		"1900"
 	"Level"		"1"
-	"Cost"		"1000"
+	"Cost"		"1050"
 	"TotalCost"		"1500"
 	"Element"
 	{
@@ -54,7 +54,7 @@
 	"AttackAcquisitionRange"		"1500"
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_enchantress/enchantress_impetus.vpcf"
-	"ProjectileSpeed"		"2000"
+	"ProjectileSpeed"		"3000"
 
     "Model"             "models/heroes/enchantress/enchantress.vmdl"
     "ModelScale"        "1.0"

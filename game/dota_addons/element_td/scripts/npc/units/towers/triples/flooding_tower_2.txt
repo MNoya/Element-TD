@@ -26,7 +26,7 @@
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
 	"MovementSpeed"		"0"
 	"MovementTurnRate"		"1.0"
-	"StatusHealth"		"1000"
+	"StatusHealth"		"4500"
 	"StatusHealthRegen"		"0"
 	"StatusMana"		"0"
 	"StatusManaRegen"		"0"
@@ -37,15 +37,15 @@
 	"VisionDaytimeRange"		"1900"
 	"VisionNighttimeRange"		"1900"
 	"Level"		"2"
-	"Cost"		"3500"
-	"TotalCost"		"5000"
+	"Cost"		"3000"
+	"TotalCost"		"4500"
 	"Element"
 	{
 		"1"		"water"
 		"2"		"nature"
 		"3"		"dark"
 	}
-	"Damage"		"600"
+	"Damage"		"0"
 	"DamageType"		"water"
 	"ScriptClass"		"FloodingTower"
 	"TowerType"		"Normal"
@@ -54,7 +54,7 @@
 	"AttackAcquisitionRange"		"900"
 	"AttackRate"		"0.66"
 	"ProjectileModel"		"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
-	"ProjectileSpeed"		"900"
+	"ProjectileSpeed"		"2000"
 	
     "Model"             "models/heroes/tidehunter/tidehunter.vmdl"
     "ModelScale"        "1.2"
@@ -84,8 +84,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"600"
-	"AttackDamageMax"		"600"
+	"AttackDamageMin"		"0"
+	"AttackDamageMax"		"0"
 	"AOE_Full"				"400"
 
 	// Building Size

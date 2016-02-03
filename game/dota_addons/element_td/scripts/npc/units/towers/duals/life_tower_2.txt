@@ -16,7 +16,7 @@
     "VisionNighttimeRange"      "1900"  
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-    "AttackAnimationPoint"      "0.433"
+    "AttackAnimationPoint"      "0.4"
     "ProjectileCollisionSize"   "50"
     "RingRadius"                "90"
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -33,14 +33,14 @@
 	"VisionDaytimeRange"		"1900"
 	"VisionNighttimeRange"		"1900"
 	"Level"		"2"
-	"Cost"		"750"
+	"Cost"		"800"
 	"TotalCost"		"1250"
 	"Element"
 	{
 		"1"		"light"
 		"2"		"nature"
 	}
-	"Damage"		"465"
+	"Damage"		"500"
 	"DamageType"		"nature"
 	"ScriptClass"		"LifeTower"
 	"TowerType"		"Normal"
@@ -49,7 +49,7 @@
 	"AttackAcquisitionRange"		"1100"
 	"AttackRate"		"0.31"
 	"ProjectileModel"		"particles/custom/attacks/wisp_nature_attack.vpcf"
-	"ProjectileSpeed"		"900"
+	"ProjectileSpeed"		"3000"
 	"Model"		"models/heroes/omniknight/omniknight.vmdl"
 	"ModelScale"		"0.9"
     "ModelRotation"             "90"
@@ -66,8 +66,8 @@
 		"Count"		"1"
 		"1"		"life_tower_3"
 	}
-	"AttackDamageMin"		"465"
-	"AttackDamageMax"		"465"
+	"AttackDamageMin"		"500"
+	"AttackDamageMax"		"500"
     "Creature"
     {
        "AttachWearables" // Armor of the Stalwart Soul

@@ -24,7 +24,7 @@
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
     "MovementSpeed"             "0"
     "MovementTurnRate"          "1.0"
-    "StatusHealth"              "500"
+    "StatusHealth"              "450"
     "StatusHealthRegen"         "0"
     "StatusMana"                "0"
     "StatusManaRegen"           "0"
@@ -35,14 +35,14 @@
 	"VisionDaytimeRange"		"1900"
 	"VisionNighttimeRange"		"1900"
 	"Level"		"1"
-	"Cost"		"325"
-	"TotalCost"		"500"
+	"Cost"		"275"
+	"TotalCost"		"450"
 	"Element"
 	{
 		"1"		"fire"
 		"2"		"earth"
 	}
-	"Damage"		"210"
+	"Damage"		"325"
 	"DamageType"		"fire"
 	"ScriptClass"		"BlacksmithTower"
 	"TowerType"		"Support"
@@ -51,7 +51,7 @@
 	"AttackAcquisitionRange"		"900"
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_lina/lina_base_attack.vpcf"
-	"ProjectileSpeed"		"800"
+	"ProjectileSpeed"		"2000"
 	"Model"		"models/blacksmith_tower.vmdl"
 	"ModelScale"		"1"
 	"UpgradeIcon"		"towers/blacksmith_tower_fire_up"
@@ -70,8 +70,8 @@
 		"4"		"haste_tower"
 		"5"		"flamethrower_tower"
 	}
-	"AttackDamageMin"		"210"
-	"AttackDamageMax"		"210"
+	"AttackDamageMin"		"325"
+	"AttackDamageMax"		"325"
 
     // Building Size
     "ConstructionSize"          "2"

@@ -40,7 +40,7 @@
 		"1"		"light"
 		"2"		"dark"
 	}
-	"Damage"		"5250"
+	"Damage"		"8125"
 	"DamageType"		"light"
 	"ScriptClass"		"TrickeryTower"
 	"TowerType"		"Support"
@@ -49,7 +49,7 @@
 	"AttackAcquisitionRange"		"900"
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
-	"ProjectileSpeed"		"900"
+	"ProjectileSpeed"		"2000"
 	"Model"		"models/heroes/rubick/rubick.vmdl"
 	"ModelScale"		"1.2"
     "ModelRotation"     "90"
@@ -64,8 +64,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"5250"
-	"AttackDamageMax"		"5250"
+	"AttackDamageMin"		"8125"
+	"AttackDamageMax"		"8125"
     "Creature"
     {
        "AttachWearables" // Wandering Harlequin's Regalia

@@ -26,7 +26,7 @@
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
 	"MovementSpeed"		"0"
 	"MovementTurnRate"		"1.0"
-	"StatusHealth"		"1000"
+	"StatusHealth"		"4500"
 	"StatusHealthRegen"		"0"
 	"StatusMana"		"0"
 	"StatusManaRegen"		"0"
@@ -37,8 +37,8 @@
 	"VisionDaytimeRange"		"1900"
 	"VisionNighttimeRange"		"1900"
 	"Level"		"2"
-	"Cost"		"3500"
-	"TotalCost"		"5000"
+	"Cost"		"3000"
+	"TotalCost"		"4500"
 	"Element"
 	{
 		"1"		"earth"
@@ -54,7 +54,7 @@
 	"AttackAcquisitionRange"		"900"
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_batrider/batrider_base_attack.vpcf"
-	"ProjectileSpeed"		"900"
+	"ProjectileSpeed"		"4000"
 
     "Model"             "models/heroes/troll_warlord/troll_warlord.vmdl"
     "ModelScale"        "1.0"
@@ -83,8 +83,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"5100"
-	"AttackDamageMax"		"5100"
+	"AttackDamageMin"		"5000"
+	"AttackDamageMax"		"5000"
 
 	// Building Size
     "ConstructionSize"          "2"

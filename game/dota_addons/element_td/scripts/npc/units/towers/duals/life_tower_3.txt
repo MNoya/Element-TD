@@ -16,7 +16,7 @@
     "VisionNighttimeRange"      "1900"  
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-    "AttackAnimationPoint"      "0.433"
+    "AttackAnimationPoint"      "0.4"
     "ProjectileCollisionSize"   "50"
     "RingRadius"                "90"
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -40,7 +40,7 @@
 		"1"		"light"
 		"2"		"nature"
 	}
-	"Damage"		"2325"
+	"Damage"		"2500"
 	"DamageType"		"nature"
 	"ScriptClass"		"LifeTower"
 	"TowerType"		"Normal"
@@ -49,7 +49,7 @@
 	"AttackAcquisitionRange"		"1100"
 	"AttackRate"		"0.31"
 	"ProjectileModel"		"particles/custom/attacks/wisp_nature_attack.vpcf"
-	"ProjectileSpeed"		"900"
+	"ProjectileSpeed"		"3000"
 	"Model"		"models/heroes/omniknight/omniknight.vmdl"
 	"ModelScale"		"1.1"
     "ModelRotation"             "90"
@@ -64,8 +64,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"2325"
-	"AttackDamageMax"		"2325"
+	"AttackDamageMin"		"2500"
+	"AttackDamageMax"		"2500"
     "Creature"
     {
        "AttachWearables" // Thunderwrath's Calling Set

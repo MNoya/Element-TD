@@ -22,7 +22,7 @@ function PoisonTower:OnAttackLanded(keys)
     local damage = self.tower:GetAverageTrueAttackDamage() 
     local AOE = self.halfAOE
 
-    if self.attacks == 3 then
+    if self.attacks == 4 then
         damage = damage * (self.damageMultiplier / 100)    
         self.attacks = 0    
         AOE = 300

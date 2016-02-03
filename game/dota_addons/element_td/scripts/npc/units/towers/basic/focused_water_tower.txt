@@ -38,8 +38,8 @@
     "ProjectileSpeed"           "3000"
 
     "Level"                     "2"
-    "Cost"                      "450"
-    "TotalCost"                 "625"
+    "Cost"                      "375"
+    "TotalCost"                 "550"
     "BuildTime"                 "2"
     "Element"                   "water"
 
@@ -76,7 +76,7 @@
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
     "MovementSpeed"             "0"
     "MovementTurnRate"          "1.0"
-    "StatusHealth"              "625"
+    "StatusHealth"              "550"
     "StatusHealthRegen"         "0"
     "StatusMana"                "0"
     "StatusManaRegen"           "0"

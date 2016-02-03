@@ -22,7 +22,7 @@
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
     "MovementSpeed"             "0"
     "MovementTurnRate"          "1.0"
-    "StatusHealth"              "500"
+    "StatusHealth"              "450"
     "StatusHealthRegen"         "0"
     "StatusMana"                "0"
     "StatusManaRegen"           "0"
@@ -33,8 +33,8 @@
 	"VisionDaytimeRange"		"1900"
 	"VisionNighttimeRange"		"1900"
 	"Level"		"1"
-	"Cost"		"325"
-	"TotalCost"		"500"
+	"Cost"		"275"
+	"TotalCost"		"450"
 	"Element"
 	{
 		"1"		"earth"
@@ -49,7 +49,7 @@
 	"AttackAcquisitionRange"		"1500"
 	"AttackRate"		"0.66"
 	"ProjectileModel"		"particles/units/heroes/hero_techies/techies_base_attack.vpcf"
-	"ProjectileSpeed"		"800"
+	"ProjectileSpeed"		"1500"
 	"Model"		"models/heroes/sniper/sniper.vmdl"
 	"ModelScale"		"0.85"
     "ModelRotation"             "90"
@@ -70,8 +70,8 @@
 		"4"		"flamethrower_tower"
 		"5"		"roots_tower"
 	}
-	"AttackDamageMin"		"0"
-	"AttackDamageMax"		"0"
+	"AttackDamageMin"		"25"
+	"AttackDamageMax"		"25"
     "Creature"
     {
        "AttachWearables" // Default

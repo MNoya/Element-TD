@@ -5,7 +5,7 @@
 	"Model"					"models/well_tower1.vmdl"
 	"ModelScale"			"0.75"
 	"ProjectileModel"		"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
-	"ProjectileSpeed"		"800"
+	"ProjectileSpeed"		"2000"
 	"SoundSet"				"Tower.Water"
 	"MinimapIcon"			"minimap_tower90"
 	"MinimapIconSize"		"320"
@@ -13,16 +13,16 @@
 
 	// Stats
     //----------------------------- 
-	"AttackDamageMin"			"210"
-	"AttackDamageMax"			"210"
-	"Damage"					"210"
+	"AttackDamageMin"			"325"
+	"AttackDamageMax"			"325"
+	"Damage"					"325"
 	"AttackRange"				"900"
 	"AttackAcquisitionRange"	"900"
 	"AttackRate"				"1"
 
 	"Level"						"1"
-	"Cost"						"325"
-	"TotalCost"					"500"
+	"Cost"						"275"
+	"TotalCost"					"450"
 	"BuildTime"					"3"
 	"Element"
 	{
@@ -73,7 +73,7 @@
 	"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_NONE"
 	"MovementSpeed"					"0"
 	"MovementTurnRate"				"1.0"
-	"StatusHealth"					"500"
+	"StatusHealth"					"450"
 	"StatusHealthRegen"				"0"
 	"StatusMana"					"0"
 	"StatusManaRegen"				"0"

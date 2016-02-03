@@ -57,7 +57,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"max_stacks"			"30"
+			"max_stacks"			"12"
 		}
 		"03"
 		{

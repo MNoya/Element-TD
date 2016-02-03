@@ -33,14 +33,14 @@
 	"VisionDaytimeRange"		"1900"
 	"VisionNighttimeRange"		"1900"
 	"Level"		"2"
-	"Cost"		"750"
+	"Cost"		"800"
 	"TotalCost"		"1250"
 	"Element"
 	{
 		"1"		"dark"
 		"2"		"water"
 	}
-	"Damage"		"480"
+	"Damage"		"750"
 	"DamageType"		"dark"
 	"ScriptClass"		"PoisonTower"
 	"TowerType"		"Normal"
@@ -49,7 +49,7 @@
 	"AttackAcquisitionRange"		"900"
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_viper/viper_base_attack.vpcf"
-	"ProjectileSpeed"		"1800"
+	"ProjectileSpeed"		"2000"
 	"Model"		"models/heroes/venomancer/venomancer.vmdl"
 	"ModelScale"		"1.0"
     "ModelRotation"             "90"
@@ -68,8 +68,8 @@
 		"Count"		"1"
 		"1"		"poison_tower_3"
 	}
-	"AttackDamageMin"		"480"
-	"AttackDamageMax"		"480"
+	"AttackDamageMin"		"750"
+	"AttackDamageMax"		"750"
     "Creature"
     {
        "AttachWearables" // Venomous Deathbringer

@@ -12,7 +12,7 @@
 	"MagicalResistance"		"0"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-	"AttackAnimationPoint"		"0.6"
+	"AttackAnimationPoint"		"0.4"
 	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
 	"AttributeBaseStrength"		"0"
 	"AttributeStrengthGain"		"0"
@@ -26,7 +26,7 @@
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
 	"MovementSpeed"		"0"
 	"MovementTurnRate"		"1.0"
-	"StatusHealth"		"1000"
+	"StatusHealth"		"1500"
 	"StatusHealthRegen"		"0"
 	"StatusMana"		"0"
 	"StatusManaRegen"		"0"
@@ -37,7 +37,7 @@
 	"VisionDaytimeRange"		"1900"
 	"VisionNighttimeRange"		"1900"
 	"Level"		"1"
-	"Cost"		"1000"
+	"Cost"		"1050"
 	"TotalCost"		"1500"
 	"Element"
 	{
@@ -45,7 +45,7 @@
 		"2"		"light"
 		"3"		"water"
 	}
-	"Damage"		"960"
+	"Damage"		"1000"
 	"DamageType"		"light"
 	"ScriptClass"		"HailTower"
 	"TowerType"		"Normal"
@@ -54,7 +54,7 @@
 	"AttackAcquisitionRange"		"1100"
 	"AttackRate"		"0.66"
 	"ProjectileModel"		"particles/custom/towers/hail/attack.vpcf"
-	"ProjectileSpeed"		"1250"
+	"ProjectileSpeed"		"3000"
 
     "Model"             "models/heroes/drow/drow.vmdl"
     "ModelScale"        "1.2"
@@ -87,8 +87,8 @@
 		"Count"		"1"
 		"1"		"hail_tower_2"
 	}
-	"AttackDamageMin"		"960"
-	"AttackDamageMax"		"960"
+	"AttackDamageMin"		"1000"
+	"AttackDamageMax"		"1000"
 
 	// Building Size
     "ConstructionSize"          "2"

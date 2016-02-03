@@ -6,7 +6,7 @@
 	"ModelScale"				"0.8"
 	"ModelRotation"				"0"
 	"ProjectileModel"			"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
-	"ProjectileSpeed"			"800"
+	"ProjectileSpeed"			"2000"
 	"SoundSet"					"Tower.Water"
 	"MinimapIcon"				"minimap_tower90"
 	"MinimapIconSize"			"320"
@@ -14,9 +14,9 @@
 
 	// Stats
     //----------------------------- 
-	"AttackDamageMin"			"5250"
-	"AttackDamageMax"			"5250"
-	"Damage"					"5250"
+	"AttackDamageMin"			"8125"
+	"AttackDamageMax"			"8125"
+	"Damage"					"8125"
 	"AttackRange"				"900"
 	"AttackAcquisitionRange"	"900"
 	"AttackRate"				"1"

@@ -16,7 +16,7 @@
     "VisionNighttimeRange"      "1900"  
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-    "AttackAnimationPoint"      "0.43"
+    "AttackAnimationPoint"      "0.4"
     "ProjectileCollisionSize"   "50"
     "RingRadius"                "90"
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -40,7 +40,7 @@
 		"1"		"dark"
 		"2"		"fire"
 	}
-	"Damage"		"15000"
+	"Damage"		"12500"
 	"DamageType"		"dark"
 	"ScriptClass"		"MagicTower"
 	"TowerType"		"Normal"
@@ -49,7 +49,7 @@
 	"AttackAcquisitionRange"		"1100"
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
-	"ProjectileSpeed"		"1000"
+	"ProjectileSpeed"		"2000"
 	"Model"		"models/heroes/lion/lion.vmdl"
 	"ModelScale"		"1.25"
     "ModelRotation"             "90"
@@ -64,8 +64,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"15000"
-	"AttackDamageMax"		"15000"
+	"AttackDamageMin"		"12500"
+	"AttackDamageMax"		"12500"
     "Creature"
     {
        "AttachWearables" // Legacy of Infernal Wings

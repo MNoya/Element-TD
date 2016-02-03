@@ -26,7 +26,7 @@
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
 	"MovementSpeed"		"0"
 	"MovementTurnRate"		"1.0"
-	"StatusHealth"		"1000"
+	"StatusHealth"		"1500"
 	"StatusHealthRegen"		"0"
 	"StatusMana"		"0"
 	"StatusManaRegen"		"0"
@@ -37,7 +37,7 @@
 	"VisionDaytimeRange"		"1900"
 	"VisionNighttimeRange"		"1900"
 	"Level"		"1"
-	"Cost"		"1000"
+	"Cost"		"1050"
 	"TotalCost"		"1500"
 	"Element"
 	{
@@ -45,7 +45,7 @@
 		"2"		"earth"
 		"3"		"water"
 	}
-	"Damage"		"600"
+	"Damage"		"650"
 	"DamageType"		"earth"
 	"ScriptClass"		"MuckTower"
 	"TowerType"		"Support"
@@ -54,7 +54,7 @@
 	"AttackAcquisitionRange"		"700"
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_bristleback/bristleback_viscous_nasal_goo.vpcf"
-	"ProjectileSpeed"		"1800"
+	"ProjectileSpeed"		"2000"
 
     "Model"             "models/heroes/bristleback/bristleback.vmdl"
     "ModelScale"        "1.0"
@@ -88,8 +88,8 @@
 		"Count"		"1"
 		"1"		"muck_tower_2"
 	}
-	"AttackDamageMin"		"600"
-	"AttackDamageMax"		"600"
+	"AttackDamageMin"		"650"
+	"AttackDamageMax"		"650"
 
 	// Building Size
     "ConstructionSize"          "2"

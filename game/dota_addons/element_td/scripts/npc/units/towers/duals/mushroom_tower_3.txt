@@ -45,7 +45,7 @@
 	}
 	"AOE_Full"		"150"
 	"AOE_Half"		"300"
-	"Damage"		"1250"
+	"Damage"		"3000"
 	"DamageType"		"nature"
 	"ScriptClass"		"MushroomTower"
 	"TowerType"		"Normal"
@@ -54,7 +54,7 @@
 	"AttackAcquisitionRange"		"1100"
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_furion/furion_base_attack.vpcf"
-	"ProjectileSpeed"		"900"
+	"ProjectileSpeed"		"2000"
 	"Model"		"models/heroes/earth_spirit/earth_spirit.vmdl"
 	"ModelScale"		"1.2"
 	"ModelRotation"             "90"
@@ -69,8 +69,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"1250"
-	"AttackDamageMax"		"1250"
+	"AttackDamageMin"		"3000"
+	"AttackDamageMax"		"3000"
     "Creature"
     {
        "AttachWearables" // Strength of the Demon Stone Set

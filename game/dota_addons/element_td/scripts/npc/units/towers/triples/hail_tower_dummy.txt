@@ -40,8 +40,8 @@
 	"VisionNighttimeRange"		"0"
 	"AttackRange"		"1125"
 	"AttackAcquisitionRange"		"1125"
-	"AttackRate"		"0.31"
+	"AttackRate"		"0.66"
 	"particle_folder"		"particles/units/heroes/hero_ancient_apparition"
 	"ProjectileModel"		"particles/units/heroes/hero_ancient_apparition/ancient_apparition_base_attack.vpcf"
-	"ProjectileSpeed"		"900"
+	"ProjectileSpeed"		"3000"
 }

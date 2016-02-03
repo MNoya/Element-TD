@@ -49,7 +49,7 @@
 	"AttackAcquisitionRange"		"1500"
 	"AttackRate"		"0.66"
 	"ProjectileModel"		"particles/units/heroes/hero_techies/techies_base_attack.vpcf"
-	"ProjectileSpeed"		"800"
+	"ProjectileSpeed"		"1500"
 	"Model"		"models/heroes/sniper/sniper.vmdl"
 	"ModelScale"		"1.25"
     "ModelRotation"             "90"
@@ -64,8 +64,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"0"
-	"AttackDamageMax"		"0"
+	"AttackDamageMin"		"625"
+	"AttackDamageMax"		"625"
     "Creature"
     {
        "AttachWearables" // Exact Marksman

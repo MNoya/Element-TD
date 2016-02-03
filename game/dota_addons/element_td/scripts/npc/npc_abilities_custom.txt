@@ -2055,7 +2055,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"120 600"
+				"dot"					"105 525"
 			}
 			"03"
 			{
@@ -2111,7 +2111,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"300"
+				"aoe"					"400"
 			}
 		}
 	}
@@ -2328,7 +2328,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"25 125 625"
 			}
 			"02"
 			{
@@ -2511,7 +2511,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"200 1000 5000"
+				"splash_damage"		"300 1500 7500"
 			}
 			"03"
 			{
@@ -2592,7 +2592,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"750"
+				"projectile_speed"		"900"
 			}
 		}
 	}
@@ -2630,7 +2630,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"2250 11250"
+				"multiplier"			"2000 10000"
 			}
 			"02"
 			{
@@ -2906,7 +2906,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_stacks"			"30"
+				"max_stacks"			"12"
 			}
 			"03"
 			{
@@ -3087,7 +3087,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"330 1650"
+				"damage"			"300 1500"
 			}
 			"02"
 			{
@@ -3144,7 +3144,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_aoe"				"450"
+				"max_aoe"				"400"
 			}
 			"02"
 			{
@@ -3154,7 +3154,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"4.5"
+				"duration"				"4"
 			}
 		}
 		"OnProjectileHitUnit"
@@ -3339,7 +3339,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"50"
+				"bonus_damage"			"25"
 			}
 		}
 	}
@@ -3422,7 +3422,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps"					"120 600"
+				"dps"					"100 500"
 			}
 			"05"
 			{
@@ -3670,7 +3670,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"40 200"
+				"damage"			"30 150"
 			}
 			"02"
 			{
@@ -3880,12 +3880,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"900"
+				"radius"				"500"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200"
+				"damage"				"250 1250"
 			}
 		}
 	}

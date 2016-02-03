@@ -26,7 +26,7 @@
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
 	"MovementSpeed"		"0"
 	"MovementTurnRate"		"1.0"
-	"StatusHealth"		"1000"
+	"StatusHealth"		"1500"
 	"StatusHealthRegen"		"0"
 	"StatusMana"		"0"
 	"StatusManaRegen"		"0"
@@ -37,7 +37,7 @@
 	"VisionDaytimeRange"		"1900"
 	"VisionNighttimeRange"		"1900"
 	"Level"		"1"
-	"Cost"		"1000"
+	"Cost"		"1050"
 	"TotalCost"		"1500"
 	"Element"
 	{
@@ -52,7 +52,7 @@
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"1100"
 	"AttackAcquisitionRange"		"1100"
-	"AttackRate"		"0.66"
+	"AttackRate"		"1.5"
 	"ProjectileModel"		""
 	"ProjectileSpeed"		"1000"
 

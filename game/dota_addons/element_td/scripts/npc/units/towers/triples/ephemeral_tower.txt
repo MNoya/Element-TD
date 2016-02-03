@@ -26,7 +26,7 @@
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
 	"MovementSpeed"		"0"
 	"MovementTurnRate"		"1.0"
-	"StatusHealth"		"1000"
+	"StatusHealth"		"1050"
 	"StatusHealthRegen"		"0"
 	"StatusMana"		"0"
 	"StatusManaRegen"		"0"
@@ -37,7 +37,7 @@
 	"VisionDaytimeRange"		"1900"
 	"VisionNighttimeRange"		"1900"
 	"Level"		"1"
-	"Cost"		"1000"
+	"Cost"		"1050"
 	"TotalCost"		"1500"
 	"Element"
 	{
@@ -45,16 +45,16 @@
 		"2"		"nature"
 		"3"		"water"
 	}
-	"Damage"		"2100"
+	"Damage"		"1800"
 	"DamageType"		"nature"
 	"ScriptClass"		"EphemeralTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
-	"AttackRange"		"700"
-	"AttackAcquisitionRange"		"700"
-	"AttackRate"		"0.66"
+	"AttackRange"		"900"
+	"AttackAcquisitionRange"		"900"
+	"AttackRate"		"0.31"
 	"ProjectileModel"		"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf"
-	"ProjectileSpeed"		"900"
+	"ProjectileSpeed"		"3000"
 
     "Model"             "models/heroes/windrunner/windrunner.vmdl"
     "ModelScale"        "1.2"
@@ -84,8 +84,8 @@
 		"Count"		"1"
 		"1"		"ephemeral_tower_2"
 	}
-	"AttackDamageMin"		"2100"
-	"AttackDamageMax"		"2100"
+	"AttackDamageMin"		"1800"
+	"AttackDamageMax"		"1800"
 
 	// Building Size
     "ConstructionSize"          "2"

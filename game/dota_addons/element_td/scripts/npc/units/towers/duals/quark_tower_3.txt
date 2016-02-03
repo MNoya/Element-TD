@@ -16,7 +16,7 @@
     "VisionNighttimeRange"      "1900"  
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-    "AttackAnimationPoint"      "0.5"
+    "AttackAnimationPoint"      "0.4"
     "ProjectileCollisionSize"   "50"
     "RingRadius"                "90"
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -40,7 +40,7 @@
 		"1"		"earth"
 		"2"		"light"
 	}
-	"Damage"		"9000"
+	"Damage"		"12500"
 	"DamageType"		"light"
 	"ScriptClass"		"QuarkTower"
 	"TowerType"		"Normal"
@@ -49,7 +49,7 @@
 	"AttackAcquisitionRange"		"700"
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
-	"ProjectileSpeed"		"1000"
+	"ProjectileSpeed"		"2000"
 	"Model"		"models/heroes/chen/chen.vmdl"
 	"ModelScale"		"1.2"
     "ModelRotation"             "90"
@@ -64,8 +64,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"9000"
-	"AttackDamageMax"		"9000"
+	"AttackDamageMin"		"12500"
+	"AttackDamageMax"		"12500"
     "Creature"
     {
        "AttachWearables" // Gemmed Armor of the Priest Kings Set
