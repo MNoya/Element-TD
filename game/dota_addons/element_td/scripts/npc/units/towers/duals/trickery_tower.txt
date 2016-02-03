@@ -49,7 +49,7 @@
 	"AttackAcquisitionRange"		"900"
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
-	"ProjectileSpeed"		"2000"
+	"ProjectileSpeed"		"1500"
 	"Model"		"models/heroes/rubick/rubick.vmdl"
 	"ModelScale"		"0.8"
     "ModelRotation"     "90"

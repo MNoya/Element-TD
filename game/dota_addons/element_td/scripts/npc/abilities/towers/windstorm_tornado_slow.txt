@@ -55,7 +55,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"250 1250"
+			"damage"				"100 500"
 		}
 	}
 }

@@ -47,12 +47,12 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"240 1200"
+			"damage"				"100 500"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"radius"				"900"
+			"radius"				"500"
 		}
 	}
 }

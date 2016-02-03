@@ -45,7 +45,7 @@
 		"2"		"fire"
 		"3"		"water"
 	}
-	"Damage"		"5000"
+	"Damage"		"4000"
 	"DamageType"		"fire"
 	"ScriptClass"		"HasteTower"
 	"TowerType"		"Normal"
@@ -83,8 +83,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"5000"
-	"AttackDamageMax"		"5000"
+	"AttackDamageMin"		"4000"
+	"AttackDamageMax"		"4000"
 
 	// Building Size
     "ConstructionSize"          "2"

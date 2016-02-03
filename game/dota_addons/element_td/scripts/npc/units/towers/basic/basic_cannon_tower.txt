@@ -22,7 +22,7 @@
     "AOE_Full"                  "100"
     "AOE_Half"                  "200"
     "AttackRate"                "1.5"
-    "ProjectileSpeed"           "2000" 
+    "ProjectileSpeed"           "1500" 
 
     "Level"                     "1"
     "Cost"                      "50"
