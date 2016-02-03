@@ -18,4 +18,26 @@ function Sounds:EmitSoundOnClient( playerID, sound )
     return false
 end
 
+function Sounds:PlayElementalSpawnSound(playerID, unit)
+    local spawnSound = ElementalSounds[unit.element.."_spawn"]
+    if spawnSound then
+        unit:EmitSound(spawnSound)
+    end
+end
+
+function Sounds:PlayElementalDeathSound(playerID, unit)
+    local deathSound
+    local emitUnit = unit
+    if type(unit)=="string" then
+        emitUnit = GetPlayerData(playerID).summoner
+        deathSound = ElementalSounds[unit.."_death"]      
+    else
+        deathSound = ElementalSounds[unit.element.."_death"]
+    end
+
+    if deathSound then
+        emitUnit:EmitSound(deathSound)
+    end
+end
+
 Sounds:Start()

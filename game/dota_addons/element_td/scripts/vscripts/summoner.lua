@@ -25,7 +25,25 @@ TrailParticles = {
 }
 
 ElementalSounds = {
-    water = "morphling_mrph_",
+    water_spawn = "Hero_Morphling.Replicate",
+    water_death = "Hero_Morphling.Waveform",
+
+    fire_spawn = "Ability.LightStrikeArray",
+    fire_death = "Hero_Lina.DragonSlave",
+
+    nature_spawn = "Hero_Furion.Teleport_Appear",
+    nature_death = "Hero_Furion.TreantSpawn",
+
+    earth_spawn = "Ability.TossImpact",
+    earth_death = "Ability.Avalanche",
+
+    light_spawn = "Hero_KeeperOfTheLight.ChakraMagic.Target",
+    light_death = "Hero_KeeperOfTheLight.BlindingLight",
+
+    dark_spawn = "Hero_Nevermore.RequiemOfSouls",
+    dark_death = "Hero_Nevermore.Shadowraze",
+
+    --[[water = "morphling_mrph_",
     water_S = 8,
     water_D = 12,
     fire = "lina_lina_",
@@ -42,7 +60,7 @@ ElementalSounds = {
     light_D = 15,
     dark = "nevermore_nev_",
     dark_S = 11,
-    dark_D = 19,
+    dark_D = 19,--]]
 }
 
 function GetSoundNumber( max )
@@ -253,7 +271,7 @@ end
 
 function SummonElemental(keys)
     local summoner = keys.caster
-    local playerID = summoner:GetOwner():GetPlayerID()
+    local playerID = summoner:GetPlayerOwnerID()
     local playerData = GetPlayerData(playerID)
     local element = GetUnitKeyValue(keys.Elemental.."1", "Element")
     local difficulty = playerData.difficulty
@@ -269,6 +287,7 @@ function SummonElemental(keys)
     ParticleManager:SetParticleControl(explosion, 0, origin)
 
     if playerData.elementalCount == 0 or EXPRESS_MODE then
+        Sounds:PlayElementalDeathSound(playerID, element)
         BuyElement(playerID, element)
         return
     end
@@ -288,6 +307,9 @@ function SummonElemental(keys)
     elemental["playerID"] = playerID
     elemental["class"] = keys.Elemental
     elemental.marker_dummy = marker_dummy
+
+    -- Spawn sound
+    Sounds:PlayElementalSpawnSound(playerID, elemental)
 
     -- Trail effect
     local particle = ParticleManager:CreateParticle(TrailParticles[element], PATTACH_ABSORIGIN_FOLLOW, elemental)
@@ -311,17 +333,16 @@ function SummonElemental(keys)
     elemental:SetHealth(health)
     elemental:SetModelScale(scale)
     elemental:SetForwardVector(Vector(0, -1, 0))
-    elemental:SetCustomHealthLabel(GetEnglishTranslation(keys.Elemental), ElementColors[element][1], ElementColors[element][2], ElementColors[element][3])
     elemental.level = level
 
+    local label = GetEnglishTranslation(keys.Elemental) or keys.Elemental
+    --elemental:SetCustomHealthLabel(label, ElementColors[element][1], ElementColors[element][2], ElementColors[element][3])
 
     local particle = Particles[keys.Elemental]
     if particle then
         local h = ParticleManager:CreateParticle(particle, 2, elemental) 
         ParticleManager:SetParticleControlEnt(h, 0, elemental, 5, "attach_origin", elemental:GetOrigin(), true)
     end
-
-    Sounds:EmitSoundOnClient(playerID, ElementalSounds[element].."spawn_"..GetSoundNumber(ElementalSounds[element.."_S"]), ply)
 
     Timers:CreateTimer(0.1, function()
         if not IsValidEntity(elemental) or not elemental:IsAlive() then

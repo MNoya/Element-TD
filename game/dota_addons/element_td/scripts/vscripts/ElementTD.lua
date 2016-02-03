@@ -432,7 +432,8 @@ function ElementTD:OnEntityKilled(keys)
         playerData.elementalUnit = nil
         ModifyElementValue(entity.playerID, entity.element, 1)
         AddElementalTrophy(entity.playerID, entity.element)
-        Sounds:EmitSoundOnClient( entity.playerID,ElementalSounds[entity.element].."death_"..GetSoundNumber(ElementalSounds[entity.element.."_D"]))
+
+        Sounds:PlayElementalDeathSound(entity.playerID, entity)
     else
         local playerID = entity.playerID
         if entity.waveObject then 
