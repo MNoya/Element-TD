@@ -124,6 +124,7 @@ function ModifyElementValue(playerID, element, change)
 	UpdateElementsHUD(playerID)
 	UpdatePlayerSpells(playerID)
 	UpdateSummonerSpells(playerID)
+	ShowElementAcquiredMessage(playerID, element, playerData.elements[element])
 	for towerID,_ in pairs(playerData.towers) do
         UpdateUpgrades(EntIndexToHScript(towerID))
     end

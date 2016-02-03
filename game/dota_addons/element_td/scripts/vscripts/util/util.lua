@@ -122,17 +122,6 @@ function shuffle(array)
     return new;
 end
 
-function ShowMessage(playerID, msg, duration)
-    Notifications:ClearTop(playerID)
-    Notifications:Top(playerID, {text=msg, style={["font-size"]="90px"}, duration=duration})
-end
-
-function ShowWarnMessage(playerID, msg)
-    Notifications:ClearBottom(playerID)
-    Notifications:Bottom(playerID, {text=msg, style={color='#E62020'}, duration=2})
-    EmitSoundOnClient("General.Cancel", PlayerResource:GetPlayer(playerID))
-end
-
 function RandomPositionInCircle(origin, radius)
     local hyp = math.random(1, radius);
     local angle = math.random(0, 360);
@@ -193,4 +182,35 @@ function DrawTowerRangeIndicator(keys)
         DebugDrawCircle(pos, Vector(0, 175, 17), 1, target:GetAttackRange(), false, 10);
         DebugDrawText(target:GetOrigin(), "Range: " .. target:GetAttackRange(), true, 10);
     end
+end
+
+-- Takes a vector
+function rgbToHex(vColor)
+    local hexadecimal = '#'
+    local rgb = {vColor.x, vColor.y, vColor.z}
+
+    for key, value in pairs(rgb) do
+        local hex = ''
+
+        while(value > 0)do
+            local index = math.fmod(value, 16) + 1
+            value = math.floor(value / 16)
+            hex = string.sub('0123456789ABCDEF', index, index) .. hex           
+        end
+
+        if(string.len(hex) == 0)then
+            hex = '00'
+
+        elseif(string.len(hex) == 1)then
+            hex = '0' .. hex
+        end
+
+        hexadecimal = hexadecimal .. hex
+    end
+
+    return hexadecimal
+end
+
+function firstToUpper(str)
+    return (str:gsub("^%l", string.upper))
 end

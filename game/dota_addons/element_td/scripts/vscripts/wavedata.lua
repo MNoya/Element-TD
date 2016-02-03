@@ -91,7 +91,7 @@ function StartBreakTime(playerID, breakTime)
         if ply then
             CustomGameEventManager:Send_ServerToPlayer( ply, "etd_update_wave_timer", { time = breakTime, button = (GameSettings:GetGamemode() ~= "Competitive") } )
         end
-        ShowMessage(playerID, "Wave "..wave.." in "..breakTime.." seconds", msgTime)
+        ShowWaveBreakTimeMessage(playerID, wave, breakTime, msgTime)
 
         local playerData = GetPlayerData(playerID)
         local sector = playerData.sector + 1
@@ -105,7 +105,7 @@ function StartBreakTime(playerID, breakTime)
         callback = function()
             local data = GetPlayerData(playerID)
             Log:info("Spawning wave " .. wave .. " for ["..playerID.."] ".. data.name)
-            ShowMessage(playerID, "Wave " .. wave, 3)
+            ShowWaveSpawnMessage(playerID, wave)
             SpawnWaveForPlayer(playerID, wave) -- spawn dat wave
             WAVE_1_STARTED = true
         end

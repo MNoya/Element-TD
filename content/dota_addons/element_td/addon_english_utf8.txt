@@ -415,6 +415,13 @@
         "DOTA_Tooltip_ability_summon_dark_elemental_health"     "BASE HEALTH:"
         
         // Creeps
+        "creep_ability_heal"        "Healing"
+        "creep_ability_fast"        "Fast"
+        "creep_ability_undead"      "Undead"
+        "creep_ability_mechanical"  "Mechanical"
+        "creep_ability_image"       "Image"
+        "creep_ability_swarm"       "Swarm"
+        
         "DOTA_Tooltip_ability_creep_ability_heal"       "Heal"
         "DOTA_Tooltip_ability_creep_ability_heal_Description"       "Upon death, this creep heals all other creeps in a small area around it by a percentage of their max health."
         "DOTA_Tooltip_ability_creep_ability_heal_heal_amount"       "%HEAL AMOUNT:"
@@ -442,7 +449,7 @@
         "DOTA_Tooltip_ability_creep_ability_boss"                                         "Creep Ability Boss"
         "DOTA_Tooltip_ability_creep_ability_boss_Description"                             ""
         "DOTA_Tooltip_ability_creep_ability_boss_health"                                  "HEALTH:"
-        "DOTA_Tooltip_ability_creep_ability_swarm"                                        "Creep Ability Swarm"
+        "DOTA_Tooltip_ability_creep_ability_swarm"                                        "Swarm"
         "DOTA_Tooltip_ability_creep_ability_swarm_Description"                            "Upon dropping down to half health, this creep splits into two smaller creeps. The creep split does not happen if the creep dies in one shot while over half health."
         "DOTA_Tooltip_ability_creep_ability_swarm_bounty"                                 "BOUNTY:"
         "DOTA_Tooltip_ability_creep_ability_swarm_health"                                 "HEALTH:"

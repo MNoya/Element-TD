@@ -155,7 +155,7 @@ end
 function ElementTD:StartGame()
     print("ElementTD Started!")
     Timers:CreateTimer("StartGameDelay", {
-        endTime = 3,
+        endTime = 1,
 
         callback = function()
             Log:info("The game has started!")
