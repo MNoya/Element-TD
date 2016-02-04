@@ -98,7 +98,7 @@ function ResolveDualGlows(primary, secondary1, secondary2) {
     var childN = panel.GetChildCount()
     for (var i = 0; i < childN; i++) {
         var dual = panel.GetChild(i).GetChild(0)
-        if (towers[dual.id].indexOf(secondary1) != -1 || towers[dual.id].indexOf(secondary2) != -1)
+        if (towers[dual.id] !== undefined && (towers[dual.id].indexOf(secondary1) != -1 || towers[dual.id].indexOf(secondary2) != -1))
         {
             dual.AddClass("Glow_"+primary)
             dual.glow = "Glow_"+primary

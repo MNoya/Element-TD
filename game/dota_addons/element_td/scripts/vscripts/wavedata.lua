@@ -213,6 +213,12 @@ function SpawnWaveForPlayer(playerID, wave)
 
         if playerData.completedWaves == CURRENT_WAVE then
             print("Player: " .. playerData.name .. " [" .. playerID .. "] is the first to complete wave " .. CURRENT_WAVE)
+
+            if PlayerResource:GetPlayerCount() > 1 then
+                local color = playerColors[sector-1]
+                GameRules:SendCustomMessage("<font color='"..color.."'>"..playerData.name.."</font> is the first to complete Wave " .. CURRENT_WAVE, 0, 0)
+            end
+
             CURRENT_WAVE = playerData.nextWave
             if GameSettings:GetGamemode() == "Competitive" and GameSettings:GetEndless() ~= "Endless" then
                 CompetitiveNextRound(CURRENT_WAVE)
