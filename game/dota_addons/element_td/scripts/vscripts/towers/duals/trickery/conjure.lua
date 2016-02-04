@@ -61,6 +61,14 @@ function trickery_tower_conjure:OnSpellStart()
     -- create a script object for this tower
     local scriptClassName = GetUnitKeyValue(clone.class, "ScriptClass")
     if not scriptClassName then scriptClassName = "BasicTower" end
+
+    -- Add abilities
+    AddAbility(clone, "ability_building")
+    if GetUnitKeyValue(building_name, "DisableTurning") then
+        unit:AddNewModifier(unit, nil, "modifier_disable_turning", {})
+    end
+    AddAbility(clone, "sell_tower_0")
+    
     if TOWER_CLASSES[scriptClassName] then
         local scriptObject = TOWER_CLASSES[scriptClassName](clone, clone.class)
         clone.scriptClass = scriptClassName
@@ -70,12 +78,6 @@ function trickery_tower_conjure:OnSpellStart()
         Log:error("Unknown script class, " .. scriptClassName .. " for tower " .. clone.class)
     end
 
-    -- Add abilities
-    AddAbility(clone, "ability_building")
-    if GetUnitKeyValue(building_name, "DisableTurning") then
-        unit:AddNewModifier(unit, nil, "modifier_disable_turning", {})
-    end
-    AddAbility(clone, "sell_tower_0")
     AddAbility(clone, clone.damageType .. "_passive")
     if GetUnitKeyValue(clone.class, "AOE_Full") and GetUnitKeyValue(clone.class, "AOE_Half") then
         AddAbility(clone, "splash_damage_orb")
