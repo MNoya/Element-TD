@@ -60,6 +60,27 @@ function Hover(name, arg1, arg2, arg3) {
     $.DispatchEvent( "DOTAShowAbilityTooltip", hovering, tooltip_name);
 }
 
+function HoverElement(name){
+    AddElementGlow(name)
+    hovering = $("#"+name)
+    var tooltip_name = "build_"+name+"_tower"
+
+    if (hovering.BHasClass("DisabledElement"))
+        tooltip_name = tooltip_name+"_disabled"
+
+    $.DispatchEvent( "DOTAShowAbilityTooltip", hovering, tooltip_name);
+}
+
+function OnMouseOutElement() {
+    for (var i in glows)
+    {
+        glows[i].RemoveClass(glows[i].glow);
+    }
+    glows = []
+
+    $.DispatchEvent( "DOTAHideAbilityTooltip", hovering );
+}
+
 function AddElementGlow(elem) {
     var panel = $("#"+elem)
     panel.AddClass("Glow_"+elem)

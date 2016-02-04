@@ -26,7 +26,7 @@
             <Panel hittest="false" id="ElementsContainer">
                 <Panel hittest="false" id="WaterContainer">
                     <Panel hittest="false" class='Element' id="WaterElement">
-                        <Image class='ElementImage' id='water' src="file://{images}/spellicons/elements/water.png"/>
+                        <Image class='ElementImage' id='water' onmouseover="HoverElement('water')" onmouseout='OnMouseOutElement()' src="file://{images}/spellicons/elements/water.png"/>
                     </Panel>
                     <Panel hittest="false" class='DualsContainer' id="waterDuals">
                         <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('vapor','water','fire')" onmouseout='OnMouseOut()'>
@@ -54,7 +54,7 @@
 
                 <Panel hittest="false" id="FireContainer">
                     <Panel hittest="false" class='Element' id="FireElement">
-                        <Image class='ElementImage' id='fire' src="file://{images}/spellicons/elements/fire.png"/>
+                        <Image class='ElementImage' id='fire' onmouseover="HoverElement('fire')" onmouseout='OnMouseOutElement()' src="file://{images}/spellicons/elements/fire.png"/>
                     </Panel>
                     <Panel hittest="false" class='DualsContainer' id="fireDuals">
                         <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('blacksmith','fire','earth')" onmouseout='OnMouseOut()'>
@@ -82,7 +82,7 @@
 
                 <Panel hittest="false" id="NatureContainer">
                     <Panel hittest="false" class='Element' id="NatureElement">
-                        <Image class='ElementImage' id='nature' src="file://{images}/spellicons/elements/nature.png"/>
+                        <Image class='ElementImage' id='nature' onmouseover="HoverElement('nature')" onmouseout='OnMouseOutElement()' src="file://{images}/spellicons/elements/nature.png"/>
                     </Panel>
                     <Panel hittest="false" class='DualsContainer' id="natureDuals">
                         <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('life','nature','light')" onmouseout='OnMouseOut()'>
@@ -110,7 +110,7 @@
 
                 <Panel hittest="false" id="EarthContainer">
                     <Panel hittest="false" class='Element' id="EarthElement">
-                        <Image class='ElementImage' id='earth' src="file://{images}/spellicons/elements/earth.png"/>
+                        <Image class='ElementImage' id='earth' onmouseover="HoverElement('earth')" onmouseout='OnMouseOutElement()' src="file://{images}/spellicons/elements/earth.png"/>
                     </Panel>
                     <Panel hittest="false" class='DualsContainer' id="earthDuals">
                         <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('gunpowder','earth','dark')" onmouseout='OnMouseOut()'>
@@ -135,7 +135,7 @@
 
                 <Panel hittest="false" id="LightContainer">
                     <Panel hittest="false" class='Element' id="LightElement">
-                        <Image class='ElementImage' id='light' src="file://{images}/spellicons/elements/light.png"/>
+                        <Image class='ElementImage' id='light' onmouseover="HoverElement('light')" onmouseout='OnMouseOutElement()' src="file://{images}/spellicons/elements/light.png"/>
                     </Panel>
                     <Panel hittest="false" class='DualsContainer' id="lightDuals">
                         <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('ice','light','water')" onmouseout='OnMouseOut()'>
@@ -163,7 +163,7 @@
 
                 <Panel hittest="false" id="DarkContainer">
                     <Panel hittest="false" class='Element' id="DarkElement">
-                        <Image class='ElementImage' id='dark' src="file://{images}/spellicons/elements/dark.png"/>
+                        <Image class='ElementImage' id='dark' onmouseover="HoverElement('dark')" onmouseout='OnMouseOutElement()' src="file://{images}/spellicons/elements/dark.png"/>
                     </Panel>
                     <Panel hittest="false" class='DualsContainer' id="darkDuals">
                         <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('disease','dark','nature')" onmouseout='OnMouseOut()'>
