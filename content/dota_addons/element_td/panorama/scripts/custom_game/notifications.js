@@ -131,6 +131,7 @@ function WorldNotification(msg) {
   worldPanels[entityIndex] = notification
   notification.entity = entityIndex
   notification.visible = false
+  notification.hittest = false
 }
 
 function UpdateWorldPanelPositions() {
@@ -166,9 +167,9 @@ function GetUnitScreenPosition(entIndex){
 function WorldRemoveNotification(msg) {
   var entityIndex = msg.entityIndex
   var panel = $("#world_"+entityIndex)
-  worldPanels.splice(entityIndex, 1)
   if (panel)
   {
+    worldPanels.splice(entityIndex, 1)
     panel.DeleteAsync(0)
   }
 }

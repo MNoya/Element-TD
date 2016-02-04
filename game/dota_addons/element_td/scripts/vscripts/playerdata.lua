@@ -240,5 +240,6 @@ function StopHighlight(entity, playerID)
 	if entity and entity.highlight then
 		ParticleManager:DestroyParticle(entity.highlight, true)
 		CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "world_remove_notification", {entityIndex=entity:GetEntityIndex()} )
+		RemoveUnitFromSelection( entity )
 	end
 end

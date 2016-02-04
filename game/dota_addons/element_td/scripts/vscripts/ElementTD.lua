@@ -220,9 +220,6 @@ function ElementTD:EndGameForPlayer( playerID )
     for i,v in pairs(playerData.towers) do
         EntIndexToHScript(i):ForceKill(false)
     end
-    for j,k in pairs(playerData.clones) do
-        RemoveClone(EntIndexToHScript(j))
-    end
     for l,m in pairs(playerData.waveObject.creeps) do
         EntIndexToHScript(l):ForceKill(false)
     end
