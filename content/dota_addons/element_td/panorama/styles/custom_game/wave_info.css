@@ -63,6 +63,8 @@ DOTAAbilityImage
 {
     width: 32px;
     height: 32px;
+    border-radius: 32px;
+    border: 1px solid black;
 }
 
 .ability1

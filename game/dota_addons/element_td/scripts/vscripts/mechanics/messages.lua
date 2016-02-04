@@ -42,7 +42,7 @@ function ShowWaveBreakTimeMessage(playerID, waveNumber, breakTime, duration)
     Notifications:Top(playerID, {text=firstToUpper(element), style={["margin"]="-10px 15px 0px 15px",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, duration=duration})
     if abilityName and abilityName ~= "" then
         Notifications:Top(playerID, {text="#"..abilityName, style={["margin"]="-10px 15px 0px 0px",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, continue=true, duration=duration})    
-        Notifications:Top(playerID, {ability=abilityName, style={width="48px",height="48px", ["margin"]="-8px 0px 0px 0px"}, continue=true, duration=duration})
+        Notifications:Top(playerID, {ability=abilityName, style={["border-radius"]="48px", border="2px solid black", width="48px", height="48px", ["margin"]="-8px 0px 0px 0px"}, continue=true, duration=duration})
     end
 end
 
@@ -59,7 +59,7 @@ function ShowWaveSpawnMessage(playerID, waveNumber, duration)
         if abilityName ~= "creep_ability_boss" then
             Notifications:Top(playerID, {text="#"..abilityName, style={["margin-right"]="15px",["font-size"]="60px",color=elem_color}, continue=true, duration=duration})    
         end
-        Notifications:Top(playerID, {ability=abilityName, style={width="64px",height="64px"}, continue=true, duration=duration})
+        Notifications:Top(playerID, {ability=abilityName, style={["border-radius"]="64px", border="2px solid black"; width="60px", height="60px"}, continue=true, duration=duration})
     end
 end
 
