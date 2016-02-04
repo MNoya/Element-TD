@@ -39,10 +39,10 @@ function ShowWaveBreakTimeMessage(playerID, waveNumber, breakTime, duration)
     local elem_color = rgbToHex(GetElementColor(element))
     local abilityName = creepsKV[WAVE_CREEPS[waveNumber]].Ability2
 
-    Notifications:Top(playerID, {text=firstToUpper(element), style={["margin"]="0px 15px 0px 15px",["font-size"]="50px",color=elem_color}, duration=duration})
+    Notifications:Top(playerID, {text=firstToUpper(element), style={["margin"]="-10px 15px 0px 15px",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, duration=duration})
     if abilityName and abilityName ~= "" then
-        Notifications:Top(playerID, {text="#"..abilityName, style={["margin"]="0px 15px 0px 0px",["font-size"]="50px",color=elem_color}, continue=true, duration=duration})    
-        Notifications:Top(playerID, {ability=abilityName, style={width="64px",height="64px"}, continue=true, duration=duration})
+        Notifications:Top(playerID, {text="#"..abilityName, style={["margin"]="-10px 15px 0px 0px",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, continue=true, duration=duration})    
+        Notifications:Top(playerID, {ability=abilityName, style={width="48px",height="48px", ["margin"]="-8px 0px 0px 0px"}, continue=true, duration=duration})
     end
 end
 
