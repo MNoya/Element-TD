@@ -259,7 +259,6 @@
 		"Model"		"models/creeps/neutral_creeps/n_creep_black_dragon/n_creep_black_dragon.vmdl"
 		"ModelScale"		"0.8"
 		"BaseClass"		"npc_dota_creature"
-		"SoundSet"		""
 		"ScriptClass"		"CreepHeal"
 		"Ability1"		"dark_armor"
 		"Ability2"		"creep_ability_heal"
