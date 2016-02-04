@@ -143,6 +143,7 @@
 #TitleDuals
 {
     width: 17%;
+    margin-left: 17%;
     horizontal-align: left;
     vertical-align: bottom;
     text-align: center;
@@ -156,8 +157,8 @@
 
 #TitleTriples
 {
-    width: 17%;
-    horizontal-align: left;
+    width: 55%;
+    horizontal-align: right;
     vertical-align: bottom;
     text-align: center;
     font-weight: bold;

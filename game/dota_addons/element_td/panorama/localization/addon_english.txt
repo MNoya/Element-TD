@@ -80,6 +80,7 @@
         "error_not_enough_essence"                  "Not Enough Pure Essence"
         "error_invalid_build_position"              "You can't build there"
 
-        "etd_tower_table"       "Tower Table"
+        "etd_tower_table"                           "Tower Table"
+        "etd_tower_table_description"               "Shows an overview of the available towers"
     }
 }

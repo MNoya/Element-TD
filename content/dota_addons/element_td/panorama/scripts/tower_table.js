@@ -157,6 +157,16 @@ function OnMouseOut() {
     $.DispatchEvent( "DOTAHideAbilityTooltip", hovering );
 }
 
+function HoverToggle()
+{
+    $.DispatchEvent("DOTAShowTitleTextTooltip", $("#ImageLabel"), "#etd_tower_table", "#etd_tower_table_description");
+}
+
+function OnMouseOutToggle()
+{
+    $.DispatchEvent( "DOTAHideAbilityTooltip", $("#ImageLabel"));
+}
+
 (function(){
     $.Msg("Tower Tree Loaded")
     Container.AddClass("Hidden")

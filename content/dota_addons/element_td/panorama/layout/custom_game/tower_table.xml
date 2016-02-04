@@ -7,11 +7,11 @@
     </scripts>
     <Panel hittest="false" class="Root">
         <Panel hittest="false" class='ToggleButtonRoot'>
-            <Panel id="TowerTableButton" onactivate="Toggle()">
+            <Panel id="TowerTableButton" onmouseover="HoverToggle()" onmouseout='OnMouseOutToggle()' onactivate="Toggle()">
                 <Image id="ImageLabel" src="file://{images}/custom_game/tree_tower/button.png"/>
                 <Label id="TowersLabel" text="Towers"/>
             </Panel>
-            <Image id="ToggleGlyph" onactivate="Toggle()" src="file://{images}/custom_game/tree_tower/glyph.png"/>
+            <Image id="ToggleGlyph" onmouseover="HoverToggle()" onmouseout='OnMouseOutToggle()' onactivate="Toggle()" src="file://{images}/custom_game/tree_tower/glyph.png"/>
             <Panel id="ToggleButtonGlyph" onactivate="Toggle()">
                 <Image id="ToggleIcon" src="file://{images}/custom_game/tree_tower/icon.png"/>
             </Panel>
