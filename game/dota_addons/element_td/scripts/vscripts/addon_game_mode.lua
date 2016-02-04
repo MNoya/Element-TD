@@ -37,7 +37,7 @@ local requires =
     -- dual towers
     "towers/duals/MagicTower",
     "towers/duals/DiseaseTower",
-    "towers/duals/MushroomTower",
+    "towers/duals/MossTower",
     "towers/duals/LifeTower",
     "towers/duals/WellTower",
     "towers/duals/BlacksmithTower",
@@ -66,7 +66,7 @@ local requires =
     "towers/triples/EphemeralTower",
     "towers/triples/FlamethrowerTower",
     "towers/triples/HasteTower",
-    "towers/triples/TorrentTower",
+    "towers/triples/TidalTower",
     "towers/triples/NovaTower",
     "towers/triples/PolarTower",
     "towers/triples/JinxTower",

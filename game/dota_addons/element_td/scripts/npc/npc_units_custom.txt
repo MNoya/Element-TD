@@ -6142,7 +6142,7 @@
 	        "1"     "focused_earth_tower"
 	        "2"     "hydro_tower"
 	        "3"     "blacksmith_tower"
-	        "4"     "mushroom_tower"
+	        "4"     "moss_tower"
 	        "5"     "quark_tower"
 	        "6"     "gunpowder_tower"
 	    }
@@ -6937,7 +6937,7 @@
 	        "1"     "focused_nature_tower"
 	        "2"     "well_tower"
 	        "3"     "flame_tower"
-	        "4"     "mushroom_tower"
+	        "4"     "moss_tower"
 	        "5"     "life_tower"
 	        "6"     "disease_tower"
 	    }
@@ -10752,7 +10752,7 @@
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
 	}
-	"mushroom_tower"
+	"moss_tower"
 	{
 	    "BaseClass"                 "npc_dota_creature" 
 		"SoundSet"					"Tower.Water"
@@ -10798,7 +10798,7 @@
 		"AOE_Half"		"300"
 		"Damage"		"120"
 		"DamageType"		"nature"
-		"ScriptClass"		"MushroomTower"
+		"ScriptClass"		"MossTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
 		"AttackRange"		"1100"
@@ -10820,7 +10820,7 @@
 		"Upgrades"
 		{
 			"Count"		"5"
-			"1"		"mushroom_tower_2"
+			"1"		"moss_tower_2"
 			"2"		"quake_tower"
 			"3"		"enchantment_tower"
 			"4"		"ephemeral_tower"
@@ -10848,7 +10848,7 @@
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
 	}
-	"mushroom_tower_2"
+	"moss_tower_2"
 	{
 	    "BaseClass"                 "npc_dota_creature" 
 		"SoundSet"					"Tower.Water"
@@ -10894,7 +10894,7 @@
 		"AOE_Half"		"300"
 		"Damage"		"600"
 		"DamageType"		"nature"
-		"ScriptClass"		"MushroomTower"
+		"ScriptClass"		"MossTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
 		"AttackRange"		"1100"
@@ -10916,7 +10916,7 @@
 		"Upgrades"
 		{
 			"Count"		"1"
-			"1"		"mushroom_tower_3"
+			"1"		"moss_tower_3"
 		}
 		"AttackDamageMin"		"600"
 		"AttackDamageMax"		"600"
@@ -10938,7 +10938,7 @@
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
 	}
-	"mushroom_tower_3"
+	"moss_tower_3"
 	{
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
@@ -10987,7 +10987,7 @@
 		"AOE_Half"		"300"
 		"Damage"		"3000"
 		"DamageType"		"nature"
-		"ScriptClass"		"MushroomTower"
+		"ScriptClass"		"MossTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
 		"AttackRange"		"1100"
@@ -15845,7 +15845,7 @@
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
 	}
-	"torrent_tower"
+	"tidal_tower"
 	{
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
@@ -15892,7 +15892,7 @@
 		}
 		"Damage"		"300"
 		"DamageType"		"water"
-		"ScriptClass"		"TorrentTower"
+		"ScriptClass"		"TidalTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
 		"AttackRange"		"900"
@@ -15921,7 +15921,7 @@
 	
 	    "AOE_Full"		"200"
 		"AOE_Half"		"400"
-		"UpgradeIcon"		"towers/torrent_tower_douse"
+		"UpgradeIcon"		"towers/tidal_tower_douse"
 		"BuildTime"		"4"
 		"Requirements"
 		{
@@ -15932,7 +15932,7 @@
 		"Upgrades"
 		{
 			"Count"		"1"
-			"1"		"torrent_tower_2"
+			"1"		"tidal_tower_2"
 		}
 		"AttackDamageMin"		"300"
 		"AttackDamageMax"		"300"
@@ -15941,7 +15941,7 @@
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
 	}
-	"torrent_tower_2"
+	"tidal_tower_2"
 	{
 		"BaseClass"		"npc_dota_creature"
 		"SoundSet"		"Tower.Water"
@@ -15988,7 +15988,7 @@
 		}
 		"Damage"		"1500"
 		"DamageType"		"water"
-		"ScriptClass"		"TorrentTower"
+		"ScriptClass"		"TidalTower"
 		"TowerType"		"Normal"
 		"HasAbilityDesc"		"1"
 		"AttackRange"		"900"
@@ -16017,7 +16017,7 @@
 	
 		"AOE_Full"		"200"
 		"AOE_Half"		"400"
-		"UpgradeIcon"		"towers/torrent_tower_douse"
+		"UpgradeIcon"		"towers/tidal_tower_douse"
 		"BuildTime"		"4"
 		"Requirements"
 		{

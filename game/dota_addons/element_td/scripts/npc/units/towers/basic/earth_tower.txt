@@ -56,7 +56,7 @@
         "1"     "focused_earth_tower"
         "2"     "hydro_tower"
         "3"     "blacksmith_tower"
-        "4"     "mushroom_tower"
+        "4"     "moss_tower"
         "5"     "quark_tower"
         "6"     "gunpowder_tower"
     }

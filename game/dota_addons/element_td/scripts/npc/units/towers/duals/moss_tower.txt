@@ -1,4 +1,4 @@
-"mushroom_tower_2"
+"moss_tower"
 {
     "BaseClass"                 "npc_dota_creature" 
 	"SoundSet"					"Tower.Water"
@@ -22,7 +22,7 @@
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
     "MovementSpeed"             "0"
     "MovementTurnRate"          "1.0"
-    "StatusHealth"              "1250"
+    "StatusHealth"              "450"
     "StatusHealthRegen"         "0"
     "StatusMana"                "0"
     "StatusManaRegen"           "0"
@@ -32,9 +32,9 @@
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 	"VisionDaytimeRange"		"1900"
 	"VisionNighttimeRange"		"1900"
-	"Level"		"2"
-	"Cost"		"800"
-	"TotalCost"		"1250"
+	"Level"		"1"
+	"Cost"		"275"
+	"TotalCost"		"450"
 	"Element"
 	{
 		"1"		"nature"
@@ -42,9 +42,9 @@
 	}
 	"AOE_Full"		"150"
 	"AOE_Half"		"300"
-	"Damage"		"600"
+	"Damage"		"120"
 	"DamageType"		"nature"
-	"ScriptClass"		"MushroomTower"
+	"ScriptClass"		"MossTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"1100"
@@ -53,35 +53,41 @@
 	"ProjectileModel"		"particles/units/heroes/hero_furion/furion_base_attack.vpcf"
 	"ProjectileSpeed"		"2000"
 	"Model"		"models/heroes/earth_spirit/earth_spirit.vmdl"
-	"ModelScale"		"1.0"
+	"ModelScale"		"0.8"
     "ModelRotation"             "90"
     "ModelOffset"               "15"
 	"UpgradeIcon"		"brewmaster_earth_pulverize"
 	"BuildTime"		"3"
 	"Requirements"
 	{
-		"earth"		"2"
-		"nature"		"2"
+		"earth"		"1"
+		"nature"		"1"
 	}
 	"Upgrades"
 	{
-		"Count"		"1"
-		"1"		"mushroom_tower_3"
+		"Count"		"5"
+		"1"		"moss_tower_2"
+		"2"		"quake_tower"
+		"3"		"enchantment_tower"
+		"4"		"ephemeral_tower"
+		"5"		"roots_tower"
 	}
-	"AttackDamageMin"		"600"
-	"AttackDamageMax"		"600"
-    "Creature"
+	"AttackDamageMin"		"120"
+	"AttackDamageMax"		"120"
+    
+	"Creature"
     {
-       "AttachWearables" // Vanquishing Demons General
-       {
-            "1" { "ItemDef" "6436" } // Vanquishing Demons Earthforce
-            "2" { "ItemDef" "6433" } // Vanquishing Demons Earthcore Belt
-            "3" { "ItemDef" "6526" } // Stone Monkey Spirits
-            "4" { "ItemDef" "6432" } // Vanquishing Demons Geomagnetic Arm Guard
-            "5" { "ItemDef" "6435" } // Vanquishing Demons Ornaments of Annihilation
-            "6" { "ItemDef" "6434" } // Vanquishing Demons Ritual Headgear
-            "7" { "ItemDef" "482" } // Earth Spirit's Head
-       }
+        "AttachWearables" // Default npc_dota_hero_earth_spirit
+        {
+            "1" { "ItemDef" "475" } // Earth Spirit's Staff
+            "2" { "ItemDef" "480" } // Earth Spirit's Neck
+            "3" { "ItemDef" "481" } // Earth Spirit's Arms
+            "4" { "ItemDef" "526" } // Earth Spirit's Ambient Effects
+            "5" { "ItemDef" "479" } // Earth Spirit's Belt
+            "6" { "ItemDef" "482" } // Earth Spirit's Head
+            "7" { "ItemDef" "477" } // Earth Spirit's Head Accessory
+            "8" { "ItemDef" "8654" } // Earth Spirit's Stone Remnant
+        }
     }
 
     // Building Size

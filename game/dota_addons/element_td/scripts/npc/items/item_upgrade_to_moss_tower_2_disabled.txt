@@ -1,4 +1,4 @@
-"item_upgrade_to_mushroom_tower_disabled"
+"item_upgrade_to_moss_tower_2_disabled"
 {
 	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"BaseClass"		"item_datadriven"
@@ -9,12 +9,12 @@
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
 	"AbilityTextureName"		"item_moss_disabled"
-	"Cost"		"325"
+	"Cost"		"750"
 	"Requirements"
 	{
-		"earth"		"1"
-		"earth"		"1"
-		"nature"		"1"
-		"nature"		"1"
+		"earth"		"2"
+		"earth"		"2"
+		"nature"		"2"
+		"nature"		"2"
 	}
 }

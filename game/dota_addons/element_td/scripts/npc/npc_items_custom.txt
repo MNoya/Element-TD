@@ -2814,6 +2814,156 @@
 			"fire"		"1"
 		}
 	}
+	"item_upgrade_to_moss_tower"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"moss_tower"
+			}
+		}
+		"AbilityTextureName"		"item_moss"
+		"Cost"		"325"
+		"Requirements"
+		{
+			"earth"		"1"
+			"earth"		"1"
+			"nature"		"1"
+			"nature"		"1"
+		}
+	}
+	"item_upgrade_to_moss_tower_2"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"moss_tower_2"
+			}
+		}
+		"AbilityTextureName"		"item_moss"
+		"Cost"		"750"
+		"Requirements"
+		{
+			"earth"		"2"
+			"earth"		"2"
+			"nature"		"2"
+			"nature"		"2"
+		}
+	}
+	"item_upgrade_to_moss_tower_2_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_moss_disabled"
+		"Cost"		"750"
+		"Requirements"
+		{
+			"earth"		"2"
+			"earth"		"2"
+			"nature"		"2"
+			"nature"		"2"
+		}
+	}
+	"item_upgrade_to_moss_tower_3"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"moss_tower_3"
+			}
+		}
+		"AbilityTextureName"		"item_moss"
+		"Cost"		"1900"
+		"Requirements"
+		{
+			"earth"		"3"
+			"earth"		"3"
+			"nature"		"3"
+			"nature"		"3"
+		}
+	}
+	"item_upgrade_to_moss_tower_3_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_moss_disabled"
+		"Cost"		"1900"
+		"Requirements"
+		{
+			"earth"		"3"
+			"earth"		"3"
+			"nature"		"3"
+			"nature"		"3"
+		}
+	}
+	"item_upgrade_to_moss_tower_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_moss_disabled"
+		"Cost"		"325"
+		"Requirements"
+		{
+			"earth"		"1"
+			"earth"		"1"
+			"nature"		"1"
+			"nature"		"1"
+		}
+	}
 	"item_upgrade_to_muck_tower"
 	{
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -2920,156 +3070,6 @@
 			"earth"		"1"
 			"water"		"1"
 			"water"		"1"
-		}
-	}
-	"item_upgrade_to_mushroom_tower"
-	{
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"		"item_datadriven"
-		"AbilityManaCost"		"0"
-		"ItemShareability"		"ITEM_NOT_SHAREABLE"
-		"ItemSellable"		"0"
-		"ItemKillable"		"0"
-		"ItemPurchasable"		"0"
-		"ItemDroppable"		"0"
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
-				"Function"		"UpgradeTower"
-				"tower"		"mushroom_tower"
-			}
-		}
-		"AbilityTextureName"		"item_moss"
-		"Cost"		"325"
-		"Requirements"
-		{
-			"earth"		"1"
-			"earth"		"1"
-			"nature"		"1"
-			"nature"		"1"
-		}
-	}
-	"item_upgrade_to_mushroom_tower_2"
-	{
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"		"item_datadriven"
-		"AbilityManaCost"		"0"
-		"ItemShareability"		"ITEM_NOT_SHAREABLE"
-		"ItemSellable"		"0"
-		"ItemKillable"		"0"
-		"ItemPurchasable"		"0"
-		"ItemDroppable"		"0"
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
-				"Function"		"UpgradeTower"
-				"tower"		"mushroom_tower_2"
-			}
-		}
-		"AbilityTextureName"		"item_moss"
-		"Cost"		"750"
-		"Requirements"
-		{
-			"earth"		"2"
-			"earth"		"2"
-			"nature"		"2"
-			"nature"		"2"
-		}
-	}
-	"item_upgrade_to_mushroom_tower_2_disabled"
-	{
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"		"item_datadriven"
-		"AbilityManaCost"		"0"
-		"ItemShareability"		"ITEM_NOT_SHAREABLE"
-		"ItemSellable"		"0"
-		"ItemKillable"		"0"
-		"ItemPurchasable"		"0"
-		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_moss_disabled"
-		"Cost"		"750"
-		"Requirements"
-		{
-			"earth"		"2"
-			"earth"		"2"
-			"nature"		"2"
-			"nature"		"2"
-		}
-	}
-	"item_upgrade_to_mushroom_tower_3"
-	{
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"		"item_datadriven"
-		"AbilityManaCost"		"0"
-		"ItemShareability"		"ITEM_NOT_SHAREABLE"
-		"ItemSellable"		"0"
-		"ItemKillable"		"0"
-		"ItemPurchasable"		"0"
-		"ItemDroppable"		"0"
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
-				"Function"		"UpgradeTower"
-				"tower"		"mushroom_tower_3"
-			}
-		}
-		"AbilityTextureName"		"item_moss"
-		"Cost"		"1900"
-		"Requirements"
-		{
-			"earth"		"3"
-			"earth"		"3"
-			"nature"		"3"
-			"nature"		"3"
-		}
-	}
-	"item_upgrade_to_mushroom_tower_3_disabled"
-	{
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"		"item_datadriven"
-		"AbilityManaCost"		"0"
-		"ItemShareability"		"ITEM_NOT_SHAREABLE"
-		"ItemSellable"		"0"
-		"ItemKillable"		"0"
-		"ItemPurchasable"		"0"
-		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_moss_disabled"
-		"Cost"		"1900"
-		"Requirements"
-		{
-			"earth"		"3"
-			"earth"		"3"
-			"nature"		"3"
-			"nature"		"3"
-		}
-	}
-	"item_upgrade_to_mushroom_tower_disabled"
-	{
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"		"item_datadriven"
-		"AbilityManaCost"		"0"
-		"ItemShareability"		"ITEM_NOT_SHAREABLE"
-		"ItemSellable"		"0"
-		"ItemKillable"		"0"
-		"ItemPurchasable"		"0"
-		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_moss_disabled"
-		"Cost"		"325"
-		"Requirements"
-		{
-			"earth"		"1"
-			"earth"		"1"
-			"nature"		"1"
-			"nature"		"1"
 		}
 	}
 	"item_upgrade_to_nova_tower"
@@ -4464,7 +4464,7 @@
 			"light"		"1"
 		}
 	}
-	"item_upgrade_to_torrent_tower"
+	"item_upgrade_to_tidal_tower"
 	{
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"		"item_datadriven"
@@ -4481,7 +4481,7 @@
 				"TARGET"		"CASTER"
 				"ScriptFile"		"scripts/vscripts/spells.lua"
 				"Function"		"UpgradeTower"
-				"tower"		"torrent_tower"
+				"tower"		"tidal_tower"
 			}
 		}
 		"AbilityTextureName"		"item_tidal"
@@ -4496,7 +4496,7 @@
 			"light"		"1"
 		}
 	}
-	"item_upgrade_to_torrent_tower_2"
+	"item_upgrade_to_tidal_tower_2"
 	{
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"BaseClass"		"item_datadriven"
@@ -4513,7 +4513,7 @@
 				"TARGET"		"CASTER"
 				"ScriptFile"		"scripts/vscripts/spells.lua"
 				"Function"		"UpgradeTower"
-				"tower"		"torrent_tower_2"
+				"tower"		"tidal_tower_2"
 			}
 		}
 		"AbilityTextureName"		"item_tidal"
@@ -4528,7 +4528,7 @@
 			"light"		"2"
 		}
 	}
-	"item_upgrade_to_torrent_tower_2_disabled"
+	"item_upgrade_to_tidal_tower_2_disabled"
 	{
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"		"item_datadriven"
@@ -4550,7 +4550,7 @@
 			"light"		"2"
 		}
 	}
-	"item_upgrade_to_torrent_tower_disabled"
+	"item_upgrade_to_tidal_tower_disabled"
 	{
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"		"item_datadriven"

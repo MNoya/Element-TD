@@ -1,4 +1,4 @@
-"item_upgrade_to_mushroom_tower_2_disabled"
+"item_upgrade_to_tidal_tower_2_disabled"
 {
 	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"BaseClass"		"item_datadriven"
@@ -8,13 +8,15 @@
 	"ItemKillable"		"0"
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
-	"AbilityTextureName"		"item_moss_disabled"
-	"Cost"		"750"
+	"AbilityTextureName"		"item_tidal_disabled"
+	"Cost"		"3500"
 	"Requirements"
 	{
-		"earth"		"2"
-		"earth"		"2"
+		"water"		"2"
+		"water"		"2"
 		"nature"		"2"
 		"nature"		"2"
+		"light"		"2"
+		"light"		"2"
 	}
 }

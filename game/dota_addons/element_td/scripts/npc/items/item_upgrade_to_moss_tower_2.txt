@@ -1,4 +1,4 @@
-"item_upgrade_to_mushroom_tower_2"
+"item_upgrade_to_moss_tower_2"
 {
 	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"BaseClass"		"item_datadriven"
@@ -15,7 +15,7 @@
 			"TARGET"		"CASTER"
 			"ScriptFile"		"scripts/vscripts/spells.lua"
 			"Function"		"UpgradeTower"
-			"tower"		"mushroom_tower_2"
+			"tower"		"moss_tower_2"
 		}
 	}
 	"AbilityTextureName"		"item_moss"

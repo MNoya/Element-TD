@@ -1,4 +1,4 @@
-"item_upgrade_to_torrent_tower_2_disabled"
+"item_upgrade_to_moss_tower_3_disabled"
 {
 	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"BaseClass"		"item_datadriven"
@@ -8,15 +8,13 @@
 	"ItemKillable"		"0"
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
-	"AbilityTextureName"		"item_tidal_disabled"
-	"Cost"		"3500"
+	"AbilityTextureName"		"item_moss_disabled"
+	"Cost"		"1900"
 	"Requirements"
 	{
-		"water"		"2"
-		"water"		"2"
-		"nature"		"2"
-		"nature"		"2"
-		"light"		"2"
-		"light"		"2"
+		"earth"		"3"
+		"earth"		"3"
+		"nature"		"3"
+		"nature"		"3"
 	}
 }

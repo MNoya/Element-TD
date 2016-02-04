@@ -1,7 +1,7 @@
 //============================================================//
-// Mushroom Tower: Spore
+// Moss Tower: Spore
 //============================================================//
-"mushroom_tower_spore"
+"moss_tower_spore"
 {
 	"BaseClass"						"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"

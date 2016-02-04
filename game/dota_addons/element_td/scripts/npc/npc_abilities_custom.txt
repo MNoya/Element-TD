@@ -2976,6 +2976,17 @@
 			}
 		}
 	}
+	//============================================================//
+	// Moss Tower: Spore
+	//============================================================//
+	"moss_tower_spore"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"towers/moss"
+	}
 	//=================================================================================================================
 	// Muck Tower: Sludge
 	//=================================================================================================================
@@ -3054,17 +3065,6 @@
 				"slow"					"-10 -30"
 			}
 		}
-	}
-	//============================================================//
-	// Mushroom Tower: Spore
-	//============================================================//
-	"mushroom_tower_spore"
-	{
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel"						"1"
-		"AbilityTextureName"			"towers/moss"
 	}
 	//=================================================================================================================
 	// Nova Tower: Explode

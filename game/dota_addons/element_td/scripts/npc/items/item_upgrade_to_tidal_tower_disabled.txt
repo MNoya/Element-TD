@@ -1,4 +1,4 @@
-"item_upgrade_to_torrent_tower_disabled"
+"item_upgrade_to_tidal_tower_disabled"
 {
 	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"BaseClass"		"item_datadriven"

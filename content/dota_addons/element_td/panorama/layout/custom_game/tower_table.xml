@@ -88,8 +88,8 @@
                         <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('life','nature','light')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="life" src="file://{images}/spellicons/towers/life.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('mushroom','nature','earth')" onmouseout='OnMouseOut()'>
-                            <Image class='AbilityImage' id="mushroom" src="file://{images}/spellicons/towers/moss.png"/>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('moss','nature','earth')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="moss" src="file://{images}/spellicons/towers/moss.png"/>
                         </Panel>
                     </Panel>
                     <Panel hittest="false" class='TriplesContainer' id="natureTriples">

@@ -56,7 +56,7 @@
         "1"     "focused_nature_tower"
         "2"     "well_tower"
         "3"     "flame_tower"
-        "4"     "mushroom_tower"
+        "4"     "moss_tower"
         "5"     "life_tower"
         "6"     "disease_tower"
     }

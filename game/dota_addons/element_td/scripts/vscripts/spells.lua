@@ -1,8 +1,6 @@
 -- spells.lua
 -- handles player spell upgrading
 
-local towersKV = LoadKeyValues("scripts/kv/towers.kv")
-
 function UpdatePlayerSpells(playerID)
 	local playerData = GetPlayerData(playerID)
 	local hero = ElementTD.vPlayerIDToHero[playerID]
@@ -285,15 +283,15 @@ function UpdateUpgrades(tower)
 		local count = tonumber(upgrades.Count)
 		for i = 1, count, 1 do
 			local upgrade = upgrades[tostring(i)]
-			local cost = tonumber(towersKV[upgrade].Cost)
+			local cost = tonumber(NPC_UNITS_CUSTOM[upgrade].Cost)
 			local suffix = ""
 
 			--[[if cost > PlayerResource:GetGold(playerID) then
 				suffix = "_disabled"
 			end]]
 			-- Put a _disabled item if the requirement isn't met yet
-			if towersKV[upgrade].Requirements then
-				for element, level in pairs(towersKV[upgrade].Requirements) do
+			if NPC_UNITS_CUSTOM[upgrade].Requirements then
+				for element, level in pairs(NPC_UNITS_CUSTOM[upgrade].Requirements) do
 					if level > data.elements[element] then
 						suffix = "_disabled"
 					end

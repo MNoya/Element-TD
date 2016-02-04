@@ -1,9 +1,9 @@
--- Torrent (Light + Nature + Water)
--- This is a single target tower. It has an ability that charges up every X attacks. Ability maxes out at level 10. 
--- Ability does damage in an area of effect around the tower. Ability is autocast that fires at level 10 but can be toggled off. 
--- Ability resets back to level 1 after being used.
+-- Tidal (Light + Nature + Water)
+-- Every attack (this is when it fires, not when the attack lands) decreases splash by 10/20 AoE (this AoE reduction is for both tiers). 
+-- It also increases damage by 30/150. Damage increase caps out when 0 splash is reached. Resets after 1 second of not attacking.
+-- By the end, it should reach a maximum of 900 / 4,500 damage.
 
-TorrentTower = createClass({
+TidalTower = createClass({
         tower = nil,
         towerClass = "",
 
@@ -13,11 +13,11 @@ TorrentTower = createClass({
         end
     },
     {
-        className = "TorrentTower"
+        className = "TidalTower"
     },
 nil)
 
-function TorrentTower:ResetDamage(keys)
+function TidalTower:ResetDamage(keys)
     if self.resetTimer then
         Timers:RemoveTimer(self.resetTimer)
     end
@@ -25,7 +25,7 @@ function TorrentTower:ResetDamage(keys)
     self.tower:RemoveModifierByName("modifier_tidal_splash_decay")
 end
 
-function TorrentTower:OnAttackLanded(keys)
+function TidalTower:OnAttackLanded(keys)
     local target = keys.target
     local damage = ApplyAttackDamageFromModifiers(self.tower:GetAverageTrueAttackDamage(), self.tower)
 
@@ -47,7 +47,7 @@ function TorrentTower:OnAttackLanded(keys)
     end)
 end
 
-function TorrentTower:OnCreated()
+function TidalTower:OnCreated()
     self.ability = AddAbility(self.tower, "tidal_tower_splash_decay", self.tower:GetLevel())
     self.aoeDecay = GetAbilitySpecialValue("tidal_tower_splash_decay", "aoe")
     self.fullAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))
@@ -58,4 +58,4 @@ function TorrentTower:OnCreated()
     self.resetTimer = nil
 end
 
-RegisterTowerClass(TorrentTower, TorrentTower.className)
+RegisterTowerClass(TidalTower, TidalTower.className)

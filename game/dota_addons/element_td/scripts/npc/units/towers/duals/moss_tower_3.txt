@@ -1,4 +1,4 @@
-"mushroom_tower_3"
+"moss_tower_3"
 {
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
@@ -47,7 +47,7 @@
 	"AOE_Half"		"300"
 	"Damage"		"3000"
 	"DamageType"		"nature"
-	"ScriptClass"		"MushroomTower"
+	"ScriptClass"		"MossTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"1100"

@@ -1,4 +1,4 @@
-"torrent_tower"
+"tidal_tower_2"
 {
 	"BaseClass"		"npc_dota_creature"
 	"SoundSet"		"Tower.Water"
@@ -24,7 +24,7 @@
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
 	"MovementSpeed"		"0"
 	"MovementTurnRate"		"1.0"
-	"StatusHealth"		"1500"
+	"StatusHealth"		"4500"
 	"StatusHealthRegen"		"0"
 	"StatusMana"		"0"
 	"StatusManaRegen"		"0"
@@ -34,18 +34,18 @@
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 	"VisionDaytimeRange"		"1900"
 	"VisionNighttimeRange"		"1900"
-	"Level"		"1"
-	"Cost"		"1050"
-	"TotalCost"		"1500"
+	"Level"		"2"
+	"Cost"		"3000"
+	"TotalCost"		"4500"
 	"Element"
 	{
 		"1"		"water"
 		"2"		"nature"
 		"3"		"light"
 	}
-	"Damage"		"300"
+	"Damage"		"1500"
 	"DamageType"		"water"
-	"ScriptClass"		"TorrentTower"
+	"ScriptClass"		"TidalTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"900"
@@ -55,40 +55,38 @@
 	"ProjectileSpeed"		"3000"
 
     "Model"             "models/heroes/siren/siren.vmdl"
-    "ModelScale"        "1.0"
+    "ModelScale"        "1.2"
     "ModelRotation"     "90"
     "ModelOffset"       "15"
 	"Creature"
     {
-        "AttachWearables" // The Slithereen Knight Set
+        "AttachWearables" // Iceborn Trinity
         {
-            "1" { "ItemDef" "5326" } // Might of the Slithereen Knight
-            "2" { "ItemDef" "5322" } // Breastplate of the Slithereen Knight
-            "3" { "ItemDef" "5323" } // Helm of the Slithereen Knight
-            "4" { "ItemDef" "5324" } // Bite of the Slithereen Knight - Off-Hand
-            "5" { "ItemDef" "5325" } // Tail of the Slithereen Knight
+            "1" { "ItemDef" "7041" } // Cutlass of the Iceborn Trinity
+            "2" { "ItemDef" "7042" } // Offhand Cutlass of the Iceborn Trinity
+            "3" { "ItemDef" "7043" } // Scales of the Iceborn Trinity
+            "4" { "ItemDef" "7040" } // Crown of the Iceborn Trinity
+            "5" { "ItemDef" "7039" } // Clasp of the Iceborn Trinity
             "6" { "ItemDef" "532" } // Naga Siren's Ambient Effects
             "7" { "ItemDef" "191" } // Naga Siren's Head
         }
     }
 
-    "AOE_Full"		"200"
+	"AOE_Full"		"200"
 	"AOE_Half"		"400"
-	"UpgradeIcon"		"towers/torrent_tower_douse"
+	"UpgradeIcon"		"towers/tidal_tower_douse"
 	"BuildTime"		"4"
 	"Requirements"
 	{
-		"water"		"1"
-		"nature"		"1"
-		"light"		"1"
+		"water"		"2"
+		"nature"		"2"
+		"light"		"2"
 	}
 	"Upgrades"
 	{
-		"Count"		"1"
-		"1"		"torrent_tower_2"
 	}
-	"AttackDamageMin"		"300"
-	"AttackDamageMax"		"300"
+	"AttackDamageMin"		"1500"
+	"AttackDamageMax"		"1500"
 
 	// Building Size
     "ConstructionSize"          "2"

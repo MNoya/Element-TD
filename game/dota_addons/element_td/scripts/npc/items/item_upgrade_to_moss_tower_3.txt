@@ -1,4 +1,4 @@
-"item_upgrade_to_torrent_tower_2"
+"item_upgrade_to_moss_tower_3"
 {
 	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"BaseClass"		"item_datadriven"
@@ -15,18 +15,16 @@
 			"TARGET"		"CASTER"
 			"ScriptFile"		"scripts/vscripts/spells.lua"
 			"Function"		"UpgradeTower"
-			"tower"		"torrent_tower_2"
+			"tower"		"moss_tower_3"
 		}
 	}
-	"AbilityTextureName"		"item_tidal"
-	"Cost"		"3500"
+	"AbilityTextureName"		"item_moss"
+	"Cost"		"1900"
 	"Requirements"
 	{
-		"water"		"2"
-		"water"		"2"
-		"nature"		"2"
-		"nature"		"2"
-		"light"		"2"
-		"light"		"2"
+		"earth"		"3"
+		"earth"		"3"
+		"nature"		"3"
+		"nature"		"3"
 	}
 }

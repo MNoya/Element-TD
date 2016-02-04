@@ -1,9 +1,9 @@
--- Mushroom Tower class (Nature + Earth)
+-- Moss Tower class (Nature + Earth)
 -- This is a tower which deals damage proportional to the health of the target. 
 -- So damage is equal to (Current HP/Max HP)*Base Damage.)
 -- Basically the opposite of a Disease Tower
 
-MushroomTower = createClass({
+MossTower = createClass({
         tower = nil,
         towerClass = "",
 
@@ -13,15 +13,17 @@ MushroomTower = createClass({
         end
     },
     {
-        className = "MushroomTower"
+        className = "MossTower"
     },
 nil)    
 
-function MushroomTower:OnAttackLanded(keys)
+function MossTower:OnAttackLanded(keys)
     local target = keys.target    
     local damage = self.tower:GetAverageTrueAttackDamage()
     local popupDamage = damage * (1+target:GetHealthPercent() * 0.01)
-    PopupGreenCriticalDamage(self.tower, math.floor(popupDamage))
+    if target:IsAlive() then
+        PopupGreenCriticalDamage(self.tower, math.floor(popupDamage))
+    end
 
     local creepsInHalfAOE = GetCreepsInArea(target:GetOrigin(), self.halfAOE)    
     local creepsInFullAOE = GetCreepsInArea(target:GetOrigin(), self.fullAOE)    
@@ -40,11 +42,10 @@ function MushroomTower:OnAttackLanded(keys)
 
 end
 
-function MushroomTower:OnCreated()
+function MossTower:OnCreated()
     self.fullAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))    
-    self.halfAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))    
-    --this ability is just for looks, it doesn't actually do anything :P
-    AddAbility(self.tower, "mushroom_tower_spore")     
+    self.halfAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
+    AddAbility(self.tower, "moss_tower_spore")     
 end
 
-RegisterTowerClass(MushroomTower, MushroomTower.className)    
+RegisterTowerClass(MossTower, MossTower.className)    
