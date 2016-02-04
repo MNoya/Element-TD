@@ -539,6 +539,14 @@ function ElementTD:FilterExecuteOrder( filterTable )
         end
     end
 
+    -- Glyph
+    if order_type == DOTA_UNIT_ORDER_GLYPH then
+        if PlayerResource:IsValidPlayerID(issuer) then
+            CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(issuer), "glyph_override", {} )
+        end
+        return false
+    end
+
     return true
 end
 

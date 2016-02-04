@@ -170,6 +170,7 @@ function OnMouseOutToggle()
 (function(){
     $.Msg("Tower Tree Loaded")
     Container.AddClass("Hidden")
+    GameEvents.Subscribe("glyph_override", Toggle )
     GameEvents.Subscribe("etd_update_elements", UpdateElements )
 
     Game.AddCommand( "+ToggleTowerTable", Toggle, "", 0 );
