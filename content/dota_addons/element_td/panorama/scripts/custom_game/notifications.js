@@ -120,8 +120,17 @@ function WorldNotification(msg) {
   notification.html = true;
   notification.text = $.Localize(text);
   notification.AddClass('WorldBox');
+
+  // Don't let an entity have more than 1 active notification
+  if (worldPanels[entityIndex])
+  {
+    var panel = $("#world_"+entityIndex)
+    panel.DeleteAsync(0)
+  }
+  
   worldPanels[entityIndex] = notification
   notification.entity = entityIndex
+  notification.visible = false
 }
 
 function UpdateWorldPanelPositions() {
