@@ -6,7 +6,7 @@ Element Tower Defense
 A Dota 2 port of the classic WC3 tower defense map.<br>
 **Programmer:** [Quintinity], [A_Dizzle], [Noya]<br>
 **Mapper:** [Azarak]<br>
-**Designer:** [Karawasa]<br>
+**Designer:** [Karawasa], [WindStrike]<br>
 **Special thanks to:** [Jicyphex], [Nullscope], [BMD], and [EinAlex]
 
 [Quintinity]:http://steamcommunity.com/id/quintinity/
@@ -18,4 +18,5 @@ A Dota 2 port of the classic WC3 tower defense map.<br>
 [EinAlex]:http://steamcommunity.com/profiles/76561197972809947/
 [A_Dizzle]:http://steamcommunity.com/id/a_dizzle/
 [Noya]:http://steamcommunity.com/id/mnoya/
+[WindStrike]:http://steamcommunity.com/profiles/76561197995227322
 [EleTD]:http://eletd.com/
