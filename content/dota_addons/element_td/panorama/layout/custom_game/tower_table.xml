@@ -19,6 +19,9 @@
         <Panel hittest="false" id="Container">
             <Panel hittest="false" id="TitleContainer">
                 <Label id="Title" text="#etd_tower_table"/>
+                <Label id="TitleElements" text="Elements"/>
+                <Label id="TitleDuals" text="Duals"/>
+                <Label id="TitleTriples" text="Triples"/>
             </Panel>
             <Panel hittest="false" id="ElementsContainer">
                 <Panel hittest="false" id="WaterContainer">

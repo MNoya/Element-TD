@@ -120,7 +120,49 @@
     text-align: center;
     font-weight: bold;
     color: #FFF;
-    font-size: 30px;
+    font-size: 35px;
+    text-shadow: 0px 0px 5px 3.0 #000;
+    font-family: Radiance;
+    text-transform: uppercase;
+}
+
+#TitleElements
+{
+    width: 14%;
+    horizontal-align: left;
+    vertical-align: bottom;
+    text-align: center;
+    font-weight: bold;
+    color: #FFF;
+    font-size: 20px;
+    text-shadow: 0px 0px 5px 3.0 #000;
+    font-family: Radiance;
+    text-transform: uppercase;
+}
+
+#TitleDuals
+{
+    width: 17%;
+    horizontal-align: left;
+    vertical-align: bottom;
+    text-align: center;
+    font-weight: bold;
+    color: #FFF;
+    font-size: 20px;
+    text-shadow: 0px 0px 5px 3.0 #000;
+    font-family: Radiance;
+    text-transform: uppercase;
+}
+
+#TitleTriples
+{
+    width: 17%;
+    horizontal-align: left;
+    vertical-align: bottom;
+    text-align: center;
+    font-weight: bold;
+    color: #FFF;
+    font-size: 20px;
     text-shadow: 0px 0px 5px 3.0 #000;
     font-family: Radiance;
     text-transform: uppercase;
