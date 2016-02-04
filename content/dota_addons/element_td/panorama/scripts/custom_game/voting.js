@@ -175,7 +175,7 @@ function OnDropDownChanged( setting )
 	else if (setting == "elements")
 		elementDesc.text = $.Localize(elementModes[parseInt(elementDD.GetSelected().id)][1]);
 	else if (setting == "endless")
-		endlessDesc.text = e$.Localize(ndlessModes[parseInt(endlessDD.GetSelected().id)][1]);
+		endlessDesc.text = $.Localize(endlessModes[parseInt(endlessDD.GetSelected().id)][1]);
 	else if (setting == "order")
 		orderDesc.text = $.Localize(orderModes[parseInt(orderDD.GetSelected().id)][1]);
 	else if (setting == "length")

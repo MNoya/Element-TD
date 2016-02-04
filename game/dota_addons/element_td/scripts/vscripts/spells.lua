@@ -16,6 +16,7 @@ function UpdatePlayerSpells(playerID)
 					if MeetsAbilityElementRequirements(enabledAbilityName, playerID) then
 						AddAbility(hero, enabledAbilityName, 1)
 						hero:SwapAbilities(enabledAbilityName, abilityName, true, false)
+						hero:RemoveAbility(abilityName)
 					end
 				end
 			end
