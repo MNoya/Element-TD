@@ -1,0 +1,10 @@
+//============================================================//
+// Build Nature Tower (Disabled)
+//============================================================//
+"build_nature_tower_disabled"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "MaxLevel"                      "0"
+    "AbilityTextureName"            "elements/nature"
+}

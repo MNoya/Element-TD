@@ -10,7 +10,14 @@ function UpdatePlayerSpells(playerID)
 		for i=0,15 do
 			local ability = hero:GetAbilityByIndex(i)
 			if ability then
-				ability:SetActivated(MeetsAbilityElementRequirements(ability:GetAbilityName(), playerID))
+				local abilityName = ability:GetAbilityName()
+				if string.match(abilityName, "_disabled") then
+					local enabledAbilityName = string.gsub(abilityName, "_disabled", "")
+					if MeetsAbilityElementRequirements(enabledAbilityName, playerID) then
+						AddAbility(hero, enabledAbilityName, 1)
+						hero:SwapAbilities(enabledAbilityName, abilityName, true, false)
+					end
+				end
 			end
 		end
 

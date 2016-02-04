@@ -34,6 +34,16 @@
 	    }
 	}
 	//============================================================//
+	// Build Dark Tower (Disabled)
+	//============================================================//
+	"build_dark_tower_disabled"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "MaxLevel"                      "0"
+	    "AbilityTextureName"            "elements/dark"
+	}
+	//============================================================//
 	// Build Earth Tower
 	//============================================================//
 	"build_earth_tower"
@@ -65,6 +75,16 @@
 	            "Function"          "Build"
 	        }
 	    }
+	}
+	//============================================================//
+	// Build Earth Tower (Disabled)
+	//============================================================//
+	"build_earth_tower_disabled"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "MaxLevel"                      "0"
+	    "AbilityTextureName"            "elements/earth"
 	}
 	//============================================================//
 	// Build Fire Tower
@@ -100,6 +120,16 @@
 	    }
 	}
 	//============================================================//
+	// Build Fire Tower (Disabled)
+	//============================================================//
+	"build_fire_tower_disabled"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "MaxLevel"                      "0"
+	    "AbilityTextureName"            "elements/fire"
+	}
+	//============================================================//
 	// Build Light Tower
 	//============================================================//
 	"build_light_tower"
@@ -131,6 +161,16 @@
 	            "Function"          "Build"
 	        }
 	    }
+	}
+	//============================================================//
+	// Build Light Tower (Disabled)
+	//============================================================//
+	"build_light_tower_disabled"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "MaxLevel"                      "0"
+	    "AbilityTextureName"            "elements/light"
 	}
 	//============================================================//
 	// Build Nature Tower
@@ -166,6 +206,16 @@
 	    }
 	}
 	//============================================================//
+	// Build Nature Tower (Disabled)
+	//============================================================//
+	"build_nature_tower_disabled"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "MaxLevel"                      "0"
+	    "AbilityTextureName"            "elements/nature"
+	}
+	//============================================================//
 	// Build Water Tower
 	//============================================================//
 	"build_water_tower"
@@ -197,6 +247,17 @@
 	            "Function"          "Build"
 	        }
 	    }
+	}
+	//============================================================//
+	// Build Water Tower (Disabled)
+	//============================================================//
+	"build_water_tower_disabled"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "MaxLevel"                      "0"
+	    "AbilityTextureName"            "elements/water"
+	    "AbilityGoldCost"               "175"
 	}
 	//============================================================//
 	// Creep Ability: Boss									      //

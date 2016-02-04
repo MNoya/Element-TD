@@ -389,14 +389,6 @@ function ElementTD:InitializeHero(playerID, hero)
     SCORING_OBJECTS[playerID] = ScoringObject(playerID)
     playerData.scoreObject = SCORING_OBJECTS[playerID]
 
-    -- Teach building abilities
-    for i=0,5 do
-        local ability = hero:GetAbilityByIndex(i)
-        if ability then
-            ability:SetLevel(1)
-        end
-    end
-
     -- Give building items
     hero:AddItem(CreateItem("item_build_arrow_tower", hero, hero))
     hero:AddItem(CreateItem("item_build_cannon_tower", hero, hero))

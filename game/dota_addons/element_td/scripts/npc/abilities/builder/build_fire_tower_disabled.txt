@@ -1,0 +1,10 @@
+//============================================================//
+// Build Fire Tower (Disabled)
+//============================================================//
+"build_fire_tower_disabled"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "MaxLevel"                      "0"
+    "AbilityTextureName"            "elements/fire"
+}
