@@ -70,6 +70,8 @@ function DamageEntity(entity, attacker, damage)
 			goldBounty = attacker.scriptObject:ModifyGold(goldBounty)
 			entity:SetMaximumGoldBounty(goldBounty)
 			entity:SetMinimumGoldBounty(goldBounty)
+			local playerData = GetPlayerData(attacker:GetPlayerOwnerID())
+			playerData.goldTowerEarned = playerData.goldTowerEarned + goldBounty
 
 			local origin = entity:GetAbsOrigin()
 			origin.z = origin.z+128

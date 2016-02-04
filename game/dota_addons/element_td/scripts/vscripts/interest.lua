@@ -19,16 +19,21 @@ function InterestManager:StartInterestTimer()
 				if plyID then
 					local ply = PlayerResource:GetPlayer(plyID)
 					local hero = ElementTD.vPlayerIDToHero[plyID]
-					if hero and hero:IsAlive() and GetPlayerData(plyID).health ~= 0 and ((GetPlayerData(plyID).completedWaves < WAVE_COUNT - 1 and not EXPRESS_MODE) or (GetPlayerData(plyID).completedWaves < WAVE_COUNT and EXPRESS_MODE)) then
-						local interest = math.ceil(hero:GetGold() * INTEREST_RATE)
-						local gold = hero:GetGold() + interest
-						hero:SetGold(0, false)
-						hero:SetGold(gold, true)
-						PopupAlchemistGold(hero, interest)
-						Sounds:EmitSoundOnClient(plyID, "DOTA_Item.Hand_Of_Midas")
-						goldEarnedData["player" .. plyID] = interest
-						if ply then
-							CustomGameEventManager:Send_ServerToPlayer( ply, "etd_earned_interest", { goldEarned=interest } )
+					if hero and hero:IsAlive() then
+						local playerData = GetPlayerData(plyID)
+						if playerData.health ~= 0 and ((playerData.completedWaves < WAVE_COUNT - 1 and not EXPRESS_MODE) or (playerData.completedWaves < WAVE_COUNT and EXPRESS_MODE)) then
+							local interest = math.ceil(hero:GetGold() * INTEREST_RATE)
+							local gold = hero:GetGold() + interest
+							hero:SetGold(0, false)
+							hero:SetGold(gold, true)
+							PopupAlchemistGold(hero, interest)
+							Sounds:EmitSoundOnClient(plyID, "DOTA_Item.Hand_Of_Midas")
+
+							playerData.interestGold = playerData.interestGold + interest
+							goldEarnedData["player" .. plyID] = interest
+							if ply then
+								CustomGameEventManager:Send_ServerToPlayer( ply, "etd_earned_interest", { goldEarned=interest } )
+							end
 						end
 					end
 				end

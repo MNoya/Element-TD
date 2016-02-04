@@ -19,10 +19,16 @@ function CreateDataForPlayer(playerID)
 	data["elementalRandom"] = false
 	data["elementalCount"] = 0
 	data["LifeTowerKills"] = 0
+	data["TotalLifeTowerKills"] = 0
+	data["goldLost"] = 0
+	data["towersSold"] = 0
+	data["interestGold"] = 0
+	data["goldTowerEarned"] = 0
 	data["elements"] = {
 		water = 0, fire = 0, nature = 0,
 		earth = 0, light = 0, dark = 0
 	}
+	data["elementOrder"] = {}
 	data["towers"] = {}
 	data["clones"] = {}
 	data["difficulty"] = nil
@@ -118,8 +124,7 @@ function ModifyElementValue(playerID, element, change)
     if playerData.elementalCount == 0 then
    		StopHighlight(playerData.summoner, playerID)
    	end
-
-   	playerData.elementalCount = playerData.elementalCount + change
+   	
 	playerData.elements[element] = playerData.elements[element] + change
 	UpdateElementsHUD(playerID)
 	UpdatePlayerSpells(playerID)
@@ -132,7 +137,20 @@ function ModifyElementValue(playerID, element, change)
     -- Update orbs
     if playerData.elements[element] == 1 then
     	UpdateElementOrbs(playerID, element)
+    	playerData.elementalCount = playerData.elementalCount + 1
     end
+
+    -- Keep the order
+    playerData.elementOrder[#playerData.elementOrder+1] = element
+
+    -- First Dual (15 possible)
+    if playerData.elementalCount == 2 then
+    	playerData.firstDual = GetElementalOrderString(playerData.elements)
+
+    -- First Triple (20 possible)
+    elseif playerData.elementalCount == 3 then
+		playerData.firstTriple = GetElementalOrderString(playerData.elements)
+	end
 end
 
 function UpdateElementsHUD(playerID)
@@ -242,4 +260,16 @@ function StopHighlight(entity, playerID)
 		CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "world_remove_notification", {entityIndex=entity:GetEntityIndex()} )
 		RemoveUnitFromSelection( entity )
 	end
+end
+
+function GetElementalOrderString( elementList )
+	local orderString = ""
+	for elementName,level in pairs(elementList) do
+		if level > 0 then
+			local firstLetter = string.sub(elementName, 1, 1)
+			orderString = orderString..firstToUpper(firstLetter)
+		end
+	end
+	print(orderString)
+	return orderString
 end

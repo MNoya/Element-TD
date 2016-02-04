@@ -120,6 +120,7 @@ function WorldNotification(msg) {
   if (worldPanels[entityIndex])
   {
     var panel = $("#world_"+entityIndex)
+    panel.deleted = true;
     panel.DeleteAsync(0)
   }
 
@@ -138,22 +139,25 @@ function UpdateWorldPanelPositions() {
   for (var entityIndex in worldPanels)
   {
     var panel = worldPanels[entityIndex]
-    var worldPos = GetUnitScreenPosition(panel.entity)
-    var offsetX = panel.actuallayoutwidth
-    var offsetY = panel.actuallayoutheight
-    var newX = worldPos.x-offsetX/2
-    var newY = worldPos.y
-    var maxX = $.GetContextPanel().actuallayoutwidth;
-    var maxY = $.GetContextPanel().actuallayoutheight;
-    if (newX+offsetX < 100 || newY+offsetY < 100 || newX > maxX+offsetX || newY > maxY+offsetY)
+    if (! panel.deleted)
     {
-      panel.visible = false
-    }
-    else
-    {
-      panel.visible = true
-      var newPos = newX + "px " + newY + "px 0px";
-      panel.style["position"] = newPos;
+      var worldPos = GetUnitScreenPosition(panel.entity)
+      var offsetX = panel.actuallayoutwidth
+      var offsetY = panel.actuallayoutheight
+      var newX = worldPos.x-offsetX/2
+      var newY = worldPos.y
+      var maxX = $.GetContextPanel().actuallayoutwidth;
+      var maxY = $.GetContextPanel().actuallayoutheight;
+      if (newX+offsetX < 100 || newY+offsetY < 100 || newX > maxX+offsetX || newY > maxY+offsetY)
+      {
+        panel.visible = false
+      }
+      else
+      {
+        panel.visible = true
+        var newPos = newX + "px " + newY + "px 0px";
+        panel.style["position"] = newPos;
+      }
     }
   }
   $.Schedule(1/60, UpdateWorldPanelPositions)
@@ -170,6 +174,7 @@ function WorldRemoveNotification(msg) {
   if (panel)
   {
     worldPanels.splice(entityIndex, 1)
+    panel.deleted = true;
     panel.DeleteAsync(0)
   }
 }

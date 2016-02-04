@@ -64,25 +64,46 @@ function BuildPlayersArray()
                     -- steamID32 required in here
                     steamID32 = PlayerResource:GetSteamAccountID(playerID),
 
-                    nt = GetPlayerNetworth(playerID),
-                    lmb = playerData.lumber,
-                    ess = playerData.pureEssence,
-                    sec = playerData.sector,
-                    hth = playerData.health,
-                    tow = tablelength(playerData.towers),
-                    ltk = playerData.LifeTowerKills,
-                    lh = PlayerResource:GetLastHits(playerID),
-                    dif = playerData.difficulty.difficultyName,
-                    bos = playerData.bossWaves,
-                    wav = playerData.completedWaves - 1,
-                    sco = playerData.scoreObject.totalScore,
+                    nt = GetPlayerNetworth(playerID), --Sell value of towers + current gold
+                    lmb = playerData.lumber, --Unused lumber 
+                    ess = playerData.pureEssence, --Unused essence
+                    sec = playerData.sector, --Sector on the map
+                    dif = playerData.difficulty.difficultyName, --Difficulty, should probably be a Game value
+                    tow = tablelength(playerData.towers), --Final tower count
+                    ltk = playerData.TotalLifeTowerKills, --Total life gained from Life Towers
+                    bos = playerData.bossWaves, --Total boss waves survived if any
+                    wav = playerData.completedWaves - 1, --Number of completed waves
+                    sco = playerData.scoreObject.totalScore, --Final score
+                    gl = playerData.goldLost, -- Gold loss from selling
+                    ts = playerData.towersSold, -- Num of towers sold
+                    ig = playerData.interestGold, -- Interest gold earned
+                    gt = playerData.goldTowerEarned, -- Total gold earned from Money Towers
+
                     -- elo = playerData.elements -- Element Order
+
+                    -- Levels of each element at the end
                     fir = playerData.elements.fire,
                     wat = playerData.elements.water,
                     nat = playerData.elements.nature,
                     ear = playerData.elements.earth,
                     lig = playerData.elements.light,
                     dar = playerData.elements.dark,
+
+                    -- Combos
+                    ec = playerData.elementalCount, -- Element Count, 0~6
+                    fd = playerData.firstDual,      -- First 2 elements acquired, ordered
+                    ft = playerData.firstTriple,    -- First 3 elements acquired, ordered
+                    e1 = playerData.elementOrder[1], -- 1st element acquired
+                    e2 = playerData.elementOrder[2], -- 2nd element acquired
+                    e3 = playerData.elementOrder[3], -- 3rd element acquired
+                    e4 = playerData.elementOrder[4], -- 4th element acquired
+                    e5 = playerData.elementOrder[5], -- 5th element acquired
+                    e6 = playerData.elementOrder[6], -- 6th element acquired
+                    e7 = playerData.elementOrder[7], -- 7th element acquired
+                    e8 = playerData.elementOrder[8], -- 8th element acquired
+                    e9 = playerData.elementOrder[9], -- 9th element acquired
+                    e10 = playerData.elementOrder[10], -- 10th element acquired
+                    e11 = playerData.elementOrder[11], -- 11th and last element acquired
                 })
             end
         end

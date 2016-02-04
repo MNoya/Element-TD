@@ -59,6 +59,7 @@ function AddOneLife(tower, ability, playerData)
     local hero = tower:GetOwner()
 
     playerData.health = playerData.health + 1
+    playerData.TotalLifeTowerKills = TotalLifeTowerKills + 1
 
     if not hero:HasModifier("modifier_bonus_life") then
         hero:AddNewModifier(hero, nil, "modifier_bonus_life", {})
