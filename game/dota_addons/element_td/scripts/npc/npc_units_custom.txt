@@ -9996,7 +9996,7 @@
 			"1"		"ice_tower_2"
 			"2"		"windstorm_tower"
 			"3"		"hail_tower"
-			"4"		"torrent_tower"
+			"4"		"tidal_tower"
 			"5"		"polar_tower"
 		}
 		"AttackDamageMin"		"150"
@@ -10281,7 +10281,7 @@
 			"1"		"life_tower_2"
 			"2"		"enchantment_tower"
 			"3"		"obliteration_tower"
-			"4"		"torrent_tower"
+			"4"		"tidal_tower"
 			"5"		"nova_tower"
 		}
 		"AttackDamageMin"		"225"
@@ -12201,7 +12201,7 @@
 			"2"			"flooding_tower"
 			"3"			"impulse_tower"
 			"4"			"ephemeral_tower"
-			"5"			"torrent_tower"
+			"5"			"tidal_tower"
 		}
 	
 		// General

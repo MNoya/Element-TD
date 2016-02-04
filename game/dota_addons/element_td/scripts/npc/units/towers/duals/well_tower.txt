@@ -47,7 +47,7 @@
 		"2"			"flooding_tower"
 		"3"			"impulse_tower"
 		"4"			"ephemeral_tower"
-		"5"			"torrent_tower"
+		"5"			"tidal_tower"
 	}
 
 	// General

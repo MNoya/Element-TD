@@ -116,17 +116,17 @@ function WorldNotification(msg) {
   var entityIndex = msg.entityIndex;
   var text = msg.text || "No Text provided";
 
-  var notification = $.CreatePanel('Label', $.GetContextPanel(), "world_"+entityIndex);
-  notification.html = true;
-  notification.text = $.Localize(text);
-  notification.AddClass('WorldBox');
-
   // Don't let an entity have more than 1 active notification
   if (worldPanels[entityIndex])
   {
     var panel = $("#world_"+entityIndex)
     panel.DeleteAsync(0)
   }
+
+  var notification = $.CreatePanel('Label', $.GetContextPanel(), "world_"+entityIndex);
+  notification.html = true;
+  notification.text = $.Localize(text);
+  notification.AddClass('WorldBox');
   
   worldPanels[entityIndex] = notification
   notification.entity = entityIndex

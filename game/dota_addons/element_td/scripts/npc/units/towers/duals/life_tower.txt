@@ -67,7 +67,7 @@
 		"1"		"life_tower_2"
 		"2"		"enchantment_tower"
 		"3"		"obliteration_tower"
-		"4"		"torrent_tower"
+		"4"		"tidal_tower"
 		"5"		"nova_tower"
 	}
 	"AttackDamageMin"		"225"

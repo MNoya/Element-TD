@@ -68,7 +68,7 @@
 		"1"		"ice_tower_2"
 		"2"		"windstorm_tower"
 		"3"		"hail_tower"
-		"4"		"torrent_tower"
+		"4"		"tidal_tower"
 		"5"		"polar_tower"
 	}
 	"AttackDamageMin"		"150"
