@@ -17,6 +17,7 @@ function GenerateAllConstants()
 	generateSpawnLocations()
 	generateEntityLocations()
 	generateSectorPortals()
+	generateTowersNetTable()
 end
 
 function generateElementalSummonerLocations()
@@ -58,6 +59,16 @@ function generateSectorPortals()
 	for i=1,8 do
 		local portal = Entities:FindByName(nil, "portal_sector"..i)
 		SectorPortals[i] = portal
+	end
+end
+
+function generateTowersNetTable()
+	for unitName,values in pairs(NPC_UNITS_CUSTOM) do
+		local AOE_Full = values["AOE_Full"]
+		local AOE_Half = values["AOE_Half"]
+		if AOE_Full then
+			CustomNetTables:SetTableValue("towers", unitName, { AOE_Full = AOE_Full, AOE_Half = AOE_Half })
+		end
 	end
 end
 

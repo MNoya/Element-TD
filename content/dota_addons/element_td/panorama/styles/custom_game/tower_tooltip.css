@@ -1,0 +1,21 @@
+.Root
+{
+    width: 100%;
+    height: 100%;
+}
+
+#TowerTooltip
+{
+    width: 4%;
+    height: 15%;
+    //background-color: black;
+    vertical-align: bottom;
+    horizontal-align: center;
+    margin-right: 23%;
+}
+
+.Hidden
+{
+    visibility: collapse;
+    opacity: 0;
+}

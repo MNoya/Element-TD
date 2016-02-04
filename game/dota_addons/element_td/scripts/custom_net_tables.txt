@@ -6,5 +6,6 @@
         "construction_size",
         "building_settings",
         "elementals",
+        "towers",
 	]
 } 

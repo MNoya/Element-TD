@@ -1,0 +1,12 @@
+<root>
+  <styles>
+    <include src="file://{resources}/styles/custom_game/tower_tooltip.css" />
+  </styles>
+  <scripts>
+    <include src="file://{resources}/scripts/custom_game/tower_tooltip.js" /> 
+  </scripts>
+  <Panel hittest="false" class="Root">
+    <Panel hittest="true" id="TowerTooltip" onmouseover="ShowTowerTooltip()" onmouseout="DOTAHideTitleTextTooltip()">
+    </Panel>
+  </Panel>
+</root>
