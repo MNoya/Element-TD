@@ -116,7 +116,7 @@ function ModifyElementValue(playerID, element, change)
     end
 
     if playerData.elementalCount == 0 then
-   		StopHighlight(playerData.summoner)
+   		StopHighlight(playerData.summoner, playerID)
    	end
 
    	playerData.elementalCount = playerData.elementalCount + change
@@ -222,16 +222,23 @@ function RemoveElementalOrbs(playerID)
 	end
 end
 
-function Highlight(entity)
+function Highlight(entity, playerID)
 	if not entity.highlight then
+		NewSelection(entity)
+		Timers:CreateTimer(0.1, function() PlayerResource:SetCameraTarget(playerID, nil) end)
 		local particleName = "particles/custom/summoner/highlight_trail_05.vpcf"
 		entity.highlight = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, entity)
 		ParticleManager:SetParticleControl(entity.highlight, 15, Vector(255,255,255))
+
+		-- Portal World Notification
+    	CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "world_notification", {entityIndex=entity:GetEntityIndex(), text="#etd_summoner_choose"} )
+		
 	end
 end
 
-function StopHighlight(entity)
+function StopHighlight(entity, playerID)
 	if entity and entity.highlight then
 		ParticleManager:DestroyParticle(entity.highlight, true)
+		CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "world_remove_notification", {entityIndex=entity:GetEntityIndex()} )
 	end
 end

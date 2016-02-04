@@ -78,7 +78,7 @@ function ModifyLumber(playerID, amount)
         PopupLumber(ElementTD.vPlayerIDToHero[playerID], amount)
 
         if playerData.elementalCount == 0 then
-            Highlight(playerData.summoner)
+            Highlight(playerData.summoner, playerID)
         end
 
         if GameSettings.elementsOrderName == "AllPick" then

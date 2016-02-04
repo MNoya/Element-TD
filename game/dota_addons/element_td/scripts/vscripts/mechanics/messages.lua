@@ -33,16 +33,17 @@ function ShowElementAcquiredMessage( playerID, element, level )
 end
 
 function ShowWaveBreakTimeMessage(playerID, waveNumber, breakTime, duration)
-    ShowMessage(playerID, "Wave "..waveNumber.." in "..breakTime.." seconds", duration)
+    Notifications:ClearTop(playerID)
+    Notifications:Top(playerID, {text="Wave "..waveNumber.." in "..breakTime.." seconds", style={["font-size"]="60px", ["margin-top"]="-5px"}, duration=duration})
     
     local element = string.gsub(creepsKV[WAVE_CREEPS[waveNumber]].Ability1, "_armor", "") or "composite"
     local elem_color = rgbToHex(GetElementColor(element))
     local abilityName = creepsKV[WAVE_CREEPS[waveNumber]].Ability2
 
-    Notifications:Top(playerID, {text=firstToUpper(element), style={["margin"]="-10px 15px 0px 15px",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, duration=duration})
+    Notifications:Top(playerID, {text=firstToUpper(element), style={["margin"]="-15px 15px 0px 15px",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, duration=duration})
     if abilityName and abilityName ~= "" then
-        Notifications:Top(playerID, {text="#"..abilityName, style={["margin"]="-10px 15px 0px 0px",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, continue=true, duration=duration})    
-        Notifications:Top(playerID, {ability=abilityName, style={["border-radius"]="48px", border="2px solid black", width="48px", height="48px", ["margin"]="-8px 0px 0px 0px"}, continue=true, duration=duration})
+        Notifications:Top(playerID, {text="#"..abilityName, style={["margin"]="-15px 15px 0px 0px",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, continue=true, duration=duration})    
+        Notifications:Top(playerID, {ability=abilityName, style={["border-radius"]="48px", border="2px solid black", width="48px", height="48px", ["margin"]="-13px 0px 0px 0px"}, continue=true, duration=duration})
     end
 end
 

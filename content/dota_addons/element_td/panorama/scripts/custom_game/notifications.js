@@ -166,7 +166,7 @@ function GetUnitScreenPosition(entIndex){
 function WorldRemoveNotification(msg) {
   var entityIndex = msg.entityIndex
   var panel = $("#world_"+entityIndex)
-  worldPanels.splice(entityIndex)
+  worldPanels.splice(entityIndex, 1)
   if (panel)
   {
     panel.DeleteAsync(0)
