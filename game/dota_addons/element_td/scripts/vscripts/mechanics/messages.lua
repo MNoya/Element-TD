@@ -56,7 +56,9 @@ function ShowWaveSpawnMessage(playerID, waveNumber, duration)
 
     Notifications:Top(playerID, {text=firstToUpper(element), style={["margin"]="0px 15px 0px 15px",["font-size"]="60px",color=elem_color}, continue=true, duration=duration})
     if abilityName and abilityName ~= "" then
-        Notifications:Top(playerID, {text="#"..abilityName, style={["margin-right"]="15px",["font-size"]="60px",color=elem_color}, continue=true, duration=duration})    
+        if abilityName ~= "creep_ability_boss" then
+            Notifications:Top(playerID, {text="#"..abilityName, style={["margin-right"]="15px",["font-size"]="60px",color=elem_color}, continue=true, duration=duration})    
+        end
         Notifications:Top(playerID, {ability=abilityName, style={width="64px",height="64px"}, continue=true, duration=duration})
     end
 end

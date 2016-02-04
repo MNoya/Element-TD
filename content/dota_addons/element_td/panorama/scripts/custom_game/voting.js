@@ -153,7 +153,7 @@ function Populate( data )
 
 	PopulateDropDown(lengthDD, lengthModes);
 	lengthDD.SetSelected(0);
-	lengthDesc.text = lengthModes[0][1]; // Default Classic
+	lengthDesc.text = $.Localize(lengthModes[0][1]); // Default Classic
 }
 
 function PopulateDropDown( DropDown, items )
@@ -161,7 +161,7 @@ function PopulateDropDown( DropDown, items )
 	for (var item in items)
 	{
 		var label = $.CreatePanel("Label", DropDown, item);
-		label.text = items[item][0];
+		label.text = $.Localize(items[item][0]);
 		DropDown.AddOption(label);
 	}
 }
@@ -228,27 +228,27 @@ function PlayerVoted( data )
 
 	var gamemode = $.CreatePanel('Label', votes, '');
 	gamemode.AddClass('PlayerVote');
-	gamemode.text = data.gamemode.replace(/([a-z])([A-Z])/g, '$1 $2');
+	gamemode.text = $.Localize(data.gamemode.replace(/([a-z])([A-Z])/g, '$1 $2'));
 
 	var difficulty = $.CreatePanel('Label', votes, '');
 	difficulty.AddClass('PlayerVote');
-	difficulty.text = data.difficulty.replace(/([a-z])([A-Z])/g, '$1 $2');
+	difficulty.text = $.Localize(data.difficulty.replace(/([a-z])([A-Z])/g, '$1 $2'));
 
 	var elements = $.CreatePanel('Label', votes, '');
 	elements.AddClass('PlayerVote');
-	elements.text = data.elements.replace(/([a-z])([A-Z])/g, '$1 $2');
+	elements.text = $.Localize(data.elements.replace(/([a-z])([A-Z])/g, '$1 $2'));
 
 	var endless = $.CreatePanel('Label', votes, '');
 	endless.AddClass('PlayerVote');
-	endless.text = data.endless.replace(/([a-z])([A-Z])/g, '$1 $2');
+	endless.text = $.Localize(data.endless.replace(/([a-z])([A-Z])/g, '$1 $2'));
 
 	var order = $.CreatePanel('Label', votes, '');
 	order.AddClass('PlayerVote');
-	order.text = data.order.replace(/([a-z])([A-Z])/g, '$1 $2');
+	order.text = $.Localize(data.order.replace(/([a-z])([A-Z])/g, '$1 $2'));
 
 	var length = $.CreatePanel('Label', votes, '');
 	length.AddClass('PlayerVote');
-	length.text = data.length.replace(/([a-z])([A-Z])/g, '$1 $2');
+	length.text = $.Localize(data.length.replace(/([a-z])([A-Z])/g, '$1 $2'));
 
 	playerVotes[playerID] = true;
 	votingLiveHasVoted.ScrollToBottom();

@@ -1,7 +1,7 @@
 -- summoner.lua
 -- manages the Elemental Summoner and Elementals
 
-ElementalBaseHealth = {1000, 5000, 25000}
+ElementalBaseHealth = {300, 1500, 7500}
 Particles = {
     light_elemental = "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_spirit_form_ambient.vpcf",
 }
@@ -321,7 +321,8 @@ function SummonElemental(keys)
     --ApplyArmorModifier(elemental, GetPlayerDifficulty(playerID):GetArmorValue() * 100)
     
     -- Adjust health bar
-    local health = ElementalBaseHealth[level] * math.pow(1.5, (math.floor(playerData.nextWave / 5) - 1)) * difficulty:GetHealthMultiplier()
+    -- Every five waves elemental HP goes up by 50%. So if you summon a level 1 at wave 20 you get 1,519 HP.
+    local health = ElementalBaseHealth[level] * math.pow(1.5, (math.floor(playerData.nextWave / 5))) * difficulty:GetHealthMultiplier()
     CustomNetTables:SetTableValue("elementals", tostring(elemental.marker_dummy:GetEntityIndex()), {health_marker=health/4})
     Timers:CreateTimer(0.03, function()
         marker_dummy:AddNewModifier(elemental.marker_dummy, nil, "modifier_health_bar_markers", {})
