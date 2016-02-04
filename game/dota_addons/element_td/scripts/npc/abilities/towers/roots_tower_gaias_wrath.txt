@@ -67,19 +67,14 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"slow_tooltip"			"10 30"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
 			"slow"					"-10 -30"
 		}
-		"04"
+		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"dps"					"100 500"
 		}
-		"05"
+		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"width"					"300"

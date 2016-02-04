@@ -42,7 +42,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"slow_tooltip"			"10 30"
+			"slow"					"-10 -30"
 		}
 		"02"
 		{

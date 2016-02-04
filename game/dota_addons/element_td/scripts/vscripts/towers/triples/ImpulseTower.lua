@@ -1,6 +1,6 @@
 -- Impulse (Fire + Nature + Water)
 -- This is a long range tower which deals damage proportional to the distance its projectile travels. 
--- The longer the distance, the more damage. Tower would have a minimum range under which it can't attack.
+-- The longer the distance, the more damage.
 ImpulseTower = createClass({
         tower = nil,
         towerClass = "",

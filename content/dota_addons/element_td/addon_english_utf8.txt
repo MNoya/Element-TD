@@ -549,6 +549,7 @@
         "DOTA_Tooltip_ability_electricity_tower_arc_lightning_passive_damage"       "DAMAGE:"
         "DOTA_Tooltip_ability_electricity_tower_arc_lightning_passive_damage_decrease"      "%DAMAGE DECREASE PER JUMP:"
         "DOTA_Tooltip_ability_electricity_tower_arc_lightning_passive_jump_count"       "JUMPS:"
+        "DOTA_Tooltip_ability_electricity_tower_arc_lightning_passive_bounce_range"       "BOUNCE RANGE:"
         
         "flame_tower_ability"       "Sunburn"
         "flame_tower_ability_desc"      "Each attack applies a burn to the target which casues it to do damage in an AOE around it."
@@ -581,10 +582,11 @@
         "DOTA_Tooltip_ability_life_tower_afterlife_Description"     "Every few creeps killed by this tower will heal you. This takes into account all other Life Towers that you own. If you are at or over <font color='0xFFFFFF'>50</font> health it takes <font color='0xFFFFFF'>9</font> kills."
         "DOTA_Tooltip_ability_life_tower_afterlife_kills_required"      "KILLS REQUIRED:"
         "DOTA_Tooltip_ability_life_tower_afterlife_heal_amount"     "HEAL AMOUNT:"
+        "DOTA_Tooltip_ability_life_tower_afterlife_points_per_kill"                       "POINTS PER KILL:"
         "DOTA_Tooltip_modifier_life_tower_counter"                                        "Life Gained"
-        "DOTA_Tooltip_modifier_life_tower_counter_Description"                            ""
+        "DOTA_Tooltip_modifier_life_tower_counter_Description"                            "This tower has netted you this many lives"
         "DOTA_Tooltip_modifier_life_tower_current_kill_counter"                           "Current Kill Counter"
-        "DOTA_Tooltip_modifier_life_tower_current_kill_counter_Description"               ""
+        "DOTA_Tooltip_modifier_life_tower_current_kill_counter_Description"               "Globally shared by all Life Towers"
         
         "hydro_tower_ability"       "Torrent"
         "hydro_tower_ability_desc"      "This tower has a chance on each attack to cause a torrent of water to hit creeps in an area."
@@ -594,6 +596,8 @@
         "DOTA_Tooltip_ability_hydro_tower_ability_splash_aoe"       "AOE:"
         "DOTA_Tooltip_ability_hydro_tower_ability_chance_pct"                             "CHANCE PCT:"
         "DOTA_Tooltip_ability_hydro_tower_ability_delay"                                  "DELAY:"
+        "DOTA_Tooltip_modifier_hydro_delay"                                               "Hydro Delay"
+        "DOTA_Tooltip_modifier_hydro_delay_Description"                                   ""
         
         "trickery_tower_ability"        "Conjure"
         "trickery_tower_ability_desc"       "Create a clone of a tower that lasts for a short duration."
@@ -630,7 +634,7 @@
         "DOTA_Tooltip_ability_muck_tower_sludge_passive_Description"        "Each attack slows creeps in an area around the target creep. Slows lasts a short duration. Slow does not stack."
         "DOTA_Tooltip_ability_muck_tower_sludge_passive_duration"       "DURATION:"
         "DOTA_Tooltip_ability_muck_tower_sludge_passive_aoe"        "AOE:"
-        "DOTA_Tooltip_ability_muck_tower_sludge_passive_slow_tooltip"       "%MOVEMENT SLOW:"
+        "DOTA_Tooltip_ability_muck_tower_sludge_passive_slow"       "%MOVEMENT SLOW:"
         
         "gold_tower_ability"        "Arbitrage"
         "gold_tower_ability_desc"       "Each creep killed by this tower grants bonus gold."
@@ -643,11 +647,12 @@
         "DOTA_Tooltip_ability_windstorm_tower_tornado"      "Tornado"
         "DOTA_Tooltip_ability_windstorm_tower_tornado_Description"      "Summons a large tornado that damages, slows, and follows creeps. Fires very slow though."
         "DOTA_Tooltip_ability_windstorm_tower_tornado_damage"       "DAMAGE PER SECOND:"
-        "DOTA_Tooltip_ability_windstorm_tower_tornado_slow_tooltip"     "%MOVEMENT SLOW:"
+        "DOTA_Tooltip_ability_windstorm_tower_tornado_slow"     "%MOVEMENT SLOW:"
+        "DOTA_Tooltip_ability_windstorm_tower_tornado_radius"        "RADIUS:"
         "DOTA_Tooltip_ability_windstorm_tornado_slow"       "Windstorm"
         "DOTA_Tooltip_ability_windstorm_tornado_slow_Description"       "Slowing and damaging nearby creeps."
         "DOTA_Tooltip_ability_windstorm_tornado_slow_damage"        "DAMAGE PER SECOND:"
-        "DOTA_Tooltip_ability_windstorm_tornado_slow_slow_tooltip"      "%MOVEMENT SLOW:"
+        "DOTA_Tooltip_ability_windstorm_tornado_slow_slow"      "%MOVEMENT SLOW:"
         "DOTA_Tooltip_ability_windstorm_tornado_slow_radius"        "AOE:"
         "DOTA_Tooltip_modifier_tornado_slow"        "Slowed"
         "DOTA_Tooltip_modifier_tornado_slow_Description"        "Slowed by a tornado, losing %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% movement speed."
@@ -659,6 +664,7 @@
         "DOTA_Tooltip_ability_quake_tower_pulverize_Description"        "Each attack has a chance to deal damage in an area around this tower."
         "DOTA_Tooltip_ability_quake_tower_pulverize_damage"     "DAMAGE:"
         "DOTA_Tooltip_ability_quake_tower_pulverize_chance"     "%CHANCE:"
+        "DOTA_Tooltip_ability_quake_tower_pulverize_aoe"        "AOE:"
         
         "enchantment_tower_ability"     "Faerie Fire"
         "enchantment_tower_ability_desc"        "An autocast ability that amplifies the damage that creeps take."
@@ -687,6 +693,8 @@
         "DOTA_Tooltip_ability_laser_tower_laser"        "Laser"
         "DOTA_Tooltip_ability_laser_tower_laser_Description"        "Each attack shoots out a laser at the target, dealing massive damage. Each creep in a 400 AOE around the target reduces the damage dealt. Minimum damage is 30%%."
         "DOTA_Tooltip_ability_laser_tower_laser_damage_reduction"       "%DAMAGE REDUCTION PER CREEP:"
+        "DOTA_Tooltip_ability_laser_tower_laser_aoe"                                      "REDUCTION AREA:"
+        "DOTA_Tooltip_ability_laser_tower_laser_damage_reduction_cap"                     "DAMAGE REDUCTION CAP:"
         
         "hail_tower_ability"        "Storm"
         "hail_tower_ability_desc"       "Causes this tower to attack multiple creeps at the same time for a short duration."
@@ -716,6 +724,8 @@
         "DOTA_Tooltip_ability_obliteration_tower_obliterate"        "Obliterate"
         "DOTA_Tooltip_ability_obliteration_tower_obliterate_Description"        "Each attack sends out a projectile that starts with 50 splash. As it travels, the projectile gains splash, until it hits a target, at which point it explodes in an AoE equal to the splash gained."
         "DOTA_Tooltip_ability_obliteration_tower_obliterate_max_aoe"        "MAX SPLASH:"
+        "DOTA_Tooltip_ability_obliteration_tower_obliterate_initial_aoe"                  "INITIAL SPLASH:"
+        "DOTA_Tooltip_ability_obliteration_tower_obliterate_duration"                     "DURATION:"
         
         "ephemeral_tower_ability"       "Phasing"
         "ephemeral_tower_ability_desc"      "Every second of constant attacking lowers base damage slightly. Damage is reset after a few seconds of not attacking or by casting this ability."
@@ -723,6 +733,12 @@
         "DOTA_Tooltip_ability_ephemeral_tower_phasing_Description"      "Passively, each second of attacking lowers this tower's base damage by a percentage. The damage is reset after 3 seconds of not attacking or by casting this ability."
         "DOTA_Tooltip_ability_ephemeral_tower_phasing_damage_reduction"     "%DAMAGE REDUCTION PER SECOND:"
         "DOTA_Tooltip_ability_ephemeral_tower_phasing_max_reduction"        "%MAX DAMAGE REDUCTION:"
+        "DOTA_Tooltip_ability_ephemeral_tower_phasing_channel_time"                       "CHANNEL TIME:"
+        "DOTA_Tooltip_ability_ephemeral_tower_phasing_reset_time"                         "RESET TIME:"
+        "DOTA_Tooltip_modifier_reset_damage"                                              "Reset Damage"
+        "DOTA_Tooltip_modifier_reset_damage_Description"                                  ""
+        "DOTA_Tooltip_modifier_phasing_stack"                                             "Phasing Stack"
+        "DOTA_Tooltip_modifier_phasing_stack_Description"                                 ""
         
         "flamethrower_tower_ability"        "Naplam"
         "flamethrower_tower_ability_desc"       "Each attack adds a stack of Napalm to creeps in an area around the target. Upon death, a Napalmed creep does damage in an area around it for each stack of napalm."
@@ -747,17 +763,14 @@
         "DOTA_Tooltip_modifier_wrath_reset_Description"     "Wrath stacks get removed after 4 seconds of not attacking."
         "DOTA_Tooltip_modifier_wrath_indicator"     "Wrath"
         
-        "tidal_tower_ability"     "Douse"
-        "tidal_tower_ability_desc"        "This tower starts off with a powerful splash attack, but as it attacks, the splash weakens while the damage grows."
-        "DOTA_Tooltip_ability_tidal_tower_douse_1"        "Douse"
-        "DOTA_Tooltip_ability_tidal_tower_douse_1_Description"        "This ability levels up every 10 attacks. Upon casting, damage is dealt to all creeps near this tower based on this ability's level. Level gets reset to 0 after casting."
-        "DOTA_Tooltip_ability_tidal_tower_douse_1_damage"     "DAMAGE:"
-        "DOTA_Tooltip_ability_tidal_tower_douse_1_aoe"        "AOE:"
-        "DOTA_Tooltip_ability_tidal_tower_douse_2"        "Douse"
-        "DOTA_Tooltip_ability_tidal_tower_douse_2_Description"        "This ability levels up every 10 attacks. Upon casting, damage is dealt to all creeps near this tower based on this ability's level. Level gets reset to 0 after casting."
-        "DOTA_Tooltip_ability_tidal_tower_douse_2_damage"     "DAMAGE:"
-        "DOTA_Tooltip_ability_tidal_tower_douse_2_aoe"        "AOE:"
-        "DOTA_Tooltip_modifier_douse_passive"       "Douse Level"
+    
+        "DOTA_Tooltip_ability_tidal_tower_splash_decay"                                   "Tidal Wave"
+        "DOTA_Tooltip_ability_tidal_tower_splash_decay_Description"                       "Every attack (this is when it fires, not when the attack lands) decreases splash by 10/20 AoE (this AoE reduction is for both tiers). It also increases damage by 30/150. Damage increase caps out when 0 splash is reached. Resets after 1 second of not attacking."
+        "DOTA_Tooltip_ability_tidal_tower_splash_decay_damage"                            "DAMAGE:"
+        "DOTA_Tooltip_ability_tidal_tower_splash_decay_aoe"                               "AOE:"
+        "DOTA_Tooltip_ability_tidal_tower_splash_decay_reset_time"                        "RESET TIME:"
+        "DOTA_Tooltip_modifier_tidal_splash_decay"                "Tidal Splash Decay"
+        "DOTA_Tooltip_modifier_tidal_splash_decay_Description"    ""
         
         "nova_tower_ability"        "Explode"
         "nova_tower_ability_desc"       "This tower explodes with each attack, dealing damage and slowing all creeps around it."
@@ -765,7 +778,8 @@
         "DOTA_Tooltip_ability_nova_tower_explode_Description"       "This tower explodes with each attack, dealing damage and slowing all creeps around it. Slow lasts 3 seconds."
         "DOTA_Tooltip_ability_nova_tower_explode_damage"        "DAMAGE:"
         "DOTA_Tooltip_ability_nova_tower_explode_aoe"       "AOE:"
-        "DOTA_Tooltip_ability_nova_tower_explode_slow_tooltip"      "%SLOW:"
+        "DOTA_Tooltip_ability_nova_tower_explode_slow"      "%SLOW:"
+        "DOTA_Tooltip_ability_nova_tower_explode_duration"         "DURATION:"
         "DOTA_Tooltip_modifier_explode_slow"        "Slowed"
         
         "erosion_tower_ability"     "Acid Attack"
@@ -800,6 +814,7 @@
         "DOTA_Tooltip_ability_jinx_tower_maledict_ticks"        "TICKS:"
         "DOTA_Tooltip_ability_jinx_tower_maledict_damage_taken"     "DAMAGE TAKEN TO DAMAGE:"
         "DOTA_Tooltip_ability_jinx_tower_maledict_aoe"      "AOE:"
+        "DOTA_Tooltip_ability_jinx_tower_maledict_duration"    "DURATION:"
         "DOTA_Tooltip_modifier_jinx_maledict"       "Maledicted"
         "DOTA_Tooltip_modifier_jinx_maledict_Description"       "Taking damage every few seconds based on the damage taken since Maledict began."
         
@@ -807,9 +822,11 @@
         "roots_tower_ability_desc"      "Each attack applies a slow and a DoT debuff to all creeps in a line in the direction of the main target."
         "DOTA_Tooltip_ability_roots_tower_gaias_wrath"      "Gaia's Wrath"
         "DOTA_Tooltip_ability_roots_tower_gaias_wrath_Description"      "Each attack sends out a line of with 300 that slows creeps hit as well as adding a damage over time debuff to it. Slow does not stack but damage does."
-        "DOTA_Tooltip_ability_roots_tower_gaias_wrath_slow_tooltip"     "%MOVEMENT SLOW:"
+        "DOTA_Tooltip_ability_roots_tower_gaias_wrath_slow"     "%MOVEMENT SLOW:"
         "DOTA_Tooltip_ability_roots_tower_gaias_wrath_dps"      "DAMAGE PER SECOND:"
         "DOTA_Tooltip_ability_roots_tower_gaias_wrath_duration"     "DURATION:"
+        "DOTA_Tooltip_ability_roots_tower_gaias_wrath_slow"          "SLOW:"
+        "DOTA_Tooltip_ability_roots_tower_gaias_wrath_width"        "WIDTH:"
         "DOTA_Tooltip_modifier_gaias_wrath_slow"        "Slowed"
         "DOTA_Tooltip_modifier_gaias_wrath_damage"      "Damage Over Time"
 
@@ -819,12 +836,6 @@
         "DOTA_Tooltip_ability_flooding_tower_flood_full_aoe"                              "FULL AOE:"
         "DOTA_Tooltip_ability_flooding_tower_flood_duration"                              "DURATION:"
         "DOTA_Tooltip_ability_flooding_tower_flood_interval"                              "INTERVAL:"
-
-        "DOTA_Tooltip_ability_tidal_tower_splash_decay"                                   "Tidal Wave"
-        "DOTA_Tooltip_ability_tidal_tower_splash_decay_Description"                       "Every attack (this is when it fires, not when the attack lands) decreases splash by 10/20 AoE (this AoE reduction is for both tiers). It also increases damage by 30/150. Damage increase caps out when 0 splash is reached. Resets after 1 second of not attacking."
-        "DOTA_Tooltip_ability_tidal_tower_splash_decay_damage"                            "DAMAGE:"
-        "DOTA_Tooltip_ability_tidal_tower_splash_decay_aoe"                               "AOE:"
-        "DOTA_Tooltip_ability_tidal_tower_splash_decay_reset_time"                        "RESET TIME:"
 
         // ******************** ITEMS ********************
         // Summoner

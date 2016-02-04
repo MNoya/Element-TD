@@ -97,10 +97,5 @@
 			"var_type"			"FIELD_FLOAT"
 			"slow"				"-10 -30"
 		}
-		"05"
-		{
-			"var_type"			"FIELD_FLOAT"
-			"slow_tooltip"		"10 30"
-		}
 	}
 }

@@ -40,19 +40,14 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"slow_tooltip"			"10 30"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
 			"slow"					"-10 -30"
 		}
-		"03"
+		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"radius"				"500"
 		}
-		"04"
+		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"damage"				"200 1000"

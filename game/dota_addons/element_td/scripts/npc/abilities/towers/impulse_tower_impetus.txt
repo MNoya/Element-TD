@@ -34,10 +34,5 @@
 			"var_type"				"FIELD_INTEGER"
 			"multiplier"			"2000 10000"
 		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"min_range"				"500"
-		}
 	}
 }
