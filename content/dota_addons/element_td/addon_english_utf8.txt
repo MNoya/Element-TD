@@ -15,6 +15,7 @@
         "etd_wave_light"            "200% from <font color='#D4880F'>Earth</font>, 50% from <font color='#8733C8'>Dark</font>"
         "etd_wave_dark"             "200% from <font color='#E5DE23'>Light</font>, 50% from <font color='#01A2FF'>Water</font>"
         "etd_wave_composite"        "100% from Composite, 90% from other Elements"
+        "etd_summoner_choose"       "Choose an Element"
 
         // messages
         "etd_welcome_message"       "Welcome to <font color='#70EA72'>Element Tower Defense</font>!"
@@ -38,6 +39,7 @@
         "etd_error_cloned_tower"    "You can't clone a clone!"
         "etd_error_recently_cloned" "That tower has been recently cloned!"
         "DOTA_ToolTip_Targeting_AlliedCreeps" "Your Towers" //Overrides the default dota tooltip
+        "dota_hud_error_unit_cant_move"       "Select your Hero to Move" //Overrides the default dota tooltip
 
         // ******************** UNITS ********************
         // Towers
@@ -745,16 +747,16 @@
         "DOTA_Tooltip_modifier_wrath_reset_Description"     "Wrath stacks get removed after 4 seconds of not attacking."
         "DOTA_Tooltip_modifier_wrath_indicator"     "Wrath"
         
-        "torrent_tower_ability"     "Douse"
-        "torrent_tower_ability_desc"        "This tower starts off with a powerful splash attack, but as it attacks, the splash weakens while the damage grows."
-        "DOTA_Tooltip_ability_torrent_tower_douse_1"        "Douse"
-        "DOTA_Tooltip_ability_torrent_tower_douse_1_Description"        "This ability levels up every 10 attacks. Upon casting, damage is dealt to all creeps near this tower based on this ability's level. Level gets reset to 0 after casting."
-        "DOTA_Tooltip_ability_torrent_tower_douse_1_damage"     "DAMAGE:"
-        "DOTA_Tooltip_ability_torrent_tower_douse_1_aoe"        "AOE:"
-        "DOTA_Tooltip_ability_torrent_tower_douse_2"        "Douse"
-        "DOTA_Tooltip_ability_torrent_tower_douse_2_Description"        "This ability levels up every 10 attacks. Upon casting, damage is dealt to all creeps near this tower based on this ability's level. Level gets reset to 0 after casting."
-        "DOTA_Tooltip_ability_torrent_tower_douse_2_damage"     "DAMAGE:"
-        "DOTA_Tooltip_ability_torrent_tower_douse_2_aoe"        "AOE:"
+        "tidal_tower_ability"     "Douse"
+        "tidal_tower_ability_desc"        "This tower starts off with a powerful splash attack, but as it attacks, the splash weakens while the damage grows."
+        "DOTA_Tooltip_ability_tidal_tower_douse_1"        "Douse"
+        "DOTA_Tooltip_ability_tidal_tower_douse_1_Description"        "This ability levels up every 10 attacks. Upon casting, damage is dealt to all creeps near this tower based on this ability's level. Level gets reset to 0 after casting."
+        "DOTA_Tooltip_ability_tidal_tower_douse_1_damage"     "DAMAGE:"
+        "DOTA_Tooltip_ability_tidal_tower_douse_1_aoe"        "AOE:"
+        "DOTA_Tooltip_ability_tidal_tower_douse_2"        "Douse"
+        "DOTA_Tooltip_ability_tidal_tower_douse_2_Description"        "This ability levels up every 10 attacks. Upon casting, damage is dealt to all creeps near this tower based on this ability's level. Level gets reset to 0 after casting."
+        "DOTA_Tooltip_ability_tidal_tower_douse_2_damage"     "DAMAGE:"
+        "DOTA_Tooltip_ability_tidal_tower_douse_2_aoe"        "AOE:"
         "DOTA_Tooltip_modifier_douse_passive"       "Douse Level"
         
         "nova_tower_ability"        "Explode"
@@ -887,11 +889,11 @@
         "DOTA_Tooltip_ability_item_upgrade_to_polar_tower"      "Polar Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_polar_tower_disabled"     "Polar Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_polar_tower_Description"      "Upgrades this tower to a Polar Tower.\n\nCOST: <font color='#F0BA36'>1050 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#E6E600'>Light</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>1300</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSpeed: <font color='#FFFFFF'>1</font>\nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>\nABILITY: <font color='#FFFFFF'>Frostbite</font> - Autocast ability that temporarily burns away a portion of the target's current health. The target regains the health lost at the end of the duration minus a percentage of the damage taken while Frostbitten."
-        "DOTA_Tooltip_ability_item_upgrade_to_polar_tower_disabled_Description"     "Upgrades this tower to a Polar Tower.\n<font color='#F0BA36'>Requires: </font><font color='#01A2FF'>Water</font> + <font color='#E6E600'>Light</font> + <font color='#D4880F'>Earth</font> \n\nCOST: <font color='#F0BA36'>1050 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#E6E600'>Light</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>1300</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSpeed: <font color='#FFFFFF'>1</font>\nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>\nABILITY: <font color='#FFFFFF'>Frostbite</font> - Autocast ability that temporarily burns away a portion of the target's current health. The target regains the health lost at the end of the duration minus a percentage of the damage taken while Frostbitten."
+        "DOTA_Tooltip_ability_item_upgrade_to_polar_tower_disabled_Description"     "Upgrades this tower to a Polar Tower.\n<font color='#F0BA36'>Requires: </font><font color='#01A2FF'>Water</font> + <font color='#E6E600'>Light</font> + <font color='#D4880F'>Earth</font> \n\nCOST: <font color='#F0BA36'>1050 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#E6E600'>Light</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>1300</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSpeed: <font color='#FFFFFF'>1</font>\nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>\nABILITY: <font color='#FFFFFF'>Frostbite</font> - Autocast ability that temporarily burns away a portion of the target's current health. The target regains the health lost at the end of the duration minus a percentage of the damage taken while Frostbitten."
         "DOTA_Tooltip_ability_item_upgrade_to_polar_tower_2"        "Glacial Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_polar_tower_2_disabled"       "Glacial Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_polar_tower_2_Description"        "Upgrades this tower to a Glacial Tower.\n\nCOST: <font color='#F0BA36'>3000 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#E6E600'>Light</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>6500</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSpeed: <font color='#FFFFFF'>1</font>\nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>\nABILITY: <font color='#FFFFFF'>Frostbite</font> - Autocast ability that temporarily burns away a portion of the target's current health. The target regains the health lost at the end of the duration minus a percentage of the damage taken while Frostbitten."
-        "DOTA_Tooltip_ability_item_upgrade_to_polar_tower_2_disabled_Description"       "Upgrades this tower to a Glacial Tower.\n<font color='#F0BA36'>Requires: </font><font color='#01A2FF'>Water 2</font> + <font color='#E6E600'>Light 2</font> + <font color='#D4880F'>Earth 2</font> \n\nCOST: <font color='#F0BA36'>3000 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#E6E600'>Light</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>6500</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSpeed: <font color='#FFFFFF'>1</font>\nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>\nABILITY: <font color='#FFFFFF'>Frostbite</font> - Autocast ability that temporarily burns away a portion of the target's current health. The target regains the health lost at the end of the duration minus a percentage of the damage taken while Frostbitten."
+        "DOTA_Tooltip_ability_item_upgrade_to_polar_tower_2_disabled_Description"       "Upgrades this tower to a Glacial Tower.\n<font color='#F0BA36'>Requires: </font><font color='#01A2FF'>Water 2</font> + <font color='#E6E600'>Light 2</font> + <font color='#D4880F'>Earth 2</font> \n\nCOST: <font color='#F0BA36'>3000 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#E6E600'>Light</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>6500</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSpeed: <font color='#FFFFFF'>1</font>\nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>\nABILITY: <font color='#FFFFFF'>Frostbite</font> - Autocast ability that temporarily burns away a portion of the target's current health. The target regains the health lost at the end of the duration minus a percentage of the damage taken while Frostbitten."
         
         // Windstorm (Water + Fire + Light)
         "DOTA_Tooltip_ability_item_upgrade_to_windstorm_tower"      "Windstorm Tower"

@@ -46,7 +46,7 @@
 		"3"		"earth"
 	}
 	"Damage"		"6500"
-	"DamageType"		"earth"
+	"DamageType"		"water"
 	"ScriptClass"		"PolarTower"
 	"TowerType"		"Support"
 	"HasAbilityDesc"		"1"
