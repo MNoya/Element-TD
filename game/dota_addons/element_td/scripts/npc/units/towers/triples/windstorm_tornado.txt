@@ -25,7 +25,7 @@
 	"MovementCapabilities"	"DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			"175"
 	"MovementTurnRate"		"20"
-	"FollowRange"			"250"
+	"FollowRange"			"500"
 	"StatusHealth"			"500"
 	"StatusHealthRegen"		"0"
 	"StatusMana"			"0"

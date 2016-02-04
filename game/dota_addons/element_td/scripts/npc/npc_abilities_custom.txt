@@ -3087,7 +3087,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 1500"
+				"damage"			"250 1250"
 			}
 			"02"
 			{
@@ -3885,7 +3885,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"100 500"
+				"damage"				"200 1000"
 			}
 		}
 	}
@@ -3938,7 +3938,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"100 500"
+				"damage"				"200 1000"
 			}
 			"03"
 			{
