@@ -46,9 +46,7 @@ function Hover(name, arg1, arg2, arg3) {
     if (arg3)
     {
         AddElementGlow(arg3)
-        AddDualsGlow(arg1)
-        AddDualsGlow(arg2)
-        AddDualsGlow(arg3)
+        AddDualsGlow(arg1, arg2, arg3)
     }
 
     hovering = $("#"+name)
@@ -88,14 +86,24 @@ function AddElementGlow(elem) {
     glows.push(panel)
 }
 
-function AddDualsGlow(elem) {
-    var panel = $("#"+elem+"Duals")
+function AddDualsGlow(elem1, elem2, elem3) {
+    // Find each of the 3 possible dual combinations
+    ResolveDualGlows(elem1, elem2, elem3)
+    ResolveDualGlows(elem2, elem1, elem3)
+    ResolveDualGlows(elem3, elem1, elem2)
+}
+
+function ResolveDualGlows(primary, secondary1, secondary2) {
+    var panel = $("#"+primary+"Duals")
     var childN = panel.GetChildCount()
     for (var i = 0; i < childN; i++) {
         var dual = panel.GetChild(i).GetChild(0)
-        dual.AddClass("Glow_"+elem)
-        dual.glow = "Glow_"+elem
-        glows.push(dual)
+        if (towers[dual.id].indexOf(secondary1) != -1 || towers[dual.id].indexOf(secondary2) != -1)
+        {
+            dual.AddClass("Glow_"+primary)
+            dual.glow = "Glow_"+primary
+            glows.push(dual)
+        }
     };
 }
 
