@@ -2001,7 +2001,7 @@
 		"Ability7"		"creep_ability_fast"
 		"Ability8"		"creep_ability_mechanical"
 		"Ability9"		"creep_ability_swarm"
-		"Ability10"		"creep_ability_undead"
+		"Ability10"		"creep_ability_heal"
 	}
 	"immortal"
 	{

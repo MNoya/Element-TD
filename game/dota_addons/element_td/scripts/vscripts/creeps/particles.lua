@@ -70,16 +70,14 @@ end
 function IceFrog( event )
     local target = event.target
 
-    local particle = ParticleManager:CreateParticle("particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+    --[[local particle = ParticleManager:CreateParticle("particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
     ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
     ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_POINT_FOLLOW, "attach_eye_r", target:GetAbsOrigin(), true)
     ParticleManager:SetParticleControlEnt(particle, 2, target, PATTACH_POINT_FOLLOW, "attach_eye_l", target:GetAbsOrigin(), true)
     ParticleManager:SetParticleControl(particle, 15, Vector(0,191,255))
 
-    local particle2 = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_cold_snap_status.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)         
-
-    --target:SetRenderColor(0, 191, 255)
-                
+    local particle2 = ParticleManager:CreateParticle("particles/units/heroes/hero_invoker/invoker_cold_snap_status.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)]]
+    --target:SetRenderColor(0, 191, 255)                
 end
 
 function IceFrogDeath( event )

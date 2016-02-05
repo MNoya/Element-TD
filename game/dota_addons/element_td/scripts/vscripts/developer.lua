@@ -107,8 +107,10 @@ function ElementTD:StopWaves(playerID)
     local playerData = GetPlayerData(playerID)
     local wave = playerData.waveObject
 
-    Timers:RemoveTimer(wave.spawnTimer)
-    wave:SetOnCompletedCallback(function() end)
+    if wave and wave.spawnTimer then
+        Timers:RemoveTimer(wave.spawnTimer)
+        wave:SetOnCompletedCallback(function() end)
+    end
 end
 
 function ElementTD:ClearWave(playerID)

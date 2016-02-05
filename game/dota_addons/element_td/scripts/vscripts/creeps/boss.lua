@@ -19,9 +19,13 @@ function CreepBoss:OnSpawned()
     self.creep:SetMinimumGoldBounty(0)
     self.creep:CreatureLevelUp(self.creep.waveObject.waveNumber-self.creep:GetLevel())
 
-    -- Mechanical
     local creep = self.creep
+    -- Prevent swarm from casting
+    if creep.isSwarm then
+        return
+    end
 
+    -- Mechanical
     Timers:CreateTimer(math.random(1, 6), function()
         if not IsValidEntity(creep) or not creep:IsAlive() then return end
 
@@ -34,7 +38,7 @@ end
 
 -- Undead
 function CreepBoss:OnDeath()
-    local creep = self.creep
+    --[[local creep = self.creep
     local playerID = creep.playerID
     local creepClass = self.creepClass
 
@@ -78,12 +82,12 @@ function CreepBoss:OnDeath()
     end)
 
     self.creep = newCreep
-    CREEP_SCRIPT_OBJECTS[newCreep:entindex()] = self
+    CREEP_SCRIPT_OBJECTS[newCreep:entindex()] = self]]
 end
 
 -- Undead
 function CreepBoss:UndeadCreepRespawn()
-    local creep = self.creep
+    --[[local creep = self.creep
     local playerID = creep.playerID
     local playerData = GetPlayerData(playerID)
     local wave = creep.waveObject:GetWaveNumber()
@@ -109,14 +113,13 @@ function CreepBoss:UndeadCreepRespawn()
 
     local h = ParticleManager:CreateParticle("particles/units/heroes/hero_skeletonking/skeletonking_reincarnation.vpcf", PATTACH_CUSTOMORIGIN, creep) --play a cool particle effect :D
     ParticleManager:SetParticleControl(h, 0, creep:GetAbsOrigin())
-    ParticleManager:SetParticleControlEnt(h, 0, creep, PATTACH_POINT_FOLLOW, "attach_hitloc", creep:GetOrigin(), true)
+    ParticleManager:SetParticleControlEnt(h, 0, creep, PATTACH_POINT_FOLLOW, "attach_hitloc", creep:GetOrigin(), true)]]
 end
 
 -- Swarm
 function CreepBoss:OnTakeDamage(keys)
     if self.creep:GetHealth() > 0 and self.creep:GetHealthPercent() <= 50 and not self.creep.isSwarm then
-        self.creep.isSwarm = true
-
+    
         local swarm = SpawnEntity(self.creep:GetUnitName(), self.creep.playerID, self.creep:GetOrigin())
         swarm.class = creepClass
         swarm.playerID = self.creep.playerID
@@ -131,16 +134,20 @@ function CreepBoss:OnTakeDamage(keys)
         swarm:SetDeathXP(0)
         swarm:SetForwardVector(self.creep:GetForwardVector())
 
-        swarm.scriptObject:OnSpawned()
+        swarm.scriptObject:OnSpawned()        
 
         self.creep:SetMaxHealth(newMaxHealth)
         self.creep:SetBaseMaxHealth(newMaxHealth)
         self.creep:SetHealth(newMaxHealth)
 
+        -- Heal on split
+        self:HealNearbyCreeps({ability=self.creep:FindAbilityByName("creep_ability_heal"), aoe=300, heal_amount=20})
+
         local newScale = self.creep:GetModelScale()*0.8
 
         self.creep:SetModelScale(newScale)
         swarm:SetModelScale(newScale)
+        self.creep.isSwarm = true
 
         local playerID = self.creep.playerID
         local wave = self.creep.waveObject:GetWaveNumber()
@@ -169,12 +176,16 @@ end
 function CreepBoss:HealNearbyCreeps(keys)
     local creep = self.creep;
     local aoe = keys.aoe;
-    local heal_percent = keys.heal_amount / 100; 
+    local heal_percent = keys.heal_amount / 100;
+
+    -- Prevent swarm from casting
+    if creep.isSwarm then return end
 
     local entities = GetCreepsInArea(creep:GetOrigin(), aoe);
     for k, entity in pairs(entities) do
         if entity:GetHealth() > 0 then
             entity:Heal(entity:GetMaxHealth() * heal_percent, nil);
+            keys.ability:ApplyDataDrivenModifier(entity, entity, "heal_effect_modifier", {})
         end
     end
 end
@@ -184,6 +195,9 @@ function CreepBoss:CastHasteSpell(keys)
     local status, err = pcall(function()
         local creep = keys.caster;
         if creep then
+            -- Prevent swarm from casting
+            if creep.isSwarm then return end
+
             local ability = creep:FindAbilityByName("creep_ability_fast");
             creep:CastAbilityImmediately(ability, 1);
         end

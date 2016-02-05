@@ -22,6 +22,7 @@ function CreepHeal:HealNearbyCreeps(keys)
 	for k, entity in pairs(entities) do
 		if entity:GetHealth() > 0 then
 			entity:Heal(entity:GetMaxHealth() * heal_percent, nil);
+			keys.ability:ApplyDataDrivenModifier(entity, entity, "heal_effect_modifier", {})
 		end
 	end
 end

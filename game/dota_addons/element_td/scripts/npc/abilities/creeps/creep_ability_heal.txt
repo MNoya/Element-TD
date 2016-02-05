@@ -40,17 +40,6 @@
 					"heal_amount"		"%heal_amount"
 					"aoe"				"%aoe"
 				}
-				"ApplyModifier"
-				{
-					"Target" 
-					{
-						"Center"		"CASTER"
-						"Radius"		"%aoe"
-						"Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-					}
-					"ModifierName"		"heal_effect_modifier"
-				}
-
 			}
 		}
 		"heal_effect_modifier"
