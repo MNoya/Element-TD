@@ -74,8 +74,8 @@
         }
     }
 
-	"AOE_Full"		"100"
-	"AOE_Half"		"200"
+	"AOE_Full"		"150"
+	"AOE_Half"		"250"
 	"UpgradeIcon"		"visage_gravekeepers_cloak"
 	"BuildTime"		"4"
 	"Requirements"

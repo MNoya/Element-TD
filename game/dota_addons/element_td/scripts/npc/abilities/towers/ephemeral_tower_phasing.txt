@@ -60,7 +60,7 @@
 		"03"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"reset_time"		"2"
+			"reset_time"		"3"
 		}
 		"04"
 		{
