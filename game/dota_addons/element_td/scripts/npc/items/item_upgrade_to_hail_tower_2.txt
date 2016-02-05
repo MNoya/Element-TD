@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_hail"
-	"Cost"		"3500"
 	"Requirements"
 	{
 		"dark"		"2"

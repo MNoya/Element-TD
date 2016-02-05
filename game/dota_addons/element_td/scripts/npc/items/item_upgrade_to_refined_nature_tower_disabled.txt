@@ -9,7 +9,6 @@
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
 	"AbilityTextureName"		"item_nature_disabled"
-	"Cost"		"1300"
 	"Requirements"
 	{
 		"nature"		"3"

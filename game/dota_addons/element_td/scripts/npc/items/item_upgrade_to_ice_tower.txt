@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_ice"
-	"Cost"		"325"
 	"Requirements"
 	{
 		"water"		"1"

@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_water"
-	"Cost"		"11225"
 	"Requirements"
 	{
 		"water"		"3"

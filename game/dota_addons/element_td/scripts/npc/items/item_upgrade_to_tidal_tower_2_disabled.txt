@@ -9,7 +9,6 @@
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
 	"AbilityTextureName"		"item_tidal_disabled"
-	"Cost"		"3500"
 	"Requirements"
 	{
 		"water"		"2"

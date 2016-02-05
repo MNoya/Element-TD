@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_nature"
-	"Cost"		"11225"
 	"Requirements"
 	{
 		"nature"		"3"

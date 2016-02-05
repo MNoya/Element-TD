@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_light"
-	"Cost"		"11225"
 	"Requirements"
 	{
 		"light"		"3"

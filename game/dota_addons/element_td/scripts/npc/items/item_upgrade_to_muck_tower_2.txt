@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_muck"
-	"Cost"		"3500"
 	"Requirements"
 	{
 		"dark"		"2"

@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_poison"
-	"Cost"		"1900"
 	"Requirements"
 	{
 		"dark"		"3"

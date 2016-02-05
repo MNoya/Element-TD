@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_dark"
-	"Cost"		"11225"
 	"Requirements"
 	{
 		"dark"		"3"

@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_gunpowder"
-	"Cost"		"1900"
 	"Requirements"
 	{
 		"earth"		"3"

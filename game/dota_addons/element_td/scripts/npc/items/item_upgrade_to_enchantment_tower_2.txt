@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_enchantment"
-	"Cost"		"3500"
 	"Requirements"
 	{
 		"earth"		"2"

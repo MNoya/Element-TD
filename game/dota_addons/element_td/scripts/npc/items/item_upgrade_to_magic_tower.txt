@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_magic"
-	"Cost"		"325"
 	"Requirements"
 	{
 		"dark"		"1"

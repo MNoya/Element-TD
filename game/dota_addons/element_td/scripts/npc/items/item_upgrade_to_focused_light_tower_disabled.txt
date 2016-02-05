@@ -9,7 +9,6 @@
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
 	"AbilityTextureName"		"item_light_disabled"
-	"Cost"		"450"
 	"Requirements"
 	{
 		"light"		"2"

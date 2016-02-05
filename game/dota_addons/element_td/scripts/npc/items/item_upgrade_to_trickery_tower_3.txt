@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_trickery"
-	"Cost"		"1900"
 	"Requirements"
 	{
 		"light"		"3"

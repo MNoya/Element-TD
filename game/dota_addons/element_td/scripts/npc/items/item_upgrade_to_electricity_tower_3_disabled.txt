@@ -9,7 +9,6 @@
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
 	"AbilityTextureName"		"item_electricity_disabled"
-	"Cost"		"1900"
 	"Requirements"
 	{
 		"fire"		"3"

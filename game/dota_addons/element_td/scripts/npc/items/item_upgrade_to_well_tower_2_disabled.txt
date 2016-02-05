@@ -9,7 +9,6 @@
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
 	"AbilityTextureName"		"item_well_disabled"
-	"Cost"		"750"
 	"Requirements"
 	{
 		"water"		"2"

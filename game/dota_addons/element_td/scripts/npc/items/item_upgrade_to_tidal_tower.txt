@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_tidal"
-	"Cost"		"1000"
 	"Requirements"
 	{
 		"water"		"1"

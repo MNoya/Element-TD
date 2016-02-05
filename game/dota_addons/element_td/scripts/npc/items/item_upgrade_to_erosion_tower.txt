@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_erosion"
-	"Cost"		"1000"
 	"Requirements"
 	{
 		"dark"		"1"

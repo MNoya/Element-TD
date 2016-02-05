@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_moss"
-	"Cost"		"750"
 	"Requirements"
 	{
 		"earth"		"2"

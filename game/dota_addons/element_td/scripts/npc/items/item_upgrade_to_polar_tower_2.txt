@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_polar"
-	"Cost"		"3500"
 	"Requirements"
 	{
 		"water"		"2"

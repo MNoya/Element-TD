@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_vapor"
-	"Cost"		"750"
 	"Requirements"
 	{
 		"fire"		"2"

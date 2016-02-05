@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_life"
-	"Cost"		"750"
 	"Requirements"
 	{
 		"light"		"2"

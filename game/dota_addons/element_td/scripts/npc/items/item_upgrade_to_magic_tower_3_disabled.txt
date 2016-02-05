@@ -9,7 +9,6 @@
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
 	"AbilityTextureName"		"item_magic_disabled"
-	"Cost"		"1900"
 	"Requirements"
 	{
 		"dark"		"3"

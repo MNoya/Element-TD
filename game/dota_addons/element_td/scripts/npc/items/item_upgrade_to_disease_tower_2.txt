@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_disease"
-	"Cost"		"750"
 	"Requirements"
 	{
 		"dark"		"2"

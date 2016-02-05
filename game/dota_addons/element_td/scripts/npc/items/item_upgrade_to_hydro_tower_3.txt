@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_hydro"
-	"Cost"		"1900"
 	"Requirements"
 	{
 		"water"		"3"

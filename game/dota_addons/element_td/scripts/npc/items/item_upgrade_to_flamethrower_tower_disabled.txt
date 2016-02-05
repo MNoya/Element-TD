@@ -9,7 +9,6 @@
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
 	"AbilityTextureName"		"item_flamethrower_disabled"
-	"Cost"		"1000"
 	"Requirements"
 	{
 		"dark"		"1"

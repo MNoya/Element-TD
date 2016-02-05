@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_earth"
-	"Cost"		"450"
 	"Requirements"
 	{
 		"earth"		"2"

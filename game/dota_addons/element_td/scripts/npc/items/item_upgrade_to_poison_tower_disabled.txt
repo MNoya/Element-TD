@@ -9,7 +9,6 @@
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
 	"AbilityTextureName"		"item_poison_disabled"
-	"Cost"		"325"
 	"Requirements"
 	{
 		"dark"		"1"

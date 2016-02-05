@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_flooding"
-	"Cost"		"1000"
 	"Requirements"
 	{
 		"water"		"1"

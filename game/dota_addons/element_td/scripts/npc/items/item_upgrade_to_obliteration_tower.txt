@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_obliteration"
-	"Cost"		"1000"
 	"Requirements"
 	{
 		"dark"		"1"

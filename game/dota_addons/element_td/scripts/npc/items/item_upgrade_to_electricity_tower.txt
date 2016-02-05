@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_electricity"
-	"Cost"		"325"
 	"Requirements"
 	{
 		"fire"		"1"

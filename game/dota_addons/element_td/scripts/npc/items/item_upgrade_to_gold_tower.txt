@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_gold"
-	"Cost"		"1000"
 	"Requirements"
 	{
 		"fire"		"1"

@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_nova"
-	"Cost"		"3500"
 	"Requirements"
 	{
 		"fire"		"2"

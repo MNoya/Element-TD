@@ -19,7 +19,6 @@
 		}
 	}
 	"AbilityTextureName"		"item_fire"
-	"Cost"		"11225"
 	"Requirements"
 	{
 		"fire"		"3"
