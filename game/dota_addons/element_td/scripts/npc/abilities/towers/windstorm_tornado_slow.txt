@@ -29,6 +29,7 @@
 		{
 			"IsDebuff"		"1"
 			"TextureName"	"tornado_tempest"
+			"IsPurgable"	"1"
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"

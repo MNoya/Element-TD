@@ -37,6 +37,7 @@
 		{
 			"Duration"		"%duration"
 			"IsDebuff"		"1"
+			"IsPurgable"	"1"
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"

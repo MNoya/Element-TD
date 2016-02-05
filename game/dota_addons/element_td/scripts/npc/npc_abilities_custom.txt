@@ -519,10 +519,14 @@
 			"mechanical_buff"
 			{
 				"IsHidden"			"0"
-				"Passive"			"0"
-				"Duration"			"%duration"
 				"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_repel_buff.vpcf"
 				"EffectAttachType"	"follow_origin"
+	
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_MAGIC_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
+				}
 			}
 		}
 	}
@@ -3010,6 +3014,7 @@
 			{
 				"Duration"		"%duration"
 				"IsDebuff"		"1"
+				"IsPurgable"	"1"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
@@ -3105,6 +3110,7 @@
 			{
 				"Duration"		"%duration"
 				"IsDebuff"		"1"
+				"IsPurgable"	"1"
 				"TextureName"	"phoenix_supernova"
 				"Properties"
 				{
@@ -3409,6 +3415,7 @@
 			{
 				"Duration"			"%duration"
 				"IsDebuff"			"1"
+				"IsPurgable"	"1"
 				"TextureName"		"treant_leech_seed"
 				"EffectName"		"particles/custom/towers/roots/debuff.vpcf"
 				"EffectTargetType"	"follow_origin"
@@ -3423,6 +3430,7 @@
 				"Duration"		"%duration"
 				"ThinkInterval"	"1"
 				"IsDebuff"		"1"
+				"IsPurgable"	"1"
 				"TextureName"	"treant_leech_seed"
 				
 				"OnIntervalThink"
@@ -3889,6 +3897,7 @@
 			{
 				"IsDebuff"		"1"
 				"TextureName"	"tornado_tempest"
+				"IsPurgable"	"1"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"

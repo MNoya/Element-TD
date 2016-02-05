@@ -58,6 +58,7 @@
 		{
 			"Duration"		"%duration"
 			"IsDebuff"		"1"
+			"IsPurgable"	"1"
 			"TextureName"	"phoenix_supernova"
 			"Properties"
 			{

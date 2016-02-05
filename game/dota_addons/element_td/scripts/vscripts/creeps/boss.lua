@@ -29,8 +29,13 @@ function CreepBoss:OnSpawned()
     Timers:CreateTimer(math.random(1, 6), function()
         if not IsValidEntity(creep) or not creep:IsAlive() then return end
 
-        creep:FindAbilityByName("creep_ability_mechanical"):ApplyDataDrivenModifier(creep, creep, "mechanical_buff", {})
-        creep:AddNewModifier(nil, nil, "modifier_invulnerable", {duration = 2})
+        creep:Purge(false, true, false, true, true)
+
+        local duration = 2
+        if creep.isSwarm then
+            duration = 1
+        end
+        creep:FindAbilityByName("creep_ability_mechanical"):ApplyDataDrivenModifier(creep, creep, "mechanical_buff", {duration=duration})
 
         return 8
     end)
