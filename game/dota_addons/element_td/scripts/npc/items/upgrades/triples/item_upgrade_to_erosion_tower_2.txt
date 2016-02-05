@@ -28,4 +28,18 @@
 		"water"		"2"
 		"water"		"2"
 	}
+    "ItemBaseLevel" "2"
+    "AbilitySpecial"
+	{
+        "01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_amp"			"10 30"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"dot"					"105 525"
+		}
+    }
 }

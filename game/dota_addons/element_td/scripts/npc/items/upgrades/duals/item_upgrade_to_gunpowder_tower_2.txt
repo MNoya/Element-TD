@@ -26,4 +26,13 @@
 		"dark"		"2"
 		"dark"		"2"
 	}
+    "ItemBaseLevel" "2"
+    "AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"25 125 625"
+		}
+	}
 }

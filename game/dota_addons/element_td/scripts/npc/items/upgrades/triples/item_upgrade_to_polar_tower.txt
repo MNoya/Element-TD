@@ -28,4 +28,18 @@
 		"earth"		"1"
 		"earth"		"1"
 	}
+    "ItemBaseLevel" "1"
+    "AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"health_burn"			"10 30"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_taken_pcnt"		"5 15"
+		}
+	}
 }

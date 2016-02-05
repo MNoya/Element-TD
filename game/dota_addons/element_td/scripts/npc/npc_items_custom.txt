@@ -1,131 +1,5 @@
 "DOTAAbilities"
 {
-	"item_upgrade_to_well_tower_disabled"
-	{
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"		"item_datadriven"
-		"AbilityManaCost"		"0"
-		"ItemShareability"		"ITEM_NOT_SHAREABLE"
-		"ItemSellable"		"0"
-		"ItemKillable"		"0"
-		"ItemPurchasable"		"0"
-		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_well_disabled"
-		"Requirements"
-		{
-			"water"		"1"
-			"water"		"1"
-			"nature"		"1"
-			"nature"		"1"
-		}
-	}
-	"item_upgrade_to_windstorm_tower"
-	{
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"		"item_datadriven"
-		"AbilityManaCost"		"0"
-		"ItemShareability"		"ITEM_NOT_SHAREABLE"
-		"ItemSellable"		"0"
-		"ItemKillable"		"0"
-		"ItemPurchasable"		"0"
-		"ItemDroppable"		"0"
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
-				"Function"		"UpgradeTower"
-				"tower"		"windstorm_tower"
-			}
-		}
-		"AbilityTextureName"		"item_windstorm"
-		"Requirements"
-		{
-			"fire"		"1"
-			"fire"		"1"
-			"light"		"1"
-			"light"		"1"
-			"water"		"1"
-			"water"		"1"
-		}
-	}
-	"item_upgrade_to_windstorm_tower_2"
-	{
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"BaseClass"		"item_datadriven"
-		"AbilityManaCost"		"0"
-		"ItemShareability"		"ITEM_NOT_SHAREABLE"
-		"ItemSellable"		"0"
-		"ItemKillable"		"0"
-		"ItemPurchasable"		"0"
-		"ItemDroppable"		"0"
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
-				"Function"		"UpgradeTower"
-				"tower"		"windstorm_tower_2"
-			}
-		}
-		"AbilityTextureName"		"item_windstorm"
-		"Cost"		"3500"
-		"Requirements"
-		{
-			"fire"		"2"
-			"fire"		"2"
-			"light"		"2"
-			"light"		"2"
-			"water"		"2"
-			"water"		"2"
-		}
-	}
-	"item_upgrade_to_windstorm_tower_2_disabled"
-	{
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"		"item_datadriven"
-		"AbilityManaCost"		"0"
-		"ItemShareability"		"ITEM_NOT_SHAREABLE"
-		"ItemSellable"		"0"
-		"ItemKillable"		"0"
-		"ItemPurchasable"		"0"
-		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_windstorm_disabled"
-		"Cost"		"3500"
-		"Requirements"
-		{
-			"fire"		"2"
-			"fire"		"2"
-			"light"		"2"
-			"light"		"2"
-			"water"		"2"
-			"water"		"2"
-		}
-	}
-	"item_upgrade_to_windstorm_tower_disabled"
-	{
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"		"item_datadriven"
-		"AbilityManaCost"		"0"
-		"ItemShareability"		"ITEM_NOT_SHAREABLE"
-		"ItemSellable"		"0"
-		"ItemKillable"		"0"
-		"ItemPurchasable"		"0"
-		"ItemDroppable"		"0"
-		"AbilityTextureName"		"item_windstorm_disabled"
-		"Cost"		"1000"
-		"Requirements"
-		{
-			"fire"		"1"
-			"fire"		"1"
-			"light"		"1"
-			"light"		"1"
-			"water"		"1"
-			"water"		"1"
-		}
-	}
 	//============================================================//
 	// Build Arrow Tower (Item Version)
 	//============================================================//
@@ -1010,6 +884,15 @@
 			"earth"		"1"
 			"earth"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"15 30 90"
+			}
+		}
 	}
 	"item_upgrade_to_blacksmith_tower_2"
 	{
@@ -1039,6 +922,15 @@
 			"earth"		"2"
 			"earth"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"15 30 90"
+			}
+		}
 	}
 	"item_upgrade_to_blacksmith_tower_2_disabled"
 	{
@@ -1057,6 +949,15 @@
 			"fire"		"2"
 			"earth"		"2"
 			"earth"		"2"
+		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"15 30 90"
+			}
 		}
 	}
 	"item_upgrade_to_blacksmith_tower_3"
@@ -1087,6 +988,15 @@
 			"earth"		"3"
 			"earth"		"3"
 		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"15 30 90"
+			}
+		}
 	}
 	"item_upgrade_to_blacksmith_tower_3_disabled"
 	{
@@ -1106,6 +1016,15 @@
 			"earth"		"3"
 			"earth"		"3"
 		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"15 30 90"
+			}
+		}
 	}
 	"item_upgrade_to_blacksmith_tower_disabled"
 	{
@@ -1124,6 +1043,15 @@
 			"fire"		"1"
 			"earth"		"1"
 			"earth"		"1"
+		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"15 30 90"
+			}
 		}
 	}
 	"item_upgrade_to_disease_tower"
@@ -1298,6 +1226,15 @@
 			"light"		"1"
 			"light"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"180 900 4500"
+			}
+		}
 	}
 	"item_upgrade_to_electricity_tower_2"
 	{
@@ -1327,6 +1264,15 @@
 			"light"		"2"
 			"light"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"180 900 4500"
+			}
+		}
 	}
 	"item_upgrade_to_electricity_tower_2_disabled"
 	{
@@ -1345,6 +1291,15 @@
 			"fire"		"2"
 			"light"		"2"
 			"light"		"2"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"180 900 4500"
+			}
 		}
 	}
 	"item_upgrade_to_electricity_tower_3"
@@ -1375,6 +1330,15 @@
 			"light"		"3"
 			"light"		"3"
 		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"180 900 4500"
+			}
+		}
 	}
 	"item_upgrade_to_electricity_tower_3_disabled"
 	{
@@ -1394,6 +1358,15 @@
 			"light"		"3"
 			"light"		"3"
 		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"180 900 4500"
+			}
+		}
 	}
 	"item_upgrade_to_electricity_tower_disabled"
 	{
@@ -1412,6 +1385,15 @@
 			"fire"		"1"
 			"light"		"1"
 			"light"		"1"
+		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"180 900 4500"
+			}
 		}
 	}
 	"item_upgrade_to_flame_tower"
@@ -1442,6 +1424,15 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"30 150 750"
+			}
+	    }
 	}
 	"item_upgrade_to_flame_tower_2"
 	{
@@ -1471,6 +1462,15 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"30 150 750"
+			}
+	    }
 	}
 	"item_upgrade_to_flame_tower_2_disabled"
 	{
@@ -1490,6 +1490,15 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"30 150 750"
+			}
+	    }
 	}
 	"item_upgrade_to_flame_tower_3"
 	{
@@ -1519,6 +1528,15 @@
 			"nature"		"3"
 			"nature"		"3"
 		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"30 150 750"
+			}
+	    }
 	}
 	"item_upgrade_to_flame_tower_3_disabled"
 	{
@@ -1538,6 +1556,15 @@
 			"nature"		"3"
 			"nature"		"3"
 		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"30 150 750"
+			}
+	    }
 	}
 	"item_upgrade_to_flame_tower_disabled"
 	{
@@ -1557,6 +1584,15 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"30 150 750"
+			}
+	    }
 	}
 	"item_upgrade_to_gunpowder_tower"
 	{
@@ -1585,6 +1621,15 @@
 			"earth"		"1"
 			"dark"		"1"
 			"dark"		"1"
+		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"25 125 625"
+			}
 		}
 	}
 	"item_upgrade_to_gunpowder_tower_2"
@@ -1615,6 +1660,15 @@
 			"dark"		"2"
 			"dark"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"25 125 625"
+			}
+		}
 	}
 	"item_upgrade_to_gunpowder_tower_2_disabled"
 	{
@@ -1633,6 +1687,15 @@
 			"earth"		"2"
 			"dark"		"2"
 			"dark"		"2"
+		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"25 125 625"
+			}
 		}
 	}
 	"item_upgrade_to_gunpowder_tower_3"
@@ -1663,6 +1726,15 @@
 			"dark"		"3"
 			"dark"		"3"
 		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"25 125 625"
+			}
+		}
 	}
 	"item_upgrade_to_gunpowder_tower_3_disabled"
 	{
@@ -1682,6 +1754,15 @@
 			"dark"		"3"
 			"dark"		"3"
 		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"25 125 625"
+			}
+		}
 	}
 	"item_upgrade_to_gunpowder_tower_disabled"
 	{
@@ -1700,6 +1781,15 @@
 			"earth"		"1"
 			"dark"		"1"
 			"dark"		"1"
+		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"25 125 625"
+			}
 		}
 	}
 	"item_upgrade_to_hydro_tower"
@@ -1730,6 +1820,15 @@
 			"earth"		"1"
 			"earth"		"1"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"splash_damage"		"300 1500 7500"
+			}
+		}
 	}
 	"item_upgrade_to_hydro_tower_2"
 	{
@@ -1759,6 +1858,15 @@
 			"earth"		"2"
 			"earth"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"splash_damage"		"300 1500 7500"
+			}
+		}
 	}
 	"item_upgrade_to_hydro_tower_2_disabled"
 	{
@@ -1777,6 +1885,15 @@
 			"water"		"2"
 			"earth"		"2"
 			"earth"		"2"
+		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"splash_damage"		"300 1500 7500"
+			}
 		}
 	}
 	"item_upgrade_to_hydro_tower_3"
@@ -1807,6 +1924,15 @@
 			"earth"		"3"
 			"earth"		"3"
 		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"splash_damage"		"300 1500 7500"
+			}
+		}
 	}
 	"item_upgrade_to_hydro_tower_3_disabled"
 	{
@@ -1826,6 +1952,15 @@
 			"earth"		"3"
 			"earth"		"3"
 		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"splash_damage"		"300 1500 7500"
+			}
+		}
 	}
 	"item_upgrade_to_hydro_tower_disabled"
 	{
@@ -1844,6 +1979,15 @@
 			"water"		"1"
 			"earth"		"1"
 			"earth"		"1"
+		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"splash_damage"		"300 1500 7500"
+			}
 		}
 	}
 	"item_upgrade_to_ice_tower"
@@ -1874,6 +2018,15 @@
 			"light"		"1"
 			"light"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"150 750 3750"
+			}
+	    }
 	}
 	"item_upgrade_to_ice_tower_2"
 	{
@@ -1903,6 +2056,15 @@
 			"light"		"2"
 			"light"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"150 750 3750"
+			}
+	    }
 	}
 	"item_upgrade_to_ice_tower_2_disabled"
 	{
@@ -1922,6 +2084,15 @@
 			"light"		"2"
 			"light"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"150 750 3750"
+			}
+	    }
 	}
 	"item_upgrade_to_ice_tower_3"
 	{
@@ -1951,6 +2122,15 @@
 			"light"		"3"
 			"light"		"3"
 		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"150 750 3750"
+			}
+	    }
 	}
 	"item_upgrade_to_ice_tower_3_disabled"
 	{
@@ -1970,6 +2150,15 @@
 			"light"		"3"
 			"light"		"3"
 		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"150 750 3750"
+			}
+	    }
 	}
 	"item_upgrade_to_ice_tower_disabled"
 	{
@@ -1989,6 +2178,15 @@
 			"light"		"1"
 			"light"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"150 750 3750"
+			}
+	    }
 	}
 	"item_upgrade_to_life_tower"
 	{
@@ -2017,6 +2215,15 @@
 			"light"		"1"
 			"nature"		"1"
 			"nature"		"1"
+		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"kills_required"				"3 2 1"
+			}
 		}
 	}
 	"item_upgrade_to_life_tower_2"
@@ -2047,6 +2254,15 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"kills_required"				"3 2 1"
+			}
+		}
 	}
 	"item_upgrade_to_life_tower_2_disabled"
 	{
@@ -2065,6 +2281,15 @@
 			"light"		"2"
 			"nature"		"2"
 			"nature"		"2"
+		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"kills_required"				"3 2 1"
+			}
 		}
 	}
 	"item_upgrade_to_life_tower_3"
@@ -2095,6 +2320,15 @@
 			"nature"		"3"
 			"nature"		"3"
 		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"kills_required"				"3 2 1"
+			}
+		}
 	}
 	"item_upgrade_to_life_tower_3_disabled"
 	{
@@ -2114,6 +2348,15 @@
 			"nature"		"3"
 			"nature"		"3"
 		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"kills_required"				"3 2 1"
+			}
+		}
 	}
 	"item_upgrade_to_life_tower_disabled"
 	{
@@ -2132,6 +2375,15 @@
 			"light"		"1"
 			"nature"		"1"
 			"nature"		"1"
+		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"kills_required"				"3 2 1"
+			}
 		}
 	}
 	"item_upgrade_to_magic_tower"
@@ -2738,6 +2990,15 @@
 			"dark"		"1"
 			"dark"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"10 20 60"
+			}
+		}
 	}
 	"item_upgrade_to_trickery_tower_2"
 	{
@@ -2767,6 +3028,15 @@
 			"dark"		"2"
 			"dark"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"10 20 60"
+			}
+		}
 	}
 	"item_upgrade_to_trickery_tower_2_disabled"
 	{
@@ -2785,6 +3055,15 @@
 			"light"		"2"
 			"dark"		"2"
 			"dark"		"2"
+		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"10 20 60"
+			}
 		}
 	}
 	"item_upgrade_to_trickery_tower_3"
@@ -2815,6 +3094,15 @@
 			"dark"		"3"
 			"dark"		"3"
 		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"10 20 60"
+			}
+		}
 	}
 	"item_upgrade_to_trickery_tower_3_disabled"
 	{
@@ -2834,6 +3122,15 @@
 			"dark"		"3"
 			"dark"		"3"
 		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"10 20 60"
+			}
+		}
 	}
 	"item_upgrade_to_trickery_tower_disabled"
 	{
@@ -2852,6 +3149,15 @@
 			"light"		"1"
 			"dark"		"1"
 			"dark"		"1"
+		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"10 20 60"
+			}
 		}
 	}
 	"item_upgrade_to_vapor_tower"
@@ -2882,6 +3188,20 @@
 			"water"		"1"
 			"water"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"30 150 750"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aftershock_damage"		"15 75 375"
+			}
+		}
 	}
 	"item_upgrade_to_vapor_tower_2"
 	{
@@ -2911,6 +3231,20 @@
 			"water"		"2"
 			"water"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"30 150 750"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aftershock_damage"		"15 75 375"
+			}
+		}
 	}
 	"item_upgrade_to_vapor_tower_2_disabled"
 	{
@@ -2929,6 +3263,20 @@
 			"fire"		"2"
 			"water"		"2"
 			"water"		"2"
+		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"30 150 750"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aftershock_damage"		"15 75 375"
+			}
 		}
 	}
 	"item_upgrade_to_vapor_tower_3"
@@ -2959,6 +3307,20 @@
 			"water"		"3"
 			"water"		"3"
 		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"30 150 750"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aftershock_damage"		"15 75 375"
+			}
+		}
 	}
 	"item_upgrade_to_vapor_tower_3_disabled"
 	{
@@ -2978,6 +3340,20 @@
 			"water"		"3"
 			"water"		"3"
 		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"30 150 750"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aftershock_damage"		"15 75 375"
+			}
+		}
 	}
 	"item_upgrade_to_vapor_tower_disabled"
 	{
@@ -2996,6 +3372,20 @@
 			"fire"		"1"
 			"water"		"1"
 			"water"		"1"
+		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"30 150 750"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aftershock_damage"		"15 75 375"
+			}
 		}
 	}
 	"item_upgrade_to_well_tower"
@@ -3026,6 +3416,15 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed"			"15 30 90"
+			}
+	    }
 	}
 	"item_upgrade_to_well_tower_2"
 	{
@@ -3055,6 +3454,15 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed"			"15 30 90"
+			}
+	    }
 	}
 	"item_upgrade_to_well_tower_2_disabled"
 	{
@@ -3074,6 +3482,15 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed"			"15 30 90"
+			}
+	    }
 	}
 	"item_upgrade_to_well_tower_3"
 	{
@@ -3103,6 +3520,15 @@
 			"nature"		"3"
 			"nature"		"3"
 		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed"			"15 30 90"
+			}
+	    }
 	}
 	"item_upgrade_to_well_tower_3_disabled"
 	{
@@ -3122,6 +3548,43 @@
 			"nature"		"3"
 			"nature"		"3"
 		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed"			"15 30 90"
+			}
+	    }
+	}
+	"item_upgrade_to_well_tower_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_well_disabled"
+		"Requirements"
+		{
+			"water"		"1"
+			"water"		"1"
+			"nature"		"1"
+			"nature"		"1"
+		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed"			"15 30 90"
+			}
+	    }
 	}
 	"item_upgrade_to_enchantment_tower"
 	{
@@ -3153,6 +3616,15 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_amp"			"10 30"
+			}
+	    }
 	}
 	"item_upgrade_to_enchantment_tower_2"
 	{
@@ -3184,6 +3656,15 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_amp"			"10 30"
+			}
+	    }
 	}
 	"item_upgrade_to_enchantment_tower_2_disabled"
 	{
@@ -3205,6 +3686,15 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_amp"			"10 30"
+			}
+	    }
 	}
 	"item_upgrade_to_enchantment_tower_disabled"
 	{
@@ -3226,6 +3716,15 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_amp"			"10 30"
+			}
+	    }
 	}
 	"item_upgrade_to_ephemeral_tower"
 	{
@@ -3361,6 +3860,20 @@
 			"water"		"1"
 			"water"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_amp"			"10 30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dot"					"105 525"
+			}
+	    }
 	}
 	"item_upgrade_to_erosion_tower_2"
 	{
@@ -3392,6 +3905,20 @@
 			"water"		"2"
 			"water"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_amp"			"10 30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dot"					"105 525"
+			}
+	    }
 	}
 	"item_upgrade_to_erosion_tower_2_disabled"
 	{
@@ -3413,6 +3940,20 @@
 			"water"		"2"
 			"water"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_amp"			"10 30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dot"					"105 525"
+			}
+	    }
 	}
 	"item_upgrade_to_erosion_tower_disabled"
 	{
@@ -3434,6 +3975,20 @@
 			"water"		"1"
 			"water"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_amp"			"10 30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dot"					"105 525"
+			}
+	    }
 	}
 	"item_upgrade_to_flamethrower_tower"
 	{
@@ -3464,6 +4019,15 @@
 			"earth"		"1"
 			"fire"		"1"
 			"fire"		"1"
+		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"240 1200"
+			}
 		}
 	}
 	"item_upgrade_to_flamethrower_tower_2"
@@ -3496,6 +4060,15 @@
 			"fire"		"2"
 			"fire"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"240 1200"
+			}
+		}
 	}
 	"item_upgrade_to_flamethrower_tower_2_disabled"
 	{
@@ -3517,6 +4090,15 @@
 			"fire"		"2"
 			"fire"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"240 1200"
+			}
+		}
 	}
 	"item_upgrade_to_flamethrower_tower_disabled"
 	{
@@ -3537,6 +4119,15 @@
 			"earth"		"1"
 			"fire"		"1"
 			"fire"		"1"
+		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"240 1200"
+			}
 		}
 	}
 	"item_upgrade_to_flooding_tower"
@@ -3569,6 +4160,15 @@
 			"dark"		"1"
 			"dark"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_damage"			"120 600"
+			}
+		}
 	}
 	"item_upgrade_to_flooding_tower_2"
 	{
@@ -3600,6 +4200,15 @@
 			"dark"		"2"
 			"dark"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_damage"			"120 600"
+			}
+		}
 	}
 	"item_upgrade_to_flooding_tower_2_disabled"
 	{
@@ -3621,6 +4230,15 @@
 			"dark"		"2"
 			"dark"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_damage"			"120 600"
+			}
+		}
 	}
 	"item_upgrade_to_flooding_tower_disabled"
 	{
@@ -3641,6 +4259,15 @@
 			"nature"		"1"
 			"dark"		"1"
 			"dark"		"1"
+		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_damage"			"120 600"
+			}
 		}
 	}
 	"item_upgrade_to_gold_tower"
@@ -3673,6 +4300,15 @@
 			"light"		"1"
 			"light"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_gold"			"33 66"
+			}
+		}
 	}
 	"item_upgrade_to_gold_tower_2"
 	{
@@ -3704,6 +4340,15 @@
 			"light"		"2"
 			"light"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_gold"			"33 66"
+			}
+		}
 	}
 	"item_upgrade_to_gold_tower_2_disabled"
 	{
@@ -3725,6 +4370,15 @@
 			"light"		"2"
 			"light"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_gold"			"33 66"
+			}
+		}
 	}
 	"item_upgrade_to_gold_tower_disabled"
 	{
@@ -3745,6 +4399,15 @@
 			"earth"		"1"
 			"light"		"1"
 			"light"		"1"
+		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_gold"			"33 66"
+			}
 		}
 	}
 	"item_upgrade_to_hail_tower"
@@ -3985,6 +4648,15 @@
 			"water"		"1"
 			"water"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"multiplier"			"2000 10000"
+			}
+		}
 	}
 	"item_upgrade_to_impulse_tower_2"
 	{
@@ -4016,6 +4688,15 @@
 			"water"		"2"
 			"water"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"multiplier"			"2000 10000"
+			}
+		}
 	}
 	"item_upgrade_to_impulse_tower_2_disabled"
 	{
@@ -4037,6 +4718,15 @@
 			"water"		"2"
 			"water"		"2"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"multiplier"			"2000 10000"
+			}
+		}
 	}
 	"item_upgrade_to_impulse_tower_disabled"
 	{
@@ -4057,6 +4747,15 @@
 			"fire"		"1"
 			"water"		"1"
 			"water"		"1"
+		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"multiplier"			"2000 10000"
+			}
 		}
 	}
 	"item_upgrade_to_jinx_tower"
@@ -4089,6 +4788,15 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_taken"			"10 30"
+			}
+	    }
 	}
 	"item_upgrade_to_jinx_tower_2"
 	{
@@ -4120,6 +4828,15 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_taken"			"10 30"
+			}
+	    }
 	}
 	"item_upgrade_to_jinx_tower_2_disabled"
 	{
@@ -4141,6 +4858,15 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_taken"			"10 30"
+			}
+	    }
 	}
 	"item_upgrade_to_jinx_tower_disabled"
 	{
@@ -4162,6 +4888,15 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_taken"			"10 30"
+			}
+	    }
 	}
 	"item_upgrade_to_laser_tower"
 	{
@@ -4297,6 +5032,15 @@
 			"water"		"1"
 			"water"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30"
+			}
+	    }
 	}
 	"item_upgrade_to_muck_tower_2"
 	{
@@ -4328,6 +5072,15 @@
 			"water"		"2"
 			"water"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30"
+			}
+	    }
 	}
 	"item_upgrade_to_muck_tower_2_disabled"
 	{
@@ -4349,6 +5102,15 @@
 			"water"		"2"
 			"water"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30"
+			}
+	    }
 	}
 	"item_upgrade_to_muck_tower_disabled"
 	{
@@ -4370,6 +5132,15 @@
 			"water"		"1"
 			"water"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30"
+			}
+	    }
 	}
 	"item_upgrade_to_nova_tower"
 	{
@@ -4401,6 +5172,20 @@
 			"light"		"1"
 			"light"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"250 1250"
+			}
+	        "02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30"
+			}
+	    }
 	}
 	"item_upgrade_to_nova_tower_2"
 	{
@@ -4432,6 +5217,20 @@
 			"light"		"2"
 			"light"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"250 1250"
+			}
+	        "02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30"
+			}
+	    }
 	}
 	"item_upgrade_to_nova_tower_2_disabled"
 	{
@@ -4453,6 +5252,20 @@
 			"light"		"2"
 			"light"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"250 1250"
+			}
+	        "02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30"
+			}
+	    }
 	}
 	"item_upgrade_to_nova_tower_disabled"
 	{
@@ -4474,6 +5287,20 @@
 			"light"		"1"
 			"light"		"1"
 		}
+	    "ItemBaseLevel" "1"
+		"AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"250 1250"
+			}
+	        "02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30"
+			}
+	    }
 	}
 	"item_upgrade_to_obliteration_tower"
 	{
@@ -4609,6 +5436,20 @@
 			"earth"		"1"
 			"earth"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_burn"			"10 30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_taken_pcnt"		"5 15"
+			}
+		}
 	}
 	"item_upgrade_to_polar_tower_2"
 	{
@@ -4640,6 +5481,20 @@
 			"earth"		"2"
 			"earth"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_burn"			"10 30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_taken_pcnt"		"5 15"
+			}
+		}
 	}
 	"item_upgrade_to_polar_tower_2_disabled"
 	{
@@ -4661,6 +5516,20 @@
 			"earth"		"2"
 			"earth"		"2"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_burn"			"10 30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_taken_pcnt"		"5 15"
+			}
+		}
 	}
 	"item_upgrade_to_polar_tower_disabled"
 	{
@@ -4681,6 +5550,20 @@
 			"light"		"1"
 			"earth"		"1"
 			"earth"		"1"
+		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_burn"			"10 30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_taken_pcnt"		"5 15"
+			}
 		}
 	}
 	"item_upgrade_to_quake_tower"
@@ -4713,6 +5596,15 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"600 3000"
+			}
+		}
 	}
 	"item_upgrade_to_quake_tower_2"
 	{
@@ -4744,6 +5636,15 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"600 3000"
+			}
+		}
 	}
 	"item_upgrade_to_quake_tower_2_disabled"
 	{
@@ -4765,6 +5666,15 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"600 3000"
+			}
+		}
 	}
 	"item_upgrade_to_quake_tower_disabled"
 	{
@@ -4785,6 +5695,15 @@
 			"earth"		"1"
 			"nature"		"1"
 			"nature"		"1"
+		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"600 3000"
+			}
 		}
 	}
 	"item_upgrade_to_roots_tower"
@@ -4817,6 +5736,20 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30"
+			}
+	        "02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dps"					"100 500"
+			}
+	    }
 	}
 	"item_upgrade_to_roots_tower_2"
 	{
@@ -4848,6 +5781,20 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30"
+			}
+	        "02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dps"					"100 500"
+			}
+	    }
 	}
 	"item_upgrade_to_roots_tower_2_disabled"
 	{
@@ -4869,6 +5816,20 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30"
+			}
+	        "02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dps"					"100 500"
+			}
+	    }
 	}
 	"item_upgrade_to_roots_tower_disabled"
 	{
@@ -4890,6 +5851,20 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30"
+			}
+	        "02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dps"					"100 500"
+			}
+	    }
 	}
 	"item_upgrade_to_runic_tower"
 	{
@@ -5025,6 +6000,15 @@
 			"light"		"1"
 			"light"		"1"
 		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"30 150"
+			}
+		}
 	}
 	"item_upgrade_to_tidal_tower_2"
 	{
@@ -5056,6 +6040,15 @@
 			"light"		"2"
 			"light"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"30 150"
+			}
+		}
 	}
 	"item_upgrade_to_tidal_tower_2_disabled"
 	{
@@ -5077,6 +6070,15 @@
 			"light"		"2"
 			"light"		"2"
 		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"30 150"
+			}
+		}
 	}
 	"item_upgrade_to_tidal_tower_disabled"
 	{
@@ -5097,6 +6099,178 @@
 			"nature"		"1"
 			"light"		"1"
 			"light"		"1"
+		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"30 150"
+			}
+		}
+	}
+	"item_upgrade_to_windstorm_tower"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"windstorm_tower"
+			}
+		}
+		"AbilityTextureName"		"item_windstorm"
+		"Requirements"
+		{
+			"fire"		"1"
+			"fire"		"1"
+			"light"		"1"
+			"light"		"1"
+			"water"		"1"
+			"water"		"1"
+		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"200 1000"
+			}
+		}
+	}
+	"item_upgrade_to_windstorm_tower_2"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"windstorm_tower_2"
+			}
+		}
+		"AbilityTextureName"		"item_windstorm"
+		"Cost"		"3500"
+		"Requirements"
+		{
+			"fire"		"2"
+			"fire"		"2"
+			"light"		"2"
+			"light"		"2"
+			"water"		"2"
+			"water"		"2"
+		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"200 1000"
+			}
+		}
+	}
+	"item_upgrade_to_windstorm_tower_2_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_windstorm_disabled"
+		"Cost"		"3500"
+		"Requirements"
+		{
+			"fire"		"2"
+			"fire"		"2"
+			"light"		"2"
+			"light"		"2"
+			"water"		"2"
+			"water"		"2"
+		}
+	    "ItemBaseLevel" "2"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"200 1000"
+			}
+		}
+	}
+	"item_upgrade_to_windstorm_tower_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_windstorm_disabled"
+		"Cost"		"1000"
+		"Requirements"
+		{
+			"fire"		"1"
+			"fire"		"1"
+			"light"		"1"
+			"light"		"1"
+			"water"		"1"
+			"water"		"1"
+		}
+	    "ItemBaseLevel" "1"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"200 1000"
+			}
 		}
 	}
 }

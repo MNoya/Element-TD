@@ -16,4 +16,13 @@
 		"earth"		"1"
 		"earth"		"1"
 	}
+    "ItemBaseLevel" "1"
+    "AbilitySpecial"
+	{
+        "01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"splash_damage"		"300 1500 7500"
+		}
+	}
 }

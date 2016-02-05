@@ -28,4 +28,13 @@
 		"light"		"2"
 		"light"		"2"
 	}
+    "ItemBaseLevel" "2"
+    "AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage"			"30 150"
+		}
+	}
 }

@@ -26,4 +26,13 @@
 		"earth"		"3"
 		"earth"		"3"
 	}
+    "ItemBaseLevel" "3"
+    "AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"15 30 90"
+		}
+	}
 }

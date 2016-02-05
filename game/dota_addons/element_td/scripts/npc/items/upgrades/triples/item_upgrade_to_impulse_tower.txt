@@ -28,4 +28,13 @@
 		"water"		"1"
 		"water"		"1"
 	}
+    "ItemBaseLevel" "1"
+    "AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"multiplier"			"2000 10000"
+		}
+	}
 }

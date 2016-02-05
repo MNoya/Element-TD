@@ -26,4 +26,13 @@
 		"light"		"3"
 		"light"		"3"
 	}
+    "ItemBaseLevel" "3"
+    "AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"180 900 4500"
+		}
+	}
 }

@@ -1808,6 +1808,7 @@
 			"dummy_modifier"
 			{
 				"Passive"	"1"
+				"IsHidden"	"1"
 				"States"
 				{
 					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
@@ -2297,48 +2298,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"interval"				"1"
-			}
-		}
-	}
-	//============================================================//
-	// Flooding Tower: Increase Splash
-	//============================================================//
-	"flooding_tower_increase_splash"
-	{
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel"						"4"
-		"AbilityTextureName"			"towers/flooding_tower_increase_splash"
-		
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"Target"			"CASTER"
-				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-				"Function"			"TriggerEvent"
-				"Event"				"ChangeSplash"
-				"Amount"			"1"
-			}
-		}
-	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"splash_aoe"			"0 100 150 200"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"splash_aoe_2"			"0 200 300 400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bat"					"0.31 0.66 1 1.5"	
 			}
 		}
 	}
@@ -3796,40 +3755,6 @@
 				"States"
 				{
 					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-		}
-	}
-	//============================================================//
-	// Water Passive AOE
-	//============================================================//
-	"water_passive_aoe"
-	{
-		// General
-		//-----------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel"						"1"
-		"AbilityTextureName"			"elements/water"
-	
-		"Modifiers"
-		{
-			"fire_passive"
-			{
-				"IsHidden"		"1"
-				"Passive"		"1"
-				"TextureName"	"elements/water"
-				"OnAttackLanded"
-				{
-					"RunScript"
-					{
-						"Target"			"TARGET"
-						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-						"Function"			"TriggerEvent"
-						"Event"				"OnAttackLanded"
-						"DamageType"		"water"
-					}
 				}
 			}
 		}

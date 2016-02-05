@@ -28,4 +28,13 @@
 		"nature"		"1"
 		"nature"		"1"
 	}
+    "ItemBaseLevel" "1"
+    "AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"600 3000"
+		}
+	}
 }

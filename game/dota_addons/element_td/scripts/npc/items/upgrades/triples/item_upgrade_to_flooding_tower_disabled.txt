@@ -18,4 +18,13 @@
 		"dark"		"1"
 		"dark"		"1"
 	}
+    "ItemBaseLevel" "1"
+    "AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"splash_damage"			"120 600"
+		}
+	}
 }

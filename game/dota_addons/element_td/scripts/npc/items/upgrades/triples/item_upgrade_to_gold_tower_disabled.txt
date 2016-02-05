@@ -18,4 +18,13 @@
 		"light"		"1"
 		"light"		"1"
 	}
+    "ItemBaseLevel" "1"
+    "AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_gold"			"33 66"
+		}
+	}
 }

@@ -16,4 +16,13 @@
 		"nature"		"1"
 		"nature"		"1"
 	}
+    "ItemBaseLevel" "1"
+    "AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"attack_speed"			"15 30 90"
+		}
+    }
 }

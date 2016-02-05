@@ -26,4 +26,18 @@
 		"water"		"1"
 		"water"		"1"
 	}
+    "ItemBaseLevel" "1"
+    "AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"30 150 750"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aftershock_damage"		"15 75 375"
+		}
+	}
 }

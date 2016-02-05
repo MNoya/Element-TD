@@ -28,4 +28,13 @@
 		"fire"		"2"
 		"fire"		"2"
 	}
+    "ItemBaseLevel" "2"
+    "AbilitySpecial"
+	{
+        "01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"240 1200"
+		}
+	}
 }

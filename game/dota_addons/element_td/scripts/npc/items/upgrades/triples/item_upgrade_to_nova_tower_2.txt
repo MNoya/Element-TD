@@ -28,4 +28,18 @@
 		"light"		"2"
 		"light"		"2"
 	}
+    "ItemBaseLevel" "2"
+    "AbilitySpecial"
+	{
+        "01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage"			"250 1250"
+		}
+        "02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"slow"					"-10 -30"
+		}
+    }
 }
