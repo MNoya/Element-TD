@@ -45,7 +45,7 @@ function BuildGameArray()
     -- Add game values here as game.someValue = GetSomeGameValue()
     game.exp = EXPRESS_MODE
     game.ord = GameSettings.order
-    game.rsh = GameSettings.endless
+    game.hor = GameSettings.endless
 
     return game
 end
@@ -67,15 +67,15 @@ function BuildPlayersArray()
                     nt = GetPlayerNetworth(playerID), --Sell value of towers + current gold
                     lmb = playerData.lumber, --Unused lumber 
                     ess = playerData.pureEssence, --Unused essence
-                    sec = playerData.sector, --Sector on the map
+                    sec = sectorNames[playerData.sector], --Sector on the map
                     dif = playerData.difficulty.difficultyName, --Difficulty, should probably be a Game value
                     tow = tablelength(playerData.towers), --Final tower count
                     ltk = playerData.TotalLifeTowerKills, --Total life gained from Life Towers
                     bos = playerData.bossWaves, --Total boss waves survived if any
                     wav = playerData.completedWaves - 1, --Number of completed waves
                     sco = playerData.scoreObject.totalScore, --Final score
-                    gl = playerData.goldLost, -- Gold loss from selling
                     ts = playerData.towersSold, -- Num of towers sold
+                    gl = playerData.goldLost, -- Gold loss from selling
                     ig = playerData.interestGold, -- Interest gold earned
                     gt = playerData.goldTowerEarned, -- Total gold earned from Money Towers
 

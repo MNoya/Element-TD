@@ -39,6 +39,17 @@ m_TeamColors[DOTA_TEAM_CUSTOM_4] = { 173, 216, 230 } --  Light Blue (Winter) #AD
 m_TeamColors[DOTA_TEAM_CUSTOM_5] = { 243, 201, 9 }   --  Yellow (Desert) #F3C909
 m_TeamColors[DOTA_TEAM_CUSTOM_6] = { 255, 52, 85 }   --  Red (Lava) #FF3455
 
+sectorNames = {}
+sectorNames[-1] = "None"
+sectorNames[0] = "Summer"
+sectorNames[1] = "Autumn"
+sectorNames[2] = "Temple"
+sectorNames[3] = "Mines"
+sectorNames[4] = "Ruins"
+sectorNames[5] = "Winter"
+sectorNames[6] = "Desert"
+sectorNames[7] = "Lava"
+
 function PrintTable(t, indent, done)
     if type(t) ~= "table" then return end
 

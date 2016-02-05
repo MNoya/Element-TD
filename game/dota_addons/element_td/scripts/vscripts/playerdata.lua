@@ -141,7 +141,7 @@ function ModifyElementValue(playerID, element, change)
     end
 
     -- Keep the order
-    playerData.elementOrder[#playerData.elementOrder+1] = element
+    playerData.elementOrder[#playerData.elementOrder+1] = firstToUpper(element)
 
     -- First Dual (15 possible)
     if playerData.elementalCount == 2 then
@@ -263,13 +263,13 @@ function StopHighlight(entity, playerID)
 end
 
 function GetElementalOrderString( elementList )
-	local orderString = ""
+	local elementTable = {}
+
 	for elementName,level in pairs(elementList) do
 		if level > 0 then
-			local firstLetter = string.sub(elementName, 1, 1)
-			orderString = orderString..firstToUpper(firstLetter)
+			table.insert(elementTable, firstToUpper(elementName))
 		end
 	end
-	print(orderString)
-	return orderString
+	table.sort(elementTable)
+	return table.concat(elementTable, "+")
 end

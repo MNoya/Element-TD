@@ -68,6 +68,10 @@ function SellTowerCast(keys)
 			if essenceCost > 0 then
 				ModifyPureEssence(playerID, essenceCost)
 			end
+
+			-- Add lost gold
+			local goldLost = goldCost - refundAmount
+			playerData.goldLost = playerData.goldLost + goldLost
 		end
 
 		if tower.isClone then
