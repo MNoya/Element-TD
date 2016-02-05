@@ -65,7 +65,7 @@ function trickery_tower_conjure:OnSpellStart()
     -- Add abilities
     AddAbility(clone, "ability_building")
     if GetUnitKeyValue(clone:GetUnitName(), "DisableTurning") then
-        unit:AddNewModifier(unit, nil, "modifier_disable_turning", {})
+        clone:AddNewModifier(clone, nil, "modifier_disable_turning", {})
     end
     AddAbility(clone, "sell_tower_0")
     
