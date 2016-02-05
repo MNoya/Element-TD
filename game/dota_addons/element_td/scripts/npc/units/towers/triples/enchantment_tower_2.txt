@@ -60,7 +60,7 @@
     "AOE_Half"                  "200"
 
     "Model"             "models/heroes/arc_warden/arc_warden.vmdl"
-    "ModelScale"        "1.2"
+    "ModelScale"        "1"
     "ModelRotation"     "90"
     "ModelOffset"       "0"
     "Creature"

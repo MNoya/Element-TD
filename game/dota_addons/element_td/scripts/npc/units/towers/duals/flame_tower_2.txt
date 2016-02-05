@@ -40,7 +40,7 @@
 		"1"		"fire"
 		"2"		"nature"
 	}
-	"Damage"		"165"
+	"Damage"		"250"
 	"DamageType"		"fire"
 	"ScriptClass"		"FlameTower"
 	"TowerType"		"Normal"
@@ -51,7 +51,7 @@
 	"ProjectileModel"		"particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
 	"ProjectileSpeed"		"1500"
 	"Model"		"models/heroes/ember_spirit/ember_spirit.vmdl"
-	"ModelScale"		"1.15"
+	"ModelScale"		"1.1"
     "ModelRotation"             "90"
     "ModelOffset"               "20"
 	"UpgradeIcon"		"towers/flame_tower_sunburn"
@@ -66,8 +66,8 @@
 		"Count"		"1"
 		"1"		"flame_tower_3"
 	}
-	"AttackDamageMin"		"165"
-	"AttackDamageMax"		"165"
+	"AttackDamageMin"		"250"
+	"AttackDamageMax"		"250"
     "Creature"
     {
        "AttachWearables" // Mentor of the High Plains

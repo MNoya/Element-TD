@@ -3,7 +3,7 @@
     // Visual
     //-----------------------------
     "Model"                     "models/heroes/tiny_03/tiny_03.vmdl"
-    "ModelScale"                "1.2"
+    "ModelScale"                "1"
     "ModelRotation"             "90"
     "ModelOffset"               "10"
     "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_radiant.vmdl"

@@ -3,7 +3,7 @@
 	// Visual
     //-----------------------------
 	"Model"						"models/well_tower3.vmdl"
-	"ModelScale"				"0.8"
+	"ModelScale"				"0.95"
 	"ModelRotation"				"0"
 	"ProjectileModel"			"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 	"ProjectileSpeed"			"2000"
@@ -14,9 +14,9 @@
 
 	// Stats
     //----------------------------- 
-	"AttackDamageMin"			"8125"
-	"AttackDamageMax"			"8125"
-	"Damage"					"8125"
+	"AttackDamageMin"			"7500"
+	"AttackDamageMax"			"7500"
+	"Damage"					"7500"
 	"AttackRange"				"900"
 	"AttackAcquisitionRange"	"900"
 	"AttackRate"				"1"

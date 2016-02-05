@@ -3,7 +3,7 @@
     // Visual
     //-----------------------------
     "Model"                     "models/heroes/shadow_fiend/shadow_fiend.vmdl"
-    "ModelScale"                "1.3"
+    "ModelScale"                "1.1"
     "ModelRotation"             "90"
     "ModelOffset"               "10"
     "PedestalModel"             "models/heroes/phantom_assassin/arcana_pedestal.vmdl"

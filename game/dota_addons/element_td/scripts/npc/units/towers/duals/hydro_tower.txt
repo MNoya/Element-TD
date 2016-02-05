@@ -10,7 +10,7 @@
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"
     "MinimapIconSize"           "320"
-    "AttackAnimationPoint"      "0.4"
+    "AttackAnimationPoint"      "0.3"
     "Creature"
     {
         "AttachWearables" // Default npc_dota_hero_kunkka

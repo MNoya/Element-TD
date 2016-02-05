@@ -47,7 +47,7 @@
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"900"
 	"AttackAcquisitionRange"		"0"
-	"AttackRate"		"0"
+	"AttackRate"		"5"
 	"ProjectileModel"		""
 	"ProjectileSpeed"		"900"
 

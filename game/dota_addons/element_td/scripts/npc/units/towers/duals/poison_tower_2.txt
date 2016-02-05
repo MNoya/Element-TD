@@ -51,7 +51,7 @@
 	"ProjectileModel"		"particles/units/heroes/hero_viper/viper_base_attack.vpcf"
 	"ProjectileSpeed"		"1500"
 	"Model"		"models/heroes/venomancer/venomancer.vmdl"
-	"ModelScale"		"1.0"
+	"ModelScale"		"0.9"
     "ModelRotation"             "90"
     "ModelOffset"               "10"
 	"AOE_Full"		"100"

@@ -3,14 +3,14 @@
     // Visual
     //-----------------------------
     "Model"                     "models/heroes/kunkka/kunkka.vmdl"
-    "ModelScale"                "1.1"
+    "ModelScale"                "1"
     "ModelRotation"             "90"
     "ModelOffset"               "15"
     "ProjectileModel"           "particles/custom/towers/hydro/attack.vpcf"  
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"
     "MinimapIconSize"           "320"
-    "AttackAnimationPoint"      "0.4"
+    "AttackAnimationPoint"      "0.3"
     "Creature"
     {
        "AttachWearables" // Armaments of Leviathan Set

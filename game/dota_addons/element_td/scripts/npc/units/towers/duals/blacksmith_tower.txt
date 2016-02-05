@@ -42,7 +42,7 @@
 		"1"		"fire"
 		"2"		"earth"
 	}
-	"Damage"		"325"
+	"Damage"		"300"
 	"DamageType"		"fire"
 	"ScriptClass"		"BlacksmithTower"
 	"TowerType"		"Support"
@@ -70,8 +70,8 @@
 		"4"		"haste_tower"
 		"5"		"flamethrower_tower"
 	}
-	"AttackDamageMin"		"325"
-	"AttackDamageMax"		"325"
+	"AttackDamageMin"		"300"
+	"AttackDamageMax"		"300"
 
     // Building Size
     "ConstructionSize"          "2"

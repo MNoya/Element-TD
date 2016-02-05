@@ -40,7 +40,7 @@
 		"1"		"fire"
 		"2"		"nature"
 	}
-	"Damage"		"825"
+	"Damage"		"1250"
 	"DamageType"		"fire"
 	"ScriptClass"		"FlameTower"
 	"TowerType"		"Normal"
@@ -51,7 +51,7 @@
 	"ProjectileModel"		"particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
 	"ProjectileSpeed"		"1500"
 	"Model"		"models/heroes/ember_spirit/ember_spirit.vmdl"
-	"ModelScale"		"1.3"
+	"ModelScale"		"1.2"
     "ModelRotation"             "90"
     "ModelOffset"               "20"
 	"UpgradeIcon"		"towers/flame_tower_sunburn"
@@ -64,8 +64,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"825"
-	"AttackDamageMax"		"825"
+	"AttackDamageMin"		"1250"
+	"AttackDamageMax"		"1250"
     "Creature"
     {
        "AttachWearables" // Flames of Prosperity Set

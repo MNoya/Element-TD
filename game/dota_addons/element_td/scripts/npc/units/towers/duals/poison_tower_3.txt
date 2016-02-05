@@ -51,7 +51,7 @@
 	"ProjectileModel"		"particles/units/heroes/hero_venomancer/venomancer_base_attack.vpcf"
 	"ProjectileSpeed"		"1500"
 	"Model"		"models/heroes/venomancer/venomancer.vmdl"
-	"ModelScale"		"1.2"
+	"ModelScale"		"1"
     "ModelRotation"             "90"
     "ModelOffset"               "10"
 	"AOE_Full"		"100"

@@ -11,7 +11,7 @@
 	"MagicalResistance"		"0"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-	"AttackAnimationPoint"		"0.35"
+	"AttackAnimationPoint"		"0.3"
 	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
 	"AttributeBaseStrength"		"0"
 	"AttributeStrengthGain"		"0"
@@ -45,18 +45,18 @@
 	}
 	"AOE_Full"		"150"
 	"AOE_Half"		"300"
-	"Damage"		"3000"
+	"Damage"		"3750"
 	"DamageType"		"nature"
 	"ScriptClass"		"MossTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
-	"AttackRange"		"1100"
-	"AttackAcquisitionRange"		"1100"
+	"AttackRange"		"700"
+	"AttackAcquisitionRange"		"700"
 	"AttackRate"		"1"
 	"ProjectileModel"		"particles/units/heroes/hero_furion/furion_base_attack.vpcf"
-	"ProjectileSpeed"		"2000"
+	"ProjectileSpeed"		"1500"
 	"Model"		"models/heroes/earth_spirit/earth_spirit.vmdl"
-	"ModelScale"		"1.2"
+	"ModelScale"		"1"
 	"ModelRotation"             "90"
     "ModelOffset"               "15"
 	"UpgradeIcon"		"brewmaster_earth_pulverize"
@@ -69,8 +69,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"3000"
-	"AttackDamageMax"		"3000"
+	"AttackDamageMin"		"3750"
+	"AttackDamageMax"		"3750"
     "Creature"
     {
        "AttachWearables" // Strength of the Demon Stone Set

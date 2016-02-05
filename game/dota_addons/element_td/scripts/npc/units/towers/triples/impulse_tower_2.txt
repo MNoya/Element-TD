@@ -57,7 +57,7 @@
 	"ProjectileSpeed"		"3000"
 	
     "Model"             "models/heroes/enchantress/enchantress.vmdl"
-    "ModelScale"        "1.2"
+    "ModelScale"        "1.1"
     "ModelRotation"     "90"
     "ModelOffset"       "15"
 	"Creature"

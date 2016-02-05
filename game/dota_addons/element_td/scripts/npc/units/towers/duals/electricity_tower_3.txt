@@ -16,7 +16,7 @@
     "VisionNighttimeRange"      "1900"  
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-    "AttackAnimationPoint"      "0.4"
+    "AttackAnimationPoint"      "0.3"
     "ProjectileCollisionSize"   "50"
     "RingRadius"                "90"
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -52,7 +52,7 @@
 	"ProjectileSpeed"		"1000"
 
     "Model"            "models/heroes/zeus/zeus_arcana.vmdl"
-    "ModelScale"       "1.2"
+    "ModelScale"       "1.1"
     "ModelRotation"             "90"
     "Creature"
     {

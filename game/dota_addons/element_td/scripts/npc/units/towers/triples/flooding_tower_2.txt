@@ -57,7 +57,7 @@
 	"ProjectileSpeed"		"2000"
 	
     "Model"             "models/heroes/tidehunter/tidehunter.vmdl"
-    "ModelScale"        "1.2"
+    "ModelScale"        "1.1"
     "ModelRotation"     "90"
     "ModelOffset"       "15"
 	"Creature"

@@ -12,7 +12,7 @@
 	"MagicalResistance"		"0"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-	"AttackAnimationPoint"		"0.4"
+	"AttackAnimationPoint"		"0.3"
 	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
 	"AttributeBaseStrength"		"0"
 	"AttributeStrengthGain"		"0"
@@ -57,7 +57,7 @@
 	"ProjectileSpeed"		"2000"
 
     "Model"             "models/heroes/doom/doom.vmdl"
-    "ModelScale"        "1.0"
+    "ModelScale"        "0.9"
     "ModelRotation"     "90"
     "ModelOffset"       "20"
 	"Creature"

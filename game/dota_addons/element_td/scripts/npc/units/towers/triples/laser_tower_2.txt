@@ -57,7 +57,7 @@
 	"ProjectileModel"		"particles/units/heroes/hero_tinker/tinker_laser.vpcf"
 
     "Model"             "models/heroes/tinker/tinker.vmdl"
-    "ModelScale"        "1.2"
+    "ModelScale"        "1.1"
     "ModelRotation"     "90"
     "ModelOffset"       "20"
 	"Creature"

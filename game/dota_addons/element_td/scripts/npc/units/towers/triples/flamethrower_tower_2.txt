@@ -57,7 +57,7 @@
 	"ProjectileSpeed"		"2500"
 
     "Model"             "models/heroes/batrider/batrider.vmdl"
-    "ModelScale"        "1.0"
+    "ModelScale"        "0.8"
     "ModelRotation"     "90"
     "ModelOffset"       "-5"
     

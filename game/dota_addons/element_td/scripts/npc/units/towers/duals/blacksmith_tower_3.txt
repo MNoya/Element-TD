@@ -42,7 +42,7 @@
 		"1"		"fire"
 		"2"		"earth"
 	}
-	"Damage"		"8125"
+	"Damage"		"7500"
 	"DamageType"		"fire"
 	"ScriptClass"		"BlacksmithTower"
 	"TowerType"		"Support"
@@ -53,7 +53,7 @@
 	"ProjectileModel"		"particles/units/heroes/hero_lina/lina_base_attack.vpcf"
 	"ProjectileSpeed"		"1500"
 	"Model"		"models/blacksmith_tower.vmdl"
-	"ModelScale"		"1.4"
+	"ModelScale"		"1.2"
 	"UpgradeIcon"		"towers/blacksmith_tower_fire_up"
 	"BuildTime"		"3"
 	"Requirements"
@@ -64,8 +64,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"8125"
-	"AttackDamageMax"		"8125"
+	"AttackDamageMin"		"7500"
+	"AttackDamageMax"		"7500"
 
     // Building Size
     "ConstructionSize"          "2"

@@ -3,7 +3,7 @@
     // Visual
     //-----------------------------
     "Model"                     "models/heroes/lina/lina.vmdl"
-    "ModelScale"                "1.4"
+    "ModelScale"                "1.1"
     "ModelRotation"             "90"
     "PedestalModel"             "models/heroes/shadow_fiend/pedestal_sf.vmdl"
     "PedestalModelScale"        "1"

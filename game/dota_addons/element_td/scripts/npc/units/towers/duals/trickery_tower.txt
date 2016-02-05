@@ -16,7 +16,7 @@
     "VisionNighttimeRange"      "1900"  
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-    "AttackAnimationPoint"      "0.4"
+    "AttackAnimationPoint"      "0.3"
     "ProjectileCollisionSize"   "50"
     "RingRadius"                "90"
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -40,7 +40,7 @@
 		"1"		"light"
 		"2"		"dark"
 	}
-	"Damage"		"325"
+	"Damage"		"300"
 	"DamageType"		"light"
 	"ScriptClass"		"TrickeryTower"
 	"TowerType"		"Support"
@@ -70,8 +70,8 @@
 		"4"		"runic_tower"
 		"5"		"obliteration_tower"
 	}
-	"AttackDamageMin"		"325"
-	"AttackDamageMax"		"325"
+	"AttackDamageMin"		"300"
+	"AttackDamageMax"		"300"
 	"Creature"
 	{
 		"AttachWearables"
