@@ -91,19 +91,19 @@ function BuildPlayersArray()
 
                     -- Combos
                     ec = playerData.elementalCount, -- Element Count, 0~6
-                    fd = playerData.firstDual,      -- First 2 elements acquired, ordered
-                    ft = playerData.firstTriple,    -- First 3 elements acquired, ordered
-                    e1 = playerData.elementOrder[1], -- 1st element acquired
-                    e2 = playerData.elementOrder[2], -- 2nd element acquired
-                    e3 = playerData.elementOrder[3], -- 3rd element acquired
-                    e4 = playerData.elementOrder[4], -- 4th element acquired
-                    e5 = playerData.elementOrder[5], -- 5th element acquired
-                    e6 = playerData.elementOrder[6], -- 6th element acquired
-                    e7 = playerData.elementOrder[7], -- 7th element acquired
-                    e8 = playerData.elementOrder[8], -- 8th element acquired
-                    e9 = playerData.elementOrder[9], -- 9th element acquired
-                    e10 = playerData.elementOrder[10], -- 10th element acquired
-                    e11 = playerData.elementOrder[11], -- 11th and last element acquired
+                    fd = playerData.firstDual or "",      -- First 2 elements acquired, ordered
+                    ft = playerData.firstTriple or "",    -- First 3 elements acquired, ordered
+                    e1 = playerData.elementOrder[1] or "", -- 1st element acquired
+                    e2 = playerData.elementOrder[2] or "", -- 2nd element acquired
+                    e3 = playerData.elementOrder[3] or "", -- 3rd element acquired
+                    e4 = playerData.elementOrder[4] or "", -- 4th element acquired
+                    e5 = playerData.elementOrder[5] or "", -- 5th element acquired
+                    e6 = playerData.elementOrder[6] or "", -- 6th element acquired
+                    e7 = playerData.elementOrder[7] or "", -- 7th element acquired
+                    e8 = playerData.elementOrder[8] or "", -- 8th element acquired
+                    e9 = playerData.elementOrder[9] or "", -- 9th element acquired
+                    e10 = playerData.elementOrder[10] or "", -- 10th element acquired
+                    e11 = playerData.elementOrder[11] or "", -- 11th and last element acquired
                 })
             end
         end
