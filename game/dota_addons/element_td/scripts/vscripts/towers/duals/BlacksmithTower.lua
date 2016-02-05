@@ -27,7 +27,7 @@ function BlacksmithTower:FireUpThink()
 
         -- find out the tower with the highest damage
         for _, tower in pairs(towers) do
-            if IsTower(tower) and tower:GetOwner():GetPlayerID() == self.playerID and not IsSupportTower(tower) and tower:IsAlive() and not tower.deleted then
+            if IsTower(tower) and tower:GetPlayerOwnerID() == self.playerID and not IsSupportTower(tower) and tower:IsAlive() and not tower.deleted then
                 if tower:GetBaseDamageMax() >= highestDamage then
             
                     local modifier = tower:FindModifierByName("modifier_fire_up")
@@ -35,7 +35,22 @@ function BlacksmithTower:FireUpThink()
                         highestDamage = tower:GetBaseDamageMax()
                         theChosenOne = tower
                     end
+                end
+            end
+        end
 
+        -- check for support towers
+        if not theChosenOne then
+            for _, tower in pairs(towers) do
+                if IsTower(tower) and tower:GetPlayerOwnerID()  == self.playerID and tower:IsAlive() and not tower.deleted then
+                    if tower:GetBaseDamageMax() >= highestDamage then
+                
+                        local modifier = tower:FindModifierByName("modifier_fire_up")
+                        if not modifier or self.level > modifier.level then 
+                            highestDamage = tower:GetBaseDamageMax()
+                            theChosenOne = tower
+                        end
+                    end
                 end
             end
         end

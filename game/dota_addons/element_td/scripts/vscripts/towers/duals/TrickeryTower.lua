@@ -46,6 +46,21 @@ function TrickeryTower:ConjureThink()
             end
         end
 
+        -- check for support towers
+        if not theChosenOne then
+            for _, tower in pairs(towers) do
+                if IsTower(tower) and tower:GetPlayerOwnerID() == self.playerID and (tower.class ~= "TrickeryTower") and tower:IsAlive() and not tower.deleted then
+                    if tower:GetHealth() == tower:GetMaxHealth() and not tower:HasModifier("modifier_clone") and not tower:HasModifier("modifier_conjure_prevent_cloning") then
+                        local towerValue = GetUnitKeyValue(tower:GetUnitName(), "TotalCost")
+                        if towerValue > highestValue then
+                            highestValue = towerValue
+                            theChosenOne = tower
+                        end
+                    end
+                end
+            end
+        end
+
         if theChosenOne then
             self.tower:CastAbilityOnTarget(theChosenOne, self.ability, self.playerID)
         end

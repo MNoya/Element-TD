@@ -64,7 +64,7 @@ function trickery_tower_conjure:OnSpellStart()
 
     -- Add abilities
     AddAbility(clone, "ability_building")
-    if GetUnitKeyValue(building_name, "DisableTurning") then
+    if GetUnitKeyValue(clone:GetUnitName(), "DisableTurning") then
         unit:AddNewModifier(unit, nil, "modifier_disable_turning", {})
     end
     AddAbility(clone, "sell_tower_0")
@@ -111,7 +111,9 @@ function trickery_tower_conjure:CastFilterResultTarget(target)
     local bClone = target:HasModifier("modifier_clone")
     local bPreventCloning = target:HasModifier("modifier_conjure_prevent_cloning")
     local bSupportTower = target:HasModifier("modifier_support_tower")
-    if bClone or bPreventCloning or bSupportTower then
+    local bTrickeryTower = string.match(target:GetUnitName(), "trickery")
+
+    if bTrickeryTower or bClone or bPreventCloning then
         return UF_FAIL_CUSTOM
     end
 
@@ -122,9 +124,12 @@ function trickery_tower_conjure:GetCustomCastErrorTarget(target)
     local bClone = target:HasModifier("modifier_clone")
     local bPreventCloning = target:HasModifier("modifier_conjure_prevent_cloning")
     local bSupportTower = target:HasModifier("modifier_support_tower")
+    local bTrickeryTower = string.match(target:GetUnitName(), "trickery")
 
-    if bSupportTower then
-        return "#etd_error_support_tower"
+    --[[if bSupportTower then
+        return "#etd_error_support_tower"]]
+    if bTrickeryTower then
+        return "#etd_error_cant_clone_cloner"
     elseif bPreventCloning then
         return "#etd_error_recently_cloned"
     elseif bClone then

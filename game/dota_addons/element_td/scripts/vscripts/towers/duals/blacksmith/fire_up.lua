@@ -30,9 +30,9 @@ function blacksmith_tower_fire_up:CastFilterResultTarget(target)
 		return result
 	end
 	
-	if target:HasModifier("modifier_support_tower") then
+	--[[if target:HasModifier("modifier_support_tower") then
 		return UF_FAIL_CUSTOM
-	end
+	end]]
 	
 	if IsServer() then
 		local modifier = target:FindModifierByName("modifier_fire_up")
@@ -45,9 +45,9 @@ function blacksmith_tower_fire_up:CastFilterResultTarget(target)
 end
 
 function blacksmith_tower_fire_up:GetCustomCastErrorTarget(target)
-	if target:HasModifier("modifier_support_tower") then
+	--[[if target:HasModifier("modifier_support_tower") then
 		return "#etd_error_support_tower"
-	end
+	end]]
 
 	if IsServer() then
 		local modifier = target:FindModifierByName("modifier_fire_up")
