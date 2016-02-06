@@ -84,5 +84,6 @@
         <Image style="opacity:0;" src="file://{images}/items/runic_disabled.png" />
         <Image style="opacity:0;" src="file://{images}/items/obliteration_disabled.png" />
         <Image style="opacity:0;" src="file://{images}/custom_game/wave_info/rip.png" />
+        <Image style="opacity:0;" src="file://{images}/spellicons/osfrog.png" />
     </Panel>
 </root>

@@ -108,7 +108,7 @@ function Wave:SpawnWave()
 				        if playerData.nextWave > WAVE_COUNT and not EXPRESS_MODE then
 				            Log:info("Spawning boss wave " .. WAVE_COUNT .. " for ["..self.playerID.."] ".. playerData.name)
 				            playerData.bossWaves = playerData.bossWaves + 1
-				            ShowMessage(self.playerID, "Boss Wave " .. playerData.bossWaves + 1, 3)
+				            ShowBossWaveMessage(self.playerID, playerData.bossWaves + 1)
 				            SpawnWaveForPlayer(self.playerID, WAVE_COUNT) -- spawn dat boss wave
 				            return nil
 				        elseif playerData.nextWave > WAVE_COUNT and EXPRESS_MODE then

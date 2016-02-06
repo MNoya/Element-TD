@@ -193,7 +193,7 @@ function SpawnWaveForPlayer(playerID, wave)
             print("Player [" .. playerID .. "] has completed a boss wave")
             Log:info("Spawning boss wave " .. WAVE_COUNT .. " for ["..playerID.."] ".. playerData.name)
             playerData.bossWaves = playerData.bossWaves + 1
-            ShowMessage(playerID, "Boss Wave " .. playerData.bossWaves + 1, 3)
+            ShowBossWaveMessage(playerID, playerData.bossWaves)
             SpawnWaveForPlayer(playerID, WAVE_COUNT) -- spawn dat boss wave
             return
         end

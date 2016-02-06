@@ -90,3 +90,41 @@
     box-shadow: #000 -4px -4px 3px 8px;
     padding: 2px 4px 2px 4px;
 }
+
+
+// Custom
+.WaveBreakTime
+{
+    color: #FFF;
+    font-family: Radiance;
+    text-shadow: 1px 1px 4px 3.0 #121212;
+    font-weight: bold;
+    font-size: 60px;
+    margin-top: -5px;
+}
+
+.WaveMessage
+{
+    color: #FFF;
+    font-family: Radiance;
+    text-shadow: 1px 1px 4px 3.0 #121212;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.BossWaveMessage
+{
+    color: #FFF;
+    font-family: Radiance;
+    text-shadow: 1px 1px 4px 3.0 #121212;
+    font-size: 60px;
+    font-weight: bold;
+    margin: -5px 10px 0 10px;
+}
+
+.IcefrogFaceNoSpace
+{
+    width: 60px;
+    height: 60px;
+    margin-top: -2px;
+}
