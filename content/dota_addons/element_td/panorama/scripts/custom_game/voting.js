@@ -188,21 +188,33 @@ function PlayerVoted( data )
     difficulty.AddClass('PlayerVote');
     difficulty.text = $.Localize("difficulty_"+data.difficulty.toLowerCase());
 
-    var elements = $.CreatePanel('Label', votes, '');
-    elements.AddClass('PlayerVote');
-    elements.text = $.Localize("element_"+data.elements.toLowerCase());
+    if (data.elements == "SameRandom")
+    {
+        var elements = $.CreatePanel('Label', votes, '');
+        elements.AddClass('PlayerVote');
+        elements.text = $.Localize("element_"+data.elements.toLowerCase());
+    }
 
-    var endless = $.CreatePanel('Label', votes, '');
-    endless.AddClass('PlayerVote');
-    endless.text = $.Localize("horde_"+data.endless.toLowerCase());
+    if (data.endless == "Endless")
+    {
+        var endless = $.CreatePanel('Label', votes, '');
+        endless.AddClass('PlayerVote');
+        endless.text = $.Localize("horde_"+data.endless.toLowerCase());
+    }
 
-    var order = $.CreatePanel('Label', votes, '');
-    order.AddClass('PlayerVote');
-    order.text = $.Localize("order_"+data.order.toLowerCase());
+    if (data.order == "Chaos")
+    {
+        var order = $.CreatePanel('Label', votes, '');
+        order.AddClass('PlayerVote');
+        order.text = $.Localize("order_"+data.order.toLowerCase());
+    }
 
-    var length = $.CreatePanel('Label', votes, '');
-    length.AddClass('PlayerVote');
-    length.text = $.Localize("length_"+data.length.toLowerCase());
+    if (data.express == "Express")
+    {
+        var length = $.CreatePanel('Label', votes, '');
+        length.AddClass('PlayerVote');
+        length.text = $.Localize("length_"+data.length.toLowerCase());
+    }
 
     playerVotes[playerID] = true;
     votingLiveHasVoted.ScrollToBottom();

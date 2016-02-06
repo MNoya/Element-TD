@@ -44,7 +44,7 @@
       <Panel hittest="false" id="Checkboxes">
         <Panel id="Option_Random" class="CheckboxPanel" onmouseover="HoverCheckbox('random')" onmouseout="MouseOverCheckbox('random')" onactivate="SelectCheckbox('random')" >
           <ToggleButton id="random" onactivate="SelectCheckboxClick('')" text="#element_random"/>
-          <Label id="ElementsDesc" class="desc" text="#element_same_random_description"/>
+          <Label id="ElementsDesc" class="desc" text="#element_samerandom_description"/>
         </Panel>
         <Panel id="Option_Endless" class="CheckboxPanel" onmouseover="HoverCheckbox('endless')" onmouseout="MouseOverCheckbox('endless')" onactivate="SelectCheckbox('endless')">
           <Panel class="CheckboxSub">

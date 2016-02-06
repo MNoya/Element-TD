@@ -127,7 +127,8 @@
 #VoteResults
 {
     horizontal-align: center;
-    position: 0px 28% 0px;
+    vertical-align: center;
+    margin-top: -10%;
     width: 420px;
     padding: 10px 30px 0px 30px;
     background-color: #000000DD;
