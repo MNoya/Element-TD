@@ -12,19 +12,31 @@
 
       <Panel hittest="false"  id="DifficultyPanel">
         <Panel id="NormalDifficulty" onmouseover="HoverDifficulty('normal')" onmouseout="MouseOverDiff('normal')" onactivate="SelectDifficulty('normal')" class="DifficultyBox">
-          <Image id="normal" class="DifficultyImage" src="file://{images}/custom_game/vote_menu/difficulties/normal_glow.psd"/>
+          <Panel>
+            <Image id="normal" class="DifficultyImage" src="file://{images}/custom_game/vote_menu/difficulties/normal.png"/>
+            <Image id="normal_glow" class="DifficultyImage Hidden" src="file://{images}/custom_game/vote_menu/difficulties/normal_glow.psd"/>
+          </Panel>
           <Label id="NormalDifficultyLabel" text="#difficulty_normal" class="DifficultyLabel"/>
         </Panel>
         <Panel id="HardDifficulty" onmouseover="HoverDifficulty('hard')" onmouseout="MouseOverDiff('hard')" onactivate="SelectDifficulty('hard')" class="DifficultyBox">
-          <Image id="hard" class="DifficultyImage" src="file://{images}/custom_game/vote_menu/difficulties/hard.png"/>
+          <Panel>
+            <Image id="hard" class="DifficultyImage" src="file://{images}/custom_game/vote_menu/difficulties/hard.png"/>
+            <Image id="hard_glow" class="DifficultyImage Hidden" src="file://{images}/custom_game/vote_menu/difficulties/hard_glow.psd"/>
+          </Panel>
           <Label id="HardDifficultyLabel" text="#difficulty_hard" class="DifficultyLabel"/>
         </Panel>
         <Panel id="VeryHardDifficulty" onmouseover="HoverDifficulty('veryhard')" onmouseout="MouseOverDiff('veryhard')" onactivate="SelectDifficulty('veryhard')" class="DifficultyBox">
-          <Image id="veryhard" class="DifficultyImage" src="file://{images}/custom_game/vote_menu/difficulties/veryhard.png"/>
+          <Panel> 
+            <Image id="veryhard" class="DifficultyImage" src="file://{images}/custom_game/vote_menu/difficulties/veryhard.png"/>
+            <Image id="veryhard_glow" class="DifficultyImage Hidden" src="file://{images}/custom_game/vote_menu/difficulties/veryhard_glow.psd"/>
+          </Panel>
           <Label id="VeryHardDifficultyLabel" text="#difficulty_very_hard" class="DifficultyLabel"/>
         </Panel>
         <Panel id="InsaneDifficulty" onmouseover="HoverDifficulty('insane')" onmouseout="MouseOverDiff('insane')" onactivate="SelectDifficulty('insane')" class="DifficultyBox">
-          <Image id="insane" class="DifficultyImage" src="file://{images}/custom_game/vote_menu/difficulties/insane.png"/>
+          <Panel> 
+            <Image id="insane" class="DifficultyImage" src="file://{images}/custom_game/vote_menu/difficulties/insane.png"/>
+            <Image id="insane_glow" class="DifficultyImage Hidden" src="file://{images}/custom_game/vote_menu/difficulties/insane_glow.psd"/>
+          </Panel>
           <Label id="InsaneDifficultyLabel" text="#difficulty_insane" class="DifficultyLabel"/>
         </Panel>
       </Panel>

@@ -63,6 +63,7 @@
         "element_same_random"               "Random"
         "element_same_random_description"   "Everyone is given the same random elemental choices."
         "element_random"                    "Random"
+        "element_samerandom"                "Random"
 
         "horde_normal"                      "Normal"
         "horde_normal_description"          "The waves will spawn normally when the current wave is cleared."

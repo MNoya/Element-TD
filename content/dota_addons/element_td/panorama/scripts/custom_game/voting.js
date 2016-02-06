@@ -75,16 +75,23 @@ function SelectDifficulty(name) {
             RemoveGlow(diffPanel)
         }
     }
+    Glow(panel)
     panel.AddClass('Hover')
     UpdateMultipliers()
 }
 
 function Glow(panel) {
-    panel.SetImage("file://{images}/custom_game/vote_menu/difficulties/"+panel.id+"_glow.psd")
+    panel.visible = false
+
+    var glowPanel = $("#"+panel.id+"_glow")
+    glowPanel.RemoveClass("Hidden")
 }
 
 function RemoveGlow(panel) {
-    panel.SetImage("file://{images}/custom_game/vote_menu/difficulties/"+panel.id+".png")
+    var glowPanel = $("#"+panel.id+"_glow")
+    glowPanel.AddClass("Hidden")
+
+    panel.visible = true
     panel.RemoveClass('Hover')
 }
 
@@ -283,6 +290,7 @@ function ResultsClose()
 
 function Setup()
 {
+    SelectDifficulty("normal")
     UpdateMultipliers()
     voteResultsUI.visible = false;
     votingUI.visible = false;
