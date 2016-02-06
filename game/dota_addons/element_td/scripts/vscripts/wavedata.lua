@@ -207,6 +207,8 @@ function SpawnWaveForPlayer(playerID, wave)
             playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
             Log:info("Player ["..playerID.."] has completed the game.")
             GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerData.name .. "</font> has completed the game!", 0, 0)
+            playerData.duration = GameRules:GetGameTime() - START_GAME_TIME
+            playerData.victory = 1
             ElementTD:CheckGameEnd()
             return
         end
@@ -307,8 +309,6 @@ function ShowPortalForSector(sector, wave, time, playerID)
     ParticleManager:SetParticleControl(portal.particle, 0, origin)
     ParticleManager:SetParticleControl(portal.particle, 15, GetElementColor(element))
     
-    Sounds:EmitSoundOnClient( playerID, "Tutorial.Notice.Speech" )
-
     -- Portal World Notification
     CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "world_notification", {entityIndex=portal:GetEntityIndex(), text="#etd_wave_"..element} )
 end

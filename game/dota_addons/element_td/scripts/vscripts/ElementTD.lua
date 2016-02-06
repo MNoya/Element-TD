@@ -18,6 +18,11 @@ if not players then
     EXPRESS_MODE = false
 
     VERSION = "B020216"
+
+    START_TIME = GetSystemDate() .. " " .. GetSystemTime()
+    END_TIME = nil
+
+    START_GAME_TIME = 0
 end
 
 function ElementTD:InitGameMode()
@@ -159,12 +164,13 @@ function ElementTD:StartGame()
 
         callback = function()
             Log:info("The game has started!")
-            
+
             if not SKIP_VOTING then
                 CustomGameEventManager:Send_ServerToAllClients( "etd_toggle_vote_dialog", {visible = true} )
                 StartVoteTimer()
             else
                 -- voting should never be skipped in real games
+                START_GAME_TIME = GameRules:GetGameTime()
                 if DEV_MODE then
                     GameSettings:SetGameLength("Developer")
                 else
@@ -202,6 +208,7 @@ function ElementTD:EndGameForPlayer( playerID )
 
     if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then
         Log:info("Player "..playerID.." has been defeated on the boss wave "..playerData.nextWave..".")
+        playerData.victory = 1
         GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerData.name.."</font> has completed the game!", 0, 0)
     else
         Log:info("Player "..playerID.." has been defeated on wave "..playerData.nextWave..".")
@@ -212,6 +219,8 @@ function ElementTD:EndGameForPlayer( playerID )
     RemoveElementalOrbs(playerID)
 
     playerData.networth = GetPlayerNetworth( playerID )
+    playerData.duration = GameRules:GetGameTime() - START_GAME_TIME
+    playerData.tow = tablelength(playerData.towers)
 
     if playerData.elementalUnit ~= nil and IsValidEntity(playerData.elementalUnit) and playerData.elementalUnit:IsAlive() then
         print("Elemental Removed")
@@ -309,6 +318,7 @@ function ElementTD:CheckGameEnd()
         end
     end
     if endGame then
+        END_TIME = GetSystemDate() .. " " .. GetSystemTime()
         Log:info("Game end condition reached. Ending game in 5 seconds.")
         GameRules:SendCustomMessage("#etd_end_message", 0, 0)
         Timers:CreateTimer(5, function()

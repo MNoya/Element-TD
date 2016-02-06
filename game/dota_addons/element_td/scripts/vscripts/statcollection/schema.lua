@@ -46,13 +46,20 @@ function BuildGameArray()
     game.exp = EXPRESS_MODE
     game.ord = GameSettings.order
     game.hor = GameSettings.endless
-
+    game.str = START_TIME
+    game.fin = END_TIME
+    game.ver = VERSION
     return game
 end
 
 -- Returns a table containing data for every player in the game
 function BuildPlayersArray()
     local players = {}
+    local host = GetListenServerHost()
+    local hostID = -1
+    if host then
+        hostID = host:GetPlayerID()
+    end
     for playerID = 0, DOTA_MAX_PLAYERS do
         if PlayerResource:IsValidPlayerID(playerID) then
             if not PlayerResource:IsBroadcaster(playerID) then
@@ -65,21 +72,25 @@ function BuildPlayersArray()
                     steamID32 = PlayerResource:GetSteamAccountID(playerID),
 
                     nt = GetPlayerNetworth(playerID), --Sell value of towers + current gold
+                    go = PlayerResource:GetGold(playerID),
                     lmb = playerData.lumber, --Unused lumber 
                     ess = playerData.pureEssence, --Unused essence
                     sec = sectorNames[playerData.sector], --Sector on the map
                     dif = playerData.difficulty.difficultyName, --Difficulty, should probably be a Game value
-                    tow = tablelength(playerData.towers), --Final tower count
+                    tow = playerData.tow or tablelength(playerData.towers), --Final tower count
                     ltk = playerData.TotalLifeTowerKills, --Total life gained from Life Towers
                     bos = playerData.bossWaves, --Total boss waves survived if any
-                    wav = playerData.completedWaves - 1, --Number of completed waves
+                    wav = playerData.completedWaves, --Number of completed waves
                     sco = playerData.scoreObject.totalScore, --Final score
                     ts = playerData.towersSold, -- Num of towers sold
                     gl = playerData.goldLost, -- Gold loss from selling
                     ig = playerData.interestGold, -- Interest gold earned
                     gt = playerData.goldTowerEarned, -- Total gold earned from Money Towers
-
+                    dur = playerData.duration, -- Total seconds from start to death/win
+                    lh = PlayerResource:GetLastHits(playerID),
                     -- elo = playerData.elements -- Element Order
+                    hst = playerID == hostID or 0, -- Is this player host
+                    clr = playerData.victory, -- Did the player complete the game
 
                     -- Levels of each element at the end
                     fir = playerData.elements.fire,

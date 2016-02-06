@@ -38,6 +38,9 @@ function CreateDataForPlayer(playerID)
 	data["activeWaves"] = 1
 	data["waveObject"] = {} -- Current wave object
 	data["waveObjects"] = {} -- All active wave objects
+
+	data["duration"] = 0 -- Seconds the player stayed alive for
+	data["victory"] = 0  -- 0 if lost, 1 if won
 	
 	return data
 end
@@ -248,9 +251,10 @@ function Highlight(entity, playerID)
 		entity.highlight = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, entity)
 		ParticleManager:SetParticleControl(entity.highlight, 15, Vector(255,255,255))
 
+		Sounds:EmitSoundOnClient( playerID, "Tutorial.Notice.Speech" )
+
 		-- Portal World Notification
-    	CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "world_notification", {entityIndex=entity:GetEntityIndex(), text="#etd_summoner_choose"} )
-		
+		CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "world_notification", {entityIndex=entity:GetEntityIndex(), text="#etd_summoner_choose"} )
 	end
 end
 

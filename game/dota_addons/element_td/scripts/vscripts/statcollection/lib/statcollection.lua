@@ -26,6 +26,7 @@ local statInfo = LoadKeyValues('scripts/vscripts/statcollection/settings.kv')
 
 -- Where stuff is posted to
 local postLocation = 'http://getdotastats.com/s2/api/'
+local eleTDLB = 'http://hatinacat.com/leaderboard/'
 
 -- The schema version we are currently using
 local schemaVersion = 4
@@ -547,13 +548,34 @@ function statCollection:sendCustom(args)
         -- Tell the user
         print(printPrefix .. messageCustomComplete)
     end)
+
+    -- Send custom to lb
+    self:sendStage('s2_custom.php', payload, function(err, res)
+        -- Check if we got an error
+        if err then
+            print(printPrefix .. errorJsonDecode)
+            print(printPrefix .. err)
+            return
+        end
+
+        -- Check for an error
+        if res.error then
+            print(printPrefix .. errorSomethingWentWrong)
+            print(res.error)
+            return
+        end
+
+        -- Tell the user
+        print(printPrefix .. messageCustomComplete)
+    end, eleTDLB)
 end
 
 -- Sends the payload data for the given stage, and return the result
-function statCollection:sendStage(stageName, payload, callback)
+function statCollection:sendStage(stageName, payload, callback, override_host)
+    local host = override_host or postLocation
     -- Create the request
-    local req = CreateHTTPRequest('POST', postLocation .. stageName)
-    --print(json.encode(payload))
+    local req = CreateHTTPRequest('POST', host .. stageName)
+    print(json.encode(payload))
     -- Add the data
     req:SetHTTPRequestGetOrPostParameter('payload', json.encode(payload))
 
