@@ -26,6 +26,7 @@
 
         "etd_random_toggle_enable"  "Random elemental picker has been turned on!"
         "etd_random_toggle_error"   "Already chosen an element, can't enable -random now!"
+        "etd_random_already_enabled" "You are already playing Random mode!"
         "etd_random_elemental"      "An elemental has been randomed for you!"
         "etd_random_essence"        "A pure essence has been randomed for you!"
 

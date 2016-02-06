@@ -91,15 +91,10 @@ function IsPlayerUsingRandomMode( playerID )
 	return GetPlayerData(playerID).elementalRandom or (GameSettings.elementsOrderName and string.match(GameSettings.elementsOrderName, "Random"))
 end
 
+-- Players can only enable random if their elementCount is 0
 function CanPlayerEnableRandom( playerID )
-	local elementData = GetPlayerData(playerID).elements
-	local count = 0
-	for elem,level in pairs(elementData) do
-		if level > 0 then
-			return false
-		end
-	end
-	return true
+	local playerData = GetPlayerData(playerID)
+	return playerData.elementalCount == 0 
 end
 
 function ModifyElementValue(playerID, element, change)

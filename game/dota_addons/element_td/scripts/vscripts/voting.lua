@@ -16,6 +16,7 @@ if not PLAYERS_NOT_VOTED then
 	VOTE_RESULTS.length = {}
 
 	PLAYER_DIFFICULTY_CHOICES = {}
+	PLAYER_RANDOM_CHOICES = {}
 end
 
 function StartVoteTimer()
@@ -120,13 +121,13 @@ function FinalizeVotes()
 	GameSettings:SetGamemode(gamemode)
 
 	local difficulty
-	if gamemode == "Competitive" or gamemode == "Extreme" then
+	if gamemode == "Competitive" then
 		difficulty = GetWinningDifficulty()
 		for _, plyID in pairs(playerIDs) do
-			print(plyID)
     		GameSettings:SetDifficulty(plyID, difficulty)
     	end
     else
+    	-- Each player in their own difficulty
 		for _, plyID in pairs(playerIDs) do
    			GameSettings:SetDifficulty(plyID, PLAYER_DIFFICULTY_CHOICES[plyID])
     	end
@@ -150,6 +151,16 @@ function FinalizeVotes()
 	GameSettings:SetEndless(endless)
 	GameSettings:SetCreepOrder(order)
 	GameSettings:SetElementOrder(elements)
+
+	-- If the Random vote didn't win, apply Random to every player that selected it anyway. 
+	-- They are also able to do this by typing -random before picking an element
+	if elements == "AllPick" then
+		for _, plyID in pairs(playerIDs) do
+			if PLAYER_RANDOM_CHOICES[playerID] == "1" then
+				GameSettings:EnableRandomForPlayer(playerID)
+			end
+		end
+	end	
 
 	for k, plyID in pairs(playerIDs) do
 		local data = {playerID = plyID, gamemode = gamemode, difficulty = GetPlayerData(plyID).difficulty.difficultyName, elements = elements, endless = endless, order = order, length = length}
@@ -185,6 +196,7 @@ function ElementTD:OnPlayerVoted( table )
 		GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerName .. "</font> has voted!", 0, 0)
 		PLAYERS_NOT_VOTED[playerID] = nil
 		PLAYER_DIFFICULTY_CHOICES[playerID] = table.data.difficultyVote
+		PLAYER_RANDOM_CHOICES[playerID] = table.data.elementsVote
 
 		local difficultyVote = table.data.difficultyVote -- 0 to 3
 		local randomVote = table.data.elementsVote -- 0 or 1 if Random was selected

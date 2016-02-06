@@ -127,6 +127,24 @@ function GameSettings:SetCreepOrder(order)
 	end
 end
 
+-- Called after a player chooses the individual -random option (random element chain shouldn't be shared)
+function GameSettings:EnableRandomForPlayer(playerID)
+    local playerData = GetPlayerData(playerID)
+
+    if IsPlayerUsingRandomMode(playerID) then
+    	SendErrorMessage(playerID, "#etd_random_already_enabled")
+
+    elseif CanPlayerEnableRandom(playerID) then
+        playerData.elementalRandom = true
+        print("Elemental Random set to "..tostring(playerData.elementalRandom).." for player "..playerID)
+        SendEssenceMessage(playerID, "#etd_random_toggle_enable")
+        BuyElement(playerID, getRandomElement(0))
+        UpdatePlayerSpells(playerID)
+    else
+        SendErrorMessage(playerID, "#etd_random_toggle_error")
+    end
+end
+
 usedElements = {["water"] = 0, ["fire"] = 0, ["earth"] = 0, ["nature"] = 0, ["dark"] = 0, ["light"] = 0, ["pure"] = 0 }
 elements = {"water", "fire", "earth", "nature", "dark", "light", "pure"}
 function getRandomElement(wave)
@@ -246,6 +264,7 @@ function GetRandomElementForWave(playerID, wave)
 
     return element
 end
+
 ----------------------------------------------------
 ----------------------------------------------------
 ----------------------------------------------------

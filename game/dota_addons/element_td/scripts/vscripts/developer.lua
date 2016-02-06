@@ -18,7 +18,7 @@ CHEAT_CODES = {
 }
 
 PLAYER_CODES = {
-    ["random"] = function(...) ElementTD:EnableRandom(...) end,         -- Toggle random for player
+    ["random"] = function(...) GameSettings:EnableRandomForPlayer(...) end,  -- Enable random for player
 }
 
 -- A player has typed something into the chat
@@ -199,19 +199,6 @@ function ElementTD:WhereIsTheWave(playerID)
                 print("["..k.."]","Entity Not Valid!")
             end
         end
-    end
-end
-
-function ElementTD:EnableRandom(playerID)
-    local playerData = GetPlayerData(playerID)
-
-    if CanPlayerEnableRandom(playerID) then
-        playerData.elementalRandom = true
-        print("Elemental Random set to "..tostring(playerData.elementalRandom).." for player "..playerID)
-        SendEssenceMessage(playerID, "#etd_random_toggle_enable")
-        UpdatePlayerSpells(playerID)
-    else
-        SendErrorMessage(playerID, "#etd_random_toggle_error")
     end
 end
 
