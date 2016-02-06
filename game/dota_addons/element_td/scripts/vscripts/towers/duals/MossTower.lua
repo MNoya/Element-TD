@@ -20,7 +20,7 @@ nil)
 function MossTower:OnAttackLanded(keys)
     local target = keys.target    
     local damage = self.tower:GetAverageTrueAttackDamage()
-    local popupDamage = damage * (1+target:GetHealthPercent() * 0.01)
+    local popupDamage = damage * (1 + target:GetHealth() / target:GetMaxHealth())
     if target:IsAlive() then
         PopupGreenCriticalDamage(self.tower, math.floor(popupDamage))
     end
