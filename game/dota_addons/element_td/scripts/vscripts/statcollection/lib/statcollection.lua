@@ -566,7 +566,7 @@ function statCollection:sendCustom(args)
         end
 
         -- Tell the user
-        print(printPrefix .. messageCustomComplete)
+        print(printPrefix .. messageCustomComplete .. " [" .. eleTDLB .. ']')
     end, eleTDLB)
 end
 
