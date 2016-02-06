@@ -9460,6 +9460,11 @@
 	        "1"     "water"
 	        "2"     "earth"
 	    }
+	    "Requirements"
+	    {
+	        "water"     "1"
+	        "earth"     "1"
+	    }
 	    "Upgrades"
 	    {
 	        "Count"     "5"
@@ -9514,8 +9519,8 @@
 	    "AttackAnimationPoint"      "0.3"
 	    "Creature"
 	    {
-	       "AttachWearables" // Armaments of Leviathan Set
-	       {
+	        "AttachWearables" // Armaments of Leviathan Set
+	        {
 	            "1" { "ItemDef" "5470" } // Ye Olde Pipe
 	            "2" { "ItemDef" "5466" } // Claddish Guard
 	            "3" { "ItemDef" "5469" } // Admiral's Salty Shawl
@@ -9524,7 +9529,7 @@
 	            "6" { "ItemDef" "5467" } // Claddish Hightops
 	            "7" { "ItemDef" "5463" } // Admiral's Foraged Cap
 	            "8" { "ItemDef" "5464" } // Admiral's Stash
-	       }
+	        }
 	    }
 	
 	    // Stats

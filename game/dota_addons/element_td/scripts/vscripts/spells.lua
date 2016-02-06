@@ -15,7 +15,9 @@ function UpdatePlayerSpells(playerID)
 						AddAbility(hero, enabledAbilityName, 1)
 						hero:SwapAbilities(enabledAbilityName, abilityName, true, false)
 						hero:RemoveAbility(abilityName)
-						NewSelection( hero )
+						if IsCurrentlySelected( hero ) then
+							NewSelection( hero )
+						end
 					end
 				end
 			end

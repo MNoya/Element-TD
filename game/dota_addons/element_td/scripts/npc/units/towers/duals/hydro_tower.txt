@@ -50,6 +50,11 @@
         "1"     "water"
         "2"     "earth"
     }
+    "Requirements"
+    {
+        "water"     "1"
+        "earth"     "1"
+    }
     "Upgrades"
     {
         "Count"     "5"
