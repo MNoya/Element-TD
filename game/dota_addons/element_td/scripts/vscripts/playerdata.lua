@@ -64,9 +64,12 @@ end
 function GetPlayerNetworth(playerID)
 	local playerData = GetPlayerData( playerID )
 	local playerNetworth = ElementTD.vPlayerIDToHero[playerID]:GetGold()
+	if playerData.networth then
+		return playerData.networth
+	end
 	for i,v in pairs( playerData.towers ) do
 		local tower = EntIndexToHScript( i )
-		if tower:GetHealth() == tower:GetMaxHealth() then
+		if tower and tower:GetHealth() == tower:GetMaxHealth() then
 			for i=0,15 do
 				local ability = tower:GetAbilityByIndex( i )
 				if ability then
