@@ -197,7 +197,7 @@ end
 
 -- Fast
 function CreepBoss:CastHasteSpell(keys)
-    local status, err = pcall(function()
+    --[[local status, err = pcall(function()
         local creep = keys.caster;
         if creep then
             -- Prevent swarm from casting
@@ -209,7 +209,7 @@ function CreepBoss:CastHasteSpell(keys)
     end);
     if not status then
         Log:error(err);
-    end
+    end]]
 end
 
 RegisterCreepClass(CreepBoss, CreepBoss.className)
