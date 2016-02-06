@@ -7,7 +7,7 @@
     <include src="file://{resources}/scripts/custom_game/voting.js" /> 
   </scripts>
   <Panel hittest="false" class="BaseHud">
-    <Panel hittest="true" id="Voting">
+    <Panel hittest="false" id="Voting">
       <Label id="Title" text="Vote on Game Settings"/>
 
       <Panel hittest="false"  id="DifficultyPanel">
@@ -30,41 +30,41 @@
       </Panel>
 
       <Panel hittest="false" id="Checkboxes">
-        <Panel class="CheckboxPanel">
-          <ToggleButton id="random" onmouseover="HoverCheckbox('random')" onmouseout="MouseOverCheckbox('random')" onactivate="SelectCheckbox('random')"  text="#element_random"/>
+        <Panel id="Option_Random" class="CheckboxPanel" onmouseover="HoverCheckbox('random')" onmouseout="MouseOverCheckbox('random')" onactivate="SelectCheckbox('random')" >
+          <ToggleButton id="random" onactivate="SelectCheckboxClick('')" text="#element_random"/>
           <Label id="ElementsDesc" class="desc" text="#element_same_random_description"/>
         </Panel>
-        <Panel class="CheckboxPanel">
+        <Panel id="Option_Endless" class="CheckboxPanel" onmouseover="HoverCheckbox('endless')" onmouseout="MouseOverCheckbox('endless')" onactivate="SelectCheckbox('endless')">
           <Panel class="CheckboxSub">
-            <ToggleButton id="endless" onmouseover="HoverCheckbox('endless')" onmouseout="MouseOverCheckbox('endless')" onactivate="SelectCheckbox('endless')" text="#horde_endless"/>
+            <ToggleButton id="endless" onactivate="SelectCheckboxClick('')" text="#horde_endless"/>
             <Label id="EndlessMult" class="multdesc" text="x1.5 Score Mult"/>
           </Panel>
           <Label id="EndlessDesc" class="desc" text="#horde_endless_description"/>
         </Panel>
-        <Panel class="CheckboxPanel">
+        <Panel id="Option_Chaos" class="CheckboxPanel" onmouseover="HoverCheckbox('chaos')" onmouseout="MouseOverCheckbox('chaos')" onactivate="SelectCheckbox('chaos')">
           <Panel class="CheckboxSub">
-            <ToggleButton id="chaos" onmouseover="HoverCheckbox('chaos')" onmouseout="MouseOverCheckbox('chaos')" onactivate="SelectCheckbox('chaos')" text="#order_chaos"/>
+            <ToggleButton id="chaos" onactivate="SelectCheckboxClick('')" text="#order_chaos"/>
             <Label id="EndlessMult" class="multdesc" text="x1.25 Score Mult"/>
           </Panel>
           <Label id="OrderDesc" class="desc" text="#order_chaos_description"/>
         </Panel>
-        <Panel class="CheckboxPanel">
-          <ToggleButton id="express" onmouseover="HoverCheckbox('express')" onmouseout="MouseOverCheckbox('express')" onactivate="SelectCheckbox('express')" text="#length_express"/>
+        <Panel id="Option_Express" class="CheckboxPanel" onmouseover="HoverCheckbox('express')" onmouseout="MouseOverCheckbox('express')" onactivate="SelectCheckbox('express')">
+          <ToggleButton id="express" onactivate="SelectCheckboxClick('')" text="#length_express"/>
           <Label id="LengthDesc" class="desc" text="#length_express_description"/>
         </Panel>
       </Panel>
 
       <Panel hittest="false" id="Multipliers">
         <Panel id="HealthBounty">
-          <Label id="HealthMult" text="Health: +235%"/>
-          <Label id="BountyMult" text="Bounty: +25%"/>
+          <Label id="HealthMult" text="Health: 100%"/>
+          <Label id="BountyMult" text="Bounty: 100%"/>
         </Panel>
 
         <Label id="ScoresMult" text="Score Multiplier: x16"/>
       </Panel>
 
       <Panel id="Bottom">
-        <Label id="Info" text="Waiting for others to finish voting..."/>
+        <Label id="Info" text="#voting_wait"/>
         <Button id="Vote" onactivate="ConfirmVote()" class="ButtonBevel">
           <Label id="ButtonLabel" text="Confirm Vote"/>
         </Button>
@@ -72,7 +72,7 @@
       </Panel>
     </Panel>
 
-    <Panel hittest="true" id="VotingLive">
+    <Panel hittest="false" id="VotingLive">
       <Panel id="NotVoted">
         <Label id="NotVotedLabel" text="Not Voted:" class="label"/>
         <Panel id="NotVotedPlayers">
@@ -85,7 +85,7 @@
       </Panel>
     </Panel>
 
-    <Panel hittest="true" id="VoteResults">
+    <Panel hittest="false" id="VoteResults">
       <Label id="ResultsTitle" text="Vote Results"/>
       
       <!--
@@ -96,25 +96,33 @@
       -->
       
       <Panel id="D" class="result">
-        <Label id="DTitle" text="Difficulty" class="resultsLabel"/>
-        <Label id="DifficultyResult" text="[difficulty]" class="resultsValue"/>
+        <!--<Label id="DTitle" text="Difficulty" class="resultsLabel"/>-->
+        <Label id="DifficultyResult" text="#difficulty_normal_mode" class="resultsLabel"/>
       </Panel>
       <Panel id="E" class="result">
-        <Label id="ETitle" text="Elements" class="resultsLabel"/>
-        <Label id="ElementsResult" text="[elements]" class="resultsValue"/>
+        <!--<Label id="ETitle" text="Elements" class="resultsLabel"/>-->
+        <Label id="ElementsResult" text="#random_mode" class="resultsLabel"/>
       </Panel>
       <Panel id="EL" class="result">
-        <Label id="ELTitle" text="Endless" class="resultsLabel"/>
-        <Label id="EndlessResult" text="[order]" class="resultsValue"/>
+        <!--<Label id="ELTitle" text="Endless" class="resultsLabel"/>-->
+        <Label id="EndlessResult" text="#endless_mode" class="resultsLabel"/>
       </Panel>
       <Panel id="O" class="result">
-        <Label id="OTitle" text="Order" class="resultsLabel"/>
-        <Label id="OrderResult" text="[order]" class="resultsValue"/>
+        <!--<Label id="OTitle" text="Order" class="resultsLabel"/>-->
+        <Label id="OrderResult" text="#chaos_mode" class="resultsLabel"/>
       </Panel>
       <Panel id="L" class="result">
-        <Label id="LTitle" text="Length" class="resultsLabel"/>
-        <Label id="LengthResult" text="[length]" class="resultsValue"/>
+        <!--<Label id="LTitle" text="Length" class="resultsLabel"/>-->
+        <Label id="LengthResult" text="#express_mode" class="resultsLabel"/>
       </Panel>
+      <Panel id="HB" class='resultHealthBounty'>
+          <Label id="HealthResult" class='resultsLabel' text="Health: 100%"/> 
+          <Label id="BountyResult" class='resultsLabel' text="Bounty: 100%"/>
+      </Panel>
+      <Panel id="S" class="result">
+        <Label id="ScoresResult" class='resultsLabel' text="Score Multiplier: x1"/>
+      </Panel>
+
       <Button id="ResultsButton" onactivate="ResultsClose()" class="ButtonBevel">
         <Label id="ButtonLabel" text="Ok"/>
       </Button>

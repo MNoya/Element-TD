@@ -206,7 +206,7 @@ function ElementTD:OnPlayerVoted( table )
 		AddVote(VOTE_RESULTS.order, orderString)
 		AddVote(VOTE_RESULTS.length, expressString)
 
-		local data = {playerID = playerID, difficulty = table.data.difficultyVote, elements = table.data.elementsVote, endless = table.data.endlessVote, order = table.data.orderVote, length = table.data.lengthVote}
+		local data = {playerID = playerID, difficulty = difficultyString, elements = randomString, endless = endlessString, order = orderString, length = expressString}
 		CustomGameEventManager:Send_ServerToAllClients( "etd_vote_display", data )
 
 		--check to see if all players have finished voting

@@ -123,7 +123,6 @@
     horizontal-align: center;
     position: 0px 28% 0px;
     width: 420px;
-    height: 330px;
     padding: 10px 30px 0px 30px;
     background-color: #000000DD;
     border: 2px solid #484A48;
@@ -198,6 +197,7 @@
     horizontal-align: center;
     max-width: 60px;
     height: 30px;
+    margin-bottom: 10px;
 }
 
 .setting
@@ -233,6 +233,7 @@
     font-size: 22px;
     font-weight: bold;
     text-shadow: 0px 0px 3px 3.0 #000;
+    horizontal-align: center;
 }
 
 .resultsValue
@@ -241,6 +242,11 @@
     font-size: 20px;
     text-shadow: 0px 0px 3px 3.0 #000;
     horizontal-align: center;
+}
+
+.resultMultipliers
+{
+    font-size: 22px;
 }
 
 DropDown
@@ -395,6 +401,43 @@ ToggleButton .TickBox, DOTASettingsCheckbox .TickBox
     color: #ff0000;
     text-shadow: 0px 0px 3px 3.0 #000;
     saturation: 0.8; 
+}
+
+#HB
+{
+    flow-children: right;
+}
+
+.resultHealthBounty
+{
+    height: 36px;
+}
+
+#HealthResult
+{
+    color: #65D413;
+    text-shadow: 0px 0px 3px 3.0 #000;
+    saturation: 0.8;
+}
+
+#BountyResult
+{
+    color: #F3C909;
+    text-shadow: 0px 0px 3px 3.0 #000;
+    saturation: 0.8;
+    margin-left: 25px;
+}
+
+#ScoresResult
+{
+    color: #ff0000;
+    text-shadow: 0px 0px 3px 3.0 #000;
+    saturation: 0.8; 
+}
+
+.resultHealthBounty
+{
+    horizontal-align: center;
 }
 
 .Hover

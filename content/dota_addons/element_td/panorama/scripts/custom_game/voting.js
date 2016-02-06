@@ -8,8 +8,6 @@ GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_HEROES, f
 GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_FLYOUT_SCOREBOARD, false );	// flyout scoreboard
 GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, false );			// Endgame scoreboard
 
-var gamesettings = {}; //Holds gamesettings.kv
-
 var votingUI = $( "#Voting" );
 var voteResultsUI = $( '#VoteResults' );
 var buttonVote = $( "#Vote" );
@@ -24,18 +22,6 @@ var votingLiveHasVoted = $( '#HasVotedPlayers' );
 var playerVotes = {};
 
 var timer = $( '#Countdown' );
-
-var gamemodeResults = $( '#GamemodeResult' );
-var difficultyResults = $( '#DifficultyResult' );
-var elementsResults = $( '#ElementsResult' );
-var endlessResults = $( '#EndlessResult' );
-var orderResults = $( '#OrderResult' );
-var lengthResults = $( '#LengthResult' );
-
-var elementModes = {};
-var endlessModes = {};
-var orderModes = {};
-var lengthModes = {};
 
 var difficultyModes = ["normal","hard","veryhard","insane"]
 var activeDifficulty = "normal"
@@ -52,21 +38,11 @@ var chaos = $('#chaos')
 var endless = $('#endless')
 var express = $('#express')
 
-function UpdateMultipliers(diff){
-    diff = diff || activeDifficulty;
-    healthMult.text = "Health: "+healthBonus[diff]
-    if (express.checked || express.hovering)
-        bountyMult.text = "Bounty: "+bountyBonusExpress[diff]
-    else
-        bountyMult.text = "Bounty: "+bountyBonus[diff]
-
-    var scoring = scoreMultipliers[diff]
-    if (chaos.checked || chaos.hovering)
-        scoring+=scoreMultipliers['chaos']
-    if (endless.checked || endless.hovering)
-        scoring+=scoreMultipliers['endless']
-
-    scoresMult.text = "Score Multiplier: x"+scoring
+function UpdateMultipliers(difficultyName){
+    difficultyName = difficultyName || activeDifficulty;
+    healthMult.text = GetHP(difficultyName)
+    bountyMult.text = GetBounty(difficultyName, express.checked || express.hovering)
+    scoresMult.text = GetScore(difficultyName, endless.checked || endless.hovering, chaos.checked || chaos.hovering)
 }
 
 function HoverDifficulty(name) {
@@ -121,12 +97,17 @@ function HoverCheckbox(name) {
 
 function MouseOverCheckbox(name) {
     var panel = $("#"+name)
-
+    $.Msg(name, " ", panel)
     panel.hovering = false
     UpdateMultipliers()
 }
 
 function SelectCheckbox(name) {
+    UpdateMultipliers()
+    $("#"+name).checked = !$("#"+name).checked
+}
+
+function SelectCheckboxClick() {
     UpdateMultipliers()
 }
 
@@ -146,7 +127,6 @@ function ToggleVoteDialog( data )
             votingLiveUI.AddClass("hidden");
         }
     }
-
 }
 
 function UpdateVoteTimer( data )
@@ -193,29 +173,29 @@ function PlayerVoted( data )
     var votes = $.CreatePanel('Panel', vote, '');
     votes.AddClass('VotedPlayerVotes');
 
-    var gamemode = $.CreatePanel('Label', votes, '');
+    /*var gamemode = $.CreatePanel('Label', votes, '');
     gamemode.AddClass('PlayerVote');
-    gamemode.text = $.Localize(data.gamemode.replace(/([a-z])([A-Z])/g, '$1 $2'));
+    gamemode.text = $.Localize(data.gamemode.replace(/([a-z])([A-Z])/g, '$1 $2'));*/
 
     var difficulty = $.CreatePanel('Label', votes, '');
     difficulty.AddClass('PlayerVote');
-    difficulty.text = $.Localize(data.difficulty.replace(/([a-z])([A-Z])/g, '$1 $2'));
+    difficulty.text = $.Localize("difficulty_"+data.difficulty.toLowerCase());
 
     var elements = $.CreatePanel('Label', votes, '');
     elements.AddClass('PlayerVote');
-    elements.text = $.Localize(data.elements.replace(/([a-z])([A-Z])/g, '$1 $2'));
+    elements.text = $.Localize("element_"+data.elements.toLowerCase());
 
     var endless = $.CreatePanel('Label', votes, '');
     endless.AddClass('PlayerVote');
-    endless.text = $.Localize(data.endless.replace(/([a-z])([A-Z])/g, '$1 $2'));
+    endless.text = $.Localize("horde_"+data.endless.toLowerCase());
 
     var order = $.CreatePanel('Label', votes, '');
     order.AddClass('PlayerVote');
-    order.text = $.Localize(data.order.replace(/([a-z])([A-Z])/g, '$1 $2'));
+    order.text = $.Localize("order_"+data.order.toLowerCase());
 
     var length = $.CreatePanel('Label', votes, '');
     length.AddClass('PlayerVote');
-    length.text = $.Localize(data.length.replace(/([a-z])([A-Z])/g, '$1 $2'));
+    length.text = $.Localize("length_"+data.length.toLowerCase());
 
     playerVotes[playerID] = true;
     votingLiveHasVoted.ScrollToBottom();
@@ -248,13 +228,51 @@ function ShowVoteResults( data )
     voteResultsUI.visible = true;
     votingLiveUI.AddClass("hidden");
 
-    //gamemodeResults.text = $.Localize(gamesettings['GameModes'][data.gamemode].Name);
-    difficultyResults.text = $.Localize(gamesettings['Difficulty'][data.difficulty].Name);
-    elementsResults.text = $.Localize(gamesettings['ElementModes'][data.elements].Name);
-    endlessResults.text = $.Localize(gamesettings['HordeMode'][data.endless].Name);
-    orderResults.text = $.Localize(gamesettings['CreepOrder'][data.order].Name);
-    lengthResults.text = $.Localize(gamesettings['GameLength'][data.length].Name);
+    var difficultyName = data.difficulty.toLowerCase()
+    $("#DifficultyResult").text = $.Localize("difficulty_"+difficultyName+"_mode")
+
+    // Only show the options that were accepted
+    var random = data.elements == "SameRandom"
+    var endless = data.endless == "Endless"
+    var chaos = data.order == "Chaos"
+    var express = data.length == "Express"
+
+    if (!random)
+        $( '#ElementsResult' ).GetParent().DeleteAsync(0)
+
+    if (!endless)
+        $( '#EndlessResult' ).GetParent().DeleteAsync(0)
+
+    if (!chaos)
+        $( '#OrderResult' ).GetParent().DeleteAsync(0)
+
+    if (!express)
+        $( '#LengthResult' ).GetParent().DeleteAsync(0)
+
+    // Update HP-Bounty-Scores results
+    $("#HealthResult").text = GetHP(difficultyName)
+    $("#BountyResult").text = GetBounty(difficultyName, express)
+    $("#ScoresResult").text = GetScore(difficultyName, endless, chaos)
 }
+
+function GetHP(difficultyName) {
+    return "Health: "+healthBonus[difficultyName]
+}
+
+function GetBounty(difficultyName, bExpress) {
+    return bExpress ? "Bounty: "+bountyBonusExpress[difficultyName] : "Bounty: "+bountyBonus[difficultyName]
+}
+
+function GetScore(difficultyName, bEndless, bChaos) {
+    var scoring = scoreMultipliers[difficultyName]
+    if (bEndless)
+        scoring+=scoreMultipliers['chaos']
+
+    if (bChaos)
+        scoring+=scoreMultipliers['endless']
+
+    return "Score Multiplier: x"+scoring
+}    
 
 function ResultsClose()
 {
@@ -274,16 +292,11 @@ function Setup()
     UpdateNotVoted();
 }
 
-function Populate( data )
-{
-    gamesettings = data;
-}
 
 (function () {
     Setup();
     GameEvents.Subscribe( "etd_toggle_vote_dialog", ToggleVoteDialog );
     GameEvents.Subscribe( "etd_update_vote_timer", UpdateVoteTimer );
-    GameEvents.Subscribe( "etd_populate_vote_table", Populate );
     GameEvents.Subscribe( "etd_vote_display", PlayerVoted );
     GameEvents.Subscribe( "etd_vote_results", ShowVoteResults );
 })();

@@ -36,10 +36,20 @@
         "score"             "Total Score"
         "tooltip_score"     "This score will be sent to the leaderboard at the end of the game."
 
+        "voting_wait"                       "Waiting for others to finish voting..."
         "difficulty_normal"                 "Normal"
         "difficulty_hard"                   "Hard"
         "difficulty_very_hard"              "Very Hard"
         "difficulty_insane"                 "Insane"
+        "difficulty_normal_mode"            "Normal Difficulty"
+        "difficulty_hard_mode"              "Hard Difficulty"
+        "difficulty_veryhard_mode"          "Very Hard Difficulty"
+        "difficulty_insane_mode"            "Insane Difficulty"
+
+        "random_mode"                       "Random Elements"
+        "endless_mode"                      "Endless Mode"
+        "chaos_mode"                        "Chaos Mode"
+        "express_mode"                      "Express Mode"
 
         "mode_competitive"                  "Competitive"
         "mode_competitive_description"      "Everyone plays on the same difficulty."
