@@ -41,30 +41,32 @@
         "difficulty_very_hard"              "Very Hard"
         "difficulty_insane"                 "Insane"
 
-        "length_classic"                    "Classic"
-        "length_express"                    "Express"
-
         "mode_competitive"                  "Competitive"
         "mode_competitive_description"      "Everyone plays on the same difficulty."
         "mode_casual"                       "Casual"
         "mode_casual_description"           "Everyone plays on their own difficulty."
 
+        "element_pick"                      "All Pick"
+        "element_pick_description"          "Everyone can pick and choose which elementals they want to summon."
+        "element_all_random"                "All Random"
+        "element_all_random_description"    "Everyone gets their elemental choices selected randomly."
+        "element_same_random"               "Random"
+        "element_same_random_description"   "Everyone is given the same random elemental choices."
+        "element_random"                    "Random"
+
         "horde_normal"                      "Normal"
         "horde_normal_description"          "The waves will spawn normally when the current wave is cleared."
-        "horde_endless"                     "Endless Horde"
-        "horde_endless_description"         "Back-to-back waves for the ultimate, suicide rush challenge!"
+        "horde_endless"                     "Endless"
+        "horde_endless_description"         "Back-to-back waves for the ultimate suicide rush challenge!"
 
         "order_normal"                      "Normal"
         "order_normal_description"          "Waves are in standard order."
         "order_chaos"                       "Chaos"
         "order_chaos_description"           "Waves are in random order. The last wave does not change."        
 
-        "element_pick"                      "All Pick"
-        "element_pick_description"          "Everyone can pick and choose which elementals they want to summon."
-        "element_all_random"                "All Random"
-        "element_all_random_description"    "Everyone gets their elemental choices selected randomly."
-        "element_same_random"               "Same Random"
-        "element_same_random_description"   "Everyone is given the same random elemental choices."          
+        "length_classic"                    "Classic"
+        "length_express"                    "Express"
+        "length_express_description"        "Less waves, more gold, shorter game."
 
         "DOTA_GoodGuys"                             "Summer" //Lime
         "DOTA_BadGuys"                              "Autumn" //Orange

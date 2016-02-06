@@ -90,6 +90,16 @@ function GetWinningChoice(option)
 	return winners[math.random(#winners)]
 end
 
+-- Index to String from gamesettings.kv
+function GetVotingString(index, sub)
+	local settable = gameSettingsKV[sub]
+	for k,v in pairs(settable) do
+		if v['Index'] == index then
+			return k
+		end
+	end
+end
+
 -- calculate which settings won the vote
 function FinalizeVotes()
 	
@@ -108,6 +118,7 @@ function FinalizeVotes()
 
 	local gamemode = GetWinningChoice(VOTE_RESULTS.gamemode)
 	GameSettings:SetGamemode(gamemode)
+
 	local difficulty
 	if gamemode == "Competitive" or gamemode == "Extreme" then
 		difficulty = GetWinningDifficulty()
@@ -175,14 +186,27 @@ function ElementTD:OnPlayerVoted( table )
 		PLAYERS_NOT_VOTED[playerID] = nil
 		PLAYER_DIFFICULTY_CHOICES[playerID] = table.data.difficultyVote
 
-		AddVote(VOTE_RESULTS.gamemode, table.data.gamemodeVote)
-		AddVote(VOTE_RESULTS.difficulty, table.data.difficultyVote)
-		AddVote(VOTE_RESULTS.elements, table.data.elementsVote)
-		AddVote(VOTE_RESULTS.endless, table.data.endlessVote)
-		AddVote(VOTE_RESULTS.order, table.data.orderVote)
-		AddVote(VOTE_RESULTS.length, table.data.lengthVote)
+		local difficultyVote = table.data.difficultyVote -- 0 to 3
+		local randomVote = table.data.elementsVote -- 0 or 1 if Random was selected
+		local endlessVote = table.data.endlessVote -- 0 or 1 if Endless was selected
+		local orderVote = table.data.orderVote -- 0 or 1 if Chaos was selected
+		local expressVote = table.data.lengthVote -- 0 or 1 if Express was selected
 
-		local data = {playerID = playerID, gamemode = table.data.gamemodeVote, difficulty = table.data.difficultyVote, elements = table.data.elementsVote, endless = table.data.endlessVote, order = table.data.orderVote, length = table.data.lengthVote}
+		-- Convert to strings on gamesettings
+		local difficultyString = GetVotingString(difficultyVote, "Difficulty")
+		local randomString = GetVotingString(randomVote, "ElementModes")
+		local endlessString = GetVotingString(endlessVote, "HordeMode")
+		local orderString = GetVotingString(orderVote, "CreepOrder")
+		local expressString = GetVotingString(expressVote, "GameLength")
+
+		AddVote(VOTE_RESULTS.gamemode, "Competitive") -- Always Competitive
+		AddVote(VOTE_RESULTS.difficulty, difficultyString)
+		AddVote(VOTE_RESULTS.elements, randomString)
+		AddVote(VOTE_RESULTS.endless, endlessString)
+		AddVote(VOTE_RESULTS.order, orderString)
+		AddVote(VOTE_RESULTS.length, expressString)
+
+		local data = {playerID = playerID, difficulty = table.data.difficultyVote, elements = table.data.elementsVote, endless = table.data.endlessVote, order = table.data.orderVote, length = table.data.lengthVote}
 		CustomGameEventManager:Send_ServerToAllClients( "etd_vote_display", data )
 
 		--check to see if all players have finished voting

@@ -9,42 +9,60 @@
   <Panel hittest="false" class="BaseHud">
     <Panel hittest="true" id="Voting">
       <Label id="Title" text="Vote on Game Settings"/>
-      <Panel hittest="false"  id="Gamemode" class="setting">
-        <Label id="GamemodeLabel" text="Gamemode:" class="label"/>
-        <DropDown id="GamemodeDD" oninputsubmit="OnDropDownChanged('gamemode')" class="dropdown">
-        </DropDown>
-        <Label id="GamemodeDesc" text="[gamemode descriptions]" class="desc"/>
+
+      <Panel hittest="false"  id="DifficultyPanel">
+        <Panel id="NormalDifficulty" onmouseover="HoverDifficulty('normal')" onmouseout="MouseOverDiff('normal')" onactivate="SelectDifficulty('normal')" class="DifficultyBox">
+          <Image id="normal" class="DifficultyImage" src="file://{images}/custom_game/vote_menu/difficulties/normal_glow.psd"/>
+          <Label id="NormalDifficultyLabel" text="#difficulty_normal" class="DifficultyLabel"/>
+        </Panel>
+        <Panel id="HardDifficulty" onmouseover="HoverDifficulty('hard')" onmouseout="MouseOverDiff('hard')" onactivate="SelectDifficulty('hard')" class="DifficultyBox">
+          <Image id="hard" class="DifficultyImage" src="file://{images}/custom_game/vote_menu/difficulties/hard.png"/>
+          <Label id="HardDifficultyLabel" text="#difficulty_hard" class="DifficultyLabel"/>
+        </Panel>
+        <Panel id="VeryHardDifficulty" onmouseover="HoverDifficulty('veryhard')" onmouseout="MouseOverDiff('veryhard')" onactivate="SelectDifficulty('veryhard')" class="DifficultyBox">
+          <Image id="veryhard" class="DifficultyImage" src="file://{images}/custom_game/vote_menu/difficulties/veryhard.png"/>
+          <Label id="VeryHardDifficultyLabel" text="#difficulty_very_hard" class="DifficultyLabel"/>
+        </Panel>
+        <Panel id="InsaneDifficulty" onmouseover="HoverDifficulty('insane')" onmouseout="MouseOverDiff('insane')" onactivate="SelectDifficulty('insane')" class="DifficultyBox">
+          <Image id="insane" class="DifficultyImage" src="file://{images}/custom_game/vote_menu/difficulties/insane.png"/>
+          <Label id="InsaneDifficultyLabel" text="#difficulty_insane" class="DifficultyLabel"/>
+        </Panel>
       </Panel>
-      <Panel hittest="false"  id="Difficulty" class="setting">
-        <Label id="DifficultyLabel" text="Difficulty:" class="label"/>
-        <DropDown id="DifficultyDD" oninputsubmit="OnDropDownChanged('difficulty')" class="dropdown">
-        </DropDown>
-        <Label id="DifficultyDesc" text="[difficulty descriptions]" class="desc"/>
+
+      <Panel hittest="false" id="Checkboxes">
+        <Panel class="CheckboxPanel">
+          <ToggleButton id="random" onmouseover="HoverCheckbox('random')" onmouseout="MouseOverCheckbox('random')" onactivate="SelectCheckbox('random')"  text="#element_random"/>
+          <Label id="ElementsDesc" class="desc" text="#element_same_random_description"/>
+        </Panel>
+        <Panel class="CheckboxPanel">
+          <Panel class="CheckboxSub">
+            <ToggleButton id="endless" onmouseover="HoverCheckbox('endless')" onmouseout="MouseOverCheckbox('endless')" onactivate="SelectCheckbox('endless')" text="#horde_endless"/>
+            <Label id="EndlessMult" class="multdesc" text="x1.5 Score Mult"/>
+          </Panel>
+          <Label id="EndlessDesc" class="desc" text="#horde_endless_description"/>
+        </Panel>
+        <Panel class="CheckboxPanel">
+          <Panel class="CheckboxSub">
+            <ToggleButton id="chaos" onmouseover="HoverCheckbox('chaos')" onmouseout="MouseOverCheckbox('chaos')" onactivate="SelectCheckbox('chaos')" text="#order_chaos"/>
+            <Label id="EndlessMult" class="multdesc" text="x1.25 Score Mult"/>
+          </Panel>
+          <Label id="OrderDesc" class="desc" text="#order_chaos_description"/>
+        </Panel>
+        <Panel class="CheckboxPanel">
+          <ToggleButton id="express" onmouseover="HoverCheckbox('express')" onmouseout="MouseOverCheckbox('express')" onactivate="SelectCheckbox('express')" text="#length_express"/>
+          <Label id="LengthDesc" class="desc" text="#length_express_description"/>
+        </Panel>
       </Panel>
-      <Panel hittest="false"  id="Elements" class="setting">
-        <Label id="ElementsLabel" text="Elements:" class="label"/>
-        <DropDown id="ElementsDD" oninputsubmit="OnDropDownChanged('elements')" class="dropdown">
-        </DropDown>
-        <Label id="ElementsDesc" text="[elements descriptions]" class="desc"/>
+
+      <Panel hittest="false" id="Multipliers">
+        <Panel id="HealthBounty">
+          <Label id="HealthMult" text="Health: +235%"/>
+          <Label id="BountyMult" text="Bounty: +25%"/>
+        </Panel>
+
+        <Label id="ScoresMult" text="Score Multiplier: x16"/>
       </Panel>
-      <Panel hittest="false"  id="Endless" class="setting">
-        <Label id="EndlessLabel" text="Endless:" class="label"/>
-        <DropDown id="EndlessDD" oninputsubmit="OnDropDownChanged('endless')" class="dropdown">
-        </DropDown>
-        <Label id="EndlessDesc" text="[endless descriptions]" class="desc"/>
-      </Panel>
-      <Panel hittest="false"  id="Order" class="setting">
-        <Label id="OrderLabel" text="Order:" class="label"/>
-        <DropDown id="OrderDD" oninputsubmit="OnDropDownChanged('order')" class="dropdown">
-        </DropDown>
-        <Label id="OrderDesc" text="[order descriptions]" class="desc"/>
-      </Panel>
-      <Panel hittest="false"  id="Length" class="setting">
-        <Label id="LengthLabel" text="Length:" class="label"/>
-        <DropDown id="LengthDD" oninputsubmit="OnDropDownChanged('length')" class="dropdown">
-        </DropDown>
-        <Label id="LengthDesc" text="[length descriptions]" class="desc"/>
-      </Panel>
+
       <Panel id="Bottom">
         <Label id="Info" text="Waiting for others to finish voting..."/>
         <Button id="Vote" onactivate="ConfirmVote()" class="ButtonBevel">
@@ -53,6 +71,7 @@
         <Label id="Countdown" text="60"/>   
       </Panel>
     </Panel>
+
     <Panel hittest="true" id="VotingLive">
       <Panel id="NotVoted">
         <Label id="NotVotedLabel" text="Not Voted:" class="label"/>
@@ -65,12 +84,17 @@
         </Panel>
       </Panel>
     </Panel>
+
     <Panel hittest="true" id="VoteResults">
       <Label id="ResultsTitle" text="Vote Results"/>
+      
+      <!--
       <Panel id="GM" class="result">
         <Label id="GMTitle" text="Gamemode" class="resultsLabel"/>
         <Label id="GamemodeResult" text="[gamemode]" class="resultsValue"/>
       </Panel>
+      -->
+      
       <Panel id="D" class="result">
         <Label id="DTitle" text="Difficulty" class="resultsLabel"/>
         <Label id="DifficultyResult" text="[difficulty]" class="resultsValue"/>
@@ -95,5 +119,48 @@
         <Label id="ButtonLabel" text="Ok"/>
       </Button>
     </Panel>
+
+      <!-- Old Dropdowns
+      <Panel hittest="false"  id="Gamemode" class="setting">
+        <Label id="GamemodeLabel" text="Gamemode:" class="label"/>
+        <DropDown id="GamemodeDD" oninputsubmit="OnDropDownChanged('gamemode')" class="dropdown">
+        </DropDown>
+        <Label id="GamemodeDesc" text="[gamemode descriptions]" class="desc"/>
+      </Panel>
+      <Panel hittest="false"  id="Difficulty" class="setting">
+        <Label id="DifficultyLabel" text="Difficulty:" class="label"/>
+        <DropDown id="DifficultyDD" oninputsubmit="OnDropDownChanged('difficulty')" class="dropdown">
+        </DropDown>
+        <Label id="DifficultyDesc" text="[difficulty descriptions]" class="desc"/>
+      </Panel>
+
+      <Panel hittest="false"  id="Elements" class="setting">
+        <Label id="ElementsLabel" text="Elements:" class="label"/>
+        <DropDown id="ElementsDD" oninputsubmit="OnDropDownChanged('elements')" class="dropdown">
+        </DropDown>
+        <Label id="ElementsDesc" text="[elements descriptions]" class="desc"/>
+      </Panel>
+
+      <Panel hittest="false"  id="Endless" class="setting">
+        <Label id="EndlessLabel" text="Endless:" class="label"/>
+        <DropDown id="EndlessDD" oninputsubmit="OnDropDownChanged('endless')" class="dropdown">
+        </DropDown>
+        <Label id="EndlessDesc" text="[endless descriptions]" class="desc"/>
+      </Panel>
+
+      <Panel hittest="false"  id="Order" class="setting">
+        <Label id="OrderLabel" text="Order:" class="label"/>
+        <DropDown id="OrderDD" oninputsubmit="OnDropDownChanged('order')" class="dropdown">
+        </DropDown>
+        <Label id="OrderDesc" text="[order descriptions]" class="desc"/>
+      </Panel>
+
+      <Panel hittest="false"  id="Length" class="setting">
+        <Label id="LengthLabel" text="Length:" class="label"/>
+        <DropDown id="LengthDD" oninputsubmit="OnDropDownChanged('length')" class="dropdown">
+        </DropDown>
+        <Label id="LengthDesc" text="[length descriptions]" class="desc"/>
+      </Panel>
+      -->
   </Panel>
 </root>
