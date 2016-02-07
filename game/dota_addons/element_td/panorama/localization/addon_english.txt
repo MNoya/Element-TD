@@ -47,7 +47,7 @@
         "difficulty_insane_mode"            "Insane Difficulty"
 
         "random_mode"                       "Random Elements"
-        "endless_mode"                      "Endless Mode"
+        "endless_mode"                      "Rush Mode"
         "chaos_mode"                        "Chaos Mode"
         "express_mode"                      "Express Mode"
 
@@ -59,24 +59,24 @@
         "element_allpick"                   "All Pick"
         "element_pick_description"          "Everyone can pick and choose which elementals they want to summon."
         "element_allrandom"                 "All Random"
-        "element_allrandom_description"     "Everyone gets their elemental choices selected randomly."
+        "element_allrandom_description"     "Your elements are randomly selected."
         "element_samerandom"                "Random"
-        "element_samerandom_description"    "Everyone is given the same random elemental choices."
+        "element_samerandom_description"    "Your elements are randomly selected."
         "element_random"                    "Random"
 
         "horde_normal"                      "Normal"
         "horde_normal_description"          "The waves will spawn normally when the current wave is cleared."
-        "horde_endless"                     "Endless"
-        "horde_endless_description"         "Back-to-back waves for the ultimate suicide rush challenge!"
+        "horde_endless"                     "Rush"
+        "horde_endless_description"         "When a wave ends, the next wave begins."
 
         "order_normal"                      "Normal"
         "order_normal_description"          "Waves are in standard order."
         "order_chaos"                       "Chaos"
-        "order_chaos_description"           "Waves are in random order. The last wave does not change."        
+        "order_chaos_description"           "Waves are in a random order."        
 
         "length_normal"                     "Normal"
         "length_express"                    "Express"
-        "length_express_description"        "Less waves, more gold, shorter game."
+        "length_express_description"        "A quicker game with less waves."
 
         "DOTA_GoodGuys"                             "Summer" //Lime
         "DOTA_BadGuys"                              "Autumn" //Orange

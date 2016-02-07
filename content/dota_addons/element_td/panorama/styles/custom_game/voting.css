@@ -8,8 +8,9 @@
 {
     horizontal-align: center;
     position: 0px 15% 0px;
-    width: 560px;
-    height: 640px;
+    margin-top: -3%;
+    width: 580px;
+    height: 600px;
     padding: 20px 20px 0px 20px;
     background-color: #000000DD;
     border: 2px solid #484A48;
@@ -318,7 +319,6 @@ DropDownMenu
     flow-children: right;
     width: 100%;
     height: 20%;
-    margin-bottom: 10px;
 }
 
 .CheckboxSub
@@ -345,9 +345,8 @@ ToggleButton .TickBox, DOTASettingsCheckbox .TickBox
 .desc
 {
     horizontal-align: right;
-    vertical-align: center;
+    margin-top: 10px;
     width: 65%;
-    height: 100px;
     font-size: 20px;
     color: #FFF;
     text-shadow: 0px 0px 3px 3.0 #000;
@@ -359,6 +358,7 @@ ToggleButton .TickBox, DOTASettingsCheckbox .TickBox
     color: #FFF;
     text-shadow: 0px 0px 3px 3.0 #000;
     margin-left: 55px;
+    margin-top: -5px;
 }
 
 #Multipliers
@@ -366,8 +366,8 @@ ToggleButton .TickBox, DOTASettingsCheckbox .TickBox
     width: 100%;
     horizontal-align: right;
     flow-children: down;
-    margin-top: -35px;
     margin-bottom: 10px;
+    margin-top: -60px;
     font-weight: bold;
 }
 
