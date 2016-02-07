@@ -223,9 +223,15 @@ function UpgradeTower(keys)
 			RemoveRandomClone(playerData, tower.class)
 		end
 
-		local modelScale = tower:GetModelScale()
 		tower.deleted = true --mark the old tower for deletion
-		BuildTower(newTower, modelScale) --start the tower building animation
+
+		-- Start the tower building animation
+		if tower.scriptClass == scriptClassName then
+			BuildTower(newTower, tower:GetModelScale())
+		else
+			BuildTower(newTower)
+		end
+
 
 		if GetUnitKeyValue(newClass, "DisableTurning") then
         	newTower:AddNewModifier(newTower, nil, "modifier_disable_turning", {})
@@ -328,34 +334,31 @@ function BuildTower(tower, baseScale)
 	end
 
 	local scale = tower:GetModelScale()
+	baseScale = baseScale or (scale / 2) -- Start at the old size (if its the same model) or at half the end size
 	local scaleIncrement = (scale - baseScale) / (buildTime * 20)
 
 	tower:SetModelScale(baseScale)
-	tower:SetHealth(1)
 	tower:SetMaxHealth(buildTime * 20)
 	tower:SetBaseMaxHealth(buildTime * 20)
+	tower:SetHealth(1)
 
 	-- create a timer to build up the tower slowly
-	Timers:CreateTimer("BuildTower"..tower:entindex(), {
-		endTime = 0.05,
-		callback = function()
-			tower:SetHealth(tower:GetHealth() + 1)
-	        tower:SetModelScale(tower:GetModelScale() + scaleIncrement)
+	Timers:CreateTimer(0.05, function()
+		tower:SetHealth(tower:GetHealth() + 1)
+        tower:SetModelScale(tower:GetModelScale() + scaleIncrement)
 
-			if tower:GetHealth() == tower:GetMaxHealth() then
-	        	tower:RemoveModifierByName("modifier_disarmed")
-	        	tower:RemoveModifierByName("modifier_silence")
-	        	tower:AddNewModifier(nil, nil, "modifier_invulnerable", {})
-	        	tower:NoHealthBar()
+		if tower:GetHealth() == tower:GetMaxHealth() then
+        	tower:RemoveModifierByName("modifier_disarmed")
+        	tower:RemoveModifierByName("modifier_silence")
+        	tower:AddNewModifier(nil, nil, "modifier_invulnerable", {})
 
-				tower:SetMaxHealth(GetUnitKeyValue(tower.class, "TotalCost"))
-				tower:SetBaseMaxHealth(GetUnitKeyValue(tower.class, "TotalCost"))
+			tower:SetMaxHealth(GetUnitKeyValue(tower.class, "TotalCost"))
+			tower:SetBaseMaxHealth(GetUnitKeyValue(tower.class, "TotalCost"))
 
-	        	tower:SetHealth(tower:GetMaxHealth())
-	        	tower.scriptObject:OnBuildingFinished()
-	        	return nil
-	        end
-	        return 0.05
-		end
-	})
+        	tower:SetHealth(tower:GetMaxHealth())
+        	tower.scriptObject:OnBuildingFinished()
+        	return
+        end
+        return 0.05
+	end)
 end

@@ -83,17 +83,6 @@ function Build( event )
         BuildingHelper:print("Started construction of " .. unit:GetUnitName() .. " " .. unit:GetEntityIndex())
         -- Play construction sound
 
-        -- If it's an item-ability and has charges, remove a charge or remove the item if no charges left
-        if ability.GetCurrentCharges and not ability:IsPermanent() then
-            local charges = ability:GetCurrentCharges()
-            charges = charges-1
-            if charges == 0 then
-                ability:RemoveSelf()
-            else
-                ability:SetCurrentCharges(charges)
-            end
-        end
-
         -- Units can't attack while building
         unit:AddNewModifier(unit, nil, "modifier_attack_disabled", {})
 
@@ -121,6 +110,9 @@ function Build( event )
             Log:error("Unknown script class, " .. scriptClassName .. " for tower " .. building_name)
         end
 
+        -- Adjust health to the buildings TotalCost
+        unit:SetMaxHealth(GetUnitKeyValue(building_name, "TotalCost"))
+        unit:SetBaseMaxHealth(GetUnitKeyValue(building_name, "TotalCost"))
     end)
 
     -- A building finished construction
