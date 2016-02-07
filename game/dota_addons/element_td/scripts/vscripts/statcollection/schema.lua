@@ -46,6 +46,7 @@ function BuildGameArray()
     game.exp = EXPRESS_MODE
     game.ord = GameSettings.order
     game.hor = GameSettings.endless
+    game.rnd = GameSettings.elementsOrderName
     game.str = START_TIME
     game.fin = END_TIME
     game.ver = VERSION
@@ -96,7 +97,7 @@ function BuildPlayersArray()
                     cln = playerData.scoreObject.cleanWaves, -- Amount of waves without leaks
                     u30 = playerData.scoreObject.under30,    -- Amount of waves completed under 30
                     ifc = playerData.iceFrogKills, -- Amount of ice frog kills
-                    rnd = IsPlayerUsingRandomMode( playerID ), -- Is player randoming elements
+                    rnd = (IsPlayerUsingRandomMode( playerID ) and 1 or 0), -- Is player randoming elements
 
                     -- Levels of each element at the end
                     fir = playerData.elements.fire,
