@@ -42,7 +42,7 @@
 	}
 	"AOE_Full"		"150"
 	"AOE_Half"		"300"
-	"Damage"		"750"
+	"Damage"		"700"
 	"DamageType"		"nature"
 	"ScriptClass"		"MossTower"
 	"TowerType"		"Normal"
@@ -68,8 +68,8 @@
 		"Count"		"1"
 		"1"		"moss_tower_3"
 	}
-	"AttackDamageMin"		"750"
-	"AttackDamageMax"		"750"
+	"AttackDamageMin"		"700"
+	"AttackDamageMax"		"700"
     "Creature"
     {
        "AttachWearables" // Vanquishing Demons General

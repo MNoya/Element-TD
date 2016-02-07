@@ -43,16 +43,16 @@
 		"2"		"nature"
 		"3"		"light"
 	}
-	"Damage"		"300"
+	"Damage"		"640"
 	"DamageType"		"water"
 	"ScriptClass"		"TidalTower"
 	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"900"
 	"AttackAcquisitionRange"		"900"
-	"AttackRate"		"0.31"
+	"AttackRate"		"0.66"
 	"ProjectileModel"		"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
-	"ProjectileSpeed"		"3000"
+	"ProjectileSpeed"		"2500"
 
     "Model"             "models/heroes/siren/siren.vmdl"
     "ModelScale"        "1.0"
@@ -87,8 +87,8 @@
 		"Count"		"1"
 		"1"		"tidal_tower_2"
 	}
-	"AttackDamageMin"		"300"
-	"AttackDamageMax"		"300"
+	"AttackDamageMin"		"640"
+	"AttackDamageMax"		"640"
 
 	// Building Size
     "ConstructionSize"          "2"

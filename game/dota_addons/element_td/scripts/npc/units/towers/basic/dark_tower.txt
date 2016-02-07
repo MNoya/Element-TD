@@ -29,10 +29,10 @@
     "AttackDamageMin"           "240"
     "AttackDamageMax"           "240"
     "Damage"                    "240"  
-    "AttackRange"               "1100"
-    "AttackAcquisitionRange"    "1100"
+    "AttackRange"               "1150"
+    "AttackAcquisitionRange"    "1150"
     "AttackRate"                "1.5"
-    "AttackAnimationPoint"      "0.4"
+    "AttackAnimationPoint"      "0.3"
     "ProjectileSpeed"           "2000"
 
     "Level"                     "1"

@@ -42,7 +42,7 @@
 	}
 	"AOE_Full"		"150"
 	"AOE_Half"		"300"
-	"Damage"		"150"
+	"Damage"		"140"
 	"DamageType"		"nature"
 	"ScriptClass"		"MossTower"
 	"TowerType"		"Normal"
@@ -72,8 +72,8 @@
 		"4"		"ephemeral_tower"
 		"5"		"roots_tower"
 	}
-	"AttackDamageMin"		"150"
-	"AttackDamageMax"		"150"
+	"AttackDamageMin"		"140"
+	"AttackDamageMax"		"140"
     
 	"Creature"
     {
