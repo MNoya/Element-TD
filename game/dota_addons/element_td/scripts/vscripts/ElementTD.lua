@@ -211,7 +211,7 @@ function ElementTD:EndGameForPlayer( playerID )
         playerData.victory = 1
         GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerData.name.."</font> has completed the game!", 0, 0)
     else
-        Log:info("Player "..playerID.." has been defeated on wave "..playerData.nextWave..".")
+        Log:info("Player "..playerID.." has been defeated on Wave "..playerData.nextWave..".")
         GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerData.name.."</font> has been defeated on wave "..playerData.nextWave.."!", 0, 0)
     end
     -- Clean up
