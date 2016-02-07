@@ -52,7 +52,7 @@
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"900"
 	"AttackAcquisitionRange"		"900"
-	"AttackRate"		"1"
+	"AttackRate"		"1.5"
 	"ProjectileModel"		"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 	"ProjectileSpeed"		"2000"
 	
