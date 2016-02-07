@@ -209,7 +209,7 @@ function ElementTD:EndGameForPlayer( playerID )
     if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then
         Log:info("Player "..playerID.." has been defeated on the boss wave "..playerData.nextWave..".")
         playerData.victory = 1
-        GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerData.name.."</font> has completed the game!", 0, 0)
+        GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerData.name.."</font> has completed the game with "..playerData.iceFrogKills.."Icefrog kills!", 0, 0)
     else
         Log:info("Player "..playerID.." has been defeated on Wave "..playerData.nextWave..".")
         GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerData.name.."</font> has been defeated on wave "..playerData.nextWave.."!", 0, 0)

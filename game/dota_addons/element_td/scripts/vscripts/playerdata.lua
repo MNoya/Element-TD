@@ -24,6 +24,7 @@ function CreateDataForPlayer(playerID)
 	data["towersSold"] = 0
 	data["interestGold"] = 0
 	data["goldTowerEarned"] = 0
+	data["leaks"] = 0
 	data["elements"] = {
 		water = 0, fire = 0, nature = 0,
 		earth = 0, light = 0, dark = 0
@@ -34,6 +35,7 @@ function CreateDataForPlayer(playerID)
 	data["difficulty"] = nil
 	data["completedWaves"] = 0
 	data["bossWaves"] = 0
+	data["iceFrogKills"] = 0
 	data["nextWave"] = 1
 	data["activeWaves"] = 1
 	data["waveObject"] = {} -- Current wave object

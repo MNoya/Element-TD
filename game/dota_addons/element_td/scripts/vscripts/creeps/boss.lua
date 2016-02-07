@@ -43,6 +43,8 @@ end
 
 -- Undead
 function CreepBoss:OnDeath()
+    local playerData = GetPlayerData(self.creep.playerID)
+    playerData.iceFrogKills = playerData.iceFrogKills + 1
     --[[local creep = self.creep
     local playerID = creep.playerID
     local creepClass = self.creepClass
