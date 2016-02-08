@@ -418,10 +418,21 @@ function ScoreboardUpdater_GetTeamPanel( scoreboardHandle, teamId )
 function ScoreboardUpdater_GetSortedTeamInfoList( scoreboardHandle )
 {
     var teamsList = [];
-    for ( var teamId of Game.GetAllTeamIDs() )
+    /*for ( var teamId of Game.GetAllTeamIDs() )
     {
         teamsList.push( Game.GetTeamDetails( teamId ) );
-    }
+    }*/
+
+    // Sort teams by player score
+    var sortedPlayers = GameUI.CustomUIConfig().playerScore.sort(function(a, b){return b-a});
+    for (var i = 0; i < 8; i++)
+    {
+        if (Players.IsValidPlayerID(i))
+        {
+            teamsList.push( Game.GetTeamDetails( Players.GetTeam(i) ) );
+        }
+    };
+
     return teamsList;
 }
 
