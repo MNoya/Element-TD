@@ -251,6 +251,14 @@ function BuyPureEssence( keys )
 			ModifyPureEssence(playerID, 1)
             playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
 			Sounds:EmitSoundOnClient(playerID, "General.Buy")
+            
+            -- Gold bonus to help stay valuable by comparison to getting an element upgrade
+            local waveNumber = playerData.nextWave
+            local difficultyBountyBonus = playerData.difficulty:GetBountyBonusMultiplier()
+            local extra_gold = round(math.pow(waveNumber+5, 2) * 2.5 * difficultyBountyBonus)
+            PopupAlchemistGold(PlayerResource:GetSelectedHeroEntity(playerID), extra_gold)
+            hero:ModifyGold(extra_gold, true, 0)
+
             item:SetCurrentCharges(item:GetCurrentCharges()-1)
             if item:GetCurrentCharges() == 0 then
                 item:RemoveSelf()
