@@ -73,7 +73,7 @@ function BuildPlayersArray()
                     steamID32 = PlayerResource:GetSteamAccountID(playerID),
 
                     nt = GetPlayerNetworth(playerID), --Sell value of towers + current gold
-                    go = PlayerResource:GetGold(playerID),
+                    go = playerData.gold, --Unusued gold
                     lmb = playerData.lumber, --Unused lumber 
                     ess = playerData.pureEssence, --Unused essence
                     sec = sectorNames[playerData.sector], --Sector on the map

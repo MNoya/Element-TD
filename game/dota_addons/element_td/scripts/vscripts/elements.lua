@@ -64,13 +64,14 @@ function DamageEntity(entity, attacker, damage)
 	--print("Dealing " .. damage .. " damage to " .. entity.class .. " [" .. entity:entindex() .. "]")
 	
 	if entity:GetHealth() - damage <= 0 then
+		local playerID = attacker:GetPlayerOwnerID()
+		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+		local goldBounty = entity:GetGoldBounty()
 
 		if attacker.scriptClass == "GoldTower" and entity:IsAlive() and entity:GetGoldBounty() > 0 then
-			local goldBounty = entity:GetGoldBounty()
 			goldBounty = attacker.scriptObject:ModifyGold(goldBounty)
-			entity:SetMaximumGoldBounty(goldBounty)
-			entity:SetMinimumGoldBounty(goldBounty)
-			local playerData = GetPlayerData(attacker:GetPlayerOwnerID())
+			
+			local playerData = GetPlayerData(playerID)
 			playerData.goldTowerEarned = playerData.goldTowerEarned + goldBounty
 
 			local origin = entity:GetAbsOrigin()
@@ -87,6 +88,7 @@ function DamageEntity(entity, attacker, damage)
 			CreateSunburnRemnant(entity, team)
 		end
 		
+		hero:ModifyGold(goldBounty)
 		entity:Kill(nil, attacker)
 	else
 		entity:SetHealth(entity:GetHealth() - damage)

@@ -589,8 +589,8 @@ function ElementTD:DamageFilter( filterTable )
 
         if GameRules.WhosYourDaddy then
             if attackerID and PlayerResource:IsValidPlayerID(attackerID) then
-                filterTable["damage"] = victim:GetMaxHealth()
-                filterTable["damagetype_const"] = DAMAGE_TYPE_PURE
+                DamageEntity(victim, attacker, victim:GetMaxHealth()*2)
+                return false
             end
         end
 

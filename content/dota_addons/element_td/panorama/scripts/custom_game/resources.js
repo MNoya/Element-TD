@@ -1,12 +1,16 @@
 "use strict";
 
+GameUI.SetDefaultUIEnabled(DotaDefaultUIElement_t.DOTA_DEFAULT_UI_INVENTORY_GOLD, false );
+
 var Root = $.GetContextPanel()
 var ElementsUI = $( "#ResourceElements" );
 var LumberUI = $( "#ResourceLumber" );
+var GoldUI = $( "#ResourceGold" );
 var PureEssenceUI = $( "#ResourceEssence" );
 var ScoreUI = $( "#ResourceScore" );
 
 var lumber = $( '#LumberText' );
+var gold = $( '#GoldText' );
 var pureEssence = $( '#PureEssenceText' );
 var score = $( '#ScoreText' );
 
@@ -14,7 +18,8 @@ var lumberDisplay = $( '#LumberDisplay' );
 
 var elements = {water: '#WaterValue', fire: '#FireValue', nature: '#NatureValue', earth: '#EarthValue', light: '#LightValue', dark:'#DarkValue'};
 
-var tooltips = {'#lumber':'#tooltip_lumber',
+var tooltips = {'#gold':"#tooltip_gold",
+				'#lumber':'#tooltip_lumber',
 				'#essence':'#tooltip_essence',
 				'#score':'#tooltip_score',
 				'#water':'#water_level',
@@ -25,7 +30,7 @@ var tooltips = {'#lumber':'#tooltip_lumber',
 				'#dark':'#dark_level',
 				};
 
-var tooltipsUI = {'#lumber': LumberUI, '#essence': LumberUI, '#score': ScoreUI,
+var tooltipsUI = {'#gold':GoldUI, '#lumber': LumberUI, '#essence': LumberUI, '#score': ScoreUI,
 				  '#water':ElementsUI,'#fire':ElementsUI,
 				  '#nature':ElementsUI,'#earth':ElementsUI,
 				  '#light':ElementsUI,'#dark':ElementsUI,
@@ -57,6 +62,19 @@ function ModifyLumber( data )
 		lumber.text = 0;
 }
 
+function ModifyGold (data) {
+	var prev = parseInt(gold.text);
+	if (data.gold != undefined)
+	{
+		gold.text = data.gold;
+		$.Msg("Gold: ", data.gold)
+		if (gold.text.length > 5)
+			gold.style['margin-right'] = '0px;'
+	}
+	else
+		gold.text = 0;
+}
+
 function ModifyPureEssence( data )
 {
 	pureEssence.text = data.pureEssence;
@@ -83,8 +101,10 @@ function ShowTooltip( str )
 {
 	var tooltip = tooltips[str];
 	var tooltipUI = tooltipsUI[str];
+	$.Msg(tooltipUI)
 	var title = str.replace(/(['"])/g, "\\$1");
 	tooltip = tooltip.replace(/(['"])/g, "\\$1");
+	$.Msg(tooltipUI)
 	$.DispatchEvent("DOTAShowTitleTextTooltip", tooltipUI, title, tooltip);
 }
 
@@ -135,6 +155,7 @@ function CheckLearnMode() {
   $.Schedule(1, function(){  CheckAspectRatio();});
   $.Schedule(1, CheckLearnMode)
   GameEvents.Subscribe( "etd_update_lumber", ModifyLumber );
+  GameEvents.Subscribe( "etd_update_gold", ModifyGold );
   GameEvents.Subscribe( "etd_update_pure_essence", ModifyPureEssence );
   GameEvents.Subscribe( "etd_update_score", ModifyScore );
   GameEvents.Subscribe( "etd_update_elements", UpdateElements );

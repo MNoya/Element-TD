@@ -181,9 +181,61 @@
 {   
     width:36px; 
     height:26px; 
-    background-image: url("file://{resources}/images/custom_game/resources/lumber_icon.png"); 
+    background-image: url("file://{images}/custom_game/resources/lumber_icon.png"); 
     background-size: 100% 100%;
 }
+
+//--- Gold panel
+
+#ResourceGold
+{
+    width: 100px;
+    height: 40px;
+
+    vertical-align: bottom;
+    horizontal-align: right;
+
+    margin-bottom: 157px;
+    margin-right: 107px;
+    margin-left: 107px;
+}
+
+#GoldText
+{
+    width: 100px;
+    color: #fea500;
+    font-size: 20px;
+    font-family: Radiance;
+    font-weight: bold;
+    text-align: right;
+    text-shadow: 0px 0px 3px 3.0 #000000;
+
+    margin-top: 3px;
+    margin-left: 30px;
+    margin-right: 8px;
+}
+
+#GoldIcon
+{   
+    width: 36px; 
+    height: 36px; 
+    background-image: url("file://{images}/custom_game/resources/gold_icon.png"); 
+    background-size: 100% 100%;
+}
+
+.AspectRatio4x3 #ResourceGold, .AspectRatio5x4 #ResourceGold
+{
+    margin-bottom: 140px;
+    margin-right: 204px;
+}
+
+.AspectRatio21x9 #ResourceGold
+{
+    margin-bottom: 214px;
+    margin-right: 40px;
+}
+
+//---------
 
 #ResourceEssence
 {

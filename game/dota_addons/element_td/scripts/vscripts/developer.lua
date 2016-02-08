@@ -48,7 +48,7 @@ end
 function ElementTD:GreedIsGood(playerID, value)
     value = value or 500
     
-    PlayerResource:ModifyGold(playerID, tonumber(value), true, 0)
+    PlayerResource:GetSelectedHeroEntity(playerID):ModifyGold(value)
     ModifyLumber(playerID, tonumber(value))
     UpdatePlayerSpells(playerID)
     
@@ -94,7 +94,9 @@ end
 function ElementTD:SetGold(playerID, value)
     value = value or 1
 
+    GetPlayerData(playerID).gold = value
     PlayerResource:SetGold(playerID, tonumber(value), true)
+    CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "etd_update_gold", { gold = playerData.gold } )
 end
 
 function ElementTD:SetLives(playerID, value)

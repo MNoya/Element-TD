@@ -79,7 +79,7 @@ function SellTowerCast(keys)
 		    ParticleManager:SetParticleControl(coins, 1, tower:GetAbsOrigin())
 
 			-- Add gold
-			hero:ModifyGold(refundAmount, true, 0)
+			hero:ModifyGold(refundAmount)
 
 			-- If a tower costs a Pure Essence (Pure, Periodic), then that essence is refunded upon selling the tower.
 			local essenceCost = GetUnitKeyValue(tower.class, "EssenceCost") or 0
@@ -168,7 +168,7 @@ function UpgradeTower(keys)
 	elseif cost > hero:GetGold() then
 		ShowWarnMessage(playerID, "Not Enough Gold!")
 	elseif tower:GetHealth() == tower:GetMaxHealth() then
-		hero:SpendGold(cost, DOTA_ModifyGold_PurchaseItem)
+		hero:ModifyGold(-cost)
 		ModifyPureEssence(playerID, -essenceCost)
 		GetPlayerData(playerID).towers[tower:entindex()] = nil --and remove it from the player's tower list
 

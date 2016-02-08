@@ -20,6 +20,7 @@ function CreateDataForPlayer(playerID)
 	data["elementalCount"] = 0
 	data["LifeTowerKills"] = 0
 	data["TotalLifeTowerKills"] = 0
+	data["gold"] = 0
 	data["goldLost"] = 0
 	data["towersSold"] = 0
 	data["interestGold"] = 0

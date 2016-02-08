@@ -98,8 +98,7 @@ function GameSettings:SetGameLength(length)
 		local playerData = GetPlayerData(plyID)
 		local hero = ElementTD.vPlayerIDToHero[plyID]
 
-		hero:SetGold(0, false)
-		hero:SetGold(GameSettings.length.Gold, true)
+		hero:ModifyGold(GameSettings.length.Gold)
 		ModifyLumber(plyID, GameSettings.length.Lumber)
 		playerData.nextWave = GameSettings.length.Wave
 

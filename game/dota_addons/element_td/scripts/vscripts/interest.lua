@@ -24,8 +24,8 @@ function InterestManager:StartInterestTimer()
 						if playerData.health ~= 0 and ((playerData.completedWaves < WAVE_COUNT - 1 and not EXPRESS_MODE) or (playerData.completedWaves < WAVE_COUNT and EXPRESS_MODE)) then
 							local interest = math.ceil(hero:GetGold() * INTEREST_RATE)
 							local gold = hero:GetGold() + interest
-							hero:SetGold(0, false)
-							hero:SetGold(gold, true)
+							
+							hero:ModifyGold(gold)
 							PopupAlchemistGold(hero, interest)
 							Sounds:EmitSoundOnClient(plyID, "DOTA_Item.Hand_Of_Midas")
 

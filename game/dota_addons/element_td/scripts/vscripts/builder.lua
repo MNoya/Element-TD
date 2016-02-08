@@ -14,7 +14,7 @@ function Build( event )
 
     -- If the ability has an AbilityGoldCost, it's impossible to not have enough gold the first time it's cast
     -- Always refund the gold here, as the building hasn't been placed yet
-    hero:ModifyGold(gold_cost, true, 0)
+    PlayerResource:ModifyGold(playerID, gold_cost, true, 0)
 
     -- Check essence cost for periodic tower
     local essenceCost = GetUnitKeyValue(building_name, "EssenceCost") or 0
@@ -52,7 +52,7 @@ function Build( event )
     -- Position for a building was confirmed and valid
     event:OnBuildingPosChosen(function(vPos)
         -- Spend resources
-        ability:PayGoldCost()
+        hero:ModifyGold(-gold_cost)
         ModifyPureEssence(playerID, -essenceCost)      
 
         -- Play a sound
@@ -74,7 +74,7 @@ function Build( event )
 
         -- Refund resources for this cancelled work
         if work.refund then
-            hero:ModifyGold(gold_cost, true, 0)
+            hero:ModifyGold(gold_cost)
         end
     end)
 

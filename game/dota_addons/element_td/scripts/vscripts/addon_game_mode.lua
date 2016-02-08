@@ -21,6 +21,7 @@ local requires =
     "mechanics/keyvalues",
     "mechanics/items",
     "mechanics/sounds",
+    "mechanics/gold",
 
     -- utils
     "util/util",
