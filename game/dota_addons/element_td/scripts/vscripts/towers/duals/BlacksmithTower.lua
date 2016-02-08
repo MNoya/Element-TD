@@ -25,10 +25,10 @@ function BlacksmithTower:FireUpThink()
         local highestDamage = 0
         local theChosenOne = nil
 
-        -- find out the tower with the highest damage
+        -- find out the tower with the highest dps
         for _, tower in pairs(towers) do
             if IsTower(tower) and tower:GetPlayerOwnerID() == self.playerID and not IsSupportTower(tower) and tower:IsAlive() and not tower.deleted then
-                if tower:GetBaseDamageMax() >= highestDamage then
+                if tower:GetAverageTrueAttackDamage() * tower:GetAttacksPerSecond() >= highestDamage then
             
                     local modifier = tower:FindModifierByName("modifier_fire_up")
                     if not modifier or self.level > modifier.level then 

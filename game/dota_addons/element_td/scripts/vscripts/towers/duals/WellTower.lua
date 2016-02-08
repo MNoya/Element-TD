@@ -26,10 +26,10 @@ function WellTower:SpringForwardThink()
         local highestDamage = 0
         local theChosenOne = nil
 
-        -- find out the tower with the highest damage
+        -- find out the tower with the highest dps
         for _, tower in pairs(towers) do
             if IsTower(tower) and tower:GetPlayerOwnerID() == self.playerID and not IsSupportTower(tower) and tower:IsAlive() and not tower.deleted then
-                if tower:GetBaseDamageMax() >= highestDamage then
+                if tower:GetAverageTrueAttackDamage() * tower:GetAttacksPerSecond() >= highestDamage then
             
                     local modifier = tower:FindModifierByName("modifier_spring_forward")
                     if not modifier or self.level > modifier.level then 
@@ -44,7 +44,7 @@ function WellTower:SpringForwardThink()
         if not theChosenOne then
             for _, tower in pairs(towers) do
                 if IsTower(tower) and tower:GetPlayerOwnerID() == self.playerID and tower:IsAlive() and not tower.deleted then
-                    if tower:GetBaseDamageMax() >= highestDamage then
+                    if tower:GetAverageTrueAttackDamage() * tower:GetAttacksPerSecond() >= highestDamage then
                 
                         local modifier = tower:FindModifierByName("modifier_spring_forward")
                         if not modifier or self.level > modifier.level then 
