@@ -140,6 +140,23 @@
       </Button>
     </Panel>
 
+
+    <!-- Current Mode Indicator -->
+    <Panel id="CurrentModePanel" onmouseover="ShowCurrentModes()" onmouseout="HideCurrentModes()" onactivate="ToggleCurrentModeVisibility()">
+      <Panel id="DiffLabels" class="ViewDiffLabels Hidden">
+        <Label id="DifficultyView" text="#difficulty_normal_mode" class="resultsReview"/>
+        <Label id="ElementsView" text="#random_mode" class="resultsReview"/>
+        <Label id="EndlessView" text="#endless_mode" class="resultsReview"/>
+        <Label id="OrderView" text="#chaos_mode" class="resultsReview"/>
+        <Label id="LengthView" text="#express_mode" class="resultsReview"/>
+      </Panel>
+
+      <Panel id="DiffImage" class="ViewDiffImage">
+        <Image id="diff_image" src="file://{images}/custom_game/vote_menu/difficulties/normal.png"/>
+        <Image id="diff_image_glow" class="Hidden" src="file://{images}/custom_game/vote_menu/difficulties/normal_glow.psd"/>
+      </Panel>
+    </Panel>
+
       <!-- Old Dropdowns
       <Panel hittest="false"  id="Gamemode" class="setting">
         <Label id="GamemodeLabel" text="Gamemode:" class="label"/>

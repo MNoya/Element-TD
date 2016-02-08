@@ -14,6 +14,7 @@ var buttonVote = $( "#Vote" );
 var buttonResults = $( "#ResultsButton" );
 var info = $( '#Info' );
 var votingLiveUI = $( '#VotingLive' );
+var currentModeUI = $('#CurrentModePanel')
 
 var notVotedUI = $( '#NotVoted' );
 
@@ -104,7 +105,6 @@ function HoverCheckbox(name) {
 
 function MouseOverCheckbox(name) {
     var panel = $("#"+name)
-    $.Msg(name, " ", panel)
     panel.hovering = false
     UpdateMultipliers()
 }
@@ -144,13 +144,11 @@ function UpdateVoteTimer( data )
 function UpdateNotVoted()
 {
     var players = Game.GetAllPlayerIDs();
-    $.Msg("IDs: " + players);
     votingLiveNotVoted.RemoveAndDeleteChildren();
     var position = 0;
     for (var playerID in players) {
         if (!playerVotes[playerID]) {
             var playerData = Game.GetPlayerInfo(parseInt(playerID));
-            $.Msg(playerData);
             var notVoted = $.CreatePanel('DOTAAvatarImage', votingLiveNotVoted, '');
             notVoted.AddClass('VotingAvatar');
             notVoted.AddClass('NotVoted');
@@ -249,6 +247,7 @@ function ShowVoteResults( data )
 
     var difficultyName = data.difficulty.toLowerCase()
     $("#DifficultyResult").text = $.Localize("difficulty_"+difficultyName+"_mode")
+    $("#DifficultyView").text = $.Localize("difficulty_"+difficultyName+"_mode")
 
     // Only show the options that were accepted
     var random = data.elements == "SameRandom"
@@ -257,21 +256,38 @@ function ShowVoteResults( data )
     var express = data.length == "Express"
 
     if (!random)
+    {
         $( '#ElementsResult' ).GetParent().DeleteAsync(0)
+        $( '#ElementsView' ).AddClass("Hidden") //This can become visible if the player does -random afterwards
+    }
 
     if (!endless)
+    {
         $( '#EndlessResult' ).GetParent().DeleteAsync(0)
+        $( '#EndlessView' ).DeleteAsync(0)
+    }
 
     if (!chaos)
+    {
         $( '#OrderResult' ).GetParent().DeleteAsync(0)
+        $( '#OrderView' ).DeleteAsync(0)
+    }
 
     if (!express)
+    {
         $( '#LengthResult' ).GetParent().DeleteAsync(0)
+        $( '#LengthView' ).DeleteAsync(0)
+    }
 
     // Update HP-Bounty-Scores results
     $("#HealthResult").text = GetHP(difficultyName)
     $("#BountyResult").text = GetBounty(difficultyName, express)
     $("#ScoresResult").text = GetScore(difficultyName, endless, chaos)
+
+    // Show current mode UI
+    currentModeUI.visible = true;
+    $("#diff_image").SetImage("file://{images}/custom_game/vote_menu/difficulties/"+difficultyName+".png")
+    $("#diff_image_glow").SetImage("file://{images}/custom_game/vote_menu/difficulties/"+difficultyName+"_glow.psd")
 }
 
 function GetHP(difficultyName) {
@@ -297,7 +313,39 @@ function ResultsClose()
 {
     Game.EmitSound("ui_generic_button_click");
     voteResultsUI.visible = false;
-    votingLiveUI.AddClass("hidden");
+    votingLiveUI.AddClass("Hidden");
+}
+
+var currentlyLocked = false
+function ShowCurrentModes() {
+    $("#DiffLabels").RemoveClass("Hidden")
+    $("#DiffLabels").RemoveClass("Slide")
+    $("#DiffImage").AddClass("Hover")
+}
+
+function HideCurrentModes() {
+    if (!currentlyLocked)
+    {
+        $("#DiffLabels").AddClass("Hidden")
+        $("#DiffLabels").AddClass("Slide") 
+        $("#DiffImage").RemoveClass("Hover")
+    }
+}
+
+function ToggleCurrentModeVisibility(){
+    currentlyLocked = !currentlyLocked
+    if (currentlyLocked)
+    {
+        Glow($("#diff_image"))
+        ShowCurrentModes()
+    }
+    else
+        RemoveGlow($("#diff_image"))
+    HideCurrentModes()
+}
+
+function UpdateRandomMode() {
+    $( '#ElementsView' ).RemoveClass("Hidden")
 }
 
 function Setup()
@@ -308,6 +356,7 @@ function Setup()
     votingUI.visible = false;
     info.visible = false;
     votingLiveUI.visible = false;
+    currentModeUI.visible = false;
     votingLiveUI.AddClass("hidden");
     UpdateNotVoted();
 }
@@ -319,6 +368,7 @@ function Setup()
     GameEvents.Subscribe( "etd_update_vote_timer", UpdateVoteTimer );
     GameEvents.Subscribe( "etd_vote_display", PlayerVoted );
     GameEvents.Subscribe( "etd_vote_results", ShowVoteResults );
+    GameEvents.Subscribe( "etd_player_random_enable", UpdateRandomMode );
 })();
 
 /* Old Dropdown code 
