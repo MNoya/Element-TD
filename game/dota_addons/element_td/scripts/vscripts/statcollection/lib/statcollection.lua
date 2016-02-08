@@ -44,6 +44,7 @@ local errorJsonDecode = 'There was an issue decoding the JSON returned from the 
 local errorSomethingWentWrong = 'The server said something went wrong, see below:'
 local errorRunInit = 'You need to call the init function before you can send stats!'
 local errorMissedStage1 = 'You need to call the sendStage1 function before you can continue!'
+local errorMissedStage2 = 'You need to call the sendStage2 function before you can continue!'
 local errorFlags = 'Flags needs to be a table!'
 local errorSchemaNotEnabled = 'Schema has not been enabled!!'
 local errorBadSchema = 'This schema doesn\'t exist!!'
@@ -105,6 +106,7 @@ function statCollection:init()
     self.HAS_ROUNDS = tobool(statInfo.HAS_ROUNDS)
     self.GAME_WINNER = tobool(statInfo.GAME_WINNER)
     self.ANCIENT_EXPLOSION = tobool(statInfo.ANCIENT_EXPLOSION)
+    self.OVERRIDE_AUTOMATIC_SEND_STAGE_2 = tobool(statInfo.OVERRIDE_AUTOMATIC_SEND_STAGE_2)
     self.TESTING = tobool(statInfo.TESTING)
 
     -- Store the modIdentifier
@@ -193,8 +195,10 @@ function statCollection:hookFunctions()
             statCollection:setFlags({ loadTime = math.floor(GameRules:GetGameTime()) })
 
         elseif state >= DOTA_GAMERULES_STATE_PRE_GAME then
-            -- Send pregame stats
-            this:sendStage2()
+            if not self.OVERRIDE_AUTOMATIC_SEND_STAGE_2 then
+                -- Send pregame stats
+                this:sendStage2()
+            end
         end
         if self.ANCIENT_EXPLOSION then
             if state >= DOTA_GAMERULES_STATE_POST_GAME then
@@ -410,6 +414,13 @@ function statCollection:sendStage3(winners, lastRound)
     if not self.authKey or not self.matchID then
         print("sendStage3 ERROR")
         print(printPrefix .. errorMissedStage1)
+        return
+    end
+
+    -- If we are missing stage2 stuff, don't continue
+    if not self.sentStage2 then
+        print("sendStage3 ERROR")
+        print(printPrefix .. errorMissedStage2)
         return
     end
 

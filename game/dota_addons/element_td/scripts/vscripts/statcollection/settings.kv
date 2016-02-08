@@ -16,6 +16,10 @@
     // Do we want statCollection to use ancient explosions for game victory?
     "ANCIENT_EXPLOSION" "false"
 
+    // Lets you specify the point where the game has really started. Useful for mods that set options after pre-game
+    // If this enabled, you must manually call `statCollection:sendStage2()` when your game is officially ready
+    "OVERRIDE_AUTOMATIC_SEND_STAGE_2" "true"
+
     // Turn this off to prevent from sending stats of workshop tools developer lobbies
     "TESTING"           "true"
 

@@ -138,6 +138,13 @@ function FinalizeVotes()
 	local order = GetWinningChoice(VOTE_RESULTS.order)
 	local length = GetWinningChoice(VOTE_RESULTS.length)
 
+	statCollection:setFlags({Difficulty = difficulty})
+	statCollection:setFlags({Elements = elements})
+	statCollection:setFlags({Endless = endless})
+	statCollection:setFlags({Order = order})
+	statCollection:setFlags({Length = length})
+	statCollection:sendStage2()
+
 	print("\n----------")
 	print("Vote Results:")
 	print("Gamemode: " .. gamemode)
