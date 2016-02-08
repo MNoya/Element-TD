@@ -413,3 +413,11 @@ function AddElementalTrophy(playerID, element)
 
     elemental:AddNewModifier(elemental, nil, "modifier_disabled", {})
 end
+
+function ItemRandomUse(event)
+    local caster = event.caster
+    local item = event.ability
+    local playerID = caster:GetPlayerOwnerID()
+
+    GameSettings:EnableRandomForPlayer(playerID)
+end

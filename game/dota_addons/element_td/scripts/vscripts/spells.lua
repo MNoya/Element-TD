@@ -40,6 +40,21 @@ function UpdatePlayerSpells(playerID)
 			if buy_essence then
 				buy_essence:RemoveSelf()
 			end
+
+			-- Remove random-cast item
+			local item_random = GetItemByName(playerData.summoner, "item_random")
+			if item_random then
+				item_random:RemoveSelf()
+			end
+			return
+		end
+
+		if not CanPlayerEnableRandom(playerID) then
+			-- Remove random-cast item
+			local item_random = GetItemByName(playerData.summoner, "item_random")
+			if item_random then
+				item_random:RemoveSelf()
+			end
 		end
 	end
 end

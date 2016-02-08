@@ -1,0 +1,23 @@
+//============================================================//
+// Enable Random
+//============================================================//
+"item_random"
+{
+    "BaseClass"                     "item_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "MaxLevel"                      "1"
+    "AbilityTextureName"            "random"
+
+    "ItemDroppable"                 "0"
+    "ItemPurchasable"               "0"
+    "ItemSellable"                  "0"
+    
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"        "summoner.lua"
+            "Function"          "ItemRandomUse"
+        }
+    }
+}

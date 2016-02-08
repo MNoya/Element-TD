@@ -25,7 +25,8 @@
         "etd_cheats_disabled"       "Cheat disabled!"
 
         "etd_random_toggle_enable"  "Random elemental picker has been turned on!"
-        "etd_random_toggle_error"   "Already chosen an element, can't enable -random now!"
+        "etd_random_chosen_error"   "Already chosen an element, can't enable -random now!"
+        "etd_random_5wave_error" "Can't enable -random after wave 5!"
         "etd_random_already_enabled" "You are already playing Random mode!"
         "etd_random_elemental"      "An elemental has been randomed for you!"
         "etd_random_essence"        "A pure essence has been randomed for you!"
@@ -825,7 +826,10 @@
          // ******************** ITEMS ********************
         // Summoner
         "DOTA_Tooltip_ability_item_buy_pure_essence"                                      "Buy Pure Essence"
-        "DOTA_Tooltip_ability_item_buy_pure_essence_Description"                          ""
+        "DOTA_Tooltip_ability_item_buy_pure_essence_Description"                          "Trade <font color='#008000'>1 Lumber</font> for <font color='#00BFFF'>1 Pure Essence</font>.\nEssence is used to evolve a Level 3 Single-Element Tower, or to build a Periodic Tower if you have all 6 Elements."
+
+        "DOTA_Tooltip_ability_item_random"                                                "Random Elements"
+        "DOTA_Tooltip_ability_item_random_Description"                                    "Select this to randomize your elements for the rest of the game.\nThis can only be done before you select an element, and it cannot be undone."
 
         ///////////
         // Water //

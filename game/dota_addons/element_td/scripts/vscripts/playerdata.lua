@@ -96,10 +96,10 @@ function IsPlayerUsingRandomMode( playerID )
 	return GetPlayerData(playerID).elementalRandom or (GameSettings.elementsOrderName and string.match(GameSettings.elementsOrderName, "Random"))
 end
 
--- Players can only enable random if their elementCount is 0
+-- Players can only enable random if their elementCount is 0, and before wave 5 finishes
 function CanPlayerEnableRandom( playerID )
 	local playerData = GetPlayerData(playerID)
-	return playerData.elementalCount == 0 
+	return playerData.elementalCount == 0 and playerData.completedWaves < 5
 end
 
 function ModifyElementValue(playerID, element, change)
