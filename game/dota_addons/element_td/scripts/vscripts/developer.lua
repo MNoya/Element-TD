@@ -17,6 +17,8 @@ CHEAT_CODES = {
     ["gg_end"] = function(...) GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS ) end,    -- Find out information about the current wave
 }
 
+DEVELOPERS = {[66998815]="A_Dizzle",[86718505]="Noya",[8035838]="Karawasa",[34961594]="WindStrike",[84998953]="Quintinity"}
+
 PLAYER_CODES = {
     ["random"] = function(...) GameSettings:EnableRandomForPlayer(...) end,  -- Enable random for player
 }
@@ -35,8 +37,9 @@ function ElementTD:OnPlayerChat(keys)
 
     local input = split(text)
     local command = input[1]
-    if CHEAT_CODES[command] then
+    if CHEAT_CODES[command] and DEVELOPERS[PlayerResource:GetSteamAccountID(playerID)] then
         CHEAT_CODES[command](playerID, input[2], input[3])
+        GetPlayerData(playerID).cheated = true
     elseif PLAYER_CODES[command] then
         PLAYER_CODES[command](playerID, input[2])
     end

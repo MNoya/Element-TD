@@ -122,6 +122,9 @@ function BuildPlayersArray()
                     e9 = playerData.elementOrder[9] or "", -- 9th element acquired
                     e10 = playerData.elementOrder[10] or "", -- 10th element acquired
                     e11 = playerData.elementOrder[11] or "", -- 11th and last element acquired
+
+                    -- Check if cheats were used
+                    cheat = playerData.cheated or "",
                 })
             end
         end
