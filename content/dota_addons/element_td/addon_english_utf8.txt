@@ -43,6 +43,7 @@
         "etd_error_cant_clone_cloner" "You can't clone this tower."
         "DOTA_ToolTip_Targeting_AlliedCreeps" "Your Towers" //Overrides the default dota tooltip
         "dota_hud_error_unit_cant_move"       "Select your Hero to Move" //Overrides the default dota tooltip
+        "DOTA_LevelUp"  "ELEMENTS" //Overrides the default dota tooltip
 
         // ******************** UNITS ********************
         // Towers

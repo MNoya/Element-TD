@@ -39,6 +39,5 @@
         <Label id="DarkValue"  text="0" class="value"/>
       </Panel>
     </Panel>
-    <Label id="LumberDisplay" text="+1 Lumber"/>
   </Panel>
 </root>

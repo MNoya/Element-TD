@@ -1,5 +1,6 @@
 "use strict";
 
+var Root = $.GetContextPanel()
 var ElementsUI = $( "#ResourceElements" );
 var LumberUI = $( "#ResourceLumber" );
 var PureEssenceUI = $( "#ResourceEssence" );
@@ -39,6 +40,10 @@ function ModifyLumber( data )
 	if (data.lumber != undefined && diff != 0)
 	{
 		lumber.text = data.lumber;
+
+		// Keep track of the summoner
+		Root.summoner = data.summoner
+		$.Msg(Root.summoner)
 		/*
 		if (diff > 0) {
 			lumberDisplay.text = "+" + diff + " Lumber";
@@ -116,9 +121,19 @@ function gcd (a, b) {
 	return (b == 0) ? a : gcd (b, a%b);
 }
 
+function CheckLearnMode() {
+	if (Game.IsInAbilityLearnMode())
+	{
+		GameUI.SelectUnit(Root.summoner, false)
+		Game.EndAbilityLearnMode()
+	}
+
+	$.Schedule(1/60, CheckLearnMode)
+}
+
 (function () {
   $.Schedule(1, function(){  CheckAspectRatio();});
-  lumberDisplay.visible = false;
+  $.Schedule(1, CheckLearnMode)
   GameEvents.Subscribe( "etd_update_lumber", ModifyLumber );
   GameEvents.Subscribe( "etd_update_pure_essence", ModifyPureEssence );
   GameEvents.Subscribe( "etd_update_score", ModifyScore );

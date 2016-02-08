@@ -74,6 +74,12 @@ function ModifyLumber(playerID, amount)
     local playerData = GetPlayerData(playerID)
     playerData.lumber = playerData.lumber + amount
     UpdateSummonerSpells(playerID)
+
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    if hero then
+        hero:SetAbilityPoints(playerData.lumber)
+    end
+
     if amount > 0 then
         PopupLumber(ElementTD.vPlayerIDToHero[playerID], amount)
 
@@ -104,7 +110,7 @@ function ModifyLumber(playerID, amount)
         end
     end
 
-    CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_lumber", { lumber = current_lumber } )
+    CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_lumber", { lumber = current_lumber, summoner = playerData.summoner:GetEntityIndex() } )
     UpdateScoreboard(playerID)
 end
 
