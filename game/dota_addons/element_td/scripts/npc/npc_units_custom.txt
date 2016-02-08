@@ -10886,7 +10886,6 @@
 	}
 	"poison_tower_2"
 	{
-	    "DisableTurning"            "1"
 	    "BaseClass"                 "npc_dota_creature" 
 		"MinimapIcon"				"minimap_tower90"
 		"MinimapIconSize"			"320"
@@ -10975,7 +10974,6 @@
 	}
 	"poison_tower_3"
 	{
-	    "DisableTurning"            "1"
 	    "BaseClass"                 "npc_dota_creature" 
 		"MinimapIcon"				"minimap_tower90"
 		"MinimapIconSize"			"320"
