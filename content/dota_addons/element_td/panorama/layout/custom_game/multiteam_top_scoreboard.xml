@@ -21,6 +21,10 @@
 	</script>
 
 	<Panel hittest="false" class="CustomHudRoot">
+		<Panel id="FlyoutScoreboardToggle" onactivate="ToggleScoreboard()">
+			<Label id="ToggleScoreboardText" class="ToggleLabel" text="scoreboard"/>
+		</Panel>
+
 		<Panel hittest="false" id="TopBarScoreboard">
 			<Panel hittest="false" id="ScoreboardContainer">
 				<Panel hittest="false" id="MultiteamScoreboard">

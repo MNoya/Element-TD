@@ -432,3 +432,30 @@ DOTAAvatarImage
 {
     visibility: visible;
 }
+
+
+#FlyoutScoreboardToggle
+{
+    background-color: black;
+    height: 30px;
+    width: 180px;
+    margin-left: 50px;
+    margin-top: 5px;
+}
+
+.ToggleLabel
+{
+    margin-left: 10px;
+    letter-spacing: 3px;
+    font-size: 18px;
+    text-transform: uppercase;
+    vertical-align: center;
+    horizontal-align: center;
+    color: #4a9820;
+}
+
+.ToggleLabel:hover
+{
+    opacity: 2;
+    font-size: 19px;
+}

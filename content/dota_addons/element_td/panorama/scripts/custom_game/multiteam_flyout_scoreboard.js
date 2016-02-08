@@ -38,7 +38,12 @@ function RefreshFlyoutScoreboard()
 	};
 	g_ScoreboardHandle = ScoreboardUpdater_InitializeScoreboard( scoreboardConfig, $( "#TeamsContainer" ) );
 	
-	SetFlyoutScoreboardVisible( false );
+	SetFlyoutScoreboardVisible( false ); //Default hidden
 	
+	GameUI.CustomUIConfig().ToggleScoreboard = function() {
+		bActive = !bActive
+		SetFlyoutScoreboardVisible(bActive)
+	}
+
 	$.RegisterEventHandler( "DOTACustomUI_SetFlyoutScoreboardVisible", $.GetContextPanel(), SetFlyoutScoreboardVisible );
 })();

@@ -453,6 +453,10 @@ function SetUpdateScoreboard( data )
     GameUI.CustomUIConfig().playerData[data.playerID] = data.data;
 }
 
+function ToggleScoreboard() {
+    GameUI.CustomUIConfig().ToggleScoreboard()
+}
+
 (function () {
     if (GameUI.CustomUIConfig().playerData === undefined) {
         $.Msg("Initialise PlayerData");
