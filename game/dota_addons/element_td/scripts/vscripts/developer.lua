@@ -48,8 +48,8 @@ end
 function ElementTD:GreedIsGood(playerID, value)
     value = value or 500
     
-    PlayerResource:GetSelectedHeroEntity(playerID):ModifyGold(value)
-    ModifyLumber(playerID, tonumber(value))
+    PlayerResource:GetSelectedHeroEntity(playerID):ModifyGold(tonumber(value))
+    ModifyLumber(playerID, tonumber(20))
     UpdatePlayerSpells(playerID)
     
     GameRules:SendCustomMessage("#etd_cheats_enabled", 0, 0)
