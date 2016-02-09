@@ -68,3 +68,46 @@ function GetTowerTarget(tower, type, radius)
 	end
 	return nil
 end
+
+function GetBuffTargetInRadius(caster, radius, modifierName, level)
+	local towers = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
+    local theChosenOne
+    local bestPriority = 100
+    
+    for _,tower in pairs(towers) do
+        if IsTower(tower) and tower:IsAlive() and not IsSupportTower(tower) and not tower.deleted then
+            local priority = GetUnitKeyValue(tower:GetUnitName(), "BuffPriority")
+            if priority <= bestPriority then
+        
+                local modifier = tower:FindModifierByName(modifierName)
+                if not modifier or (level and level > modifier.level) then 
+                    bestPriority = priority
+                    theChosenOne = tower
+                end
+            end
+        end
+    end
+
+    return theChosenOne
+end
+
+function GetCloneTargetInRadius(caster, radius)
+	local towers = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
+    local theChosenOne
+    local bestPriority = 100
+    
+    for _,tower in pairs(towers) do
+        if IsTower(tower) and tower:IsAlive() and not IsSupportTower(tower) and not tower.deleted then
+            local priority = GetUnitKeyValue(tower:GetUnitName(), "BuffPriority")
+            if priority <= bestPriority then
+        
+                if not tower:HasModifier("modifier_clone") and not tower:HasModifier("modifier_conjure_prevent_cloning") then
+                    bestPriority = priority
+                    theChosenOne = tower
+                end
+            end
+        end
+    end
+
+    return theChosenOne
+end

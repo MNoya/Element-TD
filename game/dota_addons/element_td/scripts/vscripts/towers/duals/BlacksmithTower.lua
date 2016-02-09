@@ -19,46 +19,11 @@ nil)
 function BlacksmithTower:FireUpThink()
     if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() then
         
-        -- let's find a target to cast on
-        local towers = FindUnitsInRadius(self.tower:GetTeamNumber(), self.tower:GetOrigin(), nil, self.castRange, 
-                        DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
-        local highestDamage = 0
-        local theChosenOne = nil
+        -- find out the tower with the best BuffPriority to apply the buff
+        local target = GetBuffTargetInRadius(self.tower, self.castRange, "modifier_fire_up", self.level)
 
-        -- find out the tower with the highest dps
-        for _, tower in pairs(towers) do
-            if IsTower(tower) and tower:GetPlayerOwnerID() == self.playerID and not IsSupportTower(tower) and tower:IsAlive() and not tower.deleted then
-                local dps = tower:GetAverageTrueAttackDamage() * tower:GetAttacksPerSecond()
-                if dps >= highestDamage then
-            
-                    local modifier = tower:FindModifierByName("modifier_fire_up")
-                    if not modifier or self.level > modifier.level then 
-                        highestDamage = dps
-                        theChosenOne = tower
-                    end
-                end
-            end
-        end
-
-        -- check for support towers
-        if not theChosenOne then
-            for _, tower in pairs(towers) do
-                if IsTower(tower) and tower:GetPlayerOwnerID()  == self.playerID and tower:IsAlive() and not tower.deleted then
-                    local dps = tower:GetAverageTrueAttackDamage() * tower:GetAttacksPerSecond()
-                    if dps >= highestDamage then
-                
-                        local modifier = tower:FindModifierByName("modifier_fire_up")
-                        if not modifier or self.level > modifier.level then 
-                            highestDamage = dps
-                            theChosenOne = tower
-                        end
-                    end
-                end
-            end
-        end
-
-        if theChosenOne then
-            self.tower:CastAbilityOnTarget(theChosenOne, self.ability, self.playerID)
+        if target then
+            self.tower:CastAbilityOnTarget(target, self.ability, self.playerID)
         end
     end
 end

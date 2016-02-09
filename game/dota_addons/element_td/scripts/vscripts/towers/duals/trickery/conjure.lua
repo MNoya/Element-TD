@@ -111,9 +111,8 @@ function trickery_tower_conjure:CastFilterResultTarget(target)
     local bClone = target:HasModifier("modifier_clone")
     local bPreventCloning = target:HasModifier("modifier_conjure_prevent_cloning")
     local bSupportTower = target:HasModifier("modifier_support_tower")
-    local bTrickeryTower = string.match(target:GetUnitName(), "trickery")
 
-    if bTrickeryTower or bClone or bPreventCloning then
+    if bSupportTower or bClone or bPreventCloning then
         return UF_FAIL_CUSTOM
     end
 
@@ -124,12 +123,9 @@ function trickery_tower_conjure:GetCustomCastErrorTarget(target)
     local bClone = target:HasModifier("modifier_clone")
     local bPreventCloning = target:HasModifier("modifier_conjure_prevent_cloning")
     local bSupportTower = target:HasModifier("modifier_support_tower")
-    local bTrickeryTower = string.match(target:GetUnitName(), "trickery")
 
-    --[[if bSupportTower then
-        return "#etd_error_support_tower"]]
-    if bTrickeryTower then
-        return "#etd_error_cant_clone_cloner"
+    if bSupportTower then
+        return "#etd_error_support_tower"
     elseif bPreventCloning then
         return "#etd_error_recently_cloned"
     elseif bClone then

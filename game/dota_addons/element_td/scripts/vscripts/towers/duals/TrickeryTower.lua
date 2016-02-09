@@ -26,43 +26,12 @@ nil)
 
 function TrickeryTower:ConjureThink()
     if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() and not self.tower:IsSilenced() then
+        
+        -- find out the tower with the best BuffPriority to clone
+        local target = GetCloneTargetInRadius(self.tower, self.castRange)
 
-        -- let's find a target to cast on
-        local towers = FindUnitsInRadius(self.tower:GetTeamNumber(), self.tower:GetOrigin(), nil, self.castRange, 
-                        DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
-        local highestValue = 0
-        local theChosenOne = nil
-
-        -- find out the tower with the highest value
-        for _, tower in pairs(towers) do
-            if IsTower(tower) and tower:GetPlayerOwnerID() == self.playerID and not IsSupportTower(tower) and tower:IsAlive() and not tower.deleted then
-                if tower:GetHealth() == tower:GetMaxHealth() and not tower:HasModifier("modifier_clone") and not tower:HasModifier("modifier_conjure_prevent_cloning") then
-                    local towerValue = GetUnitKeyValue(tower:GetUnitName(), "TotalCost")
-                    if towerValue > highestValue then
-                        highestValue = towerValue
-                        theChosenOne = tower
-                    end
-                end
-            end
-        end
-
-        -- check for support towers
-        if not theChosenOne then
-            for _, tower in pairs(towers) do
-                if IsTower(tower) and tower:GetPlayerOwnerID() == self.playerID and (tower.class ~= "TrickeryTower") and tower:IsAlive() and not tower.deleted then
-                    if tower:GetHealth() == tower:GetMaxHealth() and not tower:HasModifier("modifier_clone") and not tower:HasModifier("modifier_conjure_prevent_cloning") then
-                        local towerValue = GetUnitKeyValue(tower:GetUnitName(), "TotalCost")
-                        if towerValue > highestValue then
-                            highestValue = towerValue
-                            theChosenOne = tower
-                        end
-                    end
-                end
-            end
-        end
-
-        if theChosenOne then
-            self.tower:CastAbilityOnTarget(theChosenOne, self.ability, self.playerID)
+        if target then
+            self.tower:CastAbilityOnTarget(target, self.ability, self.playerID)
         end
     end
 end

@@ -30,9 +30,9 @@ function well_tower_spring_forward:CastFilterResultTarget(target)
 		return result
 	end
 	
-	--[[if target:HasModifier("modifier_support_tower") then
+	if target:HasModifier("modifier_support_tower") then
 		return UF_FAIL_CUSTOM
-	end]]
+	end
 	
 	if IsServer() then
 		local modifier = target:FindModifierByName("modifier_spring_forward")
@@ -45,9 +45,9 @@ function well_tower_spring_forward:CastFilterResultTarget(target)
 end
 
 function well_tower_spring_forward:GetCustomCastErrorTarget(target)
-	--[[if target:HasModifier("modifier_support_tower") then
+	if target:HasModifier("modifier_support_tower") then
 		return "#etd_error_support_tower"
-	end]]
+	end
 
 	if IsServer() then
 		local modifier = target:FindModifierByName("modifier_spring_forward")
