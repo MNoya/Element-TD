@@ -21,8 +21,8 @@ function DiseaseTower:OnAttackLanded(keys)
     damage = damage * (target:GetMaxHealth() / target:GetHealth())
 
     if target:IsAlive() then
-        PopupHPRemovalDamage(self.tower, math.floor(damage))
-        DamageEntity(target, self.tower, damage)
+        local damage_done = DamageEntity(target, self.tower, damage)
+        PopupHPRemovalDamage(self.tower, math.floor(damage_done))
     end
 end
 

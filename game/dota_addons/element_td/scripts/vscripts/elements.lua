@@ -111,6 +111,8 @@ function DamageEntity(entity, attacker, damage)
 	else
 		entity:SetHealth(entity:GetHealth() - damage)
 	end
+
+	return damage
 end
 
 function DamageEntitiesInArea(origin, radius, attacker, damage)

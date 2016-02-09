@@ -39,8 +39,8 @@ function JinxTower:OnMaledictTick(keys)
     local healthLost = target.MaledictData.StartingHealth - target:GetHealth()
     if healthLost > 0 then
         local damage = math.floor((healthLost * (self.damageTakenToDamage / 100)) + 0.5)
-        damage = ApplyAbilityDamageFromModifiers(damage, self.tower)
-        DamageEntity(target, self.tower, damage)
+        local damage_done = DamageEntity(target, self.tower, damage)
+        PopupDarkCriticalDamage(target, damage_done)
     end
 end
 

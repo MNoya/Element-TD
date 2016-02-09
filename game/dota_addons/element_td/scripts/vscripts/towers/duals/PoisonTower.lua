@@ -34,7 +34,8 @@ function PoisonTower:OnAttackLanded(keys)
         ParticleManager:SetParticleControl(particleA, 0, target:GetAttachmentOrigin(target:ScriptLookupAttachment("attach_hitloc")))
         ParticleManager:SetParticleControl(particleA, 1, self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_hitloc")))
 
-        PopupDarkCriticalDamage(self.tower, math.floor(damage))
+        local damage_done = ApplyElementalDamageModifier(damage, GetDamageType(self.tower), GetArmorType(target))
+        PopupDarkCriticalDamage(self.tower, math.floor(damage_done))
     end
 
     DamageEntitiesInArea(target:GetAbsOrigin(), AOE, self.tower, damage / 2)    
