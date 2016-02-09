@@ -2904,7 +2904,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"2"
+				"duration"				"3"
 			}
 		}
 	}
