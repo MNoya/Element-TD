@@ -44,6 +44,7 @@
 	"DamageType"		"earth"
 	"ScriptClass"		"GunpowderTower"
 	"TowerType"		"Normal"
+        "BuffPriority"          "10"
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"1500"
 	"AttackAcquisitionRange"		"1500"

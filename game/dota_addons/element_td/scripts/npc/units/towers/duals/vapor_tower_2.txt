@@ -44,6 +44,7 @@
 	"DamageType"		"water"
 	"ScriptClass"		"VaporTower"
 	"TowerType"		"Normal"
+        "BuffPriority"          "6"
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"700"
 	"AttackAcquisitionRange"		"700"

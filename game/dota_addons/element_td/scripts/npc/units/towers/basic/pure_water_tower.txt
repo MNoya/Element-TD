@@ -49,6 +49,7 @@
     "DamageType"                "water"
     "ScriptClass"               "BasicTowerAOE"
     "TowerType"                 "Normal"
+    "BuffPriority"              "1"
 
 	"Upgrades"
     {

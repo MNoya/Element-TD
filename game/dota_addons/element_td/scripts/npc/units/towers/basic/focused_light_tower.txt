@@ -45,6 +45,7 @@
     "DamageType"                "light"
     "ScriptClass"               "BasicTower"
     "TowerType"                 "Normal"
+    "BuffPriority"              "9"
     
     "Requirements"
     {

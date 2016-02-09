@@ -49,6 +49,7 @@
 	"DamageType"		"earth"
 	"ScriptClass"		"MuckTower"
 	"TowerType"		"Normal"
+        "BuffPriority"          "4"
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"700"
 	"AttackAcquisitionRange"		"700"

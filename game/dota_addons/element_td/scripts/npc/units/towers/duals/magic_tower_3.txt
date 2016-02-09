@@ -44,6 +44,7 @@
 	"DamageType"		"dark"
 	"ScriptClass"		"MagicTower"
 	"TowerType"		"Normal"
+        "BuffPriority"          "2"
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"550"
 	"AttackAcquisitionRange"		"1150"

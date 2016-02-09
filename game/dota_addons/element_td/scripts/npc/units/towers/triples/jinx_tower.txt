@@ -49,6 +49,7 @@
 	"DamageType"		"dark"
 	"ScriptClass"		"JinxTower"
 	"TowerType"		"Normal"
+        "BuffPriority"          "8"
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"700"
 	"AttackAcquisitionRange"		"700"

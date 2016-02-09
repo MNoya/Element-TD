@@ -45,6 +45,7 @@
     "DamageType"                "dark"
     "ScriptClass"               "BasicTower"
     "TowerType"                 "Normal"
+    "BuffPriority"              "1"
     
     "Upgrades"
     {

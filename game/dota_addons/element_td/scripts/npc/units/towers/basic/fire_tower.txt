@@ -45,6 +45,7 @@
     "DamageType"                "fire"
     "ScriptClass"               "BasicTowerAOE"
     "TowerType"                 "Normal"
+    "BuffPriority"              "11"
     
     "Requirements"
     {

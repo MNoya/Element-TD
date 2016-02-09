@@ -44,6 +44,7 @@
 	"DamageType"		"light"
 	"ScriptClass"		"IceTower"
 	"TowerType"		"Normal"
+        "BuffPriority"          "6"
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"900"
 	"AttackAcquisitionRange"		"900"

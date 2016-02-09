@@ -45,6 +45,7 @@
 	"DamageType"		"dark"
 	"ScriptClass"		"DiseaseTower"
 	"TowerType"		"Normal"
+        "BuffPriority"          "6"
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"550"
 	"AttackAcquisitionRange"		"550"

@@ -49,6 +49,7 @@
 	"DamageType"		"dark"
 	"ScriptClass"		"ObliterationTower"
 	"TowerType"		"Normal"
+        "BuffPriority"          "3"
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"1150"
 	"AttackAcquisitionRange"		"1150"

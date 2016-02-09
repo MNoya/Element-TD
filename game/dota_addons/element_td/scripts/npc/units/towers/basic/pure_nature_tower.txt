@@ -47,6 +47,7 @@
     "DamageType"                "nature"
     "ScriptClass"               "BasicTower"
     "TowerType"                 "Normal"
+    "BuffPriority"              "1"
     
     "Upgrades"
     {

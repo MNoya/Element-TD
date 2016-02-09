@@ -49,6 +49,7 @@
 	"DamageType"		"earth"
 	"ScriptClass"		"QuakeTower"
 	"TowerType"		"Normal"
+        "BuffPriority"          "3"
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"550"
 	"AttackAcquisitionRange"		"550"

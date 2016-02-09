@@ -46,6 +46,7 @@
     "DamageType"                "earth"
     "ScriptClass"               "BasicTowerAOE"
     "TowerType"                 "Normal"
+    "BuffPriority"              "5"
     
     "Requirements"
     {

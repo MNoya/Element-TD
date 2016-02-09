@@ -49,6 +49,7 @@
 	"DamageType"		"nature"
 	"ScriptClass"		"EnchantmentTower"
 	"TowerType"		"Normal"
+        "BuffPriority"          "4"
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"900"
 	"AttackAcquisitionRange"		"900"

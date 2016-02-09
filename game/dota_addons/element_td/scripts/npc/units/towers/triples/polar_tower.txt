@@ -49,6 +49,7 @@
 	"DamageType"		"water"
 	"ScriptClass"		"PolarTower"
 	"TowerType"		"Normal"
+        "BuffPriority"          "8"
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"900"
 	"AttackAcquisitionRange"		"900"
