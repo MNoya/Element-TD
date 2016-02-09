@@ -104,6 +104,7 @@ function LifeTower:OnCreated()
     self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_life_tower_current_kill_counter", {})
     self.tower:SetModifierStackCount("modifier_life_tower_current_kill_counter", nil, GetPlayerData(self.tower:GetPlayerOwnerID()).LifeTowerKills)
     self.tower.life_counter = 0
+    self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_LOWEST_HP})
 end
 
 RegisterTowerClass(LifeTower, LifeTower.className)    

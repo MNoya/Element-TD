@@ -27,7 +27,9 @@ function FlameTower:OnCreated()
     AddAbility(self.tower, "flame_tower_sunburn", self.level)    
     self.burnDamage = GetAbilitySpecialValue("flame_tower_sunburn", "damage")    
     self.burnAOE = GetAbilitySpecialValue("flame_tower_sunburn", "aoe")    
-    self.sunburnDuration = GetAbilitySpecialValue("flame_tower_sunburn", "duration")    
+    self.sunburnDuration = GetAbilitySpecialValue("flame_tower_sunburn", "duration")
+
+    self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_LOWEST_HP})
 end
 
 function FlameTower:OnAttackLanded(keys) 

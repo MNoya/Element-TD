@@ -70,6 +70,7 @@ function ObliterationTower:OnCreated()
     self.projDuration = GetAbilitySpecialValue("obliteration_tower_obliterate", "duration")
     self.maxSplash = GetAbilitySpecialValue("obliteration_tower_obliterate", "max_aoe")
     self.initialSplash = GetAbilitySpecialValue("obliteration_tower_obliterate", "initial_aoe")
+    self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_FARTHEST})
 end
 
 function ObliterationTower:OnDestroyed()

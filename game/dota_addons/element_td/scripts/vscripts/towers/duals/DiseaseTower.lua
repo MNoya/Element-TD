@@ -42,6 +42,8 @@ function DiseaseTower:OnCreated()
     local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, self.tower)
     ParticleManager:SetParticleControlEnt(particle, 0, self.tower, PATTACH_POINT_FOLLOW, "attach_origin", self.tower:GetAbsOrigin(), true)
     ParticleManager:SetParticleControlEnt(particle, 1, self.tower, PATTACH_POINT_FOLLOW, "attach_origin", self.tower:GetAbsOrigin(), true)
+
+    self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_LOWEST_HP})
 end
 
 RegisterTowerClass(DiseaseTower, DiseaseTower.className)    

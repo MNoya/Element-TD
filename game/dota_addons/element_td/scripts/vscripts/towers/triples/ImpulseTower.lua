@@ -34,6 +34,7 @@ function ImpulseTower:OnCreated()
     self.ability = AddAbility(self.tower, "impulse_tower_impetus", self.tower:GetLevel())
     self.damageMult = GetAbilitySpecialValue("impulse_tower_impetus", "multiplier")[self.tower:GetLevel()]
     self.attackRange = tonumber(GetUnitKeyValue(self.towerClass, "AttackRange"))
+    self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_FARTHEST})
 end
 
 RegisterTowerClass(ImpulseTower, ImpulseTower.className)

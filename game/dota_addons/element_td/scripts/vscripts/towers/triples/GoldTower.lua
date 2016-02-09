@@ -28,6 +28,7 @@ end
 function GoldTower:OnCreated()
     self.ability = AddAbility(self.tower, "gold_tower_arbitrage", self.tower:GetLevel())
     self.bonusGold = GetAbilitySpecialValue("gold_tower_arbitrage", "bonus_gold")[self.tower:GetLevel()]
+    self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_LOWEST_HP})
 end
 
 RegisterTowerClass(GoldTower, GoldTower.className)
