@@ -88,7 +88,7 @@ function WindstormTower:OnCreated()
     self.timer = Timers:CreateTimer(0.1, function()
         if IsValidEntity(self.tower) then
             if self.ability:IsFullyCastable() then
-                local unit = GetTowerTarget(self.tower, TOWER_TARGETING_CLOSEST, self.aoe)
+                local unit = GetTowerTarget(self.tower, TOWER_TARGETING_CLOSEST, self.aoe + self.tower:GetHullRadius())
                 if unit then
                     self.tower:CastAbilityOnTarget(unit, self.ability, self.playerID)
                     return 1 / self.tower:GetAttacksPerSecond()

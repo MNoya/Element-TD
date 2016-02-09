@@ -51,7 +51,7 @@
         "voting_wait"                       "Waiting for others to finish voting..."
         "difficulty_normal"                 "Normal"
         "difficulty_hard"                   "Hard"
-        "difficulty_very_hard"              "Very Hard"
+        "difficulty_veryhard"               "Very Hard"
         "difficulty_insane"                 "Insane"
         "difficulty_normal_mode"            "Normal Difficulty"
         "difficulty_hard_mode"              "Hard Difficulty"

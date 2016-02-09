@@ -191,7 +191,7 @@
         "Noya"                      "Noya"
         "magician"                  "Magician"
         "villain"                   "Villain"
-        "Windstrike"                "Windstrike"
+        "Windstrike"                "WindStrike"
 
         // Waves
         "abomination"               "Abomination"
