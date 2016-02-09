@@ -48,7 +48,7 @@
 	"Damage"		"2100"
 	"DamageType"		"dark"
 	"ScriptClass"		"JinxTower"
-	"TowerType"		"Support"
+	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"700"
 	"AttackAcquisitionRange"		"700"

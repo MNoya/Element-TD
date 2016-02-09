@@ -48,7 +48,7 @@
 	"Damage"		"0"
 	"DamageType"		"nature"
 	"ScriptClass"		"RootsTower"
-	"TowerType"		"Support"
+	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"900"
 	"AttackAcquisitionRange"		"900"

@@ -48,7 +48,7 @@
 	"Damage"		"2100"
 	"DamageType"		"nature"
 	"ScriptClass"		"EnchantmentTower"
-	"TowerType"		"Support"
+	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"900"
 	"AttackAcquisitionRange"		"900"

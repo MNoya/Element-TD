@@ -48,7 +48,7 @@
 	"Damage"		"1300"
 	"DamageType"		"water"
 	"ScriptClass"		"PolarTower"
-	"TowerType"		"Support"
+	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"900"
 	"AttackAcquisitionRange"		"900"
