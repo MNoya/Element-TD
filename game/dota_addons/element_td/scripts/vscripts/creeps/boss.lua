@@ -14,40 +14,49 @@ CreepBoss = createClass({
     },
 CreepBasic)
 
+CreepBossAbilities = { [1]="creep_ability_mechanical", [2]="creep_ability_swarm", [3]="creep_ability_heal", [4]="creep_ability_undead", [5]="creep_ability_fast" }
+
 function CreepBoss:OnSpawned() 
-    self.creep:SetMaximumGoldBounty(0)
-    self.creep:SetMinimumGoldBounty(0)
-    self.creep:CreatureLevelUp(self.creep.waveObject.waveNumber-self.creep:GetLevel())
-
     local creep = self.creep
-    -- Prevent swarm from casting
-    if creep.isSwarm then
-        return
+    creep:SetMaximumGoldBounty(0)
+    creep:SetMinimumGoldBounty(0)
+    creep:CreatureLevelUp(creep.waveObject.waveNumber-creep:GetLevel())    
+
+    -- Choose an ability at random
+    local abilityName = RandomInt(1, #CreepBossAbilities)
+    creep.random_ability = abilityName
+    AddAbility(creep, abilityName)
+
+    if creep.random_ability == "creep_ability_mechanical" then
+        -- Mechanical
+        Timers:CreateTimer(math.random(1, 6), function()
+            if not IsValidEntity(creep) or not creep:IsAlive() then return end
+
+            creep:Purge(false, true, false, true, true)
+
+            local duration = 2
+            if creep.isSwarm then
+                duration = 1
+            end
+            creep:FindAbilityByName("creep_ability_mechanical"):ApplyDataDrivenModifier(creep, creep, "mechanical_buff", {duration=duration})
+
+            return 8
+        end)
     end
-
-    -- Mechanical
-    Timers:CreateTimer(math.random(1, 6), function()
-        if not IsValidEntity(creep) or not creep:IsAlive() then return end
-
-        creep:Purge(false, true, false, true, true)
-
-        local duration = 2
-        if creep.isSwarm then
-            duration = 1
-        end
-        creep:FindAbilityByName("creep_ability_mechanical"):ApplyDataDrivenModifier(creep, creep, "mechanical_buff", {duration=duration})
-
-        return 8
-    end)
 end
 
 -- Undead
 function CreepBoss:OnDeath()
     local playerData = GetPlayerData(self.creep.playerID)
     playerData.iceFrogKills = playerData.iceFrogKills + 1
-    --[[local creep = self.creep
+
+    local creep = self.creep
     local playerID = creep.playerID
     local creepClass = self.creepClass
+
+    if creep.random_ability ~= "creep_ability_undead" then
+        return
+    end
 
     local newCreep = CreateUnitByName(creepClass, creep:GetAbsOrigin() , false, nil, nil, DOTA_TEAM_NEUTRALS)
     newCreep.class = creepClass
@@ -89,16 +98,20 @@ function CreepBoss:OnDeath()
     end)
 
     self.creep = newCreep
-    CREEP_SCRIPT_OBJECTS[newCreep:entindex()] = self]]
+    CREEP_SCRIPT_OBJECTS[newCreep:entindex()] = self
 end
 
 -- Undead
 function CreepBoss:UndeadCreepRespawn()
-    --[[local creep = self.creep
+    local creep = self.creep
     local playerID = creep.playerID
     local playerData = GetPlayerData(playerID)
     local wave = creep.waveObject:GetWaveNumber()
     local creepClass = WAVE_CREEPS[wave]
+
+    if creep.random_ability ~= "creep_ability_undead" then
+        return
+    end
 
     creep:RemoveNoDraw()
     creep:RemoveModifierByName("modifier_invulnerable")
@@ -120,11 +133,15 @@ function CreepBoss:UndeadCreepRespawn()
 
     local h = ParticleManager:CreateParticle("particles/units/heroes/hero_skeletonking/skeletonking_reincarnation.vpcf", PATTACH_CUSTOMORIGIN, creep) --play a cool particle effect :D
     ParticleManager:SetParticleControl(h, 0, creep:GetAbsOrigin())
-    ParticleManager:SetParticleControlEnt(h, 0, creep, PATTACH_POINT_FOLLOW, "attach_hitloc", creep:GetOrigin(), true)]]
+    ParticleManager:SetParticleControlEnt(h, 0, creep, PATTACH_POINT_FOLLOW, "attach_hitloc", creep:GetOrigin(), true)
 end
 
 -- Swarm
 function CreepBoss:OnTakeDamage(keys)
+    if self.creep.random_ability ~= "creep_ability_swarm" then
+        return
+    end
+
     if self.creep:GetHealth() > 0 and self.creep:GetHealthPercent() <= 50 and not self.creep.isSwarm then
     
         local swarm = SpawnEntity(self.creep:GetUnitName(), self.creep.playerID, self.creep:GetOrigin())
@@ -185,8 +202,9 @@ function CreepBoss:HealNearbyCreeps(keys)
     local aoe = keys.aoe;
     local heal_percent = keys.heal_amount / 100;
 
-    -- Prevent swarm from casting
-    if creep.isSwarm then return end
+    if creep.random_ability ~= "creep_ability_heal" then
+        return
+    end
 
     local entities = GetCreepsInArea(creep:GetOrigin(), aoe);
     for k, entity in pairs(entities) do
@@ -199,11 +217,13 @@ end
 
 -- Fast
 function CreepBoss:CastHasteSpell(keys)
-    --[[local status, err = pcall(function()
+    local status, err = pcall(function()
         local creep = keys.caster;
         if creep then
-            -- Prevent swarm from casting
-            if creep.isSwarm then return end
+
+            if creep.random_ability ~= "creep_ability_fast" then
+                return
+            end
 
             local ability = creep:FindAbilityByName("creep_ability_fast");
             creep:CastAbilityImmediately(ability, 1);
@@ -211,7 +231,7 @@ function CreepBoss:CastHasteSpell(keys)
     end);
     if not status then
         Log:error(err);
-    end]]
+    end
 end
 
 RegisterCreepClass(CreepBoss, CreepBoss.className)
