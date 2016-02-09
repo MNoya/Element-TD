@@ -464,6 +464,14 @@ ToggleButton .TickBox, DOTASettingsCheckbox .TickBox
     border-radius: 15px 0px 0px 0px;
     //border: 2px solid #484A48;
     //box-shadow: #000 -4px -4px 3px 8px;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+}
+
+#DiffImage
+{
+    transition-property: brightness;
+    transition-duration: 0.3s;
 }
 
 .ViewDiffImage
@@ -481,6 +489,8 @@ ToggleButton .TickBox, DOTASettingsCheckbox .TickBox
     flow-children: down;
     font-size: 8px;
     vertical-align: center;
+    transition-property: transform, opacity;
+    transition-duration: 0.3s;
 }
 
 .resultsReview
@@ -490,6 +500,16 @@ ToggleButton .TickBox, DOTASettingsCheckbox .TickBox
     text-shadow: 0px 0px 3px 3.0 #000;
     horizontal-align: right;
     margin-left: 10px;
+}
+
+#CurrentModePanel.resize
+{
+    background-color: #00000000;
+}
+
+.hide
+{
+    opacity: 0;
 }
 
 .Slide

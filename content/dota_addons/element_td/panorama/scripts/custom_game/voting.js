@@ -318,7 +318,8 @@ function ResultsClose()
 
 var currentlyLocked = false
 function ShowCurrentModes() {
-    $("#DiffLabels").RemoveClass("Hidden")
+    $("#CurrentModePanel").RemoveClass("resize")
+    $("#DiffLabels").RemoveClass("hide")
     $("#DiffLabels").RemoveClass("Slide")
     $("#DiffImage").AddClass("Hover")
 }
@@ -326,13 +327,15 @@ function ShowCurrentModes() {
 function HideCurrentModes() {
     if (!currentlyLocked)
     {
-        $("#DiffLabels").AddClass("Hidden")
-        $("#DiffLabels").AddClass("Slide") 
+        $("#CurrentModePanel").AddClass("resize")
+        $("#DiffLabels").AddClass("hide")
+        $("#DiffLabels").AddClass("Slide")
         $("#DiffImage").RemoveClass("Hover")
     }
 }
 
 function ToggleCurrentModeVisibility(){
+    Game.EmitSound("ui_generic_button_click")
     currentlyLocked = !currentlyLocked
     if (currentlyLocked)
     {

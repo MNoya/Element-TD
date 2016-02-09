@@ -142,8 +142,8 @@
 
 
     <!-- Current Mode Indicator -->
-    <Panel id="CurrentModePanel" onmouseover="ShowCurrentModes()" onmouseout="HideCurrentModes()" onactivate="ToggleCurrentModeVisibility()">
-      <Panel id="DiffLabels" class="ViewDiffLabels Hidden">
+    <Panel id="CurrentModePanel" class="resize" onmouseover="ShowCurrentModes()" onmouseout="HideCurrentModes()" onactivate="ToggleCurrentModeVisibility()">
+      <Panel id="DiffLabels" class="ViewDiffLabels hide">
         <Label id="DifficultyView" text="#difficulty_normal_mode" class="resultsReview"/>
         <Label id="ElementsView" text="#random_mode" class="resultsReview"/>
         <Label id="EndlessView" text="#endless_mode" class="resultsReview"/>
