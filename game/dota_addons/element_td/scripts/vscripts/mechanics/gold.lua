@@ -4,7 +4,7 @@ function CDOTA_BaseNPC_Hero:ModifyGold(goldAmount)
     local playerID = hero:GetPlayerOwnerID()
     local playerData = GetPlayerData(playerID)
     local player = PlayerResource:GetPlayer(playerID)
-    playerData.gold = playerData.gold + goldAmount
+    playerData.gold = tonumber(playerData.gold + goldAmount)
 
     hero:SetGold(0, false)
     hero:SetGold(playerData.gold, true) --This can go up to 99.999 gold, but the UI will still show bigger values

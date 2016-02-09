@@ -65,7 +65,11 @@ function DamageEntity(entity, attacker, damage)
 	damage = math.ceil(damage) --round up to the nearest integer
 	if damage < 0 then damage = 0 end --pls no negative damage
 	
-	--print("Dealing " .. damage .. " damage to " .. entity.class .. " [" .. entity:entindex() .. "]")
+	if GameRules.DebugDamage then
+		local sourceName = attacker.class
+		local targetName = entity.class
+		Log:debug(sourceName .. " dealing " .. damage .. " damage to " .. targetName .. " [" .. entity:entindex() .. "]")
+	end
 	
 	if entity:GetHealth() - damage <= 0 then
 		local playerID = attacker:GetPlayerOwnerID()

@@ -15,6 +15,7 @@ CHEAT_CODES = {
     ["setlist"] = function(...) ElementTD:MakeSets(...) end,            -- Creates full AttachWearables entries by set names
     ["wherewave"] = function(...) ElementTD:WhereIsTheWave(...) end,    -- Find out information about the current wave
     ["gg_end"] = function(...) GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS ) end,    -- Find out information about the current wave
+    ["debug_damage"] = function(...) ElementTD:ToggleDebugDamage(...) end,    -- Find out information about the current wave
 }
 
 DEVELOPERS = {[66998815]="A_Dizzle",[86718505]="Noya",[8035838]="Karawasa",[34961594]="WindStrike",[84998953]="Quintinity"}
@@ -169,6 +170,17 @@ function ElementTD:Dev(playerID)
     ElementTD:GiveEssence(playerID, 10)
     ElementTD:SetGold(playerID, 999999)
 end
+
+function ElementTD.ToggleDebugDamage()
+    GameRules.DebugDamage = not GameRules.DebugDamage
+    if GameRules.DebugDamage then
+        Say(nil,"Debug Damage <font color='#ff0000'>ON</font>", false)
+    else
+        Say(nil,"Debug Damage <font color='#ff0000'>OFF</font>", false)
+    end
+end
+
+------------------------------------------------------
 
 function ElementTD:MakeSets()
     if not GameRules.modelmap then MapWearables() end
