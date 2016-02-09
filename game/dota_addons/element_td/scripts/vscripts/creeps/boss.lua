@@ -16,14 +16,16 @@ CreepBasic)
 
 CreepBossAbilities = { [1]="creep_ability_mechanical", [2]="creep_ability_swarm", [3]="creep_ability_heal", [4]="creep_ability_undead", [5]="creep_ability_fast" }
 
-function CreepBoss:OnSpawned() 
+function CreepBoss:OnSpawned()
     local creep = self.creep
     creep:SetMaximumGoldBounty(0)
     creep:SetMinimumGoldBounty(0)
-    creep:CreatureLevelUp(creep.waveObject.waveNumber-creep:GetLevel())    
+    creep:CreatureLevelUp(creep.waveObject.waveNumber-creep:GetLevel())
+
+    if creep.isSwarm then return end
 
     -- Choose an ability at random
-    local abilityName = RandomInt(1, #CreepBossAbilities)
+    local abilityName = CreepBossAbilities[RandomInt(1, #CreepBossAbilities)]
     creep.random_ability = abilityName
     AddAbility(creep, abilityName)
 
@@ -54,10 +56,6 @@ function CreepBoss:OnDeath()
     local playerID = creep.playerID
     local creepClass = self.creepClass
 
-    if creep.random_ability ~= "creep_ability_undead" then
-        return
-    end
-
     local newCreep = CreateUnitByName(creepClass, creep:GetAbsOrigin() , false, nil, nil, DOTA_TEAM_NEUTRALS)
     newCreep.class = creepClass
     newCreep.playerID = creep.playerID
@@ -75,13 +73,7 @@ function CreepBoss:OnDeath()
 
     if newCreep:HasModifier("creep_undead_reanimate") then
         newCreep:RemoveAbility("creep_undead_reanimate") --don't allow this new creep to respawn
-
     end        
-
-    newCreep:RemoveAbility("creep_ability_swarm") -- Do not allow this unit to swarm
-    newCreep:AddAbility("creep_ability_heal") -- Enable heal
-    local abil = newCreep:FindAbilityByName("creep_ability_heal")
-    abil:SetLevel(1)
 
     newCreep:SetMaxHealth(creep:GetMaxHealth())
     newCreep:SetBaseMaxHealth(creep:GetMaxHealth())
@@ -109,10 +101,6 @@ function CreepBoss:UndeadCreepRespawn()
     local wave = creep.waveObject:GetWaveNumber()
     local creepClass = WAVE_CREEPS[wave]
 
-    if creep.random_ability ~= "creep_ability_undead" then
-        return
-    end
-
     creep:RemoveNoDraw()
     creep:RemoveModifierByName("modifier_invulnerable")
     creep:RemoveModifierByName("modifier_invisible_etd")
@@ -138,10 +126,6 @@ end
 
 -- Swarm
 function CreepBoss:OnTakeDamage(keys)
-    if self.creep.random_ability ~= "creep_ability_swarm" then
-        return
-    end
-
     if self.creep:GetHealth() > 0 and self.creep:GetHealthPercent() <= 50 and not self.creep.isSwarm then
     
         local swarm = SpawnEntity(self.creep:GetUnitName(), self.creep.playerID, self.creep:GetOrigin())
@@ -201,10 +185,6 @@ function CreepBoss:HealNearbyCreeps(keys)
     local creep = self.creep;
     local aoe = keys.aoe;
     local heal_percent = keys.heal_amount / 100;
-
-    if creep.random_ability ~= "creep_ability_heal" then
-        return
-    end
 
     local entities = GetCreepsInArea(creep:GetOrigin(), aoe);
     for k, entity in pairs(entities) do

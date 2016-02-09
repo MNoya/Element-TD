@@ -94,7 +94,8 @@ end
 function ElementTD:SetGold(playerID, value)
     value = value or 1
 
-    GetPlayerData(playerID).gold = value
+    local playerData = GetPlayGetPlayerData(playerID)
+    playerData.gold = value
     PlayerResource:SetGold(playerID, tonumber(value), true)
     CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "etd_update_gold", { gold = playerData.gold } )
 end

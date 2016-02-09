@@ -58,6 +58,10 @@ function DamageEntity(entity, attacker, damage)
 	damage = ApplyElementalDamageModifier(damage, GetDamageType(attacker), GetArmorType(entity))
 	damage = ApplyDamageAmplification(damage, entity)
 
+	if GameRules.WhosYourDaddy then
+		damage = entity:GetMaxHealth()*2
+	end
+
 	damage = math.ceil(damage) --round up to the nearest integer
 	if damage < 0 then damage = 0 end --pls no negative damage
 	

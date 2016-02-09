@@ -48,7 +48,7 @@ function ModifyLumber( data )
 
 		// Keep track of the summoner
 		Root.summoner = data.summoner
-		$.Msg(Root.summoner)
+		
 		/*
 		if (diff > 0) {
 			lumberDisplay.text = "+" + diff + " Lumber";
@@ -67,7 +67,7 @@ function ModifyGold (data) {
 	if (data.gold != undefined)
 	{
 		gold.text = data.gold;
-		$.Msg("Gold: ", data.gold)
+		
 		if (gold.text.length > 5)
 			gold.style['margin-right'] = '0px;'
 	}

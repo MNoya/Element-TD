@@ -29,6 +29,16 @@
         "light_level"   "Light Element Level<br>200% against <font color='#8733C8'>Dark</font>, 50% against <font color='#D4880F'>Earth</font>"
         "dark_level"    "Dark Element Level<br>200% against <font color='#01A2FF'>Water</font>, 50% against <font color='#E5DE23'>Light</font>"
 
+        // Portal messages
+        "etd_wave_water"            "200% from <font color='#8733C8'>Dark</font>, 50% from <font color='#C40000'>Fire</font>"
+        "etd_wave_fire"             "200% from <font color='#01A2FF'>Water</font>, 50% from <font color='#00C400'>Nature</font>"
+        "etd_wave_nature"           "200% from <font color='#C40000'>Fire</font>, 50% from <font color='#D4880F'>Earth</font>"
+        "etd_wave_earth"            "200% from <font color='#00C400'>Nature</font>, 50% from <font color='#E5DE23'>Light</font>"
+        "etd_wave_light"            "200% from <font color='#D4880F'>Earth</font>, 50% from <font color='#8733C8'>Dark</font>"
+        "etd_wave_dark"             "200% from <font color='#E5DE23'>Light</font>, 50% from <font color='#01A2FF'>Water</font>"
+        "etd_wave_composite"        "100% from Composite, 90% from other Elements"
+        "etd_summoner_choose"       "Choose an Element"
+
         "gold"              "<font color='#F0BA36'>Gold</font>"
         "tooltip_gold"      "Gold is used to build towers and gain interest.<br>You will recieve interest every 15 seconds."
         "lumber"            "<font color='#008000'>Lumber</font>"

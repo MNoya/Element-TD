@@ -581,23 +581,5 @@ function ElementTD:DamageFilter( filterTable )
         end
     end
 
-    -- Cheat code
-    if GameRules.WhosYourDaddy then
-        local victimID = victim:GetPlayerOwnerID()
-        local victimTeam = victim:GetTeamNumber()
-        local attackerID = attacker:GetPlayerOwnerID()
-
-        if GameRules.WhosYourDaddy then
-            if attackerID and PlayerResource:IsValidPlayerID(attackerID) then
-                DamageEntity(victim, attacker, victim:GetMaxHealth()*2)
-                return false
-            end
-        end
-
-        if victimID and PlayerResource:IsValidPlayerID(victimID) then
-            filterTable["damage"] = 0
-        end
-    end
-
     return true
 end
