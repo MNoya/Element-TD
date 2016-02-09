@@ -255,7 +255,12 @@ function BuyPureEssence( keys )
             -- Gold bonus to help stay valuable by comparison to getting an element upgrade
             local waveNumber = playerData.nextWave
             local difficultyBountyBonus = playerData.difficulty:GetBountyBonusMultiplier()
-            local extra_gold = round(math.pow(waveNumber+5, 2) * 2.5 * difficultyBountyBonus)
+            local extra_gold
+            if EXPRESS_MODE then
+                extra_gold = round(math.pow(waveNumber+5, 2.3) * 2.5 * difficultyBountyBonus)
+            else
+                extra_gold = round(math.pow(waveNumber+5, 2) * 2.5 * difficultyBountyBonus)
+            end
             PopupAlchemistGold(PlayerResource:GetSelectedHeroEntity(playerID), extra_gold)
             hero:ModifyGold(extra_gold, true, 0)
 
