@@ -18,33 +18,32 @@ WindstormTower = createClass({
 nil)
 
 function WindstormTower:SpawnTornado(keys)
-    print("Spawn Tornado")
     if keys.target_points[1] then
-        -- Clear exisiting tornado (only one exisit per tower at a time)
-        self:RemoveTornado()
 
-        StartAnimation(self.tower, {duration=4.9, activity=ACT_DOTA_TELEPORT, rate=0.5})
-        self.ability:StartCooldown(self.cooldown)
-        self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_tornado_summoned", {})
+        local baseTime = 5
+        local newTime = 1 / self.tower:GetAttacksPerSecond()
+        StartAnimation(self.tower, {duration=baseTime, activity=ACT_DOTA_TELEPORT, rate=0.5})
+        
+        self.ability:StartCooldown(1 / self.tower:GetAttacksPerSecond())
 
-        self.tornado = CreateUnitByName( "windstorm_tornado", keys.target_points[1], false, self.tower, self.tower:GetOwner(), self.tower:GetTeamNumber() )
-        self.tornado.isTornado = true
-        self.tornado.tower = self.tower
-        self.tornado:SetControllableByPlayer(self.tower:GetOwner():GetPlayerID(), true)
-        self.tornado:AddNewModifier(self.tornado, nil, "modifier_no_health_bar", {})
+        local tornado = CreateUnitByName( "windstorm_tornado", keys.target_points[1], false, self.tower, self.tower:GetOwner(), self.tower:GetTeamNumber() )
+        tornado.isTornado = true
+        tornado.tower = self.tower
+        tornado:SetControllableByPlayer(self.playerID, true)
+        tornado:AddNewModifier(tornado, nil, "modifier_no_health_bar", {})
 
-        local tornado_ability = self.tornado:FindAbilityByName("windstorm_tornado_slow")
+        local tornado_ability = tornado:FindAbilityByName("windstorm_tornado_slow")
         tornado_ability:SetLevel(self.tower:GetLevel())
 
-        local playerData = GetPlayerData(self.tower:GetOwner():GetPlayerID())
+        local playerData = GetPlayerData(self.playerID)
         local sector = playerData.sector + 1
         local damage = GetAbilitySpecialValue("windstorm_tower_tornado", "damage")[self.tower:GetLevel()]
 
         if keys.target and keys.target:IsAlive() then
             Timers:CreateTimer(0.05, function()
-                if self.tornado then
+                if tornado then
                     ExecuteOrderFromTable({
-                        UnitIndex = self.tornado:entindex(),
+                        UnitIndex = tornado:entindex(),
                         OrderType = DOTA_UNIT_ORDER_MOVE_TO_TARGET,
                         TargetIndex = keys.target:entindex(),
                         Position = nil,
@@ -56,63 +55,42 @@ function WindstormTower:SpawnTornado(keys)
 
         --create the tornado thinker
         Timers:CreateTimer(1, function()
-            if IsValidEntity(self.tower) and IsValidEntity(self.tornado) then
-                local pos = self.tornado:GetAbsOrigin()
+            if IsValidEntity(self.tower) and IsValidEntity(tornado) then
+                local pos = tornado:GetAbsOrigin()
                 local bounds = SectorBounds[sector]
 
-                local creeps = GetCreepsInArea(self.tornado:GetAbsOrigin(), self.aoe)
+                local creeps = GetCreepsInArea(tornado:GetAbsOrigin(), self.aoe)
                 for _,v in pairs(creeps) do
                     DamageEntity(v, self.tower, damage)
                 end    
 
                 if not (pos.x > bounds.left + 400 and pos.x < bounds.right - 400 and pos.y < bounds.top - 400 and pos.y > bounds.bottom + 400) then
                     print("Tornado being deleted for leaving sector.")
-                    self:RemoveTornado()
+                    tornado:RemoveSelf()
                     return
                 end
                 return 1
             end
         end)
 
-        self.tornadoTimer = Timers:CreateTimer(5, function()
-            print("Timer Tornado Remove")
-            self:RemoveTornado()
+        Timers:CreateTimer(self.duration, function()
+            tornado:RemoveSelf()
         end)        
-    end
-end
-
-function WindstormTower:RemoveTornado(keys)
-    self.ability:SetActivated(true)
-    self.ability:SetChanneling(false)
-    self.tower:RemoveModifierByName("modifier_tornado_summoned")
-    if self.tornado then
-        UTIL_Remove(self.tornado)
-        self.tornado = nil
-    end
-    if self.tornadoTimer then
-        Timers:RemoveTimer(self.tornadoTimer)
-        self.tornadoTimer = nil
-    end
-end
-
-function WindstormTower:OnDestroyed()
-    self:RemoveTornado()
-    if self.timer then
-        Timers:RemoveTimer(self.timer)
     end
 end
 
 function WindstormTower:OnCreated()
     self.ability = AddAbility(self.tower, "windstorm_tower_tornado", self.tower:GetLevel())
     self.aoe = GetAbilitySpecialValue("windstorm_tower_tornado", "radius")
-    self.cooldown = self.ability:GetCooldown(1)
+    self.duration = GetAbilitySpecialValue("windstorm_tower_tornado", "duration")
+    self.playerID = self.tower:GetPlayerOwnerID()
     self.timer = Timers:CreateTimer(0.1, function()
         if IsValidEntity(self.tower) then
             if self.ability:IsFullyCastable() then
                 local unit = GetTowerTarget(self.tower, TOWER_TARGETING_CLOSEST, self.aoe)
                 if unit then
-                    self.tower:CastAbilityOnTarget(unit, self.ability, self.tower:GetOwner():GetPlayerID())
-                    return 5
+                    self.tower:CastAbilityOnTarget(unit, self.ability, self.playerID)
+                    return 1 / self.tower:GetAttacksPerSecond()
                 end
             end
             return 0.1
@@ -121,9 +99,5 @@ function WindstormTower:OnCreated()
 end
 
 function WindstormTower:OnAttackLanded(keys) end
-
-function WindstormTower:TornadoTest(keys)
-    print("tornado spawned")
-end
 
 RegisterTowerClass(WindstormTower, WindstormTower.className)

@@ -43,7 +43,7 @@
 	"Damage"		"0"
 	"DamageType"		"water"
 	"ScriptClass"		"WindstormTower"
-	"TowerType"		"Support"
+	"TowerType"		"Normal"
 	"HasAbilityDesc"		"1"
 	"AttackRange"		"900"
 	"AttackAcquisitionRange"		"0"

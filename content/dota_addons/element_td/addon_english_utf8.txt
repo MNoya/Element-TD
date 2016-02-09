@@ -654,6 +654,7 @@
         "DOTA_Tooltip_ability_windstorm_tower_tornado_damage"       "DAMAGE PER SECOND:"
         "DOTA_Tooltip_ability_windstorm_tower_tornado_slow"     "%MOVEMENT SLOW:"
         "DOTA_Tooltip_ability_windstorm_tower_tornado_radius"        "RADIUS:"
+        "DOTA_Tooltip_ability_windstorm_tower_tornado_duration"  "DURATION:"
         "DOTA_Tooltip_ability_windstorm_tornado_slow"       "Windstorm"
         "DOTA_Tooltip_ability_windstorm_tornado_slow_Description"       "Slowing and damaging nearby creeps."
         "DOTA_Tooltip_ability_windstorm_tornado_slow_damage"        "DAMAGE PER SECOND:"
@@ -661,7 +662,6 @@
         "DOTA_Tooltip_ability_windstorm_tornado_slow_radius"        "AOE:"
         "DOTA_Tooltip_modifier_tornado_slow"        "Slowed"
         "DOTA_Tooltip_modifier_tornado_slow_Description"        "Slowed by a tornado, losing %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% movement speed."
-        "DOTA_Tooltip_modifier_tornado_summoned"        "Tornado Summoned"
         
         "quake_tower_ability"       "Pulverize"
         "quake_tower_ability_desc"      "Each attack has a chance to deal damage in an area around this tower."

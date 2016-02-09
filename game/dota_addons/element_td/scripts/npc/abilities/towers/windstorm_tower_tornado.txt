@@ -14,8 +14,6 @@
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 	"MaxLevel"						"2"
 	"AbilityCastRange"				"900"
-	"AbilityCooldown"				"5"
-	"AbilityManaCost"				"0"
 	"AbilityCastPoint"				"0.1"
 
 	"OnSpellStart"
@@ -29,14 +27,6 @@
 		}
 	}
 
-	"Modifiers"
-	{
-		"modifier_tornado_summoned"
-		{
-			"IsHidden"		"0"
-			"TextureName"	"towers/windstorm_tower_tornado"
-		}
-	}
 	"AbilitySpecial"
 	{
 		"01"
@@ -53,6 +43,11 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"radius"				"500"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"5"
 		}
 	}
 }
