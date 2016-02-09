@@ -29,6 +29,9 @@ function DifficultyObject:GetBountyForWave(wave)
 	elseif wave == WAVE_COUNT then -- boss wave
 		bounty = 0
 	end
+	if GameSettings:GetEndless() == "Endless" and bounty ~= 0 then -- Flat 25% bonus for rush mode
+		bounty = round(bounty * (1.25))
+	end
 	return bounty
 end
 
