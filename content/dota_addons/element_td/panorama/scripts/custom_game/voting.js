@@ -29,6 +29,7 @@ var activeDifficulty = "normal"
 var healthBonus = {normal:"100%",hard:"145%",veryhard:"190%",insane:"235%"}
 var bountyBonus = {normal:"100%",hard:"+3%",veryhard:"+6%",insane:"+9%"}
 var bountyBonusExpress = {normal:"+10%",hard:"+15%",veryhard:"+20%",insane:"+25%"}
+var endlessBountyBonus = 25
 var scoreMultipliers = {normal:1,hard:2,veryhard:3,insane:4,chaos:1.25,endless:1.5}
 
 var healthMult = $( '#HealthMult' );
@@ -42,7 +43,7 @@ var express = $('#express')
 function UpdateMultipliers(difficultyName){
     difficultyName = difficultyName || activeDifficulty;
     healthMult.text = GetHP(difficultyName)
-    bountyMult.text = GetBounty(difficultyName, express.checked || express.hovering)
+    bountyMult.text = GetBounty(difficultyName, endless.checked || endless.hovering, express.checked || express.hovering)
     scoresMult.text = GetScore(difficultyName, endless.checked || endless.hovering, chaos.checked || chaos.hovering)
 }
 
@@ -281,7 +282,7 @@ function ShowVoteResults( data )
 
     // Update HP-Bounty-Scores results
     $("#HealthResult").text = GetHP(difficultyName)
-    $("#BountyResult").text = GetBounty(difficultyName, express)
+    $("#BountyResult").text = GetBounty(difficultyName, endless, express)
     $("#ScoresResult").text = GetScore(difficultyName, endless, chaos)
 
     // Show current mode UI
@@ -294,8 +295,14 @@ function GetHP(difficultyName) {
     return "Health: "+healthBonus[difficultyName]
 }
 
-function GetBounty(difficultyName, bExpress) {
-    return bExpress ? "Bounty: "+bountyBonusExpress[difficultyName] : "Bounty: "+bountyBonus[difficultyName]
+function GetBounty(difficultyName, bEndless, bExpress) {
+    var bounty = bExpress ? bountyBonusExpress[difficultyName] : bountyBonus[difficultyName]
+    if (bEndless)
+    {
+        bounty = Number(bounty.substring(1,bounty.length-1)) + endlessBountyBonus
+        bounty = "+" + bounty + "%"
+    }
+    return "Bounty: "+bounty
 }
 
 function GetScore(difficultyName, bEndless, bChaos) {
