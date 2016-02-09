@@ -24,7 +24,7 @@
 
         "water_level"   "Water Element Level<br>200% against <font color='#C40000'>Fire</font>, 50% against <font color='#8733C8'>Dark</font>"
         "fire_level"    "Fire Element Level<br>200% against <font color='#00C400'>Nature</font>, 50% against <font color='#01A2FF'>Water</font>"
-        "nature_level"  "Nature Element Level<br>200% against <font color='#D4880F'>Earth</font, 50% against <font color='#C40000'>Fire</font>"
+        "nature_level"  "Nature Element Level<br>200% against <font color='#D4880F'>Earth</font>, 50% against <font color='#C40000'>Fire</font>"
         "earth_level"   "Earth Element Level<br>200% against <font color='#E5DE23'>Light</font>, 50% against <font color='#00C400'>Nature</font>"
         "light_level"   "Light Element Level<br>200% against <font color='#8733C8'>Dark</font>, 50% against <font color='#D4880F'>Earth</font>"
         "dark_level"    "Dark Element Level<br>200% against <font color='#01A2FF'>Water</font>, 50% against <font color='#E5DE23'>Light</font>"
