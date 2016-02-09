@@ -17,7 +17,7 @@ PolarTower = createClass({
 nil)
 
 function PolarTower:FrostbiteThink()
-    if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() and not self.tower:HasModifier("modifier_disarmed") then
+    if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() then
         -- let's find a target to autocast on
         local creeps = GetCreepsInArea(self.tower:GetOrigin(), self.ability:GetCastRange())
         local highestHealth = 0
@@ -31,7 +31,7 @@ function PolarTower:FrostbiteThink()
         end
 
         if theChosenOne then
-            self.tower:CastAbilityOnTarget(theChosenOne, self.ability, GetTowerPlayerID(self.tower))
+            self.tower:CastAbilityOnTarget(theChosenOne, self.ability, self.tower:GetPlayerOwnerID())
         end
     end
 end
@@ -39,7 +39,7 @@ end
 function PolarTower:OnFrostbiteCast(keys)
     local target = keys.target
     if target:HasModifier("modifier_polar_frostbite") then
-        ShowWarnMessage(GetTowerPlayerID(self.tower), "#polar_tower_frostbite_error")
+        ShowWarnMessage(self.tower:GetPlayerOwnerID(), "#polar_tower_frostbite_error")
         self.ability:EndCooldown()
     else
         self.ability:ApplyDataDrivenModifier(self.tower, target, "modifier_polar_frostbite", {})
@@ -64,14 +64,17 @@ function PolarTower:OnAttackLanded(keys)
     DamageEntitiesInArea(target:GetOrigin(), self.fullAOE, self.tower, damage / 2)
 end
 
-function PolarTower:OnCreated()
-    self.ability = AddAbility(self.tower, "polar_tower_frostbite", self.tower:GetLevel())
-    Timers:CreateTimer(0.1, function()
+function PolarTower:OnBuildingFinished()
+    Timers:CreateTimer(function()
         if IsValidEntity(self.tower) then
             self:FrostbiteThink()
-            return 0.1
+            return 1
         end
     end)
+end
+
+function PolarTower:OnCreated()
+    self.ability = AddAbility(self.tower, "polar_tower_frostbite", self.tower:GetLevel())
     self.ability:ToggleAutoCast()
     
     self.fullAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))

@@ -9788,39 +9788,17 @@
 		"AttackDamageMin"		"150"
 		"AttackDamageMax"		"150"
 		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1"
-				{
-					"ItemDef"		"38"
-				}
-				"Wearable2"
-				{
-					"ItemDef"		"39"
-				}
-				"Wearable3"
-				{
-					"ItemDef"		"40"
-				}
-				"Wearable4"
-				{
-					"ItemDef"		"41"
-				}
-				"Wearable5"
-				{
-					"ItemDef"		"20"
-				}
-				"Wearable5"
-				{
-					"ItemDef"		"4540"
-				}
-				"Wearable6"
-				{
-					"ItemDef"		"502"
-				}
-			}
-		}
+	    {
+	        "AttachWearables" // Default npc_dota_hero_crystal_maiden
+	        {
+	            "1" { "ItemDef" "39" } // Crystal Maiden's Shoulder Pads
+	            "2" { "ItemDef" "311" } // Crystal Maiden's Headdress
+	            "3" { "ItemDef" "40" } // Crystal Maiden's Weapon
+	            "4" { "ItemDef" "41" } // Crystal Maiden's Cuffs
+	            "5" { "ItemDef" "502" } // Crystal Maiden's Ambient Effects
+	            "6" { "ItemDef" "38" } // Crystal Maiden's Cape
+	        }
+	    }
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -9899,13 +9877,13 @@
 		"AttackDamageMax"		"0"
 	    "Creature"
 	    {
-	       "AttachWearables" // Heart of the North Set
-	       {
-	            "1" { "ItemDef" "5213" } // Frostbitten Cloak of the North
-	            "2" { "ItemDef" "5215" } // Wizardry Staff of the North
-	            "3" { "ItemDef" "5214" } // Ice Capped Hood of the North
-	            "4" { "ItemDef" "5212" } // Arctic Bracers of the North
-	            "5" { "ItemDef" "5216" } // Shoulders of the North
+	       "AttachWearables" // Regalia of the Crystalline Queen Set
+	        {
+	            "1" { "ItemDef" "4420" } // Bracers of the Crystalline Queen
+	            "2" { "ItemDef" "4383" } // Staff of the Crystalline Queen
+	            "3" { "ItemDef" "4540" } // Tiara of the Crystalline Queen
+	            "4" { "ItemDef" "4389" } // Mantle of the Crystalline Queen
+	            "5" { "ItemDef" "4386" } // Cape of the Crystalline Queen
 	            "6" { "ItemDef" "502" } // Ambient
 	       }
 	    }
@@ -9967,7 +9945,7 @@
 		"AttackRate"		"1.5"
 		"ProjectileModel"		""
 		"ProjectileSpeed"		"750"
-		"Model"		"models/heroes/crystal_maiden/crystal_maiden.vmdl"
+		"Model"		"models/heroes/crystal_maiden/crystal_maiden_arcana.vmdl"
 		"ModelScale"		"1"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
@@ -9985,13 +9963,13 @@
 		"AttackDamageMax"		"0"
 	    "Creature"
 	    {
-	       "AttachWearables" // Wraps of the Winterbringer
+	       "AttachWearables" // Arcana
 	       {
-	            "1" { "ItemDef" "8449" } // Staff of the Winterbringer
-	            "2" { "ItemDef" "8447" } // Cape of the Winterbringer
-	            "3" { "ItemDef" "8448" } // Sleeves of the Winterbringer
-	            "4" { "ItemDef" "8456" } // Style of the Winterbringer
-	            "5" { "ItemDef" "8450" } // Shawl of the Winterbringer
+	            "1" { "ItemDef" "6784" } // White Sentry
+	            "2" { "ItemDef" "6686" } // Yulsaria's Glacier
+	            "3" { "ItemDef" "7385" } // Frost Avalanche
+	            "4" { "ItemDef" "8398" } // Sleeves of the Lumini Polare
+	            "5" { "ItemDef" "8401" } // Shawl of the Lumini Polare
 	           	"6" { "ItemDef" "502" } // Ambient
 	       }
 	    }
@@ -13625,7 +13603,7 @@
 		"DamageType"		"fire"
 		"ScriptClass"		"HasteTower"
 		"TowerType"		"Normal"
-	        "BuffPriority"          "7"
+	        "BuffPriority"          "5"
 		"HasAbilityDesc"		"1"
 		"AttackRange"		"900"
 		"AttackAcquisitionRange"		"900"
@@ -13720,7 +13698,7 @@
 		"DamageType"		"fire"
 		"ScriptClass"		"HasteTower"
 		"TowerType"		"Normal"
-	        "BuffPriority"          "3"
+	        "BuffPriority"          "2"
 		"HasAbilityDesc"		"1"
 		"AttackRange"		"900"
 		"AttackAcquisitionRange"		"900"

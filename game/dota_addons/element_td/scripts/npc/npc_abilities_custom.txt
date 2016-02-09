@@ -3184,6 +3184,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"AbilityCooldown"				"1"
+		"AbilityCastRange"				"900"
 		"MaxLevel"						"2"
 		"AbilityTextureName"			"towers/polar"
 	

@@ -40,7 +40,7 @@ function BlacksmithTower:OnCreated()
     self.castRange = self.ability:GetCastRange(self.tower:GetAbsOrigin(), self.tower)
     self.level = self.ability:GetLevel()
     self.ability:ToggleAutoCast() -- turn on autocast by default
-    self.playerID = self.tower:GetOwner():GetPlayerID()    
+    self.playerID = self.tower:GetPlayerOwnerID()
 end
 
 function BlacksmithTower:OnBuildingFinished()

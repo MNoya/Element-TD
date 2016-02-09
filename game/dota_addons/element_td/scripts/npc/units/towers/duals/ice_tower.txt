@@ -75,39 +75,17 @@
 	"AttackDamageMin"		"150"
 	"AttackDamageMax"		"150"
 	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"		"38"
-			}
-			"Wearable2"
-			{
-				"ItemDef"		"39"
-			}
-			"Wearable3"
-			{
-				"ItemDef"		"40"
-			}
-			"Wearable4"
-			{
-				"ItemDef"		"41"
-			}
-			"Wearable5"
-			{
-				"ItemDef"		"20"
-			}
-			"Wearable5"
-			{
-				"ItemDef"		"4540"
-			}
-			"Wearable6"
-			{
-				"ItemDef"		"502"
-			}
-		}
-	}
+    {
+        "AttachWearables" // Default npc_dota_hero_crystal_maiden
+        {
+            "1" { "ItemDef" "39" } // Crystal Maiden's Shoulder Pads
+            "2" { "ItemDef" "311" } // Crystal Maiden's Headdress
+            "3" { "ItemDef" "40" } // Crystal Maiden's Weapon
+            "4" { "ItemDef" "41" } // Crystal Maiden's Cuffs
+            "5" { "ItemDef" "502" } // Crystal Maiden's Ambient Effects
+            "6" { "ItemDef" "38" } // Crystal Maiden's Cape
+        }
+    }
 
     // Building Size
     "ConstructionSize"          "2"

@@ -30,7 +30,7 @@
             <Image id="veryhard" class="DifficultyImage" src="file://{images}/custom_game/vote_menu/difficulties/veryhard.png"/>
             <Image id="veryhard_glow" class="DifficultyImage Hidden" src="file://{images}/custom_game/vote_menu/difficulties/veryhard_glow.psd"/>
           </Panel>
-          <Label id="VeryHardDifficultyLabel" text="#difficulty_very_hard" class="DifficultyLabel"/>
+          <Label id="VeryHardDifficultyLabel" text="#difficulty_veryhard" class="DifficultyLabel"/>
         </Panel>
         <Panel id="InsaneDifficulty" onmouseover="HoverDifficulty('insane')" onmouseout="MouseOverDiff('insane')" onactivate="SelectDifficulty('insane')" class="DifficultyBox">
           <Panel> 
