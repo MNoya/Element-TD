@@ -17,7 +17,7 @@ nil)
 
 function GoldTower:OnAttackLanded(keys)
     local target = keys.target
-    local damage = ApplyAttackDamageFromModifiers(self.tower:GetBaseDamageMax(), self.tower)
+    local damage = self.tower:GetAverageTrueAttackDamage()
     DamageEntity(target, self.tower, damage)
 end
 

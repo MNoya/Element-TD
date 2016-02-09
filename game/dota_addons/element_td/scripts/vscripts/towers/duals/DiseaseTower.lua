@@ -18,7 +18,6 @@ nil)
 function DiseaseTower:OnAttackLanded(keys)
     local target = keys.target    
     local damage = self.tower:GetAverageTrueAttackDamage()
-    damage = ApplyAttackDamageFromModifiers(damage, self.tower)    
     damage = damage * (target:GetMaxHealth() / target:GetHealth())
 
     if target:IsAlive() then

@@ -18,7 +18,7 @@ nil)
 
 function JinxTower:OnAttackLanded(keys)
     local target = keys.target
-    local damage = self.tower:GetBaseDamageMax()
+    local damage = self.tower:GetAverageTrueAttackDamage()
     DamageEntity(target, self.tower, damage)
 
     local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_witchdoctor/witchdoctor_maledict_aoe.vpcf", PATTACH_ABSORIGIN, target)

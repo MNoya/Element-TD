@@ -31,9 +31,8 @@ end
 
 function MagicTower:OnAttackLanded(keys)
     local target = keys.target
-    local damage = self.tower:GetBaseDamageMax()
-    damage = ApplyAttackDamageFromModifiers(damage, self.tower)
-    DamageEntity(target, self.tower, self.tower:GetBaseDamageMax())
+    local damage = self.tower:GetAverageTrueAttackDamage()
+    DamageEntity(target, self.tower, damage)
     if IsCurrentlySelected(self.tower) then
         local stacks = self.tower:GetModifierStackCount("modifier_magic_tower_attack_range", self.tower)
         if stacks ~= self.maxStacks then

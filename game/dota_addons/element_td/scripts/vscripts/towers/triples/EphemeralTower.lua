@@ -91,7 +91,7 @@ end
 
 function EphemeralTower:OnCreated()
     self.ability = AddAbility(self.tower, "ephemeral_tower_phasing")
-    self.baseDamage = self.tower:GetBaseDamageMax()
+    self.baseDamage = self.tower:GetAverageTrueAttackDamage()
 
     self.damageReductionPerAttackPercent = math.abs(GetAbilitySpecialValue("ephemeral_tower_phasing", "damage_reduction")) -- 5%
     self.maxDamageReduction = GetAbilitySpecialValue("ephemeral_tower_phasing", "max_reduction")

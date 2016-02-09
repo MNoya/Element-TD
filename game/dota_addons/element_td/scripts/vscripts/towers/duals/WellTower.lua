@@ -67,7 +67,7 @@ end
 
 function WellTower:OnAttackLanded(keys)
     local target = keys.target
-    local damage = self.tower:GetBaseDamageMax()
+    local damage = self.tower:GetAverageTrueAttackDamage()
     DamageEntity(target, self.tower, damage)
 end
 

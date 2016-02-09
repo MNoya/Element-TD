@@ -54,9 +54,16 @@ function DamageEntity(entity, attacker, damage)
 	if not entity or not entity:IsAlive() then return end
 	
 	if entity:HasModifier("modifier_invulnerable") then return end
-	--damage = ApplyDifficultyArmor(damage, attacker)
+
+	local original = damage
+
+	-- Modify damage based on elements
 	damage = ApplyElementalDamageModifier(damage, GetDamageType(attacker), GetArmorType(entity))
+	local element = damage
+
+	-- Increment damage based on debuffs
 	damage = ApplyDamageAmplification(damage, entity)
+	local amplified = damage
 
 	if GameRules.WhosYourDaddy then
 		damage = entity:GetMaxHealth()*2
@@ -68,7 +75,10 @@ function DamageEntity(entity, attacker, damage)
 	if GameRules.DebugDamage then
 		local sourceName = attacker.class
 		local targetName = entity.class
-		Log:debug(sourceName .. " dealing " .. damage .. " damage to " .. targetName .. " [" .. entity:entindex() .. "]")
+		print("[DAMAGE] " .. sourceName .. " deals " .. damage .. " to " .. targetName .. " [" .. entity:entindex() .. "]")
+		if (original ~= damage) then
+			print("[DAMAGE]  Original: "..original.." | Element: "..element.." | Amplified: "..amplified)
+		end
 	end
 	
 	if entity:GetHealth() - damage <= 0 then
@@ -140,23 +150,7 @@ function ApplyDamageAmplification(damage, creep)
 			newDamage = newDamage + (damage * (value / 100))
 		end
 	end
-	return math.floor(newDamage + 0.5)
-end
-
---modifies damages from modifier registered in TOWER_MODIFIERS
-function ApplyAttackDamageFromModifiers(damage, attacker)
-	local baseDamage = damage
-	for mod, data in pairs(TOWER_MODIFIERS) do
-		if attacker:HasModifier(mod) then
-			if data.bonus_damage then
-				damage = damage + data.bonus_damage
-			end
-			if data.bonus_damage_percent then
-				damage = damage + ((data.bonus_damage_percent / 100) * baseDamage)
-			end
-		end
-	end
-	return math.floor(damage + 0.5)
+	return round(newDamage)
 end
 
 --modifies damages from modifier registered in TOWER_MODIFIERS
@@ -172,7 +166,7 @@ function ApplyAbilityDamageFromModifiers(damage, attacker)
 			end
 		end
 	end
-	return math.floor(damage + 0.5)
+	return round(damage)
 end
 
 -- applies the armor modifier based on the current difficulty

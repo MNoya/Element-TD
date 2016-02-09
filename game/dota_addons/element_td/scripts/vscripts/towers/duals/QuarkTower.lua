@@ -18,7 +18,8 @@ function QuarkTower:OnAttackStart(keys)
     local target = keys.target    
     local damageIncrease = tonumber(self.ability:GetSpecialValueFor("bonus_damage"))    
     if target:entindex() == self.targetEntIndex then
-        local newDamage = self.tower:GetBaseDamageMax() + (self.tower:GetBaseDamageMax() * (damageIncrease / 100))    
+        local attackDamage = self.tower:GetAverageTrueAttackDamage()
+        local newDamage = attackDamage + (attackDamage * (damageIncrease / 100))    
         self.tower:SetBaseDamageMax(newDamage)
         self.tower:SetBaseDamageMin(newDamage)
         self.consecutiveAttacks = self.consecutiveAttacks + 1
@@ -37,7 +38,6 @@ end
 function QuarkTower:OnAttackLanded(keys)
     local target = keys.target    
     local damage = self.tower:GetAverageTrueAttackDamage()
-    damage = ApplyAttackDamageFromModifiers(damage, self.tower)    
     DamageEntity(target, self.tower, damage)
 
     local attacks = self.consecutiveAttacks < 4 and self.consecutiveAttacks or 4

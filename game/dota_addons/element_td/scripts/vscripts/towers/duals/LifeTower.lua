@@ -81,8 +81,7 @@ end
 
 function LifeTower:OnAttackLanded(keys)
     local target = keys.target    
-    local damage = self.tower:GetBaseDamageMax()    
-    damage = ApplyAttackDamageFromModifiers(damage, self.tower)    
+    local damage = self.tower:GetAverageTrueAttackDamage()
     DamageEntity(target, self.tower, damage)    
 end
 
