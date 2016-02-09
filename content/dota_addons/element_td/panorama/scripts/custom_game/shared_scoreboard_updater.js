@@ -465,6 +465,7 @@ function SetUpdateScoreboard( data )
 }
 
 function ToggleScoreboard() {
+    Game.EmitSound("ui_generic_button_click")
     GameUI.CustomUIConfig().ToggleScoreboard()
 }
 

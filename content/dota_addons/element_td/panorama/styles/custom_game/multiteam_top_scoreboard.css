@@ -443,6 +443,11 @@ DOTAAvatarImage
     margin-top: 5px;
 }
 
+#FlyoutScoreboardToggle:active .ToggleLabel
+{
+    position: 1px 2px 0px;
+}
+
 .ToggleLabel
 {
     margin-left: 10px;
