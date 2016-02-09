@@ -66,7 +66,6 @@ end
 function StartBreakTime(playerID, breakTime)
     local ply = PlayerResource:GetPlayer(playerID)
     local hero = ElementTD.vPlayerIDToHero[playerID]
-    if not hero:IsAlive() then return end
     
     hero:RemoveModifierByName("modifier_silence")
 
@@ -91,11 +90,15 @@ function StartBreakTime(playerID, breakTime)
         if ply then
             CustomGameEventManager:Send_ServerToPlayer( ply, "etd_update_wave_timer", { time = breakTime, button = (GameSettings:GetGamemode() ~= "Competitive") } )
         end
+
         ShowWaveBreakTimeMessage(playerID, wave, breakTime, msgTime)
 
-        local playerData = GetPlayerData(playerID)
-        local sector = playerData.sector + 1
-        ShowPortalForSector(sector, wave, breakTime, playerID)
+        -- Update portal
+        if hero:IsAlive() then
+            local playerData = GetPlayerData(playerID)
+            local sector = playerData.sector + 1
+            ShowPortalForSector(sector, wave, breakTime, playerID)
+        end
     end
 
     -- create the actual timer
@@ -106,7 +109,11 @@ function StartBreakTime(playerID, breakTime)
             local data = GetPlayerData(playerID)
             Log:info("Spawning wave " .. wave .. " for ["..playerID.."] ".. data.name)
             ShowWaveSpawnMessage(playerID, wave)
-            SpawnWaveForPlayer(playerID, wave) -- spawn dat wave
+
+            -- spawn dat wave
+            if hero:IsAlive() then
+                SpawnWaveForPlayer(playerID, wave) 
+            end
             WAVE_1_STARTED = true
         end
     })
@@ -351,7 +358,6 @@ end
 -- If the game mode is competitive spawn the next wave for all players after breaktime
 function CompetitiveNextRound(wave)
     for _,v in pairs(playerIDs) do
-        print(v, wave)
         StartBreakTime(v, GetPlayerDifficulty(v):GetWaveBreakTime(wave))
     end
 end
