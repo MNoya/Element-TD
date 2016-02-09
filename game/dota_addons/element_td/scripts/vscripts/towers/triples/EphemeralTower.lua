@@ -85,7 +85,7 @@ end
 
 function EphemeralTower:OnAttackLanded(keys)
     local target = keys.target
-    local damage = ApplyAttackDamageFromModifiers(self.tower:GetAverageTrueAttackDamage(), self.tower)
+    local damage = self.tower:GetAverageTrueAttackDamage()
     DamageEntity(target, self.tower, damage)
 end
 

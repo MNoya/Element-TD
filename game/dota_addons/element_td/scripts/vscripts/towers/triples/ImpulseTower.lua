@@ -22,6 +22,8 @@ function ImpulseTower:OnAttackLanded(keys)
     local target = keys.target
     local distance = (self.tower:GetOrigin() - target:GetOrigin()):Length2D()
     local damage = (distance / 1000) * self.damageMult
+    damage = ApplyAbilityDamageFromModifiers(damage, self.tower)
+    
     if target:IsAlive() then
         PopupLightDamage(target, math.floor(damage))
     end

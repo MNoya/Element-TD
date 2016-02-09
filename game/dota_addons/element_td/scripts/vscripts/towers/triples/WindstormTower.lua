@@ -37,7 +37,7 @@ function WindstormTower:SpawnTornado(keys)
 
         local playerData = GetPlayerData(self.playerID)
         local sector = playerData.sector + 1
-        local damage = GetAbilitySpecialValue("windstorm_tower_tornado", "damage")[self.tower:GetLevel()]
+        local damage = ApplyAbilityDamageFromModifiers(self.damage, self.tower)
 
         if keys.target and keys.target:IsAlive() then
             Timers:CreateTimer(0.05, function()
@@ -84,6 +84,7 @@ function WindstormTower:OnCreated()
     self.aoe = GetAbilitySpecialValue("windstorm_tower_tornado", "radius")
     self.duration = GetAbilitySpecialValue("windstorm_tower_tornado", "duration")
     self.playerID = self.tower:GetPlayerOwnerID()
+    self.damage = GetAbilitySpecialValue("windstorm_tower_tornado", "damage")[self.tower:GetLevel()]
     self.timer = Timers:CreateTimer(0.1, function()
         if IsValidEntity(self.tower) then
             if self.ability:IsFullyCastable() then

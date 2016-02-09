@@ -61,7 +61,8 @@ function RootsTower:OnAttackStart(keys)
 end
 
 function RootsTower:OnDamageTick(keys)
-    DamageEntity(keys.target, self.tower, self.damagePerSecond)
+    local damage = ApplyAbilityDamageFromModifiers(self.damagePerSecond, self.tower)
+    DamageEntity(keys.target, self.tower, damage)
 end
 
 function RootsTower:OnCreated()

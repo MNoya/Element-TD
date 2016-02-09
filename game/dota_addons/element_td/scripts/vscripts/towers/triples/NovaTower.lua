@@ -22,7 +22,8 @@ function NovaTower:Explode()
         ParticleManager:SetParticleControl(particle, 0, self.tower:GetAbsOrigin())
         ParticleManager:ReleaseParticleIndex(particle)
         
-        DamageEntitiesInArea(self.tower:GetAbsOrigin(), self.aoe, self.tower, self.explodeDamage)
+        local damage = ApplyAbilityDamageFromModifiers(self.explodeDamage, self.tower)
+        DamageEntitiesInArea(self.tower:GetAbsOrigin(), self.aoe, self.tower, damage)
         self.lastExplodeTime = GameRules:GetGameTime()
     end
 end

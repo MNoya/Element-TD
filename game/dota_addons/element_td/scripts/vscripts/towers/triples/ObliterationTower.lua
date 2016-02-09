@@ -57,7 +57,7 @@ function ObliterationTower:OnProjectileHit(keys)
     local entities = GetCreepsInArea(target:GetAbsOrigin(), splashAOE)
     for _, entity in pairs(entities) do
         local damage = self.tower:GetAverageTrueAttackDamage()
-        DamageEntity(entity, self.tower, damage, self.tower))
+        DamageEntity(entity, self.tower, damage, self.tower)
     end
 end
 

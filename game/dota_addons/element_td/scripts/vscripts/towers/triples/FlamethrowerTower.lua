@@ -25,7 +25,8 @@ function FlamethrowerTower:OnNapalmCreepDied(keys)
     ParticleManager:SetParticleControl(particle, 3, unit:GetOrigin())
 
     for _,creep in pairs(creeps) do
-        DamageEntity(creep, self.tower, unit.napalmDamage) 
+        local damage = ApplyAbilityDamageFromModifiers(unit.napalmDamage, self.tower)
+        DamageEntity(creep, self.tower, damage) 
     end
 end
 

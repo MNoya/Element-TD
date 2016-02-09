@@ -25,7 +25,8 @@ function ErosionTower:OnDamageAmpExpire(keys)
 end
 
 function ErosionTower:OnAcidDot(keys)
-    DamageEntity(keys.target, self.tower, self.dotDamage)
+    local damage = ApplyAbilityDamageFromModifiers(self.dotDamage, self.tower)
+    DamageEntity(keys.target, self.tower, damage)
 end
 
 function ErosionTower:OnAttackLanded(keys)

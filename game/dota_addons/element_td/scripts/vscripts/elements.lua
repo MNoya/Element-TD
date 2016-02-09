@@ -159,6 +159,9 @@ function ApplyAbilityDamageFromModifiers(damage, attacker)
 	local fire_up = attacker:FindModifierByName("modifier_fire_up")
 	if fire_up then
 		newDamage = newDamage + (damage * fire_up.damage_bonus * 0.01)
+		if GameRules.DebugDamage then
+			print("[DAMAGE] Increased "..attacker.class.." damage of "..damage.." to "..newDamage.." due to Fire Up modifier.")
+		end
 	end
 	return round(newDamage)
 end

@@ -36,7 +36,6 @@ function PoisonTower:OnAttackLanded(keys)
 
         PopupDarkCriticalDamage(self.tower, math.floor(damage))
     end
-    damage = ApplyAttackDamageFromModifiers(damage, self.tower)
 
     DamageEntitiesInArea(target:GetAbsOrigin(), AOE, self.tower, damage / 2)    
     DamageEntitiesInArea(target:GetAbsOrigin(), AOE / 2, self.tower, damage / 2)    

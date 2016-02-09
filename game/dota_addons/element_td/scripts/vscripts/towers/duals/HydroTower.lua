@@ -33,7 +33,7 @@ end
 
 function HydroTower:OnDelayEnd(keys)
     local target = keys.target
-    local damage = ApplyAttackDamageFromModifiers(self.splashDamage, self.tower)
+    local damage = ApplyAbilityDamageFromModifiers(self.splashDamage, self.tower)
     DamageEntitiesInArea(target:GetAbsOrigin(), self.splashAOE, self.tower, damage)
 
     local torrent = ParticleManager:CreateParticle("particles/custom/towers/hydro/torrent_splash.vpcf", PATTACH_CUSTOMORIGIN, self.tower)
