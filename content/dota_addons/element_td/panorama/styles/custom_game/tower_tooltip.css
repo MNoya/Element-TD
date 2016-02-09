@@ -6,12 +6,12 @@
 
 #TowerTooltip
 {
-    width: 4%;
+    width: 6%;
     height: 15%;
     //background-color: black;
     vertical-align: bottom;
     horizontal-align: center;
-    margin-right: 23%;
+    margin-right: 25%;
 }
 
 .Hidden

@@ -66,6 +66,7 @@ end
 function StartBreakTime(playerID, breakTime)
     local ply = PlayerResource:GetPlayer(playerID)
     local hero = ElementTD.vPlayerIDToHero[playerID]
+    local playerData = GetPlayerData(playerID)
     
     hero:RemoveModifierByName("modifier_silence")
 
@@ -95,7 +96,6 @@ function StartBreakTime(playerID, breakTime)
 
         -- Update portal
         if hero:IsAlive() then
-            local playerData = GetPlayerData(playerID)
             local sector = playerData.sector + 1
             ShowPortalForSector(sector, wave, breakTime, playerID)
         end
@@ -109,6 +109,13 @@ function StartBreakTime(playerID, breakTime)
             local data = GetPlayerData(playerID)
             Log:info("Spawning wave " .. wave .. " for ["..playerID.."] ".. data.name)
             ShowWaveSpawnMessage(playerID, wave)
+
+            -- update wave info
+            if (wave < WAVE_COUNT) then
+                CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_next_wave_info", { nextWave=wave + 1, nextAbility1=creepsKV[WAVE_CREEPS[wave+1]].Ability1, nextAbility2=creepsKV[WAVE_CREEPS[wave+1]].Ability2 } )
+            elseif (playerData.completedWaves + 1  == WAVE_COUNT) then
+                CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_next_wave_info", { nextWave=0, nextAbility1="", nextAbility2="" } )
+            end
 
             -- spawn dat wave
             if hero:IsAlive() then
@@ -171,12 +178,6 @@ function SpawnWaveForPlayer(playerID, wave)
 
     CustomGameEventManager:Send_ServerToAllClients("SetTopBarWaveValue", {playerId=playerID, wave=wave} )
 
-    if (wave < WAVE_COUNT) then
-        CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_next_wave_info", { nextWave=wave + 1, nextAbility1=creepsKV[WAVE_CREEPS[wave+1]].Ability1, nextAbility2=creepsKV[WAVE_CREEPS[wave+1]].Ability2 } )
-    elseif (playerData.completedWaves + 1  == WAVE_COUNT) then
-        CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_next_wave_info", { nextWave=0, nextAbility1="", nextAbility2="" } )
-    end
-
     if not InterestManager:IsStarted() then
         InterestManager:StartInterestTimer()
     end
@@ -201,6 +202,14 @@ function SpawnWaveForPlayer(playerID, wave)
             Log:info("Spawning boss wave " .. WAVE_COUNT .. " for ["..playerID.."] ".. playerData.name)
             playerData.bossWaves = playerData.bossWaves + 1
             ShowBossWaveMessage(playerID, playerData.bossWaves)
+
+            -- update wave info
+            if (wave < WAVE_COUNT) then
+                CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_next_wave_info", { nextWave=wave + 1, nextAbility1=creepsKV[WAVE_CREEPS[wave+1]].Ability1, nextAbility2=creepsKV[WAVE_CREEPS[wave+1]].Ability2 } )
+            elseif (playerData.completedWaves + 1  == WAVE_COUNT) then
+                CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_next_wave_info", { nextWave=0, nextAbility1="", nextAbility2="" } )
+            end
+
             SpawnWaveForPlayer(playerID, WAVE_COUNT) -- spawn dat boss wave
             return
         end
