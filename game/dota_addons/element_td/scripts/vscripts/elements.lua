@@ -153,20 +153,14 @@ function ApplyDamageAmplification(damage, creep)
 	return round(newDamage)
 end
 
---modifies damages from modifier registered in TOWER_MODIFIERS
+-- Handles blacksmith damage increasing for abilities
 function ApplyAbilityDamageFromModifiers(damage, attacker)
-	local baseDamage = damage
-	for mod, data in pairs(TOWER_MODIFIERS) do
-		if attacker:HasModifier(mod) then
-			if data.bonus_ability_damage then
-				damage = damage + data.bonus_ability_damage
-			end
-			if data.bonus_ability_damage_percent then
-				damage = damage + ((data.bonus_ability_damage_percent / 100) * baseDamage)
-			end
-		end
+	local newDamage = damage
+	local fire_up = attacker:FindModifierByName("modifier_fire_up")
+	if fire_up then
+		newDamage = newDamage + (damage * fire_up.damage_bonus * 0.01)
 	end
-	return round(damage)
+	return round(newDamage)
 end
 
 -- applies the armor modifier based on the current difficulty
