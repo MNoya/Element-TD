@@ -33,12 +33,16 @@ function IsBuilder( entIndex ) {
     return (CustomNetTables.GetTableValue( "builders", entIndex.toString()))
 }
 
+var cameraDistance = 1500
+GameUI.SetCameraDistance( cameraDistance )
+
 // Main mouse event callback
 GameUI.SetMouseCallback( function( eventName, arg ) {
     var CONSUME_EVENT = true;
     var CONTINUE_PROCESSING_EVENT = false;
     var LEFT_CLICK = (arg === 0)
     var RIGHT_CLICK = (arg === 1)
+    var MID_CLICK = (arg === 2)
 
     if ( GameUI.GetClickBehaviors() !== CLICK_BEHAVIORS.DOTA_CLICK_BEHAVIOR_NONE )
         return CONTINUE_PROCESSING_EVENT;
@@ -59,6 +63,22 @@ GameUI.SetMouseCallback( function( eventName, arg ) {
         else if (RIGHT_CLICK) 
             return OnRightButtonPressed(); 
         
+
+        // Middle-click is reset distance.
+        if (MID_CLICK)
+        {
+            cameraDistance = 1500;
+            GameUI.SetCameraDistance( cameraDistance )
+            return CONSUME_EVENT;
+        }
     }
+
+    if ( eventName === "wheeled" )
+    {
+        arg == 1 ? cameraDistance -= 10 : cameraDistance += 10;
+        GameUI.SetCameraDistance( cameraDistance )
+        return CONSUME_EVENT;  
+    }
+
     return CONTINUE_PROCESSING_EVENT;
 } );
