@@ -6710,7 +6710,7 @@
 	    // Visual
 	    //-----------------------------
 	    "Model"                     "models/heroes/morphling/morphling.vmdl"
-	    "ModelScale"                "0.9"
+	    "ModelScale"                "1.0"
 	    "ModelRotation"             "90"
 	    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_frost_radiant.vmdl"
 	    "PedestalModelScale"        "0.7"
@@ -7483,7 +7483,7 @@
 		// Visual
 	    //-----------------------------
 	    "Model"                     "models/heroes/morphling/morphling.vmdl"
-	    "ModelScale"                "1.1"
+	    "ModelScale"                "1.2"
 	    "ModelRotation"             "90"
 	    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_frost_radiant.vmdl"
 	    "PedestalModelScale"        "0.7"
@@ -8003,7 +8003,7 @@
 		// Visual
 	    //-----------------------------
 	    "Model"                     "models/heroes/morphling/morphling.vmdl"
-	    "ModelScale"                "1.0"
+	    "ModelScale"                "1.1"
 	    "ModelRotation"             "90"
 	    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_frost_radiant.vmdl"
 	    "PedestalModelScale"        "0.7"
@@ -8089,7 +8089,7 @@
 	    // Visual
 	    //-----------------------------
 	    "Model"                     "models/heroes/morphling/morphling.vmdl"
-	    "ModelScale"                "0.8"
+	    "ModelScale"                "0.9"
 	    "ModelRotation"             "90"
 	    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_frost_radiant.vmdl"
 	    "PedestalModelScale"        "0.7"

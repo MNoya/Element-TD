@@ -261,16 +261,19 @@ function ElementTD:CheckGameEnd()
     local endGame = true
     for k, ply in pairs(playerIDs) do
         local playerData = GetPlayerData(ply)
-        print(#playerIDs, playerData.health, playerData.completedWaves)
-        if playerData.health ~= 0 or (playerData.health ~= 0 and playerData.completedWaves < WAVE_COUNT and EXPRESS_MODE) then
-            endGame = false
+        print(#playerIDs, playerData.health, playerData.completedWaves, WAVE_COUNT)
+        -- If theres a player still alive and hasn't completed the game
+        if playerData.health ~= 0 then
+            if (playerData.completedWaves < WAVE_COUNT) then
+                endGame = false
+            end
         end
     end
     if not endGame then
         print("Players are still playing the game")
         return
     end
-    local teamWinner = DOTA_TEAM_BADGUYS
+    local teamWinner = DOTA_TEAM_NEUTRALS
     if #playerIDs == 1 then
         for k, ply in pairs(playerIDs) do
             local hero = self.vPlayerIDToHero[ply]
@@ -324,6 +327,9 @@ function ElementTD:CheckGameEnd()
     if endGame then
         END_TIME = GetSystemDate() .. " " .. GetSystemTime()
         Log:info("Game end condition reached. Ending game in 5 seconds.")
+        if teamWinner == DOTA_TEAM_NEUTRALS then
+            GameRules:SendCustomMessage("#etd_end_message_defeat", 0, 0)
+        end    
         GameRules:SendCustomMessage("#etd_end_message", 0, 0)
         Timers:CreateTimer(5, function()
             GameRules:SetGameWinner( teamWinner )

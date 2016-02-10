@@ -316,7 +316,6 @@ end
 
 function ShowPortalForSector(sector, wave, time, playerID)
     local element = string.gsub(creepsKV[WAVE_CREEPS[wave]].Ability1, "_armor", "")
-    print("Portal: ",sector, element)
     local portal = SectorPortals[sector]
     local origin = portal:GetAbsOrigin()
     origin.z = origin.z - 200

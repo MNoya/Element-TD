@@ -100,6 +100,7 @@
         "DOTA_Custom6"                              "Lava" //Red
 
         "custom_end_screen_victory_message" "{s:winning_team_name} Wins!"
+        "custom_end_screen_defeat_message" "You lost!"
 
         "error_not_enough_gold"                     "Not Enough Gold"
         "error_not_enough_resource"                 "Not Enough Resource"

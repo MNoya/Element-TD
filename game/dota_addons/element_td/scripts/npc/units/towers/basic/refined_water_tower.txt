@@ -3,7 +3,7 @@
 	// Visual
     //-----------------------------
     "Model"                     "models/heroes/morphling/morphling.vmdl"
-    "ModelScale"                "1.0"
+    "ModelScale"                "1.1"
     "ModelRotation"             "90"
     "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_frost_radiant.vmdl"
     "PedestalModelScale"        "0.7"

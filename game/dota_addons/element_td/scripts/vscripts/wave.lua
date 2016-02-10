@@ -103,7 +103,6 @@ function Wave:SpawnWave()
 					ClosePortalForSector(self.playerID, sector)
 					if GameSettings:GetEndless() == "Endless" then
 						playerData.nextWave = playerData.nextWave + 1
-						print(playerData.nextWave)
 						-- Boss Waves
 				        if playerData.nextWave > WAVE_COUNT and not EXPRESS_MODE then
 				            Log:info("Spawning boss wave " .. WAVE_COUNT .. " for ["..self.playerID.."] ".. playerData.name)

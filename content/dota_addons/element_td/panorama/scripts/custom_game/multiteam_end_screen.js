@@ -33,23 +33,30 @@
   var endScreenVictory = $( "#EndScreenVictory" );
   if ( endScreenVictory )
   {
-    var winString = $.Localize( winningTeamDetails.team_name );
-
-    // Adjust the endscreen to the player name if its a single player team
-    var playersOnWinningTeam = Game.GetPlayerIDsOnTeam( winningTeamId )
-    if (playersOnWinningTeam.length == 1)
+    if (winningTeamDetails.team_id == DOTATeam_t.DOTA_TEAM_NEUTRALS)
     {
-      var playerID = playersOnWinningTeam[0]
-      winString = Players.GetPlayerName( playerID )
+      endScreenVictory.text = $.Localize("custom_end_screen_defeat_message")
     }
-    
-    endScreenVictory.SetDialogVariable( "winning_team_name", winString );
-
-    if ( GameUI.CustomUIConfig().team_colors )
+    else
     {
-      var teamColor = GameUI.CustomUIConfig().team_colors[ winningTeamId ];
-      teamColor = teamColor.replace( ";", "" );
-      endScreenVictory.style.color = teamColor + ";";
+      var winString = $.Localize( winningTeamDetails.team_name );
+      
+      // Adjust the endscreen to the player name if its a single player team
+      var playersOnWinningTeam = Game.GetPlayerIDsOnTeam( winningTeamId )
+      if (playersOnWinningTeam.length == 1)
+      {
+        var playerID = playersOnWinningTeam[0]
+        winString = Players.GetPlayerName( playerID )
+      }
+      
+      endScreenVictory.SetDialogVariable( "winning_team_name", winString );
+
+      if ( GameUI.CustomUIConfig().team_colors )
+      {
+        var teamColor = GameUI.CustomUIConfig().team_colors[ winningTeamId ];
+        teamColor = teamColor.replace( ";", "" );
+        endScreenVictory.style.color = teamColor + ";";
+      }
     }
   }
 
