@@ -30,7 +30,7 @@ function FloodingTower:OnAttackLanded(keys)
     ParticleManager:SetParticleControl(particle, 1, Vector(particleRadius, particleRadius, particleRadius))
     ParticleManager:SetParticleControl(particle, 3, Vector(0, 0, 0))
 
-    local damage = ApplyAbilityDamageFromModifiers(self.napalmDamage, self.tower)
+    local damage = ApplyAbilityDamageFromModifiers(self.damage, self.tower)
     DamageEntitiesInArea(position, self.fullAOE, self.tower, damage)
 
     -- Repeat the effect for the duration
