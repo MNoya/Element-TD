@@ -31,7 +31,7 @@
 					"Event"				"OnFaerieFireExpire"
 				}
 			}
-			"EffectName"		"particles/units/heroes/hero_oracle/oracle_purifyingflames.vpcf"
+			"EffectName"		"particles/custom/towers/enchantment/debuff.vpcf"
 			"EffectAttachType"	"follow_origin"
 		}
 	}
