@@ -10,6 +10,10 @@ function InterestManager:StartInterestTimer()
 	Log:debug("Started interest timer")
 	InterestManager.started = true
 
+	if GameSettings:GetEndless() == "Endless" then
+		INTEREST_INTERVAL = 10
+	end
+
 	Timers:CreateTimer(INTEREST_INTERVAL, function()
 		for _,plyID in pairs(playerIDs) do
 			if plyID then
