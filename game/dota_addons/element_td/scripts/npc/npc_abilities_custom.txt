@@ -2971,7 +2971,33 @@
 						"EffectName"		"particles/units/heroes/hero_meepo/meepo_geostrike.vpcf"
 						"EffectAttachType"	"follow_origin"
 					}
-				}	
+	
+					// Ugly hack
+					"RunScript"
+					{
+						"ScriptFile"	"mechanics/slow.lua"
+						"Function"		"ApplySlowLevel"
+						"Name"			"modifier_sludge_slow"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"mechanics/slow.lua"
+						"Function"		"RemoveSlowLevel"
+						"Name"			"modifier_sludge_slow"
+					}
+				}
+			}
+	
+			"modifier_sludge_slow1"
+			{
+				"IsHidden" "1"
+			}
+			"modifier_sludge_slow2"
+			{
+				"IsHidden" "1"
 			}
 		}
 	
@@ -3068,7 +3094,33 @@
 						"EffectName"		"particles/units/heroes/hero_phoenix/phoenix_fire_spirit_burn.vpcf"
 						"EffectAttachType"	"follow_origin"
 					}
+					
+					// Ugly hack
+					"RunScript"
+					{
+						"ScriptFile"	"mechanics/slow.lua"
+						"Function"		"ApplySlowLevel"
+						"Name"			"modifier_explode_slow"
+					}
 				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"mechanics/slow.lua"
+						"Function"		"RemoveSlowLevel"
+						"Name"			"modifier_explode_slow"
+					}
+				}
+			}
+	
+			"modifier_explode_slow1"
+			{
+				"IsHidden" "1"
+			}
+			"modifier_explode_slow2"
+			{
+				"IsHidden" "1"
 			}
 		}
 	
@@ -3368,7 +3420,36 @@
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
 				}
+				
+				// Ugly hack
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"mechanics/slow.lua"
+						"Function"		"ApplySlowLevel"
+						"Name"			"modifier_gaias_wrath_slow"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"mechanics/slow.lua"
+						"Function"		"RemoveSlowLevel"
+						"Name"			"modifier_gaias_wrath_slow"
+					}
+				}
 			}
+			"modifier_gaias_wrath_slow1"
+			{
+				"IsHidden" "1"
+			}
+			"modifier_gaias_wrath_slow2"
+			{
+				"IsHidden" "1"
+			}
+	
 			"modifier_gaias_wrath_damage"
 			{
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
@@ -3811,6 +3892,34 @@
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
 				}
+	
+				// Ugly hack
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"mechanics/slow.lua"
+						"Function"		"ApplySlowLevel"
+						"Name"			"modifier_tornado_slow"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"mechanics/slow.lua"
+						"Function"		"RemoveSlowLevel"
+						"Name"			"modifier_tornado_slow"
+					}
+				}
+			}
+			"modifier_tornado_slow1"
+			{
+				"IsHidden" "1"
+			}
+			"modifier_tornado_slow2"
+			{
+				"IsHidden" "1"
 			}
 		}
 		"AbilitySpecial"

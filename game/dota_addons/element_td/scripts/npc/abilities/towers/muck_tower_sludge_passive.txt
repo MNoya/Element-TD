@@ -50,7 +50,33 @@
 					"EffectName"		"particles/units/heroes/hero_meepo/meepo_geostrike.vpcf"
 					"EffectAttachType"	"follow_origin"
 				}
-			}	
+
+				// Ugly hack
+				"RunScript"
+				{
+					"ScriptFile"	"mechanics/slow.lua"
+					"Function"		"ApplySlowLevel"
+					"Name"			"modifier_sludge_slow"
+				}
+			}
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"mechanics/slow.lua"
+					"Function"		"RemoveSlowLevel"
+					"Name"			"modifier_sludge_slow"
+				}
+			}
+		}
+
+		"modifier_sludge_slow1"
+		{
+			"IsHidden" "1"
+		}
+		"modifier_sludge_slow2"
+		{
+			"IsHidden" "1"
 		}
 	}
 

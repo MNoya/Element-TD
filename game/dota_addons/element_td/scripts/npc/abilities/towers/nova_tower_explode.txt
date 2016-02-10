@@ -72,7 +72,33 @@
 					"EffectName"		"particles/units/heroes/hero_phoenix/phoenix_fire_spirit_burn.vpcf"
 					"EffectAttachType"	"follow_origin"
 				}
+				
+				// Ugly hack
+				"RunScript"
+				{
+					"ScriptFile"	"mechanics/slow.lua"
+					"Function"		"ApplySlowLevel"
+					"Name"			"modifier_explode_slow"
+				}
 			}
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"mechanics/slow.lua"
+					"Function"		"RemoveSlowLevel"
+					"Name"			"modifier_explode_slow"
+				}
+			}
+		}
+
+		"modifier_explode_slow1"
+		{
+			"IsHidden" "1"
+		}
+		"modifier_explode_slow2"
+		{
+			"IsHidden" "1"
 		}
 	}
 

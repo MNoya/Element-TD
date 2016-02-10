@@ -37,7 +37,36 @@
 			{
 				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
 			}
+			
+			// Ugly hack
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"mechanics/slow.lua"
+					"Function"		"ApplySlowLevel"
+					"Name"			"modifier_gaias_wrath_slow"
+				}
+			}
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"mechanics/slow.lua"
+					"Function"		"RemoveSlowLevel"
+					"Name"			"modifier_gaias_wrath_slow"
+				}
+			}
 		}
+		"modifier_gaias_wrath_slow1"
+		{
+			"IsHidden" "1"
+		}
+		"modifier_gaias_wrath_slow2"
+		{
+			"IsHidden" "1"
+		}
+
 		"modifier_gaias_wrath_damage"
 		{
 			"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"

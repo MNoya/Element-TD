@@ -32,6 +32,34 @@
 			{
 				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
 			}
+
+			// Ugly hack
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"mechanics/slow.lua"
+					"Function"		"ApplySlowLevel"
+					"Name"			"modifier_tornado_slow"
+				}
+			}
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"mechanics/slow.lua"
+					"Function"		"RemoveSlowLevel"
+					"Name"			"modifier_tornado_slow"
+				}
+			}
+		}
+		"modifier_tornado_slow1"
+		{
+			"IsHidden" "1"
+		}
+		"modifier_tornado_slow2"
+		{
+			"IsHidden" "1"
 		}
 	}
 	"AbilitySpecial"
