@@ -158,6 +158,10 @@ function SpawnEntity(entityClass, playerID, position)
             local particle = ParticleManager:CreateParticle(GetUnitKeyValue(entityClass, "ParticleEffect"), 2, entity) 
             ParticleManager:SetParticleControlEnt(particle, 0, entity, 5, "attach_origin", entity:GetOrigin(), true)
         end
+
+        -- Adjust slows multiplicatively
+        entity:AddNewModifier(entity, nil, "modifier_slow_adjustment", {})
+
         return entity
     else
         Log:error("Attemped to create unknown creep type: " .. entityClass)

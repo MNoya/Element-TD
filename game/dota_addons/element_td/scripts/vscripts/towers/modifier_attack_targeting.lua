@@ -24,6 +24,7 @@ end
 
 function modifier_attack_targeting:OnIntervalThink()
     local unit = self:GetParent()
+    if not unit:HasModifier("modifier_attack_disabled") then return end
     local findRadius = unit:GetAttackRange() + unit:GetHullRadius()
     local attackTarget = unit:GetAttackTarget()
     
