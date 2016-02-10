@@ -31,37 +31,18 @@ end
 function RunicTower:OnAttack(keys)
     local target = keys.target
     local caster = keys.caster
-    local creeps = GetCreepsInArea(target:GetOrigin(), self.halfAOE)
-    if self.tower:HasModifier("modifier_magic_attack") then
+
+    if self.tower:HasModifier("modifier_magic_attack") and not self.tower.skip_attack then
+        self.tower.skip_attack = true --Skips the next OnAttack events
+        local targets = 0
+        local creeps = GetCreepsInArea(target:GetAbsOrigin(), self.halfAOE)
         for _, creep in pairs(creeps) do
             if creep:IsAlive() and creep:entindex() ~= target:entindex() then
-                --self.tower:PerformAttack(creep, false, false, true, true, false)
-                local info = 
-                {
-                    Target = creep,
-                    Source = caster,
-                    Ability = keys.ability,
-                    EffectName = "particles/custom/towers/runic/attack.vpcf",
-                    iMoveSpeed = self.tower:GetProjectileSpeed(),
-                    vSourceLoc= caster:GetAbsOrigin(),
-                    bDrawsOnMinimap = false,
-                    bDodgeable = true,
-                    bIsAttack = false,
-                    bVisibleToEnemies = true,
-                    bReplaceExisting = false,
-                    flExpireTime = GameRules:GetGameTime() + 10,
-                    bProvidesVision = true,
-                    iVisionRadius = 400,
-                    iVisionTeamNumber = caster:GetTeamNumber()
-                }
-                projectile = ProjectileManager:CreateTrackingProjectile(info)
+                self.tower:PerformAttack(creep, false, false, true, true, true)
             end
         end
+        self.tower.skip_attack = false
     end
-end
-
-function RunicTower:OnProjectileHit(keys)
-    self:OnAttackLanded({target = keys.target, isBonus = true})
 end
 
 function RunicTower:OnAttackLanded(keys)

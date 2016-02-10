@@ -34,15 +34,16 @@ function LaserTower:OnAttack(keys)
     end
 
     damage = damage * (1 - reduction)
-    PopupLightDamage(self.tower, math.floor(damage))
-    DamageEntity(keys.target, self.tower, damage)
+    local damage_done = DamageEntity(keys.target, self.tower, damage)
+    PopupLightDamage(self.tower, math.floor(damage_done))
+    
 end
 
 function LaserTower:OnCreated()
     self.ability = AddAbility(self.tower, "laser_tower_laser", self.tower:GetLevel())
     self.aoe = GetAbilitySpecialValue("laser_tower_laser", "aoe")
     self.damage_reduction = GetAbilitySpecialValue("laser_tower_laser", "damage_reduction") / 100
-    self.damage_reduction_cap = GetAbilitySpecialValue("laser_tower_laser", "damage_reduction_cap")
+    self.damage_reduction_cap = GetAbilitySpecialValue("laser_tower_laser", "damage_reduction_cap") / 100
 end
 
 function LaserTower:OnAttackLanded(keys) end

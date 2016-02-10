@@ -25,7 +25,7 @@ end
 
 function modifier_attack_targeting:OnIntervalThink()
     local unit = self:GetParent()
-    if unit:HasModifier("modifier_attack_disabled") then return end
+    if unit:HasModifier("modifier_disarmed") then return end
     local findRadius = unit:GetAttackRange() + unit:GetHullRadius()
     local attackTarget = unit:GetAttackTarget()
     
@@ -33,6 +33,7 @@ function modifier_attack_targeting:OnIntervalThink()
     if unit:AttackReady() and not unit:IsAttacking() then
         local target = GetTowerTarget(unit, unit.target_type, findRadius)
         if target ~= attackTarget then
+            print("ATTACK!!!")
             unit:MoveToTargetToAttack(target)
         end
     end

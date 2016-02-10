@@ -19,36 +19,29 @@ nil)
 
 function HailTower:OnStormThink()
     if not self.tower:HasModifier("modifier_disarmed") then
-        if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() and #GetCreepsInArea(self.tower:GetOrigin(), self.tower:GetAttackRange()) > 0 then
+        if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() and #GetCreepsInArea(self.tower:GetAbsOrigin(), self.findRadius) > 0 then
             self.tower:CastAbilityImmediately(self.ability, 1)
         end
     end
 end
 
-function HailTower:OnAttackStart(keys)
+function HailTower:OnAttack(keys)
     local target = keys.target
-    local creeps = GetCreepsInArea(target:GetOrigin(), 350)
-    if self.tower:HasModifier("modifier_storm") then
+    
+    if self.tower:HasModifier("modifier_storm") and not self.tower.skip_attack then
+        self.tower.skip_attack = true --Skips the next OnAttack events
         local targets = 0
+        local creeps = GetCreepsInArea(target:GetAbsOrigin(), 350)
         for _, creep in pairs(creeps) do
             if creep:IsAlive() and creep:entindex() ~= target:entindex() then
                 self.tower:PerformAttack(creep, false, false, true, true, true)
-
-                local distance = (creep:GetOrigin() - self.attackOrigin):Length()
-                local time = distance / self.projectileSpeed
-                Timers:CreateTimer(DoUniqueString("HailTowerDelay" .. creep:entindex()), {
-                    endTime = time - 0.1,
-                    callback = function()
-                        self:OnAttackLanded({target_entities = {[1] = creep}})
-                    end
-                })
-
                 targets = targets + 1
                 if targets == self.bonusTargets then
                     break
                 end
             end
         end
+        self.tower.skip_attack = false
     end
 end
 
@@ -74,6 +67,7 @@ function HailTower:OnCreated()
     self.projectileSpeed = tonumber(GetUnitKeyValue(self.towerClass, "ProjectileSpeed"))
     self.attackOrigin = self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_attack1"))
     self.bonusTargets = GetAbilitySpecialValue("hail_tower_storm", "targets") - 1
+    self.findRadius = self.tower:GetAttackRange() + self.tower:GetHullRadius()
 end
 
 RegisterTowerClass(HailTower, HailTower.className)
