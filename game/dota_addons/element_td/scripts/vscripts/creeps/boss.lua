@@ -56,6 +56,10 @@ function CreepBoss:OnDeath()
     local playerID = creep.playerID
     local creepClass = self.creepClass
 
+    if not creep.random_ability == "creep_ability_undead" then
+        return
+    end
+
     local newCreep = CreateUnitByName(creepClass, creep:GetAbsOrigin() , false, nil, nil, DOTA_TEAM_NEUTRALS)
     newCreep.class = creepClass
     newCreep.playerID = creep.playerID
@@ -101,6 +105,10 @@ function CreepBoss:UndeadCreepRespawn()
     local wave = creep.waveObject:GetWaveNumber()
     local creepClass = WAVE_CREEPS[wave]
 
+    if not creep.random_ability == "creep_ability_undead" then
+        return
+    end
+
     creep:RemoveNoDraw()
     creep:RemoveModifierByName("modifier_invulnerable")
     creep:RemoveModifierByName("modifier_invisible_etd")
@@ -125,9 +133,13 @@ function CreepBoss:UndeadCreepRespawn()
 end
 
 -- Swarm
-function CreepBoss:OnTakeDamage(keys)
+function CreepBoss:OnTakeDamage(keys)   
     if self.creep:GetHealth() > 0 and self.creep:GetHealthPercent() <= 50 and not self.creep.isSwarm then
     
+        if not self.creep.random_ability == "creep_ability_swarm" then
+            return
+        end
+
         local swarm = SpawnEntity(self.creep:GetUnitName(), self.creep.playerID, self.creep:GetOrigin())
         swarm.class = creepClass
         swarm.playerID = self.creep.playerID
@@ -147,9 +159,6 @@ function CreepBoss:OnTakeDamage(keys)
         self.creep:SetMaxHealth(newMaxHealth)
         self.creep:SetBaseMaxHealth(newMaxHealth)
         self.creep:SetHealth(newMaxHealth)
-
-        -- Heal on split
-        self:HealNearbyCreeps({ability=self.creep:FindAbilityByName("creep_ability_heal"), aoe=300, heal_amount=20})
 
         local newScale = self.creep:GetModelScale()*0.8
 
