@@ -39,22 +39,47 @@
 			<Panel id="ScoreContainer" class="ScoreCol_Score ScoreboardPanel">
 				<Label id="Score" text="0" />
 			</Panel>
+			<Panel id="NetworthContainer" class="ScoreCol_Networth ScoreboardPanel">
+				<Label id="Networth" text="0" />
+			</Panel>
 			<Panel id="LivesContainer" class="ScoreCol_Lives ScoreboardPanel">
 				<Label id="Lives" text="50" />
-			</Panel>
-			<Panel id="WaveContainer" class="ScoreCol_Wave ScoreboardPanel">
-				<Label id="Wave" text="0" />
 			</Panel>
 			<Panel id="KillsContainer" class="ScoreCol_Kills ScoreboardPanel">
 				<Label id="Kills" text="0" />
 			</Panel>
-			<Panel id="TowersContainer" class="ScoreCol_Towers ScoreboardPanel">
-				<Label id="Towers" text="0" />
-			</Panel>
-			<Panel id="DifficultyContainer" class="ScoreCol_Difficulty ScoreboardPanel">
+			<!--<Panel id="DifficultyContainer" class="ScoreCol_Difficulty ScoreboardPanel">
 				<Label id="Difficulty" text="-"/>
+			</Panel>-->
+			<Panel id="ElementsContainer" class="ScoreCol_Elements ScoreboardPanel">
+				<Panel id="ElemSubContainer">
+					<Label id="HasRandomed" class='hide' text=""/>
+					<Panel id="water" class="ElemImageAndLevel">
+						<Image class="ElementImage" src="file://{images}/spellicons/elements/water.png"/>
+						<Label id="water_level" text=""/>
+					</Panel>
+					<Panel id="fire" class="ElemImageAndLevel">
+						<Image class="ElementImage" src="file://{images}/spellicons/elements/fire.png"/>
+						<Label id="fire_level" text=""/>
+					</Panel>
+					<Panel id="nature" class="ElemImageAndLevel">
+						<Image class="ElementImage" src="file://{images}/spellicons/elements/nature.png"/>	
+						<Label id="nature_level" text=""/>
+					</Panel>
+					<Panel id="earth" class="ElemImageAndLevel">
+						<Image class="ElementImage" src="file://{images}/spellicons/elements/earth.png"/>
+						<Label id="earth_level" text=""/>
+					</Panel>
+					<Panel id="light" class="ElemImageAndLevel">
+						<Image class="ElementImage" src="file://{images}/spellicons/elements/light.png"/>
+						<Label id="light_level" text=""/>
+					</Panel>
+					<Panel id="dark" class="ElemImageAndLevel">
+						<Image class="ElementImage" src="file://{images}/spellicons/elements/dark.png"/>
+						<Label id="dark_level" text=""/>
+					</Panel>
+				</Panel>
 			</Panel>
-			<Panel id="ElementsContainer" class="ScoreCol_Elements ScoreboardPanel"/>
 		</Panel>
 	</Panel>
 </root>

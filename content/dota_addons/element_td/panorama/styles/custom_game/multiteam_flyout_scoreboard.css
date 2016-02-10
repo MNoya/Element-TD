@@ -11,7 +11,7 @@
     padding: 0px;
 	background-color: #666666CC;
 	
-    transform: translatex( -650px );
+    transform: translatex( -700px );
     transition-property: transform;
     transition-duration: 0.1s;
 }
@@ -26,7 +26,6 @@
     flow-children: down;
     horizontal-align: center;
 }
-
 
 .Legend
 {
@@ -218,6 +217,7 @@
 #LevelContainer,
 #KillsContainer,
 #DeathsContainer,
+#NetworthContainer,
 #AssistsContainer
 {
 	height: 100%;
@@ -273,6 +273,7 @@
 #Difficulty,
 #Kills,
 #Deaths,
+#Networth,
 #Assists
 {
 	vertical-align: center;
@@ -387,7 +388,9 @@
 .is_local_player #Kills,
 .is_local_player #Assists,
 .is_local_player #Level,
-.is_local_player #HeroName
+.is_local_player #HeroName,
+.is_local_player #Networth,
+.is_local_player #HasRandomed
 {
 	color: white;
 }
@@ -423,9 +426,15 @@
 	height: 100%;
 }
 
-.ScoreCol_Score
+.ScoreCol_Score, .ScoreCol_Networth
 {
 	width: 100px;
+	text-align: center;
+}
+
+.ScoreCol_Elements
+{
+	width: 170px;
 	text-align: center;
 }
 
@@ -480,4 +489,57 @@
 	color: white;
 	text-shadow: none;
 	font-weight: bold;
+}
+
+.ElementImage
+{
+	height: 22px;
+	width: 22px;
+	vertical-align: center;
+}
+
+#ElemSubContainer
+{
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: right;
+}
+
+#HasRandomed
+{
+	height: 22px;
+	width: 18px;
+	font-size: 20px;
+	background-color: #000;
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+}
+
+.ElemImageAndLevel
+{
+	width: 22px;
+	margin: 0px 1px 0px 2px;
+}
+
+#water_level,
+#fire_level,
+#nature_level,
+#earth_level,
+#light_level,
+#dark_level
+{
+	color: #FFF;
+	font-size: 15px;
+	horizontal-align: right;
+	vertical-align: bottom;
+	margin-top: 13px;
+	margin-right: -2px;
+	text-shadow: 2px 2px 2px black;
+}
+
+.hide
+{
+    opacity: 0;
+    visibility: collapse;
 }

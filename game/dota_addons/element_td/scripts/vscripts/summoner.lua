@@ -227,7 +227,8 @@ end
 function BuyPureEssence( keys )
 	local summoner = keys.caster
     local item = keys.ability
-	local playerID = summoner:GetOwner():GetPlayerID()
+	local playerID = summoner:GetPlayerOwnerID()
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 	local playerData = GetPlayerData(playerID)
 	local elements = playerData.elements
 

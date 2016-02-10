@@ -146,6 +146,7 @@ function GameSettings:EnableRandomForPlayer(playerID)
         SendEssenceMessage(playerID, "#etd_random_toggle_enable")
         BuyElement(playerID, getRandomElement(0))
         UpdatePlayerSpells(playerID)
+        UpdateScoreboard(playerID)
         CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "etd_player_random_enable", {} )
     else
     	if playerData.completedWaves >= 5 then

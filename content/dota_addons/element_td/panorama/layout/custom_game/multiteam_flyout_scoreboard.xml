@@ -17,11 +17,10 @@
 					<Label id="RadiantLabel" class="TeamLabel" text="Builders"/>
 				</Panel>
 				<Label class="LegendPanel ScoreCol_Score" text="Score" />
+				<Label class="LegendPanel ScoreCol_Networth" text="Networth" />
 				<Label class="LegendPanel ScoreCol_Lives" text="Lives" />
-				<Label class="LegendPanel ScoreCol_Wave" text="Wave" />
 				<Label class="LegendPanel ScoreCol_Kills" text="Kills" />
-				<Label class="LegendPanel ScoreCol_Towers" text="Towers" />
-				<Label class="LegendPanel ScoreCol_Difficulty" text="Difficulty" />
+				<Label class="LegendPanel ScoreCol_Elements" text="Elements" />
 			</Panel>
 			<Panel hittest="false" id="_dynamic_team_2" class="FlyoutTeam">
 				<Panel class="FlyoutTeamData">

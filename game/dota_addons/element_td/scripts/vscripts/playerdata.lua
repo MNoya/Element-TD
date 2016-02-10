@@ -158,6 +158,7 @@ function ModifyElementValue(playerID, element, change)
     elseif playerData.elementalCount == 3 then
 		playerData.firstTriple = GetElementalOrderString(playerData.elements)
 	end
+	UpdateScoreboard(playerID)
 end
 
 function UpdateElementsHUD(playerID)
@@ -177,18 +178,21 @@ function UpdateScoreboard(playerID)
 	if not playerData then
 		return
 	end
-	local health = playerData.health
-	local towers = tablelength(playerData.towers)
-	local lumber = playerData.lumber
-	local pureEssence = playerData.pureEssence
-	local difficulty = "NA"
+	local data = {}
+	data.lives = playerData.health
+	data.towers = tablelength(playerData.towers)
+	data.lumber = playerData.lumber
+	data.pureEssence = playerData.pureEssence
+	data.difficulty = "NA"
 	if playerData.difficulty then
-		difficulty = playerData.difficulty.difficultyName
+		data.difficulty = playerData.difficulty.difficultyName
 	end
-	local gold = PlayerResource:GetGold(playerID)
-	local networth = GetPlayerNetworth(playerID)
-	local lastHits = PlayerResource:GetLastHits(playerID)
-	CustomGameEventManager:Send_ServerToAllClients( "etd_update_scoreboard", {playerID=playerID, data = {lives=health, lumber=lumber, towers=towers, pureEssence=pureEssence, difficulty=difficulty, gold=gold, lastHits=lastHits, networth = networth,}} )
+	data.gold = PlayerResource:GetGold(playerID)
+	data.networth = GetPlayerNetworth(playerID)
+	data.lastHits = PlayerResource:GetLastHits(playerID)
+	data.randomed = playerData.elementalRandom --self-random
+	data.elements = playerData.elements
+	CustomGameEventManager:Send_ServerToAllClients("etd_update_scoreboard", {playerID=playerID, data = data})
 end
 
 function UpdateElementOrbs(playerID, new_element)

@@ -69,10 +69,10 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
 
         _ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerName", playerInfo.player_name );
         _ScoreboardUpdater_SetTextSafe( playerPanel, "Level", playerInfo.player_level );
-        _ScoreboardUpdater_SetTextSafe( playerPanel, "Deaths", playerInfo.player_deaths );
-        _ScoreboardUpdater_SetTextSafe( playerPanel, "Assists", playerInfo.player_assists );
+        //_ScoreboardUpdater_SetTextSafe( playerPanel, "Deaths", playerInfo.player_deaths );
+        //_ScoreboardUpdater_SetTextSafe( playerPanel, "Assists", playerInfo.player_assists );
         _ScoreboardUpdater_SetTextSafe( playerPanel, "Score", GameUI.CustomUIConfig().playerScore[playerId] );
-        _ScoreboardUpdater_SetTextSafe( playerPanel, "Wave", GameUI.CustomUIConfig().playerWave[playerId] );
+        //_ScoreboardUpdater_SetTextSafe( playerPanel, "Wave", GameUI.CustomUIConfig().playerWave[playerId] );
         _ScoreboardUpdater_SetTextSafe( playerPanel, "Health", playerHealth[playerId] );
 
         if ( GameUI.CustomUIConfig().playerData[playerId] !== undefined )
@@ -80,11 +80,44 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
             _ScoreboardUpdater_SetTextSafe( playerPanel, "Lives", GameUI.CustomUIConfig().playerData[playerId].lives);
             _ScoreboardUpdater_SetTextSafe( playerPanel, "TeammateLumberAmount", GameUI.CustomUIConfig().playerData[playerId].lumber);
             _ScoreboardUpdater_SetTextSafe( playerPanel, "TeammateEssenceAmount", GameUI.CustomUIConfig().playerData[playerId].pureEssence);
-            _ScoreboardUpdater_SetTextSafe( playerPanel, "Towers", GameUI.CustomUIConfig().playerData[playerId].towers);
+            //_ScoreboardUpdater_SetTextSafe( playerPanel, "Towers", GameUI.CustomUIConfig().playerData[playerId].towers);
             _ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerGoldAmount", GameUI.CustomUIConfig().playerData[playerId].gold );
-            _ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerNetworth", GameUI.CustomUIConfig().playerData[playerId].networth );
+            _ScoreboardUpdater_SetTextSafe( playerPanel, "Networth", GameUI.CustomUIConfig().playerData[playerId].networth );
             _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", GameUI.CustomUIConfig().playerData[playerId].lastHits );
-            var difficulty = GameUI.CustomUIConfig().playerData[playerId].difficulty;
+            
+            var elements = GameUI.CustomUIConfig().playerData[playerId].elements
+            for (var elem in elements)
+            {
+                var level = elements[elem]
+                var elementPanel = playerPanel.FindChildTraverse( elem )
+                if (elementPanel !== null)
+                {
+                    if (level==0)
+                        elementPanel.AddClass("hide")
+                    else
+                    {
+                        elementPanel.RemoveClass("hide")
+                        var elem_level = playerPanel.FindChildTraverse( elem+"_level" )
+                        if (elem_level !== null)
+                        {
+                            elem_level.text = level
+                        }
+                    }
+                }
+            }
+
+            if (GameUI.CustomUIConfig().playerData[playerId].randomed)
+            {
+                var randomedPanel = playerPanel.FindChildTraverse( "HasRandomed" );
+                if (randomedPanel !== null)
+                {
+                    randomedPanel.RemoveClass("hide");
+                    randomedPanel.AddClass( "Random");
+                    randomedPanel.text = "R"
+                }
+            }
+
+            /*var difficulty = GameUI.CustomUIConfig().playerData[playerId].difficulty;
             var diff = "-";
             if (difficulty == "Normal")
                 diff = "N";
@@ -102,7 +135,7 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
                 diffPanel.SetHasClass( "Hard", diff == "H");
                 diffPanel.SetHasClass( "VeryHard", diff == "VH");
                 diffPanel.SetHasClass( "Insane", diff == "I");
-            }
+            }*/
         }
 
         var playerName = playerPanel.FindChildInLayoutFile( "PlayerName" );
