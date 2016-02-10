@@ -101,10 +101,8 @@ function ShowTooltip( str )
 {
 	var tooltip = tooltips[str];
 	var tooltipUI = tooltipsUI[str];
-	$.Msg(tooltipUI)
 	var title = str.replace(/(['"])/g, "\\$1");
 	tooltip = tooltip.replace(/(['"])/g, "\\$1");
-	$.Msg(tooltipUI)
 	$.DispatchEvent("DOTAShowTitleTextTooltip", tooltipUI, title, tooltip);
 }
 
@@ -125,8 +123,6 @@ function CheckAspectRatio()
 	var Aspect2 = height/r;
 
 	var AspectRatio = Aspect1 + ":" + Aspect2;
-
-	$.Msg(AspectRatio);
 	
 	// 21x9
 	if (AspectRatio == "64:27" || AspectRatio == "21:9" || AspectRatio == "43:18")

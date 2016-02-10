@@ -44,7 +44,7 @@
 
 #ElementWater
 {
-    margin-left: 4px;
+    horizontal-align: center;
     background-image: url("file://{resources}/images/custom_game/resources/water.png");
     background-size: 32px 32px;
     background-repeat: no-repeat;
@@ -52,7 +52,7 @@
 
 #ElementFire
 {
-    margin-left: 4px;
+    horizontal-align: center;
     position: 0px 32px 0px;
     background-image: url("file://{resources}/images/custom_game/resources/fire.png");
     background-size: 32px 32px;
@@ -61,7 +61,8 @@
 
 #ElementNature
 {
-    horizontal-align: center;
+    margin-right: 6px;
+    horizontal-align: right;
     background-image: url("file://{resources}/images/custom_game/resources/nature.png");
     background-size: 32px 32px;
     background-repeat: no-repeat;
@@ -69,7 +70,8 @@
 
 #ElementEarth
 {
-    horizontal-align: center;
+    horizontal-align: right;
+    margin-right: 6px;
     position: 0px 32px 0px;
     background-image: url("file://{resources}/images/custom_game/resources/earth.png");
     background-size: 32px 32px;
@@ -78,8 +80,7 @@
 
 #ElementLight
 {
-    margin-right: 6px;
-    horizontal-align: right;
+    margin-left: 4px;
     background-image: url("file://{resources}/images/custom_game/resources/light.png");
     background-size: 32px 32px;
     background-repeat: no-repeat;
@@ -87,8 +88,7 @@
 
 #ElementDark
 {
-    margin-right: 6px;
-    horizontal-align: right;
+    margin-left: 4px;    
     position: 0px 32px 0px;
     background-image: url("file://{resources}/images/custom_game/resources/dark.png");
     background-size: 32px 32px;

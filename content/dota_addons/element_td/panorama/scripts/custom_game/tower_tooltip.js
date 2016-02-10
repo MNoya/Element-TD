@@ -16,7 +16,6 @@ function ShowTowerTooltip()
     tooltip+= "<br><b>BAT: </b>"+bat+"<br><b>Range: </b>"+range
     
     var towerTable = CustomNetTables.GetTableValue( "towers", unitName)
-    $.Msg(towerTable)
     if (towerTable)
     {
         var AOE_Full = Number(towerTable.AOE_Full)

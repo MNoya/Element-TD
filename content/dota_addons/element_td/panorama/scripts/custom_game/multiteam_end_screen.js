@@ -37,7 +37,6 @@
 
     // Adjust the endscreen to the player name if its a single player team
     var playersOnWinningTeam = Game.GetPlayerIDsOnTeam( winningTeamId )
-    $.Msg(playersOnWinningTeam)
     if (playersOnWinningTeam.length == 1)
     {
       var playerID = playersOnWinningTeam[0]
