@@ -1,8 +1,7 @@
 "use strict";
 
-var INTEREST_INTERVAL = 15;
+var INTEREST_INTERVAL = 0;
 var INTEREST_RATE = 0.02;
-
 var INTEREST_REFRESH = 0.05;
 
 var interest = $( "#Interest" );
@@ -28,10 +27,10 @@ function UpdateInterest() {
 
 function DisplayInterest( table ) {
 	timerStart = Game.GetGameTime();
+	INTEREST_INTERVAL = table.interval;
 	timerEnd = Game.GetGameTime() + INTEREST_INTERVAL;
 	interest.visible = true;
 	enabled = table.enabled;
-	INTEREST_INTERVAL = table.interval;
 	INTEREST_RATE = table.rate;
 	if (!enabled)
 		interestBarGold.style["width"] = "0%";
