@@ -9,7 +9,8 @@ end
 if not IsServer() then return end
 
 function modifier_attack_targeting:DeclareFunctions()
-    return { MODIFIER_PROPERTY_DISABLE_AUTOATTACK, }
+    return { MODIFIER_PROPERTY_DISABLE_AUTOATTACK, 
+             MODIFIER_EVENT_ON_ATTACK }
 end
 
 function modifier_attack_targeting:GetDisableAutoAttack( params )
@@ -35,12 +36,10 @@ function modifier_attack_targeting:OnIntervalThink()
             unit:MoveToTargetToAttack(target)
         end
     end
+end
 
-    --[[ This would only change the target if the currently acquired isn't valid anymore
-    if unit:AttackReady() and not unit:IsAttacking() and (not attackTarget or unit:GetRangeToUnit(attackTarget) > findRadius) then
-        local target = GetTowerTarget(unit, unit.target_type, findRadius)
-        if target then
-            unit:MoveToTargetToAttack(target)
-        end
-    end]]
+function modifier_attack_targeting:OnAttack( params )
+    if params.attacker == self:GetParent() then
+        self:GetParent():Interrupt()
+    end
 end
