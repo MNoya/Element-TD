@@ -77,8 +77,9 @@ function ShowBossWaveMessage(playerID, waveNumber)
     Notifications:Top(playerID, {image="file://{images}/spellicons/osfrog.png", class="IcefrogFaceNoSpace", continue=true, duration=5})    
 end
 
-function ShowWarnMessage(playerID, msg)
+function ShowWarnMessage(playerID, msg, duration)
+    duration = duration or 2
     Notifications:ClearBottom(playerID)
-    Notifications:Bottom(playerID, {text=msg, style={color='#E62020'}, duration=2})
+    Notifications:Bottom(playerID, {text=msg, style={color='#E62020'}, duration=duration})
     EmitSoundOnClient("General.Cancel", PlayerResource:GetPlayer(playerID))
 end

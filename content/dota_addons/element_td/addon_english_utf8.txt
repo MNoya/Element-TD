@@ -831,7 +831,10 @@
          // ******************** ITEMS ********************
         // Summoner
         "DOTA_Tooltip_ability_item_buy_pure_essence"                                      "Buy Pure Essence"
-        "DOTA_Tooltip_ability_item_buy_pure_essence_Description"                          "Trade <font color='#008000'>1 Lumber</font> for <font color='#00BFFF'>1 Pure Essence</font>.\nEssence is used to evolve a Level 3 Single-Element Tower, or to build a Periodic Tower if you have all 6 Elements.\nYou also get <font color='#F0BA36'>bonus Gold</font> in return, based on the current wave and difficulty."
+        "DOTA_Tooltip_ability_item_buy_pure_essence_Description"                          "Trade <font color='#008000'>1 Lumber</font> for <font color='#00BFFF'>1 Pure Essence</font>.\n\nEssence is used to evolve a Level 3 Single-Element Tower, or to build a Periodic Tower if you have all 6 Elements.\nYou also get <font color='#F0BA36'>bonus Gold</font> in return, based on the current wave and difficulty."
+
+        "DOTA_Tooltip_ability_item_buy_pure_essence_disabled"                             "Buy Pure Essence Disabled"
+        "DOTA_Tooltip_ability_item_buy_pure_essence_disabled_Description"                 "Trade <font color='#008000'>1 Lumber</font> for <font color='#00BFFF'>1 Pure Essence</font>.\n<font color='#F0BA36'>Requires: </font>At least Level 1 on every Element or Level 3 on a single Element\n\nEssence is used to evolve a Level 3 Single-Element Tower, or to build a Periodic Tower if you have all 6 Elements.\nYou also get <font color='#F0BA36'>bonus Gold</font> in return, based on the current wave and difficulty."
 
         "DOTA_Tooltip_ability_item_random"                                                "Random Elements"
         "DOTA_Tooltip_ability_item_random_Description"                                    "Select this to randomize your elements for the rest of the game.\nThis can only be done before you select an element, and it cannot be undone."

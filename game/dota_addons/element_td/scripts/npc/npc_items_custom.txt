@@ -161,8 +161,30 @@
 	        "RunScript"
 	        {
 	            "Target"            "CASTER"
-	            "ScriptFile"        "scripts/vscripts/summoner.lua"
+	            "ScriptFile"        "summoner.lua"
 	            "Function"          "BuyPureEssence"
+	        }
+	    }
+	}
+	
+	"item_buy_pure_essence_disabled"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "MaxLevel"                      "1"
+	    "AbilityTextureName"            "buy_pure_essence_disabled"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "Target"            "CASTER"
+	            "ScriptFile"        "summoner.lua"
+	            "Function"          "BuyPureEssenceWarn"
 	        }
 	    }
 	}

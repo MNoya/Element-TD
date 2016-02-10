@@ -132,6 +132,17 @@ function UpdateSummonerSpells(playerID)
 
     UpdateRunes(playerID)
 
+    for i=0,5 do
+        local item = summoner:GetItemInSlot(i)
+        if item then
+            itemName = item:GetAbilityName()
+            if itemName == "item_buy_pure_essence_disabled" and CanPlayerBuyPureEssence(playerID) then
+                item:RemoveSelf()
+                summoner:AddItem(CreateItem("item_buy_pure_essence", nil, nil))
+            end
+        end
+    end
+
     if EXPRESS_MODE and not playerData.elementalActive then
         for k, v in pairs(NPC_ABILITIES_CUSTOM) do
             if summoner:HasAbility(k) and v["LumberCost"] then
@@ -224,6 +235,24 @@ function ClearRunes( propsTable )
     end
 end
 
+function CanPlayerBuyPureEssence( playerID )
+    local playerData = GetPlayerData(playerID)
+    local elements = playerData.elements
+
+    local hasLvl3 = false
+    local hasLvl1 = true
+    for i,v in pairs(elements) do
+        if v == 3 then -- if level 3 of element
+            hasLvl3 = true
+        end
+        if v == 0 then
+            hasLvl1 = false
+        end
+    end
+
+    return hasLvl3 or hasLvl1
+end
+
 function BuyPureEssence( keys )
 	local summoner = keys.caster
     local item = keys.ability
@@ -237,44 +266,38 @@ function BuyPureEssence( keys )
     end
 
 	if playerData.lumber > 0 then
-		local hasLvl3 = false
-		local hasLvl1 = true
-		for i,v in pairs(elements) do
-			if v == 3 then -- if level 3 of element
-				hasLvl3 = true
-			end
-			if v == 0 then
-				hasLvl1 = false
-			end
-		end
-		if hasLvl3 or hasLvl1 then
-			ModifyLumber(playerID, -1)
-			ModifyPureEssence(playerID, 1)
-            playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
-			Sounds:EmitSoundOnClient(playerID, "General.Buy")
-            
-            -- Gold bonus to help stay valuable by comparison to getting an element upgrade
-            local waveNumber = playerData.nextWave
-            local difficultyBountyBonus = playerData.difficulty:GetBountyBonusMultiplier()
-            local extra_gold
-            if EXPRESS_MODE then
-                extra_gold = round(math.pow(waveNumber+5, 2.3) * 2.5 * difficultyBountyBonus)
-            else
-                extra_gold = round(math.pow(waveNumber+5, 2) * 2.5 * difficultyBountyBonus)
-            end
-            PopupAlchemistGold(PlayerResource:GetSelectedHeroEntity(playerID), extra_gold)
-            hero:ModifyGold(extra_gold, true, 0)
+		ModifyLumber(playerID, -1)
+		ModifyPureEssence(playerID, 1)
+        playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
+		Sounds:EmitSoundOnClient(playerID, "General.Buy")
+        
+        -- Gold bonus to help stay valuable by comparison to getting an element upgrade
+        local waveNumber = playerData.nextWave
+        local difficultyBountyBonus = playerData.difficulty:GetBountyBonusMultiplier()
+        local extra_gold
+        if EXPRESS_MODE then
+            extra_gold = round(math.pow(waveNumber+5, 2.3) * 2.5 * difficultyBountyBonus)
+        else
+            extra_gold = round(math.pow(waveNumber+5, 2) * 2.5 * difficultyBountyBonus)
+        end
+        PopupAlchemistGold(PlayerResource:GetSelectedHeroEntity(playerID), extra_gold)
+        hero:ModifyGold(extra_gold, true, 0)
 
-            item:SetCurrentCharges(item:GetCurrentCharges()-1)
-            if item:GetCurrentCharges() == 0 then
-                item:RemoveSelf()
-            end
-		else
-            Log:info("Player " .. playerID .. " does not meet the pure essence purchase requirements.")
-            ShowWarnMessage(playerID, "#etd_essence_buy_warning")
-		end
+        item:SetCurrentCharges(item:GetCurrentCharges()-1)
+        if item:GetCurrentCharges() == 0 then
+            item:RemoveSelf()
+        end
 	else
         ShowWarnMessage(playerID, "#etd_need_more_lumber")
+    end
+end
+
+function BuyPureEssenceWarn( event )
+    local playerID = event.caster:GetPlayerOwnerID()
+
+    if not CanPlayerBuyPureEssence(playerID) then
+        Log:info("Player " .. playerID .. " does not meet the pure essence purchase requirements.")
+        ShowWarnMessage(playerID, "#etd_essence_buy_warning", 4)
     end
 end
 
