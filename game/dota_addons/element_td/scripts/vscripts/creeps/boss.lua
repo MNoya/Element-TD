@@ -184,13 +184,16 @@ end
 function CreepBoss:HealNearbyCreeps(keys)
     local creep = self.creep;
     local aoe = keys.aoe;
+    local ability = keys.ability
     local heal_percent = keys.heal_amount / 100;
 
     local entities = GetCreepsInArea(creep:GetOrigin(), aoe);
     for k, entity in pairs(entities) do
         if entity:GetHealth() > 0 then
             entity:Heal(entity:GetMaxHealth() * heal_percent, nil);
-            keys.ability:ApplyDataDrivenModifier(entity, entity, "heal_effect_modifier", {})
+            if ability then
+                ability:ApplyDataDrivenModifier(entity, entity, "heal_effect_modifier", {})
+            end
         end
     end
 end
