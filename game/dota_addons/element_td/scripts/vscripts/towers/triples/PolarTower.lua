@@ -68,7 +68,7 @@ function PolarTower:OnBuildingFinished()
     Timers:CreateTimer(function()
         if IsValidEntity(self.tower) then
             self:FrostbiteThink()
-            return 1
+            return 0.1
         end
     end)
 end

@@ -55,7 +55,7 @@ function WindstormTower:SpawnTornado(target)
 
     --create the tornado thinker
     Timers:CreateTimer(1, function()
-        if IsValidEntity(self.tower) and IsValidEntity(tornado) then
+        if IsValidEntity(self.tower) and IsValidEntity(tornado) and tornado:IsAlive() then
             local pos = tornado:GetAbsOrigin()
             local bounds = SectorBounds[sector]
 
