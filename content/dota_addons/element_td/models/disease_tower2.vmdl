@@ -121,9 +121,9 @@
 								m_influenceName = "Cube"
 								m_vTranslationOffset =
 								[
-									60.000000,
 									0.000000,
-									120.000000,
+									0.000000,
+									200.000000,
 								]
 								m_vRotationOffset =
 								[
@@ -148,7 +148,7 @@
 								[
 									0.000000,
 									0.000000,
-									100.000000,
+									0.000000,
 								]
 								m_vRotationOffset =
 								[

@@ -33,7 +33,6 @@ function modifier_attack_targeting:OnIntervalThink()
     if unit:AttackReady() and not unit:IsAttacking() then
         local target = GetTowerTarget(unit, unit.target_type, findRadius)
         if target ~= attackTarget then
-            print("ATTACK!!!")
             unit:MoveToTargetToAttack(target)
         end
     end
