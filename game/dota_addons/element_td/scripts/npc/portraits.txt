@@ -184,7 +184,7 @@
         {
             "default"
             {
-                "PortraitPosition"      "446.17 -88.00 -1.69"
+                "PortraitPosition"      "446.17 -88.00 -122.69"
                 "PortraitAngles"        "334.89 166.83 0.00"
                 "PortraitFOV"       "16"
             }
@@ -215,7 +215,7 @@
         {
             "default"
             {
-                "PortraitPosition"      "712.59 -450.73 101.46"
+                "PortraitPosition"      "712.59 -450.73 -1.46"
                 "PortraitAngles"        "350.10 146.52 0.00"
                 "PortraitFOV"       "20"
             }
@@ -1396,21 +1396,21 @@
     }
     "models/heroes/shadow_fiend/shadow_fiend.vmdl"
     {
-        "PortraitLightPosition"     "85.00 9.68 296.06"
-        "PortraitLightAngles"       "62.94 185.36 0.00"
-        "PortraitLightFOV"      "75"
-        "PortraitLightDistance"     "249"
-        "PortraitLightColor"        "243 243 243"
-        "PortraitShadowColor"       "0 0 0"
+        "PortraitLightPosition"     "102.63 98.47 272.29"
+        "PortraitLightAngles"       "27.86 243.88 0.00"
+        "PortraitLightFOV"      "66"
+        "PortraitLightDistance"     "145"
+        "PortraitLightColor"        "182 236 254"
+        "PortraitShadowColor"       "48 48 48"
         "PortraitShadowScale"       "5.000000"
-        "PortraitAmbientColor"      "131 0 25"
-        "PortraitAmbientScale"      "2.500000"
+        "PortraitAmbientColor"      "0 89 129"
+        "PortraitAmbientScale"      "5.000000"
         "PortraitSpecularColor"     "251 74 84"
-        "PortraitBackgroundTexture"     "materials/vgui/hud/heroportraits/portraitbackground_desert.vmat"
-        "PortraitBackgroundColor1"      "0 0 0"
-        "PortraitBackgroundColor2"      "0 0 0"
-        "PortraitBackgroundColor3"      ".8 .2 .1"
-        "PortraitBackgroundColor4"      "0 0 0"
+        "PortraitBackgroundTexture"     "materials/vgui/hud/heroportraits/portraitbackground_motion_swoops.vmat"
+        "PortraitBackgroundColor1"      "1 1 1"
+        "PortraitBackgroundColor2"      "1 1 1"
+        "PortraitBackgroundColor3"      "1 1 1"
+        "PortraitBackgroundColor4"      "1 1 1"
         "PortraitLightScale"        "1.000000"
         "PortraitGroundShadowScale"     "1.500000"
         "PortraitAmbientDirection"      "-75.850 -49.880 27.200"
