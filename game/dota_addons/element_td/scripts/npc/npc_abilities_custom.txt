@@ -3784,12 +3784,10 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-	
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"tornado_tempest"
 		"MaxLevel"						"2"
-		"AbilityCastRange"				"900"
 	
 		"Modifiers"
 		{
@@ -3802,7 +3800,7 @@
 				"Aura"					"modifier_tornado_slow"
 				"Aura_Radius"			"%radius"
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_ALL"
+				"Aura_Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
 			}
 			"modifier_tornado_slow"
 			{
@@ -3849,17 +3847,18 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"MaxLevel"						"2"
-		"AbilityCastRange"				"900"
-		"AbilityCastPoint"				"0.1"
 	
-		"OnSpellStart"
+		"Modifiers"
 		{
-			"RunScript"
+			"windstorm_tower_tornado_disabled"
 			{
-				"Target"			"POINT"
-				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-				"Function"			"TriggerEvent"
-				"Event"				"SpawnTornado"
+				"Passive"			"1"
+				"IsHidden"			"1"
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DISABLE_AUTOATTACK" "1"
+				}
 			}
 		}
 	
