@@ -101,7 +101,7 @@ function ElementTD:InitGameMode()
     base_game_mode:SetBuybackEnabled( false )
     --base_game_mode:SetCameraDistanceOverride(1500) -- move the camera higher up
     SendToServerConsole('r_farz 10000')
-    SendToServerConsole('fog_enable 0')
+    --SendToServerConsole('fog_enable 0')
     base_game_mode:SetCustomGameForceHero( "npc_dota_hero_wisp" ) -- Skip hero pick screen
     ------------------------------------------------------
 
