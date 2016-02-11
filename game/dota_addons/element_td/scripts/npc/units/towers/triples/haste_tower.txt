@@ -45,7 +45,7 @@
 		"2"		"fire"
 		"3"		"water"
 	}
-	"Damage"		"800"
+	"Damage"		"900"
 	"DamageType"		"fire"
 	"ScriptClass"		"HasteTower"
 	"TowerType"		"Normal"
@@ -86,8 +86,8 @@
 		"Count"		"1"
 		"1"		"haste_tower_2"
 	}
-	"AttackDamageMin"		"800"
-	"AttackDamageMax"		"800"
+	"AttackDamageMin"		"900"
+	"AttackDamageMax"		"900"
 
 	// Building Size
     "ConstructionSize"          "2"

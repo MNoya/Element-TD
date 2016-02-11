@@ -50,7 +50,7 @@
 	"AttackAcquisitionRange"		"900"
 	"AttackRate"		"1.5"
 	"ProjectileModel"		""
-	"ProjectileSpeed"		"750"
+	"ProjectileSpeed"		"900"
 	"Model"		"models/heroes/crystal_maiden/crystal_maiden.vmdl"
 	"ModelScale"		"0.9"
     "ModelRotation"             "90"

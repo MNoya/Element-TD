@@ -40,7 +40,7 @@
 		"1"		"light"
 		"2"		"nature"
 	}
-	"Damage"		"1125"
+	"Damage"		"1250"
 	"DamageType"		"nature"
 	"ScriptClass"		"LifeTower"
 	"TowerType"		"Normal"
@@ -67,8 +67,8 @@
 		"Count"		"1"
 		"1"		"life_tower_3"
 	}
-	"AttackDamageMin"		"1125"
-	"AttackDamageMax"		"1125"
+	"AttackDamageMin"		"1250"
+	"AttackDamageMax"		"1250"
     "Creature"
     {
        "AttachWearables" // Armor of the Stalwart Soul

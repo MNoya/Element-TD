@@ -40,7 +40,7 @@
 		"1"		"light"
 		"2"		"nature"
 	}
-	"Damage"		"5625"
+	"Damage"		"6250"
 	"DamageType"		"nature"
 	"ScriptClass"		"LifeTower"
 	"TowerType"		"Normal"
@@ -65,8 +65,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"5625"
-	"AttackDamageMax"		"5625"
+	"AttackDamageMin"		"6250"
+	"AttackDamageMax"		"6250"
     "Creature"
     {
        "AttachWearables" // Thunderwrath's Calling Set

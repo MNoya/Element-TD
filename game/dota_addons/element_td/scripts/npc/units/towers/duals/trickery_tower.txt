@@ -40,7 +40,7 @@
 		"1"		"light"
 		"2"		"dark"
 	}
-	"Damage"		"300"
+	"Damage"		"325"
 	"DamageType"		"light"
 	"ScriptClass"		"TrickeryTower"
 	"TowerType"		"Support"
@@ -70,8 +70,8 @@
 		"4"		"runic_tower"
 		"5"		"obliteration_tower"
 	}
-	"AttackDamageMin"		"300"
-	"AttackDamageMax"		"300"
+	"AttackDamageMin"		"325"
+	"AttackDamageMax"		"325"
 	"Creature"
 	{
 		"AttachWearables"

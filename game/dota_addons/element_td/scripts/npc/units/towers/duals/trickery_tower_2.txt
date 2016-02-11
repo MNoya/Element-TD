@@ -40,7 +40,7 @@
 		"1"		"light"
 		"2"		"dark"
 	}
-	"Damage"		"1500"
+	"Damage"		"1625"
 	"DamageType"		"light"
 	"ScriptClass"		"TrickeryTower"
 	"TowerType"		"Support"
@@ -51,7 +51,7 @@
 	"ProjectileModel"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
 	"ProjectileSpeed"		"1500"
 	"Model"		"models/heroes/rubick/rubick.vmdl"
-	"ModelScale"		"0.9"
+	"ModelScale"		"0.8"
     "ModelRotation"     "90"
     "ModelOffset"       "20"
 	"UpgradeIcon"		"modifier_illusion"
@@ -66,8 +66,8 @@
 		"Count"		"1"
 		"1"		"trickery_tower_3"
 	}
-	"AttackDamageMin"		"1500"
-	"AttackDamageMax"		"1500"
+	"AttackDamageMin"		"1625"
+	"AttackDamageMax"		"1625"
     "Creature"
     {
        "AttachWearables" // Councilor's Complete Raiment Set

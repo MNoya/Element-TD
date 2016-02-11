@@ -40,7 +40,7 @@
 		"1"		"water"
 		"2"		"light"
 	}
-	"Damage"		"150"
+	"Damage"		"0"
 	"DamageType"		"light"
 	"ScriptClass"		"IceTower"
 	"TowerType"		"Normal"
@@ -50,7 +50,7 @@
 	"AttackAcquisitionRange"		"900"
 	"AttackRate"		"1.5"
 	"ProjectileModel"		""
-	"ProjectileSpeed"		"750"
+	"ProjectileSpeed"		"900"
 	"Model"		"models/heroes/crystal_maiden/crystal_maiden.vmdl"
 	"ModelScale"		"0.8"
     "ModelRotation"             "90"
@@ -72,8 +72,8 @@
 		"4"		"tidal_tower"
 		"5"		"polar_tower"
 	}
-	"AttackDamageMin"		"150"
-	"AttackDamageMax"		"150"
+	"AttackDamageMin"		"0"
+	"AttackDamageMax"		"0"
 	"Creature"
     {
         "AttachWearables" // Default npc_dota_hero_crystal_maiden

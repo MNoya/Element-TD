@@ -45,7 +45,7 @@
 		"2"		"earth"
 		"3"		"light"
 	}
-	"Damage"		"3000"
+	"Damage"		"3500"
 	"DamageType"		"earth"
 	"ScriptClass"		"GoldTower"
 	"TowerType"		"Normal"
@@ -55,7 +55,7 @@
 	"AttackAcquisitionRange"		"1150"
 	"AttackRate"		"1.5"
 	"ProjectileModel"		"particles/custom/towers/gold/attack.vpcf"
-	"ProjectileSpeed"      "1200"
+	"ProjectileSpeed"      "1500"
 
     "Model"             "models/heroes/alchemist/alchemist.vmdl"
     "ModelScale"        "1.0"
@@ -90,8 +90,8 @@
 		"Count"		"1"
 		"1"		"gold_tower_2"
 	}
-	"AttackDamageMin"		"3000"
-	"AttackDamageMax"		"3000"
+	"AttackDamageMin"		"3500"
+	"AttackDamageMax"		"3500"
 
 	// Building Size
     "ConstructionSize"          "2"

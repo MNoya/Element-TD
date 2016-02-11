@@ -45,7 +45,7 @@
 		"2"		"earth"
 		"3"		"fire"
 	}
-	"Damage"		"1800"
+	"Damage"		"1500"
 	"DamageType"		"fire"
 	"ScriptClass"		"FlamethrowerTower"
 	"TowerType"		"Normal"
@@ -58,7 +58,7 @@
 	"ProjectileSpeed"		"2500"
 
     "Model"             "models/heroes/batrider/batrider.vmdl"
-    "ModelScale"        "0.8"
+    "ModelScale"        "0.7"
     "ModelRotation"     "90"
     "ModelOffset"       "-5"
     
@@ -87,8 +87,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"1800"
-	"AttackDamageMax"		"1800"
+	"AttackDamageMin"		"1500"
+	"AttackDamageMax"		"1500"
 
 	// Building Size
     "ConstructionSize"          "2"

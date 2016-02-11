@@ -39,7 +39,7 @@
 		"1"		"dark"
 		"2"		"water"
 	}
-	"Damage"		"750"
+	"Damage"		"900"
 	"DamageType"		"dark"
 	"ScriptClass"		"PoisonTower"
 	"TowerType"		"Normal"
@@ -68,8 +68,8 @@
 		"Count"		"1"
 		"1"		"poison_tower_3"
 	}
-	"AttackDamageMin"		"750"
-	"AttackDamageMax"		"750"
+	"AttackDamageMin"		"900"
+	"AttackDamageMax"		"900"
     "Creature"
     {
        "AttachWearables" // Venomous Deathbringer

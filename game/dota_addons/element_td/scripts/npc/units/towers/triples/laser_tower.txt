@@ -45,7 +45,7 @@
 		"2"		"earth"
 		"3"		"light"
 	}
-	"Damage"		"6000"
+	"Damage"		"5500"
 	"DamageType"		"light"
 	"ScriptClass"		"LaserTower"
 	"TowerType"		"Normal"
@@ -88,8 +88,8 @@
 		"Count"		"1"
 		"1"		"laser_tower_2"
 	}
-	"AttackDamageMin"		"6000"
-	"AttackDamageMax"		"6000"
+	"AttackDamageMin"		"5500"
+	"AttackDamageMax"		"5500"
 
 	// Building Size
     "ConstructionSize"          "2"

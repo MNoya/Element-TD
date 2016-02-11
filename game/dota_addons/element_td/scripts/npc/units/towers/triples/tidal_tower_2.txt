@@ -43,7 +43,7 @@
 		"2"		"nature"
 		"3"		"light"
 	}
-	"Damage"		"3200"
+	"Damage"		"3000"
 	"DamageType"		"water"
 	"ScriptClass"		"TidalTower"
 	"TowerType"		"Normal"
@@ -56,7 +56,7 @@
 	"ProjectileSpeed"		"2500"
 
     "Model"             "models/heroes/siren/siren.vmdl"
-    "ModelScale"        "1.1"
+    "ModelScale"        "1"
     "ModelRotation"     "90"
     "ModelOffset"       "15"
 	"Creature"
@@ -86,8 +86,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"3200"
-	"AttackDamageMax"		"3200"
+	"AttackDamageMin"		"3000"
+	"AttackDamageMax"		"3000"
 
 	// Building Size
     "ConstructionSize"          "2"

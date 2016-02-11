@@ -45,7 +45,7 @@
 		"2"		"fire"
 		"3"		"nature"
 	}
-	"Damage"		"10500"
+	"Damage"		"13000"
 	"DamageType"		"dark"
 	"ScriptClass"		"JinxTower"
 	"TowerType"		"Normal"
@@ -84,8 +84,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"10500"
-	"AttackDamageMax"		"10500"
+	"AttackDamageMin"		"13000"
+	"AttackDamageMax"		"13000"
 
 	// Building Size
     "ConstructionSize"          "2"

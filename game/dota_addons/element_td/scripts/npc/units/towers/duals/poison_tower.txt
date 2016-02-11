@@ -40,7 +40,7 @@
 		"1"		"dark"
 		"2"		"water"
 	}
-	"Damage"		"150"
+	"Damage"		"180"
 	"DamageType"		"dark"
 	"ScriptClass"		"PoisonTower"
 	"TowerType"		"Normal"
@@ -73,8 +73,8 @@
 		"4"		"hail_tower"
 		"5"		"erosion_tower"
 	}
-	"AttackDamageMin"		"150"
-	"AttackDamageMax"		"150"
+	"AttackDamageMin"		"180"
+	"AttackDamageMax"		"180"
 	"Creature"
 	{
 		"AttachWearables"

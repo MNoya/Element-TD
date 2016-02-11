@@ -45,7 +45,7 @@
 		"2"		"earth"
 		"3"		"light"
 	}
-	"Damage"		"30000"
+	"Damage"		"27500"
 	"DamageType"		"light"
 	"ScriptClass"		"LaserTower"
 	"TowerType"		"Normal"
@@ -58,7 +58,7 @@
 	"ProjectileModel"		"particles/units/heroes/hero_tinker/tinker_laser.vpcf"
 
     "Model"             "models/heroes/tinker/tinker.vmdl"
-    "ModelScale"        "1.1"
+    "ModelScale"        "1"
     "ModelRotation"     "90"
     "ModelOffset"       "20"
 	"Creature"
@@ -87,8 +87,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"30000"
-	"AttackDamageMax"		"30000"
+	"AttackDamageMin"		"27500"
+	"AttackDamageMax"		"27500"
 
 	// Building Size
     "ConstructionSize"          "2"

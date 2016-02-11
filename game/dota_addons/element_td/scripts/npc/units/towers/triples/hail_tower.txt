@@ -12,7 +12,7 @@
 	"MagicalResistance"		"0"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 	"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-	"AttackAnimationPoint"		"0.3"
+	"AttackAnimationPoint"		"0.25"
 	"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
 	"AttributeBaseStrength"		"0"
 	"AttributeStrengthGain"		"0"
@@ -45,14 +45,14 @@
 		"2"		"light"
 		"3"		"water"
 	}
-	"Damage"		"1000"
+	"Damage"		"850"
 	"DamageType"		"light"
 	"ScriptClass"		"HailTower"
 	"TowerType"		"Normal"
         "BuffPriority"          "7"
 	"HasAbilityDesc"		"1"
-	"AttackRange"		"1150"
-	"AttackAcquisitionRange"		"1250"
+	"AttackRange"		"1500"
+	"AttackAcquisitionRange"		"1600"
 	"AttackRate"		"0.66"
 	"ProjectileModel"		"particles/custom/towers/hail/attack.vpcf"
 	"ProjectileSpeed"		"3000"
@@ -88,8 +88,8 @@
 		"Count"		"1"
 		"1"		"hail_tower_2"
 	}
-	"AttackDamageMin"		"1000"
-	"AttackDamageMax"		"1000"
+	"AttackDamageMin"		"850"
+	"AttackDamageMax"		"850"
 
 	// Building Size
     "ConstructionSize"          "2"

@@ -6741,7 +6741,7 @@
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "ProjectileSpeed"           "2500"
 	
 	    "Level"                     "2"
@@ -7515,7 +7515,7 @@
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "ProjectileSpeed"           "2500"
 	
 	    "Level"                     "4"
@@ -8032,7 +8032,7 @@
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "ProjectileSpeed"           "2500"
 	
 	    "Level"                     "3"
@@ -8116,7 +8116,7 @@
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "ProjectileSpeed"           "2500"
 	
 	    "Level"                     "1"
@@ -8442,7 +8442,7 @@
 			"1"		"dark"
 			"2"		"nature"
 		}
-		"Damage"		"66"
+		"Damage"		"60"
 		"DamageType"		"dark"
 		"ScriptClass"		"DiseaseTower"
 		"TowerType"		"Normal"
@@ -8471,8 +8471,8 @@
 			"4"		"roots_tower"
 			"5"		"jinx_tower"
 		}
-		"AttackDamageMin"		"66"
-		"AttackDamageMax"		"66"
+		"AttackDamageMin"		"60"
+		"AttackDamageMax"		"60"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -8521,7 +8521,7 @@
 			"1"		"dark"
 			"2"		"nature"
 		}
-		"Damage"		"330"
+		"Damage"		"300"
 		"DamageType"		"dark"
 		"ScriptClass"		"DiseaseTower"
 		"TowerType"		"Normal"
@@ -8547,8 +8547,8 @@
 			"Count"		"1"
 			"1"		"disease_tower_3"
 		}
-		"AttackDamageMin"		"330"
-		"AttackDamageMax"		"330"
+		"AttackDamageMin"		"300"
+		"AttackDamageMax"		"300"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -8598,7 +8598,7 @@
 			"1"		"dark"
 			"2"		"nature"
 		}
-		"Damage"		"1650"
+		"Damage"		"1500"
 		"DamageType"		"dark"
 		"ScriptClass"		"DiseaseTower"
 		"TowerType"		"Normal"
@@ -8622,8 +8622,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"1650"
-		"AttackDamageMax"		"1650"
+		"AttackDamageMin"		"1500"
+		"AttackDamageMax"		"1500"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -9231,7 +9231,7 @@
 		"AttackAcquisitionRange"		"1500"
 		"AttackRate"		"0.66"
 		"ProjectileModel"		"particles/units/heroes/hero_techies/techies_base_attack.vpcf"
-		"ProjectileSpeed"		"1500"
+		"ProjectileSpeed"		"1800"
 		"Model"		"models/heroes/sniper/sniper.vmdl"
 		"ModelScale"		"0.8"
 	    "ModelRotation"             "90"
@@ -9322,7 +9322,7 @@
 		"AttackAcquisitionRange"		"1500"
 		"AttackRate"		"0.66"
 		"ProjectileModel"		"particles/units/heroes/hero_techies/techies_base_attack.vpcf"
-		"ProjectileSpeed"		"1500"
+		"ProjectileSpeed"		"1800"
 		"Model"		"models/heroes/sniper/sniper.vmdl"
 		"ModelScale"		"0.9"
 	    "ModelRotation"             "90"
@@ -9409,7 +9409,7 @@
 		"AttackAcquisitionRange"		"1500"
 		"AttackRate"		"0.66"
 		"ProjectileModel"		"particles/units/heroes/hero_techies/techies_base_attack.vpcf"
-		"ProjectileSpeed"		"1500"
+		"ProjectileSpeed"		"1800"
 		"Model"		"models/heroes/sniper/sniper.vmdl"
 		"ModelScale"		"1"
 	    "ModelRotation"             "90"
@@ -9753,7 +9753,7 @@
 			"1"		"water"
 			"2"		"light"
 		}
-		"Damage"		"150"
+		"Damage"		"0"
 		"DamageType"		"light"
 		"ScriptClass"		"IceTower"
 		"TowerType"		"Normal"
@@ -9763,7 +9763,7 @@
 		"AttackAcquisitionRange"		"900"
 		"AttackRate"		"1.5"
 		"ProjectileModel"		""
-		"ProjectileSpeed"		"750"
+		"ProjectileSpeed"		"900"
 		"Model"		"models/heroes/crystal_maiden/crystal_maiden.vmdl"
 		"ModelScale"		"0.8"
 	    "ModelRotation"             "90"
@@ -9785,8 +9785,8 @@
 			"4"		"tidal_tower"
 			"5"		"polar_tower"
 		}
-		"AttackDamageMin"		"150"
-		"AttackDamageMax"		"150"
+		"AttackDamageMin"		"0"
+		"AttackDamageMax"		"0"
 		"Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_crystal_maiden
@@ -9856,7 +9856,7 @@
 		"AttackAcquisitionRange"		"900"
 		"AttackRate"		"1.5"
 		"ProjectileModel"		""
-		"ProjectileSpeed"		"750"
+		"ProjectileSpeed"		"900"
 		"Model"		"models/heroes/crystal_maiden/crystal_maiden.vmdl"
 		"ModelScale"		"0.9"
 	    "ModelRotation"             "90"
@@ -9944,9 +9944,9 @@
 		"AttackAcquisitionRange"		"900"
 		"AttackRate"		"1.5"
 		"ProjectileModel"		""
-		"ProjectileSpeed"		"750"
+		"ProjectileSpeed"		"900"
 		"Model"		"models/heroes/crystal_maiden/crystal_maiden_arcana.vmdl"
-		"ModelScale"		"1"
+		"ModelScale"		"0.9"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
 		"UpgradeIcon"		"ancient_apparition_ice_blast"
@@ -10020,7 +10020,7 @@
 			"1"		"light"
 			"2"		"nature"
 		}
-		"Damage"		"225"
+		"Damage"		"250"
 		"DamageType"		"nature"
 		"ScriptClass"		"LifeTower"
 		"TowerType"		"Normal"
@@ -10051,8 +10051,8 @@
 			"4"		"tidal_tower"
 			"5"		"nova_tower"
 		}
-		"AttackDamageMin"		"225"
-		"AttackDamageMax"		"225"
+		"AttackDamageMin"		"250"
+		"AttackDamageMax"		"250"
 		"Creature"
 		{
 			"AttachWearables"
@@ -10130,7 +10130,7 @@
 			"1"		"light"
 			"2"		"nature"
 		}
-		"Damage"		"1125"
+		"Damage"		"1250"
 		"DamageType"		"nature"
 		"ScriptClass"		"LifeTower"
 		"TowerType"		"Normal"
@@ -10157,8 +10157,8 @@
 			"Count"		"1"
 			"1"		"life_tower_3"
 		}
-		"AttackDamageMin"		"1125"
-		"AttackDamageMax"		"1125"
+		"AttackDamageMin"		"1250"
+		"AttackDamageMax"		"1250"
 	    "Creature"
 	    {
 	       "AttachWearables" // Armor of the Stalwart Soul
@@ -10218,7 +10218,7 @@
 			"1"		"light"
 			"2"		"nature"
 		}
-		"Damage"		"5625"
+		"Damage"		"6250"
 		"DamageType"		"nature"
 		"ScriptClass"		"LifeTower"
 		"TowerType"		"Normal"
@@ -10243,8 +10243,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"5625"
-		"AttackDamageMax"		"5625"
+		"AttackDamageMin"		"6250"
+		"AttackDamageMax"		"6250"
 	    "Creature"
 	    {
 	       "AttachWearables" // Thunderwrath's Calling Set
@@ -10303,7 +10303,7 @@
 			"1"		"dark"
 			"2"		"fire"
 		}
-		"Damage"		"500"
+		"Damage"		"600"
 		"DamageType"		"dark"
 		"ScriptClass"		"MagicTower"
 		"TowerType"		"Normal"
@@ -10335,8 +10335,8 @@
 			"4"		"jinx_tower"
 			"5"		"erosion_tower"
 		}
-		"AttackDamageMin"		"500"
-		"AttackDamageMax"		"500"
+		"AttackDamageMin"		"600"
+		"AttackDamageMax"		"600"
 	    "Creature"
 	    {
 	       "AttachWearables" // Default
@@ -10394,7 +10394,7 @@
 			"1"		"dark"
 			"2"		"fire"
 		}
-		"Damage"		"2500"
+		"Damage"		"3000"
 		"DamageType"		"dark"
 		"ScriptClass"		"MagicTower"
 		"TowerType"		"Normal"
@@ -10421,8 +10421,8 @@
 			"Count"		"1"
 			"1"		"magic_tower_3"
 		}
-		"AttackDamageMin"		"2500"
-		"AttackDamageMax"		"2500"
+		"AttackDamageMin"		"3000"
+		"AttackDamageMax"		"3000"
 	    "Creature"
 	    {
 	       "AttachWearables" // Curse of the Malignant Corruption Set
@@ -10481,7 +10481,7 @@
 			"1"		"dark"
 			"2"		"fire"
 		}
-		"Damage"		"12500"
+		"Damage"		"15000"
 		"DamageType"		"dark"
 		"ScriptClass"		"MagicTower"
 		"TowerType"		"Normal"
@@ -10493,7 +10493,7 @@
 		"ProjectileModel"		"particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
 		"ProjectileSpeed"		"2000"
 		"Model"		"models/heroes/lion/lion.vmdl"
-		"ModelScale"		"1"
+		"ModelScale"		"0.9"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "15"
 		"UpgradeIcon"		"towers/magic_tower"
@@ -10506,8 +10506,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"12500"
-		"AttackDamageMax"		"12500"
+		"AttackDamageMin"		"15000"
+		"AttackDamageMax"		"15000"
 	    "Creature"
 	    {
 	       "AttachWearables" // Legacy of Infernal Wings
@@ -10568,7 +10568,7 @@
 		}
 		"AOE_Full"		"150"
 		"AOE_Half"		"300"
-		"Damage"		"140"
+		"Damage"		"120"
 		"DamageType"		"nature"
 		"ScriptClass"		"MossTower"
 		"TowerType"		"Normal"
@@ -10599,8 +10599,8 @@
 			"4"		"ephemeral_tower"
 			"5"		"roots_tower"
 		}
-		"AttackDamageMin"		"140"
-		"AttackDamageMax"		"140"
+		"AttackDamageMin"		"120"
+		"AttackDamageMax"		"120"
 	    
 		"Creature"
 	    {
@@ -10665,7 +10665,7 @@
 		}
 		"AOE_Full"		"150"
 		"AOE_Half"		"300"
-		"Damage"		"700"
+		"Damage"		"600"
 		"DamageType"		"nature"
 		"ScriptClass"		"MossTower"
 		"TowerType"		"Normal"
@@ -10692,8 +10692,8 @@
 			"Count"		"1"
 			"1"		"moss_tower_3"
 		}
-		"AttackDamageMin"		"700"
-		"AttackDamageMax"		"700"
+		"AttackDamageMin"		"600"
+		"AttackDamageMax"		"600"
 	    "Creature"
 	    {
 	       "AttachWearables" // Vanquishing Demons General
@@ -10759,7 +10759,7 @@
 		}
 		"AOE_Full"		"150"
 		"AOE_Half"		"300"
-		"Damage"		"3500"
+		"Damage"		"3000"
 		"DamageType"		"nature"
 		"ScriptClass"		"MossTower"
 		"TowerType"		"Normal"
@@ -10771,7 +10771,7 @@
 		"ProjectileModel"		"particles/units/heroes/hero_furion/furion_base_attack.vpcf"
 		"ProjectileSpeed"		"1500"
 		"Model"		"models/heroes/earth_spirit/earth_spirit.vmdl"
-		"ModelScale"		"1"
+		"ModelScale"		"0.9"
 		"ModelRotation"             "90"
 	    "ModelOffset"               "15"
 		"UpgradeIcon"		"brewmaster_earth_pulverize"
@@ -10784,8 +10784,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"3500"
-		"AttackDamageMax"		"3500"
+		"AttackDamageMin"		"3000"
+		"AttackDamageMax"		"3000"
 	    "Creature"
 	    {
 	       "AttachWearables" // Strength of the Demon Stone Set
@@ -10846,7 +10846,7 @@
 			"1"		"dark"
 			"2"		"water"
 		}
-		"Damage"		"150"
+		"Damage"		"180"
 		"DamageType"		"dark"
 		"ScriptClass"		"PoisonTower"
 		"TowerType"		"Normal"
@@ -10879,8 +10879,8 @@
 			"4"		"hail_tower"
 			"5"		"erosion_tower"
 		}
-		"AttackDamageMin"		"150"
-		"AttackDamageMax"		"150"
+		"AttackDamageMin"		"180"
+		"AttackDamageMax"		"180"
 		"Creature"
 		{
 			"AttachWearables"
@@ -10953,7 +10953,7 @@
 			"1"		"dark"
 			"2"		"water"
 		}
-		"Damage"		"750"
+		"Damage"		"900"
 		"DamageType"		"dark"
 		"ScriptClass"		"PoisonTower"
 		"TowerType"		"Normal"
@@ -10982,8 +10982,8 @@
 			"Count"		"1"
 			"1"		"poison_tower_3"
 		}
-		"AttackDamageMin"		"750"
-		"AttackDamageMax"		"750"
+		"AttackDamageMin"		"900"
+		"AttackDamageMax"		"900"
 	    "Creature"
 	    {
 	       "AttachWearables" // Venomous Deathbringer
@@ -11042,7 +11042,7 @@
 			"1"		"dark"
 			"2"		"water"
 		}
-		"Damage"		"3750"
+		"Damage"		"4500"
 		"DamageType"		"dark"
 		"ScriptClass"		"PoisonTower"
 		"TowerType"		"Normal"
@@ -11054,7 +11054,7 @@
 		"ProjectileModel"		"particles/units/heroes/hero_venomancer/venomancer_base_attack.vpcf"
 		"ProjectileSpeed"		"1500"
 		"Model"		"models/heroes/venomancer/venomancer.vmdl"
-		"ModelScale"		"1"
+		"ModelScale"		"0.9"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "10"
 		"AOE_Full"		"100"
@@ -11069,8 +11069,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"3750"
-		"AttackDamageMax"		"3750"
+		"AttackDamageMin"		"4500"
+		"AttackDamageMax"		"4500"
 	    "Creature"
 	    {
 	       "AttachWearables" // Acid Hydra
@@ -11423,7 +11423,7 @@
 			"1"		"light"
 			"2"		"dark"
 		}
-		"Damage"		"300"
+		"Damage"		"325"
 		"DamageType"		"light"
 		"ScriptClass"		"TrickeryTower"
 		"TowerType"		"Support"
@@ -11453,8 +11453,8 @@
 			"4"		"runic_tower"
 			"5"		"obliteration_tower"
 		}
-		"AttackDamageMin"		"300"
-		"AttackDamageMax"		"300"
+		"AttackDamageMin"		"325"
+		"AttackDamageMax"		"325"
 		"Creature"
 		{
 			"AttachWearables"
@@ -11528,7 +11528,7 @@
 			"1"		"light"
 			"2"		"dark"
 		}
-		"Damage"		"1500"
+		"Damage"		"1625"
 		"DamageType"		"light"
 		"ScriptClass"		"TrickeryTower"
 		"TowerType"		"Support"
@@ -11539,7 +11539,7 @@
 		"ProjectileModel"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
 		"ProjectileSpeed"		"1500"
 		"Model"		"models/heroes/rubick/rubick.vmdl"
-		"ModelScale"		"0.9"
+		"ModelScale"		"0.8"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "20"
 		"UpgradeIcon"		"modifier_illusion"
@@ -11554,8 +11554,8 @@
 			"Count"		"1"
 			"1"		"trickery_tower_3"
 		}
-		"AttackDamageMin"		"1500"
-		"AttackDamageMax"		"1500"
+		"AttackDamageMin"		"1625"
+		"AttackDamageMax"		"1625"
 	    "Creature"
 	    {
 	       "AttachWearables" // Councilor's Complete Raiment Set
@@ -11614,7 +11614,7 @@
 			"1"		"light"
 			"2"		"dark"
 		}
-		"Damage"		"7500"
+		"Damage"		"8125"
 		"DamageType"		"light"
 		"ScriptClass"		"TrickeryTower"
 		"TowerType"		"Support"
@@ -11625,7 +11625,7 @@
 		"ProjectileModel"		"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
 		"ProjectileSpeed"		"1500"
 		"Model"		"models/heroes/rubick/rubick.vmdl"
-		"ModelScale"		"1"
+		"ModelScale"		"0.9"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "20"
 		"UpgradeIcon"		"modifier_illusion"
@@ -11638,8 +11638,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"7500"
-		"AttackDamageMax"		"7500"
+		"AttackDamageMin"		"8125"
+		"AttackDamageMax"		"8125"
 	    "Creature"
 	    {
 	       "AttachWearables" // Wandering Harlequin's Regalia
@@ -12122,7 +12122,7 @@
 		// Visual
 	    //-----------------------------
 		"Model"						"models/well_tower3.vmdl"
-		"ModelScale"				"0.95"
+		"ModelScale"				"0.8"
 		"ModelRotation"				"0"
 		"ProjectileModel"			"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 		"ProjectileSpeed"			"2000"
@@ -12366,7 +12366,7 @@
 	    "AOE_Half"                  "200"
 	
 	    "Model"             "models/heroes/arc_warden/arc_warden.vmdl"
-	    "ModelScale"        "1"
+	    "ModelScale"        "1.1"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "0"
 	    "Creature"
@@ -12552,7 +12552,7 @@
 		"ProjectileSpeed"		"3000"
 	
 	    "Model"             "models/heroes/windrunner/windrunner.vmdl"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "1.2"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "15"
 		"Creature"
@@ -12645,7 +12645,7 @@
 		"ProjectileSpeed"		"1500"
 	
 	    "Model"             "models/heroes/shadow_demon/shadow_demon.vmdl"
-	    "ModelScale"        "1.0"
+	    "ModelScale"        "0.9"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "20"
 	
@@ -12743,7 +12743,7 @@
 		"ProjectileSpeed"		"1500"
 	
 	    "Model"             "models/heroes/shadow_demon/shadow_demon.vmdl"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "1"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "20"
 	
@@ -12826,7 +12826,7 @@
 			"2"		"earth"
 			"3"		"fire"
 		}
-		"Damage"		"360"
+		"Damage"		"300"
 		"DamageType"		"fire"
 		"ScriptClass"		"FlamethrowerTower"
 		"TowerType"		"Normal"
@@ -12839,7 +12839,7 @@
 		"ProjectileSpeed"		"2500"
 		
 		"Model"             "models/heroes/batrider/batrider.vmdl"
-	    "ModelScale"        "0.7"
+	    "ModelScale"        "0.65"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "-5"
 	
@@ -12869,8 +12869,8 @@
 			"Count"		"1"
 			"1"		"flamethrower_tower_2"
 		}
-		"AttackDamageMin"		"360"
-		"AttackDamageMax"		"360"
+		"AttackDamageMin"		"300"
+		"AttackDamageMax"		"300"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -12923,7 +12923,7 @@
 			"2"		"earth"
 			"3"		"fire"
 		}
-		"Damage"		"1800"
+		"Damage"		"1500"
 		"DamageType"		"fire"
 		"ScriptClass"		"FlamethrowerTower"
 		"TowerType"		"Normal"
@@ -12936,7 +12936,7 @@
 		"ProjectileSpeed"		"2500"
 	
 	    "Model"             "models/heroes/batrider/batrider.vmdl"
-	    "ModelScale"        "0.8"
+	    "ModelScale"        "0.7"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "-5"
 	    
@@ -12965,8 +12965,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"1800"
-		"AttackDamageMax"		"1800"
+		"AttackDamageMin"		"1500"
+		"AttackDamageMax"		"1500"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -13027,12 +13027,12 @@
 		"HasAbilityDesc"		"1"
 		"AttackRange"		"900"
 		"AttackAcquisitionRange"		"900"
-		"AttackRate"		"0.66"
+		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 		"ProjectileSpeed"		"2000"
 	
 	    "Model"             "models/heroes/tidehunter/tidehunter.vmdl"
-	    "ModelScale"        "1.0"
+	    "ModelScale"        "0.8"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "15"
 		"Creature"
@@ -13124,12 +13124,12 @@
 		"HasAbilityDesc"		"1"
 		"AttackRange"		"900"
 		"AttackAcquisitionRange"		"900"
-		"AttackRate"		"0.66"
+		"AttackRate"		"1"
 		"ProjectileModel"		"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 		"ProjectileSpeed"		"2000"
 		
 	    "Model"             "models/heroes/tidehunter/tidehunter.vmdl"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "0.9"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "15"
 		"Creature"
@@ -13211,7 +13211,7 @@
 			"2"		"earth"
 			"3"		"light"
 		}
-		"Damage"		"3000"
+		"Damage"		"3500"
 		"DamageType"		"earth"
 		"ScriptClass"		"GoldTower"
 		"TowerType"		"Normal"
@@ -13221,7 +13221,7 @@
 		"AttackAcquisitionRange"		"1150"
 		"AttackRate"		"1.5"
 		"ProjectileModel"		"particles/custom/towers/gold/attack.vpcf"
-		"ProjectileSpeed"      "1200"
+		"ProjectileSpeed"      "1500"
 	
 	    "Model"             "models/heroes/alchemist/alchemist.vmdl"
 	    "ModelScale"        "1.0"
@@ -13256,8 +13256,8 @@
 			"Count"		"1"
 			"1"		"gold_tower_2"
 		}
-		"AttackDamageMin"		"3000"
-		"AttackDamageMax"		"3000"
+		"AttackDamageMin"		"3500"
+		"AttackDamageMax"		"3500"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -13310,7 +13310,7 @@
 			"2"		"earth"
 			"3"		"light"
 		}
-		"Damage"		"15000"
+		"Damage"		"17500"
 		"DamageType"		"earth"
 		"ScriptClass"		"GoldTower"
 		"TowerType"		"Normal"
@@ -13320,7 +13320,7 @@
 		"AttackAcquisitionRange"		"1150"
 		"AttackRate"		"1.5"
 		"ProjectileModel"		"particles/custom/towers/gold/attack.vpcf"
-		"ProjectileSpeed"		"1200"
+		"ProjectileSpeed"		"1500"
 	
 	    "Model"             "models/heroes/alchemist/alchemist.vmdl"
 	    "ModelScale"        "1.1"
@@ -13353,8 +13353,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"15000"
-		"AttackDamageMax"		"15000"
+		"AttackDamageMin"		"17500"
+		"AttackDamageMax"		"17500"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -13374,7 +13374,7 @@
 		"MagicalResistance"		"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-		"AttackAnimationPoint"		"0.3"
+		"AttackAnimationPoint"		"0.25"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeBaseStrength"		"0"
 		"AttributeStrengthGain"		"0"
@@ -13407,14 +13407,14 @@
 			"2"		"light"
 			"3"		"water"
 		}
-		"Damage"		"1000"
+		"Damage"		"850"
 		"DamageType"		"light"
 		"ScriptClass"		"HailTower"
 		"TowerType"		"Normal"
 	        "BuffPriority"          "7"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"1150"
-		"AttackAcquisitionRange"		"1250"
+		"AttackRange"		"1500"
+		"AttackAcquisitionRange"		"1600"
 		"AttackRate"		"0.66"
 		"ProjectileModel"		"particles/custom/towers/hail/attack.vpcf"
 		"ProjectileSpeed"		"3000"
@@ -13450,8 +13450,8 @@
 			"Count"		"1"
 			"1"		"hail_tower_2"
 		}
-		"AttackDamageMin"		"1000"
-		"AttackDamageMax"		"1000"
+		"AttackDamageMin"		"850"
+		"AttackDamageMax"		"850"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -13471,7 +13471,7 @@
 		"MagicalResistance"		"0"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageType"		"DAMAGE_TYPE_ArmorPhysical"
-		"AttackAnimationPoint"		"0.3"
+		"AttackAnimationPoint"		"0.25"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeBaseStrength"		"0"
 		"AttributeStrengthGain"		"0"
@@ -13504,20 +13504,20 @@
 			"2"		"light"
 			"3"		"water"
 		}
-		"Damage"		"5000"
+		"Damage"		"4250"
 		"DamageType"		"light"
 		"ScriptClass"		"HailTower"
 		"TowerType"		"Normal"
 	        "BuffPriority"          "3"
 		"HasAbilityDesc"		"1"
-		"AttackRange"		"1150"
-		"AttackAcquisitionRange"		"1250"
+		"AttackRange"		"1500"
+		"AttackAcquisitionRange"		"1600"
 		"AttackRate"		"0.66"
 		"ProjectileModel"		"particles/custom/towers/hail/attack.vpcf"
 		"ProjectileSpeed"		"3000"
 	
 	    "Model"             "models/heroes/drow/drow.vmdl"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "1.2"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "20"
 		"Creature"
@@ -13545,8 +13545,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"5000"
-		"AttackDamageMax"		"5000"
+		"AttackDamageMin"		"4250"
+		"AttackDamageMax"		"4250"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -13599,7 +13599,7 @@
 			"2"		"fire"
 			"3"		"water"
 		}
-		"Damage"		"800"
+		"Damage"		"900"
 		"DamageType"		"fire"
 		"ScriptClass"		"HasteTower"
 		"TowerType"		"Normal"
@@ -13640,8 +13640,8 @@
 			"Count"		"1"
 			"1"		"haste_tower_2"
 		}
-		"AttackDamageMin"		"800"
-		"AttackDamageMax"		"800"
+		"AttackDamageMin"		"900"
+		"AttackDamageMax"		"900"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -13694,7 +13694,7 @@
 			"2"		"fire"
 			"3"		"water"
 		}
-		"Damage"		"4000"
+		"Damage"		"4500"
 		"DamageType"		"fire"
 		"ScriptClass"		"HasteTower"
 		"TowerType"		"Normal"
@@ -13707,7 +13707,7 @@
 		"ProjectileSpeed"		"4000"
 	
 	    "Model"             "models/heroes/troll_warlord/troll_warlord.vmdl"
-	    "ModelScale"        "1.0"
+	    "ModelScale"        "1.1"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "15"
 		"Creature"
@@ -13733,8 +13733,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"4000"
-		"AttackDamageMax"		"4000"
+		"AttackDamageMin"		"4500"
+		"AttackDamageMax"		"4500"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -13895,7 +13895,7 @@
 		"ProjectileSpeed"		"3000"
 		
 	    "Model"             "models/heroes/enchantress/enchantress.vmdl"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "1"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "15"
 		"Creature"
@@ -13975,7 +13975,7 @@
 			"2"		"fire"
 			"3"		"nature"
 		}
-		"Damage"		"2100"
+		"Damage"		"2600"
 		"DamageType"		"dark"
 		"ScriptClass"		"JinxTower"
 		"TowerType"		"Normal"
@@ -14016,8 +14016,8 @@
 			"Count"		"1"
 			"1"		"jinx_tower_2"
 		}
-		"AttackDamageMin"		"2100"
-		"AttackDamageMax"		"2100"
+		"AttackDamageMin"		"2600"
+		"AttackDamageMax"		"2600"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -14070,7 +14070,7 @@
 			"2"		"fire"
 			"3"		"nature"
 		}
-		"Damage"		"10500"
+		"Damage"		"13000"
 		"DamageType"		"dark"
 		"ScriptClass"		"JinxTower"
 		"TowerType"		"Normal"
@@ -14109,8 +14109,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"10500"
-		"AttackDamageMax"		"10500"
+		"AttackDamageMin"		"13000"
+		"AttackDamageMax"		"13000"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -14163,7 +14163,7 @@
 			"2"		"earth"
 			"3"		"light"
 		}
-		"Damage"		"6000"
+		"Damage"		"5500"
 		"DamageType"		"light"
 		"ScriptClass"		"LaserTower"
 		"TowerType"		"Normal"
@@ -14206,8 +14206,8 @@
 			"Count"		"1"
 			"1"		"laser_tower_2"
 		}
-		"AttackDamageMin"		"6000"
-		"AttackDamageMax"		"6000"
+		"AttackDamageMin"		"5500"
+		"AttackDamageMax"		"5500"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -14260,7 +14260,7 @@
 			"2"		"earth"
 			"3"		"light"
 		}
-		"Damage"		"30000"
+		"Damage"		"27500"
 		"DamageType"		"light"
 		"ScriptClass"		"LaserTower"
 		"TowerType"		"Normal"
@@ -14273,7 +14273,7 @@
 		"ProjectileModel"		"particles/units/heroes/hero_tinker/tinker_laser.vpcf"
 	
 	    "Model"             "models/heroes/tinker/tinker.vmdl"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "1"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "20"
 		"Creature"
@@ -14302,8 +14302,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"30000"
-		"AttackDamageMax"		"30000"
+		"AttackDamageMin"		"27500"
+		"AttackDamageMax"		"27500"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -14356,7 +14356,7 @@
 			"2"		"earth"
 			"3"		"water"
 		}
-		"Damage"		"650"
+		"Damage"		"700"
 		"DamageType"		"earth"
 		"ScriptClass"		"MuckTower"
 		"TowerType"		"Normal"
@@ -14400,8 +14400,8 @@
 			"Count"		"1"
 			"1"		"muck_tower_2"
 		}
-		"AttackDamageMin"		"650"
-		"AttackDamageMax"		"650"
+		"AttackDamageMin"		"700"
+		"AttackDamageMax"		"700"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -14454,7 +14454,7 @@
 			"2"		"earth"
 			"3"		"water"
 		}
-		"Damage"		"3250"
+		"Damage"		"3500"
 		"DamageType"		"earth"
 		"ScriptClass"		"MuckTower"
 		"TowerType"		"Normal"
@@ -14467,7 +14467,7 @@
 		"ProjectileSpeed"		"2000"
 	
 	    "Model"             "models/heroes/bristleback/bristleback.vmdl"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "1"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "15"
 		"Creature"
@@ -14495,8 +14495,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"3250"
-		"AttackDamageMax"		"3250"
+		"AttackDamageMin"		"3500"
+		"AttackDamageMax"		"3500"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -14711,7 +14711,7 @@
 			"2"		"light"
 			"3"		"nature"
 		}
-		"Damage"		"1200"
+		"Damage"		"1000"
 		"DamageType"		"dark"
 		"ScriptClass"		"ObliterationTower"
 		"TowerType"		"Normal"
@@ -14753,8 +14753,8 @@
 			"Count"		"1"
 			"1"		"obliteration_tower_2"
 		}
-		"AttackDamageMin"		"1200"
-		"AttackDamageMax"		"1200"
+		"AttackDamageMin"		"1000"
+		"AttackDamageMax"		"1000"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -14807,7 +14807,7 @@
 			"2"		"light"
 			"3"		"nature"
 		}
-		"Damage"		"6000"
+		"Damage"		"5000"
 		"DamageType"		"dark"
 		"ScriptClass"		"ObliterationTower"
 		"TowerType"		"Normal"
@@ -14820,7 +14820,7 @@
 		"ProjectileSpeed"		"1000"
 	
 	    "Model"             "models/heroes/obsidian_destroyer/obsidian_destroyer.vmdl"
-	    "ModelScale"        "0.8"
+	    "ModelScale"        "0.75"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "-10"
 		"Creature"
@@ -14847,8 +14847,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"6000"
-		"AttackDamageMax"		"6000"
+		"AttackDamageMin"		"5000"
+		"AttackDamageMax"		"5000"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -14914,7 +14914,7 @@
 		"ProjectileSpeed"		"2000"
 	
 	    "Model"             "models/heroes/lich/lich.vmdl"
-	    "ModelScale"        "1.0"   
+	    "ModelScale"        "0.8"   
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "0"         
 	    "Creature"
@@ -15012,7 +15012,7 @@
 		"ProjectileSpeed"		"2000"
 	
 	    "Model"             "models/heroes/lich/lich.vmdl"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "0.9"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "0"
 		"Creature"
@@ -15202,7 +15202,7 @@
 		"ProjectileSpeed"		"2000"
 		
 	    "Model"             "models/heroes/earthshaker/earthshaker.vmdl"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "1"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "15"
 	    
@@ -15295,7 +15295,7 @@
 		"ProjectileSpeed"		"1000"
 	
 	    "Model"             "models/heroes/treant_protector/treant_protector.vmdl"
-	    "ModelScale"        "0.9"
+	    "ModelScale"        "0.8"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "20"
 		"Creature"
@@ -15388,7 +15388,7 @@
 		"ProjectileSpeed"		"1000"
 	
 	    "Model"             "models/heroes/treant_protector/treant_protector.vmdl"
-	    "ModelScale"        "1"
+	    "ModelScale"        "0.85"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "20"
 		"Creature"
@@ -15579,7 +15579,7 @@
 		"ProjectileSpeed"		"2000"
 	
 	    "Model"             "models/heroes/doom/doom.vmdl"
-	    "ModelScale"        "0.9"
+	    "ModelScale"        "0.8"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "20"
 		"Creature"
@@ -15661,7 +15661,7 @@
 			"2"		"nature"
 			"3"		"light"
 		}
-		"Damage"		"640"
+		"Damage"		"600"
 		"DamageType"		"water"
 		"ScriptClass"		"TidalTower"
 		"TowerType"		"Normal"
@@ -15706,8 +15706,8 @@
 			"Count"		"1"
 			"1"		"tidal_tower_2"
 		}
-		"AttackDamageMin"		"640"
-		"AttackDamageMax"		"640"
+		"AttackDamageMin"		"600"
+		"AttackDamageMax"		"600"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -15758,7 +15758,7 @@
 			"2"		"nature"
 			"3"		"light"
 		}
-		"Damage"		"3200"
+		"Damage"		"3000"
 		"DamageType"		"water"
 		"ScriptClass"		"TidalTower"
 		"TowerType"		"Normal"
@@ -15771,7 +15771,7 @@
 		"ProjectileSpeed"		"2500"
 	
 	    "Model"             "models/heroes/siren/siren.vmdl"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "1"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "15"
 		"Creature"
@@ -15801,8 +15801,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"3200"
-		"AttackDamageMax"		"3200"
+		"AttackDamageMin"		"3000"
+		"AttackDamageMax"		"3000"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -15902,7 +15902,7 @@
 		"ProjectileSpeed"		"900"
 	
 	    "Model"             "models/heroes/razor/razor.vmdl"
-	    "ModelScale"        "1"
+	    "ModelScale"        "0.9"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "0"
 		"Creature"
@@ -15994,7 +15994,7 @@
 		"ProjectileSpeed"		"900"
 		
 	    "Model"             "models/heroes/razor/razor.vmdl"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "1"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "0"
 		"Creature"

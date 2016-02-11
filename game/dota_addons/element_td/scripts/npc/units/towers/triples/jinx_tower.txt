@@ -45,7 +45,7 @@
 		"2"		"fire"
 		"3"		"nature"
 	}
-	"Damage"		"2100"
+	"Damage"		"2600"
 	"DamageType"		"dark"
 	"ScriptClass"		"JinxTower"
 	"TowerType"		"Normal"
@@ -86,8 +86,8 @@
 		"Count"		"1"
 		"1"		"jinx_tower_2"
 	}
-	"AttackDamageMin"		"2100"
-	"AttackDamageMax"		"2100"
+	"AttackDamageMin"		"2600"
+	"AttackDamageMax"		"2600"
 
 	// Building Size
     "ConstructionSize"          "2"

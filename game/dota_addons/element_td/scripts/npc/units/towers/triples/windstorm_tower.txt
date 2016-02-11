@@ -53,7 +53,7 @@
 	"ProjectileSpeed"		"900"
 
     "Model"             "models/heroes/razor/razor.vmdl"
-    "ModelScale"        "1"
+    "ModelScale"        "0.9"
     "ModelRotation"     "90"
     "ModelOffset"       "0"
 	"Creature"

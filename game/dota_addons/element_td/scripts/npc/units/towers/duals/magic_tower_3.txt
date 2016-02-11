@@ -40,7 +40,7 @@
 		"1"		"dark"
 		"2"		"fire"
 	}
-	"Damage"		"12500"
+	"Damage"		"15000"
 	"DamageType"		"dark"
 	"ScriptClass"		"MagicTower"
 	"TowerType"		"Normal"
@@ -52,7 +52,7 @@
 	"ProjectileModel"		"particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
 	"ProjectileSpeed"		"2000"
 	"Model"		"models/heroes/lion/lion.vmdl"
-	"ModelScale"		"1"
+	"ModelScale"		"0.9"
     "ModelRotation"             "90"
     "ModelOffset"               "15"
 	"UpgradeIcon"		"towers/magic_tower"
@@ -65,8 +65,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"12500"
-	"AttackDamageMax"		"12500"
+	"AttackDamageMin"		"15000"
+	"AttackDamageMax"		"15000"
     "Creature"
     {
        "AttachWearables" // Legacy of Infernal Wings

@@ -42,7 +42,7 @@
 		"1"		"dark"
 		"2"		"nature"
 	}
-	"Damage"		"1650"
+	"Damage"		"1500"
 	"DamageType"		"dark"
 	"ScriptClass"		"DiseaseTower"
 	"TowerType"		"Normal"
@@ -66,8 +66,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"1650"
-	"AttackDamageMax"		"1650"
+	"AttackDamageMin"		"1500"
+	"AttackDamageMax"		"1500"
 
     // Building Size
     "ConstructionSize"          "2"

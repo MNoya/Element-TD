@@ -50,7 +50,7 @@
 	"AttackAcquisitionRange"		"1500"
 	"AttackRate"		"0.66"
 	"ProjectileModel"		"particles/units/heroes/hero_techies/techies_base_attack.vpcf"
-	"ProjectileSpeed"		"1500"
+	"ProjectileSpeed"		"1800"
 	"Model"		"models/heroes/sniper/sniper.vmdl"
 	"ModelScale"		"1"
     "ModelRotation"             "90"

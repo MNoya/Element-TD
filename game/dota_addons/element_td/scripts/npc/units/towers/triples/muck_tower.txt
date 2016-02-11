@@ -45,7 +45,7 @@
 		"2"		"earth"
 		"3"		"water"
 	}
-	"Damage"		"650"
+	"Damage"		"700"
 	"DamageType"		"earth"
 	"ScriptClass"		"MuckTower"
 	"TowerType"		"Normal"
@@ -89,8 +89,8 @@
 		"Count"		"1"
 		"1"		"muck_tower_2"
 	}
-	"AttackDamageMin"		"650"
-	"AttackDamageMax"		"650"
+	"AttackDamageMin"		"700"
+	"AttackDamageMax"		"700"
 
 	// Building Size
     "ConstructionSize"          "2"

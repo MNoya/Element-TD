@@ -37,7 +37,7 @@
 		"01"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"chance_pct"		"33"
+			"chance_pct"		"40"
 		}
 		"02"
 		{
@@ -47,7 +47,7 @@
 		"03"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"splash_aoe"		"250"
+			"splash_aoe"		"300"
 		}
 		"04"
 		{

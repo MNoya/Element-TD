@@ -43,7 +43,7 @@
 		"2"		"nature"
 		"3"		"light"
 	}
-	"Damage"		"640"
+	"Damage"		"600"
 	"DamageType"		"water"
 	"ScriptClass"		"TidalTower"
 	"TowerType"		"Normal"
@@ -88,8 +88,8 @@
 		"Count"		"1"
 		"1"		"tidal_tower_2"
 	}
-	"AttackDamageMin"		"640"
-	"AttackDamageMax"		"640"
+	"AttackDamageMin"		"600"
+	"AttackDamageMax"		"600"
 
 	// Building Size
     "ConstructionSize"          "2"

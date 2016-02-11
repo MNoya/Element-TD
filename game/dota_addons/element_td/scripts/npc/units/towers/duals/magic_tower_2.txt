@@ -40,7 +40,7 @@
 		"1"		"dark"
 		"2"		"fire"
 	}
-	"Damage"		"2500"
+	"Damage"		"3000"
 	"DamageType"		"dark"
 	"ScriptClass"		"MagicTower"
 	"TowerType"		"Normal"
@@ -67,8 +67,8 @@
 		"Count"		"1"
 		"1"		"magic_tower_3"
 	}
-	"AttackDamageMin"		"2500"
-	"AttackDamageMax"		"2500"
+	"AttackDamageMin"		"3000"
+	"AttackDamageMax"		"3000"
     "Creature"
     {
        "AttachWearables" // Curse of the Malignant Corruption Set

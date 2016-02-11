@@ -41,7 +41,7 @@
 		"1"		"dark"
 		"2"		"nature"
 	}
-	"Damage"		"66"
+	"Damage"		"60"
 	"DamageType"		"dark"
 	"ScriptClass"		"DiseaseTower"
 	"TowerType"		"Normal"
@@ -70,8 +70,8 @@
 		"4"		"roots_tower"
 		"5"		"jinx_tower"
 	}
-	"AttackDamageMin"		"66"
-	"AttackDamageMax"		"66"
+	"AttackDamageMin"		"60"
+	"AttackDamageMax"		"60"
 
     // Building Size
     "ConstructionSize"          "2"

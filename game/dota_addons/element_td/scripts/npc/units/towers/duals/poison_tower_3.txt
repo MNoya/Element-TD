@@ -39,7 +39,7 @@
 		"1"		"dark"
 		"2"		"water"
 	}
-	"Damage"		"3750"
+	"Damage"		"4500"
 	"DamageType"		"dark"
 	"ScriptClass"		"PoisonTower"
 	"TowerType"		"Normal"
@@ -51,7 +51,7 @@
 	"ProjectileModel"		"particles/units/heroes/hero_venomancer/venomancer_base_attack.vpcf"
 	"ProjectileSpeed"		"1500"
 	"Model"		"models/heroes/venomancer/venomancer.vmdl"
-	"ModelScale"		"1"
+	"ModelScale"		"0.9"
     "ModelRotation"             "90"
     "ModelOffset"               "10"
 	"AOE_Full"		"100"
@@ -66,8 +66,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"3750"
-	"AttackDamageMax"		"3750"
+	"AttackDamageMin"		"4500"
+	"AttackDamageMax"		"4500"
     "Creature"
     {
        "AttachWearables" // Acid Hydra

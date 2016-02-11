@@ -45,7 +45,7 @@
 		"2"		"earth"
 		"3"		"water"
 	}
-	"Damage"		"3250"
+	"Damage"		"3500"
 	"DamageType"		"earth"
 	"ScriptClass"		"MuckTower"
 	"TowerType"		"Normal"
@@ -58,7 +58,7 @@
 	"ProjectileSpeed"		"2000"
 
     "Model"             "models/heroes/bristleback/bristleback.vmdl"
-    "ModelScale"        "1.1"
+    "ModelScale"        "1"
     "ModelRotation"     "90"
     "ModelOffset"       "15"
 	"Creature"
@@ -86,8 +86,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"3250"
-	"AttackDamageMax"		"3250"
+	"AttackDamageMin"		"3500"
+	"AttackDamageMax"		"3500"
 
 	// Building Size
     "ConstructionSize"          "2"
