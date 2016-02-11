@@ -29,7 +29,7 @@ function IceTower:OnAttack(keys)
         bReplaceExisting = false,
         bProvidesVision = false,
         iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
-        iUnitTargetType = DOTA_UNIT_TARGET_BASIC,
+        iUnitTargetType = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO,
     }
    
     local diff = target:GetAbsOrigin() - self.tower:GetAbsOrigin()
