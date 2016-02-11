@@ -12661,8 +12661,8 @@
 	        }
 	    }
 	
-		"AOE_Full"		"300"
-		"AOE_Half"		"300"
+		"AOE_Full"		"400"
+		"AOE_Half"		"400"
 		"UpgradeIcon"		"towers/erosion_tower_acid_attack"
 		"BuildTime"		"4"
 		"Requirements"
@@ -12759,8 +12759,8 @@
 	        }
 	    }
 	
-		"AOE_Full"		"300"
-		"AOE_Half"		"300"
+		"AOE_Full"		"400"
+		"AOE_Half"		"400"
 		"UpgradeIcon"		"towers/erosion_tower_acid_attack"
 		"BuildTime"		"4"
 		"Requirements"

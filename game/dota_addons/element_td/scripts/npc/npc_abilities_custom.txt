@@ -2110,7 +2110,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"120 600"
+				"dot"					"110 550"
 			}
 			"03"
 			{
@@ -2120,7 +2120,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"300"
+				"aoe"					"400"
 			}
 		}
 	}
