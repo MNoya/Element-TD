@@ -4,53 +4,53 @@
     "MinimapIconSize"           "200"
     "MinimapDisableTint"        "1"
 
-	"ArmorPhysical"		"0"
-	"MagicalResistance"		"0"
-	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"		"0"
-	"AttackDamageMax"		"0"
-	"AttackRate"		"0"
-	"AttackAnimationPoint"		"0"
-	"AttackAcquisitionRange"		"0"
-	"AttackRange"		"0"
-	"ProjectileModel"		""
-	"ProjectileSpeed"		"0"
-	"RingRadius"		"70"
-	"HealthBarOffset"		"160"
-	"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
-	"BountyXP"		"0"
-	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"		"300"
-	"StatusHealthRegen"		"0"
-	"StatusMana"		"0"
-	"StatusManaRegen"		"0"
-	"VisionDaytimeRange"		"1200"
-	"VisionNighttimeRange"		"800"
-	"Model"		"models/heroes/rattletrap/rattletrap.vmdl"
-	"ModelScale"		"1.0"
-	"BaseClass"		"npc_dota_creature"
-	"SoundSet"		""
-	"Ability1"		"composite_armor"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"		"484"
-			}
-			"Wearable2"
-			{
-				"ItemDef"		"485"
-			}
-			"Wearable3"
-			{
-				"ItemDef"		"231"
-			}
-			"Wearable4"
-			{
-				"ItemDef"		"446"
-			}
-		}
-	}
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"        "0"
+    "AttackDamageMax"        "0"
+    "AttackRate"        "0"
+    "AttackAnimationPoint"        "0"
+    "AttackAcquisitionRange"        "0"
+    "AttackRange"        "0"
+    "ProjectileModel"        ""
+    "ProjectileSpeed"        "0"
+    "RingRadius"        "70"
+    "HealthBarOffset"        "160"
+    "BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
+    "BountyXP"        "0"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"        "300"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "VisionDaytimeRange"        "1200"
+    "VisionNighttimeRange"        "800"
+    "Model"        "models/heroes/rattletrap/rattletrap.vmdl"
+    "ModelScale"        "1.0"
+    "BaseClass"        "npc_dota_creature"
+    "SoundSet"        ""
+    "Ability1"        "composite_armor"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"        "484"
+            }
+            "Wearable2"
+            {
+                "ItemDef"        "485"
+            }
+            "Wearable3"
+            {
+                "ItemDef"        "231"
+            }
+            "Wearable4"
+            {
+                "ItemDef"        "446"
+            }
+        }
+    }
 }

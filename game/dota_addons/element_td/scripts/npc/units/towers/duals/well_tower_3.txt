@@ -1,88 +1,88 @@
 "well_tower_3"
 {
-	// Visual
+    // Visual
     //-----------------------------
-	"Model"						"models/well_tower3.vmdl"
-	"ModelScale"				"0.8"
-	"ModelRotation"				"0"
-	"ProjectileModel"			"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
-	"ProjectileSpeed"			"2000"
-	"MinimapIcon"				"minimap_tower90"
-	"MinimapIconSize"			"320"
-	"DisableTurning"			"1"
-	"SoundSet"					"Hero_Morphling"
+    "Model"                        "models/well_tower3.vmdl"
+    "ModelScale"                "0.8"
+    "ModelRotation"                "0"
+    "ProjectileModel"            "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
+    "ProjectileSpeed"            "2000"
+    "MinimapIcon"                "minimap_tower90"
+    "MinimapIconSize"            "320"
+    "DisableTurning"            "1"
+    "SoundSet"                    "Hero_Morphling"
 
-	// Stats
+    // Stats
     //----------------------------- 
-	"AttackDamageMin"			"7500"
-	"AttackDamageMax"			"7500"
-	"Damage"					"7500"
-	"AttackRange"				"900"
-	"AttackAcquisitionRange"	"900"
-	"AttackRate"				"1"
+    "AttackDamageMin"            "7500"
+    "AttackDamageMax"            "7500"
+    "Damage"                    "7500"
+    "AttackRange"                "900"
+    "AttackAcquisitionRange"    "900"
+    "AttackRate"                "1"
 
-	"Level"						"3"
-	"Cost"						"1900"
-	"TotalCost"					"3150"
-	"BuildTime"					"3"
-	"Element"
-	{
-		"1"		"nature"
-		"2"		"water"
-	}
-	"DamageType"				"water"
-	"ScriptClass"				"WellTower"
-	"TowerType"					"Support"
-	"HasAbilityDesc"			"1"
-	"UpgradeIcon"				"morphling_waveform"
+    "Level"                        "3"
+    "Cost"                        "1900"
+    "TotalCost"                    "3150"
+    "BuildTime"                    "3"
+    "Element"
+    {
+        "1"        "nature"
+        "2"        "water"
+    }
+    "DamageType"                "water"
+    "ScriptClass"                "WellTower"
+    "TowerType"                    "Support"
+    "HasAbilityDesc"            "1"
+    "UpgradeIcon"                "morphling_waveform"
 
-	"Requirements"
-	{
-		"water"			"3"
-		"nature"		"3"
-	}
+    "Requirements"
+    {
+        "water"            "3"
+        "nature"        "3"
+    }
 
-	"Upgrades"
-	{
-	}
+    "Upgrades"
+    {
+    }
 
-	// General
+    // General
     //-----------------------------
-	"BaseClass"						"npc_dota_creature"
-	"GameSoundsFile"				"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
-	"particle_folder"				"particles/units/heroes/hero_morphling"
-	"ArmorPhysical"					"0"
-	"MagicalResistance"				"0"
-	"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackDamageType"				"DAMAGE_TYPE_ArmorPhysical"
-	"AttackAnimationPoint"			"0"
-	"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
-	"AttributeBaseStrength"			"0"
-	"AttributeStrengthGain"			"0"
-	"AttributeBaseIntelligence"		"0"
-	"AttributeIntelligenceGain"		"0"
-	"AttributeBaseAgility"			"0"
-	"AttributeAgilityGain"			"0"
-	"BoundsHullName"				"DOTA_HULL_SIZE_BUILDING"
-	"ProjectileCollisionSize"		"50"
-	"RingRadius"					"80"
-	"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_NONE"
-	"MovementSpeed"					"0"
-	"MovementTurnRate"				"1.0"
-	"StatusHealth"					"3150"
-	"StatusHealthRegen"				"0"
-	"StatusMana"					"0"
-	"StatusManaRegen"				"0"
-	"TeamName"						"DOTA_TEAM_GOODGUYS"
-	"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-	"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
-	"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	"VisionDaytimeRange"			"1900"
-	"VisionNighttimeRange"			"1900"
-	
-	
-	// Building Size
-	//-----------------------------
+    "BaseClass"                        "npc_dota_creature"
+    "GameSoundsFile"                "soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+    "particle_folder"                "particles/units/heroes/hero_morphling"
+    "ArmorPhysical"                    "0"
+    "MagicalResistance"                "0"
+    "AttackCapabilities"            "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"                "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"            "0"
+    "AttributePrimary"                "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"            "0"
+    "AttributeStrengthGain"            "0"
+    "AttributeBaseIntelligence"        "0"
+    "AttributeIntelligenceGain"        "0"
+    "AttributeBaseAgility"            "0"
+    "AttributeAgilityGain"            "0"
+    "BoundsHullName"                "DOTA_HULL_SIZE_BUILDING"
+    "ProjectileCollisionSize"        "50"
+    "RingRadius"                    "80"
+    "MovementCapabilities"            "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"                    "0"
+    "MovementTurnRate"                "1.0"
+    "StatusHealth"                    "3150"
+    "StatusHealthRegen"                "0"
+    "StatusMana"                    "0"
+    "StatusManaRegen"                "0"
+    "TeamName"                        "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"                "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"                "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"            "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"            "1900"
+    "VisionNighttimeRange"            "1900"
+    
+    
+    // Building Size
+    //-----------------------------
     "ConstructionSize"          "2"
-    "BlockPathingSize"          "0"	
+    "BlockPathingSize"          "0"    
 }

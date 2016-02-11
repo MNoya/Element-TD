@@ -1,11 +1,11 @@
 "life_tower_3"
 {
     "BaseClass"                 "npc_dota_creature" 
-	"SoundSet"                  "Hero_SkywrathMage"
+    "SoundSet"                  "Hero_SkywrathMage"
     "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
-	"MinimapIcon"				"minimap_tower90"
-	"MinimapIconSize"			"320"
-	"ArmorPhysical"             "0"
+    "MinimapIcon"                "minimap_tower90"
+    "MinimapIconSize"            "320"
+    "ArmorPhysical"             "0"
     "MagicalResistance"         "0"
     "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
     "TeamName"                  "DOTA_TEAM_GOODGUYS"
@@ -26,47 +26,47 @@
     "StatusHealthRegen"         "0"
     "StatusMana"                "0"
     "StatusManaRegen"           "0"
-	"TeamName"		"DOTA_TEAM_GOODGUYS"
-	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-	"CombatClassDefend"		"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
-	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	"VisionDaytimeRange"		"1900"
-	"VisionNighttimeRange"		"1900"
-	"Level"		"3"
-	"Cost"		"1900"
-	"TotalCost"		"3150"
-	"Element"
-	{
-		"1"		"light"
-		"2"		"nature"
-	}
-	"Damage"		"6250"
-	"DamageType"		"nature"
-	"ScriptClass"		"LifeTower"
-	"TowerType"		"Normal"
+    "TeamName"        "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"        "1900"
+    "Level"        "3"
+    "Cost"        "1900"
+    "TotalCost"        "3150"
+    "Element"
+    {
+        "1"        "light"
+        "2"        "nature"
+    }
+    "Damage"        "6250"
+    "DamageType"        "nature"
+    "ScriptClass"        "LifeTower"
+    "TowerType"        "Normal"
         "BuffPriority"          "2"
-	"HasAbilityDesc"		"1"
-	"AttackRange"		"1150"
-	"AttackAcquisitionRange"		"1150"
-	"AttackRate"		"0.66"
-	"ProjectileModel"		"particles/custom/attacks/wisp_nature_attack.vpcf"
-	"ProjectileSpeed"		"2500"
-	"Model"		"models/heroes/omniknight/omniknight.vmdl"
-	"ModelScale"		"1"
+    "HasAbilityDesc"        "1"
+    "AttackRange"        "1150"
+    "AttackAcquisitionRange"        "1150"
+    "AttackRate"        "0.66"
+    "ProjectileModel"        "particles/custom/attacks/wisp_nature_attack.vpcf"
+    "ProjectileSpeed"        "2500"
+    "Model"        "models/heroes/omniknight/omniknight.vmdl"
+    "ModelScale"        "1"
     "ModelRotation"             "90"
     "ModelOffset"               "20"
-	"UpgradeIcon"		"towers/life_tower_afterlife"
-	"BuildTime"		"3"
-	"Requirements"
-	{
-		"light"		"3"
-		"nature"		"3"
-	}
-	"Upgrades"
-	{
-	}
-	"AttackDamageMin"		"6250"
-	"AttackDamageMax"		"6250"
+    "UpgradeIcon"        "towers/life_tower_afterlife"
+    "BuildTime"        "3"
+    "Requirements"
+    {
+        "light"        "3"
+        "nature"        "3"
+    }
+    "Upgrades"
+    {
+    }
+    "AttackDamageMin"        "6250"
+    "AttackDamageMax"        "6250"
     "Creature"
     {
        "AttachWearables" // Thunderwrath's Calling Set
@@ -75,7 +75,7 @@
             "2" { "ItemDef" "4515" } // Armor of Thunderwrath's Calling
             "3" { "ItemDef" "6587" } // Guard of Basilius
             "4" { "ItemDef" "4508" } // Helm of Thunderwrath's Calling
-			"5" { "ItemDef" "45" } // Head
+            "5" { "ItemDef" "45" } // Head
        }
     }
 

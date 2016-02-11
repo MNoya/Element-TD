@@ -24,9 +24,9 @@
         }
     }
     "SoundSet"          "Hero_Nevermore"
-	"IdleSoundLoop"     "Hero_Nevermore.IdleLoop"
-    "GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
-	"VoiceFile"         "soundevents/voscripts/game_sounds_vo_nevermore.vsndevts"
+    "IdleSoundLoop"     "Hero_Nevermore.IdleLoop"
+    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_nevermore.vsndevts"
 
     // Stats
     //----------------------------- 
@@ -50,14 +50,14 @@
     "BuffPriority"              "9"
     
     "Requirements"
-	{
-		"dark"		"2"
-	}
-	"Upgrades"
-	{
-		"Count"		"1"
-		"1"		"refined_dark_tower"
-	}
+    {
+        "dark"        "2"
+    }
+    "Upgrades"
+    {
+        "Count"        "1"
+        "1"        "refined_dark_tower"
+    }
     
     // General
     //-----------------------------

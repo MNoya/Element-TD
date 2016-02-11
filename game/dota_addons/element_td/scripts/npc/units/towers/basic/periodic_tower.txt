@@ -27,9 +27,9 @@
         }
     }
     "SoundSet"          "Hero_Invoker"
-	"IdleSoundLoop"     "Hero_Invoker.IdleLoop"
+    "IdleSoundLoop"     "Hero_Invoker.IdleLoop"
     "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
-    "VoiceFile"		"soundevents/voscripts/game_sounds_vo_invoker.vsndevts"
+    "VoiceFile"        "soundevents/voscripts/game_sounds_vo_invoker.vsndevts"
 
     // Stats
     //-----------------------------

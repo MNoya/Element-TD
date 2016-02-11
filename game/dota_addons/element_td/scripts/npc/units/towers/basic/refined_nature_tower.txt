@@ -27,7 +27,7 @@
     }
     "SoundSet"          "Hero_Furion"
     "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
-	"VoiceFile"         "soundevents/voscripts/game_sounds_vo_furion.vsndevts"
+    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_furion.vsndevts"
 
     // Stats
     //----------------------------- 

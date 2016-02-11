@@ -1,11 +1,11 @@
 "quark_tower"
 {
     "BaseClass"                 "npc_dota_creature" 
-	"SoundSet"                  "Hero_Chen"
+    "SoundSet"                  "Hero_Chen"
     "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_chen.vsndevts"
-	"MinimapIcon"				"minimap_tower90"
-	"MinimapIconSize"			"320"
-	"ArmorPhysical"             "0"
+    "MinimapIcon"                "minimap_tower90"
+    "MinimapIconSize"            "320"
+    "ArmorPhysical"             "0"
     "MagicalResistance"         "0"
     "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
     "TeamName"                  "DOTA_TEAM_GOODGUYS"
@@ -26,87 +26,87 @@
     "StatusHealthRegen"         "0"
     "StatusMana"                "0"
     "StatusManaRegen"           "0"
-	"TeamName"		"DOTA_TEAM_GOODGUYS"
-	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-	"CombatClassDefend"		"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
-	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	"VisionDaytimeRange"		"1900"
-	"VisionNighttimeRange"		"1900"
-	"Level"		"1"
-	"Cost"		"275"
-	"TotalCost"		"450"
-	"Element"
-	{
-		"1"		"earth"
-		"2"		"light"
-	}
-	"Damage"		"500"
-	"DamageType"		"light"
-	"ScriptClass"		"QuarkTower"
-	"TowerType"		"Normal"
+    "TeamName"        "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"        "1900"
+    "Level"        "1"
+    "Cost"        "275"
+    "TotalCost"        "450"
+    "Element"
+    {
+        "1"        "earth"
+        "2"        "light"
+    }
+    "Damage"        "500"
+    "DamageType"        "light"
+    "ScriptClass"        "QuarkTower"
+    "TowerType"        "Normal"
         "BuffPriority"          "10"
-	"HasAbilityDesc"		"1"
-	"AttackRange"		"700"
-	"AttackAcquisitionRange"		"700"
-	"AttackRate"		"1"
-	"ProjectileModel"		"particles/units/heroes/hero_chen/chen_base_attack.vpcf"
-	"ProjectileSpeed"		"1500"
-	"Model"		"models/heroes/chen/chen.vmdl"
-	"ModelScale"		"0.8"
+    "HasAbilityDesc"        "1"
+    "AttackRange"        "700"
+    "AttackAcquisitionRange"        "700"
+    "AttackRate"        "1"
+    "ProjectileModel"        "particles/units/heroes/hero_chen/chen_base_attack.vpcf"
+    "ProjectileSpeed"        "1500"
+    "Model"        "models/heroes/chen/chen.vmdl"
+    "ModelScale"        "0.8"
     "ModelRotation"             "90"
     "ModelOffset"               "20"
-	"UpgradeIcon"		"towers/quark_tower_quantum_beam"
-	"BuildTime"		"3"
-	"Requirements"
-	{
-		"earth"		"1"
-		"light"		"1"
-	}
-	"Upgrades"
-	{
-		"Count"		"5"
-		"1"		"quark_tower_2"
-		"2"		"gold_tower"
-		"3"		"laser_tower"
-		"4"		"enchantment_tower"
-		"5"		"polar_tower"
-	}
-	"AttackDamageMin"		"500"
-	"AttackDamageMax"		"500"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"		"521" // Ambient
-			}
-			"Wearable2"
-			{
-				"ItemDef"		"221" // Mount
-			}
-			"Wearable3"
-			{
-				"ItemDef"		"220" // Staff
-			}
-			"Wearable4"
-			{
-				"ItemDef"		"222" // Helm
-			}
-			"Wearable5"
-			{
-				"ItemDef"		"223" // Bracers
-			}
-			"Wearable6"
-			{
-				"ItemDef"		"224" // Sholders
-			}
-			"Wearable7"
-			{
-				"ItemDef"		"225" // Mount Armor
-			}
-		}
-	}
+    "UpgradeIcon"        "towers/quark_tower_quantum_beam"
+    "BuildTime"        "3"
+    "Requirements"
+    {
+        "earth"        "1"
+        "light"        "1"
+    }
+    "Upgrades"
+    {
+        "Count"        "5"
+        "1"        "quark_tower_2"
+        "2"        "gold_tower"
+        "3"        "laser_tower"
+        "4"        "enchantment_tower"
+        "5"        "polar_tower"
+    }
+    "AttackDamageMin"        "500"
+    "AttackDamageMax"        "500"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"        "521" // Ambient
+            }
+            "Wearable2"
+            {
+                "ItemDef"        "221" // Mount
+            }
+            "Wearable3"
+            {
+                "ItemDef"        "220" // Staff
+            }
+            "Wearable4"
+            {
+                "ItemDef"        "222" // Helm
+            }
+            "Wearable5"
+            {
+                "ItemDef"        "223" // Bracers
+            }
+            "Wearable6"
+            {
+                "ItemDef"        "224" // Sholders
+            }
+            "Wearable7"
+            {
+                "ItemDef"        "225" // Mount Armor
+            }
+        }
+    }
 
     // Building Size
     "ConstructionSize"          "2"

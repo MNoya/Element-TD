@@ -1,11 +1,11 @@
 "life_tower"
 {
     "BaseClass"                 "npc_dota_creature" 
-	"SoundSet"                  "Hero_SkywrathMage"
+    "SoundSet"                  "Hero_SkywrathMage"
     "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
-	"MinimapIcon"				"minimap_tower90"
-	"MinimapIconSize"			"320"
-	"ArmorPhysical"             "0"
+    "MinimapIcon"                "minimap_tower90"
+    "MinimapIconSize"            "320"
+    "ArmorPhysical"             "0"
     "MagicalResistance"         "0"
     "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
     "TeamName"                  "DOTA_TEAM_GOODGUYS"
@@ -26,83 +26,83 @@
     "StatusHealthRegen"         "0"
     "StatusMana"                "0"
     "StatusManaRegen"           "0"
-	"TeamName"		"DOTA_TEAM_GOODGUYS"
-	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-	"CombatClassDefend"		"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
-	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	"VisionDaytimeRange"		"1900"
-	"VisionNighttimeRange"		"1900"
-	"Level"		"1"
-	"Cost"		"275"
-	"TotalCost"		"450"
-	"Element"
-	{
-		"1"		"light"
-		"2"		"nature"
-	}
-	"Damage"		"250"
-	"DamageType"		"nature"
-	"ScriptClass"		"LifeTower"
-	"TowerType"		"Normal"
+    "TeamName"        "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"        "1900"
+    "Level"        "1"
+    "Cost"        "275"
+    "TotalCost"        "450"
+    "Element"
+    {
+        "1"        "light"
+        "2"        "nature"
+    }
+    "Damage"        "250"
+    "DamageType"        "nature"
+    "ScriptClass"        "LifeTower"
+    "TowerType"        "Normal"
         "BuffPriority"          "10"
-	"HasAbilityDesc"		"1"
-	"AttackRange"		"1150"
-	"AttackAcquisitionRange"		"1150"
-	"AttackRate"		"0.66"
-	"ProjectileModel"		"particles/custom/attacks/wisp_nature_attack.vpcf"
-	"ProjectileSpeed"		"2500"
-	"Model"		"models/heroes/omniknight/omniknight.vmdl"
-	"ModelScale"		"0.8"
+    "HasAbilityDesc"        "1"
+    "AttackRange"        "1150"
+    "AttackAcquisitionRange"        "1150"
+    "AttackRate"        "0.66"
+    "ProjectileModel"        "particles/custom/attacks/wisp_nature_attack.vpcf"
+    "ProjectileSpeed"        "2500"
+    "Model"        "models/heroes/omniknight/omniknight.vmdl"
+    "ModelScale"        "0.8"
     "ModelRotation"             "90"
     "ModelOffset"               "20"
-	"UpgradeIcon"		"towers/life_tower_afterlife"
-	"BuildTime"		"3"
-	"Requirements"
-	{
-		"light"		"1"
-		"nature"		"1"
-	}
-	"Upgrades"
-	{
-		"Count"		"5"
-		"1"		"life_tower_2"
-		"2"		"enchantment_tower"
-		"3"		"obliteration_tower"
-		"4"		"tidal_tower"
-		"5"		"nova_tower"
-	}
-	"AttackDamageMin"		"250"
-	"AttackDamageMax"		"250"
-	"Creature"
-	{
-		"AttachWearables"
-		{
-			"Wearable1"
-			{
-				"ItemDef"		"13"
-			}
-			"Wearable2"
-			{
-				"ItemDef"		"42"
-			}
-			"Wearable3"
-			{
-				"ItemDef"		"43"
-			}
-			"Wearable4"
-			{
-				"ItemDef"		"44"
-			}
-			"Wearable5"
-			{
-				"ItemDef"		"45"
-			}
-			"Wearable6"
-			{
-				"ItemDef"		"46"
-			}
-		}
-	}
+    "UpgradeIcon"        "towers/life_tower_afterlife"
+    "BuildTime"        "3"
+    "Requirements"
+    {
+        "light"        "1"
+        "nature"        "1"
+    }
+    "Upgrades"
+    {
+        "Count"        "5"
+        "1"        "life_tower_2"
+        "2"        "enchantment_tower"
+        "3"        "obliteration_tower"
+        "4"        "tidal_tower"
+        "5"        "nova_tower"
+    }
+    "AttackDamageMin"        "250"
+    "AttackDamageMax"        "250"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "Wearable1"
+            {
+                "ItemDef"        "13"
+            }
+            "Wearable2"
+            {
+                "ItemDef"        "42"
+            }
+            "Wearable3"
+            {
+                "ItemDef"        "43"
+            }
+            "Wearable4"
+            {
+                "ItemDef"        "44"
+            }
+            "Wearable5"
+            {
+                "ItemDef"        "45"
+            }
+            "Wearable6"
+            {
+                "ItemDef"        "46"
+            }
+        }
+    }
 
     // Building Size
     "ConstructionSize"          "2"

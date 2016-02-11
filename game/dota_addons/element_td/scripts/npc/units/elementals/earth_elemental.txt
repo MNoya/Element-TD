@@ -86,7 +86,7 @@
     "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
     "ConsideredHero"        "1"
 
-    "Ability10"	"tiny_model03"
+    "Ability10"    "tiny_model03"
 
     "Creature"
     {
@@ -142,7 +142,7 @@
     "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
     "ConsideredHero"        "1"
 
-    "Ability10"	"tiny_model04"
+    "Ability10"    "tiny_model04"
 
     "Creature"
     {

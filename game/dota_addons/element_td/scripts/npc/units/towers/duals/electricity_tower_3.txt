@@ -1,9 +1,9 @@
 "electricity_tower_3"
 {
     "BaseClass"                 "npc_dota_creature" 
-	"MinimapIcon"				"minimap_tower90"
-	"MinimapIconSize"			"320"
-	"ArmorPhysical"             "0"
+    "MinimapIcon"                "minimap_tower90"
+    "MinimapIconSize"            "320"
+    "ArmorPhysical"             "0"
     "MagicalResistance"         "0"
     "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
     "TeamName"                  "DOTA_TEAM_GOODGUYS"
@@ -24,31 +24,31 @@
     "StatusHealthRegen"         "0"
     "StatusMana"                "0"
     "StatusManaRegen"           "0"
-	"TeamName"		"DOTA_TEAM_GOODGUYS"
-	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-	"CombatClassDefend"		"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
-	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	"VisionDaytimeRange"		"1900"
-	"VisionNighttimeRange"		"1900"
-	"Level"		"3"
-	"Cost"		"1900"
-	"TotalCost"		"3150"
-	"Element"
-	{
-		"1"		"fire"
-		"2"		"light"
-	}
-	"Damage"		"0"
-	"DamageType"		"fire"
-	"ScriptClass"		"ElectricityTower"
-	"TowerType"		"Normal"
+    "TeamName"        "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"        "1900"
+    "Level"        "3"
+    "Cost"        "1900"
+    "TotalCost"        "3150"
+    "Element"
+    {
+        "1"        "fire"
+        "2"        "light"
+    }
+    "Damage"        "0"
+    "DamageType"        "fire"
+    "ScriptClass"        "ElectricityTower"
+    "TowerType"        "Normal"
         "BuffPriority"          "2"
-	"HasAbilityDesc"		"1"
-	"AttackRange"		"1150"
-	"AttackAcquisitionRange"		"1150"
-	"AttackRate"		"1"
-	"ProjectileModel"		""
-	"ProjectileSpeed"		"1000"
+    "HasAbilityDesc"        "1"
+    "AttackRange"        "1150"
+    "AttackAcquisitionRange"        "1150"
+    "AttackRate"        "1"
+    "ProjectileModel"        ""
+    "ProjectileSpeed"        "1000"
 
     "Model"            "models/heroes/zeus/zeus_arcana.vmdl"
     "ModelScale"       "1.1"
@@ -66,18 +66,18 @@
         }
     }
 
-	"UpgradeIcon"		"towers/electricty_tower_conjure_lightning"
-	"BuildTime"		"3"
-	"Requirements"
-	{
-		"fire"		"3"
-		"light"		"3"
-	}
-	"Upgrades"
-	{
-	}
-	"AttackDamageMin"		"0"
-	"AttackDamageMax"		"0"
+    "UpgradeIcon"        "towers/electricty_tower_conjure_lightning"
+    "BuildTime"        "3"
+    "Requirements"
+    {
+        "fire"        "3"
+        "light"        "3"
+    }
+    "Upgrades"
+    {
+    }
+    "AttackDamageMin"        "0"
+    "AttackDamageMax"        "0"
     "Creature"
     {
        "AttachWearables" // Virtuous Roar
