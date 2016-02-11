@@ -2,7 +2,7 @@
 {
     // Visual
     //-----------------------------
-    "Model"                     "models/heroes/shadow_fiend/shadow_fiend.vmdl"
+    "Model"                     "models/heroes/shadow_fiend/shadow_fiend_arcana.vmdl"
     "ModelScale"                "0.9"
     "ModelRotation"             "90"
     "ModelOffset"               "10"
@@ -17,7 +17,7 @@
     {
         "AttachWearables"
         {
-            "1"  { "ItemDef" "6996" } //Demon Eater Arcana
+            "1"  { "ItemDef" "387" } //Head
             "2"  { "ItemDef" "486" } //Shoulder
             "3"  { "ItemDef" "8259" } // Arms of Desolation
             "4"  { "ItemDef" "509" } //Ambient
