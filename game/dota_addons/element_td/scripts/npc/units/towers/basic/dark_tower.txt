@@ -23,6 +23,10 @@
             "4"  { "ItemDef" "509" } //Ambient
         }
     }
+    "SoundSet"          "Hero_Nevermore"
+	"IdleSoundLoop"     "Hero_Nevermore.IdleLoop"
+    "GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+	"VoiceFile"         "soundevents/voscripts/game_sounds_vo_nevermore.vsndevts"
 
     // Stats
     //----------------------------- 

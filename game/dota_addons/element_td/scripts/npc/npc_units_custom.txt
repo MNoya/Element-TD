@@ -5934,7 +5934,7 @@
 	    "PedestalModel"             "models/tower_white_pedestal.vmdl"
 	    "DestructionEffect"         "particles/econ/items/effigies/status_fx_effigies/base_statue_destruction_generic.vpcf"
 	    "ProjectileModel"           "particles/units/heroes/hero_jakiro/jakiro_base_attack_fire.vpcf"
-	    "SoundSet"                  "Tower.Water"
+	    "SoundSet"                  "Tower.Fire"
 	    "MinimapIcon"               "minimap_tower90"
 	    "MinimapIconSize"           "320"
 	 
@@ -6016,6 +6016,10 @@
 	            "4"  { "ItemDef" "509" } //Ambient
 	        }
 	    }
+	    "SoundSet"          "Hero_Nevermore"
+		"IdleSoundLoop"     "Hero_Nevermore.IdleLoop"
+	    "GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+		"VoiceFile"         "soundevents/voscripts/game_sounds_vo_nevermore.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -6106,6 +6110,9 @@
 	            "4" { "ItemDef" "496" } //Right Arm             
 	        }
 	    }
+	    "SoundSet"          "Hero_Tiny"
+	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
+		"VoiceFile"         "soundevents/voscripts/game_sounds_vo_tiny.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -6205,6 +6212,10 @@
 	            "5" { "ItemDef" "319" } // Lina's Hair
 	        }
 	    }
+	    "SoundSet"          "Hero_Lina"
+		"IdleSoundLoop"     "Hero_Lina.IdleLoop"
+	    "GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_lina.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -6297,6 +6308,10 @@
 	            "4"  { "ItemDef" "509" } //Ambient
 	        }
 	    }
+	    "SoundSet"          "Hero_Nevermore"
+		"IdleSoundLoop"     "Hero_Nevermore.IdleLoop"
+	    "GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+		"VoiceFile"         "soundevents/voscripts/game_sounds_vo_nevermore.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -6383,6 +6398,9 @@
 	        }
 	    }
 	    "Ability10" "tiny_model02"
+	    "SoundSet"          "Hero_Tiny"
+	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
+		"VoiceFile"         "soundevents/voscripts/game_sounds_vo_tiny.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -6469,6 +6487,10 @@
 	            "4" { "ItemDef" "4753" } // Blessings of the Solar Divine
 	        }
 	    }
+	    "SoundSet"          "Hero_Lina"
+		"IdleSoundLoop"     "Hero_Lina.IdleLoop"
+	    "GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_lina.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -6558,6 +6580,9 @@
 	            "6" { "ItemDef" "528" } // Keeper of the Light's Ambient Effects
 	        }
 	    }
+	    "SoundSet"          "Hero_KeeperOfTheLight"
+	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_keeper_of_the_light.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -6645,6 +6670,9 @@
 	            "6" { "ItemDef" "4029" } // Cape of Verdant Dreaming
 	        }
 	    }
+	    "SoundSet"          "Hero_Furion"
+	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
+		"VoiceFile"         "soundevents/voscripts/game_sounds_vo_furion.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -6730,6 +6758,10 @@
 	            "5" { "ItemDef" "507" } // Morphling's Ambient Effects
 	        }
 	    }
+	    "SoundSet"          "Hero_Morphling"
+	    "IdleSoundLoop"		"Hero_Morphling.IdleLoop"
+	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+		"VoiceFile"         "soundevents/voscripts/game_sounds_vo_morphling.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -6820,6 +6852,9 @@
 	            "6" { "ItemDef" "254" } // Keeper of the Light Hood
 	        }
 	    }
+	    "SoundSet"          "Hero_KeeperOfTheLight"
+	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_keeper_of_the_light.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -6912,6 +6947,9 @@
 	            "6" { "ItemDef" "30" } // Nature's Prophet Horns
 	        }
 	    }
+	    "SoundSet"          "Hero_Furion"
+	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
+		"VoiceFile"         "soundevents/voscripts/game_sounds_vo_furion.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -7005,6 +7043,10 @@
 	            "7" { "ItemDef" "100" } // Invoker's Bracer
 	        }
 	    }
+	    "SoundSet"          "Hero_Invoker"
+		"IdleSoundLoop"     "Hero_Invoker.IdleLoop"
+	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+	    "VoiceFile"		"soundevents/voscripts/game_sounds_vo_invoker.vsndevts"
 	
 	    // Stats
 	    //-----------------------------
@@ -7086,6 +7128,10 @@
 	            "4"  { "ItemDef" "509" } //Ambient
 	        }
 	    }
+	    "SoundSet"          "Hero_Nevermore"
+		"IdleSoundLoop"     "Hero_Nevermore.IdleLoop"
+	    "GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+		"VoiceFile"         "soundevents/voscripts/game_sounds_vo_nevermore.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -7168,6 +7214,9 @@
 	        }
 	    }
 	    "Ability10" "tiny_model04"
+	    "SoundSet"          "Hero_Tiny"
+	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
+		"VoiceFile"         "soundevents/voscripts/game_sounds_vo_tiny.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -7250,6 +7299,10 @@
 	            "4" {    "ItemDef"        "4756"        } //"Arc of the Solar Divine"
 	        }
 	    }
+	    "SoundSet"          "Hero_Lina"
+		"IdleSoundLoop"     "Hero_Lina.IdleLoop"
+	    "GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_lina.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -7335,6 +7388,9 @@
 	            "6" { "ItemDef" "528" } // Keeper of the Light's Ambient Effects
 	        }
 	    }
+	    "SoundSet"          "Hero_KeeperOfTheLight"
+	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_keeper_of_the_light.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -7422,6 +7478,9 @@
 	            "6" { "ItemDef" "5799" } // Ironwood Arms of the Fungal Lord
 	        }
 	    }
+	    "SoundSet"          "Hero_Furion"
+	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
+		"VoiceFile"         "soundevents/voscripts/game_sounds_vo_furion.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -7504,6 +7563,10 @@
 	            "6" { "ItemDef" "507" } // Morphling's Ambient Effects
 	        }
 	    }
+	    "SoundSet"          "Hero_Morphling"
+	    "IdleSoundLoop"		"Hero_Morphling.IdleLoop"
+	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+		"VoiceFile"         "soundevents/voscripts/game_sounds_vo_morphling.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -7589,6 +7652,10 @@
 	            "4"  { "ItemDef" "509" } //Ambient
 	        }
 	    }
+	    "SoundSet"          "Hero_Nevermore"
+		"IdleSoundLoop"     "Hero_Nevermore.IdleLoop"
+	    "GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+		"VoiceFile"         "soundevents/voscripts/game_sounds_vo_nevermore.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -7675,6 +7742,9 @@
 	        }
 	    }
 	    "Ability10" "tiny_model03"
+	    "SoundSet"          "Hero_Tiny"
+	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
+		"VoiceFile"         "soundevents/voscripts/game_sounds_vo_tiny.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -7761,6 +7831,10 @@
 	            "4" { "ItemDef" "8990" } // Headress of the Divine Flame
 	        }
 	    }
+	    "SoundSet"          "Hero_Lina"
+		"IdleSoundLoop"     "Hero_Lina.IdleLoop"
+	    "GameSoundsFile"	"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_lina.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -7850,7 +7924,10 @@
 	            "6" { "ItemDef" "528" } // Keeper of the Light's Ambient Effects
 	        }
 	    }
-	
+	    "SoundSet"          "Hero_KeeperOfTheLight"
+	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_keeper_of_the_light.vsndevts"
+	    
 	    // Stats
 	    //----------------------------- 
 	    "AttackDamageMin"           "3125"
@@ -7938,6 +8015,9 @@
 	            "6" { "ItemDef" "6748" } // Primeval Horns
 	        }
 	    }
+	    "SoundSet"          "Hero_Furion"
+	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
+		"VoiceFile"         "soundevents/voscripts/game_sounds_vo_furion.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -8021,6 +8101,10 @@
 	            "3" { "ItemDef" "507" } // Morphling's Ambient Effects
 	        }
 	    }
+	    "SoundSet"          "Hero_Morphling"
+	    "IdleSoundLoop"		"Hero_Morphling.IdleLoop"
+	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+		"VoiceFile"         "soundevents/voscripts/game_sounds_vo_morphling.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -8105,6 +8189,10 @@
 	            "1" { "ItemDef" "507" }
 	        }
 	    }
+	    "SoundSet"          "Hero_Morphling"
+	    "IdleSoundLoop"		"Hero_Morphling.IdleLoop"
+	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+		"VoiceFile"         "soundevents/voscripts/game_sounds_vo_morphling.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -13063,7 +13151,6 @@
 		}
 		"AttackDamageMin"		"0"
 		"AttackDamageMax"		"0"
-		"AOE_Full"				"400"
 	
 		// Building Size
 	    "ConstructionSize"          "2"
@@ -13158,7 +13245,6 @@
 		}
 		"AttackDamageMin"		"0"
 		"AttackDamageMax"		"0"
-		"AOE_Full"				"400"
 	
 		// Building Size
 	    "ConstructionSize"          "2"

@@ -24,6 +24,9 @@
         }
     }
     "Ability10" "tiny_model03"
+    "SoundSet"          "Hero_Tiny"
+    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
+	"VoiceFile"         "soundevents/voscripts/game_sounds_vo_tiny.vsndevts"
 
     // Stats
     //----------------------------- 

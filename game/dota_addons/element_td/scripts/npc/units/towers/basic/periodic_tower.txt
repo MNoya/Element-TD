@@ -26,6 +26,10 @@
             "7" { "ItemDef" "100" } // Invoker's Bracer
         }
     }
+    "SoundSet"          "Hero_Invoker"
+	"IdleSoundLoop"     "Hero_Invoker.IdleLoop"
+    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+    "VoiceFile"		"soundevents/voscripts/game_sounds_vo_invoker.vsndevts"
 
     // Stats
     //-----------------------------

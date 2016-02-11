@@ -25,6 +25,9 @@
             "6" { "ItemDef" "528" } // Keeper of the Light's Ambient Effects
         }
     }
+    "SoundSet"          "Hero_KeeperOfTheLight"
+    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_keeper_of_the_light.vsndevts"
 
     // Stats
     //----------------------------- 

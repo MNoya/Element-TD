@@ -19,6 +19,10 @@
             "1" { "ItemDef" "507" }
         }
     }
+    "SoundSet"          "Hero_Morphling"
+    "IdleSoundLoop"		"Hero_Morphling.IdleLoop"
+    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+	"VoiceFile"         "soundevents/voscripts/game_sounds_vo_morphling.vsndevts"
 
     // Stats
     //----------------------------- 

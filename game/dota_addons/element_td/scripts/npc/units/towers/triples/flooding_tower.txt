@@ -89,7 +89,6 @@
 	}
 	"AttackDamageMin"		"0"
 	"AttackDamageMax"		"0"
-	"AOE_Full"				"400"
 
 	// Building Size
     "ConstructionSize"          "2"
