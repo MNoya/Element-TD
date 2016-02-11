@@ -251,7 +251,7 @@ function SpawnWaveForPlayer(playerID, wave)
             StartBreakTime(playerID, GetPlayerDifficulty(playerID):GetWaveBreakTime(playerData.nextWave))
         end
 
-        -- lumber
+        -- lumber at every 5 waves (3 on express)
         if (playerData.completedWaves % 5 == 0 and playerData.completedWaves < 55 and not EXPRESS_MODE) or (playerData.completedWaves % 3 == 0 and playerData.completedWaves < 30 and EXPRESS_MODE) then
             ModifyLumber(playerID, 1) -- give 1 lumber every 5 waves or every 3 if express mode ignoring the last wave 55 and 30.
             if GameSettings.elementsOrderName == "AllPick" and not playerData.elementalRandom then
@@ -277,9 +277,9 @@ function SpawnWaveForPlayer(playerID, wave)
             end
         end
 
-        -- pure essence
-        if ((playerData.completedWaves == 46 or playerData.completedWaves == 51) and not EXPRESS_MODE) or ((playerData.completedWaves == 25 or playerData.completedWaves == 28) and EXPRESS_MODE) then
-            ModifyPureEssence(playerID, 1) -- give 1 pure essence after wave 46 and 51 or 25 and 28 on express mode
+        -- pure essence at waves 45/50 and 24/7 (express)
+        if ((playerData.completedWaves == 45 or playerData.completedWaves == 50) and not EXPRESS_MODE) or ((playerData.completedWaves == 24 or playerData.completedWaves == 27) and EXPRESS_MODE) then
+            ModifyPureEssence(playerID, 1) 
             Log:info("Giving 1 pure essence to " .. playerData.name)
             playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
         end
