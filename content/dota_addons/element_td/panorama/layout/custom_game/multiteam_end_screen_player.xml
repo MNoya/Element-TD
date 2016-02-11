@@ -8,38 +8,54 @@
 			<Panel id="Avatar" class="ScoreCol_Avatar ScoreboardPanel">
 				<DOTAAvatarImage id="AvatarImage" steamid="local" />
 			</Panel>
-			<Panel id="Hero" class="ScoreCol_Hero ScoreboardPanel">
-				<Image id="HeroIcon" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
-			</Panel>
 			<Panel id="PlayerDetailsContainer" class="ScoreCol_PlayerDetails ScoreboardPanel">
 				<Panel id="PlayerAndHeroName">
 					<Label id="PlayerName" text="AAAAA" />
 					<Label id="HeroNameAndDescription" text="#custom_scoreboard_hero_name_and_desc" />
 				</Panel>
 			</Panel>
-			<Panel id="GoldContainer" class="ScoreCol_Gold ScoreboardPanel">
-				<Label id="PlayerNetworth" text="0" />
-			</Panel>
 			<Panel id="ScoreContainer" class="ScoreCol_Score ScoreboardPanel">
 				<Label id="Score" text="0" />
 			</Panel>
-			<Panel id="LivesContainer" class="ScoreCol_Lives ScoreboardPanel">
-				<Label id="Lives" text="50" />
+			<Panel id="GoldContainer" class="ScoreCol_Gold ScoreboardPanel">
+				<Label id="Networth" text="0" />
 			</Panel>
 			<Panel id="WaveContainer" class="ScoreCol_Wave ScoreboardPanel">
 				<Label id="Wave" text="0" />
 			</Panel>
-
 			<Panel id="KillsContainer" class="ScoreCol_Kills ScoreboardPanel">
-				<Label id="Kills" text="0" />
+				<Label id="Kills" class="Kills_Standard" text="0" />
+				<Image id="OSfrog" class="hide"/>
 			</Panel>
-			<Panel id="TowersContainer" class="ScoreCol_Towers ScoreboardPanel">
-				<Label id="Towers" text="0" />
+			<Panel id="ElementsContainer" class="ScoreCol_Elements ScoreboardPanel">
+				<Panel id="ElemSubContainer">
+					<Label id="HasRandomed" class='hide' text=""/>
+					<Panel id="light" class="ElemImageAndLevel">
+						<Image class="ElementImage" src="file://{images}/spellicons/elements/light.png"/>
+						<Label id="light_level" text=""/>
+					</Panel>
+					<Panel id="dark" class="ElemImageAndLevel">
+						<Image class="ElementImage" src="file://{images}/spellicons/elements/dark.png"/>
+						<Label id="dark_level" text=""/>
+					</Panel>
+					<Panel id="water" class="ElemImageAndLevel">
+						<Image class="ElementImage" src="file://{images}/spellicons/elements/water.png"/>
+						<Label id="water_level" text=""/>
+					</Panel>
+					<Panel id="fire" class="ElemImageAndLevel">
+						<Image class="ElementImage" src="file://{images}/spellicons/elements/fire.png"/>
+						<Label id="fire_level" text=""/>
+					</Panel>
+					<Panel id="nature" class="ElemImageAndLevel">
+						<Image class="ElementImage" src="file://{images}/spellicons/elements/nature.png"/>	
+						<Label id="nature_level" text=""/>
+					</Panel>
+					<Panel id="earth" class="ElemImageAndLevel">
+						<Image class="ElementImage" src="file://{images}/spellicons/elements/earth.png"/>
+						<Label id="earth_level" text=""/>
+					</Panel>
+				</Panel>
 			</Panel>
-			<Panel id="DifficultyContainer" class="ScoreCol_Difficulty ScoreboardPanel">
-				<Label id="Difficulty" text="-"/>
-			</Panel>
-			<Panel id="ElementsContainer" class="ScoreCol_Elements ScoreboardPanel"/>
 		</Panel>
 	</Panel>
 </root>

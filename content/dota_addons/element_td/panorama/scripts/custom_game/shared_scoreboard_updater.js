@@ -72,7 +72,7 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
         //_ScoreboardUpdater_SetTextSafe( playerPanel, "Deaths", playerInfo.player_deaths );
         //_ScoreboardUpdater_SetTextSafe( playerPanel, "Assists", playerInfo.player_assists );
         _ScoreboardUpdater_SetTextSafe( playerPanel, "Score", GameUI.CustomUIConfig().playerScore[playerId] );
-        //_ScoreboardUpdater_SetTextSafe( playerPanel, "Wave", GameUI.CustomUIConfig().playerWave[playerId] );
+        _ScoreboardUpdater_SetTextSafe( playerPanel, "Wave", GameUI.CustomUIConfig().playerWave[playerId] );
         _ScoreboardUpdater_SetTextSafe( playerPanel, "Health", playerHealth[playerId] );
 
         if ( GameUI.CustomUIConfig().playerData[playerId] !== undefined )
@@ -80,11 +80,29 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
             _ScoreboardUpdater_SetTextSafe( playerPanel, "Lives", GameUI.CustomUIConfig().playerData[playerId].lives);
             _ScoreboardUpdater_SetTextSafe( playerPanel, "TeammateLumberAmount", GameUI.CustomUIConfig().playerData[playerId].lumber);
             _ScoreboardUpdater_SetTextSafe( playerPanel, "TeammateEssenceAmount", GameUI.CustomUIConfig().playerData[playerId].pureEssence);
-            //_ScoreboardUpdater_SetTextSafe( playerPanel, "Towers", GameUI.CustomUIConfig().playerData[playerId].towers);
+            _ScoreboardUpdater_SetTextSafe( playerPanel, "Towers", GameUI.CustomUIConfig().playerData[playerId].towers);
             _ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerGoldAmount", GameUI.CustomUIConfig().playerData[playerId].gold );
             _ScoreboardUpdater_SetTextSafe( playerPanel, "Networth", GameUI.CustomUIConfig().playerData[playerId].networth );
             _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", GameUI.CustomUIConfig().playerData[playerId].lastHits );
-            
+
+            var icefrogKills = GameUI.CustomUIConfig().playerData[playerId].iceFrogKills
+            if (icefrogKills > 0)
+            {
+                var frogs = playerPanel.FindChildTraverse( "OSfrog" )
+                if (frogs !== null)
+                {
+                    frogs.RemoveClass("hide")
+                }
+
+                _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", icefrogKills );
+                var killsPanel = playerPanel.FindChildTraverse( "Kills" )
+                if (killsPanel !== null)
+                {
+                    killsPanel.RemoveClass('Kills_Standard')
+                    killsPanel.AddClass('Kills_Frog')
+                }
+            }
+
             var elements = GameUI.CustomUIConfig().playerData[playerId].elements
             for (var elem in elements)
             {

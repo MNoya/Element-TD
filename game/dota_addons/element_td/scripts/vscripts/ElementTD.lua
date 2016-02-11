@@ -45,7 +45,7 @@ function ElementTD:InitGameMode()
 
     GameRules:SetHeroRespawnEnabled(false)
     GameRules:SetSameHeroSelectionEnabled(true)
-    GameRules:SetPostGameTime(30)
+    GameRules:SetPostGameTime(600)
     GameRules:SetPreGameTime(0)
     GameRules:SetHeroSelectionTime(0)
     GameRules:SetGoldPerTick(0)

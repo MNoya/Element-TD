@@ -190,6 +190,7 @@ function UpdateScoreboard(playerID)
 	data.gold = PlayerResource:GetGold(playerID)
 	data.networth = GetPlayerNetworth(playerID)
 	data.lastHits = PlayerResource:GetLastHits(playerID)
+	data.iceFrogKills = playerData.iceFrogKills
 	data.randomed = playerData.elementalRandom --self-random
 	data.elements = playerData.elements
 	CustomGameEventManager:Send_ServerToAllClients("etd_update_scoreboard", {playerID=playerID, data = data})

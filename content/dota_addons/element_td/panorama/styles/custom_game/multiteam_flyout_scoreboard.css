@@ -215,12 +215,17 @@
 #ElementsContainer,
 #DifficultyContainer,
 #LevelContainer,
-#KillsContainer,
 #DeathsContainer,
 #NetworthContainer,
 #AssistsContainer
 {
 	height: 100%;
+}
+
+#KillsContainer
+{
+	height: 100%;
+	flow-children: right;
 }
 
 .ScoreboardPanel
@@ -271,11 +276,19 @@
 #Wave,
 #Towers,
 #Difficulty,
-#Kills,
 #Deaths,
-#Networth,
 #Assists
 {
+	vertical-align: center;
+	font-size: 18px;
+	text-align: center;
+	margin-top: 3px;
+	width: 100%;
+}
+
+#Networth
+{
+	color: #ffd300;
 	vertical-align: center;
 	font-size: 18px;
 	text-align: center;
@@ -389,7 +402,6 @@
 .is_local_player #Assists,
 .is_local_player #Level,
 .is_local_player #HeroName,
-.is_local_player #Networth,
 .is_local_player #HasRandomed
 {
 	color: white;
@@ -441,12 +453,37 @@
 .ScoreCol_Wave,
 .ScoreCol_Lives,
 .ScoreCol_Towers,
-.ScoreCol_Kills,
 .ScoreCol_Deaths,
 .ScoreCol_Assists
 {
 	width: 50px;
 	text-align: center;
+}
+
+.ScoreCol_Kills
+{
+	width: 55px;
+	text-align: center;
+}
+
+#Kills
+{
+	vertical-align: center;
+	horizontal-align: center;
+	font-size: 18px;
+	text-align: center;
+}
+
+.Kills_Standard
+{
+	width: 100%;
+}
+
+.Kills_Frog
+{
+	width: fit-children;
+	horizontal-align: left;
+	margin-left: 5px;
 }
 
 .ScoreCol_Difficulty
@@ -542,4 +579,17 @@
 {
     opacity: 0;
     visibility: collapse;
+}
+
+#OSfrog
+{
+    width: 22px;
+    height: 22px;
+    background-image: url("file://{images}/spellicons/osfrog.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    horizontal-align: center;
+    vertical-align: center;
+    box-shadow: #000 -1px -1px 3px 2px;
+    border-radius: 22px;
 }

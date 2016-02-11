@@ -46,11 +46,9 @@
 				<Label id="Lives" text="50" />
 			</Panel>
 			<Panel id="KillsContainer" class="ScoreCol_Kills ScoreboardPanel">
-				<Label id="Kills" text="0" />
+				<Label id="Kills" class="Kills_Standard" text="0" />
+				<Image id="OSfrog" class="hide"/>
 			</Panel>
-			<!--<Panel id="DifficultyContainer" class="ScoreCol_Difficulty ScoreboardPanel">
-				<Label id="Difficulty" text="-"/>
-			</Panel>-->
 			<Panel id="ElementsContainer" class="ScoreCol_Elements ScoreboardPanel">
 				<Panel id="ElemSubContainer">
 					<Label id="HasRandomed" class='hide' text=""/>
