@@ -291,6 +291,38 @@
         "PortraitDesaturateParticles"       "0"
     }
 
+    "models/heroes/shadow_fiend/shadow_fiend_arcana.vmdl"
+    {
+        "PortraitLightPosition"     "102.63 98.47 272.29"
+        "PortraitLightAngles"       "27.86 243.88 0.00"
+        "PortraitLightFOV"      "66"
+        "PortraitLightDistance"     "145"
+        "PortraitLightColor"        "182 236 254"
+        "PortraitShadowColor"       "48 48 48"
+        "PortraitShadowScale"       "5.000000"
+        "PortraitAmbientColor"      "0 89 129"
+        "PortraitAmbientScale"      "5.000000"
+        "PortraitSpecularColor"     "251 74 84"
+        "PortraitBackgroundTexture"     "materials/vgui/hud/heroportraits/portraitbackground_motion_swoops.vmat"
+        "PortraitBackgroundColor1"      "1 1 1"
+        "PortraitBackgroundColor2"      "1 1 1"
+        "PortraitBackgroundColor3"      "1 1 1"
+        "PortraitBackgroundColor4"      "1 1 1"
+        "PortraitLightScale"        "1.000000"
+        "PortraitGroundShadowScale"     "1.500000"
+        "PortraitAmbientDirection"      "-75.850 -49.880 27.200"
+        "PortraitAnimationActivity"     "ACT_DOTA_IDLE"
+        "cameras"
+        {
+            "default"
+            {
+                "PortraitPosition"      "126.07 -14.40 175.18"
+                "PortraitAngles"        "1.85 172.19 0.00"
+                "PortraitFOV"       "33"
+            }
+        }
+    }
+
     /////////////////////////////////////////////////////////
     "default"
     {
