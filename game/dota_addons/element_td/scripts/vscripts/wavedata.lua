@@ -110,6 +110,10 @@ function StartBreakTime(playerID, breakTime)
             Log:info("Spawning wave " .. wave .. " for ["..playerID.."] ".. data.name)
             ShowWaveSpawnMessage(playerID, wave)
 
+            if wave == 1 then
+                EmitAnnouncerSound("announcer_announcer_battle_begin_01")
+            end
+
             -- update wave info
             if (wave < WAVE_COUNT) then
                 CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_next_wave_info", { nextWave=wave + 1, nextAbility1=creepsKV[WAVE_CREEPS[wave+1]].Ability1, nextAbility2=creepsKV[WAVE_CREEPS[wave+1]].Ability2 } )

@@ -33,6 +33,9 @@ function StartVoteTimer()
 		callback = function()
 			loops = loops - 1
 			CustomGameEventManager:Send_ServerToAllClients("etd_update_vote_timer", { time = loops } )
+			if loops == 30 then
+				EmitAnnouncerSound("announcer_ann_custom_timer_sec_30")
+			end
 			if loops == 0 then
 				Log:info("Vote timer ran out")
 				FinalizeVotes() --time has run out, finalize votes
@@ -103,7 +106,6 @@ end
 
 -- calculate which settings won the vote
 function FinalizeVotes()
-	
 	Log:info("All players have finished voting")
 	Timers:RemoveTimer("VoteThinker")
 	CustomGameEventManager:Send_ServerToAllClients( "etd_toggle_vote_dialog", {visible = false} )
@@ -186,6 +188,7 @@ function FinalizeVotes()
 		    START_GAME_TIME = GameRules:GetGameTime()
 			for _, plyID in pairs(playerIDs) do
 				StartBreakTime(plyID, GameSettings.length.PregameTime)
+				EmitAnnouncerSound("announcer_announcer_count_battle_30")
 			end
 		end
 	})
