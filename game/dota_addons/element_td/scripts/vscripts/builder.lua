@@ -56,7 +56,7 @@ function Build( event )
         ModifyPureEssence(playerID, -essenceCost)      
 
         -- Play a sound
-        Sounds:EmitSoundOnClient(playerID, "DOTA_Item.ObserverWard.Activate")
+        Sounds:EmitSoundOnClient(playerID, "Building.Placement") --DOTA_Item.ObserverWard.Activate
     end)
 
     -- The construction failed and was never confirmed due to the gridnav being blocked in the attempted area

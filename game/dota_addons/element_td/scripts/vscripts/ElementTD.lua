@@ -49,6 +49,8 @@ function ElementTD:InitGameMode()
     GameRules:SetPreGameTime(0)
     GameRules:SetHeroSelectionTime(0)
     GameRules:SetGoldPerTick(0)
+    GameRules:GetGameModeEntity():SetGoldSoundDisabled(true)
+    GameRules:GetGameModeEntity():SetAnnouncerDisabled(true)
 
     -- Setup Teams
     GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 1 )

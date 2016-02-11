@@ -72,7 +72,7 @@ function SellTowerCast(keys)
 
 		local refundAmount = round(goldCost * sellPercentage)
 		if sellPercentage > 0  then
-			Sounds:EmitSoundOnClient(playerID, "General.Coins")	
+			Sounds:EmitSoundOnClient(playerID, "Gold.CoinsBig")	
 			PopupAlchemistGold(tower, refundAmount)
 
 		    local coins = ParticleManager:CreateParticle("particles/econ/items/alchemist/alchemist_midas_knuckles/alch_knuckles_lasthit_coins.vpcf", PATTACH_CUSTOMORIGIN, tower)

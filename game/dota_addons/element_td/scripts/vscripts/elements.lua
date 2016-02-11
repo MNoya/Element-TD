@@ -108,6 +108,7 @@ function DamageEntity(entity, attacker, damage)
 		
 		hero:ModifyGold(goldBounty)
 		entity:Kill(nil, attacker)
+		Sounds:EmitSoundOnClient(playerID, "Gold.Coins")
 	else
 		entity:SetHealth(entity:GetHealth() - damage)
 	end
