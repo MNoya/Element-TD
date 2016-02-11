@@ -1,5 +1,5 @@
 -- Flooding ( Water + Darkness + Nature )
--- Attack puts a buff at the point of impact. The buff does 120/600/3000 damage a second in a 400 AoE (full damage)
+-- Attack puts a buff at the point of impact. The buff does 120/600 damage a second in a 400 AoE (full damage)
 -- centerd on the point of impact.
 -- It lasts 5 seconds.
 -- Single target tower, no damage, 900 range and 0.66 attack speed.
@@ -46,7 +46,7 @@ function FloodingTower:OnAttackLanded(keys)
 end
 
 function FloodingTower:OnCreated()
-    self.ability = AddAbility(self.tower, "flooding_tower_flood")
+    self.ability = AddAbility(self.tower, "flooding_tower_flood", self.tower:GetLevel())
     self.damage = GetAbilitySpecialValue("flooding_tower_flood", "splash_damage")[self.tower:GetLevel()]
     self.duration = GetAbilitySpecialValue("flooding_tower_flood", "duration")
     self.fullAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"));

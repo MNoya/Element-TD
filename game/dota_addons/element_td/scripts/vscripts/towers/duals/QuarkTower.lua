@@ -41,7 +41,7 @@ function QuarkTower:OnAttackLanded(keys)
     local damage_done = DamageEntity(target, self.tower, damage)
 
     local attacks = self.consecutiveAttacks < 4 and self.consecutiveAttacks or 4
-    if attacks > 0 then
+    if damage_done and attacks > 0 then
         local particleName = "particles/units/heroes/hero_chen/chen_cast_"..attacks..".vpcf"
         local particle = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, target)
         PopupLightDamage(self.tower, math.floor(damage_done))

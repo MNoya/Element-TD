@@ -8,32 +8,12 @@
 	"MaxLevel"						"2"
 	"AbilityTextureName"			"naga_siren_rip_tide"
 
-	"Modifiers"
-	{
-		"modifier_flood_passive"
-		{
-			"Passive"	"1"
-			"IsHidden"	"1"
-
-			"OnAttackLanded"
-			{
-				"RunScript"
-				{
-					"Target"			"TARGET"
-					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-					"Function"			"TriggerEvent"
-					"Event"				"OnAttackLanded"
-				}
-			}
-		}
-	}
-
 	"AbilitySpecial"
 	{
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"splash_damage"			"100 500"
+			"splash_damage"			"120 600"
 		}
 		"02"
 		{
