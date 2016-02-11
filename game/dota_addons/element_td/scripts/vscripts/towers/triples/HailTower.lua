@@ -27,22 +27,41 @@ end
 
 function HailTower:OnAttack(keys)
     local target = keys.target
-    
-    if self.tower:HasModifier("modifier_storm") and not self.tower.skip_attack then
-        self.tower.skip_attack = true --Skips the next OnAttack events
+    local caster = keys.caster
+    if self.tower:HasModifier("modifier_storm") then
         local targets = 0
         local creeps = GetCreepsInArea(target:GetAbsOrigin(), 350)
         for _, creep in pairs(creeps) do
             if creep:IsAlive() and creep:entindex() ~= target:entindex() then
-                self.tower:PerformAttack(creep, false, false, true, true, true)
                 targets = targets + 1
+                local info = 
+                {
+                    Target = creep,
+                    Source = caster,
+                    Ability = keys.ability,
+                    EffectName = "particles/custom/towers/hail/attack.vpcf",
+                    iMoveSpeed = self.tower:GetProjectileSpeed(),
+                    vSourceLoc= caster:GetAbsOrigin(),
+                    bDrawsOnMinimap = false,
+                    bDodgeable = true,
+                    bIsAttack = false,
+                    bVisibleToEnemies = true,
+                    bReplaceExisting = false,
+                    flExpireTime = GameRules:GetGameTime() + 10,
+                    iVisionTeamNumber = caster:GetTeamNumber()
+                }
+                projectile = ProjectileManager:CreateTrackingProjectile(info)
+
                 if targets == self.bonusTargets then
                     break
                 end
             end
         end
-        self.tower.skip_attack = false
     end
+end
+
+function HailTower:OnProjectileHit(keys)
+    self:OnAttackLanded({target = keys.target})
 end
 
 function HailTower:OnStormCast(keys)

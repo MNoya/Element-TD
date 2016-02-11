@@ -31,18 +31,34 @@ end
 function RunicTower:OnAttack(keys)
     local target = keys.target
     local caster = keys.caster
-
-    if self.tower:HasModifier("modifier_magic_attack") and not self.tower.skip_attack then
-        self.tower.skip_attack = true --Skips the next OnAttack events
-        local targets = 0
+    if self.tower:HasModifier("modifier_magic_attack") then
         local creeps = GetCreepsInArea(target:GetAbsOrigin(), self.halfAOE)
         for _, creep in pairs(creeps) do
             if creep:IsAlive() and creep:entindex() ~= target:entindex() then
-                self.tower:PerformAttack(creep, false, false, true, true, true)
+                local info = 
+                {
+                    Target = creep,
+                    Source = caster,
+                    Ability = keys.ability,
+                    EffectName = "particles/custom/towers/runic/attack.vpcf",
+                    iMoveSpeed = self.tower:GetProjectileSpeed(),
+                    vSourceLoc= caster:GetAbsOrigin(),
+                    bDrawsOnMinimap = false,
+                    bDodgeable = true,
+                    bIsAttack = false,
+                    bVisibleToEnemies = true,
+                    bReplaceExisting = false,
+                    flExpireTime = GameRules:GetGameTime() + 10,
+                    iVisionTeamNumber = caster:GetTeamNumber()
+                }
+                projectile = ProjectileManager:CreateTrackingProjectile(info)
             end
         end
-        self.tower.skip_attack = false
     end
+end
+
+function RunicTower:OnProjectileHit(keys)
+    self:OnAttackLanded({target = keys.target, isBonus = true})
 end
 
 function RunicTower:OnAttackLanded(keys)
@@ -52,8 +68,8 @@ function RunicTower:OnAttackLanded(keys)
         if keys.isBonus then
             damage = damage * 0.5
         end
-        DamageEntitiesInArea(target:GetOrigin(), self.halfAOE, self.tower, damage / 2)
-        DamageEntitiesInArea(target:GetOrigin(), self.fullAOE, self.tower, damage / 2)
+        DamageEntitiesInArea(target:GetAbsOrigin(), self.halfAOE, self.tower, damage / 2)
+        DamageEntitiesInArea(target:GetAbsOrigin(), self.fullAOE, self.tower, damage / 2)
     end
 end
 

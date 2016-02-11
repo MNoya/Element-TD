@@ -44,6 +44,18 @@
 			"Duration"		"%duration"
 		}
 	}
+
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"	"1"
+		"RunScript"
+		{
+			"ScriptFile"		"towers/towerevents.lua"
+			"Function"			"TriggerEvent"
+			"Event"				"OnProjectileHit"
+		}
+	}
+	
 	"AbilitySpecial"
 	{
 		"01"
