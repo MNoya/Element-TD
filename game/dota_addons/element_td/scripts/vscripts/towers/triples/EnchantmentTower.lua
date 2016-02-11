@@ -49,6 +49,9 @@ function EnchantmentTower:OnFaerieFireCast(keys)
 
     self.debuffedCreeps[target:entindex()] = "BibleThump"
 
+    local playerID = self.tower:GetPlayerOwnerID()
+    Sounds:EmitSoundOnClient(playerID, "Enchantment.Cast")
+
     local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_centaur/centaur_return_thin.vpcf", PATTACH_ABSORIGIN, self.tower)
     ParticleManager:SetParticleControl(particle, 0, self.attackLoc)
     ParticleManager:SetParticleControl(particle, 1, target:GetOrigin())

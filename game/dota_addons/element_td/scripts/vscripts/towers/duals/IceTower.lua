@@ -37,6 +37,8 @@ function IceTower:OnAttack(keys)
     projectileTable.vVelocity = diff:Normalized() * self.projectile_speed
 
     ProjectileManager:CreateLinearProjectile( projectileTable )
+
+    self.tower:EmitSound("Ice.Cast")
 end
 
 function IceTower:OnProjectileHit(keys)

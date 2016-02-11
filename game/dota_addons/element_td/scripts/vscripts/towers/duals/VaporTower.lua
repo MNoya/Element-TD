@@ -24,6 +24,9 @@ function VaporTower:VaporWaveAttack()
     if self.tower:GetHealthPercent() == 100 and #creeps > 0 then
         self.tower:StartGesture(ACT_DOTA_CAST_ABILITY_2) --crush
         self.ability:StartCooldown(1 / self.tower:GetAttacksPerSecond())
+
+        Sounds:EmitSoundOnClient(self.playerID, "Vapor.Strike")
+
         for _,creep in pairs(creeps) do
             local particle = ParticleManager:CreateParticle("particles/custom/towers/vapor/tako.vpcf", PATTACH_ABSORIGIN, creep)     
             ParticleManager:SetParticleControl(particle, 1, Vector(self.initialAOE/4, 1, 1)) 
@@ -51,6 +54,7 @@ function VaporTower:OnCreated()
     self.aftershockDamage = GetAbilitySpecialValue(spellName, "aftershock_damage")    
     self.initialAOE = GetAbilitySpecialValue(spellName, "aoe")+self.tower:GetHullRadius()
     self.aftershockAOE = GetAbilitySpecialValue(spellName, "aftershock_aoe")
+    self.playerID = self.tower:GetPlayerOwnerID()
 
     local time = 1 / self.tower:GetAttacksPerSecond()
     Timers:CreateTimer(time, function()

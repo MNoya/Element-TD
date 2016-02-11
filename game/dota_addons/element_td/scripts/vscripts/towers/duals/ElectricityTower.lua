@@ -33,6 +33,7 @@ function ElectricityTower:OnAttack(event)
     end
 
     local start_position = caster:GetAttachmentOrigin(caster:ScriptLookupAttachment(attach_point))
+    Sounds:EmitSoundOnClient(self.playerID, "Electricity.Lightning")
     local current_position = self:CreateChainLightning(caster, start_position, target, damage)
 
     -- Every target struck by the chain is added to an entity index list
@@ -84,8 +85,6 @@ function ElectricityTower:CreateChainLightning( caster, start_position, target, 
     local particle = ParticleManager:CreateParticle("particles/items_fx/chain_lightning.vpcf", PATTACH_CUSTOMORIGIN, caster)
     ParticleManager:SetParticleControl(particle,0, start_position)
     ParticleManager:SetParticleControl(particle,1, target_position)
-
-    EmitSoundOn("Hero_Zuus.ArcLightning.Target", target)
     
     local dmg = ApplyAbilityDamageFromModifiers(damage, self.tower)    
     DamageEntity(target, self.tower, dmg)
@@ -101,6 +100,7 @@ function ElectricityTower:OnCreated()
     self.bounce_range = self.ability:GetLevelSpecialValueFor( "bounce_range", level - 1 )
     self.decay = self.ability:GetLevelSpecialValueFor( "damage_decrease", level - 1 ) * 0.01
     self.time_between_bounces = 0.2
+    self.playerID = self.tower:GetPlayerOwnerID()
 end
 
 function ElectricityTower:OnAttackLanded(keys) end

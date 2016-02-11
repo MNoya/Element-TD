@@ -30,6 +30,8 @@ function FloodingTower:OnAttackLanded(keys)
     ParticleManager:SetParticleControl(particle, 1, Vector(particleRadius, particleRadius, particleRadius))
     ParticleManager:SetParticleControl(particle, 3, Vector(0, 0, 0))
 
+    target:EmitSound("Flooding.Create")
+
     local damage = ApplyAbilityDamageFromModifiers(self.damage, self.tower)
     DamageEntitiesInArea(position, self.fullAOE, self.tower, damage)
 
@@ -49,7 +51,7 @@ function FloodingTower:OnCreated()
     self.ability = AddAbility(self.tower, "flooding_tower_flood", self.tower:GetLevel())
     self.damage = GetAbilitySpecialValue("flooding_tower_flood", "splash_damage")[self.tower:GetLevel()]
     self.duration = GetAbilitySpecialValue("flooding_tower_flood", "duration")
-    self.fullAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"));
+    self.fullAOE = GetAbilitySpecialValue("flooding_tower_flood", "full_aoe")
     self.tower.no_autoattack_damage = true
 end
 

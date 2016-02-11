@@ -27,6 +27,8 @@ function PoisonTower:OnAttackLanded(keys)
         self.attacks = 0    
         AOE = 300
 
+        target:EmitSound("Poison.Strike")
+
         local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_venomancer/venomancer_venomousgale_explosion_flash_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
         ParticleManager:SetParticleControl(particle, 3, target:GetAbsOrigin())
 

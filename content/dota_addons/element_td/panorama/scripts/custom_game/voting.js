@@ -80,6 +80,7 @@ function SelectDifficulty(name) {
     Glow(panel)
     panel.AddClass('Hover')
     UpdateMultipliers()
+    Game.EmitSound("ui_generic_button_click");
 }
 
 function Glow(panel) {
@@ -112,13 +113,14 @@ function MouseOverCheckbox(name) {
 
 function SelectCheckbox(name) {
     UpdateMultipliers()
+    Game.EmitSound("ui_generic_button_click");
     $("#"+name).checked = !$("#"+name).checked
 }
 
 function SelectCheckboxClick() {
+    Game.EmitSound("ui_generic_button_click");
     UpdateMultipliers()
 }
-
 
 function ToggleVoteDialog( data )
 {

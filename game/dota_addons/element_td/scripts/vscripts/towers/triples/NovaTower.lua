@@ -17,15 +17,14 @@ NovaTower = createClass({
 nil)
 
 function NovaTower:Explode()
-    if GameRules:GetGameTime() - self.lastExplodeTime > 1 then
-        local particle = ParticleManager:CreateParticle("particles/custom/towers/nova/attack.vpcf", PATTACH_ABSORIGIN, self.tower)
-        ParticleManager:SetParticleControl(particle, 0, self.tower:GetAbsOrigin())
-        ParticleManager:ReleaseParticleIndex(particle)
-        
-        local damage = ApplyAbilityDamageFromModifiers(self.explodeDamage, self.tower)
-        DamageEntitiesInArea(self.tower:GetAbsOrigin(), self.aoe, self.tower, damage)
-        self.lastExplodeTime = GameRules:GetGameTime()
-    end
+    local particle = ParticleManager:CreateParticle("particles/custom/towers/nova/attack.vpcf", PATTACH_ABSORIGIN, self.tower)
+    ParticleManager:SetParticleControl(particle, 0, self.tower:GetAbsOrigin())
+    ParticleManager:ReleaseParticleIndex(particle)
+    
+    local damage = ApplyAbilityDamageFromModifiers(self.explodeDamage, self.tower)
+    DamageEntitiesInArea(self.tower:GetAbsOrigin(), self.aoe, self.tower, damage)
+    self.lastExplodeTime = GameRules:GetGameTime()
+    Sounds:EmitSoundOnClient(self.tower:GetPlayerOwnerID(), "Nova.Cast")
 end
 
 function NovaTower:OnCreated()

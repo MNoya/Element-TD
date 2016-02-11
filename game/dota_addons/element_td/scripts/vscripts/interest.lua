@@ -41,7 +41,7 @@ function InterestManager:GiveInterest(playerID)
 	
 	hero:ModifyGold(interest)
 	PopupAlchemistGold(hero, interest)
-	Sounds:EmitSoundOnClient(playerID, "DOTA_Item.Hand_Of_Midas")
+	Sounds:EmitSoundOnClient(playerID, "Interest.Midas")
 
 	playerData.interestGold = playerData.interestGold + interest
 	if player then

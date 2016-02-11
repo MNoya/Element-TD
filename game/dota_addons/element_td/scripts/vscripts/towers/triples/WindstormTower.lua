@@ -25,6 +25,8 @@ function WindstormTower:SpawnTornado(target)
     
     self.ability:StartCooldown(1 / self.tower:GetAttacksPerSecond())
 
+    Sounds:EmitSoundOnClient(self.playerID, "Windstorm.TornadoSpawn")
+
     local position = target:GetAbsOrigin()
     local tornado = CreateUnitByName( "windstorm_tornado", position, false, self.tower, self.tower:GetOwner(), self.tower:GetTeamNumber() )
     tornado.isTornado = true

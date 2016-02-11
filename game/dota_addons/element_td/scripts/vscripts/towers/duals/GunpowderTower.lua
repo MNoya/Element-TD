@@ -25,6 +25,8 @@ function GunpowderTower:OnAttackLanded(keys)
     ParticleManager:SetParticleControl(particle, 1, Vector(self.splashAOE, 1, 1))
     Timers:CreateTimer(1, function() ParticleManager:DestroyParticle(particle, true) end)
       
+    keys.caster:EmitSound("Gunpower.Explosion")
+
     local damage = ApplyAbilityDamageFromModifiers(self.splashDamage[self.tower:GetLevel()], self.tower)    
     DamageEntitiesInArea(target:GetOrigin(), self.splashAOE, self.tower, damage)
 

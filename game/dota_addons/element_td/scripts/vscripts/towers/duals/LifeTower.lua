@@ -77,6 +77,8 @@ function AddOneLife(tower, ability, playerData)
 
     tower.life_counter = tower.life_counter + 1
     tower:SetModifierStackCount("modifier_life_tower_counter", tower, tower.life_counter)
+
+    tower:EmitSound("Life.Gain")
 end
 
 function LifeTower:OnAttackLanded(keys)

@@ -15,7 +15,8 @@ ImpulseTower = createClass({
     },
 nil)
 
-function ImpulseTower:OnAttackStart(keys)
+function ImpulseTower:OnAttack(keys)
+    keys.caster:EmitSound("Impulse.Attack")
 end
 
 function ImpulseTower:OnAttackLanded(keys)

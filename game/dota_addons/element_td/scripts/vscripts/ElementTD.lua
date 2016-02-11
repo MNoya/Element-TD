@@ -174,7 +174,7 @@ function ElementTD:StartGame()
             if not SKIP_VOTING then
                 CustomGameEventManager:Send_ServerToAllClients( "etd_toggle_vote_dialog", {visible = true} )
                 StartVoteTimer()
-                EmitAnnouncerSound("announcer_ann_custom_vote_begun")
+                EmitAnnouncerSound("announcer_announcer_battle_prepare_01")
             else
                 -- voting should never be skipped in real games
                 START_GAME_TIME = GameRules:GetGameTime()
