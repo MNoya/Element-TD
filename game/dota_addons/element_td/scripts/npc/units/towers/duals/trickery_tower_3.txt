@@ -40,7 +40,7 @@
 		"1"		"light"
 		"2"		"dark"
 	}
-	"Damage"		"8125"
+	"Damage"		"7500"
 	"DamageType"		"light"
 	"ScriptClass"		"TrickeryTower"
 	"TowerType"		"Support"
@@ -64,8 +64,8 @@
 	"Upgrades"
 	{
 	}
-	"AttackDamageMin"		"8125"
-	"AttackDamageMax"		"8125"
+	"AttackDamageMin"		"7500"
+	"AttackDamageMax"		"7500"
     "Creature"
     {
        "AttachWearables" // Wandering Harlequin's Regalia

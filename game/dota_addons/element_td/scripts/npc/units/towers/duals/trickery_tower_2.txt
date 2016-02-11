@@ -40,7 +40,7 @@
 		"1"		"light"
 		"2"		"dark"
 	}
-	"Damage"		"1625"
+	"Damage"		"1500"
 	"DamageType"		"light"
 	"ScriptClass"		"TrickeryTower"
 	"TowerType"		"Support"
@@ -66,8 +66,8 @@
 		"Count"		"1"
 		"1"		"trickery_tower_3"
 	}
-	"AttackDamageMin"		"1625"
-	"AttackDamageMax"		"1625"
+	"AttackDamageMin"		"1500"
+	"AttackDamageMax"		"1500"
     "Creature"
     {
        "AttachWearables" // Councilor's Complete Raiment Set
