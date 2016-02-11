@@ -55,8 +55,10 @@ function VaporTower:OnCreated()
     local time = 1 / self.tower:GetAttacksPerSecond()
     Timers:CreateTimer(time, function()
         if IsValidAlive(self.tower) then
-            self:VaporWaveAttack()
-            return 1 / self.tower:GetAttacksPerSecond()
+            if self.ability:IsCooldownReady() then
+                self:VaporWaveAttack()
+            end
+            return 0.1
         end
     end)
 end

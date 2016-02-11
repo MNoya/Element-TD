@@ -13061,8 +13061,8 @@
 			"Count"		"1"
 			"1"		"flooding_tower_2"
 		}
-		"AttackDamageMin"		"100"
-		"AttackDamageMax"		"100"
+		"AttackDamageMin"		"0"
+		"AttackDamageMax"		"0"
 		"AOE_Full"				"400"
 	
 		// Building Size
@@ -13156,8 +13156,8 @@
 		"Upgrades"
 		{
 		}
-		"AttackDamageMin"		"500"
-		"AttackDamageMax"		"500"
+		"AttackDamageMin"		"0"
+		"AttackDamageMax"		"0"
 		"AOE_Full"				"400"
 	
 		// Building Size
