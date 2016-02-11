@@ -380,7 +380,12 @@ function SummonElemental(keys)
     elemental.level = level
 
     local label = GetEnglishTranslation(keys.Elemental) or keys.Elemental
-    --elemental:SetCustomHealthLabel(label, ElementColors[element][1], ElementColors[element][2], ElementColors[element][3])
+    if label then
+        elemental:SetCustomHealthLabel(label, ElementColors[element][1], ElementColors[element][2], ElementColors[element][3])
+    end
+
+    -- Adjust slows multiplicatively
+    elemental:AddNewModifier(elemental, nil, "modifier_slow_adjustment", {})
 
     local particle = Particles[keys.Elemental]
     if particle then
