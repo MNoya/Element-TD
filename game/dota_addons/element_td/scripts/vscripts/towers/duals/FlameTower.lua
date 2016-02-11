@@ -34,8 +34,13 @@ end
 
 function FlameTower:OnAttackLanded(keys) 
     local target = keys.target    
-    local damage = ApplyAbilityDamageFromModifiers(self.burnDamage[self.level], self.tower)    
-    DamageEntitiesInArea(target:GetOrigin(), self.burnAOE, self.tower, damage)    
+    local damage = ApplyAbilityDamageFromModifiers(self.burnDamage[self.level], self.tower)
+    DamageEntitiesInArea(target:GetAbsOrigin(), self.burnAOE, self.tower, damage)
+
+    attack_damage = self.tower:GetAverageTrueAttackDamage()
+    DamageEntity(target, self.tower, damage)
+
+    keys.caster:StartGesture(ACT_DOTA_CAST_ABILITY_4)
     
     if not target.SunburnData then
         target.SunburnData = {
