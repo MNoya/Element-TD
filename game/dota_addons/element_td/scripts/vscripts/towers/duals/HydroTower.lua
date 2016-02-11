@@ -25,8 +25,9 @@ function HydroTower:OnAttackLanded(keys)
         self.ability:ApplyDataDrivenModifier(caster, target, "modifier_hydro_delay", {duration=self.delay})
     end
 
+    -- The attack damage is applied a frame after, to ensure that the modifier triggers on death
     Timers:CreateTimer(function()
-        local damage = ApplyAbilityDamageFromModifiers(self.splashDamage, self.tower)
+        local damage = self.tower:GetAverageTrueAttackDamage()
         DamageEntity(target, self.tower, damage)
     end)
 end
@@ -42,7 +43,7 @@ function HydroTower:OnDelayEnd(keys)
 end
 
 function HydroTower:OnCreated()
-    self.ability = AddAbility(self.tower, "hydro_tower_ability")
+    self.ability = AddAbility(self.tower, "hydro_tower_ability", self.tower:GetLevel())
     self.splashDamage = self.ability:GetLevelSpecialValueFor("splash_damage", self.ability:GetLevel() - 1)
     self.splashAOE = GetAbilitySpecialValue("hydro_tower_ability", "splash_aoe")
     self.chance = GetAbilitySpecialValue("hydro_tower_ability", "chance_pct")
