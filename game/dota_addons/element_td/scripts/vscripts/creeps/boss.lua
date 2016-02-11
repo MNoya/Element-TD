@@ -56,7 +56,7 @@ function CreepBoss:OnDeath()
     local playerID = creep.playerID
     local creepClass = self.creepClass
 
-    if not creep.random_ability == "creep_ability_undead" then
+    if creep.random_ability ~= "creep_ability_undead" then
         return
     end
 
@@ -105,10 +105,6 @@ function CreepBoss:UndeadCreepRespawn()
     local wave = creep.waveObject:GetWaveNumber()
     local creepClass = WAVE_CREEPS[wave]
 
-    if not creep.random_ability == "creep_ability_undead" then
-        return
-    end
-
     creep:RemoveNoDraw()
     creep:RemoveModifierByName("modifier_invulnerable")
     creep:RemoveModifierByName("modifier_invisible_etd")
@@ -136,7 +132,7 @@ end
 function CreepBoss:OnTakeDamage(keys)   
     if self.creep:GetHealth() > 0 and self.creep:GetHealthPercent() <= 50 and not self.creep.isSwarm then
     
-        if not self.creep.random_ability == "creep_ability_swarm" then
+        if self.creep.random_ability ~= "creep_ability_swarm" then
             return
         end
 
