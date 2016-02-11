@@ -8,10 +8,10 @@
 	"ModelOffset"				"10"
 	"ProjectileModel"			"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 	"ProjectileSpeed"			"2000"
-	"SoundSet"					"Tower.Water"
 	"MinimapIcon"				"minimap_tower90"
 	"MinimapIconSize"			"320"
 	"DisableTurning"			"1"
+	"SoundSet"					"Hero_Morphling"
 
 	// Stats
     //----------------------------- 

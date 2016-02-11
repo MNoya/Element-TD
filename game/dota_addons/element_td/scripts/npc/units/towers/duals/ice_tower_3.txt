@@ -1,11 +1,9 @@
 "ice_tower_3"
 {
-    "BaseClass"                 "npc_dota_creature" 
-	"SoundSet"					"Tower.Water"
+    "BaseClass"                 "npc_dota_creature"
 	"MinimapIcon"				"minimap_tower90"
 	"MinimapIconSize"			"320"
-	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
-    "ArmorPhysical"             "0"
+	"ArmorPhysical"             "0"
     "MagicalResistance"         "0"
     "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
     "TeamName"                  "DOTA_TEAM_GOODGUYS"

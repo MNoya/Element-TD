@@ -2,14 +2,14 @@
 {
 	// Visual
     //-----------------------------
-	"Model"					"models/well_tower1.vmdl"
-	"ModelScale"			"0.75"
-	"ProjectileModel"		"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
-	"ProjectileSpeed"		"2000"
-	"SoundSet"				"Tower.Water"
-	"MinimapIcon"			"minimap_tower90"
-	"MinimapIconSize"		"320"
-	"DisableTurning"		"1"
+	"Model"						"models/well_tower1.vmdl"
+	"ModelScale"				"0.75"
+	"ProjectileModel"			"particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
+	"ProjectileSpeed"			"2000"
+	"MinimapIcon"				"minimap_tower90"
+	"MinimapIconSize"			"320"
+	"DisableTurning"			"1"
+	"SoundSet"					"Hero_Morphling"
 
 	// Stats
     //----------------------------- 
@@ -53,8 +53,6 @@
 	// General
     //-----------------------------
 	"BaseClass"						"npc_dota_creature"
-	"GameSoundsFile"				"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
-	"particle_folder"				"particles/units/heroes/hero_morphling"
 	"ArmorPhysical"					"0"
 	"MagicalResistance"				"0"
 	"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -83,7 +81,6 @@
 	"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 	"VisionDaytimeRange"			"1900"
 	"VisionNighttimeRange"			"1900"
-	
 	
 	// Building Size
 	//-----------------------------

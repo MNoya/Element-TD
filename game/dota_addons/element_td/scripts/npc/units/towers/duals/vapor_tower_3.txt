@@ -1,72 +1,13 @@
 "vapor_tower_3"
 {
-    "BaseClass"                 "npc_dota_creature" 
-	"SoundSet"					"Tower.Water"
+    // Visual
+    //-----------------------------
+    "Model"                     "models/heroes/slardar/slardar.vmdl"
+    "ModelScale"                "1"
+    "ModelRotation"             "90"
+    "ModelOffset"               "10"
 	"MinimapIcon"				"minimap_tower90"
 	"MinimapIconSize"			"320"
-	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
-    "ArmorPhysical"             "0"
-    "MagicalResistance"         "0"
-    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
-    "TeamName"                  "DOTA_TEAM_GOODGUYS"
-    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
-    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-    "VisionDaytimeRange"        "1900"
-    "VisionNighttimeRange"      "1900"  
-    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
-    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-    "AttackAnimationPoint"      "0"
-    "ProjectileCollisionSize"   "50"
-    "RingRadius"                "80"
-    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
-    "MovementSpeed"             "0"
-    "MovementTurnRate"          "1.0"
-    "StatusHealth"              "3150"
-    "StatusHealthRegen"         "0"
-    "StatusMana"                "0"
-    "StatusManaRegen"           "0"
-	"TeamName"		"DOTA_TEAM_GOODGUYS"
-	"CombatClassAttack"		"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-	"CombatClassDefend"		"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
-	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
-	"VisionDaytimeRange"		"1900"
-	"VisionNighttimeRange"		"1900"
-	"Level"		"3"
-	"Cost"		"1900"
-	"TotalCost"		"3150"
-	"Element"
-	{
-		"1"		"fire"
-		"2"		"water"
-	}
-	"Damage"		"0"
-	"DamageType"		"water"
-	"ScriptClass"		"VaporTower"
-	"TowerType"		"Normal"
-        "BuffPriority"          "2"
-	"HasAbilityDesc"		"1"
-	"AttackRange"		"700"
-	"AttackAcquisitionRange"		"700"
-	"AttackRate"		"1.5"
-	"ProjectileModel"		""
-	"ProjectileSpeed"		"800"
-	"Model"		"models/heroes/slardar/slardar.vmdl"
-	"ModelScale"		"1"
-    "ModelRotation"     "90"
-    "ModelOffset"       "10"
-	"UpgradeIcon"		"morphling_adaptive_strike"
-	"BuildTime"		"3"
-	"Requirements"
-	{
-		"fire"		"3"
-		"water"		"3"
-	}
-	"Upgrades"
-	{
-	}
-	"AttackDamageMin"		"0"
-	"AttackDamageMax"		"0"
     "Creature"
     {
        "AttachWearables" // The Sea Dragon's Set
@@ -78,6 +19,60 @@
             "5" { "ItemDef" "512" } // Ambient
        }
     }
+
+    // Stats
+    //----------------------------- 
+    "Level"                     "3"
+    "Cost"                      "1900"
+    "TotalCost"                 "3150"
+    "Element"
+    {
+        "1"     "fire"
+        "2"     "water"
+    }
+    "Damage"                    "0"
+    "DamageType"                "water"
+    "ScriptClass"               "VaporTower"
+    "TowerType"                 "Normal"
+    "BuffPriority"              "2"
+    "AttackRange"               "700"
+    "AttackAcquisitionRange"    "700"
+    "AttackRate"                "1.5"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "BuildTime"                 "3"
+    "Requirements"
+    {
+        "fire"      "3"
+        "water"     "3"
+    }
+    "Upgrades"
+    {
+    }
+    "AttackDamageMin"       "0"
+    "AttackDamageMax"       "0"
+
+    // General
+    //-----------------------------
+    "BaseClass"                 "npc_dota_creature"
+    "ArmorPhysical"             "0"
+    "MagicalResistance"         "0"
+    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"      "1900"  
+    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+    "ProjectileCollisionSize"   "50"
+    "RingRadius"                "80"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"             "0"
+    "MovementTurnRate"          "1.0"
+    "StatusHealth"              "450"
+    "StatusHealthRegen"         "0"
+    "StatusMana"                "0"
+    "StatusManaRegen"           "0"
 
     // Building Size
     "ConstructionSize"          "2"
