@@ -349,13 +349,8 @@ function CreateMoveTimerForCreep(creep, sector)
     local destination = EntityEndLocations[sector]
     Timers:CreateTimer(0.1, function()
         if IsValidEntity(creep) then
-            ExecuteOrderFromTable({
-                UnitIndex = creep:GetEntityIndex(),
-                OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
-                Position = destination,
-                Queue = false
-            })
-            if (creep:GetOrigin() - destination):Length2D() <= 150 then
+            creep:MoveToPosition(destination)
+            if (creep:GetOrigin() - destination):Length2D() <= 100 then
                 local playerID = creep.playerID
                 local playerData = GetPlayerData(playerID)
                 
@@ -364,7 +359,7 @@ function CreateMoveTimerForCreep(creep, sector)
                 FindClearSpaceForUnit(creep, EntityStartLocations[playerData.sector + 1], true)
                 creep:SetForwardVector(Vector(0, -1, 0))
             end
-            return 1
+            return 0.1
         else
             return
         end
@@ -412,9 +407,8 @@ function ReduceLivesForPlayer( playerID )
             hero:SetHealth(playerData.health)
         end
     end
-    if ply then
-        EmitSoundOnClient("ui.click_back", ply)
-    end
+
+    Sounds:EmitSoundOnClient(playerID, "ETD.Leak")
     hero:CalculateStatBonus()
     CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=playerData.health/hero:GetMaxHealth() * 100} )
     UpdateScoreboard(playerID)
