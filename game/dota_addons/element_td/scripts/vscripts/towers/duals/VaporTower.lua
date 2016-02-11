@@ -25,7 +25,7 @@ function VaporTower:VaporWaveAttack()
         self.tower:StartGesture(ACT_DOTA_CAST_ABILITY_2) --crush
         self.ability:StartCooldown(1 / self.tower:GetAttacksPerSecond())
 
-        Sounds:EmitSoundOnClient(self.playerID, "Vapor.Strike")
+        self.tower:EmitSound("Vapor.Strike")
 
         for _,creep in pairs(creeps) do
             local particle = ParticleManager:CreateParticle("particles/custom/towers/vapor/tako.vpcf", PATTACH_ABSORIGIN, creep)     

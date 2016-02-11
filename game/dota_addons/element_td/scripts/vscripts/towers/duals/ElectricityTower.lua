@@ -33,7 +33,7 @@ function ElectricityTower:OnAttack(event)
     end
 
     local start_position = caster:GetAttachmentOrigin(caster:ScriptLookupAttachment(attach_point))
-    Sounds:EmitSoundOnClient(self.playerID, "Electricity.Lightning")
+    self.tower:EmitSound("Electricity.Lightning")
     local current_position = self:CreateChainLightning(caster, start_position, target, damage)
 
     -- Every target struck by the chain is added to an entity index list

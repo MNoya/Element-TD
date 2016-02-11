@@ -4,8 +4,7 @@ LinkLuaModifier("modifier_fire_up", "towers/duals/blacksmith/modifier_fire_up", 
 function blacksmith_tower_fire_up:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
-	local playerID = caster:GetPlayerOwnerID()
-	Sounds:EmitSoundOnClient(playerID, "Blacksmith.Cast")
+	self.tower:EmitSound("Blacksmith.Cast")
 
 	local particleName = "particles/units/heroes/hero_ogre_magi/ogre_magi_bloodlust_cast.vpcf"
 	local particle = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN, caster)

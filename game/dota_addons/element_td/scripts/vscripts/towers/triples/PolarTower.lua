@@ -52,7 +52,7 @@ function PolarTower:OnFrostbiteCast(keys)
         }
 
         local playerID = self.tower:GetPlayerOwnerID()
-        Sounds:EmitSoundOnClient(playerID, "Polar.Cast")
+        self.tower:EmitSound("Polar.Cast")
 
         local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_lich/lich_frost_nova_flash_d.vpcf", PATTACH_ABSORIGIN, target)
         ParticleManager:SetParticleControl(particle, 0, target:GetOrigin() + Vector(0, 0, 40))

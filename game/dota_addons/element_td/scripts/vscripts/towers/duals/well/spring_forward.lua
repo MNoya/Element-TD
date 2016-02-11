@@ -7,7 +7,7 @@ function well_tower_spring_forward:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 	local playerID = caster:GetPlayerOwnerID()
-	Sounds:EmitSoundOnClient(playerID, "Well.Cast")
+	self.tower:EmitSound("Well.Cast")
 
 	local particle1 = ParticleManager:CreateParticle("particles/items3_fx/mango_active.vpcf", PATTACH_ABSORIGIN, caster)
     ParticleManager:SetParticleControl(particle1, 0, caster:GetAbsOrigin())

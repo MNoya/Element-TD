@@ -24,7 +24,7 @@ function NovaTower:Explode()
     local damage = ApplyAbilityDamageFromModifiers(self.explodeDamage, self.tower)
     DamageEntitiesInArea(self.tower:GetAbsOrigin(), self.aoe, self.tower, damage)
     self.lastExplodeTime = GameRules:GetGameTime()
-    Sounds:EmitSoundOnClient(self.tower:GetPlayerOwnerID(), "Nova.Cast")
+    self.tower:EmitSound("Nova.Cast")
 end
 
 function NovaTower:OnCreated()
