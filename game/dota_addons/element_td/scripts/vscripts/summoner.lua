@@ -348,6 +348,10 @@ function SummonElemental(keys)
     local marker_dummy = CreateUnitByName("tower_dummy", EntityStartLocations[playerData.sector + 1], false, nil, nil, PlayerResource:GetTeam(playerID))
 
     local elemental = CreateUnitByName(name, EntityStartLocations[playerData.sector + 1], true, nil, nil, DOTA_TEAM_NEUTRALS)
+    if not elemental then
+        print("Failed to spawn ",name)
+        return
+    end
     elemental:AddNewModifier(nil, nil, "modifier_phased", {})
     elemental["element"] = element
     elemental["isElemental"] = true
