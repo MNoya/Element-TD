@@ -25,11 +25,16 @@ function CreepBoss:OnSpawned()
     if creep.isSwarm then return end
 
     -- Choose an ability at random
-    local abilityName = CreepBossAbilities[RandomInt(1, #CreepBossAbilities)]
-    creep.random_ability = abilityName
-    AddAbility(creep, abilityName)
+    if not creep.isUndeadRespawn then
+        local abilityName = CreepBossAbilities[RandomInt(1, #CreepBossAbilities)]
+        creep.random_ability = abilityName
+        AddAbility(creep, abilityName)
+    end
 
-    if creep.random_ability == "creep_ability_mechanical" then
+    -- Don't mark swarm or first-death undead as a killed score
+    creep.real_icefrog = creep.isUndeadRespawn or (creep.random_ability and creep.random_ability ~= "creep_ability_undead")
+
+    if creep:HasAbility("creep_ability_mechanical") then
         -- Mechanical
         Timers:CreateTimer(math.random(1, 6), function()
             if not IsValidEntity(creep) or not creep:IsAlive() then return end
@@ -50,8 +55,6 @@ end
 -- Undead
 function CreepBoss:OnDeath()
     local playerData = GetPlayerData(self.creep.playerID)
-    playerData.iceFrogKills = playerData.iceFrogKills + 1
-
     local creep = self.creep
     local playerID = creep.playerID
     local creepClass = self.creepClass
@@ -74,10 +77,7 @@ function CreepBoss:OnDeath()
     newCreep:AddNewModifier(newCreep, nil, "modifier_invisible_etd", {})
     newCreep:AddNewModifier(newCreep, nil, "modifier_stunned", {})
     newCreep:AddNoDraw()
-
-    if newCreep:HasModifier("creep_undead_reanimate") then
-        newCreep:RemoveAbility("creep_undead_reanimate") --don't allow this new creep to respawn
-    end        
+    newCreep.isUndeadRespawn = true
 
     newCreep:SetMaxHealth(creep:GetMaxHealth())
     newCreep:SetBaseMaxHealth(creep:GetMaxHealth())

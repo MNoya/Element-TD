@@ -37,10 +37,6 @@ function CreepUndead:OnDeath()
     newCreep:AddNewModifier(newCreep, nil, "modifier_invisible_etd", {})
     newCreep:AddNewModifier(newCreep, nil, "modifier_stunned", {})
     newCreep:AddNoDraw()
-
-    if newCreep:HasModifier("creep_undead_reanimate") then
-        newCreep:RemoveAbility("creep_undead_reanimate") --don't allow this new creep to respawn
-    end
     newCreep:SetMaxHealth(creep:GetMaxHealth())
     newCreep:SetBaseMaxHealth(creep:GetMaxHealth())
     newCreep:SetForwardVector(creep:GetForwardVector())

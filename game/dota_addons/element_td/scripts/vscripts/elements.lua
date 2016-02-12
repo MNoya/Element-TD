@@ -107,8 +107,12 @@ function DamageEntity(entity, attacker, damage)
 		end
 		
 		hero:ModifyGold(goldBounty)
+
+		if not entity:HasAbility("creep_ability_undead") and entity:GetUnitName() ~= "icefrog" then
+			entity:EmitSound("Gold.Coins")
+		end
+
 		entity:Kill(nil, attacker)
-		Sounds:EmitSoundOnClient(playerID, "Gold.Coins")
 	else
 		entity:SetHealth(entity:GetHealth() - damage)
 	end

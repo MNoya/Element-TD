@@ -437,6 +437,14 @@ function ElementTD:OnEntityKilled(keys)
         entity.scriptObject:OnDeath()
     end
 
+    if entity:GetUnitName() == "icefrog" then
+        if playerData and entity.real_icefrog then
+            playerData.iceFrogKills = playerData.iceFrogKills + 1
+            entity:EmitSound("Frog.Kill")
+            print(playerData.iceFrogKills)
+        end
+    end
+
     if entity.isElemental then
         -- an elemental was killed :O
         Timers:RemoveTimer("MoveElemental"..index)
