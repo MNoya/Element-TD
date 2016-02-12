@@ -45,7 +45,7 @@
         }
     }
     "Level"        "1"
-    "ModelScale"        "1.1"
+    "ModelScale"        "0.8"
     "BountyGoldMin"        "0"
     "BountyGoldMax"        "0"
     "StatusHealth"        "75"
@@ -100,7 +100,7 @@
         }
     }
     "Level"        "2"
-    "ModelScale"        "1.1"
+    "ModelScale"        "1.0"
     "BountyGoldMin"        "0"
     "BountyGoldMax"        "0"
     "StatusHealth"        "75"
@@ -155,7 +155,7 @@
         }
     }
     "Level"        "3"
-    "ModelScale"        "1.1"
+    "ModelScale"        "1.2"
     "BountyGoldMin"        "0"
     "BountyGoldMax"        "0"
     "StatusHealth"        "75"

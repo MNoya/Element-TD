@@ -47,7 +47,7 @@
     }
 
     "Level"        "1"
-    "ModelScale"        "1.1"
+    "ModelScale"        "0.9"
     "BountyGoldMin"        "0"        // Gold earned min"
     "BountyGoldMax"        "0"        // Gold earned max"
     "StatusHealth"        "75"    // Base health"
@@ -161,7 +161,7 @@
     }
 
     "Level"        "3"
-    "ModelScale"        "1.1"
+    "ModelScale"        "1.3"
     "BountyGoldMin"        "0"        // Gold earned min"
     "BountyGoldMax"        "0"        // Gold earned max"
     "StatusHealth"        "75"    // Base health"

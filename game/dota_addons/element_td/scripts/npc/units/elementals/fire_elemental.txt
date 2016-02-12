@@ -47,7 +47,7 @@
     }
 
     "Level"        "1"
-    "ModelScale"        "1.1"
+    "ModelScale"        "1.0"
     "BountyGoldMin"        "0"        // Gold earned min"
     "BountyGoldMax"        "0"        // Gold earned max"
     "StatusHealth"        "75"    // Base health"
@@ -103,7 +103,7 @@
     }
 
     "Level"        "2"
-    "ModelScale"        "1.1"
+    "ModelScale"        "1.2"
     "BountyGoldMin"        "0"        // Gold earned min"
     "BountyGoldMax"        "0"        // Gold earned max"
     "StatusHealth"        "75"    // Base health"
@@ -155,12 +155,11 @@
             "1" {    "ItemDef"        "4794"        } //"Fiery Soul of the Slayer"
             "2" {    "ItemDef"        "6339"        } //"Fire Lotus Belt"
             "3" {    "ItemDef"        "5941"        } //"Wings of the Ember Crane"
-            "4" {    "ItemDef"        "4756"        } //"Arc of the Solar Divine"
         }
     }
 
     "Level"        "3"
-    "ModelScale"        "1.1"
+    "ModelScale"        "1.4"
     "BountyGoldMin"        "0"        // Gold earned min"
     "BountyGoldMax"        "0"        // Gold earned max"
     "StatusHealth"        "75"    // Base health"

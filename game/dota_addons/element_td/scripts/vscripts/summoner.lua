@@ -379,7 +379,7 @@ function SummonElemental(keys)
         marker_dummy:AddNewModifier(elemental.marker_dummy, nil, "modifier_health_bar_markers", {})
     end)
 
-    local scale = elemental:GetModelScale() + ((level - 1) * 0.1)
+    local scale = elemental:GetModelScale()
     elemental:SetMaxHealth(health)
     elemental:SetBaseMaxHealth(health) -- This is needed to properly set the max health otherwise it won't work sometimes
     elemental:SetHealth(health)
@@ -444,8 +444,8 @@ end
 function AddElementalTrophy(playerID, element)
     local team = PlayerResource:GetTeam(playerID)
     local level = GetPlayerElementLevel(playerID, element)
-    local unitName = element.."_elemental"..level
-    local scale = GetUnitKeyValue(unitName, "ModelScale") + ((level - 1) * 0.1)
+    local unitName = element.."_elemental3"
+    local scale = GetUnitKeyValue(unitName, "ModelScale")
     local playerData = GetPlayerData(playerID)
     local summoner = playerData.summoner
 

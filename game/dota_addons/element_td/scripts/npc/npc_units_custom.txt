@@ -4824,7 +4824,7 @@
 	        }
 	    }
 	    "Level"        "1"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "0.8"
 	    "BountyGoldMin"        "0"
 	    "BountyGoldMax"        "0"
 	    "StatusHealth"        "75"
@@ -4879,7 +4879,7 @@
 	        }
 	    }
 	    "Level"        "2"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "1.0"
 	    "BountyGoldMin"        "0"
 	    "BountyGoldMax"        "0"
 	    "StatusHealth"        "75"
@@ -4934,7 +4934,7 @@
 	        }
 	    }
 	    "Level"        "3"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "1.2"
 	    "BountyGoldMin"        "0"
 	    "BountyGoldMax"        "0"
 	    "StatusHealth"        "75"
@@ -4987,7 +4987,7 @@
 	    }
 	
 	    "Level"        "1"
-	    "ModelScale"        "1.3"
+	    "ModelScale"        "1.5"
 	    "BountyGoldMin"        "0"        // Gold earned min"
 	    "BountyGoldMax"        "0"        // Gold earned max"
 	    "StatusHealth"        "75"    // Base health"
@@ -5099,7 +5099,7 @@
 	    }
 	
 	    "Level"        "3"
-	    "ModelScale"        "1.0"
+	    "ModelScale"        "1.2"
 	    "BountyGoldMin"        "0"        // Gold earned min"
 	    "BountyGoldMax"        "0"        // Gold earned max"
 	    "StatusHealth"        "75"    // Base health"
@@ -5217,7 +5217,7 @@
 	    }
 	
 	    "Level"        "1"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "1.0"
 	    "BountyGoldMin"        "0"        // Gold earned min"
 	    "BountyGoldMax"        "0"        // Gold earned max"
 	    "StatusHealth"        "75"    // Base health"
@@ -5273,7 +5273,7 @@
 	    }
 	
 	    "Level"        "2"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "1.2"
 	    "BountyGoldMin"        "0"        // Gold earned min"
 	    "BountyGoldMax"        "0"        // Gold earned max"
 	    "StatusHealth"        "75"    // Base health"
@@ -5325,12 +5325,11 @@
 	            "1" {    "ItemDef"        "4794"        } //"Fiery Soul of the Slayer"
 	            "2" {    "ItemDef"        "6339"        } //"Fire Lotus Belt"
 	            "3" {    "ItemDef"        "5941"        } //"Wings of the Ember Crane"
-	            "4" {    "ItemDef"        "4756"        } //"Arc of the Solar Divine"
 	        }
 	    }
 	
 	    "Level"        "3"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "1.4"
 	    "BountyGoldMin"        "0"        // Gold earned min"
 	    "BountyGoldMax"        "0"        // Gold earned max"
 	    "StatusHealth"        "75"    // Base health"
@@ -5388,7 +5387,7 @@
 	    }
 	
 	    "Level"        "1"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "0.9"
 	    "BountyGoldMin"        "0"
 	    "BountyGoldMax"        "0"
 	    "StatusHealth"        "75"
@@ -5504,7 +5503,7 @@
 	    }
 	    
 	    "Level"        "3"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "1.2"
 	    "BountyGoldMin"        "0"
 	    "BountyGoldMax"        "0"
 	    "StatusHealth"        "75"
@@ -5560,7 +5559,7 @@
 	    }
 	
 	    "Level"        "1"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "0.9"
 	    "BountyGoldMin"        "0"        // Gold earned min"
 	    "BountyGoldMax"        "0"        // Gold earned max"
 	    "StatusHealth"        "75"    // Base health"
@@ -5674,7 +5673,7 @@
 	    }
 	
 	    "Level"        "3"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "1.3"
 	    "BountyGoldMin"        "0"        // Gold earned min"
 	    "BountyGoldMax"        "0"        // Gold earned max"
 	    "StatusHealth"        "75"    // Base health"
@@ -5725,7 +5724,7 @@
 	        }
 	    }
 	    "Level"        "1"
-	    "ModelScale"        "1.0"
+	    "ModelScale"        "1.15"
 	    "BountyGoldMin"        "0"        // Gold earned min"
 	    "BountyGoldMax"        "0"        // Gold earned max"
 	    "StatusHealth"        "75"    // Base health"
@@ -5782,7 +5781,7 @@
 	    }
 	    
 	    "Level"        "2"
-	    "ModelScale"        "1.0"
+	    "ModelScale"        "1.35"
 	    "BountyGoldMin"        "0"        // Gold earned min"
 	    "BountyGoldMax"        "0"        // Gold earned max"
 	    "StatusHealth"        "75"    // Base health"
@@ -5840,7 +5839,7 @@
 	    }
 	
 	    "Level"        "3"
-	    "ModelScale"        "1.0"
+	    "ModelScale"        "1.45"
 	    "BountyGoldMin"        "0"        // Gold earned min"
 	    "BountyGoldMax"        "0"        // Gold earned max"
 	    "StatusHealth"        "75"    // Base health"
@@ -7296,7 +7295,6 @@
 	            "1" {    "ItemDef"        "4794"        } //"Fiery Soul of the Slayer"
 	            "2" {    "ItemDef"        "6339"        } //"Fire Lotus Belt"
 	            "3" {    "ItemDef"        "5941"        } //"Wings of the Ember Crane"
-	            "4" {    "ItemDef"        "4756"        } //"Arc of the Solar Divine"
 	        }
 	    }
 	    "SoundSet"          "Hero_Lina"

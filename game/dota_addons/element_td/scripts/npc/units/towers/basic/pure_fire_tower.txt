@@ -19,7 +19,6 @@
             "1" {    "ItemDef"        "4794"        } //"Fiery Soul of the Slayer"
             "2" {    "ItemDef"        "6339"        } //"Fire Lotus Belt"
             "3" {    "ItemDef"        "5941"        } //"Wings of the Ember Crane"
-            "4" {    "ItemDef"        "4756"        } //"Arc of the Solar Divine"
         }
     }
     "SoundSet"          "Hero_Lina"
