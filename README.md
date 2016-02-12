@@ -5,9 +5,9 @@ Element Tower Defense
 
 A Dota 2 port of the classic WarCraft 3 tower defense!
 
-**Programmer:** [Quintinity], [A_Dizzle], [Noya]<br>
+**Programmers:** [Quintinity], [A_Dizzle], [Noya]<br>
+**Designers:** [Karawasa], [WindStrike]<br>
 **Mapper:** [Azarak]<br>
-**Designer:** [Karawasa], [WindStrike]<br>
 **Special thanks to:** [Jicyphex], [Nullscope], [BMD], and [EinAlex]
 
 [Quintinity]:http://steamcommunity.com/id/quintinity/
