@@ -35,7 +35,7 @@ function StartVoteTimer()
 			CustomGameEventManager:Send_ServerToAllClients("etd_update_vote_timer", { time = loops } )
 			if loops == 30 then
 				EmitAnnouncerSound("announcer_ann_custom_timer_sec_30")
-			elseif loops == 15 then
+			elseif loops == 5 then
 				EmitAnnouncerSound("announcer_ann_custom_timer_sec_05")
 			elseif loops == 0 then
 				Log:info("Vote timer ran out")

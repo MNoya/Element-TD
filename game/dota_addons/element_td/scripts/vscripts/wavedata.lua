@@ -211,7 +211,7 @@ function SpawnWaveForPlayer(playerID, wave)
             EmitSoundOnClient("ui.npe_objective_complete", ply)
         end
 
-        -- Boss Waves
+        -- Boss Wave completed
         if playerData.completedWaves >= WAVE_COUNT and not EXPRESS_MODE and GameSettings:GetEndless() == "Normal" then
             print("Player [" .. playerID .. "] has completed a boss wave")
             Log:info("Spawning boss wave " .. WAVE_COUNT .. " for ["..playerID.."] ".. playerData.name)
@@ -225,23 +225,34 @@ function SpawnWaveForPlayer(playerID, wave)
                 CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_next_wave_info", { nextWave=0, nextAbility1="", nextAbility2="" } )
             end
 
-            SpawnWaveForPlayer(playerID, WAVE_COUNT) -- spawn dat boss wave
+            -- Boss wave score
+            playerData.scoreObject:UpdateScore( SCORING_BOSS_WAVE_CLEAR, wave)
+
+            SpawnWaveForPlayer(playerID, WAVE_COUNT) -- spawn the next boss wave
             return
         end
+
+        -- For Endless
         if playerData.completedWaves >= WAVE_COUNT and not EXPRESS_MODE and GameSettings:GetEndless() == "Endless" then
             return
         end
 
-        playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR, wave )
-
-        if playerData.completedWaves >= WAVE_COUNT then
+        -- Cleared/completed game
+        local finishedExpress = EXPRESS_MODE and playerData.completedWaves == WAVE_COUNT
+        local clearedNormal = not EXPRESS_MODE and playerData.completedWaves == WAVE_COUNT - 1
+        if finishedExpress or clearedNormal then
             playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
-            Log:info("Player ["..playerID.."] has completed the game.")
-            GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerData.name .. "</font> has completed the game!", 0, 0)
-            playerData.duration = GameRules:GetGameTime() - START_GAME_TIME
-            playerData.victory = 1
-            ElementTD:CheckGameEnd()
-            return
+
+            if finishedExpress then
+                Log:info("Player ["..playerID.."] has completed the game.")
+                GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerData.name .. "</font> has completed the game!", 0, 0)
+                playerData.duration = GameRules:GetGameTime() - START_GAME_TIME
+                playerData.victory = 1
+                ElementTD:CheckGameEnd()
+                return
+            end
+        else
+            playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR, wave )
         end
 
         if playerData.completedWaves == CURRENT_WAVE then
@@ -405,7 +416,7 @@ function ReduceLivesForPlayer( playerID )
         playerData.health = 0
         hero:ForceKill(false)
         if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then
-            playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
+            playerData.scoreObject:UpdateScore( SCORING_GAME_FINISHED )
         else
             playerData.scoreObject:UpdateScore( SCORING_WAVE_LOST )
         end

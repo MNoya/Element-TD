@@ -441,7 +441,6 @@ function ElementTD:OnEntityKilled(keys)
         if playerData and entity.real_icefrog then
             playerData.iceFrogKills = playerData.iceFrogKills + 1
             entity:EmitSound("Frog.Kill")
-            print(playerData.iceFrogKills)
         end
     end
 

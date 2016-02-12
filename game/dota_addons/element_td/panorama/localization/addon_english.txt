@@ -109,5 +109,8 @@
 
         "etd_tower_table"                           "Tower Table"
         "etd_tower_table_description"               "Shows an overview of the available towers"
+
+        "scoring_game_completed"                    "Game Completed!"
+        "scoring_game_clear"                        "Game Cleared!"
     }
 }

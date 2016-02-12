@@ -21,7 +21,10 @@ ScoringObject = createClass({
 
 SCORING_WAVE_CLEAR = 0
 SCORING_WAVE_LOST = 1
-SCORING_GAME_CLEAR = 2
+SCORING_GAME_CLEAR = 2 
+SCORING_BOSS_WAVE_CLEAR = 3
+SCORING_GAME_FINISHED = 4
+
 function ScoringObject:UpdateScore( const , wave )
 	local scoreTable = {}
 	local processed = {}
@@ -34,9 +37,35 @@ function ScoringObject:UpdateScore( const , wave )
 	elseif ( const == SCORING_WAVE_LOST ) then
 		scoreTable = self:GetWaveLost()
 		table.insert(processed, {'Game over! Lost on wave ' .. playerData.completedWaves + 1, '#FFF0F5'} )
+
+	-- Completed wave 55/30, waiting for boss wave (not in express)
 	elseif ( const == SCORING_GAME_CLEAR ) then
 		scoreTable = self:GetGameCleared()
-		table.insert(processed, {'Game cleared!', '#FFF0F5'} )
+		if EXPRESS_MODE then
+			table.insert(processed, {'#scoring_game_completed', '#FFF0F5'} )
+		else
+			table.insert(processed, {'#scoring_game_clear', '#FFF0F5'} )
+		end
+
+	-- Finished at least 1 boss wave, waiting for the next
+	elseif (const == SCORING_BOSS_WAVE_CLEAR ) then
+		local bossWaveCleared = playerData.bossWaves
+		scoreTable = self:GetBossWaveCleared( wave, true) -- Get boss score
+		table.insert(processed, {'Boss Wave '..bossWaveCleared..' cleared!', '#FFF0F5'} )
+		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Boss Wave ' .. bossWaveCleared .. ' bonus: ' .. comma_value(scoreTable['frogBonus']), '#00FFFF'} )
+		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;'..playerData.iceFrogKills..' Frogs killed!', '#01A2FF'} )
+	
+	-- Final message (not in express)
+	elseif ( const == SCORING_GAME_FINISHED ) then
+		scoreTable = self:GetGameCleared()
+
+		table.insert(processed, {'#scoring_game_completed', '#FFF0F5'} )
+
+		-- Final bosskill recount
+		local bossKills = playerData.iceFrogKills
+		if bossKills > 0 then
+			table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;'..bossKills..' Frogs killed!', '#01A2FF'} )
+		end
 	else
 		return false
 	end
@@ -68,8 +97,8 @@ function ScoringObject:UpdateScore( const , wave )
 	if scoreTable['networthBonus'] and EXPRESS_MODE then
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Networth bonus: '.. GetPctString(scoreTable['networthBonus']), '#00FFFF'} )
 	end
-	if scoreTable['bossBonus'] and not EXPRESS_MODE then
-		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Boss bonus: '.. GetPctString(scoreTable['bossBonus']), '#00FFFF' })
+	if scoreTable['bossBonus'] and scoreTable['bossBonus'] > 0 and not EXPRESS_MODE then
+		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Boss bonus: '.. GetPctString(scoreTable['bossBonus']), '#00008B' })
 	end
 	if scoreTable['difficultyBonus'] then
 		local diffColor = '#00FF00'
@@ -80,7 +109,7 @@ function ScoringObject:UpdateScore( const , wave )
 		elseif scoreTable['difficultyBonus'] == 3 then
 			diffColor = '#999999'
 		end
-		if (const ~= SCORING_WAVE_CLEAR) or (scoreTable['difficultyBonus'] ~= 0 and const == SCORING_WAVE_CLEAR) then
+		if (scoreTable['difficultyBonus'] ~= 0) or const == SCORING_GAME_CLEAR or const == SCORING_GAME_FINISHED then
 			table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;'..GetPlayerDifficulty( self.playerID ).difficultyName .. ' difficulty: '.. GetPctString(scoreTable['difficultyBonus']), diffColor } )
 		end
 	end
@@ -92,7 +121,7 @@ function ScoringObject:UpdateScore( const , wave )
 	end
 	if scoreTable['totalScore'] then
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Total score: ' .. comma_value(scoreTable['totalScore']), '#FF8C00'})
-		if const == SCORING_WAVE_LOST or const == SCORING_GAME_CLEAR then
+		if const == SCORING_WAVE_LOST or const == SCORING_GAME_CLEAR or const == SCORING_GAME_FINISHED then
 			self.totalScore = scoreTable['totalScore']
 		else
 			self.totalScore = self.totalScore + scoreTable['totalScore']
@@ -100,7 +129,8 @@ function ScoringObject:UpdateScore( const , wave )
 		print("Score updated for player [" .. self.playerID .. "] : " .. self.totalScore)
 	end
 	--PrintTable(processed)
-	if (const == SCORING_GAME_CLEAR) then -- Delay Screen
+
+	if (const == SCORING_GAME_BOSS_CLEAR) then -- Delay Screen
 		Timers:CreateTimer(1.2, function()
 		self:ShowScore(processed)
 			CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerScore", {playerId=self.playerID, score=comma_value( self.totalScore )} )
@@ -180,6 +210,16 @@ function ScoringObject:GetWaveCleared( wave )
 	return { clearBonus = waveClearScore, cleanBonus = cleanBonus, speedBonus = speedBonus, difficultyBonus = difficultyBonus, chaosBonus = chaosBonus, endlessBonus = endlessBonus, totalScore = totalScore }
 end
 
+function ScoringObject:GetBossWaveCleared( bossWave )
+	local playerData = GetPlayerData( self.playerID )
+	local waveClearScore = 3000 --100 per kill
+	local difficultyBonus = self:GetDifficultyBonus()
+	local bossBonus = self:GetBossBonus(playerData.bossWaves-1)
+	local totalScore = math.ceil(waveClearScore * (difficultyBonus + bossBonus + 1))
+
+	return { frogBonus = waveClearScore, bossBonus = bossBonus, difficultyBonus = difficultyBonus, totalScore = totalScore }
+end
+
 -- Returns amount of clean waves and waves under 30 as well as total score
 function ScoringObject:GetWaveLost()
 	local score = self.totalScore
@@ -193,9 +233,11 @@ end
 function ScoringObject:GetGameCleared()
 	local playerData = GetPlayerData( self.playerID )
 	local score = self.totalScore
+	local values = {}
 	local totalScore = 0
 	local networthBonus = 0
 	local bossBonus = 0
+	local frogKillsBonus = playerData.iceFrogKills - ((playerData.bossWaves-1) * 100) --Add the remaining
 
 	if EXPRESS_MODE then
 		networthBonus = self:GetNetworthBonus()
@@ -282,11 +324,11 @@ function ScoringObject:GetEndlessBonus()
 	return bonus
 end
 
--- Classic Only: 1.05 + 0.01 per additional wave
+-- Classic Only: 1 + 0.05 per wave
 function ScoringObject:GetBossBonus( waves )
 	local bonus = 0
 	if waves >= 0 then
-		bonus = 0.05 + waves*0.01
+		bonus = waves*0.05
 	end
 	return bonus
 end
