@@ -20,6 +20,7 @@ end
 function modifier_attack_targeting:OnCreated( params )
     local unit = self:GetParent()
     unit.target_type = params.target_type
+    self.keep_target = params.keep_target == true
     self:StartIntervalThink(0.03)
 end
 
@@ -39,7 +40,7 @@ function modifier_attack_targeting:OnIntervalThink()
 end
 
 function modifier_attack_targeting:OnAttack( params )
-    if params.attacker == self:GetParent() then
+    if params.attacker == self:GetParent() and self.keep_target then
         self:GetParent():Interrupt()
     end
 end

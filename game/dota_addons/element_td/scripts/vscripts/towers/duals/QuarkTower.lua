@@ -52,7 +52,9 @@ function QuarkTower:OnCreated()
     self.ability = AddAbility(self.tower, "quark_tower_quantum_beam")     
     self.baseDamage = self.tower:GetBaseDamageMax()    
     self.targetEntIndex = 0    
-    self.consecutiveAttacks = 0    
+    self.consecutiveAttacks = 0
+
+    self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_HIGHEST_HP, keep_target=true})
 end
 
 RegisterTowerClass(QuarkTower, QuarkTower.className)    
