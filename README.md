@@ -3,7 +3,8 @@ Element Tower Defense
 
 **Website:** [EleTD]
 
-A Dota 2 port of the classic WarCraft 3 tower defense!<br>
+A Dota 2 port of the classic WarCraft 3 tower defense!
+
 **Programmer:** [Quintinity], [A_Dizzle], [Noya]<br>
 **Mapper:** [Azarak]<br>
 **Designer:** [Karawasa], [WindStrike]<br>
