@@ -18,6 +18,8 @@ nil)
 
 function JinxTower:OnAttackLanded(keys)
     local target = keys.target
+    target:EmitSound("Jinx.Cast")
+
     local damage = self.tower:GetAverageTrueAttackDamage()
     DamageEntity(target, self.tower, damage)
 

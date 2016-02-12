@@ -37,6 +37,8 @@ function RootsTower:OnAttackStart(keys)
     pos.x = pos.x + velocity.x/2
     pos.y = pos.y + velocity.y/2
 
+    self.tower:EmitSound("Roots.Cast")
+
     local affected = 0
 
     for i = 1, 6, 1 do

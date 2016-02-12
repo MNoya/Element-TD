@@ -32,6 +32,10 @@ function FlameTower:OnCreated()
     self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_LOWEST_HP})
 end
 
+function FlameTower:OnAttack(keys)
+    keys.caster:EmitSound("Flame.Attack")
+end
+
 function FlameTower:OnAttackLanded(keys) 
     local target = keys.target    
     local damage = ApplyAbilityDamageFromModifiers(self.burnDamage[self.level], self.tower)

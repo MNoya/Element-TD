@@ -17,6 +17,8 @@ nil)
 --
 function QuakeTower:OnAttack(keys)
     if RollPercentage(self.chance) then
+        self.tower:EmitSound("Quake.Strike")
+
         local particle = ParticleManager:CreateParticle("particles/custom/towers/quake/attack.vpcf", PATTACH_ABSORIGIN, self.tower)
         ParticleManager:SetParticleControl(particle, 0, self.tower:GetAbsOrigin())
         ParticleManager:SetParticleControl(particle, 1, Vector(self.aoe,1,1))
@@ -28,6 +30,10 @@ function QuakeTower:OnAttack(keys)
                 DamageEntity(v, self.tower, pulverizeDamage)
             end
         end
+    else
+        Timers:CreateTimer(0.1, function()
+            self.tower:EmitSound("Quake.Attack")
+        end)
     end
 end
 

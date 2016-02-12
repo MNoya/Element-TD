@@ -25,6 +25,7 @@ function RunicTower:OnMagicAttackThink()
 end
 
 function RunicTower:OnMagicAttackCast(keys)
+    self.tower:EmitSound("Runic.Cast")
     self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_magic_attack", {})
 end
 

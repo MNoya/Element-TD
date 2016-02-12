@@ -1,7 +1,6 @@
 "flame_tower_2"
 {
     "BaseClass"                 "npc_dota_creature" 
-    "SoundSet"                  "Hero_EmberSpirit"
     "IdleSoundLoop"             "Hero_EmberSpirit.IdleLoop"
     "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
     "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_ember_spirit.vsndevts"

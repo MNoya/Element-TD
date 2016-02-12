@@ -37,6 +37,7 @@ function LaserTower:OnAttack(keys)
     local damage_done = DamageEntity(keys.target, self.tower, damage)
     PopupLightDamage(self.tower, math.floor(damage_done))
     
+    self.tower:EmitSound("Laser.Attack")
 end
 
 function LaserTower:OnCreated()

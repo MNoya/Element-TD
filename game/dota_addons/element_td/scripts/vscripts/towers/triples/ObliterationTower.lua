@@ -22,6 +22,8 @@ function ObliterationTower:OnAttack(keys)
     local target = keys.target
     local caster = keys.caster
 
+    caster:StartGesture(ACT_DOTA_ATTACK)
+
     local info = 
     {
         Target = target,
@@ -46,13 +48,15 @@ end
 
 function ObliterationTower:OnProjectileHit(keys)
     local target = keys.target
-    local distance = dist2D(target:GetAbsOrigin(), self.tower:GetAbsOrigin())
+    local distance = self.tower:GetRangeToUnit(target)
     local splashAOE = self.initialSplash + ((self.maxSplash-self.initialSplash)/self.attackRange) * distance
     local explosionParticle = ParticleManager:CreateParticle("particles/custom/towers/obliteration/impact_area.vpcf", PATTACH_CUSTOMORIGIN, keys.caster)
     ParticleManager:SetParticleControl(explosionParticle, 0, target:GetAbsOrigin())
     ParticleManager:SetParticleControl(explosionParticle, 1, Vector(splashAOE, 0, 1))
     ParticleManager:SetParticleControl(explosionParticle, 2, Vector(0, 0, 0))
     ParticleManager:SetParticleControl(explosionParticle, 3, target:GetAbsOrigin())
+
+    target:EmitSound("Obliteration.Hit")
 
     local entities = GetCreepsInArea(target:GetAbsOrigin(), splashAOE)
     for _, entity in pairs(entities) do

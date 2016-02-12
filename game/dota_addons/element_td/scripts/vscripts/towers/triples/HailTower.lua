@@ -65,6 +65,7 @@ function HailTower:OnProjectileHit(keys)
 end
 
 function HailTower:OnStormCast(keys)
+    self.tower:EmitSound("Hail.Cast")
     self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_storm", {})
 end
 

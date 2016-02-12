@@ -1,6 +1,10 @@
 "obliteration_tower"
 {
     "BaseClass"        "npc_dota_creature"
+    "SoundSet"          "Hero_ObsidianDestroyer"
+    "IdleSoundLoop"     "Hero_ObsidianDestroyer.IdleLoop"
+    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
+    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_outworld_destroyer.vsndevts"
     "MinimapIcon"        "minimap_tower90"
     "MinimapIconSize"        "320"
     "ArmorPhysical"        "0"

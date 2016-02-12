@@ -16,9 +16,15 @@ MuckTower = createClass({
     },
 nil)
 
+function MuckTower:OnAttack(keys)
+    keys.caster:EmitSound("Muck.Attack")
+end
+
 function MuckTower:OnAttackLanded(keys)
     local target = keys.target
     local damage = self.tower:GetAverageTrueAttackDamage()
+
+    target:EmitSound("Muck.Slow")
 
     DamageEntitiesInArea(target:GetOrigin(), self.halfAOE, self.tower, damage / 2)
     DamageEntitiesInArea(target:GetOrigin(), self.fullAOE, self.tower, damage / 2)

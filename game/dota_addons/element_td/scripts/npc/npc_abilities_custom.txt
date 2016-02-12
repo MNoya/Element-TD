@@ -2200,6 +2200,18 @@
 			{
 				"Passive"		"1"
 				"IsHidden"		"1"
+	
+				"OnAttack"
+				{
+					"RunScript"
+					{
+						"Target"			"TARGET"
+						"ScriptFile"		"towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttack"
+					}
+				}
+	
 				"OnAttackLanded"
 				{
 					"ApplyModifier"
@@ -2220,7 +2232,7 @@
 					"RunScript"
 					{
 						"Target"			"TARGET"
-						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"ScriptFile"		"towers/towerevents.lua"
 						"Function"			"TriggerEvent"
 						"Event"				"DealBurnDamage"
 					}
@@ -2948,6 +2960,16 @@
 			{
 				"Passive"	"1"
 				"IsHidden"	"1"
+				"OnAttack"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttack"
+					}
+				}
+	
 				"OnAttackLanded"
 				{
 					"ApplyModifier"
