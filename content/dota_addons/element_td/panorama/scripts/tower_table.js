@@ -1,5 +1,6 @@
 var Root = $.GetContextPanel()
 var Container = $("#Container")
+var Filter = $("#FilterButtonContainer")
 var glows = []
 var hovering
 var hidden = true
@@ -8,7 +9,7 @@ towers['vapor'] = ['water','fire']
 towers['well']  = ['water','nature']
 towers['poison'] = ['dark','water']
 towers['windstorm'] = ['water','fire','light']
-towers['flooding'] = ['water','dark','earth']
+towers['flooding'] = ['water','dark','nature']
 towers['polar'] = ['water','light','earth']
 towers['tidal'] = ['water','nature','light']
 towers['blacksmith'] = ['fire','earth']
@@ -39,6 +40,12 @@ towers['magic'] = ['dark','fire']
 towers['jinx'] = ['dark','fire','nature']
 towers['runic'] = ['dark','fire','light']
 towers['obliteration'] = ['dark','light','nature']
+
+Categories = {}
+Categories['Buff_Towers'] = ["well","blacksmith","trickery","life","gold"]
+Categories['Slow_Towers'] = ["windstorm", "roots", "nova","muck"]
+Categories['Amp_Towers'] = ["erosion", "enchantment", "polar", "flamethrower"]
+Categories['AoE_Towers'] = ["ice", "hail", "runic", "obliteration", "vapor", "poison", "flooding", "tidal", "electricity", "moss", "gunpowder", "hydro", "quake"]
 
 function Hover(name, arg1, arg2, arg3) {
     AddElementGlow(arg1)
@@ -111,6 +118,7 @@ function Toggle() {
     Game.EmitSound("ui_generic_button_click");
     hidden = !hidden
     Container.SetHasClass("Hidden", hidden)
+    Filter.SetHasClass("Hidden", hidden)
 }
 
 function UpdateElements(data){
@@ -165,6 +173,29 @@ function HoverToggle()
 function OnMouseOutToggle()
 {
     $.DispatchEvent( "DOTAHideAbilityTooltip", $("#ImageLabel"));
+}
+
+function HoverFilter(name) {
+    var cat = Categories[name]
+    for (var i in cat)
+    {
+        var tower = Root.FindChildTraverse(cat[i])
+        if (tower)
+        {
+            var primary = towers[cat[i]][0]
+            tower.AddClass("Glow_"+primary)
+            tower.glow = "Glow_"+primary
+            glows.push(tower)
+        }
+    }
+}
+
+function OnMouseOutFilter() {
+    for (var i in glows)
+    {
+        glows[i].RemoveClass(glows[i].glow);
+    }
+    glows = []
 }
 
 (function(){

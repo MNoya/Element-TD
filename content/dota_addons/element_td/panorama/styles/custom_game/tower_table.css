@@ -317,3 +317,36 @@
 {
     box-shadow: 0px 0px 100% white;
 }
+
+#FilterButtonContainer
+{
+    flow-children: right;
+    width: 560px;
+    horizontal-align: right;
+    vertical-align: bottom;
+    margin-right: 233px;
+    margin-bottom: 19%;
+}
+
+.FilterButton
+{
+    text-align: center;
+    font-weight: bold;
+    color: #DDD;
+    font-size: 25px;
+    text-shadow: 0px 0px 5px 3.0 #000;
+    font-family: Radiance;
+    text-transform: uppercase;
+
+    width: 100px;
+    background-color: #000000DD;
+    border: 2px solid #484A48;
+    box-shadow: #000 -4px -4px 3px 8px;
+    margin-right: 3px;
+}
+
+.FilterButton:hover
+{
+    color: #FFF;
+    background-color: #000000FF;
+}
