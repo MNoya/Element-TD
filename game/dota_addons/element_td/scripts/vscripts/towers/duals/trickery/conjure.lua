@@ -12,7 +12,7 @@ function trickery_tower_conjure:OnSpellStart()
     -- Prevent the targeted tower from getting cloned again for a duration
     target:AddNewModifier(caster, self, "modifier_conjure_prevent_cloning", {duration=60})
 
-    self.tower:EmitSound("Trickery.Cast")
+    caster:EmitSound("Trickery.Cast")
     
     local sector = playerID + 1
     local clonePos = BuildingHelper:FindClosestEmptyPositionNearby( target:GetAbsOrigin(), target.construction_size, 2000 )
