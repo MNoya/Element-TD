@@ -26,7 +26,8 @@ function FlamethrowerTower:OnNapalmCreepDied(keys)
 
     for _,creep in pairs(creeps) do
         local damage = ApplyAbilityDamageFromModifiers(unit.napalmDamage, self.tower)
-        DamageEntity(creep, self.tower, damage) 
+        local damage_done = DamageEntity(creep, self.tower, damage)
+        PopupNapalmBonusDamage(creep, damage_done)
     end
 end
 
