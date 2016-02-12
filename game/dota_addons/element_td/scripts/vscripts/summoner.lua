@@ -257,7 +257,6 @@ function BuyPureEssence( keys )
 	local summoner = keys.caster
     local item = keys.ability
 	local playerID = summoner:GetPlayerOwnerID()
-    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 	local playerData = GetPlayerData(playerID)
 	local elements = playerData.elements
 
@@ -272,16 +271,7 @@ function BuyPureEssence( keys )
 		Sounds:EmitSoundOnClient(playerID, "General.Buy")
         
         -- Gold bonus to help stay valuable by comparison to getting an element upgrade
-        local waveNumber = playerData.nextWave
-        local difficultyBountyBonus = playerData.difficulty:GetBountyBonusMultiplier()
-        local extra_gold
-        if EXPRESS_MODE then
-            extra_gold = round(math.pow(waveNumber+5, 2.3) * 2.5 * difficultyBountyBonus)
-        else
-            extra_gold = round(math.pow(waveNumber+5, 2) * 2.5 * difficultyBountyBonus)
-        end
-        PopupAlchemistGold(PlayerResource:GetSelectedHeroEntity(playerID), extra_gold)
-        hero:ModifyGold(extra_gold, true, 0)
+        GivePureEssenceGoldBonus(playerID)
 
         item:SetCurrentCharges(item:GetCurrentCharges()-1)
         if item:GetCurrentCharges() == 0 then
@@ -290,6 +280,20 @@ function BuyPureEssence( keys )
 	else
         ShowWarnMessage(playerID, "#etd_need_more_lumber")
     end
+end
+
+function GivePureEssenceGoldBonus( playerID )
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    local waveNumber = playerData.nextWave
+    local difficultyBountyBonus = playerData.difficulty:GetBountyBonusMultiplier()
+    local extra_gold
+    if EXPRESS_MODE then
+        extra_gold = round(math.pow(waveNumber+5, 2.3) * 2.5 * difficultyBountyBonus)
+    else
+        extra_gold = round(math.pow(waveNumber+5, 2) * 2.5 * difficultyBountyBonus)
+    end
+    PopupAlchemistGold(PlayerResource:GetSelectedHeroEntity(playerID), extra_gold)
+    hero:ModifyGold(extra_gold, true, 0)
 end
 
 function BuyPureEssenceWarn( event )
