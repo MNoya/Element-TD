@@ -88,15 +88,17 @@ function DamageEntity(entity, attacker, damage)
 
 		if attacker.scriptClass == "GoldTower" and entity:IsAlive() and entity:GetGoldBounty() > 0 then
 			goldBounty = attacker.scriptObject:ModifyGold(goldBounty)
+			local extra_gold = goldBounty - entity:GetGoldBounty()
 			
 			local playerData = GetPlayerData(playerID)
-			playerData.goldTowerEarned = playerData.goldTowerEarned + goldBounty
+			playerData.goldTowerEarned = playerData.goldTowerEarned + extra_gold
 
 			local origin = entity:GetAbsOrigin()
 			origin.z = origin.z+128
 			local particle = ParticleManager:CreateParticle("particles/custom/towers/gold/midas.vpcf", PATTACH_ABSORIGIN, entity)
     		ParticleManager:SetParticleControl(particle, 0, origin)
     		ParticleManager:SetParticleControlEnt(particle, 1, attacker, PATTACH_POINT_FOLLOW, "attach_attack1", attacker:GetAbsOrigin(), true)
+    		PopupGoldGain(attacker, extra_gold)
 		end
 
 		if entity.SunburnData and entity.SunburnData.StackCount > 0 then
