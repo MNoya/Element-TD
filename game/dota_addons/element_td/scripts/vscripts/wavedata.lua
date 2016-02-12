@@ -4,42 +4,44 @@
 if not WAVE_CREEPS then
     WAVE_CREEPS = {}  -- array that stores the order that creeps spawn in. see /scripts/kv/waves.kv
     WAVE_HEALTH = {}  -- array that stores creep health values per wave.  see /scripts/kv/waves.kv
-    --WAVE_ENTITIES_PLAYER = {}  -- array of entities based on playerIDs: e.g. WAVE_ENTITIES_PLAYER[playerID] is the array for that player's creeps
-    --WAVE_ENTITIES = {} -- array of playerIDs based on entindexes: e.g. WAVE_ENTITIES[entindex] is the player this creep is assigned to
     CREEP_SCRIPT_OBJECTS = {}
     CREEPS_PER_WAVE = 30 -- the number of creeps to spawn in each wave
     WAVE_1_STARTED = false
     CURRENT_WAVE = 1
 end
 
-local kv = LoadKeyValues("scripts/kv/waves.kv")
+wavesKV = LoadKeyValues("scripts/kv/waves.kv")
 creepsKV = LoadKeyValues("scripts/npc/npc_units_custom.txt")
-WAVE_COUNT = kv["WaveCount"]
+WAVE_COUNT = wavesKV["WaveCount"]
 
 -- loads the creep and health data for each wave. Randomizes the creep order if 'chaos' is set to true
 function loadWaveData(chaos)
+    local settings = GameSettingsKV.GameLength["Normal"]
     if EXPRESS_MODE then
-        WAVE_COUNT = kv["WaveCountExpress"]
+        WAVE_COUNT = wavesKV["WaveCountExpress"]
+        settings = GameSettingsKV.GameLength["Express"]
     end
-    WAVE_CREEPS = {}
-    WAVE_HEALTH = {}
-    for k, v in pairs(kv) do
-        if tonumber(k) and tonumber(k) <= WAVE_COUNT then
-            if EXPRESS_MODE then
-               WAVE_CREEPS[tonumber(k)] = v.CreepExpress
-               WAVE_HEALTH[tonumber(k)] = v.HealthExpress
-            else
-        	   WAVE_CREEPS[tonumber(k)] = v.Creep
-        	   WAVE_HEALTH[tonumber(k)] = v.Health
-            end
+
+    local baseHP = tonumber(settings["BaseHP"])
+    local multiplier = tonumber(settings["Multiplier"])
+
+    for i=1,WAVE_COUNT do
+        if EXPRESS_MODE then
+           WAVE_CREEPS[i] = wavesKV[tostring(i)].CreepExpress
+        else
+    	   WAVE_CREEPS[i] = wavesKV[tostring(i)].Creep
+        end
+
+        -- Health formula: Last Wave HP * Multiplier
+        if i==1 then
+            WAVE_HEALTH[i] = baseHP
+        else
+            WAVE_HEALTH[i] = WAVE_HEALTH[i-1] * multiplier
         end
     end
     if chaos then
         local lastWaves = {}
-        local k = 55
-        if EXPRESS_MODE then
-            k = 30
-        end
+        local k = WAVE_COUNT
         if not EXPRESS_MODE then
             for i = k, k + 1, 1 do
                 lastWaves[i] =  WAVE_CREEPS[i]
@@ -58,7 +60,12 @@ function loadWaveData(chaos)
             table.insert(WAVE_CREEPS, lastWaves[k])
         end
     end
-    PrintTable(WAVE_CREEPS)
+
+    -- Print and round the values
+    for k,v in pairs(WAVE_CREEPS) do
+        WAVE_HEALTH[k] = round(WAVE_HEALTH[k])
+        print(string.format("%2d | %-20s %5.0f",k,v,WAVE_HEALTH[k]))
+    end
 end
 
 -- starts the break timer for the specified player.

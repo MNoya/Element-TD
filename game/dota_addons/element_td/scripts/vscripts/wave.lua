@@ -84,14 +84,16 @@ function Wave:SpawnWave()
 				entity:SetMinimumGoldBounty(bounty)
 
 				-- set max health based on wave
-				entity:SetMaxHealth(WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier())
-				entity:SetBaseMaxHealth(WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier())
+				local health = WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier()
+				entity:SetMaxHealth(health)
+				entity:SetBaseMaxHealth(health)
 				entity:SetHealth(entity:GetMaxHealth())
 
 				-- Boss mode
 				if self.waveNumber == WAVE_COUNT and not EXPRESS_MODE then
-					entity:SetMaxHealth(WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier() * (math.pow(1.1,playerData.bossWaves)))
-					entity:SetBaseMaxHealth(WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier() * (math.pow(1.1,playerData.bossWaves)))
+					local bossHealth = WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier() * (math.pow(1.2,playerData.bossWaves))
+					entity:SetMaxHealth(bossHealth)
+					entity:SetBaseMaxHealth(bossHealth)
 					entity:SetHealth(entity:GetMaxHealth())
 				end
 
