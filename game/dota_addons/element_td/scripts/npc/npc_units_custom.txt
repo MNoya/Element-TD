@@ -7027,8 +7027,7 @@
 	    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_wm16.vmdl"
 	    "PedestalModelScale"        "0.8"
 	    "PedestalOffset"            "20"
-	    "ProjectileModel"           "particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
-	    "SoundSet"                  "Tower.Water"
+	    "ProjectileModel"           "particles/custom/towers/periodic/attack.vpcf"
 	    "MinimapIcon"               "minimap_tower90"
 	    "MinimapIconSize"           "320"
 	    "Creature"
@@ -7047,7 +7046,7 @@
 	    "SoundSet"          "Hero_Invoker"
 	    "IdleSoundLoop"     "Hero_Invoker.IdleLoop"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
-	    "VoiceFile"        "soundevents/voscripts/game_sounds_vo_invoker.vsndevts"
+	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_invoker.vsndevts"
 	
 	    // Stats
 	    //-----------------------------
