@@ -4,33 +4,37 @@ CannonTower = createClass({
 		towerClass = "",
 
 		constructor = function(self, tower, towerClass)
-            self.tower = tower;
-            self.towerClass = towerClass or self.towerClass;
+            self.tower = tower
+            self.towerClass = towerClass or self.towerClass
         end
 	},
 	{
 		className = "CannonTower"
 	},
-nil);
+nil)
+
+function CannonTower:OnAttack(keys)
+    self.tower:EmitSound("Cannon.Launch")
+end
 
 function CannonTower:OnAttackLanded(keys)
-	local target = keys.target;
+    local target = keys.target
 	local damage = self.tower:GetAverageTrueAttackDamage()
-	DamageEntitiesInArea(target:GetOrigin(), self.halfAOE, self.tower, damage / 2);
-	DamageEntitiesInArea(target:GetOrigin(), self.fullAOE, self.tower, damage / 2);
+	DamageEntitiesInArea(target:GetOrigin(), self.halfAOE, self.tower, damage / 2)
+	DamageEntitiesInArea(target:GetOrigin(), self.fullAOE, self.tower, damage / 2)
 	
-	local pos = target:GetOrigin();
-	pos.z = pos.z + 64;
+	local pos = target:GetOrigin()
+	pos.z = pos.z + 64
 
-	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_jakiro/jakiro_liquid_fire_explosion.vpcf", PATTACH_ABSORIGIN, target);
-    ParticleManager:SetParticleControl(particle, 0, pos);
-    ParticleManager:SetParticleControl(particle, 1, Vector(150, 260, 0));
-    ParticleManager:ReleaseParticleIndex(particle); 
+	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_jakiro/jakiro_liquid_fire_explosion.vpcf", PATTACH_ABSORIGIN, target)
+    ParticleManager:SetParticleControl(particle, 0, pos)
+    ParticleManager:SetParticleControl(particle, 1, Vector(150, 260, 0))
+    ParticleManager:ReleaseParticleIndex(particle)
 end
 
 function CannonTower:OnCreated()
-	self.fullAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"));
-	self.halfAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"));
+	self.fullAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))
+	self.halfAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
 end
 
-RegisterTowerClass(CannonTower, CannonTower.className);
+RegisterTowerClass(CannonTower, CannonTower.className)

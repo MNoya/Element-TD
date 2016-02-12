@@ -1,8 +1,6 @@
 "haste_tower"
 {
     "BaseClass"        "npc_dota_creature"
-    "SoundSet"                "Hero_TrollWarlord"
-    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_troll_warlord.vsndevts"
     "MinimapIcon"        "minimap_tower90"
     "MinimapIconSize"        "320"
     "ArmorPhysical"        "0"

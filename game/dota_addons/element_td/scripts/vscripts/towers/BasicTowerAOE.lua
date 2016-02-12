@@ -20,6 +20,8 @@ function BasicTowerAOE:OnAttackLanded(keys)
 	DamageEntitiesInArea(target:GetOrigin(), self.fullAOE, self.tower, damage / 2);
 end
 
+function BasicTowerAOE:OnAttack(keys) end
+
 function BasicTowerAOE:OnCreated()
 	self.fullAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"));
 	self.halfAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"));

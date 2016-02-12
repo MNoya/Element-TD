@@ -954,12 +954,21 @@
 				"IsHidden"		"1"
 				"Passive"		"1"
 				"TextureName"	"elements/composite"
+				"OnAttack"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttack"
+						"DamageType"		"composite"
+					}
+				}
 				"OnAttackLanded"
 				{
 					"RunScript"
 					{
-						"Target"			"TARGET"
-						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"ScriptFile"		"towers/towerevents.lua"
 						"Function"			"TriggerEvent"
 						"Event"				"OnAttackLanded"
 						"DamageType"		"composite"

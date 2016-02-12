@@ -21,6 +21,8 @@ function BasicTower:OnAttackLanded(keys)
 	DamageEntity(target, self.tower, damage);
 end
 
+function BasicTower:OnAttack(keys) end
+
 function BasicTower:OnCreated() end
 
 RegisterTowerClass(BasicTower, BasicTower.className);
