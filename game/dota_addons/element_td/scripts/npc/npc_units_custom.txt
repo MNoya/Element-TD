@@ -9018,7 +9018,7 @@
 	        "1"        "fire"
 	        "2"        "nature"
 	    }
-	    "Damage"        "50"
+	    "Damage"        "75"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlameTower"
 	    "TowerType"        "Normal"
@@ -9049,8 +9049,8 @@
 	        "4"        "jinx_tower"
 	        "5"        "nova_tower"
 	    }
-	    "AttackDamageMin"        "50"
-	    "AttackDamageMax"        "50"
+	    "AttackDamageMin"        "75"
+	    "AttackDamageMax"        "75"
 	    "Creature"
 	    {
 	        "AttachWearables"
@@ -9125,7 +9125,7 @@
 	        "1"        "fire"
 	        "2"        "nature"
 	    }
-	    "Damage"        "250"
+	    "Damage"        "375"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlameTower"
 	    "TowerType"        "Normal"
@@ -9152,8 +9152,8 @@
 	        "Count"        "1"
 	        "1"        "flame_tower_3"
 	    }
-	    "AttackDamageMin"        "250"
-	    "AttackDamageMax"        "250"
+	    "AttackDamageMin"        "375"
+	    "AttackDamageMax"        "375"
 	    "Creature"
 	    {
 	       "AttachWearables" // Mentor of the High Plains
@@ -9215,7 +9215,7 @@
 	        "1"        "fire"
 	        "2"        "nature"
 	    }
-	    "Damage"        "1250"
+	    "Damage"        "1875"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlameTower"
 	    "TowerType"        "Normal"
@@ -9240,8 +9240,8 @@
 	    "Upgrades"
 	    {
 	    }
-	    "AttackDamageMin"        "1250"
-	    "AttackDamageMax"        "1250"
+	    "AttackDamageMin"        "1875"
+	    "AttackDamageMax"        "1875"
 	    "Creature"
 	    {
 	       "AttachWearables" // Flames of Prosperity Set

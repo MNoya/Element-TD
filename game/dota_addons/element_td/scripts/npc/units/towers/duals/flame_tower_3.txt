@@ -41,7 +41,7 @@
         "1"        "fire"
         "2"        "nature"
     }
-    "Damage"        "1250"
+    "Damage"        "1875"
     "DamageType"        "fire"
     "ScriptClass"        "FlameTower"
     "TowerType"        "Normal"
@@ -66,8 +66,8 @@
     "Upgrades"
     {
     }
-    "AttackDamageMin"        "1250"
-    "AttackDamageMax"        "1250"
+    "AttackDamageMin"        "1875"
+    "AttackDamageMax"        "1875"
     "Creature"
     {
        "AttachWearables" // Flames of Prosperity Set
