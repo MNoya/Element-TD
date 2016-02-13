@@ -15558,10 +15558,6 @@
 	"tidal_tower"
 	{
 	    "BaseClass"        "npc_dota_creature"
-	    "SoundSet"              "Hero_NagaSiren"
-	    "IdleSoundLoop"         "Hero_NagaSiren.IdleLoop"
-	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_naga_siren.vsndevts"
-	    "VoiceFile"             "soundevents/voscripts/game_sounds_vo_naga_siren.vsndevts"
 	    "MinimapIcon"        "minimap_tower90"
 	    "MinimapIconSize"        "320"
 	    "ArmorPhysical"        "0"
@@ -15656,10 +15652,6 @@
 	"tidal_tower_2"
 	{
 	    "BaseClass"        "npc_dota_creature"
-	    "SoundSet"              "Hero_NagaSiren"
-	    "IdleSoundLoop"         "Hero_NagaSiren.IdleLoop"
-	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_naga_siren.vsndevts"
-	    "VoiceFile"             "soundevents/voscripts/game_sounds_vo_naga_siren.vsndevts"
 	    "MinimapIcon"        "minimap_tower90"
 	    "MinimapIconSize"        "320"
 	    "SoundSet"                  "Hero_Bane"

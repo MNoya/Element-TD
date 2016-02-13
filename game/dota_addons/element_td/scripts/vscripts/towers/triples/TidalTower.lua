@@ -25,6 +25,10 @@ function TidalTower:ResetDamage(keys)
     self.tower:RemoveModifierByName("modifier_tidal_splash_decay")
 end
 
+function TidalTower:OnAttack(keys)
+    self.tower:EmitSound("Tidal.Attack")
+end
+
 function TidalTower:OnAttackLanded(keys)
     local target = keys.target
     local damage = self.tower:GetAverageTrueAttackDamage()

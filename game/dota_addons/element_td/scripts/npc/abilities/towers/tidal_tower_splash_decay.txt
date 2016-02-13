@@ -10,10 +10,23 @@
 
 	"Modifiers"
 	{
+		"modifier_tidal_tower"
+		{
+			"IsHidden"	"1"
+			"Passive"	"1"
+			"OnAttack"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"towers/towerevents.lua"
+					"Function"			"TriggerEvent"
+					"Event"				"OnAttack"
+				}
+			}
+		}
 		"modifier_tidal_splash_decay"
 		{
 			"Duration"		"%reset_time"
-
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%damage"
