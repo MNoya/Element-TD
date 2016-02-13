@@ -18,8 +18,7 @@ nil)
 function FlameTower:DealBurnDamage(keys)
     local target = keys.target    
     local damage = ApplyAbilityDamageFromModifiers(self.burnDamage[self.level], self.tower)    
-    DamageEntitiesInArea(target:GetOrigin(), self.burnAOE, self.tower, damage)    
-    --print("Sunburn damage tick: " .. GameRules:GetGameTime())    
+    DamageEntitiesInArea(target:GetOrigin(), self.burnAOE, self.tower, damage)     
 end
 
 function FlameTower:OnCreated()
@@ -37,12 +36,9 @@ function FlameTower:OnAttack(keys)
 end
 
 function FlameTower:OnAttackLanded(keys) 
-    local target = keys.target    
+    local target = keys.target
     local damage = ApplyAbilityDamageFromModifiers(self.burnDamage[self.level], self.tower)
-    DamageEntitiesInArea(target:GetAbsOrigin(), self.burnAOE, self.tower, damage)
-
-    attack_damage = self.tower:GetAverageTrueAttackDamage()
-    DamageEntity(target, self.tower, damage)
+    local attack_damage = self.tower:GetAverageTrueAttackDamage()
 
     keys.caster:StartGesture(ACT_DOTA_CAST_ABILITY_4)
     
@@ -69,21 +65,24 @@ function FlameTower:OnAttackLanded(keys)
             target.SunburnData.Stacks[stackID] = nil    
             target.SunburnData.StackCount = target.SunburnData.StackCount - 1    
         end
-    end)    
+    end)
+
+    -- Main debuff damage tick, includes the main target
+    DamageEntitiesInArea(target:GetAbsOrigin(), self.burnAOE, self.tower, damage)
+
+    -- Attack damage
+    DamageEntity(target, self.tower, attack_damage) 
 end
 
-function CreateSunburnRemnant(entity, team)
-    local position = entity:GetAbsOrigin() + Vector(0, 0, 64)
+function CreateSunburnRemnant(entity)
+    local position = entity:GetAbsOrigin()
 
-    local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_ember_spirit/ember_spirit_flameGuard_column.vpcf", PATTACH_CUSTOMORIGIN, nil)    
+    local particle = ParticleManager:CreateParticle("particles/custom/towers/flame/remnant.vpcf", PATTACH_CUSTOMORIGIN, nil)    
     ParticleManager:SetParticleControl(particle, 0, position)
     ParticleManager:SetParticleControl(particle, 1, position)
-    ParticleManager:SetParticleControl(particle, 3, Vector(1, 0, 0))  
-
-    local particle2 = ParticleManager:CreateParticle("particles/units/heroes/hero_ember_spirit/ember_spirit_flameGuard_fire_outer.vpcf", PATTACH_CUSTOMORIGIN, nil)    
-    ParticleManager:SetParticleControl(particle2, 0, position)    
-    ParticleManager:SetParticleControl(particle2, 1, position)
-    ParticleManager:SetParticleControl(particle2, 2, Vector(10, 10, 10))    
+    ParticleManager:SetParticleControl(particle, 2, Vector(entity.SunburnData.AOE, 0, 0))
+    ParticleManager:SetParticleControl(particle, 3, Vector(entity.SunburnData.AOE, 0, 0))
+    ParticleManager:SetParticleControl(particle, 4, Vector(entity.SunburnData.AOE, 0, 0))
 
     local stacks = 0    
     local remnantDuration = 0    
@@ -111,14 +110,12 @@ function CreateSunburnRemnant(entity, team)
     end
 
     if stacks == 0 then
-        ParticleManager:DestroyParticle(particle, true)    
-        ParticleManager:DestroyParticle(particle2, true)     
+        ParticleManager:DestroyParticle(particle, true)
         return    
     end
 
     Timers:CreateTimer(remnantDuration, function()
-        ParticleManager:DestroyParticle(particle, false)    
-        ParticleManager:DestroyParticle(particle2, false)
+        ParticleManager:DestroyParticle(particle, false)
     end)    
 end
 

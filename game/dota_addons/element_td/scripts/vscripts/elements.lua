@@ -86,6 +86,7 @@ function DamageEntity(entity, attacker, damage)
 		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 		local goldBounty = entity:GetGoldBounty()
 
+		-- Gold Tower
 		if attacker.scriptClass == "GoldTower" and entity:IsAlive() and entity:GetGoldBounty() > 0 then
 			goldBounty = attacker.scriptObject:ModifyGold(goldBounty)
 			local extra_gold = goldBounty - entity:GetGoldBounty()
@@ -101,11 +102,9 @@ function DamageEntity(entity, attacker, damage)
     		PopupGoldGain(attacker, extra_gold)
 		end
 
+		-- Flame Tower
 		if entity.SunburnData and entity.SunburnData.StackCount > 0 then
-			local team = DOTA_TEAM_BADGUYS
-			if attacker:GetTeam() == DOTA_TEAM_GOODGUYS then team = DOTA_TEAM_BADGUYS end
-			if attacker:GetTeam() == DOTA_TEAM_BADGUYS then team = DOTA_TEAM_GOODGUYS end
-			CreateSunburnRemnant(entity, team)
+			CreateSunburnRemnant(entity)
 		end
 		
 		hero:ModifyGold(goldBounty)
