@@ -69,6 +69,13 @@
     vertical-align: bottom;
 }
 
+.AspectRatio21x9 #TowerTableButton
+{
+    width: 210px;
+    margin-right: 70px;
+    margin-bottom: 10px;
+}
+
 #TowersLabel
 {
     width: 100%;

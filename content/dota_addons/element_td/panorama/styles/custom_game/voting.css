@@ -468,6 +468,10 @@ ToggleButton .TickBox, DOTASettingsCheckbox .TickBox
     transition-duration: 0.3s;
 }
 
+.AspectRatio21x9 #CurrentModePanel {
+    margin-bottom: 28%;
+}
+
 #DiffImage
 {
     transition-property: brightness;

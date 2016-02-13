@@ -109,10 +109,11 @@ function ShowTooltip( str )
 //Karawasa Resolution 21x9
 function CheckAspectRatio()
 {
-	var rootHud = LumberUI.GetParent();
+	var rootHud = LumberUI.GetParent().GetParent();
 
 	var width = rootHud.actuallayoutwidth;
 	var height = rootHud.actuallayoutheight;
+	// - w 1978 -h 828 for Testing Kara res.
 
 	var r = gcd(width, height);
 
@@ -123,6 +124,7 @@ function CheckAspectRatio()
 	var Aspect2 = height/r;
 
 	var AspectRatio = Aspect1 + ":" + Aspect2;
+	$.Msg(AspectRatio);
 	
 	// 21x9
 	if (AspectRatio == "64:27" || AspectRatio == "21:9" || AspectRatio == "43:18")

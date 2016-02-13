@@ -161,7 +161,7 @@
 .AspectRatio21x9 #ResourceLumber
 {
     margin-bottom: 214px;
-    margin-right: 40px;
+    margin-right: 70px;
 }
 
 #LumberText
@@ -232,7 +232,7 @@
 .AspectRatio21x9 #ResourceGold
 {
     margin-bottom: 214px;
-    margin-right: 40px;
+    margin-right: 160px;
 }
 
 //---------
@@ -257,7 +257,7 @@
 .AspectRatio21x9 #ResourceEssence
 {
     margin-bottom: 214px;
-    margin-right: 4px;
+    margin-right: 10px;
 }
 
 #PureEssenceText
