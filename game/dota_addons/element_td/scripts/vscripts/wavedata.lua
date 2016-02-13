@@ -269,11 +269,6 @@ function SpawnWaveForPlayer(playerID, wave)
                 GameRules:SendCustomMessage("<font color='"..color.."'>"..playerData.name.."</font> is the first to complete Wave " .. CURRENT_WAVE, 0, 0)
             end
 
-            CURRENT_WAVE = playerData.nextWave
-            if GameSettings:GetGamemode() == "Competitive" and GameSettings:GetEndless() ~= "Endless" then
-                CompetitiveNextRound(CURRENT_WAVE)
-            end
-
             -- Grant Lumber and Essence to all players the moment the next wave is set
             if WaveGrantsLumber(CURRENT_WAVE) then
                 for k, pID in pairs(playerIDs) do
@@ -314,6 +309,12 @@ function SpawnWaveForPlayer(playerID, wave)
                     Log:info("Giving 1 pure essence to " .. playerData.name)
                     playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
                 end
+            end
+
+            -- Next wave
+            CURRENT_WAVE = playerData.nextWave
+            if GameSettings:GetGamemode() == "Competitive" and GameSettings:GetEndless() ~= "Endless" then
+                CompetitiveNextRound(CURRENT_WAVE)
             end
         end
 

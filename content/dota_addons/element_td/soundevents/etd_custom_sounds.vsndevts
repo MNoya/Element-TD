@@ -467,7 +467,7 @@
                             "value0"        "sounds/weapons/hero/morphling/adaptive_strike_cast.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "0.500000"  }
+                    "volume"            {   "value"     "0.300000"  }
                     "pitch_rand_min"    {   "value"     "-0.00000"  }
                     "pitch_rand_max"    {   "value"     "0.000000"  }
                     "pitch"             {   "value"     "1.000000"  }

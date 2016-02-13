@@ -11939,14 +11939,13 @@
 	    "MinimapIconSize"            "320"
 	    "Creature"
 	    {
-	       "AttachWearables" // The Sea Dragon's Set
-	       {
-	            "1" { "ItemDef" "4922" } // Sea Dragon's Crown
-	            "2" { "ItemDef" "4921" } // Sea Dragon's Basher
-	            "3" { "ItemDef" "4923" } // Sea Dragon's Armlet
-	            "4" { "ItemDef" "4924" } // Sea Dragon's Fins
-	            "5" { "ItemDef" "512" } // Ambient
-	       }
+	        "AttachWearables" // The Andestian Sentinel
+	        {
+	            "1" { "ItemDef" "8790" } // Bracers of the Andestian Sentinel
+	            "2" { "ItemDef" "8789" } // Voulge of the Andestian Sentinel
+	            "3" { "ItemDef" "8792" } // Mantle of the Andestian Sentinel
+	            "4" { "ItemDef" "8791" } // Headpiece of the Andestian Sentinel
+	        }
 	    }
 	
 	    // Stats
