@@ -32,6 +32,12 @@ end
 
 function ShowWaveBreakTimeMessage(playerID, waveNumber, breakTime, duration)
     Notifications:ClearTop(playerID)
+
+    if waveNumber == 56 then
+        ShowFirstBossWaveMessage(playerID)
+        return
+    end
+
     Notifications:Top(playerID, {text="Wave "..waveNumber.." in "..breakTime.." seconds", class="WaveBreakTime", duration=duration})
     
     local element = string.gsub(creepsKV[WAVE_CREEPS[waveNumber]].Ability1, "_armor", "") or "composite"
@@ -40,13 +46,18 @@ function ShowWaveBreakTimeMessage(playerID, waveNumber, breakTime, duration)
 
     Notifications:Top(playerID, {text=firstToUpper(element), style={["margin"]="-15px 15px 0px 15px",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, duration=duration})
     if abilityName and abilityName ~= "" then
-        if abilityName ~= "creep_ability_boss" then
-            Notifications:Top(playerID, {text="#"..abilityName, style={["margin"]="-15px 15px 0px 0px",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, continue=true, duration=duration})    
-            Notifications:Top(playerID, {ability=abilityName, style={["border-radius"]="48px", border="2px solid black", width="48px", height="48px", ["margin"]="-13px 0px 0px 0px"}, continue=true, duration=duration})
-        else
-            Notifications:Top(playerID, {image="file://{images}/spellicons/osfrog.png", style={width="48px", height="48px", ["margin"]="-5px 0px 0px 0px"}, duration=duration})
-        end
+        Notifications:Top(playerID, {text="#"..abilityName, style={["margin"]="-15px 15px 0px 0px",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, continue=true, duration=duration})    
+        Notifications:Top(playerID, {ability=abilityName, style={["border-radius"]="48px", border="2px solid black", width="48px", height="48px", ["margin"]="-13px 0px 0px 0px"}, continue=true, duration=duration})
     end
+end
+
+function ShowFirstBossWaveMessage( playerID )
+    Notifications:ClearTop(playerID)
+    Notifications:Top(playerID, {text="Boss Wave in 30 seconds", class="WaveBreakTime", duration=10})
+    local elem_color = rgbToHex(GetElementColor("composite"))
+
+    Notifications:Top(playerID, {text=firstToUpper("composite"), style={["margin"]="-15px 15px 0px 15px",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, duration=10})
+    Notifications:Top(playerID, {image="file://{images}/spellicons/osfrog.png", style={width="48px", height="48px", ["margin"]="-5px 0px 0px 0px"}, duration=10})
 end
 
 function ShowWaveSpawnMessage(playerID, waveNumber, duration)

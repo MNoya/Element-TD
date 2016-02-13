@@ -200,6 +200,20 @@ function UpdateScoreboard(playerID)
 	CustomGameEventManager:Send_ServerToAllClients("etd_update_scoreboard", {playerID=playerID, data = data})
 end
 
+function UpdateWaveInfo(playerID, wave)
+    local player = PlayerResource:GetPlayer(playerID)
+    local playerData = GetPlayerData(playerID)
+
+    if player then
+        local next_wave = wave+1
+        if (next_wave >= WAVE_COUNT and not EXPRESS_MODE) then
+            CustomGameEventManager:Send_ServerToPlayer( player, "etd_next_wave_info", { nextWave=0, bossWave = playerData.bossWaves + 1, nextAbility1="", nextAbility2="creep_ability_boss" } )
+        else
+            CustomGameEventManager:Send_ServerToPlayer( player, "etd_next_wave_info", { nextWave=next_wave, nextAbility1=creepsKV[WAVE_CREEPS[next_wave]].Ability1, nextAbility2=creepsKV[WAVE_CREEPS[next_wave]].Ability2 } )            
+        end
+    end
+end
+
 function UpdateElementOrbs(playerID, new_element)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 	local orb_path = "particles/custom/orbs/"

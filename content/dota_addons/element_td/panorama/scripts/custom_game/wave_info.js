@@ -35,6 +35,7 @@ function Setup() {
 function UpdateWaveInfo( table ) {
 	$.Msg(table.nextWave,table.nextAbility1, table.nextAbility2);
 	currentWave.text = nextWave.text;
+
 	if (nextAbility1.abilityname != "") {
 		currentAbility1.abilityname = nextAbility1.abilityname;
 		currentAbility1.visible = true;
@@ -53,6 +54,10 @@ function UpdateWaveInfo( table ) {
 		nextWave.text = "Wave " + table.nextWave;
 	else
 		nextWave.text = "";
+
+	if (table.bossWave !== undefined)
+		nextWave.text = "Boss Wave " + table.bossWave;
+
 	if (table.nextAbility1 === undefined || table.nextAbility1 == "") {
 		nextAbility1.abilityname = "";
 		nextAbility1.visible = false;
