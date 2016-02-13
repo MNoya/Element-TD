@@ -18,7 +18,7 @@ nil)
 
 function EnchantmentTower:FaerieFireThink()
     if self.ability:IsFullyCastable() and self.tower:GetHealthPercent() == 100 and self.ability:GetAutoCastState() then
-        local creeps = GetCreepsInArea(self.tower:GetOrigin(), self.range)
+        local creeps = GetCreepsInArea(self.tower:GetAbsOrigin(), self.range)
         local highestHealth = 0
         local theChosenOne = nil
 
@@ -35,20 +35,17 @@ function EnchantmentTower:FaerieFireThink()
     end
 end
 
-function EnchantmentTower:OnFaerieFireExpire(keys)
-    local target = keys.target
-    if target:IsAlive() then
-        RemoveDamageAmpModifierFromCreep(target, self.modifierName)
-        self.debuffedCreeps[target:entindex()] = nil
-    end
-end
-
 function EnchantmentTower:OnFaerieFireCast(keys)
     local target = keys.target
-    AddDamageAmpModifierToCreep(target, self.modifierName, self.damageAmp)
 
-    self.debuffedCreeps[target:entindex()] = "BibleThump"
-
+    self.ability:ApplyDataDrivenModifier(self.tower, target, "modifier_faerie_fire", {})
+    local modifier = target:FindModifierByName("modifier_faerie_fire")
+    if modifier then
+        modifier.findRadius = self.findRadius
+        modifier.maxAmp = self.maxAmp 
+        modifier.baseAmp = self.baseAmp
+    end
+    
     local playerID = self.tower:GetPlayerOwnerID()
     Sounds:EmitSoundOnClient(playerID, "Enchantment.Cast")
 
@@ -68,8 +65,6 @@ function EnchantmentTower:OnCreated()
     self.modifierName = "modifier_faerie_fire"
 
     self.attackLoc = self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_hitloc"))
-    self.damageAmp = GetAbilitySpecialValue("enchantment_tower_faerie_fire", "damage_amp")[self.tower:GetLevel()]
-    self.debuffedCreeps = {}
     self.range = tonumber(GetAbilityKeyValue("enchantment_tower_faerie_fire", "AbilityCastRange"))
 
     self.ability = AddAbility(self.tower, "enchantment_tower_faerie_fire", self.tower:GetLevel())
@@ -83,15 +78,12 @@ function EnchantmentTower:OnCreated()
 
     self.fullAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))
     self.halfAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
+
+    self.findRadius = self.ability:GetLevelSpecialValueFor("amp_find_radius", self.ability:GetLevel()-1)
+    self.maxAmp = self.ability:GetLevelSpecialValueFor("max_damage_amp", self.ability:GetLevel()-1)
+    self.baseAmp = self.ability:GetLevelSpecialValueFor("base_damage_amp", self.ability:GetLevel()-1)
 end
 
-function EnchantmentTower:OnDestroyed()
-    for id,_ in pairs(self.debuffedCreeps) do
-        local creep = EntIndexToHScript(id)
-        if creep and IsValidEntity(creep) and creep:IsAlive() and creep.RemoveModifierByName then
-            creep:RemoveModifierByName(self.modifierName)
-        end
-    end
-end
+function EnchantmentTower:OnDestroyed() end
 
 RegisterTowerClass(EnchantmentTower, EnchantmentTower.className)

@@ -56,6 +56,7 @@ function DamageEntity(entity, attacker, damage)
 	if entity:HasModifier("modifier_invulnerable") then return end
 
 	local original = damage
+	if damage <= 0 then return end --pls no negative damage
 
 	-- Modify damage based on elements
 	damage = ApplyElementalDamageModifier(damage, GetDamageType(attacker), GetArmorType(entity))
@@ -70,8 +71,7 @@ function DamageEntity(entity, attacker, damage)
 	end
 
 	damage = math.ceil(damage) --round up to the nearest integer
-	if damage < 0 then damage = 0 end --pls no negative damage
-	
+		
 	if GameRules.DebugDamage then
 		local sourceName = attacker.class
 		local targetName = entity.class
@@ -131,34 +131,33 @@ end
 --------------------------------------------------------------
 --------------------------------------------------------------
 
--- ampAmount is a number between 0 and 100 (%)
-function AddDamageAmpModifierToCreep(creep, modifierName, ampAmount)
-	if not creep.DamageAmpTable then
-		creep.DamageAmpTable = {
-			[modifierName] = ampAmount
-		}
-	else
-		if not creep.DamageAmpTable[modifierName] then
-			creep.DamageAmpTable[modifierName] = ampAmount
-		elseif ampAmount > creep.DamageAmpTable[modifierName] then
-			creep.DamageAmpTable[modifierName] = ampAmount
-		end
-	end
-end
-
-function RemoveDamageAmpModifierFromCreep(creep, modifierName)
-	if creep.DamageAmpTable and creep.DamageAmpTable[modifierName] then
-		creep.DamageAmpTable[modifierName] = nil
-	end
-end
-
 function ApplyDamageAmplification(damage, creep)
 	local newDamage = damage
-	if creep.DamageAmpTable then
-		for name, value in pairs(creep.DamageAmpTable) do
-			newDamage = newDamage + (damage * (value / 100))
+	local amp = 0
+
+	-- Erosion
+	local erosionModifier = creep:FindModifierByName("modifier_acid_attack_damage_amp")
+	if erosionModifier then
+		amp = amp + erosionModifier.damageAmp
+	end
+
+	-- Enchantment
+	local ffModifier = creep:FindModifierByName("modifier_faerie_fire")
+	if ffModifier then
+		local creeps = GetCreepsInArea(creep:GetAbsOrigin(), ffModifier.findRadius)
+		if #creeps <= 3 then
+			amp = amp + ffModifier.maxAmp
+		else
+			amp = amp + ffModifier.baseAmp
 		end
 	end
+
+	newDamage = newDamage * (1+ amp*0.01)
+
+	if GameRules.DebugDamage and amp > 0 then
+		print("[DAMAGE] Increased damage done to "..creep:GetUnitName().." damage of "..damage.." to "..newDamage.." due to an amplification of "..amp)
+	end
+
 	return round(newDamage)
 end
 

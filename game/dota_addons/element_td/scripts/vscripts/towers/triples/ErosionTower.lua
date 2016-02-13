@@ -17,13 +17,6 @@ ErosionTower = createClass({
     },
 nil)
 
-function ErosionTower:OnDamageAmpExpire(keys)
-    if keys.target:IsAlive() then
-        RemoveDamageAmpModifierFromCreep(keys.target, self.modifierName)
-        self.debuffedCreeps[keys.target:entindex()] = nil
-    end
-end
-
 function ErosionTower:OnAcidDot(keys)
     local damage = ApplyAbilityDamageFromModifiers(self.dotDamage, self.tower)
     DamageEntity(keys.target, self.tower, damage)
@@ -35,21 +28,23 @@ function ErosionTower:OnAttackLanded(keys)
     DamageEntitiesInArea(target:GetOrigin(), self.halfAOE, self.tower, damage / 2)
     DamageEntitiesInArea(target:GetOrigin(), self.fullAOE, self.tower, damage / 2)
 
-    local entities = GetCreepsInArea(target:GetOrigin(), self.halfAOE)
+    local entities = GetCreepsInArea(target:GetAbsOrigin(), self.halfAOE)
     for _,e in pairs(entities) do
-         AddDamageAmpModifierToCreep(e, self.modifierName, self.damageAmp)
-         self.debuffedCreeps[e:entindex()] = 1
+        self.ability:ApplyDataDrivenModifier(self.tower, e, "modifier_acid_attack_damage_amp", {})
+        local modifier = e:FindModifierByName("modifier_acid_attack_damage_amp")
+        if modifier then
+            modifier.damageAmp = self.damageAmp
+        end
     end
 end
 
 function ErosionTower:OnCreated()
     self.modifierName = "modifier_acid_attack_damage_amp"
-    self.debuffedCreeps = {}
     self.ability = AddAbility(self.tower, "erosion_tower_acid_attack", self.tower:GetLevel())
     self.fullAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))
     self.halfAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
     self.dotDamage = GetAbilitySpecialValue("erosion_tower_acid_attack", "dot")[self.tower:GetLevel()]
-    self.damageAmp = GetAbilitySpecialValue("erosion_tower_acid_attack", "damage_amp")[self.tower:GetLevel()]
+    self.damageAmp = self.ability:GetLevelSpecialValueFor("damage_amp", self.ability:GetLevel()-1)
 end
 
 function ErosionTower:OnAttackStart(keys)
@@ -58,16 +53,6 @@ function ErosionTower:OnAttackStart(keys)
     for _, creep in pairs(creeps) do
         if creep:IsAlive() and creep:entindex() ~= target:entindex() then
             self.tower:PerformAttack(creep, false, false, true, true, true)
-        end
-    end
-end
-
-function ErosionTower:OnDestroyed()
-    for id,_ in pairs(self.debuffedCreeps) do
-        local creep = EntIndexToHScript(id)
-        if creep and IsValidEntity(creep) and creep:IsAlive() and creep.RemoveModifierByName then
-            creep:RemoveModifierByName(self.modifierName)
-            RemoveDamageAmpModifierFromCreep(creep, self.modifierName)
         end
     end
 end

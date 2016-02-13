@@ -42,7 +42,7 @@
 	{
 		"creep_haste_delay"
 		{
-			//"IsHidden"		"1"
+			"IsHidden"		"1"
 			"Duration"		"%interval"
 			"OnDestroy"
 			{

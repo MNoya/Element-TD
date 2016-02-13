@@ -322,7 +322,7 @@
 		{
 			"creep_haste_delay"
 			{
-				//"IsHidden"		"1"
+				"IsHidden"		"1"
 				"Duration"		"%interval"
 				"OnDestroy"
 				{
@@ -1903,21 +1903,13 @@
 	
 		"Modifiers"
 		{
+			// Damage Amp: 5%/15% base, 15%/45% if <= 2 creeps in AoE
 			"modifier_faerie_fire"
 			{
 				"Duration"		"%duration"
 				"ThinkInterval"	"%duration"
 				"IsDebuff"		"1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"Target"			"TARGET"
-						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-						"Function"			"TriggerEvent"
-						"Event"				"OnFaerieFireExpire"
-					}
-				}
+	
 				"EffectName"		"particles/custom/towers/enchantment/debuff.vpcf"
 				"EffectAttachType"	"follow_origin"
 			}
@@ -1932,7 +1924,7 @@
 			"RunScript"
 			{
 				"Target"			"TARGET"
-				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+				"ScriptFile"		"towers/towerevents.lua"
 				"Function"			"TriggerEvent"
 				"Event"				"OnFaerieFireCast"
 			}
@@ -1947,7 +1939,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"10 30"
+				"base_damage_amp"		"5 15"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_damage_amp"		"5 15"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"amp_find_radius"		"150"
 			}
 		}
 	}
@@ -2061,16 +2063,12 @@
 						}
 						"ModifierName"	"modifier_acid_attack_dot"
 					}
-					"ApplyModifier"
+					"RunScript"
 					{
-						"Target"
-						{
-							"Center"		"TARGET"
-							"Radius"		"%aoe"
-							"Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
-							"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
-						}
-						"ModifierName"	"modifier_acid_attack_damage_amp"
+						"Target"			"TARGET"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackLanded"
 					}
 				}
 			}

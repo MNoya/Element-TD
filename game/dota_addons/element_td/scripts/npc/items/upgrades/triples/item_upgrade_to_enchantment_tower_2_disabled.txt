@@ -24,7 +24,12 @@
         "01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_amp"			"10 30"
+			"base_damage_amp"		"5 15"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"max_damage_amp"		"15 45"
 		}
     }
 }
