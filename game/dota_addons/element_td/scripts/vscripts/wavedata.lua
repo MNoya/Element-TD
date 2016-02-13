@@ -319,31 +319,6 @@ function SpawnWaveForPlayer(playerID, wave)
         playerData.waveObjects[waveObj.waveNumber] = nil
     end)
     waveObj:SpawnWave()
-
-    ----------------------------------------
-    -- create thinker to sync fast creeps --
-    if GetUnitKeyValue(WAVE_CREEPS[wave], "ScriptClass") == "CreepFast" or GetUnitKeyValue(WAVE_CREEPS[wave], "ScriptClass") == "CreepBoss" then
-        local player = PlayerResource:GetPlayer(playerID)
-        local hero = player:GetAssignedHero()
-
-        Timers:CreateTimer(3, function()
-            if playerData.health == 0 then
-                return
-            end
-            if GetUnitKeyValue(WAVE_CREEPS[wave], "ScriptClass") ~= "CreepFast" and GetUnitKeyValue(WAVE_CREEPS[wave], "ScriptClass") ~= "CreepBoss" then
-                return
-            end
-            local creeps = playerData.waveObject.creeps
-            for _, creep in pairs(creeps) do
-                local unit = EntIndexToHScript(creep)
-                if IsValidEntity(unit) and unit:IsAlive() and unit.GetUnitName and unit:GetUnitName() == WAVE_CREEPS[wave] and unit.playerID == playerID then
-                    unit:CastAbilityImmediately(unit:FindAbilityByName("creep_ability_fast"), playerID)
-                end
-            end
-            return 3
-        end)
-    end
-    ----------------------------
 end
 
 -- give 1 lumber every 5 waves or every 3 if express mode ignoring the last wave 55 and 30.

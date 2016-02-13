@@ -203,23 +203,4 @@ function CreepBoss:HealNearbyCreeps(keys)
     end
 end
 
--- Fast
-function CreepBoss:CastHasteSpell(keys)
-    local status, err = pcall(function()
-        local creep = keys.caster;
-        if creep then
-
-            if creep.random_ability ~= "creep_ability_fast" then
-                return
-            end
-
-            local ability = creep:FindAbilityByName("creep_ability_fast");
-            creep:CastAbilityImmediately(ability, 1);
-        end
-    end);
-    if not status then
-        Log:error(err);
-    end
-end
-
 RegisterCreepClass(CreepBoss, CreepBoss.className)
