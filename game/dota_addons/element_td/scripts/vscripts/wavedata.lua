@@ -173,6 +173,11 @@ function SpawnEntity(entityClass, playerID, position)
         -- Adjust slows multiplicatively
         entity:AddNewModifier(entity, nil, "modifier_slow_adjustment", {})
 
+        -- Add to scoreboard count
+        local playerData = GetPlayerData(playerID)
+        playerData.remaining = playerData.remaining + 1
+        UpdateScoreboard(playerID)
+
         return entity
     else
         Log:error("Attemped to create unknown creep type: " .. entityClass)

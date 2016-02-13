@@ -41,6 +41,7 @@ function CreateDataForPlayer(playerID)
 	data["activeWaves"] = 1
 	data["waveObject"] = {} -- Current wave object
 	data["waveObjects"] = {} -- All active wave objects
+	data["remaining"] = 0 -- Creeps remaining to kill
 
 	data["duration"] = 0 -- Seconds the player stayed alive for
 	data["victory"] = 0  -- 0 if lost, 1 if won
@@ -191,6 +192,9 @@ function UpdateScoreboard(playerID)
 	data.networth = GetPlayerNetworth(playerID)
 	data.lastHits = PlayerResource:GetLastHits(playerID)
 	data.iceFrogKills = playerData.iceFrogKills
+	if data.iceFrogKills == 0 then
+		data.remaining = playerData.remaining
+	end
 	data.randomed = playerData.elementalRandom --self-random
 	data.elements = playerData.elements
 	CustomGameEventManager:Send_ServerToAllClients("etd_update_scoreboard", {playerID=playerID, data = data})

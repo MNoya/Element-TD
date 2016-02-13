@@ -33,6 +33,12 @@ function Wave:OnCreepKilled(index)
 		self.creeps[index] = nil
 		self.creepsRemaining = self.creepsRemaining - 1
 		self.kills = self.kills + 1
+
+		-- Remove from scoreboard count
+		local playerData = GetPlayerData(self.playerID)
+		playerData.remaining = playerData.remaining - 1		
+		UpdateScoreboard(self.playerID)
+
 		if self.creepsRemaining == 0 and self.callback then
 			self.endTime = GameRules:GetGameTime()
 			self.callback()

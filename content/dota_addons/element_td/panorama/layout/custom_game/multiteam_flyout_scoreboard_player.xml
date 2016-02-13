@@ -22,8 +22,8 @@
 			$.GetContextPanel().SetHasClass( "player_muted", Game.IsPlayerMuted( playerId ) );
 		})();
 	</script>
-	<Panel class="PlayerRow">
-		<Panel id="PlayerRowContainer">
+	<Panel hittest="false" class="PlayerRow">
+		<Panel hittest="false" id="PlayerRowContainer">
 			<Panel id="Avatar" class="ScoreCol_Avatar ScoreboardPanel">
 				<DOTAAvatarImage id="AvatarImage" steamid="local" />
 			</Panel>

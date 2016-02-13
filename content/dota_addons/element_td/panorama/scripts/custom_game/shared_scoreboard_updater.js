@@ -83,16 +83,22 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
             _ScoreboardUpdater_SetTextSafe( playerPanel, "Towers", GameUI.CustomUIConfig().playerData[playerId].towers);
             _ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerGoldAmount", GameUI.CustomUIConfig().playerData[playerId].gold );
             _ScoreboardUpdater_SetTextSafe( playerPanel, "Networth", GameUI.CustomUIConfig().playerData[playerId].networth );
-            _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", GameUI.CustomUIConfig().playerData[playerId].lastHits );
-
+            
+            if (GameUI.CustomUIConfig().playerData[playerId].remaining !== undefined)
+            {
+                _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", GameUI.CustomUIConfig().playerData[playerId].remaining );
+            }
+            
             var icefrogKills = GameUI.CustomUIConfig().playerData[playerId].iceFrogKills
             if (icefrogKills > 0)
             {
                 var frogs = playerPanel.FindChildTraverse( "OSfrog" )
                 if (frogs !== null)
-                {
                     frogs.RemoveClass("hide")
-                }
+
+                var kRemaining = $("#KillsRemaining")
+                if (kRemaining !== null)
+                    kRemaining.text = "KILLS"
 
                 _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", icefrogKills );
                 var killsPanel = playerPanel.FindChildTraverse( "Kills" )

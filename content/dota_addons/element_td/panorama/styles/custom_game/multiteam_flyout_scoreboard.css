@@ -6,7 +6,7 @@
 	horizontal-align: left;
 	vertical-align: top;
 	margin-top: 95px;
-	margin-left: 34px;
+	margin-left: 20px;
     flow-children: down;
     padding: 0px;
 	background-color: #666666CC;
@@ -419,7 +419,7 @@
 
 .ScoreCol_TeamInfoAndHero
 {
-	width: 164px;
+	width: 154px;
 }
 
 .ScoreCol_TeamInfo
@@ -429,7 +429,7 @@
 
 .ScoreCol_PlayerDetails
 {
-	width: 130px;
+	width: 120px;
 }
 
 .ScoreCol_Hero
@@ -462,7 +462,7 @@
 
 .ScoreCol_Kills
 {
-	width: 55px;
+	width: 60px;
 	text-align: center;
 }
 

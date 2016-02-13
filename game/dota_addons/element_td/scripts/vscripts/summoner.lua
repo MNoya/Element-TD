@@ -444,7 +444,7 @@ end
 function AddElementalTrophy(playerID, element)
     local team = PlayerResource:GetTeam(playerID)
     local level = GetPlayerElementLevel(playerID, element)
-    local unitName = element.."_elemental3"
+    local unitName = element.."_elemental"..level
     local scale = GetUnitKeyValue(unitName, "ModelScale")
     local playerData = GetPlayerData(playerID)
     local summoner = playerData.summoner

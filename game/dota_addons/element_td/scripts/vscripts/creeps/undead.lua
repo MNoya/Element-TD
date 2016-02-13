@@ -76,6 +76,10 @@ function CreepUndead:UndeadCreepRespawn()
     local h = ParticleManager:CreateParticle("particles/units/heroes/hero_skeletonking/skeletonking_reincarnation.vpcf", PATTACH_CUSTOMORIGIN, creep) --play a cool particle effect :D
     ParticleManager:SetParticleControl(h, 0, creep:GetAbsOrigin())
     ParticleManager:SetParticleControlEnt(h, 0, creep, PATTACH_POINT_FOLLOW, "attach_hitloc", creep:GetOrigin(), true)
+
+    -- Add to scoreboard count
+    playerData.remaining = playerData.remaining + 1
+    UpdateScoreboard(playerID)
 end
 
 RegisterCreepClass(CreepUndead, CreepUndead.className)
