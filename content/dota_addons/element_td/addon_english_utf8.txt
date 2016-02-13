@@ -675,9 +675,9 @@
         "enchantment_tower_ability_desc"        "An autocast ability that amplifies the damage that creeps take."
         "DOTA_Tooltip_ability_enchantment_tower_faerie_fire"        "Faerie Fire"
         "DOTA_Tooltip_ability_enchantment_tower_faerie_fire_Description"        "Amplifies the target's damage taken for a short duration."
-        "DOTA_Tooltip_ability_enchantment_tower_faerie_fire_base_damage_amp"     "%DAMAGE AMPLIFICATION:"
+        "DOTA_Tooltip_ability_enchantment_tower_faerie_fire_base_damage_amp"     "%BASE DAMAGE AMP:"
         "DOTA_Tooltip_ability_enchantment_tower_faerie_fire_duration"       "DURATION:"
-        "DOTA_Tooltip_ability_enchantment_tower_faerie_fire_max_damage_amp"               "MAX DAMAGE AMP:"
+        "DOTA_Tooltip_ability_enchantment_tower_faerie_fire_max_damage_amp"               "%MAX DAMAGE AMP:"
         "DOTA_Tooltip_ability_enchantment_tower_faerie_fire_amp_find_radius"              "AMP FIND RADIUS:"
         "DOTA_Tooltip_modifier_faerie_fire"     "Faerie Fire"
         "DOTA_Tooltip_modifier_faerie_fire_Description"     "Burned by Faerie Fire, taking bonus damage."
@@ -722,9 +722,9 @@
         "DOTA_Tooltip_ability_obliteration_tower_obliterate_duration"                     "DURATION:"
         
         "ephemeral_tower_ability"       "Phasing"
-        "ephemeral_tower_ability_desc"      "Every second of constant attacking lowers base damage slightly. Damage is reset after a few seconds of not attacking or by casting this ability."
+        "ephemeral_tower_ability_desc"      "Every second of constant attacking lowers base damage slightly. Damage is reset after 3 seconds of not attacking."
         "DOTA_Tooltip_ability_ephemeral_tower_phasing"      "Phasing"
-        "DOTA_Tooltip_ability_ephemeral_tower_phasing_Description"      "Passively, each second of attacking lowers this tower's base damage by a percentage. The damage is reset after 3 seconds of not attacking or by casting this ability."
+        "DOTA_Tooltip_ability_ephemeral_tower_phasing_Description"      "Passively, each second of attacking lowers this tower's base damage by a percentage. Damage is reset after 3 seconds of not attacking."
         "DOTA_Tooltip_ability_ephemeral_tower_phasing_damage_reduction"     "%DAMAGE REDUCTION PER SECOND:"
         "DOTA_Tooltip_ability_ephemeral_tower_phasing_max_reduction"        "%MAX DAMAGE REDUCTION:"
         "DOTA_Tooltip_ability_ephemeral_tower_phasing_channel_time"                       "CHANNEL TIME:"
@@ -759,11 +759,11 @@
         
     
         "DOTA_Tooltip_ability_tidal_tower_splash_decay"                                   "Tidal Wave"
-        "DOTA_Tooltip_ability_tidal_tower_splash_decay_Description"                       "Every time it fires, its splash decreases by 10/20 AoE whil its damage increases, which caps out when the tower reaches 0 AoE. Resets after 1 second of not attacking."
+        "DOTA_Tooltip_ability_tidal_tower_splash_decay_Description"                       "Every time it fires, its splash decreases by 10/20 AoE whil its damage increases, which caps out when the tower reaches 0 AoE. Resets after %reset_time% second of not attacking."
         "DOTA_Tooltip_ability_tidal_tower_splash_decay_damage"                            "DAMAGE PER STACK:"
         "DOTA_Tooltip_ability_tidal_tower_splash_decay_aoe"                               "AOE:"
         "DOTA_Tooltip_ability_tidal_tower_splash_decay_reset_time"                        "RESET TIME:"
-        "DOTA_Tooltip_modifier_tidal_splash_decay"                "Tidal Splash Decay"
+        "DOTA_Tooltip_modifier_tidal_splash_decay"                "Splash Decay"
         "DOTA_Tooltip_modifier_tidal_splash_decay_Description"    ""
         
         "nova_tower_ability"        "Explode"
@@ -780,7 +780,7 @@
         "erosion_tower_ability_desc"        "Each attack applies a DoT debuff to all creeps around the target and amplifies the damage they take."
         "DOTA_Tooltip_ability_erosion_tower_acid_attack"        "Acid Attack"
         "DOTA_Tooltip_ability_erosion_tower_acid_attack_Description"        "Each attack applies a DoT debuff to all creeps within a large AoE around the target, as well as increasing the damage they take. The DoT debuff stacks, but the the damage amplification doesn't."
-        "DOTA_Tooltip_ability_erosion_tower_acid_attack_base_damage_amp"     "%DAMAGE AMPLIFICATION:"
+        "DOTA_Tooltip_ability_erosion_tower_acid_attack_damage_amp"     "%DAMAGE AMPLIFICATION:"
         "DOTA_Tooltip_ability_erosion_tower_acid_attack_dot"        "DAMAGE PER SECOND:"
         "DOTA_Tooltip_ability_erosion_tower_acid_attack_duration"       "DURATION:"
         "DOTA_Tooltip_ability_erosion_tower_acid_attack_aoe"                              "AOE:"
@@ -1153,12 +1153,12 @@
         // Ephemeral (Nature + Earth + Water)
         "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower"      "Ephemeral Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_disabled"     "Ephemeral Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_Description"      "Upgrades this tower to an Ephemeral Tower.\n\nCOST: <font color='#F0BA36'>1050 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>1800</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Very Fast</font>\nABILITY: Every second of constant attacking lowers base damage slightly. Damage is reset after a few seconds of not attacking or by casting this ability."
-        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_disabled_Description"     "Upgrades this tower to an Ephemeral Tower.\n<font color='#F0BA36'>Requires: </font><font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \n\nCOST: <font color='#F0BA36'>1050 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>1800</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Very Fast</font>\nABILITY: Every second of constant attacking lowers base damage slightly. Damage is reset after a few seconds of not attacking or by casting this ability."
+        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_Description"      "Upgrades this tower to an Ephemeral Tower.\n\nCOST: <font color='#F0BA36'>1050 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>1800</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Very Fast</font>\nABILITY: Every second of constant attacking lowers base damage slightly. Damage is reset after 3 seconds of not attacking."
+        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_disabled_Description"     "Upgrades this tower to an Ephemeral Tower.\n<font color='#F0BA36'>Requires: </font><font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \n\nCOST: <font color='#F0BA36'>1050 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>1800</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Very Fast</font>\nABILITY: Every second of constant attacking lowers base damage slightly. Damage is reset after 3 seconds of not attacking."
         "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_2"        "Temporal Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_2_disabled"       "Temporal Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_2_Description"        "Upgrades this tower to a Temporal Tower.\n\nCOST: <font color='#F0BA36'>3000 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>9000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Very Fast</font>\nABILITY: Every second of constant attacking lowers base damage slightly. Damage is reset after a few seconds of not attacking or by casting this ability."
-        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_2_disabled_Description"       "Upgrades this tower to a Temporal Tower.\n<font color='#F0BA36'>Requires: </font><font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth 2</font> + <font color='#01A2FF'>Water 2</font> \n\nCOST: <font color='#F0BA36'>3000 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>9000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Very Fast</font>\nABILITY: Every second of constant attacking lowers base damage slightly. Damage is reset after a few seconds of not attacking or by casting this ability."  
+        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_2_Description"        "Upgrades this tower to a Temporal Tower.\n\nCOST: <font color='#F0BA36'>3000 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>9000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Very Fast</font>\nABILITY: Every second of constant attacking lowers base damage slightly. Damage is reset after 3 seconds of not attacking."
+        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_2_disabled_Description"       "Upgrades this tower to a Temporal Tower.\n<font color='#F0BA36'>Requires: </font><font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth 2</font> + <font color='#01A2FF'>Water 2</font> \n\nCOST: <font color='#F0BA36'>3000 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>9000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Very Fast</font>\nABILITY: Every second of constant attacking lowers base damage slightly. Damage is reset after 3 seconds of not attacking."  
         
          // Roots (Nature + Dark + Earth)
         "DOTA_Tooltip_ability_item_upgrade_to_roots_tower"      "Roots Tower"

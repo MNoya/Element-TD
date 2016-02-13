@@ -12,7 +12,6 @@
 	{
 		"modifier_tidal_splash_decay"
 		{
-			"IsDebuff"		"1"
 			"Duration"		"%reset_time"
 
 			"Properties"
@@ -37,7 +36,7 @@
 		"03"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"reset_time"		"1"
+			"reset_time"		"2"
 		}
 	}
 }
