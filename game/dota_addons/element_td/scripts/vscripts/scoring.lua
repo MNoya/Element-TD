@@ -198,12 +198,13 @@ end
 function ScoringObject:GetWaveCleared( wave )
 	local playerData = GetPlayerData( self.playerID )
 	local waveClearScore = self:GetWaveClearBonus( wave )
-	local cleanBonus = self:GetCleanBonus( playerData.waveObjects[wave].leaks == 0 )
 	local time = playerData.waveObjects[wave].endTime - playerData.waveObjects[wave].startTime
 	local speedBonus = self:GetSpeedBonus( time )
 	local difficultyBonus = self:GetDifficultyBonus()
 	local chaosBonus = self:GetCreepOrderBonus()
 	local endlessBonus = self:GetEndlessBonus()
+	local leaks = playerData.waveObjects[wave] and playerData.waveObjects[wave].leaks or 0
+	local cleanBonus = self:GetCleanBonus( leaks == 0 )
 	local totalScore = math.ceil(waveClearScore * (cleanBonus + speedBonus + difficultyBonus + chaosBonus + endlessBonus + 1))
 
 	print("Time: "..time)
