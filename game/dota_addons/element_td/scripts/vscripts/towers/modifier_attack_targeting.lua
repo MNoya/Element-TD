@@ -40,7 +40,7 @@ function modifier_attack_targeting:OnIntervalThink()
 end
 
 function modifier_attack_targeting:OnAttack( params )
-    if params.attacker == self:GetParent() and self.keep_target then
+    if params.attacker == self:GetParent() and not self.keep_target then
         self:GetParent():Interrupt()
     end
 end

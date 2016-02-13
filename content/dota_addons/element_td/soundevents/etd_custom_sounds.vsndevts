@@ -763,7 +763,7 @@
                             "value2"        "sounds/weapons/hero/enchantress/impetus03.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "0.500000"  }
+                    "volume"            {   "value"     "0.200000"  }
                     "pitch_rand_min"    {   "value"     "-0.00000"  }
                     "pitch_rand_max"    {   "value"     "0.000000"  }
                     "pitch"             {   "value"     "1.000000"  }

@@ -26,7 +26,7 @@ function ImpulseTower:OnAttackLanded(keys)
     damage = ApplyAbilityDamageFromModifiers(damage, self.tower)
     
     if target:IsAlive() then
-        PopupLightDamage(target, math.floor(damage))
+        PopupNatureDamage(target, math.floor(damage))
     end
     DamageEntity(target, self.tower, damage)
 end

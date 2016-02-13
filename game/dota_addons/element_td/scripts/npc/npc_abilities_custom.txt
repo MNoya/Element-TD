@@ -2612,15 +2612,6 @@
 			{
 				"Passive"	"1"
 				"IsHidden"	"1"
-				"OnAttackStart"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"towers/towerevents.lua"
-						"Function"			"TriggerEvent"
-						"Event"				"OnAttackStart"
-					}
-				}
 				"OnAttack"
 				{
 					"RunScript"
