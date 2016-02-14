@@ -84,6 +84,11 @@ function CreepBoss:OnDeath()
     newCreep:SetForwardVector(creep:GetForwardVector())
     creep.scriptObject = self
 
+    local undead_ability = newCreep:FindAbilityByName("creep_ability_undead")
+    if undead_ability then
+        undead_ability:SetHidden(true)
+    end
+
     local particle = ParticleManager:CreateParticle("particles/generic_hero_status/death_tombstone.vpcf", PATTACH_ABSORIGIN, creep)
     ParticleManager:SetParticleControl(particle, 2, Vector(3,0,0))
 

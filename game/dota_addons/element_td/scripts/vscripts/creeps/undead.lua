@@ -17,6 +17,7 @@ CreepBasic)
 function CreepUndead:OnSpawned() 
     self.creep:SetMaximumGoldBounty(0)
     self.creep:SetMinimumGoldBounty(0)
+    self.creep.isUndead = true
 end
 
 function CreepUndead:OnDeath()
@@ -45,7 +46,10 @@ function CreepUndead:OnDeath()
     local particle = ParticleManager:CreateParticle("particles/generic_hero_status/death_tombstone.vpcf", PATTACH_ABSORIGIN, creep)
     ParticleManager:SetParticleControl(particle, 2, Vector(3,0,0))
 
-    newCreep:RemoveAbility("creep_ability_undead")
+    local undead_ability = newCreep:FindAbilityByName("creep_ability_undead")
+    if undead_ability then
+        undead_ability:SetHidden(true)
+    end
 
     -- Respawn Timer
     Timers:CreateTimer(3, function()
