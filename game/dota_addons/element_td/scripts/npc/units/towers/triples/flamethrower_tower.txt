@@ -42,7 +42,7 @@
         "2"        "earth"
         "3"        "fire"
     }
-    "Damage"        "300"
+    "Damage"        "450"
     "DamageType"        "fire"
     "ScriptClass"        "FlamethrowerTower"
     "TowerType"        "Normal"
@@ -85,8 +85,8 @@
         "Count"        "1"
         "1"        "flamethrower_tower_2"
     }
-    "AttackDamageMin"        "300"
-    "AttackDamageMax"        "300"
+    "AttackDamageMin"        "450"
+    "AttackDamageMax"        "450"
 
     // Building Size
     "ConstructionSize"          "2"

@@ -5940,9 +5940,9 @@
 	 
 	    // Stats
 	    //-----------------------------
-	    "AttackDamageMin"           "33"
-	    "AttackDamageMax"           "33"
-	    "Damage"                    "33"
+	    "AttackDamageMin"           "35"
+	    "AttackDamageMax"           "35"
+	    "Damage"                    "35"
 	    "AttackRange"               "550"
 	    "AttackAcquisitionRange"    "550"
 	    "AOE_Full"                  "100"
@@ -9300,7 +9300,7 @@
 	        "1"        "earth"
 	        "2"        "dark"
 	    }
-	    "Damage"        "25"
+	    "Damage"        "30"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
@@ -9331,8 +9331,8 @@
 	        "4"        "flamethrower_tower"
 	        "5"        "roots_tower"
 	    }
-	    "AttackDamageMin"        "25"
-	    "AttackDamageMax"        "25"
+	    "AttackDamageMin"        "30"
+	    "AttackDamageMax"        "30"
 	    "Creature"
 	    {
 	       "AttachWearables" // Default
@@ -9391,7 +9391,7 @@
 	        "1"        "earth"
 	        "2"        "dark"
 	    }
-	    "Damage"        "125"
+	    "Damage"        "150"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
@@ -9418,8 +9418,8 @@
 	        "Count"        "1"
 	        "1"        "gunpowder_tower_3"
 	    }
-	    "AttackDamageMin"        "125"
-	    "AttackDamageMax"        "125"
+	    "AttackDamageMin"        "150"
+	    "AttackDamageMax"        "150"
 	    "Creature"
 	    {
 	       "AttachWearables" // The Hare Hunt Set
@@ -9478,7 +9478,7 @@
 	        "1"        "earth"
 	        "2"        "dark"
 	    }
-	    "Damage"        "625"
+	    "Damage"        "750"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
@@ -9503,8 +9503,8 @@
 	    "Upgrades"
 	    {
 	    }
-	    "AttackDamageMin"        "625"
-	    "AttackDamageMax"        "625"
+	    "AttackDamageMin"        "750"
+	    "AttackDamageMax"        "750"
 	    "Creature"
 	    {
 	       "AttachWearables" // Exact Marksman
@@ -12878,7 +12878,7 @@
 	        "2"        "earth"
 	        "3"        "fire"
 	    }
-	    "Damage"        "300"
+	    "Damage"        "450"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlamethrowerTower"
 	    "TowerType"        "Normal"
@@ -12921,8 +12921,8 @@
 	        "Count"        "1"
 	        "1"        "flamethrower_tower_2"
 	    }
-	    "AttackDamageMin"        "300"
-	    "AttackDamageMax"        "300"
+	    "AttackDamageMin"        "450"
+	    "AttackDamageMax"        "450"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -12972,7 +12972,7 @@
 	        "2"        "earth"
 	        "3"        "fire"
 	    }
-	    "Damage"        "1500"
+	    "Damage"        "2250"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlamethrowerTower"
 	    "TowerType"        "Normal"
@@ -13014,8 +13014,8 @@
 	    "Upgrades"
 	    {
 	    }
-	    "AttackDamageMin"        "1500"
-	    "AttackDamageMax"        "1500"
+	    "AttackDamageMin"        "2250"
+	    "AttackDamageMax"        "2250"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -15437,8 +15437,8 @@
 	        }
 	    }
 	
-	    "AOE_Full"        "150"
-	    "AOE_Half"        "250"
+	    "AOE_Full"        "100"
+	    "AOE_Half"        "200"
 	    "UpgradeIcon"        "visage_gravekeepers_cloak"
 	    "BuildTime"        "4"
 	    "Requirements"
@@ -15535,8 +15535,8 @@
 	        }
 	    }
 	
-	    "AOE_Full"        "150"
-	    "AOE_Half"        "250"
+	    "AOE_Full"        "100"
+	    "AOE_Half"        "200"
 	    "UpgradeIcon"        "visage_gravekeepers_cloak"
 	    "BuildTime"        "4"
 	    "Requirements"

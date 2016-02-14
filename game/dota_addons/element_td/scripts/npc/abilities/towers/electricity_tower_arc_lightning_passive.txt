@@ -39,7 +39,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"180 900 4500"
+			"damage"				"160 800 4000"
 		}
 		"02"
 		{
@@ -54,7 +54,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"bounce_range"			"500"
+			"bounce_range"			"550"
 		}
 	}
 }
