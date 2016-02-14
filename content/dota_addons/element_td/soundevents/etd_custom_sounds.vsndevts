@@ -179,7 +179,7 @@
                             "value0"        "sounds/ui/coins.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "0.500000"  }
+                    "volume"            {   "value"     "0.700000"  }
                     "pitch_rand_min"    {   "value"     "-0.00000"  }
                     "pitch_rand_max"    {   "value"     "0.000000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -211,7 +211,7 @@
                             "value0"        "sounds/ui/coins_big.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "0.700000"  }
+                    "volume"            {   "value"     "0.500000"  }
                     "pitch_rand_min"    {   "value"     "-0.00000"  }
                     "pitch_rand_max"    {   "value"     "0.000000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -499,7 +499,7 @@
                             "value0"        "sounds/weapons/hero/omniknight/purification.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "2.000000"  }
+                    "volume"            {   "value"     "1.300000"  }
                     "pitch_rand_min"    {   "value"     "-0.00000"  }
                     "pitch_rand_max"    {   "value"     "0.000000"  }
                     "pitch"             {   "value"     "1.000000"  }
