@@ -91,21 +91,52 @@ function StartBreakTime(playerID, breakTime)
         msgTime = breakTime - 0.5
     end
 
-    if GameSettings:GetGamemode() == "Extreme" and wave > 1 then
-        breakTime = 0
-    else
-        Log:debug("Starting break time for " .. GetPlayerName(playerID))
-        if ply then
-            CustomGameEventManager:Send_ServerToPlayer( ply, "etd_update_wave_timer", { time = breakTime, button = (GameSettings:GetGamemode() ~= "Competitive") } )
-        end
+    Log:debug("Starting break time for " .. GetPlayerName(playerID).. " for wave "..wave)
+    if ply then
+        CustomGameEventManager:Send_ServerToPlayer( ply, "etd_update_wave_timer", { time = breakTime, button = (GameSettings:GetGamemode() ~= "Competitive") } )
+    end
 
-        ShowWaveBreakTimeMessage(playerID, wave, breakTime, msgTime)
+    ShowWaveBreakTimeMessage(playerID, wave, breakTime, msgTime)
 
-        -- Update portal
-        if hero:IsAlive() then
-            local sector = playerData.sector + 1
-            ShowPortalForSector(sector, wave, breakTime, playerID)
+    -- Update portal
+    if hero:IsAlive() then
+        local sector = playerData.sector + 1
+        ShowPortalForSector(sector, wave, breakTime, playerID)
+    end
+
+    -- Grant Lumber and Essence to all players the moment the next wave is set
+    if WaveGrantsLumber(wave-1) then
+        ModifyLumber(playerID, 1)
+        if GameSettings.elementsOrderName == "AllPick" and not playerData.elementalRandom then
+            Log:info("Giving 1 lumber to " .. playerData.name)
+        elseif playerData.elementalRandom or playerData.elementsOrder[playerData.completedWaves] then
+            local element = nil
+            if playerData.elementalRandom then
+                element = GetRandomElementForWave(playerID, playerData.completedWaves)
+            elseif playerData.elementsOrder[playerData.completedWaves] then
+                element = playerData.elementsOrder[playerData.completedWaves]
+            else
+                print("Something horrible went wrong.")
+            end
+
+            if element == "pure" then
+                SendEssenceMessage(playerID, "#etd_random_essence")
+                ModifyPureEssence(playerID, 1)
+                playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
+
+                -- Gold bonus for Pure Essence randoming
+                GivePureEssenceGoldBonus(playerID)
+            else
+                SendEssenceMessage(playerID, "#etd_random_elemental")
+                SummonElemental({caster = playerData.summoner, Elemental = element .. "_elemental"})
+            end
         end
+    end
+
+    if WaveGrantsEssence(wave-1) then
+        ModifyPureEssence(playerID, 1) 
+        Log:info("Giving 1 pure essence to " .. playerData.name)
+        playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
     end
 
     -- create the actual timer
@@ -268,48 +299,6 @@ function SpawnWaveForPlayer(playerID, wave)
                 GameRules:SendCustomMessage("<font color='"..color.."'>"..playerData.name.."</font> is the first to complete Wave " .. CURRENT_WAVE, 0, 0)
             end
 
-            -- Grant Lumber and Essence to all players the moment the next wave is set
-            if WaveGrantsLumber(CURRENT_WAVE) then
-                for k, pID in pairs(playerIDs) do
-                    local playerData = GetPlayerData(pID)
-
-                    ModifyLumber(pID, 1)
-                    if GameSettings.elementsOrderName == "AllPick" and not playerData.elementalRandom then
-                        Log:info("Giving 1 lumber to " .. playerData.name)
-                    elseif playerData.elementalRandom or playerData.elementsOrder[playerData.completedWaves] then
-                        local element = nil
-                        if playerData.elementalRandom then
-                            element = GetRandomElementForWave(pID, playerData.completedWaves)
-                        elseif playerData.elementsOrder[playerData.completedWaves] then
-                            element = playerData.elementsOrder[playerData.completedWaves]
-                        else
-                            print("Something horrible went wrong.")
-                        end
-
-                        if element == "pure" then
-                            SendEssenceMessage(pID, "#etd_random_essence")
-                            ModifyPureEssence(pID, 1)
-                            playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
-
-                            -- Gold bonus for Pure Essence randoming
-                            GivePureEssenceGoldBonus(pID)
-                        else
-                            SendEssenceMessage(pID, "#etd_random_elemental")
-                            SummonElemental({caster = playerData.summoner, Elemental = element .. "_elemental"})
-                        end
-                    end
-                end
-            end
-
-            if WaveGrantsEssence(CURRENT_WAVE) then
-                for k, pID in pairs(playerIDs) do
-                    local playerData = GetPlayerData(pID)
-                    ModifyPureEssence(pID, 1) 
-                    Log:info("Giving 1 pure essence to " .. playerData.name)
-                    playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
-                end
-            end
-
             -- Next wave
             CURRENT_WAVE = playerData.nextWave
             if GameSettings:GetGamemode() == "Competitive" and GameSettings:GetEndless() ~= "Endless" then
@@ -328,6 +317,7 @@ end
 
 -- give 1 lumber every 5 waves or every 3 if express mode ignoring the last wave 55 and 30.
 function WaveGrantsLumber( wave )
+    if wave == 0 then return end
     if EXPRESS_MODE then
         return wave % 3 == 0 and wave < 30
     else
@@ -337,6 +327,7 @@ end
 
 -- pure essence at waves 45/50 and 24/7 (express)
 function WaveGrantsEssence( wave )
+    if wave == 0 then return end
     if EXPRESS_MODE then
         return wave == 24 or wave == 27
     else
