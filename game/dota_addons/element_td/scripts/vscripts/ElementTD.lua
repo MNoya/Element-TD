@@ -261,34 +261,45 @@ end
 
 -- Check if all players are dead or have completed all the waves so we can end the game
 function ElementTD:CheckGameEnd()
-    print("Check Game End")
-    local endGame = true
+    print("Check Game End, PlayerID count: "..#playerIDs)
+
     for k, ply in pairs(playerIDs) do
         local playerData = GetPlayerData(ply)
-        print(#playerIDs, playerData.health, playerData.completedWaves, WAVE_COUNT)
-        -- If theres a player still alive and hasn't completed the game
+        print('Player '..ply..' is at '..playerData.health..' health and has completed '..playerData.completedWaves..' waves')
+
+        -- If theres a player still alive
         if playerData.health ~= 0 then
-            if (playerData.completedWaves < WAVE_COUNT) then
-                endGame = false
+
+            -- In Express mode, the game could end with a player still alive
+            if EXPRESS_MODE then
+                if playerData.completedWaves < WAVE_COUNT then
+                    print("Express - Players are still alive and havent finished the game")
+                    return
+                end
+            else
+                print("Players are still alive")
+                return
             end
         end
     end
-    if not endGame then
-        print("Players are still playing the game")
-        return
-    end
+
+    print("Game End Condition met. Determining a winner...")
     local teamWinner = DOTA_TEAM_NEUTRALS
     if #playerIDs == 1 then
         for k, ply in pairs(playerIDs) do
             local hero = self.vPlayerIDToHero[ply]
             local playerData = GetPlayerData(ply)
+            
             -- Lost
-            if (playerData.health == 0 and not EXPRESS_MODE and playerData.completedWaves < WAVE_COUNT) or (EXPRESS_MODE and playerData.health == 0) then
-                if hero:GetTeamNumber() == teamWinner then
-                    teamWinner = DOTA_TEAM_GOODGUYS
-                end
-            else -- Won
+            local bExpressDefeat = EXPRESS_MODE and playerData.health == 0 --Must stay alive until the end
+            local bClassicDefeat = not EXPRESS_MODE and (playerData.completedWaves < WAVE_COUNT-1) --Must complete up to 1 wave before the boss
+            if bExpressDefeat or bClassicDefeat then
+                print("Single Player Defeat")
+            
+            -- Win
+            else
                 teamWinner = hero:GetTeamNumber()
+                print("Single Player Victory!")
             end
         end
     else
