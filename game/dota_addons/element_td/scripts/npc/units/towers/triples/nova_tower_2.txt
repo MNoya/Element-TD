@@ -50,7 +50,7 @@
     "AttackAcquisitionRange"        "700"
     "AttackRate"        "1.5"
 
-    "Model"             "models/heroes/phoenix/phoenix_egg.vmdl"
+    "Model"             "models/nova.vmdl"
     "ModelScale"        "0.7"
     "ModelOffset"       "35"
     "DisableTurning"    "1"

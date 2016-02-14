@@ -323,6 +323,39 @@
         }
     }
 
+    "models/nova.vmdl"
+    {
+        "PortraitLightPosition"     "202.70 -23.15 308.17"
+        "PortraitLightAngles"       "54.79 171.70 0.00"
+        "PortraitLightFOV"      "69"
+        "PortraitLightDistance"     "377"
+        "PortraitLightColor"        "254 248 242"
+        "PortraitShadowColor"       "74 74 74"
+        "PortraitShadowScale"       "5.000000"
+        "PortraitAmbientColor"      "79 108 108"
+        "PortraitAmbientScale"      "5.000000"
+        "PortraitSpecularColor"     "251 74 84"
+        "PortraitParticle"      "particles/units/heroes/hero_phoenix/phoenix_supernova_portrait.vpcf"
+        "PortraitBackgroundTexture"     "materials/vgui/hud/heroportraits/portraitbackground_jaoquin.vmat"
+        "PortraitBackgroundColor1"      ".6 .7 1"
+        "PortraitBackgroundColor2"      ".6 .5 1"
+        "PortraitBackgroundColor3"      ".7 .61 1"
+        "PortraitBackgroundColor4"      "1 .6 .2"
+        "PortraitLightScale"        "4.500000"
+        "PortraitGroundShadowScale"     "1.500000"
+        "PortraitAmbientDirection"      "-79.070 -84.150 -25.320"
+        "PortraitAnimationActivity"     "ACT_DOTA_IDLE"
+        "cameras"
+        {
+            "default"
+            {
+                "PortraitPosition"      "252.64 -54.00 200.00"
+                "PortraitAngles"        "24.91 167.53 0.00"
+                "PortraitFOV"       "31"
+            }
+        }
+    }
+
     /////////////////////////////////////////////////////////
     "default"
     {
