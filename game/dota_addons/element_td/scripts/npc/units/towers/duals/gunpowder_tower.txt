@@ -40,7 +40,7 @@
         "1"        "earth"
         "2"        "dark"
     }
-    "Damage"        "30"
+    "Damage"        "27"
     "DamageType"        "earth"
     "ScriptClass"        "GunpowderTower"
     "TowerType"        "Normal"
@@ -71,8 +71,8 @@
         "4"        "flamethrower_tower"
         "5"        "roots_tower"
     }
-    "AttackDamageMin"        "30"
-    "AttackDamageMax"        "30"
+    "AttackDamageMin"        "27"
+    "AttackDamageMax"        "27"
     "Creature"
     {
        "AttachWearables" // Default

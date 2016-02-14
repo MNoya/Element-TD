@@ -40,7 +40,7 @@
         "1"        "earth"
         "2"        "dark"
     }
-    "Damage"        "150"
+    "Damage"        "135"
     "DamageType"        "earth"
     "ScriptClass"        "GunpowderTower"
     "TowerType"        "Normal"
@@ -67,8 +67,8 @@
         "Count"        "1"
         "1"        "gunpowder_tower_3"
     }
-    "AttackDamageMin"        "150"
-    "AttackDamageMax"        "150"
+    "AttackDamageMin"        "135"
+    "AttackDamageMax"        "135"
     "Creature"
     {
        "AttachWearables" // The Hare Hunt Set

@@ -44,7 +44,7 @@
         "2"        "fire"
         "3"        "light"
     }
-    "Damage"        "840"
+    "Damage"        "1050"
     "DamageType"        "dark"
     "ScriptClass"        "RunicTower"
     "TowerType"        "Normal"
@@ -89,8 +89,8 @@
         "Count"        "1"
         "1"        "runic_tower_2"
     }
-    "AttackDamageMin"        "840"
-    "AttackDamageMax"        "840"
+    "AttackDamageMin"        "1050"
+    "AttackDamageMax"        "1050"
 
     // Building Size
     "ConstructionSize"          "2"

@@ -40,7 +40,7 @@
         "1"        "earth"
         "2"        "dark"
     }
-    "Damage"        "750"
+    "Damage"        "675"
     "DamageType"        "earth"
     "ScriptClass"        "GunpowderTower"
     "TowerType"        "Normal"
@@ -65,8 +65,8 @@
     "Upgrades"
     {
     }
-    "AttackDamageMin"        "750"
-    "AttackDamageMax"        "750"
+    "AttackDamageMin"        "675"
+    "AttackDamageMax"        "675"
     "Creature"
     {
        "AttachWearables" // Exact Marksman

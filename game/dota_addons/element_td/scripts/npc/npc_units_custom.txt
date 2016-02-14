@@ -9016,7 +9016,7 @@
 	        "1"        "fire"
 	        "2"        "nature"
 	    }
-	    "Damage"        "75"
+	    "Damage"        "90"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlameTower"
 	    "TowerType"        "Normal"
@@ -9047,8 +9047,8 @@
 	        "4"        "jinx_tower"
 	        "5"        "nova_tower"
 	    }
-	    "AttackDamageMin"        "75"
-	    "AttackDamageMax"        "75"
+	    "AttackDamageMin"        "90"
+	    "AttackDamageMax"        "90"
 	    "Creature"
 	    {
 	        "AttachWearables"
@@ -9123,7 +9123,7 @@
 	        "1"        "fire"
 	        "2"        "nature"
 	    }
-	    "Damage"        "375"
+	    "Damage"        "450"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlameTower"
 	    "TowerType"        "Normal"
@@ -9136,8 +9136,8 @@
 	    "ProjectileSpeed"        "1500"
 	    "Model"        "models/heroes/ember_spirit/ember_spirit.vmdl"
 	    "ModelScale"        "1.1"
-	    "ModelRotation"             "90"
-	    "ModelOffset"               "20"
+	    "ModelRotation"             "450"
+	    "ModelOffset"               "450"
 	    "UpgradeIcon"        "towers/flame_tower_sunburn"
 	    "BuildTime"        "3"
 	    "Requirements"
@@ -9213,7 +9213,7 @@
 	        "1"        "fire"
 	        "2"        "nature"
 	    }
-	    "Damage"        "1875"
+	    "Damage"        "2250"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlameTower"
 	    "TowerType"        "Normal"
@@ -9238,8 +9238,8 @@
 	    "Upgrades"
 	    {
 	    }
-	    "AttackDamageMin"        "1875"
-	    "AttackDamageMax"        "1875"
+	    "AttackDamageMin"        "2250"
+	    "AttackDamageMax"        "2250"
 	    "Creature"
 	    {
 	       "AttachWearables" // Flames of Prosperity Set
@@ -9300,7 +9300,7 @@
 	        "1"        "earth"
 	        "2"        "dark"
 	    }
-	    "Damage"        "30"
+	    "Damage"        "27"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
@@ -9331,8 +9331,8 @@
 	        "4"        "flamethrower_tower"
 	        "5"        "roots_tower"
 	    }
-	    "AttackDamageMin"        "30"
-	    "AttackDamageMax"        "30"
+	    "AttackDamageMin"        "27"
+	    "AttackDamageMax"        "27"
 	    "Creature"
 	    {
 	       "AttachWearables" // Default
@@ -9391,7 +9391,7 @@
 	        "1"        "earth"
 	        "2"        "dark"
 	    }
-	    "Damage"        "150"
+	    "Damage"        "135"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
@@ -9418,8 +9418,8 @@
 	        "Count"        "1"
 	        "1"        "gunpowder_tower_3"
 	    }
-	    "AttackDamageMin"        "150"
-	    "AttackDamageMax"        "150"
+	    "AttackDamageMin"        "135"
+	    "AttackDamageMax"        "135"
 	    "Creature"
 	    {
 	       "AttachWearables" // The Hare Hunt Set
@@ -9478,7 +9478,7 @@
 	        "1"        "earth"
 	        "2"        "dark"
 	    }
-	    "Damage"        "750"
+	    "Damage"        "675"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
@@ -9503,8 +9503,8 @@
 	    "Upgrades"
 	    {
 	    }
-	    "AttackDamageMin"        "750"
-	    "AttackDamageMax"        "750"
+	    "AttackDamageMin"        "675"
+	    "AttackDamageMax"        "675"
 	    "Creature"
 	    {
 	       "AttachWearables" // Exact Marksman
@@ -12878,7 +12878,7 @@
 	        "2"        "earth"
 	        "3"        "fire"
 	    }
-	    "Damage"        "450"
+	    "Damage"        "500"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlamethrowerTower"
 	    "TowerType"        "Normal"
@@ -12921,8 +12921,8 @@
 	        "Count"        "1"
 	        "1"        "flamethrower_tower_2"
 	    }
-	    "AttackDamageMin"        "450"
-	    "AttackDamageMax"        "450"
+	    "AttackDamageMin"        "500"
+	    "AttackDamageMax"        "500"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -12972,7 +12972,7 @@
 	        "2"        "earth"
 	        "3"        "fire"
 	    }
-	    "Damage"        "2250"
+	    "Damage"        "2500"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlamethrowerTower"
 	    "TowerType"        "Normal"
@@ -13014,8 +13014,8 @@
 	    "Upgrades"
 	    {
 	    }
-	    "AttackDamageMin"        "2250"
-	    "AttackDamageMax"        "2250"
+	    "AttackDamageMin"        "2500"
+	    "AttackDamageMax"        "2500"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -15407,7 +15407,7 @@
 	        "2"        "fire"
 	        "3"        "light"
 	    }
-	    "Damage"        "840"
+	    "Damage"        "1050"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "RunicTower"
 	    "TowerType"        "Normal"
@@ -15452,8 +15452,8 @@
 	        "Count"        "1"
 	        "1"        "runic_tower_2"
 	    }
-	    "AttackDamageMin"        "840"
-	    "AttackDamageMax"        "840"
+	    "AttackDamageMin"        "1050"
+	    "AttackDamageMax"        "1050"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -15505,7 +15505,7 @@
 	        "2"        "fire"
 	        "3"        "light"
 	    }
-	    "Damage"        "4200"
+	    "Damage"        "5250"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "RunicTower"
 	    "TowerType"        "Normal"
@@ -15548,8 +15548,8 @@
 	    "Upgrades"
 	    {
 	    }
-	    "AttackDamageMin"        "4200"
-	    "AttackDamageMax"        "4200"
+	    "AttackDamageMin"        "5250"
+	    "AttackDamageMax"        "5250"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
