@@ -32,10 +32,10 @@ function CreepUndead:OnDeath()
     
     creep.waveObject:RegisterCreep(newCreep:entindex())
     creep.waveObject.creepsRemaining = creep.waveObject.creepsRemaining + 1 -- Increment creep count
-    newCreep:AddNewModifier(newCreep, nil, "modifier_phased", {})
-    newCreep:AddNewModifier(newCreep, nil, "modifier_invulnerable", {})
-    newCreep:AddNewModifier(newCreep, nil, "modifier_invisible_etd", {})
-    newCreep:AddNewModifier(newCreep, nil, "modifier_stunned", {})
+    newCreep:AddNewModifier(nil, nil, "modifier_phased", {})
+    newCreep:AddNewModifier(nil, nil, "modifier_invulnerable", {})
+    newCreep:AddNewModifier(nil, nil, "modifier_invisible_etd", {})
+    newCreep:AddNewModifier(nil, nil, "modifier_stunned", {})
     newCreep:AddNoDraw()
     newCreep:SetMaxHealth(creep:GetMaxHealth())
     newCreep:SetBaseMaxHealth(creep:GetMaxHealth())
@@ -44,6 +44,8 @@ function CreepUndead:OnDeath()
 
     local particle = ParticleManager:CreateParticle("particles/generic_hero_status/death_tombstone.vpcf", PATTACH_ABSORIGIN, creep)
     ParticleManager:SetParticleControl(particle, 2, Vector(3,0,0))
+
+    newCreep:RemoveAbility("creep_ability_undead")
 
     -- Respawn Timer
     Timers:CreateTimer(3, function()
