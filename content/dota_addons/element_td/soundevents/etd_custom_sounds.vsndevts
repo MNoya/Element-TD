@@ -275,7 +275,7 @@
                             "value0"        "sounds/weapons/hero/ogre_magi/bloodlust_target.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "0.600000"  }
+                    "volume"            {   "value"     "0.450000"  }
                     "pitch_rand_min"    {   "value"     "-0.00000"  }
                     "pitch_rand_max"    {   "value"     "0.000000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -533,7 +533,7 @@
                             "value2"        "sounds/weapons/hero/ember_spirit/remnant_create03.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "0.400000"  }
+                    "volume"            {   "value"     "0.300000"  }
                     "pitch_rand_min"    {   "value"     "-0.00000"  }
                     "pitch_rand_max"    {   "value"     "0.000000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -926,7 +926,7 @@
                             "value0"        "sounds/weapons/hero/earth_spirit/boulder_smash_target.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "0.500000"  }
+                    "volume"            {   "value"     "0.300000"  }
                     "pitch_rand_min"    {   "value"     "-0.00000"  }
                     "pitch_rand_max"    {   "value"     "0.000000"  }
                     "pitch"             {   "value"     "1.000000"  }
@@ -1186,7 +1186,7 @@
                             "value0"        "sounds/weapons/hero/obsidian_destroyer/projectile_impact02.vsnd"
                         }
                     }
-                    "volume"            {   "value"     "0.450000"  }
+                    "volume"            {   "value"     "0.30000"  }
                     "pitch_rand_min"    {   "value"     "-0.00000"  }
                     "pitch_rand_max"    {   "value"     "0.000000"  }
                     "pitch"             {   "value"     "1.000000"  }
