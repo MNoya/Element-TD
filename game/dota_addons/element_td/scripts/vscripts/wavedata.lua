@@ -210,8 +210,8 @@ function SpawnWaveForPlayer(playerID, wave)
             return
         end
 
-        print("Player [" .. playerID .. "] has completed a wave")
         playerData.completedWaves = playerData.completedWaves + 1
+        print("Player [" .. playerID .. "] has completed wave "..playerData.completedWaves)
         if GameSettings:GetEndless() == "Normal" then
             playerData.nextWave = playerData.nextWave + 1
         end
