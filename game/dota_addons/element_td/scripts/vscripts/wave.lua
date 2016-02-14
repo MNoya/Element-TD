@@ -109,12 +109,15 @@ function Wave:SpawnWave()
 				CreateMoveTimerForCreep(entity, sector)
 				if entitiesSpawned == CREEPS_PER_WAVE then
 					ClosePortalForSector(self.playerID, sector)
+
+					-- Endless waves are started as soon as the wave finishes spawning
 					if GameSettings:GetEndless() == "Endless" then
 						playerData.nextWave = playerData.nextWave + 1
+
 						-- Boss Waves
 				        if playerData.nextWave > WAVE_COUNT and not EXPRESS_MODE then
-				            Log:info("Spawning boss wave " .. WAVE_COUNT .. " for ["..self.playerID.."] ".. playerData.name)
-				            playerData.bossWaves = playerData.bossWaves + 1
+				        	playerData.bossWaves = playerData.bossWaves + 1
+				            Log:info("Spawning boss wave " .. playerData.bossWaves .. " for ["..self.playerID.."] ".. playerData.name)
 				            ShowBossWaveMessage(self.playerID, playerData.bossWaves + 1)
 				            SpawnWaveForPlayer(self.playerID, WAVE_COUNT) -- spawn dat boss wave
 				            return nil

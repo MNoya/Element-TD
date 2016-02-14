@@ -219,11 +219,11 @@ function SpawnWaveForPlayer(playerID, wave)
             EmitSoundOnClient("ui.npe_objective_complete", ply)
         end
 
-        -- Boss Wave completed
+        -- Boss Wave completed starts the new one with no breaktime (unless its Endless)
         if playerData.completedWaves >= WAVE_COUNT and not EXPRESS_MODE and GameSettings:GetEndless() == "Normal" then
             print("Player [" .. playerID .. "] has completed a boss wave")
-            Log:info("Spawning boss wave " .. WAVE_COUNT .. " for ["..playerID.."] ".. playerData.name)
             playerData.bossWaves = playerData.bossWaves + 1
+            Log:info("Spawning boss wave " .. playerData.bossWaves .. " for ["..playerID.."] ".. playerData.name)
             ShowBossWaveMessage(playerID, playerData.bossWaves)
 
             -- update wave info
