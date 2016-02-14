@@ -1944,7 +1944,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"5 15"
+				"max_damage_amp"		"15 45"
 			}
 			"04"
 			{
