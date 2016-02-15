@@ -420,6 +420,7 @@ function SummonElemental(keys)
             ReduceLivesForPlayer(playerID, 3)
 
             Sounds:EmitSoundOnClient(playerID, "ui.click_back")
+            local hero = PlayerResource:GetSelectedHeroEntity(playerID)
             CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=playerData.health/hero:GetMaxHealth() * 100} )
             UpdateScoreboard(playerID)
             --Say(nil, playerData.name .. "'s Health: " .. playerData.health, false)
