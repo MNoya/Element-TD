@@ -206,7 +206,6 @@ function ElementTD:OnNextWave( keys )
         Log:info("Spawning wave " .. data.nextWave .. " for ["..playerID.."] ".. data.name)
         ShowMessage(playerID, "Wave " .. data.nextWave, 3)
         SpawnWaveForPlayer(playerID, data.nextWave) -- spawn dat wave
-        WAVE_1_STARTED = true
     end
 end
 

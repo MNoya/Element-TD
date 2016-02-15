@@ -6,7 +6,6 @@ if not WAVE_CREEPS then
     WAVE_HEALTH = {}  -- array that stores creep health values per wave.  see /scripts/kv/waves.kv
     CREEP_SCRIPT_OBJECTS = {}
     CREEPS_PER_WAVE = 30 -- the number of creeps to spawn in each wave
-    WAVE_1_STARTED = false
     CURRENT_WAVE = 1
 end
 
@@ -149,35 +148,30 @@ function StartBreakTime(playerID, breakTime)
     end
 
     -- create the actual timer
-    Timers:CreateTimer("SpawnWaveDelay"..playerID, {
-        endTime = breakTime,
+    Timers:CreateTimer(breakTime, function()
+        local data = GetPlayerData(playerID)
 
-        callback = function()
-            local data = GetPlayerData(playerID)
-
-            if wave == WAVE_COUNT and not EXPRESS_MODE then
-                Log:info("Spawning the first boss wave for ["..playerID.."] ".. playerData.name)
-                playerData.bossWaves = playerData.bossWaves + 1
-                ShowBossWaveMessage(playerID, playerData.bossWaves)
-            else
-                Log:info("Spawning wave " .. wave .. " for ["..playerID.."] ".. data.name)
-                ShowWaveSpawnMessage(playerID, wave)
-            end
-
-            if wave == 1 then
-                EmitAnnouncerSound("announcer_announcer_battle_begin_01")
-            end
-
-            -- update wave info
-            UpdateWaveInfo(playerID, wave)
-
-            -- spawn dat wave
-            if hero:IsAlive() then
-                SpawnWaveForPlayer(playerID, wave) 
-            end
-            WAVE_1_STARTED = true
+        if wave == WAVE_COUNT and not EXPRESS_MODE then
+            Log:info("Spawning the first boss wave for ["..playerID.."] ".. playerData.name)
+            playerData.bossWaves = playerData.bossWaves + 1
+            ShowBossWaveMessage(playerID, playerData.bossWaves)
+        else
+            Log:info("Spawning wave " .. wave .. " for ["..playerID.."] ".. data.name)
+            ShowWaveSpawnMessage(playerID, wave)
         end
-    })
+
+        if wave == 1 then
+            EmitAnnouncerSound("announcer_announcer_battle_begin_01")
+        end
+
+        -- update wave info
+        UpdateWaveInfo(playerID, wave)
+
+        -- spawn dat wave
+        if hero:IsAlive() then
+            SpawnWaveForPlayer(playerID, wave) 
+        end
+    end)
 end
 
 function SpawnEntity(entityClass, playerID, position)
@@ -322,6 +316,7 @@ function SpawnWaveForPlayer(playerID, wave)
 
         playerData.waveObjects[waveObj.waveNumber] = nil
     end)
+
     waveObj:SpawnWave()
 end
 
