@@ -113,6 +113,10 @@ function Build( event )
         -- Adjust health to the buildings TotalCost
         unit:SetMaxHealth(GetUnitKeyValue(building_name, "TotalCost"))
         unit:SetBaseMaxHealth(GetUnitKeyValue(building_name, "TotalCost"))
+
+        -- Add the tower to the player data
+        local playerData = GetPlayerData(playerID)
+        playerData.towers[unit:GetEntityIndex()] = building_name
     end)
 
     -- A building finished construction
@@ -145,9 +149,6 @@ function Build( event )
             AddAbility(unit, "splash_damage_orb")
         end
 
-        -- Add the tower to the player data
-        local playerData = GetPlayerData(playerID)
-        playerData.towers[unit:GetEntityIndex()] = building_name
         UpdateScoreboard(playerID)
     end)
 
