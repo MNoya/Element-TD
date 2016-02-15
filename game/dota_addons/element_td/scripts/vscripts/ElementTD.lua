@@ -79,6 +79,7 @@ function ElementTD:InitGameMode()
     GameRules:GetGameModeEntity():SetDamageFilter( Dynamic_Wrap( ElementTD, "DamageFilter" ), self )
 
     -- Lua Modifiers
+    LinkLuaModifier("modifier_client_convars", "libraries/modifiers/modifier_client_convars", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_attack_targeting", "towers/modifier_attack_targeting", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_slow_adjustment", "towers/modifier_slow_adjustment", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("creep_haste_modifier", "creeps/creep_haste_modifier", LUA_MODIFIER_MOTION_NONE)
@@ -103,7 +104,6 @@ function ElementTD:InitGameMode()
     base_game_mode:SetRecommendedItemsDisabled(true) -- no recommended items panel
     base_game_mode:SetFogOfWarDisabled(true) -- no fog
     base_game_mode:SetBuybackEnabled( false )
-    Convars:SetInt('r_farz', 10000)
     base_game_mode:SetCustomGameForceHero( "npc_dota_hero_wisp" ) -- Skip hero pick screen
     ------------------------------------------------------
 
@@ -424,6 +424,9 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:SetGold(0, false)
     hero:SetGold(0, true)
     hero:SetModelScale(0.75)
+
+    -- Client Settings
+    hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
 
     -- Team location based colors
     local teamID = PlayerResource:GetTeam(playerID)
