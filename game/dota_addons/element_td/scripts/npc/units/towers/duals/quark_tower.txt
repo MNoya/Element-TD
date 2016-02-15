@@ -73,6 +73,9 @@
     }
     "AttackDamageMin"        "500"
     "AttackDamageMax"        "500"
+    "AOE_Full"                  "100"
+    "AOE_Half"                  "200"
+    
     "Creature"
     {
         "AttachWearables"

@@ -67,6 +67,9 @@
     }
     "AttackDamageMin"        "12500"
     "AttackDamageMax"        "12500"
+    "AOE_Full"                  "100"
+    "AOE_Half"                  "200"
+    
     "Creature"
     {
        "AttachWearables" // Gemmed Armor of the Priest Kings Set

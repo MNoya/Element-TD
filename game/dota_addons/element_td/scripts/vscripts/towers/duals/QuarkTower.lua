@@ -38,13 +38,14 @@ end
 function QuarkTower:OnAttackLanded(keys)
     local target = keys.target    
     local damage = self.tower:GetAverageTrueAttackDamage()
-    local damage_done = DamageEntity(target, self.tower, damage)
+    DamageEntitiesInArea(target:GetAbsOrigin(), self.halfAOE, self.tower, damage / 2);
+    DamageEntitiesInArea(target:GetAbsOrigin(), self.fullAOE, self.tower, damage / 2);
 
     local attacks = self.consecutiveAttacks < 4 and self.consecutiveAttacks or 4
-    if damage_done and attacks > 0 then
+    if attacks > 0 then
         local particleName = "particles/units/heroes/hero_chen/chen_cast_"..attacks..".vpcf"
         local particle = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, target)
-        PopupLightDamage(self.tower, math.floor(damage_done))
+        PopupLightDamage(self.tower, math.floor(damage))
     end
 end
 
@@ -55,6 +56,8 @@ function QuarkTower:OnCreated()
     self.consecutiveAttacks = 0
 
     self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_HIGHEST_HP, keep_target=true})
+    self.fullAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"));
+    self.halfAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"));
 end
 
 RegisterTowerClass(QuarkTower, QuarkTower.className)    
