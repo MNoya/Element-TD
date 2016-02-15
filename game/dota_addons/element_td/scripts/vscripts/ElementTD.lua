@@ -51,6 +51,7 @@ function ElementTD:InitGameMode()
     GameRules:SetGoldPerTick(0)
     GameRules:GetGameModeEntity():SetGoldSoundDisabled(true)
     GameRules:GetGameModeEntity():SetAnnouncerDisabled(true)
+    GameRules:GetGameModeEntity():SetHUDVisible(DOTA_HUD_VISIBILITY_TOP_SCOREBOARD, false)
 
     -- Setup Teams
     GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 1 )

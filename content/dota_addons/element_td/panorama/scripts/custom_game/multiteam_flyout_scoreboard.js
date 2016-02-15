@@ -1,31 +1,33 @@
 "use strict";
 
 var g_ScoreboardHandle = null;
-var bActive = false
+var nextPressActivatesScoreboard = true;
 
-function SetFlyoutScoreboardVisible( bVisible )
+function SetFlyoutScoreboardVisible(bVisible)
 {
-	$.GetContextPanel().SetHasClass( "flyout_scoreboard_visible", bVisible );
-	bActive = bVisible
+	// Gotta skip the release button event
 	if ( bVisible )
 	{
-		ScoreboardUpdater_SetScoreboardActive( g_ScoreboardHandle, true );
-		RefreshFlyoutScoreboard();
-	}
-	else
-	{
-		ScoreboardUpdater_SetScoreboardActive( g_ScoreboardHandle, false );
+		if (nextPressActivatesScoreboard)
+		{
+			// set values to true, and next press will deactivate
+			ScoreboardUpdater_SetScoreboardActive( g_ScoreboardHandle, true );
+			$.GetContextPanel().SetHasClass( "flyout_scoreboard_visible", true );			
+			nextPressActivatesScoreboard = false
+		}
+		else
+		{
+			ScoreboardUpdater_SetScoreboardActive( g_ScoreboardHandle, false );
+			$.GetContextPanel().SetHasClass( "flyout_scoreboard_visible", false );	
+			nextPressActivatesScoreboard = true
+		}
 	}
 }
 
-function RefreshFlyoutScoreboard()
+/*function RefreshScoreboard()
 {
-	$.Schedule(0.2, function(){
-		ScoreboardUpdater_SetScoreboardActive( g_ScoreboardHandle, true );
-		if (bActive)
-			RefreshFlyoutScoreboard();
-	});
-}
+	ScoreboardUpdater_SetScoreboardActive( g_ScoreboardHandle, !nextPressActivatesScoreboard );
+}*/
 
 (function()
 {
@@ -38,11 +40,10 @@ function RefreshFlyoutScoreboard()
 	};
 	g_ScoreboardHandle = ScoreboardUpdater_InitializeScoreboard( scoreboardConfig, $( "#TeamsContainer" ) );
 	
-	SetFlyoutScoreboardVisible( false ); //Default hidden
+	SetFlyoutScoreboardVisible(false); //Default hidden
 	
 	GameUI.CustomUIConfig().ToggleScoreboard = function() {
-		bActive = !bActive
-		SetFlyoutScoreboardVisible(bActive)
+		SetFlyoutScoreboardVisible(true)
 	}
 
 	$.RegisterEventHandler( "DOTACustomUI_SetFlyoutScoreboardVisible", $.GetContextPanel(), SetFlyoutScoreboardVisible );
