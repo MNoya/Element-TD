@@ -37,7 +37,7 @@ end
 
 function BlacksmithTower:OnCreated()
     self.ability = AddAbility(self.tower, "blacksmith_tower_fire_up", GetUnitKeyValue(self.towerClass, "Level"))    
-    self.castRange = self.ability:GetCastRange(self.tower:GetAbsOrigin(), self.tower)
+    self.castRange = self.ability:GetCastRange(self.tower:GetAbsOrigin(), self.tower) + self.tower:GetHullRadius()
     self.level = self.ability:GetLevel()
     self.ability:ToggleAutoCast() -- turn on autocast by default
     self.playerID = self.tower:GetPlayerOwnerID()

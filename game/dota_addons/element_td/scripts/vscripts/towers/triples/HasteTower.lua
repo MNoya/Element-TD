@@ -20,7 +20,10 @@ function HasteTower:ResetAttackSpeed()
     self.wrathStacks = 0
     self.tower:SetBaseAttackTime(self.startingBAT)
     self.soundEnable = true
-    ParticleManager:DestroyParticle(self.particleMax, true)
+    if self.particleMax then
+        ParticleManager:DestroyParticle(self.particleMax, true)
+        self.particleMax = nil
+    end
 end
 
 function HasteTower:OnAttack(keys)

@@ -53,7 +53,7 @@ function TrickeryTower:OnCreated()
     end)
     self.ability:ToggleAutoCast()
     self.playerID = self.tower:GetOwner():GetPlayerID()
-    self.castRange = tonumber(GetAbilityKeyValue("trickery_tower_conjure", "AbilityCastRange"))
+    self.castRange = tonumber(GetAbilityKeyValue("trickery_tower_conjure", "AbilityCastRange")) + self.tower:GetHullRadius()
     self.ability.clone_duration = self.ability:GetLevelSpecialValueFor("duration", self.ability:GetLevel() - 1)
     self.ability.clones = {}
 end
