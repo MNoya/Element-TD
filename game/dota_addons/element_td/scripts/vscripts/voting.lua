@@ -163,8 +163,8 @@ function FinalizeVotes()
 	-- If the Random vote didn't win, apply Random to every player that selected it anyway. 
 	-- They are also able to do this by typing -random before picking an element
 	if elements == "AllPick" then
-		for _, plyID in pairs(playerIDs) do
-			if PLAYER_RANDOM_CHOICES[playerID] == "1" then
+		for _, playerID in pairs(playerIDs) do
+			if PLAYER_RANDOM_CHOICES[playerID] == 1 then
 				GameSettings:EnableRandomForPlayer(playerID)
 			end
 		end
@@ -172,7 +172,6 @@ function FinalizeVotes()
 
 	for k, plyID in pairs(playerIDs) do
 		local data = {playerID = plyID, gamemode = gamemode, difficulty = GetPlayerData(plyID).difficulty.difficultyName, elements = elements, endless = endless, order = order, length = length}
-		PrintTable(data)
 		local ply = PlayerResource:GetPlayer(plyID)
 		if ply then
 			CustomGameEventManager:Send_ServerToPlayer( ply, "etd_vote_results", data )

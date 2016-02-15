@@ -63,7 +63,7 @@ function loadWaveData(chaos)
     -- Print and round the values
     for k,v in pairs(WAVE_CREEPS) do
         WAVE_HEALTH[k] = round(WAVE_HEALTH[k])
-        print(string.format("%2d | %-20s %5.0f",k,v,WAVE_HEALTH[k]))
+        --print(string.format("%2d | %-20s %5.0f",k,v,WAVE_HEALTH[k]))
     end
 end
 
@@ -108,7 +108,6 @@ function StartBreakTime(playerID, breakTime)
         ModifyLumber(playerID, 1)
         if IsPlayerUsingRandomMode( playerID ) then
             Notifications:ClearBottom(playerID)
-
             local element = nil
             -- Same Random if the mode was agreed on, All Random if players opted in
             if string.match(GameSettings.elementsOrderName, "Random") then

@@ -142,9 +142,14 @@ function GameSettings:EnableRandomForPlayer(playerID)
 
     elseif CanPlayerEnableRandom(playerID) then
         playerData.elementalRandom = true
-        print("Elemental Random set to "..tostring(playerData.elementalRandom).." for player "..playerID)
+        Log:info("Enabled Random for player "..playerID)
         SendEssenceMessage(playerID, "#etd_random_toggle_enable")
         BuyElement(playerID, getRandomElement(0))
+
+        if EXPRESS_MODE then
+            BuyElement(playerID, getRandomElement(0))
+        end
+
         UpdatePlayerSpells(playerID)
         UpdateScoreboard(playerID)
         CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "etd_player_random_enable", {} )
