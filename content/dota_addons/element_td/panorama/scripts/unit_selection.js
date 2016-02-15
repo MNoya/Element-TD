@@ -21,8 +21,13 @@ function OnUpdateSelectedUnit( event )
     // Create range display on the selected ranged attacker
     if (IsCustomBuilding(mainSelected) && Entities.HasAttackCapability(mainSelected))
     {
-        var range = Entities.GetAttackRange(mainSelected) + Entities.GetHullRadius(mainSelected)
-        rangedParticle = Particles.CreateParticle("particles/custom/ui_mouseactions/range_display.vpcf", ParticleAttachment_t.PATTACH_ABSORIGIN, mainSelected)
+        var range = Entities.GetAttackRange(mainSelected)
+        rangedParticle = Particles.CreateParticle("particles/custom/ui_mouseactions/range_display.vpcf", ParticleAttachment_t.PATTACH_CUSTOMORIGIN, mainSelected)
+        var position = Entities.GetAbsOrigin(mainSelected)
+        position[2] = 380
+        Particles.SetParticleControl(rangedParticle, 0, position)
+        $.Msg("Range of ", Entities.GetUnitName(mainSelected), " = ", range)
+        $.Msg("Hull radius of ", Entities.GetUnitName(mainSelected), " = ", Entities.GetHullRadius(mainSelected))
         Particles.SetParticleControl(rangedParticle, 1, [range, 0, 0])
     }
 
