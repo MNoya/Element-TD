@@ -21,9 +21,10 @@
 #VotingLive
 {
     horizontal-align: center;
-    position: 580px 15% 0px;
+    position: 585px 15% 0px;
+    margin-top: -3%;
     width: 185px;
-    height: 640px;
+    height: 600px;
     padding: 10px;
     background-color: #000000DD;
     border: 2px solid #484A48;
