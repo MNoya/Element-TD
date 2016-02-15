@@ -2,6 +2,15 @@ var tooltipUI = $("#TowerTooltip")
 
 function ShowTowerTooltip()
 {
+    // Exit out of multiple tower selection
+    var selectedEntities = Players.GetSelectedEntities(Game.GetLocalPlayerID());
+    $.Msg(selectedEntities.length)
+    if (selectedEntities.length > 1)
+    {
+        tooltipUI.hittest = false
+        return
+    }
+
     var mainSelected = Players.GetLocalPlayerPortraitUnit();
     var unitName = Entities.GetUnitName(mainSelected)
     var attacksPerSecond = Entities.GetAttacksPerSecond(mainSelected).toFixed(1)
@@ -29,6 +38,7 @@ function OnUpdateSelectedUnit() {
     var mainSelected = Players.GetLocalPlayerPortraitUnit()
     var unitName = Entities.GetUnitName(mainSelected)
     tooltipUI.SetHasClass("Hidden", unitName.indexOf("tower") <= -1)
+    tooltipUI.hittest = true
 }
 
 function OnUpdateQueryUnit() {
