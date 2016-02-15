@@ -215,7 +215,7 @@ function ElementTD:EndGameForPlayer( playerID )
     local ply = PlayerResource:GetPlayer(playerID)
 
     if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then
-        Log:info("Player "..playerID.." has been defeated on the boss Wave "..playerData.nextWave..".")
+        Log:info("Player "..playerID.." has been defeated on the boss Wave "..playerData.bossWaves..".")
         playerData.victory = 1
         GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerData.name.."</font> has completed the game with "..playerData.iceFrogKills.." Icefrog kills!", 0, 0)
     else
@@ -241,7 +241,10 @@ function ElementTD:EndGameForPlayer( playerID )
     end
     for _,object in pairs(playerData.waveObjects) do
         for index,_ in pairs(object.creeps) do
-            EntIndexToHScript(index):ForceKill(false)
+            local creep = EntIndexToHScript(index)
+            if IsValidEntity(creep) then
+                creep:ForceKill(false)
+            end
         end
     end
     UTIL_Remove(playerData.summoner.icon)

@@ -235,6 +235,9 @@ function SpawnWaveForPlayer(playerID, wave)
     local ply = PlayerResource:GetPlayer(playerID)
 
     playerData.waveObject = waveObj
+    if wave == WAVE_COUNT then
+        playerData.waveObjects[WAVE_COUNT+playerData.bossWaves] = waveObj
+    end
     playerData.waveObjects[wave] = waveObj
 
     CustomGameEventManager:Send_ServerToAllClients("SetTopBarWaveValue", {playerId=playerID, wave=wave} )

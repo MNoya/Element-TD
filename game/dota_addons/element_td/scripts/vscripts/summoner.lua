@@ -284,6 +284,7 @@ end
 
 function GivePureEssenceGoldBonus( playerID )
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    local playerData = GetPlayerData(playerID)
     local waveNumber = playerData.nextWave
     local difficultyBountyBonus = playerData.difficulty:GetBountyBonusMultiplier()
     local extra_gold
