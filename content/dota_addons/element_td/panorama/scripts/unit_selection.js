@@ -26,8 +26,6 @@ function OnUpdateSelectedUnit( event )
         var position = Entities.GetAbsOrigin(mainSelected)
         position[2] = 380
         Particles.SetParticleControl(rangedParticle, 0, position)
-        $.Msg("Range of ", Entities.GetUnitName(mainSelected), " = ", range)
-        $.Msg("Hull radius of ", Entities.GetUnitName(mainSelected), " = ", Entities.GetHullRadius(mainSelected))
         Particles.SetParticleControl(rangedParticle, 1, [range, 0, 0])
     }
 
@@ -89,7 +87,6 @@ function IsMixedBuildingSelectionGroup ( entityList ) {
 			nonBuildings++
 		}
 	}
-	$.Msg( "Buildings: ",buildings, " NonBuildings: ", nonBuildings)
 	return (buildings>0 && nonBuildings>0)
 }
 
@@ -122,21 +119,18 @@ function IsCityCenter( entityIndex ){
 }
 
 function AddToSelection ( args ) {
-	$.Msg("Add To Selection")
 	var entIndex = args.ent_index
 	GameUI.SelectUnit(entIndex, true)
 	OnUpdateSelectedUnit( args )
 }
 
 function NewSelection ( args ) {
-	$.Msg("New Selection")
 	var entIndex = args.ent_index
 	GameUI.SelectUnit(entIndex, false)
 	OnUpdateSelectedUnit( args )
 }
 
 function RemoveFromSelection ( args ) {
-	$.Msg("Remove From Selection")
 	var entIndex = args.ent_index
 
 	var iPlayerID = Players.GetLocalPlayer();
@@ -156,7 +150,6 @@ function RemoveFromSelection ( args ) {
 
 function OnUpdateQueryUnit( event )
 {
-	$.Msg( "OnUpdateQueryUnit" );
 }
 
 (function () {
