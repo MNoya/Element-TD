@@ -9,9 +9,6 @@ end
 function InterestManager:StartInterestTimer()
 	InterestManager.started = true
 
-	if GameSettings:GetEndless() == "Endless" then
-		INTEREST_INTERVAL = 5
-	end
 	Log:debug("Started interest timer "..INTEREST_INTERVAL)
 
 	Timers:CreateTimer(INTEREST_INTERVAL, function()
