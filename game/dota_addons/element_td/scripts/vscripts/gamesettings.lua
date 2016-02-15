@@ -200,7 +200,6 @@ function GameSettings:SetElementOrder(order)
 
 	GameSettings.elementsOrderName = order
 	GameSettings.elements = GameSettingsKV["ElementModes"][order]
-	
 
 	--same random, all players get the same element order
 	if order == "SameRandom" then
@@ -216,26 +215,11 @@ function GameSettings:SetElementOrder(order)
             	end
         	end
         end
+    end
+end
 
-	--all random, all players their own element order
-	elseif order == "AllRandom" then
-		for _, plyID in pairs(playerIDs) do    
-			local elementsOrder = getRandomElementOrder()
-
-			print("Order for " .. GetPlayerName(plyID))
-			PrintTable(elementsOrder)
-            GetPlayerData(plyID).elementsOrder = elementsOrder
-            if elementsOrder[0] then
-            	for _,v in pairs(elementsOrder[0]) do
-            		if v == "pure" then
-            			ModifyElementValue(plyID, 1)
-            		else
-            			BuyElement(plyID, v)
-            		end
-            	end
-        	end
-        end
-	end
+function GameSettings:GetElementOrder()
+    return GameSettings.elements 
 end
 
 function getRandomElementOrder()
@@ -251,7 +235,7 @@ function getRandomElementOrder()
 		end
 		for i = 3, 27, 3 do
 			local element = getRandomElement(i)
-			print("[" .. i .. "] " .. element)
+			--print("[" .. i .. "] " .. element)
 			elementsOrder[i] = element
 		end
 	else
@@ -261,7 +245,7 @@ function getRandomElementOrder()
 		end
 		for i = 5, 50, 5 do
 			local element = getRandomElement(i)
-			print("[" .. i .. "] " .. element)
+			--print("[" .. i .. "] " .. element)
 			elementsOrder[i] = element
 		end
 	end

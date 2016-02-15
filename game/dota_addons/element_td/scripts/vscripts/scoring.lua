@@ -117,7 +117,7 @@ function ScoringObject:UpdateScore( const , wave )
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Chaos bonus: '.. GetPctString(scoreTable['chaosBonus']), '#FF00FF' } )
 	end
 	if scoreTable['endlessBonus'] and scoreTable['endlessBonus'] ~= 0 then
-		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Endless bonus: '.. GetPctString(scoreTable['endlessBonus']), '#D4880F' } )
+		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Rush bonus: '.. GetPctString(scoreTable['endlessBonus']), '#D4880F' } )
 	end
 	if scoreTable['totalScore'] then
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Total score: ' .. comma_value(scoreTable['totalScore']), '#FF8C00'})

@@ -107,17 +107,24 @@ function StartBreakTime(playerID, breakTime)
     -- Grant Lumber and Essence to all players the moment the next wave is set
     if WaveGrantsLumber(wave-1) then
         ModifyLumber(playerID, 1)
-        if GameSettings.elementsOrderName == "AllPick" and not playerData.elementalRandom then
-            Log:info("Giving 1 lumber to " .. playerData.name)
-        elseif playerData.elementalRandom or playerData.elementsOrder[playerData.completedWaves] then
+        if IsPlayerUsingRandomMode( playerID ) then
+            Notifications:ClearBottom(playerID)
+
             local element = nil
-            if playerData.elementalRandom then
-                element = GetRandomElementForWave(playerID, playerData.completedWaves)
-            elseif playerData.elementsOrder[playerData.completedWaves] then
-                element = playerData.elementsOrder[playerData.completedWaves]
+            -- Same Random if the mode was agreed on, All Random if players opted in
+            if string.match(GameSettings.elementsOrderName, "Random") then
+                element = GetRandomElementForWave(playerID, wave)
+            elseif playerData.elementalRandom then
+                if not playerData.elementsOrder then
+                    playerData.elementsOrder = getRandomElementOrder()
+                end
+
+                element = playerData.elementsOrder[wave-1]
             else
                 print("Something horrible went wrong.")
             end
+
+            Log:info("Randoming element for player "..playerID..": "..element)
 
             if element == "pure" then
                 SendEssenceMessage(playerID, "#etd_random_essence")
@@ -130,6 +137,8 @@ function StartBreakTime(playerID, breakTime)
                 SendEssenceMessage(playerID, "#etd_random_elemental")
                 SummonElemental({caster = playerData.summoner, Elemental = element .. "_elemental"})
             end
+        else
+            Log:info("Giving 1 lumber to " .. playerData.name)
         end
     end
 

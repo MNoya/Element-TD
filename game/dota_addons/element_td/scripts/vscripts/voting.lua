@@ -81,18 +81,16 @@ function AddVote(option, choice)
 end
 
 function GetWinningChoice(option)
-	local winners = {}
 	local highestVotes = 0
 
 	for k, v in pairs(option) do
-		if v >= highestVotes then
+		if v > highestVotes then
 			highestVotes = v
 			winner = k
-			table.insert(winners, k)
 		end
 	end
 
-	return winners[math.random(#winners)]
+	return winner
 end
 
 -- Index to String from gamesettings.kv
