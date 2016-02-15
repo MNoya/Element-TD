@@ -246,8 +246,21 @@ function ElementTD:EndGameForPlayer( playerID )
         end
     end
     UTIL_Remove(playerData.summoner.icon)
-    UTIL_Remove(playerData.summoner)
 
+    for i=0,15 do
+        local ability = playerData.summoner:GetAbilityByIndex(i)
+        if ability then
+            ability:SetHidden(true)
+        end
+    end
+
+    for i=0,5 do
+        local item = playerData.summoner:GetItemInSlot(i)
+        if item then
+            item:RemoveSelf()
+        end
+    end
+    
     playerData.remaining = nil
     UpdateScoreboard(playerID)
 
