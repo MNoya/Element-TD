@@ -9136,8 +9136,8 @@
 	    "ProjectileSpeed"        "1500"
 	    "Model"        "models/heroes/ember_spirit/ember_spirit.vmdl"
 	    "ModelScale"        "1.1"
-	    "ModelRotation"             "450"
-	    "ModelOffset"               "450"
+	    "ModelRotation"             "90"
+	    "ModelOffset"               "20"
 	    "UpgradeIcon"        "towers/flame_tower_sunburn"
 	    "BuildTime"        "3"
 	    "Requirements"
@@ -9150,8 +9150,8 @@
 	        "Count"        "1"
 	        "1"        "flame_tower_3"
 	    }
-	    "AttackDamageMin"        "375"
-	    "AttackDamageMax"        "375"
+	    "AttackDamageMin"        "450"
+	    "AttackDamageMax"        "450"
 	    "Creature"
 	    {
 	       "AttachWearables" // Mentor of the High Plains
