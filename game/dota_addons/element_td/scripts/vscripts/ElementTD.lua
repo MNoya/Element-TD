@@ -339,18 +339,18 @@ function ElementTD:CheckGameEnd()
             teamWinner = self.vPlayerIDToHero[winnerId]:GetTeamNumber()
         end
     end
-    if endGame then
-        END_TIME = GetSystemDate() .. " " .. GetSystemTime()
-        Log:info("Game end condition reached. Ending game in 5 seconds.")
-        if teamWinner == DOTA_TEAM_NEUTRALS then
-            GameRules:SendCustomMessage("#etd_end_message_defeat", 0, 0)
-        end    
-        GameRules:SendCustomMessage("#etd_end_message", 0, 0)
-        Timers:CreateTimer(5, function()
-            GameRules:SetGameWinner( teamWinner )
-            GameRules:SetSafeToLeave( true )
-        end)
-    end
+
+    END_TIME = GetSystemDate() .. " " .. GetSystemTime()
+    Log:info("Ending game in 5 seconds.")
+    if teamWinner == DOTA_TEAM_NEUTRALS then
+        GameRules:SendCustomMessage("#etd_end_message_defeat", 0, 0)
+    end    
+    GameRules:SendCustomMessage("#etd_end_message", 0, 0)
+    Timers:CreateTimer(5, function()
+        GameRules:SetGameWinner( teamWinner )
+        GameRules:SetSafeToLeave( true )
+    end)
+
 end
 
 function ElementTD:OnUnitSpawned(keys)
