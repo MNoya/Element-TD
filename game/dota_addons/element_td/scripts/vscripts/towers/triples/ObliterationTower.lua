@@ -31,7 +31,7 @@ function ObliterationTower:OnAttack(keys)
         Ability = keys.ability,
         EffectName = "particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_arcane_orb.vpcf",
         iMoveSpeed = 900,
-        vSourceLoc = caster:ScriptLookupAttachment("attach_attack1"),
+        vSourceLoc = caster:GetAttachmentOrigin(caster:ScriptLookupAttachment("attach_attack1")),
         iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_1, --DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
         bDrawsOnMinimap = false,
         bDodgeable = true,
@@ -69,7 +69,6 @@ function ObliterationTower:OnCreated()
     self.ability = AddAbility(self.tower, "obliteration_tower_obliterate")
     self.projOrigin = self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_attack1"))
     self.groundHeight = GetGroundPosition(self.tower:GetOrigin(), nil).z + 200
-    self.projectiles = {}
     self.attackRange = self.tower:GetAttackRange()
     self.projDuration = GetAbilitySpecialValue("obliteration_tower_obliterate", "duration")
     self.maxSplash = GetAbilitySpecialValue("obliteration_tower_obliterate", "max_aoe")
@@ -77,11 +76,6 @@ function ObliterationTower:OnCreated()
     self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_FARTHEST})
 end
 
-function ObliterationTower:OnDestroyed()
-    for id,_ in pairs(self.projectiles) do
-        UTIL_Remove(EntIndexToHScript(id))
-    end
-end
-
 function ObliterationTower:OnAttackLanded(keys) end
+
 RegisterTowerClass(ObliterationTower, ObliterationTower.className)

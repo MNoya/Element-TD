@@ -9,7 +9,7 @@
     "MinimapIconSize"        "320"
     "ArmorPhysical"        "0"
     "MagicalResistance"        "0"
-    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
     "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
     "AttackAnimationPoint"        "0"
     "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
@@ -53,8 +53,6 @@
     "AttackRange"        "1150"
     "AttackAcquisitionRange"        "1150"
     "AttackRate"        "1.5"
-    "ProjectileModel"        ""
-    "ProjectileSpeed"        "1000"
 
     "Model"             "models/heroes/obsidian_destroyer/obsidian_destroyer.vmdl"
     "ModelScale"        "0.75"

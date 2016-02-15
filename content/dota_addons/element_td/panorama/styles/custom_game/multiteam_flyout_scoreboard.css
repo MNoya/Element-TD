@@ -477,6 +477,7 @@
 .Kills_Standard
 {
 	width: 100%;
+	margin-top: 3px;
 }
 
 .Kills_Frog
@@ -484,6 +485,7 @@
 	width: fit-children;
 	horizontal-align: left;
 	margin-left: 5px;
+	margin-top: 3px;
 }
 
 .ScoreCol_Difficulty

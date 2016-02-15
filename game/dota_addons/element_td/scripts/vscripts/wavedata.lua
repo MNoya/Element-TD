@@ -374,7 +374,7 @@ function CreateMoveTimerForCreep(creep, sector)
     Timers:CreateTimer(0.1, function()
         if IsValidEntity(creep) then
             creep:MoveToPosition(destination)
-            if (creep:GetOrigin() - destination):Length2D() <= 100 then
+            if (creep:GetAbsOrigin() - destination):Length2D() <= 100 then
                 local playerID = creep.playerID
                 local playerData = GetPlayerData(playerID)
                 

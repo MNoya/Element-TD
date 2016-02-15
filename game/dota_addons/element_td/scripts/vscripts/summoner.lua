@@ -412,7 +412,7 @@ function SummonElemental(keys)
 
         ExecuteOrderFromTable({ UnitIndex = entity:GetEntityIndex(), OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION, Position = destination, Queue = false })
 
-        if dist2D(entity:GetOrigin(), destination) <= 100 then
+        if (entity:GetAbsOrigin() - destination):Length2D() <= 100 then
             local playerData = PlayerData[playerID]
 
             -- Minus 3 lives
