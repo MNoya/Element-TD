@@ -24,10 +24,10 @@ function FlamethrowerTower:OnNapalmCreepDied(keys)
     ParticleManager:SetParticleControl(particle, 0, Vector(0, 0, 0))
     ParticleManager:SetParticleControl(particle, 3, unit:GetOrigin())
 
+    PopupNapalmBonusDamage(unit, ApplyAbilityDamageFromModifiers(unit.napalmDamage, self.tower))
     for _,creep in pairs(creeps) do
         local damage = ApplyAbilityDamageFromModifiers(unit.napalmDamage, self.tower)
         local damage_done = DamageEntity(creep, self.tower, damage)
-        PopupNapalmBonusDamage(creep, damage_done)
     end
 end
 
