@@ -15,14 +15,15 @@ QuarkTower = createClass({
 nil)    
 
 function QuarkTower:OnAttackStart(keys)
-    local target = keys.target    
-    local damageIncrease = tonumber(self.ability:GetSpecialValueFor("bonus_damage"))    
+    local target = keys.target
+
     if target:entindex() == self.targetEntIndex then
-        local attackDamage = self.tower:GetAverageTrueAttackDamage()
-        local newDamage = attackDamage + (attackDamage * (damageIncrease / 100))    
+        self.consecutiveAttacks = self.consecutiveAttacks + 1
+
+        local attackDamage = self.baseDamage
+        local newDamage = attackDamage * math.pow(self.damageIncrease, self.consecutiveAttacks)
         self.tower:SetBaseDamageMax(newDamage)
         self.tower:SetBaseDamageMin(newDamage)
-        self.consecutiveAttacks = self.consecutiveAttacks + 1
         
         self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_quantum_beam_indicator", {})    
         self.tower:SetModifierStackCount("modifier_quantum_beam_indicator", self.ability, self.consecutiveAttacks)
@@ -54,7 +55,7 @@ function QuarkTower:OnCreated()
     self.baseDamage = self.tower:GetBaseDamageMax()    
     self.targetEntIndex = 0    
     self.consecutiveAttacks = 0
-
+    self.damageIncrease = 1+tonumber(self.ability:GetSpecialValueFor("bonus_damage"))*0.01
     self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_HIGHEST_HP, keep_target=true})
     self.fullAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"));
     self.halfAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"));
