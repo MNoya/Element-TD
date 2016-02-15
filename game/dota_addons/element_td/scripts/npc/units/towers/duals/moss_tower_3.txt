@@ -43,7 +43,9 @@
     }
     "AOE_Full"        "150"
     "AOE_Half"        "300"
-    "Damage"        "3000"
+    "Damage"        "3500"
+    "AttackDamageMin"        "3500"
+    "AttackDamageMax"        "3500"
     "DamageType"        "nature"
     "ScriptClass"        "MossTower"
     "TowerType"        "Normal"
@@ -68,8 +70,6 @@
     "Upgrades"
     {
     }
-    "AttackDamageMin"        "3000"
-    "AttackDamageMax"        "3000"
     "Creature"
     {
        "AttachWearables" // Strength of the Demon Stone Set

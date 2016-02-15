@@ -40,7 +40,9 @@
         "1"        "fire"
         "2"        "earth"
     }
-    "Damage"        "7500"
+    "Damage"        "8750"
+    "AttackDamageMin"        "8750"
+    "AttackDamageMax"        "8750"
     "DamageType"        "fire"
     "ScriptClass"        "BlacksmithTower"
     "TowerType"        "Support"
@@ -62,8 +64,6 @@
     "Upgrades"
     {
     }
-    "AttackDamageMin"        "7500"
-    "AttackDamageMax"        "7500"
 
     // Building Size
     "ConstructionSize"          "2"

@@ -44,7 +44,9 @@
         "2"        "light"
         "3"        "nature"
     }
-    "Damage"        "2100"
+    "Damage"        "2500"
+    "AttackDamageMin"        "2500"
+    "AttackDamageMax"        "2500"
     "DamageType"        "nature"
     "ScriptClass"        "EnchantmentTower"
     "TowerType"        "Normal"
@@ -85,8 +87,6 @@
     "Upgrades"
     {
     }
-    "AttackDamageMin"        "2100"
-    "AttackDamageMax"        "2100"
 
     // Building Size
     "ConstructionSize"          "2"

@@ -40,7 +40,9 @@
         "2"        "earth"
         "3"        "light"
     }
-    "Damage"        "27500"
+    "Damage"        "30000"
+    "AttackDamageMin"        "30000"
+    "AttackDamageMax"        "30000"
     "DamageType"        "light"
     "ScriptClass"        "LaserTower"
     "TowerType"        "Normal"
@@ -82,8 +84,6 @@
     "Upgrades"
     {
     }
-    "AttackDamageMin"        "27500"
-    "AttackDamageMax"        "27500"
 
     // Building Size
     "ConstructionSize"          "2"

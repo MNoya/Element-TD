@@ -49,7 +49,7 @@
 		"03"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"cap"				"17"
+			"cap"				"16"
 		}
 	}
 }

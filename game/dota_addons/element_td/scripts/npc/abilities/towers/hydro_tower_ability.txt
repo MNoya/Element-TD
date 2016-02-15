@@ -37,12 +37,12 @@
 		"01"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"chance_pct"		"40"
+			"chance_pct"		"50"
 		}
 		"02"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"splash_damage"		"300 1500 7500"
+			"splash_damage"		"270 1350 6750"
 		}
 		"03"
 		{

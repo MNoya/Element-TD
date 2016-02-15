@@ -40,7 +40,9 @@
         "1"        "light"
         "2"        "nature"
     }
-    "Damage"        "250"
+    "Damage"        "280"
+    "AttackDamageMin"        "280"
+    "AttackDamageMax"        "280"
     "DamageType"        "nature"
     "ScriptClass"        "LifeTower"
     "TowerType"        "Normal"
@@ -71,8 +73,6 @@
         "4"        "tidal_tower"
         "5"        "nova_tower"
     }
-    "AttackDamageMin"        "250"
-    "AttackDamageMax"        "250"
     "Creature"
     {
         "AttachWearables"
