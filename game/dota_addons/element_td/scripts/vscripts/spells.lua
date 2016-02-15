@@ -198,7 +198,7 @@ function UpgradeTower(keys)
 
 		-- Add sell ability
 		local scriptClassName = GetUnitKeyValue(newClass, "ScriptClass") or "BasicTower"
-		if string.find(GameSettings.elementsOrderName, "Random") ~= nil then
+		if IsPlayerUsingRandomMode(playerID) then
 			AddAbility(newTower, "sell_tower_100")
 		elseif string.find(newTower.class, "arrow_tower") ~= nil or string.find(newTower.class, "cannon_tower") ~= nil then
 			AddAbility(newTower, "sell_tower_98")
