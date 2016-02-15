@@ -250,6 +250,9 @@ function ElementTD:EndGameForPlayer( playerID )
     UTIL_Remove(playerData.summoner.icon)
     UTIL_Remove(playerData.summoner)
 
+    playerData.remaining = nil
+    UpdateScoreboard(playerID)
+
     --EmitAnnouncerSound(defeatAnnouncer[playerData.sector])    
     EmitGlobalSound("ETD.PlayerLost")
 

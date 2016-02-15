@@ -24,10 +24,10 @@ function SetFlyoutScoreboardVisible(bVisible)
 	}
 }
 
-/*function RefreshScoreboard()
+function RefreshScoreboard()
 {
 	ScoreboardUpdater_SetScoreboardActive( g_ScoreboardHandle, !nextPressActivatesScoreboard );
-}*/
+}
 
 (function()
 {
@@ -46,5 +46,6 @@ function SetFlyoutScoreboardVisible(bVisible)
 		SetFlyoutScoreboardVisible(true)
 	}
 
+	GameEvents.Subscribe( "etd_update_scoreboard", RefreshScoreboard );
 	$.RegisterEventHandler( "DOTACustomUI_SetFlyoutScoreboardVisible", $.GetContextPanel(), SetFlyoutScoreboardVisible );
 })();

@@ -24,7 +24,7 @@
 				<Label id="Wave" text="0" />
 			</Panel>
 			<Panel id="KillsContainer" class="ScoreCol_Kills ScoreboardPanel">
-				<Label id="Kills" class="Kills_Standard" text="0" />
+				<Label id="KillsEnd" class="Kills_Standard" text="0" />
 				<Image id="OSfrog" class="hide"/>
 			</Panel>
 			<Panel id="ElementsContainer" class="ScoreCol_Elements ScoreboardPanel">

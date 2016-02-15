@@ -33,7 +33,6 @@ function _ScoreboardUpdater_SetDed( panel, childName )
     }
 }
 
-
 //=============================================================================
 //=============================================================================
 function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContainer, playerId, localPlayerTeamId )
@@ -84,12 +83,21 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
             _ScoreboardUpdater_SetTextSafe( playerPanel, "PlayerGoldAmount", GameUI.CustomUIConfig().playerData[playerId].gold );
             _ScoreboardUpdater_SetTextSafe( playerPanel, "Networth", GameUI.CustomUIConfig().playerData[playerId].networth );
             
+            var icefrogKills = GameUI.CustomUIConfig().playerData[playerId].iceFrogKills
+
             if (GameUI.CustomUIConfig().playerData[playerId].remaining !== undefined)
             {
                 _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", GameUI.CustomUIConfig().playerData[playerId].remaining );
             }
+            else
+            {
+                if (GameUI.CustomUIConfig().playerData[playerId].lives !== undefined && GameUI.CustomUIConfig().playerData[playerId].lives == 0)
+                {
+                    _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", "["+GameUI.CustomUIConfig().playerData[playerId].lastHits+"]" );
+                    _ScoreboardUpdater_SetTextSafe( playerPanel, "KillsEnd", GameUI.CustomUIConfig().playerData[playerId].lastHits );
+                }
+            }
             
-            var icefrogKills = GameUI.CustomUIConfig().playerData[playerId].iceFrogKills
             if (icefrogKills > 0)
             {
                 var frogs = playerPanel.FindChildTraverse( "OSfrog" )
@@ -106,6 +114,14 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
                 {
                     killsPanel.RemoveClass('Kills_Standard')
                     killsPanel.AddClass('Kills_Frog')
+                }
+
+                _ScoreboardUpdater_SetTextSafe( playerPanel, "KillsEnd", icefrogKills );
+                var killsPanelEnd = playerPanel.FindChildTraverse( "KillsEnd" )
+                if (killsPanelEnd !== null)
+                {
+                    killsPanelEnd.RemoveClass('Kills_Standard')
+                    killsPanelEnd.AddClass('Kills_Frog')
                 }
             }
 
@@ -519,6 +535,8 @@ function SetUpdateScoreboard( data )
 {
     playerData[data.playerID] = data.data;
     GameUI.CustomUIConfig().playerData[data.playerID] = data.data;
+
+    //_ScoreboardUpdater_UpdateAllTeamsAndPlayers( scoreboardHandle.scoreboardConfig, scoreboardHandle.scoreboardPanel );
 }
 
 function ToggleScoreboard() {

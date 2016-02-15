@@ -192,7 +192,7 @@ function UpdateScoreboard(playerID)
 	data.networth = GetPlayerNetworth(playerID)
 	data.lastHits = PlayerResource:GetLastHits(playerID)
 	data.iceFrogKills = playerData.iceFrogKills
-	if data.iceFrogKills == 0 then
+	if data.iceFrogKills == 0 and playerData.remaining then
 		data.remaining = playerData.remaining
 	end
 	data.randomed = playerData.elementalRandom --self-random
