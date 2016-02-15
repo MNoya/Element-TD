@@ -20,7 +20,7 @@ end
 function modifier_attack_targeting:OnCreated( params )
     local unit = self:GetParent()
     unit.target_type = params.target_type
-    self.keep_target = params.keep_target == true
+    self.keep_target = params.keep_target == 1
     self:StartIntervalThink(0.03)
 end
 
