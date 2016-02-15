@@ -412,23 +412,12 @@ function SummonElemental(keys)
 
         ExecuteOrderFromTable({ UnitIndex = entity:GetEntityIndex(), OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION, Position = destination, Queue = false })
 
-        if dist2D(entity:GetOrigin(), destination) <= 150 then
+        if dist2D(entity:GetOrigin(), destination) <= 100 then
             local playerData = PlayerData[playerID]
 
-            playerData.health = playerData.health - 3
-            local hero = PlayerResource:GetPlayer(playerID):GetAssignedHero()
-            if hero:GetHealth() <= 3 and hero:GetHealth() > 0 then
-                playerData.health = 0
-                hero:ForceKill(false)
-                if playerData.completedWaves >= WAVE_COUNT and not EXPRESS_MODE then
-                    playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
-                else
-                       playerData.scoreObject:UpdateScore( SCORING_WAVE_LOST )
-                   end
-                ElementTD:EndGameForPlayer(hero:GetPlayerID()) -- End the game for the dead player
-            else
-                hero:SetHealth(hero:GetHealth() - 3)
-            end
+            -- Minus 3 lives
+            ReduceLivesForPlayer(playerID, 3)
+
             Sounds:EmitSoundOnClient(playerID, "ui.click_back")
             CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=playerData.health/hero:GetMaxHealth() * 100} )
             UpdateScoreboard(playerID)
@@ -437,7 +426,7 @@ function SummonElemental(keys)
             FindClearSpaceForUnit(entity, EntityStartLocations[playerData.sector + 1], true)
             entity:SetForwardVector(Vector(0, -1, 0))
         end
-        return 1
+        return 0.1
     end)
 end
 

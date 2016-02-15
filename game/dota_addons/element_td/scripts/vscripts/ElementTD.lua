@@ -231,7 +231,6 @@ function ElementTD:EndGameForPlayer( playerID )
     playerData.tow = tablelength(playerData.towers)
 
     if playerData.elementalUnit ~= nil and IsValidEntity(playerData.elementalUnit) and playerData.elementalUnit:IsAlive() then
-        print("Elemental Removed")
         playerData.elementalUnit:ForceKill(false)
     end
     for i,v in pairs(playerData.towers) do

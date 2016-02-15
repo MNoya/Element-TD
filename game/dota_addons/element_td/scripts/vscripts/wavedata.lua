@@ -189,8 +189,6 @@ function SpawnEntity(entityClass, playerID, position)
         entity:SetDeathXP(0)
         entity.class = entityClass
         entity.playerID = playerID
-        --Repurpose for game difficulty
-        --ApplyArmorModifier(entity, GetPlayerDifficulty(playerID):GetArmorValue() * 100)
 
         -- create a script object for this entity
         -- see /vscripts/creeps/basic.lua
@@ -399,12 +397,12 @@ function CompetitiveNextRound(wave)
     end
 end
 
-function ReduceLivesForPlayer( playerID )
+function ReduceLivesForPlayer( playerID, lives )
     local playerData = GetPlayerData(playerID)
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     local ply = PlayerResource:GetPlayer(playerID)
 
-    local lives = 1
+    lives = lives or 1
 
     -- Boss Wave leaks = 3 lives
     if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then
