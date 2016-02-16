@@ -660,7 +660,6 @@
                         {
                             "value0"        "sounds/weapons/hero/techies/land_mine01.vsnd"
                             "value1"        "sounds/weapons/hero/techies/land_mine02.vsnd"
-                            "value2"        "sounds/weapons/hero/techies/land_mine03.vsnd"
                         }
                     }
                     "volume"            {   "value"     "0.450000"  }

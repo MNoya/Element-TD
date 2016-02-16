@@ -507,26 +507,26 @@ function ElementTD:OnConnectFull(keys)
     
     local entIndex = keys.index+1
     -- The Player entity of the joining user
-    local ply = EntIndexToHScript(entIndex)
-
-    -- The Player ID of the joining player
-    local playerID = ply:GetPlayerID()
+    local ply = EntIndexToHScript(entIndex)    
+    
 
     table.insert(players, ply)
     Timers:CreateTimer(0.03, function() -- To prevent it from being -1 when the player is created
         if ply:GetPlayerID() ~= -1 then
-            table.insert(playerIDs, ply:GetPlayerID())
+            local playerID = ply:GetPlayerID()
+            if not tableContains(playerIDs, playerID) then
+                table.insert(playerIDs, playerID)
+            end
 
             if PlayerData[playerID] and PlayerData[playerID].elements then
                 UpdateElementsHUD(playerID)
             end
+
+            -- Update the user ID table with this user
+            self.vUserIds[keys.userid] = ply
+            self.vPlayerUserIds[playerID] = keys.userid
         end
     end)
-
-    -- Update the user ID table with this user
-    self.vUserIds[keys.userid] = ply
-    self.vPlayerUserIds[playerID] = keys.userid
-
 end
 
 function ElementTD:OnPlayerSelectedEntities( event )

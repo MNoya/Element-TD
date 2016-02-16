@@ -225,3 +225,13 @@ end
 function firstToUpper(str)
     return (str:gsub("^%l", string.upper))
 end
+
+function tableContains(list, element)
+    if list == nil then return false end
+    for i=1,#list do
+        if list[i] == element then
+            return true
+        end
+    end
+    return false
+end
