@@ -20,7 +20,8 @@ function EphemeralTower:ResetDamage(keys)
     if self.timer then
         Timers:RemoveTimer(self.timer)
     end
-    self.currentDamageReduction = 0
+
+    self.current_stacks = 0
 
     self.tower:RemoveModifierByName("modifier_reset_damage")
     self.tower:RemoveModifierByName("modifier_phasing_stack")
@@ -29,52 +30,44 @@ function EphemeralTower:ResetDamage(keys)
 end
 
 function EphemeralTower:OnAttack(keys)
-    local phasing_base = self.tower:FindModifierByName("modifier_reset_damage")
     local phasing_stack = self.tower:FindModifierByName("modifier_phasing_stack")
 
-    if phasing_base then
-        self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_reset_damage", {})
-    elseif phasing_stack then
-        self.tower:RemoveModifierByName("modifier_reset_damage")
+    local stacks
+
+    -- At max stack count, stop counting
+    if phasing_stack then
+        stacks = phasing_stack:GetStackCount()
+        if stacks == self.maxStacks then
+            return
+        end
+    end
+
+    if phasing_stack and self.lastAttackTime and GameRules:GetGameTime() - self.lastAttackTime <= 2 then
         self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_phasing_stack", {})
-    elseif not phasing_stack and not phasing_base then
-        self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_reset_damage", {})
     end
 
     self.lastAttackTime = GameRules:GetGameTime()
+
     if not self.hasAttackThinker then 
         self.hasAttackThinker = true
 
-        self.timer = Timers:CreateTimer(2, function()
+        self.timer = Timers:CreateTimer(1, function()
             if IsValidEntity(self.tower) then
                 if GameRules:GetGameTime() - self.lastAttackTime <= 2 then
-                    if self.currentDamageReduction < self.maxDamageReduction then
-                        self.tower:RemoveModifierByName("modifier_reset_damage")
+
+                    if self.current_stacks < self.maxStacks then                        
                         local phasing_stack = self.tower:FindModifierByName("modifier_phasing_stack")
                         if phasing_stack == nil then
                             self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_phasing_stack", {})
                         end
-                        self.currentDamageReduction = self.currentDamageReduction + self.damageReductionPerAttackPercent
-                        self.tower:FindModifierByName("modifier_phasing_stack"):IncrementStackCount()
-                        if self.currentDamageReduction == self.maxDamageReduction then
-                            Timers:CreateTimer(2, function()
-                                self:ResetDamage()
-                            end)
-                        end
+                        self.current_stacks = self.current_stacks + 1
+                        self.tower:SetModifierStackCount("modifier_phasing_stack", self.tower, self.current_stacks)
                     end
                 end
-                return 2
+                return 1
             end
         end)
-
     end
-    
-    if self.resetTimer ~= nil then
-        Timers:RemoveTimer(self.resetTimer)
-    end
-    self.resetTimer = Timers:CreateTimer(self.resetTime, function()
-        self:ResetDamage({})  
-    end)
 end
 
 function EphemeralTower:OnDestroyed()
@@ -92,12 +85,12 @@ end
 function EphemeralTower:OnCreated()
     self.ability = AddAbility(self.tower, "ephemeral_tower_phasing")
     self.baseDamage = self.tower:GetAverageTrueAttackDamage()
-
-    self.damageReductionPerAttackPercent = math.abs(GetAbilitySpecialValue("ephemeral_tower_phasing", "damage_reduction")) -- 5%
     self.maxDamageReduction = GetAbilitySpecialValue("ephemeral_tower_phasing", "max_reduction")
+    self.damageReductionPerAttackPercent = math.abs(GetAbilitySpecialValue("ephemeral_tower_phasing", "damage_reduction"))
+    self.maxStacks = math.floor(self.maxDamageReduction/self.damageReductionPerAttackPercent)
     self.resetTime = GetAbilitySpecialValue("ephemeral_tower_phasing", "reset_time")
 
-    self.currentDamageReduction = 0
+    self.current_stacks = 0
     self.timer = nil
     self.resetTimer = nil
     self.hasAttackThinker = false

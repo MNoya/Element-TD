@@ -724,17 +724,14 @@
         "DOTA_Tooltip_ability_obliteration_tower_obliterate_duration"                     "DURATION:"
         
         "ephemeral_tower_ability"       "Phasing"
-        "ephemeral_tower_ability_desc"      "Every second of constant attacking lowers base damage slightly. Damage is reset after 3 seconds of not attacking."
+        "ephemeral_tower_ability_desc"      "Every second of constant attacking lowers base damage slightly. Damage is reset after %reset_time% seconds of not attacking."
         "DOTA_Tooltip_ability_ephemeral_tower_phasing"      "Phasing"
-        "DOTA_Tooltip_ability_ephemeral_tower_phasing_Description"      "Passively, each second of attacking lowers this tower's base damage by a percentage. Damage is reset after 3 seconds of not attacking or when its damage drops too low."
+        "DOTA_Tooltip_ability_ephemeral_tower_phasing_Description"      "Passively, each second of attacking lowers this tower's base damage by a percentage. Damage is reset after %reset_time% seconds of not attacking or when its damage drops too low."
         "DOTA_Tooltip_ability_ephemeral_tower_phasing_damage_reduction"     "%DAMAGE REDUCTION PER SECOND:"
         "DOTA_Tooltip_ability_ephemeral_tower_phasing_max_reduction"        "%MAX DAMAGE REDUCTION:"
-        "DOTA_Tooltip_ability_ephemeral_tower_phasing_channel_time"                       "CHANNEL TIME:"
         "DOTA_Tooltip_ability_ephemeral_tower_phasing_reset_time"                         "RESET TIME:"
-        "DOTA_Tooltip_modifier_reset_damage"                                              "Reset Damage"
-        "DOTA_Tooltip_modifier_reset_damage_Description"                                  ""
         "DOTA_Tooltip_modifier_phasing_stack"                                             "Phasing Stack"
-        "DOTA_Tooltip_modifier_phasing_stack_Description"                                 ""
+        "DOTA_Tooltip_modifier_phasing_stack_Description"                                 "Reduced damage from attacking continuosly"
         
         "flamethrower_tower_ability"        "Naplam"
         "flamethrower_tower_ability_desc"       "Each attack adds a stack of Napalm to creeps in an area around the target. Upon death, a Napalmed creep does damage in an area around it for each stack of napalm."
@@ -1155,11 +1152,11 @@
         // Ephemeral (Nature + Earth + Water)
         "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower"      "Ephemeral Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_disabled"     "Ephemeral Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_Description"      "Upgrades this tower to an Ephemeral Tower.\n\nCOST: <font color='#F0BA36'>1050 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>1600</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Very Fast</font>\nABILITY: Every second of constant attacking lowers base damage slightly. Damage is reset after 3 seconds of not attacking or when its damage drops too low."
+        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_Description"      "Upgrades this tower to an Ephemeral Tower.\n\nCOST: <font color='#F0BA36'>1050 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>1600</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Very Fast</font>\nABILITY: Every second of constant attacking lowers base damage slightly. Damage is reset after 2 seconds of not attacking or when its damage drops too low."
         "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_disabled_Description"     "Upgrades this tower to an Ephemeral Tower.\n<font color='#F0BA36'>Requires: </font><font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \n\nCOST: <font color='#F0BA36'>1050 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>1600</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Very Fast</font>\nABILITY: Every second of constant attacking lowers base damage slightly. Damage is reset after 3 seconds of not attacking or when its damage drops too low."
         "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_2"        "Temporal Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_2_disabled"       "Temporal Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_2_Description"        "Upgrades this tower to a Temporal Tower.\n\nCOST: <font color='#F0BA36'>3000 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>8000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Very Fast</font>\nABILITY: Every second of constant attacking lowers base damage slightly. Damage is reset after 3 seconds of not attacking or when its damage drops too low."
+        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_2_Description"        "Upgrades this tower to a Temporal Tower.\n\nCOST: <font color='#F0BA36'>3000 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>8000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Very Fast</font>\nABILITY: Every second of constant attacking lowers base damage slightly. Damage is reset after 2 seconds of not attacking or when its damage drops too low."
         "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_2_disabled_Description"       "Upgrades this tower to a Temporal Tower.\n<font color='#F0BA36'>Requires: </font><font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth 2</font> + <font color='#01A2FF'>Water 2</font> \n\nCOST: <font color='#F0BA36'>3000 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>8000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Very Fast</font>\nABILITY: Every second of constant attacking lowers base damage slightly. Damage is reset after 3 seconds of not attacking or when its damage drops too low."  
         
          // Roots (Nature + Dark + Earth)
