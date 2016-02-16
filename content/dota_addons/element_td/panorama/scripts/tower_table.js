@@ -45,7 +45,7 @@ Categories = {}
 Categories['Buff_Towers'] = ["well","blacksmith","trickery","life","gold"]
 Categories['Slow_Towers'] = ["windstorm", "roots", "nova","muck"]
 Categories['Amp_Towers'] = ["erosion", "enchantment", "polar", "flamethrower"]
-Categories['AoE_Towers'] = ["ice", "hail", "runic", "obliteration", "vapor", "poison", "flooding", "tidal", "electricity", "moss", "gunpowder", "hydro", "quake"]
+Categories['AoE_Towers'] = ["ice", "hail", "runic", "obliteration", "vapor", "poison", "flooding", "tidal", "electricity", "moss", "gunpowder", "hydro", "quake", "quark"]
 
 function Hover(name, arg1, arg2, arg3) {
     AddElementGlow(arg1)
