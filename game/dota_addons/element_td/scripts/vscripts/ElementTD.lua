@@ -223,6 +223,7 @@ function ElementTD:EndGameForPlayer( playerID )
     -- Clean up
     UpdatePlayerSpells(playerID)
     RemoveElementalOrbs(playerID)
+    ClosePortalForSector(playerID, playerData.sector+1, true)
 
     playerData.networth = GetPlayerNetworth( playerID )
     playerData.duration = GameRules:GetGameTime() - START_GAME_TIME
