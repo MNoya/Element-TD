@@ -585,7 +585,7 @@
         "life_tower_ability"        "Afterlife"
         "life_tower_ability_desc"       "Every few creeps killed by this tower will heal you."
         "DOTA_Tooltip_ability_life_tower_afterlife"     "Afterlife"
-        "DOTA_Tooltip_ability_life_tower_afterlife_Description"     "Every few creeps killed by this tower will heal you. This takes into account all other Life Towers that you own. If you are at or over <font color='#FFFFFF'>50</font> health it takes <font color='#FFFFFF'>9</font> kills.\n\n<font color='#FFFFFF'>ATTACK TARGETING:</font> Lowest HP"
+        "DOTA_Tooltip_ability_life_tower_afterlife_Description"     "Every few creeps killed by this tower will heal you. This takes into account all other Life Towers that you own. If you are at full health, it takes <font color='#FFFFFF'>3</font> times the kills.\n\n<font color='#FFFFFF'>ATTACK TARGETING:</font> Lowest HP"
         "DOTA_Tooltip_ability_life_tower_afterlife_kills_required"      "KILLS REQUIRED:"
         "DOTA_Tooltip_ability_life_tower_afterlife_heal_amount"     "HEAL AMOUNT:"
         "DOTA_Tooltip_modifier_life_tower_counter"                                        "Life Gained"
