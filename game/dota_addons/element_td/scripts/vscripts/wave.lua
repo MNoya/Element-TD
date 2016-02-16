@@ -125,6 +125,9 @@ function Wave:SpawnWave()
 				        	return nil
 				        end
 						StartBreakTime(self.playerID, GetPlayerDifficulty(self.playerID):GetWaveBreakTime(playerData.nextWave))
+
+						-- Update UI for dead players
+						StartBreakTime_DeadPlayers(self.playerID, GetPlayerDifficulty(self.playerID):GetWaveBreakTime(playerData.nextWave), playerData.nextWave)
 					end
 					return nil
 				else

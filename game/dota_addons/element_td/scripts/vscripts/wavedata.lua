@@ -69,7 +69,7 @@ end
 
 -- starts the break timer for the specified player.
 -- the next wave spawns once the break time is over
-function StartBreakTime(playerID, breakTime)
+function StartBreakTime(playerID, breakTime, rush_wave)
     local ply = PlayerResource:GetPlayer(playerID)
     local hero = ElementTD.vPlayerIDToHero[playerID]
     local playerData = GetPlayerData(playerID)
@@ -80,7 +80,10 @@ function StartBreakTime(playerID, breakTime)
     local wave = GetPlayerData(playerID).nextWave
     if GameSettings:GetGamemode() == "Competitive" and GameSettings:GetEndless() == "Normal" then
         wave = CURRENT_WAVE
+    elseif rush_wave then
+        wave = rush_wave
     end
+
     local msgTime = 5 -- how long to show the message for
     if (wave - 1) % 5 == 0 and not EXPRESS_MODE then
         breakTime = 30
@@ -97,53 +100,53 @@ function StartBreakTime(playerID, breakTime)
 
     ShowWaveBreakTimeMessage(playerID, wave, breakTime, msgTime)
 
-    -- Update portal
     if hero:IsAlive() then
+        -- Update portal
         local sector = playerData.sector + 1
         ShowPortalForSector(sector, wave, breakTime, playerID)
-    end
+    
+        -- Grant Lumber and Essence to all players the moment the next wave is set
+        if WaveGrantsLumber(wave-1) then
+            ModifyLumber(playerID, 1)
+            if IsPlayerUsingRandomMode( playerID ) then
+                Notifications:ClearBottom(playerID)
+                local element = nil
+                -- Same Random if the mode was agreed on, All Random if players opted in
+                if string.match(GameSettings.elementsOrderName, "Random") then
+                    element = GetRandomElementForWave(playerID, wave)
+                elseif playerData.elementalRandom then
+                    if not playerData.elementsOrder then
+                        playerData.elementsOrder = getRandomElementOrder()
+                    end
 
-    -- Grant Lumber and Essence to all players the moment the next wave is set
-    if WaveGrantsLumber(wave-1) then
-        ModifyLumber(playerID, 1)
-        if IsPlayerUsingRandomMode( playerID ) then
-            Notifications:ClearBottom(playerID)
-            local element = nil
-            -- Same Random if the mode was agreed on, All Random if players opted in
-            if string.match(GameSettings.elementsOrderName, "Random") then
-                element = GetRandomElementForWave(playerID, wave)
-            elseif playerData.elementalRandom then
-                if not playerData.elementsOrder then
-                    playerData.elementsOrder = getRandomElementOrder()
+                    element = playerData.elementsOrder[wave-1]
+                else
+                    print("Something horrible went wrong.")
                 end
 
-                element = playerData.elementsOrder[wave-1]
+                Log:info("Randoming element for player "..playerID..": "..element)
+
+                if element == "pure" then
+                    SendEssenceMessage(playerID, "#etd_random_essence")
+                    ModifyPureEssence(playerID, 1)
+                    playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
+
+                    -- Gold bonus for Pure Essence randoming
+                    GivePureEssenceGoldBonus(playerID)
+                else
+                    SendEssenceMessage(playerID, "#etd_random_elemental")
+                    SummonElemental({caster = playerData.summoner, Elemental = element .. "_elemental"})
+                end
             else
-                print("Something horrible went wrong.")
+                Log:info("Giving 1 lumber to " .. playerData.name)
             end
-
-            Log:info("Randoming element for player "..playerID..": "..element)
-
-            if element == "pure" then
-                SendEssenceMessage(playerID, "#etd_random_essence")
-                ModifyPureEssence(playerID, 1)
-                playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
-
-                -- Gold bonus for Pure Essence randoming
-                GivePureEssenceGoldBonus(playerID)
-            else
-                SendEssenceMessage(playerID, "#etd_random_elemental")
-                SummonElemental({caster = playerData.summoner, Elemental = element .. "_elemental"})
-            end
-        else
-            Log:info("Giving 1 lumber to " .. playerData.name)
         end
-    end
 
-    if WaveGrantsEssence(wave-1) then
-        ModifyPureEssence(playerID, 1) 
-        Log:info("Giving 1 pure essence to " .. playerData.name)
-        playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
+        if WaveGrantsEssence(wave-1) then
+            ModifyPureEssence(playerID, 1) 
+            Log:info("Giving 1 pure essence to " .. playerData.name)
+            playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
+        end
     end
 
     -- create the actual timer
@@ -151,11 +154,16 @@ function StartBreakTime(playerID, breakTime)
         local data = GetPlayerData(playerID)
 
         if wave == WAVE_COUNT and not EXPRESS_MODE then
-            Log:info("Spawning the first boss wave for ["..playerID.."] ".. playerData.name)
-            playerData.bossWaves = playerData.bossWaves + 1
-            ShowBossWaveMessage(playerID, playerData.bossWaves)
+            local bossWave = 1
+            if hero:IsAlive() then
+                Log:info("Spawning the first boss wave for ["..playerID.."] ".. playerData.name)            
+                playerData.bossWaves = bossWave
+            end
+            ShowBossWaveMessage(playerID, bossWave)
         else
-            Log:info("Spawning wave " .. wave .. " for ["..playerID.."] ".. data.name)
+            if hero:IsAlive() then
+                Log:info("Spawning wave " .. wave .. " for ["..playerID.."] ".. data.name)
+            end
             ShowWaveSpawnMessage(playerID, wave)
         end
 
@@ -171,6 +179,17 @@ function StartBreakTime(playerID, breakTime)
             SpawnWaveForPlayer(playerID, wave) 
         end
     end)
+end
+
+-- Calls StartBreakTime on the dead players, only once per wave, used for Rush mode
+function StartBreakTime_DeadPlayers(playerID, breakTime, wave)
+    for _,v in pairs(playerIDs) do
+        local hero = PlayerResource:GetSelectedHeroEntity(v)
+        if not hero:IsAlive() and hero.rush_wave ~= wave then
+            hero.rush_wave = wave --Keep track to don't update a wave info twice
+            StartBreakTime(v, breakTime, wave)
+        end
+    end
 end
 
 function SpawnEntity(entityClass, playerID, position)
