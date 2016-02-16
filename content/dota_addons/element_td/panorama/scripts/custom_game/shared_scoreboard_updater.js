@@ -497,16 +497,28 @@ function ScoreboardUpdater_GetSortedTeamInfoList( scoreboardHandle )
     }*/
 
     // Sort teams by player score
-    var sortedPlayers = GameUI.CustomUIConfig().playerScore.sort(function(a, b){return b-a});
+    var sortedScores = GameUI.CustomUIConfig().playerScore.sort(function(a, b){return b-a});
     for (var i = 0; i < 8; i++)
     {
-        if (Players.IsValidPlayerID(i))
+        var playerID = GetPlayerWithScore(sortedScores[i])
+        if (Players.IsValidPlayerID(playerID))
         {
-            teamsList.push( Game.GetTeamDetails( Players.GetTeam(i) ) );
+            teamsList.push( Game.GetTeamDetails( Players.GetTeam(playerID) ) );
         }
     };
 
     return teamsList;
+}
+
+function GetPlayerWithScore(value) {
+    var scores = GameUI.CustomUIConfig().playerScore
+    for (var playerID in scores)
+    {
+        var thisScore = scores[playerID]
+        if (thisScore == value)
+            return Number(playerID)
+    }
+    return -1
 }
 
 function SetTopBarValue( data )
