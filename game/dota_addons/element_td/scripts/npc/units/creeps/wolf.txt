@@ -1,4 +1,4 @@
-"sand_king"
+"wolf"
 {
     "MinimapIcon"               "minimap_icon_brown"
     "MinimapIconSize"           "200"
@@ -26,36 +26,11 @@
     "StatusManaRegen"        "0"
     "VisionDaytimeRange"        "1200"
     "VisionNighttimeRange"        "800"
-    "Model"        "models/heroes/sand_king/sand_king.vmdl"
-    "ModelScale"        "1.0"
+    "Model"        "models/creeps/neutral_creeps/n_creep_worg_large/n_creep_worg_large.vmdl"
+    "ModelScale"        "0.7"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
-    "ScriptClass"        "CreepHeal"
+    "ScriptClass"        "CreepFast"
     "Ability1"        "earth_armor"
-    "Creature"
-    {
-        "AttachWearables"
-        {
-            "Wearable1"
-            {
-                "ItemDef"        "180"
-            }
-            "Wearable2"
-            {
-                "ItemDef"        "198"
-            }
-            "Wearable3"
-            {
-                "ItemDef"        "199"
-            }
-            "Wearable4"
-            {
-                "ItemDef"        "200"
-            }
-            "Wearable5"
-            {
-                "ItemDef"        "201"
-            }
-        }
-    }
+    "Ability2"        ""
 }

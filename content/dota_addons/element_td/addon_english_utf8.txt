@@ -294,6 +294,8 @@
         "void_incarnate"            "Void Incarnate"
         "water_dragon"              "Water Dragon"
         "zombie"                    "Zombie"
+        "centaur_warchief"          "Centaur Warchief"
+        "wolf"                      "Wolf"
 
         // ******************** ABILITIES ********************
         "DOTA_Tooltip_ability_sell_tower_100"       "Sell Tower"

@@ -299,7 +299,7 @@
 	    "Ability1"        "fire_armor"
 	    "Ability2"        "creep_ability_heal"
 	}
-	"centaur"
+	"centaur_warchief"
 	{
 	    "MinimapIcon"               "minimap_icon_brown"
 	    "MinimapIconSize"           "200"
@@ -327,13 +327,27 @@
 	    "StatusManaRegen"        "0"
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
-	    "Model"        "models/creeps/neutral_creeps/n_creep_centaur_med/n_creep_centaur_med.vmdl"
-	    "ModelScale"        "0.7"
+	    "Model"        "models/heroes/centaur/centaur.vmdl"
+	    "ModelScale"        "1.0"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepFast"
 	    "Ability1"        "earth_armor"
-	    "Ability2"        "creep_ability_fast"
+	    "Ability2"         "creep_ability_fast"
+	    "Creature"
+	    {
+	        "AttachWearables" // Unbroken Stallion
+	        {
+	            "1" { "ItemDef" "6500" } // Double Edge of the Unbroken Stallion
+	            "2" { "ItemDef" "6498" } // Tail of the Unbroken Stallion
+	            "3" { "ItemDef" "6494" } // Armor of the Unbroken Stallion
+	            "4" { "ItemDef" "10540" } // Unbroken Stallion Cursor Pack
+	            "5" { "ItemDef" "6496" } // Bracers of the Unbroken Stallion
+	            "6" { "ItemDef" "6497" } // Helm of the Unbroken Stallion
+	            "7" { "ItemDef" "6495" } // Belt of the Unbroken Stallion
+	            "8" { "ItemDef" "6889" } // Shields of the Unbroken Stallion
+	        }
+	    }
 	}
 	"chaos_beast"
 	{
@@ -3536,67 +3550,6 @@
 	    "Ability1"        "composite_armor"
 	    "Ability2"        "creep_ability_heal"
 	}
-	"sand_king"
-	{
-	    "MinimapIcon"               "minimap_icon_brown"
-	    "MinimapIconSize"           "200"
-	    "MinimapDisableTint"        "1"
-	
-	    "ArmorPhysical"        "0"
-	    "MagicalResistance"        "0"
-	    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
-	    "AttackDamageMin"        "0"
-	    "AttackDamageMax"        "0"
-	    "AttackRate"        "0"
-	    "AttackAnimationPoint"        "0"
-	    "AttackAcquisitionRange"        "0"
-	    "AttackRange"        "0"
-	    "ProjectileModel"        ""
-	    "ProjectileSpeed"        "0"
-	    "RingRadius"        "70"
-	    "HealthBarOffset"        "160"
-	    "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
-	    "BountyXP"        "0"
-	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
-	    "MovementSpeed"        "300"
-	    "StatusHealthRegen"        "0"
-	    "StatusMana"        "0"
-	    "StatusManaRegen"        "0"
-	    "VisionDaytimeRange"        "1200"
-	    "VisionNighttimeRange"        "800"
-	    "Model"        "models/heroes/sand_king/sand_king.vmdl"
-	    "ModelScale"        "1.0"
-	    "BaseClass"        "npc_dota_creature"
-	    "SoundSet"        ""
-	    "ScriptClass"        "CreepHeal"
-	    "Ability1"        "earth_armor"
-	    "Creature"
-	    {
-	        "AttachWearables"
-	        {
-	            "Wearable1"
-	            {
-	                "ItemDef"        "180"
-	            }
-	            "Wearable2"
-	            {
-	                "ItemDef"        "198"
-	            }
-	            "Wearable3"
-	            {
-	                "ItemDef"        "199"
-	            }
-	            "Wearable4"
-	            {
-	                "ItemDef"        "200"
-	            }
-	            "Wearable5"
-	            {
-	                "ItemDef"        "201"
-	            }
-	        }
-	    }
-	}
 	"satyr"
 	{
 	    "MinimapIcon"               "minimap_icon_white"
@@ -4742,6 +4695,42 @@
 	    "ScriptClass"    "CreepSwarm"
 	    "Ability1"        "water_armor"
 	    "Ability2"        "creep_ability_swarm"
+	}
+	"wolf"
+	{
+	    "MinimapIcon"               "minimap_icon_brown"
+	    "MinimapIconSize"           "200"
+	    "MinimapDisableTint"        "1"
+	
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+	    "AttackDamageMin"        "0"
+	    "AttackDamageMax"        "0"
+	    "AttackRate"        "0"
+	    "AttackAnimationPoint"        "0"
+	    "AttackAcquisitionRange"        "0"
+	    "AttackRange"        "0"
+	    "ProjectileModel"        ""
+	    "ProjectileSpeed"        "0"
+	    "RingRadius"        "70"
+	    "HealthBarOffset"        "160"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+	    "BountyXP"        "0"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+	    "MovementSpeed"        "300"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "VisionDaytimeRange"        "1200"
+	    "VisionNighttimeRange"        "800"
+	    "Model"        "models/creeps/neutral_creeps/n_creep_worg_large/n_creep_worg_large.vmdl"
+	    "ModelScale"        "0.7"
+	    "BaseClass"        "npc_dota_creature"
+	    "SoundSet"        ""
+	    "ScriptClass"        "CreepFast"
+	    "Ability1"        "earth_armor"
+	    "Ability2"        ""
 	}
 	"zombie"
 	{
