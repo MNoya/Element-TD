@@ -12474,7 +12474,9 @@
 	        "2"        "nature"
 	        "3"        "water"
 	    }
-	    "Damage"        "1800"
+	    "Damage"        "1600"
+	    "AttackDamageMin"        "1600"
+	    "AttackDamageMax"        "1600"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "EphemeralTower"
 	    "TowerType"        "Normal"
@@ -12514,8 +12516,6 @@
 	        "Count"        "1"
 	        "1"        "ephemeral_tower_2"
 	    }
-	    "AttackDamageMin"        "1800"
-	    "AttackDamageMax"        "1800"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -12565,7 +12565,9 @@
 	        "2"        "nature"
 	        "3"        "water"
 	    }
-	    "Damage"        "9000"
+	    "Damage"        "8000"
+	    "AttackDamageMin"        "8000"
+	    "AttackDamageMax"        "8000"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "EphemeralTower"
 	    "TowerType"        "Normal"
@@ -12604,8 +12606,6 @@
 	    "Upgrades"
 	    {
 	    }
-	    "AttackDamageMin"        "9000"
-	    "AttackDamageMax"        "9000"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"

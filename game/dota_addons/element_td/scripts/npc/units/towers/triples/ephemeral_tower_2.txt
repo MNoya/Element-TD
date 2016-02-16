@@ -42,7 +42,9 @@
         "2"        "nature"
         "3"        "water"
     }
-    "Damage"        "9000"
+    "Damage"        "8000"
+    "AttackDamageMin"        "8000"
+    "AttackDamageMax"        "8000"
     "DamageType"        "nature"
     "ScriptClass"        "EphemeralTower"
     "TowerType"        "Normal"
@@ -81,8 +83,6 @@
     "Upgrades"
     {
     }
-    "AttackDamageMin"        "9000"
-    "AttackDamageMax"        "9000"
 
     // Building Size
     "ConstructionSize"          "2"
