@@ -47,7 +47,7 @@
 		"03"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"splash_aoe"		"300"
+			"splash_aoe"		"250"
 		}
 		"04"
 		{

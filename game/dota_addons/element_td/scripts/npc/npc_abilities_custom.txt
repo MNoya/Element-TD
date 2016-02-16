@@ -2514,7 +2514,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_aoe"		"300"
+				"splash_aoe"		"250"
 			}
 			"04"
 			{
@@ -3344,7 +3344,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"500"
+				"aoe"					"550"
 			}
 		}
 	}
@@ -3386,7 +3386,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"25"
+				"bonus_damage"			"20"
 			}
 		}
 	}

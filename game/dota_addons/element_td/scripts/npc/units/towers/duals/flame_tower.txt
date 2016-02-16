@@ -41,7 +41,9 @@
         "1"        "fire"
         "2"        "nature"
     }
-    "Damage"        "90"
+    "Damage"        "75"
+    "AttackDamageMin"        "75"
+    "AttackDamageMax"        "75"
     "DamageType"        "fire"
     "ScriptClass"        "FlameTower"
     "TowerType"        "Normal"
@@ -72,8 +74,6 @@
         "4"        "jinx_tower"
         "5"        "nova_tower"
     }
-    "AttackDamageMin"        "90"
-    "AttackDamageMax"        "90"
     "Creature"
     {
         "AttachWearables"

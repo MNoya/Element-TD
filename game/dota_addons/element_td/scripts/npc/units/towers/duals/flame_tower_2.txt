@@ -41,7 +41,9 @@
         "1"        "fire"
         "2"        "nature"
     }
-    "Damage"        "450"
+    "Damage"        "375"
+    "AttackDamageMin"        "375"
+    "AttackDamageMax"        "375"
     "DamageType"        "fire"
     "ScriptClass"        "FlameTower"
     "TowerType"        "Normal"
@@ -68,8 +70,6 @@
         "Count"        "1"
         "1"        "flame_tower_3"
     }
-    "AttackDamageMin"        "450"
-    "AttackDamageMax"        "450"
     "Creature"
     {
        "AttachWearables" // Mentor of the High Plains
