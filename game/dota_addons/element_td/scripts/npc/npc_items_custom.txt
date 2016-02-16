@@ -930,6 +930,7 @@
 			"earth"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "275"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -1090,6 +1091,7 @@
 			"earth"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "275"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -1120,6 +1122,8 @@
 			}
 		}
 		"AbilityTextureName"		"item_disease"
+		"ItemBaseLevel" "1"
+	    "ItemCost" "275"
 		"Requirements"
 		{
 			"dark"		"1"
@@ -1235,6 +1239,8 @@
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
 		"AbilityTextureName"		"item_disease_disabled"
+		"ItemBaseLevel" "1"
+	    "ItemCost" "275"
 		"Requirements"
 		{
 			"dark"		"1"
@@ -1272,6 +1278,7 @@
 			"light"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "275"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -1432,6 +1439,7 @@
 			"light"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "275"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -1470,6 +1478,7 @@
 			"nature"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "275"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -1630,6 +1639,7 @@
 			"nature"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "275"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -1668,6 +1678,7 @@
 			"dark"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "275"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -1828,6 +1839,7 @@
 			"dark"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "275"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -1866,6 +1878,7 @@
 			"earth"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "275"
 	    "AbilitySpecial"
 		{
 	        "01"
@@ -2026,6 +2039,7 @@
 			"earth"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "275"
 	    "AbilitySpecial"
 		{
 	        "01"
@@ -2064,6 +2078,7 @@
 			"light"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "275"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -2224,6 +2239,7 @@
 			"light"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "275"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -2262,6 +2278,7 @@
 			"nature"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "275"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -2422,6 +2439,7 @@
 			"nature"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "275"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -2452,6 +2470,8 @@
 			}
 		}
 		"AbilityTextureName"		"item_magic"
+		"ItemBaseLevel" "1"
+	    "ItemCost" "275"
 		"Requirements"
 		{
 			"dark"		"1"
@@ -2567,6 +2587,8 @@
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
 		"AbilityTextureName"		"item_magic_disabled"
+		"ItemBaseLevel" "1"
+	    "ItemCost" "275"
 		"Requirements"
 		{
 			"dark"		"1"
@@ -2596,6 +2618,8 @@
 			}
 		}
 		"AbilityTextureName"		"item_moss"
+		"ItemBaseLevel" "1"
+	    "ItemCost" "275"
 		"Requirements"
 		{
 			"earth"		"1"
@@ -2711,6 +2735,8 @@
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
 		"AbilityTextureName"		"item_moss_disabled"
+		"ItemBaseLevel" "1"
+	    "ItemCost" "275"
 		"Requirements"
 		{
 			"earth"		"1"
@@ -2740,6 +2766,8 @@
 			}
 		}
 		"AbilityTextureName"		"item_poison"
+		"ItemBaseLevel" "1"
+	    "ItemCost" "275"
 		"Requirements"
 		{
 			"dark"		"1"
@@ -2855,6 +2883,8 @@
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
 		"AbilityTextureName"		"item_poison_disabled"
+		"ItemBaseLevel" "1"
+	    "ItemCost" "275"
 		"Requirements"
 		{
 			"dark"		"1"
@@ -2884,6 +2914,8 @@
 			}
 		}
 		"AbilityTextureName"		"item_quark"
+		"ItemBaseLevel" "1"
+	    "ItemCost" "275"
 		"Requirements"
 		{
 			"earth"		"1"
@@ -2999,6 +3031,8 @@
 		"ItemPurchasable"		"0"
 		"ItemDroppable"		"0"
 		"AbilityTextureName"		"item_quark_disabled"
+		"ItemBaseLevel" "1"
+	    "ItemCost" "275"
 		"Requirements"
 		{
 			"earth"		"1"
@@ -3036,6 +3070,7 @@
 			"dark"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "275"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -3196,6 +3231,7 @@
 			"dark"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "275"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -3234,6 +3270,7 @@
 			"water"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "275"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -3419,6 +3456,7 @@
 			"water"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "275"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -3462,6 +3500,7 @@
 			"nature"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "275"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -3622,6 +3661,7 @@
 			"nature"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "275"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -3662,6 +3702,7 @@
 			"nature"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 	        "01"
@@ -3777,6 +3818,7 @@
 			"nature"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 	        "01"
@@ -3821,6 +3863,8 @@
 			"water"		"1"
 			"water"		"1"
 		}
+		"ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	}
 	"item_upgrade_to_ephemeral_tower_2"
 	{
@@ -3852,6 +3896,7 @@
 			"water"		"2"
 			"water"		"2"
 		}
+		"ItemBaseLevel" "2"
 	}
 	"item_upgrade_to_ephemeral_tower_2_disabled"
 	{
@@ -3873,6 +3918,7 @@
 			"water"		"2"
 			"water"		"2"
 		}
+		"ItemBaseLevel" "2"
 	}
 	"item_upgrade_to_ephemeral_tower_disabled"
 	{
@@ -3894,6 +3940,8 @@
 			"water"		"1"
 			"water"		"1"
 		}
+		"ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	}
 	"item_upgrade_to_erosion_tower"
 	{
@@ -3926,6 +3974,7 @@
 			"water"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 	        "01"
@@ -4041,6 +4090,7 @@
 			"water"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 	        "01"
@@ -4086,6 +4136,7 @@
 			"fire"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 	        "01"
@@ -4186,6 +4237,7 @@
 			"fire"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 	        "01"
@@ -4226,6 +4278,7 @@
 			"dark"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -4326,6 +4379,7 @@
 			"dark"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -4366,6 +4420,7 @@
 			"light"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -4466,6 +4521,7 @@
 			"light"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -4505,6 +4561,8 @@
 			"water"		"1"
 			"water"		"1"
 		}
+		"ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	}
 	"item_upgrade_to_hail_tower_2"
 	{
@@ -4536,6 +4594,7 @@
 			"water"		"2"
 			"water"		"2"
 		}
+		"ItemBaseLevel" "2"
 	}
 	"item_upgrade_to_hail_tower_2_disabled"
 	{
@@ -4557,6 +4616,7 @@
 			"water"		"2"
 			"water"		"2"
 		}
+		"ItemBaseLevel" "2"
 	}
 	"item_upgrade_to_hail_tower_disabled"
 	{
@@ -4578,6 +4638,8 @@
 			"water"		"1"
 			"water"		"1"
 		}
+		"ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	}
 	"item_upgrade_to_haste_tower"
 	{
@@ -4600,6 +4662,8 @@
 			}
 		}
 		"AbilityTextureName"		"item_haste"
+		"ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 		"Requirements"
 		{
 			"earth"		"1"
@@ -4631,6 +4695,7 @@
 			}
 		}
 		"AbilityTextureName"		"item_haste"
+		"ItemBaseLevel" "2"
 		"Requirements"
 		{
 			"earth"		"2"
@@ -4682,6 +4747,8 @@
 			"water"		"1"
 			"water"		"1"
 		}
+		"ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	}
 	"item_upgrade_to_impulse_tower"
 	{
@@ -4714,6 +4781,7 @@
 			"water"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -4783,7 +4851,7 @@
 			"water"		"2"
 			"water"		"2"
 		}
-	    "ItemBaseLevel" "1"
+	    "ItemBaseLevel" "2"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -4814,6 +4882,7 @@
 			"water"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -4854,6 +4923,7 @@
 			"nature"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 	        "01"
@@ -4954,6 +5024,7 @@
 			"nature"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 	        "01"
@@ -4993,6 +5064,8 @@
 			"light"		"1"
 			"light"		"1"
 		}
+		"ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	}
 	"item_upgrade_to_laser_tower_2"
 	{
@@ -5066,6 +5139,8 @@
 			"light"		"1"
 			"light"		"1"
 		}
+		"ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	}
 	"item_upgrade_to_muck_tower"
 	{
@@ -5098,6 +5173,7 @@
 			"water"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 	        "01"
@@ -5198,6 +5274,7 @@
 			"water"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 	        "01"
@@ -5238,6 +5315,7 @@
 			"light"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 	        "01"
@@ -5353,6 +5431,7 @@
 			"light"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 		"AbilitySpecial"
 		{
 	        "01"
@@ -5397,6 +5476,8 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
+		"ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	}
 	"item_upgrade_to_obliteration_tower_2"
 	{
@@ -5470,6 +5551,8 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
+		"ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	}
 	"item_upgrade_to_polar_tower"
 	{
@@ -5502,6 +5585,7 @@
 			"earth"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -5581,7 +5665,7 @@
 			"earth"		"2"
 			"earth"		"2"
 		}
-	    "ItemBaseLevel" "1"
+	    "ItemBaseLevel" "2"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -5617,6 +5701,7 @@
 			"earth"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -5662,6 +5747,7 @@
 			"nature"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -5762,6 +5848,7 @@
 			"nature"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -5802,6 +5889,7 @@
 			"nature"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 	        "01"
@@ -5917,6 +6005,7 @@
 			"nature"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 	        "01"
@@ -5961,6 +6050,8 @@
 			"light"		"1"
 			"light"		"1"
 		}
+		"ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	}
 	"item_upgrade_to_runic_tower_2"
 	{
@@ -6034,6 +6125,8 @@
 			"light"		"1"
 			"light"		"1"
 		}
+		"ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	}
 	"item_upgrade_to_tidal_tower"
 	{
@@ -6066,6 +6159,7 @@
 			"light"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -6166,6 +6260,7 @@
 			"light"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -6206,6 +6301,7 @@
 			"water"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -6324,6 +6420,7 @@
 			"water"		"1"
 		}
 	    "ItemBaseLevel" "1"
+	    "ItemCost" "1050"
 	    "AbilitySpecial"
 		{
 			"01"
