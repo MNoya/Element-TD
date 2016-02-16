@@ -37,7 +37,7 @@
     {
         "AttachWearables"
         {
-            "Wearable1" { "ItemDef"        "8326" } //"World Chasm Artifact"
+            //"Wearable1" { "ItemDef"        "8326" } //"World Chasm Artifact"
             "Wearable2" { "ItemDef"        "498" } //Ambient Effects
         }
     }

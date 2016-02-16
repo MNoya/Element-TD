@@ -994,13 +994,13 @@
 	    "Ability2"        "creep_ability_mechanical"
 	    "Creature"
 	    {
-	        "AttachWearables" // Black Nihility
+	        "AttachWearables" // Default npc_dota_hero_night_stalker
 	        {
-	            "1" { "ItemDef" "5083" } // Strap of Black Nihility
-	            "2" { "ItemDef" "5086" } // Span of Black Nihility
-	            "3" { "ItemDef" "5085" } // Talons of Black Nihility
-	            "4" { "ItemDef" "5088" } // Crown of Black Nihility
-	            "5" { "ItemDef" "5087" } // Sweep of Black Nihility
+	            "1" { "ItemDef" "8661" } // Nightstalker's Head
+	            "2" { "ItemDef" "339" } // Nightstalker's Tail
+	            "3" { "ItemDef" "338" } // Nightstalker's Armor
+	            "4" { "ItemDef" "337" } // Nightstalker's Wings
+	            "5" { "ItemDef" "8662" } // Nightstalker's Arms
 	        }
 	    }
 	}
@@ -4702,7 +4702,7 @@
 	    {
 	        "AttachWearables"
 	        {
-	            "Wearable1" { "ItemDef"        "8326" } //"World Chasm Artifact"
+	            //"Wearable1" { "ItemDef"        "8326" } //"World Chasm Artifact"
 	            "Wearable2" { "ItemDef"        "498" } //Ambient Effects
 	        }
 	    }
