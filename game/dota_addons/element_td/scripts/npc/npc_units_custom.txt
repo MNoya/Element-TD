@@ -10601,8 +10601,8 @@
 	"moss_tower"
 	{
 	    "BaseClass"                 "npc_dota_creature" 
-	    "SoundSet"                  "Hero_EarthSpirit"
-	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts"
+	    "SoundSet"                  "Hero_Necrolyte"
+	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
 	    "MinimapIcon"                "minimap_tower90"
 	    "MinimapIconSize"            "320"
 	    "ArmorPhysical"             "0"
@@ -10698,8 +10698,8 @@
 	"moss_tower_2"
 	{
 	    "BaseClass"                 "npc_dota_creature"
-	    "SoundSet"                  "Hero_EarthSpirit"
-	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts"
+	    "SoundSet"                  "Hero_Necrolyte"
+	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
 	    "MinimapIcon"                "minimap_tower90"
 	    "MinimapIconSize"            "320"
 	    "ArmorPhysical"             "0"
@@ -10789,8 +10789,8 @@
 	"moss_tower_3"
 	{
 	    "BaseClass"        "npc_dota_creature"
-	    "SoundSet"                  "Hero_EarthSpirit"
-	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts"
+	    "SoundSet"                  "Hero_Necrolyte"
+	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
 	    "MinimapIcon"        "minimap_tower90"
 	    "MinimapIconSize"        "320"
 	    "ArmorPhysical"        "0"
