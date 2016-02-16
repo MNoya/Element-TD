@@ -257,7 +257,7 @@ function ScoringObject:GetCleanBonus( bool )
 	local bonus = 0
 	if bool then
 		self.cleanWaves = self.cleanWaves + 1
-		bonus = 0.2 + (self.cleanWavesStreak * 0.05)
+		bonus = 0.2 + (self.cleanWavesStreak * 0.02)
 		self.cleanWavesStreak = self.cleanWavesStreak + 1
 	else -- End streak
 		self.cleanWavesStreak = 0
