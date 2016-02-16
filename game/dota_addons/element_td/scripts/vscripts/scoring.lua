@@ -100,11 +100,11 @@ function ScoringObject:UpdateScore( const , wave )
 	if scoreTable['difficultyBonus'] then
 		local diffColor = '#00FF00'
 		if scoreTable['difficultyBonus'] == 1 then
-			diffColor = '#FF6600'
+			diffColor = '#C0C0C0' --Hard: Silver/Grey
 		elseif scoreTable['difficultyBonus'] == 2 then
-			diffColor = '#FF0000'
+			diffColor = '#FFA500' --Very Hard: Gold/Orange
 		elseif scoreTable['difficultyBonus'] == 3 then
-			diffColor = '#999999'
+			diffColor = '#FF0000' --Insane: Red
 		end
 		if (scoreTable['difficultyBonus'] ~= 0) or const == SCORING_GAME_CLEAR or const == SCORING_GAME_FINISHED then
 			table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;'..GetPlayerDifficulty( self.playerID ).difficultyName .. ' difficulty: '.. GetPctString(scoreTable['difficultyBonus']), diffColor } )

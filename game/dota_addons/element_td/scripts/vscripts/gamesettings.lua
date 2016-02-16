@@ -143,6 +143,10 @@ function GameSettings:EnableRandomForPlayer(playerID)
     elseif CanPlayerEnableRandom(playerID) then
         playerData.elementalRandom = true
         Log:info("Enabled Random for player "..playerID)
+
+        local color = playerColors[playerData.sector]
+        GameRules:SendCustomMessage("<font color='"..color.."'>"..playerData.name.."</font> has chosen to random elements!", 0, 0)
+
         SendEssenceMessage(playerID, "#etd_random_toggle_enable")
         BuyElement(playerID, getRandomElement(0))
 
