@@ -179,6 +179,11 @@ function UpdateSummonerSpells(playerID)
     end
 end
 
+--[[ 
+      Fire Nature 
+    Water    Earth 
+      Dark Light
+--]]
 RUNES = {
     ["water"] = { model = "models/props_gameplay/rune_doubledamage01.vmdl", animation = "rune_doubledamage_anim" },
     ["fire"] = { model = "models/props_gameplay/rune_haste01.vmdl", animation = "rune_haste_idle" },
@@ -192,29 +197,30 @@ function UpdateRunes(playerID)
     local summoner = GetPlayerData(playerID).summoner
     local origin = summoner:GetAbsOrigin()
     local angle = 360/6
-    local rotate_pos = origin + Vector(1,0,0) * 90
-    summoner.runes = summoner.runes or {["water"] = {}, ["fire"] = {}, ["nature"] = {}, ["earth"] = {}, ["light"] = {}, ["dark"] = {}}
+    local rotate_pos = origin + Vector(1,0,0) * 70
+    summoner.runes = summoner.runes or {[2]={["fire"] = {}}, [1]={["nature"] = {}}, [6]={["earth"] = {}}, [5]={["light"] = {}}, [4]={["dark"] = {}}, [3]={["water"] = {}}}
 
-    local i = 0
-    for element,value in pairs(summoner.runes) do
-        local level = GetPlayerElementLevel(playerID, element)
-        if level > 0 then
-            local position = RotatePosition(origin, QAngle(0, angle*i, 0), rotate_pos)
-            if not value.level then
-                summoner.runes[element].props = CreateRune( element, position, level )
-            elseif value.level ~= level then
-                ClearRunes(summoner.runes[element].props)
-                summoner.runes[element].props = CreateRune( element, position, level )
+    for i=1,6 do
+        for element,value in pairs(summoner.runes[i]) do
+            local level = GetPlayerElementLevel(playerID, element)
+            if level > 0 then
+                local position = RotatePosition(origin, QAngle(0, angle*i, 0), rotate_pos)
+                if not value.level then
+                    summoner.runes[i][element].props = CreateRune( element, position, level )
+                elseif value.level ~= level then
+                    ClearRunes(summoner.runes[i][element].props)
+                    summoner.runes[i][element].props = CreateRune( element, position, level )
+                end
+                summoner.runes[i][element].level = level
             end
-            summoner.runes[element].level = level
         end
-        i=i+1
-    end   
+    end
 end
 
 function CreateRune( element, position, level )
     local angle = 360/level
-    local rotate_pos = position + Vector(1,0,0) * 20
+    local distance = level == 1 and 0 or 20
+    local rotate_pos = position + Vector(1,0,0) * distance
     local props = {}
 
     for i=1,level do
