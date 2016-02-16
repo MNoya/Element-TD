@@ -19,6 +19,7 @@
 		}
 	}
 	"AbilityTextureName"		"item_haste"
+	"ItemBaseLevel" "2"
 	"Requirements"
 	{
 		"earth"		"2"

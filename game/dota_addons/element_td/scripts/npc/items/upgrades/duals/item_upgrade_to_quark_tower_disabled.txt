@@ -9,6 +9,8 @@
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
 	"AbilityTextureName"		"item_quark_disabled"
+	"ItemBaseLevel" "1"
+    "ItemCost" "275"
 	"Requirements"
 	{
 		"earth"		"1"

@@ -18,7 +18,7 @@
 		"earth"		"2"
 		"earth"		"2"
 	}
-    "ItemBaseLevel" "1"
+    "ItemBaseLevel" "2"
     "AbilitySpecial"
 	{
 		"01"

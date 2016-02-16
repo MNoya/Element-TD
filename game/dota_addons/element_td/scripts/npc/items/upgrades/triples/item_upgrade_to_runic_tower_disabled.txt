@@ -18,4 +18,6 @@
 		"light"		"1"
 		"light"		"1"
 	}
+	"ItemBaseLevel" "1"
+    "ItemCost" "1050"
 }

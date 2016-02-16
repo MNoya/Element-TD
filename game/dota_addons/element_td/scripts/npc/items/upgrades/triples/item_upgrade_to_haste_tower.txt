@@ -19,6 +19,8 @@
 		}
 	}
 	"AbilityTextureName"		"item_haste"
+	"ItemBaseLevel" "1"
+    "ItemCost" "1050"
 	"Requirements"
 	{
 		"earth"		"1"

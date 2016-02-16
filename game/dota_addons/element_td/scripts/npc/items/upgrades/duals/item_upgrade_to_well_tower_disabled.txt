@@ -17,6 +17,7 @@
 		"nature"		"1"
 	}
     "ItemBaseLevel" "1"
+    "ItemCost" "275"
     "AbilitySpecial"
 	{
 		"01"
