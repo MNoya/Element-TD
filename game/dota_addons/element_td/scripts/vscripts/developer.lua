@@ -31,6 +31,10 @@ function ElementTD:OnPlayerChat(keys)
     local playerID = self.vUserIds[userID] and self.vUserIds[userID]:GetPlayerID()
     if not playerID then return end
 
+    if string.match(text, "-gold") or string.match(text, "-lvlup") or string.match(text, "-respawn") or string.match(text, "-createhero") or string.match(text, "-refresh") or string.match(text, "-item") or string.match(text, "-wtf") or string.match(text, "-respawn") or string.match(text, "-teleport") then
+        ElementTD:CheatCommandUsed(playerID)
+    end
+
     -- Handle '-command'
     if StringStartsWith(text, "-") then
         text = string.sub(text, 2, string.len(text))
@@ -40,10 +44,15 @@ function ElementTD:OnPlayerChat(keys)
     local command = input[1]
     if CHEAT_CODES[command] and DEVELOPERS[PlayerResource:GetSteamAccountID(playerID)] then
         CHEAT_CODES[command](playerID, input[2], input[3])
-        GetPlayerData(playerID).cheated = true
+        ElementTD:CheatCommandUsed(playerID)
     elseif PLAYER_CODES[command] then
         PLAYER_CODES[command](playerID, input[2])
     end
+end
+
+function ElementTD:HandleCheats(playerID)
+    GetPlayerData(playerID).cheated = true
+    GameRules:SendCustomMessage("#etd_cheats_enabled", 0, 0)
 end
 
 function ElementTD:GreedIsGood(playerID, value)
@@ -52,8 +61,6 @@ function ElementTD:GreedIsGood(playerID, value)
     PlayerResource:GetSelectedHeroEntity(playerID):ModifyGold(tonumber(value))
     ModifyLumber(playerID, tonumber(20))
     UpdatePlayerSpells(playerID)
-    
-    GameRules:SendCustomMessage("#etd_cheats_enabled", 0, 0)
 end
 
 function ElementTD:GiveLumber(playerID, value)
@@ -72,9 +79,6 @@ end
 
 function ElementTD:WhosYourDaddy()
     GameRules.WhosYourDaddy = not GameRules.WhosYourDaddy
-    
-    local message = GameRules.WhosYourDaddy and "#etd_cheats_enabled" or "#etd_cheats_disabled"
-    GameRules:SendCustomMessage(message, 0, 0)
 end
 
 function ElementTD:SpawnWave(playerID, waveNumber)
@@ -159,8 +163,6 @@ function ElementTD:Synergy(playerID)
     UpdateElementsHUD(playerID)
     UpdatePlayerSpells(playerID)
     UpdateSummonerSpells(playerID)
-
-    GameRules:SendCustomMessage("#etd_cheats_enabled", 0, 0)
 end
 
 function ElementTD:Dev(playerID)

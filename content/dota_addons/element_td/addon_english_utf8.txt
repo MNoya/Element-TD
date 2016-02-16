@@ -12,7 +12,7 @@
         "etd_end_message"           "Thank you for playing <font color='#70EA72'>Element Tower Defense</font>!"
         "etd_end_message_defeat"    "No one could make it to the end. Better luck next time!"
         "etd_voting"                "<font color='#70EA72'>Voting has begun!</font>"
-        "etd_cheats_enabled"        "Cheat enabled!"
+        "etd_cheats_enabled"        "Cheat enabled! This lobby won't count towards the leaderboard."
         "etd_cheats_disabled"       "Cheat disabled!"
 
         "etd_random_toggle_enable"  "Random elemental picker has been turned on!"

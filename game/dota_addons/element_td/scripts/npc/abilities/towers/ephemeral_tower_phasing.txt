@@ -25,11 +25,6 @@
 				}
 			}
 		}
-		"modifier_phasing_0_stack"
-		{
-			"IsDebuff"		"1"
-			"Duration"		"%reset_time"
-		}
 
 		"modifier_phasing_stack"
 		{
