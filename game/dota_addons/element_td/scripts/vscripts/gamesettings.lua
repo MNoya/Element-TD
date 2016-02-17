@@ -266,6 +266,10 @@ end
 -- This creates a valid random sequence for an individual player to use in self-random (aka AllRandom) mode
 function GetRandomElementForPlayerWave(playerID, wave, bExpress)    
     local playerData = GetPlayerData(playerID)
+    if not playerData.elementsOrder then
+        playerData.elementsOrder = getRandomElementOrder()
+    end
+
     local order = playerData.elementsOrder
 
     for waveNumber,element in pairs(order) do

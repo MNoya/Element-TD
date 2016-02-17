@@ -110,15 +110,7 @@ function StartBreakTime(playerID, breakTime, rush_wave)
             ModifyLumber(playerID, 1)
             if IsPlayerUsingRandomMode( playerID ) then
                 Notifications:ClearBottom(playerID)
-                local element = nil
-                -- Same Random if the mode was agreed on, All Random if players opted in
-                if string.match(GameSettings.elementsOrderName, "Random") then
-                    element = GetRandomElementForWave(playerID, wave)
-                elseif playerData.elementalRandom then
-                    element = GetRandomElementForPlayerWave(playerID, wave-1)
-                else
-                    print("Something horrible went wrong.")
-                end
+                local element = GetRandomElementForPlayerWave(playerID, wave-1)
 
                 Log:info("Randoming element for player "..playerID..": "..element)
 
