@@ -58,11 +58,20 @@
 	text-shadow: 2px 2px 2px #000000;
 }
 
+.SeqTitle
+{
+	width: 780px;
+	height: 218px;
+	horizontal-align: left;
+	vertical-align: top;
+	margin-top: 3%;
+	margin-left: 5%;
+}
+
 .SeqImg
 {
-	width: 80%;
+	width: 100%;
 	height: 100%;
-	horizontal-align: left;
 }
 
 .SeqBg
@@ -211,4 +220,9 @@
 	{
 		opacity: 1;
 	}
+}
+
+#seq_glows
+{
+	opacity: 0.3;
 }

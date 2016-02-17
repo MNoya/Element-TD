@@ -13,6 +13,7 @@
         "custom_end_screen_legend_last_hits"        "Kills"
         "custom_end_screen_legend_towers"           "Towers"
         "custom_end_screen_legend_difficulty"       "Difficulty"
+        "custom_game_team_select"                   "Area Select"
 
         "water"     "<font color='#01A2FF'>Water</font>"
         "fire"      "<font color='#C40000'>Fire</font>"
