@@ -148,10 +148,16 @@ function GameSettings:EnableRandomForPlayer(playerID)
         GameRules:SendCustomMessage("<font color='"..color.."'>"..playerData.name.."</font> has chosen to random elements!", 0, 0)
 
         SendEssenceMessage(playerID, "#etd_random_toggle_enable")
-        BuyElement(playerID, getRandomElement(0))
+
+        -- Generate a random order for this player
+        playerData.elementsOrder = getRandomElementOrder()
+
+        local first_random_element = GetRandomElementForPlayerWave(playerID, 0)
+        BuyElement(playerID, first_random_element)
 
         if EXPRESS_MODE then
-            BuyElement(playerID, getRandomElement(0))
+            local first_random_express = GetRandomElementForPlayerWave(playerID, 0, EXPRESS_MODE)
+            BuyElement(playerID, first_random_express)
         end
 
         UpdatePlayerSpells(playerID)
@@ -215,8 +221,6 @@ function GameSettings:SetElementOrder(order)
 		local elementsOrder = getRandomElementOrder()
 
 		for _, plyID in pairs(playerIDs) do    
-			print("Order for " .. GetPlayerName(plyID))
-			PrintTable(elementsOrder)
             GetPlayerData(plyID).elementsOrder = elementsOrder
             if elementsOrder[0] then
             	for _,v in pairs(elementsOrder[0]) do
@@ -244,7 +248,6 @@ function getRandomElementOrder()
 		end
 		for i = 3, 27, 3 do
 			local element = getRandomElement(i)
-			--print("[" .. i .. "] " .. element)
 			elementsOrder[i] = element
 		end
 	else
@@ -254,11 +257,34 @@ function getRandomElementOrder()
 		end
 		for i = 5, 50, 5 do
 			local element = getRandomElement(i)
-			--print("[" .. i .. "] " .. element)
 			elementsOrder[i] = element
 		end
 	end
 	return elementsOrder
+end
+
+-- This creates a valid random sequence for an individual player to use in self-random (aka AllRandom) mode
+function GetRandomElementForPlayerWave(playerID, wave, bExpress)    
+    local playerData = GetPlayerData(playerID)
+    local order = playerData.elementsOrder
+
+    for waveNumber,element in pairs(order) do
+        if waveNumber == wave then
+            if type(element)=="table" then
+                if bExpress then
+                    return order[waveNumber][1]
+                else
+                    return order[waveNumber][0]
+                end
+            else
+                return order[waveNumber]
+            end
+        end
+    end
+
+    -- If it reaches here, we couldn't return anything, return one at random
+    Log:warn("Error when assigning a Random element to player "..playerID.." from wave "..wave.."!")
+    return GetRandomElementForWave(playerID, wave)
 end
 
 function GetRandomElementForWave(playerID, wave)

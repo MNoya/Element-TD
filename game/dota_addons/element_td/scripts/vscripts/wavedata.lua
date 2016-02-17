@@ -115,11 +115,7 @@ function StartBreakTime(playerID, breakTime, rush_wave)
                 if string.match(GameSettings.elementsOrderName, "Random") then
                     element = GetRandomElementForWave(playerID, wave)
                 elseif playerData.elementalRandom then
-                    if not playerData.elementsOrder then
-                        playerData.elementsOrder = getRandomElementOrder()
-                    end
-
-                    element = playerData.elementsOrder[wave-1]
+                    element = GetRandomElementForPlayerWave(playerID, wave-1)
                 else
                     print("Something horrible went wrong.")
                 end
