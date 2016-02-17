@@ -17,6 +17,7 @@
             <Image id="seq_glows" class="SeqBg" src="file://{images}/custom_game/loading_screen/glows.png" />
             <Image id="seq_title_overlay" class="SeqBg" src="file://{images}/custom_game/loading_screen/shadow_title.png" />
             <Image id="seq_title" class="SeqTitle" src="file://{images}/custom_game/loading_screen/elementTD.png" />
+            <Image id="seq_title_glow" class="SeqTitle" src="file://{images}/custom_game/loading_screen/elementTD_glow.png" />
         </Panel>
     </Panel>
 </root>

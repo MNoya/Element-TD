@@ -226,3 +226,25 @@
 {
 	opacity: 0.3;
 }
+
+#seq_title_glow
+{
+	animation-name: title_glow;
+	animation-duration: LengthLight;
+	animation-timing-function: TimingFunc;
+	animation-iteration-count: IterationCount;
+	animation-direction: alternate;
+}
+
+@keyframes 'title_glow'
+{
+	0%
+	{
+		opacity: 0.5;
+	}
+
+	100%
+	{
+		opacity: 1.2;
+	}
+}
