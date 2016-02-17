@@ -168,7 +168,7 @@ function StartBreakTime(playerID, breakTime, rush_wave)
         end
 
         if wave == 1 then
-            EmitAnnouncerSound("announcer_announcer_battle_begin_01")
+            EmitAnnouncerSoundForPlayer("announcer_announcer_battle_begin_01", playerID)
         end
 
         -- update wave info
