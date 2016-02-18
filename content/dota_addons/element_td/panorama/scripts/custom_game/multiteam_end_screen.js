@@ -16,9 +16,15 @@
   var teamInfoList = ScoreboardUpdater_GetSortedTeamInfoList( endScoreboardHandle );
   var delay = 0.2;
   var delay_per_panel = 1 / teamInfoList.length;
+  var lastPanel
   for ( var teamInfo of teamInfoList )
   {
     var teamPanel = ScoreboardUpdater_GetTeamPanel( endScoreboardHandle, teamInfo.team_id );
+    if (lastPanel !== undefined)
+      scoreboardConfig.MoveChildAfter( teamPanel, lastPanel );
+
+    lastPanel = teamPanel;
+
     teamPanel.SetHasClass( "team_endgame", false );
     var callback = function( panel )
     {
