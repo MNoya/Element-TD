@@ -202,7 +202,7 @@ function ScoringObject:GetWaveCleared( wave )
 	local endlessBonus = self:GetEndlessBonus()
 	local leaks = playerData.waveObjects[wave] and playerData.waveObjects[wave].leaks or 0
 	local cleanBonus = self:GetCleanBonus( leaks == 0 )
-	local totalScore = math.ceil(waveClearScore * (cleanBonus + speedBonus + difficultyBonus + chaosBonus + endlessBonus + 1))
+	local totalScore = math.ceil(waveClearScore * (1 + cleanBonus + speedBonus + difficultyBonus) * (1 + chaosBonus + endlessBonus))
 
 	return { clearBonus = waveClearScore, cleanBonus = cleanBonus, speedBonus = speedBonus, difficultyBonus = difficultyBonus, chaosBonus = chaosBonus, endlessBonus = endlessBonus, totalScore = totalScore }
 end
@@ -214,7 +214,7 @@ function ScoringObject:GetBossWaveCleared( bossWave )
 	local difficultyBonus = self:GetDifficultyBonus()
 	local endlessBonus = self:GetEndlessBonus()
 	local frogKills = playerData.iceFrogKills
-	local totalScore = math.ceil(waveClearScore * (difficultyBonus + endlessBonus + 1))
+	local totalScore = math.ceil(waveClearScore * (1 + difficultyBonus) * (1 + endlessBonus))
 
 	return { frogBonus = waveClearScore, difficultyBonus = difficultyBonus, frogKills = frogKills, endlessBonus = endlessBonus, totalScore = totalScore }
 end
