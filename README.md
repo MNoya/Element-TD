@@ -4,7 +4,7 @@ Element Tower Defense
 A Dota 2 port of the classic WarCraft 3 Tower Defense!
 
 ### Leaderboard and Forums
-Check your global ranking and discuss the game at [eletd.com](https://www.eletd.com/)
+Check your global ranking and discuss the game at [eletd.com](http://www.eletd.com/)
 
 ### Developer Team
 **Programmers:** [Quintinity], [A_Dizzle], [MNoya]<br>
