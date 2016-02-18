@@ -1,23 +1,31 @@
 Element Tower Defense
 ============
 
-**Website:** [EleTD]
+A Dota 2 port of the classic WarCraft 3 Tower Defense!
 
-A Dota 2 port of the classic WarCraft 3 tower defense!
+### Leaderboard and Forums
+Check your global ranking and discuss the game at [eletd.com](https://www.eletd.com/)
 
+### Developer Team
 **Programmers:** [Quintinity], [A_Dizzle], [MNoya]<br>
 **Designers:** [Karawasa], [WindStrike]<br>
 **Mapper:** [Azarak]<br>
-**Special thanks to:** [Jicyphex], [Nullscope], [BMD], and [EinAlex]
 
+### Special Thanks
+* [BMD] - [Barebones libraries](https://github.com/bmddota/barebones)
+* [Myll] - [ModKit](https://github.com/stephenfournier/Dota-2-ModKit/)
+* [jimmydorry] - [GetDotaStats](http://getdotastats.com/)
+* [Automedic] - Elemental orb particles
+* Everyone on the irc over at [#dota2mods@GameSurge](https://kiwiirc.com/client/irc.gamesurge.net/?#dota2mods) helping with the development and testing of this map.
+
+[EleTD]:http://www.eletd.com/
 [Quintinity]:http://steamcommunity.com/id/quintinity/
 [Azarak]:http://steamcommunity.com/profiles/76561198019839522/
 [Karawasa]:http://steamcommunity.com/id/karawasa/
-[Jicyphex]:http://steamcommunity.com/profiles/76561197991791363/
-[Nullscope]:http://steamcommunity.com/profiles/76561197999508909/
 [BMD]:http://steamcommunity.com/profiles/76561198029169398/
-[EinAlex]:http://steamcommunity.com/profiles/76561197972809947/
 [A_Dizzle]:http://steamcommunity.com/id/a_dizzle/
 [MNoya]:http://steamcommunity.com/id/mnoya/
 [WindStrike]:http://steamcommunity.com/profiles/76561197995227322
-[EleTD]:http://www.eletd.com/
+[Myll]:http://steamcommunity.com/id/Myll
+[jimmydorry]:http://steamcommunity.com/id/jimmydorry
+[Automedic]:http://steamcommunity.com/id/Automedic
