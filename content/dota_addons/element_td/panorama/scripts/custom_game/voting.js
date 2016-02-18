@@ -309,13 +309,14 @@ function GetBounty(difficultyName, bEndless, bExpress) {
 
 function GetScore(difficultyName, bEndless, bChaos) {
     var scoring = scoreMultipliers[difficultyName]
+    var additive = 1;
     if (bEndless)
-        scoring+=scoreMultipliers['endless']
+        additive+=scoreMultipliers['endless']
 
     if (bChaos)
-        scoring+=scoreMultipliers['chaos']
+        additive+=scoreMultipliers['chaos']
 
-    return "Score Multiplier: x"+scoring
+    return "Score Multiplier: x"+scoring*additive
 }    
 
 function ResultsClose()
