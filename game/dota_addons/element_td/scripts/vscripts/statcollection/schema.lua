@@ -43,6 +43,7 @@ function BuildGameArray()
     local game = {}
 
     -- Add game values here as game.someValue = GetSomeGameValue()
+    game.diff = GetPlayerDifficulty(0).difficultyName
     game.exp = EXPRESS_MODE
     game.ord = GameSettings.order
     game.hor = GameSettings.endless
@@ -77,7 +78,6 @@ function BuildPlayersArray()
                     lmb = playerData.lumber, --Unused lumber 
                     ess = playerData.pureEssence, --Unused essence
                     sec = sectorNames[playerData.sector], --Sector on the map
-                    dif = playerData.difficulty.difficultyName, --Difficulty, should probably be a Game value
                     tow = playerData.tow or tablelength(playerData.towers), --Final tower count
                     ltk = playerData.TotalLifeTowerKills, --Total life gained from Life Towers
                     bos = playerData.bossWaves, --Total boss waves survived if any
