@@ -58,20 +58,11 @@
 	text-shadow: 2px 2px 2px #000000;
 }
 
-.SeqTitle
-{
-	width: 780px;
-	height: 218px;
-	horizontal-align: left;
-	vertical-align: top;
-	margin-top: 3%;
-	margin-left: 5%;
-}
-
 .SeqImg
 {
-	width: 100%;
+	width: 80%;
 	height: 100%;
+	horizontal-align: left;
 }
 
 .SeqBg
@@ -219,32 +210,5 @@
 	100%
 	{
 		opacity: 1;
-	}
-}
-
-#seq_glows
-{
-	opacity: 0.3;
-}
-
-#seq_title_glow
-{
-	animation-name: title_glow;
-	animation-duration: LengthLight;
-	animation-timing-function: TimingFunc;
-	animation-iteration-count: IterationCount;
-	animation-direction: alternate;
-}
-
-@keyframes 'title_glow'
-{
-	0%
-	{
-		opacity: 0.5;
-	}
-
-	100%
-	{
-		opacity: 1.2;
 	}
 }
