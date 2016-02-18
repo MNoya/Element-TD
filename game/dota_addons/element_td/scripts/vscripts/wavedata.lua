@@ -293,6 +293,7 @@ function SpawnWaveForPlayer(playerID, wave)
                 GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerData.name .. "</font> has completed the game!", 0, 0)
                 playerData.duration = GameRules:GetGameTime() - START_GAME_TIME
                 playerData.victory = 1
+                UpdateScoreboard(playerID, true)
                 ElementTD:CheckGameEnd()
                 return
             end

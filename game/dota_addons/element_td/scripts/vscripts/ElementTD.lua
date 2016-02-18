@@ -262,7 +262,7 @@ function ElementTD:EndGameForPlayer( playerID )
     end
     
     playerData.remaining = nil
-    UpdateScoreboard(playerID)
+    UpdateScoreboard(playerID, EXPRESS_MODE)
 
     --EmitAnnouncerSound(defeatAnnouncer[playerData.sector])    
     EmitGlobalSound("ETD.PlayerLost")

@@ -97,6 +97,12 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
                     _ScoreboardUpdater_SetTextSafe( playerPanel, "KillsEnd", GameUI.CustomUIConfig().playerData[playerId].lastHits );
                 }
             }
+
+            if (GameUI.CustomUIConfig().playerData[playerId].express_end == 1)
+            {
+                _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", "["+GameUI.CustomUIConfig().playerData[playerId].lastHits+"]" );
+                _ScoreboardUpdater_SetTextSafe( playerPanel, "KillsEnd", GameUI.CustomUIConfig().playerData[playerId].lastHits );
+            }
             
             if (icefrogKills > 0)
             {

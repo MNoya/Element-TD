@@ -174,7 +174,7 @@ function UpdateElementsHUD(playerID)
 	CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_elements", data )
 end
 
-function UpdateScoreboard(playerID)
+function UpdateScoreboard(playerID, express_end)
 	local playerData = GetPlayerData(playerID)
 	if not playerData then
 		return
@@ -195,6 +195,12 @@ function UpdateScoreboard(playerID)
 	if data.iceFrogKills == 0 and playerData.remaining then
 		data.remaining = playerData.remaining
 	end
+
+	if express_end then
+		playerData.express_end = true
+	end
+	data.express_end = playerData.express_end
+
 	data.randomed = playerData.elementalRandom --self-random
 	data.elements = playerData.elements
 	CustomGameEventManager:Send_ServerToAllClients("etd_update_scoreboard", {playerID=playerID, data = data})
@@ -206,14 +212,16 @@ function UpdateWaveInfo(playerID, wave)
 
     if player then
         local next_wave = wave+1
-        if next_wave >= WAVE_COUNT then
+        if EXPRESS_MODE and wave==WAVE_COUNT then
+        	CustomGameEventManager:Send_ServerToPlayer( player, "etd_next_wave_info", { nextWave="end"} )
+        elseif next_wave >= WAVE_COUNT then
         	if not EXPRESS_MODE then
             	CustomGameEventManager:Send_ServerToPlayer( player, "etd_next_wave_info", { nextWave=0, bossWave = playerData.bossWaves + 1, nextAbility1="", nextAbility2="creep_ability_boss" } )
             elseif next_wave == WAVE_COUNT then
             	CustomGameEventManager:Send_ServerToPlayer( player, "etd_next_wave_info", { nextWave=next_wave, nextAbility1=creepsKV[WAVE_CREEPS[next_wave]].Ability1, nextAbility2=creepsKV[WAVE_CREEPS[next_wave]].Ability2 } )
             end
         else
-            CustomGameEventManager:Send_ServerToPlayer( player, "etd_next_wave_info", { nextWave=next_wave, nextAbility1=creepsKV[WAVE_CREEPS[next_wave]].Ability1, nextAbility2=creepsKV[WAVE_CREEPS[next_wave]].Ability2 } )
+    		CustomGameEventManager:Send_ServerToPlayer( player, "etd_next_wave_info", { nextWave=next_wave, nextAbility1=creepsKV[WAVE_CREEPS[next_wave]].Ability1, nextAbility2=creepsKV[WAVE_CREEPS[next_wave]].Ability2 } )
         end
     end
 end

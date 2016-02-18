@@ -4,7 +4,6 @@ function ShowTowerTooltip()
 {
     // Exit out of multiple tower selection
     var selectedEntities = Players.GetSelectedEntities(Game.GetLocalPlayerID());
-    $.Msg(selectedEntities.length)
     if (selectedEntities.length > 1)
     {
         tooltipUI.hittest = false

@@ -33,8 +33,19 @@ function Setup() {
 }
 
 function UpdateWaveInfo( table ) {
-	$.Msg(table.nextWave,table.nextAbility1, table.nextAbility2);
+	$.Msg(table.nextWave," ",table.nextAbility1 || ""," ",table.nextAbility2 || "");
 	currentWave.text = nextWave.text;
+
+	// Stop
+	if (table.nextWave == "end")
+	{
+		nextWave.text = "";
+		nextAbility1.abilityname = "";
+		nextAbility1.visible = false;
+		nextAbility2.abilityname = "";
+		nextAbility2.visible = false;
+		return
+	}
 
 	if (nextAbility1.abilityname != "") {
 		currentAbility1.abilityname = nextAbility1.abilityname;
