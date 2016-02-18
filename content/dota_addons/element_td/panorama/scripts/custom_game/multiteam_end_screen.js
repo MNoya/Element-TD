@@ -21,7 +21,7 @@
   {
     var teamPanel = ScoreboardUpdater_GetTeamPanel( endScoreboardHandle, teamInfo.team_id );
     if (lastPanel !== undefined)
-      scoreboardConfig.MoveChildAfter( teamPanel, lastPanel );
+      teamPanel.GetParent().MoveChildAfter( teamPanel, lastPanel );
 
     lastPanel = teamPanel;
 

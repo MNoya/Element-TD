@@ -503,7 +503,16 @@ function ScoreboardUpdater_GetSortedTeamInfoList( scoreboardHandle )
     }*/
 
     // Sort teams by player score
-    var sortedScores = GameUI.CustomUIConfig().playerScore.sort(function(a, b){return b-a});
+    var scores = GameUI.CustomUIConfig().playerScore
+
+    // Fuck commas
+    for (var i in scores)
+    {
+        if (scores[i] != 0)
+            scores[i] = scores[i].replace(/,/g,"")
+    }
+
+    var sortedScores = scores.sort(function(a, b){return b-a});
     for (var i = 0; i < 8; i++)
     {
         var playerID = GetPlayerWithScore(sortedScores[i])
