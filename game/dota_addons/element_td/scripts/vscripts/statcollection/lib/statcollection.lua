@@ -26,7 +26,8 @@ local statInfo = LoadKeyValues('scripts/vscripts/statcollection/settings.kv')
 
 -- Where stuff is posted to
 local postLocation = 'http://getdotastats.com/s2/api/'
-local eleTDLB = 'http://hatinacat.com/leaderboard/'
+local hiacLB = 'http://hatinacat.com/leaderboard/'
+local eleTDLB = 'http://www.eletd.com/leaderboard/'
 
 -- The schema version we are currently using
 local schemaVersion = 4
@@ -579,6 +580,26 @@ function statCollection:sendCustom(args)
         -- Tell the user
         print(printPrefix .. messageCustomComplete .. " [" .. eleTDLB .. ']')
     end, eleTDLB)
+
+    -- Send custom to lb hatinacat
+    self:sendStage('s2_custom.php', payload, function(err, res)
+        -- Check if we got an error
+        if err then
+            print(printPrefix .. errorJsonDecode)
+            print(printPrefix .. err)
+            return
+        end
+
+        -- Check for an error
+        if res.error then
+            print(printPrefix .. errorSomethingWentWrong)
+            print(res.error)
+            return
+        end
+
+        -- Tell the user
+        print(printPrefix .. messageCustomComplete .. " [" .. hiacLB .. ']')
+    end, hiacLB)
 end
 
 -- Sends the payload data for the given stage, and return the result
