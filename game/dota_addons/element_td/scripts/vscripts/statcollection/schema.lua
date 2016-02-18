@@ -89,9 +89,9 @@ function BuildPlayersArray()
                     gt = playerData.goldTowerEarned, -- Total gold earned from Money Towers
                     dur = playerData.duration, -- Total seconds from start to death/win
                     lh = PlayerResource:GetLastHits(playerID),
-                    -- elo = playerData.elements -- Element Order
                     hst = playerID == hostID or 0, -- Is this player host
                     clr = playerData.victory, -- Did the player complete the game
+                    dif = playerData.difficulty.difficultyName, -- Player difficulty
 
                     -- misc
                     cln = playerData.scoreObject.cleanWaves, -- Amount of waves without leaks
@@ -100,12 +100,12 @@ function BuildPlayersArray()
                     rnd = (IsPlayerUsingRandomMode( playerID ) and 1 or 0), -- Is player randoming elements
 
                     -- Levels of each element at the end
-                    fir = playerData.elements.fire,
-                    wat = playerData.elements.water,
-                    nat = playerData.elements.nature,
-                    ear = playerData.elements.earth,
                     lig = playerData.elements.light,
                     dar = playerData.elements.dark,
+                    wat = playerData.elements.water,
+                    fir = playerData.elements.fire, 
+                    nat = playerData.elements.nature,
+                    ear = playerData.elements.earth,       
 
                     -- Combos
                     ec = playerData.elementalCount, -- Element Count, 0~6
