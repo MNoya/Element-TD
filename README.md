@@ -11,6 +11,11 @@ Check your global ranking and discuss the game at [eletd.com](http://www.eletd.c
 **Designers:** [Karawasa], [WindStrike]<br>
 **Mapper:** [Azarak]<br>
 
+### Links of Interest
+* [Report Bugs](http://forums.eletd.com/forum/102-bug-reports/)
+* [Make Suggestions](http://forums.eletd.com/forum/95-suggestions/)
+* [BuildingHelper Library](https://github.com/MNoya/BuildingHelper)
+
 ### Special Thanks
 * [BMD] - [Barebones libraries](https://github.com/bmddota/barebones)
 * [Myll] - [ModKit](https://github.com/stephenfournier/Dota-2-ModKit/)
