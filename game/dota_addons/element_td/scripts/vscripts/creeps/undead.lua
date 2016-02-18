@@ -84,7 +84,9 @@ function CreepUndead:UndeadCreepRespawn()
     ParticleManager:SetParticleControlEnt(h, 0, creep, PATTACH_POINT_FOLLOW, "attach_hitloc", creep:GetOrigin(), true)
 
     -- Add to scoreboard count
-    playerData.remaining = playerData.remaining + 1
+    if playerData.remaining then
+        playerData.remaining = playerData.remaining + 1
+    end
     UpdateScoreboard(playerID)
 end
 
