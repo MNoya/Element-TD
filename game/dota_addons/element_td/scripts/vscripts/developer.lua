@@ -50,7 +50,7 @@ function ElementTD:OnPlayerChat(keys)
     end
 end
 
-function ElementTD:HandleCheats(playerID)
+function ElementTD:CheatCommandUsed(playerID)
     GetPlayerData(playerID).cheated = true
     GameRules:SendCustomMessage("#etd_cheats_enabled", 0, 0)
 end
@@ -117,6 +117,8 @@ end
 function ElementTD:StopWaves(playerID)
     local playerData = GetPlayerData(playerID)
     local wave = playerData.waveObject
+
+    ClosePortalForSector(playerID, playerData.sector+1, true)
 
     if wave and wave.spawnTimer then
         Timers:RemoveTimer(wave.spawnTimer)
