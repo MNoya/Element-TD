@@ -26,7 +26,7 @@ var timer = $( '#Countdown' );
 
 var difficultyModes = ["normal","hard","veryhard","insane"]
 var activeDifficulty = "normal"
-var healthBonus = {normal:"100%",hard:"145%",veryhard:"190%",insane:"235%"}
+var healthBonus = {normal:"100%",hard:"150%",veryhard:"200%",insane:"250%"}
 var bountyBonus = {normal:"100%",hard:"115%",veryhard:"130%",insane:"150%"}
 var bountyBonusExpress = {normal:"125%",hard:"140%",veryhard:"155%",insane:"175%"}
 var endlessBountyBonus = 20
