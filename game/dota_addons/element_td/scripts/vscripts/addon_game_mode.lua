@@ -106,7 +106,6 @@ for _, r in pairs(requires) do
 end
 
 function Precache(context)
-    local units = LoadKeyValues("scripts/npc/npc_units_custom.txt")
     local precache = LoadKeyValues("scripts/kv/precache.kv")
 
     for k, a in pairs(precache) do
@@ -117,10 +116,6 @@ function Precache(context)
                 PrecacheResource(k, v, context)
             end
         end
-    end
-
-    for k, v in pairs(units) do
-        PrecacheUnitByNameAsync(k, function(...) end)
     end
 end
 

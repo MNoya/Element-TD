@@ -170,6 +170,29 @@ function ElementTD:StartGame()
         callback = function()
             Log:info("The game has started!")
 
+            -- We have at least 30 seconds to load units&towers here
+            local time = 30
+            local units = LoadKeyValues("scripts/npc/npc_units_custom.txt")
+            local num_units = tablelength(units)
+            local batch = math.ceil(num_units/time)
+            local current_batch = 0
+            Log:info("Loading "..num_units.." units, "..batch.." every seconds")
+
+            for i=1,time do
+                Timers:CreateTimer(i, function()
+                    local counter = 0
+                    for k,v in pairs(units) do
+                        if counter >= current_batch then
+                            if counter < current_batch + batch then
+                                PrecacheUnitByNameAsync(k, function(...) end)
+                            end
+                        end
+                        counter = counter + 1
+                    end
+                    current_batch = current_batch + batch
+                end)
+            end
+
             if not SKIP_VOTING then
                 CustomGameEventManager:Send_ServerToAllClients( "etd_toggle_vote_dialog", {visible = true} )
                 StartVoteTimer()
