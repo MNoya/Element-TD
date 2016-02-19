@@ -22,12 +22,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"30 150 750"
+			"damage"				"20 100 500"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aftershock_damage"		"15 75 375"
+			"aftershock_damage"		"20 100 500"
 		}
 	}
 }

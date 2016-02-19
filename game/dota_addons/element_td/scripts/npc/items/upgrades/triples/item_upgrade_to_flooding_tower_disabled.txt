@@ -25,7 +25,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"splash_damage"			"120 600"
+			"splash_damage"			"150 750"
 		}
 	}
 }
