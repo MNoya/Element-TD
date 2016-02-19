@@ -79,14 +79,14 @@ function BuildPlayersArray()
                     ess = playerData.pureEssence, --Unused essence
                     sec = sectorNames[playerData.sector], --Sector on the map
                     tow = playerData.tow or tablelength(playerData.towers), --Final tower count
-                    ltk = playerData.TotalLifeTowerKills, --Total life gained from Life Towers
+                    ltk = playerData.TotalLifeTowerKills > 0 and playerData.TotalLifeTowerKills or "", --Total life gained from Life Towers
                     bos = playerData.bossWaves, --Total boss waves survived if any
                     wav = playerData.completedWaves, --Number of completed waves
                     sco = playerData.scoreObject.totalScore, --Final score
                     ts = playerData.towersSold, -- Num of towers sold
                     gl = playerData.goldLost, -- Gold loss from selling
                     ig = playerData.interestGold, -- Interest gold earned
-                    gt = playerData.goldTowerEarned, -- Total gold earned from Money Towers
+                    gt = playerData.goldTowerEarned > 0 and playerData.goldTowerEarned or "", -- Total gold earned from Money Towers
                     dur = playerData.duration, -- Total seconds from start to death/win
                     lh = PlayerResource:GetLastHits(playerID),
                     hst = playerID == hostID or 0, -- Is this player host
@@ -124,7 +124,7 @@ function BuildPlayersArray()
                     e11 = playerData.elementOrder[11] or "", -- 11th and last element acquired
 
                     -- Check if cheats were used
-                    cheat = playerData.cheated or "",
+                    cheat = playerData.cheated or 0,
                 })
             end
         end
