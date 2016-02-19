@@ -61,16 +61,7 @@ GameUI.SetMouseCallback( function( eventName, arg ) {
         if (LEFT_CLICK) 
             return OnLeftButtonPressed();
         else if (RIGHT_CLICK) 
-            return OnRightButtonPressed(); 
-        
-
-        // Middle-click is reset distance.
-        if (MID_CLICK)
-        {
-            cameraDistance = 1500;
-            GameUI.SetCameraDistance( cameraDistance )
-            return CONSUME_EVENT;
-        }
+            return OnRightButtonPressed();
     }
 
     if ( eventName === "wheeled" )
