@@ -563,42 +563,46 @@ function statCollection:sendCustom(args)
 
     -- Send custom to lb
     self:sendStage('s2_custom.php', payload, function(err, res)
+        local prefix = "eletd: "
+
         -- Check if we got an error
         if err then
-            print(printPrefix .. errorJsonDecode)
-            print(printPrefix .. err)
+            print(prefix .. errorJsonDecode)
+            print(prefix .. err)
             return
         end
 
         -- Check for an error
         if res.error then
-            print(printPrefix .. errorSomethingWentWrong)
+            print(prefix .. errorSomethingWentWrong)
             print(res.error)
             return
         end
 
         -- Tell the user
-        print(printPrefix .. messageCustomComplete .. " [" .. eleTDLB .. ']')
+        print(prefix .. messageCustomComplete .. " [" .. eleTDLB .. ']')
     end, eleTDLB)
 
     -- Send custom to lb hatinacat
     self:sendStage('s2_custom.php', payload, function(err, res)
+        local prefix = "hatinacat: "
+
         -- Check if we got an error
         if err then
-            print(printPrefix .. errorJsonDecode)
-            print(printPrefix .. err)
+            print(prefix .. errorJsonDecode)
+            print(prefix .. err)
             return
         end
 
         -- Check for an error
         if res.error then
-            print(printPrefix .. errorSomethingWentWrong)
+            print(prefix .. errorSomethingWentWrong)
             print(res.error)
             return
         end
 
         -- Tell the user
-        print(printPrefix .. messageCustomComplete .. " [" .. hiacLB .. ']')
+        print(prefix .. messageCustomComplete .. " [" .. hiacLB .. ']')
     end, hiacLB)
 end
 
