@@ -328,9 +328,9 @@ end
 
 -- Classic Only: 1 + 0.10 per wave, applies only to the boss kills
 function ScoringObject:GetBossBonus( waves )
-	local bonus = 0
+	local bonus = 1
 	if waves >= 0 then
-		bonus = waves*0.10
+		bonus = 1+waves*0.10
 	end
 	return bonus
 end
