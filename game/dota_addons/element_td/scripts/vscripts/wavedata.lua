@@ -7,6 +7,7 @@ if not WAVE_CREEPS then
     CREEP_SCRIPT_OBJECTS = {}
     CREEPS_PER_WAVE = 30 -- the number of creeps to spawn in each wave
     CURRENT_WAVE = 1
+    CURRENT_BOSS_WAVE = 0
 end
 
 wavesKV = LoadKeyValues("scripts/kv/waves.kv")
@@ -142,12 +143,12 @@ function StartBreakTime(playerID, breakTime, rush_wave)
         local data = GetPlayerData(playerID)
 
         if wave == WAVE_COUNT and not EXPRESS_MODE then
-            local bossWave = 1
+            CURRENT_BOSS_WAVE = 1
             if hero:IsAlive() then
                 Log:info("Spawning the first boss wave for ["..playerID.."] ".. playerData.name)            
-                playerData.bossWaves = bossWave
+                playerData.bossWaves = CURRENT_BOSS_WAVE
             end
-            ShowBossWaveMessage(playerID, bossWave)
+            ShowBossWaveMessage(playerID, CURRENT_BOSS_WAVE)
         else
             if hero:IsAlive() then
                 Log:info("Spawning wave " .. wave .. " for ["..playerID.."] ".. data.name)
@@ -237,6 +238,9 @@ function SpawnWaveForPlayer(playerID, wave)
     playerData.waveObject = waveObj
     if wave == WAVE_COUNT then
         playerData.waveObjects[WAVE_COUNT+playerData.bossWaves] = waveObj
+        if playerData.bossWaves + 1 > CURRENT_BOSS_WAVE then
+            CURRENT_BOSS_WAVE = playerData.bossWaves + 1
+        end
     end
     playerData.waveObjects[wave] = waveObj
 

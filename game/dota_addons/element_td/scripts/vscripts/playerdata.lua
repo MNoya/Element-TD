@@ -216,7 +216,8 @@ function UpdateWaveInfo(playerID, wave)
         	CustomGameEventManager:Send_ServerToPlayer( player, "etd_next_wave_info", { nextWave="end"} )
         elseif next_wave >= WAVE_COUNT then
         	if not EXPRESS_MODE then
-            	CustomGameEventManager:Send_ServerToPlayer( player, "etd_next_wave_info", { nextWave=0, bossWave = playerData.bossWaves + 1, nextAbility1="", nextAbility2="creep_ability_boss" } )
+                local next_boss_wave = CURRENT_BOSS_WAVE and CURRENT_BOSS_WAVE + 1 or 1
+            	CustomGameEventManager:Send_ServerToPlayer( player, "etd_next_wave_info", { nextWave=0, bossWave = next_boss_wave, nextAbility1="", nextAbility2="creep_ability_boss" } )
             elseif next_wave == WAVE_COUNT then
             	CustomGameEventManager:Send_ServerToPlayer( player, "etd_next_wave_info", { nextWave=next_wave, nextAbility1=creepsKV[WAVE_CREEPS[next_wave]].Ability1, nextAbility2=creepsKV[WAVE_CREEPS[next_wave]].Ability2 } )
             end
