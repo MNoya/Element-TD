@@ -83,7 +83,7 @@ function ElementTD:InitGameMode()
     LinkLuaModifier("modifier_slow_adjustment", "towers/modifier_slow_adjustment", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("creep_haste_modifier", "creeps/creep_haste_modifier", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_stunned", "libraries/modifiers/modifier_stunned", LUA_MODIFIER_MOTION_NONE)
-    LinkLuaModifier("modifier_invisible_etd", "libraries/modifiers/modifier_invisible", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_invisible_etd", "libraries/modifiers/modifier_invisible_etd", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_no_health_bar", "libraries/modifiers/modifier_no_health_bar", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_transparency", "libraries/modifiers/modifier_transparency.lua", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_disabled", "libraries/modifiers/modifier_disabled", LUA_MODIFIER_MOTION_NONE)
@@ -148,7 +148,8 @@ function ElementTD:OnScriptReload()
 end
 
 function ElementTD:OnGameStateChange(keys)
-    if GameRules:State_Get() == DOTA_GAMERULES_STATE_HERO_SELECTION then
+    local state = GameRules:State_Get()
+    if state == DOTA_GAMERULES_STATE_HERO_SELECTION then
         self.gameStartTriggers = self.gameStartTriggers + 1
         if self.gameStartTriggers < 2 then return end
 
@@ -157,6 +158,33 @@ function ElementTD:OnGameStateChange(keys)
         self.gameStarted = true
 
         self:StartGame()
+    elseif state == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
+        ElementTD:PerformAsyncPrecache()
+    end
+end
+
+function ElementTD:PerformAsyncPrecache()
+    -- We have at least 30 seconds to load units&towers here
+    local time = 30
+    local units = LoadKeyValues("scripts/npc/npc_units_custom.txt")
+    local num_units = tablelength(units)
+    local batch = math.ceil(num_units/time)
+    local current_batch = 0
+    Log:info("Loading "..num_units.." units, "..batch.." every seconds")
+
+    for i=1,time do
+        Timers:CreateTimer(i, function()
+            local counter = 0
+            for k,v in pairs(units) do
+                if counter >= current_batch then
+                    if counter < current_batch + batch then
+                        PrecacheUnitByNameAsync(k, function(...) end)
+                    end
+                end
+                counter = counter + 1
+            end
+            current_batch = current_batch + batch
+        end)
     end
 end
 
@@ -169,29 +197,6 @@ function ElementTD:StartGame()
 
         callback = function()
             Log:info("The game has started!")
-
-            -- We have at least 30 seconds to load units&towers here
-            local time = 30
-            local units = LoadKeyValues("scripts/npc/npc_units_custom.txt")
-            local num_units = tablelength(units)
-            local batch = math.ceil(num_units/time)
-            local current_batch = 0
-            Log:info("Loading "..num_units.." units, "..batch.." every seconds")
-
-            for i=1,time do
-                Timers:CreateTimer(i, function()
-                    local counter = 0
-                    for k,v in pairs(units) do
-                        if counter >= current_batch then
-                            if counter < current_batch + batch then
-                                PrecacheUnitByNameAsync(k, function(...) end)
-                            end
-                        end
-                        counter = counter + 1
-                    end
-                    current_batch = current_batch + batch
-                end)
-            end
 
             if not SKIP_VOTING then
                 CustomGameEventManager:Send_ServerToAllClients( "etd_toggle_vote_dialog", {visible = true} )
