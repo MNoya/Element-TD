@@ -85,6 +85,8 @@ function StartBreakTime(playerID, breakTime, rush_wave)
         wave = rush_wave
     end
 
+    ElementTD:PrecacheWave(wave)
+
     local msgTime = 5 -- how long to show the message for
     if (wave - 1) % 5 == 0 and not EXPRESS_MODE then
         breakTime = 30

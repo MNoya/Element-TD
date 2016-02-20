@@ -106,8 +106,8 @@ function ElementTD:InitGameMode()
     base_game_mode:SetCustomGameForceHero( "npc_dota_hero_wisp" ) -- Skip hero pick screen
     ------------------------------------------------------
 
-    -- Allow cosmetic swapping
-    SendToServerConsole( "dota_combine_models 1" )
+    -- Allow cosmetic particle rendering
+    SendToServerConsole("dota_combine_models 1")
 
     -- Don't end the game if everyone is unassigned
     SendToServerConsole("dota_surrender_on_disconnect 0")
@@ -158,33 +158,6 @@ function ElementTD:OnGameStateChange(keys)
         self.gameStarted = true
 
         self:StartGame()
-    elseif state == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
-        ElementTD:PerformAsyncPrecache()
-    end
-end
-
-function ElementTD:PerformAsyncPrecache()
-    -- We have at least 30 seconds to load units&towers here
-    local time = 30
-    local units = LoadKeyValues("scripts/npc/npc_units_custom.txt")
-    local num_units = tablelength(units)
-    local batch = math.ceil(num_units/time)
-    local current_batch = 0
-    Log:info("Loading "..num_units.." units, "..batch.." every seconds")
-
-    for i=1,time do
-        Timers:CreateTimer(i, function()
-            local counter = 0
-            for k,v in pairs(units) do
-                if counter >= current_batch then
-                    if counter < current_batch + batch then
-                        PrecacheUnitByNameAsync(k, function(...) end)
-                    end
-                end
-                counter = counter + 1
-            end
-            current_batch = current_batch + batch
-        end)
     end
 end
 
@@ -192,33 +165,29 @@ end
 -- call this after the players have been move to their proper spawn locations
 function ElementTD:StartGame()
     print("ElementTD Started!")
-    Timers:CreateTimer("StartGameDelay", {
-        endTime = 1,
+    Timers:CreateTimer(1, function()
+        Log:info("The game has started!")
 
-        callback = function()
-            Log:info("The game has started!")
-
-            if not SKIP_VOTING then
-                CustomGameEventManager:Send_ServerToAllClients( "etd_toggle_vote_dialog", {visible = true} )
-                StartVoteTimer()
-                EmitAnnouncerSound("announcer_announcer_battle_prepare_01")
+        if not SKIP_VOTING then
+            CustomGameEventManager:Send_ServerToAllClients( "etd_toggle_vote_dialog", {visible = true} )
+            StartVoteTimer()
+            EmitAnnouncerSound("announcer_announcer_battle_prepare_01")
+        else
+            -- voting should never be skipped in real games
+            START_GAME_TIME = GameRules:GetGameTime()
+            if DEV_MODE then
+                GameSettings:SetGameLength("Developer")
             else
-                -- voting should never be skipped in real games
-                START_GAME_TIME = GameRules:GetGameTime()
-                if DEV_MODE then
-                    GameSettings:SetGameLength("Developer")
-                else
-                    GameSettings:SetGameLength("Normal")
-                end
-                Log:info("Skipping voting")
-                GameSettings:SetDifficulty("Normal")
-                GameSettings:SetCreepOrder("Normal")
-                for _, ply in pairs(playerIDs) do
-                    StartBreakTime(ply) -- begin the break time for wave 1 :D
-                end
+                GameSettings:SetGameLength("Normal")
+            end
+            Log:info("Skipping voting")
+            GameSettings:SetDifficulty("Normal")
+            GameSettings:SetCreepOrder("Normal")
+            for _, ply in pairs(playerIDs) do
+                StartBreakTime(ply) -- begin the break time for wave 1 :D
             end
         end
-    })
+    end)
 end
 
 function ElementTD:OnNextWave( keys )

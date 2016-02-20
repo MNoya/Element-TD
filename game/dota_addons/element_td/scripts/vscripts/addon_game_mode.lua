@@ -16,6 +16,7 @@ local requires =
     "statcollection/init",
 
     -- mechanics
+    "mechanics/precache",
     "mechanics/selection",
     "mechanics/messages",
     "mechanics/keyvalues",
@@ -110,12 +111,10 @@ function Precache(context)
 
     for k, a in pairs(precache) do
         for _, v in pairs(a) do
-            if k ~= "Async" then
-                if k == "unit" then
-                    PrecacheUnitByNameSync(v, context)
-                else
-                    PrecacheResource(k, v, context)
-                end
+            if k == "unit" then
+                PrecacheUnitByNameSync(v, context)
+            elseif k ~= "Async" then
+                PrecacheResource(k, v, context)
             end
         end
     end
