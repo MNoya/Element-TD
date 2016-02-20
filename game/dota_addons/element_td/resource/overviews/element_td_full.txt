@@ -1,0 +1,8 @@
+element_td_full
+{
+	material materials/overviews/element_td_full.vmat
+	pos_x -8192
+	pos_y 8192
+	scale 16.000
+}
+
