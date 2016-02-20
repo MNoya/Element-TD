@@ -29,7 +29,7 @@ function IsSupportTower(tower)
 end
 
 function IsTower(entity)
-	return entity.element and string.find(entity.class, "tower") ~= nil
+	return entity.class and string.find(entity.class, "tower") ~= nil
 end
 
 TOWER_TARGETING_HIGHEST_HP = 0 --Moss
