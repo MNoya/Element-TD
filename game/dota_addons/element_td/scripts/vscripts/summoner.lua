@@ -114,10 +114,10 @@ function ModifyLumber(playerID, amount)
     UpdateScoreboard(playerID)
 end
 
-function ModifyPureEssence(playerID, amount)
+function ModifyPureEssence(playerID, amount, bSkipMessage)
     GetPlayerData(playerID).pureEssence = GetPlayerData(playerID).pureEssence + amount
     UpdatePlayerSpells(playerID)
-    if amount > 0 then
+    if amount > 0 and not bSkipMessage then
         PopupEssence(ElementTD.vPlayerIDToHero[playerID], amount)
         SendEssenceMessage(playerID, "#etd_essence_add")
     end

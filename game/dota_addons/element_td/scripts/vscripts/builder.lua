@@ -75,6 +75,7 @@ function Build( event )
         -- Refund resources for this cancelled work
         if work.refund then
             hero:ModifyGold(gold_cost)
+            ModifyPureEssence(playerID, essenceCost, true)
         end
     end)
 
