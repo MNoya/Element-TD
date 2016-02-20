@@ -43,9 +43,11 @@ end
 
 function OnMagicRangeDestroy(event)
     local tower = event.target
-    if IsCurrentlySelected(tower) then
-        UpdateSelectedEntities()
-    end
+    Timers:CreateTimer(0.03,function()
+        if IsCurrentlySelected(tower) then
+            UpdateSelectedEntities()
+        end
+    end)
 end
 
 function MagicTower:OnCreated()
