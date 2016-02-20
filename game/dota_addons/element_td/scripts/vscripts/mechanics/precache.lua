@@ -4,6 +4,7 @@ end
 
 function Precache:Start()
     Precache.waves = {}
+    Precache.towers = {}
     Precache.file = LoadKeyValues("scripts/kv/precache.kv")
 end
 
@@ -21,14 +22,33 @@ end
 
 function ElementTD:PrecacheBasics(number, level)
     local basics = Precache.file["Async"]["basics"]
+    local load = basics[tostring(level)]
+
+    ElementTD:PrecacheTowerTable(load)
 end
 
 function ElementTD:PrecacheDuals(number, level)
     local duals = Precache.file["Async"]["duals"]
+    local load = duals[tostring(level)]
+
+    ElementTD:PrecacheTowerTable(load)
 end
 
 function ElementTD:PrecacheTriples(number, level)
     local triples = Precache.file["Async"]["triples"]
+    local load = triples[tostring(level)]
+
+    ElementTD:PrecacheTowerTable(load)
+end
+
+function ElementTD:PrecacheTowerTable(table)
+    for towerName,_ in pairs(table) do
+        if not Precache.towers[towerName] then
+            Precache.towers[towerName] = true
+
+            Precache:Load(towerName)
+        end
+    end
 end
 
 -----------------------------------------------------------------------------------
