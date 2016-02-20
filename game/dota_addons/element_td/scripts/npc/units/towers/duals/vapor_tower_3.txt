@@ -8,6 +8,7 @@
     "ModelOffset"               "10"
     "MinimapIcon"                "minimap_tower90"
     "MinimapIconSize"            "320"
+    "AttackAnimationPoint"       "0"
     "Creature"
     {
         "AttachWearables" // The Andestian Sentinel

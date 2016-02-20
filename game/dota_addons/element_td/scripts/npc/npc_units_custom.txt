@@ -9805,6 +9805,7 @@
 	    "ModelOffset"               "10"
 	    "MinimapIcon"                "minimap_tower90"
 	    "MinimapIconSize"            "320"
+	    "AttackAnimationPoint"       "0"
 	    "Creature"
 	    {
 	        "AttachWearables" // The Andestian Sentinel
@@ -9878,42 +9879,41 @@
 	{
 	    // Visual
 	    //-----------------------------
-	    "Model"                        "models/well_tower1.vmdl"
-	    "ModelScale"                "0.75"
+	    "Model"                      "models/well_tower1.vmdl"
+	    "ModelScale"                 "0.75"
 	    "ProjectileModel"            "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 	    "ProjectileSpeed"            "2000"
 	    "MinimapIcon"                "minimap_tower90"
 	    "MinimapIconSize"            "320"
-	    "DisableTurning"            "1"
-	    "SoundSet"                    "Hero_Morphling"
+	    "DisableTurning"             "1"
+	    "AttackAnimationPoint"       "0"
+	    "SoundSet"                   "Hero_Morphling"
 	
 	    // Stats
 	    //----------------------------- 
 	    "AttackDamageMin"            "350"
 	    "AttackDamageMax"            "350"
-	    "Damage"                    "350"
+	    "Damage"                     "350"
 	    "AttackRange"                "900"
-	    "AttackAcquisitionRange"    "900"
-	    "AttackRate"                "1"
+	    "AttackAcquisitionRange"     "900"
+	    "AttackRate"                 "1"
 	
-	    "Level"                        "1"
-	    "Cost"                        "275"
-	    "TotalCost"                    "450"
-	    "BuildTime"                    "3"
+	    "Level"                      "1"
+	    "Cost"                       "275"
+	    "TotalCost"                  "450"
+	    "BuildTime"                  "3"
 	    "Element"
 	    {
 	        "1"        "nature"
 	        "2"        "water"
 	    }
-	    "DamageType"                "water"
+	    "DamageType"                 "water"
 	    "ScriptClass"                "WellTower"
-	    "TowerType"                    "Support"
-	    "HasAbilityDesc"            "1"
-	    "UpgradeIcon"                "morphling_waveform"
+	    "TowerType"                  "Support"
 	
 	    "Requirements"
 	    {
-	        "water"            "1"
+	        "water"         "1"
 	        "nature"        "1"
 	    }
 	    "Upgrades"
@@ -9958,44 +9958,43 @@
 	{
 	    // Visual
 	    //-----------------------------
-	    "Model"                        "models/well_tower2.vmdl"
-	    "ModelScale"                "0.85"
-	    "ModelRotation"                "0"
+	    "Model"                      "models/well_tower2.vmdl"
+	    "ModelScale"                 "0.85"
+	    "ModelRotation"              "0"
 	    "ProjectileModel"            "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 	    "ProjectileSpeed"            "2000"
 	    "MinimapIcon"                "minimap_tower90"
 	    "MinimapIconSize"            "320"
-	    "DisableTurning"            "1"
-	    "SoundSet"                    "Hero_Morphling"
+	    "DisableTurning"             "1"
+	    "AttackAnimationPoint"       "0"
+	    "SoundSet"                   "Hero_Morphling"
 	
 	    // Stats
 	    //----------------------------- 
 	    "AttackDamageMin"            "1750"
 	    "AttackDamageMax"            "1750"
-	    "Damage"                    "1750"
+	    "Damage"                     "1750"
 	    "AttackRange"                "900"
-	    "AttackAcquisitionRange"    "900"
-	    "AttackRate"                "1"
+	    "AttackAcquisitionRange"     "900"
+	    "AttackRate"                 "1"
 	
-	    "Level"                        "2"
-	    "Cost"                        "800"
-	    "TotalCost"                    "1250"
-	    "BuildTime"                    "3"
+	    "Level"                      "2"
+	    "Cost"                       "800"
+	    "TotalCost"                  "1250"
+	    "BuildTime"                  "3"
 	
 	    "Element"
 	    {
 	        "1"        "nature"
 	        "2"        "water"
 	    }
-	    "DamageType"                "water"
+	    "DamageType"                 "water"
 	    "ScriptClass"                "WellTower"
-	    "TowerType"                    "Support"
-	    "HasAbilityDesc"            "1"
-	    "UpgradeIcon"                "morphling_waveform"
+	    "TowerType"                  "Support"
 	
 	    "Requirements"
 	    {
-	        "water"            "2"
+	        "water"         "2"
 	        "nature"        "2"
 	    }
 	    "Upgrades"
@@ -10036,39 +10035,38 @@
 	{
 	    // Visual
 	    //-----------------------------
-	    "Model"                        "models/well_tower3.vmdl"
-	    "ModelScale"                "0.8"
-	    "ModelRotation"                "0"
+	    "Model"                      "models/well_tower3.vmdl"
+	    "ModelScale"                 "0.8"
+	    "ModelRotation"              "0"
 	    "ProjectileModel"            "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
 	    "ProjectileSpeed"            "2000"
 	    "MinimapIcon"                "minimap_tower90"
 	    "MinimapIconSize"            "320"
-	    "DisableTurning"            "1"
-	    "SoundSet"                    "Hero_Morphling"
+	    "DisableTurning"             "1"
+	    "AttackAnimationPoint"       "0"
+	    "SoundSet"                   "Hero_Morphling"
 	
 	    // Stats
 	    //----------------------------- 
 	    "AttackDamageMin"            "8750"
 	    "AttackDamageMax"            "8750"
-	    "Damage"                    "8750"
+	    "Damage"                     "8750"
 	    "AttackRange"                "900"
-	    "AttackAcquisitionRange"    "900"
-	    "AttackRate"                "1"
+	    "AttackAcquisitionRange"     "900"
+	    "AttackRate"                 "1"
 	
-	    "Level"                        "3"
-	    "Cost"                        "1900"
-	    "TotalCost"                    "3150"
-	    "BuildTime"                    "3"
+	    "Level"                      "3"
+	    "Cost"                       "1900"
+	    "TotalCost"                  "3150"
+	    "BuildTime"                  "3"
 	    "Element"
 	    {
 	        "1"        "nature"
 	        "2"        "water"
 	    }
-	    "DamageType"                "water"
+	    "DamageType"                 "water"
 	    "ScriptClass"                "WellTower"
-	    "TowerType"                    "Support"
-	    "HasAbilityDesc"            "1"
-	    "UpgradeIcon"                "morphling_waveform"
+	    "TowerType"                  "Support"
 	
 	    "Requirements"
 	    {
