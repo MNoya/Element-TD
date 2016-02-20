@@ -2664,11 +2664,11 @@
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
 	    "Model"        "models/heroes/shadow_fiend/shadow_fiend.vmdl"
+	    
 	    "BaseClass"        "npc_dota_creature"
-	    "SoundSet"        "Hero_Shadow_Fiend"
-	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_shadow_fiend.vsndevts"
-	    "Portrait"        "vgui/hud/heroportraits/portrait_shadow_fiend"
-	    "particle_folder"        "particles/units/heroes/hero_shadow_fiend"
+	    "SoundSet"          "Hero_Nevermore"
+	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+	
 	    "ConsideredHero"        "1"
 	
 	    "Creature"
@@ -2720,10 +2720,10 @@
 	    "VisionNighttimeRange"        "800"
 	    "Model"        "models/heroes/shadow_fiend/shadow_fiend.vmdl"
 	    "BaseClass"        "npc_dota_creature"
-	    "SoundSet"        "Hero_Shadow_Fiend"
-	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_shadow_fiend.vsndevts"
-	    "Portrait"        "vgui/hud/heroportraits/portrait_shadow_fiend"
-	    "particle_folder"        "particles/units/heroes/hero_shadow_fiend"
+	    
+	    "SoundSet"          "Hero_Nevermore"
+	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+	
 	    "ConsideredHero"        "1"
 	
 	    "Creature"
@@ -2775,10 +2775,10 @@
 	    "VisionNighttimeRange"        "800"
 	    "Model"        "models/heroes/shadow_fiend/shadow_fiend_arcana.vmdl"
 	    "BaseClass"        "npc_dota_creature"
-	    "SoundSet"        "Hero_Shadow_Fiend"
-	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_shadow_fiend.vsndevts"
-	    "Portrait"        "vgui/hud/heroportraits/portrait_shadow_fiend"
-	    "particle_folder"        "particles/units/heroes/hero_shadow_fiend"
+	    
+	    "SoundSet"          "Hero_Nevermore"
+	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+	    
 	    "ConsideredHero"        "1"
 	
 	    "Creature"

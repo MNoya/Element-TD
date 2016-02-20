@@ -45,6 +45,8 @@ function CreateDataForPlayer(playerID)
 
 	data["duration"] = 0 -- Seconds the player stayed alive for
 	data["victory"] = 0  -- 0 if lost, 1 if won
+    
+    print("Created Data for player ",playerID)
 	
 	return data
 end

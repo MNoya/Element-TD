@@ -48,7 +48,8 @@ function StartVoteTimer()
 end
 
 function GetWinningDifficulty()
-	local totalWeight, totalVotes = 0, 0
+	local totalWeight = 0
+	local totalVotes = 0
 	local winner = "Normal"
 
 	for df, votes in pairs(VOTE_RESULTS.difficulty) do
@@ -193,8 +194,9 @@ function FinalizeVotes()
 end
 
 function ElementTD:OnPlayerVoted( table )
-	--voteData = JSON:decode(DecodeBase64(voteData))
 	local playerID = tonumber(table.PlayerID)
+	print("PlayerID Voted: ", playerID)
+
 	local playerName = GetPlayerName(playerID)
 
 	if not PLAYERS_NOT_VOTED[playerID] then
