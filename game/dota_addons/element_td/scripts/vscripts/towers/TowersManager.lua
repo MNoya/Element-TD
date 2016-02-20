@@ -91,7 +91,8 @@ function GetBuffTargetInRadius(caster, radius, modifierName, level)
             if priority <= bestPriority then
         
                 local modifier = tower:FindModifierByName(modifierName)
-                if not modifier or (level and level > modifier.level) then 
+                local clone = tower:HasModifier("modifier_clone")
+                if not clone and not modifier or (modifier and level and level > modifier.level) then 
                     bestPriority = priority
                     theChosenOne = tower
                 end

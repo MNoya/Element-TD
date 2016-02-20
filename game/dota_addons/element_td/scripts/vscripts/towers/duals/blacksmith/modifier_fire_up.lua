@@ -7,8 +7,13 @@ function modifier_fire_up:DeclareFunctions()
 end
 
 function modifier_fire_up:OnCreated()
-	self.damage_bonus = self:GetAbility():GetSpecialValueFor("damage")
-	self.level = self:GetAbility():GetLevel()
+    if self:GetAbility() then
+       self.damage_bonus = self:GetAbility():GetSpecialValueFor("damage")
+       self.level = self:GetAbility():GetLevel()
+    else
+        self.damage_bonus = 15
+        self.level = 1
+    end
 end
 
 function modifier_fire_up:GetModifierBaseDamageOutgoing_Percentage()
