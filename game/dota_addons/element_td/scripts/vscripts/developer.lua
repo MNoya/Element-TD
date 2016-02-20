@@ -18,11 +18,11 @@ CHEAT_CODES = {
     ["debug_damage"] = function(...) ElementTD:ToggleDebugDamage(...) end,    -- Find out information about the current wave
 }
 
-DEVELOPERS = {[66998815]="A_Dizzle",[86718505]="Noya",[8035838]="Karawasa",[34961594]="WindStrike",[84998953]="Quintinity",[59573794]="Azarak"}
-
 PLAYER_CODES = {
     ["random"] = function(...) GameSettings:EnableRandomForPlayer(...) end,  -- Enable random for player
 }
+
+DEVELOPERS = {[66998815]="A_Dizzle",[86718505]="Noya",[8035838]="Karawasa",[34961594]="WindStrike",[84998953]="Quintinity",[59573794]="Azarak"}
 
 -- A player has typed something into the chat
 function ElementTD:OnPlayerChat(keys)
@@ -37,16 +37,14 @@ function ElementTD:OnPlayerChat(keys)
 
     -- Handle '-command'
     if StringStartsWith(text, "-") then
-        text = string.sub(text, 2, string.len(text))
-    end
-
-    local input = split(text)
-    local command = input[1]
-    if CHEAT_CODES[command] and DEVELOPERS[PlayerResource:GetSteamAccountID(playerID)] then
-        CHEAT_CODES[command](playerID, input[2], input[3])
-        ElementTD:CheatCommandUsed(playerID)
-    elseif PLAYER_CODES[command] then
-        PLAYER_CODES[command](playerID, input[2])
+        local input = split(string.sub(text, 2, string.len(text)))
+        local command = input[1]
+        if CHEAT_CODES[command] and DEVELOPERS[PlayerResource:GetSteamAccountID(playerID)] then
+            CHEAT_CODES[command](playerID, input[2], input[3])
+            ElementTD:CheatCommandUsed(playerID)
+        elseif PLAYER_CODES[command] then
+            PLAYER_CODES[command](playerID, input[2])
+        end
     end
 end
 
