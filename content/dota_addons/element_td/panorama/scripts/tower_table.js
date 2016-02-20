@@ -203,7 +203,11 @@ function CheckHudFlipped() {
 
     if (Game.IsHUDFlipped())
     {
-        Flip(Btn)
+        Flip($("#TowerTableButton"))
+        Flip($("#ToggleGlyph"))
+        Flip($("#ToggleButtonGlyph"))
+        Flip($("#TowersLabel"))
+
         $("#TowerTableButton").style['margin-left'] = "65px;"
         $("#ToggleGlyph").style['margin-left'] = "-25px;"
         $("#ToggleButtonGlyph").style['margin-left'] = "-5px;"
@@ -211,7 +215,11 @@ function CheckHudFlipped() {
     }
     else
     {
-        AlignRight(Btn)
+        AlignRight($("#TowerTableButton"))
+        AlignRight($("#ToggleGlyph"))
+        AlignRight($("#ToggleButtonGlyph"))
+        AlignRight($("#TowersLabel"))
+
         $("#TowerTableButton").style['margin-left'] = "0px;"
         $("#ToggleGlyph").style['margin-left'] = "0px;"
         $("#ToggleButtonGlyph").style['margin-left'] = "0px;"
