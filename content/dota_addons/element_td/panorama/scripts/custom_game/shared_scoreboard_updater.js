@@ -188,7 +188,7 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
         if ( playerName )
         {
             var playerColor = GameUI.CustomUIConfig().team_colors[playerInfo.player_team_id];
-            playerName.style['color'] = playerColor;
+            playerName.style['color'] = playerColor || '#FFFFFF';
         }
 
         var playerPortrait = playerPanel.FindChildInLayoutFile( "HeroIcon" );
