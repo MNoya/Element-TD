@@ -10,7 +10,6 @@
     margin-bottom: 93px;
     height: 64px;
     width: 200px;
-    horizontal-align: right;
     vertical-align: bottom;
 }
 
@@ -146,7 +145,6 @@
     height: 40px;
 
     vertical-align: bottom;
-    horizontal-align: right;
 
     margin-bottom: 157px;
     margin-right: 40px;
@@ -193,7 +191,6 @@
     height: 40px;
 
     vertical-align: bottom;
-    horizontal-align: right;
 
     margin-bottom: 157px;
     margin-right: 107px;
@@ -202,7 +199,7 @@
 
 #GoldText
 {
-    width: 100px;
+    width: 105px;
     color: #fea500;
     font-size: 20px;
     font-family: Radiance;
@@ -221,6 +218,7 @@
     height: 36px; 
     background-image: url("file://{images}/custom_game/resources/gold_icon.png"); 
     background-size: 100% 100%;
+    margin-top: -5px;
 }
 
 .AspectRatio4x3 #ResourceGold, .AspectRatio5x4 #ResourceGold
@@ -243,7 +241,6 @@
     height: 40px;
 
     vertical-align: bottom;
-    horizontal-align: right;
 
     margin-bottom: 157px;
 }
@@ -290,7 +287,6 @@
     height: 30px;
 
     vertical-align: bottom;
-    horizontal-align: right;
 
     margin-bottom: 50px;
     margin-right: 80px;
@@ -355,4 +351,15 @@
     {
         transform: translateX( -4px ) rotateZ( -5deg );
     }
+}
+
+
+.Flipped
+{
+    horizontal-align: left;
+}
+
+.AlignRight
+{
+    horizontal-align: right;
 }

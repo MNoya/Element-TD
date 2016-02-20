@@ -6,7 +6,7 @@
         <include src="s2r://panorama/scripts/tower_table.js" />
     </scripts>
     <Panel hittest="false" class="Root">
-        <Panel hittest="false" class='ToggleButtonRoot'>
+        <Panel hittest="false" id="ToggleBtn" class='ToggleButtonRoot'>
             <Panel id="TowerTableButton" onactivate="Toggle()">
                 <Image id="ImageLabel" onmouseover="HoverToggle()" onmouseout="DOTAHideTitleTextTooltip()" src="file://{images}/custom_game/tree_tower/button.png"/>
                 <Label id="TowersLabel" onmouseover="HoverToggle()" onmouseout="DOTAHideTitleTextTooltip()" text="Towers"/>

@@ -124,7 +124,7 @@ function CheckAspectRatio()
 	var Aspect2 = height/r;
 
 	var AspectRatio = Aspect1 + ":" + Aspect2;
-	$.Msg(AspectRatio);
+	//$.Msg(AspectRatio);
 	
 	// 21x9
 	if (AspectRatio == "64:27" || AspectRatio == "21:9" || AspectRatio == "43:18")
@@ -149,8 +149,48 @@ function CheckLearnMode() {
 	$.Schedule(1/60, CheckLearnMode)
 }
 
+function CheckHudFlipped() {
+
+	if (Game.IsHUDFlipped())
+	{
+		Flip(LumberUI)
+		Flip(GoldUI)
+		Flip(PureEssenceUI)
+		Flip(ScoreUI)
+		Flip(ElementsUI)
+
+		ScoreUI.style["margin-left"] = "85px;"
+		LumberUI.style["margin-left"] = "40px;"
+	}
+	else
+	{
+		AlignRight(LumberUI)
+		AlignRight(GoldUI)
+		AlignRight(PureEssenceUI)
+		AlignRight(ScoreUI)
+		AlignRight(ElementsUI)
+
+		ScoreUI.style["margin-left"] = "0px;"
+		LumberUI.style["margin-left"] = "0px;"
+	}
+
+	$.Schedule(1, CheckHudFlipped)
+}
+
+function Flip (panel) {
+	panel.AddClass("Flipped")
+	panel.RemoveClass("AlignRight")
+}
+
+function AlignRight (panel) {
+	panel.RemoveClass("Flipped")
+	panel.AddClass("AlignRight")
+}
+
 (function () {
-  $.Schedule(1, function(){  CheckAspectRatio();});
+
+  $.Schedule(1, CheckAspectRatio);
+  $.Schedule(1, CheckHudFlipped)
   $.Schedule(1, CheckLearnMode)
   GameEvents.Subscribe( "etd_update_lumber", ModifyLumber );
   GameEvents.Subscribe( "etd_update_gold", ModifyGold );

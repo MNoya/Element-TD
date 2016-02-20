@@ -1,6 +1,7 @@
 var Root = $.GetContextPanel()
 var Container = $("#Container")
 var Filter = $("#FilterButtonContainer")
+var Btn = $("#ToggleBtn")
 var glows = []
 var hovering
 var hidden = true
@@ -198,8 +199,40 @@ function OnMouseOutFilter() {
     glows = []
 }
 
+function CheckHudFlipped() {
+
+    if (Game.IsHUDFlipped())
+    {
+        Flip(Btn)
+        $("#TowerTableButton").style['margin-left'] = "65px;"
+        $("#ToggleGlyph").style['margin-left'] = "-25px;"
+        $("#ToggleButtonGlyph").style['margin-left'] = "-5px;"
+        $("#TowersLabel").style['margin-left'] = "10px;"
+    }
+    else
+    {
+        AlignRight(Btn)
+        $("#TowerTableButton").style['margin-left'] = "0px;"
+        $("#ToggleGlyph").style['margin-left'] = "0px;"
+        $("#ToggleButtonGlyph").style['margin-left'] = "0px;"
+        $("#TowersLabel").style['margin-left'] = "-10px;"
+    }
+
+    $.Schedule(1, CheckHudFlipped)
+}
+
+function Flip (panel) {
+    panel.AddClass("Flipped")
+    panel.RemoveClass("AlignRight")
+}
+
+function AlignRight (panel) {
+    panel.RemoveClass("Flipped")
+    panel.AddClass("AlignRight")
+}
+
 (function(){
-    $.Msg("Tower Tree Loaded")
+    $.Schedule(1, CheckHudFlipped)
     Container.AddClass("Hidden")
     GameEvents.Subscribe("glyph_override", Toggle )
     GameEvents.Subscribe("etd_update_elements", UpdateElements )

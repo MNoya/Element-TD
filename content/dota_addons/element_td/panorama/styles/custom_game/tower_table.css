@@ -34,7 +34,6 @@
 {
     width: 90px;
     height: 90px;
-    horizontal-align: right;
     vertical-align: bottom;
 
     border-radius: 80px;
@@ -56,7 +55,6 @@
     height: 120px;
     margin-right: -25px;
     margin-bottom: -20px;
-    horizontal-align: right;
     vertical-align: bottom;
 }
 
@@ -65,7 +63,6 @@
     width: 155px;
     height: 45px;
     margin-right: 60px;
-    horizontal-align: right;
     vertical-align: bottom;
 }
 
@@ -356,4 +353,14 @@
 {
     color: #FFF;
     background-color: #000000FF;
+}
+
+.Flipped
+{
+    horizontal-align: left;
+}
+
+.AlignRight
+{
+    horizontal-align: right;
 }
