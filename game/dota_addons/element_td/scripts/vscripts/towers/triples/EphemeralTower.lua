@@ -88,11 +88,9 @@ function EphemeralTower:OnCreated()
     self.maxDamageReduction = GetAbilitySpecialValue("ephemeral_tower_phasing", "max_reduction")
     self.damageReductionPerAttackPercent = math.abs(GetAbilitySpecialValue("ephemeral_tower_phasing", "damage_reduction"))
     self.maxStacks = math.floor(self.maxDamageReduction/self.damageReductionPerAttackPercent)
-    self.resetTime = GetAbilitySpecialValue("ephemeral_tower_phasing", "reset_time")
 
     self.current_stacks = 0
     self.timer = nil
-    self.resetTimer = nil
     self.hasAttackThinker = false
     self.lastAttackTime = nil
 end

@@ -2015,12 +2015,12 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"reset_time"		"2"
+				"max_reduction"		"80"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"max_reduction"		"60"
+				"reset_time"		"2"
 			}
 		}
 	}
