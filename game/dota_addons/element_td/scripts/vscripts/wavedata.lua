@@ -117,6 +117,7 @@ function StartBreakTime(playerID, breakTime, rush_wave)
 
                 if element == "pure" then
                     SendEssenceMessage(playerID, "#etd_random_essence")
+                    ModifyLumber(playerID,-1)
                     ModifyPureEssence(playerID, 1)
                     playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
 
