@@ -210,7 +210,7 @@ function PlayerVoted( data )
         order.text = $.Localize("order_"+data.order.toLowerCase());
     }
 
-    if (data.express == "Express")
+    if (data.length == "Express")
     {
         var length = $.CreatePanel('Label', votes, '');
         length.AddClass('PlayerVote');
