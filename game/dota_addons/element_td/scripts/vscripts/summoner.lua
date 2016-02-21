@@ -88,7 +88,7 @@ function ModifyLumber(playerID, amount)
         end
 
         if GameSettings.elementsOrderName == "AllPick" then
-            SendLumberMessage(playerID, "#etd_lumber_add")
+            SendLumberMessage(playerID, "#etd_lumber_add", amount)
         end
     end
 
@@ -119,7 +119,7 @@ function ModifyPureEssence(playerID, amount, bSkipMessage)
     UpdatePlayerSpells(playerID)
     if amount > 0 and not bSkipMessage then
         PopupEssence(ElementTD.vPlayerIDToHero[playerID], amount)
-        SendEssenceMessage(playerID, "#etd_essence_add")
+        SendEssenceMessage(playerID, "#etd_essence_add", amount)
     end
     CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_pure_essence", { pureEssence = GetPlayerData(playerID).pureEssence } )
     UpdateScoreboard(playerID)

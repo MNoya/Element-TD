@@ -1,3 +1,16 @@
+if (!String.prototype.format) {
+    String.prototype.format = function() {
+        var str = this.toString();
+        if (!arguments.length)
+            return str;
+        var args = typeof arguments[0],
+            args = (("string" == args || "number" == args) ? arguments : arguments[0]);
+        for (arg in args)
+            str = str.replace(RegExp("\\{" + arg + "\\}", "gi"), args[arg]);
+        return str;
+    }
+}
+
 function TopNotification( msg ) {
   AddNotification(msg, $('#TopNotifications'));
 }
@@ -13,7 +26,6 @@ function TopRemoveNotification(msg){
 function BottomRemoveNotification(msg){
   RemoveNotification(msg, $('#BottomNotifications'));
 }
-
 
 function RemoveNotification(msg, panel){
   var count = msg.count;
@@ -91,8 +103,16 @@ function AddNotification(msg, panel) {
     notification.hittest = false;
   } else{
     notification.html = true;
-    var text = msg.text || "No Text provided";
-    notification.text = $.Localize(text)
+
+    if (typeof msg.text == "object") {
+      var text = msg.text.text || "No Text provided";
+      notification.text = $.Localize(text).format(msg.text);
+    }
+    else {
+      var text = msg.text || "No Text provided";
+      notification.text = $.Localize(text)
+    }
+
     notification.hittest = false;
     notification.AddClass('TitleText');
   }

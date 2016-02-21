@@ -1,33 +1,59 @@
-function SendErrorMessage( pID, string )
-    Notifications:ClearBottom(pID)
-    Notifications:Bottom(pID, {text=string, style={color='#E62020'}, duration=2})
-    EmitSoundOnClient("General.Cancel", PlayerResource:GetPlayer(pID))
+function SendErrorMessage(playerID, msg)
+    Notifications:ClearBottom(playerID)
+    Notifications:Bottom(playerID, {
+        text = msg, 
+        style = {color='#E62020'},
+        duration = 2
+    })
+
+    Sounds:EmitSoundOnClient(playerID, "General.Cancel")
 end
 
-function SendLumberMessage( pID, string )
-    Notifications:Bottom(pID, {text=string, style={color='#008000', ['font-weight']='bold'}, duration=4})
-    Sounds:EmitSoundOnClient(pID,"ui.inv_drop_wood")
+function SendLumberMessage(playerID, msg, amount)
+    Notifications:Bottom(playerID, {
+        text = {text = msg, amount = amount}, 
+        style = {color = '#008000', ['font-weight'] = 'bold'}, 
+        duration = 4
+    })
+
+    Sounds:EmitSoundOnClient(playerID,"ui.inv_drop_wood")
 end
 
-function SendElementalMessage( pID, string )
-    Notifications:ClearBottom(pID)
-    Notifications:Bottom(pID, {text=string, style={color='#FFFFFF', ['font-weight']='bold'}, duration=4})
-    Sounds:EmitSoundOnClient(pID,"General.PingWarning")
+function SendElementalMessage(playerID, msg)
+    Notifications:ClearBottom(playerID)
+    Notifications:Bottom(playerID, {
+        text = msg, 
+        style = {color = '#FFFFFF', ['font-weight'] = 'bold'}, 
+        duration = 4
+    })
+    Sounds:EmitSoundOnClient(playerID,"General.PingWarning")
 end
 
-function SendEssenceMessage( pID, string )
-    Notifications:Bottom(pID, {text=string, style={color='#FFFFFF', ['font-weight']='bold'}, duration=4})
-    Sounds:EmitSoundOnClient(pID,"Rune.Haste")
+function SendEssenceMessage(playerID, msg, amount)
+    Notifications:Bottom(playerID, {
+        text = {text = msg, amount = amount}, 
+        style = {color='#FFFFFF', ['font-weight'] = 'bold'}, 
+        duration = 4
+    })
+    Sounds:EmitSoundOnClient(playerID,"Rune.Haste")
 end
 
 function ShowMessage(playerID, msg, duration)
     Notifications:ClearTop(playerID)
-    Notifications:Top(playerID, {text=msg, style={["font-size"]="70px"}, duration=duration})
+    Notifications:Top(playerID, {
+        text = msg, 
+        style = {["font-size"] = "70px"}, 
+        duration = duration
+    })
 end
 
-function ShowElementAcquiredMessage( playerID, element, level )
+function ShowElementAcquiredMessage(playerID, element, level)
     local elem_color = rgbToHex(GetElementColor(element))
-    Notifications:Bottom(playerID, {text="Acquired "..firstToUpper(element).." level "..tostring(level).."!", style={["font-weight"]="bold",["font-size"]="30px",color=elem_color},duration=5})
+    Notifications:Bottom(playerID, {
+        text = {text = "#etd_acquire_element", element = firstToUpper(element), level = level},
+        style = {["font-weight"] = "bold", ["font-size"] = "30px", color = elem_color},
+        duration = 5
+    })
 end
 
 function ShowWaveBreakTimeMessage(playerID, waveNumber, breakTime, duration)
@@ -38,8 +64,12 @@ function ShowWaveBreakTimeMessage(playerID, waveNumber, breakTime, duration)
         return
     end
 
-    Notifications:Top(playerID, {text="Wave "..waveNumber.." in "..breakTime.." seconds", class="WaveBreakTime", duration=duration})
-    
+    Notifications:Top(playerID, {
+        text = {text = "#etd_next_wave", wave = waveNumber, breakTime = breakTime}, 
+        class = "WaveBreakTime", 
+        duration = duration
+    })
+
     local element = string.gsub(creepsKV[WAVE_CREEPS[waveNumber]].Ability1, "_armor", "") or "composite"
     local elem_color = rgbToHex(GetElementColor(element))
     local abilityName = creepsKV[WAVE_CREEPS[waveNumber]].Ability2
@@ -51,18 +81,26 @@ function ShowWaveBreakTimeMessage(playerID, waveNumber, breakTime, duration)
     end
 end
 
-function ShowFirstBossWaveMessage( playerID )
+function ShowFirstBossWaveMessage(playerID)
     Notifications:ClearTop(playerID)
-    Notifications:Top(playerID, {text="Boss Wave in 60 seconds", class="WaveBreakTime", duration=10})
-    local elem_color = rgbToHex(GetElementColor("composite"))
+    Notifications:Top(playerID, {
+        text = {text = "#etd_next_boss_wave", breakTime = 60}, 
+        class = "WaveBreakTime", 
+        duration = 10
+    })
 
+    local elem_color = rgbToHex(GetElementColor("composite"))
     Notifications:Top(playerID, {text=firstToUpper("composite"), style={["margin"]="-15px 15px 0px 15px",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, duration=10})
     Notifications:Top(playerID, {image="file://{images}/spellicons/osfrog.png", style={width="48px", height="48px", ["margin"]="-5px 0px 0px 0px"}, duration=10})
 end
 
 function ShowWaveSpawnMessage(playerID, waveNumber, duration)
     Notifications:ClearTop(playerID)
-    Notifications:Top(playerID, {text="Wave "..waveNumber.." -", class="WaveMessage", duration=duration})
+    Notifications:Top(playerID, {
+        text = {text = "#etd_wave_spawn", wave = waveNumber}, 
+        class = "WaveMessage", 
+        duration = duration
+    })
 
     local element = string.gsub(creepsKV[WAVE_CREEPS[waveNumber]].Ability1, "_armor", "") or "composite"
     local elem_color = rgbToHex(GetElementColor(element))
@@ -82,7 +120,7 @@ end
 function ShowBossWaveMessage(playerID, waveNumber)
     Notifications:ClearTop(playerID)
     Notifications:Top(playerID, {image="file://{images}/spellicons/osfrog.png", class="IcefrogFaceNoSpace", duration=5})
-    Notifications:Top(playerID, {text="Boss Wave "..waveNumber, class="BossWaveMessage", continue=true, duration=5})
+    Notifications:Top(playerID, {text={text="#etd_boss_wave", wave = waveNumber}, class="BossWaveMessage", continue=true, duration=5})
     Notifications:Top(playerID, {image="file://{images}/spellicons/osfrog.png", class="IcefrogFaceNoSpace", continue=true, duration=5})    
 end
 
