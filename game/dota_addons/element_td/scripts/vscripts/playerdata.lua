@@ -6,6 +6,9 @@ if not PlayerData then
 end
 
 function CreateDataForPlayer(playerID)
+    -- Don't create data twice
+    if PlayerData[playerID] then return end
+
 	PlayerData[playerID] = {}
 	local data = PlayerData[playerID]
 	data["health"] = 50
@@ -60,7 +63,7 @@ function GetPlayerData(playerID)
 end
 
 function GetPlayerName(playerID)
-	return PlayerData[playerID].name
+	return PlayerData[playerID].name or ""
 end
 
 function GetPlayerElementLevel( playerID, element )

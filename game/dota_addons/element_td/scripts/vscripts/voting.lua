@@ -119,6 +119,14 @@ function FinalizeVotes()
 		AddVote(VOTE_RESULTS.length, "Normal")
 	end
 
+	-- Make sure all the fools have a playerData
+	for _, playerID in pairs(playerIDs) do
+		local playerData = GetPlayerData(playerID)
+		if not playerData then
+			CreateDataForPlayer(playerID)
+		end
+	end
+
 	local gamemode = GetWinningChoice(VOTE_RESULTS.gamemode)
 	GameSettings:SetGamemode(gamemode)
 
@@ -174,9 +182,9 @@ function FinalizeVotes()
 	end	
 
 	for k, plyID in pairs(playerIDs) do
-		local data = {playerID = plyID, gamemode = gamemode, difficulty = GetPlayerData(plyID).difficulty.difficultyName, elements = elements, endless = endless, order = order, length = length}
 		local ply = PlayerResource:GetPlayer(plyID)
 		if ply then
+			local data = {playerID = plyID, gamemode = gamemode, difficulty = GetPlayerData(plyID).difficulty.difficultyName, elements = elements, endless = endless, order = order, length = length}
 			CustomGameEventManager:Send_ServerToPlayer( ply, "etd_vote_results", data )
 			CustomGameEventManager:Send_ServerToPlayer( ply, "etd_next_wave_info", { nextWave = GameSettings:GetGameLength().Wave, nextAbility1 = creepsKV[WAVE_CREEPS[GameSettings:GetGameLength().Wave]].Ability1, nextAbility2 = creepsKV[WAVE_CREEPS[GameSettings:GetGameLength().Wave]].Ability2 } )
 		end

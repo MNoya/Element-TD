@@ -69,11 +69,9 @@ end
 
 function GameSettings:SetDifficulty(playerID, difficulty)
 	local playerData = GetPlayerData(playerID)
-    if playerData then
-	   playerData.difficulty = DIFFICULTY_OBJECTS[difficulty]
-	   Log:info("Set " .. GetPlayerName(playerID) .. "'s difficulty to " .. difficulty)
-	   UpdateScoreboard(playerID)
-    end
+	playerData.difficulty = DIFFICULTY_OBJECTS[difficulty]
+	Log:info("Set " .. GetPlayerName(playerID) .. "'s difficulty to " .. difficulty)
+	UpdateScoreboard(playerID)
 end
 
 function GameSettings:SetGamemode(gamemode)
