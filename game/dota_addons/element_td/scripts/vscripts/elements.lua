@@ -99,7 +99,9 @@ function DamageEntity(entity, attacker, damage)
 			local particle = ParticleManager:CreateParticle("particles/custom/towers/gold/midas.vpcf", PATTACH_ABSORIGIN, entity)
     		ParticleManager:SetParticleControl(particle, 0, origin)
     		ParticleManager:SetParticleControlEnt(particle, 1, attacker, PATTACH_POINT_FOLLOW, "attach_attack1", attacker:GetAbsOrigin(), true)
-    		PopupGoldGain(attacker, extra_gold)
+    		if extra_gold > 0 then
+    			PopupGoldGain(attacker, extra_gold)
+    		end
 		end
 
 		-- Flame Tower

@@ -2327,6 +2327,18 @@
 				"bonus_gold"			"30 60"
 			}
 		}
+	
+		"Modifiers"
+		{
+			"modifier_gold_tower_counter"
+			{
+				"TextureName" "towers/gold_tower_arbitrage"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_BONUS" "1" //Just for tooltip
+				}
+			}
+		}
 	}
 	//=================================================================================================================
 	// Gunpowder Tower: Shrapnade

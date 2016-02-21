@@ -621,6 +621,8 @@
         "DOTA_Tooltip_ability_gold_tower_arbitrage"     "Arbitrage"
         "DOTA_Tooltip_ability_gold_tower_arbitrage_Description"     "Each creep killed by this tower grants bonus gold.\n\n<font color='#FFFFFF'>ATTACK TARGETING:</font> Lowest HP"
         "DOTA_Tooltip_ability_gold_tower_arbitrage_bonus_gold"      "%BONUS GOLD:"
+        "DOTA_Tooltip_modifier_gold_tower_counter"                  "Gold Gained"
+        "DOTA_Tooltip_modifier_gold_tower_counter_Description"      "Extra %dMODIFIER_PROPERTY_HEALTH_BONUS% gold earned."
         
         "DOTA_Tooltip_ability_windstorm_tower_tornado"      "Tornado"
         "DOTA_Tooltip_ability_windstorm_tower_tornado_Description"      "Summons a large tornado that damages, slows, and follows creeps.\nStacks multiplicatively with other slows."
