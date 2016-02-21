@@ -127,11 +127,11 @@
                         <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('haste','fire','earth','water')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="haste" src="file://{images}/spellicons/towers/haste.png"/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('flamethrower','fire','dark','earth')" onmouseout='OnMouseOut()'>
-                            <Image class='AbilityImage' id="flamethrower" src="file://{images}/spellicons/towers/flamethrower.png"/>
-                        </Panel>
                         <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('erosion','fire','dark','water')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="erosion" src="file://{images}/spellicons/towers/erosion.png"/>
+                        </Panel>
+                         <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('flamethrower','fire','dark','earth')" onmouseout='OnMouseOut()'>
+                            <Image class='AbilityImage' id="flamethrower" src="file://{images}/spellicons/towers/flamethrower.png"/>
                         </Panel>
                     </Panel>
                 </Panel>
