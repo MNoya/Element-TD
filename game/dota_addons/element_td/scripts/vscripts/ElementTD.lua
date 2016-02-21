@@ -511,8 +511,8 @@ function ElementTD:OnConnectFull(keys)
     
     table.insert(players, ply)
     Timers:CreateTimer(0.03, function() -- To prevent it from being -1 when the player is created
-        if ply:GetPlayerID() ~= -1 then
-            local playerID = ply:GetPlayerID()
+        local playerID = ply:GetPlayerID()
+        if playerID and playerID ~= -1 then
             if not tableContains(playerIDs, playerID) then
                 table.insert(playerIDs, playerID)
             end
@@ -524,17 +524,19 @@ function ElementTD:OnConnectFull(keys)
             -- Update the user ID table with this user
             self.vUserIds[keys.userid] = ply
             self.vPlayerUserIds[playerID] = keys.userid
-        end
 
-        if GameRules:State_Get() >= DOTA_GAMERULES_STATE_HERO_SELECTION then
-            local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-            if not hero then
-                Log:warn("Player "..playerID.." has no hero selected at game start!")
-                if PlayerResource:GetConnectionState(playerID) ~= 2 then
-                    Log:info("Creating hero for player "..playerID)
-                    local hero = CreateHeroForPlayer("npc_dota_hero_wisp", ply)
+            if GameRules:State_Get() >= DOTA_GAMERULES_STATE_HERO_SELECTION then
+                local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+                if not hero then
+                    Log:warn("Player "..playerID.." has no hero selected at game start!")
+                    if PlayerResource:GetConnectionState(playerID) ~= 2 then
+                        Log:info("Creating hero for player "..playerID)
+                        local hero = CreateHeroForPlayer("npc_dota_hero_wisp", ply)
+                    end
                 end
             end
+        else
+            print("Got a stupid wrong playerID: ", playerID)
         end
     end)
 end
