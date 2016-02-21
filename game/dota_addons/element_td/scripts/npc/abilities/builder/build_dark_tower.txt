@@ -4,7 +4,8 @@
 "build_dark_tower"
 {
     "BaseClass"                     "ability_datadriven"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+
     "MaxLevel"                      "3"
     "LevelsBetweenUpgrades"         "0"
     "AbilityTextureName"            "elements/dark"
