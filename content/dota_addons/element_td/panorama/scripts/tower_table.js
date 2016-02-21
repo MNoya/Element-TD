@@ -5,6 +5,7 @@ var Btn = $("#ToggleBtn")
 var glows = []
 var hovering
 var hidden = true
+var elements = ['light','dark','water','fire','nature','earth']
 var towers = {}
 towers['vapor'] = ['water','fire']
 towers['well']  = ['water','nature']
@@ -56,6 +57,10 @@ function Hover(name, arg1, arg2, arg3) {
         AddElementGlow(arg3)
         AddDualsGlow(arg1, arg2, arg3)
     }
+    else
+    {
+        GlowTriplesWithBoth(arg1, arg2)
+    }
 
     hovering = $("#"+name)
     hovering.AddClass("Glow_white")
@@ -75,6 +80,8 @@ function HoverElement(name){
         tooltip_name = tooltip_name+"_disabled"
 
     $.DispatchEvent( "DOTAShowAbilityTooltip", hovering, tooltip_name);
+
+    GlowTowersWith(name)
 }
 
 function OnMouseOutElement() {
@@ -99,6 +106,49 @@ function AddDualsGlow(elem1, elem2, elem3) {
     ResolveDualGlows(elem1, elem2, elem3)
     ResolveDualGlows(elem2, elem1, elem3)
     ResolveDualGlows(elem3, elem1, elem2)
+}
+
+function GlowTowersWith(elem1) {
+    GlowTypeWith(elem1, "Duals")
+    GlowTypeWith(elem1, "Triples")
+}
+
+function GlowTypeWith(elem, string_type)
+{
+    for (var i in elements)
+    {
+        var primary = elements[i]
+        var panel = $("#"+primary+string_type)
+        var childN = panel.GetChildCount()
+        for (var i = 0; i < childN; i++) {
+            var dual = panel.GetChild(i).GetChild(0)
+            if (towers[dual.id] !== undefined && (towers[dual.id].indexOf(elem) != -1))
+            {
+                dual.AddClass("Glow_"+primary)
+                dual.glow = "Glow_"+primary
+                glows.push(dual)
+            }
+        };
+    }
+}
+
+function GlowTriplesWithBoth(elem1, elem2)
+{
+    for (var i in elements)
+    {
+        var primary = elements[i]
+        var panel = $("#"+primary+"Triples")
+        var childN = panel.GetChildCount()
+        for (var i = 0; i < childN; i++) {
+            var dual = panel.GetChild(i).GetChild(0)
+            if (towers[dual.id] !== undefined && (towers[dual.id].indexOf(elem1) != -1) && (towers[dual.id].indexOf(elem2) != -1))
+            {
+                dual.AddClass("Glow_"+primary)
+                dual.glow = "Glow_"+primary
+                glows.push(dual)
+            }
+        };
+    }
 }
 
 function ResolveDualGlows(primary, secondary1, secondary2) {

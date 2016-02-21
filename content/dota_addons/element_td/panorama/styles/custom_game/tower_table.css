@@ -263,6 +263,8 @@
     transition-property: box-shadow;
     transition-timing-function: ease-in;
     transition-duration: 0.2s;
+
+    tooltip-position: left;
 }
 
 .AbilityImage
@@ -273,6 +275,18 @@
     transition-property: box-shadow;
     transition-timing-function: ease-in;
     transition-duration: 0.2s;
+}
+
+.AbilityImageDual
+{
+    width: 70px;
+    height: 70px;
+    border: 2px solid #000000;
+    transition-property: box-shadow;
+    transition-timing-function: ease-in;
+    transition-duration: 0.2s;
+
+    tooltip-position: bottom;
 }
 
 .AbilityContainer
