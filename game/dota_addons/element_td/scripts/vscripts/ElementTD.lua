@@ -531,6 +531,10 @@ function ElementTD:OnConnectFull(keys)
                     Log:warn("Player "..playerID.." has no hero selected at game start!")
                     Log:info("Creating hero for player "..playerID)
                     local hero = CreateHeroForPlayer("npc_dota_hero_wisp", ply)
+
+                    if PLAYERS_NOT_VOTED[playerID] and START_GAME_TIME == 0 then
+                        CustomGameEventManager:Send_ServerToPlayer( ply, "etd_populate_vote_table", GameSettingsKV )
+                    end
                 end
             end
         else
