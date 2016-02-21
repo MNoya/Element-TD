@@ -44,7 +44,6 @@
             "5" { "ItemDef" "261" } // Pudge's Bracer
             "6" { "ItemDef" "262" } // Pudge's Toupee
             "7" { "ItemDef" "47" } // Pudge's Rusty Meathook
-            "8" { "ItemDef" "391" } // Pudge's Ambient Effects
         }
     }
 }

@@ -38,12 +38,10 @@
         "AttachWearables" // Default npc_dota_hero_gyrocopter
         {
             "1" { "ItemDef" "126" } // Gyrocopter's Bottles
-            "2" { "ItemDef" "527" } // Gyrocopter's Ambient Effects
-            "3" { "ItemDef" "177" } // Gyrocopter's Guns
-            "4" { "ItemDef" "178" } // Gyrocopter's Propeller
-            "5" { "ItemDef" "176" } // Gyrocopter's Goggles
-            "6" { "ItemDef" "131" } // Gyrocopter's head
-            "7" { "ItemDef" "179" } // Gyrocopter's Homing Missile
+            "2" { "ItemDef" "177" } // Gyrocopter's Guns
+            "3" { "ItemDef" "178" } // Gyrocopter's Propeller
+            "4" { "ItemDef" "176" } // Gyrocopter's Goggles
+            "5" { "ItemDef" "131" } // Gyrocopter's head
         }
     }
 }

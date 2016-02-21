@@ -36,11 +36,10 @@
         "AttachWearables" // Default npc_dota_hero_abaddon
         {
             "1" { "ItemDef" "455" } // Abaddon's Helmet
-            "2" { "ItemDef" "522" } // Abaddon's Ambient Effects
-            "3" { "ItemDef" "454" } // Abaddon's Weapon
-            "4" { "ItemDef" "457" } // Abaddon's Shoulder Armor
-            "5" { "ItemDef" "456" } // Abaddon's Cape
-            "6" { "ItemDef" "458" } // Abaddon's Mount
+            "2" { "ItemDef" "454" } // Abaddon's Weapon
+            "3" { "ItemDef" "457" } // Abaddon's Shoulder Armor
+            "4" { "ItemDef" "456" } // Abaddon's Cape
+            "5" { "ItemDef" "458" } // Abaddon's Mount
         }
     }
 }

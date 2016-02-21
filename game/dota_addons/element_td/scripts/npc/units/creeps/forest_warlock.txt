@@ -36,10 +36,9 @@
         "AttachWearables" // Default npc_dota_hero_necrolyte
         {
             "1" { "ItemDef" "213" } // Necrophos' Headdress
-            "2" { "ItemDef" "508" } // Necrophos' Ambient Effects
-            "3" { "ItemDef" "212" } // Necrophos' Beard
-            "4" { "ItemDef" "214" } // Necrophos' Vestments
-            "5" { "ItemDef" "211" } // Necrophos' Sickle
+            "2" { "ItemDef" "212" } // Necrophos' Beard
+            "3" { "ItemDef" "214" } // Necrophos' Vestments
+            "4" { "ItemDef" "211" } // Necrophos' Sickle
         }
     }
 }

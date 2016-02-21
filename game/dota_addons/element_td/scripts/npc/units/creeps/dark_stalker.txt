@@ -33,7 +33,7 @@
     "ScriptClass"        "CreepImage"
     "Ability1"        "dark_armor"
     "Ability2"        ""
-    "ParticleEffect"        "particles/econs/items/terrorblade/terrorblade_horns_arcana/terrorblade_ambient_horns_arcana.vpcf"
+
     "Creature"
     {
         "AttachWearables"

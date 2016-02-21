@@ -42,7 +42,6 @@
             "3" { "ItemDef" "9" } // Juggernaut's Bracers
             "4" { "ItemDef" "6" } // Juggernaut's Mask
             "5" { "ItemDef" "8" } // Juggernaut's Cape
-            "6" { "ItemDef" "560" } // Juggernaut's Healing Ward
         }
     }
 }

@@ -35,40 +35,15 @@
     "Ability2"        "creep_ability_mechanical"
     "Creature"
     {
-        "AttachWearables"
+        "AttachWearables" // Default npc_dota_hero_shredder
         {
-            "Wearable1"
-            {
-                "ItemDef"        "386"
-            }
-            "Wearable2"
-            {
-                "ItemDef"        "388"
-            }
-            "Wearable3"
-            {
-                "ItemDef"        "389"
-            }
-            "Wearable4"
-            {
-                "ItemDef"        "390"
-            }
-            "Wearable5"
-            {
-                "ItemDef"        "400"
-            }
-            "Wearable6"
-            {
-                "ItemDef"        "401"
-            }
-            "Wearable7"
-            {
-                "ItemDef"        "402"
-            }
-            "Wearable8"
-            {
-                "ItemDef"        "537"
-            }
+            "1" { "ItemDef" "390" } // Timbersaw's Torso
+            "2" { "ItemDef" "400" } // Timbersaw's Waist Saw
+            "3" { "ItemDef" "401" } // Timbersaw's Armor
+            "4" { "ItemDef" "402" } // Timbersaw's Right Arm
+            "5" { "ItemDef" "388" } // Timbersaw's Left Arm
+            "6" { "ItemDef" "389" } // Timbersaw's Shoulders
+            "7" { "ItemDef" "386" } // Timbersaw's Hat
         }
     }
 }

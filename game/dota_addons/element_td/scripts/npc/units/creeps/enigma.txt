@@ -35,14 +35,7 @@
     {
         "AttachWearables"
         {
-            "Wearable1"
-            {
-                "ItemDef"        "498"
-            }
-            "Wearable2"
-            {
-                "ItemDef"        "559"
-            }
+            "Wearable1" { "ItemDef"        "498" } //Ambient Effects
         }
     }
 }

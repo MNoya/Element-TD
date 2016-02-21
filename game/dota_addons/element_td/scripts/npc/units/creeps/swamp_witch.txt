@@ -38,12 +38,11 @@
     {
         "AttachWearables" // Default npc_dota_hero_medusa
         {
-            "1" { "ItemDef" "531" } // Medusa's Ambient Effects
-            "2" { "ItemDef" "382" } // Medusa's Veil
-            "3" { "ItemDef" "383" } // Medusa's Chest Armor
-            "4" { "ItemDef" "384" } // Medusa's Bracers
-            "5" { "ItemDef" "385" } // Medusa's Tail
-            "6" { "ItemDef" "381" } // Medusa's Bow
+            "1" { "ItemDef" "382" } // Medusa's Veil
+            "2" { "ItemDef" "383" } // Medusa's Chest Armor
+            "3" { "ItemDef" "384" } // Medusa's Bracers
+            "4" { "ItemDef" "385" } // Medusa's Tail
+            "5" { "ItemDef" "381" } // Medusa's Bow
         }
     }
 }

@@ -34,32 +34,14 @@
     "Ability2"        "creep_ability_fast"
     "Creature"
     {
-        "AttachWearables"
+        "AttachWearables" // Default npc_dota_hero_skywrath_mage
         {
-            "Wearable1"
-            {
-                "ItemDef"        "420"
-            }
-            "Wearable2"
-            {
-                "ItemDef"        "421"
-            }
-            "Wearable3"
-            {
-                "ItemDef"        "422"
-            }
-            "Wearable4"
-            {
-                "ItemDef"        "423"
-            }
-            "Wearable5"
-            {
-                "ItemDef"        "424"
-            }
-            "Wearable6"
-            {
-                "ItemDef"        "425"
-            }
+            "1" { "ItemDef" "420" } // Skywrath Mage's Weapon
+            "2" { "ItemDef" "424" } // Skywrath Mage's Shoulders
+            "3" { "ItemDef" "425" } // Skywrath Mage's Bracers
+            "4" { "ItemDef" "421" } // Skywrath Mage's Head
+            "5" { "ItemDef" "422" } // Skywrath Mage's Wings
+            "6" { "ItemDef" "423" } // Skywrath Mage's Belt
         }
     }
 }

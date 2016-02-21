@@ -38,10 +38,9 @@
         "AttachWearables" // Default npc_dota_hero_life_stealer
         {
             "1" { "ItemDef" "444" } // Lifestealer's Chains
-            "2" { "ItemDef" "530" } // Lifestealer's Ambient Effects
-            "3" { "ItemDef" "443" } // Lifestealer's Belt
-            "4" { "ItemDef" "8659" } // Lifestealer's Back
-            "5" { "ItemDef" "8658" } // Lifestealer's Head
+            "2" { "ItemDef" "443" } // Lifestealer's Belt
+            "3" { "ItemDef" "8659" } // Lifestealer's Back
+            "4" { "ItemDef" "8658" } // Lifestealer's Head
         }
     }
 }

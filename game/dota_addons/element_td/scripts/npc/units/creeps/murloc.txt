@@ -39,10 +39,9 @@
         {
             "1" { "ItemDef" "356" } // Slark's Hood
             "2" { "ItemDef" "336" } // Slark's Weapon
-            "3" { "ItemDef" "538" } // Slark's Ambient Effects
-            "4" { "ItemDef" "355" } // Slark's Cape
-            "5" { "ItemDef" "354" } // Slark's Shoulder Armor
-            "6" { "ItemDef" "353" } // Slark's Bracers
+            "3" { "ItemDef" "355" } // Slark's Cape
+            "4" { "ItemDef" "354" } // Slark's Shoulder Armor
+            "5" { "ItemDef" "353" } // Slark's Bracers
         }
     }
 }

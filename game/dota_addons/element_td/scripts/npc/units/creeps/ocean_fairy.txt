@@ -36,9 +36,8 @@
         "AttachWearables" // Default npc_dota_hero_puck
         {
             "1" { "ItemDef" "372" } // Puck's Head
-            "2" { "ItemDef" "510" } // Puck's Ambient Effects
-            "3" { "ItemDef" "370" } // Puck's Wings
-            "4" { "ItemDef" "371" } // Puck's Tail
+            "2" { "ItemDef" "370" } // Puck's Wings
+            "3" { "ItemDef" "371" } // Puck's Tail
         }
     }
 }

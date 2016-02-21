@@ -46,7 +46,6 @@
 	            "5" { "ItemDef" "261" } // Pudge's Bracer
 	            "6" { "ItemDef" "262" } // Pudge's Toupee
 	            "7" { "ItemDef" "47" } // Pudge's Rusty Meathook
-	            "8" { "ItemDef" "391" } // Pudge's Ambient Effects
 	        }
 	    }
 	}
@@ -391,7 +390,7 @@
 	    "ScriptClass"        "CreepImage"
 	    "Ability1"        "dark_armor"
 	    "Ability2"        ""
-	    "ParticleEffect"        "particles/econs/items/terrorblade/terrorblade_horns_arcana/terrorblade_ambient_horns_arcana.vpcf"
+	
 	    "Creature"
 	    {
 	        "AttachWearables"
@@ -453,11 +452,10 @@
 	        "AttachWearables" // Default npc_dota_hero_abaddon
 	        {
 	            "1" { "ItemDef" "455" } // Abaddon's Helmet
-	            "2" { "ItemDef" "522" } // Abaddon's Ambient Effects
-	            "3" { "ItemDef" "454" } // Abaddon's Weapon
-	            "4" { "ItemDef" "457" } // Abaddon's Shoulder Armor
-	            "5" { "ItemDef" "456" } // Abaddon's Cape
-	            "6" { "ItemDef" "458" } // Abaddon's Mount
+	            "2" { "ItemDef" "454" } // Abaddon's Weapon
+	            "3" { "ItemDef" "457" } // Abaddon's Shoulder Armor
+	            "4" { "ItemDef" "456" } // Abaddon's Cape
+	            "5" { "ItemDef" "458" } // Abaddon's Mount
 	        }
 	    }
 	}
@@ -505,7 +503,6 @@
 	            "3" { "ItemDef" "9" } // Juggernaut's Bracers
 	            "4" { "ItemDef" "6" } // Juggernaut's Mask
 	            "5" { "ItemDef" "8" } // Juggernaut's Cape
-	            "6" { "ItemDef" "560" } // Juggernaut's Healing Ward
 	        }
 	    }
 	}
@@ -596,10 +593,9 @@
 	        "AttachWearables" // Default npc_dota_hero_life_stealer
 	        {
 	            "1" { "ItemDef" "444" } // Lifestealer's Chains
-	            "2" { "ItemDef" "530" } // Lifestealer's Ambient Effects
-	            "3" { "ItemDef" "443" } // Lifestealer's Belt
-	            "4" { "ItemDef" "8659" } // Lifestealer's Back
-	            "5" { "ItemDef" "8658" } // Lifestealer's Head
+	            "2" { "ItemDef" "443" } // Lifestealer's Belt
+	            "3" { "ItemDef" "8659" } // Lifestealer's Back
+	            "4" { "ItemDef" "8658" } // Lifestealer's Head
 	        }
 	    }
 	}
@@ -710,14 +706,7 @@
 	    {
 	        "AttachWearables"
 	        {
-	            "Wearable1"
-	            {
-	                "ItemDef"        "498"
-	            }
-	            "Wearable2"
-	            {
-	                "ItemDef"        "559"
-	            }
+	            "Wearable1" { "ItemDef"        "498" } //Ambient Effects
 	        }
 	    }
 	}
@@ -876,10 +865,9 @@
 	        "AttachWearables" // Default npc_dota_hero_necrolyte
 	        {
 	            "1" { "ItemDef" "213" } // Necrophos' Headdress
-	            "2" { "ItemDef" "508" } // Necrophos' Ambient Effects
-	            "3" { "ItemDef" "212" } // Necrophos' Beard
-	            "4" { "ItemDef" "214" } // Necrophos' Vestments
-	            "5" { "ItemDef" "211" } // Necrophos' Sickle
+	            "2" { "ItemDef" "212" } // Necrophos' Beard
+	            "3" { "ItemDef" "214" } // Necrophos' Vestments
+	            "4" { "ItemDef" "211" } // Necrophos' Sickle
 	        }
 	    }
 	}
@@ -1003,40 +991,15 @@
 	    "Ability2"        "creep_ability_mechanical"
 	    "Creature"
 	    {
-	        "AttachWearables"
+	        "AttachWearables" // Default npc_dota_hero_shredder
 	        {
-	            "Wearable1"
-	            {
-	                "ItemDef"        "386"
-	            }
-	            "Wearable2"
-	            {
-	                "ItemDef"        "388"
-	            }
-	            "Wearable3"
-	            {
-	                "ItemDef"        "389"
-	            }
-	            "Wearable4"
-	            {
-	                "ItemDef"        "390"
-	            }
-	            "Wearable5"
-	            {
-	                "ItemDef"        "400"
-	            }
-	            "Wearable6"
-	            {
-	                "ItemDef"        "401"
-	            }
-	            "Wearable7"
-	            {
-	                "ItemDef"        "402"
-	            }
-	            "Wearable8"
-	            {
-	                "ItemDef"        "537"
-	            }
+	            "1" { "ItemDef" "390" } // Timbersaw's Torso
+	            "2" { "ItemDef" "400" } // Timbersaw's Waist Saw
+	            "3" { "ItemDef" "401" } // Timbersaw's Armor
+	            "4" { "ItemDef" "402" } // Timbersaw's Right Arm
+	            "5" { "ItemDef" "388" } // Timbersaw's Left Arm
+	            "6" { "ItemDef" "389" } // Timbersaw's Shoulders
+	            "7" { "ItemDef" "386" } // Timbersaw's Hat
 	        }
 	    }
 	}
@@ -1080,12 +1043,10 @@
 	        "AttachWearables" // Default npc_dota_hero_gyrocopter
 	        {
 	            "1" { "ItemDef" "126" } // Gyrocopter's Bottles
-	            "2" { "ItemDef" "527" } // Gyrocopter's Ambient Effects
-	            "3" { "ItemDef" "177" } // Gyrocopter's Guns
-	            "4" { "ItemDef" "178" } // Gyrocopter's Propeller
-	            "5" { "ItemDef" "176" } // Gyrocopter's Goggles
-	            "6" { "ItemDef" "131" } // Gyrocopter's head
-	            "7" { "ItemDef" "179" } // Gyrocopter's Homing Missile
+	            "2" { "ItemDef" "177" } // Gyrocopter's Guns
+	            "3" { "ItemDef" "178" } // Gyrocopter's Propeller
+	            "4" { "ItemDef" "176" } // Gyrocopter's Goggles
+	            "5" { "ItemDef" "131" } // Gyrocopter's head
 	        }
 	    }
 	}
@@ -1305,32 +1266,14 @@
 	    "Ability2"        "creep_ability_fast"
 	    "Creature"
 	    {
-	        "AttachWearables"
+	        "AttachWearables" // Default npc_dota_hero_skywrath_mage
 	        {
-	            "Wearable1"
-	            {
-	                "ItemDef"        "420"
-	            }
-	            "Wearable2"
-	            {
-	                "ItemDef"        "421"
-	            }
-	            "Wearable3"
-	            {
-	                "ItemDef"        "422"
-	            }
-	            "Wearable4"
-	            {
-	                "ItemDef"        "423"
-	            }
-	            "Wearable5"
-	            {
-	                "ItemDef"        "424"
-	            }
-	            "Wearable6"
-	            {
-	                "ItemDef"        "425"
-	            }
+	            "1" { "ItemDef" "420" } // Skywrath Mage's Weapon
+	            "2" { "ItemDef" "424" } // Skywrath Mage's Shoulders
+	            "3" { "ItemDef" "425" } // Skywrath Mage's Bracers
+	            "4" { "ItemDef" "421" } // Skywrath Mage's Head
+	            "5" { "ItemDef" "422" } // Skywrath Mage's Wings
+	            "6" { "ItemDef" "423" } // Skywrath Mage's Belt
 	        }
 	    }
 	}
@@ -1667,10 +1610,9 @@
 	        {
 	            "1" { "ItemDef" "356" } // Slark's Hood
 	            "2" { "ItemDef" "336" } // Slark's Weapon
-	            "3" { "ItemDef" "538" } // Slark's Ambient Effects
-	            "4" { "ItemDef" "355" } // Slark's Cape
-	            "5" { "ItemDef" "354" } // Slark's Shoulder Armor
-	            "6" { "ItemDef" "353" } // Slark's Bracers
+	            "3" { "ItemDef" "355" } // Slark's Cape
+	            "4" { "ItemDef" "354" } // Slark's Shoulder Armor
+	            "5" { "ItemDef" "353" } // Slark's Bracers
 	        }
 	    }
 	}
@@ -1793,9 +1735,8 @@
 	        "AttachWearables" // Default npc_dota_hero_puck
 	        {
 	            "1" { "ItemDef" "372" } // Puck's Head
-	            "2" { "ItemDef" "510" } // Puck's Ambient Effects
-	            "3" { "ItemDef" "370" } // Puck's Wings
-	            "4" { "ItemDef" "371" } // Puck's Tail
+	            "2" { "ItemDef" "370" } // Puck's Wings
+	            "3" { "ItemDef" "371" } // Puck's Tail
 	        }
 	    }
 	}
@@ -2264,12 +2205,11 @@
 	    {
 	        "AttachWearables" // Default npc_dota_hero_medusa
 	        {
-	            "1" { "ItemDef" "531" } // Medusa's Ambient Effects
-	            "2" { "ItemDef" "382" } // Medusa's Veil
-	            "3" { "ItemDef" "383" } // Medusa's Chest Armor
-	            "4" { "ItemDef" "384" } // Medusa's Bracers
-	            "5" { "ItemDef" "385" } // Medusa's Tail
-	            "6" { "ItemDef" "381" } // Medusa's Bow
+	            "1" { "ItemDef" "382" } // Medusa's Veil
+	            "2" { "ItemDef" "383" } // Medusa's Chest Armor
+	            "3" { "ItemDef" "384" } // Medusa's Bracers
+	            "4" { "ItemDef" "385" } // Medusa's Tail
+	            "5" { "ItemDef" "381" } // Medusa's Bow
 	        }
 	    }
 	}
