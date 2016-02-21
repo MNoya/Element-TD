@@ -492,11 +492,7 @@ function ElementTD:OnEntityKilled(keys)
             entity.waveObject:OnCreepKilled(index)
         end
         CREEP_SCRIPT_OBJECTS[index] = nil
-        --for towerID,_ in pairs(GetPlayerData(pID).towers) do
-            --UpdateUpgrades(EntIndexToHScript(towerID))
-        --end
 
-        UpdatePlayerSpells(playerID)
         UpdateScoreboard(playerID)
         Timers:RemoveTimer("MoveUnit"..index)
     end
