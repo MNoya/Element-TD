@@ -758,7 +758,7 @@
         
     
         "DOTA_Tooltip_ability_tidal_tower_splash_decay"                                   "Tidal Wave"
-        "DOTA_Tooltip_ability_tidal_tower_splash_decay_Description"                       "Every time it fires, its splash decreases by 10/20 AoE while its damage increases, which caps out when the tower reaches 0 AoE. Resets after %reset_time% second of not attacking."
+        "DOTA_Tooltip_ability_tidal_tower_splash_decay_Description"                       "Every time it fires, its splash decreases by 20 AoE while its damage increases, which caps out when the tower reaches 0 AoE. Resets after %reset_time% second of not attacking."
         "DOTA_Tooltip_ability_tidal_tower_splash_decay_damage"                            "DAMAGE PER STACK:"
         "DOTA_Tooltip_ability_tidal_tower_splash_decay_aoe"                               "AOE DECAY:"
         "DOTA_Tooltip_ability_tidal_tower_splash_decay_reset_time"                        "RESET TIME:"
