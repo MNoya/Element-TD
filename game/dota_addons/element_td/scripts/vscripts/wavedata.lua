@@ -395,7 +395,14 @@ function CreateMoveTimerForCreep(creep, sector)
                 local playerID = creep.playerID
                 local playerData = GetPlayerData(playerID)
                 
-                ReduceLivesForPlayer(playerID)
+                -- Reduce lives exponentially
+                if not creep.reduced_lives then
+                    creep.reduced_lives = 1
+                else
+                    creep.reduced_lives = creep.reduced_lives * 2
+                end
+
+                ReduceLivesForPlayer(playerID, creep.reduced_lives)
 
                 FindClearSpaceForUnit(creep, EntityStartLocations[playerData.sector + 1], true)
                 creep:SetForwardVector(Vector(0, -1, 0))
