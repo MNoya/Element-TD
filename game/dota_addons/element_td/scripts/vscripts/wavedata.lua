@@ -396,7 +396,7 @@ function CreateMoveTimerForCreep(creep, sector)
                 local playerData = GetPlayerData(playerID)
                 
                 -- Reduce lives exponentially
-                if not creep.reduced_lives then
+                if not creep.reduced_lives or creep:GetUnitName() == "icefrog" then
                     creep.reduced_lives = 1
                 else
                     creep.reduced_lives = creep.reduced_lives * 2
