@@ -74,6 +74,10 @@ function trickery_tower_conjure:OnSpellStart()
         clone.scriptClass = scriptClassName
         clone.scriptObject = scriptObject
         clone.scriptObject:OnCreated()
+
+        if clone.scriptObject.OnBuildingFinished then
+            clone.scriptObject:OnBuildingFinished()
+        end
     else
         Log:error("Unknown script class, " .. scriptClassName .. " for tower " .. clone.class)
     end
