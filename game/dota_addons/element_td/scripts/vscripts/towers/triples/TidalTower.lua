@@ -53,11 +53,11 @@ end
 
 function TidalTower:OnCreated()
     self.ability = AddAbility(self.tower, "tidal_tower_splash_decay", self.tower:GetLevel())
-    self.aoeDecay = GetAbilitySpecialValue("tidal_tower_splash_decay", "aoe")
+    self.aoeDecay = self.ability:GetLevelSpecialValueFor("aoe", self.ability:GetLevel()-1)
     self.fullAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))
     self.halfAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
-    self.douseDamage = GetAbilitySpecialValue("tidal_tower_splash_decay", "damage")
-    self.resetTime = GetAbilitySpecialValue("tidal_tower_splash_decay", "reset_time")
+    self.douseDamage = self.ability:GetLevelSpecialValueFor("damage", self.ability:GetLevel()-1)
+    self.resetTime = self.ability:GetSpecialValueFor("reset_time")
     self.tidalStacks = 0
     self.resetTimer = nil
 end
