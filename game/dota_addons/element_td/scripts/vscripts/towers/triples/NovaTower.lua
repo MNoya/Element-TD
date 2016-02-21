@@ -30,7 +30,7 @@ end
 function NovaTower:OnCreated()
     self.ability = AddAbility(self.tower, "nova_tower_explode", self.tower:GetLevel())
     self.explodeDamage = GetAbilitySpecialValue("nova_tower_explode", "damage")[self.tower:GetLevel()]
-    self.aoe = GetAbilitySpecialValue("nova_tower_explode", "aoe")+self.tower:GetHullRadius()
+    self.aoe = GetAbilitySpecialValue("nova_tower_explode", "aoe")[self.tower:GetLevel()]+self.tower:GetHullRadius()
     self.lastExplodeTime = 0
 end
 
