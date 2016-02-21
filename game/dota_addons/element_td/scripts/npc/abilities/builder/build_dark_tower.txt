@@ -5,7 +5,8 @@
 {
     "BaseClass"                     "ability_datadriven"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-    "MaxLevel"                      "1"
+    "MaxLevel"                      "3"
+    "LevelsBetweenUpgrades"         "0"
     "AbilityTextureName"            "elements/dark"
     
     "Building"                      "1"

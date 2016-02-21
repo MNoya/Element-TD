@@ -1,6 +1,17 @@
 -- spells.lua
 -- handles player spell upgrading
 
+function UpdateBuildAbility(playerID, ability)
+	local abilityName = ability:GetAbilityName()
+	local element = string.match(abilityName, "build_(%l+)_tower")
+	if element then
+		local level = GetPlayerElementLevel(playerID, element)
+		if ability:GetLevel() < level then
+			ability:SetLevel(level)
+		end
+	end
+end
+
 function UpdatePlayerSpells(playerID)
 	local playerData = GetPlayerData(playerID)
 	local hero = ElementTD.vPlayerIDToHero[playerID]
@@ -12,13 +23,18 @@ function UpdatePlayerSpells(playerID)
 				if string.match(abilityName, "_disabled") then
 					local enabledAbilityName = string.gsub(abilityName, "_disabled", "")
 					if MeetsAbilityElementRequirements(enabledAbilityName, playerID) then
-						AddAbility(hero, enabledAbilityName, 1)
+						local newAbility = AddAbility(hero, enabledAbilityName, 1)
 						hero:SwapAbilities(enabledAbilityName, abilityName, true, false)
 						hero:RemoveAbility(abilityName)
-						if IsCurrentlySelected( hero ) then
-							NewSelection( hero )
+
+						UpdateBuildAbility(playerID, newAbility)
+						
+						if IsCurrentlySelected(hero)  then
+							NewSelection(hero)
 						end
 					end
+				else
+					UpdateBuildAbility(playerID, ability)
 				end
 			end
 		end

@@ -7,7 +7,8 @@
 	{
 	    "BaseClass"                     "ability_datadriven"
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	    "MaxLevel"                      "1"
+	    "MaxLevel"                      "3"
+	    "LevelsBetweenUpgrades"         "0"
 	    "AbilityTextureName"            "elements/dark"
 	    
 	    "Building"                      "1"
@@ -50,7 +51,8 @@
 	{
 	    "BaseClass"                     "ability_datadriven"
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	    "MaxLevel"                      "1"
+	    "MaxLevel"                      "3"
+	    "LevelsBetweenUpgrades"         "0"
 	    "AbilityTextureName"            "elements/earth"
 	    
 	    "Building"                      "1"
@@ -93,7 +95,8 @@
 	{
 	    "BaseClass"                     "ability_datadriven"
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	    "MaxLevel"                      "1"
+	    "MaxLevel"                      "3"
+	    "LevelsBetweenUpgrades"         "0"
 	    "AbilityTextureName"            "elements/fire"
 	    
 	    "Building"                      "1"
@@ -136,7 +139,8 @@
 	{
 	    "BaseClass"                     "ability_datadriven"
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	    "MaxLevel"                      "1"
+	    "MaxLevel"                      "3"
+	    "LevelsBetweenUpgrades"         "0"
 	    "AbilityTextureName"            "elements/light"
 	    
 	    "Building"                      "1"
@@ -179,7 +183,8 @@
 	{
 	    "BaseClass"                     "ability_datadriven"
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	    "MaxLevel"                      "1"
+	    "MaxLevel"                      "3"
+	    "LevelsBetweenUpgrades"         "0"
 	    "AbilityTextureName"            "elements/nature"
 	    
 	    "Building"                      "1"
@@ -222,7 +227,8 @@
 	{
 	    "BaseClass"                     "ability_datadriven"
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	    "MaxLevel"                      "1"
+	    "MaxLevel"                      "3"
+	    "LevelsBetweenUpgrades"         "0"
 	    "AbilityTextureName"            "elements/water"
 	    
 	    "Building"                      "1"
