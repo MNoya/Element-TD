@@ -165,6 +165,7 @@ end
 -- call this after the players have been move to their proper spawn locations
 function ElementTD:StartGame()
     print("ElementTD Started!")
+
     Timers:CreateTimer(1, function()
         Log:info("The game has started!")
 
@@ -508,7 +509,6 @@ function ElementTD:OnConnectFull(keys)
     -- The Player entity of the joining user
     local ply = EntIndexToHScript(entIndex)    
     
-
     table.insert(players, ply)
     Timers:CreateTimer(0.03, function() -- To prevent it from being -1 when the player is created
         if ply:GetPlayerID() ~= -1 then
@@ -524,6 +524,17 @@ function ElementTD:OnConnectFull(keys)
             -- Update the user ID table with this user
             self.vUserIds[keys.userid] = ply
             self.vPlayerUserIds[playerID] = keys.userid
+        end
+
+        if GameRules:State_Get() >= DOTA_GAMERULES_STATE_HERO_SELECTION then
+            local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+            if not hero then
+                Log:warn("Player "..playerID.." has no hero selected at game start!")
+                if PlayerResource:GetConnectionState(playerID) ~= 2 then
+                    Log:info("Creating hero for player "..playerID)
+                    local hero = CreateHeroForPlayer("npc_dota_hero_wisp", ply)
+                end
+            end
         end
     end)
 end
