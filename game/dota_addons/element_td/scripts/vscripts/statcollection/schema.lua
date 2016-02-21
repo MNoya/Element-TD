@@ -87,7 +87,7 @@ function BuildPlayersArray()
                     gl = playerData.goldLost, -- Gold loss from selling
                     ig = playerData.interestGold, -- Interest gold earned
                     gt = playerData.goldTowerEarned > 0 and playerData.goldTowerEarned or "", -- Total gold earned from Money Towers
-                    dur = playerData.duration, -- Total seconds from start to death/win
+                    dur = round(playerData.duration), -- Total seconds from start to death/win
                     lh = PlayerResource:GetLastHits(playerID),
                     hst = playerID == hostID or 0, -- Is this player host
                     clr = playerData.victory, -- Did the player complete the game
