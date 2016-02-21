@@ -16,7 +16,7 @@
 		"Ability4"					"build_fire_tower_disabled"	
 		"Ability5"					"build_nature_tower_disabled"	
 		"Ability6"					"build_earth_tower_disabled"		
-		"Ability8"					""
+		"Ability8"					"hero_ui"
 		"Ability9"					""
 		"Ability10"					""
 		"Ability11"					""

@@ -1,0 +1,11 @@
+//============================================================//
+// Hero UI Icon
+//============================================================//
+"hero_ui"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "MaxLevel"                      "1"
+    
+    "DisplayAdditionalHeroes"      "1"
+}

@@ -440,6 +440,12 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:AddItem(CreateItem("item_build_cannon_tower", hero, hero))
     hero:AddItem(CreateItem("item_build_periodic_tower_disabled", hero, hero))
 
+    -- Additional Heroes UI
+    heroUI = hero:FindAbilityByName("hero_ui")
+    if heroUI then
+        heroUI:SetLevel(1)
+    end
+
     UpdatePlayerSpells(playerID)
     UpdateScoreboard(playerID)
 end
