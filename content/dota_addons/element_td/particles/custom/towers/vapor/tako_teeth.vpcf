@@ -69,12 +69,12 @@
 			m_flInitialRadius = 0.500000
 			m_flThickness = 0.100000
 			m_bEvenDistribution = true
-			m_flParticlesPerOrbit = 5.000000
+			m_flParticlesPerOrbit = 1.000000
 			m_nOverrideCP = 1
 		},
 		{
 			_class = "C_INIT_PositionPlaceOnGround"
-			m_flOffset = -50.000000
+			m_flOffset = -30.000000
 			m_CollisionGroupName = "DEBRIS"
 			m_flMaxTraceLength = 256.000000
 		},
@@ -116,25 +116,30 @@
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"
-			m_nParticlesToEmit = 5
+			m_nParticlesToEmit = 1
 		},
 	]
 	m_Children =
 	[
 		{
 			m_ChildRef = resource:"particles/custom/towers/vapor/tako_teeth_fx.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/vapor/tako_teeth_fx.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/vapor/tako_teeth_fx.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/vapor/tako_teeth_fx.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/vapor/tako_teeth_fx.vpcf"
+			m_bDisableChild = true
 		},
 	]
 }

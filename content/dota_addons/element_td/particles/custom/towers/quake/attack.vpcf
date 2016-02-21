@@ -32,6 +32,7 @@
 			m_bAdditive = true
 			m_hTexture = resource:"materials/particle/particle_heroring_bad.vtex"
 			m_nOrientationType = 2
+			m_bDisableOperator = true
 		},
 		{
 			_class = "C_OP_RenderScreenShake"
@@ -223,6 +224,7 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/quake/earthshaker_echoslam_start_f_egset.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/quake/earthshaker_echoslam_start_innerring_egset.vpcf"
@@ -234,13 +236,18 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/quake/earthshaker_echoslam_start_d_egset.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/quake/earthshaker_epicenter_start_e_egset.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/quake/earthshaker_echoslam_start_magma_egset.vpcf"
 			m_bDisableChild = true
+		},
+		{
+			m_ChildRef = resource:"particles/custom/towers/quake/slam.vpcf"
 		},
 	]
 }
