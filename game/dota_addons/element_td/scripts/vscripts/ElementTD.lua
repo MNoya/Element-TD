@@ -80,6 +80,7 @@ function ElementTD:InitGameMode()
 
     -- Lua Modifiers
     LinkLuaModifier("modifier_attack_targeting", "towers/modifier_attack_targeting", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_kill_count", "towers/modifier_kill_count", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_slow_adjustment", "towers/modifier_slow_adjustment", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("creep_haste_modifier", "creeps/creep_haste_modifier", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_stunned", "libraries/modifiers/modifier_stunned", LUA_MODIFIER_MOTION_NONE)

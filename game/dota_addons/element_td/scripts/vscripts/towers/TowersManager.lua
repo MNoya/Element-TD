@@ -123,3 +123,20 @@ function GetCloneTargetInRadius(caster, radius)
 
     return theChosenOne
 end
+
+function InitializeKillCount(tower)
+    tower:AddNewModifier(tower, nil, "modifier_kill_count", {})
+end
+
+function TransferKillCount(stacks, upgraded_tower)
+    upgraded_tower:SetModifierStackCount("modifier_kill_count", upgraded_tower, stacks)
+end
+
+function IncrementKillCount(tower)
+    if not tower or not IsValidEntity(tower) then return end
+
+    local modifier = tower:FindModifierByName("modifier_kill_count")
+    if modifier then
+        tower:SetModifierStackCount("modifier_kill_count", tower, tower:GetModifierStackCount("modifier_kill_count", tower) + 1)
+    end
+end

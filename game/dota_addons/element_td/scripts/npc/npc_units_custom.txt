@@ -3222,8 +3222,6 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        "Hero_Keeper_Of_The_Light"
 	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
-	    "Portrait"        "vgui/hud/heroportraits/portrait_keeper_of_the_light"
-	    "particle_folder"        "particles/units/heroes/hero_keeper_of_the_light"
 	    "ConsideredHero"        "1"
 	
 	    "Creature"
@@ -3280,8 +3278,6 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        "Hero_Keeper_Of_The_Light"
 	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
-	    "Portrait"        "vgui/hud/heroportraits/portrait_keeper_of_the_light"
-	    "particle_folder"        "particles/units/heroes/hero_keeper_of_the_light"
 	    "ConsideredHero"        "1"
 	
 	    "Creature"
@@ -3338,8 +3334,6 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        "Hero_Keeper_Of_The_Light"
 	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
-	    "Portrait"        "vgui/hud/heroportraits/portrait_keeper_of_the_light"
-	    "particle_folder"        "particles/units/heroes/hero_keeper_of_the_light"
 	    "ConsideredHero"        "1"
 	
 	    "Creature"
@@ -3862,9 +3856,7 @@
 	        }
 	    }
 	    "SoundSet"          "Hero_Nevermore"
-	    "IdleSoundLoop"     "Hero_Nevermore.IdleLoop"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_nevermore.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -3957,7 +3949,6 @@
 	    }
 	    "SoundSet"          "Hero_Tiny"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_tiny.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -4058,9 +4049,7 @@
 	        }
 	    }
 	    "SoundSet"          "Hero_Lina"
-	    "IdleSoundLoop"     "Hero_Lina.IdleLoop"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_lina.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -4154,9 +4143,7 @@
 	        }
 	    }
 	    "SoundSet"          "Hero_Nevermore"
-	    "IdleSoundLoop"     "Hero_Nevermore.IdleLoop"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_nevermore.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -4245,7 +4232,6 @@
 	    "Ability10" "tiny_model02"
 	    "SoundSet"          "Hero_Tiny"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_tiny.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -4333,9 +4319,7 @@
 	        }
 	    }
 	    "SoundSet"          "Hero_Lina"
-	    "IdleSoundLoop"     "Hero_Lina.IdleLoop"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_lina.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -4427,7 +4411,6 @@
 	    }
 	    "SoundSet"          "Hero_KeeperOfTheLight"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_keeper_of_the_light.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -4517,7 +4500,6 @@
 	    }
 	    "SoundSet"          "Hero_Furion"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_furion.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -4604,9 +4586,7 @@
 	        }
 	    }
 	    "SoundSet"          "Hero_Morphling"
-	    "IdleSoundLoop"        "Hero_Morphling.IdleLoop"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_morphling.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -4699,7 +4679,6 @@
 	    }
 	    "SoundSet"          "Hero_KeeperOfTheLight"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_keeper_of_the_light.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -4794,7 +4773,6 @@
 	    }
 	    "SoundSet"          "Hero_Furion"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_furion.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -4888,9 +4866,7 @@
 	        }
 	    }
 	    "SoundSet"          "Hero_Invoker"
-	    "IdleSoundLoop"     "Hero_Invoker.IdleLoop"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_invoker.vsndevts"
 	
 	    // Stats
 	    //-----------------------------
@@ -4973,9 +4949,7 @@
 	        }
 	    }
 	    "SoundSet"          "Hero_Nevermore"
-	    "IdleSoundLoop"     "Hero_Nevermore.IdleLoop"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_nevermore.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -5060,7 +5034,6 @@
 	    "Ability10" "tiny_model04"
 	    "SoundSet"          "Hero_Tiny"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_tiny.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -5143,9 +5116,7 @@
 	        }
 	    }
 	    "SoundSet"          "Hero_Lina"
-	    "IdleSoundLoop"     "Hero_Lina.IdleLoop"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_lina.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -5233,7 +5204,6 @@
 	    }
 	    "SoundSet"          "Hero_KeeperOfTheLight"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_keeper_of_the_light.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -5323,7 +5293,6 @@
 	    }
 	    "SoundSet"          "Hero_Furion"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_furion.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -5407,9 +5376,7 @@
 	        }
 	    }
 	    "SoundSet"          "Hero_Morphling"
-	    "IdleSoundLoop"        "Hero_Morphling.IdleLoop"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_morphling.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -5496,9 +5463,7 @@
 	        }
 	    }
 	    "SoundSet"          "Hero_Nevermore"
-	    "IdleSoundLoop"     "Hero_Nevermore.IdleLoop"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_nevermore.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -5587,7 +5552,6 @@
 	    "Ability10" "tiny_model03"
 	    "SoundSet"          "Hero_Tiny"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_tiny.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -5675,9 +5639,7 @@
 	        }
 	    }
 	    "SoundSet"          "Hero_Lina"
-	    "IdleSoundLoop"     "Hero_Lina.IdleLoop"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_lina.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -5769,7 +5731,6 @@
 	    }
 	    "SoundSet"          "Hero_KeeperOfTheLight"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_keeper_of_the_light.vsndevts"
 	    
 	    // Stats
 	    //----------------------------- 
@@ -5860,7 +5821,6 @@
 	    }
 	    "SoundSet"          "Hero_Furion"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_furion.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -5945,9 +5905,7 @@
 	        }
 	    }
 	    "SoundSet"          "Hero_Morphling"
-	    "IdleSoundLoop"        "Hero_Morphling.IdleLoop"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_morphling.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -6033,9 +5991,7 @@
 	        }
 	    }
 	    "SoundSet"          "Hero_Morphling"
-	    "IdleSoundLoop"        "Hero_Morphling.IdleLoop"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_morphling.vsndevts"
 	
 	    // Stats
 	    //----------------------------- 
@@ -6236,7 +6192,6 @@
 	    "ProjectileSpeed"        "1500"
 	    "Model"        "models/blacksmith_tower.vmdl"
 	    "ModelScale"        "1.1"
-	    "UpgradeIcon"        "towers/blacksmith_tower_fire_up"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -6309,7 +6264,6 @@
 	    "ProjectileSpeed"        "1500"
 	    "Model"        "models/blacksmith_tower.vmdl"
 	    "ModelScale"        "1.2"
-	    "UpgradeIcon"        "towers/blacksmith_tower_fire_up"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -6371,7 +6325,7 @@
 	    "DamageType"        "dark"
 	    "ScriptClass"        "DiseaseTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "10"
+	    "BuffPriority"          "10"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "550"
 	    "AttackAcquisitionRange"        "550"
@@ -6380,7 +6334,6 @@
 	    "ProjectileSpeed"        "3000"
 	    "Model"        "models/disease_tower1.vmdl"
 	    "ModelScale"        "0.6"
-	    "UpgradeIcon"        "towers/disease_tower_soul_reaper"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -6450,7 +6403,7 @@
 	    "DamageType"        "dark"
 	    "ScriptClass"        "DiseaseTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "6"
+	    "BuffPriority"          "6"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "550"
 	    "AttackAcquisitionRange"        "550"
@@ -6460,7 +6413,6 @@
 	    "Model"        "models/disease_tower2.vmdl"
 	    "ModelScale"        "0.6"
 	    "ModelRotation"     "135"
-	    "UpgradeIcon"        "towers/disease_tower_soul_reaper"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -6527,7 +6479,7 @@
 	    "DamageType"        "dark"
 	    "ScriptClass"        "DiseaseTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "2"
+	    "BuffPriority"          "2"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "550"
 	    "AttackAcquisitionRange"        "550"
@@ -6537,7 +6489,6 @@
 	    "Model"        "models/disease_tower3.vmdl"
 	    "ModelScale"        "0.6"
 	    "ModelRotation"     "135"
-	    "UpgradeIcon"        "towers/disease_tower_soul_reaper"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -6598,7 +6549,7 @@
 	    "DamageType"        "fire"
 	    "ScriptClass"        "ElectricityTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "10"
+	    "BuffPriority"          "10"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1150"
 	    "AttackAcquisitionRange"        "1150"
@@ -6611,7 +6562,6 @@
 	    "ModelRotation"    "90"
 	    "ModelOffset"      "15"
 	
-	    "UpgradeIcon"        "towers/electricty_tower_conjure_lightning"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -6678,7 +6628,7 @@
 	    "DamageType"        "fire"
 	    "ScriptClass"        "ElectricityTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "6"
+	    "BuffPriority"          "6"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1150"
 	    "AttackAcquisitionRange"        "1150"
@@ -6703,7 +6653,6 @@
 	        }
 	    }
 	
-	    "UpgradeIcon"        "towers/electricty_tower_conjure_lightning"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -6766,7 +6715,7 @@
 	    "DamageType"        "fire"
 	    "ScriptClass"        "ElectricityTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "2"
+	    "BuffPriority"          "2"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1150"
 	    "AttackAcquisitionRange"        "1150"
@@ -6790,7 +6739,6 @@
 	        }
 	    }
 	
-	    "UpgradeIcon"        "towers/electricty_tower_conjure_lightning"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -6819,9 +6767,7 @@
 	"flame_tower"
 	{
 	    "BaseClass"                 "npc_dota_creature" 
-	    "IdleSoundLoop"             "Hero_EmberSpirit.IdleLoop"
 	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
-	    "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_ember_spirit.vsndevts"
 	    "MinimapIcon"                "minimap_tower90"
 	    "MinimapIconSize"            "320"
 	    "ArmorPhysical"             "0"
@@ -6865,7 +6811,7 @@
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlameTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "10"
+	    "BuffPriority"          "10"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
@@ -6876,7 +6822,6 @@
 	    "ModelScale"        "1.0"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "UpgradeIcon"        "towers/flame_tower_sunburn"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -6926,9 +6871,7 @@
 	"flame_tower_2"
 	{
 	    "BaseClass"                 "npc_dota_creature" 
-	    "IdleSoundLoop"             "Hero_EmberSpirit.IdleLoop"
 	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
-	    "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_ember_spirit.vsndevts"
 	    "MinimapIcon"                "minimap_tower90"
 	    "MinimapIconSize"            "320"
 	    "ArmorPhysical"             "0"
@@ -6972,7 +6915,7 @@
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlameTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "6"
+	    "BuffPriority"          "6"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
@@ -6983,7 +6926,6 @@
 	    "ModelScale"        "1.1"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "UpgradeIcon"        "towers/flame_tower_sunburn"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -7016,9 +6958,7 @@
 	"flame_tower_3"
 	{
 	    "BaseClass"                 "npc_dota_creature" 
-	    "IdleSoundLoop"             "Hero_EmberSpirit.IdleLoop"
 	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
-	    "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_ember_spirit.vsndevts"
 	    "MinimapIcon"                "minimap_tower90"
 	    "MinimapIconSize"            "320"
 	    "ArmorPhysical"             "0"
@@ -7062,7 +7002,7 @@
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlameTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "2"
+	    "BuffPriority"          "2"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
@@ -7073,7 +7013,6 @@
 	    "ModelScale"        "1.2"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "UpgradeIcon"        "towers/flame_tower_sunburn"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -7147,7 +7086,7 @@
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "10"
+	    "BuffPriority"          "10"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1500"
 	    "AttackAcquisitionRange"        "1500"
@@ -7158,7 +7097,6 @@
 	    "ModelScale"        "0.8"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "15"
-	    "UpgradeIcon"        "techies_suicide"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -7238,7 +7176,7 @@
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "6"
+	    "BuffPriority"          "6"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1500"
 	    "AttackAcquisitionRange"        "1500"
@@ -7249,7 +7187,6 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "15"
-	    "UpgradeIcon"        "techies_suicide"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -7325,7 +7262,7 @@
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "2"
+	    "BuffPriority"          "2"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1500"
 	    "AttackAcquisitionRange"        "1500"
@@ -7336,7 +7273,6 @@
 	    "ModelScale"        "1"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "15"
-	    "UpgradeIcon"        "techies_suicide"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -7410,7 +7346,7 @@
 	    "DamageType"                "earth"
 	    "ScriptClass"               "HydroTower"
 	    "TowerType"                 "Normal"
-	        "BuffPriority"          "10"
+	    "BuffPriority"          "10"
 	    
 	    "Element"
 	    {
@@ -7507,7 +7443,7 @@
 	    "DamageType"                "earth"
 	    "ScriptClass"               "HydroTower"
 	    "TowerType"                 "Normal"
-	        "BuffPriority"          "6"
+	    "BuffPriority"          "6"
 	    
 	    "Requirements"
 	    {
@@ -7594,7 +7530,7 @@
 	    "DamageType"                "earth"
 	    "ScriptClass"               "HydroTower"
 	    "TowerType"                 "Normal"
-	        "BuffPriority"          "2"
+	    "BuffPriority"          "2"
 	    
 	    "Requirements"
 	    {
@@ -7677,7 +7613,7 @@
 	    "DamageType"        "light"
 	    "ScriptClass"        "IceTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "10"
+	    "BuffPriority"          "10"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -7689,7 +7625,6 @@
 	    "ModelRotation"             "90"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "UpgradeIcon"        "ancient_apparition_ice_blast"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -7768,7 +7703,7 @@
 	    "DamageType"        "light"
 	    "ScriptClass"        "IceTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "6"
+	    "BuffPriority"          "6"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -7779,7 +7714,6 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "UpgradeIcon"        "ancient_apparition_ice_blast"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -7854,7 +7788,7 @@
 	    "DamageType"        "light"
 	    "ScriptClass"        "IceTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "2"
+	    "BuffPriority"          "2"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -7865,7 +7799,6 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "UpgradeIcon"        "ancient_apparition_ice_blast"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -7942,7 +7875,7 @@
 	    "DamageType"        "nature"
 	    "ScriptClass"        "LifeTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "10"
+	    "BuffPriority"          "10"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1150"
 	    "AttackAcquisitionRange"        "1150"
@@ -7953,7 +7886,6 @@
 	    "ModelScale"        "0.8"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "UpgradeIcon"        "towers/life_tower_afterlife"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -8052,7 +7984,7 @@
 	    "DamageType"        "nature"
 	    "ScriptClass"        "LifeTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "6"
+	    "BuffPriority"          "6"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1150"
 	    "AttackAcquisitionRange"        "1150"
@@ -8063,7 +7995,6 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "UpgradeIcon"        "towers/life_tower_afterlife"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -8140,7 +8071,7 @@
 	    "DamageType"        "nature"
 	    "ScriptClass"        "LifeTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "2"
+	    "BuffPriority"          "2"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1150"
 	    "AttackAcquisitionRange"        "1150"
@@ -8151,7 +8082,6 @@
 	    "ModelScale"        "1"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "UpgradeIcon"        "towers/life_tower_afterlife"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -8223,7 +8153,7 @@
 	    "DamageType"        "dark"
 	    "ScriptClass"        "MagicTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "10"
+	    "BuffPriority"          "10"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "550"
 	    "AttackAcquisitionRange"        "1150"
@@ -8235,7 +8165,6 @@
 	    "ModelRotation"    "90"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "15"
-	    "UpgradeIcon"        "towers/magic_tower"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -8314,7 +8243,7 @@
 	    "DamageType"        "dark"
 	    "ScriptClass"        "MagicTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "6"
+	    "BuffPriority"          "6"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "550"
 	    "AttackAcquisitionRange"        "1150"
@@ -8325,7 +8254,6 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "15"
-	    "UpgradeIcon"        "towers/magic_tower"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -8401,7 +8329,7 @@
 	    "DamageType"        "dark"
 	    "ScriptClass"        "MagicTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "2"
+	    "BuffPriority"          "2"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "550"
 	    "AttackAcquisitionRange"        "1150"
@@ -8412,7 +8340,6 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "15"
-	    "UpgradeIcon"        "towers/magic_tower"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -8490,7 +8417,7 @@
 	    "DamageType"        "nature"
 	    "ScriptClass"        "MossTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "10"
+	    "BuffPriority"          "10"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
@@ -8501,7 +8428,6 @@
 	    "ModelScale"        "0.8"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "15"
-	    "UpgradeIcon"        "brewmaster_earth_pulverize"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -8587,7 +8513,7 @@
 	    "DamageType"        "nature"
 	    "ScriptClass"        "MossTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "6"
+	    "BuffPriority"          "6"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
@@ -8598,7 +8524,6 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "15"
-	    "UpgradeIcon"        "brewmaster_earth_pulverize"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -8679,7 +8604,7 @@
 	    "DamageType"        "nature"
 	    "ScriptClass"        "MossTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "2"
+	    "BuffPriority"          "2"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
@@ -8690,7 +8615,6 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "15"
-	    "UpgradeIcon"        "brewmaster_earth_pulverize"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -8722,9 +8646,7 @@
 	{
 	    "BaseClass"                 "npc_dota_creature"
 	    "SoundSet"                  "Hero_Venomancer"
-	    "IdleSoundLoop"             "Hero_Venomancer.IdleLoop"
 	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts"
-	    "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_venomancer.vsndevts"
 	    "SoundSet"                    "Tower.Water"
 	    "MinimapIcon"                "minimap_tower90"
 	    "MinimapIconSize"            "320"
@@ -8767,7 +8689,7 @@
 	    "DamageType"        "dark"
 	    "ScriptClass"        "PoisonTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "10"
+	    "BuffPriority"          "10"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -8780,7 +8702,6 @@
 	    "ModelOffset"               "10"
 	    "AOE_Full"        "100"
 	    "AOE_Half"        "200"
-	    "UpgradeIcon"        "towers/poison_tower_contamination"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -8833,9 +8754,7 @@
 	{
 	    "BaseClass"                 "npc_dota_creature"
 	    "SoundSet"                  "Hero_Venomancer"
-	    "IdleSoundLoop"             "Hero_Venomancer.IdleLoop"
 	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts"
-	    "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_venomancer.vsndevts" 
 	    "MinimapIcon"                "minimap_tower90"
 	    "MinimapIconSize"            "320"
 	    "ArmorPhysical"             "0"
@@ -8877,7 +8796,7 @@
 	    "DamageType"        "dark"
 	    "ScriptClass"        "PoisonTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "6"
+	    "BuffPriority"          "6"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -8890,7 +8809,6 @@
 	    "ModelOffset"               "10"
 	    "AOE_Full"        "100"
 	    "AOE_Half"        "200"
-	    "UpgradeIcon"        "towers/poison_tower_contamination"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -8925,9 +8843,7 @@
 	{
 	    "BaseClass"                 "npc_dota_creature"
 	    "SoundSet"                  "Hero_Venomancer"
-	    "IdleSoundLoop"             "Hero_Venomancer.IdleLoop"
 	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts"
-	    "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_venomancer.vsndevts" 
 	    "MinimapIcon"                "minimap_tower90"
 	    "MinimapIconSize"            "320"
 	    "ArmorPhysical"             "0"
@@ -8969,7 +8885,7 @@
 	    "DamageType"        "dark"
 	    "ScriptClass"        "PoisonTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "2"
+	    "BuffPriority"          "2"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -8982,7 +8898,6 @@
 	    "ModelOffset"               "10"
 	    "AOE_Full"        "100"
 	    "AOE_Half"        "200"
-	    "UpgradeIcon"        "towers/poison_tower_contamination"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -9060,7 +8975,7 @@
 	    "DamageType"        "light"
 	    "ScriptClass"        "QuarkTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "10"
+	    "BuffPriority"          "10"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
@@ -9071,7 +8986,6 @@
 	    "ModelScale"        "0.8"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "UpgradeIcon"        "towers/quark_tower_quantum_beam"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -9177,7 +9091,7 @@
 	    "DamageType"        "light"
 	    "ScriptClass"        "QuarkTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "6"
+	    "BuffPriority"          "6"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
@@ -9188,7 +9102,6 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "UpgradeIcon"        "towers/quark_tower_quantum_beam"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -9270,7 +9183,7 @@
 	    "DamageType"        "light"
 	    "ScriptClass"        "QuarkTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "2"
+	    "BuffPriority"          "2"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
@@ -9281,7 +9194,6 @@
 	    "ModelScale"        "1"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "UpgradeIcon"        "towers/quark_tower_quantum_beam"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -9371,7 +9283,6 @@
 	    "ModelScale"        "0.8"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "20"
-	    "UpgradeIcon"        "modifier_illusion"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -9476,7 +9387,6 @@
 	    "ModelScale"        "0.8"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "20"
-	    "UpgradeIcon"        "modifier_illusion"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -9562,7 +9472,6 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "20"
-	    "UpgradeIcon"        "modifier_illusion"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -9633,7 +9542,7 @@
 	    "DamageType"        "water"
 	    "ScriptClass"        "VaporTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "10"
+	    "BuffPriority"          "10"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
@@ -9644,7 +9553,6 @@
 	    "ModelScale"        "0.8"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "10"
-	    "UpgradeIcon"        "morphling_adaptive_strike"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -9738,7 +9646,7 @@
 	    "DamageType"        "water"
 	    "ScriptClass"        "VaporTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "6"
+	    "BuffPriority"          "6"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
@@ -9749,7 +9657,6 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "10"
-	    "UpgradeIcon"        "morphling_adaptive_strike"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -10094,9 +10001,7 @@
 	{
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"              "Hero_Oracle"
-	    "IdleSoundLoop"         "Hero_Oracle.IdleLoop"
 	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
-	    "VoiceFile"             "soundevents/voscripts/game_sounds_vo_oracle.vsndevts"
 	    "MinimapIcon"        "minimap_tower90"
 	    "MinimapIconSize"        "320"
 	    "ArmorPhysical"        "0"
@@ -10142,7 +10047,7 @@
 	    "DamageType"        "nature"
 	    "ScriptClass"        "EnchantmentTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "8"
+	    "BuffPriority"          "8"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -10169,7 +10074,6 @@
 	        }
 	    }
 	    
-	    "UpgradeIcon"        "leshrac_diabolic_edict"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -10191,9 +10095,7 @@
 	{
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"              "Hero_Oracle"
-	    "IdleSoundLoop"         "Hero_Oracle.IdleLoop"
 	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
-	    "VoiceFile"             "soundevents/voscripts/game_sounds_vo_oracle.vsndevts"
 	    "MinimapIcon"        "minimap_tower90"
 	    "MinimapIconSize"        "320"
 	    "ArmorPhysical"        "0"
@@ -10239,7 +10141,7 @@
 	    "DamageType"        "nature"
 	    "ScriptClass"        "EnchantmentTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "4"
+	    "BuffPriority"          "4"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -10265,7 +10167,6 @@
 	        }
 	    }
 	
-	    "UpgradeIcon"        "leshrac_diabolic_edict"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -10331,7 +10232,7 @@
 	    "DamageType"        "nature"
 	    "ScriptClass"        "EphemeralTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "7"
+	    "BuffPriority"          "7"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -10354,7 +10255,6 @@
 	            "5" { "ItemDef" "6838" } // Sentry of Tranquility
 	        }
 	    }
-	    "UpgradeIcon"        "towers/ephemeral_tower_phasing"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -10422,7 +10322,7 @@
 	    "DamageType"        "nature"
 	    "ScriptClass"        "EphemeralTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "3"
+	    "BuffPriority"          "3"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -10446,7 +10346,6 @@
 	        }
 	    }
 	
-	    "UpgradeIcon"        "towers/ephemeral_tower_phasing"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -10510,7 +10409,7 @@
 	    "DamageType"        "fire"
 	    "ScriptClass"        "ErosionTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "8"
+	    "BuffPriority"          "8"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
@@ -10537,7 +10436,6 @@
 	
 	    "AOE_Full"        "400"
 	    "AOE_Half"        "400"
-	    "UpgradeIcon"        "towers/erosion_tower_acid_attack"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -10605,7 +10503,7 @@
 	    "DamageType"        "fire"
 	    "ScriptClass"        "ErosionTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "4"
+	    "BuffPriority"          "4"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
@@ -10632,7 +10530,6 @@
 	
 	    "AOE_Full"        "400"
 	    "AOE_Half"        "400"
-	    "UpgradeIcon"        "towers/erosion_tower_acid_attack"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -10698,7 +10595,7 @@
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlamethrowerTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "7"
+	    "BuffPriority"          "7"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
@@ -10724,7 +10621,6 @@
 	    }
 	    "AOE_Half"        "300"
 	    "AOE_Full"        "150"
-	    "UpgradeIcon"        "batrider_sticky_napalm"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -10792,7 +10688,7 @@
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlamethrowerTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "3"
+	    "BuffPriority"          "3"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
@@ -10819,7 +10715,6 @@
 	
 	    "AOE_Half"        "300"
 	    "AOE_Full"        "150"
-	    "UpgradeIcon"        "batrider_sticky_napalm"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -10883,7 +10778,7 @@
 	    "DamageType"        "water"
 	    "ScriptClass"        "FloodingTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "7"
+	    "BuffPriority"          "7"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -10909,7 +10804,6 @@
 	    }    
 	
 	    "BuildTime"        "4"
-	    "UpgradeIcon"        "naga_siren_rip_tide"
 	    "Requirements"
 	    {
 	        "water"        "1"
@@ -10974,7 +10868,7 @@
 	    "DamageType"        "water"
 	    "ScriptClass"        "FloodingTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "3"
+	    "BuffPriority"          "3"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -11000,7 +10894,6 @@
 	    }
 	
 	    "BuildTime"        "4"
-	    "UpgradeIcon"        "naga_siren_rip_tide"
 	    "Requirements"
 	    {
 	        "water"        "2"
@@ -11065,7 +10958,7 @@
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GoldTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "7"
+	    "BuffPriority"          "7"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1150"
 	    "AttackAcquisitionRange"        "1150"
@@ -11093,7 +10986,6 @@
 	        }
 	    }
 	
-	    "UpgradeIcon"        "towers/gold_tower_arbitrage"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -11161,7 +11053,7 @@
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GoldTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "3"
+	    "BuffPriority"          "3"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1150"
 	    "AttackAcquisitionRange"        "1150"
@@ -11189,7 +11081,6 @@
 	        }
 	    }
 	
-	    "UpgradeIcon"        "towers/gold_tower_arbitrage"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -11255,7 +11146,7 @@
 	    "DamageType"        "light"
 	    "ScriptClass"        "HailTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "7"
+	    "BuffPriority"          "7"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1500"
 	    "AttackAcquisitionRange"        "1600"
@@ -11281,7 +11172,6 @@
 	        }
 	    }
 	
-	    "UpgradeIcon"        "crystal_maiden_freezing_field"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -11349,7 +11239,7 @@
 	    "DamageType"        "light"
 	    "ScriptClass"        "HailTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "3"
+	    "BuffPriority"          "3"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1500"
 	    "AttackAcquisitionRange"        "1600"
@@ -11375,7 +11265,6 @@
 	        }
 	    }
 	
-	    "UpgradeIcon"        "crystal_maiden_freezing_field"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -11441,7 +11330,7 @@
 	    "DamageType"        "fire"
 	    "ScriptClass"        "HasteTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "5"
+	    "BuffPriority"          "5"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -11465,7 +11354,6 @@
 	        }
 	    }
 	
-	    "UpgradeIcon"        "troll_warlord_fervor"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -11531,7 +11419,7 @@
 	    "DamageType"        "fire"
 	    "ScriptClass"        "HasteTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "2"
+	    "BuffPriority"          "2"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -11555,7 +11443,6 @@
 	        }
 	    }
 	
-	    "UpgradeIcon"        "troll_warlord_fervor"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -11617,7 +11504,7 @@
 	    "DamageType"        "nature"
 	    "ScriptClass"        "ImpulseTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "7"
+	    "BuffPriority"          "7"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1500"
 	    "AttackAcquisitionRange"        "1500"
@@ -11641,7 +11528,6 @@
 	        }
 	    }
 	    
-	    "UpgradeIcon"        "enchantress_impetus"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -11707,7 +11593,7 @@
 	    "DamageType"        "nature"
 	    "ScriptClass"        "ImpulseTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "3"
+	    "BuffPriority"          "3"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1500"
 	    "AttackAcquisitionRange"        "1500"
@@ -11731,7 +11617,6 @@
 	        }
 	    }
 	
-	    "UpgradeIcon"        "enchantress_impetus"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -11795,7 +11680,7 @@
 	    "DamageType"        "dark"
 	    "ScriptClass"        "JinxTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "8"
+	    "BuffPriority"          "8"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
@@ -11819,7 +11704,6 @@
 	        }
 	    }
 	
-	    "UpgradeIcon"        "witch_doctor_maledict"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -11885,7 +11769,7 @@
 	    "DamageType"        "dark"
 	    "ScriptClass"        "JinxTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "4"
+	    "BuffPriority"          "4"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
@@ -11909,7 +11793,6 @@
 	        }
 	    }
 	
-	    "UpgradeIcon"        "witch_doctor_maledict"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -11975,7 +11858,7 @@
 	    "DamageType"        "light"
 	    "ScriptClass"        "LaserTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "7"
+	    "BuffPriority"          "7"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -12001,7 +11884,6 @@
 	        }
 	    }
 	
-	    "UpgradeIcon"        "tinker_laser"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -12067,7 +11949,7 @@
 	    "DamageType"        "light"
 	    "ScriptClass"        "LaserTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "3"
+	    "BuffPriority"          "3"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -12094,7 +11976,6 @@
 	        }
 	    }
 	    
-	    "UpgradeIcon"        "tinker_laser"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -12156,7 +12037,7 @@
 	    "DamageType"        "earth"
 	    "ScriptClass"        "MuckTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "8"
+	    "BuffPriority"          "8"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
@@ -12183,7 +12064,6 @@
 	
 	    "AOE_Full"        "150"
 	    "AOE_Half"        "300"
-	    "UpgradeIcon"        "bristleback_viscous_nasal_goo"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -12249,7 +12129,7 @@
 	    "DamageType"        "earth"
 	    "ScriptClass"        "MuckTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "4"
+	    "BuffPriority"          "4"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
@@ -12275,7 +12155,6 @@
 	
 	    "AOE_Full"        "150"
 	    "AOE_Half"        "300"
-	    "UpgradeIcon"        "bristleback_viscous_nasal_goo"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -12339,7 +12218,7 @@
 	    "DamageType"        "light"
 	    "ScriptClass"        "NovaTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "8"
+	    "BuffPriority"          "8"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
@@ -12350,7 +12229,6 @@
 	    "ModelOffset"       "35"
 	    "DisableTurning"    "1"
 	    
-	    "UpgradeIcon"        "phoenix_supernova"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -12416,7 +12294,7 @@
 	    "DamageType"        "light"
 	    "ScriptClass"        "NovaTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "4"
+	    "BuffPriority"          "4"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
@@ -12427,7 +12305,6 @@
 	    "ModelOffset"       "35"
 	    "DisableTurning"    "1"
 	
-	    "UpgradeIcon"        "phoenix_supernova"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -12449,9 +12326,7 @@
 	{
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"          "Hero_ObsidianDestroyer"
-	    "IdleSoundLoop"     "Hero_ObsidianDestroyer.IdleLoop"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_outworld_destroyer.vsndevts"
 	    "MinimapIcon"        "minimap_tower90"
 	    "MinimapIconSize"        "320"
 	    "ArmorPhysical"        "0"
@@ -12495,7 +12370,7 @@
 	    "DamageType"        "dark"
 	    "ScriptClass"        "ObliterationTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "7"
+	    "BuffPriority"          "7"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1150"
 	    "AttackAcquisitionRange"        "1150"
@@ -12518,7 +12393,6 @@
 	        }
 	    }
 	
-	    "UpgradeIcon"        "obsidian_destroyer_sanity_eclipse"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -12542,9 +12416,7 @@
 	{
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"          "Hero_ObsidianDestroyer"
-	    "IdleSoundLoop"     "Hero_ObsidianDestroyer.IdleLoop"
 	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
-	    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_outworld_destroyer.vsndevts"
 	    "MinimapIcon"        "minimap_tower90"
 	    "MinimapIconSize"        "320"
 	    "ArmorPhysical"        "0"
@@ -12588,7 +12460,7 @@
 	    "DamageType"        "dark"
 	    "ScriptClass"        "ObliterationTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "3"
+	    "BuffPriority"          "3"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1150"
 	    "AttackAcquisitionRange"        "1150"
@@ -12611,7 +12483,6 @@
 	        }
 	    }
 	
-	    "UpgradeIcon"        "obsidian_destroyer_sanity_eclipse"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -12633,9 +12504,7 @@
 	{
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"             "Hero_Lich"
-	    "IdleSoundLoop"         "Hero_Lich.IdleLoop"
 	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
-	    "VoiceFile"             "soundevents/voscripts/game_sounds_vo_lich.vsndevts"
 	    "MinimapIcon"        "minimap_tower90"
 	    "MinimapIconSize"        "320"
 	    "ArmorPhysical"        "0"
@@ -12679,7 +12548,7 @@
 	    "DamageType"        "water"
 	    "ScriptClass"        "PolarTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "8"
+	    "BuffPriority"          "8"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -12706,7 +12575,6 @@
 	
 	    "AOE_Full"        "100"
 	    "AOE_Half"        "200"
-	    "UpgradeIcon"        "crystal_maiden_crystal_nova"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -12730,9 +12598,7 @@
 	{
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"                "Hero_Lich"
-	    "IdleSoundLoop"            "Hero_Lich.IdleLoop"
 	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
-	    "VoiceFile"                "soundevents/voscripts/game_sounds_vo_lich.vsndevts"
 	    "MinimapIcon"        "minimap_tower90"
 	    "MinimapIconSize"        "320"
 	    "ArmorPhysical"        "0"
@@ -12776,7 +12642,7 @@
 	    "DamageType"        "water"
 	    "ScriptClass"        "PolarTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "4"
+	    "BuffPriority"          "4"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -12803,7 +12669,6 @@
 	
 	    "AOE_Full"        "100"
 	    "AOE_Half"        "200"
-	    "UpgradeIcon"        "crystal_maiden_crystal_nova"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -12867,7 +12732,7 @@
 	    "DamageType"        "earth"
 	    "ScriptClass"        "QuakeTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "7"
+	    "BuffPriority"          "7"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "550"
 	    "AttackAcquisitionRange"        "550"
@@ -12890,7 +12755,6 @@
 	        }
 	    }
 	
-	    "UpgradeIcon"        "earthshaker_aftershock"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -12956,7 +12820,7 @@
 	    "DamageType"        "earth"
 	    "ScriptClass"        "QuakeTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "3"
+	    "BuffPriority"          "3"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "550"
 	    "AttackAcquisitionRange"        "550"
@@ -12980,7 +12844,6 @@
 	        }
 	    }
 	
-	    "UpgradeIcon"        "earthshaker_aftershock"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -13044,7 +12907,7 @@
 	    "DamageType"        "nature"
 	    "ScriptClass"        "RootsTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "8"
+	    "BuffPriority"          "8"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -13067,7 +12930,6 @@
 	        }
 	    }
 	
-	    "UpgradeIcon"        "treant_leech_seed"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -13133,7 +12995,7 @@
 	    "DamageType"        "nature"
 	    "ScriptClass"        "RootsTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "4"
+	    "BuffPriority"          "4"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -13155,7 +13017,6 @@
 	        }
 	    }
 	
-	    "UpgradeIcon"        "treant_leech_seed"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -13177,9 +13038,7 @@
 	{
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"              "Hero_Visage"
-	    "IdleSoundLoop"         "Hero_Visage.IdleLoop"
 	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_visage.vsndevts"
-	    "VoiceFile"             "soundevents/voscripts/game_sounds_vo_visage.vsndevts"
 	    "MinimapIcon"        "minimap_tower90"
 	    "MinimapIconSize"        "320"
 	    "ArmorPhysical"        "0"
@@ -13223,7 +13082,7 @@
 	    "DamageType"        "dark"
 	    "ScriptClass"        "RunicTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "7"
+	    "BuffPriority"          "7"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1150"
 	    "AttackAcquisitionRange"        "1150"
@@ -13251,7 +13110,6 @@
 	
 	    "AOE_Full"        "100"
 	    "AOE_Half"        "200"
-	    "UpgradeIcon"        "visage_gravekeepers_cloak"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -13276,7 +13134,6 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"              "Hero_Visage"
 	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_visage.vsndevts"
-	    "VoiceFile"             "soundevents/voscripts/game_sounds_vo_visage.vsndevts"
 	    "MinimapIcon"        "minimap_tower90"
 	    "MinimapIconSize"        "320"
 	    "ArmorPhysical"        "0"
@@ -13320,7 +13177,7 @@
 	    "DamageType"        "dark"
 	    "ScriptClass"        "RunicTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "3"
+	    "BuffPriority"          "3"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1150"
 	    "AttackAcquisitionRange"        "1150"
@@ -13348,7 +13205,6 @@
 	
 	    "AOE_Full"        "100"
 	    "AOE_Half"        "200"
-	    "UpgradeIcon"        "visage_gravekeepers_cloak"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {

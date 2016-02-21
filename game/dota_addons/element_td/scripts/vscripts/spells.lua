@@ -188,8 +188,17 @@ function UpgradeTower(keys)
 		ModifyPureEssence(playerID, -essenceCost)
 		GetPlayerData(playerID).towers[tower:entindex()] = nil --and remove it from the player's tower list
 
+		local scriptClassName = GetUnitKeyValue(newClass, "ScriptClass") or "BasicTower"
+		local stacks = tower:GetModifierStackCount("modifier_kill_count", tower)
+
 		-- Replace the tower by a new one
 		local newTower = BuildingHelper:UpgradeBuilding(tower, newClass)
+
+		-- Kill count is transfered if the tower is upgraded to one of the same type (single/dual/triple)
+		InitializeKillCount(newTower)
+		if scriptClassName == tower.scriptClass then
+			TransferKillCount(stacks, newTower)
+		end
 
 		-- set some basic values to this tower from its KeyValues
 		newTower.class = newClass
@@ -213,7 +222,6 @@ function UpgradeTower(keys)
 		end
 
 		-- Add sell ability
-		local scriptClassName = GetUnitKeyValue(newClass, "ScriptClass") or "BasicTower"
 		if IsPlayerUsingRandomMode(playerID) then
 			AddAbility(newTower, "sell_tower_100")
 		elseif string.find(newTower.class, "arrow_tower") ~= nil or string.find(newTower.class, "cannon_tower") ~= nil then

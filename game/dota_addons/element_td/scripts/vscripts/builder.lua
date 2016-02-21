@@ -87,6 +87,9 @@ function Build( event )
         -- Units can't attack while building
         unit:AddNewModifier(unit, nil, "modifier_attack_disabled", {})
 
+        -- Add kill tracker
+        InitializeKillCount(unit)
+
         -- Remove invulnerability on npc_dota_building baseclass
         unit:RemoveModifierByName("modifier_invulnerable")
 

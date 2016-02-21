@@ -22,9 +22,13 @@
         "etd_random_elemental"      "An elemental has been randomed for you!"
         "etd_random_essence"        "A pure essence has been randomed for you!"
 
-        "etd_lumber_add"            "You have been given +1 Lumber!"
-        "etd_essence_add"           "You have been given +1 Pure Essence!"
-
+        "etd_lumber_add"            "You have been given +{amount} Lumber!"
+        "etd_essence_add"           "You have been given +{amount} Pure Essence!"
+        "etd_acquire_element"       "Acquired {element} level {level}!"
+        "etd_next_wave"             "Wave {wave} in {breakTime} seconds"
+        "etd_wave_spawn"            "Wave {wave}"
+        "etd_next_boss_wave"        "Boss Wave in {breakTime} seconds"
+        "etd_boss_wave"             "Boss Wave {wave}"
         "etd_essence_buy_warning"   "You need to have at least one of every element or lvl 3 of one element before purchase."
         "etd_need_more_lumber"      "Need more lumber."
         "etd_error_support_tower"       "Ability Can't Target Support Towers"       
@@ -502,6 +506,9 @@
         "DOTA_Tooltip_ability_splash_damage_orb_Description"        "This tower's attacks deal damage in an area from where they land."
         "DOTA_Tooltip_modifier_support_tower"       "Support Tower"
         "DOTA_Tooltip_modifier_support_tower_Description"       "This is a support tower. It cannot receive buffs from other towers."
+
+        "DOTA_Tooltip_modifier_kill_count"                    "Kill Count"
+        "DOTA_Tooltip_modifier_kill_count_Description"        "Number of creeps this tower has killed.\nPreserved on upgrades of the same type."
         
         // ******************** TOWER ABILITIES ********************
         "DOTA_Tooltip_modifier_magic_tower_attack_range"        "Bonus Range"

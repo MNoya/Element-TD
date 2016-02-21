@@ -109,8 +109,11 @@ function DamageEntity(entity, attacker, damage)
 		
 		hero:ModifyGold(goldBounty)
 
-		if not entity.isUndead and entity:GetUnitName() ~= "icefrog" then
-			EmitSoundOnLocationForAllies(entity:GetOrigin(), "Gold.Coins", hero)
+		if not entity.isUndead then
+			IncrementKillCount(attacker)
+			if entity:GetUnitName() ~= "icefrog" then
+				EmitSoundOnLocationForAllies(entity:GetOrigin(), "Gold.Coins", hero)
+			end
 		end
 
 		entity:Kill(nil, attacker)
