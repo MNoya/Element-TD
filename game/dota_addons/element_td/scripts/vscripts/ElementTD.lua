@@ -529,10 +529,8 @@ function ElementTD:OnConnectFull(keys)
                 local hero = PlayerResource:GetSelectedHeroEntity(playerID)
                 if not hero then
                     Log:warn("Player "..playerID.." has no hero selected at game start!")
-                    if PlayerResource:GetConnectionState(playerID) ~= 2 then
-                        Log:info("Creating hero for player "..playerID)
-                        local hero = CreateHeroForPlayer("npc_dota_hero_wisp", ply)
-                    end
+                    Log:info("Creating hero for player "..playerID)
+                    local hero = CreateHeroForPlayer("npc_dota_hero_wisp", ply)
                 end
             end
         else
