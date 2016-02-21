@@ -504,6 +504,7 @@ function ScoreboardUpdater_GetSortedTeamInfoList( scoreboardHandle )
 
     // Sort teams by player score
     var scores = GameUI.CustomUIConfig().playerScore
+    $.Msg("Initial Scores: ", scores)
 
     // Fuck commas
     for (var i in scores)
@@ -513,14 +514,22 @@ function ScoreboardUpdater_GetSortedTeamInfoList( scoreboardHandle )
     }
 
     var sortedScores = scores.sort(function(a, b){return b-a});
+    var addedTeams = [];
     for (var i = 0; i < 8; i++)
     {
         var playerID = GetPlayerWithScore(sortedScores[i])
         if (Players.IsValidPlayerID(playerID))
         {
-            teamsList.push( Game.GetTeamDetails( Players.GetTeam(playerID) ) );
+            var teamID = Players.GetTeam(playerID)
+            if (!addedTeams[teamID])
+            {
+                addedTeams[teamID] = 1
+                teamsList.push( Game.GetTeamDetails(teamID) );
+            }
         }
     };
+    $.Msg("Sorted Scores: ", scores)
+    $.Msg("Sorted Teams: ", teamsList)
 
     return teamsList;
 }
