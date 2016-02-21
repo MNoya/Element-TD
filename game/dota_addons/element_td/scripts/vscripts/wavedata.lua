@@ -92,6 +92,11 @@ function StartBreakTime(playerID, breakTime, rush_wave)
         breakTime = 30
     end
 
+    -- First boss breaktime 60 seconds
+    if not EXPRESS_MODE and wave == WAVE_COUNT and CURRENT_BOSS_WAVE == 0 then
+        breakTime = 60
+    end
+
     if msgTime >= breakTime then
         msgTime = breakTime - 0.5
     end

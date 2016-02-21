@@ -53,7 +53,7 @@ end
 
 function ShowFirstBossWaveMessage( playerID )
     Notifications:ClearTop(playerID)
-    Notifications:Top(playerID, {text="Boss Wave in 30 seconds", class="WaveBreakTime", duration=10})
+    Notifications:Top(playerID, {text="Boss Wave in 60 seconds", class="WaveBreakTime", duration=10})
     local elem_color = rgbToHex(GetElementColor("composite"))
 
     Notifications:Top(playerID, {text=firstToUpper("composite"), style={["margin"]="-15px 15px 0px 15px",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, duration=10})
