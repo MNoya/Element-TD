@@ -114,6 +114,8 @@ function GameSettings:SetGameLength(length)
 
 		if length == "Express" then
 			EXPRESS_MODE = true
+
+            ElementTD:ExpressPrecache()
     	end
 	end
 	Log:info("Set game length to " .. length)

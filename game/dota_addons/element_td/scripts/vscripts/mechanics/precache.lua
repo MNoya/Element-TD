@@ -13,40 +13,76 @@ function Precache:Load(unitName)
 end
 
 function ElementTD:PrecacheWave(waveNumber)
-    if not Precache.waves[waveNumber] then
-        Precache.waves[waveNumber] = true
+    if not waveNumber then return end
 
+    if not Precache.waves[waveNumber] then
+        Log:info("Loading wave number "..waveNumber)
+        Precache.waves[waveNumber] = true
         Precache:Load(WAVE_CREEPS[waveNumber])
+
+        -- Check if this wave should also load towers
+        local load_waves = Precache.file["Async"]["load_waves"]
+        local load = load_waves["Classic"]
+        if EXPRESS_MODE then
+            load = load_waves["Express"]
+        end
+
+        local tower_wave_load = load[tostring(waveNumber+1)] --Check one wave in preparation
+        if tower_wave_load then
+            for tower_type,level in pairs(tower_wave_load) do
+                if tower_type=="singles" then
+                    ElementTD:PrecacheSingles(level)
+                elseif tower_type=="duals" then
+                    ElementTD:PrecacheDuals(level)
+                elseif tower_type=="triples" then
+                    ElementTD:PrecacheTriples(level)
+                end
+            end
+        end
     end
 end
 
-function ElementTD:PrecacheBasics(number, level)
-    local basics = Precache.file["Async"]["basics"]
-    local load = basics[tostring(level)]
+-- Loads lvl 1 duals and lvl 2 singles later, just in case
+function ElementTD:ExpressPrecache()
+    ElementTD:PrecacheDuals(1)
+    Timers:CreateTimer(15, function()
+        ElementTD:PrecacheTriples(1)
+    end)
+end
 
+function ElementTD:PrecacheSingles(level)
+    local singles = Precache.file["Async"]["singles"]
+    local load = singles[tostring(level)]
+    Log:info("Loading singles level "..level)
     ElementTD:PrecacheTowerTable(load)
 end
 
-function ElementTD:PrecacheDuals(number, level)
+function ElementTD:PrecacheDuals(level)
     local duals = Precache.file["Async"]["duals"]
     local load = duals[tostring(level)]
-
+    Log:info("Loading duals level "..level)
     ElementTD:PrecacheTowerTable(load)
 end
 
-function ElementTD:PrecacheTriples(number, level)
+function ElementTD:PrecacheTriples(level)
     local triples = Precache.file["Async"]["triples"]
     local load = triples[tostring(level)]
-
+    Log:info("Loading triples level "..level)
     ElementTD:PrecacheTowerTable(load)
 end
 
 function ElementTD:PrecacheTowerTable(table)
+    local len = tablelength(table)
+    local time_per_entry = 0.3
+    local i = 0
+
     for towerName,_ in pairs(table) do
         if not Precache.towers[towerName] then
-            Precache.towers[towerName] = true
-
-            Precache:Load(towerName)
+            Timers:CreateTimer(i*time_per_entry, function()
+                Precache.towers[towerName] = true
+                Precache:Load(towerName)
+            end)
+            i = i+1
         end
     end
 end
