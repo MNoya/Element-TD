@@ -24,9 +24,7 @@
         }
     }
     "SoundSet"          "Hero_Lina"
-    "IdleSoundLoop"     "Hero_Lina.IdleLoop"
     "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
-    "VoiceFile"         "soundevents/voscripts/game_sounds_vo_lina.vsndevts"
 
     // Stats
     //----------------------------- 

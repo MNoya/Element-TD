@@ -46,7 +46,7 @@
     "DamageType"        "fire"
     "ScriptClass"        "ErosionTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "8"
+    "BuffPriority"          "8"
     "HasAbilityDesc"        "1"
     "AttackRange"        "700"
     "AttackAcquisitionRange"        "700"
@@ -73,7 +73,6 @@
 
     "AOE_Full"        "400"
     "AOE_Half"        "400"
-    "UpgradeIcon"        "towers/erosion_tower_acid_attack"
     "BuildTime"        "4"
     "Requirements"
     {

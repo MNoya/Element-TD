@@ -42,7 +42,7 @@
     "DamageType"        "light"
     "ScriptClass"        "IceTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "10"
+    "BuffPriority"          "10"
     "HasAbilityDesc"        "1"
     "AttackRange"        "900"
     "AttackAcquisitionRange"        "900"
@@ -54,7 +54,6 @@
     "ModelRotation"             "90"
     "ModelRotation"             "90"
     "ModelOffset"               "20"
-    "UpgradeIcon"        "ancient_apparition_ice_blast"
     "BuildTime"        "3"
     "Requirements"
     {

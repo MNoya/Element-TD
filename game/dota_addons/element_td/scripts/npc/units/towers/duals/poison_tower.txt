@@ -2,9 +2,7 @@
 {
     "BaseClass"                 "npc_dota_creature"
     "SoundSet"                  "Hero_Venomancer"
-    "IdleSoundLoop"             "Hero_Venomancer.IdleLoop"
     "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts"
-    "VoiceFile"                 "soundevents/voscripts/game_sounds_vo_venomancer.vsndevts"
     "SoundSet"                    "Tower.Water"
     "MinimapIcon"                "minimap_tower90"
     "MinimapIconSize"            "320"
@@ -47,7 +45,7 @@
     "DamageType"        "dark"
     "ScriptClass"        "PoisonTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "10"
+    "BuffPriority"          "10"
     "HasAbilityDesc"        "1"
     "AttackRange"        "900"
     "AttackAcquisitionRange"        "900"
@@ -60,7 +58,6 @@
     "ModelOffset"               "10"
     "AOE_Full"        "100"
     "AOE_Half"        "200"
-    "UpgradeIcon"        "towers/poison_tower_contamination"
     "BuildTime"        "3"
     "Requirements"
     {

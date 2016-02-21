@@ -44,7 +44,7 @@
     "DamageType"        "light"
     "ScriptClass"        "NovaTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "4"
+    "BuffPriority"          "4"
     "HasAbilityDesc"        "1"
     "AttackRange"        "700"
     "AttackAcquisitionRange"        "700"
@@ -55,7 +55,6 @@
     "ModelOffset"       "35"
     "DisableTurning"    "1"
 
-    "UpgradeIcon"        "phoenix_supernova"
     "BuildTime"        "4"
     "Requirements"
     {

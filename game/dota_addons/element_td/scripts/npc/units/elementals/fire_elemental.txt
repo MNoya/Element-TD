@@ -30,7 +30,6 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        "Hero_Lina"
     "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
-    "Portrait"        "vgui/hud/heroportraits/portrait_lina"
 
     "ConsideredHero"        "1"
 
@@ -88,7 +87,6 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        "Hero_Lina"
     "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
-    "Portrait"        "vgui/hud/heroportraits/portrait_lina"
     "ConsideredHero"        "1"
 
     "Creature"
@@ -111,8 +109,6 @@
     "Ability1"        "fire_armor"
     "Ability10" "lina_particles"
 }
-
-
 "fire_elemental3"
 {
     "MinimapIcon"               "minimap_elemental_fire"
@@ -145,7 +141,6 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        "Hero_Lina"
     "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
-    "Portrait"        "vgui/hud/heroportraits/portrait_lina"
     "ConsideredHero"        "1"
 
     "Creature"

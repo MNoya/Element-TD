@@ -46,7 +46,7 @@
     "DamageType"        "dark"
     "ScriptClass"        "DiseaseTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "2"
+    "BuffPriority"          "2"
     "HasAbilityDesc"        "1"
     "AttackRange"        "550"
     "AttackAcquisitionRange"        "550"
@@ -56,7 +56,6 @@
     "Model"        "models/disease_tower3.vmdl"
     "ModelScale"        "0.6"
     "ModelRotation"     "135"
-    "UpgradeIcon"        "towers/disease_tower_soul_reaper"
     "BuildTime"        "3"
     "Requirements"
     {

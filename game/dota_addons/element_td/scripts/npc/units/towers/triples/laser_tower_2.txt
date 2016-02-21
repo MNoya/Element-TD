@@ -46,7 +46,7 @@
     "DamageType"        "light"
     "ScriptClass"        "LaserTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "3"
+    "BuffPriority"          "3"
     "HasAbilityDesc"        "1"
     "AttackRange"        "900"
     "AttackAcquisitionRange"        "900"
@@ -73,7 +73,6 @@
         }
     }
     
-    "UpgradeIcon"        "tinker_laser"
     "BuildTime"        "4"
     "Requirements"
     {

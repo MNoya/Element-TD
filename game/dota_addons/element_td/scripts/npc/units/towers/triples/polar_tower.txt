@@ -2,9 +2,7 @@
 {
     "BaseClass"        "npc_dota_creature"
     "SoundSet"             "Hero_Lich"
-    "IdleSoundLoop"         "Hero_Lich.IdleLoop"
     "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
-    "VoiceFile"             "soundevents/voscripts/game_sounds_vo_lich.vsndevts"
     "MinimapIcon"        "minimap_tower90"
     "MinimapIconSize"        "320"
     "ArmorPhysical"        "0"
@@ -48,7 +46,7 @@
     "DamageType"        "water"
     "ScriptClass"        "PolarTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "8"
+    "BuffPriority"          "8"
     "HasAbilityDesc"        "1"
     "AttackRange"        "900"
     "AttackAcquisitionRange"        "900"
@@ -75,7 +73,6 @@
 
     "AOE_Full"        "100"
     "AOE_Half"        "200"
-    "UpgradeIcon"        "crystal_maiden_crystal_nova"
     "BuildTime"        "4"
     "Requirements"
     {

@@ -44,7 +44,7 @@
     "DamageType"        "water"
     "ScriptClass"        "WindstormTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "4"
+    "BuffPriority"          "4"
     "HasAbilityDesc"        "1"
     "AttackRange"        "900"
     "AttackAcquisitionRange"        "0"
@@ -69,8 +69,6 @@
         }
     }
 
-
-    "UpgradeIcon"        "towers/windstorm_tower_tornado"
     "BuildTime"        "4"
     "Requirements"
     {

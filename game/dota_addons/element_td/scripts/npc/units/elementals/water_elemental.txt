@@ -30,8 +30,7 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        "Hero_Morphling"
     "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
-    "Portrait"        "vgui/hud/heroportraits/portrait_morphling"
-    "particle_folder"        "particles/units/heroes/hero_morphling"
+
     "ConsideredHero"        "1"
 
     "Creature"
@@ -82,8 +81,6 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        "Hero_Morphling"
     "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
-    "Portrait"        "vgui/hud/heroportraits/portrait_morphling"
-    "particle_folder"        "particles/units/heroes/hero_morphling"
     "ConsideredHero"        "1"
 
     "Creature"
@@ -139,8 +136,6 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        "Hero_Morphling"
     "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
-    "Portrait"        "vgui/hud/heroportraits/portrait_morphling"
-    "particle_folder"        "particles/units/heroes/hero_morphling"
     "ConsideredHero"        "1"
 
     "Creature"

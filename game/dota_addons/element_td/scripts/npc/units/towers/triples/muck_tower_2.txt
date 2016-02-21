@@ -44,7 +44,7 @@
     "DamageType"        "earth"
     "ScriptClass"        "MuckTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "4"
+    "BuffPriority"          "4"
     "HasAbilityDesc"        "1"
     "AttackRange"        "700"
     "AttackAcquisitionRange"        "700"
@@ -70,7 +70,6 @@
 
     "AOE_Full"        "150"
     "AOE_Half"        "300"
-    "UpgradeIcon"        "bristleback_viscous_nasal_goo"
     "BuildTime"        "4"
     "Requirements"
     {

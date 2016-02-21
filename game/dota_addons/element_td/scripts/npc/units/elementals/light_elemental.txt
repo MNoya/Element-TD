@@ -30,8 +30,6 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        "Hero_Keeper_Of_The_Light"
     "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
-    "Portrait"        "vgui/hud/heroportraits/portrait_keeper_of_the_light"
-    "particle_folder"        "particles/units/heroes/hero_keeper_of_the_light"
     "ConsideredHero"        "1"
 
     "Creature"
@@ -88,8 +86,6 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        "Hero_Keeper_Of_The_Light"
     "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
-    "Portrait"        "vgui/hud/heroportraits/portrait_keeper_of_the_light"
-    "particle_folder"        "particles/units/heroes/hero_keeper_of_the_light"
     "ConsideredHero"        "1"
 
     "Creature"
@@ -146,8 +142,6 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        "Hero_Keeper_Of_The_Light"
     "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
-    "Portrait"        "vgui/hud/heroportraits/portrait_keeper_of_the_light"
-    "particle_folder"        "particles/units/heroes/hero_keeper_of_the_light"
     "ConsideredHero"        "1"
 
     "Creature"

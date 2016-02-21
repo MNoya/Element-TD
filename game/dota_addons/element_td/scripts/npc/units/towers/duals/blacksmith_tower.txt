@@ -55,7 +55,6 @@
     "ProjectileSpeed"        "1500"
     "Model"        "models/blacksmith_tower.vmdl"
     "ModelScale"        "1"
-    "UpgradeIcon"        "towers/blacksmith_tower_fire_up"
     "BuildTime"        "3"
     "Requirements"
     {
@@ -71,8 +70,6 @@
         "4"        "haste_tower"
         "5"        "flamethrower_tower"
     }
-
-
     // Building Size
     "ConstructionSize"          "2"
     "BlockPathingSize"          "0"

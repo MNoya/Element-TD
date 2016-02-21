@@ -3058,7 +3058,6 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        "Hero_Lina"
 	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
-	    "Portrait"        "vgui/hud/heroportraits/portrait_lina"
 	
 	    "ConsideredHero"        "1"
 	
@@ -3116,7 +3115,6 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        "Hero_Lina"
 	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
-	    "Portrait"        "vgui/hud/heroportraits/portrait_lina"
 	    "ConsideredHero"        "1"
 	
 	    "Creature"
@@ -3139,8 +3137,6 @@
 	    "Ability1"        "fire_armor"
 	    "Ability10" "lina_particles"
 	}
-	
-	
 	"fire_elemental3"
 	{
 	    "MinimapIcon"               "minimap_elemental_fire"
@@ -3173,7 +3169,6 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        "Hero_Lina"
 	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
-	    "Portrait"        "vgui/hud/heroportraits/portrait_lina"
 	    "ConsideredHero"        "1"
 	
 	    "Creature"
@@ -3400,7 +3395,6 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        "Hero_Furion"
 	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
-	    "Portrait"        "vgui/hud/heroportraits/portrait_furion"
 	    "ConsideredHero"        "1"
 	
 	    "Creature"
@@ -3457,7 +3451,6 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        "Hero_Furion"
 	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
-	    "Portrait"        "vgui/hud/heroportraits/portrait_furion"
 	    "ConsideredHero"        "1"
 	
 	    "Creature"
@@ -3514,7 +3507,6 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        "Hero_Furion"
 	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
-	    "Portrait"        "vgui/hud/heroportraits/portrait_furion"
 	    "ConsideredHero"        "1"
 	
 	    "Creature"
@@ -3570,8 +3562,7 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        "Hero_Morphling"
 	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
-	    "Portrait"        "vgui/hud/heroportraits/portrait_morphling"
-	    "particle_folder"        "particles/units/heroes/hero_morphling"
+	
 	    "ConsideredHero"        "1"
 	
 	    "Creature"
@@ -3622,8 +3613,6 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        "Hero_Morphling"
 	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
-	    "Portrait"        "vgui/hud/heroportraits/portrait_morphling"
-	    "particle_folder"        "particles/units/heroes/hero_morphling"
 	    "ConsideredHero"        "1"
 	
 	    "Creature"
@@ -3679,8 +3668,6 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        "Hero_Morphling"
 	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
-	    "Portrait"        "vgui/hud/heroportraits/portrait_morphling"
-	    "particle_folder"        "particles/units/heroes/hero_morphling"
 	    "ConsideredHero"        "1"
 	
 	    "Creature"
@@ -6174,7 +6161,6 @@
 	    "ProjectileSpeed"        "1500"
 	    "Model"        "models/blacksmith_tower.vmdl"
 	    "ModelScale"        "1"
-	    "UpgradeIcon"        "towers/blacksmith_tower_fire_up"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -6190,8 +6176,6 @@
 	        "4"        "haste_tower"
 	        "5"        "flamethrower_tower"
 	    }
-	
-	
 	    // Building Size
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
@@ -13291,7 +13275,6 @@
 	{
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"              "Hero_Visage"
-	    "IdleSoundLoop"         "Hero_Visage.IdleLoop"
 	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_visage.vsndevts"
 	    "VoiceFile"             "soundevents/voscripts/game_sounds_vo_visage.vsndevts"
 	    "MinimapIcon"        "minimap_tower90"
@@ -13429,7 +13412,7 @@
 	    "DamageType"        "water"
 	    "ScriptClass"        "TidalTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "7"
+	    "BuffPriority"          "7"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -13457,7 +13440,6 @@
 	
 	    "AOE_Full"        "200"
 	    "AOE_Half"        "400"
-	    "UpgradeIcon"        "towers/tidal_tower_douse"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -13482,8 +13464,6 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "MinimapIcon"        "minimap_tower90"
 	    "MinimapIconSize"        "320"
-	    "SoundSet"                  "Hero_Bane"
-	    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"
 	    "ArmorPhysical"        "0"
 	    "MagicalResistance"        "0"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -13525,7 +13505,7 @@
 	    "DamageType"        "water"
 	    "ScriptClass"        "TidalTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "3"
+	    "BuffPriority"          "3"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
@@ -13553,7 +13533,6 @@
 	
 	    "AOE_Full"        "200"
 	    "AOE_Half"        "400"
-	    "UpgradeIcon"        "towers/tidal_tower_douse"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -13656,7 +13635,7 @@
 	    "DamageType"        "water"
 	    "ScriptClass"        "WindstormTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "8"
+	    "BuffPriority"          "8"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "0"
@@ -13680,9 +13659,7 @@
 	            "6" { "ItemDef" "513" } // Razor's Ambient Effects
 	        }
 	    }
-	
-	
-	    "UpgradeIcon"        "towers/windstorm_tower_tornado"
+	    
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {
@@ -13748,7 +13725,7 @@
 	    "DamageType"        "water"
 	    "ScriptClass"        "WindstormTower"
 	    "TowerType"        "Normal"
-	        "BuffPriority"          "4"
+	    "BuffPriority"          "4"
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "0"
@@ -13773,8 +13750,6 @@
 	        }
 	    }
 	
-	
-	    "UpgradeIcon"        "towers/windstorm_tower_tornado"
 	    "BuildTime"        "4"
 	    "Requirements"
 	    {

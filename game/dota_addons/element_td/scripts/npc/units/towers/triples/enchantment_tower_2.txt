@@ -2,9 +2,7 @@
 {
     "BaseClass"        "npc_dota_creature"
     "SoundSet"              "Hero_Oracle"
-    "IdleSoundLoop"         "Hero_Oracle.IdleLoop"
     "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
-    "VoiceFile"             "soundevents/voscripts/game_sounds_vo_oracle.vsndevts"
     "MinimapIcon"        "minimap_tower90"
     "MinimapIconSize"        "320"
     "ArmorPhysical"        "0"
@@ -50,7 +48,7 @@
     "DamageType"        "nature"
     "ScriptClass"        "EnchantmentTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "4"
+    "BuffPriority"          "4"
     "HasAbilityDesc"        "1"
     "AttackRange"        "900"
     "AttackAcquisitionRange"        "900"
@@ -76,7 +74,6 @@
         }
     }
 
-    "UpgradeIcon"        "leshrac_diabolic_edict"
     "BuildTime"        "4"
     "Requirements"
     {

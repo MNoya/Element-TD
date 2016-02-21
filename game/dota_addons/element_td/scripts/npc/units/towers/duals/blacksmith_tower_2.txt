@@ -54,7 +54,6 @@
     "ProjectileSpeed"        "1500"
     "Model"        "models/blacksmith_tower.vmdl"
     "ModelScale"        "1.1"
-    "UpgradeIcon"        "towers/blacksmith_tower_fire_up"
     "BuildTime"        "3"
     "Requirements"
     {

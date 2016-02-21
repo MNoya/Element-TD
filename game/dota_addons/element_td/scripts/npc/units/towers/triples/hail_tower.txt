@@ -46,7 +46,7 @@
     "DamageType"        "light"
     "ScriptClass"        "HailTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "7"
+    "BuffPriority"          "7"
     "HasAbilityDesc"        "1"
     "AttackRange"        "1500"
     "AttackAcquisitionRange"        "1600"
@@ -72,7 +72,6 @@
         }
     }
 
-    "UpgradeIcon"        "crystal_maiden_freezing_field"
     "BuildTime"        "4"
     "Requirements"
     {

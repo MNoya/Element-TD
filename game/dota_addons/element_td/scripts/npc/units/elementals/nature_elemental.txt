@@ -30,7 +30,6 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        "Hero_Furion"
     "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
-    "Portrait"        "vgui/hud/heroportraits/portrait_furion"
     "ConsideredHero"        "1"
 
     "Creature"
@@ -87,7 +86,6 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        "Hero_Furion"
     "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
-    "Portrait"        "vgui/hud/heroportraits/portrait_furion"
     "ConsideredHero"        "1"
 
     "Creature"
@@ -144,7 +142,6 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        "Hero_Furion"
     "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
-    "Portrait"        "vgui/hud/heroportraits/portrait_furion"
     "ConsideredHero"        "1"
 
     "Creature"

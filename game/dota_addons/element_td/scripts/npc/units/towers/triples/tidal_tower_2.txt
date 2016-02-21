@@ -3,8 +3,6 @@
     "BaseClass"        "npc_dota_creature"
     "MinimapIcon"        "minimap_tower90"
     "MinimapIconSize"        "320"
-    "SoundSet"                  "Hero_Bane"
-    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"
     "ArmorPhysical"        "0"
     "MagicalResistance"        "0"
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -46,7 +44,7 @@
     "DamageType"        "water"
     "ScriptClass"        "TidalTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "3"
+    "BuffPriority"          "3"
     "HasAbilityDesc"        "1"
     "AttackRange"        "900"
     "AttackAcquisitionRange"        "900"
@@ -74,7 +72,6 @@
 
     "AOE_Full"        "200"
     "AOE_Half"        "400"
-    "UpgradeIcon"        "towers/tidal_tower_douse"
     "BuildTime"        "4"
     "Requirements"
     {

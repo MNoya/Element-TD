@@ -46,7 +46,7 @@
     "DamageType"        "fire"
     "ScriptClass"        "FlamethrowerTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "3"
+    "BuffPriority"          "3"
     "HasAbilityDesc"        "1"
     "AttackRange"        "700"
     "AttackAcquisitionRange"        "700"
@@ -73,7 +73,6 @@
 
     "AOE_Half"        "300"
     "AOE_Full"        "150"
-    "UpgradeIcon"        "batrider_sticky_napalm"
     "BuildTime"        "4"
     "Requirements"
     {

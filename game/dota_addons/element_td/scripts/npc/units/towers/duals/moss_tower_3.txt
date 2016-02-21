@@ -49,7 +49,7 @@
     "DamageType"        "nature"
     "ScriptClass"        "MossTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "2"
+    "BuffPriority"          "2"
     "HasAbilityDesc"        "1"
     "AttackRange"        "700"
     "AttackAcquisitionRange"        "700"
@@ -60,7 +60,6 @@
     "ModelScale"        "0.9"
     "ModelRotation"             "90"
     "ModelOffset"               "15"
-    "UpgradeIcon"        "brewmaster_earth_pulverize"
     "BuildTime"        "3"
     "Requirements"
     {

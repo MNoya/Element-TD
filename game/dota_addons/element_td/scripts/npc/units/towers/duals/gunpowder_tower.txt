@@ -44,7 +44,7 @@
     "DamageType"        "earth"
     "ScriptClass"        "GunpowderTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "10"
+    "BuffPriority"          "10"
     "HasAbilityDesc"        "1"
     "AttackRange"        "1500"
     "AttackAcquisitionRange"        "1500"
@@ -55,7 +55,6 @@
     "ModelScale"        "0.8"
     "ModelRotation"             "90"
     "ModelOffset"               "15"
-    "UpgradeIcon"        "techies_suicide"
     "BuildTime"        "3"
     "Requirements"
     {

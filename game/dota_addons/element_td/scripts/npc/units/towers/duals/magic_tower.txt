@@ -44,7 +44,7 @@
     "DamageType"        "dark"
     "ScriptClass"        "MagicTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "10"
+    "BuffPriority"          "10"
     "HasAbilityDesc"        "1"
     "AttackRange"        "550"
     "AttackAcquisitionRange"        "1150"
@@ -56,7 +56,6 @@
     "ModelRotation"    "90"
     "ModelRotation"             "90"
     "ModelOffset"               "15"
-    "UpgradeIcon"        "towers/magic_tower"
     "BuildTime"        "3"
     "Requirements"
     {

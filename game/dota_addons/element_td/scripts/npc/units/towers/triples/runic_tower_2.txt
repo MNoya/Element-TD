@@ -2,9 +2,7 @@
 {
     "BaseClass"        "npc_dota_creature"
     "SoundSet"              "Hero_Visage"
-    "IdleSoundLoop"         "Hero_Visage.IdleLoop"
     "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_visage.vsndevts"
-    "VoiceFile"             "soundevents/voscripts/game_sounds_vo_visage.vsndevts"
     "MinimapIcon"        "minimap_tower90"
     "MinimapIconSize"        "320"
     "ArmorPhysical"        "0"
@@ -48,7 +46,7 @@
     "DamageType"        "dark"
     "ScriptClass"        "RunicTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "3"
+    "BuffPriority"          "3"
     "HasAbilityDesc"        "1"
     "AttackRange"        "1150"
     "AttackAcquisitionRange"        "1150"
@@ -76,7 +74,6 @@
 
     "AOE_Full"        "100"
     "AOE_Half"        "200"
-    "UpgradeIcon"        "visage_gravekeepers_cloak"
     "BuildTime"        "4"
     "Requirements"
     {

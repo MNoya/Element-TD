@@ -46,7 +46,7 @@
     "DamageType"        "nature"
     "ScriptClass"        "LifeTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "2"
+    "BuffPriority"          "2"
     "HasAbilityDesc"        "1"
     "AttackRange"        "1150"
     "AttackAcquisitionRange"        "1150"
@@ -57,7 +57,6 @@
     "ModelScale"        "1"
     "ModelRotation"             "90"
     "ModelOffset"               "20"
-    "UpgradeIcon"        "towers/life_tower_afterlife"
     "BuildTime"        "3"
     "Requirements"
     {

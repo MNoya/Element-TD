@@ -44,7 +44,7 @@
     "DamageType"        "water"
     "ScriptClass"        "WindstormTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "8"
+    "BuffPriority"          "8"
     "HasAbilityDesc"        "1"
     "AttackRange"        "900"
     "AttackAcquisitionRange"        "0"
@@ -68,9 +68,7 @@
             "6" { "ItemDef" "513" } // Razor's Ambient Effects
         }
     }
-
-
-    "UpgradeIcon"        "towers/windstorm_tower_tornado"
+    
     "BuildTime"        "4"
     "Requirements"
     {

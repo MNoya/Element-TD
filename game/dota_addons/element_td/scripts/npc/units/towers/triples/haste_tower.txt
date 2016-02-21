@@ -46,7 +46,7 @@
     "DamageType"        "fire"
     "ScriptClass"        "HasteTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "5"
+    "BuffPriority"          "5"
     "HasAbilityDesc"        "1"
     "AttackRange"        "900"
     "AttackAcquisitionRange"        "900"
@@ -70,7 +70,6 @@
         }
     }
 
-    "UpgradeIcon"        "troll_warlord_fervor"
     "BuildTime"        "4"
     "Requirements"
     {

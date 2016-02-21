@@ -44,7 +44,7 @@
     "DamageType"        "earth"
     "ScriptClass"        "QuakeTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "7"
+    "BuffPriority"          "7"
     "HasAbilityDesc"        "1"
     "AttackRange"        "550"
     "AttackAcquisitionRange"        "550"
@@ -67,7 +67,6 @@
         }
     }
 
-    "UpgradeIcon"        "earthshaker_aftershock"
     "BuildTime"        "4"
     "Requirements"
     {

@@ -46,7 +46,7 @@
     "DamageType"        "light"
     "ScriptClass"        "QuarkTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "10"
+    "BuffPriority"          "10"
     "HasAbilityDesc"        "1"
     "AttackRange"        "700"
     "AttackAcquisitionRange"        "700"
@@ -57,7 +57,6 @@
     "ModelScale"        "0.8"
     "ModelRotation"             "90"
     "ModelOffset"               "20"
-    "UpgradeIcon"        "towers/quark_tower_quantum_beam"
     "BuildTime"        "3"
     "Requirements"
     {

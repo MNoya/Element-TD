@@ -42,7 +42,7 @@
     "DamageType"        "fire"
     "ScriptClass"        "ElectricityTower"
     "TowerType"        "Normal"
-        "BuffPriority"          "6"
+    "BuffPriority"          "6"
     "HasAbilityDesc"        "1"
     "AttackRange"        "1150"
     "AttackAcquisitionRange"        "1150"
@@ -67,7 +67,6 @@
         }
     }
 
-    "UpgradeIcon"        "towers/electricty_tower_conjure_lightning"
     "BuildTime"        "3"
     "Requirements"
     {
