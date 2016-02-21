@@ -248,7 +248,9 @@ function statCollection:setFlags(flags)
         -- Store the new flags
         for flagKey, flagValue in pairs(flags) do
             self.flags[flagKey] = flagValue
-            print(printPrefix .. messageFlagsSet .. " {" .. flagKey .. ":" .. tostring(flagValue) .. "}")
+            if self.TESTING then
+                print(printPrefix .. messageFlagsSet .. " {" .. flagKey .. ":" .. tostring(flagValue) .. "}")
+            end
         end
 
     else
