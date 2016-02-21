@@ -533,7 +533,7 @@ function ElementTD:OnConnectFull(keys)
                     local hero = CreateHeroForPlayer("npc_dota_hero_wisp", ply)
 
                     if PLAYERS_NOT_VOTED[playerID] and START_GAME_TIME == 0 then
-                        CustomGameEventManager:Send_ServerToPlayer( ply, "etd_populate_vote_table", GameSettingsKV )
+                        CustomGameEventManager:Send_ServerToPlayer( ply, "etd_toggle_vote_dialog", {visible = true} )
                     end
                 end
             end
