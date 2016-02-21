@@ -293,6 +293,7 @@
 {
     width: 30%;
     vertical-align: center;
+    margin-top: 10px;
 }
 
 .Glow_water
@@ -377,4 +378,52 @@
 .AlignRight
 {
     horizontal-align: right;
+}
+
+.TowerName
+{
+    width: 70px;
+    horizontal-align: left;
+
+    text-align: center;
+    font-weight: bold;
+    color: #DDD;
+    font-size: 15px;
+    text-shadow: 0px 0px 5px 3.0 #000;
+    font-family: Radiance;
+    text-transform: uppercase;
+
+    margin-top: -18px;
+}
+
+.TowerNameLong
+{
+    width: 120px;
+    horizontal-align: left;
+
+    text-align: center;
+    font-weight: bold;
+    color: #DDD;
+    font-size: 15px;
+    text-shadow: 0px 0px 5px 3.0 #000;
+    font-family: Radiance;
+    text-transform: uppercase;
+
+    margin-top: -18px;
+    margin-left: -25px;
+}
+
+.AbilityLevel
+{
+    width: 70px;
+    text-align: center;
+    color: #DDD;
+    //font-weight: bold;
+    font-size: 16px;
+    text-shadow: 0px 0px 2px 4.0 #000;
+    font-family: Radiance;
+
+    margin-top: 70px;
+    margin-bottom: -10px;
+    vertical-align: bottom;
 }

@@ -43,6 +43,8 @@ towers['jinx'] = ['dark','fire','nature']
 towers['runic'] = ['dark','fire','light']
 towers['obliteration'] = ['dark','light','nature']
 
+Root.Elements = {}
+
 Categories = {}
 Categories['Buff_Towers'] = ["well","blacksmith","trickery","life","gold"]
 Categories['Slow_Towers'] = ["windstorm", "roots", "nova","muck"]
@@ -173,6 +175,7 @@ function Toggle() {
 }
 
 function UpdateElements(data){
+    Root.Elements = data
     for (var element in data)
     {
         var panel = $("#"+element)
@@ -185,6 +188,7 @@ function UpdateElements(data){
     for (var towerName in towers)
     {
         CheckRequirements(towerName, towers[towerName], data)
+        UpdateLabel(towerName)
     }
 }
 
@@ -224,6 +228,37 @@ function HoverToggle()
 function OnMouseOutToggle()
 {
     $.DispatchEvent( "DOTAHideAbilityTooltip", $("#ImageLabel"));
+}
+
+function UpdateLabel(name)
+{
+    var label = $("#"+name+"_level")
+
+    var levels = []
+    if (label)
+    {
+        var requirements = towers[name]
+        for (var i in requirements)
+        {
+            levels.push(Root.Elements[requirements[i]])
+        }
+    }
+
+    var level = Math.min.apply(Math, levels)
+
+    // Triples can only go to level 2
+    if (towers[name].length == 3 && level == 3)
+        level == 2
+    
+    if (level > 0)
+        label.text = "Lvl "+level
+}
+
+function HideLabel(name)
+{
+    var label = $("#"+name+"_level")
+    if (label)
+        label.text = ""
 }
 
 function HoverFilter(name) {
@@ -290,7 +325,7 @@ function AlignRight (panel) {
 }
 
 (function(){
-    $.Schedule(1, CheckHudFlipped)
+    $.Schedule(0.1, CheckHudFlipped)
     Container.AddClass("Hidden")
     GameEvents.Subscribe("glyph_override", Toggle )
     GameEvents.Subscribe("etd_update_elements", UpdateElements )
