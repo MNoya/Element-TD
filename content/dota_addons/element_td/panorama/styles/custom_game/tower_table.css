@@ -417,8 +417,9 @@
 {
     width: 70px;
     text-align: center;
+    letter-spacing: 3px;
     color: #DDD;
-    //font-weight: bold;
+    font-weight: bold;
     font-size: 16px;
     text-shadow: 0px 0px 2px 4.0 #000;
     font-family: Radiance;

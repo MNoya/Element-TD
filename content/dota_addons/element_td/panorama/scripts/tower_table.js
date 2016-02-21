@@ -247,11 +247,15 @@ function UpdateLabel(name)
     var level = Math.min.apply(Math, levels)
 
     // Triples can only go to level 2
-    if (towers[name].length == 3 && level == 3)
-        level == 2
+    if (towers[name].length == 3 && level > 2)
+        level = 2
+
+    if (level > 3)
+        level = 3
     
-    if (level > 0)
-        label.text = "Lvl "+level
+    if (level > 1)
+        //label.text = "Level "+level
+        label.text = Array(level+1).join("I")
 }
 
 function HideLabel(name)
