@@ -16,11 +16,11 @@ CHEAT_CODES = {
     ["wherewave"] = function(...) ElementTD:WhereIsTheWave(...) end,    -- Find out information about the current wave
     ["gg_end"] = function(...) GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS ) end,    -- Find out information about the current wave
     ["debug_damage"] = function(...) ElementTD:ToggleDebugDamage(...) end,    -- Print damage done to server console
-    ["debug_gds"] = function(...) ElementTD:DebugStatCollection(...) end,    -- Print statcollection info to panorama
 }
 
 PLAYER_CODES = {
     ["random"] = function(...) GameSettings:EnableRandomForPlayer(...) end,  -- Enable random for player
+    ["debug_gds"] = function(...) ElementTD:DebugStatCollection(...) end,    -- Print statcollection info to panorama
 }
 
 DEVELOPERS = {[66998815]="A_Dizzle",[86718505]="Noya",[8035838]="Karawasa",[34961594]="WindStrike",[84998953]="Quintinity",[59573794]="Azarak"}
