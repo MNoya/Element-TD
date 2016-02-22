@@ -54,9 +54,12 @@ function InterestManager:ResumeInterestForPlayer(playerID)
 	interestData.NumLockingWaves = 0
 	interestData.LockingWaves = {}
 
-	CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "etd_resume_interest", {
-		timeRemaining = interestData.TimeRemaining
-	})
+	local player = PlayerResource:GetPlayer(playerID)
+	if player then
+		CustomGameEventManager:Send_ServerToPlayer(player, "etd_resume_interest", {
+			timeRemaining = interestData.TimeRemaining
+		})
+	end
 	InterestManager:CreateTimerForPlayer(playerID, interestData.TimeRemaining)
 	
 	interestData.TimeRemaining = 0
@@ -77,7 +80,10 @@ function InterestManager:PauseInterestForPlayer(playerID, waveNumber)
 			
 			--print("stopping timer\n")
 			Timers:RemoveTimer(timerName)
-			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "etd_pause_interest", {})
+			local player = PlayerResource:GetPlayer(playerID)
+			if player then
+				CustomGameEventManager:Send_ServerToPlayer(player, "etd_pause_interest", {})
+			end
 		end
 	end
 end

@@ -375,7 +375,10 @@ function ShowPortalForSector(sector, wave, time, playerID)
     ParticleManager:SetParticleControl(portal.particle, 15, GetElementColor(element))
     
     -- Portal World Notification
-    CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "world_notification", {entityIndex=portal:GetEntityIndex(), text="#etd_wave_"..element} )
+    local player = PlayerResource:GetPlayer(playerID)
+    if player then 
+        CustomGameEventManager:Send_ServerToPlayer(player, "world_notification", {entityIndex=portal:GetEntityIndex(), text="#etd_wave_"..element} )
+    end
 end
 
 function ClosePortalForSector(playerID, sector, removeInstantly)
@@ -384,7 +387,11 @@ function ClosePortalForSector(playerID, sector, removeInstantly)
     if portal.particle then
         ParticleManager:DestroyParticle(portal.particle, removeInstantly)
     end
-    CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "world_remove_notification", {entityIndex=portal:GetEntityIndex()} )
+
+    local player = PlayerResource:GetPlayer(playerID)
+    if player then 
+        CustomGameEventManager:Send_ServerToPlayer(player, "world_remove_notification", {entityIndex=portal:GetEntityIndex()} )
+    end
 end
 
 function CreateMoveTimerForCreep(creep, sector)
