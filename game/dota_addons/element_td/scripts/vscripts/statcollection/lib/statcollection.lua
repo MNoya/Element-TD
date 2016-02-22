@@ -349,6 +349,8 @@ function statCollection:sendStage2()
     if not self.authKey or not self.matchID then
         print("sendStage2 ERROR")
         print(printPrefix .. errorMissedStage1)
+        print("Auth Key: ", self.authKey)
+        print("MatchID: ", self.matchID)
         return
     end
 
@@ -417,6 +419,8 @@ function statCollection:sendStage3(winners, lastRound)
     if not self.authKey or not self.matchID then
         print("sendStage3 ERROR")
         print(printPrefix .. errorMissedStage1)
+        print("Auth Key: ", self.authKey)
+        print("MatchID: ", self.matchID)
         return
     end
 
@@ -424,6 +428,8 @@ function statCollection:sendStage3(winners, lastRound)
     if not self.sentStage2 then
         print("sendStage3 ERROR")
         print(printPrefix .. errorMissedStage2)
+        print("Auth Key: ", self.authKey)
+        print("MatchID: ", self.matchID)
         return
     end
 
