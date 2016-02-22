@@ -314,9 +314,13 @@ end
 
 function BuildingHelper:SendGNV(args)
     local playerID = args.PlayerID
-    local player = PlayerResource:GetPlayer(playerID)
-    BuildingHelper:print("Sending GNV to player "..playerID)
-    CustomGameEventManager:Send_ServerToPlayer(player, "gnv_register", {gnv=BuildingHelper.Encoded, squareX = BuildingHelper.squareX, squareY = BuildingHelper.squareY, boundX = BuildingHelper.minBoundX, boundY = BuildingHelper.minBoundY })
+    if playerID then
+        local player = PlayerResource:GetPlayer(playerID)
+        if player then
+            BuildingHelper:print("Sending GNV to player "..playerID)
+            CustomGameEventManager:Send_ServerToPlayer(player, "gnv_register", {gnv=BuildingHelper.Encoded, squareX = BuildingHelper.squareX, squareY = BuildingHelper.squareY, boundX = BuildingHelper.minBoundX, boundY = BuildingHelper.minBoundY })
+        end
+    end
 end
 
 --[[
@@ -357,6 +361,11 @@ end
 
 function BuildingHelper:OnPlayerSelectedEntities(event)
     local playerID = event.PlayerID
+    if not playerID then
+        BuildingHelper:print("ERROR: OnPlayerSelectedEntities without a player")
+        return
+    end
+    
     local playerTable = BuildingHelper:GetPlayerTable(playerID)
 
     playerTable.SelectedEntities = event.selected_entities

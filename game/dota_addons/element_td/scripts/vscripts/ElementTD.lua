@@ -535,7 +535,7 @@ function ElementTD:OnConnectFull(keys)
                 end
             end
         else
-            print("Got a stupid wrong playerID: ", playerID)
+            print("Got an invalid playerID: ", playerID)
         end
     end)
 end
