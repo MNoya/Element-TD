@@ -81,6 +81,16 @@ function AddVote(option, choice)
 	end
 end
 
+-- The 2 random options are weighted together, Same Random wins in case of a tie
+function GetRandomWinningChoice(option)
+	local pickVotes = option["AllPick"] or 0
+	local sameRandomVotes = option["SameRandom"] or 0
+	local allRandomVotes = option["AllRandom"] or 0
+	local randomVotes = sameRandomVotes + allRandomVotes
+
+	return (pickVotes >= randomVotes and 0 or (sameRandomVotes >= allRandomVotes and 1 or 2))
+end
+
 function GetWinningChoice(option)
 	local highestVotes = 0
 
@@ -143,7 +153,7 @@ function FinalizeVotes()
     	end
 	end
 	
-	local elements = GetWinningChoice(VOTE_RESULTS.elements)
+	local elements = GetRandomWinningChoice(VOTE_RESULTS.elements)
 	local endless = GetWinningChoice(VOTE_RESULTS.endless)
 	local order = GetWinningChoice(VOTE_RESULTS.order)
 	local length = GetWinningChoice(VOTE_RESULTS.length)
