@@ -46,7 +46,7 @@
     "TowerType"        "Normal"
     "BuffPriority"          "2"
     "HasAbilityDesc"        "1"
-    "AttackRange"        "550"
+    "AttackRange"        "1150"
     "AttackAcquisitionRange"        "1150"
     "AttackRate"        "1"
     "ProjectileModel"        "particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"

@@ -2908,7 +2908,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_per_stack"		"50"
+				"range_per_stack"		"-50"
 			}
 			"02"
 			{
@@ -2918,7 +2918,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"3"
+				"duration"				"2"
 			}
 		}
 	}
