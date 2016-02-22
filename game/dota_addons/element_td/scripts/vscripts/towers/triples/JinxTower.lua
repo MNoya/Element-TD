@@ -20,6 +20,13 @@ function JinxTower:OnAttackLanded(keys)
     local target = keys.target
     target:EmitSound("Jinx.Cast")
 
+    local creeps = GetCreepsInArea(target:GetOrigin(), self.maledictAOE)
+    for _, creep in pairs(creeps) do 
+        if not creep:HasModifier("modifier_jinx_maledict") then
+            self.ability:ApplyDataDrivenModifier(self.tower, creep, "modifier_jinx_maledict", {})
+        end
+    end
+    
     local damage = self.tower:GetAverageTrueAttackDamage()
     DamageEntity(target, self.tower, damage)
 
@@ -49,6 +56,7 @@ end
 
 function JinxTower:OnCreated()
     self.ability = AddAbility(self.tower, "jinx_tower_maledict", self.tower:GetLevel())
+    self.maledictAOE = GetAbilitySpecialValue("jinx_tower_maledict", "aoe")
     self.damageTakenToDamage = GetAbilitySpecialValue("jinx_tower_maledict", "damage_taken")[self.tower:GetLevel()]
 end
 

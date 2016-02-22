@@ -10,25 +10,6 @@
 
 	"Modifiers"
 	{
-		"modifier_jinx_maledict_passive"
-		{
-			"Passive"	"1"
-			"IsHidden"	"1"
-			"OnAttackLanded"
-			{
-				"ApplyModifier"
-				{
-					"Target"
-					{
-						"Center"		"TARGET"
-						"Radius"		"%aoe"
-						"Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
-						"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
-					}
-					"ModifierName"	"modifier_jinx_maledict"
-				}
-			}
-		}
 		"modifier_jinx_maledict"
 		{
 			"IsDebuff"		"1"
