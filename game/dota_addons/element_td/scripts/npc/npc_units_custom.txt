@@ -3900,7 +3900,7 @@
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "1"
-	    "AttackAnimationPoint"      "0.36"
+	    "AttackAnimationPoint"      "0.3"
 	    "ProjectileSpeed"           "1500"
 	
 	    "Level"                     "1"
@@ -4183,7 +4183,7 @@
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "1"
-	    "AttackAnimationPoint"      "0.36"
+	    "AttackAnimationPoint"      "0.3"
 	    "ProjectileSpeed"           "1500"
 	
 	    "Level"                     "2"
@@ -4985,7 +4985,7 @@
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "1"
-	    "AttackAnimationPoint"      "0.36"
+	    "AttackAnimationPoint"      "0.3"
 	    "ProjectileSpeed"           "1500"
 	
 	    "Level"                     "4"
@@ -5503,7 +5503,7 @@
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "1"
-	    "AttackAnimationPoint"      "0.36"
+	    "AttackAnimationPoint"      "0.3"
 	    "ProjectileSpeed"           "1500"
 	
 	    "Level"                     "3"
