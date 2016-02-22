@@ -105,7 +105,6 @@ function Wave:SpawnWave()
 
 				entity.scriptObject:OnSpawned() -- called the OnSpawned event
 
-				--RegisterCreep(entity, playerID)
 				CreateMoveTimerForCreep(entity, sector)
 				if entitiesSpawned == CREEPS_PER_WAVE then
 					ClosePortalForSector(self.playerID, sector)

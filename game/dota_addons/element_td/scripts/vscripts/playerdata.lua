@@ -26,7 +26,6 @@ function CreateDataForPlayer(playerID)
 	data["gold"] = 0
 	data["goldLost"] = 0
 	data["towersSold"] = 0
-	data["interestGold"] = 0
 	data["goldTowerEarned"] = 0
 	data["leaks"] = 0
 	data["elements"] = {
@@ -48,8 +47,16 @@ function CreateDataForPlayer(playerID)
 
 	data["duration"] = 0 -- Seconds the player stayed alive for
 	data["victory"] = 0  -- 0 if lost, 1 if won
+
+	data["interestGold"] = 0
+	data["interestData"] = {
+		Locked = false,
+		LockingWaves = {},
+		NumLockingWaves = 0,
+		TimeRemaining = 0
+	}
     
-    print("Created Data for player ",playerID)
+    print("Created Data for player ", playerID)
 	
 	return data
 end

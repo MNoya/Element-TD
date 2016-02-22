@@ -255,7 +255,7 @@ function SpawnWaveForPlayer(playerID, wave)
     CustomGameEventManager:Send_ServerToAllClients("SetTopBarWaveValue", {playerId=playerID, wave=wave} )
 
     if not InterestManager:IsStarted() then
-        InterestManager:StartInterestTimer()
+        InterestManager:StartInterest()
     end
 
     waveObj:SetOnCompletedCallback(function()
@@ -263,6 +263,7 @@ function SpawnWaveForPlayer(playerID, wave)
             return
         end
 
+        InterestManager:PlayerCompletedWave(playerID, wave)
         playerData.completedWaves = playerData.completedWaves + 1
         print("Player [" .. playerID .. "] has completed wave "..playerData.completedWaves)
         if GameSettings:GetEndless() == "Normal" then
@@ -394,6 +395,8 @@ function CreateMoveTimerForCreep(creep, sector)
             if (creep:GetAbsOrigin() - destination):Length2D() <= 100 then
                 local playerID = creep.playerID
                 local playerData = GetPlayerData(playerID)
+                
+                InterestManager:PauseInterestForPlayer(playerID, creep.waveObject.waveNumber)
                 
                 -- Reduce lives exponentially
                 if not creep.reduced_lives then
