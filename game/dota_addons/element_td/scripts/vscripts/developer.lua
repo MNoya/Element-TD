@@ -15,7 +15,8 @@ CHEAT_CODES = {
     ["setlist"] = function(...) ElementTD:MakeSets(...) end,            -- Creates full AttachWearables entries by set names
     ["wherewave"] = function(...) ElementTD:WhereIsTheWave(...) end,    -- Find out information about the current wave
     ["gg_end"] = function(...) GameRules:SetGameWinner( DOTA_TEAM_GOODGUYS ) end,    -- Find out information about the current wave
-    ["debug_damage"] = function(...) ElementTD:ToggleDebugDamage(...) end,    -- Find out information about the current wave
+    ["debug_damage"] = function(...) ElementTD:ToggleDebugDamage(...) end,    -- Print damage done to server console
+    ["debug_gds"] = function(...) ElementTD:DebugStatCollection(...) end,    -- Print statcollection info to panorama
 }
 
 PLAYER_CODES = {
@@ -180,6 +181,16 @@ function ElementTD.ToggleDebugDamage()
     else
         Say(nil,"Debug Damage <font color='#ff0000'>OFF</font>", false)
     end
+end
+
+function ElementTD:DebugStatCollection()
+    statCollection:print("Mod ID", statCollection.modIdentifier)
+    statCollection:print("Match ID", statCollection.matchID)
+    statCollection:print("Auth Key", statCollection.authKey)
+    statCollection:print("Done Init", statCollection.doneInit)
+    statCollection:print("Sent Stage 1", statCollection.sentStage1)
+    statCollection:print("Sent Stage 2", statCollection.sentStage2)
+    statCollection:print("Sent Stage 3", statCollection.sentStage3)
 end
 
 ------------------------------------------------------

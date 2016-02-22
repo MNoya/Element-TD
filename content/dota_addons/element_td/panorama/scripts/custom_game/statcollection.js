@@ -31,9 +31,14 @@ function GetSteamID32() {
     return steamID32;
 }
 
+function Print(msg) {
+    $.Msg(msg.content)
+}
+
 (function () {
     $.Msg("StatCollection Client Loaded");
 
     GameEvents.Subscribe("statcollection_client", OnClientCheckIn);
+    GameEvents.Subscribe("statcollection_print", Print);
 
 })();

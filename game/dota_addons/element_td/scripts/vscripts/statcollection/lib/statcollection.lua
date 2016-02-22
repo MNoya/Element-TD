@@ -72,35 +72,25 @@ end
 function statCollection:init()
     -- Only allow init to be run once
     if self.doneInit then
-        print(printPrefix .. errorInitCalledTwice)
+        statCollection:print(errorInitCalledTwice)
         return
     end
     self.doneInit = true
 
-    -- Print the intro message
-    print(printPrefix .. messageStarting)
+    -- statCollection:print the intro message
+    statCollection:print(messageStarting)
 
     -- Check for a modIdentifier
     local modIdentifier = statInfo.modID
     if not modIdentifier then
-        print(printPrefix .. errorMissingModIdentifier)
+        statCollection:print(errorMissingModIdentifier)
 
     elseif modIdentifier == 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' then
-        print(printPrefix .. errorDefaultModIdentifier)
+        statCollection:print(errorDefaultModIdentifier)
 
         self.doneInit = false
         return
     end
-
-    --[[ Check for a schemaIdentifier
-    if not schemaID then
-        print(printPrefix .. errorMissingSchemaIdentifier)
-    elseif schemaID == 'XXXXXXXXXXXXXXXX' and self.HAS_SCHEMA then
-        print(printPrefix.. errorDefaultSchemaIdentifier)
-
-        self.doneInit = false
-        return
-    end]]
 
     -- Load and set settings
     self.HAS_SCHEMA = statInfo.schemaID ~= 'XXXXXXXXXXXXXXXX'
@@ -249,13 +239,13 @@ function statCollection:setFlags(flags)
         for flagKey, flagValue in pairs(flags) do
             self.flags[flagKey] = flagValue
             if self.TESTING then
-                print(printPrefix .. messageFlagsSet .. " {" .. flagKey .. ":" .. tostring(flagValue) .. "}")
+                statCollection:print(messageFlagsSet .. " {" .. flagKey .. ":" .. tostring(flagValue) .. "}")
             end
         end
 
     else
         -- Yell at the developer
-        print(printPrefix .. errorFlags)
+        statCollection:print(errorFlags)
     end
 end
 
@@ -263,8 +253,8 @@ end
 function statCollection:sendStage1()
     -- If we are missing required parameters, then don't send
     if not self.doneInit then
-        print("sendStage1 ERROR")
-        print(printPrefix .. errorRunInit)
+        statCollection:print("sendStage1 ERROR")
+        statCollection:print(errorRunInit)
         return
     end
 
@@ -272,8 +262,8 @@ function statCollection:sendStage1()
     if self.sentStage1 then return end
     self.sentStage1 = true
 
-    -- Print the intro message
-    print(printPrefix .. messagePhase1Starting)
+    -- statCollection:print the intro message
+    statCollection:print(messagePhase1Starting)
 
     -- Grab a reference to self
     local this = self
@@ -315,15 +305,15 @@ function statCollection:sendStage1()
     self:sendStage('s2_phase_1.php', payload, function(err, res)
         -- Check if we got an error
         if err then
-            print(printPrefix .. errorJsonDecode)
-            print(printPrefix .. err)
+            statCollection:print(errorJsonDecode)
+            statCollection:print(err)
             return
         end
 
         -- Check for an error
         if res.error then
-            print(printPrefix .. errorSomethingWentWrong)
-            print(res.error)
+            statCollection:print(errorSomethingWentWrong)
+            statCollection:print(res.error)
             return
         end
 
@@ -332,7 +322,9 @@ function statCollection:sendStage1()
         this.matchID = res.matchID
 
         -- Tell the user
-        print(printPrefix .. messagePhase1Complete)
+        statCollection:print(messagePhase1Complete)
+        statCollection:print("Auth Key: ", self.authKey)
+        statCollection:print("MatchID: ", self.matchID)
     end)
 end
 
@@ -340,17 +332,17 @@ end
 function statCollection:sendStage2()
     -- If we are missing required parameters, then don't send
     if not self.doneInit then
-        print("sendStage2 ERROR")
-        print(printPrefix .. errorRunInit)
+        statCollection:print("sendStage2 ERROR")
+        statCollection:print(errorRunInit)
         return
     end
 
     -- If we are missing stage1 stuff, don't continue
     if not self.authKey or not self.matchID then
-        print("sendStage2 ERROR")
-        print(printPrefix .. errorMissedStage1)
-        print("Auth Key: ", self.authKey)
-        print("MatchID: ", self.matchID)
+        statCollection:print("sendStage2 ERROR")
+        statCollection:print(errorMissedStage1)
+        statCollection:print("Auth Key: ", self.authKey)
+        statCollection:print("MatchID: ", self.matchID)
         return
     end
 
@@ -358,8 +350,8 @@ function statCollection:sendStage2()
     if self.sentStage2 then return end
     self.sentStage2 = true
 
-    -- Print the intro message
-    print(printPrefix .. messagePhase2Starting)
+    -- statCollection:print the intro message
+    statCollection:print(messagePhase2Starting)
 
     -- Client check in
     CustomGameEventManager:Send_ServerToAllClients("statcollection_client", { modID = self.modIdentifier, matchID = self.matchID, schemaVersion = schemaVersion })
@@ -389,20 +381,20 @@ function statCollection:sendStage2()
     self:sendStage('s2_phase_2.php', payload, function(err, res)
         -- Check if we got an error
         if err then
-            print(printPrefix .. errorJsonDecode)
-            print(printPrefix .. err)
+            statCollection:print(errorJsonDecode)
+            statCollection:print(err)
             return
         end
 
         -- Check for an error
         if res.error then
-            print(printPrefix .. errorSomethingWentWrong)
-            print(res.error)
+            statCollection:print(errorSomethingWentWrong)
+            statCollection:print(res.error)
             return
         end
 
         -- Tell the user
-        print(printPrefix .. messagePhase2Complete)
+        statCollection:print(messagePhase2Complete)
     end)
 end
 
@@ -410,26 +402,26 @@ end
 function statCollection:sendStage3(winners, lastRound)
     -- If we are missing required parameters, then don't send
     if not self.doneInit then
-        print("sendStage3 ERROR")
-        print(printPrefix .. errorRunInit)
+        statCollection:print("sendStage3 ERROR")
+        statCollection:print(errorRunInit)
         return
     end
 
     -- If we are missing stage1 stuff, don't continue
     if not self.authKey or not self.matchID then
-        print("sendStage3 ERROR")
-        print(printPrefix .. errorMissedStage1)
-        print("Auth Key: ", self.authKey)
-        print("MatchID: ", self.matchID)
+        statCollection:print("sendStage3 ERROR")
+        statCollection:print(errorMissedStage1)
+        statCollection:print("Auth Key: ", self.authKey)
+        statCollection:print("MatchID: ", self.matchID)
         return
     end
 
     -- If we are missing stage2 stuff, don't continue
     if not self.sentStage2 then
-        print("sendStage3 ERROR")
-        print(printPrefix .. errorMissedStage2)
-        print("Auth Key: ", self.authKey)
-        print("MatchID: ", self.matchID)
+        statCollection:print("sendStage3 ERROR")
+        statCollection:print(errorMissedStage2)
+        statCollection:print("Auth Key: ", self.authKey)
+        statCollection:print("MatchID: ", self.matchID)
         return
     end
 
@@ -441,8 +433,8 @@ function statCollection:sendStage3(winners, lastRound)
         self.roundID = self.roundID + 1
     end
 
-    -- Print the intro message
-    print(printPrefix .. messagePhase3Starting)
+    -- statCollection:print the intro message
+    statCollection:print(messagePhase3Starting)
 
     -- Build players array
     local players = {}
@@ -479,20 +471,20 @@ function statCollection:sendStage3(winners, lastRound)
     self:sendStage('s2_phase_3.php', payload, function(err, res)
         -- Check if we got an error
         if err then
-            print(printPrefix .. errorJsonDecode)
-            print(printPrefix .. err)
+            statCollection:print(errorJsonDecode)
+            statCollection:print(err)
             return
         end
 
         -- Check for an error
         if res.error then
-            print(printPrefix .. errorSomethingWentWrong)
-            print(res.error)
+            statCollection:print(errorSomethingWentWrong)
+            statCollection:print(res.error)
             return
         end
 
         -- Tell the user
-        print(printPrefix .. messagePhase3Complete)
+        statCollection:print(messagePhase3Complete)
     end)
 end
 
@@ -505,8 +497,8 @@ end
 -- Sends custom
 function statCollection:sendCustom(args)
     if not self.HAS_SCHEMA then
-        print("sendCustom ERROR")
-        print(printPrefix .. errorDefaultSchemaIdentifier)
+        statCollection:print("sendCustom ERROR")
+        statCollection:print(errorDefaultSchemaIdentifier)
         return
     end
 
@@ -517,9 +509,9 @@ function statCollection:sendCustom(args)
     end
     -- If we are missing required parameters, then don't send
     if not self.doneInit or not self.authKey or not self.matchID or not self.SCHEMA_KEY then
-        print(printPrefix .. errorRunInit)
+        statCollection:print(errorRunInit)
         if not self.SCHEMA_KEY then
-            print(printPrefix .. errorRunInit)
+            statCollection:print(errorRunInit)
         end
         return
     end
@@ -530,8 +522,8 @@ function statCollection:sendCustom(args)
         self.sentCustom = true
     end
 
-    -- Print the intro message
-    print(printPrefix .. messageCustomStarting)
+    -- statCollection:print the intro message
+    statCollection:print(messageCustomStarting)
 
     -- Build rounds table
     local rounds = {}
@@ -553,20 +545,20 @@ function statCollection:sendCustom(args)
     self:sendStage('s2_custom.php', payload, function(err, res)
         -- Check if we got an error
         if err then
-            print(printPrefix .. errorJsonDecode)
-            print(printPrefix .. err)
+            statCollection:print(errorJsonDecode)
+            statCollection:print(err)
             return
         end
 
         -- Check for an error
         if res.error then
-            print(printPrefix .. errorSomethingWentWrong)
-            print(res.error)
+            statCollection:print(errorSomethingWentWrong)
+            statCollection:print(res.error)
             return
         end
 
         -- Tell the user
-        print(printPrefix .. messageCustomComplete)
+        statCollection:print(messageCustomComplete)
     end)
 
     -- Send custom to lb
@@ -575,20 +567,20 @@ function statCollection:sendCustom(args)
 
         -- Check if we got an error
         if err then
-            print(prefix .. errorJsonDecode)
-            print(prefix .. err)
+            statCollection:print(prefix .. errorJsonDecode)
+            statCollection:print(prefix .. err)
             return
         end
 
         -- Check for an error
         if res.error then
-            print(prefix .. errorSomethingWentWrong)
-            print(res.error)
+            statCollection:print(prefix .. errorSomethingWentWrong)
+            statCollection:print(res.error)
             return
         end
 
         -- Tell the user
-        print(prefix .. messageCustomComplete .. " [" .. eleTDLB .. ']')
+        statCollection:print(prefix .. messageCustomComplete .. " [" .. eleTDLB .. ']')
     end, eleTDLB)
 
     -- Send custom to lb hatinacat
@@ -597,20 +589,20 @@ function statCollection:sendCustom(args)
 
         -- Check if we got an error
         if err then
-            print(prefix .. errorJsonDecode)
-            print(prefix .. err)
+            statCollection:print(prefix .. errorJsonDecode)
+            statCollection:print(prefix .. err)
             return
         end
 
         -- Check for an error
         if res.error then
-            print(prefix .. errorSomethingWentWrong)
-            print(res.error)
+            statCollection:print(prefix .. errorSomethingWentWrong)
+            statCollection:print(res.error)
             return
         end
 
         -- Tell the user
-        print(prefix .. messageCustomComplete .. " [" .. hiacLB .. ']')
+        statCollection:print(prefix .. messageCustomComplete .. " [" .. hiacLB .. ']')
     end, hiacLB)
 end
 
@@ -619,14 +611,14 @@ function statCollection:sendStage(stageName, payload, callback, override_host)
     local host = override_host or postLocation
     -- Create the request
     local req = CreateHTTPRequest('POST', host .. stageName)
-    print(json.encode(payload))
+    statCollection:print(json.encode(payload))
     -- Add the data
     req:SetHTTPRequestGetOrPostParameter('payload', json.encode(payload))
 
     -- Send the request
     req:Send(function(res)
         if res.StatusCode ~= 200 or not res.Body then
-            print(printPrefix .. errorFailedToContactServer)
+            statCollection:print(errorFailedToContactServer)
             return
         end
 
@@ -636,6 +628,22 @@ function statCollection:sendStage(stageName, payload, callback, override_host)
         -- Feed the result into our callback
         callback(err, obj)
     end)
+end
+
+function statCollection:print(s1, s2)
+    local str = s1
+    if s1 then
+        str = printPrefix .. tostring(s1)
+    end
+
+    if s2 then
+        str = str .. " " .. tostring(s2)
+    else
+        str = str .. " nil"
+    end
+
+    print(str)
+    CustomGameEventManager:Send_ServerToAllClients("statcollection_print", { content = str })
 end
 
 function tobool(s)
