@@ -88,7 +88,7 @@ function GetRandomWinningChoice(option)
 	local allRandomVotes = option["AllRandom"] or 0
 	local randomVotes = sameRandomVotes + allRandomVotes
 
-	return (pickVotes >= randomVotes and 0 or (sameRandomVotes >= allRandomVotes and 1 or 2))
+	return (pickVotes >= randomVotes and "AllPick" or (sameRandomVotes >= allRandomVotes and "SameRandom" or "AllRandom"))
 end
 
 function GetWinningChoice(option)
