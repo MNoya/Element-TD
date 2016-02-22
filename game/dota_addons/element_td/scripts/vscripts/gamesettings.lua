@@ -230,6 +230,18 @@ function GameSettings:SetElementOrder(order)
             	end
         	end
         end
+    --all random, players get different element order
+    elseif order == "AllRandom" then
+        for _, plyID in pairs(playerIDs) do
+            local elementsOrder = getRandomElementOrder()
+            local playerData = GetPlayerData(plyID)
+            playerData.elementsOrder = elementsOrder
+            if elementsOrder[0] then
+                for _,v in pairs(elementsOrder[0]) do
+                    BuyElement(plyID, v)
+                end
+            end
+        end
     end
 end
 

@@ -60,6 +60,8 @@
         "difficulty_insane_mode"            "Insane Difficulty"
 
         "random_mode"                       "Random Elements"
+        "allrandom_mode"                    "All Random Elements"
+        "samerandom_mode"                   "Same Random Elements"
         "endless_mode"                      "Rush Mode"
         "chaos_mode"                        "Chaos Mode"
         "express_mode"                      "Express Mode"
@@ -73,7 +75,7 @@
         "element_pick_description"          "Everyone can pick and choose which elementals they want to summon."
         "element_allrandom"                 "All Random"
         "element_allrandom_description"     "Your elements are randomly selected."
-        "element_samerandom"                "Random"
+        "element_samerandom"                "Same Random"
         "element_samerandom_description"    "Your elements are randomly selected."
         "element_random"                    "Random"
 

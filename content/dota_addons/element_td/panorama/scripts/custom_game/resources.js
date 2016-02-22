@@ -190,7 +190,7 @@ function AlignRight (panel) {
 (function () {
 
   $.Schedule(1, CheckAspectRatio);
-  $.Schedule(1, CheckHudFlipped)
+  $.Schedule(0.1, CheckHudFlipped)
   $.Schedule(1, CheckLearnMode)
   GameEvents.Subscribe( "etd_update_lumber", ModifyLumber );
   GameEvents.Subscribe( "etd_update_gold", ModifyGold );

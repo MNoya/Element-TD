@@ -35,7 +35,8 @@ var scoreMultipliers = {normal:1,hard:2,veryhard:3,insane:4,chaos:0.25,endless:0
 var healthMult = $( '#HealthMult' );
 var bountyMult = $( '#BountyMult' );
 var scoresMult = $( '#ScoresMult' );
-var random = $('#random')
+var same_random = $('#same_random')
+var all_random = $('#all_random')
 var chaos = $('#chaos')
 var endless = $('#endless')
 var express = $('#express')
@@ -122,6 +123,20 @@ function SelectCheckboxClick() {
     UpdateMultipliers()
 }
 
+function SelectRadio(name) {
+    var panel = $("#"+name)
+    if (panel.last_state !== undefined && panel.last_state == panel.checked)
+        panel.checked = !panel.checked
+
+    panel.last_state = panel.checked
+
+    //Radio buttons
+    if (name == "same_random")
+        $("#all_random").last_state = undefined
+    else
+        $("#same_random").last_state = undefined
+}
+
 function ToggleVoteDialog( data )
 {
     votingUI.visible = data.visible;
@@ -196,6 +211,13 @@ function PlayerVoted( data )
         elements.text = $.Localize("element_"+data.elements.toLowerCase());
     }
 
+    if (data.elements == "AllRandom")
+    {
+        var elements = $.CreatePanel('Label', votes, '');
+        elements.AddClass('PlayerVote');
+        elements.text = $.Localize("element_"+data.elements.toLowerCase());
+    }
+
     if (data.endless == "Endless")
     {
         var endless = $.CreatePanel('Label', votes, '');
@@ -232,7 +254,13 @@ function ConfirmVote()
     var data = {};
 
     data['difficultyVote'] = difficultyModes.indexOf(activeDifficulty)
-    data['elementsVote'] = random.checked
+    
+    data['elementsVote'] = 0
+    if (same_random.checked)
+        data['elementsVote'] = 1
+    else if (all_random.checked)
+        data['elementsVote'] = 2
+
     data['orderVote'] = chaos.checked
     data['endlessVote'] = endless.checked
     data['lengthVote'] = express.checked
@@ -253,7 +281,7 @@ function ShowVoteResults( data )
     $("#DifficultyView").text = $.Localize("difficulty_"+difficultyName+"_mode")
 
     // Only show the options that were accepted
-    var random = data.elements == "SameRandom"
+    var random = data.elements == "SameRandom" || data.elements == "AllRandom"
     var endless = data.endless == "Endless"
     var chaos = data.order == "Chaos"
     var express = data.length == "Express"
@@ -262,6 +290,10 @@ function ShowVoteResults( data )
     {
         $( '#ElementsResult' ).GetParent().DeleteAsync(0)
         $( '#ElementsView' ).AddClass("Hidden") //This can become visible if the player does -random afterwards
+    }
+    else
+    {
+        $( '#ElementsResult' ).text = $.Localize(data.elements.toLowerCase()+"_mode");
     }
 
     if (!endless)
@@ -366,11 +398,11 @@ function Setup()
     SelectDifficulty("normal")
     UpdateMultipliers()
     voteResultsUI.visible = false;
-    votingUI.visible = false;
-    info.visible = false;
-    votingLiveUI.visible = false;
-    currentModeUI.visible = false;
-    votingLiveUI.AddClass("hidden");
+    //votingUI.visible = false;
+    //info.visible = false;
+    //votingLiveUI.visible = false;
+    //currentModeUI.visible = false;
+    //votingLiveUI.AddClass("hidden");
     UpdateNotVoted();
 }
 

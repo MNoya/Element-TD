@@ -173,13 +173,13 @@ function FinalizeVotes()
 
 	-- If the Random vote didn't win, apply Random to every player that selected it anyway. 
 	-- They are also able to do this by typing -random before picking an element
-	if elements == "AllPick" then
+	--[[if elements == "AllPick" then
 		for _, playerID in pairs(playerIDs) do
 			if PLAYER_RANDOM_CHOICES[playerID] == 1 then
 				GameSettings:EnableRandomForPlayer(playerID)
 			end
 		end
-	end	
+	end]]
 
 	for k, plyID in pairs(playerIDs) do
 		local ply = PlayerResource:GetPlayer(plyID)
@@ -219,7 +219,7 @@ function ElementTD:OnPlayerVoted( table )
 		PLAYER_RANDOM_CHOICES[playerID] = table.data.elementsVote
 
 		local difficultyVote = table.data.difficultyVote -- 0 to 3
-		local randomVote = table.data.elementsVote -- 0 or 1 if Random was selected
+		local randomVote = table.data.elementsVote -- Normal, Same or All Random
 		local endlessVote = table.data.endlessVote -- 0 or 1 if Endless was selected
 		local orderVote = table.data.orderVote -- 0 or 1 if Chaos was selected
 		local expressVote = table.data.lengthVote -- 0 or 1 if Express was selected
