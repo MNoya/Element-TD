@@ -638,8 +638,6 @@ function statCollection:print(s1, s2)
 
     if s2 then
         str = str .. " " .. tostring(s2)
-    else
-        str = str .. " nil"
     end
 
     print(str)

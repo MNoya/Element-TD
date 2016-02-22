@@ -57,7 +57,7 @@
     "ModelScale"        "1"
     "ModelRotation"             "90"
     "ModelOffset"               "20"
-    "BuildTime"        "3"
+    "BuildTime"        "2"
     "Requirements"
     {
         "earth"        "3"

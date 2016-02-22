@@ -58,7 +58,7 @@
     "ModelOffset"               "10"
     "AOE_Full"        "100"
     "AOE_Half"        "200"
-    "BuildTime"        "3"
+    "BuildTime"        "2"
     "Requirements"
     {
         "dark"        "1"

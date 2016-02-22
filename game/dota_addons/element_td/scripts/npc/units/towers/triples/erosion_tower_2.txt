@@ -73,7 +73,7 @@
 
     "AOE_Full"        "400"
     "AOE_Half"        "400"
-    "BuildTime"        "4"
+    "BuildTime"        "3"
     "Requirements"
     {
         "dark"        "2"

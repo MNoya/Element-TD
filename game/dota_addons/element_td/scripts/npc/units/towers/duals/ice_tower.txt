@@ -54,7 +54,7 @@
     "ModelRotation"             "90"
     "ModelRotation"             "90"
     "ModelOffset"               "20"
-    "BuildTime"        "3"
+    "BuildTime"        "2"
     "Requirements"
     {
         "water"        "1"

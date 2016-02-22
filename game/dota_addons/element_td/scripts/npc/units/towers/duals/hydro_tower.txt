@@ -39,7 +39,7 @@
     "Level"                     "1"
     "Cost"                      "275"
     "TotalCost"                 "450"
-    "BuildTime"                 "3"
+    "BuildTime"                 "2"
 
     "DamageType"                "earth"
     "ScriptClass"               "HydroTower"

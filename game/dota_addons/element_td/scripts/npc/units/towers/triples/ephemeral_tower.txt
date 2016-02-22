@@ -71,7 +71,7 @@
             "5" { "ItemDef" "6838" } // Sentry of Tranquility
         }
     }
-    "BuildTime"        "4"
+    "BuildTime"        "3"
     "Requirements"
     {
         "earth"        "1"

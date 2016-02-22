@@ -55,7 +55,7 @@
     "ModelRotation"    "90"
     "ModelOffset"      "15"
 
-    "BuildTime"        "3"
+    "BuildTime"        "2"
     "Requirements"
     {
         "fire"        "1"

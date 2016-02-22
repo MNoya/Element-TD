@@ -56,7 +56,7 @@
     "Model"        "models/disease_tower3.vmdl"
     "ModelScale"        "0.6"
     "ModelRotation"     "135"
-    "BuildTime"        "3"
+    "BuildTime"        "2"
     "Requirements"
     {
         "dark"        "3"

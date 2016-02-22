@@ -69,7 +69,7 @@
         }
     }
 
-    "BuildTime"        "4"
+    "BuildTime"        "3"
     "Requirements"
     {
         "dark"        "1"

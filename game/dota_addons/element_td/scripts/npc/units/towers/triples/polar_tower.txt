@@ -73,7 +73,7 @@
 
     "AOE_Full"        "100"
     "AOE_Half"        "200"
-    "BuildTime"        "4"
+    "BuildTime"        "3"
     "Requirements"
     {
         "water"        "1"

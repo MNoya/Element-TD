@@ -54,7 +54,7 @@
     "ProjectileSpeed"        "3000"
     "Model"        "models/disease_tower1.vmdl"
     "ModelScale"        "0.6"
-    "BuildTime"        "3"
+    "BuildTime"        "2"
     "Requirements"
     {
         "dark"        "1"

@@ -44,7 +44,7 @@
     "EssenceCost"               "1"
     "TotalCost"                 "11000"
     "PureEssence"               "1"
-    "BuildTime"                 "2"
+    "BuildTime"                 "1"
     "Element"                   "nature"
     "DamageType"                "nature"
     "ScriptClass"               "BasicTower"

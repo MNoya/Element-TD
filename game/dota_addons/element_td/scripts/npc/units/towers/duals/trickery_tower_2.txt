@@ -56,7 +56,7 @@
     "ModelScale"        "0.8"
     "ModelRotation"     "90"
     "ModelOffset"       "20"
-    "BuildTime"        "3"
+    "BuildTime"        "2"
     "Requirements"
     {
         "light"        "2"

@@ -3812,7 +3812,7 @@
 	    "Level"                     "1"
 	    "Cost"                      "175"
 	    "TotalCost"                 "175"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "1"
 	    "Element"                   "dark"
 	    "DamageType"                "dark"
 	    "ScriptClass"               "BasicTower"
@@ -3906,7 +3906,7 @@
 	    "Level"                     "1"
 	    "Cost"                      "175"
 	    "TotalCost"                 "175"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "1"
 	    "Element"                   "earth"
 	    "DamageType"                "earth"
 	    "ScriptClass"               "BasicTowerAOE"
@@ -4007,7 +4007,7 @@
 	    "Level"                     "1"
 	    "Cost"                      "175"
 	    "TotalCost"                 "175"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "1"
 	    "Element"                   "fire"
 	    "DamageType"                "fire"
 	    "ScriptClass"               "BasicTowerAOE"
@@ -4099,7 +4099,7 @@
 	    "Level"                     "2"
 	    "Cost"                      "375"
 	    "TotalCost"                 "550"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "1"
 	    "Element"                   "dark"
 	    "DamageType"                "dark"
 	    "ScriptClass"               "BasicTower"
@@ -4189,7 +4189,7 @@
 	    "Level"                     "2"
 	    "Cost"                      "375"
 	    "TotalCost"                 "550"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "1"
 	    "Element"                   "earth"
 	    "DamageType"                "earth"
 	    "ScriptClass"               "BasicTowerAOE"
@@ -4277,7 +4277,7 @@
 	    "Level"                     "2"
 	    "Cost"                      "375"
 	    "TotalCost"                 "550"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "1"
 	    "Element"                   "fire"
 	    "DamageType"                "fire"
 	    "ScriptClass"               "BasicTowerAOE"
@@ -4366,7 +4366,7 @@
 	    "Level"                     "2"
 	    "Cost"                      "375"
 	    "TotalCost"                 "550"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "1"
 	    "Element"                   "light"
 	    "DamageType"                "light"
 	    "ScriptClass"               "BasicTower"
@@ -4455,7 +4455,7 @@
 	    "Level"                     "2"
 	    "Cost"                      "375"
 	    "TotalCost"                 "550"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "1"
 	    "Element"                   "nature"
 	    "DamageType"                "nature"
 	    "ScriptClass"               "BasicTower"
@@ -4544,7 +4544,7 @@
 	    "Level"                     "2"
 	    "Cost"                      "375"
 	    "TotalCost"                 "550"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "1"
 	    "Element"                   "water"
 	
 	    "DamageType"                "water"
@@ -4634,7 +4634,7 @@
 	    "Level"                     "1"
 	    "Cost"                      "175"
 	    "TotalCost"                 "175"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "1"
 	    "Element"                   "light"
 	    "DamageType"                "light"
 	    "ScriptClass"               "BasicTower"
@@ -4728,7 +4728,7 @@
 	    "Level"                     "1"
 	    "Cost"                      "175"
 	    "TotalCost"                 "175"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "1"
 	    "Element"                   "nature"
 	    "DamageType"                "nature"
 	    "ScriptClass"               "BasicTower"
@@ -4824,7 +4824,7 @@
 	    "Cost"                      "11000"
 	    "TotalCost"                 "11000"
 	    "EssenceCost"               "1"
-	    "BuildTime"                 "8"
+	    "BuildTime"                 "6"
 	    "Element"                   "none"
 	    "DamageType"                "composite"
 	    "ScriptClass"               "BasicTowerAOE"
@@ -4907,7 +4907,7 @@
 	    "EssenceCost"               "1"
 	    "TotalCost"                 "11000"
 	    "PureEssence"               "1"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "3"
 	    "Element"                   "dark"
 	    "DamageType"                "dark"
 	    "ScriptClass"               "BasicTower"
@@ -4993,7 +4993,7 @@
 	    "EssenceCost"               "1"
 	    "TotalCost"                 "11000"
 	    "PureEssence"               "1"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "3"
 	    "Element"                   "earth"
 	    "DamageType"                "earth"
 	    "ScriptClass"               "BasicTowerAOE"
@@ -5076,7 +5076,7 @@
 	    "EssenceCost"               "1"
 	    "TotalCost"                 "11000"
 	    "PureEssence"               "1"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "3"
 	    "Element"                   "fire"
 	    "DamageType"                "fire"
 	    "ScriptClass"               "BasicTowerAOE"
@@ -5161,7 +5161,7 @@
 	    "EssenceCost"               "1"
 	    "TotalCost"                 "11000"
 	    "PureEssence"               "1"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "3"
 	    "Element"                   "light"
 	    "DamageType"                "light"
 	    "ScriptClass"               "BasicTower"
@@ -5250,7 +5250,7 @@
 	    "EssenceCost"               "1"
 	    "TotalCost"                 "11000"
 	    "PureEssence"               "1"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "1"
 	    "Element"                   "nature"
 	    "DamageType"                "nature"
 	    "ScriptClass"               "BasicTower"
@@ -5336,7 +5336,7 @@
 	    "EssenceCost"               "1"
 	    "TotalCost"                 "11000"
 	    "PureEssence"               "1"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "1"
 	    "Element"                   "water"
 	
 	    "DamageType"                "water"
@@ -5419,7 +5419,7 @@
 	    "Level"                     "3"
 	    "Cost"                      "1250"
 	    "TotalCost"                 "1800"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "1"
 	    "Element"                   "dark"
 	    "DamageType"                "dark"
 	    "ScriptClass"               "BasicTower"
@@ -5509,7 +5509,7 @@
 	    "Level"                     "3"
 	    "Cost"                      "1250"
 	    "TotalCost"                 "1800"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "1"
 	    "Element"                   "earth"
 	    "DamageType"                "earth"
 	    "ScriptClass"               "BasicTowerAOE"
@@ -5597,7 +5597,7 @@
 	    "Level"                     "3"
 	    "Cost"                      "1250"
 	    "TotalCost"                 "1800"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "1"
 	    "Element"                   "fire"
 	    "DamageType"                "fire"
 	    "ScriptClass"               "BasicTowerAOE"
@@ -5686,7 +5686,7 @@
 	    "Level"                     "3"
 	    "Cost"                      "1250"
 	    "TotalCost"                 "1800"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "1"
 	    "Element"                   "light"
 	    "DamageType"                "light"
 	    "ScriptClass"               "BasicTower"
@@ -5776,7 +5776,7 @@
 	    "Level"                     "3"
 	    "Cost"                      "1250"
 	    "TotalCost"                 "1800"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "1"
 	    "Element"                   "nature"
 	    "DamageType"                "nature"
 	    "ScriptClass"               "BasicTower"
@@ -5863,7 +5863,7 @@
 	    "Level"                     "3"
 	    "Cost"                      "1250"
 	    "TotalCost"                 "1800"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "1"
 	    "Element"                   "water"
 	
 	    "DamageType"                "water"
@@ -5949,7 +5949,7 @@
 	    "Level"                     "1"
 	    "Cost"                      "175"
 	    "TotalCost"                 "175"
-	    "BuildTime"                 "2"
+	    "BuildTime"                 "1"
 	    "Element"                   "water"
 	
 	    "DamageType"                "water"
@@ -6057,7 +6057,7 @@
 	    "ProjectileSpeed"        "1500"
 	    "Model"        "models/blacksmith_tower.vmdl"
 	    "ModelScale"        "1"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "fire"        "1"
@@ -6132,7 +6132,7 @@
 	    "ProjectileSpeed"        "1500"
 	    "Model"        "models/blacksmith_tower.vmdl"
 	    "ModelScale"        "1.1"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "fire"        "2"
@@ -6204,7 +6204,7 @@
 	    "ProjectileSpeed"        "1500"
 	    "Model"        "models/blacksmith_tower.vmdl"
 	    "ModelScale"        "1.2"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "fire"        "3"
@@ -6274,7 +6274,7 @@
 	    "ProjectileSpeed"        "3000"
 	    "Model"        "models/disease_tower1.vmdl"
 	    "ModelScale"        "0.6"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "dark"        "1"
@@ -6353,7 +6353,7 @@
 	    "Model"        "models/disease_tower2.vmdl"
 	    "ModelScale"        "0.6"
 	    "ModelRotation"     "135"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "dark"        "2"
@@ -6429,7 +6429,7 @@
 	    "Model"        "models/disease_tower3.vmdl"
 	    "ModelScale"        "0.6"
 	    "ModelRotation"     "135"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "dark"        "3"
@@ -6502,7 +6502,7 @@
 	    "ModelRotation"    "90"
 	    "ModelOffset"      "15"
 	
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "fire"        "1"
@@ -6593,7 +6593,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "fire"        "2"
@@ -6679,7 +6679,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "fire"        "3"
@@ -6762,7 +6762,7 @@
 	    "ModelScale"        "1.0"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "fire"        "1"
@@ -6866,7 +6866,7 @@
 	    "ModelScale"        "1.1"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "fire"        "2"
@@ -6953,7 +6953,7 @@
 	    "ModelScale"        "1.2"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "fire"        "3"
@@ -7037,7 +7037,7 @@
 	    "ModelScale"        "0.8"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "15"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "earth"        "1"
@@ -7127,7 +7127,7 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "15"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "earth"        "2"
@@ -7213,7 +7213,7 @@
 	    "ModelScale"        "1"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "15"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "earth"        "3"
@@ -7281,7 +7281,7 @@
 	    "Level"                     "1"
 	    "Cost"                      "275"
 	    "TotalCost"                 "450"
-	    "BuildTime"                 "3"
+	    "BuildTime"                 "2"
 	
 	    "DamageType"                "earth"
 	    "ScriptClass"               "HydroTower"
@@ -7378,7 +7378,7 @@
 	    "Level"                     "2"
 	    "Cost"                      "800"
 	    "TotalCost"                 "1250"
-	    "BuildTime"                 "3"
+	    "BuildTime"                 "2"
 	
 	    "DamageType"                "earth"
 	    "ScriptClass"               "HydroTower"
@@ -7465,7 +7465,7 @@
 	    "Level"                     "3"
 	    "Cost"                      "1900"
 	    "TotalCost"                 "3150"
-	    "BuildTime"                 "3"
+	    "BuildTime"                 "2"
 	
 	    "DamageType"                "earth"
 	    "ScriptClass"               "HydroTower"
@@ -7565,7 +7565,7 @@
 	    "ModelRotation"             "90"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "water"        "1"
@@ -7654,7 +7654,7 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "water"        "2"
@@ -7739,7 +7739,7 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "water"        "3"
@@ -7826,7 +7826,7 @@
 	    "ModelScale"        "0.8"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "light"        "1"
@@ -7935,7 +7935,7 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "light"        "2"
@@ -8022,7 +8022,7 @@
 	    "ModelScale"        "1"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "light"        "3"
@@ -8105,7 +8105,7 @@
 	    "ModelRotation"    "90"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "15"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "dark"        "1"
@@ -8194,7 +8194,7 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "15"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "dark"        "2"
@@ -8280,7 +8280,7 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "15"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "dark"        "3"
@@ -8368,7 +8368,7 @@
 	    "ModelScale"        "0.8"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "15"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "earth"        "1"
@@ -8464,7 +8464,7 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "15"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "earth"        "2"
@@ -8555,7 +8555,7 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "15"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "earth"        "3"
@@ -8642,7 +8642,7 @@
 	    "ModelOffset"               "10"
 	    "AOE_Full"        "100"
 	    "AOE_Half"        "200"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "dark"        "1"
@@ -8749,7 +8749,7 @@
 	    "ModelOffset"               "10"
 	    "AOE_Full"        "100"
 	    "AOE_Half"        "200"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "dark"        "2"
@@ -8838,7 +8838,7 @@
 	    "ModelOffset"               "10"
 	    "AOE_Full"        "100"
 	    "AOE_Half"        "200"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "dark"        "3"
@@ -8926,7 +8926,7 @@
 	    "ModelScale"        "0.8"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "earth"        "1"
@@ -9042,7 +9042,7 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "earth"        "2"
@@ -9134,7 +9134,7 @@
 	    "ModelScale"        "1"
 	    "ModelRotation"             "90"
 	    "ModelOffset"               "20"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "earth"        "3"
@@ -9223,7 +9223,7 @@
 	    "ModelScale"        "0.8"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "20"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "light"        "1"
@@ -9327,7 +9327,7 @@
 	    "ModelScale"        "0.8"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "20"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "light"        "2"
@@ -9412,7 +9412,7 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "20"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "light"        "3"
@@ -9493,7 +9493,7 @@
 	    "ModelScale"        "0.8"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "10"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "fire"        "1"
@@ -9597,7 +9597,7 @@
 	    "ModelScale"        "0.9"
 	    "ModelRotation"     "90"
 	    "ModelOffset"       "10"
-	    "BuildTime"        "3"
+	    "BuildTime"        "2"
 	    "Requirements"
 	    {
 	        "fire"        "2"
@@ -9667,7 +9667,7 @@
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "1.5"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
-	    "BuildTime"                 "3"
+	    "BuildTime"                 "2"
 	    "Requirements"
 	    {
 	        "fire"      "3"
@@ -10014,7 +10014,7 @@
 	        }
 	    }
 	    
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "earth"        "1"
@@ -10107,7 +10107,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "earth"        "2"
@@ -10195,7 +10195,7 @@
 	            "5" { "ItemDef" "6838" } // Sentry of Tranquility
 	        }
 	    }
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "earth"        "1"
@@ -10286,7 +10286,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "earth"        "2"
@@ -10376,7 +10376,7 @@
 	
 	    "AOE_Full"        "400"
 	    "AOE_Half"        "400"
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "dark"        "1"
@@ -10470,7 +10470,7 @@
 	
 	    "AOE_Full"        "400"
 	    "AOE_Half"        "400"
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "dark"        "2"
@@ -10561,7 +10561,7 @@
 	    }
 	    "AOE_Half"        "300"
 	    "AOE_Full"        "150"
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "dark"        "1"
@@ -10655,7 +10655,7 @@
 	
 	    "AOE_Half"        "300"
 	    "AOE_Full"        "150"
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "dark"        "2"
@@ -10743,7 +10743,7 @@
 	        }
 	    }    
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "water"        "1"
@@ -10833,7 +10833,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "water"        "2"
@@ -10926,7 +10926,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "fire"        "1"
@@ -11021,7 +11021,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "fire"        "2"
@@ -11112,7 +11112,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "dark"        "1"
@@ -11205,7 +11205,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "dark"        "2"
@@ -11294,7 +11294,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "earth"        "1"
@@ -11383,7 +11383,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "earth"        "2"
@@ -11468,7 +11468,7 @@
 	        }
 	    }
 	    
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "nature"        "1"
@@ -11557,7 +11557,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "nature"        "2"
@@ -11644,7 +11644,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "dark"        "1"
@@ -11733,7 +11733,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "dark"        "2"
@@ -11824,7 +11824,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "dark"        "1"
@@ -11916,7 +11916,7 @@
 	        }
 	    }
 	    
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "dark"        "2"
@@ -12004,7 +12004,7 @@
 	
 	    "AOE_Full"        "150"
 	    "AOE_Half"        "300"
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "dark"        "1"
@@ -12095,7 +12095,7 @@
 	
 	    "AOE_Full"        "150"
 	    "AOE_Half"        "300"
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "dark"        "2"
@@ -12169,7 +12169,7 @@
 	    "ModelOffset"       "35"
 	    "DisableTurning"    "1"
 	    
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "fire"        "1"
@@ -12245,7 +12245,7 @@
 	    "ModelOffset"       "35"
 	    "DisableTurning"    "1"
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "fire"        "2"
@@ -12333,7 +12333,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "dark"        "1"
@@ -12423,7 +12423,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "dark"        "2"
@@ -12515,7 +12515,7 @@
 	
 	    "AOE_Full"        "100"
 	    "AOE_Half"        "200"
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "water"        "1"
@@ -12609,7 +12609,7 @@
 	
 	    "AOE_Full"        "100"
 	    "AOE_Half"        "200"
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "water"        "2"
@@ -12695,7 +12695,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "fire"        "1"
@@ -12784,7 +12784,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "fire"        "2"
@@ -12870,7 +12870,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "dark"        "1"
@@ -12957,7 +12957,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "dark"        "2"
@@ -13050,7 +13050,7 @@
 	
 	    "AOE_Full"        "100"
 	    "AOE_Half"        "200"
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "dark"        "1"
@@ -13145,7 +13145,7 @@
 	
 	    "AOE_Full"        "100"
 	    "AOE_Half"        "200"
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "dark"        "2"
@@ -13236,7 +13236,7 @@
 	
 	    "AOE_Full"        "200"
 	    "AOE_Half"        "400"
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "water"        "1"
@@ -13329,7 +13329,7 @@
 	
 	    "AOE_Full"        "200"
 	    "AOE_Half"        "400"
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "water"        "2"
@@ -13456,7 +13456,7 @@
 	        }
 	    }
 	    
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "fire"        "1"
@@ -13546,7 +13546,7 @@
 	        }
 	    }
 	
-	    "BuildTime"        "4"
+	    "BuildTime"        "3"
 	    "Requirements"
 	    {
 	        "fire"        "2"

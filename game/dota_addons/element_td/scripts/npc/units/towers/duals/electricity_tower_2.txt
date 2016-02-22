@@ -67,7 +67,7 @@
         }
     }
 
-    "BuildTime"        "3"
+    "BuildTime"        "2"
     "Requirements"
     {
         "fire"        "2"

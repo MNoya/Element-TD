@@ -184,13 +184,13 @@ function ElementTD.ToggleDebugDamage()
 end
 
 function ElementTD:DebugStatCollection()
-    statCollection:print("Mod ID", statCollection.modIdentifier)
-    statCollection:print("Match ID", statCollection.matchID)
-    statCollection:print("Auth Key", statCollection.authKey)
-    statCollection:print("Done Init", statCollection.doneInit)
-    statCollection:print("Sent Stage 1", statCollection.sentStage1)
-    statCollection:print("Sent Stage 2", statCollection.sentStage2)
-    statCollection:print("Sent Stage 3", statCollection.sentStage3)
+    statCollection:print("Mod ID", statCollection.modIdentifier or "nil")
+    statCollection:print("Match ID", statCollection.matchID or "nil")
+    statCollection:print("Auth Key", statCollection.authKey or "nil")
+    statCollection:print("Done Init", statCollection.doneInit or "nil")
+    statCollection:print("Sent Stage 1", statCollection.sentStage1 or "nil")
+    statCollection:print("Sent Stage 2", statCollection.sentStage2 or "nil")
+    statCollection:print("Sent Stage 3", statCollection.sentStage3 or "nil")
 end
 
 ------------------------------------------------------

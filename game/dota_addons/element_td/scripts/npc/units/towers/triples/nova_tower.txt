@@ -55,7 +55,7 @@
     "ModelOffset"       "35"
     "DisableTurning"    "1"
     
-    "BuildTime"        "4"
+    "BuildTime"        "3"
     "Requirements"
     {
         "fire"        "1"

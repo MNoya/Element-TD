@@ -42,7 +42,7 @@
     "Level"                     "3"
     "Cost"                      "1250"
     "TotalCost"                 "1800"
-    "BuildTime"                 "2"
+    "BuildTime"                 "1"
     "Element"                   "nature"
     "DamageType"                "nature"
     "ScriptClass"               "BasicTower"

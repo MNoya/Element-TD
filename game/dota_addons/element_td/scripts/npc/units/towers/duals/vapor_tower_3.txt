@@ -39,7 +39,7 @@
     "AttackAcquisitionRange"    "700"
     "AttackRate"                "1.5"
     "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
-    "BuildTime"                 "3"
+    "BuildTime"                 "2"
     "Requirements"
     {
         "fire"      "3"

@@ -44,7 +44,7 @@
     "Cost"                      "11000"
     "TotalCost"                 "11000"
     "EssenceCost"               "1"
-    "BuildTime"                 "8"
+    "BuildTime"                 "6"
     "Element"                   "none"
     "DamageType"                "composite"
     "ScriptClass"               "BasicTowerAOE"

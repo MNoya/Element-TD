@@ -54,7 +54,7 @@
     "ProjectileSpeed"        "1500"
     "Model"        "models/blacksmith_tower.vmdl"
     "ModelScale"        "1.1"
-    "BuildTime"        "3"
+    "BuildTime"        "2"
     "Requirements"
     {
         "fire"        "2"
