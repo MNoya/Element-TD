@@ -94,6 +94,7 @@ function ElementTD:InitGameMode()
     LinkLuaModifier("modifier_bonus_life", "libraries/modifiers/modifier_bonus_life", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_health_bar_markers", "libraries/modifiers/modifier_health_bar_markers", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_not_on_minimap_for_enemies", "libraries/modifiers/modifier_not_on_minimap_for_enemies", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_max_ms", "libraries/modifiers/modifier_max_ms", LUA_MODIFIER_MOTION_NONE)
     
     -- Register UI Listener   
     CustomGameEventManager:RegisterListener( "next_wave", Dynamic_Wrap(ElementTD, "OnNextWave")) -- wave info
