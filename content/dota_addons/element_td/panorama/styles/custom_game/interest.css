@@ -31,6 +31,14 @@
     background-size: 100%;
 }
 
+#InterestBarDisabled
+{
+    width: 100%;
+    height: 100%;
+    background-image: url("file://{resources}/images/custom_game/interest/interest_disabled.png");
+    background-size: 100%;
+}
+
 #InterestBarOverlay
 {
     width: 100%;

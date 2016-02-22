@@ -6,6 +6,7 @@ var INTEREST_REFRESH = 0.05;
 
 var interest = $( "#Interest" );
 var interestBarGold = $( "#InterestBarGold" );
+var interestBarDisabled = $( "#InterestBarDisabled" );
 var tooltipAmount = $( "#TooltipAmount" );
 
 var timerEnd = 0;
@@ -29,6 +30,7 @@ function DisplayInterest( table ) {
 	timerStart = Game.GetGameTime();
 	INTEREST_INTERVAL = table.interval;
 	timerEnd = Game.GetGameTime() + INTEREST_INTERVAL;
+	interestBarDisabled.visible = false;
 	interest.visible = true;
 	enabled = table.enabled;
 	INTEREST_RATE = table.rate;
@@ -48,12 +50,18 @@ function InterestEarned( table ) {
 
 function PauseInterest( table ) {
 	enabled = false;
+	interestBarDisabled.visible = true;
+	interestBarDisabled.style["width"] = interestBarGold.style["width"];
+	interestBarGold.visible = false;
 }
 
 function ResumeInterest( table ) {
 	var time = Game.GetGameTime();
 	timerStart = time - INTEREST_INTERVAL + table.timeRemaining;
 	timerEnd = time + table.timeRemaining;
+	interestBarDisabled.visible = false;
+	interestBarGold.visible = true;
+	
 	enabled = true;
 }
 
