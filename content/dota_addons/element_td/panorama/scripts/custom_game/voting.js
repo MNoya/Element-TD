@@ -398,11 +398,11 @@ function Setup()
     SelectDifficulty("normal")
     UpdateMultipliers()
     voteResultsUI.visible = false;
-    //votingUI.visible = false;
-    //info.visible = false;
-    //votingLiveUI.visible = false;
-    //currentModeUI.visible = false;
-    //votingLiveUI.AddClass("hidden");
+    votingUI.visible = false;
+    info.visible = false;
+    votingLiveUI.visible = false;
+    currentModeUI.visible = false;
+    votingLiveUI.AddClass("hidden");
     UpdateNotVoted();
 }
 

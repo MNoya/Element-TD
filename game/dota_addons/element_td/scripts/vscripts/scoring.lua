@@ -296,14 +296,14 @@ function ScoringObject:GetNetworthBonus()
 
 	local difficulty = GetPlayerDifficulty( self.playerID ).difficultyName
 	local playerNetworth = GetPlayerNetworth( self.playerID )
-	local baseWorth = 88170
+	local baseWorth = 69483
 
 	if ( difficulty == "Hard" ) then
-		baseWorth = 96060
+		baseWorth = 89142
 	elseif ( difficulty == "VeryHard" ) then
-		baseWorth = 110790
+		baseWorth = 102373
 	elseif ( difficulty == "Insane" ) then
-		baseWorth = 127770
+		baseWorth = 117564
 	end
 	return (playerNetworth/baseWorth/2)
 end
