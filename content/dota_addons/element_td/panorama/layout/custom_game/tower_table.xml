@@ -22,6 +22,7 @@
                 <Label id="TitleElements" text="Elements"/>
                 <Label id="TitleDuals" text="Duals"/>
                 <Label id="TitleTriples" text="Triples"/>
+                <Label id="CloseButton" onactivate="Toggle()" text="X"/>
             </Panel>
             <Panel hittest="false" id="ElementsContainer">
                 <Panel hittest="false" id="LightContainer">
