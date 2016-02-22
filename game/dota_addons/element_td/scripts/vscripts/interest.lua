@@ -34,7 +34,7 @@ function InterestManager:GiveInterest(playerID)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 	local player = PlayerResource:GetPlayer(playerID)
 	local gold = hero:GetGold()
-	local interest = math.ceil(gold * INTEREST_RATE)
+	local interest = math.floor(gold * INTEREST_RATE)
 	
 	hero:ModifyGold(interest)
 	PopupAlchemistGold(hero, interest)
