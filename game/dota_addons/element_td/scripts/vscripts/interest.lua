@@ -36,11 +36,14 @@ function InterestManager:GiveInterest(playerID)
 	local gold = hero:GetGold()
 	local interest = math.floor(gold * INTEREST_RATE)
 	
-	hero:ModifyGold(interest)
-	PopupAlchemistGold(hero, interest)
-	Sounds:EmitSoundOnClient(playerID, "Interest.Midas")
+	if interest > 0 then
+		hero:ModifyGold(interest)
+		PopupAlchemistGold(hero, interest)
+		Sounds:EmitSoundOnClient(playerID, "Interest.Midas")
 
-	playerData.interestGold = playerData.interestGold + interest
+		playerData.interestGold = playerData.interestGold + interest
+	end
+	
 	if player then
 		CustomGameEventManager:Send_ServerToPlayer( player, "etd_earned_interest", { goldEarned=interest } )
 	end
