@@ -855,7 +855,7 @@
         "DOTA_Tooltip_ability_item_upgrade_to_refined_water_tower_Description"      "将这座防御塔升级为精致的圣水之塔.\n\n价格：<font color='#F0BA36'>1250金币</font>\n元素：<font color='#01A2FF'>圣水</font>\n伤害类型：<font color='#01A2FF'>圣水</font>\n攻击力：<font color='#FFFFFF'>1500</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>"
         "DOTA_Tooltip_ability_item_upgrade_to_refined_water_tower_disabled_Description"     "将这座防御塔升级为精致的圣水之塔.\n<font color='#F0BA36'>需要：</font><font color='#01A2FF'>圣水3</font> \n\n价格：<font color='#F0BA36'>1250金币</font>\n元素：<font color='#01A2FF'>圣水</font>\n伤害类型：<font color='#01A2FF'>圣水</font>\n攻击力：<font color='#FFFFFF'>1500</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>"
 
-        "DOTA_Tooltip_ability_item_upgrade_to_pure_water_tower"                           “升级为纯正的圣水之塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_pure_water_tower"                           "升级为纯正的圣水之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_pure_water_tower_Description"               "将这座防御塔升级为纯正的圣水之塔.\n\n价格：<font color='#F0BA36'>9200金币</font> and <font color='#00BFFF'>1 纯正的Essence</font>\n元素：<font color='#01A2FF'>圣水</font>\n伤害类型：<font color='#01A2FF'>圣水</font>\n攻击力：<font color='#FFFFFF'>22500</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>"
 
         // Vapor (Water + Fire)
@@ -981,7 +981,7 @@
         "DOTA_Tooltip_ability_item_upgrade_to_refined_fire_tower_Description"       "将这座防御塔升级为精致的圣火之塔.\n\n价格：<font color='#F0BA36'>1250金币</font>\n元素：<font color='#C40000'>圣火</font>\n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>500</font>\n攻击距离：<font color='#FFFFFF'>550</font>\n攻击速度：<font color='#FFFFFF'>Very Fast</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>"
         "DOTA_Tooltip_ability_item_upgrade_to_refined_fire_tower_disabled_Description"      "将这座防御塔升级为精致的圣火之塔.\n<font color='#F0BA36'>需要：</font><font color='#C40000'>圣火3</font> \n\n价格：<font color='#F0BA36'>1250金币</font>\n元素：<font color='#C40000'>圣火</font>\n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>500</font>\n攻击距离：<font color='#FFFFFF'>550</font>\n攻击速度：<font color='#FFFFFF'>Very Fast</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>"
         
-        "DOTA_Tooltip_ability_item_upgrade_to_pure_fire_tower"                            “升级为纯正的圣火之塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_pure_fire_tower"                            "升级为纯正的圣火之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_pure_fire_tower_Description"                "将这座防御塔升级为纯正的圣水之塔.\n\n价格：<font color='#F0BA36'>9200金币</font> and <font color='#00BFFF'>1 纯正的Essence</font>\n元素：<font color='#C40000'>圣火</font>\n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>7500</font>\n攻击距离：<font color='#FFFFFF'>550</font>\n攻击速度：<font color='#FFFFFF'>Very Fast</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>"
 
         // Blacksmith (Fire + Earth)
@@ -1099,7 +1099,7 @@
         "DOTA_Tooltip_ability_item_upgrade_to_focused_nature_tower_Description"     "将这座防御塔升级为专注的自然之塔.\n\n价格：<font color='#F0BA36'>375金币</font>\n元素：<font color='#00C400'>自然</font>\n伤害类型：<font color='#00C400'>自然</font>\n攻击力：<font color='#FFFFFF'>700</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_nature_tower_disabled_Description"        "将这座防御塔升级为专注的自然之塔.\n<font color='#F0BA36'>需要：</font><font color='#00C400'>自然2</font> \n\n价格：<font color='#F0BA36'>375金币</font>\n元素：<font color='#00C400'>自然</font>\n伤害类型：<font color='#00C400'>自然</font>\n攻击力：<font color='#FFFFFF'>700</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>"
         
-        "DOTA_Tooltip_ability_item_upgrade_to_pure_nature_tower"                          “升级为纯正的自然之塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_pure_nature_tower"                          "升级为纯正的自然之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_pure_nature_tower_Description"              "将这座防御塔升级为纯正的自然之塔.\n\n价格：<font color='#F0BA36'>9200金币</font> and <font color='#00BFFF'>1 纯正的Essence</font>\n元素：<font color='#00C400'>自然</font>\n伤害类型：<font color='#00C400'>自然</font>\n攻击力：<font color='#FFFFFF'>52500</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>"
 
         // Moss (Nature + Earth)
@@ -1209,7 +1209,7 @@
         "DOTA_Tooltip_ability_item_upgrade_to_refined_earth_tower_Description"      "将这座防御塔升级为精致的大地之塔.\n\n价格：<font color='#F0BA36'>1250金币</font>\n元素：<font color='#D4880F'>大地</font>\n伤害类型：<font color='#D4880F'>大地</font>\n攻击力：<font color='#FFFFFF'>1200</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>"
         "DOTA_Tooltip_ability_item_upgrade_to_refined_earth_tower_disabled_Description"     "将这座防御塔升级为精致的大地之塔.\n<font color='#F0BA36'>需要：</font><font color='#D4880F'>大地3</font> \n\n价格：<font color='#F0BA36'>1250金币</font>\n元素：<font color='#D4880F'>大地</font>\n伤害类型：<font color='#D4880F'>大地</font>\n攻击力：<font color='#FFFFFF'>1200</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>"
         
-        "DOTA_Tooltip_ability_item_upgrade_to_pure_earth_tower"                           “升级为纯正的大地之塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_pure_earth_tower"                           "升级为纯正的大地之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_pure_earth_tower_Description"               "将这座防御塔升级为纯正的大地之塔.\n\n价格：<font color='#F0BA36'>9200金币</font> and <font color='#00BFFF'>1 纯正的Essence</font>\n元素：<font color='#D4880F'>大地</font>\n伤害类型：<font color='#D4880F'>大地</font>\n攻击力：<font color='#FFFFFF'>18000</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>"
 
         // Quark (Earth + Light)
@@ -1321,7 +1321,7 @@
         "DOTA_Tooltip_ability_item_upgrade_to_refined_light_tower_Description"      "将这座防御塔升级为精致的光明之塔.\n\n价格：<font color='#F0BA36'>1250金币</font>\n元素：<font color='#E6E600'>光明</font>\n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>3500</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>常规</font>"
         "DOTA_Tooltip_ability_item_upgrade_to_refined_light_tower_disabled_Description"     "将这座防御塔升级为精致的光明之塔.\n<font color='#F0BA36'>需要：</font><font color='#E6E600'>光明3</font> \n\n价格：<font color='#F0BA36'>1250金币</font>\n元素：<font color='#E6E600'>光明</font>\n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>3500</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>常规</font>"       
 
-        "DOTA_Tooltip_ability_item_upgrade_to_pure_light_tower"                           “升级为纯正的光明之塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_pure_light_tower"                           "升级为纯正的光明之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_pure_light_tower_Description"               "将这座防御塔升级为纯正的光明之塔.\n\n价格：<font color='#F0BA36'>9200金币</font> and <font color='#00BFFF'>1 纯正的Essence</font>\n元素：<font color='#E6E600'>光明</font>\n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>52500</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>常规</font>"
 
         // Trickery (Light + Dark)
@@ -1415,7 +1415,7 @@
         "DOTA_Tooltip_ability_item_upgrade_to_refined_dark_tower_Description"       "将这座防御塔升级为精致的黑暗之塔.\n\n价格：<font color='#F0BA36'>1250金币</font>\n元素：<font color='#6C05B1'>黑暗</font>\n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>6500</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>"
         "DOTA_Tooltip_ability_item_upgrade_to_refined_dark_tower_disabled_Description"      "将这座防御塔升级为精致的黑暗之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗3</font> \n\n价格：<font color='#F0BA36'>1250金币</font>\n元素：<font color='#6C05B1'>黑暗</font>\n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>6500</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>"
         
-        "DOTA_Tooltip_ability_item_upgrade_to_pure_dark_tower"                            “升级为纯正的黑暗之塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_pure_dark_tower"                            "升级为纯正的黑暗之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_pure_dark_tower_Description"                "将这座防御塔升级为纯正的黑暗之塔.\n\n价格：<font color='#F0BA36'>9200金币</font> and <font color='#00BFFF'>1 纯正的Essence</font>\n元素：<font color='#6C05B1'>黑暗</font>\n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>97500</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>"
 
         // Disease (Dark + Nature)
