@@ -1,4 +1,4 @@
-BH_VERSION = "1.0.2"
+BH_VERSION = "1.0.3"
 
 if not BuildingHelper then
     BuildingHelper = class({})
@@ -1307,7 +1307,6 @@ end
 
 function BuildingHelper:NewGridType(grid_type)
     grid_type = string.upper(grid_type)
-    BuildingHelper:print("Adding new Grid Type: ".. grid_type.." ["..BuildingHelper.NextGridValue.."]")
     BuildingHelper.GridTypes[grid_type] = BuildingHelper.NextGridValue
     BuildingHelper.NextGridValue = BuildingHelper.NextGridValue * 2
     CustomNetTables:SetTableValue("building_settings", "grid_types", BuildingHelper.GridTypes)
