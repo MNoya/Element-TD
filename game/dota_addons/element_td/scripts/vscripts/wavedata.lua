@@ -129,6 +129,9 @@ function StartBreakTime(playerID, breakTime, rush_wave)
                     ModifyPureEssence(playerID, 1)
                     playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
 
+                    -- Track pure essence purchasing as part of the element order
+                    playerData.elementOrder[#playerData.elementOrder+1] = "Pure"
+
                     -- Gold bonus for Pure Essence randoming
                     GivePureEssenceGoldBonus(playerID)
                 else

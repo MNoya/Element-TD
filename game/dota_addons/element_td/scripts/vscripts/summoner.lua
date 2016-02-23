@@ -275,6 +275,9 @@ function BuyPureEssence( keys )
 		ModifyPureEssence(playerID, 1)
         playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
 		Sounds:EmitSoundOnClient(playerID, "General.Buy")
+
+        -- Track pure essence purchasing as part of the element order
+        playerData.elementOrder[#playerData.elementOrder+1] = "Pure"
         
         -- Gold bonus to help stay valuable by comparison to getting an element upgrade
         GivePureEssenceGoldBonus(playerID)

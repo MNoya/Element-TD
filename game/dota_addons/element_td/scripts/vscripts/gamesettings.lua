@@ -179,6 +179,7 @@ elements = {"water", "fire", "earth", "nature", "dark", "light", "pure"}
 function getRandomElement(wave)
 	local element = elements[math.random(#elements)]
 
+    -- Never random a Pure Essence unless there's enough to use it on a Periodic/Pure tower
 	if element == "pure" then
 		if usedElements[element] < 2 then
 			local hasLvl3 = false
