@@ -95,6 +95,7 @@ function ElementTD:InitGameMode()
     LinkLuaModifier("modifier_health_bar_markers", "libraries/modifiers/modifier_health_bar_markers", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_not_on_minimap_for_enemies", "libraries/modifiers/modifier_not_on_minimap_for_enemies", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_max_ms", "libraries/modifiers/modifier_max_ms", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_client_convars", "libraries/modifiers/modifier_client_convars", LUA_MODIFIER_MOTION_NONE)
     
     -- Register UI Listener   
     CustomGameEventManager:RegisterListener( "next_wave", Dynamic_Wrap(ElementTD, "OnNextWave")) -- wave info
@@ -208,6 +209,10 @@ function ElementTD:OnNextWave( keys )
 end
 
 function ElementTD:EndGameForPlayer( playerID )
+    -- Remove the hero top left ui element
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    hero:RemoveAbility("hero_ui")
+
     local playerData = GetPlayerData(playerID)
     local ply = PlayerResource:GetPlayer(playerID)
 
@@ -219,6 +224,7 @@ function ElementTD:EndGameForPlayer( playerID )
         Log:info("Player "..playerID.." has been defeated on Wave "..playerData.nextWave..".")
         GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerData.name.."</font> has been defeated on Wave "..playerData.nextWave.."!", 0, 0)
     end
+
     -- Clean up
     UpdatePlayerSpells(playerID)
     RemoveElementalOrbs(playerID)
@@ -363,6 +369,15 @@ function ElementTD:CheckGameEnd()
     end    
     GameRules:SendCustomMessage("#etd_end_message", 0, 0)
     Timers:CreateTimer(5, function()
+
+        -- Try to revert client convars
+        for _, playerID in pairs(playerIDs) do
+            local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+            if hero then
+                hero:RemoveModifierByName("modifier_client_convars")
+            end
+        end
+
         GameRules:SetGameWinner( teamWinner )
         GameRules:SetSafeToLeave( true )
     end)
@@ -415,6 +430,7 @@ end
 function ElementTD:InitializeHero(playerID, hero)
     print("OnInitHero PID:"..playerID)
     hero:AddNewModifier(nil, nil, "modifier_disarmed", {})
+    hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
     hero:SetAbilityPoints(0)
     hero:SetMaxHealth(50)
     hero:SetBaseMaxHealth(50)
