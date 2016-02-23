@@ -21,7 +21,7 @@ function modifier_spring_forward:GetModifierAttackSpeedBonus_Constant()
 end
 
 function modifier_spring_forward:GetEffectName()
-	return "particles/custom/well_tower_spring_forward.vpcf"
+	return "particles/custom/towers/well/spring_forward.vpcf"
 end
 
 function modifier_spring_forward:GetEffectAttachType()

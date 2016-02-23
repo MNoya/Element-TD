@@ -188,10 +188,10 @@
 	m_Children =
 	[
 		{
-			m_ChildRef = resource:"particles/custom/well_tower_spring_forward_sparks_b.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/well/spring_forward_sparks_c.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/well_tower_spring_forward_sparks_c.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/well/spring_forward_sparks_c.vpcf"
 		},
 	]
 }
