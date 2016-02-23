@@ -29,6 +29,8 @@
 					"DamageType"		"earth"
 				}
 			}
+
+			"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 		}
 	}
 }

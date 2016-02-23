@@ -29,6 +29,8 @@
 					"DamageType"		"water"
 				}
 			}
+
+			"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 		}
 	}
 }

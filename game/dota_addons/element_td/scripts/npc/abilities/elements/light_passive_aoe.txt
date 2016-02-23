@@ -29,6 +29,8 @@
 					"DamageType"		"light"
 				}
 			}
+
+			"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 		}
 	}
 }

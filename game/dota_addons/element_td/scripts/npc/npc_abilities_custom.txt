@@ -986,6 +986,8 @@
 						"DamageType"		"composite"
 					}
 				}
+	
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 			}
 		}
 	}
@@ -1039,6 +1041,8 @@
 						"DamageType"		"dark"
 					}
 				}
+	
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 			}
 		}
 	}
@@ -1073,6 +1077,8 @@
 						"DamageType"		"dark"
 					}
 				}
+	
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 			}
 		}
 	}
@@ -1126,6 +1132,8 @@
 						"DamageType"		"earth"
 					}
 				}
+	
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 			}
 		}
 	}
@@ -1160,6 +1168,8 @@
 						"DamageType"		"earth"
 					}
 				}
+	
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 			}
 		}
 	}
@@ -1213,6 +1223,8 @@
 						"DamageType"		"fire"
 					}
 				}
+	
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 			}
 		}
 	}
@@ -1266,6 +1278,8 @@
 						"DamageType"		"light"
 					}
 				}
+	
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 			}
 		}
 	}
@@ -1300,6 +1314,8 @@
 						"DamageType"		"light"
 					}
 				}
+	
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 			}
 		}
 	}
@@ -1353,6 +1369,8 @@
 						"DamageType"		"nature"
 					}
 				}
+	
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 			}
 		}
 	}
@@ -1387,6 +1405,8 @@
 						"DamageType"		"nature"
 					}
 				}
+	
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 			}
 		}
 	}
@@ -1440,6 +1460,8 @@
 						"DamageType"		"water"
 					}
 				}
+	
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 			}
 		}
 	}

@@ -38,6 +38,8 @@
 					"DamageType"		"composite"
 				}
 			}
+
+			"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 		}
 	}
 }

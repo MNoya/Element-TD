@@ -29,6 +29,8 @@
 					"DamageType"		"nature"
 				}
 			}
+
+			"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 		}
 	}
 }
