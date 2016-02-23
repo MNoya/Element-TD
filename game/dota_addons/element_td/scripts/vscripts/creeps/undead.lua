@@ -73,8 +73,9 @@ function CreepUndead:UndeadCreepRespawn()
     creep:RemoveModifierByName("modifier_invisible_etd")
     creep:RemoveModifierByName("modifier_stunned")
 
-    creep:SetMaximumGoldBounty(GetPlayerDifficulty(playerID):GetBountyForWave(wave))
-    creep:SetMinimumGoldBounty(GetPlayerDifficulty(playerID):GetBountyForWave(wave))
+    local bounty = GetPlayerDifficulty(playerID):GetBountyForWave(wave)
+    creep:SetMaximumGoldBounty(bounty)
+    creep:SetMinimumGoldBounty(bounty)
 
     creep:SetHealth(creep:GetMaxHealth() * 0.5) -- it spawns at a percentage of its max health
     CreateMoveTimerForCreep(creep, playerData.sector + 1) --create a timer for this creep so it continues walking to the destination
