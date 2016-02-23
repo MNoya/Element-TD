@@ -59,7 +59,7 @@ function loadWaveData(chaos)
         elseif EXPRESS_MODE then
             table.insert(WAVE_CREEPS, lastWaves[k])
         end
-        PrintTable(WAVE_CREEPS)
+        --PrintTable(WAVE_CREEPS)
     end
 
     -- Print and round the values
