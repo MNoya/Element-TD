@@ -555,7 +555,7 @@
         "DOTA_Tooltip_modifier_sunburn"     "Sunburnt"
         "DOTA_Tooltip_modifier_sunburn_Description"     "Taking damage over time and burning those around you."
         "DOTA_Tooltip_ability_flame_tower_sunburn"      "Sunburn"
-        "DOTA_Tooltip_ability_flame_tower_sunburn_Description"      "Each attack applies a burn to the target that lasts a short duration. The burn does damage to the target and in an AOE around it each second. The burn stacks.\nIf the creep dies the buff persists at death location for remainder of duration.\n\n<font color='#FFFFFF'>ATTACK TARGETING:</font> Lowest HP"
+        "DOTA_Tooltip_ability_flame_tower_sunburn_Description"      "Each attack applies a burn to the target that lasts a short duration. The burn does damage to the target and in an AOE around it each second. The burn stacks.\nIf the creep dies the buff persists at death location for remainder of duration."
         "DOTA_Tooltip_ability_flame_tower_sunburn_damage"       "DAMAGE:"
         "DOTA_Tooltip_ability_flame_tower_sunburn_aoe"      "AOE:"
         "DOTA_Tooltip_ability_flame_tower_sunburn_duration"     "DURATION:"
