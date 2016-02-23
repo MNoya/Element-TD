@@ -43,7 +43,7 @@ function loadWaveData(chaos)
         local lastWaves = {}
         local k = WAVE_COUNT
         if not EXPRESS_MODE then
-            for i = k, k + 1, 1 do
+            for i = k - 1, k, 1 do
                 lastWaves[i] =  WAVE_CREEPS[i]
                 WAVE_CREEPS[i] = nil
             end
@@ -53,12 +53,13 @@ function loadWaveData(chaos)
         end
         WAVE_CREEPS = shuffle(WAVE_CREEPS)
         if not EXPRESS_MODE then
-            for i = k, k + 1, 1 do
+            for i = k - 1, k, 1 do
                 table.insert(WAVE_CREEPS, lastWaves[i])
             end
         elseif EXPRESS_MODE then
             table.insert(WAVE_CREEPS, lastWaves[k])
         end
+        PrintTable(WAVE_CREEPS)
     end
 
     -- Print and round the values
