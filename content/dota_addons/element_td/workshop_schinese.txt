@@ -1,0 +1,30 @@
+光明，黑暗，圣水，圣火，自然，大地
+六大元素在这张塔防地图中浑然天成。
+地图汉化已经完成，游戏更加畅通无阻！
+
+[b]玩家数量：[/b] 1-6
+[b]游戏时长：[/b] 20-40分钟
+
+[h1]排行榜与论坛[/h1]
+欢迎访问www.eletd.com查看你的全球排名，参与游戏讨论
+
+[h1]开发团队[/h1]
+[b]设计者：[/b] Karawasa & WindStrike
+[b]程序员：[/b] Noya, A_Dizzle, Quintinity
+[b]地图：[/b] Azarak
+
+[h1]译者[/h1]
+[b]汉化：[/b] [url=http://steamcommunity.com/id/rabbitism/]Rabbitism[/url]
+
+[h1]相关链接[/h1]
+[b]汇报Bug：[/b] [url=http://forums.eletd.com/forum/102-bug-reports/]Here[/url]
+[b]出谋划策：[/b] [url=http://forums.eletd.com/forum/95-suggestions/]Here[/url]
+[b]联系人：[/b] admin@eletd.com 
+[b]聊天：[/b] [url=https://kiwiirc.com/client/irc.gamesurge.net/?#eletd]#eletd@GameSurge[/url]
+
+[h1]特别感谢[/h1]
+[b]BMD[/b] - [url=https://github.com/bmddota/barebones]Barebones libraries[/url]
+[b]Myll[/b] - [url=https://github.com/stephenfournier/Dota-2-ModKit]ModKit[/url]
+[b]jimmydorry[/b] - [url=http://getdotastats.com/]GetDotaStats[/url]
+[b]Automedic[/b] - 元素粒子特效
+和每一位在[url=https://kiwiirc.com/client/irc.gamesurge.net/?#dota2mods]#dota2mods@GameSurge[/url]上参与聊天的人！

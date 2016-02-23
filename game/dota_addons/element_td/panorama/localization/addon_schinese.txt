@@ -1,0 +1,119 @@
+"addon"
+{
+    "Language"        "schinese"
+    "Tokens"
+    {
+        "addonname"                                 "元素塔防"
+        "addon_game_name"                           "元素塔防"
+
+        "custom_end_screen_legend_lives"            "生命"
+        "custom_end_screen_legend_wave"             "波数"
+        "custom_end_screen_legend_score"            "分数"
+        "custom_end_screen_legend_elements"         "元素"
+        "custom_end_screen_legend_last_hits"        "击杀"
+        "custom_end_screen_legend_towers"           "塔数"
+        "custom_end_screen_legend_difficulty"       "难度"
+        "custom_game_team_select"                   "范围选择"
+
+        "water"     "<font color='#01A2FF'>圣水</font>"
+        "fire"      "<font color='#C40000'>圣火</font>"
+        "nature"    "<font color='#00C400'>自然</font>"
+        "earth"     "<font color='#D4880F'>大地</font>"
+        "light"     "<font color='#E5DE23'>光明</font>"
+        "dark"      "<font color='#8733C8'>黑暗</font>"
+        "composite" "<font color='#FFFFFF'>复合</font>"
+
+        "water_level"   "圣水元素等级<br>对<font color='#C40000'>圣火</font>系造成200%伤害，对<font color='#8733C8'>黑暗</font>系造成50%伤害。"
+        "fire_level"    "圣火元素等级<br>对<font color='#00C400'>自然</font>系造成200%伤害，对<font color='#01A2FF'>圣水</font>系造成50%伤害。"
+        "nature_level"  "自然元素等级<br>对<font color='#D4880F'>大地</font>系造成200%伤害，对<font color='#C40000'>圣火</font>系造成50%伤害。"
+        "earth_level"   "大地元素等级<br>对<font color='#E5DE23'>光明</font>系造成200%伤害，对<font color='#00C400'>自然</font>系造成50%伤害。"
+        "light_level"   "光明元素等级<br>对<font color='#8733C8'>黑暗</font>系造成200%伤害，对<font color='#D4880F'>大地</font>系造成50%伤害。"
+        "dark_level"    "黑暗元素等级<br>对<font color='#01A2FF'>圣水</font>系造成200%伤害，对<font color='#E5DE23'>光明</font>系造成50%伤害。"
+
+        // Portal messages
+        "etd_wave_water"            "受到200%<font color='#8733C8'>黑暗</font>伤害，50%<font color='#C40000'>圣火</font>伤害。"
+        "etd_wave_fire"             "受到200%<font color='#01A2FF'>圣水</font>伤害，50%<font color='#00C400'>自然</font>伤害。"
+        "etd_wave_nature"           "受到200%<font color='#C40000'>圣火</font>伤害，50%<font color='#D4880F'>大地</font>伤害。"
+        "etd_wave_earth"            "受到200%<font color='#00C400'>自然</font>伤害，50%<font color='#E5DE23'>光明</font>伤害。"
+        "etd_wave_light"            "受到200%<font color='#D4880F'>大地</font>伤害，50%<font color='#8733C8'>黑暗</font>伤害。"
+        "etd_wave_dark"             "受到200%<font color='#E5DE23'>光明</font>伤害，50%<font color='#01A2FF'>圣水</font>伤害。"
+        "etd_wave_composite"        "受到100%复合伤害, 90%其他元素伤害。"
+        "etd_summoner_choose"       "选择一个元素"
+
+        "gold"              "<font color='#F0BA36'>金币</font>"
+        "tooltip_gold"      "金币用于建造防御塔和获得利息。<br>每15秒你都将获得一次利息。"
+        "lumber"            "<font color='#008000'>木材</font>"
+        "tooltip_lumber"    "木材用于召唤元素<br>每5轮自动获得1木材（快速模式下为3轮）。"
+        "essence"           "<font color='#00BFFF'>纯净精华</font>"
+        "tooltip_essence"   "精华用于建造最强大的防御塔。<br>你可以使用精华继续升级3级的单元素防御塔，或者在拥有六种元素时建造轮回之塔。<br>你可以在召唤者那里使用1木材购买1个纯净精华。<br>第45和50波分别会获得1个纯净精华（快速模式下为24和27波）。"
+        "score"             "总分数"
+        "tooltip_score"     "游戏结束后分数将发送至积分榜。"
+
+        "voting_wait"                       "等待他人完成投票……"
+        "difficulty_normal"                 "普通"
+        "difficulty_hard"                   "困难"
+        "difficulty_veryhard"               "疯狂"
+        "difficulty_insane"                 "变态"
+        "difficulty_normal_mode"            "普通难度"
+        "difficulty_hard_mode"              "困难难度"
+        "difficulty_veryhard_mode"          "疯狂难度"
+        "difficulty_insane_mode"            "变态难度"
+
+        "random_mode"                       "随机元素"
+        "allrandom_mode"                    "全随机元素"
+        "samerandom_mode"                   "相同随机元素"
+        "endless_mode"                      "冲刺模式"
+        "chaos_mode"                        "混沌模式"
+        "express_mode"                      "快速模式"
+
+        "mode_competitive"                  "同步"
+        "mode_competitive_description"      "每个玩家游戏难度相同。"
+        "mode_casual"                       "任意"
+        "mode_casual_description"           "每个玩家自行选择游戏难度。"
+
+        "element_allpick"                   "全选"
+        "element_pick_description"          "每个人都可以选择想要召唤的元素。"
+        "element_allrandom"                 "全随机"
+        "element_allrandom_description"     "元素为随机选择。"
+        "element_samerandom"                "同步随机"
+        "element_samerandom_description"    "元素为随机选择。"
+        "element_random"                    "随机"
+
+        "horde_normal"                      "普通"
+        "horde_normal_description"          "下一波小兵将在当前小兵全部清除时诞生。"
+        "horde_endless"                     "冲刺"
+        "horde_endless_description"         "一波结束后，下一波马上开始。"
+
+        "order_normal"                      "普通"
+        "order_normal_description"          "小兵依次入场。"
+        "order_chaos"                       "混沌"
+        "order_chaos_description"           "小兵入场次序随机。"        
+
+        "length_normal"                     "普通"
+        "length_express"                    "快速"
+        "length_express_description"        "游戏更快，波数更少。"
+
+        "DOTA_GoodGuys"                             "夏日" //Lime
+        "DOTA_BadGuys"                              "暖秋" //Orange
+        "DOTA_Custom1"                              "圣堂" //Pink
+        "DOTA_Custom2"                              "矿区" //Purple
+        "DOTA_Custom3"                              "遗迹" //Green
+        "DOTA_Custom4"                              "寒冬" //光明 Blue
+        "DOTA_Custom5"                              "沙漠" //Yellow
+        "DOTA_Custom6"                              "熔岩" //Red
+
+        "custom_end_screen_victory_message" "{s:winning_team_name}获胜！"
+        "custom_end_screen_defeat_message" "你失败了！"
+
+        "error_not_enough_gold"                     "金币不足"
+        "error_not_enough_resource"                 "资源不足"
+        "error_not_enough_essence"                  "纯净精华不足"
+        "error_invalid_build_position"              "此处无法建造"
+
+        "etd_tower_table"                           "防御塔清单"
+        "etd_tower_table_description"               "查询可建造的防御塔"
+
+        "scoring_game_completed"                    "达成！"
+        "scoring_game_clear"                        "通关！"
+    }
+}
