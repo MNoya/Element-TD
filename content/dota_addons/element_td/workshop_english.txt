@@ -1,0 +1,28 @@
+Light, Darkness, Water, Fire, Nature, and Earth elements come together in this TD focused on combinations. 
+
+[b]Players:[/b] 1-6 
+[b]Game Length:[/b] 20-40+ minutes 
+
+[h1]Leaderboard and Forums[/h1]
+Check your global ranking and discuss the game at www.eletd.com 
+
+[h1]Development Team[/h1]
+[b]Designers:[/b] Karawasa & WindStrike 
+[b]Programmers:[/b] Noya, A_Dizzle, Quintinity 
+[b]Mapper:[/b] Azarak
+
+[h1]Translators[/h1]
+[b]Chinese[/b]: [url=http://steamcommunity.com/id/rabbitism/]Rabbitism[/url]
+
+[h1]Links of Interest[/h1]
+[b]Report Bugs:[/b] [url=http://forums.eletd.com/forum/102-bug-reports/]Here[/url]
+[b]Make Suggestions:[/b] [url=http://forums.eletd.com/forum/95-suggestions/]Here[/url]
+[b]Contact:[/b] admin@eletd.com 
+[b]Chat:[/b] [url=https://kiwiirc.com/client/irc.gamesurge.net/?#eletd]#eletd@GameSurge[/url]
+
+[h1]Special Thanks[/h1]
+[b]BMD[/b] - [url=https://github.com/bmddota/barebones]Barebones libraries[/url]
+[b]Myll[/b] - [url=https://github.com/stephenfournier/Dota-2-ModKit]ModKit[/url]
+[b]jimmydorry[/b] - [url=http://getdotastats.com/]GetDotaStats[/url]
+[b]Automedic[/b] - Elemental orb particles
+Everyone on the IRC over at [url=https://kiwiirc.com/client/irc.gamesurge.net/?#dota2mods]#dota2mods@GameSurge[/url]
