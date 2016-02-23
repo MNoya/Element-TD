@@ -95,6 +95,7 @@ function ElementTD:InitGameMode()
     LinkLuaModifier("modifier_health_bar_markers", "libraries/modifiers/modifier_health_bar_markers", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_not_on_minimap_for_enemies", "libraries/modifiers/modifier_not_on_minimap_for_enemies", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_max_ms", "libraries/modifiers/modifier_max_ms", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_attack_immune", "libraries/modifiers/modifier_attack_immune", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_client_convars", "libraries/modifiers/modifier_client_convars", LUA_MODIFIER_MOTION_NONE)
     
     -- Register UI Listener   
@@ -430,6 +431,7 @@ end
 function ElementTD:InitializeHero(playerID, hero)
     print("OnInitHero PID:"..playerID)
     hero:AddNewModifier(nil, nil, "modifier_disarmed", {})
+    hero:AddNewModifier(nil, nil, "modifier_attack_immune", {})
     hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
     hero:SetAbilityPoints(0)
     hero:SetMaxHealth(50)
