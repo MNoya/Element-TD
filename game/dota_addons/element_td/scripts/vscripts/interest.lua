@@ -23,6 +23,8 @@ function InterestManager:StartInterest()
 end
 
 function InterestManager:CreateTimerForPlayer(playerID, timeRemaining)
+	if InterestManager.timers[playerID] then return end
+
 	InterestManager.timers[playerID] = Timers:CreateTimer(timeRemaining or INTEREST_INTERVAL, function()
 		local hero = ElementTD.vPlayerIDToHero[playerID]
 		if hero and hero:IsAlive() then
@@ -33,6 +35,25 @@ function InterestManager:CreateTimerForPlayer(playerID, timeRemaining)
 		end
 		return INTEREST_INTERVAL
 	end)
+end
+
+function InterestManager:CheckForIncorrectPausing(playerID)
+	local playerData = GetPlayerData(playerID)
+	local interestData = playerData.interestData
+	
+	if interestData.Locked then
+		for waveNumber, _ in pairs(interestData.LockingWaves) do
+			if not playerData.waveObjects[waveNumber] then
+				interestData.LockingWaves[waveNumber] = nil
+				interestData.NumLockingWaves = interestData.NumLockingWaves - 1
+
+				if interestData.NumLockingWaves == 0 then
+					InterestManager:ResumeInterestForPlayer(playerID)
+					break
+				end
+			end
+		end
+	end
 end
 
 function InterestManager:PlayerCompletedWave(playerID, waveNumber)
@@ -48,7 +69,6 @@ function InterestManager:PlayerCompletedWave(playerID, waveNumber)
 end
 
 function InterestManager:ResumeInterestForPlayer(playerID)
-	--print("Resuming interest timer for " .. playerID)
 	local interestData = GetPlayerData(playerID).interestData
 	interestData.Locked = false
 	interestData.NumLockingWaves = 0
@@ -66,20 +86,20 @@ function InterestManager:ResumeInterestForPlayer(playerID)
 end
 
 function InterestManager:PauseInterestForPlayer(playerID, waveNumber)
-	local interestData = GetPlayerData(playerID).interestData
-	--print("player " .. playerID .. " has leaked wave " .. waveNumber)
+	local playerData = GetPlayerData(playerID)
+	local interestData = playerData.interestData
 
-	if not interestData.LockingWaves[waveNumber] then
+	if not interestData.LockingWaves[waveNumber] and playerData.waveObjects[waveNumber] then
 		interestData.LockingWaves[waveNumber] = true
 		interestData.NumLockingWaves = interestData.NumLockingWaves + 1
-		--print("player " .. playerID .. " now has " .. interestData.NumLockingWaves .. " locking waves")
 		if not interestData.Locked then
 			local timerName = InterestManager.timers[playerID]
 			interestData.Locked = true
 			interestData.TimeRemaining = Timers.timers[timerName].endTime - GameRules:GetGameTime()
 			
-			--print("stopping timer\n")
 			Timers:RemoveTimer(timerName)
+			InterestManager.timers[playerID] = nil;
+
 			local player = PlayerResource:GetPlayer(playerID)
 			if player then
 				CustomGameEventManager:Send_ServerToPlayer(player, "etd_pause_interest", {})

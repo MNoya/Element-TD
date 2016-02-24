@@ -261,6 +261,9 @@ function SpawnWaveForPlayer(playerID, wave)
     if not InterestManager:IsStarted() then
         InterestManager:StartInterest()
     end
+    if GameSettings:GetEndless() ~= "Endless" then
+        InterestManager:CheckForIncorrectPausing(playerID)
+    end
 
     waveObj:SetOnCompletedCallback(function()
         if playerData.health == 0 then
@@ -401,7 +404,7 @@ end
 function CreateMoveTimerForCreep(creep, sector)
     local destination = EntityEndLocations[sector]
     Timers:CreateTimer(0.1, function()
-        if IsValidEntity(creep) then
+        if IsValidEntity(creep) and creep:IsAlive() then
             creep:MoveToPosition(destination)
             if (creep:GetAbsOrigin() - destination):Length2D() <= 100 then
                 local playerID = creep.playerID
