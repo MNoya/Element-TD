@@ -148,6 +148,10 @@ function Build( event )
             AddAbility(unit, "sell_tower_75")
         end
 
+        if string.match(building_name, "cannon_tower") then
+            AddAbility(unit, "attack_ground")
+        end
+
         AddAbility(unit, unit.damageType .. "_passive")
         if GetUnitKeyValue(building_name, "AOE_Full") and GetUnitKeyValue(building_name, "AOE_Half") then
             AddAbility(unit, "splash_damage_orb")

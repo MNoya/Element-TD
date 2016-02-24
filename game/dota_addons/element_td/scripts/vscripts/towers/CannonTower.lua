@@ -18,15 +18,18 @@ function CannonTower:OnAttack(keys)
 end
 
 function CannonTower:OnAttackLanded(keys)
-    local target = keys.target
-	local damage = self.tower:GetAverageTrueAttackDamage()
-	DamageEntitiesInArea(target:GetOrigin(), self.halfAOE, self.tower, damage / 2)
-	DamageEntitiesInArea(target:GetOrigin(), self.fullAOE, self.tower, damage / 2)
-	
-	local pos = target:GetOrigin()
-	pos.z = pos.z + 64
+    local origin = keys.origin
+    if not origin then
+        return
+    end
 
-	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_jakiro/jakiro_liquid_fire_explosion.vpcf", PATTACH_ABSORIGIN, target)
+	local damage = self.tower:GetAverageTrueAttackDamage()
+	DamageEntitiesInArea(origin, self.halfAOE, self.tower, damage / 2)
+	DamageEntitiesInArea(origin, self.fullAOE, self.tower, damage / 2)
+	
+	local pos = GetGroundPosition(origin, nil)
+
+	local particle = ParticleManager:CreateParticle("particles/custom/towers/cannon/cannon_liquid_fire_explosion.vpcf", PATTACH_CUSTOMORIGIN, self.tower)
     ParticleManager:SetParticleControl(particle, 0, pos)
     ParticleManager:SetParticleControl(particle, 1, Vector(150, 260, 0))
     ParticleManager:ReleaseParticleIndex(particle)
