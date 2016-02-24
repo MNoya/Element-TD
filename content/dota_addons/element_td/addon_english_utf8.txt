@@ -421,15 +421,6 @@
         "DOTA_Tooltip_modifier_creep_armor_buff_Description"        "Each point of Physical Armor equal 1%% damage block. Physical Armor varies with difficulty."
         
         // Summoner
-
-        "etd_wave_water"            ""
-        "etd_wave_fire"             ""
-        "etd_wave_nature"           ""
-        "etd_wave_earth"            ""
-        "etd_wave_light"            ""
-        "etd_wave_dark"             ""
-        "etd_wave_composite"        "100% from Composite, 90% from other Elements"
-
         "DOTA_Tooltip_ability_summon_water_elemental"       "Summon Water Elemental"
         "DOTA_Tooltip_ability_summon_water_elemental_Description"       "Summons a <font color='#01A2FF'>Water</font> Elemental. Killing it will grant you its essence, allowing you to build <font color='#01A2FF'>Water</font> towers.\nStrong vs <font color='#C40000'>Fire</font>, Weak vs <font color='#8733C8'>Dark</font>\n\nThe first element is granted directly.\n\nCOST: <font color='#008000'>1 Lumber</font>\n"
         "DOTA_Tooltip_ability_summon_water_elemental_level"     "ELEMENTAL LEVEL:"

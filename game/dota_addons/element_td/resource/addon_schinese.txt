@@ -1,5 +1,4 @@
-9
-lang
+"lang"
 {
     "Language"      "schinese"
     "Tokens"
@@ -421,16 +420,7 @@ lang
         "DOTA_Tooltip_modifier_creep_armor_buff"        "物理护甲"
         "DOTA_Tooltip_modifier_creep_armor_buff_Description"        "每点物理护甲等同于1%%伤害格挡。物理护甲随着游戏难度改变而不同。"
         
-        // Summoner
-
-        "etd_wave_water"            
-        "etd_wave_fire"             
-        "etd_wave_nature"           
-        "etd_wave_earth"            
-        "etd_wave_light"            
-        "etd_wave_dark"             
-        "etd_wave_composite"        "承受100%%复合伤害\n承受90%%其他元素伤害。"
-
+        // Summoner           
         "DOTA_Tooltip_ability_summon_water_elemental"       "召唤圣水元素"
         "DOTA_Tooltip_ability_summon_water_elemental_Description"       "召唤一个<font color='#01A2FF'>圣水</font>元素。成功击杀后将获得一个精华，可用于建造<font color='#01A2FF'>圣水</font>防御塔。\n擅长抵抗<font color='#C40000'>圣火</font>伤害，很难抵抗<font color='#8733C8'>黑暗</font>伤害\n\n第一个元素将直接获得。\n\n价格：<font color='#008000'>1木材</font>\n"
         "DOTA_Tooltip_ability_summon_water_elemental_level"     "元素等级："
@@ -588,7 +578,7 @@ lang
         "DOTA_Tooltip_ability_hydro_tower_ability_chance_pct"                             "几率："
         "DOTA_Tooltip_ability_hydro_tower_ability_delay"                                  "延迟："
         "DOTA_Tooltip_modifier_hydro_delay"                                               "水力延迟"
-        "DOTA_Tooltip_modifier_hydro_delay_Description"                                   
+        "DOTA_Tooltip_modifier_hydro_delay_Description"  ""                                 
         
         "DOTA_Tooltip_modifier_conjure_prevent_cloning"     "已被克隆"
         "DOTA_Tooltip_modifier_conjure_prevent_cloning_Description"     "此防御塔最近已被克隆，此负面效果结束前无法再次被克隆。"
@@ -623,7 +613,7 @@ lang
         "DOTA_Tooltip_ability_gold_tower_arbitrage_Description"     "此防御塔每击杀一个小兵都将获得额外金币。\n\n<font color='#FFFFFF'>攻击目标：</font>最低生命值"
         "DOTA_Tooltip_ability_gold_tower_arbitrage_bonus_gold"      "%额外金币："
         "DOTA_Tooltip_modifier_gold_tower_counter"                  "获得金币"
-        "DOTA_Tooltip_modifier_gold_tower_counter_Description"      "额外获得%dMODIFIER_PROPERTY_HEALTH_BONUS%金币。"
+        "DOTA_Tooltip_modifier_gold_tower_counter_Description"      "额外获得 %dMODIFIER_PROPERTY_HEALTH_BONUS%金币。"
         
         "DOTA_Tooltip_ability_windstorm_tower_tornado"      "龙卷风"
         "DOTA_Tooltip_ability_windstorm_tower_tornado_Description"      "召唤一个大型龙卷风跟随者小兵移动，造成伤害和减速。\n可与其他减速效果叠加。"
@@ -696,7 +686,7 @@ lang
         "DOTA_Tooltip_ability_flamethrower_tower_napalm_damage"     "每层伤害："
         "DOTA_Tooltip_ability_flamethrower_tower_napalm_aoe"        "作用范围："
         "DOTA_Tooltip_modifier_napalm"      "粘性燃油"
-        "DOTA_Tooltip_modifier_napalm_Description"      
+        "DOTA_Tooltip_modifier_napalm_Description"      ""
         
         "DOTA_Tooltip_ability_haste_tower_wrath"        "暴怒"
         "DOTA_Tooltip_ability_haste_tower_wrath_Description"        "每次攻击增加一层暴怒。每一层都会增加攻击速度。停止攻击4秒后恢复初始速度。"
@@ -705,7 +695,7 @@ lang
         "DOTA_Tooltip_ability_haste_tower_wrath_bat_decrease_stack"                       "每层降低基础攻击间隔："
 
         "DOTA_Tooltip_modifier_wrath"                 "暴怒"
-        "DOTA_Tooltip_modifier_wrath_Description"     
+        "DOTA_Tooltip_modifier_wrath_Description"     ""
         "DOTA_Tooltip_modifier_wrath_reset"     "暴怒重置"
         "DOTA_Tooltip_modifier_wrath_reset_Description"     "停止攻击4秒后暴怒效果结束，恢复初始攻击速度。"
         "DOTA_Tooltip_modifier_wrath_indicator"     "暴怒"
@@ -716,7 +706,7 @@ lang
         "DOTA_Tooltip_ability_tidal_tower_splash_decay_aoe"                               "作用范围："
         "DOTA_Tooltip_ability_tidal_tower_splash_decay_reset_time"                        "重置时间："
         "DOTA_Tooltip_modifier_tidal_splash_decay"                "溅射衰减"
-        "DOTA_Tooltip_modifier_tidal_splash_decay_Description"    
+        "DOTA_Tooltip_modifier_tidal_splash_decay_Description"    "" 
         
         "DOTA_Tooltip_ability_nova_tower_explode"       "爆炸"
         "DOTA_Tooltip_ability_nova_tower_explode_Description"       "这座防御塔的攻击会产生爆炸，造成伤害并使目标周围的小兵减速。减速持续3秒。\n与其他来源的减速效果叠加。"
@@ -779,7 +769,7 @@ lang
         "DOTA_Tooltip_ability_item_buy_pure_essence_Description"                          "用<font color='#008000'>1木材</font>购买<font color='#00BFFF'>1个纯正的精华</font>。\n\n精华用于升级3级的单元素防御塔，或在拥有6个元素时建造轮回之塔。\n你还将获得<font color='#F0BA36'>额外金币</font>，返还值取决于当前波数和游戏难度。"
 
         "DOTA_Tooltip_ability_item_buy_pure_essence_disabled"                             "无法购买纯正的精华"
-        "DOTA_Tooltip_ability_item_buy_pure_essence_disabled_Description"                 "用<font color='#008000'>1木材</font>购买<font color='#00BFFF'>1个纯正的精华</font>。\n<font color='#F0BA36'>需要：</font>At least Level 1 on every Element or Level 3 on a single Element\n\n精华用于升级3级的单元素防御塔，或在拥有6个元素时建造轮回之塔。\n你还将获得<font color='#F0BA36'>额外金币</font>，返还值取决于当前波数和游戏难度。"
+        "DOTA_Tooltip_ability_item_buy_pure_essence_disabled_Description"                 "用<font color='#008000'>1木材</font>购买<font color='#00BFFF'>1个纯正的精华</font>。\n<font color='#F0BA36'>需要：</font>需要全部元素到达1级或者至少拥有一个3级的元素\n\n精华用于升级3级的单元素防御塔，或在拥有6个元素时建造轮回之塔。\n你还将获得<font color='#F0BA36'>额外金币</font>，返还值取决于当前波数和游戏难度。"
 
         "DOTA_Tooltip_ability_item_random"                                                "随机元素"
         "DOTA_Tooltip_ability_item_random_Description"                                    "选择以在接下来的游戏中随机获得元素。\n仅能在选择元素之前选择此项，并且无法更改。"
