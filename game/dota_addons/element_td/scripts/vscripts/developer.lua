@@ -115,11 +115,18 @@ function ElementTD:SetGold(playerID, value)
 end
 
 function ElementTD:SetLives(playerID, value)
-    value = value or 50
+    value = tonumber(value) or 50
     local playerData = GetPlayerData(playerID)
-    playerData.health = tonumber(value)
+    playerData.health = value
+
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-    hero:SetHealth(tonumber(value))
+    if not hero:HasModifier("modifier_bonus_life") then
+        hero:AddNewModifier(hero, nil, "modifier_bonus_life", {})
+    end
+
+    hero:CalculateStatBonus()
+    hero:SetHealth(value)
+   
     CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=playerData.health/hero:GetMaxHealth() * 100} )
 end
 
