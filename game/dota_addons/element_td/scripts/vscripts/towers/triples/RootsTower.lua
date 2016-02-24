@@ -16,10 +16,6 @@ RootsTower = createClass({
     },
 nil)
 
-function RootsTower:OnDOTTick(keys)
-
-end
-
 function RootsTower:OnAttackStart(keys) 
 
     local launchParticle = ParticleManager:CreateParticle("particles/units/heroes/hero_treant/treant_overgrowth_ambient_beam_sparkly.vpcf", PATTACH_ABSORIGIN, self.tower)

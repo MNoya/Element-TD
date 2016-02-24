@@ -51,7 +51,7 @@ function OnLeftButtonPressed() {
 
 
 function IsBuilder( entIndex ) {
-    return (CustomNetTables.GetTableValue( "builders", entIndex.toString()))
+    return (CustomNetTables.GetTableValue( "builders", entIndex.toString()) || Entities.GetUnitName(entIndex) == "npc_dota_hero_wisp")
 }
 
 var cameraDistance = 1500
