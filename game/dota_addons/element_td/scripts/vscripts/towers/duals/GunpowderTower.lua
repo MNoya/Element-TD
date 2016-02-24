@@ -20,19 +20,20 @@ nil)
 function GunpowderTower:OnAttackLanded(keys) 
     local target = keys.target    
     local origin = target:GetAbsOrigin()
-    local particle = ParticleManager:CreateParticle("particles/custom/towers/gunpowder/shrapnel.vpcf", PATTACH_CUSTOMORIGIN, self.tower)    
-    ParticleManager:SetParticleControl(particle, 0, origin)
-    ParticleManager:SetParticleControl(particle, 1, Vector(self.splashAOE, 1, 1))
-    Timers:CreateTimer(1.3, function() ParticleManager:DestroyParticle(particle, true) end)
       
-    keys.caster:EmitSound("Gunpower.Explosion")
-
     local damage = ApplyAbilityDamageFromModifiers(self.splashDamage[self.tower:GetLevel()], self.tower)    
     DamageEntitiesInArea(target:GetOrigin(), self.splashAOE, self.tower, damage)
 
     --spawn random explosions around the initial point, after a small delay
     local rotate_pos = origin + Vector(1,0,0) * 100
     Timers:CreateTimer(0.3, function()
+        keys.caster:EmitSound("Gunpower.Explosion")
+
+        local particle = ParticleManager:CreateParticle("particles/custom/towers/gunpowder/shrapnel.vpcf", PATTACH_CUSTOMORIGIN, self.tower)    
+        ParticleManager:SetParticleControl(particle, 0, origin)
+        ParticleManager:SetParticleControl(particle, 1, Vector(self.splashAOE, 1, 1))
+        Timers:CreateTimer(1, function() ParticleManager:DestroyParticle(particle, true) end)
+
         for i = 1, 4 do          
             local pos = RotatePosition(origin, QAngle(0, 90*i, 0), rotate_pos)
 
