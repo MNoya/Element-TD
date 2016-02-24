@@ -314,6 +314,10 @@
         "DOTA_Tooltip_ability_sell_tower_0"     "Sell Tower"
         "DOTA_Tooltip_ability_sell_tower_0_Description"     "Sells this tower (no gold returned)."
         "DOTA_Tooltip_ability_sell_tower_0_sell_amount_tooltip"     "%GOLD RETURNED:"
+
+        "DOTA_Tooltip_ability_attack_ground"                                              "Attack Ground"
+        "DOTA_Tooltip_ability_attack_ground_Description"                                  "Allows you to target an specific location rather than a unit."
+        "DOTA_Tooltip_ability_attack_ground_splash_aoe"                                   "AOE:"
         
         // Builder
         "DOTA_Tooltip_ability_build_water_tower"                               "Build Water Tower"

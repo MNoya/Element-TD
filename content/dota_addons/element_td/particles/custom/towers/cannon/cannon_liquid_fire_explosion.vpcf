@@ -118,10 +118,6 @@
 			m_ChildRef = resource:"particles/custom/towers/cannon/cannon_base_attack_fire_expl_fire.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/units/heroes/hero_jakiro/jakiro_base_attack_ground_flash.vpcf"
-			m_bDisableChild = true
-		},
-		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/cannon_base_attack_fire_exsplosionsmk.vpcf"
 		},
 	]

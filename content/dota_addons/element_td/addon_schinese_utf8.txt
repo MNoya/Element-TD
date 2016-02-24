@@ -314,6 +314,10 @@
         "DOTA_Tooltip_ability_sell_tower_0"     "出售防御塔"
         "DOTA_Tooltip_ability_sell_tower_0_Description"     "出售防御塔（不返还金币）。"
         "DOTA_Tooltip_ability_sell_tower_0_sell_amount_tooltip"     "%返还金币："
+
+        "DOTA_Tooltip_ability_attack_ground"                                   "Attack Ground"
+        "DOTA_Tooltip_ability_attack_ground_Description"                       "Allows you to target an specific location rather than a unit."
+        "DOTA_Tooltip_ability_attack_ground_splash_aoe"                        "作用范围:"
         
         // Builder
         "DOTA_Tooltip_ability_build_water_tower"                               "建造圣水之塔"
