@@ -271,10 +271,11 @@ function UpgradeTower(keys)
 			BuildTower(newTower)
 		end
 
-
 		if GetUnitKeyValue(newClass, "DisableTurning") then
         	newTower:AddNewModifier(newTower, nil, "modifier_disable_turning", {})
         end
+
+        AddAbility(newTower, "ability_building")
 
         -- keep well & blacksmith buffs
 	    local fire_up = tower:FindModifierByName("modifier_fire_up")

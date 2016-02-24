@@ -634,6 +634,26 @@ function ElementTD:FilterExecuteOrder( filterTable )
                     end
                 end
             end
+        elseif ability:GetAbilityKeyValues()["AbilityMultiOrder"] then
+
+            for _,entityIndex in pairs(entityList) do
+                local caster = EntIndexToHScript(entityIndex)
+
+                -- Make sure the original caster unit doesn't cast twice
+                if caster and caster ~= unit and caster:HasAbility(abilityName) then
+                    local abil = caster:FindAbilityByName(abilityName)
+                    if abil and abil:IsFullyCastable() then
+
+                        caster.skip = true
+                        if order_type == DOTA_UNIT_ORDER_CAST_POSITION then
+                            if (caster:GetAbsOrigin() - point):Length2D() <= ability:GetCastRange() then
+                                ExecuteOrderFromTable({ UnitIndex = entityIndex, OrderType = order_type, Position = point, AbilityIndex = abil:GetEntityIndex(), Queue = queue})
+                            end
+                        end
+                    end
+                end
+            end
+
         end
     end
 
