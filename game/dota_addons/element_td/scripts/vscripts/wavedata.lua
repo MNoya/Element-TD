@@ -407,8 +407,10 @@ function CreateMoveTimerForCreep(creep, sector)
                 local playerID = creep.playerID
                 local playerData = GetPlayerData(playerID)
                 
-                InterestManager:PauseInterestForPlayer(playerID, creep.waveObject.waveNumber)
-                
+                if GameSettings:GetEndless() ~= "Endless" then
+                    InterestManager:PauseInterestForPlayer(playerID, creep.waveObject.waveNumber)
+                end
+
                 -- Reduce lives exponentially
                 if not creep.reduced_lives then
                     creep.reduced_lives = 1

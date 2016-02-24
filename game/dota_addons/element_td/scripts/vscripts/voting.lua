@@ -207,7 +207,16 @@ function FinalizeVotes()
 		    START_GAME_TIME = GameRules:GetGameTime()
 			for _, plyID in pairs(playerIDs) do
 				StartBreakTime(plyID, GameSettings.length.PregameTime)
-				EmitAnnouncerSound("announcer_announcer_count_battle_30")
+				if GameSettings.length.PregameTime == 30 then
+					EmitAnnouncerSound("announcer_announcer_count_battle_30")
+				else
+					local delay = GameSettings.length.PregameTime - 30
+					if delay > 0 then
+						Timers:CreateTimer(delay, function()
+							EmitAnnouncerSound("announcer_announcer_count_battle_30")
+						end)
+					end
+				end
 			end
 		end
 	})
