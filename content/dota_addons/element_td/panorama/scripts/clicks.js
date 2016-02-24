@@ -1,5 +1,26 @@
 "use strict";
 
+function GetMouseTarget()
+{
+    var mouseEntities = GameUI.FindScreenEntities( GameUI.GetCursorPosition() )
+    var localHeroIndex = Players.GetPlayerHeroEntityIndex( Players.GetLocalPlayer() )
+
+    for ( var e of mouseEntities )
+    {
+        if ( !e.accurateCollision )
+            continue
+        return e.entityIndex
+    }
+
+    for ( var e of mouseEntities )
+    {
+        return e.entityIndex
+    }
+
+    return 0
+}
+
+
 // Handle Right Button events
 function OnRightButtonPressed()
 {
@@ -60,8 +81,9 @@ GameUI.SetMouseCallback( function( eventName, arg ) {
 
         if (LEFT_CLICK) 
             return OnLeftButtonPressed();
-        else if (RIGHT_CLICK) 
-            return OnRightButtonPressed();
+        else if (RIGHT_CLICK)
+            if (GetMouseTarget() == 0)
+                return CONSUME_EVENT;
     }
 
     if ( eventName === "wheeled" )
