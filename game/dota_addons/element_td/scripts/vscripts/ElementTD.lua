@@ -77,6 +77,7 @@ function ElementTD:InitGameMode()
     -- Filters
     GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( ElementTD, "FilterExecuteOrder" ), self )
     GameRules:GetGameModeEntity():SetDamageFilter( Dynamic_Wrap( ElementTD, "DamageFilter" ), self )
+    GameRules:GetGameModeEntity():SetTrackingProjectileFilter( Dynamic_Wrap( ElementTD, "FilterProjectile" ), self )
 
     -- Lua Modifiers
     LinkLuaModifier("modifier_attack_targeting", "towers/modifier_attack_targeting", LUA_MODIFIER_MOTION_NONE)
@@ -667,6 +668,27 @@ function ElementTD:DamageFilter( filterTable )
             filterTable["damage"] = 0
             return true
         end
+    end
+
+    return true
+end
+
+function ElementTD:FilterProjectile( filterTable )
+    local attacker_index = filterTable["entindex_source_const"]
+    local victim_index = filterTable["entindex_target_const"]
+
+    if not victim_index or not attacker_index then
+        return true
+    end
+
+    local attacker = EntIndexToHScript( attacker_index )
+    local is_attack = tobool(filterTable["is_attack"])
+
+    if is_attack and attacker:HasGroundAttack() then
+        local victim = EntIndexToHScript( victim_index )
+        local move_speed = filterTable["move_speed"]
+        AttackGroundPos(attacker, victim:GetAbsOrigin(), move_speed)
+        return false
     end
 
     return true

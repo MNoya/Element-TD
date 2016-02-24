@@ -20,7 +20,10 @@ function CreepMechanical:OnSpawned()
         if not IsValidEntity(creep) or not creep:IsAlive() then return end
 
         creep:Purge(false, true, false, true, true)
-        creep:FindAbilityByName("creep_ability_mechanical"):ApplyDataDrivenModifier(creep, creep, "mechanical_buff", {duration=2})
+        local ability = creep:FindAbilityByName("creep_ability_mechanical")
+        if ability then
+            ability:ApplyDataDrivenModifier(creep, creep, "mechanical_buff", {duration=2})
+        end
 
         return 8
     end)

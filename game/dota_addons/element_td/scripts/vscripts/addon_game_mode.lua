@@ -23,6 +23,7 @@ local requires =
     "mechanics/items",
     "mechanics/sounds",
     "mechanics/gold",
+    "mechanics/ground_attacks",
 
     -- utils
     "util/util",

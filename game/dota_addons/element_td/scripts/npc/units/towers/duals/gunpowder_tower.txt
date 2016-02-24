@@ -1,5 +1,7 @@
 "gunpowder_tower"
 {
+    "AttackGround"              "1"
+    
     "BaseClass"                 "npc_dota_creature" 
     "SoundSet"                  "Hero_Techies"
     "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"
