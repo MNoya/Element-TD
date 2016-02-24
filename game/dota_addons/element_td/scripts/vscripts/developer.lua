@@ -182,6 +182,18 @@ function ElementTD:Dev(playerID)
     ElementTD:GiveLumber(playerID, 20)
     ElementTD:GiveEssence(playerID, 10)
     ElementTD:SetGold(playerID, 999999)
+
+    if EXPRESS_MODE then
+        ElementTD:ExpressPrecache()
+        ElementTD:PrecacheWave(2)
+        ElementTD:PrecacheWave(5)
+        ElementTD:PrecacheWave(11)
+    else
+        ElementTD:PrecacheWave(4)
+        ElementTD:PrecacheWave(9)
+        ElementTD:PrecacheWave(14)
+        ElementTD:PrecacheWave(24)
+    end
 end
 
 function ElementTD.ToggleDebugDamage()
