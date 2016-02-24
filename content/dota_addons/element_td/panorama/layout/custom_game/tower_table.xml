@@ -132,7 +132,7 @@
                             <Label class="TowerName" text="#polar_tower_name"/>
                             <Label class="AbilityLevel" id="polar_level" text=""/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('flooding','water','dark','earth')" onmouseout='OnMouseOut()'>
+                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('flooding','water','dark','nature')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="flooding" src="file://{images}/spellicons/towers/flooding.png"/>
                             <Label class="TowerName" text="#flooding_tower_name"/>
                             <Label class="AbilityLevel" id="flooding_level" text=""/>
