@@ -737,10 +737,10 @@
         "polar_tower_frostbite_error"       "That creep is already Frostbitten!"
         
         "DOTA_Tooltip_ability_jinx_tower_maledict"      "Maledict"
-        "DOTA_Tooltip_ability_jinx_tower_maledict_Description"      "Each attack curses creeps near the target with Maledict. Maledicted creeps tick every few seconds, taking damage equal to a percentage of the damage taken since the curse began."
+        "DOTA_Tooltip_ability_jinx_tower_maledict_Description"      "Curses enemy units in %aoe% AoE. Every %inverval% seconds, cursed units will take damage based on the HP they have lost since being cursed. Lasts %duration% seconds."
         "DOTA_Tooltip_ability_jinx_tower_maledict_tick_interval"        "INTERVAL:"
         "DOTA_Tooltip_ability_jinx_tower_maledict_ticks"        "TICKS:"
-        "DOTA_Tooltip_ability_jinx_tower_maledict_damage_taken"     "DAMAGE TAKEN TO DAMAGE:"
+        "DOTA_Tooltip_ability_jinx_tower_maledict_damage_taken"     "%AMP PER DAMAGE TAKEN:"
         "DOTA_Tooltip_ability_jinx_tower_maledict_aoe"      "AOE:"
         "DOTA_Tooltip_ability_jinx_tower_maledict_duration"    "DURATION:"
         "DOTA_Tooltip_modifier_jinx_maledict"       "Maledicted"
