@@ -47,8 +47,8 @@ function AttackGround( event )
     -- Time fake attacks
     ability.attack_ground_timer = Timers:CreateTimer(function()
         caster:StartGesture(ACT_DOTA_ATTACK)
-        ability.attack_ground_timer_attack = Timers:CreateTimer(start_time, function()
-            --ability:StartCooldown( 1/caster:GetAttacksPerSecond() - start_time)
+        ability.attack_ground_timer_attack = Timers:CreateTimer(caster:TimeUntilNextAttack(), function()
+            caster:AttackNoEarlierThan(1/caster:GetAttacksPerSecond() - start_time)
 
             -- Create the projectile and deal damage on hit
             AttackGroundPos(caster, position)

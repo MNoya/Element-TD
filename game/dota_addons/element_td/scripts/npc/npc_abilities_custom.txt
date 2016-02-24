@@ -1799,7 +1799,7 @@
 	    "BaseClass"                     "ability_datadriven"                                            
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	    "AbilityTextureName"            "towers/cannon"
-	    "AbilityCastPoint"              "0.0"
+	    "AbilityCastPoint"              "0.2"
 	
 	    "AbilityCastRange"              "550"
 	    "AOERadius"                     "%splash_aoe"

@@ -594,6 +594,10 @@ function ElementTD:FilterExecuteOrder( filterTable )
         return true
     end
 
+    if unit and IsTower(unit) and (order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET or order_type == DOTA_UNIT_ORDER_ATTACK_MOVE) then
+        return false
+    end
+
     ------------------------------------------------
     --           Ability Multi Order              --
     ------------------------------------------------
@@ -635,7 +639,6 @@ function ElementTD:FilterExecuteOrder( filterTable )
                 end
             end
         elseif ability:GetAbilityKeyValues()["AbilityMultiOrder"] then
-
             for _,entityIndex in pairs(entityList) do
                 local caster = EntIndexToHScript(entityIndex)
 
@@ -654,6 +657,11 @@ function ElementTD:FilterExecuteOrder( filterTable )
                 end
             end
 
+            -- stop the main target target point if its out of range
+            if order_type == DOTA_UNIT_ORDER_CAST_POSITION and (unit:GetAbsOrigin() - point):Length2D() > ability:GetCastRange() then
+                unit:Interrupt()
+                return false
+            end
         end
     end
 
