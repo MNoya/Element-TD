@@ -124,7 +124,7 @@ function BuildPlayersArray()
                     e11 = playerData.elementOrder[11] or "", -- 11th and last element acquired
 
                     -- Check if cheats were used
-                    cheat = playerData.cheated or 0,
+                    cheat = playerData.cheated and 1 or 0,
                 })
             end
         end

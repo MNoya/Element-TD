@@ -50,7 +50,17 @@ function ElementTD:OnPlayerChat(keys)
 end
 
 function ElementTD:CheatCommandUsed(playerID)
-    GetPlayerData(playerID).cheated = true
+    if not playerID then
+        for _, playerID in pairs(playerIDs) do
+            local playerData = GetPlayerData(playerID)
+            if playerData then
+                playerData.cheated = true
+            end
+        end
+    else    
+        GetPlayerData(playerID).cheated = true
+    end
+    
     GameRules:SendCustomMessage("#etd_cheats_enabled", 0, 0)
 end
 

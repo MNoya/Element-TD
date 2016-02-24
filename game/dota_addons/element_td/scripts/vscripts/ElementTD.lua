@@ -424,6 +424,12 @@ function ElementTD:OnUnitSpawned(keys)
             UpdateElementsHUD(playerID)
             UpdatePlayerSpells(playerID)
         end
+    else
+        local unitName = unit:GetUnitName()
+        if not NPC_UNITS_CUSTOM[unitName] then
+            Log:warn("A non-custom unit was spawned!")
+            ElementTD:CheatCommandUsed()
+        end
     end
 end
 
