@@ -22,7 +22,7 @@
                 <Label id="TitleElements" text="#etd_tower_table_elements"/>
                 <Label id="TitleDuals" text="#etd_tower_table_duals"/>
                 <Label id="TitleTriples" text="#etd_tower_table_triples"/>
-                <Label id="CloseButton" onactivate="Toggle()" text="X"/>
+                <Label id="CloseButton" onactivate="Toggle()"/>
             </Panel>
             <Panel hittest="false" id="ElementsContainer">
                 <Panel hittest="false" id="LightContainer">
