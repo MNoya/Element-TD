@@ -29,12 +29,11 @@ function PoisonTower:OnAttackLanded(keys)
 
         target:EmitSound("Poison.Strike")
 
-        local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_venomancer/venomancer_venomousgale_explosion_flash_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+        local particle = ParticleManager:CreateParticle("particles/custom/towers/poison/explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
         ParticleManager:SetParticleControl(particle, 3, target:GetAbsOrigin())
 
-        local particleA = ParticleManager:CreateParticle("particles/units/heroes/hero_venomancer/venomancer_ward_cast.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.tower)    
-        ParticleManager:SetParticleControl(particleA, 0, target:GetAttachmentOrigin(target:ScriptLookupAttachment("attach_hitloc")))
-        ParticleManager:SetParticleControl(particleA, 1, self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_hitloc")))
+        local particleA = ParticleManager:CreateParticle("particles/custom/towers/poison/cast.vpcf", PATTACH_CUSTOMORIGIN, self.tower)    
+        ParticleManager:SetParticleControl(particleA, 0, self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_mouth")))
 
         local damage_done = ApplyElementalDamageModifier(damage, GetDamageType(self.tower), GetArmorType(target))
         PopupDarkCriticalDamage(self.tower, math.floor(damage_done))
