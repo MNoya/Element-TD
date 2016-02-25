@@ -38,6 +38,22 @@ end
 function CannonTower:OnCreated()
 	self.fullAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))
 	self.halfAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
+    self.towerRange = self.tower:GetAttackRange()
+
+    Timers:CreateTimer(function() 
+        if IsValidEntity(self.tower) and self.tower:IsAlive() then
+            if not self.tower:HasModifier("modifier_attacking_ground") then
+                local attackTarget = self.tower:GetAttackTarget() or self.tower:GetAggroTarget()
+                if attackTarget then
+                    local distanceToTarget = (self.tower:GetAbsOrigin() - attackTarget:GetAbsOrigin()):Length2D()
+                    if distanceToTarget > self.towerRange then
+                        self.tower:Interrupt()
+                    end
+                end
+            end
+            return 0.5
+        end
+    end)
 end
 
 RegisterTowerClass(CannonTower, CannonTower.className)
