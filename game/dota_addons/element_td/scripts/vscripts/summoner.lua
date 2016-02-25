@@ -282,9 +282,11 @@ function BuyPureEssence( keys )
         -- Gold bonus to help stay valuable by comparison to getting an element upgrade
         GivePureEssenceGoldBonus(playerID)
 
-        item:SetCurrentCharges(item:GetCurrentCharges()-1)
-        if item:GetCurrentCharges() == 0 then
-            item:RemoveSelf()
+        if IsValidEntity(item) then
+            item:SetCurrentCharges(item:GetCurrentCharges()-1)
+            if item:GetCurrentCharges() == 0 then
+                item:RemoveSelf()
+            end
         end
 	else
         ShowWarnMessage(playerID, "#etd_need_more_lumber")
