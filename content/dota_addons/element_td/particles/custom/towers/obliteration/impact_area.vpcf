@@ -9,12 +9,15 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/obliteration/impact_area_ring.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/obliteration/impact_area_rings.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/obliteration/impact_area_ring_flash.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/obliteration/impact_area_ground.vpcf"

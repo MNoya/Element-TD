@@ -5,9 +5,9 @@
 	m_nMaxParticles = 64
 	m_ConstantColor =
 	[
-		145,
+		170,
+		170,
 		255,
-		181,
 		255,
 	]
 	m_Renderers =
@@ -35,9 +35,9 @@
 			_class = "C_OP_ColorInterpolate"
 			m_ColorFade =
 			[
-				56,
-				166,
-				92,
+				170,
+				85,
+				255,
 				255,
 			]
 		},
@@ -112,16 +112,16 @@
 			_class = "C_INIT_RandomColor"
 			m_ColorMin =
 			[
-				192,
+				170,
+				170,
 				255,
-				211,
 				255,
 			]
 			m_ColorMax =
 			[
-				161,
-				255,
-				214,
+				85,
+				85,
+				127,
 				255,
 			]
 		},

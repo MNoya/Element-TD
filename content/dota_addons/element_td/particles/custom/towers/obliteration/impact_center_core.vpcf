@@ -4,9 +4,9 @@
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_ConstantColor =
 	[
-		194,
-		220,
-		255,
+		85,
+		85,
+		127,
 		255,
 	]
 	m_Renderers =

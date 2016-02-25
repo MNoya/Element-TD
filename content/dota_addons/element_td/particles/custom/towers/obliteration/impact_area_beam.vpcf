@@ -5,9 +5,9 @@
 	m_nMaxParticles = 4
 	m_ConstantColor =
 	[
-		145,
-		255,
-		181,
+		146,
+		0,
+		225,
 		255,
 	]
 	m_Renderers =
@@ -46,9 +46,9 @@
 			_class = "C_OP_ColorInterpolate"
 			m_ColorFade =
 			[
-				11,
-				163,
-				186,
+				131,
+				0,
+				197,
 				255,
 			]
 		},
@@ -121,6 +121,7 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/obliteration/impact_area_beam_spray.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/obliteration/impact_area_beam_flare.vpcf"

@@ -29,7 +29,7 @@ function ObliterationTower:OnAttack(keys)
         Target = target,
         Source = caster,
         Ability = keys.ability,
-        EffectName = "particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_arcane_orb.vpcf",
+        EffectName = "particles/custom/towers/obliteration/attack.vpcf",
         iMoveSpeed = 900,
         vSourceLoc = caster:GetAttachmentOrigin(caster:ScriptLookupAttachment("attach_attack1")),
         iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_1, --DOTA_PROJECTILE_ATTACHMENT_HITLOCATION

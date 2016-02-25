@@ -4,8 +4,8 @@
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_ConstantColor =
 	[
-		63,
-		217,
+		170,
+		170,
 		255,
 		255,
 	]
@@ -98,6 +98,7 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/obliteration/impact_center_flash.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/obliteration/impact_center_streaks.vpcf"
