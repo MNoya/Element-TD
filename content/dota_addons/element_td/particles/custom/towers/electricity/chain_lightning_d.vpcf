@@ -5,9 +5,9 @@
 	m_nMaxParticles = 32
 	m_ConstantColor =
 	[
-		8,
-		38,
-		82,
+		170,
+		0,
+		0,
 		255,
 	]
 	m_Renderers =
@@ -17,7 +17,7 @@
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
 			m_bAdditive = true
 			m_flOverbrightFactor = 15.000000
-			m_hTexture = resource:"materials/particle/bendibeam2.vtex"
+			m_hTexture = resource:"materials/particle/bendibeam3.vtex"
 			m_flRadiusScale = 0.500000
 			m_flFinalTextureScaleU = -1.000000
 			m_flFinalTextureOffsetU = 1.000000

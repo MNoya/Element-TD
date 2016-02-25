@@ -5,9 +5,9 @@
 	m_nMaxParticles = 64
 	m_ConstantColor =
 	[
-		90,
-		110,
-		221,
+		255,
+		0,
+		0,
 		255,
 	]
 	m_Renderers =
@@ -17,7 +17,7 @@
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
 			m_bAdditive = true
 			m_flOverbrightFactor = 3.000000
-			m_hTexture = resource:"materials/particle/electrical_arc/electrical_arc.vtex"
+			m_hTexture = resource:"materials/particle/electrical_arc_smooth/electrical_arc_smooth.vtex"
 		},
 	]
 	m_Operators =

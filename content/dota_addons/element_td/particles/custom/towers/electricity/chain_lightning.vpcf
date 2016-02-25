@@ -5,9 +5,9 @@
 	m_nMaxParticles = 32
 	m_ConstantColor =
 	[
-		42,
-		128,
-		205,
+		255,
+		85,
+		0,
 		255,
 	]
 	m_Renderers =
@@ -17,7 +17,7 @@
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
 			m_bAdditive = true
 			m_flOverbrightFactor = 15.000000
-			m_hTexture = resource:"materials/particle/bendibeam2.vtex"
+			m_hTexture = resource:"materials/particle/bendibeam3.vtex"
 			m_flRadiusScale = 0.500000
 			m_flFinalTextureScaleU = -1.000000
 			m_flFinalTextureOffsetU = 1.000000
@@ -112,9 +112,9 @@
 			m_flFadeStartTime = 0.500000
 			m_ColorFade =
 			[
-				42,
-				68,
-				127,
+				170,
+				0,
+				0,
 				255,
 			]
 		},
@@ -230,6 +230,23 @@
 				-2.000000,
 			]
 		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin =
+			[
+				170,
+				0,
+				0,
+				255,
+			]
+			m_ColorMax =
+			[
+				255,
+				68,
+				21,
+				255,
+			]
+		},
 	]
 	m_Emitters =
 	[
@@ -257,6 +274,9 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/electricity/chain_lightning_f.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_ember_spirit/ember_spirit_searing_chains_start_bolo_fire.vpcf"
 		},
 	]
 }

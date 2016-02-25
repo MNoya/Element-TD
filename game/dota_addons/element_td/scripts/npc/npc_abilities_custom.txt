@@ -1956,7 +1956,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"AbilityTextureName"			"towers/electricty"
+		"AbilityTextureName"			"towers/electricity"
 		"MaxLevel"						"3"
 		"AbilityCastPoint"				"0"
 	
