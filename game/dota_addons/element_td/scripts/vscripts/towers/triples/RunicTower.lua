@@ -44,13 +44,8 @@ function RunicTower:OnAttack(keys)
                     EffectName = "particles/custom/towers/runic/attack.vpcf",
                     iMoveSpeed = self.tower:GetProjectileSpeed(),
                     vSourceLoc= caster:GetAbsOrigin(),
-                    bDrawsOnMinimap = false,
-                    bDodgeable = true,
-                    bIsAttack = false,
-                    bVisibleToEnemies = true,
                     bReplaceExisting = false,
                     flExpireTime = GameRules:GetGameTime() + 10,
-                    iVisionTeamNumber = caster:GetTeamNumber()
                 }
                 projectile = ProjectileManager:CreateTrackingProjectile(info)
             end

@@ -33,15 +33,8 @@ function ObliterationTower:OnAttack(keys)
         iMoveSpeed = 900,
         vSourceLoc = caster:GetAttachmentOrigin(caster:ScriptLookupAttachment("attach_attack1")),
         iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_1, --DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
-        bDrawsOnMinimap = false,
-        bDodgeable = true,
-        bIsAttack = false,
-        bVisibleToEnemies = true,
         bReplaceExisting = false,
         flExpireTime = GameRules:GetGameTime() + 10,
-        bProvidesVision = true,
-        iVisionRadius = 400,
-        iVisionTeamNumber = caster:GetTeamNumber()
     }
     projectile = ProjectileManager:CreateTrackingProjectile(info)
 end
