@@ -10,7 +10,7 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-	"AbilityTextureName"			"towers/electricty_tower_conjure_lightning"
+	"AbilityTextureName"			"towers/electricty"
 	"MaxLevel"						"3"
 	"AbilityCastPoint"				"0"
 

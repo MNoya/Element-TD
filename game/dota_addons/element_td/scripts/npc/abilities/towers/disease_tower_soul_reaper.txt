@@ -7,5 +7,5 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"MaxLevel"						"1"
-	"AbilityTextureName"			"towers/disease_tower_soul_reaper"
+	"AbilityTextureName"			"towers/disease"
 }

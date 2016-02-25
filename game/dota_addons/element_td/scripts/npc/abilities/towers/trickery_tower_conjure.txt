@@ -13,7 +13,7 @@
 	"AbilityCooldown"				"15"
 	"MaxLevel"						"3"
 	"AbilityCastRange"				"900"
-	"AbilityTextureName"			"modifier_illusion"
+	"AbilityTextureName"			"towers/trickery"
 
 	"AbilitySpecial"
 	{

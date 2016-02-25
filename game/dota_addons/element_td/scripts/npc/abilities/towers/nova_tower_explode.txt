@@ -5,7 +5,7 @@
 {
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"BaseClass" 					"ability_datadriven"
-	"AbilityTextureName"            "phoenix_supernova"
+	"AbilityTextureName"            "towers/nova"
 	"MaxLevel"						"2"
 
 	"Modifiers"

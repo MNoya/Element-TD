@@ -8,7 +8,7 @@
 
 	"BaseClass"						"ability_datadriven"											
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"bristleback_viscous_nasal_goo"
+	"AbilityTextureName"			"towers/muck"
 	"MaxLevel"						"2"
 
 

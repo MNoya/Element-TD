@@ -9,7 +9,7 @@
 	"BaseClass"						"ability_datadriven"											
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"	
-	"AbilityTextureName"			"towers/flame_tower_sunburn"
+	"AbilityTextureName"			"towers/flame"
 	"MaxLevel"						"3"
 	"AbilityCastPoint"				"0"
 

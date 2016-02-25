@@ -7,7 +7,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"BaseClass"						"ability_datadriven"											
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"tornado_tempest"
+	"AbilityTextureName"			"towers/tornado"
 	"MaxLevel"						"2"
 
 	"Modifiers"
@@ -26,7 +26,7 @@
 		"modifier_tornado_slow"
 		{
 			"IsDebuff"		"1"
-			"TextureName"	"tornado_tempest"
+			"TextureName"	"towers/tornado"
 			"IsPurgable"	"1"
 			"Properties"
 			{

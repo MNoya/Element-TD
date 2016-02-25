@@ -13,7 +13,7 @@
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 	"AbilityCooldown"				"15"
 	"MaxLevel"						"3"
-	"AbilityTextureName"			"morphling_waveform"
+	"AbilityTextureName"			"towers/well"
 	"AbilityCastRange"				"900"
 
 	"AbilitySpecial"

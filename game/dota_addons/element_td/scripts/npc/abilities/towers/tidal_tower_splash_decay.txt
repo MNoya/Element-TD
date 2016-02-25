@@ -5,7 +5,7 @@
 {
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"BaseClass" 					"ability_datadriven"
-	"AbilityTextureName"            "towers/torrent_tower_douse"
+	"AbilityTextureName"            "towers/tidal"
 	"MaxLevel"						"2"
 
 	"Modifiers"

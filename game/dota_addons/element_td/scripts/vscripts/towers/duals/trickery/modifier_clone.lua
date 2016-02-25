@@ -8,6 +8,10 @@ function modifier_clone:GetEffectName()
     return "particles/units/heroes/hero_arc_warden/arc_warden_tempest_buff.vpcf"
 end
 
+function modifier_clone:GetTexture()
+    return "towers/trickery"
+end
+
 function modifier_clone:GetEffectAttachType()
     return PATTACH_ABSORIGIN_FOLLOW
 end

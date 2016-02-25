@@ -21,7 +21,7 @@ function modifier_fire_up:GetModifierBaseDamageOutgoing_Percentage()
 end
 
 function modifier_fire_up:GetTexture()
-    return "towers/blacksmith_tower_fire_up"
+    return "towers/blacksmith"
 end
 
 function modifier_fire_up:GetEffectName()

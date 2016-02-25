@@ -5,7 +5,7 @@
 {
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"BaseClass" 					"ability_datadriven"
-	"AbilityTextureName"            "towers/ephemeral_tower_phasing"
+	"AbilityTextureName"            "towers/ephemeral"
 	"AbilityManaCost"				"0"
 
 	"Modifiers"

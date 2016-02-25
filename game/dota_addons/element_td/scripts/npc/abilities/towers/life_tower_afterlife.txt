@@ -7,7 +7,7 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"MaxLevel"						"3"
-	"AbilityTextureName"			"towers/life_tower_afterlife"
+	"AbilityTextureName"			"towers/life"
 	"Modifiers"
 	{
 		"modifier_afterlife_passive"

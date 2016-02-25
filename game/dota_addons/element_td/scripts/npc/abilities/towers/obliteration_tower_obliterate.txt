@@ -5,7 +5,7 @@
 {
 	"BaseClass"						"ability_datadriven"											
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"obsidian_destroyer_sanity_eclipse"
+	"AbilityTextureName"			"towers/obliteration"
 	"MaxLevel"						"2"
 
 	"Modifiers"

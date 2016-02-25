@@ -7,7 +7,7 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"MaxLevel"						"3"
-	"AbilityTextureName"			"towers/quark_tower_quantum_beam"
+	"AbilityTextureName"			"towers/quark"
 	
 	"Modifiers"
 	{

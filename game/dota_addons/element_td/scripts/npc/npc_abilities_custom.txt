@@ -1882,7 +1882,7 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"AbilityCooldown"				"15"
 		"MaxLevel"						"3"
-		"AbilityTextureName"			"towers/blacksmith_tower_fire_up"
+		"AbilityTextureName"			"towers/blacksmith"
 		"AbilityCastRange"				"900"
 	
 		"precache"
@@ -1915,7 +1915,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"MaxLevel"						"1"
-		"AbilityTextureName"			"towers/disease_tower_soul_reaper"
+		"AbilityTextureName"			"towers/disease"
 	}
 	"dummy_passive"
 	{
@@ -1956,7 +1956,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"AbilityTextureName"			"towers/electricty_tower_conjure_lightning"
+		"AbilityTextureName"			"towers/electricty"
 		"MaxLevel"						"3"
 		"AbilityCastPoint"				"0"
 	
@@ -2079,7 +2079,7 @@
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass" 					"ability_datadriven"
-		"AbilityTextureName"            "towers/ephemeral_tower_phasing"
+		"AbilityTextureName"            "towers/ephemeral"
 		"AbilityManaCost"				"0"
 	
 		"Modifiers"
@@ -2150,7 +2150,7 @@
 	{
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"towers/erosion_tower_acid_attack"
+		"AbilityTextureName"			"towers/erosion"
 		"MaxLevel"						"2"
 	
 		"Modifiers"
@@ -2296,7 +2296,7 @@
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"	
-		"AbilityTextureName"			"towers/flame_tower_sunburn"
+		"AbilityTextureName"			"towers/flame"
 		"MaxLevel"						"3"
 		"AbilityCastPoint"				"0"
 	
@@ -2912,7 +2912,7 @@
 	
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"tinker_laser"
+		"AbilityTextureName"			"towers/laser"
 		"MaxLevel"						"2"
 	
 		"Modifiers"
@@ -2960,7 +2960,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"MaxLevel"						"3"
-		"AbilityTextureName"			"towers/life_tower_afterlife"
+		"AbilityTextureName"			"towers/life"
 		"Modifiers"
 		{
 			"modifier_afterlife_passive"
@@ -3098,7 +3098,7 @@
 	
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"bristleback_viscous_nasal_goo"
+		"AbilityTextureName"			"towers/muck"
 		"MaxLevel"						"2"
 	
 	
@@ -3206,7 +3206,7 @@
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass" 					"ability_datadriven"
-		"AbilityTextureName"            "phoenix_supernova"
+		"AbilityTextureName"            "towers/nova"
 		"MaxLevel"						"2"
 	
 		"Modifiers"
@@ -3334,7 +3334,7 @@
 	{
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"obsidian_destroyer_sanity_eclipse"
+		"AbilityTextureName"			"towers/obliteration"
 		"MaxLevel"						"2"
 	
 		"Modifiers"
@@ -3393,7 +3393,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"MaxLevel"						"1"
-		"AbilityTextureName"			"towers/poison_tower_contamination"
+		"AbilityTextureName"			"towers/poison"
 		"AbilitySpecial"
 		{
 			"01"
@@ -3527,7 +3527,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"MaxLevel"						"3"
-		"AbilityTextureName"			"towers/quark_tower_quantum_beam"
+		"AbilityTextureName"			"towers/quark"
 		
 		"Modifiers"
 		{
@@ -3567,7 +3567,7 @@
 	{
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"treant_leech_seed"
+		"AbilityTextureName"			"towers/roots"
 		"MaxLevel"						"2"
 	
 		"Modifiers"
@@ -3891,7 +3891,7 @@
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass" 					"ability_datadriven"
-		"AbilityTextureName"            "towers/torrent_tower_douse"
+		"AbilityTextureName"            "towers/tidal"
 		"MaxLevel"						"2"
 	
 		"Modifiers"
@@ -3954,7 +3954,7 @@
 		"AbilityCooldown"				"15"
 		"MaxLevel"						"3"
 		"AbilityCastRange"				"900"
-		"AbilityTextureName"			"modifier_illusion"
+		"AbilityTextureName"			"towers/trickery"
 	
 		"AbilitySpecial"
 		{
@@ -4032,7 +4032,7 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"AbilityCooldown"				"15"
 		"MaxLevel"						"3"
-		"AbilityTextureName"			"morphling_waveform"
+		"AbilityTextureName"			"towers/well"
 		"AbilityCastRange"				"900"
 	
 		"AbilitySpecial"
@@ -4058,7 +4058,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"tornado_tempest"
+		"AbilityTextureName"			"towers/tornado"
 		"MaxLevel"						"2"
 	
 		"Modifiers"
@@ -4077,7 +4077,7 @@
 			"modifier_tornado_slow"
 			{
 				"IsDebuff"		"1"
-				"TextureName"	"tornado_tempest"
+				"TextureName"	"towers/tornado"
 				"IsPurgable"	"1"
 				"Properties"
 				{
@@ -4142,7 +4142,7 @@
 	
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"towers/windstorm_tower_tornado"
+		"AbilityTextureName"			"towers/windstorm"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"

@@ -5,7 +5,7 @@
 {
 	"BaseClass"						"ability_datadriven"											
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"towers/erosion_tower_acid_attack"
+	"AbilityTextureName"			"towers/erosion"
 	"MaxLevel"						"2"
 
 	"Modifiers"

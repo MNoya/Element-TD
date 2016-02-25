@@ -8,7 +8,7 @@
 
 	"BaseClass"						"ability_datadriven"											
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"tinker_laser"
+	"AbilityTextureName"			"towers/laser"
 	"MaxLevel"						"2"
 
 	"Modifiers"

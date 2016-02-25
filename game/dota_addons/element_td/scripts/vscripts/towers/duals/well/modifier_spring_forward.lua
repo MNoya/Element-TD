@@ -20,6 +20,10 @@ function modifier_spring_forward:GetModifierAttackSpeedBonus_Constant()
 	return self.attack_speed_bonus
 end
 
+function modifier_spring_forward:GetTexture()
+    return "towers/well"
+end
+
 function modifier_spring_forward:GetEffectName()
 	return "particles/custom/towers/well/spring_forward.vpcf"
 end
