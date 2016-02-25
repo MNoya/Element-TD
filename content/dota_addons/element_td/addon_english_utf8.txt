@@ -316,7 +316,7 @@
         "DOTA_Tooltip_ability_sell_tower_0_sell_amount_tooltip"     "%GOLD RETURNED:"
 
         "DOTA_Tooltip_ability_attack_ground"                                              "Attack Ground"
-        "DOTA_Tooltip_ability_attack_ground_Description"                                  "Allows you to target an specific location rather than a unit."
+        "DOTA_Tooltip_ability_attack_ground_Description"                                  "<strong>Cast this to continously attack a selected area. Attack a creep to cancel it.</strong>"
         "DOTA_Tooltip_ability_attack_ground_splash_aoe"                                   "AOE:"
         
         // Builder
@@ -354,7 +354,7 @@
         "DOTA_Tooltip_ability_item_build_arrow_tower_Description"              "Builds an Arrow Tower at a location.\n100% against everything\n\nCOST: <font color='#F0BA36'>50 Gold</font>\nDAMAGE TYPE: <font color='#FFFFFF'>Composite</font> \nDAMAGE: <font color='#FFFFFF'>30</font> \nRANGE: <font color='#FFFFFF'>900</font> \nSPEED: <font color='#FFFFFF'>Fast</font>"
         
         "DOTA_Tooltip_ability_item_build_cannon_tower"                         "Build Cannon Tower"
-        "DOTA_Tooltip_ability_item_build_cannon_tower_Description"             "Builds a Cannon Tower at a location.\n100% against everything\n\nCOST: <font color='#F0BA36'>50 Gold</font>\nDAMAGE TYPE: <font color='#FFFFFF'>Composite</font> \nDAMAGE: <font color='#FFFFFF'>35</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>Slow</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
+        "DOTA_Tooltip_ability_item_build_cannon_tower_Description"             "Builds a Cannon Tower at a location. Can also manually attack the ground.\n100% against everything\n\nCOST: <font color='#F0BA36'>50 Gold</font>\nDAMAGE TYPE: <font color='#FFFFFF'>Composite</font> \nDAMAGE: <font color='#FFFFFF'>35</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>Slow</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
         
         "DOTA_Tooltip_ability_item_build_periodic_tower"                       "Build Periodic Tower"
         "DOTA_Tooltip_ability_item_build_periodic_tower_Description"           "Builds a Periodic Tower at a location.\n100% against everything\n\nCOST: <font color='#F0BA36'>11000 Gold</font> \nDAMAGE TYPE: <font color='#FFFFFF'>Composite<font> \nDAMAGE: <font color='#FFFFFF'>24000</font> \nRANGE: <font color='#FFFFFF'>1150</font> \nSPEED: <font color='#FFFFFF'>Average</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
@@ -593,7 +593,7 @@
         "DOTA_Tooltip_ability_trickery_tower_conjure_duration"      "DURATION:"
         
         "DOTA_Tooltip_ability_gunpowder_tower_shrapnade"        "Shrapnade"
-        "DOTA_Tooltip_ability_gunpowder_tower_shrapnade_Description"        "Each attack lobs an explosive bomb at a target that does AOE damage on hit. After a short delay, 4 more explosions occur around the target."
+        "DOTA_Tooltip_ability_gunpowder_tower_shrapnade_Description"        "Each attack lobs an explosive bomb at a target that does AOE damage on hit. After a short delay, 4 more explosions occur around the target.\n\n<strong>Cast this to continously attack a selected area. Attack a creep to cancel it.</strong>"
         "DOTA_Tooltip_ability_gunpowder_tower_shrapnade_damage"     "EXPLOSION DAMAGE:"
         "DOTA_Tooltip_ability_gunpowder_tower_shrapnade_splash_aoe"     "EXPLOSION AOE:"
         
