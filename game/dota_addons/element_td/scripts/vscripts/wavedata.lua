@@ -1,6 +1,9 @@
 -- wavedata.lua
 -- manages the spawning of creep waves
 
+wavesKV = LoadKeyValues("scripts/kv/waves.kv")
+creepsKV = LoadKeyValues("scripts/npc/npc_units_custom.txt")
+
 if not WAVE_CREEPS then
     WAVE_CREEPS = {}  -- array that stores the order that creeps spawn in. see /scripts/kv/waves.kv
     WAVE_HEALTH = {}  -- array that stores creep health values per wave.  see /scripts/kv/waves.kv
@@ -8,11 +11,8 @@ if not WAVE_CREEPS then
     CREEPS_PER_WAVE = 30 -- the number of creeps to spawn in each wave
     CURRENT_WAVE = 1
     CURRENT_BOSS_WAVE = 0
+    WAVE_COUNT = wavesKV["WaveCount"]
 end
-
-wavesKV = LoadKeyValues("scripts/kv/waves.kv")
-creepsKV = LoadKeyValues("scripts/npc/npc_units_custom.txt")
-WAVE_COUNT = wavesKV["WaveCount"]
 
 -- loads the creep and health data for each wave. Randomizes the creep order if 'chaos' is set to true
 function loadWaveData(chaos)

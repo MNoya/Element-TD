@@ -29,8 +29,22 @@ function InterestManager:CreateTimerForPlayer(playerID, timeRemaining)
 		local hero = ElementTD.vPlayerIDToHero[playerID]
 		if hero and hero:IsAlive() then
 			local playerData = GetPlayerData(playerID)
-			if playerData.health ~= 0 and ((playerData.completedWaves < WAVE_COUNT - 1 and not EXPRESS_MODE) or (playerData.completedWaves < WAVE_COUNT and EXPRESS_MODE)) then
-				InterestManager:GiveInterest(playerID)
+			if playerData.health ~= 0 then
+				if EXPRESS_MODE then
+					if playerData.completedWaves < WAVE_COUNT - 1 then
+					 	InterestManager:GiveInterest(playerID)
+					else
+						InterestManager:PauseInterest(playerID)
+						return
+					end
+				else
+					if playerData.completedWaves < WAVE_COUNT - 1 then
+						InterestManager:GiveInterest(playerID)
+					else
+						InterestManager:PauseInterest(playerID)
+						return
+					end
+				end
 			end
 		end
 		return INTEREST_INTERVAL
@@ -100,10 +114,7 @@ function InterestManager:PauseInterestForPlayer(playerID, waveNumber)
 			Timers:RemoveTimer(timerName)
 			InterestManager.timers[playerID] = nil;
 
-			local player = PlayerResource:GetPlayer(playerID)
-			if player then
-				CustomGameEventManager:Send_ServerToPlayer(player, "etd_pause_interest", {})
-			end
+			InterestManager:PauseInterest(playerID)
 		end
 	end
 end
@@ -114,7 +125,7 @@ function InterestManager:GiveInterest(playerID)
 	local player = PlayerResource:GetPlayer(playerID)
 	local gold = hero:GetGold()
 	local interest = math.floor(gold * INTEREST_RATE)
-	
+
 	if interest > 0 then
 		hero:ModifyGold(interest)
 		PopupAlchemistGold(hero, interest)
@@ -125,6 +136,13 @@ function InterestManager:GiveInterest(playerID)
 	
 	if player then
 		CustomGameEventManager:Send_ServerToPlayer( player, "etd_earned_interest", { goldEarned=interest } )
+	end
+end
+
+function InterestManager:PauseInterest(playerID)
+	local player = PlayerResource:GetPlayer(playerID)
+	if player then
+		CustomGameEventManager:Send_ServerToPlayer(player, "etd_pause_interest", {})
 	end
 end
 
