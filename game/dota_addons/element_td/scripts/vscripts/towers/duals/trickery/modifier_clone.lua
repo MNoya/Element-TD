@@ -5,7 +5,7 @@ function modifier_clone:GetStatusEffectName()
 end
 
 function modifier_clone:GetEffectName()
-    return "particles/units/heroes/hero_arc_warden/arc_warden_tempest_buff.vpcf"
+    return "particles/custom/towers/trickery/buff.vpcf"
 end
 
 function modifier_clone:GetTexture()

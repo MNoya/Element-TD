@@ -82,7 +82,7 @@ function ElectricityTower:CreateChainLightning( caster, start_position, target, 
         target_position.z = target_position.z + target:GetBoundingMaxs().z
     end
 
-    local particle = ParticleManager:CreateParticle("particles/items_fx/chain_lightning.vpcf", PATTACH_CUSTOMORIGIN, caster)
+    local particle = ParticleManager:CreateParticle("particles/custom/towers/electricity/chain_lightning.vpcf", PATTACH_CUSTOMORIGIN, caster)
     ParticleManager:SetParticleControl(particle,0, start_position)
     ParticleManager:SetParticleControl(particle,1, target_position)
     

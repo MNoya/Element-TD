@@ -11,7 +11,7 @@ function modifier_conjure_prevent_cloning:GetTexture()
 end
 
 function modifier_conjure_prevent_cloning:GetEffectName()
-    return "particles/units/heroes/hero_arc_warden/arc_warden_tempest_buff_glow.vpcf"
+    return "particles/custom/towers/trickery/buff_glow.vpcf"
 end
 
 function modifier_conjure_prevent_cloning:GetEffectAttachType()
