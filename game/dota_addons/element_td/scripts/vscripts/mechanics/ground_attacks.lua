@@ -8,6 +8,10 @@ function CDOTA_BaseNPC:GetRangedProjectileName()
     return NPC_UNITS_CUSTOM[unitName] and NPC_UNITS_CUSTOM[unitName]["ProjectileModel"] or ""
 end
 
+function CDOTA_BaseNPC:GetAttackSound()
+    local unitName = self:GetUnitName()
+    return NPC_UNITS_CUSTOM[unitName] and NPC_UNITS_CUSTOM[unitName]["AttackSound"]
+end
 
 -- Attack Ground for Artillery attacks, redirected from FilterProjectile
 function AttackGroundPos(attacker, position)
@@ -50,7 +54,16 @@ function AttackGround( event )
         ability.attack_ground_timer_attack = Timers:CreateTimer(caster:TimeUntilNextAttack(), function()
             caster:AttackNoEarlierThan(1/caster:GetAttacksPerSecond() - start_time)
 
-            -- Create the projectile and deal damage on hit
+            local attackSound = caster:GetAttackSound()
+            if attackSound then
+                caster:EmitSound(attackSound)
+            end
+
+            if caster.scriptObject and caster.scriptObject.OnAttack then
+                caster.scriptObject:OnAttack()
+            end
+
+            -- Create the projectile and deal damage on hit            
             AttackGroundPos(caster, position)
         end)
 

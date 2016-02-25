@@ -6985,6 +6985,7 @@
 	"gunpowder_tower"
 	{
 	    "AttackGround"              "1"
+	    "AttackSound"               "Hero_Techies.Attack"
 	    
 	    "BaseClass"                 "npc_dota_creature" 
 	    "SoundSet"                  "Hero_Techies"
@@ -7077,6 +7078,7 @@
 	"gunpowder_tower_2"
 	{
 	    "AttackGround"              "1"
+	    "AttackSound"               "Hero_Techies.Attack"
 	    
 	    "BaseClass"                 "npc_dota_creature" 
 	    "SoundSet"                  "Hero_Techies"
@@ -7165,6 +7167,7 @@
 	"gunpowder_tower_3"
 	{
 	    "AttackGround"              "1"
+	    "AttackSound"               "Hero_Techies.Attack"
 	
 	    "BaseClass"                 "npc_dota_creature" 
 	    "SoundSet"                  "Hero_Techies"
