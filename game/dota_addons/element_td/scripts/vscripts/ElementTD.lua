@@ -427,7 +427,7 @@ function ElementTD:OnUnitSpawned(keys)
         end
     else
         local unitName = unit:GetUnitName()
-        if not NPC_UNITS_CUSTOM[unitName] then
+        if unitName and unitName ~= "" and not NPC_UNITS_CUSTOM[unitName] then
             Log:warn("A non-custom unit was spawned! "..unitName)
             unit:RemoveSelf()
             ElementTD:CheatCommandUsed()
