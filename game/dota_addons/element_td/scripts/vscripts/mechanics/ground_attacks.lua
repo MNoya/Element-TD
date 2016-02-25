@@ -67,6 +67,10 @@ function AttackGround( event )
                 caster.scriptObject:OnAttackStart({origin=position})
             end
 
+            if caster.scriptObject and caster.scriptObject.SpawnTornado then
+                caster.scriptObject:SpawnTornado({origin=position})
+            end
+
             if caster:HasGroundAttack() then
                 -- Create the projectile and deal damage on hit     
                 AttackGroundPos(caster, position)

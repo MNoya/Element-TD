@@ -17,17 +17,18 @@ WindstormTower = createClass({
     },
 nil)
 
-function WindstormTower:SpawnTornado(target)
-
+function WindstormTower:SpawnTornado(keys)
     local baseTime = 5
     local newTime = 1 / self.tower:GetAttacksPerSecond()
     StartAnimation(self.tower, {duration=newTime, activity=ACT_DOTA_TELEPORT, rate=0.5*(baseTime/newTime)})
     
-    self.ability:StartCooldown(1 / self.tower:GetAttacksPerSecond())
+    self.next_tornado = GameRules:GetGameTime() + (1 / self.tower:GetAttacksPerSecond())
 
     self.tower:EmitSound("Windstorm.TornadoSpawn")
 
-    local position = target:GetAbsOrigin()
+    local target = keys.target
+    local position = keys.origin or (target and target:GetAbsOrigin())
+
     local tornado = CreateUnitByName( "windstorm_tornado", position, false, self.tower, self.tower:GetOwner(), self.tower:GetTeamNumber() )
     tornado.isTornado = true
     tornado.tower = self.tower
@@ -85,10 +86,10 @@ end
 function WindstormTower:OnBuildingFinished()
     Timers:CreateTimer(0.1, function()
         if IsValidEntity(self.tower) then
-            if self.ability:IsCooldownReady() then
+            if GameRules:GetGameTime() >= self.next_tornado and not self.tower:HasModifier("modifier_attacking_ground") then
                 local unit = GetTowerTarget(self.tower, TOWER_TARGETING_CLOSEST, self.findRadius)
                 if unit then
-                    self:SpawnTornado(unit)
+                    self:SpawnTornado({target=unit})
                     return 0.1
                 end
             end
@@ -104,6 +105,22 @@ function WindstormTower:OnCreated()
     self.duration = GetAbilitySpecialValue("windstorm_tower_tornado", "duration")
     self.playerID = self.tower:GetPlayerOwnerID()
     self.damage = GetAbilitySpecialValue("windstorm_tower_tornado", "damage")[self.tower:GetLevel()]
+    self.next_tornado = GameRules:GetGameTime()
+
+    Timers:CreateTimer(function() 
+        if IsValidEntity(self.tower) and self.tower:IsAlive() then
+            if not self.tower:HasModifier("modifier_attacking_ground") then
+                local attackTarget = self.tower:GetAttackTarget() or self.tower:GetAggroTarget()
+                if attackTarget then
+                    local distanceToTarget = (self.tower:GetAbsOrigin() - attackTarget:GetAbsOrigin()):Length2D()
+                    if distanceToTarget > self.tower:GetAttackRange() then
+                        self.tower:Interrupt()
+                    end
+                end
+            end
+            return 0.5
+        end
+    end)
 end
 
 function WindstormTower:OnAttackLanded(keys) end

@@ -620,7 +620,7 @@
         "DOTA_Tooltip_modifier_gold_tower_counter_Description"      "Extra %dMODIFIER_PROPERTY_HEALTH_BONUS% gold earned."
         
         "DOTA_Tooltip_ability_windstorm_tower_tornado"      "Tornado"
-        "DOTA_Tooltip_ability_windstorm_tower_tornado_Description"      "Summons a large tornado that damages, slows, and follows creeps.\nStacks multiplicatively with other slows."
+        "DOTA_Tooltip_ability_windstorm_tower_tornado_Description"      "Summons a large tornado that damages, slows, and follows creeps.\nStacks multiplicatively with other slows.\n\n<font color='#90EE90'>Cast this to continously attack a selected area. Attack a creep or Stop to cancel it.</font>"
         "DOTA_Tooltip_ability_windstorm_tower_tornado_damage"       "DAMAGE PER SECOND:"
         "DOTA_Tooltip_ability_windstorm_tower_tornado_slow"     "%MOVEMENT SLOW:"
         "DOTA_Tooltip_ability_windstorm_tower_tornado_radius"        "RADIUS:"

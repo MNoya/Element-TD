@@ -7,12 +7,29 @@
 	//-------------------------------------------------------------------------------------------------------------
 
 	"BaseClass"						"ability_datadriven"											
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityTextureName"			"towers/windstorm"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 	"MaxLevel"						"2"
+
+	"AbilityCastPoint"				"0.0"
+	"AbilityCastRange"      		"900"
+
+    "AOERadius"             		"%radius"
+
+ 	"AbilityMultiOrder"     		"1"
+
+ 	"OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "mechanics/ground_attacks.lua"
+            "Function"      "AttackGround"
+            "Target"        "POINT"
+        }
+    }
 
 	"Modifiers"
 	{
@@ -26,6 +43,45 @@
 				"MODIFIER_PROPERTY_DISABLE_AUTOATTACK" "1"
 			}
 		}
+
+		"modifier_attacking_ground"
+        {
+            "IsHidden"          "1"
+    
+            "OnOrder"
+            {
+                "RemoveModifier"
+                {
+                    "ModifierName"  "modifier_attacking_ground"
+                    "Target"        "CASTER"
+                }
+                "RunScript"
+                {
+                    "ScriptFile"    "mechanics/ground_attacks.lua"
+                    "Function"      "StopAttackGround"
+                }
+            }
+
+            // Attacking ground is a fake attack
+            "OnAttack"
+            {
+                "RemoveModifier"
+                {
+                    "ModifierName"  "modifier_attacking_ground"
+                    "Target"        "CASTER"
+                }
+                "RunScript"
+                {
+                    "ScriptFile"    "mechanics/ground_attacks.lua"
+                    "Function"      "StopAttackGround"
+                }
+            }
+
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_DISABLE_AUTOATTACK"  "1"
+            }
+        }
 	}
 
 	"AbilitySpecial"

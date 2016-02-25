@@ -81,7 +81,7 @@ GameUI.SetMouseCallback( function( eventName, arg ) {
 
         if (LEFT_CLICK) 
             return OnLeftButtonPressed();
-        else if (RIGHT_CLICK)
+        else if (RIGHT_CLICK && IsCustomBuilding(mainSelected))
             if (GetMouseTarget() == 0)
                 return CONSUME_EVENT;
     }
