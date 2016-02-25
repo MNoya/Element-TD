@@ -22,8 +22,9 @@ function RootsTower:OnAttackStart(keys)
     ParticleManager:SetParticleControl(launchParticle, 0, self.tower:GetOrigin())
     ParticleManager:ReleaseParticleIndex(launchParticle)
 
-    local targetPos = keys.target:GetAbsOrigin()
-    local dir = (targetPos - self.tower:GetOrigin()):Normalized()
+    local target = keys.target
+    local origin = keys.origin or target and target:GetAbsOrigin()
+    local dir = (origin - self.tower:GetOrigin()):Normalized()
     dir.z = 0
 
     local affectedCreeps = {}
@@ -69,6 +70,21 @@ function RootsTower:OnCreated()
     self.width = GetAbilitySpecialValue("roots_tower_gaias_wrath", "width")
     self.length = self.tower:GetAttackRange()
     self.damagePerSecond = GetAbilitySpecialValue("roots_tower_gaias_wrath", "dps")[self.tower:GetLevel()]
+
+    Timers:CreateTimer(function() 
+        if IsValidEntity(self.tower) and self.tower:IsAlive() then
+            if not self.tower:HasModifier("modifier_attacking_ground") then
+                local attackTarget = self.tower:GetAttackTarget() or self.tower:GetAggroTarget()
+                if attackTarget then
+                    local distanceToTarget = (self.tower:GetAbsOrigin() - attackTarget:GetAbsOrigin()):Length2D()
+                    if distanceToTarget > self.tower:GetAttackRange() then
+                        self.tower:Interrupt()
+                    end
+                end
+            end
+            return 0.5
+        end
+    end)
 end
 
 function RootsTower:OnAttackLanded(keys) end

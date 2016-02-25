@@ -17,6 +17,9 @@ nil)
 
 function IceTower:OnAttack(keys)
     local target = keys.target
+    local origin = keys.origin or (target and target:GetAbsOrigin())
+    if not origin then return end
+
     local projectileTable = {
         Ability = self.ability,
         EffectName = "particles/custom/towers/ice/projectile.vpcf",
@@ -32,7 +35,7 @@ function IceTower:OnAttack(keys)
         iUnitTargetType = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO,
     }
    
-    local diff = target:GetAbsOrigin() - self.tower:GetAbsOrigin()
+    local diff = origin - self.tower:GetAbsOrigin()
     diff.z = 0
     projectileTable.vVelocity = diff:Normalized() * self.projectile_speed
 
@@ -61,6 +64,21 @@ function IceTower:OnCreated()
 
     -- Deny autoattack damage through damage filter
     self.tower.no_autoattack_damage = true
+
+    Timers:CreateTimer(function() 
+        if IsValidEntity(self.tower) and self.tower:IsAlive() then
+            if not self.tower:HasModifier("modifier_attacking_ground") then
+                local attackTarget = self.tower:GetAttackTarget() or self.tower:GetAggroTarget()
+                if attackTarget then
+                    local distanceToTarget = (self.tower:GetAbsOrigin() - attackTarget:GetAbsOrigin()):Length2D()
+                    if distanceToTarget > self.tower:GetAttackRange() then
+                        self.tower:Interrupt()
+                    end
+                end
+            end
+            return 0.5
+        end
+    end)
 end
 
 function IceTower:OnAttackLanded(keys) end

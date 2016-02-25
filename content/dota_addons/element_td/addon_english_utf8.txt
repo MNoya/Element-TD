@@ -316,7 +316,7 @@
         "DOTA_Tooltip_ability_sell_tower_0_sell_amount_tooltip"     "%GOLD RETURNED:"
 
         "DOTA_Tooltip_ability_attack_ground"                                              "Attack Ground"
-        "DOTA_Tooltip_ability_attack_ground_Description"                                  "<strong>Cast this to continously attack a selected area. Attack a creep to cancel it.</strong>"
+        "DOTA_Tooltip_ability_attack_ground_Description"                                  "Cast this to continously attack a selected area. Attack a creep or Stop to cancel it."
         "DOTA_Tooltip_ability_attack_ground_splash_aoe"                                   "AOE:"
         
         // Builder
@@ -593,12 +593,12 @@
         "DOTA_Tooltip_ability_trickery_tower_conjure_duration"      "DURATION:"
         
         "DOTA_Tooltip_ability_gunpowder_tower_shrapnade"        "Shrapnade"
-        "DOTA_Tooltip_ability_gunpowder_tower_shrapnade_Description"        "Each attack lobs an explosive bomb at a target that does AOE damage on hit. After a short delay, 4 more explosions occur around the target.\n\n<strong>Cast this to continously attack a selected area. Attack a creep to cancel it.</strong>"
+        "DOTA_Tooltip_ability_gunpowder_tower_shrapnade_Description"        "Each attack lobs an explosive bomb at a target that does AOE damage on hit. After a short delay, 4 more explosions occur around the target.\n\n<font color='#90EE90'>Cast this to continously attack a selected area. Attack a creep or Stop to cancel it.</font>"
         "DOTA_Tooltip_ability_gunpowder_tower_shrapnade_damage"     "EXPLOSION DAMAGE:"
         "DOTA_Tooltip_ability_gunpowder_tower_shrapnade_splash_aoe"     "EXPLOSION AOE:"
         
         "DOTA_Tooltip_ability_ice_tower_ice_blast"      "Ice Blast"
-        "DOTA_Tooltip_ability_ice_tower_ice_blast_Description"      "Each attack fires shards of ice that strike in a line, starting with a small AoE and building towards a large AoE by the end of the attack."
+        "DOTA_Tooltip_ability_ice_tower_ice_blast_Description"      "Each attack fires shards of ice that strike in a line, starting with a small AoE and building towards a large AoE by the end of the attack.\n\n<font color='#90EE90'>Cast this to continously attack a selected area. Attack a creep or Stop to cancel it.</font>"
         "DOTA_Tooltip_ability_ice_tower_ice_blast_damage"       "DAMAGE:"
         "DOTA_Tooltip_ability_ice_tower_ice_blast_aoe_start"                              "AOE START:"
         "DOTA_Tooltip_ability_ice_tower_ice_blast_aoe_end"                                "AOE END:"
@@ -751,7 +751,7 @@
         "DOTA_Tooltip_modifier_jinx_maledict_Description"       "Taking damage every few seconds based on the damage taken since Maledict began."
         
         "DOTA_Tooltip_ability_roots_tower_gaias_wrath"      "Gaia's Wrath"
-        "DOTA_Tooltip_ability_roots_tower_gaias_wrath_Description"      "Each attack sends out a line of roots that slows creeps hit as well as adding a damage over time debuff to it. The damage stacks, but the slow doesn't.\nStacks multiplicatively with other slows."
+        "DOTA_Tooltip_ability_roots_tower_gaias_wrath_Description"      "Each attack sends out a line of roots that slows creeps hit as well as adding a damage over time debuff to it. The damage stacks, but the slow doesn't.\nStacks multiplicatively with other slows.\n\n<font color='#90EE90'>Cast this to continously attack a selected area. Attack a creep or Stop to cancel it.</font color='#90EE90'>"
         "DOTA_Tooltip_ability_roots_tower_gaias_wrath_slow"     "%MOVEMENT SLOW:"
         "DOTA_Tooltip_ability_roots_tower_gaias_wrath_dps"      "DAMAGE PER SECOND:"
         "DOTA_Tooltip_ability_roots_tower_gaias_wrath_duration"     "DURATION:"

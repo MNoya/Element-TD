@@ -50,7 +50,6 @@ function GunpowderTower:OnCreated()
   self.splashDamage = GetAbilitySpecialValue("gunpowder_tower_shrapnade", "damage")    
   self.splashAOE = GetAbilitySpecialValue("gunpowder_tower_shrapnade", "splash_aoe")    
   self.projOrigin = self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_attack1"))
-  self.towerRange = self.tower:GetAttackRange()
 
   Timers:CreateTimer(function() 
         if IsValidEntity(self.tower) and self.tower:IsAlive() then
@@ -58,7 +57,7 @@ function GunpowderTower:OnCreated()
                 local attackTarget = self.tower:GetAttackTarget() or self.tower:GetAggroTarget()
                 if attackTarget then
                     local distanceToTarget = (self.tower:GetAbsOrigin() - attackTarget:GetAbsOrigin()):Length2D()
-                    if distanceToTarget > self.towerRange then
+                    if distanceToTarget > self.tower:GetAttackRange() then
                         self.tower:Interrupt()
                     end
                 end

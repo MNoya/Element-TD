@@ -2721,9 +2721,25 @@
 		//-------------------------------------------------------------------------------------------------------------
 	
 		"BaseClass"						"ability_datadriven"											
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityTextureName"			"towers/ice"
-		"MaxLevel"						"3"
+		"MaxLevel"						"3"	
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"      		"900"
+	
+	    "AOERadius"             		"200"
+	
+	 	"AbilityMultiOrder"     		"1"
+	
+		"OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "mechanics/ground_attacks.lua"
+	            "Function"      "AttackGround"
+	            "Target"        "POINT"
+	        }
+	    }
 	
 		"Modifiers"
 		{
@@ -2741,6 +2757,45 @@
 					}
 				}
 			}
+	
+			"modifier_attacking_ground"
+	        {
+	            "IsHidden"          "1"
+	    
+	            "OnOrder"
+	            {
+	                "RemoveModifier"
+	                {
+	                    "ModifierName"  "modifier_attacking_ground"
+	                    "Target"        "CASTER"
+	                }
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/ground_attacks.lua"
+	                    "Function"      "StopAttackGround"
+	                }
+	            }
+	
+	            // Attacking ground is a fake attack
+	            "OnAttack"
+	            {
+	                "RemoveModifier"
+	                {
+	                    "ModifierName"  "modifier_attacking_ground"
+	                    "Target"        "CASTER"
+	                }
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/ground_attacks.lua"
+	                    "Function"      "StopAttackGround"
+	                }
+	            }
+	
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_DISABLE_AUTOATTACK"  "1"
+	            }
+	        }
 		}
 	
 		"OnProjectileHitUnit"
@@ -3566,9 +3621,26 @@
 	"roots_tower_gaias_wrath"
 	{
 		"BaseClass"						"ability_datadriven"											
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityTextureName"			"towers/roots"
 		"MaxLevel"						"2"
+		"AbilityCastPoint"				"0.0"
+	
+		"AbilityCastRange"      		"900"
+	
+	    "AOERadius"             		"%width"
+	
+	 	"AbilityMultiOrder"     		"1"
+	
+	 	"OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "mechanics/ground_attacks.lua"
+	            "Function"      "AttackGround"
+	            "Target"        "POINT"
+	        }
+	    }
 	
 		"Modifiers"
 		{
@@ -3649,6 +3721,45 @@
 					}
 				}
 			}
+	
+			"modifier_attacking_ground"
+	        {
+	            "IsHidden"          "1"
+	    
+	            "OnOrder"
+	            {
+	                "RemoveModifier"
+	                {
+	                    "ModifierName"  "modifier_attacking_ground"
+	                    "Target"        "CASTER"
+	                }
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/ground_attacks.lua"
+	                    "Function"      "StopAttackGround"
+	                }
+	            }
+	
+	            // Attacking ground is a fake attack
+	            "OnAttack"
+	            {
+	                "RemoveModifier"
+	                {
+	                    "ModifierName"  "modifier_attacking_ground"
+	                    "Target"        "CASTER"
+	                }
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/ground_attacks.lua"
+	                    "Function"      "StopAttackGround"
+	                }
+	            }
+	
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_DISABLE_AUTOATTACK"  "1"
+	            }
+	        }
 		}
 		"AbilitySpecial"
 		{

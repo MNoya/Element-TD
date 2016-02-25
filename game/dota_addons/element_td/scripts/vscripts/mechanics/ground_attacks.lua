@@ -60,11 +60,17 @@ function AttackGround( event )
             end
 
             if caster.scriptObject and caster.scriptObject.OnAttack then
-                caster.scriptObject:OnAttack()
+                caster.scriptObject:OnAttack({origin=position})
             end
 
-            -- Create the projectile and deal damage on hit            
-            AttackGroundPos(caster, position)
+            if caster.scriptObject and caster.scriptObject.OnAttackStart then
+                caster.scriptObject:OnAttackStart({origin=position})
+            end
+
+            if caster:HasGroundAttack() then
+                -- Create the projectile and deal damage on hit     
+                AttackGroundPos(caster, position)
+            end
         end)
 
         local time = 1 / caster:GetAttacksPerSecond()   
