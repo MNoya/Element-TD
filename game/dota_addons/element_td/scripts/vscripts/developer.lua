@@ -61,7 +61,7 @@ function ElementTD:CheatCommandUsed(playerID)
         GetPlayerData(playerID).cheated = true
     end
     
-    GameRules:SendCustomMessage("#etd_cheats_enabled", 0, 0)
+    --GameRules:SendCustomMessage("#etd_cheats_enabled", 0, 0)
 end
 
 function ElementTD:GreedIsGood(playerID, value)
