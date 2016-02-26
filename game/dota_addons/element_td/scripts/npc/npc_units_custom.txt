@@ -11815,7 +11815,7 @@
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1"
 	    "ProjectileSpeed"        "2000"
-	    "ProjectileModel"        "particles/units/heroes/hero_tinker/tinker_laser.vpcf"
+	    "ProjectileModel"        "particles/custom/towers/laser/attack.vpcf"
 	
 	    "Model"             "models/heroes/tinker/tinker.vmdl"
 	    "ModelScale"        "1.0"
@@ -11906,7 +11906,7 @@
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1"
 	    "ProjectileSpeed"        "2000"
-	    "ProjectileModel"        "particles/units/heroes/hero_tinker/tinker_laser.vpcf"
+	    "ProjectileModel"        "particles/custom/towers/laser/attack.vpcf"
 	
 	    "Model"             "models/heroes/tinker/tinker.vmdl"
 	    "ModelScale"        "1"
