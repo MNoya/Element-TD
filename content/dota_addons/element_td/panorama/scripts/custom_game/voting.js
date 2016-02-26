@@ -35,8 +35,8 @@ var scoreMultipliers = {normal:1,hard:2,veryhard:3,insane:4,chaos:0.25,endless:0
 var healthMult = $( '#HealthMult' );
 var bountyMult = $( '#BountyMult' );
 var scoresMult = $( '#ScoresMult' );
-var same_random = $('#same_random')
-var all_random = $('#all_random')
+var same_random = $('#samerandom')
+var all_random = $('#allrandom')
 var chaos = $('#chaos')
 var endless = $('#endless')
 var express = $('#express')
@@ -124,7 +124,7 @@ function SelectCheckboxClick() {
 }
 
 function SelectRadio(name) {
-    var panel = $("#"+name)
+    /*var panel = $("#"+name)
     if (panel.last_state !== undefined && panel.last_state == panel.checked)
         panel.checked = !panel.checked
 
@@ -134,7 +134,9 @@ function SelectRadio(name) {
     if (name == "same_random")
         $("#all_random").last_state = undefined
     else
-        $("#same_random").last_state = undefined
+        $("#same_random").last_state = undefined*/
+
+    $("#ElementsDesc").text = $.Localize("element_"+name+"_description")
 }
 
 function ToggleVoteDialog( data )
@@ -294,6 +296,7 @@ function ShowVoteResults( data )
     else
     {
         $( '#ElementsResult' ).text = $.Localize(data.elements.toLowerCase()+"_mode");
+        $( '#ElementsView' ).text = $.Localize(data.elements.toLowerCase()+"_mode");
     }
 
     if (!endless)
@@ -409,6 +412,7 @@ function Setup()
 
 (function () {
     Setup();
+    $("#allpick").checked = true;
     GameEvents.Subscribe( "etd_toggle_vote_dialog", ToggleVoteDialog );
     GameEvents.Subscribe( "etd_update_vote_timer", UpdateVoteTimer );
     GameEvents.Subscribe( "etd_vote_display", PlayerVoted );
