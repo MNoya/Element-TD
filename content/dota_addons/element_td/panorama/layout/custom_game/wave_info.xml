@@ -10,7 +10,7 @@
     <Panel hittest="false" id="WaveInfoBase">
       <Panel hittest="true" id="StartWave">
         <Button id="StartNextWaveButton" onactivate="OnStartNextWave()">
-          <Label id="StartWaveLabel" text="Next\nWave"/>
+          <Label id="StartWaveLabel" text="Start\nGame"/>
         </Button>
       </Panel>
       <Panel hittest="false" id="WaveInfo">
