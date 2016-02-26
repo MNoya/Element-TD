@@ -32,7 +32,6 @@
 	"ArmorPhysical"				"0"			
 	"MagicalResistance"			"0"			
 
-	"AttributePrimary"			"DOTA_ATTRIBUTE_AGILITY"
 	"AttributeBaseStrength"		"0"			
 	"AttributeStrengthGain"		"0"			
 	"AttributeBaseIntelligence"	"0"			
