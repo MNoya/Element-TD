@@ -5,6 +5,10 @@ var INTEREST_RATE = 0.02;
 var INTEREST_REFRESH = 0.05;
 
 var interest = $( "#Interest" );
+
+var goldIcon = $( "#InterestCoin" );
+var lockIcon = $( "#InterestLock" );
+
 var interestBarGold = $( "#InterestBarGold" );
 var interestBarDisabled = $( "#InterestBarDisabled" );
 var tooltipAmount = $( "#TooltipAmount" );
@@ -30,10 +34,13 @@ function DisplayInterest( table ) {
 	timerStart = Game.GetGameTime();
 	INTEREST_INTERVAL = table.interval;
 	timerEnd = Game.GetGameTime() + INTEREST_INTERVAL;
+	
+	lockIcon.visible = false;
 	interestBarDisabled.visible = false;
 	interest.visible = true;
 	enabled = table.enabled;
 	INTEREST_RATE = table.rate;
+	
 	if (!enabled)
 		interestBarGold.style["width"] = "0%";
 }
@@ -53,6 +60,9 @@ function PauseInterest( table ) {
 	interestBarDisabled.visible = true;
 	interestBarDisabled.style["width"] = interestBarGold.style["width"];
 	interestBarGold.visible = false;
+	
+	goldIcon.visible = false;
+	lockIcon.visible = true;
 }
 
 function ResumeInterest( table ) {
@@ -62,7 +72,14 @@ function ResumeInterest( table ) {
 	interestBarDisabled.visible = false;
 	interestBarGold.visible = true;
 	
+	goldIcon.visible = true;
+	lockIcon.visible = false;
+
 	enabled = true;
+}
+
+function ShowLockTooltip() {
+	$.DispatchEvent("DOTAShowTitleTextTooltip", lockIcon, "#etd_interest_lock_title", "#etd_interest_lock");
 }
 
 (function () {

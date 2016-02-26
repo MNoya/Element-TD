@@ -8,13 +8,18 @@
   </scripts>
   <Panel hittest="false" class="BaseHud">
     <Panel hittest="false" id="Interest">
+
       <Panel hittest="false" id="InterestBar" onmouseover="RemoveStyle(InterestTooltip, hide)" onmouseout="AddStyle(InterestTooltip, hide)">
         <Panel hittest="false" id="InterestBarDisabled"/>
         <Panel hittest="false" id="InterestBarGold"/>
         <Panel hittest="false" id="InterestBarOverlay"/>
         <Image id="InterestCoin" src="file://{images}/custom_game/interest/gold.png"/>
+        
+        <Image id="InterestLock" onmouseover="ShowLockTooltip()" onmouseout="DOTAHideTitleTextTooltip()" src="file://{images}/custom_game/interest/lock.png"/>
+
         <Label id="InterestLabel" text="Interest (2%)"/>
       </Panel>
+
       <Panel hittest="false" id="InterestTooltip" class="hide">
         <Label id="TooltipLabel" text="Total Gold From Interest"/>
         <Label id="TooltipAmount" text="0"/>
