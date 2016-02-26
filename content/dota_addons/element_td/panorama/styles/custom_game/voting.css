@@ -7,10 +7,10 @@
 #Voting
 {
     horizontal-align: center;
-    position: 0px 15% 0px;
+    position: 0px 13% 0px;
     margin-top: -3%;
     width: 580px;
-    height: 600px;
+    height: 620px;
     padding: 20px 20px 0px 20px;
     background-color: #000000DD;
     border: 2px solid #484A48;
@@ -21,10 +21,10 @@
 #VotingLive
 {
     horizontal-align: center;
-    position: 585px 15% 0px;
+    position: 585px 13% 0px;
     margin-top: -3%;
     width: 185px;
-    height: 600px;
+    height: 620px;
     padding: 10px;
     background-color: #000000DD;
     border: 2px solid #484A48;
@@ -281,8 +281,9 @@ DropDownMenu
 
 .DifficultyImage
 {
-    width: 130px;
-    height: 130px;
+    width: 110px;
+    height: 110px;
+    margin-left: 10px;
 }
 
 .DifficultyLabel
@@ -294,7 +295,6 @@ DropDownMenu
     text-align: center;
     horizontal-align: center;
     vertical-align: bottom;
-    margin-top: 2px;
     width: 150px;
     height: 30px;
 }
@@ -302,14 +302,13 @@ DropDownMenu
 .DifficultyBox
 {
     width: 128px;
-    height: 160px;
+    height: 140px;
     flow-children: down;
 }
 
 #Checkboxes
 {
     flow-children: down;
-    margin-top: 20px;
     width: 100%;
     height: 50%;
     margin-left: 30px;
@@ -368,7 +367,7 @@ ToggleButton .TickBox, DOTASettingsCheckbox .TickBox
     horizontal-align: right;
     flow-children: down;
     margin-bottom: 10px;
-    margin-top: -60px;
+    margin-top: -30px;
     font-weight: bold;
 }
 
@@ -535,11 +534,12 @@ ToggleButton .TickBox, DOTASettingsCheckbox .TickBox
 {
     margin-left: 7px;
     margin-bottom: 5px;
+    height: 32%;
 }
 
 #Option_Endless
 {
-    margin-top: 5px;
+    //margin-top: 5px;
 }
 
 .RadioBox
@@ -562,7 +562,12 @@ RadioButton Label
     flow-children: down;
 }
 
-#same_random
+#allpick
+{
+    margin-bottom: 5px;
+}
+
+#samerandom
 {
     margin-bottom: 5px;
 }
@@ -570,7 +575,8 @@ RadioButton Label
 #ElementsDesc
 {
     horizontal-align: right;
-    margin-top: 10px;
+    vertical-align: center;
+    margin-top: -3px;
     width: 66%;
     font-size: 20px;
     color: #FFF;

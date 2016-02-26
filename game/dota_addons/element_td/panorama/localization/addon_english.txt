@@ -72,11 +72,11 @@
         "mode_casual_description"           "Everyone plays on their own difficulty."
 
         "element_allpick"                   "All Pick"
-        "element_pick_description"          "Everyone can pick and choose which elementals they want to summon."
+        "element_allpick_description"       "Everyone can pick their own elements."
         "element_allrandom"                 "All Random"
         "element_allrandom_description"     "Your elements are randomly selected."
         "element_samerandom"                "Same Random"
-        "element_samerandom_description"    "Your elements are randomly selected."
+        "element_samerandom_description"    "Everyone gets the same random elements."
         "element_random"                    "Random"
 
         "horde_normal"                      "Normal"

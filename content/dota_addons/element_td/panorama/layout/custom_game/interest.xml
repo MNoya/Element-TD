@@ -6,7 +6,7 @@
   <scripts>
     <include src="file://{resources}/scripts/custom_game/interest.js" /> 
   </scripts>
-  <Panel hittest="false" class="BaseHud">
+  <Panel hittest="false" class="BaseHud hidden">
     <Panel hittest="false" id="Interest">
 
       <Panel hittest="false" id="InterestBar" onmouseover="RemoveStyle(InterestTooltip, hide)" onmouseout="AddStyle(InterestTooltip, hide)">

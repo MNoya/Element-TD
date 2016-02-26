@@ -2,7 +2,7 @@
 {
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
-	m_nMaxParticles = 32
+	m_nMaxParticles = 60
 	m_Renderers =
 	[
 		{
@@ -10,7 +10,7 @@
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
 			m_bAdditive = true
 			m_flOverbrightFactor = 3.000000
-			m_hTexture = resource:"materials/particle/electrical_arc_smooth/electrical_arc_smooth.vtex"
+			m_hTexture = resource:"materials/particle/particle_flares/aircraft_white.vtex"
 		},
 	]
 	m_Operators =
@@ -20,11 +20,18 @@
 		},
 		{
 			_class = "C_OP_BasicMovement"
+			m_Gravity =
+			[
+				0.000000,
+				0.000000,
+				-600.000000,
+			]
+			m_fDrag = 0.050000
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
-			m_flBias = 0.700000
-			m_flEndScale = 2.000000
+			m_flBias = 0.950000
+			m_flStartScale = 2.000000
 		},
 		{
 			_class = "C_OP_FadeOutSimple"
@@ -32,16 +39,19 @@
 		{
 			_class = "C_OP_LockToBone"
 			m_nControlPointNumber = 1
+			m_bDisableOperator = true
 		},
 		{
 			_class = "C_OP_OscillateScalarSimple"
 			m_Frequency = 8.000000
 			m_Rate = -250.000000
 			m_nField = 16
+			m_bDisableOperator = true
 		},
 		{
 			_class = "C_OP_Spin"
 			m_nSpinRateDegrees = 900
+			m_bDisableOperator = true
 		},
 	]
 	m_Initializers =
@@ -76,22 +86,35 @@
 				0.500000,
 			]
 			m_nControlPointNumber = 1
+			m_bDisableOperator = true
 		},
 		{
 			_class = "C_INIT_RandomColor"
 			m_ColorMin =
 			[
-				255,
-				0,
-				0,
-				255,
+				251,
+				219,
+				90,
+				50,
 			]
 			m_ColorMax =
 			[
 				255,
-				85,
-				0,
+				154,
+				54,
 				255,
+			]
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_nControlPointNumber = 1
+			m_fSpeedMin = 24.000000
+			m_fSpeedMax = 600.000000
+			m_LocalCoordinateSystemSpeedMin =
+			[
+				0.000000,
+				0.000000,
+				150.000000,
 			]
 		},
 	]
@@ -99,12 +122,12 @@
 	[
 		{
 			_class = "C_OP_InstantaneousEmitter"
-			m_nParticlesToEmit = 24
+			m_nParticlesToEmit = 60
 		},
 		{
 			_class = "C_OP_InstantaneousEmitter"
 			m_flStartTime = 0.250000
-			m_nParticlesToEmit = 32
+			m_nParticlesToEmit = 60
 		},
 	]
 }

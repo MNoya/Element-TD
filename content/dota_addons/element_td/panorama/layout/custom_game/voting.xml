@@ -44,10 +44,11 @@
       <Panel hittest="false" id="Checkboxes">
         <Panel id="Option_Random" class="CheckboxPanel">
           <Panel id="RadioButtons">
-            <RadioButton group="RandomRadio" onactivate="SelectRadio('same_random')" id="same_random" text="Same Random"/>
-            <RadioButton group="RandomRadio" onactivate="SelectRadio('all_random')" id="all_random" text="All Random"/>
-          </Panel>
-          <Label id="ElementsDesc" text="#element_samerandom_description"/>
+            <RadioButton group="RandomRadio" onactivate="SelectRadio('allpick')" checked="true" id="allpick" text="All Pick"/>
+            <RadioButton group="RandomRadio" onactivate="SelectRadio('samerandom')" id="samerandom" text="Same Random"/>
+            <RadioButton group="RandomRadio" onactivate="SelectRadio('allrandom')" id="allrandom" text="All Random"/>
+          </Panel> 
+          <Label id="ElementsDesc" text="#element_allpick_description"/>
         </Panel>
 
         <Panel id="Option_Endless" class="CheckboxPanel" onmouseover="HoverCheckbox('endless')" onmouseout="MouseOverCheckbox('endless')" onactivate="SelectCheckbox('endless')">

@@ -5,6 +5,12 @@
     flow-children: down;
 }
 
+.hidden
+{
+    opacity: 0;
+    visibility: collapse;
+}
+
 #Interest
 {
     horizontal-align: right;

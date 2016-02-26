@@ -6,7 +6,7 @@
 
     "ArmorPhysical"        "0"
     "MagicalResistance"        "0"
-    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
     "AttackDamageMin"        "0"
     "AttackDamageMax"        "0"
     "AttackRate"        "0"

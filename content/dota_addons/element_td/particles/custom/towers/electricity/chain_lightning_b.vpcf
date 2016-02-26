@@ -5,9 +5,9 @@
 	m_nMaxParticles = 64
 	m_ConstantColor =
 	[
-		255,
-		0,
-		0,
+		244,
+		18,
+		1,
 		255,
 	]
 	m_Renderers =
@@ -17,7 +17,7 @@
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
 			m_bAdditive = true
 			m_flOverbrightFactor = 3.000000
-			m_hTexture = resource:"materials/particle/electrical_arc_smooth/electrical_arc_smooth.vtex"
+			m_hTexture = resource:"materials/particle/electrical_arc/electrical_arc.vtex"
 		},
 	]
 	m_Operators =
@@ -43,6 +43,12 @@
 			m_flEndScale = 0.500000
 			m_nOpEndCapState = 0
 		},
+		{
+			_class = "C_OP_RampScalarLinear"
+			m_RateMin = 52.000000
+			m_RateMax = 222.000000
+			m_nField = 4
+		},
 	]
 	m_Initializers =
 	[
@@ -52,8 +58,8 @@
 		},
 		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMin = 0.050000
-			m_fLifetimeMax = 0.130000
+			m_fLifetimeMin = 0.300000
+			m_fLifetimeMax = 0.300000
 		},
 		{
 			_class = "C_INIT_RandomRotation"
