@@ -104,7 +104,8 @@ function StartBreakTime(playerID, breakTime, rush_wave)
 
     Log:debug("Starting break time for " .. GetPlayerName(playerID).. " for wave "..wave)
     if ply then
-        CustomGameEventManager:Send_ServerToPlayer( ply, "etd_update_wave_timer", { time = breakTime, button = (GameSettings:GetGamemode() ~= "Competitive") } )
+        local bShowButton = GameSettings:GetGamemode() ~= "Competitive" or (PlayerResource:GetPlayerCount() == 1 and wave == 1)
+        CustomGameEventManager:Send_ServerToPlayer( ply, "etd_update_wave_timer", { time = breakTime, button = bShowButton } )
     end
 
     ShowWaveBreakTimeMessage(playerID, wave, breakTime, msgTime)
@@ -151,35 +152,38 @@ function StartBreakTime(playerID, breakTime, rush_wave)
     end
 
     -- create the actual timer
-    Timers:CreateTimer(breakTime, function()
-        local data = GetPlayerData(playerID)
+    Timers:CreateTimer("SpawnWaveDelay"..playerID, {
+        endTime = breakTime,
+        callback = function()
+            local data = GetPlayerData(playerID)
 
-        if wave == WAVE_COUNT and not EXPRESS_MODE then
-            CURRENT_BOSS_WAVE = 1
-            if hero:IsAlive() then
-                Log:info("Spawning the first boss wave for ["..playerID.."] ".. playerData.name)            
-                playerData.bossWaves = CURRENT_BOSS_WAVE
+            if wave == WAVE_COUNT and not EXPRESS_MODE then
+                CURRENT_BOSS_WAVE = 1
+                if hero:IsAlive() then
+                    Log:info("Spawning the first boss wave for ["..playerID.."] ".. playerData.name)            
+                    playerData.bossWaves = CURRENT_BOSS_WAVE
+                end
+                ShowBossWaveMessage(playerID, CURRENT_BOSS_WAVE)
+            else
+                if hero:IsAlive() then
+                    Log:info("Spawning wave " .. wave .. " for ["..playerID.."] ".. data.name)
+                end
+                ShowWaveSpawnMessage(playerID, wave)
             end
-            ShowBossWaveMessage(playerID, CURRENT_BOSS_WAVE)
-        else
-            if hero:IsAlive() then
-                Log:info("Spawning wave " .. wave .. " for ["..playerID.."] ".. data.name)
+
+            if wave == 1 then
+                EmitAnnouncerSoundForPlayer("announcer_announcer_battle_begin_01", playerID)
             end
-            ShowWaveSpawnMessage(playerID, wave)
-        end
 
-        if wave == 1 then
-            EmitAnnouncerSoundForPlayer("announcer_announcer_battle_begin_01", playerID)
-        end
+            -- update wave info
+            UpdateWaveInfo(playerID, wave)
 
-        -- update wave info
-        UpdateWaveInfo(playerID, wave)
-
-        -- spawn dat wave
-        if hero:IsAlive() then
-            SpawnWaveForPlayer(playerID, wave) 
+            -- spawn dat wave
+            if hero:IsAlive() then
+                SpawnWaveForPlayer(playerID, wave) 
+            end
         end
-    end)
+    })
 end
 
 -- Calls StartBreakTime on the dead players, only once per wave, used for Rush mode

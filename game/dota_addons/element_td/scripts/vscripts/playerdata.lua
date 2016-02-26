@@ -7,7 +7,7 @@ end
 
 function CreateDataForPlayer(playerID)
     -- Don't create data twice
-    if PlayerData[playerID] then return end
+    if PlayerData[playerID] or playerID == -1 then return end
 
 	PlayerData[playerID] = {}
 	local data = PlayerData[playerID]
