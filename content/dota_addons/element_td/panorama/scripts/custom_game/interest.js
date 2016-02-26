@@ -4,6 +4,7 @@ var INTEREST_INTERVAL = 0;
 var INTEREST_RATE = 0.02;
 var INTEREST_REFRESH = 0.05;
 
+var Root = $.GetContextPanel()
 var interest = $( "#Interest" );
 var interestBarGold = $( "#InterestBarGold" );
 var interestBarDisabled = $( "#InterestBarDisabled" );
@@ -32,6 +33,7 @@ function DisplayInterest( table ) {
 	timerEnd = Game.GetGameTime() + INTEREST_INTERVAL;
 	interestBarDisabled.visible = false;
 	interest.visible = true;
+	Root.RemoveClass("hidden")
 	enabled = table.enabled;
 	INTEREST_RATE = table.rate;
 	if (!enabled)
@@ -67,7 +69,6 @@ function ResumeInterest( table ) {
 
 (function () {
   UpdateInterest();
-  interest.visible = false;
   GameEvents.Subscribe( "etd_display_interest", DisplayInterest );
   GameEvents.Subscribe( "etd_earned_interest", InterestEarned );
   GameEvents.Subscribe( "etd_pause_interest", PauseInterest );
