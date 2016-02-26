@@ -108,13 +108,15 @@ function InterestManager:PauseInterestForPlayer(playerID, waveNumber)
 		interestData.NumLockingWaves = interestData.NumLockingWaves + 1
 		if not interestData.Locked then
 			local timerName = InterestManager.timers[playerID]
-			interestData.Locked = true
-			interestData.TimeRemaining = Timers.timers[timerName].endTime - GameRules:GetGameTime()
-			
-			Timers:RemoveTimer(timerName)
-			InterestManager.timers[playerID] = nil;
+			if Timers.timers[timerName] then
+				interestData.Locked = true
+				interestData.TimeRemaining = Timers.timers[timerName].endTime - GameRules:GetGameTime()
+				
+				Timers:RemoveTimer(timerName)
+				InterestManager.timers[playerID] = nil;
 
-			InterestManager:PauseInterest(playerID)
+				InterestManager:PauseInterest(playerID)
+			end
 		end
 	end
 end
