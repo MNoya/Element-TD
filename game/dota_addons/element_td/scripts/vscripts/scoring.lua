@@ -195,7 +195,7 @@ end
 function ScoringObject:GetWaveCleared( wave )
 	local playerData = GetPlayerData( self.playerID )
 	local waveClearScore = self:GetWaveClearBonus( wave )
-	local time = playerData.waveObjects[wave].endTime - playerData.waveObjects[wave].startTime
+	local time = playerData.waveObjects[wave].endTime - playerData.waveObjects[wave].endSpawnTime
 	local speedBonus = self:GetSpeedBonus( time )
 	local difficultyBonus = self:GetDifficultyBonus()
 	local chaosBonus = self:GetCreepOrderBonus()

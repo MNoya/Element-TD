@@ -107,6 +107,7 @@ function Wave:SpawnWave()
 
 				CreateMoveTimerForCreep(entity, sector)
 				if entitiesSpawned == CREEPS_PER_WAVE then
+					self.endSpawnTime = GameRules:GetGameTime()
 					ClosePortalForSector(self.playerID, sector)
 
 					-- Endless waves are started as soon as the wave finishes spawning
