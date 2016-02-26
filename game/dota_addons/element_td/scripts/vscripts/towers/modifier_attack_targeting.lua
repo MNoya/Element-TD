@@ -39,8 +39,33 @@ function modifier_attack_targeting:OnIntervalThink()
     end
 end
 
+-- Interrupt after each attack, unless the tower should focus target
 function modifier_attack_targeting:OnAttack( params )
-    if params.attacker == self:GetParent() and not self.keep_target then
-        self:GetParent():Interrupt()
+    if params.attacker == self:GetParent() then
+        if not self:ShouldContinueAttacking() then
+            self:GetParent():Interrupt()
+        end
     end
+end
+
+function modifier_attack_targeting:ShouldContinueAttacking()
+    local unit = self:GetParent()
+    local attackTarget = unit:GetAttackTarget()
+
+    -- Focus targets
+    if self.keep_target then
+        return true
+    end
+
+    -- No attack target or order
+    if not attackTarget or not unit.orderTable then
+        return false
+    end
+
+    -- Manually ordered to attack this target
+    if unit.orderTable['order_type'] == DOTA_UNIT_ORDER_ATTACK_TARGET and unit.orderTable['entindex_target'] == attackTarget:GetEntityIndex() then
+        return true
+    end
+
+    return false
 end

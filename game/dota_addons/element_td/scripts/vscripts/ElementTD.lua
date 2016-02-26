@@ -592,6 +592,14 @@ function ElementTD:FilterExecuteOrder( filterTable )
         return true
     end
 
+     -- Track the current order
+    for n,unit_index in pairs(units) do
+        local unit = EntIndexToHScript(unit_index)
+        if unit and IsValidEntity(unit) then
+            unit.orderTable = filterTable
+        end
+    end
+
     local unit = EntIndexToHScript(units["0"])
     if unit and unit.skip then
         unit.skip = false
