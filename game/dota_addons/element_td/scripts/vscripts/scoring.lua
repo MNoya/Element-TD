@@ -195,14 +195,14 @@ end
 function ScoringObject:GetWaveCleared( wave )
 	local playerData = GetPlayerData( self.playerID )
 	local waveClearScore = self:GetWaveClearBonus( wave )
-	local time = playerData.waveObjects[wave].endTime - playerData.waveObjects[wave].startTime
+	local time = playerData.waveObjects[wave].endTime - playerData.waveObjects[wave].endSpawnTime
 	local speedBonus = self:GetSpeedBonus( time )
 	local difficultyBonus = self:GetDifficultyBonus()
 	local chaosBonus = self:GetCreepOrderBonus()
 	local endlessBonus = self:GetEndlessBonus()
 	local leaks = playerData.waveObjects[wave] and playerData.waveObjects[wave].leaks or 0
 	local cleanBonus = self:GetCleanBonus( leaks == 0 )
-	local totalScore = math.ceil(waveClearScore * (1 + cleanBonus + speedBonus + difficultyBonus) * (1 + chaosBonus + endlessBonus))
+	local totalScore = math.ceil(waveClearScore * (1 + cleanBonus) * (1 + speedBonus) * (1 + difficultyBonus) * (1 + chaosBonus) * (1 + endlessBonus))
 
 	return { clearBonus = waveClearScore, cleanBonus = cleanBonus, speedBonus = speedBonus, difficultyBonus = difficultyBonus, chaosBonus = chaosBonus, endlessBonus = endlessBonus, totalScore = totalScore }
 end
@@ -273,7 +273,7 @@ function ScoringObject:GetSpeedBonus( time )
 		self.under30Streak = 0
 	elseif time < 30 then
 		self.under30 = self.under30 + 1
-		bonus = bonus + ( 30 - time )*0.02 + (self.under30Streak * 0.01)
+		bonus = bonus + ( 30 - time )*0.01 + (self.under30Streak * 0.01)
 		self.under30Streak = self.under30Streak + 1
 	elseif time == 30 then -- End Streak
 		self.under30Streak = 0
@@ -312,7 +312,7 @@ end
 function ScoringObject:GetCreepOrderBonus()
 	local bonus = 0
 	if GameSettings.order == "Chaos" then
-		bonus = 0.25 -- x1.25
+		bonus = 0.15 -- x1.15
 	end
 	return bonus
 end
