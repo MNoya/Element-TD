@@ -202,7 +202,7 @@ function ScoringObject:GetWaveCleared( wave )
 	local endlessBonus = self:GetEndlessBonus()
 	local leaks = playerData.waveObjects[wave] and playerData.waveObjects[wave].leaks or 0
 	local cleanBonus = self:GetCleanBonus( leaks == 0 )
-	local totalScore = math.ceil(waveClearScore * (1 + cleanBonus + speedBonus + difficultyBonus) * (1 + chaosBonus + endlessBonus))
+	local totalScore = math.ceil(waveClearScore * (1 + cleanBonus) * (1 + speedBonus) * (1 + difficultyBonus) * (1 + chaosBonus) * (1 + endlessBonus))
 
 	return { clearBonus = waveClearScore, cleanBonus = cleanBonus, speedBonus = speedBonus, difficultyBonus = difficultyBonus, chaosBonus = chaosBonus, endlessBonus = endlessBonus, totalScore = totalScore }
 end
@@ -312,7 +312,7 @@ end
 function ScoringObject:GetCreepOrderBonus()
 	local bonus = 0
 	if GameSettings.order == "Chaos" then
-		bonus = 0.25 -- x1.25
+		bonus = 0.15 -- x1.15
 	end
 	return bonus
 end
