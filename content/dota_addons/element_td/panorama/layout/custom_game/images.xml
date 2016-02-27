@@ -85,5 +85,11 @@
         <Image style="opacity:0;" src="file://{images}/items/obliteration_disabled.png" />
         <Image style="opacity:0;" src="file://{images}/custom_game/wave_info/rip.png" />
         <Image style="opacity:0;" src="file://{images}/spellicons/osfrog.png" />
+
+        <Image style="opacity:0;" src="file://{images}/custom_game/ranking/Badge0.png" />
+        <Image style="opacity:0;" src="file://{images}/custom_game/ranking/Badge1.png" />
+        <Image style="opacity:0;" src="file://{images}/custom_game/ranking/Badge2.png" />
+        <Image style="opacity:0;" src="file://{images}/custom_game/ranking/Badge3.png" />
+        <Image style="opacity:0;" src="file://{images}/custom_game/ranking/Badge4.png" />
     </Panel>
 </root>

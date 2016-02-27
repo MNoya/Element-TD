@@ -36,9 +36,24 @@ function DisplayRanks( data )
                 playerPanel.BLoadLayout( "file://{resources}/layout/custom_game/ranking_player.xml", false, false );
                 _SetTextSafe( playerPanel, "RankingPercentile", ply.percentile + "%");
                 _SetTextSafe( playerPanel, "RankingRank", FormatRank(ply.rank));
+                playerPanel.FindChildInLayoutFile( "RankingPlayer" ).AddClass(GetRankImage(ply.percentile)+"_percentile");
             }
         }
     }
+}
+
+function GetRankImage( rank, percentile )
+{
+    if (percentile >= 20)
+        return "0";
+    else if (percentile >= 40)
+        return "20";
+    else if (percentile >= 60)
+        return "40";
+    else if (percentile >= 80)
+        return "60";
+    else
+        return "80";
 }
 
 function FormatRank( rank )
