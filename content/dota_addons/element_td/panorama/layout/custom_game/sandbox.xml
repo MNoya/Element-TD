@@ -176,10 +176,10 @@
           </Button>
         </Panel>
         <Panel class="Row">
-          <Button class="DemoButton" onactivate="FireCustomGameEvent_Str( RemoveSpawnedUnitsButtonPressed )">
+          <Button class="DemoButton" onactivate="ClearWavePressed()">
             <Label text="#sandbox_clear"/>
           </Button>
-          <Button class="DemoButton" onactivate="FireCustomGameEvent_Str( RemoveSpawnedUnitsButtonPressed )">
+          <Button class="DemoButton" onactivate="StopWavePressed()">
             <Label text="#sandbox_stop"/>
           </Button>
         </Panel>

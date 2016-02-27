@@ -20,8 +20,8 @@ function Sandbox:Init()
     CustomGameEventManager:RegisterListener("sandbox_set_wave", Dynamic_Wrap(Sandbox, "SetWave"))
     CustomGameEventManager:RegisterListener("sandbox_spawn_wave", Dynamic_Wrap(Sandbox, "SpawnWave"))
     CustomGameEventManager:RegisterListener("sandbox_spawn_boss_wave", Dynamic_Wrap(Sandbox, "SpawnBossWave"))
-    CustomGameEventManager:RegisterListener("sandbox_clear", Dynamic_Wrap(Sandbox, "Clear"))
-    CustomGameEventManager:RegisterListener("sandbox_stop", Dynamic_Wrap(Sandbox, "Stop"))
+    CustomGameEventManager:RegisterListener("sandbox_clear_wave", Dynamic_Wrap(Sandbox, "ClearWave"))
+    CustomGameEventManager:RegisterListener("sandbox_stop_wave", Dynamic_Wrap(Sandbox, "StopWave"))
 
     -- Pause & End
     CustomGameEventManager:RegisterListener("sandbox_pause", Dynamic_Wrap(Sandbox, "Pause"))
@@ -29,7 +29,14 @@ function Sandbox:Init()
 end
 
 function Sandbox:Enable(event)
-    -- body
+    
+    ElementTD:PrecacheAll()
+    Notifications:ClearTop(playerID)
+    Notifications:Top(playerID, {
+        text = {text = "#sandbox_enable", wave = waveNumber}, 
+        class = "WaveMessage", 
+        duration = duration
+    })
 end
 
 function Sandbox:GetPlayerData(playerID)
@@ -48,7 +55,7 @@ function Sandbox:FreeTowers(event)
     local state = event.state == 1
     local playerData = GetPlayerData(playerID)
 
-    ShowSandboxCommand(playerID, "Free Towers", state)
+    ShowSandboxToggleCommand(playerID, "#sandbox_free_towers", state)
 
     -- Set to 10k gold
     if state == true then
@@ -63,7 +70,7 @@ function Sandbox:GodMode(event)
     local playerID = event.PlayerID
     local state = event.state == 1
 
-    ShowSandboxToggleCommand(playerID, "God Mode", state)
+    ShowSandboxToggleCommand(playerID, "#sandbox_god_mode", state)
 
     GetPlayerData(playerID).godMode = state
 end
@@ -106,63 +113,57 @@ function Sandbox:FullLife(event)
     ShowSandboxCommand(playerID, "Full Life")
 end
 
------------------------------------------------
+function Sandbox:SetResources(event)
+    local playerID = event.PlayerID
+    local playerData = GetPlayerData(playerID)
+    local gold = tonumber(event.gold) or playerData.gold
+    local lumber = tonumber(event.lumber) or playerData.lumber
+    local essence = tonumber(event.essence) or playerData.pureEssence
 
-function ElementTD:GiveLumber(playerID, value)
-    value = value or 1
-    
-    ModifyLumber(playerID, tonumber(value))
-    UpdatePlayerSpells(playerID)
+    SetCustomGold(playerID, gold)
+    SetCustomLumber(playerID, lumber)
+    SetCustomEssence(playerID, essence)
 end
 
-function ElementTD:GiveEssence(playerID, value)
-    value = value or 1
-    
-    ModifyPureEssence(playerID, tonumber(value))
+function Sandbox:SetElements(event)
+    local playerID = event.PlayerID
+    local element = event.element
+    local level = tonumber(event.level)
+    local playerData = GetPlayerData(playerID)
+
+    playerData.elements[element] = 3
+
     UpdatePlayerSpells(playerID)
+    UpdateElementsHUD(playerID)
+    UpdateSummonerSpells(playerID)
+    for towerID,_ in pairs(playerData.towers) do
+        UpdateUpgrades(EntIndexToHScript(towerID))
+    end
+    UpdateScoreboard(playerID)
+
+    ShowSandboxCommand(playerID, firstToUpper().." "..level)
 end
 
-function ElementTD:SpawnWave(playerID, waveNumber)
+function Sandbox:SetWave(event)
+    local playerID = event.PlayerID
+    local waveNumber = event.wave
+
+    Sandbox:StopWaves(playerID)
+    GetPlayerData(playerID).nextWave = tonumber(waveNumber)
+    GetPlayerData(playerID).completedWaves = tonumber(waveNumber) - 1
+end
+
+function Sandbox:SpawnWave(event)
+    local playerID = event.PlayerID
+    local waveNumber = event.wave
     waveNumber = waveNumber or GetPlayerData(playerID).nextWave
 
-    ElementTD:StopWaves(playerID)
+    Sandbox:StopWaves(playerID)
     SpawnWaveForPlayer(playerID, tonumber(waveNumber))
 end
 
-function ElementTD:SetWave(playerID, value)
-    value = value or 1
-
-    ElementTD:StopWaves(playerID)
-    GetPlayerData(playerID).nextWave = tonumber(value)
-    GetPlayerData(playerID).completedWaves = tonumber(value) - 1
-end
-
-function ElementTD:SetGold(playerID, value)
-    value = value or 1
-
-    local playerData = GetPlayerData(playerID)
-    playerData.gold = tonumber(value)
-    PlayerResource:SetGold(playerID, tonumber(value), true)
-    CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "etd_update_gold", { gold = playerData.gold } )
-end
-
-function ElementTD:SetLives(playerID, value)
-    value = tonumber(value) or 50
-    local playerData = GetPlayerData(playerID)
-    playerData.health = value
-
-    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-    if not hero:HasModifier("modifier_bonus_life") then
-        hero:AddNewModifier(hero, nil, "modifier_bonus_life", {})
-    end
-
-    hero:CalculateStatBonus()
-    hero:SetHealth(value)
-   
-    CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=playerData.health/hero:GetMaxHealth() * 100} )
-end
-
-function ElementTD:StopWaves(playerID)
+function Sandbox:StopWaves(event)
+    local playerID = event.PlayerID
     local playerData = GetPlayerData(playerID)
     local wave = playerData.waveObject
 
@@ -174,7 +175,8 @@ function ElementTD:StopWaves(playerID)
     end
 end
 
-function ElementTD:ClearWave(playerID)
+function Sandbox:ClearWave(event)
+    local playerID = event.PlayerID
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     local playerData = GetPlayerData(playerID)
     local wave = playerData.waveObject
@@ -193,37 +195,14 @@ function ElementTD:ClearWave(playerID)
     if elemental then elemental:Kill(nil, hero) end
 
     -- Complete the wave
+    wave.endSpawnTime = GameRules:GetGameTime()
     wave:callback()
-
 end
 
-function ElementTD:SetElementLevel(playerID, elem, level)
-    level = level or 1
-    ModifyElementValue(playerID, elem, level)
-end
-
-function ElementTD:Synergy(playerID)
-    ModifyElementValue(playerID, "water", 3)
-    ModifyElementValue(playerID, "fire", 3)
-    ModifyElementValue(playerID, "nature", 3)
-    ModifyElementValue(playerID, "earth", 3)
-    ModifyElementValue(playerID, "light", 3)
-    ModifyElementValue(playerID, "dark", 3)
-
-    UpdateElementsHUD(playerID)
-    UpdatePlayerSpells(playerID)
-    UpdateSummonerSpells(playerID)
-end
-
-function ElementTD:Dev(playerID)
-    ElementTD:Synergy(playerID)
-    ElementTD:WhosYourDaddy(playerID)
-    ElementTD:GiveLumber(playerID, 20)
-    ElementTD:GiveEssence(playerID, 10)
-    ElementTD:SetGold(playerID, 999999)
-
+-- Forces a fast precache of everything to be able to build anything ASAP
+function ElementTD:PrecacheAll()
     if EXPRESS_MODE then
-        ElementTD:ExpressPrecache()
+        ElementTD:ExpressPrecache(5)
         ElementTD:PrecacheWave(2)
         ElementTD:PrecacheWave(5)
         ElementTD:PrecacheWave(11)
@@ -235,7 +214,9 @@ function ElementTD:Dev(playerID)
     end
 end
 
-function ElementTD.ToggleDebugDamage()
+--------------------------------------------------------------------------
+
+function ElementTD:ToggleDebugDamage()
     GameRules.DebugDamage = not GameRules.DebugDamage
     if GameRules.DebugDamage then
         Say(nil,"Debug Damage <font color='#ff0000'>ON</font>", false)

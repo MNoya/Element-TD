@@ -72,13 +72,8 @@ end
 
 function ModifyLumber(playerID, amount)
     local playerData = GetPlayerData(playerID)
-    playerData.lumber = playerData.lumber + amount
-    UpdateSummonerSpells(playerID)
 
-    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-    if hero then
-        hero:SetAbilityPoints(playerData.lumber)
-    end
+    SetCustomLumber(playerID, playerData.lumber + amount)
 
     if amount > 0 then
         PopupLumber(ElementTD.vPlayerIDToHero[playerID], amount)
@@ -90,6 +85,17 @@ function ModifyLumber(playerID, amount)
         if GameSettings.elementsOrderName == "AllPick" then
             SendLumberMessage(playerID, "#etd_lumber_add", amount)
         end
+    end
+end
+
+function SetCustomLumber(playerID, amount)
+    local playerData = GetPlayerData(playerID)
+
+    playerData.lumber = amount
+    UpdateSummonerSpells(playerID)    
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    if hero then
+        hero:SetAbilityPoints(playerData.lumber)
     end
 
     local current_lumber = playerData.lumber
@@ -115,20 +121,27 @@ function ModifyLumber(playerID, amount)
 end
 
 function ModifyPureEssence(playerID, amount, bSkipMessage)
-    GetPlayerData(playerID).pureEssence = GetPlayerData(playerID).pureEssence + amount
-    UpdatePlayerSpells(playerID)
+    local playerData = GetPlayerData(playerID)
+    SetCustomEssence(playerID, playerData.pureEssence + amount)    
+
     if amount > 0 and not bSkipMessage then
         PopupEssence(ElementTD.vPlayerIDToHero[playerID], amount)
         SendEssenceMessage(playerID, "#etd_essence_add", amount)
     end
-    CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_pure_essence", { pureEssence = GetPlayerData(playerID).pureEssence } )
+end
+
+function SetCustomEssence(playerID, amount)
+    local playerData = GetPlayerData(playerID)
+    playerData.pureEssence = amount
+    UpdatePlayerSpells(playerID)
+    CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_pure_essence", { pureEssence = playerData.pureEssence } )
     UpdateScoreboard(playerID)
 end
 
 function UpdateSummonerSpells(playerID)
-    local lumber = GetPlayerData(playerID).lumber
-    local summoner = GetPlayerData(playerID).summoner
     local playerData = GetPlayerData(playerID)
+    local lumber = playerData.lumber
+    local summoner = playerData.summoner
 
     UpdateRunes(playerID)
 

@@ -16,3 +16,11 @@ function MaxElementsPressed() {
 function FullLifePressed() {
     GameEvents.SendCustomGameEventToServer( "sandbox_full_life", {} );
 }
+
+function ClearWavePressed() {
+    GameEvents.SendCustomGameEventToServer( "sandbox_clear_wave", {} );
+}
+
+function StopWavePressed() {
+    GameEvents.SendCustomGameEventToServer( "sandbox_stop_wave", {} );
+}

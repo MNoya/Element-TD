@@ -43,9 +43,10 @@ function ElementTD:PrecacheWave(waveNumber)
 end
 
 -- Loads lvl 1 duals and lvl 2 singles later, just in case
-function ElementTD:ExpressPrecache()
+function ElementTD:ExpressPrecache(delay)
+    delay = delay or 15
     ElementTD:PrecacheDuals(1)
-    Timers:CreateTimer(15, function()
+    Timers:CreateTimer(delay, function()
         ElementTD:PrecacheTriples(1)
     end)
 end

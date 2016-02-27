@@ -137,13 +137,12 @@ function ShowSandboxCommand(playerID, str)
 end
 
 function ShowSandboxToggleCommand(playerID, str, state)
-    local msg = str
-    if state == true then
-        msg = str .. " <font color='#00CC00'> ON</font>"
-    else
-        msg = str .. " <font color='#CC0000'> OFF</font>"
-    end
-
     Notifications:ClearBottom(playerID)
-    Notifications:Bottom(playerID, {text = msg, duration = 3})
+    Notifications:Bottom(playerID, {text = str, duration = 3})
+
+    if state == true then
+        Notifications:Bottom(playerID, {text ="ON", style={color='#00CC00', ["margin-left"]="10px", ["font-size"] = "30px"}, continue=true, duration = 3})
+    else
+        Notifications:Bottom(playerID, {text ="OFF", style={color='#00CC00', ["margin-left"]="10px", ["font-size"] = "30px"}, continue=true, duration = 3})
+    end
 end
