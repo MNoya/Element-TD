@@ -130,3 +130,20 @@ function ShowWarnMessage(playerID, msg, duration)
     Notifications:Bottom(playerID, {text=msg, style={color='#E62020'}, duration=duration})
     EmitSoundOnClient("General.Cancel", PlayerResource:GetPlayer(playerID))
 end
+
+function ShowSandboxCommand(playerID, str)
+    Notifications:ClearBottom(playerID)
+    Notifications:Bottom(playerID, {text = str, duration = 3})
+end
+
+function ShowSandboxToggleCommand(playerID, str, state)
+    local msg = str
+    if state == true then
+        msg = str .. " <font color='#00CC00'> ON</font>"
+    else
+        msg = str .. " <font color='#CC0000'> OFF</font>"
+    end
+
+    Notifications:ClearBottom(playerID)
+    Notifications:Bottom(playerID, {text = msg, duration = 3})
+end

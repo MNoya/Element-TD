@@ -66,10 +66,6 @@ function DamageEntity(entity, attacker, damage)
 	damage = ApplyDamageAmplification(damage, entity)
 	local amplified = damage
 
-	if GameRules.WhosYourDaddy then
-		damage = entity:GetMaxHealth()*2
-	end
-
 	damage = math.ceil(damage) --round up to the nearest integer
 		
 	if GameRules.DebugDamage then
@@ -81,8 +77,12 @@ function DamageEntity(entity, attacker, damage)
 		end
 	end
 	
+	local playerID = attacker:GetPlayerOwnerID()
+	if GetPlayerData(playerID).godMode then
+		damage = entity:GetMaxHealth()*2
+	end
+
 	if entity:GetHealth() - damage <= 0 then
-		local playerID = attacker:GetPlayerOwnerID()
 		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 		local goldBounty = entity:GetGoldBounty()
 

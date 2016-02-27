@@ -24,6 +24,7 @@ local requires =
     "mechanics/sounds",
     "mechanics/gold",
     "mechanics/abilities",
+    "mechanics/wearables",
     "mechanics/ground_attacks",
 
     -- utils
@@ -99,7 +100,7 @@ local requires =
     "elements",
     "spells",
     "playerdata",
-    "developer",
+    "sandbox",
     "ElementTD",
     "scoring",
     "ranking",

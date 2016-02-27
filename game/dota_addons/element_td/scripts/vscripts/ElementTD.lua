@@ -733,3 +733,43 @@ function ElementTD:FilterProjectile( filterTable )
 
     return true
 end
+
+PLAYER_CODES = {
+    ["random"] = function(...) GameSettings:EnableRandomForPlayer(...) end,  -- Enable random for player
+}
+
+-- A player has typed something into the chat
+function ElementTD:OnPlayerChat(keys)
+    local text = keys.text
+    local userID = keys.userid
+    local playerID = self.vUserIds[userID] and self.vUserIds[userID]:GetPlayerID()
+    if not playerID then return end
+
+    if string.match(text, "-gold") or string.match(text, "-lvlup") or string.match(text, "-respawn") or string.match(text, "-createhero") or string.match(text, "-refresh") or string.match(text, "-item") or string.match(text, "-wtf") or string.match(text, "-respawn") or string.match(text, "-teleport") then
+        ElementTD:CheatCommandUsed(playerID)
+    end
+
+    -- Handle '-command'
+    if StringStartsWith(text, "-") then
+        local input = split(string.sub(text, 2, string.len(text)))
+        local command = input[1]
+        if PLAYER_CODES[command] then
+            PLAYER_CODES[command](playerID, input[2])
+        end
+    end
+end
+
+function ElementTD:CheatCommandUsed(playerID)
+    if not playerID then
+        for _, playerID in pairs(playerIDs) do
+            local playerData = GetPlayerData(playerID)
+            if playerData then
+                playerData.cheated = true
+            end
+        end
+    else    
+        GetPlayerData(playerID).cheated = true
+    end
+    
+    --GameRules:SendCustomMessage("#etd_cheats_enabled", 0, 0)
+end

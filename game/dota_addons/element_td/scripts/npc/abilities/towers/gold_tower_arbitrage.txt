@@ -8,7 +8,7 @@
 
 	"BaseClass"						"ability_datadriven"											
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"towers/gold_tower_arbitrage"
+	"AbilityTextureName"			"towers/gold"
 	"MaxLevel"						"2"
 
 	"AbilitySpecial"
@@ -24,7 +24,7 @@
 	{
 		"modifier_gold_tower_counter"
 		{
-			"TextureName" "towers/gold_tower_arbitrage"
+			"TextureName" "towers/gold"
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_HEALTH_BONUS" "1" //Just for tooltip

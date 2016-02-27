@@ -177,15 +177,18 @@ function UpgradeTower(keys)
 	local essenceCost = GetUnitKeyValue(newClass, "EssenceCost") or 0
 	local playerEssence = GetPlayerData(playerID).pureEssence
 	
-	if not MeetsItemElementRequirements(keys.ability, playerID) then
+	if not MeetsItemElementRequirements(keys.ability, playerID) and not playerData.freeTowers then
 		ShowWarnMessage(playerID, "Incomplete Element Requirements!")
-	elseif essenceCost > playerEssence then
+	elseif essenceCost > playerEssence and not playerData.freeTowers then
 		ShowWarnMessage(playerID, "You need 1 Essence! Buy it at the Elemental Summoner")
-	elseif cost > hero:GetGold() then
+	elseif cost > hero:GetGold() and not playerData.freeTowers then
 		ShowWarnMessage(playerID, "Not Enough Gold!")
 	elseif tower:GetHealth() == tower:GetMaxHealth() then
-		hero:ModifyGold(-cost)
-		ModifyPureEssence(playerID, -essenceCost)
+		if not playerData.freeTowers then
+			hero:ModifyGold(-cost)
+			ModifyPureEssence(playerID, -essenceCost)
+		end
+		
 		GetPlayerData(playerID).towers[tower:entindex()] = nil --and remove it from the player's tower list
 
 		local scriptClassName = GetUnitKeyValue(newClass, "ScriptClass") or "BasicTower"
