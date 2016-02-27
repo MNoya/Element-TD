@@ -121,8 +121,6 @@ function Timers:Think()
     end
     -- Check if the timer has finished
     if now >= v.endTime then
-      -- Remove from timers list
-      Timers.timers[k] = nil
       
       -- Run the callback
       local status, nextCall
@@ -148,7 +146,10 @@ function Timers:Think()
             v.endTime = v.endTime + nextCall
           end
 
-          Timers.timers[k] = v
+          -- Timers.timers[k] = v
+        else
+          -- Remove from timers list
+          Timers.timers[k] = nil
         end
 
         -- Update timer data
