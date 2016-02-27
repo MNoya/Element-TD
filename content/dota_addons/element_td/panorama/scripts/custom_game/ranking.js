@@ -89,8 +89,8 @@ function ShowRanks( data )
             var child = panel.FindChildInLayoutFile( "RankingPlayer" );
             child.RemoveClass("slideOut");
             child.RemoveClass("hidden");
-            $.Schedule(5, function() { enabled = true; child.AddClass("hidden"); });
-            $.Schedule(6, function() { child.AddClass("slideOut"); });
+            $.Schedule(10, function() { enabled = true; child.AddClass("hidden"); });
+            $.Schedule(11, function() { child.AddClass("slideOut"); });
         }
     }
 }
