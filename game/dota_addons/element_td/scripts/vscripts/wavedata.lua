@@ -457,7 +457,7 @@ function ReduceLivesForPlayer( playerID, lives )
     end
 
     -- Cheats can melt steel beams
-    if GameRules.WhosYourDaddy then
+    if playerData.godMode then
         lives = 0
         return
     end
