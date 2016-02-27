@@ -44,13 +44,13 @@ function DisplayRanks( data )
 
 function GetRankImage( rank, percentile )
 {
-    if (percentile >= 20)
+    if (percentile <= 20)
         return "0";
-    else if (percentile >= 40)
+    else if (percentile <= 40)
         return "20";
-    else if (percentile >= 60)
+    else if (percentile <= 60)
         return "40";
-    else if (percentile >= 80)
+    else if (percentile <= 80)
         return "60";
     else
         return "80";
