@@ -9,7 +9,7 @@
     "MagicalResistance"        "0"
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-    "AttackAnimationPoint"        "0"
+    "AttackAnimationPoint"        "0.25"
     "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
     "AttributeBaseStrength"        "0"
     "AttributeStrengthGain"        "0"
@@ -42,7 +42,9 @@
         "2"        "light"
         "3"        "earth"
     }
-    "Damage"        "1300"
+    "Damage"        "1600"
+    "AttackDamageMin"        "1600"
+    "AttackDamageMax"        "1600"
     "DamageType"        "water"
     "ScriptClass"        "PolarTower"
     "TowerType"        "Normal"
@@ -51,7 +53,7 @@
     "AttackRange"        "900"
     "AttackAcquisitionRange"        "900"
     "AttackRate"        "1"
-    "ProjectileModel"        "particles/units/heroes/hero_lich/lich_base_attack.vpcf"
+    "ProjectileModel"        "particles/units/heroes/hero_ancient_apparition/ancient_apparition_base_attack.vpcf"
     "ProjectileSpeed"        "2000"
 
     "Model"             "models/heroes/lich/lich.vmdl"
@@ -85,8 +87,6 @@
         "Count"        "1"
         "1"        "polar_tower_2"
     }
-    "AttackDamageMin"        "1300"
-    "AttackDamageMax"        "1300"
 
     // Building Size
     "ConstructionSize"          "2"

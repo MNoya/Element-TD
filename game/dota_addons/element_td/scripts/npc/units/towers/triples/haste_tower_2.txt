@@ -51,7 +51,7 @@
     "AttackRange"        "900"
     "AttackAcquisitionRange"        "900"
     "AttackRate"        "1"
-    "ProjectileModel"        "particles/units/heroes/hero_batrider/batrider_base_attack.vpcf"
+    "ProjectileModel"        "particles/units/heroes/hero_huskar/huskar_burning_spear.vpcf"
     "ProjectileSpeed"        "4000"
 
     "Model"             "models/heroes/troll_warlord/troll_warlord.vmdl"

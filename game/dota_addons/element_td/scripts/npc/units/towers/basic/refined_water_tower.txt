@@ -26,20 +26,20 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "1500"
-    "AttackDamageMax"           "1500"
-    "Damage"                    "1500"
+    "AttackDamageMin"           "2535"
+    "AttackDamageMax"           "2535"
+    "Damage"                    "2535"
     "AOE_Full"                  "100"
     "AOE_Half"                  "200"
     "AttackRange"               "900"
     "AttackAcquisitionRange"    "900"
     "AttackRate"                "0.66"
-    "AttackAnimationPoint"      "0.25"
+    "AttackAnimationPoint"      "0.2"
     "ProjectileSpeed"           "2500"
 
     "Level"                     "3"
-    "Cost"                      "1250"
-    "TotalCost"                 "1800"
+    "Cost"                      "1625"
+    "TotalCost"                 "2300"
     "BuildTime"                 "1"
     "Element"                   "water"
 

@@ -42,7 +42,9 @@
         "2"        "earth"
         "3"        "fire"
     }
-    "Damage"        "500"
+    "Damage"        "400"
+    "AttackDamageMin"        "400"
+    "AttackDamageMax"        "400"
     "DamageType"        "fire"
     "ScriptClass"        "FlamethrowerTower"
     "TowerType"        "Normal"
@@ -51,8 +53,8 @@
     "AttackRange"        "700"
     "AttackAcquisitionRange"        "700"
     "AttackRate"        "0.66"
-    "ProjectileModel"        "particles/units/heroes/hero_batrider/batrider_base_attack.vpcf"
-    "ProjectileSpeed"        "2500"
+    "ProjectileModel"        "particles/units/heroes/hero_ogre_magi/ogre_magi_ignite.vpcf"
+    "ProjectileSpeed"        "2000"
     
     "Model"             "models/heroes/batrider/batrider.vmdl"
     "ModelScale"        "0.65"
@@ -84,8 +86,6 @@
         "Count"        "1"
         "1"        "flamethrower_tower_2"
     }
-    "AttackDamageMin"        "500"
-    "AttackDamageMax"        "500"
 
     // Building Size
     "ConstructionSize"          "2"

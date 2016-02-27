@@ -2226,7 +2226,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"110 550"
+				"dot"					"120 600"
 			}
 			"03"
 			{
@@ -2426,7 +2426,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"30 60"
+				"bonus_gold"			"25 50"
 			}
 		}
 	
@@ -2466,7 +2466,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"27 135 675"
+				"damage"				"32 160 800"
 			}
 			"02"
 			{
@@ -2650,7 +2650,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"cap"				"16"
+				"cap"				"15"
 			}
 		}
 	}
@@ -2814,7 +2814,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"150 750 3750"
+				"damage"				"135 675 3375"
 			}
 			"02"
 			{
@@ -3930,7 +3930,7 @@
 	        {
 	            "ScriptFile"        "spells.lua"
 	            "Function"          "SellTowerCast"
-	            "SellAmount"        "0.75"
+	            "SellAmount"        "0.90"
 	        }
 	    }
 	    "AbilitySpecial"
@@ -3938,7 +3938,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "sell_amount_tooltip"   "75"
+	            "sell_amount_tooltip"   "90"
 	        }
 	    }
 	}
@@ -4036,12 +4036,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"90 450"
+				"damage"			"50 250"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"aoe"				"20"
+				"aoe"				"10"
 			}
 			"03"
 			{
@@ -4339,7 +4339,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"300 1500"
+				"damage"				"250 1250"
 			}
 			"03"
 			{

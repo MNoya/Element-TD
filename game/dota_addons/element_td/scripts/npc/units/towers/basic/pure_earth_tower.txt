@@ -29,19 +29,19 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "18000"
-    "AttackDamageMax"           "18000"
-    "Damage"                    "18000"  
-    "AOE_Full"                  "150"
-    "AOE_Half"                  "300"
+    "AttackDamageMin"           "17750"
+    "AttackDamageMax"           "17750"
+    "Damage"                    "17750"  
+    "AOE_Full"                  "200"
+    "AOE_Half"                  "400"
     "AttackRange"               "900"
     "AttackAcquisitionRange"    "900"
     "AttackRate"                "1"
-    "AttackAnimationPoint"      "0.3"
+    "AttackAnimationPoint"      "0.25"
     "ProjectileSpeed"           "1500"
 
     "Level"                     "4"
-    "Cost"                      "9200"
+    "Cost"                      "8700"
     "EssenceCost"               "1"
     "TotalCost"                 "11000"
     "PureEssence"               "1"

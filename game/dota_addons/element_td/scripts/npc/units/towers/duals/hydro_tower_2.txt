@@ -10,7 +10,7 @@
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"
     "MinimapIconSize"           "320"
-    "AttackAnimationPoint"      "0.3"
+    "AttackAnimationPoint"      "0.25"
     "Creature"
     {
         "AttachWearables" // Armaments of Leviathan Set
@@ -31,14 +31,14 @@
     "AttackDamageMin"           "1350"
     "AttackDamageMax"           "1350"
     "Damage"                    "1350"
-    "AttackRange"               "700"
-    "AttackAcquisitionRange"    "700"
+    "AttackRange"               "900"
+    "AttackAcquisitionRange"    "900"
     "AttackRate"                "1"
     "ProjectileSpeed"           "2000" 
 
     "Level"                     "2"
-    "Cost"                      "800"
-    "TotalCost"                 "1250"
+    "Cost"                      "750"
+    "TotalCost"                 "1200"
     "BuildTime"                 "2"
 
     "DamageType"                "earth"

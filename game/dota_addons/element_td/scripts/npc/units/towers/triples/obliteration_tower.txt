@@ -42,7 +42,9 @@
         "2"        "light"
         "3"        "nature"
     }
-    "Damage"        "1000"
+    "Damage"        "1100"
+    "AttackDamageMin"        "1100"
+    "AttackDamageMax"        "1100"
     "DamageType"        "dark"
     "ScriptClass"        "ObliterationTower"
     "TowerType"        "Normal"
@@ -81,8 +83,6 @@
         "Count"        "1"
         "1"        "obliteration_tower_2"
     }
-    "AttackDamageMin"        "1000"
-    "AttackDamageMax"        "1000"
 
     // Building Size
     "ConstructionSize"          "2"

@@ -16,7 +16,7 @@
         {
             "ScriptFile"        "spells.lua"
             "Function"          "SellTowerCast"
-            "SellAmount"        "0.75"
+            "SellAmount"        "0.90"
         }
     }
     "AbilitySpecial"
@@ -24,7 +24,7 @@
         "01"
         {
             "var_type"              "FIELD_INTEGER"
-            "sell_amount_tooltip"   "75"
+            "sell_amount_tooltip"   "90"
         }
     }
 }

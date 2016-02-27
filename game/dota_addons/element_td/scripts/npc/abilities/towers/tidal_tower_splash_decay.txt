@@ -39,12 +39,12 @@
 		"01"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"damage"			"90 450"
+			"damage"			"50 250"
 		}
 		"02"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"aoe"				"20"
+			"aoe"				"10"
 		}
 		"03"
 		{

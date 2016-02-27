@@ -10,7 +10,7 @@
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"
     "MinimapIconSize"           "320"
-    "AttackAnimationPoint"      "0.3"
+    "AttackAnimationPoint"      "0.25"
     "Creature"
     {
         "AttachWearables" // Default npc_dota_hero_kunkka
@@ -31,8 +31,8 @@
     "AttackDamageMin"           "270"
     "AttackDamageMax"           "270"
     "Damage"                    "270"
-    "AttackRange"               "700"
-    "AttackAcquisitionRange"    "700"
+    "AttackRange"               "900"
+    "AttackAcquisitionRange"    "900"
     "AttackRate"                "1"
     "ProjectileSpeed"           "2000" 
 

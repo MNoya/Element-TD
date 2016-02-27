@@ -9,7 +9,7 @@
     "MagicalResistance"        "0"
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-    "AttackAnimationPoint"        "0.25"
+    "AttackAnimationPoint"        "0.2"
     "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
     "AttributeBaseStrength"        "0"
     "AttributeStrengthGain"        "0"
@@ -42,7 +42,9 @@
         "2"        "light"
         "3"        "water"
     }
-    "Damage"        "850"
+    "Damage"        "1000"
+    "AttackDamageMin"        "1000"
+    "AttackDamageMax"        "1000"
     "DamageType"        "light"
     "ScriptClass"        "HailTower"
     "TowerType"        "Normal"
@@ -84,8 +86,6 @@
         "Count"        "1"
         "1"        "hail_tower_2"
     }
-    "AttackDamageMin"        "850"
-    "AttackDamageMax"        "850"
 
     // Building Size
     "ConstructionSize"          "2"

@@ -30,17 +30,17 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "52500"
-    "AttackDamageMax"           "52500"
-    "Damage"                    "52500"  
+    "AttackDamageMin"           "33800"
+    "AttackDamageMax"           "33800"
+    "Damage"                    "33800"  
     "AttackRange"               "700"
     "AttackAcquisitionRange"    "700"
-    "AttackRate"                "0.66"
-    "AttackAnimationPoint"      "0.3"
-    "ProjectileSpeed"           "2500"
+    "AttackRate"                "0.31"
+    "AttackAnimationPoint"      "0.1"
+    "ProjectileSpeed"           "3000"
 
     "Level"                     "4"
-    "Cost"                      "9200"
+    "Cost"                      "8700"
     "EssenceCost"               "1"
     "TotalCost"                 "11000"
     "PureEssence"               "1"

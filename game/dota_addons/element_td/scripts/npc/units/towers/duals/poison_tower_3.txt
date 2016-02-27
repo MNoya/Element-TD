@@ -16,7 +16,7 @@
     "VisionNighttimeRange"      "1900"  
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-    "AttackAnimationPoint"      "0.3"
+    "AttackAnimationPoint"      "0.25"
     "ProjectileCollisionSize"   "50"
     "RingRadius"                "80"
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -33,14 +33,16 @@
     "VisionDaytimeRange"        "1900"
     "VisionNighttimeRange"        "1900"
     "Level"        "3"
-    "Cost"        "1900"
-    "TotalCost"        "3150"
+    "Cost"        "1800"
+    "TotalCost"        "3000"
     "Element"
     {
         "1"        "dark"
         "2"        "water"
     }
-    "Damage"        "4500"
+    "Damage"        "5000"
+    "AttackDamageMin"        "5000"
+    "AttackDamageMax"        "5000"
     "DamageType"        "dark"
     "ScriptClass"        "PoisonTower"
     "TowerType"        "Normal"
@@ -66,8 +68,6 @@
     "Upgrades"
     {
     }
-    "AttackDamageMin"        "4500"
-    "AttackDamageMax"        "4500"
     "Creature"
     {
        "AttachWearables" // Acid Hydra

@@ -29,20 +29,20 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "240"
-    "AttackDamageMax"           "240"
-    "Damage"                    "240"  
-    "AOE_Full"                  "150"
-    "AOE_Half"                  "300"
+    "AttackDamageMin"           "275"
+    "AttackDamageMax"           "275"
+    "Damage"                    "275"  
+    "AOE_Full"                  "200"
+    "AOE_Half"                  "400"
     "AttackRange"               "900"
     "AttackAcquisitionRange"    "900"
     "AttackRate"                "1"
-    "AttackAnimationPoint"      "0.3"
+    "AttackAnimationPoint"      "0.25"
     "ProjectileSpeed"           "1500"
 
     "Level"                     "2"
-    "Cost"                      "375"
-    "TotalCost"                 "550"
+    "Cost"                      "450"
+    "TotalCost"                 "625"
     "BuildTime"                 "1"
     "Element"                   "earth"
     "DamageType"                "earth"

@@ -50,7 +50,7 @@
     "AttackRange"        "700"
     "AttackAcquisitionRange"        "700"
     "AttackRate"        "0.66"
-    "ProjectileModel"        "particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
+    "ProjectileModel"        "particles/units/heroes/hero_invoker/invoker_forged_spirit_projectile.vpcf"
     "ProjectileSpeed"        "1500"
     "Model"        "models/heroes/ember_spirit/ember_spirit.vmdl"
     "ModelScale"        "1.0"

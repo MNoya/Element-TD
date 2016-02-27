@@ -30,18 +30,18 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "3500"
-    "AttackDamageMax"           "3500"
-    "Damage"                    "3500"  
+    "AttackDamageMin"           "3380"
+    "AttackDamageMax"           "3380"
+    "Damage"                    "3380"  
     "AttackRange"               "700"
     "AttackAcquisitionRange"    "700"
-    "AttackRate"                "0.66"
-    "AttackAnimationPoint"      "0.3"
-    "ProjectileSpeed"           "2500"
+    "AttackRate"                "0.31"
+    "AttackAnimationPoint"      "0.1"
+    "ProjectileSpeed"           "3000"
 
     "Level"                     "3"
-    "Cost"                      "1250"
-    "TotalCost"                 "1800"
+    "Cost"                      "1675"
+    "TotalCost"                 "2300"
     "BuildTime"                 "1"
     "Element"                   "nature"
     "DamageType"                "nature"

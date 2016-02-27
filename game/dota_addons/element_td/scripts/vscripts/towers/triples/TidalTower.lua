@@ -38,7 +38,7 @@ function TidalTower:OnAttackLanded(keys)
 
     self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_tidal_splash_decay", {})
 
-    if self.tidalStacks < 20 then
+    if self.tidalStacks < 30 then
         self.tidalStacks = self.tidalStacks + 1
         self.tower:SetModifierStackCount("modifier_tidal_splash_decay", self.ability, self.tidalStacks)
     end

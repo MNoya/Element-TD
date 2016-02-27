@@ -50,7 +50,7 @@
     "AttackAcquisitionRange"        "550"
     "AttackRate"        "0.66"
     "ProjectileModel"        "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
-    "ProjectileSpeed"        "2000"
+    "ProjectileSpeed"        "1500"
     
     "Model"             "models/heroes/earthshaker/earthshaker.vmdl"
     "ModelScale"        "1"

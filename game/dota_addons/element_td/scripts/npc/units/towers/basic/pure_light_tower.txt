@@ -9,7 +9,7 @@
     "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_ti5.vmdl"
     "PedestalModelScale"        "0.8"
     "PedestalOffset"            "20"
-    "ProjectileModel"           "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
+    "ProjectileModel"           "particles/units/heroes/hero_oracle/oracle_base_attack.vpcf"
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"
     "MinimapIconSize"           "320"
@@ -30,17 +30,17 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "52500"
-    "AttackDamageMax"           "52500"
-    "Damage"                    "52500"  
+    "AttackDamageMin"           "42250"
+    "AttackDamageMax"           "42250"
+    "Damage"                    "42250"  
     "AttackRange"               "1500"
     "AttackAcquisitionRange"    "1500"
-    "AttackRate"                "1"
-    "AttackAnimationPoint"      "0.3"
-    "ProjectileSpeed"           "2000"
+    "AttackRate"                "0.66"
+    "AttackAnimationPoint"      "0.2"
+    "ProjectileSpeed"           "2700"
 
     "Level"                     "4"
-    "Cost"                      "9200"
+    "Cost"                      "8700"
     "EssenceCost"               "1"
     "TotalCost"                 "11000"
     "PureEssence"               "1"

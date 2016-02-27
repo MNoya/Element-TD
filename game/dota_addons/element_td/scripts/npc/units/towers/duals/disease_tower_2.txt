@@ -34,14 +34,16 @@
     "VisionDaytimeRange"        "1900"
     "VisionNighttimeRange"        "1900"
     "Level"        "2"
-    "Cost"        "800"
-    "TotalCost"        "1250"
+    "Cost"        "750"
+    "TotalCost"        "1200"
     "Element"
     {
         "1"        "dark"
         "2"        "nature"
     }
-    "Damage"        "300"
+    "Damage"        "250"
+    "AttackDamageMin"        "250"
+    "AttackDamageMax"        "250"
     "DamageType"        "dark"
     "ScriptClass"        "DiseaseTower"
     "TowerType"        "Normal"
@@ -66,8 +68,6 @@
         "Count"        "1"
         "1"        "disease_tower_3"
     }
-    "AttackDamageMin"        "300"
-    "AttackDamageMax"        "300"
 
     // Building Size
     "ConstructionSize"          "2"

@@ -36,14 +36,16 @@
     "VisionDaytimeRange"        "1900"
     "VisionNighttimeRange"        "1900"
     "Level"        "3"
-    "Cost"        "1900"
-    "TotalCost"        "3150"
+    "Cost"        "1800"
+    "TotalCost"        "3000"
     "Element"
     {
         "1"        "earth"
         "2"        "dark"
     }
-    "Damage"        "675"
+    "Damage"        "800"
+    "AttackDamageMin"        "800"
+    "AttackDamageMax"        "800"
     "DamageType"        "earth"
     "ScriptClass"        "GunpowderTower"
     "TowerType"        "Normal"
@@ -53,7 +55,7 @@
     "AttackAcquisitionRange"        "1500"
     "AttackRate"        "0.66"
     "ProjectileModel"        "particles/units/heroes/hero_techies/techies_base_attack.vpcf"
-    "ProjectileSpeed"        "1800"
+    "ProjectileSpeed"        "2000"
     "Model"        "models/heroes/sniper/sniper.vmdl"
     "ModelScale"        "1"
     "ModelRotation"             "90"
@@ -67,8 +69,6 @@
     "Upgrades"
     {
     }
-    "AttackDamageMin"        "675"
-    "AttackDamageMax"        "675"
     "Creature"
     {
        "AttachWearables" // Exact Marksman

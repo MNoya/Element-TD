@@ -3802,14 +3802,14 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "260"
-	    "AttackDamageMax"           "260"
-	    "Damage"                    "260"  
+	    "AttackDamageMin"           "180"
+	    "AttackDamageMax"           "180"
+	    "Damage"                    "180"  
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
-	    "AttackRate"                "1.5"
-	    "AttackAnimationPoint"      "0.3"
-	    "ProjectileSpeed"           "2000"
+	    "AttackRate"                "1"
+	    "AttackAnimationPoint"      "0.25"
+	    "ProjectileSpeed"           "2500"
 	
 	    "Level"                     "1"
 	    "Cost"                      "175"
@@ -3894,15 +3894,15 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "48"
-	    "AttackDamageMax"           "48"
-	    "Damage"                    "48"  
-	    "AOE_Full"                  "150"
-	    "AOE_Half"                  "300"
+	    "AttackDamageMin"           "42"
+	    "AttackDamageMax"           "42"
+	    "Damage"                    "42"  
+	    "AOE_Full"                  "200"
+	    "AOE_Half"                  "400"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "1"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "ProjectileSpeed"           "1500"
 	
 	    "Level"                     "1"
@@ -3995,9 +3995,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "20"
-	    "AttackDamageMax"           "20"
-	    "Damage"                    "20"  
+	    "AttackDamageMin"           "17"
+	    "AttackDamageMax"           "17"
+	    "Damage"                    "17"  
 	    "AOE_Full"                  "150"
 	    "AOE_Half"                  "300" 
 	    "AttackRange"               "550"
@@ -4089,18 +4089,18 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "1300"
-	    "AttackDamageMax"           "1300"
-	    "Damage"                    "1300"  
+	    "AttackDamageMin"           "1170"
+	    "AttackDamageMax"           "1170"
+	    "Damage"                    "1170"  
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
-	    "AttackRate"                "1.5"
-	    "AttackAnimationPoint"      "0.3"
-	    "ProjectileSpeed"           "2000"
+	    "AttackRate"                "1"
+	    "AttackAnimationPoint"      "0.25"
+	    "ProjectileSpeed"           "2500"
 	
 	    "Level"                     "2"
-	    "Cost"                      "375"
-	    "TotalCost"                 "550"
+	    "Cost"                      "450"
+	    "TotalCost"                 "625"
 	    "BuildTime"                 "1"
 	    "Element"                   "dark"
 	    "DamageType"                "dark"
@@ -4177,20 +4177,20 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "240"
-	    "AttackDamageMax"           "240"
-	    "Damage"                    "240"  
-	    "AOE_Full"                  "150"
-	    "AOE_Half"                  "300"
+	    "AttackDamageMin"           "275"
+	    "AttackDamageMax"           "275"
+	    "Damage"                    "275"  
+	    "AOE_Full"                  "200"
+	    "AOE_Half"                  "400"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "1"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "ProjectileSpeed"           "1500"
 	
 	    "Level"                     "2"
-	    "Cost"                      "375"
-	    "TotalCost"                 "550"
+	    "Cost"                      "450"
+	    "TotalCost"                 "625"
 	    "BuildTime"                 "1"
 	    "Element"                   "earth"
 	    "DamageType"                "earth"
@@ -4265,9 +4265,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "100"
-	    "AttackDamageMax"           "100"
-	    "Damage"                    "100"  
+	    "AttackDamageMin"           "110"
+	    "AttackDamageMax"           "110"
+	    "Damage"                    "110"  
 	    "AOE_Full"                  "150"
 	    "AOE_Half"                  "300" 
 	    "AttackRange"               "550"
@@ -4277,8 +4277,8 @@
 	    "ProjectileSpeed"           "2000"
 	
 	    "Level"                     "2"
-	    "Cost"                      "375"
-	    "TotalCost"                 "550"
+	    "Cost"                      "450"
+	    "TotalCost"                 "625"
 	    "BuildTime"                 "1"
 	    "Element"                   "fire"
 	    "DamageType"                "fire"
@@ -4335,7 +4335,7 @@
 	    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_ti5.vmdl"
 	    "PedestalModelScale"        "0.8"
 	    "PedestalOffset"            "20"
-	    "ProjectileModel"           "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
+	    "ProjectileModel"           "particles/units/heroes/hero_oracle/oracle_base_attack.vpcf"
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
 	    "MinimapIconSize"           "320"
@@ -4356,18 +4356,18 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "700"
-	    "AttackDamageMax"           "700"
-	    "Damage"                    "700"  
+	    "AttackDamageMin"           "650"
+	    "AttackDamageMax"           "650"
+	    "Damage"                    "650"  
 	    "AttackRange"               "1500"
 	    "AttackAcquisitionRange"    "1500"
-	    "AttackRate"                "1"
-	    "AttackAnimationPoint"      "0.3"
-	    "ProjectileSpeed"           "2000"
+	    "AttackRate"                "0.66"
+	    "AttackAnimationPoint"      "0.2"
+	    "ProjectileSpeed"           "2700"
 	
 	    "Level"                     "2"
-	    "Cost"                      "375"
-	    "TotalCost"                 "550"
+	    "Cost"                      "450"
+	    "TotalCost"                 "625"
 	    "BuildTime"                 "1"
 	    "Element"                   "light"
 	    "DamageType"                "light"
@@ -4445,18 +4445,18 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "700"
-	    "AttackDamageMax"           "700"
-	    "Damage"                    "700"  
+	    "AttackDamageMin"           "520"
+	    "AttackDamageMax"           "520"
+	    "Damage"                    "520"  
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
-	    "AttackRate"                "0.66"
-	    "AttackAnimationPoint"      "0.3"
-	    "ProjectileSpeed"           "2500"
+	    "AttackRate"                "0.31"
+	    "AttackAnimationPoint"      "0.1"
+	    "ProjectileSpeed"           "3000"
 	
 	    "Level"                     "2"
-	    "Cost"                      "375"
-	    "TotalCost"                 "550"
+	    "Cost"                      "450"
+	    "TotalCost"                 "625"
 	    "BuildTime"                 "1"
 	    "Element"                   "nature"
 	    "DamageType"                "nature"
@@ -4532,20 +4532,20 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "300"
-	    "AttackDamageMax"           "300"
-	    "Damage"                    "300"    
+	    "AttackDamageMin"           "390"
+	    "AttackDamageMax"           "390"
+	    "Damage"                    "390"    
 	    "AOE_Full"                  "100"
 	    "AOE_Half"                  "200"  
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
-	    "AttackAnimationPoint"      "0.25"
+	    "AttackAnimationPoint"      "0.2"
 	    "ProjectileSpeed"           "2500"
 	
 	    "Level"                     "2"
-	    "Cost"                      "375"
-	    "TotalCost"                 "550"
+	    "Cost"                      "450"
+	    "TotalCost"                 "625"
 	    "BuildTime"                 "1"
 	    "Element"                   "water"
 	
@@ -4603,7 +4603,7 @@
 	    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_ti5.vmdl"
 	    "PedestalModelScale"        "0.8"
 	    "PedestalOffset"            "20"
-	    "ProjectileModel"           "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
+	    "ProjectileModel"           "particles/units/heroes/hero_oracle/oracle_base_attack.vpcf"
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
 	    "MinimapIconSize"           "320"
@@ -4624,14 +4624,14 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "140"
-	    "AttackDamageMax"           "140"
-	    "Damage"                    "140"  
+	    "AttackDamageMin"           "100"
+	    "AttackDamageMax"           "100"
+	    "Damage"                    "100"  
 	    "AttackRange"               "1500"
 	    "AttackAcquisitionRange"    "1500"
-	    "AttackRate"                "1"
-	    "AttackAnimationPoint"      "0.3"
-	    "ProjectileSpeed"           "2000"
+	    "AttackRate"                "0.66"
+	    "AttackAnimationPoint"      "0.2"
+	    "ProjectileSpeed"           "2700"
 	
 	    "Level"                     "1"
 	    "Cost"                      "175"
@@ -4718,14 +4718,14 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "140"
-	    "AttackDamageMax"           "140"
-	    "Damage"                    "140"  
+	    "AttackDamageMin"           "80"
+	    "AttackDamageMax"           "80"
+	    "Damage"                    "80"  
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
-	    "AttackRate"                "0.66"
-	    "AttackAnimationPoint"      "0.3"
-	    "ProjectileSpeed"           "2500"
+	    "AttackRate"                "0.31"
+	    "AttackAnimationPoint"      "0.1"
+	    "ProjectileSpeed"           "3000"
 	
 	    "Level"                     "1"
 	    "Cost"                      "175"
@@ -4895,17 +4895,17 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "97500"
-	    "AttackDamageMax"           "97500"
-	    "Damage"                    "97500"  
+	    "AttackDamageMin"           "76000"
+	    "AttackDamageMax"           "76000"
+	    "Damage"                    "76000"  
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
-	    "AttackRate"                "1.5"
-	    "AttackAnimationPoint"      "0.3"
-	    "ProjectileSpeed"           "2000"
+	    "AttackRate"                "1"
+	    "AttackAnimationPoint"      "0.25"
+	    "ProjectileSpeed"           "2500"
 	
 	    "Level"                     "4"
-	    "Cost"                      "9200"
+	    "Cost"                      "8700"
 	    "EssenceCost"               "1"
 	    "TotalCost"                 "11000"
 	    "PureEssence"               "1"
@@ -4979,19 +4979,19 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "18000"
-	    "AttackDamageMax"           "18000"
-	    "Damage"                    "18000"  
-	    "AOE_Full"                  "150"
-	    "AOE_Half"                  "300"
+	    "AttackDamageMin"           "17750"
+	    "AttackDamageMax"           "17750"
+	    "Damage"                    "17750"  
+	    "AOE_Full"                  "200"
+	    "AOE_Half"                  "400"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "1"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "ProjectileSpeed"           "1500"
 	
 	    "Level"                     "4"
-	    "Cost"                      "9200"
+	    "Cost"                      "8700"
 	    "EssenceCost"               "1"
 	    "TotalCost"                 "11000"
 	    "PureEssence"               "1"
@@ -5062,9 +5062,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "7500"
-	    "AttackDamageMax"           "7500"
-	    "Damage"                    "7500"  
+	    "AttackDamageMin"           "7120"
+	    "AttackDamageMax"           "7120"
+	    "Damage"                    "7120"  
 	    "AOE_Full"                  "150"
 	    "AOE_Half"                  "300" 
 	    "AttackRange"               "550"
@@ -5074,7 +5074,7 @@
 	    "ProjectileSpeed"           "2000"
 	
 	    "Level"                     "4"
-	    "Cost"                      "9200"
+	    "Cost"                      "8700"
 	    "EssenceCost"               "1"
 	    "TotalCost"                 "11000"
 	    "PureEssence"               "1"
@@ -5128,7 +5128,7 @@
 	    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_ti5.vmdl"
 	    "PedestalModelScale"        "0.8"
 	    "PedestalOffset"            "20"
-	    "ProjectileModel"           "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
+	    "ProjectileModel"           "particles/units/heroes/hero_oracle/oracle_base_attack.vpcf"
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
 	    "MinimapIconSize"           "320"
@@ -5149,17 +5149,17 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "52500"
-	    "AttackDamageMax"           "52500"
-	    "Damage"                    "52500"  
+	    "AttackDamageMin"           "42250"
+	    "AttackDamageMax"           "42250"
+	    "Damage"                    "42250"  
 	    "AttackRange"               "1500"
 	    "AttackAcquisitionRange"    "1500"
-	    "AttackRate"                "1"
-	    "AttackAnimationPoint"      "0.3"
-	    "ProjectileSpeed"           "2000"
+	    "AttackRate"                "0.66"
+	    "AttackAnimationPoint"      "0.2"
+	    "ProjectileSpeed"           "2700"
 	
 	    "Level"                     "4"
-	    "Cost"                      "9200"
+	    "Cost"                      "8700"
 	    "EssenceCost"               "1"
 	    "TotalCost"                 "11000"
 	    "PureEssence"               "1"
@@ -5238,17 +5238,17 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "52500"
-	    "AttackDamageMax"           "52500"
-	    "Damage"                    "52500"  
+	    "AttackDamageMin"           "33800"
+	    "AttackDamageMax"           "33800"
+	    "Damage"                    "33800"  
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
-	    "AttackRate"                "0.66"
-	    "AttackAnimationPoint"      "0.3"
-	    "ProjectileSpeed"           "2500"
+	    "AttackRate"                "0.31"
+	    "AttackAnimationPoint"      "0.1"
+	    "ProjectileSpeed"           "3000"
 	
 	    "Level"                     "4"
-	    "Cost"                      "9200"
+	    "Cost"                      "8700"
 	    "EssenceCost"               "1"
 	    "TotalCost"                 "11000"
 	    "PureEssence"               "1"
@@ -5322,19 +5322,19 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "22250"
-	    "AttackDamageMax"           "22250"
-	    "Damage"                    "22250"
+	    "AttackDamageMin"           "25350"
+	    "AttackDamageMax"           "25350"
+	    "Damage"                    "25350"
 	    "AOE_Full"                  "100"
 	    "AOE_Half"                  "200"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
-	    "AttackAnimationPoint"      "0.25"
+	    "AttackAnimationPoint"      "0.2"
 	    "ProjectileSpeed"           "2500"
 	
 	    "Level"                     "4"
-	    "Cost"                      "9200"
+	    "Cost"                      "8700"
 	    "EssenceCost"               "1"
 	    "TotalCost"                 "11000"
 	    "PureEssence"               "1"
@@ -5409,18 +5409,18 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "6500"
-	    "AttackDamageMax"           "6500"
-	    "Damage"                    "6500"  
+	    "AttackDamageMin"           "7600"
+	    "AttackDamageMax"           "7600"
+	    "Damage"                    "7600"  
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
-	    "AttackRate"                "1.5"
-	    "AttackAnimationPoint"      "0.3"
-	    "ProjectileSpeed"           "2000"
+	    "AttackRate"                "1"
+	    "AttackAnimationPoint"      "0.25"
+	    "ProjectileSpeed"           "2500"
 	
 	    "Level"                     "3"
-	    "Cost"                      "1250"
-	    "TotalCost"                 "1800"
+	    "Cost"                      "1675"
+	    "TotalCost"                 "2300"
 	    "BuildTime"                 "1"
 	    "Element"                   "dark"
 	    "DamageType"                "dark"
@@ -5497,20 +5497,20 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "1200"
-	    "AttackDamageMax"           "1200"
-	    "Damage"                    "1200"  
-	    "AOE_Full"                  "150"
-	    "AOE_Half"                  "300"
+	    "AttackDamageMin"           "1775"
+	    "AttackDamageMax"           "1775"
+	    "Damage"                    "1775"  
+	    "AOE_Full"                  "200"
+	    "AOE_Half"                  "400"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "1"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "ProjectileSpeed"           "1500"
 	
 	    "Level"                     "3"
-	    "Cost"                      "1250"
-	    "TotalCost"                 "1800"
+	    "Cost"                      "1675"
+	    "TotalCost"                 "2300"
 	    "BuildTime"                 "1"
 	    "Element"                   "earth"
 	    "DamageType"                "earth"
@@ -5585,9 +5585,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "500"
-	    "AttackDamageMax"           "500"
-	    "Damage"                    "500"  
+	    "AttackDamageMin"           "720"
+	    "AttackDamageMax"           "720"
+	    "Damage"                    "720"  
 	    "AOE_Full"                  "150"
 	    "AOE_Half"                  "300" 
 	    "AttackRange"               "550"
@@ -5597,8 +5597,8 @@
 	    "ProjectileSpeed"           "2000"
 	
 	    "Level"                     "3"
-	    "Cost"                      "1250"
-	    "TotalCost"                 "1800"
+	    "Cost"                      "1675"
+	    "TotalCost"                 "2300"
 	    "BuildTime"                 "1"
 	    "Element"                   "fire"
 	    "DamageType"                "fire"
@@ -5655,7 +5655,7 @@
 	    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_ti5.vmdl"
 	    "PedestalModelScale"        "0.8"
 	    "PedestalOffset"            "20"
-	    "ProjectileModel"           "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
+	    "ProjectileModel"           "particles/units/heroes/hero_oracle/oracle_base_attack.vpcf"
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
 	    "MinimapIconSize"           "320"
@@ -5676,18 +5676,18 @@
 	    
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "3500"
-	    "AttackDamageMax"           "3500"
-	    "Damage"                    "3500"  
+	    "AttackDamageMin"           "4225"
+	    "AttackDamageMax"           "4225"
+	    "Damage"                    "4225"  
 	    "AttackRange"               "1500"
 	    "AttackAcquisitionRange"    "1500"
-	    "AttackRate"                "1"
-	    "AttackAnimationPoint"      "0.3"
-	    "ProjectileSpeed"           "2000"
+	    "AttackRate"                "0.66"
+	    "AttackAnimationPoint"      "0.2"
+	    "ProjectileSpeed"           "2700"
 	
 	    "Level"                     "3"
-	    "Cost"                      "1250"
-	    "TotalCost"                 "1800"
+	    "Cost"                      "1675"
+	    "TotalCost"                 "2300"
 	    "BuildTime"                 "1"
 	    "Element"                   "light"
 	    "DamageType"                "light"
@@ -5766,18 +5766,18 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "3500"
-	    "AttackDamageMax"           "3500"
-	    "Damage"                    "3500"  
+	    "AttackDamageMin"           "3380"
+	    "AttackDamageMax"           "3380"
+	    "Damage"                    "3380"  
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
-	    "AttackRate"                "0.66"
-	    "AttackAnimationPoint"      "0.3"
-	    "ProjectileSpeed"           "2500"
+	    "AttackRate"                "0.31"
+	    "AttackAnimationPoint"      "0.1"
+	    "ProjectileSpeed"           "3000"
 	
 	    "Level"                     "3"
-	    "Cost"                      "1250"
-	    "TotalCost"                 "1800"
+	    "Cost"                      "1675"
+	    "TotalCost"                 "2300"
 	    "BuildTime"                 "1"
 	    "Element"                   "nature"
 	    "DamageType"                "nature"
@@ -5851,20 +5851,20 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "1500"
-	    "AttackDamageMax"           "1500"
-	    "Damage"                    "1500"
+	    "AttackDamageMin"           "2535"
+	    "AttackDamageMax"           "2535"
+	    "Damage"                    "2535"
 	    "AOE_Full"                  "100"
 	    "AOE_Half"                  "200"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
-	    "AttackAnimationPoint"      "0.25"
+	    "AttackAnimationPoint"      "0.2"
 	    "ProjectileSpeed"           "2500"
 	
 	    "Level"                     "3"
-	    "Cost"                      "1250"
-	    "TotalCost"                 "1800"
+	    "Cost"                      "1625"
+	    "TotalCost"                 "2300"
 	    "BuildTime"                 "1"
 	    "Element"                   "water"
 	
@@ -5945,7 +5945,7 @@
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
-	    "AttackAnimationPoint"      "0.25"
+	    "AttackAnimationPoint"      "0.2"
 	    "ProjectileSpeed"           "2500"
 	
 	    "Level"                     "1"
@@ -6045,9 +6045,9 @@
 	        "1"        "fire"
 	        "2"        "earth"
 	    }
-	    "Damage"        "350"
-	    "AttackDamageMin"        "350"
-	    "AttackDamageMax"        "350"
+	    "Damage"        "450"
+	    "AttackDamageMin"        "450"
+	    "AttackDamageMax"        "450"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "BlacksmithTower"
 	    "TowerType"        "Support"
@@ -6055,7 +6055,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1"
-	    "ProjectileModel"        "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf"
 	    "ProjectileSpeed"        "1500"
 	    "Model"        "models/blacksmith_tower.vmdl"
 	    "ModelScale"        "1"
@@ -6113,16 +6113,16 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "2"
-	    "Cost"        "800"
-	    "TotalCost"        "1250"
+	    "Cost"        "750"
+	    "TotalCost"        "1200"
 	    "Element"
 	    {
 	        "1"        "fire"
 	        "2"        "earth"
 	    }
-	    "Damage"        "1750"
-	    "AttackDamageMin"        "1750"
-	    "AttackDamageMax"        "1750"
+	    "Damage"        "2250"
+	    "AttackDamageMin"        "2250"
+	    "AttackDamageMax"        "2250"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "BlacksmithTower"
 	    "TowerType"        "Support"
@@ -6130,7 +6130,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1"
-	    "ProjectileModel"        "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf"
 	    "ProjectileSpeed"        "1500"
 	    "Model"        "models/blacksmith_tower.vmdl"
 	    "ModelScale"        "1.1"
@@ -6185,16 +6185,16 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "1900"
-	    "TotalCost"        "3150"
+	    "Cost"        "1800"
+	    "TotalCost"        "3000"
 	    "Element"
 	    {
 	        "1"        "fire"
 	        "2"        "earth"
 	    }
-	    "Damage"        "8750"
-	    "AttackDamageMin"        "8750"
-	    "AttackDamageMax"        "8750"
+	    "Damage"        "11250"
+	    "AttackDamageMin"        "11250"
+	    "AttackDamageMax"        "11250"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "BlacksmithTower"
 	    "TowerType"        "Support"
@@ -6202,7 +6202,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1"
-	    "ProjectileModel"        "particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf"
 	    "ProjectileSpeed"        "1500"
 	    "Model"        "models/blacksmith_tower.vmdl"
 	    "ModelScale"        "1.2"
@@ -6263,7 +6263,9 @@
 	        "1"        "dark"
 	        "2"        "nature"
 	    }
-	    "Damage"        "60"
+	    "Damage"        "50"
+	    "AttackDamageMin"        "50"
+	    "AttackDamageMax"        "50"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "DiseaseTower"
 	    "TowerType"        "Normal"
@@ -6291,8 +6293,6 @@
 	        "4"        "roots_tower"
 	        "5"        "jinx_tower"
 	    }
-	    "AttackDamageMin"        "60"
-	    "AttackDamageMax"        "60"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -6334,14 +6334,16 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "2"
-	    "Cost"        "800"
-	    "TotalCost"        "1250"
+	    "Cost"        "750"
+	    "TotalCost"        "1200"
 	    "Element"
 	    {
 	        "1"        "dark"
 	        "2"        "nature"
 	    }
-	    "Damage"        "300"
+	    "Damage"        "250"
+	    "AttackDamageMin"        "250"
+	    "AttackDamageMax"        "250"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "DiseaseTower"
 	    "TowerType"        "Normal"
@@ -6366,8 +6368,6 @@
 	        "Count"        "1"
 	        "1"        "disease_tower_3"
 	    }
-	    "AttackDamageMin"        "300"
-	    "AttackDamageMax"        "300"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -6410,14 +6410,16 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "1900"
-	    "TotalCost"        "3150"
+	    "Cost"        "1800"
+	    "TotalCost"        "3000"
 	    "Element"
 	    {
 	        "1"        "dark"
 	        "2"        "nature"
 	    }
-	    "Damage"        "1500"
+	    "Damage"        "1250"
+	    "AttackDamageMin"        "1250"
+	    "AttackDamageMax"        "1250"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "DiseaseTower"
 	    "TowerType"        "Normal"
@@ -6440,8 +6442,6 @@
 	    "Upgrades"
 	    {
 	    }
-	    "AttackDamageMin"        "1500"
-	    "AttackDamageMax"        "1500"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -6463,7 +6463,7 @@
 	    "VisionNighttimeRange"      "1900"  
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "ProjectileCollisionSize"   "50"
 	    "RingRadius"                "80"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -6542,7 +6542,7 @@
 	    "VisionNighttimeRange"      "1900"  
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "ProjectileCollisionSize"   "50"
 	    "RingRadius"                "80"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -6559,8 +6559,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "2"
-	    "Cost"        "800"
-	    "TotalCost"        "1250"
+	    "Cost"        "750"
+	    "TotalCost"        "1200"
 	    "Element"
 	    {
 	        "1"        "fire"
@@ -6629,7 +6629,7 @@
 	    "VisionNighttimeRange"      "1900"  
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "ProjectileCollisionSize"   "50"
 	    "RingRadius"                "80"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -6646,8 +6646,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "1900"
-	    "TotalCost"        "3150"
+	    "Cost"        "1800"
+	    "TotalCost"        "3000"
 	    "Element"
 	    {
 	        "1"        "fire"
@@ -6758,7 +6758,7 @@
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
 	    "AttackRate"        "0.66"
-	    "ProjectileModel"        "particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_invoker/invoker_forged_spirit_projectile.vpcf"
 	    "ProjectileSpeed"        "1500"
 	    "Model"        "models/heroes/ember_spirit/ember_spirit.vmdl"
 	    "ModelScale"        "1.0"
@@ -6844,8 +6844,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "2"
-	    "Cost"        "800"
-	    "TotalCost"        "1250"
+	    "Cost"        "750"
+	    "TotalCost"        "1200"
 	    "Element"
 	    {
 	        "1"        "fire"
@@ -6862,7 +6862,7 @@
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
 	    "AttackRate"        "0.66"
-	    "ProjectileModel"        "particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_invoker/invoker_forged_spirit_projectile.vpcf"
 	    "ProjectileSpeed"        "1500"
 	    "Model"        "models/heroes/ember_spirit/ember_spirit.vmdl"
 	    "ModelScale"        "1.1"
@@ -6931,8 +6931,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "1900"
-	    "TotalCost"        "3150"
+	    "Cost"        "1800"
+	    "TotalCost"        "3000"
 	    "Element"
 	    {
 	        "1"        "fire"
@@ -6949,7 +6949,7 @@
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
 	    "AttackRate"        "0.66"
-	    "ProjectileModel"        "particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_invoker/invoker_forged_spirit_projectile.vpcf"
 	    "ProjectileSpeed"        "1500"
 	    "Model"        "models/heroes/ember_spirit/ember_spirit.vmdl"
 	    "ModelScale"        "1.2"
@@ -7027,7 +7027,9 @@
 	        "1"        "earth"
 	        "2"        "dark"
 	    }
-	    "Damage"        "27"
+	    "Damage"        "32"
+	    "AttackDamageMin"        "32"
+	    "AttackDamageMax"        "32"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
@@ -7037,7 +7039,7 @@
 	    "AttackAcquisitionRange"        "1500"
 	    "AttackRate"        "0.66"
 	    "ProjectileModel"        "particles/units/heroes/hero_techies/techies_base_attack.vpcf"
-	    "ProjectileSpeed"        "1800"
+	    "ProjectileSpeed"        "2000"
 	    "Model"        "models/heroes/sniper/sniper.vmdl"
 	    "ModelScale"        "0.8"
 	    "ModelRotation"             "90"
@@ -7057,8 +7059,6 @@
 	        "4"        "flamethrower_tower"
 	        "5"        "roots_tower"
 	    }
-	    "AttackDamageMin"        "27"
-	    "AttackDamageMax"        "27"
 	    "Creature"
 	    {
 	       "AttachWearables" // Default
@@ -7113,14 +7113,16 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "2"
-	    "Cost"        "800"
-	    "TotalCost"        "1250"
+	    "Cost"        "750"
+	    "TotalCost"        "1200"
 	    "Element"
 	    {
 	        "1"        "earth"
 	        "2"        "dark"
 	    }
-	    "Damage"        "135"
+	    "Damage"        "160"
+	    "AttackDamageMin"        "160"
+	    "AttackDamageMax"        "160"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
@@ -7130,7 +7132,7 @@
 	    "AttackAcquisitionRange"        "1500"
 	    "AttackRate"        "0.66"
 	    "ProjectileModel"        "particles/units/heroes/hero_techies/techies_base_attack.vpcf"
-	    "ProjectileSpeed"        "1800"
+	    "ProjectileSpeed"        "2000"
 	    "Model"        "models/heroes/sniper/sniper.vmdl"
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
@@ -7146,8 +7148,6 @@
 	        "Count"        "1"
 	        "1"        "gunpowder_tower_3"
 	    }
-	    "AttackDamageMin"        "135"
-	    "AttackDamageMax"        "135"
 	    "Creature"
 	    {
 	       "AttachWearables" // The Hare Hunt Set
@@ -7202,14 +7202,16 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "1900"
-	    "TotalCost"        "3150"
+	    "Cost"        "1800"
+	    "TotalCost"        "3000"
 	    "Element"
 	    {
 	        "1"        "earth"
 	        "2"        "dark"
 	    }
-	    "Damage"        "675"
+	    "Damage"        "800"
+	    "AttackDamageMin"        "800"
+	    "AttackDamageMax"        "800"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
@@ -7219,7 +7221,7 @@
 	    "AttackAcquisitionRange"        "1500"
 	    "AttackRate"        "0.66"
 	    "ProjectileModel"        "particles/units/heroes/hero_techies/techies_base_attack.vpcf"
-	    "ProjectileSpeed"        "1800"
+	    "ProjectileSpeed"        "2000"
 	    "Model"        "models/heroes/sniper/sniper.vmdl"
 	    "ModelScale"        "1"
 	    "ModelRotation"             "90"
@@ -7233,8 +7235,6 @@
 	    "Upgrades"
 	    {
 	    }
-	    "AttackDamageMin"        "675"
-	    "AttackDamageMax"        "675"
 	    "Creature"
 	    {
 	       "AttachWearables" // Exact Marksman
@@ -7263,7 +7263,7 @@
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
 	    "MinimapIconSize"           "320"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_kunkka
@@ -7284,8 +7284,8 @@
 	    "AttackDamageMin"           "270"
 	    "AttackDamageMax"           "270"
 	    "Damage"                    "270"
-	    "AttackRange"               "700"
-	    "AttackAcquisitionRange"    "700"
+	    "AttackRange"               "900"
+	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "1"
 	    "ProjectileSpeed"           "2000" 
 	
@@ -7360,7 +7360,7 @@
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
 	    "MinimapIconSize"           "320"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "Creature"
 	    {
 	        "AttachWearables" // Armaments of Leviathan Set
@@ -7381,14 +7381,14 @@
 	    "AttackDamageMin"           "1350"
 	    "AttackDamageMax"           "1350"
 	    "Damage"                    "1350"
-	    "AttackRange"               "700"
-	    "AttackAcquisitionRange"    "700"
+	    "AttackRange"               "900"
+	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "1"
 	    "ProjectileSpeed"           "2000" 
 	
 	    "Level"                     "2"
-	    "Cost"                      "800"
-	    "TotalCost"                 "1250"
+	    "Cost"                      "750"
+	    "TotalCost"                 "1200"
 	    "BuildTime"                 "2"
 	
 	    "DamageType"                "earth"
@@ -7447,7 +7447,7 @@
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
 	    "MinimapIconSize"           "320"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "Creature"
 	    {
 	       "AttachWearables" // Bestowments of the Divine Anchor
@@ -7468,14 +7468,14 @@
 	    "AttackDamageMin"           "6750"
 	    "AttackDamageMax"           "6750"
 	    "Damage"                    "6750"
-	    "AttackRange"               "700"
-	    "AttackAcquisitionRange"    "700"
+	    "AttackRange"               "900"
+	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "1"
 	    "ProjectileSpeed"           "2000" 
 	
 	    "Level"                     "3"
-	    "Cost"                      "1900"
-	    "TotalCost"                 "3150"
+	    "Cost"                       "1800"
+	    "TotalCost"                  "3000"
 	    "BuildTime"                 "2"
 	
 	    "DamageType"                "earth"
@@ -7643,8 +7643,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "2"
-	    "Cost"        "800"
-	    "TotalCost"        "1250"
+	    "Cost"        "750"
+	    "TotalCost"        "1200"
 	    "Element"
 	    {
 	        "1"        "water"
@@ -7728,8 +7728,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "1900"
-	    "TotalCost"        "3150"
+	    "Cost"        "1800"
+	    "TotalCost"        "3000"
 	    "Element"
 	    {
 	        "1"        "water"
@@ -7922,8 +7922,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "2"
-	    "Cost"        "800"
-	    "TotalCost"        "1250"
+	    "Cost"        "750"
+	    "TotalCost"        "1200"
 	    "Element"
 	    {
 	        "1"        "light"
@@ -8009,8 +8009,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "1900"
-	    "TotalCost"        "3150"
+	    "Cost"        "1800"
+	    "TotalCost"        "3000"
 	    "Element"
 	    {
 	        "1"        "light"
@@ -8076,7 +8076,7 @@
 	    "VisionNighttimeRange"      "1900"  
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "ProjectileCollisionSize"   "50"
 	    "RingRadius"                "80"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -8109,8 +8109,8 @@
 	    "AttackRange"        "1150"
 	    "AttackAcquisitionRange"        "1150"
 	    "AttackRate"        "1"
-	    "ProjectileModel"        "particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
-	    "ProjectileSpeed"        "2000"
+	    "ProjectileModel"        "particles/units/heroes/hero_leshrac/leshrac_base_attack.vpcf"
+	    "ProjectileSpeed"        "2500"
 	    "Model"        "models/heroes/lion/lion.vmdl"
 	    "ModelScale"        "0.8"
 	    "ModelRotation"    "90"
@@ -8166,7 +8166,7 @@
 	    "VisionNighttimeRange"      "1900"  
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "ProjectileCollisionSize"   "50"
 	    "RingRadius"                "80"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -8183,8 +8183,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "2"
-	    "Cost"        "800"
-	    "TotalCost"        "1250"
+	    "Cost"        "750"
+	    "TotalCost"        "1200"
 	    "Element"
 	    {
 	        "1"        "dark"
@@ -8199,8 +8199,8 @@
 	    "AttackRange"        "1150"
 	    "AttackAcquisitionRange"        "1150"
 	    "AttackRate"        "1"
-	    "ProjectileModel"        "particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
-	    "ProjectileSpeed"        "2000"
+	    "ProjectileModel"        "particles/units/heroes/hero_leshrac/leshrac_base_attack.vpcf"
+	    "ProjectileSpeed"        "2500"
 	    "Model"        "models/heroes/lion/lion.vmdl"
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
@@ -8252,7 +8252,7 @@
 	    "VisionNighttimeRange"      "1900"  
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "ProjectileCollisionSize"   "50"
 	    "RingRadius"                "80"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -8269,8 +8269,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "1900"
-	    "TotalCost"        "3150"
+	    "Cost"        "1800"
+	    "TotalCost"        "3000"
 	    "Element"
 	    {
 	        "1"        "dark"
@@ -8285,8 +8285,8 @@
 	    "AttackRange"        "1150"
 	    "AttackAcquisitionRange"        "1150"
 	    "AttackRate"        "1"
-	    "ProjectileModel"        "particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
-	    "ProjectileSpeed"        "2000"
+	    "ProjectileModel"        "particles/units/heroes/hero_leshrac/leshrac_base_attack.vpcf"
+	    "ProjectileSpeed"        "2500"
 	    "Model"        "models/heroes/lion/lion.vmdl"
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
@@ -8336,7 +8336,7 @@
 	    "VisionNighttimeRange"      "1900"  
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.2"
 	    "ProjectileCollisionSize"   "50"
 	    "RingRadius"                "80"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -8432,7 +8432,7 @@
 	    "VisionNighttimeRange"      "1900"  
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.2"
 	    "ProjectileCollisionSize"   "50"
 	    "RingRadius"                "80"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -8449,8 +8449,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "2"
-	    "Cost"        "800"
-	    "TotalCost"        "1250"
+	    "Cost"        "750"
+	    "TotalCost"        "1200"
 	    "Element"
 	    {
 	        "1"        "nature"
@@ -8515,7 +8515,7 @@
 	    "MagicalResistance"        "0"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"        "0.3"
+	    "AttackAnimationPoint"        "0.2"
 	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
 	    "AttributeBaseStrength"        "0"
 	    "AttributeStrengthGain"        "0"
@@ -8540,8 +8540,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "1900"
-	    "TotalCost"        "3150"
+	    "Cost"        "1800"
+	    "TotalCost"        "3000"
 	    "Element"
 	    {
 	        "1"        "nature"
@@ -8612,7 +8612,7 @@
 	    "VisionNighttimeRange"      "1900"  
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "ProjectileCollisionSize"   "50"
 	    "RingRadius"                "80"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -8636,7 +8636,9 @@
 	        "1"        "dark"
 	        "2"        "water"
 	    }
-	    "Damage"        "180"
+	    "Damage"        "200"
+	    "AttackDamageMin"        "200"
+	    "AttackDamageMax"        "200"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "PoisonTower"
 	    "TowerType"        "Normal"
@@ -8668,8 +8670,6 @@
 	        "4"        "hail_tower"
 	        "5"        "erosion_tower"
 	    }
-	    "AttackDamageMin"        "180"
-	    "AttackDamageMax"        "180"
 	    "Creature"
 	    {
 	        "AttachWearables"
@@ -8719,7 +8719,7 @@
 	    "VisionNighttimeRange"      "1900"  
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "ProjectileCollisionSize"   "50"
 	    "RingRadius"                "80"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -8736,14 +8736,16 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "2"
-	    "Cost"        "800"
-	    "TotalCost"        "1250"
+	    "Cost"        "750"
+	    "TotalCost"        "1200"
 	    "Element"
 	    {
 	        "1"        "dark"
 	        "2"        "water"
 	    }
-	    "Damage"        "900"
+	    "Damage"        "1000"
+	    "AttackDamageMin"        "1000"
+	    "AttackDamageMax"        "1000"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "PoisonTower"
 	    "TowerType"        "Normal"
@@ -8771,8 +8773,6 @@
 	        "Count"        "1"
 	        "1"        "poison_tower_3"
 	    }
-	    "AttackDamageMin"        "900"
-	    "AttackDamageMax"        "900"
 	    "Creature"
 	    {
 	       "AttachWearables" // Venomous Deathbringer
@@ -8808,7 +8808,7 @@
 	    "VisionNighttimeRange"      "1900"  
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "ProjectileCollisionSize"   "50"
 	    "RingRadius"                "80"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -8825,14 +8825,16 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "1900"
-	    "TotalCost"        "3150"
+	    "Cost"        "1800"
+	    "TotalCost"        "3000"
 	    "Element"
 	    {
 	        "1"        "dark"
 	        "2"        "water"
 	    }
-	    "Damage"        "4500"
+	    "Damage"        "5000"
+	    "AttackDamageMin"        "5000"
+	    "AttackDamageMax"        "5000"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "PoisonTower"
 	    "TowerType"        "Normal"
@@ -8858,8 +8860,6 @@
 	    "Upgrades"
 	    {
 	    }
-	    "AttackDamageMin"        "4500"
-	    "AttackDamageMax"        "4500"
 	    "Creature"
 	    {
 	       "AttachWearables" // Acid Hydra
@@ -8896,7 +8896,7 @@
 	    "VisionNighttimeRange"      "1900"  
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.2"
 	    "ProjectileCollisionSize"   "50"
 	    "RingRadius"                "80"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -8931,7 +8931,7 @@
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
 	    "AttackRate"        "0.66"
-	    "ProjectileModel"        "particles/units/heroes/hero_chen/chen_base_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot.vpcf"
 	    "ProjectileSpeed"        "2000"
 	    "Model"        "models/heroes/chen/chen.vmdl"
 	    "ModelScale"        "0.8"
@@ -9012,7 +9012,7 @@
 	    "VisionNighttimeRange"      "1900"  
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.2"
 	    "ProjectileCollisionSize"   "50"
 	    "RingRadius"                "80"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -9029,8 +9029,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "2"
-	    "Cost"        "800"
-	    "TotalCost"        "1250"
+	    "Cost"        "750"
+	    "TotalCost"        "1200"
 	    "Element"
 	    {
 	        "1"        "earth"
@@ -9047,7 +9047,7 @@
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
 	    "AttackRate"        "0.66"
-	    "ProjectileModel"        "particles/units/heroes/hero_chen/chen_base_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot.vpcf"
 	    "ProjectileSpeed"        "2000"
 	    "Model"        "models/heroes/chen/chen.vmdl"
 	    "ModelScale"        "0.9"
@@ -9104,7 +9104,7 @@
 	    "VisionNighttimeRange"      "1900"  
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.2"
 	    "ProjectileCollisionSize"   "50"
 	    "RingRadius"                "80"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -9121,8 +9121,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "1900"
-	    "TotalCost"        "3150"
+	    "Cost"        "1800"
+	    "TotalCost"        "3000"
 	    "Element"
 	    {
 	        "1"        "earth"
@@ -9139,7 +9139,7 @@
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
 	    "AttackRate"        "0.66"
-	    "ProjectileModel"        "particles/units/heroes/hero_chen/chen_base_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot.vpcf"
 	    "ProjectileSpeed"        "2000"
 	    "Model"        "models/heroes/chen/chen.vmdl"
 	    "ModelScale"        "1"
@@ -9194,7 +9194,7 @@
 	    "VisionNighttimeRange"      "1900"  
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "ProjectileCollisionSize"   "50"
 	    "RingRadius"                "80"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -9218,9 +9218,9 @@
 	        "1"        "light"
 	        "2"        "dark"
 	    }
-	    "Damage"        "350"
-	    "AttackDamageMin"        "350"
-	    "AttackDamageMax"        "350"
+	    "Damage"        "450"
+	    "AttackDamageMin"        "450"
+	    "AttackDamageMax"        "450"
 	    "DamageType"        "light"
 	    "ScriptClass"        "TrickeryTower"
 	    "TowerType"        "Support"
@@ -9228,8 +9228,8 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1"
-	    "ProjectileModel"        "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
-	    "ProjectileSpeed"        "1500"
+	    "ProjectileModel"        "particles/units/heroes/hero_skywrath_mage/skywrath_mage_base_attack.vpcf"
+	    "ProjectileSpeed"        "2000"
 	    "Model"        "models/heroes/rubick/rubick.vmdl"
 	    "ModelScale"        "0.8"
 	    "ModelRotation"     "90"
@@ -9298,7 +9298,7 @@
 	    "VisionNighttimeRange"      "1900"  
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "ProjectileCollisionSize"   "50"
 	    "RingRadius"                "80"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -9315,16 +9315,16 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "2"
-	    "Cost"        "800"
-	    "TotalCost"        "1250"
+	    "Cost"        "750"
+	    "TotalCost"        "1200"
 	    "Element"
 	    {
 	        "1"        "light"
 	        "2"        "dark"
 	    }
-	    "Damage"        "1750"
-	    "AttackDamageMin"        "1750"
-	    "AttackDamageMax"        "1750"
+	    "Damage"        "2250"
+	    "AttackDamageMin"        "2250"
+	    "AttackDamageMax"        "2250"
 	    "DamageType"        "light"
 	    "ScriptClass"        "TrickeryTower"
 	    "TowerType"        "Support"
@@ -9332,8 +9332,8 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1"
-	    "ProjectileModel"        "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
-	    "ProjectileSpeed"        "1500"
+	    "ProjectileModel"        "particles/units/heroes/hero_skywrath_mage/skywrath_mage_base_attack.vpcf"
+	    "ProjectileSpeed"        "2000"
 	    "Model"        "models/heroes/rubick/rubick.vmdl"
 	    "ModelScale"        "0.8"
 	    "ModelRotation"     "90"
@@ -9383,7 +9383,7 @@
 	    "VisionNighttimeRange"      "1900"  
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"      "0.3"
+	    "AttackAnimationPoint"      "0.25"
 	    "ProjectileCollisionSize"   "50"
 	    "RingRadius"                "80"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -9400,16 +9400,16 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "1900"
-	    "TotalCost"        "3150"
+	    "Cost"        "1800"
+	    "TotalCost"        "3000"
 	    "Element"
 	    {
 	        "1"        "light"
 	        "2"        "dark"
 	    }
-	    "Damage"        "8750"
-	    "AttackDamageMin"        "8750"
-	    "AttackDamageMax"        "8750"
+	    "Damage"        "11250"
+	    "AttackDamageMin"        "11250"
+	    "AttackDamageMax"        "11250"
 	    "DamageType"        "light"
 	    "ScriptClass"        "TrickeryTower"
 	    "TowerType"        "Support"
@@ -9417,8 +9417,8 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1"
-	    "ProjectileModel"        "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_base_attack.vpcf"
-	    "ProjectileSpeed"        "1500"
+	    "ProjectileModel"        "particles/units/heroes/hero_skywrath_mage/skywrath_mage_base_attack.vpcf"
+	    "ProjectileSpeed"        "2000"
 	    "Model"        "models/heroes/rubick/rubick.vmdl"
 	    "ModelScale"        "0.9"
 	    "ModelRotation"     "90"
@@ -9586,8 +9586,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "2"
-	    "Cost"        "800"
-	    "TotalCost"        "1250"
+	    "Cost"        "750"
+	    "TotalCost"        "1200"
 	    "Element"
 	    {
 	        "1"        "fire"
@@ -9662,8 +9662,8 @@
 	    // Stats
 	    //----------------------------- 
 	    "Level"                     "3"
-	    "Cost"                      "1900"
-	    "TotalCost"                 "3150"
+	    "Cost"                       "1800"
+	    "TotalCost"                  "3000"
 	    "Element"
 	    {
 	        "1"     "fire"
@@ -9723,7 +9723,7 @@
 	    //-----------------------------
 	    "Model"                      "models/well_tower1.vmdl"
 	    "ModelScale"                 "0.75"
-	    "ProjectileModel"            "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
+	    "ProjectileModel"            "particles/units/heroes/hero_vengeful/vengeful_base_attack.vpcf"
 	    "ProjectileSpeed"            "2000"
 	    "MinimapIcon"                "minimap_tower90"
 	    "MinimapIconSize"            "320"
@@ -9733,9 +9733,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"            "350"
-	    "AttackDamageMax"            "350"
-	    "Damage"                     "350"
+	    "AttackDamageMin"            "450"
+	    "AttackDamageMax"            "450"
+	    "Damage"                     "450"
 	    "AttackRange"                "900"
 	    "AttackAcquisitionRange"     "900"
 	    "AttackRate"                 "1"
@@ -9803,7 +9803,7 @@
 	    "Model"                      "models/well_tower2.vmdl"
 	    "ModelScale"                 "0.85"
 	    "ModelRotation"              "0"
-	    "ProjectileModel"            "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
+	    "ProjectileModel"            "particles/units/heroes/hero_vengeful/vengeful_base_attack.vpcf"
 	    "ProjectileSpeed"            "2000"
 	    "MinimapIcon"                "minimap_tower90"
 	    "MinimapIconSize"            "320"
@@ -9813,16 +9813,16 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"            "1750"
-	    "AttackDamageMax"            "1750"
-	    "Damage"                     "1750"
+	    "AttackDamageMin"            "2250"
+	    "AttackDamageMax"            "2250"
+	    "Damage"                     "2250"
 	    "AttackRange"                "900"
 	    "AttackAcquisitionRange"     "900"
 	    "AttackRate"                 "1"
 	
 	    "Level"                      "2"
-	    "Cost"                       "800"
-	    "TotalCost"                  "1250"
+	    "Cost"                       "750"
+	    "TotalCost"                  "1200"
 	    "BuildTime"                  "3"
 	
 	    "Element"
@@ -9880,7 +9880,7 @@
 	    "Model"                      "models/well_tower3.vmdl"
 	    "ModelScale"                 "0.8"
 	    "ModelRotation"              "0"
-	    "ProjectileModel"            "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
+	    "ProjectileModel"            "particles/units/heroes/hero_vengeful/vengeful_base_attack.vpcf"
 	    "ProjectileSpeed"            "2000"
 	    "MinimapIcon"                "minimap_tower90"
 	    "MinimapIconSize"            "320"
@@ -9890,16 +9890,16 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"            "8750"
-	    "AttackDamageMax"            "8750"
-	    "Damage"                     "8750"
+	    "AttackDamageMin"            "11250"
+	    "AttackDamageMax"            "11250"
+	    "Damage"                     "11250"
 	    "AttackRange"                "900"
 	    "AttackAcquisitionRange"     "900"
 	    "AttackRate"                 "1"
 	
 	    "Level"                      "3"
-	    "Cost"                       "1900"
-	    "TotalCost"                  "3150"
+	    "Cost"                       "1800"
+	    "TotalCost"                  "3000"
 	    "BuildTime"                  "3"
 	    "Element"
 	    {
@@ -10003,7 +10003,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "0.31"
-	    "ProjectileModel"        "particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_necrolyte/necrolyte_base_attack.vpcf"
 	    "ProjectileSpeed"        "3000"
 	
 	    "AOE_Full"                  "100"
@@ -10097,7 +10097,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "0.31"
-	    "ProjectileModel"        "particles/units/heroes/hero_invoker/invoker_base_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_necrolyte/necrolyte_base_attack.vpcf"
 	    "ProjectileSpeed"        "3000"
 	
 	    "AOE_Full"                  "100"
@@ -10177,9 +10177,9 @@
 	        "2"        "nature"
 	        "3"        "water"
 	    }
-	    "Damage"        "1600"
-	    "AttackDamageMin"        "1600"
-	    "AttackDamageMax"        "1600"
+	    "Damage"        "1800"
+	    "AttackDamageMin"        "1800"
+	    "AttackDamageMax"        "1800"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "EphemeralTower"
 	    "TowerType"        "Normal"
@@ -10188,7 +10188,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "0.31"
-	    "ProjectileModel"        "particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_pugna/pugna_base_attack.vpcf"
 	    "ProjectileSpeed"        "3000"
 	
 	    "Model"             "models/heroes/windrunner/windrunner.vmdl"
@@ -10267,9 +10267,9 @@
 	        "2"        "nature"
 	        "3"        "water"
 	    }
-	    "Damage"        "8000"
-	    "AttackDamageMin"        "8000"
-	    "AttackDamageMax"        "8000"
+	    "Damage"        "9000"
+	    "AttackDamageMin"        "9000"
+	    "AttackDamageMax"        "9000"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "EphemeralTower"
 	    "TowerType"        "Normal"
@@ -10278,7 +10278,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "0.31"
-	    "ProjectileModel"        "particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_pugna/pugna_base_attack.vpcf"
 	    "ProjectileSpeed"        "3000"
 	
 	    "Model"             "models/heroes/windrunner/windrunner.vmdl"
@@ -10323,7 +10323,7 @@
 	    "MagicalResistance"        "0"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"        "0.3"
+	    "AttackAnimationPoint"        "0.25"
 	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
 	    "AttributeBaseStrength"        "0"
 	    "AttributeStrengthGain"        "0"
@@ -10417,7 +10417,7 @@
 	    "MagicalResistance"        "0"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"        "0.3"
+	    "AttackAnimationPoint"        "0.25"
 	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
 	    "AttributeBaseStrength"        "0"
 	    "AttributeStrengthGain"        "0"
@@ -10542,7 +10542,9 @@
 	        "2"        "earth"
 	        "3"        "fire"
 	    }
-	    "Damage"        "500"
+	    "Damage"        "400"
+	    "AttackDamageMin"        "400"
+	    "AttackDamageMax"        "400"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlamethrowerTower"
 	    "TowerType"        "Normal"
@@ -10551,8 +10553,8 @@
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
 	    "AttackRate"        "0.66"
-	    "ProjectileModel"        "particles/units/heroes/hero_batrider/batrider_base_attack.vpcf"
-	    "ProjectileSpeed"        "2500"
+	    "ProjectileModel"        "particles/units/heroes/hero_ogre_magi/ogre_magi_ignite.vpcf"
+	    "ProjectileSpeed"        "2000"
 	    
 	    "Model"             "models/heroes/batrider/batrider.vmdl"
 	    "ModelScale"        "0.65"
@@ -10584,8 +10586,6 @@
 	        "Count"        "1"
 	        "1"        "flamethrower_tower_2"
 	    }
-	    "AttackDamageMin"        "500"
-	    "AttackDamageMax"        "500"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -10635,7 +10635,9 @@
 	        "2"        "earth"
 	        "3"        "fire"
 	    }
-	    "Damage"        "2500"
+	    "Damage"        "2000"
+	    "AttackDamageMin"        "2000"
+	    "AttackDamageMax"        "2000"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlamethrowerTower"
 	    "TowerType"        "Normal"
@@ -10644,7 +10646,7 @@
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
 	    "AttackRate"        "0.66"
-	    "ProjectileModel"        "particles/units/heroes/hero_batrider/batrider_base_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_ogre_magi/ogre_magi_ignite.vpcf"
 	    "ProjectileSpeed"        "2500"
 	
 	    "Model"             "models/heroes/batrider/batrider.vmdl"
@@ -10676,8 +10678,6 @@
 	    "Upgrades"
 	    {
 	    }
-	    "AttackDamageMin"        "2500"
-	    "AttackDamageMax"        "2500"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -10692,7 +10692,7 @@
 	    "MagicalResistance"        "0"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"        "0"
+	    "AttackAnimationPoint"        "0.25"
 	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
 	    "AttributeBaseStrength"        "0"
 	    "AttributeStrengthGain"        "0"
@@ -10734,7 +10734,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1"
-	    "ProjectileModel"        "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_tidehunter/tidehunter_gush.vpcf"
 	    "ProjectileSpeed"        "2000"
 	
 	    "Model"             "models/heroes/tidehunter/tidehunter.vmdl"
@@ -10782,7 +10782,7 @@
 	    "MagicalResistance"        "0"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"        "0"
+	    "AttackAnimationPoint"        "0.25"
 	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
 	    "AttributeBaseStrength"        "0"
 	    "AttributeStrengthGain"        "0"
@@ -10824,7 +10824,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1"
-	    "ProjectileModel"        "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_tidehunter/tidehunter_gush.vpcf"
 	    "ProjectileSpeed"        "2000"
 	    
 	    "Model"             "models/heroes/tidehunter/tidehunter.vmdl"
@@ -10905,7 +10905,9 @@
 	        "2"        "earth"
 	        "3"        "light"
 	    }
-	    "Damage"        "3500"
+	    "Damage"        "4000"
+	    "AttackDamageMin"        "4000"
+	    "AttackDamageMax"        "4000"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GoldTower"
 	    "TowerType"        "Normal"
@@ -10949,8 +10951,6 @@
 	        "Count"        "1"
 	        "1"        "gold_tower_2"
 	    }
-	    "AttackDamageMin"        "3500"
-	    "AttackDamageMax"        "3500"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -11000,7 +11000,9 @@
 	        "2"        "earth"
 	        "3"        "light"
 	    }
-	    "Damage"        "17500"
+	    "Damage"        "20000"
+	    "AttackDamageMin"        "20000"
+	    "AttackDamageMax"        "20000"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GoldTower"
 	    "TowerType"        "Normal"
@@ -11042,8 +11044,6 @@
 	    "Upgrades"
 	    {
 	    }
-	    "AttackDamageMin"        "17500"
-	    "AttackDamageMax"        "17500"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -11060,7 +11060,7 @@
 	    "MagicalResistance"        "0"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"        "0.25"
+	    "AttackAnimationPoint"        "0.2"
 	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
 	    "AttributeBaseStrength"        "0"
 	    "AttributeStrengthGain"        "0"
@@ -11093,7 +11093,9 @@
 	        "2"        "light"
 	        "3"        "water"
 	    }
-	    "Damage"        "850"
+	    "Damage"        "1000"
+	    "AttackDamageMin"        "1000"
+	    "AttackDamageMax"        "1000"
 	    "DamageType"        "light"
 	    "ScriptClass"        "HailTower"
 	    "TowerType"        "Normal"
@@ -11135,8 +11137,6 @@
 	        "Count"        "1"
 	        "1"        "hail_tower_2"
 	    }
-	    "AttackDamageMin"        "850"
-	    "AttackDamageMax"        "850"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -11153,7 +11153,7 @@
 	    "MagicalResistance"        "0"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"        "0.25"
+	    "AttackAnimationPoint"        "0.2"
 	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
 	    "AttributeBaseStrength"        "0"
 	    "AttributeStrengthGain"        "0"
@@ -11186,7 +11186,9 @@
 	        "2"        "light"
 	        "3"        "water"
 	    }
-	    "Damage"        "4250"
+	    "Damage"        "5000"
+	    "AttackDamageMin"        "5000"
+	    "AttackDamageMax"        "5000"
 	    "DamageType"        "light"
 	    "ScriptClass"        "HailTower"
 	    "TowerType"        "Normal"
@@ -11226,8 +11228,6 @@
 	    "Upgrades"
 	    {
 	    }
-	    "AttackDamageMin"        "4250"
-	    "AttackDamageMax"        "4250"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -11286,7 +11286,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1"
-	    "ProjectileModel"        "particles/units/heroes/hero_batrider/batrider_base_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_huskar/huskar_burning_spear.vpcf"
 	    "ProjectileSpeed"        "4000"
 	
 	    "Model"             "models/heroes/troll_warlord/troll_warlord.vmdl"
@@ -11375,7 +11375,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1"
-	    "ProjectileModel"        "particles/units/heroes/hero_batrider/batrider_base_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_huskar/huskar_burning_spear.vpcf"
 	    "ProjectileSpeed"        "4000"
 	
 	    "Model"             "models/heroes/troll_warlord/troll_warlord.vmdl"
@@ -11418,7 +11418,7 @@
 	    "MagicalResistance"        "0"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"        "0.3"
+	    "AttackAnimationPoint"        "0.25"
 	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
 	    "AttributeBaseStrength"        "0"
 	    "AttributeStrengthGain"        "0"
@@ -11507,7 +11507,7 @@
 	    "MagicalResistance"        "0"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"        "0.3"
+	    "AttackAnimationPoint"        "0.25"
 	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
 	    "AttributeBaseStrength"        "0"
 	    "AttributeStrengthGain"        "0"
@@ -11951,7 +11951,7 @@
 	    "MagicalResistance"        "0"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"        "0.3"
+	    "AttackAnimationPoint"        "0.25"
 	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
 	    "AttributeBaseStrength"        "0"
 	    "AttributeStrengthGain"        "0"
@@ -11984,7 +11984,9 @@
 	        "2"        "earth"
 	        "3"        "water"
 	    }
-	    "Damage"        "700"
+	    "Damage"        "800"
+	    "AttackDamageMin"        "800"
+	    "AttackDamageMax"        "800"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "MuckTower"
 	    "TowerType"        "Normal"
@@ -12027,8 +12029,6 @@
 	        "Count"        "1"
 	        "1"        "muck_tower_2"
 	    }
-	    "AttackDamageMin"        "700"
-	    "AttackDamageMax"        "700"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -12043,7 +12043,7 @@
 	    "MagicalResistance"        "0"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"        "0.3"
+	    "AttackAnimationPoint"        "0.25"
 	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
 	    "AttributeBaseStrength"        "0"
 	    "AttributeStrengthGain"        "0"
@@ -12076,7 +12076,9 @@
 	        "2"        "earth"
 	        "3"        "water"
 	    }
-	    "Damage"        "3500"
+	    "Damage"        "4000"
+	    "AttackDamageMin"        "4000"
+	    "AttackDamageMax"        "4000"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "MuckTower"
 	    "TowerType"        "Normal"
@@ -12116,8 +12118,6 @@
 	    "Upgrades"
 	    {
 	    }
-	    "AttackDamageMin"        "3500"
-	    "AttackDamageMax"        "3500"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -12317,7 +12317,9 @@
 	        "2"        "light"
 	        "3"        "nature"
 	    }
-	    "Damage"        "1000"
+	    "Damage"        "1100"
+	    "AttackDamageMin"        "1100"
+	    "AttackDamageMax"        "1100"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "ObliterationTower"
 	    "TowerType"        "Normal"
@@ -12356,8 +12358,6 @@
 	        "Count"        "1"
 	        "1"        "obliteration_tower_2"
 	    }
-	    "AttackDamageMin"        "1000"
-	    "AttackDamageMax"        "1000"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -12407,7 +12407,9 @@
 	        "2"        "light"
 	        "3"        "nature"
 	    }
-	    "Damage"        "5000"
+	    "Damage"        "5500"
+	    "AttackDamageMin"        "5500"
+	    "AttackDamageMax"        "5500"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "ObliterationTower"
 	    "TowerType"        "Normal"
@@ -12444,8 +12446,6 @@
 	    "Upgrades"
 	    {
 	    }
-	    "AttackDamageMin"        "5000"
-	    "AttackDamageMax"        "5000"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -12462,7 +12462,7 @@
 	    "MagicalResistance"        "0"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"        "0"
+	    "AttackAnimationPoint"        "0.25"
 	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
 	    "AttributeBaseStrength"        "0"
 	    "AttributeStrengthGain"        "0"
@@ -12495,7 +12495,9 @@
 	        "2"        "light"
 	        "3"        "earth"
 	    }
-	    "Damage"        "1300"
+	    "Damage"        "1600"
+	    "AttackDamageMin"        "1600"
+	    "AttackDamageMax"        "1600"
 	    "DamageType"        "water"
 	    "ScriptClass"        "PolarTower"
 	    "TowerType"        "Normal"
@@ -12504,7 +12506,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1"
-	    "ProjectileModel"        "particles/units/heroes/hero_lich/lich_base_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_ancient_apparition/ancient_apparition_base_attack.vpcf"
 	    "ProjectileSpeed"        "2000"
 	
 	    "Model"             "models/heroes/lich/lich.vmdl"
@@ -12538,8 +12540,6 @@
 	        "Count"        "1"
 	        "1"        "polar_tower_2"
 	    }
-	    "AttackDamageMin"        "1300"
-	    "AttackDamageMax"        "1300"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -12556,7 +12556,7 @@
 	    "MagicalResistance"        "0"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"        "0"
+	    "AttackAnimationPoint"        "0.25"
 	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
 	    "AttributeBaseStrength"        "0"
 	    "AttributeStrengthGain"        "0"
@@ -12589,7 +12589,9 @@
 	        "2"        "light"
 	        "3"        "earth"
 	    }
-	    "Damage"        "6500"
+	    "Damage"        "8000"
+	    "AttackDamageMin"        "8000"
+	    "AttackDamageMax"        "8000"
 	    "DamageType"        "water"
 	    "ScriptClass"        "PolarTower"
 	    "TowerType"        "Normal"
@@ -12598,7 +12600,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1"
-	    "ProjectileModel"        "particles/units/heroes/hero_lich/lich_base_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_ancient_apparition/ancient_apparition_base_attack.vpcf"
 	    "ProjectileSpeed"        "2000"
 	
 	    "Model"             "models/heroes/lich/lich.vmdl"
@@ -12630,8 +12632,6 @@
 	    "Upgrades"
 	    {
 	    }
-	    "AttackDamageMin"        "6500"
-	    "AttackDamageMax"        "6500"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -12689,7 +12689,7 @@
 	    "AttackAcquisitionRange"        "550"
 	    "AttackRate"        "0.66"
 	    "ProjectileModel"        "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
-	    "ProjectileSpeed"        "2000"
+	    "ProjectileSpeed"        "1500"
 	
 	    "Model"             "models/heroes/earthshaker/earthshaker.vmdl"
 	    "ModelScale"        "1.0"
@@ -12777,7 +12777,7 @@
 	    "AttackAcquisitionRange"        "550"
 	    "AttackRate"        "0.66"
 	    "ProjectileModel"        "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
-	    "ProjectileSpeed"        "2000"
+	    "ProjectileSpeed"        "1500"
 	    
 	    "Model"             "models/heroes/earthshaker/earthshaker.vmdl"
 	    "ModelScale"        "1"
@@ -12821,7 +12821,7 @@
 	    "MagicalResistance"        "0"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
 	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"        "0.3"
+	    "AttackAnimationPoint"        "0.25"
 	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
 	    "AttributeBaseStrength"        "0"
 	    "AttributeStrengthGain"        "0"
@@ -12909,7 +12909,7 @@
 	    "MagicalResistance"        "0"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
 	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"        "0.3"
+	    "AttackAnimationPoint"        "0.25"
 	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
 	    "AttributeBaseStrength"        "0"
 	    "AttributeStrengthGain"        "0"
@@ -12996,7 +12996,7 @@
 	    "MagicalResistance"        "0"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"        "0.3"
+	    "AttackAnimationPoint"        "0.25"
 	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
 	    "AttributeBaseStrength"        "0"
 	    "AttributeStrengthGain"        "0"
@@ -13029,7 +13029,9 @@
 	        "2"        "fire"
 	        "3"        "light"
 	    }
-	    "Damage"        "1050"
+	    "Damage"        "1000"
+	    "AttackDamageMin"        "1000"
+	    "AttackDamageMax"        "1000"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "RunicTower"
 	    "TowerType"        "Normal"
@@ -13073,8 +13075,6 @@
 	        "Count"        "1"
 	        "1"        "runic_tower_2"
 	    }
-	    "AttackDamageMin"        "1050"
-	    "AttackDamageMax"        "1050"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -13091,7 +13091,7 @@
 	    "MagicalResistance"        "0"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"        "0.3"
+	    "AttackAnimationPoint"        "0.25"
 	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
 	    "AttributeBaseStrength"        "0"
 	    "AttributeStrengthGain"        "0"
@@ -13124,7 +13124,9 @@
 	        "2"        "fire"
 	        "3"        "light"
 	    }
-	    "Damage"        "5250"
+	    "Damage"        "5000"
+	    "AttackDamageMin"        "5000"
+	    "AttackDamageMax"        "5000"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "RunicTower"
 	    "TowerType"        "Normal"
@@ -13166,8 +13168,6 @@
 	    "Upgrades"
 	    {
 	    }
-	    "AttackDamageMin"        "5250"
-	    "AttackDamageMax"        "5250"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -13224,8 +13224,8 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "0.66"
-	    "ProjectileModel"        "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
-	    "ProjectileSpeed"        "2500"
+	    "ProjectileModel"           "particles/units/heroes/hero_abaddon/abaddon_death_coil.vpcf"  
+	    "ProjectileSpeed"        "3000"
 	
 	    "Model"             "models/heroes/siren/siren.vmdl"
 	    "ModelScale"        "1.0"
@@ -13317,8 +13317,8 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "0.66"
-	    "ProjectileModel"        "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
-	    "ProjectileSpeed"        "2500"
+	    "ProjectileModel"           "particles/units/heroes/hero_abaddon/abaddon_death_coil.vpcf"  
+	    "ProjectileSpeed"        "3000"
 	
 	    "Model"             "models/heroes/siren/siren.vmdl"
 	    "ModelScale"        "1"
@@ -13444,8 +13444,8 @@
 	    "TowerType"        "Normal"
 	    "BuffPriority"          "8"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "900"
-	    "AttackAcquisitionRange"        "0"
+	    "AttackRange"        "1150"
+	    "AttackAcquisitionRange"        "1150"
 	    "AttackRate"        "5"
 	    "ProjectileModel"        ""
 	    "ProjectileSpeed"        "900"
@@ -13534,8 +13534,8 @@
 	    "TowerType"        "Normal"
 	    "BuffPriority"          "4"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "900"
-	    "AttackAcquisitionRange"        "0"
+	    "AttackRange"        "1150"
+	    "AttackAcquisitionRange"        "1150"
 	    "AttackRate"        "5"
 	    "ProjectileModel"        ""
 	    "ProjectileSpeed"        "900"

@@ -42,7 +42,9 @@
         "2"        "earth"
         "3"        "light"
     }
-    "Damage"        "17500"
+    "Damage"        "20000"
+    "AttackDamageMin"        "20000"
+    "AttackDamageMax"        "20000"
     "DamageType"        "earth"
     "ScriptClass"        "GoldTower"
     "TowerType"        "Normal"
@@ -84,8 +86,6 @@
     "Upgrades"
     {
     }
-    "AttackDamageMin"        "17500"
-    "AttackDamageMax"        "17500"
 
     // Building Size
     "ConstructionSize"          "2"

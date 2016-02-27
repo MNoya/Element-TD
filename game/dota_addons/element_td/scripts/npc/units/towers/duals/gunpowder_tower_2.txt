@@ -36,14 +36,16 @@
     "VisionDaytimeRange"        "1900"
     "VisionNighttimeRange"        "1900"
     "Level"        "2"
-    "Cost"        "800"
-    "TotalCost"        "1250"
+    "Cost"        "750"
+    "TotalCost"        "1200"
     "Element"
     {
         "1"        "earth"
         "2"        "dark"
     }
-    "Damage"        "135"
+    "Damage"        "160"
+    "AttackDamageMin"        "160"
+    "AttackDamageMax"        "160"
     "DamageType"        "earth"
     "ScriptClass"        "GunpowderTower"
     "TowerType"        "Normal"
@@ -53,7 +55,7 @@
     "AttackAcquisitionRange"        "1500"
     "AttackRate"        "0.66"
     "ProjectileModel"        "particles/units/heroes/hero_techies/techies_base_attack.vpcf"
-    "ProjectileSpeed"        "1800"
+    "ProjectileSpeed"        "2000"
     "Model"        "models/heroes/sniper/sniper.vmdl"
     "ModelScale"        "0.9"
     "ModelRotation"             "90"
@@ -69,8 +71,6 @@
         "Count"        "1"
         "1"        "gunpowder_tower_3"
     }
-    "AttackDamageMin"        "135"
-    "AttackDamageMax"        "135"
     "Creature"
     {
        "AttachWearables" // The Hare Hunt Set

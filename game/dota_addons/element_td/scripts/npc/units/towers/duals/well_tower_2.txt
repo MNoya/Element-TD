@@ -5,7 +5,7 @@
     "Model"                      "models/well_tower2.vmdl"
     "ModelScale"                 "0.85"
     "ModelRotation"              "0"
-    "ProjectileModel"            "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
+    "ProjectileModel"            "particles/units/heroes/hero_vengeful/vengeful_base_attack.vpcf"
     "ProjectileSpeed"            "2000"
     "MinimapIcon"                "minimap_tower90"
     "MinimapIconSize"            "320"
@@ -15,16 +15,16 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"            "1750"
-    "AttackDamageMax"            "1750"
-    "Damage"                     "1750"
+    "AttackDamageMin"            "2250"
+    "AttackDamageMax"            "2250"
+    "Damage"                     "2250"
     "AttackRange"                "900"
     "AttackAcquisitionRange"     "900"
     "AttackRate"                 "1"
 
     "Level"                      "2"
-    "Cost"                       "800"
-    "TotalCost"                  "1250"
+    "Cost"                       "750"
+    "TotalCost"                  "1200"
     "BuildTime"                  "3"
 
     "Element"

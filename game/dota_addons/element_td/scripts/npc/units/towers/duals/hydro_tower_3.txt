@@ -10,7 +10,7 @@
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"
     "MinimapIconSize"           "320"
-    "AttackAnimationPoint"      "0.3"
+    "AttackAnimationPoint"      "0.25"
     "Creature"
     {
        "AttachWearables" // Bestowments of the Divine Anchor
@@ -31,14 +31,14 @@
     "AttackDamageMin"           "6750"
     "AttackDamageMax"           "6750"
     "Damage"                    "6750"
-    "AttackRange"               "700"
-    "AttackAcquisitionRange"    "700"
+    "AttackRange"               "900"
+    "AttackAcquisitionRange"    "900"
     "AttackRate"                "1"
     "ProjectileSpeed"           "2000" 
 
     "Level"                     "3"
-    "Cost"                      "1900"
-    "TotalCost"                 "3150"
+    "Cost"                       "1800"
+    "TotalCost"                  "3000"
     "BuildTime"                 "2"
 
     "DamageType"                "earth"

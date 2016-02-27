@@ -9,7 +9,7 @@
     "MagicalResistance"        "0"
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-    "AttackAnimationPoint"        "0.3"
+    "AttackAnimationPoint"        "0.25"
     "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
     "AttributeBaseStrength"        "0"
     "AttributeStrengthGain"        "0"
@@ -42,7 +42,9 @@
         "2"        "fire"
         "3"        "light"
     }
-    "Damage"        "1050"
+    "Damage"        "1000"
+    "AttackDamageMin"        "1000"
+    "AttackDamageMax"        "1000"
     "DamageType"        "dark"
     "ScriptClass"        "RunicTower"
     "TowerType"        "Normal"
@@ -86,8 +88,6 @@
         "Count"        "1"
         "1"        "runic_tower_2"
     }
-    "AttackDamageMin"        "1050"
-    "AttackDamageMax"        "1050"
 
     // Building Size
     "ConstructionSize"          "2"

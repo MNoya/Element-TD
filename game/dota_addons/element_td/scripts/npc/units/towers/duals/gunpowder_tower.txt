@@ -43,7 +43,9 @@
         "1"        "earth"
         "2"        "dark"
     }
-    "Damage"        "27"
+    "Damage"        "32"
+    "AttackDamageMin"        "32"
+    "AttackDamageMax"        "32"
     "DamageType"        "earth"
     "ScriptClass"        "GunpowderTower"
     "TowerType"        "Normal"
@@ -53,7 +55,7 @@
     "AttackAcquisitionRange"        "1500"
     "AttackRate"        "0.66"
     "ProjectileModel"        "particles/units/heroes/hero_techies/techies_base_attack.vpcf"
-    "ProjectileSpeed"        "1800"
+    "ProjectileSpeed"        "2000"
     "Model"        "models/heroes/sniper/sniper.vmdl"
     "ModelScale"        "0.8"
     "ModelRotation"             "90"
@@ -73,8 +75,6 @@
         "4"        "flamethrower_tower"
         "5"        "roots_tower"
     }
-    "AttackDamageMin"        "27"
-    "AttackDamageMax"        "27"
     "Creature"
     {
        "AttachWearables" // Default

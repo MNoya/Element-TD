@@ -269,11 +269,11 @@ end
 function ScoringObject:GetSpeedBonus( time )
 	local bonus = 1
 	if time > 30 then
-		bonus = bonus - ( time - 30 )*0.01
+		bonus = bonus - ( time - 30 )*0.02
 		self.under30Streak = 0
 	elseif time < 30 then
 		self.under30 = self.under30 + 1
-		bonus = bonus + ( 30 - time )*0.01 + (self.under30Streak * 0.01)
+		bonus = bonus + ( 15 - time )*0.02 + (self.under30Streak * 0.02)
 		self.under30Streak = self.under30Streak + 1
 	elseif time == 30 then -- End Streak
 		self.under30Streak = 0
