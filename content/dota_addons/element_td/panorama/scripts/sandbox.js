@@ -6,5 +6,13 @@ function ToggleFreeTowers() {
 }
 
 function ToggleGodMode() {
-    GameEvents.SendCustomGameEventToServer( "Sandbox_toggle_god_mode", { "state": god_mode.checked } );
+    GameEvents.SendCustomGameEventToServer( "sandbox_toggle_god_mode", { "state": god_mode.checked } );
+}
+
+function MaxElementsPressed() {
+    GameEvents.SendCustomGameEventToServer( "sandbox_max_elements", {} );
+}
+
+function FullLifePressed() {
+    GameEvents.SendCustomGameEventToServer( "sandbox_full_life", {} );
 }

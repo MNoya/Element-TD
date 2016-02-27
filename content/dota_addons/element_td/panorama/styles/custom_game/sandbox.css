@@ -333,7 +333,7 @@
     background-color: gradient( linear, 0% 0%, 0% 100%, from( #333333), to( #444444 ) );
 
     height: 36px;
-    width: 140px;
+    width: 160px;
 
     margin-top: 3px;
     margin-bottom: 3px;
@@ -356,7 +356,7 @@
 .Category .Row .DemoButton#FieldButton
 {
     height: 40px;
-    width: 140px;
+    width: 160px;
 }
 
 .Category .DemoButton Label

@@ -6,25 +6,26 @@ function Sandbox:Init()
     DEVELOPERS = {[66998815]="A_Dizzle",[86718505]="Noya",[8035838]="Karawasa",[34961594]="WindStrike",[84998953]="Quintinity",[59573794]="Azarak"}
     
     -- Enable Sandbox mode, single player or dev only, after a confirmation message
-    CustomGameEventManager:RegisterListener("Sandbox_enable", Dynamic_Wrap(Sandbox, "Enable"))
+    CustomGameEventManager:RegisterListener("sandbox_enable", Dynamic_Wrap(Sandbox, "Enable"))
 
     -- Resources section
-    CustomGameEventManager:RegisterListener("Sandbox_toggle_free_towers", Dynamic_Wrap(Sandbox, "FreeTowers"))
-    CustomGameEventManager:RegisterListener("Sandbox_toggle_god_mode", Dynamic_Wrap(Sandbox, "GodMode"))
-    CustomGameEventManager:RegisterListener("Sandbox_max_elements", Dynamic_Wrap(Sandbox, "MaxElements"))
-    CustomGameEventManager:RegisterListener("Sandbox_set_resources", Dynamic_Wrap(Sandbox, "SetResources")) -- Gold/Lumber/Essence/Lives
-    CustomGameEventManager:RegisterListener("Sandbox_set_elements", Dynamic_Wrap(Sandbox, "SetElements")) -- 6 elements
+    CustomGameEventManager:RegisterListener("sandbox_toggle_free_towers", Dynamic_Wrap(Sandbox, "FreeTowers"))
+    CustomGameEventManager:RegisterListener("sandbox_toggle_god_mode", Dynamic_Wrap(Sandbox, "GodMode"))
+    CustomGameEventManager:RegisterListener("sandbox_max_elements", Dynamic_Wrap(Sandbox, "MaxElements"))
+    CustomGameEventManager:RegisterListener("sandbox_full_life", Dynamic_Wrap(Sandbox, "FullLife"))
+    CustomGameEventManager:RegisterListener("sandbox_set_resources", Dynamic_Wrap(Sandbox, "SetResources")) -- Gold/Lumber/Essence/Lives
+    CustomGameEventManager:RegisterListener("sandbox_set_elements", Dynamic_Wrap(Sandbox, "SetElements")) -- 6 elements
 
     -- Spawn section
-    CustomGameEventManager:RegisterListener("Sandbox_set_wave", Dynamic_Wrap(Sandbox, "SetWave"))
-    CustomGameEventManager:RegisterListener("Sandbox_spawn_wave", Dynamic_Wrap(Sandbox, "SpawnWave"))
-    CustomGameEventManager:RegisterListener("Sandbox_spawn_boss_wave", Dynamic_Wrap(Sandbox, "SpawnBossWave"))
-    CustomGameEventManager:RegisterListener("Sandbox_clear", Dynamic_Wrap(Sandbox, "Clear"))
-    CustomGameEventManager:RegisterListener("Sandbox_stop", Dynamic_Wrap(Sandbox, "Stop"))
+    CustomGameEventManager:RegisterListener("sandbox_set_wave", Dynamic_Wrap(Sandbox, "SetWave"))
+    CustomGameEventManager:RegisterListener("sandbox_spawn_wave", Dynamic_Wrap(Sandbox, "SpawnWave"))
+    CustomGameEventManager:RegisterListener("sandbox_spawn_boss_wave", Dynamic_Wrap(Sandbox, "SpawnBossWave"))
+    CustomGameEventManager:RegisterListener("sandbox_clear", Dynamic_Wrap(Sandbox, "Clear"))
+    CustomGameEventManager:RegisterListener("sandbox_stop", Dynamic_Wrap(Sandbox, "Stop"))
 
     -- Pause & End
-    CustomGameEventManager:RegisterListener("Sandbox_pause", Dynamic_Wrap(Sandbox, "Pause"))
-    CustomGameEventManager:RegisterListener("Sandbox_end", Dynamic_Wrap(Sandbox, "End"))
+    CustomGameEventManager:RegisterListener("sandbox_pause", Dynamic_Wrap(Sandbox, "Pause"))
+    CustomGameEventManager:RegisterListener("sandbox_end", Dynamic_Wrap(Sandbox, "End"))
 end
 
 function Sandbox:Enable(event)
@@ -45,10 +46,16 @@ end
 function Sandbox:FreeTowers(event)
     local playerID = event.PlayerID
     local state = event.state == 1
+    local playerData = GetPlayerData(playerID)
 
     ShowSandboxCommand(playerID, "Free Towers", state)
 
-    GetPlayerData(playerID).freeTowers = state
+    -- Set to 10k gold
+    if state == true then
+        SetCustomGold(playerID, 10000)
+    end
+
+    playerData.freeTowers = state
     UpdatePlayerSpells(playerID)
 end
 
@@ -56,9 +63,47 @@ function Sandbox:GodMode(event)
     local playerID = event.PlayerID
     local state = event.state == 1
 
-    ShowSandboxCommand(playerID, "God Mode", state)
+    ShowSandboxToggleCommand(playerID, "God Mode", state)
 
     GetPlayerData(playerID).godMode = state
+end
+
+function Sandbox:MaxElements(event)
+    local playerID = event.PlayerID
+
+    local playerData = GetPlayerData(playerID)
+    for k,v in pairs (playerData.elements) do
+        playerData.elements[k] = 3
+    end
+
+    UpdatePlayerSpells(playerID)
+    UpdateElementsHUD(playerID)
+    UpdateSummonerSpells(playerID)
+    for towerID,_ in pairs(playerData.towers) do
+        UpdateUpgrades(EntIndexToHScript(towerID))
+    end
+    UpdateScoreboard(playerID)
+
+    ShowSandboxCommand(playerID, "Max Elements")
+end
+
+function Sandbox:FullLife(event)
+    local playerID = event.PlayerID
+    local value = 50
+    local playerData = GetPlayerData(playerID)
+    playerData.health = value
+
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    if not hero:HasModifier("modifier_bonus_life") then
+        hero:AddNewModifier(hero, nil, "modifier_bonus_life", {})
+    end
+
+    hero:CalculateStatBonus()
+    hero:SetHealth(value)
+   
+    CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=playerData.health/hero:GetMaxHealth() * 100} )
+
+    ShowSandboxCommand(playerID, "Full Life")
 end
 
 -----------------------------------------------
