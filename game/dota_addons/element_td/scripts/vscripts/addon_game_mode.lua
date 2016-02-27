@@ -102,6 +102,7 @@ local requires =
     "developer",
     "ElementTD",
     "scoring",
+    "ranking",
 }
 
 for _, r in pairs(requires) do

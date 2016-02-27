@@ -1,0 +1,16 @@
+<root>
+	<styles>
+	    <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+	    <include src="file://{resources}/styles/custom_game/ranking.css" />
+	</styles>
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/ranking.js" /> 
+	</scripts>
+	<Panel hittest="true" class="RankingPlayerWrapper" onmouseover="ShowRank()" onmouseout="HideRank()">
+		<Panel hittest="false" id="RankingPlayer" class="slideOut hidden">
+			<Label hittest="false" id="RankingPercentile" text="-"/>
+			<Label hittest="false" id="RankingText" text="#etd_ranking_text"/>
+			<Label hittest="false" id="RankingRank" text="-"/>
+		</Panel>
+	</Panel>
+</root>

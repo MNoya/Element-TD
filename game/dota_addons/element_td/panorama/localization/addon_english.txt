@@ -121,6 +121,8 @@
         "etd_tower_table_amp"                       "Amp"
         "etd_tower_table_aoe"                       "AoE"
 
+        "etd_ranking_text"                          "Rank"
+
         "scoring_game_completed"                    "Game Completed!"
         "scoring_game_clear"                        "Game Cleared!"
 

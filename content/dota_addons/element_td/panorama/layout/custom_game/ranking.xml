@@ -1,0 +1,27 @@
+<root>
+  <styles>
+    <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+    <include src="file://{resources}/styles/custom_game/ranking.css" />
+  </styles>
+  <scripts>
+    <include src="file://{resources}/scripts/custom_game/ranking.js" /> 
+  </scripts>
+  <Panel hittest="false" class="BaseHud">
+    <Panel hittest="false" id="RankingTopBar">
+      <Panel hittest="false" id="RankingLeft">
+        <Panel hittest="false" id="LeftInner">
+          <Panel hittest="false" class="rankingWrapper" id="sector0"></Panel>
+          <Panel hittest="false" class="rankingWrapper" id="sector1"></Panel>
+          <Panel hittest="false" class="rankingWrapper" id="sector2"></Panel>
+          <Panel hittest="false" class="rankingWrapper" id="sector3"></Panel>
+        </Panel>
+      </Panel>
+      <Panel hittest="false" id="RankingRight">
+        <Panel hittest="false" class="rankingWrapper" id="sector4"></Panel>
+        <Panel hittest="false" class="rankingWrapper" id="sector5"></Panel>
+        <Panel hittest="false" class="rankingWrapper" id="sector6"></Panel>
+        <Panel hittest="false" class="rankingWrapper" id="sector7"></Panel>
+      </Panel>
+    </Panel>
+  </Panel>
+</root>
