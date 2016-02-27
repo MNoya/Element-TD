@@ -7,6 +7,7 @@ function Build( event )
     local gold_cost = ability:GetGoldCost(1)
     local hero = caster:IsRealHero() and caster or caster:GetOwner()
     local playerID = hero:GetPlayerID()
+    local playerData = GetPlayerData(playerID)
 
     if caster:IsIdle() then
         caster:Stop()
@@ -18,7 +19,7 @@ function Build( event )
 
     -- Check essence cost for periodic tower
     local essenceCost = GetUnitKeyValue(building_name, "EssenceCost") or 0
-    if essenceCost > GetPlayerData(playerID).pureEssence then
+    if essenceCost > playerData.pureEssence and not playerData.freeTowers then
         ShowWarnMessage(playerID, "You need 1 Essence! Buy it at the Elemental Summoner")
         return
     end
@@ -41,7 +42,7 @@ function Build( event )
             return false
         end
 
-        if essenceCost > GetPlayerData(playerID).pureEssence then
+        if essenceCost > playerData.pureEssence and not playerData.freeTowers then
             ShowWarnMessage(playerID, "You need 1 Essence! Buy it at the Elemental Summoner")
             return false
         end
@@ -52,8 +53,10 @@ function Build( event )
     -- Position for a building was confirmed and valid
     event:OnBuildingPosChosen(function(vPos)
         -- Spend resources
-        hero:ModifyGold(-gold_cost)
-        ModifyPureEssence(playerID, -essenceCost)      
+        if not playerData.freeTowers then
+            hero:ModifyGold(-gold_cost)
+            ModifyPureEssence(playerID, -essenceCost)
+        end
 
         -- Play a sound
         Sounds:EmitSoundOnClient(playerID, "Building.Placement") --DOTA_Item.ObserverWard.Activate
@@ -119,7 +122,6 @@ function Build( event )
         unit:SetBaseMaxHealth(GetUnitKeyValue(building_name, "TotalCost"))
 
         -- Add the tower to the player data
-        local playerData = GetPlayerData(playerID)
         playerData.towers[unit:GetEntityIndex()] = building_name
     end)
 

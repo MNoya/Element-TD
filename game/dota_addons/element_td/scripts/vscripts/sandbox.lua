@@ -52,7 +52,7 @@ function Sandbox:FreeTowers(event)
 
     -- Set to 10k gold
     if state == true then
-        SetCustomGold(playerID, 10000)
+        SetCustomGold(playerID, math.max(11000, PlayerResource:GetGold(playerID)))
     end
 
     playerData.freeTowers = state
