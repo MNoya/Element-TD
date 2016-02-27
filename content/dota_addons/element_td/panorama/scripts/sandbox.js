@@ -24,3 +24,17 @@ function ClearWavePressed() {
 function StopWavePressed() {
     GameEvents.SendCustomGameEventToServer( "sandbox_stop_wave", {} );
 }
+
+function EnableSandbox() {
+    GameEvents.SendCustomGameEventToServer( "sandbox_enable", {} );
+    $("#SandboxPanel").RemoveClass('hide')
+    $("#EnableSandboxText").style['color'] = 'gold;'
+}
+
+function SandboxMakeVisible() {
+    $("#SandboxEnableButton").RemoveClass('hide')
+}
+
+(function () {
+    GameEvents.Subscribe( "sandbox_mode_visible", SandboxMakeVisible);
+})();

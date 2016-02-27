@@ -427,6 +427,8 @@ function ElementTD:OnUnitSpawned(keys)
             ModifyLumber(playerID, 0)  -- updates summoner spells
             UpdateElementsHUD(playerID)
             UpdatePlayerSpells(playerID)
+
+            Sandbox:CheckPlayer(playerID)
         end
     else
         local unitName = unit:GetUnitName()

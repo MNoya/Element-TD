@@ -165,6 +165,7 @@
 
         // Sandbox
         "sandbox_mode"          "Sandbox Mode"
+        "sandbox_enable"        "Sandbox Mode Enabled!"
         "sandbox_resources"     "Resources"
         "sandbox_free_towers"   "Free Towers"
         "sandbox_god_mode"      "God Mode"

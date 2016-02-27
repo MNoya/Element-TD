@@ -28,8 +28,24 @@ function Sandbox:Init()
     CustomGameEventManager:RegisterListener("sandbox_end", Dynamic_Wrap(Sandbox, "End"))
 end
 
+-- The sandbox enable button will only be visible in the test version, or on single player/developer presence.
+function Sandbox:CheckPlayer(playerID)
+    if not IsDedicatedServer() or PlayerResource:GetPlayerCount() == 1 or Sandbox:IsDeveloper(playerID) then
+        CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "sandbox_mode_visible", {})
+    end
+end
+
 function Sandbox:Enable(event)
-    
+    local playerID = event.PlayerID
+    local playerData = GetPlayerData(playerID)
+
+    if not playerData.sandBoxEnabled then
+        playerData.sandBoxEnabled = true
+        playerData.cheated = true
+    else
+        return
+    end
+
     ElementTD:PrecacheAll()
     Notifications:ClearTop(playerID)
     Notifications:Top(playerID, {

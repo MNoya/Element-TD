@@ -4,6 +4,12 @@
     height: 100%;
 }
 
+.hide
+{
+    opacity: 0;
+    visibility: collapse;
+}
+
 .DemoHud
 {
     flow-children: right;
@@ -93,7 +99,7 @@
 
 .ControlPanel.Minimized
 {
-    transform: translateX( -310px ) translateY( -100px );
+    transform: translateX( -350px ) translateY( -100px );
 }
 
 
@@ -797,4 +803,41 @@
     background-image: url("file://{resources}/images/custom_game/resources/dark.png");
     background-size: 32px 32px;
     background-repeat: no-repeat;
+}
+
+
+#SandboxEnableButton
+{
+    background-color: black;
+    height: 30px;
+    width: 200px;
+    margin-left: 300px;
+    margin-top: 5px;
+}
+
+#SandboxEnableButton:active .SandboxButton
+{
+    position: 1px 2px 0px;
+}
+
+#EnableSandboxText
+{
+  color: #CCCCCC;
+}
+
+.SandboxButton
+{
+    letter-spacing: 3px;
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 4px;
+    vertical-align: center;
+    horizontal-align: center;
+}
+
+.SandboxButton:hover
+{
+    opacity: 2;
+    font-size: 19px;
 }
