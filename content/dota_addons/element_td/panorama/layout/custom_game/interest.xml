@@ -14,8 +14,6 @@
         <Panel hittest="false" id="InterestBarGold"/>
         <Panel hittest="false" id="InterestBarOverlay"/>
         <Image id="InterestCoin" src="file://{images}/custom_game/interest/gold.png"/>
-        
-        <Image id="InterestLock" onmouseover="ShowLockTooltip()" onmouseout="DOTAHideTitleTextTooltip()" src="file://{images}/custom_game/interest/lock.png"/>
 
         <Label id="InterestLabel" text="Interest (2%)"/>
       </Panel>
@@ -24,6 +22,10 @@
         <Label id="TooltipLabel" text="Total Gold From Interest"/>
         <Label id="TooltipAmount" text="0"/>
       </Panel>
+
     </Panel>
+
+          <Image hittest="true" id="InterestLock" onmouseover="ShowLockTooltip()" onmouseout="DOTAHideTitleTextTooltip()" src="file://{images}/custom_game/interest/lock.png"/>
+          
   </Panel>
 </root>

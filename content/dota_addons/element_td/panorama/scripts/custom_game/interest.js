@@ -9,6 +9,7 @@ var interest = $( "#Interest" );
 
 var goldIcon = $( "#InterestCoin" );
 var lockIcon = $( "#InterestLock" );
+var lockMessage = "";
 
 var interestBarGold = $( "#InterestBarGold" );
 var interestBarDisabled = $( "#InterestBarDisabled" );
@@ -62,7 +63,8 @@ function PauseInterest( table ) {
 	interestBarDisabled.visible = true;
 	interestBarDisabled.style["width"] = interestBarGold.style["width"];
 	interestBarGold.visible = false;
-	
+	lockMessage = table.msg;
+
 	goldIcon.visible = false;
 	lockIcon.visible = true;
 }
@@ -81,7 +83,7 @@ function ResumeInterest( table ) {
 }
 
 function ShowLockTooltip() {
-	$.DispatchEvent("DOTAShowTitleTextTooltip", lockIcon, "#etd_interest_lock_title", "#etd_interest_lock");
+	$.DispatchEvent("DOTAShowTitleTextTooltip", lockIcon, "#etd_interest_lock_title", lockMessage);
 }
 
 (function () {

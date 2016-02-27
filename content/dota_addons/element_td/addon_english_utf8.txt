@@ -22,6 +22,10 @@
         "etd_random_elemental"      "An elemental has been randomed for you!"
         "etd_random_essence"        "A pure essence has been randomed for you!"
 
+        "etd_interest_lock_title"   "Interest Paused"
+        "etd_interest_lock_leak"    "Your interest has been paused because you leaked\na wave. Kill the wave to unpause."
+        "etd_interest_lock_end"     "Your interest has been stopped because you have\nreached the final wave."
+       
         "etd_lumber_add"            "You have been given +{amount} Lumber!"
         "etd_essence_add"           "You have been given +{amount} Pure Essence!"
         "etd_acquire_element"       "Acquired {element} level {level}!"

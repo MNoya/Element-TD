@@ -2,7 +2,6 @@
 {
     width: 100%;
     height: 100%;
-    flow-children: down;
 }
 
 .hidden
@@ -77,10 +76,12 @@
 
 #InterestLock
 {
-    margin-top: 3px;
+    horizontal-align: right;
     width: 30px;
     height: 30px;
-    margin-left: 20px;
+    margin-right: 205px;
+    margin-top: 7px;
+    z-index: 99;
 }
 
 #InterestLabel

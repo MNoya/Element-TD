@@ -36,7 +36,7 @@ function InterestManager:CreateTimerForPlayer(playerID, timeRemaining)
 					InterestManager:GiveInterest(playerID)
 				else
 					Log:debug("Completely stopping interest for player " .. playerID);
-					InterestManager:PauseInterestForPlayer(playerID, "#etd_interest_end_of_game")
+					InterestManager:PauseInterestForPlayer(playerID, "#etd_interest_lock_end")
 					return nil
 				end
 
@@ -148,7 +148,7 @@ function InterestManager:PlayerLeakedWave(playerID, waveNumber)
 		interestData.NumLockingWaves = interestData.NumLockingWaves + 1
 		if not interestData.Locked then
 			interestData.Locked = true
-			InterestManager:PauseInterestForPlayer(playerID, "#etd_interest_leaked_wave")
+			InterestManager:PauseInterestForPlayer(playerID, "#etd_interest_lock_leak")
 		end
 	end
 end
