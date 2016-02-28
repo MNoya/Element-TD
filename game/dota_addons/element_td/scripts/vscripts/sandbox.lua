@@ -13,8 +13,8 @@ function Sandbox:Init()
     CustomGameEventManager:RegisterListener("sandbox_toggle_god_mode", Dynamic_Wrap(Sandbox, "GodMode"))
     CustomGameEventManager:RegisterListener("sandbox_max_elements", Dynamic_Wrap(Sandbox, "MaxElements"))
     CustomGameEventManager:RegisterListener("sandbox_full_life", Dynamic_Wrap(Sandbox, "FullLife"))
-    CustomGameEventManager:RegisterListener("sandbox_set_resources", Dynamic_Wrap(Sandbox, "SetResources")) -- Gold/Lumber/Essence/Lives
-    CustomGameEventManager:RegisterListener("sandbox_set_elements", Dynamic_Wrap(Sandbox, "SetElements")) -- 6 elements
+    CustomGameEventManager:RegisterListener("sandbox_set_resources", Dynamic_Wrap(Sandbox, "SetResources")) -- Gold/Lumber/Essence
+    CustomGameEventManager:RegisterListener("sandbox_set_element", Dynamic_Wrap(Sandbox, "SetElement")) -- 6 elements
 
     -- Spawn section
     CustomGameEventManager:RegisterListener("sandbox_set_wave", Dynamic_Wrap(Sandbox, "SetWave"))
@@ -141,13 +141,13 @@ function Sandbox:SetResources(event)
     SetCustomEssence(playerID, essence)
 end
 
-function Sandbox:SetElements(event)
+function Sandbox:SetElement(event)
     local playerID = event.PlayerID
     local element = event.element
     local level = tonumber(event.level)
     local playerData = GetPlayerData(playerID)
 
-    playerData.elements[element] = 3
+    playerData.elements[element] = level
 
     UpdatePlayerSpells(playerID)
     UpdateElementsHUD(playerID)
@@ -157,14 +157,14 @@ function Sandbox:SetElements(event)
     end
     UpdateScoreboard(playerID)
 
-    ShowSandboxCommand(playerID, firstToUpper().." "..level)
+    ShowElementLevel(playerID, element, level)
 end
 
 function Sandbox:SetWave(event)
     local playerID = event.PlayerID
     local waveNumber = event.wave
 
-    Sandbox:StopWaves(playerID)
+    Sandbox:StopWave(playerID)
     GetPlayerData(playerID).nextWave = tonumber(waveNumber)
     GetPlayerData(playerID).completedWaves = tonumber(waveNumber) - 1
 end
@@ -174,11 +174,11 @@ function Sandbox:SpawnWave(event)
     local waveNumber = event.wave
     waveNumber = waveNumber or GetPlayerData(playerID).nextWave
 
-    Sandbox:StopWaves(playerID)
+    Sandbox:StopWave(playerID)
     SpawnWaveForPlayer(playerID, tonumber(waveNumber))
 end
 
-function Sandbox:StopWaves(event)
+function Sandbox:StopWave(event)
     local playerID = event.PlayerID
     local playerData = GetPlayerData(playerID)
     local wave = playerData.waveObject

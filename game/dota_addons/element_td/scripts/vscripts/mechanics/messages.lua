@@ -146,3 +146,14 @@ function ShowSandboxToggleCommand(playerID, str, state)
         Notifications:Bottom(playerID, {text ="OFF", style={color='#00CC00', ["margin-left"]="10px", ["font-size"] = "30px"}, continue=true, duration = 3})
     end
 end
+
+function ShowElementLevel(playerID, element, level)
+    Notifications:ClearBottom(playerID)
+
+    local elem_color = rgbToHex(GetElementColor(element))
+    Notifications:Bottom(playerID, {
+        text = {text = "#sandbox_elem_level", element = firstToUpper(element), level = level},
+        style = {["font-weight"] = "bold", ["font-size"] = "30px", color = elem_color},
+        duration = 5
+    })
+end

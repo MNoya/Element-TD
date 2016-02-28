@@ -42,7 +42,7 @@ function ModifyLumber( data )
 {
 	var prev = parseInt(lumber.text);
 	var diff = data.lumber - prev;
-	if (data.lumber != undefined && diff != 0)
+	if (data.lumber != undefined)
 	{
 		lumber.text = data.lumber;
 

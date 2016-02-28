@@ -176,6 +176,7 @@
         "sandbox_max_elements"  "Max Elements"
         "sandbox_full_life"     "Full Life"
         "sandbox_waves"         "Waves"
+        "sandbox_elem_level"    "{element} level: {level}"
 
         "sandbox_set_wave"      "Set Wave"
         "sandbox_spawn_wave"    "Spawn Wave"

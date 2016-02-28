@@ -310,7 +310,7 @@
     padding-left: 5px;
 }
 
-.Row TextEntry #PlaceholderText
+#PlaceholderText
 {
     opacity: 1.0;
 
@@ -318,9 +318,10 @@
     transition-duration: 0.1s;
 
     vertical-align: middle;
+    margin-bottom: -2px;
 
     color: #444444;
-    font-size: 16;
+    font-size: 20;
 }
 
 .Row TextEntry:focus
@@ -446,14 +447,14 @@
 {
   flow-children:right;
   align:center top;
-  margin-bottom: 0px;
+  margin: 5px 0px 5px 0px;
+  width: 100%;
 }
 
 .LabelEntry
 {
-  width: 80px;
   flow-children:down;
-  margin:5px 20px 5px 20px;  
+  margin:5px 5px 5px 20px;  
 }
 
 .LabelEntry Label
@@ -469,7 +470,7 @@
 
 .NumEntry
 {
-  width:80px;
+  width:100px;
 }
 
 .PlusMinus
@@ -675,23 +676,26 @@
 #GoldIcon
 {   
     width: 36px; 
-    height: 36px; 
+    height: 40px; 
     background-image: url("file://{images}/custom_game/resources/gold_icon.png"); 
     background-size: 100% 100%;
-    margin-top: -5px;
+    margin-top: -3px;
+    margin-right: 2px;
 }
 
 #LumberIcon 
 {   
     width:36px; 
-    height:26px; 
+    height:28px; 
     background-image: url("file://{images}/custom_game/resources/lumber_icon.png"); 
     background-size: 100% 100%;
+    margin-top: 2px;
+    margin-right: 2px;
 }
 
 #PureEssenceIcon 
 {   
-    margin-top: -3px;
+    margin-top: 2px;
     width:36px; 
     height:32px; 
     background-image: url("file://{resources}/images/custom_game/resources/mango.png");
@@ -703,37 +707,44 @@
 
 #GoldEntry
 {
-    width: 80px;
+    width: 140px;
 }
 
 #LumberEntry
 {
-    width: 40px;
+    width: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#Lumber
+{
+    width: 50px;
+    padding-right: 0px;
 }
 
 #EssenceEntry
 {
-    width: 40px;
+    width: 80px;
 }
 
-.ElementEntries
+#Essence
 {
-    width: 100%;
-    height: 150px;
-    flow-children:right;
+  width: 30px;
+  padding-right: 0px;
+}
+
+#ElementsRow
+{
+    margin-top: 5px;
 }
 
 .ElementEntry
 {
-    width: 32px;
-    height: 32px;
-}
-
-.ElementAndLevel
-{
-    width: 80px;
-    flow-children:down;
-    margin:5px 20px 5px 20px;  
+    width: 34px;
+    height: 34px;
+    margin-left: 4px;
+    margin-right: -1px;
 }
 
 .ElemImage
@@ -747,14 +758,28 @@
     font-family: Radiance;
     font-weight: bold;
     text-align: center;
-    text-shadow: 0px 0px 3px 3.0 #000000;
+    text-shadow: 0px 0px 1px 3.0 #000000;
 }
 
 #light_level, #dark_level, #water_level, #fire_level, #nature_level, #earth_level, 
 {
     color: white;
-    text-align: center;
-    font-size: 25px;
+    margin-left: 9px;
+    font-size: 23px;
+}
+
+#light
+{
+    background-image: url("file://{resources}/images/custom_game/resources/light.png");
+    background-size: 32px 32px;
+    background-repeat: no-repeat;
+}
+
+#dark
+{   
+    background-image: url("file://{resources}/images/custom_game/resources/dark.png");
+    background-size: 32px 32px;
+    background-repeat: no-repeat;
 }
 
 #water
@@ -781,21 +806,6 @@
 #earth
 {
     background-image: url("file://{resources}/images/custom_game/resources/earth.png");
-    background-size: 32px 32px;
-    background-repeat: no-repeat;
-}
-
-#light
-{
-    background-image: url("file://{resources}/images/custom_game/resources/light.png");
-    background-size: 32px 32px;
-    background-repeat: no-repeat;
-}
-
-#dark
-{
-    margin-left: 4px;    
-    background-image: url("file://{resources}/images/custom_game/resources/dark.png");
     background-size: 32px 32px;
     background-repeat: no-repeat;
 }

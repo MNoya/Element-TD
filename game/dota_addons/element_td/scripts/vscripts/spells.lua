@@ -3,18 +3,27 @@
 
 function UpdateBuildAbility(playerID, ability)
 	local abilityName = ability:GetAbilityName()
+	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 	local element = string.match(abilityName, "build_(%l+)_tower")
 	if element then
 		local level = GetPlayerElementLevel(playerID, element)
-		if ability:GetLevel() < level then
-			ability:SetLevel(level)
+		if ability:GetLevel() ~= level then
+			-- Downgrade 1 -> 0
+			if level == 0 then
+				local disabledAbilityName = abilityName.."_disabled"
+				local newAbility = AddAbility(hero, disabledAbilityName, 0)
+				hero:SwapAbilities(disabledAbilityName, abilityName, true, false)
+				hero:RemoveAbility(abilityName)
+			else
+				ability:SetLevel(level)
+			end
 		end
 	end
 end
 
 function UpdatePlayerSpells(playerID)
 	local playerData = GetPlayerData(playerID)
-	local hero = ElementTD.vPlayerIDToHero[playerID]
+	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 	if hero then
 		for i=0,15 do
 			local ability = hero:GetAbilityByIndex(i)

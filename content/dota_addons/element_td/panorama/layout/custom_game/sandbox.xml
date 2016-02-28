@@ -17,7 +17,7 @@
       <Label id="CloseButton" onactivate="Dismiss()"/>
     </Panel>
 
-    <Panel id="SandboxPanel" class="ControlPanel LeftRightFlow hide">
+    <Panel id="SandboxPanel" class="ControlPanel LeftRightFlow">
       <Panel class="ControlPanelContainer">
       <Panel id="Maximized">
         <Panel id="MinimizeButton">
@@ -47,125 +47,101 @@
 
           <!-- Gold / Lumber / Essence entry boxes --> 
           <Panel class="ThreeEntry">
-            <Panel id="GoldEntry" class="LabelEntry">
-              <Image hittest="false" id="GoldIcon" />
+            <Panel id="GoldEntry">
               <Panel style="flow-children:right;">
-                <TextEntry id="XPos" class="NumEntry" ontabbackward="SetInputFocus(Scale)" ontabforward="SetInputFocus(YPos)" maxchars="16" placeholder="0.0" onblur="UpdateAttachment();" oninputsubmit="UpdateAttachment()"/>
-                <Panel class="PlusMinus">
-                  <Button class="SplashButton Plus" onactivate="ValueChange('#XPos', 1);">
-                    <Label text="+"/>
-                  </Button>
-                  <Button class="SplashButton Minus" onactivate="ValueChange('#XPos', -1);">
-                    <Label text="-"/>
-                  </Button>
-                </Panel>
+                <Image hittest="false" id="GoldIcon" />
+                <TextEntry id="Gold" class="NumEntry" ontabbackward="SetInputFocus(Essence)" ontabforward="SetInputFocus(Lumber)" maxchars="7" placeholder="1000000" onblur="UpdateResources();" oninputsubmit="UpdateResources()"/>
               </Panel>
             </Panel>
-            <Panel id="LumberEntry" class="LabelEntry">
-              <Image hittest="false" id="LumberIcon" />
+            <Panel id="LumberEntry">
               <Panel style="flow-children:right;">
-                <TextEntry id="YPos" class="NumEntry" ontabbackward="SetInputFocus(XPos)" ontabforward="SetInputFocus(ZPos)" maxchars="16" placeholder="0.0" onblur="UpdateAttachment();" oninputsubmit="UpdateAttachment()"/>
-                <Panel class="PlusMinus">
-                  <Button class="SplashButton Plus" onactivate="ValueChange('#YPos', 1);">
-                    <Label text="+"/>
-                  </Button>
-                  <Button class="SplashButton Minus" onactivate="ValueChange('#YPos', -1);">
-                    <Label text="-"/>
-                  </Button>
-                </Panel>
+                <Image hittest="false" id="LumberIcon" />
+                <TextEntry id="Lumber" class="NumEntry" ontabbackward="SetInputFocus(Gold)" ontabforward="SetInputFocus(Essence)" maxchars="2" placeholder="1" onblur="UpdateResources();" oninputsubmit="UpdateResources()"/>
               </Panel>
             </Panel>
-            <Panel id="EssenceEntry" class="LabelEntry">
-              <Image hittest="false" id="PureEssenceIcon" />
+            <Panel id="EssenceEntry">
               <Panel style="flow-children:right;">
-                <TextEntry id="ZPos" class="NumEntry" ontabbackward="SetInputFocus(YPos)" ontabforward="SetInputFocus(Pitch)" maxchars="16" placeholder="0.0" onblur="UpdateAttachment();" oninputsubmit="UpdateAttachment()"/>
-                <Panel class="PlusMinus">
-                  <Button class="SplashButton Plus" onactivate="ValueChange('#ZPos', 1);">
-                    <Label text="+"/>
-                  </Button>
-                  <Button class="SplashButton Minus" onactivate="ValueChange('#ZPos', -1);">
-                    <Label text="-"/>
-                  </Button>
-                </Panel>
+                <Image hittest="false" id="PureEssenceIcon" />
+                <TextEntry id="Essence" class="NumEntry" ontabbackward="SetInputFocus(Lumber)" ontabforward="SetInputFocus(Gold)" maxchars="1" placeholder="1" onblur="UpdateResources();" oninputsubmit="UpdateResources()"/>
               </Panel>
             </Panel>
           </Panel>
 
-          <Panel class="Row">
+          <Panel id="ElementsRow" class="Row">
             <Panel class="ElementEntry">
               <Image class="ElemImage" id="light"/>
-              <Label class="ElemLevel" id="light_level" text="1"/>
+              <Label class="ElemLevel" id="light_level" text="0"/>
             </Panel>
             <Panel class="PlusMinus">
-              <Button class="SplashButton Plus" onactivate="ValueChange('#XPos', 1);">
-                <Label text="+"/>
+              <Button class="SplashButton Plus" onactivate="ValueChange('light', 1);">
+                <Label id="Plus" text="+"/>
               </Button>
-              <Button class="SplashButton Minus" onactivate="ValueChange('#XPos', -1);">
-                <Label text="-"/>
+              <Button class="SplashButton Minus" onactivate="ValueChange('light', -1);">
+                <Label id="Minus" text="-"/>
               </Button>
             </Panel>
 
             <Panel class="ElementEntry">
               <Image class="ElemImage" id="dark"/>
-              <Label class="ElemLevel" id="dark_level" text="1"/>
+              <Label class="ElemLevel" id="dark_level" text="0"/>
             </Panel>
             <Panel class="PlusMinus">
-              <Button class="SplashButton Plus" onactivate="ValueChange('#XPos', 1);">
+              <Button class="SplashButton Plus" onactivate="ValueChange('dark', 1);">
                 <Label text="+"/>
               </Button>
-              <Button class="SplashButton Minus" onactivate="ValueChange('#XPos', -1);">
+              <Button class="SplashButton Minus" onactivate="ValueChange('dark', -1);">
                 <Label text="-"/>
               </Button>
             </Panel>
 
             <Panel class="ElementEntry">
               <Image class="ElemImage" id="water"/>
-              <Label class="ElemLevel" id="water_level" text="1"/>
+              <Label class="ElemLevel" id="water_level" text="0"/>
             </Panel>
             <Panel class="PlusMinus">
-              <Button class="SplashButton Plus" onactivate="ValueChange('#XPos', 1);">
+              <Button class="SplashButton Plus" onactivate="ValueChange('water', 1);">
                 <Label text="+"/>
               </Button>
-              <Button class="SplashButton Minus" onactivate="ValueChange('#XPos', -1);">
+              <Button class="SplashButton Minus" onactivate="ValueChange('water', -1);">
                 <Label text="-"/>
               </Button>
             </Panel>
 
             <Panel class="ElementEntry">
               <Image class="ElemImage" id="fire"/>
-              <Label class="ElemLevel" id="fire_level" text="1"/>
+              <Label class="ElemLevel" id="fire_level" text="0"/>
             </Panel>
             <Panel class="PlusMinus">
-              <Button class="SplashButton Plus" onactivate="ValueChange('#XPos', 1);">
+              <Button class="SplashButton Plus" onactivate="ValueChange('fire', 1);">
                 <Label text="+"/>
               </Button>
-              <Button class="SplashButton Minus" onactivate="ValueChange('#XPos', -1);">
+              <Button class="SplashButton Minus" onactivate="ValueChange('fire', -1);">
                 <Label text="-"/>
               </Button>
             </Panel>
 
             <Panel class="ElementEntry">
               <Image class="ElemImage" id="nature"/>
-              <Label class="ElemLevel" id="nature_level" text="1"/>
+              <Label class="ElemLevel" id="nature_level" text="0"/>
             </Panel>
             <Panel class="PlusMinus">
-              <Button class="SplashButton Plus" onactivate="ValueChange('#XPos', 1);">
+              <Button class="SplashButton Plus" onactivate="ValueChange('nature', 1);">
                 <Label text="+"/>
               </Button>
-              <Button class="SplashButton Minus" onactivate="ValueChange('#XPos', -1);">
+              <Button class="SplashButton Minus" onactivate="ValueChange('nature', -1);">
                 <Label text="-"/>
               </Button>
             </Panel>
 
             <Panel class="ElementEntry">
               <Image class="ElemImage" id="earth"/>
-              <Label class="ElemLevel" id="earth_level" text="1"/>
+              <Label class="ElemLevel" id="earth_level" text="0"/>
             </Panel>
             <Panel class="PlusMinus">
-              <Button class="SplashButton Plus" onactivate="ValueChange('#XPos', 1);">
+              <Button class="SplashButton Plus" onactivate="ValueChange('earth', 1);">
                 <Label text="+"/>
               </Button>
-              <Button class="SplashButton Minus" onactivate="ValueChange('#XPos', -1);">
+              <Button class="SplashButton Minus" onactivate="ValueChange('earth', -1);">
                 <Label text="-"/>
               </Button>
             </Panel>
