@@ -40,9 +40,9 @@
         "2"        "fire"
         "3"        "water"
     }
-    "Damage"        "1100"
-    "AttackDamageMin"        "1100"
-    "AttackDamageMax"        "1100"
+    "Damage"        "1000"
+    "AttackDamageMin"        "1000"
+    "AttackDamageMax"        "1000"
     "DamageType"        "fire"
     "ScriptClass"        "HasteTower"
     "TowerType"        "Normal"
@@ -51,7 +51,7 @@
     "AttackRange"        "900"
     "AttackAcquisitionRange"        "900"
     "AttackRate"        "1"
-    "ProjectileModel"        "particles/units/heroes/hero_huskar/huskar_burning_spear.vpcf"
+    "ProjectileModel"        "particles/units/heroes/hero_invoker/invoker_forged_spirit_projectile.vpcf"
     "ProjectileSpeed"        "4000"
 
     "Model"             "models/heroes/troll_warlord/troll_warlord.vmdl"

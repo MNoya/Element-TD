@@ -3894,9 +3894,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "42"
-	    "AttackDamageMax"           "42"
-	    "Damage"                    "42"  
+	    "AttackDamageMin"           "45"
+	    "AttackDamageMax"           "45"
+	    "Damage"                    "45"  
 	    "AOE_Full"                  "200"
 	    "AOE_Half"                  "400"
 	    "AttackRange"               "900"
@@ -4177,9 +4177,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "275"
-	    "AttackDamageMax"           "275"
-	    "Damage"                    "275"  
+	    "AttackDamageMin"           "295"
+	    "AttackDamageMax"           "295"
+	    "Damage"                    "295"  
 	    "AOE_Full"                  "200"
 	    "AOE_Half"                  "400"
 	    "AttackRange"               "900"
@@ -4979,9 +4979,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "17750"
-	    "AttackDamageMax"           "17750"
-	    "Damage"                    "17750"  
+	    "AttackDamageMin"           "19000"
+	    "AttackDamageMax"           "19000"
+	    "Damage"                    "19000"  
 	    "AOE_Full"                  "200"
 	    "AOE_Half"                  "400"
 	    "AttackRange"               "900"
@@ -5497,9 +5497,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "1775"
-	    "AttackDamageMax"           "1775"
-	    "Damage"                    "1775"  
+	    "AttackDamageMin"           "1900"
+	    "AttackDamageMax"           "1900"
+	    "Damage"                    "1900"  
 	    "AOE_Full"                  "200"
 	    "AOE_Half"                  "400"
 	    "AttackRange"               "900"
@@ -6758,7 +6758,7 @@
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
 	    "AttackRate"        "0.66"
-	    "ProjectileModel"        "particles/units/heroes/hero_invoker/invoker_forged_spirit_projectile.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
 	    "ProjectileSpeed"        "1500"
 	    "Model"        "models/heroes/ember_spirit/ember_spirit.vmdl"
 	    "ModelScale"        "1.0"
@@ -6862,7 +6862,7 @@
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
 	    "AttackRate"        "0.66"
-	    "ProjectileModel"        "particles/units/heroes/hero_invoker/invoker_forged_spirit_projectile.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
 	    "ProjectileSpeed"        "1500"
 	    "Model"        "models/heroes/ember_spirit/ember_spirit.vmdl"
 	    "ModelScale"        "1.1"
@@ -6949,7 +6949,7 @@
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
 	    "AttackRate"        "0.66"
-	    "ProjectileModel"        "particles/units/heroes/hero_invoker/invoker_forged_spirit_projectile.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
 	    "ProjectileSpeed"        "1500"
 	    "Model"        "models/heroes/ember_spirit/ember_spirit.vmdl"
 	    "ModelScale"        "1.2"
@@ -11275,9 +11275,9 @@
 	        "2"        "fire"
 	        "3"        "water"
 	    }
-	    "Damage"        "1100"
-	    "AttackDamageMin"        "1100"
-	    "AttackDamageMax"        "1100"
+	    "Damage"        "1000"
+	    "AttackDamageMin"        "1000"
+	    "AttackDamageMax"        "1000"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "HasteTower"
 	    "TowerType"        "Normal"
@@ -11286,7 +11286,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1"
-	    "ProjectileModel"        "particles/units/heroes/hero_huskar/huskar_burning_spear.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_invoker/invoker_forged_spirit_projectile.vpcf"
 	    "ProjectileSpeed"        "4000"
 	
 	    "Model"             "models/heroes/troll_warlord/troll_warlord.vmdl"
@@ -11364,9 +11364,9 @@
 	        "2"        "fire"
 	        "3"        "water"
 	    }
-	    "Damage"        "5500"
-	    "AttackDamageMin"        "5500"
-	    "AttackDamageMax"        "5500"
+	    "Damage"        "5000"
+	    "AttackDamageMin"        "5000"
+	    "AttackDamageMax"        "5000"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "HasteTower"
 	    "TowerType"        "Normal"
@@ -11375,7 +11375,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1"
-	    "ProjectileModel"        "particles/units/heroes/hero_huskar/huskar_burning_spear.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_invoker/invoker_forged_spirit_projectile.vpcf"
 	    "ProjectileSpeed"        "4000"
 	
 	    "Model"             "models/heroes/troll_warlord/troll_warlord.vmdl"

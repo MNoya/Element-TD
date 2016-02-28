@@ -313,9 +313,9 @@ function GivePureEssenceGoldBonus( playerID )
     local difficultyBountyBonus = playerData.difficulty:GetBountyBonusMultiplier()
     local extra_gold
     if EXPRESS_MODE then
-        extra_gold = round(math.pow(waveNumber+5, 2.3) * 2.5 * difficultyBountyBonus)
+        extra_gold = round(math.pow(waveNumber+5, 2.3) * 2 * difficultyBountyBonus)
     else
-        extra_gold = round(math.pow(waveNumber+5, 2) * 2.5 * difficultyBountyBonus)
+        extra_gold = round(math.pow(waveNumber+5, 2) * 2 * difficultyBountyBonus)
     end
     PopupAlchemistGold(PlayerResource:GetSelectedHeroEntity(playerID), extra_gold)
     hero:ModifyGold(extra_gold, true, 0)
