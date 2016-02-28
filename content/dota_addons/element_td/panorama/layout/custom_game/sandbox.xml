@@ -17,7 +17,7 @@
       <Label id="CloseButton" onactivate="Dismiss()"/>
     </Panel>
 
-    <Panel id="SandboxPanel" class="ControlPanel LeftRightFlow">
+    <Panel id="SandboxPanel" class="ControlPanel LeftRightFlow hide">
       <Panel class="ControlPanelContainer">
       <Panel id="Maximized">
         <Panel id="MinimizeButton">

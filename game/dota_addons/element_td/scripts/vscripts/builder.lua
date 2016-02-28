@@ -47,6 +47,12 @@ function Build( event )
             return false
         end
 
+        local sector = playerData.sector + 1
+        if not IsInsideSector(vPos, sector) then
+            ShowWarnMessage(playerID, "#error_invalid_build_position")
+            return false
+        end
+
         return true
     end)
 

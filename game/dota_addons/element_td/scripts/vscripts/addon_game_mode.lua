@@ -25,6 +25,7 @@ local requires =
     "mechanics/gold",
     "mechanics/abilities",
     "mechanics/wearables",
+    "mechanics/sectors",
     "mechanics/ground_attacks",
 
     -- utils
