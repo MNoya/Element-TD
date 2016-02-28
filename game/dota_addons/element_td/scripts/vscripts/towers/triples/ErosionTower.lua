@@ -22,6 +22,10 @@ function ErosionTower:OnAcidDot(keys)
     DamageEntity(keys.target, self.tower, damage)
 end
 
+function ErosionTower:OnProjectileHit(keys)
+    self:OnAttackLanded({target = keys.target, isBonus = true})
+end
+
 function ErosionTower:OnAttackLanded(keys)
     local target = keys.target
     local damage = self.tower:GetAverageTrueAttackDamage()
@@ -31,6 +35,7 @@ function ErosionTower:OnAttackLanded(keys)
     local entities = GetCreepsInArea(target:GetAbsOrigin(), self.halfAOE)
     for _,e in pairs(entities) do
         self.ability:ApplyDataDrivenModifier(self.tower, e, "modifier_acid_attack_damage_amp", {})
+        self.ability:ApplyDataDrivenModifier(self.tower, e, "modifier_acid_attack_dot", {})
         local modifier = e:FindModifierByName("modifier_acid_attack_damage_amp")
         if modifier then
             modifier.damageAmp = self.damageAmp
@@ -47,12 +52,23 @@ function ErosionTower:OnCreated()
     self.damageAmp = self.ability:GetLevelSpecialValueFor("damage_amp", self.ability:GetLevel()-1)
 end
 
-function ErosionTower:OnAttackStart(keys)
+function ErosionTower:OnAttack(keys)
     local target = keys.target
     local creeps = GetCreepsInArea(target:GetOrigin(), self.fullAOE)
     for _, creep in pairs(creeps) do
         if creep:IsAlive() and creep:entindex() ~= target:entindex() then
-            self.tower:PerformAttack(creep, false, false, true, true, true)
+            local info = 
+            {
+                Target = creep,
+                Source = self.tower,
+                Ability = keys.ability,
+                EffectName = "particles/econ/items/shadow_fiend/sf_desolation/sf_base_attack_desolation_fire_arcana.vpcf",
+                iMoveSpeed = self.tower:GetProjectileSpeed(),
+                vSourceLoc = self.tower:GetAbsOrigin(),
+                bReplaceExisting = false,
+                flExpireTime = GameRules:GetGameTime() + 10,
+            }
+            projectile = ProjectileManager:CreateTrackingProjectile(info)
         end
     end
 end

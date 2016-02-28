@@ -8,41 +8,31 @@
 	"AbilityTextureName"			"towers/erosion"
 	"MaxLevel"						"2"
 
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"	"1"
+		"RunScript"
+		{
+			"ScriptFile"		"towers/towerevents.lua"
+			"Function"			"TriggerEvent"
+			"Event"				"OnProjectileHitUnit"
+		}
+	}
+
 	"Modifiers"
 	{
 		"modifier_acid_attack_passive"
 		{
 			"Passive"	"1"
 			"IsHidden"	"1"
-			"OnAttackStart"
+			"OnAttack"
 			{
 				"RunScript"
 				{
 					"Target"			"TARGET"
 					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
 					"Function"			"TriggerEvent"
-					"Event"				"OnAttackStart"
-				}
-			}
-			"OnAttackLanded"
-			{
-				"ApplyModifier"
-				{
-					"Target"
-					{
-						"Center"		"TARGET"
-						"Radius"		"%aoe"
-						"Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
-						"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
-					}
-					"ModifierName"	"modifier_acid_attack_dot"
-				}
-				"RunScript"
-				{
-					"Target"			"TARGET"
-					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-					"Function"			"TriggerEvent"
-					"Event"				"OnAttackLanded"
+					"Event"				"OnAttack"
 				}
 			}
 		}

@@ -10365,7 +10365,7 @@
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
 	    "AttackRate"        "1"
-	    "ProjectileModel"        "particles/units/heroes/hero_warlock/warlock_base_attack.vpcf"
+	    "ProjectileModel"        "particles/econ/items/shadow_fiend/sf_desolation/sf_base_attack_desolation_fire_arcana.vpcf"
 	    "ProjectileSpeed"        "1500"
 	
 	    "Model"             "models/heroes/shadow_demon/shadow_demon.vmdl"
@@ -10459,7 +10459,7 @@
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
 	    "AttackRate"        "1"
-	    "ProjectileModel"        "particles/units/heroes/hero_warlock/warlock_base_attack.vpcf"
+	    "ProjectileModel"        "particles/econ/items/shadow_fiend/sf_desolation/sf_base_attack_desolation_fire_arcana.vpcf"
 	    "ProjectileSpeed"        "1500"
 	
 	    "Model"             "models/heroes/shadow_demon/shadow_demon.vmdl"

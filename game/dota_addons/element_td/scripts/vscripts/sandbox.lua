@@ -55,7 +55,7 @@ function Sandbox:Enable(event)
         duration = 10
     })
 
-    Notifications:Bottom(playerID, {
+    Notifications:Top(playerID, {
         text = {text = "#sandbox_wait"}, 
         class = "SandboxEnableWait", 
         duration = 10
@@ -190,7 +190,6 @@ function Sandbox:SetWave(event)
     StartBreakTime(playerID, GetPlayerDifficulty(playerID):GetWaveBreakTime(playerData.nextWave))
 
     UpdateWaveInfo(playerID, playerData.nextWave-1)
-    UpdateWaveInfo(playerID, playerData.nextWave)
 end
 
 function Sandbox:SpawnWave(event)
