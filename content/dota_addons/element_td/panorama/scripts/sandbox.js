@@ -2,6 +2,8 @@
 
 var free_towers = $("#free_towers")
 var god_mode = $("#god_mode")
+var speed_up = $("#speed_up")
+var pause = $("#pause")
 var max_level = 3;
 var min_level = 0;
 
@@ -27,7 +29,6 @@ function GetResources()
     table['gold'] = $('#Gold').text;
     table['lumber'] = $('#Lumber').text;
     table['essence'] = $('#Essence').text;
-    $.Msg(table);
 
     return table;
 }
@@ -35,6 +36,15 @@ function GetResources()
 function UpdateResources()
 {
     GameEvents.SendCustomGameEventToServer( "sandbox_set_resources", GetResources() );
+}
+
+function UpdateElements(msg) {
+    $("#light_level").text = msg.light
+    $("#dark_level").text = msg.dark
+    $("#water_level").text = msg.water
+    $("#fire_level").text = msg.fire
+    $("#nature_level").text = msg.nature
+    $("#earth_level").text = msg.earth
 }
 
 function ValueChange(name, amount)
@@ -63,6 +73,18 @@ function StopWavePressed() {
     GameEvents.SendCustomGameEventToServer( "sandbox_stop_wave", {} );
 }
 
+function Pause() {
+    GameEvents.SendCustomGameEventToServer( "sandbox_pause", {"state": pause.checked} );
+}
+
+function SpeedUp() {
+    GameEvents.SendCustomGameEventToServer( "sandbox_speed_up", {"state": speed_up.checked} );
+}
+
+function EndGame() {
+    GameEvents.SendCustomGameEventToServer( "sandbox_end", {} );
+}
+
 function HoverEnableSandbox() {
     $("#New").AddClass('hide')
     if ($("#SandboxPanel").BHasClass('hide'))
@@ -89,4 +111,5 @@ function SandboxMakeVisible() {
 
 (function () {
     GameEvents.Subscribe( "sandbox_mode_visible", SandboxMakeVisible);
+    GameEvents.Subscribe( "etd_update_elements", UpdateElements );
 })();

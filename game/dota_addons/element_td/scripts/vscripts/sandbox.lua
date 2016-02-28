@@ -23,7 +23,8 @@ function Sandbox:Init()
     CustomGameEventManager:RegisterListener("sandbox_clear_wave", Dynamic_Wrap(Sandbox, "ClearWave"))
     CustomGameEventManager:RegisterListener("sandbox_stop_wave", Dynamic_Wrap(Sandbox, "StopWave"))
 
-    -- Pause & End
+    -- Game
+    CustomGameEventManager:RegisterListener("sandbox_speed_up", Dynamic_Wrap(Sandbox, "SpeedUp"))
     CustomGameEventManager:RegisterListener("sandbox_pause", Dynamic_Wrap(Sandbox, "Pause"))
     CustomGameEventManager:RegisterListener("sandbox_end", Dynamic_Wrap(Sandbox, "End"))
 end
@@ -46,6 +47,7 @@ function Sandbox:Enable(event)
         return
     end
 
+    SendToServerConsole("sv_cheats 1")
     ElementTD:PrecacheAll()
     Notifications:ClearTop(playerID)
     Notifications:Top(playerID, {
@@ -213,6 +215,26 @@ function Sandbox:ClearWave(event)
     -- Complete the wave
     wave.endSpawnTime = GameRules:GetGameTime()
     wave:callback()
+end
+
+function Sandbox:SpeedUp(event)
+    local fast = event.state == 1
+    if fast then
+        SendToServerConsole("host_timescale 3")
+    else
+        SendToServerConsole("host_timescale 1")
+    end
+end
+
+function Sandbox:Pause(event)
+    local pause = event.state == 1
+    PauseGame(pause)
+end
+
+function Sandbox:End(event)
+    local playerID = event.PlayerID
+
+    GameRules:SetGameWinner(PlayerResource:GetTeam(playerID))
 end
 
 -- Forces a fast precache of everything to be able to build anything ASAP

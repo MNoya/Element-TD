@@ -183,5 +183,10 @@
         "sandbox_spawn_boss"    "Spawn Boss Wave"
         "sandbox_clear"         "Clear"
         "sandbox_stop"          "Stop"
+
+        "sandbox_playback"      ""
+        "sandbox_speedup"       "Speed Up"
+        "sandbox_pause"         "Pause"
+        "sandbox_quit"          "End Game"
     }
 }

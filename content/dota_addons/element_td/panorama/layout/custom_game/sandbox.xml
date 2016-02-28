@@ -170,13 +170,16 @@
           </Panel>
         </Panel>
         <Panel class="Category">
-          <Label text="#Playback_ButtonCategory"/>
+          <Label text="#sandbox_playback"/>
           <Panel class="QuitPausePanel">
-            <Button class="DemoButton" onactivate="FireCustomGameEvent_Str( PauseButtonPressed )">
-              <Label text="#PauseDemo_Button"/>
-            </Button>
-            <Button class="QuitButton" onactivate="FireCustomGameEvent_Str( LeaveButtonPressed )">
-              <Label text="#QuitDemo_Button"/>
+            <ToggleButton id="speed_up" class="DemoButton" onactivate="SpeedUp()">
+              <Label text="#sandbox_speedup"/>
+            </ToggleButton>
+            <ToggleButton id="pause" class="DemoButton" onactivate="Pause()">
+              <Label text="#sandbox_pause"/>
+            </ToggleButton>
+            <Button class="QuitButton" onactivate="EndGame()">
+              <Label text="#sandbox_quit"/>
             </Button>
           </Panel>
         </Panel>
