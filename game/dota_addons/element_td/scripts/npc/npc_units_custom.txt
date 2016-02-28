@@ -13215,7 +13215,9 @@
 	        "2"        "nature"
 	        "3"        "light"
 	    }
-	    "Damage"        "600"
+	    "Damage"        "500"
+	    "AttackDamageMin"        "500"
+	    "AttackDamageMax"        "500"
 	    "DamageType"        "water"
 	    "ScriptClass"        "TidalTower"
 	    "TowerType"        "Normal"
@@ -13259,8 +13261,6 @@
 	        "Count"        "1"
 	        "1"        "tidal_tower_2"
 	    }
-	    "AttackDamageMin"        "600"
-	    "AttackDamageMax"        "600"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -13308,7 +13308,9 @@
 	        "2"        "nature"
 	        "3"        "light"
 	    }
-	    "Damage"        "3000"
+	    "Damage"        "2500"
+	    "AttackDamageMin"        "2500"
+	    "AttackDamageMax"        "2500"
 	    "DamageType"        "water"
 	    "ScriptClass"        "TidalTower"
 	    "TowerType"        "Normal"
@@ -13350,8 +13352,6 @@
 	    "Upgrades"
 	    {
 	    }
-	    "AttackDamageMin"        "3000"
-	    "AttackDamageMax"        "3000"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
