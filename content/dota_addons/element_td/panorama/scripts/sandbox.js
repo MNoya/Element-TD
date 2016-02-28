@@ -80,10 +80,14 @@ function ValueChange(name, amount)
 }
 
 function SetWave() {
+    wave.text = wave.text.replace(/\D/g,'');
+
     GameEvents.SendCustomGameEventToServer( "sandbox_set_wave", {"wave": wave.text || "-1"} );
 }
 
 function SpawnWave() {
+    wave.text = wave.text.replace(/\D/g,'');
+    
     GameEvents.SendCustomGameEventToServer( "sandbox_spawn_wave", {"wave": wave.text || "-1"} );
 }
 
