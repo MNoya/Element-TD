@@ -106,9 +106,10 @@ function GetCloneTargetInRadius(caster, radius)
 	local towers = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
     local theChosenOne
     local bestPriority = 100
+    local level = caster:GetLevel()
     
     for _,tower in pairs(towers) do
-        if IsTower(tower) and tower:IsAlive() and not IsSupportTower(tower) and not tower.deleted and tower:GetAttackTarget() then
+        if IsTower(tower) and tower:IsAlive() and not IsSupportTower(tower) and not tower.deleted and (level > 2 or tower:GetAttackTarget()) then
             local priority = GetUnitKeyValue(tower:GetUnitName(), "BuffPriority")
             if priority <= bestPriority then
         
