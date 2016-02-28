@@ -36,7 +36,7 @@ function DisplayRanks( data )
                 playerPanel.BLoadLayout( "file://{resources}/layout/custom_game/ranking_player.xml", false, false );
                 _SetTextSafe( playerPanel, "RankingPercentile", ply.percentile + "%");
                 _SetTextSafe( playerPanel, "RankingRank", FormatRank(ply.rank));
-                playerPanel.FindChildInLayoutFile( "RankingPlayer" ).AddClass(GetRankImage(ply.percentile)+"_percentile");
+                playerPanel.FindChildInLayoutFile( "RankingPlayer" ).AddClass(GetRankImage(ply.rank,ply.percentile)+"_percentile");
             }
         }
     }
