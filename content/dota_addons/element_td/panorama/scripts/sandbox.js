@@ -26,6 +26,19 @@ function FullLifePressed() {
 
 function GetResources()
 {
+    $('#Gold').text = $('#Gold').text.replace(/\D/g,'');
+    $('#Lumber').text = $('#Lumber').text.replace(/\D/g,'');
+    $('#Essence').text = $('#Essence').text.replace(/\D/g,'');
+
+    if (parseInt($('#Gold').text) > 9999999)
+        $('#Gold').text = "9999999"
+
+    if (parseInt($('#Lumber').text) > 18)
+        $('#Lumber').text = "18"
+
+    if (parseInt($('#Essence').text) > 9)
+        $('#Essence').text = "9"
+
     var table = {};
     table['gold'] = $('#Gold').text;
     table['lumber'] = $('#Lumber').text;
@@ -99,15 +112,20 @@ function HoverEnableSandbox() {
     if ($("#SandboxPanel").BHasClass('hide'))
         $.DispatchEvent("DOTAShowTitleTextTooltip", $("#SandboxEnableButton"), "#sandbox_mode_enable", "#sandbox_mode_tooltip");
     else
+    {
         $.DispatchEvent("DOTAShowTitleTextTooltip", $("#SandboxEnableButton"), "#sandbox_enable", "#sandbox_mode_on");
+    }
 }
 
 function EnableSandbox() {
     GameEvents.SendCustomGameEventToServer( "sandbox_enable", {} );
-    $("#SandboxPanel").RemoveClass('hide')
+    if ($("#SandboxPanel").BHasClass('hide'))
+        $("#SandboxPanel").RemoveClass('hide')
+    else
+        $('#SandboxPanel').ToggleClass('Minimized')
     $("#CloseButton").AddClass('hide')
     $("#EnableSandboxText").style['color'] = 'gold;'
-    $.DispatchEvent("DOTAShowTitleTextTooltip", $("#SandboxEnableButton"), "#sandbox_enable", "#sandbox_mode_on");
+    $.DispatchEvent("DOTAShowTitleTextTooltip", $("#SandboxEnableButton"), "#sandbox_enable", "#sandbox_mode_on");    
 }
 
 function Dismiss() {

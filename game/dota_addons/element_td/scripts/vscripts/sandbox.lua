@@ -58,7 +58,7 @@ function Sandbox:Enable(event)
 
     Notifications:Bottom(playerID, {
         text = {text = "#sandbox_wait"}, 
-        class = "SandboxEnable", 
+        class = "SandboxEnableWait", 
         duration = 10
     })
 end

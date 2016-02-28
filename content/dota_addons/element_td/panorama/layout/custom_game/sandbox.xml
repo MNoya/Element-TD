@@ -50,19 +50,19 @@
             <Panel id="GoldEntry">
               <Panel style="flow-children:right;">
                 <Image hittest="false" id="GoldIcon" />
-                <TextEntry id="Gold" class="NumEntry" ontabbackward="SetInputFocus(Essence)" ontabforward="SetInputFocus(Lumber)" maxchars="7" placeholder="1000000" onblur="UpdateResources();" oninputsubmit="UpdateResources()"/>
+                <TextEntry id="Gold" class="NumEntry" ontabbackward="SetInputFocus(Essence)" ontabforward="SetInputFocus(Lumber)" maxchars="8" placeholder="1000000" onblur="UpdateResources();" oninputsubmit="UpdateResources()"/>
               </Panel>
             </Panel>
             <Panel id="LumberEntry">
               <Panel style="flow-children:right;">
                 <Image hittest="false" id="LumberIcon" />
-                <TextEntry id="Lumber" class="NumEntry" ontabbackward="SetInputFocus(Gold)" ontabforward="SetInputFocus(Essence)" maxchars="2" placeholder="1" onblur="UpdateResources();" oninputsubmit="UpdateResources()"/>
+                <TextEntry id="Lumber" class="NumEntry" ontabbackward="SetInputFocus(Gold)" ontabforward="SetInputFocus(Essence)" maxchars="3" placeholder="1" onblur="UpdateResources();" oninputsubmit="UpdateResources()"/>
               </Panel>
             </Panel>
             <Panel id="EssenceEntry">
               <Panel style="flow-children:right;">
                 <Image hittest="false" id="PureEssenceIcon" />
-                <TextEntry id="Essence" class="NumEntry" ontabbackward="SetInputFocus(Lumber)" ontabforward="SetInputFocus(Gold)" maxchars="1" placeholder="1" onblur="UpdateResources();" oninputsubmit="UpdateResources()"/>
+                <TextEntry id="Essence" class="NumEntry" ontabbackward="SetInputFocus(Lumber)" ontabforward="SetInputFocus(Gold)" maxchars="2" placeholder="1" onblur="UpdateResources();" oninputsubmit="UpdateResources()"/>
               </Panel>
             </Panel>
           </Panel>
