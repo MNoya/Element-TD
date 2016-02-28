@@ -12,7 +12,7 @@
 			m_bAdditive = true
 			m_bDisableZBuffering = true
 			m_hTexture = resource:"materials/particle/particle_flares/aircraft_white.vtex"
-			m_flDiffuseAmount = 0.300000
+			m_flDiffuseAmount = 0.000000
 		},
 	]
 	m_Operators =

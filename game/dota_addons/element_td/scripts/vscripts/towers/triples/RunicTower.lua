@@ -41,7 +41,7 @@ function RunicTower:OnAttack(keys)
                     Target = creep,
                     Source = caster,
                     Ability = keys.ability,
-                    EffectName = "particles/custom/towers/runic/attack.vpcf",
+                    EffectName = "particles/custom/towers/runic/attack_projectile.vpcf",
                     iMoveSpeed = self.tower:GetProjectileSpeed(),
                     vSourceLoc= caster:GetAbsOrigin(),
                     bReplaceExisting = false,

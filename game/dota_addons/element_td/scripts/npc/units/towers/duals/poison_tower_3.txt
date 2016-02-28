@@ -51,7 +51,7 @@
     "AttackRange"        "900"
     "AttackAcquisitionRange"        "900"
     "AttackRate"        "1"
-    "ProjectileModel"        "particles/units/heroes/hero_venomancer/venomancer_base_attack.vpcf"
+    "ProjectileModel"        "particles/units/heroes/hero_enigma/enigma_base_attack.vpcf"
     "ProjectileSpeed"        "1500"
     "Model"        "models/heroes/venomancer/venomancer.vmdl"
     "ModelScale"        "0.9"

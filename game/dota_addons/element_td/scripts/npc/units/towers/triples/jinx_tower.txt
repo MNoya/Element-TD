@@ -49,7 +49,7 @@
     "AttackRange"        "700"
     "AttackAcquisitionRange"        "700"
     "AttackRate"        "1"
-    "ProjectileModel"        "particles/units/heroes/hero_witchdoctor/witchdoctor_base_attack.vpcf"
+    "ProjectileModel"        "particles/units/heroes/hero_witchdoctor/witchdoctor_ward_attack.vpcf"
     "ProjectileSpeed"        "2000"
 
     "Model"             "models/heroes/witchdoctor/witchdoctor.vmdl"

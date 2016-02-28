@@ -20,6 +20,7 @@
 			m_bAdditive = true
 			m_bDisableZBuffering = true
 			m_hTexture = resource:"materials/particle/particle_flares/aircraft_white.vtex"
+			m_bDisableOperator = true
 		},
 	]
 	m_Operators =
@@ -77,6 +78,7 @@
 	[
 		{
 			m_ChildRef = resource:"particles/custom/towers/quark/attackshot_impact_d.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/quark/attackshot_impact_sparks.vpcf"

@@ -53,7 +53,7 @@
     "AttackRange"        "1150"
     "AttackAcquisitionRange"        "1150"
     "AttackRate"        "1"
-    "ProjectileModel"        "particles/custom/towers/runic/attack.vpcf"
+    "ProjectileModel"        "particles/custom/towers/runic/attack_projectile.vpcf"
     "ProjectileSpeed"        "2000"
 
     "Model"             "models/heroes/doom/doom.vmdl"

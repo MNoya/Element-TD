@@ -27,6 +27,7 @@
 				255,
 				255,
 			]
+			m_bDisableOperator = true
 		},
 	]
 	m_Operators =
@@ -93,6 +94,7 @@
 	[
 		{
 			m_ChildRef = resource:"particles/custom/towers/quark/attackshot_impact_e.vpcf"
+			m_bDisableChild = true
 		},
 	]
 }
