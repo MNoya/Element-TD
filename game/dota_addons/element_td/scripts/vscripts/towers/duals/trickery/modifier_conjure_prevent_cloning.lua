@@ -7,7 +7,7 @@ function modifier_conjure_prevent_cloning:DeclareFunctions()
 end
 
 function modifier_conjure_prevent_cloning:GetTexture()
-    return "modifier_illusion"
+    return "towers/trickery"
 end
 
 function modifier_conjure_prevent_cloning:GetEffectName()
