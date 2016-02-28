@@ -14,7 +14,7 @@ CreepBoss = createClass({
     },
 CreepBasic)
 
-CreepBossAbilities = { [1]="creep_ability_mechanical", [2]="creep_ability_swarm", [3]="creep_ability_heal", [4]="creep_ability_undead", [5]="creep_ability_fast" }
+CreepBossAbilities = { [1]="creep_ability_mechanical", [2]="creep_ability_regen", [3]="creep_ability_heal", [4]="creep_ability_undead", [5]="creep_ability_fast" }
 
 function CreepBoss:OnSpawned()
     local creep = self.creep
