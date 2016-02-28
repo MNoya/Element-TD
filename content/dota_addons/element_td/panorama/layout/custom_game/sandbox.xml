@@ -156,7 +156,7 @@
             <Button id="SetWave" class="DemoButton" onactivate="SetWave()">
               <Label text="#sandbox_set_wave"/>
             </Button>
-            <TextEntry id="WaveNumber" class="NumEntry" maxchars="2" placeholder="1" oninputsubmit="SpawnWave()"/>
+            <TextEntry id="WaveNumber" class="NumEntry" maxchars="3" placeholder="1" oninputsubmit="SpawnWave()"/>
             <Button id="SpawnWave" class="DemoButton" onactivate="SpawnWave()">
               <Label text="#sandbox_spawn_wave"/>
             </Button>

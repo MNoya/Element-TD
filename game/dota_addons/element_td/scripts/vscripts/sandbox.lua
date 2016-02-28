@@ -172,8 +172,8 @@ function Sandbox:SetWave(event)
     local waveNumber = event.wave
     local playerData = GetPlayerData(playerID)
 
-    if wave == "-1" then
-        waveNumber = playerData.nextWave
+    if not waveNumber or waveNumber == "" then
+        waveNumber = playerData.nextWave or 1
     end
     waveNumber = tonumber(waveNumber)
 
@@ -197,8 +197,8 @@ function Sandbox:SpawnWave(event)
     local waveNumber = event.wave
     local playerData = GetPlayerData(playerID)
 
-    if wave == "-1" then
-        waveNumber = playerData.nextWave
+    if not waveNumber or waveNumber == "" then
+        waveNumber = playerData.nextWave or 1
     end
     waveNumber = tonumber(waveNumber)
 

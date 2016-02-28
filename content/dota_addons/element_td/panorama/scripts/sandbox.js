@@ -81,13 +81,15 @@ function ValueChange(name, amount)
 function SetWave() {
     wave.text = wave.text.replace(/\D/g,'');
 
-    GameEvents.SendCustomGameEventToServer( "sandbox_set_wave", {"wave": wave.text || "-1"} );
+    GameEvents.SendCustomGameEventToServer( "sandbox_set_wave", {"wave": wave.text} );
 }
 
 function SpawnWave() {
     wave.text = wave.text.replace(/\D/g,'');
+    if (parseInt(wave.text) > 56)
+        wave.text = 56
     
-    GameEvents.SendCustomGameEventToServer( "sandbox_spawn_wave", {"wave": wave.text || "-1"} );
+    GameEvents.SendCustomGameEventToServer( "sandbox_spawn_wave", {"wave": wave.text} );
 }
 
 function ClearWavePressed() {
