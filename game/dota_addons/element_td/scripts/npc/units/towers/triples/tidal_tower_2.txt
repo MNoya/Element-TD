@@ -40,7 +40,9 @@
         "2"        "nature"
         "3"        "light"
     }
-    "Damage"        "3000"
+    "Damage"        "2500"
+    "AttackDamageMin"        "2500"
+    "AttackDamageMax"        "2500"
     "DamageType"        "water"
     "ScriptClass"        "TidalTower"
     "TowerType"        "Normal"
@@ -82,8 +84,6 @@
     "Upgrades"
     {
     }
-    "AttackDamageMin"        "3000"
-    "AttackDamageMax"        "3000"
 
     // Building Size
     "ConstructionSize"          "2"
