@@ -17,7 +17,7 @@ if not players then
     DEV_MODE = false
     EXPRESS_MODE = false
 
-    VERSION = "B230216"
+    VERSION = "B290216"
 
     START_TIME = GetSystemDate() .. " " .. GetSystemTime()
     END_TIME = nil
