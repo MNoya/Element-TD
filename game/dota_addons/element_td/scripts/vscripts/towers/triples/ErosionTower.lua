@@ -22,15 +22,12 @@ function ErosionTower:OnAcidDot(keys)
     DamageEntity(keys.target, self.tower, damage)
 end
 
-function ErosionTower:OnProjectileHit(keys)
+function ErosionTower:OnProjectileHitUnit(keys)
     self:OnAttackLanded({target = keys.target, isBonus = true})
 end
 
 function ErosionTower:OnAttackLanded(keys)
     local target = keys.target
-    local damage = self.tower:GetAverageTrueAttackDamage()
-    DamageEntitiesInArea(target:GetOrigin(), self.halfAOE, self.tower, damage / 2)
-    DamageEntitiesInArea(target:GetOrigin(), self.fullAOE, self.tower, damage / 2)
 
     local entities = GetCreepsInArea(target:GetAbsOrigin(), self.halfAOE)
     for _,e in pairs(entities) do
@@ -39,6 +36,7 @@ function ErosionTower:OnAttackLanded(keys)
         local modifier = e:FindModifierByName("modifier_acid_attack_damage_amp")
         if modifier then
             modifier.damageAmp = self.damageAmp
+            self:OnAcidDot({target=e})
         end
     end
 end

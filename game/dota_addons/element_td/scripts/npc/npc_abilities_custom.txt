@@ -3821,7 +3821,7 @@
 				"Target"			"POINT"
 				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
 				"Function"			"TriggerEvent"
-				"Event"				"OnProjectileHit"
+				"Event"				"OnMagicAttackCast"
 			}
 		}
 	
