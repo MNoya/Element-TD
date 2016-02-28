@@ -127,6 +127,11 @@ function SellTowerCast(keys)
 			end
 		end
 
+		-- Remove random Blacksmith/Well buff when sold
+		if tower.class == "blacksmith_tower" or tower.class == "well_tower" then
+			RemoveRandomBuff(tower)
+		end
+
 		--[[for towerID,_ in pairs(playerData.towers) do
 			UpdateUpgrades(EntIndexToHScript(towerID))
 		end]]

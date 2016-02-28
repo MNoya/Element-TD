@@ -139,3 +139,28 @@ function IncrementKillCount(tower)
         tower:SetModifierStackCount("modifier_kill_count", tower, tower:GetModifierStackCount("modifier_kill_count", tower) + 1)
     end
 end
+
+function RemoveRandomBuff(tower)
+    local origin = tower:GetAbsOrigin()
+    local modifier_name
+    if tower.class == "blacksmith_tower" then
+        modifier_name = "modifier_fire_up"
+    elseif tower.class == "well_tower" then
+        modifier_name = "modifier_spring_forward"
+    else
+        return
+    end
+
+    local buffed = {}
+    local towers = FindUnitsInRadius(tower:GetTeamNumber(), origin, nil, 1000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
+    for _,tower in pairs(towers) do
+        if tower:HasModifier(modifier_name) then
+            table.insert(buffed, tower)
+        end
+    end
+
+    if #buffed > 0 then
+        local target = buffed[math.random(1,#buffed)]
+        target:RemoveModifierByName(modifier_name)
+    end
+end
