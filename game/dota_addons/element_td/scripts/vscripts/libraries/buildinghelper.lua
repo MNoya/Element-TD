@@ -1,4 +1,4 @@
-BH_VERSION = "1.0.3"
+BH_VERSION = "1.0.4"
 
 if not BuildingHelper then
     BuildingHelper = class({})
@@ -1739,7 +1739,7 @@ function BuildingHelper:AdvanceQueue(builder)
         builder.work = work
 
         -- Move towards the point at cast range
-        builder:MoveToPosition(location)
+        ExecuteOrderFromTable({ UnitIndex = builder:GetEntityIndex(), OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION, Position = location, Queue = false}) 
         builder.move_to_build_timer = Timers:CreateTimer(0.03, function()
             builder:MoveToPosition(location)
             if not IsValidEntity(builder) or not builder:IsAlive() then return end
