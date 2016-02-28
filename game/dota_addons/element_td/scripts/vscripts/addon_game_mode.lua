@@ -87,6 +87,7 @@ local requires =
     "creeps/fast",
     "creeps/image",
     "creeps/swarm",
+    "creeps/regen",
     "creeps/boss",
 
     -- misc

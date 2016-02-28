@@ -32,9 +32,9 @@
 	    "ModelScale"        "0.9"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
-	    "ScriptClass"    "CreepSwarm"
+	    "ScriptClass"    "CreepRegen"
 	    "Ability1"        "dark_armor"
-	    "Ability2"        "creep_ability_swarm"
+	    "Ability2"        "creep_ability_regen"
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_pudge
@@ -272,9 +272,9 @@
 	    "ModelScale"        "0.7"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
-	    "ScriptClass"    "CreepSwarm"
+	    "ScriptClass"    "CreepRegen"
 	    "Ability1"        "fire_armor"
-	    "Ability2"        "creep_ability_swarm"
+	    "Ability2"        "creep_ability_regen"
 	    "Ability3"        "hellsworn_particles"
 	}
 	"crimson_demon"
@@ -950,9 +950,9 @@
 	    "ModelScale"        "1"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
-	    "ScriptClass"    "CreepSwarm"
+	    "ScriptClass"    "CreepRegen"
 	    "Ability1"        "composite_armor"
-	    "Ability2"        "creep_ability_swarm"
+	    "Ability2"        "creep_ability_regen"
 	}
 	"goblin_shredder"
 	{
@@ -2091,9 +2091,9 @@
 	    "ModelScale"        "1"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
-	    "ScriptClass"    "CreepSwarm"
+	    "ScriptClass"    "CreepRegen"
 	    "Ability1"        "light_armor"
-	    "Ability2"        "creep_ability_swarm"
+	    "Ability2"        "creep_ability_regen"
 	}
 	"spirit_bear"
 	{
@@ -2127,9 +2127,9 @@
 	    "ModelScale"        "0.8"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
-	    "ScriptClass"    "CreepSwarm"
+	    "ScriptClass"    "CreepRegen"
 	    "Ability1"        "earth_armor"
-	    "Ability2"        "creep_ability_swarm"
+	    "Ability2"        "creep_ability_regen"
 	}
 	"stoneboar"
 	{
@@ -2315,9 +2315,9 @@
 	    "ModelScale"        "1"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
-	    "ScriptClass"    "CreepSwarm"
+	    "ScriptClass"    "CreepRegen"
 	    "Ability1"        "nature_armor"
-	    "Ability2"        "creep_ability_swarm"
+	    "Ability2"        "creep_ability_regen"
 	}
 	"tribal_priest"
 	{
@@ -2501,9 +2501,9 @@
 	    "ModelScale"        "1.0"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
-	    "ScriptClass"    "CreepSwarm"
+	    "ScriptClass"     "CreepRegen"
 	    "Ability1"        "water_armor"
-	    "Ability2"        "creep_ability_swarm"
+	    "Ability2"        "creep_ability_regen"
 	}
 	"wolf"
 	{

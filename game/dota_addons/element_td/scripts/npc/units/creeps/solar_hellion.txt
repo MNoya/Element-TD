@@ -30,7 +30,7 @@
     "ModelScale"        "1"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
-    "ScriptClass"    "CreepSwarm"
+    "ScriptClass"    "CreepRegen"
     "Ability1"        "light_armor"
-    "Ability2"        "creep_ability_swarm"
+    "Ability2"        "creep_ability_regen"
 }

@@ -543,6 +543,34 @@
 		}
 	}
 	//============================================================//
+	// Creep Ability: Regeneration								  //
+	//============================================================//
+	"creep_ability_regen"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"enchantress_natures_attendants"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"2"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"creep_regen_modifier"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+			}
+		}
+	}
+	//============================================================//
 	// Creep Ability: Swarm										  //
 	//============================================================//
 	"creep_ability_swarm"
