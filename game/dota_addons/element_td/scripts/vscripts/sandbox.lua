@@ -51,9 +51,15 @@ function Sandbox:Enable(event)
     ElementTD:PrecacheAll()
     Notifications:ClearTop(playerID)
     Notifications:Top(playerID, {
-        text = {text = "#sandbox_enable", wave = waveNumber}, 
-        class = "WaveMessage", 
-        duration = duration
+        text = {text = "#sandbox_enable"}, 
+        class = "SandboxEnable", 
+        duration = 10
+    })
+
+    Notifications:Bottom(playerID, {
+        text = {text = "#sandbox_wait"}, 
+        class = "SandboxEnable", 
+        duration = 10
     })
 end
 

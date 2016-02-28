@@ -188,5 +188,6 @@
         "sandbox_speedup"       "Speed Up"
         "sandbox_pause"         "Pause"
         "sandbox_quit"          "End Game"
+        "sandbox_wait"          "Please wait! Loading assets..."
     }
 }
