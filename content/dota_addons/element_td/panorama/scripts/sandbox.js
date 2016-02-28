@@ -1,3 +1,5 @@
+"use strict";
+
 var free_towers = $("#free_towers")
 var god_mode = $("#god_mode")
 
@@ -25,14 +27,28 @@ function StopWavePressed() {
     GameEvents.SendCustomGameEventToServer( "sandbox_stop_wave", {} );
 }
 
+function HoverEnableSandbox() {
+    $("#New").AddClass('hide')
+    if ($("#SandboxPanel").BHasClass('hide'))
+        $.DispatchEvent("DOTAShowTitleTextTooltip", $("#SandboxEnableButton"), "#sandbox_mode_enable", "#sandbox_mode_tooltip");
+    else
+        $.DispatchEvent("DOTAShowTitleTextTooltip", $("#SandboxEnableButton"), "#sandbox_enable", "#sandbox_mode_on");
+}
+
 function EnableSandbox() {
     GameEvents.SendCustomGameEventToServer( "sandbox_enable", {} );
     $("#SandboxPanel").RemoveClass('hide')
+    $("#CloseButton").AddClass('hide')
     $("#EnableSandboxText").style['color'] = 'gold;'
+    $.DispatchEvent("DOTAShowTitleTextTooltip", $("#SandboxEnableButton"), "#sandbox_enable", "#sandbox_mode_on");
+}
+
+function Dismiss() {
+    $("#SandboxEnablePanel").AddClass('hide')
 }
 
 function SandboxMakeVisible() {
-    $("#SandboxEnableButton").RemoveClass('hide')
+    $("#SandboxEnablePanel").RemoveClass('hide')
 }
 
 (function () {
