@@ -757,6 +757,8 @@ function ElementTD:OnPlayerChat(keys)
         local command = input[1]
         if PLAYER_CODES[command] then
             PLAYER_CODES[command](playerID, input[2])
+        elseif command == "-dev" and Sandbox:IsDeveloper(playerID) then
+            CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "sandbox_mode_visible", {})
         end
     end
 end

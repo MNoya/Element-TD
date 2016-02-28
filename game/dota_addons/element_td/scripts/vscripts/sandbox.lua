@@ -31,7 +31,7 @@ end
 
 -- The sandbox enable button will only be visible in the test version, or on single player/developer presence.
 function Sandbox:CheckPlayer(playerID)
-    if not IsDedicatedServer() or PlayerResource:GetPlayerCount() == 1 or Sandbox:IsDeveloper(playerID) then
+    if not IsDedicatedServer() or PlayerResource:GetPlayerCount() == 1 then
         CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "sandbox_mode_visible", {})
     end
 end
