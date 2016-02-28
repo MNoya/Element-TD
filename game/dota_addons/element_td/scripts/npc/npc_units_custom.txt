@@ -10553,7 +10553,7 @@
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
 	    "AttackRate"        "0.66"
-	    "ProjectileModel"        "particles/units/heroes/hero_ogre_magi/ogre_magi_ignite.vpcf"
+	    "ProjectileModel"        "particles/custom/towers/flamethrower/attack.vpcf"
 	    "ProjectileSpeed"        "2000"
 	    
 	    "Model"             "models/heroes/batrider/batrider.vmdl"
@@ -10646,7 +10646,7 @@
 	    "AttackRange"        "700"
 	    "AttackAcquisitionRange"        "700"
 	    "AttackRate"        "0.66"
-	    "ProjectileModel"        "particles/units/heroes/hero_ogre_magi/ogre_magi_ignite.vpcf"
+	    "ProjectileModel"        "particles/custom/towers/flamethrower/attack.vpcf"
 	    "ProjectileSpeed"        "2500"
 	
 	    "Model"             "models/heroes/batrider/batrider.vmdl"
