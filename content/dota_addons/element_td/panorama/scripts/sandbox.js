@@ -4,6 +4,7 @@ var free_towers = $("#free_towers")
 var god_mode = $("#god_mode")
 var speed_up = $("#speed_up")
 var pause = $("#pause")
+var wave = $("#WaveNumber")
 var max_level = 3;
 var min_level = 0;
 
@@ -63,6 +64,14 @@ function ValueChange(name, amount)
     }
 
     GameEvents.SendCustomGameEventToServer( "sandbox_set_element", {element : name, level : panel.text} );
+}
+
+function SetWave() {
+    GameEvents.SendCustomGameEventToServer( "sandbox_set_wave", {"wave": wave.text || "-1"} );
+}
+
+function SpawnWave() {
+    GameEvents.SendCustomGameEventToServer( "sandbox_spawn_wave", {"wave": wave.text || "-1"} );
 }
 
 function ClearWavePressed() {

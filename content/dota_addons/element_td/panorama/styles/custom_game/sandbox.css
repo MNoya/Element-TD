@@ -35,7 +35,7 @@
 {
     flow-children: right;
     horizontal-align: left;
-    height: 550px;
+    height: 480px;
     width: 350px;
     font-size: 16;
     background-color: #181818dd;
@@ -214,8 +214,6 @@
     visibility:visible;
 }
 
-
-
 .ControlPanelContainer #Maximized #MinimizeButton
 {
     flow-children: down;
@@ -228,28 +226,9 @@
     visibility:visible;
 }
 
-
-.ControlPanelContainer #Maximized #MinimizeButton Label
-{
-    font-size: 18;
-    color: #666666;
-}
-
 #MinimizeButton
 {
     horizontal-align: right;
-}
-
-#MinimizeButton Label
-{
-    font-size: 16;
-    color: #666666;
-}
-
-#MinimizeButton:hover Label
-{
-    font-size: 16;
-    color: #aaaaaa;
 }
 
 .Category
@@ -835,6 +814,20 @@
   color: #CCCCCC;
 }
 
+#SandboxTitle
+{
+    font-size: 20px;
+    margin: 3px 3px 3px 3px;
+    color: #EEEEEE;
+}
+
+#SandboxTitle, #ResourcesTitle, #WavesTitle
+{
+    text-transform: uppercase;
+    text-align: center;
+    horizontal-align: center;
+}
+
 #SandboxEnableButton
 {
     margin-left: 50px;
@@ -916,4 +909,49 @@
     {
         text-shadow: 0px 0px 3px 1.5 #FF0000;
     }
+}
+
+#WaveNumber
+{
+    width: 36px;
+    height: 34px;
+    padding-right: 0px;
+    padding-top: 5px;
+    padding-left: 6px;
+    margin-top: 4px;
+    font-size: 20px;
+}
+
+#SetWave
+{
+    width: 139px;
+}
+
+#SpawnWave
+{
+    width: 139px;
+}
+
+#Plus
+{
+    font-size: 14px;
+    color: #CCCCCC;
+    font-weight: bold;
+    text-align: center;
+    horizontal-align: center;
+    vertical-align: center;
+    margin: 0 0 0 0;
+    width: 18px;
+}
+
+#Minus
+{
+    font-size: 14px;
+    color: #CCCCCC;
+    font-weight: bold;
+    text-align: center;
+    horizontal-align: center;
+    vertical-align: center;
+    margin: 0 0 0 0;
+    width: 18px;
 }

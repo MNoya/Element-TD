@@ -79,7 +79,7 @@ function StartBreakTime(playerID, breakTime, rush_wave)
     hero:RemoveModifierByName("modifier_silence")
 
     -- let's figure out how long the break is
-    local wave = GetPlayerData(playerID).nextWave
+    local wave = playerData.nextWave
     if GameSettings:GetGamemode() == "Competitive" and GameSettings:GetEndless() == "Normal" then
         wave = CURRENT_WAVE
     elseif rush_wave then
@@ -113,7 +113,7 @@ function StartBreakTime(playerID, breakTime, rush_wave)
     if hero:IsAlive() then
         -- Update portal
         local sector = playerData.sector + 1
-        ShowPortalForSector(sector, wave, breakTime, playerID)
+        ShowPortalForSector(sector, wave, playerID)
     
         -- Grant Lumber and Essence to all players the moment the next wave is set
         if WaveGrantsLumber(wave-1) then
@@ -371,7 +371,7 @@ function WaveGrantsEssence( wave )
     end
 end
 
-function ShowPortalForSector(sector, wave, time, playerID)
+function ShowPortalForSector(sector, wave, playerID)
     local element = string.gsub(creepsKV[WAVE_CREEPS[wave]].Ability1, "_armor", "")
     local portal = SectorPortals[sector]
     local origin = portal:GetAbsOrigin()

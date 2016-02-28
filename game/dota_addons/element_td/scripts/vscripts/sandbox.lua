@@ -165,19 +165,61 @@ end
 function Sandbox:SetWave(event)
     local playerID = event.PlayerID
     local waveNumber = event.wave
+    local playerData = GetPlayerData(playerID)
 
-    Sandbox:StopWave(playerID)
-    GetPlayerData(playerID).nextWave = tonumber(waveNumber)
-    GetPlayerData(playerID).completedWaves = tonumber(waveNumber) - 1
+    if wave == "-1" then
+        waveNumber = playerData.nextWave
+    end
+    waveNumber = tonumber(waveNumber)
+
+    if waveNumber > WAVE_COUNT then
+        waveNumber = WAVE_COUNT
+    end
+
+    Sandbox:StopWave({PlayerID=playerID})
+
+    CURRENT_WAVE = waveNumber
+    playerData.nextWave = waveNumber
+    playerData.completedWaves = waveNumber - 1
+
+    StartBreakTime(playerID, GetPlayerDifficulty(playerID):GetWaveBreakTime(playerData.nextWave))
+
+    UpdateWaveInfo(playerID, playerData.nextWave-1)
+    UpdateWaveInfo(playerID, playerData.nextWave)
 end
 
 function Sandbox:SpawnWave(event)
     local playerID = event.PlayerID
     local waveNumber = event.wave
-    waveNumber = waveNumber or GetPlayerData(playerID).nextWave
+    local playerData = GetPlayerData(playerID)
 
-    Sandbox:StopWave(playerID)
-    SpawnWaveForPlayer(playerID, tonumber(waveNumber))
+    if wave == "-1" then
+        waveNumber = playerData.nextWave
+    end
+    waveNumber = tonumber(waveNumber)
+
+    if waveNumber > WAVE_COUNT then
+        waveNumber = WAVE_COUNT
+    end
+
+    CURRENT_WAVE = waveNumber
+    Sandbox:StopWave({PlayerID=playerID})
+
+    playerData.nextWave = waveNumber
+    playerData.completedWaves = waveNumber - 1
+
+    if waveNumber == WAVE_COUNT and not EXPRESS_MODE then
+        CURRENT_BOSS_WAVE = 1
+        ShowBossWaveMessage(playerID, CURRENT_BOSS_WAVE)
+    else
+        ShowWaveSpawnMessage(playerID, waveNumber)
+    end
+
+    SpawnWaveForPlayer(playerID, waveNumber)
+    ShowPortalForSector(playerData.sector+1, waveNumber, playerID)
+
+    UpdateWaveInfo(playerID, playerData.nextWave-1)
+    UpdateWaveInfo(playerID, playerData.nextWave)
 end
 
 function Sandbox:StopWave(event)
@@ -198,6 +240,8 @@ function Sandbox:ClearWave(event)
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     local playerData = GetPlayerData(playerID)
     local wave = playerData.waveObject
+    wave.endTime = GameRules:GetGameTime()
+    wave.endSpawnTime = wave.endSpawnTime or GameRules:GetGameTime()
     local creeps = wave.creeps
 
     if creeps then
@@ -209,8 +253,21 @@ function Sandbox:ClearWave(event)
         end
     end
 
+    for _,object in pairs(playerData.waveObjects) do
+        object.endTime = GameRules:GetGameTime()
+        object.endSpawnTime = object.endSpawnTime or GameRules:GetGameTime()
+        for index,_ in pairs(object.creeps) do
+            local creep = EntIndexToHScript(index)
+            if IsValidEntity(creep) then
+                creep:Kill(nil, hero)
+            end
+        end
+    end
+
     local elemental = playerData.elementalUnit
     if elemental then elemental:Kill(nil, hero) end
+
+    Sandbox:StopWave({PlayerID=playerID})
 
     -- Complete the wave
     wave.endSpawnTime = GameRules:GetGameTime()

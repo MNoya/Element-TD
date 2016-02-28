@@ -21,11 +21,11 @@
       <Panel class="ControlPanelContainer">
       <Panel id="Maximized">
         <Panel id="MinimizeButton">
-          <Label text="#sandbox_mode" />
+          <Label id="SandboxTitle" text="#sandbox_mode" />
         </Panel>
 
         <Panel class="Category">
-          <Label text="#sandbox_resources"/>
+          <Label id="ResourcesTitle" text="#sandbox_resources"/>
           
           <Panel class="Row">
             <ToggleButton id="free_towers" class="DemoButton" onactivate="ToggleFreeTowers()">
@@ -87,10 +87,10 @@
             </Panel>
             <Panel class="PlusMinus">
               <Button class="SplashButton Plus" onactivate="ValueChange('dark', 1);">
-                <Label text="+"/>
+                <Label id="Plus" text="+"/>
               </Button>
               <Button class="SplashButton Minus" onactivate="ValueChange('dark', -1);">
-                <Label text="-"/>
+                <Label id="Minus" text="-"/>
               </Button>
             </Panel>
 
@@ -100,10 +100,10 @@
             </Panel>
             <Panel class="PlusMinus">
               <Button class="SplashButton Plus" onactivate="ValueChange('water', 1);">
-                <Label text="+"/>
+                <Label id="Plus" text="+"/>
               </Button>
               <Button class="SplashButton Minus" onactivate="ValueChange('water', -1);">
-                <Label text="-"/>
+                <Label id="Minus" text="-"/>
               </Button>
             </Panel>
 
@@ -113,10 +113,10 @@
             </Panel>
             <Panel class="PlusMinus">
               <Button class="SplashButton Plus" onactivate="ValueChange('fire', 1);">
-                <Label text="+"/>
+                <Label id="Plus" text="+"/>
               </Button>
               <Button class="SplashButton Minus" onactivate="ValueChange('fire', -1);">
-                <Label text="-"/>
+                <Label id="Minus" text="-"/>
               </Button>
             </Panel>
 
@@ -126,10 +126,10 @@
             </Panel>
             <Panel class="PlusMinus">
               <Button class="SplashButton Plus" onactivate="ValueChange('nature', 1);">
-                <Label text="+"/>
+                <Label id="Plus" text="+"/>
               </Button>
               <Button class="SplashButton Minus" onactivate="ValueChange('nature', -1);">
-                <Label text="-"/>
+                <Label id="Minus" text="-"/>
               </Button>
             </Panel>
 
@@ -139,10 +139,10 @@
             </Panel>
             <Panel class="PlusMinus">
               <Button class="SplashButton Plus" onactivate="ValueChange('earth', 1);">
-                <Label text="+"/>
+                <Label id="Plus" text="+"/>
               </Button>
               <Button class="SplashButton Minus" onactivate="ValueChange('earth', -1);">
-                <Label text="-"/>
+                <Label id="Minus" text="-"/>
               </Button>
             </Panel>
 
@@ -151,12 +151,13 @@
 
         </Panel>
         <Panel class="Category">
-          <Label text="#sandbox_waves"/>
+          <Label id="WavesTitle" text="#sandbox_waves"/>
           <Panel class="Row">
-            <Button class="DemoButton" onactivate="FireCustomGameEvent_Str( SpawnEnemyButtonPressed )">
+            <Button id="SetWave" class="DemoButton" onactivate="SetWave()">
               <Label text="#sandbox_set_wave"/>
             </Button>
-            <Button class="DemoButton" onactivate="FireCustomGameEvent_Str( SpawnEnemyButtonPressed )">
+            <TextEntry id="WaveNumber" class="NumEntry" maxchars="2" placeholder="1" oninputsubmit="SpawnWave()"/>
+            <Button id="SpawnWave" class="DemoButton" onactivate="SpawnWave()">
               <Label text="#sandbox_spawn_wave"/>
             </Button>
           </Panel>
