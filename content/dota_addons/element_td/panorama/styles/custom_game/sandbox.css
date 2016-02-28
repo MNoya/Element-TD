@@ -118,7 +118,7 @@
 .QuitPausePanel .DemoButton
 {
     height: 100%;
-    width: 32%;
+    width: 48%;
 }
 
 .Category .QuitPausePanel
@@ -137,7 +137,7 @@
 {
     background-color: gradient( linear, 0% 0%, 0% 100%, from( #441111), to( #662222 ) );
     height: 100%;
-    width: 32%;
+    width: 48%;
 
     margin-top: 3px;
     margin-bottom: 3px;

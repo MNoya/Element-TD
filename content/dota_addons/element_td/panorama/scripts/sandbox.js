@@ -2,7 +2,6 @@
 
 var free_towers = $("#free_towers")
 var god_mode = $("#god_mode")
-var speed_up = $("#speed_up")
 var pause = $("#pause")
 var wave = $("#WaveNumber")
 var max_level = 3;
@@ -103,9 +102,9 @@ function Pause() {
     GameEvents.SendCustomGameEventToServer( "sandbox_pause", {"state": pause.checked} );
 }
 
-function SpeedUp() {
+/*function SpeedUp() {
     GameEvents.SendCustomGameEventToServer( "sandbox_speed_up", {"state": speed_up.checked} );
-}
+}*/
 
 function EndGame() {
     GameEvents.SendCustomGameEventToServer( "sandbox_end", {} );

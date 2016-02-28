@@ -173,9 +173,9 @@
         <Panel class="Category">
           <Label text="#sandbox_playback"/>
           <Panel class="QuitPausePanel">
-            <ToggleButton id="speed_up" class="DemoButton" onactivate="SpeedUp()">
+            <!--<ToggleButton id="speed_up" class="DemoButton" onactivate="SpeedUp()">
               <Label text="#sandbox_speedup"/>
-            </ToggleButton>
+            </ToggleButton>-->
             <ToggleButton id="pause" class="DemoButton" onactivate="Pause()">
               <Label text="#sandbox_pause"/>
             </ToggleButton>

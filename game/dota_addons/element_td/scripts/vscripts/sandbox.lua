@@ -31,7 +31,7 @@ end
 
 -- The sandbox enable button will only be visible in the test version, or on single player/developer presence.
 function Sandbox:CheckPlayer(playerID)
-    if not IsDedicatedServer() or PlayerResource:GetPlayerCount() == 1 then
+    if Convars:GetBool("developer") or PlayerResource:GetPlayerCount() == 1 then
         CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "sandbox_mode_visible", {})
     end
 end
@@ -47,7 +47,6 @@ function Sandbox:Enable(event)
         return
     end
 
-    SendToServerConsole("sv_cheats 1")
     ElementTD:PrecacheAll()
     Notifications:ClearTop(playerID)
     Notifications:Top(playerID, {
