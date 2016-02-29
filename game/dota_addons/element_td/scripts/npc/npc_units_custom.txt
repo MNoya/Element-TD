@@ -1296,11 +1296,12 @@
 	        "AttachWearables" // Default npc_dota_hero_omniknight
 	        {
 	            "1" { "ItemDef" "45" } // Omniknight's Head
-	            "2" { "ItemDef" "562" } // Omniknight's Miscellaneous
-	            "3" { "ItemDef" "43" } // Omniknight's Cape
-	            "4" { "ItemDef" "46" } // Omniknight's Hair
-	            "5" { "ItemDef" "13" } // Omniknight's Bracers
-	            "6" { "ItemDef" "42" } // Omniknight's Shoulders
+	            "2" { "ItemDef" "4317" } // Holy Words of the Hierophant
+	            "3" { "ItemDef" "4485" } // Ornate Mantle of Renewed Faith
+	            "4" { "ItemDef" "4315" } // Chestplate of the Hierophant
+	            "5" { "ItemDef" "4317" } // Holy Words of the Hierophant
+	            "6" { "ItemDef" "4267" } // Bracer of the Purist Champion
+	            "7" { "ItemDef" "46" } // Omniknight's Hair
 	        }
 	    }
 	}
