@@ -312,7 +312,7 @@ end
 function ScoringObject:GetCreepOrderBonus()
 	local bonus = 0
 	if GameSettings.order == "Chaos" then
-		bonus = 0.15 -- x1.15
+		bonus = 0.10 -- x1.10
 	end
 	return bonus
 end
@@ -321,7 +321,7 @@ end
 function ScoringObject:GetEndlessBonus()
 	local bonus = 0
 	if GameSettings:GetEndless() == "Endless" then
-		bonus = 0.5 -- x1.5
+		bonus = 0.25 -- x1.25
 	end
 	return bonus
 end
