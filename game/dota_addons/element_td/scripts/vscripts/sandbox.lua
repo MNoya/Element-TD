@@ -298,7 +298,10 @@ end
 
 function Sandbox:End(event)
     local playerID = event.PlayerID
+    local playerData = GetPlayerData(playerID)
 
+    playerData.completedWaves = WAVE_COUNT
+    ElementTD:EndGameForPlayer( playerID )
     GameRules:SetGameWinner(PlayerResource:GetTeam(playerID))
 end
 
