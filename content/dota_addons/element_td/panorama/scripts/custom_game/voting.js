@@ -344,11 +344,13 @@ function GetBounty(difficultyName, bEndless, bExpress) {
 
 function GetScore(difficultyName, bEndless, bChaos) {
     var scoring = scoreMultipliers[difficultyName]
+    var bonus = 1
     if (bEndless)
-        scoring *= (1 + scoreMultipliers['endless'])
+        bonus += scoreMultipliers['endless']
     if (bChaos)
-        scoring *= (1 + scoreMultipliers['chaos'])
-    var multi = +(scoring).toFixed(3) // This will remove the trailing zeros
+        bonus += scoreMultipliers['chaos']
+
+    var multi = bonus*(scoring).toFixed(3) // This will remove the trailing zeros
     return "Score Multiplier: x" + multi
 }    
 
