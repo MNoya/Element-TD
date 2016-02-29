@@ -2658,7 +2658,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"reset_time"		"4"
+				"reset_time"		"3"
 			}
 			"02"
 			{
