@@ -565,6 +565,9 @@
 		{
 			"creep_regen_modifier"
 			{
+				"EffectName"	"particles/generic_gameplay/rune_regen_owner.vpcf"
+				"EffectAttachType"	"follow_origin"
+	
 				"IsHidden"	"1"
 				"Passive"	"1"
 			}
