@@ -70,70 +70,67 @@ function Wave:SpawnWave()
 	self.leaks = 0
 	self.kills = 0
 
-	self.spawnTimer = Timers:CreateTimer("SpawnWave"..self.waveNumber..self.playerID, {
-		endTime = 0.5,
-		callback = function()
-			if playerData.health == 0 then
-				return nil
-			end
-			local entity = SpawnEntity(WAVE_CREEPS[self.waveNumber], self.playerID, startPos)
-			if entity then
-				self:RegisterCreep(entity:entindex())
-				entity:SetForwardVector(Vector(0, -1, 0))
-				entity:CreatureLevelUp(self.waveNumber-entity:GetLevel())
-				entity.waveObject = self
-				entitiesSpawned = entitiesSpawned + 1
+	self.spawnTimer = Timers:CreateTimer(0.5, function()
+		if playerData.health == 0 then
+			return nil
+		end
+		local entity = SpawnEntity(WAVE_CREEPS[self.waveNumber], self.playerID, startPos)
+		if entity then
+			self:RegisterCreep(entity:entindex())
+			entity:SetForwardVector(Vector(0, -1, 0))
+			entity:CreatureLevelUp(self.waveNumber-entity:GetLevel())
+			entity.waveObject = self
+			entitiesSpawned = entitiesSpawned + 1
 
-				-- set bounty values
-				local bounty = difficulty:GetBountyForWave(self.waveNumber)
-				entity:SetMaximumGoldBounty(bounty)
-				entity:SetMinimumGoldBounty(bounty)
+			-- set bounty values
+			local bounty = difficulty:GetBountyForWave(self.waveNumber)
+			entity:SetMaximumGoldBounty(bounty)
+			entity:SetMinimumGoldBounty(bounty)
 
-				-- set max health based on wave
-				local health = WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier()
-				entity:SetMaxHealth(health)
-				entity:SetBaseMaxHealth(health)
+			-- set max health based on wave
+			local health = WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier()
+			entity:SetMaxHealth(health)
+			entity:SetBaseMaxHealth(health)
+			entity:SetHealth(entity:GetMaxHealth())
+
+			-- Boss mode
+			if self.waveNumber == WAVE_COUNT and not EXPRESS_MODE then
+				local bossHealth = WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier() * (math.pow(1.2,playerData.bossWaves))
+				entity:SetMaxHealth(bossHealth)
+				entity:SetBaseMaxHealth(bossHealth)
 				entity:SetHealth(entity:GetMaxHealth())
+			end
 
-				-- Boss mode
-				if self.waveNumber == WAVE_COUNT and not EXPRESS_MODE then
-					local bossHealth = WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier() * (math.pow(1.2,playerData.bossWaves))
-					entity:SetMaxHealth(bossHealth)
-					entity:SetBaseMaxHealth(bossHealth)
-					entity:SetHealth(entity:GetMaxHealth())
+			entity.scriptObject:OnSpawned() -- called the OnSpawned event
+
+			CreateMoveTimerForCreep(entity, sector)
+			if entitiesSpawned == CREEPS_PER_WAVE then
+				self.endSpawnTime = GameRules:GetGameTime()
+				ClosePortalForSector(self.playerID, sector)
+
+				-- Endless waves are started as soon as the wave finishes spawning
+				if GameSettings:GetEndless() == "Endless" then
+					playerData.nextWave = playerData.nextWave + 1
+
+					-- Boss Waves
+			        if playerData.nextWave > WAVE_COUNT and not EXPRESS_MODE then
+			        	playerData.bossWaves = playerData.bossWaves + 1
+			            Log:info("Spawning boss wave " .. playerData.bossWaves .. " for ["..self.playerID.."] ".. playerData.name)
+			            ShowBossWaveMessage(self.playerID, playerData.bossWaves + 1)
+			            SpawnWaveForPlayer(self.playerID, WAVE_COUNT) -- spawn dat boss wave
+			            return nil
+			        elseif playerData.nextWave > WAVE_COUNT and EXPRESS_MODE then
+			        	return nil
+			        end
+					StartBreakTime(self.playerID, GetPlayerDifficulty(self.playerID):GetWaveBreakTime(playerData.nextWave))
+
+					-- Update UI for dead players
+					StartBreakTime_DeadPlayers(self.playerID, GetPlayerDifficulty(self.playerID):GetWaveBreakTime(playerData.nextWave), playerData.nextWave)
 				end
-
-				entity.scriptObject:OnSpawned() -- called the OnSpawned event
-
-				CreateMoveTimerForCreep(entity, sector)
-				if entitiesSpawned == CREEPS_PER_WAVE then
-					self.endSpawnTime = GameRules:GetGameTime()
-					ClosePortalForSector(self.playerID, sector)
-
-					-- Endless waves are started as soon as the wave finishes spawning
-					if GameSettings:GetEndless() == "Endless" then
-						playerData.nextWave = playerData.nextWave + 1
-
-						-- Boss Waves
-				        if playerData.nextWave > WAVE_COUNT and not EXPRESS_MODE then
-				        	playerData.bossWaves = playerData.bossWaves + 1
-				            Log:info("Spawning boss wave " .. playerData.bossWaves .. " for ["..self.playerID.."] ".. playerData.name)
-				            ShowBossWaveMessage(self.playerID, playerData.bossWaves + 1)
-				            SpawnWaveForPlayer(self.playerID, WAVE_COUNT) -- spawn dat boss wave
-				            return nil
-				        elseif playerData.nextWave > WAVE_COUNT and EXPRESS_MODE then
-				        	return nil
-				        end
-						StartBreakTime(self.playerID, GetPlayerDifficulty(self.playerID):GetWaveBreakTime(playerData.nextWave))
-
-						-- Update UI for dead players
-						StartBreakTime_DeadPlayers(self.playerID, GetPlayerDifficulty(self.playerID):GetWaveBreakTime(playerData.nextWave), playerData.nextWave)
-					end
-					return nil
-				else
-					return 0.5
-				end
+				return nil
+			else
+				return 0.5
 			end
 		end
-	})
+	end)
 end
