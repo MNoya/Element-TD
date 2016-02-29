@@ -46,7 +46,7 @@
     "DamageType"        "water"
     "ScriptClass"        "TidalTower"
     "TowerType"        "Normal"
-    "BuffPriority"          "3"
+    "BuffPriority"              "2"
     "HasAbilityDesc"        "1"
     "AttackRange"        "900"
     "AttackAcquisitionRange"        "900"

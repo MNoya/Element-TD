@@ -48,7 +48,7 @@
     "DamageType"        "light"
     "ScriptClass"        "HailTower"
     "TowerType"        "Normal"
-    "BuffPriority"          "7"
+    "BuffPriority"              "6"
     "HasAbilityDesc"        "1"
     "AttackRange"        "1500"
     "AttackAcquisitionRange"        "1600"

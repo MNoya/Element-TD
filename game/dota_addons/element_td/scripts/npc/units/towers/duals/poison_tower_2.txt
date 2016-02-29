@@ -46,7 +46,7 @@
     "DamageType"        "dark"
     "ScriptClass"        "PoisonTower"
     "TowerType"        "Normal"
-    "BuffPriority"          "6"
+    "BuffPriority"              "7"
     "HasAbilityDesc"        "1"
     "AttackRange"        "900"
     "AttackAcquisitionRange"        "900"
