@@ -419,8 +419,6 @@ function ElementTD:OnUnitSpawned(keys)
             summoner:SetControllableByPlayer(playerID, true)
             summoner:SetAngles(0, 270, 0)
             summoner:AddItem(CreateItem("item_buy_pure_essence_disabled", nil, nil))
-            summoner:AddItem(CreateItem("item_random", nil, nil))
-            Timers:CreateTimer(0.1, function() summoner:SwapItems(1, 3) end)
             summoner.icon = CreateUnitByName("elemental_summoner_icon", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber())
             playerData.summoner = summoner
 

@@ -181,15 +181,16 @@ function FinalizeVotes()
 	GameSettings:SetCreepOrder(order)
 	GameSettings:SetElementOrder(elements)
 
-	-- If the Random vote didn't win, apply Random to every player that selected it anyway. 
-	-- They are also able to do this by typing -random before picking an element
-	--[[if elements == "AllPick" then
+	-- If the Random vote didn't win, add the EnableRandom item
+	if elements == "AllPick" then
 		for _, playerID in pairs(playerIDs) do
-			if PLAYER_RANDOM_CHOICES[playerID] == 1 then
-				GameSettings:EnableRandomForPlayer(playerID)
-			end
+			local summoner = GetPlayerData(playerID).summoner
+			if summoner then
+				summoner:AddItem(CreateItem("item_random", nil, nil))
+            	Timers:CreateTimer(0.1, function() summoner:SwapItems(1, 3) end)
+            end
 		end
-	end]]
+	end
 
 	for k, plyID in pairs(playerIDs) do
 		local ply = PlayerResource:GetPlayer(plyID)
