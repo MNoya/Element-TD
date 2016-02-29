@@ -46,7 +46,7 @@
     "DamageType"        "nature"
     "ScriptClass"        "LifeTower"
     "TowerType"        "Normal"
-    "BuffPriority"          "6"
+    "BuffPriority"              "7"
     "HasAbilityDesc"        "1"
     "AttackRange"        "1150"
     "AttackAcquisitionRange"        "1150"

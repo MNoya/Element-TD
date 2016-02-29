@@ -42,7 +42,7 @@
     "DamageType"        "fire"
     "ScriptClass"        "ElectricityTower"
     "TowerType"        "Normal"
-    "BuffPriority"          "2"
+    "BuffPriority"              "3"
     "HasAbilityDesc"        "1"
     "AttackRange"        "1150"
     "AttackAcquisitionRange"        "1150"

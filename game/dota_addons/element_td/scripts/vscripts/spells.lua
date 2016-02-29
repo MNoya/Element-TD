@@ -143,6 +143,7 @@ function SellTowerCast(keys)
 
 		-- Kills and hide the tower, so that its running timers can still execute until it gets removed by the engine
 		tower:AddEffects(EF_NODRAW)
+		DrawTowerGrid(tower)
 		tower:ForceKill(true)
 		playerData.towers[tower:entindex()] = nil -- remove this tower index from the player's tower list
 
@@ -423,7 +424,8 @@ end
 function ToggleGrid( event )
 	local item = event.ability
 	local playerID = event.caster:GetPlayerOwnerID()
-	local sector = GetPlayerData(playerID).sector + 1
+	local playerData = GetPlayerData(playerID)
+	local sector = playerData.sector + 1
 	item.enabled = not item.enabled
 
 	if item.enabled then
@@ -464,4 +466,36 @@ function DrawGrid(x, y, color, playerID)
     ParticleManager:SetParticleControl(particle, 3, Vector(90,0,0))
 
 	return particle
+end
+
+function DrawTowerGrid(tower)
+	local playerID = tower:GetPlayerOwnerID()
+	local playerData = GetPlayerData(playerID)
+	if not playerData.toggle_grid_item or not playerData.toggle_grid_item.enabled then
+		return
+	end
+
+	local location = tower:GetAbsOrigin()
+	local originX = GridNav:WorldToGridPosX(location.x)
+    local originY = GridNav:WorldToGridPosY(location.y)
+    local boundX1 = originX + 1
+    local boundX2 = originX - 1
+    local boundY1 = originY + 1
+    local boundY2 = originY - 1
+
+    local lowerBoundX = math.min(boundX1, boundX2)
+    local upperBoundX = math.max(boundX1, boundX2)
+    local lowerBoundY = math.min(boundY1, boundY2)
+    local upperBoundY = math.max(boundY1, boundY2)
+
+    -- Adjust even size
+    upperBoundX = upperBoundX-1
+    upperBoundY = upperBoundY-1
+
+    for y = lowerBoundY, upperBoundY do
+        for x = lowerBoundX, upperBoundX do
+			local particle = DrawGrid(x, y, Vector(255,255,255), playerID)
+			table.insert(playerData.toggle_grid_item.particles, particle)
+        end
+    end
 end

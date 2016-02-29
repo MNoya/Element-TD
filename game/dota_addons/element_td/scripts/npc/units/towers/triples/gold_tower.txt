@@ -48,7 +48,7 @@
     "DamageType"        "earth"
     "ScriptClass"        "GoldTower"
     "TowerType"        "Normal"
-    "BuffPriority"          "7"
+    "BuffPriority"              "6"
     "HasAbilityDesc"        "1"
     "AttackRange"        "1150"
     "AttackAcquisitionRange"        "1150"

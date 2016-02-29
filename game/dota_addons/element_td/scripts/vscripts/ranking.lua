@@ -14,6 +14,7 @@ RankingObject = createClass({
 			self.rank = 0
 			self.percentile = 0
 			self.leaderboard = 0
+			self.sector = GetPlayerData(playerID).sector
 		end
 	},
 {}, nil)
@@ -60,7 +61,6 @@ function requestInGamePlayerRanks( leaderboard )
 					ranking.rank = player.rank
 					ranking.percentile = player.percentile
 					ranking.leaderboard = player.leaderboard
-					ranking.sector = GetPlayerData(playerID).sector
 				end
 			end
 			DisplayPlayerRanks()

@@ -30,7 +30,7 @@ var healthBonus = {normal:"100%",hard:"150%",veryhard:"200%",insane:"250%"}
 var bountyBonus = {normal:"100%",hard:"130%",veryhard:"150%",insane:"170%"}
 var bountyBonusExpress = {normal:"100%",hard:"130%",veryhard:"150%",insane:"170%"}
 var endlessBountyBonus = 20
-var scoreMultipliers = {normal:1,hard:2,veryhard:3,insane:4,chaos:0.15,endless:0.5}
+var scoreMultipliers = {normal:1,hard:2,veryhard:3,insane:4,chaos:0.10,endless:0.25}
 
 var healthMult = $( '#HealthMult' );
 var bountyMult = $( '#BountyMult' );
@@ -344,11 +344,13 @@ function GetBounty(difficultyName, bEndless, bExpress) {
 
 function GetScore(difficultyName, bEndless, bChaos) {
     var scoring = scoreMultipliers[difficultyName]
+    var bonus = 1
     if (bEndless)
-        scoring *= (1 + scoreMultipliers['endless'])
+        bonus += scoreMultipliers['endless']
     if (bChaos)
-        scoring *= (1 + scoreMultipliers['chaos'])
-    var multi = +(scoring).toFixed(3) // This will remove the trailing zeros
+        bonus += scoreMultipliers['chaos']
+
+    var multi = (bonus*scoring).toFixed(2) // This will remove the trailing zeros
     return "Score Multiplier: x" + multi
 }    
 

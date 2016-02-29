@@ -49,7 +49,7 @@ function BuildGameArray()
     game.hor = GameSettings.endless
     game.rnd = GameSettings.elementsOrderName
     game.str = START_TIME
-    game.fin = END_TIME
+    game.fin = END_TIME or (GetSystemDate() .. " " .. GetSystemTime())
     game.ver = VERSION
     return game
 end

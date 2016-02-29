@@ -17,7 +17,7 @@ if not players then
     DEV_MODE = false
     EXPRESS_MODE = false
 
-    VERSION = "B290216"
+    VERSION = "B010316b"
 
     START_TIME = GetSystemDate() .. " " .. GetSystemTime()
     END_TIME = nil
@@ -419,8 +419,6 @@ function ElementTD:OnUnitSpawned(keys)
             summoner:SetControllableByPlayer(playerID, true)
             summoner:SetAngles(0, 270, 0)
             summoner:AddItem(CreateItem("item_buy_pure_essence_disabled", nil, nil))
-            summoner:AddItem(CreateItem("item_random", nil, nil))
-            Timers:CreateTimer(0.1, function() summoner:SwapItems(1, 3) end)
             summoner.icon = CreateUnitByName("elemental_summoner_icon", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber())
             playerData.summoner = summoner
 
@@ -473,7 +471,7 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:AddItem(CreateItem("item_build_arrow_tower", hero, hero))
     hero:AddItem(CreateItem("item_build_cannon_tower", hero, hero))
     hero:AddItem(CreateItem("item_build_periodic_tower_disabled", hero, hero))
-    hero:AddItem(CreateItem("item_toggle_grid", hero, hero))
+    playerData.toggle_grid_item = hero:AddItem(CreateItem("item_toggle_grid", hero, hero))
     Timers:CreateTimer(0.1, function() hero:SwapItems(3, 5) end)
 
     -- Additional Heroes UI

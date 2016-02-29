@@ -62,13 +62,6 @@ function Sandbox:Enable(event)
     })
 end
 
-function Sandbox:GetPlayerData(playerID)
-    if not Sandbox.players[playerID] then
-        Sandbox.players[playerID] = {}
-    end
-    return Sandbox.players[playerID]
-end
-
 function Sandbox:IsDeveloper(playerID)
     return DEVELOPERS[PlayerResource:GetSteamAccountID(playerID)] ~= nil
 end
@@ -77,6 +70,7 @@ function Sandbox:FreeTowers(event)
     local playerID = event.PlayerID
     local state = event.state == 1
     local playerData = GetPlayerData(playerID)
+    playerData.cheated = true
 
     ShowSandboxToggleCommand(playerID, "#sandbox_free_towers", state)
 
@@ -92,6 +86,8 @@ end
 function Sandbox:GodMode(event)
     local playerID = event.PlayerID
     local state = event.state == 1
+    local playerData = GetPlayerData(playerID)
+    playerData.cheated = true
 
     ShowSandboxToggleCommand(playerID, "#sandbox_god_mode", state)
 
@@ -100,8 +96,9 @@ end
 
 function Sandbox:MaxElements(event)
     local playerID = event.PlayerID
-
     local playerData = GetPlayerData(playerID)
+    playerData.cheated = true
+    
     for k,v in pairs (playerData.elements) do
         playerData.elements[k] = 3
     end
@@ -122,6 +119,7 @@ function Sandbox:FullLife(event)
     local value = 50
     local playerData = GetPlayerData(playerID)
     playerData.health = value
+    playerData.cheated = true
 
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     if not hero:HasModifier("modifier_bonus_life") then
@@ -142,6 +140,7 @@ function Sandbox:SetResources(event)
     local gold = tonumber(event.gold) or playerData.gold
     local lumber = tonumber(event.lumber) or playerData.lumber
     local essence = tonumber(event.essence) or playerData.pureEssence
+    playerData.cheated = true
 
     SetCustomGold(playerID, gold)
     SetCustomLumber(playerID, lumber)
@@ -153,6 +152,7 @@ function Sandbox:SetElement(event)
     local element = event.element
     local level = tonumber(event.level)
     local playerData = GetPlayerData(playerID)
+    playerData.cheated = true
 
     playerData.elements[element] = level
 
@@ -171,6 +171,7 @@ function Sandbox:SetWave(event)
     local playerID = event.PlayerID
     local waveNumber = event.wave
     local playerData = GetPlayerData(playerID)
+    playerData.cheated = true
 
     if not waveNumber or waveNumber == "" then
         waveNumber = playerData.nextWave or 1
@@ -196,6 +197,7 @@ function Sandbox:SpawnWave(event)
     local playerID = event.PlayerID
     local waveNumber = event.wave
     local playerData = GetPlayerData(playerID)
+    playerData.cheated = true
 
     if not waveNumber or waveNumber == "" then
         waveNumber = playerData.nextWave or 1
@@ -230,6 +232,7 @@ function Sandbox:StopWave(event)
     local playerID = event.PlayerID
     local playerData = GetPlayerData(playerID)
     local wave = playerData.waveObject
+    playerData.cheated = true
 
     ClosePortalForSector(playerID, playerData.sector+1, true)
 
@@ -244,9 +247,10 @@ function Sandbox:ClearWave(event)
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     local playerData = GetPlayerData(playerID)
     local wave = playerData.waveObject
+    local creeps = wave.creeps
     wave.endTime = GameRules:GetGameTime()
     wave.endSpawnTime = wave.endSpawnTime or GameRules:GetGameTime()
-    local creeps = wave.creeps
+    playerData.cheated = true
 
     if creeps then
         for k,v in pairs(creeps) do
@@ -294,7 +298,10 @@ end
 
 function Sandbox:End(event)
     local playerID = event.PlayerID
+    local playerData = GetPlayerData(playerID)
 
+    playerData.completedWaves = WAVE_COUNT
+    ElementTD:EndGameForPlayer( playerID )
     GameRules:SetGameWinner(PlayerResource:GetTeam(playerID))
 end
 

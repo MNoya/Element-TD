@@ -11,6 +11,8 @@
     "ItemDroppable"                 "0"
     "ItemPurchasable"               "0"
     "ItemSellable"                  "0"
+
+    "Building"  "1"
     
     "OnSpellStart"
     {
