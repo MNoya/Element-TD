@@ -330,7 +330,7 @@ end
 function ScoringObject:GetBossBonus( waves )
 	local bonus = 1
 	if waves >= 0 then
-		bonus = 1+waves*0.10
+		bonus = 1+waves*0.20
 	end
 	return bonus
 end
