@@ -469,7 +469,7 @@
         "creep_ability_mechanical"  "Shield"
         "creep_ability_image"       "Image"
         "creep_ability_swarm"       "Swarm"
-        "creep_ability_regen"       "Regeneration"
+        "creep_ability_regen"       "Regen"
         
         "DOTA_Tooltip_ability_creep_ability_heal"       "Heal"
         "DOTA_Tooltip_ability_creep_ability_heal_Description"       "Upon death, this creep heals all other creeps in a small area around it by a percentage of their max health."
