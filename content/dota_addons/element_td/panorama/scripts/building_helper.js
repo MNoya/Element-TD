@@ -264,7 +264,7 @@ function StartBuildingHelper( params )
             }
 
             // Overlay Grid, visible with Alt pressed
-            altDown = permanent_alt_grid || GameUI.IsAltDown();
+            altDown = false;//permanent_alt_grid || GameUI.IsAltDown();
             if (altDown)
             {
                 // Create the particles

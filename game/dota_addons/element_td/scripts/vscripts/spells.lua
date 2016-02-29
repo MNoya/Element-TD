@@ -419,3 +419,49 @@ function BuildTower(tower, baseScale)
         return 0.05
 	end)
 end
+
+function ToggleGrid( event )
+	local item = event.ability
+	local playerID = event.caster:GetPlayerOwnerID()
+	local sector = GetPlayerData(playerID).sector + 1
+	item.enabled = not item.enabled
+
+	if item.enabled then
+		if item.particles then
+			for k,v in pairs(item.particles) do
+				ParticleManager:DestroyParticle(v, true)
+			end
+		end
+
+		item.particles = {}
+		for y,v in pairs(BuildingHelper.Grid) do
+	        for x,_ in pairs(v) do
+				local pos = GetGroundPosition(Vector(GridNav:GridPosToWorldCenterX(x), GridNav:GridPosToWorldCenterY(y), 0), nil)
+	            if pos.z > 380 and pos.z < 400 and IsInsideSector(pos, sector) then
+	            	if BuildingHelper:CellHasGridType(x,y,'BUILDABLE') then
+	            		local particle = DrawGrid(x,y,Vector(255,255,255), playerID)
+	                	table.insert(item.particles, particle)
+	                end
+	            end
+	        end
+	   	end
+	else
+		for k,v in pairs(item.particles) do
+			ParticleManager:DestroyParticle(v, true)
+		end
+	end
+end
+
+function DrawGrid(x, y, color, playerID)
+	local pos = Vector(GridNav:GridPosToWorldCenterX(x), GridNav:GridPosToWorldCenterY(y), 0)
+    BuildingHelper:SnapToGrid(1, pos)
+    pos = GetGroundPosition(pos, nil)
+        
+    local particle = ParticleManager:CreateParticleForPlayer("particles/buildinghelper/square_overlay.vpcf", PATTACH_CUSTOMORIGIN, nil, PlayerResource:GetPlayer(playerID))
+    ParticleManager:SetParticleControl(particle, 0, pos)
+    ParticleManager:SetParticleControl(particle, 1, Vector(32,0,0))
+    ParticleManager:SetParticleControl(particle, 2, color)
+    ParticleManager:SetParticleControl(particle, 3, Vector(90,0,0))
+
+	return particle
+end

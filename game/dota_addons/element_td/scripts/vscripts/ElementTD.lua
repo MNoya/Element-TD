@@ -473,6 +473,8 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:AddItem(CreateItem("item_build_arrow_tower", hero, hero))
     hero:AddItem(CreateItem("item_build_cannon_tower", hero, hero))
     hero:AddItem(CreateItem("item_build_periodic_tower_disabled", hero, hero))
+    hero:AddItem(CreateItem("item_toggle_grid", hero, hero))
+    Timers:CreateTimer(0.1, function() hero:SwapItems(3, 5) end)
 
     -- Additional Heroes UI
     heroUI = hero:FindAbilityByName("hero_ui")
