@@ -49,7 +49,7 @@ function ScoringObject:UpdateScore( const , wave )
 
 	-- Finished at least 1 boss wave, waiting for the next
 	elseif (const == SCORING_BOSS_WAVE_CLEAR ) then
-		local bossWaveCleared = playerData.bossWaves - 1
+		local bossWaveCleared = playerData.bossWaves
 		scoreTable = self:GetBossWaveCleared( bossWaveCleared, true) -- Get boss score
 		table.insert(processed, {'Boss Wave '..bossWaveCleared..' cleared!', '#FFF0F5'} )
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Boss Wave ' .. bossWaveCleared .. ' bonus: ' .. comma_value(scoreTable['frogBonus']), '#00FFFF'} )
