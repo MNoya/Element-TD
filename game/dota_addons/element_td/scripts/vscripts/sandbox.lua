@@ -42,7 +42,7 @@ function Sandbox:Enable(event)
 
     if not playerData.sandBoxEnabled then
         playerData.sandBoxEnabled = true
-        playerData.cheated = true
+        ElementTD:CheatsEnabled()
     else
         return
     end

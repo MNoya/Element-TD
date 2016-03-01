@@ -178,6 +178,10 @@ function ElementTD:StartGame()
             CustomGameEventManager:Send_ServerToAllClients( "etd_toggle_vote_dialog", {visible = true} )
             StartVoteTimer()
             EmitAnnouncerSound("announcer_announcer_battle_prepare_01")
+
+            if GameRules:IsCheatMode() then
+                ElementTD:CheatsEnabled()
+            end
         else
             -- voting should never be skipped in real games
             START_GAME_TIME = GameRules:GetGameTime()
@@ -747,10 +751,6 @@ function ElementTD:OnPlayerChat(keys)
     local playerID = self.vUserIds[userID] and self.vUserIds[userID]:GetPlayerID()
     if not playerID then return end
 
-    if string.match(text, "-gold") or string.match(text, "-lvlup") or string.match(text, "-respawn") or string.match(text, "-createhero") or string.match(text, "-refresh") or string.match(text, "-item") or string.match(text, "-wtf") or string.match(text, "-respawn") or string.match(text, "-teleport") then
-        ElementTD:CheatCommandUsed(playerID)
-    end
-
     -- Handle '-command'
     if StringStartsWith(text, "-") then
         local input = split(string.sub(text, 2, string.len(text)))
@@ -763,17 +763,13 @@ function ElementTD:OnPlayerChat(keys)
     end
 end
 
-function ElementTD:CheatCommandUsed(playerID)
-    if not playerID then
-        for _, playerID in pairs(playerIDs) do
-            local playerData = GetPlayerData(playerID)
-            if playerData then
-                playerData.cheated = true
-            end
+function ElementTD:CheatsEnabled()    
+    for _, playerID in pairs(playerIDs) do
+        local playerData = GetPlayerData(playerID)
+        if playerData then
+            playerData.cheated = true
         end
-    else    
-        GetPlayerData(playerID).cheated = true
     end
     
-    --GameRules:SendCustomMessage("#etd_cheats_enabled", 0, 0)
+    GameRules:SendCustomMessage("#etd_cheats_enabled", 0, 0)
 end
