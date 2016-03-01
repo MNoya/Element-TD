@@ -26,7 +26,6 @@ if not players then
 end
 
 function ElementTD:InitGameMode()
-
     GenerateAllConstants() -- generate all constant tables
 
     self.availableSpawnIndex = 1 -- the index of the next available sector
@@ -116,6 +115,10 @@ function ElementTD:InitGameMode()
 
     -- Don't end the game if everyone is unassigned
     SendToServerConsole("dota_surrender_on_disconnect 0")
+
+    -- Increase time to load and start even if not all players loaded
+    SendToServerConsole("dota_wait_for_players_to_load 2")
+    SendToServerConsole("dota_wait_for_players_to_load_timeout 240")
 
     -- Less expensive pathing?
     LimitPathingSearchDepth(0.5)
