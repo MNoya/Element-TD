@@ -96,8 +96,8 @@ function GetPlayerNetworth(playerID)
 						playerNetworth = playerNetworth + round( GetUnitKeyValue( tower.class, "TotalCost" ) * 0.98 )
 					elseif ( name == "sell_tower_95" ) then
 						playerNetworth = playerNetworth + round( GetUnitKeyValue( tower.class, "TotalCost" ) * 0.95 )
-					elseif ( name == "sell_tower_75" ) then
-						playerNetworth = playerNetworth + round( GetUnitKeyValue( tower.class, "TotalCost" ) * 0.75 )
+					elseif ( name == "sell_tower_90" ) then
+						playerNetworth = playerNetworth + round( GetUnitKeyValue( tower.class, "TotalCost" ) * 0.90 )
 					end
 				end
 			end

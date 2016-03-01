@@ -153,7 +153,7 @@ function Build( event )
         elseif string.match(building_name, "arrow_tower") or string.match(building_name, "cannon_tower") then
             AddAbility(unit, "sell_tower_98")
         else
-            AddAbility(unit, "sell_tower_75")
+            AddAbility(unit, "sell_tower_90")
         end
 
         if string.match(building_name, "cannon_tower") then

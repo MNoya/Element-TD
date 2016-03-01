@@ -245,7 +245,7 @@ function UpgradeTower(keys)
 		elseif string.find(newTower.class, "arrow_tower") ~= nil or string.find(newTower.class, "cannon_tower") ~= nil then
 			AddAbility(newTower, "sell_tower_98")
 		else
-			AddAbility(newTower, "sell_tower_75")
+			AddAbility(newTower, "sell_tower_90")
 		end
 
 		-- create a script object for this tower
