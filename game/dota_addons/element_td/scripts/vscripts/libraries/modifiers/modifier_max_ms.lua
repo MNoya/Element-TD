@@ -10,9 +10,13 @@ function modifier_max_ms:DeclareFunctions()
 end
 
 function modifier_max_ms:GetModifierMoveSpeed_Max(params)
-    return 6000
+    return 800
 end
 
 function modifier_max_ms:GetModifierMoveSpeedOverride(params)
-    return 6000
+    return 800
+end
+
+function modifier_max_ms:IsHidden()
+    return true
 end

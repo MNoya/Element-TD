@@ -451,6 +451,8 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:AddNewModifier(nil, nil, "modifier_disarmed", {})
     hero:AddNewModifier(nil, nil, "modifier_attack_immune", {})
     hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
+    hero:AddNewModifier(hero, nil, "modifier_max_ms", {})
+
     hero:SetAbilityPoints(0)
     hero:SetMaxHealth(50)
     hero:SetBaseMaxHealth(50)

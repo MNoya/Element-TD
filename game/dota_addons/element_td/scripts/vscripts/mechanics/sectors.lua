@@ -5,7 +5,13 @@ function RelocatePlayer(trigger)
     if playerID and PlayerResource:IsValidPlayerID(playerID) then
         local playerData = GetPlayerData(playerID)
         local sector = playerData.sector + 1
-        activator:SetAbsOrigin(ElementalSummonerLocations[sector])
+        activator:SetAbsOrigin(SpawnLocations[sector])
+
+        ExecuteOrderFromTable({
+            UnitIndex = activator:entindex(),
+            OrderType = DOTA_UNIT_ORDER_HOLD_POSITION
+        })
+       
     end
 end
 
