@@ -3,6 +3,7 @@
 //============================================================//
 "item_toggle_grid"
 {
+    "ID"                            "2420"
     "BaseClass"                     "item_datadriven"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
     "MaxLevel"                      "1"
