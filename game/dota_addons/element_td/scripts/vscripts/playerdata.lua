@@ -66,7 +66,7 @@ function GetPlayerDifficulty(playerID)
 end
 
 function GetPlayerData(playerID)
-	return PlayerData[playerID] or CreateDataForPlayer(playerID)
+	return PlayerData[playerID]
 end
 
 function GetPlayerName(playerID)
