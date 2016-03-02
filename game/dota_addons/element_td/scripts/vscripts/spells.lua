@@ -214,6 +214,17 @@ function UpgradeTower(keys)
 		local scriptClassName = GetUnitKeyValue(newClass, "ScriptClass") or "BasicTower"
 		local stacks = tower:GetModifierStackCount("modifier_kill_count", tower)
 
+		-- Keep buff data before replacing
+		local fire_up = tower:FindModifierByName("modifier_fire_up")
+	    local fire_up_caster = fire_up and fire_up:GetCaster()
+	    local fire_up_ability = fire_up and fire_up:GetAbility()
+	    local fire_up_duration = fire_up and fire_up:GetDuration()
+
+	    local spring_forward = tower:FindModifierByName("modifier_spring_forward")
+	    local spring_forward_caster = spring_forward and spring_forward:GetCaster()
+	    local spring_forward_ability = spring_forward and spring_forward:GetAbility()
+	    local spring_forward_duration = spring_forward and spring_forward:GetDuration()
+
 		-- Replace the tower by a new one
 		local newTower = BuildingHelper:UpgradeBuilding(tower, newClass)
 
@@ -305,15 +316,13 @@ function UpgradeTower(keys)
 
         AddAbility(newTower, "ability_building")
 
-        -- keep well & blacksmith buffs
-	    local fire_up = tower:FindModifierByName("modifier_fire_up")
+        -- Reapply well & blacksmith buffs	    
 	    if fire_up then
-	        newTower:AddNewModifier(fire_up:GetCaster(), fire_up:GetAbility(), "modifier_fire_up", {duration = fire_up:GetDuration()})
+	        newTower:AddNewModifier(fire_up_caster, fire_up_ability, "modifier_fire_up", {duration = fire_up_duration})
 	    end
 
-	    local spring_forward = tower:FindModifierByName("modifier_spring_forward")
-	    if spring_forward then
-	        newTower:AddNewModifier(spring_forward:GetCaster(), spring_forward:GetAbility(), "modifier_spring_forward", {duration = spring_forward:GetDuration()})
+		if spring_forward then
+	        newTower:AddNewModifier(spring_forward_caster, spring_forward_ability, "modifier_spring_forward", {duration = spring_forward_duration})
 	    end
 
 		Timers:CreateTimer(function()
@@ -525,6 +534,7 @@ function CancelConstruction(event)
 	local essenceCost = GetUnitKeyValue(tower.class, "EssenceCost") or 0
 
 	if tower.upgradedFrom then
+		tower:Stop()
 		local newClass = tower.upgradedFrom
 		local scriptClassName = GetUnitKeyValue(newClass, "ScriptClass") or "BasicTower"
 		local stacks = tower:GetModifierStackCount("modifier_kill_count", tower)
