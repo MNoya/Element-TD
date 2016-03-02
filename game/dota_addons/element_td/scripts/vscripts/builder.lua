@@ -95,6 +95,7 @@ function Build( event )
 
         -- Units can't attack while building
         unit:AddNewModifier(unit, nil, "modifier_attack_disabled", {})
+        unit:AddNewModifier(nil, nil, "modifier_stunned", {})
 
         -- Add kill tracker
         InitializeKillCount(unit)
@@ -141,6 +142,7 @@ function Build( event )
         -- Play construction complete sound
         -- Give the unit their original attack capability
         unit:RemoveModifierByName("modifier_attack_disabled")
+        unit:RemoveModifierByName("modifier_stunned")
         
         -- Building abilities
         unit:AddNewModifier(unit, nil, "modifier_no_health_bar", {})

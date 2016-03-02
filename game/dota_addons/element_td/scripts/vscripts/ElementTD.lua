@@ -648,7 +648,9 @@ function ElementTD:FilterExecuteOrder( filterTable )
             end
 
         elseif string.match(abilityName, "item_upgrade_to_") then
-            unit.upgrading = true
+            if not unit:IsStunned() then
+                unit.upgrading = true
+            end
             for _,entityIndex in pairs(entityList) do
                 local caster = EntIndexToHScript(entityIndex)
                 -- Make sure the original caster unit doesn't cast twice
