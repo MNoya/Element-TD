@@ -391,10 +391,6 @@ function SummonElemental(keys)
     local particle = ParticleManager:CreateParticle(TrailParticles[element], PATTACH_ABSORIGIN_FOLLOW, elemental)
 
     playerData.elementalUnit = elemental
-
-    elemental:AddNewModifier(elemental, nil, "modifier_damage_block", {});
-    --GlobalCasterDummy:ApplyModifierToTarget(elemental, "creep_damage_block_applier", "modifier_damage_block")
-    --ApplyArmorModifier(elemental, GetPlayerDifficulty(playerID):GetArmorValue() * 100)
     
     -- Adjust health bar
     -- Every five waves elemental HP goes up by 50%. So if you summon a level 1 at wave 20 you get 1,519 HP.

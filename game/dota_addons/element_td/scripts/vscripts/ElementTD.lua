@@ -89,7 +89,6 @@ function ElementTD:InitGameMode()
     LinkLuaModifier("modifier_transparency", "libraries/modifiers/modifier_transparency.lua", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_disabled", "libraries/modifiers/modifier_disabled", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_attack_disabled", "libraries/modifiers/modifier_attack_disabled", LUA_MODIFIER_MOTION_NONE)
-    LinkLuaModifier("modifier_damage_block", "libraries/modifiers/modifier_damage_block", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_support_tower", "libraries/modifiers/modifier_support_tower", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_bonus_life", "libraries/modifiers/modifier_bonus_life", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_health_bar_markers", "libraries/modifiers/modifier_health_bar_markers", LUA_MODIFIER_MOTION_NONE)
@@ -716,15 +715,9 @@ function ElementTD:DamageFilter( filterTable )
     local attacker = EntIndexToHScript( attacker_index )
     local damagetype = filterTable["damagetype_const"]
 
+    -- All our damage is done through elements custom DamageEntity, physical damage is not allowed
     if damagetype == DAMAGE_TYPE_PHYSICAL then
-        local original_damage = filterTable["damage"] --Post reduction
-        local inflictor = filterTable["entindex_inflictor_const"]
-
-        -- Deny autoattack damage on towers that are projectile-based
-        if not inflictor and attacker.no_autoattack_damage then
-            filterTable["damage"] = 0
-            return true
-        end
+        return false
     end
 
     return true
