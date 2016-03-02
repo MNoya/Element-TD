@@ -654,7 +654,7 @@ function ElementTD:FilterExecuteOrder( filterTable )
                 -- Make sure the original caster unit doesn't cast twice
                 if caster and caster ~= unit and caster:HasItemInInventory(abilityName) then
                     local item = GetItemByName(caster, abilityName)
-                    if item and item:IsFullyCastable() then
+                    if item and item:IsFullyCastable() and not caster:IsStunned() then
 
                         -- Only NO_TARGET
                         caster.skip = true
@@ -669,7 +669,7 @@ function ElementTD:FilterExecuteOrder( filterTable )
                 -- Make sure the original caster unit doesn't cast twice
                 if caster and caster ~= unit and caster:HasAbility(abilityName) then
                     local abil = caster:FindAbilityByName(abilityName)
-                    if abil and abil:IsFullyCastable() then
+                    if abil and abil:IsFullyCastable() and not caster:IsStunned() then
 
                         caster.skip = true
                         if order_type == DOTA_UNIT_ORDER_CAST_POSITION then
@@ -677,7 +677,7 @@ function ElementTD:FilterExecuteOrder( filterTable )
                                 ExecuteOrderFromTable({ UnitIndex = entityIndex, OrderType = order_type, Position = point, AbilityIndex = abil:GetEntityIndex(), Queue = queue})
                             end
                         else
-                            ExecuteOrderFromTable({ UnitIndex = entityIndex, OrderType = order_type, AbilityIndex = abil:GetEntityIndex(), Queue = queue})
+                            --ExecuteOrderFromTable({ UnitIndex = entityIndex, OrderType = order_type, AbilityIndex = abil:GetEntityIndex(), Queue = queue})
                         end
                     end
                 end
