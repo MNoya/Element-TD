@@ -1949,6 +1949,8 @@
 	    "MaxLevel"                      "1"
 	    "AbilityTextureName"            "cancel_construction"
 	
+	    "AbilityMultiOrder" "1"
+	
 	    "OnToggleOn"
 	    {
 	        "RunScript"

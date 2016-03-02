@@ -626,7 +626,9 @@ function ElementTD:FilterExecuteOrder( filterTable )
     ------------------------------------------------
     if abilityIndex and abilityIndex > 0 then
         local ability = EntIndexToHScript(abilityIndex)
+        if not ability then return end
         local abilityName = ability:GetAbilityName()
+
         local entityList = GetSelectedEntities(unit:GetPlayerOwnerID())
         if not entityList then return true end
 
@@ -675,6 +677,8 @@ function ElementTD:FilterExecuteOrder( filterTable )
                             if (caster:GetAbsOrigin() - point):Length2D() <= ability:GetCastRange() then
                                 ExecuteOrderFromTable({ UnitIndex = entityIndex, OrderType = order_type, Position = point, AbilityIndex = abil:GetEntityIndex(), Queue = queue})
                             end
+                        else
+                            ExecuteOrderFromTable({ UnitIndex = entityIndex, OrderType = order_type, AbilityIndex = abil:GetEntityIndex(), Queue = queue})
                         end
                     end
                 end
