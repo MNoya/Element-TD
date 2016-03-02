@@ -105,6 +105,9 @@ function Build( event )
         -- Add building-creature properties
         AddAbility(unit, "ability_building")
 
+        -- Add cancel building ability
+        AddAbility(unit, "cancel_construction")
+
         -- set some basic values to this tower from its KeyValues
         unit.class = building_name
         unit.element = GetUnitKeyValue(building_name, "Element")
@@ -140,7 +143,10 @@ function Build( event )
         unit:RemoveModifierByName("modifier_attack_disabled")
         
         -- Building abilities
-         unit:AddNewModifier(unit, nil, "modifier_no_health_bar", {})
+        unit:AddNewModifier(unit, nil, "modifier_no_health_bar", {})
+
+        -- Remove cancel building
+        unit:RemoveAbility("cancel_construction")
 
         -- mark this tower as a support tower if necessary
         if IsSupportTower(unit) then

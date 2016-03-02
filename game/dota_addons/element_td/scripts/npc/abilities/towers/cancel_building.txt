@@ -1,0 +1,21 @@
+//============================================================//
+// Cancel Building/Upgrade
+//============================================================//
+"cancel_construction"
+{
+    // General
+    //-----------------------------
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+    "MaxLevel"                      "1"
+    "AbilityTextureName"            "cancel_construction"
+
+    "OnToggleOn"
+    {
+        "RunScript"
+        {
+            "ScriptFile"        "spells.lua"
+            "Function"          "CancelConstruction"
+        }
+    }
+}

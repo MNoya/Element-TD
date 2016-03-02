@@ -322,6 +322,9 @@
         "DOTA_Tooltip_ability_attack_ground"                                              "Attack Ground"
         "DOTA_Tooltip_ability_attack_ground_Description"                                  "Cast this to continously attack a selected area. Attack a creep or Stop to cancel it."
         "DOTA_Tooltip_ability_attack_ground_splash_aoe"                                   "AOE:"
+
+        "DOTA_Tooltip_ability_cancel_construction"                                        "Cancel Construction"
+        "DOTA_Tooltip_ability_cancel_construction_Description"                            "Stops a tower construction, refunding full price and reverting back to the original state of the grid."
         
         // Builder
         "DOTA_Tooltip_ability_build_water_tower"                               "Build Water Tower"
