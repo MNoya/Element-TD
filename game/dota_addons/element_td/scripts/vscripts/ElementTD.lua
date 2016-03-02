@@ -648,16 +648,17 @@ function ElementTD:FilterExecuteOrder( filterTable )
             end
 
         elseif string.match(abilityName, "item_upgrade_to_") then
-
-             for _,entityIndex in pairs(entityList) do
+            unit.upgrading = true
+            for _,entityIndex in pairs(entityList) do
                 local caster = EntIndexToHScript(entityIndex)
                 -- Make sure the original caster unit doesn't cast twice
                 if caster and caster ~= unit and caster:HasItemInInventory(abilityName) then
                     local item = GetItemByName(caster, abilityName)
-                    if item and item:IsFullyCastable() and not caster:IsStunned() then
+                    if item and item:IsFullyCastable() and not caster:IsStunned() and not caster.upgrading then
 
                         -- Only NO_TARGET
                         caster.skip = true
+                        caster.upgrading = true
                         ExecuteOrderFromTable({ UnitIndex = entityIndex, OrderType = order_type, AbilityIndex = item:GetEntityIndex(), Queue = queue})
                     end
                 end
@@ -677,7 +678,7 @@ function ElementTD:FilterExecuteOrder( filterTable )
                                 ExecuteOrderFromTable({ UnitIndex = entityIndex, OrderType = order_type, Position = point, AbilityIndex = abil:GetEntityIndex(), Queue = queue})
                             end
                         else
-                            --ExecuteOrderFromTable({ UnitIndex = entityIndex, OrderType = order_type, AbilityIndex = abil:GetEntityIndex(), Queue = queue})
+                            ExecuteOrderFromTable({ UnitIndex = entityIndex, OrderType = order_type, AbilityIndex = abil:GetEntityIndex(), Queue = queue})
                         end
                     end
                 end
