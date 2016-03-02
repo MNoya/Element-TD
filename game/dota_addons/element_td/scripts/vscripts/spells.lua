@@ -188,6 +188,7 @@ function MeetsItemElementRequirements(upgrade_item, playerID)
 end
 
 function UpgradeTower(keys)
+	local ability = keys.ability
 	local tower = keys.caster
 	local hero = tower:GetOwner()
 	local newClass = keys.tower -- the class of the tower to upgrade to
@@ -197,13 +198,15 @@ function UpgradeTower(keys)
 	local essenceCost = GetUnitKeyValue(newClass, "EssenceCost") or 0
 	local playerEssence = GetPlayerData(playerID).pureEssence
 	
-	if not MeetsItemElementRequirements(keys.ability, playerID) and not playerData.freeTowers then
+	if not MeetsItemElementRequirements(ability, playerID) and not playerData.freeTowers then
 		ShowWarnMessage(playerID, "Incomplete Element Requirements!")
 	elseif essenceCost > playerEssence and not playerData.freeTowers then
 		ShowWarnMessage(playerID, "You need 1 Essence! Buy it at the Elemental Summoner")
 	elseif cost > hero:GetGold() and not playerData.freeTowers then
 		ShowWarnMessage(playerID, "Not Enough Gold!")
 	elseif tower:GetHealth() == tower:GetMaxHealth() then
+		ability:RemoveSelf() --remove the item to prevent a case were the item could be cast twice on the same frame
+
 		if not playerData.freeTowers then
 			hero:ModifyGold(-cost)
 			ModifyPureEssence(playerID, -essenceCost)
