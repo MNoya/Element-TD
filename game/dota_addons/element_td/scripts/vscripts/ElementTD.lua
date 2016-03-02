@@ -117,7 +117,6 @@ function ElementTD:InitGameMode()
     SendToServerConsole("dota_surrender_on_disconnect 0")
 
     -- Increase time to load and start even if not all players loaded
-    SendToServerConsole("dota_wait_for_players_to_load 2")
     SendToServerConsole("dota_wait_for_players_to_load_timeout 240")
 
     -- Less expensive pathing?
