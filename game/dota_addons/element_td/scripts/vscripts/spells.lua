@@ -522,10 +522,6 @@ function CancelConstruction(event)
 
 	-- Gold
 	hero:ModifyGold(goldCost)
-	Sounds:EmitSoundOnClient(playerID, "Gold.CoinsBig")	
-	PopupAlchemistGold(tower, goldCost)
-	local coins = ParticleManager:CreateParticle("particles/econ/items/alchemist/alchemist_midas_knuckles/alch_knuckles_lasthit_coins.vpcf", PATTACH_CUSTOMORIGIN, tower)
-	ParticleManager:SetParticleControl(coins, 1, tower:GetAbsOrigin())
 
 	-- Essence
 	if essenceCost > 0 then
@@ -627,6 +623,11 @@ function CancelConstruction(event)
 			end)
 		end)
 	else
+		Sounds:EmitSoundOnClient(playerID, "Gold.CoinsBig")	
+		PopupAlchemistGold(tower, goldCost)
+		local coins = ParticleManager:CreateParticle("particles/econ/items/alchemist/alchemist_midas_knuckles/alch_knuckles_lasthit_coins.vpcf", PATTACH_CUSTOMORIGIN, tower)
+		ParticleManager:SetParticleControl(coins, 1, tower:GetAbsOrigin())
+		
 		tower:AddEffects(EF_NODRAW)
 		DrawTowerGrid(tower)
 		tower:ForceKill(true)
