@@ -49,7 +49,7 @@ function ScoringObject:UpdateScore( const , wave )
 
 	-- Finished at least 1 boss wave, waiting for the next
 	elseif (const == SCORING_BOSS_WAVE_CLEAR ) then
-		local bossWaveCleared = playerData.bossWaves - 1
+		local bossWaveCleared = playerData.bossWaves
 		scoreTable = self:GetBossWaveCleared( bossWaveCleared, true) -- Get boss score
 		table.insert(processed, {'Boss Wave '..bossWaveCleared..' cleared!', '#FFF0F5'} )
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Boss Wave ' .. bossWaveCleared .. ' bonus: ' .. comma_value(scoreTable['frogBonus']), '#00FFFF'} )
@@ -202,7 +202,7 @@ function ScoringObject:GetWaveCleared( wave )
 	local endlessBonus = self:GetEndlessBonus()
 	local leaks = playerData.waveObjects[wave] and playerData.waveObjects[wave].leaks or 0
 	local cleanBonus = self:GetCleanBonus( leaks == 0 )
-	local totalScore = math.ceil(waveClearScore * (1 + cleanBonus) * (1 + speedBonus) * (1 + difficultyBonus) * (1 + chaosBonus) * (1 + endlessBonus))
+	local totalScore = math.ceil(waveClearScore * (1 + cleanBonus) * (1 + speedBonus) * (1 + difficultyBonus) * (1 + chaosBonus + endlessBonus))
 
 	return { clearBonus = waveClearScore, cleanBonus = cleanBonus, speedBonus = speedBonus, difficultyBonus = difficultyBonus, chaosBonus = chaosBonus, endlessBonus = endlessBonus, totalScore = totalScore }
 end

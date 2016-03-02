@@ -109,7 +109,8 @@ function SellTowerCast(keys)
 			-- If a tower costs a Pure Essence (Pure, Periodic), then that essence is refunded upon selling the tower.
 			local essenceCost = GetUnitKeyValue(tower.class, "EssenceCost") or 0
 			if essenceCost > 0 then
-				ModifyPureEssence(playerID, essenceCost)
+				ModifyPureEssence(playerID, essenceCost, true)
+				PopupEssence(tower, essenceCost)
 			end
 
 			-- Add lost gold and towers sold
@@ -125,6 +126,10 @@ function SellTowerCast(keys)
 			if playerData.clones[tower.class] and tower:HasModifier("modifier_conjure_prevent_cloning") then
 				RemoveRandomClone(playerData, tower.class)
 			end
+		end
+
+		if tower.damageType and tower.damageType ~= "composite" then
+			PlayElementalExplosion(tower.damageType, tower)
 		end
 
 		-- Remove random Blacksmith/Well buff when sold
@@ -143,6 +148,7 @@ function SellTowerCast(keys)
 
 		-- Kills and hide the tower, so that its running timers can still execute until it gets removed by the engine
 		tower:AddEffects(EF_NODRAW)
+		DrawTowerGrid(tower)
 		tower:ForceKill(true)
 		playerData.towers[tower:entindex()] = nil -- remove this tower index from the player's tower list
 
@@ -208,6 +214,17 @@ function UpgradeTower(keys)
 		local scriptClassName = GetUnitKeyValue(newClass, "ScriptClass") or "BasicTower"
 		local stacks = tower:GetModifierStackCount("modifier_kill_count", tower)
 
+		-- Keep buff data before replacing
+		local fire_up = tower:FindModifierByName("modifier_fire_up")
+	    local fire_up_caster = fire_up and fire_up:GetCaster()
+	    local fire_up_ability = fire_up and fire_up:GetAbility()
+	    local fire_up_duration = fire_up and fire_up:GetDuration()
+
+	    local spring_forward = tower:FindModifierByName("modifier_spring_forward")
+	    local spring_forward_caster = spring_forward and spring_forward:GetCaster()
+	    local spring_forward_ability = spring_forward and spring_forward:GetAbility()
+	    local spring_forward_duration = spring_forward and spring_forward:GetDuration()
+
 		-- Replace the tower by a new one
 		local newTower = BuildingHelper:UpgradeBuilding(tower, newClass)
 
@@ -238,13 +255,18 @@ function UpgradeTower(keys)
 			upgradeData = tower.scriptObject:GetUpgradeData()
 		end
 
+		-- Add upgrade cancelling ability
+		newTower.upgradedFrom = tower:GetUnitName()
+		newTower.upgradedFromClass = tower.class
+		AddAbility(newTower, "cancel_construction")
+
 		-- Add sell ability
 		if IsPlayerUsingRandomMode(playerID) then
 			AddAbility(newTower, "sell_tower_100")
 		elseif string.find(newTower.class, "arrow_tower") ~= nil or string.find(newTower.class, "cannon_tower") ~= nil then
 			AddAbility(newTower, "sell_tower_98")
 		else
-			AddAbility(newTower, "sell_tower_75")
+			AddAbility(newTower, "sell_tower_90")
 		end
 
 		-- create a script object for this tower
@@ -292,20 +314,23 @@ function UpgradeTower(keys)
         	newTower:AddNewModifier(newTower, nil, "modifier_disable_turning", {})
         end
 
-        AddAbility(newTower, "ability_building")
+        Timers:CreateTimer(0.5, function()
+        	AddAbility(newTower, "ability_building")
+        end)
 
-        -- keep well & blacksmith buffs
-	    local fire_up = tower:FindModifierByName("modifier_fire_up")
-	    if fire_up then
-	        newTower:AddNewModifier(fire_up:GetCaster(), fire_up:GetAbility(), "modifier_fire_up", {duration = fire_up:GetDuration()})
-	    end
+        Timers:CreateTimer(0.03, function()
 
-	    local spring_forward = tower:FindModifierByName("modifier_spring_forward")
-	    if spring_forward then
-	        newTower:AddNewModifier(spring_forward:GetCaster(), spring_forward:GetAbility(), "modifier_spring_forward", {duration = spring_forward:GetDuration()})
-	    end
+	        -- Reapply well & blacksmith buffs  
+		    if fire_up then
+		        newTower:AddNewModifier(fire_up_caster, fire_up_ability, "modifier_fire_up", {duration = fire_up_duration})
+		    end
 
-		Timers:CreateTimer(function()
+			if spring_forward then
+		        newTower:AddNewModifier(spring_forward_caster, spring_forward_ability, "modifier_spring_forward", {duration = spring_forward_duration})
+		    end
+		end)
+
+ 		Timers:CreateTimer(function()
 			RemoveUnitFromSelection( tower )
 			AddUnitToSelection(newTower)
 			Timers:CreateTimer(0.03, function()
@@ -380,7 +405,7 @@ function BuildTower(tower, baseScale)
 	tower:RemoveModifierByName("modifier_invulnerable")
 	tower:RemoveModifierByName("modifier_tower_truesight_aura")
 	tower:AddNewModifier(nil, nil, "modifier_disarmed", {}) --towers are disarmed until they finish building
-	tower:AddNewModifier(nil, nil, "modifier_silence", {}) --towers are silenced until they finish building
+	tower:AddNewModifier(nil, nil, "modifier_stunned", {}) --towers are stunned until they finish building
 
 	local buildTime = GetUnitKeyValue(tower.class, "BuildTime")
 	if not buildTime then
@@ -401,18 +426,23 @@ function BuildTower(tower, baseScale)
 
 	-- create a timer to build up the tower slowly
 	Timers:CreateTimer(0.05, function()
+		if not IsValidEntity(tower) or not tower:IsAlive() then return end
 		tower:SetHealth(tower:GetHealth() + 1)
         tower:SetModelScale(tower:GetModelScale() + scaleIncrement)
 
 		if tower:GetHealth() == tower:GetMaxHealth() then
-        	tower:RemoveModifierByName("modifier_disarmed")
-        	tower:RemoveModifierByName("modifier_silence")
+			tower:RemoveModifierByName("modifier_disarmed")
+        	tower:RemoveModifierByName("modifier_stunned")
         	tower:AddNewModifier(nil, nil, "modifier_invulnerable", {})
 
 			tower:SetMaxHealth(GetUnitKeyValue(tower.class, "TotalCost"))
 			tower:SetBaseMaxHealth(GetUnitKeyValue(tower.class, "TotalCost"))
 
         	tower:SetHealth(tower:GetMaxHealth())
+
+        	-- Remove building cancel ability
+        	tower:RemoveAbility("cancel_construction")
+
         	tower.scriptObject:OnBuildingFinished()
         	return
         end
@@ -423,7 +453,8 @@ end
 function ToggleGrid( event )
 	local item = event.ability
 	local playerID = event.caster:GetPlayerOwnerID()
-	local sector = GetPlayerData(playerID).sector + 1
+	local playerData = GetPlayerData(playerID)
+	local sector = playerData.sector + 1
 	item.enabled = not item.enabled
 
 	if item.enabled then
@@ -464,4 +495,170 @@ function DrawGrid(x, y, color, playerID)
     ParticleManager:SetParticleControl(particle, 3, Vector(90,0,0))
 
 	return particle
+end
+
+function DrawTowerGrid(tower)
+	local playerID = tower:GetPlayerOwnerID()
+	local playerData = GetPlayerData(playerID)
+	if not playerData.toggle_grid_item or not playerData.toggle_grid_item.enabled then
+		return
+	end
+
+	local location = tower:GetAbsOrigin()
+	local originX = GridNav:WorldToGridPosX(location.x)
+    local originY = GridNav:WorldToGridPosY(location.y)
+    local boundX1 = originX + 1
+    local boundX2 = originX - 1
+    local boundY1 = originY + 1
+    local boundY2 = originY - 1
+
+    local lowerBoundX = math.min(boundX1, boundX2)
+    local upperBoundX = math.max(boundX1, boundX2)
+    local lowerBoundY = math.min(boundY1, boundY2)
+    local upperBoundY = math.max(boundY1, boundY2)
+
+    -- Adjust even size
+    upperBoundX = upperBoundX-1
+    upperBoundY = upperBoundY-1
+
+    for y = lowerBoundY, upperBoundY do
+        for x = lowerBoundX, upperBoundX do
+			local particle = DrawGrid(x, y, Vector(255,255,255), playerID)
+			table.insert(playerData.toggle_grid_item.particles, particle)
+        end
+    end
+end
+
+function CancelConstruction(event)
+	local ability = event.ability
+	local tower = event.caster
+	local hero = tower:GetOwner()
+	local playerID = hero:GetPlayerID()
+	local playerData = GetPlayerData(playerID)
+	local goldCost = GetUnitKeyValue(tower:GetUnitName(), "Cost")
+	local essenceCost = GetUnitKeyValue(tower.class, "EssenceCost") or 0
+
+	if tower.upgradedFrom then
+		tower:Stop()
+		local newClass = tower.upgradedFrom
+		local scriptClassName = GetUnitKeyValue(newClass, "ScriptClass") or "BasicTower"
+		local stacks = tower:GetModifierStackCount("modifier_kill_count", tower)
+
+		-- Replace the tower by a new one
+		local newTower = BuildingHelper:UpgradeBuilding(tower, newClass)
+
+		-- Kill count is transfered if the tower is upgraded to one of the same type (single/dual/triple)
+		InitializeKillCount(newTower)
+		if scriptClassName == tower.scriptClass then
+			TransferKillCount(stacks, newTower)
+		end
+
+		-- set some basic values to this tower from its KeyValues
+		newTower.class = newClass
+		newTower.element = GetUnitKeyValue(newClass, "Element")
+		newTower.damageType = GetUnitKeyValue(newClass, "DamageType")
+
+		-- New pedestal if one wasn't created already
+		if not newTower.prop then
+			local basicName = newTower.damageType.."_tower"
+			local pedestalName = GetUnitKeyValue(basicName, "PedestalModel")
+			local prop = BuildingHelper:CreatePedestalForBuilding(newTower, basicName, GetGroundPosition(newTower:GetAbsOrigin(), nil), pedestalName)
+		end
+
+		playerData.towers[newTower:entindex()] = newClass --add this tower to the player's tower list
+		UpdateUpgrades(newTower) --update this tower's upgrades
+		UpdatePlayerSpells(playerID) --update the player's spells
+
+		local upgradeData = {}
+		if tower.scriptObject and tower.scriptObject["GetUpgradeData"] then
+			upgradeData = tower.scriptObject:GetUpgradeData()
+		end
+
+		-- Add sell ability
+		if IsPlayerUsingRandomMode(playerID) then
+			AddAbility(newTower, "sell_tower_100")
+		elseif string.find(newTower.class, "arrow_tower") ~= nil or string.find(newTower.class, "cannon_tower") ~= nil then
+			AddAbility(newTower, "sell_tower_98")
+		else
+			AddAbility(newTower, "sell_tower_90")
+		end
+
+		-- create a script object for this tower
+        if TOWER_CLASSES[scriptClassName] then
+	        local scriptObject = TOWER_CLASSES[scriptClassName](newTower, newClass)
+	        newTower.scriptClass = scriptClassName
+	        newTower.scriptObject = scriptObject
+	        newTower.scriptObject:OnCreated()
+	        if newTower.scriptObject["ApplyUpgradeData"] then
+	        	newTower.scriptObject:ApplyUpgradeData(upgradeData)
+	        end
+        else
+	    	Log:error("Unknown script class, " .. scriptClassName .. " for tower " .. newTower.class)
+    	end
+
+    	if IsSupportTower(newTower) then
+        	newTower:AddNewModifier(newTower, nil, "modifier_support_tower", {})
+        end
+
+		AddAbility(newTower, newTower.damageType .. "_passive")
+		if GetUnitKeyValue(newClass, "AOE_Full") and GetUnitKeyValue(newClass, "AOE_Half") then
+			AddAbility(newTower, "splash_damage_orb")
+		end
+
+		tower.deleted = true --mark the old tower for deletion
+
+		if GetUnitKeyValue(newClass, "DisableTurning") then
+        	newTower:AddNewModifier(newTower, nil, "modifier_disable_turning", {})
+        end
+
+        AddAbility(newTower, "ability_building")
+        newTower:AddNewModifier(newTower, nil, "modifier_no_health_bar", {})
+
+        -- keep well & blacksmith buffs
+	    local fire_up = tower:FindModifierByName("modifier_fire_up")
+	    if fire_up then
+	        newTower:AddNewModifier(fire_up:GetCaster(), fire_up:GetAbility(), "modifier_fire_up", {duration = fire_up:GetDuration()})
+	    end
+
+	    local spring_forward = tower:FindModifierByName("modifier_spring_forward")
+	    if spring_forward then
+	        newTower:AddNewModifier(spring_forward:GetCaster(), spring_forward:GetAbility(), "modifier_spring_forward", {duration = spring_forward:GetDuration()})
+	    end
+
+		Timers:CreateTimer(function()
+			RemoveUnitFromSelection( tower )
+			AddUnitToSelection(newTower)
+			Timers:CreateTimer(0.03, function()
+				UpdateSelectedEntities()
+			end)
+		end)
+	else
+		Sounds:EmitSoundOnClient(playerID, "Gold.CoinsBig")	
+		PopupAlchemistGold(tower, goldCost)
+		local coins = ParticleManager:CreateParticle("particles/econ/items/alchemist/alchemist_midas_knuckles/alch_knuckles_lasthit_coins.vpcf", PATTACH_CUSTOMORIGIN, tower)
+		ParticleManager:SetParticleControl(coins, 1, tower:GetAbsOrigin())
+
+		if essenceCost > 0 then
+			PopupEssence(tower, essenceCost)
+		end
+
+		if tower.damageType and tower.damageType ~= "composite" then
+			PlayElementalExplosion(tower.damageType, tower)
+		end
+
+		tower:AddEffects(EF_NODRAW)
+		DrawTowerGrid(tower)
+		tower:ForceKill(true)
+	end
+
+	-- Gold
+	hero:ModifyGold(goldCost)
+
+	-- Essence
+	if essenceCost > 0 then
+		ModifyPureEssence(playerID, essenceCost, true)
+	end
+
+	-- Removal
+	playerData.towers[tower:entindex()] = nil -- remove this tower index from the player's tower list
 end

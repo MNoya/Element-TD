@@ -96,8 +96,8 @@ function GetPlayerNetworth(playerID)
 						playerNetworth = playerNetworth + round( GetUnitKeyValue( tower.class, "TotalCost" ) * 0.98 )
 					elseif ( name == "sell_tower_95" ) then
 						playerNetworth = playerNetworth + round( GetUnitKeyValue( tower.class, "TotalCost" ) * 0.95 )
-					elseif ( name == "sell_tower_75" ) then
-						playerNetworth = playerNetworth + round( GetUnitKeyValue( tower.class, "TotalCost" ) * 0.75 )
+					elseif ( name == "sell_tower_90" ) then
+						playerNetworth = playerNetworth + round( GetUnitKeyValue( tower.class, "TotalCost" ) * 0.90 )
 					end
 				end
 			end
@@ -116,6 +116,18 @@ function CanPlayerEnableRandom( playerID )
 	return playerData.elementalCount == 0 and playerData.completedWaves < 5
 end
 
+function PlayElementalExplosion(element, tower)
+    local particleName = ExplosionParticles[element]
+    local explosion = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, tower)
+    ParticleManager:SetParticleControl(explosion, 0, tower:GetAbsOrigin())
+
+    if element=="earth" then
+        ParticleManager:SetParticleControl(explosion, 1, Vector(150,150,150))
+    elseif element=="light" then
+        ParticleManager:SetParticleControlEnt(explosion, 1, tower, PATTACH_POINT_FOLLOW, "attach_hitloc", tower:GetAbsOrigin(), true)
+    end
+end
+
 function ModifyElementValue(playerID, element, change)
 	local playerData = GetPlayerData(playerID)
 
@@ -125,17 +137,10 @@ function ModifyElementValue(playerID, element, change)
 	end
 
 	-- Fire a particle on all towers
-    local particleName = ExplosionParticles[element]
     for k,v in pairs(playerData.towers) do
         local tower = EntIndexToHScript(k)
-        local explosion = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, tower)
-        ParticleManager:SetParticleControl(explosion, 0, tower:GetAbsOrigin())
 
-        if element=="earth" then
-            ParticleManager:SetParticleControl(explosion, 1, Vector(150,150,150))
-        elseif element=="light" then
-            ParticleManager:SetParticleControlEnt(explosion, 1, tower, PATTACH_POINT_FOLLOW, "attach_hitloc", tower:GetAbsOrigin(), true)
-        end
+        PlayElementalExplosion(element, tower)
     end
 
     if playerData.elementalCount == 0 then

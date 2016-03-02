@@ -1938,6 +1938,29 @@
 		}
 	}
 	//============================================================//
+	// Cancel Building/Upgrade
+	//============================================================//
+	"cancel_construction"
+	{
+	    // General
+	    //-----------------------------
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+	    "MaxLevel"                      "1"
+	    "AbilityTextureName"            "cancel_construction"
+	
+	    "AbilityMultiOrder" "1"
+	
+	    "OnToggleOn"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "spells.lua"
+	            "Function"          "CancelConstruction"
+	        }
+	    }
+	}
+	//============================================================//
 	// Disease Tower: Soul Reaper
 	//============================================================//
 	"disease_tower_soul_reaper"
@@ -3934,9 +3957,9 @@
 	    }
 	}
 	//============================================================//
-	// Sell Tower 75%
+	// Sell Tower 90%
 	//============================================================//
-	"sell_tower_75"
+	"sell_tower_90"
 	{
 	    // General
 	    //-----------------------------

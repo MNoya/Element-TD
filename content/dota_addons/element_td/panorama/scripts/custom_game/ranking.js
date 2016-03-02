@@ -32,11 +32,13 @@ function DisplayRanks( data )
         if (ply.sector >= 0 && ply.sector < 8) {
             var container = $('#sector'+ply.sector);
             if (container !== null) {
-                var playerPanel = $.CreatePanel( "Panel", $( '#sector'+ply.sector ), "_player_" + ply.playerID );
-                playerPanel.BLoadLayout( "file://{resources}/layout/custom_game/ranking_player.xml", false, false );
-                _SetTextSafe( playerPanel, "RankingPercentile", ply.percentile + "%");
-                _SetTextSafe( playerPanel, "RankingRank", FormatRank(ply.rank));
-                playerPanel.FindChildInLayoutFile( "RankingPlayer" ).AddClass(GetRankImage(ply.rank,ply.percentile)+"_percentile");
+                if (ply.rank != 0) {
+                    var playerPanel = $.CreatePanel( "Panel", $( '#sector'+ply.sector ), "_player_" + ply.playerID );
+                    playerPanel.BLoadLayout( "file://{resources}/layout/custom_game/ranking_player.xml", false, false );
+                    _SetTextSafe( playerPanel, "RankingPercentile", ply.percentile + "%");
+                    _SetTextSafe( playerPanel, "RankingRank", FormatRank(ply.rank));
+                    playerPanel.FindChildInLayoutFile( "RankingPlayer" ).AddClass(GetRankImage(ply.rank,ply.percentile)+"_percentile");
+                }
             }
         }
     }
@@ -85,12 +87,14 @@ function ShowRanks( data )
     if (data.toggle) {
         for (var player in playerRankings) {
             var ply = playerRankings[player];
-            var panel = $('#_player_'+ply.playerID);
-            var child = panel.FindChildInLayoutFile( "RankingPlayer" );
-            child.RemoveClass("slideOut");
-            child.RemoveClass("hidden");
-            $.Schedule(10, function() { enabled = true; child.AddClass("hidden"); });
-            $.Schedule(11, function() { child.AddClass("slideOut"); });
+            if (ply.rank != 0) {
+                var panel = $('#_player_'+ply.playerID);
+                var child = panel.FindChildInLayoutFile( "RankingPlayer" );
+                child.RemoveClass("slideOut");
+                child.RemoveClass("hidden");
+                $.Schedule(10, function() { enabled = true; child.AddClass("hidden"); });
+                $.Schedule(11, function() { child.AddClass("slideOut"); });
+            }
         }
     }
 }

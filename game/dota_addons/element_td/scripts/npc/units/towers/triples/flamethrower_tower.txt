@@ -48,7 +48,7 @@
     "DamageType"        "fire"
     "ScriptClass"        "FlamethrowerTower"
     "TowerType"        "Normal"
-    "BuffPriority"          "7"
+    "BuffPriority"              "6"
     "HasAbilityDesc"        "1"
     "AttackRange"        "700"
     "AttackAcquisitionRange"        "700"

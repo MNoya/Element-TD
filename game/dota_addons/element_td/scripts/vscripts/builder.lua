@@ -95,6 +95,7 @@ function Build( event )
 
         -- Units can't attack while building
         unit:AddNewModifier(unit, nil, "modifier_attack_disabled", {})
+        unit:AddNewModifier(nil, nil, "modifier_stunned", {})
 
         -- Add kill tracker
         InitializeKillCount(unit)
@@ -104,6 +105,9 @@ function Build( event )
 
         -- Add building-creature properties
         AddAbility(unit, "ability_building")
+
+        -- Add cancel building ability
+        AddAbility(unit, "cancel_construction")
 
         -- set some basic values to this tower from its KeyValues
         unit.class = building_name
@@ -138,9 +142,13 @@ function Build( event )
         -- Play construction complete sound
         -- Give the unit their original attack capability
         unit:RemoveModifierByName("modifier_attack_disabled")
+        unit:RemoveModifierByName("modifier_stunned")
         
         -- Building abilities
-         unit:AddNewModifier(unit, nil, "modifier_no_health_bar", {})
+        unit:AddNewModifier(unit, nil, "modifier_no_health_bar", {})
+
+        -- Remove cancel building
+        unit:RemoveAbility("cancel_construction")
 
         -- mark this tower as a support tower if necessary
         if IsSupportTower(unit) then
@@ -153,7 +161,7 @@ function Build( event )
         elseif string.match(building_name, "arrow_tower") or string.match(building_name, "cannon_tower") then
             AddAbility(unit, "sell_tower_98")
         else
-            AddAbility(unit, "sell_tower_75")
+            AddAbility(unit, "sell_tower_90")
         end
 
         if string.match(building_name, "cannon_tower") then

@@ -201,7 +201,6 @@ function SpawnEntity(entityClass, playerID, position)
     local entity = CreateUnitByName(entityClass, position, true, nil, nil, DOTA_TEAM_NEUTRALS)
     if entity then
         entity:AddNewModifier(nil, nil, "modifier_phased", {})
-        entity:AddNewModifier(entity, nil, "modifier_damage_block", {})
 
         entity:SetDeathXP(0)
         entity.class = entityClass
@@ -285,24 +284,22 @@ function SpawnWaveForPlayer(playerID, wave)
         end
 
         -- Boss Wave completed starts the new one with no breaktime (unless its Endless)
-        if playerData.completedWaves >= WAVE_COUNT and not EXPRESS_MODE and GameSettings:GetEndless() == "Normal" then
-            print("Player [" .. playerID .. "] has completed a boss wave")
-            playerData.bossWaves = playerData.bossWaves + 1
-            Log:info("Spawning boss wave " .. playerData.bossWaves .. " for ["..playerID.."] ".. playerData.name)
-            ShowBossWaveMessage(playerID, playerData.bossWaves)
-
-            -- update wave info
-            UpdateWaveInfo(playerID, wave)
+        if playerData.completedWaves >= WAVE_COUNT and not EXPRESS_MODE then
+            local bossWaveNumber = playerData.completedWaves - WAVE_COUNT + 1
+            print("Player [" .. playerID .. "] has completed boss wave "..bossWaveNumber)
 
             -- Boss wave score
-            playerData.scoreObject:UpdateScore( SCORING_BOSS_WAVE_CLEAR, wave)
+            playerData.scoreObject:UpdateScore(SCORING_BOSS_WAVE_CLEAR, wave)
 
-            SpawnWaveForPlayer(playerID, WAVE_COUNT) -- spawn the next boss wave
-            return
-        end
-
-        -- For Endless
-        if playerData.completedWaves >= WAVE_COUNT and not EXPRESS_MODE and GameSettings:GetEndless() == "Endless" then
+            if GameSettings:GetEndless() == "Normal" then
+                playerData.bossWaves = playerData.bossWaves + 1
+                Log:info("Spawning boss wave " .. playerData.bossWaves .. " for ["..playerID.."] ".. playerData.name)
+        
+                UpdateWaveInfo(playerID, wave) -- update wave info
+                ShowBossWaveMessage(playerID, playerData.bossWaves)
+                SpawnWaveForPlayer(playerID, WAVE_COUNT) -- spawn the next boss wave
+            end
+            
             return
         end
 
@@ -310,7 +307,10 @@ function SpawnWaveForPlayer(playerID, wave)
         local finishedExpress = EXPRESS_MODE and playerData.completedWaves == WAVE_COUNT
         local clearedNormal = not EXPRESS_MODE and playerData.completedWaves == WAVE_COUNT - 1
         if finishedExpress or clearedNormal then
-            playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
+            playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR, wave )
+            Timers:CreateTimer(2, function()
+                playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
+            end)
 
             if finishedExpress then
                 Log:info("Player ["..playerID.."] has completed the game.")

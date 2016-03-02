@@ -23,26 +23,23 @@ function ErosionTower:OnAcidDot(keys)
 end
 
 function ErosionTower:OnProjectileHitUnit(keys)
-    self:OnAttackLanded({target = keys.target, isBonus = true})
+    self:OnAttackLanded({target = keys.target})
 end
 
 function ErosionTower:OnAttackLanded(keys)
     local target = keys.target
 
-    local entities = GetCreepsInArea(target:GetAbsOrigin(), self.halfAOE)
-    for _,e in pairs(entities) do
-        self.ability:ApplyDataDrivenModifier(self.tower, e, "modifier_acid_attack_damage_amp", {})
-        self.ability:ApplyDataDrivenModifier(self.tower, e, "modifier_acid_attack_dot", {})
-        local modifier = e:FindModifierByName("modifier_acid_attack_damage_amp")
-        if modifier then
-            modifier.damageAmp = self.damageAmp
-            self:OnAcidDot({target=e})
-        end
+    self.ability:ApplyDataDrivenModifier(self.tower, target, "modifier_acid_attack_damage_amp", {})
+    local modifier = target:FindModifierByName("modifier_acid_attack_damage_amp")
+    if modifier then
+        modifier.damageAmp = self.damageAmp
     end
+
+    self.ability:ApplyDataDrivenModifier(self.tower, target, "modifier_acid_attack_dot", {})
+    self:OnAcidDot({target=target})
 end
 
 function ErosionTower:OnCreated()
-    self.modifierName = "modifier_acid_attack_damage_amp"
     self.ability = AddAbility(self.tower, "erosion_tower_acid_attack", self.tower:GetLevel())
     self.fullAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))
     self.halfAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))

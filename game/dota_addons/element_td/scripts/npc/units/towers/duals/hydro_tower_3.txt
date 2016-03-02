@@ -44,7 +44,7 @@
     "DamageType"                "earth"
     "ScriptClass"               "HydroTower"
     "TowerType"                 "Normal"
-    "BuffPriority"          "2"
+    "BuffPriority"              "3"
     
     "Requirements"
     {

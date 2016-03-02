@@ -17,7 +17,7 @@ if not players then
     DEV_MODE = false
     EXPRESS_MODE = false
 
-    VERSION = "B010316"
+    VERSION = "B010316b"
 
     START_TIME = GetSystemDate() .. " " .. GetSystemTime()
     END_TIME = nil
@@ -26,7 +26,6 @@ if not players then
 end
 
 function ElementTD:InitGameMode()
-
     GenerateAllConstants() -- generate all constant tables
 
     self.availableSpawnIndex = 1 -- the index of the next available sector
@@ -90,7 +89,6 @@ function ElementTD:InitGameMode()
     LinkLuaModifier("modifier_transparency", "libraries/modifiers/modifier_transparency.lua", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_disabled", "libraries/modifiers/modifier_disabled", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_attack_disabled", "libraries/modifiers/modifier_attack_disabled", LUA_MODIFIER_MOTION_NONE)
-    LinkLuaModifier("modifier_damage_block", "libraries/modifiers/modifier_damage_block", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_support_tower", "libraries/modifiers/modifier_support_tower", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_bonus_life", "libraries/modifiers/modifier_bonus_life", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_health_bar_markers", "libraries/modifiers/modifier_health_bar_markers", LUA_MODIFIER_MOTION_NONE)
@@ -116,6 +114,9 @@ function ElementTD:InitGameMode()
 
     -- Don't end the game if everyone is unassigned
     SendToServerConsole("dota_surrender_on_disconnect 0")
+
+    -- Increase time to load and start even if not all players loaded
+    SendToServerConsole("dota_wait_for_players_to_load_timeout 240")
 
     -- Less expensive pathing?
     LimitPathingSearchDepth(0.5)
@@ -178,6 +179,10 @@ function ElementTD:StartGame()
             CustomGameEventManager:Send_ServerToAllClients( "etd_toggle_vote_dialog", {visible = true} )
             StartVoteTimer()
             EmitAnnouncerSound("announcer_announcer_battle_prepare_01")
+
+            if GameRules:IsCheatMode() then
+                ElementTD:CheatsEnabled()
+            end
         else
             -- voting should never be skipped in real games
             START_GAME_TIME = GameRules:GetGameTime()
@@ -419,8 +424,6 @@ function ElementTD:OnUnitSpawned(keys)
             summoner:SetControllableByPlayer(playerID, true)
             summoner:SetAngles(0, 270, 0)
             summoner:AddItem(CreateItem("item_buy_pure_essence_disabled", nil, nil))
-            summoner:AddItem(CreateItem("item_random", nil, nil))
-            Timers:CreateTimer(0.1, function() summoner:SwapItems(1, 3) end)
             summoner.icon = CreateUnitByName("elemental_summoner_icon", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber())
             playerData.summoner = summoner
 
@@ -446,6 +449,8 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:AddNewModifier(nil, nil, "modifier_disarmed", {})
     hero:AddNewModifier(nil, nil, "modifier_attack_immune", {})
     hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
+    hero:AddNewModifier(hero, nil, "modifier_max_ms", {})
+
     hero:SetAbilityPoints(0)
     hero:SetMaxHealth(50)
     hero:SetBaseMaxHealth(50)
@@ -473,7 +478,7 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:AddItem(CreateItem("item_build_arrow_tower", hero, hero))
     hero:AddItem(CreateItem("item_build_cannon_tower", hero, hero))
     hero:AddItem(CreateItem("item_build_periodic_tower_disabled", hero, hero))
-    hero:AddItem(CreateItem("item_toggle_grid", hero, hero))
+    playerData.toggle_grid_item = hero:AddItem(CreateItem("item_toggle_grid", hero, hero))
     Timers:CreateTimer(0.1, function() hero:SwapItems(3, 5) end)
 
     -- Additional Heroes UI
@@ -619,7 +624,9 @@ function ElementTD:FilterExecuteOrder( filterTable )
     ------------------------------------------------
     if abilityIndex and abilityIndex > 0 then
         local ability = EntIndexToHScript(abilityIndex)
+        if not ability then return end
         local abilityName = ability:GetAbilityName()
+
         local entityList = GetSelectedEntities(unit:GetPlayerOwnerID())
         if not entityList then return true end
 
@@ -640,16 +647,19 @@ function ElementTD:FilterExecuteOrder( filterTable )
             end
 
         elseif string.match(abilityName, "item_upgrade_to_") then
-
-             for _,entityIndex in pairs(entityList) do
+            if not unit:IsStunned() then
+                unit.upgrading = true
+            end
+            for _,entityIndex in pairs(entityList) do
                 local caster = EntIndexToHScript(entityIndex)
                 -- Make sure the original caster unit doesn't cast twice
                 if caster and caster ~= unit and caster:HasItemInInventory(abilityName) then
                     local item = GetItemByName(caster, abilityName)
-                    if item and item:IsFullyCastable() then
+                    if item and item:IsFullyCastable() and not caster:IsStunned() and not caster.upgrading then
 
                         -- Only NO_TARGET
                         caster.skip = true
+                        caster.upgrading = true
                         ExecuteOrderFromTable({ UnitIndex = entityIndex, OrderType = order_type, AbilityIndex = item:GetEntityIndex(), Queue = queue})
                     end
                 end
@@ -668,6 +678,8 @@ function ElementTD:FilterExecuteOrder( filterTable )
                             if (caster:GetAbsOrigin() - point):Length2D() <= ability:GetCastRange() then
                                 ExecuteOrderFromTable({ UnitIndex = entityIndex, OrderType = order_type, Position = point, AbilityIndex = abil:GetEntityIndex(), Queue = queue})
                             end
+                        else
+                            ExecuteOrderFromTable({ UnitIndex = entityIndex, OrderType = order_type, AbilityIndex = abil:GetEntityIndex(), Queue = queue})
                         end
                     end
                 end
@@ -703,15 +715,9 @@ function ElementTD:DamageFilter( filterTable )
     local attacker = EntIndexToHScript( attacker_index )
     local damagetype = filterTable["damagetype_const"]
 
+    -- All our damage is done through elements custom DamageEntity, physical damage is not allowed
     if damagetype == DAMAGE_TYPE_PHYSICAL then
-        local original_damage = filterTable["damage"] --Post reduction
-        local inflictor = filterTable["entindex_inflictor_const"]
-
-        -- Deny autoattack damage on towers that are projectile-based
-        if not inflictor and attacker.no_autoattack_damage then
-            filterTable["damage"] = 0
-            return true
-        end
+        return false
     end
 
     return true
@@ -749,10 +755,6 @@ function ElementTD:OnPlayerChat(keys)
     local playerID = self.vUserIds[userID] and self.vUserIds[userID]:GetPlayerID()
     if not playerID then return end
 
-    if string.match(text, "-gold") or string.match(text, "-lvlup") or string.match(text, "-respawn") or string.match(text, "-createhero") or string.match(text, "-refresh") or string.match(text, "-item") or string.match(text, "-wtf") or string.match(text, "-respawn") or string.match(text, "-teleport") then
-        ElementTD:CheatCommandUsed(playerID)
-    end
-
     -- Handle '-command'
     if StringStartsWith(text, "-") then
         local input = split(string.sub(text, 2, string.len(text)))
@@ -765,17 +767,13 @@ function ElementTD:OnPlayerChat(keys)
     end
 end
 
-function ElementTD:CheatCommandUsed(playerID)
-    if not playerID then
-        for _, playerID in pairs(playerIDs) do
-            local playerData = GetPlayerData(playerID)
-            if playerData then
-                playerData.cheated = true
-            end
+function ElementTD:CheatsEnabled()    
+    for _, playerID in pairs(playerIDs) do
+        local playerData = GetPlayerData(playerID)
+        if playerData then
+            playerData.cheated = true
         end
-    else    
-        GetPlayerData(playerID).cheated = true
     end
     
-    --GameRules:SendCustomMessage("#etd_cheats_enabled", 0, 0)
+    GameRules:SendCustomMessage("#etd_cheats_enabled", 0, 0)
 end

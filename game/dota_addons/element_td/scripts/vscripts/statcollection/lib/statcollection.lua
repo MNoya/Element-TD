@@ -152,8 +152,10 @@ function statCollection:hookFunctions()
 
     -- If we are testing (i.e. in workshop tools, don't wait for player connects to check)
     if self.TESTING then
-        -- Send stage1 stuff
-        this:sendStage1()
+        Timers:CreateTimer(1, function()
+            -- Send stage1 stuff
+            this:sendStage1()
+        end)
     else
         --Wait for host before sending Phase 1
         ListenToGameEvent('player_connect_full', function(keys)
@@ -260,7 +262,6 @@ function statCollection:sendStage1()
 
     -- Ensure we can only send it once, and everything is good to go
     if self.sentStage1 then return end
-    self.sentStage1 = true
 
     -- statCollection:print the intro message
     statCollection:print(messagePhase1Starting)
@@ -321,6 +322,8 @@ function statCollection:sendStage1()
         this.authKey = res.authKey
         this.matchID = res.matchID
 
+        self.sentStage1 = true
+
         -- Tell the user
         statCollection:print(messagePhase1Complete)
         statCollection:print("Auth Key: ", self.authKey)
@@ -348,7 +351,6 @@ function statCollection:sendStage2()
 
     -- Ensure we can only send it once, and everything is good to go
     if self.sentStage2 then return end
-    self.sentStage2 = true
 
     -- statCollection:print the intro message
     statCollection:print(messagePhase2Starting)
@@ -392,6 +394,8 @@ function statCollection:sendStage2()
             statCollection:print(res.error)
             return
         end
+
+        self.sentStage2 = true
 
         -- Tell the user
         statCollection:print(messagePhase2Complete)
