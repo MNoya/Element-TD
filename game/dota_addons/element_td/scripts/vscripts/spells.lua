@@ -128,6 +128,10 @@ function SellTowerCast(keys)
 			end
 		end
 
+		if tower.damageType and tower.damageType ~= "composite" then
+			PlayElementalExplosion(tower.damageType, tower)
+		end
+
 		-- Remove random Blacksmith/Well buff when sold
 		if tower.class == "blacksmith_tower" or tower.class == "well_tower" then
 			RemoveRandomBuff(tower)
@@ -520,15 +524,6 @@ function CancelConstruction(event)
 	local goldCost = GetUnitKeyValue(tower:GetUnitName(), "Cost")
 	local essenceCost = GetUnitKeyValue(tower.class, "EssenceCost") or 0
 
-	-- Gold
-	hero:ModifyGold(goldCost)
-
-	-- Essence
-	if essenceCost > 0 then
-		ModifyPureEssence(playerID, essenceCost, true)
-		PopupEssence(tower, essenceCost)
-	end
-
 	if tower.upgradedFrom then
 		local newClass = tower.upgradedFrom
 		local scriptClassName = GetUnitKeyValue(newClass, "ScriptClass") or "BasicTower"
@@ -627,10 +622,26 @@ function CancelConstruction(event)
 		PopupAlchemistGold(tower, goldCost)
 		local coins = ParticleManager:CreateParticle("particles/econ/items/alchemist/alchemist_midas_knuckles/alch_knuckles_lasthit_coins.vpcf", PATTACH_CUSTOMORIGIN, tower)
 		ParticleManager:SetParticleControl(coins, 1, tower:GetAbsOrigin())
-		
+
+		if essenceCost > 0 then
+			PopupEssence(tower, essenceCost)
+		end
+
+		if tower.damageType and tower.damageType ~= "composite" then
+			PlayElementalExplosion(tower.damageType, tower)
+		end
+
 		tower:AddEffects(EF_NODRAW)
 		DrawTowerGrid(tower)
 		tower:ForceKill(true)
+	end
+
+	-- Gold
+	hero:ModifyGold(goldCost)
+
+	-- Essence
+	if essenceCost > 0 then
+		ModifyPureEssence(playerID, essenceCost, true)
 	end
 
 	-- Removal
