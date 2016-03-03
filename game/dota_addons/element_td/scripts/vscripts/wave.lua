@@ -112,13 +112,15 @@ function Wave:SpawnWave()
 				if GameSettings:GetEndless() == "Endless" then
 					playerData.nextWave = playerData.nextWave + 1
 
-					-- Boss Waves
+					-- Rush Boss Waves just follow the same classic spawn rules, skip
 			        if playerData.nextWave > WAVE_COUNT and not EXPRESS_MODE then
-			        	playerData.bossWaves = playerData.bossWaves + 1
+					
+			        	--[[playerData.bossWaves = playerData.bossWaves + 1
 			            Log:info("Spawning Rush boss wave " .. playerData.bossWaves .. " for ["..self.playerID.."] ".. playerData.name)
 			            ShowBossWaveMessage(self.playerID, playerData.bossWaves)
 			            UpdateWaveInfo(self.playerID, WAVE_COUNT)
-			            SpawnWaveForPlayer(self.playerID, WAVE_COUNT) -- spawn dat boss wave
+			            SpawnWaveForPlayer(self.playerID, WAVE_COUNT) -- spawn dat boss wave]]
+			            
 			            return nil
 			        elseif playerData.nextWave > WAVE_COUNT and EXPRESS_MODE then
 			        	return nil
