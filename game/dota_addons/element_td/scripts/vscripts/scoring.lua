@@ -206,7 +206,7 @@ end
 function ScoringObject:GetBossWaveCleared( bossWave )
 	local playerData = GetPlayerData( self.playerID )
 	local bossBonus = self:GetBossBonus(bossWave-1)
-	local waveClearScore = 3000 * bossBonus --100 per kill * 0.10 every wave past the first
+	local waveClearScore = 3000 * bossBonus --100 per kill * 0.20 every wave past the first
 	local difficultyBonus = self:GetDifficultyBonus()
 	local frogKills = playerData.iceFrogKills
 	local totalScore = math.ceil(waveClearScore * (1 + difficultyBonus))
@@ -229,7 +229,7 @@ function ScoringObject:GetGameCleared()
 	local score = self.totalScore
 	local values = {}
 	local totalScore = 0
-	local networthBonus = 0
+	local networthBonus = self:GetNetworthBonus()
 	local extraFrogScore = 0 --Killed but didn't finish the wave
 	local frogKills = 0 --Total
 	if playerData.iceFrogKills then
@@ -237,8 +237,6 @@ function ScoringObject:GetGameCleared()
 		local remainder = frogKills % 30
 		extraFrogScore = remainder * 100 * self:GetBossBonus(playerData.bossWaves-1) * self:GetDifficultyBonus()
 	end
-
-	networthBonus = self:GetNetworthBonus()
 
 	totalScore = math.ceil((score+extraFrogScore) * (networthBonus + 1))
 
@@ -273,24 +271,11 @@ function ScoringObject:GetWaveClearBonus( wave )
 	return bonus
 end
 
--- Player Networth/Base Networth/2
--- Base Networth: 	Normal=88170
---					Hard=96060
---					VeryHard=110790
---					Insane=127770
+-- Player Networth/Base Networth/2 based on Difficulty and Classic/Express
 function ScoringObject:GetNetworthBonus()
-
-	local difficulty = GetPlayerDifficulty( self.playerID ).difficultyName
 	local playerNetworth = GetPlayerNetworth( self.playerID )
-	local baseWorth = 69483
+	local baseWorth = GetPlayerDifficulty( self.playerID ):GetBaseWorth()
 
-	if ( difficulty == "Hard" ) then
-		baseWorth = 89142
-	elseif ( difficulty == "VeryHard" ) then
-		baseWorth = 102373
-	elseif ( difficulty == "Insane" ) then
-		baseWorth = 117564
-	end
 	return (playerNetworth/baseWorth/2)
 end
 
@@ -316,7 +301,7 @@ end]]
 function ScoringObject:GetBossBonus( waves )
 	local bonus = 1
 	if waves >= 0 then
-		bonus = 1+waves*0.10
+		bonus = 1+waves*0.20
 	end
 	return bonus
 end

@@ -39,6 +39,10 @@ function DifficultyObject:GetBountyBonusMultiplier()
     return EXPRESS_MODE and self.data.BaseBountyExpress or self.data.BaseBounty
 end
 
+function DifficultyObject:GetBaseWorth()
+    return EXPRESS_MODE and self.data.NetworthBonus or self.data.NetworthBonusExpress
+end
+
 function DifficultyObject:GetWaveBreakTime(wave)
 	local times = self.data.WaveTimers
 	if EXPRESS_MODE then
