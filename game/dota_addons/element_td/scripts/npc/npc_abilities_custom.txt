@@ -3085,7 +3085,7 @@
 	
 			"modifier_life_tower_current_kill_counter"
 			{
-				"TextureName" "towers/life_tower_afterlife"
+				"TextureName" "towers/life"
 			}
 		}
 	
@@ -3359,7 +3359,7 @@
 				"Duration"		"%duration"
 				"IsDebuff"		"1"
 				"IsPurgable"	"1"
-				"TextureName"	"phoenix_supernova"
+				"TextureName"	"towers/nova"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
@@ -3708,7 +3708,7 @@
 				"Duration"			"%duration"
 				"IsDebuff"			"1"
 				"IsPurgable"	"1"
-				"TextureName"		"treant_leech_seed"
+				"TextureName"		"towers/roots"
 				"EffectName"		"particles/custom/towers/roots/debuff.vpcf"
 				"EffectTargetType"	"follow_origin"
 				"Properties"
@@ -3752,7 +3752,7 @@
 				"ThinkInterval"	"1"
 				"IsDebuff"		"1"
 				"IsPurgable"	"1"
-				"TextureName"	"treant_leech_seed"
+				"TextureName"	"towers/roots"
 				
 				"OnIntervalThink"
 				{

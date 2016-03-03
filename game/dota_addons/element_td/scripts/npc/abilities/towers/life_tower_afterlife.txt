@@ -33,7 +33,7 @@
 
 		"modifier_life_tower_current_kill_counter"
 		{
-			"TextureName" "towers/life_tower_afterlife"
+			"TextureName" "towers/life"
 		}
 	}
 
