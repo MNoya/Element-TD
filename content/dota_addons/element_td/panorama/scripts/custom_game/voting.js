@@ -30,7 +30,7 @@ var healthBonus = {normal:"100%",hard:"150%",veryhard:"200%",insane:"250%"}
 var bountyBonus = {normal:"100%",hard:"130%",veryhard:"150%",insane:"170%"}
 var bountyBonusExpress = {normal:"100%",hard:"130%",veryhard:"150%",insane:"170%"}
 var endlessBountyBonus = 20
-var scoreMultipliers = {normal:1,hard:2,veryhard:3,insane:4,chaos:0.10,endless:0.25}
+var scoreMultipliers = {normal:1,hard:2,veryhard:3,insane:4}
 
 var healthMult = $( '#HealthMult' );
 var bountyMult = $( '#BountyMult' );
@@ -44,8 +44,8 @@ var express = $('#express')
 function UpdateMultipliers(difficultyName){
     difficultyName = difficultyName || activeDifficulty;
     healthMult.text = GetHP(difficultyName)
-    bountyMult.text = GetBounty(difficultyName, endless.checked || endless.hovering, express.checked || express.hovering)
-    scoresMult.text = GetScore(difficultyName, endless.checked || endless.hovering, chaos.checked || chaos.hovering)
+    bountyMult.text = GetBounty(difficultyName, express.checked || express.hovering)
+    scoresMult.text = GetScore(difficultyName)
 }
 
 function HoverDifficulty(name) {
@@ -319,8 +319,8 @@ function ShowVoteResults( data )
 
     // Update HP-Bounty-Scores results
     $("#HealthResult").text = GetHP(difficultyName)
-    $("#BountyResult").text = GetBounty(difficultyName, endless, express)
-    $("#ScoresResult").text = GetScore(difficultyName, endless, chaos)
+    $("#BountyResult").text = GetBounty(difficultyName, express)
+    $("#ScoresResult").text = GetScore(difficultyName)
 
     // Show current mode UI
     currentModeUI.visible = true;
@@ -332,26 +332,13 @@ function GetHP(difficultyName) {
     return "Health: "+healthBonus[difficultyName]
 }
 
-function GetBounty(difficultyName, bEndless, bExpress) {
+function GetBounty(difficultyName, bExpress) {
     var bounty = bExpress ? bountyBonusExpress[difficultyName] : bountyBonus[difficultyName]
-    if (bEndless)
-    {
-        bounty = Number(bounty.substring(0,bounty.length-1)) + endlessBountyBonus
-        bounty = bounty + "%"
-    }
     return "Bounty: "+bounty
 }
 
-function GetScore(difficultyName, bEndless, bChaos) {
-    var scoring = scoreMultipliers[difficultyName]
-    var bonus = 1
-    if (bEndless)
-        bonus += scoreMultipliers['endless']
-    if (bChaos)
-        bonus += scoreMultipliers['chaos']
-
-    var multi = (bonus*scoring).toFixed(2) // This will remove the trailing zeros
-    return "Score Multiplier: x" + multi
+function GetScore(difficultyName) {
+    return "Score Multiplier: x" + scoreMultipliers[difficultyName]
 }    
 
 function ResultsClose()

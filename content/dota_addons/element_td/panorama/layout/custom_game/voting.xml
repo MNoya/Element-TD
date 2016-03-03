@@ -54,14 +54,12 @@
         <Panel id="Option_Endless" class="CheckboxPanel" onmouseover="HoverCheckbox('endless')" onmouseout="MouseOverCheckbox('endless')" onactivate="SelectCheckbox('endless')">
           <Panel class="CheckboxSub">
             <ToggleButton id="endless" onactivate="SelectCheckboxClick('')" text="#horde_endless"/>
-            <Label id="EndlessMult" class="multdesc" text="x1.25 Score Mult"/>
           </Panel>
           <Label id="EndlessDesc" class="desc" text="#horde_endless_description"/>
         </Panel>
         <Panel id="Option_Chaos" class="CheckboxPanel" onmouseover="HoverCheckbox('chaos')" onmouseout="MouseOverCheckbox('chaos')" onactivate="SelectCheckbox('chaos')">
           <Panel class="CheckboxSub">
             <ToggleButton id="chaos" onactivate="SelectCheckboxClick('')" text="#order_chaos"/>
-            <Label id="EndlessMult" class="multdesc" text="x1.10 Score Mult"/>
           </Panel>
           <Label id="OrderDesc" class="desc" text="#order_chaos_description"/>
         </Panel>

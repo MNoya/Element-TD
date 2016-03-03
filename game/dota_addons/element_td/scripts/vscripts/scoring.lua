@@ -198,13 +198,11 @@ function ScoringObject:GetWaveCleared( wave )
 	local time = playerData.waveObjects[wave].endTime - playerData.waveObjects[wave].endSpawnTime
 	local speedBonus = self:GetSpeedBonus( time )
 	local difficultyBonus = self:GetDifficultyBonus()
-	local chaosBonus = self:GetCreepOrderBonus()
-	local endlessBonus = self:GetEndlessBonus()
 	local leaks = playerData.waveObjects[wave] and playerData.waveObjects[wave].leaks or 0
 	local cleanBonus = self:GetCleanBonus( leaks == 0 )
-	local totalScore = math.ceil(waveClearScore * (1 + cleanBonus) * (1 + speedBonus) * (1 + difficultyBonus) * (1 + chaosBonus + endlessBonus))
+	local totalScore = math.ceil(waveClearScore * (1 + cleanBonus) * (1 + speedBonus) * (1 + difficultyBonus))
 
-	return { clearBonus = waveClearScore, cleanBonus = cleanBonus, speedBonus = speedBonus, difficultyBonus = difficultyBonus, chaosBonus = chaosBonus, endlessBonus = endlessBonus, totalScore = totalScore }
+	return { clearBonus = waveClearScore, cleanBonus = cleanBonus, speedBonus = speedBonus, difficultyBonus = difficultyBonus, totalScore = totalScore }
 end
 
 function ScoringObject:GetBossWaveCleared( bossWave )
@@ -212,11 +210,10 @@ function ScoringObject:GetBossWaveCleared( bossWave )
 	local bossBonus = self:GetBossBonus(bossWave-1)
 	local waveClearScore = 3000 * bossBonus --100 per kill * 0.10 every wave past the first
 	local difficultyBonus = self:GetDifficultyBonus()
-	local endlessBonus = self:GetEndlessBonus()
 	local frogKills = playerData.iceFrogKills
-	local totalScore = math.ceil(waveClearScore * (1 + difficultyBonus) * (1 + endlessBonus))
+	local totalScore = math.ceil(waveClearScore * (1 + difficultyBonus))
 
-	return { frogBonus = waveClearScore, difficultyBonus = difficultyBonus, frogKills = frogKills, endlessBonus = endlessBonus, totalScore = totalScore }
+	return { frogBonus = waveClearScore, difficultyBonus = difficultyBonus, frogKills = frogKills, totalScore = totalScore }
 end
 
 -- Returns amount of clean waves and waves under 30 as well as total score
@@ -308,7 +305,7 @@ function ScoringObject:GetNetworthBonus()
 	return (playerNetworth/baseWorth/2)
 end
 
--- Creep order bonus
+--[[-- Creep order bonus
 function ScoringObject:GetCreepOrderBonus()
 	local bonus = 0
 	if GameSettings.order == "Chaos" then
@@ -324,7 +321,7 @@ function ScoringObject:GetEndlessBonus()
 		bonus = 0.25 -- x1.25
 	end
 	return bonus
-end
+end]]
 
 -- Classic Only: 1 + 0.10 per wave, applies only to the boss kills
 function ScoringObject:GetBossBonus( waves )
