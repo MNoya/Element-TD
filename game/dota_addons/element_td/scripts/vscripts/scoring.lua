@@ -13,8 +13,6 @@ ScoringObject = createClass({
 			self.totalScore = 0
 			self.cleanWaves = 0
 			self.under30 = 0
-			self.cleanWavesStreak = 0
-			self.under30Streak = 0
 		end
 	},
 {}, nil)
@@ -91,7 +89,7 @@ function ScoringObject:UpdateScore( const , wave )
 	if scoreTable['under30'] then
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Under 30 waves: ' .. scoreTable['under30'], '#FFFF00'} )
 	end
-	if scoreTable['networthBonus'] and EXPRESS_MODE then
+	if scoreTable['networthBonus'] then
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Networth bonus: '.. GetPctString(scoreTable['networthBonus']), '#00FFFF'} )
 	end
 	--[[if scoreTable['bossBonus'] and scoreTable['bossBonus'] > 0 and not EXPRESS_MODE then
@@ -240,9 +238,7 @@ function ScoringObject:GetGameCleared()
 		extraFrogScore = remainder * 100 * self:GetBossBonus(playerData.bossWaves-1) * self:GetDifficultyBonus()
 	end
 
-	if EXPRESS_MODE then
-		networthBonus = self:GetNetworthBonus()
-	end
+	networthBonus = self:GetNetworthBonus()
 
 	totalScore = math.ceil((score+extraFrogScore) * (networthBonus + 1))
 
@@ -254,10 +250,7 @@ function ScoringObject:GetCleanBonus( bool )
 	local bonus = 0
 	if bool then
 		self.cleanWaves = self.cleanWaves + 1
-		bonus = 0.2 + (self.cleanWavesStreak * 0.02)
-		self.cleanWavesStreak = self.cleanWavesStreak + 1
-	else -- End streak
-		self.cleanWavesStreak = 0
+		bonus = 0.2
 	end
 	return bonus
 end
@@ -267,13 +260,9 @@ function ScoringObject:GetSpeedBonus( time )
 	local bonus = 1
 	if time > 30 then
 		bonus = bonus - ( time - 30 )*0.02
-		self.under30Streak = 0
 	elseif time < 30 then
 		self.under30 = self.under30 + 1
-		bonus = bonus + ( 15 - time )*0.02 + (self.under30Streak * 0.02)
-		self.under30Streak = self.under30Streak + 1
-	elseif time == 30 then -- End Streak
-		self.under30Streak = 0
+		bonus = bonus + ( 15 - time )*0.02
 	end
 	return bonus - 1
 end
@@ -284,7 +273,7 @@ function ScoringObject:GetWaveClearBonus( wave )
 	return bonus
 end
 
--- Express Only: (Player Networth/Base Networth/2)
+-- Player Networth/Base Networth/2
 -- Base Networth: 	Normal=88170
 --					Hard=96060
 --					VeryHard=110790
