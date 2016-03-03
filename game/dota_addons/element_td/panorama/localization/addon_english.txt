@@ -199,7 +199,7 @@
         "loading_screen_tip_6"  "Saving gold increases your interest gold income."
         "loading_screen_tip_7"  "The faster you kill a wave the more score points you get."
         "loading_screen_tip_8"  "Killing waves quickly gives you less interest gold but simultaneously more score points."
-        "loading_screen_tip_9"  "Compare yourself against others on eletd.com/leaderboard"
+        "loading_screen_tip_9"  "Compare yourself against others on www.eletd.com/leaderboard"
         "loading_screen_tip_10" "Every 5th wave you gain 1 lumber allowing you to summon an elemental boss."
         "loading_screen_tip_11" "You can exchange lumber for 1 pure essence and gold depending on your current wave."
         "loading_screen_tip_12" "Pure essence allows you to build periodic tower or a fully maxed out elemental tower."
@@ -207,5 +207,7 @@
         "loading_screen_tip_14" "Don't choose Level 3 Elements too early or you might be overrun."
         "loading_screen_tip_15" "Each Support Tower can supply 4 Towers with Buffs."
         "loading_screen_tip_16" "Got ideas to make the game better? Join the discussion at our website!"
+        "loading_screen_tip_17" "Plan your build for the next wave to prevent leaking on elements you are weak against."
+        "loading_screen_tip_18" "If you like the game consider supporting us at www.eletd.com/donate"
     }
 }
