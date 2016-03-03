@@ -30,7 +30,6 @@
     "ModelScale"        "0.7"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
-    "ScriptClass"        "CreepFast"
     "Ability1"        "earth_armor"
     "Ability2"        ""
 }
