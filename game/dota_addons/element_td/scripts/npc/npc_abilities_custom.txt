@@ -4283,7 +4283,7 @@
 		{
 			"modifier_tornado_aura"
 			{
-				"EffectName"			"particles/neutral_fx/tornado_ambient.vpcf"
+				"EffectName"			"particles/custom/towers/windstorm/tornado.vpcf"
 				"EffectAttachType"		"follow_origin"
 				"Passive"				"1"
 				"IsHidden"				"1"
@@ -4291,6 +4291,11 @@
 				"Aura_Radius"			"%radius"
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Aura_Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+	
+				"States"
+				{
+					"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
 			}
 			"modifier_tornado_slow"
 			{
@@ -4367,7 +4372,7 @@
 		"MaxLevel"						"2"
 	
 		"AbilityCastPoint"				"0.0"
-		"AbilityCastRange"      		"900"
+		"AbilityCastRange"      		"1150"
 	
 	    "AOERadius"             		"%radius"
 	

@@ -2,12 +2,13 @@
 {
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
-	m_nMaxParticles = 32
+	m_nMaxParticles = 25
+	m_flConstantRadius = 128.000000
 	m_ConstantColor =
 	[
-		255,
-		85,
-		0,
+		99,
+		39,
+		16,
 		255,
 	]
 	m_Renderers =
@@ -15,236 +16,139 @@
 		{
 			_class = "C_OP_RenderRopes"
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
-			m_bAdditive = true
-			m_flOverbrightFactor = 15.000000
-			m_hTexture = resource:"materials/particle/bendibeam2.vtex"
+			m_bDisableZBuffering = true
+			m_flOverbrightFactor = 2.000000
+			m_flAddSelfAmount = 5.000000
+			m_bSaturateColorPreAlphaBlend = false
+			m_hTexture = resource:"materials/particle/beam_plasma_03.vtex"
 			m_flRadiusScale = 0.500000
 			m_flFinalTextureScaleU = -1.000000
 			m_flFinalTextureOffsetU = 1.000000
-			m_flTextureVWorldSize = 138.121536
-			m_flTextureVScrollRate = 1381.215332
-			m_nMaxTesselation = 5
-			m_nMinTesselation = 5
+			m_flTextureVWorldSize = 6791.632324
+			m_flTextureVOffset = 42.447704
+			m_nMaxTesselation = 3
+			m_nMinTesselation = 3
+		},
+		{
+			_class = "C_OP_RenderDeferredLight"
+			m_flSpotFoV = 30.000000
+			m_flStartFalloff = 0.100000
+			m_flRadiusScale = 2.000000
+			m_hTexture = resource:"materials/particle/beam_plasma_03.vtex"
+			m_ColorScale =
+			[
+				255,
+				255,
+				255,
+			]
 		},
 	]
 	m_Operators =
 	[
 		{
 			_class = "C_OP_BasicMovement"
-			m_Gravity =
-			[
-				0.000000,
-				0.000000,
-				700.000000,
-			]
 			m_fDrag = 0.100000
 		},
 		{
 			_class = "C_OP_Decay"
+			m_flOpStartFadeInTime = 0.350000
+			m_flOpEndFadeInTime = 0.350000
 		},
 		{
 			_class = "C_OP_FadeOutSimple"
-		},
-		{
-			_class = "C_OP_FadeInSimple"
-			m_flFadeInTime = 0.100000
+			m_flFadeOutTime = 0.500000
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
+			m_flEndScale = 0.100000
+			m_flBias = 0.300000
 			m_nOpEndCapState = 0
-			m_flEndScale = 0.400000
-			m_flBias = 0.365000
-		},
-		{
-			_class = "C_OP_RampScalarLinear"
-			m_RateMax = 222.000000
-			m_RateMin = 52.000000
-			m_nField = 4
-		},
-		{
-			_class = "C_OP_OscillateScalar"
-			m_FrequencyMax = 16.000000
-			m_FrequencyMin = 3.000000
-			m_RateMax = -5.000000
-			m_RateMin = -3.000000
-			m_nField = 16
-		},
-		{
-			_class = "C_OP_OscillateVector"
-			m_RateMin =
-			[
-				-6.000000,
-				-6.000000,
-				-6.000000,
-			]
-			m_RateMax =
-			[
-				6.000000,
-				6.000000,
-				6.000000,
-			]
-			m_FrequencyMin =
-			[
-				0.250000,
-				0.250000,
-				0.250000,
-			]
-			m_FrequencyMax =
-			[
-				2.000000,
-				2.000000,
-				2.000000,
-			]
 		},
 		{
 			_class = "C_OP_DampenToCP"
+			m_flRange = 128.000000
 			m_flScale = 0.500000
-			m_flRange = 22.000000
 		},
 		{
 			_class = "C_OP_DampenToCP"
+			m_flRange = 128.000000
 			m_nControlPointNumber = 1
-			m_flRange = 22.000000
-			m_flScale = 0.500000
+		},
+		{
+			_class = "C_OP_PercentageBetweenCPs"
+			m_bDisableOperator = true
+			m_flOutputMin = 1.250000
+			m_bScaleCurrent = true
+		},
+		{
+			_class = "C_OP_PercentageBetweenCPs"
+			m_flInputMin = 0.010000
+			m_flInputMax = 0.200000
+			m_nFieldOutput = 16
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_flFadeStartTime = 0.500000
 			m_ColorFade =
 			[
-				170,
-				0,
+				32,
+				6,
 				0,
 				255,
 			]
+		},
+		{
+			_class = "C_OP_LockToSavedSequentialPath"
+			m_PathParams =
+			{
+				m_nEndControlPointNumber = 1
+			}
 		},
 	]
 	m_Initializers =
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMax = 0.300000
-			m_fLifetimeMin = 0.300000
-		},
-		{
-			_class = "C_INIT_CreationNoise"
-			m_flOutputMax = 25.000000
-			m_flOutputMin = 15.000000
-			m_flNoiseScaleLoc = 0.100000
-			m_flNoiseScale = 0.500000
+			m_fLifetimeMin = 0.750000
+			m_fLifetimeMax = 0.750000
 		},
 		{
 			_class = "C_INIT_RandomRotation"
 		},
 		{
-			_class = "C_INIT_InitialVelocityNoise"
-			m_vecOutputMax =
-			[
-				116.000000,
-				116.000000,
-				160.000000,
-			]
-			m_vecOutputMin =
-			[
-				-116.000000,
-				-116.000000,
-				-160.000000,
-			]
-			m_flNoiseScaleLoc = 0.200000
+			_class = "C_INIT_CreateInEpitrochoid"
+			m_flRadius1 = 14.000000
+			m_flRadius2 = -5.000000
+			m_flOffset = 10.000000
+			m_flParticleDensity = 0.200000
+			m_bUseCount = true
+			m_bOffsetExistingPos = true
 		},
 		{
 			_class = "C_INIT_CreateSequentialPath"
-			m_flNumToAssign = 32.000000
+			m_bLoop = false
+			m_flNumToAssign = 25.000000
+			m_bSaveOffset = true
 			m_PathParams =
 			{
-				m_flMidPoint = 0.250000
-				m_flBulge = 50.000000
+				m_flMidPoint = 0.750000
 				m_nEndControlPointNumber = 1
+				m_flBulge = 130.000000
 			}
 		},
 		{
-			_class = "C_INIT_CreateInEpitrochoid"
-			m_bOffsetExistingPos = true
-			m_bUseCount = true
-			m_flParticleDensity = 0.300000
-			m_flOffset = 9.000000
-			m_flRadius2 = -6.000000
-			m_flRadius1 = 10.000000
-			m_nComponent1 = 2
-			m_nScaleCP = 2
-		},
-		{
-			_class = "C_INIT_PositionWarp"
-			m_vecWarpMin =
+			_class = "C_INIT_InitialVelocityNoise"
+			m_flNoiseScaleLoc = 1.000000
+			m_vecOutputMin =
 			[
-				0.000100,
-				0.000100,
-				0.000100,
+				-50.000000,
+				-50.000000,
+				-50.000000,
 			]
-			m_flWarpTime = 3.000000
-			m_bUseCount = true
-		},
-		{
-			_class = "C_INIT_PositionWarp"
-			m_nControlPointNumber = 1
-			m_vecWarpMax =
+			m_vecOutputMax =
 			[
-				0.000100,
-				0.000100,
-				0.000100,
-			]
-			m_flWarpTime = 2.000000
-			m_flWarpStartTime = 29.000000
-			m_bUseCount = true
-		},
-		{
-			_class = "C_INIT_RemapCPtoScalar"
-			m_bScaleInitialRange = true
-			m_flOutputMax = 1.100000
-			m_flOutputMin = 0.500000
-			m_nFieldOutput = 1
-			m_flInputMax = 1.200000
-			m_flInputMin = -1.200000
-			m_nCPInput = 2
-		},
-		{
-			_class = "C_INIT_RemapCPtoScalar"
-			m_bScaleInitialRange = true
-			m_flOutputMin = 1.500000
-			m_flInputMax = 1.200000
-			m_flInputMin = -1.200000
-			m_nCPInput = 2
-		},
-		{
-			_class = "C_INIT_PositionOffset"
-			m_OffsetMax =
-			[
-				2.000000,
-				2.000000,
-				2.000000,
-			]
-			m_OffsetMin =
-			[
-				-2.000000,
-				-2.000000,
-				-2.000000,
-			]
-		},
-		{
-			_class = "C_INIT_RandomColor"
-			m_ColorMin =
-			[
-				170,
-				0,
-				0,
-				255,
-			]
-			m_ColorMax =
-			[
-				255,
-				68,
-				21,
-				255,
+				50.000000,
+				50.000000,
+				50.000000,
 			]
 		},
 	]
@@ -258,10 +162,25 @@
 	m_Children =
 	[
 		{
+			m_ChildRef = resource:"particles/custom/towers/electricity/chain_lightning_a.vpcf"
+		},
+		{
 			m_ChildRef = resource:"particles/custom/towers/electricity/chain_lightning_b.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/electricity/chain_lightning_c.vpcf"
+		},
+		{
+			m_flDelay = 0.050000
+			m_ChildRef = resource:"particles/custom/towers/electricity/chain_lightning_a.vpcf"
+		},
+		{
+			m_flDelay = 0.100000
+			m_ChildRef = resource:"particles/custom/towers/electricity/chain_lightning_a.vpcf"
+		},
+		{
+			m_flDelay = 0.080000
+			m_ChildRef = resource:"particles/custom/towers/electricity/chain_lightning_a.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/electricity/chain_lightning_d.vpcf"
@@ -270,13 +189,16 @@
 			m_ChildRef = resource:"particles/custom/towers/electricity/chain_lightning_e.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/towers/electricity/chain_lightning_impact.vpcf"
-		},
-		{
 			m_ChildRef = resource:"particles/custom/towers/electricity/chain_lightning_f.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/units/heroes/hero_ember_spirit/ember_spirit_searing_chains_start_bolo_fire.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/electricity/chain_lightning_g.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/towers/electricity/chain_lightning_h.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/towers/electricity/chain_lightning_i.vpcf"
 		},
 	]
 }

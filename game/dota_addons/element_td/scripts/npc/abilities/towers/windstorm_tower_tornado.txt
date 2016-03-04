@@ -15,7 +15,7 @@
 	"MaxLevel"						"2"
 
 	"AbilityCastPoint"				"0.0"
-	"AbilityCastRange"      		"900"
+	"AbilityCastRange"      		"1150"
 
     "AOERadius"             		"%radius"
 
