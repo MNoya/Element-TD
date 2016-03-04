@@ -315,53 +315,6 @@
 	    "Ability1"        "fire_armor"
 	    "Ability2"        "creep_ability_bulky"
 	}
-	"crystal_apparition"
-	{
-	    "MinimapIcon"               "minimap_icon_yellow"
-	    "MinimapIconSize"           "200"
-	    "MinimapDisableTint"        "1"
-	
-	    "ArmorPhysical"        "0"
-	    "MagicalResistance"        "0"
-	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
-	    "AttackDamageMin"        "0"
-	    "AttackDamageMax"        "0"
-	    "AttackRate"        "0"
-	    "AttackAnimationPoint"        "0"
-	    "AttackAcquisitionRange"        "0"
-	    "AttackRange"        "0"
-	    "ProjectileModel"        ""
-	    "ProjectileSpeed"        "0"
-	    "RingRadius"        "70"
-	    "HealthBarOffset"        "200"
-	    "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
-	    "BountyXP"        "0"
-	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
-	    "MovementSpeed"        "300"
-	    "StatusHealthRegen"        "0"
-	    "StatusMana"        "0"
-	    "StatusManaRegen"        "0"
-	    "VisionDaytimeRange"        "1200"
-	    "VisionNighttimeRange"        "800"
-	    "Model"        "models/heroes/ancient_apparition/ancient_apparition.vmdl"
-	    "ModelScale"        "1.5"
-	    "BaseClass"        "npc_dota_creature"
-	    "SoundSet"        ""
-	    "ScriptClass"     "CreepBulky"
-	    "Ability1"        "light_armor"
-	    "Ability2"        "creep_ability_bulky"
-	    "Ability3"        "ancient_light_particles"
-	    "Creature"
-	    {
-	        "AttachWearables"
-	        {
-	            "Wearable1"
-	            {
-	                "ItemDef"        "501"
-	            }
-	        }
-	    }
-	}
 	"death_gazer"
 	{
 	    "MinimapIcon"               "minimap_icon_white"
@@ -1717,6 +1670,53 @@
 	    "ScriptClass"     "CreepBulky"
 	    "Ability1"        "nature_armor"
 	    "Ability2"        "creep_ability_bulky"
+	}
+	"phantom_lancer"
+	{
+	    "MinimapIcon"               "minimap_icon_yellow"
+	    "MinimapIconSize"           "200"
+	    "MinimapDisableTint"        "1"
+	
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "AttackDamageMin"        "0"
+	    "AttackDamageMax"        "0"
+	    "AttackRate"        "0"
+	    "AttackAnimationPoint"        "0"
+	    "AttackAcquisitionRange"        "0"
+	    "AttackRange"        "0"
+	    "ProjectileModel"        ""
+	    "ProjectileSpeed"        "0"
+	    "RingRadius"        "70"
+	    "HealthBarOffset"        "200"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+	    "BountyXP"        "0"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+	    "MovementSpeed"        "300"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "VisionDaytimeRange"        "1200"
+	    "VisionNighttimeRange"        "800"
+	    "Model"        "models/heroes/phantom_lancer/phantom_lancer.vmdl"
+	    "ModelScale"        "1.8"
+	    "BaseClass"        "npc_dota_creature"
+	    "SoundSet"        ""
+	    "ScriptClass"     "CreepBulky"
+	    "Ability1"        "light_armor"
+	    "Ability2"        "creep_ability_bulky"
+	    "Creature"
+	    {
+	        "AttachWearables" // Vengeance of the Sunwarrior
+	        {
+	            "1" { "ItemDef" "6617" } // Belt of the Sunwarrior
+	            "2" { "ItemDef" "6619" } // Bracers of the Sunwarrior
+	            "3" { "ItemDef" "6621" } // Mane of the Sunwarrior
+	            "4" { "ItemDef" "6620" } // Lance of the Sunwarrior
+	            "5" { "ItemDef" "127" } // Phantom Lancer's Head
+	        }
+	    }
 	}
 	"radiant_golem"
 	{
