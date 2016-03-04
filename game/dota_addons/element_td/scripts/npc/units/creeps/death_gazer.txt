@@ -27,10 +27,12 @@
     "VisionDaytimeRange"        "1200"
     "VisionNighttimeRange"        "800"
     "Model"        "models/heroes/abaddon/abaddon.vmdl"
-    "ModelScale"        "0.8"
+    "ModelScale"        "1.6"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
+    "ScriptClass"     "CreepBulky"
     "Ability1"        "composite_armor"
+    "Ability2"        "creep_ability_bulky"
     "Creature"
     {
         "AttachWearables" // Default npc_dota_hero_abaddon

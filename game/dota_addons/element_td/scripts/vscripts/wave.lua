@@ -66,11 +66,12 @@ function Wave:SpawnWave()
 		EmitSoundOnClient("ui.contract_complete", ply)
 	end
 
-	self.startTime = GameRules:GetGameTime() + 0.5
+	local time_between_spawns = 0.5
+	self.startTime = GameRules:GetGameTime() + time_between_spawns
 	self.leaks = 0
 	self.kills = 0
 
-	self.spawnTimer = Timers:CreateTimer(0.5, function()
+	self.spawnTimer = Timers:CreateTimer(time_between_spawns, function()
 		if playerData.health == 0 then
 			return nil
 		end
@@ -87,7 +88,12 @@ function Wave:SpawnWave()
 			entity:SetMaximumGoldBounty(bounty)
 			entity:SetMinimumGoldBounty(bounty)
 
-			-- set max health based on wave
+			-- Bulky: double spawn time, half creep count
+			if entity.scriptClass == "CreepBulky" then
+				time_between_spawns = 1
+				entitiesSpawned = entitiesSpawned + 1
+			end
+
 			local health = WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier()
 			entity:SetMaxHealth(health)
 			entity:SetBaseMaxHealth(health)
@@ -132,7 +138,7 @@ function Wave:SpawnWave()
 				end
 				return nil
 			else
-				return 0.5
+				return time_between_spawns
 			end
 		end
 	end)

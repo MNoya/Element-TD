@@ -78,10 +78,12 @@
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
 	    "Model"        "models/heroes/terrorblade/demon.vmdl"
-	    "ModelScale"        "0.8"
+	    "ModelScale"        "1.6"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
+	    "ScriptClass"     "CreepBulky"
 	    "Ability1"        "dark_armor"
+	    "Ability2"        "creep_ability_bulky"
 	}
 	"battleship"
 	{
@@ -306,10 +308,12 @@
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
 	    "Model"        "models/creeps/lane_creeps/creep_bad_melee/creep_bad_melee_mega.vmdl"
-	    "ModelScale"        "1.1"
+	    "ModelScale"        "2.2"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
+	    "ScriptClass"     "CreepBulky"
 	    "Ability1"        "fire_armor"
+	    "Ability2"        "creep_ability_bulky"
 	}
 	"crystal_apparition"
 	{
@@ -340,10 +344,12 @@
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
 	    "Model"        "models/heroes/ancient_apparition/ancient_apparition.vmdl"
-	    "ModelScale"        "1.0"
+	    "ModelScale"        "2.0"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
+	    "ScriptClass"     "CreepBulky"
 	    "Ability1"        "light_armor"
+	    "Ability2"        "creep_ability_bulky"
 	    "Creature"
 	    {
 	        "AttachWearables"
@@ -443,10 +449,12 @@
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
 	    "Model"        "models/heroes/abaddon/abaddon.vmdl"
-	    "ModelScale"        "0.8"
+	    "ModelScale"        "1.6"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
+	    "ScriptClass"     "CreepBulky"
 	    "Ability1"        "composite_armor"
+	    "Ability2"        "creep_ability_bulky"
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_abaddon
@@ -1770,10 +1778,12 @@
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
 	    "Model"        "models/courier/badger/courier_badger.vmdl"
-	    "ModelScale"        "1.2"
+	    "ModelScale"        "2.4"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
+	    "ScriptClass"     "CreepBulky"
 	    "Ability1"        "nature_armor"
+	    "Ability2"        "creep_ability_bulky"
 	}
 	"radiant_golem"
 	{
@@ -1948,10 +1958,12 @@
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
 	    "Model"        "models/heroes/brewmaster/brewmaster_windspirit.vmdl"
-	    "ModelScale"        "1"
+	    "ModelScale"        "2.0"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
+	    "ScriptClass"     "CreepBulky"
 	    "Ability1"        "water_armor"
+	    "Ability2"        "creep_ability_bulky"
 	    "Ability3"        "windspirit_particles"
 	}
 	"shroomling"
@@ -2535,11 +2547,12 @@
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
 	    "Model"        "models/creeps/neutral_creeps/n_creep_worg_large/n_creep_worg_large.vmdl"
-	    "ModelScale"        "0.7"
+	    "ModelScale"        "1.4"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
+	    "ScriptClass"     "CreepBulky"
 	    "Ability1"        "earth_armor"
-	    "Ability2"        ""
+	    "Ability2"        "creep_ability_bulky"
 	}
 	"zombie"
 	{

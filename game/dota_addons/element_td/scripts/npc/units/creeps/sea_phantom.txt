@@ -27,9 +27,11 @@
     "VisionDaytimeRange"        "1200"
     "VisionNighttimeRange"        "800"
     "Model"        "models/heroes/brewmaster/brewmaster_windspirit.vmdl"
-    "ModelScale"        "1"
+    "ModelScale"        "2.0"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
+    "ScriptClass"     "CreepBulky"
     "Ability1"        "water_armor"
+    "Ability2"        "creep_ability_bulky"
     "Ability3"        "windspirit_particles"
 }
