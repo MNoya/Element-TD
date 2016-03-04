@@ -508,6 +508,7 @@
         "DOTA_Tooltip_ability_creep_ability_regen"                                        "Regeneration"
         "DOTA_Tooltip_ability_creep_ability_regen_Description"                            "Heal 2% of maximum health per second. Once 100% of the units health has been regenerated the regeneration will stop."
         "DOTA_Tooltip_ability_creep_ability_regen_bonus_health_regen"                     "%REGEN:"
+        "DOTA_Tooltip_ability_creep_ability_regen_max_heal_pct"                           "%MAX HEAL:"
 
         // Splash and Support
         "DOTA_Tooltip_ability_splash_damage_orb"        "Splash Damage"
