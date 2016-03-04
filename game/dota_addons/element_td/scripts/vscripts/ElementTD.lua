@@ -513,8 +513,15 @@ function ElementTD:OnEntityKilled(keys)
     end
 
     if entity:GetUnitName() == "icefrog" then
+        -- Count non-undead frogs
         if playerData and entity.real_icefrog then
-            playerData.iceFrogKills = playerData.iceFrogKills + 1
+            
+            -- Bulky counts as 2 kills
+            if entity.random_ability == "creep_ability_bulky" then
+                playerData.iceFrogKills = playerData.iceFrogKills + 2
+            else
+                playerData.iceFrogKills = playerData.iceFrogKills + 1
+            end
             entity:EmitSound("Frog.Kill")
         end
     end

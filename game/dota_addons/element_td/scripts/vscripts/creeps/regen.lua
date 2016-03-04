@@ -20,7 +20,7 @@ CreepBasic);
 function CreepRegen:OnSpawned()
 	local creep = self.creep
 	self.ability = self.creep:FindAbilityByName("creep_ability_regen")
-	self.maxRegen = ability:GetSpecialValueFor("max_heal_pct")
+	self.maxRegen = self.ability:GetSpecialValueFor("max_heal_pct") * 0.01
 
 	Timers:CreateTimer(1, function()
 		if not IsValidEntity(creep) or not creep:IsAlive() then return end
@@ -33,12 +33,11 @@ end
 function CreepRegen:RegenerateCreepHealth()
 	local creep = self.creep
 	self.healthPercent = self.ability:GetSpecialValueFor("bonus_health_regen")
-	self.maxRegen = self.ability:GetSpecialValueFor("max_heal_pct")
 
-	if creep:GetHealth() > 0 and creep:GetHealth() ~= creep:GetMaxHealth() and self.regenAmount <= creep:GetMaxHealth() then
+	if creep:GetHealth() > 0 and creep:GetHealth() ~= creep:GetMaxHealth() and self.regenAmount <= creep:GetMaxHealth()*self.maxRegen then
 
 		local healthPre = creep:GetHealth() 
-		creep:Heal(creep:GetMaxHealth() * (self.healthPercent / self.maxRegen), nil)
+		creep:Heal(creep:GetMaxHealth() * (self.healthPercent / creep:GetMaxHealth()), nil)
 		local healthPost = creep:GetHealth()
 		self.regenAmount = self.regenAmount + (healthPost - healthPre)
 	end

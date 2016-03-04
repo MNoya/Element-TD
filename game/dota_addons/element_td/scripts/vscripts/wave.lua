@@ -70,6 +70,7 @@ function Wave:SpawnWave()
 	self.startTime = GameRules:GetGameTime() + time_between_spawns
 	self.leaks = 0
 	self.kills = 0
+	local creepBossSequence = 0
 
 	self.spawnTimer = Timers:CreateTimer(time_between_spawns, function()
 		if playerData.health == 0 then
@@ -107,6 +108,12 @@ function Wave:SpawnWave()
 				entity:SetMaxHealth(bossHealth)
 				entity:SetBaseMaxHealth(bossHealth)
 				entity:SetHealth(entity:GetMaxHealth())
+
+				-- Choose an ability in sequence
+				creepBossSequence = (creepBossSequence % #CreepBossAbilities) + 1
+			    local abilityName = CreepBossAbilities[creepBossSequence]
+			    entity.random_ability = abilityName
+			    entity.scriptObject.ability = AddAbility(entity, abilityName)
 			end
 
 			entity.scriptObject:OnSpawned() -- called the OnSpawned event

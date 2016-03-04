@@ -235,7 +235,7 @@ function ScoringObject:GetGameCleared()
 	if playerData.iceFrogKills then
 		frogKills = playerData.iceFrogKills
 		local remainder = frogKills % 30
-		extraFrogScore = remainder * 100 * self:GetBossBonus(playerData.bossWaves-1) * self:GetDifficultyBonus()
+		extraFrogScore = remainder * 100 * self:GetBossBonus(playerData.bossWaves-1) * (1+self:GetDifficultyBonus())
 	end
 
 	totalScore = math.ceil((score+extraFrogScore) * (networthBonus + 1))
@@ -297,9 +297,10 @@ function ScoringObject:GetEndlessBonus()
 	return bonus
 end]]
 
--- Classic Only: 1 + 0.10 per wave, applies only to the boss kills
+-- Classic Only: 1 + 0.20 per wave, applies only to the boss kills
 function ScoringObject:GetBossBonus( waves )
 	local bonus = 1
+	print("bosswave",waves)
 	if waves >= 0 then
 		bonus = 1+waves*0.20
 	end

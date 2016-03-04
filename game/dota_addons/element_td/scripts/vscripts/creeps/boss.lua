@@ -14,7 +14,14 @@ CreepBoss = createClass({
     },
 CreepBasic)
 
-CreepBossAbilities = { [1]="creep_ability_mechanical", [2]="creep_ability_regen", [3]="creep_ability_heal", [4]="creep_ability_undead", [5]="creep_ability_fast", [6]="creep_ability_bulky" }
+CreepBossAbilities = {
+        [1]="creep_ability_bulky",
+        [2]="creep_ability_heal",
+        [3]="creep_ability_undead",
+        [4]="creep_ability_regen",
+        [5]="creep_ability_fast",
+        [6]="creep_ability_mechanical"
+    }
 
 function CreepBoss:OnSpawned()
     local creep = self.creep
@@ -22,17 +29,8 @@ function CreepBoss:OnSpawned()
     creep:SetMinimumGoldBounty(0)
     creep:CreatureLevelUp(creep.waveObject.waveNumber-creep:GetLevel())
 
-    if creep.isSwarm then return end
-
-    -- Choose an ability at random
-    if not creep.isUndeadRespawn then
-        local abilityName = CreepBossAbilities[RandomInt(1, #CreepBossAbilities)]
-        creep.random_ability = abilityName
-        self.ability = AddAbility(creep, abilityName)
-    end
-
-    -- Don't mark swarm or first-death undead as a killed score
-    creep.real_icefrog = creep.isUndeadRespawn or (creep.random_ability and creep.random_ability ~= "creep_ability_undead")
+    -- Don't mark first-death undead as a killed score
+    creep.real_icefrog = creep.random_ability and creep.random_ability ~= "creep_ability_undead"
 
     if creep:HasAbility("creep_ability_mechanical") then
         -- Mechanical
@@ -52,8 +50,9 @@ function CreepBoss:OnSpawned()
     end
 
     if creep:HasAbility("creep_ability_regen") then
+        self.regenAmount = 0
         self.healthPercent = self.ability:GetSpecialValueFor("bonus_health_regen")
-        self.maxRegen = self.ability:GetSpecialValueFor("max_heal_pct")
+        self.maxRegen = self.ability:GetSpecialValueFor("max_heal_pct") * 0.01
         
         Timers:CreateTimer(1, function()
             if not IsValidEntity(creep) or not creep:IsAlive() then return end
@@ -76,10 +75,10 @@ end
 function CreepBoss:RegenerateCreepHealth()
     local creep = self.creep
 
-    if creep:GetHealth() > 0 and creep:GetHealth() ~= creep:GetMaxHealth() and self.regenAmount <= creep:GetMaxHealth() then
+    if creep:GetHealth() > 0 and creep:GetHealth() ~= creep:GetMaxHealth() and self.regenAmount <= creep:GetMaxHealth()*self.maxRegen then
 
         local healthPre = creep:GetHealth() 
-        creep:Heal(creep:GetMaxHealth() * (self.healthPercent / self.maxRegen), nil)
+        creep:Heal(creep:GetMaxHealth() * (self.healthPercent / creep:GetMaxHealth()), nil)
         local healthPost = creep:GetHealth()
         self.regenAmount = self.regenAmount + (healthPost - healthPre)
     end
