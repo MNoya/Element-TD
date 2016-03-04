@@ -28,7 +28,7 @@ function CreepBoss:OnSpawned()
     if not creep.isUndeadRespawn then
         local abilityName = CreepBossAbilities[RandomInt(1, #CreepBossAbilities)]
         creep.random_ability = abilityName
-        AddAbility(creep, abilityName)
+        self.ability = AddAbility(creep, abilityName)
     end
 
     -- Don't mark swarm or first-death undead as a killed score
@@ -51,10 +51,10 @@ function CreepBoss:OnSpawned()
         end)
     end
 
-    if creep:HasAbility("creep_ability_regen") then
+    if self.random_ability == "creep_ability_regen" then
         local creep = self.creep
-        local ability = self.creep:FindAbilityByName("creep_ability_regen")
-        self.maxRegen = ability:GetSpecialValueFor("max_heal_pct")
+        self.healthPercent = self.ability:GetSpecialValueFor("bonus_health_regen")
+        self.maxRegen = self.ability:GetSpecialValueFor("max_heal_pct")
         
         Timers:CreateTimer(1, function()
             if not IsValidEntity(creep) or not creep:IsAlive() then return end
@@ -67,12 +67,11 @@ end
 
 function CreepBoss:RegenerateCreepHealth()
     local creep = self.creep
-    local heal_percent = 2
 
     if creep:GetHealth() > 0 and creep:GetHealth() ~= creep:GetMaxHealth() and self.regenAmount <= creep:GetMaxHealth() then
 
         local healthPre = creep:GetHealth() 
-        creep:Heal(creep:GetMaxHealth() * (heal_percent / self.maxRegen), nil)
+        creep:Heal(creep:GetMaxHealth() * (self.healthPercent / self.maxRegen), nil)
         local healthPost = creep:GetHealth()
         self.regenAmount = self.regenAmount + (healthPost - healthPre)
     end

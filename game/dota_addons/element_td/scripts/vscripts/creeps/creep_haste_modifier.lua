@@ -11,15 +11,15 @@ function creep_haste_modifier:DeclareFunctions()
 end
 
 function creep_haste_modifier:GetModifierMoveSpeed_Max( params )
-    return 750
+    return self:GetAbility():GetSpecialValueFor("fast_speed")
 end
 
 function creep_haste_modifier:GetModifierMoveSpeed_Limit( params )
-    return 750
+    return self:GetAbility():GetSpecialValueFor("fast_speed")
 end
 
 function creep_haste_modifier:GetModifierMoveSpeedBonus_Constant( params )
-    return 750
+    return self:GetAbility():GetSpecialValueFor("fast_speed")
 end
 
 function creep_haste_modifier:GetTexture()
