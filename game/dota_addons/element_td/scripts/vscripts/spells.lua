@@ -458,6 +458,11 @@ function CancelConstruction(event)
 		SetupTowerUpgrade(tower, newTower, buffData, stacks)
 
         newTower:AddNewModifier(newTower, nil, "modifier_no_health_bar", {})
+
+        -- Prevent the new tower from attacking earlier than the old tower could
+        if tower.timeToAttack then
+            newTower:AddNewModifier(nil, nil, "modifier_stunned", {duration=tower.timeToAttack})
+        end
 	else
 		Sounds:EmitSoundOnClient(playerID, "Gold.CoinsBig")	
 		PopupAlchemistGold(tower, goldCost)
@@ -494,6 +499,7 @@ function SetupTowerUpgrade(tower, newTower, buffData, stacks)
 	local playerData = GetPlayerData(playerID)
 	local scriptClassName = GetUnitKeyValue(newTower:GetUnitName(), "ScriptClass") or "BasicTower"
 	local newClass = newTower:GetUnitName()
+    local timeToAttack = tower:TimeUntilNextAttack() --Keep this time to prevent cancel-abuse
 
 	-- Kill count is transfered if the tower is upgraded to one of the same type (single/dual/triple)
 	InitializeKillCount(newTower)
@@ -543,6 +549,10 @@ function SetupTowerUpgrade(tower, newTower, buffData, stacks)
     else
     	Log:error("Unknown script class, " .. scriptClassName .. " for tower " .. newTower.class)
 	end
+
+    if timeToAttack > 0 then
+        newTower.timeToAttack = timeToAttack
+    end
 
     if IsSupportTower(newTower) then
         newTower:AddNewModifier(newTower, nil, "modifier_support_tower", {})
