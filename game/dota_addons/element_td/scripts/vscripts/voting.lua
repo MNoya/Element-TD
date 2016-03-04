@@ -120,7 +120,8 @@ function FinalizeVotes()
 	Timers:RemoveTimer("VoteThinker")
 	CustomGameEventManager:Send_ServerToAllClients( "etd_toggle_vote_dialog", {visible = false} )
 
-	for _,v in pairs(PLAYERS_NOT_VOTED) do 
+	-- Only add a default vote if no one has voted
+	if tablelength(PLAYERS_NOT_VOTED) == tablelength(playerIDs) then
 		AddVote(VOTE_RESULTS.gamemode, "Competitive")
 		AddVote(VOTE_RESULTS.difficulty, "Normal")
 		AddVote(VOTE_RESULTS.elements, "AllPick")
