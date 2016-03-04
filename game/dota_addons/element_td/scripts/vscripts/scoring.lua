@@ -300,7 +300,6 @@ end]]
 -- Classic Only: 1 + 0.20 per wave, applies only to the boss kills
 function ScoringObject:GetBossBonus( waves )
 	local bonus = 1
-	print("bosswave",waves)
 	if waves >= 0 then
 		bonus = 1+waves*0.20
 	end

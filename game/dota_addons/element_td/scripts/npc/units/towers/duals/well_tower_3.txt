@@ -25,7 +25,7 @@
     "Level"                      "3"
     "Cost"                       "1800"
     "TotalCost"                  "3000"
-    "BuildTime"                  "3"
+    "BuildTime"                  "2"
     "Element"
     {
         "1"        "nature"
