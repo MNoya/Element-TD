@@ -19,7 +19,7 @@ nil)
 
 function HailTower:OnStormThink()
     if not self.tower:HasModifier("modifier_disarmed") then
-        if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() and #GetCreepsInArea(self.tower:GetAbsOrigin(), self.findRadius) > 0 then
+        if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() and self.tower:GetHealthPercent() == 100 and #GetCreepsInArea(self.tower:GetAbsOrigin(), self.findRadius) > 0 then
             self.tower:CastAbilityImmediately(self.ability, 1)
         end
     end
@@ -61,7 +61,7 @@ end
 
 function HailTower:OnStormCast(keys)
     self.tower:EmitSound("Hail.Cast")
-    self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_storm", {})
+    self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_storm", {duration=self.duration})
 end
 
 function HailTower:OnAttackLanded(keys)
@@ -70,15 +70,32 @@ function HailTower:OnAttackLanded(keys)
     DamageEntity(target, self.tower, damage)
 end
 
+function HailTower:ApplyUpgradeData(data)
+    if data.cooldown and data.cooldown > 1 then
+        self.ability:StartCooldown(data.cooldown)
+    end
+    if data.autocast == false then
+        self.ability:ToggleAutoCast()
+    end
+end
+
+function HailTower:GetUpgradeData()
+    return {
+        cooldown = self.ability:GetCooldownTimeRemaining(), 
+        autocast = self.ability:GetAutoCastState()
+    }
+end
+
 function HailTower:OnCreated()
     self.ability = AddAbility(self.tower, "hail_tower_storm")
-    Timers:CreateTimer(1, function()
+    Timers:CreateTimer(0.1, function()
         if IsValidEntity(self.tower) then
             self:OnStormThink()
-            return 1
+            return 0.1
         end
     end)
     self.ability:ToggleAutoCast()
+    self.duration = self.ability:GetSpecialValueFor("duration")
     self.projectileSpeed = tonumber(GetUnitKeyValue(self.towerClass, "ProjectileSpeed"))
     self.attackOrigin = self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_attack1"))
     self.bonusTargets = GetAbilitySpecialValue("hail_tower_storm", "targets") - 1

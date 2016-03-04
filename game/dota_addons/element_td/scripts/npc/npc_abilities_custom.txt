@@ -2614,7 +2614,6 @@
 			{
 				"EffectName"	"particles/units/heroes/hero_winter_wyvern/wyvern_winters_curse_ring_rope.vpcf"
 				"EffectAttachType" "follow_origin"
-				"Duration"		"%duration"
 			}
 		}
 	
@@ -3855,11 +3854,10 @@
 		{
 			"modifier_magic_attack"
 			{
-				"Duration"		"%duration"
 				"EffectName"		"particles/custom/towers/runic/ambient.vpcf"
 				"EffectAttachType"	"follow_origin"
-	
 			}
+			
 			"modifier_magic_attack_passive"
 			{
 				"Passive"	"1"
