@@ -267,7 +267,7 @@
         "paladin"                   "Paladin"
         "phantom_lancer"            "Phantom Lancer"
         "poseidon"                  "Poseidon"
-        "raccoon"                   "Raccoon"
+        "otter_dragon"              "Green Dragon"
         "radiant_golem"             "Radiant Golem"
         "razor"                     "Razor"
         "robot_soldier"             "Robot Soldier"

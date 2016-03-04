@@ -16,7 +16,7 @@
     "ProjectileModel"        ""
     "ProjectileSpeed"        "0"
     "RingRadius"        "70"
-    "HealthBarOffset"        "160"
+    "HealthBarOffset"        "200"
     "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
     "BountyXP"        "0"
     "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
@@ -26,12 +26,21 @@
     "StatusManaRegen"        "0"
     "VisionDaytimeRange"        "1200"
     "VisionNighttimeRange"        "800"
-    "Model"        "models/heroes/brewmaster/brewmaster_windspirit.vmdl"
-    "ModelScale"        "2.0"
+    "Model"        "models/heroes/storm_spirit/storm_spirit.vmdl"
+    "ModelScale"        "2.1"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"     "CreepBulky"
     "Ability1"        "water_armor"
     "Ability2"        "creep_ability_bulky"
-    "Ability3"        "windspirit_particles"
+
+    "Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_storm_spirit
+        {
+            "1" { "ItemDef" "310" } // Storm Spirit's Armor
+            "2" { "ItemDef" "308" } // Storm Spirit's Hat
+            "3" { "ItemDef" "309" } // Storm Spirit's Shoulder
+        }
+    }
 }

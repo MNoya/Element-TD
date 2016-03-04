@@ -333,7 +333,7 @@
 	    "ProjectileModel"        ""
 	    "ProjectileSpeed"        "0"
 	    "RingRadius"        "70"
-	    "HealthBarOffset"        "160"
+	    "HealthBarOffset"        "200"
 	    "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
 	    "BountyXP"        "0"
 	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
@@ -344,12 +344,13 @@
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
 	    "Model"        "models/heroes/ancient_apparition/ancient_apparition.vmdl"
-	    "ModelScale"        "2.0"
+	    "ModelScale"        "1.5"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepBulky"
 	    "Ability1"        "light_armor"
 	    "Ability2"        "creep_ability_bulky"
+	    "Ability3"        "ancient_light_particles"
 	    "Creature"
 	    {
 	        "AttachWearables"
@@ -357,65 +358,6 @@
 	            "Wearable1"
 	            {
 	                "ItemDef"        "501"
-	            }
-	        }
-	    }
-	}
-	"dark_stalker"
-	{
-	    "MinimapIcon"               "minimap_icon_purple"
-	    "MinimapIconSize"           "200"
-	    "MinimapDisableTint"        "1"
-	
-	    "ArmorPhysical"        "0"
-	    "MagicalResistance"        "0"
-	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
-	    "AttackDamageMin"        "0"
-	    "AttackDamageMax"        "0"
-	    "AttackRate"        "0"
-	    "AttackAnimationPoint"        "0"
-	    "AttackAcquisitionRange"        "0"
-	    "AttackRange"        "0"
-	    "ProjectileModel"        ""
-	    "ProjectileSpeed"        "0"
-	    "RingRadius"        "70"
-	    "HealthBarOffset"        "160"
-	    "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
-	    "BountyXP"        "0"
-	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
-	    "MovementSpeed"        "300"
-	    "StatusHealthRegen"        "0"
-	    "StatusMana"        "0"
-	    "StatusManaRegen"        "0"
-	    "VisionDaytimeRange"        "1200"
-	    "VisionNighttimeRange"        "800"
-	    "Model"        "models/heroes/terrorblade/terrorblade_arcana.vmdl"
-	    "ModelScale"        "1"
-	    "BaseClass"        "npc_dota_creature"
-	    "SoundSet"        ""
-	    "ScriptClass"        "CreepImage"
-	    "Ability1"        "dark_armor"
-	    "Ability2"        ""
-	
-	    "Creature"
-	    {
-	        "AttachWearables"
-	        {
-	            "Wearable1"
-	            {
-	                "ItemDef"        "306"
-	            }
-	            "Wearable2"
-	            {
-	                "ItemDef"        "307"
-	            }
-	            "Wearable3"
-	            {
-	                "ItemDef"        "476"
-	            }
-	            "Wearable4"
-	            {
-	                "ItemDef"        "478"
 	            }
 	        }
 	    }
@@ -448,24 +390,13 @@
 	    "StatusManaRegen"        "0"
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
-	    "Model"        "models/heroes/abaddon/abaddon.vmdl"
-	    "ModelScale"        "1.6"
+	    "Model"        "models/creeps/neutral_creeps/n_creep_thunder_lizard/n_creep_thunder_lizard_small.vmdl"
+	    "ModelScale"        "1.0"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepBulky"
 	    "Ability1"        "composite_armor"
 	    "Ability2"        "creep_ability_bulky"
-	    "Creature"
-	    {
-	        "AttachWearables" // Default npc_dota_hero_abaddon
-	        {
-	            "1" { "ItemDef" "455" } // Abaddon's Helmet
-	            "2" { "ItemDef" "454" } // Abaddon's Weapon
-	            "3" { "ItemDef" "457" } // Abaddon's Shoulder Armor
-	            "4" { "ItemDef" "456" } // Abaddon's Cape
-	            "5" { "ItemDef" "458" } // Abaddon's Mount
-	        }
-	    }
 	}
 	"desert_rogue"
 	{
@@ -1539,10 +1470,12 @@
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
 	    "Model"        "models/creeps/neutral_creeps/n_creep_ogre_med/n_creep_ogre_med.vmdl"
-	    "ModelScale"        "1.0"
+	    "ModelScale"        "1.8"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
+	    "ScriptClass"     "CreepBulky"
 	    "Ability1"        "earth_armor"
+	    "Ability2"        "creep_ability_bulky"
 	}
 	"mummy"
 	{
@@ -1749,7 +1682,7 @@
 	        }
 	    }
 	}
-	"raccoon"
+	"otter_dragon"
 	{
 	    "MinimapIcon"               "minimap_icon_green"
 	    "MinimapIconSize"           "200"
@@ -1777,8 +1710,8 @@
 	    "StatusManaRegen"        "0"
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
-	    "Model"        "models/courier/badger/courier_badger.vmdl"
-	    "ModelScale"        "2.4"
+	    "Model"        "models/courier/otter_dragon/otter_dragon.vmdl"
+	    "ModelScale"        "2.5"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepBulky"
@@ -1947,7 +1880,7 @@
 	    "ProjectileModel"        ""
 	    "ProjectileSpeed"        "0"
 	    "RingRadius"        "70"
-	    "HealthBarOffset"        "160"
+	    "HealthBarOffset"        "200"
 	    "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
 	    "BountyXP"        "0"
 	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
@@ -1957,14 +1890,23 @@
 	    "StatusManaRegen"        "0"
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
-	    "Model"        "models/heroes/brewmaster/brewmaster_windspirit.vmdl"
-	    "ModelScale"        "2.0"
+	    "Model"        "models/heroes/storm_spirit/storm_spirit.vmdl"
+	    "ModelScale"        "2.1"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepBulky"
 	    "Ability1"        "water_armor"
 	    "Ability2"        "creep_ability_bulky"
-	    "Ability3"        "windspirit_particles"
+	
+	    "Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_storm_spirit
+	        {
+	            "1" { "ItemDef" "310" } // Storm Spirit's Armor
+	            "2" { "ItemDef" "308" } // Storm Spirit's Hat
+	            "3" { "ItemDef" "309" } // Storm Spirit's Shoulder
+	        }
+	    }
 	}
 	"shroomling"
 	{
@@ -2547,7 +2489,7 @@
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
 	    "Model"        "models/creeps/neutral_creeps/n_creep_worg_large/n_creep_worg_large.vmdl"
-	    "ModelScale"        "1.4"
+	    "ModelScale"        "0.8"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepBulky"
