@@ -2309,8 +2309,8 @@
 		{
 			"01"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"kills_required"				"3 2 1"
+				"var_type"						"FIELD_FLOAT"
+				"kills_required"				"3 1.5 1"
 			}
 		}
 	}
@@ -2413,8 +2413,8 @@
 		{
 			"01"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"kills_required"				"3 2 1"
+				"var_type"						"FIELD_FLOAT"
+				"kills_required"				"3 1.5 1"
 			}
 		}
 	}
@@ -2441,8 +2441,8 @@
 		{
 			"01"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"kills_required"				"3 2 1"
+				"var_type"						"FIELD_FLOAT"
+				"kills_required"				"3 1.5 1"
 			}
 		}
 	}
@@ -2470,8 +2470,8 @@
 		{
 			"01"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"kills_required"				"3 2 1"
+				"var_type"						"FIELD_FLOAT"
+				"kills_required"				"3 1.5 1"
 			}
 		}
 	}
