@@ -479,7 +479,7 @@
         "DOTA_Tooltip_ability_creep_ability_heal_heal_amount"       "%HEAL AMOUNT:"
         "DOTA_Tooltip_ability_creep_ability_heal_aoe"       "RADIUS:"
         "DOTA_Tooltip_ability_creep_ability_fast"       "Haste"
-        "DOTA_Tooltip_ability_creep_ability_fast_Description"       "After spawning, this creep will move at double movement speed for a short duration after a random period of time. After that, it will gain max movement speed at a fixed interval."
+        "DOTA_Tooltip_ability_creep_ability_fast_Description"       "After spawning, this creep will move at x2.5 movement speed for a short duration after a random period of time, after which it will gain movement speed at a fixed interval."
         "DOTA_Tooltip_ability_creep_ability_fast_duration"      "DURATION:"
         "DOTA_Tooltip_ability_creep_ability_fast_interval"             "INTERVAL:"
         "DOTA_Tooltip_ability_creep_ability_fast_interval_tooltip"      "INTERVAL:"
@@ -506,7 +506,7 @@
         "DOTA_Tooltip_ability_creep_ability_swarm_bounty"                                 "%BOUNTY:"
         "DOTA_Tooltip_ability_creep_ability_swarm_health"                                 "%HEALTH:"
         "DOTA_Tooltip_ability_creep_ability_regen"                                        "Regeneration"
-        "DOTA_Tooltip_ability_creep_ability_regen_Description"                            "Heal 2% of maximum health per second. Once 100% of the units health has been regenerated the regeneration will stop."
+        "DOTA_Tooltip_ability_creep_ability_regen_Description"                            "Heal 3% of maximum health per second. Once 75% of the units health has been regenerated the regeneration will stop."
         "DOTA_Tooltip_ability_creep_ability_regen_bonus_health_regen"                     "%REGEN:"
         "DOTA_Tooltip_ability_creep_ability_regen_max_heal_pct"                           "%MAX HEAL:"
 

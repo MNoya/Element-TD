@@ -32,7 +32,7 @@ end
 
 function CreepRegen:RegenerateCreepHealth()
 	local creep = self.creep
-	local heal_percent = 2
+	local heal_percent = 3
 
 	if creep:GetHealth() > 0 and creep:GetHealth() ~= creep:GetMaxHealth() and self.regenAmount <= creep:GetMaxHealth() then
 
