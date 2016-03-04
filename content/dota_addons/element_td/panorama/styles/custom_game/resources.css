@@ -363,3 +363,19 @@
 {
     horizontal-align: right;
 }
+
+#Version
+{
+    color: white;
+    font-size: 25px;
+    font-family: Radiance;
+    font-weight: bold;
+    text-align: right;
+    text-shadow: 0px 0px 3px 3.0 #000000;
+    vertical-align: bottom;
+    margin-bottom: 26%;
+
+    width: 150px;
+    margin-right: 40px;
+    margin-left: 10px;
+}

@@ -272,50 +272,36 @@ function ConfirmVote()
     GameEvents.SendCustomGameEventToServer( "etd_player_voted", { "data" : data } );
 }
 
-function ShowVoteResults( data )
+function ShowVoteResults()
 {
     votingUI.visible = false;
     voteResultsUI.visible = true;
     votingLiveUI.AddClass("hidden");
 
-    var difficultyName = data.difficulty.toLowerCase()
+    var difficulty = CustomNetTables.GetTableValue("gameinfo", "difficulty").value
+    var difficultyName = difficulty.toLowerCase()
     $("#DifficultyResult").text = $.Localize("difficulty_"+difficultyName+"_mode")
-    $("#DifficultyView").text = $.Localize("difficulty_"+difficultyName+"_mode")
 
     // Only show the options that were accepted
-    var random = data.elements == "SameRandom" || data.elements == "AllRandom"
-    var endless = data.endless == "Endless"
-    var chaos = data.order == "Chaos"
-    var express = data.length == "Express"
+    var randomChoice = CustomNetTables.GetTableValue("gameinfo", "random").value    
+    var random = randomChoice == "SameRandom" || randomChoice == "AllRandom"
+    var rush = CustomNetTables.GetTableValue("gameinfo", "rush").value == "Endless"
+    var chaos = CustomNetTables.GetTableValue("gameinfo", "chaos").value == "Chaos"
+    var express = CustomNetTables.GetTableValue("gameinfo", "express").value == "Express"
 
     if (!random)
-    {
-        $( '#ElementsResult' ).GetParent().DeleteAsync(0)
-        $( '#ElementsView' ).AddClass("Hidden") //This can become visible if the player does -random afterwards
-    }
+        $('#ElementsResult').GetParent().DeleteAsync(0)
     else
-    {
-        $( '#ElementsResult' ).text = $.Localize(data.elements.toLowerCase()+"_mode");
-        $( '#ElementsView' ).text = $.Localize(data.elements.toLowerCase()+"_mode");
-    }
+        $('#ElementsResult').text = $.Localize(randomChoice.toLowerCase()+"_mode");
 
-    if (!endless)
-    {
-        $( '#EndlessResult' ).GetParent().DeleteAsync(0)
-        $( '#EndlessView' ).DeleteAsync(0)
-    }
+    if (!rush)
+        $('#EndlessResult').GetParent().DeleteAsync(0)
 
     if (!chaos)
-    {
-        $( '#OrderResult' ).GetParent().DeleteAsync(0)
-        $( '#OrderView' ).DeleteAsync(0)
-    }
+        $('#OrderResult').GetParent().DeleteAsync(0)
 
     if (!express)
-    {
-        $( '#LengthResult' ).GetParent().DeleteAsync(0)
-        $( '#LengthView' ).DeleteAsync(0)
-    }
+        $('#LengthResult').GetParent().DeleteAsync(0)
 
     // Update HP-Bounty-Scores results
     $("#HealthResult").text = GetHP(difficultyName)
@@ -323,6 +309,42 @@ function ShowVoteResults( data )
     $("#ScoresResult").text = GetScore(difficultyName)
 
     // Show current mode UI
+    ShowGamemodeViewer()
+}
+
+function ShowGamemodeViewer() {
+    var difficulty = CustomNetTables.GetTableValue("gameinfo", "difficulty")
+
+    //exit if the difficulty hasn't been set yet
+    if (difficulty === undefined)
+        return
+    
+    difficulty = difficulty.value
+
+    var difficultyName = difficulty.toLowerCase()
+    $("#DifficultyView").text = $.Localize("difficulty_"+difficultyName+"_mode")
+
+    // Only show the options that were accepted
+    var randomChoice = CustomNetTables.GetTableValue("gameinfo", "random").value    
+    var random = randomChoice == "SameRandom" || randomChoice == "AllRandom"
+    var rush = CustomNetTables.GetTableValue("gameinfo", "rush").value == "Endless"
+    var chaos = CustomNetTables.GetTableValue("gameinfo", "chaos").value == "Chaos"
+    var express = CustomNetTables.GetTableValue("gameinfo", "express").value == "Express"
+
+    if (!random)
+        $('#ElementsView').AddClass("Hidden") //This can become visible if the player does -random afterwards
+    else
+        $('#ElementsView').text = $.Localize(randomChoice.toLowerCase()+"_mode");
+
+    if (!rush)
+        $('#EndlessView').DeleteAsync(0)
+
+    if (!chaos)
+        $('#OrderView').DeleteAsync(0)
+
+    if (!express)
+        $('#LengthView').DeleteAsync(0)
+
     currentModeUI.visible = true;
     $("#diff_image").SetImage("file://{images}/custom_game/vote_menu/difficulties/"+difficultyName+".png")
     $("#diff_image_glow").SetImage("file://{images}/custom_game/vote_menu/difficulties/"+difficultyName+"_glow.psd")
@@ -385,7 +407,22 @@ function ToggleCurrentModeVisibility(){
 }
 
 function UpdateRandomMode() {
-    $( '#ElementsView' ).RemoveClass("Hidden")
+    $('#ElementsView').RemoveClass("Hidden")
+}
+
+function CheckHudFlipped() {
+    if (Game.IsHUDFlipped())
+    {
+        currentModeUI.AddClass("Flipped")
+        currentModeUI.RemoveClass("AlignRight")
+    }
+    else
+    {
+        currentModeUI.RemoveClass("Flipped")
+        currentModeUI.AddClass("AlignRight")
+    }
+
+    $.Schedule(1, CheckHudFlipped)
 }
 
 function Setup()
@@ -399,6 +436,8 @@ function Setup()
     currentModeUI.visible = false;
     votingLiveUI.AddClass("hidden");
     UpdateNotVoted();
+    ShowGamemodeViewer();
+    $.Schedule(0.1, CheckHudFlipped)
 }
 
 

@@ -168,13 +168,20 @@ function GameSettings:EnableRandomForPlayer(playerID)
 
         UpdatePlayerSpells(playerID)
         UpdateScoreboard(playerID)
-        CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "etd_player_random_enable", {} )
+        UpdateRandom(playerID)
     else
     	if playerData.completedWaves >= 5 then
     		SendErrorMessage(playerID, "#etd_random_5wave_error")
     	else
         	SendErrorMessage(playerID, "#etd_random_chosen_error")
         end
+    end
+end
+
+function UpdateRandom(playerID)
+    local playerData = GetPlayerData(playerID)
+    if playerData.elementalRandom then
+        CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "etd_player_random_enable", {} )
     end
 end
 

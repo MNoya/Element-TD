@@ -17,7 +17,7 @@ if not players then
     DEV_MODE = false
     EXPRESS_MODE = false
 
-    VERSION = "B010316b"
+    VERSION = "1.0"
 
     START_TIME = GetSystemDate() .. " " .. GetSystemTime()
     END_TIME = nil
@@ -120,6 +120,9 @@ function ElementTD:InitGameMode()
 
     -- Less expensive pathing?
     LimitPathingSearchDepth(0.5)
+
+    -- Version Label
+    CustomNetTables:SetTableValue("gameinfo", "version", {value=VERSION})
 
     print("Loaded Element Tower Defense!")
 end
@@ -574,6 +577,7 @@ function ElementTD:OnReconnect(playerID)
         ModifyLumber(playerID, 0) -- updates summoner spells
         ModifyPureEssence(playerID, 0, true)
         UpdateElementsHUD(playerID)
+        UpdateRandom(playerID)
     end
 
     if GameRules:State_Get() >= DOTA_GAMERULES_STATE_HERO_SELECTION then
