@@ -1431,10 +1431,10 @@
         "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_2_disabled"        "Hex Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_2_Description"     "Upgrades this tower to a Hex Tower.\n\nCOST: <font color='#F0BA36'>3000 Gold</font>\nELEMENT: <font color='#6C05B1'>Dark</font> + <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#6C05B1'>Dark</font>\nDAMAGE: <font color='#FFFFFF'>13000</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Each attack applies Maledict to creeps near the target."
         "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_2_disabled_Description"        "Upgrades this tower to a Hex Tower.\n<font color='#F0BA36'>Requires: </font><font color='#6C05B1'>Dark 2</font> + <font color='#C40000'>Fire 2</font> + <font color='#00C400'>Nature 2</font> \n\nCOST: <font color='#F0BA36'>3000 Gold</font>\nELEMENT: <font color='#6C05B1'>Dark</font> + <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#6C05B1'>Dark</font>\nDAMAGE: <font color='#FFFFFF'>13000</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Each attack applies Maledict to creeps near the target."
-        "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_damage_taken"                    "DAMAGE TAKEN TO DAMAGE:"
-        "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_2_damage_taken"                  "DAMAGE TAKEN TO DAMAGE:"
-        "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_2_disabled_damage_taken"         "DAMAGE TAKEN TO DAMAGE:"
-        "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_disabled_damage_taken"           "DAMAGE TAKEN TO DAMAGE:"
+        "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_damage_taken"                    "AMP PER DAMAGE TAKEN:"
+        "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_2_damage_taken"                  "AMP PER DAMAGE TAKEN:"
+        "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_2_disabled_damage_taken"         "AMP PER DAMAGE TAKEN:"
+        "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_disabled_damage_taken"           "AMP PER DAMAGE TAKEN:"
 
         // Obliteration (Dark + Light + Nature)
         "DOTA_Tooltip_ability_item_upgrade_to_obliteration_tower"       "Obliteration Tower"

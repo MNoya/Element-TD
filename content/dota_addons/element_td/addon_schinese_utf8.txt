@@ -263,7 +263,7 @@
         "paladin"                   "帕拉丁"
         "phantom_lancer"            "幻影长矛手"
         "poseidon"                  "波塞冬"
-        "otter_dragon"              "浣熊"
+        "otter_dragon"              "绿龙"
         "radiant_golem"             "天辉傀儡"
         "razor"                     "剃刀"
         "robot_soldier"             "机器人战士"
