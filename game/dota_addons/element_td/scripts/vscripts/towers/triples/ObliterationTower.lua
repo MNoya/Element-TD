@@ -22,6 +22,12 @@ function ObliterationTower:OnAttack(keys)
     local target = keys.target
     local caster = keys.caster
 
+    if not target then
+        local position = keys.origin
+        target = self.attackDummy
+        self.attackDummy:SetAbsOrigin(position)
+    end
+    
     caster:StartGesture(ACT_DOTA_ATTACK)
 
     local info = 
@@ -51,22 +57,33 @@ function ObliterationTower:OnProjectileHit(keys)
 
     target:EmitSound("Obliteration.Hit")
 
+    local damage = self.tower:GetAverageTrueAttackDamage()
     local entities = GetCreepsInArea(target:GetAbsOrigin(), splashAOE)
     for _, entity in pairs(entities) do
-        local damage = self.tower:GetAverageTrueAttackDamage()
         DamageEntity(entity, self.tower, damage, self.tower)
     end
+end
+
+function ObliterationTower:OnDestroyed()
+    self.attackDummy:RemoveSelf()
+end
+
+-- Called when the attack ground ability is cancelled
+function ObliterationTower:ReapplyAttackLogic(event)
+    self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_FARTHEST})
 end
 
 function ObliterationTower:OnCreated()
     self.ability = AddAbility(self.tower, "obliteration_tower_obliterate")
     self.projOrigin = self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_attack1"))
-    self.groundHeight = GetGroundPosition(self.tower:GetOrigin(), nil).z + 200
     self.attackRange = self.tower:GetAttackRange()
     self.projDuration = GetAbilitySpecialValue("obliteration_tower_obliterate", "duration")
     self.maxSplash = GetAbilitySpecialValue("obliteration_tower_obliterate", "max_aoe")
     self.initialSplash = GetAbilitySpecialValue("obliteration_tower_obliterate", "initial_aoe")
     self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_FARTHEST})
+
+    -- Used for attack ground targeting
+    self.attackDummy = CreateUnitByName("tower_dummy", self.tower:GetAbsOrigin(), false, nil, nil, 0)
 end
 
 function ObliterationTower:OnAttackLanded(keys) end

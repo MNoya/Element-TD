@@ -47,6 +47,9 @@ function AttackGround( event )
 
     -- Disable autoattack acquiring
     ability:ApplyDataDrivenModifier(caster, caster, "modifier_attacking_ground", {})
+    if caster:HasModifier("modifier_attack_targeting") then
+        caster:RemoveModifierByName("modifier_attack_targeting")
+    end
 
     -- Time fake attacks
     ability.attack_ground_timer = Timers:CreateTimer(function()
@@ -60,15 +63,15 @@ function AttackGround( event )
             end
 
             if caster.scriptObject and caster.scriptObject.OnAttack then
-                caster.scriptObject:OnAttack({origin=position})
+                caster.scriptObject:OnAttack({origin=position,caster=caster,ability=ability})
             end
 
             if caster.scriptObject and caster.scriptObject.OnAttackStart then
-                caster.scriptObject:OnAttackStart({origin=position})
+                caster.scriptObject:OnAttackStart({origin=position,caster=caster,ability=ability})
             end
 
             if caster.scriptObject and caster.scriptObject.SpawnTornado then
-                caster.scriptObject:SpawnTornado({origin=position})
+                caster.scriptObject:SpawnTornado({origin=position,caster=caster,ability=ability})
             end
 
             if caster:HasGroundAttack() then
