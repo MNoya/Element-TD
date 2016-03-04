@@ -551,32 +551,39 @@ function ElementTD:OnConnectFull(keys)
         if playerID and playerID ~= -1 then
             if not tableContains(playerIDs, playerID) then
                 table.insert(playerIDs, playerID)
-            end
-
-            if PlayerData[playerID] and PlayerData[playerID].elements then
-                UpdateElementsHUD(playerID)
+            else
+                ElementTD:OnReconnect(playerID)
             end
 
             -- Update the user ID table with this user
             self.vUserIds[keys.userid] = ply
             self.vPlayerUserIds[playerID] = keys.userid
-
-            if GameRules:State_Get() >= DOTA_GAMERULES_STATE_HERO_SELECTION then
-                local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-                if not hero then
-                    Log:warn("Player "..playerID.." has no hero selected at game start!")
-                    Log:info("Creating hero for player "..playerID)
-                    local hero = CreateHeroForPlayer("npc_dota_hero_wisp", ply)
-
-                    if PLAYERS_NOT_VOTED[playerID] and START_GAME_TIME == 0 then
-                        CustomGameEventManager:Send_ServerToPlayer( ply, "etd_toggle_vote_dialog", {visible = true} )
-                    end
-                end
-            end
         else
             print("Got an invalid playerID: ", playerID)
         end
     end)
+end
+
+-- Called every time the player connects after being added to the valid playerIDs
+function ElementTD:OnReconnect(playerID)
+    local player = PlayerResource:GetPlayer(playerID)
+
+    Sandbox:CheckPlayer(playerID)
+
+    if PlayerData[playerID] and PlayerData[playerID].elements then
+        UpdateElementsHUD(playerID)
+    end
+
+    if GameRules:State_Get() >= DOTA_GAMERULES_STATE_HERO_SELECTION then
+        local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+        if not hero then
+            local hero = CreateHeroForPlayer("npc_dota_hero_wisp", player)
+
+            if PLAYERS_NOT_VOTED[playerID] and START_GAME_TIME == 0 then
+                CustomGameEventManager:Send_ServerToPlayer( player, "etd_toggle_vote_dialog", {visible = true} )
+            end
+        end
+    end
 end
 
 function ElementTD:OnPlayerSelectedEntities( event )
