@@ -81,7 +81,7 @@
 		{
 			_class = "C_INIT_RandomAlpha"
 			m_nAlphaMin = 35
-			m_nAlphaMax = 45
+			m_nAlphaMax = 10
 		},
 		{
 			_class = "C_INIT_RandomLifeTime"
@@ -155,8 +155,8 @@
 			_class = "C_INIT_RandomColor"
 			m_ColorMin =
 			[
-				0,
-				0,
+				20,
+				114,
 				255,
 				255,
 			]

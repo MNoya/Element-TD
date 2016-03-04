@@ -463,6 +463,8 @@ function CancelConstruction(event)
         if tower.timeToAttack then
             newTower:AddNewModifier(nil, nil, "modifier_stunned", {duration=tower.timeToAttack})
         end
+
+        newTower.scriptObject:OnBuildingFinished()
 	else
 		Sounds:EmitSoundOnClient(playerID, "Gold.CoinsBig")	
 		PopupAlchemistGold(tower, goldCost)
