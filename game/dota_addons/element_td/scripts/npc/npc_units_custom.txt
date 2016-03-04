@@ -4445,9 +4445,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "520"
-	    "AttackDamageMax"           "520"
-	    "Damage"                    "520"  
+	    "AttackDamageMin"           "470"
+	    "AttackDamageMax"           "470"
+	    "Damage"                    "470"  
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.31"
@@ -4718,9 +4718,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "80"
-	    "AttackDamageMax"           "80"
-	    "Damage"                    "80"  
+	    "AttackDamageMin"           "72"
+	    "AttackDamageMax"           "72"
+	    "Damage"                    "72"  
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.31"
@@ -5238,9 +5238,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "33800"
-	    "AttackDamageMax"           "33800"
-	    "Damage"                    "33800"  
+	    "AttackDamageMin"           "30500"
+	    "AttackDamageMax"           "30500"
+	    "Damage"                    "30500"  
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.31"
@@ -5766,9 +5766,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "3380"
-	    "AttackDamageMax"           "3380"
-	    "Damage"                    "3380"  
+	    "AttackDamageMin"           "3050"
+	    "AttackDamageMax"           "3050"
+	    "Damage"                    "3050"  
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.31"
@@ -7027,9 +7027,9 @@
 	        "1"        "earth"
 	        "2"        "dark"
 	    }
-	    "Damage"        "32"
-	    "AttackDamageMin"        "32"
-	    "AttackDamageMax"        "32"
+	    "Damage"        "30"
+	    "AttackDamageMin"        "30"
+	    "AttackDamageMax"        "30"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
@@ -7120,9 +7120,9 @@
 	        "1"        "earth"
 	        "2"        "dark"
 	    }
-	    "Damage"        "160"
-	    "AttackDamageMin"        "160"
-	    "AttackDamageMax"        "160"
+	    "Damage"        "150"
+	    "AttackDamageMin"        "150"
+	    "AttackDamageMax"        "150"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
@@ -7209,9 +7209,9 @@
 	        "1"        "earth"
 	        "2"        "dark"
 	    }
-	    "Damage"        "800"
-	    "AttackDamageMin"        "800"
-	    "AttackDamageMax"        "800"
+	    "Damage"        "750"
+	    "AttackDamageMin"        "750"
+	    "AttackDamageMax"        "750"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
@@ -11275,9 +11275,9 @@
 	        "2"        "fire"
 	        "3"        "water"
 	    }
-	    "Damage"        "1000"
-	    "AttackDamageMin"        "1000"
-	    "AttackDamageMax"        "1000"
+	    "Damage"        "900"
+	    "AttackDamageMin"        "900"
+	    "AttackDamageMax"        "900"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "HasteTower"
 	    "TowerType"        "Normal"
@@ -11364,9 +11364,9 @@
 	        "2"        "fire"
 	        "3"        "water"
 	    }
-	    "Damage"        "5000"
-	    "AttackDamageMin"        "5000"
-	    "AttackDamageMax"        "5000"
+	    "Damage"        "4500"
+	    "AttackDamageMin"        "4500"
+	    "AttackDamageMax"        "4500"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "HasteTower"
 	    "TowerType"        "Normal"

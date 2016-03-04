@@ -2510,7 +2510,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"32 160 800"
+				"damage"				"30 150 750"
 			}
 			"02"
 			{
@@ -2683,7 +2683,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"reset_time"		"3"
+				"reset_time"		"4"
 			}
 			"02"
 			{
@@ -2693,7 +2693,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"cap"				"15"
+				"cap"				"16"
 			}
 		}
 	}

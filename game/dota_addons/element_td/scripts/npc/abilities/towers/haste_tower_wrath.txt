@@ -39,7 +39,7 @@
 		"01"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"reset_time"		"3"
+			"reset_time"		"4"
 		}
 		"02"
 		{
@@ -49,7 +49,7 @@
 		"03"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"cap"				"15"
+			"cap"				"16"
 		}
 	}
 }
