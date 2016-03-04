@@ -40,8 +40,8 @@ function Sandbox:Enable(event)
     local playerID = event.PlayerID
     local playerData = GetPlayerData(playerID)
 
-    if not playerData.sandBoxEnabled then
-        playerData.sandBoxEnabled = true
+    if not GameRules.sandBoxEnabled then
+        GameRules.sandBoxEnabled = "Sandbox"
         ElementTD:CheatsEnabled()
     else
         return

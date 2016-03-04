@@ -45,7 +45,7 @@ function BuildGameArray()
     -- Add game values here as game.someValue = GetSomeGameValue()
     game.diff = GetPlayerDifficulty(0).difficultyName
     game.exp = EXPRESS_MODE
-    game.ord = GameSettings.order
+    game.ord = GameRules.sandBoxEnabled or GameSettings.order
     game.hor = GameSettings.endless
     game.rnd = GameSettings.elementsOrderName
     game.str = START_TIME
