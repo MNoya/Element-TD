@@ -89,9 +89,11 @@ function Wave:SpawnWave()
 			entity:SetMinimumGoldBounty(bounty)
 
 			-- Bulky: double spawn time, half creep count
-			if entity.scriptClass == "CreepBulky" then
+			if entity:HasAbility("creep_ability_bulky") then
 				time_between_spawns = 1
 				entitiesSpawned = entitiesSpawned + 1
+			else
+				time_between_spawns = 0.5
 			end
 
 			local health = WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier()

@@ -14,7 +14,7 @@ CreepBoss = createClass({
     },
 CreepBasic)
 
-CreepBossAbilities = { [1]="creep_ability_mechanical", [2]="creep_ability_regen", [3]="creep_ability_heal", [4]="creep_ability_undead", [5]="creep_ability_fast" }
+CreepBossAbilities = { [1]="creep_ability_mechanical", [2]="creep_ability_regen", [3]="creep_ability_heal", [4]="creep_ability_undead", [5]="creep_ability_fast", [6]="creep_ability_bulky" }
 
 function CreepBoss:OnSpawned()
     local creep = self.creep
@@ -51,8 +51,7 @@ function CreepBoss:OnSpawned()
         end)
     end
 
-    if self.random_ability == "creep_ability_regen" then
-        local creep = self.creep
+    if creep:HasAbility("creep_ability_regen") then
         self.healthPercent = self.ability:GetSpecialValueFor("bonus_health_regen")
         self.maxRegen = self.ability:GetSpecialValueFor("max_heal_pct")
         
@@ -62,6 +61,15 @@ function CreepBoss:OnSpawned()
             self:RegenerateCreepHealth()
             return 1
         end)
+    end
+
+    if creep:HasAbility("creep_ability_bulky") then
+        local health_multiplier = self.ability:GetSpecialValueFor("bonus_health_pct") * 0.01
+        local health = creep:GetHealth()
+        creep:SetMaxHealth(health * health_multiplier)
+        creep:SetBaseMaxHealth(health * health_multiplier)
+        creep:SetHealth(creep:GetMaxHealth() * health_multiplier)
+        creep:SetModelScale(creep:GetModelScale()*1.8)
     end
 end
 
