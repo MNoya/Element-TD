@@ -334,8 +334,17 @@ function UpdateTimer()
 		g_TeamPanels.push( teamNode );
 	}
 
+	// Assign to a random team in single player
+	if ( GetPlayerCount() == 1 )
+	{
+		var teams = [2,3,6,7,8,9,10,11]		
+		var random = Math.floor(Math.random()*teams.length)
+		var random_team = teams[random]
+		Game.PlayerJoinTeam( random_team )
+	}
+
 	// Automatically assign players to teams.
-	if ( bAutoAssignTeams )
+	else if ( bAutoAssignTeams )
 	{
 		Game.AutoAssignPlayersToTeams();
 	}
@@ -353,3 +362,10 @@ function UpdateTimer()
 	$.RegisterForUnhandledEvent( "DOTAGame_PlayerSelectedCustomTeam", OnPlayerSelectedTeam );
 
 })();
+
+
+//---------------
+
+function GetPlayerCount() {
+	return Game.GetAllPlayerIDs().length
+}
