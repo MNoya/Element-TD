@@ -428,6 +428,7 @@ function ElementTD:OnUnitSpawned(keys)
             playerData.summoner = summoner
 
             ModifyLumber(playerID, 0)  -- updates summoner spells
+            ModifyPureEssence(playerID, 0, true)
             UpdateElementsHUD(playerID)
             UpdatePlayerSpells(playerID)
 
@@ -438,7 +439,6 @@ function ElementTD:OnUnitSpawned(keys)
         if unitName and unitName ~= "" and not NPC_UNITS_CUSTOM[unitName] then
             Log:warn("A non-custom unit was spawned! "..unitName)
             unit:RemoveSelf()
-            ElementTD:CheatCommandUsed()
         end
     end
 end
@@ -571,6 +571,8 @@ function ElementTD:OnReconnect(playerID)
     Sandbox:CheckPlayer(playerID)
 
     if PlayerData[playerID] and PlayerData[playerID].elements then
+        ModifyLumber(playerID, 0) -- updates summoner spells
+        ModifyPureEssence(playerID, 0, true)
         UpdateElementsHUD(playerID)
     end
 
