@@ -165,3 +165,27 @@ function RemoveRandomBuff(tower)
         target:RemoveModifierByName(modifier_name)
     end
 end
+
+function GetBuffData( tower )
+    local buffData = {}
+    local buffs = {"modifier_fire_up", "modifier_spring_forward", "modifier_conjure_prevent_cloning"}
+    for _,modifierName in pairs(buffs) do
+        local modifier = tower:FindModifierByName(modifierName)
+        if modifier then
+            buffData[modifierName] = {}
+            buffData[modifierName].caster = modifier:GetCaster()
+            buffData[modifierName].ability = modifier:GetAbility()
+            buffData[modifierName].duration = modifier:GetDuration()
+        end
+    end
+    return buffData
+end
+
+function FindSellAbility( tower )
+    for i=0,15 do
+        local ability = tower:GetAbilityByIndex(i)
+        if ability and string.match(ability:GetAbilityName(), "sell_tower") then
+            return ability
+        end
+    end
+end

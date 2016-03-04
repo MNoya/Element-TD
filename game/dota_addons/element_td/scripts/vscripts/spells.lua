@@ -137,10 +137,6 @@ function SellTowerCast(keys)
 			RemoveRandomBuff(tower)
 		end
 
-		--[[for towerID,_ in pairs(playerData.towers) do
-			UpdateUpgrades(EntIndexToHScript(towerID))
-		end]]
-
 		tower.sold = true
 		if tower.scriptObject["OnDestroyed"] then
 			tower.scriptObject:OnDestroyed()
@@ -215,96 +211,30 @@ function UpgradeTower(keys)
 		GetPlayerData(playerID).towers[tower:entindex()] = nil --and remove it from the player's tower list
 
 		local scriptClassName = GetUnitKeyValue(newClass, "ScriptClass") or "BasicTower"
-		local stacks = tower:GetModifierStackCount("modifier_kill_count", tower)
 
 		-- Keep buff data before replacing
-		local fire_up = tower:FindModifierByName("modifier_fire_up")
-	    local fire_up_caster = fire_up and fire_up:GetCaster()
-	    local fire_up_ability = fire_up and fire_up:GetAbility()
-	    local fire_up_duration = fire_up and fire_up:GetDuration()
-
-	    local spring_forward = tower:FindModifierByName("modifier_spring_forward")
-	    local spring_forward_caster = spring_forward and spring_forward:GetCaster()
-	    local spring_forward_ability = spring_forward and spring_forward:GetAbility()
-	    local spring_forward_duration = spring_forward and spring_forward:GetDuration()
+		local buffData = GetBuffData(tower)
+		local stacks = tower:GetModifierStackCount("modifier_kill_count", tower)
+		local bWasCloned = tower:HasModifier("modifier_conjure_prevent_cloning")
 
 		-- Replace the tower by a new one
 		local newTower = BuildingHelper:UpgradeBuilding(tower, newClass)
 
-		-- Kill count is transfered if the tower is upgraded to one of the same type (single/dual/triple)
-		InitializeKillCount(newTower)
-		if scriptClassName == tower.scriptClass then
-			TransferKillCount(stacks, newTower)
-		end
-
-		-- set some basic values to this tower from its KeyValues
-		newTower.class = newClass
-		newTower.element = GetUnitKeyValue(newClass, "Element")
-		newTower.damageType = GetUnitKeyValue(newClass, "DamageType")
-
-		-- New pedestal if one wasn't created already
-		if not newTower.prop then
-			local basicName = newTower.damageType.."_tower"
-			local pedestalName = GetUnitKeyValue(basicName, "PedestalModel")
-			local prop = BuildingHelper:CreatePedestalForBuilding(newTower, basicName, GetGroundPosition(newTower:GetAbsOrigin(), nil), pedestalName)
-		end
-
-		GetPlayerData(playerID).towers[newTower:entindex()] = newClass --add this tower to the player's tower list
-		UpdateUpgrades(newTower) --update this tower's upgrades
-		UpdatePlayerSpells(playerID) --update the player's spells
-
-		local upgradeData = {}
-		if tower.scriptObject and tower.scriptObject["GetUpgradeData"] then
-			upgradeData = tower.scriptObject:GetUpgradeData()
-		end
-
 		-- Add upgrade cancelling ability
 		newTower.upgradedFrom = tower:GetUnitName()
-		newTower.upgradedFromClass = tower.class
 		AddAbility(newTower, "cancel_construction")
 
-		-- Add sell ability
-		if IsPlayerUsingRandomMode(playerID) then
-			AddAbility(newTower, "sell_tower_100")
-		elseif string.find(newTower.class, "arrow_tower") ~= nil or string.find(newTower.class, "cannon_tower") ~= nil then
-			AddAbility(newTower, "sell_tower_98")
-		else
-			AddAbility(newTower, "sell_tower_90")
-		end
+		-- Set the new tower properties
+		SetupTowerUpgrade(tower, newTower, buffData, stacks)
 
-		-- create a script object for this tower
-        if TOWER_CLASSES[scriptClassName] then
-	        local scriptObject = TOWER_CLASSES[scriptClassName](newTower, newClass)
-	        newTower.scriptClass = scriptClassName
-	        newTower.scriptObject = scriptObject
-	        newTower.scriptObject:OnCreated()
-	        if newTower.scriptObject["ApplyUpgradeData"] then
-	        	newTower.scriptObject:ApplyUpgradeData(upgradeData)
-	        end
-        else
-	    	Log:error("Unknown script class, " .. scriptClassName .. " for tower " .. newTower.class)
-    	end
-
-    	if IsSupportTower(newTower) then
-        	newTower:AddNewModifier(newTower, nil, "modifier_support_tower", {})
-        end
-
-		AddAbility(newTower, newTower.damageType .. "_passive")
-		if GetUnitKeyValue(newClass, "AOE_Full") and GetUnitKeyValue(newClass, "AOE_Half") then
-			AddAbility(newTower, "splash_damage_orb")
-		end
-
-		if tower.scriptObject["OnDestroyed"] then
-			tower.scriptObject:OnDestroyed()
-		end
+        -- Hide sell ability
+        FindSellAbility(newTower):SetHidden(true)
 
 		-- When you sell/upgrade a tower that has been cloned in the last 60 seconds, you lose a random clone of that tower type (this is to prevent abuse with 100% sell).
 		-- we must delete a random clone of this type
-		if playerData.clones[tower.class] and tower:HasModifier("modifier_conjure_prevent_cloning") then
+		if playerData.clones[tower.class] and bWasCloned then
 			RemoveRandomClone(playerData, tower.class)
 		end
-
-		tower.deleted = true --mark the old tower for deletion
 
 		-- Start the tower building animation
 		if tower.scriptClass == scriptClassName then
@@ -312,34 +242,6 @@ function UpgradeTower(keys)
 		else
 			BuildTower(newTower)
 		end
-
-		if GetUnitKeyValue(newClass, "DisableTurning") then
-        	newTower:AddNewModifier(newTower, nil, "modifier_disable_turning", {})
-        end
-
-        Timers:CreateTimer(0.5, function()
-        	AddAbility(newTower, "ability_building")
-        end)
-
-        Timers:CreateTimer(0.03, function()
-
-	        -- Reapply well & blacksmith buffs  
-		    if fire_up then
-		        newTower:AddNewModifier(fire_up_caster, fire_up_ability, "modifier_fire_up", {duration = fire_up_duration})
-		    end
-
-			if spring_forward then
-		        newTower:AddNewModifier(spring_forward_caster, spring_forward_ability, "modifier_spring_forward", {duration = spring_forward_duration})
-		    end
-		end)
-
- 		Timers:CreateTimer(function()
-			RemoveUnitFromSelection( tower )
-			AddUnitToSelection(newTower)
-			Timers:CreateTimer(0.03, function()
-				UpdateSelectedEntities()
-			end)
-		end)
 	end
 end
 
@@ -385,9 +287,6 @@ function UpdateUpgrades(tower)
 			local cost = tonumber(NPC_UNITS_CUSTOM[upgrade].Cost)
 			local suffix = ""
 
-			--[[if cost > PlayerResource:GetGold(playerID) then
-				suffix = "_disabled"
-			end]]
 			-- Put a _disabled item if the requirement isn't met yet
 			if NPC_UNITS_CUSTOM[upgrade].Requirements then
 				for element, level in pairs(NPC_UNITS_CUSTOM[upgrade].Requirements) do
@@ -445,6 +344,12 @@ function BuildTower(tower, baseScale)
 
         	-- Remove building cancel ability
         	tower:RemoveAbility("cancel_construction")
+
+            -- Show sell ability
+            local sell_ability = FindSellAbility(tower)
+            if sell_ability then
+                sell_ability:SetHidden(false)
+            end
 
         	tower.scriptObject:OnBuildingFinished()
         	return
@@ -543,98 +448,16 @@ function CancelConstruction(event)
 
 	if tower.upgradedFrom then
 		tower:Stop()
+
 		local newClass = tower.upgradedFrom
-		local scriptClassName = GetUnitKeyValue(newClass, "ScriptClass") or "BasicTower"
+		local buffData = GetBuffData(tower)
 		local stacks = tower:GetModifierStackCount("modifier_kill_count", tower)
 
 		-- Replace the tower by a new one
 		local newTower = BuildingHelper:UpgradeBuilding(tower, newClass)
+		SetupTowerUpgrade(tower, newTower, buffData, stacks)
 
-		-- Kill count is transfered if the tower is upgraded to one of the same type (single/dual/triple)
-		InitializeKillCount(newTower)
-		if scriptClassName == tower.scriptClass then
-			TransferKillCount(stacks, newTower)
-		end
-
-		-- set some basic values to this tower from its KeyValues
-		newTower.class = newClass
-		newTower.element = GetUnitKeyValue(newClass, "Element")
-		newTower.damageType = GetUnitKeyValue(newClass, "DamageType")
-
-		-- New pedestal if one wasn't created already
-		if not newTower.prop then
-			local basicName = newTower.damageType.."_tower"
-			local pedestalName = GetUnitKeyValue(basicName, "PedestalModel")
-			local prop = BuildingHelper:CreatePedestalForBuilding(newTower, basicName, GetGroundPosition(newTower:GetAbsOrigin(), nil), pedestalName)
-		end
-
-		playerData.towers[newTower:entindex()] = newClass --add this tower to the player's tower list
-		UpdateUpgrades(newTower) --update this tower's upgrades
-		UpdatePlayerSpells(playerID) --update the player's spells
-
-		local upgradeData = {}
-		if tower.scriptObject and tower.scriptObject["GetUpgradeData"] then
-			upgradeData = tower.scriptObject:GetUpgradeData()
-		end
-
-		-- Add sell ability
-		if IsPlayerUsingRandomMode(playerID) then
-			AddAbility(newTower, "sell_tower_100")
-		elseif string.find(newTower.class, "arrow_tower") ~= nil or string.find(newTower.class, "cannon_tower") ~= nil then
-			AddAbility(newTower, "sell_tower_98")
-		else
-			AddAbility(newTower, "sell_tower_90")
-		end
-
-		-- create a script object for this tower
-        if TOWER_CLASSES[scriptClassName] then
-	        local scriptObject = TOWER_CLASSES[scriptClassName](newTower, newClass)
-	        newTower.scriptClass = scriptClassName
-	        newTower.scriptObject = scriptObject
-	        newTower.scriptObject:OnCreated()
-	        if newTower.scriptObject["ApplyUpgradeData"] then
-	        	newTower.scriptObject:ApplyUpgradeData(upgradeData)
-	        end
-        else
-	    	Log:error("Unknown script class, " .. scriptClassName .. " for tower " .. newTower.class)
-    	end
-
-    	if IsSupportTower(newTower) then
-        	newTower:AddNewModifier(newTower, nil, "modifier_support_tower", {})
-        end
-
-		AddAbility(newTower, newTower.damageType .. "_passive")
-		if GetUnitKeyValue(newClass, "AOE_Full") and GetUnitKeyValue(newClass, "AOE_Half") then
-			AddAbility(newTower, "splash_damage_orb")
-		end
-
-		tower.deleted = true --mark the old tower for deletion
-
-		if GetUnitKeyValue(newClass, "DisableTurning") then
-        	newTower:AddNewModifier(newTower, nil, "modifier_disable_turning", {})
-        end
-
-        AddAbility(newTower, "ability_building")
         newTower:AddNewModifier(newTower, nil, "modifier_no_health_bar", {})
-
-        -- keep well & blacksmith buffs
-	    local fire_up = tower:FindModifierByName("modifier_fire_up")
-	    if fire_up then
-	        newTower:AddNewModifier(fire_up:GetCaster(), fire_up:GetAbility(), "modifier_fire_up", {duration = fire_up:GetDuration()})
-	    end
-
-	    local spring_forward = tower:FindModifierByName("modifier_spring_forward")
-	    if spring_forward then
-	        newTower:AddNewModifier(spring_forward:GetCaster(), spring_forward:GetAbility(), "modifier_spring_forward", {duration = spring_forward:GetDuration()})
-	    end
-
-		Timers:CreateTimer(function()
-			RemoveUnitFromSelection( tower )
-			AddUnitToSelection(newTower)
-			Timers:CreateTimer(0.03, function()
-				UpdateSelectedEntities()
-			end)
-		end)
 	else
 		Sounds:EmitSoundOnClient(playerID, "Gold.CoinsBig")	
 		PopupAlchemistGold(tower, goldCost)
@@ -664,4 +487,94 @@ function CancelConstruction(event)
 
 	-- Removal
 	playerData.towers[tower:entindex()] = nil -- remove this tower index from the player's tower list
+end
+
+function SetupTowerUpgrade(tower, newTower, buffData, stacks)
+	local playerID = tower:GetPlayerOwnerID()
+	local playerData = GetPlayerData(playerID)
+	local scriptClassName = GetUnitKeyValue(newTower:GetUnitName(), "ScriptClass") or "BasicTower"
+	local newClass = newTower:GetUnitName()
+
+	-- Kill count is transfered if the tower is upgraded to one of the same type (single/dual/triple)
+	InitializeKillCount(newTower)
+	if scriptClassName == tower.scriptClass then
+		TransferKillCount(stacks, newTower)
+	end
+
+	-- set some basic values to this tower from its KeyValues
+	newTower.class = newClass
+	newTower.element = GetUnitKeyValue(newClass, "Element")
+	newTower.damageType = GetUnitKeyValue(newClass, "DamageType")
+
+	-- New pedestal if one wasn't created already
+	if not newTower.prop then
+		local basicName = newTower.damageType.."_tower"
+		local pedestalName = GetUnitKeyValue(basicName, "PedestalModel")
+		local prop = BuildingHelper:CreatePedestalForBuilding(newTower, basicName, GetGroundPosition(newTower:GetAbsOrigin(), nil), pedestalName)
+	end
+
+	playerData.towers[newTower:entindex()] = newClass --add this tower to the player's tower list
+	UpdateUpgrades(newTower) --update this tower's upgrades
+	UpdatePlayerSpells(playerID) --update the player's spells
+
+	local upgradeData = {}
+	if tower.scriptObject and tower.scriptObject["GetUpgradeData"] then
+		upgradeData = tower.scriptObject:GetUpgradeData()
+	end
+
+	-- Add sell ability
+	if IsPlayerUsingRandomMode(playerID) then
+		AddAbility(newTower, "sell_tower_100")
+	elseif string.find(newTower.class, "arrow_tower") ~= nil or string.find(newTower.class, "cannon_tower") ~= nil then
+		AddAbility(newTower, "sell_tower_98")
+	else
+		AddAbility(newTower, "sell_tower_90")
+	end
+
+	-- create a script object for this tower
+    if TOWER_CLASSES[scriptClassName] then
+        local scriptObject = TOWER_CLASSES[scriptClassName](newTower, newClass)
+        newTower.scriptClass = scriptClassName
+        newTower.scriptObject = scriptObject
+        newTower.scriptObject:OnCreated()
+        if newTower.scriptObject["ApplyUpgradeData"] then
+        	newTower.scriptObject:ApplyUpgradeData(upgradeData)
+        end
+    else
+    	Log:error("Unknown script class, " .. scriptClassName .. " for tower " .. newTower.class)
+	end
+
+    if IsSupportTower(newTower) then
+        newTower:AddNewModifier(newTower, nil, "modifier_support_tower", {})
+    end
+
+    AddAbility(newTower, newTower.damageType .. "_passive")
+    if GetUnitKeyValue(newClass, "AOE_Full") and GetUnitKeyValue(newClass, "AOE_Half") then
+        AddAbility(newTower, "splash_damage_orb")
+    end
+
+    tower.deleted = true --mark the old tower for deletion
+
+    if GetUnitKeyValue(newClass, "DisableTurning") then
+        newTower:AddNewModifier(newTower, nil, "modifier_disable_turning", {})
+    end
+
+    Timers:CreateTimer(0.5, function()
+        AddAbility(newTower, "ability_building")
+    end)
+
+    Timers:CreateTimer(0.03, function()
+        -- Reapply buffs
+        for modifierName,data in pairs(buffData) do
+            newTower:AddNewModifier(data.caster, data.ability, modifierName, {duration = data.duration})
+        end
+    end)
+
+    Timers:CreateTimer(function()
+        RemoveUnitFromSelection( tower )
+        AddUnitToSelection(newTower)
+        Timers:CreateTimer(0.03, function()
+            UpdateSelectedEntities()
+        end)
+    end)
 end
