@@ -35,7 +35,8 @@ end
 TOWER_TARGETING_HIGHEST_HP = 0 --Moss
 TOWER_TARGETING_LOWEST_HP = 1 --Flame, Life, Disease, Gold
 TOWER_TARGETING_CLOSEST = 2 --Default
-TOWER_TARGETING_FARTHEST = 3 --Impulse, Obliteration
+TOWER_TARGETING_FARTHEST = 4 --Impulse, Obliteration
+TOWER_TARGETING_OLDER = 8 --Filter creep wave IDs
 function GetTowerTarget(tower, target_type, radius)
 	if tower then
 		local radius = radius or tower:GetAttackRange()
@@ -44,15 +45,40 @@ function GetTowerTarget(tower, target_type, radius)
 			find_type = FIND_FARTHEST
 		end
 		local creeps = FindUnitsInRadius(tower:GetTeamNumber(), tower:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_HERO, 0, find_type, false)
-		if target_type == TOWER_TARGETING_FARTHEST or target_type == TOWER_TARGETING_CLOSEST then
-			for k, v in pairs(creeps) do
+
+        -- Older can be used in addition with other types, it will filter out creeps from newer waves and recently leaked creeps
+        local olderWave = 100
+        if TargetFlag( target_type, TOWER_TARGETING_OLDER ) then
+            for _,v in pairs(creeps) do
+                if not v.recently_leaked and v.waveNumber < olderWave then
+                    olderWave = v.waveNumber
+                end
+            end
+
+            -- Execute the rest of the logic based on this limited set of creeps
+            local newCreeps = creeps
+            creeps = {}
+            for _,v in pairs(newCreeps) do
+                if not v.recently_leaked and v.waveNumber == olderWave then
+                    table.insert(creeps, v)
+                end
+            end
+
+            -- If no creep, just use everything
+            if #creeps == 0 then
+                creeps = newCreeps
+            end
+        end
+
+		if TargetFlag(target_type, TOWER_TARGETING_FARTHEST) or TargetFlag(target_type, TOWER_TARGETING_CLOSEST) then
+			for _,v in pairs(creeps) do
 				if v:GetTeam() == DOTA_TEAM_NEUTRALS then
 					return v
 				end
 			end
-		elseif target_type == TOWER_TARGETING_LOWEST_HP then
+		elseif TargetFlag(target_type, TOWER_TARGETING_LOWEST_HP) then
             local unit = nil
-            for k, v in pairs(creeps) do
+            for _,v in pairs(creeps) do
                 if v:GetTeam() == DOTA_TEAM_NEUTRALS then
                     if unit == nil then
                         unit = v
@@ -63,9 +89,9 @@ function GetTowerTarget(tower, target_type, radius)
             end
             return unit
 
-        elseif target_type == TOWER_TARGETING_HIGHEST_HP then
+        elseif TargetFlag(target_type, TOWER_TARGETING_HIGHEST_HP) then
 			local unit = nil
-            for k, v in pairs(creeps) do
+            for _,v in pairs(creeps) do
                 if v:GetTeam() == DOTA_TEAM_NEUTRALS then
                     if unit == nil then
                         unit = v
@@ -78,6 +104,10 @@ function GetTowerTarget(tower, target_type, radius)
 		end
 	end
 	return nil
+end
+
+function TargetFlag( type, flag )
+    return bit.band( type, flag ) == flag
 end
 
 function GetBuffTargetInRadius(caster, radius, modifierName, level)

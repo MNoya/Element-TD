@@ -82,6 +82,7 @@ function Wave:SpawnWave()
 			entity:SetForwardVector(Vector(0, -1, 0))
 			entity:CreatureLevelUp(self.waveNumber-entity:GetLevel())
 			entity.waveObject = self
+			entity.waveNumber = self.waveNumber
 			entitiesSpawned = entitiesSpawned + 1
 
 			-- set bounty values

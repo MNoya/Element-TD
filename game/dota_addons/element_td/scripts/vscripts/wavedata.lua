@@ -425,6 +425,11 @@ function CreateMoveTimerForCreep(creep, sector)
 
                 ReduceLivesForPlayer(playerID, creep.reduced_lives)
 
+                creep.recently_leaked = true
+                Timers:CreateTimer(10, function()
+                    if IsValidEntity(creep) then creep.recently_leaked = nil end
+                end)
+
                 FindClearSpaceForUnit(creep, EntityStartLocations[playerData.sector + 1], true)
                 creep:SetForwardVector(Vector(0, -1, 0))
             end
