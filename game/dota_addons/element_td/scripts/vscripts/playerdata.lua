@@ -78,14 +78,17 @@ function GetPlayerElementLevel( playerID, element )
 end
 
 function GetPlayerNetworth(playerID)
-	local playerData = GetPlayerData( playerID )
-	local playerNetworth = ElementTD.vPlayerIDToHero[playerID]:GetGold()
-	if playerData.networth then
+	local playerData = GetPlayerData(playerID)
+	local playerNetworth = PlayerResource:GetGold(playerID) or 0
+	
+    -- If a networth is set on EndGameForPlayer, that's the final value
+    if playerData.networth then
 		return playerData.networth
 	end
+
 	for i,v in pairs( playerData.towers ) do
 		local tower = EntIndexToHScript( i )
-		if tower and tower:GetHealth() == tower:GetMaxHealth() then
+		if IsValidEntity(tower) and tower:GetHealth() == tower:GetMaxHealth() then
 			for i=0,15 do
 				local ability = tower:GetAbilityByIndex( i )
 				if ability then
@@ -103,7 +106,7 @@ function GetPlayerNetworth(playerID)
 			end
 		end
 	end
-	return playerData.networth or playerNetworth
+	return playerNetworth
 end
 
 function IsPlayerUsingRandomMode( playerID )
