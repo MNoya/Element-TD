@@ -94,6 +94,7 @@ function StopAttackGround( event )
     caster:RemoveGesture(ACT_DOTA_ATTACK)
     if (ability.attack_ground_timer) then Timers:RemoveTimer(ability.attack_ground_timer) end
     if (ability.attack_ground_timer_attack) then Timers:RemoveTimer(ability.attack_ground_timer_attack) end
+    caster:AddNewModifier(nil, nil, "modifier_disarmed", {duration=caster:TimeUntilNextAttack()})
     caster:RemoveModifierByName("modifier_attacking_ground")
 
     ability:ToggleOff()
