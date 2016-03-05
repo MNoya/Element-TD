@@ -78,8 +78,11 @@ function DamageEntity(entity, attacker, damage)
 	end
 	
 	local playerID = attacker:GetPlayerOwnerID()
-	if GetPlayerData(playerID).godMode then
+	local playerData = GetPlayerData(playerID)
+	if playerData.godMode then
 		damage = entity:GetMaxHealth()*2
+	elseif playerData.zenMode then
+		damage = 0
 	end
 
 	if entity:GetHealth() - damage <= 0 then
@@ -91,7 +94,6 @@ function DamageEntity(entity, attacker, damage)
 			goldBounty = attacker.scriptObject:ModifyGold(goldBounty)
 			local extra_gold = goldBounty - entity:GetGoldBounty()
 			
-			local playerData = GetPlayerData(playerID)
 			playerData.goldTowerEarned = playerData.goldTowerEarned + extra_gold
 
 			local origin = entity:GetAbsOrigin()

@@ -19,14 +19,21 @@ RunicTower = createClass({
 nil)
 
 function RunicTower:OnMagicAttackThink()
-    if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() and self.tower:GetHealthPercent() == 100 and #GetCreepsInArea(self.tower:GetOrigin(), self.tower:GetAttackRange()) > 0 then
-        self.tower:CastAbilityImmediately(self.ability, 1)
+    if not self.tower:HasModifier("modifier_disarmed") and not self.tower:HasModifier("modifier_storm") then
+        if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() and self.tower:GetHealthPercent() == 100 and #GetCreepsInArea(self.tower:GetAbsOrigin(), self.findRadius) > 0 then
+            self.tower:CastAbilityImmediately(self.ability, 1)
+        end
     end
 end
 
 function RunicTower:OnMagicAttackCast(keys)
     self.tower:EmitSound("Runic.Cast")
     self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_magic_attack", {duration=self.duration})
+
+    -- No cooldown sandbox option
+    if GetPlayerData(self.tower:GetPlayerOwnerID()).noCD then
+        self.ability:EndCooldown()
+    end
 end
 
 function RunicTower:OnAttack(keys)

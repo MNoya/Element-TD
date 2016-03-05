@@ -18,7 +18,7 @@ HailTower = createClass({
 nil)
 
 function HailTower:OnStormThink()
-    if not self.tower:HasModifier("modifier_disarmed") then
+    if not self.tower:HasModifier("modifier_disarmed") and not self.tower:HasModifier("modifier_storm") then
         if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() and self.tower:GetHealthPercent() == 100 and #GetCreepsInArea(self.tower:GetAbsOrigin(), self.findRadius) > 0 then
             self.tower:CastAbilityImmediately(self.ability, 1)
         end
@@ -62,6 +62,11 @@ end
 function HailTower:OnStormCast(keys)
     self.tower:EmitSound("Hail.Cast")
     self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_storm", {duration=self.duration})
+
+    -- No cooldown sandbox option
+    if GetPlayerData(self.tower:GetPlayerOwnerID()).noCD then
+        self.ability:EndCooldown()
+    end
 end
 
 function HailTower:OnAttackLanded(keys)

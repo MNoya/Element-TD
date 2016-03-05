@@ -22,6 +22,11 @@ function well_tower_spring_forward:OnSpellStart()
 	target:AddNewModifier(caster, self, "modifier_spring_forward", {
 		duration = self:GetSpecialValueFor("duration")
 	})
+
+	-- No cooldown sandbox option
+	if GetPlayerData(playerID).noCD then
+        self:EndCooldown()
+    end
 end
 
 function well_tower_spring_forward:CastFilterResultTarget(target)

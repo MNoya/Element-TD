@@ -11,6 +11,8 @@ function Sandbox:Init()
     -- Resources section
     CustomGameEventManager:RegisterListener("sandbox_toggle_free_towers", Dynamic_Wrap(Sandbox, "FreeTowers"))
     CustomGameEventManager:RegisterListener("sandbox_toggle_god_mode", Dynamic_Wrap(Sandbox, "GodMode"))
+    CustomGameEventManager:RegisterListener("sandbox_toggle_zen_mode", Dynamic_Wrap(Sandbox, "ZenMode"))
+    CustomGameEventManager:RegisterListener("sandbox_toggle_no_cd", Dynamic_Wrap(Sandbox, "NoCD"))
     CustomGameEventManager:RegisterListener("sandbox_max_elements", Dynamic_Wrap(Sandbox, "MaxElements"))
     CustomGameEventManager:RegisterListener("sandbox_full_life", Dynamic_Wrap(Sandbox, "FullLife"))
     CustomGameEventManager:RegisterListener("sandbox_set_resources", Dynamic_Wrap(Sandbox, "SetResources")) -- Gold/Lumber/Essence
@@ -92,6 +94,30 @@ function Sandbox:GodMode(event)
     ShowSandboxToggleCommand(playerID, "#sandbox_god_mode", state)
 
     GetPlayerData(playerID).godMode = state
+    GetPlayerData(playerID).zenMode = not state
+end
+
+function Sandbox:ZenMode(event)
+    local playerID = event.PlayerID
+    local state = event.state == 1
+    local playerData = GetPlayerData(playerID)
+    playerData.cheated = true
+
+    ShowSandboxToggleCommand(playerID, "#sandbox_zen_mode", state)
+
+    GetPlayerData(playerID).zenMode = state
+    GetPlayerData(playerID).godMode = not state
+end
+
+function Sandbox:NoCD(event)
+    local playerID = event.PlayerID
+    local state = event.state == 1
+    local playerData = GetPlayerData(playerID)
+    playerData.cheated = true
+
+    ShowSandboxToggleCommand(playerID, "#sandbox_no_cooldowns", state)
+
+    GetPlayerData(playerID).noCD = state
 end
 
 function Sandbox:MaxElements(event)

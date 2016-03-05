@@ -317,6 +317,11 @@ function BuildTower(tower, baseScale)
 		buildTime = tonumber(buildTime)
 	end
 
+	-- No Cooldown in sandbox
+	if GetPlayerData(tower:GetPlayerOwnerID()).noCD then
+		buildTime = 0.05
+	end
+
 	local scale = tower:GetModelScale()
 	baseScale = baseScale or (scale / 2) -- Start at the old size (if its the same model) or at half the end size
 	local scaleIncrement = (scale - baseScale) / (buildTime * 20)
