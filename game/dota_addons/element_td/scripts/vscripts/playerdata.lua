@@ -147,10 +147,12 @@ function ModifyElementValue(playerID, element, change)
     end
 
     if playerData.elementalCount == 0 then
-   		StopHighlight(playerData.summoner, playerID)
-   		if playerData.lumber == 0 then
-   			RemoveUnitFromSelection( playerData.summoner )
-   		end
+        if playerData.summoner then
+   		   StopHighlight(playerData.summoner, playerID)
+   		   if playerData.lumber == 0 then
+   			  RemoveUnitFromSelection( playerData.summoner )
+   		   end
+        end
    	end
    	
 	playerData.elements[element] = playerData.elements[element] + change
@@ -249,6 +251,7 @@ end
 
 function UpdateElementOrbs(playerID, new_element)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    if not hero then return end
 	local orb_path = "particles/custom/orbs/"
 
 	if not hero.orbit_entities then

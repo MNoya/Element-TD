@@ -100,19 +100,21 @@ function SetCustomLumber(playerID, amount)
 
     local current_lumber = playerData.lumber
     local summoner = playerData.summoner
-    if current_lumber > 0 then
-        if not summoner.particle then
-            local origin = summoner:GetAbsOrigin()
-            local particleName = "particles/econ/courier/courier_trail_01/courier_trail_01.vpcf"
-            summoner.particle = ParticleManager:CreateParticleForPlayer(particleName, PATTACH_CUSTOMORIGIN, summoner, PlayerResource:GetPlayer(playerID))
-            ParticleManager:SetParticleControl(summoner.particle, 0, Vector(origin.x, origin.y, origin.z+30))
-            ParticleManager:SetParticleControl(summoner.particle, 15, Vector(255,255,255))
-            ParticleManager:SetParticleControl(summoner.particle, 16, Vector(1,0,0))
-        end        
-    else
-        if summoner.particle then
-            ParticleManager:DestroyParticle(summoner.particle, false)
-            summoner.particle = nil
+    if summoner then
+        if current_lumber > 0 then
+            if not summoner.particle then
+                local origin = summoner:GetAbsOrigin()
+                local particleName = "particles/econ/courier/courier_trail_01/courier_trail_01.vpcf"
+                summoner.particle = ParticleManager:CreateParticleForPlayer(particleName, PATTACH_CUSTOMORIGIN, summoner, PlayerResource:GetPlayer(playerID))
+                ParticleManager:SetParticleControl(summoner.particle, 0, Vector(origin.x, origin.y, origin.z+30))
+                ParticleManager:SetParticleControl(summoner.particle, 15, Vector(255,255,255))
+                ParticleManager:SetParticleControl(summoner.particle, 16, Vector(1,0,0))
+            end        
+        else
+            if summoner.particle then
+                ParticleManager:DestroyParticle(summoner.particle, false)
+                summoner.particle = nil
+            end
         end
     end
 
