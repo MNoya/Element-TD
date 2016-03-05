@@ -41,5 +41,5 @@ function CountTips(){
 };
 
 (function () {
-    $.Schedule(40, ShowTips);
+    $.Schedule(45, ShowTips);
 })();

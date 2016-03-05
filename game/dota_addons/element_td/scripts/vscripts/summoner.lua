@@ -116,7 +116,10 @@ function SetCustomLumber(playerID, amount)
         end
     end
 
-    CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_lumber", { lumber = current_lumber, summoner = playerData.summoner:GetEntityIndex() } )
+    local player = PlayerResource:GetPlayer(playerID)
+    if player then
+        CustomGameEventManager:Send_ServerToPlayer(player, "etd_update_lumber", { lumber = current_lumber, summoner = playerData.summoner:GetEntityIndex() } )
+    end
     UpdateScoreboard(playerID)
 end
 
@@ -125,7 +128,10 @@ function ModifyPureEssence(playerID, amount, bSkipMessage)
     SetCustomEssence(playerID, playerData.pureEssence + amount)    
 
     if amount > 0 and not bSkipMessage then
-        PopupEssence(ElementTD.vPlayerIDToHero[playerID], amount)
+        local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+        if hero then
+            PopupEssence(hero, amount)
+        end
         SendEssenceMessage(playerID, "#etd_essence_add", amount)
     end
 end
@@ -134,7 +140,11 @@ function SetCustomEssence(playerID, amount)
     local playerData = GetPlayerData(playerID)
     playerData.pureEssence = amount
     UpdatePlayerSpells(playerID)
-    CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_pure_essence", { pureEssence = playerData.pureEssence } )
+    
+    local player = PlayerResource:GetPlayer(playerID)
+    if player then
+        CustomGameEventManager:Send_ServerToPlayer(player, "etd_update_pure_essence", { pureEssence = playerData.pureEssence } )
+    end
     UpdateScoreboard(playerID)
 end
 
@@ -142,6 +152,11 @@ function UpdateSummonerSpells(playerID)
     local playerData = GetPlayerData(playerID)
     local lumber = playerData.lumber
     local summoner = playerData.summoner
+
+    -- Exit out if no summoner
+    if not summoner then
+        return
+    end
 
     UpdateRunes(playerID)
 
