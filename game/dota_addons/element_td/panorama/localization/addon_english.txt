@@ -30,6 +30,12 @@
         "light_level"   "Light Element Level<br>200% against <font color='#8733C8'>Dark</font>, 50% against <font color='#D4880F'>Earth</font>"
         "dark_level"    "Dark Element Level<br>200% against <font color='#01A2FF'>Water</font>, 50% against <font color='#E5DE23'>Light</font>"
 
+        // Interest messages
+        "etd_interest_lock_leak_title"  "Interest Paused"
+        "etd_interest_lock_leak"        "Your interest has been paused because you leaked<br>a wave. Kill the wave to unpause."
+        "etd_interest_lock_end_title"   "Interest Stopped"
+        "etd_interest_lock_end"         "Your interest has been stopped because you have<br>reached the final wave."
+
         // Portal messages
         "etd_wave_water"            "200% from <font color='#8733C8'>Dark</font>, 50% from <font color='#C40000'>Fire</font>"
         "etd_wave_fire"             "200% from <font color='#01A2FF'>Water</font>, 50% from <font color='#00C400'>Nature</font>"
