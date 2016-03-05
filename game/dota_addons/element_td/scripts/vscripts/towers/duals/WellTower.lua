@@ -18,7 +18,7 @@ nil)
 
 -- the thinker function for the well_tower_spring_forward spell
 function WellTower:SpringForwardThink()
-    if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() then
+    if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() and self.tower:GetHealthPercent() == 100 then
         
         -- find out the tower with the best BuffPriority to apply the buff
         local target = GetBuffTargetInRadius(self.tower, self.castRange, "modifier_spring_forward", self.level)
@@ -37,7 +37,7 @@ end
 
 function WellTower:OnCreated()
     self.ability = AddAbility(self.tower, "well_tower_spring_forward", GetUnitKeyValue(self.towerClass, "Level"))
-    self.castRange = self.ability:GetCastRange(self.tower:GetAbsOrigin(), self.tower) + self.tower:GetHullRadius()
+    self.castRange = self.ability:GetCastRange(self.tower:GetAbsOrigin(), self.tower)
     self.level = self.ability:GetLevel()
     self.ability:ToggleAutoCast() -- turn on autocast by default
     self.playerID = self.tower:GetOwner():GetPlayerID()

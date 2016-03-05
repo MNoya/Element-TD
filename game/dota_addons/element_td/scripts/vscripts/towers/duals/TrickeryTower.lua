@@ -25,7 +25,7 @@ TrickeryTower = createClass({
 nil)
 
 function TrickeryTower:ConjureThink()
-    if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() and not self.tower:IsSilenced() then
+    if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() and self.tower:GetHealthPercent() == 100 then
         
         -- find out the tower with the best BuffPriority to clone
         local target = GetCloneTargetInRadius(self.tower, self.castRange)
@@ -53,7 +53,7 @@ function TrickeryTower:OnCreated()
     end)
     self.ability:ToggleAutoCast()
     self.playerID = self.tower:GetOwner():GetPlayerID()
-    self.castRange = tonumber(GetAbilityKeyValue("trickery_tower_conjure", "AbilityCastRange")) + self.tower:GetHullRadius()
+    self.castRange = tonumber(GetAbilityKeyValue("trickery_tower_conjure", "AbilityCastRange"))
     self.ability.clone_duration = self.ability:GetLevelSpecialValueFor("duration", self.ability:GetLevel() - 1)
     self.ability.clones = {}
 end

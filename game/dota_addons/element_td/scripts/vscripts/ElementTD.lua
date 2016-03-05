@@ -710,6 +710,15 @@ function ElementTD:FilterExecuteOrder( filterTable )
             -- stop the main target target point if its out of range
             if order_type == DOTA_UNIT_ORDER_CAST_POSITION and (unit:GetAbsOrigin() - point):Length2D() > ability:GetCastRange() then
                 unit:Interrupt()
+                SendErrorMessage(issuer, "dota_hud_error_target_out_of_range")
+            end
+
+        -- Stop cast on out of range target
+        elseif order_type == DOTA_UNIT_ORDER_CAST_TARGET and targetIndex then
+            local target = EntIndexToHScript(targetIndex)
+            if unit:GetRangeToUnit(target) > ability:GetCastRange(unit:GetAbsOrigin(), target) then
+                unit:Interrupt()
+                SendErrorMessage(issuer, "dota_hud_error_target_out_of_range")
                 return false
             end
         end
