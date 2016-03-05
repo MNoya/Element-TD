@@ -1462,7 +1462,9 @@
 	    "ModelScale"        "1.15"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
+	    "ScriptClass"     "CreepVengeance"
 	    "Ability1"        "composite_armor"
+	    "Ability2"        "creep_ability_vengeance"
 	}
 	"murloc"
 	{

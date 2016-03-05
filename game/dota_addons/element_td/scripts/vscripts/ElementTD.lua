@@ -498,6 +498,7 @@ end
 function ElementTD:OnEntityKilled(keys)
     local index = keys.entindex_killed
     local entity = EntIndexToHScript(index)
+    local killer = EntIndexToHScript(keys.entindex_attacker)
     local playerData = GetPlayerData(entity.playerID)
 
     if playerData and playerData.health == 0 then
@@ -510,7 +511,7 @@ function ElementTD:OnEntityKilled(keys)
     end
 
     if entity.scriptObject and entity.scriptObject.OnDeath then
-        entity.scriptObject:OnDeath()
+        entity.scriptObject:OnDeath(killer)
     end
 
     if entity:GetUnitName() == "icefrog" then

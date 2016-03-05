@@ -469,6 +469,14 @@
         "creep_ability_image"       "Image"
         "creep_ability_swarm"       "Swarm"
         "creep_ability_regen"       "Regen"
+        "creep_ability_bulky"       "Bulky"
+        "creep_ability_vengeance"   "Vengeance"
+        
+        "DOTA_Tooltip_ability_creep_ability_vengeance"                                    "Vengeance"
+        "DOTA_Tooltip_ability_creep_ability_vengeance_Description"                        "When this creep dies, it curses the tower that killed it with a debuff that reduces its damage and the damage of all surrounding towers for a short duration. Can stack many times."
+        "DOTA_Tooltip_ability_creep_ability_vengeance_aoe"                                "AOE:"
+        "DOTA_Tooltip_ability_creep_ability_vengeance_damage_reduction"                   "%DAMAGE REDUCTION:"
+        "DOTA_Tooltip_ability_creep_ability_vengeance_duration"                           "DURATION:"
         
         "DOTA_Tooltip_ability_creep_ability_heal"       "Heal"
         "DOTA_Tooltip_ability_creep_ability_heal_Description"       "Upon death, this creep heals all other creeps in a small area around it by a percentage of their max health."

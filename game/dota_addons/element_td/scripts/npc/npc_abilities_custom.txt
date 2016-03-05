@@ -670,6 +670,46 @@
 			}
 		}
 	}
+	//============================================================//
+	// Creep Ability: Vengeance								      //
+	//============================================================//
+	"creep_ability_vengeance"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"creeps/vengeance"
+	
+		"modifier_vengeance"
+		{
+			"Duration"		"%duration"
+			"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+			"IsDebuff"   	"0"
+	
+			"OnCreated"
+			{
+			}
+		}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_reduction"		"-5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"2.5"
+			}
+		}
+	}
 	"death_prophet_particles"
 	{
 	    "BaseClass"                     "ability_datadriven"
