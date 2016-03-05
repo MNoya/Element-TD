@@ -30,7 +30,7 @@
     "ModelScale"        "0.8"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
-    "ScriptClass"     "CreepBulky"
+    "ScriptClass"     "CreepVengeance"
     "Ability1"        "earth_armor"
-    "Ability2"        "creep_ability_bulky"
+    "Ability2"        "creep_ability_vengeance"
 }

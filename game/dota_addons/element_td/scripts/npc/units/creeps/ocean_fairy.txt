@@ -30,7 +30,9 @@
     "ModelScale"        "1.0"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
+    "ScriptClass"     "CreepVengeance"
     "Ability1"        "water_armor"
+    "Ability2"        "creep_ability_vengeance"
     "Creature"
     {
         "AttachWearables" // Default npc_dota_hero_puck

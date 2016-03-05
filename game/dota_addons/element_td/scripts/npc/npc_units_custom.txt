@@ -559,7 +559,9 @@
 	    "ModelScale"        "0.8"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
+	    "ScriptClass"     "CreepVengeance"
 	    "Ability1"        "fire_armor"
+	    "Ability2"        "creep_ability_vengeance"
 	}
 	"enigma"
 	{
@@ -751,7 +753,9 @@
 	    "ModelScale"        "1.0"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
+	    "ScriptClass"     "CreepVengeance"
 	    "Ability1"        "nature_armor"
+	    "Ability2"        "creep_ability_vengeance"
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_necrolyte
@@ -1084,7 +1088,9 @@
 	    "ModelScale"        "0.55"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
+	    "ScriptClass"     "CreepVengeance"
 	    "Ability1"        "light_armor"
+	    "Ability2"        "creep_ability_vengeance"
 	}
 	"lava_spawn"
 	{
@@ -1545,7 +1551,9 @@
 	    "ModelScale"        "0.7"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
+	    "ScriptClass"     "CreepVengeance"
 	    "Ability1"        "dark_armor"
+	    "Ability2"        "creep_ability_vengeance"
 	}
 	"nether_spider"
 	{
@@ -1626,7 +1634,9 @@
 	    "ModelScale"        "1.0"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
+	    "ScriptClass"     "CreepVengeance"
 	    "Ability1"        "water_armor"
+	    "Ability2"        "creep_ability_vengeance"
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_puck
@@ -2494,9 +2504,9 @@
 	    "ModelScale"        "0.8"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
-	    "ScriptClass"     "CreepBulky"
+	    "ScriptClass"     "CreepVengeance"
 	    "Ability1"        "earth_armor"
-	    "Ability2"        "creep_ability_bulky"
+	    "Ability2"        "creep_ability_vengeance"
 	}
 	"zombie"
 	{

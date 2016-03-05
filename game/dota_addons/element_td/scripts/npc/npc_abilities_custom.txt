@@ -680,14 +680,43 @@
 		"MaxLevel"						"1"
 		"AbilityTextureName"			"creeps/vengeance"
 	
-		"modifier_vengeance"
+		"Modifiers"
 		{
-			"Duration"		"%duration"
-			"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-			"IsDebuff"   	"0"
-	
-			"OnCreated"
+			// FX on the creep
+			"modifier_vengeance"
 			{
+				"EffectName"		"particles/custom/creeps/vengeance/ambient.vpcf"
+				"EffectAttachType"	"attach_hitloc"
+	
+				"IsHidden"	"1"
+				"Passive"	"1"
+			}
+	
+			// Stack display, keeps track of how much damage should be reduced
+			"modifier_vengeance_debuff"
+			{
+				"IsDebuff"		"1"
+				"TextureName"	"creeps/vengeance"
+			}
+	
+			// Individual modifier applied every time a creep is killed
+			"modifier_vengeance_multiple"
+			{
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"IsDebuff"			"1"
+				"IsHidden"			"1"
+				"EffectName" 		"particles/custom/creeps/vengeance/debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"TextureName"		"creeps/vengeance"
+	
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"creeps/vengeance.lua"
+						"Function"		"RemoveStack"
+					}
+				}
 			}
 		}
 	
@@ -706,7 +735,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.5"
+				"duration"				"5"
 			}
 		}
 	}

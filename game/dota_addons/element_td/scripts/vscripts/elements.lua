@@ -125,10 +125,6 @@ function DamageEntity(entity, attacker, damage)
 		entity:SetHealth(entity:GetHealth() - damage)
 	end
 
-	if entity.scriptClass == "CreepSwarm" then
-		entity.scriptObject:OnTakeDamage({})
-	end
-
 	return damage
 end
 
@@ -160,6 +156,12 @@ function ApplyDamageAmplification(damage, creep)
 		else
 			amp = amp + ffModifier.baseAmp
 		end
+	end
+
+	-- Vengeance
+	local vModifier = creep:FindModifierByName("modifier_vengeance_debuff")
+	if vModifier then
+		amp = amp + vModifier.damageReduction
 	end
 
 	newDamage = newDamage * (1+ amp*0.01)
