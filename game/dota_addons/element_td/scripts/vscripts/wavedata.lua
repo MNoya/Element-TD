@@ -460,7 +460,7 @@ function ReduceLivesForPlayer( playerID, lives )
     end
 
     -- Cheats can melt steel beams
-    if playerData.zenMode then
+    if playerData.zenMode or playerData.godMode then
         lives = 0
         return
     end

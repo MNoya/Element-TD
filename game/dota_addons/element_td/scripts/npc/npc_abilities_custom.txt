@@ -685,8 +685,20 @@
 			// FX on the creep
 			"modifier_vengeance"
 			{
-				"EffectName"		"particles/custom/creeps/vengeance/ambient.vpcf"
-				"EffectAttachType"	"attach_hitloc"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/custom/creeps/vengeance/ambient.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"            "TARGET"
+						"ControlPointEntities"
+						{
+							"CASTER"	"attach_hitloc"
+							"CASTER"	"attach_hitloc"
+						}
+					}
+				}
 	
 				"IsHidden"	"1"
 				"Passive"	"1"
