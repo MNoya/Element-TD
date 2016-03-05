@@ -23,12 +23,6 @@ function CDOTA_PlayerResource:GetGold(playerID)
     return GetPlayerData(playerID).gold
 end
 
-function CDOTA_PlayerResource:ModifyGold(playerID, goldAmount)
-    local playerData = GetPlayerData(playerID)    
-    local newGold = tonumber(playerData.gold) + tonumber(goldAmount)
-    SetCustomGold(playerID, newGold)
-end
-
 function SetCustomGold(playerID, amount )
     local playerData = GetPlayerData(playerID)
     local player = PlayerResource:GetPlayer(playerID)

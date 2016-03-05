@@ -104,7 +104,7 @@ function GameSettings:SetGameLength(length)
 	for _,plyID in pairs(playerIDs) do
 		local playerData = GetPlayerData(plyID)
 
-		PlayerResource:ModifyGold(plyID, GameSettings.length.Gold)
+		SetCustomGold(plyID, GameSettings.length.Gold)
 		ModifyLumber(plyID, GameSettings.length.Lumber)
 		playerData.nextWave = GameSettings.length.Wave
 
