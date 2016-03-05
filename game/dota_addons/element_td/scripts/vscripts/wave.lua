@@ -109,6 +109,7 @@ function Wave:SpawnWave()
 				entity:SetMaxHealth(bossHealth)
 				entity:SetBaseMaxHealth(bossHealth)
 				entity:SetHealth(entity:GetMaxHealth())
+				entity.waveNumber = playerData.bossWaves
 
 				-- Choose an ability in sequence
 				creepBossSequence = (creepBossSequence % #CreepBossAbilities) + 1

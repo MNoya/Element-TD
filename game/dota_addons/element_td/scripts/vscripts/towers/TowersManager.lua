@@ -50,7 +50,7 @@ function GetTowerTarget(tower, target_type, radius)
         local olderWave = 100
         if TargetFlag( target_type, TOWER_TARGETING_OLDER ) then
             for _,v in pairs(creeps) do
-                if not v.recently_leaked and v.waveNumber < olderWave then
+                if not v.recently_leaked and v.waveNumber and v.waveNumber < olderWave then
                     olderWave = v.waveNumber
                 end
             end
@@ -59,7 +59,7 @@ function GetTowerTarget(tower, target_type, radius)
             local newCreeps = creeps
             creeps = {}
             for _,v in pairs(newCreeps) do
-                if not v.recently_leaked and v.waveNumber == olderWave then
+                if not v.recently_leaked and (not v.waveNumber or v.waveNumber == olderWave) then
                     table.insert(creeps, v)
                 end
             end
