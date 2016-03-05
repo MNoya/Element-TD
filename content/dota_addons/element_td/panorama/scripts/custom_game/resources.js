@@ -8,6 +8,7 @@ var LumberUI = $( "#ResourceLumber" );
 var GoldUI = $( "#ResourceGold" );
 var PureEssenceUI = $( "#ResourceEssence" );
 var ScoreUI = $( "#ResourceScore" );
+var MinimapUI = $( "#MinimapOverlay" )
 var VersionUI = $("#Version")
 
 var lumber = $( '#LumberText' );
@@ -159,7 +160,7 @@ function CheckHudFlipped() {
 		Flip(PureEssenceUI)
 		Flip(ScoreUI)
 		Flip(ElementsUI)
-        AlignRight(VersionUI)
+        AlignRight(MinimapUI)
 
 		ScoreUI.style["margin-left"] = "85px;"
 		LumberUI.style["margin-left"] = "40px;"
@@ -171,7 +172,7 @@ function CheckHudFlipped() {
 		AlignRight(PureEssenceUI)
 		AlignRight(ScoreUI)
 		AlignRight(ElementsUI)
-        Flip(VersionUI)
+        Flip(MinimapUI)
 
 		ScoreUI.style["margin-left"] = "0px;"
 		LumberUI.style["margin-left"] = "0px;"
