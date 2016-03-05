@@ -138,6 +138,9 @@ function Build( event )
         if playerData.noCD then
             unit.overrideBuildTime = 0
         end
+
+        -- Normalize Hull Radius
+        unit:SetHullRadius(HULL_RADIUS)
     end)
 
     -- A building finished construction

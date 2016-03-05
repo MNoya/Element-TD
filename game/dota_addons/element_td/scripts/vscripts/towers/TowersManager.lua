@@ -2,6 +2,7 @@
 if not TOWER_CLASSES then
 	TOWER_CLASSES = {}
 	TOWER_MODIFIERS = {}
+    HULL_RADIUS = 50
 end
 
 function RegisterTowerClass(class, name)

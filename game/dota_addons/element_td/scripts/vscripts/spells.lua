@@ -330,6 +330,7 @@ function BuildTower(tower, baseScale)
 	tower:SetMaxHealth(buildTime * 20)
 	tower:SetBaseMaxHealth(buildTime * 20)
 	tower:SetHealth(1)
+	tower:SetHullRadius(HULL_RADIUS)
 
 	-- create a timer to build up the tower slowly
 	Timers:CreateTimer(0.05, function()
