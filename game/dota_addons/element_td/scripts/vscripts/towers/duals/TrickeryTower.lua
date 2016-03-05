@@ -44,7 +44,7 @@ function TrickeryTower:OnAttackLanded(keys)
 end
 
 function TrickeryTower:OnCreated()
-    self.ability = AddAbility(self.tower, "trickery_tower_conjure", self.tower:GetLevel())
+    self.ability = AddAbility(math.random(0.03,0.2),self.tower, "trickery_tower_conjure", self.tower:GetLevel())
     Timers:CreateTimer(function()
         if IsValidEntity(self.tower) then
             self:ConjureThink()

@@ -44,7 +44,7 @@ function WellTower:OnCreated()
 end
 
 function WellTower:OnBuildingFinished()
-    Timers:CreateTimer(function()
+    Timers:CreateTimer(math.random(0.03,0.2), function()
         if IsValidEntity(self.tower) then
             self:SpringForwardThink()
             return 1
