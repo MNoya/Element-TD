@@ -52,6 +52,11 @@ function EnchantmentTower:OnFaerieFireCast(keys)
     local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_centaur/centaur_return_thin.vpcf", PATTACH_ABSORIGIN, self.tower)
     ParticleManager:SetParticleControl(particle, 0, self.attackLoc)
     ParticleManager:SetParticleControl(particle, 1, target:GetOrigin())
+
+    -- No cooldown sandbox option
+    if GetPlayerData(self.tower:GetPlayerOwnerID()).noCD then
+        self.ability:EndCooldown()
+    end
 end
 
 function EnchantmentTower:OnAttackLanded(keys)

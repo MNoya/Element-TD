@@ -58,6 +58,11 @@ function PolarTower:OnFrostbiteCast(keys)
         ParticleManager:SetParticleControl(particle, 0, target:GetOrigin() + Vector(0, 0, 40))
         ParticleManager:ReleaseParticleIndex(particle)
     end
+
+    -- No cooldown sandbox option
+    if GetPlayerData(self.tower:GetPlayerOwnerID()).noCD then
+        self.ability:EndCooldown()
+    end
 end
 
 function PolarTower:OnAttackLanded(keys)
@@ -86,9 +91,6 @@ function PolarTower:OnCreated()
     self.healthBurnPercent = GetAbilitySpecialValue("polar_tower_frostbite", "health_burn")[self.tower:GetLevel()]
     self.damageTakenPercent = GetAbilitySpecialValue("polar_tower_frostbite", "damage_taken_pcnt")[self.tower:GetLevel()]
     self.abilityCastRange = GetAbilityKeyValue("polar_tower_frostbite", "AbilityCastRange")
-    
-    self.flashPos = self.tower:GetAbsOrigin()
-    self.flashPos.z = self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_attack1")).z
 end
 
 function OnFrostbiteExpire(keys)
