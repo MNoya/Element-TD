@@ -87,16 +87,18 @@ function Wave:SpawnWave()
 
 			-- set bounty values
 			local bounty = difficulty:GetBountyForWave(self.waveNumber)
-			entity:SetMaximumGoldBounty(bounty)
-			entity:SetMinimumGoldBounty(bounty)
 
-			-- Bulky: double spawn time, half creep count
+			-- Bulky: double spawn time, double bounty, half creep count
 			if entity:HasAbility("creep_ability_bulky") then
 				time_between_spawns = 1
 				entitiesSpawned = entitiesSpawned + 1
+				bounty = bounty * 2
 			else
 				time_between_spawns = 0.5
 			end
+
+			entity:SetMaximumGoldBounty(bounty)
+			entity:SetMinimumGoldBounty(bounty)
 
 			local health = WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier()
 			entity:SetMaxHealth(health)
