@@ -430,6 +430,7 @@ function ElementTD:OnUnitSpawned(keys)
             summoner.icon = CreateUnitByName("elemental_summoner_icon", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber())
             playerData.summoner = summoner
 
+            hero:ModifyGold(0)
             ModifyLumber(playerID, 0)  -- updates summoner spells
             ModifyPureEssence(playerID, 0, true)
             UpdateElementsHUD(playerID)
