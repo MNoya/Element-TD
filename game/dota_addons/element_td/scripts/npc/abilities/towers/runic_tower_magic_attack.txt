@@ -4,7 +4,7 @@
 "runic_tower_magic_attack"
 {	
 	"BaseClass"						"ability_datadriven"											
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	"AbilityTextureName"			"towers/runic"
 	"MaxLevel"						"1"
 	"AbilityCooldown"				"9"

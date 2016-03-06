@@ -20,7 +20,7 @@ nil)
 
 function RunicTower:OnMagicAttackThink()
     if not self.tower:HasModifier("modifier_disarmed") and not self.tower:HasModifier("modifier_magic_attack") then
-        if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() and self.tower:GetHealthPercent() == 100 and #GetCreepsInArea(self.tower:GetAbsOrigin(), self.findRadius) > 0 then
+        if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() and self.tower:GetHealthPercent() == 100 and #GetCreepsInArea(self.tower:GetAbsOrigin(), self.tower:GetAttackRange()) > 0 then
             self.tower:CastAbilityImmediately(self.ability, 1)
         end
     end
