@@ -49,14 +49,21 @@ function CreepBoss:OnSpawned()
 
     if creep:HasAbility("creep_ability_regen") then
         self.regenAmount = 0
-        self.healthPercent = self.ability:GetSpecialValueFor("bonus_health_regen")
-        self.maxRegen = self.ability:GetSpecialValueFor("max_heal_pct") * 0.01
-        
-        Timers:CreateTimer(1, function()
+        self.maxRegen = creep:GetMaxHealth() * self.ability:GetSpecialValueFor("max_heal_pct") * 0.01
+        self.healthPercent = self.ability:GetSpecialValueFor("bonus_health_regen") * 0.01
+        self.healthTick = round(creep:GetMaxHealth() * self.healthPercent * 0.1)
+
+        Timers:CreateTimer(0.1, function()
             if not IsValidEntity(creep) or not creep:IsAlive() then return end
-        
-            self:RegenerateCreepHealth()
-            return 1
+            
+            if self.regenAmount <= self.maxRegen then
+                if creep:GetHealth() > 0 and creep:GetHealth() ~= creep:GetMaxHealth() then
+                    self:RegenerateCreepHealth()
+                end
+                return 0.1
+            else
+                creep:RemoveModifierByName("creep_regen_modifier")
+            end
         end)
     end
 
@@ -72,14 +79,8 @@ end
 
 function CreepBoss:RegenerateCreepHealth()
     local creep = self.creep
-
-    if creep:GetHealth() > 0 and creep:GetHealth() ~= creep:GetMaxHealth() and self.regenAmount <= creep:GetMaxHealth()*self.maxRegen then
-
-        local healthPre = creep:GetHealth() 
-        creep:Heal(creep:GetMaxHealth() * (self.healthPercent / creep:GetMaxHealth()), nil)
-        local healthPost = creep:GetHealth()
-        self.regenAmount = self.regenAmount + (healthPost - healthPre)
-    end
+    creep:Heal(self.healthTick, nil)
+    self.regenAmount = self.regenAmount + self.healthTick
 end
 
 -- Undead and Vengeance
