@@ -93,8 +93,10 @@ function Sandbox:GodMode(event)
 
     ShowSandboxToggleCommand(playerID, "#sandbox_god_mode", state)
 
-    GetPlayerData(playerID).godMode = state
-    GetPlayerData(playerID).zenMode = not state
+    playerData.godMode = state
+    if state then
+        playerData.zenMode = false
+    end
 end
 
 function Sandbox:ZenMode(event)
@@ -105,8 +107,10 @@ function Sandbox:ZenMode(event)
 
     ShowSandboxToggleCommand(playerID, "#sandbox_zen_mode", state)
 
-    GetPlayerData(playerID).zenMode = state
-    GetPlayerData(playerID).godMode = not state
+    playerData.zenMode = state
+    if state then
+        playerData.godMode = false
+    end
 end
 
 function Sandbox:NoCD(event)

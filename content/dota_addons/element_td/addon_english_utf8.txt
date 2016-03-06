@@ -478,7 +478,7 @@
         "DOTA_Tooltip_ability_creep_ability_vengeance_damage_reduction"                   "%DAMAGE REDUCTION PER STACK:"
         "DOTA_Tooltip_ability_creep_ability_vengeance_duration"                           "DURATION:"
         "DOTA_Tooltip_modifier_vengeance_debuff"                                          "Vengeance"
-        "DOTA_Tooltip_modifier_vengeance_debuff_Description"                              ""
+        "DOTA_Tooltip_modifier_vengeance_debuff_Description"                              "Reduced damage by %dMODIFIER_PROPERTY_HEALTH_BONUS%%%."
 
         "DOTA_Tooltip_ability_creep_ability_bulky"                                        "Bulk Up"
         "DOTA_Tooltip_ability_creep_ability_bulky_Description"                            "Creeps have double bounty and x2.5 HP.\nSpawns half the total wave count at half the rate."
@@ -519,6 +519,8 @@
         "DOTA_Tooltip_ability_creep_ability_regen_Description"                            "Heal %bonus_health_regen% of maximum health per second. Once %max_heal_pct% of the units health has been regenerated the regeneration will stop."
         "DOTA_Tooltip_ability_creep_ability_regen_bonus_health_regen"                     "%REGEN:"
         "DOTA_Tooltip_ability_creep_ability_regen_max_heal_pct"                           "%MAX HEAL:"
+        "DOTA_Tooltip_creep_regen_modifier"                                               "Regeneration"
+        "DOTA_Tooltip_creep_regen_modifier_Description"                                   "This unit is regenerating health."
 
         // Splash and Support
         "DOTA_Tooltip_ability_splash_damage_orb"        "Splash Damage"
