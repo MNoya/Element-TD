@@ -40,7 +40,7 @@
         "2"        "earth"
         "3"        "nature"
     }
-    "Damage"        "3000"
+    "Damage"        "4500"
     "DamageType"        "earth"
     "ScriptClass"        "QuakeTower"
     "TowerType"        "Normal"
@@ -78,8 +78,8 @@
     "Upgrades"
     {
     }
-    "AttackDamageMin"        "3000"
-    "AttackDamageMax"        "3000"
+    "AttackDamageMin"        "4500"
+    "AttackDamageMax"        "4500"
 
     // Building Size
     "ConstructionSize"          "2"

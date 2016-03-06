@@ -12646,7 +12646,7 @@
 	        "2"        "earth"
 	        "3"        "nature"
 	    }
-	    "Damage"        "600"
+	    "Damage"        "900"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "QuakeTower"
 	    "TowerType"        "Normal"
@@ -12685,8 +12685,8 @@
 	        "Count"        "1"
 	        "1"        "quake_tower_2"
 	    }
-	    "AttackDamageMin"        "600"
-	    "AttackDamageMax"        "600"
+	    "AttackDamageMin"        "900"
+	    "AttackDamageMax"        "900"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -12734,7 +12734,7 @@
 	        "2"        "earth"
 	        "3"        "nature"
 	    }
-	    "Damage"        "3000"
+	    "Damage"        "4500"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "QuakeTower"
 	    "TowerType"        "Normal"
@@ -12772,8 +12772,8 @@
 	    "Upgrades"
 	    {
 	    }
-	    "AttackDamageMin"        "3000"
-	    "AttackDamageMax"        "3000"
+	    "AttackDamageMin"        "4500"
+	    "AttackDamageMax"        "4500"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
