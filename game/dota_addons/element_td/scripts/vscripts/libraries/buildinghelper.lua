@@ -2096,11 +2096,7 @@ function StringStartsWith(fullstring, substring)
 end
 
 function tobool(s)
-    if s=="true" or s=="1" or s==1 then
-        return true
-    else --nil "false" "0"
-        return false
-    end
+    return s==true or s=="true" or s=="1" or s==1
 end
 
 function split(inputstr, sep)
