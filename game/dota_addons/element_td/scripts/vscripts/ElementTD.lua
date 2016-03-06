@@ -519,7 +519,7 @@ function ElementTD:OnEntityKilled(keys)
         if playerData and entity.real_icefrog then
             
             -- Bulky counts as 2 kills
-            if entity.random_ability == "creep_ability_bulky" then
+            if entity:HasAbility("creep_ability_bulky") then
                 playerData.iceFrogKills = playerData.iceFrogKills + 2
             else
                 playerData.iceFrogKills = playerData.iceFrogKills + 1

@@ -33,7 +33,7 @@ function Wave:OnCreepKilled(index)
 		self.creeps[index] = nil
 		self.creepsRemaining = self.creepsRemaining - 1
 		local creep = EntIndexToHScript(index)
-		if creep.scriptClass == "CreepBulky" then
+		if creep:HasAbility("creep_ability_bulky") then
 		    self.creepsRemaining = self.creepsRemaining - 1
 		end
 		self.kills = self.kills + 1
@@ -43,7 +43,7 @@ function Wave:OnCreepKilled(index)
 		playerData.remaining = playerData.remaining - 1		
 		UpdateScoreboard(self.playerID)
 
-		if self.creepsRemaining == 0 and self.callback then
+		if self.creepsRemaining <= 0 and self.callback then
 			self.endTime = GameRules:GetGameTime()
 			self.callback()
 		end
@@ -89,21 +89,7 @@ function Wave:SpawnWave()
 			entity.waveNumber = self.waveNumber
 			entitiesSpawned = entitiesSpawned + 1
 
-			-- set bounty values
-			local bounty = difficulty:GetBountyForWave(self.waveNumber)
-
-			-- Bulky: double spawn time, double bounty, half creep count
-			if entity:HasAbility("creep_ability_bulky") then
-				time_between_spawns = 1
-				entitiesSpawned = entitiesSpawned + 1
-				bounty = bounty * 2
-			else
-				time_between_spawns = 0.5
-			end
-
-			entity:SetMaximumGoldBounty(bounty)
-			entity:SetMinimumGoldBounty(bounty)
-
+			-- Set health
 			local health = WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier()
 			entity:SetMaxHealth(health)
 			entity:SetBaseMaxHealth(health)
@@ -123,6 +109,21 @@ function Wave:SpawnWave()
 			    entity.random_ability = abilityName
 			    entity.scriptObject.ability = AddAbility(entity, abilityName)
 			end
+
+			-- Set bounty
+			local bounty = difficulty:GetBountyForWave(self.waveNumber)
+
+			-- Bulky: double spawn time, double bounty, half creep count
+			if entity:HasAbility("creep_ability_bulky") then
+				time_between_spawns = 1
+				entitiesSpawned = entitiesSpawned + 1
+				bounty = bounty * 2
+			else
+				time_between_spawns = 0.5
+			end
+
+			entity:SetMaximumGoldBounty(bounty)
+			entity:SetMinimumGoldBounty(bounty)
 
 			entity.scriptObject:OnSpawned() -- called the OnSpawned event
 

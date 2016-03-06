@@ -161,6 +161,7 @@ function StartBreakTime(playerID, breakTime, rush_wave)
                 CURRENT_BOSS_WAVE = 1
                 if hero:IsAlive() then
                     Log:info("Spawning the first boss wave for ["..playerID.."] ".. playerData.name)            
+                    playerData.iceFrogKills = 0
                     playerData.bossWaves = CURRENT_BOSS_WAVE
                 end
                 ShowBossWaveMessage(playerID, CURRENT_BOSS_WAVE)
@@ -426,6 +427,11 @@ function CreateMoveTimerForCreep(creep, sector)
                 if not creep.reduced_lives then
                     creep.reduced_lives = 1
                 else
+                    creep.reduced_lives = creep.reduced_lives * 2
+                end
+
+                -- Bulky creeps count as 2
+                if creep:HasAbility("creep_ability_bulky") then
                     creep.reduced_lives = creep.reduced_lives * 2
                 end
 

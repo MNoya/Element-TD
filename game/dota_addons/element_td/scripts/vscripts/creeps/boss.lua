@@ -31,7 +31,7 @@ function CreepBoss:OnSpawned()
     creep:CreatureLevelUp(creep.waveObject.waveNumber-creep:GetLevel())
 
     -- Don't mark first-death undead as a killed score
-    creep.real_icefrog = creep.random_ability and creep.random_ability ~= "creep_ability_undead"
+    creep.real_icefrog = not creep.random_ability or (creep.random_ability and creep.random_ability ~= "creep_ability_undead")
 
     if creep:HasAbility("creep_ability_mechanical") then
         -- Mechanical

@@ -234,8 +234,9 @@ function Sandbox:SpawnWave(event)
     end
     waveNumber = tonumber(waveNumber)
 
-    if waveNumber > WAVE_COUNT then
+    if waveNumber >= WAVE_COUNT then
         waveNumber = WAVE_COUNT
+        playerData.iceFrogKills = 0
     end
 
     CURRENT_WAVE = waveNumber
