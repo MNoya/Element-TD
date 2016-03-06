@@ -26,11 +26,11 @@ function CreepVengeance:OnDeath(killer)
     for _,tower in pairs(enemy_towers) do       
         local modifier = tower:FindModifierByName("modifier_vengeance_debuff")
         if not modifier then
-            ability:ApplyDataDrivenModifier(tower, tower, "modifier_vengeance_debuff", {})
+            tower:AddNewModifier(tower, nil, "modifier_vengeance_debuff", {})
             modifier = tower:FindModifierByName("modifier_vengeance_debuff")
         end
         
-        local stackCount = tower:GetModifierStackCount("modifier_vengeance_debuff", tower) + 1      
+        local stackCount = tower:GetModifierStackCount("modifier_vengeance_debuff", tower) + 1
         if modifier then
             modifier:IncrementStackCount()
             modifier:SetDuration(duration, true)
@@ -38,7 +38,7 @@ function CreepVengeance:OnDeath(killer)
             modifier.damageReduction = modifier.baseDamageReduction * stackCount
         end
 
-        ability:ApplyDataDrivenModifier(tower, tower, "modifier_vengeance_multiple", {duration=duration})
+        tower:AddNewModifier(tower, nil, "modifier_vengeance_multiple", {duration=duration})
     end
    
     local particle = ParticleManager:CreateParticle("particles/custom/creeps/vengeance/death.vpcf", PATTACH_CUSTOMORIGIN, nil)
@@ -46,22 +46,6 @@ function CreepVengeance:OnDeath(killer)
     ParticleManager:SetParticleControl(particle, 1, killer:GetAbsOrigin())
     ParticleManager:SetParticleControl(particle, 2, Vector(aoe*1.5,1,1))
     ParticleManager:SetParticleControl(particle, 3, Vector(aoe*2,1,1))
-end
-
--- A hidden modifier_vengeance_debuff runs out
-function RemoveStack(event)
-    local tower = event.target
-
-    if tower:HasModifier("modifier_vengeance_debuff") then
-        local stackCount = tower:GetModifierStackCount("modifier_vengeance_debuff", tower) - 1
-        local modifier = tower:FindModifierByName("modifier_vengeance_debuff")
-        if stackCount <= 0 then
-            modifier:Destroy()
-        else
-            modifier:DecrementStackCount()
-        end
-        modifier.damageReduction = modifier.baseDamageReduction * stackCount
-    end    
 end
 
 RegisterCreepClass(CreepVengeance, CreepVengeance.className)

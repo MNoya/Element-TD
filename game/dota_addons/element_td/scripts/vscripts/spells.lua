@@ -582,10 +582,7 @@ function SetupTowerUpgrade(tower, newTower, buffData, stacks)
     end)
 
     Timers:CreateTimer(0.03, function()
-        -- Reapply buffs
-        for modifierName,data in pairs(buffData) do
-            newTower:AddNewModifier(data.caster, data.ability, modifierName, {duration = data.duration})
-        end
+        ReapplyModifiers(newTower, buffData)
     end)
 
     Timers:CreateTimer(function()

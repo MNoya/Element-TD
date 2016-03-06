@@ -199,7 +199,7 @@ end
 
 function GetBuffData( tower )
     local buffData = {}
-    local buffs = {"modifier_fire_up", "modifier_spring_forward", "modifier_conjure_prevent_cloning"}
+    local buffs = {"modifier_fire_up", "modifier_spring_forward", "modifier_conjure_prevent_cloning", "modifier_vengeance_debuff"}
     for _,modifierName in pairs(buffs) do
         local modifier = tower:FindModifierByName(modifierName)
         if modifier then
@@ -207,9 +207,42 @@ function GetBuffData( tower )
             buffData[modifierName].caster = modifier:GetCaster()
             buffData[modifierName].ability = modifier:GetAbility()
             buffData[modifierName].duration = modifier:GetDuration()
+            
+            if modifierName == "modifier_vengeance_debuff" then
+                local stacks = modifier:GetStackCount()
+                if stacks > 0 then
+                    buffData[modifierName].ability = nil
+                    buffData[modifierName].caster = nil
+                    buffData[modifierName].stacks = stacks
+                    buffData[modifierName].baseDamageReduction = modifier.baseDamageReduction
+                    buffData[modifierName].damageReduction = modifier.baseDamageReduction * stacks
+                end
+            end
         end
     end
     return buffData
+end
+
+function ReapplyModifiers(tower, buffData)
+    for modifierName,data in pairs(buffData) do
+        if not caster then data.caster = tower end
+        tower:AddNewModifier(data.caster, data.ability, modifierName, {duration = data.duration})
+
+        if data.stacks then
+            local modifier = tower:FindModifierByName(modifierName)
+            if modifier and data.damageReduction then
+                modifier.baseDamageReduction = data.baseDamageReduction
+                modifier.damageReduction = data.damageReduction
+                modifier:SetStackCount(data.stacks)
+                
+                for i=1,data.stacks do
+                    tower:AddNewModifier(data.caster, data.ability, "modifier_vengeance_multiple", {duration = data.duration})
+                end
+            else
+                print("Error, couldn't apply ", modifierName)
+            end
+        end
+    end
 end
 
 function FindSellAbility( tower )
