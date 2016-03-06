@@ -136,14 +136,14 @@ function CreepBoss:OnDeath(killer)
         local damage_reduction = ability:GetSpecialValueFor("damage_reduction")
 
         local enemy_towers = FindUnitsInRadius(creep:GetTeamNumber(), killer:GetAbsOrigin(), nil, aoe, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
-        for _,tower in pairs(enemy_towers) do       
+        for _,tower in pairs(enemy_towers) do
             local modifier = tower:FindModifierByName("modifier_vengeance_debuff")
             if not modifier then
-                ability:ApplyDataDrivenModifier(tower, tower, "modifier_vengeance_debuff", {})
+                tower:AddNewModifier(tower, nil, "modifier_vengeance_debuff", {})
                 modifier = tower:FindModifierByName("modifier_vengeance_debuff")
             end
             
-            local stackCount = tower:GetModifierStackCount("modifier_vengeance_debuff", tower) + 1      
+            local stackCount = tower:GetModifierStackCount("modifier_vengeance_debuff", tower) + 1
             if modifier then
                 modifier:IncrementStackCount()
                 modifier:SetDuration(duration, true)
@@ -151,7 +151,7 @@ function CreepBoss:OnDeath(killer)
                 modifier.damageReduction = modifier.baseDamageReduction * stackCount
             end
 
-            ability:ApplyDataDrivenModifier(tower, tower, "modifier_vengeance_multiple", {duration=duration})
+            tower:AddNewModifier(tower, nil, "modifier_vengeance_multiple", {duration=duration})
         end
        
         local particle = ParticleManager:CreateParticle("particles/custom/creeps/vengeance/death.vpcf", PATTACH_CUSTOMORIGIN, nil)
