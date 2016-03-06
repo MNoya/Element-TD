@@ -13,7 +13,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_health_pct"		"250"
+			"bonus_health_pct"		"225"
 		}
 	}
 }
