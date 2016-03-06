@@ -35,7 +35,7 @@ function DisplayRanks( data )
                 if (ply.rank != 0) {
                     var playerPanel = $.CreatePanel( "Panel", $( '#sector'+ply.sector ), "_player_" + ply.playerID );
                     playerPanel.BLoadLayout( "file://{resources}/layout/custom_game/ranking_player.xml", false, false );
-                    _SetTextSafe( playerPanel, "RankingPercentile", ply.percentile + "%");
+                    _SetTextSafe( playerPanel, "RankingPercentile", +(ply.percentile).toFixed(1) + "%");
                     _SetTextSafe( playerPanel, "RankingRank", "#" + FormatRank(ply.rank));
                     playerPanel.FindChildInLayoutFile( "RankingPlayer" ).AddClass(GetRankImage(ply.rank,ply.percentile)+"_percentile");
                 }
