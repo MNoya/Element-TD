@@ -250,6 +250,11 @@ function SpawnWaveForPlayer(playerID, wave)
     local startPos = EntityStartLocations[sector]
     local ply = PlayerResource:GetPlayer(playerID)
 
+    -- First wave marks the start of the game
+    if START_GAME_TIME == 0 then
+        START_GAME_TIME = GameRules:GetGameTime()
+    end
+
     playerData.waveObject = waveObj
     if wave == WAVE_COUNT then
         playerData.waveObjects[WAVE_COUNT+playerData.bossWaves] = waveObj
@@ -305,6 +310,7 @@ function SpawnWaveForPlayer(playerID, wave)
         local finishedExpress = EXPRESS_MODE and playerData.completedWaves == WAVE_COUNT
         local clearedNormal = not EXPRESS_MODE and playerData.completedWaves == WAVE_COUNT - 1
         if finishedExpress or clearedNormal then
+            playerData.clearTime = GameRules:GetGameTime() - START_GAME_TIME -- Used to determine the End Speed Bonus
             playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR, wave )
             Timers:CreateTimer(2, function()
                 playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )

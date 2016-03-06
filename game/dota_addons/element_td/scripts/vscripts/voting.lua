@@ -220,7 +220,6 @@ function FinalizeVotes()
 	Timers:CreateTimer("PostVoteTimer", {
 		endTime = 1,
 		callback = function()
-		    START_GAME_TIME = GameRules:GetGameTime()
 			for _, plyID in pairs(playerIDs) do
 				StartBreakTime(plyID, GameSettings.length.PregameTime)
 				if GameSettings.length.PregameTime == 30 then
