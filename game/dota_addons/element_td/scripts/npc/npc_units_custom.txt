@@ -13193,7 +13193,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "0.66"
-	    "ProjectileModel"           "particles/units/heroes/hero_abaddon/abaddon_death_coil.vpcf"  
+	    "ProjectileModel"           "particles/custom/towers/tidal/attack.vpcf"  
 	    "ProjectileSpeed"        "3000"
 	
 	    "Model"             "models/heroes/siren/siren.vmdl"
@@ -13286,7 +13286,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "0.66"
-	    "ProjectileModel"           "particles/units/heroes/hero_abaddon/abaddon_death_coil.vpcf"  
+	    "ProjectileModel"           "particles/custom/towers/tidal/attack.vpcf"  
 	    "ProjectileSpeed"        "3000"
 	
 	    "Model"             "models/heroes/siren/siren.vmdl"
