@@ -54,7 +54,7 @@ function ScoringObject:UpdateScore( const , wave )
 	
 	-- Final message (not in express)
 	elseif ( const == SCORING_GAME_FINISHED ) then
-		scoreTable = self:GetGameCleared()
+		scoreTable = self:GetGameFinished()
 
 		table.insert(processed, {'#scoring_game_completed', '#FFF0F5'} )
 	else
@@ -226,7 +226,7 @@ function ScoringObject:GetWaveLost()
 	return { cleanWaves = clean, under30 = under30, totalScore = score }
 end
 
--- Total Score, BossBonus, DifficultyBonus, TotalScore after bonus
+-- Total Score, DifficultyBonus, Networth and EndSpeed bonus, TotalScore after bonus
 function ScoringObject:GetGameCleared()
 	local playerData = GetPlayerData( self.playerID )
 	local score = self.totalScore
@@ -234,6 +234,19 @@ function ScoringObject:GetGameCleared()
 	local totalScore = 0
 	local networthBonus = self:GetNetworthBonus()
 	local endSpeedBonus = self:GetEndSpeedBonus(playerData.clearTime)
+	local frogKills = 0 --Total
+
+	totalScore = math.ceil(score * (1 + networthBonus + endSpeedBonus))
+
+	return { networthBonus = networthBonus, frogKills = frogKills, endSpeedBonus = endSpeedBonus, totalScore = totalScore }
+end
+
+-- Total Score at game end in classic
+function ScoringObject:GetGameFinished()
+	local playerData = GetPlayerData( self.playerID )
+	local score = self.totalScore
+	local values = {}
+	local totalScore = 0
 	local extraFrogScore = 0 --Killed but didn't finish the wave
 	local frogKills = 0 --Total
 	if playerData.iceFrogKills then
@@ -242,9 +255,9 @@ function ScoringObject:GetGameCleared()
 		extraFrogScore = remainder * 200 * self:GetBossBonus(playerData.bossWaves-1) * (1+self:GetDifficultyBonus())
 	end
 
-	totalScore = math.ceil((score+extraFrogScore) * (1+networthBonus) * (1+endSpeedBonus))
+	totalScore = math.ceil(score)
 
-	return { networthBonus = networthBonus, frogKills = frogKills, endSpeedBonus = endSpeedBonus, totalScore = totalScore }
+	return { frogKills = frogKills, totalScore = totalScore }
 end
 
 -- takes leaks (lives) per wave (1.20 multiplier)
