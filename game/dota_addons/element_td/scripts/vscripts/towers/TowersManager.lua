@@ -13,7 +13,7 @@ function RegisterTowerClass(class, name)
 		class.OnBuildingFinished = class.OnBuildingFinished or (function(self) end)
 		
 		TOWER_CLASSES[name] = class
-		Log:debug("Registered " .. name .. " tower class")
+		--Log:debug("Registered " .. name .. " tower class")
 	end
 end
 

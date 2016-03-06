@@ -781,6 +781,12 @@ PLAYER_CODES = {
     ["random"] = function(...) GameSettings:EnableRandomForPlayer(...) end,  -- Enable random for player
 }
 
+DEV_CODES = {
+    ["dev"] = function(playerID) CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "sandbox_mode_visible", {}) end,
+    ["sets"] = function(...) MakeSets() end,
+    ["tooltips"] = function(...) Tooltips:Validate() end
+}
+
 -- A player has typed something into the chat
 function ElementTD:OnPlayerChat(keys)
     local text = keys.text
@@ -788,14 +794,13 @@ function ElementTD:OnPlayerChat(keys)
     local playerID = self.vUserIds[userID] and self.vUserIds[userID]:GetPlayerID()
     if not playerID then return end
 
-    -- Handle '-command'
     if StringStartsWith(text, "-") then
         local input = split(string.sub(text, 2, string.len(text)))
         local command = input[1]
         if PLAYER_CODES[command] then
             PLAYER_CODES[command](playerID, input[2])
-        elseif text == "-dev" and Sandbox:IsDeveloper(playerID) then
-            CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "sandbox_mode_visible", {})
+        elseif DEV_CODES[command] and Sandbox:IsDeveloper(playerID) then
+            DEV_CODES[command](playerID)
         end
     end
 end

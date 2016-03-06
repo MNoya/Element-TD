@@ -50,7 +50,6 @@ ElementColors = {
 -- Light #E5DE23
 -- Dark #8733C8
 
-GameRules.DebugDamage = true
 function DamageEntity(entity, attacker, damage)
 	if not entity or not entity:IsAlive() then return end
 	

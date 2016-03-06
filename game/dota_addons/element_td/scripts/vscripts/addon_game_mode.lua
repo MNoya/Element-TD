@@ -27,6 +27,7 @@ local requires =
     "mechanics/wearables",
     "mechanics/sectors",
     "mechanics/ground_attacks",
+    "mechanics/tooltips",
 
     -- utils
     "util/util",
