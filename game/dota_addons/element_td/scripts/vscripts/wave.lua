@@ -32,6 +32,10 @@ function Wave:OnCreepKilled(index)
 	if self.creeps[index] then
 		self.creeps[index] = nil
 		self.creepsRemaining = self.creepsRemaining - 1
+		local creep = EntIndexToHScript(index)
+		if creep.scriptClass == "CreepBulky" then
+		    self.creepsRemaining = self.creepsRemaining - 1
+		end
 		self.kills = self.kills + 1
 
 		-- Remove from scoreboard count
