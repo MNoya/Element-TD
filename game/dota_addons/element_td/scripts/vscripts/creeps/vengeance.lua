@@ -46,7 +46,6 @@ function CreepVengeance:OnDeath(killer)
     ParticleManager:SetParticleControl(particle, 1, killer:GetAbsOrigin())
     ParticleManager:SetParticleControl(particle, 2, Vector(aoe*1.5,1,1))
     ParticleManager:SetParticleControl(particle, 3, Vector(aoe*2,1,1))
-    DebugDrawCircle(killer:GetAbsOrigin(), Vector(255,0,0), 100, aoe, true, 1)
 end
 
 -- A hidden modifier_vengeance_debuff runs out

@@ -13,6 +13,8 @@
 		// FX on the creep
 		"modifier_vengeance"
 		{
+			"Passive"	"1"
+			"IsHidden"	"1"
 			"OnCreated"
 			{
 				"AttachEffect"
@@ -26,10 +28,7 @@
 						"CASTER"	"attach_hitloc"
 					}
 				}
-			}
-
-			"IsHidden"	"1"
-			"Passive"	"1"
+			}	
 		}
 
 		// Stack display, keeps track of how much damage should be reduced
@@ -37,6 +36,11 @@
 		{
 			"IsDebuff"		"1"
 			"TextureName"	"creeps/vengeance"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_HEALTH_BONUS" "5" //Just for tooltip
+			}
 		}
 
 		// Individual modifier applied every time a creep is killed

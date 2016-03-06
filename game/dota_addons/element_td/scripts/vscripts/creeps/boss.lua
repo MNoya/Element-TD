@@ -41,9 +41,6 @@ function CreepBoss:OnSpawned()
             creep:Purge(false, true, false, true, true)
 
             local duration = 2
-            if creep.isSwarm then
-                duration = 1
-            end
             creep:FindAbilityByName("creep_ability_mechanical"):ApplyDataDrivenModifier(creep, creep, "mechanical_buff", {duration=duration})
 
             return 8

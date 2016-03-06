@@ -477,7 +477,7 @@
         "DOTA_Tooltip_ability_creep_ability_vengeance_aoe"                                "AOE:"
         "DOTA_Tooltip_ability_creep_ability_vengeance_damage_reduction"                   "%DAMAGE REDUCTION PER STACK:"
         "DOTA_Tooltip_ability_creep_ability_vengeance_duration"                           "DURATION:"
-        "DOTA_Tooltip_modifier_vengeance_debuff"                                          "Avenger"
+        "DOTA_Tooltip_modifier_vengeance_debuff"                                          "Vengeance"
         "DOTA_Tooltip_modifier_vengeance_debuff_Description"                              ""
 
         "DOTA_Tooltip_ability_creep_ability_bulky"                                        "Bulk Up"
