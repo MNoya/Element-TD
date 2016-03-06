@@ -63,7 +63,7 @@ function DamageEntity(entity, attacker, damage)
 	local element = damage
 
 	-- Increment damage based on debuffs
-	damage = ApplyDamageAmplification(damage, entity)
+	damage = ApplyDamageAmplification(damage, entity, attacker)
 	local amplified = damage
 
 	damage = math.ceil(damage) --round up to the nearest integer
@@ -137,7 +137,7 @@ end
 --------------------------------------------------------------
 --------------------------------------------------------------
 
-function ApplyDamageAmplification(damage, creep)
+function ApplyDamageAmplification(damage, creep, tower)
 	local newDamage = damage
 	local amp = 0
 
@@ -159,15 +159,15 @@ function ApplyDamageAmplification(damage, creep)
 	end
 
 	-- Vengeance
-	local vModifier = creep:FindModifierByName("modifier_vengeance_debuff")
+	local vModifier = tower:FindModifierByName("modifier_vengeance_debuff")
 	if vModifier then
 		amp = amp + vModifier.damageReduction
 	end
 
 	newDamage = newDamage * (1+ amp*0.01)
 
-	if GameRules.DebugDamage and amp > 0 then
-		print("[DAMAGE] Increased damage done to "..creep:GetUnitName().." damage of "..damage.." to "..newDamage.." due to an amplification of "..amp)
+	if GameRules.DebugDamage and amp ~= 0 then
+		print("[DAMAGE] Amplified damage done to "..creep:GetUnitName().." damage of "..damage.." to "..newDamage.." due to an amplification of "..amp)
 	end
 
 	return round(newDamage)
