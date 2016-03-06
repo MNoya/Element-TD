@@ -43,14 +43,17 @@ function TrickeryTower:OnAttackLanded(keys)
     DamageEntity(target, self.tower, damage)
 end
 
-function TrickeryTower:OnCreated()
-    self.ability = AddAbility(math.random(0.03,0.2),self.tower, "trickery_tower_conjure", self.tower:GetLevel())
-    Timers:CreateTimer(function()
+function TrickeryTower:OnBuildingFinished()
+    Timers:CreateTimer(math.random(0.03,0.2), function()
         if IsValidEntity(self.tower) then
             self:ConjureThink()
             return 1
         end
     end)
+end
+
+function TrickeryTower:OnCreated()
+    self.ability = AddAbility(self.tower, "trickery_tower_conjure", self.tower:GetLevel())
     self.ability:ToggleAutoCast()
     self.playerID = self.tower:GetOwner():GetPlayerID()
     self.castRange = tonumber(GetAbilityKeyValue("trickery_tower_conjure", "AbilityCastRange"))
@@ -82,7 +85,6 @@ function TrickeryTower:GetUpgradeData()
         autocast = self.ability:GetAutoCastState()
     }
 end
-
 
 -- Global
 function RemoveClone(clone)
