@@ -209,7 +209,7 @@ end
 function ScoringObject:GetBossWaveCleared( bossWave )
 	local playerData = GetPlayerData( self.playerID )
 	local bossBonus = self:GetBossBonus(bossWave-1)
-	local waveClearScore = 3000 * bossBonus --100 per kill * 0.20 every wave past the first
+	local waveClearScore = 6000 * bossBonus --200 per kill * 0.20 every wave past the first
 	local difficultyBonus = self:GetDifficultyBonus()
 	local frogKills = playerData.iceFrogKills
 	local totalScore = math.ceil(waveClearScore * (1 + difficultyBonus))
@@ -239,7 +239,7 @@ function ScoringObject:GetGameCleared()
 	if playerData.iceFrogKills then
 		frogKills = playerData.iceFrogKills
 		local remainder = frogKills % 30
-		extraFrogScore = remainder * 100 * self:GetBossBonus(playerData.bossWaves-1) * (1+self:GetDifficultyBonus())
+		extraFrogScore = remainder * 200 * self:GetBossBonus(playerData.bossWaves-1) * (1+self:GetDifficultyBonus())
 	end
 
 	totalScore = math.ceil((score+extraFrogScore) * (1+networthBonus) * (1+endSpeedBonus))
