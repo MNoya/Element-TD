@@ -209,7 +209,7 @@ end
 function ScoringObject:GetBossWaveCleared( bossWave )
 	local playerData = GetPlayerData( self.playerID )
 	local bossBonus = self:GetBossBonus(bossWave-1)
-	local waveClearScore = 6000 * bossBonus --200 per kill * 0.20 every wave past the first
+	local waveClearScore = 7500 * bossBonus --250 per kill * 0.20 every wave past the first
 	local difficultyBonus = self:GetDifficultyBonus()
 	local frogKills = playerData.iceFrogKills
 	local totalScore = math.ceil(waveClearScore * (1 + difficultyBonus))
@@ -252,7 +252,7 @@ function ScoringObject:GetGameFinished()
 	if playerData.iceFrogKills then
 		frogKills = playerData.iceFrogKills
 		local remainder = frogKills % 30
-		extraFrogScore = remainder * 200 * self:GetBossBonus(playerData.bossWaves-1) * (1+self:GetDifficultyBonus())
+		extraFrogScore = remainder * 250 * self:GetBossBonus(playerData.bossWaves-1) * (1+self:GetDifficultyBonus())
 	end
 
 	totalScore = math.ceil(score)
@@ -304,12 +304,12 @@ function ScoringObject:GetWaveClearBonus( wave )
 	return bonus
 end
 
--- Player Networth/Base Networth/2 based on Difficulty and Classic/Express
+-- (Player Networth/Base Networth) - 1 based on Difficulty and Classic/Express
 function ScoringObject:GetNetworthBonus()
 	local playerNetworth = GetPlayerNetworth( self.playerID )
 	local baseWorth = GetPlayerDifficulty( self.playerID ):GetBaseWorth()
 
-	return (playerNetworth/baseWorth/2)
+	return ((playerNetworth/baseWorth) - 1)
 end
 
 --[[-- Creep order bonus
