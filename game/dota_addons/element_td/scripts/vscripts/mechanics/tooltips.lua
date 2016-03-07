@@ -8,7 +8,7 @@ function Tooltips:Validate()
     Tooltips.panoramaTooltips = LoadKeyValues("panorama/localization/addon_"..Tooltips.mainLanguage..".txt").Tokens
     Tooltips.file = io.open("../../dota_addons/element_td/scripts/Tooltips.txt", 'w')
 
-    local languages = {"schinese"}
+    local languages = {"schinese","russian"}
         
     for _,language in pairs(languages) do
         Tooltips:Check(Tooltips.resourceTooltips, "resource/addon_"..language..".txt")
@@ -20,7 +20,12 @@ end
 
 function Tooltips:Check(mainFile, fileName)
     Tooltips:write("Checking "..fileName)
-    local file = LoadKeyValues(fileName).Tokens
+    local tooltips = LoadKeyValues(fileName)
+    if not tooltips or not tooltips.Tokens then
+        Tooltips:write("ERROR on reading "..fileName.." key values!")
+        return
+    end
+    local file = tooltips.Tokens
     local separator = ("------------------------------------------")
 
     local missing = {}
@@ -95,9 +100,10 @@ function Tooltips:Check(mainFile, fileName)
         Tooltips:write("OK - 0 Missing Number Values on "..fileName.."!")
     end
 
-    Tooltips:write(separator)
+    Tooltips:write(separator.."\n")
 end
 
 function Tooltips:write(...)
+    print(...)
     Tooltips.file:write(... .."\n")
 end
