@@ -27,7 +27,7 @@
     "VisionDaytimeRange"        "1200"
     "VisionNighttimeRange"        "800"
     "Model"        "models/creeps/lane_creeps/creep_bad_melee/creep_bad_melee_mega.vmdl"
-    "ModelScale"        "2.2"
+    "ModelScale"        "1.9"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"     "CreepBulky"

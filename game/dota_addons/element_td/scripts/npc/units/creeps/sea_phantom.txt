@@ -27,7 +27,7 @@
     "VisionDaytimeRange"        "1200"
     "VisionNighttimeRange"        "800"
     "Model"        "models/heroes/storm_spirit/storm_spirit.vmdl"
-    "ModelScale"        "2.1"
+    "ModelScale"        "1.8"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"     "CreepBulky"
