@@ -1,0 +1,15 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/multiteam_end_screen.css" />
+    </styles>
+    <scripts>
+        <include src="s2r://panorama/scripts/custom_game/end_screen_credits.js" />
+	</scripts>
+	<Panel class="PlayerCredit">
+        <Panel id="Avatar">
+            <DOTAAvatarImage id="AvatarImage" steamid="local" />
+            <Image id="BorderImage" hittest="false" class="HiddenBorder" />
+        </Panel>
+		<DOTAUserName id="UserNameCredit" steamid="local"/>
+	</Panel>
+</root>

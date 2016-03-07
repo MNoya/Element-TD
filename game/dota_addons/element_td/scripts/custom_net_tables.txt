@@ -8,5 +8,6 @@
         "elementals",
         "towers",
         "gameinfo",
+        "rewards",
 	]
 } 

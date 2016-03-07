@@ -595,3 +595,29 @@
     box-shadow: #000 -1px -1px 3px 2px;
     border-radius: 22px;
 }
+
+
+
+
+.GoldBorder
+{
+    width: 34px;
+    height: 34px;
+    background-image: url("file://{resources}/images/custom_game/rewards/border_gold.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.EpicBorder
+{   
+    width: 34px;
+    height: 34px;
+    background-image: url("file://{resources}/images/custom_game/rewards/border_epic.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.HiddenBorder
+{
+    opacity: 0;
+}

@@ -217,5 +217,12 @@
         "loading_screen_tip_15" "Each Support Tower can supply 4 Towers with Buffs."
         "loading_screen_tip_16" "Got ideas to make the game better? Join the discussion at our website!"
         "loading_screen_tip_17" "Plan your build for the next wave to prevent leaking on elements you are weak against."
+
+        "credits_title"         "Credits"
+        "credits_developers"    "Developers"
+        "support_thanks"        "Many thanks to our supporters!"
+        "leaderboard_link"      "www.eletd.com/leaderboard"
+        "web_link"              "www.eletd.com"
+        "follow_us_link"        "@ETD"
     }
 }

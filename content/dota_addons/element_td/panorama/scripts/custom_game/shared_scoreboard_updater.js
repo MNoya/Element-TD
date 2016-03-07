@@ -1,11 +1,45 @@
 "use strict";
 
+var url = 'http://www.eletd.com/rewards_data.js'
 var teamScores = [0,0,0,0];
 
 var playerWave = [0,0,0,0,0,0,0,0];
 var playerHealth = [100,100,100,100,100,100,100,100];
 var playerScore = [0,0,0,0,0,0,0,0];
 var playerData = {};
+
+//=============================================================================
+//=============================================================================
+
+var Developers = [76561198046984233,76561197968301566,76561198027264543,76561197995227322,76561198045264681,76561198008120955]
+
+function RewardLevel(steamID64) {
+    var playerReward = CustomNetTables.GetTableValue( "rewards", steamID64)
+    if (Developers.indexOf(Number(steamID64)) != -1)
+        return "Developer"
+    else if (playerReward)
+        return playerReward.tier
+    else
+        return 0
+}
+
+function ApplyPanelBorder(panel, steamID64){
+    var rewardLevel = RewardLevel(steamID64)
+
+    if (rewardLevel != 0)
+    {
+        var border = panel.FindChildInLayoutFile( "BorderImage" );
+        if (border !== undefined && border !== null)
+        {
+            border.RemoveClass( "HiddenBorder" )
+            if (rewardLevel == "Developer")
+                border.AddClass( "EpicBorder" )
+
+            else if (rewardLevel >= 2)
+                border.AddClass( "GoldBorder" )
+        }
+    }
+}
 
 //=============================================================================
 //=============================================================================
@@ -235,6 +269,7 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
         if ( playerAvatar )
         {
             playerAvatar.steamid = playerInfo.player_steamid;
+            ApplyPanelBorder(playerPanel, playerInfo.player_steamid)
         }       
 
         var playerColorBar = playerPanel.FindChildInLayoutFile( "PlayerColorBar" );

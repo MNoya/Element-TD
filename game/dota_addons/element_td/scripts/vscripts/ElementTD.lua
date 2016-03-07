@@ -169,6 +169,10 @@ function ElementTD:OnGameStateChange(keys)
         self.gameStarted = true
 
         self:StartGame()
+    elseif state == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
+
+        -- Load donation rewards
+        Rewards:Load()
     end
 end
 
@@ -255,8 +259,10 @@ function ElementTD:EndGameForPlayer( playerID )
     for i,v in pairs(playerData.towers) do
         EntIndexToHScript(i):ForceKill(false)
     end
-    for l,m in pairs(playerData.waveObject.creeps) do
-        EntIndexToHScript(l):ForceKill(false)
+    if (playerData.waveObject and playerData.waveObject.creeps) then
+        for l,m in pairs(playerData.waveObject.creeps) do
+            EntIndexToHScript(l):ForceKill(false)
+        end
     end
     for _,object in pairs(playerData.waveObjects) do
         for index,_ in pairs(object.creeps) do

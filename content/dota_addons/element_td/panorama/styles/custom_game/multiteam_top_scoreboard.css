@@ -465,3 +465,28 @@ DOTAAvatarImage
     opacity: 2;
     font-size: 19px;
 }
+
+.GoldBorder
+{
+    margin-top: -18px;
+    width: 38px;
+    height: 38px;
+    background-image: url("file://{resources}/images/custom_game/rewards/border_gold.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.EpicBorder
+{   
+    margin-top: -18px;
+    width: 38px;
+    height: 38px;
+    background-image: url("file://{resources}/images/custom_game/rewards/border_epic.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.HiddenBorder
+{
+    opacity: 0;
+}
