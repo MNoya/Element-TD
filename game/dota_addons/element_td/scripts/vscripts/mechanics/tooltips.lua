@@ -65,6 +65,7 @@ function Tooltips:Check(mainFile, fileName)
             local spaces = max + 4 - string.len(v)
             Tooltips:write(string.rep(" ", 8).."\""..v.."\""..string.rep(" ", spaces).."\"\"")
         end
+        Tooltips:write("Total of "..#missing.." Missing keys on "..fileName.."!")
     else
         Tooltips:write("OK - 0 Missing keys on "..fileName.."!")
     end
@@ -83,6 +84,7 @@ function Tooltips:Check(mainFile, fileName)
             local spaces = maxValueLen + 4 - string.len(v.key)
             Tooltips:write(v.key..string.rep(" ", spaces)..v.translation.."->"..v.original)
         end
+        Tooltips:write("Total of "..#diffValues.." Different Number Values on "..fileName.."!")
     else
         Tooltips:write("OK - 0 Different Number Values on "..fileName.."!")
     end
@@ -96,6 +98,7 @@ function Tooltips:Check(mainFile, fileName)
             local spaces = maxValueLen + 4 - string.len(v.key)
             Tooltips:write(v.key..string.rep(" ", spaces)..v.original)
         end
+        Tooltips:write("Total of "..#missValues.." Missing Number Values on "..fileName.."!")
     else
         Tooltips:write("OK - 0 Missing Number Values on "..fileName.."!")
     end
@@ -104,6 +107,5 @@ function Tooltips:Check(mainFile, fileName)
 end
 
 function Tooltips:write(...)
-    print(...)
     Tooltips.file:write(... .."\n")
 end
