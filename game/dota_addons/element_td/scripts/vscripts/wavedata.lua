@@ -423,11 +423,10 @@ function CreateMoveTimerForCreep(creep, sector)
                     InterestManager:PlayerLeakedWave(playerID, creep.waveObject.waveNumber)
                 end
 
-                -- Reduce lives exponentially
-                if not creep.reduced_lives then
-                    creep.reduced_lives = 1
-                else
-                    creep.reduced_lives = creep.reduced_lives * 2
+                -- Boss Wave leaks = 3 lives
+                local lives = 1
+                if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then
+                    lives = 3
                 end
 
                 -- Bulky creeps count as 2
@@ -435,7 +434,7 @@ function CreateMoveTimerForCreep(creep, sector)
                     creep.reduced_lives = creep.reduced_lives * 2
                 end
 
-                ReduceLivesForPlayer(playerID, creep.reduced_lives)
+                ReduceLivesForPlayer(playerID, lives)
 
                 creep.recently_leaked = true
                 Timers:CreateTimer(10, function()
@@ -463,13 +462,6 @@ function ReduceLivesForPlayer( playerID, lives )
     local playerData = GetPlayerData(playerID)
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     local ply = PlayerResource:GetPlayer(playerID)
-
-    lives = lives or 1
-
-    -- Boss Wave leaks = 3 lives
-    if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then
-        lives = 3
-    end
 
     -- Cheats can melt steel beams
     if playerData.zenMode or playerData.godMode then
