@@ -42,12 +42,12 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"damage_reduction"		"-5"
+			"damage_reduction"		"-10"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"				"5"
+			"duration"				"3"
 		}
 	}
 }
