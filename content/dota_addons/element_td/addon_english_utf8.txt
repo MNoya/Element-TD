@@ -561,8 +561,9 @@
         "DOTA_Tooltip_ability_moss_tower_spore_Description"     "Each attack deals bonus damage based on the percentage of the target's remaining health. For every 1% of health that the target has, the attack deals 1% more damage.\n\n<font color='#FFFFFF'>ATTACK TARGETING:</font> Highest HP"
         
         "DOTA_Tooltip_ability_quark_tower_quantum_beam"     "Quantum Beam"
-        "DOTA_Tooltip_ability_quark_tower_quantum_beam_Description"     "Each attack on the same unit gains bonus damage. Stacks indefinitely. Damage is reset upon attacking a different unit.\n\n<font color='#FFFFFF'>ATTACK TARGETING:</font> Highest HP"
+        "DOTA_Tooltip_ability_quark_tower_quantum_beam_Description"     "Each attack on the same unit gains bonus damage. Damage is reset upon attacking a different unit.\n\n<font color='#FFFFFF'>ATTACK TARGETING:</font> Highest HP"
         "DOTA_Tooltip_ability_quark_tower_quantum_beam_bonus_damage"        "%BONUS DAMAGE:"
+        "DOTA_Tooltip_ability_quark_tower_quantum_beam_max_stacks"        "MAX STACKS:"
         "DOTA_Tooltip_modifier_quantum_beam_indicator"      "Quantum Beam Level"
         "DOTA_Tooltip_modifier_quantum_beam_indicator_Description"      "Number of consecutive attacks on the same target."
         
