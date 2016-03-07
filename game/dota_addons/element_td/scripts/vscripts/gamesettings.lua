@@ -40,7 +40,7 @@ function DifficultyObject:GetBountyBonusMultiplier()
 end
 
 function DifficultyObject:GetBaseWorth()
-    return EXPRESS_MODE and self.data.NetworthBonus or self.data.NetworthBonusExpress
+    return EXPRESS_MODE and self.data.NetworthBonusExpress or self.data.NetworthBonus
 end
 
 function DifficultyObject:GetWaveBreakTime(wave)
