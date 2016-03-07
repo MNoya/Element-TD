@@ -31,6 +31,11 @@ function customSchema:init()
             end
         end
     end, nil)
+
+    -- Write 'test_schema' on the console to test your current functions instead of having to end the game
+    if Convars:GetBool('developer') and not test_schema then
+        Convars:RegisterCommand("test_schema", function() PrintSchema(BuildGameArray(), BuildPlayersArray()) end, "Test the custom schema arrays", 0)
+    end
 end
 
 -------------------------------------
@@ -140,12 +145,6 @@ function PrintSchema(gameArray, playerArray)
     print("\n-------- PLAYER DATA --------")
     DeepPrintTable(playerArray)
     print("-------------------------------------")
-end
-
--- Write 'test_schema' on the console to test your current functions instead of having to end the game
-if Convars:GetBool('developer') and not statCollection.registered then
-    Convars:RegisterCommand("test_schema", function() PrintSchema(BuildGameArray(), BuildPlayersArray()) end, "Test the custom schema arrays", 0)
-    statCollection.registered = true
 end
 
 -------------------------------------
