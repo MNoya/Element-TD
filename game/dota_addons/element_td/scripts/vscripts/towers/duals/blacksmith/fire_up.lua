@@ -5,6 +5,17 @@ function blacksmith_tower_fire_up:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 	local playerID = caster:GetPlayerOwnerID()
+
+	-- Apply flag to prevent buffing twice on the same short period of time
+    if target.bs_buffed then
+        self:EndCooldown()
+        return
+    end
+    target.bs_buffed = true
+    Timers:CreateTimer(1, function() 
+        if IsValidEntity(target) then target.bs_buffed = false end
+    end)
+
 	caster:EmitSound("Blacksmith.Cast")
 
 	local particleName = "particles/units/heroes/hero_ogre_magi/ogre_magi_bloodlust_cast.vpcf"

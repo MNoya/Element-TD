@@ -431,7 +431,7 @@ function CreateMoveTimerForCreep(creep, sector)
 
                 -- Bulky creeps count as 2
                 if creep:HasAbility("creep_ability_bulky") then
-                    creep.reduced_lives = creep.reduced_lives * 2
+                    lives = lives * 2
                 end
 
                 ReduceLivesForPlayer(playerID, lives)

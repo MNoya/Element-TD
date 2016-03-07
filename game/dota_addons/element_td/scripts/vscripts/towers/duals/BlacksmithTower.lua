@@ -44,7 +44,7 @@ function BlacksmithTower:OnCreated()
 end
 
 function BlacksmithTower:OnBuildingFinished()
-    Timers:CreateTimer(math.random(0.03,0.2),function()
+    Timers:CreateTimer(math.random(0.1,1),function()
         if IsValidEntity(self.tower) then
             self:FireUpThink()
             return 1
