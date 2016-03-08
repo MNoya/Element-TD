@@ -58,7 +58,7 @@ function QuarkTower:OnCreated()
     self.baseDamage = self.tower:GetBaseDamageMax()    
     self.targetEntIndex = 0    
     self.consecutiveAttacks = 0
-    self.maxStacks = ability:GetSpecialValueFor("max_stacks")
+    self.maxStacks = self.ability:GetSpecialValueFor("max_stacks")
     self.damageIncrease = 1+tonumber(self.ability:GetSpecialValueFor("bonus_damage"))*0.01
     self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_HIGHEST_HP, keep_target=true})
     self.fullAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"));
