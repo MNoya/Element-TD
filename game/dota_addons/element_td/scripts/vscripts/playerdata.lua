@@ -249,7 +249,7 @@ function UpdateWaveInfo(playerID, wave)
     end
 end
 
-function UpdateElementOrbs(playerID, new_element)
+function UpdateElementOrbs(playerID)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     if not hero then return end
 	local orb_path = "particles/custom/orbs/"
@@ -275,7 +275,9 @@ function UpdateElementOrbs(playerID, new_element)
 		end
 	end
 
-	hero.orb_count = hero.orb_count + 1
+    if hero.orb_count < 6 then
+	   hero.orb_count = hero.orb_count + 1
+    end
 
 	-- Recreate orbs
 	for k=1,#elements do

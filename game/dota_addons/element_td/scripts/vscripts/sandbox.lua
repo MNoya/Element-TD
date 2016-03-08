@@ -131,6 +131,7 @@ function Sandbox:MaxElements(event)
     
     for k,v in pairs (playerData.elements) do
         playerData.elements[k] = 3
+        UpdateElementOrbs(playerID)
     end
 
     UpdatePlayerSpells(playerID)
@@ -140,7 +141,6 @@ function Sandbox:MaxElements(event)
         UpdateUpgrades(EntIndexToHScript(towerID))
     end
     UpdateScoreboard(playerID)
-
     ShowSandboxCommand(playerID, "Max Elements")
 end
 
