@@ -107,44 +107,44 @@
 
 		<Panel id="CreditContainer">
             <Label id="CreditTitle" text="#credits_title" />
-            <Panel id="Credits">
-            	<Label id="DevTitle" text="#credits_developers"/>
-            	<Panel id="DevCredits">
-                    <Panel class="DevRow">
-                    	<Panel class="DevAvatar">
-				            <DOTAAvatarImage id="DevImage" steamid="76561198046984233" />
-				            <DOTAUserName id="DevName" steamid="76561198046984233"/>
-				    	</Panel>
-				    	<Panel class="DevAvatar">
-				            <DOTAAvatarImage id="DevImage" steamid="76561198027264543" />
-				            <DOTAUserName id="DevName" steamid="76561198027264543"/>
-				    	</Panel>
-				    	<Panel class="DevAvatar">
-				            <DOTAAvatarImage id="DevImage" steamid="76561198045264681" />
-				            <DOTAUserName id="DevName" steamid="76561198045264681"/>
-				    	</Panel>
+            <Label id="DevTitle" text="#credits_developers"/>
+        	<Panel id="DevCredits">
+                <Panel class="DevRow">
+                	<Panel class="DevAvatar">
+			            <DOTAAvatarImage id="DevImage" steamid="76561198046984233" />
+			            <DOTAUserName id="DevName" steamid="76561198046984233"/>
+			    	</Panel>
+			    	<Panel class="DevAvatar">
+			            <DOTAAvatarImage id="DevImage" steamid="76561198027264543" />
+			            <DOTAUserName id="DevName" steamid="76561198027264543"/>
+			    	</Panel>
+			    	<Panel class="DevAvatar">
+			            <DOTAAvatarImage id="DevImage" steamid="76561198045264681" />
+			            <DOTAUserName id="DevName" steamid="76561198045264681"/>
+			    	</Panel>
 
-			        </Panel>
-                    <Panel class="DevRow">
-			            <Panel class="DevAvatar">
-				            <DOTAAvatarImage id="DevImage" steamid="76561197968301566" />
-				            <DOTAUserName id="DevName" steamid="76561197968301566"/>
-				    	</Panel>
-				    	<Panel class="DevAvatar">
-				            <DOTAAvatarImage id="DevImage" steamid="76561197995227322" />
-				            <DOTAUserName id="DevName" steamid="76561197995227322"/>
-				    	</Panel>
-				    	<Panel class="DevAvatar">
-				            <DOTAAvatarImage id="DevImage" steamid="76561198008120955" />
-				            <DOTAUserName id="DevName" steamid="76561198008120955"/>
-				    	</Panel>
-			        </Panel>
-                </Panel>
-                <Label id="SpecialThanks" text="#support_thanks"/>
-                <Panel id="Supporters">
-
-                </Panel>
+		        </Panel>
+                <Panel class="DevRow">
+		            <Panel class="DevAvatar">
+			            <DOTAAvatarImage id="DevImage" steamid="76561197968301566" />
+			            <DOTAUserName id="DevName" steamid="76561197968301566"/>
+			    	</Panel>
+			    	<Panel class="DevAvatar">
+			            <DOTAAvatarImage id="DevImage" steamid="76561197995227322" />
+			            <DOTAUserName id="DevName" steamid="76561197995227322"/>
+			    	</Panel>
+			    	<Panel class="DevAvatar">
+			            <DOTAAvatarImage id="DevImage" steamid="76561198008120955" />
+			            <DOTAUserName id="DevName" steamid="76561198008120955"/>
+			    	</Panel>
+		        </Panel>
             </Panel>
+            <Panel id="SupportCredits">
+	            <Label id="SpecialThanks" text="#support_thanks"/>
+	            <Panel id="Supporters">
+
+	            </Panel>
+	        </Panel>	
     	</Panel>
 
     	<Panel id="Contact">
@@ -152,10 +152,6 @@
     			<Image hittest="false" id="WebLogo"/>
     			<Label class="ContactText" text="#web_link"/>
     		</Panel>
-    		<!--<Panel id="Twitter">
-    			<Image hittest="false" id="TwitterLogo"/>
-    			<Label class="ContactText" text="#follow_us_link"/>
-    		</Panel>-->
     	</Panel>
 	</Panel>
 </root>

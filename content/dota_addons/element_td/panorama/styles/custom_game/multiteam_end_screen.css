@@ -11,7 +11,7 @@
 
 #CreditContainer
 {
-    width: 600px;
+    width: 800px;
     height: 100%;
     margin-top: 40px;
     flow-children: down;
@@ -19,7 +19,7 @@
 
 #CreditTitle
 {
-    width: 600px;
+    width: 800px;
     font-size: 60px;
     text-align: center;
     text-transform: uppercase;
@@ -68,12 +68,13 @@
 {
     flow-children: down;
     text-align: center;
+    horizontal-align: center;
 }
 
 #DevTitle
 {
     font-size: 30px;
-    width: 400px;
+    width: 800px;
     text-align: center;
     color: white;
     margin-bottom: 10px;
@@ -83,10 +84,18 @@
     text-shadow: 1px 1px 3px 3.0 #000;
 }
 
+#SupportCredits
+{
+    width: 800px;
+    margin-left: 60px;
+    flow-children: down;
+}
+
 #SpecialThanks
 {
     margin-top: 20px;
     font-size: 28px;
+    horizontal-align: center;
     text-align: center;
     color: white;
     margin-bottom: 10px;
@@ -112,25 +121,25 @@
 #Supporters
 {
     flow-children: right-wrap;
+    margin-left: 50px;
 }
 
 .PlayerCredit
 {
-    margin-left: 40px;
     flow-children: right-wrap;
 }
 
 #UserNameCredit
 {
-	width: 150px;
-	margin-left: 10px;
+	width: 180px;
+	margin-left: 5px;
 }
 
 #UserNameCredit Label
 {
 	color: white;
 	width: 200px;
-    font-size: 30px;
+    font-size: 26px;
 	font-family: Radiance;
 	text-shadow: 1px 1px 3px 2.0 #000;
 }
