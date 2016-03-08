@@ -410,42 +410,17 @@ function ElementTD:OnUnitSpawned(keys)
 
     if unit:IsRealHero() then
         local hero = unit
-        local playerID = hero:GetPlayerOwnerID()
-        local player = PlayerResource:GetPlayer(playerID)
-        CreateDataForPlayer(playerID)
 
-        if playerID >= 0 then
-            local playerData = GetPlayerData(playerID)
-            playerData.name = PlayerResource:GetPlayerName(playerID)
-            if playerData.name == "" then -- This normally happens in dev tools
-                playerData.name = 'Developer'
+        -- Should we change to an alternate builder?
+        Timers:CreateTimer(0.03, function()
+            if Rewards:PlayerHasCosmeticModel(hero:GetPlayerID()) and not hero.replaced then
+                Timers:CreateTimer(0.03, function()
+                    Rewards:HandleHeroReplacement(hero)
+                end)
+            else 
+                ElementTD:OnHeroInGame(hero)
             end
-            self:InitializeHero(player:GetPlayerID(), unit)
-            self.playerSpawnIndexes[player:GetPlayerID()] = playerData.sector + 1
-            self.availableSpawnIndex = self.availableSpawnIndex + 1
-
-            -- reposition the camera
-            --PlayerResource:SetCameraTarget(playerID, hero)
-            --Timers:CreateTimer(1, function() PlayerResource:SetCameraTarget(playerID, nil) end)
-
-            -- we must create the Elemental Summoner for this player
-            local sector = playerData.sector + 1
-            local summoner = CreateUnitByName("elemental_summoner", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber()) 
-            summoner:SetOwner(hero)
-            summoner:SetControllableByPlayer(playerID, true)
-            summoner:SetAngles(0, 270, 0)
-            summoner:AddItem(CreateItem("item_buy_pure_essence_disabled", nil, nil))
-            summoner.icon = CreateUnitByName("elemental_summoner_icon", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber())
-            playerData.summoner = summoner
-
-            hero:ModifyGold(0)
-            ModifyLumber(playerID, 0)  -- updates summoner spells
-            ModifyPureEssence(playerID, 0, true)
-            UpdateElementsHUD(playerID)
-            UpdatePlayerSpells(playerID)
-
-            Sandbox:CheckPlayer(playerID)
-        end
+        end)
     else
         local unitName = unit:GetUnitName()
         if unitName and unitName ~= "" and not NPC_UNITS_CUSTOM[unitName] then
@@ -453,6 +428,38 @@ function ElementTD:OnUnitSpawned(keys)
             unit:RemoveSelf()
         end
     end
+end
+
+function ElementTD:OnHeroInGame(hero)
+    local playerID = hero:GetPlayerID()
+    CreateDataForPlayer(playerID)
+
+    local playerData = GetPlayerData(playerID)
+    playerData.name = PlayerResource:GetPlayerName(playerID)
+    if playerData.name == "" then -- This normally happens in dev tools
+        playerData.name = 'Developer'
+    end
+    self:InitializeHero(playerID, hero)
+    self.playerSpawnIndexes[playerID] = playerData.sector + 1
+    self.availableSpawnIndex = self.availableSpawnIndex + 1
+
+    -- we must create the Elemental Summoner for this player
+    local sector = playerData.sector + 1
+    local summoner = CreateUnitByName("elemental_summoner", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber()) 
+    summoner:SetOwner(hero)
+    summoner:SetControllableByPlayer(playerID, true)
+    summoner:SetAngles(0, 270, 0)
+    summoner:AddItem(CreateItem("item_buy_pure_essence_disabled", nil, nil))
+    summoner.icon = CreateUnitByName("elemental_summoner_icon", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber())
+    playerData.summoner = summoner
+
+    hero:ModifyGold(0)
+    ModifyLumber(playerID, 0)  -- updates summoner spells
+    ModifyPureEssence(playerID, 0, true)
+    UpdateElementsHUD(playerID)
+    UpdatePlayerSpells(playerID)
+
+    Sandbox:CheckPlayer(playerID)  
 end
 
 -- initializes a player's hero
@@ -647,6 +654,10 @@ function ElementTD:FilterExecuteOrder( filterTable )
 
     if unit and IsTower(unit) and (order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET or order_type == DOTA_UNIT_ORDER_ATTACK_MOVE) then
         return false
+    end
+
+    if unit and unit:IsRealHero() and unit.cosmetic_override then
+        Rewards:HandleAnimationOrder(unit, order_type)
     end
 
     ------------------------------------------------

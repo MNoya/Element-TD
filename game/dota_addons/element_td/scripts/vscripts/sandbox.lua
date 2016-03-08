@@ -3,7 +3,7 @@ if not Sandbox then
 end
 
 function Sandbox:Init()
-    DEVELOPERS = {[66998815]="A_Dizzle",[86718505]="Noya",[8035838]="Karawasa",[34961594]="WindStrike",[84998953]="Quintinity",[59573794]="Azarak"}
+    DEVELOPERS = {[66998815]="A_Dizzle",[86718505]="Noya",[8035838]="Karawasa",[34961594]="Windstrike",[84998953]="Quintinity",[59573794]="Azarak"}
     
     -- Enable Sandbox mode, single player or dev only, after a confirmation message
     CustomGameEventManager:RegisterListener("sandbox_enable", Dynamic_Wrap(Sandbox, "Enable"))

@@ -28,6 +28,7 @@ local requires =
     "mechanics/sectors",
     "mechanics/ground_attacks",
     "mechanics/tooltips",
+    "mechanics/rewards",
 
     -- utils
     "util/util",
@@ -107,7 +108,6 @@ local requires =
     "ElementTD",
     "scoring",
     "ranking",
-    "rewards",
 }
 
 for _, r in pairs(requires) do

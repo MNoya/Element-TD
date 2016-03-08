@@ -2,7 +2,6 @@
 
 var Credits = $("#Supporters")
 
-var devs = [76561198046984233,76561197968301566,76561198027264543,76561197995227322,76561198045264681,76561198008120955]
 
 function ShowEndCredits() {
     var delay = 0.2;
@@ -11,20 +10,17 @@ function ShowEndCredits() {
     
     for (var i in ids)
     {
-        if (devs.indexOf(Number(ids[i].key)) == -1)
+        var panel = CreateEndCredit(ids[i].key)
+        panel.SetHasClass( "team_endgame", false );
+        
+        ApplyPanelBorder(panel, ids[i].key)
+        
+        var callback = function( panel )
         {
-            var panel = CreateEndCredit(ids[i].key)
-            panel.SetHasClass( "team_endgame", false );
-            
-            ApplyPanelBorder(panel, ids[i].key)
-            
-            var callback = function( panel )
-            {
-                return function(){ panel.SetHasClass( "team_endgame", 1 ); }
-            }( panel );
-            $.Schedule( delay, callback )
-            delay += delay_per_panel;
-        }
+            return function(){ panel.SetHasClass( "team_endgame", 1 ); }
+        }( panel );
+        $.Schedule( delay, callback )
+        delay += delay_per_panel;
     }
 }
 

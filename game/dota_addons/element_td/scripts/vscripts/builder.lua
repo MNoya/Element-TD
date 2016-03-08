@@ -91,7 +91,8 @@ function Build( event )
     -- A building unit was created
     event:OnConstructionStarted(function(unit)
         BuildingHelper:print("Started construction of " .. unit:GetUnitName() .. " " .. unit:GetEntityIndex())
-        -- Play construction sound
+        -- Play construction animation
+        Rewards:CustomAnimation(playerID, caster)
 
         -- Units can't attack while building
         unit:AddNewModifier(unit, nil, "modifier_attack_disabled", {})

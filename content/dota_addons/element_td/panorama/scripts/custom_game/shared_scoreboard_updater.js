@@ -230,7 +230,12 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
         {
             if ( playerInfo.player_selected_hero !== "" )
             {
-                playerPortrait.SetImage( "file://{images}/heroes/" + playerInfo.player_selected_hero + ".png" );
+                if (RewardLevel(playerInfo.player_steamid) == "Developer")
+                    playerPortrait.SetImage( "file://{images}/custom_game/rewards/dev.png" );
+                else if (RewardLevel(playerInfo.player_steamid) > 0)
+                    playerPortrait.SetImage( "file://{images}/custom_game/rewards/aegis.png" );
+                else
+                    playerPortrait.SetImage( "file://{images}/heroes/" + playerInfo.player_selected_hero + ".png" );
             }
             else
             {
