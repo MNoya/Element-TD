@@ -211,7 +211,7 @@ function getRandomElement(wave)
 		end
 	end
 
-	if EXPRESS_MODE and ((wave < 9 and usedElements[element] == 1) or (wave < 18 and usedElements[element] == 2) or usedElements[element] == 3 ) then
+	if EXPRESS_MODE and ((wave < 6 and usedElements[element] == 1) or (wave < 15 and usedElements[element] == 2) or usedElements[element] == 3 ) then
 		return getRandomElement(wave)
 	elseif not EXPRESS_MODE and ((wave < 15 and usedElements[element] == 1) or (wave < 30 and usedElements[element] == 2) or usedElements[element] == 3) then
 		return getRandomElement(wave)
