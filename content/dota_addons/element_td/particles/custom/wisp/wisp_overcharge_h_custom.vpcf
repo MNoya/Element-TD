@@ -1,0 +1,176 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_ConstantColor =
+	[
+		255,
+		230,
+		152,
+		255,
+	]
+	m_ConstantNormal =
+	[
+		0.000000,
+		1.000000,
+		0.000000,
+	]
+	m_flConstantRadius = 13.000000
+	m_flConstantLifespan = 1.500000
+	m_nMaxParticles = 40
+	m_Operators =
+	[
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartScale = 19.000000
+			m_flEndScale = 19.000000
+			m_bEaseInAndOut = true
+		},
+		{
+			_class = "C_OP_OscillateScalar"
+			m_RateMin = 0.200000
+			m_RateMax = 0.200000
+			m_FrequencyMin = 0.100000
+			m_FrequencyMax = 0.100000
+			m_nField = 4
+			m_flEndTime_min = 100000000.000000
+			m_flEndTime_max = 100000000.000000
+			m_bProportional = false
+			m_bProportionalOp = false
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_ColorFade =
+			[
+				154,
+				87,
+				255,
+				255,
+			]
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_SpinYaw"
+			m_nSpinRateDegrees = 90
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+			m_flFadeInTime = 0.500000
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 0.500000
+		},
+		{
+			_class = "C_OP_Spin"
+			m_nSpinRateDegrees = 180
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_SetToCP"
+			m_bOffsetLocal = true
+		},
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_OutlineColor =
+			[
+				212,
+				178,
+				119,
+				255,
+			]
+			m_flOutlineStart0 = 0.200000
+			m_flAddSelfAmount = 2.000000
+			m_bAdditive = true
+			m_hTexture = resource:"materials/optflare_012.vtex"
+			m_flSelfIllumAmount = 1.000000
+			m_flOverbrightFactor = 1.500000
+			m_nOrientationType = 2
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_RandomYaw"
+			m_flDegreesMax = 90.000000
+			m_nFieldOutput = 12
+			m_flDegreesMin = -90.000000
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+			m_flDegreesMin = -45.000000
+			m_flDegreesMax = 45.000000
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 125
+			m_nAlphaMax = 213
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMin = 1
+			m_nSequenceMax = 2
+			m_bShuffle = true
+			m_bLinear = true
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin =
+			[
+				100.000000,
+				0.000000,
+				155.000000,
+			]
+			m_OffsetMax =
+			[
+				100.000000,
+				0.000000,
+				155.000000,
+			]
+			m_bLocalCoords = true
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 1.000000
+			m_fLifetimeMax = 1.000000
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin =
+			[
+				255,
+				189,
+				56,
+				255,
+			]
+			m_ColorMax =
+			[
+				202,
+				155,
+				36,
+				255,
+			]
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 6.000000
+		},
+	]
+}

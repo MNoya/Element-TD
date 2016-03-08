@@ -1,0 +1,222 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_ConstantColor =
+	[
+		68,
+		70,
+		80,
+		255,
+	]
+	m_flConstantRadius = 72.000000
+	m_flConstantLifespan = 5.000000
+	m_nMaxParticles = 4
+	m_Operators =
+	[
+		{
+			_class = "C_OP_FadeAndKill"
+			m_flEndFadeInTime = 1.000000
+			m_flEndAlpha = 0.500000
+			m_flOpTimeOffsetMin = 0.250000
+			m_flOpTimeOffsetMax = 0.750000
+			m_flStartFadeOutTime = 0.000000
+		},
+		{
+			_class = "C_OP_Decay"
+			m_nOpEndCapState = 1
+		},
+		{
+			_class = "C_OP_VectorNoise"
+			m_nFieldOutput = 0
+			m_vecOutputMin =
+			[
+				-1.000000,
+				-1.000000,
+				0.000000,
+			]
+			m_vecOutputMax =
+			[
+				1.000000,
+				1.000000,
+				0.000000,
+			]
+			m_fl4NoiseScale = 0.800000
+			m_bAdditive = true
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_fDrag = 0.050000
+		},
+		{
+			_class = "C_OP_PositionLock"
+		},
+		{
+			_class = "C_OP_MovementRotateParticleAroundAxis"
+			m_vecRotAxis =
+			[
+				3.000000,
+				1.700000,
+				1.000000,
+			]
+			m_flRotRate = 132.000000
+		},
+		{
+			_class = "C_OP_OscillateVector"
+			m_RateMin =
+			[
+				-64.000000,
+				-64.000000,
+				-64.000000,
+			]
+			m_RateMax =
+			[
+				64.000000,
+				64.000000,
+				64.000000,
+			]
+			m_FrequencyMin =
+			[
+				0.125000,
+				0.125000,
+				0.125000,
+			]
+			m_FrequencyMax =
+			[
+				3.000000,
+				3.000000,
+				3.000000,
+			]
+			m_bProportional = false
+			m_bProportionalOp = false
+			m_bOffset = true
+			m_flEndTime_min = 999999986991104.000000
+			m_flEndTime_max = 999999986991104.000000
+		},
+		{
+			_class = "C_OP_DampenToCP"
+			m_nControlPointNumber = 2
+			m_flRange = 24.000000
+		},
+		{
+			_class = "C_OP_Noise"
+			m_nFieldOutput = 4
+			m_flOutputMin = -32.000000
+			m_flOutputMax = 32.000000
+			m_fl4NoiseScale = 0.010000
+			m_bAdditive = true
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+			m_flFadeInTime = 0.200000
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 0.200000
+		},
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_nOrientationType = 2
+			m_OutlineColor =
+			[
+				0,
+				0,
+				0,
+				255,
+			]
+			m_flOutlineStart0 = 0.001000
+			m_flOutlineStart1 = 0.100000
+			m_flOutlineEnd0 = 0.020000
+			m_flOutlineEnd1 = 0.020000
+			m_flAnimationRate = 0.000000
+			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_ADDITIVE"
+			m_flAnimationRate2 = 3.050000
+			m_flSequence0RGBWeight = 0.344000
+			m_flSequence0AlphaWeight = 0.836000
+			m_flSequence1RGBWeight = 0.689000
+			m_flSequence1AlphaWeight = 0.412000
+			m_bRefract = true
+			m_flRefractAmount = 0.050000
+			m_nRefractBlurRadius = 3
+			m_nRefractBlurType = "BLURFILTER_GAUSSIAN"
+			m_hTexture = resource:"materials/particle/noisecloud01.vtex"
+			m_bGammaCorrectVertexColors = false
+			m_bSaturateColorPreAlphaBlend = false
+			m_flAddSelfAmount = 0.200000
+			m_bMod2X = true
+			m_flOverbrightFactor = 0.200000
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 1.000000
+			m_fLifetimeMax = 3.000000
+			m_fLifetimeRandExponent = 0.100000
+			m_bRunForParentApplyKillList = false
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_nControlPointNumber = 2
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMax = 5
+			m_bDisableOperator = true
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 3
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 18.000000
+		},
+	]
+	m_ForceGenerators =
+	[
+		{
+			_class = "C_OP_RandomForce"
+			m_MinForce =
+			[
+				-128.000000,
+				-128.000000,
+				-128.000000,
+			]
+			m_MaxForce =
+			[
+				128.000000,
+				128.000000,
+				128.000000,
+			]
+		},
+		{
+			_class = "C_OP_TwistAroundAxis"
+			m_fForceAmount = 150.000000
+		},
+		{
+			_class = "C_OP_AttractToControlPoint"
+			m_fForceAmount = 150.000000
+			m_fFalloffPower = -1.000000
+			m_nControlPointNumber = 2
+		},
+	]
+	m_Constraints =
+	[
+		{
+			_class = "C_OP_ConstrainDistance"
+			m_fMaxDistance = 10.000000
+			m_nControlPointNumber = 2
+		},
+	]
+}

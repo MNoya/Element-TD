@@ -1,0 +1,315 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_ConstantColor =
+	[
+		255,
+		221,
+		152,
+		255,
+	]
+	m_flConstantRadius = 17.000000
+	m_nMaxParticles = 55
+	m_Operators =
+	[
+		{
+			_class = "C_OP_RemapVectortoCP"
+			m_nOutControlPointNumber = 5
+			m_nFieldInput = 17
+			m_flOpStartFadeInTime = 0.125000
+			m_flOpEndFadeInTime = 0.125000
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_OscillateVector"
+			m_RateMin =
+			[
+				0.000000,
+				0.000000,
+				-2.000000,
+			]
+			m_RateMax =
+			[
+				0.000000,
+				0.000000,
+				2.000000,
+			]
+			m_flEndTime_min = 999999.000000
+			m_flEndTime_max = 999999.000000
+			m_flOscMult = 1.000000
+			m_flOscAdd = 0.800000
+		},
+		{
+			_class = "C_OP_MaxVelocity"
+			m_flMaxVelocity = 100.000000
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_OscillateVector"
+			m_RateMin =
+			[
+				0.000000,
+				0.000000,
+				-0.750000,
+			]
+			m_RateMax =
+			[
+				0.000000,
+				0.000000,
+				0.750000,
+			]
+			m_FrequencyMin =
+			[
+				0.000000,
+				0.000000,
+				1.000000,
+			]
+			m_bProportional = false
+			m_bProportionalOp = false
+			m_flEndTime_min = 999999.000000
+			m_flEndTime_max = 999999.000000
+			m_bDisableOperator = true
+			m_FrequencyMax =
+			[
+				0.000000,
+				0.000000,
+				1.000000,
+			]
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_fDrag = 0.600000
+		},
+		{
+			_class = "C_OP_EndCapTimedDecay"
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_OscillateScalar"
+			m_RateMin = 1.000000
+			m_RateMax = 2.000000
+			m_FrequencyMin = 0.200000
+			m_FrequencyMax = 0.300000
+			m_nField = 4
+			m_bProportional = false
+			m_bProportionalOp = false
+			m_flEndTime_min = 100000000.000000
+			m_flEndTime_max = 100000000.000000
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_OscillateScalar"
+			m_RateMin = 0.300000
+			m_RateMax = 1.000000
+			m_FrequencyMin = 0.170000
+			m_FrequencyMax = 0.270000
+			m_nField = 3
+			m_bProportional = false
+			m_bProportionalOp = false
+			m_flEndTime_min = 1000000000.000000
+			m_flEndTime_max = 1000000000.000000
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+		},
+		{
+			_class = "C_OP_MovementRotateParticleAroundAxis"
+			m_vecRotAxis =
+			[
+				1.000000,
+				1.000000,
+				1.000000,
+			]
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+		},
+		{
+			_class = "C_OP_PositionLock"
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartScale = 0.500000
+			m_flEndScale = 0.100000
+		},
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_flSelfIllumAmount = 1.000000
+			m_bSaturateColorPreAlphaBlend = false
+			m_flAddSelfAmount = 2.000000
+			m_flOverbrightFactor = 2.000000
+			m_hTexture = resource:"materials/particle/particle_sphere_highlight5.vtex"
+			m_bDisableOperator = true
+			m_bAdditive = true
+		},
+		{
+			_class = "C_OP_RenderSprites"
+			m_flSelfIllumAmount = 1.000000
+			m_hTexture = resource:"materials/particle/bubble.vtex"
+			m_flAddSelfAmount = 1.000000
+			m_bMod2X = true
+		},
+		{
+			_class = "C_OP_RenderSprites"
+			m_bRefract = true
+			m_flRefractAmount = 0.050000
+			m_nRefractBlurRadius = 3
+			m_nRefractBlurType = "BLURFILTER_GAUSSIAN"
+			m_hTexture = resource:"materials/particle/warp_ripple2_normal.vtex"
+			m_bAdditive = true
+		},
+		{
+			_class = "C_OP_RenderRopes"
+			m_flRadiusTaper = 0.100000
+			m_nMaxTesselation = 64
+			m_flTessScale = 30.000000
+			m_flTextureVWorldSize = 75.000000
+			m_flTextureVScrollRate = -15.000000
+			m_flTextureVOffset = 1.000000
+			m_flFinalTextureScaleU = -1.000000
+			m_flFinalTextureOffsetV = 0.200000
+			m_nOrientationType = 4
+			m_flSelfIllumAmount = 1.000000
+			m_bSaturateColorPreAlphaBlend = false
+			m_flAddSelfAmount = 2.000000
+			m_bAdditive = true
+			m_hTexture = resource:"materials/particle/swoop_05.vtex"
+			m_bClampV = true
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_RenderBlobs"
+			m_cutoffRadius = 7.000000
+			m_renderRadius = 1.000000
+			m_hMaterial = resource:"materials/models/wisp/wisp_face.vmat"
+			m_cubeWidth = 3.500000
+			m_bCannotBeRefracted = false
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 1.700000
+			m_fLifetimeMax = 1.700000
+		},
+		{
+			_class = "C_INIT_RandomVector"
+			m_vecMin =
+			[
+				1.000000,
+				1.000000,
+				1.000000,
+			]
+			m_vecMax =
+			[
+				1.000000,
+				1.000000,
+				1.000000,
+			]
+			m_nFieldOutput = 17
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_fRadiusMin = 25.000000
+			m_fRadiusMax = 25.000000
+			m_fSpeedMin = 100.000000
+			m_fSpeedMax = 100.000000
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_bLocalCoords = true
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 30
+			m_nAlphaMax = 118
+			m_nFieldOutput = 16
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMin = 1
+			m_nSequenceMax = 1
+			m_bShuffle = true
+			m_bLinear = true
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 35.000000
+			m_flRadiusMax = 35.000000
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_CreateSpiralSphere"
+			m_nDensity = 15
+			m_flInitialRadius = 15.000000
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_CreateOnModel"
+			m_flHitBoxScale = 0.507500
+			m_bDisableOperator = true
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 26
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 35.000000
+		},
+	]
+	m_Constraints =
+	[
+		{
+			_class = "C_OP_ConstrainDistance"
+			m_fMaxDistance = 30.000000
+			m_fMinDistance = 3.000000
+		},
+	]
+	m_ForceGenerators =
+	[
+		{
+			_class = "C_OP_TwistAroundAxis"
+			m_fForceAmount = 900.000000
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_AttractToControlPoint"
+			m_fForceAmount = 4500.000000
+			m_fFalloffPower = 0.750000
+		},
+		{
+			_class = "C_OP_RandomForce"
+			m_MinForce =
+			[
+				-50.000000,
+				-50.000000,
+				-50.000000,
+			]
+			m_MaxForce =
+			[
+				50.000000,
+				50.000000,
+				50.000000,
+			]
+		},
+	]
+}

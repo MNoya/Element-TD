@@ -1,0 +1,226 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nMaxParticles = 16
+	m_Children =
+	[
+		{
+			m_ChildRef = resource:"particles/custom/wisp/wisp_death_c.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/wisp/wisp_alt_1b_spark.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/wisp/wisp_base_attack_explosion.vpcf"
+			m_bDisableChild = true
+		},
+	]
+	m_Operators =
+	[
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_VectorNoise"
+			m_nFieldOutput = 0
+			m_vecOutputMin =
+			[
+				-1.000000,
+				-1.000000,
+				0.000000,
+			]
+			m_vecOutputMax =
+			[
+				1.000000,
+				1.000000,
+				0.000000,
+			]
+			m_fl4NoiseScale = 0.800000
+			m_bAdditive = true
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_fDrag = 0.250000
+		},
+		{
+			_class = "C_OP_MovementRotateParticleAroundAxis"
+			m_vecRotAxis =
+			[
+				3.000000,
+				1.700000,
+				1.000000,
+			]
+			m_flRotRate = 32.000000
+		},
+		{
+			_class = "C_OP_OscillateVector"
+			m_RateMin =
+			[
+				-32.000000,
+				-32.000000,
+				-32.000000,
+			]
+			m_RateMax =
+			[
+				32.000000,
+				32.000000,
+				32.000000,
+			]
+			m_FrequencyMin =
+			[
+				0.125000,
+				0.125000,
+				0.125000,
+			]
+			m_bProportional = false
+			m_bProportionalOp = false
+			m_bOffset = true
+			m_flEndTime_min = 999999986991104.000000
+			m_flEndTime_max = 999999986991104.000000
+		},
+		{
+			_class = "C_OP_Noise"
+			m_nFieldOutput = 16
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_PositionLock"
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_ColorFade =
+			[
+				162,
+				108,
+				41,
+				255,
+			]
+			m_flFadeEndTime = 0.500000
+		},
+		{
+			_class = "C_OP_InheritFromParentParticles"
+			m_nFieldOutput = 0
+			m_bDisableOperator = true
+		},
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_flStartFadeSize = 2.000000
+			m_flEndFadeSize = 3.000000
+			m_nSequenceCombineMode = "2"
+			m_flAddSelfAmount = 2.000000
+			m_bAdditive = true
+			m_nRefractBlurType = "2"
+			m_flOverbrightFactor = 2.000000
+			m_hTexture = resource:"materials/optflare_07.vtex"
+		},
+		{
+			_class = "C_OP_RenderTrails"
+			m_flMaxLength = 50.000000
+			m_flRadiusScale = 0.500000
+			m_hTexture = resource:"materials/particle/particle_cone_variamt_gradient_rev.vtex"
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.500000
+			m_fLifetimeMax = 1.000000
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 9.800000
+			m_flRadiusMax = 24.864500
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_fSpeedMax = 1200.000000
+		},
+		{
+			_class = "C_INIT_RandomYawFlip"
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin =
+			[
+				157,
+				242,
+				255,
+				255,
+			]
+			m_ColorMax =
+			[
+				157,
+				242,
+				255,
+				255,
+			]
+			m_nTintBlendMode = "2"
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin =
+			[
+				0.000000,
+				0.000000,
+				128.000000,
+			]
+			m_OffsetMax =
+			[
+				0.000000,
+				0.000000,
+				128.000000,
+			]
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 16
+		},
+	]
+	m_ForceGenerators =
+	[
+		{
+			_class = "C_OP_RandomForce"
+			m_MinForce =
+			[
+				-12800.000000,
+				-12800.000000,
+				-12800.000000,
+			]
+			m_MaxForce =
+			[
+				12800.000000,
+				12800.000000,
+				12800.000000,
+			]
+		},
+		{
+			_class = "C_OP_AttractToControlPoint"
+			m_vecComponentScale =
+			[
+				1.000000,
+				1.000000,
+				0.000000,
+			]
+			m_fForceAmount = -90000.000000
+			m_fFalloffPower = 0.500000
+		},
+	]
+	m_ConstantColor =
+	[
+		255,
+		147,
+		70,
+		255,
+	]
+}

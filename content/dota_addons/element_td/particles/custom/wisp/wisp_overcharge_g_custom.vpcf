@@ -1,0 +1,187 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_nMaxParticles = 20
+	m_Operators =
+	[
+		{
+			_class = "C_OP_FadeInSimple"
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartScale = 2.000000
+			m_flEndScale = 4.000000
+			m_flBias = 0.300000
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartScale = 1.800000
+			m_flEndScale = 4.000000
+			m_bDisableOperator = true
+			m_flStartTime = 0.500000
+			m_flBias = 0.100000
+		},
+		{
+			_class = "C_OP_BasicMovement"
+			m_fDrag = 1.000000
+		},
+		{
+			_class = "C_OP_OscillateScalar"
+			m_RateMin = 25.000000
+			m_RateMax = 25.000000
+			m_FrequencyMin = 0.100000
+			m_FrequencyMax = 0.100000
+			m_nField = 4
+			m_bProportional = false
+			m_bProportionalOp = false
+			m_flEndTime_min = 999999999.000000
+			m_flEndTime_max = 999999999.000000
+		},
+		{
+			_class = "C_OP_OscillateScalar"
+			m_RateMin = 20.000000
+			m_RateMax = 20.000000
+			m_FrequencyMin = 12.000000
+			m_FrequencyMax = 12.000000
+			m_flEndTime_min = 9999999999.000000
+			m_flEndTime_max = 9999999999.000000
+		},
+		{
+			_class = "C_OP_PositionLock"
+		},
+		{
+			_class = "C_OP_InheritFromParentParticles"
+			m_nFieldOutput = 6
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_SetToCP"
+			m_vecOffset =
+			[
+				20.000000,
+				0.000000,
+				0.000000,
+			]
+			m_bDisableOperator = true
+		},
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_flOutlineStart0 = 0.310000
+			m_flOutlineEnd0 = 0.799100
+			m_flOutlineEnd1 = 0.899900
+			m_flDiffuseAmount = 0.300000
+			m_flSourceAlphaValueToMapToZero = 0.494000
+			m_flSourceAlphaValueToMapToOne = 0.494000
+			m_bAdditive = true
+			m_hTexture = resource:"materials/particle/spotlight/spotlight.vtex"
+			m_nOrientationType = 2
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_RandomRotation"
+			m_flDegreesMin = 90.000000
+			m_flDegreesMax = 90.000000
+			m_bRandomlyFlipDirection = false
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin =
+			[
+				-107.000000,
+				0.000000,
+				0.000000,
+			]
+			m_OffsetMax =
+			[
+				-110.000000,
+				0.000000,
+				0.000000,
+			]
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_RandomYaw"
+			m_flDegreesMin = -360.000000
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 60.000000
+			m_flRadiusMax = 70.000000
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 1.500000
+			m_fLifetimeMax = 1.500000
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin =
+			[
+				167,
+				97,
+				26,
+				255,
+			]
+			m_ColorMax =
+			[
+				147,
+				56,
+				56,
+				255,
+			]
+			m_TintMax =
+			[
+				132,
+				132,
+				132,
+				255,
+			]
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMin = 4
+			m_nSequenceMax = 8
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin =
+			[
+				0.000000,
+				0.000000,
+				128.000000,
+			]
+			m_OffsetMax =
+			[
+				0.000000,
+				0.000000,
+				128.000000,
+			]
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 20
+		},
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_bDisableOperator = true
+		},
+	]
+}

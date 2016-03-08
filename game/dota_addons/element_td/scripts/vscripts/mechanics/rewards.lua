@@ -74,24 +74,51 @@ function Rewards:HandleHeroReplacement(hero)
         local unit = Entities:FindByName(nil, dev)
         if unit then
             local newHero = Rewards:ReplaceWithFakeHero(playerID, hero)
-            newHero.cosmetic_override = unit
 
-            unit:SetAbsOrigin(newHero:GetAbsOrigin())
-            unit:SetForwardVector(newHero:GetForwardVector())
-            unit:AddNewModifier(nil, nil, "modifier_out_of_world", {})
-            unit:SetParent(newHero, "attach_hitloc")
-            unit.customAnimations = {ACT_DOTA_ATTACK, ACT_DOTA_CAST_ABILITY_4}
-            unit.customTranslation = "abysm"
+            --Rewards:SetCosmeticOverride(newHero, unit)
+            Rewards:ApplyCustomWispParticles(newHero)
 
             UTIL_Remove(hero)
         end
     end
 end
 
+function Rewards:SetCosmeticOverride(hero, unit)
+    hero.cosmetic_override = unit
+    unit:SetAbsOrigin(hero:GetAbsOrigin())
+    unit:SetForwardVector(hero:GetForwardVector())
+    unit:AddNewModifier(nil, nil, "modifier_out_of_world", {})
+    unit:SetParent(hero, "attach_hitloc")
+    unit.customAnimations = {ACT_DOTA_ATTACK, ACT_DOTA_CAST_ABILITY_4}
+    unit.customTranslation = "abysm"
+
+    hero:SetModel(unit:GetModelName())
+    hero:AddNoDraw()
+
+    Timers:CreateTimer(0.03, function()
+        newHero:RespawnUnit()
+    end)
+end
+
 function Rewards:ReplaceWithFakeHero(playerID, hero)
     local newHero = PlayerResource:ReplaceHeroWith(playerID, "npc_dota_hero_abyssal_underlord", 0, 0)
     newHero.replaced = true
     return newHero
+end
+
+function Rewards:ApplyCustomWispParticles(hero)
+    if hero.ambient then
+        ParticleManager:DestroyParticle(hero.ambient, true)
+        hero.ambient = nil
+    end
+
+    hero.ambient = ParticleManager:CreateParticle("particles/custom/wisp/wisp_ambient.vpcf", PATTACH_CUSTOMORIGIN, hero)
+    ParticleManager:SetParticleControlEnt(hero.ambient, 0, hero, PATTACH_POINT_FOLLOW, "attach_hitloc", hero:GetAbsOrigin(), true)
+
+    -- Update portrait
+    hero:SetModel("models/custom_wisp.vmdl")
+    hero:SetOriginalModel("models/custom_wisp.vmdl")
+    hero:RespawnUnit()
 end
 
 function Rewards:CustomAnimation(playerID, caster)
@@ -111,6 +138,7 @@ function Rewards:HandleAnimationOrder(hero, order_type)
     local unit = hero.cosmetic_override
     if move_orders[order_type] then
         if not unit.runTimer then
+            unit:RemoveGesture(ACT_DOTA_IDLE)
             unit.runTimer = Timers:CreateTimer(function()
                 if unit and IsValidEntity(unit) and not hero:IsIdle() then
                     unit:StartGesture(ACT_DOTA_RUN)
@@ -119,6 +147,7 @@ function Rewards:HandleAnimationOrder(hero, order_type)
                     unit:RemoveGesture(ACT_DOTA_RUN)
                     unit.runTimer = nil
                 end
+                unit:StartGesture(ACT_DOTA_IDLE)
             end)
         end
     elseif stop_orders[order_type] then
@@ -128,6 +157,7 @@ function Rewards:HandleAnimationOrder(hero, order_type)
         end
         unit:RemoveGesture(ACT_DOTA_RUN)
     end
+    unit:StartGesture(ACT_DOTA_IDLE)
 end
 
 function Rewards:ConvertID64( steamID32 )
