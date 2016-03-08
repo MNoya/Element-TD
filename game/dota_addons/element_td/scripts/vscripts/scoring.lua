@@ -277,7 +277,7 @@ function ScoringObject:GetSpeedBonus( time )
 		bonus = bonus - ( time - 30 )*0.02
 	elseif time < 30 then
 		self.under30 = self.under30 + 1
-		bonus = bonus + ( 15 - time )*0.02
+		bonus = bonus + ( 30 - time )*0.02
 	end
 	return bonus - 1
 end
