@@ -2,6 +2,8 @@
 
 var free_towers = $("#free_towers")
 var god_mode = $("#god_mode")
+var zen_mode = $("#zen_mode")
+var no_cd = $("#no_cd")
 var pause = $("#pause")
 var wave = $("#WaveNumber")
 var max_level = 3;
@@ -13,6 +15,16 @@ function ToggleFreeTowers() {
 
 function ToggleGodMode() {
     GameEvents.SendCustomGameEventToServer( "sandbox_toggle_god_mode", { "state": god_mode.checked } );
+    if (god_mode.checked) zen_mode.checked = false
+}
+
+function ToggleZenMode() {
+    GameEvents.SendCustomGameEventToServer( "sandbox_toggle_zen_mode", { "state": zen_mode.checked }  );
+    if (zen_mode.checked) god_mode.checked = false
+}
+
+function ToggleNoCooldowns() {
+    GameEvents.SendCustomGameEventToServer( "sandbox_toggle_no_cd", { "state": no_cd.checked }  );
 }
 
 function MaxElementsPressed() {

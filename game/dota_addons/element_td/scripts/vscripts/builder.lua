@@ -133,6 +133,14 @@ function Build( event )
 
         -- Add the tower to the player data
         playerData.towers[unit:GetEntityIndex()] = building_name
+
+        -- Instant placement
+        if playerData.noCD then
+            unit.overrideBuildTime = 0
+        end
+
+        -- Normalize Hull Radius
+        unit:SetHullRadius(HULL_RADIUS)
     end)
 
     -- A building finished construction

@@ -63,7 +63,7 @@ function DamageEntity(entity, attacker, damage)
 	local element = damage
 
 	-- Increment damage based on debuffs
-	damage = ApplyDamageAmplification(damage, entity)
+	damage = ApplyDamageAmplification(damage, entity, attacker)
 	local amplified = damage
 
 	damage = math.ceil(damage) --round up to the nearest integer
@@ -78,8 +78,11 @@ function DamageEntity(entity, attacker, damage)
 	end
 	
 	local playerID = attacker:GetPlayerOwnerID()
-	if GetPlayerData(playerID).godMode then
+	local playerData = GetPlayerData(playerID)
+	if playerData.godMode then
 		damage = entity:GetMaxHealth()*2
+	elseif playerData.zenMode then
+		damage = 0
 	end
 
 	if entity:GetHealth() - damage <= 0 then
@@ -91,7 +94,6 @@ function DamageEntity(entity, attacker, damage)
 			goldBounty = attacker.scriptObject:ModifyGold(goldBounty)
 			local extra_gold = goldBounty - entity:GetGoldBounty()
 			
-			local playerData = GetPlayerData(playerID)
 			playerData.goldTowerEarned = playerData.goldTowerEarned + extra_gold
 
 			local origin = entity:GetAbsOrigin()
@@ -123,10 +125,6 @@ function DamageEntity(entity, attacker, damage)
 		entity:SetHealth(entity:GetHealth() - damage)
 	end
 
-	if entity.scriptClass == "CreepSwarm" then
-		entity.scriptObject:OnTakeDamage({})
-	end
-
 	return damage
 end
 
@@ -139,7 +137,7 @@ end
 --------------------------------------------------------------
 --------------------------------------------------------------
 
-function ApplyDamageAmplification(damage, creep)
+function ApplyDamageAmplification(damage, creep, tower)
 	local newDamage = damage
 	local amp = 0
 
@@ -160,10 +158,16 @@ function ApplyDamageAmplification(damage, creep)
 		end
 	end
 
+	-- Vengeance
+	local vModifier = tower:FindModifierByName("modifier_vengeance_debuff")
+	if vModifier then
+		amp = amp + vModifier.damageReduction
+	end
+
 	newDamage = newDamage * (1+ amp*0.01)
 
-	if GameRules.DebugDamage and amp > 0 then
-		print("[DAMAGE] Increased damage done to "..creep:GetUnitName().." damage of "..damage.." to "..newDamage.." due to an amplification of "..amp)
+	if GameRules.DebugDamage and amp ~= 0 then
+		print("[DAMAGE] Amplified damage done to "..creep:GetUnitName().." damage of "..damage.." to "..newDamage.." due to an amplification of "..amp)
 	end
 
 	return round(newDamage)

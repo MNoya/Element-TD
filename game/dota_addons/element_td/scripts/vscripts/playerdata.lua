@@ -78,14 +78,17 @@ function GetPlayerElementLevel( playerID, element )
 end
 
 function GetPlayerNetworth(playerID)
-	local playerData = GetPlayerData( playerID )
-	local playerNetworth = ElementTD.vPlayerIDToHero[playerID]:GetGold()
-	if playerData.networth then
+	local playerData = GetPlayerData(playerID)
+	
+    -- If a networth is set on EndGameForPlayer, that's the final value
+    if playerData.networth then
 		return playerData.networth
 	end
+
+    local playerNetworth = PlayerResource:GetGold(playerID) or 0
 	for i,v in pairs( playerData.towers ) do
 		local tower = EntIndexToHScript( i )
-		if tower and tower:GetHealth() == tower:GetMaxHealth() then
+		if IsValidEntity(tower) and tower:GetHealth() == tower:GetMaxHealth() then
 			for i=0,15 do
 				local ability = tower:GetAbilityByIndex( i )
 				if ability then
@@ -103,7 +106,7 @@ function GetPlayerNetworth(playerID)
 			end
 		end
 	end
-	return playerData.networth or playerNetworth
+	return playerNetworth
 end
 
 function IsPlayerUsingRandomMode( playerID )
@@ -144,10 +147,12 @@ function ModifyElementValue(playerID, element, change)
     end
 
     if playerData.elementalCount == 0 then
-   		StopHighlight(playerData.summoner, playerID)
-   		if playerData.lumber == 0 then
-   			RemoveUnitFromSelection( playerData.summoner )
-   		end
+        if playerData.summoner then
+   		   StopHighlight(playerData.summoner, playerID)
+   		   if playerData.lumber == 0 then
+   			  RemoveUnitFromSelection( playerData.summoner )
+   		   end
+        end
    	end
    	
 	playerData.elements[element] = playerData.elements[element] + change
@@ -246,6 +251,7 @@ end
 
 function UpdateElementOrbs(playerID, new_element)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    if not hero then return end
 	local orb_path = "particles/custom/orbs/"
 
 	if not hero.orbit_entities then

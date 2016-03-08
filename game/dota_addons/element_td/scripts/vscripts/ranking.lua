@@ -33,7 +33,7 @@ function requestInGamePlayerRanks( leaderboard )
 
 	-- For testing
 	local request = RANKING_URL .. "?req=player&ids=" .. table.concat(steamIDs, ",") .. "&lb=" .. leaderboard 
-	print('[Ranks]' .. request)
+	print('[Ranks] ' .. request)
 
 	-- Generate URL
 	local req = CreateHTTPRequest('GET', RANKING_URL)

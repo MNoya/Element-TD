@@ -7,5 +7,7 @@
         "building_settings",
         "elementals",
         "towers",
+        "gameinfo",
+        "rewards",
 	]
 } 

@@ -30,6 +30,12 @@
         "light_level"   "Light Element Level<br>200% against <font color='#8733C8'>Dark</font>, 50% against <font color='#D4880F'>Earth</font>"
         "dark_level"    "Dark Element Level<br>200% against <font color='#01A2FF'>Water</font>, 50% against <font color='#E5DE23'>Light</font>"
 
+        // Interest messages
+        "etd_interest_lock_leak_title"  "Interest Paused"
+        "etd_interest_lock_leak"        "Your interest has been paused because you leaked<br>a wave. Kill the wave to unpause."
+        "etd_interest_lock_end_title"   "Interest Stopped"
+        "etd_interest_lock_end"         "Your interest has been stopped because you have<br>reached the final wave."
+
         // Portal messages
         "etd_wave_water"            "200% from <font color='#8733C8'>Dark</font>, 50% from <font color='#C40000'>Fire</font>"
         "etd_wave_fire"             "200% from <font color='#01A2FF'>Water</font>, 50% from <font color='#00C400'>Nature</font>"
@@ -172,7 +178,9 @@
         "sandbox_mode_on"       "Test towers and strategies in a single player test mode.<br>Score will not count towards the leaderboard."
         "sandbox_resources"     "Resources"
         "sandbox_free_towers"   "Free Towers"
+        "sandbox_no_cooldowns"  "No Cooldowns"
         "sandbox_god_mode"      "God Mode"
+        "sandbox_zen_mode"      "Zen Mode"
         "sandbox_max_elements"  "Max Elements"
         "sandbox_full_life"     "Full Life"
         "sandbox_waves"         "Waves"
@@ -189,5 +197,32 @@
         "sandbox_pause"         "Pause"
         "sandbox_quit"          "End Game"
         "sandbox_wait"          "Please wait! Loading assets..."
+
+        "loading_screen_support" "If you like the game then consider supporting us at www.eletd.com/donate and claim great rewards too!"
+        "loading_screen_tip_0"  "Sandbox Mode is available for single player lobbies and allows you to easily test towers & builds."
+        "loading_screen_tip_1"  "Slows stack multiplicatively, meaning three 10% slows are worse than a single 30% slow."
+        "loading_screen_tip_2"  "In All Pick, you can still get Random elements if you -random or use the item on the summoner."
+        "loading_screen_tip_3"  "Arrow and cannon towers can be sold for 98% of their cost."
+        "loading_screen_tip_4"  "In random mode towers can be sold for 100% of their cost."
+        "loading_screen_tip_5"  "Press space to see the different towers you can build as well as their requirements."
+        "loading_screen_tip_6"  "Saving gold increases your interest gold income."
+        "loading_screen_tip_7"  "The faster you kill a wave the more score points you get."
+        "loading_screen_tip_8"  "Killing waves quickly gives you less interest gold but simultaneously more score points."
+        "loading_screen_tip_9"  "Compare yourself against others on www.eletd.com/leaderboard"
+        "loading_screen_tip_10" "Every 5th wave you gain 1 lumber allowing you to summon an elemental boss."
+        "loading_screen_tip_11" "You can exchange lumber for 1 pure essence and gold depending on your current wave."
+        "loading_screen_tip_12" "Pure essence allows you to build periodic tower or a fully maxed out elemental tower."
+        "loading_screen_tip_13" "The Interest Timer stops at the Boss waves, spend your gold!"
+        "loading_screen_tip_14" "Don't choose Level 3 Elements too early or you might be overrun."
+        "loading_screen_tip_15" "Each Support Tower can supply 4 Towers with Buffs."
+        "loading_screen_tip_16" "Got ideas to make the game better? Join the discussion at our website!"
+        "loading_screen_tip_17" "Plan your build for the next wave to prevent leaking on elements you are weak against."
+
+        "credits_title"         "Credits"
+        "credits_developers"    "Developers"
+        "support_thanks"        "Many thanks to our supporters!"
+        "leaderboard_link"      "www.eletd.com/leaderboard"
+        "web_link"              "www.eletd.com"
+        "follow_us_link"        "@ETD"
     }
 }

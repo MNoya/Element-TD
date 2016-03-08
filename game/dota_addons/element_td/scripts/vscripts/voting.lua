@@ -120,7 +120,8 @@ function FinalizeVotes()
 	Timers:RemoveTimer("VoteThinker")
 	CustomGameEventManager:Send_ServerToAllClients( "etd_toggle_vote_dialog", {visible = false} )
 
-	for _,v in pairs(PLAYERS_NOT_VOTED) do 
+	-- Only add a default vote if no one has voted
+	if tablelength(PLAYERS_NOT_VOTED) == tablelength(playerIDs) then
 		AddVote(VOTE_RESULTS.gamemode, "Competitive")
 		AddVote(VOTE_RESULTS.difficulty, "Normal")
 		AddVote(VOTE_RESULTS.elements, "AllPick")
@@ -192,11 +193,18 @@ function FinalizeVotes()
 		end
 	end
 
+	-- Game Info net table
+	CustomNetTables:SetTableValue("gameinfo", "gamemode", {value=gamemode})
+	CustomNetTables:SetTableValue("gameinfo", "difficulty", {value=difficulty})
+	CustomNetTables:SetTableValue("gameinfo", "random", {value=elements})
+	CustomNetTables:SetTableValue("gameinfo", "rush", {value=endless})
+	CustomNetTables:SetTableValue("gameinfo", "chaos", {value=order})
+	CustomNetTables:SetTableValue("gameinfo", "express", {value=length})
+
 	for k, plyID in pairs(playerIDs) do
 		local ply = PlayerResource:GetPlayer(plyID)
 		if ply then
-			local data = {playerID = plyID, gamemode = gamemode, difficulty = GetPlayerData(plyID).difficulty.difficultyName, elements = elements, endless = endless, order = order, length = length}
-			CustomGameEventManager:Send_ServerToPlayer( ply, "etd_vote_results", data )
+			CustomGameEventManager:Send_ServerToPlayer( ply, "etd_vote_results", {} )
 			CustomGameEventManager:Send_ServerToPlayer( ply, "etd_next_wave_info", { nextWave = GameSettings:GetGameLength().Wave, nextAbility1 = creepsKV[WAVE_CREEPS[GameSettings:GetGameLength().Wave]].Ability1, nextAbility2 = creepsKV[WAVE_CREEPS[GameSettings:GetGameLength().Wave]].Ability2 } )
 		end
 	end
@@ -212,7 +220,6 @@ function FinalizeVotes()
 	Timers:CreateTimer("PostVoteTimer", {
 		endTime = 1,
 		callback = function()
-		    START_GAME_TIME = GameRules:GetGameTime()
 			for _, plyID in pairs(playerIDs) do
 				StartBreakTime(plyID, GameSettings.length.PregameTime)
 				if GameSettings.length.PregameTime == 30 then

@@ -6,8 +6,9 @@
 	<Panel class="PlayerRow">
 		<Panel id="PlayerRowContainer">
 			<Panel id="Avatar" class="ScoreCol_Avatar ScoreboardPanel">
-				<DOTAAvatarImage id="AvatarImage" steamid="local" />
-			</Panel>
+            	<DOTAAvatarImage id="AvatarImage" steamid="local" />
+            	<Image id="BorderImage" hittest="false" class="HiddenBorder" />
+        	</Panel>
 			<Panel id="PlayerDetailsContainer" class="ScoreCol_PlayerDetails ScoreboardPanel">
 				<Panel id="PlayerAndHeroName">
 					<Label id="PlayerName" text="AAAAA" />

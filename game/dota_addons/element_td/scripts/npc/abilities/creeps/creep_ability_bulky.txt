@@ -1,0 +1,19 @@
+//============================================================//
+// Creep Ability: Bulky									      //
+//============================================================//
+"creep_ability_bulky"
+{
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"MaxLevel"						"1"
+	"AbilityTextureName"			"pudge/scavenger_dragon_ability/pudge_flesh_heap"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_health_pct"		"225"
+		}
+	}
+}

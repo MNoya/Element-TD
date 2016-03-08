@@ -36,7 +36,7 @@ function InterestManager:CreateTimerForPlayer(playerID, timeRemaining)
 					InterestManager:GiveInterest(playerID)
 				else
 					Log:debug("Completely stopping interest for player " .. playerID);
-					InterestManager:PauseInterestForPlayer(playerID, "#etd_interest_lock_end")
+					InterestManager:PauseInterestForPlayer(playerID, "#etd_interest_lock_end_title", "#etd_interest_lock_end")
 					return nil
 				end
 
@@ -104,7 +104,7 @@ function InterestManager:ResumeInterestForPlayer(playerID)
 	interestData.TimeRemaining = 0
 end
 
-function InterestManager:PauseInterestForPlayer(playerID, msg)
+function InterestManager:PauseInterestForPlayer(playerID, title, msg)
 	local player = PlayerResource:GetPlayer(playerID)
 	if player then
 		local interestData = GetPlayerData(playerID).interestData
@@ -118,7 +118,7 @@ function InterestManager:PauseInterestForPlayer(playerID, msg)
 			Timers:RemoveTimer(timerName)
 			InterestManager.timers[playerID] = nil
 
-			CustomGameEventManager:Send_ServerToPlayer(player, "etd_pause_interest", {msg = msg})
+			CustomGameEventManager:Send_ServerToPlayer(player, "etd_pause_interest", {title = title, msg = msg})
 		end
 	end
 end
@@ -138,7 +138,7 @@ function InterestManager:PlayerLeakedWave(playerID, waveNumber)
 		interestData.NumLockingWaves = interestData.NumLockingWaves + 1
 		if not interestData.Locked then
 			interestData.Locked = true
-			InterestManager:PauseInterestForPlayer(playerID, "#etd_interest_lock_leak")
+			InterestManager:PauseInterestForPlayer(playerID, "#etd_interest_lock_leak_title", "#etd_interest_lock_leak")
 		end
 	end
 end

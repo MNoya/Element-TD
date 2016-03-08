@@ -23,6 +23,8 @@ end
 
 function BasicTower:OnAttack(keys) end
 
-function BasicTower:OnCreated() end
+function BasicTower:OnCreated()
+    --self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_OLDER+TOWER_TARGETING_CLOSEST,keep_target=true,change_on_leak=true})
+end
 
 RegisterTowerClass(BasicTower, BasicTower.className);

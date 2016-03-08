@@ -37,6 +37,15 @@
           </Panel>
 
           <Panel class="Row">
+            <ToggleButton id="no_cd" class="DemoButton" onactivate="ToggleNoCooldowns()">
+              <Label text="#sandbox_no_cooldowns"/>
+            </ToggleButton>
+            <ToggleButton id="zen_mode" class="DemoButton" onactivate="ToggleZenMode()">
+              <Label text="#sandbox_zen_mode"/>
+            </ToggleButton>
+          </Panel>
+
+          <Panel class="Row">
             <Button id="max_elements" class="DemoButton" onactivate="MaxElementsPressed()">
               <Label text="#sandbox_max_elements"/>
             </Button>
@@ -44,6 +53,7 @@
               <Label text="#sandbox_full_life"/>
             </Button>
           </Panel>
+          
 
           <!-- Gold / Lumber / Essence entry boxes --> 
           <Panel class="ThreeEntry">

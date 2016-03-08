@@ -31,6 +31,11 @@ function customSchema:init()
             end
         end
     end, nil)
+
+    -- Write 'test_schema' on the console to test your current functions instead of having to end the game
+    if Convars:GetBool('developer') and not test_schema then
+        Convars:RegisterCommand("test_schema", function() PrintSchema(BuildGameArray(), BuildPlayersArray()) end, "Test the custom schema arrays", 0)
+    end
 end
 
 -------------------------------------
@@ -45,7 +50,7 @@ function BuildGameArray()
     -- Add game values here as game.someValue = GetSomeGameValue()
     game.diff = GetPlayerDifficulty(0).difficultyName
     game.exp = EXPRESS_MODE
-    game.ord = GameSettings.order
+    game.ord = GameRules.sandBoxEnabled or GameSettings.order
     game.hor = GameSettings.endless
     game.rnd = GameSettings.elementsOrderName
     game.str = START_TIME
@@ -140,11 +145,6 @@ function PrintSchema(gameArray, playerArray)
     print("\n-------- PLAYER DATA --------")
     DeepPrintTable(playerArray)
     print("-------------------------------------")
-end
-
--- Write 'test_schema' on the console to test your current functions instead of having to end the game
-if Convars:GetBool('developer') then
-    Convars:RegisterCommand("test_schema", function() PrintSchema(BuildGameArray(), BuildPlayersArray()) end, "Test the custom schema arrays", 0)
 end
 
 -------------------------------------

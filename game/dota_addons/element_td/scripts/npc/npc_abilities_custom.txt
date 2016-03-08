@@ -300,6 +300,25 @@
 			}
 		}
 	}
+	//============================================================//
+	// Creep Ability: Bulky									      //
+	//============================================================//
+	"creep_ability_bulky"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"pudge/scavenger_dragon_ability/pudge_flesh_heap"
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_pct"		"225"
+			}
+		}
+	}
 	//============================================================================================//
 	//============================================================================================//
 	//============================================================================================//
@@ -361,14 +380,19 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"1"
+				"fast_speed"			"750"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"interval"				"3"	
+				"duration"				"1"
 			}
 			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"interval"				"3"	
+			}
+			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"interval_tooltip"		"2"	
@@ -390,7 +414,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"20"
+				"heal_amount"			"25"
 			}
 			"02"
 			{
@@ -557,7 +581,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"2"
+				"bonus_health_regen"	"3"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_heal_pct"			"75"
 			}
 		}
 	
@@ -567,8 +596,6 @@
 			{
 				"EffectName"	"particles/generic_gameplay/rune_regen_owner.vpcf"
 				"EffectAttachType"	"follow_origin"
-	
-				"IsHidden"	"1"
 				"Passive"	"1"
 			}
 		}
@@ -638,6 +665,59 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"health"				"50"
+			}
+		}
+	}
+	//============================================================//
+	// Creep Ability: Vengeance								      //
+	//============================================================//
+	"creep_ability_vengeance"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"creeps/vengeance"
+	
+		"Modifiers"
+		{
+			// FX on the creep
+			"modifier_vengeance"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/custom/creeps/vengeance/ambient.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"            "TARGET"
+						"ControlPointEntities"
+						{
+							"CASTER"	"attach_hitloc"
+							"CASTER"	"attach_hitloc"
+						}
+					}
+				}	
+			}
+		}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_reduction"		"-10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3"
 			}
 		}
 	}
@@ -916,36 +996,6 @@
 	                    "ScriptFile"    "creeps/particles.lua"
 	                    "Function"      "TinyDeath"
 	                    "Level"         "4"
-	                }
-	            }
-	        }
-	    }
-	}
-	"windspirit_particles"
-	{
-	    "BaseClass"                     "ability_datadriven"
-	    "MaxLevel"                      "1"
-	
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-	
-	    "precache"
-	    {
-	        "particle"  "particles/units/heroes/hero_brewmaster/brewmaster_storm_death.vpcf"
-	    }
-	
-	    "Modifiers"
-	    {
-	        "modifier_wind_spirit"
-	        {
-	            "Passive"           "1"
-	            "IsHidden"          "1"
-	
-	            "OnDeath"
-	            {
-	                "RunScript"
-	                {
-	                    "ScriptFile"    "creeps/particles.lua"
-	                    "Function"      "WindSpirit"
 	                }
 	            }
 	        }
@@ -2510,7 +2560,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"32 160 800"
+				"damage"				"30 150 750"
 			}
 			"02"
 			{
@@ -2614,7 +2664,6 @@
 			{
 				"EffectName"	"particles/units/heroes/hero_winter_wyvern/wyvern_winters_curse_ring_rope.vpcf"
 				"EffectAttachType" "follow_origin"
-				"Duration"		"%duration"
 			}
 		}
 	
@@ -2684,7 +2733,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"reset_time"		"3"
+				"reset_time"		"4"
 			}
 			"02"
 			{
@@ -2694,7 +2743,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"cap"				"15"
+				"cap"				"16"
 			}
 		}
 	}
@@ -3085,7 +3134,7 @@
 	
 			"modifier_life_tower_current_kill_counter"
 			{
-				"TextureName" "towers/life_tower_afterlife"
+				"TextureName" "towers/life"
 			}
 		}
 	
@@ -3093,8 +3142,8 @@
 		{
 			"01"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"kills_required"				"3 2 1"
+				"var_type"						"FIELD_FLOAT"
+				"kills_required"				"3 1.5 1"
 			}
 			"02"
 			{
@@ -3359,7 +3408,7 @@
 				"Duration"		"%duration"
 				"IsDebuff"		"1"
 				"IsPurgable"	"1"
-				"TextureName"	"phoenix_supernova"
+				"TextureName"	"towers/nova"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
@@ -3432,9 +3481,24 @@
 	"obliteration_tower_obliterate"
 	{
 		"BaseClass"						"ability_datadriven"											
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityTextureName"			"towers/obliteration"
 		"MaxLevel"						"2"
+	
+		"AbilityCastPoint"				"0.0"
+	
+		"AbilityCastRange"      		"1150"
+	    "AOERadius"             		"300"
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"    "mechanics/ground_attacks.lua"
+	            "Function"      "AttackGround"
+	            "Target"        "POINT"
+	        }
+	    }
 	
 		"Modifiers"
 		{
@@ -3447,12 +3511,63 @@
 					"RunScript"
 					{
 						"Target"			"POINT"
-						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"ScriptFile"		"towers/towerevents.lua"
 						"Function"			"TriggerEvent"
 						"Event"				"OnAttack"
 					}
 				}
 			}
+	
+			"modifier_attacking_ground"
+	        {
+	            "IsHidden"          "1"
+	    
+	            "OnOrder"
+	            {
+	                "RemoveModifier"
+	                {
+	                    "ModifierName"  "modifier_attacking_ground"
+	                    "Target"        "CASTER"
+	                }
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/ground_attacks.lua"
+	                    "Function"      "StopAttackGround"
+	                }
+	                "RunScript"
+					{
+						"ScriptFile"		"towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"ReapplyAttackLogic"
+					}
+	            }
+	
+	            // Attacking ground is a fake attack
+	            "OnAttack"
+	            {
+	                "RemoveModifier"
+	                {
+	                    "ModifierName"  "modifier_attacking_ground"
+	                    "Target"        "CASTER"
+	                }
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/ground_attacks.lua"
+	                    "Function"      "StopAttackGround"
+	                }
+	                "RunScript"
+					{
+						"ScriptFile"		"towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"ReapplyAttackLogic"
+					}
+	            }
+	
+	            "Properties"
+	            {
+	                "MODIFIER_PROPERTY_DISABLE_AUTOATTACK"  "1"
+	            }
+	        }
 		}
 		"AbilitySpecial"
 		{
@@ -3657,6 +3772,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"bonus_damage"			"20"
 			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_stacks"			"20"
+			}
 		}
 	}
 	//=================================================================================================================
@@ -3708,7 +3828,7 @@
 				"Duration"			"%duration"
 				"IsDebuff"			"1"
 				"IsPurgable"	"1"
-				"TextureName"		"treant_leech_seed"
+				"TextureName"		"towers/roots"
 				"EffectName"		"particles/custom/towers/roots/debuff.vpcf"
 				"EffectTargetType"	"follow_origin"
 				"Properties"
@@ -3752,7 +3872,7 @@
 				"ThinkInterval"	"1"
 				"IsDebuff"		"1"
 				"IsPurgable"	"1"
-				"TextureName"	"treant_leech_seed"
+				"TextureName"	"towers/roots"
 				
 				"OnIntervalThink"
 				{
@@ -3835,7 +3955,7 @@
 	"runic_tower_magic_attack"
 	{	
 		"BaseClass"						"ability_datadriven"											
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"towers/runic"
 		"MaxLevel"						"1"
 		"AbilityCooldown"				"9"
@@ -3855,11 +3975,10 @@
 		{
 			"modifier_magic_attack"
 			{
-				"Duration"		"%duration"
 				"EffectName"		"particles/custom/towers/runic/ambient.vpcf"
 				"EffectAttachType"	"follow_origin"
-	
 			}
+			
 			"modifier_magic_attack_passive"
 			{
 				"Passive"	"1"
@@ -4220,7 +4339,7 @@
 		{
 			"modifier_tornado_aura"
 			{
-				"EffectName"			"particles/neutral_fx/tornado_ambient.vpcf"
+				"EffectName"			"particles/custom/towers/windstorm/tornado.vpcf"
 				"EffectAttachType"		"follow_origin"
 				"Passive"				"1"
 				"IsHidden"				"1"
@@ -4228,6 +4347,11 @@
 				"Aura_Radius"			"%radius"
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Aura_Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+	
+				"States"
+				{
+					"MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
 			}
 			"modifier_tornado_slow"
 			{
@@ -4304,7 +4428,7 @@
 		"MaxLevel"						"2"
 	
 		"AbilityCastPoint"				"0.0"
-		"AbilityCastRange"      		"900"
+		"AbilityCastRange"      		"1150"
 	
 	    "AOERadius"             		"%radius"
 	

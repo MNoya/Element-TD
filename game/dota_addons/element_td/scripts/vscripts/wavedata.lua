@@ -161,6 +161,7 @@ function StartBreakTime(playerID, breakTime, rush_wave)
                 CURRENT_BOSS_WAVE = 1
                 if hero:IsAlive() then
                     Log:info("Spawning the first boss wave for ["..playerID.."] ".. playerData.name)            
+                    playerData.iceFrogKills = 0
                     playerData.bossWaves = CURRENT_BOSS_WAVE
                 end
                 ShowBossWaveMessage(playerID, CURRENT_BOSS_WAVE)
@@ -250,6 +251,11 @@ function SpawnWaveForPlayer(playerID, wave)
     local startPos = EntityStartLocations[sector]
     local ply = PlayerResource:GetPlayer(playerID)
 
+    -- First wave marks the start of the game
+    if START_GAME_TIME == 0 then
+        START_GAME_TIME = GameRules:GetGameTime()
+    end
+
     playerData.waveObject = waveObj
     if wave == WAVE_COUNT then
         playerData.waveObjects[WAVE_COUNT+playerData.bossWaves] = waveObj
@@ -283,7 +289,7 @@ function SpawnWaveForPlayer(playerID, wave)
             EmitSoundOnClient("ui.npe_objective_complete", ply)
         end
 
-        -- Boss Wave completed starts the new one with no breaktime (unless its Endless)
+        -- Boss Wave completed starts the new one with no breaktime
         if playerData.completedWaves >= WAVE_COUNT and not EXPRESS_MODE then
             local bossWaveNumber = playerData.completedWaves - WAVE_COUNT + 1
             print("Player [" .. playerID .. "] has completed boss wave "..bossWaveNumber)
@@ -291,14 +297,12 @@ function SpawnWaveForPlayer(playerID, wave)
             -- Boss wave score
             playerData.scoreObject:UpdateScore(SCORING_BOSS_WAVE_CLEAR, wave)
 
-            if GameSettings:GetEndless() == "Normal" then
-                playerData.bossWaves = playerData.bossWaves + 1
-                Log:info("Spawning boss wave " .. playerData.bossWaves .. " for ["..playerID.."] ".. playerData.name)
+            playerData.bossWaves = playerData.bossWaves + 1
+            Log:info("Spawning boss wave " .. playerData.bossWaves .. " for ["..playerID.."] ".. playerData.name)
         
-                UpdateWaveInfo(playerID, wave) -- update wave info
-                ShowBossWaveMessage(playerID, playerData.bossWaves)
-                SpawnWaveForPlayer(playerID, WAVE_COUNT) -- spawn the next boss wave
-            end
+            UpdateWaveInfo(playerID, wave) -- update wave info
+            ShowBossWaveMessage(playerID, playerData.bossWaves)
+            SpawnWaveForPlayer(playerID, WAVE_COUNT) -- spawn the next boss wave
             
             return
         end
@@ -307,6 +311,7 @@ function SpawnWaveForPlayer(playerID, wave)
         local finishedExpress = EXPRESS_MODE and playerData.completedWaves == WAVE_COUNT
         local clearedNormal = not EXPRESS_MODE and playerData.completedWaves == WAVE_COUNT - 1
         if finishedExpress or clearedNormal then
+            playerData.clearTime = GameRules:GetGameTime() - START_GAME_TIME -- Used to determine the End Speed Bonus
             playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR, wave )
             Timers:CreateTimer(2, function()
                 playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
@@ -418,14 +423,23 @@ function CreateMoveTimerForCreep(creep, sector)
                     InterestManager:PlayerLeakedWave(playerID, creep.waveObject.waveNumber)
                 end
 
-                -- Reduce lives exponentially
-                if not creep.reduced_lives then
-                    creep.reduced_lives = 1
-                else
-                    creep.reduced_lives = creep.reduced_lives * 2
+                -- Boss Wave leaks = 3 lives
+                local lives = 1
+                if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then
+                    lives = 3
                 end
 
-                ReduceLivesForPlayer(playerID, creep.reduced_lives)
+                -- Bulky creeps count as 2
+                if creep:HasAbility("creep_ability_bulky") then
+                    lives = lives * 2
+                end
+
+                ReduceLivesForPlayer(playerID, lives)
+
+                creep.recently_leaked = true
+                Timers:CreateTimer(10, function()
+                    if IsValidEntity(creep) then creep.recently_leaked = nil end
+                end)
 
                 FindClearSpaceForUnit(creep, EntityStartLocations[playerData.sector + 1], true)
                 creep:SetForwardVector(Vector(0, -1, 0))
@@ -449,15 +463,8 @@ function ReduceLivesForPlayer( playerID, lives )
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     local ply = PlayerResource:GetPlayer(playerID)
 
-    lives = lives or 1
-
-    -- Boss Wave leaks = 3 lives
-    if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then
-        lives = 3
-    end
-
     -- Cheats can melt steel beams
-    if playerData.godMode then
+    if playerData.zenMode or playerData.godMode then
         lives = 0
         return
     end

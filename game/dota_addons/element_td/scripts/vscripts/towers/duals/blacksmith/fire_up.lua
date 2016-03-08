@@ -4,6 +4,18 @@ LinkLuaModifier("modifier_fire_up", "towers/duals/blacksmith/modifier_fire_up", 
 function blacksmith_tower_fire_up:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
+	local playerID = caster:GetPlayerOwnerID()
+
+	-- Apply flag to prevent buffing twice on the same short period of time
+    if target.bs_buffed then
+        self:EndCooldown()
+        return
+    end
+    target.bs_buffed = true
+    Timers:CreateTimer(1, function() 
+        if IsValidEntity(target) then target.bs_buffed = false end
+    end)
+
 	caster:EmitSound("Blacksmith.Cast")
 
 	local particleName = "particles/units/heroes/hero_ogre_magi/ogre_magi_bloodlust_cast.vpcf"
@@ -21,6 +33,11 @@ function blacksmith_tower_fire_up:OnSpellStart()
 	target:AddNewModifier(caster, self, "modifier_fire_up", {
 		duration = self:GetSpecialValueFor("duration")
 	})
+
+	-- No cooldown sandbox option
+	if GetPlayerData(playerID).noCD then
+        self:EndCooldown()
+    end
 end
 
 function blacksmith_tower_fire_up:CastFilterResultTarget(target)

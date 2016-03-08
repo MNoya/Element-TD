@@ -47,7 +47,7 @@
 			"Duration"			"%duration"
 			"IsDebuff"			"1"
 			"IsPurgable"	"1"
-			"TextureName"		"treant_leech_seed"
+			"TextureName"		"towers/roots"
 			"EffectName"		"particles/custom/towers/roots/debuff.vpcf"
 			"EffectTargetType"	"follow_origin"
 			"Properties"
@@ -91,7 +91,7 @@
 			"ThinkInterval"	"1"
 			"IsDebuff"		"1"
 			"IsPurgable"	"1"
-			"TextureName"	"treant_leech_seed"
+			"TextureName"	"towers/roots"
 			
 			"OnIntervalThink"
 			{

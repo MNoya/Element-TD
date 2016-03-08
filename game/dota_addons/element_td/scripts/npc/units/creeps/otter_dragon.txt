@@ -1,6 +1,6 @@
-"dark_stalker"
+"otter_dragon"
 {
-    "MinimapIcon"               "minimap_icon_purple"
+    "MinimapIcon"               "minimap_icon_green"
     "MinimapIconSize"           "200"
     "MinimapDisableTint"        "1"
 
@@ -26,34 +26,11 @@
     "StatusManaRegen"        "0"
     "VisionDaytimeRange"        "1200"
     "VisionNighttimeRange"        "800"
-    "Model"        "models/heroes/terrorblade/terrorblade_arcana.vmdl"
-    "ModelScale"        "1"
+    "Model"        "models/courier/otter_dragon/otter_dragon.vmdl"
+    "ModelScale"        "2.4"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
-    "ScriptClass"        "CreepImage"
-    "Ability1"        "dark_armor"
-    "Ability2"        ""
-
-    "Creature"
-    {
-        "AttachWearables"
-        {
-            "Wearable1"
-            {
-                "ItemDef"        "306"
-            }
-            "Wearable2"
-            {
-                "ItemDef"        "307"
-            }
-            "Wearable3"
-            {
-                "ItemDef"        "476"
-            }
-            "Wearable4"
-            {
-                "ItemDef"        "478"
-            }
-        }
-    }
+    "ScriptClass"     "CreepBulky"
+    "Ability1"        "nature_armor"
+    "Ability2"        "creep_ability_bulky"
 }

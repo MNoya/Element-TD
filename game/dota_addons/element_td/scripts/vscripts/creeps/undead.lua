@@ -29,6 +29,7 @@ function CreepUndead:OnDeath()
     newCreep.class = creepClass
     newCreep.playerID = creep.playerID
     newCreep.waveObject = creep.waveObject
+    newCreep.waveNumber = creep.waveNumber
     newCreep:CreatureLevelUp(newCreep.waveObject.waveNumber-newCreep:GetLevel())
     
     creep.waveObject:RegisterCreep(newCreep:entindex())

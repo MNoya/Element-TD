@@ -11,6 +11,8 @@ function Sandbox:Init()
     -- Resources section
     CustomGameEventManager:RegisterListener("sandbox_toggle_free_towers", Dynamic_Wrap(Sandbox, "FreeTowers"))
     CustomGameEventManager:RegisterListener("sandbox_toggle_god_mode", Dynamic_Wrap(Sandbox, "GodMode"))
+    CustomGameEventManager:RegisterListener("sandbox_toggle_zen_mode", Dynamic_Wrap(Sandbox, "ZenMode"))
+    CustomGameEventManager:RegisterListener("sandbox_toggle_no_cd", Dynamic_Wrap(Sandbox, "NoCD"))
     CustomGameEventManager:RegisterListener("sandbox_max_elements", Dynamic_Wrap(Sandbox, "MaxElements"))
     CustomGameEventManager:RegisterListener("sandbox_full_life", Dynamic_Wrap(Sandbox, "FullLife"))
     CustomGameEventManager:RegisterListener("sandbox_set_resources", Dynamic_Wrap(Sandbox, "SetResources")) -- Gold/Lumber/Essence
@@ -40,8 +42,8 @@ function Sandbox:Enable(event)
     local playerID = event.PlayerID
     local playerData = GetPlayerData(playerID)
 
-    if not playerData.sandBoxEnabled then
-        playerData.sandBoxEnabled = true
+    if not GameRules.sandBoxEnabled then
+        GameRules.sandBoxEnabled = "Sandbox"
         ElementTD:CheatsEnabled()
     else
         return
@@ -91,7 +93,35 @@ function Sandbox:GodMode(event)
 
     ShowSandboxToggleCommand(playerID, "#sandbox_god_mode", state)
 
-    GetPlayerData(playerID).godMode = state
+    playerData.godMode = state
+    if state then
+        playerData.zenMode = false
+    end
+end
+
+function Sandbox:ZenMode(event)
+    local playerID = event.PlayerID
+    local state = event.state == 1
+    local playerData = GetPlayerData(playerID)
+    playerData.cheated = true
+
+    ShowSandboxToggleCommand(playerID, "#sandbox_zen_mode", state)
+
+    playerData.zenMode = state
+    if state then
+        playerData.godMode = false
+    end
+end
+
+function Sandbox:NoCD(event)
+    local playerID = event.PlayerID
+    local state = event.state == 1
+    local playerData = GetPlayerData(playerID)
+    playerData.cheated = true
+
+    ShowSandboxToggleCommand(playerID, "#sandbox_no_cooldowns", state)
+
+    GetPlayerData(playerID).noCD = state
 end
 
 function Sandbox:MaxElements(event)
@@ -204,8 +234,9 @@ function Sandbox:SpawnWave(event)
     end
     waveNumber = tonumber(waveNumber)
 
-    if waveNumber > WAVE_COUNT then
+    if waveNumber >= WAVE_COUNT then
         waveNumber = WAVE_COUNT
+        playerData.iceFrogKills = 0
     end
 
     CURRENT_WAVE = waveNumber

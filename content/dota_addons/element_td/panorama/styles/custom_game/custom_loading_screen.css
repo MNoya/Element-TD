@@ -213,3 +213,32 @@
 		opacity: 1;
 	}
 }
+
+
+#Tip
+{
+    horizontal-align: center;
+    vertical-align: bottom;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 55px;
+    color: #FFF;
+    font-size: 25px;
+    text-shadow: 0px 0px 5px 3.0 #000;
+    font-family: Radiance;
+
+    transition-property: opacity;
+    transition-duration: 1s;
+}
+
+.Show
+{
+    transition-property: opacity;
+    transition-duration: 1s;
+    opacity: 1;
+}
+
+.Hide
+{
+	opacity: 0;
+}

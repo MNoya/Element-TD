@@ -13,7 +13,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_health_regen"	"2"
+			"bonus_health_regen"	"3"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"max_heal_pct"			"75"
 		}
 	}
 
@@ -23,8 +28,6 @@
 		{
 			"EffectName"	"particles/generic_gameplay/rune_regen_owner.vpcf"
 			"EffectAttachType"	"follow_origin"
-
-			"IsHidden"	"1"
 			"Passive"	"1"
 		}
 	}

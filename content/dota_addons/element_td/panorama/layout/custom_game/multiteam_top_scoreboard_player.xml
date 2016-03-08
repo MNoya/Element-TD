@@ -29,7 +29,10 @@
 				<Panel hittest="false" class="PlayerColorBarMask" />
 				<Panel hittest="false" id="PlayerBG"/>
 				<Image hittest="false" id="HeroIcon" />
-				<DOTAAvatarImage id="AvatarImage" steamid="" />
+				<Panel id="Avatar">
+					<DOTAAvatarImage id="AvatarImage" steamid="" />
+					<Image id="BorderImage" hittest="false" class="HiddenBorder" />
+				</Panel>
 				<Label hittest="false" id="PlayerWave" text=""/>
 			</Button>
 			<Image hittest="false" id="DisconnectionIndicator" src="s2r://panorama/images/custom_game/icon_disconnect_png.vtex" />

@@ -100,23 +100,28 @@ function SetCustomLumber(playerID, amount)
 
     local current_lumber = playerData.lumber
     local summoner = playerData.summoner
-    if current_lumber > 0 then
-        if not summoner.particle then
-            local origin = summoner:GetAbsOrigin()
-            local particleName = "particles/econ/courier/courier_trail_01/courier_trail_01.vpcf"
-            summoner.particle = ParticleManager:CreateParticleForPlayer(particleName, PATTACH_CUSTOMORIGIN, summoner, PlayerResource:GetPlayer(playerID))
-            ParticleManager:SetParticleControl(summoner.particle, 0, Vector(origin.x, origin.y, origin.z+30))
-            ParticleManager:SetParticleControl(summoner.particle, 15, Vector(255,255,255))
-            ParticleManager:SetParticleControl(summoner.particle, 16, Vector(1,0,0))
-        end        
-    else
-        if summoner.particle then
-            ParticleManager:DestroyParticle(summoner.particle, false)
-            summoner.particle = nil
+    if summoner then
+        if current_lumber > 0 then
+            if not summoner.particle then
+                local origin = summoner:GetAbsOrigin()
+                local particleName = "particles/econ/courier/courier_trail_01/courier_trail_01.vpcf"
+                summoner.particle = ParticleManager:CreateParticleForPlayer(particleName, PATTACH_CUSTOMORIGIN, summoner, PlayerResource:GetPlayer(playerID))
+                ParticleManager:SetParticleControl(summoner.particle, 0, Vector(origin.x, origin.y, origin.z+30))
+                ParticleManager:SetParticleControl(summoner.particle, 15, Vector(255,255,255))
+                ParticleManager:SetParticleControl(summoner.particle, 16, Vector(1,0,0))
+            end        
+        else
+            if summoner.particle then
+                ParticleManager:DestroyParticle(summoner.particle, false)
+                summoner.particle = nil
+            end
         end
     end
 
-    CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_lumber", { lumber = current_lumber, summoner = playerData.summoner:GetEntityIndex() } )
+    local player = PlayerResource:GetPlayer(playerID)
+    if player then
+        CustomGameEventManager:Send_ServerToPlayer(player, "etd_update_lumber", { lumber = current_lumber, summoner = playerData.summoner:GetEntityIndex() } )
+    end
     UpdateScoreboard(playerID)
 end
 
@@ -125,7 +130,10 @@ function ModifyPureEssence(playerID, amount, bSkipMessage)
     SetCustomEssence(playerID, playerData.pureEssence + amount)    
 
     if amount > 0 and not bSkipMessage then
-        PopupEssence(ElementTD.vPlayerIDToHero[playerID], amount)
+        local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+        if hero then
+            PopupEssence(hero, amount)
+        end
         SendEssenceMessage(playerID, "#etd_essence_add", amount)
     end
 end
@@ -134,7 +142,11 @@ function SetCustomEssence(playerID, amount)
     local playerData = GetPlayerData(playerID)
     playerData.pureEssence = amount
     UpdatePlayerSpells(playerID)
-    CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_pure_essence", { pureEssence = playerData.pureEssence } )
+    
+    local player = PlayerResource:GetPlayer(playerID)
+    if player then
+        CustomGameEventManager:Send_ServerToPlayer(player, "etd_update_pure_essence", { pureEssence = playerData.pureEssence } )
+    end
     UpdateScoreboard(playerID)
 end
 
@@ -142,6 +154,11 @@ function UpdateSummonerSpells(playerID)
     local playerData = GetPlayerData(playerID)
     local lumber = playerData.lumber
     local summoner = playerData.summoner
+
+    -- Exit out if no summoner
+    if not summoner then
+        return
+    end
 
     UpdateRunes(playerID)
 
@@ -313,9 +330,9 @@ function GivePureEssenceGoldBonus( playerID )
     local difficultyBountyBonus = playerData.difficulty:GetBountyBonusMultiplier()
     local extra_gold
     if EXPRESS_MODE then
-        extra_gold = round(math.pow(waveNumber+5, 2.3) * 2 * difficultyBountyBonus)
+        extra_gold = round(math.pow(waveNumber+5, 2.3) * difficultyBountyBonus)
     else
-        extra_gold = round(math.pow(waveNumber+5, 2) * 2 * difficultyBountyBonus)
+        extra_gold = round(math.pow(waveNumber+5, 2) * difficultyBountyBonus)
     end
     PopupAlchemistGold(PlayerResource:GetSelectedHeroEntity(playerID), extra_gold)
     hero:ModifyGold(extra_gold, true, 0)

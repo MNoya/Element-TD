@@ -7,6 +7,218 @@
     background-color: gradient( linear, 0% 0%, 0% 100%, from( #000000FF ), color-stop( 0.12, #000000ff ), color-stop( 0.5, #00000022 ), to( #00000000 ) );
 }
 
+////////////////
+
+#CreditContainer
+{
+    width: 600px;
+    height: 100%;
+    margin-top: 40px;
+    flow-children: down;
+}
+
+#CreditTitle
+{
+    width: 600px;
+    font-size: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #000000;
+    color: #CCC;
+    font-family: Radiance;
+}
+
+#Credits
+{
+    font-size: 35px;
+    margin-left: 100px;
+    color: white;
+    flow-children: down;
+}
+
+.DevRow
+{
+    flow-children: right;
+    height: 50px;
+}
+
+.DevAvatar
+{
+    width: 150px;
+    height: 100px;
+}
+
+#DevImage
+{
+    height: 40px;
+    width: 40px;
+    background-color: black;
+    border-radius: 34px;
+    box-shadow: fill #000000 -3px -3px 3px 6px;
+}
+
+#DevName Label
+{
+    font-size: 20px;
+    margin: 10px 0px 0px 45px;
+    text-shadow: 1px 1px 3px 3.0 #000;
+}
+
+#DevCredits
+{
+    flow-children: down;
+    text-align: center;
+}
+
+#DevTitle
+{
+    font-size: 30px;
+    width: 400px;
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #CCC;
+    font-family: Radiance;
+    text-shadow: 1px 1px 3px 3.0 #000;
+}
+
+#SpecialThanks
+{
+    margin-top: 20px;
+    font-size: 28px;
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #CCC;
+    font-family: Radiance;
+    text-shadow: 1px 1px 3px 3.0 #000;
+}
+
+#Avatar
+{
+    height: 32px;
+    width: 32px;
+}
+
+#AvatarImage
+{
+    height: 32px;
+    width: 32px;
+    background-color: black;
+}
+
+#Supporters
+{
+    flow-children: right-wrap;
+}
+
+.PlayerCredit
+{
+    margin-left: 40px;
+    flow-children: right-wrap;
+}
+
+#UserNameCredit
+{
+	width: 150px;
+	margin-left: 10px;
+}
+
+#UserNameCredit Label
+{
+	color: white;
+	width: 200px;
+    font-size: 30px;
+	font-family: Radiance;
+	text-shadow: 1px 1px 3px 2.0 #000;
+}
+
+.GoldBorder
+{
+    width: 36px;
+    height: 36px;
+    background-image: url("file://{resources}/images/custom_game/rewards/border_gold.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.EpicBorder
+{   
+    width: 36px;
+    height: 36px;
+    background-image: url("file://{resources}/images/custom_game/rewards/border_epic.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.HiddenBorder
+{
+    opacity: 0;
+}
+
+#LeaderboardLink
+{
+    margin-top: 10px;
+    margin-left: 50px;
+    font-size: 20px;
+    color: #CCC;
+    text-shadow: 1px 1px 3px 2.0 #000;
+    horizontal-align: right;
+}
+
+#Contact
+{
+    width: 100%;
+    height: 60px;
+    margin-bottom: 50px;
+    vertical-align: bottom;
+    flow-children: right;
+}
+
+#Web
+{
+    horizontal-align: center;
+    flow-children: right;
+}
+
+#WebLogo
+{
+    width: 60px;
+    height: 60px;
+    background-image: url("file://{resources}/images/custom_game/loading_screen/web.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    box-shadow: fill #000000 -3px -3px 3px 6px;
+}
+
+#Twitter
+{
+    flow-children: right;
+    margin-left: 100px;
+}
+
+#TwitterLogo
+{   
+    width: 60px;
+    height: 50px;
+    background-image: url("file://{resources}/images/custom_game/loading_screen/tweet.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.ContactText
+{
+    color: white;
+    font-size: 45px;
+    margin-left: 10px;
+    text-shadow: 1px 1px 3px 3.0 #000;
+}
+
+////////////////
+
 #VictoryRow
 {
 	flow-children: right;
@@ -355,19 +567,6 @@
 
 #PlayerGoldAmount
 {
-}
-
-#Avatar
-{
-	height: 32px;
-	width: 32px;
-}
-
-#AvatarImage
-{
-	height: 32px;
-	width: 32px;
-	background-color: black;
 }
 
 #PlayerName

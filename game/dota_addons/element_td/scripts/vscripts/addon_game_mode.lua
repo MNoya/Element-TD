@@ -27,6 +27,7 @@ local requires =
     "mechanics/wearables",
     "mechanics/sectors",
     "mechanics/ground_attacks",
+    "mechanics/tooltips",
 
     -- utils
     "util/util",
@@ -86,9 +87,9 @@ local requires =
     "creeps/undead",
     "creeps/heal",
     "creeps/fast",
-    "creeps/image",
-    "creeps/swarm",
     "creeps/regen",
+    "creeps/bulky",
+    "creeps/vengeance",
     "creeps/boss",
 
     -- misc
@@ -106,6 +107,7 @@ local requires =
     "ElementTD",
     "scoring",
     "ranking",
+    "rewards",
 }
 
 for _, r in pairs(requires) do

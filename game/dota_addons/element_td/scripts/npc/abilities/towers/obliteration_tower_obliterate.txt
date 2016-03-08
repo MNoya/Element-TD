@@ -4,9 +4,24 @@
 "obliteration_tower_obliterate"
 {
 	"BaseClass"						"ability_datadriven"											
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityTextureName"			"towers/obliteration"
 	"MaxLevel"						"2"
+
+	"AbilityCastPoint"				"0.0"
+
+	"AbilityCastRange"      		"1150"
+    "AOERadius"             		"300"
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"    "mechanics/ground_attacks.lua"
+            "Function"      "AttackGround"
+            "Target"        "POINT"
+        }
+    }
 
 	"Modifiers"
 	{
@@ -19,12 +34,63 @@
 				"RunScript"
 				{
 					"Target"			"POINT"
-					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+					"ScriptFile"		"towers/towerevents.lua"
 					"Function"			"TriggerEvent"
 					"Event"				"OnAttack"
 				}
 			}
 		}
+
+		"modifier_attacking_ground"
+        {
+            "IsHidden"          "1"
+    
+            "OnOrder"
+            {
+                "RemoveModifier"
+                {
+                    "ModifierName"  "modifier_attacking_ground"
+                    "Target"        "CASTER"
+                }
+                "RunScript"
+                {
+                    "ScriptFile"    "mechanics/ground_attacks.lua"
+                    "Function"      "StopAttackGround"
+                }
+                "RunScript"
+				{
+					"ScriptFile"		"towers/towerevents.lua"
+					"Function"			"TriggerEvent"
+					"Event"				"ReapplyAttackLogic"
+				}
+            }
+
+            // Attacking ground is a fake attack
+            "OnAttack"
+            {
+                "RemoveModifier"
+                {
+                    "ModifierName"  "modifier_attacking_ground"
+                    "Target"        "CASTER"
+                }
+                "RunScript"
+                {
+                    "ScriptFile"    "mechanics/ground_attacks.lua"
+                    "Function"      "StopAttackGround"
+                }
+                "RunScript"
+				{
+					"ScriptFile"		"towers/towerevents.lua"
+					"Function"			"TriggerEvent"
+					"Event"				"ReapplyAttackLogic"
+				}
+            }
+
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_DISABLE_AUTOATTACK"  "1"
+            }
+        }
 	}
 	"AbilitySpecial"
 	{

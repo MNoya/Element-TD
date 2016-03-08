@@ -7,6 +7,11 @@
     <include src="file://{resources}/scripts/custom_game/resources.js" /> 
   </scripts>
   <Panel hittest="false" class="BaseHud">
+    <Panel hittest="false" id="MinimapOverlay">
+      <Label hittest="false" id='Version' text=""/>
+      <Image hittest="false" id="elementTD"/>
+      <Image hittest="false" id="elementTDGlow"/>
+    </Panel>
     <Panel hittest="true" id='ResourceGold' onmouseover="ShowTooltip('#gold')" onmouseout="DOTAHideTitleTextTooltip()">
       <Image hittest="false" id="GoldIcon" />
       <Label hittest="false" id="GoldText" text="0" class="TitleFont" />

@@ -101,6 +101,11 @@ function trickery_tower_conjure:OnSpellStart()
 
     local particle = ParticleManager:CreateParticle("particles/generic_gameplay/illusion_created.vpcf", PATTACH_ABSORIGIN, clone)
     ParticleManager:SetParticleControl(particle, 0, clone:GetAbsOrigin() + Vector(0, 0, 64))
+
+    -- No cooldown sandbox option
+    if playerData.noCD then
+        self:EndCooldown()
+    end
 end
 
 --------------------------------------------------------------

@@ -42,6 +42,10 @@ function WindstormTower:SpawnTornado(keys)
     local sector = playerData.sector + 1
     local damage = ApplyAbilityDamageFromModifiers(self.damage, self.tower)
 
+    if target then
+        self.tower:MoveToTargetToAttack(target)
+    end
+
     if target and target:IsAlive() then
         Timers:CreateTimer(0.05, function()
             if tornado then
@@ -85,7 +89,7 @@ end
 
 function WindstormTower:OnBuildingFinished()
     Timers:CreateTimer(0.1, function()
-        if IsValidEntity(self.tower) then
+        if IsValidEntity(self.tower) and self.tower:IsAlive() then
             if GameRules:GetGameTime() >= self.next_tornado and not self.tower:HasModifier("modifier_attacking_ground") then
                 local unit = GetTowerTarget(self.tower, TOWER_TARGETING_CLOSEST, self.findRadius)
                 if unit then

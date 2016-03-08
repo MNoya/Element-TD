@@ -1,4 +1,4 @@
-BH_VERSION = "1.0.4"
+BH_VERSION = "1.0.5"
 
 if not BuildingHelper then
     BuildingHelper = class({})
@@ -298,7 +298,7 @@ function BuildingHelper:InitGNV()
     local squareX = boundX2 - boundX1 + 1
     local squareY = boundY2 - boundY1 + 1
 
-    print("Free: "..unblockedCount.." Blocked: "..blockedCount)
+    BuildingHelper:print("Free: "..unblockedCount.." Blocked: "..blockedCount)
 
     -- Initially, the construction grid equals the terrain grid
     -- Clients will have full knowledge of the terrain grid
@@ -941,7 +941,7 @@ function BuildingHelper:StartBuilding(builder)
 
     -- Disable turning
     if BuildingHelper.UnitKV[unitName]["DisableTurning"]==1 or BuildingHelper.Settings["DISABLE_BUILDING_TURNING"] then
-        building:AddNewModifier(building, "modifier_disable_turning")
+        building:AddNewModifier(building, nil, "modifier_disable_turning", {})
     end
 
     -- Prevent regen messing with the building spawn hp gain
@@ -2096,11 +2096,7 @@ function StringStartsWith(fullstring, substring)
 end
 
 function tobool(s)
-    if s=="true" or s=="1" or s==1 then
-        return true
-    else --nil "false" "0"
-        return false
-    end
+    return s==true or s=="true" or s=="1" or s==1
 end
 
 function split(inputstr, sep)

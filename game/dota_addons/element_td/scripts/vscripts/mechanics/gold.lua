@@ -26,12 +26,14 @@ end
 function SetCustomGold(playerID, amount )
     local playerData = GetPlayerData(playerID)
     local player = PlayerResource:GetPlayer(playerID)
-    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 
     playerData.gold = amount
 
-    hero:SetGold(0, false)
-    hero:SetGold(playerData.gold, true) --This can go up to 99.999 gold, but the UI will still show bigger values
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    if hero then
+        hero:SetGold(0, false)
+        hero:SetGold(playerData.gold, true) --This can go up to 99.999 gold, but the UI will still show bigger values
+    end
 
     if player then
         CustomGameEventManager:Send_ServerToPlayer(player, "etd_update_gold", { gold = playerData.gold } )

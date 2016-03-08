@@ -30,5 +30,7 @@
     "ModelScale"        "0.8"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
+    "ScriptClass"     "CreepVengeance"
     "Ability1"        "fire_armor"
+    "Ability2"        "creep_ability_vengeance"
 }

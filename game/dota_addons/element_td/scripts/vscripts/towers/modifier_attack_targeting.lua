@@ -21,6 +21,7 @@ function modifier_attack_targeting:OnCreated( params )
     local unit = self:GetParent()
     unit.target_type = params.target_type
     self.keep_target = params.keep_target == 1
+    self.change_on_leak = params.change_on_leak == 1
     self:StartIntervalThink(0.03)
 end
 
@@ -29,6 +30,13 @@ function modifier_attack_targeting:OnIntervalThink()
     if unit:HasModifier("modifier_disarmed") then return end
     local findRadius = unit:GetAttackRange() + unit:GetHullRadius()
     local attackTarget = unit:GetAttackTarget()
+
+    -- Stop focusing targets after leaking
+    if self.change_on_leak then
+        if attackTarget and attackTarget.recently_leaked then
+            unit:Interrupt()
+        end
+    end
     
     -- Find a new target, changing the target on every attack
     if unit:AttackReady() and not unit:IsAttacking() then

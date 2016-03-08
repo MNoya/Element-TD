@@ -8,6 +8,8 @@ var LumberUI = $( "#ResourceLumber" );
 var GoldUI = $( "#ResourceGold" );
 var PureEssenceUI = $( "#ResourceEssence" );
 var ScoreUI = $( "#ResourceScore" );
+var MinimapUI = $( "#MinimapOverlay" )
+var VersionUI = $("#Version")
 
 var lumber = $( '#LumberText' );
 var gold = $( '#GoldText' );
@@ -158,6 +160,7 @@ function CheckHudFlipped() {
 		Flip(PureEssenceUI)
 		Flip(ScoreUI)
 		Flip(ElementsUI)
+        AlignRight(MinimapUI)
 
 		ScoreUI.style["margin-left"] = "85px;"
 		LumberUI.style["margin-left"] = "40px;"
@@ -169,6 +172,7 @@ function CheckHudFlipped() {
 		AlignRight(PureEssenceUI)
 		AlignRight(ScoreUI)
 		AlignRight(ElementsUI)
+        Flip(MinimapUI)
 
 		ScoreUI.style["margin-left"] = "0px;"
 		LumberUI.style["margin-left"] = "0px;"
@@ -187,14 +191,18 @@ function AlignRight (panel) {
 	panel.AddClass("AlignRight")
 }
 
-(function () {
+function Setup() {
+	VersionUI.text = "Version "+CustomNetTables.GetTableValue('gameinfo', 'version').value
+    $.Schedule(0.1, CheckHudFlipped)
+    $.Schedule(1, CheckAspectRatio)
+    $.Schedule(1, CheckLearnMode)
+}
 
-  $.Schedule(1, CheckAspectRatio);
-  $.Schedule(0.1, CheckHudFlipped)
-  $.Schedule(1, CheckLearnMode)
-  GameEvents.Subscribe( "etd_update_lumber", ModifyLumber );
-  GameEvents.Subscribe( "etd_update_gold", ModifyGold );
-  GameEvents.Subscribe( "etd_update_pure_essence", ModifyPureEssence );
-  GameEvents.Subscribe( "etd_update_score", ModifyScore );
-  GameEvents.Subscribe( "etd_update_elements", UpdateElements );
+(function () {
+    Setup()
+    GameEvents.Subscribe( "etd_update_lumber", ModifyLumber );
+    GameEvents.Subscribe( "etd_update_gold", ModifyGold );
+    GameEvents.Subscribe( "etd_update_pure_essence", ModifyPureEssence );
+    GameEvents.Subscribe( "etd_update_score", ModifyScore );
+    GameEvents.Subscribe( "etd_update_elements", UpdateElements );
 })();

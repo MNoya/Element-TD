@@ -59,14 +59,19 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"1"
+			"fast_speed"			"750"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"interval"				"3"	
+			"duration"				"1"
 		}
 		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"interval"				"3"	
+		}
+		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"interval_tooltip"		"2"	

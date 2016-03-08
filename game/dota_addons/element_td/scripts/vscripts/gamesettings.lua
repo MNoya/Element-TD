@@ -39,6 +39,10 @@ function DifficultyObject:GetBountyBonusMultiplier()
     return EXPRESS_MODE and self.data.BaseBountyExpress or self.data.BaseBounty
 end
 
+function DifficultyObject:GetBaseWorth()
+    return EXPRESS_MODE and self.data.NetworthBonusExpress or self.data.NetworthBonus
+end
+
 function DifficultyObject:GetWaveBreakTime(wave)
 	local times = self.data.WaveTimers
 	if EXPRESS_MODE then
@@ -99,9 +103,8 @@ function GameSettings:SetGameLength(length)
 	end
 	for _,plyID in pairs(playerIDs) do
 		local playerData = GetPlayerData(plyID)
-		local hero = ElementTD.vPlayerIDToHero[plyID]
 
-		hero:ModifyGold(GameSettings.length.Gold)
+		SetCustomGold(plyID, GameSettings.length.Gold)
 		ModifyLumber(plyID, GameSettings.length.Lumber)
 		playerData.nextWave = GameSettings.length.Wave
 
@@ -164,13 +167,20 @@ function GameSettings:EnableRandomForPlayer(playerID)
 
         UpdatePlayerSpells(playerID)
         UpdateScoreboard(playerID)
-        CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "etd_player_random_enable", {} )
+        UpdateRandom(playerID)
     else
     	if playerData.completedWaves >= 5 then
     		SendErrorMessage(playerID, "#etd_random_5wave_error")
     	else
         	SendErrorMessage(playerID, "#etd_random_chosen_error")
         end
+    end
+end
+
+function UpdateRandom(playerID)
+    local playerData = GetPlayerData(playerID)
+    if playerData.elementalRandom then
+        CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "etd_player_random_enable", {} )
     end
 end
 

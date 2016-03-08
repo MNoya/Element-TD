@@ -17,7 +17,7 @@ if not players then
     DEV_MODE = false
     EXPRESS_MODE = false
 
-    VERSION = "B010316b"
+    VERSION = "1.0"
 
     START_TIME = GetSystemDate() .. " " .. GetSystemTime()
     END_TIME = nil
@@ -83,6 +83,8 @@ function ElementTD:InitGameMode()
     LinkLuaModifier("modifier_kill_count", "towers/modifier_kill_count", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_slow_adjustment", "towers/modifier_slow_adjustment", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("creep_haste_modifier", "creeps/creep_haste_modifier", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_vengeance_debuff", "creeps/modifier_vengeance_debuff", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_vengeance_multiple", "creeps/modifier_vengeance_debuff", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_stunned", "libraries/modifiers/modifier_stunned", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_invisible_etd", "libraries/modifiers/modifier_invisible_etd", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_no_health_bar", "libraries/modifiers/modifier_no_health_bar", LUA_MODIFIER_MOTION_NONE)
@@ -120,6 +122,9 @@ function ElementTD:InitGameMode()
 
     -- Less expensive pathing?
     LimitPathingSearchDepth(0.5)
+
+    -- Version Label
+    CustomNetTables:SetTableValue("gameinfo", "version", {value=VERSION})
 
     print("Loaded Element Tower Defense!")
 end
@@ -164,6 +169,10 @@ function ElementTD:OnGameStateChange(keys)
         self.gameStarted = true
 
         self:StartGame()
+    elseif state == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
+
+        -- Load donation rewards
+        Rewards:Load()
     end
 end
 
@@ -250,8 +259,10 @@ function ElementTD:EndGameForPlayer( playerID )
     for i,v in pairs(playerData.towers) do
         EntIndexToHScript(i):ForceKill(false)
     end
-    for l,m in pairs(playerData.waveObject.creeps) do
-        EntIndexToHScript(l):ForceKill(false)
+    if (playerData.waveObject and playerData.waveObject.creeps) then
+        for l,m in pairs(playerData.waveObject.creeps) do
+            EntIndexToHScript(l):ForceKill(false)
+        end
     end
     for _,object in pairs(playerData.waveObjects) do
         for index,_ in pairs(object.creeps) do
@@ -427,7 +438,9 @@ function ElementTD:OnUnitSpawned(keys)
             summoner.icon = CreateUnitByName("elemental_summoner_icon", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber())
             playerData.summoner = summoner
 
+            hero:ModifyGold(0)
             ModifyLumber(playerID, 0)  -- updates summoner spells
+            ModifyPureEssence(playerID, 0, true)
             UpdateElementsHUD(playerID)
             UpdatePlayerSpells(playerID)
 
@@ -438,7 +451,6 @@ function ElementTD:OnUnitSpawned(keys)
         if unitName and unitName ~= "" and not NPC_UNITS_CUSTOM[unitName] then
             Log:warn("A non-custom unit was spawned! "..unitName)
             unit:RemoveSelf()
-            ElementTD:CheatCommandUsed()
         end
     end
 end
@@ -494,6 +506,7 @@ end
 function ElementTD:OnEntityKilled(keys)
     local index = keys.entindex_killed
     local entity = EntIndexToHScript(index)
+    local killer = EntIndexToHScript(keys.entindex_attacker)
     local playerData = GetPlayerData(entity.playerID)
 
     if playerData and playerData.health == 0 then
@@ -506,12 +519,19 @@ function ElementTD:OnEntityKilled(keys)
     end
 
     if entity.scriptObject and entity.scriptObject.OnDeath then
-        entity.scriptObject:OnDeath()
+        entity.scriptObject:OnDeath(killer)
     end
 
     if entity:GetUnitName() == "icefrog" then
+        -- Count non-undead frogs
         if playerData and entity.real_icefrog then
-            playerData.iceFrogKills = playerData.iceFrogKills + 1
+            
+            -- Bulky counts as 2 kills
+            if entity:HasAbility("creep_ability_bulky") then
+                playerData.iceFrogKills = playerData.iceFrogKills + 2
+            else
+                playerData.iceFrogKills = playerData.iceFrogKills + 1
+            end
             entity:EmitSound("Frog.Kill")
         end
     end
@@ -551,32 +571,42 @@ function ElementTD:OnConnectFull(keys)
         if playerID and playerID ~= -1 then
             if not tableContains(playerIDs, playerID) then
                 table.insert(playerIDs, playerID)
-            end
-
-            if PlayerData[playerID] and PlayerData[playerID].elements then
-                UpdateElementsHUD(playerID)
+            else
+                ElementTD:OnReconnect(playerID)
             end
 
             -- Update the user ID table with this user
             self.vUserIds[keys.userid] = ply
             self.vPlayerUserIds[playerID] = keys.userid
-
-            if GameRules:State_Get() >= DOTA_GAMERULES_STATE_HERO_SELECTION then
-                local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-                if not hero then
-                    Log:warn("Player "..playerID.." has no hero selected at game start!")
-                    Log:info("Creating hero for player "..playerID)
-                    local hero = CreateHeroForPlayer("npc_dota_hero_wisp", ply)
-
-                    if PLAYERS_NOT_VOTED[playerID] and START_GAME_TIME == 0 then
-                        CustomGameEventManager:Send_ServerToPlayer( ply, "etd_toggle_vote_dialog", {visible = true} )
-                    end
-                end
-            end
         else
             print("Got an invalid playerID: ", playerID)
         end
     end)
+end
+
+-- Called every time the player connects after being added to the valid playerIDs
+function ElementTD:OnReconnect(playerID)
+    local player = PlayerResource:GetPlayer(playerID)
+
+    Sandbox:CheckPlayer(playerID)
+
+    if PlayerData[playerID] and PlayerData[playerID].elements then
+        ModifyLumber(playerID, 0) -- updates summoner spells
+        ModifyPureEssence(playerID, 0, true)
+        UpdateElementsHUD(playerID)
+        UpdateRandom(playerID)
+    end
+
+    if GameRules:State_Get() >= DOTA_GAMERULES_STATE_HERO_SELECTION then
+        local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+        if not hero then
+            local hero = CreateHeroForPlayer("npc_dota_hero_wisp", player)
+
+            if PLAYERS_NOT_VOTED[playerID] and START_GAME_TIME == 0 then
+                CustomGameEventManager:Send_ServerToPlayer( player, "etd_toggle_vote_dialog", {visible = true} )
+            end
+        end
+    end
 end
 
 function ElementTD:OnPlayerSelectedEntities( event )
@@ -688,6 +718,15 @@ function ElementTD:FilterExecuteOrder( filterTable )
             -- stop the main target target point if its out of range
             if order_type == DOTA_UNIT_ORDER_CAST_POSITION and (unit:GetAbsOrigin() - point):Length2D() > ability:GetCastRange() then
                 unit:Interrupt()
+                SendErrorMessage(issuer, "dota_hud_error_target_out_of_range")
+            end
+
+        -- Stop cast on out of range target
+        elseif order_type == DOTA_UNIT_ORDER_CAST_TARGET and targetIndex then
+            local target = EntIndexToHScript(targetIndex)
+            if unit:GetRangeToUnit(target) > ability:GetCastRange(unit:GetAbsOrigin(), target) then
+                unit:Interrupt()
+                SendErrorMessage(issuer, "dota_hud_error_target_out_of_range")
                 return false
             end
         end
@@ -748,6 +787,12 @@ PLAYER_CODES = {
     ["random"] = function(...) GameSettings:EnableRandomForPlayer(...) end,  -- Enable random for player
 }
 
+DEV_CODES = {
+    ["dev"] = function(playerID) CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "sandbox_mode_visible", {}) end,
+    ["sets"] = function(...) MakeSets() end,
+    ["tooltips"] = function(...) Tooltips:Validate() end
+}
+
 -- A player has typed something into the chat
 function ElementTD:OnPlayerChat(keys)
     local text = keys.text
@@ -755,14 +800,13 @@ function ElementTD:OnPlayerChat(keys)
     local playerID = self.vUserIds[userID] and self.vUserIds[userID]:GetPlayerID()
     if not playerID then return end
 
-    -- Handle '-command'
     if StringStartsWith(text, "-") then
         local input = split(string.sub(text, 2, string.len(text)))
         local command = input[1]
         if PLAYER_CODES[command] then
             PLAYER_CODES[command](playerID, input[2])
-        elseif text == "-dev" and Sandbox:IsDeveloper(playerID) then
-            CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "sandbox_mode_visible", {})
+        elseif DEV_CODES[command] and Sandbox:IsDeveloper(playerID) then
+            DEV_CODES[command](playerID)
         end
     end
 end

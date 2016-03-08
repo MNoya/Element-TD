@@ -13,8 +13,6 @@ ScoringObject = createClass({
 			self.totalScore = 0
 			self.cleanWaves = 0
 			self.under30 = 0
-			self.cleanWavesStreak = 0
-			self.under30Streak = 0
 		end
 	},
 {}, nil)
@@ -56,7 +54,7 @@ function ScoringObject:UpdateScore( const , wave )
 	
 	-- Final message (not in express)
 	elseif ( const == SCORING_GAME_FINISHED ) then
-		scoreTable = self:GetGameCleared()
+		scoreTable = self:GetGameFinished()
 
 		table.insert(processed, {'#scoring_game_completed', '#FFF0F5'} )
 	else
@@ -91,8 +89,11 @@ function ScoringObject:UpdateScore( const , wave )
 	if scoreTable['under30'] then
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Under 30 waves: ' .. scoreTable['under30'], '#FFFF00'} )
 	end
-	if scoreTable['networthBonus'] and EXPRESS_MODE then
+	if scoreTable['networthBonus'] then
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Networth bonus: '.. GetPctString(scoreTable['networthBonus']), '#00FFFF'} )
+	end
+	if scoreTable['endSpeedBonus'] then
+		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;End Speed bonus: '.. GetPctString(scoreTable['endSpeedBonus']), '#FFFF00'} )
 	end
 	--[[if scoreTable['bossBonus'] and scoreTable['bossBonus'] > 0 and not EXPRESS_MODE then
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Boss bonus: '.. GetPctString(scoreTable['bossBonus']), '#33CC33' })
@@ -110,12 +111,12 @@ function ScoringObject:UpdateScore( const , wave )
 			table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;'..GetPlayerDifficulty( self.playerID ).difficultyName .. ' difficulty: '.. GetPctString(scoreTable['difficultyBonus']), diffColor } )
 		end
 	end
-	if scoreTable['chaosBonus'] and scoreTable['chaosBonus'] ~= 0 then
+	--[[if scoreTable['chaosBonus'] and scoreTable['chaosBonus'] ~= 0 then
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Chaos bonus: '.. GetPctString(scoreTable['chaosBonus']), '#FF00FF' } )
 	end
 	if scoreTable['endlessBonus'] and scoreTable['endlessBonus'] ~= 0 then
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Rush bonus: '.. GetPctString(scoreTable['endlessBonus']), '#D4880F' } )
-	end
+	end]]
 	if scoreTable['totalScore'] then
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Total score: ' .. comma_value(scoreTable['totalScore']), '#FF8C00'})
 		if const == SCORING_WAVE_LOST or const == SCORING_GAME_CLEAR or const == SCORING_GAME_FINISHED then
@@ -198,25 +199,22 @@ function ScoringObject:GetWaveCleared( wave )
 	local time = playerData.waveObjects[wave].endTime - playerData.waveObjects[wave].endSpawnTime
 	local speedBonus = self:GetSpeedBonus( time )
 	local difficultyBonus = self:GetDifficultyBonus()
-	local chaosBonus = self:GetCreepOrderBonus()
-	local endlessBonus = self:GetEndlessBonus()
 	local leaks = playerData.waveObjects[wave] and playerData.waveObjects[wave].leaks or 0
 	local cleanBonus = self:GetCleanBonus( leaks == 0 )
-	local totalScore = math.ceil(waveClearScore * (1 + cleanBonus) * (1 + speedBonus) * (1 + difficultyBonus) * (1 + chaosBonus + endlessBonus))
+	local totalScore = math.ceil(waveClearScore * (1 + cleanBonus) * (1 + speedBonus) * (1 + difficultyBonus))
 
-	return { clearBonus = waveClearScore, cleanBonus = cleanBonus, speedBonus = speedBonus, difficultyBonus = difficultyBonus, chaosBonus = chaosBonus, endlessBonus = endlessBonus, totalScore = totalScore }
+	return { clearBonus = waveClearScore, cleanBonus = cleanBonus, speedBonus = speedBonus, difficultyBonus = difficultyBonus, totalScore = totalScore }
 end
 
 function ScoringObject:GetBossWaveCleared( bossWave )
 	local playerData = GetPlayerData( self.playerID )
 	local bossBonus = self:GetBossBonus(bossWave-1)
-	local waveClearScore = 3000 * bossBonus --100 per kill * 0.10 every wave past the first
+	local waveClearScore = 7500 * bossBonus --250 per kill * 0.20 every wave past the first
 	local difficultyBonus = self:GetDifficultyBonus()
-	local endlessBonus = self:GetEndlessBonus()
 	local frogKills = playerData.iceFrogKills
-	local totalScore = math.ceil(waveClearScore * (1 + difficultyBonus) * (1 + endlessBonus))
+	local totalScore = math.ceil(waveClearScore * (1 + difficultyBonus))
 
-	return { frogBonus = waveClearScore, difficultyBonus = difficultyBonus, frogKills = frogKills, endlessBonus = endlessBonus, totalScore = totalScore }
+	return { frogBonus = waveClearScore, difficultyBonus = difficultyBonus, frogKills = frogKills, totalScore = totalScore }
 end
 
 -- Returns amount of clean waves and waves under 30 as well as total score
@@ -228,28 +226,38 @@ function ScoringObject:GetWaveLost()
 	return { cleanWaves = clean, under30 = under30, totalScore = score }
 end
 
--- Total Score, BossBonus, DifficultyBonus, TotalScore after bonus
+-- Total Score, DifficultyBonus, Networth and EndSpeed bonus, TotalScore after bonus
 function ScoringObject:GetGameCleared()
 	local playerData = GetPlayerData( self.playerID )
 	local score = self.totalScore
 	local values = {}
 	local totalScore = 0
-	local networthBonus = 0
+	local networthBonus = self:GetNetworthBonus()
+	local endSpeedBonus = self:GetEndSpeedBonus(playerData.clearTime)
+	local frogKills = 0 --Total
+
+	totalScore = math.ceil(score * (1 + networthBonus + endSpeedBonus))
+
+	return { networthBonus = networthBonus, frogKills = frogKills, endSpeedBonus = endSpeedBonus, totalScore = totalScore }
+end
+
+-- Total Score at game end in classic
+function ScoringObject:GetGameFinished()
+	local playerData = GetPlayerData( self.playerID )
+	local score = self.totalScore
+	local values = {}
+	local totalScore = 0
 	local extraFrogScore = 0 --Killed but didn't finish the wave
 	local frogKills = 0 --Total
 	if playerData.iceFrogKills then
 		frogKills = playerData.iceFrogKills
 		local remainder = frogKills % 30
-		extraFrogScore = remainder * 100 * self:GetBossBonus(playerData.bossWaves-1) * self:GetDifficultyBonus()
+		extraFrogScore = remainder * 250 * self:GetBossBonus(playerData.bossWaves-1) * (1+self:GetDifficultyBonus())
 	end
 
-	if EXPRESS_MODE then
-		networthBonus = self:GetNetworthBonus()
-	end
+	totalScore = math.ceil(score)
 
-	totalScore = math.ceil((score+extraFrogScore) * (networthBonus + 1))
-
-	return { networthBonus = networthBonus, frogKills = frogKills, totalScore = totalScore }
+	return { frogKills = frogKills, totalScore = totalScore }
 end
 
 -- takes leaks (lives) per wave (1.20 multiplier)
@@ -257,10 +265,7 @@ function ScoringObject:GetCleanBonus( bool )
 	local bonus = 0
 	if bool then
 		self.cleanWaves = self.cleanWaves + 1
-		bonus = 0.2 + (self.cleanWavesStreak * 0.02)
-		self.cleanWavesStreak = self.cleanWavesStreak + 1
-	else -- End streak
-		self.cleanWavesStreak = 0
+		bonus = 0.2
 	end
 	return bonus
 end
@@ -270,15 +275,27 @@ function ScoringObject:GetSpeedBonus( time )
 	local bonus = 1
 	if time > 30 then
 		bonus = bonus - ( time - 30 )*0.02
-		self.under30Streak = 0
 	elseif time < 30 then
 		self.under30 = self.under30 + 1
-		bonus = bonus + ( 15 - time )*0.02 + (self.under30Streak * 0.02)
-		self.under30Streak = self.under30Streak + 1
-	elseif time == 30 then -- End Streak
-		self.under30Streak = 0
+		bonus = bonus + ( 15 - time )*0.02
 	end
 	return bonus - 1
+end
+
+-- multiplier at the end of the for clearing faster/slower
+function ScoringObject:GetEndSpeedBonus(time)
+	if GameSettings:GetEndless() == "Endless" then
+		return 0
+	else
+		-- Average time for Express is 20 minutes
+		if EXPRESS_MODE then
+			return (20/time*60) - 1
+
+		-- Average time for Classic is 40 minutes
+		else
+			return (40/time*60) - 1
+		end
+	end
 end
 
 -- takes wave (Score = wave * CreepCount)
@@ -287,28 +304,15 @@ function ScoringObject:GetWaveClearBonus( wave )
 	return bonus
 end
 
--- Express Only: (Player Networth/Base Networth/2)
--- Base Networth: 	Normal=88170
---					Hard=96060
---					VeryHard=110790
---					Insane=127770
+-- (Player Networth/Base Networth) - 1 based on Difficulty and Classic/Express
 function ScoringObject:GetNetworthBonus()
-
-	local difficulty = GetPlayerDifficulty( self.playerID ).difficultyName
 	local playerNetworth = GetPlayerNetworth( self.playerID )
-	local baseWorth = 69483
+	local baseWorth = GetPlayerDifficulty( self.playerID ):GetBaseWorth()
 
-	if ( difficulty == "Hard" ) then
-		baseWorth = 89142
-	elseif ( difficulty == "VeryHard" ) then
-		baseWorth = 102373
-	elseif ( difficulty == "Insane" ) then
-		baseWorth = 117564
-	end
-	return (playerNetworth/baseWorth/2)
+	return ((playerNetworth/baseWorth) - 1)
 end
 
--- Creep order bonus
+--[[-- Creep order bonus
 function ScoringObject:GetCreepOrderBonus()
 	local bonus = 0
 	if GameSettings.order == "Chaos" then
@@ -324,9 +328,9 @@ function ScoringObject:GetEndlessBonus()
 		bonus = 0.25 -- x1.25
 	end
 	return bonus
-end
+end]]
 
--- Classic Only: 1 + 0.10 per wave, applies only to the boss kills
+-- Classic Only: 1 + 0.20 per wave, applies only to the boss kills
 function ScoringObject:GetBossBonus( waves )
 	local bonus = 1
 	if waves >= 0 then

@@ -23,6 +23,11 @@ function LifeTower:CreepKilled(keys)
     local playerData = GetPlayerData(heroOwner:GetPlayerID())    
     playerData.LifeTowerKills = playerData.LifeTowerKills + self.pointsPerKill
 
+    -- Bulky creeps count as double the kills
+    if keys.unit:HasAbility("creep_ability_bulky") then
+        playerData.LifeTowerKills = playerData.LifeTowerKills + self.pointsPerKill
+    end
+
     if playerData.health < 50 and playerData.LifeTowerKills >= 3 then --when health is less than 50
         playerData.LifeTowerKills = playerData.LifeTowerKills - 3
 

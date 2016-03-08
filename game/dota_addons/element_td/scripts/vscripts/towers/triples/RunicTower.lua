@@ -19,14 +19,21 @@ RunicTower = createClass({
 nil)
 
 function RunicTower:OnMagicAttackThink()
-    if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() and #GetCreepsInArea(self.tower:GetOrigin(), self.tower:GetAttackRange()) > 0 and not self.tower:HasModifier("modifier_silence") then
-        self.tower:CastAbilityImmediately(self.ability, 1)
+    if not self.tower:HasModifier("modifier_disarmed") and not self.tower:HasModifier("modifier_magic_attack") then
+        if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() and self.tower:GetHealthPercent() == 100 and #GetCreepsInArea(self.tower:GetAbsOrigin(), self.tower:GetAttackRange()) > 0 then
+            self.tower:CastAbilityImmediately(self.ability, 1)
+        end
     end
 end
 
 function RunicTower:OnMagicAttackCast(keys)
     self.tower:EmitSound("Runic.Cast")
-    self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_magic_attack", {})
+    self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_magic_attack", {duration=self.duration})
+
+    -- No cooldown sandbox option
+    if GetPlayerData(self.tower:GetPlayerOwnerID()).noCD then
+        self.ability:EndCooldown()
+    end
 end
 
 function RunicTower:OnAttack(keys)
@@ -69,16 +76,32 @@ function RunicTower:OnAttackLanded(keys)
     end
 end
 
+function RunicTower:ApplyUpgradeData(data)
+    if data.cooldown and data.cooldown > 1 then
+        self.ability:StartCooldown(data.cooldown)
+    end
+    if data.autocast == false then
+        self.ability:ToggleAutoCast()
+    end
+end
+
+function RunicTower:GetUpgradeData()
+    return {
+        cooldown = self.ability:GetCooldownTimeRemaining(), 
+        autocast = self.ability:GetAutoCastState()
+    }
+end
+
 function RunicTower:OnCreated()
     self.ability = AddAbility(self.tower, "runic_tower_magic_attack")
-    Timers:CreateTimer(0.03, function()
+    Timers:CreateTimer(0.1, function()
         if IsValidEntity(self.tower) then
             self:OnMagicAttackThink()
-            return 0.03
+            return 0.1
         end
     end)
     self.ability:ToggleAutoCast()
-    
+    self.duration = self.ability:GetSpecialValueFor("duration")
     self.projectileSpeed = tonumber(GetUnitKeyValue(self.towerClass, "ProjectileSpeed"))
     self.halfAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
     self.fullAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))
