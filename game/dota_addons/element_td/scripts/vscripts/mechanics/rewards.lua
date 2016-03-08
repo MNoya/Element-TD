@@ -35,8 +35,6 @@ function Rewards:Load()
                 CustomNetTables:SetTableValue("rewards", v.steamID, data)
             end
         end
-
-        DeepPrintTable(Rewards.players)
     end)
 end
 
