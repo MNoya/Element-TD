@@ -45,7 +45,7 @@ end
 
 function Rewards:PlayerHasCosmeticModel(playerID)
     local steamID32 = PlayerResource:GetSteamAccountID(playerID)
-    local steamID64 = "76561197995227322"--Rewards:ConvertID64(steamID32)
+    local steamID64 = Rewards:ConvertID64(steamID32)
 
     local reward = Rewards.players[tostring(steamID64)]
     if reward and reward.tier and reward.tier >= 10 then
@@ -122,12 +122,7 @@ end
 
 function Rewards:SetCosmeticOverride(hero, unit, reward)
     hero.cosmetic_override = unit
-    local position = hero:GetAbsOrigin()
-    if reward.modelOffsetZ then
-        position.z = position.z + tonumber(reward.modelOffsetZ)
-    end
-
-    unit:SetAbsOrigin(position)
+    unit:SetAbsOrigin(hero:GetAbsOrigin())
     unit:SetForwardVector(hero:GetForwardVector())
     unit:AddNewModifier(nil, nil, "modifier_out_of_world", {})
     unit:SetParent(hero, "attach_hitloc")
