@@ -70,9 +70,8 @@ function Rewards:HandleHeroReplacement(hero)
 
     -- Hero
     local steamID32 = PlayerResource:GetSteamAccountID(playerID)
-    local dev = "A_Dizzle"--DEVELOPERS[steamID32]
+    local dev = DEVELOPERS[steamID32]
     if dev then
-        print("Welcome "..dev)
         local unit = Entities:FindByName(nil, dev)
         if unit then
         

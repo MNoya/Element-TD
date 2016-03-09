@@ -6,6 +6,7 @@
         "addonname"                 "Element TD"
         "addon_game_name"           "Element TD"
         "npc_dota_hero_wisp"        "Builder"
+        "npc_dota_hero_abyssal_underlord"  "★ Builder ★"
 
         // messages
         "etd_welcome_message"       "Welcome to <font color='#70EA72'>Element Tower Defense</font>!"

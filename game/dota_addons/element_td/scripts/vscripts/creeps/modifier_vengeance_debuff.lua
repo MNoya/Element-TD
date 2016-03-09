@@ -14,7 +14,7 @@ function modifier_vengeance_debuff:IsDebuff()
 end
 
 function modifier_vengeance_debuff:GetModifierHealthBonus()
-    return self:GetStackCount() * 5
+    return self:GetStackCount() * 10
 end
 
 -- Individual modifier applied every time a creep is killed
