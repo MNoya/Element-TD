@@ -152,10 +152,8 @@ function statCollection:hookFunctions()
 
     -- If we are testing (i.e. in workshop tools, don't wait for player connects to check)
     if self.TESTING then
-        Timers:CreateTimer(1, function()
-            -- Send stage1 stuff
-            this:sendStage1()
-        end)
+        -- Send stage1 stuff
+        this:sendStage1()
     else
         --Wait for host before sending Phase 1
         ListenToGameEvent('player_connect_full', function(keys)
