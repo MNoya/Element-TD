@@ -43,7 +43,7 @@ function Rewards:PlayerHasCosmeticModel(playerID)
     local steamID64 = Rewards:ConvertID64(steamID32)
 
     local reward = Rewards.players[tostring(steamID64)]
-    if reward and not reward.model then
+    if reward and reward.tier and reward.tier < 10 then
         return false
     end
 
@@ -54,8 +54,10 @@ function Rewards:HandleHeroReplacement(hero)
     local playerID = hero:GetPlayerID()
     local reward = Rewards:PlayerHasCosmeticModel(playerID)
 
+    local newHero = Rewards:ReplaceWithFakeHero(playerID, hero)
+
+    -- Model
     if reward and reward.model then
-        local newHero = Rewards:ReplaceWithFakeHero(playerID, hero)
         newHero:SetModel(reward.model)
 
         if reward.scale then
@@ -66,21 +68,24 @@ function Rewards:HandleHeroReplacement(hero)
         return
     end
 
-    -- Setup developer map unit
+    -- Hero
     local steamID32 = PlayerResource:GetSteamAccountID(playerID)
-    local dev = DEVELOPERS[steamID32]
+    local dev = "A_Dizzle"--DEVELOPERS[steamID32]
     if dev then
         print("Welcome "..dev)
         local unit = Entities:FindByName(nil, dev)
         if unit then
-            local newHero = Rewards:ReplaceWithFakeHero(playerID, hero)
-
-            --Rewards:SetCosmeticOverride(newHero, unit)
-            Rewards:ApplyCustomWispParticles(newHero)
+        
+            Rewards:SetCosmeticOverride(newHero, unit)
 
             UTIL_Remove(hero)
+            return
         end
     end
+
+    -- Particle
+    Rewards:ApplyCustomWispParticles(newHero)
+    UTIL_Remove(hero)
 end
 
 function Rewards:SetCosmeticOverride(hero, unit)
@@ -89,13 +94,12 @@ function Rewards:SetCosmeticOverride(hero, unit)
     unit:SetForwardVector(hero:GetForwardVector())
     unit:AddNewModifier(nil, nil, "modifier_out_of_world", {})
     unit:SetParent(hero, "attach_hitloc")
-    unit.customAnimations = {ACT_DOTA_ATTACK, ACT_DOTA_CAST_ABILITY_4}
+    unit.customAnimations = {ACT_DOTA_ATTACK}
     unit.customTranslation = "abysm"
 
-    hero:SetModel(unit:GetModelName())
-    hero:SetOriginalModel(unit:GetModelName())
-    hero:RespawnUnit()
-    hero:AddNoDraw()
+    -- Update portrait
+    hero:SetModel("models/custom_wisp.vmdl")
+    hero:SetOriginalModel("models/custom_wisp.vmdl")
 end
 
 function Rewards:ReplaceWithFakeHero(playerID, hero)
@@ -116,7 +120,6 @@ function Rewards:ApplyCustomWispParticles(hero)
     -- Update portrait
     hero:SetModel("models/custom_wisp.vmdl")
     hero:SetOriginalModel("models/custom_wisp.vmdl")
-    hero:RespawnUnit()
 end
 
 function Rewards:CustomAnimation(playerID, caster)
