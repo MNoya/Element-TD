@@ -93,11 +93,9 @@ function Rewards:SetCosmeticOverride(hero, unit)
     unit.customTranslation = "abysm"
 
     hero:SetModel(unit:GetModelName())
+    hero:SetOriginalModel(unit:GetModelName())
+    hero:RespawnUnit()
     hero:AddNoDraw()
-
-    Timers:CreateTimer(0.03, function()
-        newHero:RespawnUnit()
-    end)
 end
 
 function Rewards:ReplaceWithFakeHero(playerID, hero)

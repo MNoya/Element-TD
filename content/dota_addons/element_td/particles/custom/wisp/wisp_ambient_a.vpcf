@@ -14,26 +14,13 @@
 	[
 		{
 			m_ChildRef = resource:"particles/custom/wisp/wisp_ambient_gradient_custom.vpcf"
-			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/wisp/wisp_ambient_gradient_custom_inner.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/wisp/wisp_ambient_i.vpcf"
-		},
-		{
 			m_ChildRef = resource:"particles/custom/wisp/wisp_death.vpcf"
 			m_bEndCap = true
-		},
-		{
-			m_ChildRef = resource:"particles/custom/wisp/wisp_ambient_g_old.vpcf"
-		},
-		{
-			m_ChildRef = resource:"particles/custom/wisp/wisp_ambient_tentacle_parent.vpcf"
-		},
-		{
-			m_ChildRef = resource:"particles/custom/wisp/wisp_ambient_tentacle_parent.vpcf"
 		},
 	]
 	m_Operators =

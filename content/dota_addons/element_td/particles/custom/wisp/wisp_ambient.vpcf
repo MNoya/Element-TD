@@ -18,13 +18,9 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/wisp/wisp_ambient_a.vpcf"
-			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/wisp/wisp_ambient_gradient_custom_inner.vpcf"
-		},
-		{
-			m_ChildRef = resource:"particles/custom/wisp/wisp_ambient_light.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/custom/wisp/wisp_ambient_gradient_custom_b.vpcf"

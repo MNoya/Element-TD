@@ -18,14 +18,6 @@
 	m_Children =
 	[
 		{
-			m_ChildRef = resource:"particles/custom/wisp/wisp_ambient_gradient.vpcf"
-			m_bDisableChild = true
-		},
-		{
-			m_ChildRef = resource:"particles/custom/wisp/wisp_overcharge_c.vpcf"
-			m_bDisableChild = true
-		},
-		{
 			m_ChildRef = resource:"particles/custom/wisp/wisp_overcharge_e_custom.vpcf"
 		},
 		{
