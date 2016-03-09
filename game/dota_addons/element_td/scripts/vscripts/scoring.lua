@@ -23,9 +23,16 @@ SCORING_GAME_CLEAR = 2
 SCORING_BOSS_WAVE_CLEAR = 3
 SCORING_GAME_FINISHED = 4
 
+-- Scoring Rules
 POINTS_PER_FROG = 200
 BASE_WAVE_SCORE = 5
 BASE_WAVE_SCORE_EXPRESS = 3
+CLEAN_WAVE_BONUS = 0.25
+SLOW_WAVE_CLEAR_FACTOR = 0.01
+FAST_WAVE_CLEAR_FACTOR = 0.03
+BASE_TIME_CLASSIC = 40
+BASE_TIME_EXPRESS = 20
+BOSS_WAVE_BONUS_SCALING = 0.20
 
 function ScoringObject:UpdateScore( const , wave )
 	local scoreTable = {}
@@ -270,8 +277,6 @@ function ScoringObject:GetWaveClearBonus( wave )
 	
 	if EXPRESS_MODE then
 		bonus = (wave+BASE_WAVE_SCORE_EXPRESS) * CREEPS_PER_WAVE
-	else
-		bonus = (wave+BASE_WAVE_SCORE) * CREEPS_PER_WAVE
 	end	
 	return bonus
 end
@@ -281,7 +286,7 @@ function ScoringObject:GetCleanBonus( bool )
 	local bonus = 0
 	if bool then
 		self.cleanWaves = self.cleanWaves + 1
-		bonus = 0.25
+		bonus = CLEAN_WAVE_BONUS
 	end
 	return bonus
 end
@@ -290,10 +295,10 @@ end
 function ScoringObject:GetSpeedBonus( time )
 	local bonus = 1
 	if time > 30 then
-		bonus = bonus - ( time - 30 )*0.01
+		bonus = bonus - ( time - 30 )*SLOW_WAVE_CLEAR_FACTOR
 	elseif time < 30 then
 		self.under30 = self.under30 + 1
-		bonus = bonus + ( 30 - time )*0.03
+		bonus = bonus + ( 30 - time )*FAST_WAVE_CLEAR_FACTOR
 	end
 	return bonus - 1
 end
@@ -303,13 +308,11 @@ function ScoringObject:GetEndSpeedBonus(time)
 	if GameSettings:GetEndless() == "Endless" then
 		return 0
 	else
-		-- Average time for Express is 20 minutes
 		if EXPRESS_MODE then
-			return (20/time*60) - 1
+			return (BASE_TIME_EXPRESS/time*60) - 1
 
-		-- Average time for Classic is 40 minutes
 		else
-			return (40/time*60) - 1
+			return (BASE_TIME_CLASSIC/time*60) - 1
 		end
 	end
 end
@@ -322,11 +325,11 @@ function ScoringObject:GetNetworthBonus()
 	return ((playerNetworth/baseWorth) - 1)
 end
 
--- Classic Only: 1 + 0.20 per wave, applies only to the boss kills
+-- bonus per boss wave after the first one
 function ScoringObject:GetBossBonus( waves )
 	local bonus = 1
 	if waves >= 0 then
-		bonus = 1+waves*0.20
+		bonus = 1+waves*BOSS_WAVE_BONUS_SCALING
 	end
 	return bonus
 end
