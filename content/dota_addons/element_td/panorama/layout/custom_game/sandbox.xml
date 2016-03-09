@@ -10,7 +10,7 @@
   </scripts>
   <Panel hittest='false' class="CustomHudRoot">
     <Panel id="SandboxEnablePanel" class="SandboxTopbar hide">
-      <Label id="New" text="#etd_new_feature"/>
+      <!--<Label id="New" text="#etd_new_feature"/>-->
       <Panel id="SandboxEnableButton" onactivate="EnableSandbox()" onmouseover="HoverEnableSandbox()" onmouseout="DOTAHideTitleTextTooltip()">
         <Label id="EnableSandboxText" class="SandboxButton" text="#sandbox_mode"/>
       </Panel>

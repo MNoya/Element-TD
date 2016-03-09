@@ -4,6 +4,7 @@ end
 
 function Rewards:Load()
     Rewards.players = {}
+    Rewards.file = LoadKeyValues("scripts/kv/rewards.kv")
 
     local req = CreateHTTPRequest('GET', 'http://www.eletd.com/reward_data.js')
     
@@ -23,63 +24,82 @@ function Rewards:Load()
             return
         end
 
+        -- Put the reward tiers in a nettable
         if obj and obj.players then
             for _,v in pairs(obj.players) do
                 local data = {}
                 data.tier = v.reward
-                if v.model then
-                    data.model = v.model
-                    data.scale = v.scale
-                end
+
                 Rewards.players[v.steamID] = data
                 CustomNetTables:SetTableValue("rewards", v.steamID, data)
             end
+        end
+
+        -- Take data from game files
+        for steamID,values in pairs(Rewards.file) do
+            Rewards.players[steamID] = values
+            Rewards.players[steamID].tier = 25
         end
     end)
 end
 
 function Rewards:PlayerHasCosmeticModel(playerID)
     local steamID32 = PlayerResource:GetSteamAccountID(playerID)
-    local steamID64 = Rewards:ConvertID64(steamID32)
+    local steamID64 = "76561197995227322"--Rewards:ConvertID64(steamID32)
 
     local reward = Rewards.players[tostring(steamID64)]
-    if reward and reward.tier and reward.tier < 10 then
-        return false
+    if reward and reward.tier and reward.tier >= 10 then
+        return reward
     end
 
-    return reward or DEVELOPERS[steamID32]
+    return false
 end
 
 function Rewards:HandleHeroReplacement(hero)
     local playerID = hero:GetPlayerID()
     local reward = Rewards:PlayerHasCosmeticModel(playerID)
+    if not reward then
+        ElementTD:OnHeroInGame(hero)
+        return
+    end
 
     local newHero = Rewards:ReplaceWithFakeHero(playerID, hero)
 
     -- Model
-    if reward and reward.model then
-        newHero:SetModel(reward.model)
+    if reward.model then
+        newHero:SetModel(reward.model) --This must be precached beforehand
 
         if reward.scale then
             newHero:SetModelScale(reward.scale)
         end
+        Rewards:ApplyAnimations(newHero, reward)
 
         UTIL_Remove(hero)
         return
     end
 
-    -- Hero
-    local steamID32 = PlayerResource:GetSteamAccountID(playerID)
-    local dev = DEVELOPERS[steamID32]
-    if dev then
-        local unit = Entities:FindByName(nil, dev)
+    -- Map Entity
+    if reward.map_entity then
+        local unit = Entities:FindByName(nil, reward.map_entity)
         if unit then
         
-            Rewards:SetCosmeticOverride(newHero, unit)
+            Rewards:SetCosmeticOverride(newHero, unit, reward)
 
             UTIL_Remove(hero)
             return
         end
+    end
+
+    -- Unit
+    if reward.unit then
+        PrecacheUnitByNameAsync(reward.unit, function()
+            local unit = CreateUnitByName(reward.unit, hero:GetAbsOrigin(), false, nil, nil, hero:GetAbsOrigin())
+            Rewards:SetCosmeticOverride(newHero, unit, reward)
+
+        end, playerID)
+
+        UTIL_Remove(hero)
+        return
     end
 
     -- Particle
@@ -87,14 +107,32 @@ function Rewards:HandleHeroReplacement(hero)
     UTIL_Remove(hero)
 end
 
-function Rewards:SetCosmeticOverride(hero, unit)
+-- Stores animation data on the unit
+function Rewards:ApplyAnimations(unit, data)
+    if data.build_animation then
+        unit.build_animation = tonumber(data.build_animation)
+    end
+    if data.rare_animation then
+        unit.rare_animation = tonumber(data.rare_animation)
+    end
+    if data.animation_translate then
+        AddAnimationTranslate(unit, data.animation_translate)
+    end
+end
+
+function Rewards:SetCosmeticOverride(hero, unit, reward)
     hero.cosmetic_override = unit
-    unit:SetAbsOrigin(hero:GetAbsOrigin())
+    local position = hero:GetAbsOrigin()
+    if reward.modelOffsetZ then
+        position.z = position.z + tonumber(reward.modelOffsetZ)
+    end
+
+    unit:SetAbsOrigin(position)
     unit:SetForwardVector(hero:GetForwardVector())
     unit:AddNewModifier(nil, nil, "modifier_out_of_world", {})
     unit:SetParent(hero, "attach_hitloc")
-    unit.customAnimations = {ACT_DOTA_ATTACK}
-    unit.customTranslation = "abysm"
+
+    Rewards:ApplyAnimations(unit, reward)
 
     -- Update portrait
     hero:SetModel("models/custom_wisp.vmdl")
@@ -123,12 +161,12 @@ end
 
 function Rewards:CustomAnimation(playerID, caster)
     local unit = caster.cosmetic_override or caster
-    if unit.customAnimations then
-        if unit.customTranslation then
-            AddAnimationTranslate(unit, unit.customTranslation)
+    if unit.build_animation then
+        if unit.rare_animation and RollPercentage(75) then
+            unit:StartGesture(unit.rare_animation)
+        else
+            unit:StartGesture(unit.build_animation)
         end
-        local animation = unit.customAnimations[RandomInt(1,#unit.customAnimations)]
-        unit:StartGesture(animation)
     end
 end
 

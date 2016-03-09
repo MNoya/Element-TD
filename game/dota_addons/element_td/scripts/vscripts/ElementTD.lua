@@ -402,7 +402,6 @@ function ElementTD:CheckGameEnd()
         GameRules:SetGameWinner( teamWinner )
         GameRules:SetSafeToLeave( true )
     end)
-
 end
 
 function ElementTD:OnUnitSpawned(keys)
@@ -410,17 +409,16 @@ function ElementTD:OnUnitSpawned(keys)
 
     if unit:IsRealHero() then
         local hero = unit
+        local playerID = hero:GetPlayerID()
 
         -- Should we change to an alternate builder?
-        Timers:CreateTimer(0.03, function()
-            if Rewards:PlayerHasCosmeticModel(hero:GetPlayerID()) and not hero.replaced then
-                Timers:CreateTimer(0.03, function()
-                    Rewards:HandleHeroReplacement(hero)
-                end)
-            else 
-                ElementTD:OnHeroInGame(hero)
-            end
-        end)
+        if Rewards:PlayerHasCosmeticModel(playerID) and hero:GetUnitName() == "npc_dota_hero_wisp" then
+            Timers:CreateTimer(0.03, function()
+                Rewards:HandleHeroReplacement(hero)
+            end)
+        else 
+            ElementTD:OnHeroInGame(hero)
+        end
     else
         local unitName = unit:GetUnitName()
         if unitName and unitName ~= "" and not NPC_UNITS_CUSTOM[unitName] then

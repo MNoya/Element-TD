@@ -10,6 +10,35 @@
 			}
 		}
 	}
+	"models/items/warlock/golem/hellsworn_golem/hellsworn_golem.vmdl"
+	{
+		"attach_attack2"
+		{
+			"models/items/doom/weapon_eyeoffetitzu/weapon_eyeoffetitzu.vmdl"
+			{
+				"scale"		"1.5"
+				"pitch"		"-139"
+				"yaw"		"-152"
+				"XPos"		"-10"
+				"YPos"		"52"
+				"ZPos"		"-84"
+				"roll"		"90"
+			}
+		}
+		"attach_attack1"
+		{
+			"models/items/doom/weapon_eyeoffetitzu/weapon_eyeoffetitzu.vmdl"
+			{
+				"scale"		"1.5"
+				"pitch"		"-79"
+				"roll"		"70"
+				"ZPos"		"-124"
+				"YPos"		"72"
+				"yaw"		"-112"
+				"XPos"		"-10"
+			}
+		}
+	}
 	"models/heroes/zeus/zeus.vmdl"
 	{
 		"attach_attack2"

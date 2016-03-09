@@ -125,7 +125,7 @@ function EndGame() {
 }
 
 function HoverEnableSandbox() {
-    $("#New").AddClass('hide')
+    //$("#New").AddClass('hide')
     if ($("#SandboxPanel").BHasClass('hide'))
         $.DispatchEvent("DOTAShowTitleTextTooltip", $("#SandboxEnableButton"), "#sandbox_mode_enable", "#sandbox_mode_tooltip");
     else
