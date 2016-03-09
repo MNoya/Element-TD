@@ -24,7 +24,8 @@ SCORING_BOSS_WAVE_CLEAR = 3
 SCORING_GAME_FINISHED = 4
 
 POINTS_PER_FROG = 200
-BASE_WAVE_SCORE = 10
+BASE_WAVE_SCORE = 5
+BASE_WAVE_SCORE_EXPRESS = 3
 
 function ScoringObject:UpdateScore( const , wave )
 	local scoreTable = {}
@@ -265,7 +266,13 @@ end
 
 -- base wave score, takes a wave number
 function ScoringObject:GetWaveClearBonus( wave )
-	local bonus = (wave+BASE_WAVE_SCORE) * CREEPS_PER_WAVE
+	local bonus = wave * CREEPS_PER_WAVE
+	
+	if EXPRESS_MODE then
+		bonus = (wave+BASE_WAVE_SCORE_EXPRESS) * CREEPS_PER_WAVE
+	else
+		bonus = (wave+BASE_WAVE_SCORE) * CREEPS_PER_WAVE
+	end	
 	return bonus
 end
 
@@ -283,7 +290,7 @@ end
 function ScoringObject:GetSpeedBonus( time )
 	local bonus = 1
 	if time > 30 then
-		bonus = bonus - ( time - 30 )*0.015
+		bonus = bonus - ( time - 30 )*0.01
 	elseif time < 30 then
 		self.under30 = self.under30 + 1
 		bonus = bonus + ( 30 - time )*0.03
