@@ -6,6 +6,12 @@ function Rewards:Load()
     Rewards.players = {}
     Rewards.file = LoadKeyValues("scripts/kv/rewards.kv")
 
+    -- Take data from game files
+    for steamID,values in pairs(Rewards.file) do
+        Rewards.players[steamID] = values
+        Rewards.players[steamID].tier = 25
+    end
+
     local req = CreateHTTPRequest('GET', 'http://www.eletd.com/reward_data.js')
     
     -- Send the request
@@ -34,12 +40,6 @@ function Rewards:Load()
                 CustomNetTables:SetTableValue("rewards", v.steamID, data)
             end
         end
-
-        -- Take data from game files
-        for steamID,values in pairs(Rewards.file) do
-            Rewards.players[steamID] = values
-            Rewards.players[steamID].tier = 25
-        end
     end)
 end
 
@@ -59,22 +59,34 @@ function Rewards:HandleHeroReplacement(hero)
     local playerID = hero:GetPlayerID()
     local reward = Rewards:PlayerHasCosmeticModel(playerID)
     if not reward then
-        ElementTD:OnHeroInGame(hero)
         return
     end
 
     local newHero = Rewards:ReplaceWithFakeHero(playerID, hero)
 
-    -- Model
+    -- Models are based on a unit for precache async, and update the portrait
     if reward.model then
-        newHero:SetModel(reward.model) --This must be precached beforehand
+        PrecacheUnitByNameAsync(reward.model, function()
+            local model = GetUnitKeyValue(reward.model, "Model")
+            local scale = GetUnitKeyValue(reward.model, "ModelScale") or 1
 
-        if reward.scale then
-            newHero:SetModelScale(reward.scale)
-        end
-        Rewards:ApplyAnimations(newHero, reward)
+            newHero:SetModel(model)
+            newHero:SetOriginalModel(model)
+            newHero:SetModelScale(scale)
+            Rewards:ApplyAnimations(newHero, reward)
 
-        UTIL_Remove(hero)
+            -- Abilities to setup particles and attachments
+            local ability1 = GetUnitKeyValue(reward.model, "Ability1")
+            if ability1 then
+                AddAbility(newHero, ability1)
+                local ability2 = GetUnitKeyValue(reward.model, "Ability2")
+                if ability2 then
+                    AddAbility(newHero, ability2)
+                end
+            end
+
+            UTIL_Remove(hero)
+        end)
         return
     end
 
@@ -90,15 +102,13 @@ function Rewards:HandleHeroReplacement(hero)
         end
     end
 
-    -- Unit
+    -- Fake Unit (used for hero units with AttachWearables that aren't on the map)
     if reward.unit then
         PrecacheUnitByNameAsync(reward.unit, function()
-            local unit = CreateUnitByName(reward.unit, hero:GetAbsOrigin(), false, nil, nil, hero:GetAbsOrigin())
+            local unit = CreateUnitByName(reward.unit, hero:GetAbsOrigin(), false, nil, nil, hero:GetTeamNumber())
             Rewards:SetCosmeticOverride(newHero, unit, reward)
-
+            UTIL_Remove(hero)
         end, playerID)
-
-        UTIL_Remove(hero)
         return
     end
 

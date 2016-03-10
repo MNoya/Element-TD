@@ -430,6 +430,7 @@ end
 
 function ElementTD:OnHeroInGame(hero)
     local playerID = hero:GetPlayerID()
+    if playerID == -1 then return end
     CreateDataForPlayer(playerID)
 
     local playerData = GetPlayerData(playerID)

@@ -1,0 +1,15 @@
+"chocobo"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/items/courier/chocobo/chocobo.vmdl"
+    "ModelScale"    "1.2"
+}
+
+"hellsworn"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/items/warlock/golem/hellsworn_golem/hellsworn_golem.vmdl"
+    "ModelScale"    "1"
+    "Ability1"      "hellsworn_particles"
+    "Ability2"      "hellsworn_cosmetics"
+}

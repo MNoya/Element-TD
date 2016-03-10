@@ -17,6 +17,13 @@ function AdjustCosmetics( event )
     end)
 end
 
+-- Datadriven call
+function AttachProp( event )
+    local unit = event.caster
+    local model = event.Model
+    local point = event.Point
+    Attachments:AttachProp(unit, point, model)
+end
 
 -- Creates full AttachWearables entries by set names
 function MakeSets()
