@@ -311,7 +311,7 @@ function ShowVoteResults()
 
     // Update HP-Bounty-Scores results
     $("#HealthResult").text = GetHP(difficultyName)
-    $("#BountyResult").text = GetBounty(difficultyName, express)
+    $("#BountyResult").text = GetBounty(difficultyName, rush, express)
     $("#ScoresResult").text = GetScore(difficultyName)
 
     // Show current mode UI
