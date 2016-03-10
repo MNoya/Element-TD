@@ -955,3 +955,19 @@
     margin: 0 0 0 0;
     width: 18px;
 }
+
+#SetLife
+{
+    width: 100px;
+}
+
+#Life
+{
+    width: 54px;
+    height: 34px;
+    padding-right: 0px;
+    padding-top: 5px;
+    padding-left: 6px;
+    margin-top: 4px;
+    font-size: 20px;
+}

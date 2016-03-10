@@ -14,7 +14,7 @@ function Sandbox:Init()
     CustomGameEventManager:RegisterListener("sandbox_toggle_zen_mode", Dynamic_Wrap(Sandbox, "ZenMode"))
     CustomGameEventManager:RegisterListener("sandbox_toggle_no_cd", Dynamic_Wrap(Sandbox, "NoCD"))
     CustomGameEventManager:RegisterListener("sandbox_max_elements", Dynamic_Wrap(Sandbox, "MaxElements"))
-    CustomGameEventManager:RegisterListener("sandbox_full_life", Dynamic_Wrap(Sandbox, "FullLife"))
+    CustomGameEventManager:RegisterListener("sandbox_set_life", Dynamic_Wrap(Sandbox, "SetLife"))
     CustomGameEventManager:RegisterListener("sandbox_set_resources", Dynamic_Wrap(Sandbox, "SetResources")) -- Gold/Lumber/Essence
     CustomGameEventManager:RegisterListener("sandbox_set_element", Dynamic_Wrap(Sandbox, "SetElement")) -- 6 elements
 
@@ -144,9 +144,9 @@ function Sandbox:MaxElements(event)
     ShowSandboxCommand(playerID, "Max Elements")
 end
 
-function Sandbox:FullLife(event)
+function Sandbox:SetLife(event)
     local playerID = event.PlayerID
-    local value = 50
+    local value = tonumber(event.value) or 50
     local playerData = GetPlayerData(playerID)
     playerData.health = value
     playerData.cheated = true
@@ -161,7 +161,7 @@ function Sandbox:FullLife(event)
    
     CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=playerData.health/hero:GetMaxHealth() * 100} )
 
-    ShowSandboxCommand(playerID, "Full Life")
+    ShowSandboxCommand(playerID, "Set Life: "..value)
 end
 
 function Sandbox:SetResources(event)

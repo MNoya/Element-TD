@@ -436,7 +436,7 @@ function Setup()
     SelectDifficulty("normal")
     UpdateMultipliers()
     voteResultsUI.visible = false;
-    votingUI.visible = true;
+    votingUI.visible = false;
     info.visible = false;
     votingLiveUI.visible = false;
     currentModeUI.visible = false;

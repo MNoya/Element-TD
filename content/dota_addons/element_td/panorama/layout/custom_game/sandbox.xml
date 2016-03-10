@@ -49,9 +49,10 @@
             <Button id="max_elements" class="DemoButton" onactivate="MaxElementsPressed()">
               <Label text="#sandbox_max_elements"/>
             </Button>
-            <Button id="max_resources" class="DemoButton" onactivate="FullLifePressed()">
-              <Label text="#sandbox_full_life"/>
+            <Button id="SetLife" class="DemoButton" onactivate="SetLife()">
+              <Label text="#sandbox_set_life"/>
             </Button>
+            <TextEntry id="Life" class="NumEntry" maxchars="4" placeholder="50" oninputsubmit="SetLife()" ontabbackward="SetInputFocus(Gold)" ontabforward="SetInputFocus(Essence)"/>
           </Panel>
           
 
@@ -155,8 +156,6 @@
                 <Label id="Minus" text="-"/>
               </Button>
             </Panel>
-
-
           </Panel>
 
         </Panel>

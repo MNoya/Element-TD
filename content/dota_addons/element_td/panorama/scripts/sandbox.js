@@ -31,8 +31,12 @@ function MaxElementsPressed() {
     GameEvents.SendCustomGameEventToServer( "sandbox_max_elements", {} );
 }
 
-function FullLifePressed() {
-    GameEvents.SendCustomGameEventToServer( "sandbox_full_life", {} );
+function SetLife() {
+    $('#Life').text = $('#Life').text;
+    if (parseInt($('#Life').text) > 999)
+        $('#Life').text = "999"
+
+    GameEvents.SendCustomGameEventToServer( "sandbox_set_life", { "value": $('#Life').text } );
 }
 
 function GetResources()
@@ -148,6 +152,9 @@ function EnableSandbox() {
 function Dismiss() {
     $("#SandboxEnablePanel").AddClass('hide')
 }
+
+SandboxMakeVisible()
+EnableSandbox()
 
 function SandboxMakeVisible() {
     $("#SandboxEnablePanel").RemoveClass('hide')
