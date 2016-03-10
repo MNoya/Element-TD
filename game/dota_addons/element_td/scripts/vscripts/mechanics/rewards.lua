@@ -52,6 +52,11 @@ function Rewards:PlayerHasCosmeticModel(playerID)
         return reward
     end
 
+    -- Enable wisp set outside of dedis
+    if not IsDedicatedServer() then
+        return {tier=10}
+    end
+
     return false
 end
 
