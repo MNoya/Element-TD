@@ -99,16 +99,20 @@ function RemoveGlow(panel) {
     panel.RemoveClass('Hover')
 }
 
-function HoverCheckbox(name) {
+function HoverCheckbox(name, desc) {
     var panel = $("#"+name)
 
     panel.hovering = true
+    $("#"+desc).SetHasClass( "Hover", panel.hovering )
     UpdateMultipliers()
 }
 
-function MouseOverCheckbox(name) {
+function MouseOverCheckbox(name, desc) {
     var panel = $("#"+name)
+
     panel.hovering = false
+    if (desc !== undefined)
+        $("#"+desc).SetHasClass( "Hover", panel.hovering )
     UpdateMultipliers()
 }
 
@@ -116,10 +120,12 @@ function SelectCheckbox(name) {
     UpdateMultipliers()
     Game.EmitSound("ui_generic_button_click");
     $("#"+name).checked = !$("#"+name).checked
+    MouseOverCheckbox(name)
 }
 
-function SelectCheckboxClick() {
+function SelectCheckboxClick(name) {
     Game.EmitSound("ui_generic_button_click");
+    MouseOverCheckbox(name)
     UpdateMultipliers()
 }
 
@@ -430,7 +436,7 @@ function Setup()
     SelectDifficulty("normal")
     UpdateMultipliers()
     voteResultsUI.visible = false;
-    votingUI.visible = false;
+    votingUI.visible = true;
     info.visible = false;
     votingLiveUI.visible = false;
     currentModeUI.visible = false;
