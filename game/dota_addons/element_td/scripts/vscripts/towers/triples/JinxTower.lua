@@ -32,7 +32,7 @@ function JinxTower:OnAttackLanded(keys)
 
     local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_witchdoctor/witchdoctor_maledict_aoe.vpcf", PATTACH_ABSORIGIN, target)
     ParticleManager:SetParticleControl(particle, 0, target:GetOrigin())
-    ParticleManager:SetParticleControl(particle, 1, Vector(300, 0, 0))
+    ParticleManager:SetParticleControl(particle, 1, Vector(self.maledictAOE, 0, 0))
     ParticleManager:ReleaseParticleIndex(particle)
 end
 
