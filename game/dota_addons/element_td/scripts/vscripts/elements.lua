@@ -87,7 +87,7 @@ function DamageEntity(entity, attacker, damage)
 
 	-- Temporal creeps backtrack to where they were some seconds ago, regaining HP
 	local timeLapse = entity:FindAbilityByName("creep_ability_time_lapse")
-	if entity.scriptObject.Backtrack and timeLapse and timeLapse:IsCooldownReady() and entity:GetHealthPercent() <= timeLapse:GetSpecialValueFor("health_threshold") then
+	if timeLapse and timeLapse:IsCooldownReady() and entity:GetHealthPercent() <= timeLapse:GetSpecialValueFor("health_threshold") and entity.scriptObject.Backtrack then
 		entity.scriptObject:Backtrack()
 		return 0
 	end
