@@ -56,8 +56,7 @@ function BuildGameArray()
     game.str = START_TIME
     game.fin = END_TIME or (GetSystemDate() .. " " .. GetSystemTime())
     game.ver = VERSION
-    game.rid = GameRules:GetMatchID()
-    PrintTable(GameRules:GetMatchID())
+    game.rid = tostring(GameRules:GetMatchID())
     return game
 end
 
