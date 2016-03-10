@@ -24,7 +24,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"backtrack_duration"	"3"
+			"backtrack_duration"	"5"
 		}
 	}
 
