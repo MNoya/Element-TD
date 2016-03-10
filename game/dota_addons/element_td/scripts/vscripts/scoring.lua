@@ -266,7 +266,7 @@ function ScoringObject:GetGameFinished()
 		extraFrogScore = remainder * POINTS_PER_FROG * self:GetBossBonus(playerData.bossWaves-1) * (1+self:GetDifficultyBonus())
 	end
 
-	totalScore = math.ceil(score)
+	totalScore = math.ceil(score + extraFrogScore)
 
 	return { frogKills = frogKills, totalScore = totalScore }
 end
