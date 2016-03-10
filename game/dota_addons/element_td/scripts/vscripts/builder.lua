@@ -142,6 +142,7 @@ function Build( event )
 
         -- Normalize Hull Radius
         unit:SetHullRadius(HULL_RADIUS)
+        ToggleGridForTower(unit, true)
     end)
 
     -- A building finished construction

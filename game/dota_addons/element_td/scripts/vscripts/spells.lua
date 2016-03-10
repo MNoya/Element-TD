@@ -144,7 +144,7 @@ function SellTowerCast(keys)
 
 		-- Kills and hide the tower, so that its running timers can still execute until it gets removed by the engine
 		tower:AddEffects(EF_NODRAW)
-		DrawTowerGrid(tower)
+		ToggleGridForTower(tower)
 		tower:ForceKill(true)
 		playerData.towers[tower:entindex()] = nil -- remove this tower index from the player's tower list
 
@@ -372,27 +372,22 @@ function ToggleGrid( event )
 	item.enabled = not item.enabled
 
 	if item.enabled then
-		if item.particles then
-			for k,v in pairs(item.particles) do
-				ParticleManager:DestroyParticle(v, true)
-			end
-		end
-
-		item.particles = {}
 		for y,v in pairs(BuildingHelper.Grid) do
 	        for x,_ in pairs(v) do
 				local pos = GetGroundPosition(Vector(GridNav:GridPosToWorldCenterX(x), GridNav:GridPosToWorldCenterY(y), 0), nil)
 	            if pos.z > 380 and pos.z < 400 and IsInsideSector(pos, sector) then
-	            	if BuildingHelper:CellHasGridType(x,y,'BUILDABLE') then
-	            		local particle = DrawGrid(x,y,Vector(255,255,255), playerID)
-	                	table.insert(item.particles, particle)
+	            	if BuildingHelper:CellHasGridType(x, y, 'BUILDABLE') then
+	                	item.particles[x][y] = DrawGrid(x, y, Vector(255,255,255), playerID)
 	                end
 	            end
 	        end
 	   	end
 	else
-		for k,v in pairs(item.particles) do
-			ParticleManager:DestroyParticle(v, true)
+		for x, yt in pairs(item.particles) do
+			for y, particle in pairs(yt) do
+				ParticleManager:DestroyParticle(particle, true)
+				item.particles[x][y] = nil
+			end
 		end
 	end
 end
@@ -411,7 +406,7 @@ function DrawGrid(x, y, color, playerID)
 	return particle
 end
 
-function DrawTowerGrid(tower)
+function ToggleGridForTower(tower, destroy)
 	local playerID = tower:GetPlayerOwnerID()
 	local playerData = GetPlayerData(playerID)
 	if not playerData.toggle_grid_item or not playerData.toggle_grid_item.enabled then
@@ -432,13 +427,18 @@ function DrawTowerGrid(tower)
     local upperBoundY = math.max(boundY1, boundY2)
 
     -- Adjust even size
-    upperBoundX = upperBoundX-1
-    upperBoundY = upperBoundY-1
+    upperBoundX = upperBoundX - 1
+    upperBoundY = upperBoundY - 1
 
+    local particles = playerData.toggle_grid_item.particles
     for y = lowerBoundY, upperBoundY do
         for x = lowerBoundX, upperBoundX do
-			local particle = DrawGrid(x, y, Vector(255,255,255), playerID)
-			table.insert(playerData.toggle_grid_item.particles, particle)
+            if destroy and particles[x][y] then
+                ParticleManager:DestroyParticle(particles[x][y], true)
+                particles[x][y] = nil
+            else
+                particles[x][y] = DrawGrid(x, y, Vector(255,255,255), playerID)
+            end
         end
     end
 end
@@ -486,7 +486,7 @@ function CancelConstruction(event)
 		end
 
 		tower:AddEffects(EF_NODRAW)
-		DrawTowerGrid(tower)
+		ToggleGridForTower(tower)
 		tower:ForceKill(true)
 	end
 
