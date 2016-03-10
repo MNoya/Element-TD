@@ -153,9 +153,6 @@ function Dismiss() {
     $("#SandboxEnablePanel").AddClass('hide')
 }
 
-SandboxMakeVisible()
-EnableSandbox()
-
 function SandboxMakeVisible() {
     $("#SandboxEnablePanel").RemoveClass('hide')
 }
