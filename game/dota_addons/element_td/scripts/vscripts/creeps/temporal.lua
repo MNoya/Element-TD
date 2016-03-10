@@ -25,8 +25,8 @@ function CreepTemporal:OnSpawned()
     -- Initial cooldown
     self.ability:StartCooldown(self.backtrack_duration)
     Timers:CreateTimer(self.backtrack_duration, function()
-        if IsValidEntity(self.creep) and self.creep:IsAlive() then
-            self.ability:ApplyDataDrivenModifier(self.creep, self.creep, "modifier_time_lapse", {})
+        if IsValidEntity(creep) and creep:IsAlive() and creep:HasAbility("creep_ability_time_lapse") then
+            self.ability:ApplyDataDrivenModifier(creep, creep, "modifier_time_lapse", {})
         end
     end)
 
@@ -37,7 +37,7 @@ function CreepTemporal:OnSpawned()
     self.position[i] = creep:GetAbsOrigin()
 
     self.temporalTimer = Timers:CreateTimer(think_interval, function()
-        if not IsValidEntity(self.creep) or not self.creep:IsAlive() then return end
+        if not IsValidEntity(self.creep) or not creep:IsAlive() then return end
         local time = string.format("%.1f", GameRules:GetGameTime())
 
         self.health[time] = creep:GetHealth()

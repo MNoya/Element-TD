@@ -1,6 +1,6 @@
-"death_gazer"
+"shifting_treant"
 {
-    "MinimapIcon"               "minimap_icon_white"
+    "MinimapIcon"               "minimap_icon_green"
     "MinimapIconSize"           "200"
     "MinimapDisableTint"        "1"
 
@@ -26,11 +26,11 @@
     "StatusManaRegen"        "0"
     "VisionDaytimeRange"        "1200"
     "VisionNighttimeRange"        "800"
-    "Model"        "models/creeps/neutral_creeps/n_creep_thunder_lizard/n_creep_thunder_lizard_small.vmdl"
-    "ModelScale"        "1.0"
+    "Model"        "models/items/furion/treant/father_treant/father_treant.vmdl"
+    "ModelScale"        "1.1"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
-    "ScriptClass"     "CreepBulky"
-    "Ability1"        "composite_armor"
-    "Ability2"        "creep_ability_bulky"
+    "ScriptClass"     "CreepTemporal"
+    "Ability1"        "nature_armor"
+    "Ability2"        "creep_ability_time_lapse"
 }

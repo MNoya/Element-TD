@@ -302,6 +302,11 @@
         "centaur_warchief"          "Centaur Warchief"
         "wolf"                      "Wolf"
 
+        "clock_wanderer"            "Clock Wanderer"
+        "earth_walker"              "Earth Walker"
+        "faceless"                  "Faceless"
+        "shifting_treant"           "Shifting Treant"
+
         // ******************** ABILITIES ********************
         "DOTA_Tooltip_ability_sell_tower_100"       "Sell Tower"
         "DOTA_Tooltip_ability_sell_tower_100_Description"       "Sells this tower, returning the full total cost."

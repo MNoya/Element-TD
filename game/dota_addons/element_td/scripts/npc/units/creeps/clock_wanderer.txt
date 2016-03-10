@@ -1,6 +1,6 @@
-"phantom_lancer"
+"clock_wanderer"
 {
-    "MinimapIcon"               "minimap_icon_yellow"
+    "MinimapIcon"               "minimap_icon_white"
     "MinimapIconSize"           "200"
     "MinimapDisableTint"        "1"
 
@@ -16,7 +16,7 @@
     "ProjectileModel"        ""
     "ProjectileSpeed"        "0"
     "RingRadius"        "70"
-    "HealthBarOffset"        "200"
+    "HealthBarOffset"        "160"
     "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
     "BountyXP"        "0"
     "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
@@ -26,22 +26,22 @@
     "StatusManaRegen"        "0"
     "VisionDaytimeRange"        "1200"
     "VisionNighttimeRange"        "800"
-    "Model"        "models/heroes/phantom_lancer/phantom_lancer.vmdl"
-    "ModelScale"        "1.1"
+    "Model"        "models/heroes/rattletrap/rattletrap.vmdl"
+    "ModelScale"        "1.3"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"     "CreepTemporal"
-    "Ability1"        "light_armor"
+    "Ability1"        "composite_armor"
     "Ability2"        "creep_ability_time_lapse"
+
     "Creature"
     {
-        "AttachWearables" // Vengeance of the Sunwarrior
+        "AttachWearables" // Warcog
         {
-            "1" { "ItemDef" "6617" } // Belt of the Sunwarrior
-            "2" { "ItemDef" "6619" } // Bracers of the Sunwarrior
-            "3" { "ItemDef" "6621" } // Mane of the Sunwarrior
-            "4" { "ItemDef" "6620" } // Lance of the Sunwarrior
-            "5" { "ItemDef" "127" } // Phantom Lancer's Head
+            "1" { "ItemDef" "7123" } // Warcog Metal Mask
+            "2" { "ItemDef" "5090" } // Warcog Body Armor
+            "3" { "ItemDef" "7122" } // Warcog Trench Digger
+            "4" { "ItemDef" "7126" } // Warcog Blaster Shell
         }
     }
 }

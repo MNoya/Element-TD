@@ -26,21 +26,21 @@
     "StatusManaRegen"        "0"
     "VisionDaytimeRange"        "1200"
     "VisionNighttimeRange"        "800"
-    "Model"        "models/heroes/storm_spirit/storm_spirit.vmdl"
-    "ModelScale"        "1.8"
+    "Model"        "models/heroes/puck/puck.vmdl"
+    "ModelScale"        "1.2"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
-    "ScriptClass"     "CreepBulky"
+    "ScriptClass"     "CreepTemporal"
     "Ability1"        "water_armor"
-    "Ability2"        "creep_ability_bulky"
+    "Ability2"        "creep_ability_time_lapse"
 
     "Creature"
     {
-        "AttachWearables" // Default npc_dota_hero_storm_spirit
+        "AttachWearables" // Default npc_dota_hero_puck
         {
-            "1" { "ItemDef" "310" } // Storm Spirit's Armor
-            "2" { "ItemDef" "308" } // Storm Spirit's Hat
-            "3" { "ItemDef" "309" } // Storm Spirit's Shoulder
+            "1" { "ItemDef" "6709" } // Orb of Reminiscence
+            "2" { "ItemDef" "370" } // Puck's Wings
+            "3" { "ItemDef" "371" } // Puck's Tail
         }
     }
 }

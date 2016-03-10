@@ -1,6 +1,6 @@
-"phantom_lancer"
+"faceless"
 {
-    "MinimapIcon"               "minimap_icon_yellow"
+    "MinimapIcon"               "minimap_icon_purple"
     "MinimapIconSize"           "200"
     "MinimapDisableTint"        "1"
 
@@ -16,7 +16,7 @@
     "ProjectileModel"        ""
     "ProjectileSpeed"        "0"
     "RingRadius"        "70"
-    "HealthBarOffset"        "200"
+    "HealthBarOffset"        "160"
     "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
     "BountyXP"        "0"
     "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
@@ -26,22 +26,23 @@
     "StatusManaRegen"        "0"
     "VisionDaytimeRange"        "1200"
     "VisionNighttimeRange"        "800"
-    "Model"        "models/heroes/phantom_lancer/phantom_lancer.vmdl"
-    "ModelScale"        "1.1"
+    "Model"        "models/heroes/faceless_void/faceless_void.vmdl"
+    "ModelScale"        "1.3"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"     "CreepTemporal"
-    "Ability1"        "light_armor"
+    "Ability1"        "dark_armor"
     "Ability2"        "creep_ability_time_lapse"
+
     "Creature"
     {
-        "AttachWearables" // Vengeance of the Sunwarrior
+        "AttachWearables" // The Tentacular Timelord Set
         {
-            "1" { "ItemDef" "6617" } // Belt of the Sunwarrior
-            "2" { "ItemDef" "6619" } // Bracers of the Sunwarrior
-            "3" { "ItemDef" "6621" } // Mane of the Sunwarrior
-            "4" { "ItemDef" "6620" } // Lance of the Sunwarrior
-            "5" { "ItemDef" "127" } // Phantom Lancer's Head
+            "1" { "ItemDef" "5868" } // Primal Form of the Tentacular Timelord
+            "2" { "ItemDef" "5898" } // Mace of the Tentacular Timelord
+            "3" { "ItemDef" "5861" } // Bracers of the Tentacular Timelord
+            "4" { "ItemDef" "5896" } // Armor of the Tentacular Timelord
+            "5" { "ItemDef" "5897" } // Skirt of the Tentacular Timelord
         }
     }
 }
