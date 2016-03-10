@@ -1,6 +1,4 @@
--- Regen Creep class
--- Regen waves
--- Classic: 6, 12, 21, 31, 40, 44, 48
+-- Bulky Creep class
 CreepBulky = createClass({
 		creep = nil,
 		creepClass = "",

@@ -89,6 +89,7 @@ local requires =
     "creeps/heal",
     "creeps/fast",
     "creeps/regen",
+    "creeps/temporal",
     "creeps/bulky",
     "creeps/vengeance",
     "creeps/boss",

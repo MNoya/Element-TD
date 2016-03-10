@@ -85,6 +85,13 @@ function DamageEntity(entity, attacker, damage)
 		damage = 0
 	end
 
+	-- Temporal creeps backtrack to where they were some seconds ago, regaining HP
+	local timeLapse = entity:FindAbilityByName("creep_ability_time_lapse")
+	if entity.scriptObject.Backtrack and timeLapse and timeLapse:IsCooldownReady() and entity:GetHealthPercent() <= timeLapse:GetSpecialValueFor("health_threshold") then
+		entity.scriptObject:Backtrack()
+		return 0
+	end
+
 	if entity:GetHealth() - damage <= 0 then
 		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 		local goldBounty = entity:GetGoldBounty()
