@@ -214,6 +214,8 @@ function ScoringObject:GetWaveCleared( wave )
 	local cleanBonus = self:GetCleanBonus( leaks == 0 )
 	local totalScore = math.ceil(waveClearScore * (1 + cleanBonus) * (1 + speedBonus) * (1 + difficultyBonus))
 
+	totalScore = math.max(0, totalScore)
+
 	return { clearBonus = waveClearScore, cleanBonus = cleanBonus, speedBonus = speedBonus, difficultyBonus = difficultyBonus, totalScore = totalScore }
 end
 
