@@ -9,6 +9,9 @@ function NewSelection( unit )
     CustomGameEventManager:Send_ServerToPlayer(player, "new_selection", { ent_index = unit:GetEntityIndex() })
 end
 
+function SetSelectionOverride(unit, reselect_unit)
+    
+end
 
 function RemoveUnitFromSelection( unit )
     local player = unit:GetPlayerOwner()
