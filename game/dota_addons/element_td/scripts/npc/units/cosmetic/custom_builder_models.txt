@@ -13,3 +13,11 @@
     "Ability1"      "hellsworn_particles"
     "Ability2"      "hellsworn_cosmetics"
 }
+
+"undying"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/heroes/undying/undying_flesh_golem.vmdl"
+    "ModelScale"    "0.85"
+    "Ability1"      "undying_cosmetics"
+}

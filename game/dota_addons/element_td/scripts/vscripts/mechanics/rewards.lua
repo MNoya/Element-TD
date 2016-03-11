@@ -33,9 +33,8 @@ function Rewards:Load()
         -- Put the reward tiers in a nettable
         if obj and obj.players then
             for _,v in pairs(obj.players) do
-                local data = {}
+                local data = Rewards.players[v.steamID] or {}                
                 data.tier = v.reward
-
                 Rewards.players[v.steamID] = data
                 CustomNetTables:SetTableValue("rewards", v.steamID, data)
             end
@@ -48,7 +47,7 @@ function Rewards:PlayerHasCosmeticModel(playerID)
     local steamID64 = Rewards:ConvertID64(steamID32)
 
     local reward = Rewards.players[tostring(steamID64)]
-    if reward and reward.tier and reward.tier >= 10 then
+    if reward and (not reward.tier or (reward.tier and reward.tier >= 10)) then
         return reward
     end
 
@@ -68,6 +67,8 @@ function Rewards:HandleHeroReplacement(hero)
     end
 
     local newHero = Rewards:ReplaceWithFakeHero(playerID, hero)
+
+    DeepPrintTable(reward)
 
     -- Models are based on a unit for precache async, and update the portrait
     if reward.model then
@@ -129,6 +130,7 @@ function Rewards:ApplyAnimations(unit, data)
     end
     if data.rare_animation then
         unit.rare_animation = tonumber(data.rare_animation)
+        unit.rare_chance = data.rare_chance and tonumber(data.rare_chance) or 50
     end
     if data.animation_translate then
         AddAnimationTranslate(unit, data.animation_translate)
@@ -172,10 +174,10 @@ end
 function Rewards:CustomAnimation(playerID, caster)
     local unit = caster.cosmetic_override or caster
     if unit.build_animation then
-        if unit.rare_animation and RollPercentage(75) then
-            unit:StartGesture(unit.rare_animation)
+        if unit.rare_animation and RollPercentage(unit.rare_chance) then
+            StartAnimation(unit, {duration=2, activity=unit.rare_animation, rate=1})
         else
-            unit:StartGesture(unit.build_animation)
+            StartAnimation(unit, {duration=2, activity=unit.build_animation, rate=1})
         end
     end
 end

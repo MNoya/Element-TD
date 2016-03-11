@@ -1,4 +1,4 @@
-"hellsworn_cosmetics"
+"undying_cosmetics"
 {
     "BaseClass"                     "ability_datadriven"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
@@ -6,12 +6,12 @@
 
     "precache"
     {
-        "particle"  "models/items/doom/weapon_eyeoffetitzu/weapon_eyeoffetitzu.vmdl"
+        "particle"  "models/items/necrolyte/death_protest_weapon/death_protest_weapon.vmdl"
     }
 
     "Modifiers"
     {
-        "modifier_hellsworn_cosmetics"
+        "modifier_undying_cosmetics"
         {
             "Passive"   "1"
             "IsHidden"  "1"
@@ -22,16 +22,8 @@
                 {
                     "ScriptFile"    "mechanics/wearables.lua"
                     "Function"      "AttachProp"
-                    "Model"         "models/items/doom/weapon_eyeoffetitzu/weapon_eyeoffetitzu.vmdl"
+                    "Model"         "models/items/necrolyte/death_protest_weapon/death_protest_weapon.vmdl"
                     "Point"         "attach_attack1"
-                }
-
-                "RunScript"
-                {
-                    "ScriptFile"    "mechanics/wearables.lua"
-                    "Function"      "AttachProp"
-                    "Model"         "models/items/doom/weapon_eyeoffetitzu/weapon_eyeoffetitzu.vmdl"
-                    "Point"         "attach_attack2"
                 }
             }
         }
