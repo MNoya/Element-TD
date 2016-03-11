@@ -68,8 +68,6 @@ function Rewards:HandleHeroReplacement(hero)
 
     local newHero = Rewards:ReplaceWithFakeHero(playerID, hero)
 
-    DeepPrintTable(reward)
-
     -- Models are based on a unit for precache async, and update the portrait
     if reward.model then
         PrecacheUnitByNameAsync(reward.model, function()
