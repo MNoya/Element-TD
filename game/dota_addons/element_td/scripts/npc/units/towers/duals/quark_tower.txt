@@ -40,9 +40,9 @@
         "1"        "earth"
         "2"        "light"
     }
-    "Damage"        "200"
-    "AttackDamageMin"        "200"
-    "AttackDamageMax"        "200"
+    "Damage"        "160"
+    "AttackDamageMin"        "160"
+    "AttackDamageMax"        "160"
     "DamageType"        "light"
     "ScriptClass"        "QuarkTower"
     "TowerType"        "Normal"
