@@ -62,9 +62,7 @@ end
 function Rewards:HandleHeroReplacement(hero)
     local playerID = hero:GetPlayerID()
     local reward = Rewards:PlayerHasCosmeticModel(playerID)
-    if not reward then
-        return
-    end
+    if not reward then return end
 
     local newHero = Rewards:ReplaceWithFakeHero(playerID, hero)
 
@@ -91,34 +89,39 @@ function Rewards:HandleHeroReplacement(hero)
 
             UTIL_Remove(hero)
         end)
-        return
-    end
 
     -- Map Entity
-    if reward.map_entity then
+    elseif reward.map_entity then
         local unit = Entities:FindByName(nil, reward.map_entity)
         if unit then
         
             Rewards:SetCosmeticOverride(newHero, unit, reward)
 
             UTIL_Remove(hero)
-            return
         end
-    end
 
     -- Fake Unit (used for hero units with AttachWearables that aren't on the map)
-    if reward.unit then
+    elseif reward.unit then
         PrecacheUnitByNameAsync(reward.unit, function()
-            local unit = CreateUnitByName(reward.unit, hero:GetAbsOrigin(), false, nil, nil, hero:GetTeamNumber())
+            local unit = CreateUnitByName(reward.unit, hero:GetAbsOrigin(), false, newHero, nil, hero:GetTeamNumber())
+            if unit:IsHero() then
+                unit:SetPlayerID(playerID)
+                unit:SetControllableByPlayer(playerID, true)
+                unit:SetOwner(PlayerResource:GetPlayer(playerID))
+                unit:RespawnUnit()
+            end
             Rewards:SetCosmeticOverride(newHero, unit, reward)
+
+            Rewards:MovementAnimations(newHero)
+
             UTIL_Remove(hero)
         end, playerID)
-        return
-    end
-
+    
     -- Particle
-    Rewards:ApplyCustomWispParticles(newHero)
-    UTIL_Remove(hero)
+    else
+        Rewards:ApplyCustomWispParticles(newHero)
+        UTIL_Remove(hero)
+    end
 end
 
 -- Stores animation data on the unit
@@ -138,6 +141,7 @@ end
 function Rewards:SetCosmeticOverride(hero, unit, reward)
     hero.cosmetic_override = unit
     unit:SetAbsOrigin(hero:GetAbsOrigin())
+    if reward.scale then unit:SetModelScale(tonumber(reward.scale)) end
     unit:SetForwardVector(hero:GetForwardVector())
     unit:AddNewModifier(nil, nil, "modifier_out_of_world", {})
     unit:SetParent(hero, "attach_hitloc")
@@ -172,40 +176,36 @@ end
 function Rewards:CustomAnimation(playerID, caster)
     local unit = caster.cosmetic_override or caster
     if unit.build_animation then
+        unit:RemoveGesture(ACT_DOTA_RUN)
+        unit:RemoveGesture(ACT_DOTA_IDLE)
         if unit.rare_animation and RollPercentage(unit.rare_chance) then
             StartAnimation(unit, {duration=2, activity=unit.rare_animation, rate=1})
         else
             StartAnimation(unit, {duration=2, activity=unit.build_animation, rate=1})
         end
+        unit.wait_for_animation = true
     end
 end
 
-local move_orders = {[DOTA_UNIT_ORDER_MOVE_TO_POSITION]=true,[DOTA_UNIT_ORDER_MOVE_TO_TARGET]=true,[DOTA_UNIT_ORDER_ATTACK_MOVE]=true,[DOTA_UNIT_ORDER_CAST_POSITION]=true,[DOTA_UNIT_ORDER_PATROL]=true,[DOTA_UNIT_ORDER_ATTACK_TARGET]=true}
-local stop_orders = {[DOTA_UNIT_ORDER_HOLD_POSITION]=true,[DOTA_UNIT_ORDER_STOP]=true}
-function Rewards:HandleAnimationOrder(hero, order_type)
+function Rewards:MovementAnimations(hero)
     local unit = hero.cosmetic_override
-    if move_orders[order_type] then
-        if not unit.runTimer then
-            unit:RemoveGesture(ACT_DOTA_IDLE)
-            unit.runTimer = Timers:CreateTimer(function()
-                if unit and IsValidEntity(unit) and not hero:IsIdle() then
-                    unit:StartGesture(ACT_DOTA_RUN)
-                    return 0.1
-                else
-                    unit:RemoveGesture(ACT_DOTA_RUN)
-                    unit.runTimer = nil
-                end
+    if not unit.runTimer then
+        unit.runTimer = Timers:CreateTimer(function()
+            if not IsValidEntity(unit) or not hero:IsAlive() then return end
+            if unit.wait_for_animation then
+                unit.wait_for_animation = false
+                return 1
+            end
+            if hero:IsIdle() then
+                unit:RemoveGesture(ACT_DOTA_RUN)
                 unit:StartGesture(ACT_DOTA_IDLE)
-            end)
-        end
-    elseif stop_orders[order_type] then
-        if unit.runTimer then
-            Timers:RemoveTimer(unit.runTimer)
-            unit.runTimer = nil
-        end
-        unit:RemoveGesture(ACT_DOTA_RUN)
+            else
+                unit:RemoveGesture(ACT_DOTA_IDLE)
+                unit:StartGesture(ACT_DOTA_RUN)
+            end
+            return 0.1
+        end)
     end
-    unit:StartGesture(ACT_DOTA_IDLE)
 end
 
 function Rewards:ConvertID64( steamID32 )
