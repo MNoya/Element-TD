@@ -1,0 +1,31 @@
+"tauren_chieftain_cosmetics"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "MaxLevel"                      "1"
+
+    "precache"
+    {
+        "particle"  "models/items/axe/axe_practos_weapon/axe_practos_weapon.vmdl"
+    }
+
+    "Modifiers"
+    {
+        "modifier_tauren_chieftain_cosmetics"
+        {
+            "Passive"   "1"
+            "IsHidden"  "1"
+
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "mechanics/wearables.lua"
+                    "Function"      "AttachProp"
+                    "Model"         "models/items/axe/axe_antler.vmdl"
+                    "Point"         "attach_attack1"
+                }
+            }
+        }
+    }
+}

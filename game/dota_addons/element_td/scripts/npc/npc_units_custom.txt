@@ -27,10 +27,19 @@
 	"tauren_chieftain"
 	{
 	    "BaseClass"     "npc_dota_creature"
-	    "Model"         "models/pets/armadillo/armadillo.vmdl"
+	    "Model"         "models/heroes/elder_titan/elder_titan.vmdl"
 	    "ModelScale"    "1"
 	    "Ability1"      "tauren_chieftain_cosmetics"
-	    //models/items/axe/axe_practos_weapon/axe_practos_weapon.vmdl
+	    "Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_elder_titan
+	        {
+	            "1" { "ItemDef" "6544" } // Totem of the World Splitter
+	            "3" { "ItemDef" "428" } // Elder Titan's Head
+	            "4" { "ItemDef" "427" } // Elder Titan's Bracers
+	            "5" { "ItemDef" "429" } // Elder Titan's Shoulders
+	        }
+	    }
 	}
 	
 	"armadillo"
@@ -80,6 +89,61 @@
 	            "5" { "ItemDef" "8537" } // Darkfall Warden Pauldrons
 	            "6" { "ItemDef" "8542" } // Darkfall Warden Quiver
 	            "7" { "ItemDef" "8538" } // Darkfall Warden Skirt
+	        }
+	    }
+	}
+	
+	"zeus_arcana"
+	{
+	    "BaseClass"     "npc_dota_creature"
+	    "Model"         "models/heroes/zeus/zeus_arcana.vmdl"
+	    "ModelScale"    "1.3"
+	
+	    "Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_zuus
+	        {
+	            "1" { "ItemDef" "605" } // Zeus Ambient Effects
+	            "2" { "ItemDef" "606" } // Zeus' Belt
+	            "3" { "ItemDef" "607" } // Zeus' Back
+	            "4" { "ItemDef" "6914" } // Tempest Helm of the Thundergod
+	            "5" { "ItemDef" "8693" } // Thundergod's Bare Chest
+	            "6" { "ItemDef" "8692" } // Thundergod's Bare Arms
+	        }
+	    }
+	}
+	
+	"lina_arcana"
+	{
+	    "BaseClass"     "npc_dota_creature"
+	    "Model"         "models/heroes/lina/lina.vmdl"
+	    "ModelScale"    "1.2"
+	
+	    "Creature"
+	    {
+	        "AttachWearables" //Arcana
+	        {
+	            "1" {    "ItemDef"        "4794"        } //"Fiery Soul of the Slayer"
+	            "2" {    "ItemDef"        "6339"        } //"Fire Lotus Belt"
+	            "3" {    "ItemDef"        "5941"        } //"Wings of the Ember Crane"
+	        }
+	    }
+	}
+	
+	"sf_dark_arcana"
+	{
+	    "BaseClass"     "npc_dota_creature"
+	    "Model"         "models/heroes/shadow_fiend/shadow_fiend_arcana.vmdl"
+	    "ModelScale"    "1"
+	
+	    "Creature"
+	    {
+	        "AttachWearables"
+	        {
+	            "1"  { "ItemDef" "6996" } //Demon Eater Arcana
+	            "2"  { "ItemDef" "486" } //Shoulder
+	            "3"  { "ItemDef" "8259" } // Arms of Desolation
+	            "4"  { "ItemDef" "509" } //Ambient
 	        }
 	    }
 	}
@@ -6877,15 +6941,6 @@
 	    }
 	    "AttackDamageMin"        "0"
 	    "AttackDamageMax"        "0"
-	    "Creature"
-	    {
-	       "AttachWearables" // Virtuous Roar
-	       {
-	            "1" { "ItemDef" "8249" } // Virtuous Roar Pads
-	            "2" { "ItemDef" "8251" } // Virtuous Roar Aspect
-	            "3" { "ItemDef" "8247" } // Virtuous Roar Hair
-	       }
-	    }
 	
 	    // Building Size
 	    "ConstructionSize"          "2"

@@ -1,20 +1,23 @@
 "Attachments"
 {
-	"models/items/warlock/golem/hellsworn_golem/hellsworn_golem.vmdl"
+	"models/heroes/undying/undying.vmdl"
 	{
 		"attach_attack1"
 		{
-			"models/items/doom/weapon_eyeoffetitzu/weapon_eyeoffetitzu.vmdl"
+			"models/items/necrolyte/death_protest_weapon/death_protest_weapon.vmdl"
 			{
-				"scale"		"1.5"
-				"pitch"		"-79"
-				"roll"		"70"
-				"yaw"		"-112"
-				"YPos"		"72"
-				"ZPos"		"-124"
-				"XPos"		"-10"
+				"scale"		"1"
+				"pitch"		"-20"
+				"roll"		"25"
+				"yaw"		"0"
+				"YPos"		"20"
+				"ZPos"		"-45"
+				"XPos"		"-25"
 			}
 		}
+	}
+	"models/items/warlock/golem/hellsworn_golem/hellsworn_golem.vmdl"
+	{
 		"attach_attack2"
 		{
 			"models/items/doom/weapon_eyeoffetitzu/weapon_eyeoffetitzu.vmdl"
@@ -22,9 +25,22 @@
 				"scale"		"1.5"
 				"pitch"		"-139"
 				"roll"		"90"
-				"ZPos"		"-84"
-				"YPos"		"52"
 				"yaw"		"-152"
+				"YPos"		"52"
+				"ZPos"		"-84"
+				"XPos"		"-10"
+			}
+		}
+		"attach_attack1"
+		{
+			"models/items/doom/weapon_eyeoffetitzu/weapon_eyeoffetitzu.vmdl"
+			{
+				"scale"		"1.5"
+				"pitch"		"-79"
+				"roll"		"70"
+				"ZPos"		"-124"
+				"YPos"		"72"
+				"yaw"		"-112"
 				"XPos"		"-10"
 			}
 		}
@@ -38,9 +54,9 @@
 				"scale"		"1.2999999523163"
 				"pitch"		"0"
 				"roll"		"0"
-				"ZPos"		"-108"
-				"YPos"		"-2"
 				"yaw"		"0"
+				"YPos"		"-2"
+				"ZPos"		"-108"
 				"XPos"		"-30"
 			}
 		}
@@ -53,11 +69,11 @@
 			{
 				"scale"		"1"
 				"pitch"		"10"
+				"roll"		"25"
+				"ZPos"		"-40"
+				"YPos"		"10"
 				"yaw"		"-10"
 				"XPos"		"-35"
-				"YPos"		"10"
-				"ZPos"		"-40"
-				"roll"		"25"
 			}
 		}
 	}
@@ -71,47 +87,24 @@
 			}
 		}
 	}
-	"models/heroes/undying/undying.vmdl"
+	"models/heroes/elder_titan/elder_titan.vmdl"
 	{
 		"attach_attack1"
 		{
-			"models/items/necrolyte/death_protest_weapon/death_protest_weapon.vmdl"
+			"models/items/axe/axe_antler.vmdl"
 			{
-				"scale"		"1"
-				"pitch"		"-20"
-				"roll"		"25"
-				"ZPos"		"-45"
-				"YPos"		"20"
-				"yaw"		"0"
-				"XPos"		"-25"
+				"scale"		"1.3999999761581"
+				"pitch"		"30"
+				"yaw"		"-120"
+				"XPos"		"-2"
+				"YPos"		"125"
+				"ZPos"		"-30"
+				"roll"		"-280"
 			}
 		}
 	}
 	"models/heroes/zeus/zeus.vmdl"
 	{
-		"attach_attack1"
-		{
-			"models/items/faceless_void/voidhammer/voidhammer.vmdl"
-			{
-				"scale"		"1"
-				"pitch"		"-10"
-				"roll"		"-30"
-				"yaw"		"70"
-				"YPos"		"116"
-				"ZPos"		"-77"
-				"XPos"		"-1"
-			}
-			"models/items/omniknight/weapon_rune_hammer.vmdl"
-			{
-				"scale"		"0.80000001192093"
-				"pitch"		"20"
-				"roll"		"25"
-				"ZPos"		"-102"
-				"YPos"		"119"
-				"yaw"		"180"
-				"XPos"		"7"
-			}
-		}
 		"attach_attack2"
 		{
 			"models/items/tuskarr/frostiron_raider_axe/frostiron_raider_axe.vmdl"
@@ -119,10 +112,33 @@
 				"scale"		"0.69999998807907"
 				"pitch"		"-30"
 				"roll"		"0"
-				"ZPos"		"20"
-				"YPos"		"0"
 				"yaw"		"-140"
+				"YPos"		"0"
+				"ZPos"		"20"
 				"XPos"		"-10"
+			}
+		}
+		"attach_attack1"
+		{
+			"models/items/faceless_void/voidhammer/voidhammer.vmdl"
+			{
+				"scale"		"1"
+				"pitch"		"-10"
+				"roll"		"-30"
+				"ZPos"		"-77"
+				"YPos"		"116"
+				"yaw"		"70"
+				"XPos"		"-1"
+			}
+			"models/items/omniknight/weapon_rune_hammer.vmdl"
+			{
+				"scale"		"0.80000001192093"
+				"pitch"		"20"
+				"roll"		"25"
+				"yaw"		"180"
+				"YPos"		"119"
+				"ZPos"		"-102"
+				"XPos"		"7"
 			}
 		}
 	}

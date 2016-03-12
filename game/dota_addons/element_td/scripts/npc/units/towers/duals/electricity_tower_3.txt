@@ -77,15 +77,6 @@
     }
     "AttackDamageMin"        "0"
     "AttackDamageMax"        "0"
-    "Creature"
-    {
-       "AttachWearables" // Virtuous Roar
-       {
-            "1" { "ItemDef" "8249" } // Virtuous Roar Pads
-            "2" { "ItemDef" "8251" } // Virtuous Roar Aspect
-            "3" { "ItemDef" "8247" } // Virtuous Roar Hair
-       }
-    }
 
     // Building Size
     "ConstructionSize"          "2"
