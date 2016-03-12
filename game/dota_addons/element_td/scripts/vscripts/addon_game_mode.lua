@@ -12,6 +12,7 @@ local requires =
     "libraries/notifications",
     "libraries/animations",
     "libraries/attachments",
+    "libraries/selection",
     "libraries/buildinghelper",
     "statcollection/init",
 
