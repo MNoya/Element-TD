@@ -663,10 +663,6 @@ function ElementTD:FilterExecuteOrder( filterTable )
         return false
     end
 
-    if unit and unit:IsRealHero() and unit.cosmetic_override then
-        Rewards:HandleAnimationOrder(unit, order_type)
-    end
-
     ------------------------------------------------
     --           Ability Multi Order              --
     ------------------------------------------------

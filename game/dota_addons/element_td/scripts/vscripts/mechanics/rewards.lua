@@ -94,7 +94,6 @@ function Rewards:HandleHeroReplacement(hero)
     elseif reward.map_entity then
         local unit = Entities:FindByName(nil, reward.map_entity)
         if unit then
-        
             Rewards:SetCosmeticOverride(newHero, unit, reward)
 
             UTIL_Remove(hero)
@@ -111,8 +110,6 @@ function Rewards:HandleHeroReplacement(hero)
                 unit:RespawnUnit()
             end
             Rewards:SetCosmeticOverride(newHero, unit, reward)
-
-            Rewards:MovementAnimations(newHero)
 
             UTIL_Remove(hero)
         end, playerID)
@@ -147,6 +144,7 @@ function Rewards:SetCosmeticOverride(hero, unit, reward)
     unit:SetParent(hero, "attach_hitloc")
 
     Rewards:ApplyAnimations(unit, reward)
+    Rewards:MovementAnimations(hero)
 
     -- Update portrait
     hero:SetModel("models/custom_wisp.vmdl")
