@@ -120,6 +120,9 @@ function ElementTD:InitGameMode()
     -- Increase time to load and start even if not all players loaded
     SendToServerConsole("dota_wait_for_players_to_load_timeout 240")
 
+    -- Far Height
+    SendToServerConsole("r_farz 10000")
+
     -- Less expensive pathing?
     LimitPathingSearchDepth(0.5)
 
