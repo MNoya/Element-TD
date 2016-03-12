@@ -281,6 +281,38 @@
 	    
 	    "DisplayAdditionalHeroes"      "1"
 	}
+	"armadillo_cosmetics"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "MaxLevel"                      "1"
+	
+	    "precache"
+	    {
+	        "particle"  "models/items/necrolyte/death_protest_weapon/death_protest_weapon.vmdl"
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_armadillo_rider"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/wearables.lua"
+	                    "Function"      "Mount"
+	                    "Unit"          "armadillo_rider"
+	                    "Point"         "attach_almond_fx"
+	                    "offsetZ"       "10"
+	                }
+	            }
+	        }
+	    }
+	}
 	"hellsworn_cosmetics"
 	{
 	    "BaseClass"                     "ability_datadriven"

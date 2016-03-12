@@ -33,6 +33,39 @@
         }
     }
 
+    "models/pets/armadillo/armadillo.vmdl"
+    {
+        "PortraitLightPosition"     "-37.81 26.97 180.80"
+        "PortraitLightAngles"       "128.25 158.54 0.00"
+        "PortraitLightFOV"      "68"
+        "PortraitLightDistance"     "216"
+        "PortraitLightColor"        "200 209 254"
+        "PortraitShadowColor"       "63 63 63"
+        "PortraitShadowScale"       "5.000000"
+        "PortraitAmbientColor"      "177 129 74"
+        "PortraitAmbientScale"      "5.000000"
+        "PortraitSpecularColor"     "251 74 84"
+        "PortraitBackgroundTexture"     "materials/vgui/hud/heroportraits/portraitbackground_desert.vmat"
+        "PortraitBackgroundColor1"      "1 1 1"
+        "PortraitBackgroundColor2"      "1 1 1"
+        "PortraitBackgroundColor3"      "1 1 1"
+        "PortraitBackgroundColor4"      "1 1 1"
+        "PortraitParticle"      "particles/units/heroes/hero_sandking/sandking_portrait.vpcf"
+        "PortraitLightScale"        "5.000000"
+        "PortraitGroundShadowScale"     "1.500000"
+        "PortraitAmbientDirection"      "-1.700 4.370 -8.860"
+        "PortraitAnimationActivity"     "ACT_DOTA_IDLE"
+        "cameras"
+        {
+           "default"
+            {
+                "PortraitPosition"      "350 -160 -80"
+                "PortraitAngles"        "354.14 153.33 0.00"
+                "PortraitFOV"       "10"
+            }
+        }
+    }
+
     "models/well_tower1.vmdl"
     {
         "PortraitLightPosition"     "222.62 217.03 399.60"

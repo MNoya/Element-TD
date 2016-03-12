@@ -17,13 +17,39 @@ function AdjustCosmetics( event )
     end)
 end
 
--- Datadriven call
+
+------------------------------------------------------------------------------
+-- Datadriven calls
+------------------------------------------------------------------------------
+
 function AttachProp( event )
     local unit = event.caster
     local model = event.Model
     local point = event.Point
     Attachments:AttachProp(unit, point, model)
 end
+
+function Mount( event )
+    local caster = event.caster
+    local ability = event.ability
+    local unitName = event.Unit
+    local point = event.Point
+    local offsetZ = tonumber(event.offsetZ)
+
+    local attach = caster:ScriptLookupAttachment(point)
+    local origin = caster:GetAttachmentOrigin(attach)
+    local fv = caster:GetForwardVector()
+
+    local rider = CreateUnitByName(unitName, caster:GetAbsOrigin(), false, nil, nil, caster:GetTeamNumber()) 
+    rider:AddNewModifier(nil, nil, "modifier_out_of_world", {})
+
+    rider:SetAbsOrigin(Vector(origin.x, origin.y, origin.z+offsetZ))
+    rider:SetParent(caster, "attach_hitloc")
+
+    caster.rider = rider
+end
+
+------------------------------------------------------------------------------
 
 -- Creates full AttachWearables entries by set names
 function MakeSets()

@@ -21,3 +21,36 @@
     "ModelScale"    "0.85"
     "Ability1"      "undying_cosmetics"
 }
+
+"tauren_chieftain"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/pets/armadillo/armadillo.vmdl"
+    "ModelScale"    "1"
+    "Ability1"      "tauren_chieftain_cosmetics"
+    //models/items/axe/axe_practos_weapon/axe_practos_weapon.vmdl
+}
+
+"armadillo"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/pets/armadillo/armadillo.vmdl"
+    "ModelScale"    "3"
+    "Ability1"      "armadillo_cosmetics"
+}
+"armadillo_rider"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/heroes/earthshaker/earthshaker.vmdl"
+    "ModelScale"    "0.35"
+    "Creature"
+    {
+        "AttachWearables" // Bindings of Deep Magma
+        {
+            "1" { "ItemDef" "5640" } // Helm of Impasse
+            "2" { "ItemDef" "6401" } // Belt of Deep Magma
+            "3" { "ItemDef" "6820" } // Gravelmaw
+            "4" { "ItemDef" "6400" } // Arms of Deep Magma
+        }
+    }
+}
