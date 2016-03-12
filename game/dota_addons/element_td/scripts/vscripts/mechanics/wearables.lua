@@ -34,7 +34,9 @@ function Mount( event )
     local ability = event.ability
     local unitName = event.Unit
     local point = event.Point
-    local offsetZ = tonumber(event.offsetZ)
+    local offsetX = event.offsetX and tonumber(event.offsetX) or 0
+    local offsetY = event.offsetY and tonumber(event.offsetY) or 0
+    local offsetZ = event.offsetZ and tonumber(event.offsetZ) or 0
 
     local attach = caster:ScriptLookupAttachment(point)
     local origin = caster:GetAttachmentOrigin(attach)
@@ -43,8 +45,13 @@ function Mount( event )
     local rider = CreateUnitByName(unitName, caster:GetAbsOrigin(), false, nil, nil, caster:GetTeamNumber()) 
     rider:AddNewModifier(nil, nil, "modifier_out_of_world", {})
 
-    rider:SetAbsOrigin(Vector(origin.x, origin.y, origin.z+offsetZ))
+    rider:SetAbsOrigin(Vector(origin.x+offsetX, origin.y+offsetY, origin.z+offsetZ))
     rider:SetParent(caster, "attach_hitloc")
+
+    if event.AnimateRider then
+        caster.rider = rider
+        Rewards:MovementAnimations(caster)
+    end
 
     caster.rider = rider
 end

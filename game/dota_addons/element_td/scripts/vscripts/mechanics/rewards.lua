@@ -186,7 +186,7 @@ function Rewards:CustomAnimation(playerID, caster)
 end
 
 function Rewards:MovementAnimations(hero)
-    local unit = hero.cosmetic_override
+    local unit = hero.cosmetic_override or hero.rider
     if not unit.runTimer then
         unit.runTimer = Timers:CreateTimer(function()
             if not IsValidEntity(unit) or not hero:IsAlive() then return end

@@ -66,6 +66,38 @@
         }
     }
 
+    "models/pets/icewrack_wolf/icewrack_wolf.vmdl"
+    {
+        "PortraitLightPosition"     "47.84 4.52 166.77"
+        "PortraitLightAngles"       "30.28 191.43 0.00"
+        "PortraitLightFOV"      "90"
+        "PortraitLightDistance"     "66"
+        "PortraitLightColor"        "134 198 254"
+        "PortraitShadowColor"       "48 48 69"
+        "PortraitShadowScale"       "5.000000"
+        "PortraitAmbientColor"      "84 108 120"
+        "PortraitAmbientScale"      "4.750000"
+        "PortraitSpecularColor"     "251 74 84"
+        "PortraitBackgroundTexture"     "materials/vgui/hud/heroportraits/portraitbackground_glacier.vmat"
+        "PortraitBackgroundColor1"      "0 0 0"
+        "PortraitBackgroundColor2"      "1 1 1"
+        "PortraitBackgroundColor3"      "1 1 1"
+        "PortraitBackgroundColor4"      "1 1 1"
+        "PortraitLightScale"        "2.300000"
+        "PortraitGroundShadowScale"     "1.500000"
+        "PortraitAmbientDirection"      "18.200 -36.780 -11.370"
+        "PortraitAnimationActivity"     "ACT_DOTA_IDLE"
+        "cameras"
+        {
+           "default"
+            {
+                "PortraitPosition"      "300 -140 30"
+                "PortraitAngles"        "354.14 153.33 0.00"
+                "PortraitFOV"       "12"
+            }
+        }
+    }
+
     "models/well_tower1.vmdl"
     {
         "PortraitLightPosition"     "222.62 217.03 399.60"

@@ -54,3 +54,30 @@
         }
     }
 }
+
+"icewrack_wolf"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/pets/icewrack_wolf/icewrack_wolf.vmdl"
+    "ModelScale"    "3"
+    "Ability1"      "icewrack_wolf_cosmetics"
+}
+"icewrack_wolf_rider"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/heroes/mirana/mirana.vmdl"
+    "ModelScale"    "0.35"
+
+    "Creature"
+    {
+        "AttachWearables" // Darkfall Warden
+        {
+            "1" { "ItemDef" "8834" } // Darkfall Warden Hair
+            "3" { "ItemDef" "8540" } // Darkfall Warden Bow
+            "4" { "ItemDef" "8541" } // Darkfall Warden Bracers
+            "5" { "ItemDef" "8537" } // Darkfall Warden Pauldrons
+            "6" { "ItemDef" "8542" } // Darkfall Warden Quiver
+            "7" { "ItemDef" "8538" } // Darkfall Warden Skirt
+        }
+    }
+}
