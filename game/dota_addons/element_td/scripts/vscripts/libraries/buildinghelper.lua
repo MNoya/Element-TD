@@ -1,4 +1,7 @@
-BH_VERSION = "1.0.5"
+BH_VERSION = "1.1.0"
+
+require('libraries/timers')
+require('libraries/selection')
 
 if not BuildingHelper then
     BuildingHelper = class({})
@@ -34,7 +37,7 @@ function BuildingHelper:Init()
     -- Panorama Event Listeners
     CustomGameEventManager:RegisterListener("building_helper_build_command", Dynamic_Wrap(BuildingHelper, "BuildCommand"))
     CustomGameEventManager:RegisterListener("building_helper_cancel_command", Dynamic_Wrap(BuildingHelper, "CancelCommand"))
-    CustomGameEventManager:RegisterListener("bh_update_selected_entities", Dynamic_Wrap(BuildingHelper, 'OnPlayerSelectedEntities'))
+    CustomGameEventManager:RegisterListener("selection_update", Dynamic_Wrap(BuildingHelper, 'OnSelectionUpdate')) --Hook selection library
     CustomGameEventManager:RegisterListener("gnv_request", Dynamic_Wrap(BuildingHelper, "SendGNV"))
 
      -- Game Event Listeners
@@ -359,23 +362,14 @@ function BuildingHelper:CancelCommand(args)
     BuildingHelper:ClearQueue(playerTable.activeBuilder)
 end
 
-function BuildingHelper:OnPlayerSelectedEntities(event)
+function BuildingHelper:OnSelectionUpdate(event)
     local playerID = event.PlayerID
-    if not playerID then
-        BuildingHelper:print("ERROR: OnPlayerSelectedEntities without a player")
-        return
-    end
+    if not playerID then return end
     
-    local playerTable = BuildingHelper:GetPlayerTable(playerID)
-
-    playerTable.SelectedEntities = event.selected_entities
-    if not playerTable.SelectedEntities["0"] then
-        BuildingHelper:print("ERROR: OnPlayerSelectedEntities received an empty list")
-        return
-    end
-
     -- This is for Building Helper to know which is the currently active builder
-    local mainSelected = EntIndexToHScript(playerTable.SelectedEntities["0"])
+    local mainSelected = PlayerResource:GetMainSelectedEntity(playerID)
+    if not mainSelected then return end
+    mainSelected = EntIndexToHScript(mainSelected)
     local player = BuildingHelper:GetPlayerTable(playerID)
 
     if IsValidEntity(mainSelected) then
@@ -1889,7 +1883,6 @@ end
 function BuildingHelper:GetPlayerTable(playerID)
     if not BuildingHelper.Players[playerID] then
         BuildingHelper.Players[playerID] = {}
-        BuildingHelper.Players[playerID].SelectedEntities = {}
     end
 
     return BuildingHelper.Players[playerID]

@@ -50,6 +50,7 @@ SELECTION_VERSION = "1.00"
 
     Notes:
     - Enemy units that you don't control can't be added to the selection group of a player
+    - This library requires "libraries/timers.lua" to be present in your vscripts directory.
 
 --]]
 
@@ -133,13 +134,14 @@ end
 -- Internal
 ------------------------------------------------------------------------
 
+require('libraries/timers')
+
 if not Selection then
     Selection = class({})
 end
 
 function Selection:Init()
     Selection.entities = {} --Stores the selected entities of each playerID
-    Selection.default_entity = {} --Stores a possible selection override for each playerID
     CustomGameEventManager:RegisterListener("selection_update", Dynamic_Wrap(Selection, 'OnUpdate'))
 end
 
