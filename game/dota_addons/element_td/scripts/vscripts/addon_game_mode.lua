@@ -18,7 +18,6 @@ local requires =
 
     -- mechanics
     "mechanics/precache",
-    "mechanics/selection",
     "mechanics/messages",
     "mechanics/keyvalues",
     "mechanics/items",

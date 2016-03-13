@@ -31,7 +31,7 @@ function Selection_Add(msg)
 function Selection_Remove(msg)
 {
     var remove_entities = msg.entities
-    $.Msg("Selection_Remove ", remove_entities)
+    //$.Msg("Selection_Remove ", remove_entities)
     var selected_entities = GetSelectedEntities();
     for (var i in remove_entities) {
         var index = selected_entities.indexOf(remove_entities[i])
