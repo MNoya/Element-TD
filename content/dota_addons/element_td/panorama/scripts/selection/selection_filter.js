@@ -30,7 +30,7 @@ function SelectionFilter( entityList ) {
         if (IsCustomBuilding(mainSelected) && Entities.HasAttackCapability(mainSelected))
         {
             var range = Entities.GetAttackRange(mainSelected)
-            rangedParticle = Particles.CreateParticle("particles/custom/ui_mouseactions/range_display.vpcf", ParticleAttachment_t.PATTACH_CUSTOMORIGIN, mainSelected)
+            rangedParticle = Particles.CreateParticle("particles/ui_mouseactions/range_display.vpcf", ParticleAttachment_t.PATTACH_CUSTOMORIGIN, mainSelected)
             var position = Entities.GetAbsOrigin(mainSelected)
             position[2] = 380 //Offset
             Particles.SetParticleControl(rangedParticle, 0, position)
@@ -123,18 +123,8 @@ function FirstBuildingEntityFromSelection( entityList ){
 function IsCustomBuilding( entityIndex ){
     var ability_building = Entities.GetAbilityByName( entityIndex, "ability_building")
     var ability_tower = Entities.GetAbilityByName( entityIndex, "ability_tower")
-    if (ability_building != -1){
-        //$.Msg(entityIndex+" IsCustomBuilding - Ability Index: "+ ability_building)
-        return true
-    }
-    else if (ability_tower != -1){
-        //$.Msg(entityIndex+" IsCustomBuilding Tower - Ability Index: "+ ability_tower)
-        return true
-    }
-    else
-        return false
+    return (ability_building != -1 || ability_tower != -1)
 }
-
 
 function IsMechanical( entityIndex ) {
     var ability_siege = Entities.GetAbilityByName( entityIndex, "ability_siege")
