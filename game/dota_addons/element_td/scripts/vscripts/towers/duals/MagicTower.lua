@@ -38,7 +38,7 @@ function MagicTower:OnAttackLanded(keys)
     if PlayerResource:IsUnitSelected(self.playerID, self.tower) then
         local stacks = self.tower:GetModifierStackCount("modifier_magic_tower_attack_range", self.tower)
         if stacks ~= self.maxStacks then
-            Selection:Refresh()
+            PlayerResource:RefreshSelection()
         end
     end
 end
@@ -46,7 +46,7 @@ end
 function OnMagicRangeDestroy(event)
     local tower = event.target
     if PlayerResource:IsUnitSelected(tower:GetPlayerOwnerID(), tower) then
-        Selection:Refresh()
+        PlayerResource:RefreshSelection()
     end
 end
 

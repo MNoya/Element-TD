@@ -589,6 +589,6 @@ function SetupTowerUpgrade(tower, newTower, buffData, stacks)
     Timers:CreateTimer(function()
         PlayerResource:RemoveFromSelection(playerID, tower)
         PlayerResource:AddToSelection(playerID, newTower)
-        Selection:Refresh()
+        PlayerResource:RefreshSelection()
     end)
 end

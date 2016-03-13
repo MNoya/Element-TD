@@ -1,8 +1,58 @@
+SELECTION_VERSION = "1.00"
+
 --[[
-    PlayerResource:Select(playerID, unit_args)
-    * Creates a new selection for the player
-    * Can recieve an Entity Index, a NPC Handle, or a table of each type.
+    Lua-controlled Selection Library by Noya
+    
+    Installation:
+    - "require" this file inside your code in order to add the new API functions to the PlayerResource global
+    - Additionally, ensure your game scripts custom_net_tables.txt has a "selection" entry
+    - Finally, ensure that you have the following files correctly added and included in your panorama content folder
+        selection.xml, and include line on custom_ui_manifest.xml, on layout/custom_game/ folder
+        selection folder containing selection.js and selection_filter.js, on /scripts/ folder
+
+    Usage:
+    - Functions with unit_args can recieve an Entity Index, a NPC Handle, or a table of each type.
+    - Functions with unit can recieve an Entity Index or NPC Handle
+
+    * Create a new selection for the player
+        PlayerResource:NewSelection(playerID, unit_args)
+
+    * Add units to the current selection of the player
+        PlayerResource:AddToSelection(playerID, unit_args)
+    
+    * Remove units by index from the player selection group
+        PlayerResource:RemoveFromSelection(playerID, unit_args)
+    
+    * Returns the list of units by entity index that are selected by the player
+        PlayerResource:GetSelectedEntities(playerID)
+
+    * Deselect everything, selecting the main hero (which can be redirected to another entity)
+        PlayerResource:ResetSelection(playerID)
+
+    * Get the index of the first selected unit of the player
+        PlayerResource:GetMainSelectedEntity(playerID)
+    
+    * Check if a unit is selected or not by a player, returns bool
+        PlayerResource:IsUnitSelected(playerID, unit_args)
+
+    * Force a refresh of the current selection on all players, useful after abilities are removed
+        PlayerResource:RefreshSelection()
+    
+    * Redirects the selection of the main hero to another entity of choice
+        PlayerResource:SetDefaultSelectionEntity(playerID, unit)
+    
+    * Redirects the selection of any entity to another entity of choice
+        hero:SetSelectionOverride(unit)
+
+    * Use -1 to reset to default
+        PlayerResource:SetDefaultSelectionEntity(playerID, -1)
+        hero:SetSelectionOverride(-1)
+
+    Notes:
+    - Enemy units that you don't control can't be added to the selection group of a player
+
 --]]
+
 function CDOTA_PlayerResource:NewSelection(playerID, unit_args)
     local player = self:GetPlayer(playerID)
     if player then
@@ -11,11 +61,6 @@ function CDOTA_PlayerResource:NewSelection(playerID, unit_args)
     end
 end 
 
---[[
-    PlayerResource:AddToSelection(playerID, unit_args)
-    * Adds units to the current selection
-    * Can recieve an Entity Index, NPC Handle, or a table of each type.
---]]
 function CDOTA_PlayerResource:AddToSelection(playerID, unit_args)
     local player = self:GetPlayer(playerID)
     if player then
@@ -24,12 +69,6 @@ function CDOTA_PlayerResource:AddToSelection(playerID, unit_args)
     end
 end
 
---[[
-    PlayerResource:RemoveFromSelection(playerID, unit_args)
-    * Removes units from the player selection
-    * Can recieve an Entity Index, NPC Handle, or a table of each type.
-    * If the unit isn't currently selected, it will be skipped
---]]
 function CDOTA_PlayerResource:RemoveFromSelection(playerID, unit_args)
     local player = self:GetPlayer(playerID)
     if player then
@@ -38,11 +77,6 @@ function CDOTA_PlayerResource:RemoveFromSelection(playerID, unit_args)
     end
 end
 
---[[
-    PlayerResource:ResetSelection(playerID)
-    * Clears the current selection of the player
-    * The game will select the main hero, and this can be redirected to another entity
-]]
 function CDOTA_PlayerResource:ResetSelection(playerID)
     local player = self:GetPlayer(playerID)
     if player then
@@ -50,28 +84,15 @@ function CDOTA_PlayerResource:ResetSelection(playerID)
     end
 end
 
---[[
-    PlayerResource:GetSelectedEntities(playerID)
-    * Returns the list of units by entity index that are selected by the player
---]]
 function CDOTA_PlayerResource:GetSelectedEntities(playerID)
     return Selection.entities[playerID] or {}
 end
 
---[[
-    PlayerResource:GetMainSelectedEntity(playerID)
-    * Returns the index of the first selected unit of the player
---]]
 function CDOTA_PlayerResource:GetMainSelectedEntity(playerID)
     local selectedEntities = self:GetSelectedEntities(playerID) 
     return selectedEntities and selectedEntities["0"]
 end
 
---[[
-    PlayerResource:IsUnitSelected(playerID, unit_args)
-    * Can recieve an Entity Index or NPC Handle
-    * Returns bool
---]]
 function CDOTA_PlayerResource:IsUnitSelected(playerID, unit)
     if not unit then return false end
     local entIndex = type(unit)=="number" and unit or IsValidEntity(unit) and unit:GetEntityIndex()
@@ -86,12 +107,12 @@ function CDOTA_PlayerResource:IsUnitSelected(playerID, unit)
     return false
 end
 
---[[
-    PlayerResource:SetDefaultSelectionEntity(playerID)
-    * Redirects the selection of the main hero to another entity of choice
-    * Can recieve an Entity Index or NPC Handle
-    * Use -1 to reset to default
-]]
+function CDOTA_PlayerResource:RefreshSelection()
+    Timers:CreateTimer(0.03, function()
+        FireGameEvent("dota_player_update_selected_unit", {})
+    end)
+end
+
 function CDOTA_PlayerResource:SetDefaultSelectionEntity(playerID, unit)
     if not unit then unit = -1 end
     local entIndex = type(unit)=="number" and unit or unit:GetEntityIndex()
@@ -101,12 +122,6 @@ function CDOTA_PlayerResource:SetDefaultSelectionEntity(playerID, unit)
     end
 end
 
---[[
-    npcHandle:SetSelectionOverride(reselect_unit)
-    * Redirects the selection of any entity to another entity of choice
-    * Can recieve an Entity Index or NPC Handle
-    * Use -1 to reset to default
-]]
 function CDOTA_BaseNPC:SetSelectionOverride(reselect_unit)
     local unit = self
     local reselectIndex = type(reselect_unit)=="number" and reselect_unit or reselect_unit:GetEntityIndex()
@@ -131,12 +146,6 @@ end
 function Selection:OnUpdate(event)
     local playerID = event.PlayerID
     Selection.entities[playerID] = event.entities
-end
-
-function Selection:Refresh()
-    Timers:CreateTimer(0.03, function()
-        FireGameEvent("dota_player_update_selected_unit", {})
-    end)
 end
 
 -- Internal function to build an entity index list out of various inputs
