@@ -150,7 +150,7 @@ function ModifyElementValue(playerID, element, change)
         if playerData.summoner then
    		   StopHighlight(playerData.summoner, playerID)
    		   if playerData.lumber == 0 then
-   			  RemoveUnitFromSelection( playerData.summoner )
+   			  PlayerResource:RemoveFromSelection(playerID, playerData.summoner )
    		   end
         end
    	end
@@ -310,7 +310,7 @@ end
 
 function Highlight(entity, playerID)
 	if not entity.highlight then
-		NewSelection(entity)
+		PlayerResource:NewSelection(playerID, entity)
 		Timers:CreateTimer(0.1, function() PlayerResource:SetCameraTarget(playerID, nil) end)
 		local particleName = "particles/custom/summoner/highlight_trail_05.vpcf"
 		entity.highlight = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, entity)

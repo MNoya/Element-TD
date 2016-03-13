@@ -38,8 +38,9 @@ function UpdatePlayerSpells(playerID)
 
 						UpdateBuildAbility(playerID, newAbility)
 						
-						if IsCurrentlySelected(hero)  then
-							NewSelection(hero)
+						-- Refresh hero selection
+						if PlayerResource:IsUnitSelected(playerID, hero)  then
+							PlayerResource:NewSelection(playerID, hero)
 						end
 					end
 				else
@@ -586,10 +587,8 @@ function SetupTowerUpgrade(tower, newTower, buffData, stacks)
     end)
 
     Timers:CreateTimer(function()
-        RemoveUnitFromSelection( tower )
-        AddUnitToSelection(newTower)
-        Timers:CreateTimer(0.03, function()
-            UpdateSelectedEntities()
-        end)
+        PlayerResource:RemoveFromSelection(playerID, tower)
+        PlayerResource:AddToSelection(playerID, newTower)
+        Selection:Refresh()
     end)
 end

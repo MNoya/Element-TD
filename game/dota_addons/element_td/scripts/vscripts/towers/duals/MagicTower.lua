@@ -33,21 +33,21 @@ function MagicTower:OnAttackLanded(keys)
     local target = keys.target
     local damage = self.tower:GetAverageTrueAttackDamage()
     DamageEntity(target, self.tower, damage)
-    if IsCurrentlySelected(self.tower) then
+
+    -- Refresh selection
+    if PlayerResource:IsUnitSelected(self.playerID, self.tower) then
         local stacks = self.tower:GetModifierStackCount("modifier_magic_tower_attack_range", self.tower)
         if stacks ~= self.maxStacks then
-            UpdateSelectedEntities()
+            Selection:Refresh()
         end
     end
 end
 
 function OnMagicRangeDestroy(event)
     local tower = event.target
-    Timers:CreateTimer(0.03,function()
-        if IsCurrentlySelected(tower) then
-            UpdateSelectedEntities()
-        end
-    end)
+    if PlayerResource:IsUnitSelected(tower:GetPlayerOwnerID(), tower) then
+        Selection:Refresh()
+    end
 end
 
 function MagicTower:OnCreated()
@@ -55,6 +55,7 @@ function MagicTower:OnCreated()
     self.rangeStacks = 0
     self.maxStacks = self.ability:GetSpecialValueFor("max_stacks")
     self.duration = self.ability:GetSpecialValueFor("duration")
+    self.playerID = self.tower:GetPlayerOwnerID()
 end
 
 RegisterTowerClass(MagicTower, MagicTower.className)    

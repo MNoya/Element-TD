@@ -1,6 +1,6 @@
 <root>
 	<scripts>
-		<include src="file://{resources}/scripts/unit_selection.js" />
+		<!--include src="file://{resources}/scripts/unit_selection.js" /-->
 		<include src="file://{resources}/scripts/clicks.js" />
 		<include src="file://{resources}/scripts/building_helper.js" />
 		<include src="file://{resources}/scripts/sounds.js" />

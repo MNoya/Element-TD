@@ -3,7 +3,7 @@
     * Creates a new selection for the player
     * Can recieve an Entity Index, a NPC Handle, or a table of each type.
 --]]
-function CDOTA_PlayerResource:Select(playerID, unit_args)
+function CDOTA_PlayerResource:NewSelection(playerID, unit_args)
     local player = self:GetPlayer(playerID)
     if player then
         local entities = Selection:GetEntIndexListFromTable(unit_args)
@@ -59,7 +59,7 @@ function CDOTA_PlayerResource:GetSelectedEntities(playerID)
 end
 
 --[[
-    PlayerResource:IsUnitSelectedByPlayerID(playerID)
+    PlayerResource:GetMainSelectedEntity(playerID)
     * Returns the index of the first selected unit of the player
 --]]
 function CDOTA_PlayerResource:GetMainSelectedEntity(playerID)
@@ -68,11 +68,11 @@ function CDOTA_PlayerResource:GetMainSelectedEntity(playerID)
 end
 
 --[[
-    PlayerResource:IsUnitSelectedByPlayerID(playerID, unit_args)
+    PlayerResource:IsUnitSelected(playerID, unit_args)
     * Can recieve an Entity Index or NPC Handle
     * Returns bool
 --]]
-function CDOTA_PlayerResource:IsUnitSelectedByPlayerID(playerID, unit)
+function CDOTA_PlayerResource:IsUnitSelected(playerID, unit)
     if not unit then return false end
     local entIndex = type(unit)=="number" and unit or IsValidEntity(unit) and unit:GetEntityIndex()
     if not entIndex then return false end
@@ -134,7 +134,9 @@ function Selection:OnUpdate(event)
 end
 
 function Selection:Refresh()
-    FireGameEvent("dota_player_update_selected_unit", {})
+    Timers:CreateTimer(0.03, function()
+        FireGameEvent("dota_player_update_selected_unit", {})
+    end)
 end
 
 -- Internal function to build an entity index list out of various inputs

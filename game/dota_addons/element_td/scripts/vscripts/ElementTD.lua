@@ -524,6 +524,7 @@ function ElementTD:OnEntityKilled(keys)
     local index = keys.entindex_killed
     local entity = EntIndexToHScript(index)
     local killer = EntIndexToHScript(keys.entindex_attacker)
+    local playerID = killer:GetPlayerOwnerID()
     local playerData = GetPlayerData(entity.playerID)
 
     if playerData and playerData.health == 0 then
@@ -532,7 +533,7 @@ function ElementTD:OnEntityKilled(keys)
 
     if IsCustomBuilding(entity) then
         -- Remove dead units from selection group
-        RemoveUnitFromSelection(entity)
+        PlayerResource:RemoveFromSelection(playerID, entity)
     end
 
     if entity.scriptObject and entity.scriptObject.OnDeath then
@@ -674,7 +675,7 @@ function ElementTD:FilterExecuteOrder( filterTable )
         if not ability then return end
         local abilityName = ability:GetAbilityName()
 
-        local entityList = GetSelectedEntities(unit:GetPlayerOwnerID())
+        local entityList = PlayerResource:GetSelectedEntities(unit:GetPlayerOwnerID())
         if not entityList then return true end
 
         if string.match(abilityName, "sell_tower_") then
