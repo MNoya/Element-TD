@@ -41,9 +41,9 @@ function ConvertID64 (steamID32) {
     return '765'+(parseInt(steamID32) + 61197960265728)
 }
 
-// Format score in K (thousands) format
+// Format score in k (thousands) format
 function FormatScore(score) {
-    return score.substring(0, score.length-3)+"K";
+    return score.substring(0, score.length-3)+"k";
 }
 
 function FormatPercentile(percent) {

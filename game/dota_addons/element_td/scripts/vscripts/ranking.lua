@@ -1,106 +1,99 @@
 -- ranking.lua
 -- managers the fetching and displaying of player ranks
 if not Ranking then
-	Ranking = {}
-	Ranking.__index = Ranking
-
-	RANKING_OBJECTS = {}
+    Ranking = class({})
 end
-
-RankingObject = createClass({
-		constructor = function( self, playerID, steamID )
-			self.playerID = playerID
-			self.steamID = steamID
-			self.rank = 0
-			self.percentile = 0
-			self.leaderboard = 0
-			self.sector = GetPlayerData(playerID).sector
-		end
-	},
-{}, nil)
 
 RANKING_URL = "http://hatinacat.com/leaderboard/data_request.php"
 
--- Generates list of ingame players and fetches their rankings
-function requestInGamePlayerRanks( leaderboard )
-	leaderboard = leaderboard or 0
-	steamIDs = {}
-	for k, ply in pairs(playerIDs) do
-		steamID = PlayerResource:GetSteamAccountID(ply)
-		RANKING_OBJECTS[ply] = RankingObject(ply, steamID)
-		table.insert(steamIDs, steamID)
-	end
+-- Generates list of ingame players and fetches their rankings, after voting ends
+function Ranking:RequestInGamePlayerRanks()
+    local leaderboard_type = EXPRESS_MODE and 1 or 0
 
-	-- For testing
-	local request = RANKING_URL .. "?req=player&ids=" .. table.concat(steamIDs, ",") .. "&lb=" .. leaderboard 
-	print('[Ranks] ' .. request)
+    steamIDs = {} -- Stores all the steamIDs ingame
 
-	-- Generate URL
-	local req = CreateHTTPRequest('GET', RANKING_URL)
+    -- Process steam IDs
+    for _, playerID in pairs(playerIDs) do
+        Ranking:New(playerID)
+    end
 
-	-- Add the data
-	req:SetHTTPRequestGetOrPostParameter('req', "player")
-	req:SetHTTPRequestGetOrPostParameter('ids', table.concat(steamIDs, ","))
-	req:SetHTTPRequestGetOrPostParameter('lb', tostring(leaderboard))  
+    local concatSteamIDs = tableconcat(steamIDs, ",")
+    local request = RANKING_URL .. "?req=player&ids=" .. concatSteamIDs .. "&lb=" .. leaderboard_type 
 
+    -- Generate URL
+    local req = CreateHTTPRequest('GET', request)
+    Ranking:print('GET '..request)
 
-	callback = function(err, res)
-		if err then
-			print("[Ranks] Error in response : " .. err)
-			return
-		end
+    -- Send the request
+    req:Send(function(res)
+        if res.StatusCode ~= 200 or not res.Body then
+            Ranking:print("Failed to contact ranking server.")
+            return
+        end
 
-		PrintTable(res)
+        -- Try to decode the result
+        local obj, pos, err = json.decode(res.Body, 1, nil)
 
-		if res.result == 1 then
-			print("[Ranks] Retrieved player rankings!")
-			for i, player in pairs(res.players) do
-				local playerID = steamIDToPlayerID(player.steamID)
-				if playerID ~= -1 then
-					ranking = RANKING_OBJECTS[playerID]
-					ranking.rank = player.rank
-					ranking.percentile = player.percentile
-					ranking.leaderboard = player.leaderboard
-				end
-			end
-			DisplayPlayerRanks()
-		else
-			print("[Ranks] Malformed request")
-		end
-	end
+        -- Process the result
+        if err then
+            Ranking:print("Error in response : " .. err)
+            return
+        end
 
-	-- Send the request
-	req:Send(function(res)
-		if res.StatusCode ~= 200 or not res.Body then
-			print("[Ranks] Failed to contact ranking server.")
-			return
-		end
+        DeepPrintTable(obj)
 
-		-- Try to decode the result
-		local obj, pos, err = json.decode(res.Body, 1, nil)
+        if obj.result == 1 then
+            Ranking:print("Retrieved player rankings!")
+            for _,player in pairs(obj.players) do
+                local playerID = Ranking:GetPlayerIDForSteamID(player.steamID)
+                if Ranking[playerID] and not Ranking[playerID].score then              
+                    local data = Ranking[playerID]
+                    data.rank = player.rank
+                    data.percentile = player.percentile
+                    data.leaderboard = player.leaderboard
+                    data.score = player.score
 
-		-- Feed the result into our callback
-		callback(err, obj)
-	end)
+                    CustomNetTables:SetTableValue("rankings", tostring(playerID), data)
+                end
+            end
+            Ranking:DisplayPlayerRanks()
+        else
+            Ranking:print("Malformed request")
+        end
+    end)
 end
 
-function steamIDToPlayerID( steamID )
-	for i,v in pairs(RANKING_OBJECTS) do
-		if tostring(v.steamID) == tostring(steamID) then
-			return v.playerID
-		end
-	end
-	return -1
+function Ranking:New(playerID)
+    -- Store the steamID for the player to get a direct reference
+    local steamID = PlayerResource:GetSteamAccountID(playerID)
+    steamIDs[playerID] = steamID
+
+    -- Initial values
+    local ranking = {}
+    ranking.steamID = steamID
+    ranking.rank = 0
+    ranking.percentile = 0
+    ranking.leaderboard = 0
+    ranking.sector = GetPlayerData(playerID).sector
+    Ranking[playerID] = ranking
 end
 
-function DisplayPlayerRanks()
-	print("[Ranks] Displaying Ranks")
-	PrintTable(RANKING_OBJECTS)
-	CustomGameEventManager:Send_ServerToAllClients( "etd_display_ranks", { data = RANKING_OBJECTS } )
+function Ranking:DisplayPlayerRanks()
+    Ranking:print("Displaying Ranks")
+    CustomGameEventManager:Send_ServerToAllClients( "etd_display_ranks", {} )
 end
 
-function ShowPlayerRanks( toggle )
-	CustomGameEventManager:Send_ServerToAllClients( "etd_show_ranks", { toggle = toggle } )
+function Ranking:ShowPlayerRanks(bVisible)
+    CustomGameEventManager:Send_ServerToAllClients( "etd_show_ranks", { toggle = bVisible } )
 end
 
+function Ranking:print(...)
+    print("[Ranks] " .. ...)
+end
+
+function Ranking:GetPlayerIDForSteamID(steamID)
+    return steamIDs[playerID] or -1
+end
+
+Ranking:DisplayPlayerRanks()
 ----------------------------------------------------

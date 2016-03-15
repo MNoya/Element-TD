@@ -89,6 +89,18 @@ function tablelength(T)
   return count
 end
 
+function tableconcat(T, c)
+    local s = ""
+    for _,v in pairs(T) do 
+        if s ~= "" then
+            s = s..c..v
+        else
+            s = v
+        end
+    end
+    return s
+end
+
 function dist2D(v1, v2)
     return math.sqrt(math.pow(v1.x - v2.x, 2) + math.pow(v1.y - v2.y, 2));
 end

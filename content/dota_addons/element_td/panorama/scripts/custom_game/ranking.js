@@ -1,9 +1,7 @@
 "use strict";
 
-var playerRankings = {};
-
+var Root = $.GetContextPanel()
 var rankingTopBar = $( '#RankingTopBar' );
-
 var enabled = false;
 
 function _SetTextSafe( panel, childName, textValue )
@@ -16,28 +14,31 @@ function _SetTextSafe( panel, childName, textValue )
     childPanel.text = textValue;
 }
 
-function DisplayRanks( data )
+function DisplayRanks()
 {
-    $.Msg("Retrieved Ranks")
-    for (var player in data.data)
+    $.Msg("Diplaying Ranks")
+
+    // Process and store rankings
+    var rankings = CustomNetTables.GetAllTableValues( "rankings" )
+    Root.playerRankings = {}
+    for (var playerID in rankings)
     {
-        playerRankings[data.data[player].playerID] = data.data[player];
+        Root.playerRankings[playerID] = rankings[playerID].value;
+        $.Msg("Player "+playerID+" info: ",Root.playerRankings[playerID])
     }
-    $.Msg(data.data);
-    $.Msg(playerRankings);
 
     // Build ranking badge for each player
-    for (var player in playerRankings) {
-        var ply = playerRankings[player];
-        if (ply.sector >= 0 && ply.sector < 8) {
-            var container = $('#sector'+ply.sector);
+    for (var playerID in Root.playerRankings) {
+        var playerRankInfo = Root.playerRankings[playerID];
+        if (playerRankInfo.sector >= 0 && playerRankInfo.sector < 8) {
+            var container = $('#sector'+playerRankInfo.sector);
             if (container !== null) {
-                if (ply.rank != 0) {
-                    var playerPanel = $.CreatePanel( "Panel", $( '#sector'+ply.sector ), "_player_" + ply.playerID );
+                if (playerRankInfo.rank != 0) {
+                    var playerPanel = $.CreatePanel( "Panel", $( '#sector'+playerRankInfo.sector ), "Player_" + playerID + "_Rank" );
                     playerPanel.BLoadLayout( "file://{resources}/layout/custom_game/ranking_player.xml", false, false );
-                    _SetTextSafe( playerPanel, "RankingPercentile", +(ply.percentile).toFixed(1) + "%");
-                    _SetTextSafe( playerPanel, "RankingRank", "#" + FormatRank(ply.rank));
-                    playerPanel.FindChildInLayoutFile( "RankingPlayer" ).AddClass(GetRankImage(ply.rank,ply.percentile)+"_percentile");
+                    _SetTextSafe( playerPanel, "RankingPercentile", +(playerRankInfo.percentile).toFixed(1) + "%");
+                    _SetTextSafe( playerPanel, "RankingRank", "#" + FormatRank(playerRankInfo.rank));
+                    playerPanel.FindChildInLayoutFile( "RankingPlayer" ).AddClass(GetRankImage(playerRankInfo.rank,playerRankInfo.percentile)+"_percentile");
                 }
             }
         }
@@ -84,11 +85,12 @@ function ShowRank()
 
 function ShowRanks( data )
 {
-    if (data.toggle) {
-        for (var player in playerRankings) {
-            var ply = playerRankings[player];
-            if (ply.rank != 0) {
-                var panel = $('#_player_'+ply.playerID);
+    if (data.toggle) 
+    {
+        for (var playerID in Root.playerRankings) {
+            var playerRankInfo = Root.playerRankings[playerID];
+            if (playerRankInfo.rank != 0) {
+                var panel = $("#Player_" + playerID + "_Rank");
                 var child = panel.FindChildInLayoutFile( "RankingPlayer" );
                 child.RemoveClass("slideOut");
                 child.RemoveClass("hidden");
@@ -99,13 +101,7 @@ function ShowRanks( data )
     }
 }
 
-function Setup()
-{
-
-}
-
 (function () {
-    Setup();
     GameEvents.Subscribe( "etd_show_ranks", ShowRanks );
     GameEvents.Subscribe( "etd_display_ranks", DisplayRanks );
 })();

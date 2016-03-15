@@ -209,12 +209,8 @@ function FinalizeVotes()
 		end
 	end
 
-	local lb = 0
-	if length == "Express" then
-		lb = 1
-	end
-
-	requestInGamePlayerRanks(lb)
+	-- Load rankings for all players in game
+	Ranking:RequestInGamePlayerRanks()
 
 	Log:trace("Creating post vote timer")
 	Timers:CreateTimer("PostVoteTimer", {
@@ -234,7 +230,7 @@ function FinalizeVotes()
 				end
 				-- Display player ranks
 				Timers:CreateTimer(5, function()
-					ShowPlayerRanks( true )
+					Ranking:ShowPlayerRanks( true )
 				end)
 			end
 		end

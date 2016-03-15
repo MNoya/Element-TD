@@ -10,5 +10,6 @@
         "towers",
         "gameinfo",
         "rewards",
+        "rankings",
     ]
 } 
