@@ -225,5 +225,11 @@
         "leaderboard_link"      "www.eletd.com/leaderboard"
         "web_link"              "www.eletd.com"
         "follow_us_link"        "@ETD"
+
+        "profile_title"         "My Profile"
+        "profile_friends"       "Friend Rankings"
+        "profile_rank"          "Rank"
+        "profile_score"         "Score"
+        "profile_percentile"    "Percentile"
     }
 }

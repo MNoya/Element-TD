@@ -1,0 +1,44 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/profile.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/profile/profile.js" /> 
+    </scripts>
+    <Panel hittest='false' class="ProfileHud">
+
+        <Panel id="MyProfileToggleContainer">
+            <Panel class="ProfileButton" onactivate="ToggleProfile()">
+                <Label id="ProfileHeaderTitle" text="#profile_title" />
+                <Panel id="PopoutArrow" class="OpenMenuArrow" />
+                <Label id="New" text="#etd_new_feature"/>
+            </Panel>
+            <DOTAAvatarImage id="AvatarImageMini" steamid="local"/>
+        </Panel>
+
+        <Panel class="Hide" hittest="false" id="MyProfile">
+            <Panel hittest="false" id="TopProfilePanel">
+                <DOTAAvatarImage id="AvatarImageProfile" steamid="local"/>
+                <DOTAUserName id="UserNameProfile" steamid="local"/>
+                <Label id="CloseButton" onactivate="ToggleProfile()"/>
+            </Panel>
+
+            <Panel hittest="false" id="ProfileMenuContainer">
+
+                <Panel hittest="false" id="LeftPanel">
+
+                </Panel>
+
+                <Panel hittest="false" id="RightPanel">
+                    <Label id="FriendRanksTitle" text="#profile_friends" />
+                    <Panel id="FriendRanksCategories">
+                        <Label id="Rank" class="FriendCategory" text="#profile_rank" />
+                        <Label id="Score" class="FriendCategory" text="#profile_score" />
+                        <Label id="Percentile" class="FriendCategory" text="#profile_percentile" />
+                    </Panel>
+                </Panel>
+            </Panel>
+        </Panel>
+
+    </Panel>
+</root>

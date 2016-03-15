@@ -1,0 +1,322 @@
+.ProfileHud
+{
+    width: 100%;
+    height: 100%;
+}
+
+.Hide
+{
+    opacity: 0;
+    visibility: collapse;
+}
+
+// Open Profile Button
+#MyProfileToggleContainer
+{
+    horizontal-align: left;
+    vertical-align: top;
+    margin-top: 762px;
+    flow-children: down;
+}
+
+.ProfileButton
+{
+    font-size: 18px;
+    background-color: black;
+    border-radius: 0px 10px 0px 0px;
+    height: 30px;
+    width: 285px;
+}
+
+#ProfileHeaderTitle
+{
+    margin-top: 2px;
+    letter-spacing: 3px;
+    width: 150px;
+    text-align: center;
+    text-transform: uppercase;
+    horizontal-align: center;
+    vertical-align: center;
+    color: #CCCCCC;
+}
+
+.ProfileButton:hover #ProfileHeaderTitle
+{
+    color: white;
+}
+
+.ProfileButton:hover #PopoutArrow
+{
+    wash-color: white;
+}
+
+.OpenMenuArrow
+{
+    width: 16px;
+    height: 16px;
+    vertical-align: center;
+    margin-right: 8px;
+    margin-top: 2px;
+    margin-bottom: 0px;
+    horizontal-align: right;
+
+    background-image: url("s2r://panorama/images/control_icons/arrow_top_right_png.vtex");
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    wash-color: #A5ADA2ff;
+}
+
+#AvatarImageMini
+{
+    width: 38px;
+    height: 38px;
+    border-radius: 0px 0px 10px;
+}
+
+#New
+{
+    letter-spacing: 2px;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 6px;
+    margin-left: 10px;
+    horizontal-align: left;
+
+    color: #FF0000;
+
+    animation-name: seq_new;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes 'seq_new'
+{
+    0%
+    {
+        text-shadow: 0px 0px 12px 1.0 #BD1831;
+    }
+
+    100%
+    {
+        text-shadow: 0px 0px 12px 1.5 #FF0000;
+    }
+}
+
+// Profile Main Menu
+#MyProfile
+{
+    width: 50%;
+    height: 60%;
+    horizontal-align: center;
+    vertical-align: top;
+    margin-top: 10%;
+    background-color: #000000DD;
+    //border-radius: 20px;
+
+    border: 2px solid #484A48;
+    box-shadow: #000 -4px -4px 3px 8px;
+
+    flow-children: down;
+}
+
+#TopProfilePanel
+{
+    width: 98%;
+    height: 80px;
+    horizontal-align: center;
+    margin-top: 10px;
+    background-color: #000000DD;
+    flow-children: right;
+}
+
+#AvatarImageProfile
+{
+    height: 60px;
+    vertical-align: center;
+    margin-left: 10px;
+}
+
+#UserNameProfile
+{
+    color: white;
+    vertical-align: center;
+    font-size: 36px;
+    margin-left: 10px;
+    max-width: 80%;
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+}
+
+#PlayerCardBox
+{
+    background-color: gradient( linear, 0% 0%, 0% 5%, from( #232326 ), to( #111111 ) );
+    background-image: url("s2r://panorama/images/textures/miniprofile_rock_psd.vtex");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100% 256px;
+    border-top: 2px solid #3b404777;
+    border-right: 2px solid #00000088;
+    border-left: 2px solid #4c434677;
+    border-bottom: 2px solid #00000088;
+    box-shadow: fill #00000055 -2px -2px 4px 6px;
+    height: 116px;
+    width: 100%;
+    padding: 0px;
+}
+
+#ProfileMenuContainer
+{
+    width: 98%;
+    height: 100%;
+    margin-top: 10px;
+    horizontal-align: center;
+    flow-children: right;
+}
+
+#LeftPanel
+{
+    background-color: #000000AA;
+    width: 50%;
+    height: 98%;
+    margin-right: 12px;
+}
+
+#RightPanel
+{
+    background-color: #000000AA;
+    width: 50%;
+    height: 98%;
+
+    flow-children: down;
+}
+
+// profile_friend xml
+.FriendContainer
+{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 3px;
+    flow-children: right;
+    margin-bottom: 5px;
+}
+
+#FriendRank
+{
+    width: 60px;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+#Rank
+{
+    width: 60px;
+    text-align: center;
+}
+
+#AvatarImageFriend
+{
+    height: 40px;
+    width: 40px;
+    vertical-align: center;
+    margin-left: 5px;
+}
+
+#FriendName
+{
+    width: 120px;
+    margin-left: 10px;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+#FriendScore
+{
+    width: 120px;
+    margin-left: 10px;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+#Score
+{
+    width: 120px;
+    margin-left: 185px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+#FriendPercentile
+{
+    width: 50px;
+    font-size: 20px;
+    margin-left: 10px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+#FriendRanksTitle
+{
+    color: white;
+    font-size: 25px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    horizontal-align: center;
+    vertical-align: center;
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+}
+
+#FriendRanksCategories
+{
+    width: 100%;
+    flow-children: right;
+    margin-top: 10px;
+}
+
+.FriendCategory
+{
+    color: white;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+}
+
+// --
+#CloseButton
+{
+    horizontal-align: right;
+    width: 24px;
+    height: 24px;
+    wash-color: #888888;
+    
+    background-image: url("s2r://panorama/images/control_icons/x_close_png.vtex");
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    margin: 4px;
+    
+    transition-property: wash-color, pre-transform-scale2d, background-color;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in;
+}
+
+#CloseButton:hover
+{
+    wash-color: #bbbbbb;
+}
+
+#CloseButton:active
+{
+    wash-color: white;
+    background-size: 20px 20px;
+    //pre-transform-scale2d: 0.8;
+}
