@@ -1,0 +1,27 @@
+"purgatory_demon_cosmetics"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "MaxLevel"                      "1"
+
+    "precache"
+    {
+        "particle"  "particles/units/heroes/hero_oracle/oracle_false_promise.vpcf"
+        "particle"  "particles/status_fx/status_effect_arc_warden_tempest.vpcf"
+    }
+
+    "Modifiers"
+    {
+        "modifier_purgatory_demon_cosmetics"
+        {
+            "Passive"   "1"
+            "IsHidden"  "1"
+
+            "EffectName"        "particles/units/heroes/hero_oracle/oracle_false_promise.vpcf"
+            "EffectAttachType"  "follow_origin"
+
+            "StatusEffectName"      "particles/status_fx/status_effect_arc_warden_tempest.vpcf"        
+            "StatusEffectPriority"  "10"
+        }
+    }
+}

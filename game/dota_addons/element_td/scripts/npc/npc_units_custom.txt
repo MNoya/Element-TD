@@ -24,6 +24,17 @@
 	    "Ability1"      "undying_cosmetics"
 	}
 	
+	"purgatory_demon"
+	{
+	    "BaseClass"     "npc_dota_creature"
+	    "Model"         "models/items/terrorblade/endless_purgatory_demon/endless_purgatory_demon.vmdl"
+	    "ModelScale"    "0.85"
+	    "Ability1"      "purgatory_demon_cosmetics"
+	}
+	
+	
+	//----------------
+	
 	"tauren_chieftain"
 	{
 	    "BaseClass"     "npc_dota_creature"

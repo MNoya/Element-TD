@@ -6,7 +6,8 @@
 
     "precache"
     {
-        "particle"  "models/items/doom/weapon_eyeoffetitzu/weapon_eyeoffetitzu.vmdl"
+        "model"  "models/items/doom/weapon_eyeoffetitzu/weapon_eyeoffetitzu.vmdl"
+        
     }
 
     "Modifiers"
