@@ -171,7 +171,7 @@
 
         // Sandbox
         "etd_new_feature"       "New"
-        "sandbox_mode"          "Sandbox Mode"
+        "sandbox_mode"          "Sandbox"
         "sandbox_mode_enable"   "Enable Sandbox Mode"
         "sandbox_mode_tooltip"  "Brings up a panel with options for testing towers and strategies.<br>If enabled, the score will not count towards the leaderboard!<br>Only available in Single Player."
         "sandbox_enable"        "Sandbox Mode Enabled!"

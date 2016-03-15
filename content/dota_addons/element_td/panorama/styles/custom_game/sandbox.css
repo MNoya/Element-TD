@@ -791,7 +791,9 @@
 
 .SandboxTopbar
 {
-    margin-left: 280px;
+    horizontal-align: right;
+    margin-right: 450px;
+    width: 180px;
     margin-top: 5px;
 }
 
@@ -799,7 +801,7 @@
 {
     background-color: black;
     height: 30px;
-    width: 200px;
+    width: 150px;
 
     tooltip-position: bottom;
 }
@@ -811,7 +813,7 @@
 
 #EnableSandboxText
 {
-  color: #CCCCCC;
+    color: #CCCCCC;
 }
 
 #SandboxTitle
@@ -830,7 +832,7 @@
 
 #SandboxEnableButton
 {
-    margin-left: 50px;
+    //margin-left: 50px;
 }
 
 .SandboxButton
@@ -861,7 +863,7 @@
     background-repeat: no-repeat;
     background-position: 50% 50%;
     margin-top: 4px;
-    margin-left: 255px;
+    horizontal-align: right;
     
     transition-property: wash-color, pre-transform-scale2d, background-color;
     transition-duration: 0.1s;
