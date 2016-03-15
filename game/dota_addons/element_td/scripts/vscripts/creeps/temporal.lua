@@ -31,7 +31,7 @@ function CreepTemporal:OnSpawned()
     end)
 
     -- We only store values during the backtrack duration with 1 decimal point
-    local i = string.format("%.1f", GameRules:GetGameTime())*10
+    local i = string.format("%.1f", GameRules:GetGameTime())
     local think_interval = 0.1
     self.health[i] = creep:GetHealth()
     self.position[i] = creep:GetAbsOrigin()
@@ -44,7 +44,7 @@ function CreepTemporal:OnSpawned()
         self.position[time] = creep:GetAbsOrigin()
 
         -- Forget the old value
-        local backtrack_target_time = tostring(tonumber(time)-self.backtrack_duration)
+        local backtrack_target_time = tostring(tonumber(time)-self.backtrack_duration-1)
         if self.health[backtrack_target_time] then
             self.health[backtrack_target_time] = nil
             self.position[backtrack_target_time] = nil
@@ -55,33 +55,37 @@ function CreepTemporal:OnSpawned()
 end
 
 function CreepTemporal:Backtrack()
-    local time = string.format("%.1f", GameRules:GetGameTime())
+    local gameTime = GameRules:GetGameTime()
+    local time = string.format("%.1f", gameTime)
     local backtrack_target_time = tostring(tonumber(time)-self.backtrack_duration)
 
     -- Approximate a value if we don't have an exact time stored
     if not self.health[backtrack_target_time] then
-        local minus = tostring(tonumber(backtrack_target_time)-0.1)
-        local plus = tostring(tonumber(backtrack_target_time)+0.1)
-        backtrack_target_time = (self.health[minus] and minus) or (self.health[plus] and plus)
-        
-        -- Shouldn't ever need this
-        if not self.health[backtrack_target_time] then
-            for k,_ in pairs(self.health) do
-                backtrack_target_time = k
-                break
+        local closest = 100
+        for pTime,_ in pairs(self.health) do
+            local diff = math.abs(tonumber(time)-tonumber(pTime))
+            if diff < closest and diff >= self.backtrack_duration then
+                closest = diff
+                backtrack_target_time = pTime
             end
+        end
+
+        if not self.health[backtrack_target_time] then
+            return
         end
     end
 
     local origin = self.creep:GetAbsOrigin()
-    local particle = ParticleManager:CreateParticle("particles/custom/creeps/temporal/timelapse.vpcf", PATTACH_CUSTOMORIGIN, self.creep)
+    local particle = ParticleManager:CreateParticle("particles/custom/creeps/temporal/timelapse.vpcf", PATTACH_CUSTOMORIGIN, nil)
     ParticleManager:SetParticleControl(particle, 0, origin)
-    self.creep:RemoveModifierByName("modifier_time_lapse") --This stops the ability from triggering again through the damage function
 
+    self.creep:RemoveModifierByName("modifier_time_lapse") --This stops the ability from triggering again through the damage function
     self.creep:SetHealth(self.health[backtrack_target_time])
     self.creep:SetAbsOrigin(self.position[backtrack_target_time])
     self.ability:SetHidden(true)
     Timers:RemoveTimer(self.temporalTimer)
+   
+    ParticleManager:SetParticleControl(particle, 2, self.position[backtrack_target_time])
 end
 
 RegisterCreepClass(CreepTemporal, CreepTemporal.className)
