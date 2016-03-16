@@ -462,6 +462,7 @@ function ReduceLivesForPlayer( playerID, lives )
     local playerData = GetPlayerData(playerID)
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     local ply = PlayerResource:GetPlayer(playerID)
+    if not hero then return end
 
     -- Cheats can melt steel beams
     if playerData.zenMode or playerData.godMode then
