@@ -102,16 +102,33 @@ function Rewards:HandleHeroReplacement(hero)
     -- Fake Unit (used for hero units with AttachWearables that aren't on the map)
     elseif reward.unit then
         PrecacheUnitByNameAsync(reward.unit, function()
-            local unit = CreateUnitByName(reward.unit, hero:GetAbsOrigin(), false, newHero, nil, hero:GetTeamNumber())
-            if unit:IsHero() then
-                unit:SetPlayerID(playerID)
-                unit:SetControllableByPlayer(playerID, true)
-                unit:SetOwner(PlayerResource:GetPlayer(playerID))
-                unit:RespawnUnit()
-            end
-            Rewards:SetCosmeticOverride(newHero, unit, reward)
+            local unit = CreateUnitByNameAsync(reward.unit, hero:GetAbsOrigin(), false, newHero, nil, hero:GetTeamNumber(), 
+            function(unit)
+                if unit:IsHero() then
+                    unit:SetPlayerID(playerID)
+                    unit:SetControllableByPlayer(playerID, true)
+                    unit:SetOwner(PlayerResource:GetPlayer(playerID))
+                    unit:RespawnUnit()
+                end
+                Rewards:SetCosmeticOverride(newHero, unit, reward)
 
-            UTIL_Remove(hero)
+                -- Remove all abilities on the hero unit
+                for i=0,15 do
+                    local ability = unit:GetAbilityByIndex(i)
+                    if ability then
+                        ability:RemoveSelf()
+                    end
+                end
+
+                -- Add any ability directly
+                if reward.Ability then
+                    Timers:CreateTimer(1, function()
+                        AddAbility(unit, reward.Ability)
+                    end)
+                end
+
+                UTIL_Remove(hero)
+            end)
         end, playerID)
     
     -- Particle

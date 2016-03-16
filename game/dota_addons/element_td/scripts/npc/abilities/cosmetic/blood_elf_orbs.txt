@@ -1,0 +1,26 @@
+// Creates 3 floating orbs just for looks
+"blood_elf_orbs"
+{
+    "BaseClass"                     "ability_datadriven"
+    "MaxLevel"                      "1"
+
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+    
+    "Modifiers"
+    {
+        "modifier_blood_mage_orbs"
+        {
+            "IsHidden"          "1"
+            "Passive"           "1"
+            "Attributes"        "MODIFIER_ATTRIBUTE_PERMANENT"
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "mechanics/wearables.lua"
+                    "Function"      "AttachOrbs"
+                }
+            }
+        }
+    }
+}
