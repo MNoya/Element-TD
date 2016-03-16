@@ -2889,28 +2889,15 @@
 	"hail_tower_storm"
 	{	
 		"BaseClass"						"ability_datadriven"											
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"towers/hail"
 		"MaxLevel"						"1"
-		"AbilityCooldown"				"6"
-	
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"Target"			"POINT"
-				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-				"Function"			"TriggerEvent"
-				"Event"				"OnStormCast"
-			}
-		}
 	
 		"Modifiers"
 		{
 			"modifier_storm_passive"
 			{
 				"Passive"	"1"
-				"IsHidden"	"1"
 				"OnAttack"
 				{
 					"RunScript"
@@ -2922,22 +2909,6 @@
 					}
 				}
 			}
-			"modifier_storm"
-			{
-				"EffectName"	"particles/units/heroes/hero_winter_wyvern/wyvern_winters_curse_ring_rope.vpcf"
-				"EffectAttachType" "follow_origin"
-			}
-		}
-	
-		"OnProjectileHitUnit"
-		{
-			"DeleteOnHit"	"1"
-			"RunScript"
-			{
-				"ScriptFile"		"towers/towerevents.lua"
-				"Function"			"TriggerEvent"
-				"Event"				"OnProjectileHit"
-			}
 		}
 		
 		"AbilitySpecial"
@@ -2945,12 +2916,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"3"
+				"attacks_required"		"10"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"targets"				"3"
+				"damage"				"3"
 			}
 		}
 	}
