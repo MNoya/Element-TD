@@ -231,5 +231,12 @@
         "profile_rank"          "Rank"
         "profile_score"         "Score"
         "profile_percentile"    "Percentile"
+        "profile_frogs"         "Frogs"
+
+        "leaderboard_title"     "Leaderboards"
+        "leaderboard_classic"   "Top 10 Classic"
+        "leaderboard_express"   "Top 10 Express"
+        "leaderboard_frogs"     "Top 10 Frog Kills"
+        "leaderboard_refresh"   "Refresh"
     }
 }

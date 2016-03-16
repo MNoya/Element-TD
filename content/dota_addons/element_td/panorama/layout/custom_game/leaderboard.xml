@@ -1,0 +1,45 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/leaderboard.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/leaderboard/leaderboard.js" /> 
+    </scripts>
+    <Panel hittest='false' class="LeaderboardHud">
+
+        <Panel id="LeaderboardToggle" onactivate="ToggleLeaderboard()">
+            <Label id="ToggleLeaderboardText" class="ToggleLabel" text="#leaderboard_title" />
+        </Panel>
+
+        <Panel hittest="false" id="Leaderboard" class="Hide">
+            <Panel hittest="false" id="ClassicLeaderboard" class="Section">
+                <Label hittest="false" class="LeaderboardTitle" text="#leaderboard_classic"/>
+                <Panel hittest="false" id="LeaderboardRanksCategories">
+                    <Label hittest="false" id="Rank" class="LeaderboardCategory" text="#profile_rank" />
+                    <Label hittest="false" id="Score" class="LeaderboardCategory" text="#profile_score" />
+                </Panel>
+            </Panel>
+
+            <Panel hittest="false" id="ExpressLeaderboard" class="Section">
+                <Label hittest="false" class="LeaderboardTitle" text="#leaderboard_express"/>
+                <Panel hittest="false" id="LeaderboardRanksCategories">
+                    <Label hittest="false" id="Rank" class="LeaderboardCategory" text="#profile_rank" />
+                    <Label hittest="false" id="Score" class="LeaderboardCategory" text="#profile_score" />
+                </Panel>
+            </Panel>
+
+            <Panel hittest="false" id="FrogsLeaderboard" class="Section">
+                <Label hittest="false" class="LeaderboardTitle" text="#leaderboard_frogs"/>
+                <Panel hittest="false" id="LeaderboardRanksCategories">
+                    <Label hittest="false" id="Rank" class="LeaderboardCategory" text="#profile_rank" />
+                    <Image hittest="false" id="OSfrog"/>
+                </Panel>
+            </Panel>
+        </Panel>
+
+        <Panel id="Buttons" class="Hide">
+            <Image id="RefreshButton" onactivate="RefreshAllRanks()" />
+            <Label id="CloseButton" onactivate="ToggleLeaderboard()"/>
+        </Panel>
+    </Panel>
+</root>

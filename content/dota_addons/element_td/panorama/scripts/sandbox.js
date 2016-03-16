@@ -145,7 +145,7 @@ function EnableSandbox() {
     else
         $('#SandboxPanel').ToggleClass('Minimized')
     $("#CloseButton").AddClass('hide')
-    $("#EnableSandboxText").style['color'] = 'gold;'
+    $("#EnableSandboxText").style['color'] = 'red;'
     $.DispatchEvent("DOTAShowTitleTextTooltip", $("#SandboxEnableButton"), "#sandbox_enable", "#sandbox_mode_on");    
 }
 
