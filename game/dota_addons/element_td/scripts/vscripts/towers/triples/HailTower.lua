@@ -1,7 +1,6 @@
 -- Hail (Darkness + Light + Water)
--- This is a long range single target tower. It can automatically activate an ability periodically that gives it multi-shoot. 
---This allows it to attack up to three targets at once doing full damage to each. 
--- Ability lasts a few seconds, and has a few second cooldown. Autocast can be toggled to prevent inopportune casting.
+-- This is a long range single target tower. 
+-- Every X attacks it applies its attack damage to all creeps in its attack range
 
 HailTower = createClass({
         tower = nil,
