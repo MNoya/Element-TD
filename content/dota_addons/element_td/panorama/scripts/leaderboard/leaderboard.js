@@ -34,6 +34,10 @@ function CreateTopPlayerPanel(data, panel) {
     playerPanel.rank = data.rank
     playerPanel.frogs = data.icefrog
     playerPanel.BLoadLayout("file://{resources}/layout/custom_game/leaderboard_player.xml", false, false);
+
+    var playerInfo = Game.GetLocalPlayerInfo()
+    if (playerInfo & steamID64 == playerInfo.steamid)
+        playerPanel.AddClass("local")
 }
 
 function ConvertID64 (steamID32) {

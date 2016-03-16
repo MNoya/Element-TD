@@ -124,7 +124,7 @@
     width: 32px;
     height: 32px;
     margin-left: 250px;
-    margin-top: -5px;
+    margin-top: -12px;
     vertical-align: center;
     background-image: url("file://{images}/spellicons/osfrog.png");
     background-size: 100%;
@@ -137,9 +137,9 @@
     height: 50px;
 }
 
-#RefreshLeaderboard
+.local
 {
-
+    background-color: grey;
 }
 
 // leaderboard_player xml
