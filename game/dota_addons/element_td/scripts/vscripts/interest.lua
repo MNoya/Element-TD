@@ -6,6 +6,7 @@ if not InterestManager then
 	InterestManager = class({})
 	InterestManager.started = false
 	InterestManager.timers = {}
+	InterestManager.playerLockStates = {}
 end
 
 -- starts the interest timers initally for all players
@@ -21,6 +22,22 @@ function InterestManager:StartInterest()
 	end
 
 	CustomGameEventManager:Send_ServerToAllClients("etd_display_interest", { interval=INTEREST_INTERVAL, rate=INTEREST_RATE, enabled=true } )
+end
+
+function InterestManager:HandlePlayerReconnect(playerID)
+	local player = PlayerResource:GetPlayer(playerID)
+	if InterestManager.started and player then
+		CustomGameEventManager:Send_ServerToPlayer(player, "etd_display_interest", { interval=INTEREST_INTERVAL, rate=INTEREST_RATE, enabled=true } )
+		
+		local lockState = InterestManager.playerLockStates[playerID]
+		if lockState then
+			CustomGameEventManager:Send_ServerToPlayer(player, "etd_pause_interest", lockState)
+		else
+			local timeRemaining = Timers.timers[timerName].endTime - GameRules:GetGameTime()
+			CustomGameEventManager:Send_ServerToPlayer(player, "etd_resume_interest", { timeRemaining = interestData.TimeRemaining })
+		end
+
+	end
 end
 
 function InterestManager:CreateTimerForPlayer(playerID, timeRemaining)
@@ -100,24 +117,31 @@ function InterestManager:ResumeInterestForPlayer(playerID)
 			timeRemaining = interestData.TimeRemaining
 		})
 	end
+	InterestManager.playerLockStates[playerID] = nil
 	InterestManager:CreateTimerForPlayer(playerID, interestData.TimeRemaining)
 	interestData.TimeRemaining = 0
 end
 
 function InterestManager:PauseInterestForPlayer(playerID, title, msg)
 	local player = PlayerResource:GetPlayer(playerID)
-	if player then
-		local interestData = GetPlayerData(playerID).interestData
-		local timerName = InterestManager.timers[playerID]
+	local interestData = GetPlayerData(playerID).interestData
+	local timerName = InterestManager.timers[playerID]
 
-		if InterestManager.timers[playerID] and Timers.timers[timerName] then
+	if InterestManager.timers[playerID] and Timers.timers[timerName] then
 			
-			local timeRemaining = Timers.timers[timerName].endTime - GameRules:GetGameTime()
-			interestData.TimeRemaining = timeRemaining;
+		local timeRemaining = Timers.timers[timerName].endTime - GameRules:GetGameTime()
+		interestData.TimeRemaining = timeRemaining;
+		
+		Timers:RemoveTimer(timerName)
+		InterestManager.timers[playerID] = nil
 			
-			Timers:RemoveTimer(timerName)
-			InterestManager.timers[playerID] = nil
+		-- store this pause in the case of player disconnect
+		InterestManager.playerLockStates[playerID] = {
+			title = title,
+			msg = msg
+		}
 
+		if player then
 			CustomGameEventManager:Send_ServerToPlayer(player, "etd_pause_interest", {title = title, msg = msg})
 		end
 	end
