@@ -41,6 +41,8 @@
         "2"        "fire"
     }
     "Damage"        "600"
+    "AttackDamageMin"        "600"
+    "AttackDamageMax"        "600"
     "DamageType"        "dark"
     "ScriptClass"        "MagicTower"
     "TowerType"        "Normal"
@@ -71,8 +73,6 @@
         "4"        "jinx_tower"
         "5"        "erosion_tower"
     }
-    "AttackDamageMin"        "600"
-    "AttackDamageMax"        "600"
     "Creature"
     {
        "AttachWearables" // Default

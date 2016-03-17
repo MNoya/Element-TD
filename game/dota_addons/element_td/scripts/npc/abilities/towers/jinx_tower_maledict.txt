@@ -66,12 +66,12 @@
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"				"7.5"
+			"duration"				"5"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"ticks"					"3"
+			"ticks"					"2"
 		}
 		"05"
 		{

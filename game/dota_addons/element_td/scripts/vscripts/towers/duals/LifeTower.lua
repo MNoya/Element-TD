@@ -33,8 +33,8 @@ function LifeTower:CreepKilled(keys)
 
         AddOneLife(self.tower, self.ability, playerData)
 
-    elseif playerData.health >= 50 and playerData.LifeTowerKills >= 9 then --when health is greater than or equal to 50
-        playerData.LifeTowerKills = playerData.LifeTowerKills - 9
+    elseif playerData.health >= 50 and playerData.LifeTowerKills >= 18 then --when health is greater than or equal to 50
+        playerData.LifeTowerKills = playerData.LifeTowerKills - 18
 
         AddOneLife(self.tower, self.ability, playerData)        
     end

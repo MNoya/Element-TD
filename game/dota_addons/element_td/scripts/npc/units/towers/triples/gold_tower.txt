@@ -42,9 +42,9 @@
         "2"        "earth"
         "3"        "light"
     }
-    "Damage"        "4000"
-    "AttackDamageMin"        "4000"
-    "AttackDamageMax"        "4000"
+    "Damage"        "4500"
+    "AttackDamageMin"        "4500"
+    "AttackDamageMax"        "4500"
     "DamageType"        "earth"
     "ScriptClass"        "GoldTower"
     "TowerType"        "Normal"
