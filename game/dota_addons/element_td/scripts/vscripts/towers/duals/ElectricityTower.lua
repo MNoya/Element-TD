@@ -41,8 +41,6 @@ function ElectricityTower:OnAttack(event)
     targetsStruck[target:GetEntityIndex()] = true
 
     local range = self.bounce_range
-    local count = 1
-    local totalDamage = damage
     Timers:CreateTimer(self.time_between_bounces, function()  
         local units = FindUnitsInRadius(teamNumber, current_position, target, range, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC, 0, findType, true)
 
@@ -62,14 +60,14 @@ function ElectricityTower:OnAttack(event)
                 damage = damage - (damage*self.decay)
                 current_position = self:CreateChainLightning(caster, current_position, bounce_target, damage)
 
-                count = count + 1
-                totalDamage = totalDamage+damage
-
-                -- fire the timer again
+                -- decrement remaining spell bounces
+                bounces = bounces - 1
                 range = range - (range*self.bounce_decrease)
-                return self.time_between_bounces
-            else
-                print("Total damage ("..count.." jumps): "..round(totalDamage))
+
+                -- fire the timer again if spell bounces remain
+                if bounces > 0 then
+                    return self.time_between_bounces
+                end
             end
         end
     end)
@@ -101,6 +99,7 @@ function ElectricityTower:OnCreated()
     self.damage = self.ability:GetLevelSpecialValueFor( "damage", level - 1 )
     self.bounce_range = self.ability:GetLevelSpecialValueFor( "bounce_range", level - 1 )
     self.bounce_decrease = self.ability:GetLevelSpecialValueFor( "bounce_decrease", level - 1 ) * 0.01
+    self.bounces = self.ability:GetLevelSpecialValueFor( "jump_count", level - 1 )
     self.decay = self.ability:GetLevelSpecialValueFor( "damage_decrease", level - 1 ) * 0.01
     self.time_between_bounces = 0.2
     self.playerID = self.tower:GetPlayerOwnerID()

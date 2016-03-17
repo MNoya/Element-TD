@@ -585,6 +585,7 @@
         "DOTA_Tooltip_ability_electricity_tower_arc_lightning_passive_damage_decrease"      "%DAMAGE DECREASE PER JUMP:"
         "DOTA_Tooltip_ability_electricity_tower_arc_lightning_passive_jump_count"       "JUMPS:"
         "DOTA_Tooltip_ability_electricity_tower_arc_lightning_passive_bounce_range"       "BOUNCE RANGE:"
+        "DOTA_Tooltip_ability_electricity_tower_arc_lightning_passive_bounce_decrease"    "BOUNCE DECREASE:"
         
         "DOTA_Tooltip_modifier_sunburn"     "Sunburn"
         "DOTA_Tooltip_modifier_sunburn_Description"     "Taking damage over time and burning those around you."
@@ -696,6 +697,7 @@
         "DOTA_Tooltip_ability_hail_tower_storm"     "Storm"
         "DOTA_Tooltip_ability_hail_tower_storm_Description"     "Every few attacks, this tower unleashes a mighty hail storm, dealing its attack damage to all targets in range."
         "DOTA_Tooltip_ability_hail_tower_storm_attacks_required"     "ATTACKS REQUIRED:"
+        "DOTA_Tooltip_ability_hail_tower_storm_damage"                                    "DAMAGE:"
         "DOTA_Tooltip_modifier_storm_passive"               "Attacks Required"
         "DOTA_Tooltip_modifier_storm_passive_Description"   "Attacks required until this tower unleashes a hail storm."
         

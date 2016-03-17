@@ -56,5 +56,10 @@
 			"var_type"				"FIELD_INTEGER"
 			"bounce_decrease"		"20"
 		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"jump_count"			"10"
+		}
 	}
 }
