@@ -61,3 +61,10 @@ GameUI.ApplyPanelBorder = function (panel, steamID64){
         }
     }
 }
+
+// Player Profile unlock
+GameUI.PlayerHasProfile = function(playerID) {
+    var steamID64 = Game.GetPlayerInfo(playerID).player_steamid
+    var rewardLevel = GameUI.RewardLevel(steamID64)
+    return rewardLevel == "Developer" || rewardLevel > 0
+}

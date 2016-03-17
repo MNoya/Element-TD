@@ -2,7 +2,7 @@
 
 var friendsURL = 'http://hatinacat.com/leaderboard/data_request.php?req=friends&id='
 var friendsPanel = $("#RightPanel")
-var visible = false;
+var friendsLoaded = false;
 
 function GetPlayerFriends(playerID) {
     $.Msg("Getting player friends data...")
@@ -10,6 +10,7 @@ function GetPlayerFriends(playerID) {
     var steamID = playerInfo.player_steamid
     $.AsyncWebRequest( friendsURL+steamID, { type: 'GET', 
         success: function( data ) {
+            friendsLoaded = true;
             var info = JSON.parse(data);
             var players_info = info["players"]
             
@@ -38,11 +39,12 @@ function CreateFriendPanel(data) {
 }
 
 function ToggleProfile() {
-    $.Msg("Toggle")
     $("#MyProfile").ToggleClass("Hide")
+
+    if (!friendsLoaded)
+         GetPlayerFriends(Game.GetLocalPlayerID())
 }
 
 (function () {
-    $.Msg("Profile Loaded")
-    GetPlayerFriends(Game.GetLocalPlayerID())
+    $("#MyProfile").BHasClass("Hide", GameUI.PlayerHasProfile(Game.GetLocalPlayerID()))
 })();
