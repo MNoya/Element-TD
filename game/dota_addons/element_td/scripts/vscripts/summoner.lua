@@ -76,10 +76,15 @@ function ModifyLumber(playerID, amount)
     SetCustomLumber(playerID, playerData.lumber + amount)
 
     if amount > 0 then
-        PopupLumber(ElementTD.vPlayerIDToHero[playerID], amount)
+        local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+        local summoner = playerData.summoner
 
-        if playerData.elementalCount == 0 then
-            Highlight(playerData.summoner, playerID)
+        if hero then
+            PopupLumber(hero, amount)
+        end
+
+        if summoner and playerData.elementalCount == 0 then
+            Highlight(summoner, playerID)
         end
 
         if GameSettings.elementsOrderName == "AllPick" then
@@ -116,12 +121,13 @@ function SetCustomLumber(playerID, amount)
                 summoner.particle = nil
             end
         end
+
+        local player = PlayerResource:GetPlayer(playerID)
+        if player then
+            CustomGameEventManager:Send_ServerToPlayer(player, "etd_update_lumber", { lumber = current_lumber, summoner = summoner:GetEntityIndex() } )
+        end
     end
 
-    local player = PlayerResource:GetPlayer(playerID)
-    if player then
-        CustomGameEventManager:Send_ServerToPlayer(player, "etd_update_lumber", { lumber = current_lumber, summoner = playerData.summoner:GetEntityIndex() } )
-    end
     UpdateScoreboard(playerID)
 end
 

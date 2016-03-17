@@ -194,6 +194,7 @@ function FinalizeVotes()
 	end
 
 	-- Game Info net table
+	CustomNetTables:SetTableValue("gameinfo", "voting_finished", {value=1})
 	CustomNetTables:SetTableValue("gameinfo", "gamemode", {value=gamemode})
 	CustomNetTables:SetTableValue("gameinfo", "difficulty", {value=difficulty})
 	CustomNetTables:SetTableValue("gameinfo", "random", {value=elements})

@@ -585,6 +585,8 @@ function ElementTD:OnConnectFull(keys)
     
     table.insert(players, ply)
     Timers:CreateTimer(0.03, function() -- To prevent it from being -1 when the player is created
+        if not ply then return end -- Something went wrong
+        
         local playerID = ply:GetPlayerID()
         if playerID and playerID ~= -1 then
             if not tableContains(playerIDs, playerID) then
