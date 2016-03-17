@@ -155,8 +155,9 @@ function Timers:Think()
         -- Update timer data
         --self:UpdateTimerData()
       else
-        -- Nope, handle the error
+        -- Nope, handle the error and delete the timer
         Timers:HandleEventError('Timer', k, nextCall)
+        Timers.timers[k] = nil
       end
     end
   end
