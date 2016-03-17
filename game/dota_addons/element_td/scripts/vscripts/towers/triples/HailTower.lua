@@ -28,12 +28,19 @@ function HailTower:OnAttack(keys)
 
         local creeps = GetCreepsInArea(self.tower:GetAbsOrigin(), self.findRadius)
         for _, creep in pairs(creeps) do
-            if creep:IsAlive() then
-                local particle = ParticleManager:CreateParticle(self.particle_name, PATTACH_ABSORIGIN_FOLLOW, self.tower)
-                ParticleManager:SetParticleControl(particle, 1, creep:GetAbsOrigin())
-                ParticleManager:ReleaseParticleIndex(particle)
-
-                DamageEntity(creep, self.tower, damage)
+            if creep:IsAlive() and creep:entindex() ~= target:entindex() then
+                local info = 
+                {
+                    Target = creep,
+                    Source = caster,
+                    Ability = keys.ability,
+                    EffectName = "particles/custom/towers/hail/attack.vpcf",
+                    iMoveSpeed = self.tower:GetProjectileSpeed(),
+                    vSourceLoc= caster:GetAbsOrigin(),
+                    bReplaceExisting = false,
+                    flExpireTime = GameRules:GetGameTime() + 10,
+                }
+                projectile = ProjectileManager:CreateTrackingProjectile(info)
             end
         end
     end 
@@ -45,6 +52,10 @@ function HailTower:OnAttackLanded(keys)
     local target = keys.target
     local damage = self.tower:GetAverageTrueAttackDamage()
     DamageEntity(target, self.tower, damage)
+end
+
+function HailTower:OnProjectileHit(keys)
+    self:OnAttackLanded({target = keys.target})
 end
 
 function HailTower:ApplyUpgradeData(data)
@@ -62,7 +73,6 @@ end
 
 function HailTower:OnCreated()
     self.ability = AddAbility(self.tower, "hail_tower_storm")
-    self.particle_name = "particles/econ/items/luna/luna_lucent_ti5_gold/luna_lucent_beam_moonfall_gold.vpcf";
 
     self.attacks_required = self.ability:GetSpecialValueFor("attacks_required")
     self.current_attacks = 0
