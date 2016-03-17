@@ -28,27 +28,13 @@ function GetPlayerFriends(playerID) {
 }
 
 function CreateFriendPanel(data) {
-    var steamID64 = ConvertID64(data.steamID)
+    var steamID64 = GameUI.ConvertID64(data.steamID)
     var playerPanel = $.CreatePanel("Panel", friendsPanel, "Friend_"+steamID64)
     playerPanel.steamID = steamID64
-    playerPanel.score = FormatScore(data.score)
+    playerPanel.score = GameUI.FormatScore(data.score)
     playerPanel.rank = data.rank
-    playerPanel.percentile = FormatPercentile(data.percentile)
+    playerPanel.percentile = GameUI.FormatPercentile(data.percentile)
     playerPanel.BLoadLayout("file://{resources}/layout/custom_game/profile_friend.xml", false, false);
-}
-
-function ConvertID64 (steamID32) {
-    return '765'+(parseInt(steamID32) + 61197960265728)
-}
-
-// Format score in k (thousands) format
-function FormatScore(score) {
-    return score.substring(0, score.length-3)+"k";
-}
-
-function FormatPercentile(percent) {
-    if (percent=="0") percent="1" //Adjust while decimal point 0 isn't working
-    return percent+"%"
 }
 
 function ToggleProfile() {

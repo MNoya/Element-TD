@@ -38,11 +38,11 @@
 	</script>
 	<Panel>
 		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/statcollection.xml" />
+		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/scripts.xml" />
 		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/wave_info.xml" />
 		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/interest.xml" />
 		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/images.xml" />
 		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/resources.xml" />
-		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/scripts.xml" />
 		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/selection.xml" />
 		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/notifications.xml" />
 		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/scoring.xml" />

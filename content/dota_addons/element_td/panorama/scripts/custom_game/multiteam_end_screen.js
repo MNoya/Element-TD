@@ -13,7 +13,7 @@ function ShowEndCredits() {
         var panel = CreateEndCredit(ids[i].key)
         panel.SetHasClass( "team_endgame", false );
         
-        ApplyPanelBorder(panel, ids[i].key)
+        GameUI.ApplyPanelBorder(panel, ids[i].key)
         
         var callback = function( panel )
         {
@@ -57,7 +57,7 @@ function CreateEndCredit(steamid) {
 
         lastPanel = teamPanel;
 
-        ApplyPanelBorder(teamPanel, Game.GetPlayerInfo(0).steamid )
+        GameUI.ApplyPanelBorder(teamPanel, Game.GetPlayerInfo(0).steamid )
 
         teamPanel.SetHasClass( "team_endgame", false );
         var callback = function( panel )

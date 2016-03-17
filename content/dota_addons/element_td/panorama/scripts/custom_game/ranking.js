@@ -36,8 +36,8 @@ function DisplayRanks()
                 if (playerRankInfo.rank != 0) {
                     var playerPanel = $.CreatePanel( "Panel", $( '#sector'+playerRankInfo.sector ), "Player_" + playerID + "_Rank" );
                     playerPanel.BLoadLayout( "file://{resources}/layout/custom_game/ranking_player.xml", false, false );
-                    _SetTextSafe( playerPanel, "RankingPercentile", +(playerRankInfo.percentile).toFixed(1) + "%");
-                    _SetTextSafe( playerPanel, "RankingRank", "#" + FormatRank(playerRankInfo.rank));
+                    _SetTextSafe( playerPanel, "RankingPercentile", GameUI.FormatPercentile(playerRankInfo.percentile));
+                    _SetTextSafe( playerPanel, "RankingRank", "#" + GameUI.FormatRank(playerRankInfo.rank));
                     playerPanel.FindChildInLayoutFile( "RankingPlayer" ).AddClass(GetRankImage(playerRankInfo.rank,playerRankInfo.percentile)+"_percentile");
                 }
             }
@@ -57,14 +57,6 @@ function GetRankImage( rank, percentile )
         return "60";
     else
         return "80";
-}
-
-function FormatRank( rank )
-{
-    var fixed = 1;
-    if (rank > 9999)
-        fixed = 0;
-    return rank > 999 ? +(rank/1000).toFixed(fixed) + 'k' : rank;
 }
 
 function HideRank()

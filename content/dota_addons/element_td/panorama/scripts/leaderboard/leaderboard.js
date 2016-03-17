@@ -37,10 +37,10 @@ function GetTopRanks(type, panel) {
 }
 
 function CreateTopPlayerPanel(data, panel) {
-    var steamID64 = ConvertID64(data.steamID)
+    var steamID64 = GameUI.ConvertID64(data.steamID)
     var playerPanel = $.CreatePanel("Panel", panel, "Top_"+panel.id+"_"+steamID64)
     playerPanel.steamID = steamID64
-    playerPanel.score = FormatScore(data.score)
+    playerPanel.score = GameUI.FormatScore(data.score)
     playerPanel.rank = data.rank
     playerPanel.frogs = data.icefrog
     playerPanel.BLoadLayout("file://{resources}/layout/custom_game/leaderboard_player.xml", false, false);
@@ -48,15 +48,6 @@ function CreateTopPlayerPanel(data, panel) {
     var playerInfo = Game.GetLocalPlayerInfo()
     if (playerInfo & steamID64 == playerInfo.steamid)
         playerPanel.AddClass("local")
-}
-
-function ConvertID64 (steamID32) {
-    return '765'+(parseInt(steamID32) + 61197960265728)
-}
-
-// Format score in k (thousands) format
-function FormatScore(score) {
-    return score.substring(0, score.length-3)+"k";
 }
 
 function Setup()
