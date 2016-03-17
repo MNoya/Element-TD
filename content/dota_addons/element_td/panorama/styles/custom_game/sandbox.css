@@ -797,6 +797,11 @@
     margin-top: 5px;
 }
 
+.AspectRatio16x10 .SandboxTopbar
+{
+    margin-right: 350px;
+}
+
 #SandboxEnableButton
 {
     background-color: black;
