@@ -8,6 +8,9 @@ function GetPlayerFriends(playerID) {
     $.Msg("Getting player friends data...")
     var playerInfo = Game.GetPlayerInfo(playerID)
     var steamID = playerInfo.player_steamid
+
+    var delay = 0
+    var delay_per_panel = 0.1;
     $.AsyncWebRequest( friendsURL+steamID, { type: 'GET', 
         success: function( data ) {
             friendsLoaded = true;
@@ -21,8 +24,13 @@ function GetPlayerFriends(playerID) {
 
             for (var i in players_info)
             {
-                if (i<10)
-                    CreateFriendPanel(players_info[i])
+                var callback = function( data )
+                {
+                    return function(){ CreateFriendPanel(data) }
+                }( players_info[i] );
+
+                $.Schedule( delay, callback )
+                delay += delay_per_panel;
             }
         }
     })
@@ -33,7 +41,7 @@ function CreateFriendPanel(data) {
     var playerPanel = $.CreatePanel("Panel", friendsPanel, "Friend_"+steamID64)
     playerPanel.steamID = steamID64
     playerPanel.score = GameUI.FormatScore(data.score)
-    playerPanel.rank = data.rank
+    playerPanel.rank = GameUI.FormatRank(data.rank)
     playerPanel.percentile = GameUI.FormatPercentile(data.percentile)
     playerPanel.BLoadLayout("file://{resources}/layout/custom_game/profile_friend.xml", false, false);
 }
@@ -46,5 +54,5 @@ function ToggleProfile() {
 }
 
 (function () {
-    $("#MyProfile").BHasClass("Hide", GameUI.PlayerHasProfile(Game.GetLocalPlayerID()))
+    $("#MyProfile").SetHasClass("Hide", GameUI.PlayerHasProfile(Game.GetLocalPlayerID()))
 })();

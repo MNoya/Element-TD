@@ -189,6 +189,8 @@
     width: 50%;
     height: 98%;
 
+    overflow: squish scroll;
+
     flow-children: down;
 }
 

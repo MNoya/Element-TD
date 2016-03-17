@@ -16,20 +16,20 @@
             <DOTAAvatarImage id="AvatarImageMini" steamid="local"/>
         </Panel>
 
-        <Panel class="Hide" hittest="false" id="MyProfile">
+        <Panel class="Hide" id="MyProfile">
             <Panel hittest="false" id="TopProfilePanel">
                 <DOTAAvatarImage id="AvatarImageProfile" steamid="local"/>
                 <DOTAUserName id="UserNameProfile" steamid="local"/>
                 <Label id="CloseButton" onactivate="ToggleProfile()"/>
             </Panel>
 
-            <Panel hittest="false" id="ProfileMenuContainer">
+            <Panel id="ProfileMenuContainer">
 
                 <Panel hittest="false" id="LeftPanel">
 
                 </Panel>
 
-                <Panel hittest="false" id="RightPanel">
+                <Panel id="RightPanel">
                     <Label id="FriendRanksTitle" text="#profile_friends" />
                     <Panel id="FriendRanksCategories">
                         <Label id="Rank" class="FriendCategory" text="#profile_rank" />
