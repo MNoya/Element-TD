@@ -5,12 +5,16 @@ var CLASSIC = 0
 var EXPRESS = 2
 var FROGS = 3
 var LEADERBOARD_THRESHOLD = 300
-var REFRESH_THRESHOLD = 3
+var MAX_RANKS = 100
+var REFRESH_THRESHOLD = 10
 var lastRequest
 var lastRefresh
 
-function GetTopRanks(type, num, panel) {
-    var top = url+"&top="+num+"&lb="+type
+function GetTopRanks(type, panel) {
+    var top = url+"&top="+MAX_RANKS+"&lb="+type
+
+    var delay = 0
+    var delay_per_panel = 0.05;
     $.AsyncWebRequest( top, { type: 'GET', 
         success: function( data ) {
             var info = JSON.parse(data);
@@ -20,8 +24,14 @@ function GetTopRanks(type, num, panel) {
             for (var steamID in players)
             {
                 //$.Msg("Top "+players[steamID]['rank']+":", players[steamID])
-                CreateTopPlayerPanel(players[steamID], panel)
-            }
+                var callback = function( data, panel )
+                {
+                    return function(){ CreateTopPlayerPanel(data, panel); }
+                }( players[steamID], panel );
+
+                $.Schedule( delay, callback )
+                delay += delay_per_panel;
+            }       
         }
     })
 }
@@ -65,9 +75,9 @@ function Setup()
 }
 
 function CreateAllRanks() {
-    GetTopRanks(CLASSIC, 10, $("#ClassicLeaderboard"))
-    GetTopRanks(EXPRESS, 10, $("#ExpressLeaderboard"))
-    GetTopRanks(FROGS, 10, $("#FrogsLeaderboard"))
+    GetTopRanks(CLASSIC, $("#ClassicLeaderboardContainer"))
+    GetTopRanks(EXPRESS, $("#ExpressLeaderboardContainer"))
+    GetTopRanks(FROGS, $("#FrogsLeaderboardContainer"))
 }
 
 function RefreshAllRanks()
@@ -81,14 +91,14 @@ function RefreshAllRanks()
 
     lastRefresh = timeNow
     $.Msg("Reseting All Ranks")
-    Refresh(CLASSIC, "ClassicLeaderboard")
-    Refresh(EXPRESS, "ExpressLeaderboard")
-    Refresh(FROGS, "FrogsLeaderboard")
+    Refresh(CLASSIC, "ClassicLeaderboardContainer")
+    Refresh(EXPRESS, "ExpressLeaderboardContainer")
+    Refresh(FROGS, "FrogsLeaderboardContainer")
 }
 
 function Refresh(leaderboard_type, id) {
     ClearRanks($("#"+id))
-    GetTopRanks(leaderboard_type, 10, $("#"+id))
+    GetTopRanks(leaderboard_type, $("#"+id))
 }
 
 function ClearRanks(panel) {

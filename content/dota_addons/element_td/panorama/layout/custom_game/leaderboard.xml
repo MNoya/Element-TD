@@ -1,6 +1,7 @@
 <root>
     <styles>
         <include src="file://{resources}/styles/custom_game/leaderboard.css" />
+        <include src="s2r://panorama/styles/dotastyles.vcss_c" />
     </styles>
     <scripts>
         <include src="file://{resources}/scripts/leaderboard/leaderboard.js" /> 
@@ -11,29 +12,49 @@
             <Label id="ToggleLeaderboardText" class="ToggleLabel" text="#leaderboard_title" />
         </Panel>
 
-        <Panel hittest="false" id="Leaderboard" class="Hide">
-            <Panel hittest="false" id="ClassicLeaderboard" class="Section">
-                <Label hittest="false" class="LeaderboardTitle" text="#leaderboard_classic"/>
-                <Panel hittest="false" id="LeaderboardRanksCategories">
-                    <Label hittest="false" id="Rank" class="LeaderboardCategory" text="#profile_rank" />
-                    <Label hittest="false" id="Score" class="LeaderboardCategory" text="#profile_score" />
+        <Panel id="Leaderboard" class="Hide">
+            <Panel id="ClassicLeaderboard" class="Section">
+                <Panel class="LeaderboardHeader">
+                    <Label class="LeaderboardTitle" text="#leaderboard_classic"/>
+                    <Panel id="LeaderboardRanksCategories">
+                        <Label id="Rank" class="LeaderboardCategory" text="#profile_rank" />
+                        <Label id="Score" class="LeaderboardCategory" text="#profile_score" />
+                    </Panel>
+                </Panel>
+
+                <Panel id="ClassicLeaderboardContainer" class="ContainerSection">
+
                 </Panel>
             </Panel>
 
-            <Panel hittest="false" id="ExpressLeaderboard" class="Section">
-                <Label hittest="false" class="LeaderboardTitle" text="#leaderboard_express"/>
-                <Panel hittest="false" id="LeaderboardRanksCategories">
-                    <Label hittest="false" id="Rank" class="LeaderboardCategory" text="#profile_rank" />
-                    <Label hittest="false" id="Score" class="LeaderboardCategory" text="#profile_score" />
+            <Panel id="ExpressLeaderboard" class="Section">
+                <Panel class="LeaderboardHeader">
+                    <Label class="LeaderboardTitle" text="#leaderboard_express"/>
+                    <Panel id="LeaderboardRanksCategories">
+                        <Label id="Rank" class="LeaderboardCategory" text="#profile_rank" />
+                        <Label id="Score" class="LeaderboardCategory" text="#profile_score" />
+                    </Panel>
                 </Panel>
+
+                <Panel id="ExpressLeaderboardContainer" class="ContainerSection">
+
+                </Panel>
+
             </Panel>
 
-            <Panel hittest="false" id="FrogsLeaderboard" class="Section">
-                <Label hittest="false" class="LeaderboardTitle" text="#leaderboard_frogs"/>
-                <Panel hittest="false" id="LeaderboardRanksCategories">
-                    <Label hittest="false" id="Rank" class="LeaderboardCategory" text="#profile_rank" />
-                    <Image hittest="false" id="OSfrog"/>
+            <Panel id="FrogsLeaderboard" class="Section">
+                <Panel class="LeaderboardHeader">
+                    <Label class="LeaderboardTitle" text="#leaderboard_frogs"/>
+                    <Panel id="LeaderboardRanksCategories">
+                        <Label id="Rank" class="LeaderboardCategory" text="#profile_rank" />
+                        <Image id="OSfrog"/>
+                    </Panel>
                 </Panel>
+
+                <Panel id="FrogsLeaderboardContainer" class="ContainerSection">
+
+                </Panel>
+
             </Panel>
         </Panel>
 
