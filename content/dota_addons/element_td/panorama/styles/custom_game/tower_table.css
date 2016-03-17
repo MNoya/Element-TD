@@ -340,11 +340,15 @@
 #FilterButtonContainer
 {
     flow-children: right;
-    width: 560px;
-    horizontal-align: right;
+    horizontal-align: left;
     vertical-align: bottom;
-    margin-right: 233px;
+    margin-left: 510px;
     margin-bottom: 19%;
+}
+
+#Spacer
+{
+    width: 100px;
 }
 
 .FilterButton

@@ -262,6 +262,14 @@
             </Panel>
         </Panel>
         <Panel hittest="false" class="Hidden" id="FilterButtonContainer">
+            <Label class="FilterButton" text="550" onmouseover="HoverFilter('550')" onmouseout='OnMouseOutFilter()'/>
+            <Label class="FilterButton" text="700" onmouseover="HoverFilter('700')" onmouseout='OnMouseOutFilter()'/>
+            <Label class="FilterButton" text="900" onmouseover="HoverFilter('900')" onmouseout='OnMouseOutFilter()'/>
+            <Label class="FilterButton" text="1150" onmouseover="HoverFilter('1150')" onmouseout='OnMouseOutFilter()'/>
+            <Label class="FilterButton" text="1500" onmouseover="HoverFilter('1500')" onmouseout='OnMouseOutFilter()'/>
+
+            <Panel id="Spacer"/>
+
             <Label class="FilterButton" text="#etd_tower_table_buff" onmouseover="HoverFilter('Buff_Towers')" onmouseout='OnMouseOutFilter()'/>
             <Label class="FilterButton" text="#etd_tower_table_slow" onmouseover="HoverFilter('Slow_Towers')" onmouseout='OnMouseOutFilter()'/>
             <Label class="FilterButton" text="#etd_tower_table_amp" onmouseover="HoverFilter('Amp_Towers')" onmouseout='OnMouseOutFilter()'/>
