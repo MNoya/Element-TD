@@ -615,6 +615,7 @@ function ElementTD:OnReconnect(playerID)
         ModifyPureEssence(playerID, 0, true)
         UpdateElementsHUD(playerID)
         UpdateRandom(playerID)
+        InterestManager:HandlePlayerReconnect(playerID)
     end
 
     if GameRules:State_Get() >= DOTA_GAMERULES_STATE_HERO_SELECTION then
