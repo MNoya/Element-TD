@@ -86,8 +86,7 @@
 
 #SupportCredits
 {
-    width: 800px;
-    margin-left: 60px;
+    width: 900px;
     flow-children: down;
 }
 
@@ -121,7 +120,7 @@
 #Supporters
 {
     flow-children: right-wrap;
-    margin-left: 50px;
+    margin-left: 70px;
 }
 
 .PlayerCredit
@@ -131,15 +130,18 @@
 
 #UserNameCredit
 {
-	width: 180px;
+	width: 200px;
 	margin-left: 5px;
+    margin-bottom: 5px;
 }
 
 #UserNameCredit Label
 {
+    text-overflow: clip;
 	color: white;
-	width: 200px;
-    font-size: 26px;
+	width: 250px;
+    height: 30px;
+    font-size: 24px;
 	font-family: Radiance;
 	text-shadow: 1px 1px 3px 2.0 #000;
 }
