@@ -770,6 +770,8 @@
         "DOTA_Tooltip_modifier_acid_attack_dot_Description"     "Taking damage every second."
         "DOTA_Tooltip_modifier_acid_attack_damage_amp"      "Eroded"
         "DOTA_Tooltip_modifier_acid_attack_damage_amp_Description"      "Taking bonus damage."
+        "DOTA_Tooltip_modifier_acid_attack_dot_stacks"                               "Eroded"
+        "DOTA_Tooltip_modifier_acid_attack_dot_stacks_Description"                   "Taking damage every second."
         
         "DOTA_Tooltip_ability_polar_tower_frostbite"        "Frostbite"
         "DOTA_Tooltip_ability_polar_tower_frostbite_Description"        "Temporarily burns away a portion of the target's current health. The target regains the health lost at the end of the duration minus a percentage of the damage taken while Frostbitten.\nA Frostbitten creeps cannot be targeted by Frostbite until the debuff wears off."
@@ -799,6 +801,8 @@
         "DOTA_Tooltip_ability_roots_tower_gaias_wrath_width"        "WIDTH:"
         "DOTA_Tooltip_modifier_gaias_wrath_slow"        "Slowed"
         "DOTA_Tooltip_modifier_gaias_wrath_damage"      "Damage Over Time"
+        "DOTA_Tooltip_modifier_gaias_wrath_damage_stacks"                                 "Gaias Wrath"
+        "DOTA_Tooltip_modifier_gaias_wrath_damage_stacks_Description"                     "Taking damage over time."
 
         "DOTA_Tooltip_ability_flooding_tower_flood"                                       "Flood"
         "DOTA_Tooltip_ability_flooding_tower_flood_Description"                           "Attack puts a buff at the point of impact. The buff does damage over time in a large area centered on the point of impact. It lasts 5 seconds. The buffs can stack indefinitely."

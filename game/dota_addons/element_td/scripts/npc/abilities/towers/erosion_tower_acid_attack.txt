@@ -36,9 +36,11 @@
 				}
 			}
 		}
+
 		"modifier_acid_attack_dot"
 		{
 			"IsDebuff"		"1"
+			"IsHidden"		"1"
 			"Duration"		"%duration"
 			"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 			"ThinkInterval" "1"
@@ -52,7 +54,35 @@
 					"Event"				"OnAcidDot"
 				}
 			}
+
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"mechanics/modifiers.lua"
+					"Function"		"StackModifier"
+					"ModifierName"	"modifier_acid_attack_dot"
+					"ModifierStack"	"modifier_acid_attack_dot_stacks"
+				}
+			}
+
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"mechanics/modifiers.lua"
+					"Function"		"StackModifier"
+					"ModifierName"	"modifier_acid_attack_dot"
+					"ModifierStack"	"modifier_acid_attack_dot_stacks"
+				}
+			}
 		}
+
+		"modifier_acid_attack_dot_stacks"
+		{
+			"IsDebuff"		"1"
+		}
+
 		"modifier_acid_attack_damage_amp"
 		{
 			"IsDebuff"		"1"

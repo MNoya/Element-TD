@@ -2552,9 +2552,11 @@
 					}
 				}
 			}
+	
 			"modifier_acid_attack_dot"
 			{
 				"IsDebuff"		"1"
+				"IsHidden"		"1"
 				"Duration"		"%duration"
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval" "1"
@@ -2568,7 +2570,35 @@
 						"Event"				"OnAcidDot"
 					}
 				}
+	
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"mechanics/modifiers.lua"
+						"Function"		"StackModifier"
+						"ModifierName"	"modifier_acid_attack_dot"
+						"ModifierStack"	"modifier_acid_attack_dot_stacks"
+					}
+				}
+	
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"mechanics/modifiers.lua"
+						"Function"		"StackModifier"
+						"ModifierName"	"modifier_acid_attack_dot"
+						"ModifierStack"	"modifier_acid_attack_dot_stacks"
+					}
+				}
 			}
+	
+			"modifier_acid_attack_dot_stacks"
+			{
+				"IsDebuff"		"1"
+			}
+	
 			"modifier_acid_attack_damage_amp"
 			{
 				"IsDebuff"		"1"
@@ -4084,6 +4114,7 @@
 						"Name"			"modifier_gaias_wrath_slow"
 					}
 				}
+	
 				"OnDestroy"
 				{
 					"RunScript"
@@ -4091,7 +4122,7 @@
 						"ScriptFile"	"mechanics/slow.lua"
 						"Function"		"RemoveSlowLevel"
 						"Name"			"modifier_gaias_wrath_slow"
-					}
+					}        
 				}
 			}
 			"modifier_gaias_wrath_slow1"
@@ -4110,6 +4141,7 @@
 				"ThinkInterval"	"1"
 				"IsDebuff"		"1"
 				"IsPurgable"	"1"
+	            "IsHidden"      "1"
 				"TextureName"	"towers/roots"
 				
 				"OnIntervalThink"
@@ -4122,7 +4154,35 @@
 						"Event"				"OnDamageTick"
 					}
 				}
+	
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/modifiers.lua"
+	                    "Function"      "StackModifier"
+	                    "ModifierName"  "modifier_gaias_wrath_damage"
+	                    "ModifierStack" "modifier_gaias_wrath_damage_stacks"
+	                }
+	            }
+	
+	            "OnDestroy"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/modifiers.lua"
+	                    "Function"      "StackModifier"
+	                    "ModifierName"  "modifier_gaias_wrath_damage"
+	                    "ModifierStack" "modifier_gaias_wrath_damage_stacks"
+	                }
+	            }
 			}
+	
+	        "modifier_gaias_wrath_damage_stacks"
+	        {
+	            "TextureName"   "towers/roots"
+	            "IsDebuff"      "1"
+	        }
 	
 			"modifier_attacking_ground"
 	        {
