@@ -344,5 +344,5 @@ end
 
 function PlayerIsAlive( playerID )
     local playerData = GetPlayerData(playerID)
-    return playerData and and playerData.health and playerData.health > 0
+    return playerData and playerData.health and playerData.health > 0
 end

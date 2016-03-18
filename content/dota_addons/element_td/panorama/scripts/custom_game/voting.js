@@ -447,12 +447,7 @@ function Setup()
 
 
 (function () {
-    if ( CustomNetTables.GetTableValue("gameinfo", "voting_finished") === undefined)
-        Setup();
-
-    // Reconnecting after voting finished
-    else
-        ShowGamemodeViewer()
+    Setup();
 
     $.Schedule(0.1, CheckHudFlipped)
     $("#allpick").checked = true;

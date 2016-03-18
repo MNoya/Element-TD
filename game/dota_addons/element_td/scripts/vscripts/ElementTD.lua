@@ -235,7 +235,7 @@ function ElementTD:WaveInfoReconnect(event)
     local playerID = event.PlayerID
     local playerData = GetPlayerData(playerID)
     
-    if not WAVE_1_SPAWNED then
+    if START_GAME_TIME == 0 then
         UpdateWaveInfo(playerID, CURRENT_WAVE-1)
     else
         UpdateWaveInfo(playerID, CURRENT_WAVE-1)
@@ -636,8 +636,11 @@ function ElementTD:OnReconnect(playerID)
         if not hero then
             local hero = CreateHeroForPlayer("npc_dota_hero_wisp", player)
 
-            if PLAYERS_NOT_VOTED[playerID] and START_GAME_TIME == 0 then
+            if PLAYERS_NOT_VOTED[playerID] and not VOTING_FINISHED then
                 CustomGameEventManager:Send_ServerToPlayer( player, "etd_toggle_vote_dialog", {visible = true} )
+            elseif not hero.vote_results then
+                hero.vote_results = true
+                CustomGameEventManager:Send_ServerToPlayer( player, "etd_vote_results", {} )
             end
         end
     end

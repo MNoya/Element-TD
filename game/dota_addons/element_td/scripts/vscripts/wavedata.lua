@@ -255,7 +255,6 @@ function SpawnWaveForPlayer(playerID, wave)
     -- First wave marks the start of the game
     if START_GAME_TIME == 0 then
         START_GAME_TIME = GameRules:GetGameTime()
-        WAVE_1_SPAWNED = true
     end
 
     playerData.waveObject = waveObj

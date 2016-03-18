@@ -116,8 +116,11 @@ end
 
 -- calculate which settings won the vote
 function FinalizeVotes()
+	if VOTING_FINISHED then return end --Never allow voting twice
+
 	Log:info("All players have finished voting")
 	Timers:RemoveTimer("VoteThinker")
+	VOTING_FINISHED = true
 	CustomGameEventManager:Send_ServerToAllClients( "etd_toggle_vote_dialog", {visible = false} )
 
 	-- Only add a default vote if no one has voted
@@ -194,7 +197,6 @@ function FinalizeVotes()
 	end
 
 	-- Game Info net table
-	CustomNetTables:SetTableValue("gameinfo", "voting_finished", {value=1})
 	CustomNetTables:SetTableValue("gameinfo", "gamemode", {value=gamemode})
 	CustomNetTables:SetTableValue("gameinfo", "difficulty", {value=difficulty})
 	CustomNetTables:SetTableValue("gameinfo", "random", {value=elements})
@@ -204,7 +206,9 @@ function FinalizeVotes()
 
 	for k, plyID in pairs(playerIDs) do
 		local ply = PlayerResource:GetPlayer(plyID)
-		if ply then
+		local hero = PlayerResource:GetSelectedHeroEntity(plyID)
+		if ply and hero then
+			hero.vote_results = true
 			CustomGameEventManager:Send_ServerToPlayer( ply, "etd_vote_results", {} )
 			CustomGameEventManager:Send_ServerToPlayer( ply, "etd_next_wave_info", { nextWave = GameSettings:GetGameLength().Wave, nextAbility1 = creepsKV[WAVE_CREEPS[GameSettings:GetGameLength().Wave]].Ability1, nextAbility2 = creepsKV[WAVE_CREEPS[GameSettings:GetGameLength().Wave]].Ability2 } )
 		end
