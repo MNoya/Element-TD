@@ -6445,7 +6445,7 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "2600"
+	    "Cost"                       "2300"
 	    "TotalCost"        "3650"
 	    "Element"
 	    {
@@ -6670,7 +6670,7 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "2600"
+	    "Cost"                       "2300"
 	    "TotalCost"        "3650"
 	    "Element"
 	    {
@@ -6906,7 +6906,7 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "2600"
+	    "Cost"                       "2300"
 	    "TotalCost"        "3650"
 	    "Element"
 	    {
@@ -7182,7 +7182,7 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "2600"
+	    "Cost"                       "2300"
 	    "TotalCost"        "3650"
 	    "Element"
 	    {
@@ -7453,7 +7453,7 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "2600"
+	    "Cost"                       "2300"
 	    "TotalCost"        "3650"
 	    "Element"
 	    {
@@ -7725,7 +7725,7 @@
 	    "ProjectileSpeed"           "2000" 
 	
 	    "Level"                     "3"
-	    "Cost"                       "2600"
+	    "Cost"                       "2300"
 	    "TotalCost"                  "3650"
 	    "BuildTime"                 "2"
 	
@@ -7979,7 +7979,7 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "2600"
+	    "Cost"                       "2300"
 	    "TotalCost"        "3650"
 	    "Element"
 	    {
@@ -8260,7 +8260,7 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "2600"
+	    "Cost"                       "2300"
 	    "TotalCost"        "3650"
 	    "Element"
 	    {
@@ -8520,7 +8520,7 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "2600"
+	    "Cost"                       "2300"
 	    "TotalCost"        "3650"
 	    "Element"
 	    {
@@ -8791,7 +8791,7 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "2600"
+	    "Cost"                       "2300"
 	    "TotalCost"        "3650"
 	    "Element"
 	    {
@@ -9076,7 +9076,7 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "2600"
+	    "Cost"                       "2300"
 	    "TotalCost"        "3650"
 	    "Element"
 	    {
@@ -9372,7 +9372,7 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "2600"
+	    "Cost"                       "2300"
 	    "TotalCost"        "3650"
 	    "Element"
 	    {
@@ -9651,7 +9651,7 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"        "2600"
+	    "Cost"                       "2300"
 	    "TotalCost"        "3650"
 	    "Element"
 	    {
@@ -9913,7 +9913,7 @@
 	    // Stats
 	    //----------------------------- 
 	    "Level"                     "3"
-	    "Cost"                       "2600"
+	    "Cost"                       "2300"
 	    "TotalCost"                  "3650"
 	    "Element"
 	    {
@@ -10149,7 +10149,7 @@
 	    "AttackRate"                 "1"
 	
 	    "Level"                      "3"
-	    "Cost"                       "2600"
+	    "Cost"                       "2300"
 	    "TotalCost"                  "3650"
 	    "BuildTime"                  "2"
 	    "Element"
