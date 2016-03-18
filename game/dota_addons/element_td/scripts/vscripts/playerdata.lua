@@ -341,3 +341,8 @@ function GetElementalOrderString( elementList )
 	table.sort(elementTable)
 	return table.concat(elementTable, "+")
 end
+
+function PlayerIsAlive( playerID )
+    local playerData = GetPlayerData(playerID)
+    return playerData and and playerData.health and playerData.health > 0
+end
