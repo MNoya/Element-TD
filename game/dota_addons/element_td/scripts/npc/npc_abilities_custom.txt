@@ -3427,7 +3427,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"points_per_kill"				"1 2 3"
+				"points_per_kill"				"2 3 6"
 			}
 		}
 	}
