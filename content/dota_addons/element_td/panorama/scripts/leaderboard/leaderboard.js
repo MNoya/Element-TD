@@ -45,8 +45,9 @@ function CreateTopPlayerPanel(data, panel) {
     playerPanel.frogs = data.icefrog
     playerPanel.BLoadLayout("file://{resources}/layout/custom_game/leaderboard_player.xml", false, false);
 
-    var playerInfo = Game.GetLocalPlayerInfo()
-    if (playerInfo & steamID64 == playerInfo.steamid)
+    var playerID = Game.GetLocalPlayerID()
+    var localSteamID = GameUI.GetPlayerSteamID(playerID)
+    if (steamID64 == localSteamID)
         playerPanel.AddClass("local")
 }
 
