@@ -2505,7 +2505,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"max_reduction"		"80"
+				"max_reduction"		"70"
 			}
 			"03"
 			{
@@ -2817,7 +2817,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"15 30"
+				"bonus_gold"			"20 30"
 			}
 		}
 	
@@ -4304,7 +4304,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"2"
+				"duration"				"3"
 			}
 		}
 	
@@ -4563,12 +4563,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"20 120 720"
+				"damage"				"0 0 0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"20 120 720"
+				"aftershock_damage"		"22 132 792"
 			}
 			"03"
 			{
@@ -4578,7 +4578,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aftershock_aoe"		"350"
+				"aftershock_aoe"		"450"
 			}
 		}
 	

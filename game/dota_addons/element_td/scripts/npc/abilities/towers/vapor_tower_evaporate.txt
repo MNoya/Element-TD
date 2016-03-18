@@ -18,12 +18,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"20 120 720"
+			"damage"				"0 0 0"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aftershock_damage"		"20 120 720"
+			"aftershock_damage"		"22 132 792"
 		}
 		"03"
 		{
@@ -33,7 +33,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"aftershock_aoe"		"350"
+			"aftershock_aoe"		"450"
 		}
 	}
 

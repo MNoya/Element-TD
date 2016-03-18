@@ -24,7 +24,7 @@
 
     "Level"                      "3"
     "Cost"                       "2600"
-    "TotalCost"                  "3950"
+    "TotalCost"                  "3650"
     "BuildTime"                  "2"
     "Element"
     {

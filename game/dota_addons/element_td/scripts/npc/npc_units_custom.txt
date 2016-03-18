@@ -6446,7 +6446,7 @@
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
 	    "Cost"        "2600"
-	    "TotalCost"        "3950"
+	    "TotalCost"        "3650"
 	    "Element"
 	    {
 	        "1"        "fire"
@@ -6671,7 +6671,7 @@
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
 	    "Cost"        "2600"
-	    "TotalCost"        "3950"
+	    "TotalCost"        "3650"
 	    "Element"
 	    {
 	        "1"        "dark"
@@ -6907,7 +6907,7 @@
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
 	    "Cost"        "2600"
-	    "TotalCost"        "3950"
+	    "TotalCost"        "3650"
 	    "Element"
 	    {
 	        "1"        "fire"
@@ -7183,7 +7183,7 @@
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
 	    "Cost"        "2600"
-	    "TotalCost"        "3950"
+	    "TotalCost"        "3650"
 	    "Element"
 	    {
 	        "1"        "fire"
@@ -7454,7 +7454,7 @@
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
 	    "Cost"        "2600"
-	    "TotalCost"        "3950"
+	    "TotalCost"        "3650"
 	    "Element"
 	    {
 	        "1"        "earth"
@@ -7726,7 +7726,7 @@
 	
 	    "Level"                     "3"
 	    "Cost"                       "2600"
-	    "TotalCost"                  "3950"
+	    "TotalCost"                  "3650"
 	    "BuildTime"                 "2"
 	
 	    "DamageType"                "earth"
@@ -7980,7 +7980,7 @@
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
 	    "Cost"        "2600"
-	    "TotalCost"        "3950"
+	    "TotalCost"        "3650"
 	    "Element"
 	    {
 	        "1"        "water"
@@ -8261,7 +8261,7 @@
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
 	    "Cost"        "2600"
-	    "TotalCost"        "3950"
+	    "TotalCost"        "3650"
 	    "Element"
 	    {
 	        "1"        "light"
@@ -8521,7 +8521,7 @@
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
 	    "Cost"        "2600"
-	    "TotalCost"        "3950"
+	    "TotalCost"        "3650"
 	    "Element"
 	    {
 	        "1"        "dark"
@@ -8613,9 +8613,9 @@
 	    }
 	    "AOE_Full"        "150"
 	    "AOE_Half"        "300"
-	    "Damage"        "100"
-	    "AttackDamageMin"        "100"
-	    "AttackDamageMax"        "100"
+	    "Damage"        "130"
+	    "AttackDamageMin"        "130"
+	    "AttackDamageMax"        "130"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "MossTower"
 	    "TowerType"        "Normal"
@@ -8709,9 +8709,9 @@
 	    }
 	    "AOE_Full"        "150"
 	    "AOE_Half"        "300"
-	    "Damage"        "600"
-	    "AttackDamageMin"        "600"
-	    "AttackDamageMax"        "600"
+	    "Damage"        "780"
+	    "AttackDamageMin"        "780"
+	    "AttackDamageMax"        "780"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "MossTower"
 	    "TowerType"        "Normal"
@@ -8792,7 +8792,7 @@
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
 	    "Cost"        "2600"
-	    "TotalCost"        "3950"
+	    "TotalCost"        "3650"
 	    "Element"
 	    {
 	        "1"        "nature"
@@ -8800,9 +8800,9 @@
 	    }
 	    "AOE_Full"        "150"
 	    "AOE_Half"        "300"
-	    "Damage"        "3600"
-	    "AttackDamageMin"        "3600"
-	    "AttackDamageMax"        "3600"
+	    "Damage"        "4680"
+	    "AttackDamageMin"        "4680"
+	    "AttackDamageMax"        "4680"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "MossTower"
 	    "TowerType"        "Normal"
@@ -9077,7 +9077,7 @@
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
 	    "Cost"        "2600"
-	    "TotalCost"        "3950"
+	    "TotalCost"        "3650"
 	    "Element"
 	    {
 	        "1"        "dark"
@@ -9373,7 +9373,7 @@
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
 	    "Cost"        "2600"
-	    "TotalCost"        "3950"
+	    "TotalCost"        "3650"
 	    "Element"
 	    {
 	        "1"        "earth"
@@ -9652,7 +9652,7 @@
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
 	    "Cost"        "2600"
-	    "TotalCost"        "3950"
+	    "TotalCost"        "3650"
 	    "Element"
 	    {
 	        "1"        "light"
@@ -9914,7 +9914,7 @@
 	    //----------------------------- 
 	    "Level"                     "3"
 	    "Cost"                       "2600"
-	    "TotalCost"                  "3950"
+	    "TotalCost"                  "3650"
 	    "Element"
 	    {
 	        "1"     "fire"
@@ -10150,7 +10150,7 @@
 	
 	    "Level"                      "3"
 	    "Cost"                       "2600"
-	    "TotalCost"                  "3950"
+	    "TotalCost"                  "3650"
 	    "BuildTime"                  "2"
 	    "Element"
 	    {
