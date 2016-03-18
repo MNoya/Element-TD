@@ -452,7 +452,7 @@ function Setup()
 
     // Reconnecting after voting finished
     else
-        ShowVoteResults()
+        ShowGamemodeViewer()
 
     $.Schedule(0.1, CheckHudFlipped)
     $("#allpick").checked = true;

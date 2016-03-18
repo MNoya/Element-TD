@@ -73,10 +73,11 @@ end
 -- the next wave spawns once the break time is over
 function StartBreakTime(playerID, breakTime, rush_wave)
     local ply = PlayerResource:GetPlayer(playerID)
-    local hero = ElementTD.vPlayerIDToHero[playerID]
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     local playerData = GetPlayerData(playerID)
-    
-    hero:RemoveModifierByName("modifier_silence")
+    if hero then 
+        hero:RemoveModifierByName("modifier_silence")
+    end
 
     -- let's figure out how long the break is
     local wave = playerData.nextWave
@@ -254,6 +255,7 @@ function SpawnWaveForPlayer(playerID, wave)
     -- First wave marks the start of the game
     if START_GAME_TIME == 0 then
         START_GAME_TIME = GameRules:GetGameTime()
+        WAVE_1_SPAWNED = true
     end
 
     playerData.waveObject = waveObj

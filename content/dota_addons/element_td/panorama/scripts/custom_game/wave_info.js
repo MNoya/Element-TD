@@ -155,7 +155,6 @@ function AbilityHideTooltip( ability ) {
   	else
   		GameEvents.SendCustomGameEventToServer( "request_wave_info", {} );
 
-  	
   	GameEvents.Subscribe( "etd_update_wave_timer", UpdateWaveTimer );
   	GameEvents.Subscribe( "etd_next_wave_info", UpdateWaveInfo );
 })();
