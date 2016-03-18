@@ -10,6 +10,6 @@
         <DOTAAvatarImage id="AvatarImageFriend" steamid="" />
         <DOTAUserName id="FriendName" steamid=""/>
         <Label id="FriendScore"/>
-        <Label id="FriendPercentile"/>
+        <Label id="FriendGlobalRank"/>
     </Panel>
 </root>

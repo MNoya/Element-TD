@@ -4,6 +4,7 @@ var statsURL = 'http://hatinacat.com/leaderboard/data_request.php?req=stats&id='
 var friendsURL = 'http://hatinacat.com/leaderboard/data_request.php?req=friends&id='
 var friendsPanel = $("#FriendsContainer")
 var friendsLoaded = false;
+var friendsRank = 0
 
 function GetStats() {
     $.Msg("Getting stats data...")
@@ -55,12 +56,15 @@ function GetPlayerFriends(playerID) {
 }
 
 function CreateFriendPanel(data) {
+    friendsRank++
+
     var steamID64 = GameUI.ConvertID64(data.steamID)
     var playerPanel = $.CreatePanel("Panel", friendsPanel, "Friend_"+steamID64)
     playerPanel.steamID = steamID64
     playerPanel.score = GameUI.FormatScore(data.score)
+    playerPanel.friendRank = friendsRank
     playerPanel.rank = GameUI.FormatRank(data.rank)
-    playerPanel.percentile = GameUI.FormatPercentile(data.percentile)
+    //playerPanel.percentile = GameUI.FormatPercentile(data.percentile)
     playerPanel.BLoadLayout("file://{resources}/layout/custom_game/profile_friend.xml", false, false);
 
     var steamID = GameUI.GetLocalPlayerSteamID()

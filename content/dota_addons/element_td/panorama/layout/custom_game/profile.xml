@@ -35,7 +35,7 @@
                         <Panel id="FriendRanksCategories">
                             <Label id="Rank" class="FriendCategory" text="#profile_rank" />
                             <Label id="Score" class="FriendCategory" text="#profile_score" />
-                            <Label id="Percentile" class="FriendCategory" text="#profile_percentile" />
+                            <Label id="GlobalRank" class="FriendCategory" text="#profile_global_rank" />
                         </Panel>
                     </Panel>
                     <Panel id="FriendsContainer">

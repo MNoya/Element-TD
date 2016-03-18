@@ -240,7 +240,7 @@
 
 #FriendName
 {
-    width: 160px;
+    width: 180px;
     margin-left: 10px;
     font-size: 20px;
     text-align: center;
@@ -261,13 +261,22 @@
 #Score
 {
     width: 120px;
-    margin-left: 185px;
+    margin-left: 205px;
     text-align: center;
     vertical-align: center;
     color: white;
 }
 
-#FriendPercentile
+#GlobalRank
+{
+    width: 50px;
+    margin-left: 10px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+#FriendGlobalRank
 {
     width: 50px;
     font-size: 20px;
@@ -280,6 +289,8 @@
 #FriendRanksHeader
 {
     width: 100%;
+    height: 80px;
+    flow-children: down;
 }
 
 #FriendRanksTitle

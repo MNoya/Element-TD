@@ -228,9 +228,10 @@
 
         "profile_title"         "My Profile"
         "profile_friends"       "Friend Rankings"
+        "profile_percentile"    "Percentile"
         "profile_rank"          "Rank"
         "profile_score"         "Score"
-        "profile_percentile"    "Percentile"
+        "profile_global_rank"   "Global"
         "profile_frogs"         "Frogs"
 
         "leaderboard_title"     "Leaderboards"
