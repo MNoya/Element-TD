@@ -204,12 +204,18 @@ function UpgradeTower(keys)
 	elseif tower:GetHealth() == tower:GetMaxHealth() then
 		ability:RemoveSelf() --remove the item to prevent a case were the item could be cast twice on the same frame
 
+		local index = tower:GetEntityIndex()
+		if playerData.towers[index] then
+			playerData.towers[index] = nil --remove it from the player's tower list
+		else
+			-- handles the edge case where 2 tower upgrades are spam-queued while upgrading
+			return
+		end
+
 		if not playerData.freeTowers then
 			hero:ModifyGold(-cost)
 			ModifyPureEssence(playerID, -essenceCost)
 		end
-		
-		GetPlayerData(playerID).towers[tower:entindex()] = nil --and remove it from the player's tower list
 
 		local scriptClassName = GetUnitKeyValue(newClass, "ScriptClass") or "BasicTower"
 
