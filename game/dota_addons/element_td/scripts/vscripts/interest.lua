@@ -33,8 +33,11 @@ function InterestManager:HandlePlayerReconnect(playerID)
 		if lockState then
 			CustomGameEventManager:Send_ServerToPlayer(player, "etd_pause_interest", lockState)
 		else
-			local timeRemaining = Timers.timers[timerName].endTime - GameRules:GetGameTime()
-			CustomGameEventManager:Send_ServerToPlayer(player, "etd_resume_interest", { timeRemaining = interestData.TimeRemaining })
+			local timerName = InterestManager.timers[playerID]
+			if InterestManager.timers[playerID] and Timers.timers[timerName] then
+				local timeRemaining = Timers.timers[timerName].endTime - GameRules:GetGameTime()
+				CustomGameEventManager:Send_ServerToPlayer(player, "etd_resume_interest", { timeRemaining = interestData.TimeRemaining })
+			end
 		end
 
 	end
