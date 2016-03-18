@@ -36,7 +36,7 @@ function InterestManager:HandlePlayerReconnect(playerID)
 			local timerName = InterestManager.timers[playerID]
 			if InterestManager.timers[playerID] and Timers.timers[timerName] then
 				local timeRemaining = Timers.timers[timerName].endTime - GameRules:GetGameTime()
-				CustomGameEventManager:Send_ServerToPlayer(player, "etd_resume_interest", { timeRemaining = interestData.TimeRemaining })
+				CustomGameEventManager:Send_ServerToPlayer(player, "etd_resume_interest", { timeRemaining = timeRemaining })
 			end
 		end
 
