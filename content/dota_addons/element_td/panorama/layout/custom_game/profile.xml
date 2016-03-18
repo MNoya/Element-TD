@@ -7,7 +7,7 @@
     </scripts>
     <Panel hittest='false' class="ProfileHud">
 
-        <Panel id="MyProfileToggleContainer">
+        <Panel class="Hide" id="MyProfileToggleContainer">
             <Panel class="ProfileButton" onactivate="ToggleProfile()">
                 <Label id="ProfileHeaderTitle" text="#profile_title" />
                 <Panel id="PopoutArrow" class="OpenMenuArrow" />

@@ -841,9 +841,22 @@ DEV_CODES = {
 -- A player has typed something into the chat
 function ElementTD:OnPlayerChat(keys)
     local text = keys.text
+    local teamonly = keys.teamonly
     local userID = keys.userid
     local playerID = self.vUserIds[userID] and self.vUserIds[userID]:GetPlayerID()
     if not playerID then return end
+
+    -- Send to all chat
+    local player = PlayerResource:GetPlayer(playerID)
+    if player.skip_chat then
+        player.skip_chat = false
+        return
+    end
+
+    if teamonly == 1 then
+        player.skip_chat = true
+        Say(player, text, false)
+    end
 
     if StringStartsWith(text, "-") then
         local input = split(string.sub(text, 2, string.len(text)))

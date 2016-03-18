@@ -82,9 +82,10 @@ function ToggleProfile() {
 }
 
 function MakeButtonVisible() {
-    $("#MyProfile").SetHasClass("Hide", GameUI.PlayerHasProfile(Game.GetLocalPlayerID()))
+    var bShowProfile = GameUI.PlayerHasProfile(Game.GetLocalPlayerID())
+    $("#MyProfileToggleContainer").SetHasClass("Hide", !bShowProfile)
 }
 
 (function () {
-    $.Schedule(1, MakeButtonVisible)
+    //$.Schedule(0.1, MakeButtonVisible)
 })();
