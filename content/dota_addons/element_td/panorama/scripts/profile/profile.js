@@ -1,16 +1,34 @@
 "use strict";
 
+var statsURL = 'http://hatinacat.com/leaderboard/data_request.php?req=stats&id='
 var friendsURL = 'http://hatinacat.com/leaderboard/data_request.php?req=friends&id='
-var friendsPanel = $("#RightPanel")
+var friendsPanel = $("#FriendsContainer")
 var friendsLoaded = false;
+
+function GetStats() {
+    $.Msg("Getting stats data...")
+    var steamID = 66998815 //test value
+
+    $.AsyncWebRequest( statsURL+steamID, { type: 'GET', 
+        success: function( data ) {
+            var info = JSON.parse(data);
+            var player_info = info["player"]
+
+            for (var i in player_info)
+            {
+                $.Msg(i, " ", player_info[i])
+            }
+        }
+    })
+}
 
 function GetPlayerFriends(playerID) {
     $.Msg("Getting player friends data...")
-    var playerInfo = Game.GetPlayerInfo(playerID)
-    var steamID = playerInfo.player_steamid
+    var steamID = GameUI.GetLocalPlayerSteamID()
 
     var delay = 0
     var delay_per_panel = 0.1;
+
     $.AsyncWebRequest( friendsURL+steamID, { type: 'GET', 
         success: function( data ) {
             friendsLoaded = true;
@@ -44,10 +62,16 @@ function CreateFriendPanel(data) {
     playerPanel.rank = GameUI.FormatRank(data.rank)
     playerPanel.percentile = GameUI.FormatPercentile(data.percentile)
     playerPanel.BLoadLayout("file://{resources}/layout/custom_game/profile_friend.xml", false, false);
+
+    var steamID = GameUI.GetLocalPlayerSteamID()
+    if (steamID64 == steamID)
+        playerPanel.AddClass("local")
 }
 
 function ToggleProfile() {
     $("#MyProfile").ToggleClass("Hide")
+
+    GetStats()
 
     if (!friendsLoaded)
          GetPlayerFriends(Game.GetLocalPlayerID())

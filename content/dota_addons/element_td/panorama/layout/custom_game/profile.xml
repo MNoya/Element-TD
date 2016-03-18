@@ -30,11 +30,16 @@
                 </Panel>
 
                 <Panel id="RightPanel">
-                    <Label id="FriendRanksTitle" text="#profile_friends" />
-                    <Panel id="FriendRanksCategories">
-                        <Label id="Rank" class="FriendCategory" text="#profile_rank" />
-                        <Label id="Score" class="FriendCategory" text="#profile_score" />
-                        <Label id="Percentile" class="FriendCategory" text="#profile_percentile" />
+                    <Panel id="FriendRanksHeader">
+                        <Label id="FriendRanksTitle" text="#profile_friends" />
+                        <Panel id="FriendRanksCategories">
+                            <Label id="Rank" class="FriendCategory" text="#profile_rank" />
+                            <Label id="Score" class="FriendCategory" text="#profile_score" />
+                            <Label id="Percentile" class="FriendCategory" text="#profile_percentile" />
+                        </Panel>
+                    </Panel>
+                    <Panel id="FriendsContainer">
+
                     </Panel>
                 </Panel>
             </Panel>

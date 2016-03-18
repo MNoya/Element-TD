@@ -18,12 +18,18 @@ GameUI.FormatRank = function (rank) {
 
 // Returns score in k (thousands) format
 GameUI.FormatScore =  function (score) {
-    return score.substring(0, score.length-3)+"k";
+    if (score.length > 3)
+        return score.substring(0, score.length-3)+"k";
+    else
+        return score
 }
 
 // Returns percentile in % format with 1 decimal point
 GameUI.FormatPercentile = function (percent) {
-    return +percent.toFixed(1) + "%"
+    if (percent == 0)
+        return "0.1%" //anthony please forgive me
+    else
+        return +percent.toFixed(1) + "%"
 }
 
 // Developer function to test unreleased stuff
@@ -69,7 +75,15 @@ GameUI.PlayerHasProfile = function (playerID) {
     return rewardLevel == "Developer" || rewardLevel > 0
 }
 
+// Returns the SteamID 64bit of a player by ID
 GameUI.GetPlayerSteamID = function (playerID) {
     var playerInfo = Game.GetPlayerInfo(playerID)
     return playerInfo ? playerInfo.player_steamid : -1
 }
+
+// Local player steamID shortcut
+GameUI.GetLocalPlayerSteamID = function () {
+    var playerInfo = Game.GetPlayerInfo(Game.GetLocalPlayerID())
+    return playerInfo ? playerInfo.player_steamid : -1
+}
+
