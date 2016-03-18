@@ -34,7 +34,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_gold"			"25 50"
+			"bonus_gold"			"20 30"
 		}
 	}
 }
