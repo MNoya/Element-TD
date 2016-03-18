@@ -156,19 +156,18 @@ function StartBreakTime(playerID, breakTime, rush_wave)
     Timers:CreateTimer("SpawnWaveDelay"..playerID, {
         endTime = breakTime,
         callback = function()
-            local data = GetPlayerData(playerID)
 
             if wave == WAVE_COUNT and not EXPRESS_MODE then
                 CURRENT_BOSS_WAVE = 1
                 if PlayerIsAlive(playerID) then
-                    Log:info("Spawning the first boss wave for ["..playerID.."] ".. playerData.name)            
+                    Log:info("Spawning the first boss wave for ["..playerID.."]")            
                     playerData.iceFrogKills = 0
                     playerData.bossWaves = CURRENT_BOSS_WAVE
                 end
                 ShowBossWaveMessage(playerID, CURRENT_BOSS_WAVE)
             else
                 if PlayerIsAlive(playerID) then
-                    Log:info("Spawning wave " .. wave .. " for ["..playerID.."] ".. data.name)
+                    Log:info("Spawning wave " .. wave .. " for ["..playerID.."]")
                 end
                 ShowWaveSpawnMessage(playerID, wave)
             end
@@ -380,6 +379,8 @@ end
 function ShowPortalForSector(sector, wave, playerID)
     local element = string.gsub(creepsKV[WAVE_CREEPS[wave]].Ability1, "_armor", "")
     local portal = SectorPortals[sector]
+    if not portal then return end
+
     local origin = portal:GetAbsOrigin()
     origin.z = origin.z - 200
     origin.y = origin.y - 70

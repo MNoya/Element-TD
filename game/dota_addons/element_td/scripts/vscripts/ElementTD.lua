@@ -636,6 +636,14 @@ function ElementTD:OnReconnect(playerID)
         if not hero then
             local hero = CreateHeroForPlayer("npc_dota_hero_wisp", player)
 
+            -- update +Elements UI on the hero
+            Timers:CreateTimer(0.03, function()
+                local playerData = GetPlayerData(playerID)
+                if hero and playerData and playerData.lumber then
+                    hero:SetAbilityPoints(playerData.lumber)
+                end
+            end)
+
             if PLAYERS_NOT_VOTED[playerID] and not VOTING_FINISHED then
                 CustomGameEventManager:Send_ServerToPlayer( player, "etd_toggle_vote_dialog", {visible = true} )
             elseif not hero.vote_results then
