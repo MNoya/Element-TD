@@ -268,3 +268,16 @@
     background-size: 20px 20px;
     //pre-transform-scale2d: 0.8;
 }
+
+// Leaderboard text
+#LeaderboardLink
+{
+    margin-top: 10px;
+    margin-right: 150px;
+    font-size: 30px;
+    color: #EEE;
+    text-shadow: 1px 1px 4px 3.0 #000;
+    horizontal-align: center;
+    vertical-align: bottom;
+    margin-bottom: 250px;
+}

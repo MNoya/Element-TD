@@ -150,7 +150,12 @@ function AbilityHideTooltip( ability ) {
 }
 
 (function () {
-  Setup();
-  GameEvents.Subscribe( "etd_update_wave_timer", UpdateWaveTimer );
-  GameEvents.Subscribe( "etd_next_wave_info", UpdateWaveInfo );
+	if ( CustomNetTables.GetTableValue("gameinfo", "voting_finished") === undefined)
+		Setup();
+  	else
+  		GameEvents.SendCustomGameEventToServer( "request_wave_info", {} );
+
+  	
+  	GameEvents.Subscribe( "etd_update_wave_timer", UpdateWaveTimer );
+  	GameEvents.Subscribe( "etd_next_wave_info", UpdateWaveInfo );
 })();

@@ -443,18 +443,18 @@ function Setup()
     votingLiveUI.AddClass("hidden");
     UpdateNotVoted();
     ShowGamemodeViewer();
-    $.Schedule(0.1, CheckHudFlipped)
 }
 
 
 (function () {
     if ( CustomNetTables.GetTableValue("gameinfo", "voting_finished") === undefined)
         Setup();
-    
+
     // Reconnecting after voting finished
     else
         ShowVoteResults()
 
+    $.Schedule(0.1, CheckHudFlipped)
     $("#allpick").checked = true;
     GameEvents.Subscribe( "etd_toggle_vote_dialog", ToggleVoteDialog );
     GameEvents.Subscribe( "etd_update_vote_timer", UpdateVoteTimer );

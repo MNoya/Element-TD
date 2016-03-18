@@ -107,6 +107,7 @@ function ClearRanks(panel) {
 function ToggleLeaderboard()
 {
     Leaderboard.ToggleClass("Hide")
+    $("#LeaderboardLink").ToggleClass("Hide")
     Buttons.ToggleClass("Hide")
     if (!Leaderboard.BHasClass("Hide"))
         Setup()

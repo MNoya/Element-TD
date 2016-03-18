@@ -101,6 +101,7 @@ function ElementTD:InitGameMode()
     
     -- Register UI Listener   
     CustomGameEventManager:RegisterListener( "next_wave", Dynamic_Wrap(ElementTD, "OnNextWave")) -- wave info
+    CustomGameEventManager:RegisterListener( "request_wave_info", Dynamic_Wrap(ElementTD, "SendWaveInfo")) --on reconnection
     CustomGameEventManager:RegisterListener( "etd_player_voted", Dynamic_Wrap(ElementTD, "OnPlayerVoted")) -- voting ui
 
     ------------------------------------------------------
@@ -227,6 +228,17 @@ function ElementTD:OnNextWave( keys )
 
         UpdateWaveInfo(playerID, data.nextWave) -- update wave info
         SpawnWaveForPlayer(playerID, data.nextWave) -- spawn dat wave
+    end
+end
+
+function ElementTD:SendWaveInfo(event)
+    local playerID = event.PlayerID
+    local playerData = GetPlayerData(playerID)
+    
+    if playerData then
+        local wave = playerData.nextWave or 1
+        UpdateWaveInfo(playerID, wave-1)
+        UpdateWaveInfo(playerID, wave)
     end
 end
 

@@ -62,5 +62,7 @@
             <Image id="RefreshButton" onactivate="RefreshAllRanks()" />
             <Label id="CloseButton" onactivate="ToggleLeaderboard()"/>
         </Panel>
+
+        <Label class="Hide" id="LeaderboardLink" text="#leaderboard_link" />
     </Panel>
 </root>

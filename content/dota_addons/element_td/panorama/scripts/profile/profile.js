@@ -53,6 +53,10 @@ function ToggleProfile() {
          GetPlayerFriends(Game.GetLocalPlayerID())
 }
 
-(function () {
+function MakeButtonVisible() {
     $("#MyProfile").SetHasClass("Hide", GameUI.PlayerHasProfile(Game.GetLocalPlayerID()))
+}
+
+(function () {
+    $.Schedule(1, MakeButtonVisible)
 })();

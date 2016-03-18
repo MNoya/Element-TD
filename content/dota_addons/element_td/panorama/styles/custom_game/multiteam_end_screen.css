@@ -186,6 +186,7 @@
     margin-bottom: 50px;
     vertical-align: bottom;
     flow-children: right;
+    margin-bottom: 200px;
 }
 
 #Web
@@ -203,21 +204,6 @@
     background-repeat: no-repeat;
     border-radius: 50px;
     box-shadow: fill #000000 -3px -3px 3px 6px;
-}
-
-#Twitter
-{
-    flow-children: right;
-    margin-left: 100px;
-}
-
-#TwitterLogo
-{   
-    width: 60px;
-    height: 50px;
-    background-image: url("file://{resources}/images/custom_game/loading_screen/tweet.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
 }
 
 .ContactText
