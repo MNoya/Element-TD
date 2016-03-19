@@ -21,7 +21,7 @@ function statCollection:StageCustom(payload)
     self:sendStage('s2_custom.php', payload, function(err, res)
 
         -- Check if we got an error
-        if self:HasErrors(err, res) then
+        if self:ReturnedErrors(err, res) then
             statCollection:print("Error on sendCustom " .. eleTDLB)
             return
         end
@@ -34,7 +34,7 @@ function statCollection:StageCustom(payload)
     self:sendStage('s2_custom.php', payload, function(err, res)
 
         -- Check if we got an error
-        if self:HasErrors(err, res) then
+        if self:ReturnedErrors(err, res) then
             statCollection:print("Error on sendCustom " .. hiacLB)
             return
         end
