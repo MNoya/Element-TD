@@ -6,6 +6,7 @@ end
 
 require("statcollection/schema")
 require('statcollection/lib/statcollection')
+require('statcollection/staging')
 require('statcollection/lib/utilities')
 
 local COLLECT_STATS = not Convars:GetBool('developer')

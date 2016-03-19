@@ -25,9 +25,7 @@ require('statcollection/schema')
 local statInfo = LoadKeyValues('scripts/vscripts/statcollection/settings.kv')
 
 -- Where stuff is posted to
-local postLocation = 'http://getdotastats.com/s2/api/'
-local hiacLB = 'http://hatinacat.com/leaderboard/'
-local eleTDLB = 'http://www.eletd.com/leaderboard/'
+local postLocation = 'https://api.getdotastats.com/'
 
 -- The schema version we are currently using
 local schemaVersion = 4
@@ -303,16 +301,7 @@ function statCollection:sendStage1()
     -- Begin the initial request
     self:sendStage('s2_phase_1.php', payload, function(err, res)
         -- Check if we got an error
-        if err then
-            statCollection:print(errorJsonDecode)
-            statCollection:print(err)
-            return
-        end
-
-        -- Check for an error
-        if res.error then
-            statCollection:print(errorSomethingWentWrong)
-            statCollection:print(res.error)
+        if self:HasErrors(err, res) then
             return
         end
 
@@ -327,6 +316,9 @@ function statCollection:sendStage1()
         statCollection:print("Auth Key: ", self.authKey)
         statCollection:print("MatchID: ", self.matchID)
     end)
+
+    -- Custom staging
+    self:Stage1(payload)
 end
 
 -- Sends stage2
@@ -380,16 +372,7 @@ function statCollection:sendStage2()
     -- Send stage2
     self:sendStage('s2_phase_2.php', payload, function(err, res)
         -- Check if we got an error
-        if err then
-            statCollection:print(errorJsonDecode)
-            statCollection:print(err)
-            return
-        end
-
-        -- Check for an error
-        if res.error then
-            statCollection:print(errorSomethingWentWrong)
-            statCollection:print(res.error)
+        if self:HasErrors(err, res) then
             return
         end
 
@@ -398,6 +381,9 @@ function statCollection:sendStage2()
         -- Tell the user
         statCollection:print(messagePhase2Complete)
     end)
+
+    -- Custom staging
+    self:Stage2(payload)
 end
 
 -- Sends stage3
@@ -472,22 +458,16 @@ function statCollection:sendStage3(winners, lastRound)
     -- Send stage3
     self:sendStage('s2_phase_3.php', payload, function(err, res)
         -- Check if we got an error
-        if err then
-            statCollection:print(errorJsonDecode)
-            statCollection:print(err)
-            return
-        end
-
-        -- Check for an error
-        if res.error then
-            statCollection:print(errorSomethingWentWrong)
-            statCollection:print(res.error)
+        if self:HasErrors(err, res) then
             return
         end
 
         -- Tell the user
         statCollection:print(messagePhase3Complete)
     end)
+
+    -- Custom staging
+    self:Stage3(payload)
 end
 
 function statCollection:submitRound(args)
@@ -546,16 +526,7 @@ function statCollection:sendCustom(args)
     -- Send custom
     self:sendStage('s2_custom.php', payload, function(err, res)
         -- Check if we got an error
-        if err then
-            statCollection:print(errorJsonDecode)
-            statCollection:print(err)
-            return
-        end
-
-        -- Check for an error
-        if res.error then
-            statCollection:print(errorSomethingWentWrong)
-            statCollection:print(res.error)
+        if self:HasErrors(err, res) then
             return
         end
 
@@ -563,57 +534,21 @@ function statCollection:sendCustom(args)
         statCollection:print(messageCustomComplete)
     end)
 
-    -- Send custom to lb
-    self:sendStage('s2_custom.php', payload, function(err, res)
-        local prefix = "eletd: "
-
-        -- Check if we got an error
-        if err then
-            statCollection:print(prefix .. errorJsonDecode)
-            statCollection:print(prefix .. err)
-            return
-        end
-
-        -- Check for an error
-        if res.error then
-            statCollection:print(prefix .. errorSomethingWentWrong)
-            statCollection:print(res.error)
-            return
-        end
-
-        -- Tell the user
-        statCollection:print(prefix .. messageCustomComplete .. " [" .. eleTDLB .. ']')
-    end, eleTDLB)
-
-    -- Send custom to lb hatinacat
-    self:sendStage('s2_custom.php', payload, function(err, res)
-        local prefix = "hatinacat: "
-
-        -- Check if we got an error
-        if err then
-            statCollection:print(prefix .. errorJsonDecode)
-            statCollection:print(prefix .. err)
-            return
-        end
-
-        -- Check for an error
-        if res.error then
-            statCollection:print(prefix .. errorSomethingWentWrong)
-            statCollection:print(res.error)
-            return
-        end
-
-        -- Tell the user
-        statCollection:print(prefix .. messageCustomComplete .. " [" .. hiacLB .. ']')
-    end, hiacLB)
+    -- Custom staging
+    self:StageCustom(payload)
 end
 
 -- Sends the payload data for the given stage, and return the result
 function statCollection:sendStage(stageName, payload, callback, override_host)
     local host = override_host or postLocation
+
     -- Create the request
     local req = CreateHTTPRequest('POST', host .. stageName)
-    statCollection:print(json.encode(payload))
+    local encoded = json.encode(payload)
+    if self.TESTING then
+        statCollection:print(encoded)
+    end
+
     -- Add the data
     req:SetHTTPRequestGetOrPostParameter('payload', json.encode(payload))
 
@@ -632,6 +567,24 @@ function statCollection:sendStage(stageName, payload, callback, override_host)
     end)
 end
 
+-- Checks the error and result objects and returns whether its invalid or not
+function statCollection:HasErrors(err, res)
+    if err then
+        statCollection:print(errorJsonDecode)
+        statCollection:print(err)
+        return true
+    end
+
+    if res.error then
+        statCollection:print(errorSomethingWentWrong)
+        statCollection:print(res.error)
+        return true
+    end
+
+    -- no errors
+    return false
+end
+
 function statCollection:print(s1, s2)
     local str = s1
     if s1 then
@@ -642,14 +595,17 @@ function statCollection:print(s1, s2)
         str = str .. " " .. tostring(s2)
     end
 
-    print(str)
-    CustomGameEventManager:Send_ServerToAllClients("statcollection_print", { content = str })
+    -- print to panorama console in dedicated servers Testing mode
+    if IsDedicatedServer() and self.TESTING then
+        CustomGameEventManager:Send_ServerToAllClients("statcollection_print", { content = str })
+    else
+    -- print to vscript developer console, or non-dedi server
+        if self.TESTING or Convars:GetBool("developer") then
+            print(str)
+        end
+    end
 end
 
 function tobool(s)
-    if s == "true" or s == "1" or s == 1 then
-        return true
-    else --nil "false" "0"
-    return false
-    end
+    return s == true or s == "true" or s == "1" or s == 1
 end
