@@ -1,6 +1,6 @@
 INTEREST_INTERVAL = 15 -- every 15 seconds
 INTEREST_RATE = 0.02 -- 2% interest rate
-END_OFFSET = 1; -- how many waves from the end of the game to stop interest
+END_OFFSET = 1 -- how many waves from the end of the game to stop interest
 
 if not InterestManager then
 	InterestManager = class({})
@@ -13,7 +13,7 @@ end
 -- this should only be called once, when the game starts
 function InterestManager:StartInterest()
 	InterestManager.started = true
-	Log:debug("Started interest timer: ".. INTEREST_INTERVAL .. "s")
+	Log:debug("Starting interest for all player at ".. INTEREST_INTERVAL .. "s")
 
 	for _, playerID in pairs(playerIDs) do
 		if playerID then
@@ -21,20 +21,29 @@ function InterestManager:StartInterest()
 		end
 	end
 
-	CustomGameEventManager:Send_ServerToAllClients("etd_display_interest", { interval=INTEREST_INTERVAL, rate=INTEREST_RATE, enabled=true } )
+	CustomGameEventManager:Send_ServerToAllClients("etd_display_interest", { 
+		interval = INTEREST_INTERVAL, 
+		rate = INTEREST_RATE, 
+		enabled = true 
+	})
 end
 
 function InterestManager:HandlePlayerReconnect(playerID)
 	local player = PlayerResource:GetPlayer(playerID)
 	if InterestManager.started and player then
-		CustomGameEventManager:Send_ServerToPlayer(player, "etd_display_interest", { interval=INTEREST_INTERVAL, rate=INTEREST_RATE, enabled=true } )
+		
+		CustomGameEventManager:Send_ServerToPlayer(player, "etd_display_interest", { 
+			interval = INTEREST_INTERVAL, 
+			rate = INTEREST_RATE, 
+			enabled = true 
+		})
 		
 		local lockState = InterestManager.playerLockStates[playerID]
 		if lockState then
 			CustomGameEventManager:Send_ServerToPlayer(player, "etd_pause_interest", lockState)
 		else
 			local timerName = InterestManager.timers[playerID]
-			if InterestManager.timers[playerID] and Timers.timers[timerName] then
+			if timerName and Timers.timers[timerName] then
 				local timeRemaining = Timers.timers[timerName].endTime - GameRules:GetGameTime()
 				CustomGameEventManager:Send_ServerToPlayer(player, "etd_resume_interest", { timeRemaining = timeRemaining })
 			end
@@ -55,7 +64,7 @@ function InterestManager:CreateTimerForPlayer(playerID, timeRemaining)
 				if playerData.completedWaves < WAVE_COUNT - END_OFFSET then
 					InterestManager:GiveInterest(playerID)
 				else
-					Log:debug("Completely stopping interest for player " .. playerID);
+					Log:debug("Completely stopping interest for player " .. playerID)
 					InterestManager:PauseInterestForPlayer(playerID, "#etd_interest_lock_end_title", "#etd_interest_lock_end")
 					return nil
 				end
@@ -91,12 +100,12 @@ end
 -- checks if the cleared wave is locking interest and resumes it if it is the last locking wave
 function InterestManager:PlayerCompletedWave(playerID, waveNumber)
 	local playerData = GetPlayerData(playerID)
-	local interestData = playerData.interestData
 
 	if playerData.completedWaves >= WAVE_COUNT - END_OFFSET then
 		return
 	end
 
+	local interestData = playerData.interestData
 	if interestData.Locked and interestData.LockingWaves[waveNumber] then
 		interestData.LockingWaves[waveNumber] = nil
 		interestData.NumLockingWaves = interestData.NumLockingWaves - 1
@@ -125,15 +134,16 @@ function InterestManager:ResumeInterestForPlayer(playerID)
 	interestData.TimeRemaining = 0
 end
 
+-- pauses interest for the given player
 function InterestManager:PauseInterestForPlayer(playerID, title, msg)
 	local player = PlayerResource:GetPlayer(playerID)
 	local interestData = GetPlayerData(playerID).interestData
 	local timerName = InterestManager.timers[playerID]
 
-	if InterestManager.timers[playerID] and Timers.timers[timerName] then
+	if timerName and Timers.timers[timerName] then
 			
 		local timeRemaining = Timers.timers[timerName].endTime - GameRules:GetGameTime()
-		interestData.TimeRemaining = timeRemaining;
+		interestData.TimeRemaining = timeRemaining
 		
 		Timers:RemoveTimer(timerName)
 		InterestManager.timers[playerID] = nil
@@ -160,7 +170,6 @@ function InterestManager:PlayerLeakedWave(playerID, waveNumber)
 	end
 
 	if not interestData.LockingWaves[waveNumber] and playerData.waveObjects[waveNumber] then
-
 		interestData.LockingWaves[waveNumber] = true
 		interestData.NumLockingWaves = interestData.NumLockingWaves + 1
 		if not interestData.Locked then
