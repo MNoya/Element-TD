@@ -181,9 +181,9 @@ function statCollection:hookFunctions()
 
         if state == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
             -- Load time flag
-            statCollection:setFlags({ loadTime = math.floor(GameRules:GetGameTime()) })
+            statCollection:setFlags({ loadTime = math.floor(GameRules:GetGameTime()+0.5) })
 
-        elseif state >= DOTA_GAMERULES_STATE_PRE_GAME then
+        elseif state == DOTA_GAMERULES_STATE_PRE_GAME then
             if not self.OVERRIDE_AUTOMATIC_SEND_STAGE_2 then
                 -- Send pregame stats
                 this:sendStage2()
@@ -411,7 +411,7 @@ function statCollection:sendStage3(winners, lastRound)
         self.roundID = self.roundID + 1
     end
 
-    -- statCollection:print the intro message
+    -- Print the intro message
     statCollection:print(messagePhase3Starting)
 
     -- Build players array
@@ -439,7 +439,7 @@ function statCollection:sendStage3(winners, lastRound)
         modIdentifier = self.modIdentifier,
         schemaVersion = schemaVersion,
         rounds = rounds,
-        gameDuration = round(GameRules:GetGameTime())
+        gameDuration = math.floor(GameRules:GetGameTime()+0.5)
     }
     if lastRound == false then
         payload.gameFinished = 0
@@ -493,7 +493,7 @@ function statCollection:sendCustom(args)
         self.sentCustom = true
     end
 
-    -- statCollection:print the intro message
+    -- Print the intro message
     statCollection:print(messageCustomStarting)
 
     -- Build rounds table
@@ -528,6 +528,7 @@ function statCollection:sendCustom(args)
 end
 
 -- Sends the payload data for the given stage, and return the result
+-- Optional override_host can be added to reutilize this function for other sites
 function statCollection:sendStage(stageName, payload, callback, override_host)
     local host = override_host or postLocation
 
