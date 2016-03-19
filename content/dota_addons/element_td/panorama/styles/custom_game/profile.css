@@ -240,7 +240,7 @@
 
 #FriendName
 {
-    width: 180px;
+    width: 170px;
     margin-left: 10px;
     font-size: 20px;
     text-align: center;
@@ -252,7 +252,6 @@
 {
     width: 60px;
     font-size: 20px;
-    margin-right: 30px;
     text-align: center;
     vertical-align: center;
     color: white;
@@ -260,8 +259,8 @@
 
 #Score
 {
-    width: 120px;
-    margin-left: 205px;
+    width: 60px;
+    margin-left: 225px;
     text-align: center;
     vertical-align: center;
     color: white;
@@ -281,6 +280,24 @@
     width: 50px;
     font-size: 20px;
     margin-left: 10px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+#Percentile
+{
+    width: 60px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+#FriendPercentile
+{
+    width: 50px;
+    font-size: 18px;
+    margin-left: 8px;
     text-align: center;
     vertical-align: center;
     color: white;

@@ -7,6 +7,7 @@ function SetupFriendEntry () {
     $("#FriendName").steamid = Root.steamID;
     $("#FriendScore").text = Root.score;
     $("#FriendGlobalRank").text = Root.rank;
+    $("#FriendPercentile").text = Root.percentile;
 }
 
 (function () {

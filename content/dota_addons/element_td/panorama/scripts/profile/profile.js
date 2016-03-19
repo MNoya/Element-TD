@@ -64,7 +64,7 @@ function CreateFriendPanel(data) {
     playerPanel.score = GameUI.FormatScore(data.score)
     playerPanel.friendRank = friendsRank
     playerPanel.rank = GameUI.FormatRank(data.rank)
-    //playerPanel.percentile = GameUI.FormatPercentile(data.percentile)
+    playerPanel.percentile = GameUI.FormatPercentile(data.percentile)
     playerPanel.BLoadLayout("file://{resources}/layout/custom_game/profile_friend.xml", false, false);
 
     var steamID = GameUI.GetLocalPlayerSteamID()
@@ -87,5 +87,5 @@ function MakeButtonVisible() {
 }
 
 (function () {
-    //$.Schedule(0.1, MakeButtonVisible)
+    $.Schedule(0.1, MakeButtonVisible)
 })();

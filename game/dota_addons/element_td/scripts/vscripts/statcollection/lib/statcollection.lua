@@ -540,7 +540,7 @@ function statCollection:sendStage(stageName, payload, callback, override_host)
     end
 
     -- Add the data
-    req:SetHTTPRequestGetOrPostParameter('payload', json.encode(payload))
+    req:SetHTTPRequestGetOrPostParameter('payload', encoded)
 
     -- Send the request
     req:Send(function(res)

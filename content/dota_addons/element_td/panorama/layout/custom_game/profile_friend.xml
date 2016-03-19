@@ -11,5 +11,6 @@
         <DOTAUserName id="FriendName" steamid=""/>
         <Label id="FriendScore"/>
         <Label id="FriendGlobalRank"/>
+        <Label id="FriendPercentile"/>
     </Panel>
 </root>
