@@ -8,6 +8,11 @@ GameUI.ConvertID64 = function (steamID32) {
     return '765'+(parseInt(steamID32) + 61197960265728)
 }
 
+// Converts a steamID64 into 32 bit version
+GameUI.ConvertID32 = function (steamID64) {
+    return steamID64.slice(3) - 61197960265728;
+}
+
 // Returns rank normalized for numbers over a thousand
 GameUI.FormatRank = function (rank) {
     var fixed = 1;
@@ -30,6 +35,33 @@ GameUI.FormatPercentile = function (percent) {
         return "0.1%" //anthony please forgive me
     else
         return +percent.toFixed(1) + "%"
+}
+
+// Returns gold with commas and k
+GameUI.FormatGold = function (gold) {
+    if (gold.toString().length <= 4)
+        return GameUI.CommaFormat(gold)
+    else
+    {
+        var formatted = GameUI.CommaFormat(gold)
+        return formatted.substring(0, formatted.length-4)+"k";
+    }
+}
+
+GameUI.FormatKills = function (num) {
+    if (num.toString().length <= 6)
+        return GameUI.CommaFormat(num)
+
+    else
+    {
+        var formatted = GameUI.CommaFormat(num)
+        return formatted.substring(0, formatted.length-4)+"k";
+    }
+}
+
+GameUI.CommaFormat = function (value)
+{
+    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 // Developer function to test unreleased stuff
