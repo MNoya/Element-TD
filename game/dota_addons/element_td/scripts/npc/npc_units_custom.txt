@@ -4077,7 +4077,7 @@
 	    "BuildTime"                 "1"
 	    "Element"                   "dark"
 	    "DamageType"                "dark"
-	    "ScriptClass"               "BasicTower"
+	    "ScriptClass"               "DarkTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "11"
 	    
@@ -4364,7 +4364,7 @@
 	    "BuildTime"                 "1"
 	    "Element"                   "dark"
 	    "DamageType"                "dark"
-	    "ScriptClass"               "BasicTower"
+	    "ScriptClass"               "DarkTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "9"
 	    
@@ -5172,7 +5172,7 @@
 	    "BuildTime"                 "3"
 	    "Element"                   "dark"
 	    "DamageType"                "dark"
-	    "ScriptClass"               "BasicTower"
+	    "ScriptClass"               "DarkTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "1"
 	    
@@ -5684,7 +5684,7 @@
 	    "BuildTime"                 "1"
 	    "Element"                   "dark"
 	    "DamageType"                "dark"
-	    "ScriptClass"               "BasicTower"
+	    "ScriptClass"               "DarkTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "5"
 	    

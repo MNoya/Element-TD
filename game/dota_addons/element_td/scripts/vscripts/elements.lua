@@ -50,7 +50,9 @@ ElementColors = {
 -- Light #E5DE23
 -- Dark #8733C8
 
-function DamageEntity(entity, attacker, damage)
+-- 'pure' = do not apply element and debuff damage amplification
+
+function DamageEntity(entity, attacker, damage, pure)
 	if not entity or not entity:IsAlive() then return end
 	
 	if entity:HasModifier("modifier_invulnerable") then return end
@@ -58,16 +60,18 @@ function DamageEntity(entity, attacker, damage)
 	local original = damage
 	if damage <= 0 then return end --pls no negative damage
 
-	-- Modify damage based on elements
-	damage = ApplyElementalDamageModifier(damage, GetDamageType(attacker), GetArmorType(entity))
-	local element = damage
+	if not pure then
+		-- Modify damage based on elements
+		damage = ApplyElementalDamageModifier(damage, GetDamageType(attacker), GetArmorType(entity))
+		local element = damage
 
-	-- Increment damage based on debuffs
-	damage = ApplyDamageAmplification(damage, entity, attacker)
-	local amplified = damage
+		-- Increment damage based on debuffs
+		damage = ApplyDamageAmplification(damage, entity, attacker)
+		local amplified = damage
+	end
 
 	damage = math.ceil(damage) --round up to the nearest integer
-		
+			
 	if GameRules.DebugDamage then
 		local sourceName = attacker.class
 		local targetName = entity.class
@@ -76,6 +80,7 @@ function DamageEntity(entity, attacker, damage)
 			print("[DAMAGE]  Original: "..original.." | Element: "..element.." | Amplified: "..amplified)
 		end
 	end
+
 	
 	local playerID = attacker:GetPlayerOwnerID()
 	local playerData = GetPlayerData(playerID)
@@ -94,7 +99,10 @@ function DamageEntity(entity, attacker, damage)
 		end
 	end
 
+	local overkillDamage = 0
 	if entity:GetHealth() - damage <= 0 then
+		overkillDamage = damage - entity:GetHealth()
+
 		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 		local goldBounty = entity:GetGoldBounty()
 
@@ -134,7 +142,7 @@ function DamageEntity(entity, attacker, damage)
 		entity:SetHealth(entity:GetHealth() - damage)
 	end
 
-	return damage
+	return damage, math.max(0, overkillDamage)
 end
 
 function DamageEntitiesInArea(origin, radius, attacker, damage)

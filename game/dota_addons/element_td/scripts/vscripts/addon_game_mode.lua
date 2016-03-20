@@ -38,9 +38,12 @@ local requires =
     -- tower blueprints
     "towers/TowersManager",
     "towers/towerevents",
+
+    -- basic towers
     "towers/BasicTower",
     "towers/BasicTowerAOE",
     "towers/CannonTower",
+    "towers/basic/DarkTower",
 
     -- dual towers
     "towers/duals/MagicTower",

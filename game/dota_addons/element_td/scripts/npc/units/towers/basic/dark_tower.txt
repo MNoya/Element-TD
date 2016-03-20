@@ -43,7 +43,7 @@
     "BuildTime"                 "1"
     "Element"                   "dark"
     "DamageType"                "dark"
-    "ScriptClass"               "BasicTower"
+    "ScriptClass"               "DarkTower"
     "TowerType"                 "Normal"
     "BuffPriority"              "11"
     

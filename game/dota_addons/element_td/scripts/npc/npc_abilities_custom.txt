@@ -2272,6 +2272,59 @@
 	        }
 	    }
 	}
+	//=================================================================================================================
+	// Dark Tower: Overkill
+	//=================================================================================================================
+	"dark_tower_overkill"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+	
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"towers/overkill"
+		"MaxLevel"						"1"
+	
+	
+		"Modifiers"
+		{
+			"modifier_overkill_passive"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+	
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnAttackLanded"
+					}
+				}
+			}
+		}
+		
+		"OnProjectileHitUnit"
+	 	{
+	 		"DeleteOnHit"	"1"
+	 		"RunScript"
+	 		{
+	 			"ScriptFile"		"towers/towerevents.lua"
+	 			"Function"			"TriggerEvent"
+	 			"Event"				"OnProjectileHit"
+	 		}
+	  	}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"300"
+			}
+		}
+	}
 	//============================================================//
 	// Disease Tower: Soul Reaper
 	//============================================================//
