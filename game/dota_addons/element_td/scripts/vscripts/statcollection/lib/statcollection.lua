@@ -28,7 +28,7 @@ local statInfo = LoadKeyValues('scripts/vscripts/statcollection/settings.kv')
 local postLocation = 'https://api.getdotastats.com/'
 
 -- The schema version we are currently using
-local schemaVersion = 4
+local schemaVersion = 5
 
 -- Constants used for pretty formatting, as well as strings
 local printPrefix = 'Stat Collection: '
@@ -112,6 +112,9 @@ function statCollection:init()
 
     -- Hook requred functions to operate correctly
     self:hookFunctions()
+
+    -- Send stage1 stuff
+    self:sendStage1()
 end
 
 --Build the winners array
@@ -146,32 +149,6 @@ function statCollection:hookFunctions()
             -- Attempt to send stage 3, since the match is over
             this:sendStage3(this:calcWinnersByTeam(), true)
         end
-    end
-
-    -- If we are testing (i.e. in workshop tools, don't wait for player connects to check)
-    if self.TESTING then
-        -- Send stage1 stuff
-        this:sendStage1()
-    else
-        --Wait for host before sending Phase 1
-        ListenToGameEvent('player_connect_full', function(keys)
-            -- Ensure we can only send it once, and everything is good to go
-            if self.playerCheckStage1 then return end
-
-            -- Check each connected player to see if they are host
-            for playerID = 0, DOTA_MAX_TEAM_PLAYERS do
-                if PlayerResource:IsValidPlayerID(playerID) then
-                    local player = PlayerResource:GetPlayer(playerID)
-
-                    if GameRules:PlayerHasCustomGameHostPrivileges(player) then
-                        self.playerCheckStage1 = true
-                        -- Send stage1 stuff
-                        this:sendStage1()
-                        break
-                    end
-                end
-            end
-        end, nil)
     end
 
     -- Listen for changes in the current state
@@ -265,11 +242,6 @@ function statCollection:sendStage1()
     -- Grab a reference to self
     local this = self
 
-    -- Workout the player count
-    local playerCount = PlayerResource:GetPlayerCount()
-    if playerCount <= 0 then playerCount = 1 end
-    statCollection:setFlags({ numPlayers = playerCount })
-
     -- Workout who is hosting
     local hostID = 0
     for playerID = 0, DOTA_MAX_TEAM_PLAYERS do
@@ -343,6 +315,16 @@ function statCollection:sendStage2()
 
     -- Client check in
     CustomGameEventManager:Send_ServerToAllClients("statcollection_client", { modID = self.modIdentifier, matchID = self.matchID, schemaVersion = schemaVersion })
+
+    -- Dedicated server check in
+    if IsDedicatedServer() then
+        self:sendHostCheckIn()
+    end
+
+    -- Save the player count
+    local playerCount = PlayerResource:GetPlayerCount()
+    if playerCount <= 0 then playerCount = 1 end
+    statCollection:setFlags({ numPlayers = playerCount })
 
     -- Build players array
     local players = {}
@@ -525,6 +507,25 @@ function statCollection:sendCustom(args)
 
     -- Custom staging
     self:StageCustom(payload)
+end
+
+function statCollection:sendHostCheckIn()
+    local payload = {
+        modIdentifier = self.modIdentifier,
+        steamID32 = "-1",
+        isHost = "1", 
+        matchID = self.matchID,
+        schemaVersion = schemaVersion,
+    }
+
+    -- Send check in
+    self:sendStage('s2_check_in.php', payload, function(err, res)
+        -- Check if we got an error
+        if self:ReturnedErrors(err, res) then
+            statCollection:printError("sendHostCheckIn", "Dedicated server check-in failed!")
+            return
+        end
+    end)
 end
 
 -- Sends the payload data for the given stage, and return the result
