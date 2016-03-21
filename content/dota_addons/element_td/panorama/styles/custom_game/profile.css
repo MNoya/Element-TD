@@ -446,7 +446,7 @@ DOTAUserName #UserNameProfile
 { 
     text-align: left; 
     margin-left: 5px;
-    width: 20px;
+    width: 20%;
 }
 
 #DifficultyPercents
@@ -654,6 +654,7 @@ DOTAUserName #UserNameProfile
     font-weight: bold;
     font-size: 22px;
 }
+
 .MostUsed .ElementLabel
 {
     margin-left: 6px;

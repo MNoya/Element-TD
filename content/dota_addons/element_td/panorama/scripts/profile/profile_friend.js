@@ -8,6 +8,9 @@ function SetupFriendEntry () {
     $("#FriendScore").text = Root.score;
     $("#FriendGlobalRank").text = Root.rank;
     $("#FriendPercentile").text = Root.percentile;
+
+    $("#AvatarImageFriend").ClearPanelEvent( "onactivate" )
+    $("#FriendName").ClearPanelEvent( "onactivate" )
 }
 
 (function () {

@@ -3,9 +3,11 @@
 var statsURL = 'http://hatinacat.com/leaderboard/data_request.php?req=stats&id='
 var friendsURL = 'http://hatinacat.com/leaderboard/data_request.php?req=friends&id='
 var ranksURL = 'http://hatinacat.com/leaderboard/data_request.php?req=player&ids='
+var Profile = $("#Profile")
 var friendsPanel = $("#FriendsContainer")
 var friendsLoaded = false;
-var friendsRank = 0
+var friendsRank
+var friends = []
 
 function GetStats(steamID32) {
     $.Msg("Getting stats data for "+steamID32+"...")
@@ -43,8 +45,6 @@ function GetStats(steamID32) {
             //$("#gamesPlayed").text = gamesPlayed
 
             // Towers
-            $("#towers").text = allTime["towers"] || 0
-            $("#towersSold").text = allTime["towersSold"] || 0
             
             // Element Usage
             var light = allTime["light"]
@@ -57,6 +57,11 @@ function GetStats(steamID32) {
             var favorite = allTime["favouriteElement"]
 
             var nextStart = 0
+            var elements = ["light", "dark", "water", "fire", "nature", "earth"]
+            for (var i = 0; i < elements.length; i++) {
+                $("#"+elements[i]+"_usage").GetParent().SetHasClass("MostUsed", elements[i] == favorite)
+            }
+
             nextStart = RadialStyle("light", nextStart, light/total_elem)
             nextStart = RadialStyle("dark", nextStart, dark/total_elem)
             nextStart = RadialStyle("water", nextStart, water/total_elem)
@@ -64,8 +69,7 @@ function GetStats(steamID32) {
             nextStart = RadialStyle("nature", nextStart, nature/total_elem)
             nextStart = RadialStyle("earth", nextStart, earth/total_elem)
 
-
-            $("#"+favorite+"_usage").GetParent().AddClass("MostUsed")
+            
         }
     })
 
@@ -83,8 +87,8 @@ function MakeBoolBar(data, name) {
     var value = numValue / total * 100
     var not_value = 100 - value
 
-    $.Msg(name+": ",value.toFixed(1), "%")
-
+    var maxWidth = 80
+    if (value > maxWidth) value = maxWidth
     panel.style['width'] = value+"%;"
     not_panel.text = numValue//value.toFixed(0)+"%"
 }
@@ -171,8 +175,14 @@ function GetRank (steamID32, leaderboard_type, panelName) {
 function GetPlayerFriends(steamID64) {
     $.Msg("Getting friends data for "+steamID64+"...")
 
+    friendsRank = 0
     var delay = 0
     var delay_per_panel = 0.1;
+
+    for (var i = 0; i < friends.length; i++) {
+        friends[i].DeleteAsync(0)
+    };
+    friends = []
 
     $.AsyncWebRequest( friendsURL+steamID64, { type: 'GET', 
         success: function( data ) {
@@ -180,6 +190,11 @@ function GetPlayerFriends(steamID64) {
             var info = JSON.parse(data);
             var players_info = info["players"]
             
+            if (!players_info){
+                $.Msg("Private Profile")
+                return
+            }
+
             // Sort by rank
             players_info.sort(function(a, b) {
                 return parseInt(a.rank) - parseInt(b.rank);
@@ -211,13 +226,31 @@ function CreateFriendPanel(data) {
     playerPanel.percentile = GameUI.FormatPercentile(data.percentile)
     playerPanel.BLoadLayout("file://{resources}/layout/custom_game/profile_friend.xml", false, false);
 
+    playerPanel.SetPanelEvent( "onactivate", function(){ LoadProfile(steamID64) })
+    friends.push(playerPanel)
+
     var steamID = GameUI.GetLocalPlayerSteamID()
     if (steamID64 == steamID)
         playerPanel.AddClass("local")
 }
 
+function LoadProfile(steamID64) {
+    $.Msg("Loading profile of player "+steamID64)
+
+    $("#AvatarImageProfile").steamid = steamID64
+    $("#UserNameProfile").steamid = steamID64
+
+    var steamID32 = GameUI.ConvertID32(steamID64)
+    GetStats(steamID32)
+    GetPlayerFriends(steamID32)
+}
+
 function ToggleProfile() {
-    $("#Profile").ToggleClass("Hide")
+    Profile.ToggleClass("Hide")
+
+    // Load self in the background
+    if (Profile.BHasClass( "Hide" ))
+        LoadLocalProfile()
 }
 
 function MakeButtonVisible() {
@@ -226,14 +259,10 @@ function MakeButtonVisible() {
 }
 
 function LoadLocalProfile() {
-    var steamID64 = GameUI.GetLocalPlayerSteamID() //34961594
-    var steamID32 = GameUI.ConvertID32(steamID64)
-    $("#AvatarImageMini").steamid = steamID64
-    $("#AvatarImageProfile").steamid = steamID64
-    $("#UserNameProfile").steamid = steamID64
+    var steamID64 = GameUI.GetLocalPlayerSteamID()
+    LoadProfile(steamID64)
 
-    GetStats(steamID32)
-    GetPlayerFriends(steamID32)
+     $("#AvatarImageMini").steamid = steamID64  
 }
 
 (function () {
