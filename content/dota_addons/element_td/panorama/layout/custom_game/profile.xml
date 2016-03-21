@@ -53,23 +53,23 @@
 
                 <Label id="CloseButton" onactivate="ToggleProfile()"/>
             </Panel>
-            
+
             <Panel id="ProfileMenuContainer">
 
                 <Panel hittest="false" id="LeftPanel">
                     <Label class="ProfilePanelHeader" text="#profile_lifetime_stats"/>
 
-                    <Panel id="GeneralStats" class="StatsPanel">
+                    <Panel id="GeneralStats">
                         <Label class="SectionTitle" text="#profile_general"/>
-                        <Panel class="StatContainer">
+                        <Panel id="GeneralStatsContainer">
                             <Panel class="StatsColumn">
                                 <Panel class="StatEntry">
-                                    <Label id="kills" class="Stat" text="--"/>
+                                    <Label id="kills" class="Stat" text="0"/>
                                     <Label class="StatLabel" text="#profile_kills"/>
                                 </Panel>
 
                                 <Panel class="StatEntry">
-                                    <Label id="frogKills" class="Stat" text="--"/>
+                                    <Label id="frogKills" class="Stat" text="0"/>
                                     <Image id="OSfrog"/>
                                     <Label class="StatLabel" text="#profile_frogKills"/>
                                 </Panel>
@@ -77,34 +77,40 @@
 
                             <Panel class="StatsColumn">
                                 <Panel class="StatEntry">
-                                    <Label id="networth" class="Stat gold" text="--"/>
+                                    <Label id="networth" class="Stat gold" text="0"/>
                                     <Label class="StatLabel " text="#profile_networth"/>
                                 </Panel>
 
                                 <Panel class="StatEntry">
-                                    <Label id="interestGold" class="Stat gold" text="--"/>
+                                    <Label id="interestGold" class="Stat gold" text="0"/>
                                     <Label class="StatLabel" text="#profile_interestGold"/>
                                 </Panel>
                             </Panel>
 
                             <Panel class="StatsColumn">
                                 <Panel class="StatEntry">
-                                    <Label id="cleanWaves" class="Stat clean" text="--"/>
+                                    <Label id="cleanWaves" class="Stat clean" text="0"/>
                                     <Label class="StatLabel" text="#profile_cleanWaves"/>
                                 </Panel>
 
                                 <Panel class="StatEntry">
-                                    <Label id="under30" class="Stat under30" text="--"/>
+                                    <Label id="under30" class="Stat under30" text="0"/>
                                     <Label class="StatLabel" text="#profile_under30"/>
                                 </Panel>
                             </Panel>
                         </Panel>
                     </Panel>
 
-                    <Panel id="GameModeStats" class="StatsPanel">
+                    <Panel id="GameModeStats">
                         <Label class="SectionTitle" text="#profile_gamemode"/>
 
-                        <Panel class="StatContainer" style="flow-children:down;">
+                        <!--<Panel class="StatContainer">
+                            <Label id="gamesPlayed" class="Stat" text="0"/>
+                            <Label class="StatLabel" text="#profile_games_played"/>
+                        </Panel>
+                        -->
+
+                        <Panel class="BarContainer">
                             <Label class="SectionSubTitle" text="#profile_difficulties"/>
                             <Panel id="GameModeBars">
                                 <Label id="normal" class="GameModeBar" onmouseover="HoverDiff('normal')" onmouseout="DOTAHideTitleTextTooltip()" text=""/>
@@ -113,106 +119,119 @@
                                 <Label id="insane" class="GameModeBar" onmouseover="HoverDiff('insane')" onmouseout="DOTAHideTitleTextTooltip()" text=""/>
                             </Panel>
                         </Panel>
-                        <!-- GameMode Stats
 
-                            express
-                            order_chaos
-                            endless
-                            random
-                        -->
+                        <Panel class="BarContainer">
+                            <Label class="SectionSubTitle" text="#horde_endless"/>
+                            <Panel id="ChaosBars">
+                                <Label id="order_chaos" class="GameModeBar"/>
+                                <Label id="not_order_chaos" class="GameModeBar"/>
+                            </Panel>
+                        </Panel>
 
+                        <Panel class="BarContainer">
+                            <Label class="SectionSubTitle" text="#order_chaos"/>
+                            <Panel id="RushBars">
+                                <Label id="horde_endless" class="GameModeBar"/>
+                                <Label id="not_horde_endless" class="GameModeBar"/>
+                            </Panel>
+                        </Panel>
 
+                        <Panel class="BarContainer">
+                            <Label class="SectionSubTitle" text="#length_express"/>
+                            <Panel id="ExpressBars">
+                                <Label id="express" class="GameModeBar"/>
+                                <Label id="not_express" class="GameModeBar"/>
+                            </Panel>
+                        </Panel>
 
                     </Panel>
 
 
                     <Panel id="TowerStats">
                         <Label class="SectionTitle" text="#profile_tower"/>
-
-                        <!-- Tower Stats
-                        towers
-                        towersSold
-
-                        goldTowerEarn
-                        lifeTowerKills
-                    -->
-
-                    </Panel>
-
-
-
-                    <Panel id="ElementUsage">
-                        <Label id="ElementUsageTitle" class="SectionTitle" text="#profile_element_usage"/>
-                        <Panel id="ElementUsageContainer">
-                            <Panel id="ElementLabels">
-                                <Panel class="ElementLabelPanel">
-                                    <Label id="light_usage" class="ElementUsageLabel"/>
-                                    <Label class="ElementLabel" html="true" text="#light"/>
-                                </Panel>
-
-                                <Panel class="ElementLabelPanel">
-                                    <Label id="dark_usage" class="ElementUsageLabel"/>
-                                    <Label class="ElementLabel" html="true" text="#dark"/>
-                                </Panel>
-
-                                <Panel class="ElementLabelPanel">
-                                    <Label id="water_usage" class="ElementUsageLabel"/>
-                                    <Label class="ElementLabel" html="true" text="#water"/>
-                                </Panel>
-
-                                <Panel class="ElementLabelPanel">
-                                    <Label id="fire_usage" class="ElementUsageLabel"/>
-                                    <Label class="ElementLabel" html="true" text="#fire"/>
-                                </Panel>
-
-                                <Panel class="ElementLabelPanel">
-                                    <Label id="nature_usage" class="ElementUsageLabel"/>
-                                    <Label class="ElementLabel" html="true" text="#nature"/>
-                                </Panel>
-
-                                <Panel class="ElementLabelPanel">
-                                    <Label id="earth_usage" class="ElementUsageLabel"/>
-                                    <Label class="ElementLabel" html="true" text="#earth"/>
-                                </Panel>    
-                            </Panel>
-                            <Panel id="ElementPieChart">
-                                <Image id="light" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/light.png"/>
-                                <Image id="dark" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/dark.png"/>
-                                <Image id="water" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/water.png"/>
-                                <Image id="fire" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/fire.png"/>
-                                <Image id="nature" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/nature.png"/>
-                                <Image id="earth" class="ElementUsageImage"   src="file://{resources}/images/custom_game/resources/earth.png"/>
-                            </Panel>
-                            <Panel id="PicksPanel">
-                                <Panel id="RandomPanel">
+                        <Panel id="TowerContainer">
+                            <Panel id="TowerSpecificStats">
+                                <Panel class="TowerStatPanel">
                                     <Image id="RandomImage"/>
-                                    <Panel id="RandomLabels">
-                                        <Label id="random_usage" text="#element_random"/>
-                                        <Label id="random"/>
+                                    <Panel class="TowerLabels">
+                                        <Label class="TowerSubLabels" text="#element_random"/>
+                                        <Label id="random" class="TowerName"/>
                                     </Panel>
                                 </Panel>
 
-
-                                <!-- Favorite Dual and Triple
-                                <Panel id="DualPanel">
-
-                                    <Panel id="RandomLabels">
-
-                                        <Label id="random_usage" text="#element_random"/>
-                                        <Label id="random"/>
-                                    </Panel>
+                                <Panel class="TowerStatPanel">
                                     <Image class="TowerImage" src="file://{images}/spellicons/towers/quark.png"/>
+                                    <Panel class="TowerLabels">
+                                        <Label class="TowerSubLabels" text="#profile_first_dual"/>
+                                        <Label id="dual" class="TowerName" text="#quark_tower_name"/>
+                                    </Panel>
                                 </Panel>
 
-                                <Panel id="TriplePanel">
-                                    
-                                    <Panel id="RandomLabels">
-                                        <Label id="random_usage" text="#element_random"/>
-                                        <Label id="random"/>
-                                    </Panel>
+                                <Panel class="TowerStatPanel">
                                     <Image class="TowerImage" src="file://{images}/spellicons/towers/nova.png"/>
+                                    <Panel class="TowerLabels">
+                                        <Label class="TowerSubLabels" text="#profile_first_triple"/>
+                                        <Label id="triple" class="TowerName" text="#nova_tower_name"/>
+                                    </Panel>
                                 </Panel>
-                                -->
+
+                                <Panel class="TowerStatPanel">
+                                    <Image class="TowerImageCircle" src="file://{images}/spellicons/towers/gold.png"/>
+                                    <Label id="goldTowerEarn" class="TowerStat gold" text="0"/>
+                                    <Label class="StatLabel " text="#profile_gold_tower"/>
+                                </Panel>
+
+                                <Panel class="TowerStatPanel">
+                                    <Image class="TowerImageCircle" src="file://{images}/spellicons/towers/life.png"/>
+                                    <Label id="lifeTowerKills" class="TowerStat life" text="0"/>
+                                    <Label class="StatLabel" text="#profile_life_tower"/>
+                                </Panel>
+
+                            </Panel>
+
+                            <Panel id="ElementUsage">
+                                <Panel id="ElementUsageContainer">
+                                    <Panel id="ElementPieChart">
+                                        <Image id="light" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/light.png"/>
+                                        <Image id="dark" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/dark.png"/>
+                                        <Image id="water" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/water.png"/>
+                                        <Image id="fire" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/fire.png"/>
+                                        <Image id="nature" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/nature.png"/>
+                                        <Image id="earth" class="ElementUsageImage"   src="file://{resources}/images/custom_game/resources/earth.png"/>
+                                    </Panel>
+
+                                    <Panel id="ElementLabels">
+                                        <Panel class="ElementLabelPanel">
+                                            <Label id="light_usage" class="ElementUsageLabel"/>
+                                            <Label class="ElementLabel" html="true" text="#light"/>
+                                        </Panel>
+
+                                        <Panel class="ElementLabelPanel">
+                                            <Label id="dark_usage" class="ElementUsageLabel"/>
+                                            <Label class="ElementLabel" html="true" text="#dark"/>
+                                        </Panel>
+
+                                        <Panel class="ElementLabelPanel">
+                                            <Label id="water_usage" class="ElementUsageLabel"/>
+                                            <Label class="ElementLabel" html="true" text="#water"/>
+                                        </Panel>
+
+                                        <Panel class="ElementLabelPanel">
+                                            <Label id="fire_usage" class="ElementUsageLabel"/>
+                                            <Label class="ElementLabel" html="true" text="#fire"/>
+                                        </Panel>
+
+                                        <Panel class="ElementLabelPanel">
+                                            <Label id="nature_usage" class="ElementUsageLabel"/>
+                                            <Label class="ElementLabel" html="true" text="#nature"/>
+                                        </Panel>
+
+                                        <Panel class="ElementLabelPanel">
+                                            <Label id="earth_usage" class="ElementUsageLabel"/>
+                                            <Label class="ElementLabel" html="true" text="#earth"/>
+                                        </Panel>    
+                                    </Panel>
+                                </Panel>
                             </Panel>
                         </Panel>
                     </Panel>

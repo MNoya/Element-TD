@@ -108,8 +108,8 @@
 // Profile Main Menu
 #Profile
 {
-    width: 50%;
-    height: 60%;
+    width: 960px;
+    height: 650px;
     horizontal-align: center;
     vertical-align: top;
     margin-top: 10%;
@@ -308,19 +308,18 @@ DOTAUserName #UserNameProfile
 }
 
 // General Stat Panels
-.StatsPanel
+#GeneralStats
 {
     width: 100%;
-    height: 15%;
+    height: 70px;
     flow-children: down;
 }
 
-.StatContainer
+#GeneralStatsContainer
 {
     flow-children: right;
-    
     width: 100%;
-    height: 80%;
+    height: 60px;
 }
 
 .StatsColumn
@@ -329,6 +328,14 @@ DOTAUserName #UserNameProfile
 
     width: 33%;
     height: 100%;
+}
+
+.StatsColumn2
+{
+    flow-children: down;
+
+    width: 50%;
+    height: 40px;
 }
 
 .StatEntry
@@ -359,7 +366,20 @@ DOTAUserName #UserNameProfile
     font-family: Radiance;
 }
 
+.TowerStat
+{
+    width: 40px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: white;
+    text-transform: uppercase;
+    text-align: right;
+    margin-right: 5px;
+    font-family: Radiance;
+}
+
 .gold { color: #FBB23F; }
+.life { color: #00FF00; }
 .clean { color: #00FFFF; }
 .under30 { color: #FFFF00; }
 
@@ -382,16 +402,24 @@ DOTAUserName #UserNameProfile
 // Gamemode Stat Panels
 #GameModeStats
 {
+    width: 100%;
     height: 120px;
+    flow-children: down;
 }
 
 #GameModeBars
 {
-    width: 90%;
+    width: 70%;
     height: 20px;
-    background-color: gray;
-    horizontal-align: center;
+    horizontal-align: left;
     flow-children: right;
+}
+
+.BarContainer
+{
+    flow-children: right;
+    margin-bottom: 2px;
+    width: 100%;
 }
 
 .GameModeBar
@@ -404,7 +432,6 @@ DOTAUserName #UserNameProfile
     font-weight: bold;
     text-align: center;
     text-shadow: 0px 1px 1px 2 #000;
-
     tooltip-position: bottom;
 }
 
@@ -412,6 +439,15 @@ DOTAUserName #UserNameProfile
 #hard { background-color: gray; height: 100%; }
 #veryhard { background-color: #FBB23F; height: 100%; }
 #insane { background-color: red; height: 100%; }
+#horde_endless { background-color: #FF6C00; height: 100%; }
+#order_chaos { background-color: #C54DA8; height: 100%; }
+#express { background-color: #006400; height: 100%; }
+#not_horde_endless, #not_order_chaos, #not_express 
+{ 
+    text-align: left; 
+    margin-left: 5px;
+    width: 20px;
+}
 
 #DifficultyPercents
 {
@@ -422,14 +458,53 @@ DOTAUserName #UserNameProfile
     flow-children: right;
 }
 
+#ChaosBars, #ExpressBars, #RushBars
+{
+    width: 100%;
+    height: 20px;
+    horizontal-align: center;
+    flow-children: right;
+}
+
+// Towers
+#TowerStats
+{
+    width: 100%;
+    height: 38%;
+    flow-children: down;
+}
+
+#TowerContainer
+{
+    width: 100%;
+    height: 100%;
+    flow-children: right;
+}
+
+// Tower Stats Subpanels
+#TowerSpecificStats
+{
+    width: 35%;
+    height: 100%;
+    flow-children: down;
+}
+
+.TowerStatPanel
+{
+    width: 100%;
+    padding-left: 10px;
+    margin-bottom: 5px;
+    flow-children: right;
+}
+
 // Element Usage Panels
 #ElementUsage
 {
-    width: 90%;
-    vertical-align: bottom;
-    horizontal-align: center;
+    width: 65%;
+    height: 100%;
+    horizontal-align: right;
+    vertical-align: center;
     flow-children: down;
-    margin-bottom: 15px;
 }
 
 #ElementUsageContainer
@@ -449,6 +524,7 @@ DOTAUserName #UserNameProfile
 
 .SectionSubTitle
 {
+    width: 23%;
     font-size: 15px;
     letter-spacing: 1px;
     margin-left: 25px;
@@ -467,6 +543,7 @@ DOTAUserName #UserNameProfile
 {
     width: 160px;
     height: 160px;
+    margin-right: 10px;
 }
 
 .ElementUsageImage
@@ -521,23 +598,23 @@ DOTAUserName #UserNameProfile
 
 #RandomImage
 { 
-    height: 40px;
-    width: 40px;
+    height: 36px;
+    width: 36px;
     background-image: url("file://{images}/spellicons/random.png");
     background-size: 100%;
     border-radius: 80px;
 }
 
-#RandomLabels
+.TowerLabels
 {
-    width: 100px;
+    width: 100%;
     height: 100%;
     flow-children: down;
 }
 
-#random_usage
+.TowerSubLabels
 {
-    width: 70px;
+    width: 100%;
     font-size: 15px;
     letter-spacing: 1px;
     horizontal-align: center;
@@ -547,19 +624,28 @@ DOTAUserName #UserNameProfile
     font-family: Radiance;
 }
 
-#random
+.TowerName
 {
     font-size: 15px;
-    color: white;
-    font-family: Radiance;
+    letter-spacing: 1px;
     horizontal-align: center;
     text-align: center;
+    color: white;
+    font-family: Radiance;
 }
 
 .TowerImage
 {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
+}
+
+.TowerImageCircle
+{
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    margin-left: 6px;
 }
 
 

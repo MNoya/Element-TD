@@ -31,15 +31,20 @@ function GetStats(steamID32) {
             $("#under30").text = allTime["under30"]
 
             // GameMode
-            var normal = allTime["normal"]
-            var hard = allTime["hard"]
-            var veryhard = allTime["veryhard"]
-            var insane = allTime["insane"]
-            var total_matches = normal+hard+veryhard+insane
-            BarStyle("normal", normal, total_matches)
-            BarStyle("hard", hard, total_matches)
-            BarStyle("veryhard", veryhard, total_matches)
-            BarStyle("insane", insane, total_matches)
+            $.Msg(allTime)
+            MakeBars(allTime, ["normal","hard","veryhard","insane"])
+            MakeBoolBar(allTime, "order_chaos")
+            MakeBoolBar(allTime, "horde_endless")
+            MakeBoolBar(allTime, "express")
+
+            var random = allTime["random"]
+            var gamesPlayed = allTime["gamesPlayed"]
+            $("#random").text = random+" ("+(random/gamesPlayed*100).toFixed(0)+"%)"
+            //$("#gamesPlayed").text = gamesPlayed
+
+            // Towers
+            $("#towers").text = allTime["towers"] || 0
+            $("#towersSold").text = allTime["towersSold"] || 0
             
             // Element Usage
             var light = allTime["light"]
@@ -59,8 +64,6 @@ function GetStats(steamID32) {
             nextStart = RadialStyle("nature", nextStart, nature/total_elem)
             nextStart = RadialStyle("earth", nextStart, earth/total_elem)
 
-            var random = allTime["random"]
-            $("#random").text = random+" ("+(random/total_matches*100).toFixed(0)+"%)"
 
             $("#"+favorite+"_usage").GetParent().AddClass("MostUsed")
         }
@@ -71,13 +74,69 @@ function GetStats(steamID32) {
     //GetRank(steamID32, 2, "FrogsRank") // Classic Rank request
 }
 
-function BarStyle(panelName, cant, total) {
+function MakeBoolBar(data, name) {
+    var panel = $("#"+name)
+    var not_panel = $("#not_"+name)
+
+    var total = data["gamesPlayed"]
+    var numValue = data[name] || 0
+    var value = numValue / total * 100
+    var not_value = 100 - value
+
+    $.Msg(name+": ",value.toFixed(1), "%")
+
+    panel.style['width'] = value+"%;"
+    not_panel.text = numValue//value.toFixed(0)+"%"
+}
+
+// This requires that every entry on arrayNames has a panel bar with the same ID name
+function MakeBars (data, arrayNames) {
+    // Count total and setup widths
+    var total = 0
+    var list = {}
+    for (var i = 0; i < arrayNames.length; i++) {
+        var value = data[arrayNames[i]]
+        if (value)
+        {
+            list[arrayNames[i]] = value
+            total+=value
+        }
+    };
+
+    // Sort by values and set bars
+    var remaining = 100
+    bySortedValue(list, function(key, value) {
+        remaining -= BarStyle(key, value, total, remaining)
+    });
+}
+
+function bySortedValue(obj, callback, context) {
+    var tuples = [];
+
+    for (var key in obj) tuples.push([key, obj[key]]);
+
+    tuples.sort(function(a, b) { return a[1] < b[1] ? 1 : a[1] > b[1] ? -1 : 0 });
+
+    var length = tuples.length;
+    while (length--) callback.call(context, tuples[length][0], tuples[length][1]);
+}
+
+function BarStyle(panelName, cant, total, remaining) {
     var percent = (cant/total*100)
+    var minWidth = cant.toString().length * 5
     var panel = $("#"+panelName)
     panel.percent = percent
-    if (percent < 10) percent=10
+
+    if (percent < minWidth)
+        percent = minWidth
+
+    if (percent > remaining)
+        percent = remaining
+
     panel.style['width'] = percent+"%;"
     panel.text = cant
+
+    return percent
 }
 
 function HoverDiff (name) {
@@ -87,7 +146,6 @@ function HoverDiff (name) {
 
 function RadialStyle (panelName, start, percent) {
     var angle = percent*360
-    $.Msg("Radial Style of "+angle.toFixed(1)+" from "+start)
     
     $("#"+panelName).style["clip"] = "radial( 50% 50%,"+start+"deg, "+angle+"deg );"
     $("#"+panelName+"_usage").text = (percent*100).toFixed(1)+"%"
@@ -167,7 +225,7 @@ function MakeButtonVisible() {
     $("#ProfileToggleContainer").SetHasClass("Hide", !bShowProfile)
 }
 
-function Setup() {
+function LoadLocalProfile() {
     var steamID64 = GameUI.GetLocalPlayerSteamID() //34961594
     var steamID32 = GameUI.ConvertID32(steamID64)
     $("#AvatarImageMini").steamid = steamID64
@@ -180,7 +238,5 @@ function Setup() {
 
 (function () {
     $.Schedule(0.1, MakeButtonVisible)
-    $.Schedule(0.1, Setup)
-
-    $("#Profile").ToggleClass("Hide")
+    $.Schedule(0.1, LoadLocalProfile)
 })();
