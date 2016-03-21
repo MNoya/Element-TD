@@ -100,11 +100,9 @@ function MakeBars (data, arrayNames) {
     var list = {}
     for (var i = 0; i < arrayNames.length; i++) {
         var value = data[arrayNames[i]]
-        if (value)
-        {
-            list[arrayNames[i]] = value
-            total+=value
-        }
+        $.Msg(value, arrayNames[i])
+        list[arrayNames[i]] = value
+        total+=value
     };
 
     // Sort by values and set bars
@@ -128,6 +126,7 @@ function bySortedValue(obj, callback, context) {
 function BarStyle(panelName, cant, total, remaining) {
     var percent = (cant/total*100)
     var minWidth = cant.toString().length * 5
+    if (cant == 0) minWidth = 0
     var panel = $("#"+panelName)
     panel.percent = percent
 
