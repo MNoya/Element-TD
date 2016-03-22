@@ -65,7 +65,7 @@ function Build( event )
         end
 
         -- Play a sound
-        Sounds:EmitSoundOnClient(playerID, "Building.Placement") --DOTA_Item.ObserverWard.Activate
+        Sounds:EmitSoundOnClient(playerID, "DOTA_Item.ObserverWard.Activate")
     end)
 
     -- The construction failed and was never confirmed due to the gridnav being blocked in the attempted area
