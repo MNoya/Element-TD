@@ -11,7 +11,7 @@
             <Panel class="ProfileButton" onactivate="ToggleProfile()">
                 <Label id="ProfileHeaderTitle" text="#profile_title" />
                 <Panel id="PopoutArrow" class="OpenMenuArrow" />
-                <Label id="New" text="#etd_new_feature"/>
+                <!--<Label id="New" text="#etd_new_feature"/>-->
             </Panel>
             <DOTAAvatarImage id="AvatarImageMini" steamid=""/>
         </Panel>
@@ -116,11 +116,10 @@
                     <Panel id="GameModeStats">
                         <Label class="SectionTitle" text="#profile_gamemode"/>
 
-                        <!--<Panel class="StatContainer">
-                            <Label id="gamesPlayed" class="Stat" text="0"/>
-                            <Label class="StatLabel" text="#profile_games_played"/>
+                        <Panel id="GamesPlayedPanel">
+                            <Label id="GamesPlayedLabel" text="#profile_games_played"/>
+                            <Label id="gamesPlayed" text="0"/>
                         </Panel>
-                        -->
 
                         <Panel class="BarContainer">
                             <Label class="SectionSubTitle" text="#profile_difficulties"/>
@@ -158,91 +157,108 @@
 
                     </Panel>
 
-
                     <Panel id="TowerStats">
                         <Label class="SectionTitle" text="#profile_tower"/>
-                        <Panel id="TowerContainer">
-                            <Panel id="TowerSpecificStats">
-                                <Panel class="TowerStatPanel">
-                                    <Image id="RandomImage"/>
-                                    <Panel class="TowerLabels">
-                                        <Label class="TowerSubLabels" text="#element_random"/>
-                                        <Label id="random" class="TowerName"/>
+                        <Panel id="TowerStatContainer">
+                            <!--First Column: general -->
+                            <Panel id="TowerStatContainerLeft">
+                                <Panel class="InfoTowerStats">
+                                    <Panel class="TowerStatPanel">
+                                        <Label id="towersBuilt" class="TowerStat" text="0"/>
+                                        <Label class="StatLabel" text="#profile_towers_built"/>
+                                    </Panel>
+
+                                    <Panel class="TowerStatPanel">
+                                        <Label id="towersSold" class="TowerStat" text="0"/>
+                                        <Label class="StatLabel" text="#profile_towers_sold"/>
                                     </Panel>
                                 </Panel>
 
-                                <Panel class="TowerStatPanel">
-                                    <Image class="TowerImage" src="file://{images}/spellicons/towers/quark.png"/>
-                                    <Panel class="TowerLabels">
-                                        <Label class="TowerSubLabels" text="#profile_first_dual"/>
-                                        <Label id="dual" class="TowerName" text="#quark_tower_name"/>
+                                <Panel class="TowerStatCont">
+                                    <Panel id="RandomPanel" class="TowerStatPanel">
+                                        <Image id="RandomImage"/>
+                                        <Panel class="TowerLabels">
+                                            <Label class="TowerSubLabels" text="#element_random"/>
+                                            <Label id="random" class="TowerName"/>
+                                        </Panel>
+                                    </Panel>
+
+                                    <Panel id="FirstDualPanel" class="TowerStatPanel">
+                                        <Image class="TowerImage" src="file://{images}/spellicons/towers/quark.png"/>
+                                        <Panel class="TowerLabels">
+                                            <Label class="TowerSubLabels" text="#profile_first_dual"/>
+                                            <Label id="dual" class="TowerName" text="#quark_tower_name"/>
+                                        </Panel>
+                                    </Panel>
+
+                                    <Panel id="FirstTriplePanel" class="TowerStatPanel">
+                                        <Image class="TowerImage" src="file://{images}/spellicons/towers/nova.png"/>
+                                        <Panel class="TowerLabels">
+                                            <Label class="TowerSubLabels" text="#profile_first_triple"/>
+                                            <Label id="triple" class="TowerName" text="#nova_tower_name"/>
+                                        </Panel>
                                     </Panel>
                                 </Panel>
-
-                                <Panel class="TowerStatPanel">
-                                    <Image class="TowerImage" src="file://{images}/spellicons/towers/nova.png"/>
-                                    <Panel class="TowerLabels">
-                                        <Label class="TowerSubLabels" text="#profile_first_triple"/>
-                                        <Label id="triple" class="TowerName" text="#nova_tower_name"/>
-                                    </Panel>
-                                </Panel>
-
-                                <Panel class="TowerStatPanel">
-                                    <Image class="TowerImageCircle" src="file://{images}/spellicons/towers/gold.png"/>
-                                    <Label id="goldTowerEarn" class="TowerStat gold" text="0"/>
-                                    <Label class="StatLabel " text="#profile_gold_tower"/>
-                                </Panel>
-
-                                <Panel class="TowerStatPanel">
-                                    <Image class="TowerImageCircle" src="file://{images}/spellicons/towers/life.png"/>
-                                    <Label id="lifeTowerKills" class="TowerStat life" text="0"/>
-                                    <Label class="StatLabel" text="#profile_life_tower"/>
-                                </Panel>
-
                             </Panel>
 
+                            <!--Second Column: usage pie chart -->
                             <Panel id="ElementUsage">
-                                <Panel id="ElementUsageContainer">
-                                    <Panel id="ElementPieChart">
-                                        <Image id="light" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/light.png"/>
-                                        <Image id="dark" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/dark.png"/>
-                                        <Image id="water" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/water.png"/>
-                                        <Image id="fire" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/fire.png"/>
-                                        <Image id="nature" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/nature.png"/>
-                                        <Image id="earth" class="ElementUsageImage"   src="file://{resources}/images/custom_game/resources/earth.png"/>
+                                <Panel id="ElementPieChart">
+                                    <Image id="light" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/light.png"/>
+                                    <Image id="dark" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/dark.png"/>
+                                    <Image id="water" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/water.png"/>
+                                    <Image id="fire" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/fire.png"/>
+                                    <Image id="nature" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/nature.png"/>
+                                    <Image id="earth" class="ElementUsageImage"   src="file://{resources}/images/custom_game/resources/earth.png"/>
+                                </Panel>
+                            </Panel>
+
+                            <!--Third Column: misc & pie chart numbers -->
+                            <Panel id="TowerStatContainerRight">
+                                <Panel class="InfoTowerStats" id='RightTowerStats'>
+                                    <Panel class="TowerStatPanel">
+                                        <Label id="goldTowerEarn" class="TowerStat gold" text="0"/>
+                                        <Image class="TowerImageCircle" src="file://{images}/spellicons/towers/gold.png"/>
+                                        <Label class="StatLabel " text="#profile_gold_tower"/>
                                     </Panel>
 
-                                    <Panel id="ElementLabels">
-                                        <Panel class="ElementLabelPanel">
-                                            <Label id="light_usage" class="ElementUsageLabel"/>
-                                            <Label class="ElementLabel" html="true" text="#light"/>
-                                        </Panel>
-
-                                        <Panel class="ElementLabelPanel">
-                                            <Label id="dark_usage" class="ElementUsageLabel"/>
-                                            <Label class="ElementLabel" html="true" text="#dark"/>
-                                        </Panel>
-
-                                        <Panel class="ElementLabelPanel">
-                                            <Label id="water_usage" class="ElementUsageLabel"/>
-                                            <Label class="ElementLabel" html="true" text="#water"/>
-                                        </Panel>
-
-                                        <Panel class="ElementLabelPanel">
-                                            <Label id="fire_usage" class="ElementUsageLabel"/>
-                                            <Label class="ElementLabel" html="true" text="#fire"/>
-                                        </Panel>
-
-                                        <Panel class="ElementLabelPanel">
-                                            <Label id="nature_usage" class="ElementUsageLabel"/>
-                                            <Label class="ElementLabel" html="true" text="#nature"/>
-                                        </Panel>
-
-                                        <Panel class="ElementLabelPanel">
-                                            <Label id="earth_usage" class="ElementUsageLabel"/>
-                                            <Label class="ElementLabel" html="true" text="#earth"/>
-                                        </Panel>    
+                                    <Panel class="TowerStatPanel">
+                                        <Label id="lifeTowerKills" class="TowerStat life" text="0"/>
+                                        <Image class="TowerImageCircle" src="file://{images}/spellicons/towers/life.png"/>
+                                        <Label class="StatLabel" text="#profile_life_tower"/>
                                     </Panel>
+                                </Panel>
+
+                                <Panel id="ElementLabels">
+                                    <Panel class="ElementLabelPanel">
+                                        <Label id="light_usage" class="ElementUsageLabel"/>
+                                        <Label class="ElementLabel" html="true" text="#light"/>
+                                    </Panel>
+
+                                    <Panel class="ElementLabelPanel">
+                                        <Label id="dark_usage" class="ElementUsageLabel"/>
+                                        <Label class="ElementLabel" html="true" text="#dark"/>
+                                    </Panel>
+
+                                    <Panel class="ElementLabelPanel">
+                                        <Label id="water_usage" class="ElementUsageLabel"/>
+                                        <Label class="ElementLabel" html="true" text="#water"/>
+                                    </Panel>
+
+                                    <Panel class="ElementLabelPanel">
+                                        <Label id="fire_usage" class="ElementUsageLabel"/>
+                                        <Label class="ElementLabel" html="true" text="#fire"/>
+                                    </Panel>
+
+                                    <Panel class="ElementLabelPanel">
+                                        <Label id="nature_usage" class="ElementUsageLabel"/>
+                                        <Label class="ElementLabel" html="true" text="#nature"/>
+                                    </Panel>
+
+                                    <Panel class="ElementLabelPanel">
+                                        <Label id="earth_usage" class="ElementUsageLabel"/>
+                                        <Label class="ElementLabel" html="true" text="#earth"/>
+                                    </Panel>    
                                 </Panel>
                             </Panel>
                         </Panel>

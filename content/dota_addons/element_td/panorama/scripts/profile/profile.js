@@ -43,7 +43,10 @@ function GetStats(steamID32) {
             var random = allTime["random"]
             var gamesPlayed = allTime["gamesPlayed"]
             $("#random").text = random+" ("+(random/gamesPlayed*100).toFixed(0)+"%)"
-            //$("#gamesPlayed").text = gamesPlayed
+            $("#towersBuilt").text = Number(allTime["towers"]) + Number(allTime["towersSold"])
+            $("#towersSold").text = allTime["towersSold"]
+            $("#lifeTowerKills").text = allTime["lifeTowerKills"]
+            $("#goldTowerEarn").text = GameUI.FormatGold(allTime["goldTowerEarn"])
 
             // Towers
             
@@ -117,6 +120,8 @@ function MakeBars (data, arrayNames) {
     bySortedValue(list, function(key, value) {
         remaining -= BarStyle(key, value, total, remaining)
     });
+
+    $("#gamesPlayed").text = total
 }
 
 function bySortedValue(obj, callback, context) {
@@ -296,7 +301,7 @@ function LoadLocalProfile() {
 
     $("#AvatarImageMini").steamid = steamID64
 
-    //ToggleProfile()
+    ToggleProfile()
 }
 
 (function () {

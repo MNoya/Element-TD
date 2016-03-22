@@ -254,7 +254,7 @@
         "profile_tower"         "Tower Usage"
         "profile_element_usage" "Element Usage"
         "profile_difficulties"  "Difficulty"
-        "profile_games_played"  "GamesPlayed"
+        "profile_games_played"  "Games Played"
         "profile_first_dual"    "First Dual"
         "profile_first_triple"  "First Triple"
         "profile_towers_built"  "Towers Built"

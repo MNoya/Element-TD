@@ -272,6 +272,7 @@ DOTAUserName #UserNameProfile
     width: 50%;
     height: 98%;
     margin-right: 12px;
+    padding: 5px;
 
     flow-children: down;
 }
@@ -326,16 +327,8 @@ DOTAUserName #UserNameProfile
 {
     flow-children: down;
 
-    width: 33%;
+    width: 32%;
     height: 100%;
-}
-
-.StatsColumn2
-{
-    flow-children: down;
-
-    width: 50%;
-    height: 40px;
 }
 
 .StatEntry
@@ -349,14 +342,14 @@ DOTAUserName #UserNameProfile
     font-size: 14px;
     letter-spacing: 1px;
     color: white;
-    width: 120px;
+    width: 125px;
     text-align: left;
     font-family: Radiance;
 }
 
 .Stat
 {
-    width: 60px;
+    width: 55px;
     font-size: 14px;
     letter-spacing: 1px;
     color: white;
@@ -403,10 +396,9 @@ DOTAUserName #UserNameProfile
 #GameModeStats
 {
     width: 100%;
-    height: 130px;
+    height: 160px;
     flow-children: down;
     margin-top: 5px;
-    margin-bottom: 10px;
 }
 
 #GameModeBars
@@ -415,6 +407,34 @@ DOTAUserName #UserNameProfile
     height: 20px;
     horizontal-align: left;
     flow-children: right;
+}
+
+#GamesPlayedPanel
+{
+    width: 100%;
+    height: 20px;
+    flow-children: right;
+}
+
+#GamesPlayedLabel
+{
+    width: 23%;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-left: 25px;
+    color: white;
+    font-family: Radiance;
+}
+
+#gamesPlayed
+{
+    width: 60px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: white;
+    text-transform: uppercase;
+    text-align: left;
+    font-family: Radiance;
 }
 
 .BarContainer
@@ -472,11 +492,35 @@ DOTAUserName #UserNameProfile
 #TowerStats
 {
     width: 100%;
-    height: 38%;
+    height: 70%;
     flow-children: down;
 }
 
-#TowerContainer
+#TowerStatContainer
+{
+    width: 100%;
+    height: 100%;
+    flow-children: right;
+}
+
+#TowerStatContainerLeft, #TowerStatContainerRight
+{
+    width: 30%;
+    height: 100%;
+    flow-children: down;
+}
+
+#TowerStatContainerRight
+{
+    width: 38%;
+}
+
+#SecondStatContainer
+{
+    margin-left: 50px;
+}
+
+#TowerUsageContainer
 {
     width: 100%;
     height: 100%;
@@ -491,10 +535,21 @@ DOTAUserName #UserNameProfile
     flow-children: down;
 }
 
+.InfoTowerStats
+{
+    width: 100%;
+    margin-bottom: 5px;
+    flow-children: down;
+}
+
+#RightTowerStats
+{
+    margin-left: -20px;
+}
+
 .TowerStatPanel
 {
     width: 100%;
-    padding-left: 10px;
     margin-bottom: 5px;
     flow-children: right;
 }
@@ -502,7 +557,6 @@ DOTAUserName #UserNameProfile
 // Element Usage Panels
 #ElementUsage
 {
-    width: 65%;
     height: 100%;
     horizontal-align: right;
     vertical-align: center;
@@ -519,7 +573,7 @@ DOTAUserName #UserNameProfile
     font-size: 21px;
     letter-spacing: 1px;
     margin-left: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     color: white;
     text-transform: uppercase;
     font-family: Radiance;
@@ -547,6 +601,7 @@ DOTAUserName #UserNameProfile
     width: 160px;
     height: 160px;
     margin-right: 10px;
+    vertical-align: center;
 }
 
 .ElementUsageImage
@@ -559,7 +614,14 @@ DOTAUserName #UserNameProfile
 #ElementLabels
 {
     flow-children: down;
-    margin-top: 10px;
+}
+
+.TowerStatCont
+{
+    flow-children: down;
+    height: 100%;
+    width: 100%;
+    margin-left: 5px;
 }
 
 .ElementLabelPanel
@@ -592,11 +654,9 @@ DOTAUserName #UserNameProfile
     width: 140px;
 }
 
-#RandomPanel
+#RandomPanel, #FirstDualPanel, #FirstTriplePanel
 {
-    vertical-align: top;
-    horizontal-align: center;
-    flow-children: right;
+    margin-bottom: 10px;
 }
 
 #RandomImage
@@ -648,7 +708,8 @@ DOTAUserName #UserNameProfile
     width: 20px;
     height: 20px;
     border-radius: 20px;
-    margin-left: 6px;
+    margin-top: -2px;
+    margin-right: 2px;
 }
 
 
@@ -702,6 +763,11 @@ DOTAUserName #UserNameProfile
     width: 40px;
     vertical-align: center;
     margin-left: 5px;
+}
+
+Label
+{
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
 }
 
 #FriendName
