@@ -160,6 +160,10 @@ function Rewards:SetCosmeticOverride(hero, unit, reward)
     unit:AddNewModifier(nil, nil, "modifier_out_of_world", {})
     unit:SetParent(hero, "attach_hitloc")
 
+    if reward.precache_unit then
+        PrecacheUnitByNameAsync(reward.precache_unit, function(...) end)
+    end
+
     Rewards:ApplyAnimations(unit, reward)
     Rewards:MovementAnimations(hero)
 

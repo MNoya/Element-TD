@@ -128,6 +128,33 @@ function Build( event )
             Log:error("Unknown script class, " .. scriptClassName .. " for tower " .. building_name)
         end
 
+        local steamID32 = PlayerResource:GetSteamAccountID(playerID)
+        local steamID64 = Rewards:ConvertID64(steamID32)
+        local rewards = Rewards.file[steamID64]
+        if rewards then
+            local models = rewards["change_models"]
+            if models and models[unit:GetUnitName()] then
+                local data = models[unit:GetUnitName()]
+                if data.model then
+                    unit:SetModel(data.model)
+                    unit.override_model = data.model
+                    unit:StartGesture(ACT_DOTA_SPAWN)
+
+                    if data.scale then
+                        unit.overrideMaxScale = data.scale
+                        unit:SetModelScale(data.scale)
+
+                    end
+
+                    if data.offset then
+                        local origin = unit:GetAbsOrigin()
+                        origin.z = origin.z + data.offset
+                        unit:SetAbsOrigin(origin)
+                    end
+                end
+            end
+        end
+
         -- Adjust health to the buildings TotalCost
         unit:SetMaxHealth(GetUnitKeyValue(building_name, "TotalCost"))
         unit:SetBaseMaxHealth(GetUnitKeyValue(building_name, "TotalCost"))
@@ -184,6 +211,11 @@ function Build( event )
         end
 
         UpdateScoreboard(playerID)
+
+        if unit.override_model then
+            unit:SetModel(unit.override_model)
+            unit:StartGesture(ACT_DOTA_IDLE)
+        end
     end)
 
     -- These callbacks will only fire when the state between below half health/above half health changes.

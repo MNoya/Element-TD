@@ -383,6 +383,15 @@
 	        }
 	    }
 	}
+	"pugna_wards"
+	{
+	    "BaseClass"     "npc_dota_creature"
+	    "precache"
+	    {
+	        "model" "models/items/pugna/ward/draining_wight/draining_wight.vmdl"
+	        "model" "models/items/pugna/ward/weta_call_of_the_nether_lotus_ward/weta_call_of_the_nether_lotus_ward.vmdl"
+	    }
+	}
 	"abomination"
 	{
 	    "MinimapIcon"               "minimap_icon_purple"

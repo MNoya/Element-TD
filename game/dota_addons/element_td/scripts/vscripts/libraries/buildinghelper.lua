@@ -1,4 +1,4 @@
-BH_VERSION = "1.1.1"
+BH_VERSION = "1.1.2"
 
 require('libraries/timers')
 require('libraries/selection')
@@ -981,7 +981,7 @@ function BuildingHelper:StartBuilding(builder)
 
     local bScale = buildingTable:GetVal("Scale", "bool") -- whether we should scale the building.
     local fInitialModelScale = 0.2 -- initial size
-    local fMaxScale = buildingTable:GetVal("MaxScale", "float") or 1 -- the amount to scale to
+    local fMaxScale = building.overrideMaxScale or buildingTable:GetVal("MaxScale", "float") or 1 -- the amount to scale to
     local fScaleInterval = (fMaxScale-fInitialModelScale) / (buildTime / fserverFrameRate) -- scale to add every frame, distributed by build time
     local fCurrentScale = fInitialModelScale -- start the building at the initial model scale
     local bScaling = false -- Keep tracking if we're currently model scaling.
