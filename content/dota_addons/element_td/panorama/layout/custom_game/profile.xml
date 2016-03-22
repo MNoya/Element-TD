@@ -240,6 +240,20 @@
                 <Panel id="RightPanel">
                     <Panel id="FriendRanksHeader">
                         <Label id="FriendRanksTitle" class="ProfilePanelHeader" text="#profile_friends" />
+                        <Panel id="FriendRanksTabs">
+                            <Button class="LeaderboardButton" onactivate="ShowFriendRanks('classic')">
+                                <Label id="classic_radio" class="LeaderboardTab" text="#profile_classic_ranks"/>
+                            </Button>
+
+                            <Button class="LeaderboardButton" onactivate="ShowFriendRanks('express')">
+                                <Label id="express_radio" class="LeaderboardTab" text="#profile_express_ranks"/>
+                            </Button>
+
+                            <Button class="LeaderboardButton" onactivate="ShowFriendRanks('frogs')">
+                                <Label id="frogs_radio" class="LeaderboardTab" text="#profile_frogs_ranks"/>
+                            </Button>
+                        </Panel>
+
                         <Panel id="FriendRanksCategories">
                             <Label id="Rank" class="FriendCategory" text="#profile_rank" />
                             <Label id="Score" class="FriendCategory" text="#profile_score" />

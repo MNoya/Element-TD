@@ -5,7 +5,8 @@ var friendsURL = 'http://hatinacat.com/leaderboard/data_request.php?req=friends&
 var ranksURL = 'http://hatinacat.com/leaderboard/data_request.php?req=player&ids='
 var Profile = $("#Profile")
 var friendsPanel = $("#FriendsContainer")
-var friendsLoaded = false;
+var currentProfile;
+var currentLB = 0;
 var friendsRank
 var friends = []
 
@@ -100,7 +101,6 @@ function MakeBars (data, arrayNames) {
     var list = {}
     for (var i = 0; i < arrayNames.length; i++) {
         var value = data[arrayNames[i]]
-        $.Msg(value, arrayNames[i])
         list[arrayNames[i]] = value
         total+=value
     };
@@ -171,10 +171,11 @@ function GetRank (steamID32, leaderboard_type, panelName) {
     })
 }
 
-function GetPlayerFriends(steamID64) {
-    $.Msg("Getting friends data for "+steamID64+"...")
+function GetPlayerFriends(steamID32, leaderboard_type) {
+    $.Msg("Getting friends data for "+steamID32+"...")
 
     friendsRank = 0
+    currentProfile = steamID32
     var delay = 0
     var delay_per_panel = 0.1;
 
@@ -183,9 +184,8 @@ function GetPlayerFriends(steamID64) {
     };
     friends = []
 
-    $.AsyncWebRequest( friendsURL+steamID64, { type: 'GET', 
+    $.AsyncWebRequest( friendsURL+steamID32+"&lb="+leaderboard_type, { type: 'GET', 
         success: function( data ) {
-            friendsLoaded = true;
             var info = JSON.parse(data);
             var players_info = info["players"]
             
@@ -203,7 +203,10 @@ function GetPlayerFriends(steamID64) {
             {
                 var callback = function( data )
                 {
-                    return function(){ CreateFriendPanel(data) }
+                    return function(){ 
+                        if (currentProfile == steamID32 && currentLB == leaderboard_type)
+                            CreateFriendPanel(data) 
+                    }
                 }( players_info[i] );
 
                 $.Schedule( delay, callback )
@@ -239,9 +242,9 @@ function LoadProfile(steamID64) {
     $("#AvatarImageProfile").steamid = steamID64
     $("#UserNameProfile").steamid = steamID64
 
-    var steamID32 = GameUI.ConvertID32(steamID64)
-    GetStats(steamID32)
-    GetPlayerFriends(steamID32)
+    currentProfile = GameUI.ConvertID32(steamID64)
+    GetStats(currentProfile)
+    ShowFriendRanks("classic")
 }
 
 function ToggleProfile() {
@@ -250,6 +253,18 @@ function ToggleProfile() {
     // Load self in the background
     if (Profile.BHasClass( "Hide" ))
         LoadLocalProfile()
+}
+
+var LB_types = ["classic","express","frogs"]
+function ShowFriendRanks(leaderboard_type) {
+    for (var i = 0; i < LB_types.length; i++) {
+        var name = LB_types[i]
+        var panel = $("#"+name+"_radio")
+        panel.SetHasClass( "ActiveTab", LB_types[i] == leaderboard_type )
+    };
+
+    currentLB = LB_types.indexOf(leaderboard_type)
+    GetPlayerFriends(currentProfile, currentLB)
 }
 
 function MakeButtonVisible() {
@@ -261,7 +276,9 @@ function LoadLocalProfile() {
     var steamID64 = GameUI.GetLocalPlayerSteamID()
     LoadProfile(steamID64)
 
-     $("#AvatarImageMini").steamid = steamID64  
+    $("#AvatarImageMini").steamid = steamID64
+
+    //ToggleProfile()
 }
 
 (function () {
