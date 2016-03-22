@@ -4,16 +4,6 @@ var Root = $.GetContextPanel()
 var rankingTopBar = $( '#RankingTopBar' );
 var enabled = false;
 
-function _SetTextSafe( panel, childName, textValue )
-{
-    if ( panel === null )
-        return;
-    var childPanel = panel.FindChildInLayoutFile( childName )
-    if ( childPanel === null )
-        return;
-    childPanel.text = textValue;
-}
-
 function DisplayRanks()
 {
     $.Msg("Diplaying Ranks")
@@ -34,29 +24,12 @@ function DisplayRanks()
             var container = $('#sector'+playerRankInfo.sector);
             if (container !== null) {
                 if (playerRankInfo.rank != 0) {
-                    var playerPanel = $.CreatePanel( "Panel", $( '#sector'+playerRankInfo.sector ), "Player_" + playerID + "_Rank" );
-                    playerPanel.BLoadLayout( "file://{resources}/layout/custom_game/ranking_player.xml", false, false );
-                    _SetTextSafe( playerPanel, "RankingPercentile", GameUI.FormatPercentile(playerRankInfo.percentile));
-                    _SetTextSafe( playerPanel, "RankingRank", "#" + GameUI.FormatRank(playerRankInfo.rank));
-                    playerPanel.FindChildInLayoutFile( "RankingPlayer" ).AddClass(GetRankImage(playerRankInfo.rank,playerRankInfo.percentile)+"_percentile");
+                    var parent = $( '#sector'+playerRankInfo.sector )
+                    GameUI.CreatePlayerRank(parent, playerRankInfo.percentile, playerRankInfo.rank, "Player_" + playerID + "_Rank" )
                 }
             }
         }
     }
-}
-
-function GetRankImage( rank, percentile )
-{
-    if (percentile <= 20)
-        return "0";
-    else if (percentile <= 40)
-        return "20";
-    else if (percentile <= 60)
-        return "40";
-    else if (percentile <= 80)
-        return "60";
-    else
-        return "80";
 }
 
 function HideRank()

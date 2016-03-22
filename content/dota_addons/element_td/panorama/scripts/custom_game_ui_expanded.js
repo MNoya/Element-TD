@@ -59,6 +59,38 @@ GameUI.FormatKills = function (num) {
     }
 }
 
+GameUI.SetTextSafe = function ( panel, childName, textValue )
+{
+    if ( panel === null )
+        return;
+    var childPanel = panel.FindChildInLayoutFile( childName )
+    if ( childPanel === null )
+        return;
+    childPanel.text = textValue;
+}
+
+GameUI.CreatePlayerRank = function(parent, percentile, rank, id) {
+    var panel = $.CreatePanel( "Panel", parent, id);
+    panel.BLoadLayout( "file://{resources}/layout/custom_game/ranking_player.xml", false, false );
+    GameUI.SetTextSafe( panel, "RankingPercentile", GameUI.FormatPercentile(percentile));
+    GameUI.SetTextSafe( panel, "RankingRank", "#" + GameUI.FormatRank(rank));
+    panel.FindChildInLayoutFile( "RankingPlayer" ).AddClass(GameUI.GetRankImage(rank,percentile)+"_percentile");
+}
+
+GameUI.GetRankImage = function ( rank, percentile )
+{
+    if (percentile <= 20)
+        return "0";
+    else if (percentile <= 40)
+        return "20";
+    else if (percentile <= 60)
+        return "40";
+    else if (percentile <= 80)
+        return "60";
+    else
+        return "80";
+}
+
 GameUI.CommaFormat = function (value)
 {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

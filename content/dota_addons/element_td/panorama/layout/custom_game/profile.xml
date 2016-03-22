@@ -57,7 +57,19 @@
             <Panel id="ProfileMenuContainer">
 
                 <Panel hittest="false" id="LeftPanel">
-                    <Label class="ProfilePanelHeader" text="#profile_lifetime_stats"/>
+                    <Panel id="ProfileTabs">
+                        <Button class="ProfileTabButton" onactivate="ShowProfileInfo('stats')">
+                            <Label id="stats_radio" class="ProfileTab ActiveTab" text="#profile_lifetime_stats"/>
+                        </Button>
+
+                        <Button id="MatchesButton" class="ProfileTabButton" onactivate="ShowProfileInfo('matches')">
+                            <Label id="matches_radio" class="ProfileTab" text="#profile_matches"/>
+                        </Button>
+
+                        <Button id="AchievButton" class="ProfileTabButton" onactivate="ShowProfileInfo('achievements')">
+                            <Label id="achievements_radio" class="ProfileTab" text="#profile_achievements"/>
+                        </Button>
+                    </Panel>
 
                     <Panel id="GeneralStats">
                         <Label class="SectionTitle" text="#profile_general"/>
@@ -242,15 +254,15 @@
                         <Label id="FriendRanksTitle" class="ProfilePanelHeader" text="#profile_friends" />
                         <Panel id="FriendRanksTabs">
                             <Button class="LeaderboardButton" onactivate="ShowFriendRanks('classic')">
-                                <Label id="classic_radio" class="LeaderboardTab" text="#profile_classic_ranks"/>
+                                <Label id="classic_radio" class="ProfileTab" text="#profile_classic_ranks"/>
                             </Button>
 
                             <Button class="LeaderboardButton" onactivate="ShowFriendRanks('express')">
-                                <Label id="express_radio" class="LeaderboardTab" text="#profile_express_ranks"/>
+                                <Label id="express_radio" class="ProfileTab" text="#profile_express_ranks"/>
                             </Button>
 
                             <Button class="LeaderboardButton" onactivate="ShowFriendRanks('frogs')">
-                                <Label id="frogs_radio" class="LeaderboardTab" text="#profile_frogs_ranks"/>
+                                <Label id="frogs_radio" class="ProfileTab" text="#profile_frogs_ranks"/>
                             </Button>
                         </Panel>
 

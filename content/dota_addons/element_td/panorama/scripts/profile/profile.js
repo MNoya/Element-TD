@@ -70,7 +70,14 @@ function GetStats(steamID32) {
             nextStart = RadialStyle("nature", nextStart, nature/total_elem)
             nextStart = RadialStyle("earth", nextStart, earth/total_elem)
 
-            
+            // Milestones
+            var milestones = player_info["milestones"]
+            if (milestones === undefined)
+                return
+
+            for (var i in milestones) {
+                $.Msg(milestones[i])
+            };
         }
     })
 
@@ -265,6 +272,17 @@ function ShowFriendRanks(leaderboard_type) {
 
     currentLB = LB_types.indexOf(leaderboard_type)
     GetPlayerFriends(currentProfile, currentLB)
+}
+
+var leftNames = ["stats","matches","achievements"]
+function ShowProfileInfo ( panelTabName ) {
+    $.Msg(name)
+
+    for (var i = 0; i < leftNames.length; i++) {
+        var name = leftNames[i]
+        var panel = $("#"+name+"_radio")
+        panel.SetHasClass( "ActiveTab", leftNames[i] == panelTabName )
+    };
 }
 
 function MakeButtonVisible() {
