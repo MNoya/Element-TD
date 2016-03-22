@@ -301,7 +301,7 @@ function LoadLocalProfile() {
 
     $("#AvatarImageMini").steamid = steamID64
 
-    ToggleProfile()
+    //ToggleProfile()
 }
 
 (function () {

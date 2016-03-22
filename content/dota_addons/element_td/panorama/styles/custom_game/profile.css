@@ -233,7 +233,7 @@ DOTAUserName #UserNameProfile
 
 .SingleRankContainer3
 {
-    width: 33.5%;
+    width: 70px;
     height: 100px;
 }
 
@@ -549,7 +549,7 @@ DOTAUserName #UserNameProfile
 
 .TowerStatPanel
 {
-    width: 100%;
+    width: 150px;
     margin-bottom: 5px;
     flow-children: right;
 }
@@ -872,7 +872,7 @@ Label
 
 .ProfileTabButton
 {
-    width: 30%;
+    width: 135px;
     height: 30px;
 }
 
