@@ -3,15 +3,19 @@
         <include src="file://{resources}/styles/custom_game/profile.css" />
     </styles>
     <scripts>
-        <include src="file://{resources}/scripts/profile/profile.js" /> 
+        <include src="file://{resources}/scripts/profile/profile.js" />
     </scripts>
     <Panel hittest='false' class="ProfileHud">
 
         <Panel class="Hide" id="ProfileToggleContainer">
-            <Panel class="ProfileButton" onactivate="ToggleProfile()">
+            <Panel id="MyProfileButton" class="ProfileButton" onactivate="ToggleProfile()">
+                <Label id="New" text="#etd_new_feature"/>
                 <Label id="ProfileHeaderTitle" text="#profile_title" />
                 <Panel id="PopoutArrow" class="OpenMenuArrow" />
-                <!--<Label id="New" text="#etd_new_feature"/>-->
+            </Panel>
+            <Panel id="CustomBuilderButton" class="ProfileButton" onactivate="ToggleCustomBuilders()">
+                <Label id="ProfileHeaderTitle" text="#profile_builders" />
+                <Panel id="PopoutArrow" class="OpenMenuArrow" />
             </Panel>
             <DOTAAvatarImage id="AvatarImageMini" steamid=""/>
         </Panel>
@@ -294,6 +298,10 @@
                     </Panel>
                 </Panel>
             </Panel>
+        </Panel>
+
+        <Panel class="Hide" id="CustomBuilders">
+
         </Panel>
 
     </Panel>

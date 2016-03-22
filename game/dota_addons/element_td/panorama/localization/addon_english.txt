@@ -228,6 +228,7 @@
 
         "profile_title"         "My Profile"
         "profile"               "Profile"
+        "profile_builders"      "Custom Builders"
         "profile_friends"       "Friend Rankings"
         "profile_percentile"    "Top"
         "profile_rank"          "Rank"

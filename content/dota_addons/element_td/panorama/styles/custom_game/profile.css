@@ -15,7 +15,7 @@
 {
     horizontal-align: left;
     vertical-align: top;
-    margin-top: 762px;
+    margin-top: 732px;
     flow-children: down;
 }
 
@@ -23,16 +23,22 @@
 {
     font-size: 18px;
     background-color: black;
-    border-radius: 0px 10px 0px 0px;
     height: 30px;
-    width: 285px;
+    width: 280px;
+}
+
+#MyProfileButton
+{
+    border-radius: 0px 10px 0px 0px;
+    margin-bottom: -1px;
+    width: 281px;
 }
 
 #ProfileHeaderTitle
 {
     margin-top: 2px;
     letter-spacing: 3px;
-    width: 150px;
+    width: 250px;
     text-align: center;
     text-transform: uppercase;
     horizontal-align: center;
@@ -82,8 +88,7 @@
     margin-top: 6px;
     margin-left: 10px;
     horizontal-align: left;
-
-    color: #FF0000;
+    color: white;
 
     animation-name: seq_new;
     animation-duration: 3s;
@@ -96,12 +101,12 @@
 {
     0%
     {
-        text-shadow: 0px 0px 12px 1.0 #BD1831;
+        text-shadow: 0px 0px 6px 1.0 #FBB23F;
     }
 
     100%
     {
-        text-shadow: 0px 0px 12px 1.5 #FF0000;
+        text-shadow: 0px 0px 6px 1.5 #FBB23F;
     }
 }
 
@@ -977,4 +982,21 @@ Label
     wash-color: white;
     background-size: 20px 20px;
     //pre-transform-scale2d: 0.8;
+}
+
+// Start of Custom Builders
+#CustomBuilders
+{
+    width: 960px;
+    height: 665px;
+    horizontal-align: center;
+    vertical-align: top;
+    margin-top: 10%;
+    background-color: #000000DD;
+    //border-radius: 20px;
+
+    border: 2px solid #484A48;
+    box-shadow: #000 -4px -4px 3px 8px;
+
+    flow-children: down;
 }

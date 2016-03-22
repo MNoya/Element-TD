@@ -4,6 +4,7 @@ var statsURL = 'http://hatinacat.com/leaderboard/data_request.php?req=stats&id='
 var friendsURL = 'http://hatinacat.com/leaderboard/data_request.php?req=friends&id='
 var ranksURL = 'http://hatinacat.com/leaderboard/data_request.php?req=player&ids='
 var Profile = $("#Profile")
+var CustomBuilders = $("#CustomBuilders")
 var friendsPanel = $("#FriendsContainer")
 var currentProfile;
 var currentLB = 0;
@@ -265,6 +266,20 @@ function ToggleProfile() {
     // Load self in the background
     if (Profile.BHasClass( "Hide" ))
         LoadLocalProfile()
+
+    CloseCustomBuilders()
+}
+
+function CloseProfile() {
+    Profile.SetHasClass( "Hide", true )
+}
+function CloseCustomBuilders(argument) {
+    CustomBuilders.SetHasClass( "Hide", true )
+}
+
+function ToggleCustomBuilders() {
+    CustomBuilders.ToggleClass("Hide")
+    CloseProfile()
 }
 
 var LB_types = ["classic","express","frogs"]
