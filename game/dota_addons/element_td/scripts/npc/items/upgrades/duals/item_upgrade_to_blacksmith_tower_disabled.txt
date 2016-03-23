@@ -26,4 +26,5 @@
 			"damage"				"15 30 100"
 		}
 	}
+	"AbilityCastRange"              "900"
 }

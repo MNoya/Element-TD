@@ -36,4 +36,5 @@
 			"duration"				"10 20 70"
 		}
 	}
+	"AbilityCastRange"              "900"
 }

@@ -31,4 +31,5 @@
 			"aftershock_damage"		"20 120 720"
 		}
 	}
+	"AbilityCastRange"              "700"
 }

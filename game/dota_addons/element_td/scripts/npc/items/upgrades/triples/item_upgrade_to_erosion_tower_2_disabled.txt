@@ -32,4 +32,5 @@
 			"dot"					"120 600"
 		}
     }
+    "AbilityCastRange"              "700"
 }

@@ -27,4 +27,5 @@
 			"bonus_gold"			"20 30"
 		}
 	}
+	"AbilityCastRange"              "1150"
 }

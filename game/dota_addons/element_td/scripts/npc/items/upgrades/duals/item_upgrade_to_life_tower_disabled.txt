@@ -26,4 +26,5 @@
 			"kills_required"				"6 4 2"
 		}
 	}
+	"AbilityCastRange"              "1150"
 }

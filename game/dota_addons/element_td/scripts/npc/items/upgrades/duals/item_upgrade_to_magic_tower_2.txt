@@ -26,4 +26,5 @@
 		"fire"		"2"
 		"fire"		"2"
 	}
+	"AbilityCastRange"              "1500"
 }

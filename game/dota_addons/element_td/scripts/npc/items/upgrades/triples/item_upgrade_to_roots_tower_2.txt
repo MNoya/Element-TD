@@ -42,4 +42,5 @@
 			"dps"					"100 500"
 		}
     }
+    "AbilityCastRange"              "900"
 }

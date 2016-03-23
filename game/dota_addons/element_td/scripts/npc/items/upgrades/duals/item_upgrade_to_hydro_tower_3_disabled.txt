@@ -25,4 +25,5 @@
 			"splash_damage"		"300 1800 10800"
 		}
 	}
+	"AbilityCastRange"              "900"
 }

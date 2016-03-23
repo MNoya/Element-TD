@@ -43,4 +43,5 @@
 			"max_damage_amp"		"15 45"
 		}
     }
+    "AbilityCastRange"              "900"
 }

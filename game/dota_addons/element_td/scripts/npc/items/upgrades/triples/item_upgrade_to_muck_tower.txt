@@ -38,4 +38,5 @@
 			"slow"					"-10 -30"
 		}
     }
+    "AbilityCastRange"              "700"
 }

@@ -24,4 +24,5 @@
 		"dark"		"3"
 		"dark"		"3"
 	}
+	"AbilityCastRange"              "1150"
 }

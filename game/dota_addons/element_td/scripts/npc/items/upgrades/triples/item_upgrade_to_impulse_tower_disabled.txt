@@ -28,4 +28,5 @@
 			"multiplier"			"2250 11250"
 		}
 	}
+	"AbilityCastRange"              "1500"
 }

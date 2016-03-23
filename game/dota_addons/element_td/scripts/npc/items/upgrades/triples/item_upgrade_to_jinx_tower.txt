@@ -38,4 +38,5 @@
 			"damage_taken"			"10 30"
 		}
     }
+    "AbilityCastRange"              "700"
 }
