@@ -460,14 +460,14 @@ function statCollection:sendCustom(args)
     if game == {} and players == {} then
         return --We have no info to actually send, truck it!
     end
-    -- If we are missing required parameters, then don't send
+    --[[-- If we are missing required parameters, then don't send
     if not self.doneInit or not self.authKey or not self.matchID or not self.SCHEMA_KEY then
         statCollection:print(errorRunInit)
         if not self.SCHEMA_KEY then
             statCollection:print(errorRunInit)
         end
         return
-    end
+    end]]
 
     -- Ensure we can only send it once, and everything is good to go
     if self.HAS_ROUNDS == false then
@@ -486,8 +486,8 @@ function statCollection:sendCustom(args)
     }
 
     local payload = {
-        authKey = self.authKey,
-        matchID = self.matchID,
+        authKey = self.authKey or "-1",
+        matchID = self.matchID or tostring(GameRules:GetMatchID()),
         modIdentifier = self.modIdentifier,
         schemaAuthKey = self.SCHEMA_KEY,
         schemaVersion = schemaVersion,
