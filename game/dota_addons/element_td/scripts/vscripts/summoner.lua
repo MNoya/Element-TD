@@ -487,14 +487,18 @@ function AddElementalTrophy(playerID, element)
     playerData.elemCount = playerData.elemCount or 0 --Number of elementals killed
     local count = playerData.elemCount
 
-    -- At 9 we make another row
+    -- At 6 we make another row
     local Y = -100
-    if count >= 9 then 
+    local offset = Vector(0,0,0)
+    if count >= 6 then 
         Y = 100
-        count = count - 9
+        count = count - 6
+    end
+    if Y == 100 then
+        offset = Vector(75, 0, 0)
     end
 
-    local position = summoner:GetAbsOrigin() + Vector(750,Y,0) + count * Vector(120,0,0)
+    local position = summoner:GetAbsOrigin() + Vector(750,Y,0) + count * Vector(150,0,0) + offset
     playerData.elemCount = playerData.elemCount + 1
 
     local elemental = CreateUnitByName(unitName, position, false, nil, nil, team)

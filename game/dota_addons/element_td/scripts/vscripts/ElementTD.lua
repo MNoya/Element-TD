@@ -447,6 +447,8 @@ end
 function ElementTD:OnHeroInGame(hero)
     local playerID = hero:GetPlayerID()
     if playerID == -1 then return end
+    if GetPlayerData(playerID) then return end --Don't create playerdata twice
+
     CreateDataForPlayer(playerID)
 
     local playerData = GetPlayerData(playerID)
