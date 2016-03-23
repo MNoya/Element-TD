@@ -3,7 +3,7 @@
 	//===============================================================================================================
 	// HERO: Wisp
 	//===============================================================================================================
-	"npc_dota_hero_abyssal_underlord"
+	"npc_dota_hero_phoenix"
 	{
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_wisp.vsndevts"
@@ -14,7 +14,7 @@
 		"HeroSelectSoundEffect"		"Hero_Wisp.Pick"
 		"ModelScale"				"0.930000"
 	
-		"override_hero"				"npc_dota_hero_abyssal_underlord"
+		"override_hero"				"npc_dota_hero_phoenix"
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
 		"MovementSpeed"				"522"
 	

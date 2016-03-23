@@ -6,7 +6,7 @@
         "addonname"                 "Element TD"
         "addon_game_name"           "Element TD"
         "npc_dota_hero_wisp"        "Builder"
-        "npc_dota_hero_abyssal_underlord"  "★ Builder ★"
+        "npc_dota_hero_phoenix"     "★ Builder ★"
 
         // messages
         "etd_welcome_message"       "Welcome to <font color='#70EA72'>Element Tower Defense</font>!"
@@ -547,8 +547,7 @@
         "DOTA_Tooltip_ability_dark_tower_overkill"                  "Overkill"
         "DOTA_Tooltip_ability_dark_tower_overkill_Description"      "Every creep kill, any damage that was not necessary to get the kill is applied to another random creep in an area around the target."
         "DOTA_Tooltip_ability_dark_tower_overkill_aoe"              "AOE:"
-
-
+        
         "DOTA_Tooltip_modifier_magic_tower_attack_range"        "Diminishing Range"
         "DOTA_Tooltip_modifier_magic_tower_attack_range_Description"        "Tower attack range decreased by %dMODIFIER_PROPERTY_ATTACK_RANGE_BONUS%."
         "DOTA_Tooltip_ability_magic_tower_range"        "Increase Range"
@@ -1392,6 +1391,11 @@
         //////////
         // Dark //
         //////////
+        "DOTA_Tooltip_ability_item_upgrade_to_focused_dark_tower"       "Focused Dark Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_focused_dark_tower_disabled"      "Focused Dark Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_focused_dark_tower_Description"       "Upgrades this tower to a Focused Dark Tower.\n\nCOST: <font color='#F0BA36'>450 Gold</font>\nELEMENT: <font color='#6C05B1'>Dark</font>\nDAMAGE TYPE: <font color='#6C05B1'>Dark</font>\nDAMAGE: <font color='#FFFFFF'>1170</font>\nRANGE: <font color='#FFFFFF'>1150</font>\nSPEED: <font color='#FFFFFF'>Average</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_focused_dark_tower_disabled_Description"      "Upgrades this tower to a Focused Dark Tower.\n<font color='#F0BA36'>Requires: </font><font color='#6C05B1'>Dark 2</font> \n\nCOST: <font color='#F0BA36'>450 Gold</font>\nELEMENT: <font color='#6C05B1'>Dark</font>\nDAMAGE TYPE: <font color='#6C05B1'>Dark</font>\nDAMAGE: <font color='#FFFFFF'>1170</font>\nRANGE: <font color='#FFFFFF'>1150</font>\nSPEED: <font color='#FFFFFF'>Average</font>"
+        
         "DOTA_Tooltip_ability_item_upgrade_to_focused_dark_tower"       "Focused Dark Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_dark_tower_disabled"      "Focused Dark Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_dark_tower_Description"       "Upgrades this tower to a Focused Dark Tower.\n\nCOST: <font color='#F0BA36'>450 Gold</font>\nELEMENT: <font color='#6C05B1'>Dark</font>\nDAMAGE TYPE: <font color='#6C05B1'>Dark</font>\nDAMAGE: <font color='#FFFFFF'>1170</font>\nRANGE: <font color='#FFFFFF'>1150</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Every creep kill, any damage that was not necessary to ensure the kill is applied to a random creep near the target."

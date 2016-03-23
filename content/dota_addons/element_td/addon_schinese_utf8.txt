@@ -6,7 +6,7 @@
         "addonname"                 "元素塔防"
         "addon_game_name"           "元素塔防"
         "npc_dota_hero_wisp"        "建造者"
-        "npc_dota_hero_abyssal_underlord"  "★ 建造者 ★"
+        "npc_dota_hero_phoenix"     "★ 建造者 ★"
 
         // messages
         "etd_welcome_message"       "欢迎来到<font color='#70EA72'>元素塔防</font>！"

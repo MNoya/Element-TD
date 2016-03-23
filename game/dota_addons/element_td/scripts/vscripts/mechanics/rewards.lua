@@ -173,7 +173,7 @@ function Rewards:SetCosmeticOverride(hero, unit, reward)
 end
 
 function Rewards:ReplaceWithFakeHero(playerID, hero)
-    local newHero = PlayerResource:ReplaceHeroWith(playerID, "npc_dota_hero_abyssal_underlord", 0, 0)
+    local newHero = PlayerResource:ReplaceHeroWith(playerID, "npc_dota_hero_phoenix", 0, 0)
     newHero.replaced = true
     return newHero
 end
