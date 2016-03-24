@@ -125,6 +125,25 @@ function CanPlayerEnableRandom( playerID )
 	return playerData.elementalCount == 0 and playerData.completedWaves < 5
 end
 
+-- Players can only buy pure essence with lvl 1 on all elements or an element at level 3
+function CanPlayerBuyPureEssence( playerID )
+    local playerData = GetPlayerData(playerID)
+    local elements = playerData.elements
+
+    local hasLvl3 = false
+    local hasLvl1 = true
+    for i,v in pairs(elements) do
+        if v == 3 then -- if level 3 of element
+            hasLvl3 = true
+        end
+        if v == 0 then
+            hasLvl1 = false
+        end
+    end
+
+    return hasLvl3 or hasLvl1
+end
+
 function PlayElementalExplosion(element, tower)
     local particleName = ExplosionParticles[element]
     local explosion = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, tower)
@@ -190,6 +209,90 @@ function ModifyElementValue(playerID, element, change)
 	UpdateScoreboard(playerID)
 end
 
+function UpdateBuildAbility(playerID, ability)
+    local abilityName = ability:GetAbilityName()
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    local element = string.match(abilityName, "build_(%l+)_tower")
+    if element then
+        local level = GetPlayerElementLevel(playerID, element)
+        if ability:GetLevel() ~= level then
+            -- Downgrade 1 -> 0
+            if level == 0 then
+                local disabledAbilityName = abilityName.."_disabled"
+                local newAbility = AddAbility(hero, disabledAbilityName, 0)
+                hero:SwapAbilities(disabledAbilityName, abilityName, true, false)
+                hero:RemoveAbility(abilityName)
+            else
+                ability:SetLevel(level)
+            end
+        end
+    end
+end
+
+function UpdatePlayerSpells(playerID)
+    local playerData = GetPlayerData(playerID)
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    if hero then
+        for i=0,15 do
+            local ability = hero:GetAbilityByIndex(i)
+            if ability then
+                local abilityName = ability:GetAbilityName()
+                if string.match(abilityName, "_disabled") then
+                    local enabledAbilityName = string.gsub(abilityName, "_disabled", "")
+                    if MeetsAbilityElementRequirements(enabledAbilityName, playerID) then
+                        local newAbility = AddAbility(hero, enabledAbilityName, 1)
+                        hero:SwapAbilities(enabledAbilityName, abilityName, true, false)
+                        hero:RemoveAbility(abilityName)
+
+                        UpdateBuildAbility(playerID, newAbility)
+                        
+                        -- Refresh hero selection
+                        if PlayerResource:IsUnitSelected(playerID, hero)  then
+                            PlayerResource:NewSelection(playerID, hero)
+                        end
+                    end
+                else
+                    UpdateBuildAbility(playerID, ability)
+                end
+            end
+        end
+
+        for i=0,5 do
+            local item = hero:GetItemInSlot(i)
+            if item then
+                local itemName = item:GetAbilityName()
+                if itemName == "item_build_periodic_tower_disabled" and MeetsItemElementRequirements(item, playerID) then
+                    item:RemoveSelf()
+                    hero:AddItem(CreateItem("item_build_periodic_tower", hero, hero))
+                end
+            end
+        end
+
+        -- In Random mode, essence purchasing is disabled
+        if IsPlayerUsingRandomMode( playerID ) then
+            local buy_essence = GetItemByName(playerData.summoner, "item_buy_pure_essence")
+            if buy_essence then
+                buy_essence:RemoveSelf()
+            end
+
+            -- Remove random-cast item
+            local item_random = GetItemByName(playerData.summoner, "item_random")
+            if item_random then
+                item_random:RemoveSelf()
+            end
+            return
+        end
+
+        if not CanPlayerEnableRandom(playerID) then
+            -- Remove random-cast item
+            local item_random = GetItemByName(playerData.summoner, "item_random")
+            if item_random then
+                item_random:RemoveSelf()
+            end
+        end
+    end
+end
+
 function UpdateElementsHUD(playerID)
 	local playerData = GetPlayerData(playerID)
 	local data = {}
@@ -200,6 +303,65 @@ function UpdateElementsHUD(playerID)
 	end
 
 	CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_elements", data )
+end
+
+function UpdateSummonerSpells(playerID)
+    local playerData = GetPlayerData(playerID)
+    local lumber = playerData.lumber
+    local summoner = playerData.summoner
+
+    -- Exit out if no summoner
+    if not summoner then
+        return
+    end
+
+    UpdateRunes(playerID)
+
+    for i=0,5 do
+        local item = summoner:GetItemInSlot(i)
+        if item then
+            itemName = item:GetAbilityName()
+            if itemName == "item_buy_pure_essence_disabled" and CanPlayerBuyPureEssence(playerID) then
+                item:RemoveSelf()
+                summoner:AddItem(CreateItem("item_buy_pure_essence", nil, nil))
+            end
+        end
+    end
+
+    if EXPRESS_MODE and not playerData.elementalActive then
+        for k, v in pairs(NPC_ABILITIES_CUSTOM) do
+            if summoner:HasAbility(k) and v["LumberCost"] then
+                local level = playerData.elements[v["Element"]] + 1
+                local ability = summoner:FindAbilityByName(k)
+                if level == 1 then
+                    ability:SetActivated(lumber >= v["LumberCost"] and level <= 3)
+                elseif level == 2 and playerData.completedWaves >= 6 then
+                    ability:SetActivated(lumber >= v["LumberCost"] and level <= 3)
+                elseif level == 3 and playerData.completedWaves >= 15 then
+                    ability:SetActivated(lumber >= v["LumberCost"] and level <= 3)
+                else
+                    ability:SetActivated(false)
+                end
+                ability:SetLevel(level)
+            end
+        end
+    elseif playerData.elementalActive then
+        for k, v in pairs(NPC_ABILITIES_CUSTOM) do
+            if summoner:HasAbility(k) and v["LumberCost"] then
+                local ability = summoner:FindAbilityByName(k)
+                ability:SetActivated(false)
+                ability:SetLevel(playerData.elements[v["Element"]] + 1)
+            end
+        end
+    else
+        for k, v in pairs(NPC_ABILITIES_CUSTOM) do
+            if summoner:HasAbility(k) and v["LumberCost"] then
+                local ability = summoner:FindAbilityByName(k)
+                ability:SetActivated(lumber >= v["LumberCost"] and playerData.elements[v["Element"]] < 3)
+                ability:SetLevel(playerData.elements[v["Element"]] + 1)
+            end
+        end
+    end
 end
 
 function UpdateScoreboard(playerID, express_end)
@@ -232,6 +394,13 @@ function UpdateScoreboard(playerID, express_end)
 	data.randomed = playerData.elementalRandom --self-random
 	data.elements = playerData.elements
 	CustomGameEventManager:Send_ServerToAllClients("etd_update_scoreboard", {playerID=playerID, data = data})
+end
+
+function UpdateRandom(playerID)
+    local playerData = GetPlayerData(playerID)
+    if playerData.elementalRandom then
+        CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "etd_player_random_enable", {} )
+    end
 end
 
 function UpdateWaveInfo(playerID, wave)
@@ -351,4 +520,12 @@ end
 function PlayerIsAlive( playerID )
     local playerData = GetPlayerData(playerID)
     return playerData and playerData.health and playerData.health > 0
+end
+
+function ItemRandomUse(event)
+    local caster = event.caster
+    local item = event.ability
+    local playerID = caster:GetPlayerOwnerID()
+
+    GameSettings:EnableRandomForPlayer(playerID)
 end

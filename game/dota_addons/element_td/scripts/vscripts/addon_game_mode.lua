@@ -22,13 +22,21 @@ local requires =
     "mechanics/keyvalues",
     "mechanics/items",
     "mechanics/sounds",
-    "mechanics/gold",
+    "mechanics/resources",
     "mechanics/abilities",
     "mechanics/wearables",
     "mechanics/sectors",
     "mechanics/ground_attacks",
     "mechanics/tooltips",
     "mechanics/rewards",
+    "mechanics/runes",
+    "mechanics/upgrades",
+    "mechanics/grid",
+    "mechanics/damage",
+    "mechanics/ranking",
+    "mechanics/random",
+    "mechanics/summoner",
+    "mechanics/interest",
 
     -- utils
     "util/util",
@@ -97,21 +105,16 @@ local requires =
     "creeps/vengeance",
     "creeps/boss",
 
-    -- misc
+    -- core game logic
     "wave",
     "voting",
-    "interest",
     "gamesettings",
-    "summoner",
     "constants",
     "wavedata",
-    "elements",
-    "spells",
     "playerdata",
     "sandbox",
     "ElementTD",
     "scoring",
-    "ranking",
 }
 
 for _, r in pairs(requires) do

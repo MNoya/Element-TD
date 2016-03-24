@@ -233,6 +233,7 @@ function Build( event )
     end)
 end
 
+-- item_build_periodic_tower_disabled
 function PeriodicWarn( event )
     local caster = event.caster
     local playerID = caster:GetPlayerOwnerID()

@@ -86,7 +86,7 @@ function TrickeryTower:GetUpgradeData()
     }
 end
 
--- Global
+-- Globals
 function RemoveClone(clone)
     local ability = clone.ability -- The ability that created this clone
     local playerData = GetPlayerData(clone:GetPlayerOwnerID())
@@ -112,6 +112,26 @@ function RemoveClone(clone)
 
     clone:AddEffects(EF_NODRAW)
     clone:ForceKill(true) --This will call RemoveBuilding
+end
+
+function RemoveRandomClone( playerData, name )
+    local clones = {}
+    local i = 0
+    for entindex,_ in pairs(playerData.clones[name]) do
+        local clone = EntIndexToHScript(entindex)
+        if IsValidEntity(clone) and clone:GetClassname() == "npc_dota_creature" and clone:IsAlive() then
+            i = i + 1
+            clones[i] = clone
+        else
+            playerData.clones[name][entindex] = nil
+        end
+    end
+
+    if #clones > 0 then
+        local ranIndex = RandomInt(1,i)
+        local clone = clones[ranIndex]
+        RemoveClone(clone)
+    end
 end
 
 RegisterTowerClass(TrickeryTower, TrickeryTower.className)
