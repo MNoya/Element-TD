@@ -14,7 +14,7 @@ LightTower = createClass({
     },
 nil)
 
-function LightTower:OnAttackStart(keys)
+function LightTower:OnAttackLanded(keys)
     local target = keys.target
     
     if target:entindex() == self.last_target_index then
@@ -46,13 +46,9 @@ function LightTower:OnAttackStart(keys)
         end
         self.particles = {}
     end
-end
 
-function LightTower:OnAttackLanded(keys)
-    local target = keys.target
     local damage = self.tower:GetAverageTrueAttackDamage()
     DamageEntity(target, self.tower, damage)
-    
     if self.consecutiveAttacks > 0 then
         PopupLightDamage(self.tower, math.floor(damage))
     end
@@ -64,7 +60,7 @@ function LightTower:OnCreated()
     self.baseDamage = self.tower:GetBaseDamageMax() 
     self.consecutiveAttacks = 0  
     self.particles = {}
-    self.particleName = "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_spirit_form_ambient.vpcf"
+    self.particleName = "particles/custom/towers/light/light_tower_glow.vpcf"
 end
 
 RegisterTowerClass(LightTower, LightTower.className)
