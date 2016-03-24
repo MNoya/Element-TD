@@ -17,6 +17,9 @@ function statCollection:Stage3(payload)
 end
 
 function statCollection:StageCustom(payload)
+    payload.GDSmatchID = payload.matchID
+    payload.matchID = tostring(GameRules:GetMatchID())
+
     -- Send custom to lb
     self:sendStage('s2_custom.php', payload, function(err, res)
 

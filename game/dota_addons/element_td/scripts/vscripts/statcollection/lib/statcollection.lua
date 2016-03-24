@@ -487,7 +487,7 @@ function statCollection:sendCustom(args)
 
     local payload = {
         authKey = self.authKey or "-1",
-        matchID = self.matchID or tostring(GameRules:GetMatchID()),
+        matchID = self.matchID or "-1",
         modIdentifier = self.modIdentifier,
         schemaAuthKey = self.SCHEMA_KEY,
         schemaVersion = schemaVersion,
