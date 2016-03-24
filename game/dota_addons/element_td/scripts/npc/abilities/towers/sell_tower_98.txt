@@ -14,7 +14,7 @@
     {
         "RunScript"
         {
-            "ScriptFile"        "spells.lua"
+            "ScriptFile"        "mechanics/sell.lua"
             "Function"          "SellTowerCast"
             "SellAmount"        "0.98"
         }

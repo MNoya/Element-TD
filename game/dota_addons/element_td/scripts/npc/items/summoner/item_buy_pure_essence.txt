@@ -20,7 +20,7 @@
         "RunScript"
         {
             "Target"            "CASTER"
-            "ScriptFile"        "summoner.lua"
+            "ScriptFile"        "mechanics/resources.lua"
             "Function"          "BuyPureEssence"
         }
     }
@@ -42,7 +42,7 @@
         "RunScript"
         {
             "Target"            "CASTER"
-            "ScriptFile"        "summoner.lua"
+            "ScriptFile"        "mechanics/resources.lua"
             "Function"          "BuyPureEssenceWarn"
         }
     }

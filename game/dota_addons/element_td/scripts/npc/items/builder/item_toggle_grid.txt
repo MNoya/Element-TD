@@ -19,7 +19,7 @@
     {
         "RunScript"
         {
-            "ScriptFile"        "spells.lua"
+            "ScriptFile"        "mechanics/grid.lua"
             "Function"          "ToggleGrid"
         }
     }

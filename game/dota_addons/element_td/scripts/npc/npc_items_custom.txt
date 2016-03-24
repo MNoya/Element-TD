@@ -160,7 +160,7 @@
 	    {
 	        "RunScript"
 	        {
-	            "ScriptFile"        "spells.lua"
+	            "ScriptFile"        "mechanics/grid.lua"
 	            "Function"          "ToggleGrid"
 	        }
 	    }
@@ -187,7 +187,7 @@
 	        "RunScript"
 	        {
 	            "Target"            "CASTER"
-	            "ScriptFile"        "summoner.lua"
+	            "ScriptFile"        "mechanics/resources.lua"
 	            "Function"          "BuyPureEssence"
 	        }
 	    }
@@ -209,7 +209,7 @@
 	        "RunScript"
 	        {
 	            "Target"            "CASTER"
-	            "ScriptFile"        "summoner.lua"
+	            "ScriptFile"        "mechanics/resources.lua"
 	            "Function"          "BuyPureEssenceWarn"
 	        }
 	    }
@@ -232,7 +232,7 @@
 	    {
 	        "RunScript"
 	        {
-	            "ScriptFile"        "summoner.lua"
+	            "ScriptFile"        "mechanics/random.lua"
 	            "Function"          "ItemRandomUse"
 	        }
 	    }
@@ -252,7 +252,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"focused_dark_tower"
 			}
@@ -298,7 +298,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"focused_earth_tower"
 			}
@@ -344,7 +344,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"focused_fire_tower"
 			}
@@ -390,7 +390,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"focused_light_tower"
 			}
@@ -436,7 +436,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"focused_nature_tower"
 			}
@@ -482,7 +482,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"focused_water_tower"
 			}
@@ -528,7 +528,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"pure_dark_tower"
 			}
@@ -556,7 +556,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"pure_earth_tower"
 			}
@@ -584,7 +584,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"pure_fire_tower"
 			}
@@ -612,7 +612,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"pure_light_tower"
 			}
@@ -640,7 +640,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"pure_nature_tower"
 			}
@@ -668,7 +668,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"pure_water_tower"
 			}
@@ -696,7 +696,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"refined_dark_tower"
 			}
@@ -742,7 +742,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"refined_earth_tower"
 			}
@@ -788,7 +788,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"refined_fire_tower"
 			}
@@ -834,7 +834,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"refined_light_tower"
 			}
@@ -880,7 +880,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"refined_nature_tower"
 			}
@@ -926,7 +926,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"refined_water_tower"
 			}
@@ -972,7 +972,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"blacksmith_tower"
 			}
@@ -1012,7 +1012,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"blacksmith_tower_2"
 			}
@@ -1080,7 +1080,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"blacksmith_tower_3"
 			}
@@ -1178,7 +1178,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"disease_tower"
 			}
@@ -1210,7 +1210,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"disease_tower_2"
 			}
@@ -1260,7 +1260,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"disease_tower_3"
 			}
@@ -1332,7 +1332,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"electricity_tower"
 			}
@@ -1372,7 +1372,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"electricity_tower_2"
 			}
@@ -1440,7 +1440,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"electricity_tower_3"
 			}
@@ -1538,7 +1538,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"flame_tower"
 			}
@@ -1578,7 +1578,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"flame_tower_2"
 			}
@@ -1646,7 +1646,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"flame_tower_3"
 			}
@@ -1744,7 +1744,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"gunpowder_tower"
 			}
@@ -1784,7 +1784,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"gunpowder_tower_2"
 			}
@@ -1852,7 +1852,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"gunpowder_tower_3"
 			}
@@ -1950,7 +1950,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"hydro_tower"
 			}
@@ -1990,7 +1990,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"hydro_tower_2"
 			}
@@ -2058,7 +2058,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"hydro_tower_3"
 			}
@@ -2156,7 +2156,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"ice_tower"
 			}
@@ -2196,7 +2196,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"ice_tower_2"
 			}
@@ -2264,7 +2264,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"ice_tower_3"
 			}
@@ -2362,7 +2362,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"life_tower"
 			}
@@ -2402,7 +2402,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"life_tower_2"
 			}
@@ -2470,7 +2470,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"life_tower_3"
 			}
@@ -2568,7 +2568,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"magic_tower"
 			}
@@ -2600,7 +2600,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"magic_tower_2"
 			}
@@ -2650,7 +2650,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"magic_tower_3"
 			}
@@ -2722,7 +2722,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"moss_tower"
 			}
@@ -2754,7 +2754,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"moss_tower_2"
 			}
@@ -2804,7 +2804,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"moss_tower_3"
 			}
@@ -2876,7 +2876,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"poison_tower"
 			}
@@ -2908,7 +2908,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"poison_tower_2"
 			}
@@ -2958,7 +2958,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"poison_tower_3"
 			}
@@ -3030,7 +3030,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"quark_tower"
 			}
@@ -3062,7 +3062,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"quark_tower_2"
 			}
@@ -3112,7 +3112,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"quark_tower_3"
 			}
@@ -3184,7 +3184,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"trickery_tower"
 			}
@@ -3224,7 +3224,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"trickery_tower_2"
 			}
@@ -3292,7 +3292,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"trickery_tower_3"
 			}
@@ -3390,7 +3390,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"vapor_tower"
 			}
@@ -3435,7 +3435,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"vapor_tower_2"
 			}
@@ -3513,7 +3513,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"vapor_tower_3"
 			}
@@ -3626,7 +3626,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"well_tower"
 			}
@@ -3666,7 +3666,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"well_tower_2"
 			}
@@ -3734,7 +3734,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"well_tower_3"
 			}
@@ -3832,7 +3832,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"enchantment_tower"
 			}
@@ -3879,7 +3879,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"enchantment_tower_2"
 			}
@@ -3998,7 +3998,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"ephemeral_tower"
 			}
@@ -4032,7 +4032,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"ephemeral_tower_2"
 			}
@@ -4112,7 +4112,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"erosion_tower"
 			}
@@ -4159,7 +4159,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"erosion_tower_2"
 			}
@@ -4278,7 +4278,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"flamethrower_tower"
 			}
@@ -4320,7 +4320,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"flamethrower_tower_2"
 			}
@@ -4424,7 +4424,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"flooding_tower"
 			}
@@ -4466,7 +4466,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"flooding_tower_2"
 			}
@@ -4570,7 +4570,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"gold_tower"
 			}
@@ -4612,7 +4612,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"gold_tower_2"
 			}
@@ -4716,7 +4716,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"hail_tower"
 			}
@@ -4750,7 +4750,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"hail_tower_2"
 			}
@@ -4830,7 +4830,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"haste_tower"
 			}
@@ -4864,7 +4864,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"haste_tower_2"
 			}
@@ -4943,7 +4943,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"impulse_tower"
 			}
@@ -4985,7 +4985,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"impulse_tower_2"
 			}
@@ -5089,7 +5089,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"jinx_tower"
 			}
@@ -5131,7 +5131,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"jinx_tower_2"
 			}
@@ -5235,7 +5235,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"laser_tower"
 			}
@@ -5269,7 +5269,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"laser_tower_2"
 			}
@@ -5347,7 +5347,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"muck_tower"
 			}
@@ -5389,7 +5389,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"muck_tower_2"
 			}
@@ -5493,7 +5493,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"nova_tower"
 			}
@@ -5540,7 +5540,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"nova_tower_2"
 			}
@@ -5659,7 +5659,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"obliteration_tower"
 			}
@@ -5693,7 +5693,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"obliteration_tower_2"
 			}
@@ -5771,7 +5771,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"polar_tower"
 			}
@@ -5818,7 +5818,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"polar_tower_2"
 			}
@@ -5937,7 +5937,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"quake_tower"
 			}
@@ -5979,7 +5979,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"quake_tower_2"
 			}
@@ -6083,7 +6083,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"roots_tower"
 			}
@@ -6130,7 +6130,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"roots_tower_2"
 			}
@@ -6249,7 +6249,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"runic_tower"
 			}
@@ -6283,7 +6283,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"runic_tower_2"
 			}
@@ -6361,7 +6361,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"tidal_tower"
 			}
@@ -6403,7 +6403,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"tidal_tower_2"
 			}
@@ -6507,7 +6507,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"windstorm_tower"
 			}
@@ -6554,7 +6554,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"windstorm_tower_2"
 			}
