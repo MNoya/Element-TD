@@ -1,14 +1,10 @@
 "AddonInfo"
 {
-     "maps"                   "element_td element_td_full"
+     "maps"                   "element_td"
      "IsPlayable"             "1"
      "element_td"
      {
-          "MaxPlayers"        "3"
-     }
-     "element_td_full"
-     {
-          "MaxPlayers"        "6"
+          "MaxPlayers"        "4"
      }
 
      "Default_Keys"
