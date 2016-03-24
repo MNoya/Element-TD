@@ -3599,20 +3599,34 @@
 	
 	    "Modifiers"
 	    {
-	        "modifier_blaze_intensity"
+	        "modifier_intensity_passive"
 	        {
 	            "Passive"   "1"
 	            "IsHidden"  "1"
 	
-	            "OnAttackLanded"
+	            "OnAttackStart"
 	            {
 	                "RunScript"
 	                {
+	                    "Target"            "TARGET"
 	                    "ScriptFile"        "towers/towerevents.lua"
 	                    "Function"          "TriggerEvent"
-	                    "Event"             "OnAttackLanded"
+	                    "Event"             "OnAttackStart"
 	                }
 	            }
+	        }
+	        "modifier_intensity_indicator"
+	        {
+	            "AbilityTextureName"        "towers/light"
+	        }
+	    }
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "damage"                "10 50 250 1337"
 	        }
 	    }
 	}
