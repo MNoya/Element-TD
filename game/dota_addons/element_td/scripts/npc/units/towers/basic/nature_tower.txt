@@ -45,7 +45,7 @@
     "BuildTime"                 "1"
     "Element"                   "nature"
     "DamageType"                "nature"
-    "ScriptClass"               "BasicTower"
+    "ScriptClass"               "NatureTower"
     "TowerType"                 "Normal"
     "BuffPriority"              "11"
     

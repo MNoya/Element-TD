@@ -3678,6 +3678,57 @@
 		}
 	}
 	//=================================================================================================================
+	// Nature Tower: Spore Explosion
+	//=================================================================================================================
+	"nature_tower_spore_explosion"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+	
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"towers/spore_explosion"
+		"MaxLevel"						"4"
+	
+		"Modifiers"
+		{
+			"modifier_spore_explosion_passive"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"OnKill"
+				{
+					"RunScript"
+					{
+						"Target"			"UNIT"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"CreepKilled"
+					}
+				}
+			}
+		}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"20 100 500 2500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe_full"				"150"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe_half"				"300"
+			}
+		}
+	}
+	//=================================================================================================================
 	// Nova Tower: Explode
 	//=================================================================================================================
 	"nova_tower_explode"

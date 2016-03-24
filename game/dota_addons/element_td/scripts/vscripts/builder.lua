@@ -123,7 +123,6 @@ function Build( event )
             local scriptObject = TOWER_CLASSES[scriptClassName](unit, building_name)
             unit.scriptClass = scriptClassName
             unit.scriptObject = scriptObject
-            unit.scriptObject:OnCreated()
         else
             Log:error("Unknown script class, " .. scriptClassName .. " for tower " .. building_name)
         end
@@ -205,6 +204,7 @@ function Build( event )
             AddAbility(unit, "attack_ground")
         end
 
+        unit.scriptObject:OnCreated()
         AddAbility(unit, unit.damageType .. "_passive")
         if GetUnitKeyValue(building_name, "AOE_Full") and GetUnitKeyValue(building_name, "AOE_Half") then
             AddAbility(unit, "splash_damage_orb")

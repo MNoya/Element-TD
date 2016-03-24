@@ -4729,7 +4729,7 @@
 	    "BuildTime"                 "1"
 	    "Element"                   "nature"
 	    "DamageType"                "nature"
-	    "ScriptClass"               "BasicTower"
+	    "ScriptClass"               "NatureTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "9"
 	    
@@ -5002,7 +5002,7 @@
 	    "BuildTime"                 "1"
 	    "Element"                   "nature"
 	    "DamageType"                "nature"
-	    "ScriptClass"               "BasicTower"
+	    "ScriptClass"               "NatureTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "11"
 	    
@@ -5524,7 +5524,7 @@
 	    "BuildTime"                 "3"
 	    "Element"                   "nature"
 	    "DamageType"                "nature"
-	    "ScriptClass"               "BasicTower"
+	    "ScriptClass"               "NatureTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "1"
 	    
@@ -6050,7 +6050,7 @@
 	    "BuildTime"                 "1"
 	    "Element"                   "nature"
 	    "DamageType"                "nature"
-	    "ScriptClass"               "BasicTower"
+	    "ScriptClass"               "NatureTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "5"
 	    
