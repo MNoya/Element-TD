@@ -486,8 +486,8 @@ function statCollection:sendCustom(args)
     }
 
     local payload = {
-        authKey = self.authKey or "-1",
-        matchID = self.matchID or "-1",
+        authKey = self.authKey,
+        matchID = self.matchID,
         modIdentifier = self.modIdentifier,
         schemaAuthKey = self.SCHEMA_KEY,
         schemaVersion = schemaVersion,
