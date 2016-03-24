@@ -25,8 +25,12 @@ function NatureTower:CreepKilled(keys)
 	if target:entindex() ~= self.tower:entindex() then
 		target:EmitSound("DOTA_Item.Tango.Activate")
 		
-		local particle = ParticleManager:CreateParticle("particles/custom/towers/nature/spore_explosion.vpcf", PATTACH_CUSTOMORIGIN, self.tower)
-	    ParticleManager:SetParticleControl(particle, 3, target:GetAbsOrigin())
+		local particle = ParticleManager:CreateParticle("particles/custom/towers/nature/spore_explosion.vpcf", PATTACH_CUSTOMORIGIN, target)
+		local origin = target:GetAbsOrigin()
+		origin.z = origin.z+64
+		ParticleManager:SetParticleControl(particle, 0, origin)
+		ParticleManager:SetParticleControl(particle, 1, origin)
+		ParticleManager:SetParticleControl(particle, 2, origin)
 	    ParticleManager:ReleaseParticleIndex(particle)
 
 	    DamageEntitiesInArea(target:GetOrigin(), self.aoe_full, self.tower, self.explosion_damage)   

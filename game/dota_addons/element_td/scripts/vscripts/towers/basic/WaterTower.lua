@@ -11,6 +11,7 @@ WaterTower = createClass({
     },
     {
         className = "WaterTower"
+    },
 nil)
 
 function WaterTower:OnAttackLanded(keys)
