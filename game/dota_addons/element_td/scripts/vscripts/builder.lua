@@ -137,13 +137,13 @@ function Build( event )
                 local data = models[unit:GetUnitName()]
                 if data.model then
                     unit:SetModel(data.model)
+                    unit:SetOriginalModel(data.model)
                     unit.override_model = data.model
                     unit:StartGesture(ACT_DOTA_SPAWN)
 
                     if data.scale then
                         unit.overrideMaxScale = data.scale
                         unit:SetModelScale(data.scale)
-
                     end
 
                     if data.offset then
@@ -214,6 +214,7 @@ function Build( event )
 
         if unit.override_model then
             unit:SetModel(unit.override_model)
+            unit:SetOriginalModel(unit.override_model)
             unit:StartGesture(ACT_DOTA_IDLE)
         end
     end)
