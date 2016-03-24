@@ -277,6 +277,20 @@ function ClearRunes( propsTable )
     end
 end
 
+function ClearAllRunes( summoner )
+    for _,v1 in pairs(summoner.runes) do
+         for _,v2 in pairs(v1) do
+             for key,runes in pairs(v2) do
+                if key=="props" then
+                    ClearRunes(runes)
+                end
+             end
+         end
+     end
+     summoner.runes = {[2]={["fire"] = {}}, [1]={["nature"] = {}}, [6]={["earth"] = {}}, [5]={["light"] = {}}, [4]={["dark"] = {}}, [3]={["water"] = {}}}
+end
+
+
 function CanPlayerBuyPureEssence( playerID )
     local playerData = GetPlayerData(playerID)
     local elements = playerData.elements
@@ -504,8 +518,9 @@ function AddElementalTrophy(playerID, element)
     local elemental = CreateUnitByName(unitName, position, false, nil, nil, team)
     elemental:SetModelScale(scale)
     elemental:SetForwardVector(Vector(0, -1, 0))
-
     elemental:AddNewModifier(elemental, nil, "modifier_disabled", {})
+
+    table.insert(playerData.elementTrophies, elemental)
 end
 
 function ItemRandomUse(event)

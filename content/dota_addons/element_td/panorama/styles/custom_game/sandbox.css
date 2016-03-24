@@ -21,7 +21,7 @@
 {
     transform: translateX( 0% ) translateY( -100px );
     vertical-align: top;
-    margin-top: 270px;
+    margin-top: 240px;
     horizontal-align: left;
     padding: 4px;
     padding-left: 0px;
@@ -35,7 +35,7 @@
 {
     flow-children: right;
     horizontal-align: left;
-    height: 520px;
+    height: 570px;
     width: 350px;
     font-size: 16;
     background-color: #181818dd;
@@ -178,6 +178,55 @@
 }
 
 .QuitPausePanel .QuitButton:selected
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #777777 ), to( #999999 ) );
+}
+
+.QuitPausePanel .RestartButton
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #114411), to( #226622 ) );
+    height: 100%;
+    width: 48%;
+
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 3px;
+    margin-right: 3px;
+
+    border-style: solid;
+    border-width: 2px;  
+
+    border-top-color: #116611;
+    border-left-color: #115911;
+    border-bottom-color: #114411;
+    border-right-color: #225022;
+
+    transition-property: background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+}
+
+.Category .QuitPausePanel .RestartButton Label
+{
+    margin-top: 5px;
+    margin-left: 5px;
+    color: #000000;
+    font-size: 16;
+    vertical-align: middle;
+}
+
+.QuitPausePanel .RestartButton:hover
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #114411), to( #22aa22 ) );
+}
+
+.QuitPausePanel.RestartButton:active
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #88aa88 ), to( #aaffaa ) );
+    pre-transform-scale2d: 1.02;
+}
+
+.QuitPausePanel .RestartButton:selected
 {
     background-color: gradient( linear, 0% 0%, 0% 100%, from( #777777 ), to( #999999 ) );
 }

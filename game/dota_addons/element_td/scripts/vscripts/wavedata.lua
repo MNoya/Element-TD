@@ -402,6 +402,7 @@ end
 function ClosePortalForSector(playerID, sector, removeInstantly)
     removeInstantly = removeInstantly or false
     local portal = SectorPortals[sector]
+    if not IsValidEntity(portal) then return end
     if portal.particle then
         ParticleManager:DestroyParticle(portal.particle, removeInstantly)
     end

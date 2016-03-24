@@ -158,7 +158,6 @@ function ElementTD:OnScriptReload()
                 end
             end
         end
-
     end
 end
 
@@ -474,14 +473,12 @@ function ElementTD:OnHeroInGame(hero)
     ModifyLumber(playerID, 0)  -- updates summoner spells
     ModifyPureEssence(playerID, 0, true)
     UpdateElementsHUD(playerID)
-    UpdatePlayerSpells(playerID)
-
-    Sandbox:CheckPlayer(playerID)  
+    UpdatePlayerSpells(playerID) 
 end
 
 -- initializes a player's hero
 function ElementTD:InitializeHero(playerID, hero)
-    print("OnInitHero PID:"..playerID)
+    print("OnInitHero PID: "..playerID)
     hero:AddNewModifier(nil, nil, "modifier_disarmed", {})
     hero:AddNewModifier(nil, nil, "modifier_attack_immune", {})
     hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
@@ -879,5 +876,8 @@ function ElementTD:CheatsEnabled()
         end
     end
     
-    GameRules:SendCustomMessage("#etd_cheats_enabled", 0, 0)
+    -- Don't show message on tools, we don't care
+    if not Convars:GetBool("developer") then
+        GameRules:SendCustomMessage("#etd_cheats_enabled", 0, 0)
+    end
 end

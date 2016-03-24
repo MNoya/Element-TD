@@ -6,6 +6,7 @@ function Sandbox:Init()
     DEVELOPERS = {[66998815]="A_Dizzle",[86718505]="Noya",[8035838]="Karawasa",[34961594]="Windstrike",[84998953]="Quintinity",[59573794]="Azarak"}
     
     -- Enable Sandbox mode, single player or dev only, after a confirmation message
+    CustomGameEventManager:RegisterListener("sandbox_connect", Dynamic_Wrap(Sandbox, "Connect"))
     CustomGameEventManager:RegisterListener("sandbox_enable", Dynamic_Wrap(Sandbox, "Enable"))
 
     -- Resources section
@@ -29,11 +30,14 @@ function Sandbox:Init()
     CustomGameEventManager:RegisterListener("sandbox_speed_up", Dynamic_Wrap(Sandbox, "SpeedUp"))
     CustomGameEventManager:RegisterListener("sandbox_pause", Dynamic_Wrap(Sandbox, "Pause"))
     CustomGameEventManager:RegisterListener("sandbox_end", Dynamic_Wrap(Sandbox, "End"))
+    CustomGameEventManager:RegisterListener("sandbox_restart", Dynamic_Wrap(Sandbox, "Restart"))
 end
 
--- The sandbox enable button will only be visible in the test version, or on single player/developer presence.
-function Sandbox:CheckPlayer(playerID)
-    if Convars:GetBool("developer") or PlayerResource:GetPlayerCount() == 1 then
+-- Connect/Reconnect
+function Sandbox:Connect(event)
+    local playerID = event.PlayerID
+    -- The sandbox enable button will only be visible in the test version, or on single player/developer presence.
+    if PlayerResource:GetPlayerCount() == 1 then
         CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "sandbox_mode_visible", {})
     end
 end
@@ -310,21 +314,115 @@ function Sandbox:ClearWave(event)
 
     -- Complete the wave
     wave.endSpawnTime = GameRules:GetGameTime()
-    wave:callback()
+    if wave.callback then
+        wave:callback()
+    end
 end
 
 function Sandbox:SpeedUp(event)
     local fast = event.state == 1
     if fast then
-        SendToServerConsole("host_timescale 3")
+        SendToServerConsole("sv_cheats 1; host_timescale 3")
     else
-        SendToServerConsole("host_timescale 1")
+        SendToServerConsole("sv_cheats 1; host_timescale 1")
     end
 end
 
 function Sandbox:Pause(event)
     local pause = event.state == 1
     PauseGame(pause)
+end
+
+function Sandbox:Restart( event )
+    local playerID = event.PlayerID
+    local playerData = GetPlayerData(playerID)
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    playerData.cheated = true
+
+    -- Keep some references
+    local summoner = playerData.summoner
+    local sector = playerData.sector
+    local name = playerData.name
+    local difficulty = playerData.difficulty
+    local scoreObject = playerData.scoreObject
+
+    -- Kill everything
+    Sandbox:StopWave(event)
+    Sandbox:ClearWave(event)
+    RemoveElementalOrbs(playerID)
+    ClearAllRunes(summoner)
+    ClosePortalForSector(playerID, playerData.sector+1, true)
+
+    -- Elemental
+    if playerData.elementalUnit ~= nil and IsValidEntity(playerData.elementalUnit) and playerData.elementalUnit:IsAlive() then
+        playerData.elementalUnit:ForceKill(false)
+    end
+
+    -- Towers
+    for i,v in pairs(playerData.towers) do
+        local tower = EntIndexToHScript(i)
+        if IsValidEntity(tower) then
+            tower:ForceKill(false)
+            tower:AddNoDraw()
+        end
+    end
+
+    -- Trophies
+    for k,elemental in pairs(playerData.elementTrophies) do
+        if IsValidEntity(elemental) then
+            elemental:ForceKill(false)
+            elemental:AddNoDraw()
+        end
+    end
+
+    -- Restart player data
+    local newPlayerData = CreateDataForPlayer(playerID, true)
+
+    -- Store references again
+    newPlayerData.sector = sector
+    newPlayerData.summoner = summoner
+    newPlayerData.name = name
+    newPlayerData.difficulty = difficulty
+    newPlayerData.scoreObject = scoreObject
+
+    -- Set life to 50
+    newPlayerData.health = 50 
+    hero:CalculateStatBonus()
+    hero:SetHealth(50)
+    CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=newPlayerData.health/hero:GetMaxHealth() * 100} )
+
+    -- Set resources
+    SetCustomGold(playerID, GameSettings.length.Gold)
+    SetCustomLumber(playerID, 1)
+    SetCustomEssence(playerID, 0)
+    UpdateElementsHUD(playerID)
+    UpdatePlayerSpells(playerID)
+    
+    -- Summoner reset
+    StopHighlight(summoner, playerID)
+    summoner.highlight = nil
+    Highlight(summoner, playerID)
+    if summoner:HasItemInInventory("item_buy_pure_essence") then
+        GetItemByName(summoner, "item_buy_pure_essence"):RemoveSelf()
+    end
+    if not summoner:HasItemInInventory("item_buy_pure_essence_disabled") then
+        summoner:AddItem(CreateItem("item_buy_pure_essence_disabled", nil, nil))
+    end
+    if not summoner:HasItemInInventory("item_random") then
+        summoner:AddItem(CreateItem("item_random", nil, nil))
+        Timers:CreateTimer(0.1, function() summoner:SwapItems(1, 3) end)
+    end
+        
+    -- Reset score
+    newPlayerData.scoreObject.totalScore = 0
+    CustomGameEventManager:Send_ServerToPlayer( PlayerResource:GetPlayer(playerID), "etd_update_score", { score = 0 } )
+    UpdateScoreboard(playerID)
+    
+    -- Reinitialize wave spawns
+    CURRENT_WAVE = 1
+    CURRENT_BOSS_WAVE = 0
+    UpdateWaveInfo(playerID, CURRENT_WAVE-1)
+    StartBreakTime(playerID, GameSettings.length.PregameTime)
 end
 
 function Sandbox:End(event)

@@ -6,6 +6,7 @@ var zen_mode = $("#zen_mode")
 var no_cd = $("#no_cd")
 var pause = $("#pause")
 var wave = $("#WaveNumber")
+var speed_up = $("#speed_up")
 var max_level = 3;
 var min_level = 0;
 
@@ -120,9 +121,13 @@ function Pause() {
     GameEvents.SendCustomGameEventToServer( "sandbox_pause", {"state": pause.checked} );
 }
 
-/*function SpeedUp() {
+function SpeedUp() {
     GameEvents.SendCustomGameEventToServer( "sandbox_speed_up", {"state": speed_up.checked} );
-}*/
+}
+
+function RestartGame() {
+    GameEvents.SendCustomGameEventToServer( "sandbox_restart", {} );
+}
 
 function EndGame() {
     GameEvents.SendCustomGameEventToServer( "sandbox_end", {} );
@@ -160,4 +165,5 @@ function SandboxMakeVisible() {
 (function () {
     GameEvents.Subscribe( "sandbox_mode_visible", SandboxMakeVisible);
     GameEvents.Subscribe( "etd_update_elements", UpdateElements );
+    GameEvents.SendCustomGameEventToServer( "sandbox_connect", {} );
 })();

@@ -5,9 +5,14 @@ if not PlayerData then
 	PlayerData = {}
 end
 
-function CreateDataForPlayer(playerID)
-    -- Don't create data twice
-    if PlayerData[playerID] or playerID == -1 then return end
+function CreateDataForPlayer(playerID, allowOverride)
+
+    -- Don't create data twice unless allowed to override
+    if not allowOverride then
+        if PlayerData[playerID] or playerID == -1 then
+            return 
+        end
+    end
 
 	PlayerData[playerID] = {}
 	local data = PlayerData[playerID]
@@ -55,6 +60,7 @@ function CreateDataForPlayer(playerID)
 		NumLockingWaves = 0,
 		TimeRemaining = 0
 	}
+    data["elementTrophies"] = {}
     
     print("Created Data for player ", playerID)
 	
