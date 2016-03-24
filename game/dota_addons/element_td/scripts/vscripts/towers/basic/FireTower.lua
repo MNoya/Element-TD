@@ -15,16 +15,30 @@ FireTower = createClass({
 nil)
 
 function FireTower:OnAttackLanded(keys)
-    local target = keys.target;
+    local target = keys.target
     local damage = self.tower:GetAverageTrueAttackDamage()
-    DamageEntitiesInArea(target:GetOrigin(), self.halfAOE, self.tower, damage / 2);
-    DamageEntitiesInArea(target:GetOrigin(), self.fullAOE, self.tower, damage / 2);
+    DamageEntitiesInArea(target:GetOrigin(), self.halfAOE, self.tower, damage / 2)
+    DamageEntitiesInArea(target:GetOrigin(), self.fullAOE, self.tower, damage / 2)
+
+    local creeps = GetCreepsInArea(target:GetAbsOrigin(), self.fullAOE)
+    for _, creep in pairs(creeps) do
+        self.ability:ApplyDataDrivenModifier(self.tower, creep, "modifier_blazeit", {})
+    end 
+end
+
+function FireTower:DealBlazeDamage(keys)
+    local target = keys.target    
+    local damage = ApplyAbilityDamageFromModifiers(self.damage_per_interval, self.tower)    
+    DamageEntity(target, self.tower, damage)
 end
 
 function FireTower:OnCreated()
-    self.fullAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"));
-    self.halfAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"));
+    self.fullAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))
+    self.halfAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
     self.ability = AddAbility(self.tower, "fire_tower_blaze")
+    self.modifier_name = "modifier_blazeit" --420
+    self.interval = 0.5 --taken from the modifier ThinkInterval value
+    self.damage_per_interval = self.ability:GetLevelSpecialValueFor("damage_per_second", self.tower:GetLevel()-1) * self.interval
 end
 
 RegisterTowerClass(FireTower, FireTower.className)

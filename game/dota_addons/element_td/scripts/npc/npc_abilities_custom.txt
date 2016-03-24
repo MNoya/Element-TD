@@ -2719,7 +2719,7 @@
 	    "BaseClass"                     "ability_datadriven"                                            
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	    "AbilityTextureName"            "towers/fire"
-	    "MaxLevel"                      "1"
+	    "MaxLevel"                      "4"
 	
 	    "Modifiers"
 	    {
@@ -2737,6 +2737,39 @@
 	                    "Event"             "OnAttackLanded"
 	                }
 	            }
+	        }
+	
+	        "modifier_blazeit"
+	        {
+	            "Duration"          "%duration"
+	            "TextureName"       "towers/fire"
+	            "EffectName"        "particles/custom/towers/fire/blaze.vpcf"
+	            "EffectAttachType"  "follow_origin"
+	
+	            "ThinkInterval" "0.5"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"        "towers/towerevents.lua"
+	                    "Function"          "TriggerEvent"
+	                    "Event"             "DealBlazeDamage"
+	                }
+	            }
+	        }
+	    }
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "damage_per_second"     "10 50 300 1000" //placeholder values
+	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "duration"              "3.0"
 	        }
 	    }
 	}
