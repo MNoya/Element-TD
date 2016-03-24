@@ -1,0 +1,31 @@
+//=================================================================================================================
+// Water Tower
+//=================================================================================================================
+"water_tower_ability"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"                     "ability_datadriven"                                            
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "towers/water"
+    "MaxLevel"                      "1"
+
+    "Modifiers"
+    {
+        "modifier_water_passive"
+        {
+            "Passive"   "1"
+            "IsHidden"  "1"
+
+            "OnAttackLanded"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"        "towers/towerevents.lua"
+                    "Function"          "TriggerEvent"
+                    "Event"             "OnAttackLanded"
+                }
+            }
+        }
+    }
+}

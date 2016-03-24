@@ -46,7 +46,7 @@
     "BuildTime"                 "1"
     "Element"                   "earth"
     "DamageType"                "earth"
-    "ScriptClass"               "BasicTowerAOE"
+    "ScriptClass"               "EarthTower"
     "TowerType"                 "Normal"
     "BuffPriority"              "5"
     

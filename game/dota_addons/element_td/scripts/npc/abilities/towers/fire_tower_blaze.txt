@@ -1,0 +1,32 @@
+//=================================================================================================================
+// Fire Tower: Blaze
+// Each attack applies a single-target DoT debuff on all targets hit
+//=================================================================================================================
+"fire_tower_blaze"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"                     "ability_datadriven"                                            
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "towers/fire"
+    "MaxLevel"                      "1"
+
+    "Modifiers"
+    {
+        "modifier_blaze_passive"
+        {
+            "Passive"   "1"
+            "IsHidden"  "1"
+
+            "OnAttackLanded"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"        "towers/towerevents.lua"
+                    "Function"          "TriggerEvent"
+                    "Event"             "OnAttackLanded"
+                }
+            }
+        }
+    }
+}

@@ -51,8 +51,12 @@ local requires =
     "towers/BasicTower",
     "towers/BasicTowerAOE",
     "towers/CannonTower",
+    "towers/basic/LightTower",
     "towers/basic/DarkTower",
+    "towers/basic/WaterTower",
+    "towers/basic/FireTower",
     "towers/basic/NatureTower",
+    "towers/basic/EarthTower",
 
     -- dual towers
     "towers/duals/MagicTower",

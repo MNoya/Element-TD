@@ -4180,7 +4180,7 @@
 	    "BuildTime"                 "1"
 	    "Element"                   "earth"
 	    "DamageType"                "earth"
-	    "ScriptClass"               "BasicTowerAOE"
+	    "ScriptClass"               "EarthTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "11"
 	    
@@ -4281,7 +4281,7 @@
 	    "BuildTime"                 "1"
 	    "Element"                   "fire"
 	    "DamageType"                "fire"
-	    "ScriptClass"               "BasicTowerAOE"
+	    "ScriptClass"               "FireTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "11"
 	    
@@ -4463,7 +4463,7 @@
 	    "BuildTime"                 "1"
 	    "Element"                   "earth"
 	    "DamageType"                "earth"
-	    "ScriptClass"               "BasicTowerAOE"
+	    "ScriptClass"               "EarthTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "9"
 	    
@@ -4551,7 +4551,7 @@
 	    "BuildTime"                 "1"
 	    "Element"                   "fire"
 	    "DamageType"                "fire"
-	    "ScriptClass"               "BasicTowerAOE"
+	    "ScriptClass"               "FireTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "9"
 	    
@@ -4640,7 +4640,7 @@
 	    "BuildTime"                 "1"
 	    "Element"                   "light"
 	    "DamageType"                "light"
-	    "ScriptClass"               "BasicTower"
+	    "ScriptClass"               "LightTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "9"
 	    
@@ -4819,7 +4819,7 @@
 	    "Element"                   "water"
 	
 	    "DamageType"                "water"
-	    "ScriptClass"               "BasicTowerAOE"
+	    "ScriptClass"               "WaterTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "9"
 	
@@ -4908,7 +4908,7 @@
 	    "BuildTime"                 "1"
 	    "Element"                   "light"
 	    "DamageType"                "light"
-	    "ScriptClass"               "BasicTower"
+	    "ScriptClass"               "LightTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "11"
 	    
@@ -5267,7 +5267,7 @@
 	    "BuildTime"                 "3"
 	    "Element"                   "earth"
 	    "DamageType"                "earth"
-	    "ScriptClass"               "BasicTowerAOE"
+	    "ScriptClass"               "EarthTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "1"
 	    
@@ -5350,7 +5350,7 @@
 	    "BuildTime"                 "3"
 	    "Element"                   "fire"
 	    "DamageType"                "fire"
-	    "ScriptClass"               "BasicTowerAOE"
+	    "ScriptClass"               "FireTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "1"
 	    
@@ -5435,7 +5435,7 @@
 	    "BuildTime"                 "3"
 	    "Element"                   "light"
 	    "DamageType"                "light"
-	    "ScriptClass"               "BasicTower"
+	    "ScriptClass"               "LightTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "1"
 	    
@@ -5611,7 +5611,7 @@
 	    "Element"                   "water"
 	
 	    "DamageType"                "water"
-	    "ScriptClass"               "BasicTowerAOE"
+	    "ScriptClass"               "WaterTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "1"
 	
@@ -5783,7 +5783,7 @@
 	    "BuildTime"                 "1"
 	    "Element"                   "earth"
 	    "DamageType"                "earth"
-	    "ScriptClass"               "BasicTowerAOE"
+	    "ScriptClass"               "EarthTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "5"
 	    
@@ -5871,7 +5871,7 @@
 	    "BuildTime"                 "1"
 	    "Element"                   "fire"
 	    "DamageType"                "fire"
-	    "ScriptClass"               "BasicTowerAOE"
+	    "ScriptClass"               "FireTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "5"
 	    
@@ -5960,7 +5960,7 @@
 	    "BuildTime"                 "1"
 	    "Element"                   "light"
 	    "DamageType"                "light"
-	    "ScriptClass"               "BasicTower"
+	    "ScriptClass"               "LightTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "5"
 	    
@@ -6138,7 +6138,7 @@
 	    "Element"                   "water"
 	
 	    "DamageType"                "water"
-	    "ScriptClass"               "BasicTowerAOE"
+	    "ScriptClass"               "WaterTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "5"
 	
@@ -6224,7 +6224,7 @@
 	    "Element"                   "water"
 	
 	    "DamageType"                "water"
-	    "ScriptClass"               "BasicTowerAOE"
+	    "ScriptClass"               "WaterTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "11"
 	    

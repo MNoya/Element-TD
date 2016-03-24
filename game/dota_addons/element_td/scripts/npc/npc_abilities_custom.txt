@@ -2267,6 +2267,7 @@
 	}
 	//=================================================================================================================
 	// Dark Tower: Overkill
+	// When it kills a target, any overkill damage on that target transfers to a target within 300 AoE of the target.
 	//=================================================================================================================
 	"dark_tower_overkill"
 	{
@@ -2275,9 +2276,8 @@
 	
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"towers/overkill"
+		"AbilityTextureName"			"towers/dark"
 		"MaxLevel"						"1"
-	
 	
 		"Modifiers"
 		{
@@ -2355,6 +2355,37 @@
 				}
 			}
 		}
+	}
+	//=================================================================================================================
+	// Earth Tower
+	//=================================================================================================================
+	"earth_tower_ability"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "ability_datadriven"                                            
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"            "towers/earth"
+	    "MaxLevel"                      "1"
+	
+	    "Modifiers"
+	    {
+	        "modifier_earth_passive"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	
+	            "OnAttackLanded"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"        "towers/towerevents.lua"
+	                    "Function"          "TriggerEvent"
+	                    "Event"             "OnAttackLanded"
+	                }
+	            }
+	        }
+	    }
 	}
 	//=================================================================================================================
 	// Electricity Tower: Arc Lightning Passive
@@ -2676,6 +2707,38 @@
 				"aoe"					"400"
 			}
 		}
+	}
+	//=================================================================================================================
+	// Fire Tower: Blaze
+	// Each attack applies a single-target DoT debuff on all targets hit
+	//=================================================================================================================
+	"fire_tower_blaze"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "ability_datadriven"                                            
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"            "towers/fire"
+	    "MaxLevel"                      "1"
+	
+	    "Modifiers"
+	    {
+	        "modifier_blaze_passive"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	
+	            "OnAttackLanded"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"        "towers/towerevents.lua"
+	                    "Function"          "TriggerEvent"
+	                    "Event"             "OnAttackLanded"
+	                }
+	            }
+	        }
+	    }
 	}
 	//=================================================================================================================
 	// Flamethrower Tower: Napalm
@@ -3487,6 +3550,39 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// Light Tower: Intensity
+	// Consecutive attacks on the same target causes a flat damage increase (don't worry about numbers). 
+	// Has no stack limit. Resets completely upon switching
+	//=================================================================================================================
+	"light_tower_intensity"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "ability_datadriven"                                            
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"            "towers/light"
+	    "MaxLevel"                      "1"
+	
+	    "Modifiers"
+	    {
+	        "modifier_blaze_intensity"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	
+	            "OnAttackLanded"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"        "towers/towerevents.lua"
+	                    "Function"          "TriggerEvent"
+	                    "Event"             "OnAttackLanded"
+	                }
+	            }
+	        }
+	    }
+	}
 	//============================================================//
 	// Magic Tower: Range
 	//============================================================//
@@ -3687,7 +3783,7 @@
 	
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"towers/spore_explosion"
+		"AbilityTextureName"			"towers/nature"
 		"MaxLevel"						"4"
 	
 		"Modifiers"
@@ -4701,6 +4797,37 @@
 				}
 			}
 		}
+	}
+	//=================================================================================================================
+	// Water Tower
+	//=================================================================================================================
+	"water_tower_ability"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "ability_datadriven"                                            
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"            "towers/water"
+	    "MaxLevel"                      "1"
+	
+	    "Modifiers"
+	    {
+	        "modifier_water_passive"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	
+	            "OnAttackLanded"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"        "towers/towerevents.lua"
+	                    "Function"          "TriggerEvent"
+	                    "Event"             "OnAttackLanded"
+	                }
+	            }
+	        }
+	    }
 	}
 	//============================================================//
 	// Well Tower: Spring Forward

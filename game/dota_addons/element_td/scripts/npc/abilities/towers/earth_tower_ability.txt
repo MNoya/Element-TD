@@ -1,0 +1,31 @@
+//=================================================================================================================
+// Earth Tower
+//=================================================================================================================
+"earth_tower_ability"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"                     "ability_datadriven"                                            
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "towers/earth"
+    "MaxLevel"                      "1"
+
+    "Modifiers"
+    {
+        "modifier_earth_passive"
+        {
+            "Passive"   "1"
+            "IsHidden"  "1"
+
+            "OnAttackLanded"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"        "towers/towerevents.lua"
+                    "Function"          "TriggerEvent"
+                    "Event"             "OnAttackLanded"
+                }
+            }
+        }
+    }
+}

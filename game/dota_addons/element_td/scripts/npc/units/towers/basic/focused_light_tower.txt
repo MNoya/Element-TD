@@ -45,7 +45,7 @@
     "BuildTime"                 "1"
     "Element"                   "light"
     "DamageType"                "light"
-    "ScriptClass"               "BasicTower"
+    "ScriptClass"               "LightTower"
     "TowerType"                 "Normal"
     "BuffPriority"              "9"
     

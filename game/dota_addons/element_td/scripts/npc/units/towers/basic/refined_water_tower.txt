@@ -44,7 +44,7 @@
     "Element"                   "water"
 
     "DamageType"                "water"
-    "ScriptClass"               "BasicTowerAOE"
+    "ScriptClass"               "WaterTower"
     "TowerType"                 "Normal"
     "BuffPriority"              "5"
 

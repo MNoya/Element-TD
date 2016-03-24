@@ -45,7 +45,7 @@
     "BuildTime"                 "1"
     "Element"                   "fire"
     "DamageType"                "fire"
-    "ScriptClass"               "BasicTowerAOE"
+    "ScriptClass"               "FireTower"
     "TowerType"                 "Normal"
     "BuffPriority"              "11"
     
