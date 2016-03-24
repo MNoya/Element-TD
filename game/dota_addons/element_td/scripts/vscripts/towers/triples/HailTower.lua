@@ -51,7 +51,19 @@ end
 function HailTower:OnAttackLanded(keys)
     local target = keys.target
     local damage = self.tower:GetAverageTrueAttackDamage()
-    DamageEntity(target, self.tower, damage)
+
+    local crit = false
+    if RollPercentage(self.crit_chance) then
+        damage = damage * self.damageMultiplier
+        crit = true
+    end
+
+    local damage_done = DamageEntity(target, self.tower, damage)
+
+    -- Show popup on critz
+    if crit then
+        PopupLightDamage(target, math.floor(damage_done))
+    end
 end
 
 function HailTower:OnProjectileHit(keys)
@@ -77,8 +89,9 @@ function HailTower:OnCreated()
     self.attacks_required = self.ability:GetSpecialValueFor("attacks_required")
     self.current_attacks = 0
     self.findRadius = self.tower:GetAttackRange() + self.tower:GetHullRadius()
-
     self.tower:SetModifierStackCount("modifier_storm_passive", self.tower, self.attacks_required)
+    self.crit_chance = self.ability:GetSpecialValueFor("crit_chance")
+    self.damageMultiplier = self.ability:GetSpecialValueFor("damage_mult") / 100 
 end
 
 RegisterTowerClass(HailTower, HailTower.className)

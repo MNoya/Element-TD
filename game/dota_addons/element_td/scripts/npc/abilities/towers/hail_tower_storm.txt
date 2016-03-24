@@ -44,5 +44,15 @@
 			"var_type"				"FIELD_INTEGER"
 			"attacks_required"		"15"
 		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"crit_chance"			"15"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_mult"			"300"
+		}
 	}
 }
