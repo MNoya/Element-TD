@@ -31,7 +31,7 @@ function WaterTower:StartBounce(original_target, remaining_bounces)
     if next_target then
         -- Create a dummy and teach it the ability
         local dummy = CreateUnitByName("tower_dummy", original_target:GetAbsOrigin(), false, nil, nil, 0)
-        local dummy_ability = AddAbility(self.tower, "water_tower_water_bullet")
+        local dummy_ability = AddAbility(dummy, "water_tower_water_bullet")
         dummy_ability.maxBounces = self.ability:GetSpecialValueFor("bounces")
         dummy_ability.bounceRange = self.ability:GetSpecialValueFor("bounce_range")
         dummy_ability.bounceSpeed = self.tower:GetProjectileSpeed() / 3
@@ -43,6 +43,7 @@ function WaterTower:StartBounce(original_target, remaining_bounces)
         dummy_ability.halfAOE = self.halfAOE
         dummy_ability.fullAOE = self.fullAOE
         dummy_ability.dummy = dummy
+        self.dummies[dummy:GetEntityIndex()] = 1
 
         local sourceLoc = original_target:GetAbsOrigin()
         sourceLoc.z = sourceLoc.z + 32
@@ -50,7 +51,7 @@ function WaterTower:StartBounce(original_target, remaining_bounces)
         ProjectileManager:CreateTrackingProjectile({
             Target = next_target,
             Source = original_target,
-            Ability = self.ability,
+            Ability = dummy_ability,
             EffectName = self.projectileName,
             iMoveSpeed = self.bounceSpeed,
             vSourceLoc = sourceLoc,
@@ -111,10 +112,19 @@ function OnBounceHit(event)
     end
 end
 
+function WaterTower:OnDestroyed()
+    for entIndex,_ in pairs(self.dummies) do
+        local dummy = EntIndexToHScript(entIndex)
+        if dummy and IsValidEntity(dummy) then
+            UTIL_Remove(dummy)
+        end
+    end
+end
+
 function WaterTower:OnCreated()
     self.fullAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))
     self.halfAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
-
+    self.dummies = {}
     self.ability = AddAbility(self.tower, "water_tower_water_bullet")
     self.maxBounces = self.ability:GetSpecialValueFor("bounces")
     self.bounceRange = self.ability:GetSpecialValueFor("bounce_range")
