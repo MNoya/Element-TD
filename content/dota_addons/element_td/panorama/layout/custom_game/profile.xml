@@ -301,7 +301,7 @@
         </Panel>
 
         <Panel class="Hide" id="CustomBuilders">
-
+            <Label id="Soon" text="#profile_soon" />
         </Panel>
 
     </Panel>

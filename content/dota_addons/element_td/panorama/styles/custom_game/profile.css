@@ -110,6 +110,20 @@
     }
 }
 
+#Soon
+{
+    letter-spacing: 2px;
+    font-size: 56px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 6px;
+    margin-left: 10px;
+    horizontal-align: center;
+    vertical-align: center;
+    color: white;
+    text-shadow: 0px 0px 6px 1.5 #FBB23F;
+}
+
 // Profile Main Menu
 #Profile
 {

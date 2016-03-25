@@ -263,6 +263,7 @@
         "profile_towers_sold"   "Towers Sold"
         "profile_gold_tower"    "Gold Earned"
         "profile_life_tower"    "Lives Gained"
+        "profile_soon"          "Coming Soon"
 
         "leaderboard_title"     "Leaderboards"
         "leaderboard_classic"   "Top 100 Classic"
