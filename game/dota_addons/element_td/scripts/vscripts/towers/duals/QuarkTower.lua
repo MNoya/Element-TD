@@ -14,7 +14,7 @@ QuarkTower = createClass({
     },
 nil)    
 
-function QuarkTower:OnAttackStart(keys)
+function QuarkTower:OnAttack(keys)
     local target = keys.target
 
     if target:entindex() == self.targetEntIndex then
