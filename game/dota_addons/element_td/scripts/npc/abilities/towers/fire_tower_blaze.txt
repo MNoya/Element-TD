@@ -13,22 +13,6 @@
 
     "Modifiers"
     {
-        "modifier_blaze_passive"
-        {
-            "Passive"   "1"
-            "IsHidden"  "1"
-
-            "OnAttackLanded"
-            {
-                "RunScript"
-                {
-                    "ScriptFile"        "towers/towerevents.lua"
-                    "Function"          "TriggerEvent"
-                    "Event"             "OnAttackLanded"
-                }
-            }
-        }
-
         "modifier_blazeit"
         {
             "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
