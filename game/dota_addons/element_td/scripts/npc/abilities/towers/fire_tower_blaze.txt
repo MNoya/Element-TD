@@ -31,7 +31,10 @@
 
         "modifier_blazeit"
         {
+            "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
             "Duration"          "%duration"
+            "IsHidden"          "1"
+            "IsDebuff"          "1"
             "TextureName"       "towers/fire"
             "EffectName"        "particles/custom/towers/fire/blaze.vpcf"
             "EffectAttachType"  "follow_origin"
@@ -46,6 +49,34 @@
                     "Event"             "DealBlazeDamage"
                 }
             }
+
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "mechanics/modifiers.lua"
+                    "Function"      "StackModifier"
+                    "ModifierName"  "modifier_blazeit"
+                    "ModifierStack" "modifier_blazeit_stacks"
+                }
+            }
+
+            "OnDestroy"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "mechanics/modifiers.lua"
+                    "Function"      "StackModifier"
+                    "ModifierName"  "modifier_blazeit"
+                    "ModifierStack" "modifier_blazeit_stacks"
+                }
+            }
+        }
+
+        "modifier_blazeit_stacks"
+        {
+            "TextureName"   "towers/fire"
+            "IsDebuff"      "1"
         }
     }
 

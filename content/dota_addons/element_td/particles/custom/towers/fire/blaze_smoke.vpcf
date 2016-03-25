@@ -83,8 +83,8 @@
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMax = 2.500000
-			m_fLifetimeMin = 2.000000
+			m_fLifetimeMax = 2.000000
+			m_fLifetimeMin = 1.500000
 		},
 		{
 			_class = "C_INIT_InitialVelocityNoise"
@@ -152,8 +152,8 @@
 		},
 		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMax = 40.000000
-			m_flRadiusMin = 20.000000
+			m_flRadiusMax = 20.000000
+			m_flRadiusMin = 10.000000
 		},
 	]
 	m_Emitters =
