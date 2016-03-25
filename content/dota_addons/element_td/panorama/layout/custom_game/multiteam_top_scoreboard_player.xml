@@ -4,7 +4,10 @@
 		<include src="s2r://panorama/styles/custom_game/multiteam_top_scoreboard.vcss_c" />
 		<include src="s2r://panorama/styles/custom_game/shared_scoreboard_styles.vcss_c" />
 	</styles>
-	<script>
+	<scripts>
+        <include src="file://{resources}/scripts/profile/top_scoreboard.js" />
+    </scripts>
+    <script>
 	function PortraitClicked()
 	{
 		Players.PlayerPortraitClicked( $.GetContextPanel().GetAttributeInt( "player_id", -1 ), GameUI.IsControlDown(), GameUI.IsAltDown() );

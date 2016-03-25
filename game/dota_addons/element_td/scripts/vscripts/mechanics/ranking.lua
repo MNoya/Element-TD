@@ -6,7 +6,7 @@ end
 
 RANKING_URL = "http://hatinacat.com/leaderboard/data_request.php"
 
--- Generates list of ingame players and fetches their rankings, after voting ends
+-- Generates list of ingame players and fetches their rankings
 function Ranking:RequestInGamePlayerRanks()
     local leaderboard_type = EXPRESS_MODE and 1 or 0
 
@@ -63,7 +63,7 @@ end
 
 function Ranking:New(playerID)
     -- Store the steamID for the player to get a direct reference
-    local steamID = PlayerResource:GetSteamAccountID(playerID)
+    local steamID = 34961594--PlayerResource:GetSteamAccountID(playerID)
     steamIDs[playerID] = steamID
 
     -- Initial values
@@ -89,7 +89,7 @@ function Ranking:print(...)
 end
 
 function Ranking:GetPlayerIDForSteamID(steamID)
-    return steamIDs[playerID] or -1
+    return steamIDs[playerID] or 0---1
 end
 
 ----------------------------------------------------

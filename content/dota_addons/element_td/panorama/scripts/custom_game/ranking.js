@@ -27,23 +27,11 @@ function CreateRankings()
             if (container !== null) {
                 if (playerRankInfo.rank != 0) {
                     var parent = $( '#sector'+playerRankInfo.sector )
-                    GameUI.CreatePlayerRank(parent, playerRankInfo.percentile, playerRankInfo.rank, "Player_" + playerID + "_Rank" )
+                    GameUI.CreatePlayerRank(parent, playerRankInfo.percentile, playerRankInfo.rank, playerID )
                 }
             }
         }
     }
-}
-
-function HideRank()
-{
-    $("#RankingPlayer").AddClass("slideOut");
-    $("#RankingPlayer").AddClass("hidden");
-}
-
-function ShowRank()
-{
-    $("#RankingPlayer").RemoveClass("slideOut");
-    $("#RankingPlayer").RemoveClass("hidden");
 }
 
 function ShowRanks()
@@ -62,6 +50,19 @@ function ShowRanks()
             $.Schedule(11, function() { child.AddClass("slideOut"); });
         }
     }
+}
+
+// scope of ranking_player.xml
+function HideRank()
+{
+    $("#RankingPlayer").AddClass("slideOut");
+    $("#RankingPlayer").AddClass("hidden");
+}
+
+function ShowRank()
+{
+    $("#RankingPlayer").RemoveClass("slideOut");
+    $("#RankingPlayer").RemoveClass("hidden");
 }
 
 (function () {

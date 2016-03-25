@@ -59,8 +59,7 @@ GameUI.FormatKills = function (num) {
     }
 }
 
-GameUI.SetTextSafe = function ( panel, childName, textValue )
-{
+GameUI.SetTextSafe = function ( panel, childName, textValue ) {
     if ( panel === null )
         return;
     var childPanel = panel.FindChildInLayoutFile( childName )
@@ -69,16 +68,42 @@ GameUI.SetTextSafe = function ( panel, childName, textValue )
     childPanel.text = textValue;
 }
 
-GameUI.CreatePlayerRank = function(parent, percentile, rank, id) {
+GameUI.CreatePlayerRank = function(parent, percentile, rank, playerID) {
+    var id = "Player_" + playerID + "_Rank"
     var panel = $.CreatePanel( "Panel", parent, id);
     panel.BLoadLayout( "file://{resources}/layout/custom_game/ranking_player.xml", false, false );
     GameUI.SetTextSafe( panel, "RankingPercentile", GameUI.FormatPercentile(percentile));
     GameUI.SetTextSafe( panel, "RankingRank", "#" + GameUI.FormatRank(rank));
     panel.FindChildInLayoutFile( "RankingPlayer" ).AddClass(GameUI.GetRankImage(rank,percentile)+"_percentile");
+
+    // Store it
+    if (GameUI.Ranks == undefined)
+        GameUI.Ranks = {}
+
+    GameUI.Ranks[playerID] = panel
 }
 
-GameUI.GetRankImage = function ( rank, percentile )
-{
+GameUI.ShowPlayerRank = function(playerID) {
+    var panel = GameUI.Ranks[playerID]
+    var rank = panel.FindChildInLayoutFile( "RankingPlayer" );
+    if (rank)
+    {
+        rank.RemoveClass("slideOut");
+        rank.RemoveClass("hidden");
+    }
+}
+
+GameUI.HidePlayerRank = function(playerID) {
+    var panel = GameUI.Ranks[playerID]
+    var rank = panel.FindChildInLayoutFile( "RankingPlayer" );
+    if (rank)
+    {
+        rank.AddClass("slideOut");
+        rank.AddClass("hidden");
+    }
+}
+
+GameUI.GetRankImage = function ( rank, percentile ) {
     if (percentile <= 20)
         return "0";
     else if (percentile <= 40)
@@ -91,8 +116,7 @@ GameUI.GetRankImage = function ( rank, percentile )
         return "80";
 }
 
-GameUI.CommaFormat = function (value)
-{
+GameUI.CommaFormat = function (value) {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
@@ -114,7 +138,7 @@ GameUI.RewardLevel = function (steamID64) {
 }
 
 // Applies style to avatar profiles
-GameUI.ApplyPanelBorder = function (panel, steamID64){
+GameUI.ApplyPanelBorder = function (panel, steamID64) {
     var rewardLevel = GameUI.RewardLevel(steamID64)
 
     if (rewardLevel != 0)
