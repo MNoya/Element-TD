@@ -1,7 +1,8 @@
 //=================================================================================================================
-// Earth Tower 
+// Earth Tower: Landslide
+// Ministun on main target, can only happen once every second.
 //=================================================================================================================
-"earth_tower_ability"
+"earth_tower_landslide"
 {
     // General
     //-------------------------------------------------------------------------------------------------------------
@@ -9,4 +10,27 @@
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "AbilityTextureName"            "towers/earth"
     "MaxLevel"                      "1"
+
+    "Modifiers"
+    {
+        "modifier_earth_tower_stun"
+        {
+            "IsHidden"           "1"
+            "IsDebuff"           "1"
+        
+            "States"
+            {
+                "MODIFIER_STATE_STUNNED"        "MODIFIER_STATE_VALUE_ENABLED"
+            }
+        }
+    }
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"            "FIELD_FLOAT"
+            "ministun_duration"   "0.1"
+        }
+    }
 }
