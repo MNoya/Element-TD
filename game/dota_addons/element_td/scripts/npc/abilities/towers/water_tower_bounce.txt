@@ -1,7 +1,8 @@
 //=================================================================================================================
-// Water Tower
+// Water Tower: Bouncing Attack
+// Each attack bounces up to 3 times. Said attacks are all splash, bounce range is 150, and they don't increase/decrease in damage.
 //=================================================================================================================
-"water_tower_ability"
+"water_tower_bounce"
 {
     // General
     //-------------------------------------------------------------------------------------------------------------
@@ -10,22 +11,17 @@
     "AbilityTextureName"            "towers/water"
     "MaxLevel"                      "1"
 
-    "Modifiers"
+    "AbilitySpecial"
     {
-        "modifier_water_passive"
+        "01"
         {
-            "Passive"   "1"
-            "IsHidden"  "1"
-
-            "OnAttackLanded"
-            {
-                "RunScript"
-                {
-                    "ScriptFile"        "towers/towerevents.lua"
-                    "Function"          "TriggerEvent"
-                    "Event"             "OnAttackLanded"
-                }
-            }
+            "var_type"            "FIELD_INTEGER"
+            "bounces"             "3"
+        }
+        "02"
+        {
+            "var_type"            "FIELD_FLOAT"
+            "bounce_range"        "150"
         }
     }
 }

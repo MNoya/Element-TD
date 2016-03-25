@@ -24,7 +24,7 @@ end
 function WaterTower:OnCreated()
     self.fullAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"));
     self.halfAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"));
-    self.ability = AddAbility(self.tower, "water_tower_ability")
+    self.ability = AddAbility(self.tower, "water_tower_bounce")
 end
 
 RegisterTowerClass(WaterTower, WaterTower.className)
