@@ -931,7 +931,7 @@
         "DOTA_Tooltip_ability_item_upgrade_to_tidal_tower_2_disabled_damage"              "每层伤害："
         "DOTA_Tooltip_ability_item_upgrade_to_tidal_tower_disabled_damage"                "每层伤害："
 
-        //////////
+         //////////
         // Fire //
         //////////
         "DOTA_Tooltip_ability_item_upgrade_to_focused_fire_tower"       "专注的圣火之塔"

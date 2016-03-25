@@ -326,7 +326,6 @@
         "DOTA_Tooltip_ability_build_nature_tower_disabled"                     "Построить Башню Природы"
         "DOTA_Tooltip_ability_build_nature_tower_disabled_Description"         "Возводит Башню Природы в выбранной точке.\n200% против <font color='#D4880F'>Земли</font>, 50% прои\тив <font color='#C40000'>Огня</font>\n<font color='#F0BA36'>Requires: </font><font color='#00C400'>Природа</font>\n\nCOST: <font color='#F0BA36'>175 Золота</font>\nELEMENT: <font color='#00C400'>Природа</font> \nDAMAGE TYPE: <font color='#00C400'>Природа</font> \nDAMAGE: <font color='#FFFFFF'>120</font> \nSPEED: <font color='#FFFFFF'>Быстрая</font> \nRANGE: <font color='#FFFFFF'>700</font>"
 
-
         "DOTA_Tooltip_ability_build_earth_tower"                               "Построить Башню Земли"
         "DOTA_Tooltip_ability_build_earth_tower_Description"                   "Возводит Башню Земли в выбранной точке.\n200% против <font color='#E5DE23'>Света</font>, 50% против <font color='#00C400'>Природы</font>\n\nCOST: <font color='#F0BA36'>175 Золота</font>\nELEMENT: <font color='#D4880F'>Земля</font> \nDAMAGE TYPE: <font color='#D4880F'>Земля</font> \nDAMAGE: <font color='#FFFFFF'>48</font> \nSPEED: <font color='#FFFFFF'>Средняя</font> \nRANGE: <font color='#FFFFFF'>900</font> \nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>"
         "DOTA_Tooltip_ability_build_earth_tower_disabled"                      "Построить Башню Земли"
@@ -970,7 +969,7 @@
         "DOTA_Tooltip_ability_item_upgrade_to_tidal_tower_2_disabled_damage"              "DAMAGE PER STACK:"
         "DOTA_Tooltip_ability_item_upgrade_to_tidal_tower_disabled_damage"                "DAMAGE PER STACK:"
 
-        //////////
+         //////////
         // Fire //
         //////////
         "DOTA_Tooltip_ability_item_upgrade_to_focused_fire_tower"       "Focused Fire Tower"
@@ -983,7 +982,7 @@
         "DOTA_Tooltip_ability_item_upgrade_to_refined_fire_tower_Description"       "Upgrades this tower to a Refined Fire Tower.\n\nCOST: <font color='#F0BA36'>1675 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font>\nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>340</font>\nRANGE: <font color='#FFFFFF'>550</font>\nSPEED: <font color='#FFFFFF'>Very Fast</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Each attack applies a single-target DoT debuff on all targets hit that can stack indefinitely."
         "DOTA_Tooltip_ability_item_upgrade_to_refined_fire_tower_disabled_Description"      "Upgrades this tower to a Refined Fire Tower.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire 3</font> \n\nCOST: <font color='#F0BA36'>1675 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font>\nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>340/font>\nRANGE: <font color='#FFFFFF'>550</font>\nSPEED: <font color='#FFFFFF'>Very Fast</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Each attack applies a single-target DoT debuff on all targets hit that can stack indefinitely."
 
-       "DOTA_Tooltip_ability_item_upgrade_to_pure_fire_tower"                            "Upgrade To Pure Fire Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_pure_fire_tower"                            "Upgrade To Pure Fire Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_pure_fire_tower_Description"                "Upgrades this tower to a Pure Fire Tower.\n\nCOST: <font color='#F0BA36'>8700 Gold</font> and <font color='#00BFFF'>1 Pure Essence</font>\nELEMENT: <font color='#C40000'>Fire</font>\nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>3400</font>\nRANGE: <font color='#FFFFFF'>550</font>\nSPEED: <font color='#FFFFFF'>Very Fast</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Each attack applies a single-target DoT debuff on all targets hit that can stack indefinitely."
 
         // Blacksmith (Fire + Earth)
@@ -1096,7 +1095,7 @@
         "DOTA_Tooltip_ability_item_upgrade_to_refined_nature_tower_Description"     "Upgrades this tower to a Refined Nature Tower.\n\nCOST: <font color='#F0BA36'>1675 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font>\nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>5070</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Every creep killed by this tower explodes, dealing damage to all other creeps in an area around it."
         "DOTA_Tooltip_ability_item_upgrade_to_refined_nature_tower_disabled_Description"        "Upgrades this tower to a Refined Nature Tower.\n<font color='#F0BA36'>Requires: </font><font color='#00C400'>Nature 3</font> \n\nCOST: <font color='#F0BA36'>1675 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font>\nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>5070</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Every creep killed by this tower explodes, dealing damage to all other creeps in an area around it."
 
-        "DOTA_Tooltip_ability_item_upgrade_to_focused_nature_tower"     "Focused Nature Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_focused_nature_tower"                 "Focused Nature Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_nature_tower_disabled"        "Focused Nature Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_nature_tower_Description"     "Upgrades this tower to a Focused Nature Tower.\n\nCOST: <font color='#F0BA36'>450 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font>\nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>780</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nAbility: Every creep killed by this tower explodes, dealing damage to all other creeps in an area around it."
         "DOTA_Tooltip_ability_item_upgrade_to_focused_nature_tower_disabled_Description"        "Upgrades this tower to a Focused Nature Tower.\n<font color='#F0BA36'>Requires: </font><font color='#00C400'>Nature 2</font> \n\nCOST: <font color='#F0BA36'>450 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font>\nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>780</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Every creep killed by this tower explodes, dealing damage to all other creeps in an area around it."
