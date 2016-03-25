@@ -2764,7 +2764,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_FLOAT"
-	            "damage_per_second"     "10 50 300 1000" //placeholder values
+	            "damage_per_second"     "3 20 130 1300"
 	        }
 	        "02"
 	        {
@@ -3104,7 +3104,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attacks_required"		"15"
+				"attacks_required"		"14"
 			}
 			"02"
 			{
@@ -3610,7 +3610,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "damage"                "10 50 250 1337"
+	            "damage"                "5 30 180 1800"
 	        }
 	    }
 	}
@@ -3841,7 +3841,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"20 100 500 2500"
+				"damage"				"24 156 1020 10200"
 			}
 			"02"
 			{

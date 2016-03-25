@@ -28,12 +28,12 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "180"
-    "AttackDamageMax"           "180"
-    "Damage"                    "180"  
+    "AttackDamageMin"           "270"
+    "AttackDamageMax"           "270"
+    "Damage"                    "270"  
     "AttackRange"               "1150"
     "AttackAcquisitionRange"    "1150"
-    "AttackRate"                "1"
+    "AttackRate"                "1.5"
     "AttackAnimationPoint"      "0.25"
     "ProjectileSpeed"           "2500"
 

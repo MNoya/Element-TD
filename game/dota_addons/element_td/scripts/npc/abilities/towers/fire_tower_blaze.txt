@@ -54,7 +54,7 @@
         "01"
         {
             "var_type"              "FIELD_FLOAT"
-            "damage_per_second"     "10 50 300 1000" //placeholder values
+            "damage_per_second"     "3 20 130 1300"
         }
         "02"
         {
