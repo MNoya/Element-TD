@@ -61,7 +61,7 @@ function HailTower:OnAttackLanded(keys)
     local damage_done = DamageEntity(target, self.tower, damage)
 
     -- Show popup on critz
-    if crit then
+    if crit and damage_done then
         PopupLightDamage(target, math.floor(damage_done))
     end
 end
