@@ -40,8 +40,6 @@ function Ranking:RequestInGamePlayerRanks()
             return
         end
 
-        DeepPrintTable(obj)
-
         if obj.result == 1 then
             Ranking:print("Retrieved player rankings!")
             for _,player in pairs(obj.players) do
@@ -56,7 +54,7 @@ function Ranking:RequestInGamePlayerRanks()
                     CustomNetTables:SetTableValue("rankings", tostring(playerID), data)
                 end
             end
-            Ranking:DisplayPlayerRanks()
+            Ranking:CreatePlayerRanks()
         else
             Ranking:print("Malformed request")
         end
@@ -78,13 +76,12 @@ function Ranking:New(playerID)
     Ranking[playerID] = ranking
 end
 
-function Ranking:DisplayPlayerRanks()
-    Ranking:print("Displaying Ranks")
-    CustomGameEventManager:Send_ServerToAllClients( "etd_display_ranks", {} )
+function Ranking:CreatePlayerRanks()
+    CustomGameEventManager:Send_ServerToAllClients( "etd_create_ranks", {} )
 end
 
-function Ranking:ShowPlayerRanks(bVisible)
-    CustomGameEventManager:Send_ServerToAllClients( "etd_show_ranks", { toggle = bVisible } )
+function Ranking:ShowPlayerRanks()
+    CustomGameEventManager:Send_ServerToAllClients( "etd_show_ranks", {} )
 end
 
 function Ranking:print(...)
@@ -95,5 +92,4 @@ function Ranking:GetPlayerIDForSteamID(steamID)
     return steamIDs[playerID] or -1
 end
 
-Ranking:DisplayPlayerRanks()
 ----------------------------------------------------

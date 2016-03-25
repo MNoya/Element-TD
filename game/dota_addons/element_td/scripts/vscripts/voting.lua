@@ -235,7 +235,7 @@ function FinalizeVotes()
 				end
 				-- Display player ranks
 				Timers:CreateTimer(5, function()
-					Ranking:ShowPlayerRanks( true )
+					Ranking:ShowPlayerRanks()
 				end)
 			end
 		end

@@ -2,20 +2,22 @@
 
 var Root = $.GetContextPanel()
 var rankingTopBar = $( '#RankingTopBar' );
-var enabled = false;
 
-function DisplayRanks()
-{
-    $.Msg("Diplaying Ranks")
-
-    // Process and store rankings
+// Process and store rankings
+function LoadRankings() {
     var rankings = CustomNetTables.GetAllTableValues( "rankings" )
     Root.playerRankings = {}
+
     for (var playerID in rankings)
     {
         Root.playerRankings[playerID] = rankings[playerID].value;
         $.Msg("Player "+playerID+" info: ",Root.playerRankings[playerID])
     }
+}
+
+function CreateRankings()
+{
+    LoadRankings()
 
     // Build ranking badge for each player
     for (var playerID in Root.playerRankings) {
@@ -34,39 +36,41 @@ function DisplayRanks()
 
 function HideRank()
 {
-    if (enabled) {
-        $("#RankingPlayer").AddClass("slideOut");
-        $("#RankingPlayer").AddClass("hidden");
-    }
+    $("#RankingPlayer").AddClass("slideOut");
+    $("#RankingPlayer").AddClass("hidden");
 }
 
 function ShowRank()
 {
-    if (enabled) {
-        $("#RankingPlayer").RemoveClass("slideOut");
-        $("#RankingPlayer").RemoveClass("hidden");
-    }
+    $("#RankingPlayer").RemoveClass("slideOut");
+    $("#RankingPlayer").RemoveClass("hidden");
 }
 
-function ShowRanks( data )
+function ShowRanks()
 {
-    if (data.toggle) 
-    {
-        for (var playerID in Root.playerRankings) {
-            var playerRankInfo = Root.playerRankings[playerID];
-            if (playerRankInfo.rank != 0) {
-                var panel = $("#Player_" + playerID + "_Rank");
-                var child = panel.FindChildInLayoutFile( "RankingPlayer" );
-                child.RemoveClass("slideOut");
-                child.RemoveClass("hidden");
-                $.Schedule(10, function() { enabled = true; child.AddClass("hidden"); });
-                $.Schedule(11, function() { child.AddClass("slideOut"); });
-            }
+    $.Msg(Root.playerRankings)
+    for (var playerID in Root.playerRankings) {
+        $.Msg(playerID)
+        var playerRankInfo = Root.playerRankings[playerID];
+        if (playerRankInfo.rank != 0) {
+            $.Msg(playerRankInfo)
+            var panel = $("#Player_" + playerID + "_Rank");
+            var child = panel.FindChildInLayoutFile( "RankingPlayer" );
+            child.RemoveClass("slideOut");
+            child.RemoveClass("hidden");
+            $.Schedule(10, function() { child.AddClass("hidden"); });
+            $.Schedule(11, function() { child.AddClass("slideOut"); });
         }
     }
 }
 
 (function () {
     GameEvents.Subscribe( "etd_show_ranks", ShowRanks );
-    GameEvents.Subscribe( "etd_display_ranks", DisplayRanks );
+    GameEvents.Subscribe( "etd_create_ranks", CreateRankings );
+
+    // Reconnection
+    $.Schedule(0.1, function()
+    {
+        CreateRankings()
+    })
 })();
