@@ -1,8 +1,8 @@
 //=================================================================================================================
-// Water Tower: Bouncing Attack
+// Water Tower: Water Bullet
 // Each attack bounces up to 3 times. Said attacks are all splash, bounce range is 150, and they don't increase/decrease in damage.
 //=================================================================================================================
-"water_tower_bounce"
+"water_tower_water_bullet"
 {
     // General
     //-------------------------------------------------------------------------------------------------------------
@@ -10,6 +10,16 @@
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "AbilityTextureName"            "towers/water"
     "MaxLevel"                      "1"
+
+    "OnProjectileHitUnit"
+    {
+        "DeleteOnHit"   "1"
+        "RunScript"
+        {
+            "ScriptFile"        "towers/basic/WaterTower.lua"
+            "Function"          "OnBounceHit"
+        }
+    }
 
     "AbilitySpecial"
     {
@@ -20,7 +30,7 @@
         }
         "02"
         {
-            "var_type"            "FIELD_FLOAT"
+            "var_type"            "FIELD_INTEGER"
             "bounce_range"        "150"
         }
     }
