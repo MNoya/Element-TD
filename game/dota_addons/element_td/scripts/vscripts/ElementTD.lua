@@ -419,12 +419,12 @@ function ElementTD:CheckGameEnd()
     Timers:CreateTimer(5, function()
 
         -- Try to revert client convars
-        for _, playerID in pairs(playerIDs) do
+        --[[for _, playerID in pairs(playerIDs) do
             local hero = PlayerResource:GetSelectedHeroEntity(playerID)
             if hero then
                 hero:RemoveModifierByName("modifier_client_convars")
             end
-        end
+        end]]
 
         GameRules:SetGameWinner( teamWinner )
         GameRules:SetSafeToLeave( true )
@@ -493,7 +493,7 @@ function ElementTD:InitializeHero(playerID, hero)
     print("OnInitHero PID: "..playerID)
     hero:AddNewModifier(nil, nil, "modifier_disarmed", {})
     hero:AddNewModifier(nil, nil, "modifier_attack_immune", {})
-    hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
+    --hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
     hero:AddNewModifier(hero, nil, "modifier_max_ms", {})
 
     hero:SetAbilityPoints(0)
