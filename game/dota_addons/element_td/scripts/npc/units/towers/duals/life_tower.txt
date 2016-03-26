@@ -40,9 +40,9 @@
         "1"        "light"
         "2"        "nature"
     }
-    "Damage"        "280"
-    "AttackDamageMin"        "280"
-    "AttackDamageMax"        "280"
+    "Damage"        "300"
+    "AttackDamageMin"        "300"
+    "AttackDamageMax"        "300"
     "DamageType"        "nature"
     "ScriptClass"        "LifeTower"
     "TowerType"        "Normal"

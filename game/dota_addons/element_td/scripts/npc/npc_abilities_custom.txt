@@ -3115,7 +3115,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_mult"			"300"
+				"damage_mult"			"350"
 			}
 		}
 	}
@@ -3611,7 +3611,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "damage"                "5 30 180 1800"
+	            "damage"                "6 39 255 2550"
 	        }
 	    }
 	}

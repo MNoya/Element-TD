@@ -4071,9 +4071,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "270"
-	    "AttackDamageMax"           "270"
-	    "Damage"                    "270"  
+	    "AttackDamageMin"           "260"
+	    "AttackDamageMax"           "260"
+	    "Damage"                    "260"  
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
 	    "AttackRate"                "1.5"
@@ -4358,9 +4358,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "1755"
-	    "AttackDamageMax"           "1755"
-	    "Damage"                    "1755"  
+	    "AttackDamageMin"           "1690"
+	    "AttackDamageMax"           "1690"
+	    "Damage"                    "1690"  
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
 	    "AttackRate"                "1.5"
@@ -5164,9 +5164,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "114000"
-	    "AttackDamageMax"           "114000"
-	    "Damage"                    "114000"  
+	    "AttackDamageMin"           "110000"
+	    "AttackDamageMax"           "110000"
+	    "Damage"                    "110000"  
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
 	    "AttackRate"                "1.5"
@@ -5678,9 +5678,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "11400"
-	    "AttackDamageMax"           "11400"
-	    "Damage"                    "11400"  
+	    "AttackDamageMin"           "11000"
+	    "AttackDamageMax"           "11000"
+	    "Damage"                    "11000"  
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
 	    "AttackRate"                "1.5"
@@ -8080,9 +8080,9 @@
 	        "1"        "light"
 	        "2"        "nature"
 	    }
-	    "Damage"        "280"
-	    "AttackDamageMin"        "280"
-	    "AttackDamageMax"        "280"
+	    "Damage"        "300"
+	    "AttackDamageMin"        "300"
+	    "AttackDamageMax"        "300"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "LifeTower"
 	    "TowerType"        "Normal"
@@ -8189,9 +8189,9 @@
 	        "1"        "light"
 	        "2"        "nature"
 	    }
-	    "Damage"        "1680"
-	    "AttackDamageMin"        "1680"
-	    "AttackDamageMax"        "1680"
+	    "Damage"        "1800"
+	    "AttackDamageMin"        "1800"
+	    "AttackDamageMax"        "1800"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "LifeTower"
 	    "TowerType"        "Normal"
@@ -8276,9 +8276,9 @@
 	        "1"        "light"
 	        "2"        "nature"
 	    }
-	    "Damage"        "10080"
-	    "AttackDamageMin"        "10080"
-	    "AttackDamageMax"        "10080"
+	    "Damage"        "10800"
+	    "AttackDamageMin"        "10800"
+	    "AttackDamageMax"        "10800"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "LifeTower"
 	    "TowerType"        "Normal"
