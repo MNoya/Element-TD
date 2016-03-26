@@ -391,7 +391,7 @@ function UpdateScoreboard(playerID, express_end)
 		data.remaining = playerData.remaining
 	end
 
-    if data.remaining < 0 then data.remaining = 0 end
+    if data.remaining and data.remaining < 0 then data.remaining = 0 end
 
 	if express_end then
 		playerData.express_end = true
