@@ -99,14 +99,19 @@ function GetPlayerNetworth(playerID)
 				local ability = tower:GetAbilityByIndex( i )
 				if ability then
 					local name = ability:GetAbilityName()
+                    local cost = 0
+                    if tower.class then
+                        cost = GetUnitKeyValue( tower.class, "TotalCost" )
+                    end
+                    
 					if ( name == "sell_tower_100" ) then
-						playerNetworth = playerNetworth + GetUnitKeyValue( tower.class, "TotalCost" )
+						playerNetworth = playerNetworth + cost
 					elseif ( name == "sell_tower_98" ) then
-						playerNetworth = playerNetworth + round( GetUnitKeyValue( tower.class, "TotalCost" ) * 0.98 )
+						playerNetworth = playerNetworth + round( cost * 0.98 )
 					elseif ( name == "sell_tower_95" ) then
-						playerNetworth = playerNetworth + round( GetUnitKeyValue( tower.class, "TotalCost" ) * 0.95 )
+						playerNetworth = playerNetworth + round( cost * 0.95 )
 					elseif ( name == "sell_tower_90" ) then
-						playerNetworth = playerNetworth + round( GetUnitKeyValue( tower.class, "TotalCost" ) * 0.90 )
+						playerNetworth = playerNetworth + round( cost * 0.90 )
 					end
 				end
 			end
