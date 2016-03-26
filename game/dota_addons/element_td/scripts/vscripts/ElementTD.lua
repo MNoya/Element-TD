@@ -620,8 +620,6 @@ function ElementTD:OnReconnect(playerID)
     print("Player "..playerID.." reconnected")
     local player = PlayerResource:GetPlayer(playerID)
 
-    Sandbox:CheckPlayer(playerID)
-
     if PlayerData[playerID] and PlayerData[playerID].elements then
         ModifyLumber(playerID, 0) -- updates summoner spells
         ModifyPureEssence(playerID, 0, true)
