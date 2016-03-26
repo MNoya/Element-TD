@@ -72,6 +72,7 @@ function ShowRank()
     // Reconnection
     $.Schedule(0.1, function()
     {
+        GameUI.Ranks = {}
         CreateRankings()
     })
 })();

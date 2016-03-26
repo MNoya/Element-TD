@@ -77,29 +77,32 @@ GameUI.CreatePlayerRank = function(parent, percentile, rank, playerID) {
     panel.FindChildInLayoutFile( "RankingPlayer" ).AddClass(GameUI.GetRankImage(rank,percentile)+"_percentile");
 
     // Store it
-    if (GameUI.Ranks == undefined)
-        GameUI.Ranks = {}
-
     GameUI.Ranks[playerID] = panel
 }
 
 GameUI.ShowPlayerRank = function(playerID) {
     var panel = GameUI.Ranks[playerID]
-    var rank = panel.FindChildInLayoutFile( "RankingPlayer" );
-    if (rank)
+    if (panel)
     {
-        rank.RemoveClass("slideOut");
-        rank.RemoveClass("hidden");
+        var rank = panel.FindChildInLayoutFile( "RankingPlayer" );
+        if (rank)
+        {
+            rank.RemoveClass("slideOut");
+            rank.RemoveClass("hidden");
+        }
     }
 }
 
 GameUI.HidePlayerRank = function(playerID) {
     var panel = GameUI.Ranks[playerID]
-    var rank = panel.FindChildInLayoutFile( "RankingPlayer" );
-    if (rank)
+    if (panel)
     {
-        rank.AddClass("slideOut");
-        rank.AddClass("hidden");
+        var rank = panel.FindChildInLayoutFile( "RankingPlayer" );
+        if (rank)
+        {
+            rank.AddClass("slideOut");
+            rank.AddClass("hidden");
+        }
     }
 }
 
