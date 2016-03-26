@@ -35,7 +35,7 @@ end
 function FireTower:OnCreated()
     self.fullAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))
     self.halfAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
-    self.ability = AddAbility(self.tower, "fire_tower_blaze")
+    self.ability = AddAbility(self.tower, "fire_tower_blaze", self.tower:GetLevel())
     self.modifier_name = "modifier_blazeit" --420
     self.interval = 0.5 --taken from the modifier ThinkInterval value
     self.damage_per_interval = self.ability:GetLevelSpecialValueFor("damage_per_second", self.tower:GetLevel()-1) * self.interval

@@ -41,7 +41,7 @@ end
 
 
 function NatureTower:OnCreated()
-	self.ability = AddAbility(self.tower, "nature_tower_spore_explosion", GetUnitKeyValue(self.towerClass, "Level")) 
+	self.ability = AddAbility(self.tower, "nature_tower_spore_explosion", self.tower:GetLevel()) 
 	self.explosion_damage = self.ability:GetSpecialValueFor("damage") / 2;
 	self.aoe_full = self.ability:GetSpecialValueFor("aoe_full")
 	self.aoe_half = self.ability:GetSpecialValueFor("aoe_half")
