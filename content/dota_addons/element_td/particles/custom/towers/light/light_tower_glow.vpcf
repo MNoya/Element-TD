@@ -45,10 +45,6 @@
 			m_ChildRef = resource:"particles/units/heroes/hero_keeper_of_the_light/keeper_spirit_form_ambient_static.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_spirit_form_cast.vpcf"
-			m_bDisableChild = true
-		},
-		{
 			m_ChildRef = resource:"particles/units/heroes/hero_keeper_of_the_light/keeper_spirit_form_ambient_groundlight.vpcf"
 		},
 		{
@@ -62,10 +58,6 @@
 		},
 		{
 			m_ChildRef = resource:"particles/units/heroes/hero_keeper_of_the_light/keeper_spirit_form_ambient_modulate.vpcf"
-		},
-		{
-			m_ChildRef = resource:"particles/units/heroes/hero_keeper_of_the_light/keeper_spirit_form_ambient_warp.vpcf"
-			m_bDisableChild = true
 		},
 	]
 }

@@ -28,8 +28,8 @@ function LightTower:OnAttackLanded(keys)
         self.tower:SetBaseDamageMax(newDamage)
         self.tower:SetBaseDamageMin(newDamage)
         
-        -- this tower gains a "glow particle" every 3 consecutive attacks, capped at 3 instances
-        if #self.particles < math.min(3, math.floor(self.consecutiveAttacks / 3)) then
+        -- this tower gains a "glow particle" every 4 consecutive attacks, capped at 2 instances
+        if #self.particles < math.min(2, math.floor(self.consecutiveAttacks / 4)) then
             local particle = ParticleManager:CreateParticle(self.particleName, PATTACH_ABSORIGIN_FOLLOW, self.tower)
             ParticleManager:SetParticleControl(particle, 0, self.tower:GetOrigin())
             table.insert(self.particles, particle)
@@ -51,6 +51,14 @@ function LightTower:OnAttackLanded(keys)
     DamageEntity(target, self.tower, damage)
     if self.consecutiveAttacks > 0 then
         PopupLightDamage(self.tower, math.floor(damage))
+    end
+end
+
+function LightTower:OnDestroyed()
+    if self.particles then
+        for _, particle in pairs(self.particles) do
+            ParticleManager:DestroyParticle(particle, false)
+        end 
     end
 end
 
