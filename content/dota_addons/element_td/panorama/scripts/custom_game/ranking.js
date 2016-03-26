@@ -38,16 +38,29 @@ function LoadRankings() {
 
 function ShowRanks()
 {
+    var hideDelay = 10
+    var slideDelay = 11
     for (var playerID in Root.playerRankings) {
         var playerRankInfo = Root.playerRankings[playerID];
         if (playerRankInfo.rank != 0) {
-            $.Msg(playerRankInfo)
+
             var panel = $("#Player_" + playerID + "_Rank");
             var child = panel.FindChildInLayoutFile( "RankingPlayer" );
             child.RemoveClass("slideOut");
             child.RemoveClass("hidden");
-            $.Schedule(10, function() { child.AddClass("hidden"); });
-            $.Schedule(11, function() { child.AddClass("slideOut"); });
+
+            var hide = function( panel, playerID )
+            {
+                return function(){ panel.AddClass("hidden"); }
+            }( child, playerID );
+
+            var slideOut = function( panel, playerID )
+            {
+                return function(){ panel.AddClass("slideOut"); }
+            }( child, playerID );
+
+            $.Schedule( hideDelay, hide )
+            $.Schedule( slideDelay, slideOut )
         }
     }
 }
