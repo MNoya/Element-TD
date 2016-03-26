@@ -82,6 +82,13 @@ function OnBounceHit(event)
     local target = event.target
     local ability = event.ability
     local damage = ability.damage
+
+    -- Handles the case where the bounce wasn't properly initialized
+    if not damage or not IsValidEntity(ability.tower) then 
+        UTIL_Remove(ability.dummy)
+        return
+    end
+
     DamageEntitiesInArea(target:GetAbsOrigin(), ability.halfAOE, ability.tower, damage / 2)
     DamageEntitiesInArea(target:GetAbsOrigin(), ability.fullAOE, ability.tower, damage / 2)
 

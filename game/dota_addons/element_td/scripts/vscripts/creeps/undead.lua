@@ -69,6 +69,8 @@ function CreepUndead:UndeadCreepRespawn()
     local wave = creep.waveObject:GetWaveNumber()
     local creepClass = WAVE_CREEPS[wave]
 
+    if not IsValidEntity(creep) then return end
+
     creep:RemoveNoDraw()
     creep:RemoveModifierByName("modifier_invulnerable")
     creep:RemoveModifierByName("modifier_invisible_etd")
