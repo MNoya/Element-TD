@@ -28,15 +28,15 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "390"
-    "AttackDamageMax"           "390"
-    "Damage"                    "390"    
+    "AttackDamageMin"           "111"
+    "AttackDamageMax"           "111"
+    "Damage"                    "111"    
     "AOE_Full"                  "100"
     "AOE_Half"                  "200"  
     "AttackRange"               "900"
     "AttackAcquisitionRange"    "900"
     "AttackRate"                "0.66"
-    "AttackAnimationPoint"      "0.2"
+    "AttackAnimationPoint"      "0.15"
     "ProjectileSpeed"           "2500"
 
     "Level"                     "2"
