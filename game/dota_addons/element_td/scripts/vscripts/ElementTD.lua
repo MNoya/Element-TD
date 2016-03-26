@@ -13,7 +13,6 @@ if not players then
     TEAM_TO_SECTOR[11] = 7
      
     GAME_IS_PAUSED = false
-    SKIP_VOTING = false -- assigns default game settings if true
     DEV_MODE = false
     EXPRESS_MODE = false
 
@@ -199,28 +198,16 @@ function ElementTD:StartGame()
     Timers:CreateTimer(1, function()
         Log:info("The game has started!")
 
-        if not SKIP_VOTING then
-            CustomGameEventManager:Send_ServerToAllClients( "etd_toggle_vote_dialog", {visible = true} )
-            StartVoteTimer()
-            EmitAnnouncerSound("announcer_announcer_battle_prepare_01")
+        -- Start voting
+        CustomGameEventManager:Send_ServerToAllClients( "etd_toggle_vote_dialog", {visible = true} )
+        StartVoteTimer()
+        EmitAnnouncerSound("announcer_announcer_battle_prepare_01")
 
-            if GameRules:IsCheatMode() then
-                ElementTD:CheatsEnabled()
-            end
-        else
-            -- voting should never be skipped in real games
-            START_GAME_TIME = GameRules:GetGameTime()
-            if DEV_MODE then
-                GameSettings:SetGameLength("Developer")
-            else
-                GameSettings:SetGameLength("Normal")
-            end
-            Log:info("Skipping voting")
-            GameSettings:SetDifficulty("Normal")
-            GameSettings:SetCreepOrder("Normal")
-            for _, ply in pairs(playerIDs) do
-                StartBreakTime(ply) -- begin the break time for wave 1 :D
-            end
+        -- Load rankings for all players in game
+        Ranking:RequestInGamePlayerRanks()
+
+        if GameRules:IsCheatMode() then
+            ElementTD:CheatsEnabled()
         end
     end)
 end
@@ -630,6 +617,7 @@ end
 
 -- Called every time the player connects after being added to the valid playerIDs
 function ElementTD:OnReconnect(playerID)
+    print("Player "..playerID.." reconnected")
     local player = PlayerResource:GetPlayer(playerID)
 
     Sandbox:CheckPlayer(playerID)

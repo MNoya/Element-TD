@@ -214,9 +214,6 @@ function FinalizeVotes()
 		end
 	end
 
-	-- Load rankings for all players in game
-	Ranking:RequestInGamePlayerRanks()
-
 	Log:trace("Creating post vote timer")
 	Timers:CreateTimer("PostVoteTimer", {
 		endTime = 1,

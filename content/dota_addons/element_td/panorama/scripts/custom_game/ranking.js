@@ -3,21 +3,11 @@
 var Root = $.GetContextPanel()
 var rankingTopBar = $( '#RankingTopBar' );
 
-// Process and store rankings
-function LoadRankings() {
-    var rankings = CustomNetTables.GetAllTableValues( "rankings" )
-    Root.playerRankings = {}
-
-    for (var playerID in rankings)
-    {
-        Root.playerRankings[playerID] = rankings[playerID].value;
-        $.Msg("Player "+playerID+" info: ",Root.playerRankings[playerID])
-    }
-}
-
 function CreateRankings()
 {
     LoadRankings()
+    if (GameUI.Ranks === undefined)
+        GameUI.Ranks = {}
 
     // Build ranking badge for each player
     for (var playerID in Root.playerRankings) {
@@ -34,11 +24,21 @@ function CreateRankings()
     }
 }
 
+// Process and store rankings
+function LoadRankings() {
+    var rankings = CustomNetTables.GetAllTableValues( "rankings" )
+    Root.playerRankings = {}
+
+    for (var playerID in rankings)
+    {
+        Root.playerRankings[playerID] = rankings[playerID].value;
+        $.Msg("Player "+playerID+" info: ",Root.playerRankings[playerID])
+    }
+}
+
 function ShowRanks()
 {
-    $.Msg(Root.playerRankings)
     for (var playerID in Root.playerRankings) {
-        $.Msg(playerID)
         var playerRankInfo = Root.playerRankings[playerID];
         if (playerRankInfo.rank != 0) {
             $.Msg(playerRankInfo)
@@ -52,27 +52,7 @@ function ShowRanks()
     }
 }
 
-// scope of ranking_player.xml
-function HideRank()
-{
-    $("#RankingPlayer").AddClass("slideOut");
-    $("#RankingPlayer").AddClass("hidden");
-}
-
-function ShowRank()
-{
-    $("#RankingPlayer").RemoveClass("slideOut");
-    $("#RankingPlayer").RemoveClass("hidden");
-}
-
 (function () {
     GameEvents.Subscribe( "etd_show_ranks", ShowRanks );
     GameEvents.Subscribe( "etd_create_ranks", CreateRankings );
-
-    // Reconnection
-    $.Schedule(0.1, function()
-    {
-        GameUI.Ranks = {}
-        CreateRankings()
-    })
 })();

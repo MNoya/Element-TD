@@ -11,6 +11,7 @@ function Ranking:RequestInGamePlayerRanks()
     local leaderboard_type = EXPRESS_MODE and 1 or 0
 
     steamIDs = {} -- Stores all the steamIDs ingame
+    steamIDToPlayerID = {} -- Direct reference of steamID to playerID
 
     -- Process steam IDs
     for _, playerID in pairs(playerIDs) do
@@ -44,7 +45,7 @@ function Ranking:RequestInGamePlayerRanks()
             Ranking:print("Retrieved player rankings!")
             for _,player in pairs(obj.players) do
                 local playerID = Ranking:GetPlayerIDForSteamID(player.steamID)
-                if Ranking[playerID] and not Ranking[playerID].score then              
+                if Ranking[playerID] and not Ranking[playerID].score then
                     local data = Ranking[playerID]
                     data.rank = player.rank
                     data.percentile = player.percentile
@@ -65,6 +66,7 @@ function Ranking:New(playerID)
     -- Store the steamID for the player to get a direct reference
     local steamID = PlayerResource:GetSteamAccountID(playerID)
     steamIDs[playerID] = steamID
+    steamIDToPlayerID[tostring(steamID)] = playerID
 
     -- Initial values
     local ranking = {}
@@ -89,7 +91,7 @@ function Ranking:print(...)
 end
 
 function Ranking:GetPlayerIDForSteamID(steamID)
-    return steamIDs[playerID] or -1
+    return steamIDToPlayerID[tostring(steamID)] or -1
 end
 
 ----------------------------------------------------

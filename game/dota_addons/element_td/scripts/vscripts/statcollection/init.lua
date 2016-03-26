@@ -9,7 +9,7 @@ require('statcollection/lib/statcollection')
 require('statcollection/staging')
 require('statcollection/lib/utilities')
 
-local COLLECT_STATS = not Convars:GetBool('developer')
+local COLLECT_STATS = not IsInToolsMode()
 local TESTING = tobool(statInfo.TESTING)
 local MIN_PLAYERS = tonumber(statInfo.MIN_PLAYERS)
 

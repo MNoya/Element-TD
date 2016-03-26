@@ -4,8 +4,8 @@
     // Reconnection
     $.Schedule(1, function()
     {
-        $("#Avatar").SetPanelEvent( "onmouseover", function() { GameUI.ShowPlayerRank(playerID) })
-        $("#Avatar").SetPanelEvent( "onmouseout", function() { GameUI.ShowPlayerRank(playerID) })
+        $("#ScoreboardRoot").SetPanelEvent( "onmouseover", function() { GameUI.ShowPlayerRank(playerID) })
+        $("#ScoreboardRoot").SetPanelEvent( "onmouseout", function() { GameUI.HidePlayerRank(playerID) })
         $("#AvatarImage").ClearPanelEvent( "onmouseover" )
         $("#AvatarImage").ClearPanelEvent( "onmouseout" )
         //$("#AvatarImage").ClearPanelEvent( "onactivate" ) 
