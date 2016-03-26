@@ -4163,9 +4163,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "50"
-	    "AttackDamageMax"           "50"
-	    "Damage"                    "50"  
+	    "AttackDamageMin"           "48"
+	    "AttackDamageMax"           "48"
+	    "Damage"                    "48"  
 	    "AOE_Full"                  "200"
 	    "AOE_Half"                  "400"
 	    "AttackRange"               "900"
@@ -4446,9 +4446,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "325"
-	    "AttackDamageMax"           "325"
-	    "Damage"                    "325"  
+	    "AttackDamageMin"           "312"
+	    "AttackDamageMax"           "312"
+	    "Damage"                    "312"  
 	    "AOE_Full"                  "200"
 	    "AOE_Half"                  "400"
 	    "AttackRange"               "900"
@@ -4714,9 +4714,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "780"
-	    "AttackDamageMax"           "780"
-	    "Damage"                    "780"  
+	    "AttackDamageMin"           "750"
+	    "AttackDamageMax"           "750"
+	    "Damage"                    "750"  
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.66"
@@ -4801,15 +4801,15 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "390"
-	    "AttackDamageMax"           "390"
-	    "Damage"                    "390"    
+	    "AttackDamageMin"           "111"
+	    "AttackDamageMax"           "111"
+	    "Damage"                    "111"    
 	    "AOE_Full"                  "100"
 	    "AOE_Half"                  "200"  
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
-	    "AttackAnimationPoint"      "0.2"
+	    "AttackAnimationPoint"      "0.15"
 	    "ProjectileSpeed"           "2500"
 	
 	    "Level"                     "2"
@@ -4987,9 +4987,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "120"
-	    "AttackDamageMax"           "120"
-	    "Damage"                    "120"  
+	    "AttackDamageMin"           "115"
+	    "AttackDamageMax"           "115"
+	    "Damage"                    "115"  
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.66"
@@ -5248,9 +5248,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "21150"
-	    "AttackDamageMax"           "21150"
-	    "Damage"                    "21150"  
+	    "AttackDamageMin"           "20300"
+	    "AttackDamageMax"           "20300"
+	    "Damage"                    "20300"  
 	    "AOE_Full"                  "200"
 	    "AOE_Half"                  "400"
 	    "AttackRange"               "900"
@@ -5507,9 +5507,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "50700"
-	    "AttackDamageMax"           "50700"
-	    "Damage"                    "50700"  
+	    "AttackDamageMin"           "48600"
+	    "AttackDamageMax"           "48600"
+	    "Damage"                    "48600"  
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.66"
@@ -5591,15 +5591,15 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "25350"
-	    "AttackDamageMax"           "25350"
-	    "Damage"                    "25350"
+	    "AttackDamageMin"           "7200"
+	    "AttackDamageMax"           "7200"
+	    "Damage"                    "7200"
 	    "AOE_Full"                  "100"
 	    "AOE_Half"                  "200"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
-	    "AttackAnimationPoint"      "0.2"
+	    "AttackAnimationPoint"      "0.15"
 	    "ProjectileSpeed"           "2500"
 	
 	    "Level"                     "4"
@@ -5766,9 +5766,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "2115"
-	    "AttackDamageMax"           "2115"
-	    "Damage"                    "2115"  
+	    "AttackDamageMin"           "2030"
+	    "AttackDamageMax"           "2030"
+	    "Damage"                    "2030"  
 	    "AOE_Full"                  "200"
 	    "AOE_Half"                  "400"
 	    "AttackRange"               "900"
@@ -6035,9 +6035,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "5070"
-	    "AttackDamageMax"           "5070"
-	    "Damage"                    "5070"  
+	    "AttackDamageMin"           "4860"
+	    "AttackDamageMax"           "4860"
+	    "Damage"                    "4860"  
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.66"
@@ -6120,15 +6120,15 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "2535"
-	    "AttackDamageMax"           "2535"
-	    "Damage"                    "2535"
+	    "AttackDamageMin"           "720"
+	    "AttackDamageMax"           "720"
+	    "Damage"                    "720"
 	    "AOE_Full"                  "100"
 	    "AOE_Half"                  "200"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
-	    "AttackAnimationPoint"      "0.2"
+	    "AttackAnimationPoint"      "0.15"
 	    "ProjectileSpeed"           "2500"
 	
 	    "Level"                     "3"
@@ -6206,15 +6206,15 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "60"
-	    "AttackDamageMax"           "60"
-	    "Damage"                    "60"    
+	    "AttackDamageMin"           "17"
+	    "AttackDamageMax"           "17"
+	    "Damage"                    "17"    
 	    "AOE_Full"                  "100"
 	    "AOE_Half"                  "200"  
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
-	    "AttackAnimationPoint"      "0.2"
+	    "AttackAnimationPoint"      "0.15"
 	    "ProjectileSpeed"           "2500"
 	
 	    "Level"                     "1"
