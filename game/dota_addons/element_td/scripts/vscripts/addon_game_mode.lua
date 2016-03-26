@@ -37,6 +37,7 @@ local requires =
     "mechanics/random",
     "mechanics/summoner",
     "mechanics/interest",
+    "mechanics/orbs",
 
     -- utils
     "util/util",
