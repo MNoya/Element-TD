@@ -47,17 +47,17 @@
                         </Panel>
                     </Panel>
                     <Panel hittest="false" class='TriplesContainer' id="lightTriples">
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('nova','light','fire','nature')" onmouseout='OnMouseOut()'>
+                        <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('nova','light','fire','nature')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="nova" src="file://{images}/spellicons/towers/nova.png"/>
                             <Label class="TowerName" text="#nova_tower_name"/>
                             <Label class="AbilityLevel" id="nova_level" text=""/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('hail','light','dark','water')" onmouseout='OnMouseOut()'>
+                        <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('hail','light','dark','water')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="hail" src="file://{images}/spellicons/towers/hail.png"/>
                             <Label class="TowerName" text="#hail_tower_name"/>
                             <Label class="AbilityLevel" id="hail_level" text=""/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('laser','light','dark','earth')" onmouseout='OnMouseOut()'>
+                        <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('laser','light','dark','earth')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="laser" src="file://{images}/spellicons/towers/laser.png"/>
                             <Label class="TowerName" text="#laser_tower_name"/>
                             <Label class="AbilityLevel" id="laser_level" text=""/>
@@ -87,17 +87,17 @@
                         </Panel>
                     </Panel>
                     <Panel hittest="false" class='TriplesContainer' id="darkTriples">
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('jinx','dark','fire','nature')" onmouseout='OnMouseOut()'>
+                        <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('jinx','dark','fire','nature')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="jinx" src="file://{images}/spellicons/towers/jinx.png"/>
                             <Label class="TowerName" text="#jinx_tower_name"/>
                             <Label class="AbilityLevel" id="jinx_level" text=""/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('runic','dark','fire','light')" onmouseout='OnMouseOut()'>
+                        <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('runic','dark','fire','light')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="runic" src="file://{images}/spellicons/towers/runic.png"/>
                             <Label class="TowerName" text="#runic_tower_name"/>
                             <Label class="AbilityLevel" id="runic_level" text=""/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('obliteration','dark','light','nature')" onmouseout='OnMouseOut()'>
+                        <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('obliteration','dark','light','nature')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="obliteration" src="file://{images}/spellicons/towers/obliteration.png"/>
                             <Label class="TowerNameLong" text="#obliteration_tower_name"/>
                             <Label class="AbilityLevel" id="obliteration_level" text=""/>
@@ -122,22 +122,22 @@
                         </Panel>
                     </Panel>
                     <Panel hittest="false" class='TriplesContainer' id="waterTriples">
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('windstorm','water','fire','light')" onmouseout='OnMouseOut()'>
+                        <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('windstorm','water','fire','light')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="windstorm" src="file://{images}/spellicons/towers/windstorm.png"/>
                             <Label class="TowerNameLong" text="#windstorm_tower_name"/>
                             <Label class="AbilityLevel" id="windstorm_level" text=""/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('polar','water','light','earth')" onmouseout='OnMouseOut()'>
+                        <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('polar','water','light','earth')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="polar" src="file://{images}/spellicons/towers/polar.png"/>
                             <Label class="TowerName" text="#polar_tower_name"/>
                             <Label class="AbilityLevel" id="polar_level" text=""/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('flooding','water','dark','nature')" onmouseout='OnMouseOut()'>
+                        <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('flooding','water','dark','nature')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="flooding" src="file://{images}/spellicons/towers/flooding.png"/>
                             <Label class="TowerName" text="#flooding_tower_name"/>
                             <Label class="AbilityLevel" id="flooding_level" text=""/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('tidal','water','nature','light')" onmouseout='OnMouseOut()'>
+                        <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('tidal','water','nature','light')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="tidal" src="file://{images}/spellicons/towers/tidal.png"/>
                             <Label class="TowerName" text="#tidal_tower_name"/>
                             <Label class="AbilityLevel" id="tidal_level" text=""/>
@@ -167,17 +167,17 @@
                         </Panel>
                     </Panel>
                     <Panel hittest="false" class='TriplesContainer' id="fireTriples">
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('haste','fire','earth','water')" onmouseout='OnMouseOut()'>
+                        <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('haste','fire','earth','water')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="haste" src="file://{images}/spellicons/towers/haste.png"/>
                             <Label class="TowerName" text="#haste_tower_name"/>
                             <Label class="AbilityLevel" id="haste_level" text=""/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('erosion','fire','dark','water')" onmouseout='OnMouseOut()'>
+                        <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('erosion','fire','dark','water')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="erosion" src="file://{images}/spellicons/towers/erosion.png"/>
                             <Label class="TowerName" text="#erosion_tower_name"/>
                             <Label class="AbilityLevel" id="erosion_level" text=""/>
                         </Panel>
-                         <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('flamethrower','fire','dark','earth')" onmouseout='OnMouseOut()'>
+                         <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('flamethrower','fire','dark','earth')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="flamethrower" src="file://{images}/spellicons/towers/flamethrower.png"/>
                             <Label class="TowerNameLong" text="#flamethrower_tower_name"/>
                             <Label class="AbilityLevel" id="flamethrower_level" text=""/>
@@ -202,22 +202,22 @@
                         </Panel>
                     </Panel>
                     <Panel hittest="false" class='TriplesContainer' id="natureTriples">
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('roots','nature','dark','earth')" onmouseout='OnMouseOut()'>
+                        <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('roots','nature','dark','earth')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="roots" src="file://{images}/spellicons/towers/roots.png"/>
                             <Label class="TowerName" text="#roots_tower_name"/>
                             <Label class="AbilityLevel" id="roots_level" text=""/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('enchantment','nature','light','earth')" onmouseout='OnMouseOut()'>
+                        <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('enchantment','nature','light','earth')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="enchantment" src="file://{images}/spellicons/towers/enchantment.png"/>
                             <Label class="TowerNameLong" text="#enchantment_tower_name"/>
                             <Label class="AbilityLevel" id="enchantment_level" text=""/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('impulse','nature','fire','water')" onmouseout='OnMouseOut()'>
+                        <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('impulse','nature','fire','water')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="impulse" src="file://{images}/spellicons/towers/impulse.png"/>
                             <Label class="TowerName" text="#impulse_tower_name"/>
                             <Label class="AbilityLevel" id="impulse_level" text=""/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('ephemeral','nature','earth','water')" onmouseout='OnMouseOut()'>
+                        <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('ephemeral','nature','earth','water')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="ephemeral" src="file://{images}/spellicons/towers/ephemeral.png"/>
                             <Label class="TowerNameLong" text="#ephemeral_tower_name"/>
                             <Label class="AbilityLevel" id="ephemeral_level" text=""/>
@@ -242,17 +242,17 @@
                         </Panel>
                     </Panel>
                     <Panel hittest="false" class='TriplesContainer' id="earthTriples">
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('muck','earth','dark','water')" onmouseout='OnMouseOut()'>
+                        <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('muck','earth','dark','water')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="muck" src="file://{images}/spellicons/towers/muck.png"/>
                             <Label class="TowerName" text="#muck_tower_name"/>
                             <Label class="AbilityLevel" id="muck_level" text=""/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('gold','earth','fire','light')" onmouseout='OnMouseOut()'>
+                        <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('gold','earth','fire','light')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="gold" src="file://{images}/spellicons/towers/gold.png"/>
                             <Label class="TowerName" text="#gold_tower_name"/>
                             <Label class="AbilityLevel" id="gold_level" text=""/>
                         </Panel>
-                        <Panel hittest="false" class='AbilityContainer' onmouseover="Hover('quake','earth','fire','nature')" onmouseout='OnMouseOut()'>
+                        <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('quake','earth','fire','nature')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="quake" src="file://{images}/spellicons/towers/quake.png"/>
                             <Label class="TowerName" text="#quake_tower_name"/>
                             <Label class="AbilityLevel" id="quake_level" text=""/>
