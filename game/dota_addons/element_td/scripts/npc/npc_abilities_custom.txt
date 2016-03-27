@@ -4837,6 +4837,11 @@
 	            "var_type"            "FIELD_INTEGER"
 	            "bounce_range"        "150"
 	        }
+	        "03"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "aoe_reduction"       "50"
+	        }
 	    }
 	}
 	//============================================================//

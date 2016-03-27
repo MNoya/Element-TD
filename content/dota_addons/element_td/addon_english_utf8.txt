@@ -570,9 +570,11 @@
         "DOTA_Tooltip_ability_earth_tower_landslide_ministun_duration"  "MINISTUN DURATION:"
         
         "DOTA_Tooltip_ability_water_tower_water_bullet"                                   "Water Bullet"
-        "DOTA_Tooltip_ability_water_tower_water_bullet_Description"                       "Each attack bounces between creeps, dealing splash damage to every creep hit."
+        "DOTA_Tooltip_ability_water_tower_water_bullet_Description"                       "Each attack bounces between creeps, dealing splash damage to every creep hit. The splash radius is reduced with each bounce."
         "DOTA_Tooltip_ability_water_tower_water_bullet_bounces"                           "BOUNCES:"
         "DOTA_Tooltip_ability_water_tower_water_bullet_bounce_range"                      "BOUNCE RANGE:"
+        "DOTA_Tooltip_ability_water_tower_water_bullet_aoe_reduction"                     "SPLASH REDUCTION:"
+
 
         "DOTA_Tooltip_modifier_magic_tower_attack_range"        "Diminishing Range"
         "DOTA_Tooltip_modifier_magic_tower_attack_range_Description"        "Tower attack range decreased by %dMODIFIER_PROPERTY_ATTACK_RANGE_BONUS%."

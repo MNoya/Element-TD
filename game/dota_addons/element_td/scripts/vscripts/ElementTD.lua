@@ -142,6 +142,7 @@ end
 -- TODO: make with work with the :OnCreated function
 function ElementTD:OnScriptReload()
     -- Reload files
+    Log:info("script_reload has been executed!")
     NPC_UNITS_CUSTOM = LoadKeyValues("scripts/npc/npc_units_custom.txt")
     NPC_ABILITIES_CUSTOM = LoadKeyValues("scripts/npc/npc_abilities_custom.txt")
     NPC_ITEMS_CUSTOM = LoadKeyValues("scripts/npc/npc_items_custom.txt")
