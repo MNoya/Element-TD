@@ -191,6 +191,7 @@
 
 #Web
 {
+	width: 100%;
     horizontal-align: center;
     flow-children: right;
 }
@@ -212,6 +213,49 @@
     font-size: 45px;
     margin-left: 10px;
     text-shadow: 1px 1px 3px 3.0 #000;
+}
+
+#Verify
+{
+	width: 32px;
+	height: 32px;
+	border-radius: 28px;
+	background-color: lime;
+	background-size: 32px 32px;
+	horizontal-align: right;
+	margin-top: 10px;
+	margin-right: 85px;
+	transform: rotatez(45deg);
+	transition-property: opacity;
+    transition-duration: 1.2s;
+    transition-timing-function: ease-in-out;
+}
+
+#Verify #stem
+{
+	width: 4px;
+	height: 18px;
+	background-color: #fff;
+	position: 16px 6px 0px;
+	transition-property: opacity;
+    transition-duration: 1.0s;
+    transition-timing-function: ease-in-out;
+}
+
+#Verify #kick
+{
+	width: 6px;
+	height: 4px;
+	background-color: #fff;
+	position: 10px 20px 0px;
+	transition-property: opacity;
+    transition-duration: 1.0s;
+    transition-timing-function: ease-in-out;
+}
+
+.fade
+{
+	opacity: 0;
 }
 
 ////////////////

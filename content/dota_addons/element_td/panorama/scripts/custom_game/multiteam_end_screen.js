@@ -1,7 +1,24 @@
 "use strict";
 
 var Credits = $("#Supporters")
+var Verify = $("#Verify")
 
+var verifyToggle = false;
+
+function VerifyGame( data ) {
+    verifyToggle = !verifyToggle; 
+
+    Verify.SetHasClass("fade", verifyToggle);
+    $.Schedule( 0.5, function() {
+        $("#stem").SetHasClass("fade", verifyToggle);
+        $("#kick").SetHasClass("fade", verifyToggle);
+    } );
+}
+
+function ShowTooltip()
+{
+    $.DispatchEvent("DOTAShowTitleTextTooltip", Verify, "#recorded_title", "#recorded_tooltip");
+}
 
 function ShowEndCredits() {
     var delay = 0.2;
@@ -33,6 +50,7 @@ function CreateEndCredit(steamid) {
 
 (function()
 {
+    GameEvents.Subscribe( "etd_game_recorded", VerifyGame );
     ShowEndCredits()
     if ( ScoreboardUpdater_InitializeScoreboard === null ) { $.Msg( "WARNING: This file requires shared_scoreboard_updater.js to be included." ); }
 

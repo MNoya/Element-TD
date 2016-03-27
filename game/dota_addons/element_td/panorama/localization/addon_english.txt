@@ -227,6 +227,9 @@
         "web_link"              "www.eletd.com"
         "follow_us_link"        "@ETD"
 
+        "recorded_title"        "Match Recorded"
+        "recorded_tooltip"      "This match has been recorded on the leaderboard."
+
         "profile_title"         "My Profile"
         "profile"               "Profile"
         "profile_builders"      "Custom Builders"
