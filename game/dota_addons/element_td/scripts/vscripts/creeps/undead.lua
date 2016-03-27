@@ -32,8 +32,10 @@ function CreepUndead:OnDeath()
     newCreep.waveNumber = creep.waveNumber
     newCreep:CreatureLevelUp(newCreep.waveObject.waveNumber-newCreep:GetLevel())
     
-    creep.waveObject:RegisterCreep(newCreep:entindex())
+    local newEntIndex = newCreep:entindex()
+    creep.waveObject:RegisterCreep(newEntIndex)
     creep.waveObject.creepsRemaining = creep.waveObject.creepsRemaining + 1 -- Increment creep count
+    newCreep.entity_index = newEntIndex
     newCreep:AddNewModifier(nil, nil, "modifier_phased", {})
     newCreep:AddNewModifier(nil, nil, "modifier_invulnerable", {})
     newCreep:AddNewModifier(nil, nil, "modifier_invisible_etd", {})
@@ -59,7 +61,7 @@ function CreepUndead:OnDeath()
     end)
 
     self.creep = newCreep
-    CREEP_SCRIPT_OBJECTS[newCreep:entindex()] = self
+    CREEP_SCRIPT_OBJECTS[newEntIndex] = self
 end
 
 function CreepUndead:UndeadCreepRespawn()
@@ -69,7 +71,13 @@ function CreepUndead:UndeadCreepRespawn()
     local wave = creep.waveObject:GetWaveNumber()
     local creepClass = WAVE_CREEPS[wave]
 
-    if not IsValidEntity(creep) then return end
+    -- awful handling for awful issue
+    if not IsValidEntity(creep) then
+        if creep.entity_index then
+            creep.waveObject:OnCreepKilled(creep.entity_index)
+        end
+        return
+    end
 
     creep:RemoveNoDraw()
     creep:RemoveModifierByName("modifier_invulnerable")

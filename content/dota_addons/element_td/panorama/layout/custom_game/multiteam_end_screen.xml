@@ -102,7 +102,12 @@
 			<Button id="CloseButton" onactivate="Game.FinishGame();">
 				<Label text="#CustomEndScreenClose" />
 			</Button>
-			<Label id="LeaderboardLink" text="#leaderboard_link" />
+			<Label id="LeaderboardLink" text="#leaderboard_link" onactivate="VerifyGame();"/>
+			<Panel id="Verify" onactivate="VerifyGame();" onmouseover="ShowRecordedTooltip()" onmouseout="DOTAHideTitleTextTooltip()">
+				<Panel id="stem" class='fade'/>
+                <Panel id="kick" class='fade'/>
+                <Label id="cross" class='hide' text="X"/>
+			</Panel>
 		</Panel>
 
 		<Panel id="CreditContainer">

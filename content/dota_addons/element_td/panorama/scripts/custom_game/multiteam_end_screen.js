@@ -1,7 +1,39 @@
 "use strict";
 
 var Credits = $("#Supporters")
+var Verify = $("#Verify")
 
+function VerifyGame() {
+    var game_recorded_info = CustomNetTables.GetTableValue("gameinfo", "game_recorded")
+    if (game_recorded_info)
+    {
+        var recorded_state = game_recorded_info.value
+        Verify.state = recorded_state
+        if (recorded_state == "recorded")
+        {
+            Verify.style['background-color'] = "lime;"
+            $("#stem").RemoveClass("fade");
+            $("#kick").RemoveClass("fade");
+            return
+        }
+
+        else if (recorded_state == "failed")
+        {
+            Verify.style['background-color'] = "red;"
+            $("#cross").RemoveClass("hide")
+            return
+        }
+    }
+
+    $.Schedule(0.1, VerifyGame)
+}
+
+function ShowRecordedTooltip () {
+    if (Verify.state == "recorded")
+        $.DispatchEvent("DOTAShowTitleTextTooltip", Verify, "#recorded_title", "#recorded_tooltip");
+    else if (Verify.state == "failed")
+        $.DispatchEvent("DOTAShowTitleTextTooltip", Verify, "#recorded_fail_title", "#recorded_fail_tooltip");
+}
 
 function ShowEndCredits() {
     var delay = 0.2;
@@ -33,6 +65,7 @@ function CreateEndCredit(steamid) {
 
 (function()
 {
+    GameEvents.Subscribe( "etd_game_recorded", VerifyGame );
     ShowEndCredits()
     if ( ScoreboardUpdater_InitializeScoreboard === null ) { $.Msg( "WARNING: This file requires shared_scoreboard_updater.js to be included." ); }
 
@@ -110,4 +143,6 @@ function CreateEndCredit(steamid) {
           winningTeamLogo.BLoadLayout( logo_xml, false, false );
         }
     }
+
+    $.Schedule(0.1, VerifyGame)
 })();

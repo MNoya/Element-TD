@@ -33,7 +33,7 @@ function Wave:OnCreepKilled(index)
 		self.creeps[index] = nil
 		self.creepsRemaining = self.creepsRemaining - 1
 		local creep = EntIndexToHScript(index)
-		if creep:HasAbility("creep_ability_bulky") then
+		if IsValidEntity(creep) and creep:HasAbility("creep_ability_bulky") then
 		    self.creepsRemaining = self.creepsRemaining - 1
 		end
 		self.kills = self.kills + 1

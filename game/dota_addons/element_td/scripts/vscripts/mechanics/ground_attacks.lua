@@ -53,6 +53,7 @@ function AttackGround( event )
 
     -- Time fake attacks
     ability.attack_ground_timer = Timers:CreateTimer(function()
+        if not IsValidEntity(caster) or not caster:IsAlive() then return end
         caster:StartGesture(ACT_DOTA_ATTACK)
         ability.attack_ground_timer_attack = Timers:CreateTimer(caster:TimeUntilNextAttack(), function()
             caster:AttackNoEarlierThan(1/caster:GetAttacksPerSecond() - start_time)

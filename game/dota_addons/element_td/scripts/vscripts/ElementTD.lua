@@ -281,7 +281,7 @@ function ElementTD:EndGameForPlayer( playerID )
     for _,object in pairs(playerData.waveObjects) do
         for index,_ in pairs(object.creeps) do
             local creep = EntIndexToHScript(index)
-            if IsValidEntity(creep) then
+            if IsValidEntity(creep) and creep.ForceKill then
                 creep:ForceKill(false)
             end
         end
@@ -829,6 +829,7 @@ end
 
 PLAYER_CODES = {
     ["random"] = function(...) GameSettings:EnableRandomForPlayer(...) end,  -- Enable random for player
+    ["debug_abilities"] = function(playerID) DebugMainSelectedAbilities(playerID) end,
 }
 
 DEV_CODES = {

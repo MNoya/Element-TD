@@ -44,7 +44,6 @@ function WaterTower:StartBounce(original_target, remaining_bounces)
         dummy_ability.halfAOE = self.halfAOE
         dummy_ability.fullAOE = self.fullAOE
         dummy_ability.dummy = dummy
-        self.dummies[dummy:GetEntityIndex()] = 1
 
         local sourceLoc = original_target:GetAbsOrigin()
         sourceLoc.z = sourceLoc.z + 32
@@ -117,15 +116,6 @@ function OnBounceHit(event)
         end
     else
         UTIL_Remove(ability.dummy)
-    end
-end
-
-function WaterTower:OnDestroyed()
-    for entIndex,_ in pairs(self.dummies) do
-        local dummy = EntIndexToHScript(entIndex)
-        if dummy and IsValidEntity(dummy) then
-            UTIL_Remove(dummy)
-        end
     end
 end
 
