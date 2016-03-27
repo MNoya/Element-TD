@@ -166,10 +166,10 @@
 			m_ChildRef = resource:"particles/custom/towers/nature/ethereal.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/towers/nature/spore_explosion_blast.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/nature/force_of_nature_blast.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/towers/nature/spore_explosion_burst.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/nature/force_of_nature_burst.vpcf"
 		},
 	]
 }

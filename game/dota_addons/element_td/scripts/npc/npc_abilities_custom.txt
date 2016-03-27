@@ -3806,53 +3806,26 @@
 		}
 	}
 	//=================================================================================================================
-	// Nature Tower: Spore Explosion
+	// Nature Tower: Force of Nature
 	//=================================================================================================================
-	"nature_tower_spore_explosion"
+	"nature_tower_force_of_nature"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-	
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"towers/nature"
-		"MaxLevel"						"4"
-	
-		"Modifiers"
-		{
-			"modifier_spore_explosion_passive"
-			{
-				"Passive"		"1"
-				"IsHidden"		"1"
-				"OnKill"
-				{
-					"RunScript"
-					{
-						"Target"			"UNIT"
-						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-						"Function"			"TriggerEvent"
-						"Event"				"CreepKilled"
-					}
-				}
-			}
-		}
+		"MaxLevel"						"1"
 	
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"24 156 1020 10200"
+				"damage"				"10"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe_full"				"150"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aoe_half"				"300"
+				"aoe"					"125" //if you change this you also have to change the ability description
 			}
 		}
 	}
