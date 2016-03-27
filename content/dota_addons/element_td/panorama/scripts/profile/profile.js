@@ -10,6 +10,7 @@ var currentProfile;
 var currentLB = 0;
 var friendsRank
 var friends = []
+var Stats = {} //cache everything
 
 function GetStats(steamID32) {
     $.Msg("Getting stats data for "+steamID32+"...")
@@ -22,6 +23,8 @@ function GetStats(steamID32) {
             var allTime = player_info["allTime"]
             if (allTime === undefined)
                 return
+
+            Stats[player_info["steamID"]] = player_info
 
             $("#GamesWon").text = allTime["gamesWon"]
             $("#BestScore").text = GameUI.FormatScore(allTime["bestScore"])
@@ -231,6 +234,14 @@ function GetPlayerFriends(steamID32, leaderboard_type) {
                 $.Msg("Private Profile")
                 return
             }
+
+            // Add the current player, placeholder until we have a way to get this info
+            var self_player_rank = {}
+            self_player_rank["steamID"] = steamID32
+            self_player_rank["score"] = "420000"
+            self_player_rank["rank"] = "322"
+            self_player_rank["percentile"] = 0
+            players_info.push(self_player_rank)
 
             // Sort by rank
             players_info.sort(function(a, b) {
