@@ -6,7 +6,10 @@ var Verify = $("#Verify")
 var verifyToggle = false;
 
 function VerifyGame( data ) {
-    verifyToggle = !verifyToggle; 
+    if (data != undefined && data.toggle != undefined)
+        verifyToggle = data.toggle;
+    else
+        verifyToggle = !verifyToggle; 
 
     Verify.SetHasClass("fade", verifyToggle);
     $.Schedule( 0.5, function() {

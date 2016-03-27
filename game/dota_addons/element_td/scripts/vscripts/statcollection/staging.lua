@@ -30,7 +30,7 @@ function statCollection:StageCustom(payload)
 
         -- Tell the user
         statCollection:print(messageCustomComplete .. " [" .. eleTDLB .. ']')
-        CustomGameEventManager:Send_ServerToAllClients("etd_game_recorded", true )
+        CustomGameEventManager:Send_ServerToAllClients("etd_game_recorded", { toggle = true } )
     end, eleTDLB)
 
     -- Send custom to lb hatinacat
