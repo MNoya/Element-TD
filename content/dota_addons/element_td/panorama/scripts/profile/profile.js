@@ -62,11 +62,6 @@ function GetStats(steamID32) {
             var favorite = allTime["favouriteElement"]
 
             var nextStart = 0
-            var elements = ["light", "dark", "water", "fire", "nature", "earth"]
-            for (var i = 0; i < elements.length; i++) {
-                $("#"+elements[i]+"_usage").GetParent().SetHasClass("MostUsed", elements[i] == favorite)
-            }
-
             nextStart = RadialStyle("light", nextStart, light/total_elem)
             nextStart = RadialStyle("dark", nextStart, dark/total_elem)
             nextStart = RadialStyle("water", nextStart, water/total_elem)
@@ -87,7 +82,7 @@ function GetStats(steamID32) {
 
     GetRank(steamID32, 0, "ClassicRank")
     GetRank(steamID32, 1, "ExpressRank")
-    //GetRank(steamID32, 2, "FrogsRank") // Classic Rank request
+    GetRank(steamID32, 2, "FrogsRank")
 }
 
 function MakeBoolBar(data, name) {
@@ -102,6 +97,7 @@ function MakeBoolBar(data, name) {
     var maxWidth = 80
     if (value > maxWidth) value = maxWidth
     panel.style['width'] = value+"%;"
+    panel.percent = value
     not_panel.text = numValue//value.toFixed(0)+"%"
 }
 
@@ -158,6 +154,35 @@ function BarStyle(panelName, cant, total, remaining) {
 function HoverDiff (name) {
     var panel = $("#"+name)
     $.DispatchEvent("DOTAShowTitleTextTooltip", panel, "#difficulty_"+name, parseInt(panel.percent).toFixed(0)+"% games");
+}
+
+function HoverPanel (name) {
+    var panel = $("#"+name)
+    $.DispatchEvent("DOTAShowTitleTextTooltip", panel, "#"+name, parseInt(panel.percent).toFixed(0)+"% games");
+}
+
+var piechart_names = ["light", "dark", "water", "fire", "nature", "earth"]
+function HoverPieSector (name) {
+    for (var i in piechart_names) {
+        var panel = $("#"+piechart_names[i])
+        if (piechart_names[i] == name)
+        {
+            panel.AddClass("Hover")
+            $("#"+piechart_names[i]+"_usage").AddClass("Highlight")
+            $("#"+piechart_names[i]+"_label").AddClass("Highlight")
+        }
+        else
+            panel.AddClass("Desaturate")
+    }
+}
+
+function MouseOverPie () {
+    for (var i in piechart_names) {
+        $("#"+piechart_names[i]).RemoveClass("Hover")
+        $("#"+piechart_names[i]).RemoveClass("Desaturate")
+        $("#"+piechart_names[i]+"_usage").RemoveClass("Highlight")
+        $("#"+piechart_names[i]+"_label").RemoveClass("Highlight")
+    }
 }
 
 function RadialStyle (panelName, start, percent) {

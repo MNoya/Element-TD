@@ -178,7 +178,7 @@ DOTAUserName #UserNameProfile
 .TopProfileStatContainer
 {
     height: 100%;
-    width: 11%;
+    width: 100px;
     margin-left: 10px;
 }
 
@@ -324,7 +324,7 @@ DOTAUserName #UserNameProfile
 
 .local
 {
-    background-color: grey;
+    background-color: #AAAAAA44;
 }
 
 // General Stat Panels
@@ -615,6 +615,10 @@ DOTAUserName #UserNameProfile
     horizontal-align: center;
 }
 
+.Hover { opacity: 2; }
+.Desaturate { saturation: 0; }
+.Highlight { font-weight: bold; }
+
 #ElementPieChart
 {
     width: 160px;
@@ -731,18 +735,6 @@ DOTAUserName #UserNameProfile
     margin-right: 2px;
 }
 
-
-.MostUsed
-{
-    font-weight: bold;
-    font-size: 22px;
-}
-
-.MostUsed .ElementLabel
-{
-    margin-left: 6px;
-}
-
 #light_usage { color: #E5DE23; }
 #dark_usage { color: #8733C8; }
 #water_usage { color: #01A2FF; }
@@ -787,6 +779,7 @@ DOTAUserName #UserNameProfile
 Label
 {
     font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+    text-shadow: -1px 1px 1px 2.0 #000000;
 }
 
 #FriendName

@@ -98,6 +98,7 @@
         "length_normal"                     "Normal"
         "length_express"                    "Express"
         "length_express_description"        "A quicker game with less waves."
+        "express"                           "Express"
 
         "DOTA_GoodGuys"                             "Summer" //Lime
         "DOTA_BadGuys"                              "Autumn" //Orange

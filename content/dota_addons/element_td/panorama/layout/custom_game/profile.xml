@@ -136,16 +136,16 @@
                         </Panel>
 
                         <Panel class="BarContainer">
-                            <Label class="SectionSubTitle" text="#horde_endless"/>
-                            <Panel id="ChaosBars">
+                            <Label class="SectionSubTitle" text="#order_chaos"/>
+                            <Panel id="ChaosBars" onmouseover="HoverPanel('order_chaos')" onmouseout="DOTAHideTitleTextTooltip()" >
                                 <Label id="order_chaos" class="GameModeBar"/>
                                 <Label id="not_order_chaos" class="GameModeBar"/>
                             </Panel>
                         </Panel>
 
                         <Panel class="BarContainer">
-                            <Label class="SectionSubTitle" text="#order_chaos"/>
-                            <Panel id="RushBars">
+                            <Label class="SectionSubTitle" text="#horde_endless"/>
+                            <Panel id="RushBars" onmouseover="HoverPanel('horde_endless')" onmouseout="DOTAHideTitleTextTooltip()">
                                 <Label id="horde_endless" class="GameModeBar"/>
                                 <Label id="not_horde_endless" class="GameModeBar"/>
                             </Panel>
@@ -153,7 +153,7 @@
 
                         <Panel class="BarContainer">
                             <Label class="SectionSubTitle" text="#length_express"/>
-                            <Panel id="ExpressBars">
+                            <Panel id="ExpressBars" onmouseover="HoverPanel('express')" onmouseout="DOTAHideTitleTextTooltip()">
                                 <Label id="express" class="GameModeBar"/>
                                 <Label id="not_express" class="GameModeBar"/>
                             </Panel>
@@ -234,34 +234,34 @@
                                 </Panel>
 
                                 <Panel id="ElementLabels">
-                                    <Panel class="ElementLabelPanel">
+                                    <Panel class="ElementLabelPanel" onmouseover="HoverPieSector('light')" onmouseout="MouseOverPie()">
                                         <Label id="light_usage" class="ElementUsageLabel"/>
-                                        <Label class="ElementLabel" html="true" text="#light"/>
+                                        <Label id="light_label" class="ElementLabel" html="true" text="#light"/>
                                     </Panel>
 
-                                    <Panel class="ElementLabelPanel">
+                                    <Panel class="ElementLabelPanel" onmouseover="HoverPieSector('dark')" onmouseout="MouseOverPie()">
                                         <Label id="dark_usage" class="ElementUsageLabel"/>
-                                        <Label class="ElementLabel" html="true" text="#dark"/>
+                                        <Label id="dark_label" class="ElementLabel" html="true" text="#dark"/>
                                     </Panel>
 
-                                    <Panel class="ElementLabelPanel">
+                                    <Panel class="ElementLabelPanel" onmouseover="HoverPieSector('water')" onmouseout="MouseOverPie()">
                                         <Label id="water_usage" class="ElementUsageLabel"/>
-                                        <Label class="ElementLabel" html="true" text="#water"/>
+                                        <Label id="water_label" class="ElementLabel" html="true" text="#water"/>
                                     </Panel>
 
-                                    <Panel class="ElementLabelPanel">
+                                    <Panel class="ElementLabelPanel" onmouseover="HoverPieSector('fire')" onmouseout="MouseOverPie()">
                                         <Label id="fire_usage" class="ElementUsageLabel"/>
-                                        <Label class="ElementLabel" html="true" text="#fire"/>
+                                        <Label id="fire_label" class="ElementLabel" html="true" text="#fire"/>
                                     </Panel>
 
-                                    <Panel class="ElementLabelPanel">
+                                    <Panel class="ElementLabelPanel" onmouseover="HoverPieSector('nature')" onmouseout="MouseOverPie()">
                                         <Label id="nature_usage" class="ElementUsageLabel"/>
-                                        <Label class="ElementLabel" html="true" text="#nature"/>
+                                        <Label id="nature_label" class="ElementLabel" html="true" text="#nature"/>
                                     </Panel>
 
-                                    <Panel class="ElementLabelPanel">
+                                    <Panel class="ElementLabelPanel" onmouseover="HoverPieSector('earth')" onmouseout="MouseOverPie()">
                                         <Label id="earth_usage" class="ElementUsageLabel"/>
-                                        <Label class="ElementLabel" html="true" text="#earth"/>
+                                        <Label id="earth_label" class="ElementLabel" html="true" text="#earth"/>
                                     </Panel>    
                                 </Panel>
                             </Panel>
