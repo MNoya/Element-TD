@@ -229,6 +229,8 @@
 
         "recorded_title"        "Match Recorded"
         "recorded_tooltip"      "This match has been recorded on the leaderboard."
+        "recorded_fail_title"   "Match Not Recorded"
+        "recorded_fail_tooltip" "We were not able to record this match on the leaderboard."
 
         "profile_title"         "My Profile"
         "profile"               "Profile"

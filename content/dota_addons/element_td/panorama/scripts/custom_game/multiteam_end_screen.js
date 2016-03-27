@@ -3,24 +3,36 @@
 var Credits = $("#Supporters")
 var Verify = $("#Verify")
 
-var verifyToggle = false;
+function VerifyGame() {
+    var game_recorded_info = CustomNetTables.GetTableValue("gameinfo", "game_recorded")
+    if (game_recorded_info)
+    {
+        var recorded_state = game_recorded_info.value
+        Verify.state = recorded_state
+        if (recorded_state == "recorded")
+        {
+            Verify.style['background-color'] = "lime;"
+            $("#stem").RemoveClass("fade");
+            $("#kick").RemoveClass("fade");
+            return
+        }
 
-function VerifyGame( data ) {
-    if (data != undefined && data.toggle != undefined)
-        verifyToggle = data.toggle;
-    else
-        verifyToggle = !verifyToggle; 
+        else if (recorded_state == "failed")
+        {
+            Verify.style['background-color'] = "red;"
+            $("#cross").RemoveClass("hide")
+            return
+        }
+    }
 
-    Verify.SetHasClass("fade", verifyToggle);
-    $.Schedule( 0.5, function() {
-        $("#stem").SetHasClass("fade", verifyToggle);
-        $("#kick").SetHasClass("fade", verifyToggle);
-    } );
+    $.Schedule(0.1, VerifyGame)
 }
 
-function ShowTooltip()
-{
-    $.DispatchEvent("DOTAShowTitleTextTooltip", Verify, "#recorded_title", "#recorded_tooltip");
+function ShowRecordedTooltip () {
+    if (Verify.state == "recorded")
+        $.DispatchEvent("DOTAShowTitleTextTooltip", Verify, "#recorded_title", "#recorded_tooltip");
+    else if (Verify.state == "failed")
+        $.DispatchEvent("DOTAShowTitleTextTooltip", Verify, "#recorded_fail_title", "#recorded_fail_tooltip");
 }
 
 function ShowEndCredits() {
@@ -131,4 +143,6 @@ function CreateEndCredit(steamid) {
           winningTeamLogo.BLoadLayout( logo_xml, false, false );
         }
     }
+
+    $.Schedule(0.1, VerifyGame)
 })();
