@@ -4,6 +4,7 @@
     </styles>
     <scripts>
         <include src="file://{resources}/scripts/profile/profile.js" />
+        <include src="file://{resources}/scripts/profile/style.js" />
     </scripts>
     <Panel hittest='false' class="ProfileHud">
 
