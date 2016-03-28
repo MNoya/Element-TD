@@ -52,7 +52,7 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_mult"			"350"
+			"damage_mult"			"400"
 		}
 	}
 }

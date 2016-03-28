@@ -832,12 +832,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"3"
+				"bonus_health_regen"	"2.5"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_heal_pct"			"75"
+				"max_heal_pct"			"100"
 			}
 		}
 	
@@ -1010,7 +1010,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"5"
+				"duration"				"6"
 			}
 		}
 	}
@@ -3115,7 +3115,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_mult"			"350"
+				"damage_mult"			"400"
 			}
 		}
 	}
@@ -3611,7 +3611,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "damage"                "6 39 255 2550"
+	            "damage"                "5 33 215 2150"
 	        }
 	    }
 	}
@@ -4840,7 +4840,7 @@
 	        "03"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "aoe_reduction"       "50"
+	            "aoe_reduction"       "40"
 	        }
 	    }
 	}
