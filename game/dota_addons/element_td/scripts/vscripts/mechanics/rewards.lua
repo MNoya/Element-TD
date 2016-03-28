@@ -42,6 +42,10 @@ function Rewards:Load()
     end)
 end
 
+function Rewards:PlayerHasPass(playerID)
+    return PlayerResource:HasCustomGameTicketForPlayerID(playerID) or Rewards.players[Rewards:ConvertID64(PlayerResource:GetSteamAccountID(playerID))] ~= nil
+end
+
 function Rewards:PlayerHasCosmeticModel(playerID)
     local steamID32 = PlayerResource:GetSteamAccountID(playerID)
     local steamID64 = Rewards:ConvertID64(steamID32)
