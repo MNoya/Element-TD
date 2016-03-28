@@ -24,7 +24,14 @@
         <Panel class="Hide" id="Profile" onmouseover="GameUI.DenyWheel()" onmouseout="GameUI.AcceptWheel()">
             <Panel hittest="false" id="TopProfilePanel">
                 <DOTAAvatarImage id="AvatarImageProfile" steamid=""/>
-                <DOTAUserName id="UserNameProfile" steamid=""/>
+
+                <Panel id="UserNameContainer">
+                    <DOTAUserName id="UserNameProfile" class="selfName" steamid=""/>
+                    <Panel id="ProfileBackContainer" onactivate="LoadLocalProfile()">
+                        <Panel id="ProfileBack"/>
+                        <Label id="ProfileBackLabel" text="#profile_back" />
+                    </Panel>
+                </Panel>
 
                 <Panel id="GamesWonPanel" class="TopProfileStatContainer">
                     <Label class="TopProfileStatLabel" text="#profile_games_won"/>

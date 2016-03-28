@@ -124,6 +124,8 @@
     text-shadow: 0px 0px 6px 1.5 #FBB23F;
 }
 
+
+
 // Profile Main Menu
 #Profile
 {
@@ -158,21 +160,64 @@
     margin-left: 10px;
 }
 
+#UserNameContainer
+{
+    width: 380px;
+    margin-top: 5px;
+    margin-left: 20px;
+    align: left center;
+}
 
 #UserNameProfile
 {
     color: white;
-    vertical-align: center;
-    margin-top: 5px;
     font-size: 40px;
-    margin-left: 20px;
     width: 380px;
+    height: 100px;
     font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
 }
 
 DOTAUserName #UserNameProfile
 {
     width: 380px;
+}
+
+#ProfileBackContainer
+{
+    width: 200px;
+    wash-color: #888888;
+    margin-top: 50px;
+}
+
+#ProfileBackContainer:hover
+{
+    wash-color: #cccccc;
+}
+
+.selfName { margin-top: 14px; }
+.friendName { margin-top: 7px; }
+
+#ProfileBack
+{
+    width: 20px;
+    height: 20px;
+    background-image: url("s2r://panorama/images/control_icons/arrow_right_png.vtex");
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    transform: scaleX(-1);
+
+    transition-property: brightness;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
+#ProfileBackLabel
+{
+    color: white;
+    margin-top: 1px;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-left: 22px;
 }
 
 .TopProfileStatContainer

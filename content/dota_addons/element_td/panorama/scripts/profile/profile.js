@@ -217,7 +217,9 @@ function GetPlayerFriends(steamID32, leaderboard_type) {
                 {
                     return function(){ 
                         if (currentProfile == steamID32 && currentLB == leaderboard_type)
-                            CreateFriendPanel(data) 
+                            CreateFriendPanel(data)
+                        else
+                            return true
                     }
                 }( players_info[i] );
 
@@ -253,6 +255,11 @@ function LoadProfile(steamID64) {
 
     $("#AvatarImageProfile").steamid = steamID64
     $("#UserNameProfile").steamid = steamID64
+
+    var isSelfProfile = steamID64 == GameUI.GetLocalPlayerSteamID()
+    $("#ProfileBackContainer").SetHasClass("Hide", isSelfProfile)
+    $("#UserNameProfile").SetHasClass("selfName", isSelfProfile)
+    $("#UserNameProfile").SetHasClass("friendName", !isSelfProfile)
 
     currentProfile = GameUI.ConvertID32(steamID64)
     GetStats(currentProfile)
@@ -326,7 +333,7 @@ function LoadLocalProfile() {
 
     $("#AvatarImageMini").steamid = steamID64
 
-    //ToggleProfile()
+    ToggleProfile()
 }
 
 (function () {

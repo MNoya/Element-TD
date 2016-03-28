@@ -271,6 +271,7 @@
         "profile_life_tower"    "Lives Gained"
         "profile_soon"          "Coming Soon"
         "profile_private"       "Private Profile"
+        "profile_back"          "Back to My Profile"
 
         "leaderboard_title"     "Leaderboards"
         "leaderboard_classic"   "Top 100 Classic"

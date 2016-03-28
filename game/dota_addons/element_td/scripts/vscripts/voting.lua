@@ -126,12 +126,12 @@ function FinalizeVotes()
 
 	-- Only add a default vote if no one has voted
 	if tablelength(PLAYERS_NOT_VOTED) == tablelength(playerIDs) then
-		AddVote(VOTE_RESULTS.gamemode, "Competitive")
-		AddVote(VOTE_RESULTS.difficulty, "Normal")
-		AddVote(VOTE_RESULTS.elements, "AllPick")
-		AddVote(VOTE_RESULTS.endless, "Normal")
-		AddVote(VOTE_RESULTS.order, "Normal")
-		AddVote(VOTE_RESULTS.length, "Normal")
+		AddVote(0, VOTE_RESULTS.gamemode, "Competitive")
+		AddVote(0, VOTE_RESULTS.difficulty, "Normal")
+		AddVote(0, VOTE_RESULTS.elements, "AllPick")
+		AddVote(0, VOTE_RESULTS.endless, "Normal")
+		AddVote(0, VOTE_RESULTS.order, "Normal")
+		AddVote(0, VOTE_RESULTS.length, "Normal")
 	end
 
 	-- Make sure all the fools have a playerData
