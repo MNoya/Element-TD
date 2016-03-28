@@ -42,8 +42,8 @@ function WaterTower:StartBounce(original_target, remaining_bounces)
         dummy_ability.tower = self.tower
         dummy_ability.damage = self.tower:GetAverageTrueAttackDamage()
         dummy_ability.aoeReduction = self.aoeReduction
-        dummy_ability.halfAOE = math.max(0, self.halfAOE - self.aoeReduction)
-        dummy_ability.fullAOE = math.max(0, self.fullAOE - self.aoeReduction)
+        dummy_ability.halfAOE = self.halfAOE - self.aoeReduction
+        dummy_ability.fullAOE = self.fullAOE - self.aoeReduction
         dummy_ability.dummy = dummy
 
         local sourceLoc = original_target:GetAbsOrigin()
@@ -89,8 +89,13 @@ function OnBounceHit(event)
         return
     end
 
+
     DamageEntitiesInArea(target:GetAbsOrigin(), ability.halfAOE, ability.tower, damage / 2)
-    DamageEntitiesInArea(target:GetAbsOrigin(), ability.fullAOE, ability.tower, damage / 2)
+    if ability.fullAOE > 0 then
+        DamageEntitiesInArea(target:GetAbsOrigin(), ability.fullAOE, ability.tower, damage / 2)
+    else
+        DamageEntity(target, ability.tower, damage / 2)
+    end
 
     if ability.bounceCount < ability.maxBounces then
 
