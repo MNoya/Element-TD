@@ -24,7 +24,7 @@ GameUI.FormatRank = function (rank) {
 // Returns score in k (thousands) format
 GameUI.FormatScore =  function (score) {
     if (score.length > 3)
-        return score.substring(0, score.length-3)+"k";
+        return GameUI.CommaFormat(score.substring(0, score.length-3))+"k";
     else
         return score
 }
@@ -48,7 +48,8 @@ GameUI.FormatGold = function (gold) {
     }
 }
 
-GameUI.FormatKills = function (num) {
+// Returns a number with thousands comma sepeartion and if the number is bigger than 6 digits it will include a k
+GameUI.FormatNumber = function (num) {
     if (num.toString().length <= 6)
         return GameUI.CommaFormat(num)
 

@@ -13,6 +13,7 @@ var friends = []
 var Stats = {} //cache everything
 
 function GetStats(steamID32) {
+    ClearFields()
     $.Msg("Getting stats data for "+steamID32+"...")
 
     $.AsyncWebRequest( statsURL+steamID32, { type: 'GET', 
@@ -30,12 +31,12 @@ function GetStats(steamID32) {
             $("#BestScore").text = GameUI.FormatScore(allTime["bestScore"])
 
             // General
-            $("#kills").text = GameUI.FormatKills(allTime["kills"])
-            $("#frogKills").text = GameUI.FormatKills(allTime["frogKills"])
+            $("#kills").text = GameUI.FormatNumber(allTime["kills"])
+            $("#frogKills").text = GameUI.FormatNumber(allTime["frogKills"])
             $("#networth").text = GameUI.FormatGold(allTime["networth"])
             $("#interestGold").text = GameUI.FormatGold(allTime["interestGold"])
-            $("#cleanWaves").text = allTime["cleanWaves"]
-            $("#under30").text = allTime["under30"]
+            $("#cleanWaves").text = GameUI.FormatNumber(allTime["cleanWaves"])
+            $("#under30").text = GameUI.FormatNumber(allTime["under30"])
 
             // GameMode
             $.Msg(allTime)
@@ -47,9 +48,9 @@ function GetStats(steamID32) {
             var random = allTime["random"]
             var gamesPlayed = allTime["gamesPlayed"]
             $("#random").text = random+" ("+(random/gamesPlayed*100).toFixed(0)+"%)"
-            $("#towersBuilt").text = Number(allTime["towers"]) + Number(allTime["towersSold"])
-            $("#towersSold").text = allTime["towersSold"]
-            $("#lifeTowerKills").text = allTime["lifeTowerKills"]
+            $("#towersBuilt").text = GameUI.FormatNumber(Number(allTime["towers"]) + Number(allTime["towersSold"]))
+            $("#towersSold").text = GameUI.FormatNumber(allTime["towersSold"])
+            $("#lifeTowerKills").text = GameUI.FormatNumber(allTime["lifeTowerKills"])
             $("#goldTowerEarn").text = GameUI.FormatGold(allTime["goldTowerEarn"])
 
             // Towers
@@ -80,12 +81,77 @@ function GetStats(steamID32) {
             for (var i in milestones) {
                 $.Msg(milestones[i])
             };
+
+            $("#ClassicRank").text = (player_info["rank"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank"]);
+            $("#ExpressRank").text = (player_info["rank_exp"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank_exp"]);
+            $("#FrogsRank").text = (player_info["rank_frogs"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank_frogs"]);
         }
     })
 
-    GetRank(steamID32, 0, "ClassicRank")
-    GetRank(steamID32, 1, "ExpressRank")
-    GetRank(steamID32, 2, "FrogsRank")
+    //GetRank(steamID32, 0, "ClassicRank")
+    //GetRank(steamID32, 1, "ExpressRank")
+    //GetRank(steamID32, 2, "FrogsRank")
+}
+
+function ClearFields() {
+    $("#GamesWon").text = "-"
+    $("#BestScore").text = "-"
+
+    // General
+    $("#kills").text = "-"
+    $("#frogKills").text = "-"
+    $("#networth").text = "-"
+    $("#interestGold").text = "-"
+    $("#cleanWaves").text = "-"
+    $("#under30").text = "-"
+
+    // GameMode
+    var data = []
+    data["gamesPlayed"] = 4
+    data["normal"] = 1
+    data["hard"] = 1
+    data["veryhard"] = 1
+    data["insane"] = 1
+    data["order_chaos"] = 0
+    data["horde_endless"] = 0
+    data["express"] = 0
+
+    MakeBars(data, ["normal","hard","veryhard","insane"])
+    MakeBoolBar(data, "order_chaos")
+    MakeBoolBar(data, "horde_endless")
+    MakeBoolBar(data, "express")
+
+    var random = "-"
+    $("#gamesPlayed").text = 0
+    $("#random").text = "-"
+    $("#towersBuilt").text = "-"
+    $("#towersSold").text = "-"
+    $("#lifeTowerKills").text = "-"
+    $("#goldTowerEarn").text = "-"
+
+    // Towers
+
+    // Element Usage
+    var light = 1
+    var dark = 1
+    var water = 1
+    var fire = 1
+    var nature = 1
+    var earth = 1
+    var total_elem = light+dark+water+fire+nature+earth
+    var favorite = "-"
+
+    var nextStart = 0
+    nextStart = RadialStyle("light", nextStart, light/total_elem)
+    nextStart = RadialStyle("dark", nextStart, dark/total_elem)
+    nextStart = RadialStyle("water", nextStart, water/total_elem)
+    nextStart = RadialStyle("fire", nextStart, fire/total_elem)
+    nextStart = RadialStyle("nature", nextStart, nature/total_elem)
+    nextStart = RadialStyle("earth", nextStart, earth/total_elem)
+
+    $("#ClassicRank").text = "--"
+    $("#ExpressRank").text = "--"
+    $("#FrogsRank").text = "--"
 }
 
 function MakeBoolBar(data, name) {
@@ -121,7 +187,7 @@ function MakeBars (data, arrayNames) {
         remaining -= BarStyle(key, value, total, remaining)
     });
 
-    $("#gamesPlayed").text = total
+    $("#gamesPlayed").text = GameUI.CommaFormat(total)
 }
 
 function bySortedValue(obj, callback, context) {
@@ -293,11 +359,13 @@ function LoadProfile(steamID64) {
 
     currentProfile = GameUI.ConvertID32(steamID64)
     GetStats(currentProfile)
-    ShowFriendRanks("classic")
+    ShowFriendRanks("classic", true)
 }
 
 function ToggleProfile() {
     Profile.ToggleClass("Hide")
+
+    Game.EmitSound("ui_generic_button_click")
 
     // Load self in the background
     if (Profile.BHasClass( "Hide" ))
@@ -314,17 +382,21 @@ function CloseCustomBuilders(argument) {
 }
 
 function ToggleCustomBuilders() {
+    Game.EmitSound("ui_generic_button_click")
     CustomBuilders.ToggleClass("Hide")
     CloseProfile()
 }
 
 var LB_types = ["classic","express","frogs"]
-function ShowFriendRanks(leaderboard_type) {
+function ShowFriendRanks(leaderboard_type, force) {
     for (var i = 0; i < LB_types.length; i++) {
         var name = LB_types[i]
         var panel = $("#"+name+"_radio")
         panel.SetHasClass( "ActiveTab", LB_types[i] == leaderboard_type )
     };
+
+    if (!force)
+        Game.EmitSound("ui_rollover_micro")
 
     currentLB = LB_types.indexOf(leaderboard_type)
     GetPlayerFriends(currentProfile, currentLB)
@@ -339,6 +411,8 @@ function ShowProfileInfo ( panelTabName ) {
         var panel = $("#"+name+"_radio")
         panel.SetHasClass( "ActiveTab", leftNames[i] == panelTabName )
     };
+
+    Game.EmitSound("ui_rollover_micro")
 }
 
 function MakeButtonVisible() {

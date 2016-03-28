@@ -380,7 +380,7 @@ DOTAUserName #UserNameProfile
 
 .TowerStat
 {
-    width: 40px;
+    width: 50px;
     font-size: 14px;
     letter-spacing: 1px;
     color: white;
@@ -556,19 +556,19 @@ DOTAUserName #UserNameProfile
 
 .InfoTowerStats
 {
-    width: 100%;
+    width: 110%;
     margin-bottom: 5px;
     flow-children: down;
 }
 
 #RightTowerStats
 {
-    margin-left: -20px;
+    margin-left: -30px;
 }
 
 .TowerStatPanel
 {
-    width: 150px;
+    width: 170px;
     margin-bottom: 5px;
     flow-children: right;
 }
