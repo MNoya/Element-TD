@@ -101,7 +101,7 @@ GameUI.SetMouseCallback( function( eventName, arg ) {
                 return CONSUME_EVENT;
     }
 
-    if ( eventName === "wheeled" )
+    if ( eventName === "wheeled" && GameUI.AcceptWheeling)
     {
         arg == 1 ? cameraDistance -= 10 : cameraDistance += 10;
         GameUI.SetCameraDistance( cameraDistance )

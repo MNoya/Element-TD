@@ -21,7 +21,7 @@
             <DOTAAvatarImage id="AvatarImageMini" steamid=""/>
         </Panel>
 
-        <Panel class="Hide" id="Profile">
+        <Panel class="Hide" id="Profile" onmouseover="GameUI.DenyWheel()" onmouseout="GameUI.AcceptWheel()">
             <Panel hittest="false" id="TopProfilePanel">
                 <DOTAAvatarImage id="AvatarImageProfile" steamid=""/>
                 <DOTAUserName id="UserNameProfile" steamid=""/>

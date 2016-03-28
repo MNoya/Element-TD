@@ -160,6 +160,14 @@ GameUI.ApplyPanelBorder = function (panel, steamID64) {
     }
 }
 
+GameUI.DenyWheel = function() {
+    GameUI.AcceptWheeling = 0;
+}
+
+GameUI.AcceptWheel = function() {
+    GameUI.AcceptWheeling = 1;
+}
+
 // Player Profile unlock
 GameUI.PlayerHasProfile = function (playerID) {
     var steamID64 = GameUI.GetPlayerSteamID(playerID)
