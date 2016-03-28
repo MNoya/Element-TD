@@ -112,4 +112,5 @@ function ToggleLeaderboard()
     Buttons.ToggleClass("Hide")
     if (!Leaderboard.BHasClass("Hide"))
         Setup()
+    Game.EmitSound("ui_generic_button_click")
 }
