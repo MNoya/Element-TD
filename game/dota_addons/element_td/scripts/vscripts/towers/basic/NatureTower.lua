@@ -28,6 +28,11 @@ function NatureTower:OnAttackLanded(keys)
 		end
 	end
 	
+	-- damage popup if it gains any bonus damage
+	if damage > base_damage then
+		PopupNatureDamage(self.tower, math.floor(damage))
+	end
+
 	-- make a cool particle effect if the damage is increased by at least 30%
 	if num_creeps >= 3 then
 		local particle = ParticleManager:CreateParticle("particles/custom/towers/nature/force_of_nature.vpcf", PATTACH_CUSTOMORIGIN, target)
