@@ -941,6 +941,16 @@ Label
     transition-timing-function: linear;
 }
 
+#PrivateProfile
+{
+    color: #888888;
+    font-size: 25px;
+    margin-top: 30px;
+    align: center center;
+    letter-spacing: 3px;
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+}
+
 #stats_radio, #matches_radio, #achievements_radio
 { 
     text-align: left; 

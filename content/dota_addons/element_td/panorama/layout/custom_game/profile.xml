@@ -298,7 +298,7 @@
                         </Panel>
                     </Panel>
                     <Panel id="FriendsContainer">
-
+                        <Label id="PrivateProfile" text="#profile_private" class="Hide"/>
                     </Panel>
                 </Panel>
             </Panel>

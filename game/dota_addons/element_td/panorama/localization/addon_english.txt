@@ -270,6 +270,7 @@
         "profile_gold_tower"    "Gold Earned"
         "profile_life_tower"    "Lives Gained"
         "profile_soon"          "Coming Soon"
+        "profile_private"       "Private Profile"
 
         "leaderboard_title"     "Leaderboards"
         "leaderboard_classic"   "Top 100 Classic"

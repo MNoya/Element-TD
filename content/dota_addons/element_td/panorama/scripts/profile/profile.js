@@ -197,9 +197,10 @@ function GetPlayerFriends(steamID32, leaderboard_type) {
             Loading.AddClass( "Hide" )
 
             if (!players_info){
-                $.Msg("Private Profile")
+                $("#PrivateProfile").RemoveClass( "Hide" )
                 return
             }
+            $("#PrivateProfile").AddClass( "Hide" )
 
             var self_player_rank = info["self"]
             if (self_player_rank)
