@@ -12,7 +12,7 @@
             <Label id="ToggleLeaderboardText" class="ToggleLabel" text="#leaderboard_title" />
         </Panel>
 
-        <Panel id="Leaderboard" class="Hide">
+        <Panel id="Leaderboard" class="Hide" onmouseover="GameUI.DenyWheel()" onmouseout="GameUI.AcceptWheel()">
             <Panel id="ClassicLeaderboard" class="Section">
                 <Panel class="LeaderboardHeader">
                     <Label class="LeaderboardTitle" text="#leaderboard_classic"/>
