@@ -680,6 +680,7 @@ DOTAUserName #UserNameProfile
 #RandomPanel, #FirstDualPanel, #FirstTriplePanel
 {
     margin-bottom: 10px;
+    tooltip-position: left;
 }
 
 #RandomImage

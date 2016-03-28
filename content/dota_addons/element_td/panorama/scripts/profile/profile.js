@@ -54,7 +54,9 @@ function GetStats(steamID32) {
             $("#goldTowerEarn").text = GameUI.FormatGold(allTime["goldTowerEarn"])
 
             // Towers
-            
+            var dual = MakeFirstDual(allTime["firstDual"])
+            var triple = MakeFirstTriple(allTime["firstTriple"])
+
             // Element Usage
             var light = allTime["light"]
             var dark = allTime["dark"]
@@ -130,6 +132,8 @@ function ClearFields() {
     $("#goldTowerEarn").text = "-"
 
     // Towers
+    MakeFirstDual("")
+    MakeFirstTriple("")
 
     // Element Usage
     var light = 1
@@ -252,11 +256,14 @@ function LoadProfile(steamID64) {
 function ToggleProfile() {
     Profile.ToggleClass("Hide")
 
-    Game.EmitSound("ui_generic_button_click")
-
     // Load self in the background
     if (Profile.BHasClass( "Hide" ))
+    {
+        Game.EmitSound("ui_quit_menu_fadeout")
         LoadLocalProfile()
+    }
+    else
+        Game.EmitSound("ui_goto_player_page")
 
     CloseCustomBuilders()
 }

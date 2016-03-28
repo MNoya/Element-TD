@@ -189,18 +189,18 @@
                                     </Panel>
 
                                     <Panel id="FirstDualPanel" class="TowerStatPanel">
-                                        <Image class="TowerImage" src="file://{images}/spellicons/towers/quark.png"/>
+                                        <Image id="dual_image" class="TowerImage"/>
                                         <Panel class="TowerLabels">
                                             <Label class="TowerSubLabels" text="#profile_first_dual"/>
-                                            <Label id="dual" class="TowerName" text="#quark_tower_name"/>
+                                            <Label id="dual" class="TowerName" text="--"/>
                                         </Panel>
                                     </Panel>
 
                                     <Panel id="FirstTriplePanel" class="TowerStatPanel">
-                                        <Image class="TowerImage" src="file://{images}/spellicons/towers/nova.png"/>
+                                        <Image id="triple_image" class="TowerImage"/>
                                         <Panel class="TowerLabels">
                                             <Label class="TowerSubLabels" text="#profile_first_triple"/>
-                                            <Label id="triple" class="TowerName" text="#nova_tower_name"/>
+                                            <Label id="triple" class="TowerName" text="--"/>
                                         </Panel>
                                     </Panel>
                                 </Panel>
