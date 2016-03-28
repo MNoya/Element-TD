@@ -214,6 +214,13 @@
     text-shadow: 1px 1px 3px 3.0 #000;
 }
 
+#Loading
+{
+	horizontal-align: right;
+	margin-top: 10px;
+	margin-right: 85px;
+}
+
 #Verify
 {
 	width: 32px;

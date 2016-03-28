@@ -2,6 +2,7 @@
 
 var Credits = $("#Supporters")
 var Verify = $("#Verify")
+var Spinner = $("#Loading")
 
 function VerifyGame() {
     var game_recorded_info = CustomNetTables.GetTableValue("gameinfo", "game_recorded")
@@ -9,6 +10,7 @@ function VerifyGame() {
     {
         var recorded_state = game_recorded_info.value
         Verify.state = recorded_state
+        Spinner.AddClass("hide");
         if (recorded_state == "recorded")
         {
             Verify.style['background-color'] = "lime;"
