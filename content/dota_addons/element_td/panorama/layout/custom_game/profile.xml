@@ -272,7 +272,10 @@
 
                 <Panel id="RightPanel">
                     <Panel id="FriendRanksHeader">
-                        <Label id="FriendRanksTitle" class="ProfilePanelHeader" text="#profile_friends" />
+                        <Panel id="FriendRanksTitleContainer">
+                            <Label id="FriendRanksTitle" text="#profile_friends" />
+                            <Panel id="Loading" class="Spinner Hide"/>
+                        </Panel>
                         <Panel id="FriendRanksTabs">
                             <Button class="LeaderboardButton" onactivate="ShowFriendRanks('classic')">
                                 <Label id="classic_radio" class="ProfileTab" text="#profile_classic_ranks"/>

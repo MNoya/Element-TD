@@ -5,6 +5,7 @@ var friendsURL = 'http://hatinacat.com/leaderboard/data_request.php?req=friends&
 var ranksURL = 'http://hatinacat.com/leaderboard/data_request.php?req=player&ids='
 var Profile = $("#Profile")
 var CustomBuilders = $("#CustomBuilders")
+var Loading = $("#Loading")
 var friendsPanel = $("#FriendsContainer")
 var currentProfile;
 var currentLB = 0;
@@ -186,11 +187,15 @@ function GetPlayerFriends(steamID32, leaderboard_type) {
     };
     friends = []
 
+    Loading.RemoveClass( "Hide" )
+
     $.AsyncWebRequest( friendsURL+steamID32+"&lb="+leaderboard_type, { type: 'GET', 
         success: function( data ) {
             var info = JSON.parse(data);
             var players_info = info["players"]
             
+            Loading.AddClass( "Hide" )
+
             if (!players_info){
                 $.Msg("Private Profile")
                 return

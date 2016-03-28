@@ -855,16 +855,28 @@ Label
     flow-children: down;
 }
 
-.ProfilePanelHeader
+#FriendRanksTitleContainer
+{
+    width: 100%;
+    align: center top;
+}
+
+#Loading
+{
+    width: 30px;
+    height: 30px;
+    align: right center;
+    margin-right: 50px;
+}
+
+#FriendRanksTitle
 {
     color: white;
     font-size: 25px;
     margin-top: 10px;
     text-transform: uppercase;
-    horizontal-align: center;
-    vertical-align: center;
+    align: center center;
     font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
-    flow-children: right;
 }
 
 #FriendRanksTabs
@@ -990,6 +1002,41 @@ Label
     wash-color: white;
     background-size: 20px 20px;
     //pre-transform-scale2d: 0.8;
+}
+
+.Spinner
+{
+    width: 28px;
+    height: 28px;
+
+    background-image: url("s2r://panorama/images/status_icons/loadingthrobber_round_psd.vtex");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+
+    animation-name: SpinnerRotate;
+    animation-duration: 1.0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes 'SpinnerRotate'
+{
+    0%
+    {
+        transform: rotateZ( 360deg );
+    }
+
+
+    50%
+    {
+        transform: rotateZ( 180deg );
+    }
+
+    100%
+    {
+        transform: rotateZ( 0deg );
+    }
 }
 
 // Start of Custom Builders
