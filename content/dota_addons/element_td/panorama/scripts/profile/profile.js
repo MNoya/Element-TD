@@ -301,13 +301,9 @@ function GetPlayerFriends(steamID32, leaderboard_type) {
                 return
             }
 
-            // Add the current player, placeholder until we have a way to get this info
-            var self_player_rank = {}
-            self_player_rank["steamID"] = steamID32
-            self_player_rank["score"] = "420000"
-            self_player_rank["rank"] = "322"
-            self_player_rank["percentile"] = 0
-            players_info.push(self_player_rank)
+            var self_player_rank = info["self"]
+            if (self_player_rank)
+                players_info.push(self_player_rank)
 
             // Sort by rank
             players_info.sort(function(a, b) {
