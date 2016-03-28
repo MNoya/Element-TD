@@ -219,14 +219,12 @@
 	width: 32px;
 	height: 32px;
 	border-radius: 28px;
-	background-color: gray;
 	background-size: 32px 32px;
 	horizontal-align: right;
 	margin-top: 10px;
 	margin-right: 85px;
-	transform: rotatez(45deg);
-	transition-property: opacity;
-    transition-duration: 1.2s;
+	transition-property: opacity, pre-transform-scale2d;
+    transition-duration: 1.0s;
     transition-timing-function: ease-in-out;
 }
 
@@ -235,9 +233,10 @@
 	width: 4px;
 	height: 18px;
 	background-color: #fff;
-	position: 16px 6px 0px;
+	position: 16px 8px 0px;
+	transform: rotatez(45deg);
 	transition-property: opacity;
-    transition-duration: 1.0s;
+    transition-duration: 0.8s;
     transition-timing-function: ease-in-out;
 }
 
@@ -246,7 +245,8 @@
 	width: 6px;
 	height: 4px;
 	background-color: #fff;
-	position: 10px 20px 0px;
+	position: 7px 17px 0px;
+	transform: rotatez(45deg);
 	transition-property: opacity;
     transition-duration: 1.0s;
     transition-timing-function: ease-in-out;
@@ -256,16 +256,20 @@
 {
     width: 32px;
     height: 32px;
-    font-size: 27px;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-    horizontal-align: center;
-    vertical-align: center;
-    transform: rotatez(-45deg);
-    transition-property: opacity;
+    background-image: url("s2r://panorama/images/control_icons/x_close_png.vtex");
+    background-size: 22px 22px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    margin: 4px;
+    wash-color: #ffffffee;
+	transition-property: opacity, pre-transform-scale2d;
     transition-duration: 1.0s;
     transition-timing-function: ease-in-out;
+}
+
+.scale
+{
+	pre-transform-scale2d: 0.9;	
 }
 
 .fade

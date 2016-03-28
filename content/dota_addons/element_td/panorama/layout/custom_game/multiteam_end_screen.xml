@@ -103,10 +103,10 @@
 				<Label text="#CustomEndScreenClose" />
 			</Button>
 			<Label id="LeaderboardLink" text="#leaderboard_link" onactivate="VerifyGame();"/>
-			<Panel id="Verify" onactivate="VerifyGame();" onmouseover="ShowRecordedTooltip()" onmouseout="DOTAHideTitleTextTooltip()">
+			<Panel id="Verify" class="fade scale" onactivate="VerifyGame();" onmouseover="ShowRecordedTooltip()" onmouseout="DOTAHideTitleTextTooltip()">
 				<Panel id="stem" class='fade'/>
                 <Panel id="kick" class='fade'/>
-                <Label id="cross" class='hide' text="X"/>
+                <Label id="cross" class='hide'/>
 			</Panel>
 		</Panel>
 
