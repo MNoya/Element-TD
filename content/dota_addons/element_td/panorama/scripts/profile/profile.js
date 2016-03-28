@@ -2,7 +2,6 @@
 
 var statsURL = 'http://hatinacat.com/leaderboard/data_request.php?req=stats&id='
 var friendsURL = 'http://hatinacat.com/leaderboard/data_request.php?req=friends&id='
-var ranksURL = 'http://hatinacat.com/leaderboard/data_request.php?req=player&ids='
 var Profile = $("#Profile")
 var CustomBuilders = $("#CustomBuilders")
 var Loading = $("#Loading")
@@ -11,12 +10,21 @@ var currentProfile;
 var currentLB = 0;
 var friendsRank
 var friends = []
-var Stats = {} //cache everything
+
+//cache everything
+var Stats = {}
 
 function GetStats(steamID32) {
     ClearFields()
-    $.Msg("Getting stats data for "+steamID32+"...")
 
+    if (Stats[steamID32])
+    {
+        $.Msg("Loading stats for "+steamID32)
+        SetStats(Stats[steamID32])
+        return
+    }
+
+    $.Msg("Getting stats data for "+steamID32+"...")
     $.AsyncWebRequest( statsURL+steamID32, { type: 'GET', 
         success: function( data ) {
             var info = JSON.parse(data);
@@ -26,74 +34,76 @@ function GetStats(steamID32) {
             if (allTime === undefined)
                 return
 
-            Stats[player_info["steamID"]] = player_info
-
-            $("#GamesWon").text = allTime["gamesWon"]
-            $("#BestScore").text = GameUI.FormatScore(allTime["bestScore"])
-
-            // General
-            $("#kills").text = GameUI.FormatNumber(allTime["kills"])
-            $("#frogKills").text = GameUI.FormatNumber(allTime["frogKills"])
-            $("#networth").text = GameUI.FormatGold(allTime["networth"])
-            $("#interestGold").text = GameUI.FormatGold(allTime["interestGold"])
-            $("#cleanWaves").text = GameUI.FormatNumber(allTime["cleanWaves"])
-            $("#under30").text = GameUI.FormatNumber(allTime["under30"])
-
-            // GameMode
-            $.Msg(allTime)
-            MakeBars(allTime, ["normal","hard","veryhard","insane"])
-            MakeBoolBar(allTime, "order_chaos")
-            MakeBoolBar(allTime, "horde_endless")
-            MakeBoolBar(allTime, "express")
-
-            var random = allTime["random"]
-            var gamesPlayed = allTime["gamesPlayed"]
-            $("#random").text = random+" ("+(random/gamesPlayed*100).toFixed(0)+"%)"
-            $("#towersBuilt").text = GameUI.FormatNumber(Number(allTime["towers"]) + Number(allTime["towersSold"]))
-            $("#towersSold").text = GameUI.FormatNumber(allTime["towersSold"])
-            $("#lifeTowerKills").text = GameUI.FormatNumber(allTime["lifeTowerKills"])
-            $("#goldTowerEarn").text = GameUI.FormatGold(allTime["goldTowerEarn"])
-
-            // Towers
-            var dual = MakeFirstDual(allTime["firstDual"])
-            var triple = MakeFirstTriple(allTime["firstTriple"])
-
-            // Element Usage
-            var light = allTime["light"]
-            var dark = allTime["dark"]
-            var water = allTime["water"]
-            var fire = allTime["fire"]
-            var nature = allTime["nature"]
-            var earth = allTime["earth"]
-            var total_elem = light+dark+water+fire+nature+earth
-            var favorite = allTime["favouriteElement"]
-
-            var nextStart = 0
-            nextStart = RadialStyle("light", nextStart, light/total_elem)
-            nextStart = RadialStyle("dark", nextStart, dark/total_elem)
-            nextStart = RadialStyle("water", nextStart, water/total_elem)
-            nextStart = RadialStyle("fire", nextStart, fire/total_elem)
-            nextStart = RadialStyle("nature", nextStart, nature/total_elem)
-            nextStart = RadialStyle("earth", nextStart, earth/total_elem)
-
-            // Milestones
-            var milestones = player_info["milestones"]
-            if (milestones === undefined)
-                return
-
-            for (var i in milestones) {
-                $.Msg(milestones[i])
-            };
-
-            $("#ClassicRank").text = (player_info["rank"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank"]);
-            $("#ExpressRank").text = (player_info["rank_exp"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank_exp"]);
-            $("#FrogsRank").text = (player_info["rank_frogs"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank_frogs"]);
+            SetStats(player_info)
         }
     })
+}
 
-    //GetRank(steamID32, 0, "ClassicRank")
-    //GetRank(steamID32, 1, "ExpressRank")
-    //GetRank(steamID32, 2, "FrogsRank")
+function SetStats(player_info)
+{
+    Stats[player_info["steamID"]] = player_info
+
+    var allTime = player_info["allTime"]
+    $("#GamesWon").text = allTime["gamesWon"]
+    $("#BestScore").text = GameUI.FormatScore(allTime["bestScore"])
+
+    // General
+    $("#kills").text = GameUI.FormatNumber(allTime["kills"])
+    $("#frogKills").text = GameUI.FormatNumber(allTime["frogKills"])
+    $("#networth").text = GameUI.FormatGold(allTime["networth"])
+    $("#interestGold").text = GameUI.FormatGold(allTime["interestGold"])
+    $("#cleanWaves").text = GameUI.FormatNumber(allTime["cleanWaves"])
+    $("#under30").text = GameUI.FormatNumber(allTime["under30"])
+
+    // GameMode
+    $.Msg(allTime)
+    MakeBars(allTime, ["normal","hard","veryhard","insane"])
+    MakeBoolBar(allTime, "order_chaos")
+    MakeBoolBar(allTime, "horde_endless")
+    MakeBoolBar(allTime, "express")
+
+    var random = allTime["random"]
+    var gamesPlayed = allTime["gamesPlayed"]
+    $("#random").text = random+" ("+(random/gamesPlayed*100).toFixed(0)+"%)"
+    $("#towersBuilt").text = GameUI.FormatNumber(Number(allTime["towers"]) + Number(allTime["towersSold"]))
+    $("#towersSold").text = GameUI.FormatNumber(allTime["towersSold"])
+    $("#lifeTowerKills").text = GameUI.FormatNumber(allTime["lifeTowerKills"])
+    $("#goldTowerEarn").text = GameUI.FormatGold(allTime["goldTowerEarn"])
+
+    // Towers
+    var dual = MakeFirstDual(allTime["firstDual"])
+    var triple = MakeFirstTriple(allTime["firstTriple"])
+
+    // Element Usage
+    var light = allTime["light"]
+    var dark = allTime["dark"]
+    var water = allTime["water"]
+    var fire = allTime["fire"]
+    var nature = allTime["nature"]
+    var earth = allTime["earth"]
+    var total_elem = light+dark+water+fire+nature+earth
+    var favorite = allTime["favouriteElement"]
+
+    var nextStart = 0
+    nextStart = RadialStyle("light", nextStart, light/total_elem)
+    nextStart = RadialStyle("dark", nextStart, dark/total_elem)
+    nextStart = RadialStyle("water", nextStart, water/total_elem)
+    nextStart = RadialStyle("fire", nextStart, fire/total_elem)
+    nextStart = RadialStyle("nature", nextStart, nature/total_elem)
+    nextStart = RadialStyle("earth", nextStart, earth/total_elem)
+
+    // Milestones
+    var milestones = player_info["milestones"]
+    if (milestones === undefined)
+        return
+
+    /*for (var i in milestones) {
+        $.Msg(milestones[i])
+    };*/
+
+    $("#ClassicRank").text = (player_info["rank"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank"]);
+    $("#ExpressRank").text = (player_info["rank_exp"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank_exp"]);
+    $("#FrogsRank").text = (player_info["rank_frogs"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank_frogs"]);
 }
 
 function ClearFields() {
@@ -159,21 +169,6 @@ function ClearFields() {
     $("#FrogsRank").text = "--"
 }
 
-function GetRank (steamID32, leaderboard_type, panelName) {
-    $.AsyncWebRequest( ranksURL+steamID32+"&lb="+leaderboard_type, { type: 'GET', 
-        success: function( data ) {
-
-            var info = JSON.parse(data);
-            var players_info = info["players"]
-
-            for (var i in players_info)
-            {
-                $("#"+panelName).text = GameUI.FormatRank(players_info[i].rank);
-            }
-        }
-    })
-}
-
 function GetPlayerFriends(steamID32, leaderboard_type) {
     $.Msg("Getting friends data for "+steamID32+"...")
 
@@ -218,8 +213,6 @@ function GetPlayerFriends(steamID32, leaderboard_type) {
                     return function(){ 
                         if (currentProfile == steamID32 && currentLB == leaderboard_type)
                             CreateFriendPanel(data)
-                        else
-                            return true
                     }
                 }( players_info[i] );
 
@@ -333,7 +326,7 @@ function LoadLocalProfile() {
 
     $("#AvatarImageMini").steamid = steamID64
 
-    ToggleProfile()
+    //ToggleProfile()
 }
 
 (function () {
