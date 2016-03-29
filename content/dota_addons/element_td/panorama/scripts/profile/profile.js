@@ -103,14 +103,22 @@ function SetStats(player_info)
        milestones_array.unshift(version);
     }
     
+    // Limit to 1 row
+    var badgesCreated = 0
+    var badgeLimit = 8
+
     for (var i in milestones_array) {
         var version = milestones_array[i]
         var rank_classic = milestones[version]["normal_rank"]
         var rank_express = milestones[version]["express_rank"]
 
+        if (badgesCreated >= badgeLimit)
+            break
+
         // Classic+Express
         if (rank_classic != false && rank_express != false)
         {
+            badgesCreated+=2
             var percentile_classic = rank_classic / milestones[version]["normal_count"] * 100
             var percentile_express = rank_express / milestones[version]["express_count"] * 100
             CreateProfileBadges(GameUI.FormatVersion(version), rank_classic, percentile_classic, rank_express, percentile_express)
@@ -119,6 +127,7 @@ function SetStats(player_info)
         // Only Classic
         else if (rank_classic != false)
         {
+            badgesCreated++
             var percentile_classic = rank_classic / milestones[version]["normal_count"] * 100
             CreateProfileBadges(GameUI.FormatVersion(version), rank_classic, percentile_classic, 0, 0)
         }
@@ -126,6 +135,7 @@ function SetStats(player_info)
         // Only Express
         else if (rank_express != false)
         {
+            badgesCreated++
             var percentile_express = rank_express / milestones[version]["express_count"] * 100
             CreateProfileBadges(GameUI.FormatVersion(version), 0, 0, rank_express, percentile_express)
         }
@@ -157,7 +167,7 @@ function CreateProfileBadges(version, rank_classic, percentile_classic, rank_exp
     {
         panel.FindChildInLayoutFile("BadgeClassic").style['width'] = "0%"
         panel.FindChildInLayoutFile("BadgeExpress").style['width'] = "100%"
-        panel.style['width'] = "80px;"
+        panel.style['width'] = "60px;"
     }
 
     if (rank_express)
@@ -171,10 +181,9 @@ function CreateProfileBadges(version, rank_classic, percentile_classic, rank_exp
     {
         panel.FindChildInLayoutFile("BadgeClassic").style['width'] = "100%"
         panel.FindChildInLayoutFile("BadgeExpress").style['width'] = "0%"
-        panel.style['width'] = "80px;"
+        panel.style['width'] = "60px;"
     }
 }
-
 
 function ClearFields() {
     $("#GamesWon").text = "-"

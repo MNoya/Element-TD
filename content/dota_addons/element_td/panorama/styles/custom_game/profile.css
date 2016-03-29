@@ -1107,6 +1107,7 @@ Label
     width: 100%;
     height: 120px;
     flow-children: down;
+    horizontal-align: center;
 }
 
 #MilestonesLabel
@@ -1118,16 +1119,16 @@ Label
 #MilestonesContainer
 {
     margin-top: 5px;
-    height: 100%;
-    flow-children: right;
+    height: 100px;
+    flow-children: right-wrap;
+    //overflow: scroll squish; //horizontal scrolling is bad
     horizontal-align: center;
-    overflow: scroll squish;
 }
 
 .ProfileBadge
 {
     width: 120px;
-    height: 100%;
+    height: 100px;
 }
 
 #OneBatchTwoBatch
