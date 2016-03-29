@@ -1116,6 +1116,12 @@ Label
     flow-children: right;
 }
 
+#MatchModes
+{
+    flow-children: right;
+    horizontal-align: center;
+}
+
 .MatchID_Col
 {
     width: 100px;
@@ -1124,16 +1130,126 @@ Label
 
 .MatchScore_Col
 {
-    width: 100px;
+    width: 60px;
+    margin-left: 5px;
+    text-align: center;
 }
+
 .MatchModes_Col
 {
     width: 100px;
+    margin-left: 20px;
+    text-align: center;
+    horizontal-align: center;
 }
 
 .MatchElements_Col
 {
     width: 200px;
+    text-align: center;
+}
+
+.ProfileMatch
+{
+    flow-children: right;
+    margin-bottom: 2px;
+}
+
+.MatchText
+{
+    font-size: 18px;
+    vertical-align: center;
+    color: white;
+}
+
+#MatchesContainer
+{
+    flow-children: down;
+    overflow: squish scroll;
+}
+
+.MatchMode
+{
+    height: 22px;
+    width: 22px;
+    margin-left: 1px;
+    margin-right: 1px;
+    background-color: gray;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+#Rush { background-color: #FF6C00; }
+#Chaos { background-color: #C54DA8; }
+#Random { background-color: #222; }
+#Express { background-color: #006400; height: 100%; }
+
+.Normal
+{
+    height: 22px;
+    max-width: 22px;
+    background-color: #CD7F32;
+}
+
+.Hard
+{
+    height: 22px;
+    max-width: 22px;
+    background-color: gray;
+}
+
+.VeryHard
+{
+    height: 22px;
+    max-width: 25px;
+    font-size: 16px;
+    padding-top: 2px;
+    background-color: #FBB23F;
+}
+
+.Insane
+{
+    height: 22px;
+    max-width: 22px;
+    background-color: red;
+}
+
+.ElementImage
+{
+    height: 22px;
+    width: 22px;
+    vertical-align: center;
+}
+
+#ElemSubContainer
+{
+    horizontal-align: center;
+    vertical-align: center;
+    flow-children: right;
+}
+.ElemImageAndLevel
+{
+    width: 22px;
+    margin: 0px 1px 0px 2px;
+}
+
+#water_level,
+#fire_level,
+#nature_level,
+#earth_level,
+#light_level,
+#dark_level
+{
+    color: #FFF;
+    margin-top: 1.5px;
+    font-size: 16px;
+    font-family: Radiance;
+    font-weight: bold;
+    text-align: center;
+    align: center center;
+    text-shadow: 0px 0px 1px 3.0 #000000;
 }
 
 // -- end of matches

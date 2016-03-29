@@ -31,7 +31,7 @@ GameUI.FormatScore =  function (score) {
 
 // Returns percentile in % format with 1 decimal point
 GameUI.FormatPercentile = function (percent) {
-    if (percent == 0)
+    if (percent == 0 || parseFloat(percent) < 0.1)
         return "0.1%" //anthony please forgive me
     else
         return +percent.toFixed(1) + "%"

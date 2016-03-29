@@ -36,7 +36,6 @@ function GetStats(steamID32) {
                 return
 
             SetStats(player_info)
-            SetMatches(player_info["raw"])
         }
     })
 }
@@ -151,18 +150,91 @@ function SetStats(player_info)
     $("#ClassicRank").text = (player_info["rank"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank"]);
     $("#ExpressRank").text = (player_info["rank_exp"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank_exp"]);
     $("#FrogsRank").text = (player_info["rank_frogs"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank_frogs"]);
+
+    // Matches
+    var rawInfo = player_info["raw"]
+    for (var i in rawInfo)
+    {
+        var match = rawInfo[i]
+        if (match['cleared'] != 0)
+        {
+            CreateMatch(rawInfo[i])
+        }
+    }
 }
 
-function SetMatches(matchInfo) {
-    for (var i in matchInfo)
+var elementNames = ["light", "dark", "water", "fire", "nature", "earth"]
+function CreateMatch(info) {
+    var matchID = info['matchID']
+    var score = info['score']
+    var version = info['version']
+
+    var panel = $.CreatePanel( "Panel", $("#MatchesContainer"), "Match_"+matchID);
+    panel.BLoadLayout( "file://{resources}/layout/custom_game/profile_match.xml", false, false );
+    GameUI.SetTextSafe(panel, "MatchID", matchID)
+    GameUI.SetTextSafe(panel, "MatchScore", GameUI.FormatScore(score))
+
+    $.Msg(info)
+    var difficulty = info["difficulty"]
+    var diff = "-";
+    if (difficulty == "Normal")
+        diff = "N";
+    else if (difficulty == "Hard")
+        diff = "H";
+    else if (difficulty == "VeryHard")
+        diff = "VH";
+    else if (difficulty == "Insane")
+        diff = "I";
+
+    var diffPanel = panel.FindChildInLayoutFile( "Difficulty" );
+    if ( diffPanel )
     {
-        $.Msg(matchInfo[i])
+        diffPanel.text = diff
+        diffPanel.SetHasClass( "Normal", diff == "N");
+        diffPanel.SetHasClass( "Hard", diff == "H");
+        diffPanel.SetHasClass( "VeryHard", diff == "VH");
+        diffPanel.SetHasClass( "Insane", diff == "I");
+    }
+
+    var chaos = info["order"]
+    var chaosPanel = panel.FindChildInLayoutFile( "Chaos" );
+    if (chaosPanel)
+        chaosPanel.SetHasClass( "Hide", chaos == "Normal" )
+
+    var rush = info["horde"]
+    var rushPanel = panel.FindChildInLayoutFile( "Rush" );
+    if (rushPanel)
+        rushPanel.SetHasClass( "Hide", rush == "Normal" )
+
+    var random = info["random"]
+    var randomPanel = panel.FindChildInLayoutFile( "Random" );
+    if (randomPanel)
+        randomPanel.SetHasClass( "Hide", random == "AllPick" )
+
+    // Elements
+    for (var i in elementNames)
+    {
+        var elem = elementNames[i]
+        var level = info[elem]
+        var elementPanel = panel.FindChildTraverse( elem )
+        if (elementPanel !== null)
+        {
+            if (level==0)
+                elementPanel.AddClass("Hide")
+            else
+            {
+                elementPanel.RemoveClass("Hide")
+                var elem_level = panel.FindChildTraverse( elem+"_level" )
+                if (elem_level !== null)
+                {
+                    elem_level.text = level
+                }
+            }
+        }
     }
 }
 
 function CreateProfileBadges(version, rank_classic, percentile_classic, rank_express, percentile_express) {
-    $.Msg("CreateProfileBadge "+version)
-
     var panel = $.CreatePanel( "Panel", $("#MilestonesContainer"), "Profile_Badge_"+version);
     panel.BLoadLayout( "file://{resources}/layout/custom_game/profile_ranking.xml", false, false );
 
@@ -172,7 +244,6 @@ function CreateProfileBadges(version, rank_classic, percentile_classic, rank_exp
 
     if (rank_classic)
     {
-        $.Msg("\tClassic: ", rank_classic, " ("+GameUI.FormatPercentile(percentile_classic)+")")
         GameUI.SetTextSafe( panel, "BadgePercentile_Classic", GameUI.FormatPercentile(percentile_classic));
         GameUI.SetTextSafe( panel, "BadgeRank_Classic", "#" + GameUI.FormatRank(rank_classic));
         panel.FindChildInLayoutFile( "BadgeClassic" ).AddClass(GameUI.GetRankImage(rank_classic,percentile_classic)+"_percentile");
@@ -186,7 +257,6 @@ function CreateProfileBadges(version, rank_classic, percentile_classic, rank_exp
 
     if (rank_express)
     {
-        $.Msg("\tExpress: ", rank_express, " ("+GameUI.FormatPercentile(percentile_express)+")")
         GameUI.SetTextSafe( panel, "BadgePercentile_Express", GameUI.FormatPercentile(percentile_express));
         GameUI.SetTextSafe( panel, "BadgeRank_Express", "#" + GameUI.FormatRank(rank_express));
         panel.FindChildInLayoutFile( "BadgeExpress" ).AddClass(GameUI.GetRankImage(rank_express,percentile_express)+"_percentile");
@@ -267,6 +337,13 @@ function ClearFields() {
         var child = $("#MilestonesContainer").GetChild(i)
         if (child) child.DeleteAsync(0)
     };
+
+    // Matches
+    var childCount = $("#MatchesContainer").GetChildCount()
+    for (var i = 0; i < childCount; i++) {
+        var child = $("#MatchesContainer").GetChild(i)
+        if (child) child.DeleteAsync(0)
+    };
 }
 
 function GetPlayerFriends(steamID32, leaderboard_type) {
@@ -280,7 +357,7 @@ function GetPlayerFriends(steamID32, leaderboard_type) {
 
     if (FriendsOf[steamID32] && FriendsOf[steamID32][leaderboard_type])
     {
-        $.Msg("Loading stats for "+steamID32)
+        $.Msg("Loading player friends for "+steamID32)
         SetPlayerFriends(FriendsOf[steamID32][leaderboard_type], steamID32, leaderboard_type, false)
         return
     }
