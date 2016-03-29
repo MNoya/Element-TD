@@ -113,12 +113,12 @@ function SetStats(player_info)
         var rank_classic = milestones[version]["normal_rank"]
         var rank_express = milestones[version]["express_rank"]
 
-        if (badgesCreated >= badgeLimit)
-            break
-
         // Classic+Express
         if (rank_classic != false && rank_express != false)
         {
+            if (badgesCreated+2 > badgeLimit)
+                break
+
             badgesCreated+=2
             var percentile_classic = rank_classic / milestones[version]["normal_count"] * 100
             var percentile_express = rank_express / milestones[version]["express_count"] * 100
@@ -128,6 +128,9 @@ function SetStats(player_info)
         // Only Classic
         else if (rank_classic != false)
         {
+            if (badgesCreated+1 > badgeLimit)
+                break
+
             badgesCreated++
             var percentile_classic = rank_classic / milestones[version]["normal_count"] * 100
             CreateProfileBadges(GameUI.FormatVersion(version), rank_classic, percentile_classic, 0, 0)
@@ -136,6 +139,9 @@ function SetStats(player_info)
         // Only Express
         else if (rank_express != false)
         {
+            if (badgesCreated+1 > badgeLimit)
+                break
+
             badgesCreated++
             var percentile_express = rank_express / milestones[version]["express_count"] * 100
             CreateProfileBadges(GameUI.FormatVersion(version), 0, 0, rank_express, percentile_express)
