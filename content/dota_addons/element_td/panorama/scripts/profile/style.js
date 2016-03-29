@@ -126,7 +126,8 @@ function MakeFirstDual (dual_string) {
     {
         $("#dual").text = "-"
         $("#dual_image").SetImage("");
-        $.Msg("Missing dual for: "+dual_string)
+        if (dual_string != "")
+            $.Msg("Missing dual for: "+dual_string)
     }
 }
 
@@ -141,7 +142,8 @@ function MakeFirstTriple (triple_string) {
     {
         $("#triple").text = "-"
         $("#triple_image").SetImage("");
-        $.Msg("Missing triple for: "+triple_string)
+        if (triple_string != "")
+            $.Msg("Missing triple for: "+triple_string)
     }
 
     $("#FirstTriplePanel").SetPanelEvent( "onmouseover", function() {

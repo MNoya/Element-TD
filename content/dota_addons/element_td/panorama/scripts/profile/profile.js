@@ -13,6 +13,7 @@ var friends = []
 
 //cache everything
 var Stats = {}
+var FriendsOf = {}
 
 function GetStats(steamID32) {
     ClearFields()
@@ -56,7 +57,6 @@ function SetStats(player_info)
     $("#under30").text = GameUI.FormatNumber(allTime["under30"])
 
     // GameMode
-    $.Msg(allTime)
     MakeBars(allTime, ["normal","hard","veryhard","insane"])
     MakeBoolBar(allTime, "order_chaos")
     MakeBoolBar(allTime, "horde_endless")
@@ -170,57 +170,76 @@ function ClearFields() {
 }
 
 function GetPlayerFriends(steamID32, leaderboard_type) {
-    $.Msg("Getting friends data for "+steamID32+"...")
-
     friendsRank = 0
     currentProfile = steamID32
-    var delay = 0
-    var delay_per_panel = 0.1;
 
     for (var i = 0; i < friends.length; i++) {
         friends[i].DeleteAsync(0)
     };
     friends = []
 
-    Loading.RemoveClass( "Hide" )
+    if (FriendsOf[steamID32] && FriendsOf[steamID32][leaderboard_type])
+    {
+        $.Msg("Loading stats for "+steamID32)
+        SetPlayerFriends(FriendsOf[steamID32][leaderboard_type], steamID32, leaderboard_type, false)
+        return
+    }
 
+    $.Msg("Getting friends data for "+steamID32+"...")
+    Loading.RemoveClass( "Hide" )
     $.AsyncWebRequest( friendsURL+steamID32+"&lb="+leaderboard_type, { type: 'GET', 
         success: function( data ) {
             var info = JSON.parse(data);
-            var players_info = info["players"]
-            
-            Loading.AddClass( "Hide" )
 
-            if (!players_info){
-                $("#PrivateProfile").RemoveClass( "Hide" )
-                return
-            }
-            $("#PrivateProfile").AddClass( "Hide" )
+            if (FriendsOf[steamID32] === undefined)
+                FriendsOf[steamID32] = {}
 
-            var self_player_rank = info["self"]
-            if (self_player_rank)
-                players_info.push(self_player_rank)
-
-            // Sort by rank
-            players_info.sort(function(a, b) {
-                return parseInt(a.rank) - parseInt(b.rank);
-            });
-
-            for (var i in players_info)
-            {
-                var callback = function( data )
-                {
-                    return function(){ 
-                        if (currentProfile == steamID32 && currentLB == leaderboard_type)
-                            CreateFriendPanel(data)
-                    }
-                }( players_info[i] );
-
-                $.Schedule( delay, callback )
-                delay += delay_per_panel;
-            }
+            SetPlayerFriends(info, steamID32, leaderboard_type, true)
         }
     })
+}
+
+function SetPlayerFriends(info, steamID32, leaderboard_type, addSelf) {
+    FriendsOf[steamID32][leaderboard_type] = info
+
+    var delay = 0
+    var delay_per_panel = 0.1
+    var players_info = info["players"]
+            
+    Loading.AddClass( "Hide" )
+
+    if (!players_info){
+        $("#PrivateProfile").RemoveClass( "Hide" )
+        return
+    }
+    $("#PrivateProfile").AddClass( "Hide" )
+
+    // Only need to add self once, on the first request
+    if (addSelf)
+    {
+        var self_player_rank = info["self"]
+        if (self_player_rank)
+            players_info.push(self_player_rank)
+    }
+
+    // Sort by rank
+    players_info.sort(function(a, b) {
+        return parseInt(a.rank) - parseInt(b.rank);
+    });
+
+    for (var i in players_info)
+    {
+        var callback = function( data )
+        {
+            return function(){ 
+                if (currentProfile == steamID32 && currentLB == leaderboard_type)
+                    CreateFriendPanel(data)
+            }
+        }( players_info[i] );
+
+        $.Schedule( delay, callback )
+        delay += delay_per_panel;
+    }
 }
 
 function CreateFriendPanel(data) {
