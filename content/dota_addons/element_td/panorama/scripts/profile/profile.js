@@ -248,7 +248,7 @@ function CreateFriendPanel(data, leaderboard_type) {
     var steamID64 = GameUI.ConvertID64(data.steamID)
     var playerPanel = $.CreatePanel("Panel", friendsPanel, "Friend_"+steamID64)
     playerPanel.steamID = steamID64
-    playerPanel.score = leaderboard_type == 2 ? data.icefrog_kills : GameUI.FormatScore(data.score)
+    playerPanel.score = leaderboard_type == 2 ? data.frogs : GameUI.FormatScore(data.score)
     playerPanel.friendRank = friendsRank
     playerPanel.rank = GameUI.FormatRank(data.rank)
     playerPanel.percentile = GameUI.FormatPercentile(data.percentile)
