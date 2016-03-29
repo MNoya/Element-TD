@@ -233,7 +233,7 @@ function SetPlayerFriends(info, steamID32, leaderboard_type, addSelf) {
         {
             return function(){ 
                 if (currentProfile == steamID32 && currentLB == leaderboard_type)
-                    CreateFriendPanel(data)
+                    CreateFriendPanel(data, leaderboard_type)
             }
         }( players_info[i] );
 
@@ -242,13 +242,13 @@ function SetPlayerFriends(info, steamID32, leaderboard_type, addSelf) {
     }
 }
 
-function CreateFriendPanel(data) {
+function CreateFriendPanel(data, leaderboard_type) {
     friendsRank++
 
     var steamID64 = GameUI.ConvertID64(data.steamID)
     var playerPanel = $.CreatePanel("Panel", friendsPanel, "Friend_"+steamID64)
     playerPanel.steamID = steamID64
-    playerPanel.score = GameUI.FormatScore(data.score)
+    playerPanel.score = leaderboard_type == 2 ? data.icefrog_kills : GameUI.FormatScore(data.score)
     playerPanel.friendRank = friendsRank
     playerPanel.rank = GameUI.FormatRank(data.rank)
     playerPanel.percentile = GameUI.FormatPercentile(data.percentile)
