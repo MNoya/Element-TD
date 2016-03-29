@@ -322,13 +322,18 @@ function ShowFriendRanks(leaderboard_type, force) {
 }
 
 var leftNames = ["stats","matches","achievements"]
-function ShowProfileInfo ( panelTabName ) {
-    $.Msg(name)
-
+function ShowProfileTab ( tabName ) {
+    // Swap radio buttons and panel visibility
     for (var i = 0; i < leftNames.length; i++) {
         var name = leftNames[i]
-        var panel = $("#"+name+"_radio")
-        panel.SetHasClass( "ActiveTab", leftNames[i] == panelTabName )
+
+        var radio = $("#"+name+"_radio")
+        if (radio)
+            radio.SetHasClass( "ActiveTab", name == tabName )
+
+        var tabPanel = $("#"+name+"_Tab")
+        if (tabPanel)
+            tabPanel.SetHasClass( "Hide", name != tabName )
     };
 
     Game.EmitSound("ui_rollover_micro")
