@@ -373,6 +373,13 @@ DOTAUserName #UserNameProfile
 }
 
 // General Stat Panels
+.LeftTab
+{
+    width: 800px;
+    height: 500px;
+    flow-children: down;
+}
+
 #GeneralStats
 {
     width: 100%;
@@ -623,7 +630,6 @@ DOTAUserName #UserNameProfile
 {
     height: 100%;
     horizontal-align: right;
-    vertical-align: center;
     flow-children: down;
 }
 
@@ -669,7 +675,8 @@ DOTAUserName #UserNameProfile
     width: 160px;
     height: 160px;
     margin-right: 10px;
-    vertical-align: center;
+    margin-top: 20px;
+    vertical-align: top;
 }
 
 .ElementUsageImage
@@ -1093,6 +1100,90 @@ Label
         transform: rotateZ( 0deg );
     }
 }
+
+// Achievements left panels
+#Milestones
+{
+    width: 100%;
+    height: 120px;
+    flow-children: down;
+}
+
+#MilestonesLabel
+{
+    height: 20px;
+    horizontal-align: center;
+}
+
+#MilestonesContainer
+{
+    margin-top: 5px;
+    height: 100%;
+    flow-children: right;
+    horizontal-align: center;
+    overflow: scroll squish;
+}
+
+.ProfileBadge
+{
+    width: 120px;
+    height: 100%;
+}
+
+#OneBatchTwoBatch
+{
+    flow-children: right;
+    height: 100%;
+    width: 100%;
+}
+
+#BadgeClassic
+{
+    margin-right: -5px;
+}
+
+#BadgeVersion
+{
+    width: 100%;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: -3px;
+    color: white;
+    text-shadow: 0px 0px 5px 2.0 #000;
+    text-align: center;
+}
+
+.RankingPlayerProfile
+{
+    margin-top: 10px;
+    width: 50%;
+    height: 100%;
+    transition-property: transform, opacity;
+    transition-duration: 0.3s;
+}
+
+.BadgePercentile, .BadgeText, .BadgeRank
+{
+    width: 100%;
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 15px;
+    color: white;
+    text-shadow: 0px 0px 5px 2.0 #000;
+    text-align: center;
+}
+
+.BadgeText
+{
+    margin-top: 29px;
+}
+
+.BadgeRank
+{
+    margin-top: 55px;
+}
+
+//-- end of achievements
 
 // Start of Custom Builders
 #CustomBuilders

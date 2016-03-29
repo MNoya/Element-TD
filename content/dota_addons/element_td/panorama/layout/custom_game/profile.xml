@@ -282,7 +282,12 @@
                     </Panel>
 
                     <Panel id="achievements_Tab" class='LeftTab'>
-
+                        <Panel id="Milestones">
+                            <Label id="MilestonesLabel" class="SectionTitle" text="#profile_milestones"/>
+                            <Panel id="MilestonesContainer">
+                                <!--Badges created here-->
+                            </Panel>
+                        </Panel>
                     </Panel>
                 </Panel>
 
@@ -315,6 +320,7 @@
                     </Panel>
                     <Panel id="FriendsContainer">
                         <Label id="PrivateProfile" text="#profile_private" class="Hide"/>
+                        <!--Friend panels created here-->
                     </Panel>
                 </Panel>
             </Panel>

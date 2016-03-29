@@ -272,6 +272,7 @@
         "profile_soon"          "Coming Soon"
         "profile_private"       "Private Profile"
         "profile_back"          "Back to My Profile"
+        "profile_milestones"    "Milestones"
 
         "leaderboard_title"     "Leaderboards"
         "leaderboard_classic"   "Top 100 Classic"

@@ -97,14 +97,84 @@ function SetStats(player_info)
     if (milestones === undefined)
         return
 
-    /*for (var i in milestones) {
-        $.Msg(milestones[i])
-    };*/
+    // Build reverse array, newer ranks first
+    var milestones_array = [];
+    for (version in milestones) {
+       milestones_array.unshift(version);
+    }
+    
+    for (var i in milestones_array) {
+        var version = milestones_array[i]
+        var rank_classic = milestones[version]["normal_rank"]
+        var rank_express = milestones[version]["express_rank"]
+
+        // Classic+Express
+        if (rank_classic != false && rank_express != false)
+        {
+            var percentile_classic = rank_classic / milestones[version]["normal_count"] * 100
+            var percentile_express = rank_express / milestones[version]["express_count"] * 100
+            CreateProfileBadges(GameUI.FormatVersion(version), rank_classic, percentile_classic, rank_express, percentile_express)
+        }
+
+        // Only Classic
+        else if (rank_classic != false)
+        {
+            var percentile_classic = rank_classic / milestones[version]["normal_count"] * 100
+            CreateProfileBadges(GameUI.FormatVersion(version), rank_classic, percentile_classic, 0, 0)
+        }
+
+        // Only Express
+        else if (rank_express != false)
+        {
+            var percentile_express = rank_express / milestones[version]["express_count"] * 100
+            CreateProfileBadges(GameUI.FormatVersion(version), 0, 0, rank_express, percentile_express)
+        }
+    };
 
     $("#ClassicRank").text = (player_info["rank"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank"]);
     $("#ExpressRank").text = (player_info["rank_exp"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank_exp"]);
     $("#FrogsRank").text = (player_info["rank_frogs"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank_frogs"]);
 }
+
+function CreateProfileBadges(version, rank_classic, percentile_classic, rank_express, percentile_express) {
+    $.Msg("CreateProfileBadge "+version)
+
+    var panel = $.CreatePanel( "Panel", $("#MilestonesContainer"), "Profile_Badge_"+version);
+    panel.BLoadLayout( "file://{resources}/layout/custom_game/profile_ranking.xml", false, false );
+
+    GameUI.SetTextSafe( panel, "BadgeVersion", version); //Version is shared by both badges
+    panel.FindChildInLayoutFile("BadgeClassic").SetHasClass( "Hide", rank_classic == 0)
+    panel.FindChildInLayoutFile("BadgeExpress").SetHasClass( "Hide", rank_express == 0)
+
+    if (rank_classic)
+    {
+        $.Msg("\tClassic: ", rank_classic, " ("+GameUI.FormatPercentile(percentile_classic)+")")
+        GameUI.SetTextSafe( panel, "BadgePercentile_Classic", GameUI.FormatPercentile(percentile_classic));
+        GameUI.SetTextSafe( panel, "BadgeRank_Classic", "#" + GameUI.FormatRank(rank_classic));
+        panel.FindChildInLayoutFile( "BadgeClassic" ).AddClass(GameUI.GetRankImage(rank_classic,percentile_classic)+"_percentile");
+    }
+    else
+    {
+        panel.FindChildInLayoutFile("BadgeClassic").style['width'] = "0%"
+        panel.FindChildInLayoutFile("BadgeExpress").style['width'] = "100%"
+        panel.style['width'] = "80px;"
+    }
+
+    if (rank_express)
+    {
+        $.Msg("\tExpress: ", rank_express, " ("+GameUI.FormatPercentile(percentile_express)+")")
+        GameUI.SetTextSafe( panel, "BadgePercentile_Express", GameUI.FormatPercentile(percentile_express));
+        GameUI.SetTextSafe( panel, "BadgeRank_Express", "#" + GameUI.FormatRank(rank_express));
+        panel.FindChildInLayoutFile( "BadgeExpress" ).AddClass(GameUI.GetRankImage(rank_express,percentile_express)+"_percentile");
+    }
+    else
+    {
+        panel.FindChildInLayoutFile("BadgeClassic").style['width'] = "100%"
+        panel.FindChildInLayoutFile("BadgeExpress").style['width'] = "0%"
+        panel.style['width'] = "80px;"
+    }
+}
+
 
 function ClearFields() {
     $("#GamesWon").text = "-"
@@ -167,6 +237,13 @@ function ClearFields() {
     $("#ClassicRank").text = "--"
     $("#ExpressRank").text = "--"
     $("#FrogsRank").text = "--"
+
+    // Milestones
+    var childCount = $("#MilestonesContainer").GetChildCount()
+    for (var i = 0; i < childCount; i++) {
+        var child = $("#MilestonesContainer").GetChild(i)
+        if (child) child.DeleteAsync(0)
+    };
 }
 
 function GetPlayerFriends(steamID32, leaderboard_type) {
@@ -350,7 +427,8 @@ function LoadLocalProfile() {
 
     $("#AvatarImageMini").steamid = steamID64
 
-    //ToggleProfile()
+    ToggleProfile()
+    ShowProfileTab('achievements')
 }
 
 (function () {

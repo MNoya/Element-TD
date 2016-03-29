@@ -60,6 +60,14 @@ GameUI.FormatNumber = function (num) {
     }
 }
 
+// Handles versioning labels
+GameUI.FormatVersion = function (version_string) {
+    if (version_string == 'B230216') version_string = "0.8"
+    else if (version_string == "B010316" || version_string == "B010316b") version_string = "0.9"
+
+    return "v"+version_string
+}
+
 GameUI.SetTextSafe = function ( panel, childName, textValue ) {
     if ( panel === null )
         return;
