@@ -48,17 +48,17 @@
                     <Panel id="TripleRankContainer">
                         <Panel class="SingleRankContainer3">
                             <Label id="ClassicRank" class="TopProfileStatTriple" text="--"/>
-                            <Label class="TopProfileStatSubLabel" text="#profile_classic_ranks"/>
+                            <Label class="TopProfileStatSubLabel" text="#profile_classic"/>
                         </Panel>
 
                         <Panel class="SingleRankContainer3">
                             <Label id="ExpressRank" class="TopProfileStatTriple" text="--"/>
-                            <Label class="TopProfileStatSubLabel" text="#profile_express_ranks"/>
+                            <Label class="TopProfileStatSubLabel" text="#profile_express"/>
                         </Panel>
 
                         <Panel class="SingleRankContainer3">
                             <Label id="FrogsRank" class="TopProfileStatTriple" text="--"/>
-                            <Label class="TopProfileStatSubLabel" text="#profile_frogs_ranks"/>
+                            <Label class="TopProfileStatSubLabel" text="#profile_frogs"/>
                         </Panel>
                     </Panel>
                 </Panel>
@@ -278,7 +278,18 @@
                     </Panel>
 
                     <Panel id="matches_Tab" class='LeftTab'>
+                        <Panel id="Matches">
+                            <Panel id="MatchesTopRow">
+                                <Label class="FriendCategory MatchID_Col" text="#profile_match_id" />
+                                <Label class="FriendCategory MatchScore_Col" text="#profile_score" />
+                                <Label class="FriendCategory MatchModes_Col" text="#profile_modes" />
+                                <Label class="FriendCategory MatchElements_Col" text="#etd_tower_table_elements" />
+                            </Panel>
 
+                            <Panel id="MatchesContainer">
+                                <!--Matches created here-->
+                            </Panel>
+                        </Panel>
                     </Panel>
 
                     <Panel id="achievements_Tab" class='LeftTab'>
@@ -299,7 +310,7 @@
                         </Panel>
                         <Panel id="FriendRanksTabs">
                             <Button class="LeaderboardButton" onactivate="ShowFriendRanks('classic')">
-                                <Label id="classic_radio" class="ProfileTab" text="#profile_classic_ranks"/>
+                                <Label id="classic_radio" class="ProfileTab" text="#profile_classic"/>
                             </Button>
 
                             <Button class="LeaderboardButton" onactivate="ShowFriendRanks('express')">

@@ -940,7 +940,7 @@ Label
 
 #ProfileTabs
 {
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 10px;
     width: 100%;
     height: 30px;
@@ -1101,6 +1101,43 @@ Label
     }
 }
 
+// Matches left panels
+#Matches
+{
+    width: 100%;
+    height: 100%;
+    flow-children: down;
+}
+
+#MatchesTopRow
+{
+    height: 20px;
+    width: 100%;
+    flow-children: right;
+}
+
+.MatchID_Col
+{
+    width: 100px;
+    margin-left: 15px;
+}
+
+.MatchScore_Col
+{
+    width: 100px;
+}
+.MatchModes_Col
+{
+    width: 100px;
+}
+
+.MatchElements_Col
+{
+    width: 200px;
+}
+
+// -- end of matches
+
 // Achievements left panels
 #Milestones
 {
@@ -1183,7 +1220,6 @@ Label
 {
     margin-top: 55px;
 }
-
 //-- end of achievements
 
 // Start of Custom Builders

@@ -26,7 +26,7 @@ function GetStats(steamID32) {
     }
 
     $.Msg("Getting stats data for "+steamID32+"...")
-    $.AsyncWebRequest( statsURL+steamID32, { type: 'GET', 
+    $.AsyncWebRequest( statsURL+steamID32+"&raw=1", { type: 'GET', 
         success: function( data ) {
             var info = JSON.parse(data);
             var player_info = info["player"]
@@ -36,6 +36,7 @@ function GetStats(steamID32) {
                 return
 
             SetStats(player_info)
+            SetMatches(player_info["raw"])
         }
     })
 }
@@ -102,7 +103,7 @@ function SetStats(player_info)
     for (version in milestones) {
        milestones_array.unshift(version);
     }
-    
+
     // Limit to 1 row
     var badgesCreated = 0
     var badgeLimit = 8
@@ -144,6 +145,13 @@ function SetStats(player_info)
     $("#ClassicRank").text = (player_info["rank"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank"]);
     $("#ExpressRank").text = (player_info["rank_exp"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank_exp"]);
     $("#FrogsRank").text = (player_info["rank_frogs"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank_frogs"]);
+}
+
+function SetMatches(matchInfo) {
+    for (var i in matchInfo)
+    {
+        $.Msg(matchInfo[i])
+    }
 }
 
 function CreateProfileBadges(version, rank_classic, percentile_classic, rank_express, percentile_express) {
@@ -436,8 +444,9 @@ function LoadLocalProfile() {
 
     $("#AvatarImageMini").steamid = steamID64
 
-    ToggleProfile()
-    ShowProfileTab('achievements')
+    //Testing
+    //ToggleProfile()
+    //ShowProfileTab('achievements')
 }
 
 (function () {
