@@ -18,6 +18,63 @@ function AdjustCosmetics( event )
 end
 
 
+------------------------------------------------------------------------------
+-- Datadriven calls
+------------------------------------------------------------------------------
+
+function AttachProp( event )
+    local unit = event.caster
+    local model = event.Model
+    local point = event.Point
+    Attachments:AttachProp(unit, point, model)
+end
+
+function Mount( event )
+    local caster = event.caster
+    local ability = event.ability
+    local unitName = event.Unit
+    local point = event.Point
+    local offsetX = event.offsetX and tonumber(event.offsetX) or 0
+    local offsetY = event.offsetY and tonumber(event.offsetY) or 0
+    local offsetZ = event.offsetZ and tonumber(event.offsetZ) or 0
+
+    local attach = caster:ScriptLookupAttachment(point)
+    local origin = caster:GetAttachmentOrigin(attach)
+    local fv = caster:GetForwardVector()
+
+    local rider = CreateUnitByName(unitName, caster:GetAbsOrigin(), false, nil, nil, caster:GetTeamNumber()) 
+    rider:AddNewModifier(nil, nil, "modifier_out_of_world", {})
+
+    rider:SetAbsOrigin(Vector(origin.x+offsetX, origin.y+offsetY, origin.z+offsetZ))
+    rider:SetParent(caster, "attach_hitloc")
+
+    if event.AnimateRider then
+        caster.rider = rider
+        Rewards:MovementAnimations(caster)
+    end
+
+    caster.rider = rider
+end
+
+function AttachOrbs( event )
+    local hero = event.caster
+    local origin = hero:GetAbsOrigin()
+    hero:StartGesture(ACT_DOTA_CONSTANT_LAYER)
+    
+    local particleName = "particles/custom/invoker_orbs/exort_orb.vpcf"
+
+    local orb1 = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN, hero)
+    ParticleManager:SetParticleControlEnt(orb1, 1, hero, PATTACH_POINT_FOLLOW, "attach_orb1", origin, false)
+
+    local orb2 = ParticleManager:CreateParticle(particleName, PATTACH_OVERHEAD_FOLLOW, hero)
+    ParticleManager:SetParticleControlEnt(orb2, 1, hero, PATTACH_POINT_FOLLOW, "attach_orb2", origin, false)
+
+    local orb3 = ParticleManager:CreateParticle(particleName, PATTACH_OVERHEAD_FOLLOW, hero)
+    ParticleManager:SetParticleControlEnt(orb3, 1, hero, PATTACH_POINT_FOLLOW, "attach_orb3", origin, false)
+end
+
+------------------------------------------------------------------------------
+
 -- Creates full AttachWearables entries by set names
 function MakeSets()
     if not GameRules.modelmap then MapWearables() end

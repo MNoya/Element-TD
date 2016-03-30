@@ -91,5 +91,8 @@
         <Image style="opacity:0;" src="file://{images}/custom_game/ranking/Badge2.png" />
         <Image style="opacity:0;" src="file://{images}/custom_game/ranking/Badge3.png" />
         <Image style="opacity:0;" src="file://{images}/custom_game/ranking/Badge4.png" />
+
+        <Image style="opacity:0;" src="file://{images}/custom_game/rewards/aegis.png" />
+        <Image style="opacity:0;" src="file://{images}/custom_game/rewards/dev.png" />
     </Panel>
 </root>

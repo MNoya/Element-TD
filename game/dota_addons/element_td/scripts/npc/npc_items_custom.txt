@@ -160,7 +160,7 @@
 	    {
 	        "RunScript"
 	        {
-	            "ScriptFile"        "spells.lua"
+	            "ScriptFile"        "mechanics/grid.lua"
 	            "Function"          "ToggleGrid"
 	        }
 	    }
@@ -187,7 +187,7 @@
 	        "RunScript"
 	        {
 	            "Target"            "CASTER"
-	            "ScriptFile"        "summoner.lua"
+	            "ScriptFile"        "mechanics/resources.lua"
 	            "Function"          "BuyPureEssence"
 	        }
 	    }
@@ -209,7 +209,7 @@
 	        "RunScript"
 	        {
 	            "Target"            "CASTER"
-	            "ScriptFile"        "summoner.lua"
+	            "ScriptFile"        "mechanics/resources.lua"
 	            "Function"          "BuyPureEssenceWarn"
 	        }
 	    }
@@ -232,7 +232,7 @@
 	    {
 	        "RunScript"
 	        {
-	            "ScriptFile"        "summoner.lua"
+	            "ScriptFile"        "mechanics/random.lua"
 	            "Function"          "ItemRandomUse"
 	        }
 	    }
@@ -252,7 +252,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"focused_dark_tower"
 			}
@@ -263,6 +263,7 @@
 			"dark"		"2"
 			"dark"		"2"
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_focused_dark_tower_disabled"
 	{
@@ -280,6 +281,7 @@
 			"dark"		"2"
 			"dark"		"2"
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_focused_earth_tower"
 	{
@@ -296,7 +298,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"focused_earth_tower"
 			}
@@ -307,6 +309,7 @@
 			"earth"		"2"
 			"earth"		"2"
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_focused_earth_tower_disabled"
 	{
@@ -324,6 +327,7 @@
 			"earth"		"2"
 			"earth"		"2"
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_focused_fire_tower"
 	{
@@ -340,7 +344,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"focused_fire_tower"
 			}
@@ -351,6 +355,7 @@
 			"fire"		"2"
 			"fire"		"2"
 		}
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_focused_fire_tower_disabled"
 	{
@@ -368,6 +373,7 @@
 			"fire"		"2"
 			"fire"		"2"
 		}
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_focused_light_tower"
 	{
@@ -384,7 +390,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"focused_light_tower"
 			}
@@ -395,6 +401,7 @@
 			"light"		"2"
 			"light"		"2"
 		}
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_focused_light_tower_disabled"
 	{
@@ -412,6 +419,7 @@
 			"light"		"2"
 			"light"		"2"
 		}
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_focused_nature_tower"
 	{
@@ -428,7 +436,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"focused_nature_tower"
 			}
@@ -439,6 +447,7 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_focused_nature_tower_disabled"
 	{
@@ -456,6 +465,7 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_focused_water_tower"
 	{
@@ -472,7 +482,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"focused_water_tower"
 			}
@@ -483,6 +493,7 @@
 			"water"		"2"
 			"water"		"2"
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_focused_water_tower_disabled"
 	{
@@ -500,6 +511,7 @@
 			"water"		"2"
 			"water"		"2"
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_pure_dark_tower"
 	{
@@ -516,7 +528,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"pure_dark_tower"
 			}
@@ -527,6 +539,7 @@
 			"dark"		"3"
 			"dark"		"3"
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_pure_earth_tower"
 	{
@@ -543,7 +556,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"pure_earth_tower"
 			}
@@ -554,6 +567,7 @@
 			"earth"		"3"
 			"earth"		"3"
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_pure_fire_tower"
 	{
@@ -570,7 +584,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"pure_fire_tower"
 			}
@@ -581,6 +595,7 @@
 			"fire"		"3"
 			"fire"		"3"
 		}
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_pure_light_tower"
 	{
@@ -597,7 +612,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"pure_light_tower"
 			}
@@ -608,6 +623,7 @@
 			"light"		"3"
 			"light"		"3"
 		}
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_pure_nature_tower"
 	{
@@ -624,7 +640,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"pure_nature_tower"
 			}
@@ -635,6 +651,7 @@
 			"nature"		"3"
 			"nature"		"3"
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_pure_water_tower"
 	{
@@ -651,7 +668,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"pure_water_tower"
 			}
@@ -662,6 +679,7 @@
 			"water"		"3"
 			"water"		"3"
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_refined_dark_tower"
 	{
@@ -678,7 +696,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"refined_dark_tower"
 			}
@@ -689,6 +707,7 @@
 			"dark"		"3"
 			"dark"		"3"
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_refined_dark_tower_disabled"
 	{
@@ -706,6 +725,7 @@
 			"dark"		"3"
 			"dark"		"3"
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_refined_earth_tower"
 	{
@@ -722,7 +742,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"refined_earth_tower"
 			}
@@ -733,6 +753,7 @@
 			"earth"		"3"
 			"earth"		"3"
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_refined_earth_tower_disabled"
 	{
@@ -750,6 +771,7 @@
 			"earth"		"3"
 			"earth"		"3"
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_refined_fire_tower"
 	{
@@ -766,7 +788,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"refined_fire_tower"
 			}
@@ -777,6 +799,7 @@
 			"fire"		"3"
 			"fire"		"3"
 		}
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_refined_fire_tower_disabled"
 	{
@@ -794,6 +817,7 @@
 			"fire"		"3"
 			"fire"		"3"
 		}
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_refined_light_tower"
 	{
@@ -810,7 +834,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"refined_light_tower"
 			}
@@ -821,6 +845,7 @@
 			"light"		"3"
 			"light"		"3"
 		}
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_refined_light_tower_disabled"
 	{
@@ -838,6 +863,7 @@
 			"light"		"3"
 			"light"		"3"
 		}
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_refined_nature_tower"
 	{
@@ -854,7 +880,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"refined_nature_tower"
 			}
@@ -865,6 +891,7 @@
 			"nature"		"3"
 			"nature"		"3"
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_refined_nature_tower_disabled"
 	{
@@ -882,6 +909,7 @@
 			"nature"		"3"
 			"nature"		"3"
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_refined_water_tower"
 	{
@@ -898,7 +926,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"refined_water_tower"
 			}
@@ -909,6 +937,7 @@
 			"water"		"3"
 			"water"		"3"
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_refined_water_tower_disabled"
 	{
@@ -926,6 +955,7 @@
 			"water"		"3"
 			"water"		"3"
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_blacksmith_tower"
 	{
@@ -942,7 +972,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"blacksmith_tower"
 			}
@@ -962,9 +992,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"15 30 90"
+				"damage"				"15 30 100"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_blacksmith_tower_2"
 	{
@@ -981,7 +1012,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"blacksmith_tower_2"
 			}
@@ -1000,9 +1031,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"15 30 90"
+				"damage"				"15 30 100"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_blacksmith_tower_2_disabled"
 	{
@@ -1028,9 +1060,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"15 30 90"
+				"damage"				"15 30 100"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_blacksmith_tower_3"
 	{
@@ -1047,7 +1080,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"blacksmith_tower_3"
 			}
@@ -1066,9 +1099,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"15 30 90"
+				"damage"				"15 30 100"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_blacksmith_tower_3_disabled"
 	{
@@ -1094,9 +1128,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"15 30 90"
+				"damage"				"15 30 100"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_blacksmith_tower_disabled"
 	{
@@ -1123,9 +1158,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"15 30 90"
+				"damage"				"15 30 100"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_disease_tower"
 	{
@@ -1142,7 +1178,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"disease_tower"
 			}
@@ -1157,6 +1193,7 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_disease_tower_2"
 	{
@@ -1173,7 +1210,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"disease_tower_2"
 			}
@@ -1186,6 +1223,7 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_disease_tower_2_disabled"
 	{
@@ -1205,6 +1243,7 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_disease_tower_3"
 	{
@@ -1221,7 +1260,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"disease_tower_3"
 			}
@@ -1234,6 +1273,7 @@
 			"nature"		"3"
 			"nature"		"3"
 		}
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_disease_tower_3_disabled"
 	{
@@ -1253,6 +1293,7 @@
 			"nature"		"3"
 			"nature"		"3"
 		}
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_disease_tower_disabled"
 	{
@@ -1274,6 +1315,7 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_electricity_tower"
 	{
@@ -1290,7 +1332,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"electricity_tower"
 			}
@@ -1310,9 +1352,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"170 850 4250"
+				"damage"				"150 900 5400"
 			}
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_electricity_tower_2"
 	{
@@ -1329,7 +1372,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"electricity_tower_2"
 			}
@@ -1348,9 +1391,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"170 850 4250"
+				"damage"				"150 900 5400"
 			}
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_electricity_tower_2_disabled"
 	{
@@ -1376,9 +1420,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"170 850 4250"
+				"damage"				"150 900 5400"
 			}
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_electricity_tower_3"
 	{
@@ -1395,7 +1440,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"electricity_tower_3"
 			}
@@ -1414,9 +1459,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"170 850 4250"
+				"damage"				"150 900 5400"
 			}
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_electricity_tower_3_disabled"
 	{
@@ -1442,9 +1488,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"170 850 4250"
+				"damage"				"150 900 5400"
 			}
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_electricity_tower_disabled"
 	{
@@ -1471,9 +1518,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"170 850 4250"
+				"damage"				"150 900 5400"
 			}
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_flame_tower"
 	{
@@ -1490,7 +1538,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"flame_tower"
 			}
@@ -1510,9 +1558,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"40 240 1440"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_flame_tower_2"
 	{
@@ -1529,7 +1578,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"flame_tower_2"
 			}
@@ -1548,9 +1597,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"40 240 1440"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_flame_tower_2_disabled"
 	{
@@ -1576,9 +1626,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"40 240 1440"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_flame_tower_3"
 	{
@@ -1595,7 +1646,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"flame_tower_3"
 			}
@@ -1614,9 +1665,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"40 240 1440"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_flame_tower_3_disabled"
 	{
@@ -1642,9 +1694,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"40 240 1440"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_flame_tower_disabled"
 	{
@@ -1671,9 +1724,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"40 240 1440"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_gunpowder_tower"
 	{
@@ -1690,7 +1744,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"gunpowder_tower"
 			}
@@ -1710,9 +1764,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"30 180 1080"
 			}
 		}
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_gunpowder_tower_2"
 	{
@@ -1729,7 +1784,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"gunpowder_tower_2"
 			}
@@ -1748,9 +1803,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"30 180 1080"
 			}
 		}
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_gunpowder_tower_2_disabled"
 	{
@@ -1776,9 +1832,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"30 180 1080"
 			}
 		}
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_gunpowder_tower_3"
 	{
@@ -1795,7 +1852,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"gunpowder_tower_3"
 			}
@@ -1814,9 +1871,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"30 180 1080"
 			}
 		}
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_gunpowder_tower_3_disabled"
 	{
@@ -1842,9 +1900,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"30 180 1080"
 			}
 		}
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_gunpowder_tower_disabled"
 	{
@@ -1871,9 +1930,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"30 180 1080"
 			}
 		}
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_hydro_tower"
 	{
@@ -1890,7 +1950,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"hydro_tower"
 			}
@@ -1910,9 +1970,10 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"270 1350 6750"
+				"splash_damage"		"300 1800 10800"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_hydro_tower_2"
 	{
@@ -1929,7 +1990,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"hydro_tower_2"
 			}
@@ -1948,9 +2009,10 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"270 1350 6750"
+				"splash_damage"		"300 1800 10800"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_hydro_tower_2_disabled"
 	{
@@ -1976,9 +2038,10 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"270 1350 6750"
+				"splash_damage"		"300 1800 10800"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_hydro_tower_3"
 	{
@@ -1995,7 +2058,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"hydro_tower_3"
 			}
@@ -2014,9 +2077,10 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"270 1350 6750"
+				"splash_damage"		"300 1800 10800"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_hydro_tower_3_disabled"
 	{
@@ -2042,9 +2106,10 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"270 1350 6750"
+				"splash_damage"		"300 1800 10800"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_hydro_tower_disabled"
 	{
@@ -2071,9 +2136,10 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"270 1350 6750"
+				"splash_damage"		"300 1800 10800"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ice_tower"
 	{
@@ -2090,7 +2156,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"ice_tower"
 			}
@@ -2110,9 +2176,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"135 675 3375"
+				"damage"				"135 810 4860"
 			}
 	    }
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ice_tower_2"
 	{
@@ -2129,7 +2196,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"ice_tower_2"
 			}
@@ -2148,9 +2215,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"135 675 3375"
+				"damage"				"135 810 4860"
 			}
 	    }
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ice_tower_2_disabled"
 	{
@@ -2176,9 +2244,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"135 675 3375"
+				"damage"				"135 810 4860"
 			}
 	    }
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ice_tower_3"
 	{
@@ -2195,7 +2264,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"ice_tower_3"
 			}
@@ -2214,9 +2283,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"135 675 3375"
+				"damage"				"135 810 4860"
 			}
 	    }
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ice_tower_3_disabled"
 	{
@@ -2242,9 +2312,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"135 675 3375"
+				"damage"				"135 810 4860"
 			}
 	    }
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ice_tower_disabled"
 	{
@@ -2271,9 +2342,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"135 675 3375"
+				"damage"				"135 810 4860"
 			}
 	    }
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_life_tower"
 	{
@@ -2290,7 +2362,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"life_tower"
 			}
@@ -2310,9 +2382,10 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"3 1.5 1"
+				"kills_required"				"6 4 2"
 			}
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_life_tower_2"
 	{
@@ -2329,7 +2402,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"life_tower_2"
 			}
@@ -2348,9 +2421,10 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"3 1.5 1"
+				"kills_required"				"6 4 2"
 			}
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_life_tower_2_disabled"
 	{
@@ -2376,9 +2450,10 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"3 1.5 1"
+				"kills_required"				"6 4 2"
 			}
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_life_tower_3"
 	{
@@ -2395,7 +2470,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"life_tower_3"
 			}
@@ -2414,9 +2489,10 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"3 1.5 1"
+				"kills_required"				"6 4 2"
 			}
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_life_tower_3_disabled"
 	{
@@ -2442,9 +2518,10 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"3 1.5 1"
+				"kills_required"				"6 4 2"
 			}
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_life_tower_disabled"
 	{
@@ -2471,9 +2548,10 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"3 1.5 1"
+				"kills_required"				"6 4 2"
 			}
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_magic_tower"
 	{
@@ -2490,7 +2568,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"magic_tower"
 			}
@@ -2505,6 +2583,7 @@
 			"fire"		"1"
 			"fire"		"1"
 		}
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_magic_tower_2"
 	{
@@ -2521,7 +2600,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"magic_tower_2"
 			}
@@ -2534,6 +2613,7 @@
 			"fire"		"2"
 			"fire"		"2"
 		}
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_magic_tower_2_disabled"
 	{
@@ -2553,6 +2633,7 @@
 			"fire"		"2"
 			"fire"		"2"
 		}
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_magic_tower_3"
 	{
@@ -2569,7 +2650,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"magic_tower_3"
 			}
@@ -2582,6 +2663,7 @@
 			"fire"		"3"
 			"fire"		"3"
 		}
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_magic_tower_3_disabled"
 	{
@@ -2601,6 +2683,7 @@
 			"fire"		"3"
 			"fire"		"3"
 		}
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_magic_tower_disabled"
 	{
@@ -2622,6 +2705,7 @@
 			"fire"		"1"
 			"fire"		"1"
 		}
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_moss_tower"
 	{
@@ -2638,7 +2722,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"moss_tower"
 			}
@@ -2653,6 +2737,7 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_moss_tower_2"
 	{
@@ -2669,7 +2754,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"moss_tower_2"
 			}
@@ -2682,6 +2767,7 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_moss_tower_2_disabled"
 	{
@@ -2701,6 +2787,7 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_moss_tower_3"
 	{
@@ -2717,7 +2804,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"moss_tower_3"
 			}
@@ -2730,6 +2817,7 @@
 			"nature"		"3"
 			"nature"		"3"
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_moss_tower_3_disabled"
 	{
@@ -2749,6 +2837,7 @@
 			"nature"		"3"
 			"nature"		"3"
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_moss_tower_disabled"
 	{
@@ -2770,6 +2859,7 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_poison_tower"
 	{
@@ -2786,7 +2876,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"poison_tower"
 			}
@@ -2801,6 +2891,7 @@
 			"water"		"1"
 			"water"		"1"
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_poison_tower_2"
 	{
@@ -2817,7 +2908,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"poison_tower_2"
 			}
@@ -2830,6 +2921,7 @@
 			"water"		"2"
 			"water"		"2"
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_poison_tower_2_disabled"
 	{
@@ -2849,6 +2941,7 @@
 			"water"		"2"
 			"water"		"2"
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_poison_tower_3"
 	{
@@ -2865,7 +2958,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"poison_tower_3"
 			}
@@ -2878,6 +2971,7 @@
 			"water"		"3"
 			"water"		"3"
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_poison_tower_3_disabled"
 	{
@@ -2897,6 +2991,7 @@
 			"water"		"3"
 			"water"		"3"
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_poison_tower_disabled"
 	{
@@ -2918,6 +3013,7 @@
 			"water"		"1"
 			"water"		"1"
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_quark_tower"
 	{
@@ -2934,7 +3030,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"quark_tower"
 			}
@@ -2949,6 +3045,7 @@
 			"light"		"1"
 			"light"		"1"
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_quark_tower_2"
 	{
@@ -2965,7 +3062,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"quark_tower_2"
 			}
@@ -2978,6 +3075,7 @@
 			"light"		"2"
 			"light"		"2"
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_quark_tower_2_disabled"
 	{
@@ -2997,6 +3095,7 @@
 			"light"		"2"
 			"light"		"2"
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_quark_tower_3"
 	{
@@ -3013,7 +3112,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"quark_tower_3"
 			}
@@ -3026,6 +3125,7 @@
 			"light"		"3"
 			"light"		"3"
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_quark_tower_3_disabled"
 	{
@@ -3045,6 +3145,7 @@
 			"light"		"3"
 			"light"		"3"
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_quark_tower_disabled"
 	{
@@ -3066,6 +3167,7 @@
 			"light"		"1"
 			"light"		"1"
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_trickery_tower"
 	{
@@ -3082,7 +3184,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"trickery_tower"
 			}
@@ -3102,9 +3204,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"10 20 60"
+				"duration"				"10 20 70"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_trickery_tower_2"
 	{
@@ -3121,7 +3224,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"trickery_tower_2"
 			}
@@ -3140,9 +3243,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"10 20 60"
+				"duration"				"10 20 70"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_trickery_tower_2_disabled"
 	{
@@ -3168,9 +3272,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"10 20 60"
+				"duration"				"10 20 70"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_trickery_tower_3"
 	{
@@ -3187,7 +3292,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"trickery_tower_3"
 			}
@@ -3206,9 +3311,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"10 20 60"
+				"duration"				"10 20 70"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_trickery_tower_3_disabled"
 	{
@@ -3234,9 +3340,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"10 20 60"
+				"duration"				"10 20 70"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_trickery_tower_disabled"
 	{
@@ -3263,9 +3370,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"10 20 60"
+				"duration"				"10 20 70"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_vapor_tower"
 	{
@@ -3282,7 +3390,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"vapor_tower"
 			}
@@ -3302,14 +3410,15 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"20 100 500"
+				"damage"				"5 30 180"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"20 100 500"
+				"aftershock_damage"		"20 120 720"
 			}
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_vapor_tower_2"
 	{
@@ -3326,7 +3435,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"vapor_tower_2"
 			}
@@ -3345,14 +3454,15 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"20 100 500"
+				"damage"				"5 30 180"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"20 100 500"
+				"aftershock_damage"		"20 120 720"
 			}
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_vapor_tower_2_disabled"
 	{
@@ -3378,14 +3488,15 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"20 100 500"
+				"damage"				"5 30 180"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"20 100 500"
+				"aftershock_damage"		"20 120 720"
 			}
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_vapor_tower_3"
 	{
@@ -3402,7 +3513,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"vapor_tower_3"
 			}
@@ -3421,14 +3532,15 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"20 100 500"
+				"damage"				"5 30 180"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"20 100 500"
+				"aftershock_damage"		"20 120 720"
 			}
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_vapor_tower_3_disabled"
 	{
@@ -3454,14 +3566,15 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"20 100 500"
+				"damage"				"5 30 180"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"20 100 500"
+				"aftershock_damage"		"20 120 720"
 			}
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_vapor_tower_disabled"
 	{
@@ -3488,14 +3601,15 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"5 30 180"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"15 75 375"
+				"aftershock_damage"		"20 120 720"
 			}
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_well_tower"
 	{
@@ -3512,7 +3626,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"well_tower"
 			}
@@ -3532,9 +3646,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"15 30 90"
+				"attack_speed"			"15 30 100"
 			}
 	    }
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_well_tower_2"
 	{
@@ -3551,7 +3666,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"well_tower_2"
 			}
@@ -3570,9 +3685,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"15 30 90"
+				"attack_speed"			"15 30 100"
 			}
 	    }
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_well_tower_2_disabled"
 	{
@@ -3598,9 +3714,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"15 30 90"
+				"attack_speed"			"15 30 100"
 			}
 	    }
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_well_tower_3"
 	{
@@ -3617,7 +3734,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"well_tower_3"
 			}
@@ -3636,9 +3753,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"15 30 90"
+				"attack_speed"			"15 30 100"
 			}
 	    }
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_well_tower_3_disabled"
 	{
@@ -3664,9 +3782,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"15 30 90"
+				"attack_speed"			"15 30 100"
 			}
 	    }
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_well_tower_disabled"
 	{
@@ -3693,9 +3812,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"15 30 90"
+				"attack_speed"			"15 30 100"
 			}
 	    }
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_enchantment_tower"
 	{
@@ -3712,7 +3832,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"enchantment_tower"
 			}
@@ -3742,6 +3862,7 @@
 				"max_damage_amp"		"15 45"
 			}
 	    }
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_enchantment_tower_2"
 	{
@@ -3758,7 +3879,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"enchantment_tower_2"
 			}
@@ -3787,6 +3908,7 @@
 				"max_damage_amp"		"15 45"
 			}
 	    }
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_enchantment_tower_2_disabled"
 	{
@@ -3822,6 +3944,7 @@
 				"max_damage_amp"		"15 45"
 			}
 	    }
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_enchantment_tower_disabled"
 	{
@@ -3858,6 +3981,7 @@
 				"max_damage_amp"		"15 45"
 			}
 	    }
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ephemeral_tower"
 	{
@@ -3874,7 +3998,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"ephemeral_tower"
 			}
@@ -3891,6 +4015,7 @@
 		}
 		"ItemBaseLevel" "1"
 	    "ItemCost" "1050"
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ephemeral_tower_2"
 	{
@@ -3907,7 +4032,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"ephemeral_tower_2"
 			}
@@ -3923,6 +4048,7 @@
 			"water"		"2"
 		}
 		"ItemBaseLevel" "2"
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ephemeral_tower_2_disabled"
 	{
@@ -3945,6 +4071,7 @@
 			"water"		"2"
 		}
 		"ItemBaseLevel" "2"
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ephemeral_tower_disabled"
 	{
@@ -3968,6 +4095,7 @@
 		}
 		"ItemBaseLevel" "1"
 	    "ItemCost" "1050"
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_erosion_tower"
 	{
@@ -3984,7 +4112,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"erosion_tower"
 			}
@@ -4006,7 +4134,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"10 30"
+				"damage_amp"			"12 36"
 			}
 			"02"
 			{
@@ -4014,6 +4142,7 @@
 				"dot"					"120 600"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_erosion_tower_2"
 	{
@@ -4030,7 +4159,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"erosion_tower_2"
 			}
@@ -4051,7 +4180,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"10 30"
+				"damage_amp"			"12 36"
 			}
 			"02"
 			{
@@ -4059,6 +4188,7 @@
 				"dot"					"120 600"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_erosion_tower_2_disabled"
 	{
@@ -4086,7 +4216,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"10 30"
+				"damage_amp"			"12 36"
 			}
 			"02"
 			{
@@ -4094,6 +4224,7 @@
 				"dot"					"120 600"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_erosion_tower_disabled"
 	{
@@ -4122,7 +4253,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"10 30"
+				"damage_amp"			"12 36"
 			}
 			"02"
 			{
@@ -4130,6 +4261,7 @@
 				"dot"					"120 600"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_flamethrower_tower"
 	{
@@ -4146,7 +4278,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"flamethrower_tower"
 			}
@@ -4171,6 +4303,7 @@
 				"damage"				"100 500"
 			}
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_flamethrower_tower_2"
 	{
@@ -4187,7 +4320,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"flamethrower_tower_2"
 			}
@@ -4211,6 +4344,7 @@
 				"damage"				"100 500"
 			}
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_flamethrower_tower_2_disabled"
 	{
@@ -4241,6 +4375,7 @@
 				"damage"				"100 500"
 			}
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_flamethrower_tower_disabled"
 	{
@@ -4272,6 +4407,7 @@
 				"damage"				"100 500"
 			}
 		}
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_flooding_tower"
 	{
@@ -4288,7 +4424,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"flooding_tower"
 			}
@@ -4313,6 +4449,7 @@
 				"splash_damage"			"150 750"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_flooding_tower_2"
 	{
@@ -4329,7 +4466,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"flooding_tower_2"
 			}
@@ -4353,6 +4490,7 @@
 				"splash_damage"			"150 750"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_flooding_tower_2_disabled"
 	{
@@ -4383,6 +4521,7 @@
 				"splash_damage"			"150 750"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_flooding_tower_disabled"
 	{
@@ -4414,6 +4553,7 @@
 				"splash_damage"			"150 750"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_gold_tower"
 	{
@@ -4430,7 +4570,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"gold_tower"
 			}
@@ -4452,9 +4592,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"25 50"
+				"bonus_gold"			"20 30"
 			}
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_gold_tower_2"
 	{
@@ -4471,7 +4612,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"gold_tower_2"
 			}
@@ -4492,9 +4633,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"25 50"
+				"bonus_gold"			"20 30"
 			}
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_gold_tower_2_disabled"
 	{
@@ -4522,9 +4664,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"25 50"
+				"bonus_gold"			"20 30"
 			}
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_gold_tower_disabled"
 	{
@@ -4553,9 +4696,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"25 50"
+				"bonus_gold"			"20 30"
 			}
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_hail_tower"
 	{
@@ -4572,7 +4716,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"hail_tower"
 			}
@@ -4589,6 +4733,7 @@
 		}
 		"ItemBaseLevel" "1"
 	    "ItemCost" "1050"
+	    "AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_hail_tower_2"
 	{
@@ -4605,7 +4750,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"hail_tower_2"
 			}
@@ -4621,6 +4766,7 @@
 			"water"		"2"
 		}
 		"ItemBaseLevel" "2"
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_hail_tower_2_disabled"
 	{
@@ -4643,6 +4789,7 @@
 			"water"		"2"
 		}
 		"ItemBaseLevel" "2"
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_hail_tower_disabled"
 	{
@@ -4666,6 +4813,7 @@
 		}
 		"ItemBaseLevel" "1"
 	    "ItemCost" "1050"
+	    "AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_haste_tower"
 	{
@@ -4682,7 +4830,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"haste_tower"
 			}
@@ -4699,6 +4847,7 @@
 			"water"		"1"
 			"water"		"1"
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_haste_tower_2"
 	{
@@ -4715,7 +4864,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"haste_tower_2"
 			}
@@ -4731,6 +4880,7 @@
 			"water"		"2"
 			"water"		"2"
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_haste_tower_2_disabled"
 	{
@@ -4752,6 +4902,7 @@
 			"water"		"2"
 			"water"		"2"
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_haste_tower_disabled"
 	{
@@ -4775,6 +4926,7 @@
 		}
 		"ItemBaseLevel" "1"
 	    "ItemCost" "1050"
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_impulse_tower"
 	{
@@ -4791,7 +4943,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"impulse_tower"
 			}
@@ -4816,6 +4968,7 @@
 				"multiplier"			"2250 11250"
 			}
 		}
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_impulse_tower_2"
 	{
@@ -4832,7 +4985,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"impulse_tower_2"
 			}
@@ -4856,6 +5009,7 @@
 				"multiplier"			"2250 11250"
 			}
 		}
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_impulse_tower_2_disabled"
 	{
@@ -4886,6 +5040,7 @@
 				"multiplier"			"2250 11250"
 			}
 		}
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_impulse_tower_disabled"
 	{
@@ -4917,6 +5072,7 @@
 				"multiplier"			"2250 11250"
 			}
 		}
+		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_jinx_tower"
 	{
@@ -4933,7 +5089,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"jinx_tower"
 			}
@@ -4958,6 +5114,7 @@
 				"damage_taken"			"10 30"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_jinx_tower_2"
 	{
@@ -4974,7 +5131,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"jinx_tower_2"
 			}
@@ -4998,6 +5155,7 @@
 				"damage_taken"			"10 30"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_jinx_tower_2_disabled"
 	{
@@ -5028,6 +5186,7 @@
 				"damage_taken"			"10 30"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_jinx_tower_disabled"
 	{
@@ -5059,6 +5218,7 @@
 				"damage_taken"			"10 30"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_laser_tower"
 	{
@@ -5075,7 +5235,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"laser_tower"
 			}
@@ -5092,6 +5252,7 @@
 		}
 		"ItemBaseLevel" "1"
 	    "ItemCost" "1050"
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_laser_tower_2"
 	{
@@ -5108,7 +5269,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"laser_tower_2"
 			}
@@ -5123,6 +5284,7 @@
 			"light"		"2"
 			"light"		"2"
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_laser_tower_2_disabled"
 	{
@@ -5144,6 +5306,7 @@
 			"light"		"2"
 			"light"		"2"
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_laser_tower_disabled"
 	{
@@ -5167,6 +5330,7 @@
 		}
 		"ItemBaseLevel" "1"
 	    "ItemCost" "1050"
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_muck_tower"
 	{
@@ -5183,7 +5347,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"muck_tower"
 			}
@@ -5208,6 +5372,7 @@
 				"slow"					"-10 -30"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_muck_tower_2"
 	{
@@ -5224,7 +5389,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"muck_tower_2"
 			}
@@ -5248,6 +5413,7 @@
 				"slow"					"-10 -30"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_muck_tower_2_disabled"
 	{
@@ -5278,6 +5444,7 @@
 				"slow"					"-10 -30"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_muck_tower_disabled"
 	{
@@ -5309,6 +5476,7 @@
 				"slow"					"-10 -30"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_nova_tower"
 	{
@@ -5325,7 +5493,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"nova_tower"
 			}
@@ -5355,6 +5523,7 @@
 				"slow"					"-10 -30"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_nova_tower_2"
 	{
@@ -5371,7 +5540,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"nova_tower_2"
 			}
@@ -5400,6 +5569,7 @@
 				"slow"					"-10 -30"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_nova_tower_2_disabled"
 	{
@@ -5435,6 +5605,7 @@
 				"slow"					"-10 -30"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_nova_tower_disabled"
 	{
@@ -5471,6 +5642,7 @@
 				"slow"					"-10 -30"
 			}
 	    }
+	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_obliteration_tower"
 	{
@@ -5487,7 +5659,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"obliteration_tower"
 			}
@@ -5504,6 +5676,7 @@
 		}
 		"ItemBaseLevel" "1"
 	    "ItemCost" "1050"
+	    "AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_obliteration_tower_2"
 	{
@@ -5520,7 +5693,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"obliteration_tower_2"
 			}
@@ -5535,6 +5708,7 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_obliteration_tower_2_disabled"
 	{
@@ -5556,6 +5730,7 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_obliteration_tower_disabled"
 	{
@@ -5579,6 +5754,7 @@
 		}
 		"ItemBaseLevel" "1"
 	    "ItemCost" "1050"
+	    "AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_polar_tower"
 	{
@@ -5595,7 +5771,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"polar_tower"
 			}
@@ -5625,6 +5801,7 @@
 				"damage_taken_pcnt"		"5 15"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_polar_tower_2"
 	{
@@ -5641,7 +5818,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"polar_tower_2"
 			}
@@ -5670,6 +5847,7 @@
 				"damage_taken_pcnt"		"5 15"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_polar_tower_2_disabled"
 	{
@@ -5705,6 +5883,7 @@
 				"damage_taken_pcnt"		"5 15"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_polar_tower_disabled"
 	{
@@ -5741,6 +5920,7 @@
 				"damage_taken_pcnt"		"5 15"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_quake_tower"
 	{
@@ -5757,7 +5937,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"quake_tower"
 			}
@@ -5782,6 +5962,7 @@
 				"damage"				"600 3000"
 			}
 		}
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_quake_tower_2"
 	{
@@ -5798,7 +5979,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"quake_tower_2"
 			}
@@ -5822,6 +6003,7 @@
 				"damage"				"600 3000"
 			}
 		}
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_quake_tower_2_disabled"
 	{
@@ -5852,6 +6034,7 @@
 				"damage"				"600 3000"
 			}
 		}
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_quake_tower_disabled"
 	{
@@ -5883,6 +6066,7 @@
 				"damage"				"600 3000"
 			}
 		}
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_roots_tower"
 	{
@@ -5899,7 +6083,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"roots_tower"
 			}
@@ -5929,6 +6113,7 @@
 				"dps"					"100 500"
 			}
 	    }
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_roots_tower_2"
 	{
@@ -5945,7 +6130,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"roots_tower_2"
 			}
@@ -5974,6 +6159,7 @@
 				"dps"					"100 500"
 			}
 	    }
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_roots_tower_2_disabled"
 	{
@@ -6009,6 +6195,7 @@
 				"dps"					"100 500"
 			}
 	    }
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_roots_tower_disabled"
 	{
@@ -6045,6 +6232,7 @@
 				"dps"					"100 500"
 			}
 	    }
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_runic_tower"
 	{
@@ -6061,7 +6249,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"runic_tower"
 			}
@@ -6078,6 +6266,7 @@
 		}
 		"ItemBaseLevel" "1"
 	    "ItemCost" "1050"
+	    "AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_runic_tower_2"
 	{
@@ -6094,7 +6283,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"runic_tower_2"
 			}
@@ -6109,6 +6298,7 @@
 			"light"		"2"
 			"light"		"2"
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_runic_tower_2_disabled"
 	{
@@ -6130,6 +6320,7 @@
 			"light"		"2"
 			"light"		"2"
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_runic_tower_disabled"
 	{
@@ -6153,6 +6344,7 @@
 		}
 		"ItemBaseLevel" "1"
 	    "ItemCost" "1050"
+	    "AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_tidal_tower"
 	{
@@ -6169,7 +6361,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"tidal_tower"
 			}
@@ -6194,6 +6386,7 @@
 				"damage"			"50 250"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_tidal_tower_2"
 	{
@@ -6210,7 +6403,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"tidal_tower_2"
 			}
@@ -6234,6 +6427,7 @@
 				"damage"			"50 250"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_tidal_tower_2_disabled"
 	{
@@ -6264,6 +6458,7 @@
 				"damage"			"50 250"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_tidal_tower_disabled"
 	{
@@ -6295,6 +6490,7 @@
 				"damage"			"50 250"
 			}
 		}
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_windstorm_tower"
 	{
@@ -6311,7 +6507,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"windstorm_tower"
 			}
@@ -6338,9 +6534,10 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"300 1500"
+				"damage"				"350 1750"
 			}
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_windstorm_tower_2"
 	{
@@ -6357,7 +6554,7 @@
 			"RunScript"
 			{
 				"TARGET"		"CASTER"
-				"ScriptFile"		"scripts/vscripts/spells.lua"
+				"ScriptFile"		"mechanics/upgrades.lua"
 				"Function"		"UpgradeTower"
 				"tower"		"windstorm_tower_2"
 			}
@@ -6384,9 +6581,10 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"300 1500"
+				"damage"				"350 1750"
 			}
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_windstorm_tower_2_disabled"
 	{
@@ -6420,9 +6618,10 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"300 1500"
+				"damage"				"350 1750"
 			}
 		}
+		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_windstorm_tower_disabled"
 	{
@@ -6457,8 +6656,9 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"300 1500"
+				"damage"				"350 1750"
 			}
 		}
+		"AbilityCastRange"              "1150"
 	}
 }

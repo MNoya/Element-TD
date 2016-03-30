@@ -1,0 +1,34 @@
+//=================================================================================================================
+// Dark Tower: Overkill
+// When it kills a target, any overkill damage on that target transfers to a target within 300 AoE of the target.
+//=================================================================================================================
+"dark_tower_overkill"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"											
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"towers/dark"
+	"MaxLevel"						"1"
+	
+	"OnProjectileHitUnit"
+ 	{
+ 		"DeleteOnHit"	"1"
+ 		"RunScript"
+ 		{
+ 			"ScriptFile"		"towers/towerevents.lua"
+ 			"Function"			"TriggerEvent"
+ 			"Event"				"OnProjectileHit"
+ 		}
+  	}
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aoe"					"300"
+		}
+	}
+}

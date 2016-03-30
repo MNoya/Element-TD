@@ -1,8 +1,39 @@
 "use strict";
 
 var Credits = $("#Supporters")
+var Verify = $("#Verify")
 
-var devs = [76561198046984233,76561197968301566,76561198027264543,76561197995227322,76561198045264681,76561198008120955]
+function VerifyGame() {
+    var game_recorded_info = CustomNetTables.GetTableValue("gameinfo", "game_recorded")
+    if (game_recorded_info)
+    {
+        var recorded_state = game_recorded_info.value
+        Verify.state = recorded_state
+        if (recorded_state == "recorded")
+        {
+            Verify.style['background-color'] = "lime;"
+            $("#stem").RemoveClass("fade");
+            $("#kick").RemoveClass("fade");
+            return
+        }
+
+        else if (recorded_state == "failed")
+        {
+            Verify.style['background-color'] = "red;"
+            $("#cross").RemoveClass("hide")
+            return
+        }
+    }
+
+    $.Schedule(0.1, VerifyGame)
+}
+
+function ShowRecordedTooltip () {
+    if (Verify.state == "recorded")
+        $.DispatchEvent("DOTAShowTitleTextTooltip", Verify, "#recorded_title", "#recorded_tooltip");
+    else if (Verify.state == "failed")
+        $.DispatchEvent("DOTAShowTitleTextTooltip", Verify, "#recorded_fail_title", "#recorded_fail_tooltip");
+}
 
 function ShowEndCredits() {
     var delay = 0.2;
@@ -11,20 +42,17 @@ function ShowEndCredits() {
     
     for (var i in ids)
     {
-        if (devs.indexOf(Number(ids[i].key)) == -1)
+        var panel = CreateEndCredit(ids[i].key)
+        panel.SetHasClass( "team_endgame", false );
+        
+        GameUI.ApplyPanelBorder(panel, ids[i].key)
+        
+        var callback = function( panel )
         {
-            var panel = CreateEndCredit(ids[i].key)
-            panel.SetHasClass( "team_endgame", false );
-            
-            ApplyPanelBorder(panel, ids[i].key)
-            
-            var callback = function( panel )
-            {
-                return function(){ panel.SetHasClass( "team_endgame", 1 ); }
-            }( panel );
-            $.Schedule( delay, callback )
-            delay += delay_per_panel;
-        }
+            return function(){ panel.SetHasClass( "team_endgame", 1 ); }
+        }( panel );
+        $.Schedule( delay, callback )
+        delay += delay_per_panel;
     }
 }
 
@@ -37,6 +65,7 @@ function CreateEndCredit(steamid) {
 
 (function()
 {
+    GameEvents.Subscribe( "etd_game_recorded", VerifyGame );
     ShowEndCredits()
     if ( ScoreboardUpdater_InitializeScoreboard === null ) { $.Msg( "WARNING: This file requires shared_scoreboard_updater.js to be included." ); }
 
@@ -61,7 +90,7 @@ function CreateEndCredit(steamid) {
 
         lastPanel = teamPanel;
 
-        ApplyPanelBorder(teamPanel, Game.GetPlayerInfo(0).steamid )
+        GameUI.ApplyPanelBorder(teamPanel, Game.GetPlayerInfo(0).steamid )
 
         teamPanel.SetHasClass( "team_endgame", false );
         var callback = function( panel )
@@ -114,4 +143,6 @@ function CreateEndCredit(steamid) {
           winningTeamLogo.BLoadLayout( logo_xml, false, false );
         }
     }
+
+    $.Schedule(0.1, VerifyGame)
 })();

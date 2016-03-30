@@ -32,4 +32,5 @@
 			"damage_taken_pcnt"		"5 15"
 		}
 	}
+	"AbilityCastRange"              "900"
 }

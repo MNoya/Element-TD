@@ -13,11 +13,11 @@ if not players then
     TEAM_TO_SECTOR[11] = 7
      
     GAME_IS_PAUSED = false
-    SKIP_VOTING = false -- assigns default game settings if true
     DEV_MODE = false
     EXPRESS_MODE = false
 
-    VERSION = "1.0"
+    VERSION = "1.3"
+    COOP_MAP = GetMapName() == "element_td_coop"
 
     START_TIME = GetSystemDate() .. " " .. GetSystemTime()
     END_TIME = nil
@@ -53,14 +53,19 @@ function ElementTD:InitGameMode()
     GameRules:GetGameModeEntity():SetHUDVisible(DOTA_HUD_VISIBILITY_TOP_SCOREBOARD, false)
 
     -- Setup Teams
-    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 1 )
-    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 1 )
-    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_1, 1 )
-    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_2, 1 )
-    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_3, 1 )
-    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_4, 1 )
-    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_5, 1 )
-    GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_6, 1 )
+    if COOP_MAP then
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 4 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 0 )
+    else
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 1 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 1 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_1, 1 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_2, 1 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_3, 1 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_4, 1 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_5, 1 )
+        GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_CUSTOM_6, 1 )
+    end
 
     -- Event Hooks
     ListenToGameEvent('player_connect_full', Dynamic_Wrap(ElementTD, 'OnConnectFull'), self)
@@ -101,6 +106,7 @@ function ElementTD:InitGameMode()
     
     -- Register UI Listener   
     CustomGameEventManager:RegisterListener( "next_wave", Dynamic_Wrap(ElementTD, "OnNextWave")) -- wave info
+    CustomGameEventManager:RegisterListener( "request_wave_info", Dynamic_Wrap(ElementTD, "WaveInfoReconnect")) --on reconnection
     CustomGameEventManager:RegisterListener( "etd_player_voted", Dynamic_Wrap(ElementTD, "OnPlayerVoted")) -- voting ui
 
     ------------------------------------------------------
@@ -119,6 +125,9 @@ function ElementTD:InitGameMode()
 
     -- Increase time to load and start even if not all players loaded
     SendToServerConsole("dota_wait_for_players_to_load_timeout 240")
+
+    -- Far Height
+    SendToServerConsole("r_farz 10000")
 
     -- Less expensive pathing?
     LimitPathingSearchDepth(0.5)
@@ -154,7 +163,6 @@ function ElementTD:OnScriptReload()
                 end
             end
         end
-
     end
 end
 
@@ -171,6 +179,12 @@ function ElementTD:OnGameStateChange(keys)
         self:StartGame()
     elseif state == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
 
+
+        if COOP_MAP then
+            SendToServerConsole("customgamesetup_auto_assign_players")
+            SendToServerConsole("customgamesetup_set_remaining_time 5")
+        end
+
         -- Load donation rewards
         Rewards:Load()
     end
@@ -184,28 +198,16 @@ function ElementTD:StartGame()
     Timers:CreateTimer(1, function()
         Log:info("The game has started!")
 
-        if not SKIP_VOTING then
-            CustomGameEventManager:Send_ServerToAllClients( "etd_toggle_vote_dialog", {visible = true} )
-            StartVoteTimer()
-            EmitAnnouncerSound("announcer_announcer_battle_prepare_01")
+        -- Start voting
+        CustomGameEventManager:Send_ServerToAllClients( "etd_toggle_vote_dialog", {visible = true} )
+        StartVoteTimer()
+        EmitAnnouncerSound("announcer_announcer_battle_prepare_01")
 
-            if GameRules:IsCheatMode() then
-                ElementTD:CheatsEnabled()
-            end
-        else
-            -- voting should never be skipped in real games
-            START_GAME_TIME = GameRules:GetGameTime()
-            if DEV_MODE then
-                GameSettings:SetGameLength("Developer")
-            else
-                GameSettings:SetGameLength("Normal")
-            end
-            Log:info("Skipping voting")
-            GameSettings:SetDifficulty("Normal")
-            GameSettings:SetCreepOrder("Normal")
-            for _, ply in pairs(playerIDs) do
-                StartBreakTime(ply) -- begin the break time for wave 1 :D
-            end
+        -- Load rankings for all players in game
+        Ranking:RequestInGamePlayerRanks()
+
+        if GameRules:IsCheatMode() then
+            ElementTD:CheatsEnabled()
         end
     end)
 end
@@ -224,6 +226,18 @@ function ElementTD:OnNextWave( keys )
 
         UpdateWaveInfo(playerID, data.nextWave) -- update wave info
         SpawnWaveForPlayer(playerID, data.nextWave) -- spawn dat wave
+    end
+end
+
+function ElementTD:WaveInfoReconnect(event)
+    local playerID = event.PlayerID
+    local playerData = GetPlayerData(playerID)
+    
+    if START_GAME_TIME == 0 then
+        UpdateWaveInfo(playerID, CURRENT_WAVE-1)
+    else
+        UpdateWaveInfo(playerID, CURRENT_WAVE-1)
+        UpdateWaveInfo(playerID, CURRENT_WAVE)
     end
 end
 
@@ -267,7 +281,7 @@ function ElementTD:EndGameForPlayer( playerID )
     for _,object in pairs(playerData.waveObjects) do
         for index,_ in pairs(object.creeps) do
             local creep = EntIndexToHScript(index)
-            if IsValidEntity(creep) then
+            if IsValidEntity(creep) and creep.ForceKill then
                 creep:ForceKill(false)
             end
         end
@@ -392,17 +406,16 @@ function ElementTD:CheckGameEnd()
     Timers:CreateTimer(5, function()
 
         -- Try to revert client convars
-        for _, playerID in pairs(playerIDs) do
+        --[[for _, playerID in pairs(playerIDs) do
             local hero = PlayerResource:GetSelectedHeroEntity(playerID)
             if hero then
                 hero:RemoveModifierByName("modifier_client_convars")
             end
-        end
+        end]]
 
         GameRules:SetGameWinner( teamWinner )
         GameRules:SetSafeToLeave( true )
     end)
-
 end
 
 function ElementTD:OnUnitSpawned(keys)
@@ -410,41 +423,15 @@ function ElementTD:OnUnitSpawned(keys)
 
     if unit:IsRealHero() then
         local hero = unit
-        local playerID = hero:GetPlayerOwnerID()
-        local player = PlayerResource:GetPlayer(playerID)
-        CreateDataForPlayer(playerID)
+        local playerID = hero:GetPlayerID()
 
-        if playerID >= 0 then
-            local playerData = GetPlayerData(playerID)
-            playerData.name = PlayerResource:GetPlayerName(playerID)
-            if playerData.name == "" then -- This normally happens in dev tools
-                playerData.name = 'Developer'
-            end
-            self:InitializeHero(player:GetPlayerID(), unit)
-            self.playerSpawnIndexes[player:GetPlayerID()] = playerData.sector + 1
-            self.availableSpawnIndex = self.availableSpawnIndex + 1
-
-            -- reposition the camera
-            --PlayerResource:SetCameraTarget(playerID, hero)
-            --Timers:CreateTimer(1, function() PlayerResource:SetCameraTarget(playerID, nil) end)
-
-            -- we must create the Elemental Summoner for this player
-            local sector = playerData.sector + 1
-            local summoner = CreateUnitByName("elemental_summoner", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber()) 
-            summoner:SetOwner(hero)
-            summoner:SetControllableByPlayer(playerID, true)
-            summoner:SetAngles(0, 270, 0)
-            summoner:AddItem(CreateItem("item_buy_pure_essence_disabled", nil, nil))
-            summoner.icon = CreateUnitByName("elemental_summoner_icon", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber())
-            playerData.summoner = summoner
-
-            hero:ModifyGold(0)
-            ModifyLumber(playerID, 0)  -- updates summoner spells
-            ModifyPureEssence(playerID, 0, true)
-            UpdateElementsHUD(playerID)
-            UpdatePlayerSpells(playerID)
-
-            Sandbox:CheckPlayer(playerID)
+        -- Should we change to an alternate builder?
+        if Rewards:PlayerHasCosmeticModel(playerID) and hero:GetUnitName() == "npc_dota_hero_wisp" then
+            Timers:CreateTimer(0.03, function()
+                Rewards:HandleHeroReplacement(hero)
+            end)
+        else 
+            ElementTD:OnHeroInGame(hero)
         end
     else
         local unitName = unit:GetUnitName()
@@ -455,12 +442,45 @@ function ElementTD:OnUnitSpawned(keys)
     end
 end
 
+function ElementTD:OnHeroInGame(hero)
+    local playerID = hero:GetPlayerID()
+    if playerID == -1 then return end
+    if GetPlayerData(playerID) then return end --Don't create playerdata twice
+
+    CreateDataForPlayer(playerID)
+
+    local playerData = GetPlayerData(playerID)
+    playerData.name = PlayerResource:GetPlayerName(playerID)
+    if playerData.name == "" then -- This normally happens in dev tools
+        playerData.name = 'Developer'
+    end
+    self:InitializeHero(playerID, hero)
+    self.playerSpawnIndexes[playerID] = playerData.sector + 1
+    self.availableSpawnIndex = self.availableSpawnIndex + 1
+
+    -- we must create the Elemental Summoner for this player
+    local sector = playerData.sector + 1
+    local summoner = CreateUnitByName("elemental_summoner", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber()) 
+    summoner:SetOwner(hero)
+    summoner:SetControllableByPlayer(playerID, true)
+    summoner:SetAngles(0, 270, 0)
+    summoner:AddItem(CreateItem("item_buy_pure_essence_disabled", nil, nil))
+    summoner.icon = CreateUnitByName("elemental_summoner_icon", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber())
+    playerData.summoner = summoner
+
+    hero:ModifyGold(0)
+    ModifyLumber(playerID, 0)  -- updates summoner spells
+    ModifyPureEssence(playerID, 0, true)
+    UpdateElementsHUD(playerID)
+    UpdatePlayerSpells(playerID) 
+end
+
 -- initializes a player's hero
 function ElementTD:InitializeHero(playerID, hero)
-    print("OnInitHero PID:"..playerID)
+    print("OnInitHero PID: "..playerID)
     hero:AddNewModifier(nil, nil, "modifier_disarmed", {})
     hero:AddNewModifier(nil, nil, "modifier_attack_immune", {})
-    hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
+    --hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
     hero:AddNewModifier(hero, nil, "modifier_max_ms", {})
 
     hero:SetAbilityPoints(0)
@@ -490,7 +510,15 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:AddItem(CreateItem("item_build_arrow_tower", hero, hero))
     hero:AddItem(CreateItem("item_build_cannon_tower", hero, hero))
     hero:AddItem(CreateItem("item_build_periodic_tower_disabled", hero, hero))
+   
     playerData.toggle_grid_item = hero:AddItem(CreateItem("item_toggle_grid", hero, hero))
+    playerData.toggle_grid_item.particles = setmetatable({}, {
+        __index = (function(tab, index)
+            tab[index] = {}
+            return tab[index]
+        end)
+    })
+    
     Timers:CreateTimer(0.1, function() hero:SwapItems(3, 5) end)
 
     -- Additional Heroes UI
@@ -507,6 +535,7 @@ function ElementTD:OnEntityKilled(keys)
     local index = keys.entindex_killed
     local entity = EntIndexToHScript(index)
     local killer = EntIndexToHScript(keys.entindex_attacker)
+    local playerID = killer:GetPlayerOwnerID()
     local playerData = GetPlayerData(entity.playerID)
 
     if playerData and playerData.health == 0 then
@@ -515,7 +544,7 @@ function ElementTD:OnEntityKilled(keys)
 
     if IsCustomBuilding(entity) then
         -- Remove dead units from selection group
-        RemoveUnitFromSelection(entity)
+        PlayerResource:RemoveFromSelection(playerID, entity)
     end
 
     if entity.scriptObject and entity.scriptObject.OnDeath then
@@ -567,6 +596,8 @@ function ElementTD:OnConnectFull(keys)
     
     table.insert(players, ply)
     Timers:CreateTimer(0.03, function() -- To prevent it from being -1 when the player is created
+        if not ply then return end -- Something went wrong
+        
         local playerID = ply:GetPlayerID()
         if playerID and playerID ~= -1 then
             if not tableContains(playerIDs, playerID) then
@@ -586,24 +617,37 @@ end
 
 -- Called every time the player connects after being added to the valid playerIDs
 function ElementTD:OnReconnect(playerID)
+    print("Player "..playerID.." reconnected")
     local player = PlayerResource:GetPlayer(playerID)
-
-    Sandbox:CheckPlayer(playerID)
 
     if PlayerData[playerID] and PlayerData[playerID].elements then
         ModifyLumber(playerID, 0) -- updates summoner spells
         ModifyPureEssence(playerID, 0, true)
         UpdateElementsHUD(playerID)
         UpdateRandom(playerID)
+        InterestManager:HandlePlayerReconnect(playerID)
     end
+
+    CustomGameEventManager:Send_ServerToPlayer(player, "etd_create_ranks", {} )
 
     if GameRules:State_Get() >= DOTA_GAMERULES_STATE_HERO_SELECTION then
         local hero = PlayerResource:GetSelectedHeroEntity(playerID)
         if not hero then
             local hero = CreateHeroForPlayer("npc_dota_hero_wisp", player)
 
-            if PLAYERS_NOT_VOTED[playerID] and START_GAME_TIME == 0 then
+            -- update +Elements UI on the hero
+            Timers:CreateTimer(0.03, function()
+                local playerData = GetPlayerData(playerID)
+                if hero and playerData and playerData.lumber then
+                    hero:SetAbilityPoints(playerData.lumber)
+                end
+            end)
+
+            if PLAYERS_NOT_VOTED[playerID] and not VOTING_FINISHED then
                 CustomGameEventManager:Send_ServerToPlayer( player, "etd_toggle_vote_dialog", {visible = true} )
+            elseif not hero.vote_results then
+                hero.vote_results = true
+                CustomGameEventManager:Send_ServerToPlayer( player, "etd_vote_results", {} )
             end
         end
     end
@@ -657,7 +701,7 @@ function ElementTD:FilterExecuteOrder( filterTable )
         if not ability then return end
         local abilityName = ability:GetAbilityName()
 
-        local entityList = GetSelectedEntities(unit:GetPlayerOwnerID())
+        local entityList = PlayerResource:GetSelectedEntities(unit:GetPlayerOwnerID())
         if not entityList then return true end
 
         if string.match(abilityName, "sell_tower_") then
@@ -785,6 +829,7 @@ end
 
 PLAYER_CODES = {
     ["random"] = function(...) GameSettings:EnableRandomForPlayer(...) end,  -- Enable random for player
+    ["debug_abilities"] = function(playerID) DebugMainSelectedAbilities(playerID) end,
 }
 
 DEV_CODES = {
@@ -796,9 +841,22 @@ DEV_CODES = {
 -- A player has typed something into the chat
 function ElementTD:OnPlayerChat(keys)
     local text = keys.text
+    local teamonly = keys.teamonly
     local userID = keys.userid
     local playerID = self.vUserIds[userID] and self.vUserIds[userID]:GetPlayerID()
     if not playerID then return end
+
+    -- Send to all chat
+    local player = PlayerResource:GetPlayer(playerID)
+    if player.skip_chat then
+        player.skip_chat = false
+        return
+    end
+
+    if teamonly == 1 then
+        player.skip_chat = true
+        Say(player, text, false)
+    end
 
     if StringStartsWith(text, "-") then
         local input = split(string.sub(text, 2, string.len(text)))
@@ -819,5 +877,8 @@ function ElementTD:CheatsEnabled()
         end
     end
     
-    GameRules:SendCustomMessage("#etd_cheats_enabled", 0, 0)
+    -- Don't show message on tools, we don't care
+    if not Convars:GetBool("developer") then
+        GameRules:SendCustomMessage("#etd_cheats_enabled", 0, 0)
+    end
 end

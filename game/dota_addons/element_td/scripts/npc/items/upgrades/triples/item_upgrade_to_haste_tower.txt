@@ -13,7 +13,7 @@
 		"RunScript"
 		{
 			"TARGET"		"CASTER"
-			"ScriptFile"		"scripts/vscripts/spells.lua"
+			"ScriptFile"		"mechanics/upgrades.lua"
 			"Function"		"UpgradeTower"
 			"tower"		"haste_tower"
 		}
@@ -30,4 +30,5 @@
 		"water"		"1"
 		"water"		"1"
 	}
+	"AbilityCastRange"              "900"
 }

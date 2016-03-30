@@ -30,7 +30,7 @@
 		"RunScript"
 		{
 			"Target"			"CASTER"
-			"ScriptFile"		"scripts/vscripts/summoner.lua"
+			"ScriptFile"		"mechanics/summoner.lua"
 			"Function"			"SummonElemental"
 			"Elemental"			"light_elemental"
 		}

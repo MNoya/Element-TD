@@ -27,9 +27,9 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "110"
-    "AttackDamageMax"           "110"
-    "Damage"                    "110"  
+    "AttackDamageMin"           "52"
+    "AttackDamageMax"           "52"
+    "Damage"                    "52"  
     "AOE_Full"                  "150"
     "AOE_Half"                  "300" 
     "AttackRange"               "550"
@@ -44,7 +44,7 @@
     "BuildTime"                 "1"
     "Element"                   "fire"
     "DamageType"                "fire"
-    "ScriptClass"               "BasicTowerAOE"
+    "ScriptClass"               "FireTower"
     "TowerType"                 "Normal"
     "BuffPriority"              "9"
     

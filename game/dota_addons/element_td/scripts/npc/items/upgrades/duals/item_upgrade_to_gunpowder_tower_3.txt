@@ -13,7 +13,7 @@
 		"RunScript"
 		{
 			"TARGET"		"CASTER"
-			"ScriptFile"		"scripts/vscripts/spells.lua"
+			"ScriptFile"		"mechanics/upgrades.lua"
 			"Function"		"UpgradeTower"
 			"tower"		"gunpowder_tower_3"
 		}
@@ -32,7 +32,8 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"30 150 750"
+			"damage"				"30 180 1080"
 		}
 	}
+	"AbilityCastRange"              "1500"
 }

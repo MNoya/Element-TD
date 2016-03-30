@@ -21,7 +21,7 @@
 {
     transform: translateX( 0% ) translateY( -100px );
     vertical-align: top;
-    margin-top: 320px;
+    margin-top: 240px;
     horizontal-align: left;
     padding: 4px;
     padding-left: 0px;
@@ -35,7 +35,7 @@
 {
     flow-children: right;
     horizontal-align: left;
-    height: 520px;
+    height: 570px;
     width: 350px;
     font-size: 16;
     background-color: #181818dd;
@@ -178,6 +178,55 @@
 }
 
 .QuitPausePanel .QuitButton:selected
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #777777 ), to( #999999 ) );
+}
+
+.QuitPausePanel .RestartButton
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #114411), to( #226622 ) );
+    height: 100%;
+    width: 48%;
+
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 3px;
+    margin-right: 3px;
+
+    border-style: solid;
+    border-width: 2px;  
+
+    border-top-color: #116611;
+    border-left-color: #115911;
+    border-bottom-color: #114411;
+    border-right-color: #225022;
+
+    transition-property: background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+}
+
+.Category .QuitPausePanel .RestartButton Label
+{
+    margin-top: 5px;
+    margin-left: 5px;
+    color: #000000;
+    font-size: 16;
+    vertical-align: middle;
+}
+
+.QuitPausePanel .RestartButton:hover
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #114411), to( #22aa22 ) );
+}
+
+.QuitPausePanel.RestartButton:active
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #88aa88 ), to( #aaffaa ) );
+    pre-transform-scale2d: 1.02;
+}
+
+.QuitPausePanel .RestartButton:selected
 {
     background-color: gradient( linear, 0% 0%, 0% 100%, from( #777777 ), to( #999999 ) );
 }
@@ -791,15 +840,22 @@
 
 .SandboxTopbar
 {
-    margin-left: 280px;
+    horizontal-align: right;
+    margin-right: 450px;
+    width: 180px;
     margin-top: 5px;
+}
+
+.AspectRatio16x10 .SandboxTopbar
+{
+    margin-right: 350px;
 }
 
 #SandboxEnableButton
 {
     background-color: black;
     height: 30px;
-    width: 200px;
+    width: 150px;
 
     tooltip-position: bottom;
 }
@@ -811,7 +867,7 @@
 
 #EnableSandboxText
 {
-  color: #CCCCCC;
+    color: #CCCCCC;
 }
 
 #SandboxTitle
@@ -830,7 +886,7 @@
 
 #SandboxEnableButton
 {
-    margin-left: 50px;
+    //margin-left: 50px;
 }
 
 .SandboxButton
@@ -861,7 +917,7 @@
     background-repeat: no-repeat;
     background-position: 50% 50%;
     margin-top: 4px;
-    margin-left: 255px;
+    horizontal-align: right;
     
     transition-property: wash-color, pre-transform-scale2d, background-color;
     transition-duration: 0.1s;
@@ -954,4 +1010,20 @@
     vertical-align: center;
     margin: 0 0 0 0;
     width: 18px;
+}
+
+#SetLife
+{
+    width: 100px;
+}
+
+#Life
+{
+    width: 54px;
+    height: 34px;
+    padding-right: 0px;
+    padding-top: 5px;
+    padding-left: 6px;
+    margin-top: 4px;
+    font-size: 20px;
 }

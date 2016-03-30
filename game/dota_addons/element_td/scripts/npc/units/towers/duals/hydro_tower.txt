@@ -28,9 +28,9 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "270"
-    "AttackDamageMax"           "270"
-    "Damage"                    "270"
+    "AttackDamageMin"           "300"
+    "AttackDamageMax"           "300"
+    "Damage"                    "300"
     "AttackRange"               "900"
     "AttackAcquisitionRange"    "900"
     "AttackRate"                "1"

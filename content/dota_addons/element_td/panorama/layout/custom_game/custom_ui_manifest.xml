@@ -38,11 +38,12 @@
 	</script>
 	<Panel>
 		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/statcollection.xml" />
+		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/scripts.xml" />
 		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/wave_info.xml" />
 		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/interest.xml" />
 		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/images.xml" />
 		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/resources.xml" />
-		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/scripts.xml" />
+		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/selection.xml" />
 		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/notifications.xml" />
 		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/scoring.xml" />
 		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/voting.xml" />
@@ -50,6 +51,8 @@
 		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/tower_table.xml" />
 		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/tower_tooltip.xml" />
 		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/sandbox.xml" />
+		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/profile.xml" />
+		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/leaderboard.xml" />
 		<CustomUIElement type="Hud"		layoutfile="file://{resources}/layout/custom_game/barebones_attachments.xml" />
 		<CustomUIElement type="HudTopBar"	layoutfile="file://{resources}/layout/custom_game/multiteam_top_scoreboard.xml" />
 		<CustomUIElement type="EndScreen"	layoutfile="file://{resources}/layout/custom_game/multiteam_end_screen.xml" />

@@ -28,6 +28,8 @@ end
 function Sounds:PlayElementalDeathSound(playerID, unit)
     local deathSound
     local emitUnit = unit
+    if not emitUnit then return end
+
     if type(unit)=="string" then
         emitUnit = GetPlayerData(playerID).summoner
         deathSound = ElementalSounds[unit.."_death"]      
@@ -35,7 +37,7 @@ function Sounds:PlayElementalDeathSound(playerID, unit)
         deathSound = ElementalSounds[unit.element.."_death"]
     end
 
-    if deathSound then
+    if emitUnit and deathSound then
         emitUnit:EmitSound(deathSound)
     end
 end

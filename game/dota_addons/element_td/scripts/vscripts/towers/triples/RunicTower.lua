@@ -40,7 +40,7 @@ function RunicTower:OnAttack(keys)
     local target = keys.target
     local caster = keys.caster
     if self.tower:HasModifier("modifier_magic_attack") then
-        local creeps = GetCreepsInArea(target:GetAbsOrigin(), self.halfAOE)
+        local creeps = GetCreepsInArea(target:GetAbsOrigin(), 150)
         for _, creep in pairs(creeps) do
             if creep:IsAlive() and creep:entindex() ~= target:entindex() then
                 local info = 

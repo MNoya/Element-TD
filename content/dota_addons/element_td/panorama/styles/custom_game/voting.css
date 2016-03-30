@@ -450,6 +450,13 @@ ToggleButton .TickBox, DOTASettingsCheckbox .TickBox
 .Hover
 {
     brightness: 1.5;
+    opacity: 1.5;
+}
+
+ToggleButton:enabled:hover Label, DOTASettingsCheckbox:enabled:hover Label
+{
+    color: #FFF;
+    opacity: 1.5;
 }
 
 

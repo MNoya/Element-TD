@@ -13,7 +13,7 @@
 		"RunScript"
 		{
 			"TARGET"		"CASTER"
-			"ScriptFile"		"scripts/vscripts/spells.lua"
+			"ScriptFile"		"mechanics/upgrades.lua"
 			"Function"		"UpgradeTower"
 			"tower"		"flooding_tower"
 		}
@@ -38,4 +38,5 @@
 			"splash_damage"			"150 750"
 		}
 	}
+	"AbilityCastRange"              "900"
 }

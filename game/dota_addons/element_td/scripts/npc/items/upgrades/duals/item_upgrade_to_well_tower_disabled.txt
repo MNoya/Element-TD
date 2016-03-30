@@ -23,7 +23,8 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"attack_speed"			"15 30 90"
+			"attack_speed"			"15 30 100"
 		}
     }
+    "AbilityCastRange"              "900"
 }

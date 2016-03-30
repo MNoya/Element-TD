@@ -30,12 +30,12 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "3050"
-    "AttackDamageMax"           "3050"
-    "Damage"                    "3050"  
+    "AttackDamageMin"           "4860"
+    "AttackDamageMax"           "4860"
+    "Damage"                    "4860"  
     "AttackRange"               "700"
     "AttackAcquisitionRange"    "700"
-    "AttackRate"                "0.31"
+    "AttackRate"                "0.66"
     "AttackAnimationPoint"      "0.1"
     "ProjectileSpeed"           "3000"
 
@@ -45,7 +45,7 @@
     "BuildTime"                 "1"
     "Element"                   "nature"
     "DamageType"                "nature"
-    "ScriptClass"               "BasicTower"
+    "ScriptClass"               "NatureTower"
     "TowerType"                 "Normal"
     "BuffPriority"              "5"
     

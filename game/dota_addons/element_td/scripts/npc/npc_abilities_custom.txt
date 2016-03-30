@@ -281,6 +281,257 @@
 	    
 	    "DisplayAdditionalHeroes"      "1"
 	}
+	"armadillo_cosmetics"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "MaxLevel"                      "1"
+	
+	    "precache"
+	    {
+	        "particle"  "models/items/necrolyte/death_protest_weapon/death_protest_weapon.vmdl"
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_armadillo_rider"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/wearables.lua"
+	                    "Function"      "Mount"
+	                    "Unit"          "armadillo_rider"
+	                    "Point"         "attach_almond_fx"
+	                    "offsetZ"       "10"
+	                }
+	            }
+	        }
+	    }
+	}
+	// Creates 3 floating orbs just for looks
+	"blood_elf_orbs"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "MaxLevel"                      "1"
+	
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	    
+	    "Modifiers"
+	    {
+	        "modifier_blood_mage_orbs"
+	        {
+	            "IsHidden"          "1"
+	            "Passive"           "1"
+	            "Attributes"        "MODIFIER_ATTRIBUTE_PERMANENT"
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/wearables.lua"
+	                    "Function"      "AttachOrbs"
+	                }
+	            }
+	        }
+	    }
+	}
+	"hellsworn_cosmetics"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "MaxLevel"                      "1"
+	
+	    "precache"
+	    {
+	        "model"  "models/items/doom/weapon_eyeoffetitzu/weapon_eyeoffetitzu.vmdl"
+	        
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_hellsworn_cosmetics"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/wearables.lua"
+	                    "Function"      "AttachProp"
+	                    "Model"         "models/items/doom/weapon_eyeoffetitzu/weapon_eyeoffetitzu.vmdl"
+	                    "Point"         "attach_attack1"
+	                }
+	
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/wearables.lua"
+	                    "Function"      "AttachProp"
+	                    "Model"         "models/items/doom/weapon_eyeoffetitzu/weapon_eyeoffetitzu.vmdl"
+	                    "Point"         "attach_attack2"
+	                }
+	            }
+	        }
+	    }
+	}
+	"icewrack_wolf_cosmetics"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "MaxLevel"                      "1"
+	
+	    "precache"
+	    {
+	        "particle"  "models/items/necrolyte/death_protest_weapon/death_protest_weapon.vmdl"
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_icewrack_wolf_rider"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/wearables.lua"
+	                    "Function"      "Mount"
+	                    "Unit"          "icewrack_wolf_rider"
+	                    "Point"         "attach_hitloc"
+	                    "AnimateRider"  "true"
+	                    "offsetZ"       "-65"
+	                }
+	            }
+	        }
+	    }
+	}
+	"map_setup"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "MaxLevel"                      "1"
+	
+	    "Modifiers"
+	    {
+	        "modifier_map_setup"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	            "States"
+	            {
+	                "MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+	                "MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
+	            }
+	
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/wearables.lua"
+	                    "Function"      "AdjustCosmetics"
+	                }
+	            }
+	        }
+	    }
+	}
+	"purgatory_demon_cosmetics"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "MaxLevel"                      "1"
+	
+	    "precache"
+	    {
+	        "particle"  "particles/units/heroes/hero_oracle/oracle_false_promise.vpcf"
+	        "particle"  "particles/status_fx/status_effect_arc_warden_tempest.vpcf"
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_purgatory_demon_cosmetics"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	
+	            "EffectName"        "particles/units/heroes/hero_oracle/oracle_false_promise.vpcf"
+	            "EffectAttachType"  "follow_origin"
+	
+	            "StatusEffectName"      "particles/status_fx/status_effect_arc_warden_tempest.vpcf"        
+	            "StatusEffectPriority"  "10"
+	        }
+	    }
+	}
+	"tauren_chieftain_cosmetics"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "MaxLevel"                      "1"
+	
+	    "precache"
+	    {
+	        "particle"  "models/items/axe/axe_practos_weapon/axe_practos_weapon.vmdl"
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_tauren_chieftain_cosmetics"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/wearables.lua"
+	                    "Function"      "AttachProp"
+	                    "Model"         "models/items/axe/axe_antler.vmdl"
+	                    "Point"         "attach_attack1"
+	                }
+	            }
+	        }
+	    }
+	}
+	"undying_cosmetics"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "MaxLevel"                      "1"
+	
+	    "precache"
+	    {
+	        "particle"  "models/items/necrolyte/death_protest_weapon/death_protest_weapon.vmdl"
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_undying_cosmetics"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/wearables.lua"
+	                    "Function"      "AttachProp"
+	                    "Model"         "models/items/necrolyte/death_protest_weapon/death_protest_weapon.vmdl"
+	                    "Point"         "attach_attack1"
+	                }
+	            }
+	        }
+	    }
+	}
 	//============================================================//
 	// Creep Ability: Boss									      //
 	//============================================================//
@@ -645,6 +896,48 @@
 		}
 	}
 	//============================================================//
+	// Creep Ability: Time Lapse							      //
+	//============================================================//
+	"creep_ability_time_lapse"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"faceless_void/jewelofaeons/faceless_void_time_walk_1"
+		
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_faceless_void/faceless_void_dialatedebuf.vpcf"
+			"particle"  "particles/status_fx/status_effect_faceless_chronosphere.vpcf"
+		}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_threshold"		"25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"backtrack_duration"	"3"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"modifier_time_lapse"
+			{
+				"IsHidden"			"1"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+	
+				"StatusEffectName" 		"particles/status_fx/status_effect_faceless_chronosphere.vpcf"
+				"StatusEffectPriority"  "10"
+			}
+		}
+	}
+	//============================================================//
 	// Creep Ability: Undead								      //
 	//============================================================//
 	"creep_ability_undead"
@@ -717,7 +1010,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"3"
+				"duration"				"5"
 			}
 		}
 	}
@@ -1546,37 +1839,6 @@
 			}
 		}
 	}
-	"map_setup"
-	{
-	    "BaseClass"                     "ability_datadriven"
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-	    "MaxLevel"                      "1"
-	
-	    "Modifiers"
-	    {
-	        "modifier_map_setup"
-	        {
-	            "Passive"   "1"
-	            "IsHidden"  "1"
-	            "States"
-	            {
-	                "MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
-	                "MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
-	                "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
-	                "MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
-	            }
-	
-	            "OnCreated"
-	            {
-	                "RunScript"
-	                {
-	                    "ScriptFile"    "mechanics/wearables.lua"
-	                    "Function"      "AdjustCosmetics"
-	                }
-	            }
-	        }
-	    }
-	}
 	//============================================================//
 	// Summon Dark Elemental
 	//============================================================//
@@ -1609,7 +1871,7 @@
 			"RunScript"
 			{
 				"Target"			"CASTER"
-				"ScriptFile"		"scripts/vscripts/summoner.lua"
+				"ScriptFile"		"mechanics/summoner.lua"
 				"Function"			"SummonElemental"
 				"Elemental"			"dark_elemental"
 			}
@@ -1647,7 +1909,7 @@
 			"RunScript"
 			{
 				"Target"			"CASTER"
-				"ScriptFile"		"scripts/vscripts/summoner.lua"
+				"ScriptFile"		"mechanics/summoner.lua"
 				"Function"			"SummonElemental"
 				"Elemental"			"earth_elemental"
 			}
@@ -1685,7 +1947,7 @@
 			"RunScript"
 			{
 				"Target"			"CASTER"
-				"ScriptFile"		"scripts/vscripts/summoner.lua"
+				"ScriptFile"		"mechanics/summoner.lua"
 				"Function"			"SummonElemental"
 				"Elemental"			"fire_elemental"
 			}
@@ -1723,7 +1985,7 @@
 			"RunScript"
 			{
 				"Target"			"CASTER"
-				"ScriptFile"		"scripts/vscripts/summoner.lua"
+				"ScriptFile"		"mechanics/summoner.lua"
 				"Function"			"SummonElemental"
 				"Elemental"			"light_elemental"
 			}
@@ -1761,19 +2023,12 @@
 			"RunScript"
 			{
 				"Target"			"CASTER"
-				"ScriptFile"		"scripts/vscripts/summoner.lua"
+				"ScriptFile"		"mechanics/summoner.lua"
 				"Function"			"SummonElemental"
 				"Elemental"			"nature_elemental"
 			}
 		}
 	}
-	//============================================================================================//
-	//============================================================================================//
-	//============================================================================================//
-	
-	
-	
-	
 	//============================================================//
 	// Summon Water Elemental
 	//============================================================//
@@ -1806,7 +2061,7 @@
 			"RunScript"
 			{
 				"Target"			"CASTER"
-				"ScriptFile"		"scripts/vscripts/summoner.lua"
+				"ScriptFile"		"mechanics/summoner.lua"
 				"Function"			"SummonElemental"
 				"Elemental"			"water_elemental"
 			}
@@ -1978,7 +2233,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"15 30 90"
+				"damage"				"15 30 100"
 			}
 			"02"
 			{
@@ -2005,10 +2260,44 @@
 	    {
 	        "RunScript"
 	        {
-	            "ScriptFile"        "spells.lua"
+	            "ScriptFile"        "mechanics/upgrades.lua"
 	            "Function"          "CancelConstruction"
 	        }
 	    }
+	}
+	//=================================================================================================================
+	// Dark Tower: Overkill
+	// When it kills a target, any overkill damage on that target transfers to a target within 300 AoE of the target.
+	//=================================================================================================================
+	"dark_tower_overkill"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+	
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"towers/dark"
+		"MaxLevel"						"1"
+		
+		"OnProjectileHitUnit"
+	 	{
+	 		"DeleteOnHit"	"1"
+	 		"RunScript"
+	 		{
+	 			"ScriptFile"		"towers/towerevents.lua"
+	 			"Function"			"TriggerEvent"
+	 			"Event"				"OnProjectileHit"
+	 		}
+	  	}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"300"
+			}
+		}
 	}
 	//============================================================//
 	// Disease Tower: Soul Reaper
@@ -2047,6 +2336,42 @@
 				}
 			}
 		}
+	}
+	//=================================================================================================================
+	// Earth Tower: Landslide
+	// Ministun on main target, can only happen once every second.
+	//=================================================================================================================
+	"earth_tower_landslide"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "ability_datadriven"                                            
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"            "towers/earth"
+	    "MaxLevel"                      "1"
+	
+	    "Modifiers"
+	    {
+	        "modifier_earth_tower_stun"
+	        {
+	            "IsHidden"           "1"
+	            "IsDebuff"           "1"
+	        
+	            "States"
+	            {
+	                "MODIFIER_STATE_STUNNED"        "MODIFIER_STATE_VALUE_ENABLED"
+	            }
+	        }
+	    }
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_FLOAT"
+	            "ministun_duration"   "0.1"
+	        }
+	    }
 	}
 	//=================================================================================================================
 	// Electricity Tower: Arc Lightning Passive
@@ -2089,22 +2414,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"170 850 4250"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"jump_count"			"3"
+				"damage"				"150 900 5400"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"damage_decrease"		"20"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"				"FIELD_INTEGER"
 				"bounce_range"			"550"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bounce_decrease"		"30"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"jump_count"			"10"
 			}
 		}
 	}
@@ -2238,7 +2568,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"max_reduction"		"80"
+				"max_reduction"		"70"
 			}
 			"03"
 			{
@@ -2285,9 +2615,11 @@
 					}
 				}
 			}
+	
 			"modifier_acid_attack_dot"
 			{
 				"IsDebuff"		"1"
+				"IsHidden"		"1"
 				"Duration"		"%duration"
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"ThinkInterval" "1"
@@ -2301,7 +2633,35 @@
 						"Event"				"OnAcidDot"
 					}
 				}
+	
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"mechanics/modifiers.lua"
+						"Function"		"StackModifier"
+						"ModifierName"	"modifier_acid_attack_dot"
+						"ModifierStack"	"modifier_acid_attack_dot_stacks"
+					}
+				}
+	
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"mechanics/modifiers.lua"
+						"Function"		"StackModifier"
+						"ModifierName"	"modifier_acid_attack_dot"
+						"ModifierStack"	"modifier_acid_attack_dot_stacks"
+					}
+				}
 			}
+	
+			"modifier_acid_attack_dot_stacks"
+			{
+				"IsDebuff"		"1"
+			}
+	
 			"modifier_acid_attack_damage_amp"
 			{
 				"IsDebuff"		"1"
@@ -2315,7 +2675,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"10 30"
+				"damage_amp"			"12 36"
 			}
 			"02"
 			{
@@ -2333,6 +2693,86 @@
 				"aoe"					"400"
 			}
 		}
+	}
+	//=================================================================================================================
+	// Fire Tower: Blaze
+	// Each attack applies a single-target DoT debuff on all targets hit
+	//=================================================================================================================
+	"fire_tower_blaze"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "ability_datadriven"                                            
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"            "towers/fire"
+	    "MaxLevel"                      "4"
+	
+	    "Modifiers"
+	    {
+	        "modifier_blazeit"
+	        {
+	            "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
+	            "Duration"          "%duration"
+	            "IsHidden"          "1"
+	            "IsDebuff"          "1"
+	            "TextureName"       "towers/fire"
+	            "EffectName"        "particles/custom/towers/fire/blaze.vpcf"
+	            "EffectAttachType"  "follow_origin"
+	
+	            "ThinkInterval" "0.5"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"        "towers/towerevents.lua"
+	                    "Function"          "TriggerEvent"
+	                    "Event"             "DealBlazeDamage"
+	                }
+	            }
+	
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/modifiers.lua"
+	                    "Function"      "StackModifier"
+	                    "ModifierName"  "modifier_blazeit"
+	                    "ModifierStack" "modifier_blazeit_stacks"
+	                }
+	            }
+	
+	            "OnDestroy"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/modifiers.lua"
+	                    "Function"      "StackModifier"
+	                    "ModifierName"  "modifier_blazeit"
+	                    "ModifierStack" "modifier_blazeit_stacks"
+	                }
+	            }
+	        }
+	
+	        "modifier_blazeit_stacks"
+	        {
+	            "TextureName"   "towers/fire"
+	            "IsDebuff"      "1"
+	        }
+	    }
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "damage_per_second"     "2 13 85 850"
+	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "duration"              "3.0"
+	        }
+	    }
 	}
 	//=================================================================================================================
 	// Flamethrower Tower: Napalm
@@ -2454,7 +2894,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"40 240 1440"
 			}
 			"02"
 			{
@@ -2520,7 +2960,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"25 50"
+				"bonus_gold"			"20 30"
 			}
 		}
 	
@@ -2560,7 +3000,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"30 180 1080"
 			}
 			"02"
 			{
@@ -2627,28 +3067,15 @@
 	"hail_tower_storm"
 	{	
 		"BaseClass"						"ability_datadriven"											
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"towers/hail"
 		"MaxLevel"						"1"
-		"AbilityCooldown"				"6"
-	
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"Target"			"POINT"
-				"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-				"Function"			"TriggerEvent"
-				"Event"				"OnStormCast"
-			}
-		}
 	
 		"Modifiers"
 		{
 			"modifier_storm_passive"
 			{
 				"Passive"	"1"
-				"IsHidden"	"1"
 				"OnAttack"
 				{
 					"RunScript"
@@ -2660,35 +3087,35 @@
 					}
 				}
 			}
-			"modifier_storm"
-			{
-				"EffectName"	"particles/units/heroes/hero_winter_wyvern/wyvern_winters_curse_ring_rope.vpcf"
-				"EffectAttachType" "follow_origin"
-			}
 		}
 	
 		"OnProjectileHitUnit"
-		{
-			"DeleteOnHit"	"1"
-			"RunScript"
-			{
-				"ScriptFile"		"towers/towerevents.lua"
-				"Function"			"TriggerEvent"
-				"Event"				"OnProjectileHit"
-			}
-		}
+	 	{
+	 		"DeleteOnHit"	"1"
+	 		"RunScript"
+	 		{
+	 			"ScriptFile"		"towers/towerevents.lua"
+	 			"Function"			"TriggerEvent"
+	 			"Event"				"OnProjectileHit"
+	 		}
+	  	}
 		
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"3"
+				"attacks_required"		"14"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"targets"				"3"
+				"crit_chance"			"15"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_mult"			"350"
 			}
 		}
 	}
@@ -2791,7 +3218,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"270 1350 6750"
+				"splash_damage"		"300 1800 10800"
 			}
 			"03"
 			{
@@ -2907,7 +3334,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"135 675 3375"
+				"damage"				"135 810 4860"
 			}
 			"02"
 			{
@@ -3036,12 +3463,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"7.5"
+				"duration"				"5"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"ticks"					"3"
+				"ticks"					"2"
 			}
 			"05"
 			{
@@ -3143,7 +3570,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"3 1.5 1"
+				"kills_required"				"6 4 2"
 			}
 			"02"
 			{
@@ -3153,9 +3580,40 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"points_per_kill"				"1 2 3"
+				"points_per_kill"				"2 3 6"
 			}
 		}
+	}
+	//=================================================================================================================
+	// Light Tower: Intensity
+	// Consecutive attacks on the same target causes a flat damage increase (don't worry about numbers). 
+	// Has no stack limit. Resets completely upon switching
+	//=================================================================================================================
+	"light_tower_intensity"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "ability_datadriven"                                            
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"            "towers/light"
+	    "MaxLevel"                      "1"
+	
+	    "Modifiers"
+	    {
+	        "modifier_intensity_indicator"
+	        {
+	            "AbilityTextureName"        "towers/light"
+	        }
+	    }
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "damage"                "6 39 255 2550"
+	        }
+	    }
 	}
 	//============================================================//
 	// Magic Tower: Range
@@ -3344,6 +3802,57 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"slow"					"-10 -30"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Nature Tower: Spore Explosion
+	//=================================================================================================================
+	"nature_tower_spore_explosion"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+	
+		"BaseClass"						"ability_datadriven"											
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"towers/nature"
+		"MaxLevel"						"4"
+	
+		"Modifiers"
+		{
+			"modifier_spore_explosion_passive"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				"OnKill"
+				{
+					"RunScript"
+					{
+						"Target"			"UNIT"
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"CreepKilled"
+					}
+				}
+			}
+		}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"24 156 1020 10200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe_full"				"150"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe_half"				"300"
 			}
 		}
 	}
@@ -3749,14 +4258,13 @@
 			{
 				"Passive"		"1"
 				"IsHidden"		"1"
-				"OnAttackLanded"
+				"OnAttack"
 				{
 					"RunScript"
 					{
-						"Target"			"TARGET"
-						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"ScriptFile"		"towers/towerevents.lua"
 						"Function"			"TriggerEvent"
-						"Event"				"OnAttackStart"
+						"Event"				"OnAttack"
 					}
 				}
 			}
@@ -3770,12 +4278,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"20"
+				"bonus_damage"			"15"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_stacks"			"20"
+				"max_stacks"			"15"
 			}
 		}
 	}
@@ -3846,6 +4354,7 @@
 						"Name"			"modifier_gaias_wrath_slow"
 					}
 				}
+	
 				"OnDestroy"
 				{
 					"RunScript"
@@ -3853,7 +4362,7 @@
 						"ScriptFile"	"mechanics/slow.lua"
 						"Function"		"RemoveSlowLevel"
 						"Name"			"modifier_gaias_wrath_slow"
-					}
+					}        
 				}
 			}
 			"modifier_gaias_wrath_slow1"
@@ -3872,6 +4381,7 @@
 				"ThinkInterval"	"1"
 				"IsDebuff"		"1"
 				"IsPurgable"	"1"
+	            "IsHidden"      "1"
 				"TextureName"	"towers/roots"
 				
 				"OnIntervalThink"
@@ -3884,7 +4394,35 @@
 						"Event"				"OnDamageTick"
 					}
 				}
+	
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/modifiers.lua"
+	                    "Function"      "StackModifier"
+	                    "ModifierName"  "modifier_gaias_wrath_damage"
+	                    "ModifierStack" "modifier_gaias_wrath_damage_stacks"
+	                }
+	            }
+	
+	            "OnDestroy"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/modifiers.lua"
+	                    "Function"      "StackModifier"
+	                    "ModifierName"  "modifier_gaias_wrath_damage"
+	                    "ModifierStack" "modifier_gaias_wrath_damage_stacks"
+	                }
+	            }
 			}
+	
+	        "modifier_gaias_wrath_damage_stacks"
+	        {
+	            "TextureName"   "towers/roots"
+	            "IsDebuff"      "1"
+	        }
 	
 			"modifier_attacking_ground"
 	        {
@@ -4031,7 +4569,7 @@
 	    {
 	        "RunScript"
 	        {
-	            "ScriptFile"        "spells.lua"
+	            "ScriptFile"        "mechanics/sell.lua"
 	            "Function"          "SellTowerCast"
 	            "SellAmount"        "0"
 	        }
@@ -4061,7 +4599,7 @@
 	    {
 	        "RunScript"
 	        {
-	            "ScriptFile"        "spells.lua"
+	            "ScriptFile"        "mechanics/sell.lua"
 	            "Function"          "SellTowerCast"
 	            "SellAmount"        "1"
 	        }
@@ -4091,7 +4629,7 @@
 	    {
 	        "RunScript"
 	        {
-	            "ScriptFile"        "spells.lua"
+	            "ScriptFile"        "mechanics/sell.lua"
 	            "Function"          "SellTowerCast"
 	            "SellAmount"        "0.90"
 	        }
@@ -4121,7 +4659,7 @@
 	    {
 	        "RunScript"
 	        {
-	            "ScriptFile"        "spells.lua"
+	            "ScriptFile"        "mechanics/sell.lua"
 	            "Function"          "SellTowerCast"
 	            "SellAmount"        "0.98"
 	        }
@@ -4235,7 +4773,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"10 20 60"
+				"duration"				"10 20 70"
 			}
 		}
 	}
@@ -4259,12 +4797,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"20 100 500"
+				"damage"				"5 30 180"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"20 100 500"
+				"aftershock_damage"		"20 120 720"
 			}
 			"03"
 			{
@@ -4274,7 +4812,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aftershock_aoe"		"350"
+				"aftershock_aoe"		"450"
 			}
 		}
 	
@@ -4290,6 +4828,43 @@
 				}
 			}
 		}
+	}
+	//=================================================================================================================
+	// Water Tower: Water Bullet
+	// Each attack bounces up to 3 times. Said attacks are all splash, bounce range is 150, and they don't increase/decrease in damage.
+	//=================================================================================================================
+	"water_tower_water_bullet"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "ability_datadriven"                                            
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"            "towers/water"
+	    "MaxLevel"                      "1"
+	
+	    "OnProjectileHitUnit"
+	    {
+	        "DeleteOnHit"   "1"
+	        "RunScript"
+	        {
+	            "ScriptFile"        "towers/basic/WaterTower.lua"
+	            "Function"          "OnBounceHit"
+	        }
+	    }
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "bounces"             "3"
+	        }
+	        "02"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "bounce_range"        "150"
+	        }
+	    }
 	}
 	//============================================================//
 	// Well Tower: Spring Forward
@@ -4314,7 +4889,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"15 30 90"
+				"attack_speed"			"15 30 100"
 			}
 			"02"
 			{
@@ -4507,7 +5082,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"300 1500"
+				"damage"				"350 1750"
 			}
 			"03"
 			{

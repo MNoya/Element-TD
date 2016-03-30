@@ -28,12 +28,12 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "76000"
-    "AttackDamageMax"           "76000"
-    "Damage"                    "76000"  
+    "AttackDamageMin"           "110000"
+    "AttackDamageMax"           "110000"
+    "Damage"                    "110000"  
     "AttackRange"               "1150"
     "AttackAcquisitionRange"    "1150"
-    "AttackRate"                "1"
+    "AttackRate"                "1.5"
     "AttackAnimationPoint"      "0.25"
     "ProjectileSpeed"           "2500"
 
@@ -45,7 +45,7 @@
     "BuildTime"                 "3"
     "Element"                   "dark"
     "DamageType"                "dark"
-    "ScriptClass"               "BasicTower"
+    "ScriptClass"               "DarkTower"
     "TowerType"                 "Normal"
     "BuffPriority"              "1"
     

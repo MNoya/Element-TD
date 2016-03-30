@@ -13,7 +13,7 @@
 		"RunScript"
 		{
 			"TARGET"		"CASTER"
-			"ScriptFile"		"scripts/vscripts/spells.lua"
+			"ScriptFile"		"mechanics/upgrades.lua"
 			"Function"		"UpgradeTower"
 			"tower"		"refined_dark_tower"
 		}
@@ -24,4 +24,5 @@
 		"dark"		"3"
 		"dark"		"3"
 	}
+	"AbilityCastRange"              "1150"
 }

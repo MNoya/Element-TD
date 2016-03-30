@@ -1,0 +1,151 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_ConstantColor =
+	[
+		255,
+		147,
+		39,
+		255,
+	]
+	m_flConstantRadius = 1.000000
+	m_nMaxParticles = 18
+	m_Operators =
+	[
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+		},
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_SetToCP"
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_Spin"
+			m_nSpinRateDegrees = 5
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_SpinYaw"
+			m_nSpinRateDegrees = 5
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_OscillateScalar"
+			m_RateMin = 5.000000
+			m_RateMax = 5.000000
+			m_FrequencyMin = 0.650000
+			m_FrequencyMax = 0.700000
+			m_nField = 3
+			m_flEndTime_min = 1000000000.000000
+			m_flEndTime_max = 1000000000.000000
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_ColorFade =
+			[
+				51,
+				221,
+				255,
+				255,
+			]
+			m_flFadeStartTime = 0.750000
+			m_flFadeEndTime = 0.900000
+			m_bEaseInOut = false
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartScale = 1.250000
+			m_flEndScale = 2.500000
+			m_bEaseInAndOut = true
+		},
+		{
+			_class = "C_OP_PositionLock"
+		},
+		{
+			_class = "C_OP_EndCapTimedDecay"
+			m_flDecayTime = 0.100000
+		},
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_flSelfIllumAmount = 1.000000
+			m_bSaturateColorPreAlphaBlend = false
+			m_hTexture = resource:"materials/particle/smoke/maya_wispy/wispy_small.vtex"
+			m_flAnimationRate = 15.000000
+			m_bFitCycleToLifetime = true
+			m_bAnimateInFPS = true
+			m_flAddSelfAmount = 9.000000
+			m_flOverbrightFactor = 2.000000
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 1.500000
+			m_fLifetimeMax = 2.500000
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+			m_flDegreesMin = -360.000000
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+			m_nFieldOutput = 12
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin =
+			[
+				238,
+				227,
+				68,
+				255,
+			]
+			m_ColorMax =
+			[
+				248,
+				170,
+				23,
+				255,
+			]
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 211
+			m_nAlphaMax = 229
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 21.840500
+			m_flRadiusMax = 24.642000
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 2
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 4.000000
+		},
+	]
+}

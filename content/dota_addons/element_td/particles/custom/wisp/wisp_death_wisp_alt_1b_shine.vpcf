@@ -1,0 +1,127 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_ConstantColor =
+	[
+		131,
+		208,
+		255,
+		255,
+	]
+	m_Operators =
+	[
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_ColorFade =
+			[
+				162,
+				108,
+				41,
+				255,
+			]
+			m_flFadeStartTime = 0.400000
+			m_flFadeEndTime = 0.850000
+		},
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndScale = 3.000000
+			m_flBias = 0.100000
+		},
+	]
+	m_Renderers =
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_bSaturateColorPreAlphaBlend = false
+			m_hTexture = resource:"materials/particle/spark_glow_02.vtex"
+			m_flDiffuseAmount = 0.476000
+			m_flSourceAlphaValueToMapToZero = 0.492000
+			m_bAdditive = true
+		},
+		{
+			_class = "C_OP_RenderRopes"
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_RenderTrails"
+			m_flMaxLength = 150.000000
+			m_flLengthFadeInTime = 35.000000
+			m_hTexture = resource:"materials/particle/elliptical.vtex"
+		},
+		{
+			_class = "C_OP_RenderSprites"
+			m_bGammaCorrectVertexColors = false
+			m_bSaturateColorPreAlphaBlend = false
+			m_bMod2X = true
+			m_flOverbrightFactor = 0.100000
+			m_hTexture = resource:"materials/particle/basic_smoke.vtex"
+		},
+	]
+	m_Initializers =
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 1.000000
+			m_fLifetimeMax = 1.000000
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_CreateFromParentParticles"
+			m_flIncrement = 2.000000
+		},
+		{
+			_class = "C_INIT_RandomYaw"
+			m_nFieldOutput = 12
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 14.964500
+			m_flRadiusMax = 26.450000
+		},
+		{
+			_class = "C_INIT_InheritFromParentParticles"
+			m_nFieldOutput = 7
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_InheritFromParentParticles"
+			m_nFieldOutput = 6
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_RandomTrailLength"
+			m_flMinLength = 0.500000
+			m_flMaxLength = 25.000000
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_bDisableOperator = true
+		},
+	]
+	m_Emitters =
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+		},
+	]
+	m_flMaxRecreationTime = -1.000000
+	m_flMaxDrawDistance = 0.000000
+	m_flNoDrawTimeToGoToSleep = 2.000000
+	m_bShouldSort = false
+	m_flConstantRadius = 39.200000
+}

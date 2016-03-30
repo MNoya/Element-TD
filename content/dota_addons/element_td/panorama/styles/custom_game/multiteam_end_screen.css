@@ -11,7 +11,7 @@
 
 #CreditContainer
 {
-    width: 600px;
+    width: 800px;
     height: 100%;
     margin-top: 40px;
     flow-children: down;
@@ -19,7 +19,7 @@
 
 #CreditTitle
 {
-    width: 600px;
+    width: 800px;
     font-size: 60px;
     text-align: center;
     text-transform: uppercase;
@@ -68,12 +68,13 @@
 {
     flow-children: down;
     text-align: center;
+    horizontal-align: center;
 }
 
 #DevTitle
 {
     font-size: 30px;
-    width: 400px;
+    width: 800px;
     text-align: center;
     color: white;
     margin-bottom: 10px;
@@ -83,10 +84,17 @@
     text-shadow: 1px 1px 3px 3.0 #000;
 }
 
+#SupportCredits
+{
+    width: 900px;
+    flow-children: down;
+}
+
 #SpecialThanks
 {
     margin-top: 20px;
     font-size: 28px;
+    horizontal-align: center;
     text-align: center;
     color: white;
     margin-bottom: 10px;
@@ -112,25 +120,28 @@
 #Supporters
 {
     flow-children: right-wrap;
+    margin-left: 70px;
 }
 
 .PlayerCredit
 {
-    margin-left: 40px;
     flow-children: right-wrap;
 }
 
 #UserNameCredit
 {
-	width: 150px;
-	margin-left: 10px;
+	width: 200px;
+	margin-left: 5px;
+    margin-bottom: 5px;
 }
 
 #UserNameCredit Label
 {
+    text-overflow: clip;
 	color: white;
-	width: 200px;
-    font-size: 30px;
+	width: 250px;
+    height: 30px;
+    font-size: 24px;
 	font-family: Radiance;
 	text-shadow: 1px 1px 3px 2.0 #000;
 }
@@ -175,6 +186,7 @@
     margin-bottom: 50px;
     vertical-align: bottom;
     flow-children: right;
+    margin-bottom: 200px;
 }
 
 #Web
@@ -194,27 +206,76 @@
     box-shadow: fill #000000 -3px -3px 3px 6px;
 }
 
-#Twitter
-{
-    flow-children: right;
-    margin-left: 100px;
-}
-
-#TwitterLogo
-{   
-    width: 60px;
-    height: 50px;
-    background-image: url("file://{resources}/images/custom_game/loading_screen/tweet.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-
 .ContactText
 {
     color: white;
     font-size: 45px;
     margin-left: 10px;
     text-shadow: 1px 1px 3px 3.0 #000;
+}
+
+#Verify
+{
+	width: 32px;
+	height: 32px;
+	border-radius: 28px;
+	background-color: gray;
+	background-size: 32px 32px;
+	horizontal-align: right;
+	margin-top: 10px;
+	margin-right: 85px;
+	transform: rotatez(45deg);
+	transition-property: opacity;
+    transition-duration: 1.2s;
+    transition-timing-function: ease-in-out;
+}
+
+#Verify #stem
+{
+	width: 4px;
+	height: 18px;
+	background-color: #fff;
+	position: 16px 6px 0px;
+	transition-property: opacity;
+    transition-duration: 1.0s;
+    transition-timing-function: ease-in-out;
+}
+
+#Verify #kick
+{
+	width: 6px;
+	height: 4px;
+	background-color: #fff;
+	position: 10px 20px 0px;
+	transition-property: opacity;
+    transition-duration: 1.0s;
+    transition-timing-function: ease-in-out;
+}
+
+#Verify #cross
+{
+    width: 32px;
+    height: 32px;
+    font-size: 27px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    horizontal-align: center;
+    vertical-align: center;
+    transform: rotatez(-45deg);
+    transition-property: opacity;
+    transition-duration: 1.0s;
+    transition-timing-function: ease-in-out;
+}
+
+.fade
+{
+	opacity: 0;
+}
+
+.hide
+{
+    visibility: collapse;
 }
 
 ////////////////

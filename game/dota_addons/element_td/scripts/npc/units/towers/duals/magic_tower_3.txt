@@ -33,14 +33,16 @@
     "VisionDaytimeRange"        "1900"
     "VisionNighttimeRange"        "1900"
     "Level"        "3"
-    "Cost"        "1800"
-    "TotalCost"        "3000"
+    "Cost"                       "2300"
+    "TotalCost"        "3650"
     "Element"
     {
         "1"        "dark"
         "2"        "fire"
     }
-    "Damage"        "15000"
+    "Damage"        "21600"
+    "AttackDamageMin"        "21600"
+    "AttackDamageMax"        "21600"
     "DamageType"        "dark"
     "ScriptClass"        "MagicTower"
     "TowerType"        "Normal"
@@ -64,8 +66,6 @@
     "Upgrades"
     {
     }
-    "AttackDamageMin"        "15000"
-    "AttackDamageMax"        "15000"
     "Creature"
     {
        "AttachWearables" // Legacy of Infernal Wings

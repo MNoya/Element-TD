@@ -13,7 +13,7 @@
 		"RunScript"
 		{
 			"TARGET"		"CASTER"
-			"ScriptFile"		"scripts/vscripts/spells.lua"
+			"ScriptFile"		"mechanics/upgrades.lua"
 			"Function"		"UpgradeTower"
 			"tower"		"trickery_tower_2"
 		}
@@ -32,7 +32,8 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"10 20 60"
+			"duration"				"10 20 70"
 		}
 	}
+	"AbilityCastRange"              "900"
 }

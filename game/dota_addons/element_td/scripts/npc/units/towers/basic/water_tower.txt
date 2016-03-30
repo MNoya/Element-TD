@@ -24,15 +24,15 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "60"
-    "AttackDamageMax"           "60"
-    "Damage"                    "60"    
+    "AttackDamageMin"           "17"
+    "AttackDamageMax"           "17"
+    "Damage"                    "17"    
     "AOE_Full"                  "100"
     "AOE_Half"                  "200"  
     "AttackRange"               "900"
     "AttackAcquisitionRange"    "900"
     "AttackRate"                "0.66"
-    "AttackAnimationPoint"      "0.2"
+    "AttackAnimationPoint"      "0.15"
     "ProjectileSpeed"           "2500"
 
     "Level"                     "1"
@@ -42,7 +42,7 @@
     "Element"                   "water"
 
     "DamageType"                "water"
-    "ScriptClass"               "BasicTowerAOE"
+    "ScriptClass"               "WaterTower"
     "TowerType"                 "Normal"
     "BuffPriority"              "11"
     

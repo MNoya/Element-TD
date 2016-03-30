@@ -29,9 +29,9 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "1900"
-    "AttackDamageMax"           "1900"
-    "Damage"                    "1900"  
+    "AttackDamageMin"           "2030"
+    "AttackDamageMax"           "2030"
+    "Damage"                    "2030"  
     "AOE_Full"                  "200"
     "AOE_Half"                  "400"
     "AttackRange"               "900"
@@ -46,7 +46,7 @@
     "BuildTime"                 "1"
     "Element"                   "earth"
     "DamageType"                "earth"
-    "ScriptClass"               "BasicTowerAOE"
+    "ScriptClass"               "EarthTower"
     "TowerType"                 "Normal"
     "BuffPriority"              "5"
     

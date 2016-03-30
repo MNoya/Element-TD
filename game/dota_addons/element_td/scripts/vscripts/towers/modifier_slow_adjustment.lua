@@ -18,7 +18,7 @@ function modifier_slow_adjustment:GetModifierMoveSpeed_Absolute()
     local movespeed = 300
 
     if unit:HasModifier("creep_haste_modifier") then
-        return 522
+        return 750
     end
     
     local slows = {}

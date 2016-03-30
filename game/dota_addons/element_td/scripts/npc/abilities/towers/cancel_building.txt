@@ -16,7 +16,7 @@
     {
         "RunScript"
         {
-            "ScriptFile"        "spells.lua"
+            "ScriptFile"        "mechanics/upgrades.lua"
             "Function"          "CancelConstruction"
         }
     }

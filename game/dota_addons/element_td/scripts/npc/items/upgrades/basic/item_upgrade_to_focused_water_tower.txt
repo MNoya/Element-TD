@@ -13,7 +13,7 @@
 		"RunScript"
 		{
 			"TARGET"		"CASTER"
-			"ScriptFile"		"scripts/vscripts/spells.lua"
+			"ScriptFile"		"mechanics/upgrades.lua"
 			"Function"		"UpgradeTower"
 			"tower"		"focused_water_tower"
 		}
@@ -24,4 +24,5 @@
 		"water"		"2"
 		"water"		"2"
 	}
+	"AbilityCastRange"              "900"
 }

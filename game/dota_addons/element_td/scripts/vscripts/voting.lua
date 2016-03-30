@@ -116,8 +116,11 @@ end
 
 -- calculate which settings won the vote
 function FinalizeVotes()
+	if VOTING_FINISHED then return end --Never allow voting twice
+
 	Log:info("All players have finished voting")
 	Timers:RemoveTimer("VoteThinker")
+	VOTING_FINISHED = true
 	CustomGameEventManager:Send_ServerToAllClients( "etd_toggle_vote_dialog", {visible = false} )
 
 	-- Only add a default vote if no one has voted
@@ -203,18 +206,13 @@ function FinalizeVotes()
 
 	for k, plyID in pairs(playerIDs) do
 		local ply = PlayerResource:GetPlayer(plyID)
-		if ply then
+		local hero = PlayerResource:GetSelectedHeroEntity(plyID)
+		if ply and hero then
+			hero.vote_results = true
 			CustomGameEventManager:Send_ServerToPlayer( ply, "etd_vote_results", {} )
 			CustomGameEventManager:Send_ServerToPlayer( ply, "etd_next_wave_info", { nextWave = GameSettings:GetGameLength().Wave, nextAbility1 = creepsKV[WAVE_CREEPS[GameSettings:GetGameLength().Wave]].Ability1, nextAbility2 = creepsKV[WAVE_CREEPS[GameSettings:GetGameLength().Wave]].Ability2 } )
 		end
 	end
-
-	local lb = 0
-	if length == "Express" then
-		lb = 1
-	end
-
-	requestInGamePlayerRanks(lb)
 
 	Log:trace("Creating post vote timer")
 	Timers:CreateTimer("PostVoteTimer", {
@@ -234,7 +232,7 @@ function FinalizeVotes()
 				end
 				-- Display player ranks
 				Timers:CreateTimer(5, function()
-					ShowPlayerRanks( true )
+					Ranking:ShowPlayerRanks()
 				end)
 			end
 		end

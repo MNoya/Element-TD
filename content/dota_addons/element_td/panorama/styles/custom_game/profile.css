@@ -1,0 +1,1016 @@
+.ProfileHud
+{
+    width: 100%;
+    height: 100%;
+}
+
+.Hide
+{
+    opacity: 0;
+    visibility: collapse;
+}
+
+// Open Profile Button
+#ProfileToggleContainer
+{
+    horizontal-align: left;
+    vertical-align: top;
+    margin-top: 732px;
+    flow-children: down;
+}
+
+.ProfileButton
+{
+    font-size: 18px;
+    background-color: black;
+    height: 30px;
+    width: 280px;
+}
+
+#MyProfileButton
+{
+    border-radius: 0px 10px 0px 0px;
+    margin-bottom: -1px;
+    width: 281px;
+}
+
+#ProfileHeaderTitle
+{
+    margin-top: 2px;
+    letter-spacing: 3px;
+    width: 250px;
+    text-align: center;
+    text-transform: uppercase;
+    horizontal-align: center;
+    vertical-align: center;
+    color: #CCCCCC;
+}
+
+.ProfileButton:hover #ProfileHeaderTitle
+{
+    color: white;
+}
+
+.ProfileButton:hover #PopoutArrow
+{
+    wash-color: white;
+}
+
+.OpenMenuArrow
+{
+    width: 16px;
+    height: 16px;
+    vertical-align: center;
+    margin-right: 8px;
+    margin-top: 2px;
+    margin-bottom: 0px;
+    horizontal-align: right;
+
+    background-image: url("s2r://panorama/images/control_icons/arrow_top_right_png.vtex");
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    wash-color: #A5ADA2ff;
+}
+
+#AvatarImageMini
+{
+    width: 38px;
+    height: 38px;
+    border-radius: 0px 0px 10px;
+}
+
+#New
+{
+    letter-spacing: 2px;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 6px;
+    margin-left: 10px;
+    horizontal-align: left;
+    color: white;
+
+    animation-name: seq_new;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes 'seq_new'
+{
+    0%
+    {
+        text-shadow: 0px 0px 6px 1.0 #FBB23F;
+    }
+
+    100%
+    {
+        text-shadow: 0px 0px 6px 1.5 #FBB23F;
+    }
+}
+
+#Soon
+{
+    letter-spacing: 2px;
+    font-size: 56px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 6px;
+    margin-left: 10px;
+    horizontal-align: center;
+    vertical-align: center;
+    color: white;
+    text-shadow: 0px 0px 6px 1.5 #FBB23F;
+}
+
+// Profile Main Menu
+#Profile
+{
+    width: 960px;
+    height: 665px;
+    horizontal-align: center;
+    vertical-align: top;
+    margin-top: 10%;
+    background-color: #000000DD;
+    //border-radius: 20px;
+
+    border: 2px solid #484A48;
+    box-shadow: #000 -4px -4px 3px 8px;
+
+    flow-children: down;
+}
+
+#TopProfilePanel
+{
+    width: 98%;
+    height: 80px;
+    horizontal-align: center;
+    margin-top: 10px;
+    background-color: #000000DD;
+    flow-children: right;
+}
+
+#AvatarImageProfile
+{
+    height: 60px;
+    vertical-align: center;
+    margin-left: 10px;
+}
+
+
+#UserNameProfile
+{
+    color: white;
+    vertical-align: center;
+    margin-top: 5px;
+    font-size: 40px;
+    margin-left: 20px;
+    width: 380px;
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+}
+
+DOTAUserName #UserNameProfile
+{
+    width: 380px;
+}
+
+.TopProfileStatContainer
+{
+    height: 100%;
+    width: 11%;
+    margin-left: 10px;
+}
+
+.TopProfileStat
+{
+    color: white;
+    horizontal-align: center;
+    vertical-align: bottom;
+    margin-bottom: 5px;
+    font-size: 30px;
+    font-family: Radiance;
+}
+
+.TopProfileStatLabel
+{
+    margin-top: 18px;
+    font-size: 14px;
+    text-align: center;
+    horizontal-align: center;
+    letter-spacing: 1px;
+    color: #AAAAAA;
+    text-transform: uppercase;
+}
+
+.TopProfileStatSubLabel
+{
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: bottom;
+    horizontal-align: center;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    color: #AAAAAA;
+    text-transform: uppercase;
+}
+
+.TopProfileStatTriple
+{
+    color: white;
+    horizontal-align: center;
+    vertical-align: center;
+    margin-bottom: 15px;
+    font-size: 28px;
+    font-family: Radiance;
+}
+
+#CurrentRanksPanel
+{
+    width: 22%;
+    flow-children: down;
+}
+
+#CurrentRanksLabel
+{
+    margin-top: 3px;
+    font-size: 14px;
+    text-align: center;
+    horizontal-align: center;
+    letter-spacing: 1px;
+    color: #AAAAAA;
+    text-transform: uppercase;
+}
+
+#TripleRankContainer
+{
+    flow-children: right;
+    width: 100%;
+    height: 100%;
+}
+
+.SingleRankContainer3
+{
+    width: 70px;
+    height: 100px;
+}
+
+
+
+
+#PlayerCardBox
+{
+    background-color: gradient( linear, 0% 0%, 0% 5%, from( #232326 ), to( #111111 ) );
+    background-image: url("s2r://panorama/images/textures/miniprofile_rock_psd.vtex");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100% 256px;
+    border-top: 2px solid #3b404777;
+    border-right: 2px solid #00000088;
+    border-left: 2px solid #4c434677;
+    border-bottom: 2px solid #00000088;
+    box-shadow: fill #00000055 -2px -2px 4px 6px;
+    height: 116px;
+    width: 100%;
+    padding: 0px;
+}
+
+#ProfileMenuContainer
+{
+    width: 98%;
+    height: 100%;
+    margin-top: 10px;
+    horizontal-align: center;
+    flow-children: right;
+}
+
+#LeftPanel
+{
+    background-color: #000000AA;
+    width: 50%;
+    height: 98%;
+    margin-right: 12px;
+    padding: 5px;
+
+    flow-children: down;
+}
+
+#LeftPanelHeader
+{
+    font-size: 25px;
+    letter-spacing: 1px;
+    color: white;
+    text-transform: uppercase;
+    font-family: Radiance;
+}
+
+#RightPanel
+{
+    background-color: #000000AA;
+    width: 50%;
+    height: 98%;
+
+    flow-children: down;
+}
+
+#FriendsContainer
+{
+    width: 100%;
+    height: 84%;
+    flow-children: down;
+    overflow: squish scroll;
+}
+
+.local
+{
+    background-color: grey;
+}
+
+// General Stat Panels
+#GeneralStats
+{
+    width: 100%;
+    height: 80px;
+    flow-children: down;
+}
+
+#GeneralStatsContainer
+{
+    flow-children: right;
+    width: 100%;
+    height: 60px;
+}
+
+.StatsColumn
+{
+    flow-children: down;
+
+    width: 32%;
+    height: 100%;
+}
+
+.StatEntry
+{
+    flow-children: right;
+    width: 100%;
+}
+
+.StatLabel
+{
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: white;
+    width: 125px;
+    text-align: left;
+    font-family: Radiance;
+}
+
+.Stat
+{
+    width: 55px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: white;
+    text-transform: uppercase;
+    text-align: right;
+    margin-right: 5px;
+    font-family: Radiance;
+}
+
+.TowerStat
+{
+    width: 40px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: white;
+    text-transform: uppercase;
+    text-align: right;
+    margin-right: 5px;
+    font-family: Radiance;
+}
+
+.gold { color: #FBB23F; }
+.life { color: #00FF00; }
+.clean { color: #00FFFF; }
+.under30 { color: #FFFF00; }
+
+#OSfrog
+{
+    width: 20px;
+    height: 20px;
+    background-image: url("file://{images}/spellicons/osfrog.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    horizontal-align: center;
+    vertical-align: center;
+    margin-top: -3px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+// End General Stat Panels
+
+// Gamemode Stat Panels
+#GameModeStats
+{
+    width: 100%;
+    height: 160px;
+    flow-children: down;
+    margin-top: 5px;
+}
+
+#GameModeBars
+{
+    width: 70%;
+    height: 20px;
+    horizontal-align: left;
+    flow-children: right;
+}
+
+#GamesPlayedPanel
+{
+    width: 100%;
+    height: 20px;
+    flow-children: right;
+}
+
+#GamesPlayedLabel
+{
+    width: 23%;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-left: 25px;
+    color: white;
+    font-family: Radiance;
+}
+
+#gamesPlayed
+{
+    width: 60px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: white;
+    text-transform: uppercase;
+    text-align: left;
+    font-family: Radiance;
+}
+
+.BarContainer
+{
+    flow-children: right;
+    margin-bottom: 2px;
+    width: 100%;
+}
+
+.GameModeBar
+{
+    color: white;
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: right;
+    font-family: Radiance;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0px 1px 1px 2 #000;
+    tooltip-position: bottom;
+}
+
+#normal { background-color: #CD7F32; height: 100%; }
+#hard { background-color: gray; height: 100%; }
+#veryhard { background-color: #FBB23F; height: 100%; }
+#insane { background-color: red; height: 100%; }
+#horde_endless { background-color: #FF6C00; height: 100%; }
+#order_chaos { background-color: #C54DA8; height: 100%; }
+#express { background-color: #006400; height: 100%; }
+#not_horde_endless, #not_order_chaos, #not_express 
+{ 
+    text-align: left; 
+    margin-left: 5px;
+    width: 20%;
+}
+
+#DifficultyPercents
+{
+    width: 90%;
+    height: 20px;
+    background-color: gray;
+    horizontal-align: center;
+    flow-children: right;
+}
+
+#ChaosBars, #ExpressBars, #RushBars
+{
+    width: 100%;
+    height: 20px;
+    horizontal-align: center;
+    flow-children: right;
+}
+
+// Towers
+#TowerStats
+{
+    width: 100%;
+    height: 70%;
+    flow-children: down;
+}
+
+#TowerStatContainer
+{
+    width: 100%;
+    height: 100%;
+    flow-children: right;
+}
+
+#TowerStatContainerLeft, #TowerStatContainerRight
+{
+    width: 30%;
+    height: 100%;
+    flow-children: down;
+}
+
+#TowerStatContainerRight
+{
+    width: 38%;
+}
+
+#SecondStatContainer
+{
+    margin-left: 50px;
+}
+
+#TowerUsageContainer
+{
+    width: 100%;
+    height: 100%;
+    flow-children: right;
+}
+
+// Tower Stats Subpanels
+#TowerSpecificStats
+{
+    width: 35%;
+    height: 100%;
+    flow-children: down;
+}
+
+.InfoTowerStats
+{
+    width: 100%;
+    margin-bottom: 5px;
+    flow-children: down;
+}
+
+#RightTowerStats
+{
+    margin-left: -20px;
+}
+
+.TowerStatPanel
+{
+    width: 150px;
+    margin-bottom: 5px;
+    flow-children: right;
+}
+
+// Element Usage Panels
+#ElementUsage
+{
+    height: 100%;
+    horizontal-align: right;
+    vertical-align: center;
+    flow-children: down;
+}
+
+#ElementUsageContainer
+{
+    flow-children: right;
+}
+
+.SectionTitle
+{
+    font-size: 21px;
+    letter-spacing: 1px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    color: white;
+    text-transform: uppercase;
+    font-family: Radiance;
+}
+
+.SectionSubTitle
+{
+    width: 23%;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-left: 25px;
+    color: white;
+    text-transform: uppercase;
+    font-family: Radiance;
+}
+
+#ElementUsageTitle
+{
+    text-align: center;
+    horizontal-align: center;
+}
+
+#ElementPieChart
+{
+    width: 160px;
+    height: 160px;
+    margin-right: 10px;
+    vertical-align: center;
+}
+
+.ElementUsageImage
+{
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+}
+
+#ElementLabels
+{
+    flow-children: down;
+}
+
+.TowerStatCont
+{
+    flow-children: down;
+    height: 100%;
+    width: 100%;
+    margin-left: 5px;
+}
+
+.ElementLabelPanel
+{
+    flow-children: right;
+    height: 23px;
+}
+
+.ElementUsageLabel
+{
+    font-size: 20px;
+    font-family: Radiance;
+}
+
+.ElementLabel
+{
+    font-size: 20px;
+    font-family: Radiance;
+    width: 70px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+#PicksPanel
+{
+    flow-children: down;
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 100%;
+    width: 140px;
+}
+
+#RandomPanel, #FirstDualPanel, #FirstTriplePanel
+{
+    margin-bottom: 10px;
+}
+
+#RandomImage
+{ 
+    height: 36px;
+    width: 36px;
+    background-image: url("file://{images}/spellicons/random.png");
+    background-size: 100%;
+    border-radius: 80px;
+}
+
+.TowerLabels
+{
+    width: 100%;
+    height: 100%;
+    flow-children: down;
+}
+
+.TowerSubLabels
+{
+    width: 100%;
+    font-size: 15px;
+    letter-spacing: 1px;
+    horizontal-align: center;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-family: Radiance;
+}
+
+.TowerName
+{
+    font-size: 15px;
+    letter-spacing: 1px;
+    horizontal-align: center;
+    text-align: center;
+    color: white;
+    font-family: Radiance;
+}
+
+.TowerImage
+{
+    width: 36px;
+    height: 36px;
+}
+
+.TowerImageCircle
+{
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    margin-top: -2px;
+    margin-right: 2px;
+}
+
+
+.MostUsed
+{
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.MostUsed .ElementLabel
+{
+    margin-left: 6px;
+}
+
+#light_usage { color: #E5DE23; }
+#dark_usage { color: #8733C8; }
+#water_usage { color: #01A2FF; }
+#fire_usage { color: #C40000; }
+#nature_usage { color: #00C400; }
+#earth_usage { color: #D4880F; }
+// end Element usage
+
+// profile_friend xml
+.FriendContainer
+{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 3px;
+    flow-children: right;
+    margin-bottom: 5px;
+}
+
+#FriendRank
+{
+    width: 60px;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+#Rank
+{
+    width: 60px;
+    text-align: center;
+}
+
+#AvatarImageFriend
+{
+    height: 40px;
+    width: 40px;
+    vertical-align: center;
+    margin-left: 5px;
+}
+
+Label
+{
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+}
+
+#FriendName
+{
+    width: 170px;
+    margin-left: 10px;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+#FriendScore
+{
+    width: 60px;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+#Score
+{
+    width: 60px;
+    margin-left: 225px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+#GlobalRank
+{
+    width: 50px;
+    margin-left: 10px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+#FriendGlobalRank
+{
+    width: 50px;
+    font-size: 20px;
+    margin-left: 10px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+#Percentile
+{
+    width: 60px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+#FriendPercentile
+{
+    width: 50px;
+    font-size: 18px;
+    margin-left: 8px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+#FriendRanksHeader
+{
+    width: 100%;
+    height: 100px;
+    flow-children: down;
+}
+
+.ProfilePanelHeader
+{
+    color: white;
+    font-size: 25px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    horizontal-align: center;
+    vertical-align: center;
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+    flow-children: right;
+}
+
+#FriendRanksTabs
+{
+    width: 100%;
+    height: 30px;
+    flow-children: right;
+}
+
+#ProfileTabs
+{
+    margin-top: 15px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 30px;
+    flow-children: right;
+}
+
+.ProfileTabButton
+{
+    width: 135px;
+    height: 30px;
+}
+
+.LeaderboardButton
+{
+    width: 35%;
+    height: 30px;
+}
+
+.ProfileTab
+{
+    color: #768e8d;
+    font-size: 20px;
+    text-transform: uppercase;
+    horizontal-align: center;
+    text-align: center;
+    vertical-align: center;
+    letter-spacing: 3px;
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+
+    transition-property: color;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
+.ProfileTab:hover
+{
+    text-shadow: 0px 0px 12px #5d7070;
+    color: white;
+    transition-property: color;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
+.ActiveTab
+{
+    text-shadow: 0px 0px 12px #5d7070;
+    color: white;
+    transition-property: color;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
+#stats_radio, #matches_radio, #achievements_radio
+{ 
+    text-align: left; 
+    horizontal-align: left;
+    margin-left: 15px;
+    font-size: 22px;
+}
+#MatchesButton
+{
+    margin-left: -25px;
+    margin-right: 5px;
+}
+#AchievButton
+{
+    width: 300px;
+}
+
+#FriendRanksCategories
+{
+    width: 100%;
+    flow-children: right;
+    margin-top: 5px;
+}
+
+.FriendCategory
+{
+    color: white;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+}
+
+// --
+#CloseButton
+{
+    horizontal-align: right;
+    width: 24px;
+    height: 24px;
+    wash-color: #888888;
+    
+    background-image: url("s2r://panorama/images/control_icons/x_close_png.vtex");
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    margin: 4px;
+    
+    transition-property: wash-color, pre-transform-scale2d, background-color;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in;
+}
+
+#CloseButton:hover
+{
+    wash-color: #bbbbbb;
+}
+
+#CloseButton:active
+{
+    wash-color: white;
+    background-size: 20px 20px;
+    //pre-transform-scale2d: 0.8;
+}
+
+// Start of Custom Builders
+#CustomBuilders
+{
+    width: 960px;
+    height: 665px;
+    horizontal-align: center;
+    vertical-align: top;
+    margin-top: 10%;
+    background-color: #000000DD;
+    //border-radius: 20px;
+
+    border: 2px solid #484A48;
+    box-shadow: #000 -4px -4px 3px 8px;
+
+    flow-children: down;
+}

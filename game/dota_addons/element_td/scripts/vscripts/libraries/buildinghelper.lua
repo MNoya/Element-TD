@@ -1,4 +1,7 @@
-BH_VERSION = "1.0.5"
+BH_VERSION = "1.1.2"
+
+require('libraries/timers')
+require('libraries/selection')
 
 if not BuildingHelper then
     BuildingHelper = class({})
@@ -34,7 +37,7 @@ function BuildingHelper:Init()
     -- Panorama Event Listeners
     CustomGameEventManager:RegisterListener("building_helper_build_command", Dynamic_Wrap(BuildingHelper, "BuildCommand"))
     CustomGameEventManager:RegisterListener("building_helper_cancel_command", Dynamic_Wrap(BuildingHelper, "CancelCommand"))
-    CustomGameEventManager:RegisterListener("bh_update_selected_entities", Dynamic_Wrap(BuildingHelper, 'OnPlayerSelectedEntities'))
+    CustomGameEventManager:RegisterListener("selection_update", Dynamic_Wrap(BuildingHelper, 'OnSelectionUpdate')) --Hook selection library
     CustomGameEventManager:RegisterListener("gnv_request", Dynamic_Wrap(BuildingHelper, "SendGNV"))
 
      -- Game Event Listeners
@@ -95,7 +98,7 @@ function BuildingHelper:LoadSettings()
     CustomNetTables:SetTableValue("building_settings", "permanent_alt_grid", { value = tobool(BuildingHelper.Settings["PERMANENT_ALT_GRID"]) })
     CustomNetTables:SetTableValue("building_settings", "update_trees", { value = BuildingHelper.Settings["UPDATE_TREES"] })
 
-    if BuildingHelper.Settings["HEIGHT_RESTRICTION"] ~= "" then
+    if BuildingHelper.Settings["HEIGHT_RESTRICTION"] and BuildingHelper.Settings["HEIGHT_RESTRICTION"] ~= "" then
         CustomNetTables:SetTableValue("building_settings", "height_restriction", { value = BuildingHelper.Settings["HEIGHT_RESTRICTION"] })
     end
 end
@@ -359,23 +362,14 @@ function BuildingHelper:CancelCommand(args)
     BuildingHelper:ClearQueue(playerTable.activeBuilder)
 end
 
-function BuildingHelper:OnPlayerSelectedEntities(event)
+function BuildingHelper:OnSelectionUpdate(event)
     local playerID = event.PlayerID
-    if not playerID then
-        BuildingHelper:print("ERROR: OnPlayerSelectedEntities without a player")
-        return
-    end
+    if not playerID then return end
     
-    local playerTable = BuildingHelper:GetPlayerTable(playerID)
-
-    playerTable.SelectedEntities = event.selected_entities
-    if not playerTable.SelectedEntities["0"] then
-        BuildingHelper:print("ERROR: OnPlayerSelectedEntities received an empty list")
-        return
-    end
-
     -- This is for Building Helper to know which is the currently active builder
-    local mainSelected = EntIndexToHScript(playerTable.SelectedEntities["0"])
+    local mainSelected = PlayerResource:GetMainSelectedEntity(playerID)
+    if not mainSelected then return end
+    mainSelected = EntIndexToHScript(mainSelected)
     local player = BuildingHelper:GetPlayerTable(playerID)
 
     if IsValidEntity(mainSelected) then
@@ -987,7 +981,7 @@ function BuildingHelper:StartBuilding(builder)
 
     local bScale = buildingTable:GetVal("Scale", "bool") -- whether we should scale the building.
     local fInitialModelScale = 0.2 -- initial size
-    local fMaxScale = buildingTable:GetVal("MaxScale", "float") or 1 -- the amount to scale to
+    local fMaxScale = building.overrideMaxScale or buildingTable:GetVal("MaxScale", "float") or 1 -- the amount to scale to
     local fScaleInterval = (fMaxScale-fInitialModelScale) / (buildTime / fserverFrameRate) -- scale to add every frame, distributed by build time
     local fCurrentScale = fInitialModelScale -- start the building at the initial model scale
     local bScaling = false -- Keep tracking if we're currently model scaling.
@@ -1889,7 +1883,6 @@ end
 function BuildingHelper:GetPlayerTable(playerID)
     if not BuildingHelper.Players[playerID] then
         BuildingHelper.Players[playerID] = {}
-        BuildingHelper.Players[playerID].SelectedEntities = {}
     end
 
     return BuildingHelper.Players[playerID]
@@ -2051,8 +2044,10 @@ end
 
 -- In case a height restriction was defined, checks if the location passes the height test
 function BuildingHelper:MeetsHeightCondition(location)
-    if BuildingHelper.Settings["HEIGHT_RESTRICTION"] ~= "" then
+    if BuildingHelper.Settings["HEIGHT_RESTRICTION"] and BuildingHelper.Settings["HEIGHT_RESTRICTION"] ~= "" then
         return location.z >= BuildingHelper.Settings["HEIGHT_RESTRICTION"]
+    else
+        return true
     end
 end
 

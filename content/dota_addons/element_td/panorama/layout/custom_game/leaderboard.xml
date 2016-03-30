@@ -1,0 +1,68 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/leaderboard.css" />
+        <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/leaderboard/leaderboard.js" /> 
+    </scripts>
+    <Panel hittest='false' class="LeaderboardHud">
+
+        <Panel id="LeaderboardToggle" onactivate="ToggleLeaderboard()">
+            <Label id="ToggleLeaderboardText" class="ToggleLabel" text="#leaderboard_title" />
+        </Panel>
+
+        <Panel id="Leaderboard" class="Hide">
+            <Panel id="ClassicLeaderboard" class="Section">
+                <Panel class="LeaderboardHeader">
+                    <Label class="LeaderboardTitle" text="#leaderboard_classic"/>
+                    <Panel id="LeaderboardRanksCategories">
+                        <Label id="Rank" class="LeaderboardCategory" text="#profile_rank" />
+                        <Label id="Score" class="LeaderboardCategory" text="#profile_score" />
+                    </Panel>
+                </Panel>
+
+                <Panel id="ClassicLeaderboardContainer" class="ContainerSection">
+
+                </Panel>
+            </Panel>
+
+            <Panel id="ExpressLeaderboard" class="Section">
+                <Panel class="LeaderboardHeader">
+                    <Label class="LeaderboardTitle" text="#leaderboard_express"/>
+                    <Panel id="LeaderboardRanksCategories">
+                        <Label id="Rank" class="LeaderboardCategory" text="#profile_rank" />
+                        <Label id="Score" class="LeaderboardCategory" text="#profile_score" />
+                    </Panel>
+                </Panel>
+
+                <Panel id="ExpressLeaderboardContainer" class="ContainerSection">
+
+                </Panel>
+
+            </Panel>
+
+            <Panel id="FrogsLeaderboard" class="Section">
+                <Panel class="LeaderboardHeader">
+                    <Label class="LeaderboardTitle" text="#leaderboard_frogs"/>
+                    <Panel id="LeaderboardRanksCategories">
+                        <Label id="Rank" class="LeaderboardCategory" text="#profile_rank" />
+                        <Image id="OSfrog"/>
+                    </Panel>
+                </Panel>
+
+                <Panel id="FrogsLeaderboardContainer" class="ContainerSection">
+
+                </Panel>
+
+            </Panel>
+        </Panel>
+
+        <Panel id="Buttons" class="Hide">
+            <Image id="RefreshButton" onactivate="RefreshAllRanks()" />
+            <Label id="CloseButton" onactivate="ToggleLeaderboard()"/>
+        </Panel>
+
+        <Label class="Hide" id="LeaderboardLink" text="#leaderboard_link" />
+    </Panel>
+</root>

@@ -176,7 +176,7 @@
 #WaterContainer
 {
     width: 100%;
-    height: 17%;
+    height: 16.7%;
 
     flow-children: right;
     background-color: #01A2FF09;
@@ -186,7 +186,7 @@
 #FireContainer
 {
     width: 100%;
-    height: 17.6%;
+    height: 16.7%;
 
     flow-children: right;
     background-color: #C4000009;
@@ -196,7 +196,7 @@
 #NatureContainer
 {
     width: 100%;
-    height: 17.6%;
+    height: 16.7%;
 
     flow-children: right;
     background-color: #00C40009;
@@ -206,7 +206,7 @@
 #EarthContainer
 {
     width: 100%;
-    height: 17.6%;
+    height: 16.7%;
 
     flow-children: right;
     background-color: #D4880F09;
@@ -216,7 +216,7 @@
 #LightContainer
 {
     width: 100%;
-    height: 17.6%;
+    height: 16.7%;
 
     flow-children: right;
     background-color: #E5DE2309;
@@ -226,7 +226,7 @@
 #DarkContainer
 {
     width: 100%;
-    height: 17.6%;
+    height: 16.7%;
 
     flow-children: right;
     background-color: #8733C809;
@@ -235,7 +235,7 @@
 
 .Element
 {
-    width: 20%;
+    width: 18%;
     vertical-align: center;
 }
 
@@ -248,7 +248,7 @@
 
 .TriplesContainer
 {
-    margin-left: 10%;
+    margin-left: 5%;
     height: 100%;
     width: 40%;
     flow-children: right;
@@ -292,6 +292,13 @@
 .AbilityContainer
 {
     width: 30%;
+    vertical-align: center;
+    margin-top: 10px;
+}
+
+.AbilityContainerTriple
+{
+    width: 27%;
     vertical-align: center;
     margin-top: 10px;
 }
@@ -340,11 +347,15 @@
 #FilterButtonContainer
 {
     flow-children: right;
-    width: 560px;
-    horizontal-align: right;
+    horizontal-align: left;
     vertical-align: bottom;
-    margin-right: 233px;
+    margin-left: 510px;
     margin-bottom: 19%;
+}
+
+#Spacer
+{
+    width: 100px;
 }
 
 .FilterButton

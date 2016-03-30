@@ -27,12 +27,12 @@
     "VisionDaytimeRange"        "1200"
     "VisionNighttimeRange"        "800"
     "Model"        "models/heroes/phantom_lancer/phantom_lancer.vmdl"
-    "ModelScale"        "1.5"
+    "ModelScale"        "1.1"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
-    "ScriptClass"     "CreepBulky"
+    "ScriptClass"     "CreepTemporal"
     "Ability1"        "light_armor"
-    "Ability2"        "creep_ability_bulky"
+    "Ability2"        "creep_ability_time_lapse"
     "Creature"
     {
         "AttachWearables" // Vengeance of the Sunwarrior

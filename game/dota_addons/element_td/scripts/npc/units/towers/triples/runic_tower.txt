@@ -42,9 +42,9 @@
         "2"        "fire"
         "3"        "light"
     }
-    "Damage"        "1000"
-    "AttackDamageMin"        "1000"
-    "AttackDamageMax"        "1000"
+    "Damage"        "1200"
+    "AttackDamageMin"        "1200"
+    "AttackDamageMax"        "1200"
     "DamageType"        "dark"
     "ScriptClass"        "RunicTower"
     "TowerType"        "Normal"

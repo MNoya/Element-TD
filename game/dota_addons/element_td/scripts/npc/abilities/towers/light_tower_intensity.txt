@@ -1,0 +1,31 @@
+//=================================================================================================================
+// Light Tower: Intensity
+// Consecutive attacks on the same target causes a flat damage increase (don't worry about numbers). 
+// Has no stack limit. Resets completely upon switching
+//=================================================================================================================
+"light_tower_intensity"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"                     "ability_datadriven"                                            
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "towers/light"
+    "MaxLevel"                      "1"
+
+    "Modifiers"
+    {
+        "modifier_intensity_indicator"
+        {
+            "AbilityTextureName"        "towers/light"
+        }
+    }
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "damage"                "6 39 255 2550"
+        }
+    }
+}

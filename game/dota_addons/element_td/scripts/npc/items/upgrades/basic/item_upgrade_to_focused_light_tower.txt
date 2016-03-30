@@ -13,7 +13,7 @@
 		"RunScript"
 		{
 			"TARGET"		"CASTER"
-			"ScriptFile"		"scripts/vscripts/spells.lua"
+			"ScriptFile"		"mechanics/upgrades.lua"
 			"Function"		"UpgradeTower"
 			"tower"		"focused_light_tower"
 		}
@@ -24,4 +24,5 @@
 		"light"		"2"
 		"light"		"2"
 	}
+	"AbilityCastRange"              "1500"
 }

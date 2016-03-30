@@ -10,7 +10,7 @@
   </scripts>
   <Panel hittest='false' class="CustomHudRoot">
     <Panel id="SandboxEnablePanel" class="SandboxTopbar hide">
-      <Label id="New" text="#etd_new_feature"/>
+      <!--<Label id="New" text="#etd_new_feature"/>-->
       <Panel id="SandboxEnableButton" onactivate="EnableSandbox()" onmouseover="HoverEnableSandbox()" onmouseout="DOTAHideTitleTextTooltip()">
         <Label id="EnableSandboxText" class="SandboxButton" text="#sandbox_mode"/>
       </Panel>
@@ -49,9 +49,10 @@
             <Button id="max_elements" class="DemoButton" onactivate="MaxElementsPressed()">
               <Label text="#sandbox_max_elements"/>
             </Button>
-            <Button id="max_resources" class="DemoButton" onactivate="FullLifePressed()">
-              <Label text="#sandbox_full_life"/>
+            <Button id="SetLife" class="DemoButton" onactivate="SetLife()">
+              <Label text="#sandbox_set_life"/>
             </Button>
+            <TextEntry id="Life" class="NumEntry" maxchars="4" placeholder="50" oninputsubmit="SetLife()" ontabbackward="SetInputFocus(Gold)" ontabforward="SetInputFocus(Essence)"/>
           </Panel>
           
 
@@ -155,8 +156,6 @@
                 <Label id="Minus" text="-"/>
               </Button>
             </Panel>
-
-
           </Panel>
 
         </Panel>
@@ -183,12 +182,17 @@
         <Panel class="Category">
           <Label text="#sandbox_playback"/>
           <Panel class="QuitPausePanel">
-            <!--<ToggleButton id="speed_up" class="DemoButton" onactivate="SpeedUp()">
+            <ToggleButton id="speed_up" class="DemoButton" onactivate="SpeedUp()">
               <Label text="#sandbox_speedup"/>
-            </ToggleButton>-->
+            </ToggleButton>
             <ToggleButton id="pause" class="DemoButton" onactivate="Pause()">
               <Label text="#sandbox_pause"/>
             </ToggleButton>
+          </Panel>
+          <Panel class="QuitPausePanel">
+            <Button class="RestartButton" onactivate="RestartGame()">
+              <Label text="#sandbox_restart"/>
+            </Button>
             <Button class="QuitButton" onactivate="EndGame()">
               <Label text="#sandbox_quit"/>
             </Button>

@@ -1,0 +1,283 @@
+.LeaderboardHud
+{
+    width: 100%;
+    height: 100%;
+}
+
+.Hide
+{
+    visibility: collapse;
+    opacity: 0;
+}
+
+
+//Top bar
+#LeaderboardToggle
+{
+    background-color: black;
+    height: 30px;
+    width: 220px;
+    margin-left: 300px;
+    margin-top: 5px;
+}
+
+#LeaderboardToggle:active .ToggleLabel
+{
+    position: 1px 2px 0px;
+}
+
+.ToggleLabel
+{
+    margin-left: 10px;
+    letter-spacing: 3px;
+    font-size: 18px;
+    text-transform: uppercase;
+    vertical-align: center;
+    horizontal-align: center;
+    color: gold;
+    margin-top: 4px;
+}
+
+.ToggleLabel:hover
+{
+    opacity: 2;
+    font-size: 19px;
+}
+//End Button
+
+
+//Main Leaderboard panel
+#Leaderboard
+{
+    background-color: #000000EE;
+    //border-radius: 20px;
+
+    border: 2px solid #484A48;
+    box-shadow: #000 -4px -4px 3px 8px;
+
+    height: 690px;
+    width: 1150px;
+    margin-top: 8%;
+    margin-right: 9%;
+
+    vertical-align: top;
+    horizontal-align: center;
+
+    border-right: 4px solid #484A48;
+    border-top: 4px solid #484A48;
+    border-bottom: 4px solid #484A48;
+    flow-children: right;
+
+}
+
+.Section
+{
+    height: 100%;
+    width: 383px;
+    margin-right: 2px;
+    border-left: 2px solid #484A48;
+    box-shadow: #000 -4px -4px 3px 8px;
+
+    flow-children: down;
+}
+
+.LeaderboardHeader
+{
+    width: 383px;
+    margin-right: 2px;
+    border-left: 2px solid #484A48;
+
+    flow-children: down;
+}
+
+.ContainerSection
+{
+    overflow: squish scroll;
+
+    height: 100%;
+    width: 383px;
+    margin-right: 2px;
+    border-left: 2px solid #484A48;
+
+    flow-children: down;
+}
+
+.LeaderboardTitle
+{
+    horizontal-align: center;
+    font-size: 25px;
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+    color: #DDD;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+#LeaderboardRanksCategories
+{
+    width: 100%;
+    flow-children: right;
+    margin-top: 10px;
+}
+
+.LeaderboardCategory
+{
+    color: white;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+}
+
+#Rank
+{
+    width: 60px;
+    text-align: center;
+}
+
+#Score
+{
+    width: 60px;
+    margin-left: 240px;
+    text-align: center;
+    color: #CCCCCC;
+}
+
+#OSfrog
+{
+    width: 32px;
+    height: 32px;
+    margin-left: 250px;
+    margin-top: -12px;
+    vertical-align: center;
+    background-image: url("file://{images}/spellicons/osfrog.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#Refresh
+{
+    width: 300px;
+    height: 50px;
+}
+
+.local
+{
+    background-color: grey;
+}
+
+// leaderboard_player xml
+.PlayerContainer
+{
+    width: 100%;
+    height: 60px;
+    flow-children: right;
+}
+
+#PlayerRank
+{
+    width: 60px;
+    font-size: 25px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+#AvatarImage
+{
+    height: 40px;
+    width: 40px;
+    vertical-align: center;
+}
+
+#PlayerName
+{
+    width: 160px;
+    margin-left: 10px;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+#PlayerScore
+{
+    width: 120px;
+    margin-left: 10px;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+// buttons
+#Buttons
+{
+    width: 60px;
+    height: 32px;
+
+    margin-top: 8.5%;
+    margin-right: 25%;
+
+    vertical-align: top;
+    horizontal-align: right;
+}
+
+#RefreshButton
+{
+    horizontal-align: left;
+    width: 24px;
+    height: 24px;
+    wash-color: #888888;
+    
+    background-image: url("file://{images}/custom_game/ranking/refresh.png");
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    margin: 4px;
+    
+    transition-property: wash-color, pre-transform-scale2d, background-color;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in;
+}
+
+#CloseButton
+{
+    horizontal-align: right;
+    width: 24px;
+    height: 24px;
+    wash-color: #888888;
+    
+    background-image: url("s2r://panorama/images/control_icons/x_close_png.vtex");
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    margin: 4px;
+    
+    transition-property: wash-color, pre-transform-scale2d, background-color;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in;
+}
+
+#CloseButton:hover, #RefreshButton:hover
+{
+    wash-color: #bbbbbb;
+}
+
+#CloseButton:active, #RefreshButton:active
+{
+    wash-color: white;
+    background-size: 20px 20px;
+    //pre-transform-scale2d: 0.8;
+}
+
+// Leaderboard text
+#LeaderboardLink
+{
+    margin-top: 10px;
+    margin-right: 150px;
+    font-size: 30px;
+    color: #EEE;
+    text-shadow: 1px 1px 4px 3.0 #000;
+    horizontal-align: center;
+    vertical-align: bottom;
+    margin-bottom: 250px;
+}

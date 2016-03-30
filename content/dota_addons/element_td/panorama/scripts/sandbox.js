@@ -6,6 +6,7 @@ var zen_mode = $("#zen_mode")
 var no_cd = $("#no_cd")
 var pause = $("#pause")
 var wave = $("#WaveNumber")
+var speed_up = $("#speed_up")
 var max_level = 3;
 var min_level = 0;
 
@@ -31,8 +32,12 @@ function MaxElementsPressed() {
     GameEvents.SendCustomGameEventToServer( "sandbox_max_elements", {} );
 }
 
-function FullLifePressed() {
-    GameEvents.SendCustomGameEventToServer( "sandbox_full_life", {} );
+function SetLife() {
+    $('#Life').text = $('#Life').text;
+    if (parseInt($('#Life').text) > 999)
+        $('#Life').text = "999"
+
+    GameEvents.SendCustomGameEventToServer( "sandbox_set_life", { "value": $('#Life').text } );
 }
 
 function GetResources()
@@ -116,16 +121,20 @@ function Pause() {
     GameEvents.SendCustomGameEventToServer( "sandbox_pause", {"state": pause.checked} );
 }
 
-/*function SpeedUp() {
+function SpeedUp() {
     GameEvents.SendCustomGameEventToServer( "sandbox_speed_up", {"state": speed_up.checked} );
-}*/
+}
+
+function RestartGame() {
+    GameEvents.SendCustomGameEventToServer( "sandbox_restart", {} );
+}
 
 function EndGame() {
     GameEvents.SendCustomGameEventToServer( "sandbox_end", {} );
 }
 
 function HoverEnableSandbox() {
-    $("#New").AddClass('hide')
+    //$("#New").AddClass('hide')
     if ($("#SandboxPanel").BHasClass('hide'))
         $.DispatchEvent("DOTAShowTitleTextTooltip", $("#SandboxEnableButton"), "#sandbox_mode_enable", "#sandbox_mode_tooltip");
     else
@@ -141,7 +150,7 @@ function EnableSandbox() {
     else
         $('#SandboxPanel').ToggleClass('Minimized')
     $("#CloseButton").AddClass('hide')
-    $("#EnableSandboxText").style['color'] = 'gold;'
+    $("#EnableSandboxText").style['color'] = 'red;'
     $.DispatchEvent("DOTAShowTitleTextTooltip", $("#SandboxEnableButton"), "#sandbox_enable", "#sandbox_mode_on");    
 }
 
@@ -156,4 +165,5 @@ function SandboxMakeVisible() {
 (function () {
     GameEvents.Subscribe( "sandbox_mode_visible", SandboxMakeVisible);
     GameEvents.Subscribe( "etd_update_elements", UpdateElements );
+    GameEvents.SendCustomGameEventToServer( "sandbox_connect", {} );
 })();

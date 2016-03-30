@@ -13,7 +13,7 @@
 		"RunScript"
 		{
 			"TARGET"		"CASTER"
-			"ScriptFile"		"scripts/vscripts/spells.lua"
+			"ScriptFile"		"mechanics/upgrades.lua"
 			"Function"		"UpgradeTower"
 			"tower"		"blacksmith_tower_2"
 		}
@@ -32,7 +32,8 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"15 30 90"
+			"damage"				"15 30 100"
 		}
 	}
+	"AbilityCastRange"              "900"
 }

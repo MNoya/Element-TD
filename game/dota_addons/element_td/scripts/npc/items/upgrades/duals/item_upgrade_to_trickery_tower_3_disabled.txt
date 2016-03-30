@@ -22,7 +22,8 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"10 20 60"
+			"duration"				"10 20 70"
 		}
 	}
+	"AbilityCastRange"              "900"
 }

@@ -1,9 +1,15 @@
+local statInfo = LoadKeyValues('scripts/vscripts/statcollection/settings.kv')
+if not statInfo then
+    print("Stat Collection: Critical Error, no settings.kv file found")
+    return
+end
+
 require("statcollection/schema")
 require('statcollection/lib/statcollection')
+require('statcollection/staging')
 require('statcollection/lib/utilities')
 
-local statInfo = LoadKeyValues('scripts/vscripts/statcollection/settings.kv')
-local COLLECT_STATS = not Convars:GetBool('developer')
+local COLLECT_STATS = not IsInToolsMode()
 local TESTING = tobool(statInfo.TESTING)
 local MIN_PLAYERS = tonumber(statInfo.MIN_PLAYERS)
 

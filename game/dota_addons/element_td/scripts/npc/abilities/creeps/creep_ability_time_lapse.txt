@@ -1,0 +1,42 @@
+//============================================================//
+// Creep Ability: Time Lapse							      //
+//============================================================//
+"creep_ability_time_lapse"
+{
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"MaxLevel"						"1"
+	"AbilityTextureName"			"faceless_void/jewelofaeons/faceless_void_time_walk_1"
+	
+	"precache"
+	{
+		"particle"  "particles/units/heroes/hero_faceless_void/faceless_void_dialatedebuf.vpcf"
+		"particle"  "particles/status_fx/status_effect_faceless_chronosphere.vpcf"
+	}
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"health_threshold"		"25"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"backtrack_duration"	"3"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_time_lapse"
+		{
+			"IsHidden"			"1"
+			"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+
+			"StatusEffectName" 		"particles/status_fx/status_effect_faceless_chronosphere.vpcf"
+			"StatusEffectPriority"  "10"
+		}
+	}
+}

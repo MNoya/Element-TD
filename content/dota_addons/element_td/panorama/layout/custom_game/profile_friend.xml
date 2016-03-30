@@ -1,0 +1,16 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/profile.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/profile/profile_friend.js" />
+    </scripts>
+    <Panel class="FriendContainer">
+        <Label id="FriendRank" text="#"/>
+        <DOTAAvatarImage id="AvatarImageFriend" steamid="" />
+        <DOTAUserName id="FriendName" steamid=""/>
+        <Label id="FriendScore"/>
+        <Label id="FriendGlobalRank"/>
+        <Label id="FriendPercentile"/>
+    </Panel>
+</root>

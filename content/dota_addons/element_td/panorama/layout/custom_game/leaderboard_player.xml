@@ -1,0 +1,14 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/leaderboard.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/leaderboard/leaderboard_player.js" />
+    </scripts>
+    <Panel hittest="false" class="PlayerContainer">
+        <Label hittest="false" id="PlayerRank" text="#"/>
+        <DOTAAvatarImage hittest="false" id="AvatarImage" steamid="" />
+        <DOTAUserName hittest="false" id="PlayerName" steamid=""/>
+        <Label hittest="false" id="PlayerScore"/>
+    </Panel>
+</root>

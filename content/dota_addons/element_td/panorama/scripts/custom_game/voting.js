@@ -99,16 +99,20 @@ function RemoveGlow(panel) {
     panel.RemoveClass('Hover')
 }
 
-function HoverCheckbox(name) {
+function HoverCheckbox(name, desc) {
     var panel = $("#"+name)
 
     panel.hovering = true
+    $("#"+desc).SetHasClass( "Hover", panel.hovering )
     UpdateMultipliers()
 }
 
-function MouseOverCheckbox(name) {
+function MouseOverCheckbox(name, desc) {
     var panel = $("#"+name)
+
     panel.hovering = false
+    if (desc !== undefined)
+        $("#"+desc).SetHasClass( "Hover", panel.hovering )
     UpdateMultipliers()
 }
 
@@ -116,10 +120,12 @@ function SelectCheckbox(name) {
     UpdateMultipliers()
     Game.EmitSound("ui_generic_button_click");
     $("#"+name).checked = !$("#"+name).checked
+    MouseOverCheckbox(name)
 }
 
-function SelectCheckboxClick() {
+function SelectCheckboxClick(name) {
     Game.EmitSound("ui_generic_button_click");
+    MouseOverCheckbox(name)
     UpdateMultipliers()
 }
 
@@ -305,7 +311,7 @@ function ShowVoteResults()
 
     // Update HP-Bounty-Scores results
     $("#HealthResult").text = GetHP(difficultyName)
-    $("#BountyResult").text = GetBounty(difficultyName, express)
+    $("#BountyResult").text = GetBounty(difficultyName, rush, express)
     $("#ScoresResult").text = GetScore(difficultyName)
 
     // Show current mode UI
@@ -437,12 +443,13 @@ function Setup()
     votingLiveUI.AddClass("hidden");
     UpdateNotVoted();
     ShowGamemodeViewer();
-    $.Schedule(0.1, CheckHudFlipped)
 }
 
 
 (function () {
     Setup();
+
+    $.Schedule(0.1, CheckHudFlipped)
     $("#allpick").checked = true;
     GameEvents.Subscribe( "etd_toggle_vote_dialog", ToggleVoteDialog );
     GameEvents.Subscribe( "etd_update_vote_timer", UpdateVoteTimer );

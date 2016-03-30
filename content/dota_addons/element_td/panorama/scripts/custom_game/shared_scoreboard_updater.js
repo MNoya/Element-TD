@@ -10,39 +10,6 @@ var playerData = {};
 
 //=============================================================================
 //=============================================================================
-
-var Developers = [76561198046984233,76561197968301566,76561198027264543,76561197995227322,76561198045264681,76561198008120955]
-
-function RewardLevel(steamID64) {
-    var playerReward = CustomNetTables.GetTableValue( "rewards", steamID64)
-    if (Developers.indexOf(Number(steamID64)) != -1)
-        return "Developer"
-    else if (playerReward)
-        return playerReward.tier
-    else
-        return 0
-}
-
-function ApplyPanelBorder(panel, steamID64){
-    var rewardLevel = RewardLevel(steamID64)
-
-    if (rewardLevel != 0)
-    {
-        var border = panel.FindChildInLayoutFile( "BorderImage" );
-        if (border !== undefined && border !== null)
-        {
-            border.RemoveClass( "HiddenBorder" )
-            if (rewardLevel == "Developer")
-                border.AddClass( "EpicBorder" )
-
-            else if (rewardLevel >= 2)
-                border.AddClass( "GoldBorder" )
-        }
-    }
-}
-
-//=============================================================================
-//=============================================================================
 function _ScoreboardUpdater_SetTextSafe( panel, childName, textValue )
 {
     if ( panel === null )
@@ -230,7 +197,13 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
         {
             if ( playerInfo.player_selected_hero !== "" )
             {
-                playerPortrait.SetImage( "file://{images}/heroes/" + playerInfo.player_selected_hero + ".png" );
+                var reward = GameUI.RewardLevel(playerInfo.player_steamid)
+                if (reward == "Developer")
+                    playerPortrait.SetImage( "file://{images}/custom_game/rewards/dev.png" );
+                else if (reward > 0)
+                    playerPortrait.SetImage( "file://{images}/custom_game/rewards/aegis.png" );
+                else
+                    playerPortrait.SetImage( "file://{images}/heroes/" + playerInfo.player_selected_hero + ".png" );
             }
             else
             {
@@ -269,7 +242,7 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
         if ( playerAvatar )
         {
             playerAvatar.steamid = playerInfo.player_steamid;
-            ApplyPanelBorder(playerPanel, playerInfo.player_steamid)
+            GameUI.ApplyPanelBorder(playerPanel, playerInfo.player_steamid)
         }       
 
         var playerColorBar = playerPanel.FindChildInLayoutFile( "PlayerColorBar" );

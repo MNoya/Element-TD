@@ -1,0 +1,37 @@
+// THIS FILE IS AUTO-GENERATED
+
+Layer0
+{
+	shader "ice_surface_dota.vfx"
+
+	//---- Color ----
+	g_flTexCoordScale "0.010"
+	g_vTexCoordOffset "[0.000 0.000 0.000]"
+	TextureColor "[1.000000 1.000000 1.000000 0.000000]"
+
+	//---- Interior ----
+	g_flInteriorAmbientLightScale "1.000"
+	g_flInteriorDirectLightScale "0.000"
+	g_flInteriorRefractBlur "0.500"
+	g_flInteriorRefractStrength "0.392"
+	g_vInteriorLightTint "[0.674510 0.815686 0.960784 1.000000]"
+	g_vInteriorMixParams "[0.116 0.465 1.546]"
+	g_vInteriorRefractTint "[0.674510 0.815686 0.960784 1.000000]"
+
+	//---- Normal Map ----
+	g_flBumpStrength "1.500"
+	g_flFresnelBumpStrength "1.000"
+	TextureNormal "materials/texture_samples/fx_clouds_0_normal.tga"
+
+	//---- Specular ----
+	g_flEnvironmentMapBoost "1.101"
+	g_flSpecularExponent "1.000"
+	g_flSpecularScale "32.000"
+	g_vEnvironmentMapTint "[0.674510 0.815686 0.960784 1.000000]"
+	g_vSpecularColor "[0.960784 0.960784 0.960784 1.000000]"
+	TextureEnvironmentMap "materials/default/dota_default_cube.tga"
+	TextureSpecularMask "[0.000000 0.000000 0.000000 0.000000]"
+
+	//---- Translucency ----
+	TextureTranslucency "[0.002000 0.002000 0.002000 0.000000]"
+}

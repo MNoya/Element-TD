@@ -14,4 +14,5 @@
 		"earth"		"2"
 		"earth"		"2"
 	}
+	"AbilityCastRange"              "900"
 }

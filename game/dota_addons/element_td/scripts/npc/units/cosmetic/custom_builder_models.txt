@@ -1,0 +1,158 @@
+"chocobo"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/items/courier/chocobo/chocobo.vmdl"
+    "ModelScale"    "1.2"
+}
+
+"hellsworn"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/items/warlock/golem/hellsworn_golem/hellsworn_golem.vmdl"
+    "ModelScale"    "1"
+    "Ability1"      "hellsworn_particles"
+    "Ability2"      "hellsworn_cosmetics"
+}
+
+"undying"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/heroes/undying/undying_flesh_golem.vmdl"
+    "ModelScale"    "0.85"
+    "Ability1"      "undying_cosmetics"
+}
+
+"purgatory_demon"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/items/terrorblade/endless_purgatory_demon/endless_purgatory_demon.vmdl"
+    "ModelScale"    "0.85"
+    "Ability1"      "purgatory_demon_cosmetics"
+}
+
+
+//----------------
+
+"tauren_chieftain"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/heroes/elder_titan/elder_titan.vmdl"
+    "ModelScale"    "1"
+    "Ability1"      "tauren_chieftain_cosmetics"
+    "Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_elder_titan
+        {
+            "1" { "ItemDef" "6544" } // Totem of the World Splitter
+            "3" { "ItemDef" "428" } // Elder Titan's Head
+            "4" { "ItemDef" "427" } // Elder Titan's Bracers
+            "5" { "ItemDef" "429" } // Elder Titan's Shoulders
+        }
+    }
+}
+
+"armadillo"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/pets/armadillo/armadillo.vmdl"
+    "ModelScale"    "3"
+    "Ability1"      "armadillo_cosmetics"
+}
+"armadillo_rider"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/heroes/earthshaker/earthshaker.vmdl"
+    "ModelScale"    "0.35"
+    "Creature"
+    {
+        "AttachWearables" // Bindings of Deep Magma
+        {
+            "1" { "ItemDef" "5640" } // Helm of Impasse
+            "2" { "ItemDef" "6401" } // Belt of Deep Magma
+            "3" { "ItemDef" "6820" } // Gravelmaw
+            "4" { "ItemDef" "6400" } // Arms of Deep Magma
+        }
+    }
+}
+
+"icewrack_wolf"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/pets/icewrack_wolf/icewrack_wolf.vmdl"
+    "ModelScale"    "3"
+    "Ability1"      "icewrack_wolf_cosmetics"
+}
+"icewrack_wolf_rider"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/heroes/mirana/mirana.vmdl"
+    "ModelScale"    "0.35"
+
+    "Creature"
+    {
+        "AttachWearables" // Darkfall Warden
+        {
+            "1" { "ItemDef" "8834" } // Darkfall Warden Hair
+            "3" { "ItemDef" "8540" } // Darkfall Warden Bow
+            "4" { "ItemDef" "8541" } // Darkfall Warden Bracers
+            "5" { "ItemDef" "8537" } // Darkfall Warden Pauldrons
+            "6" { "ItemDef" "8542" } // Darkfall Warden Quiver
+            "7" { "ItemDef" "8538" } // Darkfall Warden Skirt
+        }
+    }
+}
+
+"zeus_arcana"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/heroes/zeus/zeus_arcana.vmdl"
+    "ModelScale"    "1.3"
+
+    "Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_zuus
+        {
+            "1" { "ItemDef" "605" } // Zeus Ambient Effects
+            "2" { "ItemDef" "606" } // Zeus' Belt
+            "3" { "ItemDef" "607" } // Zeus' Back
+            "4" { "ItemDef" "6914" } // Tempest Helm of the Thundergod
+            "5" { "ItemDef" "8693" } // Thundergod's Bare Chest
+            "6" { "ItemDef" "8692" } // Thundergod's Bare Arms
+        }
+    }
+}
+
+"lina_arcana"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/heroes/lina/lina.vmdl"
+    "ModelScale"    "1.2"
+
+    "Creature"
+    {
+        "AttachWearables" //Arcana
+        {
+            "1" {    "ItemDef"        "4794"        } //"Fiery Soul of the Slayer"
+            "2" {    "ItemDef"        "6339"        } //"Fire Lotus Belt"
+            "3" {    "ItemDef"        "5941"        } //"Wings of the Ember Crane"
+        }
+    }
+}
+
+"sf_dark_arcana"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/heroes/shadow_fiend/shadow_fiend_arcana.vmdl"
+    "ModelScale"    "1"
+
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "1"  { "ItemDef" "6996" } //Demon Eater Arcana
+            "2"  { "ItemDef" "486" } //Shoulder
+            "3"  { "ItemDef" "8259" } // Arms of Desolation
+            "4"  { "ItemDef" "509" } //Ambient
+        }
+    }
+}

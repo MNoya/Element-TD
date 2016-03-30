@@ -18,4 +18,5 @@
 		"light"		"2"
 		"light"		"2"
 	}
+	"AbilityCastRange"              "900"
 }

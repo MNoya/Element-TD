@@ -26,21 +26,25 @@
     "StatusManaRegen"        "0"
     "VisionDaytimeRange"        "1200"
     "VisionNighttimeRange"        "800"
-    "Model"        "models/heroes/storm_spirit/storm_spirit.vmdl"
-    "ModelScale"        "1.8"
+    "Model"        "models/heroes/spirit_breaker/spirit_breaker.vmdl"
+    "ModelScale"        "0.9"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
-    "ScriptClass"     "CreepBulky"
+    "ScriptClass"     "CreepTemporal"
     "Ability1"        "water_armor"
-    "Ability2"        "creep_ability_bulky"
+    "Ability2"        "creep_ability_time_lapse"
 
     "Creature"
     {
-        "AttachWearables" // Default npc_dota_hero_storm_spirit
+        "AttachWearables" // Default npc_dota_hero_spirit_breaker
         {
-            "1" { "ItemDef" "310" } // Storm Spirit's Armor
-            "2" { "ItemDef" "308" } // Storm Spirit's Hat
-            "3" { "ItemDef" "309" } // Storm Spirit's Shoulder
+            "1" { "ItemDef" "112" } // Spirit Breaker's Shoulder Armor
+            "2" { "ItemDef" "106" } // Spirit Breaker's Head
+            "3" { "ItemDef" "114" } // Spirit Breaker's Tail
+            "4" { "ItemDef" "115" } // Spirit Breaker's Bracers
+            "5" { "ItemDef" "113" } // Spirit Breaker's Mace
+            "6" { "ItemDef" "116" } // Spirit Breaker's Belt
+            "7" { "ItemDef" "111" } // Spirit Breaker's Horns
         }
     }
 }

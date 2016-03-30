@@ -12,22 +12,32 @@ local requires =
     "libraries/notifications",
     "libraries/animations",
     "libraries/attachments",
+    "libraries/selection",
     "libraries/buildinghelper",
     "statcollection/init",
 
     -- mechanics
     "mechanics/precache",
-    "mechanics/selection",
     "mechanics/messages",
     "mechanics/keyvalues",
     "mechanics/items",
     "mechanics/sounds",
-    "mechanics/gold",
+    "mechanics/resources",
     "mechanics/abilities",
     "mechanics/wearables",
     "mechanics/sectors",
     "mechanics/ground_attacks",
     "mechanics/tooltips",
+    "mechanics/rewards",
+    "mechanics/runes",
+    "mechanics/upgrades",
+    "mechanics/grid",
+    "mechanics/damage",
+    "mechanics/ranking",
+    "mechanics/random",
+    "mechanics/summoner",
+    "mechanics/interest",
+    "mechanics/orbs",
 
     -- utils
     "util/util",
@@ -37,9 +47,17 @@ local requires =
     -- tower blueprints
     "towers/TowersManager",
     "towers/towerevents",
+
+    -- basic towers
     "towers/BasicTower",
     "towers/BasicTowerAOE",
     "towers/CannonTower",
+    "towers/basic/LightTower",
+    "towers/basic/DarkTower",
+    "towers/basic/WaterTower",
+    "towers/basic/FireTower",
+    "towers/basic/NatureTower",
+    "towers/basic/EarthTower",
 
     -- dual towers
     "towers/duals/MagicTower",
@@ -88,26 +106,21 @@ local requires =
     "creeps/heal",
     "creeps/fast",
     "creeps/regen",
+    "creeps/temporal",
     "creeps/bulky",
     "creeps/vengeance",
     "creeps/boss",
 
-    -- misc
+    -- core game logic
     "wave",
     "voting",
-    "interest",
     "gamesettings",
-    "summoner",
     "constants",
     "wavedata",
-    "elements",
-    "spells",
     "playerdata",
     "sandbox",
     "ElementTD",
     "scoring",
-    "ranking",
-    "rewards",
 }
 
 for _, r in pairs(requires) do

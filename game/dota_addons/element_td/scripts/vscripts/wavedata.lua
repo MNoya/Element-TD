@@ -73,10 +73,11 @@ end
 -- the next wave spawns once the break time is over
 function StartBreakTime(playerID, breakTime, rush_wave)
     local ply = PlayerResource:GetPlayer(playerID)
-    local hero = ElementTD.vPlayerIDToHero[playerID]
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     local playerData = GetPlayerData(playerID)
-    
-    hero:RemoveModifierByName("modifier_silence")
+    if hero then 
+        hero:RemoveModifierByName("modifier_silence")
+    end
 
     -- let's figure out how long the break is
     local wave = playerData.nextWave
@@ -110,7 +111,7 @@ function StartBreakTime(playerID, breakTime, rush_wave)
 
     ShowWaveBreakTimeMessage(playerID, wave, breakTime, msgTime)
 
-    if hero:IsAlive() then
+    if PlayerIsAlive(playerID) then
         -- Update portal
         local sector = playerData.sector + 1
         ShowPortalForSector(sector, wave, playerID)
@@ -155,19 +156,18 @@ function StartBreakTime(playerID, breakTime, rush_wave)
     Timers:CreateTimer("SpawnWaveDelay"..playerID, {
         endTime = breakTime,
         callback = function()
-            local data = GetPlayerData(playerID)
 
             if wave == WAVE_COUNT and not EXPRESS_MODE then
                 CURRENT_BOSS_WAVE = 1
-                if hero:IsAlive() then
-                    Log:info("Spawning the first boss wave for ["..playerID.."] ".. playerData.name)            
+                if PlayerIsAlive(playerID) then
+                    Log:info("Spawning the first boss wave for ["..playerID.."]")            
                     playerData.iceFrogKills = 0
                     playerData.bossWaves = CURRENT_BOSS_WAVE
                 end
                 ShowBossWaveMessage(playerID, CURRENT_BOSS_WAVE)
             else
-                if hero:IsAlive() then
-                    Log:info("Spawning wave " .. wave .. " for ["..playerID.."] ".. data.name)
+                if PlayerIsAlive(playerID) then
+                    Log:info("Spawning wave " .. wave .. " for ["..playerID.."]")
                 end
                 ShowWaveSpawnMessage(playerID, wave)
             end
@@ -180,7 +180,7 @@ function StartBreakTime(playerID, breakTime, rush_wave)
             UpdateWaveInfo(playerID, wave)
 
             -- spawn dat wave
-            if hero:IsAlive() then
+            if PlayerIsAlive(playerID) then
                 SpawnWaveForPlayer(playerID, wave) 
             end
         end
@@ -191,7 +191,7 @@ end
 function StartBreakTime_DeadPlayers(playerID, breakTime, wave)
     for _,v in pairs(playerIDs) do
         local hero = PlayerResource:GetSelectedHeroEntity(v)
-        if not hero:IsAlive() and hero.rush_wave ~= wave then
+        if not PlayerIsAlive(playerID) and hero.rush_wave ~= wave then
             hero.rush_wave = wave --Keep track to don't update a wave info twice
             StartBreakTime(v, breakTime, wave)
         end
@@ -379,6 +379,8 @@ end
 function ShowPortalForSector(sector, wave, playerID)
     local element = string.gsub(creepsKV[WAVE_CREEPS[wave]].Ability1, "_armor", "")
     local portal = SectorPortals[sector]
+    if not portal then return end
+
     local origin = portal:GetAbsOrigin()
     origin.z = origin.z - 200
     origin.y = origin.y - 70
@@ -400,6 +402,7 @@ end
 function ClosePortalForSector(playerID, sector, removeInstantly)
     removeInstantly = removeInstantly or false
     local portal = SectorPortals[sector]
+    if not IsValidEntity(portal) then return end
     if portal.particle then
         ParticleManager:DestroyParticle(portal.particle, removeInstantly)
     end
@@ -469,25 +472,36 @@ function ReduceLivesForPlayer( playerID, lives )
         return
     end
 
-    if hero:GetHealth() <= lives and hero:GetHealth() > 0 then
+    playerData.health = playerData.health - lives
+
+    if playerData.health <= 0 then
         playerData.health = 0
-        hero:ForceKill(false)
+
+        if hero then
+            hero:ForceKill(false)
+        end
+
         if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then
             playerData.scoreObject:UpdateScore( SCORING_GAME_FINISHED )
         else
             playerData.scoreObject:UpdateScore( SCORING_WAVE_LOST )
         end
         ElementTD:EndGameForPlayer(playerID) -- End the game for the dead player
-    elseif hero:IsAlive() then
-        playerData.health = playerData.health - lives
+    elseif PlayerIsAlive(playerID) then
+        
         playerData.waveObject.leaks = playerData.waveObject.leaks + lives
-        if playerData.health < 50 then --When over 50 health, HP loss is covered by losing modifier_bonus_life
+        
+        if hero and playerData.health < 50 then --When over 50 health, HP loss is covered by losing modifier_bonus_life
             hero:SetHealth(playerData.health)
         end
     end
 
     Sounds:EmitSoundOnClient(playerID, "ETD.Leak")
-    hero:CalculateStatBonus()
-    CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=playerData.health/hero:GetMaxHealth() * 100} )
+
+    if hero then
+        hero:CalculateStatBonus()
+        CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=playerData.health/hero:GetMaxHealth() * 100} )
+    end
+
     UpdateScoreboard(playerID)
 end

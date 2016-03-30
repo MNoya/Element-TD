@@ -13,7 +13,7 @@
 		"RunScript"
 		{
 			"TARGET"		"CASTER"
-			"ScriptFile"		"scripts/vscripts/spells.lua"
+			"ScriptFile"		"mechanics/upgrades.lua"
 			"Function"		"UpgradeTower"
 			"tower"		"tidal_tower_2"
 		}
@@ -37,4 +37,5 @@
 			"damage"			"50 250"
 		}
 	}
+	"AbilityCastRange"              "900"
 }

@@ -16,7 +16,7 @@
     {
         "RunScript"
         {
-            "ScriptFile"        "summoner.lua"
+            "ScriptFile"        "mechanics/random.lua"
             "Function"          "ItemRandomUse"
         }
     }

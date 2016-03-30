@@ -1,7 +1,6 @@
 -- Hail (Darkness + Light + Water)
--- This is a long range single target tower. It can automatically activate an ability periodically that gives it multi-shoot. 
---This allows it to attack up to three targets at once doing full damage to each. 
--- Ability lasts a few seconds, and has a few second cooldown. Autocast can be toggled to prevent inopportune casting.
+-- This is a long range single target tower. 
+-- Every X attacks it applies its attack damage to all creeps in its attack range
 
 HailTower = createClass({
         tower = nil,
@@ -17,23 +16,19 @@ HailTower = createClass({
     },
 nil)
 
-function HailTower:OnStormThink()
-    if not self.tower:HasModifier("modifier_disarmed") and not self.tower:HasModifier("modifier_storm") then
-        if self.ability:IsFullyCastable() and self.ability:GetAutoCastState() and self.tower:GetHealthPercent() == 100 and #GetCreepsInArea(self.tower:GetAbsOrigin(), self.findRadius) > 0 then
-            self.tower:CastAbilityImmediately(self.ability, 1)
-        end
-    end
-end
-
 function HailTower:OnAttack(keys)
     local target = keys.target
     local caster = keys.caster
-    if self.tower:HasModifier("modifier_storm") then
-        local targets = 0
-        local creeps = GetCreepsInArea(target:GetAbsOrigin(), 350)
+    
+    self.current_attacks = self.current_attacks + 1
+    if self.current_attacks >= self.attacks_required then
+        self.current_attacks = 0
+        self.tower:EmitSound("Hail.Cast")
+        local damage = self.tower:GetAverageTrueAttackDamage()
+
+        local creeps = GetCreepsInArea(self.tower:GetAbsOrigin(), self.findRadius)
         for _, creep in pairs(creeps) do
             if creep:IsAlive() and creep:entindex() ~= target:entindex() then
-                targets = targets + 1
                 local info = 
                 {
                     Target = creep,
@@ -46,12 +41,28 @@ function HailTower:OnAttack(keys)
                     flExpireTime = GameRules:GetGameTime() + 10,
                 }
                 projectile = ProjectileManager:CreateTrackingProjectile(info)
-
-                if targets == self.bonusTargets then
-                    break
-                end
             end
         end
+    end 
+
+    self.tower:SetModifierStackCount("modifier_storm_passive", self.tower, self.attacks_required - self.current_attacks)
+end
+
+function HailTower:OnAttackLanded(keys)
+    local target = keys.target
+    local damage = self.tower:GetAverageTrueAttackDamage()
+
+    local crit = false
+    if RollPercentage(self.crit_chance) then
+        damage = damage * self.damageMultiplier
+        crit = true
+    end
+
+    local damage_done = DamageEntity(target, self.tower, damage)
+
+    -- Show popup on critz
+    if crit and damage_done then
+        PopupLightDamage(target, math.floor(damage_done))
     end
 end
 
@@ -59,52 +70,28 @@ function HailTower:OnProjectileHit(keys)
     self:OnAttackLanded({target = keys.target})
 end
 
-function HailTower:OnStormCast(keys)
-    self.tower:EmitSound("Hail.Cast")
-    self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_storm", {duration=self.duration})
-
-    -- No cooldown sandbox option
-    if GetPlayerData(self.tower:GetPlayerOwnerID()).noCD then
-        self.ability:EndCooldown()
-    end
-end
-
-function HailTower:OnAttackLanded(keys)
-    local target = keys.target
-    local damage = self.tower:GetAverageTrueAttackDamage()
-    DamageEntity(target, self.tower, damage)
-end
-
 function HailTower:ApplyUpgradeData(data)
-    if data.cooldown and data.cooldown > 1 then
-        self.ability:StartCooldown(data.cooldown)
-    end
-    if data.autocast == false then
-        self.ability:ToggleAutoCast()
+    if data.current_attacks then
+        self.current_attacks = data.current_attacks
+        self.tower:SetModifierStackCount("modifier_storm_passive", self.tower, self.attacks_required - self.current_attacks)
     end
 end
 
 function HailTower:GetUpgradeData()
     return {
-        cooldown = self.ability:GetCooldownTimeRemaining(), 
-        autocast = self.ability:GetAutoCastState()
+        current_attacks = self.current_attacks
     }
 end
 
 function HailTower:OnCreated()
     self.ability = AddAbility(self.tower, "hail_tower_storm")
-    Timers:CreateTimer(0.1, function()
-        if IsValidEntity(self.tower) then
-            self:OnStormThink()
-            return 0.1
-        end
-    end)
-    self.ability:ToggleAutoCast()
-    self.duration = self.ability:GetSpecialValueFor("duration")
-    self.projectileSpeed = tonumber(GetUnitKeyValue(self.towerClass, "ProjectileSpeed"))
-    self.attackOrigin = self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_attack1"))
-    self.bonusTargets = GetAbilitySpecialValue("hail_tower_storm", "targets") - 1
+
+    self.attacks_required = self.ability:GetSpecialValueFor("attacks_required")
+    self.current_attacks = 0
     self.findRadius = self.tower:GetAttackRange() + self.tower:GetHullRadius()
+    self.tower:SetModifierStackCount("modifier_storm_passive", self.tower, self.attacks_required)
+    self.crit_chance = self.ability:GetSpecialValueFor("crit_chance")
+    self.damageMultiplier = self.ability:GetSpecialValueFor("damage_mult") / 100 
 end
 
 RegisterTowerClass(HailTower, HailTower.className)

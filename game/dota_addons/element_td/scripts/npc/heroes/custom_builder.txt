@@ -1,0 +1,50 @@
+//===============================================================================================================
+// HERO: Wisp
+//===============================================================================================================
+"npc_dota_hero_phoenix"
+{
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts"
+	"VoiceFile"					"soundevents/voscripts/game_sounds_vo_wisp.vsndevts"
+	"Model"						"models/heroes/wisp/wisp.vmdl"
+	"Portrait"					"vgui/hud/heroportraits/portrait_wisp"
+	"SoundSet"					"Hero_Wisp"
+	"IdleSoundLoop"				"Hero_Wisp.IdleLoop"
+	"HeroSelectSoundEffect"		"Hero_Wisp.Pick"
+	"ModelScale"				"0.930000"
+
+	"override_hero"				"npc_dota_hero_phoenix"
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
+	"MovementSpeed"				"522"
+
+	"AbilityLayout"				"6"
+	"Ability1"					"build_light_tower_disabled"	
+	"Ability2"					"build_dark_tower_disabled"	
+	"Ability3"					"build_water_tower_disabled"	
+	"Ability4"					"build_fire_tower_disabled"	
+	"Ability5"					"build_nature_tower_disabled"	
+	"Ability6"					"build_earth_tower_disabled"		
+	"Ability8"					"hero_ui"
+	"Ability9"					""
+	"Ability10"					""
+	"Ability11"					""
+	"Ability12"					""
+	"Ability13"					""
+	"Ability14"					""
+	"Ability15"					""
+	"Ability16"					""
+
+	"StatusHealth"				"50"	
+	"StatusHealthRegen"			"0"			
+	"StatusMana"				"0"	
+	"MovementTurnRate"			"20"
+
+	"ArmorPhysical"				"0"			
+	"MagicalResistance"			"0"			
+
+	"AttributeBaseStrength"		"0"			
+	"AttributeStrengthGain"		"0"			
+	"AttributeBaseIntelligence"	"0"			
+	"AttributeIntelligenceGain"	"0"			
+	"AttributeBaseAgility"		"0"			
+	"AttributeAgilityGain"		"0"
+}

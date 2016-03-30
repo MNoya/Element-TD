@@ -13,7 +13,7 @@
 		"RunScript"
 		{
 			"TARGET"		"CASTER"
-			"ScriptFile"		"scripts/vscripts/spells.lua"
+			"ScriptFile"		"mechanics/upgrades.lua"
 			"Function"		"UpgradeTower"
 			"tower"		"hydro_tower"
 		}
@@ -33,7 +33,8 @@
         "01"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"splash_damage"		"270 1350 6750"
+			"splash_damage"		"300 1800 10800"
 		}
 	}
+	"AbilityCastRange"              "900"
 }

@@ -30,12 +30,12 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "42250"
-    "AttackDamageMax"           "42250"
-    "Damage"                    "42250"  
+    "AttackDamageMin"           "63400"
+    "AttackDamageMax"           "63400"
+    "Damage"                    "63400"  
     "AttackRange"               "1500"
     "AttackAcquisitionRange"    "1500"
-    "AttackRate"                "0.66"
+    "AttackRate"                "1"
     "AttackAnimationPoint"      "0.2"
     "ProjectileSpeed"           "2700"
 
@@ -47,7 +47,7 @@
     "BuildTime"                 "3"
     "Element"                   "light"
     "DamageType"                "light"
-    "ScriptClass"               "BasicTower"
+    "ScriptClass"               "LightTower"
     "TowerType"                 "Normal"
     "BuffPriority"              "1"
     

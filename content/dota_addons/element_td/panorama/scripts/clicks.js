@@ -54,6 +54,21 @@ function IsBuilder( entIndex ) {
     return (CustomNetTables.GetTableValue( "builders", entIndex.toString()) || Entities.GetUnitName(entIndex) == "npc_dota_hero_wisp")
 }
 
+function IsCustomBuilding( entityIndex ){
+    var ability_building = Entities.GetAbilityByName( entityIndex, "ability_building")
+    var ability_tower = Entities.GetAbilityByName( entityIndex, "ability_tower")
+    if (ability_building != -1){
+        //$.Msg(entityIndex+" IsCustomBuilding - Ability Index: "+ ability_building)
+        return true
+    }
+    else if (ability_tower != -1){
+        //$.Msg(entityIndex+" IsCustomBuilding Tower - Ability Index: "+ ability_tower)
+        return true
+    }
+    else
+        return false
+}
+
 var cameraDistance = 1500
 GameUI.SetCameraDistance( cameraDistance )
 

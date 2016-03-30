@@ -51,20 +51,23 @@
           <Label id="ElementsDesc" text="#element_allpick_description"/>
         </Panel>
 
-        <Panel id="Option_Endless" class="CheckboxPanel" onmouseover="HoverCheckbox('endless')" onmouseout="MouseOverCheckbox('endless')" onactivate="SelectCheckbox('endless')">
+        <Panel id="Option_Endless" class="CheckboxPanel" 
+            onmouseover="HoverCheckbox('endless', 'EndlessDesc')" onmouseout="MouseOverCheckbox('endless', 'EndlessDesc')" onactivate="SelectCheckbox('endless')">
           <Panel class="CheckboxSub">
-            <ToggleButton id="endless" onactivate="SelectCheckboxClick('')" text="#horde_endless"/>
+            <ToggleButton id="endless" onactivate="SelectCheckboxClick('endless')" text="#horde_endless"/>
           </Panel>
           <Label id="EndlessDesc" class="desc" text="#horde_endless_description"/>
         </Panel>
-        <Panel id="Option_Chaos" class="CheckboxPanel" onmouseover="HoverCheckbox('chaos')" onmouseout="MouseOverCheckbox('chaos')" onactivate="SelectCheckbox('chaos')">
+        <Panel id="Option_Chaos" class="CheckboxPanel" 
+            onmouseover="HoverCheckbox('chaos', 'OrderDesc')" onmouseout="MouseOverCheckbox('chaos', 'OrderDesc')" onactivate="SelectCheckbox('chaos')">
           <Panel class="CheckboxSub">
-            <ToggleButton id="chaos" onactivate="SelectCheckboxClick('')" text="#order_chaos"/>
+            <ToggleButton id="chaos" onactivate="SelectCheckboxClick('chaos')" text="#order_chaos"/>
           </Panel>
           <Label id="OrderDesc" class="desc" text="#order_chaos_description"/>
         </Panel>
-        <Panel id="Option_Express" class="CheckboxPanel" onmouseover="HoverCheckbox('express')" onmouseout="MouseOverCheckbox('express')" onactivate="SelectCheckbox('express')">
-          <ToggleButton id="express" onactivate="SelectCheckboxClick('')" text="#length_express"/>
+        <Panel id="Option_Express" class="CheckboxPanel" 
+            onmouseover="HoverCheckbox('express', 'LengthDesc')" onmouseout="MouseOverCheckbox('express', 'LengthDesc')" onactivate="SelectCheckbox('express')">
+          <ToggleButton id="express" onactivate="SelectCheckboxClick('express')" text="#length_express"/>
           <Label id="LengthDesc" class="desc" text="#length_express_description"/>
         </Panel>
       </Panel>

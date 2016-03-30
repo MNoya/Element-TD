@@ -23,6 +23,17 @@ SCORING_GAME_CLEAR = 2
 SCORING_BOSS_WAVE_CLEAR = 3
 SCORING_GAME_FINISHED = 4
 
+-- Scoring Rules
+POINTS_PER_FROG = 200
+BASE_WAVE_SCORE = 5
+BASE_WAVE_SCORE_EXPRESS = 3
+CLEAN_WAVE_BONUS = 0.25
+SLOW_WAVE_CLEAR_FACTOR = 0.02
+FAST_WAVE_CLEAR_FACTOR = 0.03
+BASE_TIME_CLASSIC = 40
+BASE_TIME_EXPRESS = 20
+BOSS_WAVE_BONUS_SCALING = 0.15
+
 function ScoringObject:UpdateScore( const , wave )
 	local scoreTable = {}
 	local processed = {}
@@ -203,13 +214,15 @@ function ScoringObject:GetWaveCleared( wave )
 	local cleanBonus = self:GetCleanBonus( leaks == 0 )
 	local totalScore = math.ceil(waveClearScore * (1 + cleanBonus) * (1 + speedBonus) * (1 + difficultyBonus))
 
+	totalScore = math.max(0, totalScore)
+
 	return { clearBonus = waveClearScore, cleanBonus = cleanBonus, speedBonus = speedBonus, difficultyBonus = difficultyBonus, totalScore = totalScore }
 end
 
 function ScoringObject:GetBossWaveCleared( bossWave )
 	local playerData = GetPlayerData( self.playerID )
 	local bossBonus = self:GetBossBonus(bossWave-1)
-	local waveClearScore = 7500 * bossBonus --250 per kill * 0.20 every wave past the first
+	local waveClearScore = CREEPS_PER_WAVE * POINTS_PER_FROG * bossBonus
 	local difficultyBonus = self:GetDifficultyBonus()
 	local frogKills = playerData.iceFrogKills
 	local totalScore = math.ceil(waveClearScore * (1 + difficultyBonus))
@@ -251,33 +264,43 @@ function ScoringObject:GetGameFinished()
 	local frogKills = 0 --Total
 	if playerData.iceFrogKills then
 		frogKills = playerData.iceFrogKills
-		local remainder = frogKills % 30
-		extraFrogScore = remainder * 250 * self:GetBossBonus(playerData.bossWaves-1) * (1+self:GetDifficultyBonus())
+		local remainder = frogKills % CREEPS_PER_WAVE
+		extraFrogScore = remainder * POINTS_PER_FROG * self:GetBossBonus(playerData.bossWaves-1) * (1+self:GetDifficultyBonus())
 	end
 
-	totalScore = math.ceil(score)
+	totalScore = math.ceil(score + extraFrogScore)
 
 	return { frogKills = frogKills, totalScore = totalScore }
 end
 
--- takes leaks (lives) per wave (1.20 multiplier)
+-- base wave score, takes a wave number
+function ScoringObject:GetWaveClearBonus( wave )
+	local bonus = wave * CREEPS_PER_WAVE
+	
+	if EXPRESS_MODE then
+		bonus = (wave+BASE_WAVE_SCORE_EXPRESS) * CREEPS_PER_WAVE
+	end	
+	return bonus
+end
+
+-- multiplier after every wave, whether it leaked or not
 function ScoringObject:GetCleanBonus( bool )
 	local bonus = 0
 	if bool then
 		self.cleanWaves = self.cleanWaves + 1
-		bonus = 0.2
+		bonus = CLEAN_WAVE_BONUS
 	end
 	return bonus
 end
 
--- takes time in seconds (30s multiplier 1, each second < 30 multiplier +0.02, above 30> -0.01)
+-- multiplier after every wave, takes time in seconds
 function ScoringObject:GetSpeedBonus( time )
 	local bonus = 1
 	if time > 30 then
-		bonus = bonus - ( time - 30 )*0.02
+		bonus = bonus - ( time - 30 )*SLOW_WAVE_CLEAR_FACTOR
 	elseif time < 30 then
 		self.under30 = self.under30 + 1
-		bonus = bonus + ( 15 - time )*0.02
+		bonus = bonus + ( 30 - time )*FAST_WAVE_CLEAR_FACTOR
 	end
 	return bonus - 1
 end
@@ -287,21 +310,13 @@ function ScoringObject:GetEndSpeedBonus(time)
 	if GameSettings:GetEndless() == "Endless" then
 		return 0
 	else
-		-- Average time for Express is 20 minutes
 		if EXPRESS_MODE then
-			return (20/time*60) - 1
+			return (BASE_TIME_EXPRESS/time*60) - 1
 
-		-- Average time for Classic is 40 minutes
 		else
-			return (40/time*60) - 1
+			return (BASE_TIME_CLASSIC/time*60) - 1
 		end
 	end
-end
-
--- takes wave (Score = wave * CreepCount)
-function ScoringObject:GetWaveClearBonus( wave )
-	local bonus = wave * CREEPS_PER_WAVE
-	return bonus
 end
 
 -- (Player Networth/Base Networth) - 1 based on Difficulty and Classic/Express
@@ -312,29 +327,11 @@ function ScoringObject:GetNetworthBonus()
 	return ((playerNetworth/baseWorth) - 1)
 end
 
---[[-- Creep order bonus
-function ScoringObject:GetCreepOrderBonus()
-	local bonus = 0
-	if GameSettings.order == "Chaos" then
-		bonus = 0.10 -- x1.10
-	end
-	return bonus
-end
-
--- Wave mode bonus
-function ScoringObject:GetEndlessBonus()
-	local bonus = 0
-	if GameSettings:GetEndless() == "Endless" then
-		bonus = 0.25 -- x1.25
-	end
-	return bonus
-end]]
-
--- Classic Only: 1 + 0.20 per wave, applies only to the boss kills
+-- bonus per boss wave after the first one
 function ScoringObject:GetBossBonus( waves )
 	local bonus = 1
 	if waves >= 0 then
-		bonus = 1+waves*0.20
+		bonus = 1+waves*BOSS_WAVE_BONUS_SCALING
 	end
 	return bonus
 end
@@ -354,3 +351,21 @@ function ScoringObject:GetDifficultyBonus()
 end
 
 ----------------------------------------------------
+
+--[[-- Creep order bonus
+function ScoringObject:GetCreepOrderBonus()
+	local bonus = 0
+	if GameSettings.order == "Chaos" then
+		bonus = 0.10 -- x1.10
+	end
+	return bonus
+end
+
+-- Wave mode bonus
+function ScoringObject:GetEndlessBonus()
+	local bonus = 0
+	if GameSettings:GetEndless() == "Endless" then
+		bonus = 0.25 -- x1.25
+	end
+	return bonus
+end]]

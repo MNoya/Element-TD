@@ -14,7 +14,7 @@ QuarkTower = createClass({
     },
 nil)    
 
-function QuarkTower:OnAttackStart(keys)
+function QuarkTower:OnAttack(keys)
     local target = keys.target
 
     if target:entindex() == self.targetEntIndex then
@@ -31,11 +31,23 @@ function QuarkTower:OnAttackStart(keys)
         self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_quantum_beam_indicator", {})    
         self.tower:SetModifierStackCount("modifier_quantum_beam_indicator", self.ability, self.consecutiveAttacks)
     else
-        self.targetEntIndex = target:entindex()    
-        self.tower:SetBaseDamageMin(self.baseDamage)    
-        self.tower:SetBaseDamageMax(self.baseDamage)    
-        self.tower:RemoveModifierByName("modifier_quantum_beam_indicator")    
-        self.consecutiveAttacks = 0    
+        self.targetEntIndex = target:entindex() 
+        self.consecutiveAttacks = math.floor(self.consecutiveAttacks/2)
+
+        if (self.consecutiveAttacks == 0) then
+            self.tower:SetBaseDamageMin(self.baseDamage)    
+            self.tower:SetBaseDamageMax(self.baseDamage)    
+            self.tower:RemoveModifierByName("modifier_quantum_beam_indicator")    
+            self.consecutiveAttacks = 0 
+        else
+            local attackDamage = self.baseDamage
+            local newDamage = attackDamage * math.pow(self.damageIncrease, self.consecutiveAttacks)
+            self.tower:SetBaseDamageMax(newDamage)
+            self.tower:SetBaseDamageMin(newDamage)
+            
+            self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_quantum_beam_indicator", {})    
+            self.tower:SetModifierStackCount("modifier_quantum_beam_indicator", self.ability, self.consecutiveAttacks)
+        end
     end
 end
 

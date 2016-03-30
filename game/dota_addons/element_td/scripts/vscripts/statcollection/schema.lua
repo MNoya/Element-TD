@@ -56,6 +56,7 @@ function BuildGameArray()
     game.str = START_TIME
     game.fin = END_TIME or (GetSystemDate() .. " " .. GetSystemTime())
     game.ver = VERSION
+    game.rid = (statCollection and statCollection.matchID) or "0"
     return game
 end
 

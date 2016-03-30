@@ -3,15 +3,16 @@ function RelocatePlayer(trigger)
     local playerID = activator:IsRealHero() and activator:GetPlayerID()
 
     if playerID and PlayerResource:IsValidPlayerID(playerID) then
-        local playerData = GetPlayerData(playerID)
-        local sector = playerData.sector + 1
-        activator:SetAbsOrigin(SpawnLocations[sector])
+        if not Sandbox:IsDeveloper(playerID) then      
+            local playerData = GetPlayerData(playerID)
+            local sector = playerData.sector + 1
+            activator:SetAbsOrigin(SpawnLocations[sector])
 
-        ExecuteOrderFromTable({
-            UnitIndex = activator:entindex(),
-            OrderType = DOTA_UNIT_ORDER_HOLD_POSITION
-        })
-       
+            ExecuteOrderFromTable({
+                UnitIndex = activator:entindex(),
+                OrderType = DOTA_UNIT_ORDER_HOLD_POSITION
+            })
+       end
     end
 end
 

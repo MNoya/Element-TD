@@ -16,4 +16,5 @@
 		"water"		"3"
 		"water"		"3"
 	}
+	"AbilityCastRange"              "900"
 }

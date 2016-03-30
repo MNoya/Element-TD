@@ -65,7 +65,7 @@ function Build( event )
         end
 
         -- Play a sound
-        Sounds:EmitSoundOnClient(playerID, "Building.Placement") --DOTA_Item.ObserverWard.Activate
+        Sounds:EmitSoundOnClient(playerID, "DOTA_Item.ObserverWard.Activate")
     end)
 
     -- The construction failed and was never confirmed due to the gridnav being blocked in the attempted area
@@ -91,7 +91,8 @@ function Build( event )
     -- A building unit was created
     event:OnConstructionStarted(function(unit)
         BuildingHelper:print("Started construction of " .. unit:GetUnitName() .. " " .. unit:GetEntityIndex())
-        -- Play construction sound
+        -- Play construction animation
+        Rewards:CustomAnimation(playerID, caster)
 
         -- Units can't attack while building
         unit:AddNewModifier(unit, nil, "modifier_attack_disabled", {})
@@ -122,9 +123,35 @@ function Build( event )
             local scriptObject = TOWER_CLASSES[scriptClassName](unit, building_name)
             unit.scriptClass = scriptClassName
             unit.scriptObject = scriptObject
-            unit.scriptObject:OnCreated()
         else
             Log:error("Unknown script class, " .. scriptClassName .. " for tower " .. building_name)
+        end
+
+        local steamID32 = PlayerResource:GetSteamAccountID(playerID)
+        local steamID64 = Rewards:ConvertID64(steamID32)
+        local rewards = Rewards.file[steamID64]
+        if rewards then
+            local models = rewards["change_models"]
+            if models and models[unit:GetUnitName()] then
+                local data = models[unit:GetUnitName()]
+                if data.model then
+                    unit:SetModel(data.model)
+                    unit:SetOriginalModel(data.model)
+                    unit.override_model = data.model
+                    unit:StartGesture(ACT_DOTA_SPAWN)
+
+                    if data.scale then
+                        unit.overrideMaxScale = data.scale
+                        unit:SetModelScale(data.scale)
+                    end
+
+                    if data.offset then
+                        local origin = unit:GetAbsOrigin()
+                        origin.z = origin.z + data.offset
+                        unit:SetAbsOrigin(origin)
+                    end
+                end
+            end
         end
 
         -- Adjust health to the buildings TotalCost
@@ -141,6 +168,7 @@ function Build( event )
 
         -- Normalize Hull Radius
         unit:SetHullRadius(HULL_RADIUS)
+        ToggleGridForTower(unit, true)
     end)
 
     -- A building finished construction
@@ -176,12 +204,19 @@ function Build( event )
             AddAbility(unit, "attack_ground")
         end
 
+        unit.scriptObject:OnCreated()
         AddAbility(unit, unit.damageType .. "_passive")
         if GetUnitKeyValue(building_name, "AOE_Full") and GetUnitKeyValue(building_name, "AOE_Half") then
             AddAbility(unit, "splash_damage_orb")
         end
 
         UpdateScoreboard(playerID)
+
+        if unit.override_model then
+            unit:SetModel(unit.override_model)
+            unit:SetOriginalModel(unit.override_model)
+            unit:StartGesture(ACT_DOTA_IDLE)
+        end
     end)
 
     -- These callbacks will only fire when the state between below half health/above half health changes.
@@ -198,6 +233,7 @@ function Build( event )
     end)
 end
 
+-- item_build_periodic_tower_disabled
 function PeriodicWarn( event )
     local caster = event.caster
     local playerID = caster:GetPlayerOwnerID()

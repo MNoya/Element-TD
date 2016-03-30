@@ -33,14 +33,16 @@
     "VisionDaytimeRange"        "1900"
     "VisionNighttimeRange"        "1900"
     "Level"        "2"
-    "Cost"        "750"
-    "TotalCost"        "1200"
+    "Cost"        "900"
+    "TotalCost"        "1350"
     "Element"
     {
         "1"        "dark"
         "2"        "fire"
     }
-    "Damage"        "3000"
+    "Damage"        "3600"
+    "AttackDamageMin"        "3600"
+    "AttackDamageMax"        "3600"
     "DamageType"        "dark"
     "ScriptClass"        "MagicTower"
     "TowerType"        "Normal"
@@ -66,8 +68,6 @@
         "Count"        "1"
         "1"        "magic_tower_3"
     }
-    "AttackDamageMin"        "3000"
-    "AttackDamageMax"        "3000"
     "Creature"
     {
        "AttachWearables" // Curse of the Malignant Corruption Set

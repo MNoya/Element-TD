@@ -1,0 +1,308 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/profile.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/profile/profile.js" />
+    </scripts>
+    <Panel hittest='false' class="ProfileHud">
+
+        <Panel class="Hide" id="ProfileToggleContainer">
+            <Panel id="MyProfileButton" class="ProfileButton" onactivate="ToggleProfile()">
+                <Label id="New" text="#etd_new_feature"/>
+                <Label id="ProfileHeaderTitle" text="#profile_title" />
+                <Panel id="PopoutArrow" class="OpenMenuArrow" />
+            </Panel>
+            <Panel id="CustomBuilderButton" class="ProfileButton" onactivate="ToggleCustomBuilders()">
+                <Label id="ProfileHeaderTitle" text="#profile_builders" />
+                <Panel id="PopoutArrow" class="OpenMenuArrow" />
+            </Panel>
+            <DOTAAvatarImage id="AvatarImageMini" steamid=""/>
+        </Panel>
+
+        <Panel class="Hide" id="Profile">
+            <Panel hittest="false" id="TopProfilePanel">
+                <DOTAAvatarImage id="AvatarImageProfile" steamid=""/>
+                <DOTAUserName id="UserNameProfile" steamid=""/>
+
+                <Panel id="GamesWonPanel" class="TopProfileStatContainer">
+                    <Label class="TopProfileStatLabel" text="#profile_games_won"/>
+                    <Label id="GamesWon" class="TopProfileStat" text="0"/>
+                </Panel>
+
+                <Panel id="BestScorePanel" class="TopProfileStatContainer">
+                    <Label class="TopProfileStatLabel" text="#profile_best_score"/>
+                    <Label id="BestScore" class="TopProfileStat" text="--"/>
+                </Panel>
+
+                <Panel id="CurrentRanksPanel" class="TopProfileStatContainer">                    
+                    <Label id="CurrentRanksLabel" text="#profile_current_ranks"/>
+                    <Panel id="TripleRankContainer">
+                        <Panel class="SingleRankContainer3">
+                            <Label id="ClassicRank" class="TopProfileStatTriple" text="--"/>
+                            <Label class="TopProfileStatSubLabel" text="#profile_classic_ranks"/>
+                        </Panel>
+
+                        <Panel class="SingleRankContainer3">
+                            <Label id="ExpressRank" class="TopProfileStatTriple" text="--"/>
+                            <Label class="TopProfileStatSubLabel" text="#profile_express_ranks"/>
+                        </Panel>
+
+                        <Panel class="SingleRankContainer3">
+                            <Label id="FrogsRank" class="TopProfileStatTriple" text="--"/>
+                            <Label class="TopProfileStatSubLabel" text="#profile_frogs_ranks"/>
+                        </Panel>
+                    </Panel>
+                </Panel>
+
+                <Label id="CloseButton" onactivate="ToggleProfile()"/>
+            </Panel>
+
+            <Panel id="ProfileMenuContainer">
+
+                <Panel hittest="false" id="LeftPanel">
+                    <Panel id="ProfileTabs">
+                        <Button class="ProfileTabButton" onactivate="ShowProfileInfo('stats')">
+                            <Label id="stats_radio" class="ProfileTab ActiveTab" text="#profile_lifetime_stats"/>
+                        </Button>
+
+                        <Button id="MatchesButton" class="ProfileTabButton" onactivate="ShowProfileInfo('matches')">
+                            <Label id="matches_radio" class="ProfileTab" text="#profile_matches"/>
+                        </Button>
+
+                        <Button id="AchievButton" class="ProfileTabButton" onactivate="ShowProfileInfo('achievements')">
+                            <Label id="achievements_radio" class="ProfileTab" text="#profile_achievements"/>
+                        </Button>
+                    </Panel>
+
+                    <Panel id="GeneralStats">
+                        <Label class="SectionTitle" text="#profile_general"/>
+                        <Panel id="GeneralStatsContainer">
+                            <Panel class="StatsColumn">
+                                <Panel class="StatEntry">
+                                    <Label id="kills" class="Stat" text="0"/>
+                                    <Label class="StatLabel" text="#profile_kills"/>
+                                </Panel>
+
+                                <Panel class="StatEntry">
+                                    <Label id="frogKills" class="Stat" text="0"/>
+                                    <Image id="OSfrog"/>
+                                    <Label class="StatLabel" text="#profile_frogKills"/>
+                                </Panel>
+                            </Panel>
+
+                            <Panel class="StatsColumn">
+                                <Panel class="StatEntry">
+                                    <Label id="networth" class="Stat gold" text="0"/>
+                                    <Label class="StatLabel " text="#profile_networth"/>
+                                </Panel>
+
+                                <Panel class="StatEntry">
+                                    <Label id="interestGold" class="Stat gold" text="0"/>
+                                    <Label class="StatLabel" text="#profile_interestGold"/>
+                                </Panel>
+                            </Panel>
+
+                            <Panel class="StatsColumn">
+                                <Panel class="StatEntry">
+                                    <Label id="cleanWaves" class="Stat clean" text="0"/>
+                                    <Label class="StatLabel" text="#profile_cleanWaves"/>
+                                </Panel>
+
+                                <Panel class="StatEntry">
+                                    <Label id="under30" class="Stat under30" text="0"/>
+                                    <Label class="StatLabel" text="#profile_under30"/>
+                                </Panel>
+                            </Panel>
+                        </Panel>
+                    </Panel>
+
+                    <Panel id="GameModeStats">
+                        <Label class="SectionTitle" text="#profile_gamemode"/>
+
+                        <Panel id="GamesPlayedPanel">
+                            <Label id="GamesPlayedLabel" text="#profile_games_played"/>
+                            <Label id="gamesPlayed" text="0"/>
+                        </Panel>
+
+                        <Panel class="BarContainer">
+                            <Label class="SectionSubTitle" text="#profile_difficulties"/>
+                            <Panel id="GameModeBars">
+                                <Label id="normal" class="GameModeBar" onmouseover="HoverDiff('normal')" onmouseout="DOTAHideTitleTextTooltip()" text=""/>
+                                <Label id="hard" class="GameModeBar" onmouseover="HoverDiff('hard')" onmouseout="DOTAHideTitleTextTooltip()" text=""/>
+                                <Label id="veryhard" class="GameModeBar" onmouseover="HoverDiff('veryhard')" onmouseout="DOTAHideTitleTextTooltip()" text=""/>
+                                <Label id="insane" class="GameModeBar" onmouseover="HoverDiff('insane')" onmouseout="DOTAHideTitleTextTooltip()" text=""/>
+                            </Panel>
+                        </Panel>
+
+                        <Panel class="BarContainer">
+                            <Label class="SectionSubTitle" text="#horde_endless"/>
+                            <Panel id="ChaosBars">
+                                <Label id="order_chaos" class="GameModeBar"/>
+                                <Label id="not_order_chaos" class="GameModeBar"/>
+                            </Panel>
+                        </Panel>
+
+                        <Panel class="BarContainer">
+                            <Label class="SectionSubTitle" text="#order_chaos"/>
+                            <Panel id="RushBars">
+                                <Label id="horde_endless" class="GameModeBar"/>
+                                <Label id="not_horde_endless" class="GameModeBar"/>
+                            </Panel>
+                        </Panel>
+
+                        <Panel class="BarContainer">
+                            <Label class="SectionSubTitle" text="#length_express"/>
+                            <Panel id="ExpressBars">
+                                <Label id="express" class="GameModeBar"/>
+                                <Label id="not_express" class="GameModeBar"/>
+                            </Panel>
+                        </Panel>
+
+                    </Panel>
+
+                    <Panel id="TowerStats">
+                        <Label class="SectionTitle" text="#profile_tower"/>
+                        <Panel id="TowerStatContainer">
+                            <!--First Column: general -->
+                            <Panel id="TowerStatContainerLeft">
+                                <Panel class="InfoTowerStats">
+                                    <Panel class="TowerStatPanel">
+                                        <Label id="towersBuilt" class="TowerStat" text="0"/>
+                                        <Label class="StatLabel" text="#profile_towers_built"/>
+                                    </Panel>
+
+                                    <Panel class="TowerStatPanel">
+                                        <Label id="towersSold" class="TowerStat" text="0"/>
+                                        <Label class="StatLabel" text="#profile_towers_sold"/>
+                                    </Panel>
+                                </Panel>
+
+                                <Panel class="TowerStatCont">
+                                    <Panel id="RandomPanel" class="TowerStatPanel">
+                                        <Image id="RandomImage"/>
+                                        <Panel class="TowerLabels">
+                                            <Label class="TowerSubLabels" text="#element_random"/>
+                                            <Label id="random" class="TowerName"/>
+                                        </Panel>
+                                    </Panel>
+
+                                    <Panel id="FirstDualPanel" class="TowerStatPanel">
+                                        <Image class="TowerImage" src="file://{images}/spellicons/towers/quark.png"/>
+                                        <Panel class="TowerLabels">
+                                            <Label class="TowerSubLabels" text="#profile_first_dual"/>
+                                            <Label id="dual" class="TowerName" text="#quark_tower_name"/>
+                                        </Panel>
+                                    </Panel>
+
+                                    <Panel id="FirstTriplePanel" class="TowerStatPanel">
+                                        <Image class="TowerImage" src="file://{images}/spellicons/towers/nova.png"/>
+                                        <Panel class="TowerLabels">
+                                            <Label class="TowerSubLabels" text="#profile_first_triple"/>
+                                            <Label id="triple" class="TowerName" text="#nova_tower_name"/>
+                                        </Panel>
+                                    </Panel>
+                                </Panel>
+                            </Panel>
+
+                            <!--Second Column: usage pie chart -->
+                            <Panel id="ElementUsage">
+                                <Panel id="ElementPieChart">
+                                    <Image id="light" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/light.png"/>
+                                    <Image id="dark" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/dark.png"/>
+                                    <Image id="water" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/water.png"/>
+                                    <Image id="fire" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/fire.png"/>
+                                    <Image id="nature" class="ElementUsageImage" src="file://{resources}/images/custom_game/resources/nature.png"/>
+                                    <Image id="earth" class="ElementUsageImage"   src="file://{resources}/images/custom_game/resources/earth.png"/>
+                                </Panel>
+                            </Panel>
+
+                            <!--Third Column: misc & pie chart numbers -->
+                            <Panel id="TowerStatContainerRight">
+                                <Panel class="InfoTowerStats" id='RightTowerStats'>
+                                    <Panel class="TowerStatPanel">
+                                        <Label id="goldTowerEarn" class="TowerStat gold" text="0"/>
+                                        <Image class="TowerImageCircle" src="file://{images}/spellicons/towers/gold.png"/>
+                                        <Label class="StatLabel " text="#profile_gold_tower"/>
+                                    </Panel>
+
+                                    <Panel class="TowerStatPanel">
+                                        <Label id="lifeTowerKills" class="TowerStat life" text="0"/>
+                                        <Image class="TowerImageCircle" src="file://{images}/spellicons/towers/life.png"/>
+                                        <Label class="StatLabel" text="#profile_life_tower"/>
+                                    </Panel>
+                                </Panel>
+
+                                <Panel id="ElementLabels">
+                                    <Panel class="ElementLabelPanel">
+                                        <Label id="light_usage" class="ElementUsageLabel"/>
+                                        <Label class="ElementLabel" html="true" text="#light"/>
+                                    </Panel>
+
+                                    <Panel class="ElementLabelPanel">
+                                        <Label id="dark_usage" class="ElementUsageLabel"/>
+                                        <Label class="ElementLabel" html="true" text="#dark"/>
+                                    </Panel>
+
+                                    <Panel class="ElementLabelPanel">
+                                        <Label id="water_usage" class="ElementUsageLabel"/>
+                                        <Label class="ElementLabel" html="true" text="#water"/>
+                                    </Panel>
+
+                                    <Panel class="ElementLabelPanel">
+                                        <Label id="fire_usage" class="ElementUsageLabel"/>
+                                        <Label class="ElementLabel" html="true" text="#fire"/>
+                                    </Panel>
+
+                                    <Panel class="ElementLabelPanel">
+                                        <Label id="nature_usage" class="ElementUsageLabel"/>
+                                        <Label class="ElementLabel" html="true" text="#nature"/>
+                                    </Panel>
+
+                                    <Panel class="ElementLabelPanel">
+                                        <Label id="earth_usage" class="ElementUsageLabel"/>
+                                        <Label class="ElementLabel" html="true" text="#earth"/>
+                                    </Panel>    
+                                </Panel>
+                            </Panel>
+                        </Panel>
+                    </Panel>
+                </Panel>
+
+                <Panel id="RightPanel">
+                    <Panel id="FriendRanksHeader">
+                        <Label id="FriendRanksTitle" class="ProfilePanelHeader" text="#profile_friends" />
+                        <Panel id="FriendRanksTabs">
+                            <Button class="LeaderboardButton" onactivate="ShowFriendRanks('classic')">
+                                <Label id="classic_radio" class="ProfileTab" text="#profile_classic_ranks"/>
+                            </Button>
+
+                            <Button class="LeaderboardButton" onactivate="ShowFriendRanks('express')">
+                                <Label id="express_radio" class="ProfileTab" text="#profile_express_ranks"/>
+                            </Button>
+
+                            <Button class="LeaderboardButton" onactivate="ShowFriendRanks('frogs')">
+                                <Label id="frogs_radio" class="ProfileTab" text="#profile_frogs_ranks"/>
+                            </Button>
+                        </Panel>
+
+                        <Panel id="FriendRanksCategories">
+                            <Label id="Rank" class="FriendCategory" text="#profile_rank" />
+                            <Label id="Score" class="FriendCategory" text="#profile_score" />
+                            <Label id="GlobalRank" class="FriendCategory" text="#profile_global_rank" />
+                            <Label id="Percentile" class="FriendCategory" text="#profile_percentile" />
+                        </Panel>
+                    </Panel>
+                    <Panel id="FriendsContainer">
+
+                    </Panel>
+                </Panel>
+            </Panel>
+        </Panel>
+
+        <Panel class="Hide" id="CustomBuilders">
+            <Label id="Soon" text="#profile_soon" />
+        </Panel>
+
+    </Panel>
+</root>
