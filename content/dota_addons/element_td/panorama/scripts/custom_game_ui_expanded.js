@@ -68,6 +68,22 @@ GameUI.FormatVersion = function (version_string) {
     return "v"+version_string
 }
 
+// Converts Seconds into a nice duration format
+GameUI.FormatDuration = function(sec_num) {
+    var hours   = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+    if (minutes < 10) {minutes = "0"+minutes;}
+    if (seconds < 10) {seconds = "0"+seconds;}
+
+    var time    = '';
+    if (parseInt(hours) > 0) time = time+hours+':'
+    time = time+minutes+":"+seconds
+
+    return time;
+}
+
 GameUI.SetTextSafe = function ( panel, childName, textValue ) {
     if ( panel === null )
         return;
@@ -75,6 +91,16 @@ GameUI.SetTextSafe = function ( panel, childName, textValue ) {
     if ( childPanel === null )
         return;
     childPanel.text = textValue;
+}
+
+GameUI.SetClassForChildInLayout = function (className, childName, panel, condition) {
+    if ( panel === null )
+        return;
+    var childPanel = panel.FindChildInLayoutFile( childName )
+    if ( childPanel === null )
+        return;
+    if (childPanel)
+        childPanel.SetHasClass(className, condition )
 }
 
 GameUI.CreatePlayerRank = function(parent, percentile, rank, playerID) {

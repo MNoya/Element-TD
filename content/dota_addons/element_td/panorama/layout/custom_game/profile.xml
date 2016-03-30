@@ -280,9 +280,9 @@
                     <Panel id="matches_Tab" class='LeftTab'>
                         <Panel id="Matches">
                             <Panel id="MatchesTopRow">
-                                <Label class="FriendCategory MatchID_Col" text="#profile_match_id" />
-                                <Label class="FriendCategory MatchScore_Col" text="#profile_score" />
                                 <Label class="FriendCategory MatchModes_Col" text="#profile_modes" />
+                                <Label class="FriendCategory MatchTime_Col" text="#profile_match_time" />
+                                <Label class="FriendCategory MatchScore_Col" text="#profile_score" />
                                 <Label class="FriendCategory MatchElements_Col" text="#etd_tower_table_elements" />
                             </Panel>
 
@@ -314,11 +314,11 @@
                             </Button>
 
                             <Button class="LeaderboardButton" onactivate="ShowFriendRanks('express')">
-                                <Label id="express_radio" class="ProfileTab" text="#profile_express_ranks"/>
+                                <Label id="express_radio" class="ProfileTab" text="#profile_express"/>
                             </Button>
 
                             <Button class="LeaderboardButton" onactivate="ShowFriendRanks('frogs')">
-                                <Label id="frogs_radio" class="ProfileTab" text="#profile_frogs_ranks"/>
+                                <Label id="frogs_radio" class="ProfileTab" text="#profile_frogs"/>
                             </Button>
                         </Panel>
 

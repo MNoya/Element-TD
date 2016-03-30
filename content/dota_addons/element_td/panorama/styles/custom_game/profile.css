@@ -1122,12 +1122,6 @@ Label
     horizontal-align: center;
 }
 
-.MatchID_Col
-{
-    width: 100px;
-    margin-left: 15px;
-}
-
 .MatchScore_Col
 {
     width: 60px;
@@ -1137,10 +1131,14 @@ Label
 
 .MatchModes_Col
 {
-    width: 100px;
-    margin-left: 20px;
-    text-align: center;
+    width: 120px;
+    margin-left: 5px;
     horizontal-align: center;
+}
+
+.MatchTime_Col
+{
+    width: 100px;
 }
 
 .MatchElements_Col

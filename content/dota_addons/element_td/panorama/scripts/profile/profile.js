@@ -166,15 +166,12 @@ function SetStats(player_info)
 var elementNames = ["light", "dark", "water", "fire", "nature", "earth"]
 function CreateMatch(info) {
     var matchID = info['matchID']
-    var score = info['score']
     var version = info['version']
 
     var panel = $.CreatePanel( "Panel", $("#MatchesContainer"), "Match_"+matchID);
     panel.BLoadLayout( "file://{resources}/layout/custom_game/profile_match.xml", false, false );
-    GameUI.SetTextSafe(panel, "MatchID", matchID)
-    GameUI.SetTextSafe(panel, "MatchScore", GameUI.FormatScore(score))
 
-    $.Msg(info)
+    // Modes
     var difficulty = info["difficulty"]
     var diff = "-";
     if (difficulty == "Normal")
@@ -196,20 +193,18 @@ function CreateMatch(info) {
         diffPanel.SetHasClass( "Insane", diff == "I");
     }
 
-    var chaos = info["order"]
-    var chaosPanel = panel.FindChildInLayoutFile( "Chaos" );
-    if (chaosPanel)
-        chaosPanel.SetHasClass( "Hide", chaos == "Normal" )
+    // Hide any default game mode choices
+    GameUI.SetClassForChildInLayout("Hide", "Express", panel, ! info["mode"] == "1")
+    GameUI.SetClassForChildInLayout("Hide", "Chaos", panel, info["order"] == "Normal")
+    GameUI.SetClassForChildInLayout("Hide", "Rush", panel, info["horde"] == "Normal")
+    GameUI.SetClassForChildInLayout("Hide", "Random", panel, info["random"] == "AllPick")
 
-    var rush = info["horde"]
-    var rushPanel = panel.FindChildInLayoutFile( "Rush" );
-    if (rushPanel)
-        rushPanel.SetHasClass( "Hide", rush == "Normal" )
+    // Time
+    //"date":"2016-03-27 04:52:54","time_start":"03/26/16 14:49:04","time_end":"03/26/16 14:52:23"
+    GameUI.SetTextSafe(panel, "MatchTime", GameUI.FormatDuration(info["duration"]))
 
-    var random = info["random"]
-    var randomPanel = panel.FindChildInLayoutFile( "Random" );
-    if (randomPanel)
-        randomPanel.SetHasClass( "Hide", random == "AllPick" )
+    // Score
+    GameUI.SetTextSafe(panel, "MatchScore", GameUI.FormatScore(info['score']))
 
     // Elements
     for (var i in elementNames)

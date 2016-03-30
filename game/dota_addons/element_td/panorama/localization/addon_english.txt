@@ -274,6 +274,7 @@
         "profile_back"          "Back to My Profile"
         "profile_milestones"    "Milestones"
         "profile_match_id"      "Match ID"
+        "profile_match_time"    "Time"
         "profile_modes"         "Modes"
         "profile_elements_used" "Elements Used"
 

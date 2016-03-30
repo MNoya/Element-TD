@@ -3,15 +3,16 @@
         <include src="file://{resources}/styles/custom_game/profile.css" />
     </styles>
     <Panel hittest="false" class="ProfileMatch">
-        <Label id="MatchID" class="MatchText MatchID_Col" text="" />
-        <Label id="MatchScore" class="MatchText MatchScore_Col" text="" />
         <Panel id="MatchModes" class="MatchModes_Col">
             <Label id="Difficulty" class="MatchMode" text="" />
-            <!--<Label id="Express" class="MatchMode" text="E" />-->
+            <Label id="Express" class="MatchMode" text="E" />
             <Label id="Rush" class="MatchMode" text="R" />
             <Label id="Chaos" class="MatchMode" text="C" />
             <Label id="Random" class="MatchMode" text="R" />
         </Panel>
+
+        <Label id="MatchTime" class="MatchText MatchTime_Col" text="" />
+        <Label id="MatchScore" class="MatchText MatchScore_Col" text="" />
 
         <Panel id="ElementsContainer" class="MatchElements_Col">
             <Panel id="ElemSubContainer">

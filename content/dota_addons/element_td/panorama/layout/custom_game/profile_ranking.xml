@@ -9,13 +9,13 @@
         <Panel id="OneBatchTwoBatch">
             <Panel hittest="false" id="BadgeClassic" class="RankingPlayerProfile">
                 <Label hittest="false" id="BadgePercentile_Classic" class="BadgePercentile" text=""/>
-                <Label hittest="false" class="BadgeText" text="#profile_classic_ranks"/>
+                <Label hittest="false" class="BadgeText" text="#profile_classic"/>
                 <Label hittest="false" id="BadgeRank_Classic" class="BadgeRank" text=""/>
             </Panel>
 
             <Panel hittest="false" id="BadgeExpress" class="RankingPlayerProfile">
                 <Label hittest="false" id="BadgePercentile_Express" class="BadgePercentile" text=""/>
-                <Label hittest="false" class="BadgeText" text="#profile_express_ranks"/>
+                <Label hittest="false" class="BadgeText" text="#profile_express"/>
                 <Label hittest="false" id="BadgeRank_Express" class="BadgeRank" text=""/>
             </Panel>
         </Panel>
