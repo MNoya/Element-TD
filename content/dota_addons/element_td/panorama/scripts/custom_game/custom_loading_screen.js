@@ -1,5 +1,5 @@
 var transition_time = 2
-var time_per_tip = 15
+var time_per_tip = 20
 var count = CountTips();
 var currentTip = -1;
 
@@ -41,5 +41,5 @@ function CountTips(){
 };
 
 (function () {
-    $.Schedule(45, ShowTips);
+    ShowTips()
 })();

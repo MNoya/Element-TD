@@ -200,7 +200,6 @@
         "sandbox_quit"          "End Game"
         "sandbox_wait"          "Please wait! Loading assets..."
 
-        "loading_screen_support" "If you like the game then consider supporting us at www.eletd.com/donate and claim great rewards too!"
         "loading_screen_tip_0"  "Sandbox Mode is available for single player lobbies and allows you to easily test towers & builds."
         "loading_screen_tip_1"  "Slows stack multiplicatively, meaning three 10% slows are worse than a single 30% slow."
         "loading_screen_tip_2"  "In All Pick, you can still get Random elements if you -random or use the item on the summoner."
