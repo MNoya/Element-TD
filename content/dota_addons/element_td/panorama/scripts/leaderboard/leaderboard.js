@@ -113,5 +113,4 @@ function ToggleLeaderboard()
     if (!Leaderboard.BHasClass("Hide"))
         Setup()
     Game.EmitSound("ui_generic_button_click")
-    GameUI.AcceptWheel()
 }

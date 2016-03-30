@@ -530,10 +530,11 @@ function LoadLocalProfile() {
 (function () {
     $.Schedule(0.1, function()
     {
-        if (Players.HasCustomGameTicketForPlayerID(Game.GetLocalPlayerID()) || GameUI.RewardLevel(GameUI.GetLocalPlayerSteamID()) != 0)
+        if (Players.HasCustomGameTicketForPlayerID(Game.GetLocalPlayerID()) || GameUI.RewardLevel(GameUI.GetLocalPlayerSteamID()) == "Developer")
         {
             MakeButtonVisible()
             LoadLocalProfile()
+            GameUI.AcceptWheel()
         }
     })
 })();
