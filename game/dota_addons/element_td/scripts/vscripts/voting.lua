@@ -219,23 +219,35 @@ function FinalizeVotes()
 	Timers:CreateTimer("PostVoteTimer", {
 		endTime = 1,
 		callback = function()
-			for _, plyID in pairs(playerIDs) do
-				StartBreakTime(plyID, GameSettings.length.PregameTime)
-				if GameSettings.length.PregameTime == 30 then
-					EmitAnnouncerSound("announcer_announcer_count_battle_30")
-				else
-					local delay = GameSettings.length.PregameTime - 30
-					if delay > 0 then
-						Timers:CreateTimer(delay, function()
-							EmitAnnouncerSound("announcer_announcer_count_battle_30")
-						end)
-					end
-				end
+
+			if COOP_MAP then
+				StartBreakTimeCoop(GameSettings.length.PregameTime) -- maybe coop mode should have longer pregame time?
 				-- Display player ranks
 				Timers:CreateTimer(5, function()
 					Ranking:ShowPlayerRanks()
 				end)
+			else
+				-- TODO: ask Noya or a_dizzle about this loop
+				-- why are we calling EmitAnnouncerSound and ShowPlayerRanks multiple times (once per player)?
+				for _, plyID in pairs(playerIDs) do
+					StartBreakTime(plyID, GameSettings.length.PregameTime)
+					if GameSettings.length.PregameTime == 30 then
+						EmitAnnouncerSound("announcer_announcer_count_battle_30")
+					else
+						local delay = GameSettings.length.PregameTime - 30
+						if delay > 0 then
+							Timers:CreateTimer(delay, function()
+								EmitAnnouncerSound("announcer_announcer_count_battle_30")
+							end)
+						end
+					end
+					-- Display player ranks
+					Timers:CreateTimer(5, function()
+						Ranking:ShowPlayerRanks()
+					end)
+				end
 			end
+
 		end
 	})
 end

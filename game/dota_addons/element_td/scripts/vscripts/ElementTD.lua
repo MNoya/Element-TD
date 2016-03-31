@@ -183,7 +183,7 @@ function ElementTD:OnGameStateChange(keys)
 
         if COOP_MAP then
             SendToServerConsole("customgamesetup_auto_assign_players")
-            SendToServerConsole("customgamesetup_set_remaining_time 5")
+            SendToServerConsole("customgamesetup_set_remaining_time 10")
         end
 
         -- Load donation rewards

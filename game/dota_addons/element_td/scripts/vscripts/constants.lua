@@ -134,10 +134,18 @@ function GenerateAllConstants()
 end
 
 function generateElementalSummonerLocations()
-    for i=1,8 do
-        local summoner = Entities:FindByName(nil, "summoner_"..i)
-        if summoner then
-          ElementalSummonerLocations[i] = summoner:GetAbsOrigin()
+    if COOP_MAP then
+        -- TODO: each summor should be placed above the lane entrance
+        for i = 1, 8 do
+            ElementalSummonerLocations[i] = Vector(0, 4000, 0)
+        end
+    else
+
+        for i = 1, 8 do
+            local summoner = Entities:FindByName(nil, "summoner_"..i)
+            if summoner then
+                ElementalSummonerLocations[i] = summoner:GetAbsOrigin()
+            end
         end
     end
 end
