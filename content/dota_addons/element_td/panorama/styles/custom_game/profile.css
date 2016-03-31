@@ -1125,7 +1125,6 @@ Label
 .MatchScore_Col
 {
     width: 60px;
-    margin-left: 5px;
     text-align: center;
 }
 
@@ -1139,6 +1138,7 @@ Label
 .MatchTime_Col
 {
     width: 100px;
+    margin-left: 5px;
 }
 
 .MatchElements_Col

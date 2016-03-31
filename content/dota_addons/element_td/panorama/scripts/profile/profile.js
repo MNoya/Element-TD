@@ -14,6 +14,7 @@ var friends = []
 //cache everything
 var Stats = {}
 var FriendsOf = {}
+var currentTime
 
 function GetStats(steamID32) {
     ClearFields()
@@ -32,6 +33,7 @@ function GetStats(steamID32) {
             var player_info = info["player"]
 
             var allTime = player_info["allTime"]
+            currentTime = player_info["current_time"]
             if (allTime === undefined)
                 return
 
@@ -199,9 +201,8 @@ function CreateMatch(info) {
     GameUI.SetClassForChildInLayout("Hide", "Rush", panel, info["horde"] == "Normal")
     GameUI.SetClassForChildInLayout("Hide", "Random", panel, info["random"] == "AllPick")
 
-    // Time
-    //"date":"2016-03-27 04:52:54","time_start":"03/26/16 14:49:04","time_end":"03/26/16 14:52:23"
-    GameUI.SetTextSafe(panel, "MatchTime", GameUI.FormatDuration(info["duration"]))
+    // X Time ago
+    GameUI.SetTextSafe(panel, "MatchTime", GameUI.FormatTimeAgo(currentTime, info["date"]))
 
     // Score
     GameUI.SetTextSafe(panel, "MatchScore", GameUI.FormatScore(info['score']))

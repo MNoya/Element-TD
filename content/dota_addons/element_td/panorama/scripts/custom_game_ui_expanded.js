@@ -84,7 +84,91 @@ GameUI.FormatDuration = function(sec_num) {
     return time;
 }
 
-GameUI.SetTextSafe = function ( panel, childName, textValue ) {
+// Converts difference between two dates in "Y-m-d H:i:s" format
+//"current_time":"2016-03-30 12:53:43" - "date":"2016-03-27 04:52:54" = 3 days ago
+// 1 minute ago // 5 minutes ago // 1 hour ago // 5 hours ago // 1 day ago // 5 days ago // 1 week ago // 2 weeks ago //1 month ago // 5 months ago // 1 year ago // 5 years ago
+GameUI.FormatTimeAgo = function (time_now, time_old) {
+    var now = new Date(time_now)
+    var old = new Date(time_old)
+    var diff = (now - old)/1000
+
+    var years = DateDiff.inYears(old, now)
+    if (years > 0)
+        return DateDiff.inPlural(years, "year")
+
+    var months = DateDiff.inMonths(old, now)
+    if (months > 0)
+        return DateDiff.inPlural(months, "month")
+
+    var weeks = DateDiff.inWeeks(old, now)
+    if (weeks > 0)
+        return DateDiff.inPlural(weeks, "week")
+
+    var days = DateDiff.inDays(old, now)
+    if (days > 0)
+        return DateDiff.inPlural(days, "day")
+
+    var hours = DateDiff.inHours(old, now)
+    if (hours > 0)
+        return DateDiff.inPlural(hours, "hour")
+
+    var minutes = DateDiff.inMinutes(old, now)
+    if (minutes > 0)
+        return DateDiff.inPlural(minutes, "minute")
+}
+
+var DateDiff = {
+
+    inMinutes: function(d1, d2) {
+        var t2 = d2.getTime();
+        var t1 = d1.getTime();
+
+        return parseInt((t2-t1)/(60*1000));
+    },
+
+    inHours: function(d1, d2) {
+        var t2 = d2.getTime();
+        var t1 = d1.getTime();
+
+        return parseInt((t2-t1)/(24*60*1000));
+    },
+
+    inDays: function(d1, d2) {
+        var t2 = d2.getTime();
+        var t1 = d1.getTime();
+
+        return parseInt((t2-t1)/(24*3600*1000));
+    },
+
+    inWeeks: function(d1, d2) {
+        var t2 = d2.getTime();
+        var t1 = d1.getTime();
+
+        return parseInt((t2-t1)/(24*3600*1000*7));
+    },
+
+    inMonths: function(d1, d2) {
+        var d1Y = d1.getFullYear();
+        var d2Y = d2.getFullYear();
+        var d1M = d1.getMonth();
+        var d2M = d2.getMonth();
+
+        return (d2M+12*d2Y)-(d1M+12*d1Y);
+    },
+
+    inYears: function(d1, d2) {
+        return d2.getFullYear()-d1.getFullYear();
+    },
+
+    // I have no idea what I'm doing
+    inPlural: function(number, name) {
+        var output = number + " " + name
+        if (number > 1) output += "s"
+        return $.Localize("#"+output) + " " + $.Localize("#ago")
+    },
+}
+
+GameUI.SetTextSafe = function (panel, childName, textValue) {
     if ( panel === null )
         return;
     var childPanel = panel.FindChildInLayoutFile( childName )
