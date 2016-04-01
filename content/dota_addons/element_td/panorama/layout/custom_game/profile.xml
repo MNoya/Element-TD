@@ -193,7 +193,7 @@
                                             <Image id="RandomImage"/>
                                             <Panel class="TowerLabels">
                                                 <Label class="TowerSubLabels" text="#element_random"/>
-                                                <Label id="random" class="TowerName"/>
+                                                <Label id="random_pick" class="TowerName"/>
                                             </Panel>
                                         </Panel>
 

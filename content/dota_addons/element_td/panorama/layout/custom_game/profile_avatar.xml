@@ -1,0 +1,43 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/profile.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/profile/profile_avatar.js" />
+    </scripts>
+    <Panel class="ProfileAvatar">
+        <Panel id="PlayerCardBox">
+            <Panel id="AvatarFirstRow">
+                <Panel id="AvatarName">
+                    <DOTAAvatarImage id="AvatarImage" steamid="76561198046984233" />
+                    <DOTAUserName id="AvatarUserName" steamid="76561198046984233"/>
+                </Panel>
+
+                <Image id="favorite_element" src="file://{resources}/images/custom_game/resources/periodic.png"/>
+            </Panel>
+
+            <Panel id="AvatarBestBadges" class="Hide">
+                <!-- Added dynamically -->
+            </Panel>
+            
+            <Panel id="AvatarCurrentRanks">
+                <Panel class="AvatarColumn">
+                    <Label class="AvatarRankLabel" text="#profile_games_won"/>
+                    <Label id="GamesWon" class="AvatarRankValue" text="322"/>
+                </Panel>
+
+                <Panel class="AvatarColumn">
+                    <Label class="AvatarRankLabel" text="#profile_classic_rank"/>
+                    <Label id="ClassicRank" class="AvatarRankValue" text="420"/>
+                </Panel>
+
+                <Panel class="AvatarColumn">
+                    <Label class="AvatarRankLabel" text="#profile_express_rank"/>
+                    <Label id="ExpressRank" class="AvatarRankValue" text="1"/>
+                </Panel>
+            </Panel>
+        </Panel>
+
+        <Image id="EleTDPass" src="file://{resources}/images/custom_game/rewards/pass.png" />
+    </Panel>
+</root>

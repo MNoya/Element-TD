@@ -66,7 +66,7 @@ function SetStats(player_info)
 
     var random = allTime["random"]
     var gamesPlayed = allTime["gamesPlayed"]
-    $("#random").text = random+" ("+(random/gamesPlayed*100).toFixed(0)+"%)"
+    $("#random_pick").text = random+" ("+(random/gamesPlayed*100).toFixed(0)+"%)"
     $("#towersBuilt").text = GameUI.FormatNumber(Number(allTime["towers"]) + Number(allTime["towersSold"]))
     $("#towersSold").text = GameUI.FormatNumber(allTime["towersSold"])
     $("#lifeTowerKills").text = GameUI.FormatNumber(allTime["lifeTowerKills"])
@@ -295,7 +295,7 @@ function ClearFields() {
 
     var random = "-"
     $("#gamesPlayed").text = 0
-    $("#random").text = "-"
+    $("#random_pick").text = "-"
     $("#towersBuilt").text = "-"
     $("#towersSold").text = "-"
     $("#lifeTowerKills").text = "-"
@@ -440,6 +440,24 @@ function LoadProfile(steamID64) {
 
     $("#AvatarImageProfile").steamid = steamID64
     $("#UserNameProfile").steamid = steamID64
+
+    var root = $("#AvatarImageProfile")
+
+    root.SetPanelEvent("onmouseover", function() {
+        var panel = $.CreatePanel("Panel", $.GetContextPanel(), "PlayerAvatarTooltip")
+        panel.BLoadLayout("file://{resources}/layout/custom_game/profile_avatar.xml", false, false);
+
+        // Positioning should be dynamic based on the panel on hover
+        panel.style["margin-top"] =  "100px;"
+        panel.style["margin-left"] =  "580px;"
+        
+        root.tooltip = panel
+    })
+
+    root.SetPanelEvent("onmouseout", function() {
+        $.Msg("onmouseout")
+        root.tooltip.DeleteAsync(0)
+    })
 
     var isSelfProfile = steamID64 == GameUI.GetLocalPlayerSteamID()
     $("#ProfileBackContainer").SetHasClass("Hide", isSelfProfile)

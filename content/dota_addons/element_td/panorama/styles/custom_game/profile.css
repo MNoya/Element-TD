@@ -286,25 +286,6 @@ DOTAUserName #UserNameProfile
 }
 
 
-
-
-#PlayerCardBox
-{
-    background-color: gradient( linear, 0% 0%, 0% 5%, from( #232326 ), to( #111111 ) );
-    background-image: url("s2r://panorama/images/textures/miniprofile_rock_psd.vtex");
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: 100% 256px;
-    border-top: 2px solid #3b404777;
-    border-right: 2px solid #00000088;
-    border-left: 2px solid #4c434677;
-    border-bottom: 2px solid #00000088;
-    box-shadow: fill #00000055 -2px -2px 4px 6px;
-    height: 116px;
-    width: 100%;
-    padding: 0px;
-}
-
 #ProfileMenuContainer
 {
     width: 98%;
@@ -1399,4 +1380,139 @@ Label
 {
     opacity: 1;
     saturation: 1;
+}
+
+// -- Avatar Hover Styles
+
+.ProfileAvatar
+{
+    flow-children: down;
+}
+
+#AvatarFirstRow
+{
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+#PlayerCardBox
+{
+    background-color: gradient( linear, 0% 0%, 0% 5%, from( #232326 ), to( #111111 ) );
+    background-image: url("s2r://panorama/images/textures/miniprofile_rock_psd.vtex");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100% 256px;
+
+    border-top: 2px solid #3b404777;
+    border-right: 2px solid #00000088;
+    border-left: 2px solid #4c434677;
+    border-bottom: 2px solid #00000088;
+    box-shadow: fill #00000055 -2px -2px 4px 6px;
+    
+    flow-children: down;
+    width: 360px;
+    max-height: 256px;
+}
+
+#EleTDPass
+{
+    height: 48px;
+    width: 360px;
+
+    border-top: 2px solid #333333;
+    border-right: 2px solid #000000;
+    border-left: 2px solid #4c4346;
+    border-bottom: 2px solid #000000;
+    box-shadow: fill #00000055 -2px -2px 4px 6px;
+}
+
+#AvatarName
+{
+    width: 90%;
+    height: 50px;
+    horizontal-align: left;
+    margin-left: 15px;
+    margin-top: 15px;
+    border-top: 2px solid #00000088;
+    border-left: 2px solid #4c434633;
+    border-bottom: 2px solid #44444488;
+    background-color: #00000055;
+}
+
+#AvatarImage
+{
+    align: left center;
+    margin-left: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+#AvatarUserName
+{
+    font-size: 24px;
+    margin-left: 55px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+#favorite_element
+{
+    border: 3px solid #444444;
+    border-radius: 80px;
+    margin-top: 5px;
+    margin-right: 5px;
+    height: 80px;
+    width: 80px;
+    horizontal-align: right;
+}
+
+#AvatarBestBadges
+{
+    height: 100px;
+    flow-children: right;
+}
+
+#AvatarCurrentRanks
+{
+    width: 90%;
+    height: 50px;
+    align: left bottom;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    box-shadow: #000 -2px -2px 6px 2px;
+    background-color: #66666611;
+    flow-children: right;
+}
+
+.AvatarColumn
+{
+    width: 33%;
+    height: 80%;
+    vertical-align: center;
+    flow-children: down;
+}
+
+.AvatarRankLabel
+{
+    height: 50%;
+    font-size: 13px;
+    text-align: center;
+    horizontal-align: center;
+    letter-spacing: 1px;
+    color: #AAAAAA;
+    text-transform: uppercase;
+    text-shadow: none;
+}
+
+.AvatarRankValue 
+{
+    height: 50%;
+    font-size: 16px;
+    text-align: center;
+    horizontal-align: center;
+    letter-spacing: 1px;
+    color: #AAAAAA;
+    text-transform: uppercase;
+    text-shadow: none;
 }
