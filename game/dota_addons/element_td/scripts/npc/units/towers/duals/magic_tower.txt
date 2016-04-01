@@ -52,7 +52,7 @@
     "AttackAcquisitionRange"    "20000"
     "AttackRate"        "0.02"
     "ProjectileModel"        "particles/units/heroes/hero_leshrac/leshrac_base_attack.vpcf"
-    "ProjectileSpeed"        "350"
+    "ProjectileSpeed"        "600"
     "Model"        "models/heroes/lion/lion.vmdl"
     "ModelScale"        "0.8"
     "ModelRotation"    "90"
