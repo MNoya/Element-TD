@@ -42,7 +42,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"damage_reduction"		"-100"
+			"damage_reduction"		"-10"
 		}
 		"03"
 		{

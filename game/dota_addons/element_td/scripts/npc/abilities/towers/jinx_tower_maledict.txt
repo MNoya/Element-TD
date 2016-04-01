@@ -56,22 +56,22 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_taken"			"1 3"
+			"damage_taken"			"10 30"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"tick_interval"			"1"
+			"tick_interval"			"2.5"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"				"50"
+			"duration"				"5"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"ticks"					"50"
+			"ticks"					"2"
 		}
 		"05"
 		{

@@ -112,7 +112,7 @@
 		"02"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"aoe"				"20000"
+			"aoe"				"700"
 		}
 		"03"
 		{

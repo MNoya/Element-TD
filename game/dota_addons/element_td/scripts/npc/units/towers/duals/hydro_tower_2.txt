@@ -31,8 +31,8 @@
     "AttackDamageMin"           "1800"
     "AttackDamageMax"           "1800"
     "Damage"                    "1800"
-    "AttackRange"               "20000"
-    "AttackAcquisitionRange"    "20000"
+    "AttackRange"               "900"
+    "AttackAcquisitionRange"    "900"
     "AttackRate"                "1"
     "ProjectileSpeed"           "2000" 
 

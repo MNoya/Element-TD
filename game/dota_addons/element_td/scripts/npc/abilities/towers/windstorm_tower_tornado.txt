@@ -15,7 +15,7 @@
 	"MaxLevel"						"2"
 
 	"AbilityCastPoint"				"0.0"
-	"AbilityCastRange"      		"20000"
+	"AbilityCastRange"      		"1150"
 
     "AOERadius"             		"%radius"
 
@@ -99,12 +99,12 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"radius"				"5500"
+			"radius"				"550"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"15"
+			"duration"				"5"
 		}
 	}
 }

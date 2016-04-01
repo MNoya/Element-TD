@@ -10,7 +10,7 @@
 
 	"AbilityCastPoint"				"0.0"
 
-	"AbilityCastRange"      		"20000"
+	"AbilityCastRange"      		"1150"
     "AOERadius"             		"300"
 
     "OnSpellStart"
@@ -97,7 +97,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"max_aoe"				"4000"
+			"max_aoe"				"400"
 		}
 		"02"
 		{
@@ -107,7 +107,7 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"20"
+			"duration"				"4"
 		}
 	}
 	"OnProjectileHitUnit"

@@ -11,10 +11,10 @@
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-	"AbilityCooldown"				"1"
+	"AbilityCooldown"				"15"
 	"MaxLevel"						"3"
 	"AbilityTextureName"			"towers/well"
-	"AbilityCastRange"				"20000"
+	"AbilityCastRange"				"900"
 
 	"AbilitySpecial"
 	{
@@ -26,7 +26,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"6000"	
+			"duration"				"60"	
 		}
 	}
 }

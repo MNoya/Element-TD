@@ -47,7 +47,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"1500"
+			"duration"				"15"
 		}
 		"02"
 		{
@@ -62,7 +62,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"amp_find_radius"		"1"
+			"amp_find_radius"		"150"
 		}
 	}
 }

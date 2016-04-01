@@ -126,7 +126,7 @@ function WaterTower:OnCreated()
     self.ability = AddAbility(self.tower, "water_tower_water_bullet")
     self.maxBounces = self.ability:GetSpecialValueFor("bounces")
     self.bounceRange = self.ability:GetSpecialValueFor("bounce_range")
-    self.bounceSpeed = self.tower:GetProjectileSpeed() / 6
+    self.bounceSpeed = self.tower:GetProjectileSpeed() / 3
     self.projectileName = "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf" 
 end
 

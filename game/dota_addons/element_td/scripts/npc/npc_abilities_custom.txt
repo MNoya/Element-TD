@@ -547,7 +547,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health"				"100"
+				"health"				"10"
 			}
 		}
 	}
@@ -631,7 +631,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"fast_speed"			"3000"
+				"fast_speed"			"750"
 			}
 			"02"
 			{
@@ -665,12 +665,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"100"
+				"heal_amount"			"25"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"500"
+				"aoe"					"250"
 			}
 		}
 	
@@ -793,7 +793,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"7"
+				"duration"				"2"
 			}
 			"02"
 			{
@@ -832,12 +832,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"5"
+				"bonus_health_regen"	"3"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_heal_pct"			"7500"
+				"max_heal_pct"			"75"
 			}
 		}
 	
@@ -921,7 +921,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"backtrack_duration"	"10"
+				"backtrack_duration"	"3"
 			}
 		}
 	
@@ -957,7 +957,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health"				"100"
+				"health"				"50"
 			}
 		}
 	}
@@ -1005,7 +1005,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_reduction"		"-100"
+				"damage_reduction"		"-10"
 			}
 			"03"
 			{
@@ -2216,10 +2216,10 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"AbilityCooldown"				"1"
+		"AbilityCooldown"				"15"
 		"MaxLevel"						"3"
 		"AbilityTextureName"			"towers/blacksmith"
-		"AbilityCastRange"				"20000"
+		"AbilityCastRange"				"900"
 	
 		"precache"
 		{
@@ -2238,7 +2238,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"6000"	
+				"duration"				"60"	
 			}
 		}
 	}
@@ -2295,7 +2295,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"20000"
+				"aoe"					"300"
 			}
 		}
 	}
@@ -2369,7 +2369,7 @@
 	        "01"
 	        {
 	            "var_type"            "FIELD_FLOAT"
-	            "ministun_duration"   "0.5"
+	            "ministun_duration"   "0.1"
 	        }
 	    }
 	}
@@ -2419,22 +2419,22 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_decrease"		"1"
+				"damage_decrease"		"20"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bounce_range"			"20000"
+				"bounce_range"			"550"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bounce_decrease"		"0"
+				"bounce_decrease"		"30"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"jump_count"			"30"
+				"jump_count"			"10"
 			}
 		}
 	}
@@ -2487,7 +2487,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"1500"
+				"duration"				"15"
 			}
 			"02"
 			{
@@ -2502,7 +2502,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"amp_find_radius"		"1"
+				"amp_find_radius"		"150"
 			}
 		}
 	}
@@ -2563,7 +2563,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_reduction"	"-1"
+				"damage_reduction"	"-10"
 			}
 			"02"
 			{
@@ -2685,12 +2685,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"500"
+				"duration"				"5"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"4000"
+				"aoe"					"400"
 			}
 		}
 	}
@@ -2770,7 +2770,7 @@
 	        "02"
 	        {
 	            "var_type"              "FIELD_FLOAT"
-	            "duration"              "30.0"
+	            "duration"              "3.0"
 	        }
 	    }
 	}
@@ -2815,7 +2815,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"3000"
+				"aoe"					"300"
 			}
 		}
 	}
@@ -2904,7 +2904,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"50"
+				"duration"				"5"
 			}
 		}
 	}
@@ -2933,7 +2933,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"50"
+				"duration"				"5"
 			}
 			"04"
 			{
@@ -2960,7 +2960,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"200 3000"
+				"bonus_gold"			"20 30"
 			}
 		}
 	
@@ -2990,7 +2990,7 @@
 		"MaxLevel"						"3"
 		"AbilityCastPoint"				"0.5"
 	
-		"AbilityCastRange"      		"20000"
+		"AbilityCastRange"      		"1500"
 	    "AOERadius"             		"%splash_aoe"
 	
 	    "AbilityMultiOrder"     		"1"
@@ -3005,7 +3005,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"splash_aoe"			"2000"
+				"splash_aoe"			"200"
 			}
 		}
 	
@@ -3105,7 +3105,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attacks_required"		"1"
+				"attacks_required"		"14"
 			}
 			"02"
 			{
@@ -3115,7 +3115,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_mult"			"3500"
+				"damage_mult"			"350"
 			}
 		}
 	}
@@ -3160,17 +3160,17 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"reset_time"		"400"
+				"reset_time"		"4"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"bat_decrease_stack" "0.11"
+				"bat_decrease_stack" "0.05"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"cap"				"9"
+				"cap"				"16"
 			}
 		}
 	}
@@ -3213,7 +3213,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"chance_pct"		"20"
+				"chance_pct"		"50"
 			}
 			"02"
 			{
@@ -3223,12 +3223,12 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_aoe"		"200000"
+				"splash_aoe"		"250"
 			}
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"delay"				"5"
+				"delay"				"1.5"
 			}
 		}
 	}
@@ -3245,7 +3245,7 @@
 		"AbilityTextureName"			"towers/ice"
 		"MaxLevel"						"3"	
 		"AbilityCastPoint"				"0.0"
-		"AbilityCastRange"      		"20000"
+		"AbilityCastRange"      		"900"
 	
 	    "AOERadius"             		"200"
 	
@@ -3344,12 +3344,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe_end"				"4500"
+				"aoe_end"				"450"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"distance"				"20000"
+				"distance"				"900"
 			}
 			"05"
 			{
@@ -3366,7 +3366,7 @@
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"enchantress_impetus"
-		"AbilityCastRange"				"20000"
+		"AbilityCastRange"				"1500"
 		"MaxLevel"						"2"
 	
 		"Modifiers"
@@ -3453,22 +3453,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"1 3"
+				"damage_taken"			"10 30"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"tick_interval"			"1"
+				"tick_interval"			"2.5"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"50"
+				"duration"				"5"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"ticks"					"50"
+				"ticks"					"2"
 			}
 			"05"
 			{
@@ -3512,12 +3512,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"4"
+				"aoe"					"400"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_reduction"		"1"
+				"damage_reduction"		"10"
 			}
 			"03"
 			{
@@ -3575,12 +3575,12 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"heal_amount"					"10"
+				"heal_amount"					"1"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"points_per_kill"				"20 30 60"
+				"points_per_kill"				"2 3 6"
 			}
 		}
 	}
@@ -3674,7 +3674,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_stacks"			"1200"
+				"max_stacks"			"12"
 			}
 			"03"
 			{
@@ -3791,7 +3791,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"500"
+				"duration"				"5"
 			}
 			"02"
 			{
@@ -3847,12 +3847,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe_full"				"15000"
+				"aoe_full"				"150"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe_half"				"30000"
+				"aoe_half"				"300"
 			}
 		}
 	}
@@ -3970,7 +3970,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"aoe"				"20000"
+				"aoe"				"700"
 			}
 			"03"
 			{
@@ -3996,7 +3996,7 @@
 	
 		"AbilityCastPoint"				"0.0"
 	
-		"AbilityCastRange"      		"20000"
+		"AbilityCastRange"      		"1150"
 	    "AOERadius"             		"300"
 	
 	    "OnSpellStart"
@@ -4083,7 +4083,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_aoe"				"4000"
+				"max_aoe"				"400"
 			}
 			"02"
 			{
@@ -4093,7 +4093,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"20"
+				"duration"				"4"
 			}
 		}
 		"OnProjectileHitUnit"
@@ -4122,7 +4122,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_mult"					"666"
+				"damage_mult"					"300"
 			}
 		}
 	}
@@ -4178,7 +4178,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"1500"
+				"duration"				"15"
 			}
 			"02"
 			{
@@ -4227,7 +4227,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance"				"100"
+				"chance"				"50"
 			}
 			"02"
 			{
@@ -4237,7 +4237,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"5500"
+				"aoe"					"550"
 			}
 		}
 	}
@@ -4283,7 +4283,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_stacks"			"1500"
+				"max_stacks"			"15"
 			}
 		}
 	}
@@ -4298,7 +4298,7 @@
 		"MaxLevel"						"2"
 		"AbilityCastPoint"				"0.0"
 	
-		"AbilityCastRange"      		"20000"
+		"AbilityCastRange"      		"900"
 	
 	    "AOERadius"             		"%width"
 	
@@ -4468,7 +4468,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"500"
+				"duration"				"5"
 			}
 			"02"
 			{
@@ -4538,7 +4538,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"9"
+				"duration"				"3"
 			}
 		}
 	
@@ -4742,7 +4742,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"aoe"				"1"
+				"aoe"				"10"
 			}
 			"03"
 			{
@@ -4763,9 +4763,9 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"AbilityCooldown"				"1"
+		"AbilityCooldown"				"15"
 		"MaxLevel"						"3"
-		"AbilityCastRange"				"20000"
+		"AbilityCastRange"				"900"
 		"AbilityTextureName"			"towers/trickery"
 	
 		"AbilitySpecial"
@@ -4807,12 +4807,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"20000"
+				"aoe"					"700"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aftershock_aoe"		"20000"
+				"aftershock_aoe"		"450"
 			}
 		}
 	
@@ -4857,12 +4857,12 @@
 	        "01"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "bounces"             "20"
+	            "bounces"             "3"
 	        }
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "bounce_range"        "20000"
+	            "bounce_range"        "150"
 	        }
 	    }
 	}
@@ -4879,10 +4879,10 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"AbilityCooldown"				"1"
+		"AbilityCooldown"				"15"
 		"MaxLevel"						"3"
 		"AbilityTextureName"			"towers/well"
-		"AbilityCastRange"				"20000"
+		"AbilityCastRange"				"900"
 	
 		"AbilitySpecial"
 		{
@@ -4894,7 +4894,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"6000"	
+				"duration"				"60"	
 			}
 		}
 	}
@@ -4977,7 +4977,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"5000"
+				"radius"				"500"
 			}
 			"03"
 			{
@@ -5003,7 +5003,7 @@
 		"MaxLevel"						"2"
 	
 		"AbilityCastPoint"				"0.0"
-		"AbilityCastRange"      		"20000"
+		"AbilityCastRange"      		"1150"
 	
 	    "AOERadius"             		"%radius"
 	
@@ -5087,12 +5087,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"5500"
+				"radius"				"550"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"15"
+				"duration"				"5"
 			}
 		}
 	}

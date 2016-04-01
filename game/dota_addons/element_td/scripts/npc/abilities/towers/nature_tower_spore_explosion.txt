@@ -40,12 +40,12 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aoe_full"				"15000"
+			"aoe_full"				"150"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aoe_half"				"30000"
+			"aoe_half"				"300"
 		}
 	}
 }

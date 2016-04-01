@@ -50,8 +50,8 @@
     "TowerType"        "Normal"
     "BuffPriority"              "2"
     "HasAbilityDesc"        "1"
-    "AttackRange"               "20000"
-    "AttackAcquisitionRange"    "20000"
+    "AttackRange"        "700"
+    "AttackAcquisitionRange"        "700"
     "AttackRate"        "0.66"
     "ProjectileModel"        "particles/custom/towers/flamethrower/attack.vpcf"
     "ProjectileSpeed"        "2500"
@@ -73,8 +73,8 @@
         }
     }
 
-    "AOE_Half"        "600"
-    "AOE_Full"        "300"
+    "AOE_Half"        "300"
+    "AOE_Full"        "150"
     "BuildTime"        "3"
     "Requirements"
     {

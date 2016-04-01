@@ -12,7 +12,7 @@
 	"MaxLevel"						"3"
 	"AbilityCastPoint"				"0.5"
 
-	"AbilityCastRange"      		"20000"
+	"AbilityCastRange"      		"1500"
     "AOERadius"             		"%splash_aoe"
 
     "AbilityMultiOrder"     		"1"
@@ -27,7 +27,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"splash_aoe"			"2000"
+			"splash_aoe"			"200"
 		}
 	}
 

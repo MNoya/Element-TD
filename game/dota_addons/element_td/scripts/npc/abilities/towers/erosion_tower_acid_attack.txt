@@ -106,12 +106,12 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"500"
+			"duration"				"5"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aoe"					"4000"
+			"aoe"					"400"
 		}
 	}
 }

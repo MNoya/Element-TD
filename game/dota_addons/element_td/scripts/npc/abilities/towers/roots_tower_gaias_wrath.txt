@@ -9,7 +9,7 @@
 	"MaxLevel"						"2"
 	"AbilityCastPoint"				"0.0"
 
-	"AbilityCastRange"      		"20000"
+	"AbilityCastRange"      		"900"
 
     "AOERadius"             		"%width"
 
@@ -179,7 +179,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"500"
+			"duration"				"5"
 		}
 		"02"
 		{

@@ -40,7 +40,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"max_stacks"			"1500"
+			"max_stacks"			"15"
 		}
 	}
 }

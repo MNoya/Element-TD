@@ -28,12 +28,12 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aoe"					"20000"
+			"aoe"					"700"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"aftershock_aoe"		"20000"
+			"aftershock_aoe"		"450"
 		}
 	}
 
