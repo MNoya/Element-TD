@@ -46,7 +46,11 @@ function well_tower_spring_forward:CastFilterResultTarget(target)
 	if result ~= UF_SUCCESS then
 		return result
 	end
-	
+
+	if target:GetUnitName() == "elemental_summoner" then
+        return UF_FAIL_OTHER
+    end
+    
 	if target:HasModifier("modifier_support_tower") then
 		return UF_FAIL_CUSTOM
 	end
