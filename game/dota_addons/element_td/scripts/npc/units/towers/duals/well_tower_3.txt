@@ -18,8 +18,8 @@
     "AttackDamageMin"            "16200"
     "AttackDamageMax"            "16200"
     "Damage"                     "16200"
-    "AttackRange"                "900"
-    "AttackAcquisitionRange"     "900"
+    "AttackRange"               "20000"
+    "AttackAcquisitionRange"    "20000"
     "AttackRate"                 "1"
 
     "Level"                      "3"

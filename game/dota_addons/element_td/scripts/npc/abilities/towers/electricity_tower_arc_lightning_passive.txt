@@ -44,22 +44,22 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_decrease"		"20"
+			"damage_decrease"		"1"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bounce_range"			"550"
+			"bounce_range"			"20000"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bounce_decrease"		"30"
+			"bounce_decrease"		"0"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"jump_count"			"10"
+			"jump_count"			"30"
 		}
 	}
 }

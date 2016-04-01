@@ -26,12 +26,12 @@
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "bounces"             "3"
+            "bounces"             "20"
         }
         "02"
         {
             "var_type"            "FIELD_INTEGER"
-            "bounce_range"        "150"
+            "bounce_range"        "20000"
         }
     }
 }

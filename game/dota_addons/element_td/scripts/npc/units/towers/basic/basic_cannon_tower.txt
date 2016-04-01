@@ -14,14 +14,14 @@
  
     // Stats
     //-----------------------------
-    "AttackDamageMin"           "35"
-    "AttackDamageMax"           "35"
-    "Damage"                    "35"
-    "AttackRange"               "550"
-    "AttackAcquisitionRange"    "550"
-    "AOE_Full"                  "100"
-    "AOE_Half"                  "200"
-    "AttackRate"                "1.5"
+    "AttackDamageMin"           "5"
+    "AttackDamageMax"           "5"
+    "Damage"                    "5"
+    "AttackRange"               "20000"
+    "AttackAcquisitionRange"    "20000"
+    "AOE_Full"                  "300"
+    "AOE_Half"                  "600"
+    "AttackRate"                "0.15"
     "ProjectileSpeed"           "1500"
 
     "AttackGround"              "1"

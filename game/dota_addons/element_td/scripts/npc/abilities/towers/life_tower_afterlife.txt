@@ -47,12 +47,12 @@
 		"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"heal_amount"					"1"
+			"heal_amount"					"10"
 		}
 		"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"points_per_kill"				"2 3 6"
+			"points_per_kill"				"20 30 60"
 		}
 	}
 }

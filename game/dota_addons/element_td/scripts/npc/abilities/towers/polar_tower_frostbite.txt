@@ -50,7 +50,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"15"
+			"duration"				"1500"
 		}
 		"02"
 		{

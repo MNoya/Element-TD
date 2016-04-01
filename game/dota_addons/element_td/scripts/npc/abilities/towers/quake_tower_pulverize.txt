@@ -33,7 +33,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"chance"				"50"
+			"chance"				"100"
 		}
 		"02"
 		{
@@ -43,7 +43,7 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aoe"					"550"
+			"aoe"					"5500"
 		}
 	}
 }

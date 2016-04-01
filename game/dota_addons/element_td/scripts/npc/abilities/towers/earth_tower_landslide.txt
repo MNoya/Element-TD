@@ -30,7 +30,7 @@
         "01"
         {
             "var_type"            "FIELD_FLOAT"
-            "ministun_duration"   "0.1"
+            "ministun_duration"   "0.5"
         }
     }
 }

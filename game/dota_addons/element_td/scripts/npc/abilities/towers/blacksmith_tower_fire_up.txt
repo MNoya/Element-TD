@@ -11,10 +11,10 @@
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-	"AbilityCooldown"				"15"
+	"AbilityCooldown"				"1"
 	"MaxLevel"						"3"
 	"AbilityTextureName"			"towers/blacksmith"
-	"AbilityCastRange"				"900"
+	"AbilityCastRange"				"20000"
 
 	"precache"
 	{
@@ -33,7 +33,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"60"	
+			"duration"				"6000"	
 		}
 	}
 }

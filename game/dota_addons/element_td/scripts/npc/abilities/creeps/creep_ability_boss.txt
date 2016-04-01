@@ -13,7 +13,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"health"				"10"
+			"health"				"100"
 		}
 	}
 }

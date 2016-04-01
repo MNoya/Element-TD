@@ -16,7 +16,7 @@ if not players then
     DEV_MODE = false
     EXPRESS_MODE = false
 
-    VERSION = "1.3"
+    VERSION = "1.322"
     COOP_MAP = GetMapName() == "element_td_coop"
 
     START_TIME = GetSystemDate() .. " " .. GetSystemTime()
@@ -484,9 +484,9 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:AddNewModifier(hero, nil, "modifier_max_ms", {})
 
     hero:SetAbilityPoints(0)
-    hero:SetMaxHealth(50)
-    hero:SetBaseMaxHealth(50)
-    hero:SetHealth(50)
+    hero:SetMaxHealth(500)
+    hero:SetBaseMaxHealth(500)
+    hero:SetHealth(500)
     hero:SetBaseDamageMin(0)
     hero:SetBaseDamageMax(0)
     hero:SetGold(0, false)
