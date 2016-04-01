@@ -5,6 +5,7 @@
     <scripts>
         <include src="file://{resources}/scripts/profile/profile.js" />
         <include src="file://{resources}/scripts/profile/style.js" />
+        <include src="file://{resources}/scripts/profile/builders.js" />
     </scripts>
     <Panel hittest='false' class="ProfileHud">
 
@@ -336,9 +337,36 @@
                 </Panel>
             </Panel>
         </Panel>
-
         <Panel class="Hide" id="CustomBuilders">
-            <Label id="Soon" text="#profile_soon" />
+            <Panel id="BuildersContainer">
+                <Panel id="LightBuilder" class="BuilderColumn" onactivate="ChooseBuilder('npc_dota_hero_keeper_of_the_light')">
+                    <Image class="BuilderBackground" src="file://{images}/custom_game/builders/light.png" />
+                </Panel>
+
+                <Panel id="DarkBuilder" class="BuilderColumn" onactivate="ChooseBuilder('npc_dota_hero_faceless_void')">
+                    <Image class="BuilderBackground" src="file://{images}/custom_game/builders/dark.png" />
+                </Panel>
+
+                <Panel id="WaterBuilder" class="BuilderColumn" onactivate="ChooseBuilder('npc_dota_hero_mirana')">
+                    <Image class="BuilderBackground" src="file://{images}/custom_game/builders/water.png" />
+                </Panel>
+
+                <Panel id="FireBuilder" class="BuilderColumn" onactivate="ChooseBuilder('npc_dota_hero_warlock')">
+                    <Image class="BuilderBackground" src="file://{images}/custom_game/builders/fire.png" />
+                </Panel>
+
+                <Panel id="NatureBuilder" class="BuilderColumn" onactivate="ChooseBuilder('npc_dota_hero_treant')">
+                    <Image class="BuilderBackground" src="file://{images}/custom_game/builders/nature.png" />
+                </Panel>
+
+                <Panel id="EarthBuilder" class="BuilderColumn" onactivate="ChooseBuilder('npc_dota_hero_earthshaker')">
+                    <Image class="BuilderBackground" src="file://{images}/custom_game/builders/earth.png" />
+                </Panel>
+            </Panel>
+
+            <Label id="CustomBuildersTitle" text="#profile_choose_builder"/>
+            <Label id="CustomBuilderDescription" text="#profile_builder_description"/>
+            <Label id="CloseButton" style="vertical-align: top" onactivate="CloseCustomBuilders()"/>
         </Panel>
 
     </Panel>
