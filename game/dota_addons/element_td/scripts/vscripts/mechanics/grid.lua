@@ -18,11 +18,15 @@ function ToggleGrid( event )
             end
         end
     else
-        for x, yt in pairs(item.particles) do
-            for y, particle in pairs(yt) do
-                ParticleManager:DestroyParticle(particle, true)
-                item.particles[x][y] = nil
-            end
+        ClearGrid(item)
+    end
+end
+
+function ClearGrid( item )
+    for x, yt in pairs(item.particles) do
+        for y, particle in pairs(yt) do
+            ParticleManager:DestroyParticle(particle, true)
+            item.particles[x][y] = nil
         end
     end
 end

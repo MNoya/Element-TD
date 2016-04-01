@@ -502,6 +502,11 @@ function ElementTD:InitializeHero(playerID, hero)
 
     local playerData = GetPlayerData(playerID)
 
+    Timers(0.03, function() 
+        hero:SetAbilityPoints(playerData.lumber or 0)
+        SetCustomGold(playerID, playerData.gold)
+    end)
+
     -- Give building items
     hero:AddItem(CreateItem("item_build_arrow_tower", hero, hero))
     hero:AddItem(CreateItem("item_build_cannon_tower", hero, hero))

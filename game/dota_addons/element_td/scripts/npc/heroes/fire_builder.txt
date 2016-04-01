@@ -6,6 +6,8 @@
     "Model"                     "models/items/warlock/golem/hellsworn_golem/hellsworn_golem.vmdl"
     "ModelScale"                "1"
 
+    "CosmeticAbility"           "hellsworn_cosmetics"
+
     "override_hero"             "npc_dota_hero_warlock"
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_FLY"
     "MovementSpeed"             "522"

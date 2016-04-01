@@ -11,14 +11,13 @@ function Rewards:OnPlayerChangeBuilder(event)
     local playerID = event.PlayerID
     local heroName = event.hero_name
 
-    local newHero = Rewards:ReplaceHero(playerID, heroName)
+    -- If it's the same builder, ignore it
+    local oldHero = PlayerResource:GetSelectedHeroEntity(playerID)
+    if oldHero:GetUnitName() == heroName then return end
 
-    local wearables = newHero:GetChildren()
-    for _,v in pairs(wearables) do
-        if v:GetClassname() == "dota_item_wearable" then
-            UTIL_Remove(v)
-        end
-    end
+    -- Replace and handle wearables, animations, particles
+    local newHero = Rewards:ReplaceHero(playerID, oldHero, heroName)
+    RemoveAllWearables(newHero)
 end
 
 -- Pulls rewards.kv and eletd.com/reward_data.js
@@ -93,7 +92,7 @@ function Rewards:HandleHeroReplacement(hero)
     if not reward then return end
 
     local hero_replacement = reward.hero or "npc_dota_hero_phoenix"
-    local newHero = Rewards:ReplaceHero(playerID, hero_replacement)
+    local newHero = Rewards:ReplaceHero(playerID, hero, hero_replacement)
 
     -- Models are based on a unit for precache async, and update the portrait
     if reward.model then
@@ -167,11 +166,57 @@ function Rewards:HandleHeroReplacement(hero)
     end
 end
 
-function Rewards:ReplaceHero(playerID, heroName)
-    local oldHero = PlayerResource:GetSelectedHeroEntity(playerID)
+function Rewards:ReplaceHero(playerID, oldHero, heroName)
     oldHero:AddNoDraw()
+    oldHero:ForceKill(true)   
+
+    -- Remove parented units
+    if oldHero.cosmetic_override then
+        UTIL_Remove(oldHero.cosmetic_override)
+    end
+    if oldHero.rider then
+        UTIL_Remove(oldHero.rider)
+    end
+    RemoveElementalOrbs(playerID)
+
+    -- Clear grid particles
+    local grid_item = GetItemByName(oldHero, "item_toggle_grid")
+    if grid_item then
+        ClearGrid(grid_item)
+    end
 
     local newHero = PlayerResource:ReplaceHeroWith(playerID, heroName, 0, 0)
+
+    --- Add CosmeticAbility
+    if NPC_HEROES_CUSTOM[heroName] then
+        local cosmetic_ability = NPC_HEROES_CUSTOM[heroName]["CosmeticAbility"]
+        if cosmetic_ability then
+            newHero.cosmetic_ability = AddAbility(newHero, cosmetic_ability)
+        end
+    end
+
+    -- Update ownership
+    local playerData = GetPlayerData(playerID)
+    if playerData then
+        if playerData.towers then
+            for towerIndex, _ in pairs(playerData.towers) do
+                local tower = EntIndexToHScript(towerIndex)
+                if IsValidEntity(tower) and tower.scriptObject then
+                    tower:SetOwner(newHero)
+                end
+            end
+        end
+        if playerData.summoner then
+            playerData.summoner:SetOwner(newHero)
+        end
+    end
+
+    -- Update abilities and orbs
+    UpdatePlayerSpells(playerID)
+    Timers(1, function()
+        UpdateElementOrbs(playerID)
+    end)
+
     return newHero
 end
 

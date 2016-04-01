@@ -58,13 +58,22 @@ function HellSworn( event )
     ParticleManager:SetParticleControlEnt(particle, 10, target, PATTACH_POINT_FOLLOW, "attach_attack1", target:GetAbsOrigin(), true)
     ParticleManager:SetParticleControlEnt(particle, 11, target, PATTACH_POINT_FOLLOW, "attach_attack2", target:GetAbsOrigin(), true)
     ParticleManager:SetParticleControlEnt(particle, 12, target, PATTACH_POINT_FOLLOW, "attach_mane2", target:GetAbsOrigin(), true)
+    target.ambient_particle = particle
 end
 
 function HellSwornDeath( event )
-    local unit = event.unit
+    local unit = event.unit or event.caster
 
-    local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_warlock/warlock_death.vpcf", PATTACH_CUSTOMORIGIN, unit)
+    local particle = ParticleManager:CreateParticle("particles/custom/creeps/hellsworn/warlock_death.vpcf", PATTACH_CUSTOMORIGIN, unit)
     ParticleManager:SetParticleControl(particle, 0, unit:GetAbsOrigin())
+
+    event.caster = unit
+    RemoveHellSwornAmbient(event)
+end
+
+function RemoveHellSwornAmbient( event )
+    local unit = event.caster
+    ParticleManager:DestroyParticle(unit.ambient_particle, true)
 end
 
 function IceFrog( event )

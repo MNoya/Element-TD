@@ -17,6 +17,16 @@ function AdjustCosmetics( event )
     end)
 end
 
+function RemoveAllWearables( hero )
+    local wearables = hero:GetChildren()
+    for _,v in pairs(wearables) do
+        if v:GetClassname() == "dota_item_wearable" then
+            if v:GetMoveParent() == hero then
+                UTIL_Remove(v)
+            end
+        end
+    end
+end
 
 ------------------------------------------------------------------------------
 -- Datadriven calls
@@ -26,7 +36,20 @@ function AttachProp( event )
     local unit = event.caster
     local model = event.Model
     local point = event.Point
-    Attachments:AttachProp(unit, point, model)
+    local prop = Attachments:AttachProp(unit, point, model)
+
+    unit.props = unit.props or {}
+    unit.props[point] = prop
+end
+
+function RemoveProp( event )
+    local unit = event.caster
+    local point = event.Point
+
+    if unit.props then
+        local prop = unit.props[point]
+        UTIL_Remove(prop)
+    end
 end
 
 function Mount( event )
@@ -47,6 +70,7 @@ function Mount( event )
 
     rider:SetAbsOrigin(Vector(origin.x+offsetX, origin.y+offsetY, origin.z+offsetZ))
     rider:SetParent(caster, "attach_hitloc")
+    rider:SetAngles(180, 180, 0)
 
     if event.AnimateRider then
         caster.rider = rider

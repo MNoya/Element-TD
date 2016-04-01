@@ -3,7 +3,7 @@ function CreateBuilders () {
     Load($('#DarkBuilder'), "npc_dota_hero_faceless_void")
     Load($('#WaterBuilder'), "npc_dota_hero_mirana")
     Load($('#FireBuilder'), "npc_dota_hero_warlock")
-    Load($('#NatureBuilder'), "npc_dota_hero_treant")
+    Load($('#NatureBuilder'), "npc_dota_hero_furion")
     Load($('#EarthBuilder'), "npc_dota_hero_earthshaker")
     $.GetContextPanel().created = true
 }

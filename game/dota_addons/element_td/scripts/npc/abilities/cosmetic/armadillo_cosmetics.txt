@@ -24,7 +24,7 @@
                     "Function"      "Mount"
                     "Unit"          "armadillo_rider"
                     "Point"         "attach_almond_fx"
-                    "offsetZ"       "10"
+                    "offsetZ"       "30"
                 }
             }
         }

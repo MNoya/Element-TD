@@ -307,7 +307,7 @@
 	                    "Function"      "Mount"
 	                    "Unit"          "armadillo_rider"
 	                    "Point"         "attach_almond_fx"
-	                    "offsetZ"       "10"
+	                    "offsetZ"       "30"
 	                }
 	            }
 	        }
@@ -348,7 +348,8 @@
 	    "precache"
 	    {
 	        "model"  "models/items/doom/weapon_eyeoffetitzu/weapon_eyeoffetitzu.vmdl"
-	        
+	        "particle"  "particles/econ/items/warlock/warlock_hellsworn_construct/golem_hellsworn_ambient.vpcf"
+	        "particle"  "particles/units/heroes/hero_warlock/warlock_death.vpcf"
 	    }
 	
 	    "Modifiers"
@@ -373,6 +374,35 @@
 	                    "ScriptFile"    "mechanics/wearables.lua"
 	                    "Function"      "AttachProp"
 	                    "Model"         "models/items/doom/weapon_eyeoffetitzu/weapon_eyeoffetitzu.vmdl"
+	                    "Point"         "attach_attack2"
+	                }
+	
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "creeps/particles.lua"
+	                    "Function"      "HellSworn"
+	                }
+	            }
+	
+	            "OnDestroy"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "creeps/particles.lua"
+	                    "Function"      "RemoveHellSwornAmbient"
+	                }
+	
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/wearables.lua"
+	                    "Function"      "RemoveProp"
+	                    "Point"         "attach_attack1"
+	                }
+	
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/wearables.lua"
+	                    "Function"      "RemoveProp"
 	                    "Point"         "attach_attack2"
 	                }
 	            }
