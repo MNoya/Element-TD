@@ -225,7 +225,7 @@
         //  <font color='#hex'>text</font>  for color
         //  <b></b> doesnt work.
         "loading_screen_changelog"   "Latest Changes"
-        "loading_screen_change_text" "• Added latest changes on loading screen<br>• Fixed Gunpower towers attacking too early with attack ground"
+        "loading_screen_change_text" "• Reverted to version 1.3"
 
         "credits_title"         "Credits"
         "credits_developers"    "Developers"
