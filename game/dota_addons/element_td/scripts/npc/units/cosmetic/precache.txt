@@ -7,3 +7,13 @@
         "model" "models/items/pugna/ward/weta_call_of_the_nether_lotus_ward/weta_call_of_the_nether_lotus_ward.vmdl"
     }
 }
+
+"obsidian_prison"
+{
+    "BaseClass"     "npc_dota_creature"
+    "precache"
+    {
+        "model" "models/items/pugna/ward/draining_wight/draining_wight.vmdl"
+        "model" "models/items/obsidian_destroyer/immortal_weapon_1/shards_prison.vmdl"
+    }
+}
