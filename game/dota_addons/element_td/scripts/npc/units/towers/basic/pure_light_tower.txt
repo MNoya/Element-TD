@@ -37,7 +37,7 @@
     "AttackAcquisitionRange"    "20000"
     "AttackRate"                "0.2"
     "AttackAnimationPoint"      "0"
-    "ProjectileSpeed"           "1000"
+    "ProjectileSpeed"           "500"
 
     "Level"                     "4"
     "Cost"                      "8700"
