@@ -2,6 +2,7 @@
     <styles>
         <include src="file://{resources}/styles/custom_game/profile.css" />
     </styles>
+
     <scripts>
         <include src="file://{resources}/scripts/profile/profile.js" />
         <include src="file://{resources}/scripts/profile/style.js" />
@@ -339,35 +340,52 @@
         </Panel>
         <Panel class="Hide" id="CustomBuilders">
             <Panel id="BuildersContainer">
-                <Panel id="LightBuilder" class="BuilderColumn" onactivate="ChooseBuilder('npc_dota_hero_keeper_of_the_light')">
-                    <Image class="BuilderBackground" src="file://{images}/custom_game/builders/light.png" />
+                <Panel class="BuilderColumn" onmouseover="Hovering('LightBackground')" onmouseout="HoverOut('LightBackground')" onactivate="ChooseBuilder('npc_dota_hero_chen')">
+                    <Image id="LightBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/light.png" />
+                    <Panel id="LightBuilder">
+
+                    </Panel>
                 </Panel>
 
-                <Panel id="DarkBuilder" class="BuilderColumn" onactivate="ChooseBuilder('npc_dota_hero_faceless_void')">
-                    <Image class="BuilderBackground" src="file://{images}/custom_game/builders/dark.png" />
+                <Panel class="BuilderColumn" onmouseover="Hovering('DarkBackground')" onmouseout="HoverOut('DarkBackground')"  onactivate="ChooseBuilder('npc_dota_hero_faceless_void')">
+                    <Image id="DarkBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/dark.png" />
+                    <Panel id="DarkBuilder">
+
+                    </Panel>
                 </Panel>
 
-                <Panel id="WaterBuilder" class="BuilderColumn" onactivate="ChooseBuilder('npc_dota_hero_mirana')">
-                    <Image class="BuilderBackground" src="file://{images}/custom_game/builders/water.png" />
+                <Panel class="BuilderColumn" onmouseover="Hovering('WaterBackground')" onmouseout="HoverOut('WaterBackground')"  onactivate="ChooseBuilder('npc_dota_hero_mirana')">
+                    <Image id="WaterBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/water.png" />
+                    <Panel id="WaterBuilder">
+
+                    </Panel>
                 </Panel>
 
-                <Panel id="FireBuilder" class="BuilderColumn" onactivate="ChooseBuilder('npc_dota_hero_warlock')">
-                    <Image class="BuilderBackground" src="file://{images}/custom_game/builders/fire.png" />
+                <Panel class="BuilderColumn" onmouseover="Hovering('FireBackground')" onmouseout="HoverOut('FireBackground')"  onactivate="ChooseBuilder('npc_dota_hero_warlock')">
+                    <Image id="FireBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/fire.png" />
+                    <Panel id="FireBuilder">
+
+                    </Panel>
                 </Panel>
 
-                <Panel id="NatureBuilder" class="BuilderColumn" onactivate="ChooseBuilder('npc_dota_hero_treant')">
-                    <Image class="BuilderBackground" src="file://{images}/custom_game/builders/nature.png" />
+                <Panel class="BuilderColumn" onmouseover="Hovering('NatureBackground')" onmouseout="HoverOut('NatureBackground')"  onactivate="ChooseBuilder('npc_dota_hero_furion')">
+                    <Image id="NatureBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/nature.png" />
+                    <Panel id="NatureBuilder">
+
+                    </Panel>
                 </Panel>
 
-                <Panel id="EarthBuilder" class="BuilderColumn" onactivate="ChooseBuilder('npc_dota_hero_earthshaker')">
-                    <Image class="BuilderBackground" src="file://{images}/custom_game/builders/earth.png" />
+                <Panel class="BuilderColumn" onmouseover="Hovering('EarthBackground')" onmouseout="HoverOut('EarthBackground')"  onactivate="ChooseBuilder('npc_dota_hero_earthshaker')">
+                    <Image id="EarthBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/earth.png" />
+                    <Panel id="EarthBuilder">
+
+                    </Panel>
                 </Panel>
             </Panel>
 
             <Label id="CustomBuildersTitle" text="#profile_choose_builder"/>
             <Label id="CustomBuilderDescription" text="#profile_builder_description"/>
-            <Label id="CloseButton" style="vertical-align: top" onactivate="CloseCustomBuilders()"/>
+            <Label id="CloseButton" onactivate="CloseCustomBuilders()"/>
         </Panel>
-
     </Panel>
 </root>

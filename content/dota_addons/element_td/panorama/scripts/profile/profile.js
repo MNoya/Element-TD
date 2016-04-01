@@ -476,6 +476,11 @@ function CloseCustomBuilders(argument) {
 function ToggleCustomBuilders() {
     Game.EmitSound("ui_generic_button_click")
     CustomBuilders.ToggleClass("Hide")
+
+    // Create the panels on the first toggle, that way the spawn with their unit animations
+    if (!CustomBuilders.BHasClass("Hide") && ! CustomBuilders.created)
+        CreateBuilders()
+
     CloseProfile()
 }
 

@@ -2,6 +2,26 @@ if not Rewards then
     Rewards = class({})
 end
 
+function Rewards:Init()
+    Rewards.subscribed = true
+    CustomGameEventManager:RegisterListener( "player_choose_custom_builder", Dynamic_Wrap(Rewards, 'OnPlayerChangeBuilder'))
+end
+
+function Rewards:OnPlayerChangeBuilder(event)
+    local playerID = event.PlayerID
+    local heroName = event.hero_name
+
+    local newHero = Rewards:ReplaceHero(playerID, heroName)
+
+    local wearables = newHero:GetChildren()
+    for _,v in pairs(wearables) do
+        if v:GetClassname() == "dota_item_wearable" then
+            UTIL_Remove(v)
+        end
+    end
+end
+
+-- Pulls rewards.kv and eletd.com/reward_data.js
 function Rewards:Load()
     Rewards.players = {}
     Rewards.file = LoadKeyValues("scripts/kv/rewards.kv")
@@ -46,6 +66,7 @@ function Rewards:PlayerHasPass(playerID)
     return PlayerResource:HasCustomGameTicketForPlayerID(playerID) or Rewards.players[Rewards:ConvertID64(PlayerResource:GetSteamAccountID(playerID))] ~= nil
 end
 
+-- Checks if the player has a model change defined in local rewards file or in the request received in Load
 function Rewards:PlayerHasCosmeticModel(playerID)
     local steamID32 = PlayerResource:GetSteamAccountID(playerID)
     local steamID64 = Rewards:ConvertID64(steamID32)
@@ -55,6 +76,8 @@ function Rewards:PlayerHasCosmeticModel(playerID)
         return reward
     end
 
+    -- TODO: Get the pass builder used (6 possible heroes with their own handling)
+
     -- Enable wisp set outside of dedis
     if not IsDedicatedServer() then
         return {tier=10}
@@ -63,12 +86,14 @@ function Rewards:PlayerHasCosmeticModel(playerID)
     return false
 end
 
+-- Resolves changing default wisp builder to another hero when the game starts
 function Rewards:HandleHeroReplacement(hero)
     local playerID = hero:GetPlayerID()
     local reward = Rewards:PlayerHasCosmeticModel(playerID)
     if not reward then return end
 
-    local newHero = Rewards:ReplaceWithFakeHero(playerID, hero)
+    local hero_replacement = reward.hero or "npc_dota_hero_phoenix"
+    local newHero = Rewards:ReplaceHero(playerID, hero_replacement)
 
     -- Models are based on a unit for precache async, and update the portrait
     if reward.model then
@@ -142,6 +167,14 @@ function Rewards:HandleHeroReplacement(hero)
     end
 end
 
+function Rewards:ReplaceHero(playerID, heroName)
+    local oldHero = PlayerResource:GetSelectedHeroEntity(playerID)
+    oldHero:AddNoDraw()
+
+    local newHero = PlayerResource:ReplaceHeroWith(playerID, heroName, 0, 0)
+    return newHero
+end
+
 -- Stores animation data on the unit
 function Rewards:ApplyAnimations(unit, data)
     if data.build_animation then
@@ -156,6 +189,7 @@ function Rewards:ApplyAnimations(unit, data)
     end
 end
 
+-- Starts the necessary magic to have a
 function Rewards:SetCosmeticOverride(hero, unit, reward)
     hero.cosmetic_override = unit
     unit:SetAbsOrigin(hero:GetAbsOrigin())
@@ -176,12 +210,6 @@ function Rewards:SetCosmeticOverride(hero, unit, reward)
     hero:SetOriginalModel("models/custom_wisp.vmdl")
 end
 
-function Rewards:ReplaceWithFakeHero(playerID, hero)
-    local newHero = PlayerResource:ReplaceHeroWith(playerID, "npc_dota_hero_phoenix", 0, 0)
-    newHero.replaced = true
-    return newHero
-end
-
 function Rewards:ApplyCustomWispParticles(hero)
     if hero.ambient then
         ParticleManager:DestroyParticle(hero.ambient, true)
@@ -196,6 +224,7 @@ function Rewards:ApplyCustomWispParticles(hero)
     hero:SetOriginalModel("models/custom_wisp.vmdl")
 end
 
+-- Used right after starting a building placement
 function Rewards:CustomAnimation(playerID, caster)
     local unit = caster.cosmetic_override or caster
     if unit.build_animation then
@@ -210,6 +239,7 @@ function Rewards:CustomAnimation(playerID, caster)
     end
 end
 
+-- Repeated timer to fake childs Run/Idle animations based on movement of the main hero
 function Rewards:MovementAnimations(hero)
     local unit = hero.cosmetic_override or hero.rider
     if not unit.runTimer then
@@ -234,3 +264,5 @@ end
 function Rewards:ConvertID64( steamID32 )
     return '765'..(steamID32 + 61197960265728)
 end
+
+if not Rewards.subscribed then Rewards:Init() end

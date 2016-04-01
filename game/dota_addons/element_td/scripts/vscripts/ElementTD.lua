@@ -446,15 +446,24 @@ end
 function ElementTD:OnHeroInGame(hero)
     local playerID = hero:GetPlayerID()
     if playerID == -1 then return end
-    if GetPlayerData(playerID) then return end --Don't create playerdata twice
+    if GetPlayerData(playerID) then --Don't create playerdata twice
+        ElementTD:InitializeHero(playerID, hero)
+        return
+    end
 
-    CreateDataForPlayer(playerID)
-
-    local playerData = GetPlayerData(playerID)
+    local playerData = CreateDataForPlayer(playerID)
     playerData.name = PlayerResource:GetPlayerName(playerID)
+
     if playerData.name == "" then -- This normally happens in dev tools
         playerData.name = 'Developer'
     end
+
+    -- Team location based colors
+    local teamID = PlayerResource:GetTeam(playerID)
+    PlayerResource:SetCustomPlayerColor(playerID, m_TeamColors[teamID][1], m_TeamColors[teamID][2], m_TeamColors[teamID][3])
+
+    playerData.sector = TEAM_TO_SECTOR[hero:GetTeamNumber()]
+
     self:InitializeHero(playerID, hero)
     self.playerSpawnIndexes[playerID] = playerData.sector + 1
     self.availableSpawnIndex = self.availableSpawnIndex + 1
@@ -469,43 +478,29 @@ function ElementTD:OnHeroInGame(hero)
     summoner.icon = CreateUnitByName("elemental_summoner_icon", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber())
     playerData.summoner = summoner
 
+    hero:SetBaseMaxHealth(50)
+    hero:SetHealth(50)
     hero:ModifyGold(0)
     ModifyLumber(playerID, 0)  -- updates summoner spells
     ModifyPureEssence(playerID, 0, true)
     UpdateElementsHUD(playerID)
-    UpdatePlayerSpells(playerID) 
+    UpdatePlayerSpells(playerID)
+
+    SCORING_OBJECTS[playerID] = ScoringObject(playerID)
+    playerData.scoreObject = SCORING_OBJECTS[playerID]
 end
 
 -- initializes a player's hero
 function ElementTD:InitializeHero(playerID, hero)
-    print("OnInitHero PID: "..playerID)
+    Log:info("InitializeHero "..playerID..":"..hero:GetUnitName())
     hero:AddNewModifier(nil, nil, "modifier_disarmed", {})
     hero:AddNewModifier(nil, nil, "modifier_attack_immune", {})
-    --hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
     hero:AddNewModifier(hero, nil, "modifier_max_ms", {})
-
-    hero:SetAbilityPoints(0)
-    hero:SetMaxHealth(50)
-    hero:SetBaseMaxHealth(50)
-    hero:SetHealth(50)
-    hero:SetBaseDamageMin(0)
-    hero:SetBaseDamageMax(0)
-    hero:SetGold(0, false)
-    hero:SetGold(0, true)
-    hero:SetModelScale(0.75)
-
-    -- Team location based colors
-    local teamID = PlayerResource:GetTeam(playerID)
-    PlayerResource:SetCustomPlayerColor(playerID, m_TeamColors[teamID][1], m_TeamColors[teamID][2], m_TeamColors[teamID][3])
+    --hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
 
     self.vPlayerIDToHero[playerID] = hero -- Store hero for player in here GetAssignedHero can be flakey
 
     local playerData = GetPlayerData(playerID)
-
-    playerData.sector = TEAM_TO_SECTOR[hero:GetTeamNumber()]
-
-    SCORING_OBJECTS[playerID] = ScoringObject(playerID)
-    playerData.scoreObject = SCORING_OBJECTS[playerID]
 
     -- Give building items
     hero:AddItem(CreateItem("item_build_arrow_tower", hero, hero))

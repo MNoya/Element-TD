@@ -1375,6 +1375,7 @@ Label
 
 .BuilderPanel
 {
+    margin-top: 50px;
     width: 600px;
     height: 600px;
     opacity-mask: url('s2r://panorama/images/masks/softedge_box_png.vtex');
@@ -1382,19 +1383,19 @@ Label
 
 .BuilderBackground
 {
-    opacity: 0.8;
-    saturation: 0.8;
+    opacity: 0.6;
+    saturation: 0.6;
 
     transition-property: opacity, saturation;
     transition-duration: 0.2s;
     transition-timing-function: linear;
 
-     background-size: 100% 100%;
+    background-size: 100% 100%;
 
     opacity-mask: url("file://{images}/custom_game/builders/mask.png");
 }
 
-.BuilderBackground:hover
+.BuilderBackground.Hovering
 {
     opacity: 1;
     saturation: 1;
