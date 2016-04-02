@@ -4811,9 +4811,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "130"
-	    "AttackDamageMax"           "130"
-	    "Damage"                    "130"    
+	    "AttackDamageMin"           "143"
+	    "AttackDamageMax"           "143"
+	    "Damage"                    "143"    
 	    "AOE_Full"                  "100"
 	    "AOE_Half"                  "200"  
 	    "AttackRange"               "900"
@@ -5601,9 +5601,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "8450"
-	    "AttackDamageMax"           "8450"
-	    "Damage"                    "8450"
+	    "AttackDamageMin"           "9300"
+	    "AttackDamageMax"           "9300"
+	    "Damage"                    "9300"
 	    "AOE_Full"                  "100"
 	    "AOE_Half"                  "200"
 	    "AttackRange"               "900"
@@ -6130,9 +6130,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "845"
-	    "AttackDamageMax"           "845"
-	    "Damage"                    "845"
+	    "AttackDamageMin"           "930"
+	    "AttackDamageMax"           "930"
+	    "Damage"                    "930"
 	    "AOE_Full"                  "100"
 	    "AOE_Half"                  "200"
 	    "AttackRange"               "900"
@@ -6216,9 +6216,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "20"
-	    "AttackDamageMax"           "20"
-	    "Damage"                    "20"    
+	    "AttackDamageMin"           "22"
+	    "AttackDamageMax"           "22"
+	    "Damage"                    "22"    
 	    "AOE_Full"                  "100"
 	    "AOE_Half"                  "200"  
 	    "AttackRange"               "900"
@@ -13493,8 +13493,8 @@
 	    "TowerType"        "Normal"
 	    "BuffPriority"              "6"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "900"
-	    "AttackAcquisitionRange"        "900"
+	    "AttackRange"        "700"
+	    "AttackAcquisitionRange"        "700"
 	    "AttackRate"        "0.66"
 	    "ProjectileModel"           "particles/custom/towers/tidal/attack.vpcf"  
 	    "ProjectileSpeed"        "3000"
@@ -13586,8 +13586,8 @@
 	    "TowerType"        "Normal"
 	    "BuffPriority"              "2"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "900"
-	    "AttackAcquisitionRange"        "900"
+	    "AttackRange"        "700"
+	    "AttackAcquisitionRange"        "700"
 	    "AttackRate"        "0.66"
 	    "ProjectileModel"           "particles/custom/towers/tidal/attack.vpcf"  
 	    "ProjectileSpeed"        "3000"

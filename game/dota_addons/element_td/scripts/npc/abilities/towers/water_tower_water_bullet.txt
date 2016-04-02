@@ -31,7 +31,7 @@
         "02"
         {
             "var_type"            "FIELD_INTEGER"
-            "bounce_range"        "150"
+            "bounce_range"        "550"
         }
         "03"
         {

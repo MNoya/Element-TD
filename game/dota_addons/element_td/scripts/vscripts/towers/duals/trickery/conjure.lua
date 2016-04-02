@@ -116,6 +116,10 @@ function trickery_tower_conjure:CastFilterResultTarget(target)
     if result ~= UF_SUCCESS then
         return result
     end
+
+    if target:GetUnitName() == "elemental_summoner" then
+        return UF_FAIL_OTHER
+    end
     
     local bClone = target:HasModifier("modifier_clone")
     local bPreventCloning = target:HasModifier("modifier_conjure_prevent_cloning")

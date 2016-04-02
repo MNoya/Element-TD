@@ -2795,7 +2795,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_FLOAT"
-	            "damage_per_second"     "2 13 85 850"
+	            "damage_per_second"     "3 20 130 1300"
 	        }
 	        "02"
 	        {
@@ -3641,7 +3641,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "damage"                "5 33 215 2150"
+	            "damage"                "4 26 170 1700"
 	        }
 	    }
 	}
@@ -4865,7 +4865,7 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "bounce_range"        "150"
+	            "bounce_range"        "550"
 	        }
 	        "03"
 	        {
