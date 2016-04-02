@@ -1262,9 +1262,9 @@ Label
 #BadgeVersion
 {
     width: 100%;
-    font-weight: bold;
     font-size: 14px;
-    margin-left: -3px;
+    margin-top: 3px;
+    margin-left: -2px;
     color: white;
     text-shadow: 0px 0px 5px 2.0 #000;
     text-align: center;
@@ -1281,24 +1281,32 @@ Label
 
 .BadgePercentile, .BadgeText, .BadgeRank
 {
-    width: 100%;
-    font-weight: bold;
-    font-size: 13px;
+    width: 70px;
+    font-size: 12px;
     margin-top: 15px;
     color: white;
     text-shadow: 0px 0px 5px 2.0 #000;
     text-align: center;
 }
 
+.BadgeRank
+{
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 55px;
+}
+
+.BadgePercentile
+{
+    font-size: 13px;
+}
+
 .BadgeText
 {
     margin-top: 29px;
+    font-weight: normal;
 }
 
-.BadgeRank
-{
-    margin-top: 55px;
-}
 //-- end of achievements
 
 // Start of Custom Builders
@@ -1356,7 +1364,7 @@ Label
 
 .BuilderPanel
 {
-    margin-top: 50px;
+    margin-top: 150px;
     width: 600px;
     height: 600px;
     opacity-mask: url('s2r://panorama/images/masks/softedge_box_png.vtex');
@@ -1469,7 +1477,10 @@ Label
 
 #AvatarBestBadges
 {
-    height: 100px;
+    height: 95px;
+    width: 80%;
+    margin-top: -20px;
+    margin-left: 50px;
     flow-children: right;
 }
 

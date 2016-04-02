@@ -123,7 +123,7 @@ function SetStats(player_info)
             badgesCreated+=2
             var percentile_classic = rank_classic / milestones[version]["normal_count"] * 100
             var percentile_express = rank_express / milestones[version]["express_count"] * 100
-            CreateProfileBadges(GameUI.FormatVersion(version), rank_classic, percentile_classic, rank_express, percentile_express)
+            GameUI.CreateBadges($("#MilestonesContainer"), GameUI.FormatVersion(version), rank_classic, percentile_classic, rank_express, percentile_express)
         }
 
         // Only Classic
@@ -134,7 +134,7 @@ function SetStats(player_info)
 
             badgesCreated++
             var percentile_classic = rank_classic / milestones[version]["normal_count"] * 100
-            CreateProfileBadges(GameUI.FormatVersion(version), rank_classic, percentile_classic, 0, 0)
+            GameUI.CreateBadges($("#MilestonesContainer"), GameUI.FormatVersion(version), rank_classic, percentile_classic, 0, 0)
         }
 
         // Only Express
@@ -145,7 +145,7 @@ function SetStats(player_info)
 
             badgesCreated++
             var percentile_express = rank_express / milestones[version]["express_count"] * 100
-            CreateProfileBadges(GameUI.FormatVersion(version), 0, 0, rank_express, percentile_express)
+            GameUI.CreateBadges($("#MilestonesContainer"), GameUI.FormatVersion(version), 0, 0, rank_express, percentile_express)
         }
     };
 
@@ -227,41 +227,6 @@ function CreateMatch(info) {
                 }
             }
         }
-    }
-}
-
-function CreateProfileBadges(version, rank_classic, percentile_classic, rank_express, percentile_express) {
-    var panel = $.CreatePanel( "Panel", $("#MilestonesContainer"), "Profile_Badge_"+version);
-    panel.BLoadLayout( "file://{resources}/layout/custom_game/profile_ranking.xml", false, false );
-
-    GameUI.SetTextSafe( panel, "BadgeVersion", version); //Version is shared by both badges
-    panel.FindChildInLayoutFile("BadgeClassic").SetHasClass( "Hide", rank_classic == 0)
-    panel.FindChildInLayoutFile("BadgeExpress").SetHasClass( "Hide", rank_express == 0)
-
-    if (rank_classic)
-    {
-        GameUI.SetTextSafe( panel, "BadgePercentile_Classic", GameUI.FormatPercentile(percentile_classic));
-        GameUI.SetTextSafe( panel, "BadgeRank_Classic", "#" + GameUI.FormatRank(rank_classic));
-        panel.FindChildInLayoutFile( "BadgeClassic" ).AddClass(GameUI.GetRankImage(rank_classic,percentile_classic)+"_percentile");
-    }
-    else
-    {
-        panel.FindChildInLayoutFile("BadgeClassic").style['width'] = "0%"
-        panel.FindChildInLayoutFile("BadgeExpress").style['width'] = "100%"
-        panel.style['width'] = "60px;"
-    }
-
-    if (rank_express)
-    {
-        GameUI.SetTextSafe( panel, "BadgePercentile_Express", GameUI.FormatPercentile(percentile_express));
-        GameUI.SetTextSafe( panel, "BadgeRank_Express", "#" + GameUI.FormatRank(rank_express));
-        panel.FindChildInLayoutFile( "BadgeExpress" ).AddClass(GameUI.GetRankImage(rank_express,percentile_express)+"_percentile");
-    }
-    else
-    {
-        panel.FindChildInLayoutFile("BadgeClassic").style['width'] = "100%"
-        panel.FindChildInLayoutFile("BadgeExpress").style['width'] = "0%"
-        panel.style['width'] = "60px;"
     }
 }
 
@@ -455,7 +420,6 @@ function LoadProfile(steamID64) {
     })
 
     root.SetPanelEvent("onmouseout", function() {
-        $.Msg("onmouseout")
         root.tooltip.DeleteAsync(0)
     })
 
@@ -495,9 +459,8 @@ function ToggleCustomBuilders() {
     Game.EmitSound("ui_generic_button_click")
     CustomBuilders.ToggleClass("Hide")
 
-    // Create the panels on the first toggle, that way the spawn with their unit animations
-    if (!CustomBuilders.BHasClass("Hide") && ! CustomBuilders.created)
-        CreateBuilders()
+    if (!CustomBuilders.BHasClass("Hide"))
+        AnimateBuilders()
 
     CloseProfile()
 }

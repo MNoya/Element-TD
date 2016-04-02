@@ -238,6 +238,41 @@ GameUI.GetRankImage = function ( rank, percentile ) {
         return "80";
 }
 
+GameUI.CreateBadges = function (parent, version, rank_classic, percentile_classic, rank_express, percentile_express) {
+    var panel = $.CreatePanel( "Panel", parent, "Profile_Badge_"+version);
+    panel.BLoadLayout( "file://{resources}/layout/custom_game/profile_ranking.xml", false, false );
+
+    GameUI.SetTextSafe( panel, "BadgeVersion", version); //Version is shared by both badges
+    panel.FindChildInLayoutFile("BadgeClassic").SetHasClass( "Hide", rank_classic == 0)
+    panel.FindChildInLayoutFile("BadgeExpress").SetHasClass( "Hide", rank_express == 0)
+
+    if (rank_classic)
+    {
+        GameUI.SetTextSafe( panel, "BadgePercentile_Classic", GameUI.FormatPercentile(percentile_classic));
+        GameUI.SetTextSafe( panel, "BadgeRank_Classic", "#" + GameUI.FormatRank(rank_classic));
+        panel.FindChildInLayoutFile( "BadgeClassic" ).AddClass(GameUI.GetRankImage(rank_classic,percentile_classic)+"_percentile");
+    }
+    else
+    {
+        panel.FindChildInLayoutFile("BadgeClassic").style['width'] = "0%"
+        panel.FindChildInLayoutFile("BadgeExpress").style['width'] = "100%"
+        panel.style['width'] = "60px;"
+    }
+
+    if (rank_express)
+    {
+        GameUI.SetTextSafe( panel, "BadgePercentile_Express", GameUI.FormatPercentile(percentile_express));
+        GameUI.SetTextSafe( panel, "BadgeRank_Express", "#" + GameUI.FormatRank(rank_express));
+        panel.FindChildInLayoutFile( "BadgeExpress" ).AddClass(GameUI.GetRankImage(rank_express,percentile_express)+"_percentile");
+    }
+    else
+    {
+        panel.FindChildInLayoutFile("BadgeClassic").style['width'] = "100%"
+        panel.FindChildInLayoutFile("BadgeExpress").style['width'] = "0%"
+        panel.style['width'] = "60px;"
+    }
+}
+
 GameUI.CommaFormat = function (value) {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }

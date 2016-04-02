@@ -341,45 +341,33 @@
         <Panel class="Hide" id="CustomBuilders">
             <Panel id="BuildersContainer">
                 <Panel class="BuilderColumn" onmouseover="Hovering('LightBackground')" onmouseout="HoverOut('LightBackground')" onactivate="ChooseBuilder('npc_dota_hero_chen')">
-                    <Image id="LightBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/light.png" />
-                    <Panel id="LightBuilder">
-
-                    </Panel>
+                    <Image id="LightBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/light.png" />-->
+                    <DOTAScenePanel id="LightBuilder" class="BuilderPanel" map="builders" camera="light"/>
                 </Panel>
 
                 <Panel class="BuilderColumn" onmouseover="Hovering('DarkBackground')" onmouseout="HoverOut('DarkBackground')"  onactivate="ChooseBuilder('npc_dota_hero_faceless_void')">
                     <Image id="DarkBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/dark.png" />
-                    <Panel id="DarkBuilder">
-
-                    </Panel>
+                    <DOTAScenePanel id="DarkBuilder" class="BuilderPanel" map="builders" camera="dark"/>
                 </Panel>
 
                 <Panel class="BuilderColumn" onmouseover="Hovering('WaterBackground')" onmouseout="HoverOut('WaterBackground')"  onactivate="ChooseBuilder('npc_dota_hero_mirana')">
                     <Image id="WaterBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/water.png" />
-                    <Panel id="WaterBuilder">
-
-                    </Panel>
+                    <DOTAScenePanel id="WaterBuilder" class="BuilderPanel" map="builders" camera="water"/>
                 </Panel>
 
                 <Panel class="BuilderColumn" onmouseover="Hovering('FireBackground')" onmouseout="HoverOut('FireBackground')"  onactivate="ChooseBuilder('npc_dota_hero_warlock')">
                     <Image id="FireBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/fire.png" />
-                    <Panel id="FireBuilder">
-
-                    </Panel>
+                    <DOTAScenePanel id="FireBuilder" class="BuilderPanel" map="builders" camera="fire" unit="demon"/>
                 </Panel>
 
                 <Panel class="BuilderColumn" onmouseover="Hovering('NatureBackground')" onmouseout="HoverOut('NatureBackground')"  onactivate="ChooseBuilder('npc_dota_hero_furion')">
                     <Image id="NatureBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/nature.png" />
-                    <Panel id="NatureBuilder">
-
-                    </Panel>
+                    <DOTAScenePanel id="NatureBuilder" class="BuilderPanel" map="builders" camera="nature"/>
                 </Panel>
 
                 <Panel class="BuilderColumn" onmouseover="Hovering('EarthBackground')" onmouseout="HoverOut('EarthBackground')"  onactivate="ChooseBuilder('npc_dota_hero_earthshaker')">
                     <Image id="EarthBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/earth.png" />
-                    <Panel id="EarthBuilder">
-
-                    </Panel>
+                    <DOTAScenePanel id="EarthBuilder" class="BuilderPanel" map="builders" camera="earth"/>
                 </Panel>
             </Panel>
 
