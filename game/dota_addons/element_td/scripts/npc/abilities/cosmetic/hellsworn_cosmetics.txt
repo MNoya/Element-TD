@@ -41,6 +41,13 @@
                     "ScriptFile"    "creeps/particles.lua"
                     "Function"      "HellSworn"
                 }
+
+                "AttachEffect"
+                {
+                    "EffectName"        "particles/econ/courier/courier_trail_lava/courier_trail_lava.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                    "Target"            "TARGET"
+                }
             }
 
             "OnDestroy"

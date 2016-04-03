@@ -61,6 +61,10 @@ function HoverOut(name) {
 function ChooseBuilder(heroName) {
     GameEvents.SendCustomGameEventToServer( "player_choose_custom_builder", { "hero_name": heroName } );
     CloseCustomBuilders()
+    
+    var panel = $("#"+name)
+    panel.RemoveClass("Hovering")
+    panel.hovering = undefined
 }
 
 var backgrounds = {}

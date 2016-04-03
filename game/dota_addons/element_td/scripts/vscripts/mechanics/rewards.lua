@@ -199,11 +199,18 @@ function Rewards:ReplaceHero(playerID, oldHero, heroName)
 
     local newHero = PlayerResource:ReplaceHeroWith(playerID, heroName, 0, 0)
 
-    --- Add CosmeticAbility
+    --- Add Cosmetics
     if NPC_HEROES_CUSTOM[heroName] then
         local cosmetic_ability = NPC_HEROES_CUSTOM[heroName]["CosmeticAbility"]
         if cosmetic_ability then
             newHero.cosmetic_ability = AddAbility(newHero, cosmetic_ability)
+        end
+
+         -- Add BuildAnimation or RiderBuildAnimation
+        if NPC_HEROES_CUSTOM[heroName]["BuildAnimation"] then
+            newHero.BuildAnimations = split(NPC_HEROES_CUSTOM[heroName]["BuildAnimation"], ",")
+        elseif NPC_HEROES_CUSTOM[heroName]["RiderBuildAnimation"] then
+            newHero.RiderBuildAnimations = split(NPC_HEROES_CUSTOM[heroName]["RiderBuildAnimation"], ",")
         end
     end
 
@@ -284,6 +291,7 @@ end
 -- Used right after starting a building placement
 function Rewards:CustomAnimation(playerID, caster)
     local unit = caster.cosmetic_override or caster
+
     if unit.build_animation then
         unit:RemoveGesture(ACT_DOTA_RUN)
         unit:RemoveGesture(ACT_DOTA_IDLE)
@@ -293,6 +301,17 @@ function Rewards:CustomAnimation(playerID, caster)
             StartAnimation(unit, {duration=2, activity=unit.build_animation, rate=1})
         end
         unit.wait_for_animation = true
+        return
+    end
+
+    local animationList = caster.BuildAnimations or caster.RiderBuildAnimations
+    if animationList then
+        local random_anim = tonumber(animationList[RandomInt(1, #animationList)])
+        if caster.BuildAnimations then
+            caster:StartGesture(random_anim)
+        else
+            caster.rider:StartGesture(random_anim)
+        end
     end
 end
 

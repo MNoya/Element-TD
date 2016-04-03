@@ -4,6 +4,11 @@
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
     "MaxLevel"                      "1"
 
+    "precache"
+    {
+        "particle"  "particles/econ/courier/courier_trail_international_2013/courier_international_2013.vpcf"
+    }
+
     "Modifiers"
     {
         "modifier_green_dragon_rider"
@@ -13,6 +18,20 @@
 
             "OnCreated"
             {
+                "AttachEffect"
+                {
+                    "EffectName"        "particles/custom/elements/nature/courier_greevil_green_ambient_3.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                    "Target"            "TARGET"
+                }
+
+                "AttachEffect"
+                {
+                    "EffectName"        "particles/econ/courier/courier_trail_international_2013/courier_international_2013.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                    "Target"            "TARGET"
+                }
+
                 "RunScript"
                 {
                     "ScriptFile"    "mechanics/wearables.lua"
@@ -24,7 +43,6 @@
                     "yaw"           "0"
                     "offsetX"       "-120"
                     "offsetZ"       "30"
-
                 }
             }
         }

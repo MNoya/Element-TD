@@ -73,17 +73,15 @@ function Mount( event )
     rider:SetAbsOrigin(Vector(origin.x+offsetX, origin.y+offsetY, origin.z+offsetZ))
     rider:SetParent(caster, "attach_hitloc")
     rider:SetAngles(pitch, yaw, 0)
+    caster.rider = rider
 
     if event.AnimateRider then
-        caster.rider = rider
         Rewards:MovementAnimations(caster)
     end
 
     if event.IdleAnimation then
         rider:StartGesture(tonumber(event.IdleAnimation))
     end
-
-    caster.rider = rider
 end
 
 function MountVoid( event )
@@ -101,6 +99,8 @@ function MountVoid( event )
     rider:SetAbsOrigin(Vector(origin.x+0, origin.y+0, origin.z+0))
     rider:SetParent(prop, "attach_hitloc")
     rider:StartGesture(ACT_DOTA_IDLE)
+
+    rex.rider = rider
 end
 
 function AttachOrbs( event )

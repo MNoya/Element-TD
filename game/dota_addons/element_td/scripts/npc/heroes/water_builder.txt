@@ -8,6 +8,7 @@
 
     "CosmeticAbility"           "icewrack_wolf_cosmetics"
     "HealthBarOffset"           "250"
+    "BuildAnimation"            "1690,1701,1696"//ACT_DOTA_GREET,ACT_DOTA_PET_LEVEL,ACT_DOTA_ITEM_PICKUP
 
     "override_hero"             "npc_dota_hero_mirana"
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_FLY"

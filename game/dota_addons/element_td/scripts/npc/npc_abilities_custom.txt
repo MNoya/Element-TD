@@ -289,7 +289,7 @@
 	
 	    "precache"
 	    {
-	        "particle"  "models/items/necrolyte/death_protest_weapon/death_protest_weapon.vmdl"
+	        "particle"  "particles/econ/items/pets/pet_frondillo/almond_ambient_gold.vpcf"
 	    }
 	
 	    "Modifiers"
@@ -301,6 +301,18 @@
 	
 	            "OnCreated"
 	            {
+	                "AttachEffect"
+	                {
+	                    "EffectName"        "particles/econ/items/pets/pet_frondillo/almond_ambient_gold.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                    "Target"            "TARGET"
+	                    "ControlPointEntities"
+	                    {
+	                        "CASTER"    "attach_almond_fx"
+	                        "CASTER"    "attach_almond_fx"
+	                    }
+	                }
+	
 	                "RunScript"
 	                {
 	                    "ScriptFile"    "mechanics/wearables.lua"
@@ -380,6 +392,11 @@
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 	    "MaxLevel"                      "1"
 	
+	    "precache"
+	    {
+	        "particle"  "particles/econ/courier/courier_trail_international_2013/courier_international_2013.vpcf"
+	    }
+	
 	    "Modifiers"
 	    {
 	        "modifier_green_dragon_rider"
@@ -389,6 +406,20 @@
 	
 	            "OnCreated"
 	            {
+	                "AttachEffect"
+	                {
+	                    "EffectName"        "particles/custom/elements/nature/courier_greevil_green_ambient_3.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                    "Target"            "TARGET"
+	                }
+	
+	                "AttachEffect"
+	                {
+	                    "EffectName"        "particles/econ/courier/courier_trail_international_2013/courier_international_2013.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                    "Target"            "TARGET"
+	                }
+	
 	                "RunScript"
 	                {
 	                    "ScriptFile"    "mechanics/wearables.lua"
@@ -400,7 +431,6 @@
 	                    "yaw"           "0"
 	                    "offsetX"       "-120"
 	                    "offsetZ"       "30"
-	
 	                }
 	            }
 	        }
@@ -449,6 +479,13 @@
 	                    "ScriptFile"    "creeps/particles.lua"
 	                    "Function"      "HellSworn"
 	                }
+	
+	                "AttachEffect"
+	                {
+	                    "EffectName"        "particles/econ/courier/courier_trail_lava/courier_trail_lava.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                    "Target"            "TARGET"
+	                }
 	            }
 	
 	            "OnDestroy"
@@ -482,6 +519,11 @@
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 	    "MaxLevel"                      "1"
 	
+	    "precache"
+	    {
+	        "particle"  "particles/econ/courier/courier_murrissey_the_smeevil/courier_murrissey_the_smeevil.vpcf"
+	    }
+	
 	    "Modifiers"
 	    {
 	        "modifier_icewrack_wolf_rider"
@@ -491,6 +533,24 @@
 	
 	            "OnCreated"
 	            {
+	                "AttachEffect"
+	                {
+	                    "EffectName"        "particles/econ/items/lion/fish_stick/fish_stick_spell_ambient.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                    "Target"            "TARGET"
+	                }
+	
+	                "AttachEffect"
+	                {
+	                    "EffectName"        "particles/econ/courier/courier_murrissey_the_smeevil/courier_murrissey_the_smeevil.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                    "Target"            "TARGET"
+	                    "ControlPointEntities"
+	                    {
+	                        "CASTER"    "attach_hitloc"
+	                    }
+	                }
+	                
 	                "RunScript"
 	                {
 	                    "ScriptFile"    "mechanics/wearables.lua"

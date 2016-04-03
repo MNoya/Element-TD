@@ -179,9 +179,11 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/elements/nature/courier_greevil_green_ambient_b.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/elements/nature/courier_greevil_green_ambient_c.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/elements/nature/courier_greevil_green_ambient_2.vpcf"

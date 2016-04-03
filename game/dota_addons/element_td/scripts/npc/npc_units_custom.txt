@@ -104,6 +104,20 @@
 	    }
 	}
 	
+	"light_donkey"
+	{
+	    "BaseClass"     "npc_dota_creature"
+	    "Model"         "models/courier/donkey_unicorn/donkey_unicorn.vmdl"
+	    "ModelScale"    "2"
+	}
+	
+	"rex"
+	{
+	    "BaseClass"     "npc_dota_creature"
+	    "Model"         "models/items/courier/faceless_rex/faceless_rex.vmdl"
+	    "ModelScale"    "3"
+	}
+	
 	"rex_rider"
 	{
 	    "BaseClass"     "npc_dota_creature"
@@ -121,6 +135,15 @@
 	            "5" { "ItemDef" "5897" } // Skirt of the Tentacular Timelord
 	        }
 	    }
+	}
+	
+	"green_dragon"
+	{
+	    "BaseClass"     "npc_dota_creature"
+	    "Model"         "models/courier/otter_dragon/otter_dragon.vmdl"
+	    "ModelScale"    "3"
+	
+	    "Ability1"  "green_dragon_cosmetics"
 	}
 	
 	"green_dragon_rider"
