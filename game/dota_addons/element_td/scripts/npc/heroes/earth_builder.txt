@@ -7,6 +7,7 @@
     "ModelScale"                "3"
 
     "CosmeticAbility"           "armadillo_cosmetics"
+    "HealthBarOffset"           "250"
     "BuildAnimation"            "1690" //ACT_DOTA_GREET
 
     "override_hero"             "npc_dota_hero_earthshaker"

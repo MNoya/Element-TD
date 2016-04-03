@@ -57,6 +57,9 @@ function Mount( event )
     local ability = event.ability
     local unitName = event.Unit
     local point = event.Point
+    local pitch = event.pitch and tonumber(event.pitch) or 180
+    local yaw = event.yaw and tonumber(event.yaw) or 180
+    local roll = event.roll and tonumber(event.roll) or 0 --Can't do a barrel roll
     local offsetX = event.offsetX and tonumber(event.offsetX) or 0
     local offsetY = event.offsetY and tonumber(event.offsetY) or 0
     local offsetZ = event.offsetZ and tonumber(event.offsetZ) or 0
@@ -70,11 +73,15 @@ function Mount( event )
 
     rider:SetAbsOrigin(Vector(origin.x+offsetX, origin.y+offsetY, origin.z+offsetZ))
     rider:SetParent(caster, "attach_hitloc")
-    rider:SetAngles(180, 180, 0)
+    rider:SetAngles(pitch, yaw, 0)
 
     if event.AnimateRider then
         caster.rider = rider
         Rewards:MovementAnimations(caster)
+    end
+
+    if event.IdleAnimation then
+        rider:StartGesture(tonumber(event.IdleAnimation))
     end
 
     caster.rider = rider

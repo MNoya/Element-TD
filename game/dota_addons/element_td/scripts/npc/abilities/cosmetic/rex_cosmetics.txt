@@ -1,4 +1,4 @@
-"icewrack_wolf_cosmetics"
+"rex_cosmetics"
 {
     "BaseClass"                     "ability_datadriven"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
@@ -6,7 +6,7 @@
 
     "Modifiers"
     {
-        "modifier_icewrack_wolf_rider"
+        "modifier_rex_rider"
         {
             "Passive"   "1"
             "IsHidden"  "1"
@@ -17,7 +17,7 @@
                 {
                     "ScriptFile"    "mechanics/wearables.lua"
                     "Function"      "Mount"
-                    "Unit"          "icewrack_wolf_rider"
+                    "Unit"          "rex_rider"
                     "Point"         "attach_hitloc"
                     "AnimateRider"  "true"
                     "offsetZ"       "-65"

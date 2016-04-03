@@ -339,6 +339,73 @@
 	        }
 	    }
 	}
+	"donkey_cosmetics"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "MaxLevel"                      "1"
+	
+	    "precache"
+	    {
+	        "particle"  "particles/econ/courier/courier_donkey_unicorn/courier_donkey_unicorn_ambient.vpcf"
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_donkey_cosmetics"
+	        {
+	            "Passive"            "1"
+	            "IsHidden"           "1"
+	        
+	            "OnCreated"
+	            {
+	                "AttachEffect"
+	                {
+	                    "EffectName"        "particles/econ/courier/courier_donkey_unicorn/courier_donkey_unicorn_ambient.vpcf"
+	                    "EffectAttachType"  "attach_hitloc"
+	                    "Target"            "TARGET"
+	                    "ControlPointEntities"
+	                    {
+	                        "CASTER"    "attach_hitloc"
+	                        "CASTER"    "attach_hitloc"
+	                    }
+	                }
+	            }
+	        }
+	    }
+	}
+	"green_dragon_cosmetics"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "MaxLevel"                      "1"
+	
+	    "Modifiers"
+	    {
+	        "modifier_green_dragon_rider"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/wearables.lua"
+	                    "Function"      "Mount"
+	                    "Unit"          "green_dragon_rider"
+	                    "Point"         "attach_hitloc"
+	                    "IdleAnimation" "1609" //ACT_DOTA_RELAX_LOOP
+	                    "pitch"         "90"
+	                    "yaw"           "0"
+	                    "offsetX"       "-120"
+	                    "offsetZ"       "30"
+	
+	                }
+	            }
+	        }
+	    }
+	}
 	"hellsworn_cosmetics"
 	{
 	    "BaseClass"                     "ability_datadriven"
@@ -414,11 +481,6 @@
 	    "BaseClass"                     "ability_datadriven"
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 	    "MaxLevel"                      "1"
-	
-	    "precache"
-	    {
-	        "particle"  "models/items/necrolyte/death_protest_weapon/death_protest_weapon.vmdl"
-	    }
 	
 	    "Modifiers"
 	    {
@@ -497,6 +559,34 @@
 	
 	            "StatusEffectName"      "particles/status_fx/status_effect_arc_warden_tempest.vpcf"        
 	            "StatusEffectPriority"  "10"
+	        }
+	    }
+	}
+	"rex_cosmetics"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "MaxLevel"                      "1"
+	
+	    "Modifiers"
+	    {
+	        "modifier_rex_rider"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/wearables.lua"
+	                    "Function"      "Mount"
+	                    "Unit"          "rex_rider"
+	                    "Point"         "attach_hitloc"
+	                    "AnimateRider"  "true"
+	                    "offsetZ"       "-65"
+	                }
+	            }
 	        }
 	    }
 	}
