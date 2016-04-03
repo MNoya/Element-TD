@@ -33,6 +33,44 @@
         }
     }
 
+    "models/items/warlock/golem/hellsworn_golem/hellsworn_golem.vmdl"
+    {
+        "cameras"
+        {
+            "Default"
+            {
+                "PortraitPosition"      "296.919495 195.689041 311.829987"
+                "PortraitAngles"        "13.472588 -143.122040 0.000000"
+                "PortraitFOV"       "10.158838"
+                "PortraitFar"       "1500"
+            }
+        }
+        "PortraitLightPosition"     "24.691771 -278.909149 280.400055"
+        "PortraitLightAngles"       "24.955908 86.066887 0.000000"
+        "PortraitLightFOV"      "63"
+        "PortraitLightDistance"     "471"
+        "PortraitLightColor"        "254 182 144"
+        "PortraitLightScale"        "5"
+        "PortraitShadowColor"       "152 129 124"
+        "PortraitShadowScale"       "1.025000"
+        "PortraitGroundShadowScale"     "1.500000"
+        "PortraitAmbientDirection"      "0.722 0.297 -0.625"
+        "PortraitAmbientColor"      "120 136 144"
+        "PortraitAmbientScale"      "5"
+        "PortraitSpecularColor"     "251 74 84"
+        "PortraitSpecularDirection"     "0.000000 0.000000 -1.000000"
+        "PortraitSpecularPower"     "16"
+        "PortraitBackgroundColor1"      "0.100000 0.100000 0.100000"
+        "PortraitBackgroundColor2"      "0.833312 0.294695 0.133578"
+        "PortraitBackgroundColor3"      "0.000000 0.000000 0.000000"
+        "PortraitBackgroundColor4"      "0.700000 0.700000 0.700000"
+        "PortraitBackgroundTexture"     "materials/vgui/hud/heroportraits/portraitbackground_purple.vmat"
+        "PortraitAnimationActivity"     "ACT_DOTA_IDLE"
+        "PortraitAnimationCycle"        "0"
+        "PortraitAnimationRate"     "1"
+        "PortraitHideHero"      "0"
+    }
+
     "models/pets/armadillo/armadillo.vmdl"
     {
         "PortraitLightPosition"     "-37.81 26.97 180.80"

@@ -202,7 +202,6 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
                     playerPortrait.SetImage( "file://{images}/custom_game/rewards/dev.png" );
                 else
                     playerPortrait.SetImage( "file://{images}/custom_game/rewards/npc_dota_hero_wisp.png" );
-                $.Msg(playerInfo.player_selected_hero)
             }
             else
             {
