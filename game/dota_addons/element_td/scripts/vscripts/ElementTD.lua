@@ -2,6 +2,7 @@ if not players then
     players = {}
     playerIDs = {}
 
+    -- TODO: make this work for a single team in co-op
     TEAM_TO_SECTOR = {}
     TEAM_TO_SECTOR[2] = 0
     TEAM_TO_SECTOR[3] = 1

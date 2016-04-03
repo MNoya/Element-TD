@@ -173,9 +173,15 @@ function generateSectorBounds()
 end
 
 function generateSectorPortals()
-    for i=1,8 do
-        local portal = Entities:FindByName(nil, "portal_sector"..i)
-        SectorPortals[i] = portal
+    if COOP_MAP then
+        for i = 1, 6 do
+            -- portal entities are named differently on the co-op map LOL
+            SectorPortals[i] = Entities:FindByName(nil, "portal_" .. i)
+        end
+    else
+        for i = 1, 8 do
+            SectorPortals[i] = Entities:FindByName(nil, "portal_sector" .. i)
+        end
     end
 end
 

@@ -29,7 +29,13 @@ function StartBreakTimeCoop(breakTime)
    	-- local bShowButton = PlayerResource:GetPlayerCount() == 1 and COOP_WAVE == 1
     CustomGameEventManager:Send_ServerToAllClients("etd_update_wave_timer", {time = breakTime, button = false})
 	
-	-- TODO: update portals, give players lumber/esscense, random elementals
+	-- TODO: give players lumber/esscense, random elementals
+
+    -- show sector portals
+    for i = 1, 6 do
+        ShowPortalForSector(i, COOP_WAVE)
+    end
+
 	-- set up each individual player
 	for _, playerID in pairs(playerIDs) do
 		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
