@@ -144,6 +144,7 @@
 	    "ModelScale"                "3"
 	
 	    "CosmeticAbility"           "armadillo_cosmetics"
+	    "BuildAnimation"            "1690" //ACT_DOTA_GREET
 	
 	    "override_hero"             "npc_dota_hero_earthshaker"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_FLY"
@@ -230,12 +231,12 @@
 	//===============================================================================================================
 	// HERO: (Light) Builder
 	//===============================================================================================================
-	"npc_dota_hero_chen"
+	"npc_dota_hero_keeper_of_the_light"
 	{
 	    "Model"                     "models/courier/donkey_unicorn/donkey_unicorn.vmdl"
 	    "ModelScale"                "2"
 	
-	    "override_hero"             "npc_dota_hero_chen"
+	    "override_hero"             "npc_dota_hero_keeper_of_the_light"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_FLY"
 	    "MovementSpeed"             "522"
 	

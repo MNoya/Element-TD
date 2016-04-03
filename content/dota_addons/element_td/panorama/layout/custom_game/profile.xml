@@ -340,7 +340,7 @@
         </Panel>
         <Panel class="Hide" id="CustomBuilders">
             <Panel id="BuildersContainer">
-                <Panel class="BuilderColumn" onmouseover="Hovering('LightBackground')" onmouseout="HoverOut('LightBackground')" onactivate="ChooseBuilder('npc_dota_hero_chen')">
+                <Panel class="BuilderColumn" onmouseover="Hovering('LightBackground')" onmouseout="HoverOut('LightBackground')" onactivate="ChooseBuilder('npc_dota_hero_keeper_of_the_light')">
                     <Image id="LightBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/light.png" />-->
                     <DOTAScenePanel id="LightBuilder" class="BuilderPanel" map="builders" camera="light"/>
                 </Panel>
