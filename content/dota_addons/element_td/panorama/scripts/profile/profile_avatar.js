@@ -16,6 +16,20 @@ function CreateAvatarBadges() {
     GameUI.CreateBadges(Container, GameUI.FormatVersion("1.0"), 30, 25, 0, 0)
 }
 
+
+function ShowPlayerPass(steamID64) {
+    var steamID = GameUI.ConvertID32(steamID64)
+
+    $.AsyncWebRequest( "http://hatinacat.com/leaderboard/data_request.php?req=save&id="+steamID, { type: 'GET', 
+        success: function( data ) {
+            var info = JSON.parse(data);
+            var save = info["save"]
+
+            $.Msg(save)
+        }
+    })
+}
+
 CreateAvatarBadges()
 
 /*

@@ -8,15 +8,46 @@ function AnimateBuilders() {
 }
 
 function Hovering(name) {
-    $("#"+name).AddClass("Hovering")
+    var panel = $("#"+name)
+    panel.AddClass("Hovering")
+    panel.hovering = true
 }
 
 function HoverOut(name) {
-    $("#"+name).RemoveClass("Hovering")
+    var panel = $("#"+name)
+
+    var hero =  Players.GetPlayerHeroEntityIndex(Players.GetLocalPlayer())
+    var heroName = Entities.GetUnitName(hero)
+
+    if (name != backgrounds[heroName])
+        panel.RemoveClass("Hovering")
 }
 
 function ChooseBuilder(heroName) {
     GameEvents.SendCustomGameEventToServer( "player_choose_custom_builder", { "hero_name": heroName } );
     CloseCustomBuilders()
 }
-    
+
+var backgrounds = {}
+backgrounds["npc_dota_hero_skywrath_mage"] = "LightBackground"
+backgrounds["npc_dota_hero_faceless_void"] = "DarkBackground"
+backgrounds["npc_dota_hero_mirana"] = "WaterBackground"
+backgrounds["npc_dota_hero_warlock"] = "FireBackground"
+backgrounds["npc_dota_hero_lone_druid"] = "NatureBackground"
+backgrounds["npc_dota_hero_earthshaker"] = "EarthBackground"
+
+function HighlightSelectedBuilder () {
+    var hero =  Players.GetPlayerHeroEntityIndex(Players.GetLocalPlayer())
+    var heroName = Entities.GetUnitName(hero)
+
+    for (var name in backgrounds)
+    {
+        if (name == heroName)
+            Hovering(backgrounds[name])
+        else if (! $("#"+name).hovering)
+            HoverOut(backgrounds[name])
+    }
+    $.Schedule(1, HighlightSelectedBuilder)
+}
+
+HighlightSelectedBuilder()
