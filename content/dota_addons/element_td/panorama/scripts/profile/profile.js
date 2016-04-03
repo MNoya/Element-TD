@@ -460,7 +460,7 @@ function ToggleCustomBuilders() {
     CustomBuilders.ToggleClass("Hide")
 
     if (!CustomBuilders.BHasClass("Hide"))
-        AnimateBuilders()
+        AnimateBuildersSpawn()
 
     CloseProfile()
 }
