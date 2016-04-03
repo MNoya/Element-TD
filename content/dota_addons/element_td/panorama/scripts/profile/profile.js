@@ -520,11 +520,19 @@ function LoadLocalProfile() {
     var steamID64 = GameUI.GetLocalPlayerSteamID()
     LoadProfile(steamID64)
 
-    $("#AvatarImageMini").steamid = steamID64
-
     //Testing
     //ToggleProfile()
     //ShowProfileTab('achievements')
+}
+
+function CheckHUDFlipped() {
+
+    var bFlipped = Game.IsHUDFlipped()
+    $("#ProfileToggleContainer").SetHasClass("Flipped", bFlipped)
+    $("#MyProfileButton").SetHasClass("Flipped", bFlipped)
+    $("#CustomBuilderButton").SetHasClass("Flipped", bFlipped)
+    
+    $.Schedule(1, CheckHUDFlipped)
 }
 
 (function () {
@@ -536,5 +544,7 @@ function LoadLocalProfile() {
             LoadLocalProfile()
             GameUI.AcceptWheel()
         }
+
+        CheckHUDFlipped()
     })
 })();

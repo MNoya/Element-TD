@@ -20,7 +20,6 @@
                 <Label id="ProfileHeaderTitle" text="#profile_builders" />
                 <Panel id="PopoutArrow" class="OpenMenuArrow" />
             </Panel>
-            <DOTAAvatarImage id="AvatarImageMini" steamid=""/>
         </Panel>
 
         <Panel class="Hide" id="Profile" onmouseover="GameUI.DenyWheel()" onmouseout="GameUI.AcceptWheel()">
