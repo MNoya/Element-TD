@@ -24,6 +24,14 @@ function GetTopRanks(type, panel) {
             var info = JSON.parse(data);
             var players = info['players']
 
+            if (players === undefined)
+            {
+                $.Msg("Error on GetTopRanks "+type)
+                loadingSpinner.AddClass("Hide")
+                $("#ErrorLB"+type).RemoveClass("Hide")
+                return
+            }
+
             //$.Msg(panel.id)
             for (var steamID in players)
             {
@@ -42,8 +50,7 @@ function GetTopRanks(type, panel) {
         },
 
         error: function() {
-            $.Msg("Error on GetTopRanks ")
-
+            $.Msg("Error on GetTopRanks "+type)
             loadingSpinner.AddClass("Hide")
             $("#ErrorLB"+type).RemoveClass("Hide")
         }

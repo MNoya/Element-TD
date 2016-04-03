@@ -32,12 +32,10 @@ idle_anims["NatureBuilder"] = "capture_idle_head_turn"
 idle_anims["EarthBuilder"] = "idle_standing"
 
 function AnimateBuilderHover(id) {
-    $.Msg("AnimateBuilderHover ", id, " ", names[id], " ", hover_anims[id]);
     $.DispatchEvent("DOTAGlobalSceneFireEntityInput", id, names[id], "SetAnimation", hover_anims[id]);
 }
 
 function AnimateBuilderIdle(id) {
-    $.Msg("AnimateBuilderIdle ", id, " ", names[id], " ", idle_anims[id]);
     $.DispatchEvent("DOTAGlobalSceneFireEntityInput", id, names[id], "SetAnimation", idle_anims[id]);
 }
 
