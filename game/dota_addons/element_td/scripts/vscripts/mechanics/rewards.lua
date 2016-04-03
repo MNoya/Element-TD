@@ -18,6 +18,7 @@ function Rewards:OnPlayerChangeBuilder(event)
     -- Replace and handle wearables, animations, particles
     local newHero = Rewards:ReplaceHero(playerID, oldHero, heroName)
     RemoveAllWearables(newHero)
+    UTIL_Remove(oldHero)
 end
 
 -- Pulls rewards.kv and eletd.com/reward_data.js
@@ -168,7 +169,7 @@ end
 
 function Rewards:ReplaceHero(playerID, oldHero, heroName)
     oldHero:AddNoDraw()
-    oldHero:ForceKill(true)   
+    oldHero:ForceKill(true)
 
     -- Remove parented units
     if oldHero.cosmetic_override then

@@ -1,12 +1,12 @@
 //===============================================================================================================
 // HERO: (Nature) Builder
 //===============================================================================================================
-"npc_dota_hero_furion"
+"npc_dota_hero_lone_druid"
 {
     "Model"                     "models/courier/otter_dragon/otter_dragon.vmdl"
     "ModelScale"                "3"
-
-    "override_hero"             "npc_dota_hero_furion"
+    
+    "override_hero"             "npc_dota_hero_lone_druid"
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_FLY"
     "MovementSpeed"             "522"
 

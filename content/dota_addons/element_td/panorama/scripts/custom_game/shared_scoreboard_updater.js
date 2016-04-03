@@ -201,7 +201,7 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
                 if (reward == "Developer")
                     playerPortrait.SetImage( "file://{images}/custom_game/rewards/dev.png" );
                 else
-                    playerPortrait.SetImage( "file://{images}/custom_game/rewards/npc_dota_hero_wisp.png" );
+                    playerPortrait.SetImage( "file://{images}/custom_game/rewards/"+playerInfo.player_selected_hero+".png" );
             }
             else
             {
