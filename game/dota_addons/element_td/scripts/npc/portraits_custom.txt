@@ -33,6 +33,76 @@
         }
     }
 
+    "models/items/courier/faceless_rex/faceless_rex.vmdl"
+    {
+        "PortraitLightPosition"     "132.478607 89.718552 199.799255"
+        "PortraitLightAngles"       "44.415051 -144.488129 -0.000002"
+        "PortraitLightFOV"      "48.887184"
+        "PortraitLightDistance"     "463.285553"
+        "PortraitLightColor"        "254 234 208"
+        "PortraitShadowColor"       "103 104 106"
+        "PortraitShadowScale"       "1.025000"
+        "PortraitGroundShadowScale"     "1.500000"
+        "PortraitAmbientColor"      "109 120 73"
+        "PortraitAmbientScale"      "5.000000"
+        "PortraitSpecularColor"     "251 74 84"
+        "PortraitSpecularDirection"     "0.000000 0.000000 -1.000000"
+        "PortraitSpecularPower"     "16.000000"
+        "PortraitBackgroundColor1"      "0.552274 0.928840 1.000000"
+        "PortraitBackgroundColor2"      "1.000000 1.000000 1.000000"
+        "PortraitBackgroundColor3"      "1.000000 0.965459 0.734810"
+        "PortraitBackgroundColor4"      "0.587059 1.000000 0.353284"
+        "PortraitBackgroundTexture"     "materials/vgui/hud/heroportraits/portraitbackground_motion_swoops.vmat"
+        "PortraitAnimationActivity"     "ACT_DOTA_IDLE"
+        "PortraitAnimationCycle"        "0.000000"
+        "PortraitAnimationRate"     "1.000000"
+        "PortraitHideHero"      "0"
+        "PortraitLightScale"        "3.206045"
+        "PortraitAmbientDirection"      "0.181 -0.884 -0.432"
+        "cameras"
+        {
+            "default"
+            {
+                "PortraitPosition"      "184.327194 -130.082413 134.629776"
+                "PortraitAngles"        "15.390963 143.712158 0.000000"
+                "PortraitFOV"       "21.385195"
+                "PortraitFar"       "1500.000000"
+            }
+        }
+    }
+
+    "models/courier/otter_dragon/otter_dragon.vmdl"
+    {
+        "PortraitLightPosition"     "91.60 -26.47 119.14"
+        "PortraitLightAngles"       "41.21 153.40 0.00"
+        "PortraitLightFOV"      "86"
+        "PortraitLightDistance"     "128"
+        "PortraitLightColor"        "239 254 223"
+        "PortraitShadowColor"       "69 69 69"
+        "PortraitShadowScale"       "5.000000"
+        "PortraitAmbientColor"      "48 182 213"
+        "PortraitAmbientScale"      "5.000000"
+        "PortraitSpecularColor"     "251 74 84"
+        "PortraitBackgroundTexture"     "materials/vgui/hud/heroportraits/portraitbackground_forest.vmat"
+        "PortraitBackgroundColor1"      ".1 .1 .2"
+        "PortraitBackgroundColor2"      ".1 .5 .7"
+        "PortraitBackgroundColor3"      ".1 .75 .9"
+        "PortraitBackgroundColor4"      ".1 .3 .4"
+        "PortraitLightScale"        "1.550000"
+        "PortraitGroundShadowScale"     "1.500000"
+        "PortraitAmbientDirection"      "-0.180 55.360 32.130"
+        "PortraitAnimationActivity"     "ACT_DOTA_IDLE"
+        "cameras"
+        {
+            "default"
+            {
+                "PortraitPosition"      "241.25 -104.55 85.84"
+                "PortraitAngles"        "5.87 152.87 0.00"
+                "PortraitFOV"       "17"
+            }
+        }
+    }
+
     "models/items/warlock/golem/hellsworn_golem/hellsworn_golem.vmdl"
     {
         "cameras"
