@@ -66,7 +66,6 @@ function Mount( event )
 
     local attach = caster:ScriptLookupAttachment(point)
     local origin = caster:GetAttachmentOrigin(attach)
-    local fv = caster:GetForwardVector()
 
     local rider = CreateUnitByName(unitName, caster:GetAbsOrigin(), false, nil, nil, caster:GetTeamNumber()) 
     rider:AddNewModifier(nil, nil, "modifier_out_of_world", {})
@@ -85,6 +84,23 @@ function Mount( event )
     end
 
     caster.rider = rider
+end
+
+function MountVoid( event )
+    local rex = event.caster
+
+    -- I regret nothing
+    local prop = Attachments:AttachProp(rex, "attach_hitloc", 'models/props_gameplay/red_box.vmdl')
+    prop:AddEffects(EF_NODRAW)
+
+    local rider = CreateUnitByName("rex_rider", rex:GetAbsOrigin(), false, nil, nil, rex:GetTeamNumber()) 
+    rider:AddNewModifier(nil, nil, "modifier_out_of_world", {})
+
+    local attach = prop:ScriptLookupAttachment(point)
+    local origin = prop:GetAttachmentOrigin(attach)
+    rider:SetAbsOrigin(Vector(origin.x+0, origin.y+0, origin.z+0))
+    rider:SetParent(prop, "attach_hitloc")
+    rider:StartGesture(ACT_DOTA_IDLE)
 end
 
 function AttachOrbs( event )
