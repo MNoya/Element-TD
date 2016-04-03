@@ -15,6 +15,10 @@ function GetTopRanks(type, panel) {
 
     var delay = 0
     var delay_per_panel = 0.05;
+
+    var loadingSpinner = $("#Loading"+type)
+    loadingSpinner.RemoveClass("Hide")
+
     $.AsyncWebRequest( top, { type: 'GET', 
         success: function( data ) {
             var info = JSON.parse(data);
@@ -31,7 +35,17 @@ function GetTopRanks(type, panel) {
 
                 $.Schedule( delay, callback )
                 delay += delay_per_panel;
-            }       
+            }
+
+            loadingSpinner.AddClass("Hide")
+            $("#ErrorLB"+type).AddClass("Hide")
+        },
+
+        error: function() {
+            $.Msg("Error on GetTopRanks ")
+
+            loadingSpinner.AddClass("Hide")
+            $("#ErrorLB"+type).RemoveClass("Hide")
         }
     })
 }
