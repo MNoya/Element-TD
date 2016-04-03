@@ -41,12 +41,13 @@ function DisplayInterest( table ) {
 	lockIcon.visible = false;
 	interestBarDisabled.visible = false;
 	interest.visible = true;
-	Root.RemoveClass("hidden")
 	enabled = table.enabled;
 	INTEREST_RATE = table.rate;
 	
 	if (!enabled)
 		interestBarGold.style["width"] = "0%";
+
+	Root.RemoveClass("hidden")
 }
 
 function InterestEarned( table ) {
@@ -85,12 +86,24 @@ function ResumeInterest( table ) {
 	enabled = true;
 }
 
+function RestartInterest(table) {
+	enabled = false;
+	interest.visible = false;
+	lockIcon.visible = false;
+	interestBarGold.visible = true;
+	totalGoldEarned = 0;
+	tooltipAmount.text = "0";
+	lockMessage = "";
+	lockTitle = "";
+}
+
 function ShowLockTooltip() {
 	$.DispatchEvent("DOTAShowTitleTextTooltip", lockIcon, lockTitle, lockMessage);
 }
 
 (function () {
   UpdateInterest();
+  GameEvents.Subscribe( "etd_restart_interest", RestartInterest );
   GameEvents.Subscribe( "etd_display_interest", DisplayInterest );
   GameEvents.Subscribe( "etd_earned_interest", InterestEarned );
   GameEvents.Subscribe( "etd_pause_interest", PauseInterest );

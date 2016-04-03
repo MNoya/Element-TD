@@ -397,6 +397,9 @@ function Sandbox:Restart( event )
     SetCustomEssence(playerID, 0)
     UpdateElementsHUD(playerID)
     UpdatePlayerSpells(playerID)
+
+    -- Restart interest
+    InterestManager:Restart(playerID)
     
     -- Summoner reset
     StopHighlight(summoner, playerID)
