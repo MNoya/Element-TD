@@ -37,6 +37,7 @@ local requires = {
     "mechanics/summoner",
     "mechanics/interest",
     "mechanics/orbs",
+    "mechanics/saves",
     
     -- utils
     "util/util",

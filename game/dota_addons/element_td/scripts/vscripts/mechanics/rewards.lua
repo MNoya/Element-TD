@@ -19,6 +19,9 @@ function Rewards:OnPlayerChangeBuilder(event)
     local newHero = Rewards:ReplaceHero(playerID, oldHero, heroName)
     RemoveAllWearables(newHero)
     UTIL_Remove(oldHero)
+
+    -- Save choice
+    Saves:SaveBuilder(playerID, heroName)
 end
 
 -- Pulls rewards.kv and eletd.com/reward_data.js
@@ -76,7 +79,10 @@ function Rewards:PlayerHasCosmeticModel(playerID)
         return reward
     end
 
-    -- TODO: Get the pass builder used (6 possible heroes with their own handling)
+    -- Pass hero builder
+    if reward and reward.hero then
+        return {hero=reward.hero}
+    end
 
     -- Enable wisp set outside of dedis
     if not IsDedicatedServer() then
@@ -95,8 +101,13 @@ function Rewards:HandleHeroReplacement(hero)
     local hero_replacement = reward.hero or "npc_dota_hero_phoenix"
     local newHero = Rewards:ReplaceHero(playerID, hero, hero_replacement)
 
+    -- Main elemental heroes
+    if reward.hero then 
+        RemoveAllWearables(newHero)
+        UTIL_Remove(hero)
+
     -- Models are based on a unit for precache async, and update the portrait
-    if reward.model then
+    elseif reward.model then
         PrecacheUnitByNameAsync(reward.model, function()
             local model = GetUnitKeyValue(reward.model, "Model")
             local scale = GetUnitKeyValue(reward.model, "ModelScale") or 1

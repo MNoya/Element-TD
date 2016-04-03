@@ -169,6 +169,7 @@ end
 
 function ElementTD:OnGameStateChange(keys)
     local state = GameRules:State_Get()
+
     if state == DOTA_GAMERULES_STATE_HERO_SELECTION then
         self.gameStartTriggers = self.gameStartTriggers + 1
         if self.gameStartTriggers < 2 then return end
@@ -188,6 +189,20 @@ function ElementTD:OnGameStateChange(keys)
 
         -- Load donation rewards
         Rewards:Load()
+
+        -- Load builders
+        ForAllPlayerIDs(function(playerID)
+            Saves:LoadBuilder(playerID)
+        end)
+    end
+end
+
+-- This is useful.
+function ForAllPlayerIDs(callback)
+    for playerID = 0, DOTA_MAX_TEAM_PLAYERS do
+        if PlayerResource:IsValidPlayerID(playerID) then
+            callback(playerID)
+        end
     end
 end
 
