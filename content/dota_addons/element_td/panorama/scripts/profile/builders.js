@@ -79,8 +79,12 @@ function HighlightSelectedBuilder () {
     {
         if (name == heroName)
             Hovering(backgrounds[name])
-        else if (! $("#"+backgrounds[name]).hovering)
-            HoverOut(backgrounds[name])
+        else
+        {
+            var panel = $("#"+backgrounds[name])
+            if (panel && ! panel.hovering)
+                HoverOut(backgrounds[name])
+        }
     }
     $.Schedule(1, HighlightSelectedBuilder)
 }

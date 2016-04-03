@@ -125,6 +125,12 @@ function ClearRanks(panel) {
     }
 }
 
+GameUI.CloseLeaderboard = function() {
+    Leaderboard.AddClass("Hide")
+    Buttons.AddClass("Hide")
+    $("#LeaderboardLink").AddClass("Hide")
+}
+
 // Only setup at request
 function ToggleLeaderboard()
 {
@@ -132,6 +138,10 @@ function ToggleLeaderboard()
     $("#LeaderboardLink").ToggleClass("Hide")
     Buttons.ToggleClass("Hide")
     if (!Leaderboard.BHasClass("Hide"))
+    {
         Setup()
+        GameUI.CloseProfilePanels()
+        GameUI.CloseTowerTable()
+    }
     Game.EmitSound("ui_generic_button_click")
 }

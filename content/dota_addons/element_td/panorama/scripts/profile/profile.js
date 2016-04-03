@@ -443,7 +443,11 @@ function ToggleProfile() {
         LoadLocalProfile()
     }
     else
+    {
         Game.EmitSound("ui_goto_player_page")
+        GameUI.CloseLeaderboard()
+        GameUI.CloseTowerTable()
+    }
 
     CloseCustomBuilders()
 }
@@ -455,12 +459,21 @@ function CloseCustomBuilders(argument) {
     CustomBuilders.SetHasClass( "Hide", true )
 }
 
+GameUI.CloseProfilePanels = function() {
+    CustomBuilders.AddClass("Hide")
+    Profile.AddClass("Hide")
+}
+
 function ToggleCustomBuilders() {
     Game.EmitSound("ui_generic_button_click")
     CustomBuilders.ToggleClass("Hide")
 
     if (!CustomBuilders.BHasClass("Hide"))
+    {
         AnimateBuildersSpawn()
+        GameUI.CloseLeaderboard()
+        GameUI.CloseTowerTable()
+    }
 
     CloseProfile()
 }
