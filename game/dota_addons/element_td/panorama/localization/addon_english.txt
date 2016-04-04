@@ -290,6 +290,9 @@
         "profile_elements_used" "Elements Used"
         "profile_choose_builder"        "Choose Builder Style"
         "profile_builder_description"   "Your choice will be saved for the next game. You can change your builder at any time."
+        "profile_reset_builder"         "Reset"
+        "profile_reset_builder_title"   "Reset Builder"
+        "profile_reset_builder_tooltip" "Change back to your default builder."
 
         "year"      "year"
         "years"     "years"

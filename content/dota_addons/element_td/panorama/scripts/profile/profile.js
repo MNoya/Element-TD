@@ -6,6 +6,7 @@ var Profile = $("#Profile")
 var CustomBuilders = $("#CustomBuilders")
 var Loading = $("#Loading")
 var friendsPanel = $("#FriendsContainer")
+var ResetButton = $("#ResetBuilderButton")
 var currentProfile;
 var currentLB = 0;
 var friendsRank
@@ -471,10 +472,11 @@ function ToggleProfile() {
 }
 
 function CloseProfile() {
-    Profile.SetHasClass( "Hide", true )
+    Profile.AddClass("Hide")
 }
 function CloseCustomBuilders(argument) {
-    CustomBuilders.SetHasClass( "Hide", true )
+    CustomBuilders.AddClass("Hide")
+    ResetButton.AddClass("Hide")
 }
 
 GameUI.CloseProfilePanels = function() {
@@ -485,6 +487,7 @@ GameUI.CloseProfilePanels = function() {
 function ToggleCustomBuilders() {
     Game.EmitSound("ui_generic_button_click")
     CustomBuilders.ToggleClass("Hide")
+    ResetButton.ToggleClass("Hide")
 
     if (!CustomBuilders.BHasClass("Hide"))
     {

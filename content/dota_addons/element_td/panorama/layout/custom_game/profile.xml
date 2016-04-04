@@ -388,5 +388,10 @@
             <Label id="CustomBuilderDescription" text="#profile_builder_description"/>
             <Label id="CloseButton" onactivate="CloseCustomBuilders()"/>
         </Panel>
+        <Button id="ResetBuilderButton" class="Hide" onactivate="ResetBuilder()" 
+                                                     onmouseover="DOTAShowTitleTextTooltip(#profile_reset_builder_title, #profile_reset_builder_tooltip)"
+                                                     onmouseout="DOTAHideTitleTextTooltip()">
+            <Label id="ResetText" text="#profile_reset_builder" />
+        </Button>
     </Panel>
 </root>
