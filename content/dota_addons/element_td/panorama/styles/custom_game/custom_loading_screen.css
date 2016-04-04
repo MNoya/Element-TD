@@ -271,25 +271,8 @@
     color: #FFF;
     font-size: 20px;
     text-shadow: 0px 0px 3px 3.0 #000;
-    font-family: Radiance;
+
     padding: 15px;
     border-radius: 20px;
     background-color: #000000EE;
-}
-
-h1
-{
-    font-size: 35px;
-    font-weight: bold;
-}
-
-h2
-{
-    font-size: 25px;
-    font-weight: bold;
-}
-
-b
-{
-    font-weight: bold;
 }
