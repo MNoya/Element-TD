@@ -1003,6 +1003,7 @@ Label
 #CloseButton
 {
     horizontal-align: right;
+    vertical-align: top;
     width: 24px;
     height: 24px;
     wash-color: #888888;
@@ -1389,6 +1390,38 @@ Label
     saturation: 1;
 }
 
+#ResetBuilderButton
+{
+    background-color: black;
+    width: 130px;
+    align: center bottom;
+    margin-bottom: 200px;
+    margin-left: 830px;
+    tooltip-position: top;
+
+    background-color: #000000DD;
+    border: 2px solid #484A48;
+    box-shadow: #000 -4px -4px 3px 8px;
+}
+
+#ResetBuilderButton:hover
+{
+    color: #FFF;
+    background-color: #000000FF;
+}
+
+#ResetText
+{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: #DDD;
+    font-size: 25px;
+    text-shadow: 0px 0px 5px 3.0 #000;
+    font-family: Radiance;
+    text-transform: uppercase;
+}
+
 // -- Avatar Hover Styles
 
 .ProfileAvatar
@@ -1525,4 +1558,20 @@ Label
     color: #AAAAAA;
     text-transform: uppercase;
     text-shadow: none;
+}
+
+
+#ErrorNoMatches, #ErrorNoMilestones
+{
+    color: #888888;
+    font-size: 20px;
+    margin-top: 30px;
+    align: center center;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+#ErrorNoMatches
+{
+    margin-top: 55px;
 }

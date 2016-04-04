@@ -5,6 +5,7 @@ end
 function Rewards:Init()
     Rewards.subscribed = true
     CustomGameEventManager:RegisterListener( "player_choose_custom_builder", Dynamic_Wrap(Rewards, 'OnPlayerChangeBuilder'))
+    CustomGameEventManager:RegisterListener( "player_reset_builder", Dynamic_Wrap(Rewards, 'OnPlayerResetBuilder'))
 end
 
 function Rewards:OnPlayerChangeBuilder(event)
@@ -22,6 +23,20 @@ function Rewards:OnPlayerChangeBuilder(event)
 
     -- Save choice
     Saves:SaveBuilder(playerID, heroName)
+end
+
+-- Goes back to Default Wisp/Custom Phoenix builder
+function Rewards:OnPlayerResetBuilder(event)
+    local playerID = event.PlayerID
+    local oldHero = PlayerResource:GetSelectedHeroEntity(playerID)
+
+    -- Replace and delegate to HandleHeroReplacement
+    local newHero = Rewards:ReplaceHero(playerID, oldHero, "npc_dota_hero_wisp")
+    newHero.reset = true
+    UTIL_Remove(oldHero)
+
+    -- Save default choice
+    Saves:SaveBuilder(playerID, "npc_dota_hero_wisp")
 end
 
 -- Pulls rewards.kv and eletd.com/reward_data.js
@@ -81,7 +96,7 @@ function Rewards:PlayerHasCosmeticModel(playerID)
 
     -- Pass hero builder
     if reward and reward.hero then
-        return {hero=reward.hero}
+        return reward
     end
 
     -- Enable wisp set outside of dedis
@@ -98,11 +113,11 @@ function Rewards:HandleHeroReplacement(hero)
     local reward = Rewards:PlayerHasCosmeticModel(playerID)
     if not reward then return end
 
-    local hero_replacement = reward.hero or "npc_dota_hero_phoenix"
+    local hero_replacement = ((not hero.reset) and reward.hero) or "npc_dota_hero_phoenix"
     local newHero = Rewards:ReplaceHero(playerID, hero, hero_replacement)
 
     -- Main elemental heroes
-    if reward.hero then 
+    if reward.hero and not hero.reset then
         RemoveAllWearables(newHero)
         UTIL_Remove(hero)
 
@@ -134,7 +149,10 @@ function Rewards:HandleHeroReplacement(hero)
     elseif reward.map_entity then
         local unit = Entities:FindByName(nil, reward.map_entity)
         if unit then
+            unit.originalPos = unit:GetAbsOrigin()
+            unit.originalAngles = unit:GetAngles()
             Rewards:SetCosmeticOverride(newHero, unit, reward)
+            newHero.mapEntity = unit --Keep reference to revert back to the original Pos
 
             UTIL_Remove(hero)
         end
@@ -179,11 +197,20 @@ function Rewards:HandleHeroReplacement(hero)
 end
 
 function Rewards:ReplaceHero(playerID, oldHero, heroName)
+    -- Keep the map entity
+    if oldHero.mapEntity then
+        oldHero.mapEntity:SetParent(nil, "")
+        oldHero.mapEntity:SetAbsOrigin(oldHero.mapEntity.originalPos)
+        local angle = oldHero.mapEntity.originalAngles
+        oldHero.mapEntity:SetAngles(angle.x, angle.y, angle.z)
+        oldHero.mapEntity:RemoveModifierByName("modifier_out_of_world")
+    end
+
     oldHero:AddNoDraw()
     oldHero:ForceKill(true)
 
     -- Remove parented units
-    if oldHero.cosmetic_override then
+    if oldHero.cosmetic_override and not oldHero.mapEntity then
         UTIL_Remove(oldHero.cosmetic_override)
     end
     if oldHero.rider then
@@ -267,6 +294,10 @@ function Rewards:SetCosmeticOverride(hero, unit, reward)
     end
 
     Rewards:ApplyAnimations(unit, reward)
+    if unit.runTimer then
+        Timers:RemoveTimer(unit.runTimer)
+        unit.runTimer = nil
+    end
     Rewards:MovementAnimations(hero)
 
     -- Update portrait
@@ -317,10 +348,12 @@ end
 
 -- Repeated timer to fake childs Run/Idle animations based on movement of the main hero
 function Rewards:MovementAnimations(hero)
+    if not IsValidEntity(hero) then return end
     local unit = hero.cosmetic_override or hero.rider
     if not unit.runTimer then
         unit.runTimer = Timers:CreateTimer(function()
-            if not IsValidEntity(unit) or not hero:IsAlive() then return end
+            if not IsValidEntity(unit) or not IsValidEntity(hero) or not hero:IsAlive() then return end
+
             if unit.wait_for_animation then
                 unit.wait_for_animation = false
                 return 1
