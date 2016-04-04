@@ -275,11 +275,9 @@ end
 
 -- base wave score, takes a wave number
 function ScoringObject:GetWaveClearBonus( wave )
-	local bonus = wave * CREEPS_PER_WAVE
+	local base_worth = EXPRESS_MODE and BASE_WAVE_SCORE_EXPRESS or BASE_WAVE_SCORE
+	local bonus = (wave+base_worth) * CREEPS_PER_WAVE
 	
-	if EXPRESS_MODE then
-		bonus = (wave+BASE_WAVE_SCORE_EXPRESS) * CREEPS_PER_WAVE
-	end	
 	return bonus
 end
 
