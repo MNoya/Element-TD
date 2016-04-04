@@ -224,7 +224,7 @@
         //  <br> for break lines
         //  • for bullets
         //  <font color='#hex'>text</font>  for color
-        //  <b>text</b> for bold
+        //  <b>text</b> for bold        
         "loading_screen_changelog"   "Latest Changes"
         "loading_screen_change_text" "• Added latest changes on loading screen<br>• Fixed Gunpower towers attacking too early with attack ground"
 
