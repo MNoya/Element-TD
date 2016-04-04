@@ -51,7 +51,7 @@ function HoverOut(name) {
     var hero =  Players.GetPlayerHeroEntityIndex(Players.GetLocalPlayer())
     var heroName = Entities.GetUnitName(hero)
 
-    if (name != backgrounds[heroName])
+    if (panel && name != backgrounds[heroName])
     {
         panel.RemoveClass("Hovering")
         panel.hovering = undefined
@@ -62,9 +62,16 @@ function ChooseBuilder(heroName) {
     GameEvents.SendCustomGameEventToServer( "player_choose_custom_builder", { "hero_name": heroName } );
     CloseCustomBuilders()
     
-    var panel = $("#"+name)
-    panel.RemoveClass("Hovering")
-    panel.hovering = undefined
+    // Hover all out
+    for (var name in backgrounds)
+    {
+        var panel = $("#"+backgrounds[name])
+        if (panel)
+        {
+            panel.RemoveClass("Hovering")
+            panel.hovering = undefined
+        }
+    }
 }
 
 var backgrounds = {}
@@ -91,6 +98,11 @@ function HighlightSelectedBuilder () {
         }
     }
     $.Schedule(1, HighlightSelectedBuilder)
+}
+
+function ResetBuilder () {
+    GameEvents.SendCustomGameEventToServer( "player_reset_builder", {} );
+    CloseCustomBuilders()
 }
 
 $.Schedule(1, HighlightSelectedBuilder)

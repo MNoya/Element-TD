@@ -6,6 +6,7 @@ var Profile = $("#Profile")
 var CustomBuilders = $("#CustomBuilders")
 var Loading = $("#Loading")
 var friendsPanel = $("#FriendsContainer")
+var ResetButton = $("#ResetBuilderButton")
 var currentProfile;
 var currentLB = 0;
 var friendsRank
@@ -32,12 +33,24 @@ function GetStats(steamID32) {
             var info = JSON.parse(data);
             var player_info = info["player"]
 
-            var allTime = player_info["allTime"]
-            currentTime = player_info["current_time"]
-            if (allTime === undefined)
-                return
+            if (player_info)
+            {
+                var allTime = player_info["allTime"]
+                currentTime = player_info["current_time"]
+                if (allTime)
+                {
+                    SetStats(player_info)
+                    return
+                }
+            }
 
-            SetStats(player_info)
+            $("#ErrorNoMatches").RemoveClass("Hide")
+            $("#ErrorNoMilestones").RemoveClass("Hide")
+        },
+
+        error: function() {
+            $("#ErrorNoMatches").RemoveClass("Hide")
+            $("#ErrorNoMilestones").RemoveClass("Hide")
         }
     })
 }
@@ -96,6 +109,7 @@ function SetStats(player_info)
 
     // Milestones
     var milestones = player_info["milestones"]
+    $("#ErrorNoMilestones").SetHasClass("Hide", milestones === undefined)
     if (milestones === undefined)
         return
 
@@ -149,20 +163,25 @@ function SetStats(player_info)
         }
     };
 
+    $("#ErrorNoMilestones").SetHasClass("Hide", badgesCreated > 0)
+
     $("#ClassicRank").text = (player_info["rank"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank"]);
     $("#ExpressRank").text = (player_info["rank_exp"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank_exp"]);
     $("#FrogsRank").text = (player_info["rank_frogs"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank_frogs"]);
 
     // Matches
+    var matchesCreated = 0
     var rawInfo = player_info["raw"]
     for (var i in rawInfo)
     {
         var match = rawInfo[i]
         if (match['cleared'] != 0)
         {
+            matchesCreated++
             CreateMatch(rawInfo[i])
         }
     }
+    $("#ErrorNoMatches").SetHasClass("Hide", matchesCreated > 0)
 }
 
 var elementNames = ["light", "dark", "water", "fire", "nature", "earth"]
@@ -296,14 +315,14 @@ function ClearFields() {
     var childCount = $("#MilestonesContainer").GetChildCount()
     for (var i = 0; i < childCount; i++) {
         var child = $("#MilestonesContainer").GetChild(i)
-        if (child) child.DeleteAsync(0)
+        if (child && child.id != "ErrorNoMilestones") child.DeleteAsync(0)
     };
 
     // Matches
     var childCount = $("#MatchesContainer").GetChildCount()
     for (var i = 0; i < childCount; i++) {
         var child = $("#MatchesContainer").GetChild(i)
-        if (child) child.DeleteAsync(0)
+        if (child && child.id != "ErrorNoMatches") child.DeleteAsync(0)
     };
 }
 
@@ -453,10 +472,11 @@ function ToggleProfile() {
 }
 
 function CloseProfile() {
-    Profile.SetHasClass( "Hide", true )
+    Profile.AddClass("Hide")
 }
 function CloseCustomBuilders(argument) {
-    CustomBuilders.SetHasClass( "Hide", true )
+    CustomBuilders.AddClass("Hide")
+    ResetButton.AddClass("Hide")
 }
 
 GameUI.CloseProfilePanels = function() {
@@ -467,6 +487,7 @@ GameUI.CloseProfilePanels = function() {
 function ToggleCustomBuilders() {
     Game.EmitSound("ui_generic_button_click")
     CustomBuilders.ToggleClass("Hide")
+    ResetButton.ToggleClass("Hide")
 
     if (!CustomBuilders.BHasClass("Hide"))
     {

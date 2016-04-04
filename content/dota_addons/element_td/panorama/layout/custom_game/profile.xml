@@ -287,6 +287,7 @@
                                 <Label class="FriendCategory MatchElements_Col" text="#etd_tower_table_elements" />
                             </Panel>
 
+                            <Label id="ErrorNoMatches" class="Hide" text="#profile_no_matches"/>
                             <Panel id="MatchesContainer">
                                 <!--Matches created here-->
                             </Panel>
@@ -297,6 +298,7 @@
                         <Panel id="Milestones">
                             <Label id="MilestonesLabel" class="SectionTitle" text="#profile_milestones"/>
                             <Panel id="MilestonesContainer">
+                                <Label id="ErrorNoMilestones" class="Hide" text="#profile_no_milestones"/>
                                 <!--Badges created here-->
                             </Panel>
                         </Panel>
@@ -386,5 +388,10 @@
             <Label id="CustomBuilderDescription" text="#profile_builder_description"/>
             <Label id="CloseButton" onactivate="CloseCustomBuilders()"/>
         </Panel>
+        <Button id="ResetBuilderButton" class="Hide" onactivate="ResetBuilder()" 
+                                                     onmouseover="DOTAShowTitleTextTooltip(#profile_reset_builder_title, #profile_reset_builder_tooltip)"
+                                                     onmouseout="DOTAHideTitleTextTooltip()">
+            <Label id="ResetText" text="#profile_reset_builder" />
+        </Button>
     </Panel>
 </root>
