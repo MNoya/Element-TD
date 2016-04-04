@@ -226,7 +226,7 @@
         //  <font color='#hex'>text</font>  for color
         //  <b>text</b> for bold        
         "loading_screen_changelog"   "Latest Changes"
-        "loading_screen_change_text" "• Added latest changes on loading screen<br>• Fixed Gunpower towers attacking too early with attack ground"
+        "loading_screen_change_text" "<h1>Version 1.4</h1><h2>Balance</h2>• Classic & Express Bounty Formulas were tweaked<br>• Point multiplier has increased from 15% per wave to 25% per wave.<br>• Express Mode starting hp has been increased from 78 to 90.<br>• Endgame Score Bonuses of Total Networth and End Speed are now multiplicative.<br>• Rush Mode now gives a +25% Bounty Bonus up from +20%.<br>• Regeneration, Time Lapse and Avenger creeps tweaked.<br>• Light, Water and Earth tower abilities altered.<br>• Fire and Hail towers damage increased.<br>• Tidal Tower range reduced from 900 to 700<br><br><h2>Fixes</h2>• Fixed the scoring on the waves, causing them to be worth 5 Score less per creep.<br>• Fixed Interest breaking after restarting in Sandbox Mode.<br>• Fixed an issue with Gunpowder Towers attacking too early with Attack Ground.<br>• Fixed Interest breaking after restarting in Sandbox Mode.<br>• Fixed Scrolling up/down on the In-game Leaderboard.<br>• Fixed Gunpower towers attacking too early with attack ground<br><br>• Check out the full changelog on the forums!<br>"
 
         "credits_title"         "Credits"
         "credits_developers"    "Developers"
