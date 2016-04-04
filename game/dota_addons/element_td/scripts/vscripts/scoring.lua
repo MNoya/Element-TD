@@ -249,7 +249,7 @@ function ScoringObject:GetGameCleared()
 	local endSpeedBonus = self:GetEndSpeedBonus(playerData.clearTime)
 	local frogKills = 0 --Total
 
-	totalScore = math.ceil(score * (1 + networthBonus + endSpeedBonus))
+	totalScore = math.ceil(score * (1 + networthBonus) * (1 + endSpeedBonus))
 
 	return { networthBonus = networthBonus, frogKills = frogKills, endSpeedBonus = endSpeedBonus, totalScore = totalScore }
 end
