@@ -7,6 +7,12 @@
         "addon_game_name"           "元素塔防"
         "npc_dota_hero_wisp"        "建造者"
         "npc_dota_hero_phoenix"     "★ 建造者 ★"
+        "npc_dota_hero_skywrath_mage"  "光明建造者"
+        "npc_dota_hero_faceless_void"  "黑暗建造者"
+        "npc_dota_hero_mirana"         "圣水建造者"
+        "npc_dota_hero_warlock"        "圣火建造者"
+        "npc_dota_hero_lone_druid"     "自然建造者" 
+        "npc_dota_hero_earthshaker"    "大地建造者"
 
         // messages
         "etd_welcome_message"       "欢迎来到<font color='#70EA72'>元素塔防</font>！"

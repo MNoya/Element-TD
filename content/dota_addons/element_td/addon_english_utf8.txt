@@ -7,6 +7,12 @@
         "addon_game_name"           "Element TD"
         "npc_dota_hero_wisp"        "Builder"
         "npc_dota_hero_phoenix"     "★ Builder ★"
+        "npc_dota_hero_skywrath_mage"  "Light Builder"
+        "npc_dota_hero_faceless_void"  "Dark Builder"
+        "npc_dota_hero_mirana"         "Water Builder"
+        "npc_dota_hero_warlock"        "Fire Builder"
+        "npc_dota_hero_lone_druid"     "Nature Builder" 
+        "npc_dota_hero_earthshaker"    "Earth Builder"
 
         // messages
         "etd_welcome_message"       "Welcome to <font color='#70EA72'>Element Tower Defense</font>!"
