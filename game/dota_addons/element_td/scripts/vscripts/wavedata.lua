@@ -232,9 +232,12 @@ function SpawnEntity(entityClass, playerID, position)
         entity:AddNewModifier(entity, nil, "modifier_slow_adjustment", {})
 
         -- Add to scoreboard count
-        local playerData = GetPlayerData(playerID)
-        playerData.remaining = playerData.remaining + 1
-        UpdateScoreboard(playerID)
+        -- TODO: scoreboard for co-op I guess
+        if not COOP_MAP then
+            local playerData = GetPlayerData(playerID)
+            playerData.remaining = playerData.remaining + 1
+            UpdateScoreboard(playerID)
+        end
 
         return entity
     else
@@ -412,7 +415,7 @@ function ClosePortalForSector(playerID, sector, removeInstantly)
     end
 
     if playerID == nil then -- co-op mode
-        CustomGameEventManager:Send_ServerToAllClients("world_notification", {entityIndex = portal:GetEntityIndex()})
+        CustomGameEventManager:Send_ServerToAllClients("world_remove_notification", {entityIndex = portal:GetEntityIndex()})
     else
         local player = PlayerResource:GetPlayer(playerID)
         if player then 

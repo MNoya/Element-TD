@@ -10,6 +10,7 @@ if not GameSettings then
 	GameSettings.order = "Normal"
 	GameSettings.length = ""
 	GameSettings.elements = ""
+	GameSettings.difficulty = nil -- for co-op mode
 
 	DIFFICULTY_OBJECTS = {}
 end
@@ -76,6 +77,14 @@ function GameSettings:SetDifficulty(playerID, difficulty)
 	playerData.difficulty = DIFFICULTY_OBJECTS[difficulty]
 	Log:info("Set " .. GetPlayerName(playerID) .. "'s difficulty to " .. difficulty)
 	UpdateScoreboard(playerID)
+end
+
+function GameSettings:SetGlobalDifficulty(difficulty)
+	GameSettings.difficulty = DifficultyObject(difficulty)
+end
+
+function GameSettings:GetGlobalDifficulty()
+	return GameSettings.difficulty
 end
 
 function GameSettings:SetGamemode(gamemode)

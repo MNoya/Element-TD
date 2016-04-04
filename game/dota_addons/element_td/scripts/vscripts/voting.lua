@@ -151,6 +151,7 @@ function FinalizeVotes()
 		for _, plyID in pairs(playerIDs) do
     		GameSettings:SetDifficulty(plyID, difficulty)
     	end
+    	GameSettings:SetGlobalDifficulty(difficulty) -- used only for co-op mode
     else
     	-- Each player in their own difficulty
 		for _, plyID in pairs(playerIDs) do
