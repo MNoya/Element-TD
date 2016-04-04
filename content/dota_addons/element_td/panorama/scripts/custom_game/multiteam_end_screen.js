@@ -2,6 +2,7 @@
 
 var Credits = $("#Supporters")
 var Verify = $("#Verify")
+var Spinner = $("#Loading")
 
 function VerifyGame() {
     var game_recorded_info = CustomNetTables.GetTableValue("gameinfo", "game_recorded")
@@ -9,18 +10,27 @@ function VerifyGame() {
     {
         var recorded_state = game_recorded_info.value
         Verify.state = recorded_state
+        Spinner.AddClass("hide");
         if (recorded_state == "recorded")
         {
             Verify.style['background-color'] = "lime;"
-            $("#stem").RemoveClass("fade");
-            $("#kick").RemoveClass("fade");
+            Verify.RemoveClass("scale");
+            Verify.RemoveClass("fade");
+            $.Schedule( 0.3, function() {
+                $("#stem").RemoveClass("fade");
+                $("#kick").RemoveClass("fade");
+            })
             return
         }
 
         else if (recorded_state == "failed")
         {
             Verify.style['background-color'] = "red;"
-            $("#cross").RemoveClass("hide")
+            Verify.RemoveClass("scale");
+            Verify.RemoveClass("fade");
+            $.Schedule( 0.3, function() {
+                $("#cross").RemoveClass("hide")
+            })
             return
         }
     }

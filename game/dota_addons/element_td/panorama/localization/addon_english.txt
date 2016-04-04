@@ -98,6 +98,7 @@
         "length_normal"                     "Normal"
         "length_express"                    "Express"
         "length_express_description"        "A quicker game with less waves."
+        "express"                           "Express"
 
         "DOTA_GoodGuys"                             "Summer" //Lime
         "DOTA_BadGuys"                              "Autumn" //Orange
@@ -223,9 +224,9 @@
         //  <br> for break lines
         //  • for bullets
         //  <font color='#hex'>text</font>  for color
-        //  <b></b> doesnt work.
+        //  <b>text</b> for bold        
         "loading_screen_changelog"   "Latest Changes"
-        "loading_screen_change_text" "• Reverted to version 1.3"
+        "loading_screen_change_text" "• Added latest changes on loading screen<br>• Fixed Gunpower towers attacking too early with attack ground"
 
         "credits_title"         "Credits"
         "credits_developers"    "Developers"
@@ -251,9 +252,11 @@
         "profile_games_won"     "Wins"
         "profile_best_score"    "Best Score"    
         "profile_current_ranks" "Current Ranks"
-        "profile_classic_ranks" "Classic"
-        "profile_express_ranks" "Express"
-        "profile_frogs_ranks"   "Frogs"
+        "profile_classic"       "Classic"
+        "profile_classic_rank"  "Classic Rank"
+        "profile_express"       "Express"
+        "profile_express_rank"  "Express Rank"
+        "profile_frogs"         "Frogs"
         "profile_lifetime_stats" "Stats"
         "profile_matches"       "Matches"
         "profile_achievements"  "Achievements"
@@ -276,11 +279,35 @@
         "profile_gold_tower"    "Gold Earned"
         "profile_life_tower"    "Lives Gained"
         "profile_soon"          "Coming Soon"
+        "profile_private"       "Private Profile"
+        "profile_back"          "Back to My Profile"
+        "profile_milestones"    "Milestones"
+        "profile_match_id"      "Match ID"
+        "profile_match_time"    "Time"
+        "profile_modes"         "Modes"
+        "profile_elements_used" "Elements Used"
+        "profile_choose_builder"        "Choose Builder Style"
+        "profile_builder_description"   "Your choice will be saved for the next game. You can change your builder at any time."
+
+        "year"      "year"
+        "years"     "years"
+        "month"     "month"
+        "months"    "months"
+        "week"      "week"
+        "weeks"     "weeks"
+        "day"       "day"
+        "days"      "days"
+        "hour"      "hour"
+        "hours"     "hours"
+        "minute"    "minute"
+        "minutes"   "minutes"
+        "ago"       "ago"    
 
         "leaderboard_title"     "Leaderboards"
         "leaderboard_classic"   "Top 100 Classic"
         "leaderboard_express"   "Top 100 Express"
         "leaderboard_frogs"     "Top 100 Frog Kills"
         "leaderboard_refresh"   "Refresh"
+        "leaderboard_unreachable"   "Leadeboard not available."
     }
 }

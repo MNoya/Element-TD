@@ -32,7 +32,7 @@ SLOW_WAVE_CLEAR_FACTOR = 0.02
 FAST_WAVE_CLEAR_FACTOR = 0.03
 BASE_TIME_CLASSIC = 40
 BASE_TIME_EXPRESS = 20
-BOSS_WAVE_BONUS_SCALING = 0.15
+BOSS_WAVE_BONUS_SCALING = 0.25
 
 function ScoringObject:UpdateScore( const , wave )
 	local scoreTable = {}
@@ -249,7 +249,7 @@ function ScoringObject:GetGameCleared()
 	local endSpeedBonus = self:GetEndSpeedBonus(playerData.clearTime)
 	local frogKills = 0 --Total
 
-	totalScore = math.ceil(score * (1 + networthBonus + endSpeedBonus))
+	totalScore = math.ceil(score * (1 + networthBonus) * (1 + endSpeedBonus))
 
 	return { networthBonus = networthBonus, frogKills = frogKills, endSpeedBonus = endSpeedBonus, totalScore = totalScore }
 end
@@ -275,11 +275,9 @@ end
 
 -- base wave score, takes a wave number
 function ScoringObject:GetWaveClearBonus( wave )
-	local bonus = wave * CREEPS_PER_WAVE
+	local base_worth = EXPRESS_MODE and BASE_WAVE_SCORE_EXPRESS or BASE_WAVE_SCORE
+	local bonus = (wave+base_worth) * CREEPS_PER_WAVE
 	
-	if EXPRESS_MODE then
-		bonus = (wave+BASE_WAVE_SCORE_EXPRESS) * CREEPS_PER_WAVE
-	end	
 	return bonus
 end
 

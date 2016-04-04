@@ -177,6 +177,18 @@ function Toggle() {
     hidden = !hidden
     Container.SetHasClass("Hidden", hidden)
     Filter.SetHasClass("Hidden", hidden)
+
+    if (!hidden)
+    {
+        GameUI.CloseProfilePanels()
+        GameUI.CloseLeaderboard()
+    }
+}
+
+GameUI.CloseTowerTable = function() {
+    Container.AddClass("Hidden")
+    Filter.AddClass("Hidden")
+    hidden = true
 }
 
 function UpdateElements(data){

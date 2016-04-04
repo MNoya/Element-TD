@@ -4,8 +4,7 @@ if not ElementTD then
 end
 ---------------------------------------------------------------------------
 
-local requires =
-{
+local requires = {
     -- libraries
     "libraries/timers",
     "libraries/popups",
@@ -38,7 +37,8 @@ local requires =
     "mechanics/summoner",
     "mechanics/interest",
     "mechanics/orbs",
-
+    "mechanics/saves",
+    
     -- utils
     "util/util",
     "util/class",
@@ -110,6 +110,10 @@ local requires =
     "creeps/bulky",
     "creeps/vengeance",
     "creeps/boss",
+
+    -- co-op mode scripts
+    "coop/coop_mode",
+    "coop/wave_coop",
 
     -- core game logic
     "wave",

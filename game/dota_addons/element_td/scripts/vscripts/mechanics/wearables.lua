@@ -17,6 +17,16 @@ function AdjustCosmetics( event )
     end)
 end
 
+function RemoveAllWearables( hero )
+    local wearables = hero:GetChildren()
+    for _,v in pairs(wearables) do
+        if v:GetClassname() == "dota_item_wearable" then
+            if v:GetMoveParent() == hero then
+                UTIL_Remove(v)
+            end
+        end
+    end
+end
 
 ------------------------------------------------------------------------------
 -- Datadriven calls
@@ -26,7 +36,20 @@ function AttachProp( event )
     local unit = event.caster
     local model = event.Model
     local point = event.Point
-    Attachments:AttachProp(unit, point, model)
+    local prop = Attachments:AttachProp(unit, point, model)
+
+    unit.props = unit.props or {}
+    unit.props[point] = prop
+end
+
+function RemoveProp( event )
+    local unit = event.caster
+    local point = event.Point
+
+    if unit.props then
+        local prop = unit.props[point]
+        UTIL_Remove(prop)
+    end
 end
 
 function Mount( event )
@@ -34,26 +57,50 @@ function Mount( event )
     local ability = event.ability
     local unitName = event.Unit
     local point = event.Point
+    local pitch = event.pitch and tonumber(event.pitch) or 180
+    local yaw = event.yaw and tonumber(event.yaw) or 180
+    local roll = event.roll and tonumber(event.roll) or 0 --Can't do a barrel roll
     local offsetX = event.offsetX and tonumber(event.offsetX) or 0
     local offsetY = event.offsetY and tonumber(event.offsetY) or 0
     local offsetZ = event.offsetZ and tonumber(event.offsetZ) or 0
 
     local attach = caster:ScriptLookupAttachment(point)
     local origin = caster:GetAttachmentOrigin(attach)
-    local fv = caster:GetForwardVector()
 
     local rider = CreateUnitByName(unitName, caster:GetAbsOrigin(), false, nil, nil, caster:GetTeamNumber()) 
     rider:AddNewModifier(nil, nil, "modifier_out_of_world", {})
 
     rider:SetAbsOrigin(Vector(origin.x+offsetX, origin.y+offsetY, origin.z+offsetZ))
     rider:SetParent(caster, "attach_hitloc")
+    rider:SetAngles(pitch, yaw, 0)
+    caster.rider = rider
 
     if event.AnimateRider then
-        caster.rider = rider
         Rewards:MovementAnimations(caster)
     end
 
-    caster.rider = rider
+    if event.IdleAnimation then
+        rider:StartGesture(tonumber(event.IdleAnimation))
+    end
+end
+
+function MountVoid( event )
+    local rex = event.caster
+
+    -- I regret nothing
+    local prop = Attachments:AttachProp(rex, "attach_hitloc", 'models/props_gameplay/red_box.vmdl')
+    prop:AddEffects(EF_NODRAW)
+
+    local rider = CreateUnitByName("rex_rider", rex:GetAbsOrigin(), false, nil, nil, rex:GetTeamNumber()) 
+    rider:AddNewModifier(nil, nil, "modifier_out_of_world", {})
+
+    local attach = prop:ScriptLookupAttachment(point)
+    local origin = prop:GetAttachmentOrigin(attach)
+    rider:SetAbsOrigin(Vector(origin.x+0, origin.y+0, origin.z+0))
+    rider:SetParent(prop, "attach_hitloc")
+    rider:StartGesture(ACT_DOTA_IDLE)
+
+    rex.rider = rider
 end
 
 function AttachOrbs( event )

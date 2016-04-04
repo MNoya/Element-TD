@@ -73,11 +73,12 @@ function GetWinningDifficulty()
 	return winner
 end
 
-function AddVote(option, choice)
+function AddVote(playerID, option, choice)
+	local value = Rewards:PlayerHasPass(playerID) and 3 or 2 -- x1.5 weight
 	if not option[choice] then
-		option[choice] = 1
+		option[choice] = value
 	else
-		option[choice] = option[choice] + 1
+		option[choice] = option[choice] + value
 	end
 end
 
@@ -125,12 +126,12 @@ function FinalizeVotes()
 
 	-- Only add a default vote if no one has voted
 	if tablelength(PLAYERS_NOT_VOTED) == tablelength(playerIDs) then
-		AddVote(VOTE_RESULTS.gamemode, "Competitive")
-		AddVote(VOTE_RESULTS.difficulty, "Normal")
-		AddVote(VOTE_RESULTS.elements, "AllPick")
-		AddVote(VOTE_RESULTS.endless, "Normal")
-		AddVote(VOTE_RESULTS.order, "Normal")
-		AddVote(VOTE_RESULTS.length, "Normal")
+		AddVote(0, VOTE_RESULTS.gamemode, "Competitive")
+		AddVote(0, VOTE_RESULTS.difficulty, "Normal")
+		AddVote(0, VOTE_RESULTS.elements, "AllPick")
+		AddVote(0, VOTE_RESULTS.endless, "Normal")
+		AddVote(0, VOTE_RESULTS.order, "Normal")
+		AddVote(0, VOTE_RESULTS.length, "Normal")
 	end
 
 	-- Make sure all the fools have a playerData
@@ -218,23 +219,30 @@ function FinalizeVotes()
 	Timers:CreateTimer("PostVoteTimer", {
 		endTime = 1,
 		callback = function()
-			for _, plyID in pairs(playerIDs) do
-				StartBreakTime(plyID, GameSettings.length.PregameTime)
-				if GameSettings.length.PregameTime == 30 then
-					EmitAnnouncerSound("announcer_announcer_count_battle_30")
-				else
-					local delay = GameSettings.length.PregameTime - 30
-					if delay > 0 then
-						Timers:CreateTimer(delay, function()
-							EmitAnnouncerSound("announcer_announcer_count_battle_30")
-						end)
-					end
+
+			if COOP_MAP then
+				StartBreakTimeCoop(GameSettings.length.PregameTime) -- maybe coop mode should have longer pregame time?
+			else
+				for _, plyID in pairs(playerIDs) do
+					StartBreakTime(plyID, GameSettings.length.PregameTime)
 				end
-				-- Display player ranks
-				Timers:CreateTimer(5, function()
-					Ranking:ShowPlayerRanks()
-				end)
 			end
+
+			if GameSettings.length.PregameTime == 30 then
+				EmitAnnouncerSound("announcer_announcer_count_battle_30")
+			else
+				local delay = GameSettings.length.PregameTime - 30
+				if delay > 0 then
+					Timers:CreateTimer(delay, function()
+						EmitAnnouncerSound("announcer_announcer_count_battle_30")
+					end)
+				end
+			end
+
+			-- Display player ranks
+			Timers:CreateTimer(5, function()
+				Ranking:ShowPlayerRanks()
+			end)
 		end
 	})
 end
@@ -267,12 +275,12 @@ function ElementTD:OnPlayerVoted( table )
 		local orderString = GetVotingString(orderVote, "CreepOrder")
 		local expressString = GetVotingString(expressVote, "GameLength")
 
-		AddVote(VOTE_RESULTS.gamemode, "Competitive") -- Always Competitive
-		AddVote(VOTE_RESULTS.difficulty, difficultyString)
-		AddVote(VOTE_RESULTS.elements, randomString)
-		AddVote(VOTE_RESULTS.endless, endlessString)
-		AddVote(VOTE_RESULTS.order, orderString)
-		AddVote(VOTE_RESULTS.length, expressString)
+		AddVote(playerID, VOTE_RESULTS.gamemode, "Competitive") -- Always Competitive
+		AddVote(playerID, VOTE_RESULTS.difficulty, difficultyString)
+		AddVote(playerID, VOTE_RESULTS.elements, randomString)
+		AddVote(playerID, VOTE_RESULTS.endless, endlessString)
+		AddVote(playerID, VOTE_RESULTS.order, orderString)
+		AddVote(playerID, VOTE_RESULTS.length, expressString)
 
 		local data = {playerID = playerID, difficulty = difficultyString, elements = randomString, endless = endlessString, order = orderString, length = expressString}
 		CustomGameEventManager:Send_ServerToAllClients( "etd_vote_display", data )

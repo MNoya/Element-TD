@@ -10,6 +10,70 @@
     opacity: 0;
 }
 
+Label
+{
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+    text-shadow: -1px 1px 1px 2.0 #000000;
+}
+
+//CLASSIC EXPRESS FROGS
+#ErrorLB0, #ErrorLB2, #ErrorLB3
+{
+    color: #888888;
+    font-size: 20px;
+    margin-top: 30px;
+    align: center center;
+    letter-spacing: 2px;
+}
+
+#Loading0, #Loading2, #Loading3
+{
+    width: 30px;
+    height: 30px;
+    align: left center;
+    margin-left: 50px;
+    margin-top: 5px;
+}
+
+#Loading3
+{
+    margin-left: 30px;
+}
+
+.Spinner
+{
+    width: 28px;
+    height: 28px;
+
+    background-image: url("s2r://panorama/images/status_icons/loadingthrobber_round_psd.vtex");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+
+    animation-name: SpinnerRotate;
+    animation-duration: 1.0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes 'SpinnerRotate'
+{
+    0%
+    {
+        transform: rotateZ( 360deg );
+    }
+
+
+    50%
+    {
+        transform: rotateZ( 180deg );
+    }
+
+    100%
+    {
+        transform: rotateZ( 0deg );
+    }
+}
 
 //Top bar
 #LeaderboardToggle
@@ -100,6 +164,11 @@
     border-left: 2px solid #484A48;
 
     flow-children: down;
+}
+
+.LeaderboardTitles
+{
+    width: 100%;
 }
 
 .LeaderboardTitle

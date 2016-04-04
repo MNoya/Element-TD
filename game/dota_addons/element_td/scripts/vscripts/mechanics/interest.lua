@@ -7,6 +7,7 @@ if not InterestManager then
 	InterestManager.started = false
 	InterestManager.timers = {}
 	InterestManager.playerLockStates = {}
+	InterestManager.gameStartedBefore = false
 end
 
 -- starts the interest timers initally for all players
@@ -26,6 +27,24 @@ function InterestManager:StartInterest()
 		rate = INTEREST_RATE, 
 		enabled = true 
 	})
+end
+
+-- handles single player interest restarting
+function InterestManager:Restart(playerID)
+	local playerData = GetPlayerData(playerID)
+	if InterestManager.timers[playerID] then
+		InterestManager:PauseInterestForPlayer(playerID, "#etd_interest_lock_end_title", "#etd_interest_lock_end")
+	end
+
+	local player = PlayerResource:GetPlayer(playerID)
+	if player then
+		CustomGameEventManager:Send_ServerToPlayer(player, "etd_restart_interest", {})
+	end
+	
+	playerData.interestGold = 0
+	InterestManager.started = false
+	InterestManager.playerLockStates = {}
+	InterestManager.timers = {}
 end
 
 function InterestManager:HandlePlayerReconnect(playerID)

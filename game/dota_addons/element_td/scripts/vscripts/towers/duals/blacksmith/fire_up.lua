@@ -47,6 +47,10 @@ function blacksmith_tower_fire_up:CastFilterResultTarget(target)
 		return result
 	end
 	
+	if target:GetUnitName() == "elemental_summoner" then
+		return UF_FAIL_OTHER
+	end
+
 	if target:HasModifier("modifier_support_tower") then
 		return UF_FAIL_CUSTOM
 	end

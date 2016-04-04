@@ -17,6 +17,7 @@
     vertical-align: top;
     margin-top: 732px;
     flow-children: down;
+    border-radius: 0px 10px 0px 0px;
 }
 
 .ProfileButton
@@ -29,9 +30,8 @@
 
 #MyProfileButton
 {
-    border-radius: 0px 10px 0px 0px;
     margin-bottom: -1px;
-    width: 281px;
+    width: 280px;
 }
 
 #ProfileHeaderTitle
@@ -56,6 +56,12 @@
     wash-color: white;
 }
 
+#ProfileToggleContainer.Flipped
+{
+    horizontal-align: right;
+    border-radius: 10px 0px 0px 0px;
+}
+
 .OpenMenuArrow
 {
     width: 16px;
@@ -70,13 +76,6 @@
     background-repeat: no-repeat;
     background-size: 14px 14px;
     wash-color: #A5ADA2ff;
-}
-
-#AvatarImageMini
-{
-    width: 38px;
-    height: 38px;
-    border-radius: 0px 0px 10px;
 }
 
 #New
@@ -108,20 +107,6 @@
     {
         text-shadow: 0px 0px 6px 1.5 #FBB23F;
     }
-}
-
-#Soon
-{
-    letter-spacing: 2px;
-    font-size: 56px;
-    text-align: center;
-    text-transform: uppercase;
-    margin-top: 6px;
-    margin-left: 10px;
-    horizontal-align: center;
-    vertical-align: center;
-    color: white;
-    text-shadow: 0px 0px 6px 1.5 #FBB23F;
 }
 
 // Profile Main Menu
@@ -158,15 +143,20 @@
     margin-left: 10px;
 }
 
+#UserNameContainer
+{
+    width: 380px;
+    margin-top: 5px;
+    margin-left: 20px;
+    align: left center;
+}
 
 #UserNameProfile
 {
     color: white;
-    vertical-align: center;
-    margin-top: 5px;
     font-size: 40px;
-    margin-left: 20px;
     width: 380px;
+    height: 100px;
     font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
 }
 
@@ -175,10 +165,48 @@ DOTAUserName #UserNameProfile
     width: 380px;
 }
 
+#ProfileBackContainer
+{
+    width: 200px;
+    wash-color: #888888;
+    margin-top: 50px;
+}
+
+#ProfileBackContainer:hover
+{
+    wash-color: #cccccc;
+}
+
+.selfName { margin-top: 14px; }
+.friendName { margin-top: 7px; }
+
+#ProfileBack
+{
+    width: 20px;
+    height: 20px;
+    background-image: url("s2r://panorama/images/control_icons/arrow_right_png.vtex");
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    transform: scaleX(-1);
+
+    transition-property: brightness;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
+#ProfileBackLabel
+{
+    color: white;
+    margin-top: 1px;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-left: 22px;
+}
+
 .TopProfileStatContainer
 {
     height: 100%;
-    width: 11%;
+    width: 100px;
     margin-left: 10px;
 }
 
@@ -257,25 +285,6 @@ DOTAUserName #UserNameProfile
 }
 
 
-
-
-#PlayerCardBox
-{
-    background-color: gradient( linear, 0% 0%, 0% 5%, from( #232326 ), to( #111111 ) );
-    background-image: url("s2r://panorama/images/textures/miniprofile_rock_psd.vtex");
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: 100% 256px;
-    border-top: 2px solid #3b404777;
-    border-right: 2px solid #00000088;
-    border-left: 2px solid #4c434677;
-    border-bottom: 2px solid #00000088;
-    box-shadow: fill #00000055 -2px -2px 4px 6px;
-    height: 116px;
-    width: 100%;
-    padding: 0px;
-}
-
 #ProfileMenuContainer
 {
     width: 98%;
@@ -324,10 +333,17 @@ DOTAUserName #UserNameProfile
 
 .local
 {
-    background-color: grey;
+    background-color: #AAAAAA44;
 }
 
 // General Stat Panels
+.LeftTab
+{
+    width: 800px;
+    height: 500px;
+    flow-children: down;
+}
+
 #GeneralStats
 {
     width: 100%;
@@ -380,7 +396,7 @@ DOTAUserName #UserNameProfile
 
 .TowerStat
 {
-    width: 40px;
+    width: 50px;
     font-size: 14px;
     letter-spacing: 1px;
     color: white;
@@ -556,19 +572,19 @@ DOTAUserName #UserNameProfile
 
 .InfoTowerStats
 {
-    width: 100%;
+    width: 110%;
     margin-bottom: 5px;
     flow-children: down;
 }
 
 #RightTowerStats
 {
-    margin-left: -20px;
+    margin-left: -30px;
 }
 
 .TowerStatPanel
 {
-    width: 150px;
+    width: 170px;
     margin-bottom: 5px;
     flow-children: right;
 }
@@ -578,7 +594,6 @@ DOTAUserName #UserNameProfile
 {
     height: 100%;
     horizontal-align: right;
-    vertical-align: center;
     flow-children: down;
 }
 
@@ -615,12 +630,17 @@ DOTAUserName #UserNameProfile
     horizontal-align: center;
 }
 
+.Hover { opacity: 2; }
+.Desaturate { saturation: 0; }
+.Highlight { font-weight: bold; }
+
 #ElementPieChart
 {
     width: 160px;
     height: 160px;
     margin-right: 10px;
-    vertical-align: center;
+    margin-top: 20px;
+    vertical-align: top;
 }
 
 .ElementUsageImage
@@ -676,6 +696,7 @@ DOTAUserName #UserNameProfile
 #RandomPanel, #FirstDualPanel, #FirstTriplePanel
 {
     margin-bottom: 10px;
+    tooltip-position: left;
 }
 
 #RandomImage
@@ -731,18 +752,6 @@ DOTAUserName #UserNameProfile
     margin-right: 2px;
 }
 
-
-.MostUsed
-{
-    font-weight: bold;
-    font-size: 22px;
-}
-
-.MostUsed .ElementLabel
-{
-    margin-left: 6px;
-}
-
 #light_usage { color: #E5DE23; }
 #dark_usage { color: #8733C8; }
 #water_usage { color: #01A2FF; }
@@ -787,6 +796,7 @@ DOTAUserName #UserNameProfile
 Label
 {
     font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+    text-shadow: -1px 1px 1px 2.0 #000000;
 }
 
 #FriendName
@@ -861,16 +871,28 @@ Label
     flow-children: down;
 }
 
-.ProfilePanelHeader
+#FriendRanksTitleContainer
+{
+    width: 100%;
+    align: center top;
+}
+
+#Loading
+{
+    width: 30px;
+    height: 30px;
+    align: right center;
+    margin-right: 50px;
+}
+
+#FriendRanksTitle
 {
     color: white;
     font-size: 25px;
     margin-top: 10px;
     text-transform: uppercase;
-    horizontal-align: center;
-    vertical-align: center;
+    align: center center;
     font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
-    flow-children: right;
 }
 
 #FriendRanksTabs
@@ -882,7 +904,7 @@ Label
 
 #ProfileTabs
 {
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 10px;
     width: 100%;
     height: 30px;
@@ -933,6 +955,16 @@ Label
     transition-property: color;
     transition-duration: 0.2s;
     transition-timing-function: linear;
+}
+
+#PrivateProfile
+{
+    color: #888888;
+    font-size: 25px;
+    margin-top: 30px;
+    align: center center;
+    letter-spacing: 3px;
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
 }
 
 #stats_radio, #matches_radio, #achievements_radio
@@ -998,6 +1030,284 @@ Label
     //pre-transform-scale2d: 0.8;
 }
 
+.Spinner
+{
+    width: 28px;
+    height: 28px;
+
+    background-image: url("s2r://panorama/images/status_icons/loadingthrobber_round_psd.vtex");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+
+    animation-name: SpinnerRotate;
+    animation-duration: 1.0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes 'SpinnerRotate'
+{
+    0%
+    {
+        transform: rotateZ( 360deg );
+    }
+
+
+    50%
+    {
+        transform: rotateZ( 180deg );
+    }
+
+    100%
+    {
+        transform: rotateZ( 0deg );
+    }
+}
+
+// Matches left panels
+#Matches
+{
+    width: 100%;
+    height: 100%;
+    flow-children: down;
+}
+
+#MatchesTopRow
+{
+    height: 20px;
+    width: 100%;
+    flow-children: right;
+}
+
+#MatchModes
+{
+    flow-children: right;
+    horizontal-align: center;
+}
+
+.MatchScore_Col
+{
+    width: 60px;
+    text-align: center;
+}
+
+.MatchModes_Col
+{
+    width: 120px;
+    margin-left: 5px;
+    horizontal-align: center;
+}
+
+.MatchTime_Col
+{
+    width: 100px;
+    margin-left: 5px;
+}
+
+.MatchElements_Col
+{
+    width: 200px;
+    text-align: center;
+}
+
+.ProfileMatch
+{
+    flow-children: right;
+    margin-bottom: 2px;
+}
+
+.MatchText
+{
+    font-size: 18px;
+    vertical-align: center;
+    color: white;
+}
+
+#MatchesContainer
+{
+    flow-children: down;
+    overflow: squish scroll;
+}
+
+.MatchMode
+{
+    height: 22px;
+    width: 22px;
+    margin-left: 1px;
+    margin-right: 1px;
+    background-color: gray;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+#Rush { background-color: #FF6C00; }
+#Chaos { background-color: #C54DA8; }
+#Random { background-color: #222; }
+#Express { background-color: #006400; height: 100%; }
+
+.Normal
+{
+    height: 22px;
+    max-width: 22px;
+    background-color: #CD7F32;
+}
+
+.Hard
+{
+    height: 22px;
+    max-width: 22px;
+    background-color: gray;
+}
+
+.VeryHard
+{
+    height: 22px;
+    max-width: 25px;
+    font-size: 16px;
+    padding-top: 2px;
+    background-color: #FBB23F;
+}
+
+.Insane
+{
+    height: 22px;
+    max-width: 22px;
+    background-color: red;
+}
+
+.ElementImage
+{
+    height: 22px;
+    width: 22px;
+    vertical-align: center;
+}
+
+#ElemSubContainer
+{
+    horizontal-align: center;
+    vertical-align: center;
+    flow-children: right;
+}
+.ElemImageAndLevel
+{
+    width: 22px;
+    margin: 0px 1px 0px 2px;
+}
+
+#water_level,
+#fire_level,
+#nature_level,
+#earth_level,
+#light_level,
+#dark_level
+{
+    color: #FFF;
+    margin-top: 1.5px;
+    font-size: 16px;
+    font-family: Radiance;
+    font-weight: bold;
+    text-align: center;
+    align: center center;
+    text-shadow: 0px 0px 1px 3.0 #000000;
+}
+
+// -- end of matches
+
+// Achievements left panels
+#Milestones
+{
+    width: 100%;
+    height: 120px;
+    flow-children: down;
+    horizontal-align: center;
+}
+
+#MilestonesLabel
+{
+    height: 20px;
+    horizontal-align: center;
+}
+
+#MilestonesContainer
+{
+    margin-top: 5px;
+    height: 100px;
+    flow-children: right-wrap;
+    //overflow: scroll squish; //horizontal scrolling is bad
+    horizontal-align: center;
+}
+
+.ProfileBadge
+{
+    width: 120px;
+    height: 100px;
+}
+
+#OneBatchTwoBatch
+{
+    flow-children: right;
+    height: 100%;
+    width: 100%;
+}
+
+#BadgeClassic
+{
+    margin-right: -5px;
+}
+
+#BadgeVersion
+{
+    width: 100%;
+    font-size: 14px;
+    margin-top: 3px;
+    margin-left: -2px;
+    color: white;
+    text-shadow: 0px 0px 5px 2.0 #000;
+    text-align: center;
+}
+
+.RankingPlayerProfile
+{
+    margin-top: 10px;
+    width: 50%;
+    height: 100%;
+    transition-property: transform, opacity;
+    transition-duration: 0.3s;
+}
+
+.BadgePercentile, .BadgeText, .BadgeRank
+{
+    width: 70px;
+    font-size: 12px;
+    margin-top: 15px;
+    color: white;
+    text-shadow: 0px 0px 5px 2.0 #000;
+    text-align: center;
+}
+
+.BadgeRank
+{
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 55px;
+}
+
+.BadgePercentile
+{
+    font-size: 13px;
+}
+
+.BadgeText
+{
+    margin-top: 29px;
+    font-weight: normal;
+}
+
+//-- end of achievements
+
 // Start of Custom Builders
 #CustomBuilders
 {
@@ -1011,6 +1321,208 @@ Label
 
     border: 2px solid #484A48;
     box-shadow: #000 -4px -4px 3px 8px;
+}
 
+#CustomBuildersTitle
+{
+    letter-spacing: 2px;
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-left: 10px;
+    horizontal-align: center;
+    vertical-align: top;
+    color: white;
+    text-shadow: 0px 0px 6px 1.5 #FBB23F;
+}
+
+#BuildersContainer
+{
+    width: 100%;
+    height: 100%;
+    flow-children: right;
+}
+
+#CustomBuilderDescription
+{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    horizontal-align: center;
+    vertical-align: bottom;
+    color: white;
+}
+
+.BuilderColumn
+{
+    width: 160px;
+    height: 100%;
+}
+
+.BuilderPanel
+{
+    margin-top: 150px;
+    width: 600px;
+    height: 600px;
+    opacity-mask: url('s2r://panorama/images/masks/softedge_box_png.vtex');
+}
+
+.BuilderBackground
+{
+    opacity: 0.6;
+    saturation: 0.6;
+
+    transition-property: opacity, saturation;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+
+    background-size: 100% 100%;
+
+    opacity-mask: url("file://{images}/custom_game/builders/mask.png");
+}
+
+.BuilderBackground.Hovering
+{
+    opacity: 1;
+    saturation: 1;
+}
+
+// -- Avatar Hover Styles
+
+.ProfileAvatar
+{
     flow-children: down;
+}
+
+#AvatarFirstRow
+{
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+#PlayerCardBox
+{
+    background-color: gradient( linear, 0% 0%, 0% 5%, from( #232326 ), to( #111111 ) );
+    background-image: url("s2r://panorama/images/textures/miniprofile_rock_psd.vtex");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100% 256px;
+
+    border-top: 2px solid #3b404777;
+    border-right: 2px solid #00000088;
+    border-left: 2px solid #4c434677;
+    border-bottom: 2px solid #00000088;
+    box-shadow: fill #00000055 -2px -2px 4px 6px;
+    
+    flow-children: down;
+    width: 360px;
+    max-height: 256px;
+}
+
+#EleTDPass
+{
+    height: 48px;
+    width: 360px;
+
+    border-top: 2px solid #333333;
+    border-right: 2px solid #000000;
+    border-left: 2px solid #4c4346;
+    border-bottom: 2px solid #000000;
+    box-shadow: fill #00000055 -2px -2px 4px 6px;
+}
+
+#AvatarName
+{
+    width: 90%;
+    height: 50px;
+    horizontal-align: left;
+    margin-left: 15px;
+    margin-top: 15px;
+    border-top: 2px solid #00000088;
+    border-left: 2px solid #4c434633;
+    border-bottom: 2px solid #44444488;
+    background-color: #00000055;
+}
+
+#AvatarImage
+{
+    align: left center;
+    margin-left: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+#AvatarUserName
+{
+    font-size: 24px;
+    margin-left: 55px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+#favorite_element
+{
+    border: 3px solid #444444;
+    border-radius: 80px;
+    margin-top: 5px;
+    margin-right: 5px;
+    height: 80px;
+    width: 80px;
+    horizontal-align: right;
+}
+
+#AvatarBestBadges
+{
+    height: 95px;
+    width: 80%;
+    margin-top: -20px;
+    margin-left: 50px;
+    flow-children: right;
+}
+
+#AvatarCurrentRanks
+{
+    width: 90%;
+    height: 50px;
+    align: left bottom;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    box-shadow: #000 -2px -2px 6px 2px;
+    background-color: #66666611;
+    flow-children: right;
+}
+
+.AvatarColumn
+{
+    width: 33%;
+    height: 80%;
+    vertical-align: center;
+    flow-children: down;
+}
+
+.AvatarRankLabel
+{
+    height: 50%;
+    font-size: 13px;
+    text-align: center;
+    horizontal-align: center;
+    letter-spacing: 1px;
+    color: #AAAAAA;
+    text-transform: uppercase;
+    text-shadow: none;
+}
+
+.AvatarRankValue 
+{
+    height: 50%;
+    font-size: 16px;
+    text-align: center;
+    horizontal-align: center;
+    letter-spacing: 1px;
+    color: #AAAAAA;
+    text-transform: uppercase;
+    text-shadow: none;
 }

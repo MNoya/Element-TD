@@ -1,0 +1,47 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/profile.css" />
+    </styles>
+    <Panel hittest="false" class="ProfileMatch">
+        <Panel id="MatchModes" class="MatchModes_Col">
+            <Label id="Difficulty" class="MatchMode" text="" />
+            <Label id="Express" class="MatchMode" text="E" />
+            <Label id="Rush" class="MatchMode" text="R" />
+            <Label id="Chaos" class="MatchMode" text="C" />
+            <Label id="Random" class="MatchMode" text="R" />
+        </Panel>
+
+        <Label id="MatchTime" class="MatchText MatchTime_Col" text="" />
+        <Label id="MatchScore" class="MatchText MatchScore_Col" text="" />
+
+        <Panel id="ElementsContainer" class="MatchElements_Col">
+            <Panel id="ElemSubContainer">
+                <Label id="HasRandomed" class='hide' text=""/>
+                <Panel id="light" class="ElemImageAndLevel">
+                    <Image class="ElementImage" src="file://{images}/spellicons/elements/light.png"/>
+                    <Label id="light_level" text=""/>
+                </Panel>
+                <Panel id="dark" class="ElemImageAndLevel">
+                    <Image class="ElementImage" src="file://{images}/spellicons/elements/dark.png"/>
+                    <Label id="dark_level" text=""/>
+                </Panel>
+                <Panel id="water" class="ElemImageAndLevel">
+                    <Image class="ElementImage" src="file://{images}/spellicons/elements/water.png"/>
+                    <Label id="water_level" text=""/>
+                </Panel>
+                <Panel id="fire" class="ElemImageAndLevel">
+                    <Image class="ElementImage" src="file://{images}/spellicons/elements/fire.png"/>
+                    <Label id="fire_level" text=""/>
+                </Panel>
+                <Panel id="nature" class="ElemImageAndLevel">
+                    <Image class="ElementImage" src="file://{images}/spellicons/elements/nature.png"/>  
+                    <Label id="nature_level" text=""/>
+                </Panel>
+                <Panel id="earth" class="ElemImageAndLevel">
+                    <Image class="ElementImage" src="file://{images}/spellicons/elements/earth.png"/>
+                    <Label id="earth_level" text=""/>
+                </Panel>
+            </Panel>
+        </Panel>               
+    </Panel>
+</root>

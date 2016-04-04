@@ -6,7 +6,7 @@
 
     "precache"
     {
-        "particle"  "models/items/necrolyte/death_protest_weapon/death_protest_weapon.vmdl"
+        "particle"  "particles/econ/items/pets/pet_frondillo/almond_ambient_gold.vpcf"
     }
 
     "Modifiers"
@@ -18,13 +18,25 @@
 
             "OnCreated"
             {
+                "AttachEffect"
+                {
+                    "EffectName"        "particles/econ/items/pets/pet_frondillo/almond_ambient_gold.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                    "Target"            "TARGET"
+                    "ControlPointEntities"
+                    {
+                        "CASTER"    "attach_almond_fx"
+                        "CASTER"    "attach_almond_fx"
+                    }
+                }
+
                 "RunScript"
                 {
                     "ScriptFile"    "mechanics/wearables.lua"
                     "Function"      "Mount"
                     "Unit"          "armadillo_rider"
                     "Point"         "attach_almond_fx"
-                    "offsetZ"       "10"
+                    "offsetZ"       "30"
                 }
             }
         }

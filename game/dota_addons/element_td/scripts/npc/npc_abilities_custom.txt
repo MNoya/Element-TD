@@ -289,7 +289,7 @@
 	
 	    "precache"
 	    {
-	        "particle"  "models/items/necrolyte/death_protest_weapon/death_protest_weapon.vmdl"
+	        "particle"  "particles/econ/items/pets/pet_frondillo/almond_ambient_gold.vpcf"
 	    }
 	
 	    "Modifiers"
@@ -301,13 +301,25 @@
 	
 	            "OnCreated"
 	            {
+	                "AttachEffect"
+	                {
+	                    "EffectName"        "particles/econ/items/pets/pet_frondillo/almond_ambient_gold.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                    "Target"            "TARGET"
+	                    "ControlPointEntities"
+	                    {
+	                        "CASTER"    "attach_almond_fx"
+	                        "CASTER"    "attach_almond_fx"
+	                    }
+	                }
+	
 	                "RunScript"
 	                {
 	                    "ScriptFile"    "mechanics/wearables.lua"
 	                    "Function"      "Mount"
 	                    "Unit"          "armadillo_rider"
 	                    "Point"         "attach_almond_fx"
-	                    "offsetZ"       "10"
+	                    "offsetZ"       "30"
 	                }
 	            }
 	        }
@@ -339,6 +351,91 @@
 	        }
 	    }
 	}
+	"donkey_cosmetics"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "MaxLevel"                      "1"
+	
+	    "precache"
+	    {
+	        "particle"  "particles/econ/courier/courier_donkey_unicorn/courier_donkey_unicorn_ambient.vpcf"
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_donkey_cosmetics"
+	        {
+	            "Passive"            "1"
+	            "IsHidden"           "1"
+	        
+	            "OnCreated"
+	            {
+	                "AttachEffect"
+	                {
+	                    "EffectName"        "particles/econ/courier/courier_donkey_unicorn/courier_donkey_unicorn_ambient.vpcf"
+	                    "EffectAttachType"  "attach_hitloc"
+	                    "Target"            "TARGET"
+	                    "ControlPointEntities"
+	                    {
+	                        "CASTER"    "attach_hitloc"
+	                        "CASTER"    "attach_hitloc"
+	                    }
+	                }
+	            }
+	        }
+	    }
+	}
+	"green_dragon_cosmetics"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "MaxLevel"                      "1"
+	
+	    "precache"
+	    {
+	        "particle"  "particles/econ/courier/courier_trail_international_2013/courier_international_2013.vpcf"
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_green_dragon_rider"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	
+	            "OnCreated"
+	            {
+	                "AttachEffect"
+	                {
+	                    "EffectName"        "particles/custom/elements/nature/courier_greevil_green_ambient_3.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                    "Target"            "TARGET"
+	                }
+	
+	                "AttachEffect"
+	                {
+	                    "EffectName"        "particles/econ/courier/courier_trail_international_2013/courier_international_2013.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                    "Target"            "TARGET"
+	                }
+	
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/wearables.lua"
+	                    "Function"      "Mount"
+	                    "Unit"          "green_dragon_rider"
+	                    "Point"         "attach_hitloc"
+	                    "IdleAnimation" "1609" //ACT_DOTA_RELAX_LOOP
+	                    "pitch"         "90"
+	                    "yaw"           "0"
+	                    "offsetX"       "-120"
+	                    "offsetZ"       "30"
+	                }
+	            }
+	        }
+	    }
+	}
 	"hellsworn_cosmetics"
 	{
 	    "BaseClass"                     "ability_datadriven"
@@ -348,7 +445,8 @@
 	    "precache"
 	    {
 	        "model"  "models/items/doom/weapon_eyeoffetitzu/weapon_eyeoffetitzu.vmdl"
-	        
+	        "particle"  "particles/econ/items/warlock/warlock_hellsworn_construct/golem_hellsworn_ambient.vpcf"
+	        "particle"  "particles/units/heroes/hero_warlock/warlock_death.vpcf"
 	    }
 	
 	    "Modifiers"
@@ -375,6 +473,42 @@
 	                    "Model"         "models/items/doom/weapon_eyeoffetitzu/weapon_eyeoffetitzu.vmdl"
 	                    "Point"         "attach_attack2"
 	                }
+	
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "creeps/particles.lua"
+	                    "Function"      "HellSworn"
+	                }
+	
+	                "AttachEffect"
+	                {
+	                    "EffectName"        "particles/econ/courier/courier_trail_lava/courier_trail_lava.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                    "Target"            "TARGET"
+	                }
+	            }
+	
+	            "OnDestroy"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "creeps/particles.lua"
+	                    "Function"      "RemoveHellSwornAmbient"
+	                }
+	
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/wearables.lua"
+	                    "Function"      "RemoveProp"
+	                    "Point"         "attach_attack1"
+	                }
+	
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/wearables.lua"
+	                    "Function"      "RemoveProp"
+	                    "Point"         "attach_attack2"
+	                }
 	            }
 	        }
 	    }
@@ -387,7 +521,7 @@
 	
 	    "precache"
 	    {
-	        "particle"  "models/items/necrolyte/death_protest_weapon/death_protest_weapon.vmdl"
+	        "particle"  "particles/econ/courier/courier_murrissey_the_smeevil/courier_murrissey_the_smeevil.vpcf"
 	    }
 	
 	    "Modifiers"
@@ -399,6 +533,24 @@
 	
 	            "OnCreated"
 	            {
+	                "AttachEffect"
+	                {
+	                    "EffectName"        "particles/econ/items/lion/fish_stick/fish_stick_spell_ambient.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                    "Target"            "TARGET"
+	                }
+	
+	                "AttachEffect"
+	                {
+	                    "EffectName"        "particles/econ/courier/courier_murrissey_the_smeevil/courier_murrissey_the_smeevil.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                    "Target"            "TARGET"
+	                    "ControlPointEntities"
+	                    {
+	                        "CASTER"    "attach_hitloc"
+	                    }
+	                }
+	                
 	                "RunScript"
 	                {
 	                    "ScriptFile"    "mechanics/wearables.lua"
@@ -467,6 +619,35 @@
 	
 	            "StatusEffectName"      "particles/status_fx/status_effect_arc_warden_tempest.vpcf"        
 	            "StatusEffectPriority"  "10"
+	        }
+	    }
+	}
+	"rex_cosmetics"
+	{
+	    "BaseClass"                     "ability_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	    "MaxLevel"                      "1"
+	
+	    "precache"
+	    {
+	        "particle"  "particles/econ/courier/courier_faceless_rex/cour_rex_weapon_glow.vpcf"
+	    }
+	
+	    "Modifiers"
+	    {
+	        "modifier_rex_rider"
+	        {
+	            "Passive"   "1"
+	            "IsHidden"  "1"
+	
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/wearables.lua"
+	                    "Function"      "MountVoid"
+	                }
+	            }
 	        }
 	    }
 	}
@@ -832,12 +1013,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"3"
+				"bonus_health_regen"	"2.5"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_heal_pct"			"75"
+				"max_heal_pct"			"100"
 			}
 		}
 	
@@ -921,7 +1102,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"backtrack_duration"	"3"
+				"backtrack_duration"	"4"
 			}
 		}
 	
@@ -1010,7 +1191,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"5"
+				"duration"				"6"
 			}
 		}
 	}
@@ -2765,7 +2946,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_FLOAT"
-	            "damage_per_second"     "2 13 85 850"
+	            "damage_per_second"     "3 20 130 1300"
 	        }
 	        "02"
 	        {
@@ -3115,7 +3296,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_mult"			"350"
+				"damage_mult"			"400"
 			}
 		}
 	}
@@ -3611,7 +3792,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "damage"                "6 39 255 2550"
+	            "damage"                "4 26 170 1700"
 	        }
 	    }
 	}
@@ -3806,53 +3987,26 @@
 		}
 	}
 	//=================================================================================================================
-	// Nature Tower: Spore Explosion
+	// Nature Tower: Force of Nature
 	//=================================================================================================================
-	"nature_tower_spore_explosion"
+	"nature_tower_force_of_nature"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-	
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"towers/nature"
-		"MaxLevel"						"4"
-	
-		"Modifiers"
-		{
-			"modifier_spore_explosion_passive"
-			{
-				"Passive"		"1"
-				"IsHidden"		"1"
-				"OnKill"
-				{
-					"RunScript"
-					{
-						"Target"			"UNIT"
-						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
-						"Function"			"TriggerEvent"
-						"Event"				"CreepKilled"
-					}
-				}
-			}
-		}
+		"MaxLevel"						"1"
 	
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"24 156 1020 10200"
+				"damage"				"10"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe_full"				"150"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aoe_half"				"300"
+				"aoe"					"125" //if you change this you also have to change the ability description
 			}
 		}
 	}
@@ -4862,7 +5016,12 @@
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "bounce_range"        "150"
+	            "bounce_range"        "550"
+	        }
+	        "03"
+	        {
+	            "var_type"            "FIELD_INTEGER"
+	            "aoe_reduction"       "40"
 	        }
 	    }
 	}

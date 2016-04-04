@@ -200,10 +200,8 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
                 var reward = GameUI.RewardLevel(playerInfo.player_steamid)
                 if (reward == "Developer")
                     playerPortrait.SetImage( "file://{images}/custom_game/rewards/dev.png" );
-                else if (reward > 0)
-                    playerPortrait.SetImage( "file://{images}/custom_game/rewards/aegis.png" );
                 else
-                    playerPortrait.SetImage( "file://{images}/heroes/" + playerInfo.player_selected_hero + ".png" );
+                    playerPortrait.SetImage( "file://{images}/custom_game/rewards/"+playerInfo.player_selected_hero+".png" );
             }
             else
             {

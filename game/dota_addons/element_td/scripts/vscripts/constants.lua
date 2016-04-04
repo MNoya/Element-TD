@@ -134,10 +134,18 @@ function GenerateAllConstants()
 end
 
 function generateElementalSummonerLocations()
-    for i=1,8 do
-        local summoner = Entities:FindByName(nil, "summoner_"..i)
-        if summoner then
-          ElementalSummonerLocations[i] = summoner:GetAbsOrigin()
+    if COOP_MAP then
+        -- TODO: each summor should be placed above the lane entrance
+        for i = 1, 8 do
+            ElementalSummonerLocations[i] = Vector(0, 4000, 0)
+        end
+    else
+
+        for i = 1, 8 do
+            local summoner = Entities:FindByName(nil, "summoner_"..i)
+            if summoner then
+                ElementalSummonerLocations[i] = summoner:GetAbsOrigin()
+            end
         end
     end
 end
@@ -165,9 +173,15 @@ function generateSectorBounds()
 end
 
 function generateSectorPortals()
-    for i=1,8 do
-        local portal = Entities:FindByName(nil, "portal_sector"..i)
-        SectorPortals[i] = portal
+    if COOP_MAP then
+        for i = 1, 6 do
+            -- portal entities are named differently on the co-op map LOL
+            SectorPortals[i] = Entities:FindByName(nil, "portal_" .. i)
+        end
+    else
+        for i = 1, 8 do
+            SectorPortals[i] = Entities:FindByName(nil, "portal_sector" .. i)
+        end
     end
 end
 

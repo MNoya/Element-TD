@@ -6,7 +6,7 @@
 
     "precache"
     {
-        "particle"  "models/items/necrolyte/death_protest_weapon/death_protest_weapon.vmdl"
+        "particle"  "particles/econ/courier/courier_murrissey_the_smeevil/courier_murrissey_the_smeevil.vpcf"
     }
 
     "Modifiers"
@@ -18,6 +18,24 @@
 
             "OnCreated"
             {
+                "AttachEffect"
+                {
+                    "EffectName"        "particles/econ/items/lion/fish_stick/fish_stick_spell_ambient.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                    "Target"            "TARGET"
+                }
+
+                "AttachEffect"
+                {
+                    "EffectName"        "particles/econ/courier/courier_murrissey_the_smeevil/courier_murrissey_the_smeevil.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                    "Target"            "TARGET"
+                    "ControlPointEntities"
+                    {
+                        "CASTER"    "attach_hitloc"
+                    }
+                }
+                
                 "RunScript"
                 {
                     "ScriptFile"    "mechanics/wearables.lua"

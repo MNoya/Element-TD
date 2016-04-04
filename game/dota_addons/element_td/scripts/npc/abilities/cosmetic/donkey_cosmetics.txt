@@ -1,0 +1,35 @@
+"donkey_cosmetics"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "MaxLevel"                      "1"
+
+    "precache"
+    {
+        "particle"  "particles/econ/courier/courier_donkey_unicorn/courier_donkey_unicorn_ambient.vpcf"
+    }
+
+    "Modifiers"
+    {
+        "modifier_donkey_cosmetics"
+        {
+            "Passive"            "1"
+            "IsHidden"           "1"
+        
+            "OnCreated"
+            {
+                "AttachEffect"
+                {
+                    "EffectName"        "particles/econ/courier/courier_donkey_unicorn/courier_donkey_unicorn_ambient.vpcf"
+                    "EffectAttachType"  "attach_hitloc"
+                    "Target"            "TARGET"
+                    "ControlPointEntities"
+                    {
+                        "CASTER"    "attach_hitloc"
+                        "CASTER"    "attach_hitloc"
+                    }
+                }
+            }
+        }
+    }
+}

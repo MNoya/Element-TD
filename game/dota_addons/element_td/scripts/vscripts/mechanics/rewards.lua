@@ -2,6 +2,29 @@ if not Rewards then
     Rewards = class({})
 end
 
+function Rewards:Init()
+    Rewards.subscribed = true
+    CustomGameEventManager:RegisterListener( "player_choose_custom_builder", Dynamic_Wrap(Rewards, 'OnPlayerChangeBuilder'))
+end
+
+function Rewards:OnPlayerChangeBuilder(event)
+    local playerID = event.PlayerID
+    local heroName = event.hero_name
+
+    -- If it's the same builder, ignore it
+    local oldHero = PlayerResource:GetSelectedHeroEntity(playerID)
+    if oldHero:GetUnitName() == heroName then return end
+
+    -- Replace and handle wearables, animations, particles
+    local newHero = Rewards:ReplaceHero(playerID, oldHero, heroName)
+    RemoveAllWearables(newHero)
+    UTIL_Remove(oldHero)
+
+    -- Save choice
+    Saves:SaveBuilder(playerID, heroName)
+end
+
+-- Pulls rewards.kv and eletd.com/reward_data.js
 function Rewards:Load()
     Rewards.players = {}
     Rewards.file = LoadKeyValues("scripts/kv/rewards.kv")
@@ -42,6 +65,11 @@ function Rewards:Load()
     end)
 end
 
+function Rewards:PlayerHasPass(playerID)
+    return PlayerResource:HasCustomGameTicketForPlayerID(playerID) or Rewards.players[Rewards:ConvertID64(PlayerResource:GetSteamAccountID(playerID))] ~= nil
+end
+
+-- Checks if the player has a model change defined in local rewards file or in the request received in Load
 function Rewards:PlayerHasCosmeticModel(playerID)
     local steamID32 = PlayerResource:GetSteamAccountID(playerID)
     local steamID64 = Rewards:ConvertID64(steamID32)
@@ -49,6 +77,11 @@ function Rewards:PlayerHasCosmeticModel(playerID)
     local reward = Rewards.players[tostring(steamID64)]
     if reward and (not reward.tier or (reward.tier and reward.tier >= 10)) then
         return reward
+    end
+
+    -- Pass hero builder
+    if reward and reward.hero then
+        return {hero=reward.hero}
     end
 
     -- Enable wisp set outside of dedis
@@ -59,15 +92,22 @@ function Rewards:PlayerHasCosmeticModel(playerID)
     return false
 end
 
+-- Resolves changing default wisp builder to another hero when the game starts
 function Rewards:HandleHeroReplacement(hero)
     local playerID = hero:GetPlayerID()
     local reward = Rewards:PlayerHasCosmeticModel(playerID)
     if not reward then return end
 
-    local newHero = Rewards:ReplaceWithFakeHero(playerID, hero)
+    local hero_replacement = reward.hero or "npc_dota_hero_phoenix"
+    local newHero = Rewards:ReplaceHero(playerID, hero, hero_replacement)
+
+    -- Main elemental heroes
+    if reward.hero then 
+        RemoveAllWearables(newHero)
+        UTIL_Remove(hero)
 
     -- Models are based on a unit for precache async, and update the portrait
-    if reward.model then
+    elseif reward.model then
         PrecacheUnitByNameAsync(reward.model, function()
             local model = GetUnitKeyValue(reward.model, "Model")
             local scale = GetUnitKeyValue(reward.model, "ModelScale") or 1
@@ -138,6 +178,67 @@ function Rewards:HandleHeroReplacement(hero)
     end
 end
 
+function Rewards:ReplaceHero(playerID, oldHero, heroName)
+    oldHero:AddNoDraw()
+    oldHero:ForceKill(true)
+
+    -- Remove parented units
+    if oldHero.cosmetic_override then
+        UTIL_Remove(oldHero.cosmetic_override)
+    end
+    if oldHero.rider then
+        UTIL_Remove(oldHero.rider)
+    end
+    RemoveElementalOrbs(playerID)
+
+    -- Clear grid particles
+    local grid_item = GetItemByName(oldHero, "item_toggle_grid")
+    if grid_item then
+        ClearGrid(grid_item)
+    end
+
+    local newHero = PlayerResource:ReplaceHeroWith(playerID, heroName, 0, 0)
+
+    --- Add Cosmetics
+    if NPC_HEROES_CUSTOM[heroName] then
+        local cosmetic_ability = NPC_HEROES_CUSTOM[heroName]["CosmeticAbility"]
+        if cosmetic_ability then
+            newHero.cosmetic_ability = AddAbility(newHero, cosmetic_ability)
+        end
+
+         -- Add BuildAnimation or RiderBuildAnimation
+        if NPC_HEROES_CUSTOM[heroName]["BuildAnimation"] then
+            newHero.BuildAnimations = split(NPC_HEROES_CUSTOM[heroName]["BuildAnimation"], ",")
+        elseif NPC_HEROES_CUSTOM[heroName]["RiderBuildAnimation"] then
+            newHero.RiderBuildAnimations = split(NPC_HEROES_CUSTOM[heroName]["RiderBuildAnimation"], ",")
+        end
+    end
+
+    -- Update ownership
+    local playerData = GetPlayerData(playerID)
+    if playerData then
+        if playerData.towers then
+            for towerIndex, _ in pairs(playerData.towers) do
+                local tower = EntIndexToHScript(towerIndex)
+                if IsValidEntity(tower) and tower.scriptObject then
+                    tower:SetOwner(newHero)
+                end
+            end
+        end
+        if playerData.summoner then
+            playerData.summoner:SetOwner(newHero)
+        end
+    end
+
+    -- Update abilities and orbs
+    UpdatePlayerSpells(playerID)
+    Timers(1, function()
+        UpdateElementOrbs(playerID)
+    end)
+
+    return newHero
+end
+
 -- Stores animation data on the unit
 function Rewards:ApplyAnimations(unit, data)
     if data.build_animation then
@@ -152,6 +253,7 @@ function Rewards:ApplyAnimations(unit, data)
     end
 end
 
+-- Starts the necessary magic to have a
 function Rewards:SetCosmeticOverride(hero, unit, reward)
     hero.cosmetic_override = unit
     unit:SetAbsOrigin(hero:GetAbsOrigin())
@@ -172,12 +274,6 @@ function Rewards:SetCosmeticOverride(hero, unit, reward)
     hero:SetOriginalModel("models/custom_wisp.vmdl")
 end
 
-function Rewards:ReplaceWithFakeHero(playerID, hero)
-    local newHero = PlayerResource:ReplaceHeroWith(playerID, "npc_dota_hero_phoenix", 0, 0)
-    newHero.replaced = true
-    return newHero
-end
-
 function Rewards:ApplyCustomWispParticles(hero)
     if hero.ambient then
         ParticleManager:DestroyParticle(hero.ambient, true)
@@ -192,8 +288,10 @@ function Rewards:ApplyCustomWispParticles(hero)
     hero:SetOriginalModel("models/custom_wisp.vmdl")
 end
 
+-- Used right after starting a building placement
 function Rewards:CustomAnimation(playerID, caster)
     local unit = caster.cosmetic_override or caster
+
     if unit.build_animation then
         unit:RemoveGesture(ACT_DOTA_RUN)
         unit:RemoveGesture(ACT_DOTA_IDLE)
@@ -203,9 +301,21 @@ function Rewards:CustomAnimation(playerID, caster)
             StartAnimation(unit, {duration=2, activity=unit.build_animation, rate=1})
         end
         unit.wait_for_animation = true
+        return
+    end
+
+    local animationList = caster.BuildAnimations or caster.RiderBuildAnimations
+    if animationList then
+        local random_anim = tonumber(animationList[RandomInt(1, #animationList)])
+        if caster.BuildAnimations then
+            caster:StartGesture(random_anim)
+        else
+            caster.rider:StartGesture(random_anim)
+        end
     end
 end
 
+-- Repeated timer to fake childs Run/Idle animations based on movement of the main hero
 function Rewards:MovementAnimations(hero)
     local unit = hero.cosmetic_override or hero.rider
     if not unit.runTimer then
@@ -230,3 +340,5 @@ end
 function Rewards:ConvertID64( steamID32 )
     return '765'..(steamID32 + 61197960265728)
 end
+
+if not Rewards.subscribed then Rewards:Init() end

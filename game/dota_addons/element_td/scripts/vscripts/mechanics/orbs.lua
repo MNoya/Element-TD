@@ -2,6 +2,7 @@ function UpdateElementOrbs(playerID)
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     if not hero then return end
     local orb_path = "particles/custom/orbs/"
+    local distance = hero:GetUnitName() == "npc_dota_hero_wisp" and 80 or 100
 
     if not hero.orbit_entities then
         hero.orbit_entities = {}
@@ -22,6 +23,7 @@ function UpdateElementOrbs(playerID)
         if v > 0 then
             table.insert(elements, k)
         end
+        hero.orb_count = #elements
     end
 
     if hero.orb_count < 6 then
@@ -33,7 +35,7 @@ function UpdateElementOrbs(playerID)
         local ent = SpawnEntityFromTableSynchronous("prop_dynamic", {model = "models/props_gameplay/red_box.vmdl"})
         local angle = 360 / hero.orb_count
         local origin = hero:GetAbsOrigin()
-        local rotate_pos = origin + Vector(1,0,0) * 80
+        local rotate_pos = origin + Vector(1,0,0) * distance
         local pos = RotatePosition(origin, QAngle(0, angle*k, 0), rotate_pos)
         pos.z = pos.z + 90
         ent:SetAbsOrigin(pos)

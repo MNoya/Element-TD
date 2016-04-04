@@ -12,10 +12,13 @@
             <Label id="ToggleLeaderboardText" class="ToggleLabel" text="#leaderboard_title" />
         </Panel>
 
-        <Panel id="Leaderboard" class="Hide">
+        <Panel id="Leaderboard" class="Hide" onmouseover="GameUI.DenyWheel()" onmouseout="GameUI.AcceptWheel()">
             <Panel id="ClassicLeaderboard" class="Section">
                 <Panel class="LeaderboardHeader">
-                    <Label class="LeaderboardTitle" text="#leaderboard_classic"/>
+                    <Panel class="LeaderboardTitles">
+                        <Panel id="Loading0" class="Spinner Hide"/>
+                        <Label class="LeaderboardTitle" text="#leaderboard_classic"/>
+                    </Panel>
                     <Panel id="LeaderboardRanksCategories">
                         <Label id="Rank" class="LeaderboardCategory" text="#profile_rank" />
                         <Label id="Score" class="LeaderboardCategory" text="#profile_score" />
@@ -23,13 +26,17 @@
                 </Panel>
 
                 <Panel id="ClassicLeaderboardContainer" class="ContainerSection">
-
+                    <Label id="ErrorLB0" class="Hide" text="#leaderboard_unreachable"/>
+                    <!-- Added dynamically -->
                 </Panel>
             </Panel>
 
             <Panel id="ExpressLeaderboard" class="Section">
                 <Panel class="LeaderboardHeader">
-                    <Label class="LeaderboardTitle" text="#leaderboard_express"/>
+                    <Panel class="LeaderboardTitles">
+                        <Panel id="Loading2" class="Spinner Hide"/>
+                        <Label class="LeaderboardTitle" text="#leaderboard_express"/>
+                    </Panel>
                     <Panel id="LeaderboardRanksCategories">
                         <Label id="Rank" class="LeaderboardCategory" text="#profile_rank" />
                         <Label id="Score" class="LeaderboardCategory" text="#profile_score" />
@@ -37,14 +44,18 @@
                 </Panel>
 
                 <Panel id="ExpressLeaderboardContainer" class="ContainerSection">
-
+                    <Label id="ErrorLB2" class="Hide" text="#leaderboard_unreachable"/>
+                    <!-- Added dynamically -->
                 </Panel>
 
             </Panel>
 
             <Panel id="FrogsLeaderboard" class="Section">
                 <Panel class="LeaderboardHeader">
-                    <Label class="LeaderboardTitle" text="#leaderboard_frogs"/>
+                    <Panel class="LeaderboardTitles">                        
+                        <Panel id="Loading3" class="Spinner Hide"/>
+                        <Label class="LeaderboardTitle" text="#leaderboard_frogs"/>
+                    </Panel>
                     <Panel id="LeaderboardRanksCategories">
                         <Label id="Rank" class="LeaderboardCategory" text="#profile_rank" />
                         <Image id="OSfrog"/>
@@ -52,7 +63,8 @@
                 </Panel>
 
                 <Panel id="FrogsLeaderboardContainer" class="ContainerSection">
-
+                    <Label id="ErrorLB3" class="Hide" text="#leaderboard_unreachable"/>
+                    <!-- Added dynamically -->
                 </Panel>
 
             </Panel>

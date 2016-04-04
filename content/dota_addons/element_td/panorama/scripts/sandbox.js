@@ -151,15 +151,18 @@ function EnableSandbox() {
         $('#SandboxPanel').ToggleClass('Minimized')
     $("#CloseButton").AddClass('hide')
     $("#EnableSandboxText").style['color'] = 'red;'
-    $.DispatchEvent("DOTAShowTitleTextTooltip", $("#SandboxEnableButton"), "#sandbox_enable", "#sandbox_mode_on");    
+    $.DispatchEvent("DOTAShowTitleTextTooltip", $("#SandboxEnableButton"), "#sandbox_enable", "#sandbox_mode_on");
+    Game.EmitSound("ui_generic_button_click")   
 }
 
 function Dismiss() {
     $("#SandboxEnablePanel").AddClass('hide')
+    Game.EmitSound("ui_generic_button_click")
 }
 
 function SandboxMakeVisible() {
     $("#SandboxEnablePanel").RemoveClass('hide')
+    Game.EmitSound("ui_generic_button_click")
 }
 
 (function () {

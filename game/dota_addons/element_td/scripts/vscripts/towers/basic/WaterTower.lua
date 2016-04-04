@@ -41,8 +41,9 @@ function WaterTower:StartBounce(original_target, remaining_bounces)
         dummy_ability.original_ability = self.ability
         dummy_ability.tower = self.tower
         dummy_ability.damage = self.tower:GetAverageTrueAttackDamage()
-        dummy_ability.halfAOE = self.halfAOE
-        dummy_ability.fullAOE = self.fullAOE
+        dummy_ability.aoeReduction = self.aoeReduction
+        dummy_ability.halfAOE = self.halfAOE - self.aoeReduction
+        dummy_ability.fullAOE = self.fullAOE - self.aoeReduction
         dummy_ability.dummy = dummy
 
         local sourceLoc = original_target:GetAbsOrigin()
@@ -88,8 +89,13 @@ function OnBounceHit(event)
         return
     end
 
+
     DamageEntitiesInArea(target:GetAbsOrigin(), ability.halfAOE, ability.tower, damage / 2)
-    DamageEntitiesInArea(target:GetAbsOrigin(), ability.fullAOE, ability.tower, damage / 2)
+    if ability.fullAOE > 0 then
+        DamageEntitiesInArea(target:GetAbsOrigin(), ability.fullAOE, ability.tower, damage / 2)
+    else
+        DamageEntity(target, ability.tower, damage / 2)
+    end
 
     if ability.bounceCount < ability.maxBounces then
 
@@ -97,6 +103,8 @@ function OnBounceHit(event)
 
         if next_target then
             ability.bounceCount = ability.bounceCount + 1
+            ability.halfAOE = math.max(0, ability.halfAOE - ability.aoeReduction)
+            ability.fullAOE = math.max(0, ability.fullAOE - ability.aoeReduction)
 
             local sourceLoc = target:GetAbsOrigin()
             sourceLoc.z = sourceLoc.z + 32
@@ -122,10 +130,14 @@ end
 function WaterTower:OnCreated()
     self.fullAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))
     self.halfAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
+
     self.dummies = {}
     self.ability = AddAbility(self.tower, "water_tower_water_bullet")
     self.maxBounces = self.ability:GetSpecialValueFor("bounces")
     self.bounceRange = self.ability:GetSpecialValueFor("bounce_range")
+    self.aoeReduction = self.ability:GetSpecialValueFor("aoe_reduction")
+    print("Water tower aoe reduction " .. self.aoeReduction)
+
     self.bounceSpeed = self.tower:GetProjectileSpeed() / 3
     self.projectileName = "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf" 
 end

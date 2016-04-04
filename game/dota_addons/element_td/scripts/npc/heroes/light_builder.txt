@@ -1,0 +1,46 @@
+//===============================================================================================================
+// HERO: (Light) Builder
+//===============================================================================================================
+"npc_dota_hero_skywrath_mage"
+{
+    "Model"                     "models/courier/donkey_unicorn/donkey_unicorn.vmdl"
+    "ModelScale"                "2"
+
+    "CosmeticAbility"           "donkey_cosmetics"
+
+    "override_hero"             "npc_dota_hero_skywrath_mage"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_FLY"
+    "MovementSpeed"             "522"
+
+    "AbilityLayout"             "6"
+    "Ability1"                  "build_light_tower_disabled"    
+    "Ability2"                  "build_dark_tower_disabled" 
+    "Ability3"                  "build_water_tower_disabled"    
+    "Ability4"                  "build_fire_tower_disabled" 
+    "Ability5"                  "build_nature_tower_disabled"   
+    "Ability6"                  "build_earth_tower_disabled"        
+    "Ability8"                  "hero_ui"
+    "Ability9"                  ""
+    "Ability10"                 ""
+    "Ability11"                 ""
+    "Ability12"                 ""
+    "Ability13"                 ""
+    "Ability14"                 ""
+    "Ability15"                 ""
+    "Ability16"                 ""
+
+    "StatusHealth"              "50"    
+    "StatusHealthRegen"         "0"         
+    "StatusMana"                "0" 
+    "MovementTurnRate"          "20"
+
+    "ArmorPhysical"             "0"         
+    "MagicalResistance"         "0"         
+
+    "AttributeBaseStrength"     "0"         
+    "AttributeStrengthGain"     "0"         
+    "AttributeBaseIntelligence" "0"         
+    "AttributeIntelligenceGain" "0"         
+    "AttributeBaseAgility"      "0"         
+    "AttributeAgilityGain"      "0"
+}

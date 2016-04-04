@@ -393,23 +393,31 @@ function ShowPortalForSector(sector, wave, playerID)
     ParticleManager:SetParticleControl(portal.particle, 15, GetElementColor(element))
     
     -- Portal World Notification
-    local player = PlayerResource:GetPlayer(playerID)
-    if player then 
-        CustomGameEventManager:Send_ServerToPlayer(player, "world_notification", {entityIndex=portal:GetEntityIndex(), text="#etd_wave_"..element} )
+    if playerID == nil then -- co-op mode
+        CustomGameEventManager:Send_ServerToAllClients("world_notification", {entityIndex = portal:GetEntityIndex(), text = "#etd_wave_"..element})
+    else
+        local player = PlayerResource:GetPlayer(playerID)
+        if player then 
+            CustomGameEventManager:Send_ServerToPlayer(player, "world_notification", {entityIndex = portal:GetEntityIndex(), text = "#etd_wave_"..element})
+        end
     end
+  
 end
 
 function ClosePortalForSector(playerID, sector, removeInstantly)
-    removeInstantly = removeInstantly or false
     local portal = SectorPortals[sector]
     if not IsValidEntity(portal) then return end
     if portal.particle then
-        ParticleManager:DestroyParticle(portal.particle, removeInstantly)
+        ParticleManager:DestroyParticle(portal.particle, removeInstantly or false)
     end
 
-    local player = PlayerResource:GetPlayer(playerID)
-    if player then 
-        CustomGameEventManager:Send_ServerToPlayer(player, "world_remove_notification", {entityIndex=portal:GetEntityIndex()} )
+    if playerID == nil then -- co-op mode
+        CustomGameEventManager:Send_ServerToAllClients("world_notification", {entityIndex = portal:GetEntityIndex()})
+    else
+        local player = PlayerResource:GetPlayer(playerID)
+        if player then 
+            CustomGameEventManager:Send_ServerToPlayer(player, "world_remove_notification", {entityIndex = portal:GetEntityIndex()})
+        end
     end
 end
 

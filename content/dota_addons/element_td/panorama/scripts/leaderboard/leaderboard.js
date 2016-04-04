@@ -15,10 +15,22 @@ function GetTopRanks(type, panel) {
 
     var delay = 0
     var delay_per_panel = 0.05;
+
+    var loadingSpinner = $("#Loading"+type)
+    loadingSpinner.RemoveClass("Hide")
+
     $.AsyncWebRequest( top, { type: 'GET', 
         success: function( data ) {
             var info = JSON.parse(data);
             var players = info['players']
+
+            if (players === undefined)
+            {
+                $.Msg("Error on GetTopRanks "+type)
+                loadingSpinner.AddClass("Hide")
+                $("#ErrorLB"+type).RemoveClass("Hide")
+                return
+            }
 
             //$.Msg(panel.id)
             for (var steamID in players)
@@ -31,7 +43,16 @@ function GetTopRanks(type, panel) {
 
                 $.Schedule( delay, callback )
                 delay += delay_per_panel;
-            }       
+            }
+
+            loadingSpinner.AddClass("Hide")
+            $("#ErrorLB"+type).AddClass("Hide")
+        },
+
+        error: function() {
+            $.Msg("Error on GetTopRanks "+type)
+            loadingSpinner.AddClass("Hide")
+            $("#ErrorLB"+type).RemoveClass("Hide")
         }
     })
 }
@@ -104,6 +125,12 @@ function ClearRanks(panel) {
     }
 }
 
+GameUI.CloseLeaderboard = function() {
+    Leaderboard.AddClass("Hide")
+    Buttons.AddClass("Hide")
+    $("#LeaderboardLink").AddClass("Hide")
+}
+
 // Only setup at request
 function ToggleLeaderboard()
 {
@@ -111,5 +138,10 @@ function ToggleLeaderboard()
     $("#LeaderboardLink").ToggleClass("Hide")
     Buttons.ToggleClass("Hide")
     if (!Leaderboard.BHasClass("Hide"))
+    {
         Setup()
+        GameUI.CloseProfilePanels()
+        GameUI.CloseTowerTable()
+    }
+    Game.EmitSound("ui_generic_button_click")
 }

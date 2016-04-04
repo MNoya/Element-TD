@@ -2,6 +2,7 @@ if not players then
     players = {}
     playerIDs = {}
 
+    -- TODO: make this work for a single team in co-op
     TEAM_TO_SECTOR = {}
     TEAM_TO_SECTOR[2] = 0
     TEAM_TO_SECTOR[3] = 1
@@ -16,7 +17,7 @@ if not players then
     DEV_MODE = false
     EXPRESS_MODE = false
 
-    VERSION = "1.3"
+    VERSION = "1.4"
     COOP_MAP = GetMapName() == "element_td_coop"
 
     START_TIME = GetSystemDate() .. " " .. GetSystemTime()
@@ -142,6 +143,7 @@ end
 -- TODO: make with work with the :OnCreated function
 function ElementTD:OnScriptReload()
     -- Reload files
+    Log:info("script_reload has been executed!")
     NPC_UNITS_CUSTOM = LoadKeyValues("scripts/npc/npc_units_custom.txt")
     NPC_ABILITIES_CUSTOM = LoadKeyValues("scripts/npc/npc_abilities_custom.txt")
     NPC_ITEMS_CUSTOM = LoadKeyValues("scripts/npc/npc_items_custom.txt")
@@ -168,6 +170,7 @@ end
 
 function ElementTD:OnGameStateChange(keys)
     local state = GameRules:State_Get()
+
     if state == DOTA_GAMERULES_STATE_HERO_SELECTION then
         self.gameStartTriggers = self.gameStartTriggers + 1
         if self.gameStartTriggers < 2 then return end
@@ -182,11 +185,25 @@ function ElementTD:OnGameStateChange(keys)
 
         if COOP_MAP then
             SendToServerConsole("customgamesetup_auto_assign_players")
-            SendToServerConsole("customgamesetup_set_remaining_time 5")
+            SendToServerConsole("customgamesetup_set_remaining_time 10")
         end
 
         -- Load donation rewards
         Rewards:Load()
+
+        -- Load builders
+        ForAllPlayerIDs(function(playerID)
+            Saves:LoadBuilder(playerID)
+        end)
+    end
+end
+
+-- This is useful.
+function ForAllPlayerIDs(callback)
+    for playerID = 0, DOTA_MAX_TEAM_PLAYERS do
+        if PlayerResource:IsValidPlayerID(playerID) then
+            callback(playerID)
+        end
     end
 end
 
@@ -445,15 +462,24 @@ end
 function ElementTD:OnHeroInGame(hero)
     local playerID = hero:GetPlayerID()
     if playerID == -1 then return end
-    if GetPlayerData(playerID) then return end --Don't create playerdata twice
+    if GetPlayerData(playerID) then --Don't create playerdata twice
+        ElementTD:InitializeHero(playerID, hero)
+        return
+    end
 
-    CreateDataForPlayer(playerID)
-
-    local playerData = GetPlayerData(playerID)
+    local playerData = CreateDataForPlayer(playerID)
     playerData.name = PlayerResource:GetPlayerName(playerID)
+
     if playerData.name == "" then -- This normally happens in dev tools
         playerData.name = 'Developer'
     end
+
+    -- Team location based colors
+    local teamID = PlayerResource:GetTeam(playerID)
+    PlayerResource:SetCustomPlayerColor(playerID, m_TeamColors[teamID][1], m_TeamColors[teamID][2], m_TeamColors[teamID][3])
+
+    playerData.sector = TEAM_TO_SECTOR[hero:GetTeamNumber()]
+
     self:InitializeHero(playerID, hero)
     self.playerSpawnIndexes[playerID] = playerData.sector + 1
     self.availableSpawnIndex = self.availableSpawnIndex + 1
@@ -468,43 +494,34 @@ function ElementTD:OnHeroInGame(hero)
     summoner.icon = CreateUnitByName("elemental_summoner_icon", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber())
     playerData.summoner = summoner
 
+    hero:SetBaseMaxHealth(50)
+    hero:SetHealth(50)
     hero:ModifyGold(0)
     ModifyLumber(playerID, 0)  -- updates summoner spells
     ModifyPureEssence(playerID, 0, true)
     UpdateElementsHUD(playerID)
-    UpdatePlayerSpells(playerID) 
+    UpdatePlayerSpells(playerID)
+
+    SCORING_OBJECTS[playerID] = ScoringObject(playerID)
+    playerData.scoreObject = SCORING_OBJECTS[playerID]
 end
 
 -- initializes a player's hero
 function ElementTD:InitializeHero(playerID, hero)
-    print("OnInitHero PID: "..playerID)
+    Log:info("InitializeHero "..playerID..":"..hero:GetUnitName())
     hero:AddNewModifier(nil, nil, "modifier_disarmed", {})
     hero:AddNewModifier(nil, nil, "modifier_attack_immune", {})
-    --hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
     hero:AddNewModifier(hero, nil, "modifier_max_ms", {})
-
-    hero:SetAbilityPoints(0)
-    hero:SetMaxHealth(50)
-    hero:SetBaseMaxHealth(50)
-    hero:SetHealth(50)
-    hero:SetBaseDamageMin(0)
-    hero:SetBaseDamageMax(0)
-    hero:SetGold(0, false)
-    hero:SetGold(0, true)
-    hero:SetModelScale(0.75)
-
-    -- Team location based colors
-    local teamID = PlayerResource:GetTeam(playerID)
-    PlayerResource:SetCustomPlayerColor(playerID, m_TeamColors[teamID][1], m_TeamColors[teamID][2], m_TeamColors[teamID][3])
+    --hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
 
     self.vPlayerIDToHero[playerID] = hero -- Store hero for player in here GetAssignedHero can be flakey
 
     local playerData = GetPlayerData(playerID)
 
-    playerData.sector = TEAM_TO_SECTOR[hero:GetTeamNumber()]
-
-    SCORING_OBJECTS[playerID] = ScoringObject(playerID)
-    playerData.scoreObject = SCORING_OBJECTS[playerID]
+    Timers(0.03, function() 
+        hero:SetAbilityPoints(playerData.lumber or 0)
+        SetCustomGold(playerID, playerData.gold)
+    end)
 
     -- Give building items
     hero:AddItem(CreateItem("item_build_arrow_tower", hero, hero))

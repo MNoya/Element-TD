@@ -1,0 +1,24 @@
+//=================================================================================================================
+// Nature Tower: Force of Nature
+//=================================================================================================================
+"nature_tower_force_of_nature"
+{
+	"BaseClass"						"ability_datadriven"											
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"towers/nature"
+	"MaxLevel"						"1"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"10"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aoe"					"125" //if you change this you also have to change the ability description
+		}
+	}
+}

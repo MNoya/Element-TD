@@ -102,6 +102,55 @@
     }
 }
 
+"light_donkey"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/courier/donkey_unicorn/donkey_unicorn.vmdl"
+    "ModelScale"    "2"
+}
+
+"rex"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/items/courier/faceless_rex/faceless_rex.vmdl"
+    "ModelScale"    "3"
+}
+
+"rex_rider"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/heroes/faceless_void/faceless_void.vmdl"
+    "ModelScale"    "0.5"
+
+    "Creature"
+    {
+        "AttachWearables" // The Tentacular Timelord Set
+        {
+            "1" { "ItemDef" "5868" } // Primal Form of the Tentacular Timelord
+            "2" { "ItemDef" "5898" } // Mace of the Tentacular Timelord
+            "3" { "ItemDef" "5861" } // Bracers of the Tentacular Timelord
+            "4" { "ItemDef" "5896" } // Armor of the Tentacular Timelord
+            "5" { "ItemDef" "5897" } // Skirt of the Tentacular Timelord
+        }
+    }
+}
+
+"green_dragon"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/courier/otter_dragon/otter_dragon.vmdl"
+    "ModelScale"    "3"
+
+    "Ability1"  "green_dragon_cosmetics"
+}
+
+"green_dragon_rider"
+{
+    "BaseClass"     "npc_dota_creature"
+    "Model"         "models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"
+    "ModelScale"    "0.5"
+}
+
 "zeus_arcana"
 {
     "BaseClass"     "npc_dota_creature"
