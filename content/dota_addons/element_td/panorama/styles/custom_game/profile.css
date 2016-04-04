@@ -1526,3 +1526,19 @@ Label
     text-transform: uppercase;
     text-shadow: none;
 }
+
+
+#ErrorNoMatches, #ErrorNoMilestones
+{
+    color: #888888;
+    font-size: 20px;
+    margin-top: 30px;
+    align: center center;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+#ErrorNoMatches
+{
+    margin-top: 55px;
+}

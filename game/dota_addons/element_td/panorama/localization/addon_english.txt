@@ -285,6 +285,8 @@
         "profile_match_id"      "Match ID"
         "profile_match_time"    "Time"
         "profile_modes"         "Modes"
+        "profile_no_matches"    "No Matches"
+        "profile_no_milestones" "No Milestones"
         "profile_elements_used" "Elements Used"
         "profile_choose_builder"        "Choose Builder Style"
         "profile_builder_description"   "Your choice will be saved for the next game. You can change your builder at any time."
