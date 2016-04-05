@@ -257,6 +257,7 @@
         "profile_express"       "Express"
         "profile_express_rank"  "Express Rank"
         "profile_frogs"         "Frogs"
+        "profile_frogs_rank"    "Frogs Rank"
         "profile_lifetime_stats" "Stats"
         "profile_matches"       "Matches"
         "profile_achievements"  "Achievements"

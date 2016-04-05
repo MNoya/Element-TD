@@ -426,22 +426,32 @@ function LoadProfile(steamID64) {
     $("#UserNameProfile").steamid = steamID64
 
     var root = $("#AvatarImageProfile")
+    root.ClearPanelEvent("onmouseover")
+    root.ClearPanelEvent("onmouseout")
+    root.tooltip = undefined
 
     root.SetPanelEvent("onmouseover", function() {
-        var panel = $.CreatePanel("Panel", $.GetContextPanel(), "PlayerAvatarTooltip")
-        panel.BLoadLayout("file://{resources}/layout/custom_game/profile_avatar.xml", false, false);
+        if (root.tooltip === undefined) {
+            var panel = $.CreatePanel("Panel", $.GetContextPanel(), "PlayerAvatarTooltip")
+            panel.steamID64 = steamID64
+            panel.BLoadLayout("file://{resources}/layout/custom_game/profile_avatar.xml", false, false);
 
-        var pos = root.GetPositionWithinWindow()
-
-        var offsetX = root.actuallayoutwidth + 15 //arrow width
-        panel.style.x = pos.x+offsetX+"px";
-        panel.style.y = pos.y+"px";
-        
-        root.tooltip = panel
+            var pos = root.GetPositionWithinWindow()
+            var offsetX = root.actuallayoutwidth + 15 //arrow width
+            panel.style.x = pos.x+offsetX+"px";
+            panel.style.y = pos.y+"px";
+            
+            root.tooltip = panel
+        }
+        else
+        {
+            root.tooltip.steamID64 = steamID64
+            root.tooltip.Show()
+        }
     })
 
     root.SetPanelEvent("onmouseout", function() {
-        root.tooltip.DeleteAsync(0)
+        root.tooltip.Hide()
     })
 
     var isSelfProfile = steamID64 == GameUI.GetLocalPlayerSteamID()
