@@ -6386,7 +6386,7 @@
 				"damage"			"50 250"
 			}
 		}
-		"AbilityCastRange"              "900"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_tidal_tower_2"
 	{
@@ -6427,7 +6427,7 @@
 				"damage"			"50 250"
 			}
 		}
-		"AbilityCastRange"              "900"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_tidal_tower_2_disabled"
 	{
@@ -6458,7 +6458,7 @@
 				"damage"			"50 250"
 			}
 		}
-		"AbilityCastRange"              "900"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_tidal_tower_disabled"
 	{
@@ -6490,7 +6490,7 @@
 				"damage"			"50 250"
 			}
 		}
-		"AbilityCastRange"              "900"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_windstorm_tower"
 	{

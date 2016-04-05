@@ -37,5 +37,5 @@
 			"damage"			"50 250"
 		}
 	}
-	"AbilityCastRange"              "900"
+	"AbilityCastRange"              "700"
 }
