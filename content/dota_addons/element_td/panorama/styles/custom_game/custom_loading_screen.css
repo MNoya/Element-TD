@@ -19,199 +19,199 @@
 #GameModeDescription
 {
     font-size: 27px;
-	text-transform: uppercase;
-	color: #cccccc;
+    text-transform: uppercase;
+    color: #cccccc;
 }
 
 #GameModeHints
 {
-	margin: 10px;
-	font-size: 18px;
-	color: #8f9092;
+    margin: 10px;
+    font-size: 18px;
+    color: #8f9092;
 }
 
 #GameModeImage
 {
-	horizontal-align: center;
-	width: 200px;
-	height: 150px;
+    horizontal-align: center;
+    width: 200px;
+    height: 150px;
 
-	box-shadow: inset black 5px 5px 10px 10px;
+    box-shadow: inset black 5px 5px 10px 10px;
 }
 
 #TitlePanel
 {
-	horizontal-align: left;
-	vertical-align: bottom;
-	margin-bottom: 120px;
-	margin-left: 80px;
-	flow-children: right;
+    horizontal-align: left;
+    vertical-align: bottom;
+    margin-bottom: 120px;
+    margin-left: 80px;
+    flow-children: right;
 }
 
 #ETDTitle
 {
-	margin-bottom: -15px;
-	vertical-align: center;
-	text-transform: uppercase;
-	font-size: 74px;
-	color: #cccccc;
-	text-shadow: 2px 2px 2px #000000;
+    margin-bottom: -15px;
+    vertical-align: center;
+    text-transform: uppercase;
+    font-size: 74px;
+    color: #cccccc;
+    text-shadow: 2px 2px 2px #000000;
 }
 
 .SeqImg
 {
-	width: 80%;
-	height: 100%;
-	horizontal-align: left;
+    width: 80%;
+    height: 100%;
+    horizontal-align: left;
 }
 
 
 .SeqBg
 {
-	width: 100%;
-	height: 100%;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100% 100%;
 }
 
 #seq
 {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
     overflow: clip;
 }
 
 #seq_light
 {
-	animation-name: seq_light;
-	animation-duration: LengthLight;
-	animation-timing-function: TimingFunc;
-	animation-iteration-count: IterationCount;
-	animation-direction: alternate;
+    animation-name: seq_light;
+    animation-duration: LengthLight;
+    animation-timing-function: TimingFunc;
+    animation-iteration-count: IterationCount;
+    animation-direction: alternate;
 }
 
 @keyframes 'seq_light'
 {
-	0%
-	{
-		opacity: 0.1;
-	}
+    0%
+    {
+        opacity: 0.1;
+    }
 
-	100%
-	{
-		opacity: 1;
-	}
+    100%
+    {
+        opacity: 1;
+    }
 }
 
 #seq_dark
 {
-	animation-name: seq_dark;
-	animation-duration: LengthDark;
-	animation-timing-function: TimingFunc;
-	animation-iteration-count: IterationCount;
-	animation-direction: alternate;
+    animation-name: seq_dark;
+    animation-duration: LengthDark;
+    animation-timing-function: TimingFunc;
+    animation-iteration-count: IterationCount;
+    animation-direction: alternate;
 }
 
 @keyframes 'seq_dark'
 {
-	0%
-	{
-		opacity: 0.1;
-	}
+    0%
+    {
+        opacity: 0.1;
+    }
 
-	100%
-	{
-		opacity: 1;
-	}
+    100%
+    {
+        opacity: 1;
+    }
 }
 
 #seq_water
 {
-	animation-name: seq_water;
-	animation-duration: LengthWater;
-	animation-timing-function: TimingFunc;
-	animation-iteration-count: IterationCount;
-	animation-direction: alternate;
+    animation-name: seq_water;
+    animation-duration: LengthWater;
+    animation-timing-function: TimingFunc;
+    animation-iteration-count: IterationCount;
+    animation-direction: alternate;
 }
 
 @keyframes 'seq_water'
 {
-	0%
-	{
-		opacity: 0.1;
-	}
+    0%
+    {
+        opacity: 0.1;
+    }
 
-	100%
-	{
-		opacity: 1;
-	}
+    100%
+    {
+        opacity: 1;
+    }
 }
 
 #seq_fire
 {
-	animation-name: seq_fire;
-	animation-duration: LengthFire;
-	animation-timing-function: TimingFunc;
-	animation-iteration-count: IterationCount;
-	animation-direction: alternate;
+    animation-name: seq_fire;
+    animation-duration: LengthFire;
+    animation-timing-function: TimingFunc;
+    animation-iteration-count: IterationCount;
+    animation-direction: alternate;
 }
 
 @keyframes 'seq_fire'
 {
-	0%
-	{
-		opacity: 0.1;
-	}
+    0%
+    {
+        opacity: 0.1;
+    }
 
-	100%
-	{
-		opacity: 1;
-	}
+    100%
+    {
+        opacity: 1;
+    }
 }
 
 #seq_nature
 {
-	animation-name: seq_nature;
-	animation-duration: LengthNature;
-	animation-timing-function: TimingFunc;
-	animation-iteration-count: IterationCount;
-	animation-direction: alternate;
+    animation-name: seq_nature;
+    animation-duration: LengthNature;
+    animation-timing-function: TimingFunc;
+    animation-iteration-count: IterationCount;
+    animation-direction: alternate;
 }
 
 @keyframes 'seq_nature'
 {
-	0%
-	{
-		opacity: 0.1;
-	}
+    0%
+    {
+        opacity: 0.1;
+    }
 
-	100%
-	{
-		opacity: 1;
-	}
+    100%
+    {
+        opacity: 1;
+    }
 }
 
 #seq_earth
 {
-	animation-name: seq_earth;
-	animation-duration: LengthEarth;
-	animation-timing-function: TimingFunc;
-	animation-iteration-count: IterationCount;
-	animation-direction: alternate;
+    animation-name: seq_earth;
+    animation-duration: LengthEarth;
+    animation-timing-function: TimingFunc;
+    animation-iteration-count: IterationCount;
+    animation-direction: alternate;
 }
 
 @keyframes 'seq_earth'
 {
-	0%
-	{
-		opacity: 0.1;
-	}
+    0%
+    {
+        opacity: 0.1;
+    }
 
-	100%
-	{
-		opacity: 1;
-	}
+    100%
+    {
+        opacity: 1;
+    }
 }
 
 
@@ -240,15 +240,15 @@
 
 .Hide
 {
-	opacity: 0;
+    opacity: 0;
 }
 
 #Changelog
 {
-	margin-top: 60px;
-	height: 80%;
-	max-width: 1130px;
-	flow-children: down;
+    margin-top: 60px;
+    height: 80%;
+    max-width: 1130px;
+    flow-children: down;
 }
 
 #ChangelogTitle
@@ -266,13 +266,30 @@
 
 #ChangelogText
 {
-	text-align: left;
+    text-align: left;
     margin-left: 50px;
     color: #FFF;
     font-size: 20px;
     text-shadow: 0px 0px 3px 3.0 #000;
-
+    font-family: Radiance;
     padding: 15px;
     border-radius: 20px;
     background-color: #000000EE;
+}
+
+h1
+{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+h2
+{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+b
+{
+    font-weight: bold;
 }
