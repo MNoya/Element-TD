@@ -16,6 +16,8 @@
                 <Image id="favorite_element" src="file://{resources}/images/custom_game/resources/periodic.png"/>
             </Panel>
 
+            <Panel id="Loading" class="Spinner Hide Avatar"/>
+
             <Panel id="AvatarBestBadges" class="Hide">
                 <!-- Added dynamically -->
             </Panel>

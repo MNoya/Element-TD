@@ -2,6 +2,7 @@ var Root = $.GetContextPanel()
 var statsURL = "http://hatinacat.com/leaderboard/data_request.php?req=stats&id="
 var Ranks = $("#AvatarCurrentRanks")
 var Badges = $("#AvatarBestBadges")
+var Loading = $("#Loading")
 var maxBadges = 4
 
 Root.Show = function() {
@@ -17,6 +18,7 @@ function RequestData() {
     var steamID64 = Root.steamID64
     var steamID32 = GameUI.ConvertID32(steamID64)
     $.Msg("Getting data for "+steamID32+"...")
+    Loading.RemoveClass("Hide")
 
     $.AsyncWebRequest( statsURL+steamID32, { type: 'GET', 
         success: function( data ) {
@@ -31,9 +33,11 @@ function RequestData() {
                 if (player_info["milestones"])
                     CreateAvatarBadges(player_info)
             }
+            Loading.AddClass("Hide")
         },
 
         error: function() {
+            Loading.AddClass("Hide")
         }
     })
 }
@@ -43,11 +47,10 @@ function SetAvatarRanks (player_info) {
     $("#ClassicRank").text = (player_info["rank"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank"]);
     $("#ExpressRank").text = (player_info["rank_exp"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank_exp"]);
     $("#FrogsRank").text = (player_info["rank_frogs"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank_frogs"]);
+    $("#favorite_element").SetImage("file://{resources}/images/custom_game/resources/"+player_info["allTime"]["favouriteElement"]+".png");
 }
 
 function CreateAvatarBadges(player_info) {
-    Badges.RemoveClass("Hide")
-
     var milestones = player_info["milestones"]
     var bestBadges = {} //Newest
 
@@ -110,11 +113,17 @@ function CreateAvatarBadges(player_info) {
     var badgesCreated = 0
     for (var v in bestBadges)
     {
-        GameUI.CreateBadges(Badges, GameUI.FormatVersion(v), bestBadges[v].rank_classic, bestBadges[v].percentile_classic, bestBadges[v].rank_express, bestBadges[v].percentile_express)
-        badgesCreated++
+        if (bestBadges[v].rank_classic || bestBadges[v].rank_express)
+        {
+            GameUI.CreateBadges(Badges, GameUI.FormatVersion(v), bestBadges[v].rank_classic, bestBadges[v].percentile_classic, bestBadges[v].rank_express, bestBadges[v].percentile_express)
+            badgesCreated++
+        }
+
         if (badgesCreated >= maxBadges)
             break;
     }
+
+    Badges.SetHasClass("Hide", badgesCreated == 0)
 }
 
 
