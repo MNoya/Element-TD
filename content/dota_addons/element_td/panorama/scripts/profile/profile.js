@@ -418,37 +418,7 @@ function CreateFriendPanel(data, leaderboard_type) {
     if (steamID64 == steamID)
         playerPanel.AddClass("local")
 
-    SetupAvatarTooltipEvents(playerPanel.FindChildInLayoutFile("AvatarImageFriend"), steamID64)
-}
-
-function SetupAvatarTooltipEvents (avatar, steamID64) {
-    avatar.ClearPanelEvent("onmouseover")
-    avatar.ClearPanelEvent("onmouseout")
-    avatar.tooltip = undefined
-
-    avatar.SetPanelEvent("onmouseover", function() {
-        if (avatar.tooltip === undefined) {
-            var panel = $.CreatePanel("Panel", $.GetContextPanel(), "PlayerAvatarTooltip")
-            panel.steamID64 = steamID64
-            panel.BLoadLayout("file://{resources}/layout/custom_game/profile_avatar.xml", false, false);
-
-            var pos = avatar.GetPositionWithinWindow()
-            var offsetX = avatar.actuallayoutwidth + 15 //arrow width
-            panel.style.x = pos.x+offsetX+"px";
-            panel.style.y = pos.y+"px";
-            
-            avatar.tooltip = panel
-        }
-        else
-        {
-            avatar.tooltip.steamID64 = steamID64
-            avatar.tooltip.Show()
-        }
-    })
-
-    avatar.SetPanelEvent("onmouseout", function() {
-        avatar.tooltip.Hide()
-    })
+    GameUI.SetupAvatarTooltip(playerPanel.FindChildInLayoutFile("AvatarImageFriend"), $.GetContextPanel(), steamID64)
 }
 
 function LoadProfile(steamID64) {
@@ -457,7 +427,7 @@ function LoadProfile(steamID64) {
     $("#AvatarImageProfile").steamid = steamID64
     $("#UserNameProfile").steamid = steamID64
 
-    SetupAvatarTooltipEvents($("#AvatarImageProfile"), steamID64)    
+    GameUI.SetupAvatarTooltip($("#AvatarImageProfile"), $.GetContextPanel(), steamID64)    
 
     var isSelfProfile = steamID64 == GameUI.GetLocalPlayerSteamID()
     $("#ProfileBackContainer").SetHasClass("Hide", isSelfProfile)

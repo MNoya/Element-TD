@@ -352,6 +352,36 @@ GameUI.CheckPlayerPass = function (steamID64, callback) {
     })
 }
 
+GameUI.SetupAvatarTooltip = function (avatar, root, steamID64) {
+    avatar.ClearPanelEvent("onmouseover")
+    avatar.ClearPanelEvent("onmouseout")
+    avatar.tooltip = undefined
+
+    avatar.SetPanelEvent("onmouseover", function() {
+        if (avatar.tooltip === undefined) {
+            var panel = $.CreatePanel("Panel", root, "PlayerAvatarTooltip")
+            panel.steamID64 = steamID64
+            panel.BLoadLayout("file://{resources}/layout/custom_game/profile_avatar.xml", false, false);
+
+            var pos = avatar.GetPositionWithinWindow()
+            var offsetX = avatar.actuallayoutwidth + 15 //arrow width
+            panel.style.x = pos.x+offsetX+"px";
+            panel.style.y = pos.y+"px";
+            
+            avatar.tooltip = panel
+        }
+        else
+        {
+            avatar.tooltip.steamID64 = steamID64
+            avatar.tooltip.Show()
+        }
+    })
+
+    avatar.SetPanelEvent("onmouseout", function() {
+        avatar.tooltip.Hide()
+    })
+}
+
 // Returns the SteamID 64bit of a player by ID
 GameUI.GetPlayerSteamID = function (playerID) {
     var playerInfo = Game.GetPlayerInfo(playerID)
