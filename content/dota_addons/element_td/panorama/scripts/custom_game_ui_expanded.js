@@ -330,7 +330,6 @@ GameUI.PlayerHasProfile = function (playerID) {
 
 // Save request by steamID
 GameUI.CheckPlayerPass = function (steamID64, callback) {
-    var pass = false
     var steamID32 = GameUI.ConvertID32(steamID64)
 
     // Testing
@@ -341,11 +340,14 @@ GameUI.CheckPlayerPass = function (steamID64, callback) {
     $.AsyncWebRequest( "http://hatinacat.com/leaderboard/data_request.php?req=save&id="+steamID32, { type: 'GET', 
         success: function( data ) {
             var info = JSON.parse(data);
-            callback(info["save"]["pass"])
+            if (info["save"])
+                callback(info["save"]["pass"])
+            else
+                callback(false)
         },
 
         error: function() {
-            callback(pass)
+            callback(false)
         }
     })
 }

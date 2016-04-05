@@ -417,6 +417,38 @@ function CreateFriendPanel(data, leaderboard_type) {
     var steamID = GameUI.GetLocalPlayerSteamID()
     if (steamID64 == steamID)
         playerPanel.AddClass("local")
+
+    SetupAvatarTooltipEvents(playerPanel.FindChildInLayoutFile("AvatarImageFriend"), steamID64)
+}
+
+function SetupAvatarTooltipEvents (avatar, steamID64) {
+    avatar.ClearPanelEvent("onmouseover")
+    avatar.ClearPanelEvent("onmouseout")
+    avatar.tooltip = undefined
+
+    avatar.SetPanelEvent("onmouseover", function() {
+        if (avatar.tooltip === undefined) {
+            var panel = $.CreatePanel("Panel", $.GetContextPanel(), "PlayerAvatarTooltip")
+            panel.steamID64 = steamID64
+            panel.BLoadLayout("file://{resources}/layout/custom_game/profile_avatar.xml", false, false);
+
+            var pos = avatar.GetPositionWithinWindow()
+            var offsetX = avatar.actuallayoutwidth + 15 //arrow width
+            panel.style.x = pos.x+offsetX+"px";
+            panel.style.y = pos.y+"px";
+            
+            avatar.tooltip = panel
+        }
+        else
+        {
+            avatar.tooltip.steamID64 = steamID64
+            avatar.tooltip.Show()
+        }
+    })
+
+    avatar.SetPanelEvent("onmouseout", function() {
+        avatar.tooltip.Hide()
+    })
 }
 
 function LoadProfile(steamID64) {
@@ -425,34 +457,7 @@ function LoadProfile(steamID64) {
     $("#AvatarImageProfile").steamid = steamID64
     $("#UserNameProfile").steamid = steamID64
 
-    var root = $("#AvatarImageProfile")
-    root.ClearPanelEvent("onmouseover")
-    root.ClearPanelEvent("onmouseout")
-    root.tooltip = undefined
-
-    root.SetPanelEvent("onmouseover", function() {
-        if (root.tooltip === undefined) {
-            var panel = $.CreatePanel("Panel", $.GetContextPanel(), "PlayerAvatarTooltip")
-            panel.steamID64 = steamID64
-            panel.BLoadLayout("file://{resources}/layout/custom_game/profile_avatar.xml", false, false);
-
-            var pos = root.GetPositionWithinWindow()
-            var offsetX = root.actuallayoutwidth + 15 //arrow width
-            panel.style.x = pos.x+offsetX+"px";
-            panel.style.y = pos.y+"px";
-            
-            root.tooltip = panel
-        }
-        else
-        {
-            root.tooltip.steamID64 = steamID64
-            root.tooltip.Show()
-        }
-    })
-
-    root.SetPanelEvent("onmouseout", function() {
-        root.tooltip.Hide()
-    })
+    SetupAvatarTooltipEvents($("#AvatarImageProfile"), steamID64)    
 
     var isSelfProfile = steamID64 == GameUI.GetLocalPlayerSteamID()
     $("#ProfileBackContainer").SetHasClass("Hide", isSelfProfile)
