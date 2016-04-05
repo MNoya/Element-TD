@@ -1519,15 +1519,35 @@ Label
     color: white;
 }
 
+#FavoriteElementPanel
+{
+    margin-top: -5px;
+    height: 90px;
+    width: 90px;
+    border-radius: 80px;
+    vertical-align: top;
+    horizontal-align: right;
+}
+
 #favorite_element
 {
-    border: 3px solid #444444;
-    border-radius: 80px;
-    margin-top: 5px;
-    margin-right: 5px;
-    height: 80px;
-    width: 80px;
-    horizontal-align: right;
+    align: center center;
+    height: 64px;
+    width: 64px;
+    margin-top: -1px;
+}
+
+#favorite_element_border
+{
+    align: center center;
+    height: 90px;
+    width: 90px;
+}
+
+#favorite_element_border.hasPass
+{
+    height: 82px;
+    width: 82px;
 }
 
 #AvatarBestBadges

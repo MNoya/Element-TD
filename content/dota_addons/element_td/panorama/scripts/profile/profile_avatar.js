@@ -4,6 +4,7 @@ var Ranks = $("#AvatarCurrentRanks")
 var Badges = $("#AvatarBestBadges")
 var Loading = $("#Loading")
 var Pass = $("#EleTDPass")
+var border = $("#favorite_element_border")
 var maxBadges = 4
 
 Root.Show = function() {
@@ -37,7 +38,7 @@ function RequestData() {
                     CreateAvatarBadges(player_info)
             }
             Loading.AddClass("Hide")
-            $("#favorite_element").RemoveClass("Hide")
+            $("#FavoriteElementPanel").RemoveClass("Hide")
         },
 
         error: function() {
@@ -47,6 +48,17 @@ function RequestData() {
 
     GameUI.CheckPlayerPass(steamID64, function(hasPass) {
         Pass.SetHasClass("Hide", !hasPass)
+
+        
+        if (hasPass)
+        {
+            border.SetImage("s2r://panorama/images/profile_badges/bg_02_psd.vtex")
+            border.AddClass("hasPass")
+        }
+        else
+        {
+           border.SetImage("s2r://panorama/images/profile_badges/bg_01_psd.vtex")
+        }
     })
 }
 

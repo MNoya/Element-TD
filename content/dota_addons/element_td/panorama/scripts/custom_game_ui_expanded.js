@@ -341,7 +341,9 @@ GameUI.CheckPlayerPass = function (steamID64, callback) {
         success: function( data ) {
             var info = JSON.parse(data);
             if (info["save"])
+            {
                 callback(info["save"]["pass"])
+            }
             else
                 callback(false)
         },

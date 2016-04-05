@@ -15,7 +15,10 @@
                         <DOTAUserName id="AvatarUserName" steamid=""/>
                     </Panel>
 
-                    <Image id="favorite_element" class="Hide" src="file://{resources}/images/custom_game/resources/periodic.png"/>
+                    <Panel id="FavoriteElementPanel" class="Hide">
+                        <Image id="favorite_element_border"/>
+                        <Image id="favorite_element" src="file://{resources}/images/custom_game/resources/periodic.png"/>
+                    </Panel>
                 </Panel>
 
                 <Panel id="Loading" class="Spinner Hide Avatar"/>
