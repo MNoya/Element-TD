@@ -6,40 +6,43 @@
         <include src="file://{resources}/scripts/profile/profile_avatar.js" />
     </scripts>
     <Panel class="ProfileAvatar">
-        <Panel id="PlayerCardBox">
-            <Panel id="AvatarFirstRow">
-                <Panel id="AvatarName">
-                    <DOTAAvatarImage id="AvatarImage" steamid="" />
-                    <DOTAUserName id="AvatarUserName" steamid=""/>
+        <Panel id="AvatarTriangle"/>
+        <Panel class="ProfileAvatarCont">
+            <Panel id="PlayerCardBox">
+                <Panel id="AvatarFirstRow">
+                    <Panel id="AvatarName">
+                        <DOTAAvatarImage id="AvatarImage" steamid="" />
+                        <DOTAUserName id="AvatarUserName" steamid=""/>
+                    </Panel>
+
+                    <Image id="favorite_element" class="Hide" src="file://{resources}/images/custom_game/resources/periodic.png"/>
                 </Panel>
 
-                <Image id="favorite_element" class="Hide" src="file://{resources}/images/custom_game/resources/periodic.png"/>
+                <Panel id="Loading" class="Spinner Hide Avatar"/>
+
+                <Panel id="AvatarBestBadges" class="Hide">
+                    <!-- Added dynamically -->
+                </Panel>
+                
+                <Panel id="AvatarCurrentRanks" class="Hide">
+                    <Panel class="AvatarColumn">
+                        <Label class="AvatarRankLabel" text="#profile_classic_rank"/>
+                        <Label id="ClassicRank" class="AvatarRankValue" text="420"/>
+                    </Panel>
+
+                    <Panel class="AvatarColumn">
+                        <Label class="AvatarRankLabel" text="#profile_express_rank"/>
+                        <Label id="ExpressRank" class="AvatarRankValue" text="1"/>
+                    </Panel>
+
+                    <Panel class="AvatarColumn">
+                        <Label class="AvatarRankLabel" text="#profile_frogs_rank"/>
+                        <Label id="FrogsRank" class="AvatarRankValue" text="322"/>
+                    </Panel>
+                </Panel>
             </Panel>
 
-            <Panel id="Loading" class="Spinner Hide Avatar"/>
-
-            <Panel id="AvatarBestBadges" class="Hide">
-                <!-- Added dynamically -->
-            </Panel>
-            
-            <Panel id="AvatarCurrentRanks" class="Hide">
-                <Panel class="AvatarColumn">
-                    <Label class="AvatarRankLabel" text="#profile_classic_rank"/>
-                    <Label id="ClassicRank" class="AvatarRankValue" text="420"/>
-                </Panel>
-
-                <Panel class="AvatarColumn">
-                    <Label class="AvatarRankLabel" text="#profile_express_rank"/>
-                    <Label id="ExpressRank" class="AvatarRankValue" text="1"/>
-                </Panel>
-
-                <Panel class="AvatarColumn">
-                    <Label class="AvatarRankLabel" text="#profile_frogs_rank"/>
-                    <Label id="FrogsRank" class="AvatarRankValue" text="322"/>
-                </Panel>
-            </Panel>
+            <Image id="EleTDPass" class="Hide" src="file://{resources}/images/custom_game/rewards/pass.png" />
         </Panel>
-
-        <Image id="EleTDPass" class="Hide" src="file://{resources}/images/custom_game/rewards/pass.png" />
     </Panel>
 </root>

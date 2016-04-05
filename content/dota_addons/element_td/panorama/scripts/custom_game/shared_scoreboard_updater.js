@@ -241,6 +241,14 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
         {
             playerAvatar.steamid = playerInfo.player_steamid;
             GameUI.ApplyPanelBorder(playerPanel, playerInfo.player_steamid)
+
+            // Tooltip on top scoreboard
+            var rootPanel = $.GetContextPanel()
+            if (!playerAvatar.setup && (rootPanel.layoutfile.indexOf("top_scoreboard.xml") > -1))
+            {
+                playerAvatar.setup = true
+                GameUI.SetupAvatarTooltip(playerAvatar.GetParent().GetParent(), rootPanel, playerAvatar.steamid)
+            }
         }       
 
         var playerColorBar = playerPanel.FindChildInLayoutFile( "PlayerColorBar" );

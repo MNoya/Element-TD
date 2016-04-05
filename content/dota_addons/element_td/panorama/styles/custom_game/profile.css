@@ -1434,6 +1434,11 @@ Label
 
 .ProfileAvatar
 {
+    flow-children: right;
+}
+
+.ProfileAvatarCont
+{
     flow-children: down;
 }
 
@@ -1441,6 +1446,16 @@ Label
 {
     width: 100%;
     margin-bottom: 5px;
+}
+
+#AvatarTriangle
+{
+    background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_left_png.vtex");
+    wash-color: #495757;
+    width: 16px;
+    height: 32px;
+
+    margin-left: -1px;
 }
 
 #PlayerCardBox
