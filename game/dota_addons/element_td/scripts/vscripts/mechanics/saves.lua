@@ -69,7 +69,7 @@ function Saves:LoadBuilder(playerID)
                 else
                     local steamID32 = PlayerResource:GetSteamAccountID(playerID)
                     local steamID64 = tostring(Rewards:ConvertID64(steamID32))
-                    Rewards.players[steamID64] = {}
+                    Rewards.players[steamID64] = Rewards.players[steamID64] or {}
                     Rewards.players[steamID64].hero = Saves:GetHeroNameForID(tonumber(obj.save.custom_builder))
 
                     Saves:print("Got a custom builder for player " .. playerID.. ": ".. Rewards.players[steamID64].hero)

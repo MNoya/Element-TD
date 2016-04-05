@@ -328,6 +328,28 @@ GameUI.PlayerHasProfile = function (playerID) {
     return rewardLevel == "Developer" || rewardLevel > 0
 }
 
+// Save request by steamID
+GameUI.CheckPlayerPass = function (steamID64, callback) {
+    var pass = false
+    var steamID32 = GameUI.ConvertID32(steamID64)
+
+    // Testing
+    var rewardLevel = GameUI.RewardLevel(steamID64)
+    if (rewardLevel == "Developer" || rewardLevel > 0)
+        callback(true)
+
+    $.AsyncWebRequest( "http://hatinacat.com/leaderboard/data_request.php?req=save&id="+steamID32, { type: 'GET', 
+        success: function( data ) {
+            var info = JSON.parse(data);
+            callback(info["save"]["pass"])
+        },
+
+        error: function() {
+            callback(pass)
+        }
+    })
+}
+
 // Returns the SteamID 64bit of a player by ID
 GameUI.GetPlayerSteamID = function (playerID) {
     var playerInfo = Game.GetPlayerInfo(playerID)

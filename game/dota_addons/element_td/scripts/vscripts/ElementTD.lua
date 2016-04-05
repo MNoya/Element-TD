@@ -194,6 +194,7 @@ function ElementTD:OnGameStateChange(keys)
         -- Load builders
         ForAllPlayerIDs(function(playerID)
             Saves:LoadBuilder(playerID)
+            Saves:SaveHasPass(playerID)
         end)
     end
 end

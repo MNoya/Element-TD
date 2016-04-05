@@ -40,6 +40,6 @@
             </Panel>
         </Panel>
 
-        <Image id="EleTDPass" src="file://{resources}/images/custom_game/rewards/pass.png" />
+        <Image id="EleTDPass" class="Hide" src="file://{resources}/images/custom_game/rewards/pass.png" />
     </Panel>
 </root>

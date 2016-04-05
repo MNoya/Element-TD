@@ -3,6 +3,7 @@ var statsURL = "http://hatinacat.com/leaderboard/data_request.php?req=stats&id="
 var Ranks = $("#AvatarCurrentRanks")
 var Badges = $("#AvatarBestBadges")
 var Loading = $("#Loading")
+var Pass = $("#EleTDPass")
 var maxBadges = 4
 
 Root.Show = function() {
@@ -27,6 +28,8 @@ function RequestData() {
 
             if (player_info)
             {
+                $("#favorite_element").SetImage("file://{resources}/images/custom_game/resources/"+player_info["allTime"]["favouriteElement"]+".png");
+
                 if (player_info["rank"] || player_info["rank_exp"] || player_info["rank_frogs"])
                     SetAvatarRanks(player_info)
 
@@ -40,6 +43,10 @@ function RequestData() {
             Loading.AddClass("Hide")
         }
     })
+
+    GameUI.CheckPlayerPass(steamID64, function(hasPass) {
+        Pass.SetHasClass("Hide", !hasPass)
+    })
 }
 
 function SetAvatarRanks (player_info) {
@@ -47,7 +54,6 @@ function SetAvatarRanks (player_info) {
     $("#ClassicRank").text = (player_info["rank"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank"]);
     $("#ExpressRank").text = (player_info["rank_exp"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank_exp"]);
     $("#FrogsRank").text = (player_info["rank_frogs"] === undefined) ? "--" : GameUI.FormatRank(player_info["rank_frogs"]);
-    $("#favorite_element").SetImage("file://{resources}/images/custom_game/resources/"+player_info["allTime"]["favouriteElement"]+".png");
 }
 
 function CreateAvatarBadges(player_info) {
