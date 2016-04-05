@@ -431,9 +431,11 @@ function LoadProfile(steamID64) {
         var panel = $.CreatePanel("Panel", $.GetContextPanel(), "PlayerAvatarTooltip")
         panel.BLoadLayout("file://{resources}/layout/custom_game/profile_avatar.xml", false, false);
 
-        // Positioning should be dynamic based on the panel on hover
-        panel.style["margin-top"] =  "100px;"
-        panel.style["margin-left"] =  "580px;"
+        var pos = root.GetPositionWithinWindow()
+
+        var offsetX = root.actuallayoutwidth + 15 //arrow width
+        panel.style.x = pos.x+offsetX+"px";
+        panel.style.y = pos.y+"px";
         
         root.tooltip = panel
     })
