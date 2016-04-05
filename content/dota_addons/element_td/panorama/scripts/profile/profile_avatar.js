@@ -37,6 +37,7 @@ function RequestData() {
                     CreateAvatarBadges(player_info)
             }
             Loading.AddClass("Hide")
+            $("#favorite_element").RemoveClass("Hide")
         },
 
         error: function() {
