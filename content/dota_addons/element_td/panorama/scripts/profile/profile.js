@@ -249,83 +249,6 @@ function CreateMatch(info) {
     }
 }
 
-function ClearFields() {
-    $("#GamesWon").text = "-"
-    $("#BestScore").text = "-"
-
-    // General
-    $("#kills").text = "-"
-    $("#frogKills").text = "-"
-    $("#networth").text = "-"
-    $("#interestGold").text = "-"
-    $("#cleanWaves").text = "-"
-    $("#under30").text = "-"
-
-    // GameMode
-    var data = []
-    data["gamesPlayed"] = 4
-    data["normal"] = 1
-    data["hard"] = 1
-    data["veryhard"] = 1
-    data["insane"] = 1
-    data["order_chaos"] = 0
-    data["horde_endless"] = 0
-    data["express"] = 0
-
-    MakeBars(data, ["normal","hard","veryhard","insane"])
-    MakeBoolBar(data, "order_chaos")
-    MakeBoolBar(data, "horde_endless")
-    MakeBoolBar(data, "express")
-
-    var random = "-"
-    $("#gamesPlayed").text = 0
-    $("#random_pick").text = "-"
-    $("#towersBuilt").text = "-"
-    $("#towersSold").text = "-"
-    $("#lifeTowerKills").text = "-"
-    $("#goldTowerEarn").text = "-"
-
-    // Towers
-    MakeFirstDual("")
-    MakeFirstTriple("")
-
-    // Element Usage
-    var light = 1
-    var dark = 1
-    var water = 1
-    var fire = 1
-    var nature = 1
-    var earth = 1
-    var total_elem = light+dark+water+fire+nature+earth
-    var favorite = "-"
-
-    var nextStart = 0
-    nextStart = RadialStyle("light", nextStart, light/total_elem)
-    nextStart = RadialStyle("dark", nextStart, dark/total_elem)
-    nextStart = RadialStyle("water", nextStart, water/total_elem)
-    nextStart = RadialStyle("fire", nextStart, fire/total_elem)
-    nextStart = RadialStyle("nature", nextStart, nature/total_elem)
-    nextStart = RadialStyle("earth", nextStart, earth/total_elem)
-
-    $("#ClassicRank").text = "--"
-    $("#ExpressRank").text = "--"
-    $("#FrogsRank").text = "--"
-
-    // Milestones
-    var childCount = $("#MilestonesContainer").GetChildCount()
-    for (var i = 0; i < childCount; i++) {
-        var child = $("#MilestonesContainer").GetChild(i)
-        if (child && child.id != "ErrorNoMilestones") child.DeleteAsync(0)
-    };
-
-    // Matches
-    var childCount = $("#MatchesContainer").GetChildCount()
-    for (var i = 0; i < childCount; i++) {
-        var child = $("#MatchesContainer").GetChild(i)
-        if (child && child.id != "ErrorNoMatches") child.DeleteAsync(0)
-    };
-}
-
 function GetPlayerFriends(steamID32, leaderboard_type) {
     friendsRank = 0
     currentProfile = steamID32
@@ -436,11 +359,32 @@ function LoadProfile(steamID64) {
 
     currentProfile = GameUI.ConvertID32(steamID64)
     GetStats(currentProfile)
-    ShowFriendRanks("classic", true)
+    ShowFriendRanks("classic")
+}
+
+// This is shared by both active and inactive pass
+function ToggleHeader() {
+    var bHasPass = GameUI.PlayerHasProfile(Game.GetLocalPlayerID())
+
+    if (!bHasPass)
+        StartInactivePreview()
+    else
+        ToggleProfile()
+}
+
+function StartInactivePreview() {
+    ToggleProfile()
 }
 
 function ToggleProfile() {
+    var bHasPass = GameUI.PlayerHasProfile(Game.GetLocalPlayerID())
     Profile.ToggleClass("Hide")
+
+    if (!bHasPass)
+    {
+        SetPreviewProfile()
+        return
+    }
 
     // Load self in the background
     if (Profile.BHasClass( "Hide" ))
@@ -461,7 +405,7 @@ function ToggleProfile() {
 function CloseProfile() {
     Profile.AddClass("Hide")
 }
-function CloseCustomBuilders(argument) {
+function CloseCustomBuilders() {
     CustomBuilders.AddClass("Hide")
     ResetButton.AddClass("Hide")
 }
@@ -487,16 +431,16 @@ function ToggleCustomBuilders() {
 }
 
 var LB_types = ["classic","express","frogs"]
-function ShowFriendRanks(leaderboard_type, force) {
+function ShowFriendRanks(leaderboard_type, steamID) {
     for (var i = 0; i < LB_types.length; i++) {
         var name = LB_types[i]
         var panel = $("#"+name+"_radio")
         panel.SetHasClass( "ActiveTab", LB_types[i] == leaderboard_type )
     };
 
-    if (!force)
-        Game.EmitSound("ui_rollover_micro")
+    Game.EmitSound("ui_rollover_micro")
 
+    currentProfile = steamID || currentProfile
     currentLB = LB_types.indexOf(leaderboard_type)
     GetPlayerFriends(currentProfile, currentLB)
 }
@@ -527,20 +471,27 @@ function MakeButtonVisible() {
 
     if (bHasPass)
         LoadLocalProfile()
+    else
+        SetPreviewProfile()
 }
 
 function LoadLocalProfile() {
     var steamID64 = GameUI.GetLocalPlayerSteamID()
     LoadProfile(steamID64)
-
-    //Testing
-    //ToggleProfile()
-    //ShowProfileTab('achievements')
 }
 
 function CheckHUDFlipped() {
     $("#ProfileToggleContainer").SetHasClass("Flipped", Game.IsHUDFlipped())
     $.Schedule(1, CheckHUDFlipped)
+}
+
+function CheckProfile() {
+    var bHasPass = GameUI.PlayerHasProfile(Game.GetLocalPlayerID())
+
+    $("#PassPreview").SetHasClass("Hide", bHasPass)
+    $("#PassAccess").SetHasClass("Hide", !bHasPass)
+
+    $.Schedule(1, CheckProfile)
 }
 
 (function () {
@@ -549,5 +500,6 @@ function CheckHUDFlipped() {
         MakeButtonVisible()
         GameUI.AcceptWheel()
         CheckHUDFlipped()
+        CheckProfile()
     })
 })();

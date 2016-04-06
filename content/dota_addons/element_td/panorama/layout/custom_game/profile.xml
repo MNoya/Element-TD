@@ -11,13 +11,13 @@
     <Panel hittest='false' class="ProfileHud">
 
         <Panel id="ProfileToggleContainer">
-            <Panel id="PassHeader">
+            <Panel id="PassHeader" onactivate="ToggleHeader()">
                 <Label id="New" text="#etd_new_feature"/>
                 <Label id="PassTitle" text="#pass_title" />
                 <Panel id="PopoutArrow" class="OpenMenuArrow" />
             </Panel>
             <Panel id="PassButtonsPanel">
-                <Panel id="PassPreview"> <!-- Inactive buttons -->
+                <Panel id="PassPreview" onactivate="StartInactivePreview()"> <!-- Inactive buttons -->
                     <Label id="PassNotOwned" text="#pass_support"/>
                     <Panel id="PassPreviewButton">
                         <Label text="#pass_look_inside" />
