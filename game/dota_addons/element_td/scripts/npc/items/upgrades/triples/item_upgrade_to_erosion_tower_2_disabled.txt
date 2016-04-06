@@ -29,7 +29,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"dot"					"120 600"
+			"dot"					"150 750"
 		}
     }
     "AbilityCastRange"              "700"

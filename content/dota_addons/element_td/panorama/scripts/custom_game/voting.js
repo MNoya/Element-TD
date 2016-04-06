@@ -26,10 +26,10 @@ var timer = $( '#Countdown' );
 
 var difficultyModes = ["normal","hard","veryhard","insane"]
 var activeDifficulty = "normal"
-var healthBonus = {normal:"100%",hard:"150%",veryhard:"200%",insane:"250%"}
+var healthBonus = {normal:"100%",hard:"130%",veryhard:"160%",insane:"200%"}
 var bountyBonus = {normal:"100%",hard:"130%",veryhard:"150%",insane:"170%"}
-var bountyBonusExpress = {normal:"100%",hard:"130%",veryhard:"150%",insane:"170%"}
-var endlessBountyBonus = 20
+var bountyBonusExpress = {normal:"125%",hard:"145%",veryhard:"160%",insane:"175%"}
+var endlessBountyBonus = 25
 var scoreMultipliers = {normal:1,hard:2,veryhard:3,insane:4}
 
 var healthMult = $( '#HealthMult' );

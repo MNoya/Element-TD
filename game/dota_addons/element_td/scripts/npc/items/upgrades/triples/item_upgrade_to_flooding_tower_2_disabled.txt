@@ -24,7 +24,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"splash_damage"			"150 750"
+			"splash_damage"			"160 800"
 		}
 	}
 	"AbilityCastRange"              "900"

@@ -31,7 +31,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"350 1750"
+			"damage"				"400 2000"
 		}
 	}
 	"AbilityCastRange"              "1150"
