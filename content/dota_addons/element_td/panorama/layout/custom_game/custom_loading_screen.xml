@@ -4,6 +4,7 @@
     </styles>
     <scripts>
         <include src="file://{resources}/scripts/custom_game/custom_loading_screen.js" />
+        <include src="file://{resources}/scripts/custom_game_ui_expanded.js" />
     </scripts>
     <script>
         $.Msg( "Compiled Panorama Loading Screen!" );

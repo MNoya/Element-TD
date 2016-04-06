@@ -373,10 +373,13 @@ GameUI.SetupAvatarTooltip = function (avatar, root, steamID64) {
 
             var pos = avatar.GetPositionWithinWindow()
             var relation = 1080 / root.actuallayoutheight;
-            panel.style.x = ((pos.x+avatar.actuallayoutwidth)*relation) + "px";
-            panel.style.y = (pos.y*relation) + "px";
-            
+            var posX = (pos.x+avatar.actuallayoutwidth)*relation
+            var posY = pos.y*relation
+            panel.style.x = posX + "px";
+            panel.style.y = posY + "px";
+
             avatar.tooltip = panel
+            panel.avatar = avatar
         }
         else
         {

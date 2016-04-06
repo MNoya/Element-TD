@@ -70,6 +70,8 @@ function CreateTopPlayerPanel(data, panel) {
     var localSteamID = GameUI.GetPlayerSteamID(playerID)
     if (steamID64 == localSteamID)
         playerPanel.AddClass("local")
+
+    GameUI.SetupAvatarTooltip(playerPanel.FindChildInLayoutFile("AvatarImage"), $.GetContextPanel(), steamID64)
 }
 
 function Setup()

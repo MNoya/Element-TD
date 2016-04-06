@@ -9,6 +9,14 @@ var maxBadges = 4
 
 Root.Show = function() {
     UpdateSteamIDFields()
+
+    var avatar = Root.avatar
+    var pos = avatar.GetPositionWithinWindow()
+    var relation = 1080 / Root.GetParent().actuallayoutheight;
+    var posX = (pos.x+avatar.actuallayoutwidth)*relation
+    var posY = pos.y*relation
+    Root.style.x = posX + "px";
+    Root.style.y = posY + "px";
     Root.RemoveClass("Hide")
 }
 
