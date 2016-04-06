@@ -546,13 +546,13 @@ function CheckHUDFlipped() {
 (function () {
     $.Schedule(0.1, function()
     {
-        if (Players.HasCustomGameTicketForPlayerID(Game.GetLocalPlayerID()) || GameUI.RewardLevel(GameUI.GetLocalPlayerSteamID()) == "Developer")
+        if (Players.HasCustomGameTicketForPlayerID(Game.GetLocalPlayerID())/* || GameUI.RewardLevel(GameUI.GetLocalPlayerSteamID()) == "Developer"*/)
         {
             MakeButtonVisible()
             LoadLocalProfile()
-            GameUI.AcceptWheel()
         }
 
+        GameUI.AcceptWheel()
         CheckHUDFlipped()
     })
 })();

@@ -332,10 +332,10 @@ GameUI.PlayerHasProfile = function (playerID) {
 GameUI.CheckPlayerPass = function (steamID64, callback) {
     var steamID32 = GameUI.ConvertID32(steamID64)
 
-    // Testing
+    /* Testing
     var rewardLevel = GameUI.RewardLevel(steamID64)
     if (rewardLevel == "Developer")
-        callback(true)
+        callback(true)*/
 
     $.AsyncWebRequest( "http://hatinacat.com/leaderboard/data_request.php?req=save&id="+steamID32, { type: 'GET', 
         success: function( data ) {
