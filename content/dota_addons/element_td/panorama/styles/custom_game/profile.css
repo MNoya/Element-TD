@@ -10,35 +10,116 @@
     visibility: collapse;
 }
 
+.Hover { opacity: 2; }
+.Desaturate { saturation: 0; }
+.Highlight { font-weight: bold; }
+
 // Open Profile Button
 #ProfileToggleContainer
 {
     horizontal-align: left;
-    vertical-align: top;
-    margin-top: 732px;
+    vertical-align: bottom;
+    margin-bottom: 289px;
+    height: 85px;
+    width: 282px;
     flow-children: down;
-    border-radius: 0px 10px 0px 0px;
+
+    background-color: black;
 }
 
-.ProfileButton
+#ProfileToggleContainer:hover
+{
+    opacity: 1.5;
+}
+
+#ProfileToggleContainer.Flipped
+{
+    horizontal-align: right;
+    border-radius: 10px 0px 0px 0px;
+}
+
+#PassPreview, #PassAccess
+{
+    width: 100%;
+    height: 60px;
+    flow-children: down;
+}
+
+#PassButtonsPanel
+{
+    /*background-image: url("s2r://panorama/images/textures/miniprofile_compendium_bg_psd.vtex");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;*/
+    background-repeat: no-repeat;
+
+    border-top: 0px solid #fda63277;
+    border-right: 1px solid #00000088;
+    border-left: 1px solid #462600;
+    border-bottom: 1px solid #00000088;
+
+    box-shadow: fill #00000055 -2px -2px 6px 6px;
+    
+    flow-children: down;
+
+    width: 100%;
+    height: 60px;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #fda632 ), to( #462600 ) );
+    vertical-align: bottom;
+
+    transition-property: background-image;
+    transition-duration: .5s;
+}
+
+#PassPreviewButton
+{
+    margin-left: 14px;
+    margin-right: 14px;
+    margin-top: -8px;
+    width: 302px;
+    horizontal-align: center;
+    vertical-align: center;
+    border: 2px solid black;
+    background-color: #00000000;
+}
+
+#PassPreviewButton Label,
 {
     font-size: 18px;
-    background-color: black;
-    height: 30px;
-    width: 280px;
+    letter-spacing: 3px;
+    text-shadow: none;
+    color: black;
+    font-weight: semi-bold;
+    text-transform: uppercase;
+    horizontal-align: center;
 }
 
-#MyProfileButton
+#PassNotOwned
 {
-    margin-bottom: -1px;
-    width: 280px;
+    color: black;
+    font-weight: semibold;
+    margin-top: 2px;
+    margin-left: 12px;
+    margin-right: 12px;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    vertical-align: center;
+    text-shadow: none;
 }
 
-#ProfileHeaderTitle
+#PassHeader
 {
+    width: 100%;
+    height: 25px;
+}
+
+#PassTitle
+{
+    font-size: 16px;
     margin-top: 2px;
     letter-spacing: 3px;
-    width: 250px;
+    width: 100%;
     text-align: center;
     text-transform: uppercase;
     horizontal-align: center;
@@ -46,20 +127,41 @@
     color: #CCCCCC;
 }
 
-.ProfileButton:hover #ProfileHeaderTitle
+#PassTitle:hover
 {
     color: white;
 }
 
-.ProfileButton:hover #PopoutArrow
+.BorderBottom
 {
-    wash-color: white;
+    border-bottom: 1px solid black;
 }
 
-#ProfileToggleContainer.Flipped
+.ProfileButton
 {
-    horizontal-align: right;
-    border-radius: 10px 0px 0px 0px;
+    height: 30px;
+    horizontal-align: center;
+    vertical-align: center;
+    background-color: #00000000;
+    font-size: 16px;
+}
+
+.ProfileButton Label
+{
+    margin-top: 2px;
+    letter-spacing: 3px;
+    width: 290px;
+    text-align: center;
+    text-transform: uppercase;
+    horizontal-align: center;
+    vertical-align: center;
+    color: #DDDDDD;
+    text-shadow: 0px 1px 1px 2.0 #000000;
+}
+
+.ProfileButton:hover Label
+{
+    font-size: 18;
 }
 
 .OpenMenuArrow
@@ -81,11 +183,11 @@
 #New
 {
     letter-spacing: 2px;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     text-transform: uppercase;
-    margin-top: 6px;
-    margin-left: 10px;
+    margin-top: 5px;
+    margin-left: 6px;
     horizontal-align: left;
     color: white;
 
@@ -629,10 +731,6 @@ DOTAUserName #UserNameProfile
     text-align: center;
     horizontal-align: center;
 }
-
-.Hover { opacity: 2; }
-.Desaturate { saturation: 0; }
-.Highlight { font-weight: bold; }
 
 #ElementPieChart
 {

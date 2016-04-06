@@ -520,8 +520,13 @@ function ShowProfileTab ( tabName ) {
 }
 
 function MakeButtonVisible() {
-    var bShowProfile = GameUI.PlayerHasProfile(Game.GetLocalPlayerID())
-    $("#ProfileToggleContainer").SetHasClass("Hide", !bShowProfile)
+    var bHasPass = GameUI.PlayerHasProfile(Game.GetLocalPlayerID())
+
+    $("#PassPreview").SetHasClass("Hide", bHasPass)
+    $("#PassAccess").SetHasClass("Hide", !bHasPass)
+
+    if (bHasPass)
+        LoadLocalProfile()
 }
 
 function LoadLocalProfile() {
@@ -534,24 +539,14 @@ function LoadLocalProfile() {
 }
 
 function CheckHUDFlipped() {
-
-    var bFlipped = Game.IsHUDFlipped()
-    $("#ProfileToggleContainer").SetHasClass("Flipped", bFlipped)
-    $("#MyProfileButton").SetHasClass("Flipped", bFlipped)
-    $("#CustomBuilderButton").SetHasClass("Flipped", bFlipped)
-    
+    $("#ProfileToggleContainer").SetHasClass("Flipped", Game.IsHUDFlipped())
     $.Schedule(1, CheckHUDFlipped)
 }
 
 (function () {
     $.Schedule(0.1, function()
     {
-        if (Players.HasCustomGameTicketForPlayerID(Game.GetLocalPlayerID())/* || GameUI.RewardLevel(GameUI.GetLocalPlayerSteamID()) == "Developer"*/)
-        {
-            MakeButtonVisible()
-            LoadLocalProfile()
-        }
-
+        MakeButtonVisible()
         GameUI.AcceptWheel()
         CheckHUDFlipped()
     })

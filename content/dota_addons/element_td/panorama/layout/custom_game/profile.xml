@@ -10,15 +10,29 @@
     </scripts>
     <Panel hittest='false' class="ProfileHud">
 
-        <Panel class="Hide" id="ProfileToggleContainer">
-            <Panel id="MyProfileButton" class="ProfileButton" onactivate="ToggleProfile()">
+        <Panel id="ProfileToggleContainer">
+            <Panel id="PassHeader">
                 <Label id="New" text="#etd_new_feature"/>
-                <Label id="ProfileHeaderTitle" text="#profile_title" />
+                <Label id="PassTitle" text="#pass_title" />
                 <Panel id="PopoutArrow" class="OpenMenuArrow" />
             </Panel>
-            <Panel id="CustomBuilderButton" class="ProfileButton" onactivate="ToggleCustomBuilders()">
-                <Label id="ProfileHeaderTitle" text="#profile_builders" />
-                <Panel id="PopoutArrow" class="OpenMenuArrow" />
+            <Panel id="PassButtonsPanel">
+                <Panel id="PassPreview"> <!-- Inactive buttons -->
+                    <Label id="PassNotOwned" text="#pass_support"/>
+                    <Panel id="PassPreviewButton">
+                        <Label text="#pass_look_inside" />
+                    </Panel>
+                </Panel>
+
+                <Panel id="PassAccess" class="Hide"> <!-- Pass owner buttons -->
+                    <Panel id="MyProfileButton" class="ProfileButton BorderBottom" onactivate="ToggleProfile()">
+                        <Label text="#profile_title" />
+                    </Panel>
+
+                    <Panel id="CustomBuilderButton" class="ProfileButton" onactivate="ToggleCustomBuilders()">
+                        <Label text="#profile_builders" />
+                    </Panel>
+                </Panel>
             </Panel>
         </Panel>
 

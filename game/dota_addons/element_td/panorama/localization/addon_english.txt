@@ -294,6 +294,9 @@
         "profile_reset_builder"         "Reset"
         "profile_reset_builder_title"   "Reset Builder"
         "profile_reset_builder_tooltip" "Change back to your default builder."
+        "pass_title"    "Custom Game Pass"
+        "pass_support" "Support the game and get cool perks!"
+        "pass_look_inside" "Look Inside"
 
         "year"      "year"
         "years"     "years"
