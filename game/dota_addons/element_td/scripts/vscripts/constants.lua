@@ -51,7 +51,7 @@ ElementColors = {
 -- Light #E5DE23
 -- Dark #8733C8
 
-ElementalBaseHealth = {300, 1500, 7500}
+ElementalBaseHealth = {500, 2500, 12500}
 Particles = {
     light_elemental = "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_spirit_form_ambient.vpcf",
 }

@@ -27,9 +27,9 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "65"
-    "AttackDamageMax"           "65"
-    "Damage"                    "65"  
+    "AttackDamageMin"           "70"
+    "AttackDamageMax"           "70"
+    "Damage"                    "70"  
     "AOE_Full"                  "150"
     "AOE_Half"                  "300" 
     "AttackRange"               "550"
@@ -39,8 +39,8 @@
     "ProjectileSpeed"           "2000"
 
     "Level"                     "2"
-    "Cost"                      "450"
-    "TotalCost"                 "625"
+    "Cost"                      "575"
+    "TotalCost"                 "750"
     "BuildTime"                 "1"
     "Element"                   "fire"
     "DamageType"                "fire"

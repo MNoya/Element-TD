@@ -34,7 +34,7 @@
     "VisionDaytimeRange"        "1900"
     "VisionNighttimeRange"        "1900"
     "Level"        "1"
-    "Cost"        "1050"
+    "Cost"        "900"
     "TotalCost"        "1500"
     "Element"
     {
@@ -42,9 +42,9 @@
         "2"        "light"
         "3"        "water"
     }
-    "Damage"        "800"
-    "AttackDamageMin"        "800"
-    "AttackDamageMax"        "800"
+    "Damage"        "850"
+    "AttackDamageMin"        "850"
+    "AttackDamageMax"        "850"
     "DamageType"        "light"
     "ScriptClass"        "HailTower"
     "TowerType"        "Normal"

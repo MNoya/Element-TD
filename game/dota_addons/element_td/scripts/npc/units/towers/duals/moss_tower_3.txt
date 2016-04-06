@@ -34,8 +34,8 @@
     "VisionDaytimeRange"        "1900"
     "VisionNighttimeRange"        "1900"
     "Level"        "3"
-    "Cost"                       "2300"
-    "TotalCost"        "3650"
+    "Cost"                       "3900"
+    "TotalCost"        "5700"
     "Element"
     {
         "1"        "nature"
@@ -43,9 +43,9 @@
     }
     "AOE_Full"        "150"
     "AOE_Half"        "300"
-    "Damage"        "4320"
-    "AttackDamageMin"        "4320"
-    "AttackDamageMax"        "4320"
+    "Damage"        "4250"
+    "AttackDamageMin"        "4250"
+    "AttackDamageMax"        "4250"
     "DamageType"        "nature"
     "ScriptClass"        "MossTower"
     "TowerType"        "Normal"

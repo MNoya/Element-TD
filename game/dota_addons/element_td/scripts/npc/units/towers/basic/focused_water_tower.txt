@@ -28,9 +28,9 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "143"
-    "AttackDamageMax"           "143"
-    "Damage"                    "143"    
+    "AttackDamageMin"           "155"
+    "AttackDamageMax"           "155"
+    "Damage"                    "155"    
     "AOE_Full"                  "100"
     "AOE_Half"                  "200"  
     "AttackRange"               "900"
@@ -40,8 +40,8 @@
     "ProjectileSpeed"           "2500"
 
     "Level"                     "2"
-    "Cost"                      "450"
-    "TotalCost"                 "625"
+    "Cost"                      "575"
+    "TotalCost"                 "750"
     "BuildTime"                 "1"
     "Element"                   "water"
 

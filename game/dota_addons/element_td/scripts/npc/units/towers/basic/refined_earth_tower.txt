@@ -29,9 +29,9 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "2030"
-    "AttackDamageMax"           "2030"
-    "Damage"                    "2030"  
+    "AttackDamageMin"           "2350"
+    "AttackDamageMax"           "2350"
+    "Damage"                    "2350"  
     "AOE_Full"                  "200"
     "AOE_Half"                  "400"
     "AttackRange"               "900"
@@ -41,8 +41,8 @@
     "ProjectileSpeed"           "1500"
 
     "Level"                     "3"
-    "Cost"                      "1675"
-    "TotalCost"                 "2300"
+    "Cost"                      "2250"
+    "TotalCost"                 "3000"
     "BuildTime"                 "1"
     "Element"                   "earth"
     "DamageType"                "earth"

@@ -34,7 +34,7 @@
     "VisionDaytimeRange"        "1900"
     "VisionNighttimeRange"        "1900"
     "Level"        "1"
-    "Cost"        "1050"
+    "Cost"        "900"
     "TotalCost"        "1500"
     "Element"
     {
@@ -42,9 +42,9 @@
         "2"        "nature"
         "3"        "water"
     }
-    "Damage"        "1800"
-    "AttackDamageMin"        "1800"
-    "AttackDamageMax"        "1800"
+    "Damage"        "2000"
+    "AttackDamageMin"        "2000"
+    "AttackDamageMax"        "2000"
     "DamageType"        "nature"
     "ScriptClass"        "EphemeralTower"
     "TowerType"        "Normal"

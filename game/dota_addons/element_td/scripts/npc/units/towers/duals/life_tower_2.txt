@@ -33,14 +33,14 @@
     "VisionDaytimeRange"        "1900"
     "VisionNighttimeRange"        "1900"
     "Level"        "2"
-    "Cost"        "900"
-    "TotalCost"        "1350"
+    "Cost"        "1200"
+    "TotalCost"        "1800"
     "Element"
     {
         "1"        "light"
         "2"        "nature"
     }
-    "Damage"        "1800"
+    "Damage"        "2100"
     "AttackDamageMin"        "1800"
     "AttackDamageMax"        "1800"
     "DamageType"        "nature"

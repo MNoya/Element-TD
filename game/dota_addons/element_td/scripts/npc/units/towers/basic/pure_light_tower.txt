@@ -30,9 +30,9 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "42250"
-    "AttackDamageMax"           "42250"
-    "Damage"                    "42250"  
+    "AttackDamageMin"           "54000"
+    "AttackDamageMax"           "54000"
+    "Damage"                    "54000"  
     "AttackRange"               "1500"
     "AttackAcquisitionRange"    "1500"
     "AttackRate"                "0.66"
@@ -40,9 +40,9 @@
     "ProjectileSpeed"           "2700"
 
     "Level"                     "4"
-    "Cost"                      "8700"
+    "Cost"                      "10000"
     "EssenceCost"               "1"
-    "TotalCost"                 "11000"
+    "TotalCost"                 "13000"
     "PureEssence"               "1"
     "BuildTime"                 "3"
     "Element"                   "light"

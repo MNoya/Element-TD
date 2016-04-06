@@ -23,8 +23,8 @@
     // Stats
     //----------------------------- 
     "Level"                     "3"
-    "Cost"                       "2300"
-    "TotalCost"                  "3650"
+    "Cost"                       "3900"
+    "TotalCost"                  "5700"
     "Element"
     {
         "1"     "fire"
