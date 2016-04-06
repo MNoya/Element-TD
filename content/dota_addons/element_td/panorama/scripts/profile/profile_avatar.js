@@ -49,7 +49,6 @@ function RequestData() {
     GameUI.CheckPlayerPass(steamID64, function(hasPass) {
         Pass.SetHasClass("Hide", !hasPass)
 
-        
         if (hasPass)
         {
             border.SetImage("s2r://panorama/images/profile_badges/bg_02_psd.vtex")

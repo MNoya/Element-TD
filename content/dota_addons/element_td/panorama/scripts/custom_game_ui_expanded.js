@@ -334,7 +334,7 @@ GameUI.CheckPlayerPass = function (steamID64, callback) {
 
     // Testing
     var rewardLevel = GameUI.RewardLevel(steamID64)
-    if (rewardLevel == "Developer" || rewardLevel > 0)
+    if (rewardLevel == "Developer")
         callback(true)
 
     $.AsyncWebRequest( "http://hatinacat.com/leaderboard/data_request.php?req=save&id="+steamID32, { type: 'GET', 
@@ -355,6 +355,12 @@ GameUI.CheckPlayerPass = function (steamID64, callback) {
 }
 
 GameUI.SetupAvatarTooltip = function (avatar, root, steamID64) {
+    if (!avatar || !root || !steamID64)
+    {
+        $.Msg("Wrong panels received when trying to setup avatar tooltip for "+steamID64)
+        return;
+    }
+
     avatar.ClearPanelEvent("onmouseover")
     avatar.ClearPanelEvent("onmouseout")
     avatar.tooltip = undefined

@@ -1435,6 +1435,9 @@ Label
 .ProfileAvatar
 {
     flow-children: right;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
 }
 
 .ProfileAvatarCont
