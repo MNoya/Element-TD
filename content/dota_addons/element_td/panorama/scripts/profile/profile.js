@@ -441,18 +441,31 @@ function SetPreviewProfile() {
     $("#FrogsRank").text = "--"
 
     // Milestones
-    var childCount = $("#MilestonesContainer").GetChildCount()
-    for (var i = 0; i < childCount; i++) {
-        var child = $("#MilestonesContainer").GetChild(i)
-        if (child && child.id != "ErrorNoMilestones") child.DeleteAsync(0)
-    };
+    GameUI.CreateBadges($("#MilestonesContainer"), GameUI.FormatVersion("1.4"), 1, 1, 0, 0)
+    GameUI.CreateBadges($("#MilestonesContainer"), GameUI.FormatVersion("1.3"), 0, 0, 5, 5)
+    GameUI.CreateBadges($("#MilestonesContainer"), GameUI.FormatVersion("1.2"), 10, 25, 0, 0)
+    GameUI.CreateBadges($("#MilestonesContainer"), GameUI.FormatVersion("1.1"), 0, 0, 20, 45)
+    GameUI.CreateBadges($("#MilestonesContainer"), GameUI.FormatVersion("1.0"), 4503, 85, 0, 0)
 
     // Matches
-    var childCount = $("#MatchesContainer").GetChildCount()
-    for (var i = 0; i < childCount; i++) {
-        var child = $("#MatchesContainer").GetChild(i)
-        if (child && child.id != "ErrorNoMatches") child.DeleteAsync(0)
-    };
+    CreateMatch({"matchID":1,"score":"420000","difficulty":"Insane","mode":0,"order":"1","horde":"1","random":"AllRandom","fire":"3","water":"2","nature":"3","earth":"0","light":"3","dark":"0","date":"2016-04-07 00:00:00"})
+    CreateMatch({"matchID":1,"score":"300000","difficulty":"Insane","mode":0,"order":"Normal","horde":"1","random":"AllPick","fire":"3","water":"2","nature":"3","earth":"0","light":"2","dark":"1","date":"2016-04-06 00:00:00"})
+    CreateMatch({"matchID":1,"score":"100000","difficulty":"Insane","mode":1,"order":"Normal","horde":"Normal","random":"AllRandom","fire":"3","water":"0","nature":"3","earth":"3","light":"0","dark":"3","date":"2016-04-01 00:00:00"})
+    CreateMatch({"matchID":1,"score":"990000","difficulty":"VeryHard","mode":0,"order":"Normal","horde":"1","random":"AllPick","fire":"3","water":"2","nature":"3","earth":"0","light":"0","dark":"3","date":"2016-03-31 00:00:00"})
+    CreateMatch({"matchID":1,"score":"10500","difficulty":"VeryHard","mode":1,"order":"1","horde":"Normal","random":"AllPick","fire":"3","water":"0","nature":"3","earth":"2","light":"3","dark":"0","date":"2016-03-30 00:00:00"})
+    CreateMatch({"matchID":1,"score":"205000","difficulty":"Hard","mode":1,"order":"Normal","horde":"Normal","random":"AllPick","fire":"0","water":"0","nature":"3","earth":"2","light":"3","dark":"0","date":"2016-03-30 00:00:00"})
+    CreateMatch({"matchID":1,"score":"215000","difficulty":"Hard","mode":0,"order":"1","horde":"1","random":"AllRandom","fire":"3","water":"2","nature":"3","earth":"0","light":"0","dark":"3","date":"2016-03-27 00:00:00"})
+    CreateMatch({"matchID":1,"score":"100000","difficulty":"Hard","mode":0,"order":"1","horde":"Normal","random":"AllPick","fire":"3","water":"2","nature":"3","earth":"0","light":"3","dark":"0","date":"2016-03-24 00:00:00"})
+    CreateMatch({"matchID":1,"score":"10550","difficulty":"Normal","mode":1,"order":"Normal","horde":"Normal","random":"AllRandom","fire":"0","water":"2","nature":"3","earth":"3","light":"3","dark":"0","date":"2016-03-22 00:00:00"})
+    CreateMatch({"matchID":1,"score":"205000","difficulty":"Hard","mode":1,"order":"Normal","horde":"Normal","random":"AllPick","fire":"0","water":"2","nature":"3","earth":"0","light":"0","dark":"3","date":"2016-03-18 00:00:00"})
+    CreateMatch({"matchID":1,"score":"215000","difficulty":"Hard","mode":0,"order":"1","horde":"1","random":"AllRandom","fire":"0","water":"0","nature":"3","earth":"2","light":"0","dark":"2","date":"2016-03-17 00:00:00"})
+    CreateMatch({"matchID":1,"score":"100000","difficulty":"Hard","mode":0,"order":"1","horde":"Normal","random":"AllPick","fire":"3","water":"2","nature":"3","earth":"0","light":"3","dark":"0","date":"2016-03-15 00:00:00"})
+    CreateMatch({"matchID":1,"score":"10550","difficulty":"Normal","mode":1,"order":"Normal","horde":"Normal","random":"AllRandom","fire":"3","water":"2","nature":"3","earth":"0","light":"0","dark":"1","date":"2016-03-13 00:00:00"})
+    CreateMatch({"matchID":1,"score":"205000","difficulty":"Hard","mode":1,"order":"Normal","horde":"Normal","random":"AllPick","fire":"3","water":"0","nature":"3","earth":"0","light":"2","dark":"1","date":"2016-03-10 00:00:00"})
+    CreateMatch({"matchID":1,"score":"215000","difficulty":"Hard","mode":0,"order":"1","horde":"1","random":"AllRandom","fire":"2","water":"3","nature":"3","earth":"1","light":"3","dark":"0","date":"2016-03-07 00:00:00"})
+    CreateMatch({"matchID":1,"score":"100000","difficulty":"Hard","mode":0,"order":"1","horde":"Normal","random":"AllPick","fire":"3","water":"2","nature":"3","earth":"0","light":"3","dark":"0","date":"2016-03-05 00:00:00"})
+    CreateMatch({"matchID":1,"score":"10550","difficulty":"Normal","mode":1,"order":"Normal","horde":"Normal","random":"AllRandom","fire":"0","water":"0","nature":"3","earth":"1","light":"3","dark":"0","date":"2016-03-01 00:00:00"})
+    CreateMatch({"matchID":1,"score":"9000","difficulty":"Normal","mode":0,"order":"Normal","horde":"Normal","random":"AllPick","fire":"1","water":"1","nature":"1","earth":"2","light":"2","dark":"2","date":"2016-02-29 00:00:00"})
 
     ShowFriendRanks("classic")
 }
