@@ -27,6 +27,49 @@
     background-color: black;
 }
 
+#MinimizePanel
+{
+    width: 26px;
+    height: 24px;
+    background-color: black;
+    margin-left: 5px;
+
+    horizontal-align: left;
+    vertical-align: bottom;
+    margin-bottom: 265px;
+}
+
+#MinimizePanel.Flipped
+{
+    horizontal-align: right;
+}
+
+#MinimizeButton
+{
+    width: 26px;
+    height: 24px;
+
+    background-image: url("s2r://panorama/images/control_icons/return_to_game_png.vtex");
+    background-size: 23px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;    
+
+    wash-color: #A5ADA2ff;
+    transition-property: wash-color, transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+#MinimizeButton.Off
+{
+    transform: scaleY(-1);
+}
+
+#MinimizeButton:hover
+{
+    wash-color: white;
+}
+
 #ProfileToggleContainer:hover
 {
     opacity: 1.5;

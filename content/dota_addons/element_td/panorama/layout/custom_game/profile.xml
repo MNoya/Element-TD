@@ -35,6 +35,9 @@
                 </Panel>
             </Panel>
         </Panel>
+        <Panel id="MinimizePanel" onactivate="ToggleMinimize()">
+            <Panel id="MinimizeButton"/>
+        </Panel>
 
         <Panel class="Hide" id="PreviewMenu">
             <Panel onactivate="PreviewProfile()">

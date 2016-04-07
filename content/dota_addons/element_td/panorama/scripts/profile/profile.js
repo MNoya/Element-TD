@@ -519,6 +519,11 @@ function ToggleProfile() {
     CloseCustomBuilders()
 }
 
+function ToggleMinimize() {
+    $("#ProfileToggleContainer").ToggleClass("Hide")
+    $("#MinimizeButton").ToggleClass("Off")
+}
+
 function CloseProfile() {
     Profile.AddClass("Hide")
 }
@@ -642,6 +647,7 @@ function CheckHUDFlipped() {
     $("#ProfileToggleContainer").SetHasClass("Flipped", bFlipped)
     $("#New").SetHasClass("Flipped", bFlipped)
     $("#MenuArrow").SetHasClass("Flipped", bFlipped)
+    $("#MinimizePanel").SetHasClass("Flipped", bFlipped)
     $.Schedule(1, CheckHUDFlipped)
 }
 
