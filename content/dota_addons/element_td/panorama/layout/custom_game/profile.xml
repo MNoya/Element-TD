@@ -14,7 +14,7 @@
             <Panel id="PassHeader" onactivate="ToggleHeader()">
                 <Label id="New" text="#etd_new_feature"/>
                 <Label id="PassTitle" text="#pass_title" />
-                <Panel id="PopoutArrow" class="OpenMenuArrow" />
+                <Panel id="MenuArrow" class="OpenMenuArrow" />
             </Panel>
             <Panel id="PassButtonsPanel">
                 <Panel id="PassPreview" onactivate="StartInactivePreview()"> <!-- Inactive buttons -->

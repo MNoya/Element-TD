@@ -586,7 +586,10 @@ function LoadLocalProfile() {
 }
 
 function CheckHUDFlipped() {
-    $("#ProfileToggleContainer").SetHasClass("Flipped", Game.IsHUDFlipped())
+    var bFlipped = Game.IsHUDFlipped()
+    $("#ProfileToggleContainer").SetHasClass("Flipped", bFlipped)
+    $("#New").SetHasClass("Flipped", bFlipped)
+    $("#MenuArrow").SetHasClass("Flipped", bFlipped)
     $.Schedule(1, CheckHUDFlipped)
 }
 
