@@ -18,6 +18,8 @@ Root.Show = function() {
     Root.style.x = posX + "px";
     Root.style.y = posY + "px";
     Root.RemoveClass("Hide")
+
+    GameUI.ApplyPanelBorder(Root, Root.steamID64)
 }
 
 Root.Hide = function() {

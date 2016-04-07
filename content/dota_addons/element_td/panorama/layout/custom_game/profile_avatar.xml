@@ -13,6 +13,7 @@
                     <Panel id="AvatarName">
                         <DOTAAvatarImage id="AvatarImage" steamid="" />
                         <DOTAUserName id="AvatarUserName" steamid=""/>
+                        <Image id="BorderImage" hittest="false" class="HiddenBorder" />
                     </Panel>
 
                     <Panel id="FavoriteElementPanel" class="Hide">

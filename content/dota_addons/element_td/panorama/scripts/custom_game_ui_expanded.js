@@ -387,6 +387,8 @@ GameUI.SetupAvatarTooltip = function (avatar, root, steamID64) {
 
             avatar.tooltip = panel
             panel.avatar = avatar
+
+            GameUI.ApplyPanelBorder(panel, steamID64)
         }
         else
         {

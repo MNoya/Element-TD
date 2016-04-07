@@ -1677,6 +1677,30 @@ Label
     height: 40px;
 }
 
+.GoldBorder
+{
+    width: 46px;
+    height: 46px;
+    background-image: url("file://{resources}/images/custom_game/rewards/border_gold.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.EpicBorder
+{   
+    margin-left: 2px;
+    width: 46px;
+    height: 46px;
+    background-image: url("file://{resources}/images/custom_game/rewards/border_epic.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.HiddenBorder
+{
+    opacity: 0;
+}
+
 #AvatarUserName
 {
     font-size: 24px;
