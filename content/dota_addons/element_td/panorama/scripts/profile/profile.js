@@ -23,12 +23,12 @@ function GetStats(steamID32) {
 
     if (Stats[steamID32])
     {
-        $.Msg("Loading stats for "+steamID32)
+        $.Msg("Setting existing stats for "+steamID32)
         SetStats(Stats[steamID32])
         return
     }
 
-    $.Msg("Getting stats data for "+steamID32+"...")
+    $.Msg("Requesting stats data for "+steamID32+"...")
     $.AsyncWebRequest( statsURL+steamID32+"&raw=1", { type: 'GET', 
         success: function( data ) {
             var info = JSON.parse(data);
@@ -261,12 +261,12 @@ function GetPlayerFriends(steamID32, leaderboard_type) {
 
     if (FriendsOf[steamID32] && FriendsOf[steamID32][leaderboard_type])
     {
-        $.Msg("Loading player friends for "+steamID32)
+        $.Msg("Setting existing player friends for "+steamID32)
         SetPlayerFriends(FriendsOf[steamID32][leaderboard_type], steamID32, leaderboard_type, false)
         return
     }
 
-    $.Msg("Getting friends data for "+steamID32+"...")
+    $.Msg("Requesting friends data for "+steamID32+"...")
     Loading.RemoveClass( "Hide" )
     $.AsyncWebRequest( friendsURL+steamID32+"&lb="+leaderboard_type, { type: 'GET', 
         success: function( data ) {
@@ -473,7 +473,11 @@ function MakeButtonVisible() {
 
 function LoadLocalProfile() {
     var steamID64 = GameUI.GetLocalPlayerSteamID()
-    LoadProfile(steamID64)
+
+    // Only load local if haven't done so yet
+    $.Msg(currentProfile, " ", steamID64)
+    if (GameUI.ConvertID64(currentProfile) != steamID64)
+        LoadProfile(steamID64)
 }
 
 function CheckHUDFlipped() {
