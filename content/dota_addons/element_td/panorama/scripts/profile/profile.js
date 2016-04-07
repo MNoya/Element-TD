@@ -462,19 +462,23 @@ function ToggleHeader() {
     if (!bHasPass)
         ToggleInactivePreview()
     else
+    {
         ToggleProfile()
+        PreviewMenu.AddClass("Hide")
+    }
 }
 
 function ToggleInactivePreview() {
-    ToggleProfile()
+    // If any of the two panels is open, close
+    if (!CustomBuilders.BHasClass("Hide") || !Profile.BHasClass("Hide"))
+        GameUI.CloseProfilePanels()
+    else
+        Profile.RemoveClass("Hide")
+
     PreviewMenu.ToggleClass("Hide")
 
     if (!PreviewMenu.BHasClass("Hide"))
-    {
-        $("#preview_profile").AddClass("PerkActive")
-        $("#preview_friends").AddClass("PerkActive")
-        ShowProfileTab('stats')
-    }
+        PreviewProfile()
 }
 
 function ToggleProfile() {
@@ -543,6 +547,16 @@ function OpenCustomBuilders() {
     $("#preview_stats").RemoveClass("PerkActive")
     $("#preview_matches").RemoveClass("PerkActive")
     $("#preview_achievements").RemoveClass("PerkActive")
+}
+
+function PreviewProfile() {
+    Profile.RemoveClass("Hide")
+
+    $("#preview_profile").AddClass("PerkActive")
+    $("#preview_friends").AddClass("PerkActive")
+    ShowProfileTab('stats')
+
+    CustomBuilders.AddClass("Hide")
 }
 
 var LB_types = ["classic","express","frogs"]

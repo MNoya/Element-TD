@@ -37,7 +37,7 @@
         </Panel>
 
         <Panel class="Hide" id="PreviewMenu">
-            <Panel onactivate="StartProfilePreviewLoop()">
+            <Panel onactivate="PreviewProfile()">
                 <Label id="preview_profile" class="PerkLabelMain" text="pass_player_profiles"/>
             </Panel>
             <Label id="preview_friends" class="PerkLabelSub" text="profile_friends"/>
