@@ -8,6 +8,7 @@ var CustomBuilders = $("#CustomBuilders")
 var Loading = $("#Loading")
 var friendsPanel = $("#FriendsContainer")
 var ResetButton = $("#ResetBuilderButton")
+var PreviewMenu = $("#PreviewMenu")
 var currentProfile;
 var currentLB = 0;
 var friendsRank
@@ -459,23 +460,20 @@ function SetPreviewProfile() {
 // This is shared by both active and inactive pass
 function ToggleHeader() {
     if (!bHasPass)
-        StartInactivePreview()
+        ToggleInactivePreview()
     else
         ToggleProfile()
 }
 
-function StartInactivePreview() {
+function ToggleInactivePreview() {
     ToggleProfile()
-    $.Schedule(5, function() {
-        if (!Profile.BHasClass("Hide"))
-        {
-            CustomBuilders.ToggleClass("Hide")
-            AnimateBuildersSpawn()
-            CloseProfile()
-            GameUI.CloseLeaderboard()
-            GameUI.CloseTowerTable()
-        } 
-    })
+    PreviewMenu.ToggleClass("Hide")
+
+    /*Show builder:
+      CustomBuilders.ToggleClass("Hide")
+      AnimateBuildersSpawn()
+      CloseProfile() 
+    */
 }
 
 function ToggleProfile() {

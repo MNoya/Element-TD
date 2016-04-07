@@ -260,6 +260,7 @@
     height: 60px;
     vertical-align: center;
     margin-left: 10px;
+    border-radius: 2px;
 }
 
 #UserNameContainer
@@ -883,6 +884,11 @@ DOTAUserName #UserNameProfile
     margin-bottom: 3px;
     flow-children: right;
     margin-bottom: 5px;
+}
+
+.FriendContainer:hover
+{
+    background-color: #88888822;
 }
 
 #FriendRank
@@ -1682,9 +1688,17 @@ Label
     align: left bottom;
     margin-left: 15px;
     margin-bottom: 15px;
-    box-shadow: #000 -2px -2px 6px 2px;
-    background-color: #66666611;
+    box-shadow: #000000aa 0px 0px 5px 0px;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #ffffff02 ), to( #ffffff04 ) ); //backgroundGradient
     flow-children: right;
+}
+
+.SimpleBevel
+{
+    border-top: 1px solid #99999905;
+    border-left: 1px solid #99999905;
+    border-right: 1px solid #00000060;
+    border-bottom: 1px solid #00000060;
 }
 
 .AvatarColumn
@@ -1733,4 +1747,60 @@ Label
 #ErrorNoMatches
 {
     margin-top: 55px;
+}
+
+//-----------
+#PreviewMenu
+{
+    width: 250px;
+    height: 340px;
+    horizontal-align: left;
+    vertical-align: top;
+    margin-top: 10%;
+    margin-left: 225px;
+
+    background-color: #000000DD;
+    border: 2px solid #484A48;
+    box-shadow: #000 -4px -4px 3px 8px;
+
+    flow-children: down;
+    padding: 10px;
+}
+
+.PerkLabelMain
+{
+    width: 250px;
+    color: white;
+    font-size: 26px;
+    text-align: right;
+    margin-top: 10px;
+    color: #768e8d;
+    letter-spacing: 1px;
+}
+
+.PerkLabelMain:hover
+{
+    text-shadow: 0px 0px 8px #5d7070;
+    color: white;
+    transition-property: color;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
+.PerkLabelSub
+{
+    width: 250px;
+    color: white;
+    font-size: 20px;
+    text-align: right;
+    color: #768e8d;
+}
+
+.PerkLabelSub:hover
+{
+    text-shadow: 0px 0px 6px #5d7070;
+    color: white;
+    transition-property: color;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
 }

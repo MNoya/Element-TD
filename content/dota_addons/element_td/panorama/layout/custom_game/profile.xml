@@ -17,7 +17,7 @@
                 <Panel id="MenuArrow" class="OpenMenuArrow" />
             </Panel>
             <Panel id="PassButtonsPanel">
-                <Panel id="PassPreview" onactivate="StartInactivePreview()"> <!-- Inactive buttons -->
+                <Panel id="PassPreview" onactivate="ToggleInactivePreview()"> <!-- Inactive buttons -->
                     <Label id="PassNotOwned" text="#pass_support"/>
                     <Panel id="PassPreviewButton">
                         <Label text="#pass_look_inside" />
@@ -34,6 +34,27 @@
                     </Panel>
                 </Panel>
             </Panel>
+        </Panel>
+
+        <Panel class="Hide" id="PreviewMenu">
+            <Panel id="PreviewPlayerProfile">
+                <Label class="PerkLabelMain" text="pass_player_profiles"/>
+            </Panel>
+            <Panel id="PreviewStats">
+                <Label class="PerkLabelSub" text="pass_stats_friends"/>
+            </Panel>
+            <Panel id="PreviewMatches">
+                <Label class="PerkLabelSub" text="pass_match_history"/>
+            </Panel>
+            <Panel id="PreviewAchievements">
+                <Label class="PerkLabelSub" text="pass_rank_achieves"/>
+            </Panel>
+            <Panel id="PreviewBuilders">
+                <Label class="PerkLabelMain" text="pass_custom_builders"/>
+            </Panel>
+            <Label class="PerkLabelMain" text="pass_other_perks"/>
+            <Label class="PerkLabelSub" text="pass_perk_vote"/>
+            <Label class="PerkLabelSub" text="pass_perk_flair"/>
         </Panel>
 
         <Panel class="Hide" id="Profile" onmouseover="GameUI.DenyWheel()" onmouseout="GameUI.AcceptWheel()">
@@ -353,6 +374,7 @@
                 </Panel>
             </Panel>
         </Panel>
+
         <Panel class="Hide" id="CustomBuilders">
             <Panel id="BuildersContainer">
                 <Panel class="BuilderColumn" onmouseover="Hovering('LightBackground'); AnimateBuilderHover('LightBuilder')"

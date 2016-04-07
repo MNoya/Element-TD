@@ -27,7 +27,7 @@
                     <!-- Added dynamically -->
                 </Panel>
                 
-                <Panel id="AvatarCurrentRanks" class="Hide">
+                <Panel id="AvatarCurrentRanks" class="Hide SimpleBevel">
                     <Panel class="AvatarColumn">
                         <Label class="AvatarRankLabel" text="#profile_classic_rank"/>
                         <Label id="ClassicRank" class="AvatarRankValue" text="420"/>
