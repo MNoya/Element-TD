@@ -37,24 +37,25 @@
         </Panel>
 
         <Panel class="Hide" id="PreviewMenu">
-            <Panel id="PreviewPlayerProfile">
-                <Label class="PerkLabelMain" text="pass_player_profiles"/>
+            <Panel onactivate="StartProfilePreviewLoop()">
+                <Label id="preview_profile" class="PerkLabelMain" text="pass_player_profiles"/>
             </Panel>
-            <Panel id="PreviewStats">
-                <Label class="PerkLabelSub" text="pass_stats_friends"/>
+            <Label id="preview_friends" class="PerkLabelSub" text="profile_friends"/>
+            <Panel onactivate="ShowProfileTab('stats')">
+                <Label id="preview_stats" class="PerkLabelSub" text="pass_lifetime_stats"/>
             </Panel>
-            <Panel id="PreviewMatches">
-                <Label class="PerkLabelSub" text="pass_match_history"/>
+            <Panel onactivate="ShowProfileTab('matches')">
+                <Label id="preview_matches" class="PerkLabelSub" text="pass_match_history"/>
             </Panel>
-            <Panel id="PreviewAchievements">
-                <Label class="PerkLabelSub" text="pass_rank_achieves"/>
+            <Panel onactivate="ShowProfileTab('achievements')">
+                <Label id="preview_achievements" class="PerkLabelSub" text="pass_rank_achieves"/>
             </Panel>
-            <Panel id="PreviewBuilders">
-                <Label class="PerkLabelMain" text="pass_custom_builders"/>
+            <Panel onactivate="OpenCustomBuilders()">
+                <Label id="preview_builders" class="PerkLabelMain" text="pass_custom_builders"/>
             </Panel>
-            <Label class="PerkLabelMain" text="pass_other_perks"/>
-            <Label class="PerkLabelSub" text="pass_perk_vote"/>
-            <Label class="PerkLabelSub" text="pass_perk_flair"/>
+            <Label class="PerkLabelMain" onmouseover="DOTAShowTextTooltip(#pass_perk_other_desc)" onmouseout="DOTAHideTextTooltip()" text="pass_perk_other"/>
+            <Label class="PerkLabelSub" onmouseover="DOTAShowTextTooltip(#pass_perk_vote_desc)" onmouseout="DOTAHideTextTooltip()" text="pass_perk_vote"/>
+            <Label class="PerkLabelSub" onmouseover="DOTAShowTextTooltip(#pass_perk_flair_desc)" onmouseout="DOTAHideTextTooltip()" text="pass_perk_flair"/>
         </Panel>
 
         <Panel class="Hide" id="Profile" onmouseover="GameUI.DenyWheel()" onmouseout="GameUI.AcceptWheel()">
@@ -99,7 +100,7 @@
                     </Panel>
                 </Panel>
 
-                <Label id="CloseButton" onactivate="ToggleProfile()"/>
+                <Label id="CloseButton" onactivate="ToggleProfile(); ClosePreview()"/>
             </Panel>
 
             <Panel id="ProfileMenuContainer">
@@ -422,7 +423,7 @@
 
             <Label id="CustomBuildersTitle" text="#profile_choose_builder"/>
             <Label id="CustomBuilderDescription" text="#profile_builder_description"/>
-            <Label id="CloseButton" onactivate="CloseCustomBuilders()"/>
+            <Label id="CloseButton" onactivate="CloseCustomBuilders(); ClosePreview()"/>
         </Panel>
         <Button id="ResetBuilderButton" class="Hide" onactivate="ResetBuilder()" 
                                                      onmouseover="DOTAShowTitleTextTooltip(#profile_reset_builder_title, #profile_reset_builder_tooltip)"

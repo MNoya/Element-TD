@@ -1753,7 +1753,7 @@ Label
 #PreviewMenu
 {
     width: 250px;
-    height: 340px;
+    height: 360px;
     horizontal-align: left;
     vertical-align: top;
     margin-top: 10%;
@@ -1770,15 +1770,14 @@ Label
 .PerkLabelMain
 {
     width: 250px;
-    color: white;
     font-size: 26px;
     text-align: right;
-    margin-top: 10px;
+    margin-top: 15px;
     color: #768e8d;
     letter-spacing: 1px;
 }
 
-.PerkLabelMain:hover
+.PerkLabelMain:hover, .PerkLabelMain.PerkActive
 {
     text-shadow: 0px 0px 8px #5d7070;
     color: white;
@@ -1787,16 +1786,16 @@ Label
     transition-timing-function: linear;
 }
 
+
 .PerkLabelSub
 {
     width: 250px;
-    color: white;
     font-size: 20px;
     text-align: right;
     color: #768e8d;
 }
 
-.PerkLabelSub:hover
+.PerkLabelSub:hover, .PerkLabelSub.PerkActive
 {
     text-shadow: 0px 0px 6px #5d7070;
     color: white;

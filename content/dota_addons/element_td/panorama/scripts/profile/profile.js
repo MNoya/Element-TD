@@ -407,7 +407,7 @@ function SetPreviewProfile() {
     MakeBoolBar(data, "express")
 
     var random = RandomInt(30, 50)
-    $("#gamesPlayed").text = GameUI.FormatNumber("100")
+    $("#gamesPlayed").text = GameUI.FormatNumber(data["gamesPlayed"])
     $("#random_pick").text = random+" ("+(random/data["gamesPlayed"]*100).toFixed(0)+"%)"
     $("#towersBuilt").text = GameUI.FormatNumber("1000")
     $("#towersSold").text = GameUI.FormatNumber("100")
@@ -469,11 +469,12 @@ function ToggleInactivePreview() {
     ToggleProfile()
     PreviewMenu.ToggleClass("Hide")
 
-    /*Show builder:
-      CustomBuilders.ToggleClass("Hide")
-      AnimateBuildersSpawn()
-      CloseProfile() 
-    */
+    if (!PreviewMenu.BHasClass("Hide"))
+    {
+        $("#preview_profile").AddClass("PerkActive")
+        $("#preview_friends").AddClass("PerkActive")
+        ShowProfileTab('stats')
+    }
 }
 
 function ToggleProfile() {
@@ -486,7 +487,7 @@ function ToggleProfile() {
     }
 
     // Load self in the background
-    if (Profile.BHasClass( "Hide" ))
+    if (Profile.BHasClass("Hide"))
     {
         Game.EmitSound("ui_quit_menu_fadeout")
         LoadLocalProfile()
@@ -507,6 +508,9 @@ function CloseProfile() {
 function CloseCustomBuilders() {
     CustomBuilders.AddClass("Hide")
     ResetButton.AddClass("Hide")
+}
+function ClosePreview() {
+    PreviewMenu.AddClass("Hide")
 }
 
 GameUI.CloseProfilePanels = function() {
@@ -529,6 +533,18 @@ function ToggleCustomBuilders() {
     CloseProfile()
 }
 
+function OpenCustomBuilders() {
+    CustomBuilders.RemoveClass("Hide")
+    AnimateBuildersSpawn()
+    CloseProfile()
+    $("#preview_builders").AddClass("PerkActive")
+    $("#preview_profile").RemoveClass("PerkActive")
+    $("#preview_friends").RemoveClass("PerkActive")
+    $("#preview_stats").RemoveClass("PerkActive")
+    $("#preview_matches").RemoveClass("PerkActive")
+    $("#preview_achievements").RemoveClass("PerkActive")
+}
+
 var LB_types = ["classic","express","frogs"]
 function ShowFriendRanks(leaderboard_type) {
     for (var i = 0; i < LB_types.length; i++) {
@@ -545,6 +561,13 @@ function ShowFriendRanks(leaderboard_type) {
 
 var leftNames = ["stats","matches","achievements"]
 function ShowProfileTab ( tabName ) {
+    // Toggle from custom builder panel
+    Profile.RemoveClass("Hide")
+    CustomBuilders.AddClass("Hide")
+    $("#preview_builders").RemoveClass("PerkActive")
+    $("#preview_profile").AddClass("PerkActive")
+    $("#preview_friends").AddClass("PerkActive")
+
     // Swap radio buttons and panel visibility
     for (var i = 0; i < leftNames.length; i++) {
         var name = leftNames[i]
@@ -556,6 +579,10 @@ function ShowProfileTab ( tabName ) {
         var tabPanel = $("#"+name+"_Tab")
         if (tabPanel)
             tabPanel.SetHasClass( "Hide", name != tabName )
+
+        var preview = $("#preview_"+name)
+        if (preview)
+            preview.SetHasClass( "PerkActive", name == tabName )
     };
 
     Game.EmitSound("ui_rollover_micro")
