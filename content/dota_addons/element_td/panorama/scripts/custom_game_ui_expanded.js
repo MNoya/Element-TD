@@ -88,6 +88,12 @@ GameUI.FormatDuration = function(sec_num) {
 //"current_time":"2016-03-30 12:53:43" - "date":"2016-03-27 04:52:54" = 3 days ago
 // 1 minute ago // 5 minutes ago // 1 hour ago // 5 hours ago // 1 day ago // 5 days ago // 1 week ago // 2 weeks ago //1 month ago // 5 months ago // 1 year ago // 5 years ago
 GameUI.FormatTimeAgo = function (time_now, time_old) {
+    if (!time_now)
+    {
+        var d = new Date()
+        time_now = d.getTime()
+    }
+
     var now = new Date(time_now)
     var old = new Date(time_old)
     var diff = (now - old)/1000
@@ -96,19 +102,20 @@ GameUI.FormatTimeAgo = function (time_now, time_old) {
     if (years > 0)
         return DateDiff.inPlural(years, "year")
 
-    var months = DateDiff.inMonths(old, now)
-    if (months > 0)
-        return DateDiff.inPlural(months, "month")
-
     var weeks = DateDiff.inWeeks(old, now)
+    var months = DateDiff.inMonths(old, now)
+    if (months > 0 && weeks > 3)
+        return DateDiff.inPlural(months, "month")
+    
     if (weeks > 0)
         return DateDiff.inPlural(weeks, "week")
 
     var days = DateDiff.inDays(old, now)
-    if (days > 0)
+    var hours = DateDiff.inHours(old, now)
+    
+    if (days > 0 && hours > 23)
         return DateDiff.inPlural(days, "day")
 
-    var hours = DateDiff.inHours(old, now)
     if (hours > 0)
         return DateDiff.inPlural(hours, "hour")
 
