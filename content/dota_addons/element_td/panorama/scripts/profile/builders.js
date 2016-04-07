@@ -40,6 +40,8 @@ function AnimateBuilderIdle(id) {
 }
 
 function Hovering(name) {
+    if (!bHasPass) return
+
     var panel = $("#"+name)
     panel.AddClass("Hovering")
     panel.hovering = true
@@ -59,6 +61,8 @@ function HoverOut(name) {
 }
 
 function ChooseBuilder(heroName) {
+    if (!bHasPass) return
+
     GameEvents.SendCustomGameEventToServer( "player_choose_custom_builder", { "hero_name": heroName } );
     CloseCustomBuilders()
     
@@ -86,6 +90,11 @@ function HighlightSelectedBuilder () {
     var hero =  Players.GetPlayerHeroEntityIndex(Players.GetLocalPlayer())
     var heroName = Entities.GetUnitName(hero)
 
+    $.Schedule(1, HighlightSelectedBuilder)
+    
+    bHasPass = GameUI.PlayerHasProfile(Game.GetLocalPlayerID())
+    if (!bHasPass) return
+
     for (var name in backgrounds)
     {
         if (name == heroName)
@@ -97,7 +106,6 @@ function HighlightSelectedBuilder () {
                 HoverOut(backgrounds[name])
         }
     }
-    $.Schedule(1, HighlightSelectedBuilder)
 }
 
 function ResetBuilder () {
@@ -106,3 +114,4 @@ function ResetBuilder () {
 }
 
 $.Schedule(1, HighlightSelectedBuilder)
+var bHasPass = GameUI.PlayerHasProfile(Game.GetLocalPlayerID())
