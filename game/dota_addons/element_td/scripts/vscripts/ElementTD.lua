@@ -191,9 +191,8 @@ function ElementTD:OnGameStateChange(keys)
         -- Load donation rewards
         Rewards:Load()
 
-        -- Load builders
+        -- Save and load player
         ForAllPlayerIDs(function(playerID)
-            Saves:LoadBuilder(playerID)
             Saves:SaveHasPass(playerID)
         end)
     end

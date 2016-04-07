@@ -31,6 +31,11 @@ function Saves:SaveHasPass(playerID)
     local request = Saves.url .. "&id=" .. steamID .. "&save=1" .. "&pass=" .. bHasPass
 
     local req = CreateHTTPRequest('GET', request)
+
+    -- Send another request to get the player builder
+    if bHasPass == 1 then
+        Saves:LoadBuilder(playerID)
+    end
     
     Saves:Send(req, function(obj)
         -- Success
