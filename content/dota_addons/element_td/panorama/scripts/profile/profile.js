@@ -11,6 +11,7 @@ var currentProfile;
 var currentLB = 0;
 var friendsRank
 var friends = []
+var bHasPass = GameUI.PlayerHasProfile(Game.GetLocalPlayerID())
 
 //cache everything
 var Stats = {}
@@ -364,8 +365,6 @@ function LoadProfile(steamID64) {
 
 // This is shared by both active and inactive pass
 function ToggleHeader() {
-    var bHasPass = GameUI.PlayerHasProfile(Game.GetLocalPlayerID())
-
     if (!bHasPass)
         StartInactivePreview()
     else
@@ -377,7 +376,6 @@ function StartInactivePreview() {
 }
 
 function ToggleProfile() {
-    var bHasPass = GameUI.PlayerHasProfile(Game.GetLocalPlayerID())
     Profile.ToggleClass("Hide")
 
     if (!bHasPass)
@@ -464,8 +462,6 @@ function ShowProfileTab ( tabName ) {
 }
 
 function MakeButtonVisible() {
-    var bHasPass = GameUI.PlayerHasProfile(Game.GetLocalPlayerID())
-
     $("#PassPreview").SetHasClass("Hide", bHasPass)
     $("#PassAccess").SetHasClass("Hide", !bHasPass)
 
@@ -486,7 +482,7 @@ function CheckHUDFlipped() {
 }
 
 function CheckProfile() {
-    var bHasPass = GameUI.PlayerHasProfile(Game.GetLocalPlayerID())
+    bHasPass = GameUI.PlayerHasProfile(Game.GetLocalPlayerID())
 
     $("#PassPreview").SetHasClass("Hide", bHasPass)
     $("#PassAccess").SetHasClass("Hide", !bHasPass)
@@ -497,9 +493,9 @@ function CheckProfile() {
 (function () {
     $.Schedule(0.1, function()
     {
+        CheckProfile()
         MakeButtonVisible()
         GameUI.AcceptWheel()
         CheckHUDFlipped()
-        CheckProfile()
     })
 })();
