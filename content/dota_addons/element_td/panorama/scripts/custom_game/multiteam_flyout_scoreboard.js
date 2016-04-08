@@ -46,6 +46,18 @@ function RefreshScoreboard()
 		SetFlyoutScoreboardVisible(true)
 	}
 
+    if (Game.IsCoop())
+    {
+     	$.GetContextPanel().FindChildTraverse("ScoreContainer").AddClass("Hide")
+     	$.GetContextPanel().FindChildInLayoutFile("TeamScore").AddClass("Hide")
+
+     	$.GetContextPanel().FindChildTraverse("LivesContainer").AddClass("Hide")
+     	$.GetContextPanel().FindChildInLayoutFile("TeamLives").AddClass("Hide")
+
+     	$.GetContextPanel().FindChildTraverse("KillsContainer").AddClass("Hide")
+     	$.GetContextPanel().FindChildInLayoutFile("KillsRemaining").AddClass("Hide")
+    }
+
 	GameEvents.Subscribe( "etd_update_scoreboard", RefreshScoreboard );
 	$.RegisterEventHandler( "DOTACustomUI_SetFlyoutScoreboardVisible", $.GetContextPanel(), SetFlyoutScoreboardVisible );
 })();

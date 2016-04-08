@@ -474,6 +474,7 @@ function ScoreboardUpdater_InitializeScoreboard( scoreboardConfig, scoreboardPan
         scoreboardConfig.shouldSort = false;
     }
     _ScoreboardUpdater_UpdateAllTeamsAndPlayers( scoreboardConfig, scoreboardPanel );
+    
     return { "scoreboardConfig": scoreboardConfig, "scoreboardPanel":scoreboardPanel }
 }
 

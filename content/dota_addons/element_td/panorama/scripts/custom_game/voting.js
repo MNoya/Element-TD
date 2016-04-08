@@ -450,8 +450,10 @@ function Setup()
     votingLiveUI.AddClass("hidden");
     UpdateNotVoted();
     ShowGamemodeViewer();
-}
 
+    if (Game.IsCoop())
+        $("#Option_Endless").AddClass("Hidden")
+}
 
 (function () {
     Setup();
