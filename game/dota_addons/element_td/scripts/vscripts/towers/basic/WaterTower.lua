@@ -16,13 +16,52 @@ nil)
 
 function WaterTower:OnAttackLanded(keys)
     local target = keys.target
+    local ability = self.ability
     local damage = self.tower:GetAverageTrueAttackDamage()
     DamageEntitiesInArea(target:GetAbsOrigin(), self.halfAOE, self.tower, damage / 2)
     DamageEntitiesInArea(target:GetAbsOrigin(), self.fullAOE, self.tower, damage / 2)
 
-    self:StartBounce(target, self.maxBounces)
+    local bounce_target = FindBounceTarget(target, self.bounceRange)
+    if bounce_target then
+        local sourceLoc = target:GetAbsOrigin()
+        sourceLoc.z = sourceLoc.z + 32
+
+        ProjectileManager:CreateTrackingProjectile({
+            Target = bounce_target,
+            Source = target,
+            Ability = ability,
+            EffectName = ability.projectileName,
+            iMoveSpeed = ability.bounceSpeed,
+            vSourceLoc = sourceLoc,
+            bReplaceExisting = false,
+            flExpireTime = GameRules:GetGameTime() + 10,
+        })
+    end
 end
 
+function WaterTower:OnBounceHit(keys)
+    local target = keys.target
+    local damage = self.tower:GetAverageTrueAttackDamage() * self.bounceDamage
+    DamageEntitiesInArea(target:GetAbsOrigin(), self.halfAOE, self.tower, damage / 2)
+    DamageEntitiesInArea(target:GetAbsOrigin(), self.fullAOE, self.tower, damage / 2)
+end
+
+function FindBounceTarget(original_target, radius)
+    local validTargets = {}
+    local creeps = GetCreepsInArea(original_target:GetAbsOrigin(), radius)
+    
+    for _, creep in pairs(creeps) do
+        if creep:IsAlive() and creep:entindex() ~= original_target:entindex() then
+            table.insert(validTargets, creep)
+        end
+    end
+
+    if #validTargets > 0 then
+        return validTargets[math.random(#validTargets)]
+    end
+end
+
+--[[Old Multi-bouncer
 function WaterTower:StartBounce(original_target, remaining_bounces)
 
     -- Find a valid target to bounce to
@@ -59,21 +98,6 @@ function WaterTower:StartBounce(original_target, remaining_bounces)
             bReplaceExisting = false,
             flExpireTime = GameRules:GetGameTime() + 10,
         })
-    end
-end
-
-function FindBounceTarget(original_target, radius)
-    local validTargets = {}
-    local creeps = GetCreepsInArea(original_target:GetAbsOrigin(), radius)
-    
-    for _, creep in pairs(creeps) do
-        if creep:IsAlive() and creep:entindex() ~= original_target:entindex() then
-            table.insert(validTargets, creep)
-        end
-    end
-
-    if #validTargets > 0 then
-        return validTargets[math.random(#validTargets)]
     end
 end
 
@@ -126,6 +150,7 @@ function OnBounceHit(event)
         UTIL_Remove(ability.dummy)
     end
 end
+]]
 
 function WaterTower:OnCreated()
     self.fullAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))
@@ -133,10 +158,10 @@ function WaterTower:OnCreated()
 
     self.dummies = {}
     self.ability = AddAbility(self.tower, "water_tower_water_bullet")
-    self.maxBounces = self.ability:GetSpecialValueFor("bounces")
+    --self.maxBounces = self.ability:GetSpecialValueFor("bounces")
+    --self.aoeReduction = self.ability:GetSpecialValueFor("aoe_reduction")
     self.bounceRange = self.ability:GetSpecialValueFor("bounce_range")
-    self.aoeReduction = self.ability:GetSpecialValueFor("aoe_reduction")
-    print("Water tower aoe reduction " .. self.aoeReduction)
+    self.bounceDamage = self.ability:GetSpecialValueFor("bounce_damage_pct") * 0.01
 
     self.bounceSpeed = self.tower:GetProjectileSpeed() / 3
     self.projectileName = "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf" 

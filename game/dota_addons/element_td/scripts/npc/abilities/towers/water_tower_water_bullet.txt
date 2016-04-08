@@ -1,6 +1,7 @@
 //=================================================================================================================
 // Water Tower: Water Bullet
-// Each attack bounces up to 3 times. Said attacks are all splash, bounce range is 150, and they don't increase/decrease in damage.
+// Causes a single bounce which hits a creep within 150 AoE. Said bounce deals 25% Damage
+// OLD: Each attack bounces up to 3 times. Said attacks are all splash, bounce range is 150, and they don't increase/decrease in damage.
 //=================================================================================================================
 "water_tower_water_bullet"
 {
@@ -16,8 +17,9 @@
         "DeleteOnHit"   "1"
         "RunScript"
         {
-            "ScriptFile"        "towers/basic/WaterTower.lua"
-            "Function"          "OnBounceHit"
+            "ScriptFile"        "towers/towerevents.lua"
+            "Function"          "TriggerEvent"
+            "Event"             "OnBounceHit"
         }
     }
 
@@ -26,17 +28,12 @@
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "bounces"             "3"
+            "bounce_range"        "150"
         }
         "02"
         {
             "var_type"            "FIELD_INTEGER"
-            "bounce_range"        "550"
-        }
-        "03"
-        {
-            "var_type"            "FIELD_INTEGER"
-            "aoe_reduction"       "40"
+            "bounce_damage_pct"   "25"
         }
     }
 }
