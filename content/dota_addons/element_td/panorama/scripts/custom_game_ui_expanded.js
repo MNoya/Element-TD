@@ -417,3 +417,8 @@ GameUI.GetLocalPlayerSteamID = function () {
     return playerInfo ? playerInfo.player_steamid : -1
 }
 
+Game.IsCoop = function() {
+    var mapInfo = Game.GetMapInfo()
+    if (mapInfo)
+        return mapInfo.map_display_name == "element_td_coop"
+}

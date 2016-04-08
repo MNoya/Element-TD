@@ -144,6 +144,7 @@ function ElementTD:GetMapMode()
         return EXPRESS_MODE and 3 or 2
     else
         return EXPRESS_MODE and 1 or 0
+    end
 end
 
 -- called when 'script_reload' is run
