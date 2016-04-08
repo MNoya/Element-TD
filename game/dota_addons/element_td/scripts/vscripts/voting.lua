@@ -74,7 +74,7 @@ function GetWinningDifficulty()
 end
 
 function AddVote(playerID, option, choice)
-	local value = Rewards:PlayerHasPass(playerID) and 3 or 2 -- x1.5 weight
+	local value = Rewards:PlayerHasPass(playerID) and 2 or 1 -- x2 weight
 	if not option[choice] then
 		option[choice] = value
 	else
