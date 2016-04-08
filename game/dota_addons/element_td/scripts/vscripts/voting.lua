@@ -217,35 +217,32 @@ function FinalizeVotes()
 	end
 
 	Log:trace("Creating post vote timer")
-	Timers:CreateTimer("PostVoteTimer", {
-		endTime = 1,
-		callback = function()
+	Timers:CreateTimer(1, function()
 
-			if COOP_MAP then
-				StartBreakTimeCoop(GameSettings.length.PregameTime) -- maybe coop mode should have longer pregame time?
-			else
-				for _, plyID in pairs(playerIDs) do
-					StartBreakTime(plyID, GameSettings.length.PregameTime)
-				end
+		if COOP_MAP then
+			StartBreakTimeCoop(GameSettings.length.PregameTime) -- maybe coop mode should have longer pregame time?
+		else
+			for _, plyID in pairs(playerIDs) do
+				StartBreakTime(plyID, GameSettings.length.PregameTime)
 			end
-
-			if GameSettings.length.PregameTime == 30 then
-				EmitAnnouncerSound("announcer_announcer_count_battle_30")
-			else
-				local delay = GameSettings.length.PregameTime - 30
-				if delay > 0 then
-					Timers:CreateTimer(delay, function()
-						EmitAnnouncerSound("announcer_announcer_count_battle_30")
-					end)
-				end
-			end
-
-			-- Display player ranks
-			Timers:CreateTimer(5, function()
-				Ranking:ShowPlayerRanks()
-			end)
 		end
-	})
+
+		if GameSettings.length.PregameTime == 30 then
+			EmitAnnouncerSound("announcer_announcer_count_battle_30")
+		else
+			local delay = GameSettings.length.PregameTime - 30
+			if delay > 0 then
+				Timers:CreateTimer(delay, function()
+					EmitAnnouncerSound("announcer_announcer_count_battle_30")
+				end)
+			end
+		end
+
+		-- Display player ranks
+		Timers:CreateTimer(5, function()
+			Ranking:ShowPlayerRanks()
+		end)
+	end)
 end
 
 function ElementTD:OnPlayerVoted( table )
