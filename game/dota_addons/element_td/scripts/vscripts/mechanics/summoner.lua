@@ -16,7 +16,7 @@ function SummonElemental(keys)
     origin.z = origin.z + 20
     ParticleManager:SetParticleControl(explosion, 0, origin)
 
-    if playerData.elementalCount == 0 or EXPRESS_MODE then
+    if playerData.elementalCount == 0 or EXPRESS_MODE or COOP_MAP then
         Sounds:PlayElementalDeathSound(playerID, element)
         BuyElement(playerID, element)
         return
