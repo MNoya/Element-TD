@@ -64,7 +64,7 @@ end
 
 function LightTower:OnCreated()
     self.ability = AddAbility(self.tower, "light_tower_intensity", self.tower:GetLevel())
-    self.damagePerAttack = self.ability:GetSpecialValueFor("damage") 
+    self.damagePerAttack = self.ability:GetLevelSpecialValueFor("damage", self.ability:GetLevel() - 1)
     self.baseDamage = self.tower:GetBaseDamageMax() 
     self.consecutiveAttacks = 0  
     self.particles = {}

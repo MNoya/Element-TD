@@ -3804,7 +3804,7 @@
 	    "BaseClass"                     "ability_datadriven"                                            
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	    "AbilityTextureName"            "towers/light"
-	    "MaxLevel"                      "1"
+	    "MaxLevel"                      "4"
 	
 	    "Modifiers"
 	    {
