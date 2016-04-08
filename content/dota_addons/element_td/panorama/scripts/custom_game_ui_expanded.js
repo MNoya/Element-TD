@@ -332,17 +332,20 @@ GameUI.AcceptWheel = function() {
 GameUI.PlayerHasProfile = function (playerID) {
     var steamID64 = GameUI.GetPlayerSteamID(playerID)
     var rewardLevel = GameUI.RewardLevel(steamID64)
-    return Players.HasCustomGameTicketForPlayerID(playerID) || rewardLevel == "Developer" // || rewardLevel == rewardLevel > 0
+    return true//Players.HasCustomGameTicketForPlayerID(playerID) || rewardLevel == "Developer" // || rewardLevel == rewardLevel > 0
 }
 
 // Save request by steamID
 GameUI.CheckPlayerPass = function (steamID64, callback) {
     var steamID32 = GameUI.ConvertID32(steamID64)
 
-    /* Testing
+    // Mark devs as pass owners in the UI
     var rewardLevel = GameUI.RewardLevel(steamID64)
     if (rewardLevel == "Developer")
-        callback(true)*/
+    {
+        callback(true)
+        return
+    }
 
     $.AsyncWebRequest( "http://hatinacat.com/leaderboard/data_request.php?req=save&id="+steamID32, { type: 'GET', 
         success: function( data ) {
