@@ -166,7 +166,7 @@ end
 
 function generateSectorPortals()
     for i = 1, 8 do
-        SectorPortals[i] = Entities:FindByName(nil, "portal_sector" .. i)
+        SectorPortals[i] = Entities:FindByName(nil, "portal_" .. i)
     end
 end
 

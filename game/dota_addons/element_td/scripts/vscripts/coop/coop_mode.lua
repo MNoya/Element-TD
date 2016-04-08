@@ -148,37 +148,34 @@ function StartBreakTimeCoop(breakTime)
 	end
 
 	-- create the timer to wait for wave spawn
-    Timers:CreateTimer("SpawnWaveDelayCoop", {
-        endTime = breakTime,
-        callback = function()
+    Timers:CreateTimer(breakTime, function()
 
-            if COOP_WAVE == WAVE_COUNT and not EXPRESS_MODE then
-                CURRENT_BOSS_WAVE = 1
-                
-                -- TODO: make this work with co-op mode
-                --[[
-                if PlayerIsAlive(playerID) then
-                    Log:info("Spawning the first boss wave for ["..playerID.."]")            
-                    playerData.iceFrogKills = 0
-                    playerData.bossWaves = CURRENT_BOSS_WAVE
-                end
-                ShowBossWaveMessage(playerID, CURRENT_BOSS_WAVE)
-                UpdateWaveInfo(playerID, wave)
-                ]]--
-            else
-            	Log:info("Spawning co-op wave " .. COOP_WAVE)
-            	for _, playerID in pairs(playerIDs) do
-					ShowWaveSpawnMessage(playerID, COOP_WAVE) -- show wave spawn message
-					UpdateWaveInfo(playerID, COOP_WAVE) -- update wave info
-				end
+        if COOP_WAVE == WAVE_COUNT and not EXPRESS_MODE then
+            CURRENT_BOSS_WAVE = 1
+            
+            -- TODO: make this work with co-op mode
+            --[[
+            if PlayerIsAlive(playerID) then
+                Log:info("Spawning the first boss wave for ["..playerID.."]")            
+                playerData.iceFrogKills = 0
+                playerData.bossWaves = CURRENT_BOSS_WAVE
             end
-
-            if COOP_WAVE == 1 then
-                EmitAnnouncerSound("announcer_announcer_battle_begin_01")
-            end
-
-            -- spawn dat wave
-            SpawnWaveCoop() 
+            ShowBossWaveMessage(playerID, CURRENT_BOSS_WAVE)
+            UpdateWaveInfo(playerID, wave)
+            ]]--
+        else
+        	Log:info("Spawning co-op wave " .. COOP_WAVE)
+        	for _, playerID in pairs(playerIDs) do
+				ShowWaveSpawnMessage(playerID, COOP_WAVE) -- show wave spawn message
+				UpdateWaveInfo(playerID, COOP_WAVE) -- update wave info
+			end
         end
-    })
+
+        if COOP_WAVE == 1 then
+            EmitAnnouncerSound("announcer_announcer_battle_begin_01")
+        end
+
+        -- spawn dat wave
+        SpawnWaveCoop() 
+    end)
 end

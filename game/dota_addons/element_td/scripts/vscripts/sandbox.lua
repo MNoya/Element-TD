@@ -256,8 +256,13 @@ function Sandbox:SpawnWave(event)
         ShowWaveSpawnMessage(playerID, waveNumber)
     end
 
-    SpawnWaveForPlayer(playerID, waveNumber)
-    ShowPortalForSector(playerData.sector+1, waveNumber, playerID)
+    if COOP_MAP then
+        COOP_WAVE = waveNumber
+        SpawnWaveCoop()
+    else
+        SpawnWaveForPlayer(playerID, waveNumber)
+        ShowPortalForSector(playerData.sector+1, waveNumber, playerID)
+    end
 
     UpdateWaveInfo(playerID, playerData.nextWave-1)
     UpdateWaveInfo(playerID, playerData.nextWave)
