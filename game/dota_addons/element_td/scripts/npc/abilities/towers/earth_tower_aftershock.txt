@@ -1,8 +1,8 @@
 //=================================================================================================================
-// Earth Tower: (OLD) Landslide
-// Ministun on main target, can only happen once every second.
+// Earth Tower: Aftershock
+// 0.5 seconds after damage, half damage same area.
 //=================================================================================================================
-"earth_tower_landslide"
+"earth_tower_aftershock"
 {
     // General
     //-------------------------------------------------------------------------------------------------------------
@@ -11,26 +11,17 @@
     "AbilityTextureName"            "towers/earth"
     "MaxLevel"                      "1"
 
-    "Modifiers"
-    {
-        "modifier_earth_tower_stun"
-        {
-            "IsHidden"           "1"
-            "IsDebuff"           "1"
-        
-            "States"
-            {
-                "MODIFIER_STATE_STUNNED"        "MODIFIER_STATE_VALUE_ENABLED"
-            }
-        }
-    }
-
     "AbilitySpecial"
     {
         "01"
         {
-            "var_type"            "FIELD_FLOAT"
-            "ministun_duration"   "0.1"
+            "var_type"              "FIELD_INTEGER"
+            "aftershock_damage_pct" "50"
+        }
+        "01"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "aftershock_delay"      "0.5"
         }
     }
 }
