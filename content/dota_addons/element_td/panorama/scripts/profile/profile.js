@@ -534,6 +534,13 @@ function ToggleMinimize() {
     $("#MinimizeButton").ToggleClass("Off")
 }
 
+function MinimizeTooltip() {
+    if ($("#MinimizeButton").BHasClass("Off"))
+        $.DispatchEvent("DOTAShowTextTooltip", $("#MinimizeButton"), $.Localize("#pass_maximize"));
+    else
+        $.DispatchEvent("DOTAShowTextTooltip", $("#MinimizeButton"), $.Localize("#pass_minimize"));
+}
+
 function CloseProfile() {
     Profile.AddClass("Hide")
 }

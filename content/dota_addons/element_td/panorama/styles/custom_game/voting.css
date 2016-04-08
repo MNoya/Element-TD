@@ -111,6 +111,11 @@
     margin-bottom: 4px;
 }
 
+.Pass
+{
+    box-shadow: 0px 0px 6px 1.5 #FBB23F;
+}
+
 .VotedPlayerVotes
 {
     margin-left: 42px;

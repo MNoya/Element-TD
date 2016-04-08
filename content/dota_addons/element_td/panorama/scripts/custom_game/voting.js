@@ -179,6 +179,8 @@ function UpdateNotVoted()
             notVoted.AddClass('VotingAvatar');
             notVoted.AddClass('NotVoted');
             notVoted.steamid = playerData.player_steamid;
+
+            GameUI.SetupAvatarTooltip(notVoted, $.GetContextPanel(), notVoted.steamid)
             position += 1;
         }
     };
@@ -192,14 +194,19 @@ function UpdateNotVoted()
 function PlayerVoted( data )
 {
     $.Msg(data);
-    var playerID = data.playerID;
-    var playerData = Game.GetPlayerInfo(parseInt(playerID));
+    var playerID = parseInt(data.playerID);
+    var playerData = Game.GetPlayerInfo(playerID);
     var vote = $.CreatePanel('Panel', votingLiveHasVoted, '');
     vote.AddClass('VotedPlayer');
+
+    if (GameUI.PlayerHasProfile(playerID))
+        vote.AddClass('Pass')
 
     var avatar = $.CreatePanel('DOTAAvatarImage', vote, '');
     avatar.AddClass('VotingAvatar');
     avatar.steamid = playerData.player_steamid;
+
+    GameUI.SetupAvatarTooltip(avatar, $.GetContextPanel(), avatar.steamid)
 
     var votes = $.CreatePanel('Panel', vote, '');
     votes.AddClass('VotedPlayerVotes');
