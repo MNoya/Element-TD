@@ -39,7 +39,8 @@ function RequestData() {
 
             if (player_info)
             {
-                $("#favorite_element").SetImage("file://{resources}/images/custom_game/resources/"+player_info["allTime"]["favouriteElement"]+".png");
+                if (player_info["allTime"])
+                    $("#favorite_element").SetImage("file://{resources}/images/custom_game/resources/"+player_info["allTime"]["favouriteElement"]+".png");
 
                 if (player_info["rank"] || player_info["rank_exp"] || player_info["rank_frogs"])
                     SetAvatarRanks(player_info)

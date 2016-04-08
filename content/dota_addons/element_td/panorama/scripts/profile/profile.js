@@ -367,7 +367,6 @@ function LoadProfile(steamID64) {
     ShowFriendRanks("classic")
 }
 
-// RandomGameUI.FormatNumber( data)
 function SetPreviewProfile() {
     $.Msg("Setting Preview Profile")
 
@@ -467,7 +466,18 @@ function SetPreviewProfile() {
     CreateMatch({"matchID":1,"score":"10550","difficulty":"Normal","mode":1,"order":"Normal","horde":"Normal","random":"AllRandom","fire":"0","water":"0","nature":"3","earth":"1","light":"3","dark":"0","date":"2016-03-01 00:00:00"})
     CreateMatch({"matchID":1,"score":"9000","difficulty":"Normal","mode":0,"order":"Normal","horde":"Normal","random":"AllPick","fire":"1","water":"1","nature":"1","earth":"2","light":"2","dark":"2","date":"2016-02-29 00:00:00"})
 
-    ShowFriendRanks("classic")
+    // Friends
+    friendsRank = 0
+    CreateFriendPanel({"steamID":"86718505","score":"644000","rank":"1","percentile":0.1}, 0)
+    CreateFriendPanel({"steamID":"34961594","score":"420000","rank":"10","percentile":1}, 0)
+    CreateFriendPanel({"steamID":"8035838","score":"322000","rank":"50","percentile":10}, 0)
+    CreateFriendPanel({"steamID":"66998815","score":"100000","rank":"100","percentile":20}, 0)
+    CreateFriendPanel({"steamID":"84998953","score":"9001","rank":"500","percentile":30}, 0)
+    CreateFriendPanel({"steamID":"59573794","score":"1337","rank":"10000","percentile":80}, 0)
+
+    var localPlayerSteamID = GameUI.GetLocalPlayerSteamID()
+    if (!GameUI.IsDeveloper(localPlayerSteamID))
+        CreateFriendPanel({"steamID":GameUI.ConvertID32(localPlayerSteamID),"score":"0","rank":"90000","percentile":99}, 0) //Adds the player
 }
 
 // This is shared by both active and inactive pass
