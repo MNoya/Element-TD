@@ -309,6 +309,8 @@
         "pass_perk_vote_desc"   "Your vote will weight more when choosing the modes at game start"
         "pass_perk_flair_desc"  "Visible on friend profiles, top player bar, leaderboards and endgame."
         "pass_perk_flair"       "Pass flair on player avatar"
+        "pass_minimize"         "Minimize Pass Panel"
+        "pass_maximize"         "Maximize Pass Panel"
 
         "year"      "year"
         "years"     "years"

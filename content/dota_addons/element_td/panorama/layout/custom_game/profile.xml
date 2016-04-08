@@ -36,7 +36,8 @@
             </Panel>
         </Panel>
         <Panel id="MinimizePanel" onactivate="ToggleMinimize()">
-            <Panel id="MinimizeButton"/>
+            <Panel id="MinimizeButton" onmouseover="MinimizeTooltip()" onmouseout="DOTAHideTextTooltip()"/>
+            
         </Panel>
 
         <Panel class="Hide" id="PreviewMenu">
