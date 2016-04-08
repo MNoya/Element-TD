@@ -65,17 +65,7 @@ function ChooseBuilder(heroName) {
 
     GameEvents.SendCustomGameEventToServer( "player_choose_custom_builder", { "hero_name": heroName } );
     CloseCustomBuilders()
-    
-    // Hover all out
-    for (var name in backgrounds)
-    {
-        var panel = $("#"+backgrounds[name])
-        if (panel)
-        {
-            panel.RemoveClass("Hovering")
-            panel.hovering = undefined
-        }
-    }
+    HoverAllOut()
 }
 
 var backgrounds = {}
@@ -108,9 +98,22 @@ function HighlightSelectedBuilder () {
     }
 }
 
+function HoverAllOut() {
+    for (var name in backgrounds)
+    {
+        var panel = $("#"+backgrounds[name])
+        if (panel)
+        {
+            panel.RemoveClass("Hovering")
+            panel.hovering = undefined
+        }
+    }
+}
+
 function ResetBuilder () {
     GameEvents.SendCustomGameEventToServer( "player_reset_builder", {} );
     CloseCustomBuilders()
+    HoverAllOut()
 }
 
 $.Schedule(1, HighlightSelectedBuilder)
