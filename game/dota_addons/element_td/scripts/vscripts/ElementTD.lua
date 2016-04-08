@@ -138,6 +138,14 @@ function ElementTD:InitGameMode()
     print("Loaded Element Tower Defense!")
 end
 
+--0 normal, 1 express, 2 normal coop, 3 normal express
+function ElementTD:GetMapMode()
+    if COOP_MAP then
+        return EXPRESS_MODE and 3 or 2
+    else
+        return EXPRESS_MODE and 1 or 0
+end
+
 -- called when 'script_reload' is run
 function ElementTD:OnScriptReload()
     -- Reload files
