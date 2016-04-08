@@ -190,7 +190,6 @@ function ElementTD:OnGameStateChange(keys)
         self:StartGame()
     elseif state == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
 
-
         if COOP_MAP then
             SendToServerConsole("customgamesetup_auto_assign_players")
             SendToServerConsole("customgamesetup_set_remaining_time 10")

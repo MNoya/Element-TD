@@ -110,10 +110,16 @@ function GameSettings:SetGameLength(length)
 		GameSettings:SetGameLength("Normal")
 		return
 	end
+
+    local baseGold = GameSettings.length.Gold
+    if COOP_MAP then
+        baseGold = math.floor(baseGold * 4 / PlayerResource:GetPlayerCount() + 0.5)
+    end
+
 	for _,plyID in pairs(playerIDs) do
 		local playerData = GetPlayerData(plyID)
 
-		SetCustomGold(plyID, GameSettings.length.Gold)
+		SetCustomGold(plyID, baseGold)
 		ModifyLumber(plyID, GameSettings.length.Lumber)
 		playerData.nextWave = GameSettings.length.Wave
 
