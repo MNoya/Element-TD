@@ -3,6 +3,7 @@
 COOP_WAVE = 1 -- the current wave 
 CREEPS_PER_WAVE_COOP = 120 -- number of creeps in each wave
 CURRENT_WAVE_OBJECT = nil -- maybe should hold the WaveCoop 'object' of the wave that is currently active (can we ever have > 1 waves at once?)
+LEAK_POINTS = {[1]=5,[2]=4,[3]=6,[4]=2,[5]=1,[6]=3} -- Coop creeps leak at the opposite side from where they came
 
 function SpawnWaveCoop()
 	-- spawn wave COOP_WAVE
@@ -29,9 +30,11 @@ end
 
 function CreateMoveTimerForCreepCoop(creep, sector)
     local destination = EntityEndLocations[sector]
+
     Timers:CreateTimer(0.1, function()
         if IsValidEntity(creep) and creep:IsAlive() then
             creep:MoveToPosition(destination)
+
             if (creep:GetAbsOrigin() - destination):Length2D() <= 100 then
                 
                 -- TODO: make interest work with co-op mode
@@ -63,7 +66,10 @@ function CreateMoveTimerForCreepCoop(creep, sector)
                     if IsValidEntity(creep) then creep.recently_leaked = nil end
                 end)
 
-                FindClearSpaceForUnit(creep, EntityStartLocations[sector], true)
+                creep.times_leaked = creep.times_leaked and creep.times_leaked + 1 or 1
+                local leak_position = creep.times_leaked % 2 == 0 and EntityStartLocations[sector] or EntityStartLocations[LEAK_POINTS[sector]]
+                FindClearSpaceForUnit(creep, leak_position, true)
+
                 creep:SetForwardVector(Vector(0, -1, 0))
             end
             return 0.1
