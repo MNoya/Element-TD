@@ -28,6 +28,7 @@
         "etd_random_already_enabled" "You are already playing Random mode!"
         "etd_random_elemental"      "An elemental has been randomed for you!"
         "etd_random_essence"        "A pure essence has been randomed for you!"
+        "etd_random_wait_for_vote"  "Wait until voting has ended to enable random!"
         
         "etd_lumber_add"            "You have been given +{amount} Lumber!"
         "etd_essence_add"           "You have been given +{amount} Pure Essence!"

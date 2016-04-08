@@ -154,6 +154,9 @@ function GameSettings:EnableRandomForPlayer(playerID)
     if IsPlayerUsingRandomMode(playerID) then
     	SendErrorMessage(playerID, "#etd_random_already_enabled")
 
+    elseif not VOTING_FINISHED then 
+        SendErrorMessage(playerID, "#etd_random_wait_for_vote")        
+
     elseif CanPlayerEnableRandom(playerID) then
         playerData.elementalRandom = true
         Log:info("Enabled Random for player "..playerID)
