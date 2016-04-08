@@ -48,7 +48,7 @@ function Build( event )
         end
 
         local sector = playerData.sector + 1
-        if not IsInsideSector(vPos, sector) then
+        if not COOP_MAP and not IsInsideSector(vPos, sector) then
             ShowWarnMessage(playerID, "#error_invalid_build_position")
             return false
         end
