@@ -2,7 +2,6 @@ if not players then
     players = {}
     playerIDs = {}
 
-    -- TODO: make this work for a single team in co-op
     TEAM_TO_SECTOR = {}
     TEAM_TO_SECTOR[2] = 0
     TEAM_TO_SECTOR[3] = 1
@@ -140,10 +139,8 @@ function ElementTD:InitGameMode()
 end
 
 -- called when 'script_reload' is run
--- TODO: make with work with the :OnCreated function
 function ElementTD:OnScriptReload()
     -- Reload files
-    Log:info("script_reload has been executed!")
     NPC_UNITS_CUSTOM = LoadKeyValues("scripts/npc/npc_units_custom.txt")
     NPC_ABILITIES_CUSTOM = LoadKeyValues("scripts/npc/npc_abilities_custom.txt")
     NPC_ITEMS_CUSTOM = LoadKeyValues("scripts/npc/npc_items_custom.txt")
@@ -152,7 +149,9 @@ function ElementTD:OnScriptReload()
     for _, playerID in pairs(playerIDs) do
 
         -- loop over the player's towers
-        for towerID, _ in pairs(GetPlayerData(playerID).towers) do
+        local playerData = GetPlayerData(playerID)
+        if not playerData then return end
+        for towerID, _ in pairs(playerData.towers) do
             local tower = EntIndexToHScript(towerID)
             if IsValidEntity(tower) and tower.scriptObject then
                 local scriptObject = getmetatable(tower.scriptObject).__index
