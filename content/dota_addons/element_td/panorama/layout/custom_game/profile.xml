@@ -412,7 +412,7 @@
 
                 <Panel class="BuilderColumn" onmouseover="Hovering('NatureBackground'); AnimateBuilderHover('NatureBuilder')"
                                              onmouseout="HoverOut('NatureBackground'); AnimateBuilderIdle('NatureBuilder')"
-                                             onactivate="ChooseBuilder('npc_dota_hero_lone_druid')">
+                                             onactivate="ChooseBuilder('npc_dota_hero_enchantress')">
                     <Image id="NatureBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/nature.png" />
                     <DOTAScenePanel id="NatureBuilder" class="BuilderPanel" map="builders" camera="nature"/>
                 </Panel>
