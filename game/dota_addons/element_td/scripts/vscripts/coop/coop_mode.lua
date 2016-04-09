@@ -23,6 +23,26 @@ function SpawnWaveCoop()
         playerData.waveObjects[COOP_WAVE] = CURRENT_WAVE_OBJECT
     end
 
+    CURRENT_WAVE_OBJECT:SetOnCompletedCallback(function()   
+        print("[COOP] Completed wave "..COOP_WAVE)
+        COOP_WAVE = COOP_WAVE + 1
+        EmitGlobalSound("ui.npe_objective_complete")
+
+        -- Boss Wave completed starts the new one with no breaktime
+        if COOP_WAVE >= WAVE_COUNT then
+            local bossWaveNumber = COOP_WAVE - WAVE_COUNT + 1
+            print("[COOP] Completed boss wave "..bossWaveNumber)
+
+            --TODO: New boss wave, score
+            return
+        end
+
+        -- TODO: Cleared game?
+ 
+        -- Start the breaktime for the next wave
+        StartBreakTimeCoop(GetPlayerDifficulty(0):GetWaveBreakTime(COOP_WAVE))
+    end)
+
     -- TODO: boss waves, co-op interest
 	CURRENT_WAVE_OBJECT:SpawnWave()
 end
