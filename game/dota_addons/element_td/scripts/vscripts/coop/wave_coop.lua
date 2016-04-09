@@ -73,8 +73,8 @@ function WaveCoop:SpawnWave()
 	self.kills = 0
 
 	self.spawnTimer = Timers:CreateTimer(time_between_spawns, function()
-		for i = 1, 6 do 
-			local entity = SpawnEntity(WAVE_CREEPS[self.waveNumber], nil, EntityStartLocations[i])
+		for sector = 1, 6 do 
+			local entity = SpawnEntity(WAVE_CREEPS[self.waveNumber], nil, EntityStartLocations[sector])
 			if entity then
 				self:RegisterCreep(entity:entindex())
 				entity:SetForwardVector(Vector(0, -1, 0))
@@ -121,7 +121,8 @@ function WaveCoop:SpawnWave()
 
 				entity.scriptObject:OnSpawned() -- called the OnSpawned event
 
-				CreateMoveTimerForCreepCoop(entity, i)
+				entity.sector = sector
+				CreateMoveTimerForCreepCoop(entity, sector)
 			end
 		end
 

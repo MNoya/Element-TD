@@ -40,7 +40,7 @@ function SpawnWaveCoop()
         -- TODO: Cleared game?
  
         -- Start the breaktime for the next wave
-        StartBreakTimeCoop(GetPlayerDifficulty(0):GetWaveBreakTime(COOP_WAVE))
+        StartBreakTimeCoop(GameSettings:GetGlobalDifficulty():GetWaveBreakTime(COOP_WAVE))
     end)
 
     -- TODO: boss waves, co-op interest
