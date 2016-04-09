@@ -180,6 +180,9 @@ function UpdateNotVoted()
             notVoted.AddClass('NotVoted');
             notVoted.steamid = playerData.player_steamid;
 
+            if (GameUI.PlayerHasProfile(playerID))
+                notVoted.AddClass('Pass')
+
             GameUI.SetupAvatarTooltip(notVoted, $.GetContextPanel(), notVoted.steamid)
             position += 1;
         }
