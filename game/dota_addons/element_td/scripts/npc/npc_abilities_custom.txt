@@ -3599,7 +3599,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"2250 11250"
+				"multiplier"			"3600 18000"
 			}
 		}
 	}
@@ -4978,7 +4978,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"0 0 0"
+				"damage"				"5 25 125"
 			}
 			"02"
 			{
@@ -4988,12 +4988,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"550"
+				"aoe"					"700"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aftershock_aoe"		"550"
+				"aftershock_aoe"		"450"
 			}
 		}
 	

@@ -40,9 +40,9 @@
         "1"        "light"
         "2"        "dark"
     }
-    "Damage"        "750"
-    "AttackDamageMin"        "750"
-    "AttackDamageMax"        "750"
+    "Damage"        "800"
+    "AttackDamageMin"        "800"
+    "AttackDamageMax"        "800"
     "DamageType"        "light"
     "ScriptClass"        "TrickeryTower"
     "TowerType"        "Support"
