@@ -150,7 +150,7 @@ end
 
 function Sandbox:SetLife(event)
     local playerID = event.PlayerID
-    local value = tonumber(event.value) or 50
+    local value = tonumber(event.value) or GameSettings:GetMapSetting("Lives")
     local playerData = GetPlayerData(playerID)
     playerData.health = value
     playerData.cheated = true
@@ -390,10 +390,14 @@ function Sandbox:Restart( event )
     newPlayerData.difficulty = difficulty
     newPlayerData.scoreObject = scoreObject
 
-    -- Set life to 50
-    newPlayerData.health = 50 
+    -- Set life to default
+    local health = GameSettings:GetMapSetting("Lives")
+    newPlayerData.health = health 
     hero:CalculateStatBonus()
-    hero:SetHealth(50)
+    hero:SetHealth(health)
+    hero:SetBaseMaxHealth(health)
+    hero:SetMaxHealth(health)
+    
     CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=newPlayerData.health/hero:GetMaxHealth() * 100} )
 
     -- Set resources

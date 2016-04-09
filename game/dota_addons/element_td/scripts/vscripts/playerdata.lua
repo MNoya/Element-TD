@@ -16,7 +16,7 @@ function CreateDataForPlayer(playerID, allowOverride)
 
 	PlayerData[playerID] = {}
 	local data = PlayerData[playerID]
-	data["health"] = 50
+	data["health"] = GameSettings:GetMapSetting("Lives")
 	data["scoreObject"] = {}
 	data["sector"] = -1
 	data["lumber"] = 0

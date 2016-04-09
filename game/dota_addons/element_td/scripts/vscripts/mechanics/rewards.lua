@@ -266,6 +266,9 @@ function Rewards:ReplaceHero(playerID, oldHero, heroName)
         UpdateElementOrbs(playerID)
     end)
 
+    newHero:SetBaseMaxHealth(GameSettings:GetMapSetting("Lives"))
+    newHero:SetMaxHealth(GameSettings:GetMapSetting("Lives"))
+    newHero:SetHealth(GetPlayerData(playerID).health)
     return newHero
 end
 

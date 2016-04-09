@@ -16,7 +16,7 @@ if not players then
     DEV_MODE = false
     EXPRESS_MODE = false
 
-    VERSION = "1.4"
+    VERSION = "1.5"
     COOP_MAP = GetMapName() == "element_td_coop"
 
     START_TIME = GetSystemDate() .. " " .. GetSystemTime()
@@ -501,8 +501,9 @@ function ElementTD:OnHeroInGame(hero)
     summoner.icon = CreateUnitByName("elemental_summoner_icon", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber())
     playerData.summoner = summoner
 
-    hero:SetBaseMaxHealth(50)
-    hero:SetHealth(50)
+    hero:SetBaseMaxHealth(playerData.health)
+    hero:SetHealth(playerData.health)
+
     hero:ModifyGold(0)
     ModifyLumber(playerID, 0)  -- updates summoner spells
     ModifyPureEssence(playerID, 0, true)

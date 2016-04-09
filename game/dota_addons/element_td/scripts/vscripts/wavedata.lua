@@ -485,6 +485,7 @@ function ReduceLivesForPlayer( playerID, lives )
 
     playerData.health = playerData.health - lives
 
+    local maxLives = GameSettings:GetMapSetting("Lives")
     if playerData.health <= 0 then
         playerData.health = 0
 
@@ -502,7 +503,7 @@ function ReduceLivesForPlayer( playerID, lives )
         
         playerData.waveObject.leaks = playerData.waveObject.leaks + lives
         
-        if hero and playerData.health < 50 then --When over 50 health, HP loss is covered by losing modifier_bonus_life
+        if hero and playerData.health < maxLives then --When over max health, HP loss is covered by losing modifier_bonus_life
             hero:SetHealth(playerData.health)
         end
     end
@@ -511,6 +512,9 @@ function ReduceLivesForPlayer( playerID, lives )
 
     if hero then
         hero:CalculateStatBonus()
+        hero:SetBaseMaxHealth(maxLives)
+        hero:SetMaxHealth(maxLives)
+        hero:SetHealth(playerData.health)
         CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=playerData.health/hero:GetMaxHealth() * 100} )
     end
 
