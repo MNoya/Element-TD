@@ -133,8 +133,9 @@ function StartBreakTimeCoop(breakTime)
 
                         -- Track pure essence purchasing as part of the element order
                         playerData.elementOrder[#playerData.elementOrder + 1] = "Pure"
-                        -- Gold bonus for Pure Essence randoming
-                        GivePureEssenceGoldBonus(playerID)
+                        
+                        -- Gold bonus for Pure Essence randoming (removed in 1.5)
+                        -- GivePureEssenceGoldBonus(playerID)
                     else
                         -- TODO: no elementals in co-op mode??
                         SendEssenceMessage(playerID, "#etd_random_elemental")

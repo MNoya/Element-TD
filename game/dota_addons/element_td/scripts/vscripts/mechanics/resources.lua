@@ -148,8 +148,8 @@ function BuyPureEssence( keys )
         -- Track pure essence purchasing as part of the element order
         playerData.elementOrder[#playerData.elementOrder+1] = "Pure"
         
-        -- Gold bonus to help stay valuable by comparison to getting an element upgrade
-        GivePureEssenceGoldBonus(playerID)
+        -- Gold bonus to help stay valuable by comparison to getting an element upgrade (removed in 1.5)
+        -- GivePureEssenceGoldBonus(playerID)
 
         if IsValidEntity(item) then
             item:SetCurrentCharges(item:GetCurrentCharges()-1)
@@ -173,6 +173,7 @@ function BuyPureEssenceWarn( event )
 end
 
 -- Bonus for trading lumber->essence
+-- not used anymore since 1.5
 function GivePureEssenceGoldBonus( playerID )
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     local playerData = GetPlayerData(playerID)

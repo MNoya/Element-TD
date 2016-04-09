@@ -134,8 +134,8 @@ function StartBreakTime(playerID, breakTime, rush_wave)
                     -- Track pure essence purchasing as part of the element order
                     playerData.elementOrder[#playerData.elementOrder+1] = "Pure"
 
-                    -- Gold bonus for Pure Essence randoming
-                    GivePureEssenceGoldBonus(playerID)
+                    -- Gold bonus for Pure Essence randoming (removed in 1.5)
+                    -- GivePureEssenceGoldBonus(playerID)
                 else
                     SendEssenceMessage(playerID, "#etd_random_elemental")
                     SummonElemental({caster = playerData.summoner, Elemental = element .. "_elemental"})
