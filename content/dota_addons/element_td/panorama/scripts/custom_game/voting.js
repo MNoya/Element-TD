@@ -452,7 +452,10 @@ function Setup()
     ShowGamemodeViewer();
 
     if (Game.IsCoop())
+    {
         $("#Option_Endless").AddClass("Hidden")
+        $("#Option_Express").AddClass("Hidden")
+    }
 }
 
 (function () {
