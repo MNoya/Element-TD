@@ -11,7 +11,7 @@
         "npc_dota_hero_faceless_void"  "黑暗建造者"
         "npc_dota_hero_mirana"         "圣水建造者"
         "npc_dota_hero_warlock"        "圣火建造者"
-        "npc_dota_hero_lone_druid"     "自然建造者" 
+        "npc_dota_hero_enchantress"    "自然建造者" 
         "npc_dota_hero_earthshaker"    "大地建造者"
 
         // messages

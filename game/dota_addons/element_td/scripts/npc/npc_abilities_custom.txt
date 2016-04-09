@@ -3102,7 +3102,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 250 1250"
+				"damage"				"45 225 1125"
 			}
 			"02"
 			{
@@ -3168,7 +3168,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"20 30"
+				"bonus_gold"			"25 30"
 			}
 		}
 	
@@ -3778,7 +3778,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"6 4 2"
+				"kills_required"				"6 5 4"
 			}
 			"02"
 			{
@@ -3788,7 +3788,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"points_per_kill"				"2 3 6"
+				"points_per_kill"				"10 12 15"
 			}
 		}
 	}
@@ -4978,22 +4978,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"7 35 175"
+				"damage"				"0 0 0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"28 140 700"
+				"aftershock_damage"		"30 150 750"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"700"
+				"aoe"					"550"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aftershock_aoe"		"450"
+				"aftershock_aoe"		"550"
 			}
 		}
 	
@@ -5040,7 +5040,7 @@
 	        "01"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "bounce_range"        "150"
+	            "bounce_range"        "350"
 	        }
 	        "02"
 	        {
@@ -5265,12 +5265,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"400 2000"
+				"damage"				"450 2250"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"550"
+				"radius"				"600"
 			}
 			"04"
 			{

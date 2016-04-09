@@ -23,8 +23,8 @@
     "AttackRate"                 "1"
 
     "Level"                      "3"
-    "Cost"                       "3900"
-    "TotalCost"                  "5700"
+    "Cost"                       "3250"
+    "TotalCost"                  "5000"
     "BuildTime"                  "2"
     "Element"
     {

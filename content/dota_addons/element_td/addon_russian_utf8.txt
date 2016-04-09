@@ -11,7 +11,7 @@
         "npc_dota_hero_faceless_void"  "Тьмы Строитель"
         "npc_dota_hero_mirana"         "Воды Строитель"
         "npc_dota_hero_warlock"        "Огня Строитель"
-        "npc_dota_hero_lone_druid"     "природы Строитель" 
+        "npc_dota_hero_enchantress"    "природы Строитель" 
         "npc_dota_hero_earthshaker"    "Земли Строитель"
 
         // messages
