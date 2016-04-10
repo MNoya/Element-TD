@@ -238,6 +238,7 @@ function UpdatePlayerSpells(playerID)
     local playerData = GetPlayerData(playerID)
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     if hero then
+        
         for i=0,15 do
             local ability = hero:GetAbilityByIndex(i)
             if ability then
@@ -261,6 +262,7 @@ function UpdatePlayerSpells(playerID)
                 end
             end
         end
+        
 
         for i=0,5 do
             local item = hero:GetItemInSlot(i)
@@ -295,6 +297,21 @@ function UpdatePlayerSpells(playerID)
                 item_random:RemoveSelf()
             end
         end
+    end
+
+    UpdatePlayerHealth(playerID);
+end
+
+-- health correction for gamemodes where max health > 50
+local maxHealth = nil;
+function UpdatePlayerHealth(playerID)
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    local playerData = GetPlayerData(playerID)
+    if hero then
+        maxHealth = maxHealth or GameSettings:GetMapSetting("Lives")
+        hero:SetBaseMaxHealth(maxHealth)
+        hero:SetMaxHealth(maxHealth)
+        hero:SetHealth(playerData.health)
     end
 end
 

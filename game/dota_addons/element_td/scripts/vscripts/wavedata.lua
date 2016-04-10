@@ -472,7 +472,7 @@ function CompetitiveNextRound(wave)
     end
 end
 
-function ReduceLivesForPlayer( playerID, lives )
+function ReduceLivesForPlayer(playerID, lives)
     local playerData = GetPlayerData(playerID)
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     local ply = PlayerResource:GetPlayer(playerID)
@@ -512,9 +512,7 @@ function ReduceLivesForPlayer( playerID, lives )
 
     if hero then
         hero:CalculateStatBonus()
-        hero:SetBaseMaxHealth(maxLives)
-        hero:SetMaxHealth(maxLives)
-        hero:SetHealth(playerData.health)
+        UpdatePlayerHealth(playerID)
         CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=playerData.health/hero:GetMaxHealth() * 100} )
     end
 

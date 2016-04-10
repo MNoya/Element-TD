@@ -394,9 +394,7 @@ function Sandbox:Restart( event )
     local health = GameSettings:GetMapSetting("Lives")
     newPlayerData.health = health 
     hero:CalculateStatBonus()
-    hero:SetHealth(health)
-    hero:SetBaseMaxHealth(health)
-    hero:SetMaxHealth(health)
+    UpdatePlayerHealth(playerID)
     
     CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=newPlayerData.health/hero:GetMaxHealth() * 100} )
 

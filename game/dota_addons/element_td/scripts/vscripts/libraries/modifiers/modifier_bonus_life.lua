@@ -5,7 +5,7 @@ function modifier_bonus_life:DeclareFunctions()
     return funcs
 end
 
-function modifier_bonus_life:GetModifierHealthBonus( params )
+function modifier_bonus_life:GetModifierHealthBonus(params)
     if IsServer() then
         local hero = self:GetParent()
         local playerID = hero:GetPlayerID()
@@ -18,9 +18,7 @@ function modifier_bonus_life:GetModifierHealthBonus( params )
             hero:Heal(heal, nil)
             return healthBonus
         else
-            hero:SetBaseMaxHealth(maxHealth)
-            hero:SetMaxHealth(maxHealth)
-            hero:SetHealth(playerData.health)
+            UpdatePlayerHealth(playerID)
             return 0
         end
     end
