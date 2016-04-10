@@ -101,6 +101,7 @@ function ElementTD:InitGameMode()
     LinkLuaModifier("modifier_health_bar_markers", "libraries/modifiers/modifier_health_bar_markers", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_not_on_minimap_for_enemies", "libraries/modifiers/modifier_not_on_minimap_for_enemies", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_max_ms", "libraries/modifiers/modifier_max_ms", LUA_MODIFIER_MOTION_NONE)
+    LinkLuaModifier("modifier_max_ms_coop", "libraries/modifiers/modifier_max_ms_coop", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_attack_immune", "libraries/modifiers/modifier_attack_immune", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_client_convars", "libraries/modifiers/modifier_client_convars", LUA_MODIFIER_MOTION_NONE)
     
@@ -515,7 +516,7 @@ function ElementTD:InitializeHero(playerID, hero)
     Log:info("InitializeHero "..playerID..":"..hero:GetUnitName())
     hero:AddNewModifier(nil, nil, "modifier_disarmed", {})
     hero:AddNewModifier(nil, nil, "modifier_attack_immune", {})
-    hero:AddNewModifier(hero, nil, "modifier_max_ms", {})
+    hero:AddNewModifier(hero, nil, GameSettings:GetMapSetting("BuilderMoveSpeedModifier"), {})
     --hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
 
     self.vPlayerIDToHero[playerID] = hero -- Store hero for player in here GetAssignedHero can be flakey
