@@ -1,8 +1,12 @@
 "AddonInfo"
 {
-     "maps"                   "element_td"
+     "maps"                   "element_td element_td_coop"
      "IsPlayable"             "1"
      "element_td"
+     {
+          "MaxPlayers"        "4"
+     }
+     "element_td_coop"
      {
           "MaxPlayers"        "4"
      }
