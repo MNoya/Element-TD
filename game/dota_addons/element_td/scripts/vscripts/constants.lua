@@ -143,6 +143,15 @@ function generateElementalSummonerLocations()
 end
 
 function generateSectorBounds()
+    if COOP_MAP then
+        CoopBounds = {
+            left = -3600,
+            right = 3600,
+            top = 3600,
+            bottom = -3600
+        }
+    end
+
     local defX = -8192
     local defY = 5120
     local xIncr = 4096 -- distance between spawns on the x axis
