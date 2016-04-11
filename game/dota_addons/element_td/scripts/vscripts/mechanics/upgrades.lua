@@ -299,6 +299,10 @@ function SetupTowerUpgrade(tower, newTower, buffData, stacks)
         AddAbility(newTower, "sell_tower_90")
     end
 
+    if string.match(newClass, "cannon_tower") then
+        AddAbility(newTower, "attack_ground")
+    end
+
     -- create a script object for this tower
     if TOWER_CLASSES[scriptClassName] then
         local scriptObject = TOWER_CLASSES[scriptClassName](newTower, newClass)
