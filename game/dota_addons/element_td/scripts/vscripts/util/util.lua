@@ -39,6 +39,12 @@ m_TeamColors[DOTA_TEAM_CUSTOM_4] = { 173, 216, 230 } --  Light Blue (Winter) #AD
 m_TeamColors[DOTA_TEAM_CUSTOM_5] = { 243, 201, 9 }   --  Yellow (Desert) #F3C909
 m_TeamColors[DOTA_TEAM_CUSTOM_6] = { 255, 52, 85 }   --  Red (Lava) #FF3455
 
+PlayerColors = {}
+PlayerColors[0] = { 101, 212, 19 }  --  Green #65D413
+PlayerColors[1] = { 1, 162, 255}    --  Blue #01A2FF
+PlayerColors[2] = { 243, 201, 9 }   --  Yellow #F3C909
+PlayerColors[3] = { 255, 52, 85 }   --  Red #FF3455
+
 sectorNames = {}
 sectorNames[-1] = "None"
 sectorNames[0] = "Summer"

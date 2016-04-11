@@ -9,12 +9,18 @@ function modifier_max_ms:DeclareFunctions()
     return funcs
 end
 
+function modifier_max_ms:OnCreated(params)
+    if params.ms then
+        self:SetStackCount(params.ms)
+    end
+end
+
 function modifier_max_ms:GetModifierMoveSpeed_Max(params)
-    return 800
+    return self:GetStackCount()
 end
 
 function modifier_max_ms:GetModifierMoveSpeedOverride(params)
-    return 800
+    return self:GetStackCount()
 end
 
 function modifier_max_ms:IsHidden()

@@ -101,7 +101,6 @@ function ElementTD:InitGameMode()
     LinkLuaModifier("modifier_health_bar_markers", "libraries/modifiers/modifier_health_bar_markers", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_not_on_minimap_for_enemies", "libraries/modifiers/modifier_not_on_minimap_for_enemies", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_max_ms", "libraries/modifiers/modifier_max_ms", LUA_MODIFIER_MOTION_NONE)
-    LinkLuaModifier("modifier_max_ms_coop", "libraries/modifiers/modifier_max_ms_coop", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_attack_immune", "libraries/modifiers/modifier_attack_immune", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_client_convars", "libraries/modifiers/modifier_client_convars", LUA_MODIFIER_MOTION_NONE)
     
@@ -478,9 +477,14 @@ function ElementTD:OnHeroInGame(hero)
         playerData.name = 'Developer'
     end
 
-    -- Team location based colors
     local teamID = PlayerResource:GetTeam(playerID)
-    PlayerResource:SetCustomPlayerColor(playerID, m_TeamColors[teamID][1], m_TeamColors[teamID][2], m_TeamColors[teamID][3])
+    if COOP_MAP then
+        -- Player based colors
+        PlayerResource:SetCustomPlayerColor(playerID, PlayerColors[playerID][1], PlayerColors[playerID][2], PlayerColors[playerID][3])
+    else
+        -- Team location based colors
+        PlayerResource:SetCustomPlayerColor(playerID, m_TeamColors[teamID][1], m_TeamColors[teamID][2], m_TeamColors[teamID][3])
+    end
 
     playerData.sector = TEAM_TO_SECTOR[hero:GetTeamNumber()]
 
@@ -516,7 +520,7 @@ function ElementTD:InitializeHero(playerID, hero)
     Log:info("InitializeHero "..playerID..":"..hero:GetUnitName())
     hero:AddNewModifier(nil, nil, "modifier_disarmed", {})
     hero:AddNewModifier(nil, nil, "modifier_attack_immune", {})
-    hero:AddNewModifier(hero, nil, GameSettings:GetMapSetting("BuilderMoveSpeedModifier"), {})
+    hero:AddNewModifier(hero, nil, "modifier_max_ms", {ms=GameSettings:GetMapSetting("BuilderMoveSpeed")})
     --hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
 
     self.vPlayerIDToHero[playerID] = hero -- Store hero for player in here GetAssignedHero can be flakey
@@ -875,7 +879,7 @@ function ElementTD:OnPlayerChat(keys)
         return
     end
 
-    if teamonly == 1 then
+    if teamonly == 1 and not COOP_MAP then
         player.skip_chat = true
         Say(player, text, false)
     end

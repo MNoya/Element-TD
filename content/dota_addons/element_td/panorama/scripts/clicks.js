@@ -69,7 +69,7 @@ function IsCustomBuilding( entityIndex ){
         return false
 }
 
-var cameraDistance = 1500
+var cameraDistance = Game.IsCoop() ? 2500 : 1500
 GameUI.SetCameraDistance( cameraDistance )
 
 // Main mouse event callback

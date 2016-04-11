@@ -407,7 +407,7 @@ GameUI.SetupAvatarTooltip = function (avatar, root, steamID64) {
 
 // Returns the SteamID 64bit of a player by ID
 GameUI.GetPlayerSteamID = function (playerID) {
-    var playerInfo = Game.GetPlayerInfo(playerID)
+    var playerInfo = Game.GetPlayerInfo(parseInt(playerID))
     return playerInfo ? playerInfo.player_steamid : -1
 }
 
