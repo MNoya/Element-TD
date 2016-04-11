@@ -8,7 +8,15 @@ function CDOTA_BaseNPC_Hero:ModifyGold(goldAmount)
         return
     end
 
-    local newGold = tonumber(playerData.gold) + tonumber(goldAmount)
+    local goldGain = math.floor(goldAmount)
+    local remainder = goldAmount - goldGain -- floating point component
+    playerData.gold_remainder = playerData.gold_remainder + remainder -- accumulated
+    if (playerData.gold_remainder >= 1) then
+        playerData.gold_remainder = playerData.gold_remainder - 1
+        goldGain = goldGain + 1
+    end
+
+    local newGold = tonumber(playerData.gold) + tonumber(goldGain)
     SetCustomGold(playerID, newGold)
 end
 
