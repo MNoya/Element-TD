@@ -30,5 +30,5 @@
 	}
 	"ItemBaseLevel" "1"
     "ItemCost" "1050"
-    "AbilityCastRange"              "1500"
+    "AbilityCastRange"              "1150"
 }
