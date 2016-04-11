@@ -1,0 +1,37 @@
+"item_upgrade_to_earth_cannon_tower"
+{
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "BaseClass"             "item_datadriven"
+    "AbilityManaCost"       "0"
+    "ItemShareability"      "ITEM_NOT_SHAREABLE"
+    "ItemSellable"          "0"
+    "ItemKillable"          "0"
+    "ItemPurchasable"       "0"
+    "ItemDroppable"         "0"
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "TARGET"        "CASTER"
+            "ScriptFile"    "mechanics/upgrades.lua"
+            "Function"      "UpgradeTower"
+            "tower"         "earth_cannon_tower"
+        }
+    }
+    "AbilityTextureName"    "item_earth"
+    "AbilityCastRange"      "550"
+}
+
+"item_upgrade_to_earth_cannon_tower_disabled"
+{
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"             "item_datadriven"
+    "AbilityManaCost"       "0"
+    "ItemShareability"      "ITEM_NOT_SHAREABLE"
+    "ItemSellable"          "0"
+    "ItemKillable"          "0"
+    "ItemPurchasable"       "0"
+    "ItemDroppable"         "0"
+    "AbilityTextureName"    "item_earth_disabled"
+    "AbilityCastRange"      "550"
+}
