@@ -26,7 +26,7 @@ function GetStats(steamID32) {
     if (Stats[steamID32])
     {
         $.Msg("Setting existing stats for "+steamID32)
-        SetStats(Stats[steamID32])
+        SetStats(Stats[steamID32], "allTime")
         return
     }
 
@@ -42,7 +42,7 @@ function GetStats(steamID32) {
                 currentTime = player_info["current_time"]
                 if (allTime)
                 {
-                    SetStats(player_info)
+                    SetStats(player_info, "allTime")
                     return
                 }
             }
@@ -58,49 +58,56 @@ function GetStats(steamID32) {
     })
 }
 
-function SetStats(player_info)
+var Stat_Types = ["allTime","monthTime","weekTime","versionTime"]
+function SetStats(player_info, dateTime)
 {
     Stats[player_info["steamID"]] = player_info
 
-    var allTime = player_info["allTime"]
-    $("#GamesWon").text = allTime["gamesWon"]
-    $("#BestScore").text = GameUI.FormatScore(allTime["bestScore"])
+    for (var i = 0; i < Stat_Types.length; i++) {
+        var name = Stat_Types[i]
+        var panel = $("#"+name+"_radio")
+        panel.SetHasClass( "ActiveTabSub", Stat_Types[i] == dateTime )
+    };
+
+    var info = player_info[dateTime]
+    $("#GamesWon").text = info["gamesWon"]
+    $("#BestScore").text = GameUI.FormatScore(info["bestScore"])
 
     // General
-    $("#kills").text = GameUI.FormatNumber(allTime["kills"])
-    $("#frogKills").text = GameUI.FormatNumber(allTime["frogKills"])
-    $("#networth").text = GameUI.FormatGold(allTime["networth"])
-    $("#interestGold").text = GameUI.FormatGold(allTime["interestGold"])
-    $("#cleanWaves").text = GameUI.FormatNumber(allTime["cleanWaves"])
-    $("#under30").text = GameUI.FormatNumber(allTime["under30"])
+    $("#kills").text = GameUI.FormatNumber(info["kills"])
+    $("#frogKills").text = GameUI.FormatNumber(info["frogKills"])
+    $("#networth").text = GameUI.FormatGold(info["networth"])
+    $("#interestGold").text = GameUI.FormatGold(info["interestGold"])
+    $("#cleanWaves").text = GameUI.FormatNumber(info["cleanWaves"])
+    $("#under30").text = GameUI.FormatNumber(info["under30"])
 
     // GameMode
-    MakeBars(allTime, ["normal","hard","veryhard","insane"])
-    MakeBoolBar(allTime, "order_chaos")
-    MakeBoolBar(allTime, "horde_endless")
-    MakeBoolBar(allTime, "express")
+    MakeBars(info, ["normal","hard","veryhard","insane"])
+    MakeBoolBar(info, "order_chaos")
+    MakeBoolBar(info, "horde_endless")
+    MakeBoolBar(info, "express")
 
-    var random = allTime["random"]
-    var gamesPlayed = allTime["gamesPlayed"]
+    var random = info["random"]
+    var gamesPlayed = info["gamesPlayed"]
     $("#random_pick").text = random+" ("+(random/gamesPlayed*100).toFixed(0)+"%)"
-    $("#towersBuilt").text = GameUI.FormatNumber(Number(allTime["towers"]) + Number(allTime["towersSold"]))
-    $("#towersSold").text = GameUI.FormatNumber(allTime["towersSold"])
-    $("#lifeTowerKills").text = GameUI.FormatNumber(allTime["lifeTowerKills"])
-    $("#goldTowerEarn").text = GameUI.FormatGold(allTime["goldTowerEarn"])
+    $("#towersBuilt").text = GameUI.FormatNumber(Number(info["towers"]) + Number(info["towersSold"]))
+    $("#towersSold").text = GameUI.FormatNumber(info["towersSold"])
+    $("#lifeTowerKills").text = GameUI.FormatNumber(info["lifeTowerKills"])
+    $("#goldTowerEarn").text = GameUI.FormatGold(info["goldTowerEarn"])
 
     // Towers
-    var dual = MakeFirstDual(allTime["firstDual"])
-    var triple = MakeFirstTriple(allTime["firstTriple"])
+    var dual = MakeFirstDual(info["firstDual"])
+    var triple = MakeFirstTriple(info["firstTriple"])
 
     // Element Usage
-    var light = allTime["light"]
-    var dark = allTime["dark"]
-    var water = allTime["water"]
-    var fire = allTime["fire"]
-    var nature = allTime["nature"]
-    var earth = allTime["earth"]
+    var light = info["light"]
+    var dark = info["dark"]
+    var water = info["water"]
+    var fire = info["fire"]
+    var nature = info["nature"]
+    var earth = info["earth"]
     var total_elem = light+dark+water+fire+nature+earth
-    var favorite = allTime["favouriteElement"]
+    var favorite = info["favouriteElement"]
 
     var nextStart = 0
     nextStart = RadialStyle("light", nextStart, light/total_elem)
@@ -185,6 +192,11 @@ function SetStats(player_info)
         }
     }
     $("#ErrorNoMatches").SetHasClass("Hide", matchesCreated > 0)
+}
+
+// allTime, monthTime, weekTime, versionTime
+function ShowStatsTab(dateTime) {
+    SetStats(Stats[currentProfile], dateTime)
 }
 
 var elementNames = ["light", "dark", "water", "fire", "nature", "earth"]

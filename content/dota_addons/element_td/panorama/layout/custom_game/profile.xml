@@ -112,7 +112,7 @@
                 <Panel hittest="false" id="LeftPanel">
                     <Panel id="ProfileTabs">
                         <Button class="ProfileTabButton" onactivate="ShowProfileTab('stats')">
-                            <Label id="stats_radio" class="ProfileTab ActiveTab" text="#profile_lifetime_stats"/>
+                            <Label id="stats_radio" class="ProfileTab ActiveTab" text="#profile_stats"/>
                         </Button>
 
                         <Button id="MatchesButton" class="ProfileTabButton" onactivate="ShowProfileTab('matches')">
@@ -125,6 +125,23 @@
                     </Panel>
 
                     <Panel id="stats_Tab" class='LeftTab'>
+                        <Panel id="TimedStats">
+                            <Button class="ProfileTabButtonSub" onactivate="ShowStatsTab('allTime')">
+                                <Label id="allTime_radio" class="ProfileTabSub ActiveTabSub" text="#profile_lifetime"/>
+                            </Button>
+
+                            <Button class="ProfileTabButtonSub" onactivate="ShowStatsTab('versionTime')">
+                                <Label id="versionTime_radio" class="ProfileTabSub" text="#profile_version"/>
+                            </Button>
+
+                            <Button class="ProfileTabButtonSub" onactivate="ShowStatsTab('monthTime')">
+                                <Label id="monthTime_radio" class="ProfileTabSub" text="#profile_month"/>
+                            </Button>
+
+                            <Button class="ProfileTabButtonSub" onactivate="ShowStatsTab('weekTime')">
+                                <Label id="weekTime_radio" class="ProfileTabSub" text="#profile_week"/>
+                            </Button>
+                        </Panel>
                         <Panel id="GeneralStats">
                             <Label class="SectionTitle" text="#profile_general"/>
                             <Panel id="GeneralStatsContainer">
