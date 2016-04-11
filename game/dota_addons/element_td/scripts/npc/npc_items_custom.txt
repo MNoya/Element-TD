@@ -4733,7 +4733,7 @@
 		}
 		"ItemBaseLevel" "1"
 	    "ItemCost" "1050"
-	    "AbilityCastRange"              "1500"
+	    "AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_hail_tower_2"
 	{
@@ -4766,7 +4766,7 @@
 			"water"		"2"
 		}
 		"ItemBaseLevel" "2"
-		"AbilityCastRange"              "1500"
+	    "AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_hail_tower_2_disabled"
 	{
@@ -4789,7 +4789,7 @@
 			"water"		"2"
 		}
 		"ItemBaseLevel" "2"
-		"AbilityCastRange"              "1500"
+	    "AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_hail_tower_disabled"
 	{
@@ -4813,7 +4813,7 @@
 		}
 		"ItemBaseLevel" "1"
 	    "ItemCost" "1050"
-	    "AbilityCastRange"              "1500"
+	    "AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_haste_tower"
 	{
