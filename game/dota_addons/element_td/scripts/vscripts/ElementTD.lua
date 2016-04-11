@@ -536,14 +536,21 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:AddItem(CreateItem("item_build_arrow_tower", hero, hero))
     hero:AddItem(CreateItem("item_build_cannon_tower", hero, hero))
     hero:AddItem(CreateItem("item_build_periodic_tower_disabled", hero, hero))
-   
-    playerData.toggle_grid_item = hero:AddItem(CreateItem("item_toggle_grid", hero, hero))
-    playerData.toggle_grid_item.particles = setmetatable({}, {
-        __index = (function(tab, index)
-            tab[index] = {}
-            return tab[index]
+
+    if not playerData.toggle_grid_item then
+        playerData.toggle_grid_item = hero:AddItem(CreateItem("item_toggle_grid", hero, hero))
+        playerData.toggle_grid_item.particles = setmetatable({}, {
+            __index = (function(tab, index)
+                tab[index] = {}
+                return tab[index]
+            end)
+        })
+    elseif IsValidEntity(playerData.toggle_grid_item) and playerData.toggle_grid_item_old then
+        Timers(0.03, function()
+            local item = hero:AddItem(playerData.toggle_grid_item_old)
+            item:SetPurchaser(hero)
         end)
-    })
+    end
     
     Timers:CreateTimer(0.1, function() hero:SwapItems(3, 5) end)
 

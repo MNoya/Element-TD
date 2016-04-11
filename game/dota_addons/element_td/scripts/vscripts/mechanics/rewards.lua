@@ -221,10 +221,10 @@ function Rewards:ReplaceHero(playerID, oldHero, heroName)
     end
     RemoveElementalOrbs(playerID)
 
-    -- Clear grid particles
-    local grid_item = GetItemByName(oldHero, "item_toggle_grid")
-    if grid_item then
-        ClearGrid(grid_item)
+    -- Take the grid item so it doesn't get destroyed
+    local playerData = GetPlayerData(playerID)
+    if playerData and playerData.toggle_grid_item then
+        playerData.toggle_grid_item_old = oldHero:Script_TakeItem(playerData.toggle_grid_item)
     end
 
     local newHero = PlayerResource:ReplaceHeroWith(playerID, heroName, 0, 0)
@@ -245,7 +245,6 @@ function Rewards:ReplaceHero(playerID, oldHero, heroName)
     end
 
     -- Update ownership
-    local playerData = GetPlayerData(playerID)
     if playerData then
         if playerData.towers then
             for towerIndex, _ in pairs(playerData.towers) do
