@@ -1724,6 +1724,11 @@ Label
     height: 40px;
 }
 
+#BorderImage
+{
+    margin-left: 2px;
+}
+
 .GoldBorder
 {
     width: 46px;
