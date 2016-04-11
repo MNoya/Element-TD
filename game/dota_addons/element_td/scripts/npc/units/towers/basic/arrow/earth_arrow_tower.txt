@@ -1,4 +1,4 @@
-"basic_arrow_tower"
+"earth_arrow_tower"
 {
     // Visual
     //-----------------------------
@@ -15,23 +15,27 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "30"
-    "AttackDamageMax"           "30"
-    "Damage"                    "30"
+    "AttackDamageMin"           "90"
+    "AttackDamageMax"           "90"
+    "Damage"                    "90"
     "AttackRange"               "900"
     "AttackAcquisitionRange"    "900"
     "AttackRate"                "0.66"
     "ProjectileSpeed"           "1500" 
 
     "Level"                     "1"
-    "Cost"                      "50"
-    "TotalCost"                 "50"
+    "Cost"                      "75"
+    "TotalCost"                 "125"
     "BuildTime"                 "1"
-    "Element"                   "none"
-    "DamageType"                "composite"
+    "Element"                   "earth"
+    "DamageType"                "earth"
     "ScriptClass"               "BasicTower"
     "TowerType"                 "Support"
     
+    "Requirements"
+    {
+        "earth"      "1"
+    }
     "Upgrades"
     {
     }

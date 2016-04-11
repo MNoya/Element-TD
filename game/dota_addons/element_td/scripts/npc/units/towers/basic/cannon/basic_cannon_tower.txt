@@ -1,0 +1,76 @@
+"basic_cannon_tower"
+{
+    // Visual
+    //-----------------------------
+    "Model"                     "models/tower_white_top.vmdl"
+    "ModelScale"                "0.575"
+    "ModelRotation"             "90"
+    "PedestalModel"             "models/tower_white_pedestal.vmdl"
+    "DestructionEffect"         "particles/econ/items/effigies/status_fx_effigies/base_statue_destruction_generic.vpcf"
+    "ProjectileModel"           "particles/units/heroes/hero_jakiro/jakiro_base_attack_fire.vpcf"
+    "SoundSet"                  "Tower.Fire"
+    "MinimapIcon"               "minimap_tower90"
+    "MinimapIconSize"           "320"
+ 
+    // Stats
+    //-----------------------------
+    "AttackDamageMin"           "35"
+    "AttackDamageMax"           "35"
+    "Damage"                    "35"
+    "AttackRange"               "550"
+    "AttackAcquisitionRange"    "550"
+    "AOE_Full"                  "100"
+    "AOE_Half"                  "200"
+    "AttackRate"                "1.5"
+    "ProjectileSpeed"           "1500"
+
+    "AttackGround"              "1"
+
+    "Level"                     "1"
+    "Cost"                      "50"
+    "TotalCost"                 "50"
+    "BuildTime"                 "1"
+    "Element"                   "none" 
+    "DamageType"                "composite"
+    "ScriptClass"               "CannonTower"
+    "TowerType"                 "Support"
+    
+    "Upgrades"
+    {
+        "Count"     "6"
+        "1"     "light_cannon_tower"
+        "2"     "dark_cannon_tower"
+        "3"     "water_cannon_tower"
+        "4"     "fire_cannon_tower"
+        "5"     "nature_cannon_tower"
+        "6"     "earth_cannon_tower"
+    }
+
+    // General
+    //-----------------------------
+    "BaseClass"                 "npc_dota_creature"
+    "ArmorPhysical"             "0"
+    "MagicalResistance"         "0"
+    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"      "1900"  
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"      "0.0"
+    "ProjectileCollisionSize"   "50"
+    "RingRadius"                "80"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"             "0"
+    "MovementTurnRate"          "1.0"
+    "StatusHealth"              "50"
+    "StatusHealthRegen"         "0"
+    "StatusMana"                "0"
+    "StatusManaRegen"           "0"
+
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
+}

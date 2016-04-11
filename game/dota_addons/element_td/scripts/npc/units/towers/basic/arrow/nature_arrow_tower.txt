@@ -1,0 +1,71 @@
+"nature_arrow_tower"
+{
+    // Visual
+    //-----------------------------
+    "Model"                     "models/props_structures/tower_good.vmdl"
+    "ModelScale"                "0.575"
+    "PedestalModel"             "models/props_structures/radiant_tower_base001.vmdl"
+    "PedestalModelScale"        "0.7"
+    "DestructionEffect"         "particles/radiant_fx/tower_good3_dest_lvl3_hit.vpcf"
+    "ProjectileModel"           "particles/units/heroes/hero_mirana/mirana_base_attack.vpcf"  
+    "MinimapIcon"               "minimap_tower90"
+    "MinimapIconSize"           "320"
+    "SoundSet"                  "Hero_Mirana"
+    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+
+    // Stats
+    //----------------------------- 
+    "AttackDamageMin"           "90"
+    "AttackDamageMax"           "90"
+    "Damage"                    "90"
+    "AttackRange"               "900"
+    "AttackAcquisitionRange"    "900"
+    "AttackRate"                "0.66"
+    "ProjectileSpeed"           "1500" 
+
+    "Level"                     "1"
+    "Cost"                      "75"
+    "TotalCost"                 "125"
+    "BuildTime"                 "1"
+    "Element"                   "nature"
+    "DamageType"                "nature"
+    "ScriptClass"               "BasicTower"
+    "TowerType"                 "Support"
+    
+    "Requirements"
+    {
+        "nature"      "1"
+    }
+    "Upgrades"
+    {
+    }
+
+    // General
+    //-----------------------------
+    "BaseClass"                 "npc_dota_creature"
+    "ArmorPhysical"             "0"
+    "MagicalResistance"         "0"
+    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"      "1900"  
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"      "0"
+    "ProjectileCollisionSize"   "50"
+    "RingRadius"                "80"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"             "0"
+    "MovementTurnRate"          "1.0"
+    "StatusHealth"              "50"
+    "StatusHealthRegen"         "0"
+    "StatusMana"                "0"
+    "StatusManaRegen"           "0"
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
+}
