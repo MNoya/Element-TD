@@ -24,12 +24,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"health_burn"			"10 30"
+			"health_burn"			"5 15"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_taken_pcnt"		"5 15"
+			"damage_taken_pcnt"		"10 30"
 		}
 	}
 	"AbilityCastRange"              "900"

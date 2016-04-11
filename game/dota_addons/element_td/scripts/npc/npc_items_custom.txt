@@ -1193,7 +1193,7 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
-		"AbilityCastRange"              "550"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_disease_tower_2"
 	{
@@ -1223,7 +1223,7 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
-		"AbilityCastRange"              "550"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_disease_tower_2_disabled"
 	{
@@ -1243,7 +1243,7 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
-		"AbilityCastRange"              "550"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_disease_tower_3"
 	{
@@ -1273,7 +1273,7 @@
 			"nature"		"3"
 			"nature"		"3"
 		}
-		"AbilityCastRange"              "550"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_disease_tower_3_disabled"
 	{
@@ -1293,7 +1293,7 @@
 			"nature"		"3"
 			"nature"		"3"
 		}
-		"AbilityCastRange"              "550"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_disease_tower_disabled"
 	{
@@ -1315,7 +1315,7 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
-		"AbilityCastRange"              "550"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_electricity_tower"
 	{
@@ -2737,7 +2737,7 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_moss_tower_2"
 	{
@@ -2767,7 +2767,7 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_moss_tower_2_disabled"
 	{
@@ -2787,7 +2787,7 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_moss_tower_3"
 	{
@@ -2817,7 +2817,7 @@
 			"nature"		"3"
 			"nature"		"3"
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_moss_tower_3_disabled"
 	{
@@ -2837,7 +2837,7 @@
 			"nature"		"3"
 			"nature"		"3"
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_moss_tower_disabled"
 	{
@@ -2859,7 +2859,7 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_poison_tower"
 	{
@@ -5793,12 +5793,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"10 30"
+				"health_burn"			"5 15"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken_pcnt"		"5 15"
+				"damage_taken_pcnt"		"10 30"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -5839,12 +5839,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"10 30"
+				"health_burn"			"5 15"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken_pcnt"		"5 15"
+				"damage_taken_pcnt"		"10 30"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -5875,12 +5875,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"10 30"
+				"health_burn"			"5 15"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken_pcnt"		"5 15"
+				"damage_taken_pcnt"		"10 30"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -5912,12 +5912,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"10 30"
+				"health_burn"			"5 15"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken_pcnt"		"5 15"
+				"damage_taken_pcnt"		"10 30"
 			}
 		}
 		"AbilityCastRange"              "900"
