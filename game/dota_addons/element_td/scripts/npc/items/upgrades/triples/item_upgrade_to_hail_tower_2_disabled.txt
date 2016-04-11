@@ -19,5 +19,5 @@
 		"water"		"2"
 	}
 	"ItemBaseLevel" "2"
-    "AbilityCastRange"              "1150"
+	"AbilityCastRange"              "1500"
 }
