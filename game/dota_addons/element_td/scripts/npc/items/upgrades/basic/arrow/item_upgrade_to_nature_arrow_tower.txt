@@ -18,7 +18,7 @@
             "tower"         "nature_arrow_tower"
         }
     }
-    "AbilityTextureName"    "item_nature"
+    "AbilityTextureName"    "item_nature_arrow"
     "AbilityCastRange"      "900"
 }
 
@@ -32,6 +32,6 @@
     "ItemKillable"          "0"
     "ItemPurchasable"       "0"
     "ItemDroppable"         "0"
-    "AbilityTextureName"    "item_nature_disabled"
+    "AbilityTextureName"    "item_nature_arrow_disabled"
     "AbilityCastRange"      "900"
 }

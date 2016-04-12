@@ -257,7 +257,7 @@
 	            "tower"         "dark_arrow_tower"
 	        }
 	    }
-	    "AbilityTextureName"    "item_dark"
+	    "AbilityTextureName"    "item_dark_arrow"
 	    "AbilityCastRange"      "900"
 	}
 	
@@ -271,7 +271,7 @@
 	    "ItemKillable"          "0"
 	    "ItemPurchasable"       "0"
 	    "ItemDroppable"         "0"
-	    "AbilityTextureName"    "item_dark_disabled"
+	    "AbilityTextureName"    "item_dark_arrow_disabled"
 	    "AbilityCastRange"      "900"
 	}
 	"item_upgrade_to_earth_arrow_tower"
@@ -294,7 +294,7 @@
 	            "tower"         "earth_arrow_tower"
 	        }
 	    }
-	    "AbilityTextureName"    "item_earth"
+	    "AbilityTextureName"    "item_earth_arrow"
 	    "AbilityCastRange"      "900"
 	}
 	
@@ -308,7 +308,7 @@
 	    "ItemKillable"          "0"
 	    "ItemPurchasable"       "0"
 	    "ItemDroppable"         "0"
-	    "AbilityTextureName"    "item_earth_disabled"
+	    "AbilityTextureName"    "item_earth_arrow_disabled"
 	    "AbilityCastRange"      "900"
 	}
 	"item_upgrade_to_fire_arrow_tower"
@@ -331,7 +331,7 @@
 	            "tower"         "fire_arrow_tower"
 	        }
 	    }
-	    "AbilityTextureName"    "item_fire"
+	    "AbilityTextureName"    "item_fire_arrow"
 	    "AbilityCastRange"      "900"
 	}
 	
@@ -345,7 +345,7 @@
 	    "ItemKillable"          "0"
 	    "ItemPurchasable"       "0"
 	    "ItemDroppable"         "0"
-	    "AbilityTextureName"    "item_fire_disabled"
+	    "AbilityTextureName"    "item_fire_arrow_disabled"
 	    "AbilityCastRange"      "900"
 	}
 	"item_upgrade_to_light_arrow_tower"
@@ -368,7 +368,7 @@
 	            "tower"         "light_arrow_tower"
 	        }
 	    }
-	    "AbilityTextureName"    "item_light"
+	    "AbilityTextureName"    "item_light_arrow"
 	    "AbilityCastRange"      "900"
 	}
 	
@@ -382,7 +382,7 @@
 	    "ItemKillable"          "0"
 	    "ItemPurchasable"       "0"
 	    "ItemDroppable"         "0"
-	    "AbilityTextureName"    "item_light_disabled"
+	    "AbilityTextureName"    "item_light_arrow_disabled"
 	    "AbilityCastRange"      "900"
 	}
 	"item_upgrade_to_nature_arrow_tower"
@@ -405,7 +405,7 @@
 	            "tower"         "nature_arrow_tower"
 	        }
 	    }
-	    "AbilityTextureName"    "item_nature"
+	    "AbilityTextureName"    "item_nature_arrow"
 	    "AbilityCastRange"      "900"
 	}
 	
@@ -419,7 +419,7 @@
 	    "ItemKillable"          "0"
 	    "ItemPurchasable"       "0"
 	    "ItemDroppable"         "0"
-	    "AbilityTextureName"    "item_nature_disabled"
+	    "AbilityTextureName"    "item_nature_arrow_disabled"
 	    "AbilityCastRange"      "900"
 	}
 	"item_upgrade_to_water_arrow_tower"
@@ -442,7 +442,7 @@
 	            "tower"         "water_arrow_tower"
 	        }
 	    }
-	    "AbilityTextureName"   "item_water"
+	    "AbilityTextureName"   "item_water_arrow"
 	    "AbilityCastRange"     "900"
 	}
 	
@@ -456,7 +456,7 @@
 	    "ItemKillable"          "0"
 	    "ItemPurchasable"       "0"
 	    "ItemDroppable"         "0"
-	    "AbilityTextureName"    "item_water_disabled"
+	    "AbilityTextureName"    "item_water_arrow_disabled"
 	    "AbilityCastRange"      "900"
 	}
 	"item_upgrade_to_dark_cannon_tower"
@@ -479,7 +479,7 @@
 	            "tower"         "dark_cannon_tower"
 	        }
 	    }
-	    "AbilityTextureName"    "item_dark"
+	    "AbilityTextureName"    "item_dark_cannon"
 	    "AbilityCastRange"      "550"
 	}
 	
@@ -493,7 +493,7 @@
 	    "ItemKillable"          "0"
 	    "ItemPurchasable"       "0"
 	    "ItemDroppable"         "0"
-	    "AbilityTextureName"    "item_dark_disabled"
+	    "AbilityTextureName"    "item_dark_cannon_disabled"
 	    "AbilityCastRange"      "550"
 	}
 	"item_upgrade_to_earth_cannon_tower"
@@ -516,7 +516,7 @@
 	            "tower"         "earth_cannon_tower"
 	        }
 	    }
-	    "AbilityTextureName"    "item_earth"
+	    "AbilityTextureName"    "item_earth_cannon"
 	    "AbilityCastRange"      "550"
 	}
 	
@@ -530,7 +530,7 @@
 	    "ItemKillable"          "0"
 	    "ItemPurchasable"       "0"
 	    "ItemDroppable"         "0"
-	    "AbilityTextureName"    "item_earth_disabled"
+	    "AbilityTextureName"    "item_earth_cannon_disabled"
 	    "AbilityCastRange"      "550"
 	}
 	"item_upgrade_to_fire_cannon_tower"
@@ -553,7 +553,7 @@
 	            "tower"         "fire_cannon_tower"
 	        }
 	    }
-	    "AbilityTextureName"    "item_fire"
+	    "AbilityTextureName"    "item_fire_cannon"
 	    "AbilityCastRange"      "550"
 	}
 	
@@ -567,7 +567,7 @@
 	    "ItemKillable"          "0"
 	    "ItemPurchasable"       "0"
 	    "ItemDroppable"         "0"
-	    "AbilityTextureName"    "item_fire_disabled"
+	    "AbilityTextureName"    "item_fire_cannon_disabled"
 	    "AbilityCastRange"      "550"
 	}
 	"item_upgrade_to_light_cannon_tower"
@@ -590,7 +590,7 @@
 	            "tower"         "light_cannon_tower"
 	        }
 	    }
-	    "AbilityTextureName"    "item_light"
+	    "AbilityTextureName"    "item_light_cannon"
 	    "AbilityCastRange"      "550"
 	}
 	
@@ -604,7 +604,7 @@
 	    "ItemKillable"          "0"
 	    "ItemPurchasable"       "0"
 	    "ItemDroppable"         "0"
-	    "AbilityTextureName"    "item_light_disabled"
+	    "AbilityTextureName"    "item_light_cannon_disabled"
 	    "AbilityCastRange"      "550"
 	}
 	"item_upgrade_to_nature_cannon_tower"
@@ -627,7 +627,7 @@
 	            "tower"         "nature_cannon_tower"
 	        }
 	    }
-	    "AbilityTextureName"    "item_nature"
+	    "AbilityTextureName"    "item_nature_cannon"
 	    "AbilityCastRange"      "550"
 	}
 	
@@ -641,7 +641,7 @@
 	    "ItemKillable"          "0"
 	    "ItemPurchasable"       "0"
 	    "ItemDroppable"         "0"
-	    "AbilityTextureName"    "item_nature_disabled"
+	    "AbilityTextureName"    "item_nature_cannon_disabled"
 	    "AbilityCastRange"      "550"
 	}
 	"item_upgrade_to_water_cannon_tower"
@@ -664,7 +664,7 @@
 	            "tower"         "water_cannon_tower"
 	        }
 	    }
-	    "AbilityTextureName"   "item_water"
+	    "AbilityTextureName"   "item_water_cannon"
 	    "AbilityCastRange"     "550"
 	}
 	
@@ -678,7 +678,7 @@
 	    "ItemKillable"          "0"
 	    "ItemPurchasable"       "0"
 	    "ItemDroppable"         "0"
-	    "AbilityTextureName"    "item_water_disabled"
+	    "AbilityTextureName"    "item_water_cannon_disabled"
 	    "AbilityCastRange"      "550"
 	}
 	"item_upgrade_to_focused_dark_tower"

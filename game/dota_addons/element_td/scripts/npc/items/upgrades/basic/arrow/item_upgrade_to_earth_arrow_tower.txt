@@ -18,7 +18,7 @@
             "tower"         "earth_arrow_tower"
         }
     }
-    "AbilityTextureName"    "item_earth"
+    "AbilityTextureName"    "item_earth_arrow"
     "AbilityCastRange"      "900"
 }
 
@@ -32,6 +32,6 @@
     "ItemKillable"          "0"
     "ItemPurchasable"       "0"
     "ItemDroppable"         "0"
-    "AbilityTextureName"    "item_earth_disabled"
+    "AbilityTextureName"    "item_earth_arrow_disabled"
     "AbilityCastRange"      "900"
 }

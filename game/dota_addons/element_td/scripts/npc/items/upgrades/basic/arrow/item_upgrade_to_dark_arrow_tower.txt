@@ -18,7 +18,7 @@
             "tower"         "dark_arrow_tower"
         }
     }
-    "AbilityTextureName"    "item_dark"
+    "AbilityTextureName"    "item_dark_arrow"
     "AbilityCastRange"      "900"
 }
 
@@ -32,6 +32,6 @@
     "ItemKillable"          "0"
     "ItemPurchasable"       "0"
     "ItemDroppable"         "0"
-    "AbilityTextureName"    "item_dark_disabled"
+    "AbilityTextureName"    "item_dark_arrow_disabled"
     "AbilityCastRange"      "900"
 }
