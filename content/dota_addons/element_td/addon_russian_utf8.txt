@@ -46,6 +46,21 @@
         // Towers
         "basic_arrow_tower"         "Башня со стрелами"
         "basic_cannon_tower"        "Башня со снарядами"
+
+        "dark_arrow_tower"          "Dark Arrow Tower"
+        "light_arrow_tower"         "Light Arrow Tower"
+        "fire_arrow_tower"          "Fire Arrow Tower"
+        "nature_arrow_tower"        "Nature Arrow Tower"
+        "water_arrow_tower"         "Water Arrow Tower"
+        "earth_arrow_tower"         "Nature Arrow Tower"
+        
+        "dark_cannon_tower"         "Dark Cannon Tower"
+        "light_cannon_tower"        "Light Cannon Tower"
+        "fire_cannon_tower"         "Fire Cannon Tower"
+        "nature_cannon_tower"       "Nature Cannon Tower"
+        "water_cannon_tower"        "Water Cannon Tower"
+        "earth_cannon_tower"        "Earth Cannon Tower"
+
         "water_tower"               "Башня Воды"
         "amplified_water_tower"     "Усиленная Башня Воды"
         "focused_water_tower"       "Фокусированная Башня Воды"
@@ -852,6 +867,16 @@
         ///////////
         // Water //
         ///////////
+        "DOTA_Tooltip_ability_item_upgrade_to_water_arrow_tower"                "Water Arrow Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_water_arrow_tower_disabled"       "Water Arrow Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_water_arrow_tower_Description"    "Upgrades this tower to a Water Arrow Tower.\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font>\nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\n"
+        "DOTA_Tooltip_ability_item_upgrade_to_water_arrow_tower_disabled_Description"    "Upgrades this tower to a Water Arrow Tower.\n<font color='#F0BA36'>Requires: </font><font color='#01A2FF'>Water</font>\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font>\nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\n"
+
+        "DOTA_Tooltip_ability_item_upgrade_to_water_cannon_tower"                   "Water Cannon Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_water_cannon_tower_Disabled"          "Water Cannon Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_water_cannon_tower_Description"       "Upgrades this tower to a Water Cannon Tower. Can also manually attack the ground.\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font>\nDAMAGE TYPE: <font color='#01A2FF'>Water</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>Slow</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_water_cannon_tower_disabled_Description"       "Upgrades this tower to a Water Cannon Tower. Can also manually attack the ground.\n<font color='#F0BA36'>Requires: </font><font color='#01A2FF'>Water</font>\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font>\nDAMAGE TYPE: <font color='#01A2FF'>Water</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>Slow</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
+
         "DOTA_Tooltip_ability_item_upgrade_to_focused_water_tower"      "Focused Water Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_water_tower_disabled"     "Focused Water Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_water_tower_Description"      "Upgrades this tower to a Focused Water Tower.\n\nCOST: <font color='#F0BA36'>450 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font>\nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>143</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>\nABILITY: Each attack bounces between targets, dealing splash damage to each."
@@ -978,6 +1003,16 @@
          //////////
         // Fire //
         //////////
+        "DOTA_Tooltip_ability_item_upgrade_to_fire_arrow_tower"                "Fire Arrow Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_fire_arrow_tower_disabled"       "Fire Arrow Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_fire_arrow_tower_Description"    "Upgrades this tower to a Fire Arrow Tower.\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font>\nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\n"
+        "DOTA_Tooltip_ability_item_upgrade_to_fire_arrow_tower_disabled_Description"    "Upgrades this tower to a Fire Arrow Tower.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire</font>\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font>\nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\n"
+
+        "DOTA_Tooltip_ability_item_upgrade_to_fire_cannon_tower"                   "Fire Cannon Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_fire_cannon_tower_Disabled"          "Fire Cannon Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_fire_cannon_tower_Description"       "Upgrades this tower to a Fire Cannon Tower. Can also manually attack the ground.\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font>\nDAMAGE TYPE: <font color='#C40000'>Fire</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>Slow</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_fire_cannon_tower_disabled_Description"       "Upgrades this tower to a Fire Cannon Tower. Can also manually attack the ground.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire</font>\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font>\nDAMAGE TYPE: <font color='#C40000'>Fire</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>Slow</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
+
         "DOTA_Tooltip_ability_item_upgrade_to_focused_fire_tower"       "Focused Fire Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_fire_tower_disabled"      "Focused Fire Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_fire_tower_Description"       "Upgrades this tower to a Focused Fire Tower.\n\nCOST: <font color='#F0BA36'>450 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font>\nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>62</font>\nRANGE: <font color='#FFFFFF'>550</font>\nSPEED: <font color='#FFFFFF'>Very Fast</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>"
@@ -1096,6 +1131,16 @@
         ////////////
         // Nature //
         ////////////
+
+        "DOTA_Tooltip_ability_item_upgrade_to_nature_arrow_tower"                "Nature Arrow Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_nature_arrow_tower_disabled"       "Nature Arrow Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_nature_arrow_tower_Description"    "Upgrades this tower to a Nature Arrow Tower.\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font>\nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\n"
+        "DOTA_Tooltip_ability_item_upgrade_to_nature_arrow_tower_disabled_Description"    "Upgrades this tower to a Nature Arrow Tower.\n<font color='#F0BA36'>Requires: </font><font color='#00C400'>Nature</font>\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font>\nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\n"
+
+        "DOTA_Tooltip_ability_item_upgrade_to_nature_cannon_tower"                   "Nature Cannon Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_nature_cannon_tower_Disabled"          "Nature Cannon Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_nature_cannon_tower_Description"       "Upgrades this tower to a Nature Cannon Tower. Can also manually attack the ground.\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font>\nDAMAGE TYPE: <font color='#00C400'>Nature</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>Slow</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_nature_cannon_tower_disabled_Description"       "Upgrades this tower to a Nature Cannon Tower. Can also manually attack the ground.\n<font color='#F0BA36'>Requires: </font><font color='#00C400'>Nature</font>\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font>\nDAMAGE TYPE: <font color='#00C400'>Nature</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>Slow</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
 		
 		"DOTA_Tooltip_ability_item_upgrade_to_focused_nature_tower"                 "Focused Nature Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_nature_tower_disabled"        "Focused Nature Tower"
@@ -1207,6 +1252,16 @@
         ///////////
         // Earth //
         ///////////
+        "DOTA_Tooltip_ability_item_upgrade_to_earth_arrow_tower"                "Earth Arrow Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_earth_arrow_tower_disabled"       "Earth Arrow Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_earth_arrow_tower_Description"    "Upgrades this tower to an Earth Arrow Tower.\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font>\nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\n"
+        "DOTA_Tooltip_ability_item_upgrade_to_earth_arrow_tower_disabled_Description"    "Upgrades this tower to an Earth Arrow Tower.\n<font color='#F0BA36'>Requires: </font><font color='#D4880F'>Earth</font>\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font>\nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\n"
+
+        "DOTA_Tooltip_ability_item_upgrade_to_earth_cannon_tower"                   "Earth Cannon Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_earth_cannon_tower_Disabled"          "Earth Cannon Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_earth_cannon_tower_Description"       "Upgrades this tower to an Earth Cannon Tower. Can also manually attack the ground.\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font>\nDAMAGE TYPE: <font color='#D4880F'>Earth</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>Slow</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_earth_cannon_tower_disabled_Description"       "Upgrades this tower to an Earth Cannon Tower. Can also manually attack the ground.\n<font color='#F0BA36'>Requires: </font><font color='#D4880F'>Earth</font>\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font>\nDAMAGE TYPE: <font color='#D4880F'>Earth</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>Slow</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
+
         "DOTA_Tooltip_ability_item_upgrade_to_focused_earth_tower"      "Focused Earth Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_earth_tower_disabled"     "Focused Earth Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_earth_tower_Description"      "Upgrades this tower to a Focused Earth Tower.\n\nCOST: <font color='#F0BA36'>450 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font>\nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>312</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nAOE: <font color='#FFFFFF'>200 Full/400 Half</font>"
@@ -1319,6 +1374,16 @@
         ///////////
         // Light //
         ///////////
+        "DOTA_Tooltip_ability_item_upgrade_to_light_arrow_tower"                "Light Arrow Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_light_arrow_tower_disabled"       "Light Arrow Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_light_arrow_tower_Description"    "Upgrades this tower to a Light Arrow Tower.\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#E6E600'>Light</font>\nDAMAGE TYPE: <font color='#E6E600'>Light</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\n"
+        "DOTA_Tooltip_ability_item_upgrade_to_light_arrow_tower_disabled_Description"    "Upgrades this tower to a Light Arrow Tower.\n<font color='#F0BA36'>Requires: </font><font color='#E6E600'>Light</font>\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#E6E600'>Light</font>\nDAMAGE TYPE: <font color='#E6E600'>Light</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\n"
+
+        "DOTA_Tooltip_ability_item_upgrade_to_light_cannon_tower"                   "Light Cannon Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_light_cannon_tower_Disabled"          "Light Cannon Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_light_cannon_tower_Description"       "Upgrades this tower to a Light Cannon Tower. Can also manually attack the ground.\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#E6E600'>Light</font>\nDAMAGE TYPE: <font color='#E6E600'>Light</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>Slow</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_light_cannon_tower_disabled_Description"       "Upgrades this tower to a Light Cannon Tower. Can also manually attack the ground.\n<font color='#F0BA36'>Requires: </font><font color='#E6E600'>Light</font>\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#E6E600'>Light</font>\nDAMAGE TYPE: <font color='#E6E600'>Light</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>Slow</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
+
         "DOTA_Tooltip_ability_item_upgrade_to_focused_light_tower"      "Focused Light Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_light_tower_disabled"     "Focused Light Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_light_tower_Description"      "Upgrades this tower to a Focused Light Tower.\n\nCOST: <font color='#F0BA36'>450 Gold</font>\nELEMENT: <font color='#E6E600'>Light</font>\nDAMAGE TYPE: <font color='#E6E600'>Light</font>\nDAMAGE: <font color='#FFFFFF'>650</font>\nRANGE: <font color='#FFFFFF'>1500</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Every consecutive attack on the same creep increases this tower's damage. Switching targets resets its damage."
@@ -1413,6 +1478,16 @@
         //////////
         // Dark //
         //////////
+        "DOTA_Tooltip_ability_item_upgrade_to_dark_arrow_tower"                "Dark Arrow Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_dark_arrow_tower_disabled"       "Dark Arrow Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_dark_arrow_tower_Description"    "Upgrades this tower to a Dark Arrow Tower.\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#6C05B1'>Dark</font>\nDAMAGE TYPE: <font color='#6C05B1'>Dark</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\n"
+        "DOTA_Tooltip_ability_item_upgrade_to_dark_arrow_tower_disabled_Description"    "Upgrades this tower to a Dark Arrow Tower.\n<font color='#F0BA36'>Requires: </font><font color='#6C05B1'>Dark</font>\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#6C05B1'>Dark</font>\nDAMAGE TYPE: <font color='#6C05B1'>Dark</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\n"
+
+        "DOTA_Tooltip_ability_item_upgrade_to_dark_cannon_tower"                   "Dark Cannon Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_dark_cannon_tower_Disabled"          "Dark Cannon Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_dark_cannon_tower_Description"       "Upgrades this tower to a Dark Cannon Tower. Can also manually attack the ground.\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#6C05B1'>Dark</font>\nDAMAGE TYPE: <font color='#6C05B1'>Dark</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>Slow</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_dark_cannon_tower_disabled_Description"       "Upgrades this tower to a Dark Cannon Tower. Can also manually attack the ground.\n<font color='#F0BA36'>Requires: </font><font color='#6C05B1'>Dark</font>\n\nCOST: <font color='#F0BA36'>75 Gold</font>\nELEMENT: <font color='#6C05B1'>Dark</font>\nDAMAGE TYPE: <font color='#6C05B1'>Dark</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>Slow</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
+        
         "DOTA_Tooltip_ability_item_upgrade_to_focused_dark_tower"       "Focused Dark Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_dark_tower_disabled"      "Focused Dark Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_dark_tower_Description"       "Upgrades this tower to a Focused Dark Tower.\n\nCOST: <font color='#F0BA36'>450 Gold</font>\nELEMENT: <font color='#6C05B1'>Dark</font>\nDAMAGE TYPE: <font color='#6C05B1'>Dark</font>\nDAMAGE: <font color='#FFFFFF'>1690</font>\nRANGE: <font color='#FFFFFF'>1150</font>\nSPEED: <font color='#FFFFFF'>Slow</font>"
