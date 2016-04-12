@@ -7,8 +7,8 @@ LEAK_POINTS = {[1]=5,[2]=4,[3]=6,[4]=2,[5]=1,[6]=3} -- Coop creeps leak at the o
 
 -- entry point
 function CoopStart()
-    StartBreakTimeCoop(GameSettings.length.PregameTime * 2)
-    InterestManager:StartInterest()
+    local initialBreakTime = GameSettings.length.PregameTime * 2
+    StartBreakTimeCoop(initialBreakTime)
 end
 
 function SpawnWaveCoop()
@@ -27,6 +27,10 @@ function SpawnWaveCoop()
         -- not sure about these
         playerData.waveObject = CURRENT_WAVE_OBJECT 
         playerData.waveObjects[COOP_WAVE] = CURRENT_WAVE_OBJECT
+    end
+
+    if not InterestManager:IsStarted() then
+        InterestManager:StartInterest()
     end
 
     CURRENT_WAVE_OBJECT:SetOnCompletedCallback(function()   
@@ -122,7 +126,7 @@ function StartBreakTimeCoop(breakTime)
 
     -- show countdown timer for all players
     Log:debug("Starting co-op break time for wave " .. COOP_WAVE)
-   	local bShowButton = PlayerResource:GetPlayerCount() == 1 and COOP_WAVE
+   	local bShowButton = PlayerResource:GetPlayerCount() == 1 and COOP_WAVE == 1
     CustomGameEventManager:Send_ServerToAllClients("etd_update_wave_timer", {time = breakTime, button = bShowButton})
 
     -- show sector portals

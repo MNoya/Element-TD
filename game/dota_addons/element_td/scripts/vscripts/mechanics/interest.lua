@@ -206,6 +206,12 @@ function InterestManager:GiveInterest(playerID)
 	local gold = hero:GetGold()
 	local interest = math.floor(gold * INTEREST_RATE)
 
+	-- cooperative interest
+	if COOP_MAP then
+		gold = PlayerResource:GetTotalGold() / PlayerResource:GetPlayerCount()
+		interest = math.floor(gold * INTEREST_RATE)
+	end
+
 	if interest > 0 then
 		hero:ModifyGold(interest)
 		PopupAlchemistGold(hero, interest)

@@ -238,13 +238,17 @@ function ElementTD:OnNextWave( keys )
         return
     end
 
-    if (data.waveObject and data.waveObject.creepsRemaining == 0) or data.nextWave == 1 or GameSettings:GetEndless() == "Endless" then
-        Timers:RemoveTimer("SpawnWaveDelay"..playerID)
-        Log:info("Spawning wave " .. data.nextWave .. " for ["..playerID.."] ".. data.name)
-        ShowWaveSpawnMessage(playerID, data.nextWave)
+    if COOP_MAP then
+        SpawnWaveCoop()
+    else
+        if (data.waveObject and data.waveObject.creepsRemaining == 0) or data.nextWave == 1 or GameSettings:GetEndless() == "Endless" then
+            Timers:RemoveTimer("SpawnWaveDelay"..playerID)
+            Log:info("Spawning wave " .. data.nextWave .. " for ["..playerID.."] ".. data.name)
+            ShowWaveSpawnMessage(playerID, data.nextWave)
 
-        UpdateWaveInfo(playerID, data.nextWave) -- update wave info
-        SpawnWaveForPlayer(playerID, data.nextWave) -- spawn dat wave
+            UpdateWaveInfo(playerID, data.nextWave) -- update wave info
+            SpawnWaveForPlayer(playerID, data.nextWave) -- spawn dat wave
+        end
     end
 end
 

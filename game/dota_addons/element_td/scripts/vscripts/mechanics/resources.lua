@@ -31,6 +31,14 @@ function CDOTA_PlayerResource:GetGold(playerID)
     return GetPlayerData(playerID).gold
 end
 
+function CDOTA_PlayerResource:GetTotalGold()
+    local totalGold = 0
+    ForAllPlayerIDs(function(playerID)
+        totalGold = totalGold + PlayerResource:GetGold(playerID)
+    end)
+    return totalGold
+end
+
 function SetCustomGold(playerID, amount)
     local playerData = GetPlayerData(playerID)
     local player = PlayerResource:GetPlayer(playerID)
