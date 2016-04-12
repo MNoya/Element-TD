@@ -10,7 +10,7 @@
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
 			m_bAdditive = true
 			m_flOverbrightFactor = 15.000000
-			m_hTexture = resource:"materials/particle/yellowflare.vtex"
+			m_hTexture = resource:"materials/particle/particle_flares/aircraft_white_v2.vtex"
 		},
 	]
 	m_Operators =
@@ -71,16 +71,16 @@
 			_class = "C_INIT_RandomColor"
 			m_ColorMin =
 			[
-				255,
-				190,
-				33,
+				102,
+				102,
+				102,
 				255,
 			]
 			m_ColorMax =
 			[
-				255,
 				118,
-				96,
+				118,
+				118,
 				255,
 			]
 		},

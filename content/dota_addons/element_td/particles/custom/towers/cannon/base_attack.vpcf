@@ -6,9 +6,9 @@
 	m_flConstantRadius = 260.000000
 	m_ConstantColor =
 	[
-		255,
-		158,
-		71,
+		118,
+		118,
+		118,
 		255,
 	]
 	m_nConstantSequenceNumber = 7
@@ -93,6 +93,7 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/base_attack_c.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/base_attack_d.vpcf"
@@ -102,6 +103,9 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/base_attack_f.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/towers/cannon/cannon_base_attack_model.vpcf"
 		},
 	]
 }

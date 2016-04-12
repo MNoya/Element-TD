@@ -19,7 +19,7 @@
 			_class = "C_OP_RenderSprites"
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
 			m_bAdditive = true
-			m_hTexture = resource:"materials/particle/particle_flares/particle_flare_006.vtex"
+			m_hTexture = resource:"materials/particle/particle_flares/particle_flare_006_white.vtex"
 			m_flAnimationRate = 2.000000
 		},
 	]
@@ -54,7 +54,7 @@
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
-			m_flStartScale = 2.000000
+			m_flStartScale = 1.500000
 			m_flEndScale = 0.500000
 			m_flBias = 0.250000
 		},
@@ -121,18 +121,11 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin =
-			[
-				255,
-				1,
-				1,
-				255,
-			]
 			m_ColorMax =
 			[
-				220,
-				174,
-				16,
+				118,
+				118,
+				118,
 				255,
 			]
 		},

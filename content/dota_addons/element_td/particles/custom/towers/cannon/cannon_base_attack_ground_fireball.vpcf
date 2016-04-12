@@ -6,9 +6,9 @@
 	m_flConstantRadius = 1.000000
 	m_ConstantColor =
 	[
-		251,
-		185,
-		161,
+		118,
+		118,
+		118,
 		255,
 	]
 	m_Renderers =
@@ -22,7 +22,7 @@
 			m_flOverbrightFactor = 5.000000
 			m_flAddSelfAmount = 2.500000
 			m_bSaturateColorPreAlphaBlend = false
-			m_hTexture = resource:"materials/particle/fire_particle_10/fire_particle_10_low.vtex"
+			m_hTexture = resource:"materials/particle/smoke/maya_wispy/wispy_v2.vtex"
 			m_flAnimationRate = 0.500000
 		},
 	]
@@ -33,7 +33,7 @@
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
-			m_flEndScale = 2.000000
+			m_flEndScale = 1.500000
 			m_flBias = 0.900000
 		},
 		{

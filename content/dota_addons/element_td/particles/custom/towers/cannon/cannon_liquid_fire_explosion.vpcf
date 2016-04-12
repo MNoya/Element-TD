@@ -113,6 +113,7 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/cannon_base_attack_fire_expl_smoke.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/cannon_base_attack_fire_expl_fire.vpcf"

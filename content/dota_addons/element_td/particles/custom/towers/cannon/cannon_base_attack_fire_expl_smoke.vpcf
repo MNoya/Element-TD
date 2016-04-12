@@ -5,9 +5,9 @@
 	m_nMaxParticles = 48
 	m_ConstantColor =
 	[
-		236,
-		178,
-		0,
+		118,
+		118,
+		118,
 		105,
 	]
 	m_Renderers =
@@ -51,9 +51,9 @@
 			_class = "C_OP_ColorInterpolate"
 			m_ColorFade =
 			[
-				66,
-				56,
-				56,
+				118,
+				118,
+				118,
 				255,
 			]
 			m_flFadeEndTime = 0.250000
