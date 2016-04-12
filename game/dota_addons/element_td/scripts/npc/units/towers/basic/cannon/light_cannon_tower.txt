@@ -3,10 +3,12 @@
     // Visual
     //-----------------------------
     "Model"                     "models/tower_white_top.vmdl"
-    "ModelScale"                "0.575"
+    "ModelScale"                "0.675"
     "ModelRotation"             "90"
-    "PedestalModel"             "models/tower_white_pedestal.vmdl"
-    "DestructionEffect"         "particles/econ/items/effigies/status_fx_effigies/base_statue_destruction_generic.vpcf"
+    "ModelOffset"               "-17"
+    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_ti5.vmdl"
+    "PedestalModelScale"        "0.8"
+    "PedestalOffset"            "15"
     "ProjectileModel"           "particles/units/heroes/hero_jakiro/jakiro_base_attack_fire.vpcf"
     "SoundSet"                  "Tower.Fire"
     "MinimapIcon"               "minimap_tower90"

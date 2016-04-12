@@ -8,7 +8,7 @@
     "ModelOffset"               "20"
     "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_ti5.vmdl"
     "PedestalModelScale"        "0.8"
-    "PedestalOffset"            "20"
+    "PedestalOffset"            "15"
     "ProjectileModel"           "particles/units/heroes/hero_oracle/oracle_base_attack.vpcf"
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"

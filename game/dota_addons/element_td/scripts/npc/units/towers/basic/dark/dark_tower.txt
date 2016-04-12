@@ -5,7 +5,7 @@
     "Model"                     "models/heroes/shadow_fiend/shadow_fiend.vmdl"
     "ModelScale"                "0.7"
     "ModelRotation"             "90"
-    "ModelOffset"               "10"
+    "ModelOffset"               "8"
     "PedestalModel"             "models/heroes/phantom_assassin/arcana_pedestal.vmdl"
     "PedestalModelScale"        "0.75"
     "PedestalOffset"            "18"
