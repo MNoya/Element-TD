@@ -9,7 +9,7 @@
     "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_frost_radiant.vmdl"
     "PedestalModelScale"        "0.7"
     "PedestalOffset"            "20"
-    "ProjectileModel"           "particles/units/heroes/hero_mirana/mirana_base_attack.vpcf"  
+    "ProjectileModel"           "particles/custom/towers/arrow/base_attack.vpcf"  
     "MinimapIcon"               "minimap_tower90"
     "MinimapIconSize"           "320"
     "SoundSet"                  "Hero_Mirana"

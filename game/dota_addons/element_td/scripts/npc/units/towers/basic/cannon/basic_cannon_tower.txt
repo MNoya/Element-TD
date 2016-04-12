@@ -7,7 +7,7 @@
     "ModelRotation"             "90"
     "PedestalModel"             "models/tower_white_pedestal.vmdl"
     "DestructionEffect"         "particles/econ/items/effigies/status_fx_effigies/base_statue_destruction_generic.vpcf"
-    "ProjectileModel"           "particles/units/heroes/hero_jakiro/jakiro_base_attack_fire.vpcf"
+    "ProjectileModel"           "particles/custom/towers/cannon/base_attack.vpcf"
     "SoundSet"                  "Tower.Fire"
     "MinimapIcon"               "minimap_tower90"
     "MinimapIconSize"           "320"

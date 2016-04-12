@@ -9,7 +9,7 @@
     "PedestalModel"             "models/heroes/shadow_fiend/pedestal_sf.vmdl"
     "PedestalModelScale"        "1.1"
     "PedestalOffset"            "15"
-    "ProjectileModel"           "particles/units/heroes/hero_jakiro/jakiro_base_attack_fire.vpcf"
+    "ProjectileModel"           "particles/custom/towers/cannon/base_attack.vpcf"
     "SoundSet"                  "Tower.Fire"
     "MinimapIcon"               "minimap_tower90"
     "MinimapIconSize"           "320"
