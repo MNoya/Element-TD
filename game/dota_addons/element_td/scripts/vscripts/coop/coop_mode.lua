@@ -5,6 +5,12 @@ CREEPS_PER_WAVE_COOP = 120 -- number of creeps in each wave
 CURRENT_WAVE_OBJECT = nil -- maybe should hold the WaveCoop 'object' of the wave that is currently active (can we ever have > 1 waves at once?)
 LEAK_POINTS = {[1]=5,[2]=4,[3]=6,[4]=2,[5]=1,[6]=3} -- Coop creeps leak at the opposite side from where they came
 
+-- entry point
+function CoopStart()
+    StartBreakTimeCoop(GameSettings.length.PregameTime * 2)
+    InterestManager:StartInterest()
+end
+
 function SpawnWaveCoop()
 	-- spawn wave COOP_WAVE
     CURRENT_WAVE_OBJECT = WaveCoop(COOP_WAVE)
@@ -116,8 +122,8 @@ function StartBreakTimeCoop(breakTime)
 
     -- show countdown timer for all players
     Log:debug("Starting co-op break time for wave " .. COOP_WAVE)
-   	-- local bShowButton = PlayerResource:GetPlayerCount() == 1 and COOP_WAVE == 1
-    CustomGameEventManager:Send_ServerToAllClients("etd_update_wave_timer", {time = breakTime, button = false})
+   	local bShowButton = PlayerResource:GetPlayerCount() == 1 and COOP_WAVE
+    CustomGameEventManager:Send_ServerToAllClients("etd_update_wave_timer", {time = breakTime, button = bShowButton})
 
     -- show sector portals
     for i = 1, 6 do

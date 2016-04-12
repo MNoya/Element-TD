@@ -75,7 +75,7 @@ function InterestManager:CreateTimerForPlayer(playerID, timeRemaining)
 	if InterestManager.timers[playerID] then return end
 
 	InterestManager.timers[playerID] = Timers:CreateTimer(timeRemaining or INTEREST_INTERVAL, function()
-		local hero = ElementTD.vPlayerIDToHero[playerID]
+		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 		if hero and hero:IsAlive() then
 			local playerData = GetPlayerData(playerID)
 			if playerData.health ~= 0 then

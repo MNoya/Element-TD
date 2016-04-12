@@ -220,7 +220,7 @@ function FinalizeVotes()
 	Timers:CreateTimer(1, function()
 
 		if COOP_MAP then
-			StartBreakTimeCoop(GameSettings.length.PregameTime) -- maybe coop mode should have longer pregame time?
+			CoopStart()
 		else
 			for _, plyID in pairs(playerIDs) do
 				StartBreakTime(plyID, GameSettings.length.PregameTime)

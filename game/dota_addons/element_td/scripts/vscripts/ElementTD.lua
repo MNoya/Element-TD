@@ -40,7 +40,6 @@ function ElementTD:InitGameMode()
     self.vUserIds = {}
     self.vPlayerUserIds = {}
     self.playerIDMap = {} --maps userIDs to playerID
-    self.vPlayerIDToHero = {} -- Maps playerID to hero
 
     GameRules:SetHeroRespawnEnabled(false)
     GameRules:SetSameHeroSelectionEnabled(true)
@@ -364,7 +363,7 @@ function ElementTD:CheckGameEnd()
     local teamWinner = DOTA_TEAM_NEUTRALS
     if #playerIDs == 1 then
         for k, ply in pairs(playerIDs) do
-            local hero = self.vPlayerIDToHero[ply]
+            local hero = PlayerResource:GetSelectedHeroEntity(ply)
             local playerData = GetPlayerData(ply)
             
             -- Lost
@@ -413,7 +412,7 @@ function ElementTD:CheckGameEnd()
             end
         end
         if winnerId ~= -1 then
-            teamWinner = self.vPlayerIDToHero[winnerId]:GetTeamNumber()
+            teamWinner = PlayerResource:GetSelectedHeroEntity(winnerId):GetTeamNumber()
         end
     end
 
@@ -522,8 +521,6 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:AddNewModifier(nil, nil, "modifier_attack_immune", {})
     hero:AddNewModifier(hero, nil, "modifier_max_ms", {ms=GameSettings:GetMapSetting("BuilderMoveSpeed")})
     --hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
-
-    self.vPlayerIDToHero[playerID] = hero -- Store hero for player in here GetAssignedHero can be flakey
 
     local playerData = GetPlayerData(playerID)
 
