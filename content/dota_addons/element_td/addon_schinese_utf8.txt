@@ -559,7 +559,7 @@
         "DOTA_Tooltip_modifier_kill_count_Description"        "这座防御塔击杀的小兵数。\n升级为同类防御塔时继承数据。"
 
         // ******************** TOWER ABILITIES ********************
-		"DOTA_Tooltip_ability_dark_tower_overkill"                  "Overkill"
+        "DOTA_Tooltip_ability_dark_tower_overkill"                  "Overkill"
         "DOTA_Tooltip_ability_dark_tower_overkill_Description"      "Every creep kill, any damage that was not necessary to get the kill is applied to another random creep in an area around the target."
         "DOTA_Tooltip_ability_dark_tower_overkill_aoe"              "AOE:"
 
@@ -580,17 +580,17 @@
         "DOTA_Tooltip_modifier_intensity_indicator"                "Intensity Level"
         "DOTA_Tooltip_modifier_intensity_indicator_Description"    "Number of consecutive attacks on the same target."
 
-		"DOTA_Tooltip_ability_earth_tower_aftershock"                 "Aftershock"
+        "DOTA_Tooltip_ability_earth_tower_aftershock"                 "Aftershock"
         "DOTA_Tooltip_ability_earth_tower_aftershock_Description"        "After a short time, its attack causes a secondary shockwave, hitting creeps in the same area for half damage."
         "DOTA_Tooltip_ability_earth_tower_aftershock_damage_pct"  "AFTERSHOCK DAMAGE:"
-		"DOTA_Tooltip_ability_earth_tower_aftershock_delay"  "AFTERSHOCK DELAY:"
+        "DOTA_Tooltip_ability_earth_tower_aftershock_delay"  "AFTERSHOCK DELAY:"
         
         "DOTA_Tooltip_ability_water_tower_water_bullet"                                   "Water Bullet"
         "DOTA_Tooltip_ability_water_tower_water_bullet_Description"                       "Each attack causes a single bounce within a short range, dealing reduced damage."
         "DOTA_Tooltip_ability_water_tower_water_bullet_bounce_range"                      "BOUNCE RANGE:"
         "DOTA_Tooltip_ability_water_tower_water_bullet_damage_pct"                     "DAMAGE:"
-		
-		
+        
+        
         "DOTA_Tooltip_modifier_magic_tower_attack_range"        "攻击距离衰减"
         "DOTA_Tooltip_modifier_magic_tower_attack_range_Description"        "防御塔攻击距离降低%dMODIFIER_PROPERTY_ATTACK_RANGE_BONUS%。"
         "DOTA_Tooltip_ability_magic_tower_range"        "增加攻击距离"
