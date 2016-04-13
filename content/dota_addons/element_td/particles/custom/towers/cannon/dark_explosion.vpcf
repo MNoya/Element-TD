@@ -106,19 +106,19 @@
 	m_Children =
 	[
 		{
-			m_ChildRef = resource:"particles/custom/towers/cannon/cannon_base_attack_ground_fireball.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/cannon/dark_explosion_a.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/towers/cannon/cannon_base_attack_fire_ember_expl.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/cannon/dark_explosion_b.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/towers/cannon/cannon_base_attack_fire_expl_smoke.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/cannon/dark_explosion_c.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/towers/cannon/cannon_base_attack_fire_expl_fire.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/cannon/dark_explosion_d.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/towers/cannon/cannon_base_attack_fire_exsplosionsmk.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/cannon/dark_explosion_e.vpcf"
 		},
 	]
 }

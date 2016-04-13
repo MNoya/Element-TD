@@ -29,7 +29,7 @@ function CannonTower:OnAttackLanded(keys)
 	
 	local pos = GetGroundPosition(origin, nil)
     local fx = GetExplosionFX(tower)
-	local particle = ParticleManager:CreateParticle(, PATTACH_CUSTOMORIGIN, self.tower)
+	local particle = ParticleManager:CreateParticle(fx, PATTACH_CUSTOMORIGIN, self.tower)
     ParticleManager:SetParticleControl(particle, 0, pos)
     ParticleManager:SetParticleControl(particle, 1, Vector(150, 260, 0))
     ParticleManager:ReleaseParticleIndex(particle)
