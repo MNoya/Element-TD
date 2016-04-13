@@ -16,7 +16,7 @@
 				<Panel class="LegendPanel ScoreCol_TeamInfoAndHero">
 					<Label id="RadiantLabel" class="TeamLabel" text="Builders"/>
 				</Panel>
-				<Label id="TeamScore" class="LegendPanel ScoreCol_Score" text="Score" />
+				<Label id="TeamScoreLabel" class="LegendPanel ScoreCol_Score" text="Score" />
 				<Label class="LegendPanel ScoreCol_Networth" text="Networth" />
 				<Label id="TeamLives" class="LegendPanel ScoreCol_Lives" text="Lives" />
 				<Label id="KillsRemaining" class="LegendPanel ScoreCol_Kills" text="Remaining" />
