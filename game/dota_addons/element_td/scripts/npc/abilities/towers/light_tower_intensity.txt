@@ -10,7 +10,7 @@
     "BaseClass"                     "ability_datadriven"                                            
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "AbilityTextureName"            "towers/light"
-    "MaxLevel"                      "1"
+    "MaxLevel"                      "4"
 
     "Modifiers"
     {
@@ -25,7 +25,7 @@
         "01"
         {
             "var_type"              "FIELD_INTEGER"
-            "damage"                "4 26 170 1700"
+            "damage"                "3 21 150 1500"
         }
     }
 }

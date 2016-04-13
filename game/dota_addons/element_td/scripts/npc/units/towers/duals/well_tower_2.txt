@@ -15,16 +15,16 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"            "2700"
-    "AttackDamageMax"            "2700"
-    "Damage"                     "2700"
+    "AttackDamageMin"            "4000"
+    "AttackDamageMax"            "4000"
+    "Damage"                     "4000"
     "AttackRange"                "900"
     "AttackAcquisitionRange"     "900"
     "AttackRate"                 "1"
 
     "Level"                      "2"
-    "Cost"                       "900"
-    "TotalCost"                  "1350"
+    "Cost"                       "1150"
+    "TotalCost"                  "1750"
     "BuildTime"                  "2"
 
     "Element"

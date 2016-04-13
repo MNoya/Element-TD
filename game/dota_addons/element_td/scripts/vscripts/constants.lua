@@ -51,7 +51,7 @@ ElementColors = {
 -- Light #E5DE23
 -- Dark #8733C8
 
-ElementalBaseHealth = {300, 1500, 7500}
+ElementalBaseHealth = {500, 2500, 12500}
 Particles = {
     light_elemental = "particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_spirit_form_ambient.vpcf",
 }
@@ -134,23 +134,24 @@ function GenerateAllConstants()
 end
 
 function generateElementalSummonerLocations()
-    if COOP_MAP then
-        -- TODO: each summor should be placed above the lane entrance
-        for i = 1, 8 do
-            ElementalSummonerLocations[i] = Vector(0, 4000, 0)
-        end
-    else
-
-        for i = 1, 8 do
-            local summoner = Entities:FindByName(nil, "summoner_"..i)
-            if summoner then
-                ElementalSummonerLocations[i] = summoner:GetAbsOrigin()
-            end
+    for i = 1, 8 do
+        local summoner = Entities:FindByName(nil, "summoner_"..i)
+        if summoner then
+            ElementalSummonerLocations[i] = summoner:GetAbsOrigin()
         end
     end
 end
 
 function generateSectorBounds()
+    if COOP_MAP then
+        CoopBounds = {
+            left = -3600,
+            right = 3600,
+            top = 3600,
+            bottom = -3600
+        }
+    end
+
     local defX = -8192
     local defY = 5120
     local xIncr = 4096 -- distance between spawns on the x axis
@@ -173,15 +174,8 @@ function generateSectorBounds()
 end
 
 function generateSectorPortals()
-    if COOP_MAP then
-        for i = 1, 6 do
-            -- portal entities are named differently on the co-op map LOL
-            SectorPortals[i] = Entities:FindByName(nil, "portal_" .. i)
-        end
-    else
-        for i = 1, 8 do
-            SectorPortals[i] = Entities:FindByName(nil, "portal_sector" .. i)
-        end
+    for i = 1, 8 do
+        SectorPortals[i] = Entities:FindByName(nil, "portal_" .. i)
     end
 end
 

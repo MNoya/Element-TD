@@ -34,7 +34,7 @@
     "VisionDaytimeRange"        "1900"
     "VisionNighttimeRange"        "1900"
     "Level"        "1"
-    "Cost"        "1050"
+    "Cost"        "900"
     "TotalCost"        "1500"
     "Element"
     {
@@ -42,9 +42,9 @@
         "2"        "earth"
         "3"        "fire"
     }
-    "Damage"        "450"
-    "AttackDamageMin"        "450"
-    "AttackDamageMax"        "450"
+    "Damage"        "500"
+    "AttackDamageMin"        "500"
+    "AttackDamageMax"        "500"
     "DamageType"        "fire"
     "ScriptClass"        "FlamethrowerTower"
     "TowerType"        "Normal"

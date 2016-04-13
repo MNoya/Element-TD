@@ -17,6 +17,6 @@ function RelocatePlayer(trigger)
 end
 
 function IsInsideSector(pos, sector)
-    local bounds = SectorBounds[sector]
+    local bounds = COOP_MAP and CoopBounds or SectorBounds[sector]
     return (pos.x > bounds.left and pos.x < bounds.right and pos.y < bounds.top and pos.y > bounds.bottom)
 end

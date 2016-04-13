@@ -150,7 +150,7 @@ end
 
 function Sandbox:SetLife(event)
     local playerID = event.PlayerID
-    local value = tonumber(event.value) or 50
+    local value = tonumber(event.value) or GameSettings:GetMapSetting("Lives")
     local playerData = GetPlayerData(playerID)
     playerData.health = value
     playerData.cheated = true
@@ -256,8 +256,13 @@ function Sandbox:SpawnWave(event)
         ShowWaveSpawnMessage(playerID, waveNumber)
     end
 
-    SpawnWaveForPlayer(playerID, waveNumber)
-    ShowPortalForSector(playerData.sector+1, waveNumber, playerID)
+    if COOP_MAP then
+        COOP_WAVE = waveNumber
+        SpawnWaveCoop()
+    else
+        SpawnWaveForPlayer(playerID, waveNumber)
+        ShowPortalForSector(playerData.sector+1, waveNumber, playerID)
+    end
 
     UpdateWaveInfo(playerID, playerData.nextWave-1)
     UpdateWaveInfo(playerID, playerData.nextWave)
@@ -385,10 +390,12 @@ function Sandbox:Restart( event )
     newPlayerData.difficulty = difficulty
     newPlayerData.scoreObject = scoreObject
 
-    -- Set life to 50
-    newPlayerData.health = 50 
+    -- Set life to default
+    local health = GameSettings:GetMapSetting("Lives")
+    newPlayerData.health = health 
     hero:CalculateStatBonus()
-    hero:SetHealth(50)
+    UpdatePlayerHealth(playerID)
+    
     CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=newPlayerData.health/hero:GetMaxHealth() * 100} )
 
     -- Set resources

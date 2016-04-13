@@ -23,7 +23,7 @@
     "BoundsHullName"        "DOTA_HULL_SIZE_REGULAR"
     "HealthBarOffset"        "140"
     "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
-    "MovementSpeed"            "175"
+    "MovementSpeed"            "200"
     "MovementTurnRate"        "20"
     "FollowRange"            "500"
     "StatusHealth"            "500"

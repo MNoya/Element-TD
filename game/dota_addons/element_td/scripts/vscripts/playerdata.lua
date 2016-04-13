@@ -16,7 +16,7 @@ function CreateDataForPlayer(playerID, allowOverride)
 
 	PlayerData[playerID] = {}
 	local data = PlayerData[playerID]
-	data["health"] = 50
+	data["health"] = GameSettings:GetMapSetting("Lives")
 	data["scoreObject"] = {}
 	data["sector"] = -1
 	data["lumber"] = 0
@@ -29,6 +29,7 @@ function CreateDataForPlayer(playerID, allowOverride)
 	data["LifeTowerKills"] = 0
 	data["TotalLifeTowerKills"] = 0
 	data["gold"] = 0
+    data["gold_remainder"] = 0
 	data["goldLost"] = 0
 	data["towersSold"] = 0
 	data["goldTowerEarned"] = 0
@@ -238,6 +239,7 @@ function UpdatePlayerSpells(playerID)
     local playerData = GetPlayerData(playerID)
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     if hero then
+        
         for i=0,15 do
             local ability = hero:GetAbilityByIndex(i)
             if ability then
@@ -261,6 +263,7 @@ function UpdatePlayerSpells(playerID)
                 end
             end
         end
+        
 
         for i=0,5 do
             local item = hero:GetItemInSlot(i)
@@ -295,6 +298,21 @@ function UpdatePlayerSpells(playerID)
                 item_random:RemoveSelf()
             end
         end
+    end
+
+    UpdatePlayerHealth(playerID);
+end
+
+-- health correction for gamemodes where max health > 50
+local maxHealth = nil;
+function UpdatePlayerHealth(playerID)
+    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+    local playerData = GetPlayerData(playerID)
+    if hero then
+        maxHealth = maxHealth or GameSettings:GetMapSetting("Lives")
+        hero:SetBaseMaxHealth(maxHealth)
+        hero:SetMaxHealth(maxHealth)
+        hero:SetHealth(playerData.health)
     end
 end
 

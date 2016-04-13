@@ -27,9 +27,10 @@ function CreepUndead:OnDeath()
 
     local newCreep = CreateUnitByName(creepClass, creep:GetAbsOrigin() , false, nil, nil, DOTA_TEAM_NEUTRALS)
     newCreep.class = creepClass
-    newCreep.playerID = creep.playerID
+    newCreep.playerID = creep.playerID or creep.sector
     newCreep.waveObject = creep.waveObject
     newCreep.waveNumber = creep.waveNumber
+    newCreep.sector = creep.sector --coop only
     newCreep:CreatureLevelUp(newCreep.waveObject.waveNumber-newCreep:GetLevel())
     
     local newEntIndex = newCreep:entindex()
@@ -84,22 +85,30 @@ function CreepUndead:UndeadCreepRespawn()
     creep:RemoveModifierByName("modifier_invisible_etd")
     creep:RemoveModifierByName("modifier_stunned")
 
-    local bounty = GetPlayerDifficulty(playerID):GetBountyForWave(wave)
+    local bounty = GameSettings:GetGlobalDifficulty():GetBountyForWave(wave)
     creep:SetMaximumGoldBounty(bounty)
     creep:SetMinimumGoldBounty(bounty)
 
     creep:SetHealth(creep:GetMaxHealth() * 0.5) -- it spawns at a percentage of its max health
-    CreateMoveTimerForCreep(creep, playerData.sector + 1) --create a timer for this creep so it continues walking to the destination
+
+    --create a timer for this creep so it continues walking to the destination
+    if COOP_MAP then
+        CreateMoveTimerForCreepCoop(creep, creep.sector)
+    else
+        CreateMoveTimerForCreep(creep, playerData.sector + 1)
+    end
 
     local h = ParticleManager:CreateParticle("particles/units/heroes/hero_skeletonking/skeletonking_reincarnation.vpcf", PATTACH_CUSTOMORIGIN, creep) --play a cool particle effect :D
     ParticleManager:SetParticleControl(h, 0, creep:GetAbsOrigin())
     ParticleManager:SetParticleControlEnt(h, 0, creep, PATTACH_POINT_FOLLOW, "attach_hitloc", creep:GetOrigin(), true)
 
     -- Add to scoreboard count
-    if playerData.remaining then
+    if playerData and playerData.remaining then
         playerData.remaining = playerData.remaining + 1
     end
-    UpdateScoreboard(playerID)
+    if playerID then
+        UpdateScoreboard(playerID)
+    end
 end
 
 RegisterCreepClass(CreepUndead, CreepUndead.className)

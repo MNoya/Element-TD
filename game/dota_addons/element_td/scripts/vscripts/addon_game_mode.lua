@@ -35,7 +35,6 @@ local requires = {
     "mechanics/ranking",
     "mechanics/random",
     "mechanics/summoner",
-    "mechanics/interest",
     "mechanics/orbs",
     "mechanics/saves",
     

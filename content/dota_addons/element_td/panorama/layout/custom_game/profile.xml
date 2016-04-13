@@ -10,16 +10,56 @@
     </scripts>
     <Panel hittest='false' class="ProfileHud">
 
-        <Panel class="Hide" id="ProfileToggleContainer">
-            <Panel id="MyProfileButton" class="ProfileButton" onactivate="ToggleProfile()">
+        <Panel id="ProfileToggleContainer">
+            <Panel id="PassHeader" onactivate="ToggleHeader()">
                 <Label id="New" text="#etd_new_feature"/>
-                <Label id="ProfileHeaderTitle" text="#profile_title" />
-                <Panel id="PopoutArrow" class="OpenMenuArrow" />
+                <Label id="PassTitle" text="#pass_title" />
+                <Panel id="MenuArrow" class="OpenMenuArrow" />
             </Panel>
-            <Panel id="CustomBuilderButton" class="ProfileButton" onactivate="ToggleCustomBuilders()">
-                <Label id="ProfileHeaderTitle" text="#profile_builders" />
-                <Panel id="PopoutArrow" class="OpenMenuArrow" />
+            <Panel id="PassButtonsPanel">
+                <Panel id="PassPreview" onactivate="ToggleInactivePreview()"> <!-- Inactive buttons -->
+                    <Label id="PassNotOwned" text="#pass_support"/>
+                    <Panel id="PassPreviewButton">
+                        <Label text="#pass_look_inside" />
+                    </Panel>
+                </Panel>
+
+                <Panel id="PassAccess" class="Hide"> <!-- Pass owner buttons -->
+                    <Panel id="MyProfileButton" class="ProfileButton BorderBottom" onactivate="ToggleProfile()">
+                        <Label text="#profile_title" />
+                    </Panel>
+
+                    <Panel id="CustomBuilderButton" class="ProfileButton" onactivate="ToggleCustomBuilders()">
+                        <Label text="#profile_builders" />
+                    </Panel>
+                </Panel>
             </Panel>
+        </Panel>
+        <Panel id="MinimizePanel" onactivate="ToggleMinimize()">
+            <Panel id="MinimizeButton" onmouseover="MinimizeTooltip()" onmouseout="DOTAHideTextTooltip()"/>
+            
+        </Panel>
+
+        <Panel class="Hide" id="PreviewMenu">
+            <Panel onactivate="PreviewProfile()">
+                <Label id="preview_profile" class="PerkLabelMain" text="pass_player_profiles"/>
+            </Panel>
+            <Label id="preview_friends" onactivate="ShowProfileTab('stats')" class="PerkLabelSub" text="profile_friends"/>
+            <Panel onactivate="ShowProfileTab('stats')">
+                <Label id="preview_stats" class="PerkLabelSub" text="pass_lifetime_stats"/>
+            </Panel>
+            <Panel onactivate="ShowProfileTab('matches')">
+                <Label id="preview_matches" class="PerkLabelSub" text="pass_match_history"/>
+            </Panel>
+            <Panel onactivate="ShowProfileTab('achievements')">
+                <Label id="preview_achievements" class="PerkLabelSub" text="pass_rank_achieves"/>
+            </Panel>
+            <Panel onactivate="OpenCustomBuilders()">
+                <Label id="preview_builders" class="PerkLabelMain" text="pass_custom_builders"/>
+            </Panel>
+            <Label class="PerkLabelMain" onmouseover="DOTAShowTextTooltip(#pass_perk_other_desc)" onmouseout="DOTAHideTextTooltip()" text="pass_perk_other"/>
+            <Label class="PerkLabelSub" onmouseover="DOTAShowTextTooltip(#pass_perk_vote_desc)" onmouseout="DOTAHideTextTooltip()" text="pass_perk_vote"/>
+            <Label class="PerkLabelSub" onmouseover="DOTAShowTextTooltip(#pass_perk_flair_desc)" onmouseout="DOTAHideTextTooltip()" text="pass_perk_flair"/>
         </Panel>
 
         <Panel class="Hide" id="Profile" onmouseover="GameUI.DenyWheel()" onmouseout="GameUI.AcceptWheel()">
@@ -64,7 +104,7 @@
                     </Panel>
                 </Panel>
 
-                <Label id="CloseButton" onactivate="ToggleProfile()"/>
+                <Label id="CloseButton" onactivate="ToggleProfile(); ClosePreview()"/>
             </Panel>
 
             <Panel id="ProfileMenuContainer">
@@ -72,7 +112,7 @@
                 <Panel hittest="false" id="LeftPanel">
                     <Panel id="ProfileTabs">
                         <Button class="ProfileTabButton" onactivate="ShowProfileTab('stats')">
-                            <Label id="stats_radio" class="ProfileTab ActiveTab" text="#profile_lifetime_stats"/>
+                            <Label id="stats_radio" class="ProfileTab ActiveTab" text="#profile_stats"/>
                         </Button>
 
                         <Button id="MatchesButton" class="ProfileTabButton" onactivate="ShowProfileTab('matches')">
@@ -85,6 +125,23 @@
                     </Panel>
 
                     <Panel id="stats_Tab" class='LeftTab'>
+                        <Panel id="TimedStats">
+                            <Button class="ProfileTabButtonSub" onactivate="ShowStatsTab('allTime')">
+                                <Label id="allTime_radio" class="ProfileTabSub ActiveTabSub" text="#profile_lifetime"/>
+                            </Button>
+
+                            <Button class="ProfileTabButtonSub" onactivate="ShowStatsTab('versionTime')">
+                                <Label id="versionTime_radio" class="ProfileTabSub" text="#profile_version"/>
+                            </Button>
+
+                            <Button class="ProfileTabButtonSub" onactivate="ShowStatsTab('monthTime')">
+                                <Label id="monthTime_radio" class="ProfileTabSub" text="#profile_month"/>
+                            </Button>
+
+                            <Button class="ProfileTabButtonSub" onactivate="ShowStatsTab('weekTime')">
+                                <Label id="weekTime_radio" class="ProfileTabSub" text="#profile_week"/>
+                            </Button>
+                        </Panel>
                         <Panel id="GeneralStats">
                             <Label class="SectionTitle" text="#profile_general"/>
                             <Panel id="GeneralStatsContainer">
@@ -339,6 +396,7 @@
                 </Panel>
             </Panel>
         </Panel>
+
         <Panel class="Hide" id="CustomBuilders">
             <Panel id="BuildersContainer">
                 <Panel class="BuilderColumn" onmouseover="Hovering('LightBackground'); AnimateBuilderHover('LightBuilder')"
@@ -371,7 +429,7 @@
 
                 <Panel class="BuilderColumn" onmouseover="Hovering('NatureBackground'); AnimateBuilderHover('NatureBuilder')"
                                              onmouseout="HoverOut('NatureBackground'); AnimateBuilderIdle('NatureBuilder')"
-                                             onactivate="ChooseBuilder('npc_dota_hero_lone_druid')">
+                                             onactivate="ChooseBuilder('npc_dota_hero_enchantress')">
                     <Image id="NatureBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/nature.png" />
                     <DOTAScenePanel id="NatureBuilder" class="BuilderPanel" map="builders" camera="nature"/>
                 </Panel>
@@ -386,7 +444,7 @@
 
             <Label id="CustomBuildersTitle" text="#profile_choose_builder"/>
             <Label id="CustomBuilderDescription" text="#profile_builder_description"/>
-            <Label id="CloseButton" onactivate="CloseCustomBuilders()"/>
+            <Label id="CloseButton" onactivate="CloseCustomBuilders(); ClosePreview()"/>
         </Panel>
         <Button id="ResetBuilderButton" class="Hide" onactivate="ResetBuilder()" 
                                                      onmouseover="DOTAShowTitleTextTooltip(#profile_reset_builder_title, #profile_reset_builder_tooltip)"

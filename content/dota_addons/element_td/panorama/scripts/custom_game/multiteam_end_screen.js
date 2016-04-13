@@ -52,10 +52,12 @@ function ShowEndCredits() {
     
     for (var i in ids)
     {
-        var panel = CreateEndCredit(ids[i].key)
+        var steamID64 = ids[i].key
+        var panel = CreateEndCredit(steamID64)
         panel.SetHasClass( "team_endgame", false );
         
-        GameUI.ApplyPanelBorder(panel, ids[i].key)
+        GameUI.ApplyPanelBorder(panel, steamID64)
+        GameUI.SetupAvatarTooltip(panel.FindChildInLayoutFile("AvatarImage"), $.GetContextPanel(), steamID64)
         
         var callback = function( panel )
         {
@@ -100,7 +102,15 @@ function CreateEndCredit(steamid) {
 
         lastPanel = teamPanel;
 
-        GameUI.ApplyPanelBorder(teamPanel, Game.GetPlayerInfo(0).steamid )
+        var playerIDs = Game.GetPlayerIDsOnTeam(teamInfo.team_id)
+        for (var i in playerIDs)
+        {
+            var playerID = playerIDs[i]
+            var steamID64 = Game.GetPlayerInfo(playerID).player_steamid
+            $.Msg(Game.GetPlayerInfo(playerID))
+            GameUI.ApplyPanelBorder(teamPanel, steamID64)
+            GameUI.SetupAvatarTooltip(teamPanel.FindChildTraverse("AvatarImage"), $.GetContextPanel(), steamID64)
+        }
 
         teamPanel.SetHasClass( "team_endgame", false );
         var callback = function( panel )

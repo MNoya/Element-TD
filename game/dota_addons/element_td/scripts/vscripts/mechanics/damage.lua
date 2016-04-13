@@ -74,7 +74,18 @@ function DamageEntity(entity, attacker, damage, pure)
             CreateSunburnRemnant(entity)
         end
         
-        hero:ModifyGold(goldBounty)
+        if COOP_MAP then
+            -- Split gold bounty with all players
+            goldBounty = goldBounty / PlayerResource:GetPlayerCount()
+            ForAllPlayerIDs(function(playerID)
+                local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+                if hero then
+                    hero:ModifyGold(goldBounty)
+                end
+            end)
+        else
+            hero:ModifyGold(goldBounty)
+        end
 
         if not entity.isUndead then
             IncrementKillCount(attacker)

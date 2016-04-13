@@ -1,0 +1,37 @@
+"item_upgrade_to_dark_arrow_tower"
+{
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "BaseClass"             "item_datadriven"
+    "AbilityManaCost"       "0"
+    "ItemShareability"      "ITEM_NOT_SHAREABLE"
+    "ItemSellable"          "0"
+    "ItemKillable"          "0"
+    "ItemPurchasable"       "0"
+    "ItemDroppable"         "0"
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "TARGET"        "CASTER"
+            "ScriptFile"    "mechanics/upgrades.lua"
+            "Function"      "UpgradeTower"
+            "tower"         "dark_arrow_tower"
+        }
+    }
+    "AbilityTextureName"    "item_dark_arrow"
+    "AbilityCastRange"      "900"
+}
+
+"item_upgrade_to_dark_arrow_tower_disabled"
+{
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"             "item_datadriven"
+    "AbilityManaCost"       "0"
+    "ItemShareability"      "ITEM_NOT_SHAREABLE"
+    "ItemSellable"          "0"
+    "ItemKillable"          "0"
+    "ItemPurchasable"       "0"
+    "ItemDroppable"         "0"
+    "AbilityTextureName"    "item_dark_arrow_disabled"
+    "AbilityCastRange"      "900"
+}

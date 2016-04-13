@@ -26,10 +26,10 @@ var timer = $( '#Countdown' );
 
 var difficultyModes = ["normal","hard","veryhard","insane"]
 var activeDifficulty = "normal"
-var healthBonus = {normal:"100%",hard:"150%",veryhard:"200%",insane:"250%"}
-var bountyBonus = {normal:"100%",hard:"130%",veryhard:"150%",insane:"170%"}
-var bountyBonusExpress = {normal:"100%",hard:"130%",veryhard:"150%",insane:"170%"}
-var endlessBountyBonus = 20
+var healthBonus = {normal:"100%",hard:"130%",veryhard:"160%",insane:"200%"}
+var bountyBonus = {normal:"100%",hard:"110%",veryhard:"120%",insane:"130%"}
+var bountyBonusExpress = {normal:"100%",hard:"110%",veryhard:"120%",insane:"130%"}
+var endlessBountyBonus = 25
 var scoreMultipliers = {normal:1,hard:2,veryhard:3,insane:4}
 
 var healthMult = $( '#HealthMult' );
@@ -179,6 +179,11 @@ function UpdateNotVoted()
             notVoted.AddClass('VotingAvatar');
             notVoted.AddClass('NotVoted');
             notVoted.steamid = playerData.player_steamid;
+
+            if (GameUI.PlayerHasProfile(playerID))
+                notVoted.AddClass('Pass')
+
+            GameUI.SetupAvatarTooltip(notVoted, $.GetContextPanel(), notVoted.steamid)
             position += 1;
         }
     };
@@ -192,14 +197,19 @@ function UpdateNotVoted()
 function PlayerVoted( data )
 {
     $.Msg(data);
-    var playerID = data.playerID;
-    var playerData = Game.GetPlayerInfo(parseInt(playerID));
+    var playerID = parseInt(data.playerID);
+    var playerData = Game.GetPlayerInfo(playerID);
     var vote = $.CreatePanel('Panel', votingLiveHasVoted, '');
     vote.AddClass('VotedPlayer');
+
+    if (GameUI.PlayerHasProfile(playerID))
+        vote.AddClass('Pass')
 
     var avatar = $.CreatePanel('DOTAAvatarImage', vote, '');
     avatar.AddClass('VotingAvatar');
     avatar.steamid = playerData.player_steamid;
+
+    GameUI.SetupAvatarTooltip(avatar, $.GetContextPanel(), avatar.steamid)
 
     var votes = $.CreatePanel('Panel', vote, '');
     votes.AddClass('VotedPlayerVotes');
@@ -443,8 +453,13 @@ function Setup()
     votingLiveUI.AddClass("hidden");
     UpdateNotVoted();
     ShowGamemodeViewer();
-}
 
+    if (Game.IsCoop())
+    {
+        $("#Option_Endless").AddClass("Hidden")
+        $("#Option_Express").AddClass("Hidden")
+    }
+}
 
 (function () {
     Setup();

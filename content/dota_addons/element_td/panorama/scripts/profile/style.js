@@ -1,3 +1,80 @@
+function ClearFields() {
+    $("#GamesWon").text = "-"
+    $("#BestScore").text = "-"
+
+    // General
+    $("#kills").text = "-"
+    $("#frogKills").text = "-"
+    $("#networth").text = "-"
+    $("#interestGold").text = "-"
+    $("#cleanWaves").text = "-"
+    $("#under30").text = "-"
+
+    // GameMode
+    var data = []
+    data["gamesPlayed"] = 4
+    data["normal"] = 1
+    data["hard"] = 1
+    data["veryhard"] = 1
+    data["insane"] = 1
+    data["order_chaos"] = 0
+    data["horde_endless"] = 0
+    data["express"] = 0
+
+    MakeBars(data, ["normal","hard","veryhard","insane"])
+    MakeBoolBar(data, "order_chaos")
+    MakeBoolBar(data, "horde_endless")
+    MakeBoolBar(data, "express")
+
+    var random = "-"
+    $("#gamesPlayed").text = 0
+    $("#random_pick").text = "-"
+    $("#towersBuilt").text = "-"
+    $("#towersSold").text = "-"
+    $("#lifeTowerKills").text = "-"
+    $("#goldTowerEarn").text = "-"
+
+    // Towers
+    MakeFirstDual("")
+    MakeFirstTriple("")
+
+    // Element Usage
+    var light = 1
+    var dark = 1
+    var water = 1
+    var fire = 1
+    var nature = 1
+    var earth = 1
+    var total_elem = light+dark+water+fire+nature+earth
+    var favorite = "-"
+
+    var nextStart = 0
+    nextStart = RadialStyle("light", nextStart, light/total_elem)
+    nextStart = RadialStyle("dark", nextStart, dark/total_elem)
+    nextStart = RadialStyle("water", nextStart, water/total_elem)
+    nextStart = RadialStyle("fire", nextStart, fire/total_elem)
+    nextStart = RadialStyle("nature", nextStart, nature/total_elem)
+    nextStart = RadialStyle("earth", nextStart, earth/total_elem)
+
+    $("#ClassicRank").text = "--"
+    $("#ExpressRank").text = "--"
+    $("#FrogsRank").text = "--"
+
+    // Milestones
+    var childCount = $("#MilestonesContainer").GetChildCount()
+    for (var i = 0; i < childCount; i++) {
+        var child = $("#MilestonesContainer").GetChild(i)
+        if (child && child.id != "ErrorNoMilestones") child.DeleteAsync(0)
+    };
+
+    // Matches
+    var childCount = $("#MatchesContainer").GetChildCount()
+    for (var i = 0; i < childCount; i++) {
+        var child = $("#MatchesContainer").GetChild(i)
+        if (child && child.id != "ErrorNoMatches") child.DeleteAsync(0)
+    };
+}
+
 function MakeBoolBar(data, name) {
     var panel = $("#"+name)
     var not_panel = $("#not_"+name)
@@ -153,6 +230,19 @@ function MakeFirstTriple (triple_string) {
         $("#FirstTriplePanel").SetPanelEvent( "onmouseout", function() {
             $.DispatchEvent( "DOTAHideAbilityTooltip", $("#FirstTriplePanel") );
         })
+}
+
+function pickRandomProperty(obj) {
+    var result;
+    var count = 0;
+    for (var prop in obj)
+        if (Math.random() < 1/++count)
+           result = prop;
+    return result;
+}
+
+function RandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 var duals = {}

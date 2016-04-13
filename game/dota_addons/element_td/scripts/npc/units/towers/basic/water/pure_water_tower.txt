@@ -1,0 +1,88 @@
+"pure_water_tower"
+{
+    // Visual
+    //-----------------------------
+    "Model"                     "models/heroes/morphling/morphling.vmdl"
+    "ModelScale"                "1.2"
+    "ModelRotation"             "90"
+    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_frost_radiant.vmdl"
+    "PedestalModelScale"        "0.7"
+    "PedestalOffset"            "20"
+    "ProjectileModel"           "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf" 
+    "SoundSet"                  "Tower.Water"
+    "MinimapIcon"               "minimap_tower90"
+    "MinimapIconSize"           "320"
+    "Creature"
+    {
+        "AttachWearables" // Shard of the Lost Star
+        {
+            "1" { "ItemDef" "7561" } // Spines of the Lost Star
+            "2" { "ItemDef" "7560" } // Scowl of the Lost Star
+            "3" { "ItemDef" "7562" } // Bracers of the Lost Star
+            "4" { "ItemDef" "7559" } // Eye of the Lost Star
+            "5" { "ItemDef" "7558" } // Grip of the Lost Star
+            "6" { "ItemDef" "507" } // Morphling's Ambient Effects
+        }
+    }
+    "SoundSet"          "Hero_Morphling"
+    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+
+    // Stats
+    //----------------------------- 
+    "AttackDamageMin"           "27000"
+    "AttackDamageMax"           "27000"
+    "Damage"                    "27000"
+    "AOE_Full"                  "100"
+    "AOE_Half"                  "200"
+    "AttackRange"               "900"
+    "AttackAcquisitionRange"    "900"
+    "AttackRate"                "0.66"
+    "AttackAnimationPoint"      "0.15"
+    "ProjectileSpeed"           "2500"
+
+    "Level"                     "4"
+    "Cost"                      "10000"
+    "EssenceCost"               "1"
+    "TotalCost"                 "13000"
+    "PureEssence"               "1"
+    "BuildTime"                 "3"
+    "Element"                   "water"
+
+    "DamageType"                "water"
+    "ScriptClass"               "WaterTower"
+    "TowerType"                 "Normal"
+    "BuffPriority"              "1"
+
+    "Upgrades"
+    {
+    }
+
+    // General
+    //-----------------------------
+    "BaseClass"                 "npc_dota_creature"
+    "ArmorPhysical"             "0"
+    "MagicalResistance"         "0"
+    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"      "1900"  
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"      "0"
+    "ProjectileCollisionSize"   "50"
+    "RingRadius"                "80"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"             "0"
+    "MovementTurnRate"          "1.0"
+    "StatusHealth"              "11000"
+    "StatusHealthRegen"         "0"
+    "StatusMana"                "0"
+    "StatusManaRegen"           "0"
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
+}

@@ -32,7 +32,7 @@
     "VisionDaytimeRange"        "1900"
     "VisionNighttimeRange"        "1900"
     "Level"        "1"
-    "Cost"        "1050"
+    "Cost"        "900"
     "TotalCost"        "1500"
     "Element"
     {
@@ -40,7 +40,9 @@
         "2"        "fire"
         "3"        "nature"
     }
-    "Damage"        "2600"
+    "Damage"        "3500"
+    "AttackDamageMin"        "3500"
+    "AttackDamageMax"        "3500"
     "DamageType"        "dark"
     "ScriptClass"        "JinxTower"
     "TowerType"        "Normal"
@@ -80,8 +82,6 @@
         "Count"        "1"
         "1"        "jinx_tower_2"
     }
-    "AttackDamageMin"        "2600"
-    "AttackDamageMax"        "2600"
 
     // Building Size
     "ConstructionSize"          "2"

@@ -63,7 +63,7 @@ function Tooltips:Check(mainFile, fileName)
 
         for k,v in pairs(missing) do
             local spaces = max + 4 - string.len(v)
-            Tooltips:write(string.rep(" ", 8).."\""..v.."\""..string.rep(" ", spaces).."\"\"")
+            Tooltips:write(string.rep(" ", 8).."\""..v.."\""..string.rep(" ", spaces).."\""..mainFile[v].."\"")
         end
         Tooltips:write("Total of "..#missing.." Missing keys on "..fileName.."!")
     else

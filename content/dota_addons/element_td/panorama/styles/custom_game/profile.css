@@ -10,35 +10,158 @@
     visibility: collapse;
 }
 
+.Hover { opacity: 2; }
+.Desaturate { saturation: 0; }
+.Highlight { font-weight: bold; }
+
 // Open Profile Button
 #ProfileToggleContainer
 {
     horizontal-align: left;
-    vertical-align: top;
-    margin-top: 732px;
+    vertical-align: bottom;
+    margin-bottom: 289px;
+    height: 85px;
+    width: 282px;
     flow-children: down;
-    border-radius: 0px 10px 0px 0px;
+
+    background-color: black;
 }
 
-.ProfileButton
+#MinimizePanel
+{
+    width: 26px;
+    height: 24px;
+    background-color: black;
+    margin-left: 5px;
+
+    horizontal-align: left;
+    vertical-align: bottom;
+    margin-bottom: 265px;
+}
+
+#MinimizePanel.Flipped
+{
+    horizontal-align: right;
+}
+
+#MinimizeButton
+{
+    width: 26px;
+    height: 24px;
+
+    background-image: url("s2r://panorama/images/control_icons/return_to_game_png.vtex");
+    background-size: 23px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;    
+
+    wash-color: #A5ADA2ff;
+    transition-property: wash-color, transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+#MinimizeButton.Off
+{
+    transform: scaleY(-1);
+}
+
+#MinimizeButton:hover
+{
+    wash-color: white;
+}
+
+#ProfileToggleContainer:hover
+{
+    opacity: 1.5;
+}
+
+#ProfileToggleContainer.Flipped
+{
+    horizontal-align: right;
+}
+
+#PassPreview, #PassAccess
+{
+    width: 100%;
+    height: 60px;
+    flow-children: down;
+}
+
+#PassButtonsPanel
+{
+    /*background-image: url("s2r://panorama/images/textures/miniprofile_compendium_bg_psd.vtex");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;*/
+    background-repeat: no-repeat;
+
+    border-top: 0px solid #fda63277;
+    border-right: 1px solid #00000088;
+    border-left: 1px solid #462600;
+    border-bottom: 1px solid #00000088;
+
+    box-shadow: fill #00000055 -2px -2px 6px 6px;
+    
+    flow-children: down;
+
+    width: 100%;
+    height: 60px;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #fda632 ), to( #462600 ) );
+    vertical-align: bottom;
+
+    transition-property: background-image;
+    transition-duration: .5s;
+}
+
+#PassPreviewButton
+{
+    margin-left: 14px;
+    margin-right: 14px;
+    margin-top: -8px;
+    width: 302px;
+    horizontal-align: center;
+    vertical-align: center;
+    border: 2px solid black;
+    background-color: #00000000;
+}
+
+#PassPreviewButton Label,
 {
     font-size: 18px;
-    background-color: black;
-    height: 30px;
-    width: 280px;
+    letter-spacing: 3px;
+    text-shadow: none;
+    color: black;
+    font-weight: semi-bold;
+    text-transform: uppercase;
+    horizontal-align: center;
 }
 
-#MyProfileButton
+#PassNotOwned
 {
-    margin-bottom: -1px;
-    width: 280px;
+    color: black;
+    font-weight: semibold;
+    margin-top: 2px;
+    margin-left: 12px;
+    margin-right: 12px;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    vertical-align: center;
+    text-shadow: none;
 }
 
-#ProfileHeaderTitle
+#PassHeader
 {
+    width: 100%;
+    height: 25px;
+}
+
+#PassTitle
+{
+    font-size: 16px;
     margin-top: 2px;
     letter-spacing: 3px;
-    width: 250px;
+    width: 100%;
     text-align: center;
     text-transform: uppercase;
     horizontal-align: center;
@@ -46,20 +169,41 @@
     color: #CCCCCC;
 }
 
-.ProfileButton:hover #ProfileHeaderTitle
+#PassTitle:hover
 {
     color: white;
 }
 
-.ProfileButton:hover #PopoutArrow
+.BorderBottom
 {
-    wash-color: white;
+    border-bottom: 1px solid black;
 }
 
-#ProfileToggleContainer.Flipped
+.ProfileButton
 {
-    horizontal-align: right;
-    border-radius: 10px 0px 0px 0px;
+    height: 30px;
+    horizontal-align: center;
+    vertical-align: center;
+    background-color: #00000000;
+    font-size: 16px;
+}
+
+.ProfileButton Label
+{
+    margin-top: 2px;
+    letter-spacing: 3px;
+    width: 290px;
+    text-align: center;
+    text-transform: uppercase;
+    horizontal-align: center;
+    vertical-align: center;
+    color: #DDDDDD;
+    text-shadow: 0px 1px 1px 2.0 #000000;
+}
+
+.ProfileButton:hover Label
+{
+    font-size: 18;
 }
 
 .OpenMenuArrow
@@ -67,10 +211,9 @@
     width: 16px;
     height: 16px;
     vertical-align: center;
-    margin-right: 8px;
+    
     margin-top: 2px;
     margin-bottom: 0px;
-    horizontal-align: right;
 
     background-image: url("s2r://panorama/images/control_icons/arrow_top_right_png.vtex");
     background-repeat: no-repeat;
@@ -78,14 +221,27 @@
     wash-color: #A5ADA2ff;
 }
 
+#MenuArrow
+{
+    horizontal-align: right;
+    margin-right: 8px;
+}
+
+#MenuArrow.Flipped
+{
+    horizontal-align: left;
+    margin-left: 8px;
+    transform: scaleX(-1);
+}
+
 #New
 {
     letter-spacing: 2px;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     text-transform: uppercase;
-    margin-top: 6px;
-    margin-left: 10px;
+    margin-top: 5px;
+    margin-left: 6px;
     horizontal-align: left;
     color: white;
 
@@ -94,6 +250,12 @@
     animation-timing-function: ease;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+#New.Flipped
+{
+    margin-right: 6px;
+    horizontal-align: right;
 }
 
 @keyframes 'seq_new'
@@ -141,6 +303,7 @@
     height: 60px;
     vertical-align: center;
     margin-left: 10px;
+    border-radius: 2px;
 }
 
 #UserNameContainer
@@ -333,7 +496,7 @@ DOTAUserName #UserNameProfile
 
 .local
 {
-    background-color: #AAAAAA44;
+    background-color: #333333;
 }
 
 // General Stat Panels
@@ -342,6 +505,13 @@ DOTAUserName #UserNameProfile
     width: 800px;
     height: 500px;
     flow-children: down;
+}
+
+#TimedStats
+{
+    width: 100%;
+    margin-bottom: 5px;
+    flow-children: right;
 }
 
 #GeneralStats
@@ -431,7 +601,7 @@ DOTAUserName #UserNameProfile
 #GameModeStats
 {
     width: 100%;
-    height: 160px;
+    height: 155px;
     flow-children: down;
     margin-top: 5px;
 }
@@ -630,10 +800,6 @@ DOTAUserName #UserNameProfile
     horizontal-align: center;
 }
 
-.Hover { opacity: 2; }
-.Desaturate { saturation: 0; }
-.Highlight { font-weight: bold; }
-
 #ElementPieChart
 {
     width: 160px;
@@ -770,6 +936,11 @@ DOTAUserName #UserNameProfile
     margin-bottom: 5px;
 }
 
+.FriendContainer:hover
+{
+    background-color: #88888822;
+}
+
 #FriendRank
 {
     width: 60px;
@@ -885,6 +1056,14 @@ Label
     margin-right: 50px;
 }
 
+#Loading.Avatar
+{
+    align: center center;
+    margin-right: 0px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
 #FriendRanksTitle
 {
     color: white;
@@ -905,7 +1084,7 @@ Label
 #ProfileTabs
 {
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     width: 100%;
     height: 30px;
     flow-children: right;
@@ -915,6 +1094,12 @@ Label
 {
     width: 135px;
     height: 30px;
+}
+
+.ProfileTabButtonSub
+{
+    width: 115px;
+    height: 20px;
 }
 
 .LeaderboardButton
@@ -948,9 +1133,43 @@ Label
     transition-timing-function: linear;
 }
 
+.ProfileTabSub
+{
+    color: #768e8d;
+    font-size: 16px;
+    text-transform: uppercase;
+    horizontal-align: center;
+    text-align: center;
+    vertical-align: center;
+    letter-spacing: 2px;
+    font-family: Radiance,FZLanTingHei-R-GBK,TH Sarabun New,YDYGO 540,Gulim,MingLiU;
+
+    transition-property: color;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
+.ProfileTabSub:hover
+{
+    text-shadow: 0px 0px 4px #5d7070;
+    color: white;
+    transition-property: color;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
 .ActiveTab
 {
     text-shadow: 0px 0px 12px #5d7070;
+    color: white;
+    transition-property: color;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
+.ActiveTabSub
+{
+    text-shadow: 0px 0px 4px #5d7070;
     color: white;
     transition-property: color;
     transition-duration: 0.2s;
@@ -1426,6 +1645,14 @@ Label
 
 .ProfileAvatar
 {
+    flow-children: right;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+}
+
+.ProfileAvatarCont
+{
     flow-children: down;
 }
 
@@ -1433,6 +1660,16 @@ Label
 {
     width: 100%;
     margin-bottom: 5px;
+}
+
+#AvatarTriangle
+{
+    background-image: url("s2r://panorama/images/tooltips/profilecard_tooltip_arrow_left_png.vtex");
+    wash-color: #495757;
+    width: 16px;
+    height: 32px;
+
+    margin-left: -1px;
 }
 
 #PlayerCardBox
@@ -1487,6 +1724,35 @@ Label
     height: 40px;
 }
 
+#BorderImage
+{
+    margin-left: 2px;
+}
+
+.GoldBorder
+{
+    width: 46px;
+    height: 46px;
+    background-image: url("file://{resources}/images/custom_game/rewards/border_gold.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.EpicBorder
+{   
+    margin-left: 2px;
+    width: 46px;
+    height: 46px;
+    background-image: url("file://{resources}/images/custom_game/rewards/border_epic.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.HiddenBorder
+{
+    opacity: 0;
+}
+
 #AvatarUserName
 {
     font-size: 24px;
@@ -1496,24 +1762,42 @@ Label
     color: white;
 }
 
+#FavoriteElementPanel
+{
+    margin-top: -5px;
+    height: 90px;
+    width: 90px;
+    border-radius: 80px;
+    vertical-align: top;
+    horizontal-align: right;
+}
+
 #favorite_element
 {
-    border: 3px solid #444444;
-    border-radius: 80px;
-    margin-top: 5px;
-    margin-right: 5px;
-    height: 80px;
-    width: 80px;
-    horizontal-align: right;
+    align: center center;
+    height: 64px;
+    width: 64px;
+    margin-top: -1px;
+}
+
+#favorite_element_border
+{
+    align: center center;
+    height: 90px;
+    width: 90px;
+}
+
+#favorite_element_border.hasPass
+{
+    height: 82px;
+    width: 82px;
 }
 
 #AvatarBestBadges
 {
-    height: 95px;
-    width: 80%;
-    margin-top: -20px;
-    margin-left: 50px;
+    margin-top: -15px;
     flow-children: right;
+    horizontal-align: center;
 }
 
 #AvatarCurrentRanks
@@ -1523,9 +1807,17 @@ Label
     align: left bottom;
     margin-left: 15px;
     margin-bottom: 15px;
-    box-shadow: #000 -2px -2px 6px 2px;
-    background-color: #66666611;
+    box-shadow: #000000aa 0px 0px 5px 0px;
+    background-color: gradient( linear, 0% 0%, 0% 100%, from( #ffffff02 ), to( #ffffff04 ) ); //backgroundGradient
     flow-children: right;
+}
+
+.SimpleBevel
+{
+    border-top: 1px solid #99999905;
+    border-left: 1px solid #99999905;
+    border-right: 1px solid #00000060;
+    border-bottom: 1px solid #00000060;
 }
 
 .AvatarColumn
@@ -1574,4 +1866,59 @@ Label
 #ErrorNoMatches
 {
     margin-top: 55px;
+}
+
+//-----------
+#PreviewMenu
+{
+    width: 250px;
+    height: 360px;
+    horizontal-align: left;
+    vertical-align: top;
+    margin-top: 10%;
+    margin-left: 225px;
+
+    background-color: #000000DD;
+    border: 2px solid #484A48;
+    box-shadow: #000 -4px -4px 3px 8px;
+
+    flow-children: down;
+    padding: 10px;
+}
+
+.PerkLabelMain
+{
+    width: 250px;
+    font-size: 26px;
+    text-align: right;
+    margin-top: 15px;
+    color: #768e8d;
+    letter-spacing: 1px;
+}
+
+.PerkLabelMain:hover, .PerkLabelMain.PerkActive
+{
+    text-shadow: 0px 0px 8px #5d7070;
+    color: white;
+    transition-property: color;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
+
+.PerkLabelSub
+{
+    width: 250px;
+    font-size: 20px;
+    text-align: right;
+    color: #768e8d;
+}
+
+.PerkLabelSub:hover, .PerkLabelSub.PerkActive
+{
+    text-shadow: 0px 0px 6px #5d7070;
+    color: white;
+    transition-property: color;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
 }

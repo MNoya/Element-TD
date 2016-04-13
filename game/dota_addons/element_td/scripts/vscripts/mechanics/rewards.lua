@@ -30,6 +30,9 @@ function Rewards:OnPlayerResetBuilder(event)
     local playerID = event.PlayerID
     local oldHero = PlayerResource:GetSelectedHeroEntity(playerID)
 
+    -- If it's the same builder, ignore it
+    if oldHero:GetUnitName() == "npc_dota_hero_wisp" then return end
+
     -- Replace and delegate to HandleHeroReplacement
     local newHero = Rewards:ReplaceHero(playerID, oldHero, "npc_dota_hero_wisp")
     newHero.reset = true
@@ -218,10 +221,10 @@ function Rewards:ReplaceHero(playerID, oldHero, heroName)
     end
     RemoveElementalOrbs(playerID)
 
-    -- Clear grid particles
-    local grid_item = GetItemByName(oldHero, "item_toggle_grid")
-    if grid_item then
-        ClearGrid(grid_item)
+    -- Take the grid item so it doesn't get destroyed
+    local playerData = GetPlayerData(playerID)
+    if playerData and playerData.toggle_grid_item then
+        playerData.toggle_grid_item_old = oldHero:Script_TakeItem(playerData.toggle_grid_item)
     end
 
     local newHero = PlayerResource:ReplaceHeroWith(playerID, heroName, 0, 0)
@@ -242,7 +245,6 @@ function Rewards:ReplaceHero(playerID, oldHero, heroName)
     end
 
     -- Update ownership
-    local playerData = GetPlayerData(playerID)
     if playerData then
         if playerData.towers then
             for towerIndex, _ in pairs(playerData.towers) do
@@ -263,6 +265,9 @@ function Rewards:ReplaceHero(playerID, oldHero, heroName)
         UpdateElementOrbs(playerID)
     end)
 
+    newHero:SetBaseMaxHealth(GameSettings:GetMapSetting("Lives"))
+    newHero:SetMaxHealth(GameSettings:GetMapSetting("Lives"))
+    newHero:SetHealth(GetPlayerData(playerID).health)
     return newHero
 end
 

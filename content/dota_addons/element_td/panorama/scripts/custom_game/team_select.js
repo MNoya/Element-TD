@@ -98,6 +98,9 @@ function FindOrCreatePanelForPlayer( playerId, parent )
 	newPlayerPanel.SetAttributeInt( "player_id", playerId );
 	newPlayerPanel.BLoadLayout( "file://{resources}/layout/custom_game/team_select_player.xml", false, false );
 
+	// Avatar Tooltip
+	GameUI.SetupAvatarTooltip(newPlayerPanel.FindChildInLayoutFile("PlayerAvatar"), $.GetContextPanel(), Game.GetPlayerInfo(playerId).player_steamid)
+
 	// Add the panel to the global list of player planels so that we will find it next time
 	g_PlayerPanels.push( newPlayerPanel );
 

@@ -34,7 +34,7 @@
     "VisionDaytimeRange"        "1900"
     "VisionNighttimeRange"        "1900"
     "Level"        "1"
-    "Cost"        "1050"
+    "Cost"        "900"
     "TotalCost"        "1500"
     "Element"
     {
@@ -42,9 +42,9 @@
         "2"        "earth"
         "3"        "light"
     }
-    "Damage"        "4500"
-    "AttackDamageMin"        "4500"
-    "AttackDamageMax"        "4500"
+    "Damage"        "5000"
+    "AttackDamageMin"        "5000"
+    "AttackDamageMax"        "5000"
     "DamageType"        "earth"
     "ScriptClass"        "GoldTower"
     "TowerType"        "Normal"

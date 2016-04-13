@@ -1,0 +1,27 @@
+//=================================================================================================================
+// Earth Tower: Aftershock
+// 0.5 seconds after damage, half damage same area.
+//=================================================================================================================
+"earth_tower_aftershock"
+{
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"                     "ability_datadriven"                                            
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "towers/earth"
+    "MaxLevel"                      "1"
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"              "FIELD_INTEGER"
+            "aftershock_damage_pct" "50"
+        }
+        "01"
+        {
+            "var_type"              "FIELD_FLOAT"
+            "aftershock_delay"      "0.5"
+        }
+    }
+}

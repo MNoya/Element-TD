@@ -2,7 +2,6 @@ if not players then
     players = {}
     playerIDs = {}
 
-    -- TODO: make this work for a single team in co-op
     TEAM_TO_SECTOR = {}
     TEAM_TO_SECTOR[2] = 0
     TEAM_TO_SECTOR[3] = 1
@@ -17,7 +16,7 @@ if not players then
     DEV_MODE = false
     EXPRESS_MODE = false
 
-    VERSION = "1.4"
+    VERSION = "1.5"
     COOP_MAP = GetMapName() == "element_td_coop"
 
     START_TIME = GetSystemDate() .. " " .. GetSystemTime()
@@ -41,7 +40,6 @@ function ElementTD:InitGameMode()
     self.vUserIds = {}
     self.vPlayerUserIds = {}
     self.playerIDMap = {} --maps userIDs to playerID
-    self.vPlayerIDToHero = {} -- Maps playerID to hero
 
     GameRules:SetHeroRespawnEnabled(false)
     GameRules:SetSameHeroSelectionEnabled(true)
@@ -110,6 +108,10 @@ function ElementTD:InitGameMode()
     CustomGameEventManager:RegisterListener( "request_wave_info", Dynamic_Wrap(ElementTD, "WaveInfoReconnect")) --on reconnection
     CustomGameEventManager:RegisterListener( "etd_player_voted", Dynamic_Wrap(ElementTD, "OnPlayerVoted")) -- voting ui
 
+    -- load the appropriate interest manager based on the map --
+    require(GameSettings:GetMapSetting("InterestManager"))
+    ------------------------------------------------------------
+
     ------------------------------------------------------
     local base_game_mode = GameRules:GetGameModeEntity()
     base_game_mode:SetRecommendedItemsDisabled(true) -- no recommended items panel
@@ -139,11 +141,14 @@ function ElementTD:InitGameMode()
     print("Loaded Element Tower Defense!")
 end
 
+--0 classic, 1 express, 2 coop
+function ElementTD:GetMapMode()
+    return (COOP_MAP and 2) or (EXPRESS_MODE and 1) or 0
+end
+
 -- called when 'script_reload' is run
--- TODO: make with work with the :OnCreated function
 function ElementTD:OnScriptReload()
     -- Reload files
-    Log:info("script_reload has been executed!")
     NPC_UNITS_CUSTOM = LoadKeyValues("scripts/npc/npc_units_custom.txt")
     NPC_ABILITIES_CUSTOM = LoadKeyValues("scripts/npc/npc_abilities_custom.txt")
     NPC_ITEMS_CUSTOM = LoadKeyValues("scripts/npc/npc_items_custom.txt")
@@ -152,7 +157,9 @@ function ElementTD:OnScriptReload()
     for _, playerID in pairs(playerIDs) do
 
         -- loop over the player's towers
-        for towerID, _ in pairs(GetPlayerData(playerID).towers) do
+        local playerData = GetPlayerData(playerID)
+        if not playerData then return end
+        for towerID, _ in pairs(playerData.towers) do
             local tower = EntIndexToHScript(towerID)
             if IsValidEntity(tower) and tower.scriptObject then
                 local scriptObject = getmetatable(tower.scriptObject).__index
@@ -182,7 +189,6 @@ function ElementTD:OnGameStateChange(keys)
         self:StartGame()
     elseif state == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
 
-
         if COOP_MAP then
             SendToServerConsole("customgamesetup_auto_assign_players")
             SendToServerConsole("customgamesetup_set_remaining_time 10")
@@ -191,9 +197,9 @@ function ElementTD:OnGameStateChange(keys)
         -- Load donation rewards
         Rewards:Load()
 
-        -- Load builders
+        -- Save and load player
         ForAllPlayerIDs(function(playerID)
-            Saves:LoadBuilder(playerID)
+            Saves:SaveHasPass(playerID)
         end)
     end
 end
@@ -236,13 +242,17 @@ function ElementTD:OnNextWave( keys )
         return
     end
 
-    if (data.waveObject and data.waveObject.creepsRemaining == 0) or data.nextWave == 1 or GameSettings:GetEndless() == "Endless" then
-        Timers:RemoveTimer("SpawnWaveDelay"..playerID)
-        Log:info("Spawning wave " .. data.nextWave .. " for ["..playerID.."] ".. data.name)
-        ShowWaveSpawnMessage(playerID, data.nextWave)
+    if COOP_MAP then
+        SpawnWaveCoop()
+    else
+        if (data.waveObject and data.waveObject.creepsRemaining == 0) or data.nextWave == 1 or GameSettings:GetEndless() == "Endless" then
+            Timers:RemoveTimer("SpawnWaveDelay"..playerID)
+            Log:info("Spawning wave " .. data.nextWave .. " for ["..playerID.."] ".. data.name)
+            ShowWaveSpawnMessage(playerID, data.nextWave)
 
-        UpdateWaveInfo(playerID, data.nextWave) -- update wave info
-        SpawnWaveForPlayer(playerID, data.nextWave) -- spawn dat wave
+            UpdateWaveInfo(playerID, data.nextWave) -- update wave info
+            SpawnWaveForPlayer(playerID, data.nextWave) -- spawn dat wave
+        end
     end
 end
 
@@ -361,7 +371,7 @@ function ElementTD:CheckGameEnd()
     local teamWinner = DOTA_TEAM_NEUTRALS
     if #playerIDs == 1 then
         for k, ply in pairs(playerIDs) do
-            local hero = self.vPlayerIDToHero[ply]
+            local hero = PlayerResource:GetSelectedHeroEntity(ply)
             local playerData = GetPlayerData(ply)
             
             -- Lost
@@ -410,7 +420,7 @@ function ElementTD:CheckGameEnd()
             end
         end
         if winnerId ~= -1 then
-            teamWinner = self.vPlayerIDToHero[winnerId]:GetTeamNumber()
+            teamWinner = PlayerResource:GetSelectedHeroEntity(winnerId):GetTeamNumber()
         end
     end
 
@@ -474,9 +484,14 @@ function ElementTD:OnHeroInGame(hero)
         playerData.name = 'Developer'
     end
 
-    -- Team location based colors
     local teamID = PlayerResource:GetTeam(playerID)
-    PlayerResource:SetCustomPlayerColor(playerID, m_TeamColors[teamID][1], m_TeamColors[teamID][2], m_TeamColors[teamID][3])
+    if COOP_MAP then
+        -- Player based colors
+        PlayerResource:SetCustomPlayerColor(playerID, PlayerColors[playerID][1], PlayerColors[playerID][2], PlayerColors[playerID][3])
+    else
+        -- Team location based colors
+        PlayerResource:SetCustomPlayerColor(playerID, m_TeamColors[teamID][1], m_TeamColors[teamID][2], m_TeamColors[teamID][3])
+    end
 
     playerData.sector = TEAM_TO_SECTOR[hero:GetTeamNumber()]
 
@@ -494,8 +509,9 @@ function ElementTD:OnHeroInGame(hero)
     summoner.icon = CreateUnitByName("elemental_summoner_icon", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber())
     playerData.summoner = summoner
 
-    hero:SetBaseMaxHealth(50)
-    hero:SetHealth(50)
+    hero:SetBaseMaxHealth(playerData.health)
+    hero:SetHealth(playerData.health)
+
     hero:ModifyGold(0)
     ModifyLumber(playerID, 0)  -- updates summoner spells
     ModifyPureEssence(playerID, 0, true)
@@ -511,10 +527,8 @@ function ElementTD:InitializeHero(playerID, hero)
     Log:info("InitializeHero "..playerID..":"..hero:GetUnitName())
     hero:AddNewModifier(nil, nil, "modifier_disarmed", {})
     hero:AddNewModifier(nil, nil, "modifier_attack_immune", {})
-    hero:AddNewModifier(hero, nil, "modifier_max_ms", {})
+    hero:AddNewModifier(hero, nil, "modifier_max_ms", {ms=GameSettings:GetMapSetting("BuilderMoveSpeed")})
     --hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
-
-    self.vPlayerIDToHero[playerID] = hero -- Store hero for player in here GetAssignedHero can be flakey
 
     local playerData = GetPlayerData(playerID)
 
@@ -527,14 +541,21 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:AddItem(CreateItem("item_build_arrow_tower", hero, hero))
     hero:AddItem(CreateItem("item_build_cannon_tower", hero, hero))
     hero:AddItem(CreateItem("item_build_periodic_tower_disabled", hero, hero))
-   
-    playerData.toggle_grid_item = hero:AddItem(CreateItem("item_toggle_grid", hero, hero))
-    playerData.toggle_grid_item.particles = setmetatable({}, {
-        __index = (function(tab, index)
-            tab[index] = {}
-            return tab[index]
+
+    if not playerData.toggle_grid_item then
+        playerData.toggle_grid_item = hero:AddItem(CreateItem("item_toggle_grid", hero, hero))
+        playerData.toggle_grid_item.particles = setmetatable({}, {
+            __index = (function(tab, index)
+                tab[index] = {}
+                return tab[index]
+            end)
+        })
+    elseif IsValidEntity(playerData.toggle_grid_item) and playerData.toggle_grid_item_old then
+        Timers(0.03, function()
+            local item = hero:AddItem(playerData.toggle_grid_item_old)
+            item:SetPurchaser(hero)
         end)
-    })
+    end
     
     Timers:CreateTimer(0.1, function() hero:SwapItems(3, 5) end)
 
@@ -589,7 +610,7 @@ function ElementTD:OnEntityKilled(keys)
         playerData.elementalActive = false
         playerData.elementalUnit = nil
         ModifyElementValue(entity.playerID, entity.element, 1)
-        AddElementalTrophy(entity.playerID, entity.element)
+        AddElementalTrophy(entity.playerID, entity.element, entity.level)
 
         Sounds:PlayElementalDeathSound(entity.playerID, entity)
     else
@@ -870,7 +891,7 @@ function ElementTD:OnPlayerChat(keys)
         return
     end
 
-    if teamonly == 1 then
+    if teamonly == 1 and not COOP_MAP then
         player.skip_chat = true
         Say(player, text, false)
     end

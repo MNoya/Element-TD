@@ -32,8 +32,8 @@
     "VisionDaytimeRange"        "1900"
     "VisionNighttimeRange"        "1900"
     "Level"        "1"
-    "Cost"        "275"
-    "TotalCost"        "450"
+    "Cost"        "425"
+    "TotalCost"        "600"
     "Element"
     {
         "1"        "fire"

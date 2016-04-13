@@ -34,7 +34,7 @@
     "VisionDaytimeRange"        "1900"
     "VisionNighttimeRange"        "1900"
     "Level"        "1"
-    "Cost"        "1050"
+    "Cost"        "900"
     "TotalCost"        "1500"
     "Element"
     {
@@ -42,9 +42,9 @@
         "2"        "light"
         "3"        "earth"
     }
-    "Damage"        "1600"
-    "AttackDamageMin"        "1600"
-    "AttackDamageMax"        "1600"
+    "Damage"        "2000"
+    "AttackDamageMin"        "2000"
+    "AttackDamageMax"        "2000"
     "DamageType"        "water"
     "ScriptClass"        "PolarTower"
     "TowerType"        "Normal"

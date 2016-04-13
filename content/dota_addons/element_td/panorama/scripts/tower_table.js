@@ -49,12 +49,12 @@ Categories = {}
 Categories['Buff_Towers'] = ["well","blacksmith","trickery","life","gold"]
 Categories['Slow_Towers'] = ["windstorm", "roots", "nova","muck"]
 Categories['Amp_Towers'] = ["erosion", "enchantment", "polar", "jinx"]
-Categories['AoE_Towers'] = ["ice", "hail", "runic", "obliteration", "vapor", "poison", "flooding", "tidal", "electricity", "moss", "gunpowder", "hydro", "quake", "quark", "flamethrower"]
-Categories['550'] = ["fire", "disease", "quake"]
-Categories['700'] = ["nature", "quark", "nova", "jinx", "runic", "vapor", "tidal", "flame", "erosion", "flamethrower", "moss", "ephemeral", "hydro", "muck"]
-Categories['900'] = ["water", "earth", "trickery", "ice", "laser", "poison", "well", "polar", "flooding", "blacksmith", "haste", "roots", "enchantment"]
-Categories['1150'] = ["dark", "obliteration", "windstorm", "electricity", "life", "gold"]
-Categories['1500'] = ["light", "hail", "magic", "impulse", "gunpowder"]
+Categories['AoE_Towers'] = ["fire", "water", "earth", "ice", "hail", "runic", "obliteration", "vapor", "poison", "flooding", "tidal", "electricity", "moss", "gunpowder", "hydro", "quake", "quark", "flamethrower", "flame"]
+Categories['550'] = ["fire", "moss", "quake"]
+Categories['700'] = ["nature", "flame", "vapor", "quark", "disease", "flamethrower", "tidal", "muck", "nova", "erosion", "jinx"]
+Categories['900'] = ["water", "earth", "blacksmith", "well", "trickery", "ice", "poison", "hydro", "flooding", "haste", "roots", "enchantment", "polar", "laser", "ephemeral"]
+Categories['1150'] = ["dark", "electricity", "life", "hail", "windstorm", "runic", "obliteration", "gold"]
+Categories['1500'] = ["light", "gunpowder", "magic", "impulse"]
 
 function Hover(name, arg1, arg2, arg3) {
     AddElementGlow(arg1)

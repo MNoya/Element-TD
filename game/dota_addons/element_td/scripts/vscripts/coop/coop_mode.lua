@@ -3,6 +3,13 @@
 COOP_WAVE = 1 -- the current wave 
 CREEPS_PER_WAVE_COOP = 120 -- number of creeps in each wave
 CURRENT_WAVE_OBJECT = nil -- maybe should hold the WaveCoop 'object' of the wave that is currently active (can we ever have > 1 waves at once?)
+LEAK_POINTS = {[1]=5,[2]=4,[3]=6,[4]=2,[5]=1,[6]=3} -- Coop creeps leak at the opposite side from where they came
+
+-- entry point
+function CoopStart()
+    local initialBreakTime = GameSettings.length.PregameTime * 2
+    StartBreakTimeCoop(initialBreakTime)
+end
 
 function SpawnWaveCoop()
 	-- spawn wave COOP_WAVE
@@ -22,6 +29,32 @@ function SpawnWaveCoop()
         playerData.waveObjects[COOP_WAVE] = CURRENT_WAVE_OBJECT
     end
 
+    if not InterestManager:IsStarted() then
+        InterestManager:StartInterest()
+    end
+    -- InterestManager:CheckForIncorrectPausing() -- not needed?
+
+    CURRENT_WAVE_OBJECT:SetOnCompletedCallback(function()   
+        print("[COOP] Completed wave "..COOP_WAVE)
+        COOP_WAVE = COOP_WAVE + 1
+        EmitGlobalSound("ui.npe_objective_complete")
+        InterestManager:CompletedWave(COOP_WAVE)
+
+        -- Boss Wave completed starts the new one with no breaktime
+        if COOP_WAVE >= WAVE_COUNT then
+            local bossWaveNumber = COOP_WAVE - WAVE_COUNT + 1
+            print("[COOP] Completed boss wave "..bossWaveNumber)
+
+            --TODO: New boss wave, score
+            return
+        end
+
+        -- TODO: Cleared game?
+ 
+        -- Start the breaktime for the next wave
+        StartBreakTimeCoop(GameSettings:GetGlobalDifficulty():GetWaveBreakTime(COOP_WAVE))
+    end)
+
     -- TODO: boss waves, co-op interest
 	CURRENT_WAVE_OBJECT:SpawnWave()
 end
@@ -29,17 +62,16 @@ end
 
 function CreateMoveTimerForCreepCoop(creep, sector)
     local destination = EntityEndLocations[sector]
+
     Timers:CreateTimer(0.1, function()
         if IsValidEntity(creep) and creep:IsAlive() then
             creep:MoveToPosition(destination)
+
             if (creep:GetAbsOrigin() - destination):Length2D() <= 100 then
                 
-                -- TODO: make interest work with co-op mode
-                --[[
                 if GameSettings:GetEndless() ~= "Endless" then
-                    InterestManager:PlayerLeakedWave(playerID, creep.waveObject.waveNumber)
+                    InterestManager:LeakedWave(creep.waveObject.waveNumber)
                 end
-                ]]--
 
                 -- Boss Wave leaks = 3 lives
                 local lives = 1
@@ -63,7 +95,10 @@ function CreateMoveTimerForCreepCoop(creep, sector)
                     if IsValidEntity(creep) then creep.recently_leaked = nil end
                 end)
 
-                FindClearSpaceForUnit(creep, EntityStartLocations[sector], true)
+                creep.times_leaked = creep.times_leaked and creep.times_leaked + 1 or 1
+                local leak_position = creep.times_leaked % 2 == 0 and EntityStartLocations[sector] or EntityStartLocations[LEAK_POINTS[sector]]
+                FindClearSpaceForUnit(creep, leak_position, true)
+
                 creep:SetForwardVector(Vector(0, -1, 0))
             end
             return 0.1
@@ -90,8 +125,8 @@ function StartBreakTimeCoop(breakTime)
 
     -- show countdown timer for all players
     Log:debug("Starting co-op break time for wave " .. COOP_WAVE)
-   	-- local bShowButton = PlayerResource:GetPlayerCount() == 1 and COOP_WAVE == 1
-    CustomGameEventManager:Send_ServerToAllClients("etd_update_wave_timer", {time = breakTime, button = false})
+   	local bShowButton = PlayerResource:GetPlayerCount() == 1 and COOP_WAVE == 1
+    CustomGameEventManager:Send_ServerToAllClients("etd_update_wave_timer", {time = breakTime, button = bShowButton})
 
     -- show sector portals
     for i = 1, 6 do
@@ -127,8 +162,9 @@ function StartBreakTimeCoop(breakTime)
 
                         -- Track pure essence purchasing as part of the element order
                         playerData.elementOrder[#playerData.elementOrder + 1] = "Pure"
-                        -- Gold bonus for Pure Essence randoming
-                        GivePureEssenceGoldBonus(playerID)
+                        
+                        -- Gold bonus for Pure Essence randoming (removed in 1.5)
+                        -- GivePureEssenceGoldBonus(playerID)
                     else
                         -- TODO: no elementals in co-op mode??
                         SendEssenceMessage(playerID, "#etd_random_elemental")
@@ -148,37 +184,34 @@ function StartBreakTimeCoop(breakTime)
 	end
 
 	-- create the timer to wait for wave spawn
-    Timers:CreateTimer("SpawnWaveDelayCoop", {
-        endTime = breakTime,
-        callback = function()
+    Timers:CreateTimer(breakTime, function()
 
-            if COOP_WAVE == WAVE_COUNT and not EXPRESS_MODE then
-                CURRENT_BOSS_WAVE = 1
-                
-                -- TODO: make this work with co-op mode
-                --[[
-                if PlayerIsAlive(playerID) then
-                    Log:info("Spawning the first boss wave for ["..playerID.."]")            
-                    playerData.iceFrogKills = 0
-                    playerData.bossWaves = CURRENT_BOSS_WAVE
-                end
-                ShowBossWaveMessage(playerID, CURRENT_BOSS_WAVE)
-                UpdateWaveInfo(playerID, wave)
-                ]]--
-            else
-            	Log:info("Spawning co-op wave " .. COOP_WAVE)
-            	for _, playerID in pairs(playerIDs) do
-					ShowWaveSpawnMessage(playerID, COOP_WAVE) -- show wave spawn message
-					UpdateWaveInfo(playerID, COOP_WAVE) -- update wave info
-				end
+        if COOP_WAVE == WAVE_COUNT and not EXPRESS_MODE then
+            CURRENT_BOSS_WAVE = 1
+            
+            -- TODO: make this work with co-op mode
+            --[[
+            if PlayerIsAlive(playerID) then
+                Log:info("Spawning the first boss wave for ["..playerID.."]")            
+                playerData.iceFrogKills = 0
+                playerData.bossWaves = CURRENT_BOSS_WAVE
             end
-
-            if COOP_WAVE == 1 then
-                EmitAnnouncerSound("announcer_announcer_battle_begin_01")
-            end
-
-            -- spawn dat wave
-            SpawnWaveCoop() 
+            ShowBossWaveMessage(playerID, CURRENT_BOSS_WAVE)
+            UpdateWaveInfo(playerID, wave)
+            ]]--
+        else
+        	Log:info("Spawning co-op wave " .. COOP_WAVE)
+        	for _, playerID in pairs(playerIDs) do
+				ShowWaveSpawnMessage(playerID, COOP_WAVE) -- show wave spawn message
+				UpdateWaveInfo(playerID, COOP_WAVE) -- update wave info
+			end
         end
-    })
+
+        if COOP_WAVE == 1 then
+            EmitAnnouncerSound("announcer_announcer_battle_begin_01")
+        end
+
+        -- spawn dat wave
+        SpawnWaveCoop() 
+    end)
 end

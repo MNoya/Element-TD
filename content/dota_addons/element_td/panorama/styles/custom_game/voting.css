@@ -10,7 +10,6 @@
     position: 0px 13% 0px;
     margin-top: -3%;
     width: 580px;
-    height: 620px;
     padding: 20px 20px 0px 20px;
     background-color: #000000DD;
     border: 2px solid #484A48;
@@ -24,7 +23,7 @@
     position: 585px 13% 0px;
     margin-top: -3%;
     width: 185px;
-    height: 620px;
+    height: 614px;
     padding: 10px;
     background-color: #000000DD;
     border: 2px solid #484A48;
@@ -51,7 +50,7 @@
 #NotVoted
 {
     width: 100%;
-    height: 18%;
+    height: 80px;
     flow-children: down;
 }
 
@@ -109,6 +108,11 @@
     padding: 4px;
     background-color: #000000DD;
     margin-bottom: 4px;
+}
+
+.Pass
+{
+    box-shadow: inset #FBB23FAA 1px 1px 1px 2px; // inner
 }
 
 .VotedPlayerVotes
@@ -310,7 +314,6 @@ DropDownMenu
 {
     flow-children: down;
     width: 100%;
-    height: 50%;
     margin-left: 30px;
 }
 
@@ -318,7 +321,7 @@ DropDownMenu
 {
     flow-children: right;
     width: 100%;
-    height: 20%;
+    height: 55px;
 }
 
 .CheckboxSub
@@ -367,7 +370,6 @@ ToggleButton .TickBox, DOTASettingsCheckbox .TickBox
     horizontal-align: right;
     flow-children: down;
     margin-bottom: 10px;
-    margin-top: -30px;
     font-weight: bold;
 }
 
@@ -539,7 +541,7 @@ ToggleButton:enabled:hover Label, DOTASettingsCheckbox:enabled:hover Label
 {
     margin-left: 7px;
     margin-bottom: 5px;
-    height: 32%;
+    height: 95px;
 }
 
 #Option_Endless

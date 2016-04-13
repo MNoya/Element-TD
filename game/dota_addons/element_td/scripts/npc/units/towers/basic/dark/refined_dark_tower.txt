@@ -1,0 +1,87 @@
+"refined_dark_tower"
+{
+    // Visual
+    //-----------------------------
+    "Model"                     "models/heroes/shadow_fiend/shadow_fiend_arcana.vmdl"
+    "ModelScale"                "0.9"
+    "ModelRotation"             "90"
+    "ModelOffset"               "10"
+    "PedestalModel"             "models/heroes/phantom_assassin/arcana_pedestal.vmdl"
+    "PedestalModelScale"        "0.75"
+    "PedestalOffset"            "18"
+    "ProjectileModel"           "particles/custom/towers/dark/attack.vpcf"
+    "SoundSet"                  "Tower.Water"
+    "MinimapIcon"               "minimap_tower90"
+    "MinimapIconSize"           "320"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "1"  { "ItemDef" "387" } //Head
+            "2"  { "ItemDef" "486" } //Shoulder
+            "3"  { "ItemDef" "8259" } // Arms of Desolation
+            "4"  { "ItemDef" "509" } //Ambient
+        }
+    }
+    "SoundSet"          "Hero_Nevermore"
+    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+
+    // Stats
+    //----------------------------- 
+    "AttackDamageMin"           "13300"
+    "AttackDamageMax"           "13300"
+    "Damage"                    "13300"  
+    "AttackRange"               "1150"
+    "AttackAcquisitionRange"    "1150"
+    "AttackRate"                "1.5"
+    "AttackAnimationPoint"      "0.25"
+    "ProjectileSpeed"           "2500"
+
+    "Level"                     "3"
+    "Cost"                      "2250"
+    "TotalCost"                 "3000"
+    "BuildTime"                 "1"
+    "Element"                   "dark"
+    "DamageType"                "dark"
+    "ScriptClass"               "DarkTower"
+    "TowerType"                 "Normal"
+    "BuffPriority"              "5"
+    
+    "Requirements"
+    {
+        "dark"      "3"
+    }
+    "Upgrades"
+    {
+        "Count"     "1"
+        "1"         "pure_dark_tower"
+    }
+    
+    // General
+    //-----------------------------
+    "BaseClass"                 "npc_dota_creature"
+    "ArmorPhysical"             "0"
+    "MagicalResistance"         "0"
+    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"      "1900"  
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+        "ProjectileCollisionSize"   "50"
+    "RingRadius"                "80"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"             "0"
+    "MovementTurnRate"          "1.0"
+    "StatusHealth"              "1800"
+    "StatusHealthRegen"         "0"
+    "StatusMana"                "0"
+    "StatusManaRegen"           "0"
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
+}

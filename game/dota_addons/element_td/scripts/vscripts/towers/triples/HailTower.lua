@@ -88,7 +88,7 @@ function HailTower:OnCreated()
 
     self.attacks_required = self.ability:GetSpecialValueFor("attacks_required")
     self.current_attacks = 0
-    self.findRadius = self.tower:GetAttackRange() + self.tower:GetHullRadius()
+    self.findRadius = 1750 + self.tower:GetHullRadius()
     self.tower:SetModifierStackCount("modifier_storm_passive", self.tower, self.attacks_required)
     self.crit_chance = self.ability:GetSpecialValueFor("crit_chance")
     self.damageMultiplier = self.ability:GetSpecialValueFor("damage_mult") / 100 

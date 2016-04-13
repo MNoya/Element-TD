@@ -39,6 +39,12 @@ m_TeamColors[DOTA_TEAM_CUSTOM_4] = { 173, 216, 230 } --  Light Blue (Winter) #AD
 m_TeamColors[DOTA_TEAM_CUSTOM_5] = { 243, 201, 9 }   --  Yellow (Desert) #F3C909
 m_TeamColors[DOTA_TEAM_CUSTOM_6] = { 255, 52, 85 }   --  Red (Lava) #FF3455
 
+PlayerColors = {}
+PlayerColors[0] = { 101, 212, 19 }  --  Green #65D413
+PlayerColors[1] = { 1, 162, 255}    --  Blue #01A2FF
+PlayerColors[2] = { 243, 201, 9 }   --  Yellow #F3C909
+PlayerColors[3] = { 255, 52, 85 }   --  Red #FF3455
+
 sectorNames = {}
 sectorNames[-1] = "None"
 sectorNames[0] = "Summer"
@@ -101,15 +107,11 @@ function tableconcat(T, c)
     return s
 end
 
-function dist2D(v1, v2)
-    return math.sqrt(math.pow(v1.x - v2.x, 2) + math.pow(v1.y - v2.y, 2));
-end
-
 function round(num)
     return math.floor(num + 0.5);
 end
 
--- converts a Vector object to a stringS
+-- converts a Vector object to a string
 function vectorToS(v)
     return "["..v.x..", "..v.y..", "..v.z.."]";
 end
@@ -168,18 +170,10 @@ function RandomPositionInCircle(origin, radius)
 end
 
 function AddAbility(unit, ability, level)
-    local level = level or 1;
-    unit:AddAbility(ability);
-    local ability_ent = unit:FindAbilityByName(ability)
-    ability_ent:SetLevel(level);
-    return ability_ent;
-end
-
-function AreaOfTriangle(a, b, c)
-    local one = a.x * (b.y - c.y); -- ax(by-cy)
-    local two = b.x * (c.y - a.y); -- bx(bc-ay)
-    local three = c.x * (a.y - b.y); -- cx(ay-by)
-    return math.abs((one + two + three) / 2);
+    local level = level or 1
+    local ability_ent = unit:AddAbility(ability)
+    ability_ent:SetLevel(level)
+    return ability_ent
 end
 
 function GetCreepsInArea(center, radius)

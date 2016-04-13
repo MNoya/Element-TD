@@ -1,0 +1,86 @@
+"pure_earth_tower"
+{
+    // Visual
+    //-----------------------------
+    "Model"                     "models/heroes/tiny_04/tiny_04.vmdl"
+    "ModelScale"                "1.1"
+    "ModelRotation"             "90"
+    "ModelOffset"               "10"
+    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_radiant.vmdl"
+    "PedestalModelScale"        "0.8"
+    "PedestalOffset"            "20"
+    "ProjectileModel"           "particles/neutral_fx/mud_golem_hurl_boulder.vpcf"
+    "SoundSet"                  "Tower.Water"
+    "MinimapIcon"               "minimap_tower90"
+    "MinimapIconSize"           "320"
+    "Creature"
+    {
+        "AttachWearables"
+        {
+            "1" { "ItemDef" "493" } //Head
+            "2" { "ItemDef" "494" } //Body
+            "3" { "ItemDef" "495" } //Left Arm
+            "4" { "ItemDef" "496" } //Right Arm             
+        }
+    }
+    "Ability10" "tiny_model04"
+    "SoundSet"          "Hero_Tiny"
+    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
+
+    // Stats
+    //----------------------------- 
+    "AttackDamageMin"           "17200"
+    "AttackDamageMax"           "17200"
+    "Damage"                    "17200"  
+    "AOE_Full"                  "200"
+    "AOE_Half"                  "400"
+    "AttackRange"               "900"
+    "AttackAcquisitionRange"    "900"
+    "AttackRate"                "1"
+    "AttackAnimationPoint"      "0.25"
+    "ProjectileSpeed"           "1500"
+
+    "Level"                     "4"
+    "Cost"                      "10000"
+    "EssenceCost"               "1"
+    "TotalCost"                 "13000"
+    "PureEssence"               "1"
+    "BuildTime"                 "3"
+    "Element"                   "earth"
+    "DamageType"                "earth"
+    "ScriptClass"               "EarthTower"
+    "TowerType"                 "Normal"
+    "BuffPriority"              "1"
+    
+    "Upgrades"
+    {
+    }
+    
+    // General
+    //-----------------------------
+    "BaseClass"                 "npc_dota_creature"
+    "ArmorPhysical"             "0"
+    "MagicalResistance"         "0"
+    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"      "1900"  
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+        "ProjectileCollisionSize"   "50"
+    "RingRadius"                "80"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"             "0"
+    "MovementTurnRate"          "1.0"
+    "StatusHealth"              "11000"
+    "StatusHealthRegen"         "0"
+    "StatusMana"                "0"
+    "StatusManaRegen"           "0"
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
+}

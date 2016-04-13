@@ -28,17 +28,17 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "300"
-    "AttackDamageMax"           "300"
-    "Damage"                    "300"
+    "AttackDamageMin"           "420"
+    "AttackDamageMax"           "420"
+    "Damage"                    "420"
     "AttackRange"               "900"
     "AttackAcquisitionRange"    "900"
     "AttackRate"                "1"
     "ProjectileSpeed"           "2000" 
 
     "Level"                     "1"
-    "Cost"                      "275"
-    "TotalCost"                 "450"
+    "Cost"                      "425"
+    "TotalCost"                 "600"
     "BuildTime"                 "2"
 
     "DamageType"                "earth"

@@ -13,7 +13,7 @@
 		Players.PlayerPortraitClicked( $.GetContextPanel().GetAttributeInt( "player_id", -1 ), GameUI.IsControlDown(), GameUI.IsAltDown() );
 	}
 	</script>
-	<Panel hittest="false" class="ScoreboardPlayerWrapper">
+	<Panel hittest="false" class="ScoreboardPlayerWrapper" onmouseover="RemoveStyle(ScoreTooltipContainer, hide);RemoveStyle(ArrowUpContainer, hide)" onmouseout="AddStyle(ScoreTooltipContainer, hide);AddStyle(ArrowUpContainer, hide)">
 		<Panel hittest="false" id="RespawnIndicator">
 			<Label hittest="false" id="RespawnTimer" />
 		</Panel>
@@ -27,7 +27,7 @@
 			<Label hittest="false" id="ScoreTooltip" text="0"/>
 		</Panel>
 		<Panel hittest="false" id="ScoreboardRoot" class="ScoreboardPlayer">
-			<Button class="PlayerPortraitWrapper" onmouseactivate="PortraitClicked();" onmouseover="RemoveStyle(ScoreTooltipContainer, hide);RemoveStyle(ArrowUpContainer, hide)" onmouseout="AddStyle(ScoreTooltipContainer, hide);AddStyle(ArrowUpContainer, hide)">
+			<Button class="PlayerPortraitWrapper" onmouseactivate="PortraitClicked();">
 				<Panel hittest="false" id="PlayerColorBar" />
 				<Panel hittest="false" class="PlayerColorBarMask" />
 				<Panel hittest="false" id="PlayerBG"/>

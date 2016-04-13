@@ -2043,7 +2043,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health"				"300 1500 7500"
+				"health"				"500 2500 12500"
 			}
 		}
 	
@@ -2081,7 +2081,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health"				"300 1500 7500"
+				"health"				"500 2500 12500"
 			}
 		}
 	
@@ -2119,7 +2119,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health"				"300 1500 7500"
+				"health"				"500 2500 12500"
 			}
 		}
 	
@@ -2157,7 +2157,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health"				"300 1500 7500"
+				"health"				"500 2500 12500"
 			}
 		}
 	
@@ -2195,7 +2195,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health"				"300 1500 7500"
+				"health"				"500 2500 12500"
 			}
 		}
 	
@@ -2233,7 +2233,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health"				"300 1500 7500"
+				"health"				"500 2500 12500"
 			}
 		}
 	
@@ -2519,7 +2519,34 @@
 		}
 	}
 	//=================================================================================================================
-	// Earth Tower: Landslide
+	// Earth Tower: Aftershock
+	// 0.5 seconds after damage, half damage same area.
+	//=================================================================================================================
+	"earth_tower_aftershock"
+	{
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "ability_datadriven"                                            
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"            "towers/earth"
+	    "MaxLevel"                      "1"
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "aftershock_damage_pct" "50"
+	        }
+	        "01"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "aftershock_delay"      "0.5"
+	        }
+	    }
+	}
+	//=================================================================================================================
+	// Earth Tower: (OLD) Landslide
 	// Ministun on main target, can only happen once every second.
 	//=================================================================================================================
 	"earth_tower_landslide"
@@ -2595,7 +2622,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"150 900 5400"
+				"damage"				"210 1050 5250"
 			}
 			"03"
 			{
@@ -2861,7 +2888,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"120 600"
+				"dot"					"150 750"
 			}
 			"03"
 			{
@@ -2946,7 +2973,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_FLOAT"
-	            "damage_per_second"     "3 20 130 1300"
+	            "damage_per_second"     "3 21 150 1500"
 	        }
 	        "02"
 	        {
@@ -3075,7 +3102,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"40 240 1440"
+				"damage"				"45 225 1125"
 			}
 			"02"
 			{
@@ -3104,7 +3131,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"150 750"
+				"splash_damage"			"160 800"
 			}
 			"02"
 			{
@@ -3141,7 +3168,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"20 30"
+				"bonus_gold"			"25 30"
 			}
 		}
 	
@@ -3181,7 +3208,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 180 1080"
+				"damage"				"42 210 1050"
 			}
 			"02"
 			{
@@ -3399,7 +3426,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"300 1800 10800"
+				"splash_damage"		"420 2100 10500"
 			}
 			"03"
 			{
@@ -3515,7 +3542,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"135 810 4860"
+				"damage"				"200 1000 5000"
 			}
 			"02"
 			{
@@ -3572,7 +3599,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"2250 11250"
+				"multiplier"			"4000 20000"
 			}
 		}
 	}
@@ -3751,7 +3778,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"6 4 2"
+				"kills_required"				"6 5 4"
 			}
 			"02"
 			{
@@ -3761,7 +3788,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"points_per_kill"				"2 3 6"
+				"points_per_kill"				"10 12 15"
 			}
 		}
 	}
@@ -3777,7 +3804,7 @@
 	    "BaseClass"                     "ability_datadriven"                                            
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	    "AbilityTextureName"            "towers/light"
-	    "MaxLevel"                      "1"
+	    "MaxLevel"                      "4"
 	
 	    "Modifiers"
 	    {
@@ -3792,7 +3819,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "damage"                "4 26 170 1700"
+	            "damage"                "3 21 150 1500"
 	        }
 	    }
 	}
@@ -4119,7 +4146,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"250 1250"
+				"damage"			"300 1500"
 			}
 			"02"
 			{
@@ -4632,7 +4659,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps"					"100 500"
+				"dps"					"120 600"
 			}
 			"04"
 			{
@@ -4891,7 +4918,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"50 250"
+				"damage"			"40 200"
 			}
 			"02"
 			{
@@ -4951,12 +4978,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"5 30 180"
+				"damage"				"22 110 550"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"20 120 720"
+				"aftershock_damage"		"22 110 550"
 			}
 			"03"
 			{
@@ -4985,7 +5012,8 @@
 	}
 	//=================================================================================================================
 	// Water Tower: Water Bullet
-	// Each attack bounces up to 3 times. Said attacks are all splash, bounce range is 150, and they don't increase/decrease in damage.
+	// Causes a single bounce which hits a creep within 150 AoE. Said bounce deals 25% Damage
+	// OLD: Each attack bounces up to 3 times. Said attacks are all splash, bounce range is 150, and they don't increase/decrease in damage.
 	//=================================================================================================================
 	"water_tower_water_bullet"
 	{
@@ -5001,8 +5029,9 @@
 	        "DeleteOnHit"   "1"
 	        "RunScript"
 	        {
-	            "ScriptFile"        "towers/basic/WaterTower.lua"
-	            "Function"          "OnBounceHit"
+	            "ScriptFile"        "towers/towerevents.lua"
+	            "Function"          "TriggerEvent"
+	            "Event"             "OnBounceHit"
 	        }
 	    }
 	
@@ -5011,17 +5040,12 @@
 	        "01"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "bounces"             "3"
+	            "bounce_range"        "350"
 	        }
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "bounce_range"        "550"
-	        }
-	        "03"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "aoe_reduction"       "40"
+	            "bounce_damage_pct"   "25"
 	        }
 	    }
 	}
@@ -5241,12 +5265,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"350 1750"
+				"damage"				"450 2250"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"550"
+				"radius"				"600"
 			}
 			"04"
 			{

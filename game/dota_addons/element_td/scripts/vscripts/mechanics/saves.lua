@@ -31,6 +31,11 @@ function Saves:SaveHasPass(playerID)
     local request = Saves.url .. "&id=" .. steamID .. "&save=1" .. "&pass=" .. bHasPass
 
     local req = CreateHTTPRequest('GET', request)
+
+    -- Send another request to get the player builder
+    if bHasPass == 1 then
+        Saves:LoadBuilder(playerID)
+    end
     
     Saves:Send(req, function(obj)
         -- Success
@@ -69,7 +74,7 @@ function Saves:LoadBuilder(playerID)
                 else
                     local steamID32 = PlayerResource:GetSteamAccountID(playerID)
                     local steamID64 = tostring(Rewards:ConvertID64(steamID32))
-                    Rewards.players[steamID64] = {}
+                    Rewards.players[steamID64] = Rewards.players[steamID64] or {}
                     Rewards.players[steamID64].hero = Saves:GetHeroNameForID(tonumber(obj.save.custom_builder))
 
                     Saves:print("Got a custom builder for player " .. playerID.. ": ".. Rewards.players[steamID64].hero)

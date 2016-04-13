@@ -1,0 +1,90 @@
+"refined_light_tower"
+{
+    // Visual
+    //-----------------------------
+    "Model"                     "models/heroes/keeper_of_the_light/keeper_of_the_light.vmdl"
+    "ModelScale"                "0.9"
+    "ModelRotation"             "90"
+    "ModelOffset"               "20"
+    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_ti5.vmdl"
+    "PedestalModelScale"        "0.8"
+    "PedestalOffset"            "20"
+    "ProjectileModel"           "particles/units/heroes/hero_oracle/oracle_base_attack.vpcf"
+    "SoundSet"                  "Tower.Water"
+    "MinimapIcon"               "minimap_tower90"
+    "MinimapIconSize"           "320"
+    "Creature"
+    {
+        "AttachWearables" // Crucible of Light
+        {
+            "1" { "ItemDef" "7676" } // Tendrillar
+            "2" { "ItemDef" "7677" } // The Crucible of Light Staff
+            "3" { "ItemDef" "7675" } // Horns of Tendrillar
+            "4" { "ItemDef" "6071" } // Repose of the Defiant
+            "5" { "ItemDef" "7678" } // Crucible of Light's Robes
+            "6" { "ItemDef" "528" } // Keeper of the Light's Ambient Effects
+        }
+    }
+    "SoundSet"          "Hero_KeeperOfTheLight"
+    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_keeper_of_the_light.vsndevts"
+    
+    // Stats
+    //----------------------------- 
+    "AttackDamageMin"           "5400"
+    "AttackDamageMax"           "5400"
+    "Damage"                    "5400"  
+    "AttackRange"               "1500"
+    "AttackAcquisitionRange"    "1500"
+    "AttackRate"                "0.66"
+    "AttackAnimationPoint"      "0.2"
+    "ProjectileSpeed"           "2700"
+
+    "Level"                     "3"
+    "Cost"                      "2250"
+    "TotalCost"                 "3000"
+    "BuildTime"                 "1"
+    "Element"                   "light"
+    "DamageType"                "light"
+    "ScriptClass"               "LightTower"
+    "TowerType"                 "Normal"
+    "BuffPriority"              "5"
+    
+    "Requirements"
+    {
+        "light"     "3"
+    }
+    "Upgrades"
+    {
+        "Count"     "1"
+        "1"         "pure_light_tower"
+    }
+    
+    // General
+    //-----------------------------
+    "BaseClass"                 "npc_dota_creature"
+    "ArmorPhysical"             "0"
+    "MagicalResistance"         "0"
+    "BoundsHullName"            "DOTA_HULL_SIZE_BUILDING"
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"         "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"         "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"      "1900"  
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"      "0"
+    "ProjectileCollisionSize"   "50"
+    "RingRadius"                "80"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"             "0"
+    "MovementTurnRate"          "1.0"
+    "StatusHealth"              "1800"
+    "StatusHealthRegen"         "0"
+    "StatusMana"                "0"
+    "StatusManaRegen"           "0"
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
+}

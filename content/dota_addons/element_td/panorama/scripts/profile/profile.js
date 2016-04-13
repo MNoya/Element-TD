@@ -2,15 +2,18 @@
 
 var statsURL = 'http://hatinacat.com/leaderboard/data_request.php?req=stats&id='
 var friendsURL = 'http://hatinacat.com/leaderboard/data_request.php?req=friends&id='
+var dummyProfile = "76561198077142019" //Our Element TD dummy account
 var Profile = $("#Profile")
 var CustomBuilders = $("#CustomBuilders")
 var Loading = $("#Loading")
 var friendsPanel = $("#FriendsContainer")
 var ResetButton = $("#ResetBuilderButton")
+var PreviewMenu = $("#PreviewMenu")
 var currentProfile;
 var currentLB = 0;
 var friendsRank
 var friends = []
+var bHasPass = GameUI.PlayerHasProfile(Game.GetLocalPlayerID())
 
 //cache everything
 var Stats = {}
@@ -22,12 +25,12 @@ function GetStats(steamID32) {
 
     if (Stats[steamID32])
     {
-        $.Msg("Loading stats for "+steamID32)
-        SetStats(Stats[steamID32])
+        $.Msg("Setting existing stats for "+steamID32)
+        SetStats(Stats[steamID32], "allTime")
         return
     }
 
-    $.Msg("Getting stats data for "+steamID32+"...")
+    $.Msg("Requesting stats data for "+steamID32+"...")
     $.AsyncWebRequest( statsURL+steamID32+"&raw=1", { type: 'GET', 
         success: function( data ) {
             var info = JSON.parse(data);
@@ -39,7 +42,7 @@ function GetStats(steamID32) {
                 currentTime = player_info["current_time"]
                 if (allTime)
                 {
-                    SetStats(player_info)
+                    SetStats(player_info, "allTime")
                     return
                 }
             }
@@ -55,49 +58,56 @@ function GetStats(steamID32) {
     })
 }
 
-function SetStats(player_info)
+var Stat_Types = ["allTime","monthTime","weekTime","versionTime"]
+function SetStats(player_info, dateTime)
 {
     Stats[player_info["steamID"]] = player_info
 
-    var allTime = player_info["allTime"]
-    $("#GamesWon").text = allTime["gamesWon"]
-    $("#BestScore").text = GameUI.FormatScore(allTime["bestScore"])
+    for (var i = 0; i < Stat_Types.length; i++) {
+        var name = Stat_Types[i]
+        var panel = $("#"+name+"_radio")
+        panel.SetHasClass( "ActiveTabSub", Stat_Types[i] == dateTime )
+    };
+
+    var info = player_info[dateTime]
+    $("#GamesWon").text = info["gamesWon"]
+    $("#BestScore").text = GameUI.FormatScore(info["bestScore"])
 
     // General
-    $("#kills").text = GameUI.FormatNumber(allTime["kills"])
-    $("#frogKills").text = GameUI.FormatNumber(allTime["frogKills"])
-    $("#networth").text = GameUI.FormatGold(allTime["networth"])
-    $("#interestGold").text = GameUI.FormatGold(allTime["interestGold"])
-    $("#cleanWaves").text = GameUI.FormatNumber(allTime["cleanWaves"])
-    $("#under30").text = GameUI.FormatNumber(allTime["under30"])
+    $("#kills").text = GameUI.FormatNumber(info["kills"])
+    $("#frogKills").text = GameUI.FormatNumber(info["frogKills"])
+    $("#networth").text = GameUI.FormatGold(info["networth"])
+    $("#interestGold").text = GameUI.FormatGold(info["interestGold"])
+    $("#cleanWaves").text = GameUI.FormatNumber(info["cleanWaves"])
+    $("#under30").text = GameUI.FormatNumber(info["under30"])
 
     // GameMode
-    MakeBars(allTime, ["normal","hard","veryhard","insane"])
-    MakeBoolBar(allTime, "order_chaos")
-    MakeBoolBar(allTime, "horde_endless")
-    MakeBoolBar(allTime, "express")
+    MakeBars(info, ["normal","hard","veryhard","insane"])
+    MakeBoolBar(info, "order_chaos")
+    MakeBoolBar(info, "horde_endless")
+    MakeBoolBar(info, "express")
 
-    var random = allTime["random"]
-    var gamesPlayed = allTime["gamesPlayed"]
+    var random = info["random"]
+    var gamesPlayed = info["gamesPlayed"]
     $("#random_pick").text = random+" ("+(random/gamesPlayed*100).toFixed(0)+"%)"
-    $("#towersBuilt").text = GameUI.FormatNumber(Number(allTime["towers"]) + Number(allTime["towersSold"]))
-    $("#towersSold").text = GameUI.FormatNumber(allTime["towersSold"])
-    $("#lifeTowerKills").text = GameUI.FormatNumber(allTime["lifeTowerKills"])
-    $("#goldTowerEarn").text = GameUI.FormatGold(allTime["goldTowerEarn"])
+    $("#towersBuilt").text = GameUI.FormatNumber(Number(info["towers"]) + Number(info["towersSold"]))
+    $("#towersSold").text = GameUI.FormatNumber(info["towersSold"])
+    $("#lifeTowerKills").text = GameUI.FormatNumber(info["lifeTowerKills"])
+    $("#goldTowerEarn").text = GameUI.FormatGold(info["goldTowerEarn"])
 
     // Towers
-    var dual = MakeFirstDual(allTime["firstDual"])
-    var triple = MakeFirstTriple(allTime["firstTriple"])
+    var dual = MakeFirstDual(info["firstDual"])
+    var triple = MakeFirstTriple(info["firstTriple"])
 
     // Element Usage
-    var light = allTime["light"]
-    var dark = allTime["dark"]
-    var water = allTime["water"]
-    var fire = allTime["fire"]
-    var nature = allTime["nature"]
-    var earth = allTime["earth"]
+    var light = info["light"]
+    var dark = info["dark"]
+    var water = info["water"]
+    var fire = info["fire"]
+    var nature = info["nature"]
+    var earth = info["earth"]
     var total_elem = light+dark+water+fire+nature+earth
-    var favorite = allTime["favouriteElement"]
+    var favorite = info["favouriteElement"]
 
     var nextStart = 0
     nextStart = RadialStyle("light", nextStart, light/total_elem)
@@ -184,6 +194,11 @@ function SetStats(player_info)
     $("#ErrorNoMatches").SetHasClass("Hide", matchesCreated > 0)
 }
 
+// allTime, monthTime, weekTime, versionTime
+function ShowStatsTab(dateTime) {
+    SetStats(Stats[currentProfile], dateTime)
+}
+
 var elementNames = ["light", "dark", "water", "fire", "nature", "earth"]
 function CreateMatch(info) {
     var matchID = info['matchID']
@@ -249,83 +264,6 @@ function CreateMatch(info) {
     }
 }
 
-function ClearFields() {
-    $("#GamesWon").text = "-"
-    $("#BestScore").text = "-"
-
-    // General
-    $("#kills").text = "-"
-    $("#frogKills").text = "-"
-    $("#networth").text = "-"
-    $("#interestGold").text = "-"
-    $("#cleanWaves").text = "-"
-    $("#under30").text = "-"
-
-    // GameMode
-    var data = []
-    data["gamesPlayed"] = 4
-    data["normal"] = 1
-    data["hard"] = 1
-    data["veryhard"] = 1
-    data["insane"] = 1
-    data["order_chaos"] = 0
-    data["horde_endless"] = 0
-    data["express"] = 0
-
-    MakeBars(data, ["normal","hard","veryhard","insane"])
-    MakeBoolBar(data, "order_chaos")
-    MakeBoolBar(data, "horde_endless")
-    MakeBoolBar(data, "express")
-
-    var random = "-"
-    $("#gamesPlayed").text = 0
-    $("#random_pick").text = "-"
-    $("#towersBuilt").text = "-"
-    $("#towersSold").text = "-"
-    $("#lifeTowerKills").text = "-"
-    $("#goldTowerEarn").text = "-"
-
-    // Towers
-    MakeFirstDual("")
-    MakeFirstTriple("")
-
-    // Element Usage
-    var light = 1
-    var dark = 1
-    var water = 1
-    var fire = 1
-    var nature = 1
-    var earth = 1
-    var total_elem = light+dark+water+fire+nature+earth
-    var favorite = "-"
-
-    var nextStart = 0
-    nextStart = RadialStyle("light", nextStart, light/total_elem)
-    nextStart = RadialStyle("dark", nextStart, dark/total_elem)
-    nextStart = RadialStyle("water", nextStart, water/total_elem)
-    nextStart = RadialStyle("fire", nextStart, fire/total_elem)
-    nextStart = RadialStyle("nature", nextStart, nature/total_elem)
-    nextStart = RadialStyle("earth", nextStart, earth/total_elem)
-
-    $("#ClassicRank").text = "--"
-    $("#ExpressRank").text = "--"
-    $("#FrogsRank").text = "--"
-
-    // Milestones
-    var childCount = $("#MilestonesContainer").GetChildCount()
-    for (var i = 0; i < childCount; i++) {
-        var child = $("#MilestonesContainer").GetChild(i)
-        if (child && child.id != "ErrorNoMilestones") child.DeleteAsync(0)
-    };
-
-    // Matches
-    var childCount = $("#MatchesContainer").GetChildCount()
-    for (var i = 0; i < childCount; i++) {
-        var child = $("#MatchesContainer").GetChild(i)
-        if (child && child.id != "ErrorNoMatches") child.DeleteAsync(0)
-    };
-}
-
 function GetPlayerFriends(steamID32, leaderboard_type) {
     friendsRank = 0
     currentProfile = steamID32
@@ -337,12 +275,12 @@ function GetPlayerFriends(steamID32, leaderboard_type) {
 
     if (FriendsOf[steamID32] && FriendsOf[steamID32][leaderboard_type])
     {
-        $.Msg("Loading player friends for "+steamID32)
+        $.Msg("Setting existing player friends for "+steamID32)
         SetPlayerFriends(FriendsOf[steamID32][leaderboard_type], steamID32, leaderboard_type, false)
         return
     }
 
-    $.Msg("Getting friends data for "+steamID32+"...")
+    $.Msg("Requesting friends data for "+steamID32+"...")
     Loading.RemoveClass( "Hide" )
     $.AsyncWebRequest( friendsURL+steamID32+"&lb="+leaderboard_type, { type: 'GET', 
         success: function( data ) {
@@ -411,12 +349,16 @@ function CreateFriendPanel(data, leaderboard_type) {
     playerPanel.percentile = GameUI.FormatPercentile(data.percentile)
     playerPanel.BLoadLayout("file://{resources}/layout/custom_game/profile_friend.xml", false, false);
 
-    playerPanel.SetPanelEvent( "onactivate", function(){ LoadProfile(steamID64) })
+    if (bHasPass)
+        playerPanel.SetPanelEvent( "onactivate", function(){ LoadProfile(steamID64) })
+
     friends.push(playerPanel)
 
     var steamID = GameUI.GetLocalPlayerSteamID()
     if (steamID64 == steamID)
         playerPanel.AddClass("local")
+
+    GameUI.SetupAvatarTooltip(playerPanel.FindChildInLayoutFile("AvatarImageFriend"), $.GetContextPanel(), steamID64)
 }
 
 function LoadProfile(steamID64) {
@@ -425,22 +367,7 @@ function LoadProfile(steamID64) {
     $("#AvatarImageProfile").steamid = steamID64
     $("#UserNameProfile").steamid = steamID64
 
-    var root = $("#AvatarImageProfile")
-
-    root.SetPanelEvent("onmouseover", function() {
-        var panel = $.CreatePanel("Panel", $.GetContextPanel(), "PlayerAvatarTooltip")
-        panel.BLoadLayout("file://{resources}/layout/custom_game/profile_avatar.xml", false, false);
-
-        // Positioning should be dynamic based on the panel on hover
-        panel.style["margin-top"] =  "100px;"
-        panel.style["margin-left"] =  "580px;"
-        
-        root.tooltip = panel
-    })
-
-    root.SetPanelEvent("onmouseout", function() {
-        root.tooltip.DeleteAsync(0)
-    })
+    GameUI.SetupAvatarTooltip($("#AvatarImageProfile"), $.GetContextPanel(), steamID64)    
 
     var isSelfProfile = steamID64 == GameUI.GetLocalPlayerSteamID()
     $("#ProfileBackContainer").SetHasClass("Hide", isSelfProfile)
@@ -449,14 +376,157 @@ function LoadProfile(steamID64) {
 
     currentProfile = GameUI.ConvertID32(steamID64)
     GetStats(currentProfile)
-    ShowFriendRanks("classic", true)
+    ShowFriendRanks("classic")
+}
+
+function SetPreviewProfile() {
+    $.Msg("Setting Preview Profile")
+
+    currentProfile = GameUI.ConvertID32(dummyProfile)
+    $("#AvatarImageProfile").steamid = dummyProfile
+    $("#UserNameProfile").steamid = dummyProfile
+
+    $("#ProfileBackContainer").SetHasClass("Hide", true)
+    $("#UserNameProfile").SetHasClass("selfName", true)
+    $("#UserNameProfile").SetHasClass("friendName", false)
+
+    $("#GamesWon").text = "-"
+    $("#BestScore").text = "-"
+
+    // General
+    $("#kills").text = GameUI.FormatNumber("1337")
+    $("#frogKills").text = GameUI.FormatNumber("4200000")
+    $("#networth").text = GameUI.FormatGold("9999999")
+    $("#interestGold").text = GameUI.FormatGold("322000")
+    $("#cleanWaves").text = GameUI.FormatNumber("4200")
+    $("#under30").text = GameUI.FormatNumber("3000")
+
+    // GameMode
+    var data = []
+    data["gamesPlayed"] = 110
+    data["normal"] = 50
+    data["hard"] = 30
+    data["veryhard"] = 10
+    data["insane"] = 20
+    data["order_chaos"] = 15
+    data["horde_endless"] = 45
+    data["express"] = 20
+
+    MakeBars(data, ["normal","hard","veryhard","insane"])
+    MakeBoolBar(data, "order_chaos")
+    MakeBoolBar(data, "horde_endless")
+    MakeBoolBar(data, "express")
+
+    var random = RandomInt(30, 50)
+    $("#gamesPlayed").text = GameUI.FormatNumber(data["gamesPlayed"])
+    $("#random_pick").text = random+" ("+(random/data["gamesPlayed"]*100).toFixed(0)+"%)"
+    $("#towersBuilt").text = GameUI.FormatNumber("1000")
+    $("#towersSold").text = GameUI.FormatNumber("100")
+    $("#lifeTowerKills").text = GameUI.FormatNumber("5000")
+    $("#goldTowerEarn").text = GameUI.FormatGold("9999999")
+
+    // Towers
+    MakeFirstDual(pickRandomProperty(duals))
+    MakeFirstTriple(pickRandomProperty(triples))
+
+    // Element Usage
+    var light = RandomInt(50, 100)
+    var dark = RandomInt(50, 100)
+    var water = RandomInt(50, 100)
+    var fire = RandomInt(50, 100)
+    var nature = RandomInt(50, 100)
+    var earth = RandomInt(50, 100)
+    var total_elem = light+dark+water+fire+nature+earth
+    var favorite = "-"
+
+    var nextStart = 0
+    nextStart = RadialStyle("light", nextStart, light/total_elem)
+    nextStart = RadialStyle("dark", nextStart, dark/total_elem)
+    nextStart = RadialStyle("water", nextStart, water/total_elem)
+    nextStart = RadialStyle("fire", nextStart, fire/total_elem)
+    nextStart = RadialStyle("nature", nextStart, nature/total_elem)
+    nextStart = RadialStyle("earth", nextStart, earth/total_elem)
+
+    $("#ClassicRank").text = "--"
+    $("#ExpressRank").text = "--"
+    $("#FrogsRank").text = "--"
+
+    // Milestones
+    GameUI.CreateBadges($("#MilestonesContainer"), GameUI.FormatVersion("1.4"), 1, 1, 0, 0)
+    GameUI.CreateBadges($("#MilestonesContainer"), GameUI.FormatVersion("1.3"), 0, 0, 5, 5)
+    GameUI.CreateBadges($("#MilestonesContainer"), GameUI.FormatVersion("1.2"), 10, 25, 0, 0)
+    GameUI.CreateBadges($("#MilestonesContainer"), GameUI.FormatVersion("1.1"), 0, 0, 20, 45)
+    GameUI.CreateBadges($("#MilestonesContainer"), GameUI.FormatVersion("1.0"), 4503, 85, 0, 0)
+
+    // Matches
+    CreateMatch({"matchID":1,"score":"420000","difficulty":"Insane","mode":0,"order":"1","horde":"1","random":"AllRandom","fire":"3","water":"2","nature":"3","earth":"0","light":"3","dark":"0","date":"2016-04-07 00:00:00"})
+    CreateMatch({"matchID":1,"score":"300000","difficulty":"Insane","mode":0,"order":"Normal","horde":"1","random":"AllPick","fire":"3","water":"2","nature":"3","earth":"0","light":"2","dark":"1","date":"2016-04-06 00:00:00"})
+    CreateMatch({"matchID":1,"score":"100000","difficulty":"Insane","mode":1,"order":"Normal","horde":"Normal","random":"AllRandom","fire":"3","water":"0","nature":"3","earth":"3","light":"0","dark":"3","date":"2016-04-01 00:00:00"})
+    CreateMatch({"matchID":1,"score":"990000","difficulty":"VeryHard","mode":0,"order":"Normal","horde":"1","random":"AllPick","fire":"3","water":"2","nature":"3","earth":"0","light":"0","dark":"3","date":"2016-03-31 00:00:00"})
+    CreateMatch({"matchID":1,"score":"10500","difficulty":"VeryHard","mode":1,"order":"1","horde":"Normal","random":"AllPick","fire":"3","water":"0","nature":"3","earth":"2","light":"3","dark":"0","date":"2016-03-30 00:00:00"})
+    CreateMatch({"matchID":1,"score":"205000","difficulty":"Hard","mode":1,"order":"Normal","horde":"Normal","random":"AllPick","fire":"0","water":"0","nature":"3","earth":"2","light":"3","dark":"0","date":"2016-03-30 00:00:00"})
+    CreateMatch({"matchID":1,"score":"215000","difficulty":"Hard","mode":0,"order":"1","horde":"1","random":"AllRandom","fire":"3","water":"2","nature":"3","earth":"0","light":"0","dark":"3","date":"2016-03-27 00:00:00"})
+    CreateMatch({"matchID":1,"score":"100000","difficulty":"Hard","mode":0,"order":"1","horde":"Normal","random":"AllPick","fire":"3","water":"2","nature":"3","earth":"0","light":"3","dark":"0","date":"2016-03-24 00:00:00"})
+    CreateMatch({"matchID":1,"score":"10550","difficulty":"Normal","mode":1,"order":"Normal","horde":"Normal","random":"AllRandom","fire":"0","water":"2","nature":"3","earth":"3","light":"3","dark":"0","date":"2016-03-22 00:00:00"})
+    CreateMatch({"matchID":1,"score":"205000","difficulty":"Hard","mode":1,"order":"Normal","horde":"Normal","random":"AllPick","fire":"0","water":"2","nature":"3","earth":"0","light":"0","dark":"3","date":"2016-03-18 00:00:00"})
+    CreateMatch({"matchID":1,"score":"215000","difficulty":"Hard","mode":0,"order":"1","horde":"1","random":"AllRandom","fire":"0","water":"0","nature":"3","earth":"2","light":"0","dark":"2","date":"2016-03-17 00:00:00"})
+    CreateMatch({"matchID":1,"score":"100000","difficulty":"Hard","mode":0,"order":"1","horde":"Normal","random":"AllPick","fire":"3","water":"2","nature":"3","earth":"0","light":"3","dark":"0","date":"2016-03-15 00:00:00"})
+    CreateMatch({"matchID":1,"score":"10550","difficulty":"Normal","mode":1,"order":"Normal","horde":"Normal","random":"AllRandom","fire":"3","water":"2","nature":"3","earth":"0","light":"0","dark":"1","date":"2016-03-13 00:00:00"})
+    CreateMatch({"matchID":1,"score":"205000","difficulty":"Hard","mode":1,"order":"Normal","horde":"Normal","random":"AllPick","fire":"3","water":"0","nature":"3","earth":"0","light":"2","dark":"1","date":"2016-03-10 00:00:00"})
+    CreateMatch({"matchID":1,"score":"215000","difficulty":"Hard","mode":0,"order":"1","horde":"1","random":"AllRandom","fire":"2","water":"3","nature":"3","earth":"1","light":"3","dark":"0","date":"2016-03-07 00:00:00"})
+    CreateMatch({"matchID":1,"score":"100000","difficulty":"Hard","mode":0,"order":"1","horde":"Normal","random":"AllPick","fire":"3","water":"2","nature":"3","earth":"0","light":"3","dark":"0","date":"2016-03-05 00:00:00"})
+    CreateMatch({"matchID":1,"score":"10550","difficulty":"Normal","mode":1,"order":"Normal","horde":"Normal","random":"AllRandom","fire":"0","water":"0","nature":"3","earth":"1","light":"3","dark":"0","date":"2016-03-01 00:00:00"})
+    CreateMatch({"matchID":1,"score":"9000","difficulty":"Normal","mode":0,"order":"Normal","horde":"Normal","random":"AllPick","fire":"1","water":"1","nature":"1","earth":"2","light":"2","dark":"2","date":"2016-02-29 00:00:00"})
+
+    // Friends
+    friendsRank = 0
+    CreateFriendPanel({"steamID":"86718505","score":"644000","rank":"1","percentile":0.1}, 0)
+    CreateFriendPanel({"steamID":"34961594","score":"420000","rank":"10","percentile":1}, 0)
+    CreateFriendPanel({"steamID":"8035838","score":"322000","rank":"50","percentile":10}, 0)
+    CreateFriendPanel({"steamID":"66998815","score":"100000","rank":"100","percentile":20}, 0)
+    CreateFriendPanel({"steamID":"84998953","score":"9001","rank":"500","percentile":30}, 0)
+    CreateFriendPanel({"steamID":"59573794","score":"1337","rank":"10000","percentile":80}, 0)
+
+    var localPlayerSteamID = GameUI.GetLocalPlayerSteamID()
+    if (!GameUI.IsDeveloper(localPlayerSteamID))
+        CreateFriendPanel({"steamID":GameUI.ConvertID32(localPlayerSteamID),"score":"0","rank":"90000","percentile":99}, 0) //Adds the player
+}
+
+// This is shared by both active and inactive pass
+function ToggleHeader() {
+    if (!bHasPass)
+        ToggleInactivePreview()
+    else
+    {
+        ToggleProfile()
+        PreviewMenu.AddClass("Hide")
+    }
+}
+
+function ToggleInactivePreview() {
+    // If any of the two panels is open, close
+    if (!CustomBuilders.BHasClass("Hide") || !Profile.BHasClass("Hide"))
+        GameUI.CloseProfilePanels()
+    else
+        Profile.RemoveClass("Hide")
+
+    PreviewMenu.ToggleClass("Hide")
+
+    if (!PreviewMenu.BHasClass("Hide"))
+        PreviewProfile()
 }
 
 function ToggleProfile() {
     Profile.ToggleClass("Hide")
 
+    if (!bHasPass)
+    {
+        SetPreviewProfile()
+        return
+    }
+
     // Load self in the background
-    if (Profile.BHasClass( "Hide" ))
+    if (Profile.BHasClass("Hide"))
     {
         Game.EmitSound("ui_quit_menu_fadeout")
         LoadLocalProfile()
@@ -471,12 +541,27 @@ function ToggleProfile() {
     CloseCustomBuilders()
 }
 
+function ToggleMinimize() {
+    $("#ProfileToggleContainer").ToggleClass("Hide")
+    $("#MinimizeButton").ToggleClass("Off")
+}
+
+function MinimizeTooltip() {
+    if ($("#MinimizeButton").BHasClass("Off"))
+        $.DispatchEvent("DOTAShowTextTooltip", $("#MinimizeButton"), $.Localize("#pass_maximize"));
+    else
+        $.DispatchEvent("DOTAShowTextTooltip", $("#MinimizeButton"), $.Localize("#pass_minimize"));
+}
+
 function CloseProfile() {
     Profile.AddClass("Hide")
 }
-function CloseCustomBuilders(argument) {
+function CloseCustomBuilders() {
     CustomBuilders.AddClass("Hide")
     ResetButton.AddClass("Hide")
+}
+function ClosePreview() {
+    PreviewMenu.AddClass("Hide")
 }
 
 GameUI.CloseProfilePanels = function() {
@@ -499,16 +584,37 @@ function ToggleCustomBuilders() {
     CloseProfile()
 }
 
+function OpenCustomBuilders() {
+    CustomBuilders.RemoveClass("Hide")
+    AnimateBuildersSpawn()
+    CloseProfile()
+    $("#preview_builders").AddClass("PerkActive")
+    $("#preview_profile").RemoveClass("PerkActive")
+    $("#preview_friends").RemoveClass("PerkActive")
+    $("#preview_stats").RemoveClass("PerkActive")
+    $("#preview_matches").RemoveClass("PerkActive")
+    $("#preview_achievements").RemoveClass("PerkActive")
+}
+
+function PreviewProfile() {
+    Profile.RemoveClass("Hide")
+
+    $("#preview_profile").AddClass("PerkActive")
+    $("#preview_friends").AddClass("PerkActive")
+    ShowProfileTab('stats')
+
+    CustomBuilders.AddClass("Hide")
+}
+
 var LB_types = ["classic","express","frogs"]
-function ShowFriendRanks(leaderboard_type, force) {
+function ShowFriendRanks(leaderboard_type) {
     for (var i = 0; i < LB_types.length; i++) {
         var name = LB_types[i]
         var panel = $("#"+name+"_radio")
         panel.SetHasClass( "ActiveTab", LB_types[i] == leaderboard_type )
     };
 
-    if (!force)
-        Game.EmitSound("ui_rollover_micro")
+    Game.EmitSound("ui_rollover_micro")
 
     currentLB = LB_types.indexOf(leaderboard_type)
     GetPlayerFriends(currentProfile, currentLB)
@@ -516,6 +622,13 @@ function ShowFriendRanks(leaderboard_type, force) {
 
 var leftNames = ["stats","matches","achievements"]
 function ShowProfileTab ( tabName ) {
+    // Toggle from custom builder panel
+    Profile.RemoveClass("Hide")
+    CustomBuilders.AddClass("Hide")
+    $("#preview_builders").RemoveClass("PerkActive")
+    $("#preview_profile").AddClass("PerkActive")
+    $("#preview_friends").AddClass("PerkActive")
+
     // Swap radio buttons and panel visibility
     for (var i = 0; i < leftNames.length; i++) {
         var name = leftNames[i]
@@ -527,45 +640,61 @@ function ShowProfileTab ( tabName ) {
         var tabPanel = $("#"+name+"_Tab")
         if (tabPanel)
             tabPanel.SetHasClass( "Hide", name != tabName )
+
+        var preview = $("#preview_"+name)
+        if (preview)
+            preview.SetHasClass( "PerkActive", name == tabName )
     };
 
     Game.EmitSound("ui_rollover_micro")
 }
 
 function MakeButtonVisible() {
-    var bShowProfile = GameUI.PlayerHasProfile(Game.GetLocalPlayerID())
-    $("#ProfileToggleContainer").SetHasClass("Hide", !bShowProfile)
+    $("#PassPreview").SetHasClass("Hide", bHasPass)
+    $("#PassAccess").SetHasClass("Hide", !bHasPass)
+
+    if (bHasPass)
+        LoadLocalProfile()
+    else
+        SetPreviewProfile()
 }
 
 function LoadLocalProfile() {
     var steamID64 = GameUI.GetLocalPlayerSteamID()
-    LoadProfile(steamID64)
 
-    //Testing
-    //ToggleProfile()
-    //ShowProfileTab('achievements')
+    // Never reload dummy profile
+    if (currentProfile == dummyProfile)
+        return
+
+    // Only load local if haven't done so yet
+    if (GameUI.ConvertID64(currentProfile) != steamID64)
+        LoadProfile(steamID64)
 }
 
 function CheckHUDFlipped() {
-
     var bFlipped = Game.IsHUDFlipped()
     $("#ProfileToggleContainer").SetHasClass("Flipped", bFlipped)
-    $("#MyProfileButton").SetHasClass("Flipped", bFlipped)
-    $("#CustomBuilderButton").SetHasClass("Flipped", bFlipped)
-    
+    $("#New").SetHasClass("Flipped", bFlipped)
+    $("#MenuArrow").SetHasClass("Flipped", bFlipped)
+    $("#MinimizePanel").SetHasClass("Flipped", bFlipped)
     $.Schedule(1, CheckHUDFlipped)
+}
+
+function CheckProfile() {
+    bHasPass = GameUI.PlayerHasProfile(Game.GetLocalPlayerID())
+
+    $("#PassPreview").SetHasClass("Hide", bHasPass)
+    $("#PassAccess").SetHasClass("Hide", !bHasPass)
+
+    $.Schedule(1, CheckProfile)
 }
 
 (function () {
     $.Schedule(0.1, function()
     {
-        if (Players.HasCustomGameTicketForPlayerID(Game.GetLocalPlayerID()) || GameUI.RewardLevel(GameUI.GetLocalPlayerSteamID()) == "Developer")
-        {
-            MakeButtonVisible()
-            LoadLocalProfile()
-            GameUI.AcceptWheel()
-        }
-
+        CheckProfile()
+        MakeButtonVisible()
+        GameUI.AcceptWheel()
         CheckHUDFlipped()
     })
 })();

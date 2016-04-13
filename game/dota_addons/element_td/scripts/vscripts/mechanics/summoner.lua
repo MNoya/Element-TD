@@ -16,7 +16,7 @@ function SummonElemental(keys)
     origin.z = origin.z + 20
     ParticleManager:SetParticleControl(explosion, 0, origin)
 
-    if playerData.elementalCount == 0 or EXPRESS_MODE then
+    if playerData.elementalCount == 0 or EXPRESS_MODE or COOP_MAP then
         Sounds:PlayElementalDeathSound(playerID, element)
         BuyElement(playerID, element)
         return
@@ -110,9 +110,8 @@ function SummonElemental(keys)
     end)
 end
 
-function AddElementalTrophy(playerID, element)
+function AddElementalTrophy(playerID, element, level)
     local team = PlayerResource:GetTeam(playerID)
-    local level = GetPlayerElementLevel(playerID, element)
     local unitName = element.."_elemental"..level
     local scale = GetUnitKeyValue(unitName, "ModelScale")
     local playerData = GetPlayerData(playerID)

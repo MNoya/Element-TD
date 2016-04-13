@@ -134,8 +134,8 @@ function StartBreakTime(playerID, breakTime, rush_wave)
                     -- Track pure essence purchasing as part of the element order
                     playerData.elementOrder[#playerData.elementOrder+1] = "Pure"
 
-                    -- Gold bonus for Pure Essence randoming
-                    GivePureEssenceGoldBonus(playerID)
+                    -- Gold bonus for Pure Essence randoming (removed in 1.5)
+                    -- GivePureEssenceGoldBonus(playerID)
                 else
                     SendEssenceMessage(playerID, "#etd_random_elemental")
                     SummonElemental({caster = playerData.summoner, Elemental = element .. "_elemental"})
@@ -472,7 +472,7 @@ function CompetitiveNextRound(wave)
     end
 end
 
-function ReduceLivesForPlayer( playerID, lives )
+function ReduceLivesForPlayer(playerID, lives)
     local playerData = GetPlayerData(playerID)
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     local ply = PlayerResource:GetPlayer(playerID)
@@ -485,6 +485,7 @@ function ReduceLivesForPlayer( playerID, lives )
 
     playerData.health = playerData.health - lives
 
+    local maxLives = GameSettings:GetMapSetting("Lives")
     if playerData.health <= 0 then
         playerData.health = 0
 
@@ -502,7 +503,7 @@ function ReduceLivesForPlayer( playerID, lives )
         
         playerData.waveObject.leaks = playerData.waveObject.leaks + lives
         
-        if hero and playerData.health < 50 then --When over 50 health, HP loss is covered by losing modifier_bonus_life
+        if hero and playerData.health < maxLives then --When over max health, HP loss is covered by losing modifier_bonus_life
             hero:SetHealth(playerData.health)
         end
     end
@@ -511,6 +512,7 @@ function ReduceLivesForPlayer( playerID, lives )
 
     if hero then
         hero:CalculateStatBonus()
+        UpdatePlayerHealth(playerID)
         CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=playerData.health/hero:GetMaxHealth() * 100} )
     end
 

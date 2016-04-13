@@ -8,7 +8,15 @@ function CDOTA_BaseNPC_Hero:ModifyGold(goldAmount)
         return
     end
 
-    local newGold = tonumber(playerData.gold) + tonumber(goldAmount)
+    local goldGain = math.floor(goldAmount)
+    local remainder = goldAmount - goldGain -- floating point component
+    playerData.gold_remainder = playerData.gold_remainder + remainder -- accumulated
+    if (playerData.gold_remainder >= 1) then
+        playerData.gold_remainder = playerData.gold_remainder - 1
+        goldGain = goldGain + 1
+    end
+
+    local newGold = tonumber(playerData.gold) + tonumber(goldGain)
     SetCustomGold(playerID, newGold)
 end
 
@@ -21,6 +29,14 @@ end
 
 function CDOTA_PlayerResource:GetGold(playerID)
     return GetPlayerData(playerID).gold
+end
+
+function CDOTA_PlayerResource:GetTotalGold()
+    local totalGold = 0
+    ForAllPlayerIDs(function(playerID)
+        totalGold = totalGold + PlayerResource:GetGold(playerID)
+    end)
+    return totalGold
 end
 
 function SetCustomGold(playerID, amount)
@@ -148,8 +164,8 @@ function BuyPureEssence( keys )
         -- Track pure essence purchasing as part of the element order
         playerData.elementOrder[#playerData.elementOrder+1] = "Pure"
         
-        -- Gold bonus to help stay valuable by comparison to getting an element upgrade
-        GivePureEssenceGoldBonus(playerID)
+        -- Gold bonus to help stay valuable by comparison to getting an element upgrade (removed in 1.5)
+        -- GivePureEssenceGoldBonus(playerID)
 
         if IsValidEntity(item) then
             item:SetCurrentCharges(item:GetCurrentCharges()-1)
@@ -173,6 +189,7 @@ function BuyPureEssenceWarn( event )
 end
 
 -- Bonus for trading lumber->essence
+-- not used anymore since 1.5
 function GivePureEssenceGoldBonus( playerID )
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     local playerData = GetPlayerData(playerID)

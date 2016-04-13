@@ -21,7 +21,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"health"				"300 1500 7500"
+			"health"				"500 2500 12500"
 		}
 	}
 

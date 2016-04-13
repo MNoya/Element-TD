@@ -11,6 +11,7 @@ if not GameSettings then
 	GameSettings.length = ""
 	GameSettings.elements = ""
 	GameSettings.difficulty = nil -- for co-op mode
+	GameSettings.mapSettings = {} -- map data (lives, builder movement speed)
 
 	DIFFICULTY_OBJECTS = {}
 end
@@ -71,6 +72,14 @@ end
 for df,_ in pairs(GameSettingsKV.Difficulty) do
 	DIFFICULTY_OBJECTS[df] = DifficultyObject(df)
 end
+GameSettings.mapSettings = GameSettingsKV.MapSettings[GetMapName()]
+
+
+-----------------------------------------------------------
+function GameSettings:GetMapSetting(setting)
+	local setting = GameSettings.mapSettings[setting]
+	return tonumber(setting) or setting -- return setting as a number if possible
+end
 
 function GameSettings:SetDifficulty(playerID, difficulty)
 	local playerData = GetPlayerData(playerID)
@@ -110,10 +119,16 @@ function GameSettings:SetGameLength(length)
 		GameSettings:SetGameLength("Normal")
 		return
 	end
+
+    local baseGold = GameSettings.length.Gold
+    if COOP_MAP then
+        baseGold = math.floor(baseGold * 4 / PlayerResource:GetPlayerCount() + 0.5)
+    end
+
 	for _,plyID in pairs(playerIDs) do
 		local playerData = GetPlayerData(plyID)
 
-		SetCustomGold(plyID, GameSettings.length.Gold)
+		SetCustomGold(plyID, baseGold)
 		ModifyLumber(plyID, GameSettings.length.Lumber)
 		playerData.nextWave = GameSettings.length.Wave
 
@@ -153,6 +168,9 @@ function GameSettings:EnableRandomForPlayer(playerID)
 
     if IsPlayerUsingRandomMode(playerID) then
     	SendErrorMessage(playerID, "#etd_random_already_enabled")
+
+    elseif not VOTING_FINISHED then 
+        SendErrorMessage(playerID, "#etd_random_wait_for_vote")        
 
     elseif CanPlayerEnableRandom(playerID) then
         playerData.elementalRandom = true

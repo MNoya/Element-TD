@@ -299,6 +299,16 @@ function SetupTowerUpgrade(tower, newTower, buffData, stacks)
         AddAbility(newTower, "sell_tower_90")
     end
 
+    if string.match(newClass, "cannon_tower") then
+        AddAbility(newTower, "attack_ground")
+    end
+
+    -- Apply render color
+    if string.match(newClass, "arrow_tower") or string.match(newClass, "cannon_tower") then
+        local color = ElementColors[split(newClass, "_")[1]]
+        newTower:SetRenderColor(color[1], color[2], color[3])
+    end
+
     -- create a script object for this tower
     if TOWER_CLASSES[scriptClassName] then
         local scriptObject = TOWER_CLASSES[scriptClassName](newTower, newClass)

@@ -10,15 +10,13 @@ function CreateRankings()
         GameUI.Ranks = {}
 
     // Build ranking badge for each player
-    for (var playerID in Root.playerRankings) {
+    for (var playerID in Root.playerRankings)
+    {
         var playerRankInfo = Root.playerRankings[playerID];
         if (playerRankInfo.sector >= 0 && playerRankInfo.sector < 8) {
             var container = $('#sector'+playerRankInfo.sector);
-            if (container !== null) {
-                if (playerRankInfo.rank != 0) {
-                    var parent = $( '#sector'+playerRankInfo.sector )
-                    GameUI.CreatePlayerRank(parent, playerRankInfo.percentile, playerRankInfo.rank, playerID )
-                }
+            if (container !== null && playerRankInfo.rank != 0) {
+                GameUI.CreatePlayerRank(container, playerRankInfo.percentile, playerRankInfo.rank, playerID, playerRankInfo.sector)
             }
         }
     }
@@ -26,13 +24,18 @@ function CreateRankings()
 
 // Process and store rankings
 function LoadRankings() {
-    var rankings = CustomNetTables.GetAllTableValues( "rankings" )
+    var playerIDs =  Game.GetAllPlayerIDs()
     Root.playerRankings = {}
 
-    for (var playerID in rankings)
+    for (var i in playerIDs)
     {
-        Root.playerRankings[playerID] = rankings[playerID].value;
-        $.Msg("Player "+playerID+" info: ",Root.playerRankings[playerID])
+        var playerID = playerIDs[i]
+        var tableValue = CustomNetTables.GetTableValue("rankings", String(playerID))
+        if (tableValue !== undefined)
+        {
+            Root.playerRankings[playerID] = tableValue;
+            $.Msg("Player "+playerID+" info: ",Root.playerRankings[playerID])
+        }
     }
 }
 
