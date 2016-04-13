@@ -55,7 +55,7 @@
 		{
 			_class = "C_OP_InterpolateRadius"
 			m_flBias = 0.850000
-			m_flEndScale = 6.000000
+			m_flEndScale = 4.000000
 		},
 		{
 			_class = "C_OP_PositionLock"
@@ -69,9 +69,9 @@
 			_class = "C_OP_ColorInterpolate"
 			m_ColorFade =
 			[
-				29,
-				16,
-				11,
+				255,
+				255,
+				127,
 				255,
 			]
 		},
@@ -137,18 +137,11 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin =
-			[
-				118,
-				118,
-				118,
-				255,
-			]
 			m_ColorMax =
 			[
-				118,
-				118,
-				118,
+				255,
+				255,
+				127,
 				255,
 			]
 		},

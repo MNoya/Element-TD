@@ -15,14 +15,13 @@
 		{
 			_class = "C_OP_RenderSprites"
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
-			m_flStartFadeSize = 0.210000
-			m_flEndFadeSize = 0.350000
-			m_flMaxSize = 0.210000
-			m_flOverbrightFactor = 5.000000
+			m_flStartFadeSize = 5000.000000
+			m_flEndFadeSize = 5000.000000
+			m_flOverbrightFactor = 2.000000
 			m_flAddSelfAmount = 1.000000
 			m_bSaturateColorPreAlphaBlend = false
-			m_hTexture = resource:"materials/particle/fluidexplosions/smoke_gr_burst_10.vtex"
-			m_flAnimationRate = 2.000000
+			m_hTexture = resource:"materials/models/heroes/morphling/watersprites/waveform_sprites2.vtex"
+			m_flAnimationRate = 1.500000
 		},
 	]
 	m_Operators =
@@ -53,9 +52,9 @@
 			_class = "C_OP_ColorInterpolate"
 			m_ColorFade =
 			[
-				118,
-				118,
-				118,
+				85,
+				255,
+				255,
 				255,
 			]
 		},
@@ -64,7 +63,7 @@
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMax = 0.350000
+			m_fLifetimeMax = 1.000000
 			m_fLifetimeMin = 0.250000
 		},
 		{

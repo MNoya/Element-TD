@@ -24,7 +24,8 @@
 		{
 			_class = "C_OP_FadeAndKill"
 			m_flStartAlpha = 0.000000
-			m_flEndFadeInTime = 0.150000
+			m_flEndFadeInTime = 0.600000
+			m_flStartFadeOutTime = 1.000000
 		},
 		{
 			_class = "C_OP_BasicMovement"
@@ -107,18 +108,21 @@
 	[
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/water_explosion_a.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/water_explosion_b.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/water_explosion_c.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/water_explosion_d.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/water_explosion_e.vpcf"
+			m_bDisableChild = true
 		},
 	]
 }

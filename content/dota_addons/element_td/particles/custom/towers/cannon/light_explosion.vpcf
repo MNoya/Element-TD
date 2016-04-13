@@ -119,6 +119,7 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/light_explosion_e.vpcf"
+			m_bDisableChild = true
 		},
 	]
 }

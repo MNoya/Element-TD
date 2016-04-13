@@ -123,9 +123,16 @@
 			_class = "C_INIT_RandomColor"
 			m_ColorMax =
 			[
-				118,
-				118,
-				118,
+				37,
+				0,
+				56,
+				255,
+			]
+			m_ColorMin =
+			[
+				131,
+				0,
+				197,
 				255,
 			]
 		},

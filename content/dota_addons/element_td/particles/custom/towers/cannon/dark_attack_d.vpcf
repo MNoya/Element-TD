@@ -112,4 +112,11 @@
 			_class = "C_OP_ContinuousEmitter"
 		},
 	]
+	m_ConstantColor =
+	[
+		131,
+		0,
+		197,
+		255,
+	]
 }

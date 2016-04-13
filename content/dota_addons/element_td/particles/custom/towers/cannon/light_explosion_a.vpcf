@@ -6,9 +6,9 @@
 	m_flConstantRadius = 1.000000
 	m_ConstantColor =
 	[
-		118,
-		118,
-		118,
+		255,
+		255,
+		127,
 		255,
 	]
 	m_Renderers =
@@ -33,7 +33,6 @@
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
-			m_flEndScale = 1.500000
 			m_flBias = 0.900000
 		},
 		{
