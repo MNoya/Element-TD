@@ -49,7 +49,7 @@ function RefreshScoreboard()
     if (Game.IsCoop())
     {
      	$.GetContextPanel().FindChildTraverse("ScoreContainer").AddClass("Hide")
-     	$.GetContextPanel().FindChildInLayoutFile("TeamScore").AddClass("Hide")
+     	$.GetContextPanel().FindChildInLayoutFile("TeamScoreLabel").AddClass("Hide")
 
      	$.GetContextPanel().FindChildTraverse("LivesContainer").AddClass("Hide")
      	$.GetContextPanel().FindChildInLayoutFile("TeamLives").AddClass("Hide")
