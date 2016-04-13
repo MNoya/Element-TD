@@ -212,6 +212,6 @@ function BuyElement(playerID, element)
     if playerData.lumber > 0 then
         ModifyLumber(playerID, -1)
         ModifyElementValue(playerID, element, 1)
-        AddElementalTrophy(playerID, element)
+        AddElementalTrophy(playerID, element, GetPlayerElementLevel(playerID, element))
     end
 end
