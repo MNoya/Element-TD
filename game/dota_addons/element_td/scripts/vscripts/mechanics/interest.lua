@@ -14,7 +14,7 @@ end
 -- this should only be called once, when the game starts
 function InterestManager:StartInterest()
 	InterestManager.started = true
-	Log:debug("Starting interest for all player at ".. INTEREST_INTERVAL .. "s")
+	Log:debug("Starting interest for all players at ".. INTEREST_INTERVAL .. "s")
 
 	for _, playerID in pairs(playerIDs) do
 		if playerID then
@@ -205,12 +205,6 @@ function InterestManager:GiveInterest(playerID)
 	local player = PlayerResource:GetPlayer(playerID)
 	local gold = hero:GetGold()
 	local interest = math.floor(gold * INTEREST_RATE)
-
-	-- cooperative interest
-	if COOP_MAP then
-		gold = PlayerResource:GetTotalGold() / PlayerResource:GetPlayerCount()
-		interest = math.floor(gold * INTEREST_RATE)
-	end
 
 	if interest > 0 then
 		hero:ModifyGold(interest)

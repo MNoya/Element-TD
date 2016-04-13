@@ -108,6 +108,10 @@ function ElementTD:InitGameMode()
     CustomGameEventManager:RegisterListener( "request_wave_info", Dynamic_Wrap(ElementTD, "WaveInfoReconnect")) --on reconnection
     CustomGameEventManager:RegisterListener( "etd_player_voted", Dynamic_Wrap(ElementTD, "OnPlayerVoted")) -- voting ui
 
+    -- load the appropriate interest manager based on the map --
+    require(GameSettings:GetMapSetting("InterestManager"))
+    ------------------------------------------------------------
+
     ------------------------------------------------------
     local base_game_mode = GameRules:GetGameModeEntity()
     base_game_mode:SetRecommendedItemsDisabled(true) -- no recommended items panel

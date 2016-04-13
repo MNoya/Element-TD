@@ -126,7 +126,7 @@ function WaveCoop:SpawnWave()
 			end
 		end
 
-		if entitiesSpawned == CREEPS_PER_WAVE_COOP then
+		if entitiesSpawned >= CREEPS_PER_WAVE_COOP then
 			self.endSpawnTime = GameRules:GetGameTime()
 			for i = 1, 6 do
 				ClosePortalForSector(nil, i, true)

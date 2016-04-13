@@ -32,11 +32,13 @@ function SpawnWaveCoop()
     if not InterestManager:IsStarted() then
         InterestManager:StartInterest()
     end
+    -- InterestManager:CheckForIncorrectPausing() -- not needed?
 
     CURRENT_WAVE_OBJECT:SetOnCompletedCallback(function()   
         print("[COOP] Completed wave "..COOP_WAVE)
         COOP_WAVE = COOP_WAVE + 1
         EmitGlobalSound("ui.npe_objective_complete")
+        InterestManager:CompletedWave(COOP_WAVE)
 
         -- Boss Wave completed starts the new one with no breaktime
         if COOP_WAVE >= WAVE_COUNT then
@@ -67,12 +69,9 @@ function CreateMoveTimerForCreepCoop(creep, sector)
 
             if (creep:GetAbsOrigin() - destination):Length2D() <= 100 then
                 
-                -- TODO: make interest work with co-op mode
-                --[[
                 if GameSettings:GetEndless() ~= "Endless" then
-                    InterestManager:PlayerLeakedWave(playerID, creep.waveObject.waveNumber)
+                    InterestManager:LeakedWave(creep.waveObject.waveNumber)
                 end
-                ]]--
 
                 -- Boss Wave leaks = 3 lives
                 local lives = 1
