@@ -590,10 +590,6 @@
         "DOTA_Tooltip_ability_earth_tower_aftershock_Description"        "After a short time, its attack causes a secondary shockwave, hitting creeps in the same area for half damage."
         "DOTA_Tooltip_ability_earth_tower_aftershock_damage_pct"  "AFTERSHOCK DAMAGE:"
 		"DOTA_Tooltip_ability_earth_tower_aftershock_delay"  "AFTERSHOCK DELAY:"
-
-        "DOTA_Tooltip_ability_earth_tower_landslide"                 "Landslide"
-        "DOTA_Tooltip_ability_earth_tower_landslide_Description"        "Attacks stun the main target for a short duration. Creeps cannot be stunned more than once per second."
-        "DOTA_Tooltip_ability_earth_tower_landslide_ministun_duration"  "MINISTUN DURATION:"
         
         "DOTA_Tooltip_ability_water_tower_water_bullet"                                   "Water Bullet"
         "DOTA_Tooltip_ability_water_tower_water_bullet_Description"                       "Each attack causes a single bounce within a short range, dealing reduced damage."
