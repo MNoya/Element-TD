@@ -17,6 +17,7 @@
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
 			m_hTexture = resource:"materials/particle/impact/fleks_ember.vtex"
 			m_flAnimationRate = 2.000000
+			m_bDisableOperator = true
 		},
 	]
 	m_Operators =
@@ -107,7 +108,6 @@
 	[
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/nature_explosion_a.vpcf"
-			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/nature_explosion_b.vpcf"

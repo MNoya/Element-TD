@@ -156,6 +156,7 @@
 	[
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/base_attack_f0.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/base_attack_f1.vpcf"

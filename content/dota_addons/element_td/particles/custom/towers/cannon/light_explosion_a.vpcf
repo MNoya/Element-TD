@@ -9,7 +9,7 @@
 		255,
 		255,
 		127,
-		255,
+		150,
 	]
 	m_Renderers =
 	[
@@ -24,6 +24,7 @@
 			m_bSaturateColorPreAlphaBlend = false
 			m_hTexture = resource:"materials/particle/smoke/maya_wispy/wispy_v2.vtex"
 			m_flAnimationRate = 0.500000
+			m_bParticleFeathering = true
 		},
 	]
 	m_Operators =

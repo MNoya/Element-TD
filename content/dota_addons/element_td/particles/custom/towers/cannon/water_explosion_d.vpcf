@@ -5,9 +5,9 @@
 	m_nMaxParticles = 48
 	m_ConstantColor =
 	[
-		118,
-		118,
-		118,
+		85,
+		170,
+		255,
 		255,
 	]
 	m_Renderers =
@@ -21,7 +21,7 @@
 			m_flAddSelfAmount = 1.000000
 			m_bSaturateColorPreAlphaBlend = false
 			m_hTexture = resource:"materials/models/heroes/morphling/watersprites/waveform_sprites2.vtex"
-			m_flAnimationRate = 1.500000
+			m_flAnimationRate = 1.200000
 		},
 	]
 	m_Operators =
@@ -63,8 +63,8 @@
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMax = 1.000000
-			m_fLifetimeMin = 0.250000
+			m_fLifetimeMax = 1.500000
+			m_fLifetimeMin = 1.000000
 		},
 		{
 			_class = "C_INIT_RandomRotation"
