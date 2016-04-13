@@ -25,8 +25,8 @@
     "ProjectileSpeed"           "1500" 
 
     "Level"                     "1"
-    "Cost"                      "75"
-    "TotalCost"                 "125"
+    "Cost"                      "80"
+    "TotalCost"                 "130"
     "BuildTime"                 "1"
     "Element"                   "light"
     "DamageType"                "light"

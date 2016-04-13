@@ -2002,7 +2002,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 250 1250"
+				"damage"				"45 225 1125"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -2041,7 +2041,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 250 1250"
+				"damage"				"45 225 1125"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -2070,7 +2070,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 250 1250"
+				"damage"				"45 225 1125"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -2109,7 +2109,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 250 1250"
+				"damage"				"45 225 1125"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -2138,7 +2138,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 250 1250"
+				"damage"				"45 225 1125"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -2168,7 +2168,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 250 1250"
+				"damage"				"45 225 1125"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -2826,7 +2826,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"6 4 2"
+				"kills_required"				"6 5 4"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -2865,7 +2865,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"6 4 2"
+				"kills_required"				"6 5 4"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -2894,7 +2894,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"6 4 2"
+				"kills_required"				"6 5 4"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -2933,7 +2933,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"6 4 2"
+				"kills_required"				"6 5 4"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -2962,7 +2962,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"6 4 2"
+				"kills_required"				"6 5 4"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -2992,7 +2992,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"6 4 2"
+				"kills_required"				"6 5 4"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -3854,12 +3854,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"7 35 175"
+				"damage"				"22 110 550"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"28 140 700"
+				"aftershock_damage"		"22 110 550"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -3898,12 +3898,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"7 35 175"
+				"damage"				"22 110 550"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"28 140 700"
+				"aftershock_damage"		"22 110 550"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -3932,12 +3932,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"7 35 175"
+				"damage"				"22 110 550"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"28 140 700"
+				"aftershock_damage"		"22 110 550"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -3976,12 +3976,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"7 35 175"
+				"damage"				"22 110 550"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"28 140 700"
+				"aftershock_damage"		"22 110 550"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -4010,12 +4010,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"7 35 175"
+				"damage"				"22 110 550"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"28 140 700"
+				"aftershock_damage"		"22 110 550"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -4045,12 +4045,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"7 35 175"
+				"damage"				"22 110 550"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"28 140 700"
+				"aftershock_damage"		"22 110 550"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -5036,7 +5036,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"20 30"
+				"bonus_gold"			"25 30"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -5077,7 +5077,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"20 30"
+				"bonus_gold"			"25 30"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -5108,7 +5108,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"20 30"
+				"bonus_gold"			"25 30"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -5140,7 +5140,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"20 30"
+				"bonus_gold"			"25 30"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -5409,7 +5409,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"2250 11250"
+				"multiplier"			"4000 20000"
 			}
 		}
 		"AbilityCastRange"              "1500"
@@ -5450,7 +5450,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"2250 11250"
+				"multiplier"			"4000 20000"
 			}
 		}
 		"AbilityCastRange"              "1500"
@@ -5481,7 +5481,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"2250 11250"
+				"multiplier"			"4000 20000"
 			}
 		}
 		"AbilityCastRange"              "1500"
@@ -5513,7 +5513,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"2250 11250"
+				"multiplier"			"4000 20000"
 			}
 		}
 		"AbilityCastRange"              "1500"
@@ -6237,12 +6237,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"5 15"
+				"health_burn"			"10 30"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken_pcnt"		"10 30"
+				"damage_taken_pcnt"		"5 15"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -6283,12 +6283,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"5 15"
+				"health_burn"			"10 30"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken_pcnt"		"10 30"
+				"damage_taken_pcnt"		"5 15"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -6319,12 +6319,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"5 15"
+				"health_burn"			"10 30"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken_pcnt"		"10 30"
+				"damage_taken_pcnt"		"5 15"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -6356,12 +6356,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"5 15"
+				"health_burn"			"10 30"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken_pcnt"		"10 30"
+				"damage_taken_pcnt"		"5 15"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -6978,7 +6978,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"400 2000"
+				"damage"				"450 2250"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -7025,7 +7025,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"400 2000"
+				"damage"				"450 2250"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -7062,7 +7062,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"400 2000"
+				"damage"				"450 2250"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -7100,7 +7100,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"400 2000"
+				"damage"				"450 2250"
 			}
 		}
 		"AbilityCastRange"              "1150"

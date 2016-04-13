@@ -3996,9 +3996,9 @@
 	
 	    // Stats
 	    //-----------------------------
-	    "AttackDamageMin"           "25000"
-	    "AttackDamageMax"           "25000"
-	    "Damage"                    "25000"
+	    "AttackDamageMin"           "30000"
+	    "AttackDamageMax"           "30000"
+	    "Damage"                    "30000"
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
 	    "AOE_Full"                  "100"
@@ -4152,8 +4152,8 @@
 	    "ProjectileSpeed"           "1500" 
 	
 	    "Level"                     "1"
-	    "Cost"                      "75"
-	    "TotalCost"                 "125"
+	    "Cost"                      "80"
+	    "TotalCost"                 "130"
 	    "BuildTime"                 "1"
 	    "Element"                   "dark"
 	    "DamageType"                "dark"
@@ -4225,8 +4225,8 @@
 	    "ProjectileSpeed"           "1500" 
 	
 	    "Level"                     "1"
-	    "Cost"                      "75"
-	    "TotalCost"                 "125"
+	    "Cost"                      "80"
+	    "TotalCost"                 "130"
 	    "BuildTime"                 "1"
 	    "Element"                   "earth"
 	    "DamageType"                "earth"
@@ -4298,8 +4298,8 @@
 	    "ProjectileSpeed"           "1500" 
 	
 	    "Level"                     "1"
-	    "Cost"                      "75"
-	    "TotalCost"                 "125"
+	    "Cost"                      "80"
+	    "TotalCost"                 "130"
 	    "BuildTime"                 "1"
 	    "Element"                   "fire"
 	    "DamageType"                "fire"
@@ -4370,8 +4370,8 @@
 	    "ProjectileSpeed"           "1500" 
 	
 	    "Level"                     "1"
-	    "Cost"                      "75"
-	    "TotalCost"                 "125"
+	    "Cost"                      "80"
+	    "TotalCost"                 "130"
 	    "BuildTime"                 "1"
 	    "Element"                   "light"
 	    "DamageType"                "light"
@@ -4443,8 +4443,8 @@
 	    "ProjectileSpeed"           "1500" 
 	
 	    "Level"                     "1"
-	    "Cost"                      "75"
-	    "TotalCost"                 "125"
+	    "Cost"                      "80"
+	    "TotalCost"                 "130"
 	    "BuildTime"                 "1"
 	    "Element"                   "nature"
 	    "DamageType"                "nature"
@@ -4516,8 +4516,8 @@
 	    "ProjectileSpeed"           "1500" 
 	
 	    "Level"                     "1"
-	    "Cost"                      "75"
-	    "TotalCost"                 "125"
+	    "Cost"                      "80"
+	    "TotalCost"                 "130"
 	    "BuildTime"                 "1"
 	    "Element"                   "water"
 	    "DamageType"                "water"
@@ -4670,8 +4670,8 @@
 	    "AttackGround"              "1"
 	
 	    "Level"                     "1"
-	    "Cost"                      "75"
-	    "TotalCost"                 "125"
+	    "Cost"                      "80"
+	    "TotalCost"                 "130"
 	    "BuildTime"                 "1"
 	    "Element"                   "dark" 
 	    "DamageType"                "dark"
@@ -4746,8 +4746,8 @@
 	    "AttackGround"              "1"
 	
 	    "Level"                     "1"
-	    "Cost"                      "75"
-	    "TotalCost"                 "125"
+	    "Cost"                      "80"
+	    "TotalCost"                 "130"
 	    "BuildTime"                 "1"
 	    "Element"                   "earth" 
 	    "DamageType"                "earth"
@@ -4822,8 +4822,8 @@
 	    "AttackGround"              "1"
 	
 	    "Level"                     "1"
-	    "Cost"                      "75"
-	    "TotalCost"                 "125"
+	    "Cost"                      "80"
+	    "TotalCost"                 "130"
 	    "BuildTime"                 "1"
 	    "Element"                   "fire" 
 	    "DamageType"                "fire"
@@ -4898,8 +4898,8 @@
 	    "AttackGround"              "1"
 	
 	    "Level"                     "1"
-	    "Cost"                      "75"
-	    "TotalCost"                 "125"
+	    "Cost"                      "80"
+	    "TotalCost"                 "130"
 	    "BuildTime"                 "1"
 	    "Element"                   "light" 
 	    "DamageType"                "light"
@@ -4974,8 +4974,8 @@
 	    "AttackGround"              "1"
 	
 	    "Level"                     "1"
-	    "Cost"                      "75"
-	    "TotalCost"                 "125"
+	    "Cost"                      "80"
+	    "TotalCost"                 "130"
 	    "BuildTime"                 "1"
 	    "Element"                   "nature" 
 	    "DamageType"                "nature"
@@ -5050,8 +5050,8 @@
 	    "AttackGround"              "1"
 	
 	    "Level"                     "1"
-	    "Cost"                      "75"
-	    "TotalCost"                 "125"
+	    "Cost"                      "80"
+	    "TotalCost"                 "130"
 	    "BuildTime"                 "1"
 	    "Element"                   "water" 
 	    "DamageType"                "water"
@@ -12855,7 +12855,9 @@
 	        "2"        "fire"
 	        "3"        "nature"
 	    }
-	    "Damage"        "3200"
+	    "Damage"        "3500"
+	    "AttackDamageMin"        "3500"
+	    "AttackDamageMax"        "3500"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "JinxTower"
 	    "TowerType"        "Normal"
@@ -12895,8 +12897,6 @@
 	        "Count"        "1"
 	        "1"        "jinx_tower_2"
 	    }
-	    "AttackDamageMin"        "2600"
-	    "AttackDamageMax"        "2600"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -12944,7 +12944,9 @@
 	        "2"        "fire"
 	        "3"        "nature"
 	    }
-	    "Damage"        "16000"
+	    "Damage"        "17500"
+	    "AttackDamageMin"        "17500"
+	    "AttackDamageMax"        "17500"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "JinxTower"
 	    "TowerType"        "Normal"
@@ -12982,8 +12984,6 @@
 	    "Upgrades"
 	    {
 	    }
-	    "AttackDamageMin"        "13000"
-	    "AttackDamageMax"        "13000"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -14610,7 +14610,7 @@
 	    "BoundsHullName"        "DOTA_HULL_SIZE_REGULAR"
 	    "HealthBarOffset"        "140"
 	    "MovementCapabilities"    "DOTA_UNIT_CAP_MOVE_GROUND"
-	    "MovementSpeed"            "175"
+	    "MovementSpeed"            "200"
 	    "MovementTurnRate"        "20"
 	    "FollowRange"            "500"
 	    "StatusHealth"            "500"

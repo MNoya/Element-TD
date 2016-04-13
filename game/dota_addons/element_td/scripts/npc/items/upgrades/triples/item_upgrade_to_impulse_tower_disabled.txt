@@ -25,7 +25,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"multiplier"			"2250 11250"
+			"multiplier"			"4000 20000"
 		}
 	}
 	"AbilityCastRange"              "1500"

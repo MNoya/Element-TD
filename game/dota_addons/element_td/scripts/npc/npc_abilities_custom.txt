@@ -3542,7 +3542,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"200 100 5000"
+				"damage"				"200 1000 5000"
 			}
 			"02"
 			{
@@ -4364,12 +4364,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"5 15"
+				"health_burn"			"10 30"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken_pcnt"		"10 30"
+				"damage_taken_pcnt"		"5 15"
 			}
 		}
 	}
@@ -4978,12 +4978,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"5 25 125"
+				"damage"				"22 110 550"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"30 150 750"
+				"aftershock_damage"		"22 110 550"
 			}
 			"03"
 			{
