@@ -14,7 +14,7 @@
 			m_ModelList =
 			[
 				{
-					m_model = resource:"models/heroes/techies/techies_bomb_projectile.vmdl"
+					m_model = resource:"models/particle/tiny_rocks.vmdl"
 				},
 			]
 			m_bAnimated = true
@@ -37,8 +37,8 @@
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
-			m_flEndScale = 1.300000
-			m_flStartScale = 1.300000
+			m_flEndScale = 0.700000
+			m_flStartScale = 0.700000
 			m_flEndTime = 2.000000
 		},
 		{

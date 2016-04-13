@@ -6,9 +6,9 @@
 	m_flConstantRadius = 260.000000
 	m_ConstantColor =
 	[
-		118,
-		118,
-		118,
+		255,
+		154,
+		54,
 		255,
 	]
 	m_nConstantSequenceNumber = 7
@@ -90,6 +90,7 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/fire_attack_b.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/fire_attack_d.vpcf"
@@ -102,6 +103,9 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/fire_attack_g.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_techies/techies_base_attack_trail_c.vpcf"
 		},
 	]
 }

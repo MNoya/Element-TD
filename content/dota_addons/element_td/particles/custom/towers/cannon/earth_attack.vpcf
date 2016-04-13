@@ -6,9 +6,9 @@
 	m_flConstantRadius = 260.000000
 	m_ConstantColor =
 	[
-		118,
-		118,
-		118,
+		88,
+		42,
+		0,
 		255,
 	]
 	m_nConstantSequenceNumber = 7
@@ -99,9 +99,13 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/earth_attack_f.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/earth_attack_g.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/towers/arrow/earth_arrow_trail.vpcf"
 		},
 	]
 }

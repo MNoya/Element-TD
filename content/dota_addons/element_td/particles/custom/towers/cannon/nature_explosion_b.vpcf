@@ -8,9 +8,7 @@
 		{
 			_class = "C_OP_RenderSprites"
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
-			m_bAdditive = true
-			m_flOverbrightFactor = 15.000000
-			m_hTexture = resource:"materials/particle/yellowflare.vtex"
+			m_hTexture = resource:"materials/particle/leaf/leaf_green.vtex"
 		},
 	]
 	m_Operators =
@@ -58,9 +56,9 @@
 			_class = "C_OP_ColorInterpolate"
 			m_ColorFade =
 			[
-				75,
-				21,
-				21,
+				85,
+				255,
+				0,
 				255,
 			]
 		},
@@ -71,9 +69,16 @@
 			_class = "C_INIT_RandomColor"
 			m_ColorMax =
 			[
-				118,
-				118,
-				118,
+				21,
+				165,
+				21,
+				255,
+			]
+			m_ColorMin =
+			[
+				21,
+				165,
+				21,
 				255,
 			]
 		},
@@ -87,8 +92,8 @@
 		},
 		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMin = 2.000000
-			m_flRadiusMax = 8.000000
+			m_flRadiusMin = 20.000000
+			m_flRadiusMax = 25.000000
 		},
 		{
 			_class = "C_INIT_RandomAlpha"
@@ -96,7 +101,7 @@
 		},
 		{
 			_class = "C_INIT_CreateWithinSphere"
-			m_fSpeedMax = 1455.000000
+			m_fSpeedMax = 644.000000
 			m_fSpeedMin = 322.000000
 			m_vecDistanceBiasAbs =
 			[

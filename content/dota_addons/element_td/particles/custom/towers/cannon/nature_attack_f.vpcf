@@ -58,9 +58,9 @@
 			_class = "C_OP_ColorInterpolate"
 			m_ColorFade =
 			[
-				47,
-				16,
-				16,
+				0,
+				85,
+				0,
 				255,
 			]
 		},
@@ -71,16 +71,16 @@
 			_class = "C_INIT_RandomColor"
 			m_ColorMin =
 			[
-				102,
-				102,
-				102,
+				85,
+				170,
+				0,
 				255,
 			]
 			m_ColorMax =
 			[
-				118,
-				118,
-				118,
+				85,
+				170,
+				127,
 				255,
 			]
 		},
@@ -156,6 +156,7 @@
 	[
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/nature_attack_f0.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/cannon/nature_attack_f1.vpcf"

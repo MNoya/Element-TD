@@ -19,7 +19,7 @@
 			_class = "C_OP_RenderSprites"
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
 			m_bAdditive = true
-			m_hTexture = resource:"materials/particle/particle_flares/particle_flare_006_white.vtex"
+			m_hTexture = resource:"materials/particle/particle_flares/particle_flare_004.vtex"
 			m_flAnimationRate = 2.000000
 		},
 	]

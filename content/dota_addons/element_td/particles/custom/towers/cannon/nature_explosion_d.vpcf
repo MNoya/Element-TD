@@ -5,9 +5,9 @@
 	m_nMaxParticles = 48
 	m_ConstantColor =
 	[
-		118,
-		118,
-		118,
+		85,
+		170,
+		0,
 		255,
 	]
 	m_Renderers =
@@ -18,7 +18,7 @@
 			m_flStartFadeSize = 0.210000
 			m_flEndFadeSize = 0.350000
 			m_flMaxSize = 0.210000
-			m_flOverbrightFactor = 5.000000
+			m_flOverbrightFactor = 2.000000
 			m_flAddSelfAmount = 1.000000
 			m_bSaturateColorPreAlphaBlend = false
 			m_hTexture = resource:"materials/particle/fluidexplosions/smoke_gr_burst_10.vtex"
@@ -53,9 +53,9 @@
 			_class = "C_OP_ColorInterpolate"
 			m_ColorFade =
 			[
-				118,
-				118,
-				118,
+				85,
+				170,
+				0,
 				255,
 			]
 		},
