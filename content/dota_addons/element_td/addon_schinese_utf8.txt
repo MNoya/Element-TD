@@ -323,6 +323,11 @@
         "centaur_warchief"          "半人马酋长"
         "wolf"                      "狼"
 
+        "clock_wanderer"            "Clock Wanderer"
+        "earth_walker"              "Earth Walker"
+        "faceless"                  "Faceless"
+        "shifting_treant"           "Shifting Treant"
+
         // ******************** ABILITIES ********************
         "DOTA_Tooltip_ability_sell_tower_100"       "出售防御塔"
         "DOTA_Tooltip_ability_sell_tower_100_Description"       "出售这座防御塔，返还全部金币。"
