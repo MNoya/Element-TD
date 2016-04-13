@@ -15,12 +15,8 @@ function CreateRankings()
         var playerRankInfo = Root.playerRankings[playerID];
         if (playerRankInfo.sector >= 0 && playerRankInfo.sector < 8) {
             var container = $('#sector'+playerRankInfo.sector);
-            if (container !== null) {
-                if (playerRankInfo.rank != 0) {
-                    var parent = $( '#sector'+playerRankInfo.sector )
-                    parent.sector = playerRankInfo.sector
-                    GameUI.CreatePlayerRank(parent, playerRankInfo.percentile, playerRankInfo.rank, playerID, playerRankInfo.sector)
-                }
+            if (container !== null && playerRankInfo.rank != 0) {
+                GameUI.CreatePlayerRank(container, playerRankInfo.percentile, playerRankInfo.rank, playerID, playerRankInfo.sector)
             }
         }
     }
