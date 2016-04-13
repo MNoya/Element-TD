@@ -610,7 +610,7 @@ function ElementTD:OnEntityKilled(keys)
         playerData.elementalActive = false
         playerData.elementalUnit = nil
         ModifyElementValue(entity.playerID, entity.element, 1)
-        AddElementalTrophy(entity.playerID, entity.element)
+        AddElementalTrophy(entity.playerID, entity.element, entity.level)
 
         Sounds:PlayElementalDeathSound(entity.playerID, entity)
     else
