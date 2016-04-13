@@ -8,6 +8,7 @@
     "PedestalModel"             "models/tower_white_pedestal.vmdl"
     "DestructionEffect"         "particles/econ/items/effigies/status_fx_effigies/base_statue_destruction_generic.vpcf"
     "ProjectileModel"           "particles/custom/towers/cannon/base_attack.vpcf"
+    "ExplosionEffect"           "particles/custom/towers/cannon/base_explosion.vpcf"
     "SoundSet"                  "Tower.Fire"
     "MinimapIcon"               "minimap_tower90"
     "MinimapIconSize"           "320"

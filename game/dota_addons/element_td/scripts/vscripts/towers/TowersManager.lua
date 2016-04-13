@@ -25,6 +25,10 @@ function GetAbility(tower, name)
 	return tower:FindAbilityByName(name)
 end
 
+function GetExplosionFX(tower)
+    return GetUnitKeyValue(tower:GetUnitName(), "ExplosionEffect") or "particles/custom/towers/cannon/cannon_liquid_fire_explosion.vpcf"
+end
+
 function IsSupportTower(tower)
 	return GetUnitKeyValue(tower.class, "TowerType") == "Support"
 end
