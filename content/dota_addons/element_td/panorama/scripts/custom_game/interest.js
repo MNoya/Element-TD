@@ -64,6 +64,10 @@ function PauseInterest( table ) {
 	enabled = false;
 	interestBarDisabled.visible = true;
 	interestBarDisabled.style["width"] = interestBarGold.style["width"];
+	
+	if (table.bResetBar) 
+		interestBarDisabled.style["width"] = 0
+
 	interestBarGold.visible = false;
 	
 	lockMessage = table.msg;

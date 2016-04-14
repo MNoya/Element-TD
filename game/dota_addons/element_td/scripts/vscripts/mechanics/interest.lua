@@ -33,7 +33,7 @@ end
 function InterestManager:Restart(playerID)
 	local playerData = GetPlayerData(playerID)
 	if InterestManager.timers[playerID] then
-		InterestManager:PauseInterestForPlayer(playerID, "#etd_interest_lock_end_title", "#etd_interest_lock_end")
+		InterestManager:PauseInterestForPlayer(playerID)
 	end
 
 	local player = PlayerResource:GetPlayer(playerID)
@@ -84,7 +84,7 @@ function InterestManager:CreateTimerForPlayer(playerID, timeRemaining)
 					InterestManager:GiveInterest(playerID)
 				else
 					Log:debug("Completely stopping interest for player " .. playerID)
-					InterestManager:PauseInterestForPlayer(playerID, "#etd_interest_lock_end_title", "#etd_interest_lock_end")
+					InterestManager:PauseInterestForPlayer(playerID)
 					return nil
 				end
 
@@ -121,6 +121,7 @@ function InterestManager:PlayerCompletedWave(playerID, waveNumber)
 	local playerData = GetPlayerData(playerID)
 
 	if playerData.completedWaves >= WAVE_COUNT - END_OFFSET then
+		InterestManager:PauseInterestForPlayer(playerID, true)
 		return
 	end
 
@@ -154,27 +155,29 @@ function InterestManager:ResumeInterestForPlayer(playerID)
 end
 
 -- pauses interest for the given player
-function InterestManager:PauseInterestForPlayer(playerID, title, msg)
+function InterestManager:PauseInterestForPlayer(playerID, bResetBar)
 	local player = PlayerResource:GetPlayer(playerID)
 	local interestData = GetPlayerData(playerID).interestData
 	local timerName = InterestManager.timers[playerID]
 
-	if timerName and Timers.timers[timerName] then
-			
-		local timeRemaining = Timers.timers[timerName].endTime - GameRules:GetGameTime()
-		interestData.TimeRemaining = timeRemaining
+	if timerName then
+		
+		if Timers.timers[timerName] then
+			local timeRemaining = Timers.timers[timerName].endTime - GameRules:GetGameTime()
+			interestData.TimeRemaining = timeRemaining
+		end
 		
 		Timers:RemoveTimer(timerName)
 		InterestManager.timers[playerID] = nil
 			
 		-- store this pause in the case of player disconnect
 		InterestManager.playerLockStates[playerID] = {
-			title = title,
-			msg = msg
+			title = "#etd_interest_lock_leak_title",
+			msg = "#etd_interest_lock_leak"
 		}
 
 		if player then
-			CustomGameEventManager:Send_ServerToPlayer(player, "etd_pause_interest", {title = title, msg = msg})
+			CustomGameEventManager:Send_ServerToPlayer(player, "etd_pause_interest", {title = title, msg = msg, bResetBar = bResetBar})
 		end
 	end
 end
@@ -193,7 +196,7 @@ function InterestManager:PlayerLeakedWave(playerID, waveNumber)
 		interestData.NumLockingWaves = interestData.NumLockingWaves + 1
 		if not interestData.Locked then
 			interestData.Locked = true
-			InterestManager:PauseInterestForPlayer(playerID, "#etd_interest_lock_leak_title", "#etd_interest_lock_leak")
+			InterestManager:PauseInterestForPlayer(playerID)
 		end
 	end
 end
