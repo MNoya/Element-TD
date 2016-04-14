@@ -12,7 +12,7 @@ function Saves:Init()
     Saves.builders["npc_dota_hero_faceless_void"] = 1
     Saves.builders["npc_dota_hero_mirana"] = 2
     Saves.builders["npc_dota_hero_warlock"] = 3
-    Saves.builders["npc_dota_hero_lone_druid"] = 4
+    Saves.builders["npc_dota_hero_enchantress"] = 4
     Saves.builders["npc_dota_hero_earthshaker"] = 5
 end
 
