@@ -20,7 +20,7 @@
 	}
 	"AbilityTextureName"		"item_quark"
 	"ItemBaseLevel" "1"
-    "ItemCost" "275"
+    "ItemCost" "425"
 	"Requirements"
 	{
 		"earth"		"1"

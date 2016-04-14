@@ -9,7 +9,6 @@
 	"ItemPurchasable"		"0"
 	"ItemDroppable"		"0"
 	"AbilityTextureName"		"item_windstorm_disabled"
-	"Cost"		"1000"
 	"Requirements"
 	{
 		"fire"		"1"
@@ -20,7 +19,7 @@
 		"water"		"1"
 	}
     "ItemBaseLevel" "1"
-    "ItemCost" "1050"
+    "ItemCost" "900"
     "AbilitySpecial"
 	{
 		"01"

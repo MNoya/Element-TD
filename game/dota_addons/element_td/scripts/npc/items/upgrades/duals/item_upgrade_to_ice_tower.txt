@@ -27,7 +27,7 @@
 		"light"		"1"
 	}
     "ItemBaseLevel" "1"
-    "ItemCost" "275"
+    "ItemCost" "425"
     "AbilitySpecial"
 	{
 		"01"
