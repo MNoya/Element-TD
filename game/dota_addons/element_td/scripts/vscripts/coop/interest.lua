@@ -68,7 +68,7 @@ function InterestManagerCoop:CreateTimer(timeRemaining)
 				InterestManagerCoop:GiveInterest()
 		else
 			Log:debug("Completely stopping interest")
-			InterestManagerCoop:PauseInterest("#etd_interest_lock_end_title", "#etd_interest_lock_end")
+			InterestManagerCoop:PauseInterest()
 			return nil
 		end
 		return INTEREST_INTERVAL
@@ -97,7 +97,7 @@ function InterestManagerCoop:ResumeInterest()
 end
 
 -- pauses interest for the given player
-function InterestManagerCoop:PauseInterest(title, msg)
+function InterestManagerCoop:PauseInterest()
 	local timerName = InterestManagerCoop.timer
 
 	if InterestManagerCoop.timer and Timers.timers[timerName] then
@@ -108,8 +108,8 @@ function InterestManagerCoop:PauseInterest(title, msg)
 			
 		-- store this pause in the case of player disconnect
 		InterestManagerCoop.lockState = {
-			title = title,
-			msg = msg
+			title = "#etd_interest_lock_leak_title",
+			msg = "#etd_interest_lock_leak"
 		}
 
 		CustomGameEventManager:Send_ServerToAllClients("etd_pause_interest", {title = title, msg = msg})
@@ -124,7 +124,7 @@ function InterestManagerCoop:LeakedWave(waveNumber)
 
 	if not InterestManagerCoop.locked then
 		InterestManagerCoop.locked = true
-		InterestManagerCoop:PauseInterest("#etd_interest_lock_leak_title", "#etd_interest_lock_leak")
+		InterestManagerCoop:PauseInterest()
 	end
 end
 
