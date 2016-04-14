@@ -244,6 +244,11 @@ function ElementTD:OnNextWave( keys )
 
     if COOP_MAP then
         SpawnWaveCoop()
+        Timers:RemoveTimer("SpawnWaveDelay_Coop")
+        ForAllPlayerIDs(function(playerID)
+            ShowWaveSpawnMessage(playerID, COOP_WAVE)
+            UpdateWaveInfo(playerID, COOP_WAVE)
+        end)
     else
         if (data.waveObject and data.waveObject.creepsRemaining == 0) or data.nextWave == 1 or GameSettings:GetEndless() == "Endless" then
             Timers:RemoveTimer("SpawnWaveDelay"..playerID)
