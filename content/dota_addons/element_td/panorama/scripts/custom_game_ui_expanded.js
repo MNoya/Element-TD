@@ -207,6 +207,8 @@ GameUI.CreatePlayerRank = function(parent, percentile, rank, playerID) {
 }
 
 GameUI.ShowPlayerRank = function(playerID) {
+    if (GameUI.Ranks === undefined) return
+
     var panel = GameUI.Ranks[playerID]
     if (panel)
     {
@@ -220,6 +222,8 @@ GameUI.ShowPlayerRank = function(playerID) {
 }
 
 GameUI.HidePlayerRank = function(playerID) {
+    if (GameUI.Ranks === undefined) return
+        
     var panel = GameUI.Ranks[playerID]
     if (panel)
     {

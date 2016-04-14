@@ -543,11 +543,22 @@ function ScoreboardUpdater_GetSortedTeamInfoList( scoreboardHandle )
 
 function GetPlayerWithScore(value) {
     var scores = GameUI.CustomUIConfig().playerScore
+    
+    // Fuck commas 2
+    for (var i in scores)
+    {
+        if (scores[i] != 0)
+            scores[i] = scores[i].replace(/,/g,"")
+    }
+
     for (var playerID in scores)
     {
         var thisScore = scores[playerID]
-        if (thisScore == value)
+        if (thisScore == value && typeof(thisScore)=="string")
+        {
+            $.Msg("Player ", playerID, " has score ", value)
             return Number(playerID)
+        }
     }
     return -1
 }
