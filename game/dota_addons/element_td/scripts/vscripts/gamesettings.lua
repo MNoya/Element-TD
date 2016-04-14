@@ -57,7 +57,6 @@ function DifficultyObject:GetWaveBreakTime(wave)
 			return v
 		end
 	end
-	Log:warn("Invalid wave number: " .. wave)
 	return 0
 end
 

@@ -161,8 +161,10 @@ function CreepBoss:OnDeath(killer)
     if creep.random_ability == "creep_ability_undead" then
         local newCreep = CreateUnitByName(creepClass, creep:GetAbsOrigin() , false, nil, nil, DOTA_TEAM_NEUTRALS)
         newCreep.class = creepClass
-        newCreep.playerID = creep.playerID
+        newCreep.playerID = creep.playerID or creep.sector
         newCreep.waveObject = creep.waveObject
+        newCreep.waveNumber = creep.waveNumber
+        newCreep.sector = creep.sector --coop only
         newCreep.bounty = creep.bounty
         newCreep:CreatureLevelUp(newCreep.waveObject.waveNumber-newCreep:GetLevel())
         
@@ -249,12 +251,19 @@ function CreepBoss:UndeadCreepRespawn()
         creep:SetMaximumGoldBounty(creep.bounty)
         creep:SetMinimumGoldBounty(creep.bounty)       
     else
-        creep:SetMaximumGoldBounty(GetPlayerDifficulty(playerID):GetBountyForWave(wave))
-        creep:SetMinimumGoldBounty(GetPlayerDifficulty(playerID):GetBountyForWave(wave))
+        local bounty = GameSettings:GetGlobalDifficulty():GetBountyForWave(wave)
+        creep:SetMaximumGoldBounty(bounty)
+        creep:SetMinimumGoldBounty(bounty)
     end
 
     creep:SetHealth(creep:GetMaxHealth() * 0.5) -- it spawns at a percentage of its max health
-    CreateMoveTimerForCreep(creep, playerData.sector + 1) --create a timer for this creep so it continues walking to the destination
+    
+    --create a timer for this creep so it continues walking to the destination
+    if COOP_MAP then
+        CreateMoveTimerForCreepCoop(creep, creep.sector)
+    else
+        CreateMoveTimerForCreep(creep, playerData.sector + 1)
+    end
 
     local h = ParticleManager:CreateParticle("particles/units/heroes/hero_skeletonking/skeletonking_reincarnation.vpcf", PATTACH_CUSTOMORIGIN, creep) --play a cool particle effect :D
     ParticleManager:SetParticleControl(h, 0, creep:GetAbsOrigin())

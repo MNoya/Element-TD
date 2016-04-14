@@ -12,7 +12,8 @@ function CoopStart()
 end
 
 function SpawnWaveCoop()
-	-- spawn wave COOP_WAVE
+    Log:info("Spawning co-op wave " .. COOP_WAVE)
+
     CURRENT_WAVE_OBJECT = WaveCoop(COOP_WAVE)
     
     -- First wave marks the start of the game
@@ -36,14 +37,14 @@ function SpawnWaveCoop()
 
     CURRENT_WAVE_OBJECT:SetOnCompletedCallback(function()   
         print("[COOP] Completed wave "..COOP_WAVE)
+
         COOP_WAVE = COOP_WAVE + 1
         EmitGlobalSound("ui.npe_objective_complete")
         InterestManager:CompletedWave(COOP_WAVE)
 
         -- Boss Wave completed starts the new one with no breaktime
-        if COOP_WAVE >= WAVE_COUNT then
-            local bossWaveNumber = COOP_WAVE - WAVE_COUNT + 1
-            print("[COOP] Completed boss wave "..bossWaveNumber)
+        if CURRENT_BOSS_WAVE > 0 then
+            print("[COOP] Completed boss wave "..CURRENT_BOSS_WAVE)
 
             --TODO: New boss wave, score
             return
@@ -56,7 +57,7 @@ function SpawnWaveCoop()
     end)
 
     -- TODO: boss waves, co-op interest
-	CURRENT_WAVE_OBJECT:SpawnWave()
+    CURRENT_WAVE_OBJECT:SpawnWave()
 end
 
 
@@ -109,9 +110,9 @@ function CreateMoveTimerForCreepCoop(creep, sector)
 end
 
 function StartBreakTimeCoop(breakTime)
-	ElementTD:PrecacheWave(COOP_WAVE)
+    ElementTD:PrecacheWave(COOP_WAVE)
 
-	local msgTime = 5 -- how long to show the message for
+    local msgTime = 5 -- how long to show the message for
     if (COOP_WAVE - 1) % 5 == 0 and not EXPRESS_MODE then
         breakTime = 30
     end
@@ -125,7 +126,7 @@ function StartBreakTimeCoop(breakTime)
 
     -- show countdown timer for all players
     Log:debug("Starting co-op break time for wave " .. COOP_WAVE)
-   	local bShowButton = PlayerResource:GetPlayerCount() == 1 and COOP_WAVE == 1
+    local bShowButton = PlayerResource:GetPlayerCount() == 1 and COOP_WAVE == 1
     CustomGameEventManager:Send_ServerToAllClients("etd_update_wave_timer", {time = breakTime, button = bShowButton})
 
     -- show sector portals
@@ -133,15 +134,15 @@ function StartBreakTimeCoop(breakTime)
         ShowPortalForSector(i, COOP_WAVE)
     end
 
-	-- set up each individual player
-	for _, playerID in pairs(playerIDs) do
-		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-		local playerData = GetPlayerData(playerID)
+    -- set up each individual player
+    for _, playerID in pairs(playerIDs) do
+        local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+        local playerData = GetPlayerData(playerID)
 
-		ShowWaveBreakTimeMessage(playerID, COOP_WAVE, breakTime, msgTime)
-		if hero then 
-        	hero:RemoveModifierByName("modifier_silence")
-    	end
+        ShowWaveBreakTimeMessage(playerID, COOP_WAVE, breakTime, msgTime)
+        if hero then 
+            hero:RemoveModifierByName("modifier_silence")
+        end
 
         if PlayerIsAlive(playerID) then
 
@@ -181,32 +182,29 @@ function StartBreakTimeCoop(breakTime)
                 playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
             end
         end
-	end
+    end
 
-	-- create the timer to wait for wave spawn
+    -- create the timer to wait for wave spawn
     Timers:CreateTimer("SpawnWaveDelay_Coop", {
         endTime = breakTime,
         callback = function()
         
-            if COOP_WAVE == WAVE_COUNT and not EXPRESS_MODE then
+            if COOP_WAVE == WAVE_COUNT then
                 CURRENT_BOSS_WAVE = 1
+                Log:info("Spawning the first co-op boss wave")
                 
-                -- TODO: make this work with co-op mode
-                --[[
-                if PlayerIsAlive(playerID) then
-                    Log:info("Spawning the first boss wave for ["..playerID.."]")            
+                for _, playerID in pairs(playerIDs) do
+                    local playerData = GetPlayerData(playerID)
                     playerData.iceFrogKills = 0
                     playerData.bossWaves = CURRENT_BOSS_WAVE
+                    ShowBossWaveMessage(playerID, CURRENT_BOSS_WAVE)
+                    UpdateWaveInfo(playerID, COOP_WAVE)
                 end
-                ShowBossWaveMessage(playerID, CURRENT_BOSS_WAVE)
-                UpdateWaveInfo(playerID, wave)
-                ]]--
             else
-            	Log:info("Spawning co-op wave " .. COOP_WAVE)
-            	for _, playerID in pairs(playerIDs) do
-    				ShowWaveSpawnMessage(playerID, COOP_WAVE) -- show wave spawn message
-    				UpdateWaveInfo(playerID, COOP_WAVE) -- update wave info
-    			end
+                for _, playerID in pairs(playerIDs) do
+                    ShowWaveSpawnMessage(playerID, COOP_WAVE) -- show wave spawn message
+                    UpdateWaveInfo(playerID, COOP_WAVE) -- update wave info
+                end
             end
 
             if COOP_WAVE == 1 then

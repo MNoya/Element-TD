@@ -276,6 +276,10 @@ function Sandbox:StopWave(event)
 
     ClosePortalForSector(playerID, playerData.sector+1, true)
 
+    if COOP_MAP then
+        Timers:RemoveTimer("SpawnWaveDelay_Coop")
+    end
+
     if wave and wave.spawnTimer then
         Timers:RemoveTimer(wave.spawnTimer)
         wave:SetOnCompletedCallback(function() end)
