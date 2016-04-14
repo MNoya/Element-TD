@@ -565,8 +565,8 @@ function ClosePreview() {
 }
 
 GameUI.CloseProfilePanels = function() {
-    CustomBuilders.AddClass("Hide")
-    Profile.AddClass("Hide")
+    CloseCustomBuilders()
+    CloseProfile()
 }
 
 function ToggleCustomBuilders() {

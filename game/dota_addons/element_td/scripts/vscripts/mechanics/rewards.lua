@@ -31,7 +31,7 @@ function Rewards:OnPlayerResetBuilder(event)
     local oldHero = PlayerResource:GetSelectedHeroEntity(playerID)
 
     -- If it's the same builder, ignore it
-    if oldHero:GetUnitName() == "npc_dota_hero_wisp" then return end
+    if oldHero:GetUnitName() == "npc_dota_hero_wisp" or oldHero:GetUnitName() == "npc_dota_hero_phoenix" then return end
 
     -- Replace and delegate to HandleHeroReplacement
     local newHero = Rewards:ReplaceHero(playerID, oldHero, "npc_dota_hero_wisp")
