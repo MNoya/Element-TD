@@ -306,7 +306,9 @@ function SetupTowerUpgrade(tower, newTower, buffData, stacks)
     -- Apply render color
     if string.match(newClass, "arrow_tower") or string.match(newClass, "cannon_tower") then
         local color = ElementColors[split(newClass, "_")[1]]
-        newTower:SetRenderColor(color[1], color[2], color[3])
+        if color then
+            newTower:SetRenderColor(color[1], color[2], color[3])
+        end
     end
 
     -- create a script object for this tower

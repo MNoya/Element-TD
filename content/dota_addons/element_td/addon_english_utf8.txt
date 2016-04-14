@@ -55,7 +55,7 @@
         "fire_arrow_tower"          "Fire Arrow Tower"
         "nature_arrow_tower"        "Nature Arrow Tower"
         "water_arrow_tower"         "Water Arrow Tower"
-        "earth_arrow_tower"         "Nature Arrow Tower"
+        "earth_arrow_tower"         "Earth Arrow Tower"
         
         "basic_cannon_tower"        "Cannon Tower"
         "dark_cannon_tower"         "Dark Cannon Tower"
