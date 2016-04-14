@@ -16,7 +16,6 @@ nil)
 
 function WaterTower:OnAttackLanded(keys)
     local target = keys.target
-    local ability = self.ability
     local damage = self.tower:GetAverageTrueAttackDamage()
     DamageEntitiesInArea(target:GetAbsOrigin(), self.halfAOE, self.tower, damage / 2)
     DamageEntitiesInArea(target:GetAbsOrigin(), self.fullAOE, self.tower, damage / 2)
@@ -29,9 +28,9 @@ function WaterTower:OnAttackLanded(keys)
         ProjectileManager:CreateTrackingProjectile({
             Target = bounce_target,
             Source = target,
-            Ability = ability,
-            EffectName = ability.projectileName,
-            iMoveSpeed = ability.bounceSpeed,
+            Ability = self.ability,
+            EffectName = self.projectileName,
+            iMoveSpeed = self.bounceSpeed,
             vSourceLoc = sourceLoc,
             bReplaceExisting = false,
             flExpireTime = GameRules:GetGameTime() + 10,
