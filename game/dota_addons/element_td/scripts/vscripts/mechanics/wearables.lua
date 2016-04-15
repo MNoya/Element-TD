@@ -22,7 +22,11 @@ function RemoveAllWearables( hero )
     for _,v in pairs(wearables) do
         if v:GetClassname() == "dota_item_wearable" then
             if v:GetMoveParent() == hero then
-                UTIL_Remove(v)
+                if v:GetModelName() == "models/pets/armadillo/armadillo.vmdl" then
+                    v:AddEffects(EF_NODRAW)
+                else
+                    UTIL_Remove(v)
+                end
             end
         end
     end

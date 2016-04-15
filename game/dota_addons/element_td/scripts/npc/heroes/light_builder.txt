@@ -5,6 +5,7 @@
 {
     "Model"                     "models/courier/donkey_unicorn/donkey_unicorn.vmdl"
     "ModelScale"                "2"
+    "DisableWearables"          "1"
 
     "CosmeticAbility"           "donkey_cosmetics"
 

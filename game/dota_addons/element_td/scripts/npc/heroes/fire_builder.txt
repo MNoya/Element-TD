@@ -5,6 +5,7 @@
 {
     "Model"                     "models/items/warlock/golem/hellsworn_golem/hellsworn_golem.vmdl"
     "ModelScale"                "1"
+    "DisableWearables"          "1"
 
     "CosmeticAbility"           "hellsworn_cosmetics"
     "HealthBarOffset"           "300"

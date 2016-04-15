@@ -5,6 +5,7 @@
 {
     "Model"                     "models/pets/armadillo/armadillo.vmdl"
     "ModelScale"                "3"
+    "DisableWearables"          "1"
 
     "CosmeticAbility"           "armadillo_cosmetics"
     "HealthBarOffset"           "250"
