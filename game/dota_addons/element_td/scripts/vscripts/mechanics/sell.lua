@@ -8,30 +8,7 @@ function SellTowerCast(keys)
         local playerData = GetPlayerData(playerID)
         local goldCost = GetUnitKeyValue(tower.class, "TotalCost")
         local sellPercentage = tonumber(keys.SellAmount)
-
         local refundAmount = round(goldCost * sellPercentage)
-        if sellPercentage > 0  then
-            Sounds:EmitSoundOnClient(playerID, "Gold.CoinsBig") 
-            PopupAlchemistGold(tower, refundAmount)
-
-            local coins = ParticleManager:CreateParticle("particles/econ/items/alchemist/alchemist_midas_knuckles/alch_knuckles_lasthit_coins.vpcf", PATTACH_CUSTOMORIGIN, tower)
-            ParticleManager:SetParticleControl(coins, 1, tower:GetAbsOrigin())
-
-            -- Add gold
-            hero:ModifyGold(refundAmount)
-
-            -- If a tower costs a Pure Essence (Pure, Periodic), then that essence is refunded upon selling the tower.
-            local essenceCost = GetUnitKeyValue(tower.class, "EssenceCost") or 0
-            if essenceCost > 0 then
-                ModifyPureEssence(playerID, essenceCost, true)
-                PopupEssence(tower, essenceCost)
-            end
-
-            -- Add lost gold and towers sold
-            local goldLost = goldCost - refundAmount
-            playerData.goldLost = playerData.goldLost + goldLost
-            playerData.towersSold = playerData.towersSold + 1
-        end
 
         if tower.isClone then
             RemoveClone(tower)
@@ -61,6 +38,30 @@ function SellTowerCast(keys)
         ToggleGridForTower(tower)
         tower:ForceKill(true)
         playerData.towers[tower:entindex()] = nil -- remove this tower index from the player's tower list
+
+        -- Grant the gold
+        if sellPercentage > 0  then
+            Sounds:EmitSoundOnClient(playerID, "Gold.CoinsBig")
+            PopupAlchemistGold(tower, refundAmount)
+
+            local coins = ParticleManager:CreateParticle("particles/econ/items/alchemist/alchemist_midas_knuckles/alch_knuckles_lasthit_coins.vpcf", PATTACH_CUSTOMORIGIN, tower)
+            ParticleManager:SetParticleControl(coins, 1, tower:GetAbsOrigin())
+
+            -- Add gold
+            hero:ModifyGold(refundAmount)
+
+            -- If a tower costs a Pure Essence (Pure, Periodic), then that essence is refunded upon selling the tower.
+            local essenceCost = GetUnitKeyValue(tower.class, "EssenceCost") or 0
+            if essenceCost > 0 then
+                ModifyPureEssence(playerID, essenceCost, true)
+                PopupEssence(tower, essenceCost)
+            end
+
+            -- Add lost gold and towers sold
+            local goldLost = goldCost - refundAmount
+            playerData.goldLost = playerData.goldLost + goldLost
+            playerData.towersSold = playerData.towersSold + 1
+        end
 
         UpdateScoreboard(hero:GetPlayerID())
         Log:debug(playerData.name .. " has sold a tower")

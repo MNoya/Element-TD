@@ -19,6 +19,6 @@
 		"light"		"1"
 	}
 	"ItemBaseLevel" "1"
-    "ItemCost" "1050"
+    "ItemCost" "900"
     "AbilityCastRange"              "1150"
 }

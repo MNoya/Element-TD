@@ -10,7 +10,7 @@
 	"ItemDroppable"		"0"
 	"AbilityTextureName"		"item_disease_disabled"
 	"ItemBaseLevel" "1"
-    "ItemCost" "275"
+    "ItemCost" "425"
 	"Requirements"
 	{
 		"dark"		"1"

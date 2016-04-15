@@ -91,7 +91,7 @@ function WaveCoop:SpawnWave()
 
 				-- Boss mode
 				if self.waveNumber == WAVE_COUNT and not EXPRESS_MODE then
-					local bossHealth = WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier() * (math.pow(1.2,playerData.bossWaves))
+					local bossHealth = WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier() * (math.pow(1.2,CURRENT_BOSS_WAVE-1))
 					entity:SetMaxHealth(bossHealth)
 					entity:SetBaseMaxHealth(bossHealth)
 					entity:SetHealth(entity:GetMaxHealth())

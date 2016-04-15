@@ -90,6 +90,14 @@ Label
     position: 1px 2px 0px;
 }
 
+.AspectRatio4x3 #LeaderboardToggle, .AspectRatio5x4 #LeaderboardToggle
+{
+    background-color: black;
+    margin-left: 50px;
+    margin-top: 40px;
+    width: 180px;
+}
+
 .ToggleLabel
 {
     margin-left: 10px;

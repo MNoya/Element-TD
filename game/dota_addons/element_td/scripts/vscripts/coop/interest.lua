@@ -65,10 +65,10 @@ function InterestManagerCoop:CreateTimer(timeRemaining)
 
 	InterestManagerCoop.timer = Timers:CreateTimer(timeRemaining or INTEREST_INTERVAL, function()
 		if COOP_WAVE < WAVE_COUNT - END_OFFSET then
-				InterestManagerCoop:GiveInterest()
+			InterestManagerCoop:GiveInterest()
 		else
 			Log:debug("Completely stopping interest")
-			InterestManagerCoop:PauseInterest("#etd_interest_lock_end_title", "#etd_interest_lock_end")
+			InterestManagerCoop:PauseInterest(true)
 			return nil
 		end
 		return INTEREST_INTERVAL
@@ -97,22 +97,26 @@ function InterestManagerCoop:ResumeInterest()
 end
 
 -- pauses interest for the given player
-function InterestManagerCoop:PauseInterest(title, msg)
+function InterestManagerCoop:PauseInterest(bResetBar)
 	local timerName = InterestManagerCoop.timer
 
-	if InterestManagerCoop.timer and Timers.timers[timerName] then
-		-- store time remaining for when we resume
-		InterestManagerCoop.TimeRemaining = Timers.timers[timerName].endTime - GameRules:GetGameTime()
+	if InterestManagerCoop.timer then
+
+		if Timers.timers[timerName] then
+			-- store time remaining for when we resume
+			InterestManagerCoop.TimeRemaining = Timers.timers[timerName].endTime - GameRules:GetGameTime()
+		end
+		
 		Timers:RemoveTimer(timerName)
 		InterestManagerCoop.timer = nil
 			
 		-- store this pause in the case of player disconnect
 		InterestManagerCoop.lockState = {
-			title = title,
-			msg = msg
+			title = "#etd_interest_lock_leak_title",
+			msg = "#etd_interest_lock_leak"
 		}
 
-		CustomGameEventManager:Send_ServerToAllClients("etd_pause_interest", {title = title, msg = msg})
+		CustomGameEventManager:Send_ServerToAllClients("etd_pause_interest", {title = title, msg = msg, bResetBar = bResetBar})
 	end
 end
 
@@ -124,7 +128,7 @@ function InterestManagerCoop:LeakedWave(waveNumber)
 
 	if not InterestManagerCoop.locked then
 		InterestManagerCoop.locked = true
-		InterestManagerCoop:PauseInterest("#etd_interest_lock_leak_title", "#etd_interest_lock_leak")
+		InterestManagerCoop:PauseInterest()
 	end
 end
 
