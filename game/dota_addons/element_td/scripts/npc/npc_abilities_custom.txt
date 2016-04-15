@@ -313,14 +313,14 @@
 	                    }
 	                }
 	
-	                //"RunScript"
-	                //{
-	                //   "ScriptFile"    "mechanics/wearables.lua"
-	                //    "Function"      "Mount"
-	                //    "Unit"          "armadillo_rider"
-	                //    "Point"         "attach_almond_fx"
-	                //    "offsetZ"       "30"
-	                //}
+	                "RunScript"
+	                {
+	                   "ScriptFile"    "mechanics/wearables.lua"
+	                    "Function"      "Mount"
+	                    "Unit"          "armadillo_rider"
+	                    "Point"         "attach_almond_fx"
+	                    "offsetZ"       "30"
+	                }
 	            }
 	        }
 	    }

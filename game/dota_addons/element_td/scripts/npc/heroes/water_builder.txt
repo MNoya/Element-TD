@@ -5,6 +5,7 @@
 {
     "Model"                     "models/pets/icewrack_wolf/icewrack_wolf.vmdl"
     "ModelScale"                "3"
+    "DisableWearables"          "1"
 
     "CosmeticAbility"           "icewrack_wolf_cosmetics"
     "HealthBarOffset"           "250"

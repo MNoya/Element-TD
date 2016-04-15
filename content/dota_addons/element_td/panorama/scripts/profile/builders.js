@@ -61,11 +61,7 @@ function HoverOut(name) {
 }
 
 function ChooseBuilder(heroName) {
-    if (!bHasPass || (heroName == "npc_dota_hero_earthshaker" && !GameUI.DeveloperInGame())) { 
-        CloseCustomBuilders()
-        HoverAllOut()
-        return
-    }
+    if (!bHasPass) return
 
     GameEvents.SendCustomGameEventToServer( "player_choose_custom_builder", { "hero_name": heroName } );
     CloseCustomBuilders()

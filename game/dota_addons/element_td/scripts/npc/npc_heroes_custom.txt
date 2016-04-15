@@ -57,6 +57,7 @@
 	{
 	    "Model"                     "models/items/courier/faceless_rex/faceless_rex.vmdl"
 	    "ModelScale"                "3"
+	    "DisableWearables"          "1"
 	
 	    "CosmeticAbility"           "rex_cosmetics"
 	    "HealthBarOffset"           "250"
@@ -146,6 +147,7 @@
 	{
 	    "Model"                     "models/pets/armadillo/armadillo.vmdl"
 	    "ModelScale"                "3"
+	    "DisableWearables"          "1"
 	
 	    "CosmeticAbility"           "armadillo_cosmetics"
 	    "HealthBarOffset"           "250"
@@ -194,6 +196,7 @@
 	{
 	    "Model"                     "models/items/warlock/golem/hellsworn_golem/hellsworn_golem.vmdl"
 	    "ModelScale"                "1"
+	    "DisableWearables"          "1"
 	
 	    "CosmeticAbility"           "hellsworn_cosmetics"
 	    "HealthBarOffset"           "300"
@@ -242,6 +245,7 @@
 	{
 	    "Model"                     "models/courier/donkey_unicorn/donkey_unicorn.vmdl"
 	    "ModelScale"                "2"
+	    "DisableWearables"          "1"
 	
 	    "CosmeticAbility"           "donkey_cosmetics"
 	
@@ -288,6 +292,7 @@
 	{
 	    "Model"                     "models/courier/otter_dragon/otter_dragon.vmdl"
 	    "ModelScale"                "3"
+	    "DisableWearables"          "1"
 	    
 	    "CosmeticAbility"           "green_dragon_cosmetics"
 	    "HealthBarOffset"           "250"
@@ -336,6 +341,7 @@
 	{
 	    "Model"                     "models/pets/icewrack_wolf/icewrack_wolf.vmdl"
 	    "ModelScale"                "3"
+	    "DisableWearables"          "1"
 	
 	    "CosmeticAbility"           "icewrack_wolf_cosmetics"
 	    "HealthBarOffset"           "250"

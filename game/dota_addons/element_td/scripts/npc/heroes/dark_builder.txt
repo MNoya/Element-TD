@@ -5,6 +5,7 @@
 {
     "Model"                     "models/items/courier/faceless_rex/faceless_rex.vmdl"
     "ModelScale"                "3"
+    "DisableWearables"          "1"
 
     "CosmeticAbility"           "rex_cosmetics"
     "HealthBarOffset"           "250"

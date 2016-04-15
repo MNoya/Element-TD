@@ -5,6 +5,7 @@
 {
     "Model"                     "models/courier/otter_dragon/otter_dragon.vmdl"
     "ModelScale"                "3"
+    "DisableWearables"          "1"
     
     "CosmeticAbility"           "green_dragon_cosmetics"
     "HealthBarOffset"           "250"
