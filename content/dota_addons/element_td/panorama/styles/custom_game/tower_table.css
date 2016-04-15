@@ -353,6 +353,24 @@
     margin-bottom: 19%;
 }
 
+.AspectRatio16x10 #FilterButtonContainer
+{
+    flow-children: right;
+    horizontal-align: left;
+    vertical-align: bottom;
+    margin-left: 355px;
+    margin-bottom: 19%;
+}
+
+.AspectRatio4x3 #FilterButtonContainer, .AspectRatio5x4 #FilterButtonContainer
+{
+    flow-children: right;
+    horizontal-align: left;
+    vertical-align: bottom;
+    margin-left: 200px;
+    margin-bottom: 19%;
+}
+
 #Spacer
 {
     width: 100px;

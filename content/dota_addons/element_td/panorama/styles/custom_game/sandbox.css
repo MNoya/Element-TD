@@ -846,6 +846,14 @@
     margin-top: 5px;
 }
 
+.AspectRatio4x3 .SandboxTopbar, .AspectRatio5x4 .SandboxTopbar
+{
+    horizontal-align: right;
+    margin-right: 220px;
+    width: 180px;
+    margin-top: 5px;
+}
+
 .AspectRatio16x10 .SandboxTopbar
 {
     margin-right: 350px;
