@@ -294,6 +294,13 @@ GameUI.IsDeveloper = function (steamID64) {
     return Developers.indexOf(Number(steamID64)) != -1
 }
 
+GameUI.DeveloperInGame = function() {
+    for (var playerID in Game.GetAllPlayerIDs())
+        if (GameUI.IsDeveloper(GameUI.GetPlayerSteamID(playerID)))
+            return true
+    return false
+}
+
 // Returns a reward level taken from rewards nettable
 GameUI.RewardLevel = function (steamID64) {
     var playerReward = CustomNetTables.GetTableValue( "rewards", steamID64)

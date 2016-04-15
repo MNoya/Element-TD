@@ -20,7 +20,7 @@
 
     "UnitName"                      "periodic_tower"
     "OverrideBuildingGhost"         "npc_dota_hero_invoker"
-    "AbilityGoldCost"               "11000"
+    "AbilityGoldCost"               "13000"
     
     "OnSpellStart"
     {
