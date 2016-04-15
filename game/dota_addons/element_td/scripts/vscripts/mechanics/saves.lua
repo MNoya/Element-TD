@@ -25,6 +25,12 @@ function Saves:GetHeroNameForID(num)
     return "npc_dota_hero_wisp"
 end
 
+function Saves:SavePasses()
+    ForAllPlayerIDs(function(playerID)
+        Saves:SaveHasPass(playerID)
+    end)
+end
+
 function Saves:SaveHasPass(playerID)
     local steamID = PlayerResource:GetSteamAccountID(playerID)
     local bHasPass = PlayerResource:HasCustomGameTicketForPlayerID(playerID) and 1 or 0
@@ -33,7 +39,7 @@ function Saves:SaveHasPass(playerID)
     local req = CreateHTTPRequest('GET', request)
 
     -- Send another request to get the player builder
-    if bHasPass == 1 then
+    if bHasPass == 1 and GameRules:State_Get() == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
         Saves:LoadBuilder(playerID)
     end
     

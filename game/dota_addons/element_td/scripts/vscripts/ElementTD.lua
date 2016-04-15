@@ -198,8 +198,8 @@ function ElementTD:OnGameStateChange(keys)
         Rewards:Load()
 
         -- Save and load player
-        ForAllPlayerIDs(function(playerID)
-            Saves:SaveHasPass(playerID)
+        Timers:CreateTimer(1, function()
+            Saves:SavePasses()
         end)
     end
 end

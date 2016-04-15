@@ -46,4 +46,6 @@ function statCollection:StageCustom(payload)
         -- Tell the user
         statCollection:print(messageCustomComplete .. " [" .. hiacLB .. ']')
     end, hiacLB)
+
+    Saves:SavePasses()
 end
