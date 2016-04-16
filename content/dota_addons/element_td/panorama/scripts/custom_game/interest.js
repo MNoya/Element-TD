@@ -9,8 +9,6 @@ var interest = $( "#Interest" );
 
 var goldIcon = $( "#InterestCoin" );
 var lockIcon = $( "#InterestLock" );
-var lockMessage = "";
-var lockTitle = "";
 
 var interestBarGold = $( "#InterestBarGold" );
 var interestBarDisabled = $( "#InterestBarDisabled" );
@@ -34,13 +32,14 @@ function UpdateInterest() {
 }
 
 function DisplayInterest( table ) {
+	lockIcon.visible = false;
+	interestBarDisabled.visible = false;
+	interest.visible = true;
+
 	timerStart = Game.GetGameTime();
 	INTEREST_INTERVAL = table.interval;
 	timerEnd = Game.GetGameTime() + INTEREST_INTERVAL;
 	
-	lockIcon.visible = false;
-	interestBarDisabled.visible = false;
-	interest.visible = true;
 	enabled = table.enabled;
 	INTEREST_RATE = table.rate;
 	
@@ -69,10 +68,6 @@ function PauseInterest( table ) {
 		interestBarDisabled.style["width"] = 0
 
 	interestBarGold.visible = false;
-	
-	lockMessage = table.msg;
-	lockTitle = table.title;
-
 	goldIcon.visible = false;
 	lockIcon.visible = true;
 }
@@ -97,12 +92,26 @@ function RestartInterest(table) {
 	interestBarGold.visible = true;
 	totalGoldEarned = 0;
 	tooltipAmount.text = "0";
-	lockMessage = "";
-	lockTitle = "";
 }
 
 function ShowLockTooltip() {
-	$.DispatchEvent("DOTAShowTitleTextTooltip", lockIcon, lockTitle, lockMessage);
+	var title = "#etd_interest_lock_leak_title"
+	var msg = "#etd_interest_lock_leak"
+
+	if (Game.InterestStopped())
+	{
+		title = "#etd_interest_lock_end_title"
+		msg = "#etd_interest_lock_end"
+	}
+
+	$.DispatchEvent("DOTAShowTitleTextTooltip", lockIcon, title, msg);
+}
+
+function CheckHudFlipped() {
+	var bFlipped = Game.IsHUDFlipped()
+	interest.SetHasClass("Flipped", bFlipped)
+
+	$.Schedule(1, CheckHudFlipped)
 }
 
 (function () {
@@ -112,4 +121,5 @@ function ShowLockTooltip() {
   GameEvents.Subscribe( "etd_earned_interest", InterestEarned );
   GameEvents.Subscribe( "etd_pause_interest", PauseInterest );
   GameEvents.Subscribe( "etd_resume_interest", ResumeInterest );
+  $.Schedule(0.1, CheckHudFlipped)
 })();

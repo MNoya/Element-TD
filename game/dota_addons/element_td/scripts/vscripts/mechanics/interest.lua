@@ -22,6 +22,7 @@ function InterestManager:StartInterest()
 		end
 	end
 
+	CustomNetTables:SetTableValue("gameinfo", "interest_stopped", {value=false})
 	CustomGameEventManager:Send_ServerToAllClients("etd_display_interest", { 
 		interval = INTEREST_INTERVAL, 
 		rate = INTEREST_RATE, 
@@ -84,6 +85,7 @@ function InterestManager:CreateTimerForPlayer(playerID, timeRemaining)
 					InterestManager:GiveInterest(playerID)
 				else
 					Log:debug("Completely stopping interest for player " .. playerID)
+					CustomNetTables:SetTableValue("gameinfo", "interest_stopped", {value=true})
 					InterestManager:PauseInterestForPlayer(playerID)
 					return nil
 				end
@@ -171,13 +173,10 @@ function InterestManager:PauseInterestForPlayer(playerID, bResetBar)
 		InterestManager.timers[playerID] = nil
 			
 		-- store this pause in the case of player disconnect
-		InterestManager.playerLockStates[playerID] = {
-			title = "#etd_interest_lock_leak_title",
-			msg = "#etd_interest_lock_leak"
-		}
+		InterestManager.playerLockStates[playerID] = true
 
 		if player then
-			CustomGameEventManager:Send_ServerToPlayer(player, "etd_pause_interest", {title = title, msg = msg, bResetBar = bResetBar})
+			CustomGameEventManager:Send_ServerToPlayer(player, "etd_pause_interest", {bResetBar = bResetBar})
 		end
 	end
 end

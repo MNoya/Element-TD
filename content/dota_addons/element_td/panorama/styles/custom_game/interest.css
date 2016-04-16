@@ -10,18 +10,23 @@
     visibility: collapse;
 }
 
+#Interest.Flipped
+{
+    horizontal-align: left;
+}
+
 #Interest
 {
     horizontal-align: right;
-    margin-top: 4px;
-    margin-right: 14px;
+    vertical-align: bottom;
+    margin-bottom: 215px;
     z-index: 15;
     flow-children: down;
 }
 
 #InterestBar
 {
-    width: 240px;
+    width: 210px;
     height: 36px;
     background-image: url("file://{resources}/images/custom_game/interest/interest_gray.png");
     background-size: 100%;
@@ -54,8 +59,8 @@
 
 #InterestTooltip
 {
-    width: 240px;
-    height: 70px;
+    width: 210px;
+    height: 110px;
     background-color: #111111;
     padding: 8px;
     flow-children: down;
@@ -71,16 +76,15 @@
     margin-top: 3px;
     width: 30px;
     height: 30px;
-    margin-left: 20px;
+    margin-left: 15px;
 }
 
 #InterestLock
 {
-    horizontal-align: right;
+    vertical-align: center;
+    margin-left: 15px;
     width: 30px;
     height: 30px;
-    margin-right: 205px;
-    margin-top: 7px;
     z-index: 99;
 }
 
@@ -89,9 +93,9 @@
     margin-top: 4px;
     font-size: 23px;
     font-weight: bold;
+    margin-left: 15px;
     color: #FF9900;
     text-shadow: 0px 0px 3px 4.0 #000;
-    text-align: center;
     width: 100%;
     text-align: center;
 }
@@ -104,6 +108,7 @@
     color: #FFF;
     text-shadow: 5px 5px #000;
     text-align: center;
+    margin-top: 10px;
 }
 
 #TooltipAmount
