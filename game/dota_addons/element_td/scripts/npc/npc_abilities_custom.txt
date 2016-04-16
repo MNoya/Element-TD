@@ -3278,6 +3278,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"towers/hail"
 		"MaxLevel"						"1"
+		"AbilityCastRange"				"%hail_radius"
 	
 		"Modifiers"
 		{
@@ -3324,6 +3325,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_mult"			"400"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hail_radius"			"1750"
 			}
 		}
 	}
