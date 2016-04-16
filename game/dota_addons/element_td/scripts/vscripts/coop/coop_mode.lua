@@ -113,11 +113,11 @@ function StartBreakTimeCoop(breakTime)
     ElementTD:PrecacheWave(COOP_WAVE)
 
     local msgTime = 5 -- how long to show the message for
-    if (COOP_WAVE - 1) % 5 == 0 and not EXPRESS_MODE then
-        breakTime = 30
+    if (COOP_WAVE - 1) % 5 == 0 then
+        breakTime = 45
     end
     -- First boss breaktime 60 seconds
-    if not EXPRESS_MODE and COOP_WAVE == WAVE_COUNT and CURRENT_BOSS_WAVE == 0 then
+    if COOP_WAVE == WAVE_COUNT and CURRENT_BOSS_WAVE == 0 then
         breakTime = 60
     end
     if msgTime >= breakTime then

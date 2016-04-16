@@ -13,12 +13,17 @@ end
 SLOWING_MODIFIERS = {"modifier_tornado_slow", "modifier_explode_slow", "modifier_gaias_wrath_slow", "modifier_sludge_slow"}
 SLOWING_VALUES = {[1]=0.1,[2]=0.3}
 
+function modifier_slow_adjustment:OnCreated(params)
+    self.base_ms = string.match(GetMapName(), "element_td_coop") and 230 or 300
+    self.haste_ms = 750
+end
+
 function modifier_slow_adjustment:GetModifierMoveSpeed_Absolute()
     local unit = self:GetParent()
-    local movespeed = 300
+    local movespeed = self.base_ms
 
     if unit:HasModifier("creep_haste_modifier") then
-        return 750
+        return self.haste_ms
     end
     
     local slows = {}
