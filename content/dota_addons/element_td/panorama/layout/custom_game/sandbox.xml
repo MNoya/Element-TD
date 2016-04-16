@@ -11,10 +11,10 @@
   <Panel hittest='false' class="CustomHudRoot">
     <Panel id="SandboxEnablePanel" class="SandboxTopbar hide">
       <!--<Label id="New" text="#etd_new_feature"/>-->
+      <Label id="CloseButton" onactivate="Dismiss()"/>
       <Panel id="SandboxEnableButton" onactivate="EnableSandbox()" onmouseover="HoverEnableSandbox()" onmouseout="DOTAHideTitleTextTooltip()">
         <Label id="EnableSandboxText" class="SandboxButton" text="#sandbox_mode"/>
       </Panel>
-      <Label id="CloseButton" onactivate="Dismiss()"/>
     </Panel>
 
     <Panel id="SandboxPanel" class="ControlPanel LeftRightFlow hide">
