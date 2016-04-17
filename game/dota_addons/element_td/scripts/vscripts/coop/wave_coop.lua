@@ -36,14 +36,6 @@ function WaveCoop:OnCreepKilled(index)
 		end
 		self.kills = self.kills + 1
 
-		-- TODO: convert code below to co-op mode
-		--[[
-		-- Remove from scoreboard count
-		local playerData = GetPlayerData(self.playerID)
-		playerData.remaining = playerData.remaining - 1		
-		UpdateScoreboard(self.playerID)
-		]]--
-
 		if self.creepsRemaining <= 0 and self.callback then
 			self.endTime = GameRules:GetGameTime()
 			self.callback()

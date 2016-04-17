@@ -48,16 +48,26 @@ function RefreshScoreboard()
 
     if (Game.IsCoop())
     {
-     	$.GetContextPanel().FindChildTraverse("ScoreContainer").AddClass("Hide")
-     	$.GetContextPanel().FindChildInLayoutFile("TeamScoreLabel").AddClass("Hide")
-
-     	$.GetContextPanel().FindChildTraverse("LivesContainer").AddClass("Hide")
-     	$.GetContextPanel().FindChildInLayoutFile("TeamLives").AddClass("Hide")
-
-     	$.GetContextPanel().FindChildTraverse("KillsContainer").AddClass("Hide")
-     	$.GetContextPanel().FindChildInLayoutFile("KillsRemaining").AddClass("Hide")
+        var root = $.GetContextPanel()
+        HideAllTraverse(root, "ScoreContainer")
+        HideAllTraverse(root, "TeamScoreLabel")
+        HideAllTraverse(root, "LivesContainer")
+        HideAllTraverse(root, "TeamLives")
     }
 
 	GameEvents.Subscribe( "etd_update_scoreboard", RefreshScoreboard );
 	$.RegisterEventHandler( "DOTACustomUI_SetFlyoutScoreboardVisible", $.GetContextPanel(), SetFlyoutScoreboardVisible );
 })();
+
+function HideAllTraverse(panel, id) {
+    var nChild = panel.GetChildCount()
+    for (var i = 0; i < nChild; i++) {
+        var child = panel.GetChild(i)
+        var n = child.GetChildCount()
+        if (child.id == id)
+            child.AddClass("Hide")
+
+        if (n > 0)
+            HideAllTraverse(child, id)
+    };
+}

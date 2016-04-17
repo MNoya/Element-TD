@@ -608,6 +608,11 @@ function ElementTD:OnEntityKilled(keys)
         end
     end
 
+    -- Update scoreboard kills for that player
+    if COOP_MAP then
+        UpdateScoreboard(playerID)
+    end
+
     if entity.isElemental then
         -- an elemental was killed :O
         Timers:RemoveTimer("MoveElemental"..index)
