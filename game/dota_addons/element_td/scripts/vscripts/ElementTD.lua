@@ -432,15 +432,6 @@ function ElementTD:CheckGameEnd()
     end    
     GameRules:SendCustomMessage("#etd_end_message", 0, 0)
     Timers:CreateTimer(5, function()
-
-        -- Try to revert client convars
-        --[[for _, playerID in pairs(playerIDs) do
-            local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-            if hero then
-                hero:RemoveModifierByName("modifier_client_convars")
-            end
-        end]]
-
         GameRules:SetGameWinner( teamWinner )
         GameRules:SetSafeToLeave( true )
     end)
@@ -529,7 +520,7 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:AddNewModifier(nil, nil, "modifier_disarmed", {})
     hero:AddNewModifier(nil, nil, "modifier_attack_immune", {})
     hero:AddNewModifier(hero, nil, "modifier_max_ms", {ms=GameSettings:GetMapSetting("BuilderMoveSpeed")})
-    --hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
+    hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
 
     local playerData = GetPlayerData(playerID)
 
