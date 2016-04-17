@@ -96,91 +96,91 @@
         "refined_dark_tower"        "Refined Dark Tower"
         "pure_dark_tower"           "Pure Dark Tower"
         "magic_tower"               "Magic Tower"
-        "magic_tower_2"             "Sorcery Tower"
-        "magic_tower_3"             "Wizardry Tower"
+        "magic_tower_2"             "Magic Tower 2" //Sorcery
+        "magic_tower_3"             "Magic Tower 3" //Wizardry
         "disease_tower"             "Disease Tower"
-        "disease_tower_2"           "Decay Tower"
-        "disease_tower_3"           "Death Tower"
+        "disease_tower_2"           "Disease Tower 2" //Decay
+        "disease_tower_3"           "Disease Tower 3" //Death
         "well_tower"                "Well Tower"
-        "well_tower_2"              "Spring Tower"
-        "well_tower_3"              "Waterfall Tower"
+        "well_tower_2"              "Tower" //Spring
+        "well_tower_3"              "Tower" //Waterfall
         "blacksmith_tower"          "Blacksmith Tower"
-        "blacksmith_tower_2"        "Forge Tower"
-        "blacksmith_tower_3"        "Foundry Tower"
+        "blacksmith_tower_2"        "Tower" //Forge
+        "blacksmith_tower_3"        "Tower" //Foundry
         "moss_tower"                "Moss Tower"
-        "moss_tower_2"              "Toadstool Tower"
-        "moss_tower_3"              "Fungus Tower"
+        "moss_tower_2"              "Tower" //Toadstool
+        "moss_tower_3"              "Tower" //Fungus
         "quark_tower"               "Quark Tower"
-        "quark_tower_2"             "Electron Tower"
-        "quark_tower_3"             "Atom Tower"
+        "quark_tower_2"             "Tower" //Electron
+        "quark_tower_3"             "Tower" //Atom
         "electricity_tower"         "Electricity Tower"
-        "electricity_tower_2"       "Lightning Tower"
-        "electricity_tower_3"       "Energy Tower"
+        "electricity_tower_2"       "Tower" //Lightning
+        "electricity_tower_3"       "Tower" //Energy
         "flame_tower"               "Flame Tower"
-        "flame_tower_2"             "Solar Tower"
-        "flame_tower_3"             "Sun Tower"
+        "flame_tower_2"             "Tower" //Solar
+        "flame_tower_3"             "Tower" //Sun
         "vapor_tower"               "Vapor Tower"
-        "vapor_tower_2"             "Mist Tower"
-        "vapor_tower_3"             "Steam Tower"
+        "vapor_tower_2"             "Tower" //Mist
+        "vapor_tower_3"             "Tower" //Steam
         "poison_tower"              "Poison Tower"
-        "poison_tower_2"            "Pollution Tower"
-        "poison_tower_3"            "Pestilence Tower"
+        "poison_tower_2"            "Tower" //Pollution
+        "poison_tower_3"            "Tower" //Pestilence
         "life_tower"                "Life Tower"
-        "life_tower_2"              "Eternal Tower"
-        "life_tower_3"              "Soul Catcher Tower"
+        "life_tower_2"              "Tower" //Eternal
+        "life_tower_3"              "Tower" //Soul Catcher
         "hydro_tower"               "Hydro Tower"
-        "hydro_tower_2"             "Spout Tower"
-        "hydro_tower_3"             "Geyser Tower"
+        "hydro_tower_2"             "Hydro Tower 2" //Spout
+        "hydro_tower_3"             "Hydro Tower 3" //Geyser
         "trickery_tower"            "Trickery Tower"
-        "trickery_tower_2"          "Mirage Tower"
-        "trickery_tower_3"          "Eidolon Tower"
+        "trickery_tower_2"          "Trickery Tower 2" //Mirage
+        "trickery_tower_3"          "Trickery Tower 3" //Eidolon
         "gunpowder_tower"           "Gunpowder Tower"
-        "gunpowder_tower_2"         "Mortar Tower"
-        "gunpowder_tower_3"         "Vulcan Tower"
+        "gunpowder_tower_2"         "Gunpowder Tower 2" //Mortar
+        "gunpowder_tower_3"         "Gunpowder Tower 3" //Vulcan
         "ice_tower"                 "Ice Tower"
-        "ice_tower_2"               "Freezing Tower"
-        "ice_tower_3"               "Subzero Tower"
+        "ice_tower_2"               "Ice Tower 2" //Freezing
+        "ice_tower_3"               "Ice Tower 3" //Subzero
         "muck_tower"                "Muck Tower"
-        "muck_tower_2"              "Mire Tower"
+        "muck_tower_2"              "Muck Tower 2" //Mire
         "gold_tower"                "Gold Tower"
-        "gold_tower_2"              "Wealth Tower"
+        "gold_tower_2"              "Gold Tower 2" //Wealth
         "windstorm_tower"           "Windstorm Tower"
-        "windstorm_tower_2"         "Monsoon Tower"
+        "windstorm_tower_2"         "Windstorm Tower 2" //Monsoon
         "windstorm_tornado"         "Windstorm Tornado"
         "quake_tower"               "Quake Tower"
-        "quake_tower_2"             "Earthbreaker Tower"
+        "quake_tower_2"             "Quake Tower 2" //Earthbreaker
         "enchantment_tower"         "Enchantment Tower"
-        "enchantment_tower_2"       "Incantation Tower"
+        "enchantment_tower_2"       "Enchantment Tower 2" //Incantation
         "flooding_tower"            "Flooding Tower"
-        "flooding_tower_2"          "Drowning Tower"
+        "flooding_tower_2"          "Flooding Tower 2" //Drowning
         "laser_tower"               "Laser Tower"
-        "laser_tower_2"             "Phaser Tower"
+        "laser_tower_2"             "Laser Tower 2" //Phaser
         "hail_tower"                "Hail Tower"
-        "hail_tower_2"              "Comet Tower"
+        "hail_tower_2"              "Hail Tower 2" //Comet
         "runic_tower"               "Runic Tower"
-        "runic_tower_2"             "Occult Tower"
+        "runic_tower_2"             "Runic Tower 2" //Occult
         "impulse_tower"             "Impulse Tower"
-        "impulse_tower_2"           "Velocity Tower"
+        "impulse_tower_2"           "Impulse Tower 2" //Velocity
         "obliteration_tower"        "Obliteration Tower"
-        "obliteration_tower_2"      "Annihilation Tower"
+        "obliteration_tower_2"      "Obliteration Tower 2" //Annihilation
         "ephemeral_tower"           "Ephemeral Tower"
-        "ephemeral_tower_2"         "Temporal Tower"
+        "ephemeral_tower_2"         "Ephemeral Tower 2" //Temporal
         "flamethrower_tower"        "Flamethrower Tower"
-        "flamethrower_tower_2"      "Flamespewer Tower"
+        "flamethrower_tower_2"      "Flamethrower Tower 2" //Flamespewer
         "haste_tower"               "Haste Tower"
-        "haste_tower_2"             "Blitz Tower"
+        "haste_tower_2"             "Haste Tower 2" //Blitz
         "tidal_tower"               "Tidal Tower"
-        "tidal_tower_2"             "Tsunami Tower"
+        "tidal_tower_2"             "Tidal Tower 2" //Tsunami
         "roots_tower"               "Roots Tower"
-        "roots_tower_2"             "Thorns Tower"
+        "roots_tower_2"             "Roots Tower 2" //Thorns
         "nova_tower"                "Nova Tower"
-        "nova_tower_2"              "Supernova Tower"
+        "nova_tower_2"              "Nova Tower 2" //Supernova
         "erosion_tower"             "Erosion Tower"
-        "erosion_tower_2"           "Corrosion Tower"
+        "erosion_tower_2"           "Erosion Tower 2" //Corrosion
         "polar_tower"               "Polar Tower"
-        "polar_tower_2"             "Glacial Tower"
+        "polar_tower_2"             "Polar Tower 2" //Glacial
         "jinx_tower"                "Jinx Tower"
-        "jinx_tower_2"              "Hex Tower"
+        "jinx_tower_2"              "Jinx Tower 2" //Hex
         "periodic_tower"            "Periodic Tower"
         "elemental_summoner"        "Elemental Summoner"
 
