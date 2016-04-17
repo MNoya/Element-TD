@@ -73,10 +73,6 @@ function ElementTD:InitGameMode()
     ListenToGameEvent('npc_spawned', Dynamic_Wrap(ElementTD, 'OnUnitSpawned'), self)
     ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(ElementTD, 'OnGameStateChange'), self)
 
-    -- Register Listener
-    CustomGameEventManager:RegisterListener( "update_selected_entities", Dynamic_Wrap(ElementTD, 'OnPlayerSelectedEntities'))
-    GameRules.SELECTED_UNITS = {}
-
     -- Filters
     GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( ElementTD, "FilterExecuteOrder" ), self )
     GameRules:GetGameModeEntity():SetDamageFilter( Dynamic_Wrap( ElementTD, "DamageFilter" ), self )
@@ -699,11 +695,6 @@ function ElementTD:OnReconnect(playerID)
             end
         end
     end
-end
-
-function ElementTD:OnPlayerSelectedEntities( event )
-    local playerID = event.PlayerID
-    GameRules.SELECTED_UNITS[playerID] = event.selected_entities
 end
 
 function ElementTD:FilterExecuteOrder( filterTable )

@@ -352,8 +352,10 @@ function SetupTowerUpgrade(tower, newTower, buffData, stacks)
     end)
 
     Timers:CreateTimer(function()
-        PlayerResource:RemoveFromSelection(playerID, tower)
-        PlayerResource:AddToSelection(playerID, newTower)
-        PlayerResource:RefreshSelection()
+        if PlayerResource:IsUnitSelected(playerID, tower) then
+            PlayerResource:RemoveFromSelection(playerID, tower)
+            PlayerResource:AddToSelection(playerID, newTower)
+            PlayerResource:RefreshSelection()
+        end
     end)
 end
