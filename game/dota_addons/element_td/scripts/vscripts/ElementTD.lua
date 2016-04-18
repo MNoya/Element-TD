@@ -341,6 +341,9 @@ function ElementTD:EndGameForPlayer( playerID )
         CustomGameEventManager:Send_ServerToPlayer( ply, "etd_display_interest", { interval=INTEREST_INTERVAL, rate=INTEREST_RATE, enabled=false } )
     end
 
+    -- Highscore popup
+    Ranking:CheckHighscoreForPlayer(playerID, playerData.scoreObject.totalScore)  
+
     ElementTD:CheckGameEnd()
 end
 
@@ -883,7 +886,7 @@ function ElementTD:OnPlayerChat(keys)
         return
     end
 
-    if teamonly == 1 and not COOP_MAP then
+    if teamonly == 1 and not COOP_MAP and PlayerResource:GetPlayerCount() > 1 then
         player.skip_chat = true
         Say(player, text, false)
     end

@@ -78,6 +78,19 @@ function Ranking:New(playerID)
     Ranking[playerID] = ranking
 end
 
+function Ranking:CheckHighscoreForPlayer(playerID, score)
+    local rankData = CustomNetTables:GetTableValue("rankings", tostring(playerID))
+    if rankData then
+        local current_score = tonumber(rankData['score'])
+        local percentile = tonumber(rankData['percentile'])
+        if tonumber(score) > current_score then
+            ShowHighscoreMessage(playerID, percentile)
+        end
+    else
+        ShowFirstHighscoreMessage(playerID)
+    end
+end
+
 function Ranking:CreatePlayerRanks()
     CustomGameEventManager:Send_ServerToAllClients( "etd_create_ranks", {} )
 end

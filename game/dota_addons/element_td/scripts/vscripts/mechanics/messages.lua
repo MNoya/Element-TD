@@ -157,3 +157,31 @@ function ShowElementLevel(playerID, element, level)
         duration = 5
     })
 end
+
+function ShowHighscoreMessage(playerID, percentile)
+    GameRules:SendCustomMessage("#etd_highscore_message", 0, playerID)
+    
+    -- Possible names: firstblood, doublekill, triplekill, rampage, multikill_generic
+    local name = "doublekill"
+    if percentile < 5 then
+        name = "rampage"
+    elseif percentile < 20 then
+        name = "multikill_generic"
+    elseif percentile < 40 then
+        name = "triplekill"
+    end
+
+    local particleName = "particles/econ/events/killbanners/screen_killbanner_compendium14_"..name..".vpcf"
+    local particle = ParticleManager:CreateParticleForPlayer(particleName, PATTACH_EYES_FOLLOW, PlayerResource:GetSelectedHeroEntity(playerID), PlayerResource:GetPlayer(playerID))
+
+    Notifications:ClearTop(playerID)
+    Notifications:Top(playerID, {text = "#etd_highscore_new", class = "NewHighscore", duration = 5})
+end
+
+function ShowFirstHighscoreMessage(playerID)
+    local particleName = "particles/econ/events/killbanners/screen_killbanner_compendium14_firstblood.vpcf"
+    local particle = ParticleManager:CreateParticleForPlayer(particleName, PATTACH_EYES_FOLLOW, PlayerResource:GetSelectedHeroEntity(playerID), PlayerResource:GetPlayer(playerID))
+    Notifications:Top(playerID, {text = "#etd_highscore_new", class = "NewHighscore", duration = 5})
+
+    GameRules:SendCustomMessage("#etd_first_highscore", 0, playerID)
+end

@@ -16,6 +16,7 @@
 
         // messages
         "etd_welcome_message"       "Welcome to <font color='#70EA72'>Element Tower Defense</font>!"
+        "etd_highscore_message"     "%s1 has achieved a new highscore!"
         "etd_end_message"           "Thank you for playing <font color='#70EA72'>Element Tower Defense</font>!"
         "etd_end_message_defeat"    "No one could make it to the end. Better luck next time!"
         "etd_voting"                "<font color='#70EA72'>Voting has begun!</font>"
