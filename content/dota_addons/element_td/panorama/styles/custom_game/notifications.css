@@ -145,3 +145,15 @@
     text-shadow: 1px 1px 3px 3.0 #121212;
     font-size: 40px;
 }
+
+.NewHighscore
+{
+    color: #FFF;
+    font-family: Radiance;
+    text-shadow: 1px 1px 3px 3.0 #121212;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: -10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}

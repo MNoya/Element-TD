@@ -36,22 +36,34 @@ function ElectricityTower:OnAttack(event)
     self.tower:EmitSound("Electricity.Lightning")
     local current_position = self:CreateChainLightning(caster, start_position, target, damage)
 
-    -- Every target struck by the chain is added to an entity index list
+    --[[ Every target struck by the chain is added to an entity index list
     local targetsStruck = {}
-    targetsStruck[target:GetEntityIndex()] = true
+    targetsStruck[target:GetEntityIndex()] = true]]
+
+    -- Dont hit a target twice in a row
+    local lastStruck = target
 
     local range = self.bounce_range
     Timers:CreateTimer(self.time_between_bounces, function()  
         local units = FindUnitsInRadius(teamNumber, current_position, target, range, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC, 0, findType, true)
 
         if #units > 0 then
-            -- Hit the first unit that hasn't been struck yet
             local bounce_target
+            --[[ Hit the first unit that hasn't been struck yet
             for _,unit in pairs(units) do
                 local entIndex = unit:GetEntityIndex()
                 if not targetsStruck[entIndex] then
                     bounce_target = unit
                     targetsStruck[entIndex] = true
+                    break
+                end
+            end]]
+
+            -- Hit the first target different from the last
+            for _,unit in pairs(units) do
+                if unit ~= lastStruck then
+                    bounce_target = unit
+                    lastStruck = unit
                     break
                 end
             end

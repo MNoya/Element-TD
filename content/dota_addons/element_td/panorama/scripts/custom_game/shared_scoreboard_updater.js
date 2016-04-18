@@ -86,23 +86,36 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
             
             var icefrogKills = GameUI.CustomUIConfig().playerData[playerId].iceFrogKills
 
-            if (GameUI.CustomUIConfig().playerData[playerId].remaining !== undefined)
+            if (Game.IsCoop())
             {
-                _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", GameUI.CustomUIConfig().playerData[playerId].remaining );
+                var kRemaining = $("#KillsRemaining")
+                if (kRemaining !== null)
+                    kRemaining.text = "KILLS"
+
+                _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", GameUI.CustomUIConfig().playerData[playerId].lastHits );
+                _ScoreboardUpdater_SetTextSafe( playerPanel, "KillsEnd", GameUI.CustomUIConfig().playerData[playerId].lastHits );
             }
+
             else
             {
-                if (GameUI.CustomUIConfig().playerData[playerId].lives !== undefined && GameUI.CustomUIConfig().playerData[playerId].lives == 0)
+                if (GameUI.CustomUIConfig().playerData[playerId].remaining !== undefined)
+                {
+                    _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", GameUI.CustomUIConfig().playerData[playerId].remaining );
+                }
+                else
+                {
+                    if (GameUI.CustomUIConfig().playerData[playerId].lives !== undefined && GameUI.CustomUIConfig().playerData[playerId].lives == 0)
+                    {
+                        _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", "["+GameUI.CustomUIConfig().playerData[playerId].lastHits+"]" );
+                        _ScoreboardUpdater_SetTextSafe( playerPanel, "KillsEnd", GameUI.CustomUIConfig().playerData[playerId].lastHits );
+                    }
+                }
+
+                if (GameUI.CustomUIConfig().playerData[playerId].express_end == 1)
                 {
                     _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", "["+GameUI.CustomUIConfig().playerData[playerId].lastHits+"]" );
                     _ScoreboardUpdater_SetTextSafe( playerPanel, "KillsEnd", GameUI.CustomUIConfig().playerData[playerId].lastHits );
                 }
-            }
-
-            if (GameUI.CustomUIConfig().playerData[playerId].express_end == 1)
-            {
-                _ScoreboardUpdater_SetTextSafe( playerPanel, "Kills", "["+GameUI.CustomUIConfig().playerData[playerId].lastHits+"]" );
-                _ScoreboardUpdater_SetTextSafe( playerPanel, "KillsEnd", GameUI.CustomUIConfig().playerData[playerId].lastHits );
             }
             
             if (icefrogKills > 0)

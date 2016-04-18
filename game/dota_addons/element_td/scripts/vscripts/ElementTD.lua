@@ -73,10 +73,6 @@ function ElementTD:InitGameMode()
     ListenToGameEvent('npc_spawned', Dynamic_Wrap(ElementTD, 'OnUnitSpawned'), self)
     ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(ElementTD, 'OnGameStateChange'), self)
 
-    -- Register Listener
-    CustomGameEventManager:RegisterListener( "update_selected_entities", Dynamic_Wrap(ElementTD, 'OnPlayerSelectedEntities'))
-    GameRules.SELECTED_UNITS = {}
-
     -- Filters
     GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( ElementTD, "FilterExecuteOrder" ), self )
     GameRules:GetGameModeEntity():SetDamageFilter( Dynamic_Wrap( ElementTD, "DamageFilter" ), self )
@@ -96,12 +92,12 @@ function ElementTD:InitGameMode()
     LinkLuaModifier("modifier_disabled", "libraries/modifiers/modifier_disabled", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_attack_disabled", "libraries/modifiers/modifier_attack_disabled", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_support_tower", "libraries/modifiers/modifier_support_tower", LUA_MODIFIER_MOTION_NONE)
-    LinkLuaModifier("modifier_bonus_life", "libraries/modifiers/modifier_bonus_life", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_health_bar_markers", "libraries/modifiers/modifier_health_bar_markers", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_not_on_minimap_for_enemies", "libraries/modifiers/modifier_not_on_minimap_for_enemies", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_max_ms", "libraries/modifiers/modifier_max_ms", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_attack_immune", "libraries/modifiers/modifier_attack_immune", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_client_convars", "libraries/modifiers/modifier_client_convars", LUA_MODIFIER_MOTION_NONE)
+    --LinkLuaModifier("modifier_bonus_life", "libraries/modifiers/modifier_bonus_life", LUA_MODIFIER_MOTION_NONE) not needed anymore
     
     -- Register UI Listener   
     CustomGameEventManager:RegisterListener( "next_wave", Dynamic_Wrap(ElementTD, "OnNextWave")) -- wave info
@@ -345,6 +341,9 @@ function ElementTD:EndGameForPlayer( playerID )
         CustomGameEventManager:Send_ServerToPlayer( ply, "etd_display_interest", { interval=INTEREST_INTERVAL, rate=INTEREST_RATE, enabled=false } )
     end
 
+    -- Highscore popup
+    Ranking:CheckHighscoreForPlayer(playerID, playerData.scoreObject.totalScore)  
+
     ElementTD:CheckGameEnd()
 end
 
@@ -436,15 +435,6 @@ function ElementTD:CheckGameEnd()
     end    
     GameRules:SendCustomMessage("#etd_end_message", 0, 0)
     Timers:CreateTimer(5, function()
-
-        -- Try to revert client convars
-        --[[for _, playerID in pairs(playerIDs) do
-            local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-            if hero then
-                hero:RemoveModifierByName("modifier_client_convars")
-            end
-        end]]
-
         GameRules:SetGameWinner( teamWinner )
         GameRules:SetSafeToLeave( true )
     end)
@@ -533,7 +523,7 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:AddNewModifier(nil, nil, "modifier_disarmed", {})
     hero:AddNewModifier(nil, nil, "modifier_attack_immune", {})
     hero:AddNewModifier(hero, nil, "modifier_max_ms", {ms=GameSettings:GetMapSetting("BuilderMoveSpeed")})
-    --hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
+    hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
 
     local playerData = GetPlayerData(playerID)
 
@@ -606,6 +596,11 @@ function ElementTD:OnEntityKilled(keys)
             end
             entity:EmitSound("Frog.Kill")
         end
+    end
+
+    -- Update scoreboard kills for that player
+    if COOP_MAP then
+        UpdateScoreboard(playerID)
     end
 
     if entity.isElemental then
@@ -694,11 +689,6 @@ function ElementTD:OnReconnect(playerID)
             end
         end
     end
-end
-
-function ElementTD:OnPlayerSelectedEntities( event )
-    local playerID = event.PlayerID
-    GameRules.SELECTED_UNITS[playerID] = event.selected_entities
 end
 
 function ElementTD:FilterExecuteOrder( filterTable )
@@ -896,7 +886,7 @@ function ElementTD:OnPlayerChat(keys)
         return
     end
 
-    if teamonly == 1 and not COOP_MAP then
+    if teamonly == 1 and not COOP_MAP and PlayerResource:GetPlayerCount() > 1 then
         player.skip_chat = true
         Say(player, text, false)
     end

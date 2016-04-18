@@ -45,6 +45,7 @@
         "etd_wave_dark"             "200% from <font color='#E5DE23'>Light</font>, 50% from <font color='#01A2FF'>Water</font>"
         "etd_wave_composite"        "100% from Composite, 90% from other Elements"
         "etd_summoner_choose"       "Choose an Element"
+        "etd_highscore_new"         "New Highscore!"
 
         "gold"              "<font color='#F0BA36'>Gold</font>"
         "tooltip_gold"      "Gold is used to build towers and gain interest.<br>You will recieve interest every 15 seconds."

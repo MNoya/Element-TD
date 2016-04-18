@@ -310,8 +310,15 @@ function UpdatePlayerHealth(playerID)
     local playerData = GetPlayerData(playerID)
     if hero then
         maxHealth = maxHealth or GameSettings:GetMapSetting("Lives")
-        hero:SetBaseMaxHealth(maxHealth)
-        hero:SetMaxHealth(maxHealth)
+
+        if playerData.health > maxHealth then
+            hero:SetBaseMaxHealth(playerData.health)
+            hero:SetMaxHealth(playerData.health)
+        else
+            hero:SetBaseMaxHealth(maxHealth)
+            hero:SetMaxHealth(maxHealth)
+        end
+
         hero:SetHealth(playerData.health)
     end
 end

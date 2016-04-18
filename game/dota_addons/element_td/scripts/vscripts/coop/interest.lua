@@ -9,7 +9,6 @@ if not InterestManagerCoop then
 	InterestManagerCoop.started = false
 	InterestManagerCoop.timer = nil
 	InterestManagerCoop.locked = false
-	InterestManagerCoop.lockState = nil
 	InterestManagerCoop.gameStartedBefore = false
 
 	InterestManager = InterestManagerCoop
@@ -23,6 +22,7 @@ function InterestManagerCoop:StartInterest()
 	Log:debug("Starting interest for all players at ".. INTEREST_INTERVAL .. "s")
 
 	InterestManagerCoop:CreateTimer()
+	CustomNetTables:SetTableValue("gameinfo", "interest_stopped", {value=false})
 
 	CustomGameEventManager:Send_ServerToAllClients("etd_display_interest", { 
 		interval = INTEREST_INTERVAL, 
@@ -46,9 +46,8 @@ function InterestManagerCoop:HandlePlayerReconnect(playerID)
 			enabled = true 
 		})
 		
-		local lockState = InterestManagerCoop.lockState
-		if lockState then
-			CustomGameEventManager:Send_ServerToPlayer(player, "etd_pause_interest", lockState)
+		if interest.locked then
+			CustomGameEventManager:Send_ServerToPlayer(player, "etd_pause_interest", {})
 		else
 			local timerName = InterestManagerCoop.timer
 			if timerName and Timers.timers[timerName] then
@@ -68,6 +67,7 @@ function InterestManagerCoop:CreateTimer(timeRemaining)
 			InterestManagerCoop:GiveInterest()
 		else
 			Log:debug("Completely stopping interest")
+			CustomNetTables:SetTableValue("gameinfo", "interest_stopped", {value=true})
 			InterestManagerCoop:PauseInterest(true)
 			return nil
 		end
@@ -86,7 +86,6 @@ end
 -- force the player's interest to resume
 function InterestManagerCoop:ResumeInterest()
 	InterestManagerCoop.locked = false
-	InterestManagerCoop.lockState = nil
 	
 	CustomGameEventManager:Send_ServerToAllClients("etd_resume_interest", {
 		timeRemaining = InterestManagerCoop.TimeRemaining
@@ -111,12 +110,9 @@ function InterestManagerCoop:PauseInterest(bResetBar)
 		InterestManagerCoop.timer = nil
 			
 		-- store this pause in the case of player disconnect
-		InterestManagerCoop.lockState = {
-			title = "#etd_interest_lock_leak_title",
-			msg = "#etd_interest_lock_leak"
-		}
+		InterestManagerCoop.locked = true
 
-		CustomGameEventManager:Send_ServerToAllClients("etd_pause_interest", {title = title, msg = msg, bResetBar = bResetBar})
+		CustomGameEventManager:Send_ServerToAllClients("etd_pause_interest", {bResetBar = bResetBar})
 	end
 end
 

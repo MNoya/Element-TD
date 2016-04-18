@@ -433,3 +433,7 @@ Game.IsCoop = function() {
     if (mapInfo)
         return mapInfo.map_display_name == "element_td_coop"
 }
+
+Game.InterestStopped = function() {
+    return (CustomNetTables.GetTableValue("gameinfo", "interest_stopped").value == 1)
+}

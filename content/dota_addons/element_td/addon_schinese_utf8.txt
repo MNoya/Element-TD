@@ -51,19 +51,19 @@
         "basic_arrow_tower"         "箭塔"
         "basic_cannon_tower"        "炮塔"
 
-        "dark_arrow_tower"          "Dark Arrow Tower"
-        "light_arrow_tower"         "Light Arrow Tower"
-        "fire_arrow_tower"          "Fire Arrow Tower"
-        "nature_arrow_tower"        "Nature Arrow Tower"
-        "water_arrow_tower"         "Water Arrow Tower"
-        "earth_arrow_tower"         "Nature Arrow Tower"
+        "dark_arrow_tower"          "黑暗箭塔"
+        "light_arrow_tower"         "光明箭塔"
+        "fire_arrow_tower"          "圣火箭塔"
+        "nature_arrow_tower"        "自然箭塔"
+        "water_arrow_tower"         "圣水箭塔"
+        "earth_arrow_tower"         "大地箭塔"
         
-        "dark_cannon_tower"         "Dark Cannon Tower"
-        "light_cannon_tower"        "Light Cannon Tower"
-        "fire_cannon_tower"         "Fire Cannon Tower"
-        "nature_cannon_tower"       "Nature Cannon Tower"
-        "water_cannon_tower"        "Water Cannon Tower"
-        "earth_cannon_tower"        "Earth Cannon Tower"
+        "dark_cannon_tower"         "黑暗炮塔"
+        "light_cannon_tower"        "光明炮塔"
+        "fire_cannon_tower"         "圣火炮塔"
+        "nature_cannon_tower"       "自然炮塔"
+        "water_cannon_tower"        "圣水炮塔"
+        "earth_cannon_tower"        "大地炮塔"
 
         "water_tower"               "圣水之塔"
         "amplified_water_tower"     "强化的圣水之塔"
@@ -323,10 +323,11 @@
         "centaur_warchief"          "半人马酋长"
         "wolf"                      "狼"
 
-        "clock_wanderer"            "Clock Wanderer"
-        "earth_walker"              "Earth Walker"
-        "faceless"                  "Faceless"
-        "shifting_treant"           "Shifting Treant"
+        "clock_wanderer"            "发条漫游者"
+        "creep_ability_time_lapse"  "转瞬即逝"
+        "earth_walker"              "大地行者"
+        "faceless"                  "虚空假面"
+        "shifting_treant"           "移位树人"
 
         // ******************** ABILITIES ********************
         "DOTA_Tooltip_ability_sell_tower_100"       "出售防御塔"
@@ -559,36 +560,86 @@
         "DOTA_Tooltip_modifier_kill_count_Description"        "这座防御塔击杀的小兵数。\n升级为同类防御塔时继承数据。"
 
         // ******************** TOWER ABILITIES ********************
-        "DOTA_Tooltip_ability_dark_tower_overkill"                  "Overkill"
-        "DOTA_Tooltip_ability_dark_tower_overkill_Description"      "Every creep kill, any damage that was not necessary to get the kill is applied to another random creep in an area around the target."
-        "DOTA_Tooltip_ability_dark_tower_overkill_aoe"              "AOE:"
+        "DOTA_Tooltip_ability_dark_tower_overkill"                   "赶尽杀绝"
+        "DOTA_Tooltip_ability_dark_tower_overkill_Description"       "每当杀死小兵的攻击超过小兵死前生命值时，超出部分将随机转移到目标附近的任意目标身上。"
+        "DOTA_Tooltip_ability_dark_tower_overkill_aoe"               "作用范围："
 
-        "DOTA_Tooltip_ability_fire_tower_blaze"                     "Blaze"
-        "DOTA_Tooltip_ability_fire_tower_blaze_Description"          "Each attack applies a single-target DoT debuff on all targets hit that can stack indefinitely."
-        "DOTA_Tooltip_ability_fire_tower_blaze_damage_per_second"    "DAMAGE PER SECOND:"
-        "DOTA_Tooltip_ability_fire_tower_blaze_duration"             "DURATION:"
-        "DOTA_Tooltip_modifier_blazeit_stacks"                       "Blaze it"
-        "DOTA_Tooltip_modifier_blazeit_stacks_Description"           "Taking damage over time"
+        "DOTA_Tooltip_ability_fire_tower_blaze"                      "燃烧"
+        "DOTA_Tooltip_ability_fire_tower_blaze_Description"          "每次攻击对所有目标造成持续伤害的单体负面效果，可以无限叠加。"
+        "DOTA_Tooltip_ability_fire_tower_blaze_damage_per_second"    "每秒伤害："
+        "DOTA_Tooltip_ability_fire_tower_blaze_duration"             "持续时间："
+        "DOTA_Tooltip_modifier_blazeit_stacks"                       "燃烧吧"
+        "DOTA_Tooltip_modifier_blazeit_stacks_Description"           "持续受到伤害"
 
-        "DOTA_Tooltip_ability_nature_tower_force_of_nature"             "Force of Nature"
-        "DOTA_Tooltip_ability_nature_tower_force_of_nature_Description" "This tower does increased damage based on the number of other creeps around the target in a 125 AOE."
-        "DOTA_Tooltip_ability_nature_tower_force_of_nature_damage"      "%DAMAGE PER CREEP:"
+        "DOTA_Tooltip_ability_nature_tower_force_of_nature"             "自然之力"
+        "DOTA_Tooltip_ability_nature_tower_force_of_nature_Description" "此防御塔的攻击力根据目标125范围内的小兵数量而增加。"
+        "DOTA_Tooltip_ability_nature_tower_force_of_nature_damage"      "%每个小兵增加攻击力："
 
-        "DOTA_Tooltip_ability_light_tower_intensity"     "Intensity"
-        "DOTA_Tooltip_ability_light_tower_intensity_Description"     "Each attack on the same creep increases this tower's attack damage. Attacking another creeps resets its damage."
-        "DOTA_Tooltip_ability_light_tower_intensity_damage"        "DAMAGE PER ATTACK:"
-        "DOTA_Tooltip_modifier_intensity_indicator"                "Intensity Level"
-        "DOTA_Tooltip_modifier_intensity_indicator_Description"    "Number of consecutive attacks on the same target."
+        "DOTA_Tooltip_ability_light_tower_intensity"                 "熟能生巧"
+        "DOTA_Tooltip_ability_light_tower_intensity_Description"     "攻击同一种小兵攻击力会不断增加。攻击另一种小兵会将攻击力重置为初始值。"
+        "DOTA_Tooltip_ability_light_tower_intensity_damage"          "每次攻击增加伤害："
+        "DOTA_Tooltip_modifier_intensity_indicator"                  "熟能生巧等级"
+        "DOTA_Tooltip_modifier_intensity_indicator_Description"      "连续攻击同种小兵的次数。"
 
-        "DOTA_Tooltip_ability_earth_tower_aftershock"                 "Aftershock"
-        "DOTA_Tooltip_ability_earth_tower_aftershock_Description"        "After a short time, its attack causes a secondary shockwave, hitting creeps in the same area for half damage."
-        "DOTA_Tooltip_ability_earth_tower_aftershock_damage_pct"  "AFTERSHOCK DAMAGE:"
-        "DOTA_Tooltip_ability_earth_tower_aftershock_delay"  "AFTERSHOCK DELAY:"
+        "DOTA_Tooltip_ability_earth_tower_aftershock"                "余震"
+        "DOTA_Tooltip_ability_earth_tower_aftershock_Description"    "攻击目标一段时间后会再次造成余震，对相同范围内的敌人造成一半伤害。"
+        "DOTA_Tooltip_ability_earth_tower_aftershock_damage_pct"     "余震伤害："
+        "DOTA_Tooltip_ability_earth_tower_aftershock_delay"          "余震延迟："
         
-        "DOTA_Tooltip_ability_water_tower_water_bullet"                                   "Water Bullet"
-        "DOTA_Tooltip_ability_water_tower_water_bullet_Description"                       "Each attack causes a single bounce within a short range, dealing reduced damage."
-        "DOTA_Tooltip_ability_water_tower_water_bullet_bounce_range"                      "BOUNCE RANGE:"
-        "DOTA_Tooltip_ability_water_tower_water_bullet_damage_pct"                     "DAMAGE:"
+        "DOTA_Tooltip_ability_water_tower_water_bullet"               "水珠"
+        "DOTA_Tooltip_ability_water_tower_water_bullet_Description"   "每次攻击都会飞溅到附近的小兵，溅射伤害有所降低。"
+        "DOTA_Tooltip_ability_water_tower_water_bullet_bounce_range"  "飞溅范围："
+        "DOTA_Tooltip_ability_water_tower_water_bullet_damage_pct"    "伤害："
+
+        "DOTA_Tooltip_ability_creep_ability_time_lapse"                                   "时光倒流"
+        "DOTA_Tooltip_ability_creep_ability_time_lapse_Description"                       "当一个小兵的生命值低于最大生命值的%health_threshold%%%时，他将返回%backtrack_duration%秒后的位置，同时恢复那时的生命值。"
+        "DOTA_Tooltip_ability_creep_ability_time_lapse_backtrack_duration"                "倒流持续时间："
+        "DOTA_Tooltip_ability_creep_ability_time_lapse_health_threshold"                  "%触发生命阈值："
+        
+        "DOTA_Tooltip_ability_dark_tower_overkill"                                        "赶尽杀绝"
+        "DOTA_Tooltip_ability_dark_tower_overkill_Description"                            "每击杀一个小兵，富余的伤害都将随机转移到目标范围内附近的其他小兵身上。"
+        "DOTA_Tooltip_ability_dark_tower_overkill_aoe"                                    "作用范围："
+        
+        "DOTA_Tooltip_ability_fire_tower_blaze"                                           "燃烧"
+        "DOTA_Tooltip_ability_fire_tower_blaze_Description"                               "每次攻击对所有目标造成持续伤害的单体负面效果，可以无限叠加。"
+        "DOTA_Tooltip_ability_fire_tower_blaze_damage_per_second"                         "每秒伤害："
+        "DOTA_Tooltip_ability_fire_tower_blaze_duration"                                  "持续时间："
+        
+        "DOTA_Tooltip_ability_hail_tower_storm_Description"                               "这座防御塔在攻击若干次后将释放强大的风暴，对大片范围内的目标造成伤害。每次攻击都有几率造成暴击。"
+        "DOTA_Tooltip_ability_hail_tower_storm_attacks_required"                          "所需攻击次数："
+        "DOTA_Tooltip_ability_hail_tower_storm_crit_chance"                               "%暴击几率："
+        "DOTA_Tooltip_ability_hail_tower_storm_damage"                                    "伤害："
+        "DOTA_Tooltip_ability_hail_tower_storm_damage_mult"                               "%暴击伤害："
+        
+        "DOTA_Tooltip_ability_light_tower_intensity"                                      "熟能生巧"
+        "DOTA_Tooltip_ability_light_tower_intensity_Description"                          "攻击同一种小兵攻击力会不断增加。攻击另一种小兵会将攻击力重置为初始值。"
+        "DOTA_Tooltip_ability_light_tower_intensity_damage"                               "每次攻击增加伤害："
+        
+        "DOTA_Tooltip_ability_nature_tower_force_of_nature"                               "自然之力"
+        "DOTA_Tooltip_ability_nature_tower_force_of_nature_Description"                   "此防御塔的攻击力根据目标125范围内的小兵数量而增加。"
+        "DOTA_Tooltip_ability_nature_tower_force_of_nature_damage"                        "%每个小兵增加攻击力："
+        "DOTA_Tooltip_ability_quark_tower_quantum_beam_max_stacks"                        "最大叠加层数："
+        
+        "DOTA_Tooltip_ability_water_tower_water_bullet"                                   "水珠"
+        "DOTA_Tooltip_ability_water_tower_water_bullet_Description"                       "每次攻击在小兵之中弹射，造成溅射伤害。每次弹射后溅射范围都会降低。"
+        
+        "DOTA_Tooltip_ability_water_tower_water_bullet_bounce_range"                      "飞溅范围："
+        "DOTA_Tooltip_ability_water_tower_water_bullet_bounces"                           "跳动次数："
+        
+        "DOTA_Tooltip_modifier_acid_attack_dot_stacks"                                    "侵蚀"
+        "DOTA_Tooltip_modifier_acid_attack_dot_stacks_Description"                        "持续受到伤害。"
+        
+        "DOTA_Tooltip_modifier_blazeit_stacks"                                            "燃烧吧"
+        "DOTA_Tooltip_modifier_blazeit_stacks_Description"                                "持续受到伤害."
+        
+        "DOTA_Tooltip_modifier_gaias_wrath_damage_stacks"                                 "Gaias Wrath"
+        "DOTA_Tooltip_modifier_gaias_wrath_damage_stacks_Description"                     "持续受到伤害."
+        
+        "DOTA_Tooltip_modifier_intensity_indicator"                                       "熟能生巧等级"
+        "DOTA_Tooltip_modifier_intensity_indicator_Description"                           "连续攻击同种小兵的次数。"
+        
+        "DOTA_Tooltip_modifier_storm_passive"                                             "Attacks Required"
+        "DOTA_Tooltip_modifier_storm_passive_Description"                                 "Attacks required until this tower unleashes a hail storm."
         
         
         "DOTA_Tooltip_modifier_magic_tower_attack_range"        "攻击距离衰减"
@@ -866,15 +917,15 @@
         ///////////
         // Water //
         ///////////
-        "DOTA_Tooltip_ability_item_upgrade_to_water_arrow_tower"                "Water Arrow Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_water_arrow_tower_disabled"       "Water Arrow Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_water_arrow_tower_Description"    "Upgrades this tower to a Water Arrow Tower.\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#01A2FF'>Water</font>\nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>快速</font>\n"
-        "DOTA_Tooltip_ability_item_upgrade_to_water_arrow_tower_disabled_Description"    "Upgrades this tower to a Water Arrow Tower.\n<font color='#F0BA36'>Requires: </font><font color='#01A2FF'>Water</font>\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#01A2FF'>Water</font>\nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>快速</font>\n"
+        "DOTA_Tooltip_ability_item_upgrade_to_water_arrow_tower"                "圣水箭塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_water_arrow_tower_disabled"       "圣水箭塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_water_arrow_tower_Description"    "将这座防御塔升级为圣水箭塔.\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#01A2FF'>圣水</font>\n伤害类型：<font color='#01A2FF'>圣水</font>\n伤害： <font color='#FFFFFF'>90</font>\n范围：<font color='#FFFFFF'>900</font>\n速度：<font color='#FFFFFF'>快速</font>\n"
+        "DOTA_Tooltip_ability_item_upgrade_to_water_arrow_tower_disabled_Description"    "将这座防御塔升级为圣水箭塔.\n<font color='#F0BA36'>需要： </font><font color='#01A2FF'>圣水</font>\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#01A2FF'>圣水</font>\n伤害类型：<font color='#01A2FF'>圣水</font>\n伤害： <font color='#FFFFFF'>90</font>\n范围：<font color='#FFFFFF'>900</font>\n速度：<font color='#FFFFFF'>快速</font>\n"
 
-        "DOTA_Tooltip_ability_item_upgrade_to_water_cannon_tower"                   "Water Cannon Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_water_cannon_tower_Disabled"          "Water Cannon Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_water_cannon_tower_Description"       "Upgrades this tower to a Water Cannon Tower. Can also manually attack the ground.\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#01A2FF'>Water</font>\nDAMAGE TYPE: <font color='#01A2FF'>Water</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
-        "DOTA_Tooltip_ability_item_upgrade_to_water_cannon_tower_disabled_Description"       "Upgrades this tower to a Water Cannon Tower. Can also manually attack the ground.\n<font color='#F0BA36'>Requires: </font><font color='#01A2FF'>Water</font>\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#01A2FF'>Water</font>\nDAMAGE TYPE: <font color='#01A2FF'>Water</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_water_cannon_tower"                   "圣水炮塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_water_cannon_tower_Disabled"          "圣水炮塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_water_cannon_tower_Description"       "将这座防御塔升级为圣水炮塔. 可以手动对地面进行攻击。\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#01A2FF'>圣水</font>\n伤害类型：<font color='#01A2FF'>圣水</font> \n伤害： <font color='#FFFFFF'>105</font> \n范围：<font color='#FFFFFF'>550</font> \n速度：<font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100全额/200 半额</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_water_cannon_tower_disabled_Description"       "将这座防御塔升级为圣水炮塔. 可以手动对地面进行攻击。\n<font color='#F0BA36'>需要： </font><font color='#01A2FF'>圣水</font>\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#01A2FF'>圣水</font>\n伤害类型：<font color='#01A2FF'>圣水</font> \n伤害： <font color='#FFFFFF'>105</font> \n范围：<font color='#FFFFFF'>550</font> \n速度：<font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100全额/200 半额</font>"
 
         "DOTA_Tooltip_ability_item_upgrade_to_focused_water_tower"      "专注的圣水之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_water_tower_disabled"     "专注的圣水之塔"
@@ -1002,15 +1053,15 @@
          //////////
         // Fire //
         //////////
-        "DOTA_Tooltip_ability_item_upgrade_to_fire_arrow_tower"                "Fire Arrow Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_fire_arrow_tower_disabled"       "Fire Arrow Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_fire_arrow_tower_Description"    "Upgrades this tower to a Fire Arrow Tower.\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#C40000'>Fire</font>\nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>快速</font>\n"
-        "DOTA_Tooltip_ability_item_upgrade_to_fire_arrow_tower_disabled_Description"    "Upgrades this tower to a Fire Arrow Tower.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire</font>\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#C40000'>Fire</font>\nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>快速</font>\n"
+        "DOTA_Tooltip_ability_item_upgrade_to_fire_arrow_tower"                "圣火箭塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_fire_arrow_tower_disabled"       "圣火箭塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_fire_arrow_tower_Description"    "将这座防御塔升级为圣火箭塔.\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#C40000'>圣火</font>\n伤害类型：<font color='#C40000'>圣火</font>\n伤害： <font color='#FFFFFF'>90</font>\n范围：<font color='#FFFFFF'>900</font>\n速度：<font color='#FFFFFF'>快速</font>\n"
+        "DOTA_Tooltip_ability_item_upgrade_to_fire_arrow_tower_disabled_Description"    "将这座防御塔升级为圣火箭塔.\n<font color='#F0BA36'>需要： </font><font color='#C40000'>圣火</font>\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#C40000'>圣火</font>\n伤害类型：<font color='#C40000'>圣火</font>\n伤害： <font color='#FFFFFF'>90</font>\n范围：<font color='#FFFFFF'>900</font>\n速度：<font color='#FFFFFF'>快速</font>\n"
 
-        "DOTA_Tooltip_ability_item_upgrade_to_fire_cannon_tower"                   "Fire Cannon Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_fire_cannon_tower_Disabled"          "Fire Cannon Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_fire_cannon_tower_Description"       "Upgrades this tower to a Fire Cannon Tower. Can also manually attack the ground.\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#C40000'>Fire</font>\nDAMAGE TYPE: <font color='#C40000'>Fire</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
-        "DOTA_Tooltip_ability_item_upgrade_to_fire_cannon_tower_disabled_Description"       "Upgrades this tower to a Fire Cannon Tower. Can also manually attack the ground.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire</font>\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#C40000'>Fire</font>\nDAMAGE TYPE: <font color='#C40000'>Fire</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_fire_cannon_tower"                   "圣火炮塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_fire_cannon_tower_Disabled"          "圣火炮塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_fire_cannon_tower_Description"       "将这座防御塔升级为圣火炮塔. 可以手动对地面进行攻击。\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#C40000'>圣火</font>\n伤害类型：<font color='#C40000'>圣火</font> \n伤害： <font color='#FFFFFF'>105</font> \n范围：<font color='#FFFFFF'>550</font> \n速度：<font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100全额/200 半额</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_fire_cannon_tower_disabled_Description"       "将这座防御塔升级为圣火炮塔. 可以手动对地面进行攻击。\n<font color='#F0BA36'>需要： </font><font color='#C40000'>圣火</font>\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#C40000'>圣火</font>\n伤害类型：<font color='#C40000'>圣火</font> \n伤害： <font color='#FFFFFF'>105</font> \n范围：<font color='#FFFFFF'>550</font> \n速度：<font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100全额/200 半额</font>"
 
         "DOTA_Tooltip_ability_item_upgrade_to_focused_fire_tower"       "专注的圣火之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_fire_tower_disabled"      "专注的圣火之塔"
@@ -1130,15 +1181,15 @@
         ////////////
         // Nature //
         ////////////
-        "DOTA_Tooltip_ability_item_upgrade_to_nature_arrow_tower"                "Nature Arrow Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_nature_arrow_tower_disabled"       "Nature Arrow Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_nature_arrow_tower_Description"    "Upgrades this tower to a Nature Arrow Tower.\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#00C400'>Nature</font>\nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>快速</font>\n"
-        "DOTA_Tooltip_ability_item_upgrade_to_nature_arrow_tower_disabled_Description"    "Upgrades this tower to a Nature Arrow Tower.\n<font color='#F0BA36'>Requires: </font><font color='#00C400'>Nature</font>\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#00C400'>Nature</font>\nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>快速</font>\n"
+        "DOTA_Tooltip_ability_item_upgrade_to_nature_arrow_tower"                "自然箭塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_nature_arrow_tower_disabled"       "自然箭塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_nature_arrow_tower_Description"    "将这座防御塔升级为自然箭塔.\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#00C400'>自然</font>\n伤害类型：<font color='#00C400'>自然</font>\n伤害： <font color='#FFFFFF'>90</font>\n范围：<font color='#FFFFFF'>900</font>\n速度：<font color='#FFFFFF'>快速</font>\n"
+        "DOTA_Tooltip_ability_item_upgrade_to_nature_arrow_tower_disabled_Description"    "将这座防御塔升级为自然箭塔.\n<font color='#F0BA36'>需要： </font><font color='#00C400'>自然</font>\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#00C400'>自然</font>\n伤害类型：<font color='#00C400'>自然</font>\n伤害： <font color='#FFFFFF'>90</font>\n范围：<font color='#FFFFFF'>900</font>\n速度：<font color='#FFFFFF'>快速</font>\n"
 
-        "DOTA_Tooltip_ability_item_upgrade_to_nature_cannon_tower"                   "Nature Cannon Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_nature_cannon_tower_Disabled"          "Nature Cannon Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_nature_cannon_tower_Description"       "Upgrades this tower to a Nature Cannon Tower. Can also manually attack the ground.\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#00C400'>Nature</font>\nDAMAGE TYPE: <font color='#00C400'>Nature</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
-        "DOTA_Tooltip_ability_item_upgrade_to_nature_cannon_tower_disabled_Description"       "Upgrades this tower to a Nature Cannon Tower. Can also manually attack the ground.\n<font color='#F0BA36'>Requires: </font><font color='#00C400'>Nature</font>\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#00C400'>Nature</font>\nDAMAGE TYPE: <font color='#00C400'>Nature</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_nature_cannon_tower"                   "自然炮塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_nature_cannon_tower_Disabled"          "自然炮塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_nature_cannon_tower_Description"       "将这座防御塔升级为自然炮塔. 可以手动对地面进行攻击。\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#00C400'>自然</font>\n伤害类型：<font color='#00C400'>自然</font> \n伤害： <font color='#FFFFFF'>105</font> \n范围：<font color='#FFFFFF'>550</font> \n速度：<font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100全额/200 半额</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_nature_cannon_tower_disabled_Description"       "将这座防御塔升级为自然炮塔. 可以手动对地面进行攻击。\n<font color='#F0BA36'>需要： </font><font color='#00C400'>自然</font>\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#00C400'>自然</font>\n伤害类型：<font color='#00C400'>自然</font> \n伤害： <font color='#FFFFFF'>105</font> \n范围：<font color='#FFFFFF'>550</font> \n速度：<font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100全额/200 半额</font>"
 
         "DOTA_Tooltip_ability_item_upgrade_to_focused_nature_tower"     "专注的自然之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_nature_tower_disabled"        "专注的自然之塔"
@@ -1252,15 +1303,15 @@
         ///////////
         // Earth //
         ///////////
-        "DOTA_Tooltip_ability_item_upgrade_to_earth_arrow_tower"                "Earth Arrow Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_earth_arrow_tower_disabled"       "Earth Arrow Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_earth_arrow_tower_Description"    "Upgrades this tower to an Earth Arrow Tower.\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#D4880F'>Earth</font>\nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>快速</font>\n"
-        "DOTA_Tooltip_ability_item_upgrade_to_earth_arrow_tower_disabled_Description"    "Upgrades this tower to an Earth Arrow Tower.\n<font color='#F0BA36'>Requires: </font><font color='#D4880F'>Earth</font>\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#D4880F'>Earth</font>\nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>快速</font>\n"
+        "DOTA_Tooltip_ability_item_upgrade_to_earth_arrow_tower"                "大地箭塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_earth_arrow_tower_disabled"       "大地箭塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_earth_arrow_tower_Description"    "将这座防御塔升级为大地箭塔.\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#D4880F'>大地</font>\n伤害类型：<font color='#D4880F'>大地</font>\n伤害： <font color='#FFFFFF'>90</font>\n范围：<font color='#FFFFFF'>900</font>\n速度：<font color='#FFFFFF'>快速</font>\n"
+        "DOTA_Tooltip_ability_item_upgrade_to_earth_arrow_tower_disabled_Description"    "将这座防御塔升级为大地箭塔.\n<font color='#F0BA36'>需要： </font><font color='#D4880F'>大地</font>\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#D4880F'>大地</font>\n伤害类型：<font color='#D4880F'>大地</font>\n伤害： <font color='#FFFFFF'>90</font>\n范围：<font color='#FFFFFF'>900</font>\n速度：<font color='#FFFFFF'>快速</font>\n"
 
-        "DOTA_Tooltip_ability_item_upgrade_to_earth_cannon_tower"                   "Earth Cannon Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_earth_cannon_tower_Disabled"          "Earth Cannon Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_earth_cannon_tower_Description"       "Upgrades this tower to an Earth Cannon Tower. Can also manually attack the ground.\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#D4880F'>Earth</font>\nDAMAGE TYPE: <font color='#D4880F'>Earth</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
-        "DOTA_Tooltip_ability_item_upgrade_to_earth_cannon_tower_disabled_Description"       "Upgrades this tower to an Earth Cannon Tower. Can also manually attack the ground.\n<font color='#F0BA36'>Requires: </font><font color='#D4880F'>Earth</font>\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#D4880F'>Earth</font>\nDAMAGE TYPE: <font color='#D4880F'>Earth</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_earth_cannon_tower"                   "大地炮塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_earth_cannon_tower_Disabled"          "大地炮塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_earth_cannon_tower_Description"       "将这座防御塔升级为大地炮塔. 可以手动对地面进行攻击。\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#D4880F'>大地</font>\n伤害类型：<font color='#D4880F'>大地</font> \n伤害： <font color='#FFFFFF'>105</font> \n范围：<font color='#FFFFFF'>550</font> \n速度：<font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100全额/200 半额</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_earth_cannon_tower_disabled_Description"       "将这座防御塔升级为大地炮塔. 可以手动对地面进行攻击。\n<font color='#F0BA36'>需要： </font><font color='#D4880F'>大地</font>\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#D4880F'>大地</font>\n伤害类型：<font color='#D4880F'>大地</font> \n伤害： <font color='#FFFFFF'>105</font> \n范围：<font color='#FFFFFF'>550</font> \n速度：<font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100全额/200 半额</font>"
 
         "DOTA_Tooltip_ability_item_upgrade_to_focused_earth_tower"      "专注的大地之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_earth_tower_disabled"     "专注的大地之塔"
@@ -1374,15 +1425,15 @@
         ///////////
         // Light //
         ///////////
-        "DOTA_Tooltip_ability_item_upgrade_to_light_arrow_tower"                "Light Arrow Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_light_arrow_tower_disabled"       "Light Arrow Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_light_arrow_tower_Description"    "Upgrades this tower to a Light Arrow Tower.\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#E6E600'>Light</font>\nDAMAGE TYPE: <font color='#E6E600'>Light</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>快速</font>\n"
-        "DOTA_Tooltip_ability_item_upgrade_to_light_arrow_tower_disabled_Description"    "Upgrades this tower to a Light Arrow Tower.\n<font color='#F0BA36'>Requires: </font><font color='#E6E600'>Light</font>\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#E6E600'>Light</font>\nDAMAGE TYPE: <font color='#E6E600'>Light</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>快速</font>\n"
+        "DOTA_Tooltip_ability_item_upgrade_to_light_arrow_tower"                "光明箭塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_light_arrow_tower_disabled"       "光明箭塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_light_arrow_tower_Description"    "将这座防御塔升级为光明箭塔.\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#E6E600'>光明</font>\n伤害类型：<font color='#E6E600'>光明</font>\n伤害： <font color='#FFFFFF'>90</font>\n范围：<font color='#FFFFFF'>900</font>\n速度：<font color='#FFFFFF'>快速</font>\n"
+        "DOTA_Tooltip_ability_item_upgrade_to_light_arrow_tower_disabled_Description"    "将这座防御塔升级为光明箭塔.\n<font color='#F0BA36'>需要： </font><font color='#E6E600'>光明</font>\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#E6E600'>光明</font>\n伤害类型：<font color='#E6E600'>光明</font>\n伤害： <font color='#FFFFFF'>90</font>\n范围：<font color='#FFFFFF'>900</font>\n速度：<font color='#FFFFFF'>快速</font>\n"
 
-        "DOTA_Tooltip_ability_item_upgrade_to_light_cannon_tower"                   "Light Cannon Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_light_cannon_tower_Disabled"          "Light Cannon Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_light_cannon_tower_Description"       "Upgrades this tower to a Light Cannon Tower. Can also manually attack the ground.\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#E6E600'>Light</font>\nDAMAGE TYPE: <font color='#E6E600'>Light</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
-        "DOTA_Tooltip_ability_item_upgrade_to_light_cannon_tower_disabled_Description"       "Upgrades this tower to a Light Cannon Tower. Can also manually attack the ground.\n<font color='#F0BA36'>Requires: </font><font color='#E6E600'>Light</font>\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#E6E600'>Light</font>\nDAMAGE TYPE: <font color='#E6E600'>Light</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_light_cannon_tower"                   "光明炮塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_light_cannon_tower_Disabled"          "光明炮塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_light_cannon_tower_Description"       "将这座防御塔升级为光明炮塔. 可以手动对地面进行攻击。\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#E6E600'>光明</font>\n伤害类型：<font color='#E6E600'>光明</font> \n伤害： <font color='#FFFFFF'>105</font> \n范围：<font color='#FFFFFF'>550</font> \n速度：<font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100全额/200 半额</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_light_cannon_tower_disabled_Description"       "将这座防御塔升级为光明炮塔. 可以手动对地面进行攻击。\n<font color='#F0BA36'>需要： </font><font color='#E6E600'>光明</font>\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#E6E600'>光明</font>\n伤害类型：<font color='#E6E600'>光明</font> \n伤害： <font color='#FFFFFF'>105</font> \n范围：<font color='#FFFFFF'>550</font> \n速度：<font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100全额/200 半额</font>"
 
         "DOTA_Tooltip_ability_item_upgrade_to_focused_light_tower"      "专注的光明之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_light_tower_disabled"     "专注的光明之塔"
@@ -1478,16 +1529,16 @@
         //////////
         // Dark //
         //////////
-        "DOTA_Tooltip_ability_item_upgrade_to_dark_arrow_tower"                "Dark Arrow Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_dark_arrow_tower_disabled"       "Dark Arrow Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_dark_arrow_tower_Description"    "Upgrades this tower to a Dark Arrow Tower.\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#6C05B1'>Dark</font>\nDAMAGE TYPE: <font color='#6C05B1'>Dark</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>快速</font>\n"
-        "DOTA_Tooltip_ability_item_upgrade_to_dark_arrow_tower_disabled_Description"    "Upgrades this tower to a Dark Arrow Tower.\n<font color='#F0BA36'>Requires: </font><font color='#6C05B1'>Dark</font>\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#6C05B1'>Dark</font>\nDAMAGE TYPE: <font color='#6C05B1'>Dark</font>\nDAMAGE: <font color='#FFFFFF'>90</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>快速</font>\n"
+        "DOTA_Tooltip_ability_item_upgrade_to_dark_arrow_tower"                "黑暗箭塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_dark_arrow_tower_disabled"       "黑暗箭塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_dark_arrow_tower_Description"    "将这座防御塔升级为黑暗箭塔.\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#6C05B1'>黑暗</font>\n伤害类型：<font color='#6C05B1'>黑暗</font>\n伤害： <font color='#FFFFFF'>90</font>\n范围：<font color='#FFFFFF'>900</font>\n速度：<font color='#FFFFFF'>快速</font>\n"
+        "DOTA_Tooltip_ability_item_upgrade_to_dark_arrow_tower_disabled_Description"    "将这座防御塔升级为黑暗箭塔.\n<font color='#F0BA36'>需要： </font><font color='#6C05B1'>黑暗</font>\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#6C05B1'>黑暗</font>\n伤害类型：<font color='#6C05B1'>黑暗</font>\n伤害： <font color='#FFFFFF'>90</font>\n范围：<font color='#FFFFFF'>900</font>\n速度：<font color='#FFFFFF'>快速</font>\n"
 
-        "DOTA_Tooltip_ability_item_upgrade_to_dark_cannon_tower"                   "Dark Cannon Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_dark_cannon_tower_Disabled"          "Dark Cannon Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_dark_cannon_tower_Description"       "Upgrades this tower to a Dark Cannon Tower. Can also manually attack the ground.\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#6C05B1'>Dark</font>\nDAMAGE TYPE: <font color='#6C05B1'>Dark</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
-        "DOTA_Tooltip_ability_item_upgrade_to_dark_cannon_tower_disabled_Description"       "Upgrades this tower to a Dark Cannon Tower. Can also manually attack the ground.\n<font color='#F0BA36'>Requires: </font><font color='#6C05B1'>Dark</font>\n\nCOST: <font color='#F0BA36'>80金币</font>\nELEMENT: <font color='#6C05B1'>Dark</font>\nDAMAGE TYPE: <font color='#6C05B1'>Dark</font> \nDAMAGE: <font color='#FFFFFF'>105</font> \nRANGE: <font color='#FFFFFF'>550</font> \nSPEED: <font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
-
+        "DOTA_Tooltip_ability_item_upgrade_to_dark_cannon_tower"                   "黑暗炮塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_dark_cannon_tower_Disabled"          "黑暗炮塔"
+        "DOTA_Tooltip_ability_item_upgrade_to_dark_cannon_tower_Description"       "将这座防御塔升级为黑暗炮塔. 可以手动对地面进行攻击。\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#6C05B1'>黑暗</font>\n伤害类型：<font color='#6C05B1'>黑暗</font> \n伤害： <font color='#FFFFFF'>105</font> \n范围：<font color='#FFFFFF'>550</font> \n速度：<font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100全额/200 半额</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_dark_cannon_tower_disabled_Description"       "将这座防御塔升级为黑暗炮塔. 可以手动对地面进行攻击。\n<font color='#F0BA36'>需要： </font><font color='#6C05B1'>黑暗</font>\n\n价格：<font color='#F0BA36'>80金币</font>\n元素：<font color='#6C05B1'>黑暗</font>\n伤害类型：<font color='#6C05B1'>黑暗</font> \n伤害： <font color='#FFFFFF'>105</font> \n范围：<font color='#FFFFFF'>550</font> \n速度：<font color='#FFFFFF'>缓慢</font> \nAOE: <font color='#FFFFFF'>100全额/200 半额</font>"
+        
         "DOTA_Tooltip_ability_item_upgrade_to_focused_dark_tower"       "专注的黑暗之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_dark_tower_disabled"      "专注的黑暗之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_dark_tower_Description"       "将这座防御塔升级为专注的黑暗之塔.\n\n价格：<font color='#F0BA36'>575金币</font>\n元素：<font color='#6C05B1'>黑暗</font>\n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>1890</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>常规</font>"
