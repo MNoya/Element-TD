@@ -156,12 +156,8 @@ function Sandbox:SetLife(event)
     playerData.cheated = true
 
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-    if not hero:HasModifier("modifier_bonus_life") then
-        hero:AddNewModifier(hero, nil, "modifier_bonus_life", {})
-    end
-
     hero:CalculateStatBonus()
-    hero:SetHealth(value)
+    UpdatePlayerHealth(playerID)
    
     CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=playerData.health/hero:GetMaxHealth() * 100} )
 

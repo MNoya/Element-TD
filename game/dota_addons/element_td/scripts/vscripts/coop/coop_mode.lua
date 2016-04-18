@@ -5,8 +5,13 @@ CREEPS_PER_WAVE_COOP = 120 -- number of creeps in each wave
 CURRENT_WAVE_OBJECT = nil -- maybe should hold the WaveCoop 'object' of the wave that is currently active (can we ever have > 1 waves at once?)
 LEAK_POINTS = {[1]=5,[2]=4,[3]=6,[4]=2,[5]=1,[6]=3} -- Coop creeps leak at the opposite side from where they came
 
+COOP_HEALTH = 0
+COOP_LIFE_TOWER_KILLS = 0
+COOP_LIFE_TOWER_KILLS_TOTAL = 0
+
 -- entry point
 function CoopStart()
+    COOP_HEALTH = GameSettings:GetMapSetting("Lives");
     local initialBreakTime = GameSettings.length.PregameTime * 2
     StartBreakTimeCoop(initialBreakTime)
 end
@@ -87,6 +92,7 @@ function CreateMoveTimerForCreepCoop(creep, sector)
                     lives = lives * 2
                 end
 
+                COOP_HEALTH = COOP_HEALTH - 1
                 for _, playerID in pairs(playerIDs) do
                     ReduceLivesForPlayer(playerID, lives)
                 end
