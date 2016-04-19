@@ -304,12 +304,11 @@ function UpdatePlayerSpells(playerID)
 end
 
 -- health correction for gamemodes where max health > 50
-local maxHealth = nil;
 function UpdatePlayerHealth(playerID)
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     local playerData = GetPlayerData(playerID)
     if hero then
-        maxHealth = maxHealth or GameSettings:GetMapSetting("Lives")
+        local maxHealth = GameSettings:GetMapSetting("Lives")
 
         if playerData.health > maxHealth then
             hero:SetBaseMaxHealth(playerData.health)
