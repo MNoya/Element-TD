@@ -5110,9 +5110,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "270"
-	    "AttackDamageMax"           "270"
-	    "Damage"                    "270"  
+	    "AttackDamageMin"           "300"
+	    "AttackDamageMax"           "300"
+	    "Damage"                    "300"  
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
 	    "AttackRate"                "1.5"
@@ -5202,9 +5202,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "1900"
-	    "AttackDamageMax"           "1900"
-	    "Damage"                    "1900"  
+	    "AttackDamageMin"           "2100"
+	    "AttackDamageMax"           "2100"
+	    "Damage"                    "2100"  
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
 	    "AttackRate"                "1.5"
@@ -5289,9 +5289,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "133000"
-	    "AttackDamageMax"           "133000"
-	    "Damage"                    "133000"  
+	    "AttackDamageMin"           "147000"
+	    "AttackDamageMax"           "147000"
+	    "Damage"                    "147000"  
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
 	    "AttackRate"                "1.5"
@@ -5372,9 +5372,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "13300"
-	    "AttackDamageMax"           "13300"
-	    "Damage"                    "13300"  
+	    "AttackDamageMin"           "14700"
+	    "AttackDamageMax"           "14700"
+	    "Damage"                    "14700"  
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
 	    "AttackRate"                "1.5"
@@ -5826,9 +5826,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "10"
-	    "AttackDamageMax"           "10"
-	    "Damage"                    "10"  
+	    "AttackDamageMin"           "18"
+	    "AttackDamageMax"           "18"
+	    "Damage"                    "18"  
 	    "AOE_Full"                  "150"
 	    "AOE_Half"                  "300" 
 	    "AttackRange"               "550"
@@ -5919,9 +5919,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "70"
-	    "AttackDamageMax"           "70"
-	    "Damage"                    "70"  
+	    "AttackDamageMin"           "126"
+	    "AttackDamageMax"           "126"
+	    "Damage"                    "126"  
 	    "AOE_Full"                  "150"
 	    "AOE_Half"                  "300" 
 	    "AttackRange"               "550"
@@ -6006,9 +6006,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "4900"
-	    "AttackDamageMax"           "4900"
-	    "Damage"                    "4900"  
+	    "AttackDamageMin"           "8800"
+	    "AttackDamageMax"           "8800"
+	    "Damage"                    "8800"  
 	    "AOE_Full"                  "150"
 	    "AOE_Half"                  "300" 
 	    "AttackRange"               "550"
@@ -6090,9 +6090,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "490"
-	    "AttackDamageMax"           "490"
-	    "Damage"                    "490"  
+	    "AttackDamageMin"           "880"
+	    "AttackDamageMax"           "880"
+	    "Damage"                    "880"  
 	    "AOE_Full"                  "150"
 	    "AOE_Half"                  "300" 
 	    "AttackRange"               "550"
@@ -8241,9 +8241,9 @@
 	        "1"        "earth"
 	        "2"        "dark"
 	    }
-	    "Damage"        "42"
-	    "AttackDamageMin"        "42"
-	    "AttackDamageMax"        "42"
+	    "Damage"        "40"
+	    "AttackDamageMin"        "40"
+	    "AttackDamageMax"        "40"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
@@ -8334,9 +8334,9 @@
 	        "1"        "earth"
 	        "2"        "dark"
 	    }
-	    "Damage"        "210"
-	    "AttackDamageMin"        "210"
-	    "AttackDamageMax"        "210"
+	    "Damage"        "200"
+	    "AttackDamageMin"        "200"
+	    "AttackDamageMax"        "200"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
@@ -8423,9 +8423,9 @@
 	        "1"        "earth"
 	        "2"        "dark"
 	    }
-	    "Damage"        "1050"
-	    "AttackDamageMin"        "1050"
-	    "AttackDamageMax"        "1050"
+	    "Damage"        "1000"
+	    "AttackDamageMin"        "1000"
+	    "AttackDamageMax"        "1000"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
@@ -8495,9 +8495,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "420"
-	    "AttackDamageMax"           "420"
-	    "Damage"                    "420"
+	    "AttackDamageMin"           "450"
+	    "AttackDamageMax"           "450"
+	    "Damage"                    "450"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "1"
@@ -8592,9 +8592,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "2100"
-	    "AttackDamageMax"           "2100"
-	    "Damage"                    "2100"
+	    "AttackDamageMin"           "2250"
+	    "AttackDamageMax"           "2250"
+	    "Damage"                    "2250"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "1"
@@ -8679,9 +8679,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "10500"
-	    "AttackDamageMax"           "10500"
-	    "Damage"                    "10500"
+	    "AttackDamageMin"           "11250"
+	    "AttackDamageMax"           "11250"
+	    "Damage"                    "11250"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "1"
@@ -11206,9 +11206,9 @@
 	        "2"        "light"
 	        "3"        "nature"
 	    }
-	    "Damage"        "625"
-	    "AttackDamageMin"        "625"
-	    "AttackDamageMax"        "625"
+	    "Damage"        "575"
+	    "AttackDamageMin"        "575"
+	    "AttackDamageMax"        "575"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "EnchantmentTower"
 	    "TowerType"        "Normal"
@@ -11300,9 +11300,9 @@
 	        "2"        "light"
 	        "3"        "nature"
 	    }
-	    "Damage"        "3125"
-	    "AttackDamageMin"        "3125"
-	    "AttackDamageMax"        "3125"
+	    "Damage"        "2875"
+	    "AttackDamageMin"        "2875"
+	    "AttackDamageMax"        "2875"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "EnchantmentTower"
 	    "TowerType"        "Normal"
@@ -13198,9 +13198,9 @@
 	        "2"        "earth"
 	        "3"        "water"
 	    }
-	    "Damage"        "1100"
-	    "AttackDamageMin"        "1100"
-	    "AttackDamageMax"        "1100"
+	    "Damage"        "1000"
+	    "AttackDamageMin"        "1000"
+	    "AttackDamageMax"        "1000"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "MuckTower"
 	    "TowerType"        "Normal"
@@ -13290,9 +13290,9 @@
 	        "2"        "earth"
 	        "3"        "water"
 	    }
-	    "Damage"        "5500"
-	    "AttackDamageMin"        "5500"
-	    "AttackDamageMax"        "5500"
+	    "Damage"        "5000"
+	    "AttackDamageMin"        "5000"
+	    "AttackDamageMax"        "5000"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "MuckTower"
 	    "TowerType"        "Normal"
@@ -13709,9 +13709,9 @@
 	        "2"        "light"
 	        "3"        "earth"
 	    }
-	    "Damage"        "2000"
-	    "AttackDamageMin"        "2000"
-	    "AttackDamageMax"        "2000"
+	    "Damage"        "1800"
+	    "AttackDamageMin"        "1800"
+	    "AttackDamageMax"        "1800"
 	    "DamageType"        "water"
 	    "ScriptClass"        "PolarTower"
 	    "TowerType"        "Normal"
@@ -13803,9 +13803,9 @@
 	        "2"        "light"
 	        "3"        "earth"
 	    }
-	    "Damage"        "10000"
-	    "AttackDamageMin"        "10000"
-	    "AttackDamageMax"        "10000"
+	    "Damage"        "9000"
+	    "AttackDamageMin"        "9000"
+	    "AttackDamageMax"        "9000"
 	    "DamageType"        "water"
 	    "ScriptClass"        "PolarTower"
 	    "TowerType"        "Normal"

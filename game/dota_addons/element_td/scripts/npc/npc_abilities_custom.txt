@@ -2888,7 +2888,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"150 750"
+				"dot"					"140 700"
 			}
 			"03"
 			{
@@ -2973,7 +2973,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_FLOAT"
-	            "damage_per_second"     "3 21 150 1500"
+	            "damage_per_second"     "6 42 300 3000"
 	        }
 	        "02"
 	        {
@@ -3234,7 +3234,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"42 210 1050"
+				"damage"				"40 200 1000"
 			}
 			"02"
 			{
@@ -3458,7 +3458,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"420 2100 10500"
+				"splash_damage"		"450 2250 11250"
 			}
 			"03"
 			{
@@ -3693,7 +3693,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"10 30"
+				"damage_taken"			"8 24"
 			}
 			"02"
 			{
@@ -3762,7 +3762,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_reduction_cap"	"70"
+				"damage_reduction_cap"	"50"
 			}
 		}
 	}
@@ -4178,7 +4178,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 1500"
+				"damage"			"275 1375"
 			}
 			"02"
 			{
@@ -4691,7 +4691,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps"					"120 600"
+				"dps"					"110 550"
 			}
 			"04"
 			{
