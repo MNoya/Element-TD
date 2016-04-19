@@ -183,5 +183,6 @@ function ShowFirstHighscoreMessage(playerID)
     local particle = ParticleManager:CreateParticleForPlayer(particleName, PATTACH_EYES_FOLLOW, PlayerResource:GetSelectedHeroEntity(playerID), PlayerResource:GetPlayer(playerID))
     Notifications:Top(playerID, {text = "#etd_highscore_new", class = "NewHighscore", duration = 5})
 
-    GameRules:SendCustomMessage("#etd_first_highscore", 0, playerID)
+    Notifications:ClearTop(playerID)
+    GameRules:SendCustomMessage("#etd_highscore_new", 0, playerID)
 end
