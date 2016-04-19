@@ -43,25 +43,31 @@ function SpawnWaveCoop()
     CURRENT_WAVE_OBJECT:SetOnCompletedCallback(function()   
         print("[COOP] Completed wave "..COOP_WAVE)
 
-        COOP_WAVE = COOP_WAVE + 1
+        if COOP_WAVE < WAVE_COUNT then
+            COOP_WAVE = COOP_WAVE + 1
+        end
+
         EmitGlobalSound("ui.npe_objective_complete")
         InterestManager:CompletedWave(COOP_WAVE)
 
         -- Boss Wave completed starts the new one with no breaktime
         if CURRENT_BOSS_WAVE > 0 then
             print("[COOP] Completed boss wave "..CURRENT_BOSS_WAVE)
+            CURRENT_BOSS_WAVE = CURRENT_BOSS_WAVE + 1
 
-            --TODO: New boss wave, score
+            ForAllPlayerIDs(function(playerID)
+                ShowBossWaveMessage(playerID, CURRENT_BOSS_WAVE)
+                UpdateWaveInfo(playerID, COOP_WAVE)
+            end)
+
+            SpawnWaveCoop() 
             return
         end
-
-        -- TODO: Cleared game?
  
         -- Start the breaktime for the next wave
         StartBreakTimeCoop(GameSettings:GetGlobalDifficulty():GetWaveBreakTime(COOP_WAVE))
     end)
 
-    -- TODO: boss waves, co-op interest
     CURRENT_WAVE_OBJECT:SpawnWave()
 end
 
@@ -81,11 +87,9 @@ function CreateMoveTimerForCreepCoop(creep, sector)
 
                 -- Boss Wave leaks = 3 lives
                 local lives = 1
-                --[[ TODO
-                if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then
+                if CURRENT_BOSS_WAVE > 0 then
                     lives = 3
                 end
-                ]]--
 
                 -- Bulky creeps count as 2
                 if creep:HasAbility("creep_ability_bulky") then
