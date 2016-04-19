@@ -245,13 +245,17 @@ function ScoringObject:GetGameCleared()
 	local score = self.totalScore
 	local values = {}
 	local totalScore = 0
-	local networthBonus = self:GetNetworthBonus()
+	local networthBonus = self:GetNetworthBonus() -- Networth bonus removed from Classic in 1.6
 	local endSpeedBonus = self:GetEndSpeedBonus(playerData.clearTime)
 	local frogKills = 0 --Total
 
-	totalScore = math.ceil(score * (1 + networthBonus) * (1 + endSpeedBonus))
-
-	return { networthBonus = networthBonus, frogKills = frogKills, endSpeedBonus = endSpeedBonus, totalScore = totalScore }
+	if EXPRESS_MODE then
+		totalScore = math.ceil(score * (1 + networthBonus) * (1 + endSpeedBonus))
+		return { networthBonus = networthBonus, frogKills = frogKills, endSpeedBonus = endSpeedBonus, totalScore = totalScore }
+	else
+		totalScore = math.ceil(score * (1 + endSpeedBonus))
+		return { frogKills = frogKills, endSpeedBonus = endSpeedBonus, totalScore = totalScore }
+	end
 end
 
 -- Total Score at game end in classic
