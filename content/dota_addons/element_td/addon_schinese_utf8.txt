@@ -518,7 +518,7 @@
         "DOTA_Tooltip_ability_creep_ability_heal_aoe"       "作用范围："
         "DOTA_Tooltip_ability_creep_ability_fast"       "急速"
         "DOTA_Tooltip_ability_creep_ability_fast_Description"       "小兵出生后的某个随机时间将会以双倍速度移动，持续一段时间。此后速度还原并重新以固定幅度逐步提升至最大速度。"
-        "DOTA_Tooltip_ability_creep_ability_fast_fast_speed"                              "最快速度："
+        "DOTA_Tooltip_ability_creep_ability_fast_fast_speed_pct"                              "%最快速度："
         "DOTA_Tooltip_ability_creep_ability_fast_duration"      "持续时间："
         "DOTA_Tooltip_ability_creep_ability_fast_interval_tooltip"      "间隔："
         "DOTA_Tooltip_creep_haste_modifier"                                               "急速"

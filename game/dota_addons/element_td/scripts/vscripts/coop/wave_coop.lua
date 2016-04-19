@@ -57,7 +57,7 @@ function WaveCoop:SpawnWave()
 	
 	local difficulty = GameSettings:GetGlobalDifficulty()
 	local entitiesSpawned = 0
-	local time_between_spawns = 0.65
+	local time_between_spawns = 0.6
 	local creepBossSequence = 0
 	
 	self.startTime = GameRules:GetGameTime() + time_between_spawns
