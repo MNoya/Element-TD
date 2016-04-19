@@ -71,8 +71,7 @@ function WindstormTower:SpawnTornado(keys)
                 DamageEntity(v, self.tower, damage)
             end    
 
-            if not (pos.x > bounds.left + 400 and pos.x < bounds.right - 400 and pos.y < bounds.top - 400 and pos.y > bounds.bottom + 400) then
-                print("Tornado being deleted for leaving sector.")
+            if not COOP_MAP and not (pos.x > bounds.left + 400 and pos.x < bounds.right - 400 and pos.y < bounds.top - 400 and pos.y > bounds.bottom + 400) then
                 tornado:RemoveModifierByName("modifier_tornado_aura")
                 tornado:ForceKill(true)
                 return
