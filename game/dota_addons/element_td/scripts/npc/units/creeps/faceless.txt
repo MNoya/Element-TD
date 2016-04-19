@@ -39,10 +39,10 @@
         "AttachWearables" // The Tentacular Timelord Set
         {
             "1" { "ItemDef" "5868" } // Primal Form of the Tentacular Timelord
-            "2" { "ItemDef" "5898" } // Mace of the Tentacular Timelord
-            "3" { "ItemDef" "5861" } // Bracers of the Tentacular Timelord
-            "4" { "ItemDef" "5896" } // Armor of the Tentacular Timelord
-            "5" { "ItemDef" "5897" } // Skirt of the Tentacular Timelord
+            //"2" { "ItemDef" "15" } // Faceless Void's Weapon
+            "3" { "ItemDef" "92" } // Faceless Void's Bracer
+            "4" { "ItemDef" "91" } // Faceless Void's Shoulder
+            "5" { "ItemDef" "93" } // Faceless Void's Belt
         }
     }
 }

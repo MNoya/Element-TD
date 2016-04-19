@@ -53,7 +53,7 @@
 		{
 			_class = "C_OP_InterpolateRadius"
 			m_flBias = 0.550000
-			m_flEndScale = 2.000000
+			m_flEndScale = 1.500000
 		},
 	]
 	m_Initializers =
@@ -65,8 +65,8 @@
 		},
 		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMin = 120.000000
-			m_flRadiusMax = 160.000000
+			m_flRadiusMin = 80.000000
+			m_flRadiusMax = 100.000000
 		},
 		{
 			_class = "C_INIT_RandomAlpha"
@@ -98,7 +98,7 @@
 		{
 			_class = "C_INIT_CreateSpiralSphere"
 			m_bUseParticleCount = true
-			m_flInitialSpeedMax = 664.000000
+			m_flInitialSpeedMax = 500.000000
 			m_flInitialSpeedMin = 364.000000
 			m_nDensity = 2
 			m_flInitialRadius = 16.000000

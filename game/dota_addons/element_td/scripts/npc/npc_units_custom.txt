@@ -768,12 +768,12 @@
 	
 	    "Creature"
 	    {
-	        "AttachWearables" // Warcog
+	        "AttachWearables" // Default npc_dota_hero_rattletrap
 	        {
-	            "1" { "ItemDef" "7123" } // Warcog Metal Mask
-	            "2" { "ItemDef" "5090" } // Warcog Body Armor
-	            "3" { "ItemDef" "7122" } // Warcog Trench Digger
-	            "4" { "ItemDef" "7126" } // Warcog Blaster Shell
+	            "1" { "ItemDef" "231" } // Clockwerk's Rocket
+	            //"2" { "ItemDef" "446" } // Clockwerk's Weapon
+	            "3" { "ItemDef" "485" } // Clockwerk's Head
+	            "4" { "ItemDef" "484" } // Clockwerk's Armor
 	        }
 	    }
 	}
@@ -1143,10 +1143,10 @@
 	        "AttachWearables" // The Tentacular Timelord Set
 	        {
 	            "1" { "ItemDef" "5868" } // Primal Form of the Tentacular Timelord
-	            "2" { "ItemDef" "5898" } // Mace of the Tentacular Timelord
-	            "3" { "ItemDef" "5861" } // Bracers of the Tentacular Timelord
-	            "4" { "ItemDef" "5896" } // Armor of the Tentacular Timelord
-	            "5" { "ItemDef" "5897" } // Skirt of the Tentacular Timelord
+	            //"2" { "ItemDef" "15" } // Faceless Void's Weapon
+	            "3" { "ItemDef" "92" } // Faceless Void's Bracer
+	            "4" { "ItemDef" "91" } // Faceless Void's Shoulder
+	            "5" { "ItemDef" "93" } // Faceless Void's Belt
 	        }
 	    }
 	}
@@ -2041,12 +2041,12 @@
 	    "Ability2"        "creep_ability_time_lapse"
 	    "Creature"
 	    {
-	        "AttachWearables" // Vengeance of the Sunwarrior
+	        "AttachWearables" // Default npc_dota_hero_phantom_lancer
 	        {
-	            "1" { "ItemDef" "6617" } // Belt of the Sunwarrior
-	            "2" { "ItemDef" "6619" } // Bracers of the Sunwarrior
-	            "3" { "ItemDef" "6621" } // Mane of the Sunwarrior
-	            "4" { "ItemDef" "6620" } // Lance of the Sunwarrior
+	            "1" { "ItemDef" "132" } // Phantom Lancer's Weapon
+	            //"2" { "ItemDef" "130" } // Phantom Lancer's Shoulderpad
+	            "3" { "ItemDef" "128" } // Phantom Lancer's Belt
+	            //"4" { "ItemDef" "129" } // Phantom Lancer's Gauntlet
 	            "5" { "ItemDef" "127" } // Phantom Lancer's Head
 	        }
 	    }
@@ -2223,27 +2223,13 @@
 	    "StatusManaRegen"        "0"
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
-	    "Model"        "models/heroes/spirit_breaker/spirit_breaker.vmdl"
-	    "ModelScale"        "0.9"
+	    "Model"        "models/courier/drodo/drodo.vmdl"
+	    "ModelScale"        "1.7"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepTemporal"
 	    "Ability1"        "water_armor"
 	    "Ability2"        "creep_ability_time_lapse"
-	
-	    "Creature"
-	    {
-	        "AttachWearables" // Default npc_dota_hero_spirit_breaker
-	        {
-	            "1" { "ItemDef" "112" } // Spirit Breaker's Shoulder Armor
-	            "2" { "ItemDef" "106" } // Spirit Breaker's Head
-	            "3" { "ItemDef" "114" } // Spirit Breaker's Tail
-	            "4" { "ItemDef" "115" } // Spirit Breaker's Bracers
-	            "5" { "ItemDef" "113" } // Spirit Breaker's Mace
-	            "6" { "ItemDef" "116" } // Spirit Breaker's Belt
-	            "7" { "ItemDef" "111" } // Spirit Breaker's Horns
-	        }
-	    }
 	}
 	"shifting_treant"
 	{

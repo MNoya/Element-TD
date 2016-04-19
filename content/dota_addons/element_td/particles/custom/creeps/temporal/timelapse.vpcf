@@ -127,6 +127,7 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/creeps/temporal/timelapse_d.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/creeps/temporal/timelapse_e.vpcf"
