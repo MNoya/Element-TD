@@ -56,6 +56,13 @@
     height: 100%;
 }
 
+.ScoreboardTeamWrapper.Coop
+{
+    width: 260px;
+    height: 100%;
+    margin-left: 430px;
+}
+
 .ScoreboardTeamWrapper #_dynamic_team_2 
 {
     position: 50% 0px 0px;
@@ -148,6 +155,12 @@
 .ScoreboardPlayerWrapper
 {
     width: 100%;
+    height: 100%;
+}
+
+.ScoreboardPlayerWrapper.Coop
+{
+    width: 25%;
     height: 100%;
 }
 

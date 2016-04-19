@@ -48,6 +48,7 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
         playerPanel.BLoadLayout( scoreboardConfig.playerXmlName, false, false );
     }
 
+    playerPanel.SetHasClass("Coop", Game.IsCoop())
     playerPanel.SetHasClass( "is_local_player", ( playerId == Game.GetLocalPlayerID() ) );
     
     var ultStateOrTime = PlayerUltimateStateOrTime_t.PLAYER_ULTIMATE_STATE_HIDDEN; // values > 0 mean on cooldown for that many seconds
@@ -355,6 +356,9 @@ function _ScoreboardUpdater_UpdateTeamPanel( scoreboardConfig, containerPanel, t
 
     var teamPanelName = "_dynamic_team_" + teamId;
     var teamPanel = $( "#"+teamPanelName );
+
+    teamPanel.SetHasClass("Coop", Game.IsCoop())
+
     if ( teamPanel === null )
     {
         return;
