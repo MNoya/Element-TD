@@ -3032,89 +3032,115 @@
 	//=================================================================================================================
 	"flame_tower_sunburn"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
 	
-		"BaseClass"						"ability_datadriven"											
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"	
-		"AbilityTextureName"			"towers/flame"
-		"MaxLevel"						"3"
-		"AbilityCastPoint"				"0"
+	    "BaseClass"                     "ability_datadriven"                                            
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"   
+	    "AbilityTextureName"            "towers/flame"
+	    "MaxLevel"                      "3"
+	    "AbilityCastPoint"              "0"
 	
-		"Modifiers"
-		{
-			"modifier_sunburn_passive"
-			{
-				"Passive"		"1"
-				"IsHidden"		"1"
+	    "Modifiers"
+	    {
+	        "modifier_sunburn_passive"
+	        {
+	            "Passive"       "1"
+	            "IsHidden"      "1"
 	
-				"OnAttack"
-				{
-					"RunScript"
-					{
-						"Target"			"TARGET"
-						"ScriptFile"		"towers/towerevents.lua"
-						"Function"			"TriggerEvent"
-						"Event"				"OnAttack"
-					}
-				}
+	            "OnAttack"
+	            {
+	                "RunScript"
+	                {
+	                    "Target"            "TARGET"
+	                    "ScriptFile"        "towers/towerevents.lua"
+	                    "Function"          "TriggerEvent"
+	                    "Event"             "OnAttack"
+	                }
+	            }
 	
-				"OnAttackLanded"
-				{
-					"ApplyModifier"
-					{
-						"Target" 			"TARGET"
-						"ModifierName"		"modifier_sunburn"
-					}
-				}
-			}
+	            "OnAttackLanded"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "Target"            "TARGET"
+	                    "ModifierName"      "modifier_sunburn"
+	                }
+	            }
+	        }
 	
-			"modifier_sunburn"
-			{
-				"Duration"		"%duration"
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"ThinkInterval"	"1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"Target"			"TARGET"
-						"ScriptFile"		"towers/towerevents.lua"
-						"Function"			"TriggerEvent"
-						"Event"				"DealBurnDamage"
-					}
-				}
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"Target" 			"TARGET"
-						"EffectName"		"particles/units/heroes/hero_ember_spirit/ember_spirit_flameGuard_column.vpcf"
-						"EffectAttachType"	"follow_origin"
-					}
-				}
-			}
-		}
+	        "modifier_sunburn"
+	        {
+	            "Duration"      "%duration"
+	            "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+	            "ThinkInterval" "1"
+	            "IsHidden"      "1"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "Target"            "TARGET"
+	                    "ScriptFile"        "towers/towerevents.lua"
+	                    "Function"          "TriggerEvent"
+	                    "Event"             "DealBurnDamage"
+	                }
+	            }
+	            "OnCreated"
+	            {
+	                "AttachEffect"
+	                {
+	                    "Target"            "TARGET"
+	                    "EffectName"        "particles/units/heroes/hero_ember_spirit/ember_spirit_flameGuard_column.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                }
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"45 225 1125"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aoe"					"200"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"5"
-			}
-		}
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/modifiers.lua"
+	                    "Function"      "StackModifier"
+	                    "ModifierName"  "modifier_sunburn"
+	                    "ModifierStack" "modifier_sunburn_stacks"
+	                }
+	            }
+	
+	            "OnDestroy"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/modifiers.lua"
+	                    "Function"      "StackModifier"
+	                    "ModifierName"  "modifier_sunburn"
+	                    "ModifierStack" "modifier_sunburn_stacks"
+	                }
+	            }
+	        }
+	
+	        "modifier_sunburn_stacks"
+	        {
+	            "TextureName"   "towers/flame"
+	            "IsDebuff"      "1"
+	        }
+	    }
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "damage"                "45 225 1125"
+	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "aoe"                   "200"
+	        }
+	        "03"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "duration"              "5"
+	        }
+	    }
 	}
 	//============================================================//
 	// Flooding Tower: Flood

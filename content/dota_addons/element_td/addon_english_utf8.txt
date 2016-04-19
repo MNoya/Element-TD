@@ -635,8 +635,8 @@
         "DOTA_Tooltip_ability_electricity_tower_arc_lightning_passive_bounce_range"       "BOUNCE RANGE:"
         "DOTA_Tooltip_ability_electricity_tower_arc_lightning_passive_bounce_decrease"    "BOUNCE DECREASE:"
         
-        "DOTA_Tooltip_modifier_sunburn"     "Sunburn"
-        "DOTA_Tooltip_modifier_sunburn_Description"     "Taking damage over time and burning those around you."
+        "DOTA_Tooltip_modifier_sunburn_stacks"     "Sunburn"
+        "DOTA_Tooltip_modifier_sunburn_stacks_Description"     "Taking damage over time and burning those around you."
         "DOTA_Tooltip_ability_flame_tower_sunburn"      "Sunburn"
         "DOTA_Tooltip_ability_flame_tower_sunburn_Description"      "Each attack applies a burn to the target that lasts a short duration. The burn does damage to the target and in an AOE around it each second. The burn stacks.\nIf the creep dies the buff persists at death location for remainder of duration."
         "DOTA_Tooltip_ability_flame_tower_sunburn_damage"       "DAMAGE:"

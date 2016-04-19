@@ -683,8 +683,8 @@
         "DOTA_Tooltip_ability_electricity_tower_arc_lightning_passive_jump_count"       "跳跃次数："
         "DOTA_Tooltip_ability_electricity_tower_arc_lightning_passive_bounce_range"       "范围加成："
 
-        "DOTA_Tooltip_modifier_sunburn"     "炎阳炙烤"
-        "DOTA_Tooltip_modifier_sunburn_Description"     "持续受到伤害，同时灼伤你附近的小兵。"
+        "DOTA_Tooltip_modifier_sunburn_stacks"     "炎阳炙烤"
+        "DOTA_Tooltip_modifier_sunburn_stacks_Description"     "持续受到伤害，同时灼伤你附近的小兵。"
         "DOTA_Tooltip_ability_flame_tower_sunburn"      "炎阳炙烤"
         "DOTA_Tooltip_ability_flame_tower_sunburn_Description"      "每次攻击都会灼伤目标，使其短时间内持续受到伤害。同时会对其周围的敌人造成伤害。灼烧伤害可叠加。\n如果敌人在灼烧效果期间死亡，灼烧效果将在其死亡位置继续到持续时间结束。"
         "DOTA_Tooltip_ability_flame_tower_sunburn_damage"       "伤害："
