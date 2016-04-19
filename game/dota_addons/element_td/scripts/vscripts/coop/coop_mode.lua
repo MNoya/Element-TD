@@ -146,9 +146,6 @@ function StartBreakTimeCoop(breakTime)
         local playerData = GetPlayerData(playerID)
 
         ShowWaveBreakTimeMessage(playerID, COOP_WAVE, breakTime, msgTime)
-        if hero then 
-            hero:RemoveModifierByName("modifier_silence")
-        end
 
         if PlayerIsAlive(playerID) then
 
@@ -173,9 +170,8 @@ function StartBreakTimeCoop(breakTime)
                         -- Gold bonus for Pure Essence randoming (removed in 1.5)
                         -- GivePureEssenceGoldBonus(playerID)
                     else
-                        -- TODO: no elementals in co-op mode??
                         SendEssenceMessage(playerID, "#etd_random_elemental")
-                        --SummonElemental({caster = playerData.summoner, Elemental = element .. "_elemental"})
+                        SummonElemental({caster = playerData.summoner, Elemental = element .. "_elemental"})
                     end
                 else
                     Log:info("Giving 1 lumber to " .. playerData.name)
