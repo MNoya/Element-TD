@@ -569,7 +569,7 @@ function ElementTD:OnEntityKilled(keys)
     local entity = EntIndexToHScript(index)
     local killer = EntIndexToHScript(keys.entindex_attacker)
     local playerID = killer:GetPlayerOwnerID()
-    local playerData = GetPlayerData(entity.playerID)
+    local playerData = GetPlayerData(entity.playerID) or GetPlayerData(playerID)
 
     if playerData and playerData.health == 0 then
         return
