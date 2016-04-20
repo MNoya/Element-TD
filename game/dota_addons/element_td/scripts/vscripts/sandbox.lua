@@ -80,9 +80,9 @@ function Sandbox:FreeTowers(event)
 
     ShowSandboxToggleCommand(playerID, "#sandbox_free_towers", state)
 
-    -- Set to 10k gold
+    -- Set to 20k gold
     if state == true then
-        SetCustomGold(playerID, math.max(11000, PlayerResource:GetGold(playerID)))
+        SetCustomGold(playerID, math.max(20000, PlayerResource:GetGold(playerID)))
     end
 
     playerData.freeTowers = state
