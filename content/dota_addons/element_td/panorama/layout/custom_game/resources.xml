@@ -9,6 +9,7 @@
   <Panel hittest="false" class="BaseHud">
     <Panel hittest="false" id="MinimapOverlay">
       <Label hittest="false" id='Version' text=""/>
+      <Label hittest="false" id='Coop' class="Hide" text="Coop"/>
       <Image hittest="false" id="elementTD"/>
       <Image hittest="false" id="elementTDGlow"/>
     </Panel>
