@@ -824,9 +824,8 @@
         "DOTA_Tooltip_modifier_acid_attack_dot_stacks_Description"                   "Taking damage every second."
         
         "DOTA_Tooltip_ability_polar_tower_frostbite"        "Frostbite"
-        "DOTA_Tooltip_ability_polar_tower_frostbite_Description"        "Temporarily burns away a portion of the target's current health. At the end of the duration, that portion will come back, but some of it will not return.\nA Frostbitten creeps cannot be targeted by Frostbite until the debuff wears off."
+        "DOTA_Tooltip_ability_polar_tower_frostbite_Description"        "Temporarily burns away a portion of the target's current health. At the end of the duration, that portion will come back.\nA Frostbitten creeps cannot be targeted by Frostbite until the debuff wears off."
         "DOTA_Tooltip_ability_polar_tower_frostbite_health_burn"        "%HEALTH BURN:"
-        "DOTA_Tooltip_ability_polar_tower_frostbite_damage_taken_pcnt"      "%DAMGE NOT RETURNED:"
         "DOTA_Tooltip_ability_polar_tower_frostbite_duration"       "DURATION:"
         "DOTA_Tooltip_modifier_polar_frostbite"     "Frostbitten"
         "DOTA_Tooltip_modifier_polar_frostbite_Description"     "Regaining health lost at the end of the duration."

@@ -870,7 +870,6 @@
         "DOTA_Tooltip_ability_polar_tower_frostbite"        "霜害"
         "DOTA_Tooltip_ability_polar_tower_frostbite_Description"        "暂时燃烧目标当前生命值的一部分。持续时间结束时，目标的生命值将恢复，但要扣除霜害作用期间所受伤害的一定百分比。\n正受到霜害负面效果的小兵无法称为霜害的施法目标。"
         "DOTA_Tooltip_ability_polar_tower_frostbite_health_burn"        "%燃烧生命："
-        "DOTA_Tooltip_ability_polar_tower_frostbite_damage_taken_pcnt"      "%所受伤害："
         "DOTA_Tooltip_ability_polar_tower_frostbite_duration"       "持续时间："
         "DOTA_Tooltip_modifier_polar_frostbite"     "霜害"
         "DOTA_Tooltip_modifier_polar_frostbite_Description"     "在持续时间结束后重获所失去的生命值。"

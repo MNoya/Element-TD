@@ -787,7 +787,6 @@
         "DOTA_Tooltip_ability_polar_tower_frostbite"        "Frostbite"
         "DOTA_Tooltip_ability_polar_tower_frostbite_Description"        "Постепенно выжигает часть текущего здоровья цели. Цель восстановит потерянное здоровье, по истечению действия эффекта, за иключением здоровья, потерянного под действием Frostbitten.\nA Frostbitten крипы не могут быть выбраны целью этого заклинания снова, пока эффект не спадёт."
         "DOTA_Tooltip_ability_polar_tower_frostbite_health_burn"        "%HEALTH BURN:"
-        "DOTA_Tooltip_ability_polar_tower_frostbite_damage_taken_pcnt"      "%DAMAGE TAKEN:"
         "DOTA_Tooltip_ability_polar_tower_frostbite_duration"       "DURATION:"
         "DOTA_Tooltip_modifier_polar_frostbite"     "Frostbitten"
         "DOTA_Tooltip_modifier_polar_frostbite_Description"     "Востановление здоровья исчезнет, по окончанию действия эффекта."
