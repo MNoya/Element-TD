@@ -161,7 +161,7 @@ function FinalizeVotes()
 	
 	local elements = GetRandomWinningChoice(VOTE_RESULTS.elements)
 	local endless = GetWinningChoice(VOTE_RESULTS.endless)
-	local order = GetWinningChoice(VOTE_RESULTS.order)
+	local order = COOP_MAP and "Chaos" or GetWinningChoice(VOTE_RESULTS.order)
 	local length = GetWinningChoice(VOTE_RESULTS.length)
 
 	if statCollection.doneInit then

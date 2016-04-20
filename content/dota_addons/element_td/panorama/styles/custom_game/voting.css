@@ -546,6 +546,11 @@ ToggleButton:enabled:hover Label, DOTASettingsCheckbox:enabled:hover Label
     height: 95px;
 }
 
+#Option_Random.Coop
+{
+    height: 60px;
+}
+
 #Option_Endless
 {
     //margin-top: 5px;

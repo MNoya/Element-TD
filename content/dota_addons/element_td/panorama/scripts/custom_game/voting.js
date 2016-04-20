@@ -456,6 +456,9 @@ function Setup()
 
     if (Game.IsCoop())
     {
+        $("#Option_Random").AddClass("Coop")
+        $("#samerandom").AddClass("Hidden")
+        $("#Option_Chaos").AddClass("Hidden")
         $("#Option_Endless").AddClass("Hidden")
         $("#Option_Express").AddClass("Hidden")
     }
