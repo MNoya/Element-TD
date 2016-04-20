@@ -44,10 +44,11 @@ function CreepTemporal:OnSpawned()
         self.position[time] = creep:GetAbsOrigin()
 
         -- Forget the old value
-        Timers:CreateTimer(self.backtrack_duration, function()
-            self.health[time] = nil
-            self.position[time] = nil
-        end)
+        local backtrack_target_time = tostring(tonumber(time)-self.backtrack_duration-1)
+        if self.health[backtrack_target_time] then
+            self.health[backtrack_target_time] = nil
+            self.position[backtrack_target_time] = nil
+        end
 
         return think_interval
     end)
