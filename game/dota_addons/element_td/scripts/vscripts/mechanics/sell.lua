@@ -8,7 +8,13 @@ function SellTowerCast(keys)
         local playerData = GetPlayerData(playerID)
         local goldCost = GetUnitKeyValue(tower.class, "TotalCost")
         local sellPercentage = tonumber(keys.SellAmount)
+        local towerName = tower:GetUnitName()
         local refundAmount = round(goldCost * sellPercentage)
+
+        -- Elemental Arrow/Cannon round up
+        if (towerName:match("arrow") or towerName:match("cannon")) and not towerName:match("basic") then
+            refundAmount = math.ceil(goldCost * sellPercentage)
+        end
 
         if tower.isClone then
             RemoveClone(tower)
