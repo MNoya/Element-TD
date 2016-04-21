@@ -101,7 +101,7 @@ function ScoringObject:UpdateScore( const , wave )
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Under 30 waves: ' .. scoreTable['under30'], '#FFFF00'} )
 	end
 	if scoreTable['networthBonus'] then
-		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Networth bonus: '.. GetPctString(scoreTable['networthBonus']), '#00FFFF'} )
+		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Networth bonus: '.. comma_value(scoreTable['networthBonus']), '#00FFFF'} )
 	end
 	if scoreTable['endSpeedBonus'] then
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;End Speed bonus: '.. GetPctString(scoreTable['endSpeedBonus']), '#FFFF00'} )
@@ -245,17 +245,12 @@ function ScoringObject:GetGameCleared()
 	local score = self.totalScore
 	local values = {}
 	local totalScore = 0
-	local networthBonus = self:GetNetworthBonus() -- Networth bonus removed from Classic in 1.6
+	local networthBonus = self:GetNetworthBonus()
 	local endSpeedBonus = self:GetEndSpeedBonus(playerData.clearTime)
 	local frogKills = 0 --Total
 
-	if EXPRESS_MODE then
-		totalScore = math.ceil(score * (1 + networthBonus) * (1 + endSpeedBonus))
-		return { networthBonus = networthBonus, frogKills = frogKills, endSpeedBonus = endSpeedBonus, totalScore = totalScore }
-	else
-		totalScore = math.ceil(score * (1 + endSpeedBonus))
-		return { frogKills = frogKills, endSpeedBonus = endSpeedBonus, totalScore = totalScore }
-	end
+	totalScore = math.ceil((score + networthBonus) * (1 + endSpeedBonus))
+	return { networthBonus = networthBonus, frogKills = frogKills, endSpeedBonus = endSpeedBonus, totalScore = totalScore }
 end
 
 -- Total Score at game end in classic
@@ -321,12 +316,12 @@ function ScoringObject:GetEndSpeedBonus(time)
 	end
 end
 
--- (Player Networth/Base Networth) - 1 based on Difficulty and Classic/Express
+-- Old formula: (Player Networth/Base Networth) - 1 based on Difficulty and Classic/Express
 function ScoringObject:GetNetworthBonus()
 	local playerNetworth = GetPlayerNetworth( self.playerID )
-	local baseWorth = GetPlayerDifficulty( self.playerID ):GetBaseWorth()
+	--local baseWorth = GetPlayerDifficulty( self.playerID ):GetBaseWorth()
 
-	return ((playerNetworth/baseWorth) - 1)
+	return (playerNetworth/2)
 end
 
 -- bonus per boss wave after the first one
