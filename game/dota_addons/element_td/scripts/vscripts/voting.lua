@@ -182,9 +182,14 @@ function FinalizeVotes()
 	print("Length: " .. length)
 	print("----------\n")
 
-	GameSettings:SetGameLength(length)
+	if COOP_MAP then 
+		GameSettings:SetGameLength("Coop") 
+		GameSettings:SetCreepOrder("Chaos")
+	else 
+		GameSettings:SetGameLength(length)
+		GameSettings:SetCreepOrder(order)
+	end
 	GameSettings:SetEndless(endless)
-	if COOP_MAP then GameSettings:SetCreepOrder("Chaos") else GameSettings:SetCreepOrder(order) end
 	GameSettings:SetElementOrder(elements)
 
 	-- If the Random vote didn't win, add the EnableRandom item

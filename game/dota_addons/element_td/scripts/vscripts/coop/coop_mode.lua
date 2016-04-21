@@ -11,7 +11,7 @@ COOP_LIFE_TOWER_KILLS_TOTAL = 0
 -- entry point
 function CoopStart()
     COOP_HEALTH = GameSettings:GetMapSetting("Lives");
-    local initialBreakTime = GameSettings.length.PregameTime * 2
+    local initialBreakTime = GameSettings.length.PregameTime
     StartBreakTimeCoop(initialBreakTime)
 end
 
