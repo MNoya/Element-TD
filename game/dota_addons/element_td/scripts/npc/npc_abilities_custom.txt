@@ -747,7 +747,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_pct"		"225"
+				"bonus_health_pct"		"200"
 			}
 		}
 	}
@@ -2622,12 +2622,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"210 1050 5250"
+				"damage"				"200 1000 5000"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_decrease"		"20"
+				"damage_decrease"		"15"
 			}
 			"04"
 			{
@@ -2637,7 +2637,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bounce_decrease"		"30"
+				"bounce_decrease"		"33"
 			}
 			"05"
 			{
@@ -3194,7 +3194,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"25 30"
+				"bonus_gold"			"25 35"
 			}
 		}
 	
