@@ -32,6 +32,10 @@ function loadWaveData(chaos)
     	   WAVE_CREEPS[i] = wavesKV[tostring(i)].Creep
         end
 
+        if COOP_MAP and wavesKV[tostring(i)].CreepCoop then
+            WAVE_CREEPS[i] = wavesKV[tostring(i)].CreepCoop
+        end
+
         -- Health formula: Last Wave HP * Multiplier
         if i==1 then
             WAVE_HEALTH[i] = baseHP

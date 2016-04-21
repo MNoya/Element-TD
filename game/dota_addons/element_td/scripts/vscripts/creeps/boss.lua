@@ -14,7 +14,19 @@ CreepBoss = createClass({
     },
 CreepBasic)
 
-CreepBossAbilities = {
+if COOP_MAP then
+    CreepBossAbilities = {
+        [1]="creep_ability_bulky",
+        [2]="creep_ability_heal",
+        [3]="creep_ability_vengeance",
+        [4]="creep_ability_undead",
+        [5]="creep_ability_regen",
+        [6]="creep_ability_fast",
+        [7]="creep_ability_mechanical",
+        [8]="creep_ability_time_lapse"
+    }
+else
+    CreepBossAbilities = {
         [1]="creep_ability_heal",
         [2]="creep_ability_vengeance",
         [3]="creep_ability_undead",
@@ -23,6 +35,7 @@ CreepBossAbilities = {
         [6]="creep_ability_mechanical",
         [7]="creep_ability_time_lapse"
     }
+end
 
 function CreepBoss:OnSpawned()
     local creep = self.creep
