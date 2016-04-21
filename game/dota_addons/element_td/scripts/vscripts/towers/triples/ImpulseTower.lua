@@ -65,7 +65,7 @@ function ImpulseTower:OnCreated()
     self.damageMult = GetAbilitySpecialValue("impulse_tower_impetus", "multiplier")[self.tower:GetLevel()]
     self.attackRange = tonumber(GetUnitKeyValue(self.towerClass, "AttackRange"))
     
-    self:OnAbilityToggle({target_type = TOWER_TARGETING_FARTHEST, keep_target = 1}) -- set default targeting mode
+    self:OnAbilityToggle({target_type = TOWER_TARGETING_FARTHEST}) -- set default targeting mode
     self.tower.toggled = false
 end
 
