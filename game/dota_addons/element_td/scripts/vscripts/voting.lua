@@ -161,7 +161,7 @@ function FinalizeVotes()
 	
 	local elements = GetRandomWinningChoice(VOTE_RESULTS.elements)
 	local endless = GetWinningChoice(VOTE_RESULTS.endless)
-	local order = COOP_MAP and "Chaos" or GetWinningChoice(VOTE_RESULTS.order)
+	local order = GetWinningChoice(VOTE_RESULTS.order)
 	local length = GetWinningChoice(VOTE_RESULTS.length)
 
 	if statCollection.doneInit then
@@ -184,7 +184,7 @@ function FinalizeVotes()
 
 	GameSettings:SetGameLength(length)
 	GameSettings:SetEndless(endless)
-	GameSettings:SetCreepOrder(order)
+	if COOP_MAP then GameSettings:SetCreepOrder("Chaos") else GameSettings:SetCreepOrder(order) end
 	GameSettings:SetElementOrder(elements)
 
 	-- If the Random vote didn't win, add the EnableRandom item
