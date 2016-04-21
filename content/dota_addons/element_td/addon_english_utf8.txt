@@ -317,6 +317,8 @@
         "zombie"                    "Zombie"
         "centaur_warchief"          "Centaur Warchief"
         "wolf"                      "Wolf"
+        "deathbringer"              "Deathbringer"
+        "storm_spirit"              "Storm Spirit"
 
         "clock_wanderer"            "Clock Wanderer"
         "earth_walker"              "Earth Walker"

@@ -3,7 +3,6 @@
 COOP_WAVE = 1 -- the current wave 
 CREEPS_PER_WAVE_COOP = 120 -- number of creeps in each wave
 CURRENT_WAVE_OBJECT = nil -- maybe should hold the WaveCoop 'object' of the wave that is currently active (can we ever have > 1 waves at once?)
-LEAK_POINTS = {[1]=5,[2]=4,[3]=6,[4]=2,[5]=1,[6]=3} -- Coop creeps leak at the opposite side from where they came
 
 COOP_HEALTH = 0
 COOP_LIFE_TOWER_KILLS = 0
@@ -107,8 +106,7 @@ function CreateMoveTimerForCreepCoop(creep, sector)
                 end)
 
                 creep.times_leaked = creep.times_leaked and creep.times_leaked + 1 or 1
-                local leak_position = creep.times_leaked % 2 == 0 and EntityStartLocations[sector] or EntityStartLocations[LEAK_POINTS[sector]]
-                FindClearSpaceForUnit(creep, leak_position, true)
+                FindClearSpaceForUnit(creep, EntityStartLocations[sector], true)
 
                 creep:SetForwardVector(Vector(0, -1, 0))
             end
