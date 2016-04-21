@@ -702,7 +702,7 @@
         "DOTA_Tooltip_ability_muck_tower_sludge_passive_slow"       "%MOVEMENT SLOW:"
         
         "DOTA_Tooltip_ability_gold_tower_arbitrage"     "Arbitrage"
-        "DOTA_Tooltip_ability_gold_tower_arbitrage_Description"     "Each creep killed by this tower grants bonus gold.\n\n<font color='#FFFFFF'>ATTACK TARGETING:</font> Lowest HP"
+        "DOTA_Tooltip_ability_gold_tower_arbitrage_Description"     "Each creep killed by this tower grants bonus gold.\n\nWhen toggled on, this tower targets has a <font color='#FFFFFF'>Closest Target</font> attack mode instead of the normal <font color='#FFFFFF'>Lowest HP</font>."
         "DOTA_Tooltip_ability_gold_tower_arbitrage_bonus_gold"      "%BONUS GOLD:"
         "DOTA_Tooltip_modifier_gold_tower_counter"                  "Gold Gained"
         "DOTA_Tooltip_modifier_gold_tower_counter_Description"      "Extra %dMODIFIER_PROPERTY_HEALTH_BONUS% gold earned."

@@ -3185,7 +3185,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 	
 		"BaseClass"						"ability_datadriven"											
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"towers/gold"
 		"MaxLevel"						"2"
 	
@@ -3197,6 +3197,29 @@
 				"bonus_gold"			"25 30"
 			}
 		}
+	
+	    "OnToggleOn"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "towers/towerevents.lua"
+	            "Function"          "TriggerEvent"
+	            "Event"				"OnAbilityToggle"
+	            "target_type"		"2" //TOWER_TARGETING_CLOSEST
+	            "keep_target"		"1"
+	        }
+	    }
+	
+		"OnToggleOff"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "towers/towerevents.lua"
+	            "Function"          "TriggerEvent"
+	            "Event"				"OnAbilityToggle"
+	            "target_type"		"1" //TOWER_TARGETING_LOWEST_HP
+	        }
+	    }
 	
 		"Modifiers"
 		{
