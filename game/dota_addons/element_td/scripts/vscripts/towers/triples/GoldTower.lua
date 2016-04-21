@@ -25,7 +25,7 @@ function GoldTower:OnAbilityToggle(keys)
     end
 
     self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {
-        target_type = keys.target_type, 
+        target_type = tonumber(keys.target_type), 
         keep_target = tonumber(keys.keep_target)
     })
 end
@@ -61,7 +61,6 @@ function GoldTower:GetUpgradeData()
 end
 
 function GoldTower:ApplyUpgradeData(data)
-    PrintTable(data)
     if data.gold_counter and data.gold_counter > 0 then
         self.tower.gold_counter = data.gold_counter
         self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_gold_tower_counter", {})
@@ -69,7 +68,6 @@ function GoldTower:ApplyUpgradeData(data)
     end
 
     if data.toggle then
-        print("TOGGLING ON UPGRADE")
         self.tower.toggled = true
         self.ability:ToggleAbility()
     end
@@ -79,10 +77,8 @@ function GoldTower:OnCreated()
     self.ability = AddAbility(self.tower, "gold_tower_arbitrage", self.tower:GetLevel())
     self.bonusGold = GetAbilitySpecialValue("gold_tower_arbitrage", "bonus_gold")[self.tower:GetLevel()]
 
-
     self:OnAbilityToggle({target_type = TOWER_TARGETING_LOWEST_HP}) -- set default targeting mode
     self.tower.toggled = false
-    print("Constructor called")
     self.tower.gold_counter = 0
 end
 

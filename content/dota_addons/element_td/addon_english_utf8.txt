@@ -704,7 +704,7 @@
         "DOTA_Tooltip_ability_muck_tower_sludge_passive_slow"       "%MOVEMENT SLOW:"
         
         "DOTA_Tooltip_ability_gold_tower_arbitrage"     "Arbitrage"
-        "DOTA_Tooltip_ability_gold_tower_arbitrage_Description"     "Each creep killed by this tower grants bonus gold.\n\nWhen toggled on, this tower targets has a <font color='#FFFFFF'>Closest Target</font> attack mode instead of the normal <font color='#FFFFFF'>Lowest HP</font>."
+        "DOTA_Tooltip_ability_gold_tower_arbitrage_Description"     "Each creep killed by this tower grants bonus gold.\n\nWhen toggled on, this tower has a <font color='#FFFFFF'>Closest Target</font> attack mode instead of the normal <font color='#FFFFFF'>Lowest HP</font>."
         "DOTA_Tooltip_ability_gold_tower_arbitrage_bonus_gold"      "%BONUS GOLD:"
         "DOTA_Tooltip_modifier_gold_tower_counter"                  "Gold Gained"
         "DOTA_Tooltip_modifier_gold_tower_counter_Description"      "Extra %dMODIFIER_PROPERTY_HEALTH_BONUS% gold earned."
@@ -760,7 +760,7 @@
         "DOTA_Tooltip_modifier_magic_attack_Description"        "Attacking multiple targets."
         
         "DOTA_Tooltip_ability_impulse_tower_impetus"        "Impetus"
-        "DOTA_Tooltip_ability_impulse_tower_impetus_Description"        "Gives strength to attacks, making them deal more damage based on the distance travelled. Damage is calculated as <font color='#FFFFFF'>(Distance/1000)*DamageMultiplier</font>.\n\n<font color='#FFFFFF'>ATTACK TARGETING:</font> Furthest Distance"
+        "DOTA_Tooltip_ability_impulse_tower_impetus_Description"        "Gives strength to attacks, making them deal more damage based on the distance travelled. Damage is calculated as <font color='#FFFFFF'>(Distance/1000)*DamageMultiplier</font>.\n\nWhen toggled on, this tower keeps attacking the same target instead of always choosing the <font color='#FFFFFF'>Furthest Target</font>."
         "DOTA_Tooltip_ability_impulse_tower_impetus_multiplier"     "DAMAGE MULTIPLIER:"
         
         "DOTA_Tooltip_ability_obliteration_tower_obliterate"        "Obliterate"

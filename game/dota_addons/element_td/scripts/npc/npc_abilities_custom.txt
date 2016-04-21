@@ -3627,10 +3627,33 @@
 	"impulse_tower_impetus"
 	{
 		"BaseClass"						"ability_datadriven"											
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"enchantress_impetus"
 		"AbilityCastRange"				"1500"
 		"MaxLevel"						"2"
+	
+		"OnToggleOn"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "towers/towerevents.lua"
+	            "Function"          "TriggerEvent"
+	            "Event"				"OnAbilityToggle"
+	            "target_type"		"4" //TOWER_TARGETING_FARTHEST
+	            "keep_target"		"1"
+	        }
+	    }
+	
+		"OnToggleOff"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "towers/towerevents.lua"
+	            "Function"          "TriggerEvent"
+	            "Event"				"OnAbilityToggle"
+	            "target_type"		"4" //TOWER_TARGETING_FARTHEST
+	        }
+	    }
 	
 		"Modifiers"
 		{
