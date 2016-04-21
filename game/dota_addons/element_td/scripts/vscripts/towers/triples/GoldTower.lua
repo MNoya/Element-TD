@@ -16,6 +16,10 @@ GoldTower = createClass({
 nil)
 
 function GoldTower:OnAbilityToggle(keys)
+    if self.tower:IsAlive() then
+        self.tower.toggled = not self.tower.toggled
+    end
+
     if self.tower:HasModifier("modifier_attack_targeting") then
         self.tower:RemoveModifierByName("modifier_attack_targeting")
     end
@@ -52,11 +56,12 @@ end
 function GoldTower:GetUpgradeData()
     return { 
         gold_counter = self.tower.gold_counter,
-        toggle = self.ability:GetToggleState() -- WHY DOES THIS ALWAYS RETURN FALSE? HELP
+        toggle = self.tower.toggled
     }
 end
 
 function GoldTower:ApplyUpgradeData(data)
+    PrintTable(data)
     if data.gold_counter and data.gold_counter > 0 then
         self.tower.gold_counter = data.gold_counter
         self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_gold_tower_counter", {})
@@ -64,6 +69,8 @@ function GoldTower:ApplyUpgradeData(data)
     end
 
     if data.toggle then
+        print("TOGGLING ON UPGRADE")
+        self.tower.toggled = true
         self.ability:ToggleAbility()
     end
 end
@@ -74,6 +81,8 @@ function GoldTower:OnCreated()
 
 
     self:OnAbilityToggle({target_type = TOWER_TARGETING_LOWEST_HP}) -- set default targeting mode
+    self.tower.toggled = false
+    print("Constructor called")
     self.tower.gold_counter = 0
 end
 
