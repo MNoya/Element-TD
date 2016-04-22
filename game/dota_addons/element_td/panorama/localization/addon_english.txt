@@ -337,6 +337,8 @@
         "leaderboard_express"   "Top 100 Express"
         "leaderboard_frogs"     "Top 100 Frog Kills"
         "leaderboard_refresh"   "Refresh"
-        "leaderboard_unreachable"   "Leadeboard not available."
+        "leaderboard_unreachable"   "Leaderboard not available."
+
+        "cooperative_map"       "Cooperative Map"
     }
 }

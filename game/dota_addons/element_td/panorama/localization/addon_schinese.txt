@@ -217,9 +217,10 @@
         "loading_screen_tip_15" "每个辅助防御塔可以对4个防御塔释放增益效果。"
         "loading_screen_tip_16" "有了更好的新点子？快来我们的网站交流！"
         "loading_screen_tip_17" "未雨绸缪才能不被钻空子。"
+        "loading_screen_next"   "敬请期待！"
 
         "loading_screen_changelog"   "最新的变化"
-        "loading_screen_change_text" "<h1>Version 1.5</h1><h2>全新功能</h2><b>• 元素箭塔及元素炮塔已经加入战场！</b><br>• 你现在可以购买自定义游戏门票，获得以下专属权益：<br>&nbsp;&nbsp;&nbsp;&nbsp; - 可以查看玩家档案，好友排行榜以及终身数据，<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;比赛历史及排位成就<br>&nbsp;&nbsp;&nbsp;&nbsp; - 6个元素主题的建造者模型<br>&nbsp;&nbsp;&nbsp;&nbsp; - 选择游戏模式时可以举双手！<br>&nbsp;&nbsp;&nbsp;&nbsp; - 玩家头像有特效<br><br><h2>平衡性调整</h2>• 调整了小兵的基础生命值及显示比例。<br>• 金币有所增加。<br>• 元素使的生命值增加。<br>• 移除纯净精华的赏金<br><br>• 防御塔的显示比例有所调整<br>• 辅助类防御塔伤害增加。<br><br><b>欢迎访问游戏论坛查看完整更新日志！</b><br>"
+        "loading_screen_change_text" "<h1>1.6版本</h1><h2>得分调整</h2>• 重做了净财产得分。<br>• 清怪速度的得分系数是原来的2倍。<br>• 增加了每一波全清的得分。<br><br><h2>平衡性调整</h2>• 稍微减少了赏金。<br>• 重新加入免费的纯净精华。<br>• 圣火技能重做。<br>• 重做了极地塔技能的后续特效。<br>• 对很多塔进行了平衡性微调。<br><br><b>去论坛查看全部的改动!</b><br>"
 
         "credits_title"         "致谢"
         "credits_developers"    "开发者"
@@ -273,5 +274,8 @@
         "leaderboard_express"   "快速模式 Top 100"
         "leaderboard_frogs"     "击杀冰蛙 Top 100"
         "leaderboard_refresh"   "刷新"
+        "leaderboard_unreachable"   "排行榜不可用。"
+
+        "cooperative_map"       "多人合作地图"
     }
 }

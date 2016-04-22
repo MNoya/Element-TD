@@ -313,6 +313,12 @@ b
     width: 500px;
 }
 
+.AspectRatio4x3 #Promote
+{
+    margin-top: 500px;
+    margin-left: -450px;
+}
+
 #PromoteTitle
 {
     text-align: center;
@@ -328,4 +334,18 @@ b
     box-shadow: #88888840 0px 0px 40px 0px;
     width: 450px;
     height: 300px;
+}
+
+#CoopTitle
+{
+    align: center bottom;
+    text-align: center;
+    font-weight: bold;
+    color: #FFF;
+    font-size: 35px;
+    text-transform: uppercase;
+    text-shadow: 0 0 4px 4.0 #444444;
+    font-family: "Goudy Trajan Medium";
+    letter-spacing: 3px;
+    margin-bottom: 20px;
 }
