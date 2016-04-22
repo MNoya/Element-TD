@@ -21,9 +21,15 @@
             <Image id="seq_fg" class="SeqBg" src="file://{images}/custom_game/loading_screen/shadow_circle.png" />
             <Label id="Tip" text=""/>
 
-            <Panel id="Changelog">
-                <Label id="ChangelogTitle" text="#loading_screen_changelog"/>
-                <Label id="ChangelogText" text="#loading_screen_change_text" html="true"/>
+            <Panel id="Content">
+                <Panel id="Changelog">
+                    <Label id="ChangelogTitle" class="Title" text="#loading_screen_changelog"/>
+                    <Label id="ChangelogText" text="#loading_screen_change_text" html="true"/>
+                </Panel>
+                <Panel id="Promote">
+                    <Image id="Coop" src="file://{images}/custom_game/loading_screen/coop.png" />
+                    <Label id="PromoteTitle" class="Title" text="#loading_screen_next" html="true"/>
+                </Panel>
             </Panel>
         </Panel>
     </Panel>
