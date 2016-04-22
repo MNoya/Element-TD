@@ -27,7 +27,7 @@ SCORING_GAME_FINISHED = 4
 POINTS_PER_FROG = 200
 BASE_WAVE_SCORE = 5
 BASE_WAVE_SCORE_EXPRESS = 3
-CLEAN_WAVE_BONUS = 0.25
+CLEAN_WAVE_BONUS = 0.3
 SLOW_WAVE_CLEAR_FACTOR = 0.03
 FAST_WAVE_CLEAR_FACTOR = 0.03
 BASE_TIME_CLASSIC = 45
@@ -308,10 +308,10 @@ function ScoringObject:GetEndSpeedBonus(time)
 		return 0
 	else
 		if EXPRESS_MODE then
-			return (BASE_TIME_EXPRESS/time*60) - 1
+			return ((BASE_TIME_EXPRESS/time*60) - 1) * 2
 
 		else
-			return (BASE_TIME_CLASSIC/time*60) - 1
+			return ((BASE_TIME_CLASSIC/time*60) - 1) * 2
 		end
 	end
 end
