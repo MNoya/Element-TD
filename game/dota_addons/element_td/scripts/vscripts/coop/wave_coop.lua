@@ -57,7 +57,7 @@ function WaveCoop:SpawnWave()
 	
 	local difficulty = GameSettings:GetGlobalDifficulty()
 	local entitiesSpawned = 0
-	local time_between_spawns = 0.65
+	local time_between_spawns = 0.5
 	local creepBossSequence = 0
 	
 	self.startTime = GameRules:GetGameTime() + time_between_spawns
@@ -82,12 +82,12 @@ function WaveCoop:SpawnWave()
 				entity:SetHealth(entity:GetMaxHealth())
 
 				-- Boss mode
-				if self.waveNumber == WAVE_COUNT and not EXPRESS_MODE then
+				if self.waveNumber == WAVE_COUNT then
 					local bossHealth = WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier() * (math.pow(1.2,CURRENT_BOSS_WAVE-1))
 					entity:SetMaxHealth(bossHealth)
 					entity:SetBaseMaxHealth(bossHealth)
 					entity:SetHealth(entity:GetMaxHealth())
-					--entity.waveNumber = playerData.bossWaves
+					entity.waveNumber = CURRENT_BOSS_WAVE
 
 					-- Choose an ability in sequence
 					creepBossSequence = (creepBossSequence % #CreepBossAbilities) + 1

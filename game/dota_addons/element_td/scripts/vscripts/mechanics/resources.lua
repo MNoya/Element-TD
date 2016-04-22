@@ -213,5 +213,6 @@ function BuyElement(playerID, element)
         ModifyLumber(playerID, -1)
         ModifyElementValue(playerID, element, 1)
         AddElementalTrophy(playerID, element, GetPlayerElementLevel(playerID, element))
+        UpdatePlayerHealth(playerID)
     end
 end

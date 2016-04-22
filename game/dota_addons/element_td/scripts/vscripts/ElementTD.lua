@@ -16,7 +16,7 @@ if not players then
     DEV_MODE = false
     EXPRESS_MODE = false
 
-    VERSION = "1.5"
+    VERSION = "1.6"
     COOP_MAP = GetMapName() == "element_td_coop"
 
     START_TIME = GetSystemDate() .. " " .. GetSystemTime()
@@ -523,7 +523,7 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:AddNewModifier(nil, nil, "modifier_disarmed", {})
     hero:AddNewModifier(nil, nil, "modifier_attack_immune", {})
     hero:AddNewModifier(hero, nil, "modifier_max_ms", {ms=GameSettings:GetMapSetting("BuilderMoveSpeed")})
-    hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
+    --hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
 
     local playerData = GetPlayerData(playerID)
 
@@ -569,7 +569,7 @@ function ElementTD:OnEntityKilled(keys)
     local entity = EntIndexToHScript(index)
     local killer = EntIndexToHScript(keys.entindex_attacker)
     local playerID = killer:GetPlayerOwnerID()
-    local playerData = GetPlayerData(entity.playerID)
+    local playerData = GetPlayerData(entity.playerID) or GetPlayerData(playerID)
 
     if playerData and playerData.health == 0 then
         return

@@ -196,8 +196,20 @@ function RemoveRandomBuff(tower)
     end
 
     if #buffed > 0 then
-        local target = buffed[math.random(1,#buffed)]
-        target:RemoveModifierByName(modifier_name)
+        local duration = 0
+        local removeTarget
+        -- Choose the target with the newest modifier (longest time remaining)
+        for _,target in pairs(buffed) do
+            local modifier = target:FindModifierByName(modifier_name)
+            local currentDuration = modifier:GetRemainingTime()
+            if modifier and currentDuration > duration then
+                duration = currentDuration
+                removeTarget = target
+            end
+        end
+        if removeTarget then
+            removeTarget:RemoveModifierByName(modifier_name)
+        end
     end
 end
 

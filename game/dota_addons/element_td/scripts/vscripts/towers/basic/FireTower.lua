@@ -20,10 +20,8 @@ function FireTower:OnAttackLanded(keys)
     DamageEntitiesInArea(target:GetOrigin(), self.halfAOE, self.tower, damage / 2)
     DamageEntitiesInArea(target:GetOrigin(), self.fullAOE, self.tower, damage / 2)
 
-    local creeps = GetCreepsInArea(target:GetAbsOrigin(), self.fullAOE)
-    for _, creep in pairs(creeps) do
-        self.ability:ApplyDataDrivenModifier(self.tower, creep, "modifier_blazeit", {})
-    end 
+
+    self.ability:ApplyDataDrivenModifier(self.tower, target, "modifier_blazeit", {})
 end
 
 function FireTower:DealBlazeDamage(keys)

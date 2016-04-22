@@ -36,12 +36,12 @@
 
     "Creature"
     {
-        "AttachWearables" // Warcog
+        "AttachWearables" // Default npc_dota_hero_rattletrap
         {
-            "1" { "ItemDef" "7123" } // Warcog Metal Mask
-            "2" { "ItemDef" "5090" } // Warcog Body Armor
-            "3" { "ItemDef" "7122" } // Warcog Trench Digger
-            "4" { "ItemDef" "7126" } // Warcog Blaster Shell
+            "1" { "ItemDef" "231" } // Clockwerk's Rocket
+            //"2" { "ItemDef" "446" } // Clockwerk's Weapon
+            "3" { "ItemDef" "485" } // Clockwerk's Head
+            "4" { "ItemDef" "484" } // Clockwerk's Armor
         }
     }
 }

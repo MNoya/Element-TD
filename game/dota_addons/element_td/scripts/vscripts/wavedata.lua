@@ -22,8 +22,18 @@ function loadWaveData(chaos)
         settings = GameSettingsKV.GameLength["Express"]
     end
 
+    if COOP_MAP then
+        settings = GameSettingsKV.GameLength["Coop"]
+    end
+
     local baseHP = tonumber(settings["BaseHP"])
     local multiplier = tonumber(settings["Multiplier"])
+
+    -- coop scaling
+    local multiplier_2_wave = settings["Wave_2"] and tonumber(settings["Wave_2"])
+    local multiplier_2 = settings["Multiplier_2"] and tonumber(settings["Multiplier_2"])
+    local multiplier_3_wave = settings["Wave_3"] and tonumber(settings["Wave_3"])
+    local multiplier_3 = settings["Multiplier_3"] and tonumber(settings["Multiplier_3"])
 
     for i=1,WAVE_COUNT do
         if EXPRESS_MODE then
@@ -32,11 +42,27 @@ function loadWaveData(chaos)
     	   WAVE_CREEPS[i] = wavesKV[tostring(i)].Creep
         end
 
-        -- Health formula: Last Wave HP * Multiplier
+        if COOP_MAP and wavesKV[tostring(i)].CreepCoop then
+            WAVE_CREEPS[i] = wavesKV[tostring(i)].CreepCoop
+        end
+
+        -- Standard health formula: Last Wave HP * Multiplier
+        -- Coop health formula: 
+            -- Last Wave HP * Multiplier if its below Multiplier_2
+            -- Last Wave HP * Multiplier_2 if its below Multiplier_3
+            -- Last Wave HP * Multiplier_3 otherwise
         if i==1 then
             WAVE_HEALTH[i] = baseHP
         else
-            WAVE_HEALTH[i] = WAVE_HEALTH[i-1] * multiplier
+            if COOP_MAP then
+                if multiplier_3_wave and i >= multiplier_3 then
+                    WAVE_HEALTH[i] = WAVE_HEALTH[i-1] * multiplier_3
+                elseif multiplier_2_wave and i >= multiplier_2 then
+                    WAVE_HEALTH[i] = WAVE_HEALTH[i-1] * multiplier_2
+                end
+            else
+                WAVE_HEALTH[i] = WAVE_HEALTH[i-1] * multiplier
+            end
         end
     end
     if chaos then
@@ -65,7 +91,7 @@ function loadWaveData(chaos)
     -- Print and round the values
     for k,v in pairs(WAVE_CREEPS) do
         WAVE_HEALTH[k] = round(WAVE_HEALTH[k])
-        --print(string.format("%2d | %-20s %5.0f",k,v,WAVE_HEALTH[k]))
+        print(string.format("%2d | %-20s %5.0f",k,v,WAVE_HEALTH[k]))
     end
 end
 
@@ -370,13 +396,13 @@ function WaveGrantsLumber( wave )
     end
 end
 
--- pure essence at waves 45/50 and 24/7 (express)
+-- pure essence at waves 50/55 and 24/7 (express)
 function WaveGrantsEssence( wave )
     if wave == 0 then return end
     if EXPRESS_MODE then
         return wave == 24 or wave == 27
     else
-        return wave == 45 or wave == 50
+        return wave == 50 or wave == 55
     end
 end
 

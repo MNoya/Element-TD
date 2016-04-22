@@ -140,8 +140,11 @@ function WorldNotification(msg) {
   if (worldPanels[entityIndex])
   {
     var panel = $("#world_"+entityIndex)
-    panel.deleted = true;
-    panel.DeleteAsync(0)
+    if (panel)
+    {
+      panel.deleted = true;
+      panel.DeleteAsync(0)
+    }
   }
 
   var notification = $.CreatePanel('Label', $.GetContextPanel(), "world_"+entityIndex);

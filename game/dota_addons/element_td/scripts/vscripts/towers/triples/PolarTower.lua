@@ -1,6 +1,6 @@
 -- Polar (Earth + Light + Water)
 -- This is a support tower. It has a splash attack. It has an autocast single target ability that buffs creeps. 
--- When a creep is buffed it will immediately lose X% of it's current HP.  It will gain it back X seconds later minus X/2% of damage taken during the time period.
+-- When a creep is buffed it will immediately lose X% of it's current HP.  It will gain it back X seconds later
 
 PolarTower = createClass({
         tower = nil,
@@ -48,7 +48,6 @@ function PolarTower:OnFrostbiteCast(keys)
         target.FrostbiteData = {
             ["HealthBurnAmount"] = healthBurnAmount,
             ["ResultingHealth"] = target:GetHealth(),
-            ["DamageTakenPercent"] = self.damageTakenPercent
         }
 
         local playerID = self.tower:GetPlayerOwnerID()
@@ -89,14 +88,13 @@ function PolarTower:OnCreated()
     self.halfAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
 
     self.healthBurnPercent = GetAbilitySpecialValue("polar_tower_frostbite", "health_burn")[self.tower:GetLevel()]
-    self.damageTakenPercent = GetAbilitySpecialValue("polar_tower_frostbite", "damage_taken_pcnt")[self.tower:GetLevel()]
     self.abilityCastRange = GetAbilityKeyValue("polar_tower_frostbite", "AbilityCastRange")
 end
 
 function OnFrostbiteExpire(keys)
     local target = keys.target
     if target.FrostbiteData and target:IsAlive() then
-        local healAmount = math.floor(target.FrostbiteData.HealthBurnAmount - ((target.FrostbiteData.ResultingHealth - target:GetHealth()) * (target.FrostbiteData.DamageTakenPercent / 100)))
+        local healAmount = target.FrostbiteData.HealthBurnAmount
         target:SetHealth(target:GetHealth() + healAmount)
         target.FrostbiteData = nil
     end

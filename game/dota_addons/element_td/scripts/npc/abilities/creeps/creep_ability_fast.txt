@@ -59,7 +59,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"fast_speed"			"750"
+			"fast_speed_pct"		"250"
 		}
 		"02"
 		{

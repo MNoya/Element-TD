@@ -220,6 +220,7 @@
         "loading_screen_tip_15" "Each Support Tower can supply 4 Towers with Buffs."
         "loading_screen_tip_16" "Got ideas to make the game better? Join the discussion at our website!"
         "loading_screen_tip_17" "Plan your build for the next wave to prevent leaking on elements you are weak against."
+        "loading_screen_next"   "Coming Next!"
 
         // Usage
         //  <br> for break lines
@@ -227,7 +228,7 @@
         //  <font color='#hex'>text</font>  for color
         //  <b>text</b> for bold        
         "loading_screen_changelog"   "Latest Changes"
-        "loading_screen_change_text" "<h1>Version 1.5</h1><h2>New Features</h2><b>• Elemental Cannon & Arrow Towers have been added!</b><br>• You can now purchase a Custom Game Pass, giving you:<br>&nbsp;&nbsp;&nbsp;&nbsp; - Access to Player Profiles, Friend Leaderboards, Lifetime stats,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Match History and Ranking Achievements<br>&nbsp;&nbsp;&nbsp;&nbsp; - 6 Element themed Custom Builder Models<br>&nbsp;&nbsp;&nbsp;&nbsp; - Double votes when selecting the gamemode<br>&nbsp;&nbsp;&nbsp;&nbsp; - Extra flair on player avatars<br><br><h2>Balance</h2>• Base Creep HP & Scaling have been altered.<br>• Bounties have been increased.<br>• Elemental Boss HP increased.<br>• Pure Essence Gold Bonus has been removed.<br><br>• All Towers altered in scaling.<br>• Support Tower damage increased.<br><br><b>Check out the full changelog on the forums!</b><br>"
+        "loading_screen_change_text" "<h1>Version 1.6</h1><h2>Scoring</h2>• Networth Score Bonus was reworked.<br>• End Speed Score Bonus scales twice as much.<br>• Clean Wave Bonus was increased.<br><br><h2>Balance</h2>• Bounties reduced slightly.<br>• Free Pure Essences were pushed back.<br>• Fire ability reworked.<br>• Polar's secondary effect was axed.<br>• Many other towers received balance tweaks.<br><br><b>Check out the full changelog on the forums!</b><br>"
 
         "credits_title"         "Credits"
         "credits_developers"    "Developers"
@@ -336,6 +337,8 @@
         "leaderboard_express"   "Top 100 Express"
         "leaderboard_frogs"     "Top 100 Frog Kills"
         "leaderboard_refresh"   "Refresh"
-        "leaderboard_unreachable"   "Leadeboard not available."
+        "leaderboard_unreachable"   "Leaderboard not available."
+
+        "cooperative_map"       "Cooperative Map"
     }
 }

@@ -768,12 +768,12 @@
 	
 	    "Creature"
 	    {
-	        "AttachWearables" // Warcog
+	        "AttachWearables" // Default npc_dota_hero_rattletrap
 	        {
-	            "1" { "ItemDef" "7123" } // Warcog Metal Mask
-	            "2" { "ItemDef" "5090" } // Warcog Body Armor
-	            "3" { "ItemDef" "7122" } // Warcog Trench Digger
-	            "4" { "ItemDef" "7126" } // Warcog Blaster Shell
+	            "1" { "ItemDef" "231" } // Clockwerk's Rocket
+	            //"2" { "ItemDef" "446" } // Clockwerk's Weapon
+	            "3" { "ItemDef" "485" } // Clockwerk's Head
+	            "4" { "ItemDef" "484" } // Clockwerk's Armor
 	        }
 	    }
 	}
@@ -812,6 +812,78 @@
 	    "ScriptClass"     "CreepTemporal"
 	    "Ability1"        "fire_armor"
 	    "Ability2"        "creep_ability_time_lapse"
+	}
+	"deathbringer"
+	{
+	    "MinimapIcon"               "minimap_icon_red"
+	    "MinimapIconSize"           "200"
+	    "MinimapDisableTint"        "1"
+	
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "AttackDamageMin"        "0"
+	    "AttackDamageMax"        "0"
+	    "AttackRate"        "0"
+	    "AttackAnimationPoint"        "0"
+	    "AttackAcquisitionRange"        "0"
+	    "AttackRange"        "0"
+	    "ProjectileModel"        ""
+	    "ProjectileSpeed"        "0"
+	    "RingRadius"        "70"
+	    "HealthBarOffset"        "160"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+	    "BountyXP"        "0"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+	    "MovementSpeed"        "300"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "VisionDaytimeRange"        "1200"
+	    "VisionNighttimeRange"        "800"
+	    "Model"        "models/items/courier/deathbringer/deathbringer.vmdl"
+	    "ModelScale"        "2.4"
+	    "BaseClass"        "npc_dota_creature"
+	    "SoundSet"        ""
+	    "ScriptClass"     "CreepBulky"
+	    "Ability1"        "fire_armor"
+	    "Ability2"        "creep_ability_bulky"
+	}
+	"death_gazer"
+	{
+	    "MinimapIcon"               "minimap_icon_white"
+	    "MinimapIconSize"           "200"
+	    "MinimapDisableTint"        "1"
+	
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "AttackDamageMin"        "0"
+	    "AttackDamageMax"        "0"
+	    "AttackRate"        "0"
+	    "AttackAnimationPoint"        "0"
+	    "AttackAcquisitionRange"        "0"
+	    "AttackRange"        "0"
+	    "ProjectileModel"        ""
+	    "ProjectileSpeed"        "0"
+	    "RingRadius"        "70"
+	    "HealthBarOffset"        "160"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+	    "BountyXP"        "0"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+	    "MovementSpeed"        "300"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "VisionDaytimeRange"        "1200"
+	    "VisionNighttimeRange"        "800"
+	    "Model"        "models/creeps/neutral_creeps/n_creep_thunder_lizard/n_creep_thunder_lizard_small.vmdl"
+	    "ModelScale"        "1.0"
+	    "BaseClass"        "npc_dota_creature"
+	    "SoundSet"        ""
+	    "ScriptClass"     "CreepBulky"
+	    "Ability1"        "composite_armor"
+	    "Ability2"        "creep_ability_bulky"
 	}
 	"desert_rogue"
 	{
@@ -1143,10 +1215,10 @@
 	        "AttachWearables" // The Tentacular Timelord Set
 	        {
 	            "1" { "ItemDef" "5868" } // Primal Form of the Tentacular Timelord
-	            "2" { "ItemDef" "5898" } // Mace of the Tentacular Timelord
-	            "3" { "ItemDef" "5861" } // Bracers of the Tentacular Timelord
-	            "4" { "ItemDef" "5896" } // Armor of the Tentacular Timelord
-	            "5" { "ItemDef" "5897" } // Skirt of the Tentacular Timelord
+	            //"2" { "ItemDef" "15" } // Faceless Void's Weapon
+	            "3" { "ItemDef" "92" } // Faceless Void's Bracer
+	            "4" { "ItemDef" "91" } // Faceless Void's Shoulder
+	            "5" { "ItemDef" "93" } // Faceless Void's Belt
 	        }
 	    }
 	}
@@ -2041,12 +2113,12 @@
 	    "Ability2"        "creep_ability_time_lapse"
 	    "Creature"
 	    {
-	        "AttachWearables" // Vengeance of the Sunwarrior
+	        "AttachWearables" // Default npc_dota_hero_phantom_lancer
 	        {
-	            "1" { "ItemDef" "6617" } // Belt of the Sunwarrior
-	            "2" { "ItemDef" "6619" } // Bracers of the Sunwarrior
-	            "3" { "ItemDef" "6621" } // Mane of the Sunwarrior
-	            "4" { "ItemDef" "6620" } // Lance of the Sunwarrior
+	            "1" { "ItemDef" "132" } // Phantom Lancer's Weapon
+	            //"2" { "ItemDef" "130" } // Phantom Lancer's Shoulderpad
+	            "3" { "ItemDef" "128" } // Phantom Lancer's Belt
+	            //"4" { "ItemDef" "129" } // Phantom Lancer's Gauntlet
 	            "5" { "ItemDef" "127" } // Phantom Lancer's Head
 	        }
 	    }
@@ -2223,27 +2295,13 @@
 	    "StatusManaRegen"        "0"
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
-	    "Model"        "models/heroes/spirit_breaker/spirit_breaker.vmdl"
-	    "ModelScale"        "0.9"
+	    "Model"        "models/courier/drodo/drodo.vmdl"
+	    "ModelScale"        "1.7"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepTemporal"
 	    "Ability1"        "water_armor"
 	    "Ability2"        "creep_ability_time_lapse"
-	
-	    "Creature"
-	    {
-	        "AttachWearables" // Default npc_dota_hero_spirit_breaker
-	        {
-	            "1" { "ItemDef" "112" } // Spirit Breaker's Shoulder Armor
-	            "2" { "ItemDef" "106" } // Spirit Breaker's Head
-	            "3" { "ItemDef" "114" } // Spirit Breaker's Tail
-	            "4" { "ItemDef" "115" } // Spirit Breaker's Bracers
-	            "5" { "ItemDef" "113" } // Spirit Breaker's Mace
-	            "6" { "ItemDef" "116" } // Spirit Breaker's Belt
-	            "7" { "ItemDef" "111" } // Spirit Breaker's Horns
-	        }
-	    }
 	}
 	"shifting_treant"
 	{
@@ -2492,6 +2550,52 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "Ability1"        "earth_armor"
+	}
+	"storm_spirit"
+	{
+	    "MinimapIcon"               "minimap_icon_blue"
+	    "MinimapIconSize"           "200"
+	    "MinimapDisableTint"        "1"
+	
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+	    "AttackDamageMin"        "0"
+	    "AttackDamageMax"        "0"
+	    "AttackRate"        "0"
+	    "AttackAnimationPoint"        "0"
+	    "AttackAcquisitionRange"        "0"
+	    "AttackRange"        "0"
+	    "ProjectileModel"        ""
+	    "ProjectileSpeed"        "0"
+	    "RingRadius"        "70"
+	    "HealthBarOffset"        "200"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+	    "BountyXP"        "0"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+	    "MovementSpeed"        "300"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "VisionDaytimeRange"        "1200"
+	    "VisionNighttimeRange"        "800"
+	    "Model"        "models/heroes/storm_spirit/storm_spirit.vmdl"
+	    "ModelScale"        "1.8"
+	    "BaseClass"        "npc_dota_creature"
+	    "SoundSet"        ""
+	    "ScriptClass"     "CreepBulky"
+	    "Ability1"        "water_armor"
+	    "Ability2"        "creep_ability_bulky"
+	
+	    "Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_storm_spirit
+	        {
+	            "1" { "ItemDef" "310" } // Storm Spirit's Armor
+	            "2" { "ItemDef" "308" } // Storm Spirit's Hat
+	            "3" { "ItemDef" "309" } // Storm Spirit's Shoulder
+	        }
+	    }
 	}
 	"swamp_witch"
 	{
@@ -5124,9 +5228,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "270"
-	    "AttackDamageMax"           "270"
-	    "Damage"                    "270"  
+	    "AttackDamageMin"           "300"
+	    "AttackDamageMax"           "300"
+	    "Damage"                    "300"  
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
 	    "AttackRate"                "1.5"
@@ -5216,9 +5320,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "1900"
-	    "AttackDamageMax"           "1900"
-	    "Damage"                    "1900"  
+	    "AttackDamageMin"           "2100"
+	    "AttackDamageMax"           "2100"
+	    "Damage"                    "2100"  
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
 	    "AttackRate"                "1.5"
@@ -5303,9 +5407,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "133000"
-	    "AttackDamageMax"           "133000"
-	    "Damage"                    "133000"  
+	    "AttackDamageMin"           "147000"
+	    "AttackDamageMax"           "147000"
+	    "Damage"                    "147000"  
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
 	    "AttackRate"                "1.5"
@@ -5386,9 +5490,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "13300"
-	    "AttackDamageMax"           "13300"
-	    "Damage"                    "13300"  
+	    "AttackDamageMin"           "14700"
+	    "AttackDamageMax"           "14700"
+	    "Damage"                    "14700"  
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
 	    "AttackRate"                "1.5"
@@ -5840,9 +5944,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "10"
-	    "AttackDamageMax"           "10"
-	    "Damage"                    "10"  
+	    "AttackDamageMin"           "18"
+	    "AttackDamageMax"           "18"
+	    "Damage"                    "18"  
 	    "AOE_Full"                  "150"
 	    "AOE_Half"                  "300" 
 	    "AttackRange"               "550"
@@ -5933,9 +6037,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "70"
-	    "AttackDamageMax"           "70"
-	    "Damage"                    "70"  
+	    "AttackDamageMin"           "126"
+	    "AttackDamageMax"           "126"
+	    "Damage"                    "126"  
 	    "AOE_Full"                  "150"
 	    "AOE_Half"                  "300" 
 	    "AttackRange"               "550"
@@ -6020,9 +6124,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "4900"
-	    "AttackDamageMax"           "4900"
-	    "Damage"                    "4900"  
+	    "AttackDamageMin"           "8800"
+	    "AttackDamageMax"           "8800"
+	    "Damage"                    "8800"  
 	    "AOE_Full"                  "150"
 	    "AOE_Half"                  "300" 
 	    "AttackRange"               "550"
@@ -6104,9 +6208,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "490"
-	    "AttackDamageMax"           "490"
-	    "Damage"                    "490"  
+	    "AttackDamageMin"           "880"
+	    "AttackDamageMax"           "880"
+	    "Damage"                    "880"  
 	    "AOE_Full"                  "150"
 	    "AOE_Half"                  "300" 
 	    "AttackRange"               "550"
@@ -8255,9 +8359,9 @@
 	        "1"        "earth"
 	        "2"        "dark"
 	    }
-	    "Damage"        "42"
-	    "AttackDamageMin"        "42"
-	    "AttackDamageMax"        "42"
+	    "Damage"        "40"
+	    "AttackDamageMin"        "40"
+	    "AttackDamageMax"        "40"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
@@ -8348,9 +8452,9 @@
 	        "1"        "earth"
 	        "2"        "dark"
 	    }
-	    "Damage"        "210"
-	    "AttackDamageMin"        "210"
-	    "AttackDamageMax"        "210"
+	    "Damage"        "200"
+	    "AttackDamageMin"        "200"
+	    "AttackDamageMax"        "200"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
@@ -8437,9 +8541,9 @@
 	        "1"        "earth"
 	        "2"        "dark"
 	    }
-	    "Damage"        "1050"
-	    "AttackDamageMin"        "1050"
-	    "AttackDamageMax"        "1050"
+	    "Damage"        "1000"
+	    "AttackDamageMin"        "1000"
+	    "AttackDamageMax"        "1000"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
@@ -8509,9 +8613,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "420"
-	    "AttackDamageMax"           "420"
-	    "Damage"                    "420"
+	    "AttackDamageMin"           "450"
+	    "AttackDamageMax"           "450"
+	    "Damage"                    "450"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "1"
@@ -8606,9 +8710,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "2100"
-	    "AttackDamageMax"           "2100"
-	    "Damage"                    "2100"
+	    "AttackDamageMin"           "2250"
+	    "AttackDamageMax"           "2250"
+	    "Damage"                    "2250"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "1"
@@ -8693,9 +8797,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "10500"
-	    "AttackDamageMax"           "10500"
-	    "Damage"                    "10500"
+	    "AttackDamageMin"           "11250"
+	    "AttackDamageMax"           "11250"
+	    "Damage"                    "11250"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "1"
@@ -11220,9 +11324,9 @@
 	        "2"        "light"
 	        "3"        "nature"
 	    }
-	    "Damage"        "625"
-	    "AttackDamageMin"        "625"
-	    "AttackDamageMax"        "625"
+	    "Damage"        "575"
+	    "AttackDamageMin"        "575"
+	    "AttackDamageMax"        "575"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "EnchantmentTower"
 	    "TowerType"        "Normal"
@@ -11314,9 +11418,9 @@
 	        "2"        "light"
 	        "3"        "nature"
 	    }
-	    "Damage"        "3125"
-	    "AttackDamageMin"        "3125"
-	    "AttackDamageMax"        "3125"
+	    "Damage"        "2875"
+	    "AttackDamageMin"        "2875"
+	    "AttackDamageMax"        "2875"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "EnchantmentTower"
 	    "TowerType"        "Normal"
@@ -13212,9 +13316,9 @@
 	        "2"        "earth"
 	        "3"        "water"
 	    }
-	    "Damage"        "1100"
-	    "AttackDamageMin"        "1100"
-	    "AttackDamageMax"        "1100"
+	    "Damage"        "1000"
+	    "AttackDamageMin"        "1000"
+	    "AttackDamageMax"        "1000"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "MuckTower"
 	    "TowerType"        "Normal"
@@ -13304,9 +13408,9 @@
 	        "2"        "earth"
 	        "3"        "water"
 	    }
-	    "Damage"        "5500"
-	    "AttackDamageMin"        "5500"
-	    "AttackDamageMax"        "5500"
+	    "Damage"        "5000"
+	    "AttackDamageMin"        "5000"
+	    "AttackDamageMax"        "5000"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "MuckTower"
 	    "TowerType"        "Normal"
@@ -13723,9 +13827,9 @@
 	        "2"        "light"
 	        "3"        "earth"
 	    }
-	    "Damage"        "2000"
-	    "AttackDamageMin"        "2000"
-	    "AttackDamageMax"        "2000"
+	    "Damage"        "1800"
+	    "AttackDamageMin"        "1800"
+	    "AttackDamageMax"        "1800"
 	    "DamageType"        "water"
 	    "ScriptClass"        "PolarTower"
 	    "TowerType"        "Normal"
@@ -13817,9 +13921,9 @@
 	        "2"        "light"
 	        "3"        "earth"
 	    }
-	    "Damage"        "10000"
-	    "AttackDamageMin"        "10000"
-	    "AttackDamageMax"        "10000"
+	    "Damage"        "9000"
+	    "AttackDamageMin"        "9000"
+	    "AttackDamageMax"        "9000"
 	    "DamageType"        "water"
 	    "ScriptClass"        "PolarTower"
 	    "TowerType"        "Normal"

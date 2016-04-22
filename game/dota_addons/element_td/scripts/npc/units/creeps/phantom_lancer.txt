@@ -35,12 +35,12 @@
     "Ability2"        "creep_ability_time_lapse"
     "Creature"
     {
-        "AttachWearables" // Vengeance of the Sunwarrior
+        "AttachWearables" // Default npc_dota_hero_phantom_lancer
         {
-            "1" { "ItemDef" "6617" } // Belt of the Sunwarrior
-            "2" { "ItemDef" "6619" } // Bracers of the Sunwarrior
-            "3" { "ItemDef" "6621" } // Mane of the Sunwarrior
-            "4" { "ItemDef" "6620" } // Lance of the Sunwarrior
+            "1" { "ItemDef" "132" } // Phantom Lancer's Weapon
+            //"2" { "ItemDef" "130" } // Phantom Lancer's Shoulderpad
+            "3" { "ItemDef" "128" } // Phantom Lancer's Belt
+            //"4" { "ItemDef" "129" } // Phantom Lancer's Gauntlet
             "5" { "ItemDef" "127" } // Phantom Lancer's Head
         }
     }

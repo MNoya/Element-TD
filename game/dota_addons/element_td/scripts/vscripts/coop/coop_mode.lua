@@ -3,7 +3,6 @@
 COOP_WAVE = 1 -- the current wave 
 CREEPS_PER_WAVE_COOP = 120 -- number of creeps in each wave
 CURRENT_WAVE_OBJECT = nil -- maybe should hold the WaveCoop 'object' of the wave that is currently active (can we ever have > 1 waves at once?)
-LEAK_POINTS = {[1]=5,[2]=4,[3]=6,[4]=2,[5]=1,[6]=3} -- Coop creeps leak at the opposite side from where they came
 
 COOP_HEALTH = 0
 COOP_LIFE_TOWER_KILLS = 0
@@ -12,7 +11,7 @@ COOP_LIFE_TOWER_KILLS_TOTAL = 0
 -- entry point
 function CoopStart()
     COOP_HEALTH = GameSettings:GetMapSetting("Lives");
-    local initialBreakTime = GameSettings.length.PregameTime * 2
+    local initialBreakTime = GameSettings.length.PregameTime
     StartBreakTimeCoop(initialBreakTime)
 end
 
@@ -43,25 +42,31 @@ function SpawnWaveCoop()
     CURRENT_WAVE_OBJECT:SetOnCompletedCallback(function()   
         print("[COOP] Completed wave "..COOP_WAVE)
 
-        COOP_WAVE = COOP_WAVE + 1
+        if COOP_WAVE < WAVE_COUNT then
+            COOP_WAVE = COOP_WAVE + 1
+        end
+
         EmitGlobalSound("ui.npe_objective_complete")
         InterestManager:CompletedWave(COOP_WAVE)
 
         -- Boss Wave completed starts the new one with no breaktime
         if CURRENT_BOSS_WAVE > 0 then
             print("[COOP] Completed boss wave "..CURRENT_BOSS_WAVE)
+            CURRENT_BOSS_WAVE = CURRENT_BOSS_WAVE + 1
 
-            --TODO: New boss wave, score
+            ForAllPlayerIDs(function(playerID)
+                ShowBossWaveMessage(playerID, CURRENT_BOSS_WAVE)
+                UpdateWaveInfo(playerID, COOP_WAVE)
+            end)
+
+            SpawnWaveCoop() 
             return
         end
-
-        -- TODO: Cleared game?
  
         -- Start the breaktime for the next wave
         StartBreakTimeCoop(GameSettings:GetGlobalDifficulty():GetWaveBreakTime(COOP_WAVE))
     end)
 
-    -- TODO: boss waves, co-op interest
     CURRENT_WAVE_OBJECT:SpawnWave()
 end
 
@@ -81,11 +86,9 @@ function CreateMoveTimerForCreepCoop(creep, sector)
 
                 -- Boss Wave leaks = 3 lives
                 local lives = 1
-                --[[ TODO
-                if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then
+                if CURRENT_BOSS_WAVE > 0 then
                     lives = 3
                 end
-                ]]--
 
                 -- Bulky creeps count as 2
                 if creep:HasAbility("creep_ability_bulky") then
@@ -103,8 +106,7 @@ function CreateMoveTimerForCreepCoop(creep, sector)
                 end)
 
                 creep.times_leaked = creep.times_leaked and creep.times_leaked + 1 or 1
-                local leak_position = creep.times_leaked % 2 == 0 and EntityStartLocations[sector] or EntityStartLocations[LEAK_POINTS[sector]]
-                FindClearSpaceForUnit(creep, leak_position, true)
+                FindClearSpaceForUnit(creep, EntityStartLocations[sector], true)
 
                 creep:SetForwardVector(Vector(0, -1, 0))
             end
@@ -119,8 +121,8 @@ function StartBreakTimeCoop(breakTime)
     ElementTD:PrecacheWave(COOP_WAVE)
 
     local msgTime = 5 -- how long to show the message for
-    if (COOP_WAVE - 1) % 5 == 0 then
-        breakTime = 45
+    if COOP_WAVE > 1 and (COOP_WAVE - 1) % 5 == 0 then
+        breakTime = 30
     end
     -- First boss breaktime 60 seconds
     if COOP_WAVE == WAVE_COUNT and CURRENT_BOSS_WAVE == 0 then
@@ -146,9 +148,6 @@ function StartBreakTimeCoop(breakTime)
         local playerData = GetPlayerData(playerID)
 
         ShowWaveBreakTimeMessage(playerID, COOP_WAVE, breakTime, msgTime)
-        if hero then 
-            hero:RemoveModifierByName("modifier_silence")
-        end
 
         if PlayerIsAlive(playerID) then
 
@@ -173,9 +172,8 @@ function StartBreakTimeCoop(breakTime)
                         -- Gold bonus for Pure Essence randoming (removed in 1.5)
                         -- GivePureEssenceGoldBonus(playerID)
                     else
-                        -- TODO: no elementals in co-op mode??
                         SendEssenceMessage(playerID, "#etd_random_elemental")
-                        --SummonElemental({caster = playerData.summoner, Elemental = element .. "_elemental"})
+                        SummonElemental({caster = playerData.summoner, Elemental = element .. "_elemental"})
                     end
                 else
                     Log:info("Giving 1 lumber to " .. playerData.name)

@@ -192,6 +192,14 @@ function AlignRight (panel) {
 }
 
 function Setup() {
+	if (Game.IsCoop())
+	{
+		$("#Coop").RemoveClass("Hide")
+		$("#Version").AddClass("Coop")
+		$("#elementTD").AddClass("Hide")
+		$("#elementTDGlow").AddClass("Hide")
+	}
+	
 	VersionUI.text = "Version "+CustomNetTables.GetTableValue('gameinfo', 'version').value
     $.Schedule(0.1, CheckHudFlipped)
     $.Schedule(1, CheckAspectRatio)

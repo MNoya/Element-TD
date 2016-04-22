@@ -747,7 +747,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_pct"		"225"
+				"bonus_health_pct"		"200"
 			}
 		}
 	}
@@ -812,7 +812,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"fast_speed"			"750"
+				"fast_speed_pct"		"250"
 			}
 			"02"
 			{
@@ -2622,12 +2622,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"210 1050 5250"
+				"damage"				"200 1000 5000"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_decrease"		"20"
+				"damage_decrease"		"15"
 			}
 			"04"
 			{
@@ -2637,7 +2637,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bounce_decrease"		"30"
+				"bounce_decrease"		"33"
 			}
 			"05"
 			{
@@ -2888,7 +2888,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"150 750"
+				"dot"					"140 700"
 			}
 			"03"
 			{
@@ -2973,7 +2973,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_FLOAT"
-	            "damage_per_second"     "3 21 150 1500"
+	            "damage_per_second"     "6 42 300 3000"
 	        }
 	        "02"
 	        {
@@ -3032,89 +3032,115 @@
 	//=================================================================================================================
 	"flame_tower_sunburn"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
 	
-		"BaseClass"						"ability_datadriven"											
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"	
-		"AbilityTextureName"			"towers/flame"
-		"MaxLevel"						"3"
-		"AbilityCastPoint"				"0"
+	    "BaseClass"                     "ability_datadriven"                                            
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"   
+	    "AbilityTextureName"            "towers/flame"
+	    "MaxLevel"                      "3"
+	    "AbilityCastPoint"              "0"
 	
-		"Modifiers"
-		{
-			"modifier_sunburn_passive"
-			{
-				"Passive"		"1"
-				"IsHidden"		"1"
+	    "Modifiers"
+	    {
+	        "modifier_sunburn_passive"
+	        {
+	            "Passive"       "1"
+	            "IsHidden"      "1"
 	
-				"OnAttack"
-				{
-					"RunScript"
-					{
-						"Target"			"TARGET"
-						"ScriptFile"		"towers/towerevents.lua"
-						"Function"			"TriggerEvent"
-						"Event"				"OnAttack"
-					}
-				}
+	            "OnAttack"
+	            {
+	                "RunScript"
+	                {
+	                    "Target"            "TARGET"
+	                    "ScriptFile"        "towers/towerevents.lua"
+	                    "Function"          "TriggerEvent"
+	                    "Event"             "OnAttack"
+	                }
+	            }
 	
-				"OnAttackLanded"
-				{
-					"ApplyModifier"
-					{
-						"Target" 			"TARGET"
-						"ModifierName"		"modifier_sunburn"
-					}
-				}
-			}
+	            "OnAttackLanded"
+	            {
+	                "ApplyModifier"
+	                {
+	                    "Target"            "TARGET"
+	                    "ModifierName"      "modifier_sunburn"
+	                }
+	            }
+	        }
 	
-			"modifier_sunburn"
-			{
-				"Duration"		"%duration"
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"ThinkInterval"	"1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"Target"			"TARGET"
-						"ScriptFile"		"towers/towerevents.lua"
-						"Function"			"TriggerEvent"
-						"Event"				"DealBurnDamage"
-					}
-				}
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"Target" 			"TARGET"
-						"EffectName"		"particles/units/heroes/hero_ember_spirit/ember_spirit_flameGuard_column.vpcf"
-						"EffectAttachType"	"follow_origin"
-					}
-				}
-			}
-		}
+	        "modifier_sunburn"
+	        {
+	            "Duration"      "%duration"
+	            "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+	            "ThinkInterval" "1"
+	            "IsHidden"      "1"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "Target"            "TARGET"
+	                    "ScriptFile"        "towers/towerevents.lua"
+	                    "Function"          "TriggerEvent"
+	                    "Event"             "DealBurnDamage"
+	                }
+	            }
+	            "OnCreated"
+	            {
+	                "AttachEffect"
+	                {
+	                    "Target"            "TARGET"
+	                    "EffectName"        "particles/units/heroes/hero_ember_spirit/ember_spirit_flameGuard_column.vpcf"
+	                    "EffectAttachType"  "follow_origin"
+	                }
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"45 225 1125"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aoe"					"200"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"5"
-			}
-		}
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/modifiers.lua"
+	                    "Function"      "StackModifier"
+	                    "ModifierName"  "modifier_sunburn"
+	                    "ModifierStack" "modifier_sunburn_stacks"
+	                }
+	            }
+	
+	            "OnDestroy"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/modifiers.lua"
+	                    "Function"      "StackModifier"
+	                    "ModifierName"  "modifier_sunburn"
+	                    "ModifierStack" "modifier_sunburn_stacks"
+	                }
+	            }
+	        }
+	
+	        "modifier_sunburn_stacks"
+	        {
+	            "TextureName"   "towers/flame"
+	            "IsDebuff"      "1"
+	        }
+	    }
+	
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "damage"                "45 225 1125"
+	        }
+	        "02"
+	        {
+	            "var_type"              "FIELD_INTEGER"
+	            "aoe"                   "200"
+	        }
+	        "03"
+	        {
+	            "var_type"              "FIELD_FLOAT"
+	            "duration"              "5"
+	        }
+	    }
 	}
 	//============================================================//
 	// Flooding Tower: Flood
@@ -3159,7 +3185,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 	
 		"BaseClass"						"ability_datadriven"											
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"towers/gold"
 		"MaxLevel"						"2"
 	
@@ -3168,9 +3194,32 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"25 30"
+				"bonus_gold"			"25 35"
 			}
 		}
+	
+	    "OnToggleOn"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "towers/towerevents.lua"
+	            "Function"          "TriggerEvent"
+	            "Event"				"OnAbilityToggle"
+	            "target_type"		"2" //TOWER_TARGETING_CLOSEST
+	            "keep_target"		"1"
+	        }
+	    }
+	
+		"OnToggleOff"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "towers/towerevents.lua"
+	            "Function"          "TriggerEvent"
+	            "Event"				"OnAbilityToggle"
+	            "target_type"		"1" //TOWER_TARGETING_LOWEST_HP
+	        }
+	    }
 	
 		"Modifiers"
 		{
@@ -3208,7 +3257,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"42 210 1050"
+				"damage"				"40 200 1000"
 			}
 			"02"
 			{
@@ -3432,7 +3481,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"420 2100 10500"
+				"splash_damage"		"450 2250 11250"
 			}
 			"03"
 			{
@@ -3578,10 +3627,33 @@
 	"impulse_tower_impetus"
 	{
 		"BaseClass"						"ability_datadriven"											
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"enchantress_impetus"
 		"AbilityCastRange"				"1500"
 		"MaxLevel"						"2"
+	
+		"OnToggleOn"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "towers/towerevents.lua"
+	            "Function"          "TriggerEvent"
+	            "Event"				"OnAbilityToggle"
+	            "target_type"		"4" //TOWER_TARGETING_FARTHEST
+	            "keep_target"		"1"
+	        }
+	    }
+	
+		"OnToggleOff"
+	    {
+	        "RunScript"
+	        {
+	            "ScriptFile"        "towers/towerevents.lua"
+	            "Function"          "TriggerEvent"
+	            "Event"				"OnAbilityToggle"
+	            "target_type"		"4" //TOWER_TARGETING_FARTHEST
+	        }
+	    }
 	
 		"Modifiers"
 		{
@@ -3667,7 +3739,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"10 30"
+				"damage_taken"			"6 18"
 			}
 			"02"
 			{
@@ -3677,12 +3749,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"5"
+				"duration"				"7.5"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"ticks"					"2"
+				"ticks"					"3"
 			}
 			"05"
 			{
@@ -3736,7 +3808,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_reduction_cap"	"70"
+				"damage_reduction_cap"	"50"
 			}
 		}
 	}
@@ -4152,7 +4224,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 1500"
+				"damage"			"275 1375"
 			}
 			"02"
 			{
@@ -4370,12 +4442,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"10 30"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_taken_pcnt"		"5 15"
+				"health_burn"			"12 36"
 			}
 		}
 	}
@@ -4665,7 +4732,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps"					"120 600"
+				"dps"					"110 550"
 			}
 			"04"
 			{

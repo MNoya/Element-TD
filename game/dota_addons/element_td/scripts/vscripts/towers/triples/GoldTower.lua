@@ -15,6 +15,22 @@ GoldTower = createClass({
     },
 nil)
 
+function GoldTower:OnAbilityToggle(keys)
+    if self.tower:IsAlive() then
+        self.tower.toggled = not self.tower.toggled
+    end
+
+    if self.tower:HasModifier("modifier_attack_targeting") then
+        self.tower:RemoveModifierByName("modifier_attack_targeting")
+    end
+
+    self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {
+        target_type = tonumber(keys.target_type), 
+        keep_target = tonumber(keys.keep_target)
+    })
+end
+
+
 function GoldTower:OnAttackLanded(keys)
     local target = keys.target
     local damage = self.tower:GetAverageTrueAttackDamage()
@@ -38,8 +54,10 @@ end
 
 
 function GoldTower:GetUpgradeData()
-    local counter = self.tower.gold_counter
-    return { gold_counter = counter }
+    return { 
+        gold_counter = self.tower.gold_counter,
+        toggle = self.tower.toggled
+    }
 end
 
 function GoldTower:ApplyUpgradeData(data)
@@ -48,12 +66,19 @@ function GoldTower:ApplyUpgradeData(data)
         self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_gold_tower_counter", {})
         self.tower:SetModifierStackCount("modifier_gold_tower_counter", self.tower, self.tower.gold_counter) 
     end
+
+    if data.toggle then
+        self.tower.toggled = true
+        self.ability:ToggleAbility()
+    end
 end
 
 function GoldTower:OnCreated()
     self.ability = AddAbility(self.tower, "gold_tower_arbitrage", self.tower:GetLevel())
     self.bonusGold = GetAbilitySpecialValue("gold_tower_arbitrage", "bonus_gold")[self.tower:GetLevel()]
-    self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_LOWEST_HP})
+
+    self:OnAbilityToggle({target_type = TOWER_TARGETING_LOWEST_HP}) -- set default targeting mode
+    self.tower.toggled = false
     self.tower.gold_counter = 0
 end
 

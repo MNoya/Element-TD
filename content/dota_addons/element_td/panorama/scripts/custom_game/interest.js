@@ -1,6 +1,6 @@
 "use strict";
 
-var INTEREST_INTERVAL = 0;
+var INTEREST_INTERVAL = 15;
 var INTEREST_RATE = 0.02;
 var INTEREST_REFRESH = 0.05;
 
@@ -26,7 +26,8 @@ function UpdateInterest() {
 			timerEnd += INTEREST_INTERVAL;
 		}
 		var widthPercentage = 100 - Math.floor((timerEnd - Game.GetGameTime())/INTEREST_INTERVAL * 100);
-		interestBarGold.style["width"] = widthPercentage+"%";
+		if (!isNaN(widthPercentage))
+			interestBarGold.style["width"] = widthPercentage+"%";
 	}
 	$.Schedule(INTEREST_REFRESH, function() { UpdateInterest(); });
 }
