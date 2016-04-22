@@ -396,13 +396,13 @@ function WaveGrantsLumber( wave )
     end
 end
 
--- pure essence at waves 45/50 and 24/7 (express)
+-- pure essence at waves 50/55 and 24/7 (express)
 function WaveGrantsEssence( wave )
     if wave == 0 then return end
     if EXPRESS_MODE then
         return wave == 24 or wave == 27
     else
-        return wave == 45 or wave == 50
+        return wave == 50 or wave == 55
     end
 end
 
