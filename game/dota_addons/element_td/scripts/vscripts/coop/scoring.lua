@@ -33,7 +33,7 @@ FAST_WAVE_CLEAR_FACTOR = 0.03
 BASE_TIME_CLASSIC = 45
 BASE_TIME_EXPRESS = 20
 BOSS_WAVE_BONUS_SCALING = 0.25
-FAST_THRESHOLD = 30
+FAST_THRESHOLD = 20
 
 function ScoringObject:UpdateScore( const , wave )
     local scoreTable = {}
@@ -187,7 +187,7 @@ end
 function ScoringObject:GetWaveCleared( wave )
     local playerData = GetPlayerData( self.playerID )
     local waveClearScore = self:GetWaveClearBonus( wave )
-    local time = 20 --TODO
+    local time = CURRENT_WAVE_OBJECT.endTime - CURRENT_WAVE_OBJECT.endSpawnTime
     local speedBonus = self:GetSpeedBonus( time )
     local difficultyBonus = self:GetDifficultyBonus()
     local leaks = 0 --TODO
