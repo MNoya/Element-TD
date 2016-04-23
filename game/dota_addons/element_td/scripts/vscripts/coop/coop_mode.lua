@@ -192,7 +192,8 @@ function StartBreakTimeCoop(breakTime)
     Timers:CreateTimer("SpawnWaveDelay_Coop", {
         endTime = breakTime,
         callback = function()
-        
+            if END_TIME then return end
+            
             if COOP_WAVE == WAVE_COUNT then
                 CURRENT_BOSS_WAVE = 1
                 Log:info("Spawning the first co-op boss wave")

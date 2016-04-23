@@ -52,7 +52,6 @@ function WaveCoop:RegisterCreep(index)
 end
 
 function WaveCoop:SpawnWave()
-	-- TODO
 	EmitGlobalSound("ui.contract_complete")
 	
 	local difficulty = GameSettings:GetGlobalDifficulty()
