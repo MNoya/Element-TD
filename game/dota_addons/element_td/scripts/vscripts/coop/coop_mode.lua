@@ -2,7 +2,7 @@
 
 COOP_WAVE = 1 -- the current wave 
 CREEPS_PER_WAVE_COOP = 120 -- number of creeps in each wave
-CURRENT_WAVE_OBJECT = nil -- maybe should hold the WaveCoop 'object' of the wave that is currently active (can we ever have > 1 waves at once?)
+CURRENT_WAVE_OBJECT = nil -- hold sthe WaveCoop 'object' of the wave that is currently active
 
 COOP_HEALTH = 0
 COOP_LIFE_TOWER_KILLS = 0
@@ -39,24 +39,39 @@ function SpawnWaveCoop()
     end
     -- InterestManager:CheckForIncorrectPausing() -- not needed?
 
-    CURRENT_WAVE_OBJECT:SetOnCompletedCallback(function()   
-        print("[COOP] Completed wave "..COOP_WAVE)
+    CURRENT_WAVE_OBJECT:SetOnCompletedCallback(function()
+        if COOP_HEALTH == 0 then return end
+
+        EmitGlobalSound("ui.npe_objective_complete")
+        InterestManager:CompletedWave(COOP_WAVE)
+
+        -- Game cleared?
+        if COOP_WAVE+1 == WAVE_COUNT then
+            ForAllPlayerIDs(function(playerID)
+                local playerData = GetPlayerData(playerID)
+                playerData.clearTime = GameRules:GetGameTime() - START_GAME_TIME -- Used to determine the End Speed Bonus
+                playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR, COOP_WAVE )
+                Timers:CreateTimer(2, function()
+                    playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
+                end)
+            end)            
+        end
 
         if COOP_WAVE < WAVE_COUNT then
             COOP_WAVE = COOP_WAVE + 1
         end
 
-        EmitGlobalSound("ui.npe_objective_complete")
-        InterestManager:CompletedWave(COOP_WAVE)
-
-        ForAllPlayerIDs(function(playerID)
-            local playerData = GetPlayerData(playerID)
-            playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR, COOP_WAVE )
-        end)
-
         -- Boss Wave completed starts the new one with no breaktime
         if CURRENT_BOSS_WAVE > 0 then
             print("[COOP] Completed boss wave "..CURRENT_BOSS_WAVE)
+
+            -- Boss wave score
+            ForAllPlayerIDs(function(playerID)
+                local playerData = GetPlayerData(playerID)
+                playerData.scoreObject:UpdateScore( SCORING_BOSS_WAVE_CLEAR, COOP_WAVE )
+                playerData.bossWaves = playerData.bossWaves + 1
+            end)
+
             CURRENT_BOSS_WAVE = CURRENT_BOSS_WAVE + 1
 
             ForAllPlayerIDs(function(playerID)
@@ -67,7 +82,13 @@ function SpawnWaveCoop()
             SpawnWaveCoop() 
             return
         end
- 
+        
+        print("[COOP] Completed wave "..COOP_WAVE)
+        ForAllPlayerIDs(function(playerID)
+            local playerData = GetPlayerData(playerID)
+            playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR, COOP_WAVE )
+        end)
+
         -- Start the breaktime for the next wave
         StartBreakTimeCoop(GameSettings:GetGlobalDifficulty():GetWaveBreakTime(COOP_WAVE))
     end)
