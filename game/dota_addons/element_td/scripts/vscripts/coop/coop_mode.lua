@@ -84,7 +84,6 @@ function CreateMoveTimerForCreepCoop(creep, sector)
             creep:MoveToPosition(destination)
 
             if (creep:GetAbsOrigin() - destination):Length2D() <= 100 then
-                
                 if GameSettings:GetEndless() ~= "Endless" then
                     InterestManager:LeakedWave(creep.waveObject.waveNumber)
                 end
@@ -99,6 +98,8 @@ function CreateMoveTimerForCreepCoop(creep, sector)
                 if creep:HasAbility("creep_ability_bulky") then
                     lives = lives * 2
                 end
+
+                CURRENT_WAVE_OBJECT.leaks = CURRENT_WAVE_OBJECT.leaks + lives
 
                 COOP_HEALTH = COOP_HEALTH - 1
                 for _, playerID in pairs(playerIDs) do

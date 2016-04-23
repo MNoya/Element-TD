@@ -85,7 +85,7 @@ function ScoringObject:UpdateScore( const , wave )
         if scoreTable['cleanBonus'] ~= 0 then
             table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Clean bonus: ' .. GetPctString(scoreTable['cleanBonus']), '#00FF00'} )
         else
-            table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;'..playerData.waveObjects[wave].leaks .. ' Lives lost', '#FF0000'} )
+            table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;'..CURRENT_WAVE_OBJECT.leaks .. ' Lives lost', '#FF0000'} )
         end
     end
     if scoreTable['speedBonus'] then
@@ -190,7 +190,7 @@ function ScoringObject:GetWaveCleared( wave )
     local time = CURRENT_WAVE_OBJECT.endTime - CURRENT_WAVE_OBJECT.endSpawnTime
     local speedBonus = self:GetSpeedBonus( time )
     local difficultyBonus = self:GetDifficultyBonus()
-    local leaks = 0 --TODO
+    local leaks = CURRENT_WAVE_OBJECT.leaks
     local cleanBonus = self:GetCleanBonus( leaks == 0 )
     local totalScore = math.ceil(waveClearScore * (1 + cleanBonus) * (1 + speedBonus) * (1 + difficultyBonus))
 

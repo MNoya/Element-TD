@@ -375,8 +375,13 @@ function ElementTD:CheckGameEnd()
     print("Game End Condition met. Determining a winner...")
     local teamWinner = DOTA_TEAM_NEUTRALS
     if COOP_MAP then
-        print("Cooperative Victory!")
-        teamWinner = DOTA_TEAM_GOODGUYS
+        if COOP_WAVE >= WAVE_COUNT then
+            print("Cooperative Victory!")
+            teamWinner = DOTA_TEAM_GOODGUYS
+        else
+            print("Cooperative Defeat :(")
+            teamWinner = DOTA_TEAM_NEUTRALS
+        end    
 
     elseif #playerIDs == 1 then
         for k, ply in pairs(playerIDs) do
