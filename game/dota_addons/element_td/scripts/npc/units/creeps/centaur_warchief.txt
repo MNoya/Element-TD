@@ -38,13 +38,12 @@
         "AttachWearables" // Unbroken Stallion
         {
             "1" { "ItemDef" "6500" } // Double Edge of the Unbroken Stallion
-            "2" { "ItemDef" "6498" } // Tail of the Unbroken Stallion
+            //"2" { "ItemDef" "6498" } // Tail of the Unbroken Stallion
             "3" { "ItemDef" "6494" } // Armor of the Unbroken Stallion
-            "4" { "ItemDef" "10540" } // Unbroken Stallion Cursor Pack
             "5" { "ItemDef" "6496" } // Bracers of the Unbroken Stallion
             "6" { "ItemDef" "6497" } // Helm of the Unbroken Stallion
-            "7" { "ItemDef" "6495" } // Belt of the Unbroken Stallion
-            "8" { "ItemDef" "6889" } // Shields of the Unbroken Stallion
+            //"7" { "ItemDef" "6495" } // Belt of the Unbroken Stallion
+            //"8" { "ItemDef" "6889" } // Shields of the Unbroken Stallion
         }
     }
 }
