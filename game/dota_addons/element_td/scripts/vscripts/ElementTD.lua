@@ -505,7 +505,7 @@ function ElementTD:OnHeroInGame(hero)
     self.availableSpawnIndex = self.availableSpawnIndex + 1
 
     -- we must create the Elemental Summoner for this player
-    local sector = playerData.sector + 1
+    local sector = COOP_MAP and (playerID+1) or playerData.sector + 1
     local summoner = CreateUnitByName("elemental_summoner", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber()) 
     summoner:SetOwner(hero)
     summoner:SetControllableByPlayer(playerID, true)
