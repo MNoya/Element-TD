@@ -373,7 +373,11 @@ function ElementTD:CheckGameEnd()
 
     print("Game End Condition met. Determining a winner...")
     local teamWinner = DOTA_TEAM_NEUTRALS
-    if #playerIDs == 1 then
+    if COOP_MAP then
+        print("Cooperative Victory!")
+        teamWinner = DOTA_TEAM_GOODGUYS
+
+    elseif #playerIDs == 1 then
         for k, ply in pairs(playerIDs) do
             local hero = PlayerResource:GetSelectedHeroEntity(ply)
             local playerData = GetPlayerData(ply)

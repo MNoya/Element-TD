@@ -142,7 +142,10 @@ function CreateEndCredit(steamid) {
                 winString = Players.GetPlayerName( playerID )
             }
 
-            endScreenVictory.SetDialogVariable( "winning_team_name", winString );
+            if (Game.IsCoop() && playersOnWinningTeam.length>1)
+                endScreenVictory.text = $.Localize("cooperative_victory")
+            else
+                endScreenVictory.SetDialogVariable( "winning_team_name", winString );
 
             if ( GameUI.CustomUIConfig().team_colors )
             {

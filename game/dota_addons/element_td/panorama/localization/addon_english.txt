@@ -340,5 +340,6 @@
         "leaderboard_unreachable"   "Leaderboard not available."
 
         "cooperative_map"       "Cooperative Map"
+        "cooperative_victory"   "Cooperative Victory!"
     }
 }
