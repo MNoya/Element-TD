@@ -33,6 +33,7 @@ FAST_WAVE_CLEAR_FACTOR = 0.03
 BASE_TIME_CLASSIC = 45
 BASE_TIME_EXPRESS = 20
 BOSS_WAVE_BONUS_SCALING = 0.25
+FAST_THRESHOLD = 30
 
 function ScoringObject:UpdateScore( const , wave )
 	local scoreTable = {}
@@ -182,27 +183,6 @@ function ScoringObject:ClearDisplay()
 	CustomGameEventManager:Send_ServerToPlayer(player, "scoring_remove_notification", {count=count} )
 end
 
-function GetPctString( number )
-	local percent = round(number * 100)
-	local processed = percent
-	if percent >= 0 then
-		processed = '+' .. percent
-	end
-	return processed .. '%'
-end
-
--- Adds thousands comma to number
-function comma_value( number )
-	local formatted = number
-	while true do  
-		formatted, k = string.gsub(formatted, "^(-?%d+)(%d%d%d)", '%1,%2')
-		if (k==0) then
-			break
-		end
-	end
-	return formatted
-end
-
 -- Returns WaveClearBonus, CleanBonus/Lives lost/SpeedBonus/TotalScore for the round.
 function ScoringObject:GetWaveCleared( wave )
 	local playerData = GetPlayerData( self.playerID )
@@ -293,11 +273,11 @@ end
 -- multiplier after every wave, takes time in seconds
 function ScoringObject:GetSpeedBonus( time )
 	local bonus = 1
-	if time > 30 then
-		bonus = bonus - ( time - 30 )*SLOW_WAVE_CLEAR_FACTOR
-	elseif time < 30 then
+	if time > FAST_THRESHOLD then
+		bonus = bonus - ( time - FAST_THRESHOLD )*SLOW_WAVE_CLEAR_FACTOR
+	elseif time < FAST_THRESHOLD then
 		self.under30 = self.under30 + 1
-		bonus = bonus + ( 30 - time )*FAST_WAVE_CLEAR_FACTOR
+		bonus = bonus + ( FAST_THRESHOLD - time )*FAST_WAVE_CLEAR_FACTOR
 	end
 	return bonus - 1
 end

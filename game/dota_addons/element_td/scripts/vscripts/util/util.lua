@@ -241,3 +241,24 @@ function tableContains(list, element)
     end
     return false
 end
+
+function GetPctString( number )
+    local percent = round(number * 100)
+    local processed = percent
+    if percent >= 0 then
+        processed = '+' .. percent
+    end
+    return processed .. '%'
+end
+
+-- Adds thousands comma to number
+function comma_value( number )
+    local formatted = number
+    while true do  
+        formatted, k = string.gsub(formatted, "^(-?%d+)(%d%d%d)", '%1,%2')
+        if (k==0) then
+            break
+        end
+    end
+    return formatted
+end

@@ -257,8 +257,7 @@ function SpawnEntity(entityClass, playerID, position)
         -- Adjust slows multiplicatively
         entity:AddNewModifier(entity, nil, "modifier_slow_adjustment", {})
 
-        -- Add to scoreboard count
-        -- TODO: scoreboard for co-op I guess
+        -- Add to scoreboard remaining count
         if not COOP_MAP then
             local playerData = GetPlayerData(playerID)
             playerData.remaining = playerData.remaining + 1

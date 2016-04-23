@@ -49,6 +49,11 @@ function SpawnWaveCoop()
         EmitGlobalSound("ui.npe_objective_complete")
         InterestManager:CompletedWave(COOP_WAVE)
 
+        ForAllPlayerIDs(function(playerID)
+            local playerData = GetPlayerData(playerID)
+            playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR, COOP_WAVE )
+        end)
+
         -- Boss Wave completed starts the new one with no breaktime
         if CURRENT_BOSS_WAVE > 0 then
             print("[COOP] Completed boss wave "..CURRENT_BOSS_WAVE)
@@ -193,7 +198,7 @@ function StartBreakTimeCoop(breakTime)
         endTime = breakTime,
         callback = function()
             if END_TIME then return end
-            
+
             if COOP_WAVE == WAVE_COUNT then
                 CURRENT_BOSS_WAVE = 1
                 Log:info("Spawning the first co-op boss wave")
