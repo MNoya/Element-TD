@@ -15,6 +15,11 @@
     horizontal-align: left;
 }
 
+#Interest.AspectRatio21x9 
+{
+    margin-bottom: 235px;
+}
+
 #Interest
 {
     horizontal-align: right;
