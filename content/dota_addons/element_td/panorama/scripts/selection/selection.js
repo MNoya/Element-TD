@@ -97,6 +97,7 @@ function GetSelectionOverride(entityIndex) {
 function OnUpdateQueryUnit()
 {
     //$.Msg( "OnUpdateQueryUnit ", Players.GetQueryUnit(Players.GetLocalPlayer()));
+    QueryFilter(Players.GetQueryUnit(Players.GetLocalPlayer()))
 }
 
 (function () {
