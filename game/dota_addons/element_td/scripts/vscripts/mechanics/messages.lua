@@ -159,6 +159,8 @@ function ShowElementLevel(playerID, element, level)
 end
 
 function ShowHighscoreMessage(playerID, percentile)
+    if GameRules.sandBoxEnabled then return end
+
     GameRules:SendCustomMessage("#etd_highscore_message", 0, playerID)
     
     -- Possible names: firstblood, doublekill, triplekill, rampage, multikill_generic
@@ -179,6 +181,8 @@ function ShowHighscoreMessage(playerID, percentile)
 end
 
 function ShowFirstHighscoreMessage(playerID)
+    if GameRules.sandBoxEnabled then return end
+    
     local particleName = "particles/econ/events/killbanners/screen_killbanner_compendium14_firstblood.vpcf"
     local particle = ParticleManager:CreateParticleForPlayer(particleName, PATTACH_EYES_FOLLOW, PlayerResource:GetSelectedHeroEntity(playerID), PlayerResource:GetPlayer(playerID))
 

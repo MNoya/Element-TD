@@ -20,6 +20,36 @@ function CoopStart()
     Timers:CreateTimer(AbandonThinker)
 end
 
+function OpenCoopPortal()
+    CoopPortal = Entities:FindByName(nil, "coop_portal")
+    CoopPortal.particle = ParticleManager:CreateParticle("particles/custom/portals/coop_portal.vpcf", PATTACH_CUSTOMORIGIN, nil)
+    ParticleManager:SetParticleControl(CoopPortal.particle, 0, CoopPortal:GetAbsOrigin())
+    UpdateCoopPortal(1)
+end
+
+function UpdateCoopPortal(wave)
+    if not CoopPortal then OpenCoopPortal() end
+
+    local element = string.gsub(creepsKV[WAVE_CREEPS[wave]].Ability1, "_armor", "")
+    ParticleManager:SetParticleControl(CoopPortal.particle, 15, GetElementColor(element))
+
+    if CoopPortal.vortex then
+        ParticleManager:DestroyParticle(CoopPortal.vortex, true)
+    end
+
+    if element ~= composite then
+        CoopPortal.vortex = ParticleManager:CreateParticle("particles/custom/portals/"..element.."_vortex.vpcf", PATTACH_CUSTOMORIGIN, nil)
+        ParticleManager:SetParticleControl(CoopPortal.vortex, 0, CoopPortal:GetAbsOrigin())
+    end
+end
+
+function CloseCoopPortal()
+    local portal = Entities:FindByName(nil, "coop_portal")
+    if portal and portal.particle then
+        ParticleManager:DestroyParticle(portal.particle, true)
+    end
+end
+
 function SpawnWaveCoop()
     Log:info("Spawning co-op wave " .. COOP_WAVE)
 
@@ -173,6 +203,7 @@ function StartBreakTimeCoop(breakTime)
     for i = 1, 6 do
         ShowPortalForSector(i, COOP_WAVE)
     end
+    UpdateCoopPortal(COOP_WAVE)
 
     -- set up each individual player
     for _, playerID in pairs(playerIDs) do
