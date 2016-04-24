@@ -23,6 +23,7 @@ function loadWaveData(chaos)
     end
 
     if COOP_MAP then
+        WAVE_COUNT = wavesKV["WaveCountCoop"]
         settings = GameSettingsKV.GameLength["Coop"]
     end
 
@@ -55,10 +56,12 @@ function loadWaveData(chaos)
             WAVE_HEALTH[i] = baseHP
         else
             if COOP_MAP then
-                if multiplier_3_wave and i >= multiplier_3 then
+                if multiplier_3 and i >= multiplier_3_wave then
                     WAVE_HEALTH[i] = WAVE_HEALTH[i-1] * multiplier_3
-                elseif multiplier_2_wave and i >= multiplier_2 then
+                elseif multiplier_2 and i >= multiplier_2_wave then
                     WAVE_HEALTH[i] = WAVE_HEALTH[i-1] * multiplier_2
+                else
+                    WAVE_HEALTH[i] = WAVE_HEALTH[i-1] * multiplier
                 end
             else
                 WAVE_HEALTH[i] = WAVE_HEALTH[i-1] * multiplier

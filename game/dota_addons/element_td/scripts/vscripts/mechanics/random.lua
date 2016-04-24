@@ -34,15 +34,25 @@ function getRandomElement(wave)
         end
     end
 
-    if COOP_MAP and target ~= "pure" and randoomPrevention(usedElements, element) then
-        return getRandomElement(wave)
-    elseif EXPRESS_MODE and ((wave < 3 and usedElements[element] == 1) or (wave < 12 and usedElements[element] == 2) or usedElements[element] == 3 ) then
-        return getRandomElement(wave)
-    elseif not EXPRESS_MODE and ((wave < 10 and usedElements[element] == 1) or (wave < 30 and usedElements[element] == 2) or usedElements[element] == 3) then
-        return getRandomElement(wave)
+    if COOP_MAP then
+        if target ~= "pure" and randoomPrevention(usedElements, element) then
+            return getRandomElement(wave)
+        elseif ((wave < 5 and usedElements[element] == 1) or (wave < 25 and usedElements[element] == 2) or usedElements[element] == 3) then
+            return getRandomElement(wave)
+        else
+            usedElements[element] = usedElements[element] + 1
+            return element
+        end
     else
-        usedElements[element] = usedElements[element] + 1
-        return element
+
+        if EXPRESS_MODE and ((wave < 3 and usedElements[element] == 1) or (wave < 12 and usedElements[element] == 2) or usedElements[element] == 3 ) then
+            return getRandomElement(wave)
+        elseif not EXPRESS_MODE and ((wave < 10 and usedElements[element] == 1) or (wave < 30 and usedElements[element] == 2) or usedElements[element] == 3) then
+            return getRandomElement(wave)
+        else
+            usedElements[element] = usedElements[element] + 1
+            return element
+        end
     end
 end
 
@@ -57,19 +67,21 @@ function randoomPrevention(used, target)
         end
     end
 
-    local improveOdds = num == 4 and RollPercentage(95)
+    local improveOdds = num == 4 and RollPercentage(85)
     return improveOdds or (num >= 5 and used[target] == 0)
 end
 
 function getNumberOfElementsInSequence( seq )
     local t = {}
-    for k,v in pairs(seq) do
-        local value = v
-        if type(v) == "table" then
-            value = seq[k][0]
-        end
+    for _,value in pairs(seq) do
+        if type(value) == "table" then
+            for _, value2 in pairs(value) do
+                if value2~="pure" and not tableContains(t, value2) then
+                    table.insert(t, value2)
+                end
+            end
 
-        if value~="pure" and not tableContains(t, value) then
+        elseif value~="pure" and not tableContains(t, value) then
             table.insert(t, value)
         end
     end
@@ -85,6 +97,9 @@ function testRandom( iterCount )
         for k,v in pairs(sequence) do
             if k == 0 then
                 s = s..sequence[k][0]
+                if sequence[k][1] then
+                    s = s..","..sequence[k][1]
+                end
             else
                 s = s..","..v
             end
