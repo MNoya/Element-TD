@@ -184,5 +184,5 @@ function ShowFirstHighscoreMessage(playerID)
     Notifications:Top(playerID, {text = "#etd_highscore_new", class = "NewHighscore", duration = 5})
 
     Notifications:ClearTop(playerID)
-    GameRules:SendCustomMessage("#etd_highscore_new", 0, playerID)
+    GameRules:SendCustomMessage("#etd_highscore_message", 0, playerID)
 end
