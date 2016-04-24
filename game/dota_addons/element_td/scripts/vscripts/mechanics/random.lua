@@ -99,8 +99,6 @@ function testRandom( iterCount )
     end
 end
 
-testRandom(10000)
-
 function getRandomElementOrder()
     usedElements = {["water"] = 0, ["fire"] = 0, ["earth"] = 0, ["nature"] = 0, ["dark"] = 0, ["light"] = 0, ["pure"] = 0}
     local elementsOrder = {}

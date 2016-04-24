@@ -6,7 +6,7 @@ function ForAllPlayerIDs(callback)
     end
 end
 
-function ForAllConnectedPlayerIDs()
+function ForAllConnectedPlayerIDs(callback)
     ForAllPlayerIDs(function(playerID)
         if PlayerResource:GetConnectionState(playerID) == DOTA_CONNECTION_STATE_CONNECTED then
             callback(playerID)
@@ -17,7 +17,7 @@ end
 function CDOTA_PlayerResource:GetPlayerCountWithoutLeavers()
     local count = 0
     ForAllPlayerIDs(function(playerID)
-        if not PlayerResource:GetConnectionState(playerID) == DOTA_CONNECTION_STATE_ABANDONED then
+        if self:GetConnectionState(playerID) ~= DOTA_CONNECTION_STATE_ABANDONED then
             count = count + 1
         end
     end)
