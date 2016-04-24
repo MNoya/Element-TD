@@ -34,7 +34,9 @@ function getRandomElement(wave)
         end
     end
 
-    if EXPRESS_MODE and ((wave < 3 and usedElements[element] == 1) or (wave < 12 and usedElements[element] == 2) or usedElements[element] == 3 ) then
+    if COOP_MAP and target ~= "pure" and randoomPrevention(usedElements, element) then
+        return getRandomElement(wave)
+    elseif EXPRESS_MODE and ((wave < 3 and usedElements[element] == 1) or (wave < 12 and usedElements[element] == 2) or usedElements[element] == 3 ) then
         return getRandomElement(wave)
     elseif not EXPRESS_MODE and ((wave < 10 and usedElements[element] == 1) or (wave < 30 and usedElements[element] == 2) or usedElements[element] == 3) then
         return getRandomElement(wave)
@@ -44,6 +46,60 @@ function getRandomElement(wave)
     end
 end
 
+-- Never 6-elem AR in Coop unless its a single player game
+function randoomPrevention(used, target)
+    if PlayerResource:GetPlayerCount() > 1 then return false end
+
+    local num = 0
+    for k,v in pairs(used) do
+        if v > 0 and v ~= "pure" then
+            num = num + 1
+        end
+    end
+
+    local improveOdds = num == 4 and RollPercentage(95)
+    return improveOdds or (num >= 5 and used[target] == 0)
+end
+
+function getNumberOfElementsInSequence( seq )
+    local t = {}
+    for k,v in pairs(seq) do
+        local value = v
+        if type(v) == "table" then
+            value = seq[k][0]
+        end
+
+        if value~="pure" and not tableContains(t, value) then
+            table.insert(t, value)
+        end
+    end
+    return #t
+end
+
+function testRandom( iterCount )
+    print("Generating "..iterCount.." random element sequences:")
+    local counts = {}
+    for i = 1, iterCount do
+        local sequence = getRandomElementOrder()
+        local s = ""
+        for k,v in pairs(sequence) do
+            if k == 0 then
+                s = s..sequence[k][0]
+            else
+                s = s..","..v
+            end
+        end
+
+        local count = getNumberOfElementsInSequence(sequence)
+        counts[count] = counts[count] and counts[count] + 1 or 1
+    end
+
+    for k,v in pairs(counts) do
+        print(k.."-element random sequences: "..v.." ("..math.floor(v/iterCount*100).."%)")
+    end
+end
+
+testRandom(10000)
 
 function getRandomElementOrder()
     usedElements = {["water"] = 0, ["fire"] = 0, ["earth"] = 0, ["nature"] = 0, ["dark"] = 0, ["light"] = 0, ["pure"] = 0}
