@@ -50,6 +50,8 @@ function RefreshScoreboard()
     {
         var root = $.GetContextPanel()
         HideAllTraverse(root, "ScoreContainer")
+        HideAllTraverse(root, "NetworthContainer")
+        HideAllTraverse(root, "TeamNetworthLabel")
         HideAllTraverse(root, "TeamScoreLabel")
         HideAllTraverse(root, "LivesContainer")
         HideAllTraverse(root, "TeamLives")

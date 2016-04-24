@@ -203,6 +203,9 @@ function _ScoreboardUpdater_UpdatePlayerPanel( scoreboardConfig, playersContaine
         if ( playerName )
         {
             var playerColor = GameUI.CustomUIConfig().team_colors[playerInfo.player_team_id];
+            if (Game.IsCoop())
+                playerColor = GameUI.CustomUIConfig().player_colors[playerId]
+            
             playerName.style['color'] = playerColor || '#FFFFFF';
         }
 

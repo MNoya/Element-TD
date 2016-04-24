@@ -14,9 +14,9 @@
 		// These lines set up the panorama colors used by each player on the top scoreboard
 		GameUI.CustomUIConfig().player_colors = {}
 		GameUI.CustomUIConfig().player_colors[0] = "#65D413;";
-		GameUI.CustomUIConfig().player_colors[1] = "#FF6C00;";
-		GameUI.CustomUIConfig().player_colors[2] = "#C54DA8;";
-		GameUI.CustomUIConfig().player_colors[3] = "#8C2AF4;";
+		GameUI.CustomUIConfig().player_colors[1] = "#01A2FF;";
+		GameUI.CustomUIConfig().player_colors[2] = "#F3C909;";
+		GameUI.CustomUIConfig().player_colors[3] = "#FF3455;";
 		GameUI.CustomUIConfig().player_colors[4] = "#006400;";
 		GameUI.CustomUIConfig().player_colors[5] = "#ADD8E6;";
 		GameUI.CustomUIConfig().player_colors[6] = "#F3C909;";

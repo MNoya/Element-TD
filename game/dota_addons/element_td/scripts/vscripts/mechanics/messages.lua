@@ -181,8 +181,8 @@ end
 function ShowFirstHighscoreMessage(playerID)
     local particleName = "particles/econ/events/killbanners/screen_killbanner_compendium14_firstblood.vpcf"
     local particle = ParticleManager:CreateParticleForPlayer(particleName, PATTACH_EYES_FOLLOW, PlayerResource:GetSelectedHeroEntity(playerID), PlayerResource:GetPlayer(playerID))
-    Notifications:Top(playerID, {text = "#etd_highscore_new", class = "NewHighscore", duration = 5})
 
     Notifications:ClearTop(playerID)
+    Notifications:Top(playerID, {text = "#etd_highscore_new", class = "NewHighscore", duration = 5})
     GameRules:SendCustomMessage("#etd_highscore_message", 0, playerID)
 end
