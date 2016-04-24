@@ -1,4 +1,4 @@
-BH_VERSION = "1.1.2"
+BH_VERSION = "1.1.3"
 
 require('libraries/timers')
 require('libraries/selection')
@@ -884,8 +884,7 @@ function BuildingHelper:RemoveBuilding(building, bSkipEffects)
     end
 
     for k, v in pairs(building.blockers) do
-        DoEntFireByInstanceHandle(v, "Disable", "1", 0, nil, nil)
-        DoEntFireByInstanceHandle(v, "Kill", "1", 1, nil, nil)
+        UTIL_Remove(v)
     end
 end
 
