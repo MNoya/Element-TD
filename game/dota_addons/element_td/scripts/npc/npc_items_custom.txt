@@ -149,6 +149,7 @@
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	    "MaxLevel"                      "1"
 	    "AbilityTextureName"            "toggle_grid"
+	    "AbilityCooldown"               "1"
 	
 	    "ItemDroppable"                 "0"
 	    "ItemPurchasable"               "0"
