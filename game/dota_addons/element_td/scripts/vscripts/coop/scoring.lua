@@ -46,7 +46,7 @@ function ScoringObject:UpdateScore( const , wave )
         table.insert(processed, {'Wave ' .. wave .. ' cleared!', '#FFF0F5'} )
     elseif ( const == SCORING_WAVE_LOST ) then
         scoreTable = self:GetWaveLost()
-        table.insert(processed, {'Game over! Lost on wave ' .. playerData.completedWaves + 1, '#FFF0F5'} )
+        table.insert(processed, {'Game over! Lost on wave ' .. COOP_WAVE, '#FFF0F5'} )
 
     -- Completed wave 55/30, waiting for boss wave (not in express)
     elseif ( const == SCORING_GAME_CLEAR ) then
