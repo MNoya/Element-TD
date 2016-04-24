@@ -15,7 +15,7 @@ SLOWING_VALUES = {[1]=0.1,[2]=0.3}
 
 function modifier_slow_adjustment:OnCreated(params)
     self.base_ms = 300
-    self.haste_ms = self.base_ms * (string.match(GetMapName(), "element_td_coop") and 2 or 2.5)
+    self.haste_ms = string.match(GetMapName(), "element_td_coop") and 500 or 750
 end
 
 function modifier_slow_adjustment:GetModifierMoveSpeed_Absolute()
