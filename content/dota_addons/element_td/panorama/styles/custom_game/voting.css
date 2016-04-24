@@ -41,6 +41,11 @@
     opacity: 0;
 }
 
+#VotingLive.Coop
+{
+    height: 415px;
+}
+
 .Hidden
 {
     opacity: 0;
