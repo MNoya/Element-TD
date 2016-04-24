@@ -1,18 +1,23 @@
 -- holds important functions and variables for our cooperative mode
 
-COOP_WAVE = 1 -- the current wave 
-CREEPS_PER_WAVE_COOP = 120 -- number of creeps in each wave
-CURRENT_WAVE_OBJECT = nil -- hold sthe WaveCoop 'object' of the wave that is currently active
+if not COOP_WAVE then
+    COOP_WAVE = 1 -- the current wave 
+    CREEPS_PER_WAVE_COOP = 120 -- number of creeps in each wave
+    CURRENT_WAVE_OBJECT = nil -- hold sthe WaveCoop 'object' of the wave that is currently active
 
-COOP_HEALTH = 0
-COOP_LIFE_TOWER_KILLS = 0
-COOP_LIFE_TOWER_KILLS_TOTAL = 0
+    COOP_HEALTH = 0
+    COOP_LIFE_TOWER_KILLS = 0
+    COOP_LIFE_TOWER_KILLS_TOTAL = 0
+end
 
 -- entry point
 function CoopStart()
     COOP_HEALTH = GameSettings:GetMapSetting("Lives");
+    
     local initialBreakTime = GameSettings.length.PregameTime
     StartBreakTimeCoop(initialBreakTime)
+
+    Timers:CreateTimer(AbandonThinker)
 end
 
 function SpawnWaveCoop()
@@ -247,4 +252,30 @@ function StartBreakTimeCoop(breakTime)
             SpawnWaveCoop() 
         end
     })
+end
+
+-- Checks all player heroes, if someone has abandoned then share its units and split its gold
+function AbandonThinker()
+    local splitNum = PlayerResource:GetPlayerCountWithoutLeavers()
+
+    ForAllPlayerIDs(function(playerID)
+        local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+        if hero and hero:HasOwnerAbandoned() then
+            local gold = hero:GetGold()
+            local gold_split = gold/splitNum
+
+            ForAllConnectedPlayerIDs(function(otherPlayerID)
+                -- Share units
+                PlayerResource:SetUnitShareMaskForPlayer(playerID, otherPlayerID, 2, true)
+
+                -- Split gold between teammates
+                local hero = PlayerResource:GetSelectedHeroEntity(otherPlayerID)
+                if hero and gold_split >= 1 then
+                    hero:ModifyGold(gold_split)
+                    hero:ModifyGold(-gold_split)
+                end
+            end)
+        end
+    end)
+    return 1
 end

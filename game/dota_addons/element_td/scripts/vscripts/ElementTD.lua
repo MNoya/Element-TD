@@ -15,6 +15,7 @@ if not players then
     GAME_IS_PAUSED = false
     DEV_MODE = false
     EXPRESS_MODE = false
+    ETD_MAX_PLAYERS = 4
 
     VERSION = "1.6"
     COOP_MAP = GetMapName() == "element_td_coop"
@@ -198,15 +199,6 @@ function ElementTD:OnGameStateChange(keys)
         Timers:CreateTimer(1, function()
             Saves:SavePasses()
         end)
-    end
-end
-
--- This is useful.
-function ForAllPlayerIDs(callback)
-    for playerID = 0, DOTA_MAX_TEAM_PLAYERS do
-        if PlayerResource:IsValidPlayerID(playerID) then
-            callback(playerID)
-        end
     end
 end
 
