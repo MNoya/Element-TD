@@ -434,6 +434,10 @@ Game.IsCoop = function() {
         return mapInfo.map_display_name == "element_td_coop"
 }
 
+Game.IsExpress = function() {
+    return CustomNetTables.GetTableValue("gameinfo", "express").value == "Express"
+}
+
 Game.InterestStopped = function() {
     return (CustomNetTables.GetTableValue("gameinfo", "interest_stopped").value == 1)
 }
