@@ -2,6 +2,7 @@
 {
     width: 100%;
     height: 100%;
+    clip: rect(4%, 100%, 84.5%, 0%); //Top scaleform cliping
 }
 
 .TopNotifications

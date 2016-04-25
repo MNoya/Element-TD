@@ -180,7 +180,7 @@ function UpdateWorldPanelPositions() {
       var newY = worldPos.y
       var maxX = $.GetContextPanel().actuallayoutwidth;
       var maxY = $.GetContextPanel().actuallayoutheight;
-      if (newX+offsetX < 100 || newY+offsetY < 100  || newX > maxX+offsetX-320 || newY > maxY+offsetY-320)
+      if (newY > maxY+offsetY-320)
       {
         panel.visible = false
       }
