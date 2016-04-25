@@ -343,5 +343,6 @@
 
         "cooperative_map"       "Cooperative Map"
         "cooperative_victory"   "Cooperative Victory!"
+        "cooperative_leaked_n"  "Last Wave Leaks: <b>{s:leaks}</b>"
     }
 }
