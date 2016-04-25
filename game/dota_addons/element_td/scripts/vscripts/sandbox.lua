@@ -214,6 +214,11 @@ function Sandbox:SetWave(event)
 
     Sandbox:StopWave({PlayerID=playerID})
 
+    if COOP_MAP then
+        COOP_WAVE = waveNumber
+        UpdateCoopPortal(COOP_WAVE)
+    end
+    
     CURRENT_WAVE = waveNumber
     playerData.nextWave = waveNumber
     playerData.completedWaves = waveNumber - 1
@@ -254,6 +259,7 @@ function Sandbox:SpawnWave(event)
 
     if COOP_MAP then
         COOP_WAVE = waveNumber
+        UpdateCoopPortal(COOP_WAVE)
         SpawnWaveCoop()
     else
         SpawnWaveForPlayer(playerID, waveNumber)

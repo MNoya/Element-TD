@@ -25,6 +25,7 @@ function OpenCoopPortal()
     CoopPortal.particle = ParticleManager:CreateParticle("particles/custom/portals/coop_portal.vpcf", PATTACH_CUSTOMORIGIN, nil)
     ParticleManager:SetParticleControl(CoopPortal.particle, 0, CoopPortal:GetAbsOrigin())
     UpdateCoopPortal(1)
+    ShowArrowHelp()
 end
 
 function UpdateCoopPortal(wave)
@@ -50,6 +51,32 @@ function CloseCoopPortal()
     end
 end
 
+function ShowArrowHelp()
+    CoopPortal.arrows = {}
+
+    local arrows = Entities:FindAllByName("arrow*")
+    for _,v in pairs(arrows) do
+        local names = split(v:GetName(), ",")
+        local particleName = names[1]
+        local lookup = Entities:FindByName(nil, names[2])
+        
+        local arrow = ParticleManager:CreateParticle("particles/custom/tutorial/"..particleName..".vpcf", PATTACH_CUSTOMORIGIN, nil)
+        ParticleManager:SetParticleControl(arrow, 0, v:GetAbsOrigin())
+        ParticleManager:SetParticleControl(arrow, 1, lookup:GetAbsOrigin())
+        table.insert(CoopPortal.arrows, arrow)
+    end
+end
+
+function CloseArrowHelp()
+    local portal = Entities:FindByName(nil, "coop_portal")
+    if portal and portal.arrows then
+        for _,v in pairs(CoopPortal.arrows) do
+            ParticleManager:DestroyParticle(v, true)
+        end
+        portal.arrows = nil
+    end
+end
+
 function SpawnWaveCoop()
     Log:info("Spawning co-op wave " .. COOP_WAVE)
 
@@ -58,6 +85,7 @@ function SpawnWaveCoop()
     -- First wave marks the start of the game
     if START_GAME_TIME == 0 then
         START_GAME_TIME = GameRules:GetGameTime()
+        CloseArrowHelp()
     end
 
     for _, playerID in pairs(playerIDs) do
