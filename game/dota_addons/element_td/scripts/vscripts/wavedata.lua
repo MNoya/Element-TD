@@ -388,20 +388,24 @@ function SpawnWaveForPlayer(playerID, wave)
     waveObj:SpawnWave()
 end
 
--- give 1 lumber every 5 waves or every 3 if express mode ignoring the last wave 55 and 30.
+-- give 1 lumber every 5 waves or every 3 if express mode ignoring the last wave (55/50/30)
 function WaveGrantsLumber( wave )
     if wave == 0 then return end
-    if EXPRESS_MODE then
+    if COOP_MAP then
+        return wave % 5 == 0 and wave < 50
+    elseif EXPRESS_MODE then
         return wave % 3 == 0 and wave < 30
     else
         return wave % 5 == 0 and wave < 55
     end
 end
 
--- pure essence at waves 50/55 and 24/7 (express)
+-- pure essence at waves 50/55, 24/27 in express, 45/50 on coop
 function WaveGrantsEssence( wave )
     if wave == 0 then return end
-    if EXPRESS_MODE then
+    if COOP_MAP then
+        return wave == 45 or wave == 50
+    elseif EXPRESS_MODE then
         return wave == 24 or wave == 27
     else
         return wave == 50 or wave == 55
