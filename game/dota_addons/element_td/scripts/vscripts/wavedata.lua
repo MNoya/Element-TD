@@ -431,7 +431,7 @@ function ShowPortalForSector(sector, wave, playerID)
     -- Portal World Notification
     if COOP_MAP then
         if CURRENT_WAVE_OBJECT and CURRENT_WAVE_OBJECT.leaks and CURRENT_WAVE_OBJECT.leaks > 0 then
-            CustomGameEventManager:Send_ServerToAllClients("world_notification", {entityIndex = portal:GetEntityIndex(), text = "#etd_wave_"..element, leaked = 8})
+            CustomGameEventManager:Send_ServerToAllClients("world_notification", {entityIndex = portal:GetEntityIndex(), text = "#etd_wave_"..element, leaked = CURRENT_WAVE_OBJECT.leaks})
         else
             CustomGameEventManager:Send_ServerToAllClients("world_notification", {entityIndex = portal:GetEntityIndex(), text = "#etd_wave_"..element})
         end
