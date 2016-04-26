@@ -146,11 +146,11 @@ end
 
 -- gives all players interest based on total team gold
 function InterestManagerCoop:GiveInterest()
-	local gold = PlayerResource:GetTotalGold() / PlayerResource:GetPlayerCount()
+	local gold = PlayerResource:GetTotalGold() / PlayerResource:GetPlayerCountWithoutLeavers()
 	local interest = math.floor(gold * INTEREST_RATE)
 
 	if interest > 0 then
-		ForAllPlayerIDs(function(playerID)
+        ForAllConnectedPlayerIDs(function(playerID)
 			local playerData = GetPlayerData(playerID)
 			local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 
