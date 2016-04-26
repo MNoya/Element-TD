@@ -132,10 +132,18 @@ function UpdateWinString (endScreenVictory, winningTeamId) {
     for ( var teamInfo of teamInfoList )
     {
         var teamPanel = ScoreboardUpdater_GetTeamPanel( endScoreboardHandle, teamInfo.team_id );
+
+        if (teamPanel === null)
+        {
+            $.Msg("Something went wrong, got no team panel for team "+teamInfo.team_id)
+            continue
+        }
+
         if (lastPanel !== undefined)
             teamPanel.GetParent().MoveChildAfter( teamPanel, lastPanel );
 
         lastPanel = teamPanel;
+        teamPanel.SetHasClass( "team_endgame", false );
 
         var playerIDs = Game.GetPlayerIDsOnTeam(teamInfo.team_id)
         for (var i in playerIDs)
@@ -147,7 +155,6 @@ function UpdateWinString (endScreenVictory, winningTeamId) {
             GameUI.SetupAvatarTooltip(teamPanel.FindChildTraverse("AvatarImage"), $.GetContextPanel(), steamID64)
         }
 
-        teamPanel.SetHasClass( "team_endgame", false );
         var callback = function( panel )
         {
             return function(){ panel.SetHasClass( "team_endgame", 1 ); }
