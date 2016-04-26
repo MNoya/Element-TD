@@ -221,6 +221,10 @@ function ElementTD:StartGame()
         if GameRules:IsCheatMode() then
             ElementTD:CheatsEnabled()
         end
+
+        if COOP_MAP then
+            ElementTD:PrecacheDuals(1)
+        end
     end)
 end
 

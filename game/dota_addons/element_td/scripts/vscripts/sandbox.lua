@@ -452,7 +452,11 @@ end
 
 -- Forces a fast precache of everything to be able to build anything ASAP
 function ElementTD:PrecacheAll()
-    if EXPRESS_MODE then
+    if COOP_MAP then
+        ElementTD:PrecacheWave(4)
+        ElementTD:PrecacheWave(9)
+        ElementTD:PrecacheWave(14)
+    elseif EXPRESS_MODE then
         ElementTD:ExpressPrecache(5)
         ElementTD:PrecacheWave(2)
         ElementTD:PrecacheWave(5)

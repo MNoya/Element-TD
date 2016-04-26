@@ -23,9 +23,8 @@ function ElementTD:PrecacheWave(waveNumber)
         -- Check if this wave should also load towers
         local load_waves = Precache.file["Async"]["load_waves"]
         local load = load_waves["Classic"]
-        if EXPRESS_MODE then
-            load = load_waves["Express"]
-        end
+        if EXPRESS_MODE then load = load_waves["Express"] end
+        if COOP_MAP then load = load_waves["Coop"] end
 
         local tower_wave_load = load[tostring(waveNumber+1)] --Check one wave in preparation
         if tower_wave_load then
@@ -42,7 +41,7 @@ function ElementTD:PrecacheWave(waveNumber)
     end
 end
 
--- Loads lvl 1 duals and lvl 2 singles later, just in case
+-- Loads lvl 1 duals and lvl 1 triples, just in case
 function ElementTD:ExpressPrecache(delay)
     delay = delay or 15
     ElementTD:PrecacheDuals(1)
