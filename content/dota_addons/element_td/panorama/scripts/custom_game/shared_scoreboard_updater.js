@@ -358,9 +358,10 @@ function _ScoreboardUpdater_UpdateTeamPanel( scoreboardConfig, containerPanel, t
 //  $.Msg( "_ScoreboardUpdater_UpdateTeamPanel: ", teamId );
 
     var teamPanelName = "_dynamic_team_" + teamId;
-    var teamPanel = $( "#"+teamPanelName );
+    var teamPanel = containerPanel.FindChild( teamPanelName );
 
-    teamPanel.SetHasClass("Coop", Game.IsCoop())
+    if (teamPanel)
+        teamPanel.SetHasClass("Coop", Game.IsCoop())
 
     if ( teamPanel === null )
     {
@@ -381,6 +382,9 @@ function _ScoreboardUpdater_UpdateTeamPanel( scoreboardConfig, containerPanel, t
             }
         }
     }
+
+    teamPanel.SetHasClass("Coop", Game.IsCoop())
+
     var localPlayerTeamId = -1;
     var localPlayer = Game.GetLocalPlayerInfo();
     if ( localPlayer )
@@ -486,7 +490,6 @@ function ScoreboardUpdater_InitializeScoreboard( scoreboardConfig, scoreboardPan
         scoreboardConfig.shouldSort = false;
     }
     _ScoreboardUpdater_UpdateAllTeamsAndPlayers( scoreboardConfig, scoreboardPanel );
-    
     return { "scoreboardConfig": scoreboardConfig, "scoreboardPanel":scoreboardPanel }
 }
 
@@ -530,6 +533,7 @@ function ScoreboardUpdater_GetSortedTeamInfoList( scoreboardHandle )
     }*/
 
     // Sort teams by player score
+    var allTeams = Game.GetAllTeamIDs()
     var scores = GameUI.CustomUIConfig().playerScore
     $.Msg("Initial Scores: ", scores)
 
@@ -557,6 +561,17 @@ function ScoreboardUpdater_GetSortedTeamInfoList( scoreboardHandle )
     };
     $.Msg("Sorted Scores: ", scores)
     $.Msg("Sorted Teams: ", teamsList)
+    if (teamsList.length < allTeams.length)
+    {
+        for (var i in allTeams)
+        {
+            var teamID = allTeams[i]
+            if (!addedTeams[teamID])
+                addedTeams[teamID] = 1
+                teamsList.push( Game.GetTeamDetails(teamID) );
+        }
+    }
+    $.Msg("Final Teams: ", teamsList)
 
     return teamsList;
 }
