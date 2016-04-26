@@ -281,7 +281,7 @@ function AbandonThinker()
                     otherHero:ModifyGold(gold_split)
                 end
             end)
-            hero:ModifyGold(0)
+            SetCustomGold(playerID, 0)
         end
     end)
     return 1
