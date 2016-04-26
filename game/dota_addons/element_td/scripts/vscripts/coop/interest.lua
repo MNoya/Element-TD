@@ -93,7 +93,9 @@ function InterestManagerCoop:CheckForIncorrectPausing()
 end
 
 function InterestManagerCoop:CompletedWave(waveNumber)
-	InterestManagerCoop:ResumeInterest()
+	if InterestManagerCoop.locked then
+		InterestManagerCoop:ResumeInterest()
+	end
 end
 
 -- force the player's interest to resume
