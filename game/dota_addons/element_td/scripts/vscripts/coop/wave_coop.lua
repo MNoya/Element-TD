@@ -63,6 +63,11 @@ function WaveCoop:SpawnWave()
 	self.leaks = 0
 	self.kills = 0
 
+	-- Reset the lane leak counter
+	for i=1, 6 do
+		COOP_WAVE_LANE_LEAKS[i] = 0
+	end
+
 	self.spawnTimer = Timers:CreateTimer(time_between_spawns, function()
 		for sector = 1, 6 do 
 			local entity = SpawnEntity(WAVE_CREEPS[self.waveNumber], nil, EntityStartLocations[sector])
