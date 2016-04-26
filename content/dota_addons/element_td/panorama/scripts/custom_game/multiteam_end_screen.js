@@ -101,13 +101,6 @@ function UpdateWinString (endScreenVictory, winningTeamId) {
         teamColor = teamColor.replace( ";", "" );
         endScreenVictory.style.color = teamColor + ";";
     }
-
-    if ( GameUI.CustomUIConfig().team_colors )
-    {
-        var teamColor = GameUI.CustomUIConfig().team_colors[ winningTeamId ];
-        teamColor = teamColor.replace( ";", "" );
-        endScreenVictory.style.color = teamColor + ";";
-    }
 }
 
 (function()
@@ -167,7 +160,10 @@ function UpdateWinString (endScreenVictory, winningTeamId) {
     var endScreenVictory = $( "#EndScreenVictory" );
     if ( endScreenVictory )
     {
-        UpdateWinString(endScreenVictory, winningTeamId)
+        if (winningTeamDetails.team_id == DOTATeam_t.DOTA_TEAM_NEUTRALS)
+            endScreenVictory.text = $.Localize("custom_end_screen_defeat_message")
+        else
+            UpdateWinString(endScreenVictory, winningTeamId)
     }
 
     var winningTeamLogo = $( "#WinningTeamLogo" );
