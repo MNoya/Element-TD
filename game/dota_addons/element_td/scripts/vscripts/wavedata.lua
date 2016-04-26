@@ -538,7 +538,11 @@ function ReduceLivesForPlayer(playerID, lives)
         ElementTD:EndGameForPlayer(playerID) -- End the game for the dead player
     elseif PlayerIsAlive(playerID) then
         
-        playerData.waveObject.leaks = playerData.waveObject.leaks + lives
+        if COOP_MAP then
+            playerData.waveObject.leaks = CURRENT_WAVE_OBJECT.leaks
+        else
+            playerData.waveObject.leaks = playerData.waveObject.leaks + lives
+        end
         
         if hero and playerData.health < maxLives then --When over max health, HP loss is covered by losing modifier_bonus_life
             hero:SetHealth(playerData.health)
