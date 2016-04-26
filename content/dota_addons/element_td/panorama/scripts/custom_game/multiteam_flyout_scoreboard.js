@@ -57,7 +57,7 @@ function RefreshScoreboard()
         HideAllTraverse(root, "TeamLives")
         HideAllTraverse(root, "KillsContainer")
         HideAllTraverse(root, "KillsRemaining")
-        SetFlyoutScoreboardVisible(true)
+        $.Schedule(2, function(){SetFlyoutScoreboardVisible(true)})
     }
 
 	GameEvents.Subscribe( "etd_update_scoreboard", RefreshScoreboard );

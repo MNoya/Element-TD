@@ -76,8 +76,8 @@ function DamageEntity(entity, attacker, damage, pure)
         
         if COOP_MAP then
             -- Split gold bounty with all players
-            goldBounty = goldBounty / PlayerResource:GetPlayerCount()
-            ForAllPlayerIDs(function(playerID)
+            goldBounty = goldBounty / PlayerResource:GetPlayerCountWithoutLeavers()
+            ForAllConnectedPlayerIDs(function(playerID)
                 local hero = PlayerResource:GetSelectedHeroEntity(playerID)
                 if hero then
                     hero:ModifyGold(goldBounty)

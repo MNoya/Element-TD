@@ -266,21 +266,22 @@ function AbandonThinker()
 
     ForAllPlayerIDs(function(playerID)
         local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-        if hero and hero:HasOwnerAbandoned() then
+        if hero and hero:HasOwnerAbandoned() and hero:GetGold() > 0 then
             local gold = hero:GetGold()
             local gold_split = gold/splitNum
+            print("Player "..playerID.." has abandoned, performing share and split "..gold.." gold between "..splitNum.." players ("..gold_split..")")
 
             ForAllConnectedPlayerIDs(function(otherPlayerID)
                 -- Share units
                 PlayerResource:SetUnitShareMaskForPlayer(playerID, otherPlayerID, 2, true)
 
                 -- Split gold between teammates
-                local hero = PlayerResource:GetSelectedHeroEntity(otherPlayerID)
-                if hero and gold_split >= 1 then
-                    hero:ModifyGold(gold_split)
-                    hero:ModifyGold(-gold_split)
+                local otherHero = PlayerResource:GetSelectedHeroEntity(otherPlayerID)
+                if otherHero then
+                    otherHero:ModifyGold(gold_split)
                 end
             end)
+            hero:ModifyGold(0)
         end
     end)
     return 1
