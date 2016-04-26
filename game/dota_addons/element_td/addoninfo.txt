@@ -1,6 +1,6 @@
 "AddonInfo"
 {
-     "maps"                   "element_td element_td_coop"
+     "maps"                   "element_td_coop element_td"
      "IsPlayable"             "1"
      "element_td"
      {
