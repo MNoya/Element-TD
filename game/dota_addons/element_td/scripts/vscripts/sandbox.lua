@@ -405,8 +405,13 @@ function Sandbox:Restart( event )
     CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=newPlayerData.health/hero:GetMaxHealth() * 100} )
 
     -- Set resources
-    SetCustomGold(playerID, GameSettings.length.Gold)
-    SetCustomLumber(playerID, 1)
+    local baseGold = GameSettings.length.Gold
+    if COOP_MAP then
+        baseGold = math.floor(baseGold * 4 / PlayerResource:GetPlayerCountWithoutLeavers() + 0.5)
+    end
+
+    SetCustomGold(playerID, baseGold)
+    SetCustomLumber(playerID, GameSettings.length.Lumber)
     SetCustomEssence(playerID, 0)
     UpdateElementsHUD(playerID)
     UpdatePlayerSpells(playerID)
