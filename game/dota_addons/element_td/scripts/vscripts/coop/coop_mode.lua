@@ -62,6 +62,7 @@ function SpawnWaveCoop()
                 playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR, COOP_WAVE )
                 Timers:CreateTimer(2, function()
                     playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
+                    playerData.victory = true
                 end)
             end)            
         end

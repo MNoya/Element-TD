@@ -160,6 +160,7 @@ function UpdateWinString (endScreenVictory, winningTeamId) {
     var endScreenVictory = $( "#EndScreenVictory" );
     if ( endScreenVictory )
     {
+        var winningTeamDetails = Game.GetTeamDetails( winningTeamId );
         if (winningTeamDetails.team_id == DOTATeam_t.DOTA_TEAM_NEUTRALS)
             endScreenVictory.text = $.Localize("custom_end_screen_defeat_message")
         else

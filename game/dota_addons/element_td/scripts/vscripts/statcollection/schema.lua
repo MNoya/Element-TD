@@ -86,8 +86,8 @@ function BuildPlayersArray()
                     sec = sectorNames[playerData.sector], --Sector on the map
                     tow = playerData.tow or tablelength(playerData.towers), --Final tower count
                     ltk = playerData.TotalLifeTowerKills > 0 and playerData.TotalLifeTowerKills or "", --Total life gained from Life Towers
-                    bos = playerData.bossWaves, --Total boss waves survived if any
-                    wav = playerData.completedWaves, --Number of completed waves
+                    bos = COOP_MAP and (CURRENT_BOSS_WAVE > 0 and CURRENT_BOSS_WAVE-1 or 0) or playerData.bossWaves, --Total boss waves survived if any
+                    wav = COOP_MAP and (COOP_WAVE-1 + (CURRENT_BOSS_WAVE > 0 and CURRENT_BOSS_WAVE-1 or 0)) or playerData.completedWaves, --Number of completed waves
                     sco = playerData.scoreObject.totalScore, --Final score
                     ts = playerData.towersSold, -- Num of towers sold
                     gl = playerData.goldLost, -- Gold loss from selling
@@ -97,7 +97,7 @@ function BuildPlayersArray()
                     lh = PlayerResource:GetLastHits(playerID),
                     hst = playerID == hostID or 0, -- Is this player host
                     clr = playerData.victory, -- Did the player complete the game
-                    dif = playerData.difficulty.difficultyName, -- Player difficulty
+                    dif = GameSettings:GetGlobalDifficulty().difficultyName, -- Player difficulty
 
                     -- misc
                     cln = playerData.scoreObject.cleanWaves, -- Amount of waves without leaks
