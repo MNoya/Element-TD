@@ -298,10 +298,15 @@ end
 
 -- Old formula: (Player Networth/Base Networth) - 1 based on Difficulty and Classic/Express
 function ScoringObject:GetNetworthBonus()
-    local playerNetworth = GetPlayerNetworth( self.playerID )
-    --local baseWorth = GetPlayerDifficulty( self.playerID ):GetBaseWorth()
+    local teamNetWorth = 0
+    ForAllPlayerIDs(function(playerID)
+        local value = GetPlayerNetworth(playerID)
+        if value then
+            teamNetWorth = teamNetWorth + value
+        end
+    end)
 
-    return (playerNetworth/2)
+    return (teamNetWorth/2)
 end
 
 -- bonus per boss wave after the first one
