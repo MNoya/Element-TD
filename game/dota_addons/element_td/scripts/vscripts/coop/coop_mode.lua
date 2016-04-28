@@ -11,7 +11,6 @@ if not COOP_WAVE then
     COOP_WAVE_LANE_LEAKS = {}
 
     require('coop/portals')
-    CreateBananas()
 end
 
 -- entry point
@@ -23,6 +22,7 @@ function CoopStart()
 
     Timers:CreateTimer(AbandonThinker)
     Timers:CreateTimer(BananaThinker)
+    CreateBananas()
 end
 
 function SpawnWaveCoop()
