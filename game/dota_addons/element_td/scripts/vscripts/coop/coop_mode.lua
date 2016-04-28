@@ -11,6 +11,7 @@ if not COOP_WAVE then
     COOP_WAVE_LANE_LEAKS = {}
 
     require('coop/portals')
+    CreateBananas()
 end
 
 -- entry point
@@ -21,6 +22,7 @@ function CoopStart()
     StartBreakTimeCoop(initialBreakTime)
 
     Timers:CreateTimer(AbandonThinker)
+    Timers:CreateTimer(BananaThinker)
 end
 
 function SpawnWaveCoop()
@@ -286,4 +288,30 @@ function AbandonThinker()
         end
     end)
     return 1
+end
+
+function CreateBananas()
+    local bananas = Entities:FindAllByName("banana")
+    for _,v in pairs(bananas) do
+        CreateItemOnPositionSync(v:GetAbsOrigin(), CreateItem("item_banana", nil, nil))
+    end
+end
+
+function BananaThinker()
+    local heroes = HeroList:GetAllHeroes()
+    for _,hero in pairs(heroes) do
+        if hero and hero:HasItemInInventory("item_banana") then
+            local item = GetItemByName(hero, "item_banana")
+            if item and item:GetCurrentCharges() == 6 then
+                BananaNanana(hero, item)
+                return
+            end
+        end
+    end
+    return 1
+end
+
+function BananaNanana(hero, item)
+    UTIL_Remove(item)
+    --do something to the hero
 end
