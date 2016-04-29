@@ -59,7 +59,7 @@ function InterestManagerCoop:HandlePlayerReconnect(playerID)
 			enabled = true 
 		})
 		
-		if interest.locked then
+		if InterestManagerCoop.locked then
 			CustomGameEventManager:Send_ServerToPlayer(player, "etd_pause_interest", {})
 		else
 			local timerName = InterestManagerCoop.timer
