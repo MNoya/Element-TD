@@ -230,7 +230,7 @@
         //  <font color='#hex'>text</font>  for color
         //  <b>text</b> for bold        
         "loading_screen_changelog"   "Latest Changes"
-        "loading_screen_change_text" "<h1>Version 1.7</h1><h2>New Cooperative Map!</h2>• Recommended players: 50.<br>• Waves: 50 + boss.<br>• Creep wave order is random.<br>• Gold and interest are split.<br>• Score is shared.<br><br><h2>Balance</h2>• Very balanced.<br><br><b>Check out the full changelog on the forums!</b><br>"
+        "loading_screen_change_text" "<h1>Version 1.7</h1><h2>New Cooperative Map!</h2>• Recommended players: 2-4<br>• Waves: 50 + boss<br>• Creep wave order is random<br>• Gold and interest are split<br>• Score is shared<br><br><h2>Balance</h2>• Very balanced.<br><br><b>Check out the full changelog on the forums!</b><br>"
 
         "credits_title"         "Credits"
         "credits_developers"    "Developers"

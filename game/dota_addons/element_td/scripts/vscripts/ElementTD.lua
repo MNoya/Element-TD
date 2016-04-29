@@ -1,6 +1,6 @@
-if not players then
-    players = {}
+if not playerIDs then
     playerIDs = {}
+    heroes = {}
 
     TEAM_TO_SECTOR = {}
     TEAM_TO_SECTOR[2] = 0
@@ -473,6 +473,10 @@ end
 function ElementTD:OnHeroInGame(hero)
     local playerID = hero:GetPlayerID()
     if playerID == -1 then return end
+    if not heroes[playerID] then
+        heroes[playerID] = hero
+        ElementTD:AdjustHeroSpawnPos(playerID, hero)
+    end
     if GetPlayerData(playerID) then --Don't create playerdata twice
         ElementTD:InitializeHero(playerID, hero)
         return
@@ -521,6 +525,18 @@ function ElementTD:OnHeroInGame(hero)
 
     SCORING_OBJECTS[playerID] = ScoringObject(playerID)
     playerData.scoreObject = SCORING_OBJECTS[playerID]
+end
+
+function ElementTD:AdjustHeroSpawnPos(playerID, hero)
+    local ent = Entities:FindByName(nil, "player_start_1")--..playerID)
+    if ent then
+        Timers:CreateTimer(0.03, function()
+            local pos = ent:GetAbsOrigin()
+            hero:SetAbsOrigin(pos)
+            PlayerResource:SetCameraTarget(playerID, hero)
+            Timers(0.1, function() PlayerResource:SetCameraTarget(playerID, nil) end)
+        end)
+    end
 end
 
 -- initializes a player's hero
@@ -638,7 +654,6 @@ function ElementTD:OnConnectFull(keys)
     -- The Player entity of the joining user
     local ply = EntIndexToHScript(entIndex)    
     
-    table.insert(players, ply)
     Timers:CreateTimer(0.03, function() -- To prevent it from being -1 when the player is created
         if not ply then return end -- Something went wrong
         
