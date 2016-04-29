@@ -52,7 +52,7 @@ function ChooseBackground() {
 
     if (mapName == "element_td_coop")
     {
-        $("#seq_bg").style["background-image"] = "url('file://{images}/custom_game/loading_screen/coop_loading.png');";
+        $("#seq_bg").style["background-image"] = "url('file://{images}/custom_game/loading_screen/coop_background.png');";
         $("#seq_light").visible = false;
         $("#seq_dark").visible = false;
         $("#seq_water").visible = false;

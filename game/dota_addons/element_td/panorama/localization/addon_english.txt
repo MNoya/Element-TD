@@ -222,7 +222,9 @@
         "loading_screen_tip_15" "Each Support Tower can supply 4 Towers with Buffs."
         "loading_screen_tip_16" "Got ideas to make the game better? Join the discussion at our website!"
         "loading_screen_tip_17" "Plan your build for the next wave to prevent leaking on elements you are weak against."
+        "loading_screen_tip_18" "You can play Co-Op by selecting the element_td_coop from the Map menu when creating a lobby."
         "loading_screen_next"   "Coming Next!"
+        "loading_new_map"       "New Map Available"
 
         // Usage
         //  <br> for break lines
@@ -230,7 +232,7 @@
         //  <font color='#hex'>text</font>  for color
         //  <b>text</b> for bold        
         "loading_screen_changelog"   "Latest Changes"
-        "loading_screen_change_text" "<h1>Version 1.7</h1><h2>New Cooperative Map!</h2>• Recommended players: 2-4<br>• Waves: 50 + boss<br>• Creep wave order is random<br>• Gold and interest are split<br>• Score is shared<br><br><h2>Balance</h2>• Very balanced.<br><br><b>Check out the full changelog on the forums!</b><br>"
+        "loading_screen_change_text" "<h1>Version 1.7</h1><h2>New Cooperative Map!</h2>• Recommended players: 2-4<br>• Waves: 50 + boss<br>• Creep wave order is random<br>• Gold and interest are split<br>• Score is shared<br>Play it by selecting the <b>element_td_coop</b><br> from the Map menu when creating a lobby.<br><br><h2>Balance</h2>• Very balanced.<br><br><b>Check out the full changelog on the forums!</b><br>"
 
         "credits_title"         "Credits"
         "credits_developers"    "Developers"
