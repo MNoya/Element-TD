@@ -528,7 +528,7 @@ function ElementTD:OnHeroInGame(hero)
 end
 
 function ElementTD:AdjustHeroSpawnPos(playerID, hero)
-    local ent = Entities:FindByName(nil, "player_start_1")--..playerID)
+    local ent = Entities:FindByName(nil, "player_start_"..playerID)
     if ent then
         Timers:CreateTimer(0.03, function()
             local pos = ent:GetAbsOrigin()
