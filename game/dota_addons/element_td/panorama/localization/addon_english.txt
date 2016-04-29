@@ -230,7 +230,7 @@
         //  <font color='#hex'>text</font>  for color
         //  <b>text</b> for bold        
         "loading_screen_changelog"   "Latest Changes"
-        "loading_screen_change_text" "<h1>Version 1.6</h1><h2>Scoring</h2>• Networth Score Bonus was reworked.<br>• End Speed Score Bonus scales twice as much.<br>• Clean Wave Bonus was increased.<br><br><h2>Balance</h2>• Bounties reduced slightly.<br>• Free Pure Essences were pushed back.<br>• Fire ability reworked.<br>• Polar's secondary effect was axed.<br>• Many other towers received balance tweaks.<br><br><b>Check out the full changelog on the forums!</b><br>"
+        "loading_screen_change_text" "<h1>Version 1.7</h1><h2>New Cooperative Map!</h2>• Recommended players: 50.<br>• Waves: 50 + boss.<br>• Creep wave order is random.<br>• Gold and interest are split.<br>• Score is shared.<br><br><h2>Balance</h2>• Very balanced.<br><br><b>Check out the full changelog on the forums!</b><br>"
 
         "credits_title"         "Credits"
         "credits_developers"    "Developers"
