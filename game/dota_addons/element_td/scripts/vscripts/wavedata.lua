@@ -521,6 +521,9 @@ function ReduceLivesForPlayer(playerID, lives)
     end
 
     playerData.health = playerData.health - lives
+    if COOP_MAP then
+        COOP_HEALTH = playerData.health
+    end
 
     local maxLives = GameSettings:GetMapSetting("Lives")
     if playerData.health <= 0 then
