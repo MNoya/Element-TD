@@ -274,14 +274,21 @@ function ElementTD:EndGameForPlayer( playerID )
     local playerData = GetPlayerData(playerID)
     local ply = PlayerResource:GetPlayer(playerID)
 
+    local end_string = ""
     if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then
-        Log:info("Player "..playerID.." has been defeated on the boss Wave "..playerData.bossWaves..".")
         playerData.victory = 1
-        GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerData.name.."</font> has completed the game with "..playerData.iceFrogKills.." Icefrog kills!", 0, 0)
+        end_string = "<font color='" .. playerColors[playerID] .."'>" .. playerData.name.."</font> has completed the game with "..playerData.iceFrogKills.." Icefrog kills!"
+    elseif COOP_MAP and CURRENT_BOSS_WAVE > 0 then
+        end_string = "You have completed the game with a total of "..GetCoopFrogKills()
     else
-        Log:info("Player "..playerID.." has been defeated on Wave "..playerData.nextWave..".")
-        GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerData.name.."</font> has been defeated on Wave "..playerData.nextWave.."!", 0, 0)
+        if COOP_MAP and COOP_WAVE then
+            end_string = "You have been defeated on Wave "..COOP_WAVE
+        else
+            end_string = "<font color='" .. playerColors[playerID] .."'>" .. playerData.name.."</font> has been defeated on Wave "..playerData.nextWave.."!"
+        end
     end
+    Log:info(end_string)
+    GameRules:SendCustomMessage(end_string, 0, 0)
 
     -- Clean up
     UpdatePlayerSpells(playerID)
