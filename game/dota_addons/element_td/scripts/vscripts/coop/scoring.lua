@@ -95,12 +95,12 @@ function ScoringObject:UpdateScore( const , wave )
         end
         table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Speed bonus: ' .. GetPctString(scoreTable['speedBonus']), speedColor} )
     end
-    if scoreTable['cleanWaves'] then
+    --[[if scoreTable['cleanWaves'] then
         table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Clean waves: ' .. scoreTable['cleanWaves'], '#00FFFF'})
     end
     if scoreTable['under30'] then
         table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Under 30 waves: ' .. scoreTable['under30'], '#FFFF00'} )
-    end
+    end]]
     if scoreTable['networthBonus'] then
         table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Networth bonus: '.. comma_value(scoreTable['networthBonus']), '#00FFFF'} )
     end
@@ -204,7 +204,7 @@ function ScoringObject:GetBossWaveCleared( bossWave )
     local bossBonus = self:GetBossBonus(bossWave-1)
     local waveClearScore = CREEPS_PER_WAVE * POINTS_PER_FROG * bossBonus
     local difficultyBonus = self:GetDifficultyBonus()
-    local frogKills = playerData.iceFrogKills
+    local frogKills = GetCoopFrogKills()
     local totalScore = math.ceil(waveClearScore * (1 + difficultyBonus))
 
     return { frogBonus = waveClearScore, difficultyBonus = difficultyBonus, frogKills = frogKills, totalScore = totalScore }
@@ -217,6 +217,18 @@ function ScoringObject:GetWaveLost()
     local under30 = self.under30
 
     return { cleanWaves = clean, under30 = under30, totalScore = score }
+end
+
+-- Coop frogs
+function GetCoopFrogKills()
+    local frogKills = 0
+    ForAllPlayerIDs(function(playerID)
+        local playerData = GetPlayerData(playerID)
+        if playerData and playerData.iceFrogKills then
+            frogKills = frogKills + playerData.iceFrogKills
+        end  
+    end)
+    return frogKills
 end
 
 -- Total Score, DifficultyBonus, Networth and EndSpeed bonus, TotalScore after bonus
