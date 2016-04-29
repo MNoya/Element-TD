@@ -430,11 +430,15 @@ function ShowPortalForSector(sector, wave, playerID)
     
     -- Portal World Notification
     if COOP_MAP then
-        if COOP_WAVE_LANE_LEAKS[sector] and COOP_WAVE_LANE_LEAKS[sector] > 0 then
-            CustomGameEventManager:Send_ServerToAllClients("world_notification", {entityIndex = portal:GetEntityIndex(), text = "#etd_wave_"..element, leaked = COOP_WAVE_LANE_LEAKS[sector]})
-        else
-            CustomGameEventManager:Send_ServerToAllClients("world_notification", {entityIndex = portal:GetEntityIndex(), text = "#etd_wave_"..element})
-        end
+        Timers:CreateTimer(0.1, function()
+            if COOP_WAVE_LANE_LEAKS[sector] and COOP_WAVE_LANE_LEAKS[sector] > 0 then
+                CustomGameEventManager:Send_ServerToAllClients("world_notification", {entityIndex = portal:GetEntityIndex(), text = "#etd_wave_"..element, leaked = COOP_WAVE_LANE_LEAKS[sector]})
+                portal.leaked = true
+            else
+                CustomGameEventManager:Send_ServerToAllClients("world_notification", {entityIndex = portal:GetEntityIndex(), text = "#etd_wave_"..element})
+                portal.leaked = false
+            end
+        end)
     else
         local player = PlayerResource:GetPlayer(playerID)
         if player then 
@@ -451,8 +455,11 @@ function ClosePortalForSector(playerID, sector, removeInstantly)
         ParticleManager:DestroyParticle(portal.particle, removeInstantly or false)
     end
 
-    if playerID == nil then -- co-op mode
-        CustomGameEventManager:Send_ServerToAllClients("world_remove_notification", {entityIndex = portal:GetEntityIndex()})
+    if COOP_MAP then
+        if not portal.leaked then
+            CustomGameEventManager:Send_ServerToAllClients("world_remove_notification", {entityIndex = portal:GetEntityIndex()})
+            portal.leaked = false
+        end
     else
         local player = PlayerResource:GetPlayer(playerID)
         if player then 

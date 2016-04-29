@@ -124,6 +124,9 @@ function WaveCoop:SpawnWave()
 
 		if entitiesSpawned >= CREEPS_PER_WAVE_COOP then
 			self.endSpawnTime = GameRules:GetGameTime()
+			for i = 1, 6 do
+				ClosePortalForSector(nil, i, true)
+			end
 
 					--[[
 					-- Endless waves are started as soon as the wave finishes spawning
