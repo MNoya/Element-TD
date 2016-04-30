@@ -85,7 +85,7 @@
                 </Panel>
 
                 <Panel id="CoopLeaderboardContainer" class="ContainerSection">
-                    <Label id="ErrorLB4" class="Hide" text="#leaderboard_unreachable"/>
+                    <Label id="ErrorLB4" text="#loading_screen_next"/>
                     <!-- Added dynamically -->
                 </Panel>
 

@@ -101,7 +101,7 @@ function CreateAllRanks() {
     if (bCoop)
     {
         Leaderboard.AddClass("Coop")
-        GetTopRanks(COOP, $("#ClassicLeaderboardContainer"))
+        //GetTopRanks(COOP, $("#ClassicLeaderboardContainer"))
     }
     else
     {
