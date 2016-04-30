@@ -29,7 +29,7 @@
 
                 <Panel id="Promote">
                     <Panel id="Coop">
-                        <Image src="file://{images}/custom_game/loading_screen/coop_2.png" />
+                        <Image src="file://{images}/custom_game/loading_screen/coop.png" />
                         <Label id="CoopTitle" text="#cooperative_map"/>
                     </Panel>
                     <Label id="PromoteTitle" class="Title" text="#loading_new_map" html="true"/>
