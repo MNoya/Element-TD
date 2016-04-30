@@ -2637,7 +2637,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bounce_decrease"		"33"
+				"bounce_decrease"		"30"
 			}
 			"05"
 			{
@@ -2973,7 +2973,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_FLOAT"
-	            "damage_per_second"     "6 42 300 3000"
+	            "damage_per_second"     "8 56 400 4000"
 	        }
 	        "02"
 	        {
@@ -4991,7 +4991,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"40 200"
+				"damage"			"35 175"
 			}
 			"02"
 			{

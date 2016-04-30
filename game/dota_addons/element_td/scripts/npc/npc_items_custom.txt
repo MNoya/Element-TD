@@ -6828,10 +6828,10 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"40 200"
+				"damage"			"35 175"
 			}
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_tidal_tower_2"
 	{
@@ -6869,10 +6869,10 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"40 200"
+				"damage"			"35 175"
 			}
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_tidal_tower_2_disabled"
 	{
@@ -6900,10 +6900,10 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"40 200"
+				"damage"			"35 175"
 			}
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_tidal_tower_disabled"
 	{
@@ -6932,10 +6932,10 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"40 200"
+				"damage"			"35 175"
 			}
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_windstorm_tower"
 	{

@@ -33,8 +33,8 @@
     "VisionDaytimeRange"        "1900"
     "VisionNighttimeRange"        "1900"
     "Level"        "3"
-    "Cost"                       "3250"
-    "TotalCost"        "5000"
+    "Cost"                       "3000"
+    "TotalCost"        "4750"
     "Element"
     {
         "1"        "earth"

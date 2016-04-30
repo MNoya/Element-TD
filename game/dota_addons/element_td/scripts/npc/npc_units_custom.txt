@@ -5942,9 +5942,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "18"
-	    "AttackDamageMax"           "18"
-	    "Damage"                    "18"  
+	    "AttackDamageMin"           "20"
+	    "AttackDamageMax"           "20"
+	    "Damage"                    "20"  
 	    "AOE_Full"                  "150"
 	    "AOE_Half"                  "300" 
 	    "AttackRange"               "550"
@@ -6035,9 +6035,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "126"
-	    "AttackDamageMax"           "126"
-	    "Damage"                    "126"  
+	    "AttackDamageMin"           "140"
+	    "AttackDamageMax"           "140"
+	    "Damage"                    "140"  
 	    "AOE_Full"                  "150"
 	    "AOE_Half"                  "300" 
 	    "AttackRange"               "550"
@@ -6122,9 +6122,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "8800"
-	    "AttackDamageMax"           "8800"
-	    "Damage"                    "8800"  
+	    "AttackDamageMin"           "9800"
+	    "AttackDamageMax"           "9800"
+	    "Damage"                    "9800"  
 	    "AOE_Full"                  "150"
 	    "AOE_Half"                  "300" 
 	    "AttackRange"               "550"
@@ -6206,9 +6206,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "880"
-	    "AttackDamageMax"           "880"
-	    "Damage"                    "880"  
+	    "AttackDamageMin"           "980"
+	    "AttackDamageMax"           "980"
+	    "Damage"                    "980"  
 	    "AOE_Full"                  "150"
 	    "AOE_Half"                  "300" 
 	    "AttackRange"               "550"
@@ -6659,9 +6659,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "490"
-	    "AttackDamageMax"           "490"
-	    "Damage"                    "490"  
+	    "AttackDamageMin"           "525"
+	    "AttackDamageMax"           "525"
+	    "Damage"                    "525"  
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.31"
@@ -6748,9 +6748,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "70"
-	    "AttackDamageMax"           "70"
-	    "Damage"                    "70"  
+	    "AttackDamageMin"           "75"
+	    "AttackDamageMax"           "75"
+	    "Damage"                    "75"  
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.31"
@@ -6842,9 +6842,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "34000"
-	    "AttackDamageMax"           "34000"
-	    "Damage"                    "34000"  
+	    "AttackDamageMin"           "37000"
+	    "AttackDamageMax"           "37000"
+	    "Damage"                    "37000"  
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.31"
@@ -6927,9 +6927,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "3400"
-	    "AttackDamageMax"           "3400"
-	    "Damage"                    "3400"  
+	    "AttackDamageMin"           "3700"
+	    "AttackDamageMax"           "3700"
+	    "Damage"                    "3700"  
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.31"
@@ -7524,8 +7524,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"                       "3250"
-	    "TotalCost"        "5000"
+	    "Cost"                       "3000"
+	    "TotalCost"        "4750"
 	    "Element"
 	    {
 	        "1"        "fire"
@@ -7749,8 +7749,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"                       "3250"
-	    "TotalCost"        "5000"
+	    "Cost"                       "3000"
+	    "TotalCost"        "4750"
 	    "Element"
 	    {
 	        "1"        "dark"
@@ -7985,8 +7985,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"                       "3250"
-	    "TotalCost"        "5000"
+	    "Cost"                       "3000"
+	    "TotalCost"        "4750"
 	    "Element"
 	    {
 	        "1"        "fire"
@@ -8261,8 +8261,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"                       "3250"
-	    "TotalCost"        "5000"
+	    "Cost"                       "3000"
+	    "TotalCost"        "4750"
 	    "Element"
 	    {
 	        "1"        "fire"
@@ -8532,8 +8532,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"                       "3250"
-	    "TotalCost"        "5000"
+	    "Cost"                       "3000"
+	    "TotalCost"        "4750"
 	    "Element"
 	    {
 	        "1"        "earth"
@@ -8804,8 +8804,8 @@
 	    "ProjectileSpeed"           "2000" 
 	
 	    "Level"                     "3"
-	    "Cost"                       "3250"
-	    "TotalCost"                  "5000"
+	    "Cost"                       "3000"
+	    "TotalCost"                  "4750"
 	    "BuildTime"                 "2"
 	
 	    "DamageType"                "earth"
@@ -9058,8 +9058,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"                       "3250"
-	    "TotalCost"        "5000"
+	    "Cost"                       "3000"
+	    "TotalCost"        "4750"
 	    "Element"
 	    {
 	        "1"        "water"
@@ -9339,8 +9339,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"                       "3250"
-	    "TotalCost"        "5000"
+	    "Cost"                       "3000"
+	    "TotalCost"        "4750"
 	    "Element"
 	    {
 	        "1"        "light"
@@ -9599,8 +9599,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"                       "3250"
-	    "TotalCost"        "5000"
+	    "Cost"                       "3000"
+	    "TotalCost"        "4750"
 	    "Element"
 	    {
 	        "1"        "dark"
@@ -9870,8 +9870,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"                       "3250"
-	    "TotalCost"        "5000"
+	    "Cost"                       "3000"
+	    "TotalCost"        "4750"
 	    "Element"
 	    {
 	        "1"        "nature"
@@ -10155,8 +10155,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"                       "3250"
-	    "TotalCost"        "5000"
+	    "Cost"                       "3000"
+	    "TotalCost"        "4750"
 	    "Element"
 	    {
 	        "1"        "dark"
@@ -10451,8 +10451,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"                       "3250"
-	    "TotalCost"        "5000"
+	    "Cost"                       "3000"
+	    "TotalCost"        "4750"
 	    "Element"
 	    {
 	        "1"        "earth"
@@ -10730,8 +10730,8 @@
 	    "VisionDaytimeRange"        "1900"
 	    "VisionNighttimeRange"        "1900"
 	    "Level"        "3"
-	    "Cost"                       "3250"
-	    "TotalCost"        "5000"
+	    "Cost"                       "3000"
+	    "TotalCost"        "4750"
 	    "Element"
 	    {
 	        "1"        "light"
@@ -10992,8 +10992,8 @@
 	    // Stats
 	    //----------------------------- 
 	    "Level"                     "3"
-	    "Cost"                       "3250"
-	    "TotalCost"                  "5000"
+	    "Cost"                       "3000"
+	    "TotalCost"                  "4750"
 	    "Element"
 	    {
 	        "1"     "fire"
@@ -11228,8 +11228,8 @@
 	    "AttackRate"                 "1"
 	
 	    "Level"                      "3"
-	    "Cost"                       "3250"
-	    "TotalCost"                  "5000"
+	    "Cost"                       "3000"
+	    "TotalCost"                  "4750"
 	    "BuildTime"                  "2"
 	    "Element"
 	    {
@@ -14545,16 +14545,16 @@
 	        "2"        "nature"
 	        "3"        "light"
 	    }
-	    "Damage"        "600"
-	    "AttackDamageMin"        "600"
-	    "AttackDamageMax"        "600"
+	    "Damage"        "500"
+	    "AttackDamageMin"        "500"
+	    "AttackDamageMax"        "500"
 	    "DamageType"        "water"
 	    "ScriptClass"        "TidalTower"
 	    "TowerType"        "Normal"
 	    "BuffPriority"              "6"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "700"
-	    "AttackAcquisitionRange"        "700"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "0.66"
 	    "ProjectileModel"           "particles/custom/towers/tidal/attack.vpcf"  
 	    "ProjectileSpeed"        "3000"
@@ -14638,16 +14638,16 @@
 	        "2"        "nature"
 	        "3"        "light"
 	    }
-	    "Damage"        "3000"
-	    "AttackDamageMin"        "3000"
-	    "AttackDamageMax"        "3000"
+	    "Damage"        "2500"
+	    "AttackDamageMin"        "2500"
+	    "AttackDamageMax"        "2500"
 	    "DamageType"        "water"
 	    "ScriptClass"        "TidalTower"
 	    "TowerType"        "Normal"
 	    "BuffPriority"              "2"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "700"
-	    "AttackAcquisitionRange"        "700"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "0.66"
 	    "ProjectileModel"           "particles/custom/towers/tidal/attack.vpcf"  
 	    "ProjectileSpeed"        "3000"
