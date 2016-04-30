@@ -1,0 +1,18 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/leaderboard.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/leaderboard/leaderboard_team.js" />
+    </scripts>
+    <Panel hittest="false" class="TeamContainer">
+        <Label hittest="false" id="TeamRank" text="#"/>
+        <Panel id="TeamAvatars">
+            <DOTAAvatarImage hittest="false" id="AvatarImage1" steamid="" />
+            <DOTAAvatarImage hittest="false" id="AvatarImage2" steamid="" />
+            <DOTAAvatarImage hittest="false" id="AvatarImage3" steamid="" />
+            <DOTAAvatarImage hittest="false" id="AvatarImage4" steamid="" />
+        </Panel>
+        <Label hittest="false" id="TeamScore"/>
+    </Panel>
+</root>

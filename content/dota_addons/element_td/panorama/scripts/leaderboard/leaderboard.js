@@ -4,6 +4,7 @@ var url = "http://hatinacat.com/leaderboard/data_request.php?req=leaderboard"
 var CLASSIC = 0
 var EXPRESS = 2
 var FROGS = 3
+var COOP = 4
 var LEADERBOARD_THRESHOLD = 300
 var MAX_RANKS = 100
 var REFRESH_THRESHOLD = 10
@@ -90,9 +91,24 @@ function Setup()
 }
 
 function CreateAllRanks() {
-    GetTopRanks(CLASSIC, $("#ClassicLeaderboardContainer"))
-    GetTopRanks(EXPRESS, $("#ExpressLeaderboardContainer"))
-    GetTopRanks(FROGS, $("#FrogsLeaderboardContainer"))
+    var bCoop = Game.IsCoop()
+
+    $("#ClassicLeaderboard").SetHasClass( "Hide", bCoop )
+    $("#ExpressLeaderboard").SetHasClass( "Hide", bCoop )
+    $("#FrogsLeaderboard").SetHasClass( "Hide", bCoop )
+    $("#CoopLeaderboard").SetHasClass( "Hide", ! bCoop )
+    
+    if (bCoop)
+    {
+        Leaderboard.AddClass("Coop")
+        GetTopRanks(COOP, $("#ClassicLeaderboardContainer"))
+    }
+    else
+    {
+        GetTopRanks(CLASSIC, $("#ClassicLeaderboardContainer"))
+        GetTopRanks(EXPRESS, $("#ExpressLeaderboardContainer"))
+        GetTopRanks(FROGS, $("#FrogsLeaderboardContainer"))
+    }
 }
 
 function RefreshAllRanks()
