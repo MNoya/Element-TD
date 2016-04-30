@@ -68,6 +68,28 @@
                 </Panel>
 
             </Panel>
+
+            <!-- Visible on the coop map only -->
+            <Panel id="CoopLeaderboard" class="Section">
+                <Panel class="LeaderboardHeader">
+                    <Panel class="LeaderboardTitles">
+                        <Panel id="Loading4" class="Spinner Hide"/>
+                        <Label class="LeaderboardTitle" text="#leaderboard_coop"/>
+                    </Panel>
+                    <Panel id="LeaderboardRanksCategories">
+                        <Label id="Rank" class="LeaderboardCategory" text="#profile_rank" />
+                        <Label id="Players" class="LeaderboardCategory" text="#leaderboard_players" />
+                        <Label id="Score" class="LeaderboardCategory" text="#profile_score" />
+                        <Label id="Frogs" class="LeaderboardCategory" text="#profile_frogs" />
+                    </Panel>
+                </Panel>
+
+                <Panel id="CoopLeaderboardContainer" class="ContainerSection">
+                    <Label id="ErrorLB4" text="#loading_screen_next"/>
+                    <!-- Added dynamically -->
+                </Panel>
+
+            </Panel>
         </Panel>
 
         <Panel id="Buttons" class="Hide">

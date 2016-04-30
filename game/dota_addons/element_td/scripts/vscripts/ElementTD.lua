@@ -1,6 +1,6 @@
-if not players then
-    players = {}
+if not playerIDs then
     playerIDs = {}
+    heroes = {}
 
     TEAM_TO_SECTOR = {}
     TEAM_TO_SECTOR[2] = 0
@@ -15,8 +15,9 @@ if not players then
     GAME_IS_PAUSED = false
     DEV_MODE = false
     EXPRESS_MODE = false
+    ETD_MAX_PLAYERS = 4
 
-    VERSION = "1.6"
+    VERSION = "1.7"
     COOP_MAP = GetMapName() == "element_td_coop"
 
     START_TIME = GetSystemDate() .. " " .. GetSystemTime()
@@ -104,8 +105,9 @@ function ElementTD:InitGameMode()
     CustomGameEventManager:RegisterListener( "request_wave_info", Dynamic_Wrap(ElementTD, "WaveInfoReconnect")) --on reconnection
     CustomGameEventManager:RegisterListener( "etd_player_voted", Dynamic_Wrap(ElementTD, "OnPlayerVoted")) -- voting ui
 
-    -- load the appropriate interest manager based on the map --
+    -- load the appropriate managers based on the map --
     require(GameSettings:GetMapSetting("InterestManager"))
+    require(GameSettings:GetMapSetting("ScoreManager"))
     ------------------------------------------------------------
 
     ------------------------------------------------------
@@ -200,15 +202,6 @@ function ElementTD:OnGameStateChange(keys)
     end
 end
 
--- This is useful.
-function ForAllPlayerIDs(callback)
-    for playerID = 0, DOTA_MAX_TEAM_PLAYERS do
-        if PlayerResource:IsValidPlayerID(playerID) then
-            callback(playerID)
-        end
-    end
-end
-
 -- let's start the actual game
 -- call this after the players have been move to their proper spawn locations
 function ElementTD:StartGame()
@@ -227,6 +220,10 @@ function ElementTD:StartGame()
 
         if GameRules:IsCheatMode() then
             ElementTD:CheatsEnabled()
+        end
+
+        if COOP_MAP then
+            ElementTD:PrecacheDuals(1)
         end
     end)
 end
@@ -277,14 +274,21 @@ function ElementTD:EndGameForPlayer( playerID )
     local playerData = GetPlayerData(playerID)
     local ply = PlayerResource:GetPlayer(playerID)
 
+    local end_string = ""
     if playerData.completedWaves + 1 >= WAVE_COUNT and not EXPRESS_MODE then
-        Log:info("Player "..playerID.." has been defeated on the boss Wave "..playerData.bossWaves..".")
         playerData.victory = 1
-        GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerData.name.."</font> has completed the game with "..playerData.iceFrogKills.." Icefrog kills!", 0, 0)
+        end_string = "<font color='" .. playerColors[playerID] .."'>" .. playerData.name.."</font> has completed the game with "..playerData.iceFrogKills.." Icefrog kills!"
+    elseif COOP_MAP and CURRENT_BOSS_WAVE > 0 then
+        end_string = "You have completed the game with a total of "..GetCoopFrogKills()
     else
-        Log:info("Player "..playerID.." has been defeated on Wave "..playerData.nextWave..".")
-        GameRules:SendCustomMessage("<font color='" .. playerColors[playerID] .."'>" .. playerData.name.."</font> has been defeated on Wave "..playerData.nextWave.."!", 0, 0)
+        if COOP_MAP and COOP_WAVE then
+            end_string = "You have been defeated on Wave "..COOP_WAVE
+        else
+            end_string = "<font color='" .. playerColors[playerID] .."'>" .. playerData.name.."</font> has been defeated on Wave "..playerData.nextWave.."!"
+        end
     end
+    Log:info(end_string)
+    GameRules:SendCustomMessage(end_string, 0, 0)
 
     -- Clean up
     UpdatePlayerSpells(playerID)
@@ -373,7 +377,16 @@ function ElementTD:CheckGameEnd()
 
     print("Game End Condition met. Determining a winner...")
     local teamWinner = DOTA_TEAM_NEUTRALS
-    if #playerIDs == 1 then
+    if COOP_MAP then
+        if COOP_WAVE >= WAVE_COUNT then
+            print("Cooperative Victory!")
+            teamWinner = DOTA_TEAM_GOODGUYS
+        else
+            print("Cooperative Defeat :(")
+            teamWinner = DOTA_TEAM_NEUTRALS
+        end    
+
+    elseif #playerIDs == 1 then
         for k, ply in pairs(playerIDs) do
             local hero = PlayerResource:GetSelectedHeroEntity(ply)
             local playerData = GetPlayerData(ply)
@@ -467,6 +480,10 @@ end
 function ElementTD:OnHeroInGame(hero)
     local playerID = hero:GetPlayerID()
     if playerID == -1 then return end
+    if not heroes[playerID] then
+        heroes[playerID] = hero
+        ElementTD:AdjustHeroSpawnPos(playerID, hero)
+    end
     if GetPlayerData(playerID) then --Don't create playerdata twice
         ElementTD:InitializeHero(playerID, hero)
         return
@@ -495,7 +512,7 @@ function ElementTD:OnHeroInGame(hero)
     self.availableSpawnIndex = self.availableSpawnIndex + 1
 
     -- we must create the Elemental Summoner for this player
-    local sector = playerData.sector + 1
+    local sector = COOP_MAP and (playerID+1) or playerData.sector + 1
     local summoner = CreateUnitByName("elemental_summoner", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber()) 
     summoner:SetOwner(hero)
     summoner:SetControllableByPlayer(playerID, true)
@@ -515,6 +532,18 @@ function ElementTD:OnHeroInGame(hero)
 
     SCORING_OBJECTS[playerID] = ScoringObject(playerID)
     playerData.scoreObject = SCORING_OBJECTS[playerID]
+end
+
+function ElementTD:AdjustHeroSpawnPos(playerID, hero)
+    local ent = Entities:FindByName(nil, "player_start_"..playerID)
+    if ent then
+        Timers:CreateTimer(0.03, function()
+            local pos = ent:GetAbsOrigin()
+            hero:SetAbsOrigin(pos)
+            PlayerResource:SetCameraTarget(playerID, hero)
+            Timers(0.1, function() PlayerResource:SetCameraTarget(playerID, nil) end)
+        end)
+    end
 end
 
 -- initializes a player's hero
@@ -632,7 +661,6 @@ function ElementTD:OnConnectFull(keys)
     -- The Player entity of the joining user
     local ply = EntIndexToHScript(entIndex)    
     
-    table.insert(players, ply)
     Timers:CreateTimer(0.03, function() -- To prevent it from being -1 when the player is created
         if not ply then return end -- Something went wrong
         

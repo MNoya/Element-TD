@@ -27,11 +27,10 @@
     "VisionDaytimeRange"        "1200"
     "VisionNighttimeRange"        "800"
     "Model"        "models/items/warlock/golem/hellsworn_golem/hellsworn_golem.vmdl"
-    "ModelScale"        "0.7"
+    "ModelScale"        "0.8"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"    "CreepRegen"
     "Ability1"        "fire_armor"
     "Ability2"        "creep_ability_regen"
-    "Ability3"        "hellsworn_particles"
 }

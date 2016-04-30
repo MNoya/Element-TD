@@ -2,17 +2,36 @@
 function ToggleGrid( event )
     local item = event.ability
     local playerID = event.caster:GetPlayerOwnerID()
+    item.playerID = playerID
     local playerData = GetPlayerData(playerID)
     local sector = playerData.sector + 1
+    local count = 0
     item.enabled = not item.enabled
 
     if item.enabled then
-        for y,v in pairs(BuildingHelper.Grid) do
-            for x,_ in pairs(v) do
-                local pos = GetGroundPosition(Vector(GridNav:GridPosToWorldCenterX(x), GridNav:GridPosToWorldCenterY(y), 0), nil)
-                if pos.z > 380 and pos.z < 400 and IsInsideSector(pos, sector) then
-                    if BuildingHelper:CellHasGridType(x, y, 'BUILDABLE') then
-                        item.particles[x][y] = DrawGrid(x, y, Vector(255,255,255), playerID)
+        if COOP_MAP then
+            for y,v in pairs(BuildingHelper.Grid) do
+                for x,_ in pairs(v) do
+                    local pos = GetGroundPosition(Vector(GridNav:GridPosToWorldCenterX(x), GridNav:GridPosToWorldCenterY(y), 0), nil)
+                    if pos.z > 380 and pos.z < 400 and IsInsideSector(pos, sector) then
+                        if BuildingHelper:CellHasGridType(x, y, 'BUILDABLE') then
+                            Timers:CreateTimer(math.abs(x)*0.01, function()
+                                item.particles[x][y] = DrawGrid(x, y, Vector(255,255,255), playerID)
+                            end)
+                        end
+                    end
+                end
+            end
+
+        else
+
+            for y,v in pairs(BuildingHelper.Grid) do
+                for x,_ in pairs(v) do
+                    local pos = GetGroundPosition(Vector(GridNav:GridPosToWorldCenterX(x), GridNav:GridPosToWorldCenterY(y), 0), nil)
+                    if pos.z > 380 and pos.z < 400 and IsInsideSector(pos, sector) then
+                        if BuildingHelper:CellHasGridType(x, y, 'BUILDABLE') then
+                            item.particles[x][y] = DrawGrid(x, y, Vector(255,255,255), playerID)
+                        end
                     end
                 end
             end
@@ -46,10 +65,23 @@ function DrawGrid(x, y, color, playerID)
 end
 
 function ToggleGridForTower(tower, destroy)
-    local playerID = tower:GetPlayerOwnerID()
-    local playerData = GetPlayerData(playerID)
-    if not playerData.toggle_grid_item or not playerData.toggle_grid_item.enabled then
-        return
+    local ownerID = tower:GetPlayerOwnerID()
+    local items = {}
+
+    if COOP_MAP then
+        ForAllPlayerIDs(function(playerID)
+            local playerData = GetPlayerData(ownerID)
+            if playerData.toggle_grid_item and playerData.toggle_grid_item.enabled then
+                table.insert(items, playerData.toggle_grid_item)
+            end
+        end)
+    else
+        local playerData = GetPlayerData(ownerID)
+        if playerData.toggle_grid_item and playerData.toggle_grid_item.enabled then
+            table.insert(items, playerData.toggle_grid_item)
+        else
+            return
+        end
     end
 
     local location = tower:GetAbsOrigin()
@@ -69,14 +101,32 @@ function ToggleGridForTower(tower, destroy)
     upperBoundX = upperBoundX - 1
     upperBoundY = upperBoundY - 1
 
-    local particles = playerData.toggle_grid_item.particles
-    for y = lowerBoundY, upperBoundY do
-        for x = lowerBoundX, upperBoundX do
-            if destroy and particles[x][y] then
-                ParticleManager:DestroyParticle(particles[x][y], true)
-                particles[x][y] = nil
-            else
-                particles[x][y] = DrawGrid(x, y, Vector(255,255,255), playerID)
+    local particleList = {}
+    for k,v in pairs(items) do
+        table.insert(particleList, v)
+    end
+
+    if destroy then
+        for y = lowerBoundY, upperBoundY do
+            for x = lowerBoundX, upperBoundX do
+                for _,item in pairs(particleList) do
+                    local particles = item.particles
+                    if particles[x][y] then
+                        ParticleManager:DestroyParticle(particles[x][y], true)
+                        particles[x][y] = nil
+                    end
+                end
+            end
+        end
+    else
+        for y = lowerBoundY, upperBoundY do
+            for x = lowerBoundX, upperBoundX do
+                for k,item in pairs(particleList) do
+                    local particles = item.particles
+                    if not particles[x][y] then
+                        particles[x][y] = DrawGrid(x, y, Vector(255,255,255), item.playerID)
+                    end
+                end
             end
         end
     end

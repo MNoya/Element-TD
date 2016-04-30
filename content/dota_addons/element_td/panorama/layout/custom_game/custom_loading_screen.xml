@@ -11,7 +11,7 @@
     </script>
     <Panel class="ETDLoadingRoot">
         <Panel id="seq" >
-            <Image id="seq_bg" class="SeqBg" src="file://{images}/custom_game/loading_screen/background.png" />
+            <Image id="seq_bg" class="SeqBg" />
             <Image id="seq_light" class="SeqImg" src="file://{images}/custom_game/loading_screen/light.png" />
             <Image id="seq_dark" class="SeqImg" src="file://{images}/custom_game/loading_screen/dark.png" />
             <Image id="seq_water" class="SeqImg" src="file://{images}/custom_game/loading_screen/water.png" />
@@ -26,13 +26,13 @@
                     <Label id="ChangelogTitle" class="Title" text="#loading_screen_changelog"/>
                     <Label id="ChangelogText" text="#loading_screen_change_text" html="true"/>
                 </Panel>
-                
+
                 <Panel id="Promote">
                     <Panel id="Coop">
                         <Image src="file://{images}/custom_game/loading_screen/coop.png" />
                         <Label id="CoopTitle" text="#cooperative_map"/>
-                    </Panel>    
-                    <Label id="PromoteTitle" class="Title" text="#loading_screen_next" html="true"/>
+                    </Panel>
+                    <Label id="PromoteTitle" class="Title" text="#loading_new_map" html="true"/>
                 </Panel>
             </Panel>
         </Panel>

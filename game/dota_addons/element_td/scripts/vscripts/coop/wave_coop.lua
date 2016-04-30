@@ -52,7 +52,6 @@ function WaveCoop:RegisterCreep(index)
 end
 
 function WaveCoop:SpawnWave()
-	-- TODO
 	EmitGlobalSound("ui.contract_complete")
 	
 	local difficulty = GameSettings:GetGlobalDifficulty()
@@ -63,6 +62,11 @@ function WaveCoop:SpawnWave()
 	self.startTime = GameRules:GetGameTime() + time_between_spawns
 	self.leaks = 0
 	self.kills = 0
+
+	-- Reset the lane leak counter
+	for i=1, 6 do
+		COOP_WAVE_LANE_LEAKS[i] = 0
+	end
 
 	self.spawnTimer = Timers:CreateTimer(time_between_spawns, function()
 		for sector = 1, 6 do 

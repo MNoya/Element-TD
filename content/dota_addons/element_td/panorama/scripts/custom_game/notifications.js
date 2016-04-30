@@ -135,6 +135,7 @@ var worldPanels = []
 function WorldNotification(msg) {
   var entityIndex = msg.entityIndex;
   var text = msg.text || "No Text provided";
+  var leaked = msg.leaked
 
   // Don't let an entity have more than 1 active notification
   if (worldPanels[entityIndex])
@@ -149,7 +150,15 @@ function WorldNotification(msg) {
 
   var notification = $.CreatePanel('Label', $.GetContextPanel(), "world_"+entityIndex);
   notification.html = true;
-  notification.text = $.Localize(text);
+
+  if (leaked)
+  {
+    notification.SetDialogVariable("leaks", leaked);
+    notification.text = $.Localize(text, notification) + "<br>" + $.Localize("#cooperative_leaked_n", notification);
+  }
+  else
+    notification.text = $.Localize(text);
+
   notification.AddClass('WorldBox');
   
   worldPanels[entityIndex] = notification
@@ -171,7 +180,7 @@ function UpdateWorldPanelPositions() {
       var newY = worldPos.y
       var maxX = $.GetContextPanel().actuallayoutwidth;
       var maxY = $.GetContextPanel().actuallayoutheight;
-      if (newX+offsetX < 100 || newY+offsetY < 100 || newX > maxX+offsetX || newY > maxY+offsetY)
+      if (newY > maxY+offsetY-320)
       {
         panel.visible = false
       }

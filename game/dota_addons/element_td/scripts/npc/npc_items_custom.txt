@@ -1,6 +1,26 @@
 "DOTAAbilities"
 {
 	//============================================================//
+	// Banana
+	//============================================================//
+	"item_banana"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"            "item_banana"
+	    "Model"                         "models/props_gameplay/banana_prop_closed.vmdl"
+	
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	    "ItemQuality"                   "artifact"
+	    "ItemStackable"                 "1"
+	    "ItemKillable"                  "0"
+	    "ItemPurchasable"               "0"
+	    "ItemShareability"              "ITEM_FULLY_SHAREABLE_STACKING"
+	    "ItemPermanent"                 "0"
+	    "ItemInitialCharges"            "1"
+	}
+	//============================================================//
 	// Build Arrow Tower (Item Version)
 	//============================================================//
 	"item_build_arrow_tower"
@@ -149,6 +169,7 @@
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	    "MaxLevel"                      "1"
 	    "AbilityTextureName"            "toggle_grid"
+	    "AbilityCooldown"               "1"
 	
 	    "ItemDroppable"                 "0"
 	    "ItemPurchasable"               "0"
@@ -6807,10 +6828,10 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"40 200"
+				"damage"			"35 175"
 			}
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_tidal_tower_2"
 	{
@@ -6848,10 +6869,10 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"40 200"
+				"damage"			"35 175"
 			}
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_tidal_tower_2_disabled"
 	{
@@ -6879,10 +6900,10 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"40 200"
+				"damage"			"35 175"
 			}
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_tidal_tower_disabled"
 	{
@@ -6911,10 +6932,10 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"40 200"
+				"damage"			"35 175"
 			}
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_windstorm_tower"
 	{

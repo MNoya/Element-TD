@@ -121,7 +121,7 @@ function GameSettings:SetGameLength(length)
 
     local baseGold = GameSettings.length.Gold
     if COOP_MAP then
-        baseGold = math.floor(baseGold * 4 / PlayerResource:GetPlayerCount() + 0.5)
+        baseGold = math.floor(baseGold * 4 / PlayerResource:GetPlayerCountWithoutLeavers() + 0.5)
     end
 
 	for _,plyID in pairs(playerIDs) do
@@ -186,8 +186,8 @@ function GameSettings:EnableRandomForPlayer(playerID)
         local first_random_element = GetRandomElementForPlayerWave(playerID, 0)
         BuyElement(playerID, first_random_element)
 
-        if EXPRESS_MODE then
-            local first_random_express = GetRandomElementForPlayerWave(playerID, 0, EXPRESS_MODE)
+        if EXPRESS_MODE or COOP_MAP then
+            local first_random_express = GetRandomElementForPlayerWave(playerID, 0, true)
             BuyElement(playerID, first_random_express)
         end
 

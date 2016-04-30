@@ -1,18 +1,28 @@
 -- holds important functions and variables for our cooperative mode
 
-COOP_WAVE = 1 -- the current wave 
-CREEPS_PER_WAVE_COOP = 120 -- number of creeps in each wave
-CURRENT_WAVE_OBJECT = nil -- maybe should hold the WaveCoop 'object' of the wave that is currently active (can we ever have > 1 waves at once?)
+if not COOP_WAVE then
+    COOP_WAVE = 1 -- the current wave 
+    CREEPS_PER_WAVE_COOP = 120 -- number of creeps in each wave
+    CURRENT_WAVE_OBJECT = nil -- hold sthe WaveCoop 'object' of the wave that is currently active
 
-COOP_HEALTH = 0
-COOP_LIFE_TOWER_KILLS = 0
-COOP_LIFE_TOWER_KILLS_TOTAL = 0
+    COOP_HEALTH = 0
+    COOP_LIFE_TOWER_KILLS = 0
+    COOP_LIFE_TOWER_KILLS_TOTAL = 0
+    COOP_WAVE_LANE_LEAKS = {}
+
+    require('coop/portals')
+end
 
 -- entry point
 function CoopStart()
     COOP_HEALTH = GameSettings:GetMapSetting("Lives");
+    
     local initialBreakTime = GameSettings.length.PregameTime
     StartBreakTimeCoop(initialBreakTime)
+
+    Timers:CreateTimer(AbandonThinker)
+    Timers:CreateTimer(BananaThinker)
+    CreateBananas()
 end
 
 function SpawnWaveCoop()
@@ -23,6 +33,7 @@ function SpawnWaveCoop()
     -- First wave marks the start of the game
     if START_GAME_TIME == 0 then
         START_GAME_TIME = GameRules:GetGameTime()
+        CloseArrowHelp()
     end
 
     for _, playerID in pairs(playerIDs) do
@@ -39,19 +50,40 @@ function SpawnWaveCoop()
     end
     -- InterestManager:CheckForIncorrectPausing() -- not needed?
 
-    CURRENT_WAVE_OBJECT:SetOnCompletedCallback(function()   
-        print("[COOP] Completed wave "..COOP_WAVE)
+    CURRENT_WAVE_OBJECT:SetOnCompletedCallback(function()
+        if COOP_HEALTH == 0 then return end
+
+        EmitGlobalSound("ui.npe_objective_complete")
+        InterestManager:CompletedWave(COOP_WAVE)
+
+        -- Game cleared?
+        if COOP_WAVE+1 == WAVE_COUNT then
+            ForAllPlayerIDs(function(playerID)
+                local playerData = GetPlayerData(playerID)
+                playerData.clearTime = GameRules:GetGameTime() - START_GAME_TIME -- Used to determine the End Speed Bonus
+                playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR, COOP_WAVE )
+                Timers:CreateTimer(2, function()
+                    playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
+                    playerData.victory = true
+                end)
+            end)            
+        end
 
         if COOP_WAVE < WAVE_COUNT then
             COOP_WAVE = COOP_WAVE + 1
         end
 
-        EmitGlobalSound("ui.npe_objective_complete")
-        InterestManager:CompletedWave(COOP_WAVE)
-
         -- Boss Wave completed starts the new one with no breaktime
         if CURRENT_BOSS_WAVE > 0 then
             print("[COOP] Completed boss wave "..CURRENT_BOSS_WAVE)
+
+            -- Boss wave score
+            ForAllPlayerIDs(function(playerID)
+                local playerData = GetPlayerData(playerID)
+                playerData.scoreObject:UpdateScore( SCORING_BOSS_WAVE_CLEAR, COOP_WAVE )
+                playerData.bossWaves = playerData.bossWaves + 1
+            end)
+
             CURRENT_BOSS_WAVE = CURRENT_BOSS_WAVE + 1
 
             ForAllPlayerIDs(function(playerID)
@@ -62,7 +94,13 @@ function SpawnWaveCoop()
             SpawnWaveCoop() 
             return
         end
- 
+        
+        print("[COOP] Completed wave "..COOP_WAVE)
+        ForAllPlayerIDs(function(playerID)
+            local playerData = GetPlayerData(playerID)
+            playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR, COOP_WAVE )
+        end)
+
         -- Start the breaktime for the next wave
         StartBreakTimeCoop(GameSettings:GetGlobalDifficulty():GetWaveBreakTime(COOP_WAVE))
     end)
@@ -79,7 +117,6 @@ function CreateMoveTimerForCreepCoop(creep, sector)
             creep:MoveToPosition(destination)
 
             if (creep:GetAbsOrigin() - destination):Length2D() <= 100 then
-                
                 if GameSettings:GetEndless() ~= "Endless" then
                     InterestManager:LeakedWave(creep.waveObject.waveNumber)
                 end
@@ -95,7 +132,10 @@ function CreateMoveTimerForCreepCoop(creep, sector)
                     lives = lives * 2
                 end
 
-                COOP_HEALTH = COOP_HEALTH - 1
+                CURRENT_WAVE_OBJECT.leaks = CURRENT_WAVE_OBJECT.leaks + lives
+                COOP_WAVE_LANE_LEAKS[sector] = COOP_WAVE_LANE_LEAKS[sector] + 1
+
+                COOP_HEALTH = COOP_HEALTH - lives
                 for _, playerID in pairs(playerIDs) do
                     ReduceLivesForPlayer(playerID, lives)
                 end
@@ -141,6 +181,7 @@ function StartBreakTimeCoop(breakTime)
     for i = 1, 6 do
         ShowPortalForSector(i, COOP_WAVE)
     end
+    UpdateCoopPortal(COOP_WAVE)
 
     -- set up each individual player
     for _, playerID in pairs(playerIDs) do
@@ -192,7 +233,8 @@ function StartBreakTimeCoop(breakTime)
     Timers:CreateTimer("SpawnWaveDelay_Coop", {
         endTime = breakTime,
         callback = function()
-        
+            if END_TIME then return end
+
             if COOP_WAVE == WAVE_COUNT then
                 CURRENT_BOSS_WAVE = 1
                 Log:info("Spawning the first co-op boss wave")
@@ -219,4 +261,57 @@ function StartBreakTimeCoop(breakTime)
             SpawnWaveCoop() 
         end
     })
+end
+
+-- Checks all player heroes, if someone has abandoned then share its units and split its gold
+function AbandonThinker()
+    local splitNum = PlayerResource:GetPlayerCountWithoutLeavers()
+
+    ForAllPlayerIDs(function(playerID)
+        local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+        if hero and hero:HasOwnerAbandoned() and hero:GetGold() > 0 then
+            local gold = hero:GetGold()
+            local gold_split = gold/splitNum
+            print("Player "..playerID.." has abandoned, performing share and split "..gold.." gold between "..splitNum.." players ("..gold_split..")")
+
+            ForAllConnectedPlayerIDs(function(otherPlayerID)
+                -- Share units
+                PlayerResource:SetUnitShareMaskForPlayer(playerID, otherPlayerID, 2, true)
+
+                -- Split gold between teammates
+                local otherHero = PlayerResource:GetSelectedHeroEntity(otherPlayerID)
+                if otherHero then
+                    otherHero:ModifyGold(gold_split)
+                end
+            end)
+            SetCustomGold(playerID, 0)
+        end
+    end)
+    return 1
+end
+
+function CreateBananas()
+    local bananas = Entities:FindAllByName("banana")
+    for _,v in pairs(bananas) do
+        CreateItemOnPositionSync(v:GetAbsOrigin(), CreateItem("item_banana", nil, nil))
+    end
+end
+
+function BananaThinker()
+    local heroes = HeroList:GetAllHeroes()
+    for _,hero in pairs(heroes) do
+        if hero and hero:HasItemInInventory("item_banana") then
+            local item = GetItemByName(hero, "item_banana")
+            if item and item:GetCurrentCharges() == 6 then
+                BananaNanana(hero, item)
+                return
+            end
+        end
+    end
+    return 1
+end
+
+function BananaNanana(hero, item)
+    UTIL_Remove(item)
+    --do something to the hero
 end

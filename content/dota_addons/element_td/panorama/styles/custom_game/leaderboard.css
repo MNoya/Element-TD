@@ -17,7 +17,7 @@ Label
 }
 
 //CLASSIC EXPRESS FROGS
-#ErrorLB0, #ErrorLB2, #ErrorLB3
+#ErrorLB0, #ErrorLB2, #ErrorLB3, #ErrorLB4
 {
     color: #888888;
     font-size: 20px;
@@ -26,7 +26,7 @@ Label
     letter-spacing: 2px;
 }
 
-#Loading0, #Loading2, #Loading3
+#Loading0, #Loading2, #Loading3, #Loading4
 {
     width: 30px;
     height: 30px;
@@ -139,7 +139,21 @@ Label
     border-top: 4px solid #484A48;
     border-bottom: 4px solid #484A48;
     flow-children: right;
+}
 
+#Leaderboard.Coop
+{
+    width: 500px;
+}
+
+#CoopLeaderboard
+{
+    width: 100%;
+}
+
+#CoopLeaderboardContainer
+{
+    width: 100%;
 }
 
 .Section
@@ -160,6 +174,11 @@ Label
     border-left: 2px solid #484A48;
 
     flow-children: down;
+}
+
+.Coop .LeaderboardHeader
+{
+    width: 100%;
 }
 
 .ContainerSection
@@ -210,12 +229,27 @@ Label
     text-align: center;
 }
 
+.Coop #Rank
+{
+    margin-left: 10px;
+}
+
 #Score
 {
+    color: white;
     width: 60px;
     margin-left: 240px;
     text-align: center;
-    color: #CCCCCC;
+}
+
+.Coop #Score
+{
+    margin-left: 210px;
+}
+
+#Frogs
+{
+    margin-left: 30px;
 }
 
 #OSfrog
@@ -256,6 +290,11 @@ Label
     text-align: center;
     vertical-align: center;
     color: white;
+}
+
+#Players
+{
+    margin-left: 10px;
 }
 
 #AvatarImage

@@ -75,6 +75,34 @@ function CreateEndCredit(steamid) {
     return playerPanel
 }
 
+function UpdateWinString (endScreenVictory, winningTeamId) {
+    var winningTeamDetails = Game.GetTeamDetails( winningTeamId );
+
+    endScreenVictory.SetDialogVariable( "winning_team_name", $.Localize( winningTeamDetails.team_name ) );
+
+    var winString = $.Localize( winningTeamDetails.team_name );
+              
+    // Adjust the endscreen to the player name if its a single player team
+    var playersOnWinningTeam = Game.GetPlayerIDsOnTeam( winningTeamId )
+    if (playersOnWinningTeam.length == 1)
+    {
+        var playerID = playersOnWinningTeam[0]
+        winString = Players.GetPlayerName( playerID )
+    }
+
+    if (Game.IsCoop() && playersOnWinningTeam.length>1)
+        endScreenVictory.text = $.Localize("cooperative_victory")
+    else
+        endScreenVictory.SetDialogVariable( "winning_team_name", winString );
+
+    if ( GameUI.CustomUIConfig().team_colors )
+    {
+        var teamColor = GameUI.CustomUIConfig().team_colors[ winningTeamId ];
+        teamColor = teamColor.replace( ";", "" );
+        endScreenVictory.style.color = teamColor + ";";
+    }
+}
+
 (function()
 {
     GameEvents.Subscribe( "etd_game_recorded", VerifyGame );
@@ -97,10 +125,18 @@ function CreateEndCredit(steamid) {
     for ( var teamInfo of teamInfoList )
     {
         var teamPanel = ScoreboardUpdater_GetTeamPanel( endScoreboardHandle, teamInfo.team_id );
+
+        if (teamPanel === null)
+        {
+            $.Msg("Something went wrong, got no team panel for team "+teamInfo.team_id)
+            continue
+        }
+
         if (lastPanel !== undefined)
             teamPanel.GetParent().MoveChildAfter( teamPanel, lastPanel );
 
         lastPanel = teamPanel;
+        teamPanel.SetHasClass( "team_endgame", false );
 
         var playerIDs = Game.GetPlayerIDsOnTeam(teamInfo.team_id)
         for (var i in playerIDs)
@@ -112,7 +148,6 @@ function CreateEndCredit(steamid) {
             GameUI.SetupAvatarTooltip(teamPanel.FindChildTraverse("AvatarImage"), $.GetContextPanel(), steamID64)
         }
 
-        teamPanel.SetHasClass( "team_endgame", false );
         var callback = function( panel )
         {
             return function(){ panel.SetHasClass( "team_endgame", 1 ); }
@@ -122,35 +157,14 @@ function CreateEndCredit(steamid) {
     }
 
     var winningTeamId = Game.GetGameWinner();
-    var winningTeamDetails = Game.GetTeamDetails( winningTeamId );
     var endScreenVictory = $( "#EndScreenVictory" );
     if ( endScreenVictory )
     {
+        var winningTeamDetails = Game.GetTeamDetails( winningTeamId );
         if (winningTeamDetails.team_id == DOTATeam_t.DOTA_TEAM_NEUTRALS)
-        {
             endScreenVictory.text = $.Localize("custom_end_screen_defeat_message")
-        }
         else
-        {
-            var winString = $.Localize( winningTeamDetails.team_name );
-              
-            // Adjust the endscreen to the player name if its a single player team
-            var playersOnWinningTeam = Game.GetPlayerIDsOnTeam( winningTeamId )
-            if (playersOnWinningTeam.length == 1)
-            {
-                var playerID = playersOnWinningTeam[0]
-                winString = Players.GetPlayerName( playerID )
-            }
-
-            endScreenVictory.SetDialogVariable( "winning_team_name", winString );
-
-            if ( GameUI.CustomUIConfig().team_colors )
-            {
-                var teamColor = GameUI.CustomUIConfig().team_colors[ winningTeamId ];
-                teamColor = teamColor.replace( ";", "" );
-                endScreenVictory.style.color = teamColor + ";";
-            }
-        }
+            UpdateWinString(endScreenVictory, winningTeamId)
     }
 
     var winningTeamLogo = $( "#WinningTeamLogo" );

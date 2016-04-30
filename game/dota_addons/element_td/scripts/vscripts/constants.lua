@@ -145,11 +145,12 @@ end
 function generateSectorBounds()
     if COOP_MAP then
         CoopBounds = {
-            left = -3600,
-            right = 3600,
-            top = 3600,
-            bottom = -3600
+            left = -4000,
+            right = 4000,
+            top = 4000,
+            bottom = -4000
         }
+        return
     end
 
     local defX = -8192

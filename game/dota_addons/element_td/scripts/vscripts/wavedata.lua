@@ -23,6 +23,7 @@ function loadWaveData(chaos)
     end
 
     if COOP_MAP then
+        WAVE_COUNT = wavesKV["WaveCountCoop"]
         settings = GameSettingsKV.GameLength["Coop"]
     end
 
@@ -55,10 +56,12 @@ function loadWaveData(chaos)
             WAVE_HEALTH[i] = baseHP
         else
             if COOP_MAP then
-                if multiplier_3_wave and i >= multiplier_3 then
+                if multiplier_3 and i >= multiplier_3_wave then
                     WAVE_HEALTH[i] = WAVE_HEALTH[i-1] * multiplier_3
-                elseif multiplier_2_wave and i >= multiplier_2 then
+                elseif multiplier_2 and i >= multiplier_2_wave then
                     WAVE_HEALTH[i] = WAVE_HEALTH[i-1] * multiplier_2
+                else
+                    WAVE_HEALTH[i] = WAVE_HEALTH[i-1] * multiplier
                 end
             else
                 WAVE_HEALTH[i] = WAVE_HEALTH[i-1] * multiplier
@@ -257,8 +260,7 @@ function SpawnEntity(entityClass, playerID, position)
         -- Adjust slows multiplicatively
         entity:AddNewModifier(entity, nil, "modifier_slow_adjustment", {})
 
-        -- Add to scoreboard count
-        -- TODO: scoreboard for co-op I guess
+        -- Add to scoreboard remaining count
         if not COOP_MAP then
             local playerData = GetPlayerData(playerID)
             playerData.remaining = playerData.remaining + 1
@@ -386,20 +388,24 @@ function SpawnWaveForPlayer(playerID, wave)
     waveObj:SpawnWave()
 end
 
--- give 1 lumber every 5 waves or every 3 if express mode ignoring the last wave 55 and 30.
+-- give 1 lumber every 5 waves or every 3 if express mode ignoring the last wave (55/50/30)
 function WaveGrantsLumber( wave )
     if wave == 0 then return end
-    if EXPRESS_MODE then
+    if COOP_MAP then
+        return wave % 5 == 0 and wave < 50
+    elseif EXPRESS_MODE then
         return wave % 3 == 0 and wave < 30
     else
         return wave % 5 == 0 and wave < 55
     end
 end
 
--- pure essence at waves 50/55 and 24/7 (express)
+-- pure essence at waves 50/55, 24/27 in express, 45/50 on coop
 function WaveGrantsEssence( wave )
     if wave == 0 then return end
-    if EXPRESS_MODE then
+    if COOP_MAP then
+        return wave == 45 or wave == 50
+    elseif EXPRESS_MODE then
         return wave == 24 or wave == 27
     else
         return wave == 50 or wave == 55
@@ -423,8 +429,16 @@ function ShowPortalForSector(sector, wave, playerID)
     ParticleManager:SetParticleControl(portal.particle, 15, GetElementColor(element))
     
     -- Portal World Notification
-    if playerID == nil then -- co-op mode
-        CustomGameEventManager:Send_ServerToAllClients("world_notification", {entityIndex = portal:GetEntityIndex(), text = "#etd_wave_"..element})
+    if COOP_MAP then
+        Timers:CreateTimer(0.1, function()
+            if COOP_WAVE_LANE_LEAKS[sector] and COOP_WAVE_LANE_LEAKS[sector] > 0 then
+                CustomGameEventManager:Send_ServerToAllClients("world_notification", {entityIndex = portal:GetEntityIndex(), text = "#etd_wave_"..element, leaked = COOP_WAVE_LANE_LEAKS[sector]})
+                portal.leaked = true
+            else
+                CustomGameEventManager:Send_ServerToAllClients("world_notification", {entityIndex = portal:GetEntityIndex(), text = "#etd_wave_"..element})
+                portal.leaked = false
+            end
+        end)
     else
         local player = PlayerResource:GetPlayer(playerID)
         if player then 
@@ -441,8 +455,11 @@ function ClosePortalForSector(playerID, sector, removeInstantly)
         ParticleManager:DestroyParticle(portal.particle, removeInstantly or false)
     end
 
-    if playerID == nil then -- co-op mode
-        CustomGameEventManager:Send_ServerToAllClients("world_remove_notification", {entityIndex = portal:GetEntityIndex()})
+    if COOP_MAP then
+        if not portal.leaked then
+            CustomGameEventManager:Send_ServerToAllClients("world_remove_notification", {entityIndex = portal:GetEntityIndex()})
+            portal.leaked = false
+        end
     else
         local player = PlayerResource:GetPlayer(playerID)
         if player then 
@@ -511,6 +528,9 @@ function ReduceLivesForPlayer(playerID, lives)
     end
 
     playerData.health = playerData.health - lives
+    if COOP_MAP then
+        COOP_HEALTH = playerData.health
+    end
 
     local maxLives = GameSettings:GetMapSetting("Lives")
     if playerData.health <= 0 then
@@ -528,7 +548,11 @@ function ReduceLivesForPlayer(playerID, lives)
         ElementTD:EndGameForPlayer(playerID) -- End the game for the dead player
     elseif PlayerIsAlive(playerID) then
         
-        playerData.waveObject.leaks = playerData.waveObject.leaks + lives
+        if COOP_MAP then
+            playerData.waveObject.leaks = CURRENT_WAVE_OBJECT.leaks
+        else
+            playerData.waveObject.leaks = playerData.waveObject.leaks + lives
+        end
         
         if hero and playerData.health < maxLives then --When over max health, HP loss is covered by losing modifier_bonus_life
             hero:SetHealth(playerData.health)

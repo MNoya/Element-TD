@@ -58,7 +58,9 @@ function CreepUndead:OnDeath()
     -- Respawn Timer
     Timers:CreateTimer(3, function()
         ParticleManager:DestroyParticle(particle, true)
-        self:UndeadCreepRespawn()
+        if not END_TIME then
+            self:UndeadCreepRespawn()
+        end
     end)
 
     self.creep = newCreep

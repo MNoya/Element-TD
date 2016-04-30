@@ -37,6 +37,7 @@ local requires = {
     "mechanics/summoner",
     "mechanics/orbs",
     "mechanics/saves",
+    "mechanics/players",
     
     -- utils
     "util/util",
@@ -123,7 +124,6 @@ local requires = {
     "playerdata",
     "sandbox",
     "ElementTD",
-    "scoring",
 }
 
 for _, r in pairs(requires) do

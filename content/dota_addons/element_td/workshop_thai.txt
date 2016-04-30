@@ -1,0 +1,33 @@
+ดิน น้ำ ไฟ ไม้ แสง และความมืด ธาตุทั้ง 6 จะหลอมรวมกันในเกมป้องกันป้อมปราการนี้
+
+[b]ผู้เล่น:[/b] 1-4 คน
+[b]ความยาวเกม:[/b] 20-40+ นาที
+
+[h1]กระดานผู้นำและฟอรัม[/h1]
+ตรวจอันดับทั่วโลกของคุณและสนทนาเกี่ยวกับเกมได้ที่ [url=http://www.eletd.com]เว็บไซต์ทางการ[/url] ของ Element TD
+
+[h1]ทีมงานพัฒนา[/h1]
+[b]ผู้ออกแบบ:[/b] Karawasa & WindStrike 
+[b]ผู้เขียนโปรแกรม:[/b] Noya, A_Dizzle, Quintinity 
+[b]ผู้สร้างแผนที่:[/b] Azarak
+
+[h1]นักแปล[/h1]
+[b]ภาษาไทย[/b]: [url=http://steamcommunity.com/id/RealPyro/]ρyro[/url]
+
+[h1]บัตรผ่าน Element TD[/h1]
+หากคุณชื่นชอบเกม  [url=dota2.com/store/itemdetails/16970]สนับสนุนการพัฒนาของเรา[/url] เพื่อรับสิทธิพิเศษ! 
+
+[h1]ลิงก์อื่น ๆ[/h1]
+[b]รายงานบัค:[/b] [url=http://forums.eletd.com/forum/102-bug-reports/]ที่นี่[/url]
+[b]ให้คำเสนอแนะ:[/b] [url=http://forums.eletd.com/forum/95-suggestions/]ที่นี่[/url]
+[b]ติดต่อ:[/b] admin@eletd.com 
+[b]แชท:[/b] [url=https://kiwiirc.com/client/irc.gamesurge.net/?#eletd]#eletd@GameSurge[/url]
+
+[h1]ขอขอบคุณเป็นพิเศษ[/h1]
+[b]Mayheim[/b] - ไอคอนสีแบบกำหนดเอง
+[b]CrazyRussian[/b] - ไอคอนธาตุและภาพบนเวิร์กชอป
+[b]BMD[/b] - [url=https://github.com/bmddota/barebones]ไลบารี Barebones[/url]
+[b]Myll[/b] - [url=https://github.com/stephenfournier/Dota-2-ModKit]ModKit[/url]
+[b]jimmydorry[/b] - [url=http://getdotastats.com/]GetDotaStats[/url]
+[b]Automedic[/b] - อนุภาคลูกแก้วธาตุ
+และทุก ๆ คนบน IRC ที่ [url=https://kiwiirc.com/client/irc.gamesurge.net/?#dota2mods]#dota2mods@GameSurge[/url]

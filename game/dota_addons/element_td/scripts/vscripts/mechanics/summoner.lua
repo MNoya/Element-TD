@@ -117,27 +117,45 @@ function AddElementalTrophy(playerID, element, level)
     local playerData = GetPlayerData(playerID)
     local summoner = playerData.summoner
 
-    -- Elementals are placed from east to west X, at the same Y of the summoner
+    -- Classic: Elementals are placed from east to west X, 2 rows
+    -- Coop: all in 1 row, orientation depends on the player placement on the map
+
     playerData.elemCount = playerData.elemCount or 0 --Number of elementals killed
     local count = playerData.elemCount
-
-    -- At 6 we make another row
-    local Y = -100
+    local position
     local offset = Vector(0,0,0)
-    if count >= 6 then 
-        Y = 100
-        count = count - 6
-    end
-    if Y == 100 then
-        offset = Vector(75, 0, 0)
+    local angle = Vector(0, -1, 0)
+
+    if COOP_MAP then
+        if playerID == 0 or playerID == 1 then
+            offset = Vector(150,0,0)
+        elseif playerID == 3 then
+            offset = Vector(0,150,0)
+            angle = Vector(-1,0,0)
+        elseif playerID == 2 then
+            offset = Vector(0,-150,0)
+            angle = Vector(1,0,0)
+        end
+
+        position = summoner:GetAbsOrigin() + (1.5+count) * offset
+    else
+        -- At 6 we make another row
+        local Y = -100
+        if count >= 6 then 
+            Y = 100
+            count = count - 6
+        end
+        if Y == 100 then
+            offset = Vector(75, 0, 0)
+        end
+        position = summoner:GetAbsOrigin() + Vector(750,Y,0) + count * Vector(150,0,0) + offset
     end
 
-    local position = summoner:GetAbsOrigin() + Vector(750,Y,0) + count * Vector(150,0,0) + offset
     playerData.elemCount = playerData.elemCount + 1
 
     local elemental = CreateUnitByName(unitName, position, false, nil, nil, team)
     elemental:SetModelScale(scale)
-    elemental:SetForwardVector(Vector(0, -1, 0))
+    elemental:SetForwardVector(angle)
     elemental:AddNewModifier(elemental, nil, "modifier_disabled", {})
 
     table.insert(playerData.elementTrophies, elemental)

@@ -54,7 +54,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bounce_decrease"		"33"
+			"bounce_decrease"		"30"
 		}
 		"05"
 		{

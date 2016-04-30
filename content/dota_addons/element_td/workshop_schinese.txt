@@ -2,7 +2,7 @@
 六大元素在这张塔防地图中浑然天成。
 地图汉化已经完成，游戏更加畅通无阻！
 
-[b]玩家数量：[/b] 1-6
+[b]玩家数量：[/b] 1-4
 [b]游戏时长：[/b] 20-40分钟
 
 [h1]排行榜与论坛[/h1]
@@ -14,7 +14,10 @@
 [b]地图：[/b] Azarak
 
 [h1]译者[/h1]
-[b]汉化：[/b] [url=http://steamcommunity.com/id/rabbitism/]Rabbitism[/url]
+[b]汉化:[/b] [url=http://steamcommunity.com/id/rabbitism/]Rabbitism[/url] - [url=http://steamcommunity.com/profiles/76561198050765387/]DesTiny[/url]
+
+[h1]Element TD Pass[/h1]
+如果你喜欢这个游戏,请考虑[url=http://www.dota2.com/store/itemdetails/16970]支持开发[/url] 并获得更酷的福利!
 
 [h1]相关链接[/h1]
 [b]汇报Bug：[/b] [url=http://forums.eletd.com/forum/102-bug-reports/]Here[/url]

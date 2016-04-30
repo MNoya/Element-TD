@@ -40,6 +40,32 @@ function CountTips(){
     };
 };
 
+function ChooseBackground() {
+    var mapInfo = Game.GetMapInfo()
+    var mapName = mapInfo.map_display_name
+
+    if (mapName == "")
+    {
+        $.Schedule(0.1, ChooseBackground);
+        return;
+    }
+
+    if (mapName == "element_td_coop")
+    {
+        $("#seq_bg").style["background-image"] = "url('file://{images}/custom_game/loading_screen/coop_background.png');";
+        $("#seq_light").visible = false;
+        $("#seq_dark").visible = false;
+        $("#seq_water").visible = false;
+        $("#seq_fire").visible = false;
+        $("#seq_nature").visible = false;
+        $("#seq_earth").visible = false;
+        $("#Promote").visible = false;
+        $.Msg("Changed loading screen to coop loading")
+    }
+};
+
+
 (function () {
     ShowTips()
+    ChooseBackground()
 })();

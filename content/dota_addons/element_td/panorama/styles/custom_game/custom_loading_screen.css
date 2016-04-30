@@ -89,6 +89,7 @@
     animation-timing-function: TimingFunc;
     animation-iteration-count: IterationCount;
     animation-direction: alternate;
+    background-image: url("file://{images}/custom_game/loading_screen/background.png");
 }
 
 @keyframes 'seq_light'
@@ -321,6 +322,7 @@ b
 
 #PromoteTitle
 {
+    align: center top;
     text-align: center;
     width: 100%;
 }
@@ -332,8 +334,8 @@ b
     margin-bottom: 10px;
     border-radius: 20px;
     box-shadow: #88888840 0px 0px 40px 0px;
-    width: 450px;
-    height: 300px;
+    width: 470px;
+    height: 400px;
 }
 
 #CoopTitle
@@ -347,5 +349,5 @@ b
     text-shadow: 0 0 4px 4.0 #444444;
     font-family: "Goudy Trajan Medium";
     letter-spacing: 3px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }

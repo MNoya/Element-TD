@@ -50,9 +50,14 @@ function RefreshScoreboard()
     {
         var root = $.GetContextPanel()
         HideAllTraverse(root, "ScoreContainer")
+        HideAllTraverse(root, "NetworthContainer")
+        HideAllTraverse(root, "TeamNetworthLabel")
         HideAllTraverse(root, "TeamScoreLabel")
         HideAllTraverse(root, "LivesContainer")
         HideAllTraverse(root, "TeamLives")
+        HideAllTraverse(root, "KillsContainer")
+        HideAllTraverse(root, "KillsRemaining")
+        $.Schedule(2, function(){SetFlyoutScoreboardVisible(true)})
     }
 
 	GameEvents.Subscribe( "etd_update_scoreboard", RefreshScoreboard );

@@ -22,7 +22,6 @@ var elements = {water: '#WaterValue', fire: '#FireValue', nature: '#NatureValue'
 
 var tooltips = {'#gold':"#tooltip_gold",
 				'#lumber':'#tooltip_lumber',
-				'#essence':'#tooltip_essence',
 				'#score':'#tooltip_score',
 				'#water':'#water_level',
 				'#fire':'#fire_level',
@@ -104,7 +103,19 @@ function ShowTooltip( str )
 	var tooltip = tooltips[str];
 	var tooltipUI = tooltipsUI[str];
 	var title = str.replace(/(['"])/g, "\\$1");
-	tooltip = tooltip.replace(/(['"])/g, "\\$1");
+
+	if (str == "#essence")
+	{
+		if (Game.IsCoop())
+			tooltip = '#tooltip_essence_coop'
+		else if (Game.IsExpress())
+			tooltip = '#tooltip_essence_express'
+		else
+			tooltip = '#tooltip_essence_classic'
+	}
+	else
+		tooltip = tooltip.replace(/(['"])/g, "\\$1");
+
 	$.DispatchEvent("DOTAShowTitleTextTooltip", tooltipUI, title, tooltip);
 }
 

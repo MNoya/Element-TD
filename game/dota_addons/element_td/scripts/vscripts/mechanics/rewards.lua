@@ -203,10 +203,11 @@ function Rewards:ReplaceHero(playerID, oldHero, heroName)
     -- Keep the map entity
     if oldHero.mapEntity then
         oldHero.mapEntity:SetParent(nil, "")
+        oldHero.mapEntity:RemoveModifierByName("modifier_out_of_world")
+        oldHero.mapEntity:RemoveGesture(ACT_DOTA_RUN)
         oldHero.mapEntity:SetAbsOrigin(oldHero.mapEntity.originalPos)
         local angle = oldHero.mapEntity.originalAngles
         oldHero.mapEntity:SetAngles(angle.x, angle.y, angle.z)
-        oldHero.mapEntity:RemoveModifierByName("modifier_out_of_world")
     end
 
     oldHero:AddNoDraw()

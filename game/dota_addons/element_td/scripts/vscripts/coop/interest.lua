@@ -31,9 +31,22 @@ function InterestManagerCoop:StartInterest()
 	})
 end
 
--- handles single player interest restarting
+-- handles co-op interest restarting
 function InterestManagerCoop:Restart()
-	Log:warn("InterestManagerCoop:Restart is not implemented!");
+	InterestManagerCoop:PauseInterest(true)
+
+	ForAllPlayerIDs(function(playerID)
+		GetPlayerData(playerID).interestGold = 0
+		local player = PlayerResource:GetPlayer(playerID)
+		if player then
+			CustomGameEventManager:Send_ServerToPlayer(player, "etd_restart_interest", {})
+		end
+	end)
+	
+	InterestManagerCoop.started = false
+	InterestManagerCoop.timer = nil
+	InterestManagerCoop.locked = false
+	InterestManagerCoop.gameStartedBefore = false
 end
 
 function InterestManagerCoop:HandlePlayerReconnect(playerID)
@@ -46,7 +59,7 @@ function InterestManagerCoop:HandlePlayerReconnect(playerID)
 			enabled = true 
 		})
 		
-		if interest.locked then
+		if InterestManagerCoop.locked then
 			CustomGameEventManager:Send_ServerToPlayer(player, "etd_pause_interest", {})
 		else
 			local timerName = InterestManagerCoop.timer
@@ -63,7 +76,7 @@ function InterestManagerCoop:CreateTimer(timeRemaining)
 	if InterestManagerCoop.timer then return end
 
 	InterestManagerCoop.timer = Timers:CreateTimer(timeRemaining or INTEREST_INTERVAL, function()
-		if COOP_WAVE < WAVE_COUNT - END_OFFSET then
+		if COOP_WAVE <= WAVE_COUNT - END_OFFSET then
 			InterestManagerCoop:GiveInterest()
 		else
 			Log:debug("Completely stopping interest")
@@ -80,7 +93,9 @@ function InterestManagerCoop:CheckForIncorrectPausing()
 end
 
 function InterestManagerCoop:CompletedWave(waveNumber)
-	InterestManagerCoop:ResumeInterest()
+	if InterestManagerCoop.locked then
+		InterestManagerCoop:ResumeInterest()
+	end
 end
 
 -- force the player's interest to resume
@@ -95,7 +110,6 @@ function InterestManagerCoop:ResumeInterest()
 	InterestManagerCoop.TimeRemaining = 0
 end
 
--- pauses interest for the given player
 function InterestManagerCoop:PauseInterest(bResetBar)
 	local timerName = InterestManagerCoop.timer
 
@@ -104,6 +118,8 @@ function InterestManagerCoop:PauseInterest(bResetBar)
 		if Timers.timers[timerName] then
 			-- store time remaining for when we resume
 			InterestManagerCoop.TimeRemaining = Timers.timers[timerName].endTime - GameRules:GetGameTime()
+		else
+			Log:warn("[INTEREST] Attempted interest pause but timer was missing.")
 		end
 		
 		Timers:RemoveTimer(timerName)
@@ -124,17 +140,17 @@ function InterestManagerCoop:LeakedWave(waveNumber)
 
 	if not InterestManagerCoop.locked then
 		InterestManagerCoop.locked = true
-		InterestManagerCoop:PauseInterest()
+		InterestManagerCoop:PauseInterest(false)
 	end
 end
 
 -- gives all players interest based on total team gold
 function InterestManagerCoop:GiveInterest()
-	local gold = PlayerResource:GetTotalGold() / PlayerResource:GetPlayerCount()
+	local gold = PlayerResource:GetTotalGold() / PlayerResource:GetPlayerCountWithoutLeavers()
 	local interest = math.floor(gold * INTEREST_RATE)
 
 	if interest > 0 then
-		ForAllPlayerIDs(function(playerID)
+        ForAllConnectedPlayerIDs(function(playerID)
 			local playerData = GetPlayerData(playerID)
 			local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 

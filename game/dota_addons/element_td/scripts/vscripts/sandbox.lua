@@ -214,6 +214,11 @@ function Sandbox:SetWave(event)
 
     Sandbox:StopWave({PlayerID=playerID})
 
+    if COOP_MAP then
+        COOP_WAVE = waveNumber
+        UpdateCoopPortal(COOP_WAVE)
+    end
+    
     CURRENT_WAVE = waveNumber
     playerData.nextWave = waveNumber
     playerData.completedWaves = waveNumber - 1
@@ -254,6 +259,7 @@ function Sandbox:SpawnWave(event)
 
     if COOP_MAP then
         COOP_WAVE = waveNumber
+        UpdateCoopPortal(COOP_WAVE)
         SpawnWaveCoop()
     else
         SpawnWaveForPlayer(playerID, waveNumber)
@@ -399,8 +405,13 @@ function Sandbox:Restart( event )
     CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=newPlayerData.health/hero:GetMaxHealth() * 100} )
 
     -- Set resources
-    SetCustomGold(playerID, GameSettings.length.Gold)
-    SetCustomLumber(playerID, 1)
+    local baseGold = GameSettings.length.Gold
+    if COOP_MAP then
+        baseGold = math.floor(baseGold * 4 / PlayerResource:GetPlayerCountWithoutLeavers() + 0.5)
+    end
+
+    SetCustomGold(playerID, baseGold)
+    SetCustomLumber(playerID, GameSettings.length.Lumber)
     SetCustomEssence(playerID, 0)
     UpdateElementsHUD(playerID)
     UpdatePlayerSpells(playerID)
@@ -446,7 +457,11 @@ end
 
 -- Forces a fast precache of everything to be able to build anything ASAP
 function ElementTD:PrecacheAll()
-    if EXPRESS_MODE then
+    if COOP_MAP then
+        ElementTD:PrecacheWave(4)
+        ElementTD:PrecacheWave(9)
+        ElementTD:PrecacheWave(14)
+    elseif EXPRESS_MODE then
         ElementTD:ExpressPrecache(5)
         ElementTD:PrecacheWave(2)
         ElementTD:PrecacheWave(5)

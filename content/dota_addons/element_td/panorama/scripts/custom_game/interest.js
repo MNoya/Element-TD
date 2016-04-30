@@ -115,6 +115,30 @@ function CheckHudFlipped() {
 	$.Schedule(1, CheckHudFlipped)
 }
 
+function CheckAspectRatio() {
+	var width = Root.actuallayoutwidth;
+	var height = Root.actuallayoutheight;
+	// -w 1978 -h 828
+
+	var r = gcd(width, height);
+
+	var ratio = (width/height).toFixed(2);
+
+	// Aspect1:Aspect2
+	var Aspect1 = width/r;
+	var Aspect2 = height/r;
+
+	var AspectRatio = Aspect1 + ":" + Aspect2;
+	
+	// 21x9
+	if (AspectRatio == "64:27" || AspectRatio == "21:9" || AspectRatio == "43:18")
+		interest.SetHasClass( "AspectRatio21x9", true );
+}
+
+function gcd (a, b) {
+	return (b == 0) ? a : gcd (b, a%b);
+}
+
 (function () {
   UpdateInterest();
   GameEvents.Subscribe( "etd_restart_interest", RestartInterest );
@@ -123,4 +147,5 @@ function CheckHudFlipped() {
   GameEvents.Subscribe( "etd_pause_interest", PauseInterest );
   GameEvents.Subscribe( "etd_resume_interest", ResumeInterest );
   $.Schedule(0.1, CheckHudFlipped)
+  $.Schedule(0.1, CheckAspectRatio)
 })();
