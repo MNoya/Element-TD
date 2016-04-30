@@ -76,7 +76,7 @@ function InterestManagerCoop:CreateTimer(timeRemaining)
 	if InterestManagerCoop.timer then return end
 
 	InterestManagerCoop.timer = Timers:CreateTimer(timeRemaining or INTEREST_INTERVAL, function()
-		if COOP_WAVE < WAVE_COUNT - END_OFFSET then
+		if COOP_WAVE <= WAVE_COUNT - END_OFFSET then
 			InterestManagerCoop:GiveInterest()
 		else
 			Log:debug("Completely stopping interest")
