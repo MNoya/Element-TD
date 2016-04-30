@@ -127,13 +127,13 @@ function AddElementalTrophy(playerID, element, level)
     local angle = Vector(0, -1, 0)
 
     if COOP_MAP then
-        if playerID == 0 or playerID == 3 then
+        if playerID == 0 or playerID == 1 then
             offset = Vector(150,0,0)
-        elseif playerID == 1 then
-            offset = Vector(0,-150,0)
+        elseif playerID == 3 then
+            offset = Vector(0,150,0)
             angle = Vector(-1,0,0)
         elseif playerID == 2 then
-            offset = Vector(0,150,0)
+            offset = Vector(0,-150,0)
             angle = Vector(1,0,0)
         end
 
