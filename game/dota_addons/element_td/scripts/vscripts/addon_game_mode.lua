@@ -124,7 +124,6 @@ local requires = {
     "playerdata",
     "sandbox",
     "ElementTD",
-    "scoring",
 }
 
 for _, r in pairs(requires) do

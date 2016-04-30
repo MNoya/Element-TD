@@ -202,7 +202,7 @@ end
 function ScoringObject:GetBossWaveCleared( bossWave )
 	local playerData = GetPlayerData( self.playerID )
 	local bossBonus = self:GetBossBonus(bossWave-1)
-	local waveClearScore = CREEPS_PER_WAVE_COOP * POINTS_PER_FROG * bossBonus
+	local waveClearScore = CREEPS_PER_WAVE * POINTS_PER_FROG * bossBonus
 	local difficultyBonus = self:GetDifficultyBonus()
 	local frogKills = playerData.iceFrogKills
 	local totalScore = math.ceil(waveClearScore * (1 + difficultyBonus))
@@ -243,7 +243,7 @@ function ScoringObject:GetGameFinished()
 	local frogKills = 0 --Total
 	if playerData.iceFrogKills then
 		frogKills = playerData.iceFrogKills
-		local remainder = frogKills % CREEPS_PER_WAVE_COOP
+		local remainder = frogKills % CREEPS_PER_WAVE
 		extraFrogScore = remainder * POINTS_PER_FROG * self:GetBossBonus(playerData.bossWaves-1) * (1+self:GetDifficultyBonus())
 	end
 
@@ -255,7 +255,7 @@ end
 -- base wave score, takes a wave number
 function ScoringObject:GetWaveClearBonus( wave )
 	local base_worth = EXPRESS_MODE and BASE_WAVE_SCORE_EXPRESS or BASE_WAVE_SCORE
-	local bonus = (wave+base_worth) * CREEPS_PER_WAVE_COOP
+	local bonus = (wave+base_worth) * CREEPS_PER_WAVE
 	
 	return bonus
 end
