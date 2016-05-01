@@ -6,16 +6,15 @@ function Tooltips:Validate()
     Tooltips.mainLanguage = "english"
     Tooltips.resourceTooltips = LoadKeyValues("resource/addon_"..Tooltips.mainLanguage..".txt").Tokens
     Tooltips.panoramaTooltips = LoadKeyValues("panorama/localization/addon_"..Tooltips.mainLanguage..".txt").Tokens
-    Tooltips.file = io.open("../../dota_addons/element_td/scripts/Tooltips.txt", 'w')
 
-    local languages = {"schinese","russian"}
+    local languages = {"schinese","russian","thai"}
         
     for _,language in pairs(languages) do
+        Tooltips.file = io.open("../../dota_addons/element_td/scripts/missing_tooltips_"..language..".txt", 'w')
         Tooltips:Check(Tooltips.resourceTooltips, "resource/addon_"..language..".txt")
         Tooltips:Check(Tooltips.panoramaTooltips, "panorama/localization/addon_"..language..".txt")
+        Tooltips.file:close()
     end
-
-    Tooltips.file:close()
 end
 
 function Tooltips:Check(mainFile, fileName)
@@ -72,7 +71,7 @@ function Tooltips:Check(mainFile, fileName)
 
     local maxValueLen = 0
     Tooltips:write(separator)
-    if #diffValues > 0 then
+    --[[if #diffValues > 0 then
         Tooltips:write("Different Number Values:")
         table.sort(diffValues, function(a,b) return a.key < b.key end)
 
@@ -101,7 +100,7 @@ function Tooltips:Check(mainFile, fileName)
         Tooltips:write("Total of "..#missValues.." Missing Number Values on "..fileName.."!")
     else
         Tooltips:write("OK - 0 Missing Number Values on "..fileName.."!")
-    end
+    end]]
 
     Tooltips:write(separator.."\n")
 end

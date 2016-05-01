@@ -80,12 +80,12 @@
                         <Label id="Rank" class="LeaderboardCategory" text="#profile_rank" />
                         <Label id="Players" class="LeaderboardCategory" text="#leaderboard_players" />
                         <Label id="Score" class="LeaderboardCategory" text="#profile_score" />
-                        <Label id="Frogs" class="LeaderboardCategory" text="#profile_frogs" />
+                        <Label id="Frogs" class="LeaderboardCategory" text="#custom_end_screen_legend_wave" />
                     </Panel>
                 </Panel>
 
                 <Panel id="CoopLeaderboardContainer" class="ContainerSection">
-                    <Label id="ErrorLB4" text="#loading_screen_next"/>
+                    <Label id="ErrorLB4" text="#leaderboard_unreachable"/>
                     <!-- Added dynamically -->
                 </Panel>
 

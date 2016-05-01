@@ -1,0 +1,10 @@
+Checking resource/addon_schinese.txt
+OK - 0 Missing keys on resource/addon_schinese.txt!
+------------------------------------------
+------------------------------------------
+
+Checking panorama/localization/addon_schinese.txt
+OK - 0 Missing keys on panorama/localization/addon_schinese.txt!
+------------------------------------------
+------------------------------------------
+

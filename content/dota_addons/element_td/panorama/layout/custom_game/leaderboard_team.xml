@@ -8,11 +8,13 @@
     <Panel hittest="false" class="TeamContainer">
         <Label hittest="false" id="TeamRank" text="#"/>
         <Panel id="TeamAvatars">
-            <DOTAAvatarImage hittest="false" id="AvatarImage1" steamid="" />
-            <DOTAAvatarImage hittest="false" id="AvatarImage2" steamid="" />
-            <DOTAAvatarImage hittest="false" id="AvatarImage3" steamid="" />
-            <DOTAAvatarImage hittest="false" id="AvatarImage4" steamid="" />
+            <DOTAAvatarImage hittest="false" id="AvatarImage1" class="TeamAvatarImage" steamid="" />
+            <DOTAAvatarImage hittest="false" id="AvatarImage2" class="TeamAvatarImage" steamid="" />
+            <DOTAAvatarImage hittest="false" id="AvatarImage3" class="TeamAvatarImage" steamid="" />
+            <DOTAAvatarImage hittest="false" id="AvatarImage4" class="TeamAvatarImage" steamid="" />
         </Panel>
+
         <Label hittest="false" id="TeamScore"/>
+        <Label hittest="false" id="TeamWave"/>
     </Panel>
 </root>

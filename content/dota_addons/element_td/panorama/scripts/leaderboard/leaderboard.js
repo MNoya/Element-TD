@@ -24,8 +24,9 @@ function GetTopRanks(type, panel) {
         success: function( data ) {
             var info = JSON.parse(data);
             var players = info['players']
+            var matches = info['matches']
 
-            if (players === undefined)
+            if (players === undefined && matches === undefined)
             {
                 $.Msg("Error on GetTopRanks "+type)
                 loadingSpinner.AddClass("Hide")
@@ -33,19 +34,36 @@ function GetTopRanks(type, panel) {
                 return
             }
 
-            //$.Msg(panel.id)
-            for (var steamID in players)
+            if (type == COOP)
             {
-                //$.Msg("Top "+players[steamID]['rank']+":", players[steamID])
-                var callback = function( data, panel )
+                panel.ranks = 0
+                matches = SortCoopMatches(matches)
+                for (var matchID in matches)
                 {
-                    return function(){ CreateTopPlayerPanel(data, panel); }
-                }( players[steamID], panel );
+                    var callback = function( data, panel )
+                    {
+                        return function(){ CreateTopTeamPanel(data, panel); }
+                    }( matches[matchID], panel );
 
-                $.Schedule( delay, callback )
-                delay += delay_per_panel;
+                    $.Schedule( delay, callback )
+                    delay += delay_per_panel;
+                }
             }
+            else
+            {
+                for (var steamID in players)
+                {
+                    //$.Msg("Top "+players[steamID]['rank']+":", players[steamID])
+                    var callback = function( data, panel )
+                    {
+                        return function(){ CreateTopPlayerPanel(data, panel); }
+                    }( players[steamID], panel );
 
+                    $.Schedule( delay, callback )
+                    delay += delay_per_panel;
+                }
+            }
+            
             loadingSpinner.AddClass("Hide")
             $("#ErrorLB"+type).AddClass("Hide")
         },
@@ -75,6 +93,39 @@ function CreateTopPlayerPanel(data, panel) {
     GameUI.SetupAvatarTooltip(playerPanel.FindChildInLayoutFile("AvatarImage"), $.GetContextPanel(), steamID64)
 }
 
+function CreateTopTeamPanel(data, panel) {
+    panel.ranks++
+
+    var teamPanel = $.CreatePanel("Panel", panel, "Top_"+panel.id+"_"+panel.ranks)
+    teamPanel.rank = panel.ranks
+    teamPanel.players = []
+    teamPanel.playerCount = 0
+
+    var playerID = Game.GetLocalPlayerID()
+    var localSteamID = GameUI.GetPlayerSteamID(playerID)
+
+    for (var i in data)
+    {
+        if (data[i].steamID)
+        {
+            teamPanel.playerCount++
+            var steamID64 = GameUI.ConvertID64(data[i].steamID)
+            teamPanel.players[teamPanel.playerCount] = steamID64
+
+            if (steamID64 == localSteamID)
+                teamPanel.AddClass("local")
+
+            if (teamPanel.score === undefined)
+                teamPanel.score = GameUI.FormatScore(data[i].score)
+
+            if (teamPanel.wave === undefined)
+                teamPanel.wave = data[i].wave
+        }
+    }
+
+    teamPanel.BLoadLayout("file://{resources}/layout/custom_game/leaderboard_team.xml", false, false);
+}
+
 function Setup()
 {
     var timeNow = Game.Time()
@@ -87,7 +138,7 @@ function Setup()
     {
         lastRequest = timeNow
         RefreshAllRanks()
-    }  
+    }
 }
 
 function CreateAllRanks() {
@@ -100,8 +151,10 @@ function CreateAllRanks() {
     
     if (bCoop)
     {
+        $("#Buttons").AddClass("Coop")
+        $("#LeaderboardLink").AddClass("Coop")
         Leaderboard.AddClass("Coop")
-        //GetTopRanks(COOP, $("#ClassicLeaderboardContainer"))
+        GetTopRanks(COOP, $("#CoopLeaderboardContainer"))
     }
     else
     {
@@ -116,15 +169,23 @@ function RefreshAllRanks()
     // Protect against refresh spam
     var timeNow = Game.Time()
     if (lastRefresh === undefined)
+    {
         lastRefresh = timeNow
+        return
+    }
     else if (timeNow-lastRefresh < REFRESH_THRESHOLD)
         return
 
     lastRefresh = timeNow
     $.Msg("Reseting All Ranks")
-    Refresh(CLASSIC, "ClassicLeaderboardContainer")
-    Refresh(EXPRESS, "ExpressLeaderboardContainer")
-    Refresh(FROGS, "FrogsLeaderboardContainer")
+    if (Game.IsCoop())
+        Refresh(COOP, "CoopLeaderboardContainer")
+    else
+    {
+        Refresh(CLASSIC, "ClassicLeaderboardContainer")
+        Refresh(EXPRESS, "ExpressLeaderboardContainer")
+        Refresh(FROGS, "FrogsLeaderboardContainer")
+    }
 }
 
 function Refresh(leaderboard_type, id) {
@@ -142,6 +203,34 @@ function ClearRanks(panel) {
         }
     }
 }
+
+function SortCoopMatches (data) {
+    var matches = []
+    for (var x = 0; x < 100; x++) 
+    {
+        var max = 0
+        var id = 0
+        for (var i in data) 
+        {
+            if (data[i].processed === undefined)
+            {
+                for (var e in data[i]) {
+                    var entry = data[i][e]
+                    if (entry.score && entry.score > max)
+                    {
+                        max = entry.score
+                        id = i
+                    }
+                } 
+            }  
+        }
+        matches.push(data[id])
+        data[id].processed = true;
+    }
+
+    return matches;
+}
+
 
 GameUI.CloseLeaderboard = function() {
     Leaderboard.AddClass("Hide")

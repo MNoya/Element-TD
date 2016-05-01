@@ -35,7 +35,7 @@ Label
     margin-top: 5px;
 }
 
-#Loading3
+#Loading3, #Loading4
 {
     margin-left: 30px;
 }
@@ -143,7 +143,9 @@ Label
 
 #Leaderboard.Coop
 {
-    width: 500px;
+    width: 465px;
+    height: 625px;
+    margin-right: 45%;
 }
 
 #CoopLeaderboard
@@ -244,7 +246,7 @@ Label
 
 .Coop #Score
 {
-    margin-left: 210px;
+    margin-left: 155px;
 }
 
 #Frogs
@@ -337,6 +339,11 @@ Label
     horizontal-align: right;
 }
 
+#Buttons.Coop 
+{
+    margin-right: 1160px;
+}
+
 #RefreshButton
 {
     horizontal-align: left;
@@ -396,4 +403,66 @@ Label
     horizontal-align: center;
     vertical-align: bottom;
     margin-bottom: 250px;
+}
+
+#LeaderboardLink.Coop
+{
+    horizontal-align: left;
+    margin-bottom: 310px;
+    margin-left: 350px;
+}
+
+// Coop leaderboard stuff
+.TeamContainer
+{
+    width: 100%;
+    flow-children: right;
+    margin-top: 5px;
+}
+
+#TeamRank
+{
+    width: 60px;
+    font-size: 28px;
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 2px;
+    color: white;
+}
+
+#TeamAvatars
+{
+    flow-children: right;
+    margin-left: 5px;
+    width: 180px;
+}
+
+.TeamAvatarImage
+{
+    height: 40px;
+    width: 40px;
+    vertical-align: center;
+    margin-left: 5px;
+}
+
+#TeamScore
+{
+    width: 90px;
+    margin-left: 22px;
+    margin-top: 2px;
+    font-size: 25px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
+}
+
+#TeamWave
+{
+    width: 55px;
+    margin-left: 5px;
+    margin-top: 2px;
+    font-size: 25px;
+    text-align: center;
+    vertical-align: center;
+    color: white;
 }

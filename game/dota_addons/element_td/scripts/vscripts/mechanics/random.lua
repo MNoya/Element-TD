@@ -58,7 +58,7 @@ end
 
 -- Never 6-elem AR in Coop unless its a single player game
 function randoomPrevention(used, target)
-    if PlayerResource:GetPlayerCount() > 1 then return false end
+    if PlayerResource:GetPlayerCount() == 1 then return false end
 
     local num = 0
     for k,v in pairs(used) do
