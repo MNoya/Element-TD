@@ -1,0 +1,35 @@
+Элементы света, тьмы, воды, огня, природы и земли объединились в этой TD, основанной на комбинировании.
+
+[b]Игроков:[/b] 1-4
+[b]Длительность игры:[/b] 20-40+ минут 
+
+[h1]Доска почёта и форумы[/h1]
+Проверьте свой рейтинг и обсудите игру на [url=http://www.eletd.com]официальном сайте[/url] Element TD
+
+[h1]Разработчики[/h1]
+[b]Дизайнеры:[/b] Karawasa и WindStrike 
+[b]Программисты:[/b] Noya, A_Dizzle, Quintinity 
+[b]Маппер:[/b] Azarak
+
+[h1]Переводчики[/h1]
+[b]Китайский:[/b] [url=http://steamcommunity.com/id/rabbitism/]Rabbitism[/url] - [url=http://steamcommunity.com/profiles/76561198050765387/]DesTiny[/url]
+[b]Тайский:[/b] [url=http://steamcommunity.com/id/RealPyro/]ρyro[/url]
+[b]Русский:[/b] [url=http://steamcommunity.com/id/gogolik/]gogolik[/url]
+
+[h1]Element TD Pass[/h1]
+Если вам понравилась игра, то вы можете [url=http://www.dota2.com/store/itemdetails/16970]поддержать команду разработчиков[/url] и получить крутые плюшки!
+
+[h1]Полезные ссылки[/h1]
+[b]О багах сообщать[/b] [url=http://forums.eletd.com/forum/102-bug-reports/]сюда[/url]
+[b]Предложения и пожелания[/b] [url=http://forums.eletd.com/forum/95-suggestions/]сюда[/url]
+[b]Контакты:[/b] admin@eletd.com 
+[b]Чат:[/b] [url=https://kiwiirc.com/client/irc.gamesurge.net/?#eletd]#eletd@GameSurge[/url]
+
+[h1]Особая благодарность[/h1]
+[b]Mayheim[/b] - пользовательские цветные иконки 
+[b]CrazyRussian[/b] - иконки элементов и иконка для workshop
+[b]BMD[/b] - [url=https://github.com/bmddota/barebones]Barebones libraries[/url]
+[b]Myll[/b] - [url=https://github.com/stephenfournier/Dota-2-ModKit]ModKit[/url]
+[b]jimmydorry[/b] - [url=http://getdotastats.com/]GetDotaStats[/url]
+[b]Automedic[/b] - частицы сфер элементов
+Все остальное в IRC [url=https://kiwiirc.com/client/irc.gamesurge.net/?#dota2mods]#dota2mods@GameSurge[/url]
