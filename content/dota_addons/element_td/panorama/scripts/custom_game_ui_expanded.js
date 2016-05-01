@@ -294,6 +294,11 @@ GameUI.IsDeveloper = function (steamID64) {
     return Developers.indexOf(Number(steamID64)) != -1
 }
 
+var Translators = [76561198047021815,76561198060578494,76561198017567489,76561198050765387]
+GameUI.IsTranslator = function (steamID64) {
+    return Developers.indexOf(Number(steamID64)) != -1
+}
+
 GameUI.DeveloperInGame = function() {
     for (var playerID in Game.GetAllPlayerIDs())
         if (GameUI.IsDeveloper(GameUI.GetPlayerSteamID(playerID)))
@@ -306,6 +311,8 @@ GameUI.RewardLevel = function (steamID64) {
     var playerReward = CustomNetTables.GetTableValue( "rewards", steamID64)
     if (GameUI.IsDeveloper(steamID64))
         return "Developer"
+    else if (GameUI.IsTranslator(steamID64))
+        return "Translator"
     else if (playerReward)
         return playerReward.tier
     else
@@ -322,7 +329,7 @@ GameUI.ApplyPanelBorder = function (panel, steamID64) {
         if (border !== undefined && border !== null)
         {
             border.RemoveClass( "HiddenBorder" )
-            if (rewardLevel == "Developer")
+            if (rewardLevel == "Developer" || rewardLevel == "Translator")
                 border.AddClass( "EpicBorder" )
 
             else if (rewardLevel >= 2)
@@ -343,7 +350,7 @@ GameUI.AcceptWheel = function() {
 GameUI.PlayerHasProfile = function (playerID) {
     var steamID64 = GameUI.GetPlayerSteamID(playerID)
     var rewardLevel = GameUI.RewardLevel(steamID64)
-    return Players.HasCustomGameTicketForPlayerID(parseInt(playerID)) || rewardLevel == "Developer" // || rewardLevel == rewardLevel > 0
+    return Players.HasCustomGameTicketForPlayerID(parseInt(playerID)) || rewardLevel == "Developer" || rewardLevel == "Translator" // || rewardLevel == rewardLevel > 0
 }
 
 // Save request by steamID
@@ -352,7 +359,7 @@ GameUI.CheckPlayerPass = function (steamID64, callback) {
 
     // Mark devs as pass owners in the UI
     var rewardLevel = GameUI.RewardLevel(steamID64)
-    if (rewardLevel == "Developer")
+    if (rewardLevel == "Developer" || rewardLevel == "Translator")
     {
         callback(true)
         return
