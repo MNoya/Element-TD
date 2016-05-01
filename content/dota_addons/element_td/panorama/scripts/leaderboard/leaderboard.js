@@ -169,7 +169,10 @@ function RefreshAllRanks()
     // Protect against refresh spam
     var timeNow = Game.Time()
     if (lastRefresh === undefined)
+    {
         lastRefresh = timeNow
+        return
+    }
     else if (timeNow-lastRefresh < REFRESH_THRESHOLD)
         return
 
