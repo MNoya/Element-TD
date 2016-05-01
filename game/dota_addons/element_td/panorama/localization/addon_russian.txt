@@ -143,7 +143,7 @@
         "blacksmith_tower_name"          "Кузнец"
         "moss_tower_name"                "Мха"
         "quark_tower_name"               "Кварка"
-        "electricity_tower_name"         "Электричества
+        "electricity_tower_name"         "Электричества"
         "flame_tower_name"               "Огненная"
         "vapor_tower_name"               "Испарения"
         "poison_tower_name"              "Яда"

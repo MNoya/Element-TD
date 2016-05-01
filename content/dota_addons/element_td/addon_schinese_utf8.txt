@@ -16,6 +16,7 @@
 
         // messages
         "etd_welcome_message"       "欢迎来到<font color='#70EA72'>元素塔防</font>！"
+        "etd_highscore_message"     "%s1 刷新了最高分！"
         "etd_end_message"           "感谢您对<font color='#70EA72'>元素塔防</font>的喜爱！"
         "etd_end_message_defeat"    "没有人坚持到最后，祝你下次好运，再接再厉！"
         "etd_voting"                "<font color='#70EA72'>投票已经开始！</font>"
@@ -28,6 +29,7 @@
         "etd_random_already_enabled" "您已经在进行随机元素模式了！"
         "etd_random_elemental"      "您已经随机到了一个元素！"
         "etd_random_essence"        "您随机获得了一个纯净精华！"
+        "etd_random_wait_for_vote"  "请等待投票结束开启随机模式！"
 
         "etd_lumber_add"            "您获得了+{amount}份木材！"
         "etd_essence_add"           "您获得了+{amount}个纯净精华！"
@@ -322,6 +324,8 @@
         "zombie"                    "僵尸"
         "centaur_warchief"          "半人马酋长"
         "wolf"                      "狼"
+        "deathbringer"              "死亡使者"
+        "storm_spirit"              "风暴之灵"
 
         "clock_wanderer"            "发条漫游者"
         "creep_ability_time_lapse"  "转瞬即逝"
@@ -682,6 +686,7 @@
         "DOTA_Tooltip_ability_electricity_tower_arc_lightning_passive_damage_decrease"      "%每次跳跃伤害衰减："
         "DOTA_Tooltip_ability_electricity_tower_arc_lightning_passive_jump_count"       "跳跃次数："
         "DOTA_Tooltip_ability_electricity_tower_arc_lightning_passive_bounce_range"       "范围加成："
+        "DOTA_Tooltip_ability_electricity_tower_arc_lightning_passive_bounce_decrease"    "跳跃衰减："
 
         "DOTA_Tooltip_modifier_sunburn_stacks"     "炎阳炙烤"
         "DOTA_Tooltip_modifier_sunburn_stacks_Description"     "持续受到伤害，同时灼伤你附近的小兵。"
