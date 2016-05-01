@@ -220,8 +220,8 @@
         "loading_screen_next"   "敬请期待！"
 
         "loading_screen_changelog"   "最新的变化"
-        "loading_screen_change_text" "<h1>1.6版本</h1><h2>得分调整</h2>• 重做了净财产得分.<br>• 清怪速度的得分系数是原来的2倍.<br>• 增加了每一波全清的得分.<br><br><h2>平衡性调整</h2>• 稍微减少了赏金.<br>• 推迟了纯净精华的获得时间.<br>• 圣火技能重做.<br>• 重做了极地塔技能的后续特效.<br>• 对很多塔进行了平衡性微调.<br><br><b>去论坛查看全部的改动!</b><br>"
-
+        "loading_screen_change_text"     "<h1>V1.7 版本</h1><h2>全新合作地图！</h2>• 推荐玩家数量：2-4人<br>•开局即拥有2个元素，100生命值及更多金币<br>• 50波小兵及Boss<br>• 各波小兵出场顺序随机<br>• 金币及利息均分<br>• 生命值及分数共享<br>请在创建游戏大厅时选择<b>element_td_coop</b><br>地图开启合作模式。<br><br><h2>平衡调整</h2>• 潮汐之塔削弱。<br>• 圣火元素增强。<br>• 自然元素增强。<br>• 电流之塔小幅增强<br>• 三级双元素塔降价。<br><br><b>请到论坛查看完整更新日志！</b><br>"
+ 
         "credits_title"         "致谢"
         "credits_developers"    "开发者"
         "support_thanks"        "感谢大家的支持！"
@@ -273,9 +273,13 @@
         "leaderboard_classic"   "传统模式 Top 100"
         "leaderboard_express"   "快速模式 Top 100"
         "leaderboard_frogs"     "击杀冰蛙 Top 100"
+        "leaderboard_coop"      "Top 100 合作团队"
+        "leaderboard_players"   "玩家"
         "leaderboard_refresh"   "刷新"
         "leaderboard_unreachable"   "排行榜不可用。"
 
         "cooperative_map"       "多人合作地图"
+        "cooperative_victory"   "合作胜利！"
+        "cooperative_leaked_n"  "上一轮偷跑：<b>{s:leaks}</b> 个"
     }
 }
