@@ -1,0 +1,17 @@
+Checking resource/addon_russian.txt
+Missing Keys:
+        "centaur_warchief"    "Centaur Warchief"
+        "clock_wanderer"      "Clock Wanderer"
+        "deathbringer"        "Deathbringer"
+        "earth_walker"        "Earth Walker"
+        "faceless"            "Faceless"
+        "otter_dragon"        "Green Dragon"
+        "shifting_treant"     "Shifting Treant"
+        "storm_spirit"        "Storm Spirit"
+        "wolf"                "Wolf"
+Total of 9 Missing keys on resource/addon_russian.txt!
+------------------------------------------
+------------------------------------------
+
+Checking panorama/localization/addon_russian.txt
+ERROR on reading panorama/localization/addon_russian.txt key values!
