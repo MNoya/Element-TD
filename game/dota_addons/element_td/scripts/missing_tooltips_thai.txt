@@ -7,18 +7,13 @@ Total of 1 Missing keys on resource/addon_thai.txt!
 
 Checking panorama/localization/addon_thai.txt
 Missing Keys:
-        "cooperative_leaked_n"          "Last Wave Leaks: <b>{s:leaks}</b>"
-        "cooperative_victory"           "Cooperative Victory!"
-        "leaderboard_coop"              "Top 100 Cooperative Teams"
-        "leaderboard_players"           "Players"
-        "loading_new_map"               "New Map Available"
-        "loading_screen_change_text"    "<h1>Version 1.7</h1><h2>New Cooperative Map!</h2>• Recommended players: 2-4<br>•Start with 2 elements, 100 HP and more gold<br>• Waves: 50 + boss<br>• Creep wave order is random<br>• Gold and interest are split<br>• Lives and score are shared<br>Play it by selecting the <b>element_td_coop</b><br> from the Map menu when creating a lobby.<br><br><h2>Balance</h2>• Tidal nerfed.<br>• Fire buffed.<br>• Nature buffed.<br>• Electricity slightly buffed.<br>• Tier 3 Duals cost less.<br><br><b>Check out the full changelog on the forums!</b><br>"
-        "loading_screen_next"           "Coming Next!"
-        "loading_screen_tip_18"         "You can play Co-Op by selecting the element_td_coop from the Map menu when creating a lobby."
-        "tooltip_essence_classic"       "Essence is used to build your most powerful towers.<br>You can use it to evolve a Level 3 Single-Element Tower, or to build a Periodic Tower if you have all 6 Elements.<br>You can buy Pure Essences from the summoner for 1 lumber.<br>You will recieve 1 pure essence on wave 50 and 55."
-        "tooltip_essence_coop"          "Essence is used to build your most powerful towers.<br>You can use it to evolve a Level 3 Single-Element Tower, or to build a Periodic Tower if you have all 6 Elements.<br>You can buy Pure Essences from the summoner for 1 lumber.<br>You will recieve 1 pure essence on wave 45 and 50 (Cooperative Map)."
-        "tooltip_essence_express"       "Essence is used to build your most powerful towers.<br>You can use it to evolve a Level 3 Single-Element Tower, or to build a Periodic Tower if you have all 6 Elements.<br>You can buy Pure Essences from the summoner for 1 lumber.<br>You will recieve 1 pure essence on wave 24 and 27 (Express Mode)."
-Total of 11 Missing keys on panorama/localization/addon_thai.txt!
+        "loading_new_map"            "New Map Available"
+        "loading_screen_next"        "Coming Next!"
+        "loading_screen_tip_18"      "You can play Co-Op by selecting the element_td_coop from the Map menu when creating a lobby."
+        "tooltip_essence_classic"    "Essence is used to build your most powerful towers.<br>You can use it to evolve a Level 3 Single-Element Tower, or to build a Periodic Tower if you have all 6 Elements.<br>You can buy Pure Essences from the summoner for 1 lumber.<br>You will recieve 1 pure essence on wave 50 and 55."
+        "tooltip_essence_coop"       "Essence is used to build your most powerful towers.<br>You can use it to evolve a Level 3 Single-Element Tower, or to build a Periodic Tower if you have all 6 Elements.<br>You can buy Pure Essences from the summoner for 1 lumber.<br>You will recieve 1 pure essence on wave 45 and 50 (Cooperative Map)."
+        "tooltip_essence_express"    "Essence is used to build your most powerful towers.<br>You can use it to evolve a Level 3 Single-Element Tower, or to build a Periodic Tower if you have all 6 Elements.<br>You can buy Pure Essences from the summoner for 1 lumber.<br>You will recieve 1 pure essence on wave 24 and 27 (Express Mode)."
+Total of 6 Missing keys on panorama/localization/addon_thai.txt!
 ------------------------------------------
 ------------------------------------------
 
