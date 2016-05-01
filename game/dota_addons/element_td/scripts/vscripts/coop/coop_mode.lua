@@ -158,6 +158,7 @@ function CreateMoveTimerForCreepCoop(creep, sector)
 end
 
 function StartBreakTimeCoop(breakTime)
+    if COOP_HEALTH == 0 then return end
     ElementTD:PrecacheWave(COOP_WAVE)
 
     local msgTime = 5 -- how long to show the message for
@@ -185,47 +186,43 @@ function StartBreakTimeCoop(breakTime)
 
     -- set up each individual player
     for _, playerID in pairs(playerIDs) do
-        local hero = PlayerResource:GetSelectedHeroEntity(playerID)
         local playerData = GetPlayerData(playerID)
 
         ShowWaveBreakTimeMessage(playerID, COOP_WAVE, breakTime, msgTime)
 
-        if PlayerIsAlive(playerID) then
+        -- Grant Lumber and Essence to all players the moment the next wave is set
+        if WaveGrantsLumber(COOP_WAVE - 1) then
+            ModifyLumber(playerID, 1)
+            if IsPlayerUsingRandomMode( playerID ) then
+                Notifications:ClearBottom(playerID)
+                local element = GetRandomElementForPlayerWave(playerID, COOP_WAVE - 1)
 
-            -- Grant Lumber and Essence to all players the moment the next wave is set
-            if WaveGrantsLumber(COOP_WAVE - 1) then
-                ModifyLumber(playerID, 1)
-                if IsPlayerUsingRandomMode( playerID ) then
-                    Notifications:ClearBottom(playerID)
-                    local element = GetRandomElementForPlayerWave(playerID, COOP_WAVE - 1)
+                Log:info("Randoming element for player "..playerID..": "..element)
 
-                    Log:info("Randoming element for player "..playerID..": "..element)
+                if element == "pure" then
+                    SendEssenceMessage(playerID, "#etd_random_essence")
+                    ModifyLumber(playerID, -1)
+                    ModifyPureEssence(playerID, 1)
+                    playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
 
-                    if element == "pure" then
-                        SendEssenceMessage(playerID, "#etd_random_essence")
-                        ModifyLumber(playerID, -1)
-                        ModifyPureEssence(playerID, 1)
-                        playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
-
-                        -- Track pure essence purchasing as part of the element order
-                        playerData.elementOrder[#playerData.elementOrder + 1] = "Pure"
-                        
-                        -- Gold bonus for Pure Essence randoming (removed in 1.5)
-                        -- GivePureEssenceGoldBonus(playerID)
-                    else
-                        SendEssenceMessage(playerID, "#etd_random_elemental")
-                        SummonElemental({caster = playerData.summoner, Elemental = element .. "_elemental"})
-                    end
+                    -- Track pure essence purchasing as part of the element order
+                    playerData.elementOrder[#playerData.elementOrder + 1] = "Pure"
+                    
+                    -- Gold bonus for Pure Essence randoming (removed in 1.5)
+                    -- GivePureEssenceGoldBonus(playerID)
                 else
-                    Log:info("Giving 1 lumber to " .. playerData.name)
+                    SendEssenceMessage(playerID, "#etd_random_elemental")
+                    SummonElemental({caster = playerData.summoner, Elemental = element .. "_elemental"})
                 end
+            else
+                Log:info("Giving 1 lumber to " .. playerData.name)
             end
+        end
 
-            if WaveGrantsEssence(COOP_WAVE - 1) then
-                ModifyPureEssence(playerID, 1) 
-                Log:info("Giving 1 pure essence to " .. playerData.name)
-                playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
-            end
+        if WaveGrantsEssence(COOP_WAVE - 1) then
+            ModifyPureEssence(playerID, 1) 
+            Log:info("Giving 1 pure essence to " .. playerData.name)
+            playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
         end
     end
 
