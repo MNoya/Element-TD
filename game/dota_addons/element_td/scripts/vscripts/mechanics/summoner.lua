@@ -131,10 +131,10 @@ function AddElementalTrophy(playerID, element, level)
             offset = Vector(150,0,0)
         elseif playerID == 3 then
             offset = Vector(0,150,0)
-            angle = Vector(-1,0,0)
+            angle = Vector(1,0,0)
         elseif playerID == 2 then
             offset = Vector(0,-150,0)
-            angle = Vector(1,0,0)
+            angle = Vector(-1,0,0)
         end
 
         position = summoner:GetAbsOrigin() + (1.5+count) * offset
