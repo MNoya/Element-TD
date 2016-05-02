@@ -10,7 +10,7 @@
     "AbilityTextureName"            "elements/water"
     
     "Building"                      "1"
-    "AbilityCastRange"              "200"
+    "AbilityCastRange"              "250"
     "Scale"                         "1"
     "PlayerCanControl"              "1"
 
