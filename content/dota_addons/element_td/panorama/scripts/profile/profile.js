@@ -264,14 +264,19 @@ function CreateMatch(info) {
     }
 }
 
+var loadingFriends = -1
 function GetPlayerFriends(steamID32, leaderboard_type) {
-    friendsRank = 0
     currentProfile = steamID32
+
+    //Already loading friend lb, exit
+    if (loadingFriends == leaderboard_type)
+        return;
 
     for (var i = 0; i < friends.length; i++) {
         friends[i].DeleteAsync(0)
     };
     friends = []
+    friendsRank = 0
 
     if (FriendsOf[steamID32] && FriendsOf[steamID32][leaderboard_type])
     {
@@ -288,6 +293,10 @@ function GetPlayerFriends(steamID32, leaderboard_type) {
 
             if (FriendsOf[steamID32] === undefined)
                 FriendsOf[steamID32] = {}
+
+            ////Already loading friend lb, exit
+            if (loadingFriends == leaderboard_type)
+                return;
 
             SetPlayerFriends(info, steamID32, leaderboard_type, true)
         }
@@ -322,6 +331,7 @@ function SetPlayerFriends(info, steamID32, leaderboard_type, addSelf) {
         return parseInt(a.rank) - parseInt(b.rank);
     });
 
+    loadingFriends = leaderboard_type
     for (var i in players_info)
     {
         var callback = function( data )
@@ -335,6 +345,10 @@ function SetPlayerFriends(info, steamID32, leaderboard_type, addSelf) {
         $.Schedule( delay, callback )
         delay += delay_per_panel;
     }
+
+    $.Schedule( delay_per_panel * players_info.length, function() {
+        loadingFriends = -1;
+    })
 }
 
 function CreateFriendPanel(data, leaderboard_type) {
