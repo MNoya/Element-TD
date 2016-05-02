@@ -22,6 +22,7 @@ function CreateDataForPlayer(playerID, allowOverride)
 	data["lumber"] = 0
 	data["pureEssenceTotal"] = 0 -- Keep track of the total amount given to the player
 	data["pureEssence"] = 0
+    data["pureEssencePurchase"] = 0
 	data["elementalActive"] = false
 	data["elementalUnit"] = nil
 	data["elementalRandom"] = false
@@ -424,6 +425,8 @@ function UpdateScoreboard(playerID, express_end)
 
 	data.randomed = playerData.elementalRandom --self-random
 	data.elements = playerData.elements
+    data.elements['pure'] = playerData.pureEssencePurchase
+
 	CustomGameEventManager:Send_ServerToAllClients("etd_update_scoreboard", {playerID=playerID, data = data})
 end
 

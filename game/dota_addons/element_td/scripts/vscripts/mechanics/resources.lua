@@ -159,6 +159,7 @@ function BuyPureEssence( keys )
         ModifyLumber(playerID, -1)
         ModifyPureEssence(playerID, 1)
         playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
+        playerData.pureEssencePurchase = playerData.pureEssencePurchase + 1
         Sounds:EmitSoundOnClient(playerID, "General.Buy")
 
         -- Track pure essence purchasing as part of the element order
@@ -173,6 +174,8 @@ function BuyPureEssence( keys )
                 item:RemoveSelf()
             end
         end
+
+        UpdateScoreboard(playerID)
     else
         ShowWarnMessage(playerID, "#etd_need_more_lumber")
     end

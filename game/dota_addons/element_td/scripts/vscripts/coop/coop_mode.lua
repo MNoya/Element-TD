@@ -204,6 +204,7 @@ function StartBreakTimeCoop(breakTime)
                     ModifyLumber(playerID, -1)
                     ModifyPureEssence(playerID, 1)
                     playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
+                    playerData.pureEssencePurchase = playerData.pureEssencePurchase + 1
 
                     -- Track pure essence purchasing as part of the element order
                     playerData.elementOrder[#playerData.elementOrder + 1] = "Pure"

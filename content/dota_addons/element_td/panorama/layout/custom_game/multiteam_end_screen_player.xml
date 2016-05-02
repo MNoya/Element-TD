@@ -55,6 +55,10 @@
 						<Image class="ElementImage" src="file://{images}/spellicons/elements/earth.png"/>
 						<Label id="earth_level" text=""/>
 					</Panel>
+					<Panel id="pure" class="ElemImageAndLevel">
+						<Image class="ElementImage" src="file://{images}/spellicons/elements/pure.png"/>
+						<Label id="pure_level" text=""/>
+					</Panel>
 				</Panel>
 			</Panel>
 		</Panel>
