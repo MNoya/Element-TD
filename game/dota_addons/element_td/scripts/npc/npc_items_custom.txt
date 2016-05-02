@@ -36,7 +36,7 @@
 	    "ItemSellable"                  "0"
 	    
 	    "Building"                      "1"
-	    "AbilityCastRange"              "200"
+	    "AbilityCastRange"              "300"
 	    "Scale"                         "1"
 	    "PlayerCanControl"              "1"
 	
@@ -68,7 +68,7 @@
 	    "ItemSellable"                  "0"
 	    
 	    "Building"                      "1"
-	    "AbilityCastRange"              "200"
+	    "AbilityCastRange"              "300"
 	    "Scale"                         "1"
 	    "PlayerCanControl"              "1"
 	
@@ -100,7 +100,7 @@
 	    "ItemSellable"                  "0"
 	    
 	    "Building"                      "1"
-	    "AbilityCastRange"              "200"
+	    "AbilityCastRange"              "300"
 	    "Scale"                         "1"
 	    "PlayerCanControl"              "1"
 	

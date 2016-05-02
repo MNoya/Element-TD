@@ -11,7 +11,7 @@
     "AbilityTextureName"            "elements/nature"
     
     "Building"                      "1"
-    "AbilityCastRange"              "200"
+    "AbilityCastRange"              "300"
     "Scale"                         "1"
     "PlayerCanControl"              "1"
 
