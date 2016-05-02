@@ -694,6 +694,10 @@ function ElementTD:OnReconnect(playerID)
         InterestManager:HandlePlayerReconnect(playerID)
     end
 
+    ForAllPlayerIDs(function(playerID)
+        UpdateScoreboard(playerID)
+    end)
+
     CustomGameEventManager:Send_ServerToPlayer(player, "etd_create_ranks", {} )
 
     if GameRules:State_Get() >= DOTA_GAMERULES_STATE_HERO_SELECTION then
