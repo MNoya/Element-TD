@@ -11,7 +11,7 @@
     "AbilityTextureName"            "elements/fire"
     
     "Building"                      "1"
-    "AbilityCastRange"              "300"
+    "AbilityCastRange"              "200"
     "Scale"                         "1"
     "PlayerCanControl"              "1"
 

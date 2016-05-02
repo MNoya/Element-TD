@@ -13,7 +13,7 @@
 	    "AbilityTextureName"            "elements/dark"
 	    
 	    "Building"                      "1"
-	    "AbilityCastRange"              "300"
+	    "AbilityCastRange"              "200"
 	    "Scale"                         "1"
 	    "PlayerCanControl"              "1"
 	
@@ -58,7 +58,7 @@
 	    "AbilityTextureName"            "elements/earth"
 	    
 	    "Building"                      "1"
-	    "AbilityCastRange"              "300"
+	    "AbilityCastRange"              "200"
 	    "Scale"                         "1"
 	    "PlayerCanControl"              "1"
 	
@@ -103,7 +103,7 @@
 	    "AbilityTextureName"            "elements/fire"
 	    
 	    "Building"                      "1"
-	    "AbilityCastRange"              "300"
+	    "AbilityCastRange"              "200"
 	    "Scale"                         "1"
 	    "PlayerCanControl"              "1"
 	
@@ -148,7 +148,7 @@
 	    "AbilityTextureName"            "elements/light"
 	    
 	    "Building"                      "1"
-	    "AbilityCastRange"              "300"
+	    "AbilityCastRange"              "200"
 	    "Scale"                         "1"
 	    "PlayerCanControl"              "1"
 	
@@ -193,7 +193,7 @@
 	    "AbilityTextureName"            "elements/nature"
 	    
 	    "Building"                      "1"
-	    "AbilityCastRange"              "300"
+	    "AbilityCastRange"              "200"
 	    "Scale"                         "1"
 	    "PlayerCanControl"              "1"
 	
@@ -237,7 +237,7 @@
 	    "AbilityTextureName"            "elements/water"
 	    
 	    "Building"                      "1"
-	    "AbilityCastRange"              "300"
+	    "AbilityCastRange"              "200"
 	    "Scale"                         "1"
 	    "PlayerCanControl"              "1"
 	
