@@ -12,6 +12,11 @@ function Rewards:OnPlayerChangeBuilder(event)
     local playerID = event.PlayerID
     local heroName = event.hero_name
 
+    if GameRules:IsGamePaused() then 
+        SendErrorMessage(playerID, "dota_hud_error_game_is_paused")
+        return
+    end
+
     -- If it's the same builder, ignore it
     local oldHero = PlayerResource:GetSelectedHeroEntity(playerID)
     if oldHero:GetUnitName() == heroName then return end
@@ -29,6 +34,11 @@ end
 function Rewards:OnPlayerResetBuilder(event)
     local playerID = event.PlayerID
     local oldHero = PlayerResource:GetSelectedHeroEntity(playerID)
+
+    if GameRules:IsGamePaused() then 
+        SendErrorMessage(playerID, "dota_hud_error_game_is_paused")
+        return
+    end
 
     -- If it's the same builder, ignore it
     if oldHero:GetUnitName() == "npc_dota_hero_wisp" or oldHero:GetUnitName() == "npc_dota_hero_phoenix" then return end
