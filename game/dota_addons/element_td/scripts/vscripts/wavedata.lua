@@ -94,7 +94,7 @@ function loadWaveData(chaos)
     -- Print and round the values
     for k,v in pairs(WAVE_CREEPS) do
         WAVE_HEALTH[k] = round(WAVE_HEALTH[k])
-        print(string.format("%2d | %-20s %5.0f",k,v,WAVE_HEALTH[k]))
+        --print(string.format("%2d | %-20s %5.0f",k,v,WAVE_HEALTH[k]))
     end
 end
 
@@ -159,6 +159,7 @@ function StartBreakTime(playerID, breakTime, rush_wave)
                     ModifyLumber(playerID,-1)
                     ModifyPureEssence(playerID, 1)
                     playerData.pureEssenceTotal = playerData.pureEssenceTotal + 1
+                    playerData.pureEssencePurchase = playerData.pureEssencePurchase + 1
 
                     -- Track pure essence purchasing as part of the element order
                     playerData.elementOrder[#playerData.elementOrder+1] = "Pure"

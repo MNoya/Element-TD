@@ -4,6 +4,7 @@ end
 
 function Rewards:Init()
     Rewards.subscribed = true
+    Rewards.reset = {}
     CustomGameEventManager:RegisterListener( "player_choose_custom_builder", Dynamic_Wrap(Rewards, 'OnPlayerChangeBuilder'))
     CustomGameEventManager:RegisterListener( "player_reset_builder", Dynamic_Wrap(Rewards, 'OnPlayerResetBuilder'))
 end
@@ -12,11 +13,17 @@ function Rewards:OnPlayerChangeBuilder(event)
     local playerID = event.PlayerID
     local heroName = event.hero_name
 
+    if GameRules:IsGamePaused() then 
+        SendErrorMessage(playerID, "dota_hud_error_game_is_paused")
+        return
+    end
+
     -- If it's the same builder, ignore it
     local oldHero = PlayerResource:GetSelectedHeroEntity(playerID)
     if oldHero:GetUnitName() == heroName then return end
 
     -- Replace and handle wearables, animations, particles
+    Rewards.reset[playerID] = true
     local newHero = Rewards:ReplaceHero(playerID, oldHero, heroName)
     RemoveAllWearables(newHero)
     UTIL_Remove(oldHero)
@@ -30,16 +37,34 @@ function Rewards:OnPlayerResetBuilder(event)
     local playerID = event.PlayerID
     local oldHero = PlayerResource:GetSelectedHeroEntity(playerID)
 
+    if GameRules:IsGamePaused() then 
+        SendErrorMessage(playerID, "dota_hud_error_game_is_paused")
+        return
+    end
+
     -- If it's the same builder, ignore it
     if oldHero:GetUnitName() == "npc_dota_hero_wisp" or oldHero:GetUnitName() == "npc_dota_hero_phoenix" then return end
 
+    local reward = Rewards:PlayerHasCosmeticModel(playerID)
+    local heroName = (reward and reward.tier and reward.tier >= 10 and "npc_dota_hero_phoenix") or "npc_dota_hero_wisp"
+
     -- Replace and delegate to HandleHeroReplacement
-    local newHero = Rewards:ReplaceHero(playerID, oldHero, "npc_dota_hero_wisp")
+    local newHero = Rewards:ReplaceHero(playerID, oldHero, heroName)
     newHero.reset = true
     UTIL_Remove(oldHero)
 
+    if heroName == "npc_dota_hero_phoenix" then
+        Rewards:ApplyCustomWispParticles(newHero)
+    end
+
     -- Save default choice
     Saves:SaveBuilder(playerID, "npc_dota_hero_wisp")
+end
+
+function Rewards:WasHeroMarkedForReset(playerID)
+    local bMarked = Rewards.reset[playerID] == true
+    Rewards.reset[playerID] = true
+    return bMarked
 end
 
 -- Pulls rewards.kv and eletd.com/reward_data.js
@@ -103,9 +128,9 @@ function Rewards:PlayerHasCosmeticModel(playerID)
     end
 
     -- Enable wisp set outside of dedis
-    if not IsDedicatedServer() then
+    --[[if not IsDedicatedServer() then
         return {tier=10}
-    end
+    end]]
 
     return false
 end

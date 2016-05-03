@@ -461,7 +461,7 @@ function ElementTD:OnUnitSpawned(keys)
         local playerID = hero:GetPlayerID()
 
         -- Should we change to an alternate builder?
-        if Rewards:PlayerHasCosmeticModel(playerID) and hero:GetUnitName() == "npc_dota_hero_wisp" then
+        if Rewards:PlayerHasCosmeticModel(playerID) and hero:GetUnitName() == "npc_dota_hero_wisp" and not Rewards:WasHeroMarkedForReset(playerID) then
             Timers:CreateTimer(0.03, function()
                 Rewards:HandleHeroReplacement(hero)
             end)
@@ -521,14 +521,12 @@ function ElementTD:OnHeroInGame(hero)
     summoner.icon = CreateUnitByName("elemental_summoner_icon", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber())
     playerData.summoner = summoner
 
-    hero:SetBaseMaxHealth(playerData.health)
-    hero:SetHealth(playerData.health)
-
     hero:ModifyGold(0)
     ModifyLumber(playerID, 0)  -- updates summoner spells
     ModifyPureEssence(playerID, 0, true)
     UpdateElementsHUD(playerID)
     UpdatePlayerSpells(playerID)
+    UpdatePlayerHealth(playerID, hero)
 
     SCORING_OBJECTS[playerID] = ScoringObject(playerID)
     playerData.scoreObject = SCORING_OBJECTS[playerID]
@@ -538,6 +536,7 @@ function ElementTD:AdjustHeroSpawnPos(playerID, hero)
     local ent = Entities:FindByName(nil, "player_start_"..playerID)
     if ent then
         Timers:CreateTimer(0.03, function()
+            UpdatePlayerHealth(playerID, hero)
             local pos = ent:GetAbsOrigin()
             hero:SetAbsOrigin(pos)
             PlayerResource:SetCameraTarget(playerID, hero)
@@ -693,6 +692,10 @@ function ElementTD:OnReconnect(playerID)
         UpdateRandom(playerID)
         InterestManager:HandlePlayerReconnect(playerID)
     end
+
+    ForAllPlayerIDs(function(playerID)
+        UpdateScoreboard(playerID)
+    end)
 
     CustomGameEventManager:Send_ServerToPlayer(player, "etd_create_ranks", {} )
 

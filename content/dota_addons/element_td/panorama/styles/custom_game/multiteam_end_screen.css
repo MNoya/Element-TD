@@ -832,7 +832,7 @@
 
 .ScoreCol_Elements
 {
-	width: 170px;
+	width: 190px;
 	text-align: center;
 }
 
@@ -872,7 +872,8 @@
 #nature_level,
 #earth_level,
 #light_level,
-#dark_level
+#dark_level,
+#pure_level
 {
 	color: #FFF;
 	font-size: 15px;
