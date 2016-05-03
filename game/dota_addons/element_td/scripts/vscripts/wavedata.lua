@@ -94,7 +94,7 @@ function loadWaveData(chaos)
     -- Print and round the values
     for k,v in pairs(WAVE_CREEPS) do
         WAVE_HEALTH[k] = round(WAVE_HEALTH[k])
-        print(string.format("%2d | %-20s %5.0f",k,v,WAVE_HEALTH[k]))
+        --print(string.format("%2d | %-20s %5.0f",k,v,WAVE_HEALTH[k]))
     end
 end
 

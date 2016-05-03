@@ -461,7 +461,7 @@ function ElementTD:OnUnitSpawned(keys)
         local playerID = hero:GetPlayerID()
 
         -- Should we change to an alternate builder?
-        if Rewards:PlayerHasCosmeticModel(playerID) and hero:GetUnitName() == "npc_dota_hero_wisp" then
+        if Rewards:PlayerHasCosmeticModel(playerID) and hero:GetUnitName() == "npc_dota_hero_wisp" and not Rewards:WasHeroMarkedForReset(playerID) then
             Timers:CreateTimer(0.03, function()
                 Rewards:HandleHeroReplacement(hero)
             end)
