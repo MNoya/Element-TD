@@ -653,8 +653,9 @@
         "DOTA_Tooltip_ability_vapor_tower_evaporate_aftershock_aoe"     "พื้นที่สะเทือน:"
         
         "DOTA_Tooltip_ability_poison_tower_contamination"       "Poison Burst"
-        "DOTA_Tooltip_ability_poison_tower_contamination_Description"       "การโจมตีทุก ๆ สี่ครั้งจะสร้างความเสียหายพิเศษในพื้นที่ 150 หน่วย (เต็ม)/300 หน่วย (ครึ่ง) รอบเป้าหมาย"
-        "DOTA_Tooltip_ability_poison_tower_contamination_damage_mult"       "%ตัวคูณความเสียหาย:"
+        "DOTA_Tooltip_ability_poison_tower_contamination_Description"       "Every fourth attack has a greatly increased damage AOE compared normal attacks."
+        "DOTA_Tooltip_ability_poison_tower_contamination_crit_aoe_half"       "CRIT HALF AOE:"
+        "DOTA_Tooltip_ability_poison_tower_contamination_crit_aoe_full"       "CRIT FULL AOE:"
         
         "DOTA_Tooltip_ability_life_tower_afterlife"     "Afterlife"
         "DOTA_Tooltip_ability_life_tower_afterlife_Description"     "ทุก ๆ ครีปไม่กี่ตัวที่ถูกสังหารโดยป้อมนี้จะรักษาคุณ โดยจะคำนวณร่วมกับป้อมชีวิตทั้งหมดที่คุณมี หากคุณมีพลังชีวิตเต็มอยู่  มันจะต้องสังหารเป็น <font color='#FFFFFF'>สองเท่า</font>\n\n<font color='#FFFFFF'>การกำหนดเป้าหมายโจมตี:</font> พลังชีวิตต่ำที่สุด"

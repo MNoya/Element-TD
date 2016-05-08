@@ -704,8 +704,9 @@
         "DOTA_Tooltip_ability_vapor_tower_evaporate_aftershock_aoe"     "余震作用范围："
 
         "DOTA_Tooltip_ability_poison_tower_contamination"       "毒爆"
-        "DOTA_Tooltip_ability_poison_tower_contamination_Description"       "每四次攻击会造成一次额外伤害，对目标周围100范围内造成全额伤害，300范围内造成半额伤害。"
-        "DOTA_Tooltip_ability_poison_tower_contamination_damage_mult"       "%伤害系数："
+        "DOTA_Tooltip_ability_poison_tower_contamination_Description"       "Every fourth attack has a greatly increased damage AOE compared normal attacks."
+        "DOTA_Tooltip_ability_poison_tower_contamination_crit_aoe_half"     "CRIT HALF AOE:"
+        "DOTA_Tooltip_ability_poison_tower_contamination_crit_aoe_full"     "CRIT FULL AOE:"
 
         "DOTA_Tooltip_ability_life_tower_afterlife"     "劫后余生"
         "DOTA_Tooltip_ability_life_tower_afterlife_Description"     "这座防御塔杀死若干敌人后会恢复你的生命值。所有生命之塔可累加。如果生命值已满则为击杀数的<font color='#FFFFFF'>2</font>倍。 \n\n<font color='#FFFFFF'>攻击目标：</font>最低生命值"

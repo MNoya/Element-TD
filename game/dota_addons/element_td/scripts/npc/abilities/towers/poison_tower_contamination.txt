@@ -13,7 +13,12 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage_mult"					"300"
+			"crit_aoe_half"					"800"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"crit_aoe_full"					"400"
 		}
 	}
 }

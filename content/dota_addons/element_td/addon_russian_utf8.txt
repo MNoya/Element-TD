@@ -652,8 +652,9 @@
         "DOTA_Tooltip_ability_vapor_tower_evaporate_aftershock_aoe"     "РАДИУС УДАРНОЙ ВОЛНЫ:"
         
         "DOTA_Tooltip_ability_poison_tower_contamination"       "Ядовитый взрыв"
-        "DOTA_Tooltip_ability_poison_tower_contamination_Description"       "Каждая четвертая атака наносит бонусный урон в радиусе 150(полный)/300(половина) от цели."
-        "DOTA_Tooltip_ability_poison_tower_contamination_damage_mult"       "%УВЕЛИЧЕНИЕ УРОНА:"
+        "DOTA_Tooltip_ability_poison_tower_contamination_Description"       "Every fourth attack has a greatly increased damage AOE compared normal attacks."
+        "DOTA_Tooltip_ability_poison_tower_contamination_crit_aoe_half"     "CRIT HALF AOE:"
+        "DOTA_Tooltip_ability_poison_tower_contamination_crit_aoe_full"     "CRIT FULL AOE:"
         
         "DOTA_Tooltip_ability_life_tower_afterlife"     "Жизнь после смерти"
         "DOTA_Tooltip_ability_life_tower_afterlife_Description"     "Каждые несколько убийств крипов, совершенных этой башней, восстанавливают ваши жизни. При этом, принимаются во внимание все Ваши башни такого типа. Если у вас полное здоровье, требуется <font color='#FFFFFF'>в два раза больше</font> убийств.\n\n<font color='#FFFFFF'>АТАКУЕТ ЦЕЛЬ С НАИМЕНЬШИМ ЗДОРОВЬЕМ</font>"

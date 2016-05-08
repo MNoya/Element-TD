@@ -1,6 +1,5 @@
 -- Poison Tower class (Water + Dark)
--- This is a splash attack tower. Every third attack this tower does massive damage compared to its base. So it goes normal attack, normal attack, super attack, normal attack etc..
--- Super attack should Base*X damage.
+-- This is a splash attack tower. Every fourth attack has a massive splash compared to a normal attack
 
 PoisonTower = createClass({
         tower = nil,
@@ -17,16 +16,16 @@ PoisonTower = createClass({
 nil)    
 
 function PoisonTower:OnAttackLanded(keys)
-    self.attacks = self.attacks + 1    
     local target = keys.target    
     local damage = self.tower:GetAverageTrueAttackDamage() 
-    local AOE = self.halfAOE
+    local attackFullAOE = self.fullAOE
+    local attackHalfAOE = self.halfAOE
 
+    self.attacks = self.attacks + 1    
     if self.attacks == 4 then
-        damage = damage * (self.damageMultiplier / 100)    
         self.attacks = 0    
-        AOE = 300
-
+        attackFullAOE = self.fullAOECrit
+        attackHalfAOE = self.halfAOECrit
         target:EmitSound("Poison.Strike")
 
         local particle = ParticleManager:CreateParticle("particles/custom/towers/poison/explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
@@ -39,16 +38,18 @@ function PoisonTower:OnAttackLanded(keys)
         PopupDarkCriticalDamage(self.tower, math.floor(damage_done))
     end
 
-    DamageEntitiesInArea(target:GetAbsOrigin(), AOE, self.tower, damage / 2)    
-    DamageEntitiesInArea(target:GetAbsOrigin(), AOE / 2, self.tower, damage / 2)    
+    DamageEntitiesInArea(target:GetAbsOrigin(), attackHalfAOE, self.tower, damage / 2)    
+    DamageEntitiesInArea(target:GetAbsOrigin(), attackFullAOE, self.tower, damage / 2)    
 end
 
 function PoisonTower:OnCreated()
     AddAbility(self.tower, "poison_tower_contamination")
     self.attacks = 0
-    self.damageMultiplier = GetAbilitySpecialValue("poison_tower_contamination", "damage_mult")
     self.fullAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))
     self.halfAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
+
+    self.fullAOECrit = GetAbilitySpecialValue("poison_tower_contamination", "crit_aoe_full")
+    self.halfAOECrit = GetAbilitySpecialValue("poison_tower_contamination", "crit_aoe_half")
 end
 
 RegisterTowerClass(PoisonTower, PoisonTower.className)    
