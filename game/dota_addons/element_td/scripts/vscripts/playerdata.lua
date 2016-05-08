@@ -143,7 +143,7 @@ function CanPlayerBuyPureEssence( playerID )
         if v == 3 then -- if level 3 of element
             hasLvl3 = true
         end
-        if v == 0 then
+        if v ~= "pure" and v == 0 then
             hasLvl1 = false
         end
     end
