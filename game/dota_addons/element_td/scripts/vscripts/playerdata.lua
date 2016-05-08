@@ -139,11 +139,11 @@ function CanPlayerBuyPureEssence( playerID )
 
     local hasLvl3 = false
     local hasLvl1 = true
-    for i,v in pairs(elements) do
-        if v == 3 then -- if level 3 of element
+    for element,level in pairs(elements) do
+        if level == 3 then
             hasLvl3 = true
         end
-        if v ~= "pure" and v == 0 then
+        if element ~= "pure" and level == 0 then
             hasLvl1 = false
         end
     end
