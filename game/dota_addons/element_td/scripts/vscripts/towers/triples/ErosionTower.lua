@@ -36,7 +36,7 @@ function ErosionTower:OnAttackLanded(keys)
     end
 
     self.ability:ApplyDataDrivenModifier(self.tower, target, "modifier_acid_attack_dot", {})
-    self:OnAcidDot({target=target})
+    --self:OnAcidDot({target=target})
 end
 
 function ErosionTower:OnCreated()
