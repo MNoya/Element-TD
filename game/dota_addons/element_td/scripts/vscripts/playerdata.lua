@@ -427,6 +427,7 @@ function UpdateScoreboard(playerID, express_end)
 	data.randomed = playerData.elementalRandom --self-random
 	data.elements = playerData.elements
     data.elements['pure'] = playerData.pureEssencePurchase
+    data.score = playerData.scoreObject and playerData.scoreObject.totalScore or 0
 
 	CustomGameEventManager:Send_ServerToAllClients("etd_update_scoreboard", {playerID=playerID, data = data})
 end
