@@ -26,6 +26,7 @@ function LifeTower:CreepKilled(keys)
     end
 
     local playerData = GetPlayerData(heroOwner:GetPlayerID())    
+    local life_tower_kills = playerData.LifeTowerKills --used to revert the gain of stacks when on full life
     playerData.LifeTowerKills = playerData.LifeTowerKills + self.pointsPerKill
 
     -- Bulky creeps count as double the kills
@@ -39,10 +40,12 @@ function LifeTower:CreepKilled(keys)
 
         AddOneLife(self.tower, playerData)
 
-    elseif playerData.health >= maxHealth and playerData.LifeTowerKills >= 120 then --when health is greater than or equal to max
-        playerData.LifeTowerKills = playerData.LifeTowerKills - 120
+    elseif playerData.health >= maxHealth then --[[and playerData.LifeTowerKills >= 120 then --when health is greater than or equal to max
+        --[[playerData.LifeTowerKills = playerData.LifeTowerKills - 120
 
-        AddOneLife(self.tower, playerData)        
+        AddOneLife(self.tower, playerData)]]     
+        self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_life_tower_full_health", {})
+        playerData.LifeTowerKills = life_tower_kills
     end
 
     -- Update all tower counters
@@ -67,6 +70,7 @@ function LifeTower:CreepKilled(keys)
 end
 
 function LifeTower:CreepKilledCoop(keys)
+    local life_tower_kills = COOP_LIFE_TOWER_KILLS
     COOP_LIFE_TOWER_KILLS = COOP_LIFE_TOWER_KILLS + self.pointsPerKill
 
     if keys.unit:HasAbility("creep_ability_bulky") then
@@ -77,9 +81,12 @@ function LifeTower:CreepKilledCoop(keys)
     if COOP_HEALTH < maxHealth and COOP_LIFE_TOWER_KILLS >= 60 then --when health is less than max
         COOP_LIFE_TOWER_KILLS = COOP_LIFE_TOWER_KILLS - 60
         AddOneLifeCoop(self.tower)
-    elseif COOP_HEALTH >= maxHealth and COOP_LIFE_TOWER_KILLS >= 120 then --when health is greater than or equal to max
+    elseif COOP_HEALTH >= maxHealth then --[[and COOP_LIFE_TOWER_KILLS >= 120 then --when health is greater than or equal to max
         COOP_LIFE_TOWER_KILLS = COOP_LIFE_TOWER_KILLS - 120
-        AddOneLifeCoop(self.tower)    
+        AddOneLifeCoop(self.tower)   ]] 
+
+        self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_life_tower_full_health", {})
+        playerData.LifeTowerKills = life_tower_kills
     end
 
     -- Update all tower counters
@@ -152,7 +159,7 @@ end
 function LifeTower:OnAttackLanded(keys)
     local target = keys.target    
     local damage = self.tower:GetAverageTrueAttackDamage()
-    DamageEntity(target, self.tower, damage)    
+    DamageEntity(target, self.tower, damage)
 end
 
 function LifeTower:GetUpgradeData()
@@ -172,9 +179,23 @@ function LifeTower:OnCreated()
     self.pointsPerKill = GetAbilitySpecialValue("life_tower_afterlife", "points_per_kill")[self.tower:GetLevel()]    
     self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_life_tower_counter", {})
     self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_life_tower_current_kill_counter", {})
-    self.tower:SetModifierStackCount("modifier_life_tower_current_kill_counter", nil, GetPlayerData(self.tower:GetPlayerOwnerID()).LifeTowerKills)
+    self.playerID = self.tower:GetPlayerOwnerID()
+    self.tower:SetModifierStackCount("modifier_life_tower_current_kill_counter", nil, GetPlayerData(self.playerID).LifeTowerKills)
     self.tower.life_counter = 0
     self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_LOWEST_HP})
+
+    -- Update tower damage when the player goes over max health
+    local maxLives = GameSettings:GetMapSetting("Lives")
+    Timers:CreateTimer(0.03, function()
+        if not IsValidEntity(self.tower) or not self.tower:IsAlive() then return end
+
+        if GetPlayerData(self.playerID).health >= maxLives then
+            self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_life_tower_full_health", {})
+        else
+            self.tower:RemoveModifierByName("modifier_life_tower_full_health")
+        end
+        return 1
+    end)
 end
 
 RegisterTowerClass(LifeTower, LifeTower.className)    

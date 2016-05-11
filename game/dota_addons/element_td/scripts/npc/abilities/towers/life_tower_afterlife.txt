@@ -35,6 +35,15 @@
 		{
 			"TextureName" "towers/life"
 		}
+
+		"modifier_life_tower_full_health"
+		{
+			"TextureName" "towers/life"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%damage_bonus_full_hp_pct"
+			}
+		}
 	}
 
 	"AbilitySpecial"
@@ -50,6 +59,11 @@
 			"heal_amount"					"1"
 		}
 		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage_bonus_full_hp_pct"		"25"
+		}
+		"04"
 		{
 			"var_type"						"FIELD_INTEGER"
 			"points_per_kill"				"10 12 15"

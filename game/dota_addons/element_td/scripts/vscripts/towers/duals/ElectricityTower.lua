@@ -76,8 +76,6 @@ function ElectricityTower:OnAttack(event)
                 bounces = bounces - 1
                 range = range - (range*self.bounce_decrease)
 
-                bounce_range_decrease = 
-
                 -- fire the timer again if spell bounces remain
                 if bounces > 0 then
                     return self.time_between_bounces
