@@ -17,7 +17,6 @@ RootsTower = createClass({
 nil)
 
 function RootsTower:OnAttackStart(keys) 
-
     local launchParticle = ParticleManager:CreateParticle("particles/units/heroes/hero_treant/treant_overgrowth_ambient_beam_sparkly.vpcf", PATTACH_ABSORIGIN, self.tower)
     ParticleManager:SetParticleControl(launchParticle, 0, self.tower:GetOrigin())
     ParticleManager:ReleaseParticleIndex(launchParticle)
@@ -54,6 +53,7 @@ function RootsTower:OnAttackStart(keys)
 
                 self.ability:ApplyDataDrivenModifier(self.tower, creep, "modifier_gaias_wrath_slow", {})
                 self.ability:ApplyDataDrivenModifier(self.tower, creep, "modifier_gaias_wrath_damage", {})
+                self:OnDamageTick({target = creep})
             end
         end
     end
