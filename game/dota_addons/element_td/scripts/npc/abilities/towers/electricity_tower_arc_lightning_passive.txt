@@ -39,27 +39,27 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"200 1000 5000"
+			"damage"				"120 600 3000"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_decrease"		"15"
+			"damage_increase"		"30"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bounce_range"			"550"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bounce_decrease"		"30"
+			"bounce_range"			"300"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"jump_count"			"10"
+			"bounce_decrease"		"30"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"jump_count"			"7"
 		}
 	}
 }
