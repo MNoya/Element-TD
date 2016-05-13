@@ -28,8 +28,10 @@ function PoisonTower:OnAttackLanded(keys)
         attackHalfAOE = self.halfAOECrit
         target:EmitSound("Poison.Strike")
 
-        local particle = ParticleManager:CreateParticle("particles/custom/towers/poison/explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
-        ParticleManager:SetParticleControl(particle, 3, target:GetAbsOrigin())
+        local fxDuration = 1.5
+        local particle = ParticleManager:CreateParticle("particles/custom/towers/poison/nova.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+        ParticleManager:SetParticleControl(particle, 0, target:GetAbsOrigin())
+        ParticleManager:SetParticleControl(particle, 1, Vector(attackFullAOE,fxDuration,attackFullAOE))
 
         local particleA = ParticleManager:CreateParticle("particles/custom/towers/poison/cast.vpcf", PATTACH_CUSTOMORIGIN, self.tower)    
         ParticleManager:SetParticleControl(particleA, 0, self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_mouth")))
