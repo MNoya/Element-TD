@@ -3,8 +3,13 @@ if not modifier_slow_adjustment then
 end
 
 function modifier_slow_adjustment:DeclareFunctions()
-    return { MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE, }
+    return { MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE, 
+             MODIFIER_PROPERTY_MOVESPEED_MAX,
+             MODIFIER_PROPERTY_MOVESPEED_LIMIT, }
 end
+
+function modifier_slow_adjustment:GetModifierMoveSpeed_Max( params ) return 750 end
+function modifier_slow_adjustment:GetModifierMoveSpeed_Limit( params ) return 750 end
 
 function modifier_slow_adjustment:IsHidden()
     return true
