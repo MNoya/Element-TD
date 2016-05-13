@@ -20,6 +20,7 @@ function WaterTower:OnAttackLanded(keys)
     DamageEntitiesInArea(target:GetAbsOrigin(), self.halfAOE, self.tower, damage / 2)
     DamageEntitiesInArea(target:GetAbsOrigin(), self.fullAOE, self.tower, damage / 2)
 
+    --[[Removed in 1.8
     local bounce_target = FindBounceTarget(target, self.bounceRange)
     if bounce_target then
         local sourceLoc = target:GetAbsOrigin()
@@ -35,7 +36,7 @@ function WaterTower:OnAttackLanded(keys)
             bReplaceExisting = false,
             flExpireTime = GameRules:GetGameTime() + 10,
         })
-    end
+    end]]
 end
 
 function WaterTower:OnBounceHit(keys)
