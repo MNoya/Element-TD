@@ -29,7 +29,7 @@
     "AttackDamageMin"           "2700"
     "AttackDamageMax"           "2700"
     "Damage"                    "2700"
-    "AOE_Full"                  "100"
+    "AOE_Full"                  "200"
     "AOE_Half"                  "200"
     "AttackRange"               "900"
     "AttackAcquisitionRange"    "900"

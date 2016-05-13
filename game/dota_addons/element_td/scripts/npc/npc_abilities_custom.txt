@@ -2536,12 +2536,12 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "aftershock_damage_pct" "50"
+	            "aftershock_damage_pct" "0"
 	        }
 	        "01"
 	        {
 	            "var_type"              "FIELD_FLOAT"
-	            "aftershock_delay"      "0.5"
+	            "aftershock_delay"      "0"
 	        }
 	    }
 	}
@@ -2637,7 +2637,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bounce_decrease"		"28"
+				"bounce_decrease"		"25"
 			}
 			"06"
 			{
@@ -5132,12 +5132,12 @@
 	        "01"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "bounce_range"        "350"
+	            "bounce_range"        "1"
 	        }
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "bounce_damage_pct"   "25"
+	            "bounce_damage_pct"   "1"
 	        }
 	    }
 	}
