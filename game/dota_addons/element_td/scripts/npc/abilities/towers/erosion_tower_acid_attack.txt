@@ -101,7 +101,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"dot"					"140 700"
+			"dot"					"110 550"
 		}
 		"03"
 		{

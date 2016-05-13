@@ -979,7 +979,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"interval"				"8"	
+				"interval"				"7"	
 			}
 		}
 		"Modifiers"
@@ -1181,7 +1181,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"250"
+				"aoe"					"300"
 			}
 			"02"
 			{
@@ -1191,7 +1191,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"6"
+				"duration"				"7"
 			}
 		}
 	}
@@ -2622,12 +2622,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"120 600 3000"
+				"damage"				"180 900 4500"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_increase"		"30"
+				"damage_increase"		"20"
 			}
 			"04"
 			{
@@ -2637,7 +2637,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bounce_decrease"		"30"
+				"bounce_decrease"		"28"
 			}
 			"06"
 			{
@@ -2776,7 +2776,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"max_reduction"		"70"
+				"max_reduction"		"60"
 			}
 			"03"
 			{
@@ -2888,7 +2888,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"140 700"
+				"dot"					"110 550"
 			}
 			"03"
 			{
@@ -2973,12 +2973,12 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_FLOAT"
-	            "damage_per_second"     "8 56 400 4000"
+	            "damage_per_second"     "4 28 200 2000"
 	        }
 	        "02"
 	        {
 	            "var_type"              "FIELD_FLOAT"
-	            "duration"              "3.0"
+	            "duration"              "5.0"
 	        }
 	    }
 	}
@@ -3194,7 +3194,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"25 35"
+				"bonus_gold"			"30 40"
 			}
 		}
 	
@@ -3423,17 +3423,17 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"reset_time"		"4"
+				"reset_time"		"3"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"bat_decrease_stack" "0.05"
+				"bat_decrease_stack" "0.08"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"cap"				"16"
+				"cap"				"10"
 			}
 		}
 	}
@@ -3597,17 +3597,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"200 1000 5000"
+				"damage"				"180 900 4500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe_start"				"150"
+				"aoe_start"				"200"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe_end"				"450"
+				"aoe_end"				"400"
 			}
 			"04"
 			{
@@ -3865,7 +3865,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"6 5 4"
+				"kills_required"				"8 6 4"
 			}
 			"02"
 			{
@@ -3875,18 +3875,18 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_bonus_full_hp_pct"		"25"
+				"damage_bonus_full_hp_pct"		"30"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"points_per_kill"				"10 12 15"
+				"points_per_kill"				"3 4 6"
 			}
 		}
 	}
 	//=================================================================================================================
 	// Light Tower: Intensity
-	// Consecutive attacks on the same target causes a flat damage increase (don't worry about numbers). 
+	// Consecutive attacks on the same target causes a flat damage increase. 
 	// Has no stack limit. Resets completely upon switching
 	//=================================================================================================================
 	"light_tower_intensity"
@@ -3911,7 +3911,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "damage"                "3 21 150 1500"
+	            "damage"                "2 14 100 1000"
 	        }
 	    }
 	}
@@ -4238,7 +4238,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"275 1375"
+				"damage"			"300 1500"
 			}
 			"02"
 			{
@@ -4356,12 +4356,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_aoe"				"400"
+				"max_aoe"				"450"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"initial_aoe"			"50"
+				"initial_aoe"			"150"
 			}
 			"03"
 			{
@@ -4505,12 +4505,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"600 3000"
+				"damage"				"500 2500"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"550"
+				"aoe"					"700"
 			}
 		}
 	}
@@ -4551,7 +4551,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"15"
+				"bonus_damage"			"12"
 			}
 			"02"
 			{
@@ -4751,7 +4751,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps"					"110 550"
+				"dps"					"90 450"
 			}
 			"04"
 			{

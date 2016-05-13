@@ -189,7 +189,7 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"dps"					"110 550"
+			"dps"					"90 450"
 		}
 		"04"
 		{

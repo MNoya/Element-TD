@@ -69,12 +69,12 @@
         "01"
         {
             "var_type"              "FIELD_FLOAT"
-            "damage_per_second"     "8 56 400 4000"
+            "damage_per_second"     "4 28 200 2000"
         }
         "02"
         {
             "var_type"              "FIELD_FLOAT"
-            "duration"              "3.0"
+            "duration"              "5.0"
         }
     }
 }

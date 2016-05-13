@@ -40,14 +40,16 @@
         "2"        "earth"
         "3"        "nature"
     }
-    "Damage"        "900"
+    "Damage"        "1000"
+    "AttackDamageMin"        "1000"
+    "AttackDamageMax"        "1000"
     "DamageType"        "earth"
     "ScriptClass"        "QuakeTower"
     "TowerType"        "Normal"
     "BuffPriority"              "6"
     "HasAbilityDesc"        "1"
-    "AttackRange"        "550"
-    "AttackAcquisitionRange"        "550"
+    "AttackRange"        "700"
+    "AttackAcquisitionRange"        "700"
     "AttackRate"        "0.66"
     "ProjectileModel"        "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
     "ProjectileSpeed"        "1500"
@@ -79,8 +81,6 @@
         "Count"        "1"
         "1"        "quake_tower_2"
     }
-    "AttackDamageMin"        "900"
-    "AttackDamageMax"        "900"
 
     // Building Size
     "ConstructionSize"          "2"

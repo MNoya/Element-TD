@@ -19,7 +19,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"interval"				"8"	
+			"interval"				"7"	
 		}
 	}
 	"Modifiers"

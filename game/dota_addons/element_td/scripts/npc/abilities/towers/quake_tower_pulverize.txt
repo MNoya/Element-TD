@@ -38,12 +38,12 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"600 3000"
+			"damage"				"500 2500"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aoe"					"550"
+			"aoe"					"700"
 		}
 	}
 }

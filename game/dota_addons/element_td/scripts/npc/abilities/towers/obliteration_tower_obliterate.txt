@@ -97,12 +97,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"max_aoe"				"400"
+			"max_aoe"				"450"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"initial_aoe"			"50"
+			"initial_aoe"			"150"
 		}
 		"03"
 		{

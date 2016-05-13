@@ -97,7 +97,7 @@ function Wave:SpawnWave()
 
 			-- Boss mode
 			if self.waveNumber == WAVE_COUNT and not EXPRESS_MODE then
-				local bossHealth = WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier() * (math.pow(1.2,playerData.bossWaves))
+				local bossHealth = WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier() * (math.pow(1.3,playerData.bossWaves))
 				entity:SetMaxHealth(bossHealth)
 				entity:SetBaseMaxHealth(bossHealth)
 				entity:SetHealth(entity:GetMaxHealth())

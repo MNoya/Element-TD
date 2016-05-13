@@ -39,12 +39,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"120 600 3000"
+			"damage"				"180 900 4500"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_increase"		"30"
+			"damage_increase"		"20"
 		}
 		"04"
 		{
@@ -54,7 +54,7 @@
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bounce_decrease"		"30"
+			"bounce_decrease"		"28"
 		}
 		"06"
 		{
