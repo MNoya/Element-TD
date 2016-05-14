@@ -14,6 +14,7 @@ if not PLAYERS_NOT_VOTED then
 	VOTE_RESULTS.endless = {}
 	VOTE_RESULTS.order = {}
 	VOTE_RESULTS.length = {}
+	VOTE_RESULTS.abilities = {}
 
 	PLAYER_DIFFICULTY_CHOICES = {}
 	PLAYER_RANDOM_CHOICES = {}
@@ -132,6 +133,7 @@ function FinalizeVotes()
 		AddVote(0, VOTE_RESULTS.endless, "Normal")
 		AddVote(0, VOTE_RESULTS.order, "Normal")
 		AddVote(0, VOTE_RESULTS.length, "Normal")
+		AddVote(0, VOTE_RESULTS.abilities, "Normal")
 	end
 
 	-- Make sure all the fools have a playerData
@@ -163,6 +165,7 @@ function FinalizeVotes()
 	local endless = GetWinningChoice(VOTE_RESULTS.endless)
 	local order = GetWinningChoice(VOTE_RESULTS.order)
 	local length = GetWinningChoice(VOTE_RESULTS.length)
+	local abilitiesMode = GetWinningChoice(VOTE_RESULTS.abilities)
 
 	if statCollection.doneInit then
 		statCollection:setFlags({Difficulty = difficulty})
@@ -180,6 +183,7 @@ function FinalizeVotes()
 	print("Endless: " .. endless)
 	print("Order: " .. order)
 	print("Length: " .. length)
+	print("Abilities Mode: " .. abilitiesMode)
 	print("----------\n")
 
 	if COOP_MAP then 
@@ -210,6 +214,7 @@ function FinalizeVotes()
 	CustomNetTables:SetTableValue("gameinfo", "rush", {value=endless})
 	CustomNetTables:SetTableValue("gameinfo", "chaos", {value=order})
 	CustomNetTables:SetTableValue("gameinfo", "express", {value=length})
+	CustomNetTables:SetTableValue("gameinfo", "abilitiesMode", {value=abilitiesMode})
 
 	for k, plyID in pairs(playerIDs) do
 		local ply = PlayerResource:GetPlayer(plyID)
@@ -270,6 +275,7 @@ function ElementTD:OnPlayerVoted( table )
 		local endlessVote = table.data.endlessVote -- 0 or 1 if Endless was selected
 		local orderVote = table.data.orderVote -- 0 or 1 if Chaos was selected
 		local expressVote = table.data.lengthVote -- 0 or 1 if Express was selected
+		local abilitiesVote = table.data.abilitiesVote -- 0 or 1 if Express was selected
 
 		-- Convert to strings on gamesettings
 		local difficultyString = GetVotingString(difficultyVote, "Difficulty")
@@ -277,6 +283,7 @@ function ElementTD:OnPlayerVoted( table )
 		local endlessString = GetVotingString(endlessVote, "HordeMode")
 		local orderString = GetVotingString(orderVote, "CreepOrder")
 		local expressString = GetVotingString(expressVote, "GameLength")
+		local abilitiesString = GetVotingString(abilitiesVote, "AbilitiesMode")
 
 		AddVote(playerID, VOTE_RESULTS.gamemode, "Competitive") -- Always Competitive
 		AddVote(playerID, VOTE_RESULTS.difficulty, difficultyString)
@@ -284,8 +291,9 @@ function ElementTD:OnPlayerVoted( table )
 		AddVote(playerID, VOTE_RESULTS.endless, endlessString)
 		AddVote(playerID, VOTE_RESULTS.order, orderString)
 		AddVote(playerID, VOTE_RESULTS.length, expressString)
+		AddVote(playerID, VOTE_RESULTS.abilities, abilitiesString)
 
-		local data = {playerID = playerID, difficulty = difficultyString, elements = randomString, endless = endlessString, order = orderString, length = expressString}
+		local data = {playerID = playerID, difficulty = difficultyString, elements = randomString, endless = endlessString, order = orderString, length = expressString, abilities = abilitiesString}
 		CustomGameEventManager:Send_ServerToAllClients( "etd_vote_display", data )
 
 		--check to see if all players have finished voting

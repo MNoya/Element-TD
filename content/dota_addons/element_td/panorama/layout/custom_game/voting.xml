@@ -144,6 +144,10 @@
         <!--<Label id="LTitle" text="Length" class="resultsLabel"/>-->
         <Label id="LengthResult" text="#express_mode" class="resultsLabel"/>
       </Panel>
+      <Panel id="A" class="result">
+        <!--<Label id="LTitle" text="Length" class="resultsLabel"/>-->
+        <Label id="ChallengeResult" text="#abilities_challenge" class="resultsLabel"/>
+      </Panel>
       <Panel id="HB" class='resultHealthBounty'>
           <Label id="HealthResult" class='resultsLabel' text="Health: 100%"/> 
           <Label id="BountyResult" class='resultsLabel' text="Bounty: 100%"/>

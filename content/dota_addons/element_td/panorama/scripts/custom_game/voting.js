@@ -306,6 +306,7 @@ function ShowVoteResults()
     var rush = CustomNetTables.GetTableValue("gameinfo", "rush").value == "Endless"
     var chaos = CustomNetTables.GetTableValue("gameinfo", "chaos").value == "Chaos"
     var express = CustomNetTables.GetTableValue("gameinfo", "express").value == "Express"
+    var abilitiesMode = CustomNetTables.GetTableValue("gameinfo", "abilitiesMode").value == "Challenge"
 
     if (!random)
         $('#ElementsResult').GetParent().DeleteAsync(0)
@@ -320,6 +321,9 @@ function ShowVoteResults()
 
     if (!express)
         $('#LengthResult').GetParent().DeleteAsync(0)
+
+    if (!abilitiesMode)
+        $('#AbilitiesModeResult').GetParent().DeleteAsync(0)
 
     // Update HP-Bounty-Scores results
     $("#HealthResult").text = GetHP(difficultyName)
