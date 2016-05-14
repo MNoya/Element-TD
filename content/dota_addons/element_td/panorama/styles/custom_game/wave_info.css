@@ -7,7 +7,7 @@
 
 #WaveInfoBase
 {
-    width: 500px;
+    width: 536px;
     horizontal-align: right;
 }
 
@@ -77,6 +77,11 @@ DOTAAbilityImage
     position: 236px -2px 0px;
 }
 
+.ability3
+{
+    position: 272px -2px 0px;
+}
+
 #Countdown
 {
     position: 89% 0px 0px;
@@ -85,7 +90,7 @@ DOTAAbilityImage
 #StartWave
 {
     margin-top: 62px; //62
-    margin-right: 354px;
+    margin-right: 354px; //390
     horizontal-align: right;
     width: 84px;
     height: 84px;

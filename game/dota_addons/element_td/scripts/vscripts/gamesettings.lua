@@ -12,6 +12,7 @@ if not GameSettings then
 	GameSettings.elements = ""
 	GameSettings.difficulty = nil -- for co-op mode
 	GameSettings.mapSettings = {} -- map data (lives, builder movement speed)
+	GameSettings.abilitiesMode = "Normal"
 
 	DIFFICULTY_OBJECTS = {}
 end
@@ -241,6 +242,19 @@ end
 
 function GameSettings:GetElementOrder()
     return GameSettings.elements 
+end
+
+function GameSettings:SetAbilitiesMode(mode)
+	GameSettings.abilitiesMode = mode
+
+	if mode == "Challenge" then
+		CHALLENGE_MODE = true
+		AbilitiesMode:GenerateChallengeAbilities()
+	end
+end
+
+function GameSettings:GetAbilitiesMode()
+	return GameSettings.abilitiesMode
 end
 
 ----------------------------------------------------

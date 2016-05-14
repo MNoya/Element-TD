@@ -1,4 +1,4 @@
-"use strict";
+"use strict";3
 
 var TIMER_REFRESH = 0.05;
 
@@ -8,8 +8,10 @@ var currentWave = $( '#CurrentWaveLabel' );
 var nextWave = $( '#NextWaveLabel' );
 var currentAbility1 = $( "#CurrentAbility1" ); //Element
 var currentAbility2 = $( "#CurrentAbility2" ); //Skill
+var currentAbility3 = $( "#CurrentAbility3" ); //Skill 2 (Challenge mode)
 var nextAbility1 = $( "#NextAbility1" );
 var nextAbility2 = $( "#NextAbility2" );
+var nextAbility3 = $( "#NextAbility3" );
 var countdown = $( '#Countdown' );
 
 var timerDuration = 0;
@@ -17,23 +19,38 @@ var startTime = 0;
 
 var m_QueryUnit = -1;
 
+var abilityModeSetup = false; //have we updated the gui with ability mode changes?
+
 function Setup() {
 	waveinfo.visible = false;
 	button.visible = false;
 	currentAbility1.abilityname = "";
 	currentAbility2.abilityname = "";
+	currentAbility3.abilityname = "";
 	nextAbility1.abilityname = "";
 	nextAbility2.abilityname = "";
+	nextAbility3.abilityname = "";
 	currentAbility1.visible = false;
 	currentAbility2.visible = false;
+	currentAbility3.visible = false;
 	nextAbility1.visible = false;
 	nextAbility2.visible = false;
+	nextAbility3.visible = false;
 	currentWave.text = "";
 	nextWave.text = "";
 }
 
 function UpdateWaveInfo( table ) {
-	$.Msg(table.nextWave," ",table.nextAbility1 || ""," ",table.nextAbility2 || "");
+
+	if (!abilityModeSetup) {
+		abilityModeSetup = true;
+		if (CustomNetTables.GetTableValue("gameinfo", "abilitiesMode").value === "Challenge") {
+			waveinfo.style["width"] = "368px";
+			button.style["margin-right"] = "390px";
+		}
+	}
+
+	$.Msg(table.nextWave," ",table.nextAbility1 || ""," ",table.nextAbility2 || "", " ",table.nextAbility3 || "");
 	currentWave.text = nextWave.text;
 
 	if (nextAbility1.abilityname != "") {
@@ -50,6 +67,13 @@ function UpdateWaveInfo( table ) {
 	else
 		currentAbility2.visible = false;
 
+	if (nextAbility3.abilityname != "") {
+		currentAbility3.abilityname = nextAbility3.abilityname;
+		currentAbility3.visible = true;
+	}
+	else
+		currentAbility3.visible = false;
+
 	// Stop
 	if (table.nextWave == "end")
 	{
@@ -58,6 +82,8 @@ function UpdateWaveInfo( table ) {
 		nextAbility1.visible = false;
 		nextAbility2.abilityname = "";
 		nextAbility2.visible = false;
+		nextAbility3.abilityname = "";
+		nextAbility3.visible = false;
 		return
 	}
 
@@ -87,6 +113,15 @@ function UpdateWaveInfo( table ) {
 	else {
 		nextAbility2.abilityname = table.nextAbility2;
 		nextAbility2.visible = true;
+	}
+
+	if (table.nextAbility3 === undefined || table.nextAbility3 == "") {
+		nextAbility3.abilityname = "";
+		nextAbility3.visible = false;
+	}
+	else {
+		nextAbility3.abilityname = table.nextAbility3;
+		nextAbility3.visible = true;
 	}
 }
 

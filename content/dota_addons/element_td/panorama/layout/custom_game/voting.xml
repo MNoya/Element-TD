@@ -170,6 +170,7 @@
         <Label id="EndlessView" text="#endless_mode" class="resultsReview"/>
         <Label id="OrderView" text="#chaos_mode" class="resultsReview"/>
         <Label id="LengthView" text="#express_mode" class="resultsReview"/>
+        <Label id="AbilitiesModeView" text="#abilities_challenge" class="resultsReview"/>
       </Panel>
 
       <Panel id="DiffImage" class="ViewDiffImage">

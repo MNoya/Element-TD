@@ -173,6 +173,7 @@ function FinalizeVotes()
 		statCollection:setFlags({Endless = endless})
 		statCollection:setFlags({Order = order})
 		statCollection:setFlags({Length = length})
+		-- TODO: add challenge mode to stats collection
 		statCollection:sendStage2()
 	end
 
@@ -195,6 +196,7 @@ function FinalizeVotes()
 	end
 	GameSettings:SetEndless(endless)
 	GameSettings:SetElementOrder(elements)
+	GameSettings:SetAbilitiesMode(abilitiesMode)
 
 	-- If the Random vote didn't win, add the EnableRandom item
 	if elements == "AllPick" then
@@ -220,9 +222,10 @@ function FinalizeVotes()
 		local ply = PlayerResource:GetPlayer(plyID)
 		local hero = PlayerResource:GetSelectedHeroEntity(plyID)
 		if ply and hero then
+			local wave = GameSettings:GetGameLength().Wave
 			hero.vote_results = true
 			CustomGameEventManager:Send_ServerToPlayer( ply, "etd_vote_results", {} )
-			CustomGameEventManager:Send_ServerToPlayer( ply, "etd_next_wave_info", { nextWave = GameSettings:GetGameLength().Wave, nextAbility1 = creepsKV[WAVE_CREEPS[GameSettings:GetGameLength().Wave]].Ability1, nextAbility2 = creepsKV[WAVE_CREEPS[GameSettings:GetGameLength().Wave]].Ability2 } )
+			CustomGameEventManager:Send_ServerToPlayer( ply, "etd_next_wave_info", { nextWave = wave, nextAbility1 = GetNextAbility(wave, 1), nextAbility2 = GetNextAbility(wave, 2), nextAbility3 = GetNextAbility(wave, 3) } )
 		end
 	end
 

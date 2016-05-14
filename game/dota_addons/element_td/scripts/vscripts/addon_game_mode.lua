@@ -38,6 +38,7 @@ local requires = {
     "mechanics/orbs",
     "mechanics/saves",
     "mechanics/players",
+    "mechanics/abilities_mode",
     
     -- utils
     "util/util",

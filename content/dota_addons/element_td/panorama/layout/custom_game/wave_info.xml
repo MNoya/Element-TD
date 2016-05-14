@@ -21,6 +21,8 @@
                 onmouseout="AbilityHideTooltip('CurrentAbility1')"/>
           <DOTAAbilityImage id="CurrentAbility2" class="ability2" abilityname="" onmouseover="AbilityShowTooltip('CurrentAbility2')"
                 onmouseout="AbilityHideTooltip('CurrentAbility2')"/>
+          <DOTAAbilityImage id="CurrentAbility3" class="ability3" abilityname="" onmouseover="AbilityShowTooltip('CurrentAbility3')"
+                onmouseout="AbilityHideTooltip('CurrentAbility3')"/>
         </Panel>
         <Panel hittest="false" id="NextWave" class="wave">
           <Label id="NextLabel" text="Next:"/>
@@ -29,6 +31,8 @@
                 onmouseout="AbilityHideTooltip('NextAbility1')"/>
           <DOTAAbilityImage id="NextAbility2" class="ability2" abilityname="" onmouseover="AbilityShowTooltip('NextAbility2')"
                 onmouseout="AbilityHideTooltip('NextAbility2')"/>
+          <DOTAAbilityImage id="NextAbility3" class="ability3" abilityname="" onmouseover="AbilityShowTooltip('NextAbility3')"
+                onmouseout="AbilityHideTooltip('NextAbility3')"/>
           <Label id="Countdown" text="60"/>
         </Panel>
       </Panel>
