@@ -58,6 +58,7 @@
           </Panel>
           <Label id="EndlessDesc" class="desc" text="#horde_endless_description"/>
         </Panel>
+
         <Panel id="Option_Chaos" class="CheckboxPanel" 
             onmouseover="HoverCheckbox('chaos', 'OrderDesc')" onmouseout="MouseOverCheckbox('chaos', 'OrderDesc')" onactivate="SelectCheckbox('chaos')">
           <Panel class="CheckboxSub">
@@ -65,10 +66,20 @@
           </Panel>
           <Label id="OrderDesc" class="desc" text="#order_chaos_description"/>
         </Panel>
+
         <Panel id="Option_Express" class="CheckboxPanel" 
             onmouseover="HoverCheckbox('express', 'LengthDesc')" onmouseout="MouseOverCheckbox('express', 'LengthDesc')" onactivate="SelectCheckbox('express')">
           <ToggleButton id="express" onactivate="SelectCheckboxClick('express')" text="#length_express"/>
           <Label id="LengthDesc" class="desc" text="#length_express_description"/>
+        </Panel>
+
+        <Panel id="Option_Challenge" class="CheckboxPanel" 
+            onmouseover="HoverCheckbox('challenge', 'ChallengeDesc')" onmouseout="MouseOverCheckbox('challenge', 'ChallengeDesc')" onactivate="SelectCheckbox('challenge')">
+          <Panel class="CheckboxSub">
+            <ToggleButton id="challenge" onactivate="SelectCheckboxClick('challenge')" text="#abilities_challenge"/>
+          </Panel>
+          <Label id="ChallengeDesc" class="desc" text="#abilities_challenge_description"/>
+          <Label id="ChallengeNew" class="newlabel" text="New!"/>
         </Panel>
       </Panel>
 

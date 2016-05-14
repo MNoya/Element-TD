@@ -360,6 +360,17 @@ ToggleButton .TickBox, DOTASettingsCheckbox .TickBox
     text-shadow: 0px 0px 3px 3.0 #000;
 }
 
+.newlabel
+{
+    horizontal-align: left;
+    margin-top: 13px;
+    margin-left: -20px;
+    width: 38px;
+    font-size: 18px;
+    color: #C00;
+    text-shadow: 0px 0px 3px 3.0 #000;
+}
+
 .multdesc
 {
     font-size: 15px;

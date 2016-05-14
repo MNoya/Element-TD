@@ -40,6 +40,7 @@ var all_random = $('#allrandom')
 var chaos = $('#chaos')
 var endless = $('#endless')
 var express = $('#express')
+var challenge_mode = $('#challenge')
 
 function UpdateMultipliers(difficultyName){
     difficultyName = difficultyName || activeDifficulty;
@@ -282,6 +283,7 @@ function ConfirmVote()
     data['orderVote'] = chaos.checked
     data['endlessVote'] = endless.checked
     data['lengthVote'] = express.checked
+    data['abilitiesVote'] = challenge_mode.checked
 
     $.Msg(data)
 
