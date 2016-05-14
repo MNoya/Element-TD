@@ -174,7 +174,7 @@
                         </Panel>
                         <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('erosion','fire','dark','water')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="erosion" src="file://{images}/spellicons/towers/erosion.png"/>
-                            <Label class="TowerName" text="#erosion_tower_name"/>
+                            <Label class="TowerNameLong" text="#erosion_tower_name"/>
                             <Label class="AbilityLevel" id="erosion_level" text=""/>
                         </Panel>
                          <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('flamethrower','fire','dark','earth')" onmouseout='OnMouseOut()'>
