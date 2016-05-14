@@ -134,7 +134,7 @@ end
 
 function InterestManagerCoop:LeakedWave(waveNumber)
 	-- leaking does not affect interest after the last wave spawns
-	if waveNumber >= WAVE_COUNT - END_OFFSET then
+	if waveNumber > WAVE_COUNT - END_OFFSET then
 		return
 	end
 

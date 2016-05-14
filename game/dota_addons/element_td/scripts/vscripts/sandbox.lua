@@ -223,7 +223,11 @@ function Sandbox:SetWave(event)
     playerData.nextWave = waveNumber
     playerData.completedWaves = waveNumber - 1
 
-    StartBreakTime(playerID, GetPlayerDifficulty(playerID):GetWaveBreakTime(playerData.nextWave))
+    if COOP_MAP then
+        StartBreakTimeCoop(GameSettings:GetGlobalDifficulty():GetWaveBreakTime(COOP_WAVE))
+    else
+        StartBreakTime(playerID, GetPlayerDifficulty(playerID):GetWaveBreakTime(playerData.nextWave))
+    end
 
     UpdateWaveInfo(playerID, playerData.nextWave-1)
 end
