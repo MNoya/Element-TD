@@ -39,17 +39,17 @@
 		"01"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"reset_time"		"3"
+			"reset_time"		"4"
 		}
 		"02"
 		{
 			"var_type"			"FIELD_FLOAT"
-			"bat_decrease_stack" "0.08"
+			"bat_decrease_stack" "0.03"
 		}
 		"03"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"cap"				"10"
+			"cap"				"16"
 		}
 	}
 }
