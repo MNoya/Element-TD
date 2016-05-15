@@ -232,7 +232,7 @@
         //  <font color='#hex'>text</font>  for color
         //  <b>text</b> for bold        
         "loading_screen_changelog"   "Latest Changes"
-        "loading_screen_change_text" "<h1>Version 1.7</h1><h2>New Cooperative Map!</h2>• Recommended players: 2-4<br>•Start with 2 elements, 100 HP and more gold<br>• Waves: 50 + boss<br>• Creep wave order is random<br>• Gold and interest are split<br>• Lives and score are shared<br>Play it by selecting the <b>element_td_coop</b><br> from the Map menu when creating a lobby.<br><br><h2>Balance</h2>• Tidal nerfed.<br>• Fire buffed.<br>• Nature buffed.<br>• Electricity slightly buffed.<br>• Tier 3 Duals cost less.<br><br><b>Check out the full changelog on the forums!</b><br>"
+        "loading_screen_change_text" "<h1>Version 1.8</h1><h2>New Challenge Mode</h2>• Forces Chaos Mode<br>• Every wave has two random abilities!<br><br><h2>Features</h2>• Can trade an essence for 12th Element Pick.<br>• Chaos now includes Bulky on Classic.<br><br><h2>Balance</h2>• Co-op is easier.<br>• Express is harder.<br>• Scoring is less dependant on speed.<br>• Water Tower reworked.<br>• Earth Tower reworked.<br>• Poison Tower reworked.<br>• Electricity Tower reworked.<br>• Life Tower reworked.<br><br><b>Check out the full changelog on the forums!</b><br>"
 
         "credits_title"         "Credits"
         "credits_developers"    "Developers"

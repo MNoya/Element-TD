@@ -879,7 +879,7 @@
         "DOTA_Tooltip_ability_item_buy_lumber_Description"                                "Trade <font color='#00BFFF'>1 Pure Essence</font> for <font color='#008000'>1 Lumber</font>\nUnlocks the 12th Element.\n<font color='#F0BA36'>"
 
         "DOTA_Tooltip_ability_item_buy_lumber_disabled"                                   "Buy Lumber Disabled"
-        "DOTA_Tooltip_ability_item_buy_lumber_disabled_Description"                       "Trade <font color='#00BFFF'>1 Pure Essence</font> for <font color='#008000'>1 Lumber</font>\n<font color='#F0BA36'>Requires: </font>Level 3 on 3 Elements\n\nUnlocks the 12th Element."
+        "DOTA_Tooltip_ability_item_buy_lumber_disabled_Description"                       "Trade <font color='#00BFFF'>1 Pure Essence</font> for <font color='#008000'>1 Lumber</font>\n<font color='#F0BA36'>Requires: </font>Three Level 3 Elements\n\nUnlocks the 12th Element."
 
 
         "DOTA_Tooltip_ability_item_random"                                                "Random Elements"
