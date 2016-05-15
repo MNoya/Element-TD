@@ -40,11 +40,11 @@ function loadWaveData(chaos)
         if EXPRESS_MODE then
            WAVE_CREEPS[i] = wavesKV[tostring(i)].CreepExpress
         else
-    	   WAVE_CREEPS[i] = wavesKV[tostring(i)].Creep
+    	   WAVE_CREEPS[i] = chaos and wavesKV[tostring(i)].CreepChaos or wavesKV[tostring(i)].Creep
         end
 
         if COOP_MAP and wavesKV[tostring(i)].CreepCoop then
-            WAVE_CREEPS[i] = wavesKV[tostring(i)].CreepCoop
+            WAVE_CREEPS[i] = wavesKV[tostring(i)].CreepChaos or wavesKV[tostring(i)].CreepCoop
         end
 
         -- Standard health formula: Last Wave HP * Multiplier
@@ -88,13 +88,16 @@ function loadWaveData(chaos)
         elseif EXPRESS_MODE then
             table.insert(WAVE_CREEPS, lastWaves[k])
         end
-        --PrintTable(WAVE_CREEPS)
     end
 
     -- Print and round the values
     for k,v in pairs(WAVE_CREEPS) do
         WAVE_HEALTH[k] = round(WAVE_HEALTH[k])
-        --print(string.format("%2d | %-20s %5.0f",k,v,WAVE_HEALTH[k]))
+        if IsInToolsMode() then
+            local armor = creepsKV[WAVE_CREEPS[k]].Ability1 and (creepsKV[WAVE_CREEPS[k]].Ability1):gsub("_armor", "")
+            local ability = (creepsKV[WAVE_CREEPS[k]].Ability2 and (creepsKV[WAVE_CREEPS[k]].Ability2):gsub("creep_ability_", "")) or ""
+            print(string.format("%2d | %-15s | %6.0f | %9s | %10s ",k,v,WAVE_HEALTH[k],armor,ability))
+        end
     end
 end
 

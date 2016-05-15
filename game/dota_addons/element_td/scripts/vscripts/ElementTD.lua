@@ -12,8 +12,6 @@ if not playerIDs then
     TEAM_TO_SECTOR[10] = 6
     TEAM_TO_SECTOR[11] = 7
      
-    GAME_IS_PAUSED = false
-    DEV_MODE = false
     EXPRESS_MODE = false
     ETD_MAX_PLAYERS = 4
 
