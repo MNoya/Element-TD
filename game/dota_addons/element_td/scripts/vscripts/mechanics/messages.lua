@@ -59,7 +59,7 @@ end
 function ShowWaveBreakTimeMessage(playerID, waveNumber, breakTime, duration)
     Notifications:ClearTop(playerID)
 
-    if waveNumber == 56 then
+    if not EXPRESS_MODE and waveNumber == WAVE_COUNT then
         ShowFirstBossWaveMessage(playerID)
         return
     end
