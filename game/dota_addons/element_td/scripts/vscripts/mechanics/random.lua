@@ -67,8 +67,7 @@ function randoomPrevention(used, target)
         end
     end
 
-    local improveOdds = num == 4 and RollPercentage(85)
-    return improveOdds or (num >= 5 and used[target] == 0)
+    return num > 3 and used[target] == 0
 end
 
 function getNumberOfElementsInSequence( seq )
