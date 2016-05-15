@@ -58,6 +58,8 @@ function WaveCoop:SpawnWave()
 	local entitiesSpawned = 0
 	local time_between_spawns = 0.5
 	local creepBossSequence = 0
+	local creepBossAbilities = CreepBoss:GetAbilityList()
+	local numAbilities = #creepBossAbilities
 	
 	self.startTime = GameRules:GetGameTime() + time_between_spawns
 	self.leaks = 0
@@ -94,8 +96,8 @@ function WaveCoop:SpawnWave()
 					entity.waveNumber = CURRENT_BOSS_WAVE
 
 					-- Choose an ability in sequence
-					creepBossSequence = (creepBossSequence % #CreepBossAbilities) + 1
-				    local abilityName = CreepBossAbilities[creepBossSequence]
+					creepBossSequence = (creepBossSequence % numAbilities) + 1
+				    local abilityName = creepBossAbilities[creepBossSequence]
 				    entity.random_ability = abilityName
 				    entity.scriptObject.ability = AddAbility(entity, abilityName)
 				end

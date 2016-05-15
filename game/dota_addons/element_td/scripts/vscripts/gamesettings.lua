@@ -144,6 +144,10 @@ function GameSettings:SetEndless(endless)
 	self.endless = endless
 end
 
+function GameSettings:IsChaos()
+    return self.order == "Chaos"
+end
+
 function GameSettings:SetCreepOrder(order)
 	if order ~= "Normal" and order ~= "Chaos" then
 		Log:warn("Attempted to set invalid creep order: " .. order .. ". Defaulting to Normal")
