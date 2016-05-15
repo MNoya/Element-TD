@@ -288,10 +288,10 @@ function ScoringObject:GetEndSpeedBonus(time)
 		return 0
 	else
 		if EXPRESS_MODE then
-			return ((BASE_TIME_EXPRESS/time*60) - 1) * 1.75
+			return ((BASE_TIME_EXPRESS/time*60) - 1) * 1.5
 
 		else
-			return ((BASE_TIME_CLASSIC/time*60) - 1) * 1.75
+			return ((BASE_TIME_CLASSIC/time*60) - 1) * 1.5
 		end
 	end
 end

@@ -19,7 +19,7 @@
         }
     }
     "AbilityTextureName"    "item_nature_cannon"
-    "AbilityCastRange"      "550"
+    "AbilityCastRange"      "700"
 }
 
 "item_upgrade_to_nature_cannon_tower_disabled"

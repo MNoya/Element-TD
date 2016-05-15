@@ -14,5 +14,5 @@
 		"fire"		"3"
 		"fire"		"3"
 	}
-	"AbilityCastRange"              "550"
+	"AbilityCastRange"              "700"
 }

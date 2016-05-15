@@ -24,7 +24,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"health_burn"			"12 36"
+			"health_burn"			"11 33"
 		}
 	}
 	"AbilityCastRange"              "900"
