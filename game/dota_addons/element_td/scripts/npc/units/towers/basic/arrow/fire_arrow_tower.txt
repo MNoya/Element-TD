@@ -23,7 +23,7 @@
     "AttackRange"               "900"
     "AttackAcquisitionRange"    "900"
     "AttackRate"                "0.66"
-    "ProjectileSpeed"           "1500" 
+    "ProjectileSpeed"           "2000" 
 
     "Level"                     "1"
     "Cost"                      "80"

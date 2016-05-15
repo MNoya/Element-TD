@@ -29,7 +29,7 @@ BASE_WAVE_SCORE = 5
 BASE_WAVE_SCORE_EXPRESS = 3
 CLEAN_WAVE_BONUS = 0.3
 SLOW_WAVE_CLEAR_FACTOR = 0.03
-FAST_WAVE_CLEAR_FACTOR = 0.03
+FAST_WAVE_CLEAR_FACTOR = 0.02
 BASE_TIME_CLASSIC = 45
 BASE_TIME_EXPRESS = 20
 BOSS_WAVE_BONUS_SCALING = 0.25
@@ -288,10 +288,10 @@ function ScoringObject:GetEndSpeedBonus(time)
 		return 0
 	else
 		if EXPRESS_MODE then
-			return ((BASE_TIME_EXPRESS/time*60) - 1) * 2
+			return ((BASE_TIME_EXPRESS/time*60) - 1) * 1.75
 
 		else
-			return ((BASE_TIME_CLASSIC/time*60) - 1) * 2
+			return ((BASE_TIME_CLASSIC/time*60) - 1) * 1.75
 		end
 	end
 end
@@ -322,7 +322,7 @@ function ScoringObject:GetDifficultyBonus()
 	elseif ( difficulty == "VeryHard" ) then
 		bonus = 2
 	elseif ( difficulty == "Insane" ) then
-		bonus = 3
+		bonus = 3.5
 	end
 	return bonus
 end

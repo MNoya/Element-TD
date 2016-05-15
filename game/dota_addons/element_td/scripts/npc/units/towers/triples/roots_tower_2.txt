@@ -7,7 +7,7 @@
     "MagicalResistance"        "0"
     "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
     "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-    "AttackAnimationPoint"        "0.25"
+    "AttackAnimationPoint"        "0.2"
     "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
     "AttributeBaseStrength"        "0"
     "AttributeStrengthGain"        "0"
@@ -49,7 +49,7 @@
     "AttackRange"        "900"
     "AttackAcquisitionRange"        "900"
     "AttackRate"        "1"
-    "ProjectileSpeed"        "1000"
+    "ProjectileSpeed"        "2000"
 
     "Model"             "models/heroes/treant_protector/treant_protector.vmdl"
     "ModelScale"        "0.85"

@@ -52,7 +52,7 @@
     "AttackAcquisitionRange"        "900"
     "AttackRate"        "1"
     "ProjectileModel"        "particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf"
-    "ProjectileSpeed"        "1500"
+    "ProjectileSpeed"        "2000"
     "Model"        "models/blacksmith_tower.vmdl"
     "ModelScale"        "1"
     "BuildTime"        "2"
