@@ -71,7 +71,11 @@ function WaveCoop:SpawnWave()
 	end
 
 	self.spawnTimer = Timers:CreateTimer(time_between_spawns, function()
-		for sector = 1, 6 do 
+		for sector = 1, 6 do
+			if entitiesSpawned >= CREEPS_PER_WAVE_COOP then
+				break
+			end
+
 			local entity = SpawnEntity(WAVE_CREEPS[self.waveNumber], nil, EntityStartLocations[sector])
 			if entity then
 				self:RegisterCreep(entity:entindex())
@@ -129,31 +133,6 @@ function WaveCoop:SpawnWave()
 			for i = 1, 6 do
 				ClosePortalForSector(nil, i, true)
 			end
-
-					--[[
-					-- Endless waves are started as soon as the wave finishes spawning
-					if GameSettings:GetEndless() == "Endless" then
-						playerData.nextWave = playerData.nextWave + 1
-
-						-- Rush Boss Waves just follow the same classic spawn rules, skip
-				        if playerData.nextWave > WAVE_COUNT and not EXPRESS_MODE then
-						
-				        	--[[playerData.bossWaves = playerData.bossWaves + 1
-				            Log:info("Spawning Rush boss wave " .. playerData.bossWaves .. " for ["..self.playerID.."] ".. playerData.name)
-				            ShowBossWaveMessage(self.playerID, playerData.bossWaves)
-				            UpdateWaveInfo(self.playerID, WAVE_COUNT)
-				            SpawnWaveForPlayer(self.playerID, WAVE_COUNT) -- spawn dat boss wave]--
-				            
-				            return nil
-				        elseif playerData.nextWave > WAVE_COUNT and EXPRESS_MODE then
-				        	return nil
-				        end
-						StartBreakTime(self.playerID, GetPlayerDifficulty(self.playerID):GetWaveBreakTime(playerData.nextWave))
-
-						-- Update UI for dead players
-						StartBreakTime_DeadPlayers(self.playerID, GetPlayerDifficulty(self.playerID):GetWaveBreakTime(playerData.nextWave), playerData.nextWave)
-					end
-					]]--
 
 			return nil
 		else
