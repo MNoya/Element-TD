@@ -1,0 +1,47 @@
+//============================================================//
+// Buy Lumber aka 12th Element
+//============================================================//
+"item_buy_lumber"
+{
+    "BaseClass"                     "item_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "MaxLevel"                      "1"
+    "AbilityTextureName"            "buy_lumber"
+
+    "ItemDroppable"                 "0"
+    "ItemPurchasable"               "0"
+    "ItemSellable"                  "0"
+    "ItemInitialCharges"            "1"
+   
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "Target"            "CASTER"
+            "ScriptFile"        "mechanics/resources.lua"
+            "Function"          "BuyLumberForEssence"
+        }
+    }
+}
+
+"item_buy_lumber_disabled"
+{
+    "BaseClass"                     "item_datadriven"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "MaxLevel"                      "1"
+    "AbilityTextureName"            "buy_lumber_disabled"
+
+    "ItemDroppable"                 "0"
+    "ItemPurchasable"               "0"
+    "ItemSellable"                  "0"
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "Target"            "CASTER"
+            "ScriptFile"        "mechanics/resources.lua"
+            "Function"          "BuyLumberWarn"
+        }
+    }
+}

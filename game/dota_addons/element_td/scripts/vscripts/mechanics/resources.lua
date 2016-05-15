@@ -191,6 +191,39 @@ function BuyPureEssenceWarn( event )
     end
 end
 
+function BuyLumberForEssence( event )
+    local summoner = event.caster
+    local item = event.ability
+    local playerID = summoner:GetPlayerOwnerID()
+    local playerData = GetPlayerData(playerID)
+    local elements = playerData.elements
+
+    if playerData.health == 0 then
+        return
+    end
+
+    if playerData.pureEssence > 0 then
+        ModifyLumber(playerID, 1)
+        ModifyPureEssence(playerID, -1)
+        playerData.pureEssenceTotal = playerData.pureEssenceTotal - 1
+        Sounds:EmitSoundOnClient(playerID, "General.Buy")
+
+        item:RemoveSelf()
+        UpdateScoreboard(playerID)
+    else
+        ShowWarnMessage(playerID, "#etd_need_more_essence")
+    end
+end
+
+--item_buy_lumber_disabled
+function BuyLumberWarn( event )
+    local playerID = event.caster:GetPlayerOwnerID()
+
+    if not CanPlayerBuy12thElement(playerID) then
+        ShowWarnMessage(playerID, "#etd_lumber_buy_warning", 4)
+    end
+end
+
 -- Bonus for trading lumber->essence
 -- not used anymore since 1.5
 function GivePureEssenceGoldBonus( playerID )

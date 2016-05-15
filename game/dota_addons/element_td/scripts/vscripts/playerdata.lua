@@ -140,15 +140,35 @@ function CanPlayerBuyPureEssence( playerID )
     local hasLvl3 = false
     local hasLvl1 = true
     for element,level in pairs(elements) do
-        if level == 3 then
-            hasLvl3 = true
-        end
-        if element ~= "pure" and level == 0 then
-            hasLvl1 = false
+        if element ~= "pure" then
+            if level == 3 then
+                hasLvl3 = true
+            end
+            if level == 0 then
+                hasLvl1 = false
+            end
         end
     end
 
     return hasLvl3 or hasLvl1
+end
+
+-- Players can only unlock the 12h element with lvl 3 on 3 elements
+function CanPlayerBuy12thElement( playerID )
+    local playerData = GetPlayerData(playerID)
+    local elements = playerData.elements
+    
+    local elements_at_lvl3 = 0
+    for element,level in pairs(elements) do
+        print(element, level)
+        if element ~= "pure" then
+            if level == 3 then
+                elements_at_lvl3 = elements_at_lvl3 + 1
+            end
+        end
+    end
+    print(elements_at_lvl3)
+    return elements_at_lvl3 >= 3
 end
 
 function PlayElementalExplosion(element, tower)
@@ -355,6 +375,11 @@ function UpdateSummonerSpells(playerID)
             if itemName == "item_buy_pure_essence_disabled" and CanPlayerBuyPureEssence(playerID) then
                 item:RemoveSelf()
                 summoner:AddItem(CreateItem("item_buy_pure_essence", nil, nil))
+            end
+
+            if itemName == "item_buy_lumber_disabled" and CanPlayerBuy12thElement(playerID) then
+                item:RemoveSelf()
+                summoner:AddItem(CreateItem("item_buy_lumber", nil, nil))
             end
         end
     end
