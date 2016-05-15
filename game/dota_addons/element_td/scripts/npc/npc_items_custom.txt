@@ -1,26 +1,6 @@
 "DOTAAbilities"
 {
 	//============================================================//
-	// Banana
-	//============================================================//
-	"item_banana"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	    "AbilityTextureName"            "item_banana"
-	    "Model"                         "models/props_gameplay/banana_prop_closed.vmdl"
-	
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	    "ItemQuality"                   "artifact"
-	    "ItemStackable"                 "1"
-	    "ItemKillable"                  "0"
-	    "ItemPurchasable"               "0"
-	    "ItemShareability"              "ITEM_FULLY_SHAREABLE_STACKING"
-	    "ItemPermanent"                 "0"
-	    "ItemInitialCharges"            "1"
-	}
-	//============================================================//
 	// Build Arrow Tower (Item Version)
 	//============================================================//
 	"item_build_arrow_tower"
