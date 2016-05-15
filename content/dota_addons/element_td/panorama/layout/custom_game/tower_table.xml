@@ -262,7 +262,6 @@
             </Panel>
         </Panel>
         <Panel hittest="false" class="Hidden" id="FilterButtonContainer">
-            <Label class="FilterButton" text="550" onmouseover="HoverFilter('550')" onmouseout='OnMouseOutFilter()'/>
             <Label class="FilterButton" text="700" onmouseover="HoverFilter('700')" onmouseout='OnMouseOutFilter()'/>
             <Label class="FilterButton" text="900" onmouseover="HoverFilter('900')" onmouseout='OnMouseOutFilter()'/>
             <Label class="FilterButton" text="1150" onmouseover="HoverFilter('1150')" onmouseout='OnMouseOutFilter()'/>
