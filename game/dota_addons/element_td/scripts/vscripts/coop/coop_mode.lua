@@ -21,8 +21,6 @@ function CoopStart()
     StartBreakTimeCoop(initialBreakTime)
 
     Timers:CreateTimer(AbandonThinker)
-    Timers:CreateTimer(BananaThinker)
-    CreateBananas()
 end
 
 function SpawnWaveCoop()
@@ -55,6 +53,7 @@ function SpawnWaveCoop()
 
         EmitGlobalSound("ui.npe_objective_complete")
         InterestManager:CompletedWave(COOP_WAVE)
+        print("[COOP] Completed wave "..COOP_WAVE)
 
         -- Game cleared?
         if COOP_WAVE+1 == WAVE_COUNT then
@@ -67,6 +66,12 @@ function SpawnWaveCoop()
                     playerData.victory = true
                 end)
             end)            
+        else
+            ForAllPlayerIDs(function(playerID)
+                local playerData = GetPlayerData(playerID)
+                playerData.completedWaves = COOP_WAVE
+                playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR, COOP_WAVE )
+            end)
         end
 
         if COOP_WAVE < WAVE_COUNT then
@@ -95,12 +100,6 @@ function SpawnWaveCoop()
             return
         end
         
-        print("[COOP] Completed wave "..COOP_WAVE)
-        ForAllPlayerIDs(function(playerID)
-            local playerData = GetPlayerData(playerID)
-            playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR, COOP_WAVE )
-        end)
-
         -- Start the breaktime for the next wave
         StartBreakTimeCoop(GameSettings:GetGlobalDifficulty():GetWaveBreakTime(COOP_WAVE))
     end)
