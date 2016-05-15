@@ -160,14 +160,12 @@ function CanPlayerBuy12thElement( playerID )
     
     local elements_at_lvl3 = 0
     for element,level in pairs(elements) do
-        print(element, level)
         if element ~= "pure" then
             if level == 3 then
                 elements_at_lvl3 = elements_at_lvl3 + 1
             end
         end
     end
-    print(elements_at_lvl3)
     return elements_at_lvl3 >= 3
 end
 

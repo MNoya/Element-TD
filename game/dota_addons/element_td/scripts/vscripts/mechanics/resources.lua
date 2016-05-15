@@ -210,6 +210,21 @@ function BuyLumberForEssence( event )
 
         item:RemoveSelf()
         UpdateScoreboard(playerID)
+
+        -- Check if the player has purchased an essence too
+        for num,element in pairs(playerData.elementOrder) do
+            if element == "Pure" then
+                -- remove it from the order
+                local newOrder = {}
+                for k,v in pairs(playerData.elementOrder) do
+                    if k ~= num then
+                        newOrder[#newOrder+1] = v
+                    end
+                end
+                playerData.elementOrder = newOrder
+                break
+            end
+        end
     else
         ShowWarnMessage(playerID, "#etd_need_more_essence")
     end
