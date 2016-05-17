@@ -550,9 +550,12 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:AddNewModifier(nil, nil, "modifier_disarmed", {})
     hero:AddNewModifier(nil, nil, "modifier_attack_immune", {})
     hero:AddNewModifier(hero, nil, "modifier_max_ms", {ms=GameSettings:GetMapSetting("BuilderMoveSpeed")})
-    --hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
 
     local playerData = GetPlayerData(playerID)
+
+    if not playerData.set_convars then
+        playerData.set_convars = hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
+    end
 
     Timers(0.03, function() 
         hero:SetAbilityPoints(playerData.lumber or 0)
