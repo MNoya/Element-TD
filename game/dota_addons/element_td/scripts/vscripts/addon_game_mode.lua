@@ -111,6 +111,7 @@ local requires = {
     "creeps/bulky",
     "creeps/vengeance",
     "creeps/boss",
+    "creeps/multi_class_wrapper",
 
     -- co-op mode scripts
     "coop/coop_mode",
