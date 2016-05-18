@@ -2547,7 +2547,7 @@
 	    "ModelScale"        "0.7"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
-	    "Ability1"        "earth_armor"
+	    "CreepAbility1"        "earth_armor"
 	}
 	"storm_spirit"
 	{

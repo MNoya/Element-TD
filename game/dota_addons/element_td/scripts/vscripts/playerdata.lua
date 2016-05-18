@@ -453,7 +453,7 @@ function UpdateWaveInfo(playerID, wave)
             	CustomGameEventManager:Send_ServerToPlayer( player, "etd_next_wave_info", { nextWave=0, bossWave = next_boss_wave, nextAbility1="", nextAbility2="creep_ability_boss" } )
             elseif next_wave == WAVE_COUNT then
             	-- TODO: below
-                CustomGameEventManager:Send_ServerToPlayer( player, "etd_next_wave_info", { nextWave=next_wave, nextAbility1=creepsKV[WAVE_CREEPS[next_wave]].Ability1, nextAbility2=creepsKV[WAVE_CREEPS[next_wave]].Ability2 } )
+                CustomGameEventManager:Send_ServerToPlayer( player, "etd_next_wave_info", { nextWave = next_wave, nextAbility1 = GetNextAbility(next_wave, 1), nextAbility2 = GetNextAbility(next_wave, 2), nextAbility3 = GetNextAbility(next_wave, 3) } )
             end
         else
             CustomGameEventManager:Send_ServerToPlayer( player, "etd_next_wave_info", {nextWave = next_wave, nextAbility1 = GetNextAbility(next_wave, 1), nextAbility2 = GetNextAbility(next_wave, 2), nextAbility3 = GetNextAbility(next_wave, 3)})
@@ -465,7 +465,7 @@ function GetNextAbility(wave, index)
     if CHALLENGE_MODE and index > 1 then
         return AbilitiesMode:GetChallengeAbilitiesForWave(wave)[index - 1]
     elseif index < 3 then
-        return creepsKV[WAVE_CREEPS[wave]]["Ability" .. index]
+        return creepsKV[WAVE_CREEPS[wave]]["CreepAbility" .. index]
     end
     return nil;
 end

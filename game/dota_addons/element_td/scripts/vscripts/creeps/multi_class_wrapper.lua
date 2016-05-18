@@ -41,6 +41,6 @@ function ClassWrapper:new()
 		classes = {},
 		cached_functions = {}
 	}, ClassWrapper)
-end)
+end
 
 RegisterCreepClass(ClassWrapper, "ClassWrapper")

@@ -70,9 +70,9 @@ function ShowWaveBreakTimeMessage(playerID, waveNumber, breakTime, duration)
         duration = duration
     })
 
-    local element = string.gsub(creepsKV[WAVE_CREEPS[waveNumber]].Ability1, "_armor", "") or "composite"
+    local element = string.gsub(creepsKV[WAVE_CREEPS[waveNumber]].CreepAbility1, "_armor", "") or "composite"
     local elem_color = rgbToHex(GetElementColor(element))
-    local abilityName = creepsKV[WAVE_CREEPS[waveNumber]].Ability2
+    local abilityName = creepsKV[WAVE_CREEPS[waveNumber]].CreepAbility2
 
     Notifications:Top(playerID, {text=firstToUpper(element), style={["margin"]="-15px 15px 0px 15px",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, duration=duration})
     if abilityName and abilityName ~= "" then
@@ -102,7 +102,7 @@ function ShowWaveSpawnMessage(playerID, waveNumber, duration)
         duration = duration
     })
 
-    local element = string.gsub(creepsKV[WAVE_CREEPS[waveNumber]].Ability1, "_armor", "") or "composite"
+    local element = string.gsub(creepsKV[WAVE_CREEPS[waveNumber]].CreepAbility1, "_armor", "") or "composite"
     local elem_color = rgbToHex(GetElementColor(element))
     local abilityName = creepsKV[WAVE_CREEPS[waveNumber]].Ability2
 

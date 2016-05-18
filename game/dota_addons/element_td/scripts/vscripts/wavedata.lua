@@ -238,9 +238,9 @@ function SpawnEntity(entityClass, playerID, position, waveNumber)
         entity.playerID = playerID
 
         -- give this creep its elemental armor ability
-        local armorType = creepKV[creepClass]["CreepAbility1"]
+        local armorType = creepsKV[entityClass]["CreepAbility1"]
         if armorType then
-            entity:AddAbility(armorType)
+            AddAbility(entity, armorType)
             entity.armorType = armorType
         else
             Log:warn("Could not find armor ability for " .. creepClass)
@@ -248,20 +248,21 @@ function SpawnEntity(entityClass, playerID, position, waveNumber)
 
         -- create a script object for this entity
         local scriptObject
+        local scriptClassName = GetUnitKeyValue(entityClass, "ScriptClass") or "CreepBasic"
         if CHALLENGE_MODE then
             scriptObject = ClassWrapper:new()
             local abilities = AbilitiesMode:GetChallengeAbilitiesForWave(waveNumber)
 
             for _, ability in pairs(abilities) do
-                entity:AddAbility(ability)
+                AddAbility(entity, ability)
                 scriptObject:Wrap(AbilitiesMode:GetClassFromAbility(ability))
             end
         else
             scriptObject = CREEP_CLASSES[scriptClassName](entity, entityClass)  
 
-            local ability = creepKV[entityClass]["CreepAbility2"]
+            local ability = creepsKV[entityClass]["CreepAbility2"]
             if ability then
-                entity:AddAbility(ability)
+                AddAbility(entity, ability)
             end
         end
         entity.scriptObject = scriptObject
@@ -434,7 +435,7 @@ function WaveGrantsEssence( wave )
 end
 
 function ShowPortalForSector(sector, wave, playerID)
-    local element = string.gsub(creepsKV[WAVE_CREEPS[wave]].Ability1, "_armor", "")
+    local element = string.gsub(creepsKV[WAVE_CREEPS[wave]].CreepAbility1, "_armor", "")
     local portal = SectorPortals[sector]
     if not portal then return end
 
@@ -512,7 +513,7 @@ function CreateMoveTimerForCreep(creep, sector)
                 if creep:HasAbility("creep_ability_bulky") then
                     lives = lives * 2
                 end
-
+                
                 ReduceLivesForPlayer(playerID, lives)
 
                 creep.recently_leaked = true

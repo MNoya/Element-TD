@@ -323,7 +323,7 @@ function ShowVoteResults()
         $('#LengthResult').GetParent().DeleteAsync(0)
 
     if (!abilitiesMode)
-        $('#AbilitiesModeResult').GetParent().DeleteAsync(0)
+        $('#ChallengeResult').GetParent().DeleteAsync(0)
 
     // Update HP-Bounty-Scores results
     $("#HealthResult").text = GetHP(difficultyName)
