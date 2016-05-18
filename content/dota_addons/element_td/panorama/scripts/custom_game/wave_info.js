@@ -1,4 +1,4 @@
-"use strict";3
+"use strict";
 
 var TIMER_REFRESH = 0.05;
 
