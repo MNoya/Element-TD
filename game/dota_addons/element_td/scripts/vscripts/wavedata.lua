@@ -267,7 +267,8 @@ function SpawnEntity(entityClass, playerID, position, waveNumber)
             end
         end
         entity.scriptObject = scriptObject
-
+        CREEP_SCRIPT_OBJECTS[entity:entindex()] = scriptObject
+        
         -- tint this creep if keyvalue ModelColor is set
         local modelColor = GetUnitKeyValue(entityClass, "ModelColor")
         if modelColor then

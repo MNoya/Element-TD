@@ -14,7 +14,10 @@ ClassWrapper.__index = (function(tab, func_name)
 	for name, class in pairs(tab.classes) do
 		if class[func_name] ~= nil and type(class[func_name]) == "function" then
 			Log:info("Found function " .. func_name .. " in " .. name)
-			table.insert(class_funcs, class[func_name])
+			table.insert(class_funcs, {
+				Function = class[func_name],
+				Object = class
+			})
 		end
 	end
 
@@ -23,9 +26,9 @@ ClassWrapper.__index = (function(tab, func_name)
 		return function() end;
 	end
 
-	local return_func = (function(...) 
+	local return_func = (function(_, ...) 
 		for _, f in pairs(class_funcs) do
-			f(...)
+			f.Function(f.Object, ...)
 		end
 	end)
 
