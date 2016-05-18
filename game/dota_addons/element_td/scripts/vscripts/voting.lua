@@ -173,7 +173,7 @@ function FinalizeVotes()
 		statCollection:setFlags({Endless = endless})
 		statCollection:setFlags({Order = order})
 		statCollection:setFlags({Length = length})
-		-- TODO: add challenge mode to stats collection
+		statCollection:setFlags({Challenge = abilitiesMode})
 		statCollection:sendStage2()
 	end
 
