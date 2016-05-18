@@ -75,6 +75,8 @@ function Wave:SpawnWave()
 	self.leaks = 0
 	self.kills = 0
 	local creepBossSequence = 0
+	local creepBossAbilities = CreepBoss:GetAbilityList()
+	local numAbilities = #creepBossAbilities
 
 	self.spawnTimer = Timers:CreateTimer(time_between_spawns, function()
 		if playerData.health == 0 then
@@ -104,8 +106,8 @@ function Wave:SpawnWave()
 				entity.waveNumber = playerData.bossWaves
 
 				-- Choose an ability in sequence
-				creepBossSequence = (creepBossSequence % #CreepBossAbilities) + 1
-			    local abilityName = CreepBossAbilities[creepBossSequence]
+				creepBossSequence = (creepBossSequence % numAbilities) + 1
+			    local abilityName = creepBossAbilities[creepBossSequence]
 			    entity.random_ability = abilityName
 			    entity.scriptObject.ability = AddAbility(entity, abilityName)
 			end

@@ -10,7 +10,7 @@
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"
     "MinimapIconSize"           "320"
-    "AttackAnimationPoint"      "0.25"
+    "AttackAnimationPoint"      "0.2"
     "Creature"
     {
        "AttachWearables" // Bestowments of the Divine Anchor

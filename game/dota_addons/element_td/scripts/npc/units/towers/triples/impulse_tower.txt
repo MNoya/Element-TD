@@ -7,7 +7,7 @@
     "MagicalResistance"        "0"
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-    "AttackAnimationPoint"        "0.25"
+    "AttackAnimationPoint"        "0.2"
     "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
     "AttributeBaseStrength"        "0"
     "AttributeStrengthGain"        "0"
@@ -50,7 +50,7 @@
     "AttackAcquisitionRange"        "1500"
     "AttackRate"        "1.5"
     "ProjectileModel"        "particles/units/heroes/hero_enchantress/enchantress_impetus.vpcf"
-    "ProjectileSpeed"        "2500"
+    "ProjectileSpeed"        "3000"
 
     "Model"             "models/heroes/enchantress/enchantress.vmdl"
     "ModelScale"        "1.0"

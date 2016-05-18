@@ -42,9 +42,9 @@
         "2"        "light"
         "3"        "nature"
     }
-    "Damage"        "2600"
-    "AttackDamageMin"        "2600"
-    "AttackDamageMax"        "2600"
+    "Damage"        "2750"
+    "AttackDamageMin"        "2750"
+    "AttackDamageMax"        "2750"
     "DamageType"        "nature"
     "ScriptClass"        "EnchantmentTower"
     "TowerType"        "Normal"

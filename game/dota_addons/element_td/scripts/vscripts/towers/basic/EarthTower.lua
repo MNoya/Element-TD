@@ -43,9 +43,9 @@ end
 function EarthTower:OnCreated()
     self.fullAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"));
     self.halfAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"));
-    self.ability = AddAbility(self.tower, "earth_tower_aftershock")
+    --[[self.ability = AddAbility(self.tower, "earth_tower_aftershock")
     self.aftershockDamage = self.ability:GetSpecialValueFor("aftershock_damage_pct") * 0.01
-    self.aftershockDelay = self.ability:GetSpecialValueFor("aftershock_delay")
+    self.aftershockDelay = self.ability:GetSpecialValueFor("aftershock_delay")]]
 
     --self.ministun_duration = self.ability:GetSpecialValueFor("ministun_duration")
     --self.threshold_duration = 0.9

@@ -16,5 +16,5 @@
 		"nature"		"2"
 		"nature"		"2"
 	}
-	"AbilityCastRange"              "550"
+	"AbilityCastRange"              "700"
 }

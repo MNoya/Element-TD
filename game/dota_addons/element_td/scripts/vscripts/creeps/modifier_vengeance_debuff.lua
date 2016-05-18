@@ -52,7 +52,7 @@ function modifier_vengeance_multiple:OnDestroy( params )
             local stackCount = tower:GetModifierStackCount("modifier_vengeance_debuff", tower) - 1
             local modifier = tower:FindModifierByName("modifier_vengeance_debuff")
             if stackCount <= 0 then
-                modifier:Destroy()
+                modifier:Destroy(false)
                 stackCount = 0
             else
                 modifier:DecrementStackCount()

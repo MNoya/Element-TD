@@ -14,27 +14,31 @@ CreepBoss = createClass({
     },
 CreepBasic)
 
-if COOP_MAP then
-    CreepBossAbilities = {
-        [1]="creep_ability_bulky",
-        [2]="creep_ability_heal",
-        [3]="creep_ability_vengeance",
-        [4]="creep_ability_undead",
-        [5]="creep_ability_regen",
-        [6]="creep_ability_fast",
-        [7]="creep_ability_mechanical",
-        [8]="creep_ability_time_lapse"
-    }
-else
-    CreepBossAbilities = {
-        [1]="creep_ability_heal",
-        [2]="creep_ability_vengeance",
-        [3]="creep_ability_undead",
-        [4]="creep_ability_regen",
-        [5]="creep_ability_fast",
-        [6]="creep_ability_mechanical",
-        [7]="creep_ability_time_lapse"
-    }
+function CreepBoss:GetAbilityList()
+    if GameSettings:IsChaos() then
+        return 
+        {
+            [1]="creep_ability_bulky",
+            [2]="creep_ability_heal",
+            [3]="creep_ability_vengeance",
+            [4]="creep_ability_undead",
+            [5]="creep_ability_regen",
+            [6]="creep_ability_fast",
+            [7]="creep_ability_mechanical",
+            [8]="creep_ability_time_lapse"
+        }
+    else
+        return
+        {
+            [1]="creep_ability_heal",
+            [2]="creep_ability_vengeance",
+            [3]="creep_ability_undead",
+            [4]="creep_ability_regen",
+            [5]="creep_ability_fast",
+            [6]="creep_ability_mechanical",
+            [7]="creep_ability_time_lapse"
+        }
+    end
 end
 
 function CreepBoss:OnSpawned()
@@ -45,6 +49,10 @@ function CreepBoss:OnSpawned()
 
     -- Don't mark first-death undead as a killed score
     creep.real_icefrog = not creep.random_ability or (creep.random_ability and creep.random_ability ~= "creep_ability_undead")
+
+    if creep:HasAbility("creep_ability_undead") then
+        self.creep.isUndead = true
+    end
 
     if creep:HasAbility("creep_ability_mechanical") then
         -- Mechanical
@@ -134,28 +142,31 @@ function CreepBoss:Backtrack()
 
     -- Approximate a value if we don't have an exact time stored
     if not self.health[backtrack_target_time] then
-        local minus = tostring(tonumber(backtrack_target_time)-0.1)
-        local plus = tostring(tonumber(backtrack_target_time)+0.1)
-        backtrack_target_time = (self.health[minus] and minus) or (self.health[plus] and plus)
-        
-        -- Shouldn't ever need this
-        if not self.health[backtrack_target_time] then
-            for k,_ in pairs(self.health) do
-                backtrack_target_time = k
-                break
+        local closest = 100
+        for pTime,_ in pairs(self.health) do
+            local diff = math.abs(tonumber(time)-tonumber(pTime))
+            if diff < closest and diff >= self.backtrack_duration then
+                closest = diff
+                backtrack_target_time = pTime
             end
+        end
+
+        if not self.health[backtrack_target_time] then
+            return
         end
     end
 
     local origin = self.creep:GetAbsOrigin()
-    local particle = ParticleManager:CreateParticle("particles/custom/creeps/temporal/timelapse.vpcf", PATTACH_CUSTOMORIGIN, self.creep)
+    local particle = ParticleManager:CreateParticle("particles/custom/creeps/temporal/timelapse.vpcf", PATTACH_CUSTOMORIGIN, nil)
     ParticleManager:SetParticleControl(particle, 0, origin)
-    self.creep:RemoveModifierByName("modifier_time_lapse") --This stops the ability from triggering again through the damage function
 
+    self.creep:RemoveModifierByName("modifier_time_lapse") --This stops the ability from triggering again through the damage function
     self.creep:SetHealth(self.health[backtrack_target_time])
     self.creep:SetAbsOrigin(self.position[backtrack_target_time])
     self.ability:SetHidden(true)
     Timers:RemoveTimer(self.temporalTimer)
+   
+    ParticleManager:SetParticleControl(particle, 2, self.position[backtrack_target_time])
 end
 
 function CreepBoss:RegenerateCreepHealth()
@@ -178,18 +189,17 @@ function CreepBoss:OnDeath(killer)
         newCreep.waveObject = creep.waveObject
         newCreep.waveNumber = creep.waveNumber
         newCreep.sector = creep.sector --coop only
-        newCreep.bounty = creep.bounty
         newCreep:CreatureLevelUp(newCreep.waveObject.waveNumber-newCreep:GetLevel())
         
-        creep.waveObject:RegisterCreep(newCreep:entindex())
+        local newEntIndex = newCreep:entindex()
+        creep.waveObject:RegisterCreep(newEntIndex)
         creep.waveObject.creepsRemaining = creep.waveObject.creepsRemaining + 1 -- Increment creep count
-        newCreep:AddNewModifier(newCreep, nil, "modifier_phased", {})
-        newCreep:AddNewModifier(newCreep, nil, "modifier_invulnerable", {})
-        newCreep:AddNewModifier(newCreep, nil, "modifier_invisible_etd", {})
-        newCreep:AddNewModifier(newCreep, nil, "modifier_stunned", {})
+        newCreep.entity_index = newEntIndex
+        newCreep:AddNewModifier(nil, nil, "modifier_phased", {})
+        newCreep:AddNewModifier(nil, nil, "modifier_invulnerable", {})
+        newCreep:AddNewModifier(nil, nil, "modifier_invisible_etd", {})
+        newCreep:AddNewModifier(nil, nil, "modifier_stunned", {})
         newCreep:AddNoDraw()
-        newCreep.isUndeadRespawn = true
-
         newCreep:SetMaxHealth(creep:GetMaxHealth())
         newCreep:SetBaseMaxHealth(creep:GetMaxHealth())
         newCreep:SetForwardVector(creep:GetForwardVector())
@@ -253,6 +263,14 @@ function CreepBoss:UndeadCreepRespawn()
     local wave = creep.waveObject:GetWaveNumber()
     local creepClass = WAVE_CREEPS[wave]
 
+    -- awful handling for awful issue
+    if not IsValidEntity(creep) then
+        if creep.entity_index then
+            creep.waveObject:OnCreepKilled(creep.entity_index)
+        end
+        return
+    end
+    
     creep:RemoveNoDraw()
     creep:RemoveModifierByName("modifier_invulnerable")
     creep:RemoveModifierByName("modifier_invisible_etd")

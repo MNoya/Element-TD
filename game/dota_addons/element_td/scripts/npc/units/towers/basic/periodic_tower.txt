@@ -9,7 +9,7 @@
     "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_wm16.vmdl"
     "PedestalModelScale"        "0.8"
     "PedestalOffset"            "20"
-    "ProjectileModel"           "particles/custom/towers/periodic/attack.vpcf"
+    "ProjectileModel"           "particles/custom/towers/periodic/rainbow_attack.vpcf"
     "MinimapIcon"               "minimap_tower90"
     "MinimapIconSize"           "320"
     "Creature"
@@ -30,9 +30,9 @@
 
     // Stats
     //-----------------------------
-    "AttackDamageMin"           "28000"
-    "AttackDamageMax"           "28000"
-    "Damage"                    "28000"
+    "AttackDamageMin"           "30000"
+    "AttackDamageMax"           "30000"
+    "Damage"                    "30000"
     "AttackRange"               "1150"
     "AttackAcquisitionRange"    "1150"
     "AOE_Full"                  "100"

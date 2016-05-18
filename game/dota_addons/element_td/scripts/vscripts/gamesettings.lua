@@ -132,13 +132,6 @@ function GameSettings:SetGameLength(length)
 		ModifyLumber(plyID, GameSettings.length.Lumber)
 		playerData.nextWave = GameSettings.length.Wave
 
-		if length == "Developer" then
-			for e,_ in pairs(playerData.elements) do
-				ModifyElementValue(plyID, e, 1)
-			end
-			DEV_MODE = true
-		end
-
 		if length == "Express" then
 			EXPRESS_MODE = true
 
@@ -150,6 +143,10 @@ end
 
 function GameSettings:SetEndless(endless)
 	self.endless = endless
+end
+
+function GameSettings:IsChaos()
+    return self.order == "Chaos"
 end
 
 function GameSettings:SetCreepOrder(order)

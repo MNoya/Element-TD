@@ -51,7 +51,7 @@
     "AttackAcquisitionRange"        "700"
     "AttackRate"        "0.66"
     "ProjectileModel"        "particles/units/heroes/hero_phoenix/phoenix_base_attack.vpcf"
-    "ProjectileSpeed"        "1500"
+    "ProjectileSpeed"        "2000"
     "Model"        "models/heroes/ember_spirit/ember_spirit.vmdl"
     "ModelScale"        "1.1"
     "ModelRotation"             "90"

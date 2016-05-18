@@ -190,15 +190,20 @@
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/electricity/chain_lightning_f.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/electricity/chain_lightning_g.vpcf"
+			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/electricity/chain_lightning_h.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/custom/towers/electricity/chain_lightning_i.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/custom/towers/electricity/maelstorm_ti6_e.vpcf"
 		},
 	]
 }

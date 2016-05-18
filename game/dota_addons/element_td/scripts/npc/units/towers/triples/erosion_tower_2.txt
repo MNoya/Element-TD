@@ -52,7 +52,7 @@
     "AttackAcquisitionRange"        "700"
     "AttackRate"        "1"
     "ProjectileModel"        "particles/units/heroes/hero_warlock/warlock_base_attack.vpcf"
-    "ProjectileSpeed"        "1500"
+    "ProjectileSpeed"        "2000"
 
     "Model"             "models/heroes/shadow_demon/shadow_demon.vmdl"
     "ModelScale"        "1"

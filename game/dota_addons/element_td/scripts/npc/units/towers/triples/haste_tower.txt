@@ -50,8 +50,8 @@
     "HasAbilityDesc"        "1"
     "AttackRange"        "900"
     "AttackAcquisitionRange"        "900"
-    "AttackRate"        "1"
-    "ProjectileModel"        "particles/units/heroes/hero_invoker/invoker_forged_spirit_projectile.vpcf"
+    "AttackRate"        "0.66"
+    "ProjectileModel"        "particles/custom/towers/haste/attack.vpcf"
     "ProjectileSpeed"        "4000"
 
     "Model"             "models/heroes/troll_warlord/troll_warlord.vmdl"

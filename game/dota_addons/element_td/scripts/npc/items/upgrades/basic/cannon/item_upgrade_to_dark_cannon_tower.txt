@@ -19,7 +19,7 @@
         }
     }
     "AbilityTextureName"    "item_dark_cannon"
-    "AbilityCastRange"      "550"
+    "AbilityCastRange"      "700"
 }
 
 "item_upgrade_to_dark_cannon_tower_disabled"
