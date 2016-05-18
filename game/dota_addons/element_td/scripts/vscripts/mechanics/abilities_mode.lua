@@ -11,6 +11,14 @@ AbilitiesMode = {
 		[7] = "creep_ability_mechanical",
 		[8] = "creep_ability_time_lapse"
 	},
+	ChallengeElementalAbilityChoices = {
+		[1] = "creep_ability_heal",
+		[2] = "creep_ability_vengeance",
+		[3] = "creep_ability_regen",
+		[4] = "creep_ability_fast",
+		[5] = "creep_ability_mechanical",
+		[6] = "creep_ability_time_lapse"
+	},
 	AbilityToClassName = {
 		["creep_ability_bulky"] = "CreepBulky",
 		["creep_ability_heal"] = "CreepHeal",
@@ -24,6 +32,8 @@ AbilitiesMode = {
 	},
 	ChallengeModeAbilities = {}
 }
+
+-- hooray for extremely long function names!
 
 function AbilitiesMode:GenerateChallengeAbilities()
 	local copy_choices = (function()
@@ -50,4 +60,8 @@ end
 
 function AbilitiesMode:GetClassNameFromAbility(ability_name)
 	return self.AbilityToClassName[ability_name]
+end
+
+function AbilitiesMode:GetRandomElementalAbilityName()
+	return self.ChallengeElementalAbilityChoices[math.random(#self.ChallengeElementalAbilityChoices)]
 end
