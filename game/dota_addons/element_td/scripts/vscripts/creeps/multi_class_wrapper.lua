@@ -1,9 +1,9 @@
 -- wrapper for script objects so that creeps can have multiple abilities
 
 ClassWrapper = {}
-ClassWrapper.__index = (function(tab, key)
-	if Wrapper[func_name] ~= nil then
-		return Wrapper[func_name]
+ClassWrapper.__index = (function(tab, func_name)
+	if ClassWrapper[func_name] ~= nil then
+		return ClassWrapper[func_name]
 	end
 
 	if tab.cached_functions[func_name] then
@@ -13,6 +13,7 @@ ClassWrapper.__index = (function(tab, key)
 	local class_funcs = {}
 	for name, class in pairs(tab.classes) do
 		if class[func_name] ~= nil and type(class[func_name]) == "function" then
+			Log:info("Found function " .. func_name .. " in " .. name)
 			table.insert(class_funcs, class[func_name])
 		end
 	end
@@ -32,8 +33,12 @@ ClassWrapper.__index = (function(tab, key)
 	return return_func
 end)
 
-function ClassWrapper:Wrap(class)
-	table.insert(self.classes, class)
+function ClassWrapper:Wrap(name, instance)
+	if self.classes[name] then
+		Log:warn("Class wrapper already has wrapped class " .. name)
+		return
+	end
+	self.classes[name] = instance
 end
 
 function ClassWrapper:new()

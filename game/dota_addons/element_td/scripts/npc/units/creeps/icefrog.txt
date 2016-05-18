@@ -32,7 +32,7 @@
     "SoundSet"        ""
     "ScriptClass"    "CreepBoss"
     "AbilityLayout"    "4"
-    "Ability1"        "composite_armor"
-    "Ability2"        "creep_ability_boss"
+    "CreepAbility1"        "composite_armor"
+    "CreepAbility2"        "creep_ability_boss"
     "Ability3"        "icefrog_particles"
 }

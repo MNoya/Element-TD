@@ -31,8 +31,8 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"     "CreepTemporal"
-    "Ability1"        "light_armor"
-    "Ability2"        "creep_ability_time_lapse"
+    "CreepAbility1"        "light_armor"
+    "CreepAbility2"        "creep_ability_time_lapse"
     "Creature"
     {
         "AttachWearables" // Default npc_dota_hero_phantom_lancer

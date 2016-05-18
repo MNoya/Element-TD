@@ -30,7 +30,7 @@
     "ModelScale"        "0.9"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
-    "Ability1"        "dark_armor"
+    "CreepAbility1"        "dark_armor"
     "Creature"
     {
         "AttachWearables"

@@ -31,8 +31,8 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"    "CreepRegen"
-    "Ability1"        "dark_armor"
-    "Ability2"        "creep_ability_regen"
+    "CreepAbility1"        "dark_armor"
+    "CreepAbility2"        "creep_ability_regen"
     "Creature"
     {
         "AttachWearables" // Default npc_dota_hero_pudge

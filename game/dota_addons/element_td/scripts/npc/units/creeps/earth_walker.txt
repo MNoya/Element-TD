@@ -31,6 +31,6 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"     "CreepTemporal"
-    "Ability1"        "earth_armor"
-    "Ability2"        "creep_ability_time_lapse"
+    "CreepAbility1"        "earth_armor"
+    "CreepAbility2"        "creep_ability_time_lapse"
 }

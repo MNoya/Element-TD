@@ -255,7 +255,8 @@ function SpawnEntity(entityClass, playerID, position, waveNumber)
 
             for _, ability in pairs(abilities) do
                 AddAbility(entity, ability)
-                scriptObject:Wrap(AbilitiesMode:GetClassFromAbility(ability))
+                scriptClassName = AbilitiesMode:GetClassNameFromAbility(ability)
+                scriptObject:Wrap(scriptClassName, CREEP_CLASSES[scriptClassName](entity, entityClass))
             end
         else
             scriptObject = CREEP_CLASSES[scriptClassName](entity, entityClass)  

@@ -30,8 +30,8 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"        "CreepFast"
-    "Ability1"        "light_armor"
-    "Ability2"        "creep_ability_fast"
+    "CreepAbility1"        "light_armor"
+    "CreepAbility2"        "creep_ability_fast"
     "Creature"
     {
         "AttachWearables" // Default npc_dota_hero_skywrath_mage

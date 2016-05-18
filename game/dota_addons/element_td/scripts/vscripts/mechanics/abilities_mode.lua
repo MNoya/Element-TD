@@ -11,6 +11,17 @@ AbilitiesMode = {
 		[7] = "creep_ability_mechanical",
 		[8] = "creep_ability_time_lapse"
 	},
+	AbilityToClassName = {
+		["creep_ability_bulky"] = "CreepBulky",
+		["creep_ability_heal"] = "CreepHeal",
+		["creep_ability_vengeance"] = "CreepVengeance",
+		["creep_ability_undead"] = "CreepUndead",
+		["creep_ability_regen"] = "CreepRegen",
+		["creep_ability_fast"] = "CreepFast",
+		["creep_ability_mechanical"] = "CreepMechanical",
+		["creep_ability_time_lapse"] = "CreepTemporal"
+
+	},
 	ChallengeModeAbilities = {}
 }
 
@@ -35,4 +46,8 @@ end
 
 function AbilitiesMode:GetChallengeAbilitiesForWave(wave)
 	return self.ChallengeModeAbilities[wave]
+end
+
+function AbilitiesMode:GetClassNameFromAbility(ability_name)
+	return self.AbilityToClassName[ability_name]
 end
