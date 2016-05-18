@@ -13,6 +13,7 @@ var nextAbility1 = $( "#NextAbility1" );
 var nextAbility2 = $( "#NextAbility2" );
 var nextAbility3 = $( "#NextAbility3" );
 var countdown = $( '#Countdown' );
+var clock = $( '#Clock' );
 
 var timerDuration = 0;
 var startTime = 0;
@@ -41,12 +42,13 @@ function Setup() {
 }
 
 function UpdateWaveInfo( table ) {
-
+	clock.text = "";
+	
 	if (!abilityModeSetup) {
 		abilityModeSetup = true;
 		if (CustomNetTables.GetTableValue("gameinfo", "abilitiesMode").value === "Challenge") {
-			waveinfo.style["width"] = "368px";
-			button.style["margin-right"] = "390px";
+			waveinfo.style["width"] = "388px";
+			button.style["margin-right"] = "410px";
 		}
 	}
 
@@ -141,11 +143,62 @@ function UpdateTimer() {
 	}
 }
 
+var waveSpawnTime
+var clockRunning
+var fastThreshold = 30
+
+// Starts an increasing clock timer to show how much time has passed since the wave finished spawning
+function StartWaveClock(msg) {
+	clockRunning = true
+	fastThreshold = parseInt(msg.threshold)
+	waveSpawnTime = Game.GetGameTime()
+	UpdateWaveClock()
+}
+
+function UpdateWaveClock() {
+    var time = Game.GetGameTime() - waveSpawnTime;
+
+    if (time <= fastThreshold) {
+    	if (time <= fastThreshold - fastThreshold/6)
+    		clock.AddClass("Fast")
+    	else {
+    		clock.RemoveClass("Fast")
+    		clock.AddClass("Close")
+    	}
+    } else {
+    	clock.AddClass("Slow")
+    	clock.RemoveClass("Fast")
+    	clock.RemoveClass("Close")
+    }
+
+    clock.text = FormatClockTime(time);
+    if (clockRunning)
+    	$.Schedule(TIMER_REFRESH, UpdateWaveClock)
+}
+
+function FormatClockTime(time) {
+	var seconds = time.toFixed(0)
+    var minutes = Math.floor(seconds / 60)
+    var text = minutes+":"
+
+    seconds = seconds % 60
+
+    // Add leading zero
+    if (seconds < 10)
+    	text = text+"0"
+
+    return String(text+seconds)
+}
+
 function UpdateWaveTimer( table ) {
 	waveinfo.visible = true;
+	clockRunning = false;
+	clock.text = "";
+
 	button.visible = table.button;
 	timerDuration = table.time;
 	startTime = Game.GetGameTime();
+
 	UpdateTimer();
 }
 
@@ -192,4 +245,5 @@ function AbilityHideTooltip( ability ) {
 
   	GameEvents.Subscribe( "etd_update_wave_timer", UpdateWaveTimer );
   	GameEvents.Subscribe( "etd_next_wave_info", UpdateWaveInfo );
+  	GameEvents.Subscribe( "etd_start_wave_clock", StartWaveClock );
 })();

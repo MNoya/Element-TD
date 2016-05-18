@@ -20,7 +20,7 @@
     flow-children: down;
     background-color: #000000DD;
     border: 2px solid #484A48;
-    width: 332px;
+    width: 352px;
     height: 84px;
     box-shadow: #000 -4px -4px 3px 8px;
 }
@@ -43,13 +43,23 @@
     margin-top: 2px;
 }
 
-#CurrentLabel, #NextLabel, #Countdown
+#CurrentLabel, #NextLabel, #Countdown, #Clock
 {
     font-weight: bold;
     color: #FFF;
     font-size: 23px;
     text-shadow: 0px 0px 5px 2.0 #000;
 }
+
+#Clock
+{
+    margin-right: 15px;
+    horizontal-align: right;
+}
+
+#Clock.Fast { color: #00CC00; }
+#Clock.Close { color: #FFDF00; }
+#Clock.Slow { color: #FF0000; }
 
 #CurrentWaveLabel, #NextWaveLabel
 {
@@ -90,7 +100,7 @@ DOTAAbilityImage
 #StartWave
 {
     margin-top: 62px; //62
-    margin-right: 354px; //390
+    margin-right: 374px; //390
     horizontal-align: right;
     width: 84px;
     height: 84px;

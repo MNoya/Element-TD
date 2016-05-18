@@ -134,6 +134,9 @@ function WaveCoop:SpawnWave()
 				ClosePortalForSector(nil, i, true)
 			end
 
+			-- Start clock timer on the UI
+			CustomGameEventManager:Send_ServerToAllClients("etd_start_wave_clock", {threshold = FAST_THRESHOLD})
+
 			return nil
 		else
 			return time_between_spawns

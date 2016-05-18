@@ -23,6 +23,7 @@
                 onmouseout="AbilityHideTooltip('CurrentAbility2')"/>
           <DOTAAbilityImage id="CurrentAbility3" class="ability3" abilityname="" onmouseover="AbilityShowTooltip('CurrentAbility3')"
                 onmouseout="AbilityHideTooltip('CurrentAbility3')"/>
+          <Label id="Clock" text="0:00"/>
         </Panel>
         <Panel hittest="false" id="NextWave" class="wave">
           <Label id="NextLabel" text="Next:"/>
