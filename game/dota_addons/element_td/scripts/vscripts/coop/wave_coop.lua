@@ -70,7 +70,7 @@ function WaveCoop:SpawnWave()
 
 	self.spawnTimer = Timers:CreateTimer(time_between_spawns, function()
 		for sector = 1, 6 do 
-			local entity = SpawnEntity(WAVE_CREEPS[self.waveNumber], nil, EntityStartLocations[sector])
+			local entity = SpawnEntity(WAVE_CREEPS[self.waveNumber], nil, EntityStartLocations[sector], self.waveNumber)
 			if entity then
 				self:RegisterCreep(entity:entindex())
 				entity:SetForwardVector(Vector(0, -1, 0))

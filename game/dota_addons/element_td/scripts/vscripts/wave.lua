@@ -80,7 +80,7 @@ function Wave:SpawnWave()
 		if playerData.health == 0 then
 			return nil
 		end
-		local entity = SpawnEntity(WAVE_CREEPS[self.waveNumber], self.playerID, startPos)
+		local entity = SpawnEntity(WAVE_CREEPS[self.waveNumber], self.playerID, startPos, self.waveNumber)
 		if entity then
 			self:RegisterCreep(entity:entindex())
 			entity:SetForwardVector(Vector(0, -1, 0))

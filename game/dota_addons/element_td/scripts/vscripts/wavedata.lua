@@ -228,7 +228,7 @@ function StartBreakTime_DeadPlayers(playerID, breakTime, wave)
     end
 end
 
-function SpawnEntity(entityClass, playerID, position)
+function SpawnEntity(entityClass, playerID, position, waveNumber)
     local entity = CreateUnitByName(entityClass, position, true, nil, nil, DOTA_TEAM_NEUTRALS)
     if entity then
         entity:AddNewModifier(nil, nil, "modifier_phased", {})
@@ -237,13 +237,33 @@ function SpawnEntity(entityClass, playerID, position)
         entity.class = entityClass
         entity.playerID = playerID
 
+        -- give this creep its elemental armor ability
+        local armorType = creepKV[creepClass]["CreepAbility1"]
+        if armorType then
+            entity:AddAbility(armorType)
+            entity.armorType = armorType
+        else
+            Log:warn("Could not find armor ability for " .. creepClass)
+        end
+
         -- create a script object for this entity
-        -- see /vscripts/creeps/basic.lua
-        local scriptClassName = GetUnitKeyValue(entityClass, "ScriptClass")
-        if not scriptClassName or scriptClassName == "" then scriptClassName = "CreepBasic" end
-        local scriptObject = CREEP_CLASSES[scriptClassName](entity, entityClass)
-        CREEP_SCRIPT_OBJECTS[entity:entindex()] = scriptObject
-        entity.scriptClass = scriptClassName
+        local scriptObject
+        if CHALLENGE_MODE then
+            scriptObject = ClassWrapper:new()
+            local abilities = AbilitiesMode:GetChallengeAbilitiesForWave(waveNumber)
+
+            for _, ability in pairs(abilities) do
+                entity:AddAbility(ability)
+                scriptObject:Wrap(AbilitiesMode:GetClassFromAbility(ability))
+            end
+        else
+            scriptObject = CREEP_CLASSES[scriptClassName](entity, entityClass)  
+
+            local ability = creepKV[entityClass]["CreepAbility2"]
+            if ability then
+                entity:AddAbility(ability)
+            end
+        end
         entity.scriptObject = scriptObject
 
         -- tint this creep if keyvalue ModelColor is set
