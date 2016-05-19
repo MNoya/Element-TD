@@ -242,7 +242,7 @@ function SpawnEntity(entityClass, playerID, position, waveNumber)
 
         -- give this creep its elemental armor ability
         local armorType = creepsKV[entityClass]["CreepAbility1"]
-        if armorType then
+        if armorType and armorType ~= "" then
             AddAbility(entity, armorType)
             entity.armorType = armorType
         else
@@ -265,7 +265,7 @@ function SpawnEntity(entityClass, playerID, position, waveNumber)
             scriptObject = CREEP_CLASSES[scriptClassName](entity, entityClass)  
 
             local ability = creepsKV[entityClass]["CreepAbility2"]
-            if ability then
+            if ability and ability ~= "" then
                 AddAbility(entity, ability)
             end
         end
