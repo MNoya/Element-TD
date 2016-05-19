@@ -159,10 +159,13 @@ function UpdateWaveClock() {
     var time = Game.GetGameTime() - waveSpawnTime;
 
     if (time <= fastThreshold) {
-    	if (time <= fastThreshold - fastThreshold/6)
+    	if (time <= fastThreshold - fastThreshold/6) {
+    		clock.RemoveClass("Slow")
+    		clock.RemoveClass("Close")
     		clock.AddClass("Fast")
-    	else {
+    	} else {
     		clock.RemoveClass("Fast")
+    		clock.RemoveClass("Slow")
     		clock.AddClass("Close")
     	}
     } else {
