@@ -134,8 +134,10 @@ function WaveCoop:SpawnWave()
 				ClosePortalForSector(nil, i, true)
 			end
 
-			-- Start clock timer on the UI
-			CustomGameEventManager:Send_ServerToAllClients("etd_start_wave_clock", {threshold = FAST_THRESHOLD})
+			if self.waveNumber ~= WAVE_COUNT then
+				-- Start clock timer on the UI
+				CustomGameEventManager:Send_ServerToAllClients("etd_start_wave_clock", {threshold = FAST_THRESHOLD})
+			end
 
 			return nil
 		else

@@ -156,9 +156,10 @@ function Wave:SpawnWave()
 					-- Update UI for dead players
 					StartBreakTime_DeadPlayers(self.playerID, GetPlayerDifficulty(self.playerID):GetWaveBreakTime(playerData.nextWave), playerData.nextWave)
 				else
-					-- Start clock timer on the UI
-					CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(self.playerID), "etd_start_wave_clock", {threshold = FAST_THRESHOLD})
-
+					if self.waveNumber ~= WAVE_COUNT then
+						-- Start clock timer on the UI
+						CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(self.playerID), "etd_start_wave_clock", {threshold = FAST_THRESHOLD})
+					end
 				end
 				return nil
 			else
