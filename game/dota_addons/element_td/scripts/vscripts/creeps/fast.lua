@@ -13,19 +13,6 @@ CreepFast = createClass({
 	},
 CreepBasic);
 
-function CreepFast:CastHasteSpell(keys)
-	local status, err = pcall(function()
-		local creep = keys.caster;
-		if creep then
-			local ability = creep:FindAbilityByName("creep_ability_fast");
-			creep:CastAbilityImmediately(ability, 1);
-		end
-	end);
-	if not status then
-		Log:error(err);
-	end
-end
-
 -- Datadriven version because who needs wrappers anyway
 function CastHasteSpell(keys)
 	local caster = keys.caster

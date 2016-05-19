@@ -11,3 +11,7 @@ end
 function creep_haste_modifier:GetEffectAttachType()
     return PATTACH_ABSORIGIN
 end
+
+function creep_haste_modifier:GetAttributes()
+	return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE
+end
