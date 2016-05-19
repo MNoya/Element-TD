@@ -27,7 +27,7 @@
     "VisionDaytimeRange"        "1200"
     "VisionNighttimeRange"        "800"
     "Model"        "models/items/courier/deathbringer/deathbringer.vmdl"
-    "ModelScale"        "2.4"
+    "ModelScale"        "1.2"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"     "CreepBulky"
