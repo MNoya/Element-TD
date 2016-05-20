@@ -1,37 +1,39 @@
-CHALLENGE_MODE = false
+if not CHALLENGE_MODE then
+	CHALLENGE_MODE = false
 
-AbilitiesMode = {
-	ChallengeAbilityChoices = {
-		[1] = "creep_ability_bulky",
-		[2] = "creep_ability_heal",
-		[3] = "creep_ability_vengeance",
-		[4] = "creep_ability_undead",
-		[5] = "creep_ability_regen",
-		[6] = "creep_ability_fast",
-		[7] = "creep_ability_mechanical",
-		[8] = "creep_ability_time_lapse"
-	},
-	ChallengeElementalAbilityChoices = {
-		[1] = "creep_ability_heal",
-		[2] = "creep_ability_vengeance",
-		[3] = "creep_ability_regen",
-		[4] = "creep_ability_fast",
-		[5] = "creep_ability_mechanical",
-		[6] = "creep_ability_time_lapse"
-	},
-	AbilityToClassName = {
-		["creep_ability_bulky"] = "CreepBulky",
-		["creep_ability_heal"] = "CreepHeal",
-		["creep_ability_vengeance"] = "CreepVengeance",
-		["creep_ability_undead"] = "CreepUndead",
-		["creep_ability_regen"] = "CreepRegen",
-		["creep_ability_fast"] = "CreepFast",
-		["creep_ability_mechanical"] = "CreepMechanical",
-		["creep_ability_time_lapse"] = "CreepTemporal"
+	AbilitiesMode = {
+		ChallengeAbilityChoices = {
+			[1] = "creep_ability_bulky",
+			[2] = "creep_ability_heal",
+			[3] = "creep_ability_vengeance",
+			[4] = "creep_ability_undead",
+			[5] = "creep_ability_regen",
+			[6] = "creep_ability_fast",
+			[7] = "creep_ability_mechanical",
+			[8] = "creep_ability_time_lapse"
+		},
+		ChallengeElementalAbilityChoices = {
+			[1] = "creep_ability_heal",
+			[2] = "creep_ability_vengeance",
+			[3] = "creep_ability_regen",
+			[4] = "creep_ability_fast",
+			[5] = "creep_ability_mechanical",
+			[6] = "creep_ability_time_lapse"
+		},
+		AbilityToClassName = {
+			["creep_ability_bulky"] = "CreepBulky",
+			["creep_ability_heal"] = "CreepHeal",
+			["creep_ability_vengeance"] = "CreepVengeance",
+			["creep_ability_undead"] = "CreepUndead",
+			["creep_ability_regen"] = "CreepRegen",
+			["creep_ability_fast"] = "CreepFast",
+			["creep_ability_mechanical"] = "CreepMechanical",
+			["creep_ability_time_lapse"] = "CreepTemporal"
 
-	},
-	ChallengeModeAbilities = {}
-}
+		},
+		ChallengeModeAbilities = {}
+	}
+end
 
 -- hooray for extremely long function names!
 
