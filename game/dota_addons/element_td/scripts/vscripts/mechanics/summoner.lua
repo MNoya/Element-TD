@@ -42,6 +42,19 @@ function SummonElemental(keys)
     elemental["class"] = keys.Elemental
     elemental.marker_dummy = marker_dummy
 
+    -- create a script object for this entity
+    if CHALLENGE_MODE then
+        local abilityName = AbilitiesMode:GetRandomElementalAbilityName()    
+        local scriptClassName = AbilitiesMode:GetClassNameFromAbility(abilityName)
+
+        local scriptObject = CREEP_CLASSES[scriptClassName](elemental, name)  
+        scriptObject.ability = AddAbility(elemental, abilityName)
+        scriptObject:OnSpawned()
+
+        entity.scriptObject = scriptObject
+        CREEP_SCRIPT_OBJECTS[elemental:entindex()] = scriptObject
+    end
+
     -- Spawn sound
     Sounds:PlayElementalSpawnSound(playerID, elemental)
 
