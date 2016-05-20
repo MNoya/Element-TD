@@ -160,8 +160,6 @@ end
 
 function ShowHighscoreMessage(playerID, percentile)
     if GameRules.sandBoxEnabled then return end
-
-    GameRules:SendCustomMessage("#etd_highscore_message", 0, playerID)
     
     -- Possible names: firstblood, doublekill, triplekill, rampage, multikill_generic
     local name = "doublekill"
@@ -178,6 +176,8 @@ function ShowHighscoreMessage(playerID, percentile)
 
     Notifications:ClearTop(playerID)
     Notifications:Top(playerID, {text = "#etd_highscore_new", class = "NewHighscore", duration = 5})
+
+    GameRules:SendCustomMessage("#etd_highscore_message", playerID, 0)
 end
 
 function ShowFirstHighscoreMessage(playerID)
@@ -188,5 +188,6 @@ function ShowFirstHighscoreMessage(playerID)
 
     Notifications:ClearTop(playerID)
     Notifications:Top(playerID, {text = "#etd_highscore_new", class = "NewHighscore", duration = 5})
-    GameRules:SendCustomMessage("#etd_highscore_message", 0, playerID)
+
+    GameRules:SendCustomMessage("#etd_highscore_message", playerID, 0)
 end
