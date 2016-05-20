@@ -5575,9 +5575,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "45"
-	    "AttackDamageMax"           "45"
-	    "Damage"                    "45"  
+	    "AttackDamageMin"           "50"
+	    "AttackDamageMax"           "50"
+	    "Damage"                    "50"  
 	    "AOE_Full"                  "225"
 	    "AOE_Half"                  "450"
 	    "AttackRange"               "900"
@@ -5677,9 +5677,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "315"
-	    "AttackDamageMax"           "315"
-	    "Damage"                    "315"  
+	    "AttackDamageMin"           "350"
+	    "AttackDamageMax"           "350"
+	    "Damage"                    "350"  
 	    "AOE_Full"                  "225"
 	    "AOE_Half"                  "450"
 	    "AttackRange"               "900"
@@ -5767,9 +5767,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "22000"
-	    "AttackDamageMax"           "22000"
-	    "Damage"                    "22000"  
+	    "AttackDamageMin"           "25000"
+	    "AttackDamageMax"           "25000"
+	    "Damage"                    "25000"  
 	    "AOE_Full"                  "225"
 	    "AOE_Half"                  "450"
 	    "AttackRange"               "900"
@@ -5853,9 +5853,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "2200"
-	    "AttackDamageMax"           "2200"
-	    "Damage"                    "2200"  
+	    "AttackDamageMin"           "2500"
+	    "AttackDamageMax"           "2500"
+	    "Damage"                    "2500"  
 	    "AOE_Full"                  "225"
 	    "AOE_Half"                  "450"
 	    "AttackRange"               "900"
@@ -14556,7 +14556,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "0.66"
-	    "ProjectileModel"           "particles/custom/towers/tidal/attack.vpcf"  
+	    "ProjectileModel"           "particles/custom/towers/tidal/attack2.vpcf"  
 	    "ProjectileSpeed"        "3000"
 	
 	    "Model"             "models/heroes/siren/siren.vmdl"
@@ -14649,7 +14649,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "0.66"
-	    "ProjectileModel"           "particles/custom/towers/tidal/attack.vpcf"  
+	    "ProjectileModel"           "particles/custom/towers/tidal/attack2.vpcf"  
 	    "ProjectileSpeed"        "3000"
 	
 	    "Model"             "models/heroes/siren/siren.vmdl"
