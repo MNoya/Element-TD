@@ -10,7 +10,7 @@ function Tooltips:Validate()
     local languages = {"schinese","russian","thai"}
         
     for _,language in pairs(languages) do
-        Tooltips.file = io.open("../../dota_addons/element_td/scripts/missing_tooltips_"..language..".txt", 'w')
+        Tooltips.file = io.open("../../dota_addons/element_td/tooltips/missing_tooltips_"..language..".txt", 'w')
         Tooltips:Check(Tooltips.resourceTooltips, "resource/addon_"..language..".txt")
         Tooltips:Check(Tooltips.panoramaTooltips, "panorama/localization/addon_"..language..".txt")
         Tooltips.file:close()
@@ -70,7 +70,6 @@ function Tooltips:Check(mainFile, fileName)
     end
 
     local maxValueLen = 0
-    Tooltips:write(separator)
     --[[if #diffValues > 0 then
         Tooltips:write("Different Number Values:")
         table.sort(diffValues, function(a,b) return a.key < b.key end)

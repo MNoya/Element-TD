@@ -1,0 +1,18 @@
+Checking resource/addon_schinese.txt
+Missing Keys:
+        "DOTA_Tooltip_ability_item_buy_lumber"                         "Buy Lumber"
+        "DOTA_Tooltip_ability_item_buy_lumber_Description"             "Trade <font color='#00BFFF'>1 Pure Essence</font> for <font color='#008000'>1 Lumber</font>\nUnlocks the 12th Element.\n<font color='#F0BA36'>"
+        "DOTA_Tooltip_ability_item_buy_lumber_disabled"                "Buy Lumber Disabled"
+        "DOTA_Tooltip_ability_item_buy_lumber_disabled_Description"    "Trade <font color='#00BFFF'>1 Pure Essence</font> for <font color='#008000'>1 Lumber</font>\n<font color='#F0BA36'>Requires: </font>Three Level 3 Elements\n\nUnlocks the 12th Element."
+        "etd_lumber_buy_warning"                                       "You need to have at least lvl 3 on 3 elements before purchase."
+        "etd_need_more_essence"                                        "Need more essence."
+Total of 6 Missing keys on resource/addon_schinese.txt!
+------------------------------------------
+
+Checking panorama/localization/addon_schinese.txt
+Missing Keys:
+        "abilities_challenge"                "Challenge"
+        "abilities_challenge_description"    "Each wave has two random abilities."
+Total of 2 Missing keys on panorama/localization/addon_schinese.txt!
+------------------------------------------
+
