@@ -74,23 +74,10 @@ function ShowWaveBreakTimeMessage(playerID, waveNumber, breakTime, duration)
     local elem_color = rgbToHex(GetElementColor(element))
     local abilityName = creepsKV[WAVE_CREEPS[waveNumber]].CreepAbility2
 
-    local abilityName2
-    if CHALLENGE_MODE and abilityName ~= "creep_ability_boss" then
-        abilityName = AbilitiesMode.ChallengeModeAbilities[waveNumber][1]
-        abilityName2 = AbilitiesMode.ChallengeModeAbilities[waveNumber][2]
-
-        Notifications:Top(playerID, {text=firstToUpper(element), style={["margin"]="-15px 0px 0px 0",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, duration=duration})
-        Notifications:Top(playerID, {text="#"..abilityName, style={["margin"]="-15px 15px 0px 15px",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, continue=true, duration=duration})    
+    Notifications:Top(playerID, {text=firstToUpper(element), style={["margin"]="-15px 15px 0px 15px",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, duration=duration})
+    if abilityName and abilityName ~= "" then
+        Notifications:Top(playerID, {text="#"..abilityName, style={["margin"]="-15px 15px 0px 0px",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, continue=true, duration=duration})    
         Notifications:Top(playerID, {ability=abilityName, style={["border-radius"]="48px", border="2px solid black", width="48px", height="48px", ["margin"]="-13px 0px 0px 0px"}, continue=true, duration=duration})
-        Notifications:Top(playerID, {text="#"..abilityName2, style={["margin"]="-15px 15px 0px 15px",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, continue=true, duration=duration})    
-        Notifications:Top(playerID, {ability=abilityName2, style={["border-radius"]="48px", border="2px solid black", width="48px", height="48px", ["margin"]="-13px 0px 0px 0px"}, continue=true, duration=duration})
-
-    else
-        Notifications:Top(playerID, {text=firstToUpper(element), style={["margin"]="-15px 15px 0px 15px",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, duration=duration})
-        if abilityName and abilityName ~= "" then
-            Notifications:Top(playerID, {text="#"..abilityName, style={["margin"]="-15px 15px 0px 0px",["font-size"]="30px",color=elem_color, ["font-weight"]="bold"}, continue=true, duration=duration})    
-            Notifications:Top(playerID, {ability=abilityName, style={["border-radius"]="48px", border="2px solid black", width="48px", height="48px", ["margin"]="-13px 0px 0px 0px"}, continue=true, duration=duration})
-        end
     end
 end
 
@@ -117,28 +104,15 @@ function ShowWaveSpawnMessage(playerID, waveNumber, duration)
 
     local element = string.gsub(creepsKV[WAVE_CREEPS[waveNumber]].CreepAbility1, "_armor", "") or "composite"
     local elem_color = rgbToHex(GetElementColor(element))
-    local abilityName = creepsKV[WAVE_CREEPS[waveNumber]].CreepAbility2
+    local abilityName = creepsKV[WAVE_CREEPS[waveNumber]].Ability2
 
-    local abilityName2
-    if CHALLENGE_MODE and abilityName ~= "creep_ability_boss" then
-        abilityName = AbilitiesMode.ChallengeModeAbilities[waveNumber][1]
-        abilityName2 = AbilitiesMode.ChallengeModeAbilities[waveNumber][2]
-    
-        Notifications:Top(playerID, {text=firstToUpper(element), style={["margin"]="0px 15px 0px 15px",color=elem_color}, class="WaveMessageChallenge", duration=duration})
-        Notifications:Top(playerID, {text="#"..abilityName, style={["margin"]="0px 15px 0px 15px",color=elem_color}, class="WaveMessageChallenge", continue=true, duration=duration})    
-        Notifications:Top(playerID, {ability=abilityName, style={["border-radius"]="64px", border="2px solid black"; width="60px", height="60px"}, continue=true, duration=duration})
-        Notifications:Top(playerID, {text="#"..abilityName2, style={["margin"]="0px 15px 0px 15px",color=elem_color}, class="WaveMessageChallenge", continue=true, duration=duration})    
-        Notifications:Top(playerID, {ability=abilityName2, style={["border-radius"]="64px", border="2px solid black"; width="60px", height="60px"}, continue=true, duration=duration})
-    else
-
-        Notifications:Top(playerID, {text=firstToUpper(element), style={["margin"]="0px 15px 0px 15px",color=elem_color}, class="WaveMessage", continue=true, duration=duration})
-        if abilityName and abilityName ~= "" then
-            if abilityName ~= "creep_ability_boss" then
-                Notifications:Top(playerID, {text="#"..abilityName, style={["margin-right"]="15px",color=elem_color}, class="WaveMessage", continue=true, duration=duration})    
-                Notifications:Top(playerID, {ability=abilityName, style={["border-radius"]="64px", border="2px solid black"; width="60px", height="60px"}, continue=true, duration=duration})
-            else
-                Notifications:Top(playerID, {image="file://{images}/spellicons/osfrog.png", style={width="48px", height="48px", ["margin"]="-13px 0px 0px 0px"}, continue=true, duration=duration})
-            end
+    Notifications:Top(playerID, {text=firstToUpper(element), style={["margin"]="0px 15px 0px 15px",color=elem_color}, class="WaveMessage", continue=true, duration=duration})
+    if abilityName and abilityName ~= "" then
+        if abilityName ~= "creep_ability_boss" then
+            Notifications:Top(playerID, {text="#"..abilityName, style={["margin-right"]="15px",color=elem_color}, class="WaveMessage", continue=true, duration=duration})    
+            Notifications:Top(playerID, {ability=abilityName, style={["border-radius"]="64px", border="2px solid black"; width="60px", height="60px"}, continue=true, duration=duration})
+        else
+            Notifications:Top(playerID, {image="file://{images}/spellicons/osfrog.png", style={width="48px", height="48px", ["margin"]="-13px 0px 0px 0px"}, continue=true, duration=duration})
         end
     end
 end
