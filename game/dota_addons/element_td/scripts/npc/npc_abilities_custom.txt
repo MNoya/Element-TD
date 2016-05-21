@@ -763,6 +763,7 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"MaxLevel"						"1"
 		"AbilityTextureName"			"dark_seer_surge"
 		"AbilityCooldown"				"3"
@@ -796,7 +797,9 @@
 			"creep_haste_delay"
 			{
 				"IsHidden"		"1"
+				"IsPurgable"    "0"
 				"Duration"		"%interval"
+				"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 				"OnDestroy"
 				{
 					"RunScript"
@@ -992,7 +995,7 @@
 	
 				"States"
 				{
-					"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED" //USED TO BE INVULNERABLE, hopefully nothing breaks
 					"MODIFIER_STATE_MAGIC_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}

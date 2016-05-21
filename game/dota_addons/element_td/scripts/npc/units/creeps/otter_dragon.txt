@@ -27,10 +27,10 @@
     "VisionDaytimeRange"        "1200"
     "VisionNighttimeRange"        "800"
     "Model"        "models/courier/otter_dragon/otter_dragon.vmdl"
-    "ModelScale"        "2.4"
+    "ModelScale"        "1.2"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"     "CreepBulky"
-    "Ability1"        "nature_armor"
-    "Ability2"        "creep_ability_bulky"
+    "CreepAbility1"        "nature_armor"
+    "CreepAbility2"        "creep_ability_bulky"
 }

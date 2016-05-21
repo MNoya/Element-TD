@@ -82,7 +82,7 @@ function Wave:SpawnWave()
 		if playerData.health == 0 then
 			return nil
 		end
-		local entity = SpawnEntity(WAVE_CREEPS[self.waveNumber], self.playerID, startPos)
+		local entity = SpawnEntity(WAVE_CREEPS[self.waveNumber], self.playerID, startPos, self.waveNumber)
 		if entity then
 			self:RegisterCreep(entity:entindex())
 			entity:SetForwardVector(Vector(0, -1, 0))
@@ -106,10 +106,23 @@ function Wave:SpawnWave()
 				entity.waveNumber = playerData.bossWaves
 
 				-- Choose an ability in sequence
-				creepBossSequence = (creepBossSequence % numAbilities) + 1
-			    local abilityName = creepBossAbilities[creepBossSequence]
-			    entity.random_ability = abilityName
-			    entity.scriptObject.ability = AddAbility(entity, abilityName)
+				if CHALLENGE_MODE then
+					creepBossAbilities = CreepBoss:GetAbilityList()
+
+					local ability1 = table.remove(creepBossAbilities, math.random(#creepBossAbilities))
+					local ability2 = table.remove(creepBossAbilities, math.random(#creepBossAbilities))
+
+					entity.scriptObject.abilities = {}
+					entity.scriptObject.abilities[ability1] = AddAbility(entity, ability1) 
+					entity.scriptObject.abilities[ability2] = AddAbility(entity, ability2) 
+					entity.random_abilities = {[ability1] = true, [ability2] = true}
+				else
+					creepBossSequence = (creepBossSequence % numAbilities) + 1
+					local abilityName = creepBossAbilities[creepBossSequence]
+					entity.random_abilities = {[abilityName] = true} 
+					entity.scriptObject.abilities[abilityName] = AddAbility(entity, abilityName)
+				end
+				
 			end
 
 			-- Set bounty
@@ -155,6 +168,11 @@ function Wave:SpawnWave()
 
 					-- Update UI for dead players
 					StartBreakTime_DeadPlayers(self.playerID, GetPlayerDifficulty(self.playerID):GetWaveBreakTime(playerData.nextWave), playerData.nextWave)
+				else
+					if self.waveNumber ~= WAVE_COUNT then
+						-- Start clock timer on the UI
+						CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(self.playerID), "etd_start_wave_clock", {threshold = FAST_THRESHOLD})
+					end
 				end
 				return nil
 			else

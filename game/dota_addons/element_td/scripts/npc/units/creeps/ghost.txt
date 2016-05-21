@@ -31,6 +31,6 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"    "CreepRegen"
-    "Ability1"        "composite_armor"
-    "Ability2"        "creep_ability_regen"
+    "CreepAbility1"        "composite_armor"
+    "CreepAbility2"        "creep_ability_regen"
 }

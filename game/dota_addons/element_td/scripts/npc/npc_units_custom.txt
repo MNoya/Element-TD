@@ -484,8 +484,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"    "CreepRegen"
-	    "Ability1"        "dark_armor"
-	    "Ability2"        "creep_ability_regen"
+	    "CreepAbility1"        "dark_armor"
+	    "CreepAbility2"        "creep_ability_regen"
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_pudge
@@ -529,12 +529,12 @@
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
 	    "Model"        "models/heroes/terrorblade/demon.vmdl"
-	    "ModelScale"        "1.3"
+	    "ModelScale"        "0.65"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepBulky"
-	    "Ability1"        "dark_armor"
-	    "Ability2"        "creep_ability_bulky"
+	    "CreepAbility1"        "dark_armor"
+	    "CreepAbility2"        "creep_ability_bulky"
 	}
 	"battleship"
 	{
@@ -569,8 +569,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepMechanical"
-	    "Ability1"        "water_armor"
-	    "Ability2"        "creep_ability_mechanical"
+	    "CreepAbility1"        "water_armor"
+	    "CreepAbility2"        "creep_ability_mechanical"
 	}
 	"black_wyvern"
 	{
@@ -604,8 +604,8 @@
 	    "ModelScale"        "0.8"
 	    "BaseClass"        "npc_dota_creature"
 	    "ScriptClass"        "CreepHeal"
-	    "Ability1"        "dark_armor"
-	    "Ability2"        "creep_ability_heal"
+	    "CreepAbility1"        "dark_armor"
+	    "CreepAbility2"        "creep_ability_heal"
 	}
 	"blazing_axman"
 	{
@@ -640,8 +640,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepHeal"
-	    "Ability1"        "fire_armor"
-	    "Ability2"        "creep_ability_heal"
+	    "CreepAbility1"        "fire_armor"
+	    "CreepAbility2"        "creep_ability_heal"
 	}
 	"centaur_warchief"
 	{
@@ -676,8 +676,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepFast"
-	    "Ability1"        "earth_armor"
-	    "Ability2"         "creep_ability_fast"
+	    "CreepAbility1"        "earth_armor"
+	    "CreepAbility2"         "creep_ability_fast"
 	    "Creature"
 	    {
 	        "AttachWearables" // Unbroken Stallion
@@ -725,8 +725,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"    "CreepRegen"
-	    "Ability1"        "fire_armor"
-	    "Ability2"        "creep_ability_regen"
+	    "CreepAbility1"        "fire_armor"
+	    "CreepAbility2"        "creep_ability_regen"
 	}
 	"clock_wanderer"
 	{
@@ -761,8 +761,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepTemporal"
-	    "Ability1"        "composite_armor"
-	    "Ability2"        "creep_ability_time_lapse"
+	    "CreepAbility1"        "composite_armor"
+	    "CreepAbility2"        "creep_ability_time_lapse"
 	
 	    "Creature"
 	    {
@@ -808,8 +808,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepTemporal"
-	    "Ability1"        "fire_armor"
-	    "Ability2"        "creep_ability_time_lapse"
+	    "CreepAbility1"        "fire_armor"
+	    "CreepAbility2"        "creep_ability_time_lapse"
 	}
 	"deathbringer"
 	{
@@ -840,12 +840,12 @@
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
 	    "Model"        "models/items/courier/deathbringer/deathbringer.vmdl"
-	    "ModelScale"        "2.4"
+	    "ModelScale"        "1.2"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepBulky"
-	    "Ability1"        "fire_armor"
-	    "Ability2"        "creep_ability_bulky"
+	    "CreepAbility1"        "fire_armor"
+	    "CreepAbility2"        "creep_ability_bulky"
 	}
 	"death_gazer"
 	{
@@ -876,12 +876,12 @@
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
 	    "Model"        "models/creeps/neutral_creeps/n_creep_thunder_lizard/n_creep_thunder_lizard_small.vmdl"
-	    "ModelScale"        "1.0"
+	    "ModelScale"        "0.5"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepBulky"
-	    "Ability1"        "composite_armor"
-	    "Ability2"        "creep_ability_bulky"
+	    "CreepAbility1"        "composite_armor"
+	    "CreepAbility2"        "creep_ability_bulky"
 	}
 	"desert_rogue"
 	{
@@ -916,8 +916,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepHeal"
-	    "Ability1"        "earth_armor"
-	    "Ability2"        "creep_ability_heal"
+	    "CreepAbility1"        "earth_armor"
+	    "CreepAbility2"        "creep_ability_heal"
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_juggernaut
@@ -963,8 +963,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepMechanical"
-	    "Ability1"        "dark_armor"
-	    "Ability2"        "creep_ability_mechanical"
+	    "CreepAbility1"        "dark_armor"
+	    "CreepAbility2"        "creep_ability_mechanical"
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_night_stalker
@@ -1010,8 +1010,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepUndead"
-	    "Ability1"        "earth_armor"
-	    "Ability2"        "creep_ability_undead"
+	    "CreepAbility1"        "earth_armor"
+	    "CreepAbility2"        "creep_ability_undead"
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_life_stealer
@@ -1056,8 +1056,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepTemporal"
-	    "Ability1"        "earth_armor"
-	    "Ability2"        "creep_ability_time_lapse"
+	    "CreepAbility1"        "earth_armor"
+	    "CreepAbility2"        "creep_ability_time_lapse"
 	}
 	"elf_soldier"
 	{
@@ -1092,8 +1092,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepFast"
-	    "Ability1"        "nature_armor"
-	    "Ability2"        "creep_ability_fast"
+	    "CreepAbility1"        "nature_armor"
+	    "CreepAbility2"        "creep_ability_fast"
 	}
 	"ember_spirit"
 	{
@@ -1128,8 +1128,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepVengeance"
-	    "Ability1"        "fire_armor"
-	    "Ability2"        "creep_ability_vengeance"
+	    "CreepAbility1"        "fire_armor"
+	    "CreepAbility2"        "creep_ability_vengeance"
 	}
 	"enigma"
 	{
@@ -1163,7 +1163,7 @@
 	    "ModelScale"        "0.9"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
-	    "Ability1"        "dark_armor"
+	    "CreepAbility1"        "dark_armor"
 	    "Creature"
 	    {
 	        "AttachWearables"
@@ -1205,8 +1205,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepTemporal"
-	    "Ability1"        "dark_armor"
-	    "Ability2"        "creep_ability_time_lapse"
+	    "CreepAbility1"        "dark_armor"
+	    "CreepAbility2"        "creep_ability_time_lapse"
 	
 	    "Creature"
 	    {
@@ -1253,8 +1253,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepUndead"
-	    "Ability1"        "fire_armor"
-	    "Ability2"        "creep_ability_undead"
+	    "CreepAbility1"        "fire_armor"
+	    "CreepAbility2"        "creep_ability_undead"
 	}
 	"flying_imp"
 	{
@@ -1288,7 +1288,7 @@
 	    "ModelScale"        "1"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
-	    "Ability1"        "water_armor"
+	    "CreepAbility1"        "water_armor"
 	}
 	"forest_guardian"
 	{
@@ -1322,7 +1322,7 @@
 	    "ModelScale"        "1.3"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
-	    "Ability1"        "nature_armor"
+	    "CreepAbility1"        "nature_armor"
 	
 	    "Creature"
 	    {
@@ -1370,8 +1370,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepVengeance"
-	    "Ability1"        "nature_armor"
-	    "Ability2"        "creep_ability_vengeance"
+	    "CreepAbility1"        "nature_armor"
+	    "CreepAbility2"        "creep_ability_vengeance"
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_necrolyte
@@ -1416,8 +1416,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepMechanical"
-	    "Ability1"        "nature_armor"
-	    "Ability2"        "creep_ability_mechanical"
+	    "CreepAbility1"        "nature_armor"
+	    "CreepAbility2"        "creep_ability_mechanical"
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_elder_titan
@@ -1463,8 +1463,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"    "CreepRegen"
-	    "Ability1"        "composite_armor"
-	    "Ability2"        "creep_ability_regen"
+	    "CreepAbility1"        "composite_armor"
+	    "CreepAbility2"        "creep_ability_regen"
 	}
 	"goblin_shredder"
 	{
@@ -1499,8 +1499,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepMechanical"
-	    "Ability1"        "composite_armor"
-	    "Ability2"        "creep_ability_mechanical"
+	    "CreepAbility1"        "composite_armor"
+	    "CreepAbility2"        "creep_ability_mechanical"
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_shredder
@@ -1548,8 +1548,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepMechanical"
-	    "Ability1"        "light_armor"
-	    "Ability2"        "creep_ability_mechanical"
+	    "CreepAbility1"        "light_armor"
+	    "CreepAbility2"        "creep_ability_mechanical"
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_gyrocopter
@@ -1596,8 +1596,8 @@
 	    "SoundSet"        ""
 	    "ScriptClass"    "CreepBoss"
 	    "AbilityLayout"    "4"
-	    "Ability1"        "composite_armor"
-	    "Ability2"        "creep_ability_boss"
+	    "CreepAbility1"        "composite_armor"
+	    "CreepAbility2"        "creep_ability_boss"
 	    "Ability3"        "icefrog_particles"
 	}
 	"immortal"
@@ -1633,8 +1633,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepUndead"
-	    "Ability1"        "light_armor"
-	    "Ability2"        "creep_ability_undead"
+	    "CreepAbility1"        "light_armor"
+	    "CreepAbility2"        "creep_ability_undead"
 	}
 	"inferno_golem"
 	{
@@ -1669,8 +1669,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepMechanical"
-	    "Ability1"        "fire_armor"
-	    "Ability2"        "creep_ability_mechanical"
+	    "CreepAbility1"        "fire_armor"
+	    "CreepAbility2"        "creep_ability_mechanical"
 	}
 	"ivory_beast"
 	{
@@ -1705,8 +1705,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepVengeance"
-	    "Ability1"        "light_armor"
-	    "Ability2"        "creep_ability_vengeance"
+	    "CreepAbility1"        "light_armor"
+	    "CreepAbility2"        "creep_ability_vengeance"
 	}
 	"lava_spawn"
 	{
@@ -1740,8 +1740,8 @@
 	    "ModelScale"        "0.9"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
-	    "Ability1"        "fire_armor"
-	    "Ability2"        ""
+	    "CreepAbility1"        "fire_armor"
+	    "CreepAbility2"        ""
 	    "Ability3"        "lava_spawn_particles"
 	}
 	"lightning_angel"
@@ -1776,8 +1776,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepFast"
-	    "Ability1"        "light_armor"
-	    "Ability2"        "creep_ability_fast"
+	    "CreepAbility1"        "light_armor"
+	    "CreepAbility2"        "creep_ability_fast"
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_skywrath_mage
@@ -1820,12 +1820,12 @@
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
 	    "Model"        "models/creeps/neutral_creeps/n_creep_ogre_med/n_creep_ogre_med.vmdl"
-	    "ModelScale"        "1.6"
+	    "ModelScale"        "0.8"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepBulky"
-	    "Ability1"        "earth_armor"
-	    "Ability2"        "creep_ability_bulky"
+	    "CreepAbility1"        "earth_armor"
+	    "CreepAbility2"        "creep_ability_bulky"
 	}
 	"mummy"
 	{
@@ -1860,8 +1860,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepVengeance"
-	    "Ability1"        "composite_armor"
-	    "Ability2"        "creep_ability_vengeance"
+	    "CreepAbility1"        "composite_armor"
+	    "CreepAbility2"        "creep_ability_vengeance"
 	}
 	"murloc"
 	{
@@ -1896,8 +1896,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepFast"
-	    "Ability1"        "water_armor"
-	    "Ability2"        "creep_ability_fast"
+	    "CreepAbility1"        "water_armor"
+	    "CreepAbility2"        "creep_ability_fast"
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_slark
@@ -1943,8 +1943,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepVengeance"
-	    "Ability1"        "dark_armor"
-	    "Ability2"        "creep_ability_vengeance"
+	    "CreepAbility1"        "dark_armor"
+	    "CreepAbility2"        "creep_ability_vengeance"
 	}
 	"nether_spider"
 	{
@@ -1979,8 +1979,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepFast"
-	    "Ability1"        "dark_armor"
-	    "Ability2"        "creep_ability_fast"
+	    "CreepAbility1"        "dark_armor"
+	    "CreepAbility2"        "creep_ability_fast"
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_weaver
@@ -2026,8 +2026,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepVengeance"
-	    "Ability1"        "water_armor"
-	    "Ability2"        "creep_ability_vengeance"
+	    "CreepAbility1"        "water_armor"
+	    "CreepAbility2"        "creep_ability_vengeance"
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_puck
@@ -2067,12 +2067,12 @@
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
 	    "Model"        "models/courier/otter_dragon/otter_dragon.vmdl"
-	    "ModelScale"        "2.4"
+	    "ModelScale"        "1.2"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepBulky"
-	    "Ability1"        "nature_armor"
-	    "Ability2"        "creep_ability_bulky"
+	    "CreepAbility1"        "nature_armor"
+	    "CreepAbility2"        "creep_ability_bulky"
 	}
 	"phantom_lancer"
 	{
@@ -2107,8 +2107,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepTemporal"
-	    "Ability1"        "light_armor"
-	    "Ability2"        "creep_ability_time_lapse"
+	    "CreepAbility1"        "light_armor"
+	    "CreepAbility2"        "creep_ability_time_lapse"
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_phantom_lancer
@@ -2154,8 +2154,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepHeal"
-	    "Ability1"        "light_armor"
-	    "Ability2"        "creep_ability_heal"
+	    "CreepAbility1"        "light_armor"
+	    "CreepAbility2"        "creep_ability_heal"
 	}
 	"rock_monster"
 	{
@@ -2190,8 +2190,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepMechanical"
-	    "Ability1"        "earth_armor"
-	    "Ability2"        "creep_ability_mechanical"
+	    "CreepAbility1"        "earth_armor"
+	    "CreepAbility2"        "creep_ability_mechanical"
 	}
 	"roshan"
 	{
@@ -2226,8 +2226,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepHeal"
-	    "Ability1"        "composite_armor"
-	    "Ability2"        "creep_ability_heal"
+	    "CreepAbility1"        "composite_armor"
+	    "CreepAbility2"        "creep_ability_heal"
 	}
 	"satyr"
 	{
@@ -2262,8 +2262,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepFast"
-	    "Ability1"        "composite_armor"
-	    "Ability2"        "creep_ability_fast"
+	    "CreepAbility1"        "composite_armor"
+	    "CreepAbility2"        "creep_ability_fast"
 	}
 	"sea_phantom"
 	{
@@ -2298,8 +2298,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepTemporal"
-	    "Ability1"        "water_armor"
-	    "Ability2"        "creep_ability_time_lapse"
+	    "CreepAbility1"        "water_armor"
+	    "CreepAbility2"        "creep_ability_time_lapse"
 	}
 	"shifting_treant"
 	{
@@ -2334,8 +2334,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepTemporal"
-	    "Ability1"        "nature_armor"
-	    "Ability2"        "creep_ability_time_lapse"
+	    "CreepAbility1"        "nature_armor"
+	    "CreepAbility2"        "creep_ability_time_lapse"
 	}
 	"shroomling"
 	{
@@ -2370,8 +2370,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepUndead"
-	    "Ability1"        "nature_armor"
-	    "Ability2"        "creep_ability_undead"
+	    "CreepAbility1"        "nature_armor"
+	    "CreepAbility2"        "creep_ability_undead"
 	}
 	"skeleton"
 	{
@@ -2406,8 +2406,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepUndead"
-	    "Ability1"        "dark_armor"
-	    "Ability2"        "creep_ability_undead"
+	    "CreepAbility1"        "dark_armor"
+	    "CreepAbility2"        "creep_ability_undead"
 	}
 	"snowy_owl"
 	{
@@ -2441,7 +2441,7 @@
 	    "ModelScale"        "1"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
-	    "Ability1"        "light_armor"
+	    "CreepAbility1"        "light_armor"
 	}
 	"solar_hellion"
 	{
@@ -2476,8 +2476,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"    "CreepRegen"
-	    "Ability1"        "light_armor"
-	    "Ability2"        "creep_ability_regen"
+	    "CreepAbility1"        "light_armor"
+	    "CreepAbility2"        "creep_ability_regen"
 	}
 	"spirit_bear"
 	{
@@ -2512,8 +2512,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"    "CreepRegen"
-	    "Ability1"        "earth_armor"
-	    "Ability2"        "creep_ability_regen"
+	    "CreepAbility1"        "earth_armor"
+	    "CreepAbility2"        "creep_ability_regen"
 	}
 	"stoneboar"
 	{
@@ -2547,7 +2547,7 @@
 	    "ModelScale"        "0.7"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
-	    "Ability1"        "earth_armor"
+	    "CreepAbility1"        "earth_armor"
 	}
 	"storm_spirit"
 	{
@@ -2578,12 +2578,12 @@
 	    "VisionDaytimeRange"        "1200"
 	    "VisionNighttimeRange"        "800"
 	    "Model"        "models/heroes/storm_spirit/storm_spirit.vmdl"
-	    "ModelScale"        "1.8"
+	    "ModelScale"        "0.9"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepBulky"
-	    "Ability1"        "water_armor"
-	    "Ability2"        "creep_ability_bulky"
+	    "CreepAbility1"        "water_armor"
+	    "CreepAbility2"        "creep_ability_bulky"
 	
 	    "Creature"
 	    {
@@ -2628,8 +2628,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepHeal"
-	    "Ability1"        "water_armor"
-	    "Ability2"        "creep_ability_heal"
+	    "CreepAbility1"        "water_armor"
+	    "CreepAbility2"        "creep_ability_heal"
 	
 	    "Creature"
 	    {
@@ -2675,7 +2675,7 @@
 	    "ModelScale"        "0.9"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
-	    "Ability1"        "composite_armor"
+	    "CreepAbility1"        "composite_armor"
 	}
 	"torchbearer"
 	{
@@ -2710,8 +2710,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepFast"
-	    "Ability1"        "fire_armor"
-	    "Ability2"        "creep_ability_fast"
+	    "CreepAbility1"        "fire_armor"
+	    "CreepAbility2"        "creep_ability_fast"
 	}
 	"treant"
 	{
@@ -2746,8 +2746,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"    "CreepRegen"
-	    "Ability1"        "nature_armor"
-	    "Ability2"        "creep_ability_regen"
+	    "CreepAbility1"        "nature_armor"
+	    "CreepAbility2"        "creep_ability_regen"
 	}
 	"tribal_priest"
 	{
@@ -2782,8 +2782,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepHeal"
-	    "Ability1"        "nature_armor"
-	    "Ability2"        "creep_ability_heal"
+	    "CreepAbility1"        "nature_armor"
+	    "CreepAbility2"        "creep_ability_heal"
 	}
 	"troll"
 	{
@@ -2817,7 +2817,7 @@
 	    "ModelScale"        "1.0"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
-	    "Ability1"        "nature_armor"
+	    "CreepAbility1"        "nature_armor"
 	}
 	"turtle_rider"
 	{
@@ -2852,8 +2852,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepUndead"
-	    "Ability1"        "water_armor"
-	    "Ability2"        "creep_ability_undead"
+	    "CreepAbility1"        "water_armor"
+	    "CreepAbility2"        "creep_ability_undead"
 	}
 	"void_incarnate"
 	{
@@ -2888,8 +2888,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"        "CreepUndead"
-	    "Ability1"        "composite_armor"
-	    "Ability2"        "creep_ability_undead"
+	    "CreepAbility1"        "composite_armor"
+	    "CreepAbility2"        "creep_ability_undead"
 	    "Creature"
 	    {
 	        "AttachWearables"
@@ -2932,8 +2932,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepRegen"
-	    "Ability1"        "water_armor"
-	    "Ability2"        "creep_ability_regen"
+	    "CreepAbility1"        "water_armor"
+	    "CreepAbility2"        "creep_ability_regen"
 	}
 	"wolf"
 	{
@@ -2968,8 +2968,8 @@
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
 	    "ScriptClass"     "CreepVengeance"
-	    "Ability1"        "earth_armor"
-	    "Ability2"        "creep_ability_vengeance"
+	    "CreepAbility1"        "earth_armor"
+	    "CreepAbility2"        "creep_ability_vengeance"
 	}
 	"zombie"
 	{
@@ -3003,7 +3003,7 @@
 	    "ModelScale"        "1.15"
 	    "BaseClass"        "npc_dota_creature"
 	    "SoundSet"        ""
-	    "Ability1"        "dark_armor"
+	    "CreepAbility1"        "dark_armor"
 	}
 	"dark_elemental1"
 	{
@@ -5575,9 +5575,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "45"
-	    "AttackDamageMax"           "45"
-	    "Damage"                    "45"  
+	    "AttackDamageMin"           "50"
+	    "AttackDamageMax"           "50"
+	    "Damage"                    "50"  
 	    "AOE_Full"                  "225"
 	    "AOE_Half"                  "450"
 	    "AttackRange"               "900"
@@ -5677,9 +5677,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "315"
-	    "AttackDamageMax"           "315"
-	    "Damage"                    "315"  
+	    "AttackDamageMin"           "350"
+	    "AttackDamageMax"           "350"
+	    "Damage"                    "350"  
 	    "AOE_Full"                  "225"
 	    "AOE_Half"                  "450"
 	    "AttackRange"               "900"
@@ -5767,9 +5767,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "22000"
-	    "AttackDamageMax"           "22000"
-	    "Damage"                    "22000"  
+	    "AttackDamageMin"           "25000"
+	    "AttackDamageMax"           "25000"
+	    "Damage"                    "25000"  
 	    "AOE_Full"                  "225"
 	    "AOE_Half"                  "450"
 	    "AttackRange"               "900"
@@ -5853,9 +5853,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "2200"
-	    "AttackDamageMax"           "2200"
-	    "Damage"                    "2200"  
+	    "AttackDamageMin"           "2500"
+	    "AttackDamageMax"           "2500"
+	    "Damage"                    "2500"  
 	    "AOE_Full"                  "225"
 	    "AOE_Half"                  "450"
 	    "AttackRange"               "900"
@@ -14556,7 +14556,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "0.66"
-	    "ProjectileModel"           "particles/custom/towers/tidal/attack.vpcf"  
+	    "ProjectileModel"           "particles/custom/towers/tidal/attack2.vpcf"  
 	    "ProjectileSpeed"        "3000"
 	
 	    "Model"             "models/heroes/siren/siren.vmdl"
@@ -14649,7 +14649,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "0.66"
-	    "ProjectileModel"           "particles/custom/towers/tidal/attack.vpcf"  
+	    "ProjectileModel"           "particles/custom/towers/tidal/attack2.vpcf"  
 	    "ProjectileSpeed"        "3000"
 	
 	    "Model"             "models/heroes/siren/siren.vmdl"

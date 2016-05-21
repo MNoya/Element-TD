@@ -31,6 +31,6 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"        "CreepMechanical"
-    "Ability1"        "water_armor"
-    "Ability2"        "creep_ability_mechanical"
+    "CreepAbility1"        "water_armor"
+    "CreepAbility2"        "creep_ability_mechanical"
 }

@@ -103,6 +103,9 @@
         "length_express_description"        "A quicker game with less waves."
         "express"                           "Express"
 
+        "abilities_challenge"               "Challenge"
+        "abilities_challenge_description"   "Each wave has two random abilities." 
+
         "DOTA_GoodGuys"                             "Summer" //Lime
         "DOTA_BadGuys"                              "Autumn" //Orange
         "DOTA_Custom1"                              "Temple" //Pink

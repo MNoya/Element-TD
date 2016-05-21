@@ -21,6 +21,7 @@ function CreepBulky:OnSpawned()
     creep:SetMaxHealth(health * health_multiplier)
     creep:SetBaseMaxHealth(health * health_multiplier)
     creep:SetHealth(creep:GetMaxHealth() * health_multiplier)
+    creep:SetModelScale(creep:GetModelScale() * 2)
 end
 
 RegisterCreepClass(CreepBulky, CreepBulky.className)

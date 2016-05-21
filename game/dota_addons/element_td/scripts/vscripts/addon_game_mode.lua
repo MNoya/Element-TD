@@ -38,6 +38,7 @@ local requires = {
     "mechanics/orbs",
     "mechanics/saves",
     "mechanics/players",
+    "mechanics/abilities_mode",
     
     -- utils
     "util/util",
@@ -110,6 +111,7 @@ local requires = {
     "creeps/bulky",
     "creeps/vengeance",
     "creeps/boss",
+    "creeps/multi_class_wrapper",
 
     -- co-op mode scripts
     "coop/coop_mode",

@@ -27,12 +27,12 @@
     "VisionDaytimeRange"        "1200"
     "VisionNighttimeRange"        "800"
     "Model"        "models/heroes/storm_spirit/storm_spirit.vmdl"
-    "ModelScale"        "1.8"
+    "ModelScale"        "0.9"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"     "CreepBulky"
-    "Ability1"        "water_armor"
-    "Ability2"        "creep_ability_bulky"
+    "CreepAbility1"        "water_armor"
+    "CreepAbility2"        "creep_ability_bulky"
 
     "Creature"
     {

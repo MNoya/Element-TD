@@ -48,7 +48,7 @@ function CreepBoss:OnSpawned()
     creep:CreatureLevelUp(creep.waveObject.waveNumber-creep:GetLevel())
 
     -- Don't mark first-death undead as a killed score
-    creep.real_icefrog = not creep.random_ability or (creep.random_ability and creep.random_ability ~= "creep_ability_undead")
+    creep.real_icefrog = not creep.random_abilities or (creep.random_abilities and not creep.random_abilities["creep_ability_undead"])
 
     if creep:HasAbility("creep_ability_undead") then
         self.creep.isUndead = true
@@ -70,8 +70,8 @@ function CreepBoss:OnSpawned()
 
     if creep:HasAbility("creep_ability_regen") then
         self.regenAmount = 0
-        self.maxRegen = creep:GetMaxHealth() * self.ability:GetSpecialValueFor("max_heal_pct") * 0.01
-        self.healthPercent = self.ability:GetSpecialValueFor("bonus_health_regen") * 0.01
+        self.maxRegen = creep:GetMaxHealth() * self.abilities["creep_ability_regen"]:GetSpecialValueFor("max_heal_pct") * 0.01
+        self.healthPercent = self.abilities["creep_ability_regen"]:GetSpecialValueFor("bonus_health_regen") * 0.01
         self.healthTick = round(creep:GetMaxHealth() * self.healthPercent * 0.1)
 
         Timers:CreateTimer(0.1, function()
@@ -89,7 +89,7 @@ function CreepBoss:OnSpawned()
     end
 
     if creep:HasAbility("creep_ability_bulky") then
-        local health_multiplier = self.ability:GetSpecialValueFor("bonus_health_pct") * 0.01
+        local health_multiplier = self.abilities["creep_ability_bulky"]:GetSpecialValueFor("bonus_health_pct") * 0.01
         local health = creep:GetHealth()
         creep:SetMaxHealth(health * health_multiplier)
         creep:SetBaseMaxHealth(health * health_multiplier)
@@ -98,16 +98,16 @@ function CreepBoss:OnSpawned()
     end
 
     if creep:HasAbility("creep_ability_time_lapse") then
-        self.health_threshold = self.ability:GetSpecialValueFor("health_threshold")
-        self.backtrack_duration = self.ability:GetSpecialValueFor("backtrack_duration")
+        self.health_threshold = self.abilities["creep_ability_time_lapse"]:GetSpecialValueFor("health_threshold")
+        self.backtrack_duration = self.abilities["creep_ability_time_lapse"]:GetSpecialValueFor("backtrack_duration")
         self.health = {}
         self.position = {}
 
         -- Initial cooldown
-        self.ability:StartCooldown(self.backtrack_duration)
+        self.abilities["creep_ability_time_lapse"]:StartCooldown(self.backtrack_duration)
         Timers:CreateTimer(self.backtrack_duration, function()
             if IsValidEntity(creep) and creep:IsAlive() and creep:HasAbility("creep_ability_time_lapse") then
-                self.ability:ApplyDataDrivenModifier(creep, creep, "modifier_time_lapse", {})
+                self.abilities["creep_ability_time_lapse"]:ApplyDataDrivenModifier(creep, creep, "modifier_time_lapse", {})
             end
         end)
 
@@ -163,7 +163,7 @@ function CreepBoss:Backtrack()
     self.creep:RemoveModifierByName("modifier_time_lapse") --This stops the ability from triggering again through the damage function
     self.creep:SetHealth(self.health[backtrack_target_time])
     self.creep:SetAbsOrigin(self.position[backtrack_target_time])
-    self.ability:SetHidden(true)
+    self.abilities["creep_ability_time_lapse"]:SetHidden(true)
     Timers:RemoveTimer(self.temporalTimer)
    
     ParticleManager:SetParticleControl(particle, 2, self.position[backtrack_target_time])
@@ -182,7 +182,7 @@ function CreepBoss:OnDeath(killer)
     local playerID = creep.playerID
     local creepClass = self.creepClass
 
-    if creep.random_ability == "creep_ability_undead" then
+    if creep.random_abilities["creep_ability_undead"] then
         local newCreep = CreateUnitByName(creepClass, creep:GetAbsOrigin() , false, nil, nil, DOTA_TEAM_NEUTRALS)
         newCreep.class = creepClass
         newCreep.playerID = creep.playerID or creep.sector
@@ -190,6 +190,7 @@ function CreepBoss:OnDeath(killer)
         newCreep.waveNumber = creep.waveNumber
         newCreep.sector = creep.sector --coop only
         newCreep:CreatureLevelUp(newCreep.waveObject.waveNumber-newCreep:GetLevel())
+        AddAbility(newCreep, creepsKV[creepClass].CreepAbility1) -- give armor ability
         
         local newEntIndex = newCreep:entindex()
         creep.waveObject:RegisterCreep(newEntIndex)
@@ -222,8 +223,8 @@ function CreepBoss:OnDeath(killer)
         self.creep = newCreep
         CREEP_SCRIPT_OBJECTS[newCreep:entindex()] = self
 
-    elseif creep.random_ability == "creep_ability_vengeance" then
-        local ability = self.ability
+    elseif creep.random_abilities["creep_ability_vengeance"] then
+        local ability = self.abilities["creep_ability_vengeance"]
         local duration = ability:GetSpecialValueFor("duration")
         local aoe = ability:GetSpecialValueFor("aoe")
         local damage_reduction = ability:GetSpecialValueFor("damage_reduction")

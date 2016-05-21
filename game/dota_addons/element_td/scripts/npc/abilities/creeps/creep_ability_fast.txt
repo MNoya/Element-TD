@@ -10,6 +10,7 @@
 	"BaseClass"						"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 	"MaxLevel"						"1"
 	"AbilityTextureName"			"dark_seer_surge"
 	"AbilityCooldown"				"3"
@@ -43,7 +44,9 @@
 		"creep_haste_delay"
 		{
 			"IsHidden"		"1"
+			"IsPurgable"    "0"
 			"Duration"		"%interval"
+			"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 			"OnDestroy"
 			{
 				"RunScript"

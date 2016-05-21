@@ -51,6 +51,7 @@ function BuildGameArray()
     game.diff = GetPlayerDifficulty(0).difficultyName
     game.exp = ElementTD:GetMapMode()
     game.ord = GameRules.sandBoxEnabled or (COOP_MAP and "Normal") or GameSettings.order
+    game.cha = GameSettings.abilitiesMode
     game.hor = GameSettings.endless
     game.rnd = GameSettings.elementsOrderName
     game.str = START_TIME

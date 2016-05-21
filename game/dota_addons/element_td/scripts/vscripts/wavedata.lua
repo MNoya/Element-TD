@@ -93,10 +93,10 @@ function loadWaveData(chaos)
     -- Print and round the values
     for k,v in pairs(WAVE_CREEPS) do
         WAVE_HEALTH[k] = round(WAVE_HEALTH[k])
-        if IsInToolsMode() then
+        if IsInToolsMode() and not GameSettings.abilitiesMode == "Challenge" then
             local armor = creepsKV[WAVE_CREEPS[k]].Ability1 and (creepsKV[WAVE_CREEPS[k]].Ability1):gsub("_armor", "")
             local ability = (creepsKV[WAVE_CREEPS[k]].Ability2 and (creepsKV[WAVE_CREEPS[k]].Ability2):gsub("creep_ability_", "")) or ""
-            print(string.format("%2d | %-15s | %6.0f | %9s | %10s ",k,v,WAVE_HEALTH[k],armor,ability))
+            print(string.format("%2d | %-16s | %6.0f | %9s | %10s ",k,v,WAVE_HEALTH[k],armor,ability))
         end
     end
 end
@@ -231,7 +231,7 @@ function StartBreakTime_DeadPlayers(playerID, breakTime, wave)
     end
 end
 
-function SpawnEntity(entityClass, playerID, position)
+function SpawnEntity(entityClass, playerID, position, waveNumber)
     local entity = CreateUnitByName(entityClass, position, true, nil, nil, DOTA_TEAM_NEUTRALS)
     if entity then
         entity:AddNewModifier(nil, nil, "modifier_phased", {})
@@ -240,15 +240,39 @@ function SpawnEntity(entityClass, playerID, position)
         entity.class = entityClass
         entity.playerID = playerID
 
-        -- create a script object for this entity
-        -- see /vscripts/creeps/basic.lua
-        local scriptClassName = GetUnitKeyValue(entityClass, "ScriptClass")
-        if not scriptClassName or scriptClassName == "" then scriptClassName = "CreepBasic" end
-        local scriptObject = CREEP_CLASSES[scriptClassName](entity, entityClass)
-        CREEP_SCRIPT_OBJECTS[entity:entindex()] = scriptObject
-        entity.scriptClass = scriptClassName
-        entity.scriptObject = scriptObject
+        -- give this creep its elemental armor ability
+        local armorType = creepsKV[entityClass]["CreepAbility1"]
+        if armorType and armorType ~= "" then
+            AddAbility(entity, armorType)
+            entity.armorType = armorType
+        else
+            Log:warn("Could not find armor ability for " .. creepClass)
+        end
 
+        -- create a script object for this entity
+        local scriptObject
+        local scriptClassName = GetUnitKeyValue(entityClass, "ScriptClass") or "CreepBasic"
+        if CHALLENGE_MODE and waveNumber < WAVE_COUNT - 1 then
+            scriptObject = ClassWrapper:new()
+            local abilities = AbilitiesMode:GetChallengeAbilitiesForWave(waveNumber)
+
+            for _, ability in pairs(abilities) do
+                AddAbility(entity, ability)
+                scriptClassName = AbilitiesMode:GetClassNameFromAbility(ability)
+                scriptObject:Wrap(scriptClassName, CREEP_CLASSES[scriptClassName](entity, entityClass))
+             end
+        else
+            scriptObject = CREEP_CLASSES[scriptClassName](entity, entityClass)  
+
+            local ability = creepsKV[entityClass]["CreepAbility2"]
+            if ability and ability ~= "" then
+                AddAbility(entity, ability)
+            end
+        end
+
+        entity.scriptObject = scriptObject
+        CREEP_SCRIPT_OBJECTS[entity:entindex()] = scriptObject
+        
         -- tint this creep if keyvalue ModelColor is set
         local modelColor = GetUnitKeyValue(entityClass, "ModelColor")
         if modelColor then
@@ -417,7 +441,7 @@ function WaveGrantsEssence( wave )
 end
 
 function ShowPortalForSector(sector, wave, playerID)
-    local element = string.gsub(creepsKV[WAVE_CREEPS[wave]].Ability1, "_armor", "")
+    local element = string.gsub(creepsKV[WAVE_CREEPS[wave]].CreepAbility1, "_armor", "")
     local portal = SectorPortals[sector]
     if not portal then return end
 
@@ -495,7 +519,7 @@ function CreateMoveTimerForCreep(creep, sector)
                 if creep:HasAbility("creep_ability_bulky") then
                     lives = lives * 2
                 end
-
+                
                 ReduceLivesForPlayer(playerID, lives)
 
                 creep.recently_leaked = true

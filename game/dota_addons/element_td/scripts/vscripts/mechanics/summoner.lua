@@ -66,6 +66,23 @@ function SummonElemental(keys)
     elemental:SetForwardVector(Vector(0, -1, 0))
     elemental.level = level
 
+    -- create a script object for this entity
+    if CHALLENGE_MODE then
+        local wrapper = ClassWrapper:new() -- wrap single ability for convenience
+
+        local abilityName = AbilitiesMode:GetRandomElementalAbilityName()    
+        local scriptClassName = AbilitiesMode:GetClassNameFromAbility(abilityName)
+
+        local scriptObject = CREEP_CLASSES[scriptClassName](elemental, name)  
+        scriptObject.ability = AddAbility(elemental, abilityName)
+        wrapper:Wrap(scriptClassName, scriptObject)
+
+        elemental.scriptObject = wrapper
+        CREEP_SCRIPT_OBJECTS[elemental:entindex()] = wrapper
+
+        wrapper:OnSpawned()
+    end
+
     local label = GetEnglishTranslation(keys.Elemental) or keys.Elemental
     if label then
         elemental:SetCustomHealthLabel(label, ElementColors[element][1], ElementColors[element][2], ElementColors[element][3])

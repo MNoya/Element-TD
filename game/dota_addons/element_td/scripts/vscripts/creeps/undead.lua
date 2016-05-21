@@ -32,7 +32,8 @@ function CreepUndead:OnDeath()
     newCreep.waveNumber = creep.waveNumber
     newCreep.sector = creep.sector --coop only
     newCreep:CreatureLevelUp(newCreep.waveObject.waveNumber-newCreep:GetLevel())
-    
+    AddAbility(newCreep, creepsKV[creepClass].CreepAbility1) -- give armor ability
+
     local newEntIndex = newCreep:entindex()
     creep.waveObject:RegisterCreep(newEntIndex)
     creep.waveObject.creepsRemaining = creep.waveObject.creepsRemaining + 1 -- Increment creep count

@@ -31,8 +31,8 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"     "CreepTemporal"
-    "Ability1"        "dark_armor"
-    "Ability2"        "creep_ability_time_lapse"
+    "CreepAbility1"        "dark_armor"
+    "CreepAbility2"        "creep_ability_time_lapse"
 
     "Creature"
     {

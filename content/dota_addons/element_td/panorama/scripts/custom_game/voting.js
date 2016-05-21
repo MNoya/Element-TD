@@ -40,6 +40,7 @@ var all_random = $('#allrandom')
 var chaos = $('#chaos')
 var endless = $('#endless')
 var express = $('#express')
+var challenge_mode = $('#challenge')
 
 function UpdateMultipliers(difficultyName){
     difficultyName = difficultyName || activeDifficulty;
@@ -282,6 +283,7 @@ function ConfirmVote()
     data['orderVote'] = chaos.checked
     data['endlessVote'] = endless.checked
     data['lengthVote'] = express.checked
+    data['abilitiesVote'] = challenge_mode.checked
 
     $.Msg(data)
 
@@ -304,6 +306,7 @@ function ShowVoteResults()
     var rush = CustomNetTables.GetTableValue("gameinfo", "rush").value == "Endless"
     var chaos = CustomNetTables.GetTableValue("gameinfo", "chaos").value == "Chaos"
     var express = CustomNetTables.GetTableValue("gameinfo", "express").value == "Express"
+    var abilitiesMode = CustomNetTables.GetTableValue("gameinfo", "abilitiesMode").value == "Challenge"
 
     if (!random)
         $('#ElementsResult').GetParent().DeleteAsync(0)
@@ -318,6 +321,9 @@ function ShowVoteResults()
 
     if (!express)
         $('#LengthResult').GetParent().DeleteAsync(0)
+
+    if (!abilitiesMode)
+        $('#ChallengeResult').GetParent().DeleteAsync(0)
 
     // Update HP-Bounty-Scores results
     $("#HealthResult").text = GetHP(difficultyName)
@@ -346,6 +352,7 @@ function ShowGamemodeViewer() {
     var rush = CustomNetTables.GetTableValue("gameinfo", "rush").value == "Endless"
     var chaos = CustomNetTables.GetTableValue("gameinfo", "chaos").value == "Chaos"
     var express = CustomNetTables.GetTableValue("gameinfo", "express").value == "Express"
+    var abilitiesMode = CustomNetTables.GetTableValue("gameinfo", "abilitiesMode").value == "Challenge"
 
     if (!random)
         $('#ElementsView').AddClass("Hidden") //This can become visible if the player does -random afterwards
@@ -360,6 +367,9 @@ function ShowGamemodeViewer() {
 
     if (!express)
         $('#LengthView').DeleteAsync(0)
+
+    if (!abilitiesMode)
+        $('#AbilitiesModeView').DeleteAsync(0)
 
     currentModeUI.visible = true;
     $("#diff_image").SetImage("file://{images}/custom_game/vote_menu/difficulties/"+difficultyName+".png")

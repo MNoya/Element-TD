@@ -31,6 +31,6 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"        "CreepUndead"
-    "Ability1"        "nature_armor"
-    "Ability2"        "creep_ability_undead"
+    "CreepAbility1"        "nature_armor"
+    "CreepAbility2"        "creep_ability_undead"
 }
