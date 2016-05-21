@@ -40,9 +40,9 @@
         "1"        "fire"
         "2"        "earth"
     }
-    "Damage"        "20000"
-    "AttackDamageMin"        "20000"
-    "AttackDamageMax"        "20000"
+    "Damage"        "17500"
+    "AttackDamageMin"        "17500"
+    "AttackDamageMax"        "17500"
     "DamageType"        "fire"
     "ScriptClass"        "BlacksmithTower"
     "TowerType"        "Support"
