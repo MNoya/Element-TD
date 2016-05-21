@@ -252,7 +252,7 @@ function SpawnEntity(entityClass, playerID, position, waveNumber)
         -- create a script object for this entity
         local scriptObject
         local scriptClassName = GetUnitKeyValue(entityClass, "ScriptClass") or "CreepBasic"
-        if CHALLENGE_MODE then
+        if CHALLENGE_MODE and waveNumber < WAVE_COUNT - 1 then
             scriptObject = ClassWrapper:new()
             local abilities = AbilitiesMode:GetChallengeAbilitiesForWave(waveNumber)
 
@@ -260,7 +260,7 @@ function SpawnEntity(entityClass, playerID, position, waveNumber)
                 AddAbility(entity, ability)
                 scriptClassName = AbilitiesMode:GetClassNameFromAbility(ability)
                 scriptObject:Wrap(scriptClassName, CREEP_CLASSES[scriptClassName](entity, entityClass))
-            end
+             end
         else
             scriptObject = CREEP_CLASSES[scriptClassName](entity, entityClass)  
 
@@ -269,6 +269,7 @@ function SpawnEntity(entityClass, playerID, position, waveNumber)
                 AddAbility(entity, ability)
             end
         end
+
         entity.scriptObject = scriptObject
         CREEP_SCRIPT_OBJECTS[entity:entindex()] = scriptObject
         

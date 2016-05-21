@@ -107,11 +107,14 @@ function Wave:SpawnWave()
 
 				-- Choose an ability in sequence
 				if CHALLENGE_MODE then
+					creepBossAbilities = CreepBoss:GetAbilityList()
+
 					local ability1 = table.remove(creepBossAbilities, math.random(#creepBossAbilities))
 					local ability2 = table.remove(creepBossAbilities, math.random(#creepBossAbilities))
 
-					entity.scriptObject.abilties[ability1] = AddAbility(entity, ability1) 
-					entity.scriptObject.abilties[ability2] = AddAbility(entity, ability2) 
+					entity.scriptObject.abilities = {}
+					entity.scriptObject.abilities[ability1] = AddAbility(entity, ability1) 
+					entity.scriptObject.abilities[ability2] = AddAbility(entity, ability2) 
 					entity.random_abilities = {[ability1] = true, [ability2] = true}
 				else
 					creepBossSequence = (creepBossSequence % numAbilities) + 1

@@ -306,7 +306,7 @@ end
 function CreepBoss:HealNearbyCreeps(keys)
     local creep = self.creep;
     local aoe = keys.aoe;
-    local ability = keys.abilities["creep_ability_heal"]
+    local ability = keys.ability
     local heal_percent = keys.heal_amount / 100;
 
     local entities = GetCreepsInArea(creep:GetOrigin(), aoe);
