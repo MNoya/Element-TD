@@ -13,8 +13,6 @@ if not CHALLENGE_MODE then
 			[8] = "creep_ability_time_lapse"
 		},
 		ChallengeElementalAbilityChoices = {
-			[1] = "creep_ability_heal",
-			[2] = "creep_ability_vengeance",
 			[3] = "creep_ability_regen",
 			[4] = "creep_ability_fast",
 			[5] = "creep_ability_mechanical",
