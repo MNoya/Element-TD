@@ -40,6 +40,8 @@
         "etd_boss_wave"             "รอบบอส {wave}"
         "etd_essence_buy_warning"   "คุณจำเป็นต้องมีธาตุครบทุกธาตุ หรือมีธาตุเลเวล 3 อย่างน้อยหนึ่งธาตุจึงจะซื้อได้"
         "etd_need_more_lumber"      "ไม้"
+        "etd_lumber_buy_warning"    "คุณต้องมีธาตุสามธาตุที่เลเวล 3 ก่อนจึงจะซื้อได้"
+        "etd_need_more_essence"     "แก่นบริสุทธิ์ไม่เพียงพอ"
         "etd_error_support_tower"       "ความสามารถไม่สามารถเลือกเป้าหมายเป็นป้อมซัพพอร์ตได้"       
         "etd_error_higher_level_buff"   "ป้อมมีบัฟที่มีเลเวลสูงกว่าอยู่แล้ว"
         "etd_error_cloned_tower"    "คุณไม่สามารถโคลนร่างโคลนได้!"
@@ -258,7 +260,7 @@
         "goblin_shredder"           "Goblin Shredder"
         "grizzly_king"              "Grizzly King"
         "holy_bomber"               "Holy Bomber"
-        "Icefrog"                   "Icefrog"
+        "icefrog"                   "Icefrog"
         "immortal"                  "Immortal"
         "inferno_golem"             "Inferno Golem"
         "ivory_beast"               "Ivory Beast"
@@ -872,6 +874,11 @@
 
         "DOTA_Tooltip_ability_item_buy_pure_essence_disabled"                             "ซื้อแก่นบริสุทธิ์ (ปิดอยู่)"
         "DOTA_Tooltip_ability_item_buy_pure_essence_disabled_Description"                 "แลก <font color='#008000'>1 ใบไม้</font>เป็น <font color='#00BFFF'>1 แก่นบริสุทธิ์</font>\n<font color='#F0BA36'>จำเป็นต้องมี: </font>คุณต้องมีธาตุครบทุกธาตุหรือธาตุเดียวที่เลเวเล 3 ก่อน\n\nแก่นถูกใช้เพื่อวิวัฒนาการป้อมธาตุเดียวที่มีเลเวล 3 หรือสร้างป้อมมหาธาตุได้หากคุณมีธาตุครบทั้ง 6"
+
+        "DOTA_Tooltip_ability_item_buy_lumber"                                            "ซื้อใบไม้"
+        "DOTA_Tooltip_ability_item_buy_lumber_Description"                                "แลก <font color='#00BFFF'>1 แก่นบริสุทธิ์</font> เป็น <font color='#008000'>1 ใบไม้</font>\nปลดล็อคธาตุที่ 12\n<font color='#F0BA36'>"
+        "DOTA_Tooltip_ability_item_buy_lumber_disabled"                                   "ซื้อใบไม้ (ถูกปิดอยู่)"
+        "DOTA_Tooltip_ability_item_buy_lumber_disabled_Description"                       "แลก <font color='#00BFFF'>1 แก่นบริสุทธิ์</font> เป็น <font color='#008000'>1 ใบไม้</font>\n<font color='#F0BA36'>จำเป็นต้องมี: </font>ธาตุเลเวล 3 สามธาตุ\n\nปลดล็อคธาตุที่ 12"
 
         "DOTA_Tooltip_ability_item_random"                                                "สุ่มธาตุ"
         "DOTA_Tooltip_ability_item_random_Description"                                    "เลือกสิ่งนี้เพื่อสุ่มธาตุของคุณทั้งเกม\nสามารถเลือกได้ก่อนที่คุณจะเลือกธาตุเท่านั้น และไม่สามารถย้อนกลับได้"
