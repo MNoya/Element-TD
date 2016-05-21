@@ -42,19 +42,6 @@ function SummonElemental(keys)
     elemental["class"] = keys.Elemental
     elemental.marker_dummy = marker_dummy
 
-    -- create a script object for this entity
-    if CHALLENGE_MODE then
-        local abilityName = AbilitiesMode:GetRandomElementalAbilityName()    
-        local scriptClassName = AbilitiesMode:GetClassNameFromAbility(abilityName)
-
-        local scriptObject = CREEP_CLASSES[scriptClassName](elemental, name)  
-        scriptObject.ability = AddAbility(elemental, abilityName)
-        scriptObject:OnSpawned()
-
-        entity.scriptObject = scriptObject
-        CREEP_SCRIPT_OBJECTS[elemental:entindex()] = scriptObject
-    end
-
     -- Spawn sound
     Sounds:PlayElementalSpawnSound(playerID, elemental)
 
@@ -78,6 +65,23 @@ function SummonElemental(keys)
     elemental:SetModelScale(scale)
     elemental:SetForwardVector(Vector(0, -1, 0))
     elemental.level = level
+
+    -- create a script object for this entity
+    if CHALLENGE_MODE then
+        local wrapper = ClassWrapper:new() -- wrap single ability for convenience
+
+        local abilityName = AbilitiesMode:GetRandomElementalAbilityName()    
+        local scriptClassName = AbilitiesMode:GetClassNameFromAbility(abilityName)
+
+        local scriptObject = CREEP_CLASSES[scriptClassName](elemental, name)  
+        scriptObject.ability = AddAbility(elemental, abilityName)
+        wrapper:Wrap(scriptClassName, scriptObject)
+
+        elemental.scriptObject = wrapper
+        CREEP_SCRIPT_OBJECTS[elemental:entindex()] = wrapper
+
+        wrapper:OnSpawned()
+    end
 
     local label = GetEnglishTranslation(keys.Elemental) or keys.Elemental
     if label then

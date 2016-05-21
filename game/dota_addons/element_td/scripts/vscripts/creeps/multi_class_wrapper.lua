@@ -21,7 +21,7 @@ ClassWrapper.__index = (function(tab, func_name)
 	end
 
 	if #class_funcs == 0 then
-		Log:warn("[WARNING] No method found with name " .. func_name)
+		--Log:warn("[WARNING] No method found with name " .. func_name)
 		return function() end;
 	end
 
