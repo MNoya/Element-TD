@@ -106,10 +106,20 @@ function Wave:SpawnWave()
 				entity.waveNumber = playerData.bossWaves
 
 				-- Choose an ability in sequence
-				creepBossSequence = (creepBossSequence % numAbilities) + 1
-			    local abilityName = creepBossAbilities[creepBossSequence]
-			    entity.random_ability = abilityName
-			    entity.scriptObject.ability = AddAbility(entity, abilityName)
+				if CHALLENGE_MODE then
+					local ability1 = table.remove(creepBossAbilities, math.random(#creepBossAbilities))
+					local ability2 = table.remove(creepBossAbilities, math.random(#creepBossAbilities))
+
+					entity.scriptObject.abilties[ability1] = AddAbility(entity, ability1) 
+					entity.scriptObject.abilties[ability2] = AddAbility(entity, ability2) 
+					entity.random_abilities = {[ability1] = true, [ability2] = true}
+				else
+					creepBossSequence = (creepBossSequence % numAbilities) + 1
+					local abilityName = creepBossAbilities[creepBossSequence]
+					entity.random_abilities = {[abilityName] = true} 
+					entity.scriptObject.abilities[abilityName] = AddAbility(entity, abilityName)
+				end
+				
 			end
 
 			-- Set bounty
