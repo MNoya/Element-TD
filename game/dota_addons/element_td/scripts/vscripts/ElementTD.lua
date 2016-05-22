@@ -318,6 +318,8 @@ function ElementTD:EndGameForPlayer( playerID )
     end
     UTIL_Remove(playerData.summoner.icon)
 
+    Saves:SaveGrid(playerID, playerData.toggle_grid_item.enabled)
+
     for i=0,15 do
         local ability = playerData.summoner:GetAbilityByIndex(i)
         if ability then
@@ -582,7 +584,12 @@ function ElementTD:InitializeHero(playerID, hero)
         end)
     end
     
-    Timers:CreateTimer(0.1, function() hero:SwapItems(3, 5) end)
+    Timers:CreateTimer(0.1, function()
+        hero:SwapItems(3, 5)
+        if Saves:ShouldEnableGrid(playerID) and not playerData.toggle_grid_item.enabled then
+            playerData.toggle_grid_item:CastAbility()
+        end
+    end)
 
     -- Additional Heroes UI
     heroUI = hero:FindAbilityByName("hero_ui")
