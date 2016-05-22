@@ -119,7 +119,8 @@ function Wave:SpawnWave()
 				else
 					creepBossSequence = (creepBossSequence % numAbilities) + 1
 					local abilityName = creepBossAbilities[creepBossSequence]
-					entity.random_abilities = {[abilityName] = true} 
+					entity.random_abilities = {[abilityName] = true}
+					entity.scriptObject.abilities = {}
 					entity.scriptObject.abilities[abilityName] = AddAbility(entity, abilityName)
 				end
 				
