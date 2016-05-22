@@ -118,13 +118,13 @@
 	m_Children =
 	[
 		{
-			m_ChildRef = resource:"particles/custom/towers/water/attack2_explosion_flash_d.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/tidal/attack2_explosion_flash_d.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/towers/water/attack2_explosion_flash_e.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/tidal/attack2_explosion_flash_e.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/towers/water/attack2_explosion_flash_light.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/tidal/attack2_explosion_flash_light.vpcf"
 		},
 	]
 }

@@ -137,31 +137,31 @@
 	[
 		{
 			m_bEndCap = true
-			m_ChildRef = resource:"particles/custom/towers/water/attack2_explosion_flash.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/tidal/attack2_explosion_flash.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/towers/water/attack2_launch.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/tidal/attack2_launch.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/towers/water/attack2_trail_c.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/tidal/attack2_trail_c.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/towers/water/attack2_glow.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/tidal/attack2_glow.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/towers/water/attack2_model.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/tidal/attack2_model.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/towers/water/attack2_trail.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/tidal/attack2_trail.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/towers/water/attack2_trail_b.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/tidal/attack2_trail_b.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/towers/water/attack2_glow_b.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/tidal/attack2_glow_b.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/custom/towers/water/attack2_trail_d.vpcf"
+			m_ChildRef = resource:"particles/custom/towers/tidal/attack2_trail_d.vpcf"
 		},
 	]
 }
