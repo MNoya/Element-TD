@@ -1,6 +1,6 @@
 //=================================================================================================================
 // Light Tower: Intensity
-// Consecutive attacks on the same target causes a flat damage increase (don't worry about numbers). 
+// Consecutive attacks on the same target causes a flat damage increase. 
 // Has no stack limit. Resets completely upon switching
 //=================================================================================================================
 "light_tower_intensity"

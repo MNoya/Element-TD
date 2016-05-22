@@ -31,8 +31,8 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"        "CreepMechanical"
-    "Ability1"        "light_armor"
-    "Ability2"        "creep_ability_mechanical"
+    "CreepAbility1"        "light_armor"
+    "CreepAbility2"        "creep_ability_mechanical"
     "Creature"
     {
         "AttachWearables" // Default npc_dota_hero_gyrocopter

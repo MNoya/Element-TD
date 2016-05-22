@@ -40,17 +40,19 @@
         "2"        "earth"
         "3"        "nature"
     }
-    "Damage"        "4500"
+    "Damage"        "7500"
+    "AttackDamageMin"        "7500"
+    "AttackDamageMax"        "7500"
     "DamageType"        "earth"
     "ScriptClass"        "QuakeTower"
     "TowerType"        "Normal"
     "BuffPriority"              "2"
     "HasAbilityDesc"        "1"
-    "AttackRange"        "550"
-    "AttackAcquisitionRange"        "550"
+    "AttackRange"        "700"
+    "AttackAcquisitionRange"        "700"
     "AttackRate"        "0.66"
     "ProjectileModel"        "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
-    "ProjectileSpeed"        "1500"
+    "ProjectileSpeed"        "2000"
     
     "Model"             "models/heroes/earthshaker/earthshaker.vmdl"
     "ModelScale"        "1"
@@ -78,8 +80,6 @@
     "Upgrades"
     {
     }
-    "AttackDamageMin"        "4500"
-    "AttackDamageMax"        "4500"
 
     // Building Size
     "ConstructionSize"          "2"

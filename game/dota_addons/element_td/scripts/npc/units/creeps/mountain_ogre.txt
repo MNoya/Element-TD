@@ -27,10 +27,10 @@
     "VisionDaytimeRange"        "1200"
     "VisionNighttimeRange"        "800"
     "Model"        "models/creeps/neutral_creeps/n_creep_ogre_med/n_creep_ogre_med.vmdl"
-    "ModelScale"        "1.6"
+    "ModelScale"        "0.8"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"     "CreepBulky"
-    "Ability1"        "earth_armor"
-    "Ability2"        "creep_ability_bulky"
+    "CreepAbility1"        "earth_armor"
+    "CreepAbility2"        "creep_ability_bulky"
 }

@@ -69,7 +69,7 @@ function ElectricityTower:OnAttack(event)
             end
 
             if bounce_target then
-                damage = damage - (damage*self.decay)
+                damage = damage + (damage*self.damage_increase)
                 current_position = self:CreateChainLightning(caster, current_position, bounce_target, damage)
 
                 -- decrement remaining spell bounces
@@ -112,7 +112,7 @@ function ElectricityTower:OnCreated()
     self.bounce_range = self.ability:GetLevelSpecialValueFor( "bounce_range", level - 1 )
     self.bounce_decrease = self.ability:GetLevelSpecialValueFor( "bounce_decrease", level - 1 ) * 0.01
     self.bounces = self.ability:GetLevelSpecialValueFor( "jump_count", level - 1 )
-    self.decay = self.ability:GetLevelSpecialValueFor( "damage_decrease", level - 1 ) * 0.01
+    self.damage_increase = self.ability:GetLevelSpecialValueFor( "damage_increase", level - 1 ) * 0.01
     self.time_between_bounces = 0.2
     self.playerID = self.tower:GetPlayerOwnerID()
 end

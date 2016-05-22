@@ -19,7 +19,7 @@
         }
     }
     "AbilityTextureName"    "item_earth_cannon"
-    "AbilityCastRange"      "550"
+    "AbilityCastRange"      "700"
 }
 
 "item_upgrade_to_earth_cannon_tower_disabled"

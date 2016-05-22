@@ -118,8 +118,6 @@ function InterestManagerCoop:PauseInterest(bResetBar)
 		if Timers.timers[timerName] then
 			-- store time remaining for when we resume
 			InterestManagerCoop.TimeRemaining = Timers.timers[timerName].endTime - GameRules:GetGameTime()
-		else
-			Log:warn("[INTEREST] Attempted interest pause but timer was missing.")
 		end
 		
 		Timers:RemoveTimer(timerName)
@@ -134,7 +132,7 @@ end
 
 function InterestManagerCoop:LeakedWave(waveNumber)
 	-- leaking does not affect interest after the last wave spawns
-	if waveNumber >= WAVE_COUNT - END_OFFSET then
+	if waveNumber > WAVE_COUNT - END_OFFSET then
 		return
 	end
 

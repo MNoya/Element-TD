@@ -12,12 +12,10 @@ if not playerIDs then
     TEAM_TO_SECTOR[10] = 6
     TEAM_TO_SECTOR[11] = 7
      
-    GAME_IS_PAUSED = false
-    DEV_MODE = false
     EXPRESS_MODE = false
     ETD_MAX_PLAYERS = 4
 
-    VERSION = "1.7"
+    VERSION = "1.8"
     COOP_MAP = GetMapName() == "element_td_coop"
 
     START_TIME = GetSystemDate() .. " " .. GetSystemTime()
@@ -320,6 +318,8 @@ function ElementTD:EndGameForPlayer( playerID )
     end
     UTIL_Remove(playerData.summoner.icon)
 
+    Saves:SaveGrid(playerID, playerData.toggle_grid_item.enabled)
+
     for i=0,15 do
         local ability = playerData.summoner:GetAbilityByIndex(i)
         if ability then
@@ -518,6 +518,7 @@ function ElementTD:OnHeroInGame(hero)
     summoner:SetControllableByPlayer(playerID, true)
     summoner:SetAngles(0, 270, 0)
     summoner:AddItem(CreateItem("item_buy_pure_essence_disabled", nil, nil))
+    summoner:AddItem(CreateItem("item_buy_lumber_disabled", nil, nil))
     summoner.icon = CreateUnitByName("elemental_summoner_icon", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber())
     playerData.summoner = summoner
 
@@ -551,9 +552,12 @@ function ElementTD:InitializeHero(playerID, hero)
     hero:AddNewModifier(nil, nil, "modifier_disarmed", {})
     hero:AddNewModifier(nil, nil, "modifier_attack_immune", {})
     hero:AddNewModifier(hero, nil, "modifier_max_ms", {ms=GameSettings:GetMapSetting("BuilderMoveSpeed")})
-    --hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
 
     local playerData = GetPlayerData(playerID)
+
+    if not playerData.set_convars then
+        playerData.set_convars = hero:AddNewModifier(hero, nil, "modifier_client_convars", {})
+    end
 
     Timers(0.03, function() 
         hero:SetAbilityPoints(playerData.lumber or 0)
@@ -580,7 +584,12 @@ function ElementTD:InitializeHero(playerID, hero)
         end)
     end
     
-    Timers:CreateTimer(0.1, function() hero:SwapItems(3, 5) end)
+    Timers:CreateTimer(0.1, function()
+        hero:SwapItems(3, 5)
+        if Saves:ShouldEnableGrid(playerID) and not playerData.toggle_grid_item.enabled then
+            playerData.toggle_grid_item:CastAbility()
+        end
+    end)
 
     -- Additional Heroes UI
     heroUI = hero:FindAbilityByName("hero_ui")

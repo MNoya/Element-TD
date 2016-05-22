@@ -30,5 +30,5 @@
     "ModelScale"        "1"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
-    "Ability1"        "light_armor"
+    "CreepAbility1"        "light_armor"
 }

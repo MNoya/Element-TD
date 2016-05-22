@@ -31,8 +31,8 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"     "CreepVengeance"
-    "Ability1"        "nature_armor"
-    "Ability2"        "creep_ability_vengeance"
+    "CreepAbility1"        "nature_armor"
+    "CreepAbility2"        "creep_ability_vengeance"
     "Creature"
     {
         "AttachWearables" // Default npc_dota_hero_necrolyte

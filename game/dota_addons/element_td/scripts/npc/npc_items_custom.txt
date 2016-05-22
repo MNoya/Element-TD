@@ -1,26 +1,6 @@
 "DOTAAbilities"
 {
 	//============================================================//
-	// Banana
-	//============================================================//
-	"item_banana"
-	{
-	    "BaseClass"                     "item_datadriven"
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	    "AbilityTextureName"            "item_banana"
-	    "Model"                         "models/props_gameplay/banana_prop_closed.vmdl"
-	
-	    "ItemPurchasable"               "0"
-	    "ItemSellable"                  "0"
-	    "ItemQuality"                   "artifact"
-	    "ItemStackable"                 "1"
-	    "ItemKillable"                  "0"
-	    "ItemPurchasable"               "0"
-	    "ItemShareability"              "ITEM_FULLY_SHAREABLE_STACKING"
-	    "ItemPermanent"                 "0"
-	    "ItemInitialCharges"            "1"
-	}
-	//============================================================//
 	// Build Arrow Tower (Item Version)
 	//============================================================//
 	"item_build_arrow_tower"
@@ -183,6 +163,53 @@
 	        {
 	            "ScriptFile"        "mechanics/grid.lua"
 	            "Function"          "ToggleGrid"
+	        }
+	    }
+	}
+	//============================================================//
+	// Buy Lumber aka 12th Element
+	//============================================================//
+	"item_buy_lumber"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "MaxLevel"                      "1"
+	    "AbilityTextureName"            "buy_lumber"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	    "ItemInitialCharges"            "1"
+	   
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "Target"            "CASTER"
+	            "ScriptFile"        "mechanics/resources.lua"
+	            "Function"          "BuyLumberForEssence"
+	        }
+	    }
+	}
+	
+	"item_buy_lumber_disabled"
+	{
+	    "BaseClass"                     "item_datadriven"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "MaxLevel"                      "1"
+	    "AbilityTextureName"            "buy_lumber_disabled"
+	
+	    "ItemDroppable"                 "0"
+	    "ItemPurchasable"               "0"
+	    "ItemSellable"                  "0"
+	
+	    "OnSpellStart"
+	    {
+	        "RunScript"
+	        {
+	            "Target"            "CASTER"
+	            "ScriptFile"        "mechanics/resources.lua"
+	            "Function"          "BuyLumberWarn"
 	        }
 	    }
 	}
@@ -501,7 +528,7 @@
 	        }
 	    }
 	    "AbilityTextureName"    "item_dark_cannon"
-	    "AbilityCastRange"      "550"
+	    "AbilityCastRange"      "700"
 	}
 	
 	"item_upgrade_to_dark_cannon_tower_disabled"
@@ -538,7 +565,7 @@
 	        }
 	    }
 	    "AbilityTextureName"    "item_earth_cannon"
-	    "AbilityCastRange"      "550"
+	    "AbilityCastRange"      "700"
 	}
 	
 	"item_upgrade_to_earth_cannon_tower_disabled"
@@ -575,7 +602,7 @@
 	        }
 	    }
 	    "AbilityTextureName"    "item_fire_cannon"
-	    "AbilityCastRange"      "550"
+	    "AbilityCastRange"      "700"
 	}
 	
 	"item_upgrade_to_fire_cannon_tower_disabled"
@@ -612,7 +639,7 @@
 	        }
 	    }
 	    "AbilityTextureName"    "item_light_cannon"
-	    "AbilityCastRange"      "550"
+	    "AbilityCastRange"      "700"
 	}
 	
 	"item_upgrade_to_light_cannon_tower_disabled"
@@ -649,7 +676,7 @@
 	        }
 	    }
 	    "AbilityTextureName"    "item_nature_cannon"
-	    "AbilityCastRange"      "550"
+	    "AbilityCastRange"      "700"
 	}
 	
 	"item_upgrade_to_nature_cannon_tower_disabled"
@@ -686,7 +713,7 @@
 	        }
 	    }
 	    "AbilityTextureName"   "item_water_cannon"
-	    "AbilityCastRange"     "550"
+	    "AbilityCastRange"      "700"
 	}
 	
 	"item_upgrade_to_water_cannon_tower_disabled"
@@ -968,7 +995,7 @@
 			"fire"		"2"
 			"fire"		"2"
 		}
-		"AbilityCastRange"              "550"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_focused_fire_tower_disabled"
 	{
@@ -986,7 +1013,7 @@
 			"fire"		"2"
 			"fire"		"2"
 		}
-		"AbilityCastRange"              "550"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_pure_fire_tower"
 	{
@@ -1014,7 +1041,7 @@
 			"fire"		"3"
 			"fire"		"3"
 		}
-		"AbilityCastRange"              "550"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_refined_fire_tower"
 	{
@@ -1042,7 +1069,7 @@
 			"fire"		"3"
 			"fire"		"3"
 		}
-		"AbilityCastRange"              "550"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_refined_fire_tower_disabled"
 	{
@@ -1060,7 +1087,7 @@
 			"fire"		"3"
 			"fire"		"3"
 		}
-		"AbilityCastRange"              "550"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_focused_light_tower"
 	{
@@ -1817,7 +1844,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"200 1000 5000"
+				"damage"				"180 900 4500"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -1856,7 +1883,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"200 1000 5000"
+				"damage"				"180 900 4500"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -1885,7 +1912,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"200 1000 5000"
+				"damage"				"180 900 4500"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -1924,7 +1951,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"200 1000 5000"
+				"damage"				"180 900 4500"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -1953,7 +1980,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"200 1000 5000"
+				"damage"				"180 900 4500"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -1983,7 +2010,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"200 1000 5000"
+				"damage"				"180 900 4500"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -2641,7 +2668,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"200 1000 5000"
+				"damage"				"180 900 4500"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -2680,7 +2707,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"200 1000 5000"
+				"damage"				"180 900 4500"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -2709,7 +2736,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"200 1000 5000"
+				"damage"				"180 900 4500"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -2748,7 +2775,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"200 1000 5000"
+				"damage"				"180 900 4500"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -2777,7 +2804,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"200 1000 5000"
+				"damage"				"180 900 4500"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -2807,7 +2834,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"200 1000 5000"
+				"damage"				"180 900 4500"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -2847,7 +2874,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"6 5 4"
+				"kills_required"				"8 6 4"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -2886,7 +2913,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"6 5 4"
+				"kills_required"				"8 6 4"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -2915,7 +2942,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"6 5 4"
+				"kills_required"				"8 6 4"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -2954,7 +2981,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"6 5 4"
+				"kills_required"				"8 6 4"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -2983,7 +3010,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"6 5 4"
+				"kills_required"				"8 6 4"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -3013,7 +3040,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"6 5 4"
+				"kills_required"				"8 6 4"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -3202,7 +3229,7 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
-		"AbilityCastRange"              "550"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_moss_tower_2"
 	{
@@ -3232,7 +3259,7 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
-		"AbilityCastRange"              "550"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_moss_tower_2_disabled"
 	{
@@ -3252,7 +3279,7 @@
 			"nature"		"2"
 			"nature"		"2"
 		}
-		"AbilityCastRange"              "550"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_moss_tower_3"
 	{
@@ -3282,7 +3309,7 @@
 			"nature"		"3"
 			"nature"		"3"
 		}
-		"AbilityCastRange"              "550"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_moss_tower_3_disabled"
 	{
@@ -3302,7 +3329,7 @@
 			"nature"		"3"
 			"nature"		"3"
 		}
-		"AbilityCastRange"              "550"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_moss_tower_disabled"
 	{
@@ -3324,7 +3351,7 @@
 			"nature"		"1"
 			"nature"		"1"
 		}
-		"AbilityCastRange"              "550"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_poison_tower"
 	{
@@ -4324,7 +4351,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"15 45"
+				"max_damage_amp"		"13 39"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4370,7 +4397,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"15 45"
+				"max_damage_amp"		"13 39"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4406,7 +4433,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"15 45"
+				"max_damage_amp"		"13 39"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4443,7 +4470,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"15 45"
+				"max_damage_amp"		"13 39"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4599,12 +4626,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"12 36"
+				"damage_amp"			"11 33"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"140 700"
+				"dot"					"110 550"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -4645,12 +4672,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"12 36"
+				"damage_amp"			"11 33"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"140 700"
+				"dot"					"110 550"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -4681,12 +4708,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"12 36"
+				"damage_amp"			"11 33"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"140 700"
+				"dot"					"110 550"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -4718,12 +4745,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"12 36"
+				"damage_amp"			"11 33"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"140 700"
+				"dot"					"110 550"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -4911,7 +4938,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"160 800"
+				"splash_damage"			"200 1000"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -4952,7 +4979,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"160 800"
+				"splash_damage"			"200 1000"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -4983,7 +5010,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"160 800"
+				"splash_damage"			"200 1000"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -5015,7 +5042,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"160 800"
+				"splash_damage"			"200 1000"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -5057,7 +5084,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"25 35"
+				"bonus_gold"			"30 40"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -5098,7 +5125,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"25 35"
+				"bonus_gold"			"30 40"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -5129,7 +5156,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"25 35"
+				"bonus_gold"			"30 40"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -5161,7 +5188,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"25 35"
+				"bonus_gold"			"30 40"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -5576,7 +5603,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"6 18"
+				"damage_taken"			"5 15"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -5617,7 +5644,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"6 18"
+				"damage_taken"			"5 15"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -5648,7 +5675,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"6 18"
+				"damage_taken"			"5 15"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -5680,7 +5707,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"6 18"
+				"damage_taken"			"5 15"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -5980,7 +6007,7 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"275 1375"
+				"damage"			"300 1500"
 			}
 	        "02"
 			{
@@ -6026,7 +6053,7 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"275 1375"
+				"damage"			"300 1500"
 			}
 	        "02"
 			{
@@ -6062,7 +6089,7 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"275 1375"
+				"damage"			"300 1500"
 			}
 	        "02"
 			{
@@ -6099,7 +6126,7 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"275 1375"
+				"damage"			"300 1500"
 			}
 	        "02"
 			{
@@ -6258,7 +6285,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"12 36"
+				"health_burn"			"11 33"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -6299,7 +6326,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"12 36"
+				"health_burn"			"11 33"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -6330,7 +6357,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"12 36"
+				"health_burn"			"11 33"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -6362,7 +6389,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"12 36"
+				"health_burn"			"11 33"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -6404,10 +6431,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"600 3000"
+				"damage"				"500 2500"
 			}
 		}
-		"AbilityCastRange"              "550"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_quake_tower_2"
 	{
@@ -6445,10 +6472,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"600 3000"
+				"damage"				"500 2500"
 			}
 		}
-		"AbilityCastRange"              "550"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_quake_tower_2_disabled"
 	{
@@ -6476,10 +6503,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"600 3000"
+				"damage"				"500 2500"
 			}
 		}
-		"AbilityCastRange"              "550"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_quake_tower_disabled"
 	{
@@ -6508,10 +6535,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"600 3000"
+				"damage"				"500 2500"
 			}
 		}
-		"AbilityCastRange"              "550"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_roots_tower"
 	{
@@ -6555,7 +6582,7 @@
 	        "02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps"					"110 550"
+				"dps"					"90 450"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6601,7 +6628,7 @@
 	        "02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps"					"110 550"
+				"dps"					"90 450"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6637,7 +6664,7 @@
 	        "02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps"					"110 550"
+				"dps"					"90 450"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6674,7 +6701,7 @@
 	        "02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps"					"110 550"
+				"dps"					"90 450"
 			}
 	    }
 	    "AbilityCastRange"              "900"

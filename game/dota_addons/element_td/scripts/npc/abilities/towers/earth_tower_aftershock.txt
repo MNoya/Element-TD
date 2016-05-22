@@ -16,12 +16,12 @@
         "01"
         {
             "var_type"              "FIELD_INTEGER"
-            "aftershock_damage_pct" "50"
+            "aftershock_damage_pct" "0"
         }
         "01"
         {
             "var_type"              "FIELD_FLOAT"
-            "aftershock_delay"      "0.5"
+            "aftershock_delay"      "0"
         }
     }
 }

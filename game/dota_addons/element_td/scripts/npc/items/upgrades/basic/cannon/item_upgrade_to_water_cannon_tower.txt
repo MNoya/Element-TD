@@ -19,7 +19,7 @@
         }
     }
     "AbilityTextureName"   "item_water_cannon"
-    "AbilityCastRange"     "550"
+    "AbilityCastRange"      "700"
 }
 
 "item_upgrade_to_water_cannon_tower_disabled"

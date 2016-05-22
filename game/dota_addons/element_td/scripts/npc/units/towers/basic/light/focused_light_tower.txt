@@ -36,7 +36,7 @@
     "AttackRange"               "1500"
     "AttackAcquisitionRange"    "1500"
     "AttackRate"                "0.66"
-    "AttackAnimationPoint"      "0.2"
+    "AttackAnimationPoint"      "0.15"
     "ProjectileSpeed"           "2700"
 
     "Level"                     "2"

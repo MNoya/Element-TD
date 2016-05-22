@@ -6,6 +6,7 @@ function Saves:Init()
     Saves.url = "http://hatinacat.com/leaderboard/data_request.php?req=save"
     Saves.players = {}
     Saves.builders = {}
+    Saves.grids = {}
 
     -- Translate each custom elemental builder to a number between 0-5
     Saves.builders["npc_dota_hero_skywrath_mage"] = 0
@@ -38,9 +39,9 @@ function Saves:SaveHasPass(playerID)
 
     local req = CreateHTTPRequest('GET', request)
 
-    -- Send another request to get the player builder
-    if bHasPass == 1 and GameRules:State_Get() == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
-        Saves:LoadBuilder(playerID)
+    -- Send another request to get the player data
+    if GameRules:State_Get() == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
+        Saves:LoadData(playerID)
     end
     
     Saves:Send(req, function(obj)
@@ -63,13 +64,26 @@ function Saves:SaveBuilder(playerID, heroName)
     end)
 end
 
-function Saves:LoadBuilder(playerID)
+function Saves:SaveGrid(playerID, bEnabled)
+    local steamID = PlayerResource:GetSteamAccountID(playerID)
+    local state = bEnabled and 1 or 0
+    local request = Saves.url .. "&id=" .. steamID .. "&save=1" .. "&grid=" .. state
+
+    local req = CreateHTTPRequest('GET', request)
+    
+    Saves:Send(req, function(obj)
+        -- Success
+        Saves:print("Successfully saved grid state ("..state..") for player " .. playerID)
+    end)
+end
+
+function Saves:LoadData(playerID)
     local steamID = PlayerResource:GetSteamAccountID(playerID)
     local request = Saves.url .. "&id=" .. steamID
 
     local req = CreateHTTPRequest('GET', request)
 
-    Saves:print("Loading player " .. playerID .. " builder...")
+    Saves:print("Loading player " .. playerID)
     Saves:Send(req, function(obj)
         -- Success
         if obj.save then
@@ -86,8 +100,20 @@ function Saves:LoadBuilder(playerID)
                     Saves:print("Got a custom builder for player " .. playerID.. ": ".. Rewards.players[steamID64].hero)
                 end
             end
+
+            if obj.save.grid then
+                local gridEnabled = tonumber(obj.save.grid)
+                if gridEnabled == 1 then
+                    Saves.grids[playerID] = true
+                    Saves:print("Toggle Grid for Player " .. playerID)
+                end
+            end
         end
     end)
+end
+
+function Saves:ShouldEnableGrid(playerID)
+    return Saves.grids[playerID]
 end
 
 function Saves:Send(req, callback)

@@ -136,7 +136,7 @@ function ScoringObject:UpdateScore( const , wave )
         else
             self.totalScore = self.totalScore + scoreTable['totalScore']
         end
-        print("Score updated for player [" .. self.playerID .. "] : " .. self.totalScore)
+        print("Score updated for player [" .. self.playerID .. "]: " .. self.totalScore)
     end
     --PrintTable(processed)
 
@@ -252,9 +252,8 @@ function ScoringObject:GetGameFinished()
     local values = {}
     local totalScore = 0
     local extraFrogScore = 0 --Killed but didn't finish the wave
-    local frogKills = 0 --Total
-    if playerData.iceFrogKills then
-        frogKills = playerData.iceFrogKills
+    local frogKills = GetCoopFrogKills() --Total
+    if frogKills > 0 then
         local remainder = frogKills % CREEPS_PER_WAVE_COOP
         extraFrogScore = remainder * POINTS_PER_FROG * self:GetBossBonus(playerData.bossWaves-1) * (1+self:GetDifficultyBonus())
     end

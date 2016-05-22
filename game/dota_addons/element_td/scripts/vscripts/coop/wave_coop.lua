@@ -58,6 +58,8 @@ function WaveCoop:SpawnWave()
 	local entitiesSpawned = 0
 	local time_between_spawns = 0.5
 	local creepBossSequence = 0
+	local creepBossAbilities = CreepBoss:GetAbilityList()
+	local numAbilities = #creepBossAbilities
 	
 	self.startTime = GameRules:GetGameTime() + time_between_spawns
 	self.leaks = 0
@@ -69,8 +71,12 @@ function WaveCoop:SpawnWave()
 	end
 
 	self.spawnTimer = Timers:CreateTimer(time_between_spawns, function()
-		for sector = 1, 6 do 
-			local entity = SpawnEntity(WAVE_CREEPS[self.waveNumber], nil, EntityStartLocations[sector])
+		for sector = 1, 6 do
+			if entitiesSpawned >= CREEPS_PER_WAVE_COOP then
+				break
+			end
+
+			local entity = SpawnEntity(WAVE_CREEPS[self.waveNumber], nil, EntityStartLocations[sector], self.waveNumber)
 			if entity then
 				self:RegisterCreep(entity:entindex())
 				entity:SetForwardVector(Vector(0, -1, 0))
@@ -94,10 +100,22 @@ function WaveCoop:SpawnWave()
 					entity.waveNumber = CURRENT_BOSS_WAVE
 
 					-- Choose an ability in sequence
-					creepBossSequence = (creepBossSequence % #CreepBossAbilities) + 1
-				    local abilityName = CreepBossAbilities[creepBossSequence]
-				    entity.random_ability = abilityName
-				    entity.scriptObject.ability = AddAbility(entity, abilityName)
+					if CHALLENGE_MODE then
+						creepBossAbilities = CreepBoss:GetAbilityList()
+						
+						local ability1 = table.remove(creepBossAbilities, math.random(#creepBossAbilities))
+						local ability2 = table.remove(creepBossAbilities, math.random(#creepBossAbilities))
+
+						entity.scriptObject.abilities = {}
+						entity.scriptObject.abilities[ability1] = AddAbility(entity, ability1) 
+						entity.scriptObject.abilities[ability2] = AddAbility(entity, ability2) 
+						entity.random_abilities = {[ability1] = true, [ability2] = true}
+					else
+						creepBossSequence = (creepBossSequence % numAbilities) + 1
+				   		local abilityName = creepBossAbilities[creepBossSequence]
+						entity.random_abilities = {[abilityName] = true} 
+						entity.scriptObject.abilities[abilityName] = AddAbility(entity, abilityName)
+					end
 				end
 
 				-- Set bounty
@@ -128,30 +146,10 @@ function WaveCoop:SpawnWave()
 				ClosePortalForSector(nil, i, true)
 			end
 
-					--[[
-					-- Endless waves are started as soon as the wave finishes spawning
-					if GameSettings:GetEndless() == "Endless" then
-						playerData.nextWave = playerData.nextWave + 1
-
-						-- Rush Boss Waves just follow the same classic spawn rules, skip
-				        if playerData.nextWave > WAVE_COUNT and not EXPRESS_MODE then
-						
-				        	--[[playerData.bossWaves = playerData.bossWaves + 1
-				            Log:info("Spawning Rush boss wave " .. playerData.bossWaves .. " for ["..self.playerID.."] ".. playerData.name)
-				            ShowBossWaveMessage(self.playerID, playerData.bossWaves)
-				            UpdateWaveInfo(self.playerID, WAVE_COUNT)
-				            SpawnWaveForPlayer(self.playerID, WAVE_COUNT) -- spawn dat boss wave]--
-				            
-				            return nil
-				        elseif playerData.nextWave > WAVE_COUNT and EXPRESS_MODE then
-				        	return nil
-				        end
-						StartBreakTime(self.playerID, GetPlayerDifficulty(self.playerID):GetWaveBreakTime(playerData.nextWave))
-
-						-- Update UI for dead players
-						StartBreakTime_DeadPlayers(self.playerID, GetPlayerDifficulty(self.playerID):GetWaveBreakTime(playerData.nextWave), playerData.nextWave)
-					end
-					]]--
+			if self.waveNumber ~= WAVE_COUNT then
+				-- Start clock timer on the UI
+				CustomGameEventManager:Send_ServerToAllClients("etd_start_wave_clock", {threshold = FAST_THRESHOLD})
+			end
 
 			return nil
 		else

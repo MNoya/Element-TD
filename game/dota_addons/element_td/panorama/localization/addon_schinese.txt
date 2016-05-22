@@ -102,6 +102,9 @@
         "length_express_description"        "游戏更快，波数更少。"
         "express"                           "快速"
 
+        "abilities_challenge"                "挑战"
+        "abilities_challenge_description"    "每波小兵随机拥有两个技能！"
+
         "DOTA_GoodGuys"                             "夏日" //Lime
         "DOTA_BadGuys"                              "暖秋" //Orange
         "DOTA_Custom1"                              "圣堂" //Pink
@@ -225,7 +228,7 @@
         "loading_new_map"                  "全新地图已经开启"
 
         "loading_screen_changelog"   "最新的变化"
-        "loading_screen_change_text"     "<h1>V1.7 版本</h1><h2>全新合作地图！</h2>• 推荐玩家数量：2-4人<br>•开局即拥有2个元素，100生命值及更多金币<br>• 50波小兵及Boss<br>• 各波小兵出场顺序随机<br>• 金币及利息均分<br>• 生命值及分数共享<br>请在创建游戏大厅时选择<b>element_td_coop</b><br>地图开启合作模式。<br><br><h2>平衡调整</h2>• 潮汐之塔削弱。<br>• 圣火元素增强。<br>• 自然元素增强。<br>• 电流之塔小幅增强<br>• 三级双元素塔降价。<br><br><b>请到论坛查看完整更新日志！</b><br>"
+        "loading_screen_change_text" "<h1>V1.8 版本</h1><h2>全新挑战模式</h2>• 暴力混沌模式<br>• 每波小兵随机拥有两个技能！<br><br><h2>更新亮点</h2>• 现在可以用一颗交换第十二次元素选择机会。<br>• 现在混沌模式中也包含传统模式中的雄壮技能。<br><br><h2>Balance</h2>• 合作模式难度降低。<br>• 快速模式难度提升。<br>• 积分与完成速度的关联性降低。<br>• 圣水之塔重做。<br>• 大地之塔重做。<br>• 剧毒之塔重做。<br>• 电流之塔重做。<br>• 生命之塔重做。<br><br><b>请到论坛查看完整更新日志！</b><br>"
  
         "credits_title"         "致谢"
         "credits_developers"    "开发者"

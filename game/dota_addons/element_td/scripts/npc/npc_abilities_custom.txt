@@ -763,6 +763,7 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"MaxLevel"						"1"
 		"AbilityTextureName"			"dark_seer_surge"
 		"AbilityCooldown"				"3"
@@ -796,7 +797,9 @@
 			"creep_haste_delay"
 			{
 				"IsHidden"		"1"
+				"IsPurgable"    "0"
 				"Duration"		"%interval"
+				"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 				"OnDestroy"
 				{
 					"RunScript"
@@ -979,7 +982,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"interval"				"8"	
+				"interval"				"7"	
 			}
 		}
 		"Modifiers"
@@ -992,7 +995,7 @@
 	
 				"States"
 				{
-					"MODIFIER_STATE_INVULNERABLE" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ATTACK_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED" //USED TO BE INVULNERABLE, hopefully nothing breaks
 					"MODIFIER_STATE_MAGIC_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
@@ -1181,7 +1184,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"250"
+				"aoe"					"300"
 			}
 			"02"
 			{
@@ -1191,7 +1194,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"6"
+				"duration"				"7"
 			}
 		}
 	}
@@ -2536,12 +2539,12 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "aftershock_damage_pct" "50"
+	            "aftershock_damage_pct" "0"
 	        }
 	        "01"
 	        {
 	            "var_type"              "FIELD_FLOAT"
-	            "aftershock_delay"      "0.5"
+	            "aftershock_delay"      "0"
 	        }
 	    }
 	}
@@ -2622,27 +2625,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"200 1000 5000"
+				"damage"				"180 900 4500"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_decrease"		"15"
+				"damage_increase"		"20"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bounce_range"			"550"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bounce_decrease"		"30"
+				"bounce_range"			"225"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"jump_count"			"10"
+				"bounce_decrease"		"25"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"jump_count"			"7"
 			}
 		}
 	}
@@ -2705,7 +2708,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"15 45"
+				"max_damage_amp"		"13 39"
 			}
 			"04"
 			{
@@ -2776,7 +2779,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"max_reduction"		"70"
+				"max_reduction"		"60"
 			}
 			"03"
 			{
@@ -2883,12 +2886,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"12 36"
+				"damage_amp"			"11 33"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"140 700"
+				"dot"					"110 550"
 			}
 			"03"
 			{
@@ -3157,7 +3160,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"160 800"
+				"splash_damage"			"200 1000"
 			}
 			"02"
 			{
@@ -3167,7 +3170,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"5"
+				"duration"				"4"
 			}
 			"04"
 			{
@@ -3194,7 +3197,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"25 35"
+				"bonus_gold"			"30 40"
 			}
 		}
 	
@@ -3428,7 +3431,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"bat_decrease_stack" "0.05"
+				"bat_decrease_stack" "0.03"
 			}
 			"03"
 			{
@@ -3597,17 +3600,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"200 1000 5000"
+				"damage"				"180 900 4500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe_start"				"150"
+				"aoe_start"				"200"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe_end"				"450"
+				"aoe_end"				"400"
 			}
 			"04"
 			{
@@ -3739,7 +3742,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"6 18"
+				"damage_taken"			"5 15"
 			}
 			"02"
 			{
@@ -3849,6 +3852,15 @@
 			{
 				"TextureName" "towers/life"
 			}
+	
+			"modifier_life_tower_full_health"
+			{
+				"TextureName" "towers/life"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE" "%damage_bonus_full_hp_pct"
+				}
+			}
 		}
 	
 		"AbilitySpecial"
@@ -3856,7 +3868,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"6 5 4"
+				"kills_required"				"8 6 4"
 			}
 			"02"
 			{
@@ -3866,13 +3878,18 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"points_per_kill"				"10 12 15"
+				"damage_bonus_full_hp_pct"		"30"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"points_per_kill"				"3 4 6"
 			}
 		}
 	}
 	//=================================================================================================================
 	// Light Tower: Intensity
-	// Consecutive attacks on the same target causes a flat damage increase (don't worry about numbers). 
+	// Consecutive attacks on the same target causes a flat damage increase. 
 	// Has no stack limit. Resets completely upon switching
 	//=================================================================================================================
 	"light_tower_intensity"
@@ -4224,7 +4241,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"275 1375"
+				"damage"			"300 1500"
 			}
 			"02"
 			{
@@ -4342,12 +4359,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_aoe"				"400"
+				"max_aoe"				"450"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"initial_aoe"			"50"
+				"initial_aoe"			"150"
 			}
 			"03"
 			{
@@ -4381,7 +4398,12 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_mult"					"300"
+				"crit_aoe_half"					"800"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"crit_aoe_full"					"400"
 			}
 		}
 	}
@@ -4442,7 +4464,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"12 36"
+				"health_burn"			"11 33"
 			}
 		}
 	}
@@ -4486,12 +4508,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"600 3000"
+				"damage"				"500 2500"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"550"
+				"aoe"					"700"
 			}
 		}
 	}
@@ -4532,7 +4554,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"15"
+				"bonus_damage"			"12"
 			}
 			"02"
 			{
@@ -4732,7 +4754,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps"					"110 550"
+				"dps"					"90 450"
 			}
 			"04"
 			{
@@ -5113,12 +5135,12 @@
 	        "01"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "bounce_range"        "350"
+	            "bounce_range"        "1"
 	        }
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "bounce_damage_pct"   "25"
+	            "bounce_damage_pct"   "1"
 	        }
 	    }
 	}

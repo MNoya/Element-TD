@@ -20,12 +20,12 @@ function UpdateElementOrbs(playerID)
     local elements = {}
     local playerData = GetPlayerData(playerID)
     for k,v in pairs(playerData.elements) do
-        if v > 0 then
+        if v > 0 and k ~="pure" then
             table.insert(elements, k)
         end
-        hero.orb_count = #elements
     end
 
+    hero.orb_count = #elements
     if hero.orb_count < 6 then
        hero.orb_count = hero.orb_count + 1
     end

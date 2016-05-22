@@ -2,17 +2,10 @@ modifier_client_convars = class({})
 
 function modifier_client_convars:OnCreated( params )
     if IsClient() then
-        self:SetConVars()
-        self:StartIntervalThink(10)
+        SendToConsole("dota_camera_deatheffect 0")
+        SendToConsole("dota_player_units_auto_attack_mode 2") --Always
+        SendToConsole("dota_summoned_units_auto_attack_mode -1") --Same as hero
     end
-end
-
-function modifier_client_convars:SetConVars()
-    SendToConsole("r_farz 10000")
-end
-
-function modifier_client_convars:OnIntervalThink()
-    self:SetConVars()
 end
 
 function modifier_client_convars:IsHidden()

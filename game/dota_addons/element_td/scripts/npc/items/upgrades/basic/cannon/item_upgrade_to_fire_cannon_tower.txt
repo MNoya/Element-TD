@@ -19,7 +19,7 @@
         }
     }
     "AbilityTextureName"    "item_fire_cannon"
-    "AbilityCastRange"      "550"
+    "AbilityCastRange"      "700"
 }
 
 "item_upgrade_to_fire_cannon_tower_disabled"

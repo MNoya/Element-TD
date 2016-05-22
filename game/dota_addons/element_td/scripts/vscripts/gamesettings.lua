@@ -12,6 +12,7 @@ if not GameSettings then
 	GameSettings.elements = ""
 	GameSettings.difficulty = nil -- for co-op mode
 	GameSettings.mapSettings = {} -- map data (lives, builder movement speed)
+	GameSettings.abilitiesMode = "Normal"
 
 	DIFFICULTY_OBJECTS = {}
 end
@@ -131,13 +132,6 @@ function GameSettings:SetGameLength(length)
 		ModifyLumber(plyID, GameSettings.length.Lumber)
 		playerData.nextWave = GameSettings.length.Wave
 
-		if length == "Developer" then
-			for e,_ in pairs(playerData.elements) do
-				ModifyElementValue(plyID, e, 1)
-			end
-			DEV_MODE = true
-		end
-
 		if length == "Express" then
 			EXPRESS_MODE = true
 
@@ -149,6 +143,10 @@ end
 
 function GameSettings:SetEndless(endless)
 	self.endless = endless
+end
+
+function GameSettings:IsChaos()
+    return self.order == "Chaos"
 end
 
 function GameSettings:SetCreepOrder(order)
@@ -241,6 +239,19 @@ end
 
 function GameSettings:GetElementOrder()
     return GameSettings.elements 
+end
+
+function GameSettings:SetAbilitiesMode(mode)
+	GameSettings.abilitiesMode = mode
+
+	if mode == "Challenge" then
+		CHALLENGE_MODE = true
+		AbilitiesMode:GenerateChallengeAbilities()
+	end
+end
+
+function GameSettings:GetAbilitiesMode()
+	return GameSettings.abilitiesMode
 end
 
 ----------------------------------------------------

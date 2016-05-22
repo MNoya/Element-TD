@@ -35,7 +35,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"15"
+			"bonus_damage"			"12"
 		}
 		"02"
 		{

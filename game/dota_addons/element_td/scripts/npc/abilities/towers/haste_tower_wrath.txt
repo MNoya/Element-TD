@@ -44,7 +44,7 @@
 		"02"
 		{
 			"var_type"			"FIELD_FLOAT"
-			"bat_decrease_stack" "0.05"
+			"bat_decrease_stack" "0.03"
 		}
 		"03"
 		{

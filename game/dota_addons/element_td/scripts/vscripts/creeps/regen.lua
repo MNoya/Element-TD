@@ -22,16 +22,17 @@ function CreepRegen:OnSpawned()
 	self.ability = self.creep:FindAbilityByName("creep_ability_regen")
 	self.maxRegen = creep:GetMaxHealth() * self.ability:GetSpecialValueFor("max_heal_pct") * 0.01
 	self.healthPercent = self.ability:GetSpecialValueFor("bonus_health_regen") * 0.01
-	self.healthTick = round(creep:GetMaxHealth() * self.healthPercent * 0.1)
+	self.tickTime = 0.5
+	self.healthTick = creep:GetMaxHealth() * self.healthPercent * self.tickTime
 
-	Timers:CreateTimer(0.1, function()
+	Timers:CreateTimer(self.tickTime, function()
 		if not IsValidEntity(creep) or not creep:IsAlive() then return end
 		
 		if self.regenAmount <= self.maxRegen then
 			if creep:GetHealth() > 0 and creep:GetHealth() ~= creep:GetMaxHealth() then
 				self:RegenerateCreepHealth()
 			end
-			return 0.1
+			return self.tickTime
 		else
 			creep:RemoveModifierByName("creep_regen_modifier")
 		end

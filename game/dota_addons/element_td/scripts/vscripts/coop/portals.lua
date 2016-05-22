@@ -9,7 +9,7 @@ end
 function UpdateCoopPortal(wave)
     if not CoopPortal then OpenCoopPortal() end
 
-    local element = string.gsub(creepsKV[WAVE_CREEPS[wave]].Ability1, "_armor", "")
+    local element = string.gsub(creepsKV[WAVE_CREEPS[wave]].CreepAbility1, "_armor", "")
     ParticleManager:SetParticleControl(CoopPortal.particle, 15, GetElementColor(element))
 
     if CoopPortal.vortex then

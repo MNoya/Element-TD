@@ -60,7 +60,7 @@
 		"02"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"max_reduction"		"70"
+			"max_reduction"		"60"
 		}
 		"03"
 		{

@@ -28,12 +28,12 @@
         "01"
         {
             "var_type"            "FIELD_INTEGER"
-            "bounce_range"        "350"
+            "bounce_range"        "1"
         }
         "02"
         {
             "var_type"            "FIELD_INTEGER"
-            "bounce_damage_pct"   "25"
+            "bounce_damage_pct"   "1"
         }
     }
 }

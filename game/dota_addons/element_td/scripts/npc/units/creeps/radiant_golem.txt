@@ -31,6 +31,6 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"        "CreepHeal"
-    "Ability1"        "light_armor"
-    "Ability2"        "creep_ability_heal"
+    "CreepAbility1"        "light_armor"
+    "CreepAbility2"        "creep_ability_heal"
 }

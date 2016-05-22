@@ -100,17 +100,17 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"200 1000 5000"
+			"damage"				"180 900 4500"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aoe_start"				"150"
+			"aoe_start"				"200"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aoe_end"				"450"
+			"aoe_end"				"400"
 		}
 		"04"
 		{

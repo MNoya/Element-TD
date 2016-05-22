@@ -22,7 +22,7 @@
 		"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"kills_required"				"6 5 4"
+			"kills_required"				"8 6 4"
 		}
 	}
 	"AbilityCastRange"              "1150"

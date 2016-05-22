@@ -21,8 +21,6 @@ function CoopStart()
     StartBreakTimeCoop(initialBreakTime)
 
     Timers:CreateTimer(AbandonThinker)
-    Timers:CreateTimer(BananaThinker)
-    CreateBananas()
 end
 
 function SpawnWaveCoop()
@@ -51,22 +49,32 @@ function SpawnWaveCoop()
     -- InterestManager:CheckForIncorrectPausing() -- not needed?
 
     CURRENT_WAVE_OBJECT:SetOnCompletedCallback(function()
-        if COOP_HEALTH == 0 then return end
+        if COOP_HEALTH <= 0 then return end
 
         EmitGlobalSound("ui.npe_objective_complete")
         InterestManager:CompletedWave(COOP_WAVE)
 
-        -- Game cleared?
-        if COOP_WAVE+1 == WAVE_COUNT then
-            ForAllPlayerIDs(function(playerID)
-                local playerData = GetPlayerData(playerID)
-                playerData.clearTime = GameRules:GetGameTime() - START_GAME_TIME -- Used to determine the End Speed Bonus
-                playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR, COOP_WAVE )
-                Timers:CreateTimer(2, function()
-                    playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
-                    playerData.victory = true
+        if CURRENT_BOSS_WAVE == 0 then
+            print("[COOP] Completed wave "..COOP_WAVE)
+
+            -- Game cleared?
+            if COOP_WAVE+1 == WAVE_COUNT then
+                ForAllPlayerIDs(function(playerID)
+                    local playerData = GetPlayerData(playerID)
+                    playerData.clearTime = GameRules:GetGameTime() - START_GAME_TIME -- Used to determine the End Speed Bonus
+                    playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR, COOP_WAVE )
+                    Timers:CreateTimer(2, function()
+                        playerData.scoreObject:UpdateScore( SCORING_GAME_CLEAR )
+                        playerData.victory = true
+                    end)
+                end)            
+            else
+                ForAllPlayerIDs(function(playerID)
+                    local playerData = GetPlayerData(playerID)
+                    playerData.completedWaves = COOP_WAVE
+                    playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR, COOP_WAVE )
                 end)
-            end)            
+            end
         end
 
         if COOP_WAVE < WAVE_COUNT then
@@ -74,7 +82,7 @@ function SpawnWaveCoop()
         end
 
         -- Boss Wave completed starts the new one with no breaktime
-        if CURRENT_BOSS_WAVE > 0 then
+        if COOP_WAVE == WAVE_COUNT and CURRENT_BOSS_WAVE > 0 then
             print("[COOP] Completed boss wave "..CURRENT_BOSS_WAVE)
 
             -- Boss wave score
@@ -95,12 +103,6 @@ function SpawnWaveCoop()
             return
         end
         
-        print("[COOP] Completed wave "..COOP_WAVE)
-        ForAllPlayerIDs(function(playerID)
-            local playerData = GetPlayerData(playerID)
-            playerData.scoreObject:UpdateScore( SCORING_WAVE_CLEAR, COOP_WAVE )
-        end)
-
         -- Start the breaktime for the next wave
         StartBreakTimeCoop(GameSettings:GetGlobalDifficulty():GetWaveBreakTime(COOP_WAVE))
     end)
@@ -286,30 +288,4 @@ function AbandonThinker()
         end
     end)
     return 1
-end
-
-function CreateBananas()
-    local bananas = Entities:FindAllByName("banana")
-    for _,v in pairs(bananas) do
-        CreateItemOnPositionSync(v:GetAbsOrigin(), CreateItem("item_banana", nil, nil))
-    end
-end
-
-function BananaThinker()
-    local heroes = HeroList:GetAllHeroes()
-    for _,hero in pairs(heroes) do
-        if hero and hero:HasItemInInventory("item_banana") then
-            local item = GetItemByName(hero, "item_banana")
-            if item and item:GetCurrentCharges() == 6 then
-                BananaNanana(hero, item)
-                return
-            end
-        end
-    end
-    return 1
-end
-
-function BananaNanana(hero, item)
-    UTIL_Remove(item)
-    --do something to the hero
 end

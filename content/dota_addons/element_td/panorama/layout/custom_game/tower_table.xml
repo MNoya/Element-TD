@@ -174,7 +174,7 @@
                         </Panel>
                         <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('erosion','fire','dark','water')" onmouseout='OnMouseOut()'>
                             <Image class='AbilityImage' id="erosion" src="file://{images}/spellicons/towers/erosion.png"/>
-                            <Label class="TowerName" text="#erosion_tower_name"/>
+                            <Label class="TowerNameLong" text="#erosion_tower_name"/>
                             <Label class="AbilityLevel" id="erosion_level" text=""/>
                         </Panel>
                          <Panel hittest="false" class='AbilityContainerTriple' onmouseover="Hover('flamethrower','fire','dark','earth')" onmouseout='OnMouseOut()'>
@@ -262,7 +262,6 @@
             </Panel>
         </Panel>
         <Panel hittest="false" class="Hidden" id="FilterButtonContainer">
-            <Label class="FilterButton" text="550" onmouseover="HoverFilter('550')" onmouseout='OnMouseOutFilter()'/>
             <Label class="FilterButton" text="700" onmouseover="HoverFilter('700')" onmouseout='OnMouseOutFilter()'/>
             <Label class="FilterButton" text="900" onmouseover="HoverFilter('900')" onmouseout='OnMouseOutFilter()'/>
             <Label class="FilterButton" text="1150" onmouseover="HoverFilter('1150')" onmouseout='OnMouseOutFilter()'/>

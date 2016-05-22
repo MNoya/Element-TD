@@ -31,6 +31,6 @@
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
     "ScriptClass"        "CreepFast"
-    "Ability1"        "fire_armor"
-    "Ability2"        "creep_ability_fast"
+    "CreepAbility1"        "fire_armor"
+    "CreepAbility2"        "creep_ability_fast"
 }

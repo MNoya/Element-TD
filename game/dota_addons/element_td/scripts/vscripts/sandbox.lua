@@ -223,7 +223,11 @@ function Sandbox:SetWave(event)
     playerData.nextWave = waveNumber
     playerData.completedWaves = waveNumber - 1
 
-    StartBreakTime(playerID, GetPlayerDifficulty(playerID):GetWaveBreakTime(playerData.nextWave))
+    if COOP_MAP then
+        StartBreakTimeCoop(GameSettings:GetGlobalDifficulty():GetWaveBreakTime(COOP_WAVE))
+    else
+        StartBreakTime(playerID, GetPlayerDifficulty(playerID):GetWaveBreakTime(playerData.nextWave))
+    end
 
     UpdateWaveInfo(playerID, playerData.nextWave-1)
 end
@@ -431,7 +435,7 @@ function Sandbox:Restart( event )
     end
     if not summoner:HasItemInInventory("item_random") then
         summoner:AddItem(CreateItem("item_random", nil, nil))
-        Timers:CreateTimer(0.1, function() summoner:SwapItems(1, 3) end)
+        Timers:CreateTimer(0.1, function() summoner:SwapItems(2, 3) end)
     end
         
     -- Reset score

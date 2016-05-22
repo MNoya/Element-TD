@@ -18,12 +18,12 @@
     "AttackDamageMin"           "35"
     "AttackDamageMax"           "35"
     "Damage"                    "35"
-    "AttackRange"               "550"
-    "AttackAcquisitionRange"    "550"
+    "AttackRange"               "700"
+    "AttackAcquisitionRange"    "700"
     "AOE_Full"                  "100"
     "AOE_Half"                  "200"
     "AttackRate"                "1.5"
-    "ProjectileSpeed"           "1500"
+    "ProjectileSpeed"           "2000"
 
     "AttackGround"              "1"
 
