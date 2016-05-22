@@ -39,6 +39,8 @@
         "etd_next_boss_wave"        "Boss在{breakTime}后到来"
         "etd_boss_wave"             "第{wave}波Boss"
         "etd_essence_buy_warning"   "购买精华需要拥有全部元素或某个元素达到3级。"
+        "etd_lumber_buy_warning"    "你需要至少三个三级以上元素才能够买木材。"
+        "etd_need_more_essence"     "纯粹精华不足"
         "etd_need_more_lumber"      "需要更多木材。"
         "etd_error_support_tower"       "技能无法对辅助塔使用"
         "etd_error_higher_level_buff"   "此塔已经拥有了更高等级的增益效果"
@@ -910,13 +912,18 @@
         "DOTA_Tooltip_ability_flooding_tower_flood_duration"                              "持续时间："
         "DOTA_Tooltip_ability_flooding_tower_flood_interval"                              "间隔："
 
-         // ******************** ITEMS ********************
+        // ******************** ITEMS ********************
         // Summoner
         "DOTA_Tooltip_ability_item_buy_pure_essence"                                      "购买纯正的精华"
         "DOTA_Tooltip_ability_item_buy_pure_essence_Description"                          "用<font color='#008000'>1木材</font>购买<font color='#00BFFF'>1个纯正的精华</font>。\n\n精华用于升级3级的单元素防御塔，或在拥有6个元素时建造轮回之塔。\n你还将获得<font color='#F0BA36'>额外金币</font>，返还值取决于当前波数和游戏难度。"
 
         "DOTA_Tooltip_ability_item_buy_pure_essence_disabled"                             "无法购买纯正的精华"
         "DOTA_Tooltip_ability_item_buy_pure_essence_disabled_Description"                 "用<font color='#008000'>1木材</font>购买<font color='#00BFFF'>1个纯正的精华</font>。\n<font color='#F0BA36'>需要：</font>需要全部元素到达1级或者至少拥有一个3级的元素\n\n精华用于升级3级的单元素防御塔，或在拥有6个元素时建造轮回之塔。\n你还将获得<font color='#F0BA36'>额外金币</font>，返还值取决于当前波数和游戏难度。"
+
+        "DOTA_Tooltip_ability_item_buy_lumber"                         "购买木材"
+        "DOTA_Tooltip_ability_item_buy_lumber_Description"             "用<font color='#008000'>一份木材</font>交换<font color='#00BFFF'>一颗纯粹精华</font>\n解锁第十二个元素。\n<font color='#F0BA36'>"
+        "DOTA_Tooltip_ability_item_buy_lumber_disabled"                "购买木材（禁用）"
+        "DOTA_Tooltip_ability_item_buy_lumber_disabled_Description"    "用<font color='#008000'>一份木材</font>交换<font color='#00BFFF'>一颗纯粹精华</font>\n<font color='#F0BA36'>需要：</font>三级元素\n\n解锁第十二个元素。"
 
         "DOTA_Tooltip_ability_item_random"                                                "随机元素"
         "DOTA_Tooltip_ability_item_random_Description"                                    "选择以在接下来的游戏中随机获得元素。\n仅能在选择元素之前选择此项，并且无法更改。"
