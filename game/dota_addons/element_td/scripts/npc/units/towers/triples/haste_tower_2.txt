@@ -40,9 +40,9 @@
         "2"        "fire"
         "3"        "water"
     }
-    "Damage"        "5000"
-    "AttackDamageMin"        "5000"
-    "AttackDamageMax"        "5000"
+    "Damage"        "8000"
+    "AttackDamageMin"        "8000"
+    "AttackDamageMax"        "8000"
     "DamageType"        "fire"
     "ScriptClass"        "HasteTower"
     "TowerType"        "Normal"
@@ -52,7 +52,7 @@
     "AttackAcquisitionRange"        "900"
     "AttackRate"        "0.66"
     "ProjectileModel"        "particles/custom/towers/haste/attack.vpcf"
-    "ProjectileSpeed"        "4000"
+    "ProjectileSpeed"        "1000"
 
     "Model"             "models/heroes/troll_warlord/troll_warlord.vmdl"
     "ModelScale"        "1.1"
