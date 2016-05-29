@@ -126,10 +126,10 @@
         "etd_tower_table_elements"                  "Элементы"
         "etd_tower_table_duals"                     "Сдвоенные"
         "etd_tower_table_triples"                   "Строенные"
-        "etd_tower_table_buff"                      "Бафф"
-        "etd_tower_table_slow"                      "Замедление"
-        "etd_tower_table_amp"                       "Увеличение урона"
-        "etd_tower_table_aoe"                       "Урон по зоне"
+        "etd_tower_table_buff"                      "БАФФ"
+        "etd_tower_table_slow"                      "ЗАМ"
+        "etd_tower_table_amp"                       "УВЛ"
+        "etd_tower_table_aoe"                       "АОЕ"
 
         "etd_ranking_text"                          "Рейтинг"
 
@@ -174,7 +174,7 @@
         "windstorm_tower_name"           "Бури"
 
         // Sandbox
-        "etd_new_feature"       "Новинка"
+        "etd_new_feature"       "NEW!"
         "sandbox_mode"          "Песочница"
         "sandbox_mode_enable"   "Включить режим песочницы"
         "sandbox_mode_tooltip"  "Показывает панель с опциями для теста башен и стратегий.<br>Если включено, то очки не будут отправлены в таблицу результатов!<br>Доступно только в одиночной игре."
@@ -200,8 +200,8 @@
         "sandbox_playback"      ""
         "sandbox_speedup"       "Увеличить скорость"
         "sandbox_pause"         "Пауза"
-        "sandbox_restart"       "Перезапустить игру"
-        "sandbox_quit"          "Завершить игру"
+        "sandbox_restart"       "Перезапустить"
+        "sandbox_quit"          "Завершить"
         "sandbox_wait"          "Пожалуйста, подождите! Загружаем активы..."
 
         "loading_screen_tip_0"  "Режим песочницы доступен для одиночного режима игры и позволяет вам легко тестировать башни и стратегии."
