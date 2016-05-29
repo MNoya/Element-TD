@@ -2703,7 +2703,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"5 15"
+				"base_damage_amp"		"6 18"
 			}
 			"03"
 			{
@@ -3376,7 +3376,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_mult"			"400"
+				"damage_mult"			"500"
 			}
 			"04"
 			{
@@ -3680,7 +3680,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"4000 20000"
+				"multiplier"			"4400 22000"
 			}
 		}
 	}
