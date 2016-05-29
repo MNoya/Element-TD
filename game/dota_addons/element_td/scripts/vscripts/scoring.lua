@@ -24,7 +24,7 @@ SCORING_BOSS_WAVE_CLEAR = 3
 SCORING_GAME_FINISHED = 4
 
 -- Scoring Rules
-POINTS_PER_FROG = 500
+POINTS_PER_FROG = 400
 BASE_WAVE_SCORE = 10
 BASE_WAVE_SCORE_EXPRESS = 5
 CLEAN_WAVE_BONUS = 0.3
@@ -32,7 +32,7 @@ SLOW_WAVE_CLEAR_FACTOR = 0
 FAST_WAVE_CLEAR_FACTOR = 0
 BASE_TIME_CLASSIC = 45
 BASE_TIME_EXPRESS = 20
-BOSS_WAVE_BONUS_SCALING = 0.25
+BOSS_WAVE_BONUS_SCALING = 0.1
 FAST_THRESHOLD = 30
 
 function ScoringObject:UpdateScore( const , wave )
@@ -301,7 +301,7 @@ function ScoringObject:GetNetworthBonus()
 	local playerNetworth = GetPlayerNetworth( self.playerID )
 	--local baseWorth = GetPlayerDifficulty( self.playerID ):GetBaseWorth()
 
-	return (playerNetworth/2)
+	return (playerNetworth)
 end
 
 -- bonus per boss wave after the first one
