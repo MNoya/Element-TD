@@ -2,18 +2,18 @@ Checking resource/addon_russian.txt
 Missing Keys:
         "DOTA_Tooltip_ability_item_buy_lumber"                         "Купить дерево"
         "DOTA_Tooltip_ability_item_buy_lumber_Description"             "Продать <font color='#00BFFF'>1 Чистую Эссенцию</font> за <font color='#008000'>1 дерево</font>\nОткрывает 12-ый элемент.\n<font color='#F0BA36'>"
-        "DOTA_Tooltip_ability_item_buy_lumber_disabled"                "Покупка дерева отключена"
-        "DOTA_Tooltip_ability_item_buy_lumber_disabled_Description"    "Продать <font color='#00BFFF'>1 Чистую Эссенцию</font> за <font color='#008000'>1 дерево</font>\n<font color='#F0BA36'>Требования: </font>три элемента 3-го уровня\n\nОткрывает 12-ый элемент."
+        "DOTA_Tooltip_ability_item_buy_lumber_disabled"                "Покупка дерева невозможна"
+        "DOTA_Tooltip_ability_item_buy_lumber_disabled_Description"    "Продать <font color='#00BFFF'>1 Чистую Эссенцию</font> за <font color='#008000'>1 дерево</font>\n<font color='#F0BA36'>Требования: </font>три элемента 3-го уровня\n\nОткрывает выбор 12-го элемента."
         "centaur_warchief"                                             "Вождь Кентавров"
         "clock_wanderer"                                               "Часовой странник"
         "deathbringer"                                                 "Несущий смерть"
         "earth_walker"                                                 "Земляной странник"
-        "etd_lumber_buy_warning"                                       "Вам нужы как минимум 3 элемента 3 уровня для покупки."
+        "etd_lumber_buy_warning"                                       "Вам нужны как минимум 3 элемента 3 уровня для покупки."
         "etd_need_more_essence"                                        "Нужно больше эссенции."
         "faceless"                                                     "Безликий"
         "otter_dragon"                                                 "Зелёный дракон"
         "shifting_treant"                                              "Переменный древень"
-        "storm_spirit"                                                 "Душ шторма"
+        "storm_spirit"                                                 "Дух шторма"
         "wolf"                                                         "Волк"
 Total of 15 Missing keys on resource/addon_russian.txt!
 ------------------------------------------
