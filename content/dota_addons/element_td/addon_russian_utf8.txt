@@ -45,7 +45,7 @@
         "etd_error_cloned_tower"    "Вы не можете клонировать клона!"
         "etd_error_recently_cloned" "Эта башня была недавно клонирована!"
         "DOTA_ToolTip_Targeting_AlliedCreeps" "Ваши башни" //Overrides the default dota tooltip
-        "dota_hud_error_unit_cant_move"       "Сперва выберите элемент" //Overrides the default dota tooltip
+        "dota_hud_error_unit_cant_move"       "Выберите героя, чтобы двигаться" //Overrides the default dota tooltip
         "DOTA_LevelUp"  "ЭЛЕМЕНТЫ" //Overrides the default dota tooltip
 
         // ******************** UNITS ********************
@@ -1492,7 +1492,7 @@
         "DOTA_Tooltip_ability_item_upgrade_to_dark_arrow_tower"                "Стрелок тьмы"
         "DOTA_Tooltip_ability_item_upgrade_to_dark_arrow_tower_disabled"       "Стрелок тьмы"
         "DOTA_Tooltip_ability_item_upgrade_to_dark_arrow_tower_Description"    "Улучшает эту башню до Стрелка тьмы.\n\nСТОИМОСТЬ: <font color='#F0BA36'>80 золота</font>\nЭЛЕМЕНТ: <font color='#6C05B1'>тьма</font>\nТИП УРОНА: <font color='#6C05B1'>тьма</font>\nУРОН: <font color='#FFFFFF'>90</font>\nДАЛЬНОСТЬ: <font color='#FFFFFF'>900</font>\nСКОРОСТЬ: <font color='#FFFFFF'>быстрая</font>\n"
-        "DOTA_Tooltip_ability_item_upgrade_to_dark_arrow_tower_disabled_Description"    "Улучшает эту башню до Dark Arrow Tower.\n<font color='#F0BA36'>Требования: </font><font color='#6C05B1'>тьма</font>\n\nСТОИМОСТЬ: <font color='#F0BA36'>80 золота</font>\nЭЛЕМЕНТ: <font color='#6C05B1'>тьма</font>\nТИП УРОНА: <font color='#6C05B1'>тьма</font>\nУРОН: <font color='#FFFFFF'>90</font>\nДАЛЬНОСТЬ: <font color='#FFFFFF'>900</font>\nСКОРОСТЬ: <font color='#FFFFFF'>быстрая</font>\n"
+        "DOTA_Tooltip_ability_item_upgrade_to_dark_arrow_tower_disabled_Description"    "Улучшает эту башню до Стрелка тьмы.\n<font color='#F0BA36'>Требования: </font><font color='#6C05B1'>тьма</font>\n\nСТОИМОСТЬ: <font color='#F0BA36'>80 золота</font>\nЭЛЕМЕНТ: <font color='#6C05B1'>тьма</font>\nТИП УРОНА: <font color='#6C05B1'>тьма</font>\nУРОН: <font color='#FFFFFF'>90</font>\nДАЛЬНОСТЬ: <font color='#FFFFFF'>900</font>\nСКОРОСТЬ: <font color='#FFFFFF'>быстрая</font>\n"
 
         "DOTA_Tooltip_ability_item_upgrade_to_dark_cannon_tower"                   "Пушка тьмы"
         "DOTA_Tooltip_ability_item_upgrade_to_dark_cannon_tower_Disabled"          "Пушка тьмы"

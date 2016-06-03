@@ -32,12 +32,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"22 110 550"
+			"damage"				"30 150 750"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aftershock_damage"		"22 110 550"
+			"aftershock_damage"		"30 150 750"
 		}
 	}
 	"AbilityCastRange"              "700"

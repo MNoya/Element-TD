@@ -4175,7 +4175,7 @@
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
-	    "ProjectileSpeed"           "2000" 
+	    "ProjectileSpeed"           "2500" 
 	
 	    "Level"                     "1"
 	    "Cost"                      "50"
@@ -4251,7 +4251,7 @@
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
-	    "ProjectileSpeed"           "2000" 
+	    "ProjectileSpeed"           "2500" 
 	
 	    "Level"                     "1"
 	    "Cost"                      "80"
@@ -4324,7 +4324,7 @@
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
-	    "ProjectileSpeed"           "2000" 
+	    "ProjectileSpeed"           "2500" 
 	
 	    "Level"                     "1"
 	    "Cost"                      "80"
@@ -4397,7 +4397,7 @@
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
-	    "ProjectileSpeed"           "2000" 
+	    "ProjectileSpeed"           "2500" 
 	
 	    "Level"                     "1"
 	    "Cost"                      "80"
@@ -4469,7 +4469,7 @@
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
-	    "ProjectileSpeed"           "2000" 
+	    "ProjectileSpeed"           "2500" 
 	
 	    "Level"                     "1"
 	    "Cost"                      "80"
@@ -4542,7 +4542,7 @@
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
-	    "ProjectileSpeed"           "2000" 
+	    "ProjectileSpeed"           "2500" 
 	
 	    "Level"                     "1"
 	    "Cost"                      "80"
@@ -4615,7 +4615,7 @@
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
-	    "ProjectileSpeed"           "2000" 
+	    "ProjectileSpeed"           "2500" 
 	
 	    "Level"                     "1"
 	    "Cost"                      "80"
@@ -12235,9 +12235,9 @@
 	        "2"        "earth"
 	        "3"        "light"
 	    }
-	    "Damage"        "6000"
-	    "AttackDamageMin"        "6000"
-	    "AttackDamageMax"        "6000"
+	    "Damage"        "5500"
+	    "AttackDamageMin"        "5500"
+	    "AttackDamageMax"        "5500"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GoldTower"
 	    "TowerType"        "Normal"
@@ -12330,9 +12330,9 @@
 	        "2"        "earth"
 	        "3"        "light"
 	    }
-	    "Damage"        "30000"
-	    "AttackDamageMin"        "30000"
-	    "AttackDamageMax"        "30000"
+	    "Damage"        "27500"
+	    "AttackDamageMin"        "27500"
+	    "AttackDamageMax"        "27500"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GoldTower"
 	    "TowerType"        "Normal"
