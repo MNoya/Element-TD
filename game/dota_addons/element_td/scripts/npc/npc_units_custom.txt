@@ -4169,9 +4169,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "30"
-	    "AttackDamageMax"           "30"
-	    "Damage"                    "30"
+	    "AttackDamageMin"           "35"
+	    "AttackDamageMax"           "35"
+	    "Damage"                    "35"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
@@ -4245,9 +4245,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "90"
-	    "AttackDamageMax"           "90"
-	    "Damage"                    "90"
+	    "AttackDamageMin"           "105"
+	    "AttackDamageMax"           "105"
+	    "Damage"                    "105"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
@@ -4318,9 +4318,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "90"
-	    "AttackDamageMax"           "90"
-	    "Damage"                    "90"
+	    "AttackDamageMin"           "105"
+	    "AttackDamageMax"           "105"
+	    "Damage"                    "105"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
@@ -4391,9 +4391,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "90"
-	    "AttackDamageMax"           "90"
-	    "Damage"                    "90"
+	    "AttackDamageMin"           "105"
+	    "AttackDamageMax"           "105"
+	    "Damage"                    "105"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
@@ -4463,9 +4463,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "90"
-	    "AttackDamageMax"           "90"
-	    "Damage"                    "90"
+	    "AttackDamageMin"           "105"
+	    "AttackDamageMax"           "105"
+	    "Damage"                    "105"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
@@ -4536,9 +4536,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "90"
-	    "AttackDamageMax"           "90"
-	    "Damage"                    "90"
+	    "AttackDamageMin"           "105"
+	    "AttackDamageMax"           "105"
+	    "Damage"                    "105"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
@@ -4609,9 +4609,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "90"
-	    "AttackDamageMax"           "90"
-	    "Damage"                    "90"
+	    "AttackDamageMin"           "105"
+	    "AttackDamageMax"           "105"
+	    "Damage"                    "105"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
@@ -4680,9 +4680,9 @@
 	 
 	    // Stats
 	    //-----------------------------
-	    "AttackDamageMin"           "35"
-	    "AttackDamageMax"           "35"
-	    "Damage"                    "35"
+	    "AttackDamageMin"           "45"
+	    "AttackDamageMax"           "45"
+	    "Damage"                    "45"
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AOE_Full"                  "100"
@@ -4759,9 +4759,9 @@
 	 
 	    // Stats
 	    //-----------------------------
-	    "AttackDamageMin"           "105"
-	    "AttackDamageMax"           "105"
-	    "Damage"                    "105"
+	    "AttackDamageMin"           "135"
+	    "AttackDamageMax"           "135"
+	    "Damage"                    "135"
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AOE_Full"                  "100"
@@ -4835,9 +4835,9 @@
 	 
 	    // Stats
 	    //-----------------------------
-	    "AttackDamageMin"           "105"
-	    "AttackDamageMax"           "105"
-	    "Damage"                    "105"
+	    "AttackDamageMin"           "135"
+	    "AttackDamageMax"           "135"
+	    "Damage"                    "135"
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AOE_Full"                  "100"
@@ -4911,9 +4911,9 @@
 	 
 	    // Stats
 	    //-----------------------------
-	    "AttackDamageMin"           "105"
-	    "AttackDamageMax"           "105"
-	    "Damage"                    "105"
+	    "AttackDamageMin"           "135"
+	    "AttackDamageMax"           "135"
+	    "Damage"                    "135"
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AOE_Full"                  "100"
@@ -4987,9 +4987,9 @@
 	 
 	    // Stats
 	    //-----------------------------
-	    "AttackDamageMin"           "105"
-	    "AttackDamageMax"           "105"
-	    "Damage"                    "105"
+	    "AttackDamageMin"           "135"
+	    "AttackDamageMax"           "135"
+	    "Damage"                    "135"
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AOE_Full"                  "100"
@@ -5063,9 +5063,9 @@
 	 
 	    // Stats
 	    //-----------------------------
-	    "AttackDamageMin"           "105"
-	    "AttackDamageMax"           "105"
-	    "Damage"                    "105"
+	    "AttackDamageMin"           "135"
+	    "AttackDamageMax"           "135"
+	    "Damage"                    "135"
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AOE_Full"                  "100"
@@ -5139,9 +5139,9 @@
 	 
 	    // Stats
 	    //-----------------------------
-	    "AttackDamageMin"           "105"
-	    "AttackDamageMax"           "105"
-	    "Damage"                    "105"
+	    "AttackDamageMin"           "135"
+	    "AttackDamageMax"           "135"
+	    "Damage"                    "135"
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AOE_Full"                  "100"
@@ -11872,9 +11872,9 @@
 	        "2"        "earth"
 	        "3"        "fire"
 	    }
-	    "Damage"        "500"
-	    "AttackDamageMin"        "500"
-	    "AttackDamageMax"        "500"
+	    "Damage"        "320"
+	    "AttackDamageMin"        "320"
+	    "AttackDamageMax"        "320"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlamethrowerTower"
 	    "TowerType"        "Normal"
@@ -11965,9 +11965,9 @@
 	        "2"        "earth"
 	        "3"        "fire"
 	    }
-	    "Damage"        "2500"
-	    "AttackDamageMin"        "2500"
-	    "AttackDamageMax"        "2500"
+	    "Damage"        "1600"
+	    "AttackDamageMin"        "1600"
+	    "AttackDamageMax"        "1600"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlamethrowerTower"
 	    "TowerType"        "Normal"
