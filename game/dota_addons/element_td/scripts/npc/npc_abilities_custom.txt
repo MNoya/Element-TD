@@ -2708,7 +2708,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"12 36"
+				"max_damage_amp"		"13 39"
 			}
 			"04"
 			{
@@ -2886,7 +2886,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"10 30"
+				"damage_amp"			"11 33"
 			}
 			"02"
 			{
@@ -4464,7 +4464,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"10 30"
+				"health_burn"			"10 27"
 			}
 		}
 	}

@@ -5950,7 +5950,7 @@
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.31"
-	    "AttackAnimationPoint"      "0"
+	    "AttackAnimationPoint"      "0.1"
 	    "ProjectileSpeed"           "2000"
 	
 	    "Level"                     "1"
@@ -6043,7 +6043,7 @@
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.31"
-	    "AttackAnimationPoint"        "0"
+	    "AttackAnimationPoint"        "0.1"
 	    "ProjectileSpeed"           "2000"
 	
 	    "Level"                     "2"
@@ -6130,7 +6130,7 @@
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.31"
-	    "AttackAnimationPoint"      "0"
+	    "AttackAnimationPoint"      "0.1"
 	    "ProjectileSpeed"           "2000"
 	
 	    "Level"                     "4"
@@ -6214,7 +6214,7 @@
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.31"
-	    "AttackAnimationPoint"      "0"
+	    "AttackAnimationPoint"      "0.1"
 	    "ProjectileSpeed"           "2000"
 	
 	    "Level"                     "3"
@@ -12235,9 +12235,9 @@
 	        "2"        "earth"
 	        "3"        "light"
 	    }
-	    "Damage"        "5500"
-	    "AttackDamageMin"        "5500"
-	    "AttackDamageMax"        "5500"
+	    "Damage"        "5000"
+	    "AttackDamageMin"        "5000"
+	    "AttackDamageMax"        "5000"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GoldTower"
 	    "TowerType"        "Normal"
@@ -12330,9 +12330,9 @@
 	        "2"        "earth"
 	        "3"        "light"
 	    }
-	    "Damage"        "27500"
-	    "AttackDamageMin"        "27500"
-	    "AttackDamageMax"        "27500"
+	    "Damage"        "25000"
+	    "AttackDamageMin"        "25000"
+	    "AttackDamageMax"        "25000"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GoldTower"
 	    "TowerType"        "Normal"
