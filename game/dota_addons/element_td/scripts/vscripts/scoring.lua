@@ -88,7 +88,7 @@ function ScoringObject:UpdateScore( const , wave )
 			table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;'..playerData.waveObjects[wave].leaks .. ' Lives lost', '#FF0000'} )
 		end
 	end
-	if scoreTable['speedBonus'] then
+	--[[if scoreTable['speedBonus'] then
 		local speedColor = '#FFFF00'
 		if scoreTable['speedBonus'] < 0 then
 			speedColor = '#FF0000'
@@ -100,7 +100,7 @@ function ScoringObject:UpdateScore( const , wave )
 	end
 	if scoreTable['under30'] then
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Under 30 waves: ' .. scoreTable['under30'], '#FFFF00'} )
-	end
+	end]]
 	if scoreTable['networthBonus'] then
 		table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Networth bonus: '.. comma_value(scoreTable['networthBonus']), '#00FFFF'} )
 	end
@@ -188,15 +188,15 @@ function ScoringObject:GetWaveCleared( wave )
 	local playerData = GetPlayerData( self.playerID )
 	local waveClearScore = self:GetWaveClearBonus( wave )
 	local time = playerData.waveObjects[wave].endTime - playerData.waveObjects[wave].endSpawnTime
-	local speedBonus = self:GetSpeedBonus( time )
+	--local speedBonus = self:GetSpeedBonus( time ) --Removed in 1.9
 	local difficultyBonus = self:GetDifficultyBonus()
 	local leaks = playerData.waveObjects[wave] and playerData.waveObjects[wave].leaks or 0
 	local cleanBonus = self:GetCleanBonus( leaks == 0 )
-	local totalScore = math.ceil(waveClearScore * (1 + cleanBonus) * (1 + speedBonus) * (1 + difficultyBonus))
+	local totalScore = math.ceil(waveClearScore * (1 + cleanBonus) * (1 + difficultyBonus))
 
 	totalScore = math.max(0, totalScore)
 
-	return { clearBonus = waveClearScore, cleanBonus = cleanBonus, speedBonus = speedBonus, difficultyBonus = difficultyBonus, totalScore = totalScore }
+	return { clearBonus = waveClearScore, cleanBonus = cleanBonus, difficultyBonus = difficultyBonus, totalScore = totalScore }
 end
 
 function ScoringObject:GetBossWaveCleared( bossWave )

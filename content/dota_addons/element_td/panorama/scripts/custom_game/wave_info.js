@@ -248,5 +248,5 @@ function AbilityHideTooltip( ability ) {
 
   	GameEvents.Subscribe( "etd_update_wave_timer", UpdateWaveTimer );
   	GameEvents.Subscribe( "etd_next_wave_info", UpdateWaveInfo );
-  	GameEvents.Subscribe( "etd_start_wave_clock", StartWaveClock );
+  	//GameEvents.Subscribe( "etd_start_wave_clock", StartWaveClock );
 })();
