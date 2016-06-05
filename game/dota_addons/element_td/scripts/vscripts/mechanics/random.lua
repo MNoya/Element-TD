@@ -34,8 +34,9 @@ function getRandomElement(wave)
         end
     end
 
+    COOP_MAP = true
     if COOP_MAP then
-        if target ~= "pure" and randoomPrevention(usedElements, element) then
+        if element ~= "pure" and randoomPreventionCoop(usedElements, element) then
             return getRandomElement(wave)
         elseif ((wave < 5 and usedElements[element] == 1) or (wave < 25 and usedElements[element] == 2) or usedElements[element] == 3) then
             return getRandomElement(wave)
@@ -49,6 +50,8 @@ function getRandomElement(wave)
             return getRandomElement(wave)
         elseif not EXPRESS_MODE and ((wave < 10 and usedElements[element] == 1) or (wave < 30 and usedElements[element] == 2) or usedElements[element] == 3) then
             return getRandomElement(wave)
+        elseif element ~= "pure" and randoomPreventionClassic(usedElements, element) then
+            return getRandomElement(wave)
         else
             usedElements[element] = usedElements[element] + 1
             return element
@@ -56,9 +59,9 @@ function getRandomElement(wave)
     end
 end
 
--- Never 6-elem AR in Coop unless its a single player game
-function randoomPrevention(used, target)
-    if PlayerResource:GetPlayerCount() == 1 then return false end
+-- Limit coop Random to 3 elements
+function randoomPreventionCoop(used, target)
+    if PlayerResource:GetPlayerCount() == 1 then return randoomPreventionClassic(used,target) end
 
     local num = 0
     for k,v in pairs(used) do
@@ -68,6 +71,22 @@ function randoomPrevention(used, target)
     end
 
     return num > 3 and used[target] == 0
+end
+
+-- Reduce the chance of getting 6 element random
+function randoomPreventionClassic(used, target)
+    local num = 0
+    for k,v in pairs(used) do
+        if v > 0 and v ~= "pure" then
+            num = num + 1
+        end
+    end
+
+    if num == 4 and used[target] == 0 then
+        return RollPercentage(70)
+    elseif num == 5 then
+        return RollPercentage(40)
+    end
 end
 
 function getNumberOfElementsInSequence( seq )
