@@ -1,0 +1,8 @@
+Checking resource/addon_thai.txt
+OK - 0 Missing keys on resource/addon_thai.txt!
+------------------------------------------
+
+Checking panorama/localization/addon_thai.txt
+OK - 0 Missing keys on panorama/localization/addon_thai.txt!
+------------------------------------------
+

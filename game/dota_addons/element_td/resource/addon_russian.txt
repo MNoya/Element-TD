@@ -30,6 +30,8 @@
         "etd_random_elemental"      "Для Вас был выбран случайный элемент!"
         "etd_random_essence"        "Для Вас случайно была выбрана Чистая Эссенция!"
         "etd_random_wait_for_vote"  "Дождитесь окончания голосования, чтобы включить случайный выбор!"
+        "etd_lumber_buy_warning"    "Вам нужны как минимум 3 элемента 3 уровня для покупки."
+        "etd_need_more_essence"     "Нужно больше эссенции."
         
         "etd_lumber_add"            "Вы получили {amount} дерево!"
         "etd_essence_add"           "Вы получили {amount} Чистую Эссенцию!"
@@ -315,6 +317,15 @@
         "void_incarnate"            "Воплощение пустоты"
         "water_dragon"              "Водяной дракон"
         "zombie"                    "Зомби"
+        "centaur_warchief"          "Вождь Кентавров"
+        "clock_wanderer"            "Часовой странник"
+        "deathbringer"              "Несущий смерть"
+        "earth_walker"              "Земляной странник"
+        "faceless"                  "Безликий"
+        "otter_dragon"              "Зелёный дракон"
+        "shifting_treant"           "Переменный древень"
+        "storm_spirit"              "Дух шторма"
+        "wolf"                      "Волк"
 
          // ******************** ABILITIES ********************
         "DOTA_Tooltip_ability_sell_tower_100"       "Продать башню"
@@ -873,6 +884,11 @@
 
         "DOTA_Tooltip_ability_item_random"                                                "Случайные элементы"
         "DOTA_Tooltip_ability_item_random_Description"                                    "Выберите это, если хотите всю игру получать случайные элементы.\nЭта опция может быть применена только перед выбором элемента и не может быть отключена."
+
+        "DOTA_Tooltip_ability_item_buy_lumber"                         "Купить дерево"
+        "DOTA_Tooltip_ability_item_buy_lumber_Description"             "Продать <font color='#00BFFF'>1 Чистую Эссенцию</font> за <font color='#008000'>1 дерево</font>\nОткрывает 12-ый элемент.\n<font color='#F0BA36'>"
+        "DOTA_Tooltip_ability_item_buy_lumber_disabled"                "Покупка дерева невозможна"
+        "DOTA_Tooltip_ability_item_buy_lumber_disabled_Description"    "Продать <font color='#00BFFF'>1 Чистую Эссенцию</font> за <font color='#008000'>1 дерево</font>\n<font color='#F0BA36'>Требования: </font>три элемента 3-го уровня\n\nОткрывает выбор 12-го элемента."
 
         ///////////
         // Water //

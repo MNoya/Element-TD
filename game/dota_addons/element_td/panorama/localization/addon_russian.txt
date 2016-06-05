@@ -103,6 +103,9 @@
         "length_express_description"        "Меньшее количество волн."
         "express"                           "Быстрый"
 
+        "abilities_challenge"                "Соревновательный"
+        "abilities_challenge_description"    "Каждая волна имеет две случайные способности."
+
         "DOTA_GoodGuys"                             "Лето" //Lime
         "DOTA_BadGuys"                              "Осень" //Orange
         "DOTA_Custom1"                              "Храм" //Pink
