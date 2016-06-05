@@ -766,6 +766,30 @@ function ElementTD:FilterExecuteOrder( filterTable )
         return false
     end
 
+    -- Drop direct attack orders on Haste tower
+    if unit and order_type == DOTA_UNIT_ORDER_ATTACK_TARGET then
+        local hasteTowerSelected = false
+        for k,unit_index in pairs(units) do
+            local u = EntIndexToHScript(unit_index)
+            if u and u:GetUnitName():match("haste_tower") then
+                u.skip_attack_order = true
+                hasteTowerSelected = true
+            end
+        end
+
+        -- Recreate the attack target order to each other tower
+        if hasteTowerSelected then
+            for k,unit_index in pairs(units) do
+                local u = EntIndexToHScript(unit_index)
+                if u and not u.skip_attack_order then
+                    u.skip = true
+                    ExecuteOrderFromTable({UnitIndex = unit_index, OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET, TargetIndex = targetIndex, Queue = queue})
+                end
+            end
+            return false
+        end
+    end
+
     ------------------------------------------------
     --           Ability Multi Order              --
     ------------------------------------------------
