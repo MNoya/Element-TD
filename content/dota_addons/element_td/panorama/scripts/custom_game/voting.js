@@ -146,6 +146,10 @@ function SelectRadio(name) {
     $("#ElementsDesc").text = $.Localize("element_"+name+"_description")
 }
 
+function SelectLengthRadio(name) {
+    $("#LengthDesc").text = $.Localize("length_"+name+"_description")
+}
+
 function ToggleVoteDialog( data )
 {
     votingUI.visible = data.visible;
@@ -303,9 +307,10 @@ function ShowVoteResults()
     // Only show the options that were accepted
     var randomChoice = CustomNetTables.GetTableValue("gameinfo", "random").value    
     var random = randomChoice == "SameRandom" || randomChoice == "AllRandom"
+    var lengthChoice = CustomNetTables.GetTableValue("gameinfo", "express").value
+    var express = lengthChoice == "Express" || lengthChoice == "Short" //Short mode is still Classic
     var rush = CustomNetTables.GetTableValue("gameinfo", "rush").value == "Endless"
     var chaos = CustomNetTables.GetTableValue("gameinfo", "chaos").value == "Chaos"
-    var express = CustomNetTables.GetTableValue("gameinfo", "express").value == "Express"
     var abilitiesMode = CustomNetTables.GetTableValue("gameinfo", "abilitiesMode").value == "Challenge"
 
     if (!random)
@@ -349,9 +354,10 @@ function ShowGamemodeViewer() {
     // Only show the options that were accepted
     var randomChoice = CustomNetTables.GetTableValue("gameinfo", "random").value    
     var random = randomChoice == "SameRandom" || randomChoice == "AllRandom"
+    var lengthChoice = CustomNetTables.GetTableValue("gameinfo", "express").value
+    var express = lengthChoice == "Express" || lengthChoice == "Short" //Short mode is still Classic
     var rush = CustomNetTables.GetTableValue("gameinfo", "rush").value == "Endless"
     var chaos = CustomNetTables.GetTableValue("gameinfo", "chaos").value == "Chaos"
-    var express = CustomNetTables.GetTableValue("gameinfo", "express").value == "Express"
     var abilitiesMode = CustomNetTables.GetTableValue("gameinfo", "abilitiesMode").value == "Challenge"
 
     if (!random)
@@ -480,6 +486,7 @@ function Setup()
 
     $.Schedule(0.1, CheckHudFlipped)
     $("#allpick").checked = true;
+    $("#classic").checked = true;
     GameEvents.Subscribe( "etd_toggle_vote_dialog", ToggleVoteDialog );
     GameEvents.Subscribe( "etd_update_vote_timer", UpdateVoteTimer );
     GameEvents.Subscribe( "etd_vote_display", PlayerVoted );

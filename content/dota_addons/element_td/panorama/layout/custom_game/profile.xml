@@ -12,7 +12,7 @@
 
         <Panel id="ProfileToggleContainer">
             <Panel id="PassHeader" onactivate="ToggleHeader()">
-                <Label id="New" text="#etd_new_feature"/>
+                <!--<Label id="New" text="#etd_new_feature"/>-->
                 <Label id="PassTitle" text="#pass_title" />
                 <Panel id="MenuArrow" class="OpenMenuArrow" />
             </Panel>

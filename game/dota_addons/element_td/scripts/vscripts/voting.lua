@@ -277,7 +277,7 @@ function ElementTD:OnPlayerVoted( table )
 		local randomVote = table.data.elementsVote -- Normal, Same or All Random
 		local endlessVote = table.data.endlessVote -- 0 or 1 if Endless was selected
 		local orderVote = table.data.orderVote -- 0 or 1 if Chaos was selected
-		local expressVote = table.data.lengthVote -- 0 or 1 if Express was selected
+		local expressVote = table.data.lengthVote -- 0 Classic, 1 Express was selected, 2 Short (Classic)
 		local abilitiesVote = table.data.abilitiesVote -- 0 or 1 if Express was selected
 
 		-- Convert to strings on gamesettings

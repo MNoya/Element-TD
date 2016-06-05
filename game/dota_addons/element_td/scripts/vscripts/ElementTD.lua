@@ -15,7 +15,7 @@ if not playerIDs then
     EXPRESS_MODE = false
     ETD_MAX_PLAYERS = 4
 
-    VERSION = "1.8"
+    VERSION = "1.9"
     COOP_MAP = GetMapName() == "element_td_coop"
 
     START_TIME = GetSystemDate() .. " " .. GetSystemTime()
