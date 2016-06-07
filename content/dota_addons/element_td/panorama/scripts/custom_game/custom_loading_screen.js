@@ -59,7 +59,7 @@ function ChooseBackground() {
         $("#seq_fire").visible = false;
         $("#seq_nature").visible = false;
         $("#seq_earth").visible = false;
-        $("#Promote").visible = false;
+        //$("#Promote").visible = false;
         $.Msg("Changed loading screen to coop loading")
     }
 };

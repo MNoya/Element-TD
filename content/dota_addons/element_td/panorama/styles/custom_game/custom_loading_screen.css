@@ -248,13 +248,13 @@
 {
     width: 1140px;
     height: 90%;
-    flow-children: right;
+    flow-children: down;
 }
 
 #Changelog
 {
     margin-top: 60px;
-    height: 80%;
+    max-height: 80%;
     max-width: 1130px;
     flow-children: down;
 }
@@ -311,34 +311,37 @@ b
 #Promote
 {
     flow-children: down;
-    width: 500px;
-}
-
-.AspectRatio4x3 #Promote
-{
-    margin-top: 500px;
-    margin-left: -450px;
+    width: 100%;
 }
 
 #PromoteTitle
 {
-    align: center top;
+    align: left top;
     text-align: center;
-    width: 100%;
+    width: 555px;
+    margin-left: 50px;
+    margin-top: -50px;
 }
 
-#Coop
+#Ad
 {
-    align: center top;
-    margin-top: 110px;
+    align: left top;
+    margin-top: 20px;
+    margin-left: 50px;
     margin-bottom: 10px;
-    border-radius: 20px;
-    box-shadow: #88888840 0px 0px 40px 0px;
-    width: 470px;
+    width: 555px;
     height: 400px;
 }
 
-#CoopTitle
+#AdImage
+{
+    width: 555px;
+    height: 337px;
+    border-radius: 20px;
+    box-shadow: #88888840 0px 0px 40px 0px;
+}
+
+#AdTitle
 {
     align: center bottom;
     text-align: center;
@@ -349,5 +352,5 @@ b
     text-shadow: 0 0 4px 4.0 #444444;
     font-family: "Goudy Trajan Medium";
     letter-spacing: 3px;
-    margin-bottom: 10px;
+    margin-bottom: 120px;
 }

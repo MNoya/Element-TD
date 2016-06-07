@@ -231,6 +231,8 @@
         "loading_screen_tip_18" "You can play Co-Op by selecting the element_td_coop from the Map menu when creating a lobby."
         "loading_screen_next"   "Coming Next!"
         "loading_new_map"       "New Map Available"
+        "mobile_game"           "EleTD on Mobile"
+        "loading_mobile"        "Coming to Android June 15th!"
 
         // Usage
         //  <br> for break lines
