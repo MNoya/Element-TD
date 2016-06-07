@@ -57,7 +57,7 @@
             <RadioButton group="LengthRadio" onactivate="SelectLengthRadio('express')" id="express" text="#length_express"/>
             <RadioButton group="LengthRadio" onactivate="SelectLengthRadio('short')" id="short" text="#length_short"/>
           </Panel> 
-          <Label id="LengthDesc" text="#length_express_description"/>
+          <Label id="LengthDesc" text="#length_classic_description"/>
         </Panel>
 
         <Panel id="Option_Endless" class="CheckboxPanel" 

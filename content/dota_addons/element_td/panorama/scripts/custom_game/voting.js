@@ -40,6 +40,7 @@ var all_random = $('#allrandom')
 var chaos = $('#chaos')
 var endless = $('#endless')
 var express = $('#express')
+var short = $('#short')
 var challenge_mode = $('#challenge')
 
 function UpdateMultipliers(difficultyName){
@@ -255,7 +256,7 @@ function PlayerVoted( data )
         order.text = $.Localize("order_"+data.order.toLowerCase());
     }
 
-    if (data.length == "Express")
+    if (data.length == "Express" || data.length == "Short")
     {
         var length = $.CreatePanel('Label', votes, '');
         length.AddClass('PlayerVote');
@@ -286,8 +287,13 @@ function ConfirmVote()
 
     data['orderVote'] = chaos.checked
     data['endlessVote'] = endless.checked
-    data['lengthVote'] = express.checked
     data['abilitiesVote'] = challenge_mode.checked
+
+    data['lengthVote'] = 0;
+    if (express.checked)
+        data['lengthVote'] = 1
+    else if (short.checked)
+        data['lengthVote'] = 3
 
     $.Msg(data)
 
@@ -307,8 +313,8 @@ function ShowVoteResults()
     // Only show the options that were accepted
     var randomChoice = CustomNetTables.GetTableValue("gameinfo", "random").value    
     var random = randomChoice == "SameRandom" || randomChoice == "AllRandom"
-    var lengthChoice = CustomNetTables.GetTableValue("gameinfo", "express").value
-    var express = lengthChoice == "Express" || lengthChoice == "Short" //Short mode is still Classic
+    var lengthChoice = CustomNetTables.GetTableValue("gameinfo", "length").value
+    var length = lengthChoice == "Express" || lengthChoice == "Short" //Short mode is still Classic
     var rush = CustomNetTables.GetTableValue("gameinfo", "rush").value == "Endless"
     var chaos = CustomNetTables.GetTableValue("gameinfo", "chaos").value == "Chaos"
     var abilitiesMode = CustomNetTables.GetTableValue("gameinfo", "abilitiesMode").value == "Challenge"
@@ -324,8 +330,10 @@ function ShowVoteResults()
     if (!chaos)
         $('#OrderResult').GetParent().DeleteAsync(0)
 
-    if (!express)
+    if (!length)
         $('#LengthResult').GetParent().DeleteAsync(0)
+    else
+        $('#LengthResult').text = $.Localize("length_" + lengthChoice.toLowerCase());
 
     if (!abilitiesMode)
         $('#ChallengeResult').GetParent().DeleteAsync(0)
@@ -354,16 +362,19 @@ function ShowGamemodeViewer() {
     // Only show the options that were accepted
     var randomChoice = CustomNetTables.GetTableValue("gameinfo", "random").value    
     var random = randomChoice == "SameRandom" || randomChoice == "AllRandom"
-    var lengthChoice = CustomNetTables.GetTableValue("gameinfo", "express").value
-    var express = lengthChoice == "Express" || lengthChoice == "Short" //Short mode is still Classic
+    $.Msg(CustomNetTables.GetTableValue("gameinfo", "length"));
+    var lengthChoice = CustomNetTables.GetTableValue("gameinfo", "length").value
+    var length = lengthChoice == "Express" || lengthChoice == "Short" //Short mode is still Classic
     var rush = CustomNetTables.GetTableValue("gameinfo", "rush").value == "Endless"
     var chaos = CustomNetTables.GetTableValue("gameinfo", "chaos").value == "Chaos"
     var abilitiesMode = CustomNetTables.GetTableValue("gameinfo", "abilitiesMode").value == "Challenge"
 
+    $.Msg("Length choice " + lengthChoice);
+
     if (!random)
         $('#ElementsView').AddClass("Hidden") //This can become visible if the player does -random afterwards
     else
-        $('#ElementsView').text = $.Localize(randomChoice.toLowerCase()+"_mode");
+        $('#ElementsView').text = $.Localize(randomChoice.toLowerCase() + "_mode");
 
     if (!rush)
         $('#EndlessView').DeleteAsync(0)
@@ -371,8 +382,10 @@ function ShowGamemodeViewer() {
     if (!chaos)
         $('#OrderView').DeleteAsync(0)
 
-    if (!express)
+    if (!length)
         $('#LengthView').DeleteAsync(0)
+    else
+        $('#LengthView').text = $.Localize("length_" + lengthChoice.toLowerCase());
 
     if (!abilitiesMode)
         $('#AbilitiesModeView').DeleteAsync(0)

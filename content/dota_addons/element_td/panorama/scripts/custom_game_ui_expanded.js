@@ -442,7 +442,11 @@ Game.IsCoop = function() {
 }
 
 Game.IsExpress = function() {
-    return CustomNetTables.GetTableValue("gameinfo", "express").value == "Express"
+    return CustomNetTables.GetTableValue("gameinfo", "length").value == "Express"
+}
+
+Game.IsShort = function() {
+    return CustomNetTables.GetTableValue("gameinfo", "length").value == "Short"
 }
 
 Game.InterestStopped = function() {

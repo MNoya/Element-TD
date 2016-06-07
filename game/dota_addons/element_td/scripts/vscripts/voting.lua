@@ -215,7 +215,7 @@ function FinalizeVotes()
 	CustomNetTables:SetTableValue("gameinfo", "random", {value=elements})
 	CustomNetTables:SetTableValue("gameinfo", "rush", {value=endless})
 	CustomNetTables:SetTableValue("gameinfo", "chaos", {value=order})
-	CustomNetTables:SetTableValue("gameinfo", "express", {value=length})
+	CustomNetTables:SetTableValue("gameinfo", "length", {value=length})
 	CustomNetTables:SetTableValue("gameinfo", "abilitiesMode", {value=abilitiesMode})
 
 	for k, plyID in pairs(playerIDs) do
