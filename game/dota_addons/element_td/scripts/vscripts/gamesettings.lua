@@ -134,8 +134,10 @@ function GameSettings:SetGameLength(length)
 
 		if length == "Express" then
 			EXPRESS_MODE = true
-
             ElementTD:ExpressPrecache()
+        elseif length == "Short" then
+        	SHORT_MODE = true
+        	--TODO: ElementTD:ShortPrecache()
     	end
 	end
 	Log:info("Set game length to " .. length)

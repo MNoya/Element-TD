@@ -11,7 +11,8 @@ if not playerIDs then
     TEAM_TO_SECTOR[9] = 5
     TEAM_TO_SECTOR[10] = 6
     TEAM_TO_SECTOR[11] = 7
-     
+    
+    SHORT_MODE = false
     EXPRESS_MODE = false
     ETD_MAX_PLAYERS = 4
 

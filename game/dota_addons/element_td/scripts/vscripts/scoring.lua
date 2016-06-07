@@ -31,6 +31,7 @@ CLEAN_WAVE_BONUS = 0.3
 SLOW_WAVE_CLEAR_FACTOR = 0
 FAST_WAVE_CLEAR_FACTOR = 0
 BASE_TIME_CLASSIC = 45
+BASE_TIME_SHORT = 35
 BASE_TIME_EXPRESS = 20
 BOSS_WAVE_BONUS_SCALING = 0.1
 FAST_THRESHOLD = 30
@@ -289,7 +290,8 @@ function ScoringObject:GetEndSpeedBonus(time)
 	else
 		if EXPRESS_MODE then
 			return ((BASE_TIME_EXPRESS/time*60) - 1) * 1.5
-
+		elseif SHORT_MODE then
+			return ((BASE_TIME_SHORT/time*60) - 1) * 1.5
 		else
 			return ((BASE_TIME_CLASSIC/time*60) - 1) * 1.5
 		end
