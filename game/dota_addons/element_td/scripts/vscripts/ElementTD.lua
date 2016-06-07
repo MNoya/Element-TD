@@ -229,7 +229,7 @@ end
 function ElementTD:OnNextWave( keys )
     local playerID = keys.PlayerID
     local data = GetPlayerData(playerID)
-    if GameSettings:GetGamemode() == "Competitive" and (PlayerResource:GetPlayerCount() > 1 or data.nextWave > 1) then
+    if GameSettings:GetGamemode() == "Competitive" and (PlayerResource:GetPlayerCount() > 1) then
         return
     end
 
@@ -241,7 +241,7 @@ function ElementTD:OnNextWave( keys )
             UpdateWaveInfo(playerID, COOP_WAVE)
         end)
     else
-        if (data.waveObject and data.waveObject.creepsRemaining == 0) or data.nextWave == 1 or GameSettings:GetEndless() == "Endless" then
+        if (data.waveObject and data.waveObject.creepsRemaining == 0) or data.nextWave == GameSettings.length.Wave then
             Timers:RemoveTimer("SpawnWaveDelay"..playerID)
             Log:info("Spawning wave " .. data.nextWave .. " for ["..playerID.."] ".. data.name)
             ShowWaveSpawnMessage(playerID, data.nextWave)

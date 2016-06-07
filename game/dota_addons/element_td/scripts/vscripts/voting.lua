@@ -236,9 +236,18 @@ function FinalizeVotes()
 			CoopStart()
 		else
 			for _, plyID in pairs(playerIDs) do
+				local playerData = GetPlayerData(plyID)
 				StartBreakTime(plyID, GameSettings.length.PregameTime)
+
+				if GameSettings.length.BaseScore then
+					playerData.scoreObject.totalScore = playerData.scoreObject.totalScore + GameSettings.length.BaseScore
+					CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerScore", {playerId = plyID, score = comma_value(playerData.scoreObject.totalScore) }) 
+        			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(plyID), "etd_update_score", {score = comma_value(playerData.scoreObject.totalScore) })
+					UpdateScoreboard(plyID)
+				end
 			end
 		end
+
 
 		if GameSettings.length.PregameTime == 30 then
 			EmitAnnouncerSound("announcer_announcer_count_battle_30")

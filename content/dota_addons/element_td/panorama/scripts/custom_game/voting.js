@@ -369,8 +369,6 @@ function ShowGamemodeViewer() {
     var chaos = CustomNetTables.GetTableValue("gameinfo", "chaos").value == "Chaos"
     var abilitiesMode = CustomNetTables.GetTableValue("gameinfo", "abilitiesMode").value == "Challenge"
 
-    $.Msg("Length choice " + lengthChoice);
-
     if (!random)
         $('#ElementsView').AddClass("Hidden") //This can become visible if the player does -random afterwards
     else
