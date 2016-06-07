@@ -237,12 +237,21 @@ function FinalizeVotes()
 		else
 			for _, plyID in pairs(playerIDs) do
 				local playerData = GetPlayerData(plyID)
+				local scoreObject = playerData.scoreObject
+				
 				StartBreakTime(plyID, GameSettings.length.PregameTime)
 
+				if GameSettings.length.FreeElements then
+					playerData.freeElements = GameSettings.length.FreeElements
+				end
+
 				if GameSettings.length.BaseScore then
-					playerData.scoreObject.totalScore = playerData.scoreObject.totalScore + GameSettings.length.BaseScore
-					CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerScore", {playerId = plyID, score = comma_value(playerData.scoreObject.totalScore) }) 
-        			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(plyID), "etd_update_score", {score = comma_value(playerData.scoreObject.totalScore) })
+					local score = scoreObject.totalScore + GameSettings.length.BaseScore
+					score = score * (GameSettings:GetGlobalDifficulty().data.Index + 1) -- multiplier based on difficulty
+
+					scoreObject.totalScore = score
+					CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerScore", {playerId = plyID, score = comma_value(score)}) 
+        			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(plyID), "etd_update_score", {score = comma_value(score)})
 					UpdateScoreboard(plyID)
 				end
 			end

@@ -16,7 +16,8 @@ function SummonElemental(keys)
     origin.z = origin.z + 20
     ParticleManager:SetParticleControl(explosion, 0, origin)
 
-    if playerData.elementalCount == 0 or EXPRESS_MODE or COOP_MAP then
+    if EXPRESS_MODE or COOP_MAP or (playerData.freeElements > 0 and playerData.elements[element] < 2) then
+        playerData.freeElements = math.max(playerData.freeElements - 1, 0) -- don't want this to go below 0 in express or co-op
         Sounds:PlayElementalDeathSound(playerID, element)
         BuyElement(playerID, element)
         return
