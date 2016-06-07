@@ -790,7 +790,7 @@
         "DOTA_Tooltip_modifier_napalm_Description"      ""
         
         "DOTA_Tooltip_ability_haste_tower_wrath"        "Wrath"
-        "DOTA_Tooltip_ability_haste_tower_wrath_Description"        "Each attack decreases its BAT, down to a minimum of 0.18. Resets after 4 seconds of not attacking."
+        "DOTA_Tooltip_ability_haste_tower_wrath_Description"        "Each attack decreases its BAT, down to a minimum of 0.18. Resets after 4 seconds of not attacking. This tower cannot be controlled."
         "DOTA_Tooltip_ability_haste_tower_wrath_cap"        "MAX STACKS:"
         "DOTA_Tooltip_ability_haste_tower_wrath_reset_time"                               "RESET TIME:"
         "DOTA_Tooltip_ability_haste_tower_wrath_bat_decrease_stack"                       "BAT DECREASE PER STACK:"
