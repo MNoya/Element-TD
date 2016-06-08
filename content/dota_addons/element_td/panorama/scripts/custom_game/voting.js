@@ -30,7 +30,7 @@ var healthBonus = {normal:"100%",hard:"130%",veryhard:"160%",insane:"200%"}
 var bountyBonus = {normal:"100%",hard:"110%",veryhard:"120%",insane:"130%"}
 var bountyBonusExpress = {normal:"100%",hard:"110%",veryhard:"120%",insane:"130%"}
 var endlessBountyBonus = 25
-var scoreMultipliers = {normal:1,hard:2,veryhard:3,insane:4}
+var scoreMultipliers = {normal:1,hard:2,veryhard:3,insane:4.5}
 
 var healthMult = $( '#HealthMult' );
 var bountyMult = $( '#BountyMult' );

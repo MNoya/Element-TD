@@ -315,7 +315,7 @@ function ScoringObject:GetBossBonus( waves )
 	return bonus
 end
 
--- Normal (1x), Hard (2x), Very Hard (3x), Insane (4x)
+-- Normal (1x), Hard (2x), Very Hard (3x), Insane (4.5x)
 function ScoringObject:GetDifficultyBonus()
 	local bonus = 0 -- Normal
 	local difficulty = GetPlayerDifficulty( self.playerID ).difficultyName
