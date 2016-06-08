@@ -24,7 +24,7 @@ function PolarTower:FrostbiteThink()
         local theChosenOne = nil
 
         for _, creep in pairs(creeps) do
-            if creep:IsAlive() and not creep:HasModifier("modifier_polar_frostbite") and creep:GetHealth() > highestHealth then
+            if creep:IsAlive() and not creep:HasModifier("modifier_polar_frostbite") and creep:GetHealth() > highestHealth and not creep:IsInvulnerable() then
                 highestHealth = creep:GetHealth()
                 theChosenOne = creep
             end
