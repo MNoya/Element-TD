@@ -110,16 +110,6 @@
     }
     "Creature"
     {
-        "AttachWearables" // The Bone Scryer Set
-        {
-            "1" { "ItemDef" "4339" } // Funereal Dress of the Bone Scryer
-            "2" { "ItemDef" "4202" } // Horns of the Bone Scryer
-            "3" { "ItemDef" "4551" } // Decorative Armor of the Bone Scryer
-            "4" { "ItemDef" "4340" } // Scarf of the Bone Scryer
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Regalia of the Mortal Coil Set
         {
             "1" { "ItemDef" "5809" } // Coronet of the Mortal Coil
@@ -185,6 +175,15 @@
     }
     "Creature"
     {
+        "AttachWearables" // The Corpse Maiden's Set
+        {
+            "1" { "ItemDef" "4191" } // Ghastly Scarf of the Corpse Maiden
+            "2" { "ItemDef" "4190" } // Wicked Collar of the Corpse Maiden
+            "3" { "ItemDef" "4049" } // Dress of the Corpse Maiden
+        }
+    }
+    "Creature"
+    {
         "AttachWearables" // Witch of the Outlands Set
         {
             "1" { "ItemDef" "5961" } // Outland Witch's Hem
@@ -229,11 +228,12 @@
     }
     "Creature"
     {
-        "AttachWearables" // The Corpse Maiden's Set
+        "AttachWearables" // The Bone Scryer Set
         {
-            "1" { "ItemDef" "4191" } // Ghastly Scarf of the Corpse Maiden
-            "2" { "ItemDef" "4190" } // Wicked Collar of the Corpse Maiden
-            "3" { "ItemDef" "4049" } // Dress of the Corpse Maiden
+            "1" { "ItemDef" "4339" } // Funereal Dress of the Bone Scryer
+            "2" { "ItemDef" "4202" } // Horns of the Bone Scryer
+            "3" { "ItemDef" "4551" } // Decorative Armor of the Bone Scryer
+            "4" { "ItemDef" "4340" } // Scarf of the Bone Scryer
         }
     }
     "Creature"
@@ -314,19 +314,6 @@
             "5" { "ItemDef" "9875" } // Algid Falcon Pauldron
             "6" { "ItemDef" "9876" } // Algid Falcon Helm
             "7" { "ItemDef" "9873" } // Algid Falcon Cape
-        }
-    }
-    "Creature"
-    {
-        "AttachWearables" // Sylvan Guard's Finery Set
-        {
-            "1" { "ItemDef" "4626" } // Sylvan Guard's Cape
-            "2" { "ItemDef" "4630" } // Sylvan Guard's Cuffs
-            "3" { "ItemDef" "4629" } // Sylvan Guard's Quiver
-            "4" { "ItemDef" "4613" } // Sylvan Guard's Boots
-            "5" { "ItemDef" "4625" } // Sylvan Guard's Bow
-            "6" { "ItemDef" "4632" } // Sylvan Guard's Dress Armor
-            "7" { "ItemDef" "4628" } // Sylvan Guard's Hair
         }
     }
     "Creature"
@@ -447,6 +434,19 @@
     }
     "Creature"
     {
+        "AttachWearables" // Sylvan Guard's Finery Set
+        {
+            "1" { "ItemDef" "4626" } // Sylvan Guard's Cape
+            "2" { "ItemDef" "4630" } // Sylvan Guard's Cuffs
+            "3" { "ItemDef" "4629" } // Sylvan Guard's Quiver
+            "4" { "ItemDef" "4613" } // Sylvan Guard's Boots
+            "5" { "ItemDef" "4625" } // Sylvan Guard's Bow
+            "6" { "ItemDef" "4632" } // Sylvan Guard's Dress Armor
+            "7" { "ItemDef" "4628" } // Sylvan Guard's Hair
+        }
+    }
+    "Creature"
+    {
         "AttachWearables" // Spikes of Frost Set
         {
             "1" { "ItemDef" "4186" } // Ice Burst Greaves
@@ -467,11 +467,11 @@
             "1" { "ItemDef" "8628" } // Pugna's Nether Ward
             "2" { "ItemDef" "157" } // Pugna's Belt
             "3" { "ItemDef" "153" } // Pugna's Head
-            "4" { "ItemDef" "511" } // Pugna's Ambient Effects
-            "5" { "ItemDef" "156" } // Pugna's Weapon
+            "4" { "ItemDef" "154" } // Pugna's Cape
+            "5" { "ItemDef" "167" } // Pugna's Shoulder
             "6" { "ItemDef" "155" } // Pugna's Bracers
-            "7" { "ItemDef" "154" } // Pugna's Cape
-            "8" { "ItemDef" "167" } // Pugna's Shoulder
+            "7" { "ItemDef" "156" } // Pugna's Weapon
+            "8" { "ItemDef" "511" } // Pugna's Ambient Effects
         }
     }
     "Creature"
@@ -536,8 +536,8 @@
             "2" { "ItemDef" "193" } // Naga Siren's Tail
             "3" { "ItemDef" "192" } // Naga Siren's Sword
             "4" { "ItemDef" "194" } // Naga Siren's Armor
-            "5" { "ItemDef" "532" } // Naga Siren's Ambient Effects
-            "6" { "ItemDef" "312" } // Naga Siren's Offhand Sword
+            "5" { "ItemDef" "312" } // Naga Siren's Offhand Sword
+            "6" { "ItemDef" "532" } // Naga Siren's Ambient Effects
         }
     }
     "Creature"
@@ -701,8 +701,8 @@
         {
             "1" { "ItemDef" "136" } // Ogre Magi's Belt
             "2" { "ItemDef" "135" } // Ogre Magi's Hats
-            "3" { "ItemDef" "534" } // Ogre Magi's Ambient Effects
-            "4" { "ItemDef" "105" } // Ogre Magi's Weapon
+            "3" { "ItemDef" "105" } // Ogre Magi's Weapon
+            "4" { "ItemDef" "534" } // Ogre Magi's Ambient Effects
             "5" { "ItemDef" "134" } // Ogre Magi's Bracers
             "6" { "ItemDef" "133" } // Ogre Magi's Cape
         }
@@ -731,6 +731,17 @@
     }
     "Creature"
     {
+        "AttachWearables" // Veil of Pagus
+        {
+            "1" { "ItemDef" "7633" } // Bracers of Pagus
+            "2" { "ItemDef" "7612" } // Cloak of Pagus
+            "3" { "ItemDef" "7613" } // Hood of Pagus
+            "4" { "ItemDef" "7611" } // Club of Pagus
+            "5" { "ItemDef" "7614" } // Belt of Pagus
+        }
+    }
+    "Creature"
+    {
         "AttachWearables" // Antipodean Allies
         {
             "1" { "ItemDef" "7845" } // Pauldron and Cloak of the Antipodeans
@@ -750,9 +761,9 @@
         {
             "1" { "ItemDef" "582" } // Tidehunter's Head
             "2" { "ItemDef" "583" } // Tidehunter's Back
-            "3" { "ItemDef" "35" } // Tidehunter's Belt
-            "4" { "ItemDef" "36" } // Tidehunter's Anchor
-            "5" { "ItemDef" "37" } // Tidehunter's Lunch
+            "3" { "ItemDef" "36" } // Tidehunter's Anchor
+            "4" { "ItemDef" "37" } // Tidehunter's Lunch
+            "5" { "ItemDef" "35" } // Tidehunter's Belt
             "6" { "ItemDef" "34" } // Tidehunter's Bracer
         }
     }
@@ -786,6 +797,17 @@
             "4" { "ItemDef" "7775" } // Carapace of the Drowning Trench
             "5" { "ItemDef" "7773" } // Belt of the Drowning Trench
             "6" { "ItemDef" "7778" } // Aquemerald Blade
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Tidosaurus
+        {
+            "1" { "ItemDef" "7150" } // Tidosaurus Tail
+            "2" { "ItemDef" "7152" } // Tidosaurus Club
+            "3" { "ItemDef" "7149" } // Tidosaurus Vertebral Plates
+            "4" { "ItemDef" "7148" } // Tidosaurus Arm Scales
+            "5" { "ItemDef" "7151" } // Tidosaurus Skull Spikes
         }
     }
     "Creature"
@@ -864,10 +886,10 @@
         "AttachWearables" // Default npc_dota_hero_windrunner
         {
             "1" { "ItemDef" "22" } // Wind Ranger's Bow
-            "2" { "ItemDef" "21" } // Wind Ranger's Head
-            "3" { "ItemDef" "23" } // Wind Ranger's Shoulder Pads
-            "4" { "ItemDef" "24" } // Wind Ranger's Cape
-            "5" { "ItemDef" "25" } // Wind Ranger's Quiver
+            "2" { "ItemDef" "24" } // Wind Ranger's Cape
+            "3" { "ItemDef" "21" } // Wind Ranger's Head
+            "4" { "ItemDef" "25" } // Wind Ranger's Quiver
+            "5" { "ItemDef" "23" } // Wind Ranger's Shoulder Pads
         }
     }
     "Creature"
@@ -942,21 +964,21 @@
     }
     "Creature"
     {
-        "AttachWearables" // Redwood Arms Set
+        "AttachWearables" // Bindings of the Battleranger
         {
-            "1" { "ItemDef" "4561" } // Bloodwood Reserve
-            "2" { "ItemDef" "4549" } // Bloodwood Arc
+            "1" { "ItemDef" "7926" } // Pauldrons of the Battleranger
+            "2" { "ItemDef" "7925" } // Quiver of the Battleranger
+            "3" { "ItemDef" "7924" } // Style of the Battleranger
+            "4" { "ItemDef" "7923" } // Cloak of the Battleranger
+            "5" { "ItemDef" "7927" } // Bow of the Battleranger
         }
     }
     "Creature"
     {
-        "AttachWearables" // Wings of the Gilded Falcon Set
+        "AttachWearables" // Redwood Arms Set
         {
-            "1" { "ItemDef" "4553" } // Gilded Falcon Quiver
-            "2" { "ItemDef" "4562" } // Gilded Falcon Wings
-            "3" { "ItemDef" "4552" } // Gilded Falcon Bow
-            "4" { "ItemDef" "4559" } // Gilded Falcon Helm
-            "5" { "ItemDef" "4554" } // Gilded Falcon Cloak
+            "1" { "ItemDef" "4561" } // Bloodwood Reserve
+            "2" { "ItemDef" "4549" } // Bloodwood Arc
         }
     }
     "Creature"
@@ -983,6 +1005,17 @@
     }
     "Creature"
     {
+        "AttachWearables" // The Northern Wind Set
+        {
+            "1" { "ItemDef" "5281" } // Quiver of the Northern Wind
+            "2" { "ItemDef" "5278" } // Cloak of the Northern Wind
+            "3" { "ItemDef" "5280" } // Pauldrons of the Northern Wind
+            "4" { "ItemDef" "5282" } // Circlet of the Northern Wind
+            "5" { "ItemDef" "5279" } // Arc of the Northern Wind
+        }
+    }
+    "Creature"
+    {
         "AttachWearables" // Featherswing
         {
             "1" { "ItemDef" "8252" } // Featherswing Hair
@@ -994,13 +1027,23 @@
     }
     "Creature"
     {
-        "AttachWearables" // The Northern Wind Set
+        "AttachWearables" // Wings of the Gilded Falcon Set
         {
-            "1" { "ItemDef" "5281" } // Quiver of the Northern Wind
-            "2" { "ItemDef" "5278" } // Cloak of the Northern Wind
-            "3" { "ItemDef" "5280" } // Pauldrons of the Northern Wind
-            "4" { "ItemDef" "5282" } // Circlet of the Northern Wind
-            "5" { "ItemDef" "5279" } // Arc of the Northern Wind
+            "1" { "ItemDef" "4553" } // Gilded Falcon Quiver
+            "2" { "ItemDef" "4562" } // Gilded Falcon Wings
+            "3" { "ItemDef" "4552" } // Gilded Falcon Bow
+            "4" { "ItemDef" "4559" } // Gilded Falcon Helm
+            "5" { "ItemDef" "4554" } // Gilded Falcon Cloak
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Zaru'Kina Protector's Garb Set
+        {
+            "1" { "ItemDef" "4520" } // Zaru'Kina Protector's Cape
+            "2" { "ItemDef" "4548" } // Zaru'Kina Protector's Hair
+            "3" { "ItemDef" "4522" } // Zaru'Kina Protector's Pads
+            "4" { "ItemDef" "4521" } // Zaru'Kina Protector's Bow
         }
     }
     "Creature"
@@ -1014,16 +1057,6 @@
             "5" { "ItemDef" "6838" } // Sentry of Tranquility
         }
     }
-    "Creature"
-    {
-        "AttachWearables" // Zaru'Kina Protector's Garb Set
-        {
-            "1" { "ItemDef" "4520" } // Zaru'Kina Protector's Cape
-            "2" { "ItemDef" "4548" } // Zaru'Kina Protector's Hair
-            "3" { "ItemDef" "4522" } // Zaru'Kina Protector's Pads
-            "4" { "ItemDef" "4521" } // Zaru'Kina Protector's Bow
-        }
-    }
 
     ////////////////////////////////////////////////////////////
     // Cosmetic Sets for npc_dota_hero_tiny
@@ -1032,11 +1065,11 @@
     {
         "AttachWearables" // Default npc_dota_hero_tiny
         {
-            "1" { "ItemDef" "497" } // Tiny's Tree
-            "2" { "ItemDef" "516" } // Tiny's Ambient Effects
-            "3" { "ItemDef" "495" } // Tiny's Left Arm
-            "4" { "ItemDef" "496" } // Tiny's Right Arm
-            "5" { "ItemDef" "494" } // Tiny's Body
+            "1" { "ItemDef" "494" } // Tiny's Body
+            "2" { "ItemDef" "497" } // Tiny's Tree
+            "3" { "ItemDef" "516" } // Tiny's Ambient Effects
+            "4" { "ItemDef" "495" } // Tiny's Left Arm
+            "5" { "ItemDef" "496" } // Tiny's Right Arm
             "6" { "ItemDef" "493" } // Tiny's Head
         }
     }
@@ -1072,9 +1105,9 @@
         {
             "1" { "ItemDef" "575" } // Morphling's Back
             "2" { "ItemDef" "574" } // Morphling's Shoulders
-            "3" { "ItemDef" "507" } // Morphling's Ambient Effects
+            "3" { "ItemDef" "573" } // Morphling's Head
             "4" { "ItemDef" "576" } // Morphling's Arms
-            "5" { "ItemDef" "573" } // Morphling's Head
+            "5" { "ItemDef" "507" } // Morphling's Ambient Effects
             "6" { "ItemDef" "577" } // Morphling's Miscellaneous
         }
     }
@@ -1217,14 +1250,14 @@
     {
         "AttachWearables" // Default npc_dota_hero_lycan
         {
-            "1" { "ItemDef" "8660" } // Lycan's Head Accessory
-            "2" { "ItemDef" "208" } // Lycan's Armor
-            "3" { "ItemDef" "209" } // Lycan's Fur
-            "4" { "ItemDef" "210" } // Lycan's Belt
-            "5" { "ItemDef" "8649" } // Lycan's Shapeshift
-            "6" { "ItemDef" "8369" } // Lycan's Wolves
-            "7" { "ItemDef" "206" } // Lycan's Blades
-            "8" { "ItemDef" "207" } // Lycan's Head
+            "1" { "ItemDef" "210" } // Lycan's Belt
+            "2" { "ItemDef" "8660" } // Lycan's Head Accessory
+            "3" { "ItemDef" "208" } // Lycan's Armor
+            "4" { "ItemDef" "209" } // Lycan's Fur
+            "5" { "ItemDef" "206" } // Lycan's Blades
+            "6" { "ItemDef" "8649" } // Lycan's Shapeshift
+            "7" { "ItemDef" "207" } // Lycan's Head
+            "8" { "ItemDef" "8369" } // Lycan's Wolves
         }
     }
     "Creature"
@@ -1232,17 +1265,6 @@
         "AttachWearables" // Promo The Great Calamity
         {
             "1" { "ItemDef" "6499" } // Form of the Great Calamity
-        }
-    }
-    "Creature"
-    {
-        "AttachWearables" // Armor of the Sanguine Moon Set
-        {
-            "1" { "ItemDef" "4861" } // Sanguine Moon Weapons
-            "2" { "ItemDef" "4862" } // Sanguine Moon Belt
-            "3" { "ItemDef" "4863" } // Sanguine Moon Patch
-            "4" { "ItemDef" "4859" } // Sanguine Moon Armor
-            "5" { "ItemDef" "4860" } // Sanguine Moon Shoulder
         }
     }
     "Creature"
@@ -1267,6 +1289,17 @@
     }
     "Creature"
     {
+        "AttachWearables" // Armor of the Sanguine Moon Set
+        {
+            "1" { "ItemDef" "4861" } // Sanguine Moon Weapons
+            "2" { "ItemDef" "4862" } // Sanguine Moon Belt
+            "3" { "ItemDef" "4863" } // Sanguine Moon Patch
+            "4" { "ItemDef" "4859" } // Sanguine Moon Armor
+            "5" { "ItemDef" "4860" } // Sanguine Moon Shoulder
+        }
+    }
+    "Creature"
+    {
         "AttachWearables" // Form of the Great Grey Set
         {
             "1" { "ItemDef" "4978" } // Comb of the Great Grey
@@ -1286,12 +1319,23 @@
     {
         "AttachWearables" // Default npc_dota_hero_medusa
         {
-            "1" { "ItemDef" "531" } // Medusa's Ambient Effects
-            "2" { "ItemDef" "383" } // Medusa's Chest Armor
-            "3" { "ItemDef" "384" } // Medusa's Bracers
-            "4" { "ItemDef" "382" } // Medusa's Veil
-            "5" { "ItemDef" "385" } // Medusa's Tail
-            "6" { "ItemDef" "381" } // Medusa's Bow
+            "1" { "ItemDef" "381" } // Medusa's Bow
+            "2" { "ItemDef" "531" } // Medusa's Ambient Effects
+            "3" { "ItemDef" "382" } // Medusa's Veil
+            "4" { "ItemDef" "383" } // Medusa's Chest Armor
+            "5" { "ItemDef" "384" } // Medusa's Bracers
+            "6" { "ItemDef" "385" } // Medusa's Tail
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Eye of the Beholder
+        {
+            "1" { "ItemDef" "8195" } // Helm of the Beholder
+            "2" { "ItemDef" "8193" } // Armor of the Beholder
+            "3" { "ItemDef" "8194" } // Bracers of the Beholder
+            "4" { "ItemDef" "8191" } // Bow of the Beholder
+            "5" { "ItemDef" "8196" } // Tail of the Beholder
         }
     }
     "Creature"
@@ -1337,8 +1381,8 @@
     {
         "AttachWearables" // Default npc_dota_hero_enigma
         {
-            "1" { "ItemDef" "559" } // Enigma Bracers
-            "2" { "ItemDef" "498" } // Enigma's Ambient Effects
+            "1" { "ItemDef" "498" } // Enigma's Ambient Effects
+            "2" { "ItemDef" "559" } // Enigma Bracers
             "3" { "ItemDef" "8637" } // Enigma's Eidolons
         }
     }
@@ -1352,9 +1396,9 @@
         {
             "1" { "ItemDef" "546" } // Oracle's Armor
             "2" { "ItemDef" "547" } // Oracle's Back Item
-            "3" { "ItemDef" "550" } // Oracle's Ambient Effects
-            "4" { "ItemDef" "549" } // Oracle's Weapon
-            "5" { "ItemDef" "548" } // Oracle's Head Item
+            "3" { "ItemDef" "549" } // Oracle's Weapon
+            "4" { "ItemDef" "548" } // Oracle's Head Item
+            "5" { "ItemDef" "550" } // Oracle's Ambient Effects
         }
     }
 
@@ -1368,9 +1412,9 @@
             "1" { "ItemDef" "340" } // Razor's Weapon
             "2" { "ItemDef" "341" } // Razor's Head
             "3" { "ItemDef" "342" } // Razor's Armor
-            "4" { "ItemDef" "513" } // Razor's Ambient Effects
+            "4" { "ItemDef" "344" } // Razor's Robe
             "5" { "ItemDef" "343" } // Razor's Bracers
-            "6" { "ItemDef" "344" } // Razor's Robe
+            "6" { "ItemDef" "513" } // Razor's Ambient Effects
         }
     }
     "Creature"
@@ -1386,17 +1430,6 @@
     }
     "Creature"
     {
-        "AttachWearables" // The Twisted Arc Set
-        {
-            "1" { "ItemDef" "4983" } // Armor of the Twisted Arc
-            "2" { "ItemDef" "4986" } // Helm of the Twisted Arc
-            "3" { "ItemDef" "4987" } // Twisted Arc
-            "4" { "ItemDef" "4985" } // Bracers of the Twisted Arc
-            "5" { "ItemDef" "4984" } // Belt of the Twisted Arc
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Bindings of the Storm-Stealer Set
         {
             "1" { "ItemDef" "5342" } // Storm-Stealer's Armor
@@ -1404,6 +1437,17 @@
             "3" { "ItemDef" "5349" } // Storm-Stealer's Bracers
             "4" { "ItemDef" "5362" } // Storm-Stealer's Helm
             "5" { "ItemDef" "5357" } // Storm-Stealer's Belt
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // The Twisted Arc Set
+        {
+            "1" { "ItemDef" "4983" } // Armor of the Twisted Arc
+            "2" { "ItemDef" "4986" } // Helm of the Twisted Arc
+            "3" { "ItemDef" "4987" } // Twisted Arc
+            "4" { "ItemDef" "4985" } // Bracers of the Twisted Arc
+            "5" { "ItemDef" "4984" } // Belt of the Twisted Arc
         }
     }
 
@@ -1416,12 +1460,12 @@
         {
             "1" { "ItemDef" "390" } // Timbersaw's Torso
             "2" { "ItemDef" "400" } // Timbersaw's Waist Saw
-            "3" { "ItemDef" "401" } // Timbersaw's Armor
-            "4" { "ItemDef" "402" } // Timbersaw's Right Arm
+            "3" { "ItemDef" "402" } // Timbersaw's Right Arm
+            "4" { "ItemDef" "388" } // Timbersaw's Left Arm
             "5" { "ItemDef" "389" } // Timbersaw's Shoulders
             "6" { "ItemDef" "537" } // Timbersaw's Ambient Effects
-            "7" { "ItemDef" "388" } // Timbersaw's Left Arm
-            "8" { "ItemDef" "386" } // Timbersaw's Hat
+            "7" { "ItemDef" "386" } // Timbersaw's Hat
+            "8" { "ItemDef" "401" } // Timbersaw's Armor
         }
     }
     "Creature"
@@ -1555,11 +1599,22 @@
         {
             "1" { "ItemDef" "56" } // Clinkz Skull
             "2" { "ItemDef" "61" } // Clinkz Gloves
-            "3" { "ItemDef" "60" } // Clinkz Horns
-            "4" { "ItemDef" "523" } // Clinkz's Ambient Effects
-            "5" { "ItemDef" "57" } // Clinkz Bow
-            "6" { "ItemDef" "58" } // Clinkz Shoulder Pads
-            "7" { "ItemDef" "59" } // Clinkz Quiver
+            "3" { "ItemDef" "58" } // Clinkz Shoulder Pads
+            "4" { "ItemDef" "60" } // Clinkz Horns
+            "5" { "ItemDef" "59" } // Clinkz Quiver
+            "6" { "ItemDef" "523" } // Clinkz's Ambient Effects
+            "7" { "ItemDef" "57" } // Clinkz Bow
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Urushin Huntsman
+        {
+            "1" { "ItemDef" "7929" } // Quiver of the Urushin Huntsman
+            "2" { "ItemDef" "7916" } // Bow of the Urushin Huntsman
+            "3" { "ItemDef" "7918" } // Wrap of the Urushin Huntsman
+            "4" { "ItemDef" "7917" } // Talons of the Urushin Huntsman
+            "5" { "ItemDef" "7919" } // Sentinels of the Urushin Huntsman
         }
     }
     "Creature"
@@ -1693,6 +1748,15 @@
             "1" { "ItemDef" "8278" } // Mantle of the Concealed Raven
             "2" { "ItemDef" "8287" } // Feathers of the Concealed Raven
             "3" { "ItemDef" "8280" } // Hood of the Concealed Raven
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Fluttering Amethyst
+        {
+            "1" { "ItemDef" "7383" } // Skirt of the Fluttering Amethyst
+            "2" { "ItemDef" "7381" } // Brooch of the Fluttering Amethyst
+            "3" { "ItemDef" "7382" } // Wings of the Fluttering Amethyst
         }
     }
     "Creature"
@@ -1913,11 +1977,11 @@
     {
         "AttachWearables" // Default npc_dota_hero_magnataur
         {
-            "1" { "ItemDef" "330" } // Magnus' Weapon
-            "2" { "ItemDef" "328" } // Magnus' Bracers
-            "3" { "ItemDef" "326" } // Magnus' Hair
+            "1" { "ItemDef" "328" } // Magnus' Bracers
+            "2" { "ItemDef" "326" } // Magnus' Hair
+            "3" { "ItemDef" "329" } // Magnus' Belt
             "4" { "ItemDef" "327" } // Magnus' Horn
-            "5" { "ItemDef" "329" } // Magnus' Belt
+            "5" { "ItemDef" "330" } // Magnus' Weapon
         }
     }
     "Creature"
@@ -1944,6 +2008,17 @@
     }
     "Creature"
     {
+        "AttachWearables" // Rising Glory
+        {
+            "1" { "ItemDef" "7955" } // Lance of Rising Glory
+            "2" { "ItemDef" "7956" } // Horn of Rising Glory
+            "3" { "ItemDef" "7959" } // Bracers of Rising Glory
+            "4" { "ItemDef" "7958" } // Belt of Rising Glory
+            "5" { "ItemDef" "7957" } // Helm of Rising Glory
+        }
+    }
+    "Creature"
+    {
         "AttachWearables" // Vindictive Protector
         {
             "1" { "ItemDef" "8153" } // Bracers of the Vindictive Protector
@@ -1962,17 +2037,6 @@
             "3" { "ItemDef" "6802" } // Mane of the Magnoceri
             "4" { "ItemDef" "6804" } // Belt of the Magnoceri
             "5" { "ItemDef" "6801" } // Horn of the Magnoceri
-        }
-    }
-    "Creature"
-    {
-        "AttachWearables" // Azurite Warden
-        {
-            "1" { "ItemDef" "7321" } // Belt of the Azurite Warden
-            "2" { "ItemDef" "7429" } // Horn of the Azurite Warden
-            "3" { "ItemDef" "7322" } // Bracers of the Azurite Warden
-            "4" { "ItemDef" "8825" } // Halberd of the Azurite Warden
-            "5" { "ItemDef" "7428" } // Helm of the Azurite Warden
         }
     }
     "Creature"
@@ -2006,6 +2070,17 @@
             "3" { "ItemDef" "8175" } // Harness of the Galloping Avenger
             "4" { "ItemDef" "8186" } // Armor of the Galloping Avenger
             "5" { "ItemDef" "8168" } // Trappings of the Galloping Avenger
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Azurite Warden
+        {
+            "1" { "ItemDef" "7321" } // Belt of the Azurite Warden
+            "2" { "ItemDef" "7429" } // Horn of the Azurite Warden
+            "3" { "ItemDef" "7322" } // Bracers of the Azurite Warden
+            "4" { "ItemDef" "8825" } // Halberd of the Azurite Warden
+            "5" { "ItemDef" "7428" } // Helm of the Azurite Warden
         }
     }
     "Creature"
@@ -2221,8 +2296,8 @@
         {
             "1" { "ItemDef" "280" } // Weaver's Back
             "2" { "ItemDef" "278" } // Weaver's Legs
-            "3" { "ItemDef" "585" } // Weaver's Miscellaneous
-            "4" { "ItemDef" "277" } // Weaver's Antennae
+            "3" { "ItemDef" "277" } // Weaver's Antennae
+            "4" { "ItemDef" "585" } // Weaver's Miscellaneous
             "5" { "ItemDef" "279" } // Weaver's Arms
         }
     }
@@ -2277,11 +2352,11 @@
         "AttachWearables" // Default npc_dota_hero_abaddon
         {
             "1" { "ItemDef" "455" } // Abaddon's Helmet
-            "2" { "ItemDef" "454" } // Abaddon's Weapon
+            "2" { "ItemDef" "522" } // Abaddon's Ambient Effects
             "3" { "ItemDef" "456" } // Abaddon's Cape
             "4" { "ItemDef" "458" } // Abaddon's Mount
-            "5" { "ItemDef" "522" } // Abaddon's Ambient Effects
-            "6" { "ItemDef" "457" } // Abaddon's Shoulder Armor
+            "5" { "ItemDef" "457" } // Abaddon's Shoulder Armor
+            "6" { "ItemDef" "454" } // Abaddon's Weapon
         }
     }
     "Creature"
@@ -2763,17 +2838,6 @@
     }
     "Creature"
     {
-        "AttachWearables" // Flight of the Valkyrie
-        {
-            "1" { "ItemDef" "6244" } // Halberd of the Valkyrie
-            "2" { "ItemDef" "6243" } // Helm of the Valkyrie
-            "3" { "ItemDef" "6242" } // Wings of the Valkyrie
-            "4" { "ItemDef" "6241" } // Arms of the Valkyrie
-            "5" { "ItemDef" "6240" } // Shoulders of the Valkyrie
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Compendium Arms of the Onyx Crucible
         {
             "1" { "ItemDef" "7587" } // Compendium Arms of the Onyx Crucible Helmet
@@ -2807,6 +2871,17 @@
     }
     "Creature"
     {
+        "AttachWearables" // Flight of the Valkyrie
+        {
+            "1" { "ItemDef" "6244" } // Halberd of the Valkyrie
+            "2" { "ItemDef" "6243" } // Helm of the Valkyrie
+            "3" { "ItemDef" "6242" } // Wings of the Valkyrie
+            "4" { "ItemDef" "6241" } // Arms of the Valkyrie
+            "5" { "ItemDef" "6240" } // Shoulders of the Valkyrie
+        }
+    }
+    "Creature"
+    {
         "AttachWearables" // Arms of the Onyx Crucible
         {
             "1" { "ItemDef" "7486" } // Arms of the Onyx Crucible Bracers
@@ -2824,7 +2899,21 @@
     {
         "AttachWearables" // Default npc_dota_hero_bane
         {
-            "1" { "ItemDef" "503" } // Bane's Ambient Effects
+            "1" { "ItemDef" "615" } // Bane's Default Back
+            "2" { "ItemDef" "503" } // Bane's Ambient Effects
+            "3" { "ItemDef" "612" } // Bane's Default Head
+            "4" { "ItemDef" "614" } // Bane's Default Arms
+            "5" { "ItemDef" "613" } // Bane's Default Shoulder
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Heir of Terror
+        {
+            "1" { "ItemDef" "7944" } // Heir of Terror Wings
+            "2" { "ItemDef" "7943" } // Heir of Terror Belt
+            "3" { "ItemDef" "7942" } // Heir of Terror Bracers
+            "4" { "ItemDef" "7941" } // Heir of Terror Crown
         }
     }
 
@@ -2994,34 +3083,20 @@
     }
 
     ////////////////////////////////////////////////////////////
-    // Cosmetic Sets for npc_dota_hero_arc_warden
-    ////////////////////////////////////////////////////////////
-    "Creature"
-    {
-        "AttachWearables" // Default npc_dota_hero_arc_warden
-        {
-            "1" { "ItemDef" "598" } // Arc Warden's Back
-            "2" { "ItemDef" "557" } // Arc Warden's Shoulders
-            "3" { "ItemDef" "556" } // Arc Warden's Bracers
-            "4" { "ItemDef" "601" } // Arc Warden's Ambient Effects
-        }
-    }
-
-    ////////////////////////////////////////////////////////////
     // Cosmetic Sets for npc_dota_hero_pudge
     ////////////////////////////////////////////////////////////
     "Creature"
     {
         "AttachWearables" // Default npc_dota_hero_pudge
         {
-            "1" { "ItemDef" "470" } // Pudge's Belt
-            "2" { "ItemDef" "259" } // Pudge's Cleaver
+            "1" { "ItemDef" "47" } // Pudge's Rusty Meathook
+            "2" { "ItemDef" "470" } // Pudge's Belt
             "3" { "ItemDef" "260" } // Pudge's Left Arm
             "4" { "ItemDef" "258" } // Pudge's Back Rings and Apron
             "5" { "ItemDef" "261" } // Pudge's Bracer
-            "6" { "ItemDef" "47" } // Pudge's Rusty Meathook
-            "7" { "ItemDef" "262" } // Pudge's Toupee
-            "8" { "ItemDef" "391" } // Pudge's Ambient Effects
+            "6" { "ItemDef" "262" } // Pudge's Toupee
+            "7" { "ItemDef" "391" } // Pudge's Ambient Effects
+            "8" { "ItemDef" "259" } // Pudge's Cleaver
         }
     }
     "Creature"
@@ -3054,22 +3129,12 @@
         "AttachWearables" // Scavenger of the Basilisk
         {
             "1" { "ItemDef" "7173" } // Pauldrones of the Basilisk
-            "2" { "ItemDef" "7166" } // Armlet of the Basilisk
-            "3" { "ItemDef" "7174" } // Hook of the Basilisk
-            "4" { "ItemDef" "7169" } // Belt of the Basilisk
-            "5" { "ItemDef" "7167" } // Spine of the Basilisk
-        }
-    }
-    "Creature"
-    {
-        "AttachWearables" // Tools of the Mad Harvester Set
-        {
-            "1" { "ItemDef" "5051" } // Restraint of the Mad Harvester
-            "2" { "ItemDef" "5048" } // Rope of the Mad Harvester
-            "3" { "ItemDef" "5046" } // Chopper of the Mad Harvester
-            "4" { "ItemDef" "5050" } // Nails in the Mad Harvester
-            "5" { "ItemDef" "5047" } // Hook of the Mad Harvester
-            "6" { "ItemDef" "5049" } // Mask of the Mad Harvester
+            "2" { "ItemDef" "7172" } // The Tail Bash
+            "3" { "ItemDef" "7171" } // Helm of Tarrasque
+            "4" { "ItemDef" "7166" } // Armlet of the Basilisk
+            "5" { "ItemDef" "7174" } // Hook of the Basilisk
+            "6" { "ItemDef" "7169" } // Belt of the Basilisk
+            "7" { "ItemDef" "7167" } // Spine of the Basilisk
         }
     }
     "Creature"
@@ -3083,6 +3148,19 @@
             "5" { "ItemDef" "6085" } // Gladiator's Revenge Belt
             "6" { "ItemDef" "5901" } // Gladiator's Revenge Trident
             "7" { "ItemDef" "6088" } // Gladiator's Revenge Helmet
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Butcher's Wake
+        {
+            "1" { "ItemDef" "7666" } // Guard of the Butcher's Wake
+            "2" { "ItemDef" "7608" } // Visor of the Butcher's Wake
+            "3" { "ItemDef" "7606" } // Arsenal of the Butcher's Wake
+            "4" { "ItemDef" "7610" } // Pauldron of the Butcher's Wake
+            "5" { "ItemDef" "7609" } // Battleaxe of the Butcher's Wake
+            "6" { "ItemDef" "7605" } // Mancatcher of the Butcher's Wake
+            "7" { "ItemDef" "7604" } // Girdle of the Butcher's Wake
         }
     }
     "Creature"
@@ -3109,6 +3187,19 @@
             "5" { "ItemDef" "9468" } // Planks of the Bogatyr
             "6" { "ItemDef" "9454" } // Rustclaw
             "7" { "ItemDef" "9475" } // Sleeve of the Bogatyr
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Doomsday Ripper
+        {
+            "1" { "ItemDef" "7945" } // Doomsday Ripper Weapon
+            "2" { "ItemDef" "7371" } // Doomsday Ripper Off-Hand
+            "3" { "ItemDef" "7311" } // Doomsday Ripper Arms
+            "4" { "ItemDef" "7376" } // Doomsday Ripper Shoulder
+            "5" { "ItemDef" "7363" } // Doomsday Ripper Head
+            "6" { "ItemDef" "7362" } // Doomsday Ripper Belt
+            "7" { "ItemDef" "7320" } // Doomsday Ripper Back
         }
     }
     "Creature"
@@ -3168,6 +3259,18 @@
     }
     "Creature"
     {
+        "AttachWearables" // Tools of the Mad Harvester Set
+        {
+            "1" { "ItemDef" "5051" } // Restraint of the Mad Harvester
+            "2" { "ItemDef" "5048" } // Rope of the Mad Harvester
+            "3" { "ItemDef" "5046" } // Chopper of the Mad Harvester
+            "4" { "ItemDef" "5050" } // Nails in the Mad Harvester
+            "5" { "ItemDef" "5047" } // Hook of the Mad Harvester
+            "6" { "ItemDef" "5049" } // Mask of the Mad Harvester
+        }
+    }
+    "Creature"
+    {
         "AttachWearables" // Chained Slayers Set
         {
             "1" { "ItemDef" "4609" } // Chained Chopper
@@ -3189,6 +3292,29 @@
     }
 
     ////////////////////////////////////////////////////////////
+    // Cosmetic Sets for npc_dota_hero_arc_warden
+    ////////////////////////////////////////////////////////////
+    "Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_arc_warden
+        {
+            "1" { "ItemDef" "598" } // Arc Warden's Back
+            "2" { "ItemDef" "601" } // Arc Warden's Ambient Effects
+            "3" { "ItemDef" "556" } // Arc Warden's Bracers
+            "4" { "ItemDef" "557" } // Arc Warden's Shoulders
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Fractured Envoy
+        {
+            "1" { "ItemDef" "7295" } // Pauldrons of the Fractured Envoy
+            "2" { "ItemDef" "7294" } // Cape of the Fractured Envoy
+            "3" { "ItemDef" "7296" } // Bracers of the Fractured Envoy
+        }
+    }
+
+    ////////////////////////////////////////////////////////////
     // Cosmetic Sets for npc_dota_hero_winter_wyvern
     ////////////////////////////////////////////////////////////
     "Creature"
@@ -3196,18 +3322,16 @@
         "AttachWearables" // Default npc_dota_hero_winter_wyvern
         {
             "1" { "ItemDef" "552" } // Winter Wyvern's Pelt
-            "2" { "ItemDef" "553" } // Winter Wyvern''s Ambient Effects
-            "3" { "ItemDef" "551" } // Winter Wyvern's Headdress
+            "2" { "ItemDef" "551" } // Winter Wyvern's Headdress
+            "3" { "ItemDef" "553" } // Winter Wyvern''s Ambient Effects
         }
     }
-
-    ////////////////////////////////////////////////////////////
-    // Cosmetic Sets for npc_dota_hero_abyssal_underlord
-    ////////////////////////////////////////////////////////////
     "Creature"
     {
-        "AttachWearables" // Default npc_dota_hero_abyssal_underlord
+        "AttachWearables" // Iceburnt Elegy
         {
+            "1" { "ItemDef" "7291" } // Crown of the Iceburnt Elegy
+            "2" { "ItemDef" "7292" } // Wings of the Iceburnt Elegy
         }
     }
 
@@ -3219,12 +3343,12 @@
         "AttachWearables" // Default npc_dota_hero_techies
         {
             "1" { "ItemDef" "491" } // Techies Squee Costume
-            "2" { "ItemDef" "492" } // Techies Spleen Costume
-            "3" { "ItemDef" "394" } // Techies Bomb Arsenal
-            "4" { "ItemDef" "490" } // Techies Cart
-            "5" { "ItemDef" "487" } // Techies Spoon Costume
-            "6" { "ItemDef" "489" } // Techies Slingshot
-            "7" { "ItemDef" "499" } // Techies Sign
+            "2" { "ItemDef" "490" } // Techies Cart
+            "3" { "ItemDef" "492" } // Techies Spleen Costume
+            "4" { "ItemDef" "394" } // Techies Bomb Arsenal
+            "5" { "ItemDef" "499" } // Techies Sign
+            "6" { "ItemDef" "487" } // Techies Spoon Costume
+            "7" { "ItemDef" "489" } // Techies Slingshot
         }
     }
     "Creature"
@@ -3248,8 +3372,8 @@
     {
         "AttachWearables" // Default npc_dota_hero_ancient_apparition
         {
-            "1" { "ItemDef" "172" } // Ancient Apparition's Head
-            "2" { "ItemDef" "501" } // Ancient Apparition's Ambient Effects
+            "1" { "ItemDef" "501" } // Ancient Apparition's Ambient Effects
+            "2" { "ItemDef" "172" } // Ancient Apparition's Head
         }
     }
 
@@ -3260,7 +3384,8 @@
     {
         "AttachWearables" // Default npc_dota_hero_phoenix
         {
-            "1" { "ItemDef" "535" } // Phoenix's Ambient Effects
+            "1" { "ItemDef" "592" } // Phoenix's Head
+            "2" { "ItemDef" "535" } // Phoenix's Ambient Effects
         }
     }
 
@@ -3272,9 +3397,9 @@
         "AttachWearables" // Default npc_dota_hero_treant
         {
             "1" { "ItemDef" "230" } // Treant Protector's Feet
-            "2" { "ItemDef" "228" } // Treant Protector's Foliage
-            "3" { "ItemDef" "229" } // Treant Protector's Hands
-            "4" { "ItemDef" "227" } // Treant Protector's Head
+            "2" { "ItemDef" "229" } // Treant Protector's Hands
+            "3" { "ItemDef" "227" } // Treant Protector's Head
+            "4" { "ItemDef" "228" } // Treant Protector's Foliage
         }
     }
     "Creature"
@@ -3391,10 +3516,10 @@
         "AttachWearables" // Default npc_dota_hero_faceless_void
         {
             "1" { "ItemDef" "15" } // Faceless Void's Weapon
-            "2" { "ItemDef" "92" } // Faceless Void's Bracer
+            "2" { "ItemDef" "93" } // Faceless Void's Belt
             "3" { "ItemDef" "91" } // Faceless Void's Shoulder
-            "4" { "ItemDef" "90" } // Faceless Void's Head
-            "5" { "ItemDef" "93" } // Faceless Void's Belt
+            "4" { "ItemDef" "92" } // Faceless Void's Bracer
+            "5" { "ItemDef" "90" } // Faceless Void's Head
         }
     }
     "Creature"
@@ -3431,16 +3556,6 @@
     }
     "Creature"
     {
-        "AttachWearables" // Viridi Inanitas Set
-        {
-            "1" { "ItemDef" "5383" } // Viridus Leggings
-            "2" { "ItemDef" "5381" } // Viridus Crusher
-            "3" { "ItemDef" "5382" } // Viridus Claw
-            "4" { "ItemDef" "5384" } // Viridus Spine
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Ancient Cultist
         {
             "1" { "ItemDef" "6284" } // Ancient Crown
@@ -3452,13 +3567,12 @@
     }
     "Creature"
     {
-        "AttachWearables" // Dials of Claszureme Set
+        "AttachWearables" // Viridi Inanitas Set
         {
-            "1" { "ItemDef" "4334" } // Epoch
-            "2" { "ItemDef" "4597" } // Bracers of Claszureme
-            "3" { "ItemDef" "4599" } // Shoulders of Claszureme
-            "4" { "ItemDef" "4596" } // Belt of Claszureme
-            "5" { "ItemDef" "4279" } // Helm of Claszureme
+            "1" { "ItemDef" "5383" } // Viridus Leggings
+            "2" { "ItemDef" "5381" } // Viridus Crusher
+            "3" { "ItemDef" "5382" } // Viridus Claw
+            "4" { "ItemDef" "5384" } // Viridus Spine
         }
     }
     "Creature"
@@ -3472,6 +3586,17 @@
             "5" { "ItemDef" "5060" } // Mantle of the Acolyte of Clasz
         }
     }
+    "Creature"
+    {
+        "AttachWearables" // Dials of Claszureme Set
+        {
+            "1" { "ItemDef" "4334" } // Epoch
+            "2" { "ItemDef" "4597" } // Bracers of Claszureme
+            "3" { "ItemDef" "4599" } // Shoulders of Claszureme
+            "4" { "ItemDef" "4596" } // Belt of Claszureme
+            "5" { "ItemDef" "4279" } // Helm of Claszureme
+        }
+    }
 
     ////////////////////////////////////////////////////////////
     // Cosmetic Sets for npc_dota_hero_venomancer
@@ -3483,9 +3608,9 @@
             "1" { "ItemDef" "291" } // Venomancer's Jaw
             "2" { "ItemDef" "293" } // Venomancer's Arms
             "3" { "ItemDef" "292" } // Venomancer's Shoulders
-            "4" { "ItemDef" "295" } // Venomancer's Plague Wards
-            "5" { "ItemDef" "294" } // Venomancer's Tail
-            "6" { "ItemDef" "518" } // Venomancer's Ambient Effects
+            "4" { "ItemDef" "518" } // Venomancer's Ambient Effects
+            "5" { "ItemDef" "295" } // Venomancer's Plague Wards
+            "6" { "ItemDef" "294" } // Venomancer's Tail
         }
     }
     "Creature"
@@ -3533,8 +3658,8 @@
             "1" { "ItemDef" "8655" } // Earthshaker's Uncoiffed Head
             "2" { "ItemDef" "8366" } // All Heroes' Default Pet
             "3" { "ItemDef" "460" } // Earthshaker's Bracers
-            "4" { "ItemDef" "461" } // Earthshaker's Belt
-            "5" { "ItemDef" "459" } // Earthshaker's Totem
+            "4" { "ItemDef" "459" } // Earthshaker's Totem
+            "5" { "ItemDef" "461" } // Earthshaker's Belt
         }
     }
     "Creature"
@@ -3635,6 +3760,17 @@
     }
     "Creature"
     {
+        "AttachWearables" // Rustic Finery
+        {
+            "1" { "ItemDef" "7642" } // Braids of the Rustic Finery
+            "2" { "ItemDef" "7639" } // Sleeves of the Rustic Finery
+            "3" { "ItemDef" "7641" } // Wrap of the Rustic Finery
+            "4" { "ItemDef" "7640" } // Scarf of the Rustic Finery
+            "5" { "ItemDef" "7659" } // Spear of the Rustic Finery
+        }
+    }
+    "Creature"
+    {
         "AttachWearables" // Araceae's Tribute Set
         {
             "1" { "ItemDef" "5745" } // Araceae's Tribute Hair
@@ -3689,8 +3825,8 @@
             "2" { "ItemDef" "480" } // Earth Spirit's Neck
             "3" { "ItemDef" "481" } // Earth Spirit's Arms
             "4" { "ItemDef" "526" } // Earth Spirit's Ambient Effects
-            "5" { "ItemDef" "482" } // Earth Spirit's Head
-            "6" { "ItemDef" "479" } // Earth Spirit's Belt
+            "5" { "ItemDef" "479" } // Earth Spirit's Belt
+            "6" { "ItemDef" "482" } // Earth Spirit's Head
             "7" { "ItemDef" "477" } // Earth Spirit's Head Accessory
             "8" { "ItemDef" "8654" } // Earth Spirit's Stone Remnant
         }
@@ -3806,10 +3942,10 @@
         "AttachWearables" // Default npc_dota_hero_necrolyte
         {
             "1" { "ItemDef" "213" } // Necrophos' Headdress
-            "2" { "ItemDef" "508" } // Necrophos' Ambient Effects
-            "3" { "ItemDef" "214" } // Necrophos' Vestments
-            "4" { "ItemDef" "212" } // Necrophos' Beard
-            "5" { "ItemDef" "211" } // Necrophos' Sickle
+            "2" { "ItemDef" "212" } // Necrophos' Beard
+            "3" { "ItemDef" "508" } // Necrophos' Ambient Effects
+            "4" { "ItemDef" "211" } // Necrophos' Sickle
+            "5" { "ItemDef" "214" } // Necrophos' Vestments
         }
     }
     "Creature"
@@ -3881,11 +4017,11 @@
     {
         "AttachWearables" // Default npc_dota_hero_sand_king
         {
-            "1" { "ItemDef" "180" } // Sand King's Head
-            "2" { "ItemDef" "201" } // Sand King's Tail
-            "3" { "ItemDef" "198" } // Sand King's Shoulders
-            "4" { "ItemDef" "200" } // Sand King's Legs
-            "5" { "ItemDef" "199" } // Sand King's Claws
+            "1" { "ItemDef" "201" } // Sand King's Tail
+            "2" { "ItemDef" "180" } // Sand King's Head
+            "3" { "ItemDef" "199" } // Sand King's Claws
+            "4" { "ItemDef" "198" } // Sand King's Shoulders
+            "5" { "ItemDef" "200" } // Sand King's Legs
         }
     }
     "Creature"
@@ -3934,7 +4070,7 @@
     }
     "Creature"
     {
-        "AttachWearables" // Lord of the Scouring Dunes
+        "AttachWearables" // Promo Lord of the Scouring Dunes
         {
             "1" { "ItemDef" "6614" } // Shoulder of the Scouring Dunes
             "2" { "ItemDef" "6612" } // Arms of the Scouring Dunes
@@ -3945,7 +4081,7 @@
     }
     "Creature"
     {
-        "AttachWearables" // Promo Lord of the Scouring Dunes
+        "AttachWearables" // Lord of the Scouring Dunes
         {
             "1" { "ItemDef" "6614" } // Shoulder of the Scouring Dunes
             "2" { "ItemDef" "6612" } // Arms of the Scouring Dunes
@@ -4086,6 +4222,17 @@
     }
     "Creature"
     {
+        "AttachWearables" // Heavy Barbed Armor Set
+        {
+            "1" { "ItemDef" "5762" } // Heavy Barbed Arms
+            "2" { "ItemDef" "5766" } // Heavy Barbed Morning Star
+            "3" { "ItemDef" "5765" } // Heavy Barbed Collar
+            "4" { "ItemDef" "5764" } // Heavy Barbed Head
+            "5" { "ItemDef" "5763" } // Heavy Barbed Back
+        }
+    }
+    "Creature"
+    {
         "AttachWearables" // Debts of the Nightwatchman
         {
             "1" { "ItemDef" "6492" } // Cape of the Nightwatch
@@ -4106,17 +4253,6 @@
             "5" { "ItemDef" "5408" } // Emerald Frenzy Helmet
         }
     }
-    "Creature"
-    {
-        "AttachWearables" // Heavy Barbed Armor Set
-        {
-            "1" { "ItemDef" "5762" } // Heavy Barbed Arms
-            "2" { "ItemDef" "5766" } // Heavy Barbed Morning Star
-            "3" { "ItemDef" "5765" } // Heavy Barbed Collar
-            "4" { "ItemDef" "5764" } // Heavy Barbed Head
-            "5" { "ItemDef" "5763" } // Heavy Barbed Back
-        }
-    }
 
     ////////////////////////////////////////////////////////////
     // Cosmetic Sets for npc_dota_hero_centaur
@@ -4130,9 +4266,9 @@
             "3" { "ItemDef" "363" } // Centaur Warrunner's Bracers
             "4" { "ItemDef" "359" } // Centaur Warrunner's Head
             "5" { "ItemDef" "358" } // Centaur Warrunner's Axe
-            "6" { "ItemDef" "360" } // Centaur Warrunner's Shoulders
-            "7" { "ItemDef" "364" } // Centaur Warrunner's Tail
-            "8" { "ItemDef" "361" } // Centaur Warrunner's Belt
+            "6" { "ItemDef" "361" } // Centaur Warrunner's Belt
+            "7" { "ItemDef" "360" } // Centaur Warrunner's Shoulders
+            "8" { "ItemDef" "364" } // Centaur Warrunner's Tail
         }
     }
     "Creature"
@@ -4190,6 +4326,19 @@
     }
     "Creature"
     {
+        "AttachWearables" // Chieftain of the Warstomp Clan
+        {
+            "1" { "ItemDef" "6209" } // Shields of the Warstomp Clan
+            "2" { "ItemDef" "6207" } // Bracers of the Warstomp Clan
+            "3" { "ItemDef" "6210" } // Helm of the Warstomp Clan
+            "4" { "ItemDef" "6312" } // Armor of the Warstomp Clan
+            "5" { "ItemDef" "6208" } // Tail of the Warstomp Clan
+            "6" { "ItemDef" "6311" } // Axe of the Warstomp Clan
+            "7" { "ItemDef" "6211" } // Belt of the Warstomp Clan
+        }
+    }
+    "Creature"
+    {
         "AttachWearables" // Battle Dress of the Proven
         {
             "1" { "ItemDef" "8753" } // Mohawk of the Proven
@@ -4199,31 +4348,6 @@
             "5" { "ItemDef" "8758" } // Barding of the Proven
             "6" { "ItemDef" "8757" } // Belt of the Proven
             "7" { "ItemDef" "8755" } // Axe of the Proven
-        }
-    }
-    "Creature"
-    {
-        "AttachWearables" // Chieftain of the Warstomp Clan
-        {
-            "1" { "ItemDef" "6209" } // Shields of the Warstomp Clan
-            "2" { "ItemDef" "6207" } // Bracers of the Warstomp Clan
-            "3" { "ItemDef" "6210" } // Helm of the Warstomp Clan
-            "4" { "ItemDef" "6312" } // Armor of the Warstomp Clan
-            "5" { "ItemDef" "6311" } // Axe of the Warstomp Clan
-            "6" { "ItemDef" "6211" } // Belt of the Warstomp Clan
-        }
-    }
-    "Creature"
-    {
-        "AttachWearables" // Lord of the Vicious Plains
-        {
-            "1" { "ItemDef" "7801" } // Spikes of the Vicious Plains
-            "2" { "ItemDef" "7803" } // Helmet of the Vicious Plains
-            "3" { "ItemDef" "7804" } // Axe of the Vicious Plains
-            "4" { "ItemDef" "7802" } // Belt of the Vicious Plains
-            "5" { "ItemDef" "7795" } // Plate of the Vicious Plains
-            "6" { "ItemDef" "7800" } // Bracers of the Vicious Plains
-            "7" { "ItemDef" "7794" } // Tail of the Vicious Plains
         }
     }
     "Creature"
@@ -4252,6 +4376,19 @@
             "7" { "ItemDef" "4847" } // Flail of Omexe
         }
     }
+    "Creature"
+    {
+        "AttachWearables" // Lord of the Vicious Plains
+        {
+            "1" { "ItemDef" "7801" } // Spikes of the Vicious Plains
+            "2" { "ItemDef" "7803" } // Helmet of the Vicious Plains
+            "3" { "ItemDef" "7804" } // Axe of the Vicious Plains
+            "4" { "ItemDef" "7802" } // Belt of the Vicious Plains
+            "5" { "ItemDef" "7795" } // Plate of the Vicious Plains
+            "6" { "ItemDef" "7800" } // Bracers of the Vicious Plains
+            "7" { "ItemDef" "7794" } // Tail of the Vicious Plains
+        }
+    }
 
     ////////////////////////////////////////////////////////////
     // Cosmetic Sets for npc_dota_hero_troll_warlord
@@ -4260,12 +4397,12 @@
     {
         "AttachWearables" // Default npc_dota_hero_troll_warlord
         {
-            "1" { "ItemDef" "374" } // Troll Warlord's Default Off-Hand Weapon
-            "2" { "ItemDef" "373" } // Troll Warlord's Default Weapon
-            "3" { "ItemDef" "412" } // Troll Warlord's Default Arms
-            "4" { "ItemDef" "410" } // Troll Warlord's Default Shoulders
+            "1" { "ItemDef" "411" } // Troll Warlord's Default Head
+            "2" { "ItemDef" "374" } // Troll Warlord's Default Off-Hand Weapon
+            "3" { "ItemDef" "373" } // Troll Warlord's Default Weapon
+            "4" { "ItemDef" "412" } // Troll Warlord's Default Arms
             "5" { "ItemDef" "379" } // Troll Warlord's Default Melee Weapon
-            "6" { "ItemDef" "411" } // Troll Warlord's Default Head
+            "6" { "ItemDef" "410" } // Troll Warlord's Default Shoulders
             "7" { "ItemDef" "380" } // Troll Warlord's Default Melee Off-Hand Weapon
         }
     }
@@ -4291,9 +4428,9 @@
         {
             "1" { "ItemDef" "256" } // Keeper of the Light Horse Armor
             "2" { "ItemDef" "528" } // Keeper of the Light's Ambient Effects
-            "3" { "ItemDef" "255" } // Keeper of the Light Skirt
-            "4" { "ItemDef" "252" } // Keeper of the Light Horse
-            "5" { "ItemDef" "254" } // Keeper of the Light Hood
+            "3" { "ItemDef" "254" } // Keeper of the Light Hood
+            "4" { "ItemDef" "255" } // Keeper of the Light Skirt
+            "5" { "ItemDef" "252" } // Keeper of the Light Horse
             "6" { "ItemDef" "253" } // Keeper of the Light Staff
         }
     }
@@ -4321,17 +4458,6 @@
     }
     "Creature"
     {
-        "AttachWearables" // Crucible of Light
-        {
-            "1" { "ItemDef" "7676" } // Tendrillar
-            "2" { "ItemDef" "7677" } // The Crucible of Light Staff
-            "3" { "ItemDef" "7675" } // Horns of Tendrillar
-            "4" { "ItemDef" "7679" } // Crucible of Light's Vestiments
-            "5" { "ItemDef" "7678" } // Crucible of Light's Robes
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Empowered Vestments of the Gods Set
         {
             "1" { "ItemDef" "4865" } // Empowered Staff of the Gods
@@ -4339,6 +4465,17 @@
             "3" { "ItemDef" "4864" } // Empowered Barding of the Gods
             "4" { "ItemDef" "4867" } // Roehrin the Pale Stallion
             "5" { "ItemDef" "4866" } // Empowered Skirt of the Gods
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Crucible of Light
+        {
+            "1" { "ItemDef" "7676" } // Tendrillar
+            "2" { "ItemDef" "7677" } // The Crucible of Light Staff
+            "3" { "ItemDef" "7675" } // Horns of Tendrillar
+            "4" { "ItemDef" "7679" } // Crucible of Light's Vestiments
+            "5" { "ItemDef" "7678" } // Crucible of Light's Robes
         }
     }
     "Creature"
@@ -4409,16 +4546,6 @@
     }
     "Creature"
     {
-        "AttachWearables" // Revered Arms Set
-        {
-            "1" { "ItemDef" "4439" } // Revered Spear
-            "2" { "ItemDef" "4451" } // Revered Shoulder
-            "3" { "ItemDef" "4402" } // Revered Bracers
-            "4" { "ItemDef" "4409" } // Revered Wrap
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Promo Vengeance of the Sunwarrior
         {
             "1" { "ItemDef" "6617" } // Belt of the Sunwarrior
@@ -4467,6 +4594,16 @@
             "4" { "ItemDef" "4718" } // Buckler of the Bramble Lord
         }
     }
+    "Creature"
+    {
+        "AttachWearables" // Revered Arms Set
+        {
+            "1" { "ItemDef" "4439" } // Revered Spear
+            "2" { "ItemDef" "4451" } // Revered Shoulder
+            "3" { "ItemDef" "4402" } // Revered Bracers
+            "4" { "ItemDef" "4409" } // Revered Wrap
+        }
+    }
 
     ////////////////////////////////////////////////////////////
     // Cosmetic Sets for npc_dota_hero_spirit_breaker
@@ -4476,10 +4613,10 @@
         "AttachWearables" // Default npc_dota_hero_spirit_breaker
         {
             "1" { "ItemDef" "112" } // Spirit Breaker's Shoulder Armor
-            "2" { "ItemDef" "106" } // Spirit Breaker's Head
-            "3" { "ItemDef" "114" } // Spirit Breaker's Tail
-            "4" { "ItemDef" "115" } // Spirit Breaker's Bracers
-            "5" { "ItemDef" "113" } // Spirit Breaker's Mace
+            "2" { "ItemDef" "115" } // Spirit Breaker's Bracers
+            "3" { "ItemDef" "106" } // Spirit Breaker's Head
+            "4" { "ItemDef" "113" } // Spirit Breaker's Mace
+            "5" { "ItemDef" "114" } // Spirit Breaker's Tail
             "6" { "ItemDef" "116" } // Spirit Breaker's Belt
             "7" { "ItemDef" "111" } // Spirit Breaker's Horns
         }
@@ -4494,18 +4631,6 @@
             "4" { "ItemDef" "5488" } // Horns of the Iron Will
             "5" { "ItemDef" "5577" } // Flail of the Iron Will
             "6" { "ItemDef" "5489" } // Mantle of the Iron Will
-        }
-    }
-    "Creature"
-    {
-        "AttachWearables" // Wrath of the Hellrunner
-        {
-            "1" { "ItemDef" "9361" } // Club of the Hellrunner
-            "2" { "ItemDef" "9366" } // Horns of the Hellrunner
-            "3" { "ItemDef" "9363" } // Pauldrons of the Hellrunner
-            "4" { "ItemDef" "9362" } // Sweep of the Hellrunner
-            "5" { "ItemDef" "9364" } // Belt of the Hellrunner
-            "6" { "ItemDef" "9365" } // Bracelet of the Hellrunner
         }
     }
     "Creature"
@@ -4550,6 +4675,18 @@
             "2" { "ItemDef" "4872" } // Heavy Pauldrons of the World Runner
             "3" { "ItemDef" "4871" } // Heavy Helm of the World Runner
             "4" { "ItemDef" "4870" } // Heavy Gauntlets of the World Runner
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Wrath of the Hellrunner
+        {
+            "1" { "ItemDef" "9361" } // Club of the Hellrunner
+            "2" { "ItemDef" "9366" } // Horns of the Hellrunner
+            "3" { "ItemDef" "9363" } // Pauldrons of the Hellrunner
+            "4" { "ItemDef" "9362" } // Sweep of the Hellrunner
+            "5" { "ItemDef" "9364" } // Belt of the Hellrunner
+            "6" { "ItemDef" "9365" } // Bracelet of the Hellrunner
         }
     }
     "Creature"
@@ -4621,10 +4758,10 @@
         "AttachWearables" // Default npc_dota_hero_rattletrap
         {
             "1" { "ItemDef" "231" } // Clockwerk's Rocket
-            "2" { "ItemDef" "446" } // Clockwerk's Weapon
+            "2" { "ItemDef" "484" } // Clockwerk's Armor
             "3" { "ItemDef" "485" } // Clockwerk's Head
-            "4" { "ItemDef" "484" } // Clockwerk's Armor
-            "5" { "ItemDef" "8635" } // Clockwerk's Power Cogs
+            "4" { "ItemDef" "8635" } // Clockwerk's Power Cogs
+            "5" { "ItemDef" "446" } // Clockwerk's Weapon
         }
     }
     "Creature"
@@ -4746,6 +4883,15 @@
             "4" { "ItemDef" "488" } // Shadow Fiend's Arms
         }
     }
+    "Creature"
+    {
+        "AttachWearables" // Diabolical Fiend
+        {
+            "1" { "ItemDef" "7279" } // Armor of the Diabolical Fiend
+            "2" { "ItemDef" "7193" } // Arms of the Diabolical Fiend
+            "3" { "ItemDef" "7188" } // Horns of the Diabolical Fiend
+        }
+    }
 
     ////////////////////////////////////////////////////////////
     // Cosmetic Sets for npc_dota_hero_dazzle
@@ -4757,8 +4903,8 @@
             "1" { "ItemDef" "264" } // Dazzle's Staff
             "2" { "ItemDef" "265" } // Dazzle's Skirt
             "3" { "ItemDef" "263" } // Dazzle's Mohawk
-            "4" { "ItemDef" "266" } // Dazzle's Sleeve
-            "5" { "ItemDef" "468" } // Dazzle's Shoulders
+            "4" { "ItemDef" "468" } // Dazzle's Shoulders
+            "5" { "ItemDef" "266" } // Dazzle's Sleeve
         }
     }
     "Creature"
@@ -4805,17 +4951,6 @@
     }
     "Creature"
     {
-        "AttachWearables" // Shadow Flame
-        {
-            "1" { "ItemDef" "6356" } // Shadow Flame Headdress
-            "2" { "ItemDef" "6359" } // Dazolator
-            "3" { "ItemDef" "6354" } // Shadow Flame Arms
-            "4" { "ItemDef" "6353" } // Shadow Flame Dress
-            "5" { "ItemDef" "6355" } // Shadow Flame Guards
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Darkclaw Emissary
         {
             "1" { "ItemDef" "7358" } // Darkclaw Emissary Dress
@@ -4823,6 +4958,17 @@
             "3" { "ItemDef" "7359" } // Darkclaw Emissary Arms
             "4" { "ItemDef" "7357" } // Darkclaw Emissary Cloak
             "5" { "ItemDef" "7356" } // Darkclaw Emissary Cowl
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Shadow Flame
+        {
+            "1" { "ItemDef" "6356" } // Shadow Flame Headdress
+            "2" { "ItemDef" "6359" } // Dazolator
+            "3" { "ItemDef" "6354" } // Shadow Flame Arms
+            "4" { "ItemDef" "6353" } // Shadow Flame Dress
+            "5" { "ItemDef" "6355" } // Shadow Flame Guards
         }
     }
     "Creature"
@@ -4847,9 +4993,9 @@
             "1" { "ItemDef" "145" } // Disruptor's Back
             "2" { "ItemDef" "146" } // Disruptor's Shoulder Armor
             "3" { "ItemDef" "147" } // Disruptor's Mount
-            "4" { "ItemDef" "143" } // Disruptor's Bracers
-            "5" { "ItemDef" "142" } // Disruptor's Weapon
-            "6" { "ItemDef" "144" } // Disruptor's Hair
+            "4" { "ItemDef" "144" } // Disruptor's Hair
+            "5" { "ItemDef" "143" } // Disruptor's Bracers
+            "6" { "ItemDef" "142" } // Disruptor's Weapon
             "7" { "ItemDef" "525" } // Disruptor's Ambient Effects
         }
     }
@@ -4903,18 +5049,6 @@
     }
     "Creature"
     {
-        "AttachWearables" // Might of the Thunder Ram
-        {
-            "1" { "ItemDef" "8026" } // Tempest Caller
-            "2" { "ItemDef" "8055" } // Flags of the Thunder Ram
-            "3" { "ItemDef" "8024" } // Thunder Ram
-            "4" { "ItemDef" "8022" } // Armplates of the Thunder Ram
-            "5" { "ItemDef" "8023" } // Crown of the Thunder Ram
-            "6" { "ItemDef" "8025" } // Pauldrons of the Thunder Ram
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Warrior of the Stormlands
         {
             "1" { "ItemDef" "6460" } // Helm of the Stormlands
@@ -4935,6 +5069,18 @@
             "4" { "ItemDef" "6741" } // Static Lord's Generator
             "5" { "ItemDef" "6739" } // Bracers of the Static Lord
             "6" { "ItemDef" "6740" } // Blitzy the Stormrunner
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Might of the Thunder Ram
+        {
+            "1" { "ItemDef" "8026" } // Tempest Caller
+            "2" { "ItemDef" "8055" } // Flags of the Thunder Ram
+            "3" { "ItemDef" "8024" } // Thunder Ram
+            "4" { "ItemDef" "8022" } // Armplates of the Thunder Ram
+            "5" { "ItemDef" "8023" } // Crown of the Thunder Ram
+            "6" { "ItemDef" "8025" } // Pauldrons of the Thunder Ram
         }
     }
     "Creature"
@@ -4960,8 +5106,8 @@
             "1" { "ItemDef" "544" } // Rubick's Ambient Effects
             "2" { "ItemDef" "204" } // Rubick's Cape
             "3" { "ItemDef" "205" } // Rubick's Shoulder Armor
-            "4" { "ItemDef" "203" } // Rubick's Staff
-            "5" { "ItemDef" "419" } // Rubick's Head
+            "4" { "ItemDef" "419" } // Rubick's Head
+            "5" { "ItemDef" "203" } // Rubick's Staff
         }
     }
     "Creature"
@@ -5065,22 +5211,22 @@
     }
     "Creature"
     {
-        "AttachWearables" // Diviner's Embrace
-        {
-            "1" { "ItemDef" "8710" } // Staff of Diviner's Embrace
-            "2" { "ItemDef" "8703" } // Robe of Diviner's Embrace
-            "3" { "ItemDef" "8702" } // Hood of Diviner's Embrace
-            "4" { "ItemDef" "8704" } // Mantle of Diviner's Embrace
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Wandering Harlequin's Regalia
         {
             "1" { "ItemDef" "7028" } // Wandering Harlequin's Mantle
             "2" { "ItemDef" "7026" } // Wandering Harlequin's Crest
             "3" { "ItemDef" "7029" } // Conceit of the Wandering Harlequin
             "4" { "ItemDef" "7025" } // Wandering Harlequin's Cape
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Diviner's Embrace
+        {
+            "1" { "ItemDef" "8710" } // Staff of Diviner's Embrace
+            "2" { "ItemDef" "8703" } // Robe of Diviner's Embrace
+            "3" { "ItemDef" "8702" } // Hood of Diviner's Embrace
+            "4" { "ItemDef" "8704" } // Mantle of Diviner's Embrace
         }
     }
     "Creature"
@@ -5113,9 +5259,20 @@
         "AttachWearables" // Default npc_dota_hero_undying
         {
             "1" { "ItemDef" "8629" } // Undying's Tombstone
-            "2" { "ItemDef" "393" } // Undying's Armor
-            "3" { "ItemDef" "392" } // Undying's Helmet
-            "4" { "ItemDef" "542" } // Undying's Ambient Effects
+            "2" { "ItemDef" "554" } // Undying's Flesh Golem
+            "3" { "ItemDef" "393" } // Undying's Armor
+            "4" { "ItemDef" "392" } // Undying's Helmet
+            "5" { "ItemDef" "542" } // Undying's Ambient Effects
+            "6" { "ItemDef" "616" } // Undying's Arm Armor
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Dirgeful Overlord
+        {
+            "1" { "ItemDef" "7961" } // Crown of the Dirgeful Overlord
+            "2" { "ItemDef" "7960" } // Armor of the Dirgeful Overlord
+            "3" { "ItemDef" "7973" } // Bracers of the Dirgeful Overlord
         }
     }
 
@@ -5127,11 +5284,11 @@
         "AttachWearables" // Default npc_dota_hero_terrorblade
         {
             "1" { "ItemDef" "307" } // Terrorblade's Weapons
-            "2" { "ItemDef" "476" } // Terrorblade's Armor
-            "3" { "ItemDef" "8650" } // Terrorblade's Demon Form
-            "4" { "ItemDef" "540" } // Terrorblade's Ambient Effects
-            "5" { "ItemDef" "306" } // Terrorblade's Wings
-            "6" { "ItemDef" "478" } // Terrorblade's Head
+            "2" { "ItemDef" "8650" } // Terrorblade's Demon Form
+            "3" { "ItemDef" "540" } // Terrorblade's Ambient Effects
+            "4" { "ItemDef" "306" } // Terrorblade's Wings
+            "5" { "ItemDef" "478" } // Terrorblade's Head
+            "6" { "ItemDef" "476" } // Terrorblade's Armor
         }
     }
     "Creature"
@@ -5250,11 +5407,23 @@
         "AttachWearables" // Default npc_dota_hero_meepo
         {
             "1" { "ItemDef" "296" } // Meepo's Hood
-            "2" { "ItemDef" "297" } // Meepo's Backpack
-            "3" { "ItemDef" "104" } // Meepo's Weapon
-            "4" { "ItemDef" "299" } // Meepo's Bracers
-            "5" { "ItemDef" "298" } // Meepo's Shoulderpads
-            "6" { "ItemDef" "300" } // Meepo's Tail
+            "2" { "ItemDef" "104" } // Meepo's Weapon
+            "3" { "ItemDef" "299" } // Meepo's Bracers
+            "4" { "ItemDef" "298" } // Meepo's Shoulderpads
+            "5" { "ItemDef" "300" } // Meepo's Tail
+            "6" { "ItemDef" "297" } // Meepo's Backpack
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // The Family Values Bundle
+        {
+            "1" { "ItemDef" "7683" } // The Family Values Head
+            "2" { "ItemDef" "7684" } // The Family Values Weapon
+            "3" { "ItemDef" "7669" } // The Family Values Back
+            "4" { "ItemDef" "7670" } // The Family Values Shoulders
+            "5" { "ItemDef" "7686" } // The Family Values Arms
+            "6" { "ItemDef" "7685" } // The Family Values Tail
         }
     }
     "Creature"
@@ -5370,13 +5539,13 @@
     }
     "Creature"
     {
-        "AttachWearables" // Ravening Wings
+        "AttachWearables" // Creeping Shadow
         {
-            "1" { "ItemDef" "8140" } // Pauldrons of the Ravening Wings
-            "2" { "ItemDef" "8138" } // Glaive of the Ravening Wings
-            "3" { "ItemDef" "8139" } // Helm of the Ravening Wings
-            "4" { "ItemDef" "8137" } // Cape of the Ravening Wings
-            "5" { "ItemDef" "8136" } // Belt of the Ravening Wings
+            "1" { "ItemDef" "7307" } // Belt of the Creeping Shadow
+            "2" { "ItemDef" "7308" } // Hood of the Creeping Shadow
+            "3" { "ItemDef" "7310" } // Blade of the Creeping Shadow
+            "4" { "ItemDef" "7297" } // Cape of the Creeping Shadow
+            "5" { "ItemDef" "7309" } // Shawl of the Creeping Shadow
         }
     }
     "Creature"
@@ -5392,6 +5561,17 @@
     }
     "Creature"
     {
+        "AttachWearables" // Raiments of the Eventide
+        {
+            "1" { "ItemDef" "7598" } // Tasset of the Eventide
+            "2" { "ItemDef" "7601" } // Headdress of the Eventide
+            "3" { "ItemDef" "7599" } // Cloak of the Eventide
+            "4" { "ItemDef" "7600" } // Blade of the Eventide
+            "5" { "ItemDef" "7597" } // Mantle of the Eventide
+        }
+    }
+    "Creature"
+    {
         "AttachWearables" // Toll of the Fearful Aria
         {
             "1" { "ItemDef" "9323" } // Sash of the Fearful Aria
@@ -5399,6 +5579,17 @@
             "3" { "ItemDef" "9321" } // Armor of the Fearful Aria
             "4" { "ItemDef" "9320" } // Style of the Fearful Aria
             "5" { "ItemDef" "9322" } // Trail of the Fearful Aria
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Ravening Wings
+        {
+            "1" { "ItemDef" "8140" } // Pauldrons of the Ravening Wings
+            "2" { "ItemDef" "8138" } // Glaive of the Ravening Wings
+            "3" { "ItemDef" "8139" } // Helm of the Ravening Wings
+            "4" { "ItemDef" "8137" } // Cape of the Ravening Wings
+            "5" { "ItemDef" "8136" } // Belt of the Ravening Wings
         }
     }
     "Creature"
@@ -5492,9 +5683,9 @@
         {
             "1" { "ItemDef" "162" } // Brewmaster's Shoulders
             "2" { "ItemDef" "160" } // Brewmaster's Bracers
-            "3" { "ItemDef" "161" } // Brewmaster's Backpack
+            "3" { "ItemDef" "159" } // Brewmaster's Barrel
             "4" { "ItemDef" "158" } // Brewmaster's Staff
-            "5" { "ItemDef" "159" } // Brewmaster's Barrel
+            "5" { "ItemDef" "161" } // Brewmaster's Backpack
         }
     }
     "Creature"
@@ -5539,10 +5730,10 @@
         "AttachWearables" // Default npc_dota_hero_shadow_demon
         {
             "1" { "ItemDef" "396" } // Shadow Demon's Cape
-            "2" { "ItemDef" "545" } // Shadow Demon's Ambient Effects
-            "3" { "ItemDef" "399" } // Shadow Demon's Tail
-            "4" { "ItemDef" "398" } // Shadow Demon's Belt
-            "5" { "ItemDef" "397" } // Shadow Demon's Armor
+            "2" { "ItemDef" "399" } // Shadow Demon's Tail
+            "3" { "ItemDef" "545" } // Shadow Demon's Ambient Effects
+            "4" { "ItemDef" "397" } // Shadow Demon's Armor
+            "5" { "ItemDef" "398" } // Shadow Demon's Belt
         }
     }
     "Creature"
@@ -5587,8 +5778,8 @@
             "2" { "ItemDef" "450" } // Luna's Helmet
             "3" { "ItemDef" "453" } // Luna's Head
             "4" { "ItemDef" "452" } // Luna's Mount
-            "5" { "ItemDef" "449" } // Luna's Shield
-            "6" { "ItemDef" "448" } // Luna's Weapon
+            "5" { "ItemDef" "448" } // Luna's Weapon
+            "6" { "ItemDef" "449" } // Luna's Shield
         }
     }
     "Creature"
@@ -5622,6 +5813,17 @@
             "3" { "ItemDef" "8852" } // Emeraldine Crest
             "4" { "ItemDef" "8854" } // Emeraldine Shield
             "5" { "ItemDef" "8853" } // Emeraldine Glaive
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Nightsilver's Resolve
+        {
+            "1" { "ItemDef" "7962" } // Blades of Nightsilver's Resolve
+            "2" { "ItemDef" "7963" } // Pauldons of Nightsilver's Resolve
+            "3" { "ItemDef" "7965" } // Guardian of Nightsilver's Resolve
+            "4" { "ItemDef" "7966" } // Style of Nightsilver's Resolve
+            "5" { "ItemDef" "7964" } // Shield of Nightsilver's Resolve
         }
     }
     "Creature"
@@ -5812,17 +6014,6 @@
     }
     "Creature"
     {
-        "AttachWearables" // Custom of Karroch Set
-        {
-            "1" { "ItemDef" "4887" } // Ancestral Belt of Karroch
-            "2" { "ItemDef" "4889" } // Ancestral Vest of Karroch
-            "3" { "ItemDef" "4885" } // Ancestral Bracers of Karroch
-            "4" { "ItemDef" "4886" } // Ancestral Axes of Karroch
-            "5" { "ItemDef" "4888" } // Ancestral Hair of Karroch
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Tribal Stone Set
         {
             "1" { "ItemDef" "4704" } // Tribal Stone Edge
@@ -5866,6 +6057,17 @@
             "5" { "ItemDef" "9877" } // Bite of the Chimera's Rage
         }
     }
+    "Creature"
+    {
+        "AttachWearables" // Custom of Karroch Set
+        {
+            "1" { "ItemDef" "4887" } // Ancestral Belt of Karroch
+            "2" { "ItemDef" "4889" } // Ancestral Vest of Karroch
+            "3" { "ItemDef" "4885" } // Ancestral Bracers of Karroch
+            "4" { "ItemDef" "4886" } // Ancestral Axes of Karroch
+            "5" { "ItemDef" "4888" } // Ancestral Hair of Karroch
+        }
+    }
 
     ////////////////////////////////////////////////////////////
     // Cosmetic Sets for npc_dota_hero_axe
@@ -5875,10 +6077,10 @@
         "AttachWearables" // Default npc_dota_hero_axe
         {
             "1" { "ItemDef" "8653" } // Axe's Miscellaneous
-            "2" { "ItemDef" "8366" } // All Heroes' Default Pet
-            "3" { "ItemDef" "3" } // Axe's Shoulder Guard
-            "4" { "ItemDef" "5" } // Axe's Belt
-            "5" { "ItemDef" "4" } // Axe's Hair
+            "2" { "ItemDef" "5" } // Axe's Belt
+            "3" { "ItemDef" "4" } // Axe's Hair
+            "4" { "ItemDef" "8366" } // All Heroes' Default Pet
+            "5" { "ItemDef" "3" } // Axe's Shoulder Guard
             "6" { "ItemDef" "2" } // Axe's Axe
         }
     }
@@ -6024,6 +6226,20 @@
     }
     "Creature"
     {
+        "AttachWearables" // The Gatekeeper
+        {
+            "1" { "ItemDef" "8076" } // Bracers of the Gatekeeper
+            "2" { "ItemDef" "8083" } // Pauldrons of the Gatekeeper
+            "3" { "ItemDef" "8077" } // Belt of the Gatekeeper
+            "4" { "ItemDef" "8081" } // Wretched Guardian
+            "5" { "ItemDef" "8080" } // Key of the Gatekeeper
+            "6" { "ItemDef" "8079" } // Hood of the Gatekeeper
+            "7" { "ItemDef" "8082" } // Staff of the Gatekeeper
+            "8" { "ItemDef" "8078" } // Cloak of the Gatekeeper
+        }
+    }
+    "Creature"
+    {
         "AttachWearables" // Tools of the Hellsworn
         {
             "1" { "ItemDef" "9862" } // Pauldron of the Hellsworn
@@ -6043,6 +6259,20 @@
             "6" { "ItemDef" "5730" } // Dark Pauldrons of the Conjurer
             "7" { "ItemDef" "5725" } // Bracers of the Conjurer
             "8" { "ItemDef" "5594" } // Hood of the Conjurer
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Dark Curator
+        {
+            "1" { "ItemDef" "7256" } // Staff of the Dark Curator
+            "2" { "ItemDef" "7255" } // Pauldrons of the Dark Curator
+            "3" { "ItemDef" "7254" } // Demon of the Dark Curator
+            "4" { "ItemDef" "7252" } // Hood of the Dark Curator
+            "5" { "ItemDef" "7227" } // Bag of the Dark Curator
+            "6" { "ItemDef" "7229" } // Bracers of the Dark Curator
+            "7" { "ItemDef" "7253" } // Lantern of the Dark Curator
+            "8" { "ItemDef" "7228" } // Robe of the Dark Curator
         }
     }
     "Creature"
@@ -6133,10 +6363,10 @@
     {
         "AttachWearables" // Default npc_dota_hero_silencer
         {
-            "1" { "ItemDef" "302" } // Silencer's Helmet
-            "2" { "ItemDef" "303" } // Silencer's Shoulders
-            "3" { "ItemDef" "304" } // Silencer's Robe
-            "4" { "ItemDef" "301" } // Silencer's Bracers
+            "1" { "ItemDef" "301" } // Silencer's Bracers
+            "2" { "ItemDef" "302" } // Silencer's Helmet
+            "3" { "ItemDef" "303" } // Silencer's Shoulders
+            "4" { "ItemDef" "304" } // Silencer's Robe
             "5" { "ItemDef" "28" } // Silencer's Shield
             "6" { "ItemDef" "27" } // Silencer's Weapon
         }
@@ -6221,12 +6451,12 @@
     {
         "AttachWearables" // Default npc_dota_hero_spectre
         {
-            "1" { "ItemDef" "580" } // Spectre's Default Voice
-            "2" { "ItemDef" "539" } // Spectre's Ambient Effects
-            "3" { "ItemDef" "395" } // Spectre's weapon
-            "4" { "ItemDef" "579" } // Spectre's Miscellaneous
-            "5" { "ItemDef" "324" } // Spectre's Dress
-            "6" { "ItemDef" "323" } // Spectre's Head
+            "1" { "ItemDef" "323" } // Spectre's Head
+            "2" { "ItemDef" "580" } // Spectre's Default Voice
+            "3" { "ItemDef" "539" } // Spectre's Ambient Effects
+            "4" { "ItemDef" "395" } // Spectre's weapon
+            "5" { "ItemDef" "579" } // Spectre's Miscellaneous
+            "6" { "ItemDef" "324" } // Spectre's Dress
             "7" { "ItemDef" "325" } // Spectre's Shoulders
         }
     }
@@ -6327,9 +6557,9 @@
             "1" { "ItemDef" "8626" } // Invoker's Forge Spirits
             "2" { "ItemDef" "48" } // Invoker's Cape
             "3" { "ItemDef" "89" } // Invoker's Shoulder
-            "4" { "ItemDef" "98" } // Invoker's Head
-            "5" { "ItemDef" "305" } // Invoker's Belt
-            "6" { "ItemDef" "99" } // Invoker's Hair
+            "4" { "ItemDef" "99" } // Invoker's Hair
+            "5" { "ItemDef" "98" } // Invoker's Head
+            "6" { "ItemDef" "305" } // Invoker's Belt
             "7" { "ItemDef" "100" } // Invoker's Bracer
         }
     }
@@ -6389,18 +6619,6 @@
     }
     "Creature"
     {
-        "AttachWearables" // Sempiternal Revelations
-        {
-            "1" { "ItemDef" "6450" } // Sempiternal Revelations Forged Spirits
-            "2" { "ItemDef" "6442" } // Sempiternal Revelations Belt
-            "3" { "ItemDef" "6449" } // Sempiternal Revelations Arms
-            "4" { "ItemDef" "6447" } // Sempiternal Revelations Guard
-            "5" { "ItemDef" "6444" } // Sempiternal Revelations Cape
-            "6" { "ItemDef" "6441" } // Sempiternal Revelations Hat
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Light of Hope Bundle
         {
             "1" { "ItemDef" "6581" } // Cuffs of Quas Precor
@@ -6420,6 +6638,18 @@
             "3" { "ItemDef" "6583" } // Cape of Quas Precor
             "4" { "ItemDef" "6579" } // Mask of Quas Precor
             "5" { "ItemDef" "6584" } // Shoulders of Quas Precor
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Sempiternal Revelations
+        {
+            "1" { "ItemDef" "6450" } // Sempiternal Revelations Forged Spirits
+            "2" { "ItemDef" "6442" } // Sempiternal Revelations Belt
+            "3" { "ItemDef" "6449" } // Sempiternal Revelations Arms
+            "4" { "ItemDef" "6447" } // Sempiternal Revelations Guard
+            "5" { "ItemDef" "6444" } // Sempiternal Revelations Cape
+            "6" { "ItemDef" "6441" } // Sempiternal Revelations Hat
         }
     }
     "Creature"
@@ -6496,13 +6726,13 @@
     {
         "AttachWearables" // Default npc_dota_hero_bounty_hunter
         {
-            "1" { "ItemDef" "55" } // Bounty Hunter's Bandana
-            "2" { "ItemDef" "564" } // Bounty Hunter's Arms
-            "3" { "ItemDef" "50" } // Bounty Hunter's Weapon
-            "4" { "ItemDef" "51" } // Bounty Hunter's Offhand Weapon
-            "5" { "ItemDef" "54" } // Bounty Hunter's Shoulder
-            "6" { "ItemDef" "52" } // Bounty Hunter's Back
-            "7" { "ItemDef" "53" } // Bounty Hunter's Armor
+            "1" { "ItemDef" "54" } // Bounty Hunter's Shoulder
+            "2" { "ItemDef" "53" } // Bounty Hunter's Armor
+            "3" { "ItemDef" "52" } // Bounty Hunter's Back
+            "4" { "ItemDef" "564" } // Bounty Hunter's Arms
+            "5" { "ItemDef" "51" } // Bounty Hunter's Offhand Weapon
+            "6" { "ItemDef" "55" } // Bounty Hunter's Bandana
+            "7" { "ItemDef" "50" } // Bounty Hunter's Weapon
         }
     }
     "Creature"
@@ -6595,26 +6825,14 @@
     }
     "Creature"
     {
-        "AttachWearables" // The Master Assassin Set
+        "AttachWearables" // Trappings of the Pangolin Guild Set
         {
-            "1" { "ItemDef" "4309" } // Master Assassin's Mask
-            "2" { "ItemDef" "4306" } // Master Assassin's Shuriken
-            "3" { "ItemDef" "4310" } // Master Assassin's Mancatcher
-            "4" { "ItemDef" "4308" } // Master Assassin's Shoulders
-            "5" { "ItemDef" "4307" } // Master Assassin's Tails
-            "6" { "ItemDef" "4311" } // Master Assassin's Grim Cutter
-        }
-    }
-    "Creature"
-    {
-        "AttachWearables" // The Crimson Cut-throat Set
-        {
-            "1" { "ItemDef" "4384" } // Mask of the Crimson Cut-throat
-            "2" { "ItemDef" "4465" } // Pads of the Crimson Cut-throat
-            "3" { "ItemDef" "4452" } // Mancatcher of the Crimson Cut-throat
-            "4" { "ItemDef" "4469" } // Blade of the Crimson Cut-throat
-            "5" { "ItemDef" "4486" } // Shuriken of the Crimson Cut-throat
-            "6" { "ItemDef" "4385" } // Guard of the Crimson Cut-throat
+            "1" { "ItemDef" "4170" } // Harvester of the Hidden Hunter
+            "2" { "ItemDef" "4001" } // Pangolin Shoulder Armor
+            "3" { "ItemDef" "4171" } // Cleaver of the Hidden Hunter
+            "4" { "ItemDef" "4231" } // Pangolin Scarf
+            "5" { "ItemDef" "4230" } // Pangolin Carapace
+            "6" { "ItemDef" "4169" } // Shuriken of the Hidden Hunter
         }
     }
     "Creature"
@@ -6654,6 +6872,18 @@
     }
     "Creature"
     {
+        "AttachWearables" // The Crimson Cut-throat Set
+        {
+            "1" { "ItemDef" "4384" } // Mask of the Crimson Cut-throat
+            "2" { "ItemDef" "4465" } // Pads of the Crimson Cut-throat
+            "3" { "ItemDef" "4452" } // Mancatcher of the Crimson Cut-throat
+            "4" { "ItemDef" "4469" } // Blade of the Crimson Cut-throat
+            "5" { "ItemDef" "4486" } // Shuriken of the Crimson Cut-throat
+            "6" { "ItemDef" "4385" } // Guard of the Crimson Cut-throat
+        }
+    }
+    "Creature"
+    {
         "AttachWearables" // Bounty Hunter's Big Bundle
         {
             "1" { "ItemDef" "4313" } // Trap Jaw
@@ -6682,14 +6912,14 @@
     }
     "Creature"
     {
-        "AttachWearables" // Trappings of the Pangolin Guild Set
+        "AttachWearables" // The Master Assassin Set
         {
-            "1" { "ItemDef" "4170" } // Harvester of the Hidden Hunter
-            "2" { "ItemDef" "4001" } // Pangolin Shoulder Armor
-            "3" { "ItemDef" "4171" } // Cleaver of the Hidden Hunter
-            "4" { "ItemDef" "4231" } // Pangolin Scarf
-            "5" { "ItemDef" "4230" } // Pangolin Carapace
-            "6" { "ItemDef" "4169" } // Shuriken of the Hidden Hunter
+            "1" { "ItemDef" "4309" } // Master Assassin's Mask
+            "2" { "ItemDef" "4306" } // Master Assassin's Shuriken
+            "3" { "ItemDef" "4310" } // Master Assassin's Mancatcher
+            "4" { "ItemDef" "4308" } // Master Assassin's Shoulders
+            "5" { "ItemDef" "4307" } // Master Assassin's Tails
+            "6" { "ItemDef" "4311" } // Master Assassin's Grim Cutter
         }
     }
 
@@ -6706,6 +6936,16 @@
             "4" { "ItemDef" "605" } // Zeus Ambient Effects
             "5" { "ItemDef" "606" } // Zeus' Belt
             "6" { "ItemDef" "607" } // Zeus' Back
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Wartorn Heavens
+        {
+            "1" { "ItemDef" "7951" } // Bracers of the Wartorn Heavens
+            "2" { "ItemDef" "7954" } // Helm of the Wartorn Heavens
+            "3" { "ItemDef" "7952" } // Pauldrons of the Wartorn Heavens
+            "4" { "ItemDef" "7953" } // Belt of the Wartorn Heavens
         }
     }
     "Creature"
@@ -6730,10 +6970,10 @@
             "2" { "ItemDef" "120" } // Alchemist's Gauntlets
             "3" { "ItemDef" "119" } // Alchemist's Saddle
             "4" { "ItemDef" "121" } // Alchemist's Goblin Hat
-            "5" { "ItemDef" "124" } // Alchemist's Ogre Head
-            "6" { "ItemDef" "117" } // Alchemist's Goblin Body
-            "7" { "ItemDef" "122" } // Alchemist's Left Bottle
-            "8" { "ItemDef" "118" } // Alchemist's Weapon
+            "5" { "ItemDef" "118" } // Alchemist's Weapon
+            "6" { "ItemDef" "124" } // Alchemist's Ogre Head
+            "7" { "ItemDef" "117" } // Alchemist's Goblin Body
+            "8" { "ItemDef" "122" } // Alchemist's Left Bottle
             "9" { "ItemDef" "125" } // Alchemist's Shoulder Bottle
         }
     }
@@ -6809,12 +7049,12 @@
         "AttachWearables" // Default npc_dota_hero_omniknight
         {
             "1" { "ItemDef" "46" } // Omniknight's Hair
-            "2" { "ItemDef" "562" } // Omniknight's Miscellaneous
-            "3" { "ItemDef" "45" } // Omniknight's Head
-            "4" { "ItemDef" "44" } // Omniknight's Weapon
-            "5" { "ItemDef" "43" } // Omniknight's Cape
-            "6" { "ItemDef" "42" } // Omniknight's Shoulders
-            "7" { "ItemDef" "13" } // Omniknight's Bracers
+            "2" { "ItemDef" "44" } // Omniknight's Weapon
+            "3" { "ItemDef" "13" } // Omniknight's Bracers
+            "4" { "ItemDef" "562" } // Omniknight's Miscellaneous
+            "5" { "ItemDef" "45" } // Omniknight's Head
+            "6" { "ItemDef" "43" } // Omniknight's Cape
+            "7" { "ItemDef" "42" } // Omniknight's Shoulders
         }
     }
     "Creature"
@@ -6910,13 +7150,13 @@
     {
         "AttachWearables" // Default npc_dota_hero_gyrocopter
         {
-            "1" { "ItemDef" "131" } // Gyrocopter's head
-            "2" { "ItemDef" "126" } // Gyrocopter's Bottles
-            "3" { "ItemDef" "527" } // Gyrocopter's Ambient Effects
-            "4" { "ItemDef" "177" } // Gyrocopter's Guns
-            "5" { "ItemDef" "178" } // Gyrocopter's Propeller
-            "6" { "ItemDef" "176" } // Gyrocopter's Goggles
-            "7" { "ItemDef" "179" } // Gyrocopter's Homing Missile
+            "1" { "ItemDef" "126" } // Gyrocopter's Bottles
+            "2" { "ItemDef" "527" } // Gyrocopter's Ambient Effects
+            "3" { "ItemDef" "177" } // Gyrocopter's Guns
+            "4" { "ItemDef" "176" } // Gyrocopter's Goggles
+            "5" { "ItemDef" "131" } // Gyrocopter's head
+            "6" { "ItemDef" "179" } // Gyrocopter's Homing Missile
+            "7" { "ItemDef" "178" } // Gyrocopter's Propeller
         }
     }
     "Creature"
@@ -6952,6 +7192,16 @@
     }
     "Creature"
     {
+        "AttachWearables" // Armaments of the Dragon Emperor DO NOT USE
+        {
+            "1" { "ItemDef" "5967" } // Gatling Cannon of the Dragon Emperor
+            "2" { "ItemDef" "5968" } // Emerging Dragon
+            "3" { "ItemDef" "5971" } // Emerging Dragon Missile
+            "4" { "ItemDef" "6036" } // Hat of Fortune
+        }
+    }
+    "Creature"
+    {
         "AttachWearables" // Airborne Assault Craft
         {
             "1" { "ItemDef" "7764" } // Pilot's Hat of the Airborne Assault Craft
@@ -6959,16 +7209,6 @@
             "3" { "ItemDef" "7762" } // Turret of the Airborne Assault Craft
             "4" { "ItemDef" "7763" } // Gatling Guns of the Airborne Assault Craft
             "5" { "ItemDef" "7765" } // Homing Missile of the Airborne Assault Craft
-        }
-    }
-    "Creature"
-    {
-        "AttachWearables" // Armaments of the Dragon Emperor DO NOT USE
-        {
-            "1" { "ItemDef" "5967" } // Gatling Cannon of the Dragon Emperor
-            "2" { "ItemDef" "5968" } // Emerging Dragon
-            "3" { "ItemDef" "5971" } // Emerging Dragon Missile
-            "4" { "ItemDef" "6036" } // Hat of Fortune
         }
     }
     "Creature"
@@ -6991,10 +7231,10 @@
         "AttachWearables" // Default npc_dota_hero_furion
         {
             "1" { "ItemDef" "33" } // Nature's Prophet Necklace
-            "2" { "ItemDef" "49" } // Nature's Prophet Bracers
-            "3" { "ItemDef" "32" } // Nature's Prophet Cape
-            "4" { "ItemDef" "30" } // Nature's Prophet Horns
-            "5" { "ItemDef" "31" } // Nature's Prophet Beard
+            "2" { "ItemDef" "31" } // Nature's Prophet Beard
+            "3" { "ItemDef" "30" } // Nature's Prophet Horns
+            "4" { "ItemDef" "49" } // Nature's Prophet Bracers
+            "5" { "ItemDef" "32" } // Nature's Prophet Cape
             "6" { "ItemDef" "29" } // Nature's Prophet Staff
             "7" { "ItemDef" "8364" } // Nature's Prophet Treant
         }
@@ -7123,18 +7363,6 @@
     }
     "Creature"
     {
-        "AttachWearables" // Woodland Outcast Set
-        {
-            "1" { "ItemDef" "5415" } // Pack of the Woodland Outcast
-            "2" { "ItemDef" "5418" } // Oak of the Woodland Outcast
-            "3" { "ItemDef" "5413" } // Beard of the Woodland Outcast
-            "4" { "ItemDef" "5417" } // Petals of the Woodland Outcast
-            "5" { "ItemDef" "5416" } // Pride of the Woodland Outcast
-            "6" { "ItemDef" "5414" } // Stature of the Woodland Outcast
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Master of Beast and Bole Set
         {
             "1" { "ItemDef" "4064" } // Grand Crown of the Gigas
@@ -7151,6 +7379,18 @@
             "3" { "ItemDef" "4026" } // Toga of the Peace-Bringer
             "4" { "ItemDef" "4229" } // Beard of the Peace-Bringer
             "5" { "ItemDef" "4227" } // Lei of the Peace-Bringer
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Woodland Outcast Set
+        {
+            "1" { "ItemDef" "5415" } // Pack of the Woodland Outcast
+            "2" { "ItemDef" "5418" } // Oak of the Woodland Outcast
+            "3" { "ItemDef" "5413" } // Beard of the Woodland Outcast
+            "4" { "ItemDef" "5417" } // Petals of the Woodland Outcast
+            "5" { "ItemDef" "5416" } // Pride of the Woodland Outcast
+            "6" { "ItemDef" "5414" } // Stature of the Woodland Outcast
         }
     }
     "Creature"
@@ -7175,22 +7415,11 @@
         "AttachWearables" // Default npc_dota_hero_crystal_maiden
         {
             "1" { "ItemDef" "41" } // Crystal Maiden's Cuffs
-            "2" { "ItemDef" "311" } // Crystal Maiden's Headdress
-            "3" { "ItemDef" "39" } // Crystal Maiden's Shoulder Pads
-            "4" { "ItemDef" "502" } // Crystal Maiden's Ambient Effects
-            "5" { "ItemDef" "38" } // Crystal Maiden's Cape
-            "6" { "ItemDef" "40" } // Crystal Maiden's Weapon
-        }
-    }
-    "Creature"
-    {
-        "AttachWearables" // Wraps of the Winterbringer
-        {
-            "1" { "ItemDef" "8449" } // Staff of the Winterbringer
-            "2" { "ItemDef" "8447" } // Cape of the Winterbringer
-            "3" { "ItemDef" "8448" } // Sleeves of the Winterbringer
-            "4" { "ItemDef" "8456" } // Style of the Winterbringer
-            "5" { "ItemDef" "8450" } // Shawl of the Winterbringer
+            "2" { "ItemDef" "40" } // Crystal Maiden's Weapon
+            "3" { "ItemDef" "502" } // Crystal Maiden's Ambient Effects
+            "4" { "ItemDef" "39" } // Crystal Maiden's Shoulder Pads
+            "5" { "ItemDef" "311" } // Crystal Maiden's Headdress
+            "6" { "ItemDef" "38" } // Crystal Maiden's Cape
         }
     }
     "Creature"
@@ -7250,6 +7479,17 @@
     }
     "Creature"
     {
+        "AttachWearables" // Blueheart Sovereign
+        {
+            "1" { "ItemDef" "7662" } // Mantle of the Blueheart Sovereign
+            "2" { "ItemDef" "7661" } // Crown of the Blueheart Sovereign
+            "3" { "ItemDef" "7665" } // Staff of the Blueheart Sovereign
+            "4" { "ItemDef" "7664" } // Cape of the Blueheart Sovereign
+            "5" { "ItemDef" "7663" } // Bracers of the Blueheart Sovereign
+        }
+    }
+    "Creature"
+    {
         "AttachWearables" // Frostiron Sorceress Set
         {
             "1" { "ItemDef" "5017" } // Frostiron Sorceress Cape
@@ -7279,6 +7519,17 @@
             "3" { "ItemDef" "8229" } // Ribbon of the Icebound Floret
             "4" { "ItemDef" "8228" } // Scepter of the Icebound Floret
             "5" { "ItemDef" "8227" } // Sleeves of the Icebound Floret
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Wraps of the Winterbringer
+        {
+            "1" { "ItemDef" "8449" } // Staff of the Winterbringer
+            "2" { "ItemDef" "8447" } // Cape of the Winterbringer
+            "3" { "ItemDef" "8448" } // Sleeves of the Winterbringer
+            "4" { "ItemDef" "8456" } // Style of the Winterbringer
+            "5" { "ItemDef" "8450" } // Shawl of the Winterbringer
         }
     }
     "Creature"
@@ -7344,10 +7595,10 @@
             "1" { "ItemDef" "220" } // Chen's Staff
             "2" { "ItemDef" "221" } // Chen's Mount
             "3" { "ItemDef" "521" } // Chen's Ambient Effects
-            "4" { "ItemDef" "223" } // Chen's Bracers
-            "5" { "ItemDef" "224" } // Chen's Shoulder Armor
-            "6" { "ItemDef" "567" } // Chen's Miscellaneous
-            "7" { "ItemDef" "222" } // Chen's Helmet
+            "4" { "ItemDef" "567" } // Chen's Miscellaneous
+            "5" { "ItemDef" "223" } // Chen's Bracers
+            "6" { "ItemDef" "222" } // Chen's Helmet
+            "7" { "ItemDef" "224" } // Chen's Shoulder Armor
             "8" { "ItemDef" "225" } // Chen's Mount Armor
         }
     }
@@ -7365,18 +7616,6 @@
     }
     "Creature"
     {
-        "AttachWearables" // Desert Gale Set
-        {
-            "1" { "ItemDef" "5995" } // Desert Gale Moustache
-            "2" { "ItemDef" "5991" } // Desert Gale Arms
-            "3" { "ItemDef" "5990" } // Desert Gale Armor
-            "4" { "ItemDef" "5999" } // Desert Gale Fouchard
-            "5" { "ItemDef" "5998" } // Desert Gale Shoulder Plate
-            "6" { "ItemDef" "5993" } // Desert Gale Helmet
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Gemmed Armor of the Priest Kings Set
         {
             "1" { "ItemDef" "5037" } // Ruling Staff of the Priest Kings
@@ -7386,6 +7625,18 @@
             "5" { "ItemDef" "5032" } // Gemmed Pauldrons of the Priest Kings
             "6" { "ItemDef" "5034" } // Gemmed Mitre of the Priest Kings
             "7" { "ItemDef" "5031" } // Sanurok the Ever Able
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Desert Gale Set
+        {
+            "1" { "ItemDef" "5995" } // Desert Gale Moustache
+            "2" { "ItemDef" "5991" } // Desert Gale Arms
+            "3" { "ItemDef" "5990" } // Desert Gale Armor
+            "4" { "ItemDef" "5999" } // Desert Gale Fouchard
+            "5" { "ItemDef" "5998" } // Desert Gale Shoulder Plate
+            "6" { "ItemDef" "5993" } // Desert Gale Helmet
         }
     }
     "Creature"
@@ -7407,12 +7658,12 @@
     {
         "AttachWearables" // Default npc_dota_hero_broodmother
         {
-            "1" { "ItemDef" "565" } // Broodmother's Miscellaneous
-            "2" { "ItemDef" "103" } // Broodmother's Abdomen
-            "3" { "ItemDef" "8631" } // Broodmother's Spiderlings
-            "4" { "ItemDef" "101" } // Broodmother's Hair
-            "5" { "ItemDef" "102" } // Broodmother's Legs
-            "6" { "ItemDef" "566" } // Broodmother's Head
+            "1" { "ItemDef" "102" } // Broodmother's Legs
+            "2" { "ItemDef" "565" } // Broodmother's Miscellaneous
+            "3" { "ItemDef" "103" } // Broodmother's Abdomen
+            "4" { "ItemDef" "8631" } // Broodmother's Spiderlings
+            "5" { "ItemDef" "566" } // Broodmother's Head
+            "6" { "ItemDef" "101" } // Broodmother's Hair
         }
     }
     "Creature"
@@ -7484,11 +7735,11 @@
         {
             "1" { "ItemDef" "237" } // Doom's Wings
             "2" { "ItemDef" "238" } // Doom's Tail
-            "3" { "ItemDef" "232" } // Doom's Weapon
-            "4" { "ItemDef" "235" } // Doom's Bracers
-            "5" { "ItemDef" "236" } // Doom's Belt
+            "3" { "ItemDef" "235" } // Doom's Bracers
+            "4" { "ItemDef" "232" } // Doom's Weapon
+            "5" { "ItemDef" "233" } // Doom's Helmet
             "6" { "ItemDef" "234" } // Doom's Shoulder Armor
-            "7" { "ItemDef" "233" } // Doom's Helmet
+            "7" { "ItemDef" "236" } // Doom's Belt
         }
     }
     "Creature"
@@ -7618,9 +7869,9 @@
         {
             "1" { "ItemDef" "88" } // Ursa's Belt
             "2" { "ItemDef" "87" } // Ursa's Bracers
-            "3" { "ItemDef" "86" } // Ursa's Fur
-            "4" { "ItemDef" "85" } // Ursa's Helmet
-            "5" { "ItemDef" "584" } // Ursa's Claws
+            "3" { "ItemDef" "85" } // Ursa's Helmet
+            "4" { "ItemDef" "584" } // Ursa's Claws
+            "5" { "ItemDef" "86" } // Ursa's Fur
         }
     }
     "Creature"
@@ -7664,22 +7915,22 @@
     }
     "Creature"
     {
+        "AttachWearables" // Scale of the Razorwyrm
+        {
+            "1" { "ItemDef" "7928" } // Belt of the Razorwyrm
+            "2" { "ItemDef" "7922" } // Skull of the Razorwyrm
+            "3" { "ItemDef" "7921" } // Backplates of the Razorwyrm
+            "4" { "ItemDef" "7920" } // Gauntlets of the Razorwyrm
+        }
+    }
+    "Creature"
+    {
         "AttachWearables" // The Alpine Stalker's Set
         {
             "1" { "ItemDef" "4212" } // Lucky Alpine Stalker's Hat
             "2" { "ItemDef" "4215" } // Alpine Stalker's Gloves
             "3" { "ItemDef" "4214" } // Alpine Stalker's Pants
             "4" { "ItemDef" "4213" } // Alpine Stalker's Scarf
-        }
-    }
-    "Creature"
-    {
-        "AttachWearables" // Cryogenic Embrace Set
-        {
-            "1" { "ItemDef" "5808" } // Belt of the Cryogenic Embrace
-            "2" { "ItemDef" "5550" } // Helmet of the Cryogenic Embrace
-            "3" { "ItemDef" "5805" } // Arms of the Cryogenic Embrace
-            "4" { "ItemDef" "5807" } // Back of the Cryogenic Embrace
         }
     }
     "Creature"
@@ -7723,6 +7974,16 @@
             "4" { "ItemDef" "4295" } // Iron Bear's Skullcap
         }
     }
+    "Creature"
+    {
+        "AttachWearables" // Cryogenic Embrace Set
+        {
+            "1" { "ItemDef" "5808" } // Belt of the Cryogenic Embrace
+            "2" { "ItemDef" "5550" } // Helmet of the Cryogenic Embrace
+            "3" { "ItemDef" "5805" } // Arms of the Cryogenic Embrace
+            "4" { "ItemDef" "5807" } // Back of the Cryogenic Embrace
+        }
+    }
 
     ////////////////////////////////////////////////////////////
     // Cosmetic Sets for npc_dota_hero_night_stalker
@@ -7734,8 +7995,8 @@
             "1" { "ItemDef" "8661" } // Nightstalker's Head
             "2" { "ItemDef" "339" } // Nightstalker's Tail
             "3" { "ItemDef" "338" } // Nightstalker's Armor
-            "4" { "ItemDef" "337" } // Nightstalker's Wings
-            "5" { "ItemDef" "8662" } // Nightstalker's Arms
+            "4" { "ItemDef" "8662" } // Nightstalker's Arms
+            "5" { "ItemDef" "337" } // Nightstalker's Wings
         }
     }
     "Creature"
@@ -7757,11 +8018,11 @@
     {
         "AttachWearables" // Default npc_dota_hero_vengefulspirit
         {
-            "1" { "ItemDef" "445" } // Vengeful Spirit's Upper Armor
-            "2" { "ItemDef" "447" } // Vengeful Spirit's Legs
-            "3" { "ItemDef" "441" } // Vengeful Spirit's Hair
-            "4" { "ItemDef" "442" } // Vengeful Spirit's Weapon
-            "5" { "ItemDef" "517" } // Vengeful Spirit's Ambient Effects
+            "1" { "ItemDef" "447" } // Vengeful Spirit's Legs
+            "2" { "ItemDef" "441" } // Vengeful Spirit's Hair
+            "3" { "ItemDef" "442" } // Vengeful Spirit's Weapon
+            "4" { "ItemDef" "517" } // Vengeful Spirit's Ambient Effects
+            "5" { "ItemDef" "445" } // Vengeful Spirit's Upper Armor
         }
     }
     "Creature"
@@ -7853,11 +8114,11 @@
         "AttachWearables" // Default npc_dota_hero_sven
         {
             "1" { "ItemDef" "16" } // Sven's Mask
-            "2" { "ItemDef" "8366" } // All Heroes' Default Pet
-            "3" { "ItemDef" "20" } // Sven's Shoulder
-            "4" { "ItemDef" "18" } // Sven's Belt
-            "5" { "ItemDef" "581" } // Sven's Back
-            "6" { "ItemDef" "19" } // Sven's Gauntlet
+            "2" { "ItemDef" "581" } // Sven's Back
+            "3" { "ItemDef" "8366" } // All Heroes' Default Pet
+            "4" { "ItemDef" "20" } // Sven's Shoulder
+            "5" { "ItemDef" "19" } // Sven's Gauntlet
+            "6" { "ItemDef" "18" } // Sven's Belt
             "7" { "ItemDef" "17" } // Sven's Sword
         }
     }
@@ -7908,6 +8169,18 @@
     }
     "Creature"
     {
+        "AttachWearables" // Stormwrought Arbiter
+        {
+            "1" { "ItemDef" "7284" } // Pauldron of the Stormwrought Arbiter
+            "2" { "ItemDef" "7282" } // Helm of the Stormwrought Arbiter
+            "3" { "ItemDef" "7283" } // Cape of the Stormwrought Arbiter
+            "4" { "ItemDef" "7280" } // Bracers of the Stormwrought Arbiter
+            "5" { "ItemDef" "7281" } // Greatsword of the Stormwrought Arbiter
+            "6" { "ItemDef" "7290" } // Belt of the Stormwrought Arbiter
+        }
+    }
+    "Creature"
+    {
         "AttachWearables" // Cry of the Battlehawk
         {
             "1" { "ItemDef" "8847" } // Helm of the Battlehawk
@@ -7940,15 +8213,6 @@
             "4" { "ItemDef" "7134" } // Drape of a Fiend Cleaver
             "5" { "ItemDef" "7131" } // Blade of the Fiend Cleaver
             "6" { "ItemDef" "7133" } // Gauntlet of the Fiend Cleaver
-        }
-    }
-    "Creature"
-    {
-        "AttachWearables" // Mono Militis Set
-        {
-            "1" { "ItemDef" "4197" } // Cyclopean Helm of the Mono Militis
-            "2" { "ItemDef" "4198" } // Sword of the Mono Militis
-            "3" { "ItemDef" "4196" } // Dressed Pauldron of the Mono Militis
         }
     }
     "Creature"
@@ -7995,6 +8259,15 @@
             "3" { "ItemDef" "5403" } // Tassets of the Chiseled Guard
             "4" { "ItemDef" "5399" } // Armblade of the Chiseled Guard
             "5" { "ItemDef" "5402" } // Pauldron of the Chiseled Guard
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Mono Militis Set
+        {
+            "1" { "ItemDef" "4197" } // Cyclopean Helm of the Mono Militis
+            "2" { "ItemDef" "4198" } // Sword of the Mono Militis
+            "3" { "ItemDef" "4196" } // Dressed Pauldron of the Mono Militis
         }
     }
     "Creature"
@@ -8133,9 +8406,9 @@
     {
         "AttachWearables" // Default npc_dota_hero_storm_spirit
         {
-            "1" { "ItemDef" "310" } // Storm Spirit's Armor
-            "2" { "ItemDef" "308" } // Storm Spirit's Hat
-            "3" { "ItemDef" "309" } // Storm Spirit's Shoulder
+            "1" { "ItemDef" "308" } // Storm Spirit's Hat
+            "2" { "ItemDef" "309" } // Storm Spirit's Shoulder
+            "3" { "ItemDef" "310" } // Storm Spirit's Armor
         }
     }
     "Creature"
@@ -8158,20 +8431,20 @@
     }
     "Creature"
     {
-        "AttachWearables" // Blossoming Harmony
-        {
-            "1" { "ItemDef" "9798" } // Sun Shade of Blossoming Harmony
-            "2" { "ItemDef" "9800" } // Ruan of Blossoming Harmony
-            "3" { "ItemDef" "9799" } // Robe of Blossoming Harmony
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Gifts of Fortune Set
         {
             "1" { "ItemDef" "6023" } // Scale Pauldrons of Good Fortune
             "2" { "ItemDef" "6019" } // Festive Robes of Good Fortune
             "3" { "ItemDef" "6022" } // Ornate Hat of Good Fortune
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Blossoming Harmony
+        {
+            "1" { "ItemDef" "9798" } // Sun Shade of Blossoming Harmony
+            "2" { "ItemDef" "9800" } // Ruan of Blossoming Harmony
+            "3" { "ItemDef" "9799" } // Robe of Blossoming Harmony
         }
     }
     "Creature"
@@ -8202,10 +8475,10 @@
         {
             "1" { "ItemDef" "524" } // Dark Seer's Ambient Effects
             "2" { "ItemDef" "348" } // Dark Seer's Spikes
-            "3" { "ItemDef" "351" } // Dark Seer's Loin Cloth
-            "4" { "ItemDef" "352" } // Dark Seer's Neck Armor
-            "5" { "ItemDef" "350" } // Dark Seer's Bracers
-            "6" { "ItemDef" "349" } // Dark Seer's Head
+            "3" { "ItemDef" "350" } // Dark Seer's Bracers
+            "4" { "ItemDef" "349" } // Dark Seer's Head
+            "5" { "ItemDef" "351" } // Dark Seer's Loin Cloth
+            "6" { "ItemDef" "352" } // Dark Seer's Neck Armor
         }
     }
     "Creature"
@@ -8221,16 +8494,6 @@
     }
     "Creature"
     {
-        "AttachWearables" // The Seers Command Set
-        {
-            "1" { "ItemDef" "5722" } // Waistguard of Command
-            "2" { "ItemDef" "5720" } // Armlets of Command
-            "3" { "ItemDef" "5724" } // Collar of Command
-            "4" { "ItemDef" "5721" } // Ring of Command
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Forgotten Tactician
         {
             "1" { "ItemDef" "8767" } // Belt of the Forgotten Tactician
@@ -8242,13 +8505,12 @@
     }
     "Creature"
     {
-        "AttachWearables" // Imperial Relics
+        "AttachWearables" // The Seers Command Set
         {
-            "1" { "ItemDef" "6754" } // Crown of the Imperial Relics
-            "2" { "ItemDef" "6771" } // Pauldrons of the Imperial Relics
-            "3" { "ItemDef" "6770" } // Totems of the Imperial Relics
-            "4" { "ItemDef" "6756" } // Wraps of the Imperial Relics
-            "5" { "ItemDef" "6772" } // Greaves of the Imperial Relics
+            "1" { "ItemDef" "5722" } // Waistguard of Command
+            "2" { "ItemDef" "5720" } // Armlets of Command
+            "3" { "ItemDef" "5724" } // Collar of Command
+            "4" { "ItemDef" "5721" } // Ring of Command
         }
     }
     "Creature"
@@ -8260,6 +8522,17 @@
             "3" { "ItemDef" "5118" } // Aqwanderer Crown
             "4" { "ItemDef" "5119" } // Aqwanderer Neckbrace
             "5" { "ItemDef" "5116" } // Aqwanderer Bracers
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Imperial Relics
+        {
+            "1" { "ItemDef" "6754" } // Crown of the Imperial Relics
+            "2" { "ItemDef" "6771" } // Pauldrons of the Imperial Relics
+            "3" { "ItemDef" "6770" } // Totems of the Imperial Relics
+            "4" { "ItemDef" "6756" } // Wraps of the Imperial Relics
+            "5" { "ItemDef" "6772" } // Greaves of the Imperial Relics
         }
     }
     "Creature"
@@ -8295,6 +8568,16 @@
             "2" { "ItemDef" "5588" } // Horns of Blight
             "3" { "ItemDef" "5587" } // Epaulette of Blight
             "4" { "ItemDef" "5589" } // Shard of Blight
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Obsidian Nightmare
+        {
+            "1" { "ItemDef" "7636" } // Horns of the Obsidian Nightmare
+            "2" { "ItemDef" "7638" } // Wings of the Obsidian Nightmare
+            "3" { "ItemDef" "7635" } // Pauldrons of the Obsidian Nightmare
+            "4" { "ItemDef" "7637" } // Blade of the Obsidian Nightmare
         }
     }
     "Creature"
@@ -8424,17 +8707,6 @@
     }
     "Creature"
     {
-        "AttachWearables" // The Hare Hunt Set
-        {
-            "1" { "ItemDef" "5432" } // Hare Hunt Sleeves
-            "2" { "ItemDef" "5435" } // Hare Hunt Hat
-            "3" { "ItemDef" "5431" } // Hare Hunt Rifle
-            "4" { "ItemDef" "5433" } // Hare Hunt Shoulders
-            "5" { "ItemDef" "5434" } // Hare Hunt Cape
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Gunslinger Set
         {
             "1" { "ItemDef" "5040" } // Gunslinger's Bracers
@@ -8467,17 +8739,6 @@
     }
     "Creature"
     {
-        "AttachWearables" // Spirit of the Howling Wolf Set
-        {
-            "1" { "ItemDef" "5740" } // Pelt of The Howling Wolf
-            "2" { "ItemDef" "5739" } // Bracers of The Howling Wolf
-            "3" { "ItemDef" "5741" } // Rifle of The Howling Wolf
-            "4" { "ItemDef" "5743" } // Spaulders of The Howling Wolf
-            "5" { "ItemDef" "5742" } // Hat of The Howling Wolf
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Hinterland Stalker
         {
             "1" { "ItemDef" "8243" } // Pelt of the Hinterland Stalker
@@ -8500,13 +8761,13 @@
     }
     "Creature"
     {
-        "AttachWearables" // The Sharpshooter Set
+        "AttachWearables" // Spirit of the Howling Wolf Set
         {
-            "1" { "ItemDef" "4700" } // Sharpshooter's Pauldrons
-            "2" { "ItemDef" "4698" } // Sharpshooter's Stache
-            "3" { "ItemDef" "4793" } // Sharpshooter's Bullet Bracers
-            "4" { "ItemDef" "4701" } // Sharpshooter's Cloak
-            "5" { "ItemDef" "4699" } // Killstealer
+            "1" { "ItemDef" "5740" } // Pelt of The Howling Wolf
+            "2" { "ItemDef" "5739" } // Bracers of The Howling Wolf
+            "3" { "ItemDef" "5741" } // Rifle of The Howling Wolf
+            "4" { "ItemDef" "5743" } // Spaulders of The Howling Wolf
+            "5" { "ItemDef" "5742" } // Hat of The Howling Wolf
         }
     }
     "Creature"
@@ -8518,6 +8779,28 @@
             "3" { "ItemDef" "4728" } // Sharpeye's Mementos
             "4" { "ItemDef" "4729" } // Rifle of the Great Safari
             "5" { "ItemDef" "4725" } // Hunter's Helm
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // The Hare Hunt Set
+        {
+            "1" { "ItemDef" "5432" } // Hare Hunt Sleeves
+            "2" { "ItemDef" "5435" } // Hare Hunt Hat
+            "3" { "ItemDef" "5431" } // Hare Hunt Rifle
+            "4" { "ItemDef" "5433" } // Hare Hunt Shoulders
+            "5" { "ItemDef" "5434" } // Hare Hunt Cape
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // The Sharpshooter Set
+        {
+            "1" { "ItemDef" "4700" } // Sharpshooter's Pauldrons
+            "2" { "ItemDef" "4698" } // Sharpshooter's Stache
+            "3" { "ItemDef" "4793" } // Sharpshooter's Bullet Bracers
+            "4" { "ItemDef" "4701" } // Sharpshooter's Cloak
+            "5" { "ItemDef" "4699" } // Killstealer
         }
     }
     "Creature"
@@ -8540,12 +8823,12 @@
         "AttachWearables" // Default npc_dota_hero_bloodseeker
         {
             "1" { "ItemDef" "74" } // Blood Seeker's Bracers
-            "2" { "ItemDef" "257" } // Blood Seeker's Skirt
-            "3" { "ItemDef" "71" } // Blood Seeker's Offhand Blade
-            "4" { "ItemDef" "70" } // Blood Seeker's Headdress
-            "5" { "ItemDef" "73" } // Blood Seeker's Cape
-            "6" { "ItemDef" "72" } // Blood Seeker's Necklace
-            "7" { "ItemDef" "69" } // Blood Seeker's Blade
+            "2" { "ItemDef" "73" } // Blood Seeker's Cape
+            "3" { "ItemDef" "257" } // Blood Seeker's Skirt
+            "4" { "ItemDef" "71" } // Blood Seeker's Offhand Blade
+            "5" { "ItemDef" "70" } // Blood Seeker's Headdress
+            "6" { "ItemDef" "69" } // Blood Seeker's Blade
+            "7" { "ItemDef" "72" } // Blood Seeker's Necklace
         }
     }
     "Creature"
@@ -8735,11 +9018,11 @@
         "AttachWearables" // Default npc_dota_hero_skywrath_mage
         {
             "1" { "ItemDef" "420" } // Skywrath Mage's Weapon
-            "2" { "ItemDef" "424" } // Skywrath Mage's Shoulders
-            "3" { "ItemDef" "425" } // Skywrath Mage's Bracers
-            "4" { "ItemDef" "422" } // Skywrath Mage's Wings
-            "5" { "ItemDef" "421" } // Skywrath Mage's Head
-            "6" { "ItemDef" "423" } // Skywrath Mage's Belt
+            "2" { "ItemDef" "421" } // Skywrath Mage's Head
+            "3" { "ItemDef" "424" } // Skywrath Mage's Shoulders
+            "4" { "ItemDef" "423" } // Skywrath Mage's Belt
+            "5" { "ItemDef" "425" } // Skywrath Mage's Bracers
+            "6" { "ItemDef" "422" } // Skywrath Mage's Wings
         }
     }
     "Creature"
@@ -8780,18 +9063,6 @@
     }
     "Creature"
     {
-        "AttachWearables" // The Arms of Retribution Set
-        {
-            "1" { "ItemDef" "4999" } // Staff of Retribution
-            "2" { "ItemDef" "5000" } // Helm of Retribution
-            "3" { "ItemDef" "4995" } // Gloves of Retribution
-            "4" { "ItemDef" "5001" } // Belt of Retribution
-            "5" { "ItemDef" "5002" } // Pauldrons of Retribution
-            "6" { "ItemDef" "5003" } // Wings of Retribution
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Regalia of the Sol Guard
         {
             "1" { "ItemDef" "7625" } // Finery of the Sol Guard
@@ -8804,14 +9075,14 @@
     }
     "Creature"
     {
-        "AttachWearables" // Beacon of Cerulean Light
+        "AttachWearables" // The Arms of Retribution Set
         {
-            "1" { "ItemDef" "8937" } // Rod of Beacon's Light
-            "2" { "ItemDef" "8933" } // Girdle of Cerulean Light
-            "3" { "ItemDef" "8932" } // Span of Cerulean Light
-            "4" { "ItemDef" "8934" } // Mask of Cerulean Light
-            "5" { "ItemDef" "8936" } // Pauldrons of Cerulean Light
-            "6" { "ItemDef" "8931" } // Bracers of Cerulean Light
+            "1" { "ItemDef" "4999" } // Staff of Retribution
+            "2" { "ItemDef" "5000" } // Helm of Retribution
+            "3" { "ItemDef" "4995" } // Gloves of Retribution
+            "4" { "ItemDef" "5001" } // Belt of Retribution
+            "5" { "ItemDef" "5002" } // Pauldrons of Retribution
+            "6" { "ItemDef" "5003" } // Wings of Retribution
         }
     }
     "Creature"
@@ -8839,6 +9110,18 @@
     }
     "Creature"
     {
+        "AttachWearables" // Beacon of Cerulean Light
+        {
+            "1" { "ItemDef" "8937" } // Rod of Beacon's Light
+            "2" { "ItemDef" "8933" } // Girdle of Cerulean Light
+            "3" { "ItemDef" "8932" } // Span of Cerulean Light
+            "4" { "ItemDef" "8934" } // Mask of Cerulean Light
+            "5" { "ItemDef" "8936" } // Pauldrons of Cerulean Light
+            "6" { "ItemDef" "8931" } // Bracers of Cerulean Light
+        }
+    }
+    "Creature"
+    {
         "AttachWearables" // Blessing of the Crested Dawn
         {
             "1" { "ItemDef" "7424" } // Plates of the Crested Dawn
@@ -8857,13 +9140,13 @@
     {
         "AttachWearables" // Default npc_dota_hero_juggernaut
         {
-            "1" { "ItemDef" "62" } // Juggernaut's Legs
-            "2" { "ItemDef" "7" } // Juggernaut's Weapon
-            "3" { "ItemDef" "9" } // Juggernaut's Bracers
-            "4" { "ItemDef" "6" } // Juggernaut's Mask
-            "5" { "ItemDef" "8" } // Juggernaut's Cape
-            "6" { "ItemDef" "8366" } // All Heroes' Default Pet
-            "7" { "ItemDef" "560" } // Juggernaut's Healing Ward
+            "1" { "ItemDef" "7" } // Juggernaut's Weapon
+            "2" { "ItemDef" "9" } // Juggernaut's Bracers
+            "3" { "ItemDef" "6" } // Juggernaut's Mask
+            "4" { "ItemDef" "8" } // Juggernaut's Cape
+            "5" { "ItemDef" "8366" } // All Heroes' Default Pet
+            "6" { "ItemDef" "560" } // Juggernaut's Healing Ward
+            "7" { "ItemDef" "62" } // Juggernaut's Legs
         }
     }
     "Creature"
@@ -8943,17 +9226,6 @@
     }
     "Creature"
     {
-        "AttachWearables" // Bladesrunner
-        {
-            "1" { "ItemDef" "6847" } // Sword of the Bladesrunner
-            "2" { "ItemDef" "6826" } // Gloves of the Bladesrunner
-            "3" { "ItemDef" "6775" } // Mask of the Bladesrunner
-            "4" { "ItemDef" "6773" } // Shoulders of the Bladesrunner
-            "5" { "ItemDef" "6774" } // Belt of the Bladesrunner
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Thousand Faces Set
         {
             "1" { "ItemDef" "4401" } // Hakama of a Thousand Faces
@@ -8961,6 +9233,17 @@
             "3" { "ItemDef" "4904" } // Akakiryu of a Thousand Faces
             "4" { "ItemDef" "4395" } // Wraps of a Thousand Faces
             "5" { "ItemDef" "4411" } // Kataginu of a Thousand Faces
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Bladesrunner
+        {
+            "1" { "ItemDef" "6847" } // Sword of the Bladesrunner
+            "2" { "ItemDef" "6826" } // Gloves of the Bladesrunner
+            "3" { "ItemDef" "6775" } // Mask of the Bladesrunner
+            "4" { "ItemDef" "6773" } // Shoulders of the Bladesrunner
+            "5" { "ItemDef" "6774" } // Belt of the Bladesrunner
         }
     }
     "Creature"
@@ -9028,9 +9311,9 @@
             "2" { "ItemDef" "165" } // Riki's Tail
             "3" { "ItemDef" "8366" } // All Heroes' Default Pet
             "4" { "ItemDef" "163" } // Riki's Horns
-            "5" { "ItemDef" "166" } // Riki's Gloves
-            "6" { "ItemDef" "322" } // Riki's Offhand Dagger
-            "7" { "ItemDef" "561" } // Riki's Dagger
+            "5" { "ItemDef" "561" } // Riki's Dagger
+            "6" { "ItemDef" "166" } // Riki's Gloves
+            "7" { "ItemDef" "322" } // Riki's Offhand Dagger
         }
     }
     "Creature"
@@ -9135,14 +9418,6 @@
     }
     "Creature"
     {
-        "AttachWearables" // Arms of the Bladebreaker Dagger Pack
-        {
-            "1" { "ItemDef" "5290" } // Bladebreaker Dagger
-            "2" { "ItemDef" "5268" } // Bladebreaker Dagger - Off-Hand
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Gelid Touch
         {
             "1" { "ItemDef" "7329" } // Katar of the Gelid Touch
@@ -9151,6 +9426,14 @@
             "4" { "ItemDef" "7328" } // Goatee of the Gelid Touch
             "5" { "ItemDef" "7333" } // Colar of the Gelid Touch
             "6" { "ItemDef" "7330" } // Dagger of the Gelid Touch
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Arms of the Bladebreaker Dagger Pack
+        {
+            "1" { "ItemDef" "5290" } // Bladebreaker Dagger
+            "2" { "ItemDef" "5268" } // Bladebreaker Dagger - Off-Hand
         }
     }
     "Creature"
@@ -9167,14 +9450,6 @@
     }
     "Creature"
     {
-        "AttachWearables" // Riki's Sange and Yasha
-        {
-            "1" { "ItemDef" "4824" } // Sange the Backseeker
-            "2" { "ItemDef" "4823" } // Yasha the Quickblade
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Frozen Blood
         {
             "1" { "ItemDef" "6365" } // Bracers of the Frozen Blood
@@ -9183,6 +9458,14 @@
             "4" { "ItemDef" "6368" } // Horns of the Frozen Blood
             "5" { "ItemDef" "6367" } // Dagger of the Frozen Blood Off-Hand
             "6" { "ItemDef" "6366" } // Dagger of the Frozen Blood
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Riki's Sange and Yasha
+        {
+            "1" { "ItemDef" "4824" } // Sange the Backseeker
+            "2" { "ItemDef" "4823" } // Yasha the Quickblade
         }
     }
     "Creature"
@@ -9337,21 +9620,10 @@
         {
             "1" { "ItemDef" "571" } // Lich's Head
             "2" { "ItemDef" "506" } // Lich's Ambient Effects
-            "3" { "ItemDef" "332" } // Lich's Neck
+            "3" { "ItemDef" "331" } // Lich's Belt
             "4" { "ItemDef" "333" } // Lich's Bracers
-            "5" { "ItemDef" "331" } // Lich's Belt
+            "5" { "ItemDef" "332" } // Lich's Neck
             "6" { "ItemDef" "334" } // Lich's Back
-        }
-    }
-    "Creature"
-    {
-        "AttachWearables" // Frozen Emperor
-        {
-            "1" { "ItemDef" "7066" } // Frozen Emperor's Runed Bracers
-            "2" { "ItemDef" "7063" } // Frozen Emperor's Demon Mask
-            "3" { "ItemDef" "6949" } // Frozen Emperor's Twin Dragon Cape
-            "4" { "ItemDef" "7065" } // Frozen Emperor's Cursed Belt
-            "5" { "ItemDef" "7064" } // Frozen Emperor's Guardian Lion
         }
     }
     "Creature"
@@ -9367,23 +9639,33 @@
     }
     "Creature"
     {
+        "AttachWearables" // Dead Winter Set
+        {
+            "1" { "ItemDef" "4853" } // Dead Winter Sash
+            "2" { "ItemDef" "4852" } // Dead Winter Soul
+            "3" { "ItemDef" "4851" } // Dead Winter Mantle
+            "4" { "ItemDef" "4854" } // Dead Winter Grasp
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Frozen Emperor
+        {
+            "1" { "ItemDef" "7066" } // Frozen Emperor's Runed Bracers
+            "2" { "ItemDef" "7063" } // Frozen Emperor's Demon Mask
+            "3" { "ItemDef" "6949" } // Frozen Emperor's Twin Dragon Cape
+            "4" { "ItemDef" "7065" } // Frozen Emperor's Cursed Belt
+            "5" { "ItemDef" "7064" } // Frozen Emperor's Guardian Lion
+        }
+    }
+    "Creature"
+    {
         "AttachWearables" // Sorcerer of the Black Pool
         {
             "1" { "ItemDef" "7102" } // Mantle of the Black Pool
             "2" { "ItemDef" "6896" } // Spikes of the Black Pool
             "3" { "ItemDef" "6890" } // Wraps of the Black Pool
             "4" { "ItemDef" "6891" } // Belt of the Black Pool
-        }
-    }
-    "Creature"
-    {
-        "AttachWearables" // The Serakund Tyrant
-        {
-            "1" { "ItemDef" "8523" } // Tassets of the Serakund Tyrant
-            "2" { "ItemDef" "8521" } // Crown of the Serakund Tyrant
-            "3" { "ItemDef" "8519" } // Bracers of the Serakund Tyrant
-            "4" { "ItemDef" "8520" } // Mantle of the Serakund Tyrant
-            "5" { "ItemDef" "8522" } // Core of the Serakund Tyrant
         }
     }
     "Creature"
@@ -9398,12 +9680,13 @@
     }
     "Creature"
     {
-        "AttachWearables" // Dead Winter Set
+        "AttachWearables" // The Serakund Tyrant
         {
-            "1" { "ItemDef" "4853" } // Dead Winter Sash
-            "2" { "ItemDef" "4852" } // Dead Winter Soul
-            "3" { "ItemDef" "4851" } // Dead Winter Mantle
-            "4" { "ItemDef" "4854" } // Dead Winter Grasp
+            "1" { "ItemDef" "8523" } // Tassets of the Serakund Tyrant
+            "2" { "ItemDef" "8521" } // Crown of the Serakund Tyrant
+            "3" { "ItemDef" "8519" } // Bracers of the Serakund Tyrant
+            "4" { "ItemDef" "8520" } // Mantle of the Serakund Tyrant
+            "5" { "ItemDef" "8522" } // Core of the Serakund Tyrant
         }
     }
     "Creature"
@@ -9425,12 +9708,23 @@
         "AttachWearables" // Default npc_dota_hero_tinker
         {
             "1" { "ItemDef" "466" } // Tinker's Head
-            "2" { "ItemDef" "467" } // Tinker's Cape
-            "3" { "ItemDef" "464" } // Tinker's Shoulders
-            "4" { "ItemDef" "465" } // Tinker's Helmet
-            "5" { "ItemDef" "515" } // Tinker's Ambient Effects
-            "6" { "ItemDef" "463" } // Tinker's Left Arm
+            "2" { "ItemDef" "464" } // Tinker's Shoulders
+            "3" { "ItemDef" "465" } // Tinker's Helmet
+            "4" { "ItemDef" "515" } // Tinker's Ambient Effects
+            "5" { "ItemDef" "463" } // Tinker's Left Arm
+            "6" { "ItemDef" "467" } // Tinker's Cape
             "7" { "ItemDef" "367" } // Tinker's Right Arm
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Fortified Fabricator
+        {
+            "1" { "ItemDef" "7972" } // Controls of the Fortified Fabricator
+            "2" { "ItemDef" "7968" } // Ballista of the Fortified Fabricator
+            "3" { "ItemDef" "7969" } // Shoulders of the Fortified Fabricator
+            "4" { "ItemDef" "7970" } // Cannon of the Fortified Fabricator
+            "5" { "ItemDef" "7967" } // Helmet of the Fortified Fabricator
         }
     }
 
@@ -9444,10 +9738,10 @@
             "1" { "ItemDef" "67" } // Dragon Knight's Offhand
             "2" { "ItemDef" "66" } // Dragon Knight's Weapon
             "3" { "ItemDef" "65" } // Dragon Knight's Bracers
-            "4" { "ItemDef" "8647" } // Dragon Knight's Elder Dragon
-            "5" { "ItemDef" "63" } // Dragon Knight's Helmet
-            "6" { "ItemDef" "68" } // Dragon Knight's Skirt
-            "7" { "ItemDef" "64" } // Dragon Knight's Shoulder Armor
+            "4" { "ItemDef" "64" } // Dragon Knight's Shoulder Armor
+            "5" { "ItemDef" "8647" } // Dragon Knight's Elder Dragon
+            "6" { "ItemDef" "63" } // Dragon Knight's Helmet
+            "7" { "ItemDef" "68" } // Dragon Knight's Skirt
         }
     }
     "Creature"
@@ -9631,9 +9925,9 @@
             "2" { "ItemDef" "403" } // Mirana's Bow
             "3" { "ItemDef" "409" } // Mirana's Quiver
             "4" { "ItemDef" "404" } // Mirana's Mount
-            "5" { "ItemDef" "406" } // Mirana's Cape
-            "6" { "ItemDef" "407" } // Mirana's Shoulders
-            "7" { "ItemDef" "405" } // Mirana's Headdress
+            "5" { "ItemDef" "405" } // Mirana's Headdress
+            "6" { "ItemDef" "406" } // Mirana's Cape
+            "7" { "ItemDef" "407" } // Mirana's Shoulders
         }
     }
     "Creature"
@@ -9894,17 +10188,6 @@
     }
     "Creature"
     {
-        "AttachWearables" // Twilight's Rest
-        {
-            "1" { "ItemDef" "7550" } // Cloak of Twilight's Rest
-            "2" { "ItemDef" "7551" } // Mantle of Twilight's Rest
-            "3" { "ItemDef" "7553" } // Mask of Twilight's Rest
-            "4" { "ItemDef" "7552" } // Scourge of Twilight's Rest
-            "5" { "ItemDef" "7554" } // Wrap of Twilight's Rest
-        }
-    }
-    "Creature"
-    {
         "AttachWearables" // Spider of Purple Nightmare
         {
             "1" { "ItemDef" "6951" } // Spider Shoulders of Purple Nightmare
@@ -9912,6 +10195,17 @@
             "3" { "ItemDef" "6956" } // Spider Staff of Purple Nightmare
             "4" { "ItemDef" "6955" } // Spider Belt of Purple Nightmare
             "5" { "ItemDef" "6954" } // Spider Helm of Purple Nightmare
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Twilight's Rest
+        {
+            "1" { "ItemDef" "7550" } // Cloak of Twilight's Rest
+            "2" { "ItemDef" "7551" } // Mantle of Twilight's Rest
+            "3" { "ItemDef" "7553" } // Mask of Twilight's Rest
+            "4" { "ItemDef" "7552" } // Scourge of Twilight's Rest
+            "5" { "ItemDef" "7554" } // Wrap of Twilight's Rest
         }
     }
     "Creature"
@@ -9959,6 +10253,17 @@
             "3" { "ItemDef" "5984" } // Chaos Legion Weapon
             "4" { "ItemDef" "5983" } // Chaos Legion Shield
             "5" { "ItemDef" "5980" } // Chaos Legion Mount
+        }
+    }
+    "Creature"
+    {
+        "AttachWearables" // Oni Knight the Dark Conqueror
+        {
+            "1" { "ItemDef" "7947" } // Steed of the Dark Conqueror
+            "2" { "ItemDef" "7950" } // Axe of the Dark Conqueror
+            "3" { "ItemDef" "7948" } // Shield of the Dark Conqueror
+            "4" { "ItemDef" "7949" } // Spaulders of the Dark Conqueror
+            "5" { "ItemDef" "7946" } // Helm of the Dark Conqueror
         }
     }
     "Creature"
