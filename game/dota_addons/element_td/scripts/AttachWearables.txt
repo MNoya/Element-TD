@@ -4746,6 +4746,15 @@
             "4" { "ItemDef" "488" } // Shadow Fiend's Arms
         }
     }
+    "Creature"
+    {
+        "AttachWearables" // Diabolical Fiend Set
+        {
+            "1" { "ItemDef" "7188" } // Horns of the Diabolical Fiend
+            "2" { "ItemDef" "7279" } // Armor of the Diabolical Fiend
+            "3" { "ItemDef" "7193" } // Arms of the Diabolical Fiend
+        }
+    }
 
     ////////////////////////////////////////////////////////////
     // Cosmetic Sets for npc_dota_hero_dazzle
