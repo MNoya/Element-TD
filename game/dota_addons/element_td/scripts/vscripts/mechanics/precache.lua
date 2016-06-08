@@ -41,6 +41,15 @@ function ElementTD:PrecacheWave(waveNumber)
     end
 end
 
+function ElementTD:ShortModePrecache()
+    ElementTD:PrecacheSingles(2)
+    ElementTD:PrecacheSingles(3)
+    ElementTD:PrecacheDuals(1)
+    ElementTD:PrecacheDuals(2)
+    ElementTD:PrecacheTriples(1)
+    ElementTD:PrecacheWave(GameSettings.length.Wave)
+end
+
 -- Loads lvl 1 duals and lvl 1 triples, just in case
 function ElementTD:ExpressPrecache(delay)
     delay = delay or 15
