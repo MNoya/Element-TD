@@ -125,13 +125,16 @@ function GameSettings:SetGameLength(length)
         baseGold = math.floor(baseGold * 4 / PlayerResource:GetPlayerCountWithoutLeavers() + 0.5)
     end
 
+	CURRENT_WAVE = GameSettings.length.Wave
+
 	for _,plyID in pairs(playerIDs) do
 		local playerData = GetPlayerData(plyID)
 
 		SetCustomGold(plyID, baseGold)
 		ModifyLumber(plyID, GameSettings.length.Lumber)
 		playerData.nextWave = GameSettings.length.Wave
-
+		playerData.completedWaves = GameSettings.length.Wave - 1
+		
 		if length == "Express" then
 			EXPRESS_MODE = true
 			ElementTD:ExpressPrecache()
