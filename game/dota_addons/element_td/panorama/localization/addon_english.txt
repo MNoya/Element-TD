@@ -240,7 +240,7 @@
         //  <font color='#hex'>text</font>  for color
         //  <b>text</b> for bold        
         "loading_screen_changelog"   "Latest Changes"
-        "loading_screen_change_text" "<h1>Version 1.9</h1>• Scoring reworked.<br>• Wave Timers reduced.<br>• Some creep effects buffed.<br>• Earth ability changed back.<br>• Lots of balance tweaks.<br><br><b>Check out the full changelog on the forums!</b><br>"
+        "loading_screen_change_text" "<h1>Version 1.9</h1><b>• Short Mode added!</b><br>• Scoring reworked.<br>• Wave Timers reduced.<br>• Some creep effects buffed.<br>• Earth ability changed back.<br>• Lots of balance tweaks.<br><br><b>Check out the full changelog on the forums!</b><br>"
 
         "credits_title"         "Credits"
         "credits_developers"    "Developers"
