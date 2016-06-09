@@ -247,7 +247,7 @@ function FinalizeVotes()
 
 				if GameSettings.length.BaseScore then
 					local score = scoreObject.totalScore + GameSettings.length.BaseScore
-					score = score * (GameSettings:GetGlobalDifficulty().data.Index + 1) -- multiplier based on difficulty
+					score = score * (scoreObject:GetDifficultyBonus() + 1) -- multiplier based on difficulty
 
 					scoreObject.totalScore = score
 					CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerScore", {playerId = plyID, score = comma_value(score)}) 

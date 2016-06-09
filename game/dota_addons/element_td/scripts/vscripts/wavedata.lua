@@ -149,7 +149,7 @@ function StartBreakTime(playerID, breakTime, rush_wave)
         ShowPortalForSector(sector, wave, playerID)
     
         -- Grant Lumber and Essence to all players the moment the next wave is set
-        if WaveGrantsLumber(wave-1) then
+        if WaveGrantsLumber(wave - 1) and wave ~= GameSettings.length.Wave then
             ModifyLumber(playerID, 1)
             if IsPlayerUsingRandomMode( playerID ) then
                 Notifications:ClearBottom(playerID)
