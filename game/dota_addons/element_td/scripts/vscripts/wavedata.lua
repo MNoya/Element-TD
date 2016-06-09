@@ -137,7 +137,7 @@ function StartBreakTime(playerID, breakTime, rush_wave)
 
     Log:debug("Starting break time for " .. GetPlayerName(playerID).. " for wave "..wave)
     if ply then
-        local bShowButton = GameSettings:GetGamemode() ~= "Competitive" or (PlayerResource:GetPlayerCount() == 1 and wave == 1)
+        local bShowButton = GameSettings:GetGamemode() ~= "Competitive" or (PlayerResource:GetPlayerCount() == 1 and wave == GameSettings.length.Wave)
         CustomGameEventManager:Send_ServerToPlayer( ply, "etd_update_wave_timer", { time = breakTime, button = bShowButton } )
     end
 
