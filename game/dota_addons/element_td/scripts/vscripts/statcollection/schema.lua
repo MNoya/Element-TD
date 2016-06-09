@@ -52,6 +52,7 @@ function BuildGameArray()
     game.exp = ElementTD:GetMapMode()
     game.ord = GameRules.sandBoxEnabled or (COOP_MAP and "Normal") or GameSettings.order
     game.cha = GameSettings.abilitiesMode
+    game.sho = SHORT_MODE and 1 or 0
     game.hor = GameSettings.endless
     game.rnd = GameSettings.elementsOrderName
     game.str = START_TIME
