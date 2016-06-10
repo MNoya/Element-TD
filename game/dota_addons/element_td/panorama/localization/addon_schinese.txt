@@ -228,7 +228,7 @@
         "loading_new_map"                  "全新地图已经开启"
 
         "loading_screen_changelog"   "最新的变化"
-        //"loading_screen_change_text" "<h1>V1.8 版本</h1><h2>全新挑战模式</h2>• 暴力混沌模式<br>• 每波小兵随机拥有两个技能！<br><br><h2>更新亮点</h2>• 现在可以用一颗交换第十二次元素选择机会。<br>• 现在混沌模式中也包含传统模式中的雄壮技能。<br><br><h2>Balance</h2>• 合作模式难度降低。<br>• 快速模式难度提升。<br>• 积分与完成速度的关联性降低。<br>• 圣水之塔重做。<br>• 大地之塔重做。<br>• 剧毒之塔重做。<br>• 电流之塔重做。<br>• 生命之塔重做。<br><br><b>请到论坛查看完整更新日志！</b><br>"
+        "loading_screen_change_text" "<h1>V1.9 版本</h1><b>• 新增精简模式！</b><br>• 计分系统重做。<br>• 每波时间降低。<br>• 增强部分小兵效果。<br>• 大地元素技能重回以前版本。<br>• 大量平衡性调整。<br><br><b>请到论坛查看完整更新日志！</b><br>"
  
         "credits_title"         "致谢"
         "credits_developers"    "开发者"
