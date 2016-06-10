@@ -241,7 +241,7 @@ function FinalizeVotes()
 				
 				StartBreakTime(plyID, GameSettings.length.PregameTime)
 
-				if GameSettings.length.FreeElements then
+				if GameSettings.length.FreeElements and elements == "Normal" then
 					playerData.freeElements = GameSettings.length.FreeElements
 				end
 
