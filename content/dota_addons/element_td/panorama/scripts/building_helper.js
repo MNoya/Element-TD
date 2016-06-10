@@ -524,7 +524,7 @@ function IsBlocked(position) {
         return true
 
     // Merge grids together into the same value
-    var flag = Root.GridNav[x][y]
+    var flag = Root.GridNav[x] && Root.GridNav[x][y]
     var entGridValue = (entityGrid[x] !== undefined && entityGrid[x][y] !== undefined) ? entityGrid[x][y] : GRID_TYPES["BUILDABLE"]
     if (entityGrid[x] && entityGrid[x][y])
         flag = flag | entityGrid[x][y]
