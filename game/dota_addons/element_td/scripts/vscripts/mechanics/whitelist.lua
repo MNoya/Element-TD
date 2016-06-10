@@ -12,7 +12,17 @@ function VerifyRegions()
             if k == "ip_range" then
                 if type(v) == "table" then
                     for _,ip in pairs(v) do
-                        table.insert(ips,ip)
+                        -- Handles range between '-'
+                        if ip:match("-") then
+                            local ipSection,start,finish = ip:match('(%d+%.%d+%.%d+%.)(%d+)%-%d+%.%d+%.%d+%.(%d+)')
+                            start = tonumber(start)
+                            finish = tonumber(finish)
+                            for i=start,finish do
+                                table.insert(ips,ipSection..i)
+                            end
+                        else
+                            table.insert(ips,ip)
+                        end
                     end
                 else table.insert(ips,v) end
             end
