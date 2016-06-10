@@ -188,10 +188,12 @@ function GameSettings:EnableRandomForPlayer(playerID)
 
         local first_random_element = GetRandomElementForPlayerWave(playerID, 0)
         BuyElement(playerID, first_random_element)
+        playerData.freeElements = playerData.freeElements - 1
 
         if EXPRESS_MODE or COOP_MAP then
             local first_random_express = GetRandomElementForPlayerWave(playerID, 0, true)
             BuyElement(playerID, first_random_express)
+            playerData.freeElements = playerData.freeElements - 1
         end
 
         UpdatePlayerSpells(playerID)
