@@ -34,7 +34,6 @@ function getRandomElement(wave)
         end
     end
 
-    COOP_MAP = true
     if COOP_MAP then
         if element ~= "pure" and randoomPreventionCoop(usedElements, element) then
             return getRandomElement(wave)
