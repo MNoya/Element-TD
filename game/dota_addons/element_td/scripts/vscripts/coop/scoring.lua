@@ -28,8 +28,8 @@ POINTS_PER_FROG = 200
 BASE_WAVE_SCORE = 5
 BASE_WAVE_SCORE_EXPRESS = 3
 CLEAN_WAVE_BONUS = 0.3
-SLOW_WAVE_CLEAR_FACTOR = 0.03
-FAST_WAVE_CLEAR_FACTOR = 0.03
+SLOW_WAVE_CLEAR_FACTOR = 0
+FAST_WAVE_CLEAR_FACTOR = 0
 BASE_TIME_CLASSIC = 45
 BASE_TIME_EXPRESS = 20
 BOSS_WAVE_BONUS_SCALING = 0.25
@@ -88,13 +88,13 @@ function ScoringObject:UpdateScore( const , wave )
             table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;'..CURRENT_WAVE_OBJECT.leaks .. ' Lives lost', '#FF0000'} )
         end
     end
-    if scoreTable['speedBonus'] then
+    --[[if scoreTable['speedBonus'] then
         local speedColor = '#FFFF00'
         if scoreTable['speedBonus'] < 0 then
             speedColor = '#FF0000'
         end
         table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Speed bonus: ' .. GetPctString(scoreTable['speedBonus']), speedColor} )
-    end
+    end]]
     --[[if scoreTable['cleanWaves'] then
         table.insert(processed, {'&nbsp;&nbsp;&nbsp;&nbsp;Clean waves: ' .. scoreTable['cleanWaves'], '#00FFFF'})
     end
@@ -188,15 +188,15 @@ function ScoringObject:GetWaveCleared( wave )
     local playerData = GetPlayerData( self.playerID )
     local waveClearScore = self:GetWaveClearBonus( wave )
     local time = CURRENT_WAVE_OBJECT.endTime - CURRENT_WAVE_OBJECT.endSpawnTime
-    local speedBonus = self:GetSpeedBonus( time )
+    --local speedBonus = self:GetSpeedBonus( time ) --Removed in 1.9
     local difficultyBonus = self:GetDifficultyBonus()
     local leaks = CURRENT_WAVE_OBJECT.leaks
     local cleanBonus = self:GetCleanBonus( leaks == 0 )
-    local totalScore = math.ceil(waveClearScore * (1 + cleanBonus) * (1 + speedBonus) * (1 + difficultyBonus))
+    local totalScore = math.ceil(waveClearScore * (1 + cleanBonus) * (1 + difficultyBonus))
 
     totalScore = math.max(0, totalScore)
 
-    return { clearBonus = waveClearScore, cleanBonus = cleanBonus, speedBonus = speedBonus, difficultyBonus = difficultyBonus, totalScore = totalScore }
+    return { clearBonus = waveClearScore, cleanBonus = cleanBonus, difficultyBonus = difficultyBonus, totalScore = totalScore }
 end
 
 function ScoringObject:GetBossWaveCleared( bossWave )
@@ -329,7 +329,7 @@ function ScoringObject:GetBossBonus( waves )
     return bonus
 end
 
--- Normal (1x), Hard (2x), Very Hard (3x), Insane (4x)
+-- Normal (1x), Hard (2x), Very Hard (3x), Insane (4.5x)
 function ScoringObject:GetDifficultyBonus()
     local bonus = 0 -- Normal
     local difficulty = GetPlayerDifficulty( self.playerID ).difficultyName
@@ -338,7 +338,7 @@ function ScoringObject:GetDifficultyBonus()
     elseif ( difficulty == "VeryHard" ) then
         bonus = 2
     elseif ( difficulty == "Insane" ) then
-        bonus = 3
+        bonus = 3.5
     end
     return bonus
 end

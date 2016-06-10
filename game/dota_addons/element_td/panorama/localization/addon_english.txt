@@ -98,9 +98,12 @@
         "order_chaos"                       "Chaos"
         "order_chaos_description"           "Waves are in a random order."        
 
-        "length_normal"                     "Normal"
+        "length_classic"                    "Classic"
+        "length_classic_description"        "Full game, endless Boss waves at the end."
         "length_express"                    "Express"
         "length_express_description"        "A quicker game with less waves."
+        "length_short"                      "Short"
+        "length_short_description"          "Starts on Wave 16 of Classic."
         "express"                           "Express"
 
         "abilities_challenge"               "Challenge"
@@ -228,6 +231,8 @@
         "loading_screen_tip_18" "You can play Co-Op by selecting the element_td_coop from the Map menu when creating a lobby."
         "loading_screen_next"   "Coming Next!"
         "loading_new_map"       "New Map Available"
+        "mobile_game"           "EleTD on Mobile"
+        "loading_mobile"        "Coming to Android June 15th!"
 
         // Usage
         //  <br> for break lines
@@ -235,7 +240,7 @@
         //  <font color='#hex'>text</font>  for color
         //  <b>text</b> for bold        
         "loading_screen_changelog"   "Latest Changes"
-        "loading_screen_change_text" "<h1>Version 1.8</h1><h2>New Challenge Mode</h2>• Forces Chaos Mode<br>• Every wave has two random abilities!<br><br><h2>Features</h2>• Can trade an essence for 12th Element Pick.<br>• Chaos now includes Bulky on Classic.<br><br><h2>Balance</h2>• Co-op is easier.<br>• Express is harder.<br>• Scoring is less dependant on speed.<br>• Water Tower reworked.<br>• Earth Tower reworked.<br>• Poison Tower reworked.<br>• Electricity Tower reworked.<br>• Life Tower reworked.<br><br><b>Check out the full changelog on the forums!</b><br>"
+        "loading_screen_change_text" "<h1>Version 1.9</h1><b>• Short Mode added!</b><br>• Scoring reworked.<br>• Wave Timers reduced.<br>• Some creep effects buffed.<br>• Earth ability changed back.<br>• Lots of balance tweaks.<br><br><b>Check out the full changelog on the forums!</b><br>"
 
         "credits_title"         "Credits"
         "credits_developers"    "Developers"

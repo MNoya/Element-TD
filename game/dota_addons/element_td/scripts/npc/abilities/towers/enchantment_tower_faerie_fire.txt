@@ -52,7 +52,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"base_damage_amp"		"5 15"
+			"base_damage_amp"		"6 18"
 		}
 		"03"
 		{

@@ -44,11 +44,20 @@
       <Panel hittest="false" id="Checkboxes">
         <Panel id="Option_Random" class="CheckboxPanel">
           <Panel id="RadioButtons">
-            <RadioButton group="RandomRadio" onactivate="SelectRadio('allpick')" checked="true" id="allpick" text="All Pick"/>
-            <RadioButton group="RandomRadio" onactivate="SelectRadio('samerandom')" id="samerandom" text="Same Random"/>
-            <RadioButton group="RandomRadio" onactivate="SelectRadio('allrandom')" id="allrandom" text="All Random"/>
+            <RadioButton group="RandomRadio" onactivate="SelectRadio('allpick')" checked="true" id="allpick" text="#element_allpick"/>
+            <RadioButton group="RandomRadio" onactivate="SelectRadio('samerandom')" id="samerandom" text="#element_samerandom"/>
+            <RadioButton group="RandomRadio" onactivate="SelectRadio('allrandom')" id="allrandom" text="#element_allrandom"/>
           </Panel> 
           <Label id="ElementsDesc" text="#element_allpick_description"/>
+        </Panel>
+
+        <Panel id="Option_Express" class="CheckboxPanel">
+          <Panel id="RadioButtons_Length">
+            <RadioButton group="LengthRadio" onactivate="SelectLengthRadio('classic')" checked="true" id="classic" text="#length_classic"/>
+            <RadioButton group="LengthRadio" onactivate="SelectLengthRadio('express')" id="express" text="#length_express"/>
+            <RadioButton group="LengthRadio" onactivate="SelectLengthRadio('short')" id="short" text="#length_short"/>
+          </Panel> 
+          <Label id="LengthDesc" text="#length_classic_description"/>
         </Panel>
 
         <Panel id="Option_Endless" class="CheckboxPanel" 
@@ -65,12 +74,6 @@
             <ToggleButton id="chaos" onactivate="SelectCheckboxClick('chaos')" text="#order_chaos"/>
           </Panel>
           <Label id="OrderDesc" class="desc" text="#order_chaos_description"/>
-        </Panel>
-
-        <Panel id="Option_Express" class="CheckboxPanel" 
-            onmouseover="HoverCheckbox('express', 'LengthDesc')" onmouseout="MouseOverCheckbox('express', 'LengthDesc')" onactivate="SelectCheckbox('express')">
-          <ToggleButton id="express" onactivate="SelectCheckboxClick('express')" text="#length_express"/>
-          <Label id="LengthDesc" class="desc" text="#length_express_description"/>
         </Panel>
 
         <Panel id="Option_Challenge" class="CheckboxPanel" 

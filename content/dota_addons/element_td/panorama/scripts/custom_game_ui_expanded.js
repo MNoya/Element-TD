@@ -296,7 +296,7 @@ GameUI.IsDeveloper = function (steamID64) {
 
 var Translators = [76561198047021815,76561198060578494,76561198017567489,76561198050765387]
 GameUI.IsTranslator = function (steamID64) {
-    return Developers.indexOf(Number(steamID64)) != -1
+    return Translators.indexOf(Number(steamID64)) != -1
 }
 
 GameUI.DeveloperInGame = function() {
@@ -442,7 +442,11 @@ Game.IsCoop = function() {
 }
 
 Game.IsExpress = function() {
-    return CustomNetTables.GetTableValue("gameinfo", "express").value == "Express"
+    return CustomNetTables.GetTableValue("gameinfo", "length").value == "Express"
+}
+
+Game.IsShort = function() {
+    return CustomNetTables.GetTableValue("gameinfo", "length").value == "Short"
 }
 
 Game.InterestStopped = function() {

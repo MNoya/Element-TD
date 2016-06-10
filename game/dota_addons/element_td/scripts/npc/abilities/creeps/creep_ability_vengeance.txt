@@ -37,7 +37,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aoe"					"300"
+			"aoe"					"250"
 		}
 		"02"
 		{
@@ -47,7 +47,7 @@
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"				"7"
+			"duration"				"10"
 		}
 	}
 }

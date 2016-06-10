@@ -41,9 +41,9 @@
         "1"        "dark"
         "2"        "water"
     }
-    "Damage"        "300"
-    "AttackDamageMin"        "300"
-    "AttackDamageMax"        "300"
+    "Damage"        "400"
+    "AttackDamageMin"        "400"
+    "AttackDamageMax"        "400"
     "DamageType"        "dark"
     "ScriptClass"        "PoisonTower"
     "TowerType"        "Normal"

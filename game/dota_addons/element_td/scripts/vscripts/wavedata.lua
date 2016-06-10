@@ -122,7 +122,7 @@ function StartBreakTime(playerID, breakTime, rush_wave)
     ElementTD:PrecacheWave(wave)
 
     local msgTime = 5 -- how long to show the message for
-    if (wave - 1) % 5 == 0 and not EXPRESS_MODE then
+    if (wave - 1) % 5 == 0 and not EXPRESS_MODE and wave ~= GameSettings.length.Wave then
         breakTime = 30
     end
 
@@ -137,7 +137,7 @@ function StartBreakTime(playerID, breakTime, rush_wave)
 
     Log:debug("Starting break time for " .. GetPlayerName(playerID).. " for wave "..wave)
     if ply then
-        local bShowButton = GameSettings:GetGamemode() ~= "Competitive" or (PlayerResource:GetPlayerCount() == 1 and wave == 1)
+        local bShowButton = GameSettings:GetGamemode() ~= "Competitive" or (PlayerResource:GetPlayerCount() == 1 and wave == GameSettings.length.Wave)
         CustomGameEventManager:Send_ServerToPlayer( ply, "etd_update_wave_timer", { time = breakTime, button = bShowButton } )
     end
 
@@ -149,7 +149,7 @@ function StartBreakTime(playerID, breakTime, rush_wave)
         ShowPortalForSector(sector, wave, playerID)
     
         -- Grant Lumber and Essence to all players the moment the next wave is set
-        if WaveGrantsLumber(wave-1) then
+        if WaveGrantsLumber(wave - 1) and wave ~= GameSettings.length.Wave then
             ModifyLumber(playerID, 1)
             if IsPlayerUsingRandomMode( playerID ) then
                 Notifications:ClearBottom(playerID)

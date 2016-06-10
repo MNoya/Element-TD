@@ -39,9 +39,9 @@
         "1"        "fire"
         "2"        "nature"
     }
-    "Damage"        "225"
-    "AttackDamageMin"        "225"
-    "AttackDamageMax"        "225"
+    "Damage"        "250"
+    "AttackDamageMin"        "250"
+    "AttackDamageMax"        "250"
     "DamageType"        "fire"
     "ScriptClass"        "FlameTower"
     "TowerType"        "Normal"

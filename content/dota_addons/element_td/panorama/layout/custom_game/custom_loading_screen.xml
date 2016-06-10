@@ -28,11 +28,11 @@
                 </Panel>
 
                 <Panel id="Promote">
-                    <Panel id="Coop">
-                        <Image src="file://{images}/custom_game/loading_screen/coop.png" />
-                        <Label id="CoopTitle" text="#cooperative_map"/>
+                    <Panel id="Ad">
+                        <Image id="AdImage" src="file://{images}/custom_game/loading_screen/mobile.png" />
+                        <Label id="AdTitle" text="#mobile_game"/>
                     </Panel>
-                    <Label id="PromoteTitle" class="Title" text="#loading_new_map" html="true"/>
+                    <Label id="PromoteTitle" class="Title" text="#loading_mobile" html="true"/>
                 </Panel>
             </Panel>
         </Panel>

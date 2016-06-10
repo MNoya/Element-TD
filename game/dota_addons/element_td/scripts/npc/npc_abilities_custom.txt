@@ -849,12 +849,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"25"
+				"heal_amount"			"18"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"250"
+				"aoe"					"300"
 			}
 		}
 	
@@ -1105,7 +1105,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"backtrack_duration"	"4"
+				"backtrack_duration"	"5"
 			}
 		}
 	
@@ -1141,7 +1141,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health"				"50"
+				"health"				"60"
 			}
 		}
 	}
@@ -1184,7 +1184,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"300"
+				"aoe"					"250"
 			}
 			"02"
 			{
@@ -1194,7 +1194,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"7"
+				"duration"				"10"
 			}
 		}
 	}
@@ -2479,7 +2479,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"300"
+				"aoe"					"500"
 			}
 		}
 	}
@@ -2539,12 +2539,12 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "aftershock_damage_pct" "0"
+	            "aftershock_damage_pct" "50"
 	        }
 	        "01"
 	        {
 	            "var_type"              "FIELD_FLOAT"
-	            "aftershock_delay"      "0"
+	            "aftershock_delay"      "1"
 	        }
 	    }
 	}
@@ -2635,7 +2635,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bounce_range"			"225"
+				"bounce_range"			"300"
 			}
 			"05"
 			{
@@ -2703,7 +2703,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"5 15"
+				"base_damage_amp"		"6 18"
 			}
 			"03"
 			{
@@ -3021,12 +3021,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"100 500"
+				"damage"				"160 800"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"300"
+				"aoe"					"400"
 			}
 		}
 	}
@@ -3131,7 +3131,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "damage"                "45 225 1125"
+	            "damage"                "50 250 1250"
 	        }
 	        "02"
 	        {
@@ -3160,7 +3160,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"200 1000"
+				"splash_damage"			"220 1100"
 			}
 			"02"
 			{
@@ -3197,7 +3197,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"30 40"
+				"bonus_gold"			"35 50"
 			}
 		}
 	
@@ -3376,7 +3376,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_mult"			"400"
+				"damage_mult"			"500"
 			}
 			"04"
 			{
@@ -3489,7 +3489,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_aoe"		"250"
+				"splash_aoe"		"300"
 			}
 			"04"
 			{
@@ -3680,7 +3680,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"4000 20000"
+				"multiplier"			"4400 22000"
 			}
 		}
 	}
@@ -3868,7 +3868,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"8 6 4"
+				"kills_required"				"8 6 2"
 			}
 			"02"
 			{
@@ -3883,7 +3883,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"points_per_kill"				"3 4 6"
+				"points_per_kill"				"3 4 12"
 			}
 		}
 	}
@@ -3972,12 +3972,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_per_stack"		"-75"
+				"range_per_stack"		"-50"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_stacks"			"12"
+				"max_stacks"			"16"
 			}
 			"03"
 			{
@@ -4123,7 +4123,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"10"
+				"damage"				"15"
 			}
 			"02"
 			{
@@ -4464,7 +4464,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"11 33"
+				"health_burn"			"10 27"
 			}
 		}
 	}
@@ -4554,12 +4554,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"12"
+				"bonus_damage"			"15"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_stacks"			"15"
+				"max_stacks"			"13"
 			}
 		}
 	}
@@ -4754,7 +4754,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps"					"90 450"
+				"dps"					"100 500"
 			}
 			"04"
 			{
@@ -5073,12 +5073,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"22 110 550"
+				"damage"				"30 150 750"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"22 110 550"
+				"aftershock_damage"		"30 150 750"
 			}
 			"03"
 			{
@@ -5088,7 +5088,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aftershock_aoe"		"450"
+				"aftershock_aoe"		"350"
 			}
 		}
 	

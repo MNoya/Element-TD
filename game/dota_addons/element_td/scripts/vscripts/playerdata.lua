@@ -39,6 +39,7 @@ function CreateDataForPlayer(playerID, allowOverride)
 		water = 0, fire = 0, nature = 0,
 		earth = 0, light = 0, dark = 0
 	}
+    data["freeElements"] = 0
 	data["elementOrder"] = {}
 	data["towers"] = {}
 	data["clones"] = {}

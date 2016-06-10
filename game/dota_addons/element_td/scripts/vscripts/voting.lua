@@ -215,7 +215,7 @@ function FinalizeVotes()
 	CustomNetTables:SetTableValue("gameinfo", "random", {value=elements})
 	CustomNetTables:SetTableValue("gameinfo", "rush", {value=endless})
 	CustomNetTables:SetTableValue("gameinfo", "chaos", {value=order})
-	CustomNetTables:SetTableValue("gameinfo", "express", {value=length})
+	CustomNetTables:SetTableValue("gameinfo", "length", {value=length})
 	CustomNetTables:SetTableValue("gameinfo", "abilitiesMode", {value=abilitiesMode})
 
 	for k, plyID in pairs(playerIDs) do
@@ -236,9 +236,27 @@ function FinalizeVotes()
 			CoopStart()
 		else
 			for _, plyID in pairs(playerIDs) do
+				local playerData = GetPlayerData(plyID)
+				local scoreObject = playerData.scoreObject
+				
 				StartBreakTime(plyID, GameSettings.length.PregameTime)
+
+				if GameSettings.length.FreeElements and elements == "Normal" then
+					playerData.freeElements = GameSettings.length.FreeElements
+				end
+
+				if GameSettings.length.BaseScore then
+					local score = scoreObject.totalScore + GameSettings.length.BaseScore
+					score = score * (scoreObject:GetDifficultyBonus() + 1) -- multiplier based on difficulty
+
+					scoreObject.totalScore = score
+					CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerScore", {playerId = plyID, score = comma_value(score)}) 
+        			CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(plyID), "etd_update_score", {score = comma_value(score)})
+					UpdateScoreboard(plyID)
+				end
 			end
 		end
+
 
 		if GameSettings.length.PregameTime == 30 then
 			EmitAnnouncerSound("announcer_announcer_count_battle_30")
@@ -277,7 +295,7 @@ function ElementTD:OnPlayerVoted( table )
 		local randomVote = table.data.elementsVote -- Normal, Same or All Random
 		local endlessVote = table.data.endlessVote -- 0 or 1 if Endless was selected
 		local orderVote = table.data.orderVote -- 0 or 1 if Chaos was selected
-		local expressVote = table.data.lengthVote -- 0 or 1 if Express was selected
+		local expressVote = table.data.lengthVote -- 0 Classic, 1 Express was selected, 2 Short (Classic)
 		local abilitiesVote = table.data.abilitiesVote -- 0 or 1 if Express was selected
 
 		-- Convert to strings on gamesettings

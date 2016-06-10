@@ -37,6 +37,8 @@ function FireTower:OnCreated()
     self.modifier_name = "modifier_blazeit" --420
     self.interval = 0.5 --taken from the modifier ThinkInterval value
     self.damage_per_interval = self.ability:GetLevelSpecialValueFor("damage_per_second", self.tower:GetLevel()-1) * self.interval
+
+    self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_CLOSEST})
 end
 
 RegisterTowerClass(FireTower, FireTower.className)

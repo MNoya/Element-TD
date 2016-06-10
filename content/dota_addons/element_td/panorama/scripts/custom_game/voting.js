@@ -30,7 +30,7 @@ var healthBonus = {normal:"100%",hard:"130%",veryhard:"160%",insane:"200%"}
 var bountyBonus = {normal:"100%",hard:"110%",veryhard:"120%",insane:"130%"}
 var bountyBonusExpress = {normal:"100%",hard:"110%",veryhard:"120%",insane:"130%"}
 var endlessBountyBonus = 25
-var scoreMultipliers = {normal:1,hard:2,veryhard:3,insane:4}
+var scoreMultipliers = {normal:1,hard:2,veryhard:3,insane:4.5}
 
 var healthMult = $( '#HealthMult' );
 var bountyMult = $( '#BountyMult' );
@@ -40,6 +40,7 @@ var all_random = $('#allrandom')
 var chaos = $('#chaos')
 var endless = $('#endless')
 var express = $('#express')
+var short = $('#short')
 var challenge_mode = $('#challenge')
 
 function UpdateMultipliers(difficultyName){
@@ -144,6 +145,10 @@ function SelectRadio(name) {
         $("#same_random").last_state = undefined*/
 
     $("#ElementsDesc").text = $.Localize("element_"+name+"_description")
+}
+
+function SelectLengthRadio(name) {
+    $("#LengthDesc").text = $.Localize("length_"+name+"_description")
 }
 
 function ToggleVoteDialog( data )
@@ -251,7 +256,7 @@ function PlayerVoted( data )
         order.text = $.Localize("order_"+data.order.toLowerCase());
     }
 
-    if (data.length == "Express")
+    if (data.length == "Express" || data.length == "Short")
     {
         var length = $.CreatePanel('Label', votes, '');
         length.AddClass('PlayerVote');
@@ -282,8 +287,13 @@ function ConfirmVote()
 
     data['orderVote'] = chaos.checked
     data['endlessVote'] = endless.checked
-    data['lengthVote'] = express.checked
     data['abilitiesVote'] = challenge_mode.checked
+
+    data['lengthVote'] = 0;
+    if (express.checked)
+        data['lengthVote'] = 1
+    else if (short.checked)
+        data['lengthVote'] = 3
 
     $.Msg(data)
 
@@ -303,9 +313,10 @@ function ShowVoteResults()
     // Only show the options that were accepted
     var randomChoice = CustomNetTables.GetTableValue("gameinfo", "random").value    
     var random = randomChoice == "SameRandom" || randomChoice == "AllRandom"
+    var lengthChoice = CustomNetTables.GetTableValue("gameinfo", "length").value
+    var length = lengthChoice == "Express" || lengthChoice == "Short" //Short mode is still Classic
     var rush = CustomNetTables.GetTableValue("gameinfo", "rush").value == "Endless"
     var chaos = CustomNetTables.GetTableValue("gameinfo", "chaos").value == "Chaos"
-    var express = CustomNetTables.GetTableValue("gameinfo", "express").value == "Express"
     var abilitiesMode = CustomNetTables.GetTableValue("gameinfo", "abilitiesMode").value == "Challenge"
 
     if (!random)
@@ -319,8 +330,10 @@ function ShowVoteResults()
     if (!chaos)
         $('#OrderResult').GetParent().DeleteAsync(0)
 
-    if (!express)
+    if (!length)
         $('#LengthResult').GetParent().DeleteAsync(0)
+    else
+        $('#LengthResult').text = $.Localize("length_" + lengthChoice.toLowerCase());
 
     if (!abilitiesMode)
         $('#ChallengeResult').GetParent().DeleteAsync(0)
@@ -349,15 +362,17 @@ function ShowGamemodeViewer() {
     // Only show the options that were accepted
     var randomChoice = CustomNetTables.GetTableValue("gameinfo", "random").value    
     var random = randomChoice == "SameRandom" || randomChoice == "AllRandom"
+    $.Msg(CustomNetTables.GetTableValue("gameinfo", "length"));
+    var lengthChoice = CustomNetTables.GetTableValue("gameinfo", "length").value
+    var length = lengthChoice == "Express" || lengthChoice == "Short" //Short mode is still Classic
     var rush = CustomNetTables.GetTableValue("gameinfo", "rush").value == "Endless"
     var chaos = CustomNetTables.GetTableValue("gameinfo", "chaos").value == "Chaos"
-    var express = CustomNetTables.GetTableValue("gameinfo", "express").value == "Express"
     var abilitiesMode = CustomNetTables.GetTableValue("gameinfo", "abilitiesMode").value == "Challenge"
 
     if (!random)
         $('#ElementsView').AddClass("Hidden") //This can become visible if the player does -random afterwards
     else
-        $('#ElementsView').text = $.Localize(randomChoice.toLowerCase()+"_mode");
+        $('#ElementsView').text = $.Localize(randomChoice.toLowerCase() + "_mode");
 
     if (!rush)
         $('#EndlessView').DeleteAsync(0)
@@ -365,8 +380,10 @@ function ShowGamemodeViewer() {
     if (!chaos)
         $('#OrderView').DeleteAsync(0)
 
-    if (!express)
+    if (!length)
         $('#LengthView').DeleteAsync(0)
+    else
+        $('#LengthView').text = $.Localize("length_" + lengthChoice.toLowerCase());
 
     if (!abilitiesMode)
         $('#AbilitiesModeView').DeleteAsync(0)
@@ -480,6 +497,7 @@ function Setup()
 
     $.Schedule(0.1, CheckHudFlipped)
     $("#allpick").checked = true;
+    $("#classic").checked = true;
     GameEvents.Subscribe( "etd_toggle_vote_dialog", ToggleVoteDialog );
     GameEvents.Subscribe( "etd_update_vote_timer", UpdateVoteTimer );
     GameEvents.Subscribe( "etd_vote_display", PlayerVoted );

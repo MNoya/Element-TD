@@ -11,11 +11,12 @@ if not playerIDs then
     TEAM_TO_SECTOR[9] = 5
     TEAM_TO_SECTOR[10] = 6
     TEAM_TO_SECTOR[11] = 7
-     
+    
+    SHORT_MODE = false
     EXPRESS_MODE = false
     ETD_MAX_PLAYERS = 4
 
-    VERSION = "1.8"
+    VERSION = "1.9"
     COOP_MAP = GetMapName() == "element_td_coop"
 
     START_TIME = GetSystemDate() .. " " .. GetSystemTime()
@@ -229,7 +230,7 @@ end
 function ElementTD:OnNextWave( keys )
     local playerID = keys.PlayerID
     local data = GetPlayerData(playerID)
-    if GameSettings:GetGamemode() == "Competitive" and (PlayerResource:GetPlayerCount() > 1 or data.nextWave > 1) then
+    if GameSettings:GetGamemode() == "Competitive" and (PlayerResource:GetPlayerCount() > 1) then
         return
     end
 
@@ -241,7 +242,7 @@ function ElementTD:OnNextWave( keys )
             UpdateWaveInfo(playerID, COOP_WAVE)
         end)
     else
-        if (data.waveObject and data.waveObject.creepsRemaining == 0) or data.nextWave == 1 or GameSettings:GetEndless() == "Endless" then
+        if (data.waveObject and data.waveObject.creepsRemaining == 0) or data.nextWave == GameSettings.length.Wave then
             Timers:RemoveTimer("SpawnWaveDelay"..playerID)
             Log:info("Spawning wave " .. data.nextWave .. " for ["..playerID.."] ".. data.name)
             ShowWaveSpawnMessage(playerID, data.nextWave)
@@ -764,6 +765,30 @@ function ElementTD:FilterExecuteOrder( filterTable )
 
     if unit and IsTower(unit) and (order_type == DOTA_UNIT_ORDER_MOVE_TO_TARGET or order_type == DOTA_UNIT_ORDER_ATTACK_MOVE) then
         return false
+    end
+
+    -- Drop direct attack orders on Haste tower
+    if unit and order_type == DOTA_UNIT_ORDER_ATTACK_TARGET then
+        local hasteTowerSelected = false
+        for k,unit_index in pairs(units) do
+            local u = EntIndexToHScript(unit_index)
+            if u and u:GetUnitName():match("haste_tower") then
+                u.skip_attack_order = true
+                hasteTowerSelected = true
+            end
+        end
+
+        -- Recreate the attack target order to each other tower
+        if hasteTowerSelected then
+            for k,unit_index in pairs(units) do
+                local u = EntIndexToHScript(unit_index)
+                if u and not u.skip_attack_order then
+                    u.skip = true
+                    ExecuteOrderFromTable({UnitIndex = unit_index, OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET, TargetIndex = targetIndex, Queue = queue})
+                end
+            end
+            return false
+        end
     end
 
     ------------------------------------------------

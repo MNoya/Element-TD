@@ -8,6 +8,8 @@ function ToggleGrid( event )
     local count = 0
     item.enabled = not item.enabled
 
+    Saves:SaveGrid(playerID, item.enabled)
+
     if item.enabled then
         if COOP_MAP then
             for y,v in pairs(BuildingHelper.Grid) do

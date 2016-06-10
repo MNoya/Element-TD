@@ -125,18 +125,23 @@ function GameSettings:SetGameLength(length)
         baseGold = math.floor(baseGold * 4 / PlayerResource:GetPlayerCountWithoutLeavers() + 0.5)
     end
 
+	CURRENT_WAVE = GameSettings.length.Wave
+
 	for _,plyID in pairs(playerIDs) do
 		local playerData = GetPlayerData(plyID)
 
 		SetCustomGold(plyID, baseGold)
 		ModifyLumber(plyID, GameSettings.length.Lumber)
 		playerData.nextWave = GameSettings.length.Wave
-
+		playerData.completedWaves = GameSettings.length.Wave - 1
+		
 		if length == "Express" then
 			EXPRESS_MODE = true
-
-            ElementTD:ExpressPrecache()
-    	end
+			ElementTD:ExpressPrecache()
+		elseif length == "Short" then
+			SHORT_MODE = true
+			ElementTD:ShortModePrecache()
+		end
 	end
 	Log:info("Set game length to " .. length)
 end
@@ -183,10 +188,12 @@ function GameSettings:EnableRandomForPlayer(playerID)
 
         local first_random_element = GetRandomElementForPlayerWave(playerID, 0)
         BuyElement(playerID, first_random_element)
+        playerData.freeElements = playerData.freeElements - 1
 
         if EXPRESS_MODE or COOP_MAP then
             local first_random_express = GetRandomElementForPlayerWave(playerID, 0, true)
             BuyElement(playerID, first_random_express)
+            playerData.freeElements = playerData.freeElements - 1
         end
 
         UpdatePlayerSpells(playerID)
