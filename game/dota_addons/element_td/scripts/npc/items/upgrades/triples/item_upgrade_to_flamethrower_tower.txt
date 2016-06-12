@@ -35,7 +35,7 @@
         "01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"160 800"
+			"damage"				"240 1200"
 		}
 	}
 	"AbilityCastRange"              "700"

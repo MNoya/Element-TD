@@ -33,8 +33,8 @@
     "VisionDaytimeRange"        "1900"
     "VisionNighttimeRange"        "1900"
     "Level"        "3"
-    "Cost"                       "3000"
-    "TotalCost"        "4750"
+    "Cost"                       "4250"
+    "TotalCost"        "6000"
     "Element"
     {
         "1"        "light"

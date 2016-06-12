@@ -40,9 +40,9 @@
         "1"        "dark"
         "2"        "fire"
     }
-    "Damage"        "650"
-    "AttackDamageMin"        "650"
-    "AttackDamageMax"        "650"
+    "Damage"        "700"
+    "AttackDamageMin"        "700"
+    "AttackDamageMax"        "700"
     "DamageType"        "dark"
     "ScriptClass"        "MagicTower"
     "TowerType"        "Normal"

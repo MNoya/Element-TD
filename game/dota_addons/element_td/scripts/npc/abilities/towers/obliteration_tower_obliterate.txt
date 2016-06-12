@@ -97,7 +97,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"max_aoe"				"450"
+			"max_aoe"				"300"
 		}
 		"02"
 		{
