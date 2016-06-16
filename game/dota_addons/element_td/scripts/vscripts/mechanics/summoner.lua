@@ -98,6 +98,11 @@ function SummonElemental(keys)
         ParticleManager:SetParticleControlEnt(h, 0, elemental, 5, "attach_origin", elemental:GetOrigin(), true)
     end
 
+    -- Check towers precache as if the element is already acquired
+    local potentialElements = shallowcopy(playerData.elements)
+    potentialElements[element] = potentialElements[element] and potentialElements[element] + 1 or 1
+    Precache:CheckTowers(potentialElements)
+
     Timers:CreateTimer(0.1, function()
         if not IsValidEntity(elemental) or not elemental:IsAlive() then
             elemental.marker_dummy:RemoveSelf()

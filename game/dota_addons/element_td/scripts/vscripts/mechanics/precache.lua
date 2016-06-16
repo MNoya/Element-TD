@@ -8,11 +8,10 @@ function Precache:Start()
     Precache.file = LoadKeyValues("scripts/kv/precache.kv")
 end
 
-function Precache:CheckTowers(playerID)
-    local playerData = GetPlayerData(playerID)
+function Precache:CheckTowers(elements)
     for towerName,values in pairs(NPC_UNITS_CUSTOM) do
         if values['Requirements'] then
-            if MeetsRequirements(playerData, values['Requirements']) then
+            if MeetsRequirements(elements, values['Requirements']) then
                 ElementTD:PrecacheTower(towerName)
             end
         end

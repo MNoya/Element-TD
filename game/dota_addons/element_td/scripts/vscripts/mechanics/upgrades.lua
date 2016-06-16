@@ -67,9 +67,9 @@ function UpgradeTower(keys)
     end
 end
 
-function MeetsRequirements(playerData, req)
+function MeetsRequirements(elements, req)
     for e, l in pairs(req) do
-        if tonumber(l) > playerData.elements[e] then
+        if tonumber(l) > elements[e] then
             return false
         end
     end

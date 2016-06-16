@@ -233,8 +233,6 @@ function ModifyElementValue(playerID, element, change)
 		playerData.firstTriple = GetElementalOrderString(playerData.elements)
 	end
 	UpdateScoreboard(playerID)
-
-    Precache:CheckTowers(playerID)
 end
 
 function UpdateBuildAbility(playerID, ability)
