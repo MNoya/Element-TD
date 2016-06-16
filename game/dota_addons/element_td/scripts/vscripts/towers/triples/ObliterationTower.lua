@@ -56,12 +56,7 @@ function ObliterationTower:OnProjectileHit(keys)
     ParticleManager:SetParticleControl(explosionParticle, 3, target:GetAbsOrigin())
 
     target:EmitSound("Obliteration.Hit")
-
-    local damage = self.tower:GetAverageTrueAttackDamage()
-    local entities = GetCreepsInArea(target:GetAbsOrigin(), splashAOE)
-    for _, entity in pairs(entities) do
-        DamageEntity(entity, self.tower, damage, self.tower)
-    end
+    DamageEntitiesInArea(target:GetAbsOrigin(), splashAOE, self.tower, self.tower:GetAverageTrueAttackDamage())
 end
 
 function ObliterationTower:OnDestroyed()

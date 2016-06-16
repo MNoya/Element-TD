@@ -4,19 +4,20 @@ function DamageEntity(entity, attacker, damage, pure)
     if entity:HasModifier("modifier_invulnerable") then return end
 
     local original = damage
+    local element = damage --damage after elemental modification
     if damage <= 0 then return end --pls no negative damage
 
     if not pure then
         -- Modify damage based on elements
         damage = ApplyElementalDamageModifier(damage, GetDamageType(attacker), GetArmorType(entity))
-        local element = damage
+        element = damage
 
         -- Increment damage based on debuffs
         damage = ApplyDamageAmplification(damage, entity, attacker)
-        local amplified = damage
     end
 
     damage = math.ceil(damage) --round up to the nearest integer
+    local amplified = damage
             
     if GameRules.DebugDamage then
         local sourceName = attacker.class
