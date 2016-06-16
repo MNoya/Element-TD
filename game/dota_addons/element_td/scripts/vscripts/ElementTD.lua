@@ -221,9 +221,9 @@ function ElementTD:StartGame()
             ElementTD:CheatsEnabled()
         end
 
-        if COOP_MAP then
+        --[[if COOP_MAP then
             ElementTD:PrecacheDuals(1)
-        end
+        end]]
     end)
 end
 
