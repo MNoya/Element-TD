@@ -39,7 +39,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"180 900 4500"
+			"damage"				"240 1200 6000"
 		}
 		"03"
 		{

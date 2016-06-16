@@ -37,8 +37,8 @@
     "ProjectileSpeed"           "2000" 
 
     "Level"                     "3"
-    "Cost"                       "3000"
-    "TotalCost"                  "4750"
+    "Cost"                       "2500"
+    "TotalCost"                  "4250"
     "BuildTime"                 "2"
 
     "DamageType"                "earth"

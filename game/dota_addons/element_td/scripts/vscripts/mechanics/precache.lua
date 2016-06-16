@@ -8,6 +8,24 @@ function Precache:Start()
     Precache.file = LoadKeyValues("scripts/kv/precache.kv")
 end
 
+function Precache:CheckTowers(elements)
+    for towerName,values in pairs(NPC_UNITS_CUSTOM) do
+        if values['Requirements'] then
+            if MeetsRequirements(elements, values['Requirements']) then
+                ElementTD:PrecacheTower(towerName)
+            end
+        end
+    end
+end
+
+function ElementTD:PrecacheTower(towerName)
+    if not Precache.towers[towerName] then
+        print("[Precache] "..towerName)
+        Precache.towers[towerName] = true
+        Precache:Load(towerName)
+    end
+end
+
 function Precache:Load(unitName)
     PrecacheUnitByNameAsync(unitName, function(...) end)
 end
@@ -21,7 +39,7 @@ function ElementTD:PrecacheWave(waveNumber)
         Precache:Load(WAVE_CREEPS[waveNumber])
 
         -- Check if this wave should also load towers
-        local load_waves = Precache.file["Async"]["load_waves"]
+        --[[local load_waves = Precache.file["Async"]["load_waves"]
         local load = load_waves["Classic"]
         if EXPRESS_MODE then load = load_waves["Express"] end
         if COOP_MAP then load = load_waves["Coop"] end
@@ -37,7 +55,7 @@ function ElementTD:PrecacheWave(waveNumber)
                     ElementTD:PrecacheTriples(level)
                 end
             end
-        end
+        end]]
     end
 end
 
@@ -88,8 +106,7 @@ function ElementTD:PrecacheTowerTable(table)
     for towerName,_ in pairs(table) do
         if not Precache.towers[towerName] then
             Timers:CreateTimer(i*time_per_entry, function()
-                Precache.towers[towerName] = true
-                Precache:Load(towerName)
+                ElementTD:PrecacheTower(towerName)
             end)
             i = i+1
         end

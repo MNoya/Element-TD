@@ -16,7 +16,7 @@ if not playerIDs then
     EXPRESS_MODE = false
     ETD_MAX_PLAYERS = 4
 
-    VERSION = "1.9"
+    VERSION = "1.10"
     COOP_MAP = GetMapName() == "element_td_coop"
 
     START_TIME = GetSystemDate() .. " " .. GetSystemTime()
@@ -221,9 +221,9 @@ function ElementTD:StartGame()
             ElementTD:CheatsEnabled()
         end
 
-        if COOP_MAP then
+        --[[if COOP_MAP then
             ElementTD:PrecacheDuals(1)
-        end
+        end]]
     end)
 end
 

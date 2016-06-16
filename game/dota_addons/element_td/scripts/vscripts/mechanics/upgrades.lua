@@ -67,6 +67,15 @@ function UpgradeTower(keys)
     end
 end
 
+function MeetsRequirements(elements, req)
+    for e, l in pairs(req) do
+        if tonumber(l) > elements[e] then
+            return false
+        end
+    end
+    return true
+end
+
 function MeetsAbilityElementRequirements(name, playerID)
     local req = GetAbilityKeyValue(name, "Requirements")
 

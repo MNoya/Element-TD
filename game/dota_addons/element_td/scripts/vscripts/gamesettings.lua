@@ -135,13 +135,13 @@ function GameSettings:SetGameLength(length)
 		playerData.nextWave = GameSettings.length.Wave
 		playerData.completedWaves = GameSettings.length.Wave - 1
 		
-		if length == "Express" then
+		--[[if length == "Express" then
 			EXPRESS_MODE = true
 			ElementTD:ExpressPrecache()
 		elseif length == "Short" then
 			SHORT_MODE = true
 			ElementTD:ShortModePrecache()
-		end
+		end]]
 	end
 	Log:info("Set game length to " .. length)
 end

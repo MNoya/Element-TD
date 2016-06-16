@@ -39,6 +39,7 @@ local requires = {
     "mechanics/saves",
     "mechanics/players",
     "mechanics/abilities_mode",
+    "mechanics/whitelist",
     
     -- utils
     "util/util",

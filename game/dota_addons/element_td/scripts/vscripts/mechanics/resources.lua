@@ -265,5 +265,6 @@ function BuyElement(playerID, element)
         ModifyElementValue(playerID, element, 1)
         AddElementalTrophy(playerID, element, GetPlayerElementLevel(playerID, element))
         UpdatePlayerHealth(playerID)
+        Precache:CheckTowers(playerData.elements)
     end
 end
