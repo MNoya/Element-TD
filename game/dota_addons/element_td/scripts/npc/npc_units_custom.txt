@@ -11397,7 +11397,7 @@
 	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
 	    "MovementSpeed"        "0"
 	    "MovementTurnRate"        "1.0"
-	    "StatusHealth"        "5000"
+	    "StatusHealth"        "4500"
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
@@ -11503,6 +11503,7 @@
 	    "Level"        "3"
 	    "Cost"        "8000"
 	    "TotalCost"        "13000"
+	    "PureEssence"               "1"
 	    "Element"
 	    {
 	        "1"        "earth"

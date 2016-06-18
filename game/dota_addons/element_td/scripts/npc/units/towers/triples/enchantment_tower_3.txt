@@ -36,6 +36,7 @@
     "Level"        "3"
     "Cost"        "8000"
     "TotalCost"        "13000"
+    "PureEssence"               "1"
     "Element"
     {
         "1"        "earth"
