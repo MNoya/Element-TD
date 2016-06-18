@@ -1,0 +1,43 @@
+"item_upgrade_to_enchantment_tower_3"
+{
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"BaseClass"		"item_datadriven"
+	"AbilityManaCost"		"0"
+	"ItemShareability"		"ITEM_NOT_SHAREABLE"
+	"ItemSellable"		"0"
+	"ItemKillable"		"0"
+	"ItemPurchasable"		"0"
+	"ItemDroppable"		"0"
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"TARGET"		"CASTER"
+			"ScriptFile"		"mechanics/upgrades.lua"
+			"Function"		"UpgradeTower"
+			"tower"		"enchantment_tower_3"
+		}
+	}
+	"AbilityTextureName"		"item_enchantment"
+	"Requirements"
+	{
+		"earth"		"3"
+		"light"		"3"
+		"nature"	"3"
+	}
+    "ItemBaseLevel" "3"
+    "AbilitySpecial"
+	{
+        "01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"base_damage_amp"		"5 15"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"max_damage_amp"		"13 39"
+		}
+    }
+    "AbilityCastRange"              "900"
+}

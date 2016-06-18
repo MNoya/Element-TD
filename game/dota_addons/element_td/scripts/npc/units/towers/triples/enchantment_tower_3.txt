@@ -1,4 +1,4 @@
-"enchantment_tower_2"
+"enchantment_tower_3"
 {
     "BaseClass"        "npc_dota_creature"
     "SoundSet"              "Hero_Oracle"
@@ -23,7 +23,7 @@
     "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
     "MovementSpeed"        "0"
     "MovementTurnRate"        "1.0"
-    "StatusHealth"        "4500"
+    "StatusHealth"        "13000"
     "StatusHealthRegen"        "0"
     "StatusMana"        "0"
     "StatusManaRegen"        "0"
@@ -33,9 +33,9 @@
     "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
     "VisionDaytimeRange"        "1900"
     "VisionNighttimeRange"        "1900"
-    "Level"        "2"
-    "Cost"        "3500"
-    "TotalCost"        "5000"
+    "Level"        "3"
+    "Cost"        "8000"
+    "TotalCost"        "13000"
     "Element"
     {
         "1"        "earth"
@@ -77,14 +77,12 @@
     "BuildTime"        "3"
     "Requirements"
     {
-        "earth"        "2"
-        "light"        "2"
-        "nature"        "2"
+        "earth"        "3"
+        "light"        "3"
+        "nature"        "3"
     }
     "Upgrades"
     {
-        "Count"        "1"
-        "1"        "enchantment_tower_3"
     }
 
     // Building Size
