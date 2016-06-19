@@ -84,6 +84,10 @@
 		{
 			"IsHidden" "1"
 		}
+		"modifier_gaias_wrath_slow3"
+		{
+			"IsHidden" "1"
+		}
 
 		"modifier_gaias_wrath_damage"
 		{

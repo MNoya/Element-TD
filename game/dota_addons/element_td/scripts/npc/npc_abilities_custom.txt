@@ -4087,6 +4087,10 @@
 			{
 				"IsHidden" "1"
 			}
+			"modifier_sludge_slow3"
+			{
+				"IsHidden" "1"
+			}
 		}
 	
 		"AbilitySpecial"
@@ -4104,7 +4108,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30"
+				"slow"					"-10 -30 -70"
 			}
 		}
 	}
@@ -4231,6 +4235,10 @@
 				"IsHidden" "1"
 			}
 			"modifier_explode_slow2"
+			{
+				"IsHidden" "1"
+			}
+			"modifier_explode_slow3"
 			{
 				"IsHidden" "1"
 			}
@@ -4646,6 +4654,10 @@
 				"IsHidden" "1"
 			}
 			"modifier_gaias_wrath_slow2"
+			{
+				"IsHidden" "1"
+			}
+			"modifier_gaias_wrath_slow3"
 			{
 				"IsHidden" "1"
 			}
@@ -5186,7 +5198,7 @@
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"towers/windstorm"
-		"MaxLevel"						"2"
+		"MaxLevel"						"3"
 	
 		"Modifiers"
 		{
@@ -5244,23 +5256,27 @@
 			{
 				"IsHidden" "1"
 			}
+			"modifier_tornado_slow3"
+			{
+				"IsHidden" "1"
+			}
 		}
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30"
+				"slow"					"-10 -30 -70"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"500"
+				"radius"				"600"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"200 1000"
+				"damage"				"450 2250 9000"
 			}
 		}
 	}

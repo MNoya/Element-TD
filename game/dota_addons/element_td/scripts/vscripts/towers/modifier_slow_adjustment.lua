@@ -36,8 +36,11 @@ function modifier_slow_adjustment:GetModifierMoveSpeed_Absolute()
         -- Each slow modifier has a 1/2 version to detect it in clientside. It's ugly but works
         local hasModifier1 = unit:HasModifier(name.."1")
         local hasModifier2 = unit:HasModifier(name.."2")
+        local hasModifier3 = unit:HasModifier(name.."3")
 
-        if hasModifier2 then
+        if hasModifier3 then
+            table.insert(slows, SLOWING_VALUES[3])
+        elseif hasModifier2 then
             table.insert(slows, SLOWING_VALUES[2])
         elseif hasModifier1 then
             table.insert(slows, SLOWING_VALUES[1])

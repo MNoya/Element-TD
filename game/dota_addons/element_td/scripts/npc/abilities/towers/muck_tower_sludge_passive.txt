@@ -88,6 +88,10 @@
 		{
 			"IsHidden" "1"
 		}
+		"modifier_sludge_slow3"
+		{
+			"IsHidden" "1"
+		}
 	}
 
 	"AbilitySpecial"
@@ -105,7 +109,7 @@
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"slow"					"-10 -30"
+			"slow"					"-10 -30 -70"
 		}
 	}
 }
