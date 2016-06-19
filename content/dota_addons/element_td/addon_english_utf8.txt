@@ -898,6 +898,8 @@
         "DOTA_Tooltip_ability_item_upgrade_to_water_cannon_tower_Description"       "Upgrades this tower to a Water Cannon Tower. Can also manually attack the ground.\n\nCOST: <font color='#F0BA36'>80 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font>\nDAMAGE TYPE: <font color='#01A2FF'>Water</font> \nDAMAGE: <font color='#FFFFFF'>135</font> \nRANGE: <font color='#FFFFFF'>700</font> \nSPEED: <font color='#FFFFFF'>Slow</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
         "DOTA_Tooltip_ability_item_upgrade_to_water_cannon_tower_disabled_Description"       "Upgrades this tower to a Water Cannon Tower. Can also manually attack the ground.\n<font color='#F0BA36'>Requires: </font><font color='#01A2FF'>Water</font>\n\nCOST: <font color='#F0BA36'>80 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font>\nDAMAGE TYPE: <font color='#01A2FF'>Water</font> \nDAMAGE: <font color='#FFFFFF'>135</font> \nRANGE: <font color='#FFFFFF'>700</font> \nSPEED: <font color='#FFFFFF'>Slow</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
 
+
+
         "DOTA_Tooltip_ability_item_upgrade_to_focused_water_tower"      "Water 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_water_tower_disabled"     "Water 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_water_tower_Description"      "Levels up this tower to a Water 2 Tower.\n\nCOST: <font color='#F0BA36'>575 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font>\nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>420</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nAOE: <font color='#FFFFFF'>200 Full</font>\nABILITY: Causes a focused attack that deals full damage in a small area."
@@ -911,19 +913,24 @@
         "DOTA_Tooltip_ability_item_upgrade_to_pure_water_tower"                           "Upgrade To Pure Water Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_pure_water_tower_Description"               "Levels up this tower to a Pure Water Tower.\n\nCOST: <font color='#F0BA36'>10000 Gold</font> and <font color='#00BFFF'>1 Pure Essence</font>\nELEMENT: <font color='#01A2FF'>Water</font>\nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>30000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nAOE: <font color='#FFFFFF'>200 Full</font>\nABILITY: Causes a focused attack that deals full damage in a small area."
 
+
+
         // Vapor (Water + Fire)
         "DOTA_Tooltip_ability_item_upgrade_to_vapor_tower"      "Vapor Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_vapor_tower_disabled"     "Vapor Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_vapor_tower_Description"      "Upgrades this tower to a Vapor Tower.\n\nCOST: <font color='#F0BA36'>425 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#C40000'>Fire</font>\nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Slow</font>\nABILITY: Each attack deals damage to creeps near the tower, also creating aftershocks for each creep hit."
         "DOTA_Tooltip_ability_item_upgrade_to_vapor_tower_disabled_Description"     "Upgrades this tower to a Vapor Tower.\n<font color='#F0BA36'>Requires: </font><font color='#01A2FF'>Water</font> + <font color='#C40000'>Fire</font> \n\nCOST: <font color='#F0BA36'>425 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#C40000'>Fire</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Slow</font>\nABILITY: Each attack deals minor damage to creeps near the tower, also creating aftershocks for each creep hit."
+
         "DOTA_Tooltip_ability_item_upgrade_to_vapor_tower_2"        "Mist Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_vapor_tower_2_disabled"       "Mist Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_vapor_tower_2_Description"     "Levels up this tower to a Mist Tower.\n\nCOST: <font color='#F0BA36'>1150 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#C40000'>Fire</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Slow</font>\nABILITY: Each attack deals damage to creeps near the tower, also creating aftershocks for each creep hit."
         "DOTA_Tooltip_ability_item_upgrade_to_vapor_tower_2_disabled_Description"        "Levels up this tower to a Mist Tower.\n<font color='#F0BA36'>Requires: </font><font color='#01A2FF'>Water 2</font> + <font color='#C40000'>Fire 2</font> \n\nCOST: <font color='#F0BA36'>1150 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#C40000'>Fire</font>\nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Slow</font>\nABILITY: Each attack deals minor damage to creeps near the tower, also creating aftershocks for each creep hit."
+
         "DOTA_Tooltip_ability_item_upgrade_to_vapor_tower_3"        "Steam Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_vapor_tower_3_disabled"       "Steam Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_vapor_tower_3_Description"     "Levels up this tower to a Steam Tower.\n\nCOST: <font color='#F0BA36'>2500 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#C40000'>Fire</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Slow</font>\nABILITY: Each attack deals damage to creeps near the tower, also creating aftershocks for each creep hit."
         "DOTA_Tooltip_ability_item_upgrade_to_vapor_tower_3_disabled_Description"        "Levels up this tower to a to a Steam Tower.\n<font color='#F0BA36'>Requires: </font><font color='#01A2FF'>Water 3</font> + <font color='#C40000'>Fire 3</font> \n\nCOST: <font color='#F0BA36'>2500 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#C40000'>Fire</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Slow</font>\nABILITY: Each attack deals minor damage to creeps near the tower, also creating aftershocks for each creep hit."
+
         "DOTA_Tooltip_ability_item_upgrade_to_vapor_tower_damage"                         "DAMAGE:"
         "DOTA_Tooltip_ability_item_upgrade_to_vapor_tower_aftershock_damage"              "AFTERSHOCK DAMAGE:"
         "DOTA_Tooltip_ability_item_upgrade_to_vapor_tower_2_damage"                       "DAMAGE:"
@@ -937,19 +944,24 @@
         "DOTA_Tooltip_ability_item_upgrade_to_vapor_tower_disabled_damage"                "DAMAGE:"
         "DOTA_Tooltip_ability_item_upgrade_to_vapor_tower_disabled_aftershock_damage"     "AFTERSHOCK DAMAGE:"
 
+
+
         // Well (Water + Nature)
         "DOTA_Tooltip_ability_item_upgrade_to_well_tower"       "Well Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_well_tower_disabled"      "Well Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_well_tower_Description"       "Upgrades this tower to a Well Tower.\n\nCOST: <font color='#F0BA36'>425 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#00C400'>Nature</font>\nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>700</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Increases a tower's attack speed for a duration."
         "DOTA_Tooltip_ability_item_upgrade_to_well_tower_disabled_Description"      "Upgrades this tower to a Well Tower.\n<font color='#F0BA36'>Requires: </font><font color='#01A2FF'>Water</font> + <font color='#00C400'>Nature</font> \n\nCOST: <font color='#F0BA36'>425 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>700</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Increases a tower's attack speed for a duration."
+
         "DOTA_Tooltip_ability_item_upgrade_to_well_tower_2"     "Well 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_well_tower_2_disabled"        "Well 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_well_tower_2_Description"     "Levels up this tower to a Well 2 Tower.\n\nCOST: <font color='#F0BA36'>1150 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>3500</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Increases a tower's attack speed for a duration."
         "DOTA_Tooltip_ability_item_upgrade_to_well_tower_2_disabled_Description"        "Levels up this tower to a Well 2 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#00C400'>Nature 2</font> + <font color='#01A2FF'>Water 2</font> \n\nCOST: <font color='#F0BA36'>1150 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>3500</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Increases a tower's attack speed for a duration."
+
         "DOTA_Tooltip_ability_item_upgrade_to_well_tower_3"     "Well 3 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_well_tower_3_disabled"        "Well 3 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_well_tower_3_Description"     "Levels up this tower to a Well 3 Tower.\n\nCOST: <font color='#F0BA36'>4250 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>17500</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Increases a tower's attack speed for a duration."
         "DOTA_Tooltip_ability_item_upgrade_to_well_tower_3_disabled_Description"        "Levels up this tower to a to a Well 3 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#00C400'>Nature 3</font> + <font color='#01A2FF'>Water 3</font> \n\nCOST: <font color='#F0BA36'>4250 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>17500</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Increases a tower's attack speed for a duration."
+
         "DOTA_Tooltip_ability_item_upgrade_to_well_tower_attack_speed"                    "%BONUS ATTACK SPEED:"
         "DOTA_Tooltip_ability_item_upgrade_to_well_tower_2_attack_speed"                  "%BONUS ATTACK SPEED:"
         "DOTA_Tooltip_ability_item_upgrade_to_well_tower_2_disabled_attack_speed"         "%BONUS ATTACK SPEED:"
@@ -957,29 +969,44 @@
         "DOTA_Tooltip_ability_item_upgrade_to_well_tower_3_disabled_attack_speed"         "%BONUS ATTACK SPEED:"
         "DOTA_Tooltip_ability_item_upgrade_to_well_tower_disabled_attack_speed"           "%BONUS ATTACK SPEED:"
 
+
+
         // Flooding (Water + Dark + Nature)
         "DOTA_Tooltip_ability_item_upgrade_to_flooding_tower"       "Flooding Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_flooding_tower_disabled"      "Flooding Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_flooding_tower_Description"       "Upgrades this tower to a Flooding Tower.\n\nCOST: <font color='#F0BA36'>900 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#6C05B1'>Dark</font> + <font color='#00C400'>Nature</font>\nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Each attack causes a flood of water that causes constant damage over time to any creeps that pass over it."
         "DOTA_Tooltip_ability_item_upgrade_to_flooding_tower_disabled_Description"      "Upgrades this tower to a Flooding Tower.\n<font color='#F0BA36'>Requires: </font><font color='#01A2FF'>Water</font> + <font color='#6C05B1'>Dark</font> + <font color='#00C400'>Nature</font> \n\nCOST: <font color='#F0BA36'>900 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#6C05B1'>Dark</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Each attack causes a flood of water that causes constant damage over time to any creeps that pass over it."
+
         "DOTA_Tooltip_ability_item_upgrade_to_flooding_tower_2"     "Flooding 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_flooding_tower_2_disabled"        "Flooding 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_flooding_tower_2_Description"     "Levels up this tower to a Flooding 2 Tower.\n\nCOST: <font color='#F0BA36'>3500 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#6C05B1'>Dark</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Each attack causes a flood of water that causes constant damage over time to any creeps that pass over it."
         "DOTA_Tooltip_ability_item_upgrade_to_flooding_tower_2_disabled_Description"        "Levels up this tower to a Flooding 2 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#01A2FF'>Water 2</font> + <font color='#6C05B1'>Dark 2</font> + <font color='#00C400'>Nature 2</font> \n\nCOST: <font color='#F0BA36'>3500 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#6C05B1'>Dark</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Each attack causes a flood of water that causes constant damage over time to any creeps that pass over it."
+
+        "DOTA_Tooltip_ability_item_upgrade_to_flooding_tower_3"     "Flooding 3 Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_flooding_tower_3_disabled"        "Flooding 3 Tower"
+        "DOTA_Tooltip_ability_item_upgrade_to_flooding_tower_3_Description"     "Levels up this tower to a Flooding 3 Tower.\n\nCOST: <font color='#F0BA36'>8000 Gold</font> and <font color='#00BFFF'>1 Pure Essence</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#6C05B1'>Dark</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Each attack causes a flood of water that causes constant damage over time to any creeps that pass over it."
+        "DOTA_Tooltip_ability_item_upgrade_to_flooding_tower_3_disabled_Description"        "Levels up this tower to a Flooding 3 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#01A2FF'>Water 3</font> + <font color='#6C05B1'>Dark 3</font> + <font color='#00C400'>Nature 3</font> \n\nCOST: <font color='#F0BA36'>8000 Gold</font> and <font color='#00BFFF'>1 Pure Essence</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#6C05B1'>Dark</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Each attack causes a flood of water that causes constant damage over time to any creeps that pass over it."
+
         "DOTA_Tooltip_ability_item_upgrade_to_flooding_tower_splash_damage"               "SPLASH DAMAGE:"
         "DOTA_Tooltip_ability_item_upgrade_to_flooding_tower_2_splash_damage"             "SPLASH DAMAGE:"
         "DOTA_Tooltip_ability_item_upgrade_to_flooding_tower_2_disabled_splash_damage"    "SPLASH DAMAGE:"
+        "DOTA_Tooltip_ability_item_upgrade_to_flooding_tower_3_splash_damage"             "SPLASH DAMAGE:"
+        "DOTA_Tooltip_ability_item_upgrade_to_flooding_tower_3_disabled_splash_damage"    "SPLASH DAMAGE:"
         "DOTA_Tooltip_ability_item_upgrade_to_flooding_tower_disabled_splash_damage"      "SPLASH DAMAGE:"
+
+
 
         // Polar (Water + Light + Earth)
         "DOTA_Tooltip_ability_item_upgrade_to_polar_tower"      "Polar Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_polar_tower_disabled"     "Polar Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_polar_tower_Description"      "Upgrades this tower to a Polar Tower.\n\nCOST: <font color='#F0BA36'>900 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#E6E600'>Light</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>1800</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>\nABILITY: Autocast ability that temporarily burns away a portion of the target's current health. At the end of the duration, that portion will return."
         "DOTA_Tooltip_ability_item_upgrade_to_polar_tower_disabled_Description"     "Upgrades this tower to a Polar Tower.\n<font color='#F0BA36'>Requires: </font><font color='#01A2FF'>Water</font> + <font color='#E6E600'>Light</font> + <font color='#D4880F'>Earth</font> \n\nCOST: <font color='#F0BA36'>900 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#E6E600'>Light</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>1800</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>\nABILITY: Autocast ability that temporarily burns away a portion of the target's current health. At the end of the duration, that portion will return."
+
         "DOTA_Tooltip_ability_item_upgrade_to_polar_tower_2"        "Polar 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_polar_tower_2_disabled"       "Polar 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_polar_tower_2_Description"     "Levels up this tower to a Polar 2 Tower.\n\nCOST: <font color='#F0BA36'>3500 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#E6E600'>Light</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>9000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>\nABILITY: Autocast ability that temporarily burns away a portion of the target's current health. At the end of the duration, that portion will return."
         "DOTA_Tooltip_ability_item_upgrade_to_polar_tower_2_disabled_Description"        "Levels up this tower to a Polar 2 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#01A2FF'>Water 2</font> + <font color='#E6E600'>Light 2</font> + <font color='#D4880F'>Earth 2</font> \n\nCOST: <font color='#F0BA36'>3500 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#E6E600'>Light</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>9000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>\nABILITY: Autocast ability that temporarily burns away a portion of the target's current health. At the end of the duration, that portion will return."
+
         "DOTA_Tooltip_ability_item_upgrade_to_polar_tower_health_burn"                    "%HEALTH BURN:"
         "DOTA_Tooltip_ability_item_upgrade_to_polar_tower_damage_taken_pcnt"              "%DAMAGE NOT RETURNED:"
         "DOTA_Tooltip_ability_item_upgrade_to_polar_tower_2_health_burn"                  "%HEALTH BURN:"
@@ -989,15 +1016,19 @@
         "DOTA_Tooltip_ability_item_upgrade_to_polar_tower_disabled_health_burn"           "%HEALTH BURN:"
         "DOTA_Tooltip_ability_item_upgrade_to_polar_tower_disabled_damage_taken_pcnt"     "%DAMAGE NOT RETURNED:"
 
+
+
         // Windstorm (Water + Fire + Light)
         "DOTA_Tooltip_ability_item_upgrade_to_windstorm_tower"      "Windstorm Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_windstorm_tower_disabled"     "Windstorm Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_windstorm_tower_Description"      "Upgrades this tower to a Windstorm Tower.\n\nCOST: <font color='#F0BA36'>900 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#C40000'>Fire</font> + <font color='#E6E600'>Light</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>1150</font>\nSPEED: <font color='#FFFFFF'>Extremely Slow</font>\nABILITY: Summons a large tornado that damages and slows creeps."
         "DOTA_Tooltip_ability_item_upgrade_to_windstorm_tower_disabled_Description"     "Upgrades this tower to a Windstorm Tower.\n<font color='#F0BA36'>Requires: </font><font color='#01A2FF'>Water</font> + <font color='#C40000'>Fire</font> + <font color='#E6E600'>Light</font> \n\nCOST: <font color='#F0BA36'>900 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#C40000'>Fire</font> + <font color='#E6E600'>Light</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>1150</font>\nSPEED: <font color='#FFFFFF'>Extremely Slow</font>\nABILITY: Summons a large tornado that damages and slows creeps."
+
         "DOTA_Tooltip_ability_item_upgrade_to_windstorm_tower_2"        "Windstorm 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_windstorm_tower_2_disabled"       "Windstorm 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_windstorm_tower_2_Description"     "Levels up this tower to a Windstorm 2 Tower.\n\nCOST: <font color='#F0BA36'>3500 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#C40000'>Fire</font> + <font color='#E6E600'>Light</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>1150</font>\nSPEED: <font color='#FFFFFF'>Extremely Slow</font>\nABILITY: Summons a large tornado that damages and slows creeps."
         "DOTA_Tooltip_ability_item_upgrade_to_windstorm_tower_2_disabled_Description"        "Levels up this tower to a Windstorm 2 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#01A2FF'>Water 2 </font> + <font color='#C40000'>Fire 2</font> + <font color='#E6E600'>Light 2</font> \n\nCOST: <font color='#F0BA36'>3500 Gold</font>\nELEMENT: <font color='#01A2FF'>Water</font> + <font color='#C40000'>Fire</font> + <font color='#E6E600'>Light</font> \nDAMAGE TYPE: <font color='#01A2FF'>Water</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>1150</font>\nSPEED: <font color='#FFFFFF'>Extremely Slow</font>\nABILITY: Summons a large tornado that damages and slows creeps."
+
         "DOTA_Tooltip_ability_item_upgrade_to_windstorm_tower_slow"                       "%MOVEMENT SLOW:"
         "DOTA_Tooltip_ability_item_upgrade_to_windstorm_tower_damage"                     "DAMAGE PER SECOND:"
         "DOTA_Tooltip_ability_item_upgrade_to_windstorm_tower_2_slow"                     "%MOVEMENT SLOW:"
@@ -1006,6 +1037,8 @@
         "DOTA_Tooltip_ability_item_upgrade_to_windstorm_tower_2_disabled_damage"          "DAMAGE PER SECOND:"
         "DOTA_Tooltip_ability_item_upgrade_to_windstorm_tower_disabled_slow"              "%MOVEMENT SLOW:"
         "DOTA_Tooltip_ability_item_upgrade_to_windstorm_tower_disabled_damage"            "DAMAGE PER SECOND:"
+
+
 
         // Tidal (Water + Nature + Light)
         "DOTA_Tooltip_ability_item_upgrade_to_tidal_tower"        "Tidal Tower"
@@ -1021,6 +1054,7 @@
         "DOTA_Tooltip_ability_item_upgrade_to_tidal_tower_2_disabled_damage"              "DAMAGE PER STACK:"
         "DOTA_Tooltip_ability_item_upgrade_to_tidal_tower_disabled_damage"                "DAMAGE PER STACK:"
 
+
         //////////
         // Fire //
         //////////
@@ -1033,6 +1067,8 @@
         "DOTA_Tooltip_ability_item_upgrade_to_fire_cannon_tower_Disabled"          "Fire Cannon Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_fire_cannon_tower_Description"       "Upgrades this tower to a Fire Cannon Tower. Can also manually attack the ground.\n\nCOST: <font color='#F0BA36'>80 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font>\nDAMAGE TYPE: <font color='#C40000'>Fire</font> \nDAMAGE: <font color='#FFFFFF'>135</font> \nRANGE: <font color='#FFFFFF'>700</font> \nSPEED: <font color='#FFFFFF'>Slow</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
         "DOTA_Tooltip_ability_item_upgrade_to_fire_cannon_tower_disabled_Description"       "Upgrades this tower to a Fire Cannon Tower. Can also manually attack the ground.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire</font>\n\nCOST: <font color='#F0BA36'>80 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font>\nDAMAGE TYPE: <font color='#C40000'>Fire</font> \nDAMAGE: <font color='#FFFFFF'>135</font> \nRANGE: <font color='#FFFFFF'>700</font> \nSPEED: <font color='#FFFFFF'>Slow</font> \nAOE: <font color='#FFFFFF'>100 Full/200 Half</font>"
+
+
 
         "DOTA_Tooltip_ability_item_upgrade_to_focused_fire_tower"       "Fire 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_fire_tower_disabled"      "Fire 2 Tower"
@@ -1047,19 +1083,24 @@
         "DOTA_Tooltip_ability_item_upgrade_to_pure_fire_tower"                            "Upgrade To Pure Fire Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_pure_fire_tower_Description"                "Levels up this tower to a Pure Fire Tower.\n\nCOST: <font color='#F0BA36'>10000 Gold</font> and <font color='#00BFFF'>1 Pure Essence</font>\nELEMENT: <font color='#C40000'>Fire</font>\nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>9800</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Very Fast</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Each attack applies a single-target DoT debuff on the primary target that can stack infinitely."
 
+
+
         // Blacksmith (Fire + Earth)
         "DOTA_Tooltip_ability_item_upgrade_to_blacksmith_tower"     "Blacksmith Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_blacksmith_tower_disabled"        "Blacksmith Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_blacksmith_tower_Description"     "Upgrades this tower to a Blacksmith Tower.\n\nCOST: <font color='#F0BA36'>425 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>700</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Increases a tower's attack and ability damage by a percentage for 60 seconds."
         "DOTA_Tooltip_ability_item_upgrade_to_blacksmith_tower_disabled_Description"        "Upgrades this tower to a Blacksmith Tower.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire</font> + <font color='#D4880F'>Earth</font> \n\nCOST: <font color='#F0BA36'>425 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>700</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Increases a tower's attack and ability damage by a percentage for 60 seconds."
+
         "DOTA_Tooltip_ability_item_upgrade_to_blacksmith_tower_2"       "Blacksmith 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_blacksmith_tower_2_disabled"      "Blacksmith 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_blacksmith_tower_2_Description"     "Levels up this tower to a Blacksmith 2 Tower.\n\nCOST: <font color='#F0BA36'>1150 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>3500</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Increases a tower's attack and ability damage by a percentage for 60 seconds."
         "DOTA_Tooltip_ability_item_upgrade_to_blacksmith_tower_2_disabled_Description"        "Levels up this tower to a Blacksmith 2 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire 2</font> + <font color='#D4880F'>Earth 2</font> \n\nCOST: <font color='#F0BA36'>1150 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>3500</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Increases a tower's attack and ability damage by a percentage for 60 seconds."
+
         "DOTA_Tooltip_ability_item_upgrade_to_blacksmith_tower_3"       "Blacksmith 3 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_blacksmith_tower_3_disabled"      "Blacksmith 3 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_blacksmith_tower_3_Description"     "Levels up this tower to a Blacksmith 3 Tower.\n\nCOST: <font color='#F0BA36'>4250 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>17500</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Increases a tower's attack and ability damage by a percentage for 60 seconds."
         "DOTA_Tooltip_ability_item_upgrade_to_blacksmith_tower_3_disabled_Description"        "Levels up this tower to a Blacksmith 3 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire 3</font> + <font color='#D4880F'>Earth 3</font> \n\nCOST: <font color='#F0BA36'>4250 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>17500</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Increases a tower's attack and ability damage by a percentage for 60 seconds."
+
         "DOTA_Tooltip_ability_item_upgrade_to_blacksmith_tower_damage"                    "%BONUS DAMAGE:"
         "DOTA_Tooltip_ability_item_upgrade_to_blacksmith_tower_2_damage"                  "%BONUS DAMAGE:"
         "DOTA_Tooltip_ability_item_upgrade_to_blacksmith_tower_2_disabled_damage"         "%BONUS DAMAGE:"
@@ -1067,19 +1108,24 @@
         "DOTA_Tooltip_ability_item_upgrade_to_blacksmith_tower_3_disabled_damage"         "%BONUS DAMAGE:"
         "DOTA_Tooltip_ability_item_upgrade_to_blacksmith_tower_disabled_damage"           "%BONUS DAMAGE:"
 
+
+
         // Electricity (Fire + Light)
         "DOTA_Tooltip_ability_item_upgrade_to_electricity_tower"        "Electricity Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_electricity_tower_disabled"       "Electricity Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_electricity_tower_Description"        "Upgrades this tower to an Electricity Tower.\n\nCOST: <font color='#F0BA36'>425 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#E6E600'>Light</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Slow</font>\nABILITY: Each attack is a chain of lightning that jumps from creep to creep dealing damage."
-        "DOTA_Tooltip_ability_item_upgrade_to_electricity_tower_disabled_Description"       "Upgrades this tower to an Electricity Tower.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire</font> + <font color='#E6E600'>Light</font> \n\nCOST: <font color='#F0BA36'>425 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#E6E600'>Light</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Slow</font>\nABILITY: Each attack is a chain of lightning that jumps from creep to creep dealing damage."        
+        "DOTA_Tooltip_ability_item_upgrade_to_electricity_tower_disabled_Description"       "Upgrades this tower to an Electricity Tower.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire</font> + <font color='#E6E600'>Light</font> \n\nCOST: <font color='#F0BA36'>425 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#E6E600'>Light</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Slow</font>\nABILITY: Each attack is a chain of lightning that jumps from creep to creep dealing damage."
+
         "DOTA_Tooltip_ability_item_upgrade_to_electricity_tower_2"      "Electricity 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_electricity_tower_2_disabled"     "Electricity 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_electricity_tower_2_Description"     "Levels up this tower to a Electricity 2 Tower.\n\nCOST: <font color='#F0BA36'>1150 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#E6E600'>Light</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Slow</font>\nABILITY: Each attack is a chain of lightning that jumps from creep to creep dealing damage."
         "DOTA_Tooltip_ability_item_upgrade_to_electricity_tower_2_disabled_Description"        "Levels up this tower to a Electricity 2 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire 2</font> + <font color='#E6E600'>Light 2</font> \n\nCOST: <font color='#F0BA36'>1150 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#E6E600'>Light</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Slow</font>\nABILITY: Each attack is a chain of lightning that jumps from creep to creep dealing damage."
+
         "DOTA_Tooltip_ability_item_upgrade_to_electricity_tower_3"      "Electricity 3 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_electricity_tower_3_disabled"     "Electricity 3 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_electricity_tower_3_Description"     "Levels up this tower to an Electricity 3 Tower.\n\nCOST: <font color='#F0BA36'>2500 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#E6E600'>Light</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Slow</font>\nABILITY: Each attack is a chain of lightning that jumps from creep to creep dealing damage."
         "DOTA_Tooltip_ability_item_upgrade_to_electricity_tower_3_disabled_Description"        "Levels up this tower to a to an Electricity 3 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire 3</font> + <font color='#E6E600'>Light 3</font> \n\nCOST: <font color='#F0BA36'>2500 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#E6E600'>Light</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Slow</font>\nABILITY: Each attack is a chain of lightning that jumps from creep to creep dealing damage."
+
         "DOTA_Tooltip_ability_item_upgrade_to_electricity_tower_damage"                   "DAMAGE:"
         "DOTA_Tooltip_ability_item_upgrade_to_electricity_tower_2_damage"                 "DAMAGE:"
         "DOTA_Tooltip_ability_item_upgrade_to_electricity_tower_2_disabled_damage"        "DAMAGE:"
@@ -1087,19 +1133,24 @@
         "DOTA_Tooltip_ability_item_upgrade_to_electricity_tower_3_disabled_damage"        "DAMAGE:"
         "DOTA_Tooltip_ability_item_upgrade_to_electricity_tower_disabled_damage"          "DAMAGE:"
 
+
+
         // Flame (Fire + Nature)
         "DOTA_Tooltip_ability_item_upgrade_to_flame_tower"              "Flame Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_flame_tower_disabled"     "Flame Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_flame_tower_Description"      "Upgrades this tower to a Flame Tower.\n\nCOST: <font color='#F0BA36'>425 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>50</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Each attack applies a burn to the target which causes it to do damage in an AOE around it."
         "DOTA_Tooltip_ability_item_upgrade_to_flame_tower_disabled_Description"     "Upgrades this tower to a Flame Tower.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \n\nCOST: <font color='#F0BA36'>425 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>50</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Each attack applies a burn to the target which causes it to do damage in an AOE around it."
+
         "DOTA_Tooltip_ability_item_upgrade_to_flame_tower_2"            "Flame 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_flame_tower_2_disabled"   "Flame 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_flame_tower_2_Description"     "Levels up this tower to a Flame 2 Tower.\n\nCOST: <font color='#F0BA36'>1150 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>250</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Each attack applies a burn to the target which causes it to do damage in an AOE around it."
         "DOTA_Tooltip_ability_item_upgrade_to_flame_tower_2_disabled_Description"        "Levels up this tower to a Flame 2 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire 2</font> + <font color='#00C400'>Nature 2</font> \n\nCOST: <font color='#F0BA36'>1150 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>250</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Each attack applies a burn to the target which causes it to do damage in an AOE around it."
+
         "DOTA_Tooltip_ability_item_upgrade_to_flame_tower_3"            "Flame 3 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_flame_tower_3_disabled"   "Flame 3 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_flame_tower_3_Description"     "Levels up this tower to a Flame 3 Tower.\n\nCOST: <font color='#F0BA36'>2500 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>1250</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Each attack applies a burn to the target which causes it to do damage in an AOE around it."
         "DOTA_Tooltip_ability_item_upgrade_to_flame_tower_3_disabled_Description"        "Levels up this tower to a to a Flame 3 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire 3</font> + <font color='#00C400'>Nature 3</font> \n\nCOST: <font color='#F0BA36'>2500 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>1250</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Each attack applies a burn to the target which causes it to do damage in an AOE around it."
+
         "DOTA_Tooltip_ability_item_upgrade_to_flame_tower_damage"                         "DAMAGE:"
         "DOTA_Tooltip_ability_item_upgrade_to_flame_tower_2_damage"                       "DAMAGE:"
         "DOTA_Tooltip_ability_item_upgrade_to_flame_tower_2_disabled_damage"              "DAMAGE:"
@@ -1107,15 +1158,19 @@
         "DOTA_Tooltip_ability_item_upgrade_to_flame_tower_3_disabled_damage"              "DAMAGE:"
         "DOTA_Tooltip_ability_item_upgrade_to_flame_tower_disabled_damage"                "DAMAGE:"
 
+
+
         // Corrosion (Fire + Dark + Water)
         "DOTA_Tooltip_ability_item_upgrade_to_erosion_tower"        "Corrosion Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_erosion_tower_disabled"       "Corrosion Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_erosion_tower_Description"        "Upgrades this tower to a Corrosion Tower.\n\nCOST: <font color='#F0BA36'>900 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#6C05B1'>Dark</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nAOE: <font color='#FFFFFF'>400 Full</font>\nABILITY: Each attack applies a DoT debuff to all creeps around the target and amplifies the damage they take."
-        "DOTA_Tooltip_ability_item_upgrade_to_erosion_tower_disabled_Description"       "Upgrades this tower to a Corrosion Tower.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire</font> + <font color='#6C05B1'>Dark</font> + <font color='#01A2FF'>Water</font> \n\nCOST: <font color='#F0BA36'>900 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#6C05B1'>Dark</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nAOE: <font color='#FFFFFF'>400 Full</font>\nABILITY: Each attack applies a DoT debuff to all creeps around the target and amplifies the damage they take."    
+        "DOTA_Tooltip_ability_item_upgrade_to_erosion_tower_disabled_Description"       "Upgrades this tower to a Corrosion Tower.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire</font> + <font color='#6C05B1'>Dark</font> + <font color='#01A2FF'>Water</font> \n\nCOST: <font color='#F0BA36'>900 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#6C05B1'>Dark</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nAOE: <font color='#FFFFFF'>400 Full</font>\nABILITY: Each attack applies a DoT debuff to all creeps around the target and amplifies the damage they take."
+
         "DOTA_Tooltip_ability_item_upgrade_to_erosion_tower_2"      "Corrosion 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_erosion_tower_2_disabled"     "Corrosion 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_erosion_tower_2_Description"     "Levels up this tower to a Corrosion 2 Tower.\n\nCOST: <font color='#F0BA36'>3500 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#6C05B1'>Dark</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nAOE: <font color='#FFFFFF'>400 Full</font>\nABILITY: Each attack applies a DoT debuff to all creeps around the target and amplifies the damage they take."
         "DOTA_Tooltip_ability_item_upgrade_to_erosion_tower_2_disabled_Description"        "Levels up this tower to a Corrosion 2 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire 2</font> + <font color='#6C05B1'>Dark 2</font> + <font color='#01A2FF'>Water 2</font> \n\nCOST: <font color='#F0BA36'>3500 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#6C05B1'>Dark</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nAOE: <font color='#FFFFFF'>400 Full</font>\nABILITY: Each attack applies a DoT debuff to all creeps around the target and amplifies the damage they take."
+
         "DOTA_Tooltip_ability_item_upgrade_to_erosion_tower_damage_amp"                   "%DAMAGE AMPLIFICATION:"
         "DOTA_Tooltip_ability_item_upgrade_to_erosion_tower_dot"                          "DAMAGE PER SECOND:"
         "DOTA_Tooltip_ability_item_upgrade_to_erosion_tower_2_damage_amp"                 "%DAMAGE AMPLIFICATION:"
@@ -1125,29 +1180,38 @@
         "DOTA_Tooltip_ability_item_upgrade_to_erosion_tower_disabled_damage_amp"          "%DAMAGE AMPLIFICATION:"
         "DOTA_Tooltip_ability_item_upgrade_to_erosion_tower_disabled_dot"                 "DAMAGE PER SECOND:"
 
+
+
         // Haste (Fire + Earth + Water)
         "DOTA_Tooltip_ability_item_upgrade_to_haste_tower"      "Haste Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_haste_tower_disabled"     "Haste Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_haste_tower_Description"      "Upgrades this tower to a Haste Tower.\n\nCOST: <font color='#F0BA36'>900 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>1800</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Each attack increases attack speed. Stacks up to 16 times. Resets after 4 seconds of not attacking."
         "DOTA_Tooltip_ability_item_upgrade_to_haste_tower_disabled_Description"     "Upgrades this tower to a Haste Tower.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \n\nCOST: <font color='#F0BA36'>900 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>1800</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Each attack increases attack speed. Stacks up to 16 times. Resets after 4 seconds of not attacking."
+
         "DOTA_Tooltip_ability_item_upgrade_to_haste_tower_2"        "Haste 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_haste_tower_2_disabled"       "Haste 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_haste_tower_2_Description"     "Levels up this tower to a Haste 2 Tower.\n\nCOST: <font color='#F0BA36'>3500 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>9000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Each attack increases attack speed. Stacks up to 16 times. Resets after 4 seconds of not attacking."
         "DOTA_Tooltip_ability_item_upgrade_to_haste_tower_2_disabled_Description"        "Levels up this tower to a Haste 2 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire 2</font> + <font color='#D4880F'>Earth 2</font> + <font color='#01A2FF'>Water 2</font> \n\nCOST: <font color='#F0BA36'>3500 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>9000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Each attack increases attack speed. Stacks up to 16 times. Resets after 4 seconds of not attacking."
         
+
+
         // Flamethrower (Fire + Dark + Earth)
         "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower"       "Flamethrower Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_disabled"      "Flamethrower Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_Description"       "Upgrades this tower to a Flamethrower Tower.\n\nCOST: <font color='#F0BA36'>900 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#6C05B1'>Dark</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>360</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Each attack adds a stack of Napalm to creeps in an area around the target. Upon death, a Napalmed creep does damage in an area around it for each stack of napalm."
         "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_disabled_Description"      "Upgrades this tower to a Flamethrower Tower.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire</font> + <font color='#6C05B1'>Dark</font> + <font color='#D4880F'>Earth</font> \n\nCOST: <font color='#F0BA36'>900 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#6C05B1'>Dark</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>360</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Each attack adds a stack of Napalm to creeps in an area around the target. Upon death, a Napalmed creep does damage in an area around it for each stack of napalm."
+
         "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_2"     "Flamethrower 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_2_disabled"        "Flamethrower 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_2_Description"     "Levels up this tower to a Flamethrower 2 Tower.\n\nCOST: <font color='#F0BA36'>3500 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#6C05B1'>Dark</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>1800</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Each attack adds a stack of Napalm to creeps in an area around the target. Upon death, a Napalmed creep does damage in an area around it for each stack of napalm."
         "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_2_disabled_Description"        "Levels up this tower to a Flamethrower 2 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#C40000'>Fire 2</font> + <font color='#6C05B1'>Dark 2</font> + <font color='#D4880F'>Earth 2</font> \n\nCOST: <font color='#F0BA36'>3500 Gold</font>\nELEMENT: <font color='#C40000'>Fire</font> + <font color='#6C05B1'>Dark</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#C40000'>Fire</font>\nDAMAGE: <font color='#FFFFFF'>1800</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Each attack adds a stack of Napalm to creeps in an area around the target. Upon death, a Napalmed creep does damage in an area around it for each stack of napalm."
+
         "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_damage"                  "DAMAGE PER STACK:"
         "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_2_damage"                "DAMAGE PER STACK:"
         "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_2_disabled_damage"       "DAMAGE PER STACK:"
         "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_disabled_damage"         "DAMAGE PER STACK:"
+
+
 
         ////////////
         // Nature //
