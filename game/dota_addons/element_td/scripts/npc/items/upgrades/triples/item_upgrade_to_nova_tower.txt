@@ -35,12 +35,12 @@
         "01"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"damage"			"300 1500"
+			"damage"			"300 1500 6000"
 		}
         "02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"slow"					"-10 -30"
+			"slow"					"-10 -30 -70"
 		}
     }
     "AbilityCastRange"              "700"

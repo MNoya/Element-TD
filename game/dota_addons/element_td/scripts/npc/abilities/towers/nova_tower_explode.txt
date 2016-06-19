@@ -6,7 +6,7 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"BaseClass" 					"ability_datadriven"
 	"AbilityTextureName"            "towers/nova"
-	"MaxLevel"						"2"
+	"MaxLevel"						"3"
 
 	"Modifiers"
 	{
@@ -107,7 +107,7 @@
 		"01"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"damage"			"300 1500"
+			"damage"			"300 1500 6000"
 		}
 		"02"
 		{
@@ -122,7 +122,7 @@
 		"04"
 		{
 			"var_type"			"FIELD_FLOAT"
-			"slow"				"-10 -30"
+			"slow"				"-10 -30 -70"
 		}
 	}
 }

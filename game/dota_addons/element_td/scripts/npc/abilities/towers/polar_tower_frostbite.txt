@@ -11,7 +11,7 @@
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 	"AbilityCooldown"				"1"
 	"AbilityCastRange"				"900"
-	"MaxLevel"						"2"
+	"MaxLevel"						"3"
 	"AbilityTextureName"			"towers/polar"
 
 	"OnSpellStart"
@@ -55,7 +55,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"health_burn"			"10 27"
+			"health_burn"			"10 27 42"
 		}
 	}
 }

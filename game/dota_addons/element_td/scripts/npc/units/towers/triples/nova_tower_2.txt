@@ -64,6 +64,8 @@
     }
     "Upgrades"
     {
+        "Count"        "1"
+        "1"        "nova_tower_3"
     }
     "AttackDamageMin"        "0"
     "AttackDamageMax"        "0"

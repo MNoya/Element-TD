@@ -6,7 +6,7 @@
 	"BaseClass"						"ability_datadriven"											
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"towers/erosion"
-	"MaxLevel"						"2"
+	"MaxLevel"						"3"
 
 	"OnProjectileHitUnit"
 	{
@@ -96,12 +96,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_amp"			"11 33"
+			"damage_amp"			"11 33 66"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"dot"					"110 550"
+			"dot"					"110 550 2200"
 		}
 		"03"
 		{

@@ -77,6 +77,8 @@
     }
     "Upgrades"
     {
+        "Count"        "1"
+        "1"        "impulse_tower_3"
     }
     "AttackDamageMin"        "0"
     "AttackDamageMax"        "0"

@@ -85,6 +85,8 @@
     }
     "Upgrades"
     {
+        "Count"        "1"
+        "1"        "runic_tower_3"
     }
 
     // Building Size

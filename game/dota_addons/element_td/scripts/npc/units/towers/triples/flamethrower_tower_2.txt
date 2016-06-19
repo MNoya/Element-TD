@@ -84,6 +84,8 @@
     }
     "Upgrades"
     {
+        "Count"        "1"
+        "1"        "flamethrower_tower_3"
     }
 
     // Building Size

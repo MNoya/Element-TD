@@ -40,9 +40,9 @@
         "2"        "nature"
         "3"        "light"
     }
-    "Damage"        "500"
-    "AttackDamageMin"        "500"
-    "AttackDamageMax"        "500"
+    "Damage"        "600"
+    "AttackDamageMin"        "600"
+    "AttackDamageMax"        "600"
     "DamageType"        "water"
     "ScriptClass"        "TidalTower"
     "TowerType"        "Normal"

@@ -1,0 +1,88 @@
+"jinx_tower_3"
+{
+    "BaseClass"        "npc_dota_creature"
+    "MinimapIcon"        "minimap_tower90"
+    "MinimapIconSize"        "320"
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"        "0"
+    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"        "0"
+    "AttributeStrengthGain"        "0"
+    "AttributeBaseIntelligence"        "0"
+    "AttributeIntelligenceGain"        "0"
+    "AttributeBaseAgility"        "0"
+    "AttributeAgilityGain"        "0"
+    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+    "ProjectileCollisionSize"        "50"
+    "RingRadius"        "80"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"        "0"
+    "MovementTurnRate"        "1.0"
+    "StatusHealth"        "4500"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "TeamName"        "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"        "1900"
+    "Level"        "3"
+    "Cost"        "8000"
+    "TotalCost"        "13000"
+    "EssenceCost"               "1"
+    "Element"
+    {
+        "1"        "dark"
+        "2"        "fire"
+        "3"        "nature"
+    }
+    "Damage"        "70000"
+    "AttackDamageMin"        "70000"
+    "AttackDamageMax"        "70000"
+    "DamageType"        "dark"
+    "ScriptClass"        "JinxTower"
+    "TowerType"        "Normal"
+    "BuffPriority"          "4"
+    "HasAbilityDesc"        "1"
+    "AttackRange"        "900"
+    "AttackAcquisitionRange"        "900"
+    "AttackRate"        "1"
+    "ProjectileModel"        "particles/units/heroes/hero_witchdoctor/witchdoctor_ward_attack.vpcf"
+    "ProjectileSpeed"        "2000"
+    
+    "Model"             "models/heroes/witchdoctor/witchdoctor.vmdl"
+    "ModelScale"        "1.3"
+    "ModelRotation"     "90"
+    "ModelOffset"       "20"
+    "Creature"
+    {
+        "AttachWearables" // Twilight's Rest
+        {
+            "1" { "ItemDef" "7550" } // Cloak of Twilight's Rest
+            "2" { "ItemDef" "7551" } // Mantle of Twilight's Rest
+            "3" { "ItemDef" "7553" } // Mask of Twilight's Rest
+            "4" { "ItemDef" "7552" } // Scourge of Twilight's Rest
+            "5" { "ItemDef" "7554" } // Wrap of Twilight's Rest
+        }
+    }
+
+    "BuildTime"        "3"
+    "Requirements"
+    {
+        "dark"        "3"
+        "fire"        "3"
+        "nature"        "3"
+    }
+    "Upgrades"
+    {
+    }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
+}

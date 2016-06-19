@@ -82,6 +82,8 @@
     }
     "Upgrades"
     {
+        "Count"        "1"
+        "1"        "laser_tower_3"
     }
 
     // Building Size

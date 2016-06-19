@@ -4346,12 +4346,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"5 15"
+				"base_damage_amp"		"5 15 36"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"13 39"
+				"max_damage_amp"		"13 39 78"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4392,12 +4392,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"5 15"
+				"base_damage_amp"		"5 15 36"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"13 39"
+				"max_damage_amp"		"13 39 78"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4428,12 +4428,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"5 15"
+				"base_damage_amp"		"5 15 36"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"13 39"
+				"max_damage_amp"		"13 39 78"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4471,12 +4471,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"5 15"
+				"base_damage_amp"		"5 15 36"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"13 39"
+				"max_damage_amp"		"13 39 78"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4504,12 +4504,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"5 15"
+				"base_damage_amp"		"5 15 36"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"13 39"
+				"max_damage_amp"		"13 39 78"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4541,12 +4541,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"5 15"
+				"base_damage_amp"		"5 15 36"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"13 39"
+				"max_damage_amp"		"13 39 78"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4641,6 +4641,62 @@
 		"ItemBaseLevel" "2"
 		"AbilityCastRange"              "900"
 	}
+	"item_upgrade_to_ephemeral_tower_3"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"mechanics/upgrades.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"ephemeral_tower_3"
+			}
+		}
+		"AbilityTextureName"		"item_ephemeral"
+		"Requirements"
+		{
+			"earth"		"3"
+			"earth"		"3"
+			"nature"		"3"
+			"nature"		"3"
+			"water"		"3"
+			"water"		"3"
+		}
+		"ItemBaseLevel" "3"
+		"AbilityCastRange"              "900"
+	}
+	"item_upgrade_to_ephemeral_tower_3_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_ephemeral_disabled"
+		"Requirements"
+		{
+			"earth"		"3"
+			"earth"		"3"
+			"nature"		"3"
+			"nature"		"3"
+			"water"		"3"
+			"water"		"3"
+		}
+		"ItemBaseLevel" "3"
+		"AbilityCastRange"              "900"
+	}
 	"item_upgrade_to_ephemeral_tower_disabled"
 	{
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4702,12 +4758,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"11 33"
+				"damage_amp"			"11 33 66"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"110 550"
+				"dot"					"110 550 2200"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4748,12 +4804,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"11 33"
+				"damage_amp"			"11 33 66"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"110 550"
+				"dot"					"110 550 2200"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4784,12 +4840,94 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"11 33"
+				"damage_amp"			"11 33 66"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"110 550"
+				"dot"					"110 550 2200"
+			}
+	    }
+	    "AbilityCastRange"              "900"
+	}
+	"item_upgrade_to_erosion_tower_3"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"mechanics/upgrades.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"erosion_tower_3"
+			}
+		}
+		"AbilityTextureName"		"item_erosion"
+		"Requirements"
+		{
+			"dark"		"3"
+			"dark"		"3"
+			"fire"		"3"
+			"fire"		"3"
+			"water"		"3"
+			"water"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_amp"			"11 33 66"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dot"					"110 550 2200"
+			}
+	    }
+	    "AbilityCastRange"              "900"
+	}
+	"item_upgrade_to_erosion_tower_3_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_erosion_disabled"
+		"Requirements"
+		{
+			"dark"		"3"
+			"dark"		"3"
+			"fire"		"3"
+			"fire"		"3"
+			"water"		"3"
+			"water"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_amp"			"11 33 66"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dot"					"110 550 2200"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4821,12 +4959,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"11 33"
+				"damage_amp"			"11 33 66"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"110 550"
+				"dot"					"110 550 2200"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4868,7 +5006,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200"
+				"damage"				"240 1200 4800"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -4909,7 +5047,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200"
+				"damage"				"240 1200 4800"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -4940,7 +5078,79 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200"
+				"damage"				"240 1200 4800"
+			}
+		}
+		"AbilityCastRange"              "700"
+	}
+	"item_upgrade_to_flamethrower_tower_3"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"mechanics/upgrades.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"flamethrower_tower_3"
+			}
+		}
+		"AbilityTextureName"		"item_flamethrower"
+		"Requirements"
+		{
+			"dark"		"3"
+			"dark"		"3"
+			"earth"		"3"
+			"earth"		"3"
+			"fire"		"3"
+			"fire"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"240 1200 4800"
+			}
+		}
+		"AbilityCastRange"              "700"
+	}
+	"item_upgrade_to_flamethrower_tower_3_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_flamethrower_disabled"
+		"Requirements"
+		{
+			"dark"		"3"
+			"dark"		"3"
+			"earth"		"3"
+			"earth"		"3"
+			"fire"		"3"
+			"fire"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"240 1200 4800"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -4972,7 +5182,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200"
+				"damage"				"240 1200 4800"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -5014,7 +5224,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"220 1100"
+				"splash_damage"			"220 1100 4400"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -5055,7 +5265,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"220 1100"
+				"splash_damage"			"220 1100 4400"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -5086,7 +5296,79 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"220 1100"
+				"splash_damage"			"220 1100 4400"
+			}
+		}
+		"AbilityCastRange"              "900"
+	}
+	"item_upgrade_to_flooding_tower_3"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"mechanics/upgrades.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"flooding_tower_3"
+			}
+		}
+		"AbilityTextureName"		"item_flooding"
+		"Requirements"
+		{
+			"water"		"3"
+			"water"		"3"
+			"nature"		"3"
+			"nature"		"3"
+			"dark"		"3"
+			"dark"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_damage"			"220 1100 4400"
+			}
+		}
+		"AbilityCastRange"              "900"
+	}
+	"item_upgrade_to_flooding_tower_3_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_flooding_disabled"
+		"Requirements"
+		{
+			"water"		"3"
+			"water"		"3"
+			"nature"		"3"
+			"nature"		"3"
+			"dark"		"3"
+			"dark"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"splash_damage"			"220 1100 4400"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -5118,7 +5400,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"220 1100"
+				"splash_damage"			"220 1100 4400"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -5160,7 +5442,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"35 50"
+				"bonus_gold"			"35 50 65"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -5201,7 +5483,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"35 50"
+				"bonus_gold"			"35 50 65"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -5232,7 +5514,79 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"35 50"
+				"bonus_gold"			"35 50 65"
+			}
+		}
+		"AbilityCastRange"              "1150"
+	}
+	"item_upgrade_to_gold_tower_3"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"mechanics/upgrades.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"gold_tower_3"
+			}
+		}
+		"AbilityTextureName"		"item_gold"
+		"Requirements"
+		{
+			"fire"		"3"
+			"fire"		"3"
+			"earth"		"3"
+			"earth"		"3"
+			"light"		"3"
+			"light"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_gold"			"35 50 65"
+			}
+		}
+		"AbilityCastRange"              "1150"
+	}
+	"item_upgrade_to_gold_tower_3_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_gold_disabled"
+		"Requirements"
+		{
+			"fire"		"3"
+			"fire"		"3"
+			"earth"		"3"
+			"earth"		"3"
+			"light"		"3"
+			"light"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_gold"			"35 50 65"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -5264,7 +5618,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"35 50"
+				"bonus_gold"			"35 50 65"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -5357,6 +5711,62 @@
 			"water"		"2"
 		}
 		"ItemBaseLevel" "2"
+	    "AbilityCastRange"              "1500"
+	}
+	"item_upgrade_to_hail_tower_3"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"mechanics/upgrades.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"hail_tower_3"
+			}
+		}
+		"AbilityTextureName"		"item_hail"
+		"Requirements"
+		{
+			"dark"		"3"
+			"dark"		"3"
+			"light"		"3"
+			"light"		"3"
+			"water"		"3"
+			"water"		"3"
+		}
+		"ItemBaseLevel" "3"
+	    "AbilityCastRange"              "1500"
+	}
+	"item_upgrade_to_hail_tower_3_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_hail_disabled"
+		"Requirements"
+		{
+			"dark"		"3"
+			"dark"		"3"
+			"light"		"3"
+			"light"		"3"
+			"water"		"3"
+			"water"		"3"
+		}
+		"ItemBaseLevel" "3"
 	    "AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_hail_tower_disabled"
@@ -5472,6 +5882,61 @@
 		}
 		"AbilityCastRange"              "900"
 	}
+	"item_upgrade_to_haste_tower_3"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"mechanics/upgrades.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"haste_tower_3"
+			}
+		}
+		"AbilityTextureName"		"item_haste"
+		"ItemBaseLevel" "3"
+		"Requirements"
+		{
+			"earth"		"3"
+			"earth"		"3"
+			"fire"		"3"
+			"fire"		"3"
+			"water"		"3"
+			"water"		"3"
+		}
+		"AbilityCastRange"              "900"
+	}
+	"item_upgrade_to_haste_tower_3_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_haste_disabled"
+		"Requirements"
+		{
+			"earth"		"3"
+			"earth"		"3"
+			"fire"		"3"
+			"fire"		"3"
+			"water"		"3"
+			"water"		"3"
+		}
+		"AbilityCastRange"              "900"
+	}
 	"item_upgrade_to_haste_tower_disabled"
 	{
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -5533,7 +5998,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"4400 22000"
+				"multiplier"			"4400 22000 88000"
 			}
 		}
 		"AbilityCastRange"              "1500"
@@ -5574,7 +6039,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"4400 22000"
+				"multiplier"			"4400 22000 88000"
 			}
 		}
 		"AbilityCastRange"              "1500"
@@ -5605,7 +6070,79 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"4400 22000"
+				"multiplier"			"4400 22000 88000"
+			}
+		}
+		"AbilityCastRange"              "1500"
+	}
+	"item_upgrade_to_impulse_tower_3"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"mechanics/upgrades.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"impulse_tower_3"
+			}
+		}
+		"AbilityTextureName"		"item_impulse"
+		"Requirements"
+		{
+			"nature"		"3"
+			"nature"		"3"
+			"fire"		"3"
+			"fire"		"3"
+			"water"		"3"
+			"water"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"multiplier"			"4400 22000 88000"
+			}
+		}
+		"AbilityCastRange"              "1500"
+	}
+	"item_upgrade_to_impulse_tower_3_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_impulse_disabled"
+		"Requirements"
+		{
+			"nature"		"3"
+			"nature"		"3"
+			"fire"		"3"
+			"fire"		"3"
+			"water"		"3"
+			"water"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"multiplier"			"4400 22000 88000"
 			}
 		}
 		"AbilityCastRange"              "1500"
@@ -5637,7 +6174,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"4400 22000"
+				"multiplier"			"4400 22000 88000"
 			}
 		}
 		"AbilityCastRange"              "1500"
@@ -5679,7 +6216,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"5 15"
+				"damage_taken"			"5 15 30"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -5720,7 +6257,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"5 15"
+				"damage_taken"			"5 15 30"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -5751,7 +6288,79 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"5 15"
+				"damage_taken"			"5 15 30"
+			}
+	    }
+	    "AbilityCastRange"              "900"
+	}
+	"item_upgrade_to_jinx_tower_3"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"mechanics/upgrades.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"jinx_tower_3"
+			}
+		}
+		"AbilityTextureName"		"item_jinx"
+		"Requirements"
+		{
+			"dark"		"3"
+			"dark"		"3"
+			"fire"		"3"
+			"fire"		"3"
+			"nature"		"3"
+			"nature"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_taken"			"5 15 30"
+			}
+	    }
+	    "AbilityCastRange"              "900"
+	}
+	"item_upgrade_to_jinx_tower_3_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_jinx_disabled"
+		"Requirements"
+		{
+			"dark"		"3"
+			"dark"		"3"
+			"fire"		"3"
+			"fire"		"3"
+			"nature"		"3"
+			"nature"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_taken"			"5 15 30"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -5783,7 +6392,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"5 15"
+				"damage_taken"			"5 15 30"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -5876,6 +6485,60 @@
 		}
 		"AbilityCastRange"              "900"
 	}
+	"item_upgrade_to_laser_tower_3"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"mechanics/upgrades.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"laser_tower_3"
+			}
+		}
+		"AbilityTextureName"		"item_laser"
+		"Requirements"
+		{
+			"dark"		"3"
+			"dark"		"3"
+			"earth"		"3"
+			"earth"		"3"
+			"light"		"3"
+			"light"		"3"
+		}
+		"AbilityCastRange"              "900"
+	}
+	"item_upgrade_to_laser_tower_3_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_laser_disabled"
+		"Requirements"
+		{
+			"dark"		"3"
+			"dark"		"3"
+			"earth"		"3"
+			"earth"		"3"
+			"light"		"3"
+			"light"		"3"
+		}
+		"AbilityCastRange"              "900"
+	}
 	"item_upgrade_to_laser_tower_disabled"
 	{
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -5937,7 +6600,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30"
+				"slow"					"-10 -30 -70"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -5978,7 +6641,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30"
+				"slow"					"-10 -30 -70"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6009,7 +6672,79 @@
 	        "01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30"
+				"slow"					"-10 -30 -70"
+			}
+	    }
+	    "AbilityCastRange"              "900"
+	}
+	"item_upgrade_to_muck_tower_3"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"mechanics/upgrades.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"muck_tower_3"
+			}
+		}
+		"AbilityTextureName"		"item_muck"
+		"Requirements"
+		{
+			"dark"		"3"
+			"dark"		"3"
+			"earth"		"3"
+			"earth"		"3"
+			"water"		"3"
+			"water"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30 -70"
+			}
+	    }
+	    "AbilityCastRange"              "900"
+	}
+	"item_upgrade_to_muck_tower_3_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_muck_disabled"
+		"Requirements"
+		{
+			"dark"		"3"
+			"dark"		"3"
+			"earth"		"3"
+			"earth"		"3"
+			"water"		"3"
+			"water"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30 -70"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6041,7 +6776,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30"
+				"slow"					"-10 -30 -70"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6083,12 +6818,12 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 1500"
+				"damage"			"300 1500 6000"
 			}
 	        "02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30"
+				"slow"					"-10 -30 -70"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -6129,12 +6864,12 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 1500"
+				"damage"			"300 1500 6000"
 			}
 	        "02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30"
+				"slow"					"-10 -30 -70"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -6165,12 +6900,94 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 1500"
+				"damage"			"300 1500 6000"
 			}
 	        "02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30"
+				"slow"					"-10 -30 -70"
+			}
+	    }
+	    "AbilityCastRange"              "700"
+	}
+	"item_upgrade_to_nova_tower_3"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"mechanics/upgrades.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"nova_tower_3"
+			}
+		}
+		"AbilityTextureName"		"item_nova"
+		"Requirements"
+		{
+			"fire"		"3"
+			"fire"		"3"
+			"nature"		"3"
+			"nature"		"3"
+			"light"		"3"
+			"light"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"300 1500 6000"
+			}
+	        "02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30 -70"
+			}
+	    }
+	    "AbilityCastRange"              "700"
+	}
+	"item_upgrade_to_nova_tower_3_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_nova_disabled"
+		"Requirements"
+		{
+			"fire"		"3"
+			"fire"		"3"
+			"nature"		"3"
+			"nature"		"3"
+			"light"		"3"
+			"light"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"300 1500 6000"
+			}
+	        "02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30 -70"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -6202,12 +7019,12 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 1500"
+				"damage"			"300 1500 6000"
 			}
 	        "02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30"
+				"slow"					"-10 -30 -70"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -6300,6 +7117,60 @@
 		}
 		"AbilityCastRange"              "1150"
 	}
+	"item_upgrade_to_obliteration_tower_3"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"mechanics/upgrades.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"obliteration_tower_3"
+			}
+		}
+		"AbilityTextureName"		"item_obliteration"
+		"Requirements"
+		{
+			"dark"		"3"
+			"dark"		"3"
+			"light"		"3"
+			"light"		"3"
+			"nature"		"3"
+			"nature"		"3"
+		}
+		"AbilityCastRange"              "1150"
+	}
+	"item_upgrade_to_obliteration_tower_3_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_obliteration_disabled"
+		"Requirements"
+		{
+			"dark"		"3"
+			"dark"		"3"
+			"light"		"3"
+			"light"		"3"
+			"nature"		"3"
+			"nature"		"3"
+		}
+		"AbilityCastRange"              "1150"
+	}
 	"item_upgrade_to_obliteration_tower_disabled"
 	{
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -6361,7 +7232,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"10 27"
+				"health_burn"			"10 27 42"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -6402,7 +7273,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"10 27"
+				"health_burn"			"10 27 42"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -6433,7 +7304,79 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"10 27"
+				"health_burn"			"10 27 42"
+			}
+		}
+		"AbilityCastRange"              "900"
+	}
+	"item_upgrade_to_polar_tower_3"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"mechanics/upgrades.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"polar_tower_3"
+			}
+		}
+		"AbilityTextureName"		"item_polar"
+		"Requirements"
+		{
+			"water"		"3"
+			"water"		"3"
+			"light"		"3"
+			"light"		"3"
+			"earth"		"3"
+			"earth"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_burn"			"10 27 42"
+			}
+		}
+		"AbilityCastRange"              "900"
+	}
+	"item_upgrade_to_polar_tower_3_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_polar_disabled"
+		"Requirements"
+		{
+			"water"		"3"
+			"water"		"3"
+			"light"		"3"
+			"light"		"3"
+			"earth"		"3"
+			"earth"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_burn"			"10 27 42"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -6465,7 +7408,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"10 27"
+				"health_burn"			"10 27 42"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -6507,7 +7450,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"500 2500"
+				"damage"				"500 2500 10000"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -6548,7 +7491,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"500 2500"
+				"damage"				"500 2500 10000"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -6579,7 +7522,79 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"500 2500"
+				"damage"				"500 2500 10000"
+			}
+		}
+		"AbilityCastRange"              "700"
+	}
+	"item_upgrade_to_quake_tower_3"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"mechanics/upgrades.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"quake_tower_3"
+			}
+		}
+		"AbilityTextureName"		"item_quake"
+		"Requirements"
+		{
+			"fire"		"3"
+			"fire"		"3"
+			"earth"		"3"
+			"earth"		"3"
+			"nature"		"3"
+			"nature"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"500 2500 10000"
+			}
+		}
+		"AbilityCastRange"              "700"
+	}
+	"item_upgrade_to_quake_tower_3_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_quake_disabled"
+		"Requirements"
+		{
+			"fire"		"3"
+			"fire"		"3"
+			"earth"		"3"
+			"earth"		"3"
+			"nature"		"3"
+			"nature"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"500 2500 10000"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -6611,7 +7626,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"500 2500"
+				"damage"				"500 2500 10000"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -6653,12 +7668,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30"
+				"slow"					"-10 -30 -70"
 			}
 	        "02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps"					"100 500"
+				"dps"					"100 500 2000"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6699,12 +7714,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30"
+				"slow"					"-10 -30 -70"
 			}
 	        "02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps"					"100 500"
+				"dps"					"100 500 2000"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6735,12 +7750,94 @@
 	        "01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30"
+				"slow"					"-10 -30 -70"
 			}
 	        "02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps"					"100 500"
+				"dps"					"100 500 2000"
+			}
+	    }
+	    "AbilityCastRange"              "900"
+	}
+	"item_upgrade_to_roots_tower_3"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"mechanics/upgrades.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"roots_tower_3"
+			}
+		}
+		"AbilityTextureName"		"item_roots"
+		"Requirements"
+		{
+			"dark"		"3"
+			"dark"		"3"
+			"earth"		"3"
+			"earth"		"3"
+			"nature"		"3"
+			"nature"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30 -70"
+			}
+	        "02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dps"					"100 500 2000"
+			}
+	    }
+	    "AbilityCastRange"              "900"
+	}
+	"item_upgrade_to_roots_tower_3_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_roots_disabled"
+		"Requirements"
+		{
+			"dark"		"3"
+			"dark"		"3"
+			"earth"		"3"
+			"earth"		"3"
+			"nature"		"3"
+			"nature"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+	        "01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30 -70"
+			}
+	        "02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dps"					"100 500 2000"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6772,12 +7869,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30"
+				"slow"					"-10 -30 -70"
 			}
 	        "02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps"					"100 500"
+				"dps"					"100 500 2000"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6870,6 +7967,60 @@
 		}
 		"AbilityCastRange"              "1150"
 	}
+	"item_upgrade_to_runic_tower_3"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"mechanics/upgrades.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"runic_tower_3"
+			}
+		}
+		"AbilityTextureName"		"item_runic"
+		"Requirements"
+		{
+			"dark"		"3"
+			"dark"		"3"
+			"fire"		"3"
+			"fire"		"3"
+			"light"		"3"
+			"light"		"3"
+		}
+		"AbilityCastRange"              "1150"
+	}
+	"item_upgrade_to_runic_tower_3_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_runic_disabled"
+		"Requirements"
+		{
+			"dark"		"3"
+			"dark"		"3"
+			"fire"		"3"
+			"fire"		"3"
+			"light"		"3"
+			"light"		"3"
+		}
+		"AbilityCastRange"              "1150"
+	}
 	"item_upgrade_to_runic_tower_disabled"
 	{
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -6931,7 +8082,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"35 175"
+				"damage"			"35 175 700"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -6972,7 +8123,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"35 175"
+				"damage"			"35 175 700"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -7003,7 +8154,79 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"35 175"
+				"damage"			"35 175 700"
+			}
+		}
+		"AbilityCastRange"              "900"
+	}
+	"item_upgrade_to_tidal_tower_3"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"mechanics/upgrades.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"tidal_tower_3"
+			}
+		}
+		"AbilityTextureName"		"item_tidal"
+		"Requirements"
+		{
+			"water"		"3"
+			"water"		"3"
+			"nature"		"3"
+			"nature"		"3"
+			"light"		"3"
+			"light"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"35 175 700"
+			}
+		}
+		"AbilityCastRange"              "900"
+	}
+	"item_upgrade_to_tidal_tower_3_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_tidal_disabled"
+		"Requirements"
+		{
+			"water"		"3"
+			"water"		"3"
+			"nature"		"3"
+			"nature"		"3"
+			"light"		"3"
+			"light"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"35 175 700"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -7035,7 +8258,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"35 175"
+				"damage"			"35 175 700"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -7077,12 +8300,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30"
+				"slow"					"-10 -30 -70"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"450 2250"
+				"damage"				"450 2250 9000"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -7123,12 +8346,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30"
+				"slow"					"-10 -30 -70"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"450 2250"
+				"damage"				"450 2250 9000"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -7159,12 +8382,94 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30"
+				"slow"					"-10 -30 -70"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"450 2250"
+				"damage"				"450 2250 9000"
+			}
+		}
+		"AbilityCastRange"              "1150"
+	}
+	"item_upgrade_to_windstorm_tower_3"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"TARGET"		"CASTER"
+				"ScriptFile"		"mechanics/upgrades.lua"
+				"Function"		"UpgradeTower"
+				"tower"		"windstorm_tower_3"
+			}
+		}
+		"AbilityTextureName"		"item_windstorm"
+		"Requirements"
+		{
+			"fire"		"3"
+			"fire"		"3"
+			"light"		"3"
+			"light"		"3"
+			"water"		"3"
+			"water"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30 -70"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"450 2250 9000"
+			}
+		}
+		"AbilityCastRange"              "1150"
+	}
+	"item_upgrade_to_windstorm_tower_3_disabled"
+	{
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"		"item_datadriven"
+		"AbilityManaCost"		"0"
+		"ItemShareability"		"ITEM_NOT_SHAREABLE"
+		"ItemSellable"		"0"
+		"ItemKillable"		"0"
+		"ItemPurchasable"		"0"
+		"ItemDroppable"		"0"
+		"AbilityTextureName"		"item_windstorm_disabled"
+		"Requirements"
+		{
+			"fire"		"3"
+			"fire"		"3"
+			"light"		"3"
+			"light"		"3"
+			"water"		"3"
+			"water"		"3"
+		}
+	    "ItemBaseLevel" "3"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow"					"-10 -30 -70"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"450 2250 9000"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -7196,12 +8501,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30"
+				"slow"					"-10 -30 -70"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"450 2250"
+				"damage"				"450 2250 9000"
 			}
 		}
 		"AbilityCastRange"              "1150"

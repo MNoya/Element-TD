@@ -1,0 +1,36 @@
+"item_upgrade_to_nova_tower_3_disabled"
+{
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"BaseClass"		"item_datadriven"
+	"AbilityManaCost"		"0"
+	"ItemShareability"		"ITEM_NOT_SHAREABLE"
+	"ItemSellable"		"0"
+	"ItemKillable"		"0"
+	"ItemPurchasable"		"0"
+	"ItemDroppable"		"0"
+	"AbilityTextureName"		"item_nova_disabled"
+	"Requirements"
+	{
+		"fire"		"3"
+		"fire"		"3"
+		"nature"		"3"
+		"nature"		"3"
+		"light"		"3"
+		"light"		"3"
+	}
+    "ItemBaseLevel" "3"
+    "AbilitySpecial"
+	{
+        "01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage"			"300 1500 6000"
+		}
+        "02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"slow"					"-10 -30 -70"
+		}
+    }
+    "AbilityCastRange"              "700"
+}

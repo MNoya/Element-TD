@@ -1,0 +1,89 @@
+"flooding_tower_3"
+{
+    "BaseClass"        "npc_dota_creature"
+    "MinimapIcon"        "minimap_tower90"
+    "MinimapIconSize"        "320"
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"        "0.25"
+    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"        "0"
+    "AttributeStrengthGain"        "0"
+    "AttributeBaseIntelligence"        "0"
+    "AttributeIntelligenceGain"        "0"
+    "AttributeBaseAgility"        "0"
+    "AttributeAgilityGain"        "0"
+    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+    "ProjectileCollisionSize"        "50"
+    "RingRadius"        "80"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"        "0"
+    "MovementTurnRate"        "1.0"
+    "StatusHealth"        "4500"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "TeamName"        "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"        "1900"
+    "Level"        "3"
+    "Cost"        "8000"
+    "TotalCost"        "13000"
+    "EssenceCost"               "1"
+    "Element"
+    {
+        "1"        "water"
+        "2"        "nature"
+        "3"        "dark"
+    }
+    "Damage"        "0"
+    "DamageType"        "water"
+    "ScriptClass"        "FloodingTower"
+    "TowerType"        "Normal"
+    "BuffPriority"              "2"
+    "HasAbilityDesc"        "1"
+    "AttackRange"        "900"
+    "AttackAcquisitionRange"        "900"
+    "AttackRate"        "1"
+    "ProjectileModel"        "particles/units/heroes/hero_tidehunter/tidehunter_gush.vpcf"
+    "ProjectileSpeed"        "2000"
+    
+    "Model"             "models/heroes/tidehunter/tidehunter.vmdl"
+    "ModelScale"        "1"
+    "ModelRotation"     "90"
+    "ModelOffset"       "15"
+    "Creature"
+    {
+        "AttachWearables" // Relics of the Drowning Trench
+        {
+            "1" { "ItemDef" "7774" } // Grip of the Drowning Trench
+            "2" { "ItemDef" "7776" } // Headshell of the Drowning Trench
+            "3" { "ItemDef" "7777" } // Leashed Rockshark
+            "4" { "ItemDef" "7775" } // Carapace of the Drowning Trench
+            "5" { "ItemDef" "7773" } // Belt of the Drowning Trench
+            "6" { "ItemDef" "7778" } // Aquemerald Blade
+        }
+    }
+
+    "BuildTime"        "3"
+    "Requirements"
+    {
+        "water"        "3"
+        "nature"        "3"
+        "dark"        "3"
+    }
+    "Upgrades"
+    {
+    }
+    "AttackDamageMin"        "0"
+    "AttackDamageMax"        "0"
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
+}

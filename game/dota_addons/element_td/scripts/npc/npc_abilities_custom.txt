@@ -2661,7 +2661,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"AbilityCooldown"				"1"
-		"MaxLevel"						"2"
+		"MaxLevel"						"3"
 		"AbilityTextureName"			"towers/enchantment"
 		"AbilityCastRange"				"900"
 	
@@ -2703,12 +2703,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"6 18"
+				"base_damage_amp"		"6 18 36"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"13 39"
+				"max_damage_amp"		"13 39 78"
 			}
 			"04"
 			{
@@ -2796,7 +2796,7 @@
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"towers/erosion"
-		"MaxLevel"						"2"
+		"MaxLevel"						"3"
 	
 		"OnProjectileHitUnit"
 		{
@@ -2886,12 +2886,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"11 33"
+				"damage_amp"			"11 33 66"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"110 550"
+				"dot"					"110 550 2200"
 			}
 			"03"
 			{
@@ -2994,7 +2994,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"batrider_sticky_napalm"
 		
-		"MaxLevel"						"2"
+		"MaxLevel"						"3"
 		"Modifiers"
 		{
 			"modifier_napalm"
@@ -3021,7 +3021,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200"
+				"damage"				"240 1200 4800"
 			}
 			"02"
 			{
@@ -3152,7 +3152,7 @@
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"MaxLevel"						"2"
+		"MaxLevel"						"3"
 		"AbilityTextureName"			"naga_siren_rip_tide"
 	
 		"AbilitySpecial"
@@ -3160,7 +3160,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"220 1100"
+				"splash_damage"			"220 1100 4400"
 			}
 			"02"
 			{
@@ -3190,14 +3190,14 @@
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"towers/gold"
-		"MaxLevel"						"2"
+		"MaxLevel"						"3"
 	
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"35 50"
+				"bonus_gold"			"35 50 65"
 			}
 		}
 	
@@ -3633,7 +3633,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityTextureName"			"enchantress_impetus"
 		"AbilityCastRange"				"1500"
-		"MaxLevel"						"2"
+		"MaxLevel"						"3"
 	
 		"OnToggleOn"
 	    {
@@ -3680,7 +3680,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"4400 22000"
+				"multiplier"			"4400 22000 88000"
 			}
 		}
 	}
@@ -3692,7 +3692,7 @@
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"witch_doctor_maledict"
-		"MaxLevel"						"2"
+		"MaxLevel"						"3"
 	
 		"Modifiers"
 		{
@@ -3742,7 +3742,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"5 15"
+				"damage_taken"			"5 15 30"
 			}
 			"02"
 			{
@@ -3777,7 +3777,7 @@
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"towers/laser"
-		"MaxLevel"						"2"
+		"MaxLevel"						"3"
 	
 		"Modifiers"
 		{
@@ -4008,7 +4008,7 @@
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"towers/muck"
-		"MaxLevel"						"2"
+		"MaxLevel"						"3"
 	
 	
 		"Modifiers"
@@ -4140,7 +4140,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"            "towers/nova"
-		"MaxLevel"						"2"
+		"MaxLevel"						"3"
 	
 		"Modifiers"
 		{
@@ -4241,7 +4241,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 1500"
+				"damage"			"300 1500 6000"
 			}
 			"02"
 			{
@@ -4256,7 +4256,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"slow"				"-10 -30"
+				"slow"				"-10 -30 -70"
 			}
 		}
 	}
@@ -4268,7 +4268,7 @@
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityTextureName"			"towers/obliteration"
-		"MaxLevel"						"2"
+		"MaxLevel"						"3"
 	
 		"AbilityCastPoint"				"0.0"
 	
@@ -4420,7 +4420,7 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"AbilityCooldown"				"1"
 		"AbilityCastRange"				"900"
-		"MaxLevel"						"2"
+		"MaxLevel"						"3"
 		"AbilityTextureName"			"towers/polar"
 	
 		"OnSpellStart"
@@ -4464,7 +4464,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"10 27"
+				"health_burn"			"10 27 42"
 			}
 		}
 	}
@@ -4479,7 +4479,7 @@
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"towers/quake"
-		"MaxLevel"						"2"
+		"MaxLevel"						"3"
 	
 		"Modifiers"
 		{
@@ -4508,7 +4508,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"500 2500"
+				"damage"				"500 2500 10000"
 			}
 			"03"
 			{
@@ -4571,7 +4571,7 @@
 		"BaseClass"						"ability_datadriven"											
 		"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityTextureName"			"towers/roots"
-		"MaxLevel"						"2"
+		"MaxLevel"						"3"
 		"AbilityCastPoint"				"0.0"
 	
 		"AbilityCastRange"      		"900"
@@ -4749,12 +4749,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30"
+				"slow"					"-10 -30 -70"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps"					"100 500"
+				"dps"					"100 500 2000"
 			}
 			"04"
 			{
@@ -4980,7 +4980,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass" 					"ability_datadriven"
 		"AbilityTextureName"            "towers/tidal"
-		"MaxLevel"						"2"
+		"MaxLevel"						"3"
 	
 		"Modifiers"
 		{
@@ -5013,7 +5013,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"35 175"
+				"damage"			"35 175 700"
 			}
 			"02"
 			{
@@ -5278,7 +5278,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"MaxLevel"						"2"
+		"MaxLevel"						"3"
 	
 		"AbilityCastPoint"				"0.0"
 		"AbilityCastRange"      		"1150"
@@ -5355,12 +5355,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30"
+				"slow"					"-10 -30 -70"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"450 2250"
+				"damage"				"450 2250 9000"
 			}
 			"03"
 			{

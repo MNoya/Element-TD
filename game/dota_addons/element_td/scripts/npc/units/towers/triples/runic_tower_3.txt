@@ -1,0 +1,94 @@
+"runic_tower_3"
+{
+    "BaseClass"        "npc_dota_creature"
+    "SoundSet"              "Hero_Visage"
+    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_visage.vsndevts"
+    "MinimapIcon"        "minimap_tower90"
+    "MinimapIconSize"        "320"
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"        "0.2"
+    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"        "0"
+    "AttributeStrengthGain"        "0"
+    "AttributeBaseIntelligence"        "0"
+    "AttributeIntelligenceGain"        "0"
+    "AttributeBaseAgility"        "0"
+    "AttributeAgilityGain"        "0"
+    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+    "ProjectileCollisionSize"        "50"
+    "RingRadius"        "80"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"        "0"
+    "MovementTurnRate"        "1.0"
+    "StatusHealth"        "4500"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "TeamName"        "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"        "1900"
+    "Level"        "3"
+    "Cost"        "8000"
+    "TotalCost"        "13000"
+    "EssenceCost"               "1"
+    "Element"
+    {
+        "1"        "dark"
+        "2"        "fire"
+        "3"        "light"
+    }
+    "Damage"        "26000"
+    "AttackDamageMin"        "26000"
+    "AttackDamageMax"        "26000"
+    "DamageType"        "dark"
+    "ScriptClass"        "RunicTower"
+    "TowerType"        "Normal"
+    "BuffPriority"              "2"
+    "HasAbilityDesc"        "1"
+    "AttackRange"        "1150"
+    "AttackAcquisitionRange"        "1150"
+    "AttackRate"        "1"
+    "ProjectileModel"        "particles/custom/towers/runic/attack_projectile.vpcf"
+    "ProjectileSpeed"        "2000"
+
+    "Model"             "models/heroes/doom/doom.vmdl"
+    "ModelScale"        "0.9"
+    "ModelRotation"     "90"
+    "ModelOffset"       "20"
+    "Creature"
+    {
+        "AttachWearables" // Fires of Vashundol
+        {
+            "1" { "ItemDef" "6947" } // Skull of Vashundol
+            "2" { "ItemDef" "6887" } // Cloak of Vashundol
+            "3" { "ItemDef" "6632" } // Bindings of Vashundol
+            "4" { "ItemDef" "6821" } // Tail of Vashundol
+            "5" { "ItemDef" "6888" } // Wings of Vashundol
+            "6" { "ItemDef" "6822" } // Belt of Vashundol
+            "7" { "ItemDef" "6885" } // Broken Blade of Vashundol
+        }
+    }
+
+    "AOE_Full"        "100"
+    "AOE_Half"        "200"
+    "BuildTime"        "3"
+    "Requirements"
+    {
+        "dark"        "3"
+        "fire"        "3"
+        "light"        "3"
+    }
+    "Upgrades"
+    {
+    }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
+}

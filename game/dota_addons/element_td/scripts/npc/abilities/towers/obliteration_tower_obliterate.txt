@@ -6,7 +6,7 @@
 	"BaseClass"						"ability_datadriven"											
 	"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityTextureName"			"towers/obliteration"
-	"MaxLevel"						"2"
+	"MaxLevel"						"3"
 
 	"AbilityCastPoint"				"0.0"
 

@@ -79,6 +79,8 @@
     }
     "Upgrades"
     {
+        "Count"        "1"
+        "1"        "quake_tower_3"
     }
 
     // Building Size

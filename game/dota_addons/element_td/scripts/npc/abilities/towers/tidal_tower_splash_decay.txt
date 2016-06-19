@@ -6,7 +6,7 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"BaseClass" 					"ability_datadriven"
 	"AbilityTextureName"            "towers/tidal"
-	"MaxLevel"						"2"
+	"MaxLevel"						"3"
 
 	"Modifiers"
 	{
@@ -39,7 +39,7 @@
 		"01"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"damage"			"35 175"
+			"damage"			"35 175 700"
 		}
 		"02"
 		{

@@ -85,6 +85,8 @@
     }
     "Upgrades"
     {
+        "Count"        "1"
+        "1"        "gold_tower_3"
     }
 
     // Building Size

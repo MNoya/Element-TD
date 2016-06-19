@@ -1,0 +1,22 @@
+"item_upgrade_to_haste_tower_3_disabled"
+{
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"BaseClass"		"item_datadriven"
+	"AbilityManaCost"		"0"
+	"ItemShareability"		"ITEM_NOT_SHAREABLE"
+	"ItemSellable"		"0"
+	"ItemKillable"		"0"
+	"ItemPurchasable"		"0"
+	"ItemDroppable"		"0"
+	"AbilityTextureName"		"item_haste_disabled"
+	"Requirements"
+	{
+		"earth"		"3"
+		"earth"		"3"
+		"fire"		"3"
+		"fire"		"3"
+		"water"		"3"
+		"water"		"3"
+	}
+	"AbilityCastRange"              "900"
+}

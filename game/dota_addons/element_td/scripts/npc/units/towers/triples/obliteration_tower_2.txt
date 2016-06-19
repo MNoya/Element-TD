@@ -80,6 +80,8 @@
     }
     "Upgrades"
     {
+        "Count"        "1"
+        "1"        "obliteration_tower_3"
     }
 
     // Building Size

@@ -1,0 +1,93 @@
+"polar_tower_3"
+{
+    "BaseClass"        "npc_dota_creature"
+    "SoundSet"                "Hero_Lich"
+    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
+    "MinimapIcon"        "minimap_tower90"
+    "MinimapIconSize"        "320"
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"        "0.2"
+    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"        "0"
+    "AttributeStrengthGain"        "0"
+    "AttributeBaseIntelligence"        "0"
+    "AttributeIntelligenceGain"        "0"
+    "AttributeBaseAgility"        "0"
+    "AttributeAgilityGain"        "0"
+    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+    "ProjectileCollisionSize"        "50"
+    "RingRadius"        "80"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"        "0"
+    "MovementTurnRate"        "1.0"
+    "StatusHealth"        "4500"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "TeamName"        "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"        "1900"
+    "Level"        "3"
+    "Cost"        "8000"
+    "TotalCost"        "13000"
+    "EssenceCost"               "1"
+    "Element"
+    {
+        "1"        "water"
+        "2"        "light"
+        "3"        "earth"
+    }
+    "Damage"        "36000"
+    "AttackDamageMin"        "36000"
+    "AttackDamageMax"        "36000"
+    "DamageType"        "water"
+    "ScriptClass"        "PolarTower"
+    "TowerType"        "Normal"
+    "BuffPriority"          "4"
+    "HasAbilityDesc"        "1"
+    "AttackRange"        "900"
+    "AttackAcquisitionRange"        "900"
+    "AttackRate"        "1"
+    "ProjectileModel"        "particles/units/heroes/hero_ancient_apparition/ancient_apparition_base_attack.vpcf"
+    "ProjectileSpeed"        "2000"
+
+    "Model"             "models/heroes/lich/lich.vmdl"
+    "ModelScale"        "1"
+    "ModelRotation"     "90"
+    "ModelOffset"       "0"
+    "Creature"
+    {
+        "AttachWearables" // Eldritch Ice Set
+        {
+            "1" { "ItemDef" "4853" } // Dead Winter Sash
+            "2" { "ItemDef" "4852" } // Dead Winter Soul
+            "3" { "ItemDef" "4851" } // Dead Winter Mantle
+            "4" { "ItemDef" "4854" } // Dead Winter Grasp
+            "5" { "ItemDef" "571" } // Lich's Head
+            "6" { "ItemDef" "506" } // Lich's Ambient Effects
+        }
+    }
+
+    "AOE_Full"        "100"
+    "AOE_Half"        "200"
+    "BuildTime"        "3"
+    "Requirements"
+    {
+        "water"        "3"
+        "light"        "3"
+        "earth"        "3"
+    }
+    "Upgrades"
+    {
+    }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
+}

@@ -1,0 +1,88 @@
+"haste_tower_3"
+{
+    "BaseClass"        "npc_dota_creature"
+    "MinimapIcon"        "minimap_tower90"
+    "MinimapIconSize"        "320"
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"        "0"
+    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"        "0"
+    "AttributeStrengthGain"        "0"
+    "AttributeBaseIntelligence"        "0"
+    "AttributeIntelligenceGain"        "0"
+    "AttributeBaseAgility"        "0"
+    "AttributeAgilityGain"        "0"
+    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+    "ProjectileCollisionSize"        "50"
+    "RingRadius"        "80"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"        "0"
+    "MovementTurnRate"        "1.0"
+    "StatusHealth"        "4500"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "TeamName"        "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"        "1900"
+    "Level"        "3"
+    "Cost"        "8000"
+    "TotalCost"        "13000"
+    "EssenceCost"               "1"
+    "Element"
+    {
+        "1"        "earth"
+        "2"        "fire"
+        "3"        "water"
+    }
+    "Damage"        "32000"
+    "AttackDamageMin"        "32000"
+    "AttackDamageMax"        "32000"
+    "DamageType"        "fire"
+    "ScriptClass"        "HasteTower"
+    "TowerType"        "Normal"
+    "BuffPriority"          "2"
+    "HasAbilityDesc"        "1"
+    "AttackRange"        "900"
+    "AttackAcquisitionRange"        "900"
+    "AttackRate"        "0.66"
+    "ProjectileModel"        "particles/custom/towers/haste/attack.vpcf"
+    "ProjectileSpeed"        "1000"
+
+    "Model"             "models/heroes/troll_warlord/troll_warlord.vmdl"
+    "ModelScale"        "1.2"
+    "ModelRotation"     "90"
+    "ModelOffset"       "15"
+    "Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_troll_warlord
+        {
+            "1" { "ItemDef" "411" } // Troll Warlord's Default Head
+            "2" { "ItemDef" "410" } // Troll Warlord's Default Shoulders
+            "3" { "ItemDef" "374" } // Troll Warlord's Default Off-Hand Weapon
+            "4" { "ItemDef" "373" } // Troll Warlord's Default Weapon
+            "5" { "ItemDef" "412" } // Troll Warlord's Default Arms
+        }
+    }
+
+    "BuildTime"        "3"
+    "Requirements"
+    {
+        "earth"        "3"
+        "fire"        "3"
+        "water"        "3"
+    }
+    "Upgrades"
+    {
+    }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
+}

@@ -1,0 +1,31 @@
+"item_upgrade_to_flamethrower_tower_3_disabled"
+{
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"BaseClass"		"item_datadriven"
+	"AbilityManaCost"		"0"
+	"ItemShareability"		"ITEM_NOT_SHAREABLE"
+	"ItemSellable"		"0"
+	"ItemKillable"		"0"
+	"ItemPurchasable"		"0"
+	"ItemDroppable"		"0"
+	"AbilityTextureName"		"item_flamethrower_disabled"
+	"Requirements"
+	{
+		"dark"		"3"
+		"dark"		"3"
+		"earth"		"3"
+		"earth"		"3"
+		"fire"		"3"
+		"fire"		"3"
+	}
+    "ItemBaseLevel" "3"
+    "AbilitySpecial"
+	{
+        "01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"240 1200 4800"
+		}
+	}
+	"AbilityCastRange"              "700"
+}
