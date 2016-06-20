@@ -34,7 +34,7 @@ function LifeTower:CreepKilled(keys)
         playerData.LifeTowerKills = playerData.LifeTowerKills + self.pointsPerKill
     end
 
-    local maxHealth = GameSettings:GetMapSetting("Lives")
+    local maxHealth = 75
     if playerData.health < maxHealth and playerData.LifeTowerKills >= 24 then --when health is less than max
         playerData.LifeTowerKills = playerData.LifeTowerKills - 24
 
@@ -77,7 +77,7 @@ function LifeTower:CreepKilledCoop(keys)
         COOP_LIFE_TOWER_KILLS = COOP_LIFE_TOWER_KILLS + self.pointsPerKill
     end
 
-    local maxHealth = GameSettings:GetMapSetting("Lives")
+    local maxHealth = 150
     if COOP_HEALTH < maxHealth and COOP_LIFE_TOWER_KILLS >= 60 then --when health is less than max
         COOP_LIFE_TOWER_KILLS = COOP_LIFE_TOWER_KILLS - 60
         AddOneLifeCoop(self.tower)
@@ -189,7 +189,7 @@ function LifeTower:OnCreated()
     Timers:CreateTimer(0.03, function()
         if not IsValidEntity(self.tower) or not self.tower:IsAlive() then return end
 
-        if GetPlayerData(self.playerID).health >= maxLives then
+        if GetPlayerData(self.playerID).health <= maxLives then
             self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_life_tower_full_health", {})
         else
             self.tower:RemoveModifierByName("modifier_life_tower_full_health")

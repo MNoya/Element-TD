@@ -2891,7 +2891,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"110 550 2200"
+				"dot"					"110 550 2750"
 			}
 			"03"
 			{
@@ -3021,7 +3021,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 4800"
+				"damage"				"240 1200 6000"
 			}
 			"02"
 			{
@@ -3160,7 +3160,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"220 1100 4400"
+				"splash_damage"			"220 1100 5500"
 			}
 			"02"
 			{
@@ -3260,7 +3260,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"40 200 1000"
+				"damage"				"45 225 1125"
 			}
 			"02"
 			{
@@ -3484,12 +3484,12 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"450 2250 11250"
+				"splash_damage"		"700 3500 17500"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_aoe"		"300"
+				"splash_aoe"		"200"
 			}
 			"04"
 			{
@@ -3511,7 +3511,7 @@
 		"AbilityTextureName"			"towers/ice"
 		"MaxLevel"						"3"	
 		"AbilityCastPoint"				"0.0"
-		"AbilityCastRange"      		"900"
+		"AbilityCastRange"      		"1150"
 	
 	    "AOERadius"             		"200"
 	
@@ -3605,17 +3605,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe_start"				"200"
+				"aoe_start"				"450"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe_end"				"400"
+				"aoe_end"				"150"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"distance"				"900"
+				"distance"				"1150"
 			}
 			"05"
 			{
@@ -3680,7 +3680,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"4400 22000 88000"
+				"multiplier"			"4000 20000 100000"
 			}
 		}
 	}
@@ -3878,7 +3878,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_bonus_full_hp_pct"		"30"
+				"damage_bonus_full_hp_pct"		"25"
 			}
 			"04"
 			{
@@ -4249,7 +4249,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 1500 6000"
+				"damage"			"300 1500 7500"
 			}
 			"02"
 			{
@@ -4516,7 +4516,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"500 2500 10000"
+				"damage"				"500 2500 12500"
 			}
 			"03"
 			{
@@ -4766,7 +4766,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps"					"100 500 2000"
+				"dps"					"100 500 2500"
 			}
 			"04"
 			{
@@ -5025,7 +5025,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"35 175 700"
+				"damage"			"35 175 875"
 			}
 			"02"
 			{
@@ -5276,7 +5276,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"450 2250 9000"
+				"damage"				"450 2250 11250"
 			}
 		}
 	}
@@ -5376,7 +5376,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"450 2250 9000"
+				"damage"				"450 2250 11250"
 			}
 			"03"
 			{

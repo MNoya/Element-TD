@@ -41,9 +41,9 @@
         "2"        "fire"
         "3"        "water"
     }
-    "Damage"        "32000"
-    "AttackDamageMin"        "32000"
-    "AttackDamageMax"        "32000"
+    "Damage"        "40000"
+    "AttackDamageMin"        "40000"
+    "AttackDamageMax"        "40000"
     "DamageType"        "fire"
     "ScriptClass"        "HasteTower"
     "TowerType"        "Normal"

@@ -43,9 +43,9 @@
         "2"        "nature"
         "3"        "water"
     }
-    "Damage"        "40000"
-    "AttackDamageMin"        "40000"
-    "AttackDamageMax"        "40000"
+    "Damage"        "50000"
+    "AttackDamageMin"        "50000"
+    "AttackDamageMax"        "50000"
     "DamageType"        "nature"
     "ScriptClass"        "EphemeralTower"
     "TowerType"        "Normal"

@@ -42,12 +42,12 @@
 		"02"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"splash_damage"		"450 2250 11250"
+			"splash_damage"		"700 3500 17500"
 		}
 		"03"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"splash_aoe"		"300"
+			"splash_aoe"		"200"
 		}
 		"04"
 		{

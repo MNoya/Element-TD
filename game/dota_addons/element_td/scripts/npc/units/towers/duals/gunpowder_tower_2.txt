@@ -43,9 +43,9 @@
         "1"        "earth"
         "2"        "dark"
     }
-    "Damage"        "200"
-    "AttackDamageMin"        "200"
-    "AttackDamageMax"        "200"
+    "Damage"        "225"
+    "AttackDamageMin"        "225"
+    "AttackDamageMax"        "225"
     "DamageType"        "earth"
     "ScriptClass"        "GunpowderTower"
     "TowerType"        "Normal"

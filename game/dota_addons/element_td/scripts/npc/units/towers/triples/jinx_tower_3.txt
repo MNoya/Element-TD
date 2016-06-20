@@ -41,9 +41,9 @@
         "2"        "fire"
         "3"        "nature"
     }
-    "Damage"        "70000"
-    "AttackDamageMin"        "70000"
-    "AttackDamageMax"        "70000"
+    "Damage"        "87500"
+    "AttackDamageMin"        "87500"
+    "AttackDamageMax"        "87500"
     "DamageType"        "dark"
     "ScriptClass"        "JinxTower"
     "TowerType"        "Normal"

@@ -43,9 +43,9 @@
         "2"        "light"
         "3"        "earth"
     }
-    "Damage"        "36000"
-    "AttackDamageMin"        "36000"
-    "AttackDamageMax"        "36000"
+    "Damage"        "45000"
+    "AttackDamageMin"        "45000"
+    "AttackDamageMax"        "45000"
     "DamageType"        "water"
     "ScriptClass"        "PolarTower"
     "TowerType"        "Normal"

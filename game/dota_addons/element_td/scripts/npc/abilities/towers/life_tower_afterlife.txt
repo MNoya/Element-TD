@@ -61,7 +61,7 @@
 		"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage_bonus_full_hp_pct"		"30"
+			"damage_bonus_full_hp_pct"		"25"
 		}
 		"04"
 		{

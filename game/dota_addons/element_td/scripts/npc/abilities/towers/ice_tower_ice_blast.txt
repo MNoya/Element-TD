@@ -11,7 +11,7 @@
 	"AbilityTextureName"			"towers/ice"
 	"MaxLevel"						"3"	
 	"AbilityCastPoint"				"0.0"
-	"AbilityCastRange"      		"900"
+	"AbilityCastRange"      		"1150"
 
     "AOERadius"             		"200"
 
@@ -105,17 +105,17 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aoe_start"				"200"
+			"aoe_start"				"450"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aoe_end"				"400"
+			"aoe_end"				"150"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"distance"				"900"
+			"distance"				"1150"
 		}
 		"05"
 		{

@@ -41,9 +41,9 @@
         "2"        "earth"
         "3"        "water"
     }
-    "Damage"        "20000"
-    "AttackDamageMin"        "20000"
-    "AttackDamageMax"        "20000"
+    "Damage"        "25000"
+    "AttackDamageMin"        "25000"
+    "AttackDamageMax"        "25000"
     "DamageType"        "earth"
     "ScriptClass"        "MuckTower"
     "TowerType"        "Normal"

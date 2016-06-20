@@ -41,9 +41,9 @@
         "2"        "earth"
         "3"        "light"
     }
-    "Damage"        "110000"
-    "AttackDamageMin"        "110000"
-    "AttackDamageMax"        "110000"
+    "Damage"        "137500"
+    "AttackDamageMin"        "137500"
+    "AttackDamageMax"        "137500"
     "DamageType"        "light"
     "ScriptClass"        "LaserTower"
     "TowerType"        "Normal"
