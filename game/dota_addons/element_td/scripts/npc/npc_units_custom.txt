@@ -9150,9 +9150,9 @@
 	        "1"        "light"
 	        "2"        "nature"
 	    }
-	    "Damage"        "500"
-	    "AttackDamageMin"        "500"
-	    "AttackDamageMax"        "500"
+	    "Damage"        "420"
+	    "AttackDamageMin"        "420"
+	    "AttackDamageMax"        "420"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "LifeTower"
 	    "TowerType"        "Normal"
@@ -9259,9 +9259,9 @@
 	        "1"        "light"
 	        "2"        "nature"
 	    }
-	    "Damage"        "2500"
-	    "AttackDamageMin"        "2500"
-	    "AttackDamageMax"        "2500"
+	    "Damage"        "2100"
+	    "AttackDamageMin"        "2100"
+	    "AttackDamageMax"        "2100"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "LifeTower"
 	    "TowerType"        "Normal"
@@ -9346,9 +9346,9 @@
 	        "1"        "light"
 	        "2"        "nature"
 	    }
-	    "Damage"        "12500"
-	    "AttackDamageMin"        "12500"
-	    "AttackDamageMax"        "12500"
+	    "Damage"        "10500"
+	    "AttackDamageMin"        "10500"
+	    "AttackDamageMax"        "10500"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "LifeTower"
 	    "TowerType"        "Normal"
@@ -14548,8 +14548,8 @@
 	        }
 	    }
 	
-	    "AOE_Full"        "150"
-	    "AOE_Half"        "300"
+	    "AOE_Full"        "225"
+	    "AOE_Half"        "450"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -14766,8 +14766,8 @@
 	    "TowerType"        "Normal"
 	    "BuffPriority"          "1"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "700"
-	    "AttackAcquisitionRange"        "700"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1.5"
 	
 	    "Model"             "models/nova.vmdl"
@@ -16698,8 +16698,8 @@
 	    "TowerType"        "Normal"
 	    "BuffPriority"          "1"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "1150"
-	    "AttackAcquisitionRange"        "1150"
+	    "AttackRange"        "1500"
+	    "AttackAcquisitionRange"        "1500"
 	    "AttackRate"        "5"
 	    "ProjectileModel"        ""
 	    "ProjectileSpeed"        "900"

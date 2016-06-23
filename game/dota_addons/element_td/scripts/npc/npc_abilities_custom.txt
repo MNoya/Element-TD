@@ -3878,7 +3878,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_bonus_full_hp_pct"		"25"
+				"damage_bonus_full_hp_pct"		"50"
 			}
 			"04"
 			{
@@ -4254,7 +4254,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"aoe"				"700"
+				"aoe"				"900"
 			}
 			"03"
 			{
@@ -4766,7 +4766,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps"					"100 500 2500"
+				"dps"					"100 500 3000"
 			}
 			"04"
 			{
@@ -5376,12 +5376,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"450 2250 11250"
+				"damage"				"600 3000 15000"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"600"
+				"radius"				"500"
 			}
 			"04"
 			{
