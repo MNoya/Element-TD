@@ -45,7 +45,7 @@
     "DamageType"        "nature"
     "ScriptClass"        "ImpulseTower"
     "TowerType"        "Normal"
-    "BuffPriority"              "2"
+    "BuffPriority"              "1"
     "HasAbilityDesc"        "1"
     "AttackRange"        "1500"
     "AttackAcquisitionRange"        "1500"

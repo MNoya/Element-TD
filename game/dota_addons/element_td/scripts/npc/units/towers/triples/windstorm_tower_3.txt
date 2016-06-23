@@ -45,7 +45,7 @@
     "DamageType"        "water"
     "ScriptClass"        "WindstormTower"
     "TowerType"        "Normal"
-    "BuffPriority"          "4"
+    "BuffPriority"          "1"
     "HasAbilityDesc"        "1"
     "AttackRange"        "1150"
     "AttackAcquisitionRange"        "1150"

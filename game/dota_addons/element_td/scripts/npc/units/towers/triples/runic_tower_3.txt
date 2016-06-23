@@ -49,7 +49,7 @@
     "DamageType"        "dark"
     "ScriptClass"        "RunicTower"
     "TowerType"        "Normal"
-    "BuffPriority"              "2"
+    "BuffPriority"              "1"
     "HasAbilityDesc"        "1"
     "AttackRange"        "1150"
     "AttackAcquisitionRange"        "1150"

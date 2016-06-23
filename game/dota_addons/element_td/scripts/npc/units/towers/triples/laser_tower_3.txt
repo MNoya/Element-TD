@@ -47,7 +47,7 @@
     "DamageType"        "light"
     "ScriptClass"        "LaserTower"
     "TowerType"        "Normal"
-    "BuffPriority"              "2"
+    "BuffPriority"              "1"
     "HasAbilityDesc"        "1"
     "AttackRange"        "900"
     "AttackAcquisitionRange"        "900"
