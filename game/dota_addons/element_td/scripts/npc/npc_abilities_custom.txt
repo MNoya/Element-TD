@@ -3197,7 +3197,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"35 50 65"
+				"bonus_gold"			"35 35 35"
 			}
 		}
 	
@@ -3914,7 +3914,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "damage"                "2 14 100 1000"
+	            "damage"                "3 21 150 1500"
 	        }
 	    }
 	}
@@ -4472,7 +4472,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"10 27 42"
+				"health_burn"			"10 27 50"
 			}
 		}
 	}
@@ -4516,7 +4516,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"500 2500 12500"
+				"damage"				"600 3000 15000"
 			}
 			"03"
 			{
