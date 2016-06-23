@@ -5,11 +5,13 @@ end
 function modifier_slow_adjustment:DeclareFunctions()
     return { MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE, 
              MODIFIER_PROPERTY_MOVESPEED_MAX,
-             MODIFIER_PROPERTY_MOVESPEED_LIMIT, }
+             MODIFIER_PROPERTY_MOVESPEED_LIMIT, 
+             MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MIN, }
 end
 
 function modifier_slow_adjustment:GetModifierMoveSpeed_Max( params ) return 750 end
 function modifier_slow_adjustment:GetModifierMoveSpeed_Limit( params ) return 750 end
+function modifier_slow_adjustment:GetModifierMoveSpeed_AbsoluteMin( params ) return 50 end
 
 function modifier_slow_adjustment:IsHidden()
     return true
