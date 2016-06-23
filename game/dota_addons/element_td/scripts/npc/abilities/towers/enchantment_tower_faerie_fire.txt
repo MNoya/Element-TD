@@ -52,12 +52,12 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"base_damage_amp"		"6 18 36"
+			"base_damage_amp"		"6 18 50"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"max_damage_amp"		"13 39 78"
+			"max_damage_amp"		"13 39 120"
 		}
 		"04"
 		{
