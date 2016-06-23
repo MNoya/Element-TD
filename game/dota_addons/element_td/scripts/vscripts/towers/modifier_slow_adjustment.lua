@@ -5,13 +5,11 @@ end
 function modifier_slow_adjustment:DeclareFunctions()
     return { MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE, 
              MODIFIER_PROPERTY_MOVESPEED_MAX,
-             MODIFIER_PROPERTY_MOVESPEED_LIMIT, 
-             MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MIN, }
+             MODIFIER_PROPERTY_MOVESPEED_LIMIT, }
 end
 
 function modifier_slow_adjustment:GetModifierMoveSpeed_Max( params ) return 750 end
-function modifier_slow_adjustment:GetModifierMoveSpeed_Limit( params ) return 750 end
-function modifier_slow_adjustment:GetModifierMoveSpeed_AbsoluteMin( params ) return 50 end
+function modifier_slow_adjustment:GetModifierMoveSpeed_Limit( params ) return self.limit end
 
 function modifier_slow_adjustment:IsHidden()
     return true
@@ -22,6 +20,9 @@ SLOWING_VALUES = {[1]=0.1,[2]=0.3,[3]=0.7}
 
 function modifier_slow_adjustment:OnCreated(params)
     self.base_ms = 300
+    self.min_ms = 50
+    self.max_ms = 750
+    self.limit = 750
     self.haste_ms = string.match(GetMapName(), "element_td_coop") and 500 or 750
 end
 
@@ -30,6 +31,7 @@ function modifier_slow_adjustment:GetModifierMoveSpeed_Absolute()
     local movespeed = self.base_ms
 
     if unit:HasModifier("creep_haste_modifier") then
+        self.limit = self.max_ms
         return self.haste_ms
     end
     
@@ -54,6 +56,12 @@ function modifier_slow_adjustment:GetModifierMoveSpeed_Absolute()
             movespeed = movespeed * (1-value)
         end
         movespeed = math.floor(movespeed + 0.5)
+    end
+
+    if movespeed < 100 then
+        self.limit = math.max(self.min_ms, movespeed)
+    else
+        self.limit = self.max_ms
     end
 
     return movespeed
