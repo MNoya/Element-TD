@@ -73,8 +73,8 @@
         }
     }
 
-    "AOE_Full"        "200"
-    "AOE_Half"        "400"
+    "AOE_Full"        "300"
+    "AOE_Half"        "600"
     "BuildTime"        "3"
     "Requirements"
     {

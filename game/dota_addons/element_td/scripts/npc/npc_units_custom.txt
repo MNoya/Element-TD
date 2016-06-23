@@ -12341,9 +12341,9 @@
 	        "2"        "earth"
 	        "3"        "fire"
 	    }
-	    "Damage"        "9000"
-	    "AttackDamageMin"        "9000"
-	    "AttackDamageMax"        "9000"
+	    "Damage"        "6000"
+	    "AttackDamageMin"        "6000"
+	    "AttackDamageMax"        "6000"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlamethrowerTower"
 	    "TowerType"        "Normal"
@@ -12372,8 +12372,8 @@
 	        }
 	    }
 	
-	    "AOE_Half"        "300"
-	    "AOE_Full"        "150"
+	    "AOE_Half"        "450"
+	    "AOE_Full"        "225"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
@@ -13181,8 +13181,8 @@
 	    "TowerType"        "Normal"
 	    "BuffPriority"              "1"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "1500"
-	    "AttackAcquisitionRange"        "1500"
+	    "AttackRange"        "1750"
+	    "AttackAcquisitionRange"        "1750"
 	    "AttackRate"        "0.66"
 	    "ProjectileModel"        "particles/custom/towers/hail/attack.vpcf"
 	    "ProjectileSpeed"        "3000"
@@ -13453,7 +13453,7 @@
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "0.66"
 	    "ProjectileModel"        "particles/custom/towers/haste/attack.vpcf"
-	    "ProjectileSpeed"        "1000"
+	    "ProjectileSpeed"        "1500"
 	
 	    "Model"             "models/heroes/troll_warlord/troll_warlord.vmdl"
 	    "ModelScale"        "1.2"
@@ -13713,8 +13713,8 @@
 	    "TowerType"        "Normal"
 	    "BuffPriority"              "1"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "1500"
-	    "AttackAcquisitionRange"        "1500"
+	    "AttackRange"        "1750"
+	    "AttackAcquisitionRange"        "1750"
 	    "AttackRate"        "1.5"
 	    "ProjectileModel"        "particles/units/heroes/hero_enchantress/enchantress_impetus.vpcf"
 	    "ProjectileSpeed"        "3000"
@@ -14613,8 +14613,8 @@
 	    "TowerType"        "Normal"
 	    "BuffPriority"          "8"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "700"
-	    "AttackAcquisitionRange"        "700"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1.5"
 	
 	    "Model"             "models/nova.vmdl"
@@ -14689,8 +14689,8 @@
 	    "TowerType"        "Normal"
 	    "BuffPriority"          "4"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "700"
-	    "AttackAcquisitionRange"        "700"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1.5"
 	
 	    "Model"             "models/nova.vmdl"
@@ -16413,8 +16413,8 @@
 	        }
 	    }
 	
-	    "AOE_Full"        "200"
-	    "AOE_Half"        "400"
+	    "AOE_Full"        "300"
+	    "AOE_Half"        "600"
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
