@@ -57,7 +57,7 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"max_damage_amp"		"13 39 120"
+			"max_damage_amp"		"13 39 110"
 		}
 		"04"
 		{

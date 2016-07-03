@@ -89,17 +89,17 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"slow"					"-10 -30 -75"
+			"slow"					"-10 -30 -70"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"600 3000 15000"
+			"damage"				"600 3000 9000"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"radius"				"500"
+			"radius"				"450"
 		}
 		"04"
 		{
