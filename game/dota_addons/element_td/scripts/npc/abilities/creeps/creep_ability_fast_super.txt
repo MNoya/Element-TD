@@ -5,7 +5,7 @@
 //============================================================//
 // Creep Ability: Fast									      //
 //============================================================//
-"creep_ability_fast"
+"creep_ability_fast_super"
 {
 	"BaseClass"						"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"

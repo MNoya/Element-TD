@@ -1,7 +1,7 @@
 //============================================================//
 // Creep Ability: Undead								      //
 //============================================================//
-"creep_ability_undead"
+"creep_ability_undead_instant"
 {
 	"BaseClass"						"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"

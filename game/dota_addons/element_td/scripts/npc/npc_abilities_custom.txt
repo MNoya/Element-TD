@@ -841,7 +841,7 @@
 	//============================================================//
 	// Creep Ability: Fast									      //
 	//============================================================//
-	"creep_ability_fast"
+	"creep_ability_fast_perma"
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -924,7 +924,7 @@
 	//============================================================//
 	// Creep Ability: Fast									      //
 	//============================================================//
-	"creep_ability_fast"
+	"creep_ability_fast_super"
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -1069,7 +1069,7 @@
 	//============================================================//
 	// Creep Ability: Heal										  //
 	//============================================================//
-	"creep_ability_heal"
+	"creep_ability_heal_super"
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1236,7 +1236,7 @@
 	//============================================================//
 	// Creep Ability: Mechanical								  //
 	//============================================================//
-	"creep_ability_mechanical"
+	"creep_ability_mechanical_super"
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1310,7 +1310,7 @@
 	//============================================================//
 	// Creep Ability: Regeneration								  //
 	//============================================================//
-	"creep_ability_regen"
+	"creep_ability_regen_super"
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1454,7 +1454,7 @@
 	//============================================================//
 	// Creep Ability: Undead								      //
 	//============================================================//
-	"creep_ability_undead"
+	"creep_ability_undead_instant"
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -1531,7 +1531,7 @@
 	//============================================================//
 	// Creep Ability: Vengeance								      //
 	//============================================================//
-	"creep_ability_vengeance"
+	"creep_ability_vengeance_super"
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"

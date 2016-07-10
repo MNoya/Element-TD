@@ -1,7 +1,7 @@
 //============================================================//
 // Creep Ability: Mechanical								  //
 //============================================================//
-"creep_ability_mechanical"
+"creep_ability_mechanical_super"
 {
 	"BaseClass"						"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"

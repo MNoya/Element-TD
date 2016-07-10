@@ -1,7 +1,7 @@
 //============================================================//
 // Creep Ability: Heal										  //
 //============================================================//
-"creep_ability_heal"
+"creep_ability_heal_super"
 {
 	"BaseClass"						"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
