@@ -1,0 +1,53 @@
+//============================================================//
+// Creep Ability: Vengeance								      //
+//============================================================//
+"creep_ability_vengeance"
+{
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"MaxLevel"						"1"
+	"AbilityTextureName"			"creeps/vengeance"
+
+	"Modifiers"
+	{
+		// FX on the creep
+		"modifier_vengeance"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"		"particles/custom/creeps/vengeance/ambient.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"            "TARGET"
+					"ControlPointEntities"
+					{
+						"CASTER"	"attach_hitloc"
+						"CASTER"	"attach_hitloc"
+					}
+				}
+			}	
+		}
+	}
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aoe"					"250"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"damage_reduction"		"-50"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"5"
+		}
+	}
+}

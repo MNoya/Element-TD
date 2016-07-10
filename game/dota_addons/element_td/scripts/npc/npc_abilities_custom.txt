@@ -834,6 +834,172 @@
 			}
 		}
 	}
+	//============================================================================================//
+	//============================================================================================//
+	//============================================================================================//
+	
+	//============================================================//
+	// Creep Ability: Fast									      //
+	//============================================================//
+	"creep_ability_fast"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"dark_seer_surge"
+		"AbilityCooldown"				"3"
+	
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" 			"CASTER"
+				"ModifierName"		"creep_haste_modifier"
+				"Duration"			"%duration"
+			}
+			"ApplyModifier"
+			{
+				"Target" 			"CASTER"
+				"ModifierName"		"creep_haste_delay"
+			}
+		}
+	
+		"OnUpgrade"
+		{
+			"ApplyModifier"
+			{
+				"Target" 			"CASTER"
+				"ModifierName"		"creep_haste_delay"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"creep_haste_delay"
+			{
+				"IsHidden"		"1"
+				"IsPurgable"    "0"
+				"Duration"		"%interval"
+				"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"creeps/fast.lua"
+						"Function"			"CastHasteSpell"
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fast_speed_pct"		"200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"1"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"interval"				"1"	
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"interval_tooltip"		"0"	
+			}
+		}
+	}
+	//============================================================================================//
+	//============================================================================================//
+	//============================================================================================//
+	
+	//============================================================//
+	// Creep Ability: Fast									      //
+	//============================================================//
+	"creep_ability_fast"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"dark_seer_surge"
+		"AbilityCooldown"				"3"
+	
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" 			"CASTER"
+				"ModifierName"		"creep_haste_modifier"
+				"Duration"			"%duration"
+			}
+			"ApplyModifier"
+			{
+				"Target" 			"CASTER"
+				"ModifierName"		"creep_haste_delay"
+			}
+		}
+	
+		"OnUpgrade"
+		{
+			"ApplyModifier"
+			{
+				"Target" 			"CASTER"
+				"ModifierName"		"creep_haste_delay"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"creep_haste_delay"
+			{
+				"IsHidden"		"1"
+				"IsPurgable"    "0"
+				"Duration"		"%interval"
+				"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"creeps/fast.lua"
+						"Function"			"CastHasteSpell"
+					}
+				}
+			}
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fast_speed_pct"		"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"1"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"interval"				"3"	
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"interval_tooltip"		"2"	
+			}
+		}
+	}
 	//============================================================//
 	// Creep Ability: Heal										  //
 	//============================================================//
@@ -850,6 +1016,72 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"heal_amount"			"18"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"300"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"creep_heal_modifier"
+			{
+				"IsHidden"	"1"
+				"Passive"	"1"
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"Target"			"CASTER"
+						"ScriptFile"		"scripts/vscripts/creeps/creepevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"HealNearbyCreeps"
+	
+						"heal_amount"		"%heal_amount"
+						"aoe"				"%aoe"
+					}
+				}
+			}
+			"heal_effect_modifier"
+			{
+				"IsHidden"	"1"
+				"Duration"	"1"
+	
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" 			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"ControlPointEntities"
+						{
+							"TARGET" "attach_origin"
+							"TARGET" "attach_origin"
+						}
+					}
+				}
+			}
+		}
+	}
+	//============================================================//
+	// Creep Ability: Heal										  //
+	//============================================================//
+	"creep_ability_heal"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"witch_doctor_voodoo_restoration"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"33"
 			}
 			"02"
 			{
@@ -1002,6 +1234,46 @@
 		}
 	}
 	//============================================================//
+	// Creep Ability: Mechanical								  //
+	//============================================================//
+	"creep_ability_mechanical"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"creeps/shield"
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"interval"				"7"	
+			}
+		}
+		"Modifiers"
+		{
+			"mechanical_buff"
+			{
+				"IsHidden"			"0"
+				"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_repel_buff.vpcf"
+				"EffectAttachType"	"follow_origin"
+	
+				"States"
+				{
+					"MODIFIER_STATE_ATTACK_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED" //USED TO BE INVULNERABLE, hopefully nothing breaks
+					"MODIFIER_STATE_MAGIC_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	//============================================================//
 	// Creep Ability: Regeneration								  //
 	//============================================================//
 	"creep_ability_regen"
@@ -1022,6 +1294,40 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"max_heal_pct"			"100"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"creep_regen_modifier"
+			{
+				"EffectName"	"particles/generic_gameplay/rune_regen_owner.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Passive"	"1"
+			}
+		}
+	}
+	//============================================================//
+	// Creep Ability: Regeneration								  //
+	//============================================================//
+	"creep_ability_regen"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"enchantress_natures_attendants"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"	"5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_heal_pct"			"150"
 			}
 		}
 	
@@ -1141,7 +1447,31 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health"				"60"
+				"health"				"50"
+			}
+		}
+	}
+	//============================================================//
+	// Creep Ability: Undead								      //
+	//============================================================//
+	"creep_ability_undead"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"skeleton_king_reincarnation"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"delay"					"0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health"				"50"
 			}
 		}
 	}
@@ -1195,6 +1525,59 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"10"
+			}
+		}
+	}
+	//============================================================//
+	// Creep Ability: Vengeance								      //
+	//============================================================//
+	"creep_ability_vengeance"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"AbilityTextureName"			"creeps/vengeance"
+	
+		"Modifiers"
+		{
+			// FX on the creep
+			"modifier_vengeance"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/custom/creeps/vengeance/ambient.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"            "TARGET"
+						"ControlPointEntities"
+						{
+							"CASTER"	"attach_hitloc"
+							"CASTER"	"attach_hitloc"
+						}
+					}
+				}	
+			}
+		}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_reduction"		"-50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5"
 			}
 		}
 	}

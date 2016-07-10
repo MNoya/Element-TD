@@ -1,0 +1,40 @@
+//============================================================//
+// Creep Ability: Mechanical								  //
+//============================================================//
+"creep_ability_mechanical"
+{
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"MaxLevel"						"1"
+	"AbilityTextureName"			"creeps/shield"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"4"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"interval"				"7"	
+		}
+	}
+	"Modifiers"
+	{
+		"mechanical_buff"
+		{
+			"IsHidden"			"0"
+			"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_repel_buff.vpcf"
+			"EffectAttachType"	"follow_origin"
+
+			"States"
+			{
+				"MODIFIER_STATE_ATTACK_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED" //USED TO BE INVULNERABLE, hopefully nothing breaks
+				"MODIFIER_STATE_MAGIC_IMMUNE" "MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}
