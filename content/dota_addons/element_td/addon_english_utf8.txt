@@ -505,11 +505,17 @@
         "creep_ability_vengeance"         "Avenger"
         "creep_ability_vengeance_super"   "Super Avenger"
         "creep_ability_time_lapse"        "Temporal"
+        "creep_ability_time_lapse"        "Super Temporal"
 
         "DOTA_Tooltip_ability_creep_ability_time_lapse"                                   "Time Lapse"
         "DOTA_Tooltip_ability_creep_ability_time_lapse_Description"                       "When this creep drops below %health_threshold%%% of its maximum health, it warps back in time to the position it was in %backtrack_duration% seconds earlier, regaining the HP from that time."
         "DOTA_Tooltip_ability_creep_ability_time_lapse_health_threshold"                  "%HEALTH THRESHOLD:"
         "DOTA_Tooltip_ability_creep_ability_time_lapse_backtrack_duration"                "BACKTRACK DURATION:"
+
+        "DOTA_Tooltip_ability_creep_ability_time_lapse_super"                                   "Super Time Lapse"
+        "DOTA_Tooltip_ability_creep_ability_time_lapse_super_Description"                       "When this creep drops below %health_threshold%%% of its maximum health, it warps back in time to the position it was in %backtrack_duration% seconds earlier, regaining the HP from that time."
+        "DOTA_Tooltip_ability_creep_ability_time_lapse_super_health_threshold"                  "%HEALTH THRESHOLD:"
+        "DOTA_Tooltip_ability_creep_ability_time_lapse_super_backtrack_duration"                "BACKTRACK DURATION:"
         
         "DOTA_Tooltip_ability_creep_ability_vengeance"                                    "Vengeance"
         "DOTA_Tooltip_ability_creep_ability_vengeance_Description"                        "When this creep dies, it curses the tower that killed it with a debuff that reduces its damage and the damage of all surrounding towers for a short duration. Can stack infinitely."
