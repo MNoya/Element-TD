@@ -4992,7 +4992,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_stacks"			"13"
+				"max_stacks"			"12"
 			}
 		}
 	}

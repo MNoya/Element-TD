@@ -17,7 +17,7 @@ CreepBasic);
 
 function CreepVengeance:OnDeath(killer) 
     local creep = self.creep
-    local ability = creep:FindAbilityByName("creep_ability_vengeance")
+    local ability = creep:FindAbilityByName("creep_ability_vengeance") or creep:FindAbilityByName("creep_ability_vengeance_super")
     local duration = ability:GetSpecialValueFor("duration")
     local aoe = ability:GetSpecialValueFor("aoe")
     local damage_reduction = ability:GetSpecialValueFor("damage_reduction")

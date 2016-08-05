@@ -43,9 +43,9 @@
     }
     "AOE_Full"        "150"
     "AOE_Half"        "300"
-    "Damage"        "4250"
-    "AttackDamageMin"        "4250"
-    "AttackDamageMax"        "4250"
+    "Damage"        "4500"
+    "AttackDamageMin"        "4500"
+    "AttackDamageMax"        "4500"
     "DamageType"        "nature"
     "ScriptClass"        "MossTower"
     "TowerType"        "Normal"

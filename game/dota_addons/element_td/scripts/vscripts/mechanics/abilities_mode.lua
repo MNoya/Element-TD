@@ -21,20 +21,20 @@ if not CHALLENGE_MODE then
 		AbilityToClassName = {
 			["creep_ability_bulky"] = "CreepBulky",
 			["creep_ability_heal"] = "CreepHeal",
-			["creep_ability_heal_super"] = "CreepHealSuper",
+			["creep_ability_heal_super"] = "CreepHeal",
 			["creep_ability_vengeance"] = "CreepVengeance",
-			["creep_ability_vengeance_super"] = "CreepVengeanceSuper",
+			["creep_ability_vengeance_super"] = "CreepVengeance",
 			["creep_ability_undead"] = "CreepUndead",
-			["creep_ability_undead_instant"] = "CreepUndeadInstant",
+			["creep_ability_undead_instant"] = "CreepUndead",
 			["creep_ability_regen"] = "CreepRegen",
-			["creep_ability_regen_super"] = "CreepRegenSuper",
+			["creep_ability_regen_super"] = "CreepRegen",
 			["creep_ability_fast"] = "CreepFast",
-			["creep_ability_fast_super"] = "CreepFastSuper",
-			["creep_ability_fast_perma"] = "CreepFastPerma",
+			["creep_ability_fast_super"] = "CreepFast",
+			["creep_ability_fast_perma"] = "CreepFast",
 			["creep_ability_mechanical"] = "CreepMechanical",
-			["creep_ability_mechanical_super"] = "CreepMechanicalSuper",
+			["creep_ability_mechanical_super"] = "CreepMechanical",
 			["creep_ability_time_lapse"] = "CreepTemporal",
-			["creep_ability_time_lapse_super"] = "CreepTemporalSuper"
+			["creep_ability_time_lapse_super"] = "CreepTemporal"
 
 		},
 		ChallengeModeAbilities = {
