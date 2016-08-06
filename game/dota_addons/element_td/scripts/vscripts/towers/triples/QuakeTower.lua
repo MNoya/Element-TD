@@ -19,7 +19,7 @@ function QuakeTower:OnAttack(keys)
     if RollPercentage(self.chance) then
         self.tower:EmitSound("Quake.Strike")
 
-        local particle = ParticleManager:CreateParticle("particles/custom/towers/quake/attack.vpcf", PATTACH_ABSORIGIN, self.tower)
+        local particle = ParticleManager:CreateParticle("particles/custom/towers/quake/shockwave.vpcf", PATTACH_ABSORIGIN, self.tower)
         ParticleManager:SetParticleControl(particle, 0, self.tower:GetAbsOrigin())
         ParticleManager:SetParticleControl(particle, 1, Vector(self.aoe,1,1))
 

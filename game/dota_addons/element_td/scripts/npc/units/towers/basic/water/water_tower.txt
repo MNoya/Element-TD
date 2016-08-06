@@ -8,7 +8,7 @@
     "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_frost_radiant.vmdl"
     "PedestalModelScale"        "0.7"
     "PedestalOffset"            "20"
-    "ProjectileModel"           "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf" 
+    "ProjectileModel"           "particles/custom/towers/water/attack.vpcf" 
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"
     "MinimapIconSize"           "320"

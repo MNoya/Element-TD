@@ -4941,12 +4941,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"600 3000 9000"
+				"damage"				"800 4000 12000"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"700"
+				"aoe"					"550"
 			}
 		}
 	}
