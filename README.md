@@ -1,7 +1,9 @@
-Element Tower Defense
+![Element Tower Defense](http://i.imgur.com/QJ4OxCI.png)
 ============
 
 A Dota 2 port of the classic WarCraft 3 Tower Defense!
+
+### [Get Element Tower Defense on the Steam workshop!](https://steamcommunity.com/sharedfiles/filedetails/?id=626780182)
 
 ### Leaderboard and Forums
 Check your global ranking and discuss the game at [eletd.com](http://www.eletd.com/)
