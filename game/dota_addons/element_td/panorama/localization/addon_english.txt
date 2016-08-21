@@ -232,7 +232,7 @@
         "loading_screen_next"   "Coming Next!"
         "loading_new_map"       "New Map Available"
         "mobile_game"           "EleTD on Mobile"
-        "loading_mobile"        "Now available on Android!"
+        "loading_mobile"        "Available on Android and iOS!"
 
         // Usage
         //  <br> for break lines
