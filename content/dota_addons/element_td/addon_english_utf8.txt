@@ -489,23 +489,15 @@
         
         // Creeps
         "creep_ability_heal"              "Healing"
-        "creep_ability_heal_super"        "Super Healing"
         "creep_ability_fast"              "Fast"
-        "creep_ability_fast_super"        "Super Fast"
-        "creep_ability_fast_perma"        "Perma Fast"
         "creep_ability_undead"            "Undead"
-        "creep_ability_undead_instant"    "Instant Undead"
         "creep_ability_mechanical"        "Shield"
-        "creep_ability_mechanical_super"  "Super Shield"
         "creep_ability_image"             "Image"
         "creep_ability_swarm"             "Swarm"
         "creep_ability_regen"             "Regen"
-        "creep_ability_regen_super"       "Super Regen"
         "creep_ability_bulky"             "Bulky"
         "creep_ability_vengeance"         "Avenger"
-        "creep_ability_vengeance_super"   "Super Avenger"
         "creep_ability_time_lapse"        "Temporal"
-        "creep_ability_time_lapse"        "Super Temporal"
 
         "DOTA_Tooltip_ability_creep_ability_time_lapse"                                   "Time Lapse"
         "DOTA_Tooltip_ability_creep_ability_time_lapse_Description"                       "When this creep drops below %health_threshold%%% of its maximum health, it warps back in time to the position it was in %backtrack_duration% seconds earlier, regaining the HP from that time."
@@ -524,12 +516,6 @@
         "DOTA_Tooltip_ability_creep_ability_vengeance_duration"                           "DURATION:"
         "DOTA_Tooltip_modifier_vengeance_debuff"                                          "Vengeance"
         "DOTA_Tooltip_modifier_vengeance_debuff_Description"                              "Reduced damage by %dMODIFIER_PROPERTY_HEALTH_BONUS%%%."
-        
-        "DOTA_Tooltip_ability_creep_ability_vengeance_super"                                    "Super Vengeance"
-        "DOTA_Tooltip_ability_creep_ability_vengeance_super_Description"                        "When this creep dies, it curses the tower that killed it with a debuff that reduces its damage and the damage of all surrounding towers for a short duration. Can stack infinitely."
-        "DOTA_Tooltip_ability_creep_ability_vengeance_super_aoe"                                "AOE:"
-        "DOTA_Tooltip_ability_creep_ability_vengeance_super_damage_reduction"                   "%DAMAGE REDUCTION PER STACK:"
-        "DOTA_Tooltip_ability_creep_ability_vengeance_super_duration"                           "DURATION:"
 
         "DOTA_Tooltip_ability_creep_ability_bulky"                                        "Bulk Up"
         "DOTA_Tooltip_ability_creep_ability_bulky_Description"                            "Creeps have twice the HP and bounty.\nSpawns half the total wave count at half the rate."
@@ -540,11 +526,6 @@
         "DOTA_Tooltip_ability_creep_ability_heal_heal_amount"       "%HEAL AMOUNT:"
         "DOTA_Tooltip_ability_creep_ability_heal_aoe"       "RADIUS:"
 
-        "DOTA_Tooltip_ability_creep_ability_heal_super"       "Super Heal"
-        "DOTA_Tooltip_ability_creep_ability_heal_super_Description"       "Upon death, this creep heals all other creeps in a small area around it by a percentage of their max health."
-        "DOTA_Tooltip_ability_creep_ability_heal_super_heal_amount"       "%HEAL AMOUNT:"
-        "DOTA_Tooltip_ability_creep_ability_heal_super_aoe"       "RADIUS:"
-
         "DOTA_Tooltip_ability_creep_ability_fast"       "Haste"
         "DOTA_Tooltip_ability_creep_ability_fast_Description"       "Periodically boosts to super speed for short bursts, ignoring slows when it does."
         "DOTA_Tooltip_ability_creep_ability_fast_fast_speed_pct"                              "%FAST SPEED:"
@@ -553,27 +534,10 @@
         "DOTA_Tooltip_creep_haste_modifier"                                               "Haste"
         "DOTA_Tooltip_creep_haste_modifier_Description"                                   "Moving at max speed"
 
-        "DOTA_Tooltip_ability_creep_ability_fast_super"       "Super Haste"
-        "DOTA_Tooltip_ability_creep_ability_fast_super_Description"       "Periodically boosts to super speed for short bursts, ignoring slows when it does."
-        "DOTA_Tooltip_ability_creep_ability_fast_super_fast_speed_pct"                              "%FAST SPEED:"
-        "DOTA_Tooltip_ability_creep_ability_fast_super_duration"      "DURATION:"
-        "DOTA_Tooltip_ability_creep_ability_fast_super_interval_tooltip"      "INTERVAL:"
-
-        "DOTA_Tooltip_ability_creep_ability_fast_perma"       "Perma Haste"
-        "DOTA_Tooltip_ability_creep_ability_fast_perma_Description"       "Moves at double speed and ignores slows."
-        "DOTA_Tooltip_ability_creep_ability_fast_perma_fast_speed_pct"                              "%FAST SPEED:"
-        "DOTA_Tooltip_ability_creep_ability_fast_perma_duration"      "DURATION:"
-        "DOTA_Tooltip_ability_creep_ability_fast_perma_interval_tooltip"      "INTERVAL:"
-
         "DOTA_Tooltip_ability_creep_ability_undead"     "Reanimate"
         "DOTA_Tooltip_ability_creep_ability_undead_Description"     "Upon death, this creep will respawn after a short delay at a percentage of their max health."
         "DOTA_Tooltip_ability_creep_ability_undead_delay"       "RESPAWN DELAY:"
         "DOTA_Tooltip_ability_creep_ability_undead_health"      "%REMAINING HEALTH:"
-
-        "DOTA_Tooltip_ability_creep_ability_undead_instant"     "Instant Reanimate"
-        "DOTA_Tooltip_ability_creep_ability_undead_instant_Description"     "Upon death, this creep will immediately respawn at a percentage of their max health."
-        "DOTA_Tooltip_ability_creep_ability_undead_instant_delay"       "RESPAWN DELAY:"
-        "DOTA_Tooltip_ability_creep_ability_undead_instant_health"      "%REMAINING HEALTH:"
 
         "DOTA_Tooltip_ability_creep_ability_mechanical"     "Shield"
         "DOTA_Tooltip_ability_creep_ability_mechanical_Description"     "Peridiocally turns invulnerable for short bursts, ignoring any debuffs when it does."
@@ -581,11 +545,6 @@
         "DOTA_Tooltip_ability_creep_ability_mechanical_interval"        "INTERVAL:"
         "DOTA_Tooltip_mechanical_buff"                                                    "Invulnerable"
         "DOTA_Tooltip_mechanical_buff_Description"                                        "Immune to all damage"
-
-        "DOTA_Tooltip_ability_creep_ability_mechanical_super"     "Super Shield"
-        "DOTA_Tooltip_ability_creep_ability_mechanical_super_Description"     "Peridiocally turns invulnerable for short bursts, ignoring any debuffs when it does."
-        "DOTA_Tooltip_ability_creep_ability_mechanical_super_duration"        "DURATION:"
-        "DOTA_Tooltip_ability_creep_ability_mechanical_super_interval"        "INTERVAL:"
 
         "DOTA_Tooltip_ability_creep_ability_image"      "Image"
         "DOTA_Tooltip_ability_creep_ability_image_Description"      "This creep spawns an image of itself when it takes damage. Can only trigger once every 10 seconds. Images do not leak and give no bounty."
@@ -606,11 +565,6 @@
         "DOTA_Tooltip_ability_creep_ability_regen_max_heal_pct"                           "%MAX HEAL:"
         "DOTA_Tooltip_creep_regen_modifier"                                               "Regeneration"
         "DOTA_Tooltip_creep_regen_modifier_Description"                                   "This unit is regenerating health."
-
-        "DOTA_Tooltip_ability_creep_ability_regen_super"                                        "Super Regeneration"
-        "DOTA_Tooltip_ability_creep_ability_regen_super_Description"                            "Heals %bonus_health_regen%%% of maximum health per second. Once %max_heal_pct%%% of the units health has been regained, the regeneration will stop."
-        "DOTA_Tooltip_ability_creep_ability_regen_super_bonus_health_regen"                     "%REGEN PER SECOND:"
-        "DOTA_Tooltip_ability_creep_ability_regen_super_max_heal_pct"                           "%MAX HEAL:"
 
         // Splash and Support
         "DOTA_Tooltip_ability_splash_damage_orb"        "Splash Damage"

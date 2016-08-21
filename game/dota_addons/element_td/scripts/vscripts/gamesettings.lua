@@ -253,6 +253,7 @@ function GameSettings:SetAbilitiesMode(mode)
 
 	if mode == "Challenge" then
 		CHALLENGE_MODE = true
+		AbilitiesMode:GenerateChallengeAbilities()
 	end
 end
 
