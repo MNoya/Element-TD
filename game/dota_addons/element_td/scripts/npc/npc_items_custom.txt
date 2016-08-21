@@ -542,7 +542,7 @@
 	    "ItemPurchasable"       "0"
 	    "ItemDroppable"         "0"
 	    "AbilityTextureName"    "item_dark_cannon_disabled"
-	    "AbilityCastRange"      "550"
+	    "AbilityCastRange"      "700"
 	}
 	"item_upgrade_to_earth_cannon_tower"
 	{
@@ -579,7 +579,7 @@
 	    "ItemPurchasable"       "0"
 	    "ItemDroppable"         "0"
 	    "AbilityTextureName"    "item_earth_cannon_disabled"
-	    "AbilityCastRange"      "550"
+	    "AbilityCastRange"      "700"
 	}
 	"item_upgrade_to_fire_cannon_tower"
 	{
@@ -616,7 +616,7 @@
 	    "ItemPurchasable"       "0"
 	    "ItemDroppable"         "0"
 	    "AbilityTextureName"    "item_fire_cannon_disabled"
-	    "AbilityCastRange"      "550"
+	    "AbilityCastRange"      "700"
 	}
 	"item_upgrade_to_light_cannon_tower"
 	{
@@ -653,7 +653,7 @@
 	    "ItemPurchasable"       "0"
 	    "ItemDroppable"         "0"
 	    "AbilityTextureName"    "item_light_cannon_disabled"
-	    "AbilityCastRange"      "550"
+	    "AbilityCastRange"      "700"
 	}
 	"item_upgrade_to_nature_cannon_tower"
 	{
@@ -690,7 +690,7 @@
 	    "ItemPurchasable"       "0"
 	    "ItemDroppable"         "0"
 	    "AbilityTextureName"    "item_nature_cannon_disabled"
-	    "AbilityCastRange"      "550"
+	    "AbilityCastRange"      "700"
 	}
 	"item_upgrade_to_water_cannon_tower"
 	{
@@ -727,7 +727,7 @@
 	    "ItemPurchasable"       "0"
 	    "ItemDroppable"         "0"
 	    "AbilityTextureName"    "item_water_cannon_disabled"
-	    "AbilityCastRange"      "550"
+	    "AbilityCastRange"      "700"
 	}
 	"item_upgrade_to_focused_dark_tower"
 	{
@@ -2050,7 +2050,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 250 1250"
+				"damage"				"60 300 1500"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -2089,7 +2089,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 250 1250"
+				"damage"				"60 300 1500"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -2118,7 +2118,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 250 1250"
+				"damage"				"60 300 1500"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -2157,7 +2157,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 250 1250"
+				"damage"				"60 300 1500"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -2186,7 +2186,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 250 1250"
+				"damage"				"60 300 1500"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -2216,7 +2216,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 250 1250"
+				"damage"				"60 300 1500"
 			}
 	    }
 	    "AbilityCastRange"              "700"
@@ -2256,7 +2256,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"40 200 1000"
+				"damage"				"50 250 1250"
 			}
 		}
 		"AbilityCastRange"              "1500"
@@ -2295,7 +2295,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"40 200 1000"
+				"damage"				"50 250 1250"
 			}
 		}
 		"AbilityCastRange"              "1500"
@@ -2324,7 +2324,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"40 200 1000"
+				"damage"				"50 250 1250"
 			}
 		}
 		"AbilityCastRange"              "1500"
@@ -2363,7 +2363,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"40 200 1000"
+				"damage"				"50 250 1250"
 			}
 		}
 		"AbilityCastRange"              "1500"
@@ -2392,7 +2392,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"40 200 1000"
+				"damage"				"50 250 1250"
 			}
 		}
 		"AbilityCastRange"              "1500"
@@ -2422,7 +2422,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"40 200 1000"
+				"damage"				"50 250 1250"
 			}
 		}
 		"AbilityCastRange"              "1500"
@@ -2462,7 +2462,7 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"450 2250 11250"
+				"splash_damage"		"800 4000 20000"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -2501,7 +2501,7 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"450 2250 11250"
+				"splash_damage"		"800 4000 20000"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -2530,7 +2530,7 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"450 2250 11250"
+				"splash_damage"		"800 4000 20000"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -2569,7 +2569,7 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"450 2250 11250"
+				"splash_damage"		"800 4000 20000"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -2598,7 +2598,7 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"450 2250 11250"
+				"splash_damage"		"800 4000 20000"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -2628,7 +2628,7 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"450 2250 11250"
+				"splash_damage"		"800 4000 20000"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -2668,10 +2668,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"180 900 4500"
+				"damage"				"360 1800 9000"
 			}
 	    }
-	    "AbilityCastRange"              "900"
+	    "AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_ice_tower_2"
 	{
@@ -2707,10 +2707,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"180 900 4500"
+				"damage"				"360 1800 9000"
 			}
 	    }
-	    "AbilityCastRange"              "900"
+	    "AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_ice_tower_2_disabled"
 	{
@@ -2736,10 +2736,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"180 900 4500"
+				"damage"				"360 1800 9000"
 			}
 	    }
-	    "AbilityCastRange"              "900"
+	    "AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_ice_tower_3"
 	{
@@ -2775,10 +2775,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"180 900 4500"
+				"damage"				"360 1800 9000"
 			}
 	    }
-	    "AbilityCastRange"              "900"
+	    "AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_ice_tower_3_disabled"
 	{
@@ -2804,10 +2804,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"180 900 4500"
+				"damage"				"360 1800 9000"
 			}
 	    }
-	    "AbilityCastRange"              "900"
+	    "AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_ice_tower_disabled"
 	{
@@ -2834,10 +2834,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"180 900 4500"
+				"damage"				"360 1800 9000"
 			}
 	    }
-	    "AbilityCastRange"              "900"
+	    "AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_life_tower"
 	{
@@ -3537,7 +3537,7 @@
 			"light"		"1"
 			"light"		"1"
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_quark_tower_2"
 	{
@@ -3567,7 +3567,7 @@
 			"light"		"2"
 			"light"		"2"
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_quark_tower_2_disabled"
 	{
@@ -3587,7 +3587,7 @@
 			"light"		"2"
 			"light"		"2"
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_quark_tower_3"
 	{
@@ -3617,7 +3617,7 @@
 			"light"		"3"
 			"light"		"3"
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_quark_tower_3_disabled"
 	{
@@ -3637,7 +3637,7 @@
 			"light"		"3"
 			"light"		"3"
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_quark_tower_disabled"
 	{
@@ -3659,7 +3659,7 @@
 			"light"		"1"
 			"light"		"1"
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_trickery_tower"
 	{
@@ -3902,15 +3902,15 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"60 300 1500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"30 150 750"
+				"aftershock_damage"		"60 300 1500"
 			}
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_vapor_tower_2"
 	{
@@ -3946,15 +3946,15 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"60 300 1500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"30 150 750"
+				"aftershock_damage"		"60 300 1500"
 			}
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_vapor_tower_2_disabled"
 	{
@@ -3980,15 +3980,15 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"60 300 1500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"30 150 750"
+				"aftershock_damage"		"60 300 1500"
 			}
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_vapor_tower_3"
 	{
@@ -4024,15 +4024,15 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"60 300 1500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"30 150 750"
+				"aftershock_damage"		"60 300 1500"
 			}
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_vapor_tower_3_disabled"
 	{
@@ -4058,15 +4058,15 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"60 300 1500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"30 150 750"
+				"aftershock_damage"		"60 300 1500"
 			}
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_vapor_tower_disabled"
 	{
@@ -4093,15 +4093,15 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"60 300 1500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"30 150 750"
+				"aftershock_damage"		"60 300 1500"
 			}
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_well_tower"
 	{
@@ -4346,12 +4346,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"5 15 36"
+				"base_damage_amp"		"7 21 60"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"13 39 78"
+				"max_damage_amp"		"13 39 110"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4392,12 +4392,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"5 15 36"
+				"base_damage_amp"		"7 21 60"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"13 39 78"
+				"max_damage_amp"		"13 39 110"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4428,12 +4428,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"5 15 36"
+				"base_damage_amp"		"7 21 60"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"13 39 78"
+				"max_damage_amp"		"13 39 110"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4471,12 +4471,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"5 15 36"
+				"base_damage_amp"		"7 21 60"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"13 39 78"
+				"max_damage_amp"		"13 39 110"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4504,12 +4504,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"5 15 36"
+				"base_damage_amp"		"7 21 60"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"13 39 78"
+				"max_damage_amp"		"13 39 110"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4541,12 +4541,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"5 15 36"
+				"base_damage_amp"		"7 21 60"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"13 39 78"
+				"max_damage_amp"		"13 39 110"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4758,12 +4758,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"11 33 66"
+				"damage_amp"			"11 33 100"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"110 550 2200"
+				"dot"					"110 550 1650"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4804,12 +4804,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"11 33 66"
+				"damage_amp"			"11 33 100"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"110 550 2200"
+				"dot"					"110 550 1650"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4840,12 +4840,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"11 33 66"
+				"damage_amp"			"11 33 100"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"110 550 2200"
+				"dot"					"110 550 1650"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4886,12 +4886,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"11 33 66"
+				"damage_amp"			"11 33 100"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"110 550 2200"
+				"dot"					"110 550 1650"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4922,12 +4922,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"11 33 66"
+				"damage_amp"			"11 33 100"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"110 550 2200"
+				"dot"					"110 550 1650"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4959,12 +4959,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"11 33 66"
+				"damage_amp"			"11 33 100"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"110 550 2200"
+				"dot"					"110 550 1650"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -5006,7 +5006,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 4800"
+				"damage"				"240 1200 3600"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -5047,7 +5047,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 4800"
+				"damage"				"240 1200 3600"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -5078,7 +5078,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 4800"
+				"damage"				"240 1200 3600"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -5119,7 +5119,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 4800"
+				"damage"				"240 1200 3600"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -5150,7 +5150,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 4800"
+				"damage"				"240 1200 3600"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -5182,7 +5182,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 4800"
+				"damage"				"240 1200 3600"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -5224,7 +5224,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"220 1100 4400"
+				"splash_damage"			"220 1100 3600"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -5265,7 +5265,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"220 1100 4400"
+				"splash_damage"			"220 1100 3600"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -5296,7 +5296,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"220 1100 4400"
+				"splash_damage"			"220 1100 3600"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -5337,7 +5337,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"220 1100 4400"
+				"splash_damage"			"220 1100 3600"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -5368,7 +5368,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"220 1100 4400"
+				"splash_damage"			"220 1100 3600"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -5400,7 +5400,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"220 1100 4400"
+				"splash_damage"			"220 1100 3600"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -5442,7 +5442,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"35 50 65"
+				"bonus_gold"			"35 35 35"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -5483,7 +5483,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"35 50 65"
+				"bonus_gold"			"35 35 35"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -5514,7 +5514,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"35 50 65"
+				"bonus_gold"			"35 35 35"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -5555,7 +5555,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"35 50 65"
+				"bonus_gold"			"35 35 35"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -5586,7 +5586,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"35 50 65"
+				"bonus_gold"			"35 35 35"
 			}
 		}
 		"AbilityCastRange"              "1150"
@@ -5618,7 +5618,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"35 50 65"
+				"bonus_gold"			"35 35 35"
 			}
 		}
 		"AbilityCastRange"              "1150"

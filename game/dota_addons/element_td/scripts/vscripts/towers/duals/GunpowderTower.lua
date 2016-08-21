@@ -34,7 +34,7 @@ function GunpowderTower:OnAttackLanded(keys)
     Timers:CreateTimer(1, function() ParticleManager:DestroyParticle(particle, true) end)
 
     --spawn random explosions around the initial point, after a small delay
-    local rotate_pos = origin + Vector(1,0,0) * 50
+    local rotate_pos = origin + Vector(1,0,0) * 100
     for i = 1, 4 do          
         local pos = RotatePosition(origin, QAngle(0, 90*i, 0), rotate_pos)
 

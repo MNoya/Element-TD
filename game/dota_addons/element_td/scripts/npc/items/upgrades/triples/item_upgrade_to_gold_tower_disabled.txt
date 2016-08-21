@@ -25,7 +25,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_gold"			"35 50 65"
+			"bonus_gold"			"35 35 35"
 		}
 	}
 	"AbilityCastRange"              "1150"
