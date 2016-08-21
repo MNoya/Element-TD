@@ -100,7 +100,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"180 900 4500"
+			"damage"				"360 1800 9000"
 		}
 		"02"
 		{
@@ -110,17 +110,17 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aoe_end"				"150"
+			"aoe_end"				"450"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"distance"				"1150"
+			"distance"				"550"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"projectile_speed"		"900"
+			"projectile_speed"		"1000"
 		}
 	}
 }

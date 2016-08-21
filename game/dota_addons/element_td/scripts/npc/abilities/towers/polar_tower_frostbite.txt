@@ -55,7 +55,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"health_burn"			"10 27 50"
+			"health_burn"			"10 27 55"
 		}
 	}
 }

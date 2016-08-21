@@ -2703,7 +2703,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"6 18 50"
+				"base_damage_amp"		"7 21 60"
 			}
 			"03"
 			{
@@ -3131,7 +3131,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "damage"                "50 250 1250"
+	            "damage"                "60 300 1500"
 	        }
 	        "02"
 	        {
@@ -3160,7 +3160,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"220 1100 3300"
+				"splash_damage"			"220 1100 3600"
 			}
 			"02"
 			{
@@ -3260,7 +3260,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"45 225 1125"
+				"damage"				"50 250 1250"
 			}
 			"02"
 			{
@@ -3479,12 +3479,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"chance_pct"		"50"
+				"chance_pct"		"33"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"700 3500 17500"
+				"splash_damage"		"800 4000 20000"
 			}
 			"03"
 			{
@@ -3600,7 +3600,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"180 900 4500"
+				"damage"				"360 1800 9000"
 			}
 			"02"
 			{
@@ -3610,17 +3610,17 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe_end"				"150"
+				"aoe_end"				"450"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"distance"				"1150"
+				"distance"				"550"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"900"
+				"projectile_speed"		"1000"
 			}
 		}
 	}
@@ -3972,12 +3972,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range_per_stack"		"-50"
+				"range_per_stack"		"-25"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_stacks"			"16"
+				"max_stacks"			"32"
 			}
 			"03"
 			{
@@ -4406,12 +4406,12 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"crit_aoe_half"					"800"
+				"crit_aoe_half"					"900"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"crit_aoe_full"					"400"
+				"crit_aoe_full"					"450"
 			}
 		}
 	}
@@ -4472,7 +4472,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"10 27 50"
+				"health_burn"			"10 27 55"
 			}
 		}
 	}
@@ -4511,12 +4511,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance"				"50"
+				"chance"				"20"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"800 4000 12000"
+				"damage"				"1800 9000 30000"
 			}
 			"03"
 			{
@@ -5025,7 +5025,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"40 200 600"
+				"damage"			"50 250 750"
 			}
 			"02"
 			{
@@ -5085,22 +5085,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"30 150 750"
+				"damage"				"60 300 1500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"30 150 750"
+				"aftershock_damage"		"60 300 1500"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"700"
+				"aoe"					"550"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aftershock_aoe"		"350"
+				"aftershock_aoe"		"300"
 			}
 		}
 	

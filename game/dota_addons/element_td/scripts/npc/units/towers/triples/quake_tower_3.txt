@@ -40,9 +40,9 @@
         "2"        "earth"
         "3"        "nature"
     }
-    "Damage"        "22500"
-    "AttackDamageMin"        "22500"
-    "AttackDamageMax"        "22500"
+    "Damage"        "30000"
+    "AttackDamageMin"        "30000"
+    "AttackDamageMax"        "30000"
     "DamageType"        "earth"
     "ScriptClass"        "QuakeTower"
     "TowerType"        "Normal"

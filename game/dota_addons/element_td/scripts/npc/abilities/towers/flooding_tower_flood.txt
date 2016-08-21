@@ -13,7 +13,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"splash_damage"			"220 1100 3300"
+			"splash_damage"			"220 1100 3600"
 		}
 		"02"
 		{
