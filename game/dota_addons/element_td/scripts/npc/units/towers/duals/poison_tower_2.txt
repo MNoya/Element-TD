@@ -72,15 +72,14 @@
     }
     "Creature"
     {
-       "AttachWearables" // Venomous Deathbringer
-       {
-            "1" { "ItemDef" "6645" } // Venomous Deathbringer Hood
-            "2" { "ItemDef" "6682" } // Venomous Deathbringer Ward
-            "3" { "ItemDef" "6643" } // Venomous Deathbringer Head
-            "4" { "ItemDef" "6642" } // Venomous Deathbringer Stingers
-            "5" { "ItemDef" "6644" } // Venomous Deathbringer Tail
-            "6" { "ItemDef" "518" } // Ambient
-       }
+        "AttachWearables" // Ferocious Toxicant
+        {
+            "1" { "ItemDef" "9894" } // Crest of the Ferocious Toxicant
+            "2" { "ItemDef" "9897" } // Tail of the Ferocious Toxicant
+            "3" { "ItemDef" "9896" } // Spitters of the Ferocious Toxicant
+            "4" { "ItemDef" "9893" } // Ward of the Ferocious Toxicant
+            "5" { "ItemDef" "9895" } // Spines of the Ferocious Toxicant
+        }
     }
 
     // Building Size

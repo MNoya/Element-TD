@@ -58,7 +58,7 @@
     "ModelOffset"       "15"
     "Creature"
     {
-        "AttachWearables" // Blessings of the Wildwing
+        "AttachWearables" // Blessings of the Wildwing + Flourishing Lodestar
         {
             "1" { "ItemDef" "6857" } // Flourishing Lodestar
             "2" { "ItemDef" "4787" } // Wingbelt of the Wildwing's Blessing

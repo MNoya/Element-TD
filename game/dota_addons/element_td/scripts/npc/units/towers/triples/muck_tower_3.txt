@@ -60,13 +60,14 @@
     "ModelOffset"       "15"
     "Creature"
     {
-        "AttachWearables" // Emerald Frenzy Set
+        "AttachWearables" // Debts of the Nightwatchman
         {
-            "1" { "ItemDef" "5407" } // Emerald Frenzy Flail
-            "2" { "ItemDef" "5410" } // Emerald Frenzy Amulet
-            "3" { "ItemDef" "5409" } // Emerald Frenzy Glove
-            "4" { "ItemDef" "8391" } // Piston Impaler
-            "5" { "ItemDef" "5408" } // Emerald Frenzy Helmet
+            "1" { "ItemDef" "6492" } // Cape of the Nightwatch
+            "2" { "ItemDef" "6493" } // Lantern of the Nightwatch
+            "3" { "ItemDef" "6489" } // Gauntlets of the Nightwatch
+            "4" { "ItemDef" "6491" } // Hat of the Nightwatch
+            "5" { "ItemDef" "6490" } // Nightwatch Keys to the City
+            "6" { "ItemDef" "520" } // Bristleback's Ambient Effects
         }
     }
 

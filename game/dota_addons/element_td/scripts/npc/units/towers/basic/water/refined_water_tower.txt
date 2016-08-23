@@ -8,17 +8,20 @@
     "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_frost_radiant.vmdl"
     "PedestalModelScale"        "0.7"
     "PedestalOffset"            "20"
-    "ProjectileModel"           "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf" 
+    "ProjectileModel"           "particles/custom/towers/water/attack.vpcf" 
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"
     "MinimapIconSize"           "320"
     "Creature"
     {
-        "AttachWearables" // Comet's Tail
+        "AttachWearables" // Shard of the Lost Star
         {
-            "1" { "ItemDef" "4348" } // Crown of the Comet's Tail
-            "2" { "ItemDef" "4296" } // Shoulders of the Comet's Tail
-            "3" { "ItemDef" "507" } // Morphling's Ambient Effects
+            "1" { "ItemDef" "7561" } // Spines of the Lost Star
+            "2" { "ItemDef" "7560" } // Scowl of the Lost Star
+            "3" { "ItemDef" "7562" } // Bracers of the Lost Star
+            "4" { "ItemDef" "7559" } // Eye of the Lost Star
+            "5" { "ItemDef" "7558" } // Grip of the Lost Star
+            "6" { "ItemDef" "507" } // Morphling's Ambient Effects
         }
     }
     "SoundSet"          "Hero_Morphling"

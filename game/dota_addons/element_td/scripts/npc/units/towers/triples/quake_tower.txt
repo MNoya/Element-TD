@@ -60,12 +60,12 @@
     "ModelOffset"       "15"
     "Creature"
     {
-        "AttachWearables" // Default npc_dota_hero_earthshaker
+        "AttachWearables" // Guardian of the Red Mountain
         {
-            "1" { "ItemDef" "8144" } // Great Helm of the Behemoth
-            "2" { "ItemDef" "8145" } // Tine of the Behemoth
-            "3" { "ItemDef" "8142" } // Bracers of the Behemoth
-            "4" { "ItemDef" "8143" } // Belt of the Behemoth
+            "1" { "ItemDef" "6315" } // Helm of the Red Mountain
+            "2" { "ItemDef" "6308" } // Totem of the Red Mountain
+            "3" { "ItemDef" "6314" } // Gauntlets of the Red Mountain
+            "4" { "ItemDef" "6313" } // Belt of the Red Mountain
         }
     }
 

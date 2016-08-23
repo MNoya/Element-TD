@@ -61,12 +61,12 @@
     
     "Creature"
     {
-        "AttachWearables" // Bindings of Deep Magma
+        "AttachWearables" // Crimson Beast
         {
-            "1" { "ItemDef" "5640" } // Helm of Impasse
-            "2" { "ItemDef" "6401" } // Belt of Deep Magma
-            "3" { "ItemDef" "6820" } // Gravelmaw
-            "4" { "ItemDef" "6400" } // Arms of Deep Magma
+            "1" { "ItemDef" "8579" } // Belt of the Crimson Beast
+            "2" { "ItemDef" "8577" } // Totem of the Crimson Beast
+            "3" { "ItemDef" "8578" } // Bracers of the Crimson Beast
+            "4" { "ItemDef" "8580" } // Mask of the Crimson Beast
         }
     }
 

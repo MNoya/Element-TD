@@ -7,7 +7,7 @@
     "MagicalResistance"        "0"
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-    "AttackAnimationPoint"        "0"
+    "AttackAnimationPoint"        "0.2"
     "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
     "AttributeBaseStrength"        "0"
     "AttributeStrengthGain"        "0"
@@ -51,20 +51,20 @@
     "AttackRange"        "900"
     "AttackAcquisitionRange"        "900"
     "AttackRate"        "1"
-    "ProjectileModel"        "particles/units/heroes/hero_witchdoctor/witchdoctor_ward_attack.vpcf"
+    "ProjectileModel"        "particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
     "ProjectileSpeed"        "2000"
     
     "Model"             "models/heroes/witchdoctor/witchdoctor.vmdl"
-    "ModelScale"        "1.3"
+    "ModelScale"        "1.15"
     "ModelRotation"     "90"
     "ModelOffset"       "20"
     "Creature"
     {
-        "AttachWearables" // Twilight's Rest
+        "AttachWearables" // Twilight's Rest + Ribbi'tar + Bonkers the Mad
         {
-            "1" { "ItemDef" "7550" } // Cloak of Twilight's Rest
+            "1" { "ItemDef" "8267" } // Bonkers the Mad
             "2" { "ItemDef" "7551" } // Mantle of Twilight's Rest
-            "3" { "ItemDef" "7553" } // Mask of Twilight's Rest
+            "3" { "ItemDef" "8336" } // Visage of Ribbi'tar
             "4" { "ItemDef" "7552" } // Scourge of Twilight's Rest
             "5" { "ItemDef" "7554" } // Wrap of Twilight's Rest
         }

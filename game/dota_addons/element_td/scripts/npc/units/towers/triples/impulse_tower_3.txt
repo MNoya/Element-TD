@@ -58,12 +58,12 @@
     "ModelOffset"       "15"
     "Creature"
     {
-        "AttachWearables" // Blessings of the Wildwing
+        "AttachWearables" // Blessings of the Wildwing + Flourishing Lodestar + Virga's Arc
         {
             "1" { "ItemDef" "6857" } // Flourishing Lodestar
             "2" { "ItemDef" "4787" } // Wingbelt of the Wildwing's Blessing
             "3" { "ItemDef" "4678" } // Necklace of the Wildwing's Blessing
-            "4" { "ItemDef" "4785" } // Spear of the Wildwing's Blessing
+            "4" { "ItemDef" "7459" } // Virga's Arc
             "5" { "ItemDef" "4676" } // Bangles of the Wildwing's Blessing
         }
     }

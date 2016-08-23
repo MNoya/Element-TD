@@ -61,13 +61,13 @@
 
     "Creature"
     {
-        "AttachWearables" // Default npc_dota_hero_shadow_demon
+        "AttachWearables" // Chains of the Summoned Lord Set
         {
-            "1" { "ItemDef" "396" } // Shadow Demon's Cape
-            "2" { "ItemDef" "545" } // Shadow Demon's Ambient Effects
-            "3" { "ItemDef" "398" } // Shadow Demon's Belt
-            "4" { "ItemDef" "397" } // Shadow Demon's Armor
-            "5" { "ItemDef" "399" } // Shadow Demon's Tail
+            "1" { "ItemDef" "4541" } // Bindings of the Summoned Lord
+            "2" { "ItemDef" "4380" } // Plate of the Summoned Lord
+            "3" { "ItemDef" "4377" } // Lash of the Summoned Lord
+            "4" { "ItemDef" "4379" } // Sigil of the Summoned Lord
+            "5" { "ItemDef" "545" } // Shadow Demon's Ambient Effects
         }
     }
 

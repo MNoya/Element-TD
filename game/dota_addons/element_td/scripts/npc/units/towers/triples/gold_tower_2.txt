@@ -62,7 +62,7 @@
     "ModelOffset"       "15"
     "Creature"
     {
-        "AttachWearables" // Default npc_dota_hero_alchemist
+        "AttachWearables" // Default npc_dota_hero_alchemist + Midas Knuckles + Radiance Blades
         {
             "1" { "ItemDef" "9568" } // Razzil's Midas Knuckles
             "2" { "ItemDef" "119" } // Alchemist's Saddle

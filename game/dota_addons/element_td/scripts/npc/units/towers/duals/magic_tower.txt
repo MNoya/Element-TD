@@ -75,13 +75,13 @@
     }
     "Creature"
     {
-       "AttachWearables" // Default
-       {
-            "1" { "ItemDef" "365" } // Weapon
-            "2" { "ItemDef" "366" } // Cape
-            "3" { "ItemDef" "368" } // Shoulders
-            "4" { "ItemDef" "369" } // Arm
-       }
+        "AttachWearables" // Hell's Ambassador Set
+        {
+            "1" { "ItemDef" "5461" } // Epaulets of Hell's Ambassador
+            "2" { "ItemDef" "5459" } // Hand of Hell's Ambassador
+            "3" { "ItemDef" "5462" } // Strifemaul of Hell's Ambassador
+            "4" { "ItemDef" "5460" } // Mantle of Hell's Ambassador
+        }
     }
 
     // Building Size

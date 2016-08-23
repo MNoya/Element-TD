@@ -59,18 +59,20 @@
     "AOE_Full"                  "100"
     "AOE_Half"                  "200"
 
-    "Model"             "models/heroes/arc_warden/arc_warden.vmdl"
-    "ModelScale"        "1.2"
+    "Model"             "models/heroes/medusa/medusa.vmdl"
+    "ModelScale"        "1.1"
     "ModelRotation"     "90"
     "ModelOffset"       "0"
     "Creature"
     {
-        "AttachWearables" // Default npc_dota_hero_arc_warden
+        "AttachWearables" // Eye of the Beholder
         {
-            "1" { "ItemDef" "598" } // Arc Warden's Back
-            "2" { "ItemDef" "601" } // Arc Warden's Ambient Effects
-            "3" { "ItemDef" "556" } // Arc Warden's Bracers
-            "4" { "ItemDef" "557" } // Arc Warden's Shoulders
+            "1" { "ItemDef" "8195" } // Helm of the Beholder
+            "2" { "ItemDef" "8193" } // Armor of the Beholder
+            "3" { "ItemDef" "8194" } // Bracers of the Beholder
+            "4" { "ItemDef" "8191" } // Bow of the Beholder
+            "5" { "ItemDef" "8196" } // Tail of the Beholder
+            "6" { "ItemDef" "531" } // Ambient Effects
         }
     }
 

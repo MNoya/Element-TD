@@ -60,10 +60,10 @@
     "ModelOffset"       "-10"
     "Creature"
     {
-        "AttachWearables" // Herald of Measureless Ruin
+        "AttachWearables" // Herald of Measureless Ruin + Golden Shards of Exile
         {
             "1" { "ItemDef" "9370" } // Grasp of Measureless Ruin
-            "2" { "ItemDef" "8376" } // Shards of Exile
+            "2" { "ItemDef" "7509" } // Golden Shards of Exile
             "3" { "ItemDef" "9367" } // Apex of Measureless Ruin
             "4" { "ItemDef" "9368" } // Expanse of Measureless Ruin
             "5" { "ItemDef" "533" } // Outworld Devourer's Ambient Effects

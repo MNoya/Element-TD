@@ -58,10 +58,10 @@
     "ModelOffset"       "15"
     "Creature"
     {
-        "AttachWearables" // Relics of the Drowning Trench
+        "AttachWearables" // Relics of the Drowning Trench + Floodmask
         {
             "1" { "ItemDef" "7774" } // Grip of the Drowning Trench
-            "2" { "ItemDef" "7776" } // Headshell of the Drowning Trench
+            "2" { "ItemDef" "7408" } // Floodmask
             "3" { "ItemDef" "7777" } // Leashed Rockshark
             "4" { "ItemDef" "7775" } // Carapace of the Drowning Trench
             "5" { "ItemDef" "7773" } // Belt of the Drowning Trench

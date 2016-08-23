@@ -15,14 +15,15 @@
     "MinimapIconSize"           "320"
     "Creature"
     {
-        "AttachWearables" // Primeval Prophet
+        "AttachWearables" // Guardian of the Eternal Seasons + Staff of the Lunar Tree
         {
-            "1" { "ItemDef" "6749" } // Primeval Staff
-            "2" { "ItemDef" "6776" } // Primeval Shoulder
-            "3" { "ItemDef" "6746" } // Primeval Bracers
-            "4" { "ItemDef" "6743" } // Primeval Beard
-            "5" { "ItemDef" "6747" } // Primeval Cape
-            "6" { "ItemDef" "6748" } // Primeval Horns
+            "1" { "ItemDef" "6708" } // Staff of the Lunar Tree
+            "2" { "ItemDef" "6249" } // Bonsaiko
+            "3" { "ItemDef" "6248" } // Birch of the Eternal Seasons
+            "4" { "ItemDef" "6245" } // Locks of the Eternal Seasons
+            "5" { "ItemDef" "6246" } // Shoulders of the Eternal Seasons
+            "6" { "ItemDef" "6286" } // Robes of the Eternal Seasons
+            "7" { "ItemDef" "6285" } // Arms of the Eternal Seasons
         }
     }
     "SoundSet"          "Hero_Furion"

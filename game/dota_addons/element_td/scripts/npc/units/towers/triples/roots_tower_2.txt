@@ -57,12 +57,12 @@
     "ModelOffset"       "20"
     "Creature"
     {
-        "AttachWearables" // Agaric Flourish
+        "AttachWearables" // Moonshard Overgrowth
         {
-            "1" { "ItemDef" "7059" } // Embrace of the Agaric Flourish
-            "2" { "ItemDef" "7062" } // Canopy of the Agaric Flourish
-            "3" { "ItemDef" "7060" } // Countenance of the Agaric Flourish
-            "4" { "ItemDef" "7061" } // Stride of the Agaric Flourish
+            "1" { "ItemDef" "7298" } // Moonshard Claws
+            "2" { "ItemDef" "7300" } // Moonshard Roots
+            "3" { "ItemDef" "7299" } // Moonshard Tusks
+            "4" { "ItemDef" "7301" } // Canopy of the Moonshard
         }
     }
 

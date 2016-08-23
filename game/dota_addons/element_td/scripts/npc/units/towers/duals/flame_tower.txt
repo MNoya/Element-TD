@@ -73,29 +73,16 @@
     }
     "Creature"
     {
-        "AttachWearables"
-        {
-            "Wearable1"
-            {
-                "ItemDef"        "471"
-            }
-            "Wearable2"
-            {
-                "ItemDef"        "472"
-            }
-            "Wearable3"
-            {
-                "ItemDef"        "473"
-            }
-            "Wearable4"
-            {
-                "ItemDef"        "474"
-            }
-            "Wearable5"
-            {
-                "ItemDef"        "469"
-            }
-        }
+       "AttachWearables" // Mentor of the High Plains
+       {
+            "1" { "ItemDef" "6761" } // Mentor of the High Plains Guard
+            "2" { "ItemDef" "6764" } // Mentor of the High Plains Left Tiger Hook
+            "3" { "ItemDef" "6762" } // Mentor of the High Plains Decorated Pauldrons
+            "4" { "ItemDef" "6759" } // Mentor of the High Plains Ceremonial Banner
+            "5" { "ItemDef" "6763" } // Mentor of the High Plains Right Tiger Hook
+            "6" { "ItemDef" "6760" } // Mentor of the High Plains Great Cuirass
+            "7" { "ItemDef" "469" } // Ambient
+       }
     }
 
     // Building Size

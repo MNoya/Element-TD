@@ -73,29 +73,14 @@
     }
     "Creature"
     {
-        "AttachWearables"
-        {
-            "Wearable1"
-            {
-                "ItemDef"        "544" // Ambient
-            }
-            "Wearable2"
-            {
-                "ItemDef"        "419" // Head
-            }
-            "Wearable3"
-            {
-                "ItemDef"        "205" // Shoulder
-            }
-            "Wearable4"
-            {
-                "ItemDef"        "204" // Cape
-            }
-            "Wearable5"
-            {
-                "ItemDef"        "203" // Cape
-            }
-        }
+       "AttachWearables" // Councilor's Complete Raiment Set
+       {
+            "1" { "ItemDef" "4677" } // Councilor's Staff
+            "2" { "ItemDef" "4680" } // Councilor's Robe
+            "3" { "ItemDef" "4825" } // Councilor's Mask
+            "4" { "ItemDef" "4679" } // Councilor's Shawl
+            "5" { "ItemDef" "544" } // Ambient
+       }
     }
 
     // Building Size

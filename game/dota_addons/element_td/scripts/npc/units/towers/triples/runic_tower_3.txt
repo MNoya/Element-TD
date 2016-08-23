@@ -62,15 +62,15 @@
     "ModelOffset"       "20"
     "Creature"
     {
-        "AttachWearables" // Fires of Vashundol
+        "AttachWearables" // Eternal Fire
         {
-            "1" { "ItemDef" "6947" } // Skull of Vashundol
-            "2" { "ItemDef" "6887" } // Cloak of Vashundol
-            "3" { "ItemDef" "6632" } // Bindings of Vashundol
-            "4" { "ItemDef" "6821" } // Tail of Vashundol
-            "5" { "ItemDef" "6888" } // Wings of Vashundol
-            "6" { "ItemDef" "6822" } // Belt of Vashundol
-            "7" { "ItemDef" "6885" } // Broken Blade of Vashundol
+            "1" { "ItemDef" "6503" } // Belt of Eternal Fire
+            "2" { "ItemDef" "6504" } // Helm of Eternal Fire
+            "3" { "ItemDef" "6502" } // Wings of Eternal Fire
+            "4" { "ItemDef" "6507" } // Blade of Eternal Fire
+            "5" { "ItemDef" "6506" } // Tail of Eternal Fire
+            "6" { "ItemDef" "6501" } // Arms of Eternal Fire
+            "7" { "ItemDef" "6505" } // Armor of Eternal Fire
         }
     }
 

@@ -8,19 +8,19 @@
     "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_frost_radiant.vmdl"
     "PedestalModelScale"        "0.7"
     "PedestalOffset"            "20"
-    "ProjectileModel"           "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf" 
+    "ProjectileModel"           "particles/custom/towers/water/attack.vpcf" 
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"
     "MinimapIconSize"           "320"
     "Creature"
     {
-        "AttachWearables" // Shard of the Lost Star
+        "AttachWearables" // Splendor of the Protean Emperor + Blade of Tears + Crown of Tears
         {
-            "1" { "ItemDef" "7561" } // Spines of the Lost Star
-            "2" { "ItemDef" "7560" } // Scowl of the Lost Star
-            "3" { "ItemDef" "7562" } // Bracers of the Lost Star
-            "4" { "ItemDef" "7559" } // Eye of the Lost Star
-            "5" { "ItemDef" "7558" } // Grip of the Lost Star
+            "1" { "ItemDef" "7603" } // Crown of Tears
+            "2" { "ItemDef" "8807" } // Ornaments of the Protean Emperor
+            "3" { "ItemDef" "8808" } // Pauldrons of the Protean Emperor
+            "4" { "ItemDef" "6833" } // Blade of Tears
+            "5" { "ItemDef" "8810" } // Spikes of the Protean Emperor
             "6" { "ItemDef" "507" } // Morphling's Ambient Effects
         }
     }

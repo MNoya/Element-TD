@@ -67,6 +67,7 @@
             "3" { "ItemDef" "5409" } // Emerald Frenzy Glove
             "4" { "ItemDef" "8391" } // Piston Impaler
             "5" { "ItemDef" "5408" } // Emerald Frenzy Helmet
+            "6" { "ItemDef" "520" } // Bristleback's Ambient Effects
         }
     }
 

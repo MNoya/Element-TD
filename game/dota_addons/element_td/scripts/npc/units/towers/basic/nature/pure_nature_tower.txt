@@ -15,7 +15,7 @@
     "MinimapIconSize"           "320"
     "Creature"
     {
-        "AttachWearables" // Fungal Lord Set + Immortal Staff
+        "AttachWearables" // Fungal Lord Set + Fluttering Staff
         {
             "1" { "ItemDef" "5800" } // Shoulders of the Fungal Lord
             "2" { "ItemDef" "5797" } // Cap of the Fungal Lord

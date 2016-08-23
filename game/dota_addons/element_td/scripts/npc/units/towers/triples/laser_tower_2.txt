@@ -60,7 +60,7 @@
     "ModelOffset"       "20"
     "Creature"
     {
-        "AttachWearables" // Default npc_dota_hero_tinker
+        "AttachWearables" // Default npc_dota_hero_tinker + Mecha Boots
         {
             "1" { "ItemDef" "466" } // Tinker's Head
             "2" { "ItemDef" "467" } // Tinker's Cape

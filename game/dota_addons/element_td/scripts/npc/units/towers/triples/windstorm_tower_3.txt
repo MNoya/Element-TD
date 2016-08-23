@@ -58,12 +58,12 @@
     "ModelOffset"       "0"
     "Creature"
     {
-        "AttachWearables" // Empire of the Lightning Lord
+        "AttachWearables" // Empire of the Lightning Lord + Severing Lash
         {
             "1" { "ItemDef" "6646" } // Severing Crest
             "2" { "ItemDef" "9354" } // Plate of the Lightning Lord
             "3" { "ItemDef" "9356" } // Rings of the Lightning Lord
-            "4" { "ItemDef" "9357" } // Spark of the Lightning Lord
+            "4" { "ItemDef" "8000" } // Severing Lash
             "5" { "ItemDef" "9355" } // Conduit of the Lightning Lord
             "6" { "ItemDef" "513" } // Razor's Ambient Effects
         }

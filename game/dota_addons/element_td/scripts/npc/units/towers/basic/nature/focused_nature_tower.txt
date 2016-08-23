@@ -15,14 +15,14 @@
     "MinimapIconSize"           "320"
     "Creature"
     {
-        "AttachWearables" // The Regal Forest Lord Set
+        "AttachWearables" // Primeval Prophet
         {
-            "1" { "ItemDef" "4028" } // Horns of Noblesse
-            "2" { "ItemDef" "4031" } // Runed Ailettes
-            "3" { "ItemDef" "4091" } // Cuffs of Oak and Yew
-            "4" { "ItemDef" "4030" } // Runestaff of Verodicia
-            "5" { "ItemDef" "4027" } // Luxuriant Chin-Foliage
-            "6" { "ItemDef" "4029" } // Cape of Verdant Dreaming
+            "1" { "ItemDef" "6749" } // Primeval Staff
+            "2" { "ItemDef" "6776" } // Primeval Shoulder
+            "3" { "ItemDef" "6746" } // Primeval Bracers
+            "4" { "ItemDef" "6743" } // Primeval Beard
+            "5" { "ItemDef" "6747" } // Primeval Cape
+            "6" { "ItemDef" "6748" } // Primeval Horns
         }
     }
     "SoundSet"          "Hero_Furion"

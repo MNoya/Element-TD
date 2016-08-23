@@ -14,9 +14,13 @@
     "MinimapIconSize"           "320"
     "Creature"
     {
-        "AttachWearables"
+        "AttachWearables" // Shards of Polymorphia Set
         {
-            "1" { "ItemDef" "507" }
+            "1" { "ItemDef" "4403" } // Crests of Polymorphia
+            "2" { "ItemDef" "4410" } // Pauldrons of Polymorphia
+            "3" { "ItemDef" "4404" } // Crown of Polymorphia
+            "4" { "ItemDef" "4422" } // Bracers of Polymorphia
+            "5" { "ItemDef" "507" } // Morphling's Ambient Effects
         }
     }
     "SoundSet"          "Hero_Morphling"

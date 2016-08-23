@@ -14,12 +14,12 @@
     "MinimapIconSize"           "320"
     "Creature"
     {
-        "AttachWearables" // Divine Flame
+        "AttachWearables" // Arcana
         {
-            "1" { "ItemDef" "8992" } // Sleeves of the Divine Flame
-            "2" { "ItemDef" "8991" } // Cape of the Divine Flame
-            "3" { "ItemDef" "8993" } // Skirt of the Divine Flame
-            "4" { "ItemDef" "8990" } // Headress of the Divine Flame
+            "1" { "ItemDef" "4794" } // Fiery Soul of the Slayer
+            "2" { "ItemDef" "6339" } // Fire Lotus Belt
+            "3" { "ItemDef" "5941" } // Wings of the Ember Crane
+            "4" { "ItemDef" "504" } // Lina's Ambient Effects
         }
     }
     "SoundSet"          "Hero_Lina"

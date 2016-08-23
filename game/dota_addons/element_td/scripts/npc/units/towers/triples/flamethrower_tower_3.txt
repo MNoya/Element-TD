@@ -63,13 +63,13 @@
     
     "Creature"
     {
-        "AttachWearables" // Flamestitched Suitings Set
+        "AttachWearables" // Marauding Pyro + Burning Iron
         {
             "1" { "ItemDef" "375" } // Batrider's Head
             "2" { "ItemDef" "9376" } // Mask of the Marauding Pyro
             "3" { "ItemDef" "9388" } // Glider of the Marauding Pyro
             "4" { "ItemDef" "9386" } // Cocktail of the Marauding Pyro
-            "5" { "ItemDef" "9387" } // Torch
+            "5" { "ItemDef" "6606" } // Burning Iron
         }
     }
 

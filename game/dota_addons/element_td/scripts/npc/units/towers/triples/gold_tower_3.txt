@@ -62,16 +62,16 @@
     "ModelOffset"       "15"
     "Creature"
     {
-        "AttachWearables" // Default npc_dota_hero_alchemist
+        "AttachWearables" // Toxic Siege + Midas Knuckles + Radiance Blades
         {
             "1" { "ItemDef" "9568" } // Razzil's Midas Knuckles
-            "2" { "ItemDef" "119" } // Alchemist's Saddle
-            "3" { "ItemDef" "121" } // Alchemist's Goblin Hat
+            "2" { "ItemDef" "6121" } // Toxic Siege Armored Saddle
+            "3" { "ItemDef" "6119" } // Toxic Siege Safety Goggles
             "4" { "ItemDef" "124" } // Alchemist's Ogre Head
-            "5" { "ItemDef" "117" } // Alchemist's Goblin Body
+            "5" { "ItemDef" "6118" } // Toxic Siege Garb
             "6" { "ItemDef" "7627" } // Eternal Radiance Blades
-            "7" { "ItemDef" "122" } // Alchemist's Left Bottle
-            "8" { "ItemDef" "125" } // Alchemist's Shoulder Bottle
+            "7" { "ItemDef" "6120" } // Toxic Siege Corrosive Flasks
+            "8" { "ItemDef" "6122" } // Toxic Siege Pauldrons
             "9" { "ItemDef" "123" } // Alchemist's Goblin Head
         }
     }

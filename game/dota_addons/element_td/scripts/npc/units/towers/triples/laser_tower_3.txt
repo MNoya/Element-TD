@@ -60,12 +60,12 @@
     "ModelOffset"       "20"
     "Creature"
     {
-        "AttachWearables" // Default npc_dota_hero_tinker
+        "AttachWearables" // Default npc_dota_hero_tinker + Mecha Boots + Rollermawster
         {
             "1" { "ItemDef" "466" } // Tinker's Head
             "2" { "ItemDef" "467" } // Tinker's Cape
             "3" { "ItemDef" "464" } // Tinker's Shoulders
-            "4" { "ItemDef" "465" } // Tinker's Helmet
+            "4" { "ItemDef" "7143" } // Rollermawster
             "5" { "ItemDef" "515" } // Tinker's Ambient Effects
             "6" { "ItemDef" "463" } // Tinker's Left Arm
             "7" { "ItemDef" "367" } // Tinker's Right Arm

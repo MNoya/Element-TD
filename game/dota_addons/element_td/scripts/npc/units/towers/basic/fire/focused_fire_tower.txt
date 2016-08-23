@@ -14,12 +14,13 @@
     "MinimapIconSize"           "320"
     "Creature"
     {
-        "AttachWearables" // Light of the Solar Divine
+        "AttachWearables" // Divine Flame
         {
-            "1" { "ItemDef" "4756" } // Arc of the Solar Divine
-            "2" { "ItemDef" "4754" } // Sleeves of the Solar Divine
-            "3" { "ItemDef" "4755" } // Flares of the Solar Divine
-            "4" { "ItemDef" "4753" } // Blessings of the Solar Divine
+            "1" { "ItemDef" "8992" } // Sleeves of the Divine Flame
+            "2" { "ItemDef" "8991" } // Cape of the Divine Flame
+            "3" { "ItemDef" "8993" } // Skirt of the Divine Flame
+            "4" { "ItemDef" "8990" } // Headress of the Divine Flame
+            "5" { "ItemDef" "504" } // Lina's Ambient Effects
         }
     }
     "SoundSet"          "Hero_Lina"

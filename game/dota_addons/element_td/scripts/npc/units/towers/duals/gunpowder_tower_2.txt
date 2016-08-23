@@ -73,13 +73,13 @@
     }
     "Creature"
     {
-       "AttachWearables" // The Hare Hunt Set
+       "AttachWearables" // Exact Marksman
        {
-            "1" { "ItemDef" "5432" } // Hare Hunt Sleeves
-            "2" { "ItemDef" "5435" } // Hare Hunt Hat
-            "3" { "ItemDef" "5431" } // Hare Hunt Rifle
-            "4" { "ItemDef" "5433" } // Hare Hunt Shoulders
-            "5" { "ItemDef" "5434" } // Hare Hunt Cape
+            "1" { "ItemDef" "7178" } // Cloak of the Exact Marksman
+            "2" { "ItemDef" "7532" } // Cap of the Exact Marksman
+            "3" { "ItemDef" "7526" } // Spaulders of the Exact Marksman
+            "4" { "ItemDef" "7525" } // Arm of the Exact Marksman
+            "5" { "ItemDef" "7187" } // Perforator
        }
     }
 

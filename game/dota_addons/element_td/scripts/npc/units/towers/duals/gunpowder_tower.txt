@@ -77,14 +77,14 @@
     }
     "Creature"
     {
-       "AttachWearables" // Default
-       {
-            "1" { "ItemDef" "281" } // Weapon
-            "2" { "ItemDef" "282" } // Cape
-            "3" { "ItemDef" "283" } // Head
-            "4" { "ItemDef" "284" } // Shoulder
-            "5" { "ItemDef" "285" } // Bracers
-       }
+        "AttachWearables" // The Hare Hunt Set
+        {
+            "1" { "ItemDef" "5432" } // Hare Hunt Sleeves
+            "2" { "ItemDef" "5435" } // Hare Hunt Hat
+            "3" { "ItemDef" "5431" } // Hare Hunt Rifle
+            "4" { "ItemDef" "5433" } // Hare Hunt Shoulders
+            "5" { "ItemDef" "5434" } // Hare Hunt Cape
+        }
     }
 
     // Building Size

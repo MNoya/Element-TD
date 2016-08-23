@@ -62,14 +62,15 @@
     "ModelOffset"       "0"
     "Creature"
     {
-        "AttachWearables" // Eldritch Ice Set
+        "AttachWearables" // The Serakund Tyrant
         {
-            "1" { "ItemDef" "4853" } // Dead Winter Sash
-            "2" { "ItemDef" "4852" } // Dead Winter Soul
-            "3" { "ItemDef" "4851" } // Dead Winter Mantle
-            "4" { "ItemDef" "4854" } // Dead Winter Grasp
-            "5" { "ItemDef" "571" } // Lich's Head
-            "6" { "ItemDef" "506" } // Lich's Ambient Effects
+            "1" { "ItemDef" "8523" } // Tassets of the Serakund Tyrant
+            "2" { "ItemDef" "8521" } // Crown of the Serakund Tyrant
+            "3" { "ItemDef" "8519" } // Bracers of the Serakund Tyrant
+            "4" { "ItemDef" "8520" } // Mantle of the Serakund Tyrant
+            "5" { "ItemDef" "8522" } // Core of the Serakund Tyrant
+            "6" { "ItemDef" "571" } // Lich's Head
+            "7" { "ItemDef" "506" } // Lich's Ambient Effects
         }
     }
 

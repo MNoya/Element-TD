@@ -67,14 +67,14 @@
     }
     "Creature"
     {
-       "AttachWearables" // Flames of Prosperity Set
-       {
-            "1" { "ItemDef" "6013" } // Arm Guards of Prosperity
-            "2" { "ItemDef" "6014" } // Crimson Guard of Prosperity
-            "3" { "ItemDef" "6017" } // Huo - Blade of Prosperity
-            "4" { "ItemDef" "6015" } // Phoenix Helm of Prosperity
-            "5" { "ItemDef" "6018" } // Ember Pauldrons of Prosperity
-            "6" { "ItemDef" "6016" } // Jin - Blade of Prosperity
+        "AttachWearables" // Rekindled Ashes + Both Rapiers
+        {
+            "1" { "ItemDef" "8840" } // Guard of the Rekindled Ashes
+            "2" { "ItemDef" "7470" } // Rapier of the Burning God Offhand
+            "3" { "ItemDef" "8843" } // Headdress of the Rekindled Ashes
+            "4" { "ItemDef" "8841" } // Robe of the Rekindled Ashes
+            "5" { "ItemDef" "8842" } // Shoulders of the Rekindled Ashes
+            "6" { "ItemDef" "7472" } // Rapier of the Burning God
             "7" { "ItemDef" "469" } // Ambient
        }
     }

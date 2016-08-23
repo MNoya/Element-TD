@@ -62,15 +62,15 @@
     "ModelOffset"       "20"
     "Creature"
     {
-        "AttachWearables" // Guise of the Winged Bolt
+        "AttachWearables" // Wyvern Skin
         {
-            "1" { "ItemDef" "7238" } // Bow of the Winged Bolt
-            "2" { "ItemDef" "7245" } // Mask of the Winged Bolt
-            "3" { "ItemDef" "7243" } // Cape of the Winged Bolt
-            "4" { "ItemDef" "7242" } // Bracers of the Winged Bolt
-            "5" { "ItemDef" "7232" } // Boots of the Winged Bolt
-            "6" { "ItemDef" "7246" } // Quiver of the Winged Bolt
-            "7" { "ItemDef" "7244" } // Guards of the Winged Bolt
+            "1" { "ItemDef" "8148" } // Bracers of the Wyvern Skin
+            "2" { "ItemDef" "8151" } // Mantle of the Wyvern Skin
+            "3" { "ItemDef" "8150" } // Cowl of the Wyvern Skin
+            "4" { "ItemDef" "8152" } // Quiver of the Wyvern Skin
+            "5" { "ItemDef" "8146" } // Boots of the Wyvern Skin
+            "6" { "ItemDef" "8149" } // Cape of the Wyvern Skin
+            "7" { "ItemDef" "8147" } // Bow of the Wyvern Skin
         }
     }
 

@@ -17,12 +17,12 @@
         "AttachWearables" // Default npc_dota_hero_invoker
         {
             "1" { "ItemDef" "8626" } // Invoker's Forge Spirits
-            "2" { "ItemDef" "48" } // Invoker's Cape
-            "3" { "ItemDef" "89" } // Invoker's Shoulder
+            "2" { "ItemDef" "7979" } // Dark Artistry Cape
+            "3" { "ItemDef" "5865" } // Iceforged Shoulders
             "4" { "ItemDef" "98" } // Invoker's Head
-            "5" { "ItemDef" "305" } // Invoker's Belt
-            "6" { "ItemDef" "99" } // Invoker's Hair
-            "7" { "ItemDef" "100" } // Invoker's Bracer
+            "5" { "ItemDef" "8745" } // Belt of Glorious Inspiration
+            "6" { "ItemDef" "8746" } // Magus Apex
+            "7" { "ItemDef" "5785" } // Iceforged Bracers
         }
     }
     "SoundSet"          "Hero_Invoker"

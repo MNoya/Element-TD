@@ -62,7 +62,7 @@
     "ModelOffset"       "0"
     "Creature"
     {
-        "AttachWearables" // Eldritch Ice Set
+        "AttachWearables" // Dead Winter
         {
             "1" { "ItemDef" "4853" } // Dead Winter Sash
             "2" { "ItemDef" "4852" } // Dead Winter Soul
