@@ -240,7 +240,7 @@
         //  <font color='#hex'>text</font>  for color
         //  <b>text</b> for bold        
         "loading_screen_changelog"   "Latest Changes"
-        "loading_screen_change_text" "<h1>Version 1.11</h1>• iOS version released!<br>• Tier 3 Triple Element Towers added!<br>• Endspeed Score Bonus buffed<br>• Life Tower reworked<br>• Quake Tower no longer RNG-based<br>• Geyser Tower no longer RNG-based<br>• Lots of balance changes<br><br><b>Check out the full changelog on the forums!</b><br>"
+        "loading_screen_change_text" "<h1>Version 1.11</h1>• iOS version released!<br>• Tier 3 Triple Element Towers added!<br>• Cosmetics Updated<br>• Endspeed Score Bonus buffed<br>• Life Tower reworked<br>• Quake Tower no longer RNG-based<br>• Geyser Tower no longer RNG-based<br>• Lots of balance changes<br><br><b>Check out the full changelog on the forums!</b><br>"
 
         "credits_title"         "Credits"
         "credits_developers"    "Developers"

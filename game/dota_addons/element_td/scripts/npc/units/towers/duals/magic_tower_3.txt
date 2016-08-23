@@ -68,11 +68,11 @@
     }
     "Creature"
     {
-       "AttachWearables" // Legacy of Infernal Wings + Mulctant Pall + Fin King's Charm
+       "AttachWearables" // Curse of the Malignant Corruption + Mulctant Pall + Fin King's Charm
        {
-            "1" { "ItemDef" "7074" } // Infernal Wings Flare
-            "2" { "ItemDef" "7067" } // Infernal Wings Claw
-            "3" { "ItemDef" "7073" } // Infernal Wings Jaw
+            "1" { "ItemDef" "6143" } // Shards of the Malignant Corruption
+            "2" { "ItemDef" "6024" } // Carapace of Buki'vak the Corrupted
+            "3" { "ItemDef" "6142" } // Horns of the Malignant Corruption
             "4" { "ItemDef" "8007" } // Mulctant Pall of the Crimson Witness
             "5" { "ItemDef" "6561" } // Fin King's Charm
        }

@@ -55,17 +55,6 @@
     "ModelRotation"    "90"
     "ModelOffset"      "15"
     
-    "Creature"
-    {
-        "AttachWearables" // Wartorn Heavens
-        {
-            "1" { "ItemDef" "7951" } // Bracers of the Wartorn Heavens
-            "2" { "ItemDef" "7954" } // Helm of the Wartorn Heavens
-            "3" { "ItemDef" "7952" } // Pauldrons of the Wartorn Heavens
-            "4" { "ItemDef" "7953" } // Belt of the Wartorn Heavens
-        }
-    }
-
     "BuildTime"        "2"
     "Requirements"
     {

@@ -16,7 +16,7 @@
     {
         "AttachWearables" // Arcana
         {
-            "1" { "ItemDef" "4794" } // Fiery Soul of the Slayer
+            "1" { "ItemDef" "7725" } // Style of the Bewitching Flare
             "2" { "ItemDef" "6339" } // Fire Lotus Belt
             "3" { "ItemDef" "5941" } // Wings of the Ember Crane
             "4" { "ItemDef" "504" } // Lina's Ambient Effects

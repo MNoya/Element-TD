@@ -6116,8 +6116,9 @@
 	            "1" { "ItemDef" "6339" } // Fire Lotus Belt
 	            "2" { "ItemDef" "7717" } // Touch of the Bewitching Flare
 	            "3" { "ItemDef" "8003" } // Disciple of the Wyrmwrought Flame
-	            "4" { "ItemDef" "7725" } // Style of the Bewitching Flare
-	            "5" { "ItemDef" "504" } // Lina's Ambient Effects
+	            "4" { "ItemDef" "4794" } // Fiery Soul of the Slayer
+	            "5" { "ItemDef" "7725" } // Style of the Bewitching Flare
+	            "6" { "ItemDef" "504" } // Lina's Ambient Effects
 	        }
 	    }
 	    "SoundSet"          "Hero_Lina"
@@ -6198,7 +6199,7 @@
 	    {
 	        "AttachWearables" // Arcana
 	        {
-	            "1" { "ItemDef" "4794" } // Fiery Soul of the Slayer
+	            "1" { "ItemDef" "7725" } // Style of the Bewitching Flare
 	            "2" { "ItemDef" "6339" } // Fire Lotus Belt
 	            "3" { "ItemDef" "5941" } // Wings of the Ember Crane
 	            "4" { "ItemDef" "504" } // Lina's Ambient Effects
@@ -7852,17 +7853,6 @@
 	    "ModelRotation"    "90"
 	    "ModelOffset"      "15"
 	    
-	    "Creature"
-	    {
-	        "AttachWearables" // Wartorn Heavens
-	        {
-	            "1" { "ItemDef" "7951" } // Bracers of the Wartorn Heavens
-	            "2" { "ItemDef" "7954" } // Helm of the Wartorn Heavens
-	            "3" { "ItemDef" "7952" } // Pauldrons of the Wartorn Heavens
-	            "4" { "ItemDef" "7953" } // Belt of the Wartorn Heavens
-	        }
-	    }
-	
 	    "BuildTime"        "2"
 	    "Requirements"
 	    {
@@ -9642,11 +9632,11 @@
 	    }
 	    "Creature"
 	    {
-	       "AttachWearables" // Legacy of Infernal Wings + Mulctant Pall + Fin King's Charm
+	       "AttachWearables" // Curse of the Malignant Corruption + Mulctant Pall + Fin King's Charm
 	       {
-	            "1" { "ItemDef" "7074" } // Infernal Wings Flare
-	            "2" { "ItemDef" "7067" } // Infernal Wings Claw
-	            "3" { "ItemDef" "7073" } // Infernal Wings Jaw
+	            "1" { "ItemDef" "6143" } // Shards of the Malignant Corruption
+	            "2" { "ItemDef" "6024" } // Carapace of Buki'vak the Corrupted
+	            "3" { "ItemDef" "6142" } // Horns of the Malignant Corruption
 	            "4" { "ItemDef" "8007" } // Mulctant Pall of the Crimson Witness
 	            "5" { "ItemDef" "6561" } // Fin King's Charm
 	       }
@@ -10392,16 +10382,16 @@
 	    
 	    "Creature"
 	    {
-	       "AttachWearables" // Desert Gale Set
+	       "AttachWearables" // Gemmed Armor of the Priest Kings Set
 	       {
-	            "1" { "ItemDef" "5995" } // Desert Gale Moustache
-	            "2" { "ItemDef" "5991" } // Desert Gale Arms
-	            "3" { "ItemDef" "5990" } // Desert Gale Armor
-	            "4" { "ItemDef" "5999" } // Desert Gale Fouchard
-	            "5" { "ItemDef" "5998" } // Desert Gale Shoulder Plate
-	            "6" { "ItemDef" "5993" } // Desert Gale Helmet
-	            "7" { "ItemDef" "521" } // Ambient
-	            "8" { "ItemDef" "221"} // Mount
+	            "1" { "ItemDef" "5037" } // Ruling Staff of the Priest Kings
+	            "2" { "ItemDef" "5036" } // Scarab Pendant of the Priest Kings
+	            "3" { "ItemDef" "5035" } // Gemmed Bracers of the Priest Kings
+	            "4" { "ItemDef" "5033" } // Thrice-Gemmed Barding of Sanurok
+	            "5" { "ItemDef" "5032" } // Gemmed Pauldrons of the Priest Kings
+	            "6" { "ItemDef" "5034" } // Gemmed Mitre of the Priest Kings
+	            "7" { "ItemDef" "5031" } // Sanurok the Ever Able
+	            "8" { "ItemDef" "521" } // Ambient
 	       }
 	    }
 	
@@ -10482,16 +10472,16 @@
 	    
 	    "Creature"
 	    {
-	       "AttachWearables" // Gemmed Armor of the Priest Kings Set
+	       "AttachWearables" // Desert Gale Set
 	       {
-	            "1" { "ItemDef" "5037" } // Ruling Staff of the Priest Kings
-	            "2" { "ItemDef" "5036" } // Scarab Pendant of the Priest Kings
-	            "3" { "ItemDef" "5035" } // Gemmed Bracers of the Priest Kings
-	            "4" { "ItemDef" "5033" } // Thrice-Gemmed Barding of Sanurok
-	            "5" { "ItemDef" "5032" } // Gemmed Pauldrons of the Priest Kings
-	            "6" { "ItemDef" "5034" } // Gemmed Mitre of the Priest Kings
-	            "7" { "ItemDef" "5031" } // Sanurok the Ever Able
-	            "8" { "ItemDef" "521" } // Ambient
+	            "1" { "ItemDef" "5995" } // Desert Gale Moustache
+	            "2" { "ItemDef" "5991" } // Desert Gale Arms
+	            "3" { "ItemDef" "5990" } // Desert Gale Armor
+	            "4" { "ItemDef" "5999" } // Desert Gale Fouchard
+	            "5" { "ItemDef" "5998" } // Desert Gale Shoulder Plate
+	            "6" { "ItemDef" "5993" } // Desert Gale Helmet
+	            "7" { "ItemDef" "521" } // Ambient
+	            "8" { "ItemDef" "221"} // Mount
 	       }
 	    }
 	
