@@ -16,7 +16,7 @@ CreepBasic);
 -- Datadriven version because who needs wrappers anyway
 function CastHasteSpell(keys)
 	local caster = keys.caster
-	local ability = caster:FindAbilityByName("creep_ability_fast")
+	local ability = caster:FindAbilityByName("creep_ability_fast") or caster:FindAbilityByName("creep_ability_fast_perma") or caster:FindAbilityByName("creep_ability_fast_super")
 	if ability and caster:IsAlive() then
 		caster:CastAbilityImmediately(ability, 1)
 	end

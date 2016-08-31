@@ -1,0 +1,93 @@
+"runic_tower_3"
+{
+    "BaseClass"        "npc_dota_creature"
+    "SoundSet"              "Hero_Visage"
+    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_visage.vsndevts"
+    "MinimapIcon"        "minimap_tower90"
+    "MinimapIconSize"        "320"
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"        "0.2"
+    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"        "0"
+    "AttributeStrengthGain"        "0"
+    "AttributeBaseIntelligence"        "0"
+    "AttributeIntelligenceGain"        "0"
+    "AttributeBaseAgility"        "0"
+    "AttributeAgilityGain"        "0"
+    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+    "ProjectileCollisionSize"        "50"
+    "RingRadius"        "80"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"        "0"
+    "MovementTurnRate"        "1.0"
+    "StatusHealth"        "4500"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "TeamName"        "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"        "1900"
+    "Level"        "3"
+    "Cost"        "5000"
+    "TotalCost"        "10000"
+    "Element"
+    {
+        "1"        "dark"
+        "2"        "fire"
+        "3"        "light"
+    }
+    "Damage"        "20000"
+    "AttackDamageMin"        "20000"
+    "AttackDamageMax"        "20000"
+    "DamageType"        "dark"
+    "ScriptClass"        "RunicTower"
+    "TowerType"        "Normal"
+    "BuffPriority"              "1"
+    "HasAbilityDesc"        "1"
+    "AttackRange"        "1150"
+    "AttackAcquisitionRange"        "1150"
+    "AttackRate"        "1"
+    "ProjectileModel"        "particles/custom/towers/runic/attack_projectile.vpcf"
+    "ProjectileSpeed"        "2000"
+
+    "Model"             "models/heroes/doom/doom.vmdl"
+    "ModelScale"        "0.9"
+    "ModelRotation"     "90"
+    "ModelOffset"       "20"
+    "Creature"
+    {
+        "AttachWearables" // Eternal Fire
+        {
+            "1" { "ItemDef" "6503" } // Belt of Eternal Fire
+            "2" { "ItemDef" "6504" } // Helm of Eternal Fire
+            "3" { "ItemDef" "6502" } // Wings of Eternal Fire
+            "4" { "ItemDef" "6507" } // Blade of Eternal Fire
+            "5" { "ItemDef" "6506" } // Tail of Eternal Fire
+            "6" { "ItemDef" "6501" } // Arms of Eternal Fire
+            "7" { "ItemDef" "6505" } // Armor of Eternal Fire
+        }
+    }
+
+    "AOE_Full"        "100"
+    "AOE_Half"        "200"
+    "BuildTime"        "3"
+    "Requirements"
+    {
+        "dark"        "3"
+        "fire"        "3"
+        "light"        "3"
+    }
+    "Upgrades"
+    {
+    }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
+}

@@ -42,9 +42,9 @@
         "2"        "earth"
         "3"        "light"
     }
-    "Damage"        "5000"
-    "AttackDamageMin"        "5000"
-    "AttackDamageMax"        "5000"
+    "Damage"        "6000"
+    "AttackDamageMin"        "6000"
+    "AttackDamageMax"        "6000"
     "DamageType"        "earth"
     "ScriptClass"        "GoldTower"
     "TowerType"        "Normal"
@@ -62,7 +62,7 @@
     "ModelOffset"       "15"
     "Creature"
     {
-        "AttachWearables" // Default npc_dota_hero_alchemist
+        "AttachWearables" // Default npc_dota_hero_alchemist + Midas Knuckles
         {
             "1" { "ItemDef" "9568" } // Razzil's Midas Knuckles
             "2" { "ItemDef" "119" } // Alchemist's Saddle

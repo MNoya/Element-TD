@@ -40,9 +40,9 @@
         "2"        "earth"
         "3"        "light"
     }
-    "Damage"        "27500"
-    "AttackDamageMin"        "27500"
-    "AttackDamageMax"        "27500"
+    "Damage"        "30000"
+    "AttackDamageMin"        "30000"
+    "AttackDamageMax"        "30000"
     "DamageType"        "light"
     "ScriptClass"        "LaserTower"
     "TowerType"        "Normal"
@@ -60,7 +60,7 @@
     "ModelOffset"       "20"
     "Creature"
     {
-        "AttachWearables" // Default npc_dota_hero_tinker
+        "AttachWearables" // Default npc_dota_hero_tinker + Mecha Boots
         {
             "1" { "ItemDef" "466" } // Tinker's Head
             "2" { "ItemDef" "467" } // Tinker's Cape
@@ -82,6 +82,8 @@
     }
     "Upgrades"
     {
+        "Count"        "1"
+        "1"        "laser_tower_3"
     }
 
     // Building Size

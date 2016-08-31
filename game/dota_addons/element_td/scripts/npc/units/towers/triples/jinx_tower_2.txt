@@ -7,7 +7,7 @@
     "MagicalResistance"        "0"
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-    "AttackAnimationPoint"        "0"
+    "AttackAnimationPoint"        "0.2"
     "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
     "AttributeBaseStrength"        "0"
     "AttributeStrengthGain"        "0"
@@ -51,7 +51,7 @@
     "AttackRange"        "900"
     "AttackAcquisitionRange"        "900"
     "AttackRate"        "1"
-    "ProjectileModel"        "particles/units/heroes/hero_witchdoctor/witchdoctor_ward_attack.vpcf"
+    "ProjectileModel"        "particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
     "ProjectileSpeed"        "2000"
     
     "Model"             "models/heroes/witchdoctor/witchdoctor.vmdl"
@@ -79,6 +79,8 @@
     }
     "Upgrades"
     {
+        "Count"        "1"
+        "1"        "jinx_tower_3"
     }
 
     // Building Size

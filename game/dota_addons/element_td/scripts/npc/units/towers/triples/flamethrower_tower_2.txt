@@ -63,7 +63,7 @@
     
     "Creature"
     {
-        "AttachWearables" // Flamestitched Suitings Set
+        "AttachWearables" // Marauding Pyro
         {
             "1" { "ItemDef" "375" } // Batrider's Head
             "2" { "ItemDef" "9376" } // Mask of the Marauding Pyro
@@ -84,6 +84,8 @@
     }
     "Upgrades"
     {
+        "Count"        "1"
+        "1"        "flamethrower_tower_3"
     }
 
     // Building Size

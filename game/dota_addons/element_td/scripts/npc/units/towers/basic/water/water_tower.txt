@@ -8,15 +8,19 @@
     "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_frost_radiant.vmdl"
     "PedestalModelScale"        "0.7"
     "PedestalOffset"            "20"
-    "ProjectileModel"           "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf" 
+    "ProjectileModel"           "particles/custom/towers/water/attack.vpcf" 
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"
     "MinimapIconSize"           "320"
     "Creature"
     {
-        "AttachWearables"
+        "AttachWearables" // Shards of Polymorphia Set
         {
-            "1" { "ItemDef" "507" }
+            "1" { "ItemDef" "4403" } // Crests of Polymorphia
+            "2" { "ItemDef" "4410" } // Pauldrons of Polymorphia
+            "3" { "ItemDef" "4404" } // Crown of Polymorphia
+            "4" { "ItemDef" "4422" } // Bracers of Polymorphia
+            "5" { "ItemDef" "507" } // Morphling's Ambient Effects
         }
     }
     "SoundSet"          "Hero_Morphling"
@@ -24,9 +28,9 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "60"
-    "AttackDamageMax"           "60"
-    "Damage"                    "60"    
+    "AttackDamageMin"           "65"
+    "AttackDamageMax"           "65"
+    "Damage"                    "65"    
     "AOE_Full"                  "200"
     "AOE_Half"                  "200"  
     "AttackRange"               "900"

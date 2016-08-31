@@ -33,5 +33,5 @@
     "ItemPurchasable"       "0"
     "ItemDroppable"         "0"
     "AbilityTextureName"    "item_dark_cannon_disabled"
-    "AbilityCastRange"      "550"
+    "AbilityCastRange"      "700"
 }

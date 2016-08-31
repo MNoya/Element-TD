@@ -10,7 +10,7 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 	"AbilityCooldown"				"1"
-	"MaxLevel"						"2"
+	"MaxLevel"						"3"
 	"AbilityTextureName"			"towers/enchantment"
 	"AbilityCastRange"				"900"
 
@@ -52,12 +52,12 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"base_damage_amp"		"6 18"
+			"base_damage_amp"		"7 21 60"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"max_damage_amp"		"13 39"
+			"max_damage_amp"		"13 39 110"
 		}
 		"04"
 		{

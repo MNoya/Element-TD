@@ -232,7 +232,7 @@
         "loading_screen_next"   "Coming Next!"
         "loading_new_map"       "New Map Available"
         "mobile_game"           "EleTD on Mobile"
-        "loading_mobile"        "Now available on Android!"
+        "loading_mobile"        "Available on Android and iOS!"
 
         // Usage
         //  <br> for break lines
@@ -240,7 +240,7 @@
         //  <font color='#hex'>text</font>  for color
         //  <b>text</b> for bold        
         "loading_screen_changelog"   "Latest Changes"
-        "loading_screen_change_text" "<h1>Version 1.10</h1>• Elemental Boss HP increased<br>• Endspeed Score Bonus nerfed<br>• Higher level icefrogs worth more score<br>• Level 3 Duals cost less<br>• Level 3 Support Duals cost more<br>• A few other tower tweaks<br><br><b>Check out the full changelog on the forums!</b><br>"
+        "loading_screen_change_text" "<h1>Version 1.11</h1>• iOS version released!<br>• Tier 3 Triple Element Towers added!<br>• Cosmetics Updated<br>• Endspeed Score Bonus buffed<br>• Life Tower reworked<br>• Quake Tower no longer RNG-based<br>• Geyser Tower no longer RNG-based<br>• Lots of balance changes<br><br><b>Check out the full changelog on the forums!</b><br>"
 
         "credits_title"         "Credits"
         "credits_developers"    "Developers"

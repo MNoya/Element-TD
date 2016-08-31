@@ -21,7 +21,9 @@ function HydroTower:OnAttackLanded(keys)
     local caster = keys.caster
     local target = keys.target
 
-    if RollPercentage(self.chance) then
+    self.attacks = self.attacks + 1    
+    if self.attacks == 3 then
+        self.attacks = 0    
         self.ability:ApplyDataDrivenModifier(caster, target, "modifier_hydro_delay", {duration=self.delay})
     end
 
@@ -46,9 +48,9 @@ end
 
 function HydroTower:OnCreated()
     self.ability = AddAbility(self.tower, "hydro_tower_ability", self.tower:GetLevel())
+    self.attacks = 0
     self.splashDamage = self.ability:GetLevelSpecialValueFor("splash_damage", self.ability:GetLevel() - 1)
     self.splashAOE = GetAbilitySpecialValue("hydro_tower_ability", "splash_aoe")
-    self.chance = GetAbilitySpecialValue("hydro_tower_ability", "chance_pct")
     self.delay = GetAbilitySpecialValue("hydro_tower_ability", "delay")
 end
 

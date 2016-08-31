@@ -55,7 +55,7 @@
     "ModelRotation"             "90"
     "Creature"
     {
-        "AttachWearables" // Default npc_dota_hero_zuus
+        "AttachWearables" // Arcana + Righteous Thunderbolt
         {
             "1" { "ItemDef" "605" } // Zeus Ambient Effects
             "2" { "ItemDef" "606" } // Zeus' Belt
@@ -63,6 +63,7 @@
             "4" { "ItemDef" "6914" } // Tempest Helm of the Thundergod
             "5" { "ItemDef" "8693" } // Thundergod's Bare Chest
             "6" { "ItemDef" "8692" } // Thundergod's Bare Arms
+            "7" { "ItemDef" "5412" } // Righteous Thunderbolt
         }
     }
 

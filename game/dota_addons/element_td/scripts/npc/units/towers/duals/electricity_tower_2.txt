@@ -57,13 +57,13 @@
     
     "Creature"
     {
-        "AttachWearables" // Default npc_dota_hero_zuus
+        "AttachWearables" // Wartorn Heavens + Righteous Thunderbolt
         {
-            "1" { "ItemDef" "589" } // Zeus' Arms
-            "2" { "ItemDef" "604" } // Zeus' Head
-            "3" { "ItemDef" "605" } // Zeus Ambient Effects
-            "4" { "ItemDef" "606" } // Zeus' Belt
-            "5" { "ItemDef" "607" } // Zeus' Back
+            "1" { "ItemDef" "7951" } // Bracers of the Wartorn Heavens
+            "2" { "ItemDef" "7954" } // Helm of the Wartorn Heavens
+            "3" { "ItemDef" "7952" } // Pauldrons of the Wartorn Heavens
+            "4" { "ItemDef" "7953" } // Belt of the Wartorn Heavens
+            "5" { "ItemDef" "5412" } // Righteous Thunderbolt
         }
     }
 

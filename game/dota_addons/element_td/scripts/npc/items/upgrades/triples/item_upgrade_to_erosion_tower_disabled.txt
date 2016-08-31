@@ -25,12 +25,12 @@
         "01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_amp"			"11 33"
+			"damage_amp"			"11 33 100"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"dot"					"110 550"
+			"dot"					"110 550 1650"
 		}
     }
     "AbilityCastRange"              "900"

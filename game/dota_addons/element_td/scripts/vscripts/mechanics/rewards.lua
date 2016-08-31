@@ -250,7 +250,7 @@ function Rewards:ReplaceHero(playerID, oldHero, heroName)
     -- Take the grid item so it doesn't get destroyed
     local playerData = GetPlayerData(playerID)
     if playerData and playerData.toggle_grid_item then
-        playerData.toggle_grid_item_old = oldHero:Script_TakeItem(playerData.toggle_grid_item)
+        playerData.toggle_grid_item_old = oldHero:TakeItem(playerData.toggle_grid_item)
     end
 
     local newHero = PlayerResource:ReplaceHeroWith(playerID, heroName, 0, 0)

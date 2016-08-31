@@ -77,29 +77,15 @@
     }
     "Creature"
     {
-        "AttachWearables"
-        {
-            "Wearable1"
-            {
-                "ItemDef"        "291"
-            }
-            "Wearable2"
-            {
-                "ItemDef"        "292"
-            }
-            "Wearable3"
-            {
-                "ItemDef"        "293"
-            }
-            "Wearable4"
-            {
-                "ItemDef"        "294"
-            }
-            "Wearable4"
-            {
-                "ItemDef"        "518"
-            }
-        }
+       "AttachWearables" // Venomous Deathbringer
+       {
+            "1" { "ItemDef" "6645" } // Venomous Deathbringer Hood
+            "2" { "ItemDef" "6682" } // Venomous Deathbringer Ward
+            "3" { "ItemDef" "6643" } // Venomous Deathbringer Head
+            "4" { "ItemDef" "6642" } // Venomous Deathbringer Stingers
+            "5" { "ItemDef" "6644" } // Venomous Deathbringer Tail
+            "6" { "ItemDef" "518" } // Ambient
+       }
     }
 
     // Building Size

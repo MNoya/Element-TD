@@ -9,7 +9,7 @@
 	"BaseClass"						"ability_datadriven"											
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"towers/quake"
-	"MaxLevel"						"2"
+	"MaxLevel"						"3"
 
 	"Modifiers"
 	{
@@ -33,17 +33,17 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"chance"				"50"
+			"chance"				"20"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"500 2500"
+			"damage"				"1800 9000 27000"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aoe"					"700"
+			"aoe"					"550"
 		}
 	}
 }

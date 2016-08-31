@@ -42,9 +42,9 @@
         "2"        "earth"
         "3"        "light"
     }
-    "Damage"        "25000"
-    "AttackDamageMin"        "25000"
-    "AttackDamageMax"        "25000"
+    "Damage"        "30000"
+    "AttackDamageMin"        "30000"
+    "AttackDamageMax"        "30000"
     "DamageType"        "earth"
     "ScriptClass"        "GoldTower"
     "TowerType"        "Normal"
@@ -62,7 +62,7 @@
     "ModelOffset"       "15"
     "Creature"
     {
-        "AttachWearables" // Default npc_dota_hero_alchemist
+        "AttachWearables" // Default npc_dota_hero_alchemist + Midas Knuckles + Radiance Blades
         {
             "1" { "ItemDef" "9568" } // Razzil's Midas Knuckles
             "2" { "ItemDef" "119" } // Alchemist's Saddle
@@ -85,6 +85,8 @@
     }
     "Upgrades"
     {
+        "Count"        "1"
+        "1"        "gold_tower_3"
     }
 
     // Building Size

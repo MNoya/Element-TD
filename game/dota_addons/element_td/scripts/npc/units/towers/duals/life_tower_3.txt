@@ -40,9 +40,9 @@
         "1"        "light"
         "2"        "nature"
     }
-    "Damage"        "12500"
-    "AttackDamageMin"        "12500"
-    "AttackDamageMax"        "12500"
+    "Damage"        "10500"
+    "AttackDamageMin"        "10500"
+    "AttackDamageMax"        "10500"
     "DamageType"        "nature"
     "ScriptClass"        "LifeTower"
     "TowerType"        "Normal"
@@ -68,11 +68,11 @@
     }
     "Creature"
     {
-       "AttachWearables" // Thunderwrath's Calling Set
+       "AttachWearables" // Thunderwrath's Calling Set + Adoring Wingfall
        {
             "1" { "ItemDef" "4507" } // Cape of Thunderwrath's Calling
             "2" { "ItemDef" "4515" } // Armor of Thunderwrath's Calling
-            "3" { "ItemDef" "6587" } // Guard of Basilius
+            "3" { "ItemDef" "7580" } // Adoring Wingfall
             "4" { "ItemDef" "4508" } // Helm of Thunderwrath's Calling
             "5" { "ItemDef" "45" } // Head
        }

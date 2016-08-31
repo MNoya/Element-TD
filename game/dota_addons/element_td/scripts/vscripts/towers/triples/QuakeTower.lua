@@ -16,10 +16,12 @@ QuakeTower = createClass({
 nil)
 --
 function QuakeTower:OnAttack(keys)
-    if RollPercentage(self.chance) then
+    self.attacks = self.attacks + 1    
+    if self.attacks == 5 then
+        self.attacks = 0    
         self.tower:EmitSound("Quake.Strike")
 
-        local particle = ParticleManager:CreateParticle("particles/custom/towers/quake/attack.vpcf", PATTACH_ABSORIGIN, self.tower)
+        local particle = ParticleManager:CreateParticle("particles/custom/towers/quake/shockwave.vpcf", PATTACH_ABSORIGIN, self.tower)
         ParticleManager:SetParticleControl(particle, 0, self.tower:GetAbsOrigin())
         ParticleManager:SetParticleControl(particle, 1, Vector(self.aoe,1,1))
 
@@ -45,7 +47,7 @@ end
 
 function QuakeTower:OnCreated()
     self.ability = AddAbility(self.tower, "quake_tower_pulverize", self.tower:GetLevel())
-    self.chance = GetAbilitySpecialValue("quake_tower_pulverize", "chance")
+    self.attacks = 0
     self.aoeDamage = GetAbilitySpecialValue("quake_tower_pulverize", "damage")[self.tower:GetLevel()]
     self.aoe = GetAbilitySpecialValue("quake_tower_pulverize", "aoe")
     AddAnimationTranslate(self.tower, "enchant_totem")

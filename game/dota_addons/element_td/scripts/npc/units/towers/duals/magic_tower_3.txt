@@ -16,7 +16,7 @@
     "VisionNighttimeRange"      "1900"  
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-    "AttackAnimationPoint"      "0.15"
+    "AttackAnimationPoint"      "0.1"
     "ProjectileCollisionSize"   "50"
     "RingRadius"                "80"
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -40,9 +40,9 @@
         "1"        "dark"
         "2"        "fire"
     }
-    "Damage"        "17500"
-    "AttackDamageMin"        "17500"
-    "AttackDamageMax"        "17500"
+    "Damage"        "8750"
+    "AttackDamageMin"        "8750"
+    "AttackDamageMax"        "8750"
     "DamageType"        "dark"
     "ScriptClass"        "MagicTower"
     "TowerType"        "Normal"
@@ -50,9 +50,9 @@
     "HasAbilityDesc"        "1"
     "AttackRange"        "1500"
     "AttackAcquisitionRange"        "1500"
-    "AttackRate"        "0.66"
+    "AttackRate"        "0.31"
     "ProjectileModel"        "particles/units/heroes/hero_leshrac/leshrac_base_attack.vpcf"
-    "ProjectileSpeed"        "2500"
+    "ProjectileSpeed"        "3000"
     "Model"        "models/heroes/lion/lion.vmdl"
     "ModelScale"        "0.9"
     "ModelRotation"             "90"
@@ -68,13 +68,13 @@
     }
     "Creature"
     {
-       "AttachWearables" // Legacy of Infernal Wings
+       "AttachWearables" // Curse of the Malignant Corruption + Mulctant Pall + Fin King's Charm
        {
-            "1" { "ItemDef" "7074" } // Infernal Wings Flare
-            "2" { "ItemDef" "7067" } // Infernal Wings Claw
-            "3" { "ItemDef" "7073" } // Infernal Wings Jaw
-            "4" { "ItemDef" "7068" } // Infernal Wings
-            "5" { "ItemDef" "6944" } // Infernal Wings Mace
+            "1" { "ItemDef" "6143" } // Shards of the Malignant Corruption
+            "2" { "ItemDef" "6024" } // Carapace of Buki'vak the Corrupted
+            "3" { "ItemDef" "6142" } // Horns of the Malignant Corruption
+            "4" { "ItemDef" "8007" } // Mulctant Pall of the Crimson Witness
+            "5" { "ItemDef" "6561" } // Fin King's Charm
        }
     }
 

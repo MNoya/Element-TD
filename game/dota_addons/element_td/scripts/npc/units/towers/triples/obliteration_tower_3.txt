@@ -1,0 +1,88 @@
+"obliteration_tower_3"
+{
+    "BaseClass"        "npc_dota_creature"
+    "SoundSet"          "Hero_ObsidianDestroyer"
+    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
+    "MinimapIcon"        "minimap_tower90"
+    "MinimapIconSize"        "320"
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"        "0"
+    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"        "0"
+    "AttributeStrengthGain"        "0"
+    "AttributeBaseIntelligence"        "0"
+    "AttributeIntelligenceGain"        "0"
+    "AttributeBaseAgility"        "0"
+    "AttributeAgilityGain"        "0"
+    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+    "ProjectileCollisionSize"        "50"
+    "RingRadius"        "80"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"        "0"
+    "MovementTurnRate"        "1.0"
+    "StatusHealth"        "4500"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "TeamName"        "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"        "1900"
+    "Level"        "3"
+    "Cost"        "5000"
+    "TotalCost"        "10000"
+    "Element"
+    {
+        "1"        "dark"
+        "2"        "light"
+        "3"        "nature"
+    }
+    "Damage"        "26000"
+    "AttackDamageMin"        "26000"
+    "AttackDamageMax"        "26000"
+    "DamageType"        "dark"
+    "ScriptClass"        "ObliterationTower"
+    "TowerType"        "Normal"
+    "BuffPriority"              "1"
+    "HasAbilityDesc"        "1"
+    "AttackRange"        "1150"
+    "AttackAcquisitionRange"        "1150"
+    "AttackRate"        "1.5"
+
+    "Model"             "models/heroes/obsidian_destroyer/obsidian_destroyer.vmdl"
+    "ModelScale"        "0.85"
+    "ModelRotation"     "90"
+    "ModelOffset"       "-10"
+    "Creature"
+    {
+        "AttachWearables" // Herald of Measureless Ruin + Golden Shards of Exile
+        {
+            "1" { "ItemDef" "9370" } // Grasp of Measureless Ruin
+            "2" { "ItemDef" "7509" } // Golden Shards of Exile
+            "3" { "ItemDef" "9367" } // Apex of Measureless Ruin
+            "4" { "ItemDef" "9368" } // Expanse of Measureless Ruin
+            "5" { "ItemDef" "533" } // Outworld Devourer's Ambient Effects
+            "6" { "ItemDef" "226" } // Outworld Devourer's Head
+        }
+    }
+
+    "BuildTime"        "3"
+    "Requirements"
+    {
+        "dark"        "3"
+        "light"        "3"
+        "nature"        "3"
+    }
+    "Upgrades"
+    {
+    }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
+}

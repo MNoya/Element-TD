@@ -7,7 +7,7 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"batrider_sticky_napalm"
 	
-	"MaxLevel"						"2"
+	"MaxLevel"						"3"
 	"Modifiers"
 	{
 		"modifier_napalm"
@@ -34,7 +34,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"240 1200"
+			"damage"				"240 1200 3600"
 		}
 		"02"
 		{

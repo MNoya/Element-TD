@@ -60,14 +60,14 @@
     "ModelOffset"       "15"
     "Creature"
     {
-        "AttachWearables" // Default npc_dota_hero_bristleback
+        "AttachWearables" // Heavy Barbed Armor Set
         {
-            "1" { "ItemDef" "520" } // Bristleback's Ambient Effects
-            "2" { "ItemDef" "5762" } // Heavy Barbed Arms
-            "3" { "ItemDef" "5763" } // Heavy Barbed Back
-            "4" { "ItemDef" "5766" } // Heavy Barbed Morning Star
-            "5" { "ItemDef" "5764" } // Heavy Barbed Head
-            "6" { "ItemDef" "5765" } // Heavy Barbed Collar
+            "1" { "ItemDef" "5762" } // Heavy Barbed Arms
+            "2" { "ItemDef" "5766" } // Heavy Barbed Morning Star
+            "3" { "ItemDef" "5765" } // Heavy Barbed Collar
+            "4" { "ItemDef" "5764" } // Heavy Barbed Head
+            "5" { "ItemDef" "5763" } // Heavy Barbed Back
+            "6" { "ItemDef" "520" } // Bristleback's Ambient Effects
         }
     }
 

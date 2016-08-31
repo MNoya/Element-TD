@@ -48,8 +48,8 @@
     "TowerType"        "Normal"
     "BuffPriority"              "3"
     "HasAbilityDesc"        "1"
-    "AttackRange"        "700"
-    "AttackAcquisitionRange"        "700"
+    "AttackRange"        "900"
+    "AttackAcquisitionRange"        "900"
     "AttackRate"        "0.66"
     "ProjectileModel"        "particles/custom/towers/quark/attackshot.vpcf"
     "ProjectileSpeed"        "2000"
@@ -71,16 +71,16 @@
     
     "Creature"
     {
-       "AttachWearables" // Gemmed Armor of the Priest Kings Set
+       "AttachWearables" // Desert Gale Set
        {
-            "1" { "ItemDef" "5037" } // Ruling Staff of the Priest Kings
-            "2" { "ItemDef" "5036" } // Scarab Pendant of the Priest Kings
-            "3" { "ItemDef" "5035" } // Gemmed Bracers of the Priest Kings
-            "4" { "ItemDef" "5033" } // Thrice-Gemmed Barding of Sanurok
-            "5" { "ItemDef" "5032" } // Gemmed Pauldrons of the Priest Kings
-            "6" { "ItemDef" "5034" } // Gemmed Mitre of the Priest Kings
-            "7" { "ItemDef" "5031" } // Sanurok the Ever Able
-            "8" { "ItemDef" "521" } // Ambient
+            "1" { "ItemDef" "5995" } // Desert Gale Moustache
+            "2" { "ItemDef" "5991" } // Desert Gale Arms
+            "3" { "ItemDef" "5990" } // Desert Gale Armor
+            "4" { "ItemDef" "5999" } // Desert Gale Fouchard
+            "5" { "ItemDef" "5998" } // Desert Gale Shoulder Plate
+            "6" { "ItemDef" "5993" } // Desert Gale Helmet
+            "7" { "ItemDef" "521" } // Ambient
+            "8" { "ItemDef" "221"} // Mount
        }
     }
 

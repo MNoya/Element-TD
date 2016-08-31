@@ -1,0 +1,93 @@
+"enchantment_tower_3"
+{
+    "BaseClass"        "npc_dota_creature"
+    "SoundSet"              "Hero_Oracle"
+    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
+    "MinimapIcon"        "minimap_tower90"
+    "MinimapIconSize"        "320"
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"        "0"
+    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"        "0"
+    "AttributeStrengthGain"        "0"
+    "AttributeBaseIntelligence"        "0"
+    "AttributeIntelligenceGain"        "0"
+    "AttributeBaseAgility"        "0"
+    "AttributeAgilityGain"        "0"
+    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+    "ProjectileCollisionSize"        "50"
+    "RingRadius"        "80"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"        "0"
+    "MovementTurnRate"        "1.0"
+    "StatusHealth"        "13000"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "TeamName"        "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"        "1900"
+    "Level"        "3"
+    "Cost"        "5000"
+    "TotalCost"        "10000"
+    "Element"
+    {
+        "1"        "earth"
+        "2"        "light"
+        "3"        "nature"
+    }
+    "Damage"        "8250"
+    "AttackDamageMin"        "8250"
+    "AttackDamageMax"        "8250"
+    "DamageType"        "nature"
+    "ScriptClass"        "EnchantmentTower"
+    "TowerType"        "Normal"
+    "BuffPriority"          "1"
+    "HasAbilityDesc"        "1"
+    "AttackRange"        "900"
+    "AttackAcquisitionRange"        "900"
+    "AttackRate"        "0.31"
+    "ProjectileModel"        "particles/units/heroes/hero_necrolyte/necrolyte_base_attack.vpcf"
+    "ProjectileSpeed"        "3000"
+
+    "AOE_Full"                  "100"
+    "AOE_Half"                  "200"
+
+    "Model"             "models/heroes/medusa/medusa.vmdl"
+    "ModelScale"        "1.1"
+    "ModelRotation"     "90"
+    "ModelOffset"       "0"
+    "Creature"
+    {
+        "AttachWearables" // Eye of the Beholder
+        {
+            "1" { "ItemDef" "8195" } // Helm of the Beholder
+            "2" { "ItemDef" "8193" } // Armor of the Beholder
+            "3" { "ItemDef" "8194" } // Bracers of the Beholder
+            "4" { "ItemDef" "8191" } // Bow of the Beholder
+            "5" { "ItemDef" "8196" } // Tail of the Beholder
+            "6" { "ItemDef" "531" } // Ambient Effects
+        }
+    }
+
+    "BuildTime"        "3"
+    "Requirements"
+    {
+        "earth"        "3"
+        "light"        "3"
+        "nature"        "3"
+    }
+    "Upgrades"
+    {
+    }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
+}

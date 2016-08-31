@@ -16,5 +16,5 @@
 		"light"		"3"
 		"light"		"3"
 	}
-	"AbilityCastRange"              "700"
+	"AbilityCastRange"              "900"
 }

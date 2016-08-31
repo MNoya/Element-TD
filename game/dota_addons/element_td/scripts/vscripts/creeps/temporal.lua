@@ -16,7 +16,7 @@ CreepBasic);
 
 function CreepTemporal:OnSpawned()
 	local creep = self.creep
-	self.ability = self.creep:FindAbilityByName("creep_ability_time_lapse")
+	self.ability = self.creep:FindAbilityByName("creep_ability_time_lapse") or self.creep:FindAbilityByName("creep_ability_time_lapse_super")
 	self.health_threshold = self.ability:GetSpecialValueFor("health_threshold")
     self.backtrack_duration = self.ability:GetSpecialValueFor("backtrack_duration")
     self.health = {}

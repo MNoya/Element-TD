@@ -43,9 +43,9 @@
         "1"        "earth"
         "2"        "dark"
     }
-    "Damage"        "1000"
-    "AttackDamageMin"        "1000"
-    "AttackDamageMax"        "1000"
+    "Damage"        "1250"
+    "AttackDamageMin"        "1250"
+    "AttackDamageMax"        "1250"
     "DamageType"        "earth"
     "ScriptClass"        "GunpowderTower"
     "TowerType"        "Normal"
@@ -71,13 +71,13 @@
     }
     "Creature"
     {
-       "AttachWearables" // Exact Marksman
+       "AttachWearables" // Keen Machine + Muh Keen Gun
        {
-            "1" { "ItemDef" "7178" } // Cloak of the Exact Marksman
-            "2" { "ItemDef" "7532" } // Cap of the Exact Marksman
-            "3" { "ItemDef" "7526" } // Spaulders of the Exact Marksman
-            "4" { "ItemDef" "7525" } // Arm of the Exact Marksman
-            "5" { "ItemDef" "7187" } // Perforator
+            "1" { "ItemDef" "7163" } // Heavy Cloak of the Keen Machine
+            "2" { "ItemDef" "7158" } // Cyclopean Helm of the Keen Machine
+            "3" { "ItemDef" "7157" } // Heavy Plates of the Keen Machine
+            "4" { "ItemDef" "7160" } // Lucky Bullet of the Keen Machine
+            "5" { "ItemDef" "6453" } // Muh Keen Gun
        }
     }
 

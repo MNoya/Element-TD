@@ -14,11 +14,14 @@
     "MinimapIconSize"           "320"
     "Creature"
     {
-        "AttachWearables" //Arcana
+        "AttachWearables" // Bewitching Flare + Fire Lotus Belt + Wyrmwrought Flame
         {
-            "1" {    "ItemDef"        "4794"        } //"Fiery Soul of the Slayer"
-            "2" {    "ItemDef"        "6339"        } //"Fire Lotus Belt"
-            "3" {    "ItemDef"        "5941"        } //"Wings of the Ember Crane"
+            "1" { "ItemDef" "6339" } // Fire Lotus Belt
+            "2" { "ItemDef" "7717" } // Touch of the Bewitching Flare
+            "3" { "ItemDef" "8003" } // Disciple of the Wyrmwrought Flame
+            "4" { "ItemDef" "4794" } // Fiery Soul of the Slayer
+            "5" { "ItemDef" "7725" } // Style of the Bewitching Flare
+            "6" { "ItemDef" "504" } // Lina's Ambient Effects
         }
     }
     "SoundSet"          "Hero_Lina"

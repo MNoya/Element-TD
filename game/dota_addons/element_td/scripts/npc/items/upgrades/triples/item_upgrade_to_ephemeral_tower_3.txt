@@ -1,0 +1,33 @@
+"item_upgrade_to_ephemeral_tower_3"
+{
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"BaseClass"		"item_datadriven"
+	"AbilityManaCost"		"0"
+	"ItemShareability"		"ITEM_NOT_SHAREABLE"
+	"ItemSellable"		"0"
+	"ItemKillable"		"0"
+	"ItemPurchasable"		"0"
+	"ItemDroppable"		"0"
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"TARGET"		"CASTER"
+			"ScriptFile"		"mechanics/upgrades.lua"
+			"Function"		"UpgradeTower"
+			"tower"		"ephemeral_tower_3"
+		}
+	}
+	"AbilityTextureName"		"item_ephemeral"
+	"Requirements"
+	{
+		"earth"		"3"
+		"earth"		"3"
+		"nature"		"3"
+		"nature"		"3"
+		"water"		"3"
+		"water"		"3"
+	}
+	"ItemBaseLevel" "3"
+	"AbilityCastRange"              "900"
+}

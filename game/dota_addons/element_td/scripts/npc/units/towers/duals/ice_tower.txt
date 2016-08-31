@@ -44,8 +44,8 @@
     "TowerType"        "Normal"
     "BuffPriority"          "10"
     "HasAbilityDesc"        "1"
-    "AttackRange"        "900"
-    "AttackAcquisitionRange"        "900"
+    "AttackRange"        "550"
+    "AttackAcquisitionRange"        "550"
     "AttackRate"        "1.5"
     "ProjectileModel"        ""
     "ProjectileSpeed"        "900"
@@ -73,14 +73,14 @@
     "AttackDamageMax"        "0"
     "Creature"
     {
-        "AttachWearables" // Default npc_dota_hero_crystal_maiden
+        "AttachWearables" // Wraps of the Winterbringer
         {
-            "1" { "ItemDef" "39" } // Crystal Maiden's Shoulder Pads
-            "2" { "ItemDef" "311" } // Crystal Maiden's Headdress
-            "3" { "ItemDef" "40" } // Crystal Maiden's Weapon
-            "4" { "ItemDef" "41" } // Crystal Maiden's Cuffs
-            "5" { "ItemDef" "502" } // Crystal Maiden's Ambient Effects
-            "6" { "ItemDef" "38" } // Crystal Maiden's Cape
+            "1" { "ItemDef" "8449" } // Staff of the Winterbringer
+            "2" { "ItemDef" "8447" } // Cape of the Winterbringer
+            "3" { "ItemDef" "8448" } // Sleeves of the Winterbringer
+            "4" { "ItemDef" "8456" } // Style of the Winterbringer
+            "5" { "ItemDef" "8450" } // Shawl of the Winterbringer
+            "6" { "ItemDef" "502" } // Crystal Maiden's Ambient Effects
         }
     }
 

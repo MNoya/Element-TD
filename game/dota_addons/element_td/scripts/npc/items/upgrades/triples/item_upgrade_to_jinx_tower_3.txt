@@ -1,0 +1,41 @@
+"item_upgrade_to_jinx_tower_3"
+{
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"BaseClass"		"item_datadriven"
+	"AbilityManaCost"		"0"
+	"ItemShareability"		"ITEM_NOT_SHAREABLE"
+	"ItemSellable"		"0"
+	"ItemKillable"		"0"
+	"ItemPurchasable"		"0"
+	"ItemDroppable"		"0"
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"TARGET"		"CASTER"
+			"ScriptFile"		"mechanics/upgrades.lua"
+			"Function"		"UpgradeTower"
+			"tower"		"jinx_tower_3"
+		}
+	}
+	"AbilityTextureName"		"item_jinx"
+	"Requirements"
+	{
+		"dark"		"3"
+		"dark"		"3"
+		"fire"		"3"
+		"fire"		"3"
+		"nature"		"3"
+		"nature"		"3"
+	}
+    "ItemBaseLevel" "3"
+    "AbilitySpecial"
+	{
+        "01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_taken"			"5 15 40"
+		}
+    }
+    "AbilityCastRange"              "900"
+}

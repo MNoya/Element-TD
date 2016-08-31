@@ -44,8 +44,8 @@
     "TowerType"        "Normal"
     "BuffPriority"              "7"
     "HasAbilityDesc"        "1"
-    "AttackRange"        "900"
-    "AttackAcquisitionRange"        "900"
+    "AttackRange"        "550"
+    "AttackAcquisitionRange"        "550"
     "AttackRate"        "1.5"
     "ProjectileModel"        ""
     "ProjectileSpeed"        "900"
@@ -68,10 +68,10 @@
     "AttackDamageMax"        "0"
     "Creature"
     {
-       "AttachWearables" // Regalia of the Crystalline Queen Set
+       "AttachWearables" // Regalia of the Crystalline Queen Set + Icewrack
         {
             "1" { "ItemDef" "4420" } // Bracers of the Crystalline Queen
-            "2" { "ItemDef" "4383" } // Staff of the Crystalline Queen
+            "2" { "ItemDef" "6573" } // Sceptre of Icewrack
             "3" { "ItemDef" "4540" } // Tiara of the Crystalline Queen
             "4" { "ItemDef" "4389" } // Mantle of the Crystalline Queen
             "5" { "ItemDef" "4386" } // Cape of the Crystalline Queen

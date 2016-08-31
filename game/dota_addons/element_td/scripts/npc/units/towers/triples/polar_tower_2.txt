@@ -42,9 +42,9 @@
         "2"        "light"
         "3"        "earth"
     }
-    "Damage"        "8500"
-    "AttackDamageMin"        "8500"
-    "AttackDamageMax"        "8500"
+    "Damage"        "9000"
+    "AttackDamageMin"        "9000"
+    "AttackDamageMax"        "9000"
     "DamageType"        "water"
     "ScriptClass"        "PolarTower"
     "TowerType"        "Normal"
@@ -62,7 +62,7 @@
     "ModelOffset"       "0"
     "Creature"
     {
-        "AttachWearables" // Eldritch Ice Set
+        "AttachWearables" // Dead Winter
         {
             "1" { "ItemDef" "4853" } // Dead Winter Sash
             "2" { "ItemDef" "4852" } // Dead Winter Soul
@@ -84,6 +84,8 @@
     }
     "Upgrades"
     {
+        "Count"        "1"
+        "1"        "polar_tower_3"
     }
 
     // Building Size

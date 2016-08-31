@@ -9,7 +9,7 @@
 	"BaseClass"						"ability_datadriven"											
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"towers/laser"
-	"MaxLevel"						"2"
+	"MaxLevel"						"3"
 
 	"Modifiers"
 	{

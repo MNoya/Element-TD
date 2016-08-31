@@ -1,0 +1,90 @@
+"laser_tower_3"
+{
+    "BaseClass"        "npc_dota_creature"
+    "MinimapIcon"        "minimap_tower90"
+    "MinimapIconSize"        "320"
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"        "0"
+    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"        "0"
+    "AttributeStrengthGain"        "0"
+    "AttributeBaseIntelligence"        "0"
+    "AttributeIntelligenceGain"        "0"
+    "AttributeBaseAgility"        "0"
+    "AttributeAgilityGain"        "0"
+    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+    "ProjectileCollisionSize"        "50"
+    "RingRadius"        "80"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"        "0"
+    "MovementTurnRate"        "1.0"
+    "StatusHealth"        "4500"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "TeamName"        "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"        "1900"
+    "Level"        "3"
+    "Cost"        "5000"
+    "TotalCost"        "10000"
+    "Element"
+    {
+        "1"        "dark"
+        "2"        "earth"
+        "3"        "light"
+    }
+    "Damage"        "90000"
+    "AttackDamageMin"        "90000"
+    "AttackDamageMax"        "90000"
+    "DamageType"        "light"
+    "ScriptClass"        "LaserTower"
+    "TowerType"        "Normal"
+    "BuffPriority"              "1"
+    "HasAbilityDesc"        "1"
+    "AttackRange"        "900"
+    "AttackAcquisitionRange"        "900"
+    "AttackRate"        "1"
+    "ProjectileSpeed"        "2000"
+    "ProjectileModel"        "particles/custom/towers/laser/attack.vpcf"
+
+    "Model"             "models/heroes/tinker/tinker.vmdl"
+    "ModelScale"        "1.1"
+    "ModelRotation"     "90"
+    "ModelOffset"       "20"
+    "Creature"
+    {
+        "AttachWearables" // Default npc_dota_hero_tinker + Mecha Boots + Rollermawster
+        {
+            "1" { "ItemDef" "466" } // Tinker's Head
+            "2" { "ItemDef" "467" } // Tinker's Cape
+            "3" { "ItemDef" "464" } // Tinker's Shoulders
+            "4" { "ItemDef" "7143" } // Rollermawster
+            "5" { "ItemDef" "515" } // Tinker's Ambient Effects
+            "6" { "ItemDef" "463" } // Tinker's Left Arm
+            "7" { "ItemDef" "367" } // Tinker's Right Arm
+            "8" { "ItemDef" "6224" } // Mecha Boots of Travel Mk III
+        }
+    }
+    
+    "BuildTime"        "3"
+    "Requirements"
+    {
+        "dark"        "3"
+        "earth"        "3"
+        "light"        "3"
+    }
+    "Upgrades"
+    {
+    }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
+}

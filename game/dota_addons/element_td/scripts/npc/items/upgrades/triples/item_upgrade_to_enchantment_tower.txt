@@ -35,12 +35,12 @@
         "01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"base_damage_amp"		"5 15"
+			"base_damage_amp"		"7 21 60"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"max_damage_amp"		"13 39"
+			"max_damage_amp"		"13 39 110"
 		}
     }
     "AbilityCastRange"              "900"

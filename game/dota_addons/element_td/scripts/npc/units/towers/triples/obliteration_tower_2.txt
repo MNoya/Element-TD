@@ -60,12 +60,12 @@
     "ModelOffset"       "-10"
     "Creature"
     {
-        "AttachWearables" // Herald of Measureless Ruin
+        "AttachWearables" // Obsidian Guard + Shards of Exile
         {
-            "1" { "ItemDef" "9370" } // Grasp of Measureless Ruin
-            "2" { "ItemDef" "8376" } // Shards of Exile
-            "3" { "ItemDef" "9367" } // Apex of Measureless Ruin
-            "4" { "ItemDef" "9368" } // Expanse of Measureless Ruin
+            "1" { "ItemDef" "7070" } // Obsidian Guard Wings
+            "2" { "ItemDef" "7072" } // Obsidian Guard Helm
+            "3" { "ItemDef" "8376" } // Shards of Exile
+            "4" { "ItemDef" "7071" } // Obsidian Guard Armor
             "5" { "ItemDef" "533" } // Outworld Devourer's Ambient Effects
             "6" { "ItemDef" "226" } // Outworld Devourer's Head
         }
@@ -80,6 +80,8 @@
     }
     "Upgrades"
     {
+        "Count"        "1"
+        "1"        "obliteration_tower_3"
     }
 
     // Building Size

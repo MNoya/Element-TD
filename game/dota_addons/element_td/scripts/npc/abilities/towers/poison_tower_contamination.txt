@@ -13,12 +13,12 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"crit_aoe_half"					"800"
+			"crit_aoe_half"					"900"
 		}
 		"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"crit_aoe_full"					"400"
+			"crit_aoe_full"					"450"
 		}
 	}
 }

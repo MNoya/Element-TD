@@ -67,14 +67,13 @@
     }
     "Creature"
     {
-       "AttachWearables" // Wandering Harlequin's Regalia
-       {
-            "1" { "ItemDef" "7028" } // Wandering Harlequin's Mantle
-            "2" { "ItemDef" "7026" } // Wandering Harlequin's Crest
-            "3" { "ItemDef" "7029" } // Conceit of the Wandering Harlequin
-            "4" { "ItemDef" "7025" } // Wandering Harlequin's Cape
-            "5" { "ItemDef" "544" } // Ambient
-       }
+        "AttachWearables" // Fantoccini's Dilemma + Golden Staff of Perplex
+        {
+            "1" { "ItemDef" "8594" } // Coat of Fantoccini's Dilemma
+            "2" { "ItemDef" "8592" } // Fantoccini
+            "3" { "ItemDef" "8591" } // Hat of Fantoccini's Dilemma
+            "4" { "ItemDef" "7507" } // Golden Staff of Perplex
+        }
     }
 
     // Building Size

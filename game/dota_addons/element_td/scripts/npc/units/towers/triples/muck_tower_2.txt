@@ -40,9 +40,9 @@
         "2"        "earth"
         "3"        "water"
     }
-    "Damage"        "4500"
-    "AttackDamageMin"        "4500"
-    "AttackDamageMax"        "4500"
+    "Damage"        "5000"
+    "AttackDamageMin"        "5000"
+    "AttackDamageMax"        "5000"
     "DamageType"        "earth"
     "ScriptClass"        "MuckTower"
     "TowerType"        "Normal"
@@ -67,6 +67,7 @@
             "3" { "ItemDef" "5409" } // Emerald Frenzy Glove
             "4" { "ItemDef" "8391" } // Piston Impaler
             "5" { "ItemDef" "5408" } // Emerald Frenzy Helmet
+            "6" { "ItemDef" "520" } // Bristleback's Ambient Effects
         }
     }
 
@@ -81,6 +82,8 @@
     }
     "Upgrades"
     {
+        "Count"        "1"
+        "1"        "muck_tower_3"
     }
 
     // Building Size

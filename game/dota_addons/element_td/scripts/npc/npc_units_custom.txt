@@ -4085,12 +4085,12 @@
 	        "AttachWearables" // Default npc_dota_hero_invoker
 	        {
 	            "1" { "ItemDef" "8626" } // Invoker's Forge Spirits
-	            "2" { "ItemDef" "48" } // Invoker's Cape
-	            "3" { "ItemDef" "89" } // Invoker's Shoulder
+	            "2" { "ItemDef" "7979" } // Dark Artistry Cape
+	            "3" { "ItemDef" "5865" } // Iceforged Shoulders
 	            "4" { "ItemDef" "98" } // Invoker's Head
-	            "5" { "ItemDef" "305" } // Invoker's Belt
-	            "6" { "ItemDef" "99" } // Invoker's Hair
-	            "7" { "ItemDef" "100" } // Invoker's Bracer
+	            "5" { "ItemDef" "8745" } // Belt of Glorious Inspiration
+	            "6" { "ItemDef" "8746" } // Magus Apex
+	            "7" { "ItemDef" "5785" } // Iceforged Bracers
 	        }
 	    }
 	    "SoundSet"          "Hero_Invoker"
@@ -4098,9 +4098,9 @@
 	
 	    // Stats
 	    //-----------------------------
-	    "AttackDamageMin"           "30000"
-	    "AttackDamageMax"           "30000"
-	    "Damage"                    "30000"
+	    "AttackDamageMin"           "36000"
+	    "AttackDamageMax"           "36000"
+	    "Damage"                    "36000"
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
 	    "AOE_Full"                  "100"
@@ -5226,9 +5226,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "330"
-	    "AttackDamageMax"           "330"
-	    "Damage"                    "330"  
+	    "AttackDamageMin"           "350"
+	    "AttackDamageMax"           "350"
+	    "Damage"                    "350"  
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
 	    "AttackRate"                "1.5"
@@ -5318,9 +5318,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "2300"
-	    "AttackDamageMax"           "2300"
-	    "Damage"                    "2300"  
+	    "AttackDamageMin"           "2500"
+	    "AttackDamageMax"           "2500"
+	    "Damage"                    "2500"  
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
 	    "AttackRate"                "1.5"
@@ -5405,9 +5405,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "162000"
-	    "AttackDamageMax"           "162000"
-	    "Damage"                    "162000"  
+	    "AttackDamageMin"           "170000"
+	    "AttackDamageMax"           "170000"
+	    "Damage"                    "170000"  
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
 	    "AttackRate"                "1.5"
@@ -5488,9 +5488,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "16200"
-	    "AttackDamageMax"           "16200"
-	    "Damage"                    "16200"  
+	    "AttackDamageMin"           "17000"
+	    "AttackDamageMax"           "17000"
+	    "Damage"                    "17000"  
 	    "AttackRange"               "1150"
 	    "AttackAcquisitionRange"    "1150"
 	    "AttackRate"                "1.5"
@@ -5928,13 +5928,13 @@
 	    "MinimapIconSize"           "320"
 	    "Creature"
 	    {
-	        "AttachWearables" // Default npc_dota_hero_lina
+	        "AttachWearables" // Light of the Solar Divine
 	        {
-	            "1" { "ItemDef" "320" } // Lina's Sleeves
-	            "2" { "ItemDef" "318" } // Lina's Jewelry
-	            "3" { "ItemDef" "321" } // Lina's Dress
-	            "4" { "ItemDef" "504" } // Lina's Ambient Effects
-	            "5" { "ItemDef" "319" } // Lina's Hair
+	            "1" { "ItemDef" "4756" } // Arc of the Solar Divine
+	            "2" { "ItemDef" "4754" } // Sleeves of the Solar Divine
+	            "3" { "ItemDef" "4755" } // Flares of the Solar Divine
+	            "4" { "ItemDef" "4753" } // Blessings of the Solar Divine
+	            "5" { "ItemDef" "504" } // Lina's Ambient Effects
 	        }
 	    }
 	    "SoundSet"          "Hero_Lina"
@@ -6022,12 +6022,13 @@
 	    "MinimapIconSize"           "320"
 	    "Creature"
 	    {
-	        "AttachWearables" // Light of the Solar Divine
+	        "AttachWearables" // Divine Flame
 	        {
-	            "1" { "ItemDef" "4756" } // Arc of the Solar Divine
-	            "2" { "ItemDef" "4754" } // Sleeves of the Solar Divine
-	            "3" { "ItemDef" "4755" } // Flares of the Solar Divine
-	            "4" { "ItemDef" "4753" } // Blessings of the Solar Divine
+	            "1" { "ItemDef" "8992" } // Sleeves of the Divine Flame
+	            "2" { "ItemDef" "8991" } // Cape of the Divine Flame
+	            "3" { "ItemDef" "8993" } // Skirt of the Divine Flame
+	            "4" { "ItemDef" "8990" } // Headress of the Divine Flame
+	            "5" { "ItemDef" "504" } // Lina's Ambient Effects
 	        }
 	    }
 	    "SoundSet"          "Hero_Lina"
@@ -6110,11 +6111,14 @@
 	    "MinimapIconSize"           "320"
 	    "Creature"
 	    {
-	        "AttachWearables" //Arcana
+	        "AttachWearables" // Bewitching Flare + Fire Lotus Belt + Wyrmwrought Flame
 	        {
-	            "1" {    "ItemDef"        "4794"        } //"Fiery Soul of the Slayer"
-	            "2" {    "ItemDef"        "6339"        } //"Fire Lotus Belt"
-	            "3" {    "ItemDef"        "5941"        } //"Wings of the Ember Crane"
+	            "1" { "ItemDef" "6339" } // Fire Lotus Belt
+	            "2" { "ItemDef" "7717" } // Touch of the Bewitching Flare
+	            "3" { "ItemDef" "8003" } // Disciple of the Wyrmwrought Flame
+	            "4" { "ItemDef" "4794" } // Fiery Soul of the Slayer
+	            "5" { "ItemDef" "7725" } // Style of the Bewitching Flare
+	            "6" { "ItemDef" "504" } // Lina's Ambient Effects
 	        }
 	    }
 	    "SoundSet"          "Hero_Lina"
@@ -6193,12 +6197,12 @@
 	    "MinimapIconSize"           "320"
 	    "Creature"
 	    {
-	        "AttachWearables" // Divine Flame
+	        "AttachWearables" // Arcana
 	        {
-	            "1" { "ItemDef" "8992" } // Sleeves of the Divine Flame
-	            "2" { "ItemDef" "8991" } // Cape of the Divine Flame
-	            "3" { "ItemDef" "8993" } // Skirt of the Divine Flame
-	            "4" { "ItemDef" "8990" } // Headress of the Divine Flame
+	            "1" { "ItemDef" "7725" } // Style of the Bewitching Flare
+	            "2" { "ItemDef" "6339" } // Fire Lotus Belt
+	            "3" { "ItemDef" "5941" } // Wings of the Ember Crane
+	            "4" { "ItemDef" "504" } // Lina's Ambient Effects
 	        }
 	    }
 	    "SoundSet"          "Hero_Lina"
@@ -6644,14 +6648,14 @@
 	    "MinimapIconSize"           "320"
 	    "Creature"
 	    {
-	        "AttachWearables" // The Regal Forest Lord Set
+	        "AttachWearables" // Primeval Prophet
 	        {
-	            "1" { "ItemDef" "4028" } // Horns of Noblesse
-	            "2" { "ItemDef" "4031" } // Runed Ailettes
-	            "3" { "ItemDef" "4091" } // Cuffs of Oak and Yew
-	            "4" { "ItemDef" "4030" } // Runestaff of Verodicia
-	            "5" { "ItemDef" "4027" } // Luxuriant Chin-Foliage
-	            "6" { "ItemDef" "4029" } // Cape of Verdant Dreaming
+	            "1" { "ItemDef" "6749" } // Primeval Staff
+	            "2" { "ItemDef" "6776" } // Primeval Shoulder
+	            "3" { "ItemDef" "6746" } // Primeval Bracers
+	            "4" { "ItemDef" "6743" } // Primeval Beard
+	            "5" { "ItemDef" "6747" } // Primeval Cape
+	            "6" { "ItemDef" "6748" } // Primeval Horns
 	        }
 	    }
 	    "SoundSet"          "Hero_Furion"
@@ -6659,9 +6663,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "450"
-	    "AttackDamageMax"           "450"
-	    "Damage"                    "450"  
+	    "AttackDamageMin"           "490"
+	    "AttackDamageMax"           "490"
+	    "Damage"                    "490"  
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.31"
@@ -6733,14 +6737,14 @@
 	    "MinimapIconSize"           "320"
 	    "Creature"
 	    {
-	        "AttachWearables" // Default npc_dota_hero_furion
+	        "AttachWearables" // The Regal Forest Lord Set
 	        {
-	            "1" { "ItemDef" "33" } // Nature's Prophet Necklace
-	            "2" { "ItemDef" "32" } // Nature's Prophet Cape
-	            "3" { "ItemDef" "49" } // Nature's Prophet Bracers
-	            "4" { "ItemDef" "31" } // Nature's Prophet Beard
-	            "5" { "ItemDef" "29" } // Nature's Prophet Staff
-	            "6" { "ItemDef" "30" } // Nature's Prophet Horns
+	            "1" { "ItemDef" "4028" } // Horns of Noblesse
+	            "2" { "ItemDef" "4031" } // Runed Ailettes
+	            "3" { "ItemDef" "4091" } // Cuffs of Oak and Yew
+	            "4" { "ItemDef" "4030" } // Runestaff of Verodicia
+	            "5" { "ItemDef" "4027" } // Luxuriant Chin-Foliage
+	            "6" { "ItemDef" "4029" } // Cape of Verdant Dreaming
 	        }
 	    }
 	    "SoundSet"          "Hero_Furion"
@@ -6748,9 +6752,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "64"
-	    "AttackDamageMax"           "64"
-	    "Damage"                    "64"  
+	    "AttackDamageMin"           "70"
+	    "AttackDamageMax"           "70"
+	    "Damage"                    "70"  
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.31"
@@ -6827,7 +6831,7 @@
 	    "MinimapIconSize"           "320"
 	    "Creature"
 	    {
-	        "AttachWearables" // Fungal Lord Set + Immortal Staff
+	        "AttachWearables" // Fungal Lord Set + Fluttering Staff
 	        {
 	            "1" { "ItemDef" "5800" } // Shoulders of the Fungal Lord
 	            "2" { "ItemDef" "5797" } // Cap of the Fungal Lord
@@ -6842,9 +6846,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "31000"
-	    "AttackDamageMax"           "31000"
-	    "Damage"                    "31000"  
+	    "AttackDamageMin"           "34000"
+	    "AttackDamageMax"           "34000"
+	    "Damage"                    "34000"  
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.31"
@@ -6912,14 +6916,15 @@
 	    "MinimapIconSize"           "320"
 	    "Creature"
 	    {
-	        "AttachWearables" // Primeval Prophet
+	        "AttachWearables" // Guardian of the Eternal Seasons + Staff of the Lunar Tree
 	        {
-	            "1" { "ItemDef" "6749" } // Primeval Staff
-	            "2" { "ItemDef" "6776" } // Primeval Shoulder
-	            "3" { "ItemDef" "6746" } // Primeval Bracers
-	            "4" { "ItemDef" "6743" } // Primeval Beard
-	            "5" { "ItemDef" "6747" } // Primeval Cape
-	            "6" { "ItemDef" "6748" } // Primeval Horns
+	            "1" { "ItemDef" "6708" } // Staff of the Lunar Tree
+	            "2" { "ItemDef" "6249" } // Bonsaiko
+	            "3" { "ItemDef" "6248" } // Birch of the Eternal Seasons
+	            "4" { "ItemDef" "6245" } // Locks of the Eternal Seasons
+	            "5" { "ItemDef" "6246" } // Shoulders of the Eternal Seasons
+	            "6" { "ItemDef" "6286" } // Robes of the Eternal Seasons
+	            "7" { "ItemDef" "6285" } // Arms of the Eternal Seasons
 	        }
 	    }
 	    "SoundSet"          "Hero_Furion"
@@ -6927,9 +6932,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "3100"
-	    "AttackDamageMax"           "3100"
-	    "Damage"                    "3100"  
+	    "AttackDamageMin"           "3400"
+	    "AttackDamageMax"           "3400"
+	    "Damage"                    "3400"  
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.31"
@@ -6994,19 +6999,17 @@
 	    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_frost_radiant.vmdl"
 	    "PedestalModelScale"        "0.7"
 	    "PedestalOffset"            "20"
-	    "ProjectileModel"           "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf" 
+	    "ProjectileModel"           "particles/custom/towers/water/attack.vpcf" 
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
 	    "MinimapIconSize"           "320"
 	    "Creature"
 	    {
-	        "AttachWearables" // Shards of Polymorphia Set
+	        "AttachWearables" // Comet's Tail
 	        {
-	            "1" { "ItemDef" "4403" } // Crests of Polymorphia
-	            "2" { "ItemDef" "4410" } // Pauldrons of Polymorphia
-	            "3" { "ItemDef" "4404" } // Crown of Polymorphia
-	            "4" { "ItemDef" "4422" } // Bracers of Polymorphia
-	            "5" { "ItemDef" "507" } // Morphling's Ambient Effects
+	            "1" { "ItemDef" "4348" } // Crown of the Comet's Tail
+	            "2" { "ItemDef" "4296" } // Shoulders of the Comet's Tail
+	            "3" { "ItemDef" "507" } // Morphling's Ambient Effects
 	        }
 	    }
 	    "SoundSet"          "Hero_Morphling"
@@ -7014,9 +7017,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "420"
-	    "AttackDamageMax"           "420"
-	    "Damage"                    "420"    
+	    "AttackDamageMin"           "455"
+	    "AttackDamageMax"           "455"
+	    "Damage"                    "455"    
 	    "AOE_Full"                  "200"
 	    "AOE_Half"                  "200"  
 	    "AttackRange"               "900"
@@ -7084,19 +7087,19 @@
 	    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_frost_radiant.vmdl"
 	    "PedestalModelScale"        "0.7"
 	    "PedestalOffset"            "20"
-	    "ProjectileModel"           "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf" 
+	    "ProjectileModel"           "particles/custom/towers/water/attack.vpcf" 
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
 	    "MinimapIconSize"           "320"
 	    "Creature"
 	    {
-	        "AttachWearables" // Shard of the Lost Star
+	        "AttachWearables" // Splendor of the Protean Emperor + Blade of Tears + Crown of Tears
 	        {
-	            "1" { "ItemDef" "7561" } // Spines of the Lost Star
-	            "2" { "ItemDef" "7560" } // Scowl of the Lost Star
-	            "3" { "ItemDef" "7562" } // Bracers of the Lost Star
-	            "4" { "ItemDef" "7559" } // Eye of the Lost Star
-	            "5" { "ItemDef" "7558" } // Grip of the Lost Star
+	            "1" { "ItemDef" "7603" } // Crown of Tears
+	            "2" { "ItemDef" "8807" } // Ornaments of the Protean Emperor
+	            "3" { "ItemDef" "8808" } // Pauldrons of the Protean Emperor
+	            "4" { "ItemDef" "6833" } // Blade of Tears
+	            "5" { "ItemDef" "8810" } // Spikes of the Protean Emperor
 	            "6" { "ItemDef" "507" } // Morphling's Ambient Effects
 	        }
 	    }
@@ -7105,11 +7108,11 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "30000"
-	    "AttackDamageMax"           "30000"
-	    "Damage"                    "30000"
-	    "AOE_Full"                  "200"
-	    "AOE_Half"                  "200"
+	    "AttackDamageMin"           "32000"
+	    "AttackDamageMax"           "32000"
+	    "Damage"                    "32000"
+	    "AOE_Full"                  "250"
+	    "AOE_Half"                  "250"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
@@ -7172,17 +7175,20 @@
 	    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_frost_radiant.vmdl"
 	    "PedestalModelScale"        "0.7"
 	    "PedestalOffset"            "20"
-	    "ProjectileModel"           "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf" 
+	    "ProjectileModel"           "particles/custom/towers/water/attack.vpcf" 
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
 	    "MinimapIconSize"           "320"
 	    "Creature"
 	    {
-	        "AttachWearables" // Comet's Tail
+	        "AttachWearables" // Shard of the Lost Star
 	        {
-	            "1" { "ItemDef" "4348" } // Crown of the Comet's Tail
-	            "2" { "ItemDef" "4296" } // Shoulders of the Comet's Tail
-	            "3" { "ItemDef" "507" } // Morphling's Ambient Effects
+	            "1" { "ItemDef" "7561" } // Spines of the Lost Star
+	            "2" { "ItemDef" "7560" } // Scowl of the Lost Star
+	            "3" { "ItemDef" "7562" } // Bracers of the Lost Star
+	            "4" { "ItemDef" "7559" } // Eye of the Lost Star
+	            "5" { "ItemDef" "7558" } // Grip of the Lost Star
+	            "6" { "ItemDef" "507" } // Morphling's Ambient Effects
 	        }
 	    }
 	    "SoundSet"          "Hero_Morphling"
@@ -7190,9 +7196,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "3000"
-	    "AttackDamageMax"           "3000"
-	    "Damage"                    "3000"
+	    "AttackDamageMin"           "3200"
+	    "AttackDamageMax"           "3200"
+	    "Damage"                    "3200"
 	    "AOE_Full"                  "200"
 	    "AOE_Half"                  "200"
 	    "AttackRange"               "900"
@@ -7260,15 +7266,19 @@
 	    "PedestalModel"             "models/heroes/pedestal/effigy_pedestal_frost_radiant.vmdl"
 	    "PedestalModelScale"        "0.7"
 	    "PedestalOffset"            "20"
-	    "ProjectileModel"           "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf" 
+	    "ProjectileModel"           "particles/custom/towers/water/attack.vpcf" 
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
 	    "MinimapIconSize"           "320"
 	    "Creature"
 	    {
-	        "AttachWearables"
+	        "AttachWearables" // Shards of Polymorphia Set
 	        {
-	            "1" { "ItemDef" "507" }
+	            "1" { "ItemDef" "4403" } // Crests of Polymorphia
+	            "2" { "ItemDef" "4410" } // Pauldrons of Polymorphia
+	            "3" { "ItemDef" "4404" } // Crown of Polymorphia
+	            "4" { "ItemDef" "4422" } // Bracers of Polymorphia
+	            "5" { "ItemDef" "507" } // Morphling's Ambient Effects
 	        }
 	    }
 	    "SoundSet"          "Hero_Morphling"
@@ -7276,9 +7286,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "60"
-	    "AttackDamageMax"           "60"
-	    "Damage"                    "60"    
+	    "AttackDamageMin"           "65"
+	    "AttackDamageMax"           "65"
+	    "Damage"                    "65"    
 	    "AOE_Full"                  "200"
 	    "AOE_Half"                  "200"  
 	    "AttackRange"               "900"
@@ -7842,7 +7852,7 @@
 	    "ModelScale"       "0.9"
 	    "ModelRotation"    "90"
 	    "ModelOffset"      "15"
-	
+	    
 	    "BuildTime"        "2"
 	    "Requirements"
 	    {
@@ -7924,13 +7934,13 @@
 	    
 	    "Creature"
 	    {
-	        "AttachWearables" // Default npc_dota_hero_zuus
+	        "AttachWearables" // Wartorn Heavens + Righteous Thunderbolt
 	        {
-	            "1" { "ItemDef" "589" } // Zeus' Arms
-	            "2" { "ItemDef" "604" } // Zeus' Head
-	            "3" { "ItemDef" "605" } // Zeus Ambient Effects
-	            "4" { "ItemDef" "606" } // Zeus' Belt
-	            "5" { "ItemDef" "607" } // Zeus' Back
+	            "1" { "ItemDef" "7951" } // Bracers of the Wartorn Heavens
+	            "2" { "ItemDef" "7954" } // Helm of the Wartorn Heavens
+	            "3" { "ItemDef" "7952" } // Pauldrons of the Wartorn Heavens
+	            "4" { "ItemDef" "7953" } // Belt of the Wartorn Heavens
+	            "5" { "ItemDef" "5412" } // Righteous Thunderbolt
 	        }
 	    }
 	
@@ -8009,7 +8019,7 @@
 	    "ModelRotation"             "90"
 	    "Creature"
 	    {
-	        "AttachWearables" // Default npc_dota_hero_zuus
+	        "AttachWearables" // Arcana + Righteous Thunderbolt
 	        {
 	            "1" { "ItemDef" "605" } // Zeus Ambient Effects
 	            "2" { "ItemDef" "606" } // Zeus' Belt
@@ -8017,6 +8027,7 @@
 	            "4" { "ItemDef" "6914" } // Tempest Helm of the Thundergod
 	            "5" { "ItemDef" "8693" } // Thundergod's Bare Chest
 	            "6" { "ItemDef" "8692" } // Thundergod's Bare Arms
+	            "7" { "ItemDef" "5412" } // Righteous Thunderbolt
 	        }
 	    }
 	
@@ -8077,9 +8088,9 @@
 	        "1"        "fire"
 	        "2"        "nature"
 	    }
-	    "Damage"        "50"
-	    "AttackDamageMin"        "50"
-	    "AttackDamageMax"        "50"
+	    "Damage"        "300"
+	    "AttackDamageMin"        "300"
+	    "AttackDamageMax"        "300"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlameTower"
 	    "TowerType"        "Normal"
@@ -8111,29 +8122,16 @@
 	    }
 	    "Creature"
 	    {
-	        "AttachWearables"
-	        {
-	            "Wearable1"
-	            {
-	                "ItemDef"        "471"
-	            }
-	            "Wearable2"
-	            {
-	                "ItemDef"        "472"
-	            }
-	            "Wearable3"
-	            {
-	                "ItemDef"        "473"
-	            }
-	            "Wearable4"
-	            {
-	                "ItemDef"        "474"
-	            }
-	            "Wearable5"
-	            {
-	                "ItemDef"        "469"
-	            }
-	        }
+	       "AttachWearables" // Mentor of the High Plains
+	       {
+	            "1" { "ItemDef" "6761" } // Mentor of the High Plains Guard
+	            "2" { "ItemDef" "6764" } // Mentor of the High Plains Left Tiger Hook
+	            "3" { "ItemDef" "6762" } // Mentor of the High Plains Decorated Pauldrons
+	            "4" { "ItemDef" "6759" } // Mentor of the High Plains Ceremonial Banner
+	            "5" { "ItemDef" "6763" } // Mentor of the High Plains Right Tiger Hook
+	            "6" { "ItemDef" "6760" } // Mentor of the High Plains Great Cuirass
+	            "7" { "ItemDef" "469" } // Ambient
+	       }
 	    }
 	
 	    // Building Size
@@ -8181,9 +8179,9 @@
 	        "1"        "fire"
 	        "2"        "nature"
 	    }
-	    "Damage"        "250"
-	    "AttackDamageMin"        "250"
-	    "AttackDamageMax"        "250"
+	    "Damage"        "1500"
+	    "AttackDamageMin"        "1500"
+	    "AttackDamageMax"        "1500"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlameTower"
 	    "TowerType"        "Normal"
@@ -8211,14 +8209,14 @@
 	    }
 	    "Creature"
 	    {
-	       "AttachWearables" // Mentor of the High Plains
-	       {
-	            "1" { "ItemDef" "6761" } // Mentor of the High Plains Guard
-	            "2" { "ItemDef" "6764" } // Mentor of the High Plains Left Tiger Hook
-	            "3" { "ItemDef" "6762" } // Mentor of the High Plains Decorated Pauldrons
-	            "4" { "ItemDef" "6759" } // Mentor of the High Plains Ceremonial Banner
-	            "5" { "ItemDef" "6763" } // Mentor of the High Plains Right Tiger Hook
-	            "6" { "ItemDef" "6760" } // Mentor of the High Plains Great Cuirass
+	        "AttachWearables" // Flames of Prosperity Set
+	        {
+	            "1" { "ItemDef" "6013" } // Arm Guards of Prosperity
+	            "2" { "ItemDef" "6014" } // Crimson Guard of Prosperity
+	            "3" { "ItemDef" "6017" } // Huo - Blade of Prosperity
+	            "4" { "ItemDef" "6015" } // Phoenix Helm of Prosperity
+	            "5" { "ItemDef" "6018" } // Ember Pauldrons of Prosperity
+	            "6" { "ItemDef" "6016" } // Jin - Blade of Prosperity
 	            "7" { "ItemDef" "469" } // Ambient
 	       }
 	    }
@@ -8268,9 +8266,9 @@
 	        "1"        "fire"
 	        "2"        "nature"
 	    }
-	    "Damage"        "1250"
-	    "AttackDamageMin"        "1250"
-	    "AttackDamageMax"        "1250"
+	    "Damage"        "7500"
+	    "AttackDamageMin"        "7500"
+	    "AttackDamageMax"        "7500"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlameTower"
 	    "TowerType"        "Normal"
@@ -8296,14 +8294,14 @@
 	    }
 	    "Creature"
 	    {
-	       "AttachWearables" // Flames of Prosperity Set
-	       {
-	            "1" { "ItemDef" "6013" } // Arm Guards of Prosperity
-	            "2" { "ItemDef" "6014" } // Crimson Guard of Prosperity
-	            "3" { "ItemDef" "6017" } // Huo - Blade of Prosperity
-	            "4" { "ItemDef" "6015" } // Phoenix Helm of Prosperity
-	            "5" { "ItemDef" "6018" } // Ember Pauldrons of Prosperity
-	            "6" { "ItemDef" "6016" } // Jin - Blade of Prosperity
+	        "AttachWearables" // Rekindled Ashes + Both Rapiers
+	        {
+	            "1" { "ItemDef" "8840" } // Guard of the Rekindled Ashes
+	            "2" { "ItemDef" "7470" } // Rapier of the Burning God Offhand
+	            "3" { "ItemDef" "8843" } // Headdress of the Rekindled Ashes
+	            "4" { "ItemDef" "8841" } // Robe of the Rekindled Ashes
+	            "5" { "ItemDef" "8842" } // Shoulders of the Rekindled Ashes
+	            "6" { "ItemDef" "7472" } // Rapier of the Burning God
 	            "7" { "ItemDef" "469" } // Ambient
 	       }
 	    }
@@ -8357,9 +8355,9 @@
 	        "1"        "earth"
 	        "2"        "dark"
 	    }
-	    "Damage"        "40"
-	    "AttackDamageMin"        "40"
-	    "AttackDamageMax"        "40"
+	    "Damage"        "50"
+	    "AttackDamageMin"        "50"
+	    "AttackDamageMax"        "50"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
@@ -8391,14 +8389,14 @@
 	    }
 	    "Creature"
 	    {
-	       "AttachWearables" // Default
-	       {
-	            "1" { "ItemDef" "281" } // Weapon
-	            "2" { "ItemDef" "282" } // Cape
-	            "3" { "ItemDef" "283" } // Head
-	            "4" { "ItemDef" "284" } // Shoulder
-	            "5" { "ItemDef" "285" } // Bracers
-	       }
+	        "AttachWearables" // The Hare Hunt Set
+	        {
+	            "1" { "ItemDef" "5432" } // Hare Hunt Sleeves
+	            "2" { "ItemDef" "5435" } // Hare Hunt Hat
+	            "3" { "ItemDef" "5431" } // Hare Hunt Rifle
+	            "4" { "ItemDef" "5433" } // Hare Hunt Shoulders
+	            "5" { "ItemDef" "5434" } // Hare Hunt Cape
+	        }
 	    }
 	
 	    // Building Size
@@ -8450,9 +8448,9 @@
 	        "1"        "earth"
 	        "2"        "dark"
 	    }
-	    "Damage"        "200"
-	    "AttackDamageMin"        "200"
-	    "AttackDamageMax"        "200"
+	    "Damage"        "250"
+	    "AttackDamageMin"        "250"
+	    "AttackDamageMax"        "250"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
@@ -8480,13 +8478,13 @@
 	    }
 	    "Creature"
 	    {
-	       "AttachWearables" // The Hare Hunt Set
+	       "AttachWearables" // Exact Marksman
 	       {
-	            "1" { "ItemDef" "5432" } // Hare Hunt Sleeves
-	            "2" { "ItemDef" "5435" } // Hare Hunt Hat
-	            "3" { "ItemDef" "5431" } // Hare Hunt Rifle
-	            "4" { "ItemDef" "5433" } // Hare Hunt Shoulders
-	            "5" { "ItemDef" "5434" } // Hare Hunt Cape
+	            "1" { "ItemDef" "7178" } // Cloak of the Exact Marksman
+	            "2" { "ItemDef" "7532" } // Cap of the Exact Marksman
+	            "3" { "ItemDef" "7526" } // Spaulders of the Exact Marksman
+	            "4" { "ItemDef" "7525" } // Arm of the Exact Marksman
+	            "5" { "ItemDef" "7187" } // Perforator
 	       }
 	    }
 	
@@ -8539,9 +8537,9 @@
 	        "1"        "earth"
 	        "2"        "dark"
 	    }
-	    "Damage"        "1000"
-	    "AttackDamageMin"        "1000"
-	    "AttackDamageMax"        "1000"
+	    "Damage"        "1250"
+	    "AttackDamageMin"        "1250"
+	    "AttackDamageMax"        "1250"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GunpowderTower"
 	    "TowerType"        "Normal"
@@ -8567,13 +8565,13 @@
 	    }
 	    "Creature"
 	    {
-	       "AttachWearables" // Exact Marksman
+	       "AttachWearables" // Keen Machine + Muh Keen Gun
 	       {
-	            "1" { "ItemDef" "7178" } // Cloak of the Exact Marksman
-	            "2" { "ItemDef" "7532" } // Cap of the Exact Marksman
-	            "3" { "ItemDef" "7526" } // Spaulders of the Exact Marksman
-	            "4" { "ItemDef" "7525" } // Arm of the Exact Marksman
-	            "5" { "ItemDef" "7187" } // Perforator
+	            "1" { "ItemDef" "7163" } // Heavy Cloak of the Keen Machine
+	            "2" { "ItemDef" "7158" } // Cyclopean Helm of the Keen Machine
+	            "3" { "ItemDef" "7157" } // Heavy Plates of the Keen Machine
+	            "4" { "ItemDef" "7160" } // Lucky Bullet of the Keen Machine
+	            "5" { "ItemDef" "6453" } // Muh Keen Gun
 	       }
 	    }
 	
@@ -8611,9 +8609,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "450"
-	    "AttackDamageMax"           "450"
-	    "Damage"                    "450"
+	    "AttackDamageMin"           "800"
+	    "AttackDamageMax"           "800"
+	    "Damage"                    "800"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "1"
@@ -8708,9 +8706,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "2250"
-	    "AttackDamageMax"           "2250"
-	    "Damage"                    "2250"
+	    "AttackDamageMin"           "4000"
+	    "AttackDamageMax"           "4000"
+	    "Damage"                    "4000"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "1"
@@ -8795,9 +8793,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "11250"
-	    "AttackDamageMax"           "11250"
-	    "Damage"                    "11250"
+	    "AttackDamageMin"           "20000"
+	    "AttackDamageMax"           "20000"
+	    "Damage"                    "20000"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "1"
@@ -8896,8 +8894,8 @@
 	    "TowerType"        "Normal"
 	    "BuffPriority"          "10"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "900"
-	    "AttackAcquisitionRange"        "900"
+	    "AttackRange"        "550"
+	    "AttackAcquisitionRange"        "550"
 	    "AttackRate"        "1.5"
 	    "ProjectileModel"        ""
 	    "ProjectileSpeed"        "900"
@@ -8925,14 +8923,14 @@
 	    "AttackDamageMax"        "0"
 	    "Creature"
 	    {
-	        "AttachWearables" // Default npc_dota_hero_crystal_maiden
+	        "AttachWearables" // Wraps of the Winterbringer
 	        {
-	            "1" { "ItemDef" "39" } // Crystal Maiden's Shoulder Pads
-	            "2" { "ItemDef" "311" } // Crystal Maiden's Headdress
-	            "3" { "ItemDef" "40" } // Crystal Maiden's Weapon
-	            "4" { "ItemDef" "41" } // Crystal Maiden's Cuffs
-	            "5" { "ItemDef" "502" } // Crystal Maiden's Ambient Effects
-	            "6" { "ItemDef" "38" } // Crystal Maiden's Cape
+	            "1" { "ItemDef" "8449" } // Staff of the Winterbringer
+	            "2" { "ItemDef" "8447" } // Cape of the Winterbringer
+	            "3" { "ItemDef" "8448" } // Sleeves of the Winterbringer
+	            "4" { "ItemDef" "8456" } // Style of the Winterbringer
+	            "5" { "ItemDef" "8450" } // Shawl of the Winterbringer
+	            "6" { "ItemDef" "502" } // Crystal Maiden's Ambient Effects
 	        }
 	    }
 	
@@ -8986,8 +8984,8 @@
 	    "TowerType"        "Normal"
 	    "BuffPriority"              "7"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "900"
-	    "AttackAcquisitionRange"        "900"
+	    "AttackRange"        "550"
+	    "AttackAcquisitionRange"        "550"
 	    "AttackRate"        "1.5"
 	    "ProjectileModel"        ""
 	    "ProjectileSpeed"        "900"
@@ -9010,10 +9008,10 @@
 	    "AttackDamageMax"        "0"
 	    "Creature"
 	    {
-	       "AttachWearables" // Regalia of the Crystalline Queen Set
+	       "AttachWearables" // Regalia of the Crystalline Queen Set + Icewrack
 	        {
 	            "1" { "ItemDef" "4420" } // Bracers of the Crystalline Queen
-	            "2" { "ItemDef" "4383" } // Staff of the Crystalline Queen
+	            "2" { "ItemDef" "6573" } // Sceptre of Icewrack
 	            "3" { "ItemDef" "4540" } // Tiara of the Crystalline Queen
 	            "4" { "ItemDef" "4389" } // Mantle of the Crystalline Queen
 	            "5" { "ItemDef" "4386" } // Cape of the Crystalline Queen
@@ -9071,8 +9069,8 @@
 	    "TowerType"        "Normal"
 	    "BuffPriority"              "3"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "900"
-	    "AttackAcquisitionRange"        "900"
+	    "AttackRange"        "550"
+	    "AttackAcquisitionRange"        "550"
 	    "AttackRate"        "1.5"
 	    "ProjectileModel"        ""
 	    "ProjectileSpeed"        "900"
@@ -9150,9 +9148,9 @@
 	        "1"        "light"
 	        "2"        "nature"
 	    }
-	    "Damage"        "500"
-	    "AttackDamageMin"        "500"
-	    "AttackDamageMax"        "500"
+	    "Damage"        "420"
+	    "AttackDamageMin"        "420"
+	    "AttackDamageMax"        "420"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "LifeTower"
 	    "TowerType"        "Normal"
@@ -9259,9 +9257,9 @@
 	        "1"        "light"
 	        "2"        "nature"
 	    }
-	    "Damage"        "2500"
-	    "AttackDamageMin"        "2500"
-	    "AttackDamageMax"        "2500"
+	    "Damage"        "2100"
+	    "AttackDamageMin"        "2100"
+	    "AttackDamageMax"        "2100"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "LifeTower"
 	    "TowerType"        "Normal"
@@ -9346,9 +9344,9 @@
 	        "1"        "light"
 	        "2"        "nature"
 	    }
-	    "Damage"        "12500"
-	    "AttackDamageMin"        "12500"
-	    "AttackDamageMax"        "12500"
+	    "Damage"        "10500"
+	    "AttackDamageMin"        "10500"
+	    "AttackDamageMax"        "10500"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "LifeTower"
 	    "TowerType"        "Normal"
@@ -9374,11 +9372,11 @@
 	    }
 	    "Creature"
 	    {
-	       "AttachWearables" // Thunderwrath's Calling Set
+	       "AttachWearables" // Thunderwrath's Calling Set + Adoring Wingfall
 	       {
 	            "1" { "ItemDef" "4507" } // Cape of Thunderwrath's Calling
 	            "2" { "ItemDef" "4515" } // Armor of Thunderwrath's Calling
-	            "3" { "ItemDef" "6587" } // Guard of Basilius
+	            "3" { "ItemDef" "7580" } // Adoring Wingfall
 	            "4" { "ItemDef" "4508" } // Helm of Thunderwrath's Calling
 	            "5" { "ItemDef" "45" } // Head
 	       }
@@ -9406,7 +9404,7 @@
 	    "VisionNighttimeRange"      "1900"  
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"      "0.15"
+	    "AttackAnimationPoint"      "0.1"
 	    "ProjectileCollisionSize"   "50"
 	    "RingRadius"                "80"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -9430,9 +9428,9 @@
 	        "1"        "dark"
 	        "2"        "fire"
 	    }
-	    "Damage"        "700"
-	    "AttackDamageMin"        "700"
-	    "AttackDamageMax"        "700"
+	    "Damage"        "350"
+	    "AttackDamageMin"        "350"
+	    "AttackDamageMax"        "350"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "MagicTower"
 	    "TowerType"        "Normal"
@@ -9440,9 +9438,9 @@
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1500"
 	    "AttackAcquisitionRange"        "1500"
-	    "AttackRate"        "0.66"
+	    "AttackRate"        "0.31"
 	    "ProjectileModel"        "particles/units/heroes/hero_leshrac/leshrac_base_attack.vpcf"
-	    "ProjectileSpeed"        "2500"
+	    "ProjectileSpeed"        "3000"
 	    "Model"        "models/heroes/lion/lion.vmdl"
 	    "ModelScale"        "0.8"
 	    "ModelRotation"    "90"
@@ -9465,13 +9463,13 @@
 	    }
 	    "Creature"
 	    {
-	       "AttachWearables" // Default
-	       {
-	            "1" { "ItemDef" "365" } // Weapon
-	            "2" { "ItemDef" "366" } // Cape
-	            "3" { "ItemDef" "368" } // Shoulders
-	            "4" { "ItemDef" "369" } // Arm
-	       }
+	        "AttachWearables" // Hell's Ambassador Set
+	        {
+	            "1" { "ItemDef" "5461" } // Epaulets of Hell's Ambassador
+	            "2" { "ItemDef" "5459" } // Hand of Hell's Ambassador
+	            "3" { "ItemDef" "5462" } // Strifemaul of Hell's Ambassador
+	            "4" { "ItemDef" "5460" } // Mantle of Hell's Ambassador
+	        }
 	    }
 	
 	    // Building Size
@@ -9496,7 +9494,7 @@
 	    "VisionNighttimeRange"      "1900"  
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"      "0.15"
+	    "AttackAnimationPoint"      "0.1"
 	    "ProjectileCollisionSize"   "50"
 	    "RingRadius"                "80"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -9520,9 +9518,9 @@
 	        "1"        "dark"
 	        "2"        "fire"
 	    }
-	    "Damage"        "3500"
-	    "AttackDamageMin"        "3500"
-	    "AttackDamageMax"        "3500"
+	    "Damage"        "1750"
+	    "AttackDamageMin"        "1750"
+	    "AttackDamageMax"        "1750"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "MagicTower"
 	    "TowerType"        "Normal"
@@ -9530,9 +9528,9 @@
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1500"
 	    "AttackAcquisitionRange"        "1500"
-	    "AttackRate"        "0.66"
+	    "AttackRate"        "0.31"
 	    "ProjectileModel"        "particles/units/heroes/hero_leshrac/leshrac_base_attack.vpcf"
-	    "ProjectileSpeed"        "2500"
+	    "ProjectileSpeed"        "3000"
 	    "Model"        "models/heroes/lion/lion.vmdl"
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
@@ -9582,7 +9580,7 @@
 	    "VisionNighttimeRange"      "1900"  
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"      "0.15"
+	    "AttackAnimationPoint"      "0.1"
 	    "ProjectileCollisionSize"   "50"
 	    "RingRadius"                "80"
 	    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
@@ -9606,9 +9604,9 @@
 	        "1"        "dark"
 	        "2"        "fire"
 	    }
-	    "Damage"        "17500"
-	    "AttackDamageMin"        "17500"
-	    "AttackDamageMax"        "17500"
+	    "Damage"        "8750"
+	    "AttackDamageMin"        "8750"
+	    "AttackDamageMax"        "8750"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "MagicTower"
 	    "TowerType"        "Normal"
@@ -9616,9 +9614,9 @@
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1500"
 	    "AttackAcquisitionRange"        "1500"
-	    "AttackRate"        "0.66"
+	    "AttackRate"        "0.31"
 	    "ProjectileModel"        "particles/units/heroes/hero_leshrac/leshrac_base_attack.vpcf"
-	    "ProjectileSpeed"        "2500"
+	    "ProjectileSpeed"        "3000"
 	    "Model"        "models/heroes/lion/lion.vmdl"
 	    "ModelScale"        "0.9"
 	    "ModelRotation"             "90"
@@ -9634,13 +9632,13 @@
 	    }
 	    "Creature"
 	    {
-	       "AttachWearables" // Legacy of Infernal Wings
+	       "AttachWearables" // Curse of the Malignant Corruption + Mulctant Pall + Fin King's Charm
 	       {
-	            "1" { "ItemDef" "7074" } // Infernal Wings Flare
-	            "2" { "ItemDef" "7067" } // Infernal Wings Claw
-	            "3" { "ItemDef" "7073" } // Infernal Wings Jaw
-	            "4" { "ItemDef" "7068" } // Infernal Wings
-	            "5" { "ItemDef" "6944" } // Infernal Wings Mace
+	            "1" { "ItemDef" "6143" } // Shards of the Malignant Corruption
+	            "2" { "ItemDef" "6024" } // Carapace of Buki'vak the Corrupted
+	            "3" { "ItemDef" "6142" } // Horns of the Malignant Corruption
+	            "4" { "ItemDef" "8007" } // Mulctant Pall of the Crimson Witness
+	            "5" { "ItemDef" "6561" } // Fin King's Charm
 	       }
 	    }
 	
@@ -9692,9 +9690,9 @@
 	    }
 	    "AOE_Full"        "150"
 	    "AOE_Half"        "300"
-	    "Damage"        "170"
-	    "AttackDamageMin"        "170"
-	    "AttackDamageMax"        "170"
+	    "Damage"        "180"
+	    "AttackDamageMin"        "180"
+	    "AttackDamageMax"        "180"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "MossTower"
 	    "TowerType"        "Normal"
@@ -9788,9 +9786,9 @@
 	    }
 	    "AOE_Full"        "150"
 	    "AOE_Half"        "300"
-	    "Damage"        "850"
-	    "AttackDamageMin"        "850"
-	    "AttackDamageMax"        "850"
+	    "Damage"        "900"
+	    "AttackDamageMin"        "900"
+	    "AttackDamageMax"        "900"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "MossTower"
 	    "TowerType"        "Normal"
@@ -9879,9 +9877,9 @@
 	    }
 	    "AOE_Full"        "150"
 	    "AOE_Half"        "300"
-	    "Damage"        "4250"
-	    "AttackDamageMin"        "4250"
-	    "AttackDamageMax"        "4250"
+	    "Damage"        "4500"
+	    "AttackDamageMin"        "4500"
+	    "AttackDamageMax"        "4500"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "MossTower"
 	    "TowerType"        "Normal"
@@ -9907,11 +9905,11 @@
 	    }
 	    "Creature"
 	    {
-	       "AttachWearables" // Strength of the Demon Stone Set
+	       "AttachWearables" // Strength of the Demon Stone Set + Jade Reckoning
 	       {
 	            "1" { "ItemDef" "6005" } // Necklace of the Demon Stone
 	            "2" { "ItemDef" "6003" } // Plackart of the Demon Stone
-	            "3" { "ItemDef" "6006" } // Staff of the Demon Stone
+	            "3" { "ItemDef" "7935" } // Jade Reckoning
 	            "4" { "ItemDef" "6004" } // Mane of the Demon Stone
 	            "5" { "ItemDef" "6008" } // Warriors of the Demon Stone
 	            "6" { "ItemDef" "6002" } // Plated Bracers of the Demon Stone
@@ -10002,29 +10000,15 @@
 	    }
 	    "Creature"
 	    {
-	        "AttachWearables"
-	        {
-	            "Wearable1"
-	            {
-	                "ItemDef"        "291"
-	            }
-	            "Wearable2"
-	            {
-	                "ItemDef"        "292"
-	            }
-	            "Wearable3"
-	            {
-	                "ItemDef"        "293"
-	            }
-	            "Wearable4"
-	            {
-	                "ItemDef"        "294"
-	            }
-	            "Wearable4"
-	            {
-	                "ItemDef"        "518"
-	            }
-	        }
+	       "AttachWearables" // Venomous Deathbringer
+	       {
+	            "1" { "ItemDef" "6645" } // Venomous Deathbringer Hood
+	            "2" { "ItemDef" "6682" } // Venomous Deathbringer Ward
+	            "3" { "ItemDef" "6643" } // Venomous Deathbringer Head
+	            "4" { "ItemDef" "6642" } // Venomous Deathbringer Stingers
+	            "5" { "ItemDef" "6644" } // Venomous Deathbringer Tail
+	            "6" { "ItemDef" "518" } // Ambient
+	       }
 	    }
 	
 	    // Building Size
@@ -10105,15 +10089,14 @@
 	    }
 	    "Creature"
 	    {
-	       "AttachWearables" // Venomous Deathbringer
-	       {
-	            "1" { "ItemDef" "6645" } // Venomous Deathbringer Hood
-	            "2" { "ItemDef" "6682" } // Venomous Deathbringer Ward
-	            "3" { "ItemDef" "6643" } // Venomous Deathbringer Head
-	            "4" { "ItemDef" "6642" } // Venomous Deathbringer Stingers
-	            "5" { "ItemDef" "6644" } // Venomous Deathbringer Tail
-	            "6" { "ItemDef" "518" } // Ambient
-	       }
+	        "AttachWearables" // Ferocious Toxicant
+	        {
+	            "1" { "ItemDef" "9894" } // Crest of the Ferocious Toxicant
+	            "2" { "ItemDef" "9897" } // Tail of the Ferocious Toxicant
+	            "3" { "ItemDef" "9896" } // Spitters of the Ferocious Toxicant
+	            "4" { "ItemDef" "9893" } // Ward of the Ferocious Toxicant
+	            "5" { "ItemDef" "9895" } // Spines of the Ferocious Toxicant
+	        }
 	    }
 	
 	    // Building Size
@@ -10258,8 +10241,8 @@
 	    "TowerType"        "Normal"
 	    "BuffPriority"          "10"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "700"
-	    "AttackAcquisitionRange"        "700"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "0.66"
 	    "ProjectileModel"        "particles/custom/towers/quark/attackshot.vpcf"
 	    "ProjectileSpeed"        "2000"
@@ -10374,8 +10357,8 @@
 	    "TowerType"        "Normal"
 	    "BuffPriority"              "7"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "700"
-	    "AttackAcquisitionRange"        "700"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "0.66"
 	    "ProjectileModel"        "particles/custom/towers/quark/attackshot.vpcf"
 	    "ProjectileSpeed"        "2000"
@@ -10399,16 +10382,16 @@
 	    
 	    "Creature"
 	    {
-	       "AttachWearables" // Desert Gale Set
+	       "AttachWearables" // Gemmed Armor of the Priest Kings Set
 	       {
-	            "1" { "ItemDef" "5995" } // Desert Gale Moustache
-	            "2" { "ItemDef" "5991" } // Desert Gale Arms
-	            "3" { "ItemDef" "5990" } // Desert Gale Armor
-	            "4" { "ItemDef" "5999" } // Desert Gale Fouchard
-	            "5" { "ItemDef" "5998" } // Desert Gale Shoulder Plate
-	            "6" { "ItemDef" "5993" } // Desert Gale Helmet
-	            "7" { "ItemDef" "521" } // Ambient
-	            "8" { "ItemDef" "221"} // Mount
+	            "1" { "ItemDef" "5037" } // Ruling Staff of the Priest Kings
+	            "2" { "ItemDef" "5036" } // Scarab Pendant of the Priest Kings
+	            "3" { "ItemDef" "5035" } // Gemmed Bracers of the Priest Kings
+	            "4" { "ItemDef" "5033" } // Thrice-Gemmed Barding of Sanurok
+	            "5" { "ItemDef" "5032" } // Gemmed Pauldrons of the Priest Kings
+	            "6" { "ItemDef" "5034" } // Gemmed Mitre of the Priest Kings
+	            "7" { "ItemDef" "5031" } // Sanurok the Ever Able
+	            "8" { "ItemDef" "521" } // Ambient
 	       }
 	    }
 	
@@ -10466,8 +10449,8 @@
 	    "TowerType"        "Normal"
 	    "BuffPriority"              "3"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "700"
-	    "AttackAcquisitionRange"        "700"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "0.66"
 	    "ProjectileModel"        "particles/custom/towers/quark/attackshot.vpcf"
 	    "ProjectileSpeed"        "2000"
@@ -10489,16 +10472,16 @@
 	    
 	    "Creature"
 	    {
-	       "AttachWearables" // Gemmed Armor of the Priest Kings Set
+	       "AttachWearables" // Desert Gale Set
 	       {
-	            "1" { "ItemDef" "5037" } // Ruling Staff of the Priest Kings
-	            "2" { "ItemDef" "5036" } // Scarab Pendant of the Priest Kings
-	            "3" { "ItemDef" "5035" } // Gemmed Bracers of the Priest Kings
-	            "4" { "ItemDef" "5033" } // Thrice-Gemmed Barding of Sanurok
-	            "5" { "ItemDef" "5032" } // Gemmed Pauldrons of the Priest Kings
-	            "6" { "ItemDef" "5034" } // Gemmed Mitre of the Priest Kings
-	            "7" { "ItemDef" "5031" } // Sanurok the Ever Able
-	            "8" { "ItemDef" "521" } // Ambient
+	            "1" { "ItemDef" "5995" } // Desert Gale Moustache
+	            "2" { "ItemDef" "5991" } // Desert Gale Arms
+	            "3" { "ItemDef" "5990" } // Desert Gale Armor
+	            "4" { "ItemDef" "5999" } // Desert Gale Fouchard
+	            "5" { "ItemDef" "5998" } // Desert Gale Shoulder Plate
+	            "6" { "ItemDef" "5993" } // Desert Gale Helmet
+	            "7" { "ItemDef" "521" } // Ambient
+	            "8" { "ItemDef" "221"} // Mount
 	       }
 	    }
 	
@@ -10581,29 +10564,14 @@
 	    }
 	    "Creature"
 	    {
-	        "AttachWearables"
-	        {
-	            "Wearable1"
-	            {
-	                "ItemDef"        "544" // Ambient
-	            }
-	            "Wearable2"
-	            {
-	                "ItemDef"        "419" // Head
-	            }
-	            "Wearable3"
-	            {
-	                "ItemDef"        "205" // Shoulder
-	            }
-	            "Wearable4"
-	            {
-	                "ItemDef"        "204" // Cape
-	            }
-	            "Wearable5"
-	            {
-	                "ItemDef"        "203" // Cape
-	            }
-	        }
+	       "AttachWearables" // Councilor's Complete Raiment Set
+	       {
+	            "1" { "ItemDef" "4677" } // Councilor's Staff
+	            "2" { "ItemDef" "4680" } // Councilor's Robe
+	            "3" { "ItemDef" "4825" } // Councilor's Mask
+	            "4" { "ItemDef" "4679" } // Councilor's Shawl
+	            "5" { "ItemDef" "544" } // Ambient
+	       }
 	    }
 	
 	    // Building Size
@@ -10681,14 +10649,13 @@
 	    }
 	    "Creature"
 	    {
-	       "AttachWearables" // Councilor's Complete Raiment Set
-	       {
-	            "1" { "ItemDef" "4677" } // Councilor's Staff
-	            "2" { "ItemDef" "4680" } // Councilor's Robe
-	            "3" { "ItemDef" "4825" } // Councilor's Mask
-	            "4" { "ItemDef" "4679" } // Councilor's Shawl
-	            "5" { "ItemDef" "544" } // Ambient
-	       }
+	        "AttachWearables" // Diviner's Embrace
+	        {
+	            "1" { "ItemDef" "8710" } // Staff of Diviner's Embrace
+	            "2" { "ItemDef" "8703" } // Robe of Diviner's Embrace
+	            "3" { "ItemDef" "8702" } // Hood of Diviner's Embrace
+	            "4" { "ItemDef" "8704" } // Mantle of Diviner's Embrace
+	        }
 	    }
 	
 	    // Building Size
@@ -10764,14 +10731,13 @@
 	    }
 	    "Creature"
 	    {
-	       "AttachWearables" // Wandering Harlequin's Regalia
-	       {
-	            "1" { "ItemDef" "7028" } // Wandering Harlequin's Mantle
-	            "2" { "ItemDef" "7026" } // Wandering Harlequin's Crest
-	            "3" { "ItemDef" "7029" } // Conceit of the Wandering Harlequin
-	            "4" { "ItemDef" "7025" } // Wandering Harlequin's Cape
-	            "5" { "ItemDef" "544" } // Ambient
-	       }
+	        "AttachWearables" // Fantoccini's Dilemma + Golden Staff of Perplex
+	        {
+	            "1" { "ItemDef" "8594" } // Coat of Fantoccini's Dilemma
+	            "2" { "ItemDef" "8592" } // Fantoccini
+	            "3" { "ItemDef" "8591" } // Hat of Fantoccini's Dilemma
+	            "4" { "ItemDef" "7507" } // Golden Staff of Perplex
+	        }
 	    }
 	
 	    // Building Size
@@ -10825,8 +10791,8 @@
 	    "TowerType"        "Normal"
 	    "BuffPriority"          "10"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "700"
-	    "AttackAcquisitionRange"        "700"
+	    "AttackRange"        "550"
+	    "AttackAcquisitionRange"        "550"
 	    "AttackRate"        "1.5"
 	    "ProjectileModel"        ""
 	    "ProjectileSpeed"        "800"
@@ -10853,29 +10819,14 @@
 	    "AttackDamageMax"        "0"
 	    "Creature"
 	    {
-	        "AttachWearables"
-	        {
-	            "Wearable1"
-	            {
-	                "ItemDef"        "512" // Ambient
-	            }
-	            "Wearable2"
-	            {
-	                "ItemDef"        "273" // Weapon
-	            }
-	            "Wearable3"
-	            {
-	                "ItemDef"        "274" // Fin
-	            }
-	            "Wearable4"
-	            {
-	                "ItemDef"        "275" // Head
-	            }
-	            "Wearable5"
-	            {
-	                "ItemDef"        "276" // Arms
-	            }
-	        }
+	       "AttachWearables" // Arms of the Deep Vault Guardian Set
+	       {
+	            "1" { "ItemDef" "5072" } // Deep Vault Guardian Spine
+	            "2" { "ItemDef" "5073" } // Deep Vault Guardian Headfin
+	            "3" { "ItemDef" "5074" } // Deep Vault Guardian Trident
+	            "4" { "ItemDef" "5071" } // Deep Vault Guardian Armplates
+	            "5" { "ItemDef" "512" } // Ambient
+	       }
 	    }
 	
 	    // Building Size
@@ -10929,8 +10880,8 @@
 	    "TowerType"        "Normal"
 	    "BuffPriority"              "7"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "700"
-	    "AttackAcquisitionRange"        "700"
+	    "AttackRange"        "550"
+	    "AttackAcquisitionRange"        "550"
 	    "AttackRate"        "1.5"
 	    "ProjectileModel"        ""
 	    "ProjectileSpeed"        "800"
@@ -10953,14 +10904,13 @@
 	    "AttackDamageMax"        "0"
 	    "Creature"
 	    {
-	       "AttachWearables" // Arms of the Deep Vault Guardian Set
-	       {
-	            "1" { "ItemDef" "5072" } // Deep Vault Guardian Spine
-	            "2" { "ItemDef" "5073" } // Deep Vault Guardian Headfin
-	            "3" { "ItemDef" "5074" } // Deep Vault Guardian Trident
-	            "4" { "ItemDef" "5071" } // Deep Vault Guardian Armplates
-	            "5" { "ItemDef" "512" } // Ambient
-	       }
+	        "AttachWearables" // The Sea Dragon's Set
+	        {
+	            "1" { "ItemDef" "4922" } // Sea Dragon's Crown
+	            "2" { "ItemDef" "4921" } // Sea Dragon's Basher
+	            "3" { "ItemDef" "4923" } // Sea Dragon's Armlet
+	            "4" { "ItemDef" "4924" } // Sea Dragon's Fins
+	        }
 	    }
 	
 	    // Building Size
@@ -11004,8 +10954,8 @@
 	    "ScriptClass"               "VaporTower"
 	    "TowerType"                 "Normal"
 	    "BuffPriority"              "3"
-	    "AttackRange"               "700"
-	    "AttackAcquisitionRange"    "700"
+	    "AttackRange"               "550"
+	    "AttackAcquisitionRange"    "550"
 	    "AttackRate"                "1.5"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
 	    "BuildTime"                 "2"
@@ -11457,6 +11407,101 @@
 	    }
 	    "Upgrades"
 	    {
+	        "Count"        "1"
+	        "1"        "enchantment_tower_3"
+	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+	}
+	"enchantment_tower_3"
+	{
+	    "BaseClass"        "npc_dota_creature"
+	    "SoundSet"              "Hero_Oracle"
+	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
+	    "MinimapIcon"        "minimap_tower90"
+	    "MinimapIconSize"        "320"
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackAnimationPoint"        "0"
+	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+	    "AttributeBaseStrength"        "0"
+	    "AttributeStrengthGain"        "0"
+	    "AttributeBaseIntelligence"        "0"
+	    "AttributeIntelligenceGain"        "0"
+	    "AttributeBaseAgility"        "0"
+	    "AttributeAgilityGain"        "0"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+	    "ProjectileCollisionSize"        "50"
+	    "RingRadius"        "80"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"        "0"
+	    "MovementTurnRate"        "1.0"
+	    "StatusHealth"        "13000"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "TeamName"        "DOTA_TEAM_GOODGUYS"
+	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "1900"
+	    "VisionNighttimeRange"        "1900"
+	    "Level"        "3"
+	    "Cost"        "5000"
+	    "TotalCost"        "10000"
+	    "Element"
+	    {
+	        "1"        "earth"
+	        "2"        "light"
+	        "3"        "nature"
+	    }
+	    "Damage"        "8250"
+	    "AttackDamageMin"        "8250"
+	    "AttackDamageMax"        "8250"
+	    "DamageType"        "nature"
+	    "ScriptClass"        "EnchantmentTower"
+	    "TowerType"        "Normal"
+	    "BuffPriority"          "1"
+	    "HasAbilityDesc"        "1"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
+	    "AttackRate"        "0.31"
+	    "ProjectileModel"        "particles/units/heroes/hero_necrolyte/necrolyte_base_attack.vpcf"
+	    "ProjectileSpeed"        "3000"
+	
+	    "AOE_Full"                  "100"
+	    "AOE_Half"                  "200"
+	
+	    "Model"             "models/heroes/medusa/medusa.vmdl"
+	    "ModelScale"        "1.1"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "0"
+	    "Creature"
+	    {
+	        "AttachWearables" // Eye of the Beholder
+	        {
+	            "1" { "ItemDef" "8195" } // Helm of the Beholder
+	            "2" { "ItemDef" "8193" } // Armor of the Beholder
+	            "3" { "ItemDef" "8194" } // Bracers of the Beholder
+	            "4" { "ItemDef" "8191" } // Bow of the Beholder
+	            "5" { "ItemDef" "8196" } // Tail of the Beholder
+	            "6" { "ItemDef" "531" } // Ambient Effects
+	        }
+	    }
+	
+	    "BuildTime"        "3"
+	    "Requirements"
+	    {
+	        "earth"        "3"
+	        "light"        "3"
+	        "nature"        "3"
+	    }
+	    "Upgrades"
+	    {
 	    }
 	
 	    // Building Size
@@ -11507,9 +11552,9 @@
 	        "2"        "nature"
 	        "3"        "water"
 	    }
-	    "Damage"        "1800"
-	    "AttackDamageMin"        "1800"
-	    "AttackDamageMax"        "1800"
+	    "Damage"        "2000"
+	    "AttackDamageMin"        "2000"
+	    "AttackDamageMax"        "2000"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "EphemeralTower"
 	    "TowerType"        "Normal"
@@ -11597,9 +11642,9 @@
 	        "2"        "nature"
 	        "3"        "water"
 	    }
-	    "Damage"        "9000"
-	    "AttackDamageMin"        "9000"
-	    "AttackDamageMax"        "9000"
+	    "Damage"        "10000"
+	    "AttackDamageMin"        "10000"
+	    "AttackDamageMax"        "10000"
 	    "DamageType"        "nature"
 	    "ScriptClass"        "EphemeralTower"
 	    "TowerType"        "Normal"
@@ -11633,6 +11678,97 @@
 	        "earth"        "2"
 	        "nature"        "2"
 	        "water"        "2"
+	    }
+	    "Upgrades"
+	    {
+	        "Count"        "1"
+	        "1"        "ephemeral_tower_3"
+	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+	}
+	"ephemeral_tower_3"
+	{
+	    "BaseClass"        "npc_dota_creature"
+	    "SoundSet"                "Hero_Windrunner"
+	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+	    "MinimapIcon"        "minimap_tower90"
+	    "MinimapIconSize"        "320"
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackAnimationPoint"        "0"
+	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+	    "AttributeBaseStrength"        "0"
+	    "AttributeStrengthGain"        "0"
+	    "AttributeBaseIntelligence"        "0"
+	    "AttributeIntelligenceGain"        "0"
+	    "AttributeBaseAgility"        "0"
+	    "AttributeAgilityGain"        "0"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+	    "ProjectileCollisionSize"        "50"
+	    "RingRadius"        "80"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"        "0"
+	    "MovementTurnRate"        "1.0"
+	    "StatusHealth"        "4500"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "TeamName"        "DOTA_TEAM_GOODGUYS"
+	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "1900"
+	    "VisionNighttimeRange"        "1900"
+	    "Level"        "3"
+	    "Cost"        "5000"
+	    "TotalCost"        "10000"
+	    "Element"
+	    {
+	        "1"        "earth"
+	        "2"        "nature"
+	        "3"        "water"
+	    }
+	    "Damage"        "33000"
+	    "AttackDamageMin"        "33000"
+	    "AttackDamageMax"        "33000"
+	    "DamageType"        "nature"
+	    "ScriptClass"        "EphemeralTower"
+	    "TowerType"        "Normal"
+	    "BuffPriority"              "1"
+	    "HasAbilityDesc"        "1"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
+	    "AttackRate"        "0.31"
+	    "ProjectileModel"        "particles/units/heroes/hero_pugna/pugna_base_attack.vpcf"
+	    "ProjectileSpeed"        "3000"
+	
+	    "Model"             "models/heroes/windrunner/windrunner.vmdl"
+	    "ModelScale"        "1.3"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
+	    "Creature"
+	    {
+	        "AttachWearables" // Flowersong Tempest + Peregrine Flight
+	        {
+	            "1" { "ItemDef" "8964" } // Flowersong Thorns
+	            "2" { "ItemDef" "7978" } // Peregrine Flight
+	            "3" { "ItemDef" "8965" } // Flowersong Guard
+	            "4" { "ItemDef" "8962" } // Flowersong Beauty
+	            "5" { "ItemDef" "8961" } // Flowersong Breeze
+	        }
+	    }
+	
+	    "BuildTime"        "3"
+	    "Requirements"
+	    {
+	        "earth"        "3"
+	        "nature"        "3"
+	        "water"        "3"
 	    }
 	    "Upgrades"
 	    {
@@ -11705,13 +11841,13 @@
 	
 	    "Creature"
 	    {
-	        "AttachWearables" // Default npc_dota_hero_shadow_demon
+	        "AttachWearables" // Chains of the Summoned Lord Set
 	        {
-	            "1" { "ItemDef" "396" } // Shadow Demon's Cape
-	            "2" { "ItemDef" "545" } // Shadow Demon's Ambient Effects
-	            "3" { "ItemDef" "398" } // Shadow Demon's Belt
-	            "4" { "ItemDef" "397" } // Shadow Demon's Armor
-	            "5" { "ItemDef" "399" } // Shadow Demon's Tail
+	            "1" { "ItemDef" "4541" } // Bindings of the Summoned Lord
+	            "2" { "ItemDef" "4380" } // Plate of the Summoned Lord
+	            "3" { "ItemDef" "4377" } // Lash of the Summoned Lord
+	            "4" { "ItemDef" "4379" } // Sigil of the Summoned Lord
+	            "5" { "ItemDef" "545" } // Shadow Demon's Ambient Effects
 	        }
 	    }
 	
@@ -11799,13 +11935,13 @@
 	
 	    "Creature"
 	    {
-	        "AttachWearables" // Default npc_dota_hero_shadow_demon
+	        "AttachWearables" // Malicious Sting
 	        {
-	            "1" { "ItemDef" "545" } // Shadow Demon's Ambient Effects
-	            "2" { "ItemDef" "7181" } // Armor of the Umbral Descent
-	            "3" { "ItemDef" "7180" } // Belt of the Umbral Descent
-	            "4" { "ItemDef" "7179" } // Tail of the Umbral Descent
-	            "5" { "ItemDef" "7182" } // Form of the Umbral Descent
+	            "1" { "ItemDef" "6717" } // Malicious Sting Armor
+	            "2" { "ItemDef" "6719" } // Malicious Sting Belt
+	            "3" { "ItemDef" "6718" } // Malicious Sting Back
+	            "4" { "ItemDef" "6957" } // Malicious Sting Tail
+	            "5" { "ItemDef" "545" } // Shadow Demon's Ambient Effects
 	        }
 	    }
 	
@@ -11817,6 +11953,100 @@
 	        "dark"        "2"
 	        "fire"        "2"
 	        "water"        "2"
+	    }
+	    "Upgrades"
+	    {
+	        "Count"        "1"
+	        "1"        "erosion_tower_3"
+	    }
+	    "AttackDamageMin"        "0"
+	    "AttackDamageMax"        "0"
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+	}
+	"erosion_tower_3"
+	{
+	    "BaseClass"        "npc_dota_creature"
+	    "SoundSet"                "Hero_ShadowDemon"
+	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
+	    "MinimapIcon"        "minimap_tower90"
+	    "MinimapIconSize"        "320"
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackAnimationPoint"        "0.25"
+	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+	    "AttributeBaseStrength"        "0"
+	    "AttributeStrengthGain"        "0"
+	    "AttributeBaseIntelligence"        "0"
+	    "AttributeIntelligenceGain"        "0"
+	    "AttributeBaseAgility"        "0"
+	    "AttributeAgilityGain"        "0"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+	    "ProjectileCollisionSize"        "50"
+	    "RingRadius"        "80"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"        "0"
+	    "MovementTurnRate"        "1.0"
+	    "StatusHealth"        "4500"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "TeamName"        "DOTA_TEAM_GOODGUYS"
+	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "1900"
+	    "VisionNighttimeRange"        "1900"
+	    "Level"        "3"
+	    "Cost"        "5000"
+	    "TotalCost"        "10000"
+	    "Element"
+	    {
+	        "1"        "dark"
+	        "2"        "fire"
+	        "3"        "water"
+	    }
+	    "Damage"        "0"
+	    "DamageType"        "fire"
+	    "ScriptClass"        "ErosionTower"
+	    "TowerType"        "Normal"
+	    "BuffPriority"          "1"
+	    "HasAbilityDesc"        "1"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
+	    "AttackRate"        "1"
+	    "ProjectileModel"        "particles/units/heroes/hero_warlock/warlock_base_attack.vpcf"
+	    "ProjectileSpeed"        "2000"
+	
+	    "Model"             "models/heroes/shadow_demon/shadow_demon.vmdl"
+	    "ModelScale"        "1.1"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "20"
+	
+	    "Creature"
+	    {
+	        "AttachWearables" // Umbral Descent + Diabolical Appendages
+	        {
+	            "1" { "ItemDef" "7181" } // Armor of the Umbral Descent
+	            "2" { "ItemDef" "7180" } // Belt of the Umbral Descent
+	            "3" { "ItemDef" "7179" } // Tail of the Umbral Descent
+	            "4" { "ItemDef" "6574" } // Diabolical Appendages
+	            "5" { "ItemDef" "545" } // Shadow Demon's Ambient Effects
+	        }
+	    }
+	
+	    "AOE_Full"        "400"
+	    "AOE_Half"        "400"
+	    "BuildTime"        "3"
+	    "Requirements"
+	    {
+	        "dark"        "3"
+	        "fire"        "3"
+	        "water"        "3"
 	    }
 	    "Upgrades"
 	    {
@@ -11986,7 +12216,7 @@
 	    
 	    "Creature"
 	    {
-	        "AttachWearables" // Flamestitched Suitings Set
+	        "AttachWearables" // Marauding Pyro
 	        {
 	            "1" { "ItemDef" "375" } // Batrider's Head
 	            "2" { "ItemDef" "9376" } // Mask of the Marauding Pyro
@@ -12004,6 +12234,100 @@
 	        "dark"        "2"
 	        "earth"        "2"
 	        "fire"        "2"
+	    }
+	    "Upgrades"
+	    {
+	        "Count"        "1"
+	        "1"        "flamethrower_tower_3"
+	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+	}
+	"flamethrower_tower_3"
+	{
+	    "BaseClass"        "npc_dota_creature"
+	    "SoundSet"                "Hero_Batrider"
+	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_batrider.vsndevts"
+	    "MinimapIcon"        "minimap_tower90"
+	    "MinimapIconSize"        "320"
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackAnimationPoint"        "0"
+	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+	    "AttributeBaseStrength"        "0"
+	    "AttributeStrengthGain"        "0"
+	    "AttributeBaseIntelligence"        "0"
+	    "AttributeIntelligenceGain"        "0"
+	    "AttributeBaseAgility"        "0"
+	    "AttributeAgilityGain"        "0"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+	    "ProjectileCollisionSize"        "50"
+	    "RingRadius"        "80"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"        "0"
+	    "MovementTurnRate"        "1.0"
+	    "StatusHealth"        "4500"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "TeamName"        "DOTA_TEAM_GOODGUYS"
+	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "1900"
+	    "VisionNighttimeRange"        "1900"
+	    "Level"        "3"
+	    "Cost"        "5000"
+	    "TotalCost"        "10000"
+	    "Element"
+	    {
+	        "1"        "dark"
+	        "2"        "earth"
+	        "3"        "fire"
+	    }
+	    "Damage"        "6000"
+	    "AttackDamageMin"        "6000"
+	    "AttackDamageMax"        "6000"
+	    "DamageType"        "fire"
+	    "ScriptClass"        "FlamethrowerTower"
+	    "TowerType"        "Normal"
+	    "BuffPriority"              "1"
+	    "HasAbilityDesc"        "1"
+	    "AttackRange"        "700"
+	    "AttackAcquisitionRange"        "700"
+	    "AttackRate"        "0.66"
+	    "ProjectileModel"        "particles/custom/towers/flamethrower/attack.vpcf"
+	    "ProjectileSpeed"        "2500"
+	
+	    "Model"             "models/heroes/batrider/batrider.vmdl"
+	    "ModelScale"        "0.8"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "-5"
+	    
+	    "Creature"
+	    {
+	        "AttachWearables" // Marauding Pyro + Burning Iron
+	        {
+	            "1" { "ItemDef" "375" } // Batrider's Head
+	            "2" { "ItemDef" "9376" } // Mask of the Marauding Pyro
+	            "3" { "ItemDef" "9388" } // Glider of the Marauding Pyro
+	            "4" { "ItemDef" "9386" } // Cocktail of the Marauding Pyro
+	            "5" { "ItemDef" "6606" } // Burning Iron
+	        }
+	    }
+	
+	    "AOE_Half"        "300"
+	    "AOE_Full"        "150"
+	    "BuildTime"        "3"
+	    "Requirements"
+	    {
+	        "dark"        "3"
+	        "earth"        "3"
+	        "fire"        "3"
 	    }
 	    "Upgrades"
 	    {
@@ -12183,6 +12507,96 @@
 	    }
 	    "Upgrades"
 	    {
+	        "Count"        "1"
+	        "1"        "flooding_tower_3"
+	    }
+	    "AttackDamageMin"        "0"
+	    "AttackDamageMax"        "0"
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+	}
+	"flooding_tower_3"
+	{
+	    "BaseClass"        "npc_dota_creature"
+	    "MinimapIcon"        "minimap_tower90"
+	    "MinimapIconSize"        "320"
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackAnimationPoint"        "0.25"
+	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+	    "AttributeBaseStrength"        "0"
+	    "AttributeStrengthGain"        "0"
+	    "AttributeBaseIntelligence"        "0"
+	    "AttributeIntelligenceGain"        "0"
+	    "AttributeBaseAgility"        "0"
+	    "AttributeAgilityGain"        "0"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+	    "ProjectileCollisionSize"        "50"
+	    "RingRadius"        "80"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"        "0"
+	    "MovementTurnRate"        "1.0"
+	    "StatusHealth"        "4500"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "TeamName"        "DOTA_TEAM_GOODGUYS"
+	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "1900"
+	    "VisionNighttimeRange"        "1900"
+	    "Level"        "3"
+	    "Cost"        "5000"
+	    "TotalCost"        "10000"
+	    "Element"
+	    {
+	        "1"        "water"
+	        "2"        "nature"
+	        "3"        "dark"
+	    }
+	    "Damage"        "0"
+	    "DamageType"        "water"
+	    "ScriptClass"        "FloodingTower"
+	    "TowerType"        "Normal"
+	    "BuffPriority"              "1"
+	    "HasAbilityDesc"        "1"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
+	    "AttackRate"        "1"
+	    "ProjectileModel"        "particles/units/heroes/hero_tidehunter/tidehunter_gush.vpcf"
+	    "ProjectileSpeed"        "2000"
+	    
+	    "Model"             "models/heroes/tidehunter/tidehunter.vmdl"
+	    "ModelScale"        "1"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
+	    "Creature"
+	    {
+	        "AttachWearables" // Relics of the Drowning Trench + Floodmask
+	        {
+	            "1" { "ItemDef" "7774" } // Grip of the Drowning Trench
+	            "2" { "ItemDef" "7408" } // Floodmask
+	            "3" { "ItemDef" "7777" } // Leashed Rockshark
+	            "4" { "ItemDef" "7775" } // Carapace of the Drowning Trench
+	            "5" { "ItemDef" "7773" } // Belt of the Drowning Trench
+	            "6" { "ItemDef" "7778" } // Aquemerald Blade
+	        }
+	    }
+	
+	    "BuildTime"        "3"
+	    "Requirements"
+	    {
+	        "water"        "3"
+	        "nature"        "3"
+	        "dark"        "3"
+	    }
+	    "Upgrades"
+	    {
 	    }
 	    "AttackDamageMin"        "0"
 	    "AttackDamageMax"        "0"
@@ -12235,9 +12649,9 @@
 	        "2"        "earth"
 	        "3"        "light"
 	    }
-	    "Damage"        "5000"
-	    "AttackDamageMin"        "5000"
-	    "AttackDamageMax"        "5000"
+	    "Damage"        "6000"
+	    "AttackDamageMin"        "6000"
+	    "AttackDamageMax"        "6000"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GoldTower"
 	    "TowerType"        "Normal"
@@ -12255,7 +12669,7 @@
 	    "ModelOffset"       "15"
 	    "Creature"
 	    {
-	        "AttachWearables" // Default npc_dota_hero_alchemist
+	        "AttachWearables" // Default npc_dota_hero_alchemist + Midas Knuckles
 	        {
 	            "1" { "ItemDef" "9568" } // Razzil's Midas Knuckles
 	            "2" { "ItemDef" "119" } // Alchemist's Saddle
@@ -12330,9 +12744,9 @@
 	        "2"        "earth"
 	        "3"        "light"
 	    }
-	    "Damage"        "25000"
-	    "AttackDamageMin"        "25000"
-	    "AttackDamageMax"        "25000"
+	    "Damage"        "30000"
+	    "AttackDamageMin"        "30000"
+	    "AttackDamageMax"        "30000"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "GoldTower"
 	    "TowerType"        "Normal"
@@ -12350,7 +12764,7 @@
 	    "ModelOffset"       "15"
 	    "Creature"
 	    {
-	        "AttachWearables" // Default npc_dota_hero_alchemist
+	        "AttachWearables" // Default npc_dota_hero_alchemist + Midas Knuckles + Radiance Blades
 	        {
 	            "1" { "ItemDef" "9568" } // Razzil's Midas Knuckles
 	            "2" { "ItemDef" "119" } // Alchemist's Saddle
@@ -12370,6 +12784,101 @@
 	        "fire"        "2"
 	        "earth"        "2"
 	        "light"        "2"
+	    }
+	    "Upgrades"
+	    {
+	        "Count"        "1"
+	        "1"        "gold_tower_3"
+	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+	}
+	"gold_tower_3"
+	{
+	    "BaseClass"        "npc_dota_creature"
+	    "SoundSet"             "Hero_Alchemist"
+	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+	    "MinimapIcon"        "minimap_tower90"
+	    "MinimapIconSize"        "320"
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackAnimationPoint"     "0.25"
+	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+	    "AttributeBaseStrength"        "0"
+	    "AttributeStrengthGain"        "0"
+	    "AttributeBaseIntelligence"        "0"
+	    "AttributeIntelligenceGain"        "0"
+	    "AttributeBaseAgility"        "0"
+	    "AttributeAgilityGain"        "0"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+	    "ProjectileCollisionSize"        "50"
+	    "RingRadius"        "80"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"        "0"
+	    "MovementTurnRate"        "1.0"
+	    "StatusHealth"        "4500"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "TeamName"        "DOTA_TEAM_GOODGUYS"
+	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "1900"
+	    "VisionNighttimeRange"        "1900"
+	    "Level"        "3"
+	    "Cost"        "5000"
+	    "TotalCost"        "10000"
+	    "Element"
+	    {
+	        "1"        "fire"
+	        "2"        "earth"
+	        "3"        "light"
+	    }
+	    "Damage"        "100000"
+	    "AttackDamageMin"        "100000"
+	    "AttackDamageMax"        "100000"
+	    "DamageType"        "earth"
+	    "ScriptClass"        "GoldTower"
+	    "TowerType"        "Normal"
+	    "BuffPriority"              "1"
+	    "HasAbilityDesc"        "1"
+	    "AttackRange"        "1150"
+	    "AttackAcquisitionRange"        "1150"
+	    "AttackRate"        "1.5"
+	    "ProjectileModel"        "particles/custom/towers/gold/attack.vpcf"
+	    "ProjectileSpeed"        "2000"
+	
+	    "Model"             "models/heroes/alchemist/alchemist.vmdl"
+	    "ModelScale"        "1.2"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
+	    "Creature"
+	    {
+	        "AttachWearables" // Toxic Siege + Midas Knuckles + Radiance Blades
+	        {
+	            "1" { "ItemDef" "9568" } // Razzil's Midas Knuckles
+	            "2" { "ItemDef" "6121" } // Toxic Siege Armored Saddle
+	            "3" { "ItemDef" "6119" } // Toxic Siege Safety Goggles
+	            "4" { "ItemDef" "124" } // Alchemist's Ogre Head
+	            "5" { "ItemDef" "6118" } // Toxic Siege Garb
+	            "6" { "ItemDef" "7627" } // Eternal Radiance Blades
+	            "7" { "ItemDef" "6120" } // Toxic Siege Corrosive Flasks
+	            "8" { "ItemDef" "6122" } // Toxic Siege Pauldrons
+	            "9" { "ItemDef" "123" } // Alchemist's Goblin Head
+	        }
+	    }
+	
+	    "BuildTime"        "3"
+	    "Requirements"
+	    {
+	        "fire"        "3"
+	        "earth"        "3"
+	        "light"        "3"
 	    }
 	    "Upgrades"
 	    {
@@ -12443,15 +12952,15 @@
 	    "ModelOffset"       "20"
 	    "Creature"
 	    {
-	        "AttachWearables" // Guise of the Winged Bolt
+	        "AttachWearables" // Wyvern Skin
 	        {
-	            "1" { "ItemDef" "7238" } // Bow of the Winged Bolt
-	            "2" { "ItemDef" "7245" } // Mask of the Winged Bolt
-	            "3" { "ItemDef" "7243" } // Cape of the Winged Bolt
-	            "4" { "ItemDef" "7242" } // Bracers of the Winged Bolt
-	            "5" { "ItemDef" "7232" } // Boots of the Winged Bolt
-	            "6" { "ItemDef" "7246" } // Quiver of the Winged Bolt
-	            "7" { "ItemDef" "7244" } // Guards of the Winged Bolt
+	            "1" { "ItemDef" "8148" } // Bracers of the Wyvern Skin
+	            "2" { "ItemDef" "8151" } // Mantle of the Wyvern Skin
+	            "3" { "ItemDef" "8150" } // Cowl of the Wyvern Skin
+	            "4" { "ItemDef" "8152" } // Quiver of the Wyvern Skin
+	            "5" { "ItemDef" "8146" } // Boots of the Wyvern Skin
+	            "6" { "ItemDef" "8149" } // Cape of the Wyvern Skin
+	            "7" { "ItemDef" "8147" } // Bow of the Wyvern Skin
 	        }
 	    }
 	
@@ -12536,6 +13045,99 @@
 	    "ModelOffset"       "20"
 	    "Creature"
 	    {
+	        "AttachWearables" // Guise of the Winged Bolt
+	        {
+	            "1" { "ItemDef" "7238" } // Bow of the Winged Bolt
+	            "2" { "ItemDef" "7245" } // Mask of the Winged Bolt
+	            "3" { "ItemDef" "7243" } // Cape of the Winged Bolt
+	            "4" { "ItemDef" "7242" } // Bracers of the Winged Bolt
+	            "5" { "ItemDef" "7232" } // Boots of the Winged Bolt
+	            "6" { "ItemDef" "7246" } // Quiver of the Winged Bolt
+	            "7" { "ItemDef" "7244" } // Guards of the Winged Bolt
+	        }
+	    }
+	
+	    "BuildTime"        "3"
+	    "Requirements"
+	    {
+	        "dark"        "2"
+	        "light"        "2"
+	        "water"        "2"
+	    }
+	    "Upgrades"
+	    {
+	        "Count"        "1"
+	        "1"        "hail_tower_3"
+	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+	}
+	"hail_tower_3"
+	{
+	    "BaseClass"        "npc_dota_creature"
+	    "SoundSet"             "Hero_DrowRanger"
+	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_drowranger.vsndevts"
+	    "MinimapIcon"        "minimap_tower90"
+	    "MinimapIconSize"        "320"
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackAnimationPoint"        "0.15"
+	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+	    "AttributeBaseStrength"        "0"
+	    "AttributeStrengthGain"        "0"
+	    "AttributeBaseIntelligence"        "0"
+	    "AttributeIntelligenceGain"        "0"
+	    "AttributeBaseAgility"        "0"
+	    "AttributeAgilityGain"        "0"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+	    "ProjectileCollisionSize"        "50"
+	    "RingRadius"        "80"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"        "0"
+	    "MovementTurnRate"        "1.0"
+	    "StatusHealth"        "4500"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "TeamName"        "DOTA_TEAM_GOODGUYS"
+	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "1900"
+	    "VisionNighttimeRange"        "1900"
+	    "Level"        "3"
+	    "Cost"        "5000"
+	    "TotalCost"        "10000"
+	    "Element"
+	    {
+	        "1"        "dark"
+	        "2"        "light"
+	        "3"        "water"
+	    }
+	    "Damage"        "12000"
+	    "AttackDamageMin"        "12000"
+	    "AttackDamageMax"        "12000"
+	    "DamageType"        "light"
+	    "ScriptClass"        "HailTower"
+	    "TowerType"        "Normal"
+	    "BuffPriority"              "1"
+	    "HasAbilityDesc"        "1"
+	    "AttackRange"        "1750"
+	    "AttackAcquisitionRange"        "1750"
+	    "AttackRate"        "0.66"
+	    "ProjectileModel"        "particles/custom/towers/hail/attack.vpcf"
+	    "ProjectileSpeed"        "3000"
+	
+	    "Model"             "models/heroes/drow/drow.vmdl"
+	    "ModelScale"        "1.3"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "20"
+	    "Creature"
+	    {
 	        "AttachWearables" // Eldwurm's Touch
 	        {
 	            "1" { "ItemDef" "7058" } // Bow of the Eldwurm's Touch
@@ -12551,9 +13153,9 @@
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
-	        "dark"        "2"
-	        "light"        "2"
-	        "water"        "2"
+	        "dark"        "3"
+	        "light"        "3"
+	        "water"        "3"
 	    }
 	    "Upgrades"
 	    {
@@ -12605,9 +13207,9 @@
 	        "2"        "fire"
 	        "3"        "water"
 	    }
-	    "Damage"        "1800"
-	    "AttackDamageMin"        "1800"
-	    "AttackDamageMax"        "1800"
+	    "Damage"        "1600"
+	    "AttackDamageMin"        "1600"
+	    "AttackDamageMax"        "1600"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "HasteTower"
 	    "TowerType"        "Normal"
@@ -12694,9 +13296,9 @@
 	        "2"        "fire"
 	        "3"        "water"
 	    }
-	    "Damage"        "9000"
-	    "AttackDamageMin"        "9000"
-	    "AttackDamageMax"        "9000"
+	    "Damage"        "8000"
+	    "AttackDamageMin"        "8000"
+	    "AttackDamageMax"        "8000"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "HasteTower"
 	    "TowerType"        "Normal"
@@ -12730,6 +13332,95 @@
 	        "earth"        "2"
 	        "fire"        "2"
 	        "water"        "2"
+	    }
+	    "Upgrades"
+	    {
+	        "Count"        "1"
+	        "1"        "haste_tower_3"
+	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+	}
+	"haste_tower_3"
+	{
+	    "BaseClass"        "npc_dota_creature"
+	    "MinimapIcon"        "minimap_tower90"
+	    "MinimapIconSize"        "320"
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackAnimationPoint"        "0"
+	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+	    "AttributeBaseStrength"        "0"
+	    "AttributeStrengthGain"        "0"
+	    "AttributeBaseIntelligence"        "0"
+	    "AttributeIntelligenceGain"        "0"
+	    "AttributeBaseAgility"        "0"
+	    "AttributeAgilityGain"        "0"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+	    "ProjectileCollisionSize"        "50"
+	    "RingRadius"        "80"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"        "0"
+	    "MovementTurnRate"        "1.0"
+	    "StatusHealth"        "4500"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "TeamName"        "DOTA_TEAM_GOODGUYS"
+	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "1900"
+	    "VisionNighttimeRange"        "1900"
+	    "Level"        "3"
+	    "Cost"        "5000"
+	    "TotalCost"        "10000"
+	    "Element"
+	    {
+	        "1"        "earth"
+	        "2"        "fire"
+	        "3"        "water"
+	    }
+	    "Damage"        "24000"
+	    "AttackDamageMin"        "24000"
+	    "AttackDamageMax"        "24000"
+	    "DamageType"        "fire"
+	    "ScriptClass"        "HasteTower"
+	    "TowerType"        "Normal"
+	    "BuffPriority"          "1"
+	    "HasAbilityDesc"        "1"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
+	    "AttackRate"        "0.66"
+	    "ProjectileModel"        "particles/custom/towers/haste/attack.vpcf"
+	    "ProjectileSpeed"        "1000"
+	
+	    "Model"             "models/heroes/troll_warlord/troll_warlord.vmdl"
+	    "ModelScale"        "1.2"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
+	    "Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_troll_warlord
+	        {
+	            "1" { "ItemDef" "411" } // Troll Warlord's Default Head
+	            "2" { "ItemDef" "410" } // Troll Warlord's Default Shoulders
+	            "3" { "ItemDef" "374" } // Troll Warlord's Default Off-Hand Weapon
+	            "4" { "ItemDef" "373" } // Troll Warlord's Default Weapon
+	            "5" { "ItemDef" "412" } // Troll Warlord's Default Arms
+	        }
+	    }
+	
+	    "BuildTime"        "3"
+	    "Requirements"
+	    {
+	        "earth"        "3"
+	        "fire"        "3"
+	        "water"        "3"
 	    }
 	    "Upgrades"
 	    {
@@ -12888,7 +13579,7 @@
 	    "ModelOffset"       "15"
 	    "Creature"
 	    {
-	        "AttachWearables" // Blessings of the Wildwing
+	        "AttachWearables" // Blessings of the Wildwing + Flourishing Lodestar
 	        {
 	            "1" { "ItemDef" "6857" } // Flourishing Lodestar
 	            "2" { "ItemDef" "4787" } // Wingbelt of the Wildwing's Blessing
@@ -12904,6 +13595,95 @@
 	        "nature"        "2"
 	        "fire"        "2"
 	        "water"        "2"
+	    }
+	    "Upgrades"
+	    {
+	        "Count"        "1"
+	        "1"        "impulse_tower_3"
+	    }
+	    "AttackDamageMin"        "0"
+	    "AttackDamageMax"        "0"
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+	}
+	"impulse_tower_3"
+	{
+	    "BaseClass"        "npc_dota_creature"
+	    "MinimapIcon"        "minimap_tower90"
+	    "MinimapIconSize"        "320"
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackAnimationPoint"        "0.2"
+	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+	    "AttributeBaseStrength"        "0"
+	    "AttributeStrengthGain"        "0"
+	    "AttributeBaseIntelligence"        "0"
+	    "AttributeIntelligenceGain"        "0"
+	    "AttributeBaseAgility"        "0"
+	    "AttributeAgilityGain"        "0"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+	    "ProjectileCollisionSize"        "50"
+	    "RingRadius"        "80"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"        "0"
+	    "MovementTurnRate"        "1.0"
+	    "StatusHealth"        "4500"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "TeamName"        "DOTA_TEAM_GOODGUYS"
+	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "1900"
+	    "VisionNighttimeRange"        "1900"
+	    "Level"        "3"
+	    "Cost"        "5000"
+	    "TotalCost"        "10000"
+	    "Element"
+	    {
+	        "1"        "nature"
+	        "2"        "fire"
+	        "3"        "water"
+	    }
+	    "Damage"        "0"
+	    "DamageType"        "nature"
+	    "ScriptClass"        "ImpulseTower"
+	    "TowerType"        "Normal"
+	    "BuffPriority"              "1"
+	    "HasAbilityDesc"        "1"
+	    "AttackRange"        "1750"
+	    "AttackAcquisitionRange"        "1750"
+	    "AttackRate"        "1.5"
+	    "ProjectileModel"        "particles/units/heroes/hero_enchantress/enchantress_impetus.vpcf"
+	    "ProjectileSpeed"        "3000"
+	    
+	    "Model"             "models/heroes/enchantress/enchantress.vmdl"
+	    "ModelScale"        "1.1"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
+	    "Creature"
+	    {
+	        "AttachWearables" // Blessings of the Wildwing + Flourishing Lodestar + Virga's Arc
+	        {
+	            "1" { "ItemDef" "6857" } // Flourishing Lodestar
+	            "2" { "ItemDef" "4787" } // Wingbelt of the Wildwing's Blessing
+	            "3" { "ItemDef" "4678" } // Necklace of the Wildwing's Blessing
+	            "4" { "ItemDef" "7459" } // Virga's Arc
+	            "5" { "ItemDef" "4676" } // Bangles of the Wildwing's Blessing
+	        }
+	    }
+	
+	    "BuildTime"        "3"
+	    "Requirements"
+	    {
+	        "nature"        "3"
+	        "fire"        "3"
+	        "water"        "3"
 	    }
 	    "Upgrades"
 	    {
@@ -12924,7 +13704,7 @@
 	    "MagicalResistance"        "0"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"        "0"
+	    "AttackAnimationPoint"        "0.2"
 	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
 	    "AttributeBaseStrength"        "0"
 	    "AttributeStrengthGain"        "0"
@@ -12968,7 +13748,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1"
-	    "ProjectileModel"        "particles/units/heroes/hero_witchdoctor/witchdoctor_ward_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
 	    "ProjectileSpeed"        "2000"
 	
 	    "Model"             "models/heroes/witchdoctor/witchdoctor.vmdl"
@@ -13013,7 +13793,7 @@
 	    "MagicalResistance"        "0"
 	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
 	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
-	    "AttackAnimationPoint"        "0"
+	    "AttackAnimationPoint"        "0.2"
 	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
 	    "AttributeBaseStrength"        "0"
 	    "AttributeStrengthGain"        "0"
@@ -13057,7 +13837,7 @@
 	    "AttackRange"        "900"
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1"
-	    "ProjectileModel"        "particles/units/heroes/hero_witchdoctor/witchdoctor_ward_attack.vpcf"
+	    "ProjectileModel"        "particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
 	    "ProjectileSpeed"        "2000"
 	    
 	    "Model"             "models/heroes/witchdoctor/witchdoctor.vmdl"
@@ -13082,6 +13862,95 @@
 	        "dark"        "2"
 	        "fire"        "2"
 	        "nature"        "2"
+	    }
+	    "Upgrades"
+	    {
+	        "Count"        "1"
+	        "1"        "jinx_tower_3"
+	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+	}
+	"jinx_tower_3"
+	{
+	    "BaseClass"        "npc_dota_creature"
+	    "MinimapIcon"        "minimap_tower90"
+	    "MinimapIconSize"        "320"
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackAnimationPoint"        "0.2"
+	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+	    "AttributeBaseStrength"        "0"
+	    "AttributeStrengthGain"        "0"
+	    "AttributeBaseIntelligence"        "0"
+	    "AttributeIntelligenceGain"        "0"
+	    "AttributeBaseAgility"        "0"
+	    "AttributeAgilityGain"        "0"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+	    "ProjectileCollisionSize"        "50"
+	    "RingRadius"        "80"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"        "0"
+	    "MovementTurnRate"        "1.0"
+	    "StatusHealth"        "4500"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "TeamName"        "DOTA_TEAM_GOODGUYS"
+	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "1900"
+	    "VisionNighttimeRange"        "1900"
+	    "Level"        "3"
+	    "Cost"        "5000"
+	    "TotalCost"        "10000"
+	    "Element"
+	    {
+	        "1"        "dark"
+	        "2"        "fire"
+	        "3"        "nature"
+	    }
+	    "Damage"        "52500"
+	    "AttackDamageMin"        "52500"
+	    "AttackDamageMax"        "52500"
+	    "DamageType"        "dark"
+	    "ScriptClass"        "JinxTower"
+	    "TowerType"        "Normal"
+	    "BuffPriority"          "1"
+	    "HasAbilityDesc"        "1"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
+	    "AttackRate"        "1"
+	    "ProjectileModel"        "particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
+	    "ProjectileSpeed"        "2000"
+	    
+	    "Model"             "models/heroes/witchdoctor/witchdoctor.vmdl"
+	    "ModelScale"        "1.15"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "20"
+	    "Creature"
+	    {
+	        "AttachWearables" // Twilight's Rest + Ribbi'tar + Bonkers the Mad
+	        {
+	            "1" { "ItemDef" "8267" } // Bonkers the Mad
+	            "2" { "ItemDef" "7551" } // Mantle of Twilight's Rest
+	            "3" { "ItemDef" "8336" } // Visage of Ribbi'tar
+	            "4" { "ItemDef" "7552" } // Scourge of Twilight's Rest
+	            "5" { "ItemDef" "7554" } // Wrap of Twilight's Rest
+	        }
+	    }
+	
+	    "BuildTime"        "3"
+	    "Requirements"
+	    {
+	        "dark"        "3"
+	        "fire"        "3"
+	        "nature"        "3"
 	    }
 	    "Upgrades"
 	    {
@@ -13133,9 +14002,9 @@
 	        "2"        "earth"
 	        "3"        "light"
 	    }
-	    "Damage"        "5500"
-	    "AttackDamageMin"        "5500"
-	    "AttackDamageMax"        "5500"
+	    "Damage"        "6000"
+	    "AttackDamageMin"        "6000"
+	    "AttackDamageMax"        "6000"
 	    "DamageType"        "light"
 	    "ScriptClass"        "LaserTower"
 	    "TowerType"        "Normal"
@@ -13224,9 +14093,9 @@
 	        "2"        "earth"
 	        "3"        "light"
 	    }
-	    "Damage"        "27500"
-	    "AttackDamageMin"        "27500"
-	    "AttackDamageMax"        "27500"
+	    "Damage"        "30000"
+	    "AttackDamageMin"        "30000"
+	    "AttackDamageMax"        "30000"
 	    "DamageType"        "light"
 	    "ScriptClass"        "LaserTower"
 	    "TowerType"        "Normal"
@@ -13244,7 +14113,7 @@
 	    "ModelOffset"       "20"
 	    "Creature"
 	    {
-	        "AttachWearables" // Default npc_dota_hero_tinker
+	        "AttachWearables" // Default npc_dota_hero_tinker + Mecha Boots
 	        {
 	            "1" { "ItemDef" "466" } // Tinker's Head
 	            "2" { "ItemDef" "467" } // Tinker's Cape
@@ -13263,6 +14132,98 @@
 	        "dark"        "2"
 	        "earth"        "2"
 	        "light"        "2"
+	    }
+	    "Upgrades"
+	    {
+	        "Count"        "1"
+	        "1"        "laser_tower_3"
+	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+	}
+	"laser_tower_3"
+	{
+	    "BaseClass"        "npc_dota_creature"
+	    "MinimapIcon"        "minimap_tower90"
+	    "MinimapIconSize"        "320"
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackAnimationPoint"        "0"
+	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+	    "AttributeBaseStrength"        "0"
+	    "AttributeStrengthGain"        "0"
+	    "AttributeBaseIntelligence"        "0"
+	    "AttributeIntelligenceGain"        "0"
+	    "AttributeBaseAgility"        "0"
+	    "AttributeAgilityGain"        "0"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+	    "ProjectileCollisionSize"        "50"
+	    "RingRadius"        "80"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"        "0"
+	    "MovementTurnRate"        "1.0"
+	    "StatusHealth"        "4500"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "TeamName"        "DOTA_TEAM_GOODGUYS"
+	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "1900"
+	    "VisionNighttimeRange"        "1900"
+	    "Level"        "3"
+	    "Cost"        "5000"
+	    "TotalCost"        "10000"
+	    "Element"
+	    {
+	        "1"        "dark"
+	        "2"        "earth"
+	        "3"        "light"
+	    }
+	    "Damage"        "90000"
+	    "AttackDamageMin"        "90000"
+	    "AttackDamageMax"        "90000"
+	    "DamageType"        "light"
+	    "ScriptClass"        "LaserTower"
+	    "TowerType"        "Normal"
+	    "BuffPriority"              "1"
+	    "HasAbilityDesc"        "1"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
+	    "AttackRate"        "1"
+	    "ProjectileSpeed"        "2000"
+	    "ProjectileModel"        "particles/custom/towers/laser/attack.vpcf"
+	
+	    "Model"             "models/heroes/tinker/tinker.vmdl"
+	    "ModelScale"        "1.1"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "20"
+	    "Creature"
+	    {
+	        "AttachWearables" // Default npc_dota_hero_tinker + Mecha Boots + Rollermawster
+	        {
+	            "1" { "ItemDef" "466" } // Tinker's Head
+	            "2" { "ItemDef" "467" } // Tinker's Cape
+	            "3" { "ItemDef" "464" } // Tinker's Shoulders
+	            "4" { "ItemDef" "7143" } // Rollermawster
+	            "5" { "ItemDef" "515" } // Tinker's Ambient Effects
+	            "6" { "ItemDef" "463" } // Tinker's Left Arm
+	            "7" { "ItemDef" "367" } // Tinker's Right Arm
+	            "8" { "ItemDef" "6224" } // Mecha Boots of Travel Mk III
+	        }
+	    }
+	    
+	    "BuildTime"        "3"
+	    "Requirements"
+	    {
+	        "dark"        "3"
+	        "earth"        "3"
+	        "light"        "3"
 	    }
 	    "Upgrades"
 	    {
@@ -13334,14 +14295,14 @@
 	    "ModelOffset"       "15"
 	    "Creature"
 	    {
-	        "AttachWearables" // Default npc_dota_hero_bristleback
+	        "AttachWearables" // Heavy Barbed Armor Set
 	        {
-	            "1" { "ItemDef" "520" } // Bristleback's Ambient Effects
-	            "2" { "ItemDef" "5762" } // Heavy Barbed Arms
-	            "3" { "ItemDef" "5763" } // Heavy Barbed Back
-	            "4" { "ItemDef" "5766" } // Heavy Barbed Morning Star
-	            "5" { "ItemDef" "5764" } // Heavy Barbed Head
-	            "6" { "ItemDef" "5765" } // Heavy Barbed Collar
+	            "1" { "ItemDef" "5762" } // Heavy Barbed Arms
+	            "2" { "ItemDef" "5766" } // Heavy Barbed Morning Star
+	            "3" { "ItemDef" "5765" } // Heavy Barbed Collar
+	            "4" { "ItemDef" "5764" } // Heavy Barbed Head
+	            "5" { "ItemDef" "5763" } // Heavy Barbed Back
+	            "6" { "ItemDef" "520" } // Bristleback's Ambient Effects
 	        }
 	    }
 	
@@ -13406,9 +14367,9 @@
 	        "2"        "earth"
 	        "3"        "water"
 	    }
-	    "Damage"        "4500"
-	    "AttackDamageMin"        "4500"
-	    "AttackDamageMax"        "4500"
+	    "Damage"        "5000"
+	    "AttackDamageMin"        "5000"
+	    "AttackDamageMax"        "5000"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "MuckTower"
 	    "TowerType"        "Normal"
@@ -13433,6 +14394,7 @@
 	            "3" { "ItemDef" "5409" } // Emerald Frenzy Glove
 	            "4" { "ItemDef" "8391" } // Piston Impaler
 	            "5" { "ItemDef" "5408" } // Emerald Frenzy Helmet
+	            "6" { "ItemDef" "520" } // Bristleback's Ambient Effects
 	        }
 	    }
 	
@@ -13444,6 +14406,98 @@
 	        "dark"        "2"
 	        "earth"        "2"
 	        "water"        "2"
+	    }
+	    "Upgrades"
+	    {
+	        "Count"        "1"
+	        "1"        "muck_tower_3"
+	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+	}
+	"muck_tower_3"
+	{
+	    "BaseClass"        "npc_dota_creature"
+	    "MinimapIcon"        "minimap_tower90"
+	    "MinimapIconSize"        "320"
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackAnimationPoint"        "0.2"
+	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+	    "AttributeBaseStrength"        "0"
+	    "AttributeStrengthGain"        "0"
+	    "AttributeBaseIntelligence"        "0"
+	    "AttributeIntelligenceGain"        "0"
+	    "AttributeBaseAgility"        "0"
+	    "AttributeAgilityGain"        "0"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+	    "ProjectileCollisionSize"        "50"
+	    "RingRadius"        "80"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"        "0"
+	    "MovementTurnRate"        "1.0"
+	    "StatusHealth"        "4500"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "TeamName"        "DOTA_TEAM_GOODGUYS"
+	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "1900"
+	    "VisionNighttimeRange"        "1900"
+	    "Level"        "3"
+	    "Cost"        "5000"
+	    "TotalCost"        "10000"
+	    "Element"
+	    {
+	        "1"        "dark"
+	        "2"        "earth"
+	        "3"        "water"
+	    }
+	    "Damage"        "15000"
+	    "AttackDamageMin"        "15000"
+	    "AttackDamageMax"        "15000"
+	    "DamageType"        "earth"
+	    "ScriptClass"        "MuckTower"
+	    "TowerType"        "Normal"
+	    "BuffPriority"          "1"
+	    "HasAbilityDesc"        "1"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
+	    "AttackRate"        "1"
+	    "ProjectileModel"        "particles/units/heroes/hero_venomancer/venomancer_base_attack.vpcf"
+	    "ProjectileSpeed"        "2000"
+	
+	    "Model"             "models/heroes/bristleback/bristleback.vmdl"
+	    "ModelScale"        "1.1"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
+	    "Creature"
+	    {
+	        "AttachWearables" // Debts of the Nightwatchman
+	        {
+	            "1" { "ItemDef" "6492" } // Cape of the Nightwatch
+	            "2" { "ItemDef" "6493" } // Lantern of the Nightwatch
+	            "3" { "ItemDef" "6489" } // Gauntlets of the Nightwatch
+	            "4" { "ItemDef" "6491" } // Hat of the Nightwatch
+	            "5" { "ItemDef" "6490" } // Nightwatch Keys to the City
+	            "6" { "ItemDef" "520" } // Bristleback's Ambient Effects
+	        }
+	    }
+	
+	    "AOE_Full"        "150"
+	    "AOE_Half"        "300"
+	    "BuildTime"        "3"
+	    "Requirements"
+	    {
+	        "dark"        "3"
+	        "earth"        "3"
+	        "water"        "3"
 	    }
 	    "Upgrades"
 	    {
@@ -13501,8 +14555,8 @@
 	    "TowerType"        "Normal"
 	    "BuffPriority"          "8"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "700"
-	    "AttackAcquisitionRange"        "700"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1.5"
 	
 	    "Model"             "models/nova.vmdl"
@@ -13577,8 +14631,8 @@
 	    "TowerType"        "Normal"
 	    "BuffPriority"          "4"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "700"
-	    "AttackAcquisitionRange"        "700"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "1.5"
 	
 	    "Model"             "models/nova.vmdl"
@@ -13592,6 +14646,82 @@
 	        "fire"        "2"
 	        "nature"        "2"
 	        "light"        "2"
+	    }
+	    "Upgrades"
+	    {
+	        "Count"        "1"
+	        "1"        "nova_tower_3"
+	    }
+	    "AttackDamageMin"        "0"
+	    "AttackDamageMax"        "0"
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+	}
+	"nova_tower_3"
+	{
+	    "BaseClass"        "npc_dota_creature"
+	    "MinimapIcon"        "minimap_tower90"
+	    "MinimapIconSize"        "320"
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackAnimationPoint"        "0"
+	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+	    "AttributeBaseStrength"        "0"
+	    "AttributeStrengthGain"        "0"
+	    "AttributeBaseIntelligence"        "0"
+	    "AttributeIntelligenceGain"        "0"
+	    "AttributeBaseAgility"        "0"
+	    "AttributeAgilityGain"        "0"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+	    "ProjectileCollisionSize"        "50"
+	    "RingRadius"        "80"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"        "0"
+	    "MovementTurnRate"        "1.0"
+	    "StatusHealth"        "4500"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "TeamName"        "DOTA_TEAM_GOODGUYS"
+	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "1900"
+	    "VisionNighttimeRange"        "1900"
+	    "Level"        "3"
+	    "Cost"        "5000"
+	    "TotalCost"        "10000"
+	    "Element"
+	    {
+	        "1"        "fire"
+	        "2"        "nature"
+	        "3"        "light"
+	    }
+	    "Damage"        "0"
+	    "DamageType"        "light"
+	    "ScriptClass"        "NovaTower"
+	    "TowerType"        "Normal"
+	    "BuffPriority"          "1"
+	    "HasAbilityDesc"        "1"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
+	    "AttackRate"        "1.5"
+	
+	    "Model"             "models/nova.vmdl"
+	    "ModelScale"        "0.8"
+	    "ModelOffset"       "35"
+	    "DisableTurning"    "1"
+	
+	    "BuildTime"        "3"
+	    "Requirements"
+	    {
+	        "fire"        "3"
+	        "nature"        "3"
+	        "light"        "3"
 	    }
 	    "Upgrades"
 	    {
@@ -13755,12 +14885,12 @@
 	    "ModelOffset"       "-10"
 	    "Creature"
 	    {
-	        "AttachWearables" // Herald of Measureless Ruin
+	        "AttachWearables" // Obsidian Guard + Shards of Exile
 	        {
-	            "1" { "ItemDef" "9370" } // Grasp of Measureless Ruin
-	            "2" { "ItemDef" "8376" } // Shards of Exile
-	            "3" { "ItemDef" "9367" } // Apex of Measureless Ruin
-	            "4" { "ItemDef" "9368" } // Expanse of Measureless Ruin
+	            "1" { "ItemDef" "7070" } // Obsidian Guard Wings
+	            "2" { "ItemDef" "7072" } // Obsidian Guard Helm
+	            "3" { "ItemDef" "8376" } // Shards of Exile
+	            "4" { "ItemDef" "7071" } // Obsidian Guard Armor
 	            "5" { "ItemDef" "533" } // Outworld Devourer's Ambient Effects
 	            "6" { "ItemDef" "226" } // Outworld Devourer's Head
 	        }
@@ -13772,6 +14902,96 @@
 	        "dark"        "2"
 	        "light"        "2"
 	        "nature"        "2"
+	    }
+	    "Upgrades"
+	    {
+	        "Count"        "1"
+	        "1"        "obliteration_tower_3"
+	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+	}
+	"obliteration_tower_3"
+	{
+	    "BaseClass"        "npc_dota_creature"
+	    "SoundSet"          "Hero_ObsidianDestroyer"
+	    "GameSoundsFile"    "soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
+	    "MinimapIcon"        "minimap_tower90"
+	    "MinimapIconSize"        "320"
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackAnimationPoint"        "0"
+	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+	    "AttributeBaseStrength"        "0"
+	    "AttributeStrengthGain"        "0"
+	    "AttributeBaseIntelligence"        "0"
+	    "AttributeIntelligenceGain"        "0"
+	    "AttributeBaseAgility"        "0"
+	    "AttributeAgilityGain"        "0"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+	    "ProjectileCollisionSize"        "50"
+	    "RingRadius"        "80"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+	    "MovementSpeed"        "0"
+	    "MovementTurnRate"        "1.0"
+	    "StatusHealth"        "4500"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "TeamName"        "DOTA_TEAM_GOODGUYS"
+	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "1900"
+	    "VisionNighttimeRange"        "1900"
+	    "Level"        "3"
+	    "Cost"        "5000"
+	    "TotalCost"        "10000"
+	    "Element"
+	    {
+	        "1"        "dark"
+	        "2"        "light"
+	        "3"        "nature"
+	    }
+	    "Damage"        "26000"
+	    "AttackDamageMin"        "26000"
+	    "AttackDamageMax"        "26000"
+	    "DamageType"        "dark"
+	    "ScriptClass"        "ObliterationTower"
+	    "TowerType"        "Normal"
+	    "BuffPriority"              "1"
+	    "HasAbilityDesc"        "1"
+	    "AttackRange"        "1150"
+	    "AttackAcquisitionRange"        "1150"
+	    "AttackRate"        "1.5"
+	
+	    "Model"             "models/heroes/obsidian_destroyer/obsidian_destroyer.vmdl"
+	    "ModelScale"        "0.85"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "-10"
+	    "Creature"
+	    {
+	        "AttachWearables" // Herald of Measureless Ruin + Golden Shards of Exile
+	        {
+	            "1" { "ItemDef" "9370" } // Grasp of Measureless Ruin
+	            "2" { "ItemDef" "7509" } // Golden Shards of Exile
+	            "3" { "ItemDef" "9367" } // Apex of Measureless Ruin
+	            "4" { "ItemDef" "9368" } // Expanse of Measureless Ruin
+	            "5" { "ItemDef" "533" } // Outworld Devourer's Ambient Effects
+	            "6" { "ItemDef" "226" } // Outworld Devourer's Head
+	        }
+	    }
+	
+	    "BuildTime"        "3"
+	    "Requirements"
+	    {
+	        "dark"        "3"
+	        "light"        "3"
+	        "nature"        "3"
 	    }
 	    "Upgrades"
 	    {
@@ -13919,9 +15139,9 @@
 	        "2"        "light"
 	        "3"        "earth"
 	    }
-	    "Damage"        "8500"
-	    "AttackDamageMin"        "8500"
-	    "AttackDamageMax"        "8500"
+	    "Damage"        "9000"
+	    "AttackDamageMin"        "9000"
+	    "AttackDamageMax"        "9000"
 	    "DamageType"        "water"
 	    "ScriptClass"        "PolarTower"
 	    "TowerType"        "Normal"
@@ -13939,7 +15159,7 @@
 	    "ModelOffset"       "0"
 	    "Creature"
 	    {
-	        "AttachWearables" // Eldritch Ice Set
+	        "AttachWearables" // Dead Winter
 	        {
 	            "1" { "ItemDef" "4853" } // Dead Winter Sash
 	            "2" { "ItemDef" "4852" } // Dead Winter Soul
@@ -13958,6 +15178,101 @@
 	        "water"        "2"
 	        "light"        "2"
 	        "earth"        "2"
+	    }
+	    "Upgrades"
+	    {
+	        "Count"        "1"
+	        "1"        "polar_tower_3"
+	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+	}
+	"polar_tower_3"
+	{
+	    "BaseClass"        "npc_dota_creature"
+	    "SoundSet"                "Hero_Lich"
+	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
+	    "MinimapIcon"        "minimap_tower90"
+	    "MinimapIconSize"        "320"
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackAnimationPoint"        "0.2"
+	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+	    "AttributeBaseStrength"        "0"
+	    "AttributeStrengthGain"        "0"
+	    "AttributeBaseIntelligence"        "0"
+	    "AttributeIntelligenceGain"        "0"
+	    "AttributeBaseAgility"        "0"
+	    "AttributeAgilityGain"        "0"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+	    "ProjectileCollisionSize"        "50"
+	    "RingRadius"        "80"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"        "0"
+	    "MovementTurnRate"        "1.0"
+	    "StatusHealth"        "4500"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "TeamName"        "DOTA_TEAM_GOODGUYS"
+	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "1900"
+	    "VisionNighttimeRange"        "1900"
+	    "Level"        "3"
+	    "Cost"        "5000"
+	    "TotalCost"        "10000"
+	    "Element"
+	    {
+	        "1"        "water"
+	        "2"        "light"
+	        "3"        "earth"
+	    }
+	    "Damage"        "27000"
+	    "AttackDamageMin"        "27000"
+	    "AttackDamageMax"        "27000"
+	    "DamageType"        "water"
+	    "ScriptClass"        "PolarTower"
+	    "TowerType"        "Normal"
+	    "BuffPriority"          "1"
+	    "HasAbilityDesc"        "1"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
+	    "AttackRate"        "1"
+	    "ProjectileModel"        "particles/units/heroes/hero_ancient_apparition/ancient_apparition_base_attack.vpcf"
+	    "ProjectileSpeed"        "2000"
+	
+	    "Model"             "models/heroes/lich/lich.vmdl"
+	    "ModelScale"        "1"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "0"
+	    "Creature"
+	    {
+	        "AttachWearables" // The Serakund Tyrant
+	        {
+	            "1" { "ItemDef" "8523" } // Tassets of the Serakund Tyrant
+	            "2" { "ItemDef" "8521" } // Crown of the Serakund Tyrant
+	            "3" { "ItemDef" "8519" } // Bracers of the Serakund Tyrant
+	            "4" { "ItemDef" "8520" } // Mantle of the Serakund Tyrant
+	            "5" { "ItemDef" "8522" } // Core of the Serakund Tyrant
+	            "6" { "ItemDef" "571" } // Lich's Head
+	            "7" { "ItemDef" "506" } // Lich's Ambient Effects
+	        }
+	    }
+	
+	    "AOE_Full"        "100"
+	    "AOE_Half"        "200"
+	    "BuildTime"        "3"
+	    "Requirements"
+	    {
+	        "water"        "3"
+	        "light"        "3"
+	        "earth"        "3"
 	    }
 	    "Upgrades"
 	    {
@@ -14009,16 +15324,16 @@
 	        "2"        "earth"
 	        "3"        "nature"
 	    }
-	    "Damage"        "1500"
-	    "AttackDamageMin"        "1500"
-	    "AttackDamageMax"        "1500"
+	    "Damage"        "1800"
+	    "AttackDamageMin"        "1800"
+	    "AttackDamageMax"        "1800"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "QuakeTower"
 	    "TowerType"        "Normal"
 	    "BuffPriority"              "6"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "700"
-	    "AttackAcquisitionRange"        "700"
+	    "AttackRange"        "550"
+	    "AttackAcquisitionRange"        "550"
 	    "AttackRate"        "0.66"
 	    "ProjectileModel"        "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
 	    "ProjectileSpeed"        "2000"
@@ -14029,12 +15344,12 @@
 	    "ModelOffset"       "15"
 	    "Creature"
 	    {
-	        "AttachWearables" // Default npc_dota_hero_earthshaker
+	        "AttachWearables" // Guardian of the Red Mountain
 	        {
-	            "1" { "ItemDef" "8144" } // Great Helm of the Behemoth
-	            "2" { "ItemDef" "8145" } // Tine of the Behemoth
-	            "3" { "ItemDef" "8142" } // Bracers of the Behemoth
-	            "4" { "ItemDef" "8143" } // Belt of the Behemoth
+	            "1" { "ItemDef" "6315" } // Helm of the Red Mountain
+	            "2" { "ItemDef" "6308" } // Totem of the Red Mountain
+	            "3" { "ItemDef" "6314" } // Gauntlets of the Red Mountain
+	            "4" { "ItemDef" "6313" } // Belt of the Red Mountain
 	        }
 	    }
 	
@@ -14097,16 +15412,16 @@
 	        "2"        "earth"
 	        "3"        "nature"
 	    }
-	    "Damage"        "7500"
-	    "AttackDamageMin"        "7500"
-	    "AttackDamageMax"        "7500"
+	    "Damage"        "9000"
+	    "AttackDamageMin"        "9000"
+	    "AttackDamageMax"        "9000"
 	    "DamageType"        "earth"
 	    "ScriptClass"        "QuakeTower"
 	    "TowerType"        "Normal"
 	    "BuffPriority"              "2"
 	    "HasAbilityDesc"        "1"
-	    "AttackRange"        "700"
-	    "AttackAcquisitionRange"        "700"
+	    "AttackRange"        "550"
+	    "AttackAcquisitionRange"        "550"
 	    "AttackRate"        "0.66"
 	    "ProjectileModel"        "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
 	    "ProjectileSpeed"        "2000"
@@ -14133,6 +15448,95 @@
 	        "fire"        "2"
 	        "earth"        "2"
 	        "nature"        "2"
+	    }
+	    "Upgrades"
+	    {
+	        "Count"        "1"
+	        "1"        "quake_tower_3"
+	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+	}
+	"quake_tower_3"
+	{
+	    "BaseClass"        "npc_dota_creature"
+	    "MinimapIcon"        "minimap_tower90"
+	    "MinimapIconSize"        "320"
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackAnimationPoint"        "0"
+	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+	    "AttributeBaseStrength"        "0"
+	    "AttributeStrengthGain"        "0"
+	    "AttributeBaseIntelligence"        "0"
+	    "AttributeIntelligenceGain"        "0"
+	    "AttributeBaseAgility"        "0"
+	    "AttributeAgilityGain"        "0"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+	    "ProjectileCollisionSize"        "50"
+	    "RingRadius"        "80"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"        "0"
+	    "MovementTurnRate"        "1.0"
+	    "StatusHealth"        "4500"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "TeamName"        "DOTA_TEAM_GOODGUYS"
+	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "1900"
+	    "VisionNighttimeRange"        "1900"
+	    "Level"        "3"
+	    "Cost"        "5000"
+	    "TotalCost"        "10000"
+	    "Element"
+	    {
+	        "1"        "fire"
+	        "2"        "earth"
+	        "3"        "nature"
+	    }
+	    "Damage"        "27000"
+	    "AttackDamageMin"        "27000"
+	    "AttackDamageMax"        "27000"
+	    "DamageType"        "earth"
+	    "ScriptClass"        "QuakeTower"
+	    "TowerType"        "Normal"
+	    "BuffPriority"              "1"
+	    "HasAbilityDesc"        "1"
+	    "AttackRange"        "550"
+	    "AttackAcquisitionRange"        "550"
+	    "AttackRate"        "0.66"
+	    "ProjectileModel"        "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
+	    "ProjectileSpeed"        "2000"
+	    
+	    "Model"             "models/heroes/earthshaker/earthshaker.vmdl"
+	    "ModelScale"        "1.1"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
+	    
+	    "Creature"
+	    {
+	        "AttachWearables" // Crimson Beast
+	        {
+	            "1" { "ItemDef" "8579" } // Belt of the Crimson Beast
+	            "2" { "ItemDef" "8577" } // Totem of the Crimson Beast
+	            "3" { "ItemDef" "8578" } // Bracers of the Crimson Beast
+	            "4" { "ItemDef" "8580" } // Mask of the Crimson Beast
+	        }
+	    }
+	
+	    "BuildTime"        "3"
+	    "Requirements"
+	    {
+	        "fire"        "3"
+	        "earth"        "3"
+	        "nature"        "3"
 	    }
 	    "Upgrades"
 	    {
@@ -14289,6 +15693,93 @@
 	    "ModelOffset"       "20"
 	    "Creature"
 	    {
+	        "AttachWearables" // Moonshard Overgrowth
+	        {
+	            "1" { "ItemDef" "7298" } // Moonshard Claws
+	            "2" { "ItemDef" "7300" } // Moonshard Roots
+	            "3" { "ItemDef" "7299" } // Moonshard Tusks
+	            "4" { "ItemDef" "7301" } // Canopy of the Moonshard
+	        }
+	    }
+	
+	    "BuildTime"        "3"
+	    "Requirements"
+	    {
+	        "dark"        "2"
+	        "earth"        "2"
+	        "nature"        "2"
+	    }
+	    "Upgrades"
+	    {
+	        "Count"        "1"
+	        "1"        "roots_tower_3"
+	    }
+	    "AttackDamageMin"        "0"
+	    "AttackDamageMax"        "0"
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+	}
+	"roots_tower_3"
+	{
+	    "BaseClass"        "npc_dota_creature"
+	    "MinimapIcon"        "minimap_tower90"
+	    "MinimapIconSize"        "320"
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackAnimationPoint"        "0.2"
+	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+	    "AttributeBaseStrength"        "0"
+	    "AttributeStrengthGain"        "0"
+	    "AttributeBaseIntelligence"        "0"
+	    "AttributeIntelligenceGain"        "0"
+	    "AttributeBaseAgility"        "0"
+	    "AttributeAgilityGain"        "0"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+	    "ProjectileCollisionSize"        "50"
+	    "RingRadius"        "80"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+	    "MovementSpeed"        "0"
+	    "MovementTurnRate"        "1.0"
+	    "StatusHealth"        "4500"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "TeamName"        "DOTA_TEAM_GOODGUYS"
+	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "1900"
+	    "VisionNighttimeRange"        "1900"
+	    "Level"        "3"
+	    "Cost"        "5000"
+	    "TotalCost"        "10000"
+	    "Element"
+	    {
+	        "1"        "dark"
+	        "2"        "earth"
+	        "3"        "nature"
+	    }
+	    "Damage"        "0"
+	    "DamageType"        "nature"
+	    "ScriptClass"        "RootsTower"
+	    "TowerType"        "Normal"
+	    "BuffPriority"          "1"
+	    "HasAbilityDesc"        "1"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
+	    "AttackRate"        "1"
+	    "ProjectileSpeed"        "2000"
+	
+	    "Model"             "models/heroes/treant_protector/treant_protector.vmdl"
+	    "ModelScale"        "0.95"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "20"
+	    "Creature"
+	    {
 	        "AttachWearables" // Agaric Flourish
 	        {
 	            "1" { "ItemDef" "7059" } // Embrace of the Agaric Flourish
@@ -14301,9 +15792,9 @@
 	    "BuildTime"        "3"
 	    "Requirements"
 	    {
-	        "dark"        "2"
-	        "earth"        "2"
-	        "nature"        "2"
+	        "dark"        "3"
+	        "earth"        "3"
+	        "nature"        "3"
 	    }
 	    "Upgrades"
 	    {
@@ -14497,6 +15988,101 @@
 	    }
 	    "Upgrades"
 	    {
+	        "Count"        "1"
+	        "1"        "runic_tower_3"
+	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+	}
+	"runic_tower_3"
+	{
+	    "BaseClass"        "npc_dota_creature"
+	    "SoundSet"              "Hero_Visage"
+	    "GameSoundsFile"        "soundevents/game_sounds_heroes/game_sounds_visage.vsndevts"
+	    "MinimapIcon"        "minimap_tower90"
+	    "MinimapIconSize"        "320"
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackAnimationPoint"        "0.2"
+	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+	    "AttributeBaseStrength"        "0"
+	    "AttributeStrengthGain"        "0"
+	    "AttributeBaseIntelligence"        "0"
+	    "AttributeIntelligenceGain"        "0"
+	    "AttributeBaseAgility"        "0"
+	    "AttributeAgilityGain"        "0"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+	    "ProjectileCollisionSize"        "50"
+	    "RingRadius"        "80"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"        "0"
+	    "MovementTurnRate"        "1.0"
+	    "StatusHealth"        "4500"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "TeamName"        "DOTA_TEAM_GOODGUYS"
+	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "1900"
+	    "VisionNighttimeRange"        "1900"
+	    "Level"        "3"
+	    "Cost"        "5000"
+	    "TotalCost"        "10000"
+	    "Element"
+	    {
+	        "1"        "dark"
+	        "2"        "fire"
+	        "3"        "light"
+	    }
+	    "Damage"        "20000"
+	    "AttackDamageMin"        "20000"
+	    "AttackDamageMax"        "20000"
+	    "DamageType"        "dark"
+	    "ScriptClass"        "RunicTower"
+	    "TowerType"        "Normal"
+	    "BuffPriority"              "1"
+	    "HasAbilityDesc"        "1"
+	    "AttackRange"        "1150"
+	    "AttackAcquisitionRange"        "1150"
+	    "AttackRate"        "1"
+	    "ProjectileModel"        "particles/custom/towers/runic/attack_projectile.vpcf"
+	    "ProjectileSpeed"        "2000"
+	
+	    "Model"             "models/heroes/doom/doom.vmdl"
+	    "ModelScale"        "0.9"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "20"
+	    "Creature"
+	    {
+	        "AttachWearables" // Eternal Fire
+	        {
+	            "1" { "ItemDef" "6503" } // Belt of Eternal Fire
+	            "2" { "ItemDef" "6504" } // Helm of Eternal Fire
+	            "3" { "ItemDef" "6502" } // Wings of Eternal Fire
+	            "4" { "ItemDef" "6507" } // Blade of Eternal Fire
+	            "5" { "ItemDef" "6506" } // Tail of Eternal Fire
+	            "6" { "ItemDef" "6501" } // Arms of Eternal Fire
+	            "7" { "ItemDef" "6505" } // Armor of Eternal Fire
+	        }
+	    }
+	
+	    "AOE_Full"        "100"
+	    "AOE_Half"        "200"
+	    "BuildTime"        "3"
+	    "Requirements"
+	    {
+	        "dark"        "3"
+	        "fire"        "3"
+	        "light"        "3"
+	    }
+	    "Upgrades"
+	    {
 	    }
 	
 	    // Building Size
@@ -14545,9 +16131,9 @@
 	        "2"        "nature"
 	        "3"        "light"
 	    }
-	    "Damage"        "500"
-	    "AttackDamageMin"        "500"
-	    "AttackDamageMax"        "500"
+	    "Damage"        "600"
+	    "AttackDamageMin"        "600"
+	    "AttackDamageMax"        "600"
 	    "DamageType"        "water"
 	    "ScriptClass"        "TidalTower"
 	    "TowerType"        "Normal"
@@ -14638,9 +16224,9 @@
 	        "2"        "nature"
 	        "3"        "light"
 	    }
-	    "Damage"        "2500"
-	    "AttackDamageMin"        "2500"
-	    "AttackDamageMax"        "2500"
+	    "Damage"        "3000"
+	    "AttackDamageMin"        "3000"
+	    "AttackDamageMax"        "3000"
 	    "DamageType"        "water"
 	    "ScriptClass"        "TidalTower"
 	    "TowerType"        "Normal"
@@ -14658,13 +16244,13 @@
 	    "ModelOffset"       "15"
 	    "Creature"
 	    {
-	        "AttachWearables" // Iceborn Trinity
+	        "AttachWearables" // Treasure of the Deep
 	        {
-	            "1" { "ItemDef" "7041" } // Cutlass of the Iceborn Trinity
-	            "2" { "ItemDef" "7042" } // Offhand Cutlass of the Iceborn Trinity
-	            "3" { "ItemDef" "7043" } // Scales of the Iceborn Trinity
-	            "4" { "ItemDef" "7040" } // Crown of the Iceborn Trinity
-	            "5" { "ItemDef" "7039" } // Clasp of the Iceborn Trinity
+	            "1" { "ItemDef" "6426" } // Clarity Blade of the Deep
+	            "2" { "ItemDef" "6423" } // Armor of the Deep
+	            "3" { "ItemDef" "6425" } // Vitality Blade of the Deep
+	            "4" { "ItemDef" "6424" } // Great Helm of the Deep
+	            "5" { "ItemDef" "6427" } // Angler Tail of the Deep
 	            "6" { "ItemDef" "532" } // Naga Siren's Ambient Effects
 	            "7" { "ItemDef" "191" } // Naga Siren's Head
 	        }
@@ -14678,6 +16264,99 @@
 	        "water"        "2"
 	        "nature"        "2"
 	        "light"        "2"
+	    }
+	    "Upgrades"
+	    {
+	        "Count"        "1"
+	        "1"        "tidal_tower_3"
+	    }
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+	}
+	"tidal_tower_3"
+	{
+	    "BaseClass"        "npc_dota_creature"
+	    "MinimapIcon"        "minimap_tower90"
+	    "MinimapIconSize"        "320"
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackAnimationPoint"        "0"
+	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+	    "AttributeBaseStrength"        "0"
+	    "AttributeStrengthGain"        "0"
+	    "AttributeBaseIntelligence"        "0"
+	    "AttributeIntelligenceGain"        "0"
+	    "AttributeBaseAgility"        "0"
+	    "AttributeAgilityGain"        "0"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+	    "ProjectileCollisionSize"        "50"
+	    "RingRadius"        "80"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+	    "MovementSpeed"        "0"
+	    "MovementTurnRate"        "1.0"
+	    "StatusHealth"        "4500"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "TeamName"        "DOTA_TEAM_GOODGUYS"
+	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "1900"
+	    "VisionNighttimeRange"        "1900"
+	    "Level"        "3"
+	    "Cost"        "5000"
+	    "TotalCost"        "10000"
+	    "Element"
+	    {
+	        "1"        "water"
+	        "2"        "nature"
+	        "3"        "light"
+	    }
+	    "Damage"        "9000"
+	    "AttackDamageMin"        "9000"
+	    "AttackDamageMax"        "9000"
+	    "DamageType"        "water"
+	    "ScriptClass"        "TidalTower"
+	    "TowerType"        "Normal"
+	    "BuffPriority"              "1"
+	    "HasAbilityDesc"        "1"
+	    "AttackRange"        "900"
+	    "AttackAcquisitionRange"        "900"
+	    "AttackRate"        "0.66"
+	    "ProjectileModel"           "particles/custom/towers/tidal/attack2.vpcf"  
+	    "ProjectileSpeed"        "3000"
+	
+	    "Model"             "models/heroes/siren/siren.vmdl"
+	    "ModelScale"        "1.1"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "15"
+	    "Creature"
+	    {
+	        "AttachWearables" // Iceborn Trinity
+	        {
+	            "1" { "ItemDef" "7041" } // Cutlass of the Iceborn Trinity
+	            "2" { "ItemDef" "7042" } // Offhand Cutlass of the Iceborn Trinity
+	            "3" { "ItemDef" "7043" } // Scales of the Iceborn Trinity
+	            "4" { "ItemDef" "7040" } // Crown of the Iceborn Trinity
+	            "5" { "ItemDef" "7039" } // Clasp of the Iceborn Trinity
+	            "6" { "ItemDef" "532" } // Naga Siren's Ambient Effects
+	            "7" { "ItemDef" "191" } // Naga Siren's Head
+	        }
+	    }
+	
+	    "AOE_Full"        "300"
+	    "AOE_Half"        "600"
+	    "BuildTime"        "3"
+	    "Requirements"
+	    {
+	        "water"        "3"
+	        "nature"        "3"
+	        "light"        "3"
 	    }
 	    "Upgrades"
 	    {
@@ -14893,6 +16572,96 @@
 	        "fire"        "2"
 	        "light"        "2"
 	        "water"        "2"
+	    }
+	    "Upgrades"
+	    {
+	        "Count"        "1"
+	        "1"        "windstorm_tower_3"
+	    }
+	    "AttackDamageMin"        "0"
+	    "AttackDamageMax"        "0"
+	
+	    // Building Size
+	    "ConstructionSize"          "2"
+	    "BlockPathingSize"          "0"
+	}
+	"windstorm_tower_3"
+	{
+	    "BaseClass"        "npc_dota_creature"
+	    "MinimapIcon"        "minimap_tower90"
+	    "MinimapIconSize"        "320"
+	    "ArmorPhysical"        "0"
+	    "MagicalResistance"        "0"
+	    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+	    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+	    "AttackAnimationPoint"        "0"
+	    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+	    "AttributeBaseStrength"        "0"
+	    "AttributeStrengthGain"        "0"
+	    "AttributeBaseIntelligence"        "0"
+	    "AttributeIntelligenceGain"        "0"
+	    "AttributeBaseAgility"        "0"
+	    "AttributeAgilityGain"        "0"
+	    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+	    "ProjectileCollisionSize"        "50"
+	    "RingRadius"        "80"
+	    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+	    "MovementSpeed"        "0"
+	    "MovementTurnRate"        "1.0"
+	    "StatusHealth"        "4500"
+	    "StatusHealthRegen"        "0"
+	    "StatusMana"        "0"
+	    "StatusManaRegen"        "0"
+	    "TeamName"        "DOTA_TEAM_GOODGUYS"
+	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+	    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+	    "VisionDaytimeRange"        "1900"
+	    "VisionNighttimeRange"        "1900"
+	    "Level"        "3"
+	    "Cost"        "5000"
+	    "TotalCost"        "10000"
+	    "Element"
+	    {
+	        "1"        "fire"
+	        "2"        "light"
+	        "3"        "water"
+	    }
+	    "Damage"        "0"
+	    "DamageType"        "water"
+	    "ScriptClass"        "WindstormTower"
+	    "TowerType"        "Normal"
+	    "BuffPriority"          "1"
+	    "HasAbilityDesc"        "1"
+	    "AttackRange"        "1150"
+	    "AttackAcquisitionRange"        "1150"
+	    "AttackRate"        "5"
+	    "ProjectileModel"        ""
+	    "ProjectileSpeed"        "900"
+	    
+	    "Model"             "models/heroes/razor/razor.vmdl"
+	    "ModelScale"        "1.1"
+	    "ModelRotation"     "90"
+	    "ModelOffset"       "0"
+	    "Creature"
+	    {
+	        "AttachWearables" // Empire of the Lightning Lord + Severing Lash
+	        {
+	            "1" { "ItemDef" "6646" } // Severing Crest
+	            "2" { "ItemDef" "9354" } // Plate of the Lightning Lord
+	            "3" { "ItemDef" "9356" } // Rings of the Lightning Lord
+	            "4" { "ItemDef" "8000" } // Severing Lash
+	            "5" { "ItemDef" "9355" } // Conduit of the Lightning Lord
+	            "6" { "ItemDef" "513" } // Razor's Ambient Effects
+	        }
+	    }
+	
+	    "BuildTime"        "3"
+	    "Requirements"
+	    {
+	        "fire"        "3"
+	        "light"        "3"
+	        "water"        "3"
 	    }
 	    "Upgrades"
 	    {

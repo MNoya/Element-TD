@@ -18,7 +18,7 @@ function VerifyRegions()
                             start = tonumber(start)
                             finish = tonumber(finish)
                             for i=start,finish do
-                                table.insert(ips,ipSection..i)
+                                table.insert(ips,ipSection..i.."/32")
                             end
                         else
                             table.insert(ips,ip)
@@ -30,11 +30,12 @@ function VerifyRegions()
     end
 
     local output = "$_IP_WHITELIST = array("
+    table.sort(ips)
     for _,ip in pairs(ips) do
-        output = output.."\""..ip.."\","
+        output = output.."\'"..ip.."\', "
     end
-    output = output:sub(1, - 2)
-    output = output..")"
+    output = output:sub(1, - 3)
+    output = output..");"
 
     local file = io.open("../../dota_addons/element_td/scripts/IP_WhiteList.txt", 'r')
     local content = file:read("*all")

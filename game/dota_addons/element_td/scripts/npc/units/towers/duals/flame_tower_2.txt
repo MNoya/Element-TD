@@ -39,9 +39,9 @@
         "1"        "fire"
         "2"        "nature"
     }
-    "Damage"        "250"
-    "AttackDamageMin"        "250"
-    "AttackDamageMax"        "250"
+    "Damage"        "1500"
+    "AttackDamageMin"        "1500"
+    "AttackDamageMax"        "1500"
     "DamageType"        "fire"
     "ScriptClass"        "FlameTower"
     "TowerType"        "Normal"
@@ -69,14 +69,14 @@
     }
     "Creature"
     {
-       "AttachWearables" // Mentor of the High Plains
-       {
-            "1" { "ItemDef" "6761" } // Mentor of the High Plains Guard
-            "2" { "ItemDef" "6764" } // Mentor of the High Plains Left Tiger Hook
-            "3" { "ItemDef" "6762" } // Mentor of the High Plains Decorated Pauldrons
-            "4" { "ItemDef" "6759" } // Mentor of the High Plains Ceremonial Banner
-            "5" { "ItemDef" "6763" } // Mentor of the High Plains Right Tiger Hook
-            "6" { "ItemDef" "6760" } // Mentor of the High Plains Great Cuirass
+        "AttachWearables" // Flames of Prosperity Set
+        {
+            "1" { "ItemDef" "6013" } // Arm Guards of Prosperity
+            "2" { "ItemDef" "6014" } // Crimson Guard of Prosperity
+            "3" { "ItemDef" "6017" } // Huo - Blade of Prosperity
+            "4" { "ItemDef" "6015" } // Phoenix Helm of Prosperity
+            "5" { "ItemDef" "6018" } // Ember Pauldrons of Prosperity
+            "6" { "ItemDef" "6016" } // Jin - Blade of Prosperity
             "7" { "ItemDef" "469" } // Ambient
        }
     }

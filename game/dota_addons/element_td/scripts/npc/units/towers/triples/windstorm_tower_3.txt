@@ -1,0 +1,88 @@
+"windstorm_tower_3"
+{
+    "BaseClass"        "npc_dota_creature"
+    "MinimapIcon"        "minimap_tower90"
+    "MinimapIconSize"        "320"
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"        "0"
+    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"        "0"
+    "AttributeStrengthGain"        "0"
+    "AttributeBaseIntelligence"        "0"
+    "AttributeIntelligenceGain"        "0"
+    "AttributeBaseAgility"        "0"
+    "AttributeAgilityGain"        "0"
+    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+    "ProjectileCollisionSize"        "50"
+    "RingRadius"        "80"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"        "0"
+    "MovementTurnRate"        "1.0"
+    "StatusHealth"        "4500"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "TeamName"        "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"        "1900"
+    "Level"        "3"
+    "Cost"        "5000"
+    "TotalCost"        "10000"
+    "Element"
+    {
+        "1"        "fire"
+        "2"        "light"
+        "3"        "water"
+    }
+    "Damage"        "0"
+    "DamageType"        "water"
+    "ScriptClass"        "WindstormTower"
+    "TowerType"        "Normal"
+    "BuffPriority"          "1"
+    "HasAbilityDesc"        "1"
+    "AttackRange"        "1150"
+    "AttackAcquisitionRange"        "1150"
+    "AttackRate"        "5"
+    "ProjectileModel"        ""
+    "ProjectileSpeed"        "900"
+    
+    "Model"             "models/heroes/razor/razor.vmdl"
+    "ModelScale"        "1.1"
+    "ModelRotation"     "90"
+    "ModelOffset"       "0"
+    "Creature"
+    {
+        "AttachWearables" // Empire of the Lightning Lord + Severing Lash
+        {
+            "1" { "ItemDef" "6646" } // Severing Crest
+            "2" { "ItemDef" "9354" } // Plate of the Lightning Lord
+            "3" { "ItemDef" "9356" } // Rings of the Lightning Lord
+            "4" { "ItemDef" "8000" } // Severing Lash
+            "5" { "ItemDef" "9355" } // Conduit of the Lightning Lord
+            "6" { "ItemDef" "513" } // Razor's Ambient Effects
+        }
+    }
+
+    "BuildTime"        "3"
+    "Requirements"
+    {
+        "fire"        "3"
+        "light"        "3"
+        "water"        "3"
+    }
+    "Upgrades"
+    {
+    }
+    "AttackDamageMin"        "0"
+    "AttackDamageMax"        "0"
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
+}

@@ -1,0 +1,87 @@
+"quake_tower_3"
+{
+    "BaseClass"        "npc_dota_creature"
+    "MinimapIcon"        "minimap_tower90"
+    "MinimapIconSize"        "320"
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"        "0"
+    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"        "0"
+    "AttributeStrengthGain"        "0"
+    "AttributeBaseIntelligence"        "0"
+    "AttributeIntelligenceGain"        "0"
+    "AttributeBaseAgility"        "0"
+    "AttributeAgilityGain"        "0"
+    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+    "ProjectileCollisionSize"        "50"
+    "RingRadius"        "80"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"        "0"
+    "MovementTurnRate"        "1.0"
+    "StatusHealth"        "4500"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "TeamName"        "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"        "1900"
+    "Level"        "3"
+    "Cost"        "5000"
+    "TotalCost"        "10000"
+    "Element"
+    {
+        "1"        "fire"
+        "2"        "earth"
+        "3"        "nature"
+    }
+    "Damage"        "27000"
+    "AttackDamageMin"        "27000"
+    "AttackDamageMax"        "27000"
+    "DamageType"        "earth"
+    "ScriptClass"        "QuakeTower"
+    "TowerType"        "Normal"
+    "BuffPriority"              "1"
+    "HasAbilityDesc"        "1"
+    "AttackRange"        "550"
+    "AttackAcquisitionRange"        "550"
+    "AttackRate"        "0.66"
+    "ProjectileModel"        "particles/units/heroes/hero_brewmaster/brewmaster_hurl_boulder.vpcf"
+    "ProjectileSpeed"        "2000"
+    
+    "Model"             "models/heroes/earthshaker/earthshaker.vmdl"
+    "ModelScale"        "1.1"
+    "ModelRotation"     "90"
+    "ModelOffset"       "15"
+    
+    "Creature"
+    {
+        "AttachWearables" // Crimson Beast
+        {
+            "1" { "ItemDef" "8579" } // Belt of the Crimson Beast
+            "2" { "ItemDef" "8577" } // Totem of the Crimson Beast
+            "3" { "ItemDef" "8578" } // Bracers of the Crimson Beast
+            "4" { "ItemDef" "8580" } // Mask of the Crimson Beast
+        }
+    }
+
+    "BuildTime"        "3"
+    "Requirements"
+    {
+        "fire"        "3"
+        "earth"        "3"
+        "nature"        "3"
+    }
+    "Upgrades"
+    {
+    }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
+}

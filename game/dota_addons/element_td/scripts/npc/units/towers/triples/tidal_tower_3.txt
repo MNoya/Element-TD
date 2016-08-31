@@ -1,0 +1,91 @@
+"tidal_tower_3"
+{
+    "BaseClass"        "npc_dota_creature"
+    "MinimapIcon"        "minimap_tower90"
+    "MinimapIconSize"        "320"
+    "ArmorPhysical"        "0"
+    "MagicalResistance"        "0"
+    "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageType"        "DAMAGE_TYPE_ArmorPhysical"
+    "AttackAnimationPoint"        "0"
+    "AttributePrimary"        "DOTA_ATTRIBUTE_STRENGTH"
+    "AttributeBaseStrength"        "0"
+    "AttributeStrengthGain"        "0"
+    "AttributeBaseIntelligence"        "0"
+    "AttributeIntelligenceGain"        "0"
+    "AttributeBaseAgility"        "0"
+    "AttributeAgilityGain"        "0"
+    "BoundsHullName"        "DOTA_HULL_SIZE_BUILDING"
+    "ProjectileCollisionSize"        "50"
+    "RingRadius"        "80"
+    "MovementCapabilities"        "DOTA_UNIT_CAP_MOVE_NONE"
+    "MovementSpeed"        "0"
+    "MovementTurnRate"        "1.0"
+    "StatusHealth"        "4500"
+    "StatusHealthRegen"        "0"
+    "StatusMana"        "0"
+    "StatusManaRegen"        "0"
+    "TeamName"        "DOTA_TEAM_GOODGUYS"
+    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+    "UnitRelationshipClass"        "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    "VisionDaytimeRange"        "1900"
+    "VisionNighttimeRange"        "1900"
+    "Level"        "3"
+    "Cost"        "5000"
+    "TotalCost"        "10000"
+    "Element"
+    {
+        "1"        "water"
+        "2"        "nature"
+        "3"        "light"
+    }
+    "Damage"        "9000"
+    "AttackDamageMin"        "9000"
+    "AttackDamageMax"        "9000"
+    "DamageType"        "water"
+    "ScriptClass"        "TidalTower"
+    "TowerType"        "Normal"
+    "BuffPriority"              "1"
+    "HasAbilityDesc"        "1"
+    "AttackRange"        "900"
+    "AttackAcquisitionRange"        "900"
+    "AttackRate"        "0.66"
+    "ProjectileModel"           "particles/custom/towers/tidal/attack2.vpcf"  
+    "ProjectileSpeed"        "3000"
+
+    "Model"             "models/heroes/siren/siren.vmdl"
+    "ModelScale"        "1.1"
+    "ModelRotation"     "90"
+    "ModelOffset"       "15"
+    "Creature"
+    {
+        "AttachWearables" // Iceborn Trinity
+        {
+            "1" { "ItemDef" "7041" } // Cutlass of the Iceborn Trinity
+            "2" { "ItemDef" "7042" } // Offhand Cutlass of the Iceborn Trinity
+            "3" { "ItemDef" "7043" } // Scales of the Iceborn Trinity
+            "4" { "ItemDef" "7040" } // Crown of the Iceborn Trinity
+            "5" { "ItemDef" "7039" } // Clasp of the Iceborn Trinity
+            "6" { "ItemDef" "532" } // Naga Siren's Ambient Effects
+            "7" { "ItemDef" "191" } // Naga Siren's Head
+        }
+    }
+
+    "AOE_Full"        "300"
+    "AOE_Half"        "600"
+    "BuildTime"        "3"
+    "Requirements"
+    {
+        "water"        "3"
+        "nature"        "3"
+        "light"        "3"
+    }
+    "Upgrades"
+    {
+    }
+
+    // Building Size
+    "ConstructionSize"          "2"
+    "BlockPathingSize"          "0"
+}

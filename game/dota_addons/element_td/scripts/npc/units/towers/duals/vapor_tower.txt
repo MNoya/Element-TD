@@ -45,8 +45,8 @@
     "TowerType"        "Normal"
     "BuffPriority"          "10"
     "HasAbilityDesc"        "1"
-    "AttackRange"        "700"
-    "AttackAcquisitionRange"        "700"
+    "AttackRange"        "550"
+    "AttackAcquisitionRange"        "550"
     "AttackRate"        "1.5"
     "ProjectileModel"        ""
     "ProjectileSpeed"        "800"
@@ -73,29 +73,14 @@
     "AttackDamageMax"        "0"
     "Creature"
     {
-        "AttachWearables"
-        {
-            "Wearable1"
-            {
-                "ItemDef"        "512" // Ambient
-            }
-            "Wearable2"
-            {
-                "ItemDef"        "273" // Weapon
-            }
-            "Wearable3"
-            {
-                "ItemDef"        "274" // Fin
-            }
-            "Wearable4"
-            {
-                "ItemDef"        "275" // Head
-            }
-            "Wearable5"
-            {
-                "ItemDef"        "276" // Arms
-            }
-        }
+       "AttachWearables" // Arms of the Deep Vault Guardian Set
+       {
+            "1" { "ItemDef" "5072" } // Deep Vault Guardian Spine
+            "2" { "ItemDef" "5073" } // Deep Vault Guardian Headfin
+            "3" { "ItemDef" "5074" } // Deep Vault Guardian Trident
+            "4" { "ItemDef" "5071" } // Deep Vault Guardian Armplates
+            "5" { "ItemDef" "512" } // Ambient
+       }
     }
 
     // Building Size

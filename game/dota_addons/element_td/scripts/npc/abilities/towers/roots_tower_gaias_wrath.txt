@@ -6,7 +6,7 @@
 	"BaseClass"						"ability_datadriven"											
 	"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityTextureName"			"towers/roots"
-	"MaxLevel"						"2"
+	"MaxLevel"						"3"
 	"AbilityCastPoint"				"0.0"
 
 	"AbilityCastRange"      		"900"
@@ -81,6 +81,10 @@
 			"IsHidden" "1"
 		}
 		"modifier_gaias_wrath_slow2"
+		{
+			"IsHidden" "1"
+		}
+		"modifier_gaias_wrath_slow3"
 		{
 			"IsHidden" "1"
 		}
@@ -184,12 +188,12 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"slow"					"-10 -30"
+			"slow"					"-10 -30 -70"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"dps"					"100 500"
+			"dps"					"100 500 1500"
 		}
 		"04"
 		{

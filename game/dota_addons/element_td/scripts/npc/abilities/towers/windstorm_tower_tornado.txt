@@ -12,7 +12,7 @@
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-	"MaxLevel"						"2"
+	"MaxLevel"						"3"
 
 	"AbilityCastPoint"				"0.0"
 	"AbilityCastRange"      		"1150"
@@ -89,17 +89,17 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"slow"					"-10 -30"
+			"slow"					"-10 -30 -70"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"450 2250"
+			"damage"				"600 3000 9000"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"radius"				"600"
+			"radius"				"450"
 		}
 		"04"
 		{

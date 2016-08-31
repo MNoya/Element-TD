@@ -51,7 +51,7 @@ function CreepUndead:OnDeath()
     local particle = ParticleManager:CreateParticle("particles/generic_hero_status/death_tombstone.vpcf", PATTACH_ABSORIGIN, creep)
     ParticleManager:SetParticleControl(particle, 2, Vector(3,0,0))
 
-    local undead_ability = newCreep:FindAbilityByName("creep_ability_undead")
+    local undead_ability = newCreep:FindAbilityByName("creep_ability_undead") or newCreep:FindAbilityByName("creep_ability_undead_instant")
     if undead_ability then
         undead_ability:SetHidden(true)
     end

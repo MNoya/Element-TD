@@ -5,7 +5,7 @@
 {
 	"BaseClass"						"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"MaxLevel"						"2"
+	"MaxLevel"						"3"
 	"AbilityTextureName"			"naga_siren_rip_tide"
 
 	"AbilitySpecial"
@@ -13,7 +13,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"splash_damage"			"220 1100"
+			"splash_damage"			"220 1100 3600"
 		}
 		"02"
 		{

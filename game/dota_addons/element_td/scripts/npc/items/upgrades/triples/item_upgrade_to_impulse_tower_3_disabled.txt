@@ -1,0 +1,31 @@
+"item_upgrade_to_impulse_tower_3_disabled"
+{
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"BaseClass"		"item_datadriven"
+	"AbilityManaCost"		"0"
+	"ItemShareability"		"ITEM_NOT_SHAREABLE"
+	"ItemSellable"		"0"
+	"ItemKillable"		"0"
+	"ItemPurchasable"		"0"
+	"ItemDroppable"		"0"
+	"AbilityTextureName"		"item_impulse_disabled"
+	"Requirements"
+	{
+		"nature"		"3"
+		"nature"		"3"
+		"fire"		"3"
+		"fire"		"3"
+		"water"		"3"
+		"water"		"3"
+	}
+    "ItemBaseLevel" "3"
+    "AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"multiplier"			"4000 20000 60000"
+		}
+	}
+	"AbilityCastRange"              "1750"
+}
