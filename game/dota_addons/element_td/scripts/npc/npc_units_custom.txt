@@ -10089,14 +10089,16 @@
 	    }
 	    "Creature"
 	    {
-	        "AttachWearables" // Ferocious Toxicant
-	        {
-	            "1" { "ItemDef" "9894" } // Crest of the Ferocious Toxicant
-	            "2" { "ItemDef" "9897" } // Tail of the Ferocious Toxicant
-	            "3" { "ItemDef" "9896" } // Spitters of the Ferocious Toxicant
-	            "4" { "ItemDef" "9893" } // Ward of the Ferocious Toxicant
-	            "5" { "ItemDef" "9895" } // Spines of the Ferocious Toxicant
-	        }
+	       "AttachWearables" // Acid Hydra
+	       {
+	            "1" { "ItemDef" "7078" } // Acidic Ward of the Hydra
+	            "2" { "ItemDef" "10890" } // Acid Hydra Cursor Pack
+	            "3" { "ItemDef" "6940" } // Acidic Tentacles of the Hydra
+	            "4" { "ItemDef" "6933" } // Acidic Mandible of the Hydra
+	            "5" { "ItemDef" "6943" } // Acidic Wings of the Hydra
+	            "6" { "ItemDef" "6942" } // Acidic Tail of the Hydra
+	            "7" { "ItemDef" "518" } // Ambient
+	       }
 	    }
 	
 	    // Building Size
@@ -10175,16 +10177,14 @@
 	    }
 	    "Creature"
 	    {
-	       "AttachWearables" // Acid Hydra
-	       {
-	            "1" { "ItemDef" "7078" } // Acidic Ward of the Hydra
-	            "2" { "ItemDef" "10890" } // Acid Hydra Cursor Pack
-	            "3" { "ItemDef" "6940" } // Acidic Tentacles of the Hydra
-	            "4" { "ItemDef" "6933" } // Acidic Mandible of the Hydra
-	            "5" { "ItemDef" "6943" } // Acidic Wings of the Hydra
-	            "6" { "ItemDef" "6942" } // Acidic Tail of the Hydra
-	            "7" { "ItemDef" "518" } // Ambient
-	       }
+	        "AttachWearables" // Ferocious Toxicant
+	        {
+	            "1" { "ItemDef" "9894" } // Crest of the Ferocious Toxicant
+	            "2" { "ItemDef" "9897" } // Tail of the Ferocious Toxicant
+	            "3" { "ItemDef" "9896" } // Spitters of the Ferocious Toxicant
+	            "4" { "ItemDef" "9893" } // Ward of the Ferocious Toxicant
+	            "5" { "ItemDef" "9895" } // Spines of the Ferocious Toxicant
+	        }
 	    }
 	
 	    // Building Size
