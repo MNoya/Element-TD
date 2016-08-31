@@ -44,6 +44,7 @@
         "etd_error_higher_level_buff"   "Tower Already Has A Higher Level Buff"
         "etd_error_cloned_tower"    "You can't clone a clone!"
         "etd_error_recently_cloned" "That tower has been recently cloned!"
+        "etd_error_under_construction"    "Target is under construction!"
         "DOTA_ToolTip_Targeting_AlliedCreeps" "Your Towers" //Overrides the default dota tooltip
         "dota_hud_error_unit_cant_move"       "Select your Hero to Move" //Overrides the default dota tooltip
         "DOTA_LevelUp"  "ELEMENTS" //Overrides the default dota tooltip

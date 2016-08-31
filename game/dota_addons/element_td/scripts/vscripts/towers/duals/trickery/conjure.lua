@@ -124,8 +124,9 @@ function trickery_tower_conjure:CastFilterResultTarget(target)
     local bClone = target:HasModifier("modifier_clone")
     local bPreventCloning = target:HasModifier("modifier_conjure_prevent_cloning")
     local bSupportTower = target:HasModifier("modifier_support_tower")
-
-    if bSupportTower or bClone or bPreventCloning then
+    local bIsBuilding = target:GetHealthPercent() ~= 100
+    
+    if bSupportTower or bClone or bPreventCloning or bIsBuilding then
         return UF_FAIL_CUSTOM
     end
 
@@ -136,6 +137,7 @@ function trickery_tower_conjure:GetCustomCastErrorTarget(target)
     local bClone = target:HasModifier("modifier_clone")
     local bPreventCloning = target:HasModifier("modifier_conjure_prevent_cloning")
     local bSupportTower = target:HasModifier("modifier_support_tower")
+    local bIsBuilding = target:GetHealthPercent() ~= 100
 
     if bSupportTower then
         return "#etd_error_support_tower"
@@ -143,6 +145,8 @@ function trickery_tower_conjure:GetCustomCastErrorTarget(target)
         return "#etd_error_recently_cloned"
     elseif bClone then
         return "#etd_error_cloned_tower"
+    elseif bIsBuilding then
+        return "#etd_error_under_construction"
     end
 
     return ""

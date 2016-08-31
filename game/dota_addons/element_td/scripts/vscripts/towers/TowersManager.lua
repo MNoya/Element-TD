@@ -144,7 +144,7 @@ function GetCloneTargetInRadius(caster, radius)
     local level = caster:GetLevel()
     
     for _,tower in pairs(towers) do
-        if IsTower(tower) and tower:IsAlive() and not IsSupportTower(tower) and not tower.deleted and (level > 2 or tower:GetAttackTarget()) then
+        if IsTower(tower) and tower:IsAlive() and tower:GetHealthPercent() == 100 and not IsSupportTower(tower) and not tower.deleted and (level > 2 or tower:GetAttackTarget()) then
             local priority = GetUnitKeyValue(tower:GetUnitName(), "BuffPriority")
             if priority <= bestPriority then
         
