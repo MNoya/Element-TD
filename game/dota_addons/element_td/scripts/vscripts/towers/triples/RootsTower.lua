@@ -52,6 +52,7 @@ function RootsTower:OnAttackStart(keys)
                 affectedCreeps[creep:entindex()] = true
 
                 self.ability:ApplyDataDrivenModifier(self.tower, creep, "modifier_gaias_wrath_slow", {})
+                self.ability:ApplyDataDrivenModifier(self.tower, creep, "modifier_gaias_wrath_slow" .. self.ability:GetLevel(), {})
                 self.ability:ApplyDataDrivenModifier(self.tower, creep, "modifier_gaias_wrath_damage", {})
                 self:OnDamageTick({target = creep})
             end

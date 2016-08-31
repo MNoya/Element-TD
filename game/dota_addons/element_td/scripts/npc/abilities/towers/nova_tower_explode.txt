@@ -41,8 +41,11 @@
 					"Function"			"TriggerEvent"
 					"Event"				"Explode"
 				}
-				"ApplyModifier"
+				"RunScript"
 				{
+					"ScriptFile"	"mechanics/slow.lua"
+					"Function"		"ApplySlowLevel"
+					"Name"			"modifier_explode_slow"
 					"Target"
 					{
 						"Center"		"CASTER"
@@ -50,7 +53,6 @@
 						"Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
 						"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
 					}
-					"ModifierName"	"modifier_explode_slow"
 				}
 			}
 		}
@@ -59,11 +61,6 @@
 			"Duration"		"%duration"
 			"IsDebuff"		"1"
 			"IsPurgable"	"1"
-			"TextureName"	"towers/nova"
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
-			}
 			"OnCreated"
 			{
 				"AttachEffect"
@@ -72,37 +69,32 @@
 					"EffectName"		"particles/units/heroes/hero_phoenix/phoenix_fire_spirit_burn.vpcf"
 					"EffectAttachType"	"follow_origin"
 				}
-				
-				// Ugly hack
-				"RunScript"
-				{
-					"ScriptFile"	"mechanics/slow.lua"
-					"Function"		"ApplySlowLevel"
-					"Name"			"modifier_explode_slow"
-				}
 			}
-			"OnDestroy"
+			"Properties"
 			{
-				"RunScript"
-				{
-					"ScriptFile"	"mechanics/slow.lua"
-					"Function"		"RemoveSlowLevel"
-					"Name"			"modifier_explode_slow"
-				}
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
 			}
 		}
-
 		"modifier_explode_slow1"
 		{
-			"IsHidden" "1"
+			"Duration"		"%duration"
+			"IsDebuff"		"1"
+			"IsPurgable" 	"1"
+			"IsHidden"		"1"
 		}
 		"modifier_explode_slow2"
 		{
-			"IsHidden" "1"
+			"Duration"		"%duration"
+			"IsDebuff"		"1"
+			"IsPurgable" 	"1"
+			"IsHidden"		"1"
 		}
 		"modifier_explode_slow3"
 		{
-			"IsHidden" "1"
+			"Duration"		"%duration"
+			"IsDebuff"		"1"
+			"IsPurgable" 	"1"
+			"IsHidden"		"1"
 		}
 	}
 

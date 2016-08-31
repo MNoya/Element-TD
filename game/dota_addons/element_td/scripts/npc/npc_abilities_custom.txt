@@ -4029,8 +4029,11 @@
 	
 				"OnAttackLanded"
 				{
-					"ApplyModifier"
+					"RunScript"
 					{
+						"ScriptFile"	"mechanics/slow.lua"
+						"Function"		"ApplySlowLevel"
+						"Name"			"modifier_sludge_slow"
 						"Target"
 						{
 							"Center"		"TARGET"
@@ -4038,7 +4041,6 @@
 							"Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
 							"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
 						}
-						"ModifierName"		"modifier_sludge_slow"
 					}
 				}
 			}
@@ -4059,37 +4061,29 @@
 						"EffectName"		"particles/units/heroes/hero_meepo/meepo_geostrike.vpcf"
 						"EffectAttachType"	"follow_origin"
 					}
-	
-					// Ugly hack
-					"RunScript"
-					{
-						"ScriptFile"	"mechanics/slow.lua"
-						"Function"		"ApplySlowLevel"
-						"Name"			"modifier_sludge_slow"
-					}
-				}
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"mechanics/slow.lua"
-						"Function"		"RemoveSlowLevel"
-						"Name"			"modifier_sludge_slow"
-					}
 				}
 			}
 	
 			"modifier_sludge_slow1"
 			{
-				"IsHidden" "1"
+				"Duration"		"%duration"
+				"IsDebuff"		"1"
+				"IsPurgable" 	"1"
+				"IsHidden"		"1"
 			}
 			"modifier_sludge_slow2"
 			{
-				"IsHidden" "1"
+				"Duration"		"%duration"
+				"IsDebuff"		"1"
+				"IsPurgable" 	"1"
+				"IsHidden"		"1"
 			}
 			"modifier_sludge_slow3"
 			{
-				"IsHidden" "1"
+				"Duration"		"%duration"
+				"IsDebuff"		"1"
+				"IsPurgable" 	"1"
+				"IsHidden"		"1"
 			}
 		}
 	
@@ -4179,8 +4173,11 @@
 						"Function"			"TriggerEvent"
 						"Event"				"Explode"
 					}
-					"ApplyModifier"
+					"RunScript"
 					{
+						"ScriptFile"	"mechanics/slow.lua"
+						"Function"		"ApplySlowLevel"
+						"Name"			"modifier_explode_slow"
 						"Target"
 						{
 							"Center"		"CASTER"
@@ -4188,7 +4185,6 @@
 							"Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
 							"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
 						}
-						"ModifierName"	"modifier_explode_slow"
 					}
 				}
 			}
@@ -4197,11 +4193,6 @@
 				"Duration"		"%duration"
 				"IsDebuff"		"1"
 				"IsPurgable"	"1"
-				"TextureName"	"towers/nova"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
-				}
 				"OnCreated"
 				{
 					"AttachEffect"
@@ -4210,37 +4201,32 @@
 						"EffectName"		"particles/units/heroes/hero_phoenix/phoenix_fire_spirit_burn.vpcf"
 						"EffectAttachType"	"follow_origin"
 					}
-					
-					// Ugly hack
-					"RunScript"
-					{
-						"ScriptFile"	"mechanics/slow.lua"
-						"Function"		"ApplySlowLevel"
-						"Name"			"modifier_explode_slow"
-					}
 				}
-				"OnDestroy"
+				"Properties"
 				{
-					"RunScript"
-					{
-						"ScriptFile"	"mechanics/slow.lua"
-						"Function"		"RemoveSlowLevel"
-						"Name"			"modifier_explode_slow"
-					}
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
 				}
 			}
-	
 			"modifier_explode_slow1"
 			{
-				"IsHidden" "1"
+				"Duration"		"%duration"
+				"IsDebuff"		"1"
+				"IsPurgable" 	"1"
+				"IsHidden"		"1"
 			}
 			"modifier_explode_slow2"
 			{
-				"IsHidden" "1"
+				"Duration"		"%duration"
+				"IsDebuff"		"1"
+				"IsPurgable" 	"1"
+				"IsHidden"		"1"
 			}
 			"modifier_explode_slow3"
 			{
-				"IsHidden" "1"
+				"Duration"		"%duration"
+				"IsDebuff"		"1"
+				"IsPurgable" 	"1"
+				"IsHidden"		"1"
 			}
 		}
 	
@@ -4619,7 +4605,7 @@
 			{
 				"Duration"			"%duration"
 				"IsDebuff"			"1"
-				"IsPurgable"	"1"
+				"IsPurgable"		"1"
 				"TextureName"		"towers/roots"
 				"EffectName"		"particles/custom/towers/roots/debuff.vpcf"
 				"EffectTargetType"	"follow_origin"
@@ -4627,39 +4613,27 @@
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
 				}
-				
-				// Ugly hack
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"mechanics/slow.lua"
-						"Function"		"ApplySlowLevel"
-						"Name"			"modifier_gaias_wrath_slow"
-					}
-				}
-	
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"mechanics/slow.lua"
-						"Function"		"RemoveSlowLevel"
-						"Name"			"modifier_gaias_wrath_slow"
-					}        
-				}
 			}
 			"modifier_gaias_wrath_slow1"
 			{
-				"IsHidden" "1"
+				"Duration"		"%duration"
+				"IsDebuff"		"1"
+				"IsPurgable" 	"1"
+				"IsHidden"		"1"
 			}
 			"modifier_gaias_wrath_slow2"
 			{
-				"IsHidden" "1"
+				"Duration"		"%duration"
+				"IsDebuff"		"1"
+				"IsPurgable" 	"1"
+				"IsHidden"		"1"
 			}
 			"modifier_gaias_wrath_slow3"
 			{
-				"IsHidden" "1"
+				"Duration"		"%duration"
+				"IsDebuff"		"1"
+				"IsPurgable" 	"1"
+				"IsHidden"		"1"
 			}
 	
 			"modifier_gaias_wrath_damage"
@@ -5208,10 +5182,41 @@
 				"EffectAttachType"		"follow_origin"
 				"Passive"				"1"
 				"IsHidden"				"1"
-				"Aura"					"modifier_tornado_slow"
-				"Aura_Radius"			"%radius"
-				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+	
+				"ThinkInterval" 	"0.5"
+	    		"OnIntervalThink"
+	    		{
+	       			"RunScript"
+					{
+						"ScriptFile"	"mechanics/slow.lua"
+						"Function"		"ApplySlowLevel"
+						"Name"			"modifier_tornado_slow"
+						"Target"
+						{
+							"Center"		"TARGET"
+							"Radius"		"%radius"
+							"Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+							"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
+						}
+					}
+	    		}
+	
+	    		"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"mechanics/slow.lua"
+						"Function"		"ApplySlowLevel"
+						"Name"			"modifier_tornado_slow"
+						"Target"
+						{
+							"Center"		"TARGET"
+							"Radius"		"%radius"
+							"Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+							"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
+						}
+					}
+				}
 	
 				"States"
 				{
@@ -5220,6 +5225,7 @@
 			}
 			"modifier_tornado_slow"
 			{
+				"Duration"		"1"
 				"IsDebuff"		"1"
 				"TextureName"	"towers/windstorm"
 				"IsPurgable"	"1"
@@ -5227,38 +5233,27 @@
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
 				}
-	
-				// Ugly hack
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"mechanics/slow.lua"
-						"Function"		"ApplySlowLevel"
-						"Name"			"modifier_tornado_slow"
-					}
-				}
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"mechanics/slow.lua"
-						"Function"		"RemoveSlowLevel"
-						"Name"			"modifier_tornado_slow"
-					}
-				}
 			}
 			"modifier_tornado_slow1"
 			{
-				"IsHidden" "1"
+				"Duration"		"1"
+				"IsDebuff"		"1"
+				"IsPurgable" 	"1"
+				"IsHidden"		"1"
 			}
 			"modifier_tornado_slow2"
 			{
-				"IsHidden" "1"
+				"Duration"		"1"
+				"IsDebuff"		"1"
+				"IsPurgable" 	"1"
+				"IsHidden"		"1"
 			}
 			"modifier_tornado_slow3"
 			{
-				"IsHidden" "1"
+				"Duration"		"1"
+				"IsDebuff"		"1"
+				"IsPurgable" 	"1"
+				"IsHidden"		"1"
 			}
 		}
 		"AbilitySpecial"

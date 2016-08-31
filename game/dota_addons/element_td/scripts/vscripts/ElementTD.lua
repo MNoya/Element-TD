@@ -97,8 +97,7 @@ function ElementTD:InitGameMode()
     LinkLuaModifier("modifier_max_ms", "libraries/modifiers/modifier_max_ms", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_attack_immune", "libraries/modifiers/modifier_attack_immune", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_client_convars", "libraries/modifiers/modifier_client_convars", LUA_MODIFIER_MOTION_NONE)
-    --LinkLuaModifier("modifier_bonus_life", "libraries/modifiers/modifier_bonus_life", LUA_MODIFIER_MOTION_NONE) not needed anymore
-    
+        
     -- Register UI Listener   
     CustomGameEventManager:RegisterListener( "next_wave", Dynamic_Wrap(ElementTD, "OnNextWave")) -- wave info
     CustomGameEventManager:RegisterListener( "request_wave_info", Dynamic_Wrap(ElementTD, "WaveInfoReconnect")) --on reconnection

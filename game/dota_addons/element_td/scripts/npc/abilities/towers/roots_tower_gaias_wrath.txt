@@ -46,7 +46,7 @@
 		{
 			"Duration"			"%duration"
 			"IsDebuff"			"1"
-			"IsPurgable"	"1"
+			"IsPurgable"		"1"
 			"TextureName"		"towers/roots"
 			"EffectName"		"particles/custom/towers/roots/debuff.vpcf"
 			"EffectTargetType"	"follow_origin"
@@ -54,39 +54,27 @@
 			{
 				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
 			}
-			
-			// Ugly hack
-			"OnCreated"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"mechanics/slow.lua"
-					"Function"		"ApplySlowLevel"
-					"Name"			"modifier_gaias_wrath_slow"
-				}
-			}
-
-			"OnDestroy"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"mechanics/slow.lua"
-					"Function"		"RemoveSlowLevel"
-					"Name"			"modifier_gaias_wrath_slow"
-				}        
-			}
 		}
 		"modifier_gaias_wrath_slow1"
 		{
-			"IsHidden" "1"
+			"Duration"		"%duration"
+			"IsDebuff"		"1"
+			"IsPurgable" 	"1"
+			"IsHidden"		"1"
 		}
 		"modifier_gaias_wrath_slow2"
 		{
-			"IsHidden" "1"
+			"Duration"		"%duration"
+			"IsDebuff"		"1"
+			"IsPurgable" 	"1"
+			"IsHidden"		"1"
 		}
 		"modifier_gaias_wrath_slow3"
 		{
-			"IsHidden" "1"
+			"Duration"		"%duration"
+			"IsDebuff"		"1"
+			"IsPurgable" 	"1"
+			"IsHidden"		"1"
 		}
 
 		"modifier_gaias_wrath_damage"
