@@ -228,7 +228,7 @@
         "loading_new_map"                  "全新地图已经开启"
 
         "loading_screen_changelog"   "最新的变化"
-        "loading_screen_change_text" "<h1>V1.9 版本</h1><b>• 新增精简模式！</b><br>• 计分系统重做。<br>• 每波时间降低。<br>• 增强部分小兵效果。<br>• 大地元素技能重回以前版本。<br>• 大量平衡性调整。<br><br><b>请到论坛查看完整更新日志！</b><br>"
+        "loading_screen_change_text" "<h1>Version 1.12</h1><h2> September 1st, 2016</h2><br>• Removed 12th element pick<br>• Fixed cloning towers while they are upgrading<br>• Fixed permanent creep slowing bug<br>"
  
         "credits_title"         "致谢"
         "credits_developers"    "开发者"

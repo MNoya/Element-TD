@@ -235,7 +235,7 @@
         //  <font color='#hex'>text</font>  for color
         //  <b>text</b> for bold        
         "loading_screen_changelog"   "การเปลี่ยนแปลงล่าสุด"
-        "loading_screen_change_text" "h1>เวอร์ชัน 1.9</h1>• ปรับการให้คะแนนใหม่<br>• ลดตัวจับเวลาแต่ละรอบ<br>• ปรับเอฟเฟกต์ครีปบางอย่างให้ดีขึ้น<br>• เปลี่ยนสกิลป้อมหินกลับเป็นเหมือนเดิม<br>• การปรับสมดุลต่าง ๆ<br><br><b>ตรวจดูบันทึกการเปลี่ยนแปลงแบบเต็มได้ในฟอรัม!</b><br>"
+        "loading_screen_change_text" "<h1>Version 1.12</h1><h2> September 1st, 2016</h2><br>• Removed 12th element pick<br>• Fixed cloning towers while they are upgrading<br>• Fixed permanent creep slowing bug<br>"
 
         "credits_title"         "เครดิต"
         "credits_developers"    "ผู้พัฒนา"
