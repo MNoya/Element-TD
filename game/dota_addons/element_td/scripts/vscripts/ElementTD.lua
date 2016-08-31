@@ -519,7 +519,8 @@ function ElementTD:OnHeroInGame(hero)
     summoner:SetControllableByPlayer(playerID, true)
     summoner:SetAngles(0, 270, 0)
     summoner:AddItem(CreateItem("item_buy_pure_essence_disabled", nil, nil))
-    summoner:AddItem(CreateItem("item_buy_lumber_disabled", nil, nil))
+    --summoner:AddItem(CreateItem("item_buy_lumber_disabled", nil, nil))
+    -- Removed 12th Element Pick
     summoner.icon = CreateUnitByName("elemental_summoner_icon", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber())
     playerData.summoner = summoner
 
