@@ -46,6 +46,7 @@
         "etd_error_higher_level_buff"   "此塔已经拥有了更高等级的增益效果"
         "etd_error_cloned_tower"    "克隆体无法再被克隆！"
         "etd_error_recently_cloned" "这座塔已经被克隆了！"
+        "etd_error_under_construction"    "Target is under construction!"
         "DOTA_ToolTip_Targeting_AlliedCreeps" "您的防御塔"
         "dota_hud_error_unit_cant_move"       "选择英雄进行移动"
         "DOTA_LevelUp"  "元素"

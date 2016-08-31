@@ -191,6 +191,7 @@ function BuyPureEssenceWarn( event )
     end
 end
 
+--[[ 12th Element Pick removed
 function BuyLumberForEssence( event )
     local summoner = event.caster
     local item = event.ability
@@ -229,6 +230,7 @@ function BuyLumberForEssence( event )
         ShowWarnMessage(playerID, "#etd_need_more_essence")
     end
 end
+]]
 
 --item_buy_lumber_disabled
 function BuyLumberWarn( event )

@@ -39,13 +39,12 @@
         "etd_next_boss_wave"        "Boss Wave in {breakTime} seconds"
         "etd_boss_wave"             "Boss Wave {wave}"
         "etd_essence_buy_warning"   "You need to have at least one of every element or lvl 3 of one element before purchase."
-        "etd_lumber_buy_warning"    "You need to have at least lvl 3 on 3 elements before purchase."
         "etd_need_more_lumber"      "Need more lumber."
-        "etd_need_more_essence"     "Need more essence."
         "etd_error_support_tower"       "Ability Can't Target Support Towers"       
         "etd_error_higher_level_buff"   "Tower Already Has A Higher Level Buff"
         "etd_error_cloned_tower"    "You can't clone a clone!"
         "etd_error_recently_cloned" "That tower has been recently cloned!"
+        "etd_error_under_construction"    "Target is under construction!"
         "DOTA_ToolTip_Targeting_AlliedCreeps" "Your Towers" //Overrides the default dota tooltip
         "dota_hud_error_unit_cant_move"       "Select your Hero to Move" //Overrides the default dota tooltip
         "DOTA_LevelUp"  "ELEMENTS" //Overrides the default dota tooltip
@@ -926,12 +925,6 @@
 
         "DOTA_Tooltip_ability_item_buy_pure_essence_disabled"                             "Buy Pure Essence Disabled"
         "DOTA_Tooltip_ability_item_buy_pure_essence_disabled_Description"                 "Trade <font color='#008000'>1 Lumber</font> for <font color='#00BFFF'>1 Pure Essence</font>.\n<font color='#F0BA36'>Requires: </font>At least Level 1 on every Element or Level 3 on a single Element\n\nEssence is used to evolve a Level 3 Single-Element Tower, or to build a Periodic Tower if you have all 6 Elements."
-
-        "DOTA_Tooltip_ability_item_buy_lumber"                                            "Buy Lumber"
-        "DOTA_Tooltip_ability_item_buy_lumber_Description"                                "Trade <font color='#00BFFF'>1 Pure Essence</font> for <font color='#008000'>1 Lumber</font>\nUnlocks the 12th Element.\n<font color='#F0BA36'>"
-
-        "DOTA_Tooltip_ability_item_buy_lumber_disabled"                                   "Buy Lumber Disabled"
-        "DOTA_Tooltip_ability_item_buy_lumber_disabled_Description"                       "Trade <font color='#00BFFF'>1 Pure Essence</font> for <font color='#008000'>1 Lumber</font>\n<font color='#F0BA36'>Requires: </font>Three Level 3 Elements\n\nUnlocks the 12th Element."
 
 
         "DOTA_Tooltip_ability_item_random"                                                "Random Elements"

@@ -46,6 +46,7 @@
         "etd_error_higher_level_buff"   "ป้อมมีบัฟที่มีเลเวลสูงกว่าอยู่แล้ว"
         "etd_error_cloned_tower"    "คุณไม่สามารถโคลนร่างโคลนได้!"
         "etd_error_recently_cloned" "ป้อมนั้นเพิ่งถูกโคลนไปเมื่อไม่นานมานี้!"
+        "etd_error_under_construction"    "Target is under construction!"
         "DOTA_ToolTip_Targeting_AlliedCreeps" "ป้อมของคุณ" //Overrides the default dota tooltip
         "dota_hud_error_unit_cant_move"       "เลือกฮีโร่ของคุณเพื่อเคลื่อนที่" //Overrides the default dota tooltip
         "DOTA_LevelUp"  "ธาตุ" //Overrides the default dota tooltip

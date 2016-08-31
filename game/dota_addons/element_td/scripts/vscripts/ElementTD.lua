@@ -16,7 +16,7 @@ if not playerIDs then
     EXPRESS_MODE = false
     ETD_MAX_PLAYERS = 4
 
-    VERSION = "1.11"
+    VERSION = "1.12"
     COOP_MAP = GetMapName() == "element_td_coop"
 
     START_TIME = GetSystemDate() .. " " .. GetSystemTime()
@@ -97,8 +97,7 @@ function ElementTD:InitGameMode()
     LinkLuaModifier("modifier_max_ms", "libraries/modifiers/modifier_max_ms", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_attack_immune", "libraries/modifiers/modifier_attack_immune", LUA_MODIFIER_MOTION_NONE)
     LinkLuaModifier("modifier_client_convars", "libraries/modifiers/modifier_client_convars", LUA_MODIFIER_MOTION_NONE)
-    --LinkLuaModifier("modifier_bonus_life", "libraries/modifiers/modifier_bonus_life", LUA_MODIFIER_MOTION_NONE) not needed anymore
-    
+        
     -- Register UI Listener   
     CustomGameEventManager:RegisterListener( "next_wave", Dynamic_Wrap(ElementTD, "OnNextWave")) -- wave info
     CustomGameEventManager:RegisterListener( "request_wave_info", Dynamic_Wrap(ElementTD, "WaveInfoReconnect")) --on reconnection
@@ -519,7 +518,8 @@ function ElementTD:OnHeroInGame(hero)
     summoner:SetControllableByPlayer(playerID, true)
     summoner:SetAngles(0, 270, 0)
     summoner:AddItem(CreateItem("item_buy_pure_essence_disabled", nil, nil))
-    summoner:AddItem(CreateItem("item_buy_lumber_disabled", nil, nil))
+    --summoner:AddItem(CreateItem("item_buy_lumber_disabled", nil, nil))
+    -- Removed 12th Element Pick
     summoner.icon = CreateUnitByName("elemental_summoner_icon", ElementalSummonerLocations[sector], false, nil, nil, hero:GetTeamNumber())
     playerData.summoner = summoner
 

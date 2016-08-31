@@ -141,19 +141,26 @@ function CanPlayerBuyPureEssence( playerID )
     local hasLvl3 = false
     local hasLvl1 = true
     for element,level in pairs(elements) do
+    	print(element, level)
+        if level == 3 then
+			hasLvl3 = true
+		end
+		if element ~= "pure" and level == 0 then
+			hasLvl1 = false
+		end
+        --[[ Removed 12th Element Pick
         if element ~= "pure" then
             if level == 3 then
                 hasLvl3 = true
             end
             if level == 0 then
-                hasLvl1 = false
-            end
-        end
+                hasLvl1 = false]]
     end
-
+    print(elements_at_lvl3)
     return hasLvl3 or hasLvl1
 end
 
+--[[ 12th Element Pick Removed
 -- Players can only unlock the 12h element with lvl 3 on 3 elements
 function CanPlayerBuy12thElement( playerID )
     local playerData = GetPlayerData(playerID)
@@ -169,6 +176,7 @@ function CanPlayerBuy12thElement( playerID )
     end
     return elements_at_lvl3 >= 3
 end
+]]
 
 function PlayElementalExplosion(element, tower)
     local particleName = ExplosionParticles[element]

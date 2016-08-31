@@ -435,7 +435,7 @@ function Sandbox:Restart( event )
     end
     if not summoner:HasItemInInventory("item_random") then
         summoner:AddItem(CreateItem("item_random", nil, nil))
-        Timers:CreateTimer(0.1, function() summoner:SwapItems(2, 3) end)
+        Timers:CreateTimer(0.1, function() summoner:SwapItems(1, 3) end)
     end
         
     -- Reset score

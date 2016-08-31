@@ -18,10 +18,41 @@
 			"EffectAttachType"		"follow_origin"
 			"Passive"				"1"
 			"IsHidden"				"1"
-			"Aura"					"modifier_tornado_slow"
-			"Aura_Radius"			"%radius"
-			"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-			"Aura_Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+
+			"ThinkInterval" 	"0.5"
+    		"OnIntervalThink"
+    		{
+       			"RunScript"
+				{
+					"ScriptFile"	"mechanics/slow.lua"
+					"Function"		"ApplySlowLevel"
+					"Name"			"modifier_tornado_slow"
+					"Target"
+					{
+						"Center"		"TARGET"
+						"Radius"		"%radius"
+						"Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+						"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
+					}
+				}
+    		}
+
+    		"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"mechanics/slow.lua"
+					"Function"		"ApplySlowLevel"
+					"Name"			"modifier_tornado_slow"
+					"Target"
+					{
+						"Center"		"TARGET"
+						"Radius"		"%radius"
+						"Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
+						"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
+					}
+				}
+			}
 
 			"States"
 			{
@@ -30,6 +61,7 @@
 		}
 		"modifier_tornado_slow"
 		{
+			"Duration"		"1"
 			"IsDebuff"		"1"
 			"TextureName"	"towers/windstorm"
 			"IsPurgable"	"1"
@@ -37,38 +69,27 @@
 			{
 				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
 			}
-
-			// Ugly hack
-			"OnCreated"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"mechanics/slow.lua"
-					"Function"		"ApplySlowLevel"
-					"Name"			"modifier_tornado_slow"
-				}
-			}
-			"OnDestroy"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"mechanics/slow.lua"
-					"Function"		"RemoveSlowLevel"
-					"Name"			"modifier_tornado_slow"
-				}
-			}
 		}
 		"modifier_tornado_slow1"
 		{
-			"IsHidden" "1"
+			"Duration"		"1"
+			"IsDebuff"		"1"
+			"IsPurgable" 	"1"
+			"IsHidden"		"1"
 		}
 		"modifier_tornado_slow2"
 		{
-			"IsHidden" "1"
+			"Duration"		"1"
+			"IsDebuff"		"1"
+			"IsPurgable" 	"1"
+			"IsHidden"		"1"
 		}
 		"modifier_tornado_slow3"
 		{
-			"IsHidden" "1"
+			"Duration"		"1"
+			"IsDebuff"		"1"
+			"IsPurgable" 	"1"
+			"IsHidden"		"1"
 		}
 	}
 	"AbilitySpecial"
