@@ -25,7 +25,7 @@
         "01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"slow"					"-10 -30 -70"
+			"slow"					"-10 -30 -60"
 		}
     }
     "AbilityCastRange"              "900"
