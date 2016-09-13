@@ -3855,12 +3855,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"60 300 1500"
+				"base_damage"			"60 300 1500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"60 300 1500"
+				"damage_per_creep"		"30 150 750"
 			}
 		}
 		"AbilityCastRange"              "550"
@@ -3899,12 +3899,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"60 300 1500"
+				"base_damage"			"60 300 1500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"60 300 1500"
+				"damage_per_creep"		"30 150 750"
 			}
 		}
 		"AbilityCastRange"              "550"
@@ -3933,12 +3933,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"60 300 1500"
+				"base_damage"			"60 300 1500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"60 300 1500"
+				"damage_per_creep"		"30 150 750"
 			}
 		}
 		"AbilityCastRange"              "550"
@@ -3977,12 +3977,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"60 300 1500"
+				"base_damage"			"60 300 1500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"60 300 1500"
+				"damage_per_creep"		"30 150 750"
 			}
 		}
 		"AbilityCastRange"              "550"
@@ -4011,12 +4011,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"60 300 1500"
+				"base_damage"			"60 300 1500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"60 300 1500"
+				"damage_per_creep"		"30 150 750"
 			}
 		}
 		"AbilityCastRange"              "550"
@@ -4046,12 +4046,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"60 300 1500"
+				"base_damage"			"60 300 1500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"60 300 1500"
+				"damage_per_creep"		"30 150 750"
 			}
 		}
 		"AbilityCastRange"              "550"
