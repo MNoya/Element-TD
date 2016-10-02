@@ -17,7 +17,7 @@ FlamethrowerTower = createClass({
 nil)
 
 function FlamethrowerTower:OnNapalmCreepDied(keys)
-    local unit = keys.unit
+    local unit = keys.unit or keys.target
     local creeps = GetCreepsInArea(unit:GetOrigin(), self.napalmAOE)
 
     local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_batrider/batrider_flamebreak_explosion.vpcf", PATTACH_ABSORIGIN, self.tower)
@@ -38,7 +38,7 @@ function FlamethrowerTower:OnAttackLanded(keys)
     
     for _,creep in pairs(creepsHalf) do 
         DamageEntity(creep, self.tower, damage / 2) 
-        self.ability:ApplyDataDrivenModifier(self.tower, creep, "modifier_napalm", {})
+        self.ability:ApplyDataDrivenModifier(self.tower, creep, "modifier_napalm", {duration=self.duration})
 
         if not creep.napalmDamage then
             creep.napalmDamage = self.napalmDamage
@@ -58,9 +58,11 @@ function FlamethrowerTower:OnCreated()
     self.ability = AddAbility(self.tower, "flamethrower_tower_napalm", self.tower:GetLevel())
     self.napalmDamage = GetAbilitySpecialValue("flamethrower_tower_napalm", "damage")[self.tower:GetLevel()]
     self.napalmAOE = GetAbilitySpecialValue("flamethrower_tower_napalm", "aoe")
+    self.duration = GetAbilitySpecialValue("flamethrower_tower_napalm", "duration")
     self.aoeHalf = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
     self.aoeFull = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))
     self.attackOrigin = self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_attack1"))
+    
 end
 
 RegisterTowerClass(FlamethrowerTower, FlamethrowerTower.className)

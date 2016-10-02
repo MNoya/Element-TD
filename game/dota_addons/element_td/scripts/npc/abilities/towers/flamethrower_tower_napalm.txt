@@ -26,6 +26,15 @@
 					"Event"				"OnNapalmCreepDied"
 				}
 			}
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+					"Function"			"TriggerEvent"
+					"Event"				"OnNapalmCreepDied"
+				}
+			}
 		}
 	}
 
@@ -40,6 +49,11 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"aoe"					"350"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"duration"				"5"
 		}
 	}
 }
