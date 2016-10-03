@@ -3030,7 +3030,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 3600"
+				"damage"				"200 1000 3000"
 			}
 			"02"
 			{
@@ -3040,7 +3040,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"10"
+				"duration"				"5"
 			}
 		}
 	}
@@ -5078,7 +5078,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_creep"		"30 150 750"
+				"damage_per_creep"		"25 125 625"
 			}
 			"03"
 			{
