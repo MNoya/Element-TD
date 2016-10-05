@@ -34,7 +34,7 @@ function LifeTower:CreepKilled(keys)
         playerData.LifeTowerKills = playerData.LifeTowerKills + self.pointsPerKill
     end
 
-    local maxHealth = 75
+    local maxHealth = 70
     if playerData.health < maxHealth and playerData.LifeTowerKills >= 24 then --when health is less than max
         playerData.LifeTowerKills = playerData.LifeTowerKills - 24
 
