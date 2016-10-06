@@ -16,7 +16,7 @@ nil)
 
 function NatureTower:OnAttackLanded(keys)
 	local target = keys.target;
-	local base_damage = self.tower:GetAverageTrueAttackDamage()
+	local base_damage = self.tower:GetAverageTrueAttackDamage(target)
 	local damage = base_damage
 	local num_creeps = 0
 

@@ -23,7 +23,7 @@ function CannonTower:OnAttackLanded(keys)
         return
     end
 
-	local damage = self.tower:GetAverageTrueAttackDamage()
+	local damage = self.tower:GetAverageTrueAttackDamage(target)
 	DamageEntitiesInArea(origin, self.halfAOE, self.tower, damage / 2)
 	DamageEntitiesInArea(origin, self.fullAOE, self.tower, damage / 2)
 	

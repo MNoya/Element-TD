@@ -17,7 +17,7 @@ nil)
 function EarthTower:OnAttackLanded(keys)
     local target = keys.target;
     local location = target:GetAbsOrigin()
-    local damage = self.tower:GetAverageTrueAttackDamage()
+    local damage = self.tower:GetAverageTrueAttackDamage(target)
     DamageEntitiesInArea(location, self.halfAOE, self.tower, damage / 2);
     DamageEntitiesInArea(location, self.fullAOE, self.tower, damage / 2);
 

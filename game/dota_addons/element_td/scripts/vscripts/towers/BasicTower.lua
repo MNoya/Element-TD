@@ -17,7 +17,7 @@ nil);
 -- called from datadriven abilities, see the composite_passive spell
 function BasicTower:OnAttackLanded(keys)
 	local target = keys.target;
-	local damage = self.tower:GetAverageTrueAttackDamage()
+	local damage = self.tower:GetAverageTrueAttackDamage(target)
 	DamageEntity(target, self.tower, damage);
 end
 

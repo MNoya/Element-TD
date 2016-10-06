@@ -67,7 +67,7 @@ end
 function RunicTower:OnAttackLanded(keys)
     local target = keys.target
     if target then
-        local damage = self.tower:GetAverageTrueAttackDamage()
+        local damage = self.tower:GetAverageTrueAttackDamage(target)
         if keys.isBonus then
             damage = damage * 0.5
         end

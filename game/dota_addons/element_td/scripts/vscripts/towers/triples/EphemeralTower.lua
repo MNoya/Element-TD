@@ -82,7 +82,7 @@ end
 
 function EphemeralTower:OnAttackLanded(keys)
     local target = keys.target
-    local damage = self.tower:GetAverageTrueAttackDamage()
+    local damage = self.tower:GetAverageTrueAttackDamage(target)
     DamageEntity(target, self.tower, damage)
 end
 
@@ -105,7 +105,7 @@ end
 
 function EphemeralTower:OnCreated()
     self.ability = AddAbility(self.tower, "ephemeral_tower_phasing")
-    self.baseDamage = self.tower:GetAverageTrueAttackDamage()
+    self.baseDamage = self.tower:GetAverageTrueAttackDamage(target)
     self.maxDamageReduction = GetAbilitySpecialValue("ephemeral_tower_phasing", "max_reduction")
     self.damageReductionPerAttackPercent = math.abs(GetAbilitySpecialValue("ephemeral_tower_phasing", "damage_reduction"))
     self.maxStacks = math.floor(self.maxDamageReduction/self.damageReductionPerAttackPercent)

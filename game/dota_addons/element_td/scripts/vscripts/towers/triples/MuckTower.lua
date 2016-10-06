@@ -22,7 +22,7 @@ end
 
 function MuckTower:OnAttackLanded(keys)
     local target = keys.target
-    local damage = self.tower:GetAverageTrueAttackDamage()
+    local damage = self.tower:GetAverageTrueAttackDamage(target)
 
     target:EmitSound("Muck.Slow")
 

@@ -31,7 +31,7 @@ end
 
 function TidalTower:OnAttackLanded(keys)
     local target = keys.target
-    local damage = self.tower:GetAverageTrueAttackDamage()
+    local damage = self.tower:GetAverageTrueAttackDamage(target)
 
     DamageEntitiesInArea(target:GetOrigin(), self.halfAOE - (self.tidalStacks * self.aoeDecay), self.tower, damage / 2)
     DamageEntitiesInArea(target:GetOrigin(), self.fullAOE - (self.tidalStacks * (self.aoeDecay/2)), self.tower, damage / 2)

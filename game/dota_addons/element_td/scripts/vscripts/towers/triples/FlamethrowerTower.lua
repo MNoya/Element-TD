@@ -33,7 +33,7 @@ end
 
 function FlamethrowerTower:OnAttackLanded(keys)
     local target = keys.target
-    local damage = self.tower:GetAverageTrueAttackDamage()
+    local damage = self.tower:GetAverageTrueAttackDamage(target)
     local creepsHalf = GetCreepsInArea(target:GetOrigin(), self.aoeHalf)
     
     for _,creep in pairs(creepsHalf) do 

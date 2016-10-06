@@ -33,7 +33,7 @@ end
 
 function GoldTower:OnAttackLanded(keys)
     local target = keys.target
-    local damage = self.tower:GetAverageTrueAttackDamage()
+    local damage = self.tower:GetAverageTrueAttackDamage(target)
     DamageEntity(target, self.tower, damage)
 end
 

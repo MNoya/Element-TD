@@ -17,7 +17,7 @@ nil)
 
 function DiseaseTower:OnAttackLanded(keys)
     local target = keys.target    
-    local damage = self.tower:GetAverageTrueAttackDamage()
+    local damage = self.tower:GetAverageTrueAttackDamage(target)
 --    damage = damage * ((target:GetMaxHealth() + target:GetHealth()) / target:GetHealth())
     damage = damage * (target:GetMaxHealth() / target:GetHealth()) * (1 + (target:GetMaxHealth() / target:GetHealth()) / 8)
 

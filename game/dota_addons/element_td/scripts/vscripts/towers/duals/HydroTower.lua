@@ -29,7 +29,7 @@ function HydroTower:OnAttackLanded(keys)
 
     -- The attack damage is applied a frame after, to ensure that the modifier triggers on death
     Timers:CreateTimer(function()
-        local damage = self.tower:GetAverageTrueAttackDamage()
+        local damage = self.tower:GetAverageTrueAttackDamage(target)
         DamageEntity(target, self.tower, damage)
     end)
 end
