@@ -41,9 +41,9 @@
         "1"        "dark"
         "2"        "nature"
     }
-    "Damage"        "120"
-    "AttackDamageMin"        "120"
-    "AttackDamageMax"        "120"
+    "Damage"        "140"
+    "AttackDamageMin"        "140"
+    "AttackDamageMax"        "140"
     "DamageType"        "dark"
     "ScriptClass"        "DiseaseTower"
     "TowerType"        "Normal"
