@@ -77,7 +77,7 @@ function LifeTower:CreepKilledCoop(keys)
         COOP_LIFE_TOWER_KILLS = COOP_LIFE_TOWER_KILLS + self.pointsPerKill
     end
 
-    local maxHealth = 150
+    local maxHealth = 140
     if COOP_HEALTH < maxHealth and COOP_LIFE_TOWER_KILLS >= 60 then --when health is less than max
         COOP_LIFE_TOWER_KILLS = COOP_LIFE_TOWER_KILLS - 60
         AddOneLifeCoop(self.tower)
