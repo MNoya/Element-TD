@@ -233,7 +233,7 @@
         "loading_screen_next"   "Coming Next!"
         "loading_new_map"       "New Map Available"
         "mobile_game"           "EleTD on Mobile"
-        "loading_mobile"        "Available on Android and iOS!"
+        "loading_mobile"        "Now on Mobile with Achievements!"
 
         // Usage
         //  <br> for break lines
@@ -241,7 +241,7 @@
         //  <font color='#hex'>text</font>  for color
         //  <b>text</b> for bold        
         "loading_screen_changelog"   "Latest Changes"
-        "loading_screen_change_text" "<h1>Version 1.13</h1><h2> September 1st, 2016</h2><br>• Vapor Tower's attacks no longer cause aftershocks<br>• Vapor tower's damage now increases based on the number of creeps around it<br>• Fixed particles when selling towers not showing<br>"
+        "loading_screen_change_text" "<h1>Version 1.13</h1><h2> October 5th, 2016</h2><br>• Speed Score Multiplier increased<br>• Tier 3 Slows nerfed<br>• Vapor Tower's attacks no longer cause aftershocks<br>• Vapor tower gains damage with more creeps nearby<br>• Flamethrower tower's napalm now has a duration<br>• Disease's damage increased<br>• Disease's damage scales more exponentially<br>• Fixed particles when selling towers not showing"
 
         "credits_title"         "Credits"
         "credits_developers"    "Developers"

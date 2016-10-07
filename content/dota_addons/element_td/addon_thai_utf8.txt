@@ -586,10 +586,10 @@
         "DOTA_Tooltip_modifier_intensity_indicator"                "Intensity Level"
         "DOTA_Tooltip_modifier_intensity_indicator_Description"    "จำนวนครั้งที่โจมตีต่อเนื่องบนเป้าหมายเดิม"
 
-		"DOTA_Tooltip_ability_earth_tower_aftershock"                 "Aftershock"
+        "DOTA_Tooltip_ability_earth_tower_aftershock"                 "Aftershock"
         "DOTA_Tooltip_ability_earth_tower_aftershock_Description"        "หลังจากเวลาผ่านไปครู่หนึ่ง การโจมตีจะส่งผลคลื่นระลอกสอง โดยสร้างความเสียหายครึ่งหนึ่งต่อครีปบนพื้นที่เดิม"
         "DOTA_Tooltip_ability_earth_tower_aftershock_damage_pct"  "ความเสียหายระลอกสอง:"
-		"DOTA_Tooltip_ability_earth_tower_aftershock_delay"  "ดีเลย์ระลอกสอง:"
+        "DOTA_Tooltip_ability_earth_tower_aftershock_delay"  "ดีเลย์ระลอกสอง:"
         
         "DOTA_Tooltip_ability_water_tower_water_bullet"                                   "Water Bulllet "
         "DOTA_Tooltip_ability_water_tower_water_bullet_Description"                       "การโจมตีแต่ละครั้งจะทำให้เกิดการชิ่งหนึ่งครั้งในระยะสั้น ๆ โดยสร้างความเสียหายน้อยลง"

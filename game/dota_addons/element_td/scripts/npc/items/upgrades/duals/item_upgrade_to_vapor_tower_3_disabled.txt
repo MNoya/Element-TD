@@ -27,7 +27,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_per_creep"		"30 150 750"
+			"damage_per_creep"		"25 125 625"
 		}
 	}
 	"AbilityCastRange"              "550"
