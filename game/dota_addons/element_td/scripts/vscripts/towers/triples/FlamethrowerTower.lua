@@ -17,7 +17,7 @@ FlamethrowerTower = createClass({
 nil)
 
 function FlamethrowerTower:OnNapalmCreepDied(keys)
-    local unit = keys.unit or keys.target
+    local unit = keys.unit
     local creeps = GetCreepsInArea(unit:GetOrigin(), self.napalmAOE)
 
     local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_batrider/batrider_flamebreak_explosion.vpcf", PATTACH_ABSORIGIN, self.tower)
@@ -28,6 +28,23 @@ function FlamethrowerTower:OnNapalmCreepDied(keys)
     for _,creep in pairs(creeps) do
         local damage = ApplyAbilityDamageFromModifiers(unit.napalmDamage, self.tower)
         local damage_done = DamageEntity(creep, self.tower, damage)
+    end
+end
+
+function FlamethrowerTower:OnNapalmDestroy(keys)
+    local unit = keys.target
+    if unit:IsAlive() then
+        local creeps = GetCreepsInArea(unit:GetOrigin(), self.napalmAOE)
+
+        local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_batrider/batrider_flamebreak_explosion.vpcf", PATTACH_ABSORIGIN, self.tower)
+        ParticleManager:SetParticleControl(particle, 0, Vector(0, 0, 0))
+        ParticleManager:SetParticleControl(particle, 3, unit:GetOrigin())
+
+        PopupNapalmBonusDamage(unit, ApplyAbilityDamageFromModifiers(unit.napalmDamage, self.tower))
+        for _,creep in pairs(creeps) do
+            local damage = ApplyAbilityDamageFromModifiers(unit.napalmDamage, self.tower)
+            local damage_done = DamageEntity(creep, self.tower, damage)
+        end
     end
 end
 

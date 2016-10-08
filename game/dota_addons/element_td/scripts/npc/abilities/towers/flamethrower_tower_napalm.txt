@@ -32,7 +32,7 @@
 				{
 					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
 					"Function"			"TriggerEvent"
-					"Event"				"OnNapalmCreepDied"
+					"Event"				"OnNapalmDestroy"
 				}
 			}
 		}
