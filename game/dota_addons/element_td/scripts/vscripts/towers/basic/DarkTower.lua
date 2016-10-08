@@ -16,7 +16,7 @@ nil)
 
 function DarkTower:OnAttackLanded(keys)
 	local target = keys.target
-	local damage = self.tower:GetAverageTrueAttackDamage()
+	local damage = self.tower:GetAverageTrueAttackDamage(target)
 	
 	local __, overkillDamage = DamageEntity(target, self.tower, damage)
 	if overkillDamage and overkillDamage > 0 then

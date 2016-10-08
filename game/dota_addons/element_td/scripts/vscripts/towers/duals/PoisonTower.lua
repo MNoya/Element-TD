@@ -17,7 +17,7 @@ nil)
 
 function PoisonTower:OnAttackLanded(keys)
     local target = keys.target    
-    local damage = self.tower:GetAverageTrueAttackDamage() 
+    local damage = self.tower:GetAverageTrueAttackDamage(target) 
     local attackFullAOE = self.fullAOE
     local attackHalfAOE = self.halfAOE
 

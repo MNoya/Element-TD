@@ -24,7 +24,7 @@ function HailTower:OnAttack(keys)
     if self.current_attacks >= self.attacks_required then
         self.current_attacks = 0
         self.tower:EmitSound("Hail.Cast")
-        local damage = self.tower:GetAverageTrueAttackDamage()
+        local damage = self.tower:GetAverageTrueAttackDamage(target)
 
         local creeps = GetCreepsInArea(self.tower:GetAbsOrigin(), self.findRadius)
         for _, creep in pairs(creeps) do
@@ -50,7 +50,7 @@ end
 
 function HailTower:OnAttackLanded(keys)
     local target = keys.target
-    local damage = self.tower:GetAverageTrueAttackDamage()
+    local damage = self.tower:GetAverageTrueAttackDamage(target)
 
     local crit = false
     if RollPercentage(self.crit_chance) then

@@ -53,7 +53,7 @@ end
 
 function QuarkTower:OnAttackLanded(keys)
     local target = keys.target    
-    local damage = self.tower:GetAverageTrueAttackDamage()
+    local damage = self.tower:GetAverageTrueAttackDamage(target)
     DamageEntitiesInArea(target:GetAbsOrigin(), self.halfAOE, self.tower, damage / 2);
     DamageEntitiesInArea(target:GetAbsOrigin(), self.fullAOE, self.tower, damage / 2);
 

@@ -18,7 +18,7 @@ LaserTower = createClass({
 nil)
 
 function LaserTower:OnAttack(keys)
-    local damage = self.tower:GetAverageTrueAttackDamage()
+    local damage = self.tower:GetAverageTrueAttackDamage(target)
     local creeps = GetCreepsInArea(keys.target:GetOrigin(), self.aoe)
     local creepCount = 0
 

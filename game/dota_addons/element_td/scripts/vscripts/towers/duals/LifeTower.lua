@@ -34,7 +34,7 @@ function LifeTower:CreepKilled(keys)
         playerData.LifeTowerKills = playerData.LifeTowerKills + self.pointsPerKill
     end
 
-    local maxHealth = 75
+    local maxHealth = 70
     if playerData.health < maxHealth and playerData.LifeTowerKills >= 24 then --when health is less than max
         playerData.LifeTowerKills = playerData.LifeTowerKills - 24
 
@@ -77,7 +77,7 @@ function LifeTower:CreepKilledCoop(keys)
         COOP_LIFE_TOWER_KILLS = COOP_LIFE_TOWER_KILLS + self.pointsPerKill
     end
 
-    local maxHealth = 150
+    local maxHealth = 140
     if COOP_HEALTH < maxHealth and COOP_LIFE_TOWER_KILLS >= 60 then --when health is less than max
         COOP_LIFE_TOWER_KILLS = COOP_LIFE_TOWER_KILLS - 60
         AddOneLifeCoop(self.tower)
@@ -158,7 +158,7 @@ end
 
 function LifeTower:OnAttackLanded(keys)
     local target = keys.target    
-    local damage = self.tower:GetAverageTrueAttackDamage()
+    local damage = self.tower:GetAverageTrueAttackDamage(target)
     DamageEntity(target, self.tower, damage)
 end
 

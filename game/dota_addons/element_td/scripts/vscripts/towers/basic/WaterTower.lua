@@ -16,7 +16,7 @@ nil)
 
 function WaterTower:OnAttackLanded(keys)
     local target = keys.target
-    local damage = self.tower:GetAverageTrueAttackDamage()
+    local damage = self.tower:GetAverageTrueAttackDamage(target)
     DamageEntitiesInArea(target:GetAbsOrigin(), self.halfAOE, self.tower, damage / 2)
     DamageEntitiesInArea(target:GetAbsOrigin(), self.fullAOE, self.tower, damage / 2)
 
@@ -41,7 +41,7 @@ end
 
 function WaterTower:OnBounceHit(keys)
     local target = keys.target
-    local damage = self.tower:GetAverageTrueAttackDamage() * self.bounceDamage
+    local damage = self.tower:GetAverageTrueAttackDamage(target) * self.bounceDamage
     DamageEntitiesInArea(target:GetAbsOrigin(), self.halfAOE, self.tower, damage / 2)
     DamageEntitiesInArea(target:GetAbsOrigin(), self.fullAOE, self.tower, damage / 2)
 end
@@ -79,7 +79,7 @@ function WaterTower:StartBounce(original_target, remaining_bounces)
         dummy_ability.bounceCount = 1
         dummy_ability.original_ability = self.ability
         dummy_ability.tower = self.tower
-        dummy_ability.damage = self.tower:GetAverageTrueAttackDamage()
+        dummy_ability.damage = self.tower:GetAverageTrueAttackDamage(target)
         dummy_ability.aoeReduction = self.aoeReduction
         dummy_ability.halfAOE = self.halfAOE - self.aoeReduction
         dummy_ability.fullAOE = self.fullAOE - self.aoeReduction

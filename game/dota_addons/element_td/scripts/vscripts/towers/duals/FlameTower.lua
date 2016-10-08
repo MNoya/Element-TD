@@ -36,7 +36,7 @@ end
 function FlameTower:OnAttackLanded(keys) 
     local target = keys.target
     local damage = ApplyAbilityDamageFromModifiers(self.burnDamage[self.level], self.tower)
-    local attack_damage = self.tower:GetAverageTrueAttackDamage()
+    local attack_damage = self.tower:GetAverageTrueAttackDamage(target)
 
     keys.caster:StartGesture(ACT_DOTA_CAST_ABILITY_4)
     

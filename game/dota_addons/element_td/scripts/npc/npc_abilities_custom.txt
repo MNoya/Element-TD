@@ -3013,6 +3013,15 @@
 						"Event"				"OnNapalmCreepDied"
 					}
 				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+						"Function"			"TriggerEvent"
+						"Event"				"OnNapalmDestroy"
+					}
+				}
 			}
 		}
 	
@@ -3021,12 +3030,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 3600"
+				"damage"				"200 1000 3000"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"aoe"					"350"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"5"
 			}
 		}
 	}
@@ -4102,7 +4116,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 		}
 	}
@@ -4250,7 +4264,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"slow"				"-10 -30 -70"
+				"slow"				"-10 -30 -60"
 			}
 		}
 	}
@@ -4735,7 +4749,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 			"03"
 			{
@@ -5059,22 +5073,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"60 300 1500"
+				"base_damage"			"60 300 1500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"60 300 1500"
+				"damage_per_creep"		"25 125 625"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"aoe"					"550"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aftershock_aoe"		"300"
 			}
 		}
 	
@@ -5366,7 +5375,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 			"02"
 			{

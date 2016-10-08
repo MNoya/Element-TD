@@ -5,11 +5,16 @@ function SellTowerCast(keys)
     if tower:GetHealth() == tower:GetMaxHealth() then -- only allow selling if the tower is fully built
         local hero = tower:GetOwner()
         local playerID = hero:GetPlayerID()
+        local player = PlayerResource:GetPlayer(playerID)
         local playerData = GetPlayerData(playerID)
         local goldCost = GetUnitKeyValue(tower.class, "TotalCost")
         local sellPercentage = tonumber(keys.SellAmount)
         local towerName = tower:GetUnitName()
         local refundAmount = round(goldCost * sellPercentage)
+
+        -- dummy unit used for showing particle effects 
+        local dummy = CreateUnitByName("tower_dummy", tower:GetAbsOrigin(), false, nil, nil, PlayerResource:GetTeam(playerID))
+        Timers:CreateTimer(2, function() dummy:ForceKill(true) end)
 
         -- Elemental Arrow/Cannon round up
         if (towerName:match("arrow") or towerName:match("cannon")) and not towerName:match("basic") then
@@ -26,7 +31,7 @@ function SellTowerCast(keys)
         end
 
         if tower.damageType and tower.damageType ~= "composite" then
-            PlayElementalExplosion(tower.damageType, tower)
+            PlayElementalExplosion(tower.damageType, dummy)
         end
 
         -- Remove random Blacksmith/Well buff when sold
@@ -48,10 +53,10 @@ function SellTowerCast(keys)
         -- Grant the gold
         if sellPercentage > 0  then
             Sounds:EmitSoundOnClient(playerID, "Gold.CoinsBig")
-            PopupAlchemistGold(tower, refundAmount)
+            PopupAlchemistGold(dummy, refundAmount, player)
 
-            local coins = ParticleManager:CreateParticle("particles/econ/items/alchemist/alchemist_midas_knuckles/alch_knuckles_lasthit_coins.vpcf", PATTACH_CUSTOMORIGIN, tower)
-            ParticleManager:SetParticleControl(coins, 1, tower:GetAbsOrigin())
+            local coins = ParticleManager:CreateParticle("particles/econ/items/alchemist/alchemist_midas_knuckles/alch_knuckles_lasthit_coins.vpcf", PATTACH_CUSTOMORIGIN, dummy)
+            ParticleManager:SetParticleControl(coins, 1, dummy:GetAbsOrigin())
 
             -- Add gold
             hero:ModifyGold(refundAmount)

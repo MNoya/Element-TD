@@ -47,7 +47,7 @@ function LightTower:OnAttackLanded(keys)
         self.particles = {}
     end
 
-    local damage = self.tower:GetAverageTrueAttackDamage()
+    local damage = self.tower:GetAverageTrueAttackDamage(target)
     DamageEntity(target, self.tower, damage)
     if self.consecutiveAttacks > 0 then
         PopupLightDamage(self.tower, math.floor(damage))

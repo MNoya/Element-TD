@@ -3855,12 +3855,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"60 300 1500"
+				"base_damage"			"60 300 1500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"60 300 1500"
+				"damage_per_creep"		"25 125 625"
 			}
 		}
 		"AbilityCastRange"              "550"
@@ -3899,12 +3899,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"60 300 1500"
+				"base_damage"			"60 300 1500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"60 300 1500"
+				"damage_per_creep"		"25 125 625"
 			}
 		}
 		"AbilityCastRange"              "550"
@@ -3933,12 +3933,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"60 300 1500"
+				"base_damage"			"60 300 1500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"60 300 1500"
+				"damage_per_creep"		"25 125 625"
 			}
 		}
 		"AbilityCastRange"              "550"
@@ -3977,12 +3977,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"60 300 1500"
+				"base_damage"			"60 300 1500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"60 300 1500"
+				"damage_per_creep"		"25 125 625"
 			}
 		}
 		"AbilityCastRange"              "550"
@@ -4011,12 +4011,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"60 300 1500"
+				"base_damage"			"60 300 1500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"60 300 1500"
+				"damage_per_creep"		"25 125 625"
 			}
 		}
 		"AbilityCastRange"              "550"
@@ -4046,12 +4046,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"60 300 1500"
+				"base_damage"			"60 300 1500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aftershock_damage"		"60 300 1500"
+				"damage_per_creep"		"25 125 625"
 			}
 		}
 		"AbilityCastRange"              "550"
@@ -6553,7 +6553,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6594,7 +6594,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6625,7 +6625,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6666,7 +6666,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6697,7 +6697,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6729,7 +6729,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6776,7 +6776,7 @@
 	        "02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6822,7 +6822,7 @@
 	        "02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6858,7 +6858,7 @@
 	        "02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6904,7 +6904,7 @@
 	        "02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6940,7 +6940,7 @@
 	        "02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6977,7 +6977,7 @@
 	        "02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -7621,7 +7621,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 	        "02"
 			{
@@ -7667,7 +7667,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 	        "02"
 			{
@@ -7703,7 +7703,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 	        "02"
 			{
@@ -7749,7 +7749,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 	        "02"
 			{
@@ -7785,7 +7785,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 	        "02"
 			{
@@ -7822,7 +7822,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 	        "02"
 			{
@@ -8253,7 +8253,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 			"02"
 			{
@@ -8299,7 +8299,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 			"02"
 			{
@@ -8335,7 +8335,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 			"02"
 			{
@@ -8381,7 +8381,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 			"02"
 			{
@@ -8417,7 +8417,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 			"02"
 			{
@@ -8454,7 +8454,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-10 -30 -60"
 			}
 			"02"
 			{
