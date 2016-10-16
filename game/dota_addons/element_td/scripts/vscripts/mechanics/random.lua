@@ -133,6 +133,7 @@ end
 --testRandom(10)
 
 function testRandomRoll( iterCount)
+    print("Generating "..iterCount.." random orders:")
     local counts = {}
     for i = 1, iterCount do
         local order = getRandomElementOrder()
