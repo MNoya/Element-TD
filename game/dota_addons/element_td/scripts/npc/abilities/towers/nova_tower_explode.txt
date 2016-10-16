@@ -103,7 +103,7 @@
 		"01"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"damage"			"300 1500 4500"
+			"damage"			"300 1500 6000"
 		}
 		"02"
 		{
@@ -118,7 +118,7 @@
 		"04"
 		{
 			"var_type"			"FIELD_FLOAT"
-			"slow"				"-10 -30 -60"
+			"slow"				"-12 -28 -52"
 		}
 	}
 }
