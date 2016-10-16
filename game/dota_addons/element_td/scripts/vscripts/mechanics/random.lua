@@ -51,6 +51,7 @@ function getRandomElement(wave)
         elseif not EXPRESS_MODE and ((wave < 10 and usedElements[element] == 1) or (wave < 30 and usedElements[element] == 2) or (wave >= 45 and usedElements[element] == 0) or (usedElements[element] == 3)) then
             return getRandomElement(wave)
         else
+            --print(wave, element) -- for testing
             usedElements[element] = usedElements[element] + 1
             return element
         end
@@ -129,7 +130,16 @@ function testRandom( iterCount )
         print(k.."-element random sequences: "..v.." ("..math.floor(v/iterCount*100).."%)")
     end
 end
---testRandom(10000)
+--testRandom(10)
+
+function testRandomRoll( iterCount)
+    local counts = {}
+    for i = 1, iterCount do
+        local order = getRandomElementOrder()
+        DeepPrintTable(usedElements)
+    end
+end
+--testRandomRoll(5)
 
 function getRandomElementOrder()
     usedElements = {["water"] = 0, ["fire"] = 0, ["earth"] = 0, ["nature"] = 0, ["dark"] = 0, ["light"] = 0, ["pure"] = 0}
