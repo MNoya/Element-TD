@@ -42,9 +42,9 @@
         "2"        "earth"
         "3"        "fire"
     }
-    "Damage"        "1700"
-    "AttackDamageMin"        "1700"
-    "AttackDamageMax"        "1700"
+    "Damage"        "2000"
+    "AttackDamageMin"        "2000"
+    "AttackDamageMax"        "2000"
     "DamageType"        "fire"
     "ScriptClass"        "FlamethrowerTower"
     "TowerType"        "Normal"
