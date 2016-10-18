@@ -29,7 +29,8 @@ function QuakeTower:OnAttack(keys)
         local creeps = GetCreepsInArea(self.tower:GetOrigin(), self.aoe)
         for _, v in pairs(creeps) do
             if v:IsAlive() then
-                DamageEntity(v, self.tower, pulverizeDamage)
+                local pctDamage = (self.pct * v:GetHealth())
+                DamageEntity(v, self.tower, (pulverizeDamage + pctDamage)) 
             end
         end
     else
@@ -50,6 +51,7 @@ function QuakeTower:OnCreated()
     self.attacks = 0
     self.aoeDamage = GetAbilitySpecialValue("quake_tower_pulverize", "damage")[self.tower:GetLevel()]
     self.aoe = GetAbilitySpecialValue("quake_tower_pulverize", "aoe")
+    self.pct = GetAbilitySpecialValue("quake_tower_pulverize", "pct")[self.tower:GetLevel()]
     AddAnimationTranslate(self.tower, "enchant_totem")
 end
 
