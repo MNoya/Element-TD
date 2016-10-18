@@ -29,7 +29,7 @@ function QuakeTower:OnAttack(keys)
         local creeps = GetCreepsInArea(self.tower:GetOrigin(), self.aoe)
         for _, v in pairs(creeps) do
             if v:IsAlive() then
-                DamageEntity(v, self.tower, (pulverizeDamage + (self.pct * v:GetHealth()))) 
+                DamageEntity(v, self.tower, (pulverizeDamage + (self.pct * 0.01 * v:GetHealth()))) 
             end
         end
     else
