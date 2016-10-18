@@ -20,6 +20,7 @@ function WaterTower:OnAttackLanded(keys)
     DamageEntitiesInArea(target:GetAbsOrigin(), self.halfAOE, self.tower, damage / 2)
     DamageEntitiesInArea(target:GetAbsOrigin(), self.fullAOE, self.tower, damage / 2)
 
+    --[[Removed in 1.8
     local bounce_target = FindBounceTarget(target, self.bounceRange)
     if bounce_target then
         local sourceLoc = target:GetAbsOrigin()
@@ -35,7 +36,7 @@ function WaterTower:OnAttackLanded(keys)
             bReplaceExisting = false,
             flExpireTime = GameRules:GetGameTime() + 10,
         })
-    end
+    end]]
 end
 
 function WaterTower:OnBounceHit(keys)
@@ -155,7 +156,7 @@ function WaterTower:OnCreated()
     self.fullAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))
     self.halfAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
 
-    self.dummies = {}
+    --[[self.dummies = {}
     self.ability = AddAbility(self.tower, "water_tower_water_bullet")
     --self.maxBounces = self.ability:GetSpecialValueFor("bounces")
     --self.aoeReduction = self.ability:GetSpecialValueFor("aoe_reduction")
@@ -163,7 +164,7 @@ function WaterTower:OnCreated()
     self.bounceDamage = self.ability:GetSpecialValueFor("bounce_damage_pct") * 0.01
 
     self.bounceSpeed = self.tower:GetProjectileSpeed() / 3
-    self.projectileName = "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"
+    self.projectileName = "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"]]
 end
 
 RegisterTowerClass(WaterTower, WaterTower.className)
