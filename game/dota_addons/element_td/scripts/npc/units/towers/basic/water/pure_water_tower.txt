@@ -29,9 +29,9 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "32000"
-    "AttackDamageMax"           "32000"
-    "Damage"                    "32000"
+    "AttackDamageMin"           "35000"
+    "AttackDamageMax"           "35000"
+    "Damage"                    "35000"
     "AOE_Full"                  "250"
     "AOE_Half"                  "250"
     "AttackRange"               "900"
