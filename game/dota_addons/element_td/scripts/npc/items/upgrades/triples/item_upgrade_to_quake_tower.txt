@@ -38,11 +38,5 @@
 			"damage"				"1800 9000 27000"
 		}
 	}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"pct"					"2 4 6"
-		}
-	}
 	"AbilityCastRange"              "550"
 }
