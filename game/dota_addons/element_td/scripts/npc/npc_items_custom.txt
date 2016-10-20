@@ -7405,7 +7405,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"damage"				"1800 9000 27000"
 			}
-		}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
@@ -7452,7 +7451,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"damage"				"1800 9000 27000"
 			}
-		}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
@@ -7489,7 +7487,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"damage"				"1800 9000 27000"
 			}
-		}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
@@ -7536,7 +7533,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"damage"				"1800 9000 27000"
 			}
-		}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
@@ -7573,7 +7569,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"damage"				"1800 9000 27000"
 			}
-		}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
@@ -7611,7 +7606,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"damage"				"1800 9000 27000"
 			}
-		}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
