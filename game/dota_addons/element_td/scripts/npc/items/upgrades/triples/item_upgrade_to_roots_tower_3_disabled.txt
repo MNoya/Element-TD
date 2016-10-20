@@ -29,7 +29,7 @@
         "02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"dps"					"100 500 3000"
+			"dps"					"100 500 2500"
 		}
     }
     "AbilityCastRange"              "900"
