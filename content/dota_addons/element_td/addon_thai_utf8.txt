@@ -671,10 +671,9 @@
         "DOTA_Tooltip_modifier_life_tower_full_health_Description"                        "You are at full health, dealing %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% bonus damage."  
         
         "DOTA_Tooltip_ability_hydro_tower_ability"      "Torrent"
-        "DOTA_Tooltip_ability_hydro_tower_ability_Description"      "ป้อมนี้มีโอกาสที่จะทำให้กระแสน้ำพุ่งขึ้นเพื่อโจมตีครีปในพื้นที่ได้"
+        "DOTA_Tooltip_ability_hydro_tower_ability_Description"      "Every third attack will cause a torrent, hitting creeps in a focused area of effect."
         "DOTA_Tooltip_ability_hydro_tower_ability_splash_damage"        "ความเสียหาย:"
         "DOTA_Tooltip_ability_hydro_tower_ability_splash_aoe"       "พื้นที่ส่งผล:"
-        "DOTA_Tooltip_ability_hydro_tower_ability_chance_pct"                             "โอกาสเกิด:"
         "DOTA_Tooltip_ability_hydro_tower_ability_delay"                                  "ดีเลย์:"
         "DOTA_Tooltip_modifier_hydro_delay"                                               "ดีเลย์ Hydro"
         "DOTA_Tooltip_modifier_hydro_delay_Description"                                   ""
@@ -729,9 +728,9 @@
         "DOTA_Tooltip_modifier_tornado_slow_Description"        "ถูกลดความเร็วโดยทอร์นาโด ความเร็วเคลื่อนที่ลดลง %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
         
         "DOTA_Tooltip_ability_quake_tower_pulverize"        "Pulverize"
-        "DOTA_Tooltip_ability_quake_tower_pulverize_Description"        "การโจมตีแต่ละครั้งมีโอกาสที่จะสร้างความเสียหายบนพื้นที่รอบป้อมนี้"
+        "DOTA_Tooltip_ability_quake_tower_pulverize_Description"        "Every 5 attacks, this tower hits all creeps in range, dealing damage and an extra percentage of their current health."
         "DOTA_Tooltip_ability_quake_tower_pulverize_damage"     "ความเสียหาย:"
-        "DOTA_Tooltip_ability_quake_tower_pulverize_chance"     "%โอกาส:"
+        "DOTA_Tooltip_ability_quake_tower_pulverize_pct"        "%EXTRA ความเสียหาย:"
         "DOTA_Tooltip_ability_quake_tower_pulverize_aoe"        "พื้นที่ส่งผล:"
         
         "DOTA_Tooltip_ability_enchantment_tower_faerie_fire"        "Faerie Fire"
@@ -1595,12 +1594,18 @@
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_Description"     "เพิ่มเลเวลของป้อมนี้เป็นป้อมสะเทือน 3\n\nราคา: <font color='#F0BA36'>5000 โกลด์</font>\nธาตุ: <font color='#D4880F'>ดิน</font> + <font color='#C40000'>ไฟ</font> + <font color='#00C400'>ไม้</font> \nประเภทความเสียหาย: <font color='#D4880F'>ดิน</font>\nพลังโจมตี: <font color='#FFFFFF'>27000</font>\nระยะโจมตี: <font color='#FFFFFF'>550</font>\nความเร็วโจมตี: <font color='#FFFFFF'>เร็ว</font>\nความสามารถ: การโจมตีแต่ละครั้งมีโอกาสที่จะสร้างความเสียหายบนพื้นที่รอบป้อมนี้"
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_disabled_Description"        "เพิ่มเลเวลของป้อมนี้เป็นป้อมสะเทือน 3\n<font color='#F0BA36'>จำเป็นต้องมี: </font><font color='#D4880F'>ดิน 3</font> + <font color='#C40000'>ไฟ 3</font> + <font color='#00C400'>ไม้ 3</font>\n\nราคา: <font color='#F0BA36'>5000 โกลด์</font>\nธาตุ: <font color='#D4880F'>ดิน</font> + <font color='#C40000'>ไฟ</font> + <font color='#00C400'>ไม้</font> \nประเภทความเสียหาย: <font color='#D4880F'>ดิน</font>\nพลังโจมตี: <font color='#FFFFFF'>27000</font>\nระยะโจมตี: <font color='#FFFFFF'>550</font>\nความเร็วโจมตี: <font color='#FFFFFF'>เร็ว</font>\nความสามารถ: การโจมตีแต่ละครั้งมีโอกาสที่จะสร้างความเสียหายบนพื้นที่รอบป้อมนี้"
 
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_damage"                         "ความเสียหาย:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_damage"                         "DAMAGE:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_pct"                         "%EXTRA ความเสียหาย:"
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_damage"                       "ความเสียหาย:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_pct"                       "%EXTRA ความเสียหาย:"
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_disabled_damage"              "ความเสียหาย:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_disabled_pct"              "%EXTRA ความเสียหาย:"
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_damage"                       "ความเสียหาย:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_pct"                       "%EXTRA ความเสียหาย:"
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_disabled_damage"              "ความเสียหาย:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_disabled_pct"              "%EXTRA ความเสียหาย:"
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_disabled_damage"                "ความเสียหาย:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_disabled_pct"                "%EXTRA ความเสียหาย:"
 
 
 

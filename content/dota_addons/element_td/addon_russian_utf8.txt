@@ -679,10 +679,9 @@
         "DOTA_Tooltip_modifier_life_tower_full_health_Description"                        "У вас полное здороье, наносит  %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% дополнительного урона."  
         
         "DOTA_Tooltip_ability_hydro_tower_ability"      "Поток"
-        "DOTA_Tooltip_ability_hydro_tower_ability_Description"      "Эта башня имеет шанс с каждой атакой нанести урон потоком воды по площади."
+        "DOTA_Tooltip_ability_hydro_tower_ability_Description"      "Every third attack will cause a torrent, hitting creeps in a focused area of effect."
         "DOTA_Tooltip_ability_hydro_tower_ability_splash_damage"        "УРОН:"
         "DOTA_Tooltip_ability_hydro_tower_ability_splash_aoe"       "РАДИУС:"
-        "DOTA_Tooltip_ability_hydro_tower_ability_chance_pct"                             "ВЕРОЯТНОСТЬ:"
         "DOTA_Tooltip_ability_hydro_tower_ability_delay"                                  "ЗАДЕРЖКА:"
         "DOTA_Tooltip_modifier_hydro_delay"                                               "Водная задержка"
         "DOTA_Tooltip_modifier_hydro_delay_Description"                                   ""
@@ -737,9 +736,9 @@
         "DOTA_Tooltip_modifier_tornado_slow_Description"        "Замедлен торнадо на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
         
         "DOTA_Tooltip_ability_quake_tower_pulverize"        "Распыление"
-        "DOTA_Tooltip_ability_quake_tower_pulverize_Description"        "Каждая атака имеет шанс нанести урон по площади возле башни."
+        "DOTA_Tooltip_ability_quake_tower_pulverize_Description"        "Every 5 attacks, this tower hits all creeps in range, dealing damage and an extra percentage of their current health."
         "DOTA_Tooltip_ability_quake_tower_pulverize_damage"     "УРОН:"
-        "DOTA_Tooltip_ability_quake_tower_pulverize_chance"     "%ШАНС:"
+        "DOTA_Tooltip_ability_quake_tower_pulverize_pct"        "%EXTRA УРОН:"
         "DOTA_Tooltip_ability_quake_tower_pulverize_aoe"        "РАДИУС:"
         
         "DOTA_Tooltip_ability_enchantment_tower_faerie_fire"        "Волшебный огонь"
@@ -1602,12 +1601,18 @@
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_Description"     "Улучшает эту башню до Башни разлома.\n\nСТОИМОСТЬ: <font color='#F0BA36'>5000 золота</font>\nЭЛЕМЕНТЫ: <font color='#D4880F'>земля</font> + <font color='#C40000'>огонь</font> + <font color='#00C400'>природа</font> \nТИП УРОНА: <font color='#D4880F'>земля</font>\nУРОН: <font color='#FFFFFF'>27000</font>\nДАЛЬНОСТЬ: <font color='#FFFFFF'>550</font>\nСКОРОСТЬ: <font color='#FFFFFF'>быстрая</font>\nСПОСОБНОСТЬ: С каждой атакой башня имеет шанс нанести урон вокруг себя."
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_disabled_Description"        "Улучшает эту башню до Башни разлома.\n<font color='#F0BA36'>Требования: </font><font color='#D4880F'>земля 3 уровня</font> + <font color='#C40000'>огонь 3 уровня</font> + <font color='#00C400'>природа 3 уровня</font> \n\nСТОИМОСТЬ: <font color='#F0BA36'>5000 золота</font>\nЭЛЕМЕНТЫ: <font color='#D4880F'>земля</font> + <font color='#C40000'>огонь</font> + <font color='#00C400'>природа</font> \nТИП УРОНА: <font color='#D4880F'>земля</font>\nУРОН: <font color='#FFFFFF'>27000</font>\nДАЛЬНОСТЬ: <font color='#FFFFFF'>550</font>\nСКОРОСТЬ: <font color='#FFFFFF'>быстрая</font>\nСПОСОБНОСТЬ: С каждой атакой башня имеет шанс нанести урон вокруг себя."
 
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_damage"                         "УРОН:"
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_damage"                       "УРОН:"
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_disabled_damage"              "УРОН:"
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_damage"                       "УРОН:"
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_disabled_damage"              "УРОН:"
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_disabled_damage"                "УРОН:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_damage"                         "УРОН::"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_pct"                         "%EXTRA УРОН::"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_damage"                       "УРОН::"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_pct"                       "%EXTRA УРОН::"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_disabled_damage"              "УРОН::"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_disabled_pct"              "%EXTRA УРОН::"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_damage"                       "УРОН::"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_pct"                       "%EXTRA УРОН::"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_disabled_damage"              "УРОН::"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_disabled_pct"              "%EXTRA УРОН::"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_disabled_damage"                "УРОН::"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_disabled_pct"                "%EXTRA УРОН::"
 
 
 

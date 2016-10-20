@@ -722,10 +722,9 @@
         "DOTA_Tooltip_modifier_life_tower_full_health_Description"                        "You are at full health, dealing %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% bonus damage."  
 
         "DOTA_Tooltip_ability_hydro_tower_ability"      "洪流"
-        "DOTA_Tooltip_ability_hydro_tower_ability_Description"      "这座防御塔攻击时有机率产生洪流并对范围内的敌人造成伤害。"
+        "DOTA_Tooltip_ability_hydro_tower_ability_Description"      "Every third attack will cause a torrent, hitting creeps in a focused area of effect."
         "DOTA_Tooltip_ability_hydro_tower_ability_splash_damage"        "伤害："
         "DOTA_Tooltip_ability_hydro_tower_ability_splash_aoe"       "作用范围："
-        "DOTA_Tooltip_ability_hydro_tower_ability_chance_pct"                             "几率："
         "DOTA_Tooltip_ability_hydro_tower_ability_delay"                                  "延迟："
         "DOTA_Tooltip_modifier_hydro_delay"                                               "水力延迟"
         "DOTA_Tooltip_modifier_hydro_delay_Description"                                   ""
@@ -780,9 +779,9 @@
         "DOTA_Tooltip_modifier_tornado_slow_Description"        "被龙卷风减速，移动速度降低%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%。"
 
         "DOTA_Tooltip_ability_quake_tower_pulverize"        "碾压"
-        "DOTA_Tooltip_ability_quake_tower_pulverize_Description"        "攻击时有几率在防御塔附近造成伤害。"
+        "DOTA_Tooltip_ability_quake_tower_pulverize_Description"        "Every 5 attacks, this tower hits all creeps in range, dealing damage and an extra percentage of their current health."
         "DOTA_Tooltip_ability_quake_tower_pulverize_damage"     "伤害："
-        "DOTA_Tooltip_ability_quake_tower_pulverize_chance"     "%几率："
+        "DOTA_Tooltip_ability_quake_tower_pulverize_pct"        "%EXTRA 伤害:"
         "DOTA_Tooltip_ability_quake_tower_pulverize_aoe"        "作用范围："
 
         "DOTA_Tooltip_ability_enchantment_tower_faerie_fire"        "精灵之火"
@@ -1638,12 +1637,18 @@
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_Description"        "将这座防御塔升级为撼地之塔.\n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#D4880F'>大地</font>+<font color='#C40000'>圣火</font>+<font color='#00C400'>自然</font> \n伤害类型：<font color='#D4880F'>大地</font>\n攻击力：<font color='#FFFFFF'>27000</font>\n攻击距离：<font color='#FFFFFF'>550</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能：攻击时有几率在防御塔附近造成伤害。"
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_disabled_Description"       "将这座防御塔升级为撼地之塔.\n<font color='#F0BA36'>需要：</font><font color='#D4880F'>大地2</font>+<font color='#C40000'>圣火2</font>+<font color='#00C400'>自然2</font> \n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#D4880F'>大地</font>+<font color='#C40000'>圣火</font>+<font color='#00C400'>自然</font> \n伤害类型：<font color='#D4880F'>大地</font>\n攻击力：<font color='#FFFFFF'>27000</font>\n攻击距离：<font color='#FFFFFF'>550</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能：攻击时有几率在防御塔附近造成伤害。"
 
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_damage"                         "伤害："
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_damage"                       "伤害："
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_disabled_damage"              "伤害："
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_damage"                       "伤害："
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_disabled_damage"              "伤害："
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_disabled_damage"                "伤害："
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_damage"                         "伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_pct"                         "%EXTRA 伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_damage"                       "伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_pct"                       "%EXTRA 伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_disabled_damage"              "伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_disabled_pct"              "%EXTRA 伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_damage"                       "伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_pct"                       "%EXTRA 伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_disabled_damage"              "伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_disabled_pct"              "%EXTRA 伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_disabled_damage"                "伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_disabled_pct"                "%EXTRA 伤害:"
 
 
 
