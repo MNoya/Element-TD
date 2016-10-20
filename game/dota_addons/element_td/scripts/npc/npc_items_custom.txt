@@ -4959,7 +4959,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 3600"
+				"damage"				"180 900 2700"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -5000,7 +5000,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 3600"
+				"damage"				"180 900 2700"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -5031,7 +5031,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 3600"
+				"damage"				"180 900 2700"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -5072,7 +5072,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 3600"
+				"damage"				"180 900 2700"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -5103,7 +5103,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 3600"
+				"damage"				"180 900 2700"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -5135,7 +5135,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 3600"
+				"damage"				"180 900 2700"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -7406,6 +7406,12 @@
 				"damage"				"1800 9000 27000"
 			}
 		}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pct"					"2 4 6"
+			}
+		}
 		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_quake_tower_2"
@@ -7447,6 +7453,12 @@
 				"damage"				"1800 9000 27000"
 			}
 		}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pct"					"2 4 6"
+			}
+		}
 		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_quake_tower_2_disabled"
@@ -7476,6 +7488,12 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage"				"1800 9000 27000"
+			}
+		}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pct"					"2 4 6"
 			}
 		}
 		"AbilityCastRange"              "550"
@@ -7519,6 +7537,12 @@
 				"damage"				"1800 9000 27000"
 			}
 		}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pct"					"2 4 6"
+			}
+		}
 		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_quake_tower_3_disabled"
@@ -7548,6 +7572,12 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage"				"1800 9000 27000"
+			}
+		}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pct"					"2 4 6"
 			}
 		}
 		"AbilityCastRange"              "550"
@@ -7580,6 +7610,12 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage"				"1800 9000 27000"
+			}
+		}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pct"					"2 4 6"
 			}
 		}
 		"AbilityCastRange"              "550"

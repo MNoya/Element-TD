@@ -241,7 +241,7 @@
         //  <font color='#hex'>text</font>  for color
         //  <b>text</b> for bold        
         "loading_screen_changelog"   "Latest Changes"
-        "loading_screen_change_text" "<h1>Version 1.13</h1><h2> October 5th, 2016</h2><br>• Speed Score Multiplier increased<br>• Tier 3 Slows nerfed<br>• Vapor Tower's attacks no longer cause aftershocks<br>• Vapor tower gains damage with more creeps nearby<br>• Flamethrower tower's napalm now has a duration<br>• Disease's damage increased<br>• Disease's damage scales more exponentially<br>• Fixed particles when selling towers not showing"
+        "loading_screen_change_text" "<h1>Version 1.14</h1><h2> October 19th, 2016</h2><br>• Minor changes to scoring<br>• Buffed laser/runic/quake/obliteration towers<br>• Rescaled slow towers<br>• Improved random formula<br>• Other minor changes"
 
         "credits_title"         "Credits"
         "credits_developers"    "Developers"
