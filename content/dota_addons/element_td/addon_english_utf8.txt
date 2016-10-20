@@ -721,10 +721,9 @@
         "DOTA_Tooltip_modifier_life_tower_full_health_Description"                        "You are at full health, dealing %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% bonus damage."   
 
         "DOTA_Tooltip_ability_hydro_tower_ability"      "Torrent"
-        "DOTA_Tooltip_ability_hydro_tower_ability_Description"      "This tower has a chance on each attack to cause a torrent of water to hit creeps in an area."
+        "DOTA_Tooltip_ability_hydro_tower_ability_Description"      "Every third attack will cause a torrent, hitting creeps in a focused area of effect."
         "DOTA_Tooltip_ability_hydro_tower_ability_splash_damage"        "DAMAGE:"
         "DOTA_Tooltip_ability_hydro_tower_ability_splash_aoe"       "AOE:"
-        "DOTA_Tooltip_ability_hydro_tower_ability_chance_pct"                             "CHANCE PCT:"
         "DOTA_Tooltip_ability_hydro_tower_ability_delay"                                  "DELAY:"
         "DOTA_Tooltip_modifier_hydro_delay"                                               "Geyser Delay"
         "DOTA_Tooltip_modifier_hydro_delay_Description"                                   ""
@@ -779,9 +778,9 @@
         "DOTA_Tooltip_modifier_tornado_slow_Description"        "Slowed by a tornado, losing %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% movement speed."
         
         "DOTA_Tooltip_ability_quake_tower_pulverize"        "Pulverize"
-        "DOTA_Tooltip_ability_quake_tower_pulverize_Description"        "Each attack has a chance to deal damage in an area around this tower."
+        "DOTA_Tooltip_ability_quake_tower_pulverize_Description"        "Every 5 attacks, this tower hits all creeps in range, dealing damage and an extra percentage of their current health."
         "DOTA_Tooltip_ability_quake_tower_pulverize_damage"     "DAMAGE:"
-        "DOTA_Tooltip_ability_quake_tower_pulverize_chance"     "%CHANCE:"
+        "DOTA_Tooltip_ability_quake_tower_pulverize_pct"        "%EXTRA DAMAGE:"
         "DOTA_Tooltip_ability_quake_tower_pulverize_aoe"        "AOE:"
         
         "DOTA_Tooltip_ability_enchantment_tower_faerie_fire"        "Faerie Fire"
@@ -903,7 +902,6 @@
         "DOTA_Tooltip_ability_roots_tower_gaias_wrath_slow"     "%MOVEMENT SLOW:"
         "DOTA_Tooltip_ability_roots_tower_gaias_wrath_dps"      "DAMAGE PER SECOND:"
         "DOTA_Tooltip_ability_roots_tower_gaias_wrath_duration"     "DURATION:"
-        "DOTA_Tooltip_ability_roots_tower_gaias_wrath_slow"          "SLOW:"
         "DOTA_Tooltip_ability_roots_tower_gaias_wrath_width"        "WIDTH:"
         "DOTA_Tooltip_modifier_gaias_wrath_slow"        "Slowed"
         "DOTA_Tooltip_modifier_gaias_wrath_damage"      "Damage Over Time"
@@ -1445,17 +1443,17 @@
         "DOTA_Tooltip_ability_item_upgrade_to_roots_tower_3_Description"     "Levels up this tower to a Roots 3 Tower.\n\nCOST: <font color='#F0BA36'>5000 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#6C05B1'>Dark</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Each attack applies a slow + a DoT debuff to all creeps in a line in the direction of the main target."
         "DOTA_Tooltip_ability_item_upgrade_to_roots_tower_3_disabled_Description"        "Levels up this tower to a Roots 3 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#00C400'>Nature 3</font> + <font color='#6C05B1'>Dark 3</font> + <font color='#D4880F'>Earth 3</font> \n\nCOST: <font color='#F0BA36'>5000 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#6C05B1'>Dark</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Each attack applies a slow and a DoT debuff to all creeps in a line in the direction of the main target."
 
-        "DOTA_Tooltip_ability_item_upgrade_to_roots_tower_slow"                           "MOVEMENT SLOW:"
+        "DOTA_Tooltip_ability_item_upgrade_to_roots_tower_slow"                           "%MOVEMENT SLOW:"
         "DOTA_Tooltip_ability_item_upgrade_to_roots_tower_dps"                            "DAMAGE PER SECOND:"
-        "DOTA_Tooltip_ability_item_upgrade_to_roots_tower_2_slow"                         "MOVEMENT SLOW:"
+        "DOTA_Tooltip_ability_item_upgrade_to_roots_tower_2_slow"                         "%MOVEMENT SLOW:"
         "DOTA_Tooltip_ability_item_upgrade_to_roots_tower_2_dps"                          "DAMAGE PER SECOND:"
-        "DOTA_Tooltip_ability_item_upgrade_to_roots_tower_2_disabled_slow"                "MOVEMENT SLOW:"
+        "DOTA_Tooltip_ability_item_upgrade_to_roots_tower_2_disabled_slow"                "%MOVEMENT SLOW:"
         "DOTA_Tooltip_ability_item_upgrade_to_roots_tower_2_disabled_dps"                 "DAMAGE PER SECOND:"
-        "DOTA_Tooltip_ability_item_upgrade_to_roots_tower_3_slow"                         "MOVEMENT SLOW:"
+        "DOTA_Tooltip_ability_item_upgrade_to_roots_tower_3_slow"                         "%MOVEMENT SLOW:"
         "DOTA_Tooltip_ability_item_upgrade_to_roots_tower_3_dps"                          "DAMAGE PER SECOND:"
-        "DOTA_Tooltip_ability_item_upgrade_to_roots_tower_3_disabled_slow"                "MOVEMENT SLOW:"
+        "DOTA_Tooltip_ability_item_upgrade_to_roots_tower_3_disabled_slow"                "%MOVEMENT SLOW:"
         "DOTA_Tooltip_ability_item_upgrade_to_roots_tower_3_disabled_dps"                 "DAMAGE PER SECOND:"
-        "DOTA_Tooltip_ability_item_upgrade_to_roots_tower_disabled_slow"                  "MOVEMENT SLOW:"
+        "DOTA_Tooltip_ability_item_upgrade_to_roots_tower_disabled_slow"                  "%MOVEMENT SLOW:"
         "DOTA_Tooltip_ability_item_upgrade_to_roots_tower_disabled_dps"                   "DAMAGE PER SECOND:"
 
 
@@ -1552,18 +1550,18 @@
         // Geyser (Earth + Water)
         "DOTA_Tooltip_ability_item_upgrade_to_hydro_tower"      "Geyser Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_hydro_tower_disabled"     "Geyser Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_hydro_tower_Description"      "Upgrades this tower to a Geyser Tower.\n\nCOST: <font color='#F0BA36'>425 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font>\nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>800</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: This tower has a chance on each attack to cause a torrent of water to hit creeps in an area."
-        "DOTA_Tooltip_ability_item_upgrade_to_hydro_tower_disabled_Description"     "Upgrades this tower to a Geyser Tower.\n<font color='#F0BA36'>Requires: </font><font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \n\nCOST: <font color='#F0BA36'>425 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>800</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: This tower has a chance on each attack to cause a torrent of water to hit creeps in an area."
+        "DOTA_Tooltip_ability_item_upgrade_to_hydro_tower_Description"      "Upgrades this tower to a Geyser Tower.\n\nCOST: <font color='#F0BA36'>425 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font>\nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>800</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Every third attack will cause a torrent, hitting creeps in a focused area of effect."
+        "DOTA_Tooltip_ability_item_upgrade_to_hydro_tower_disabled_Description"     "Upgrades this tower to a Geyser Tower.\n<font color='#F0BA36'>Requires: </font><font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \n\nCOST: <font color='#F0BA36'>425 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>800</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Every third attack will cause a torrent, hitting creeps in a focused area of effect."
 
         "DOTA_Tooltip_ability_item_upgrade_to_hydro_tower_2"        "Geyser 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_hydro_tower_2_disabled"       "Geyser 2 Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_hydro_tower_2_Description"     "Levels up this tower to a Geyser 2 Tower.\n\nCOST: <font color='#F0BA36'>1150 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>4000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: This tower has a chance on each attack to cause a torrent of water to hit creeps in an area."
-        "DOTA_Tooltip_ability_item_upgrade_to_hydro_tower_2_disabled_Description"        "Levels up this tower to a Geyser 2 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#D4880F'>Earth 2</font> + <font color='#01A2FF'>Water 2</font> \n\nCOST: <font color='#F0BA36'>1150 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>4000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: This tower has a chance on each attack to cause a torrent of water to hit creeps in an area."
+        "DOTA_Tooltip_ability_item_upgrade_to_hydro_tower_2_Description"     "Levels up this tower to a Geyser 2 Tower.\n\nCOST: <font color='#F0BA36'>1150 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>4000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Every third attack will cause a torrent, hitting creeps in a focused area of effect."
+        "DOTA_Tooltip_ability_item_upgrade_to_hydro_tower_2_disabled_Description"        "Levels up this tower to a Geyser 2 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#D4880F'>Earth 2</font> + <font color='#01A2FF'>Water 2</font> \n\nCOST: <font color='#F0BA36'>1150 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>4000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Every third attack will cause a torrent, hitting creeps in a focused area of effect."
 
         "DOTA_Tooltip_ability_item_upgrade_to_hydro_tower_3"        "Geyser 3 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_hydro_tower_3_disabled"       "Geyser 3 Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_hydro_tower_3_Description"     "Levels up this tower to a Geyser 3 Tower.\n\nCOST: <font color='#F0BA36'>2500 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>20000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: This tower has a chance on each attack to cause a torrent of water to hit creeps in an area."
-        "DOTA_Tooltip_ability_item_upgrade_to_hydro_tower_3_disabled_Description"        "Levels up this tower to a to a Geyser 3 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#D4880F'>Earth 3</font> + <font color='#01A2FF'>Water 3</font> \n\nCOST: <font color='#F0BA36'>2500 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>20000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: This tower has a chance on each attack to cause a torrent of water to hit creeps in an area."
+        "DOTA_Tooltip_ability_item_upgrade_to_hydro_tower_3_Description"     "Levels up this tower to a Geyser 3 Tower.\n\nCOST: <font color='#F0BA36'>2500 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>20000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Every third attack will cause a torrent, hitting creeps in a focused area of effect."
+        "DOTA_Tooltip_ability_item_upgrade_to_hydro_tower_3_disabled_Description"        "Levels up this tower to a to a Geyser 3 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#D4880F'>Earth 3</font> + <font color='#01A2FF'>Water 3</font> \n\nCOST: <font color='#F0BA36'>2500 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>20000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nABILITY: Every third attack will cause a torrent, hitting creeps in a focused area of effect."
 
         "DOTA_Tooltip_ability_item_upgrade_to_hydro_tower_splash_damage"                  "DAMAGE:"
         "DOTA_Tooltip_ability_item_upgrade_to_hydro_tower_2_splash_damage"                "DAMAGE:"
@@ -1627,25 +1625,31 @@
         // Quake (Earth + Fire + Nature)
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower"      "Quake Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_disabled"     "Quake Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_Description"      "Upgrades this tower to a Quake Tower.\n\nCOST: <font color='#F0BA36'>900 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>1800+2%hp</font>\nRANGE: <font color='#FFFFFF'>550</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Each attack has a chance to deal damage in an area around this tower."
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_disabled_Description"     "Upgrades this tower to a Quake Tower.\n<font color='#F0BA36'>Requires: </font><font color='#D4880F'>Earth</font> + <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \n\nCOST: <font color='#F0BA36'>900 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>1800+2%hp</font>\nRANGE: <font color='#FFFFFF'>550</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Each attack has a chance to deal damage in an area around this tower."
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_Description"      "Upgrades this tower to a Quake Tower.\n\nCOST: <font color='#F0BA36'>900 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>1800</font>\nRANGE: <font color='#FFFFFF'>550</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Every 5 attacks, this tower hits all creeps in range, dealing damage and an extra percentage of their current health."
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_disabled_Description"     "Upgrades this tower to a Quake Tower.\n<font color='#F0BA36'>Requires: </font><font color='#D4880F'>Earth</font> + <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \n\nCOST: <font color='#F0BA36'>900 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>1800</font>\nRANGE: <font color='#FFFFFF'>550</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Every 5 attacks, this tower hits all creeps in range, dealing damage and an extra percentage of their current health."
 
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2"        "Quake 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_disabled"       "Quake 2 Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_Description"     "Levels up this tower to an Quake 2 Tower.\n\nCOST: <font color='#F0BA36'>3500 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>9000+4%hp</font>\nRANGE: <font color='#FFFFFF'>550</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Each attack has a chance to deal damage in an area around this tower."
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_disabled_Description"        "Levels up this tower to an Quake 2 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#D4880F'>Earth 2</font> + <font color='#C40000'>Fire 2</font> + <font color='#00C400'>Nature 2</font> \n\nCOST: <font color='#F0BA36'>3500 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>9000+4%hp</font>\nRANGE: <font color='#FFFFFF'>550</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Each attack has a chance to deal damage in an area around this tower."
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_Description"     "Levels up this tower to an Quake 2 Tower.\n\nCOST: <font color='#F0BA36'>3500 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>9000</font>\nRANGE: <font color='#FFFFFF'>550</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Every 5 attacks, this tower hits all creeps in range, dealing damage and an extra percentage of their current health."
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_disabled_Description"        "Levels up this tower to an Quake 2 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#D4880F'>Earth 2</font> + <font color='#C40000'>Fire 2</font> + <font color='#00C400'>Nature 2</font> \n\nCOST: <font color='#F0BA36'>3500 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>9000</font>\nRANGE: <font color='#FFFFFF'>550</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Every 5 attacks, this tower hits all creeps in range, dealing damage and an extra percentage of their current health."
         
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3"        "Quake 3 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_disabled"       "Quake 3 Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_Description"     "Levels up this tower to an Quake 3 Tower.\n\nCOST: <font color='#F0BA36'>5000 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>27000+6%hp</font>\nRANGE: <font color='#FFFFFF'>550</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Each attack has a chance to deal damage in an area around this tower."
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_disabled_Description"        "Levels up this tower to an Quake 3 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#D4880F'>Earth 3</font> + <font color='#C40000'>Fire 3</font> + <font color='#00C400'>Nature 3</font> \n\nCOST: <font color='#F0BA36'>5000 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>27000+6%hp</font>\nRANGE: <font color='#FFFFFF'>550</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Each attack has a chance to deal damage in an area around this tower."
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_Description"     "Levels up this tower to an Quake 3 Tower.\n\nCOST: <font color='#F0BA36'>5000 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>27000</font>\nRANGE: <font color='#FFFFFF'>550</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Every 5 attacks, this tower hits all creeps in range, dealing damage and an extra percentage of their current health."
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_disabled_Description"        "Levels up this tower to an Quake 3 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#D4880F'>Earth 3</font> + <font color='#C40000'>Fire 3</font> + <font color='#00C400'>Nature 3</font> \n\nCOST: <font color='#F0BA36'>5000 Gold</font>\nELEMENT: <font color='#D4880F'>Earth</font> + <font color='#C40000'>Fire</font> + <font color='#00C400'>Nature</font> \nDAMAGE TYPE: <font color='#D4880F'>Earth</font>\nDAMAGE: <font color='#FFFFFF'>27000</font>\nRANGE: <font color='#FFFFFF'>550</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: Every 5 attacks, this tower hits all creeps in range, dealing damage and an extra percentage of their current health."
 
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_damage"                         "DAMAGE:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_pct"                         "%EXTRA DAMAGE:"
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_damage"                       "DAMAGE:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_pct"                       "%EXTRA DAMAGE:"
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_disabled_damage"              "DAMAGE:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_disabled_pct"              "%EXTRA DAMAGE:"
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_damage"                       "DAMAGE:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_pct"                       "%EXTRA DAMAGE:"
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_disabled_damage"              "DAMAGE:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_disabled_pct"              "%EXTRA DAMAGE:"
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_disabled_damage"                "DAMAGE:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_disabled_pct"                "%EXTRA DAMAGE:"
 
 
 

@@ -3493,19 +3493,14 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"chance_pct"		"33"
+				"splash_damage"		"800 4000 20000"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"800 4000 20000"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
 				"splash_aoe"		"200"
 			}
-			"04"
+			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
 				"delay"				"1.5"
@@ -4511,22 +4506,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance"				"20"
+				"damage"				"1800 9000 27000"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"1800 9000 27000"
+				"pct"					"2 4 6"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"aoe"					"550"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"pct"					"2 4 6"
 			}
 		}
 	}

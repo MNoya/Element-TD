@@ -33,22 +33,17 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"chance"				"20"
+			"damage"				"1800 9000 27000"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"1800 9000 27000"
+			"pct"					"2 4 6"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"aoe"					"550"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"pct"					"2 4 6"
 		}
 	}
 }
