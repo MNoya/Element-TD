@@ -751,7 +751,7 @@
         "DOTA_Tooltip_modifier_faerie_fire_Description"     "Горит волшебным огнём. Получает увеличенный урон."
                 
         "DOTA_Tooltip_ability_laser_tower_laser"        "Лазер"
-        "DOTA_Tooltip_ability_laser_tower_laser_Description"        "Каждая атака по цели наносит большой урон лазером. Каждый крип в радиусе 400 от цели уменьшает наносимый урон. Минимальный урон 50%%."
+        "DOTA_Tooltip_ability_laser_tower_laser_Description"        "Каждая атака по цели наносит большой урон лазером. Каждый крип в радиусе 100 от цели уменьшает наносимый урон. Минимальный урон 50%%."
         "DOTA_Tooltip_ability_laser_tower_laser_damage_reduction"       "%УМЕНЬШЕНИЕ УРОНА ЗА КРИПА:"
         "DOTA_Tooltip_ability_laser_tower_laser_aoe"                                      "РАДИУС УМЕНЬШЕНИЯ:"
         "DOTA_Tooltip_ability_laser_tower_laser_damage_reduction_cap"                     "ПОРОГ УМЕНЬШЕНИЯ УРОНА:"

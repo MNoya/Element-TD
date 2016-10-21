@@ -1,4 +1,5 @@
-﻿"lang"
+﻿
+"lang"
 {
     "Language"      "schinese"
     "Tokens"
@@ -794,7 +795,7 @@
         "DOTA_Tooltip_modifier_faerie_fire_Description"     "被精灵之火灼伤，受到额外伤害。"
                 
         "DOTA_Tooltip_ability_laser_tower_laser"        "激光"
-        "DOTA_Tooltip_ability_laser_tower_laser_Description"        "使用激光进行攻击，造成大量伤害。目标400范围内的每个小兵都会使目标所受伤害下降，最低降至50%%。"
+        "DOTA_Tooltip_ability_laser_tower_laser_Description"        "使用激光进行攻击，造成大量伤害。目标100范围内的每个小兵都会使目标所受伤害下降，最低降至50%%。"
         "DOTA_Tooltip_ability_laser_tower_laser_damage_reduction"       "%每个小兵降低伤害："
         "DOTA_Tooltip_ability_laser_tower_laser_aoe"                                      "伤害降低范围："
         "DOTA_Tooltip_ability_laser_tower_laser_damage_reduction_cap"                     "伤害降低上限："

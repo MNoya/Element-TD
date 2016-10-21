@@ -743,7 +743,7 @@
         "DOTA_Tooltip_modifier_faerie_fire_Description"     "ถูกเผาโดย Faerie Fire ได้รับความเสียหายเพิ่มขึ้น"
                 
         "DOTA_Tooltip_ability_laser_tower_laser"        "เลเซอร์"
-        "DOTA_Tooltip_ability_laser_tower_laser_Description"        "การโจมตีแต่ละครั้งจะยิงเลเซอร์ที่เป้าเหมายเดี่ยว โดยสร้างความเสียหายสูง ครีปแต่ละตัวในพื้นที่ 400 หน่วยรอบเป้าหมายจะลดความเสียหายที่สร้าง ความเสียหายต่ำสุดคือ 50%%"
+        "DOTA_Tooltip_ability_laser_tower_laser_Description"        "การโจมตีแต่ละครั้งจะยิงเลเซอร์ที่เป้าเหมายเดี่ยว โดยสร้างความเสียหายสูง ครีปแต่ละตัวในพื้นที่ 100 หน่วยรอบเป้าหมายจะลดความเสียหายที่สร้าง ความเสียหายต่ำสุดคือ 50%%"
         "DOTA_Tooltip_ability_laser_tower_laser_damage_reduction"       "%ลดความเสียหายต่อครีป:"
         "DOTA_Tooltip_ability_laser_tower_laser_aoe"                                      "พื้นที่ลด:"
         "DOTA_Tooltip_ability_laser_tower_laser_damage_reduction_cap"                     "%ลดความเสียหายต่ำสุด:"
