@@ -100,22 +100,22 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"360 1800 9000"
+			"damage"				"70 490 3300"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aoe_start"				"450"
+			"aoe_start"				"250"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aoe_end"				"450"
+			"aoe_end"				"250"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"distance"				"550"
+			"distance"				"2500"
 		}
 		"05"
 		{
