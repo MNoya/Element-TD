@@ -1,6 +1,6 @@
 //=================================================================================================================
 // Fire Tower: Blaze
-// Each attack applies a single-target DoT debuff on all targets hit
+// Each attack against the same target increases its AoE. Resets on switching targets.
 //=================================================================================================================
 "fire_tower_blaze"
 {

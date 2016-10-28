@@ -3336,6 +3336,20 @@
 			"water"		"1"
 			"water"		"1"
 		}
+	
+	    "AbilitySpecial"
+	    {
+	         "01"
+	             {
+	                 "var_type"              "FIELD_FLOAT"
+	                 "damage_per_second"     "50 250 1250"
+	             }
+	             "02"
+	             {
+	                 "var_type"              "FIELD_FLOAT"
+	                 "duration"              "20.0"
+	             }
+	    }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_poison_tower_2"
@@ -3366,6 +3380,20 @@
 			"water"		"2"
 			"water"		"2"
 		}
+	
+	    "AbilitySpecial"
+	    {
+	         "01"
+	             {
+	                 "var_type"              "FIELD_FLOAT"
+	                 "damage_per_second"     "50 250 1250"
+	             }
+	             "02"
+	             {
+	                 "var_type"              "FIELD_FLOAT"
+	                 "duration"              "20.0"
+	             }
+	    }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_poison_tower_2_disabled"
@@ -3386,6 +3414,20 @@
 			"water"		"2"
 			"water"		"2"
 		}
+	
+	    "AbilitySpecial"
+	    {
+	         "01"
+	             {
+	                 "var_type"              "FIELD_FLOAT"
+	                 "damage_per_second"     "50 250 1250"
+	             }
+	             "02"
+	             {
+	                 "var_type"              "FIELD_FLOAT"
+	                 "duration"              "20.0"
+	             }
+	    }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_poison_tower_3"
@@ -3416,6 +3458,20 @@
 			"water"		"3"
 			"water"		"3"
 		}
+	
+	    "AbilitySpecial"
+	    {
+	         "01"
+	             {
+	                 "var_type"              "FIELD_FLOAT"
+	                 "damage_per_second"     "50 250 1250"
+	             }
+	             "02"
+	             {
+	                 "var_type"              "FIELD_FLOAT"
+	                 "duration"              "20.0"
+	             }
+	    }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_poison_tower_3_disabled"
@@ -3436,6 +3492,20 @@
 			"water"		"3"
 			"water"		"3"
 		}
+	
+	    "AbilitySpecial"
+	    {
+	         "01"
+	             {
+	                 "var_type"              "FIELD_FLOAT"
+	                 "damage_per_second"     "50 250 1250"
+	             }
+	             "02"
+	             {
+	                 "var_type"              "FIELD_FLOAT"
+	                 "duration"              "20.0"
+	             }
+	    }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_poison_tower_disabled"
@@ -3458,6 +3528,20 @@
 			"water"		"1"
 			"water"		"1"
 		}
+	
+	    "AbilitySpecial"
+	    {
+	         "01"
+	             {
+	                 "var_type"              "FIELD_FLOAT"
+	                 "damage_per_second"     "50 250 1250"
+	             }
+	             "02"
+	             {
+	                 "var_type"              "FIELD_FLOAT"
+	                 "duration"              "20.0"
+	             }
+	    }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_quark_tower"

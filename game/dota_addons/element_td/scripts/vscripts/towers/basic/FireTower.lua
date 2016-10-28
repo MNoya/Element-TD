@@ -40,7 +40,7 @@ function FireTower:OnAttackLanded(keys)
 
 end
 
---[[ Removed in 1.15
+--[[ Removed in 1.15, applied to Poison Tower
 function FireTower:DealBlazeDamage(keys)
     local target = keys.target    
     local damage = ApplyAbilityDamageFromModifiers(self.damage_per_interval, self.tower)    
@@ -57,7 +57,7 @@ function FireTower:OnCreated()
     self.modifier_name = "modifier_blazeit" --420
     self.consecutiveAttacks = 0  
 
---[[ Removed in 1.15
+--[[ Removed in 1.15, applied to Poison Tower
     self.interval = 0.5 --taken from the modifier ThinkInterval value
     self.damage_per_interval = self.ability:GetLevelSpecialValueFor("damage_per_second", self.tower:GetLevel()-1) * self.interval
 
