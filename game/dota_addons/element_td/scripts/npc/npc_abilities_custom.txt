@@ -2976,12 +2976,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_FLOAT"
-	            "damage_per_second"     "10 70 490 4900"
-	        }
-	        "02"
-	        {
-	            "var_type"              "FIELD_FLOAT"
-	            "duration"              "3.0"
+	            "aoe"     "30"
 	        }
 	    }
 	}

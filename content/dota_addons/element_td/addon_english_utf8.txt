@@ -620,9 +620,8 @@
         "DOTA_Tooltip_ability_dark_tower_overkill_aoe"              "AOE:"
 
         "DOTA_Tooltip_ability_fire_tower_blaze"                     "Blaze"
-        "DOTA_Tooltip_ability_fire_tower_blaze_Description"          "Each attack applies a single-target DoT debuff on the primary target that can stack indefinitely."
-        "DOTA_Tooltip_ability_fire_tower_blaze_damage_per_second"    "DAMAGE PER SECOND:"
-        "DOTA_Tooltip_ability_fire_tower_blaze_duration"             "DURATION:"
+        "DOTA_Tooltip_ability_fire_tower_blaze_Description"          "Each attack on the same creep increases this tower's AoE. Attacking another creep resets its AoE."
+        "DOTA_Tooltip_ability_fire_tower_blaze_aoe"                  "AOE:"
         "DOTA_Tooltip_modifier_blazeit_stacks"                       "Blaze it"
         "DOTA_Tooltip_modifier_blazeit_stacks_Description"           "Taking damage over time"
 

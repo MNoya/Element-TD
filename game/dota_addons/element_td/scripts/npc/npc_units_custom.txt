@@ -5942,9 +5942,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "20"
-	    "AttackDamageMax"           "20"
-	    "Damage"                    "20"  
+	    "AttackDamageMin"           "25"
+	    "AttackDamageMax"           "25"
+	    "Damage"                    "25"  
 	    "AOE_Full"                  "150"
 	    "AOE_Half"                  "300" 
 	    "AttackRange"               "700"
@@ -6036,9 +6036,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "140"
-	    "AttackDamageMax"           "140"
-	    "Damage"                    "140"  
+	    "AttackDamageMin"           "175"
+	    "AttackDamageMax"           "175"
+	    "Damage"                    "175"  
 	    "AOE_Full"                  "150"
 	    "AOE_Half"                  "300" 
 	    "AttackRange"               "700"
@@ -6126,9 +6126,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "9800"
-	    "AttackDamageMax"           "9800"
-	    "Damage"                    "9800"  
+	    "AttackDamageMin"           "12250"
+	    "AttackDamageMax"           "12250"
+	    "Damage"                    "12250"  
 	    "AOE_Full"                  "150"
 	    "AOE_Half"                  "300" 
 	    "AttackRange"               "700"
@@ -6210,9 +6210,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "980"
-	    "AttackDamageMax"           "980"
-	    "Damage"                    "980"  
+	    "AttackDamageMin"           "1225"
+	    "AttackDamageMax"           "1225"
+	    "Damage"                    "1225"  
 	    "AOE_Full"                  "150"
 	    "AOE_Half"                  "300" 
 	    "AttackRange"               "700"

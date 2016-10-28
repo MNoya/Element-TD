@@ -48,7 +48,7 @@ function MossTower:OnCreated()
     self.fullAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))    
     self.halfAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
     AddAbility(self.tower, "moss_tower_spore")
-    self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_HIGHEST_HP, keep_target=true}) 
+    self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_HIGHEST_HP, keep_target=false}) 
 end
 
 RegisterTowerClass(MossTower, MossTower.className)    
