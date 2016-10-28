@@ -11,7 +11,7 @@
 	"AbilityCastPoint"				"0.0"
 
 	"AbilityCastRange"      		"1150"
-    "AOERadius"             		"300"
+    "AOERadius"             		"400"
 
     "OnSpellStart"
     {
@@ -97,12 +97,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"max_aoe"				"300"
+			"max_aoe"				"400"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"initial_aoe"			"150"
+			"initial_aoe"			"200"
 		}
 		"03"
 		{

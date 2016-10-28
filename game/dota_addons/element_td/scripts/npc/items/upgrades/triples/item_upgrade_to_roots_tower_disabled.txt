@@ -25,12 +25,12 @@
         "01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"slow"					"-10 -30 -60"
+			"slow"					"-12 -28 -52"
 		}
         "02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"dps"					"100 500 1500"
+			"dps"					"100 500 2500"
 		}
     }
     "AbilityCastRange"              "900"

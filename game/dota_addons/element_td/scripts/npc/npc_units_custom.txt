@@ -7017,9 +7017,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "455"
-	    "AttackDamageMax"           "455"
-	    "Damage"                    "455"    
+	    "AttackDamageMin"           "490"
+	    "AttackDamageMax"           "490"
+	    "Damage"                    "490"    
 	    "AOE_Full"                  "200"
 	    "AOE_Half"                  "200"  
 	    "AttackRange"               "900"
@@ -7108,9 +7108,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "32000"
-	    "AttackDamageMax"           "32000"
-	    "Damage"                    "32000"
+	    "AttackDamageMin"           "33000"
+	    "AttackDamageMax"           "33000"
+	    "Damage"                    "33000"
 	    "AOE_Full"                  "250"
 	    "AOE_Half"                  "250"
 	    "AttackRange"               "900"
@@ -7196,9 +7196,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "3200"
-	    "AttackDamageMax"           "3200"
-	    "Damage"                    "3200"
+	    "AttackDamageMin"           "3300"
+	    "AttackDamageMax"           "3300"
+	    "Damage"                    "3300"
 	    "AOE_Full"                  "200"
 	    "AOE_Half"                  "200"
 	    "AttackRange"               "900"
@@ -7286,9 +7286,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "65"
-	    "AttackDamageMax"           "65"
-	    "Damage"                    "65"    
+	    "AttackDamageMin"           "70"
+	    "AttackDamageMax"           "70"
+	    "Damage"                    "70"    
 	    "AOE_Full"                  "200"
 	    "AOE_Half"                  "200"  
 	    "AttackRange"               "900"
@@ -12102,9 +12102,9 @@
 	        "2"        "earth"
 	        "3"        "fire"
 	    }
-	    "Damage"        "360"
-	    "AttackDamageMin"        "360"
-	    "AttackDamageMax"        "360"
+	    "Damage"        "400"
+	    "AttackDamageMin"        "400"
+	    "AttackDamageMax"        "400"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlamethrowerTower"
 	    "TowerType"        "Normal"
@@ -12195,9 +12195,9 @@
 	        "2"        "earth"
 	        "3"        "fire"
 	    }
-	    "Damage"        "1800"
-	    "AttackDamageMin"        "1800"
-	    "AttackDamageMax"        "1800"
+	    "Damage"        "2000"
+	    "AttackDamageMin"        "2000"
+	    "AttackDamageMax"        "2000"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlamethrowerTower"
 	    "TowerType"        "Normal"
@@ -12289,9 +12289,9 @@
 	        "2"        "earth"
 	        "3"        "fire"
 	    }
-	    "Damage"        "6000"
-	    "AttackDamageMin"        "6000"
-	    "AttackDamageMax"        "6000"
+	    "Damage"        "8000"
+	    "AttackDamageMin"        "8000"
+	    "AttackDamageMax"        "8000"
 	    "DamageType"        "fire"
 	    "ScriptClass"        "FlamethrowerTower"
 	    "TowerType"        "Normal"
@@ -14777,9 +14777,9 @@
 	        "2"        "light"
 	        "3"        "nature"
 	    }
-	    "Damage"        "1600"
-	    "AttackDamageMin"        "1600"
-	    "AttackDamageMax"        "1600"
+	    "Damage"        "1800"
+	    "AttackDamageMin"        "1800"
+	    "AttackDamageMax"        "1800"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "ObliterationTower"
 	    "TowerType"        "Normal"
@@ -14867,9 +14867,9 @@
 	        "2"        "light"
 	        "3"        "nature"
 	    }
-	    "Damage"        "8000"
-	    "AttackDamageMin"        "8000"
-	    "AttackDamageMax"        "8000"
+	    "Damage"        "9000"
+	    "AttackDamageMin"        "9000"
+	    "AttackDamageMax"        "9000"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "ObliterationTower"
 	    "TowerType"        "Normal"
@@ -14957,9 +14957,9 @@
 	        "2"        "light"
 	        "3"        "nature"
 	    }
-	    "Damage"        "26000"
-	    "AttackDamageMin"        "26000"
-	    "AttackDamageMax"        "26000"
+	    "Damage"        "30000"
+	    "AttackDamageMin"        "30000"
+	    "AttackDamageMax"        "30000"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "ObliterationTower"
 	    "TowerType"        "Normal"
@@ -15850,9 +15850,9 @@
 	        "2"        "fire"
 	        "3"        "light"
 	    }
-	    "Damage"        "1300"
-	    "AttackDamageMin"        "1300"
-	    "AttackDamageMax"        "1300"
+	    "Damage"        "1500"
+	    "AttackDamageMin"        "1500"
+	    "AttackDamageMax"        "1500"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "RunicTower"
 	    "TowerType"        "Normal"
@@ -15945,9 +15945,9 @@
 	        "2"        "fire"
 	        "3"        "light"
 	    }
-	    "Damage"        "6500"
-	    "AttackDamageMin"        "6500"
-	    "AttackDamageMax"        "6500"
+	    "Damage"        "7500"
+	    "AttackDamageMin"        "7500"
+	    "AttackDamageMax"        "7500"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "RunicTower"
 	    "TowerType"        "Normal"
@@ -16040,9 +16040,9 @@
 	        "2"        "fire"
 	        "3"        "light"
 	    }
-	    "Damage"        "20000"
-	    "AttackDamageMin"        "20000"
-	    "AttackDamageMax"        "20000"
+	    "Damage"        "22500"
+	    "AttackDamageMin"        "22500"
+	    "AttackDamageMax"        "22500"
 	    "DamageType"        "dark"
 	    "ScriptClass"        "RunicTower"
 	    "TowerType"        "Normal"

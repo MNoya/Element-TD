@@ -3030,7 +3030,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"200 1000 3000"
+				"damage"				"180 900 2700"
 			}
 			"02"
 			{
@@ -3493,19 +3493,14 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"chance_pct"		"33"
+				"splash_damage"		"800 4000 20000"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"800 4000 20000"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
 				"splash_aoe"		"200"
 			}
-			"04"
+			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
 				"delay"				"1.5"
@@ -3815,7 +3810,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aoe"					"400"
+				"aoe"					"100"
 			}
 			"02"
 			{
@@ -4116,7 +4111,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -60"
+				"slow"					"-12 -28 -52"
 			}
 		}
 	}
@@ -4249,7 +4244,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 1500 4500"
+				"damage"			"300 1500 6000"
 			}
 			"02"
 			{
@@ -4264,7 +4259,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"slow"				"-10 -30 -60"
+				"slow"				"-12 -28 -52"
 			}
 		}
 	}
@@ -4281,7 +4276,7 @@
 		"AbilityCastPoint"				"0.0"
 	
 		"AbilityCastRange"      		"1150"
-	    "AOERadius"             		"300"
+	    "AOERadius"             		"400"
 	
 	    "OnSpellStart"
 	    {
@@ -4367,12 +4362,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_aoe"				"300"
+				"max_aoe"				"400"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"initial_aoe"			"150"
+				"initial_aoe"			"200"
 			}
 			"03"
 			{
@@ -4511,12 +4506,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance"				"20"
+				"damage"				"1800 9000 27000"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"1800 9000 27000"
+				"pct"					"2 4 6"
 			}
 			"03"
 			{
@@ -4749,12 +4744,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -60"
+				"slow"					"-12 -28 -52"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps"					"100 500 1500"
+				"dps"					"100 500 2500"
 			}
 			"04"
 			{
@@ -5130,12 +5125,12 @@
 	        "01"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "bounce_range"        "1"
+	            "bounce_range"        "150"
 	        }
 	        "02"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "bounce_damage_pct"   "1"
+	            "bounce_damage_pct"   "25"
 	        }
 	    }
 	}
@@ -5270,7 +5265,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -70"
+				"slow"					"-12 -28 -52"
 			}
 			"02"
 			{
@@ -5375,7 +5370,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"slow"					"-10 -30 -60"
+				"slow"					"-12 -28 -52"
 			}
 			"02"
 			{

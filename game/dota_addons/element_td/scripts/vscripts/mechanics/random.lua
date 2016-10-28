@@ -9,6 +9,7 @@ end
 
 usedElements = {["water"] = 0, ["fire"] = 0, ["earth"] = 0, ["nature"] = 0, ["dark"] = 0, ["light"] = 0, ["pure"] = 0 }
 elements = {"water", "fire", "earth", "nature", "dark", "light", "pure"}
+
 function getRandomElement(wave)
     local element = elements[math.random(#elements)]
 
@@ -33,9 +34,8 @@ function getRandomElement(wave)
             end
         end
     end
-
     if COOP_MAP then
-        if element ~= "pure" and randoomPreventionCoop(usedElements, element) then
+        if element ~= "pure" and randomPreventionCoop(usedElements, element) then
             return getRandomElement(wave)
         elseif ((wave < 5 and usedElements[element] == 1) or (wave < 25 and usedElements[element] == 2) or usedElements[element] == 3) then
             return getRandomElement(wave)
@@ -44,23 +44,23 @@ function getRandomElement(wave)
             return element
         end
     else
-
+        -- express mode
         if EXPRESS_MODE and ((wave < 3 and usedElements[element] == 1) or (wave < 12 and usedElements[element] == 2) or usedElements[element] == 3 ) then
             return getRandomElement(wave)
-        elseif not EXPRESS_MODE and ((wave < 10 and usedElements[element] == 1) or (wave < 30 and usedElements[element] == 2) or usedElements[element] == 3) then
-            return getRandomElement(wave)
-        elseif element ~= "pure" and randoomPreventionClassic(usedElements, element) then
+        -- classic mode
+        elseif not EXPRESS_MODE and ((wave < 10 and usedElements[element] == 1) or (wave < 30 and usedElements[element] == 2) or (wave >= 45 and usedElements[element] == 0) or (usedElements[element] == 3)) then
             return getRandomElement(wave)
         else
+            --print(wave, element) -- for testing
             usedElements[element] = usedElements[element] + 1
             return element
         end
     end
 end
-
+--
 -- Limit coop Random to 3 elements
-function randoomPreventionCoop(used, target)
-    if PlayerResource:GetPlayerCount() == 1 then return randoomPreventionClassic(used,target) end
+function randomPreventionCoop(used, target)
+    if PlayerResource:GetPlayerCount() == 1 then return randomPreventionClassic(used,target) end
 
     local num = 0
     for k,v in pairs(used) do
@@ -73,7 +73,7 @@ function randoomPreventionCoop(used, target)
 end
 
 -- Reduce the chance of getting 6 element random
-function randoomPreventionClassic(used, target)
+function randomPreventionClassic(used, target)
     local num = 0
     for k,v in pairs(used) do
         if v > 0 and v ~= "pure" then
@@ -130,6 +130,17 @@ function testRandom( iterCount )
         print(k.."-element random sequences: "..v.." ("..math.floor(v/iterCount*100).."%)")
     end
 end
+--testRandom(10)
+
+function testRandomRoll( iterCount)
+    print("Generating "..iterCount.." random orders:")
+    local counts = {}
+    for i = 1, iterCount do
+        local order = getRandomElementOrder()
+        DeepPrintTable(usedElements)
+    end
+end
+--testRandomRoll(5)
 
 function getRandomElementOrder()
     usedElements = {["water"] = 0, ["fire"] = 0, ["earth"] = 0, ["nature"] = 0, ["dark"] = 0, ["light"] = 0, ["pure"] = 0}
@@ -195,3 +206,4 @@ function GetRandomElementForWave(playerID, wave)
 
     return element
 end
+

@@ -16,7 +16,7 @@ function modifier_slow_adjustment:IsHidden()
 end
 
 SLOWING_MODIFIERS = {"modifier_tornado_slow", "modifier_explode_slow", "modifier_gaias_wrath_slow", "modifier_sludge_slow"}
-SLOWING_VALUES = {[1]=0.1,[2]=0.3,[3]=0.6}
+SLOWING_VALUES = {[1]=0.12,[2]=0.28,[3]=0.52}
 
 function modifier_slow_adjustment:OnCreated(params)
     self.base_ms = 300

@@ -164,7 +164,7 @@ function WaterTower:OnCreated()
     self.bounceDamage = self.ability:GetSpecialValueFor("bounce_damage_pct") * 0.01
 
     self.bounceSpeed = self.tower:GetProjectileSpeed() / 3
-    self.projectileName = "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf" ]]
+    self.projectileName = "particles/units/heroes/hero_morphling/morphling_base_attack.vpcf"]]
 end
 
 RegisterTowerClass(WaterTower, WaterTower.className)

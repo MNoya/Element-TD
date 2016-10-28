@@ -42,9 +42,9 @@
         "2"        "light"
         "3"        "nature"
     }
-    "Damage"        "8000"
-    "AttackDamageMin"        "8000"
-    "AttackDamageMax"        "8000"
+    "Damage"        "9000"
+    "AttackDamageMin"        "9000"
+    "AttackDamageMax"        "9000"
     "DamageType"        "dark"
     "ScriptClass"        "ObliterationTower"
     "TowerType"        "Normal"

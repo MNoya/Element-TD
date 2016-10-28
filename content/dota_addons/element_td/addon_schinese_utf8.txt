@@ -1,4 +1,5 @@
-﻿"lang"
+﻿
+"lang"
 {
     "Language"      "schinese"
     "Tokens"
@@ -359,7 +360,7 @@
 
         // Builder
         "DOTA_Tooltip_ability_build_water_tower"                               "建造圣水之塔"
-        "DOTA_Tooltip_ability_build_water_tower_Description"                   "在此处建造一座圣水之塔。\n对<font color='#C40000'>圣火</font>系造成200%伤害，对<font color='#8733C8'>黑暗</font>系造成50%伤害\n\n价格：<font color='#F0BA36'>175金币</font>\n元素：<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#01A2FF'>圣水</font> \n攻击力：<font color='#FFFFFF'>65</font> \n攻击距离：<font color='#FFFFFF'>900</font> \n攻击速度：<font color='#FFFFFF'>快速</font> \n作用范围：<font color='#FFFFFF'>200内全额</font>"
+        "DOTA_Tooltip_ability_build_water_tower_Description"                   "在此处建造一座圣水之塔。\n对<font color='#C40000'>圣火</font>系造成200%伤害，对<font color='#8733C8'>黑暗</font>系造成50%伤害\n\n价格：<font color='#F0BA36'>175金币</font>\n元素：<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#01A2FF'>圣水</font> \n攻击力：<font color='#FFFFFF'>70</font> \n攻击距离：<font color='#FFFFFF'>900</font> \n攻击速度：<font color='#FFFFFF'>快速</font> \n作用范围：<font color='#FFFFFF'>200内全额</font>"
         "DOTA_Tooltip_ability_build_water_tower_disabled"                      "建造圣水之塔"
         "DOTA_Tooltip_ability_build_water_tower_disabled_Description"          "在此处建造一座圣水之塔。\n对<font color='#C40000'>圣火</font>系造成200%伤害，对<font color='#8733C8'>黑暗</font>系造成50%伤害\n<font color='#F0BA36'>需要：</font><font color='#01A2FF'>圣水</font>\n\n价格：<font color='#F0BA36'>175金币</font>\n元素：<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#01A2FF'>圣水</font> \n攻击力：<font color='#FFFFFF'>65</font> \n攻击距离：<font color='#FFFFFF'>900</font> \n攻击速度：<font color='#FFFFFF'>快速</font> \n作用范围：<font color='#FFFFFF'>200内全额</font>"
 
@@ -722,10 +723,9 @@
         "DOTA_Tooltip_modifier_life_tower_full_health_Description"                        "You are at full health, dealing %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% bonus damage."  
 
         "DOTA_Tooltip_ability_hydro_tower_ability"      "洪流"
-        "DOTA_Tooltip_ability_hydro_tower_ability_Description"      "这座防御塔攻击时有机率产生洪流并对范围内的敌人造成伤害。"
+        "DOTA_Tooltip_ability_hydro_tower_ability_Description"      "Every third attack will cause a torrent, hitting creeps in a focused area of effect."
         "DOTA_Tooltip_ability_hydro_tower_ability_splash_damage"        "伤害："
         "DOTA_Tooltip_ability_hydro_tower_ability_splash_aoe"       "作用范围："
-        "DOTA_Tooltip_ability_hydro_tower_ability_chance_pct"                             "几率："
         "DOTA_Tooltip_ability_hydro_tower_ability_delay"                                  "延迟："
         "DOTA_Tooltip_modifier_hydro_delay"                                               "水力延迟"
         "DOTA_Tooltip_modifier_hydro_delay_Description"                                   ""
@@ -780,9 +780,9 @@
         "DOTA_Tooltip_modifier_tornado_slow_Description"        "被龙卷风减速，移动速度降低%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%。"
 
         "DOTA_Tooltip_ability_quake_tower_pulverize"        "碾压"
-        "DOTA_Tooltip_ability_quake_tower_pulverize_Description"        "攻击时有几率在防御塔附近造成伤害。"
+        "DOTA_Tooltip_ability_quake_tower_pulverize_Description"        "Every 5 attacks, this tower hits all creeps in range, dealing damage and an extra percentage of their current health."
         "DOTA_Tooltip_ability_quake_tower_pulverize_damage"     "伤害："
-        "DOTA_Tooltip_ability_quake_tower_pulverize_chance"     "%几率："
+        "DOTA_Tooltip_ability_quake_tower_pulverize_pct"        "%EXTRA 伤害:"
         "DOTA_Tooltip_ability_quake_tower_pulverize_aoe"        "作用范围："
 
         "DOTA_Tooltip_ability_enchantment_tower_faerie_fire"        "精灵之火"
@@ -795,7 +795,7 @@
         "DOTA_Tooltip_modifier_faerie_fire_Description"     "被精灵之火灼伤，受到额外伤害。"
                 
         "DOTA_Tooltip_ability_laser_tower_laser"        "激光"
-        "DOTA_Tooltip_ability_laser_tower_laser_Description"        "使用激光进行攻击，造成大量伤害。目标400范围内的每个小兵都会使目标所受伤害下降，最低降至50%%。"
+        "DOTA_Tooltip_ability_laser_tower_laser_Description"        "使用激光进行攻击，造成大量伤害。目标100范围内的每个小兵都会使目标所受伤害下降，最低降至50%%。"
         "DOTA_Tooltip_ability_laser_tower_laser_damage_reduction"       "%每个小兵降低伤害："
         "DOTA_Tooltip_ability_laser_tower_laser_aoe"                                      "伤害降低范围："
         "DOTA_Tooltip_ability_laser_tower_laser_damage_reduction_cap"                     "伤害降低上限："
@@ -948,16 +948,16 @@
         // Water
         "DOTA_Tooltip_ability_item_upgrade_to_focused_water_tower"      "专注的圣水之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_water_tower_disabled"     "专注的圣水之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_focused_water_tower_Description"      "将这座防御塔升级为专注的圣水之塔.\n\n价格：<font color='#F0BA36'>575金币</font>\n元素：<font color='#01A2FF'>圣水</font>\n伤害类型：<font color='#01A2FF'>圣水</font>\n攻击力：<font color='#FFFFFF'>455</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>200内全额</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_focused_water_tower_Description"      "将这座防御塔升级为专注的圣水之塔.\n\n价格：<font color='#F0BA36'>575金币</font>\n元素：<font color='#01A2FF'>圣水</font>\n伤害类型：<font color='#01A2FF'>圣水</font>\n攻击力：<font color='#FFFFFF'>490</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>200内全额</font>"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_water_tower_disabled_Description"     "将这座防御塔升级为专注的圣水之塔.\n<font color='#F0BA36'>需要：</font><font color='#01A2FF'>圣水2</font> \n\n价格：<font color='#F0BA36'>575金币</font>\n元素：<font color='#01A2FF'>圣水</font>\n伤害类型：<font color='#01A2FF'>圣水</font>\n攻击力：<font color='#FFFFFF'>455</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>200内全额</font>"
 
         "DOTA_Tooltip_ability_item_upgrade_to_refined_water_tower"      "精致的圣水之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_refined_water_tower_disabled"     "精致的圣水之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_refined_water_tower_Description"      "将这座防御塔升级为精致的圣水之塔.\n\n价格：<font color='#F0BA36'>2250金币</font>\n元素：<font color='#01A2FF'>圣水</font>\n伤害类型：<font color='#01A2FF'>圣水</font>\n攻击力：<font color='#FFFFFF'>3200</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>200内全额</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_refined_water_tower_Description"      "将这座防御塔升级为精致的圣水之塔.\n\n价格：<font color='#F0BA36'>2250金币</font>\n元素：<font color='#01A2FF'>圣水</font>\n伤害类型：<font color='#01A2FF'>圣水</font>\n攻击力：<font color='#FFFFFF'>3300</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>200内全额</font>"
         "DOTA_Tooltip_ability_item_upgrade_to_refined_water_tower_disabled_Description"     "将这座防御塔升级为精致的圣水之塔.\n<font color='#F0BA36'>需要：</font><font color='#01A2FF'>圣水3</font> \n\n价格：<font color='#F0BA36'>2250金币</font>\n元素：<font color='#01A2FF'>圣水</font>\n伤害类型：<font color='#01A2FF'>圣水</font>\n攻击力：<font color='#FFFFFF'>3200</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>200内全额</font>"
 
         "DOTA_Tooltip_ability_item_upgrade_to_pure_water_tower"                           "升级为纯正的圣水之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_pure_water_tower_Description"               "将这座防御塔升级为纯正的圣水之塔.\n\n价格：<font color='#F0BA36'>10000金币</font> and <font color='#00BFFF'>1个纯正精华</font>\n元素：<font color='#01A2FF'>圣水</font>\n伤害类型：<font color='#01A2FF'>圣水</font>\n攻击力：<font color='#FFFFFF'>32000</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>200内全额</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_pure_water_tower_Description"               "将这座防御塔升级为纯正的圣水之塔.\n\n价格：<font color='#F0BA36'>10000金币</font> and <font color='#00BFFF'>1个纯正精华</font>\n元素：<font color='#01A2FF'>圣水</font>\n伤害类型：<font color='#01A2FF'>圣水</font>\n攻击力：<font color='#FFFFFF'>33000</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>200内全额</font>"
 
 
 
@@ -1289,18 +1289,18 @@
         // Flamethrower (Fire + Dark + Earth)
         "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower"       "投火塔"
         "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_disabled"      "投火塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_Description"       "将这座防御塔升级为投火塔.\n\n价格：<font color='#F0BA36'>900金币</font>\n元素：<font color='#C40000'>圣火</font>+<font color='#6C05B1'>黑暗</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>360</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>\n技能：每次攻击对目标区域的小兵施放粘性燃油。浸油的小兵死亡后会对周围造成爆炸伤害，伤害值与燃油层数有关。"
-        "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_disabled_Description"      "将这座防御塔升级为投火塔.\n<font color='#F0BA36'>需要：</font><font color='#C40000'>圣火</font>+<font color='#6C05B1'>黑暗</font>+<font color='#D4880F'>大地</font> \n\n价格：<font color='#F0BA36'>900金币</font>\n元素：<font color='#C40000'>圣火</font>+<font color='#6C05B1'>黑暗</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>360</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>\n技能：每次攻击对目标区域的小兵施放粘性燃油。浸油的小兵死亡后会对周围造成爆炸伤害，伤害值与燃油层数有关。"
+        "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_Description"       "将这座防御塔升级为投火塔.\n\n价格：<font color='#F0BA36'>900金币</font>\n元素：<font color='#C40000'>圣火</font>+<font color='#6C05B1'>黑暗</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>400</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>\n技能：每次攻击对目标区域的小兵施放粘性燃油。浸油的小兵死亡后会对周围造成爆炸伤害，伤害值与燃油层数有关。"
+        "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_disabled_Description"      "将这座防御塔升级为投火塔.\n<font color='#F0BA36'>需要：</font><font color='#C40000'>圣火</font>+<font color='#6C05B1'>黑暗</font>+<font color='#D4880F'>大地</font> \n\n价格：<font color='#F0BA36'>900金币</font>\n元素：<font color='#C40000'>圣火</font>+<font color='#6C05B1'>黑暗</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>400</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>\n技能：每次攻击对目标区域的小兵施放粘性燃油。浸油的小兵死亡后会对周围造成爆炸伤害，伤害值与燃油层数有关。"
 
         "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_2"     "喷火塔"
         "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_2_disabled"        "喷火塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_2_Description"     "将这座防御塔升级为喷火塔.\n\n价格：<font color='#F0BA36'>3500金币</font>\n元素：<font color='#C40000'>圣火</font>+<font color='#6C05B1'>黑暗</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>1800</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>\n技能：每次攻击对目标区域的小兵施放粘性燃油。浸油的小兵死亡后会对周围造成爆炸伤害，伤害值与燃油层数有关。"
-        "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_2_disabled_Description"        "将这座防御塔升级为喷火塔.\n<font color='#F0BA36'>需要：</font><font color='#C40000'>圣火2</font>+<font color='#6C05B1'>黑暗2</font>+<font color='#D4880F'>大地2</font> \n\n价格：<font color='#F0BA36'>3500金币</font>\n元素：<font color='#C40000'>圣火</font>+<font color='#6C05B1'>黑暗</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>1800</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>\n技能：每次攻击对目标区域的小兵施放粘性燃油。浸油的小兵死亡后会对周围造成爆炸伤害，伤害值与燃油层数有关。"
+        "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_2_Description"     "将这座防御塔升级为喷火塔.\n\n价格：<font color='#F0BA36'>3500金币</font>\n元素：<font color='#C40000'>圣火</font>+<font color='#6C05B1'>黑暗</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>2000</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>\n技能：每次攻击对目标区域的小兵施放粘性燃油。浸油的小兵死亡后会对周围造成爆炸伤害，伤害值与燃油层数有关。"
+        "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_2_disabled_Description"        "将这座防御塔升级为喷火塔.\n<font color='#F0BA36'>需要：</font><font color='#C40000'>圣火2</font>+<font color='#6C05B1'>黑暗2</font>+<font color='#D4880F'>大地2</font> \n\n价格：<font color='#F0BA36'>3500金币</font>\n元素：<font color='#C40000'>圣火</font>+<font color='#6C05B1'>黑暗</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>2000</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>\n技能：每次攻击对目标区域的小兵施放粘性燃油。浸油的小兵死亡后会对周围造成爆炸伤害，伤害值与燃油层数有关。"
 
         "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_3"     "喷火塔"
         "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_3_disabled"        "喷火塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_3_Description"     "将这座防御塔升级为喷火塔.\n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#C40000'>圣火</font>+<font color='#6C05B1'>黑暗</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>6000</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>\n技能：每次攻击对目标区域的小兵施放粘性燃油。浸油的小兵死亡后会对周围造成爆炸伤害，伤害值与燃油层数有关。"
-        "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_3_disabled_Description"        "将这座防御塔升级为喷火塔.\n<font color='#F0BA36'>需要：</font><font color='#C40000'>圣火2</font>+<font color='#6C05B1'>黑暗2</font>+<font color='#D4880F'>大地2</font> \n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#C40000'>圣火</font>+<font color='#6C05B1'>黑暗</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>6000</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>\n技能：每次攻击对目标区域的小兵施放粘性燃油。浸油的小兵死亡后会对周围造成爆炸伤害，伤害值与燃油层数有关。"
+        "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_3_Description"     "将这座防御塔升级为喷火塔.\n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#C40000'>圣火</font>+<font color='#6C05B1'>黑暗</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>8000</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>\n技能：每次攻击对目标区域的小兵施放粘性燃油。浸油的小兵死亡后会对周围造成爆炸伤害，伤害值与燃油层数有关。"
+        "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_3_disabled_Description"        "将这座防御塔升级为喷火塔.\n<font color='#F0BA36'>需要：</font><font color='#C40000'>圣火2</font>+<font color='#6C05B1'>黑暗2</font>+<font color='#D4880F'>大地2</font> \n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#C40000'>圣火</font>+<font color='#6C05B1'>黑暗</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>8000</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>\n技能：每次攻击对目标区域的小兵施放粘性燃油。浸油的小兵死亡后会对周围造成爆炸伤害，伤害值与燃油层数有关。"
 
         "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_damage"                  "每层伤害："
         "DOTA_Tooltip_ability_item_upgrade_to_flamethrower_tower_2_damage"                "每层伤害："
@@ -1638,12 +1638,18 @@
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_Description"        "将这座防御塔升级为撼地之塔.\n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#D4880F'>大地</font>+<font color='#C40000'>圣火</font>+<font color='#00C400'>自然</font> \n伤害类型：<font color='#D4880F'>大地</font>\n攻击力：<font color='#FFFFFF'>27000</font>\n攻击距离：<font color='#FFFFFF'>550</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能：攻击时有几率在防御塔附近造成伤害。"
         "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_disabled_Description"       "将这座防御塔升级为撼地之塔.\n<font color='#F0BA36'>需要：</font><font color='#D4880F'>大地2</font>+<font color='#C40000'>圣火2</font>+<font color='#00C400'>自然2</font> \n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#D4880F'>大地</font>+<font color='#C40000'>圣火</font>+<font color='#00C400'>自然</font> \n伤害类型：<font color='#D4880F'>大地</font>\n攻击力：<font color='#FFFFFF'>27000</font>\n攻击距离：<font color='#FFFFFF'>550</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能：攻击时有几率在防御塔附近造成伤害。"
 
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_damage"                         "伤害："
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_damage"                       "伤害："
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_disabled_damage"              "伤害："
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_damage"                       "伤害："
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_disabled_damage"              "伤害："
-        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_disabled_damage"                "伤害："
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_damage"                         "伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_pct"                         "%EXTRA 伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_damage"                       "伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_pct"                       "%EXTRA 伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_disabled_damage"              "伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_2_disabled_pct"              "%EXTRA 伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_damage"                       "伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_pct"                       "%EXTRA 伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_disabled_damage"              "伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_3_disabled_pct"              "%EXTRA 伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_disabled_damage"                "伤害:"
+        "DOTA_Tooltip_ability_item_upgrade_to_quake_tower_disabled_pct"                "%EXTRA 伤害:"
 
 
 
@@ -1906,18 +1912,18 @@
         // Runic (Dark + Fire + Light)
         "DOTA_Tooltip_ability_item_upgrade_to_runic_tower"      "符文之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_runic_tower_disabled"     "符文之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_runic_tower_Description"      "将这座防御塔升级为符文之塔.\n\n价格：<font color='#F0BA36'>900金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>1300</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：使防御塔攻击目标附近范围内的所有小兵，持续一段时间。"
-        "DOTA_Tooltip_ability_item_upgrade_to_runic_tower_disabled_Description"     "将这座防御塔升级为符文之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font>+<font color='#E6E600'>光明</font> \n\n价格：<font color='#F0BA36'>900金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>1300</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：使防御塔攻击目标附近范围内的所有小兵，持续一段时间。"
+        "DOTA_Tooltip_ability_item_upgrade_to_runic_tower_Description"      "将这座防御塔升级为符文之塔.\n\n价格：<font color='#F0BA36'>900金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>1500</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：使防御塔攻击目标附近范围内的所有小兵，持续一段时间。"
+        "DOTA_Tooltip_ability_item_upgrade_to_runic_tower_disabled_Description"     "将这座防御塔升级为符文之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font>+<font color='#E6E600'>光明</font> \n\n价格：<font color='#F0BA36'>900金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>1500</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：使防御塔攻击目标附近范围内的所有小兵，持续一段时间。"
 
         "DOTA_Tooltip_ability_item_upgrade_to_runic_tower_2"        "玄学之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_runic_tower_2_disabled"       "玄学之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_runic_tower_2_Description"        "将这座防御塔升级为玄学之塔.\n\n价格：<font color='#F0BA36'>3500金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>6500</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：使防御塔攻击目标附近范围内的所有小兵，持续一段时间。"
-        "DOTA_Tooltip_ability_item_upgrade_to_runic_tower_2_disabled_Description"       "将这座防御塔升级为玄学之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗2</font>+<font color='#C40000'>圣火2</font>+<font color='#E6E600'>光明2</font> \n\n价格：<font color='#F0BA36'>3500金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>6500</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：使防御塔攻击目标附近范围内的所有小兵，持续一段时间。"
+        "DOTA_Tooltip_ability_item_upgrade_to_runic_tower_2_Description"        "将这座防御塔升级为玄学之塔.\n\n价格：<font color='#F0BA36'>3500金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>7500</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：使防御塔攻击目标附近范围内的所有小兵，持续一段时间。"
+        "DOTA_Tooltip_ability_item_upgrade_to_runic_tower_2_disabled_Description"       "将这座防御塔升级为玄学之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗2</font>+<font color='#C40000'>圣火2</font>+<font color='#E6E600'>光明2</font> \n\n价格：<font color='#F0BA36'>3500金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>7500</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：使防御塔攻击目标附近范围内的所有小兵，持续一段时间。"
 
         "DOTA_Tooltip_ability_item_upgrade_to_runic_tower_3"        "玄学之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_runic_tower_3_disabled"       "玄学之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_runic_tower_3_Description"        "将这座防御塔升级为玄学之塔.\n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>20000</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：使防御塔攻击目标附近范围内的所有小兵，持续一段时间。"
-        "DOTA_Tooltip_ability_item_upgrade_to_runic_tower_3_disabled_Description"       "将这座防御塔升级为玄学之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗2</font>+<font color='#C40000'>圣火2</font>+<font color='#E6E600'>光明2</font> \n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>20000</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：使防御塔攻击目标附近范围内的所有小兵，持续一段时间。"
+        "DOTA_Tooltip_ability_item_upgrade_to_runic_tower_3_Description"        "将这座防御塔升级为玄学之塔.\n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>22500</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：使防御塔攻击目标附近范围内的所有小兵，持续一段时间。"
+        "DOTA_Tooltip_ability_item_upgrade_to_runic_tower_3_disabled_Description"       "将这座防御塔升级为玄学之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗2</font>+<font color='#C40000'>圣火2</font>+<font color='#E6E600'>光明2</font> \n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>22500</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：使防御塔攻击目标附近范围内的所有小兵，持续一段时间。"
 
 
 
@@ -1949,17 +1955,17 @@
         // Obliteration (Dark + Light + Nature)
         "DOTA_Tooltip_ability_item_upgrade_to_obliteration_tower"       "消亡之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_obliteration_tower_disabled"      "消亡之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_obliteration_tower_Description"       "将这座防御塔升级为消亡之塔.\n\n价格：<font color='#F0BA36'>900金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#E6E600'>光明</font>+<font color='#00C400'>自然</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>1600</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n技能：攻击弹道会在行程中分裂，击中目标时爆炸"
-        "DOTA_Tooltip_ability_item_upgrade_to_obliteration_tower_disabled_Description"      "将这座防御塔升级为消亡之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗</font>+<font color='#E6E600'>光明</font>+<font color='#00C400'>自然</font> \n\n价格：<font color='#F0BA36'>900金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#E6E600'>光明</font>+<font color='#00C400'>自然</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>1600</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n技能：攻击弹道会在行程中分裂，击中目标时爆炸"
+        "DOTA_Tooltip_ability_item_upgrade_to_obliteration_tower_Description"       "将这座防御塔升级为消亡之塔.\n\n价格：<font color='#F0BA36'>900金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#E6E600'>光明</font>+<font color='#00C400'>自然</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>1800</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n技能：攻击弹道会在行程中分裂，击中目标时爆炸"
+        "DOTA_Tooltip_ability_item_upgrade_to_obliteration_tower_disabled_Description"      "将这座防御塔升级为消亡之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗</font>+<font color='#E6E600'>光明</font>+<font color='#00C400'>自然</font> \n\n价格：<font color='#F0BA36'>900金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#E6E600'>光明</font>+<font color='#00C400'>自然</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>1800</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n技能：攻击弹道会在行程中分裂，击中目标时爆炸"
 
         "DOTA_Tooltip_ability_item_upgrade_to_obliteration_tower_2"     "灭绝之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_obliteration_tower_2_disabled"        "灭绝之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_obliteration_tower_2_Description"     "将这座防御塔升级为灭绝之塔.\n\n价格：<font color='#F0BA36'>3500金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#E6E600'>光明</font>+<font color='#00C400'>自然</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>8000</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n技能：攻击弹道会在行程中分裂，击中目标时爆炸"
-        "DOTA_Tooltip_ability_item_upgrade_to_obliteration_tower_2_disabled_Description"        "将这座防御塔升级为灭绝之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗2</font>+<font color='#E6E600'>光明2</font>+<font color='#00C400'>自然2</font> \n\n价格：<font color='#F0BA36'>3500金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#E6E600'>光明</font>+<font color='#00C400'>自然</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>8000</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n技能：攻击弹道会在行程中分裂，击中目标时爆炸"
+        "DOTA_Tooltip_ability_item_upgrade_to_obliteration_tower_2_Description"     "将这座防御塔升级为灭绝之塔.\n\n价格：<font color='#F0BA36'>3500金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#E6E600'>光明</font>+<font color='#00C400'>自然</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>9000</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n技能：攻击弹道会在行程中分裂，击中目标时爆炸"
+        "DOTA_Tooltip_ability_item_upgrade_to_obliteration_tower_2_disabled_Description"        "将这座防御塔升级为灭绝之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗2</font>+<font color='#E6E600'>光明2</font>+<font color='#00C400'>自然2</font> \n\n价格：<font color='#F0BA36'>3500金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#E6E600'>光明</font>+<font color='#00C400'>自然</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>9000</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n技能：攻击弹道会在行程中分裂，击中目标时爆炸"
         
         "DOTA_Tooltip_ability_item_upgrade_to_obliteration_tower_3"     "灭绝之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_obliteration_tower_3_disabled"        "灭绝之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_obliteration_tower_3_Description"     "将这座防御塔升级为灭绝之塔.\n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#E6E600'>光明</font>+<font color='#00C400'>自然</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>26000</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n技能：攻击弹道会在行程中分裂，击中目标时爆炸"
-        "DOTA_Tooltip_ability_item_upgrade_to_obliteration_tower_3_disabled_Description"        "将这座防御塔升级为灭绝之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗2</font>+<font color='#E6E600'>光明2</font>+<font color='#00C400'>自然2</font> \n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#E6E600'>光明</font>+<font color='#00C400'>自然</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>26000</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n技能：攻击弹道会在行程中分裂，击中目标时爆炸"
+        "DOTA_Tooltip_ability_item_upgrade_to_obliteration_tower_3_Description"     "将这座防御塔升级为灭绝之塔.\n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#E6E600'>光明</font>+<font color='#00C400'>自然</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>30000</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n技能：攻击弹道会在行程中分裂，击中目标时爆炸"
+        "DOTA_Tooltip_ability_item_upgrade_to_obliteration_tower_3_disabled_Description"        "将这座防御塔升级为灭绝之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗2</font>+<font color='#E6E600'>光明2</font>+<font color='#00C400'>自然2</font> \n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#E6E600'>光明</font>+<font color='#00C400'>自然</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>30000</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n技能：攻击弹道会在行程中分裂，击中目标时爆炸"
     }
 }
