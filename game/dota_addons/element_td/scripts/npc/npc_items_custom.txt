@@ -2415,10 +2415,10 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"800 4000 20000"
+				"damage"		"800 4000 20000"
 			}
 		}
-		"AbilityCastRange"              "900"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_hydro_tower_2"
 	{
@@ -2454,10 +2454,10 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"800 4000 20000"
+				"damage"		"800 4000 20000"
 			}
 		}
-		"AbilityCastRange"              "900"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_hydro_tower_2_disabled"
 	{
@@ -2483,10 +2483,10 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"800 4000 20000"
+				"damage"		"800 4000 20000"
 			}
 		}
-		"AbilityCastRange"              "900"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_hydro_tower_3"
 	{
@@ -2522,10 +2522,10 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"800 4000 20000"
+				"damage"		"800 4000 20000"
 			}
 		}
-		"AbilityCastRange"              "900"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_hydro_tower_3_disabled"
 	{
@@ -2551,10 +2551,10 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"800 4000 20000"
+				"damage"		"800 4000 20000"
 			}
 		}
-		"AbilityCastRange"              "900"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_hydro_tower_disabled"
 	{
@@ -2581,10 +2581,10 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"800 4000 20000"
+				"damage"		"800 4000 20000"
 			}
 		}
-		"AbilityCastRange"              "900"
+		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_ice_tower"
 	{

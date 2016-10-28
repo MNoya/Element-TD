@@ -32,7 +32,7 @@ end
 
 function MossTower:OnCreated()
     AddAbility(self.tower, "moss_tower_spore")
-    self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_HIGHEST_HP}) 
+    self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_HIGHEST_HP, keep_target=true}) 
 end
 
 RegisterTowerClass(MossTower, MossTower.className)    
