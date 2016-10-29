@@ -108,7 +108,6 @@ function EphemeralTower:OnCreated()
     self.baseDamage = self.tower:GetAverageTrueAttackDamage(target)
     self.maxDamageReduction = GetAbilitySpecialValue("ephemeral_tower_phasing", "max_reduction")[self.tower:GetLevel()]
     self.damageReductionPerAttackPercent = math.abs(GetAbilitySpecialValue("ephemeral_tower_phasing", "damage_reduction"))
-    print("xxx",self.tower:GetLevel(),"yyy",self.maxDamageReduction,"zzz",self.damageReductionPerAttackPercent)
     self.maxStacks = math.floor(self.maxDamageReduction/self.damageReductionPerAttackPercent)
 
     self.current_stacks = 0
