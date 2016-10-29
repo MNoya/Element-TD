@@ -110,12 +110,12 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aoe_end"				"450"
+			"aoe_end"				"50"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"distance"				"550"
+			"distance"				"1150"
 		}
 		"05"
 		{
