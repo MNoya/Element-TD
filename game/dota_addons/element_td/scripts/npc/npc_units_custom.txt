@@ -7017,11 +7017,11 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "490"
-	    "AttackDamageMax"           "490"
-	    "Damage"                    "490"    
-	    "AOE_Full"                  "200"
-	    "AOE_Half"                  "200"  
+	    "AttackDamageMin"           "700"
+	    "AttackDamageMax"           "700"
+	    "Damage"                    "700"    
+	    "AOE_Full"                  "100"
+	    "AOE_Half"                  "200"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
@@ -7108,11 +7108,11 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "33000"
-	    "AttackDamageMax"           "33000"
-	    "Damage"                    "33000"
-	    "AOE_Full"                  "250"
-	    "AOE_Half"                  "250"
+	    "AttackDamageMin"           "50000"
+	    "AttackDamageMax"           "50000"
+	    "Damage"                    "50000"
+	    "AOE_Full"                  "100"
+	    "AOE_Half"                  "200"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
@@ -7196,10 +7196,10 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "3300"
-	    "AttackDamageMax"           "3300"
-	    "Damage"                    "3300"
-	    "AOE_Full"                  "200"
+	    "AttackDamageMin"           "5000"
+	    "AttackDamageMax"           "5000"
+	    "Damage"                    "5000"
+	    "AOE_Full"                  "100"
 	    "AOE_Half"                  "200"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
@@ -7286,11 +7286,11 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "70"
-	    "AttackDamageMax"           "70"
-	    "Damage"                    "70"    
-	    "AOE_Full"                  "200"
-	    "AOE_Half"                  "200"  
+	    "AttackDamageMin"           "100"
+	    "AttackDamageMax"           "100"
+	    "Damage"                    "120"    
+	    "AOE_Full"                  "100"
+	    "AOE_Half"                  "200"
 	    "AttackRange"               "900"
 	    "AttackAcquisitionRange"    "900"
 	    "AttackRate"                "0.66"
