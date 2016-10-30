@@ -4445,12 +4445,12 @@
 	         "01"
 	             {
 	                 "var_type"              "FIELD_FLOAT"
-	                 "damage_per_second"     "50 250 1250"
+	                 "damage_per_second"     "90 450 2250"
 	             }
 	             "02"
 	             {
 	                 "var_type"              "FIELD_FLOAT"
-	                 "duration"              "20.0"
+	                 "duration"              "10.0"
 	             }
 	    }
 	}
@@ -5117,7 +5117,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_creep"		"25 125 625"
+				"damage_per_creep"		"30 150 750"
 			}
 			"03"
 			{
