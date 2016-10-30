@@ -5,122 +5,31 @@
 {
 	// General
 	//-------------------------------------------------------------------------------------------------------------
+    "BaseClass"                     "ability_datadriven"                                            
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "towers/ice"
+    "MaxLevel"                      "3"
 
-	"BaseClass"						"ability_datadriven"											
-	"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-	"AbilityTextureName"			"towers/ice"
-	"MaxLevel"						"3"	
-	"AbilityCastPoint"				"0.0"
-	"AbilityCastRange"      		"1150"
-
-    "AOERadius"             		"200"
-
- 	"AbilityMultiOrder"     		"1"
-
-	"OnSpellStart"
+    "Modifiers"
     {
-        "RunScript"
+        "modifier_ice_tower_stun"
         {
-            "ScriptFile"    "mechanics/ground_attacks.lua"
-            "Function"      "AttackGround"
-            "Target"        "POINT"
+            "IsHidden"           "1"
+            "IsDebuff"           "1"
+        
+            "States"
+            {
+                "MODIFIER_STATE_STUNNED"        "MODIFIER_STATE_VALUE_ENABLED"
+            }
         }
     }
 
-	"Modifiers"
-	{
-		"modifier_ice_blast_passive"
-		{
-			"Passive"	"1"
-			"IsHidden"	"1"
-			"OnAttack"
-			{
-				"RunScript"
-				{
-					"ScriptFile"		"towers/towerevents.lua"
-					"Function"			"TriggerEvent"
-					"Event"				"OnAttack"
-				}
-			}
-		}
-
-		"modifier_attacking_ground"
+    "AbilitySpecial"
+    {
+        "01"
         {
-            "IsHidden"          "1"
-    
-            "OnOrder"
-            {
-                "RemoveModifier"
-                {
-                    "ModifierName"  "modifier_attacking_ground"
-                    "Target"        "CASTER"
-                }
-                "RunScript"
-                {
-                    "ScriptFile"    "mechanics/ground_attacks.lua"
-                    "Function"      "StopAttackGround"
-                }
-            }
-
-            // Attacking ground is a fake attack
-            "OnAttack"
-            {
-                "RemoveModifier"
-                {
-                    "ModifierName"  "modifier_attacking_ground"
-                    "Target"        "CASTER"
-                }
-                "RunScript"
-                {
-                    "ScriptFile"    "mechanics/ground_attacks.lua"
-                    "Function"      "StopAttackGround"
-                }
-            }
-
-            "Properties"
-            {
-                "MODIFIER_PROPERTY_DISABLE_AUTOATTACK"  "1"
-            }
+            "var_type"            "FIELD_FLOAT"
+            "ministun_duration"   "0.15 0.2 0.3"
         }
-	}
-
-	"OnProjectileHitUnit"
-	{
-		"DeleteOnHit"	"0"
-		"RunScript"
-		{
-			"ScriptFile"		"towers/towerevents.lua"
-			"Function"			"TriggerEvent"
-			"Event"				"OnProjectileHit"
-		}
-	}
-
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"360 1800 9000"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"aoe_start"				"450"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"aoe_end"				"50"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"distance"				"1150"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"projectile_speed"		"1000"
-		}
-	}
+    }
 }

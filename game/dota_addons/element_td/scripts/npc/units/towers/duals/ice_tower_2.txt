@@ -38,17 +38,22 @@
         "1"        "water"
         "2"        "light"
     }
-    "Damage"        "0"
+    "Damage"        "2500"
+    "AttackDamageMin"        "2500"
+    "AttackDamageMax"        "2500"
+    "AOE_Full"                  "150"
+    "AOE_Half"                  "300"
     "DamageType"        "light"
     "ScriptClass"        "IceTower"
     "TowerType"        "Normal"
     "BuffPriority"              "7"
     "HasAbilityDesc"        "1"
-    "AttackRange"        "550"
-    "AttackAcquisitionRange"        "550"
+    "AttackRange"        "700"
+    "AttackAcquisitionRange"        "700"
     "AttackRate"        "1.5"
-    "ProjectileModel"        ""
-    "ProjectileSpeed"        "900"
+    "ProjectileModel"           "particles/units/heroes/hero_crystalmaiden/maiden_base_attack.vpcf"
+
+    "ProjectileSpeed"        "2500"
     "Model"        "models/heroes/crystal_maiden/crystal_maiden.vmdl"
     "ModelScale"        "0.9"
     "ModelRotation"             "90"
@@ -64,8 +69,6 @@
         "Count"        "1"
         "1"        "ice_tower_3"
     }
-    "AttackDamageMin"        "0"
-    "AttackDamageMax"        "0"
     "Creature"
     {
        "AttachWearables" // Regalia of the Crystalline Queen Set + Icewrack

@@ -1,0 +1,120 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 18
+	m_flConstantRadius = 250.0
+	m_ConstantColor = [ 147, 190, 255, 255 ]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderRopes"
+			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
+			m_bAdditive = true
+			m_flOverbrightFactor = 6.0
+			m_flAddSelfAmount = 2.0
+			m_bSaturateColorPreAlphaBlend = false
+			m_hTexture = resource:"materials/particle/beam_blue_energy_01.vtex"
+			m_flRadiusScale = 0.5
+			m_flFinalTextureScaleU = -1.0
+			m_flFinalTextureOffsetU = 1.0
+			m_flTextureVWorldSize = 200.0
+			m_flTextureVScrollRate = -20.0
+			m_nMaxTesselation = 3
+			m_nMinTesselation = 3
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+		},
+		{
+			_class = "C_OP_Decay"
+			m_flOpEndFadeInTime = 0.5
+			m_flOpStartFadeInTime = 0.5
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flBias = 0.35
+			m_flEndScale = 0.0
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+			m_flFadeInTime = 0.2
+		},
+		{
+			_class = "C_OP_RemapDirectionToCPToVector"
+			m_nFieldOutput = 21
+			m_bNormalize = true
+			m_vecOffsetAxis = [ 0.0, 0.0, 1.0 ]
+			m_flOffsetRot = -85.0
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_flFadeStartTime = 0.3
+			m_ColorFade = [ 39, 120, 146, 255 ]
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMax = 0.7
+			m_fLifetimeMin = 0.7
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_nInputMax = 20
+			m_flOutputMax = 100.0
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_nInputMax = 5
+			m_nFieldOutput = 7
+			m_flOutputMax = 0.75
+			m_bActiveRange = true
+			m_bScaleInitialRange = true
+		},
+		{
+			_class = "C_INIT_RingWave"
+			m_flRoll = 180.0
+			m_flInitialRadius = 140.0
+			m_bEvenDistribution = true
+			m_flParticlesPerOrbit = 15.0
+			m_flYaw = 190.0
+			m_flInitialSpeedMin = 90.0
+			m_flInitialSpeedMax = 90.0
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 14.0, 0.0, 60.0 ]
+			m_OffsetMax = [ 14.0, 0.0, 60.0 ]
+			m_bLocalCoords = true
+		},
+		{
+			_class = "C_INIT_PositionWarp"
+			m_flWarpTime = 8.0
+			m_vecWarpMax = [ 0.4, 0.35, 0.8 ]
+			m_bUseCount = true
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_nFieldOutput = 7
+			m_flOutputMin = 1.0
+			m_flOutputMax = 0.0
+			m_nInputMax = 18
+			m_bScaleInitialRange = true
+			m_nInputMin = 5
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 350.0
+			m_flEmissionDuration = 0.12
+		},
+	]
+}
