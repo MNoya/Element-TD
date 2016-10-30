@@ -42,7 +42,7 @@ function IceTower:OnCreated()
 	self.halfAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"));
     self.ability = AddAbility(self.tower, "ice_tower_ice_blast", self.tower:GetLevel())
     self.ministun_duration = self.ability:GetSpecialValueFor("ministun_duration")
-    self.threshold_duration = 0.9
+    self.threshold_duration = 1.2
 end
 
 --[[ Removed in 1.15
