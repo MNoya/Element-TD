@@ -32,9 +32,9 @@
 	{
 		"01"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"360 1800 9000"
+			"var_type"				"FIELD_FLOAT"
+                        "ministun_duration"   "0.15 0.2 0.3"
 		}
     }
-    "AbilityCastRange"              "550"
+    "AbilityCastRange"              "700"
 }

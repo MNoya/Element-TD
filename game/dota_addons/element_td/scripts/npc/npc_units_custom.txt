@@ -13329,7 +13329,7 @@
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "0.66"
 	    "ProjectileModel"        "particles/custom/towers/haste/attack.vpcf"
-	    "ProjectileSpeed"        "1500"
+	    "ProjectileSpeed"        "2000"
 	
 	    "Model"             "models/heroes/troll_warlord/troll_warlord.vmdl"
 	    "ModelScale"        "1.1"
@@ -13418,7 +13418,7 @@
 	    "AttackAcquisitionRange"        "900"
 	    "AttackRate"        "0.66"
 	    "ProjectileModel"        "particles/custom/towers/haste/attack.vpcf"
-	    "ProjectileSpeed"        "2000"
+	    "ProjectileSpeed"        "4000"
 	
 	    "Model"             "models/heroes/troll_warlord/troll_warlord.vmdl"
 	    "ModelScale"        "1.2"

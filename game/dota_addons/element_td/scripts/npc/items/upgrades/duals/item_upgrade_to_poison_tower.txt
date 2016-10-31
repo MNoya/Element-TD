@@ -34,12 +34,12 @@
          "01"
              {
                  "var_type"              "FIELD_FLOAT"
-                 "damage_per_second"     "50 250 1250"
+                 "damage_per_second"     "80 400 2000"
              }
              "02"
              {
                  "var_type"              "FIELD_FLOAT"
-                 "duration"              "20.0"
+                 "duration"              "10.0"
              }
     }
 	"AbilityCastRange"              "900"

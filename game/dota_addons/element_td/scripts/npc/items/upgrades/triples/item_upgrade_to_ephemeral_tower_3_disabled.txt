@@ -19,5 +19,14 @@
 		"water"		"3"
 	}
 	"ItemBaseLevel" "3"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"max_reduction"		"60 40 20"
+		}
+	}
 	"AbilityCastRange"              "900"
 }
