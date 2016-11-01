@@ -672,7 +672,7 @@
         "DOTA_Tooltip_ability_blacksmith_tower_fire_up_duration"        "DURATION:"
         
         "DOTA_Tooltip_ability_moss_tower_spore"     "Spore"
-        "DOTA_Tooltip_ability_moss_tower_spore_Description"     "Each attack deals bonus damage based on the percentage of the target's remaining health. For every 2% of health that the target has, the attack deals 1% more damage.\n\n<font color='#FFFFFF'>ATTACK TARGETING:</font> Highest HP"
+        "DOTA_Tooltip_ability_moss_tower_spore_Description"     "Each attack deals bonus damage based on the percentage of the target's remaining health. For every 1% of health that the target has, the attack deals 1% more damage.\n\n<font color='#FFFFFF'>ATTACK TARGETING:</font> Highest HP"
         
         "DOTA_Tooltip_ability_quark_tower_quantum_beam"     "Quantum Beam"
         "DOTA_Tooltip_ability_quark_tower_quantum_beam_Description"     "Each attack on the same unit gains bonus damage. Damage is halved upon attacking a different unit.\n\n<font color='#FFFFFF'>ATTACK TARGETING:</font> Highest HP"
@@ -738,12 +738,8 @@
         "DOTA_Tooltip_ability_gunpowder_tower_shrapnade_splash_aoe"     "EXPLOSION AOE:"
         
         "DOTA_Tooltip_ability_ice_tower_ice_blast"      "Ice Blast"
-        "DOTA_Tooltip_ability_ice_tower_ice_blast_Description"      "Each attack fires shards of ice in a short but wide area.\n\n<font color='#90EE90'>Cast this to continously attack a selected area. Attack a creep or Stop to cancel it.</font>"
-        "DOTA_Tooltip_ability_ice_tower_ice_blast_damage"       "DAMAGE:"
-        "DOTA_Tooltip_ability_ice_tower_ice_blast_aoe_start"                              "AOE START:"
-        "DOTA_Tooltip_ability_ice_tower_ice_blast_aoe_end"                                "AOE END:"
-        "DOTA_Tooltip_ability_ice_tower_ice_blast_projectile_speed"                       "PROJECTILE SPEED:"
-        "DOTA_Tooltip_ability_ice_tower_ice_blast_distance"     "MAX DISTANCE:"
+        "DOTA_Tooltip_ability_ice_tower_ice_blast_Description"      "Each attack stuns the primary target for a short duration. After a creep has been stunned, it cannot be stunned again for 1.2 seconds."
+        "DOTA_Tooltip_ability_ice_tower_ice_blast_ministun_duration"       "STUN DURATION:"
         
         "DOTA_Tooltip_modifier_sludge_slow"     "Slowed"
         "DOTA_Tooltip_modifier_sludge_slow_Description"     "Slowed by sludge, losing %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% movement speed."
@@ -1340,18 +1336,18 @@
         // Moss (Nature + Earth)
         "DOTA_Tooltip_ability_item_upgrade_to_moss_tower"       "Moss Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_disabled"      "Moss Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_Description"       "Upgrades this tower to a Moss Tower.\n\nCOST: <font color='#F0BA36'>425 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font>\nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>400</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Each attack deals bonus damage based on the percentage of the target's remaining health. For every 2% of health that the target has, the attack deals 1% more damage."
-        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_disabled_Description"      "Upgrades this tower to a Moss Tower.\n<font color='#F0BA36'>Requires: </font><font color='#D4880F'>Earth</font> + <font color='#00C400'>Nature</font> \n\nCOST: <font color='#F0BA36'>425 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>400</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Each attack deals bonus damage based on the percentage of the target's remaining health. For every 2% of health that the target has, the attack deals 1% more damage."
+        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_Description"       "Upgrades this tower to a Moss Tower.\n\nCOST: <font color='#F0BA36'>425 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font>\nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>400</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Each attack deals bonus damage based on the percentage of the target's remaining health. For every 1% of health that the target has, the attack deals 1% more damage."
+        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_disabled_Description"      "Upgrades this tower to a Moss Tower.\n<font color='#F0BA36'>Requires: </font><font color='#D4880F'>Earth</font> + <font color='#00C400'>Nature</font> \n\nCOST: <font color='#F0BA36'>425 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>400</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Each attack deals bonus damage based on the percentage of the target's remaining health. For every 1% of health that the target has, the attack deals 1% more damage."
 
         "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_2"     "Moss 2 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_2_disabled"        "Moss 2 Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_2_Description"     "Levels up this tower to a Moss 2 Tower.\n\nCOST: <font color='#F0BA36'>1150 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>2000</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Each attack deals bonus damage based on the percentage of the target's remaining health. For every 2% of health that the target has, the attack deals 1% more damage."
-        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_2_disabled_Description"        "Levels up this tower to a Moss 2 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#00C400'>Nature 2</font> + <font color='#D4880F'>Earth 2</font> \n\nCOST: <font color='#F0BA36'>1150 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>2000</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Each attack deals bonus damage based on the percentage of the target's remaining health. For every 2% of health that the target has, the attack deals 1% more damage."
+        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_2_Description"     "Levels up this tower to a Moss 2 Tower.\n\nCOST: <font color='#F0BA36'>1150 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>2000</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Each attack deals bonus damage based on the percentage of the target's remaining health. For every 1% of health that the target has, the attack deals 1% more damage."
+        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_2_disabled_Description"        "Levels up this tower to a Moss 2 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#00C400'>Nature 2</font> + <font color='#D4880F'>Earth 2</font> \n\nCOST: <font color='#F0BA36'>1150 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>2000</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Each attack deals bonus damage based on the percentage of the target's remaining health. For every 1% of health that the target has, the attack deals 1% more damage."
 
         "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_3"     "Moss 3 Tower"
         "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_3_disabled"        "Moss 3 Tower"
-        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_3_Description"     "Levels up this tower to a Moss 3 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#D4880F'>Earth 3</font> + <font color='#00C400'>Nature 3</font> \n\nCOST: <font color='#F0BA36'>2500 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>10000</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Each attack deals bonus damage based on the percentage of the target's remaining health. For every 2% of health that the target has, the attack deals 1% more damage."
-        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_3_disabled_Description"        "Levels up this tower to a to a Moss 3 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#00C400'>Nature 3</font> + <font color='#D4880F'>Earth 3</font> \n\nCOST: <font color='#F0BA36'>2500 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>10000</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Each attack deals bonus damage based on the percentage of the target's remaining health. For every 2% of health that the target has, the attack deals 1% more damage."
+        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_3_Description"     "Levels up this tower to a Moss 3 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#D4880F'>Earth 3</font> + <font color='#00C400'>Nature 3</font> \n\nCOST: <font color='#F0BA36'>2500 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>10000</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Each attack deals bonus damage based on the percentage of the target's remaining health. For every 1% of health that the target has, the attack deals 1% more damage."
+        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_3_disabled_Description"        "Levels up this tower to a to a Moss 3 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#00C400'>Nature 3</font> + <font color='#D4880F'>Earth 3</font> \n\nCOST: <font color='#F0BA36'>2500 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>10000</font>\nRANGE: <font color='#FFFFFF'>700</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Each attack deals bonus damage based on the percentage of the target's remaining health. For every 1% of health that the target has, the attack deals 1% more damage."
         
 
 
@@ -1421,6 +1417,12 @@
         "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_3_Description"     "Levels up this tower to a Ephemeral 3 Tower.\n\nCOST: <font color='#F0BA36'>5000 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>33000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Very Fast</font>\nABILITY: Each second it attacks, its damage decreases. Damage is reset after 3 seconds of not attacking or when its damage drops too low."
         "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_3_disabled_Description"        "Levels up this tower to a Ephemeral 3 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth 3</font> + <font color='#01A2FF'>Water 3</font> \n\nCOST: <font color='#F0BA36'>5000 Gold</font>\nELEMENT: <font color='#00C400'>Nature</font> + <font color='#D4880F'>Earth</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#00C400'>Nature</font>\nDAMAGE: <font color='#FFFFFF'>33000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Very Fast</font>\nABILITY: Each second it attacks, its damage decreases. Damage is reset after 3 seconds of not attacking or when its damage drops too low."  
 
+        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_max_reduction"                          "%MAX REDUCTION:"
+        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_2_max_reduction"                        "%MAX REDUCTION:"
+        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_2_disabled_max_reduction"               "%MAX REDUCTION:"
+        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_3_max_reduction"                        "%MAX REDUCTION:"
+        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_3_disabled_max_reduction"               "%MAX REDUCTION:"
+        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_disabled_max_reduction"               "%MAX REDUCTION:"
 
         
          // Roots (Nature + Dark + Earth)
@@ -1722,12 +1724,12 @@
         "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_3_Description"     "Levels up this tower to a Ice 3 Tower.\n\nCOST: <font color='#F0BA36'>2500 Gold</font>\nELEMENT: <font color='#E6E600'>Light</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#E6E600'>Light</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>550</font>\nSPEED: <font color='#FFFFFF'>Slow</font>\nABILITY: Deals damage in a line, with greater splash towards the end."
         "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_3_disabled_Description"        "Levels up this tower to a to a Ice 3 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#E6E600'>Light 3</font> + <font color='#01A2FF'>Water 3</font> \n\nCOST: <font color='#F0BA36'>2500 Gold</font>\nELEMENT: <font color='#E6E600'>Light</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#E6E600'>Light</font>\nDAMAGE: <font color='#FFFFFF'>None</font>\nRANGE: <font color='#FFFFFF'>550</font>\nSPEED: <font color='#FFFFFF'>Slow</font>\nABILITY: Deals damage in a line, with greater splash towards the end."
 
-        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_damage"                           "DAMAGE:"
-        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_2_damage"                         "DAMAGE:"
-        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_2_disabled_damage"                "DAMAGE:"
-        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_3_damage"                         "DAMAGE:"
-        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_3_disabled_damage"                "DAMAGE:"
-        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_disabled_damage"                  "DAMAGE:"
+        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_ministun_duration"                           "STUN DURATION:"
+        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_2_ministun_duration"                         "STUN DURATION:"
+        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_2_disabled_ministun_duration"                "STUN DURATION:"
+        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_3_ministun_duration"                         "STUN DURATION:"
+        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_3_disabled_ministun_duration"                "STUN DURATION:"
+        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_disabled_ministun_duration"                  "STUN DURATION:"
 
 
 
@@ -1766,6 +1768,18 @@
         "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_3_Description"     "Levels up this tower to a Hail 3 Tower.\n\nCOST: <font color='#F0BA36'>5000 Gold</font>\nELEMENT: <font color='#E6E600'>Light</font> + <font color='#6C05B1'>Dark</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#E6E600'>Light</font>\nDAMAGE: <font color='#FFFFFF'>12000</font>\nRANGE: <font color='#FFFFFF'>1750</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: After a number of attacks, this tower unleashes a hail storm, dealing its attack damage to all creeps in a massive range. Each attack also has a chance to crit."
         "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_3_disabled_Description"        "Levels up this tower to a Hail 3 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#E6E600'>Light 3</font> + <font color='#6C05B1'>Dark 3</font> + <font color='#01A2FF'>Water 3</font> \n\nCOST: <font color='#F0BA36'>5000 Gold</font>\nELEMENT: <font color='#E6E600'>Light</font> + <font color='#6C05B1'>Dark</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#E6E600'>Light</font>\nDAMAGE: <font color='#FFFFFF'>12000</font>\nRANGE: <font color='#FFFFFF'>1750</font>\nSPEED: <font color='#FFFFFF'>Fast</font>\nABILITY: After a number of attacks, this tower unleashes a hail storm, dealing its attack damage to all creeps in a massive range. Each attack also has a chance to crit."
 
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_attacks_required"                           "ATTACKS REQUIRED:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_crit_chance"                                "%CRIT CHANCE:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_2_attacks_required"                         "ATTACKS REQUIRED:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_2_crit_chance"                              "%CRIT CHANCE:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_2_disabled_attacks_required"                "ATTACKS REQUIRED:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_2_disabled_crit_chance"                     "%CRIT CHANCE:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_3_attacks_required"                         "ATTACKS REQUIRED:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_3_crit_chance"                              "%CRIT CHANCE:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_3_disabled_attacks_required"                "ATTACKS REQUIRED:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_3_disabled_crit_chance"                     "%CRIT CHANCE:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_disabled_attacks_required"                  "ATTACKS REQUIRED:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_disabled_crit_chance"                       "%CRIT CHANCE:"
 
         
         // Laser (Light + Dark + Earth)
@@ -1883,6 +1897,12 @@
         "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_3_Description"     "Levels up this tower to a Poison 3 Tower.\n\nCOST: <font color='#F0BA36'>2500 Gold</font>\nELEMENT: <font color='#6C05B1'>Dark</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#6C05B1'>Dark</font>\nDAMAGE: <font color='#FFFFFF'>5000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Creeps hit slowly take damage over a long period of time."
         "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_3_disabled_Description"        "Levels up this tower to a to a Poison 3 Tower.\n<font color='#F0BA36'>Requires: </font><font color='#6C05B1'>Dark 3</font> + <font color='#01A2FF'>Water 3</font> \n\nCOST: <font color='#F0BA36'>2500 Gold</font>\nELEMENT: <font color='#6C05B1'>Dark</font> + <font color='#01A2FF'>Water</font> \nDAMAGE TYPE: <font color='#6C05B1'>Dark</font>\nDAMAGE: <font color='#FFFFFF'>5000</font>\nRANGE: <font color='#FFFFFF'>900</font>\nSPEED: <font color='#FFFFFF'>Average</font>\nAOE: <font color='#FFFFFF'>150 Full/300 Half</font>\nABILITY: Creeps hit slowly take damage over a long period of time."
         
+        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_damage_per_second"                           "DAMAGE PER SECOND:"
+        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_2_damage_per_second"                         "DAMAGE PER SECOND:"
+        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_2_disabled_damage_per_second"                "DAMAGE PER SECOND:"
+        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_3_damage_per_second"                         "DAMAGE PER SECOND:"
+        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_3_disabled_damage_per_second"                "DAMAGE PER SECOND:"
+        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_disabled_damage_per_second"                  "DAMAGE PER SECOND:"
 
 
         // Magic (Dark + Fire)
