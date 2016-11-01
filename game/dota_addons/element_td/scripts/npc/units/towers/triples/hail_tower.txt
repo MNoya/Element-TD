@@ -42,9 +42,9 @@
         "2"        "light"
         "3"        "water"
     }
-    "Damage"        "800"
-    "AttackDamageMin"        "800"
-    "AttackDamageMax"        "800"
+    "Damage"        "1000"
+    "AttackDamageMin"        "1000"
+    "AttackDamageMax"        "1000"
     "DamageType"        "light"
     "ScriptClass"        "HailTower"
     "TowerType"        "Normal"
