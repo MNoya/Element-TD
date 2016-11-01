@@ -5746,6 +5746,19 @@
 		}
 		"ItemBaseLevel" "1"
 	    "ItemCost" "900"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attacks_required"		"14 13 12"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"15 20 25"
+			}
+		}
 	    "AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_hail_tower_2"
@@ -5779,6 +5792,19 @@
 			"water"		"2"
 		}
 		"ItemBaseLevel" "2"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attacks_required"		"14 13 12"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"15 20 25"
+			}
+		}
 	    "AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_hail_tower_2_disabled"
@@ -5802,6 +5828,19 @@
 			"water"		"2"
 		}
 		"ItemBaseLevel" "2"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attacks_required"		"14 13 12"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"15 20 25"
+			}
+		}
 	    "AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_hail_tower_3"
@@ -5835,6 +5874,19 @@
 			"water"		"3"
 		}
 		"ItemBaseLevel" "3"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attacks_required"		"14 13 12"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"15 20 25"
+			}
+		}
 	    "AbilityCastRange"              "1750"
 	}
 	"item_upgrade_to_hail_tower_3_disabled"
@@ -5858,6 +5910,19 @@
 			"water"		"3"
 		}
 		"ItemBaseLevel" "3"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attacks_required"		"14 13 12"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"15 20 25"
+			}
+		}
 	    "AbilityCastRange"              "1750"
 	}
 	"item_upgrade_to_hail_tower_disabled"
@@ -5882,6 +5947,19 @@
 		}
 		"ItemBaseLevel" "1"
 	    "ItemCost" "900"
+	    "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attacks_required"		"14 13 12"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"15 20 25"
+			}
+		}
 	    "AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_haste_tower"
