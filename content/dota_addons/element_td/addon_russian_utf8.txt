@@ -1905,12 +1905,12 @@
         "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_3_Description"     "Улучшает эту башню до Башни колдовства.\n\nСТОИМОСТЬ: <font color='#F0BA36'>5000 золота</font>\nЭЛЕМЕНТЫ: <font color='#6C05B1'>тьма</font> + <font color='#C40000'>огонь</font> + <font color='#00C400'>природа</font> \nТИП УРОНА: <font color='#6C05B1'>тьма</font>\nУРОН: <font color='#FFFFFF'>52500</font>\nДАЛЬНОСТЬ: <font color='#FFFFFF'>900</font>\nСКОРОСТЬ: <font color='#FFFFFF'>средняя</font>\nСПОСОБНОСТЬ: Накладывает Проклятье на врагов."
         "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_3_disabled_Description"        "Улучшает эту башню до Башни колдовства.\n<font color='#F0BA36'>Требования: </font><font color='#6C05B1'>тьма 3 уровня</font> + <font color='#C40000'>огонь 3 уровня</font> + <font color='#00C400'>природа 3 уровня</font> \n\nСТОИМОСТЬ: <font color='#F0BA36'>5000 золота</font>\nЭЛЕМЕНТЫ: <font color='#6C05B1'>тьма</font> + <font color='#C40000'>огонь</font> + <font color='#00C400'>природа</font> \nТИП УРОНА: <font color='#6C05B1'>тьма</font>\nУРОН: <font color='#FFFFFF'>52500</font>\nДАЛЬНОСТЬ: <font color='#FFFFFF'>900</font>\nСКОРОСТЬ: <font color='#FFFFFF'>средняя</font>\nСПОСОБНОСТЬ: Накладывает Проклятье на врагов."
 
-        "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_damage_taken"                    "УВЕЛИЧЕНИЕ ЗА ПОЛУЧЕННЫЙ УРОН:"
-        "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_2_damage_taken"                  "УВЕЛИЧЕНИЕ ЗА ПОЛУЧЕННЫЙ УРОН:"
-        "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_2_disabled_damage_taken"         "УВЕЛИЧЕНИЕ ЗА ПОЛУЧЕННЫЙ УРОН:"
-        "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_3_damage_taken"                  "УВЕЛИЧЕНИЕ ЗА ПОЛУЧЕННЫЙ УРОН:"
-        "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_3_disabled_damage_taken"         "УВЕЛИЧЕНИЕ ЗА ПОЛУЧЕННЫЙ УРОН:"
-        "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_disabled_damage_taken"           "УВЕЛИЧЕНИЕ ЗА ПОЛУЧЕННЫЙ УРОН:"
+        "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_damage_taken"                    "%УВЕЛИЧЕНИЕ ЗА ПОЛУЧЕННЫЙ УРОН:"
+        "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_2_damage_taken"                  "%УВЕЛИЧЕНИЕ ЗА ПОЛУЧЕННЫЙ УРОН:"
+        "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_2_disabled_damage_taken"         "%УВЕЛИЧЕНИЕ ЗА ПОЛУЧЕННЫЙ УРОН:"
+        "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_3_damage_taken"                  "%УВЕЛИЧЕНИЕ ЗА ПОЛУЧЕННЫЙ УРОН:"
+        "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_3_disabled_damage_taken"         "%УВЕЛИЧЕНИЕ ЗА ПОЛУЧЕННЫЙ УРОН:"
+        "DOTA_Tooltip_ability_item_upgrade_to_jinx_tower_disabled_damage_taken"           "%УВЕЛИЧЕНИЕ ЗА ПОЛУЧЕННЫЙ УРОН:"
 
 
 
