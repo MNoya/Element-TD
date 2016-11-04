@@ -14,6 +14,34 @@ FireTower = createClass({
     },
 nil)
 
+function FireTower:OnAbilityToggle(keys)
+    if self.tower:IsAlive() then
+        self.tower.toggled = not self.tower.toggled
+    end
+
+    if self.tower:HasModifier("modifier_attack_targeting") then
+        self.tower:RemoveModifierByName("modifier_attack_targeting")
+    end
+
+    self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {
+        target_type = tonumber(keys.target_type), 
+        keep_target = tonumber(keys.keep_target)
+    })
+end
+
+function FireTower:GetUpgradeData()
+    return { 
+        toggle = self.tower.toggled
+    }
+end
+
+function FireTower:ApplyUpgradeData(data)
+    if data.toggle then
+        self.tower.toggled = true
+        self.ability:ToggleAbility()
+    end
+end
+
 function FireTower:OnAttackLanded(keys)
     local target = keys.target
     
@@ -49,13 +77,16 @@ end
     ]]
 
 function FireTower:OnCreated()
-    self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_HIGHEST_HP, keep_target=true})
+    self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {keep_target=true}) -- {target_type=TOWER_TARGETING_HIGHEST_HP, keep_target=true})
     self.fullAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))
     self.halfAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
     self.ability = AddAbility(self.tower, "fire_tower_blaze", self.tower:GetLevel())
     self.aoeGrowth = self.ability:GetLevelSpecialValueFor("aoe", self.ability:GetLevel()-1)
     self.modifier_name = "modifier_blazeit" --420
-    self.consecutiveAttacks = 0  
+    self.consecutiveAttacks = 0 
+
+    self:OnAbilityToggle({target_type = TOWER_TARGETING_HIGHEST_HP}) -- set default targeting mode
+    self.tower.toggled = false
 
 --[[ Removed in 1.15, applied to Poison Tower
     self.interval = 0.5 --taken from the modifier ThinkInterval value
