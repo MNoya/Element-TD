@@ -31,6 +31,7 @@
             "Function"          "TriggerEvent"
             "Event"             "OnAbilityToggle"
             "target_type"       "0" //TOWER_TARGETING_HIGHEST_HP
+            "keep_target"       "1"
         }
     }
 
