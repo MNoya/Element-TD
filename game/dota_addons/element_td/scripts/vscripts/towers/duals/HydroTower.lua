@@ -1,7 +1,4 @@
--- Hydro Tower class (Water + Earth)
--- Single target tower that does 200/1000/5000 damage with 700 range and 1 attack speed.
--- Each attack has a 33% to mark the target with an effect. 1.5 seconds after being marked, the effect does 200/1000/5000 damage in 250 (full damage) AoE. 
--- Creep can be marked again if already marked. 
+-- Geyser Tower class (Water + Earth)
 
 HydroTower = createClass({
         tower = nil,
@@ -20,21 +17,29 @@ nil)
 function HydroTower:OnAttackLanded(keys)
 	local target = keys.target;
 	local damage = self.tower:GetAverageTrueAttackDamage(target)
-	DamageEntitiesInArea(target:GetOrigin(), self.aoe_half, self.tower, damage / 2);
+    
+    self.last_hit_entities = {}
+    for _, e in pairs(GetCreepsInArea(target:GetOrigin(), self.aoe_half)) do
+        self.last_hit_entities[e:entindex()] = true;
+    end
+
+    DamageEntitiesInArea(target:GetOrigin(), self.aoe_half, self.tower, damage / 2);
 	DamageEntitiesInArea(target:GetOrigin(), self.aoe_full, self.tower, damage / 2);
 end
 
 function HydroTower:CreepKilled(keys)
 	local target = keys.unit
-	if target:entindex() ~= self.tower:entindex() then
+    if target:entindex() == self.tower:entindex() then return end
+
+	if self.last_hit_entities[target:entindex()] then
 		self.tower:EmitSound("Hydro.Torrent")
 
 		local torrent = ParticleManager:CreateParticle("particles/custom/towers/hydro/torrent_splash.vpcf", PATTACH_CUSTOMORIGIN, self.tower)
 		ParticleManager:SetParticleControl(torrent, 0, target:GetAbsOrigin())
 		ParticleManager:SetParticleControl(torrent, 1, target:GetAbsOrigin())
-	end
 
-	DamageEntitiesInArea(target:GetOrigin(), self.explosionAoE, self.tower, self.explosionDamage)
+        DamageEntitiesInArea(target:GetOrigin(), self.explosionAoE, self.tower, self.explosionDamage)
+	end
 end
 
 --[[ Removed in 1.15
@@ -69,11 +74,16 @@ end
 ]]
 
 function HydroTower:OnCreated()
+
+    self.last_hit_entities = {};
+
     self.ability = AddAbility(self.tower, "hydro_tower_ability", self.tower:GetLevel())
     self.explosionDamage = self.ability:GetSpecialValueFor("damage");
     self.explosionAoE = self.ability:GetSpecialValueFor("aoe");
-    self.aoe_full = self.ability:GetSpecialValueFor("aoe_full")
-    self.aoe_half = self.ability:GetSpecialValueFor("aoe_half")
+
+    self.aoe_full =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"));
+    self.aoe_half =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"));
+
     self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_LOWEST_HP})
 
     --[[ Removed in 1.15
