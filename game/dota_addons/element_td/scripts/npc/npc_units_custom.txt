@@ -8591,7 +8591,7 @@
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
 	    "MinimapIconSize"           "320"
-	    "AttackAnimationPoint"      "0.2"
+	    "AttackAnimationPoint"      "0.15"
 	    "Creature"
 	    {
 	        "AttachWearables" // Default npc_dota_hero_kunkka
@@ -8609,14 +8609,12 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "500"
-	    "AttackDamageMax"           "500"
-	    "Damage"                    "500"
-	    "AOE_Full"                  "100"
-	    "AOE_Half"                  "200"
+	    "AttackDamageMin"           "700"
+	    "AttackDamageMax"           "700"
+	    "Damage"                    "700"
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
-	    "AttackRate"                "1"
+	    "AttackRate"                "0.66"
 	    "ProjectileSpeed"           "2000" 
 	
 	    "Level"                     "1"
@@ -8690,7 +8688,7 @@
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
 	    "MinimapIconSize"           "320"
-	    "AttackAnimationPoint"      "0.2"
+	    "AttackAnimationPoint"      "0.15"
 	    "Creature"
 	    {
 	        "AttachWearables" // Armaments of Leviathan Set
@@ -8708,14 +8706,12 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "2500"
-	    "AttackDamageMax"           "2500"
-	    "Damage"                    "2500"
-	    "AOE_Full"                  "100"
-	    "AOE_Half"                  "200"
+	    "AttackDamageMin"           "3500"
+	    "AttackDamageMax"           "3500"
+	    "Damage"                    "3500"
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
-	    "AttackRate"                "1"
+	    "AttackRate"                "0.66"
 	    "ProjectileSpeed"           "2000" 
 	
 	    "Level"                     "2"
@@ -8779,7 +8775,7 @@
 	    "SoundSet"                  "Tower.Water"
 	    "MinimapIcon"               "minimap_tower90"
 	    "MinimapIconSize"           "320"
-	    "AttackAnimationPoint"      "0.2"
+	    "AttackAnimationPoint"      "0.15"
 	    "Creature"
 	    {
 	       "AttachWearables" // Bestowments of the Divine Anchor
@@ -8797,14 +8793,12 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "12500"
-	    "AttackDamageMax"           "12500"
-	    "Damage"                    "12500"
-	    "AOE_Full"                  "100"
-	    "AOE_Half"                  "200"
+	    "AttackDamageMin"           "17500"
+	    "AttackDamageMax"           "17500"
+	    "Damage"                    "17500"
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
-	    "AttackRate"                "1"
+	    "AttackRate"                "0.66"
 	    "ProjectileSpeed"           "2000" 
 	
 	    "Level"                     "3"

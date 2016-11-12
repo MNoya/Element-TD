@@ -17,14 +17,10 @@ nil)
 function HydroTower:OnAttackLanded(keys)
 	local target = keys.target;
 	local damage = self.tower:GetAverageTrueAttackDamage(target)
-    
-    self.last_hit_entities = {}
-    for _, e in pairs(GetCreepsInArea(target:GetOrigin(), self.aoe_half)) do
-        self.last_hit_entities[e:entindex()] = true;
-    end
 
-    DamageEntitiesInArea(target:GetOrigin(), self.aoe_half, self.tower, damage / 2);
-	DamageEntitiesInArea(target:GetOrigin(), self.aoe_full, self.tower, damage / 2);
+    self.last_hit_entities = {[target:entindex()] = true}
+
+	DamageEntity(target, self.tower, damage);
 end
 
 function HydroTower:CreepKilled(keys)
@@ -80,9 +76,6 @@ function HydroTower:OnCreated()
     self.ability = AddAbility(self.tower, "hydro_tower_ability", self.tower:GetLevel())
     self.explosionDamage = self.ability:GetSpecialValueFor("damage");
     self.explosionAoE = self.ability:GetSpecialValueFor("aoe");
-
-    self.aoe_full =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"));
-    self.aoe_half =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"));
 
     self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_LOWEST_HP})
 
