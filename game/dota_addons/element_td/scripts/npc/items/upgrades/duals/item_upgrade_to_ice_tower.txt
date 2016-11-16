@@ -33,8 +33,8 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-                        "ministun_duration"   "0.15 0.2 0.3"
+                        "ministun_duration"   "0.15 0.25 0.4"
 		}
     }
-    "AbilityCastRange"              "700"
+    "AbilityCastRange"              "900"
 }

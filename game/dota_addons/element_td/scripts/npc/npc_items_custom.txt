@@ -2415,7 +2415,7 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"		"800 4000 20000"
+				"damage"		"700 3500 17500"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -2454,7 +2454,7 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"		"800 4000 20000"
+				"damage"		"700 3500 17500"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -2483,7 +2483,7 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"		"800 4000 20000"
+				"damage"		"700 3500 17500"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -2522,7 +2522,7 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"		"800 4000 20000"
+				"damage"		"700 3500 17500"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -2551,7 +2551,7 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"		"800 4000 20000"
+				"damage"		"700 3500 17500"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -2581,7 +2581,7 @@
 	        "01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"		"800 4000 20000"
+				"damage"		"700 3500 17500"
 			}
 		}
 		"AbilityCastRange"              "700"
@@ -2621,10 +2621,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-	                        "ministun_duration"   "0.15 0.2 0.3"
+	                        "ministun_duration"   "0.15 0.25 0.4"
 			}
 	    }
-	    "AbilityCastRange"              "700"
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ice_tower_2"
 	{
@@ -2660,10 +2660,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-	                        "ministun_duration"   "0.15 0.2 0.3"
+	                        "ministun_duration"   "0.15 0.25 0.4"
 			}
 	    }
-	    "AbilityCastRange"              "700"
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ice_tower_2_disabled"
 	{
@@ -2689,10 +2689,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-	                        "ministun_duration"   "0.15 0.2 0.3"
+	                        "ministun_duration"   "0.15 0.25 0.4"
 			}
 	    }
-	    "AbilityCastRange"              "700"
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ice_tower_3"
 	{
@@ -2728,10 +2728,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-	                        "ministun_duration"   "0.15 0.2 0.3"
+	                        "ministun_duration"   "0.15 0.25 0.4"
 			}
 	    }
-	    "AbilityCastRange"              "700"
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ice_tower_3_disabled"
 	{
@@ -2757,10 +2757,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-	                        "ministun_duration"   "0.15 0.2 0.3"
+	                        "ministun_duration"   "0.15 0.25 0.4"
 			}
 	    }
-	    "AbilityCastRange"              "700"
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ice_tower_disabled"
 	{
@@ -2787,10 +2787,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-	                        "ministun_duration"   "0.15 0.2 0.3"
+	                        "ministun_duration"   "0.15 0.25 0.4"
 			}
 	    }
-	    "AbilityCastRange"              "700"
+	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_life_tower"
 	{
