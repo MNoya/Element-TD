@@ -365,9 +365,9 @@
         "DOTA_Tooltip_ability_build_water_tower_disabled_Description"          "在此处建造一座圣水之塔。\n对<font color='#C40000'>圣火</font>系造成200%伤害，对<font color='#8733C8'>黑暗</font>系造成50%伤害\n<font color='#F0BA36'>需要：</font><font color='#01A2FF'>圣水</font>\n\n价格：<font color='#F0BA36'>175金币</font>\n元素：<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#01A2FF'>圣水</font> \n攻击力：<font color='#FFFFFF'>100</font> \n攻击距离：<font color='#FFFFFF'>900</font> \n攻击速度：<font color='#FFFFFF'>快速</font> \n作用范围：<font color='#FFFFFF'>200内全额</font>"
 
         "DOTA_Tooltip_ability_build_fire_tower"                                "建造圣火之塔"
-        "DOTA_Tooltip_ability_build_fire_tower_Description"                    "在此处建造一座圣火之塔。\n对<font color='#00C400'>自然</font>系造成200%伤害，对<font color='#01A2FF'>圣水</font>系造成50%伤害\n\n价格：<font color='#F0BA36'>175金币</font>\n元素：<font color='#C40000'>圣火</font> \n伤害类型：<font color='#C40000'>圣火</font> \n攻击力：<font color='#FFFFFF'>20</font> \n攻击距离：<font color='#FFFFFF'>700</font> \n攻击速度：<font color='#FFFFFF'>极快</font> \n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>"
+        "DOTA_Tooltip_ability_build_fire_tower_Description"                    "在此处建造一座圣火之塔。\n对<font color='#00C400'>自然</font>系造成200%伤害，对<font color='#01A2FF'>圣水</font>系造成50%伤害\n\n价格：<font color='#F0BA36'>175金币</font>\n元素：<font color='#C40000'>圣火</font> \n伤害类型：<font color='#C40000'>圣火</font> \n攻击力：<font color='#FFFFFF'>25</font> \n攻击距离：<font color='#FFFFFF'>700</font> \n攻击速度：<font color='#FFFFFF'>极快</font> \n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>"
         "DOTA_Tooltip_ability_build_fire_tower_disabled"                       "建造圣火之塔"
-        "DOTA_Tooltip_ability_build_fire_tower_disabled_Description"           "在此处建造一座圣火之塔。\n对<font color='#00C400'>自然</font>系造成200%伤害，对<font color='#01A2FF'>圣水</font>系造成50%伤害\n<font color='#F0BA36'>需要：</font><font color='#C40000'>圣火</font>\n\n价格：<font color='#F0BA36'>175金币</font>\n元素：<font color='#C40000'>圣火</font> \n伤害类型：<font color='#C40000'>圣火</font> \n攻击力：<font color='#FFFFFF'>20</font> \n攻击距离：<font color='#FFFFFF'>700</font> \n攻击速度：<font color='#FFFFFF'>极快</font> \n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>"
+        "DOTA_Tooltip_ability_build_fire_tower_disabled_Description"           "在此处建造一座圣火之塔。\n对<font color='#00C400'>自然</font>系造成200%伤害，对<font color='#01A2FF'>圣水</font>系造成50%伤害\n<font color='#F0BA36'>需要：</font><font color='#C40000'>圣火</font>\n\n价格：<font color='#F0BA36'>175金币</font>\n元素：<font color='#C40000'>圣火</font> \n伤害类型：<font color='#C40000'>圣火</font> \n攻击力：<font color='#FFFFFF'>25</font> \n攻击距离：<font color='#FFFFFF'>700</font> \n攻击速度：<font color='#FFFFFF'>极快</font> \n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>"
 
         "DOTA_Tooltip_ability_build_nature_tower"                              "建造自然之塔"
         "DOTA_Tooltip_ability_build_nature_tower_Description"                  "在此处建造一座自然之塔。\n对<font color='#D4880F'>大地</font>系造成200%伤害，对<font color='#C40000'>圣火</font>系造成50%伤害\n\n价格：<font color='#F0BA36'>175金币</font>\n元素：<font color='#00C400'>自然</font> \n伤害类型：<font color='#00C400'>自然</font> \n攻击力：<font color='#FFFFFF'>70</font> \n攻击速度：<font color='#FFFFFF'>极快</font> \n攻击距离：<font color='#FFFFFF'>700</font>"
@@ -557,6 +557,10 @@
         "DOTA_Tooltip_ability_creep_ability_regen_max_heal_pct"                           "%最大治疗："
         "DOTA_Tooltip_creep_regen_modifier"                                               "恢复"
         "DOTA_Tooltip_creep_regen_modifier_Description"                                   "此单位正在恢复生命。"
+        "DOTA_Tooltip_ability_creep_ability_time_lapse"                                   "时光倒流"
+        "DOTA_Tooltip_ability_creep_ability_time_lapse_Description"                       "当一个小兵的生命值低于最大生命值的%health_threshold%%%时，他将返回%backtrack_duration%秒后的位置，同时恢复那时的生命值。"
+        "DOTA_Tooltip_ability_creep_ability_time_lapse_backtrack_duration"                "倒流持续时间："
+        "DOTA_Tooltip_ability_creep_ability_time_lapse_health_threshold"                  "%触发生命阈值："
 
         // Splash and Support
         "DOTA_Tooltip_ability_splash_damage_orb"        "分裂伤害"
@@ -573,11 +577,10 @@
         "DOTA_Tooltip_ability_dark_tower_overkill_aoe"               "作用范围："
 
         "DOTA_Tooltip_ability_fire_tower_blaze"                      "燃烧"
-        "DOTA_Tooltip_ability_fire_tower_blaze_Description"          "每次攻击对所有目标造成持续伤害的单体负面效果，可以无限叠加。"
-        "DOTA_Tooltip_ability_fire_tower_blaze_damage_per_second"    "每秒伤害："
-        "DOTA_Tooltip_ability_fire_tower_blaze_duration"             "持续时间："
+        "DOTA_Tooltip_ability_fire_tower_blaze_Description"          "Each attack on the same creep increases this tower's AoE. Attacking another creep resets its AoE.\n\nToggle On to hit closest targets.\nATTACK TARGETING: Highest HP"
+        "DOTA_Tooltip_ability_fire_tower_blaze_aoe"                  "AOE:"
         "DOTA_Tooltip_modifier_blazeit_stacks"                       "燃烧吧"
-        "DOTA_Tooltip_modifier_blazeit_stacks_Description"           "持续受到伤害"
+        "DOTA_Tooltip_modifier_blazeit_stacks_Description"           "持续受到伤害."
 
         "DOTA_Tooltip_ability_nature_tower_force_of_nature"             "自然之力"
         "DOTA_Tooltip_ability_nature_tower_force_of_nature_Description" "此防御塔的攻击力根据目标125范围内的小兵数量而增加。"
@@ -598,11 +601,6 @@
         "DOTA_Tooltip_ability_water_tower_water_bullet_Description"   "每次攻击都会飞溅到附近的小兵，溅射伤害有所降低。"
         "DOTA_Tooltip_ability_water_tower_water_bullet_bounce_range"  "飞溅范围："
         "DOTA_Tooltip_ability_water_tower_water_bullet_damage_pct"    "伤害："
-
-        "DOTA_Tooltip_ability_creep_ability_time_lapse"                                   "时光倒流"
-        "DOTA_Tooltip_ability_creep_ability_time_lapse_Description"                       "当一个小兵的生命值低于最大生命值的%health_threshold%%%时，他将返回%backtrack_duration%秒后的位置，同时恢复那时的生命值。"
-        "DOTA_Tooltip_ability_creep_ability_time_lapse_backtrack_duration"                "倒流持续时间："
-        "DOTA_Tooltip_ability_creep_ability_time_lapse_health_threshold"                  "%触发生命阈值："
         
         "DOTA_Tooltip_ability_dark_tower_overkill"                                        "赶尽杀绝"
         "DOTA_Tooltip_ability_dark_tower_overkill_Description"                            "每击杀一个小兵，富余的伤害都将随机转移到目标范围内附近的其他小兵身上。"
@@ -637,9 +635,6 @@
         "DOTA_Tooltip_modifier_acid_attack_dot_stacks"                                    "侵蚀"
         "DOTA_Tooltip_modifier_acid_attack_dot_stacks_Description"                        "持续受到伤害。"
         
-        "DOTA_Tooltip_modifier_blazeit_stacks"                                            "燃烧吧"
-        "DOTA_Tooltip_modifier_blazeit_stacks_Description"                                "持续受到伤害."
-        
         "DOTA_Tooltip_modifier_gaias_wrath_damage_stacks"                                 "Gaias Wrath"
         "DOTA_Tooltip_modifier_gaias_wrath_damage_stacks_Description"                     "持续受到伤害."
         
@@ -648,7 +643,6 @@
         
         "DOTA_Tooltip_modifier_storm_passive"                                             "Attacks Required"
         "DOTA_Tooltip_modifier_storm_passive_Description"                                 "Attacks required until this tower unleashes a hail storm."
-        
         
         "DOTA_Tooltip_modifier_magic_tower_attack_range"        "攻击距离衰减"
         "DOTA_Tooltip_modifier_magic_tower_attack_range_Description"        "防御塔攻击距离降低%dMODIFIER_PROPERTY_ATTACK_RANGE_BONUS%。"
@@ -707,12 +701,12 @@
         "DOTA_Tooltip_ability_vapor_tower_evaporate_aoe"        "AOE:"
 
         "DOTA_Tooltip_ability_poison_tower_contamination"       "毒爆"
-        "DOTA_Tooltip_ability_poison_tower_contamination_Description"       "Every fourth attack has a greatly increased damage AOE compared normal attacks."
-        "DOTA_Tooltip_ability_poison_tower_contamination_crit_aoe_half"       "CRIT HALF AOE:"
-        "DOTA_Tooltip_ability_poison_tower_contamination_crit_aoe_full"       "CRIT FULL AOE:"
+        "DOTA_Tooltip_ability_poison_tower_contamination_Description"       "Creeps hit slowly take damage over a long period of time.\n\n<font color='#FFFFFF'>ATTACK TARGETING:</font> Highest HP"
+        "DOTA_Tooltip_ability_poison_tower_contamination_damage_per_second"       "DAMAGE PER SECOND:"
+        "DOTA_Tooltip_ability_poison_tower_contamination_duration"       "DURATION:"
 
         "DOTA_Tooltip_ability_life_tower_afterlife"     "劫后余生"
-        "DOTA_Tooltip_ability_life_tower_afterlife_Description"     "Every few creeps killed by this tower will heal you, up to a max of 75 live (150 on co-op). If you are at max lives or less, this tower deals <font color='#FFFFFF'>%damage_bonus_full_hp_pct%%% bonus damage.</font>\n\n<font color='#FFFFFF'>ATTACK TARGETING:</font> Lowest HP"
+        "DOTA_Tooltip_ability_life_tower_afterlife_Description"     "Every few creeps killed by this tower will heal you, up to max of 70 lives (140 on co-op). If you are at 50 lives (100 on co-op) or less, this tower deals <font color='#FFFFFF'>%damage_bonus_full_hp_pct%%% bonus damage.</font>\n\n<font color='#FFFFFF'>ATTACK TARGETING:</font> Lowest HP"
         "DOTA_Tooltip_ability_life_tower_afterlife_kills_required"      "击杀需求："
         "DOTA_Tooltip_ability_life_tower_afterlife_heal_amount"     "治疗量："
         "DOTA_Tooltip_modifier_life_tower_counter"                                        "获得生命"
@@ -723,12 +717,9 @@
         "DOTA_Tooltip_modifier_life_tower_full_health_Description"                        "You are at full health, dealing %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% bonus damage."  
 
         "DOTA_Tooltip_ability_hydro_tower_ability"      "洪流"
-        "DOTA_Tooltip_ability_hydro_tower_ability_Description"      "Every third attack will cause a torrent, hitting creeps in a focused area of effect."
-        "DOTA_Tooltip_ability_hydro_tower_ability_splash_damage"        "伤害："
-        "DOTA_Tooltip_ability_hydro_tower_ability_splash_aoe"       "作用范围："
-        "DOTA_Tooltip_ability_hydro_tower_ability_delay"                                  "延迟："
-        "DOTA_Tooltip_modifier_hydro_delay"                                               "水力延迟"
-        "DOTA_Tooltip_modifier_hydro_delay_Description"                                   ""
+        "DOTA_Tooltip_ability_hydro_tower_ability_Description"      "When it kills a creep, it causes a powerful torrent, hitting a larger area of effect.\n\n<font color='#FFFFFF'>ATTACK TARGETING:</font> Lowest HP"
+        "DOTA_Tooltip_ability_hydro_tower_ability_damage"        "伤害："
+        "DOTA_Tooltip_ability_hydro_tower_ability_aoe"       "作用范围："
 
         "DOTA_Tooltip_modifier_conjure_prevent_cloning"     "已被克隆"
         "DOTA_Tooltip_modifier_conjure_prevent_cloning_Description"     "此防御塔最近已被克隆，此负面效果结束前无法再次被克隆。"
@@ -744,12 +735,8 @@
         "DOTA_Tooltip_ability_gunpowder_tower_shrapnade_splash_aoe"     "爆炸作用范围："
 
         "DOTA_Tooltip_ability_ice_tower_ice_blast"      "寒冰风暴"
-        "DOTA_Tooltip_ability_ice_tower_ice_blast_Description"      "每次攻击都会沿着直线释放寒冰碎片，范围由小至大。\n\n<font color='#90EE90'>可选择目标位置持续对地施放。攻击小兵或[S]键可取消持续攻击。</font>"
-        "DOTA_Tooltip_ability_ice_tower_ice_blast_damage"       "伤害："
-        "DOTA_Tooltip_ability_ice_tower_ice_blast_aoe_start"                              "初始范围："
-        "DOTA_Tooltip_ability_ice_tower_ice_blast_aoe_end"                                "结束范围："
-        "DOTA_Tooltip_ability_ice_tower_ice_blast_projectile_speed"                       "碎片速度："
-        "DOTA_Tooltip_ability_ice_tower_ice_blast_distance"     "最大距离："
+        "DOTA_Tooltip_ability_ice_tower_ice_blast_Description"      "Each attack stuns the primary target for a short duration. After a creep has been stunned, it cannot be stunned again for 1.2 seconds."
+        "DOTA_Tooltip_ability_ice_tower_ice_blast_ministun_duration"       "STUN DURATION:"
 
         "DOTA_Tooltip_modifier_sludge_slow"     "被减速"
         "DOTA_Tooltip_modifier_sludge_slow_Description"     "被淤泥减速，移动速度降低%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%。"
@@ -1149,16 +1136,16 @@
         // Fire
         "DOTA_Tooltip_ability_item_upgrade_to_focused_fire_tower"       "专注的圣火之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_focused_fire_tower_disabled"      "专注的圣火之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_focused_fire_tower_Description"       "将这座防御塔升级为专注的圣火之塔.\n\n价格：<font color='#F0BA36'>575金币</font>\n元素：<font color='#C40000'>圣火</font>\n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>140</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>"
-        "DOTA_Tooltip_ability_item_upgrade_to_focused_fire_tower_disabled_Description"      "将这座防御塔升级为专注的圣火之塔.\n<font color='#F0BA36'>需要：</font><font color='#C40000'>圣火2</font> \n\n价格：<font color='#F0BA36'>575金币</font>\n元素：<font color='#C40000'>圣火</font>\n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>140</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_focused_fire_tower_Description"       "将这座防御塔升级为专注的圣火之塔.\n\n价格：<font color='#F0BA36'>575金币</font>\n元素：<font color='#C40000'>圣火</font>\n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>175</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_focused_fire_tower_disabled_Description"      "将这座防御塔升级为专注的圣火之塔.\n<font color='#F0BA36'>需要：</font><font color='#C40000'>圣火2</font> \n\n价格：<font color='#F0BA36'>575金币</font>\n元素：<font color='#C40000'>圣火</font>\n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>175</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>"
 
         "DOTA_Tooltip_ability_item_upgrade_to_refined_fire_tower"       "精致的圣火之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_refined_fire_tower_disabled"      "精致的圣火之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_refined_fire_tower_Description"       "将这座防御塔升级为精致的圣火之塔.\n\n价格：<font color='#F0BA36'>2250金币</font>\n元素：<font color='#C40000'>圣火</font>\n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>980</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>"
-        "DOTA_Tooltip_ability_item_upgrade_to_refined_fire_tower_disabled_Description"      "将这座防御塔升级为精致的圣火之塔.\n<font color='#F0BA36'>需要：</font><font color='#C40000'>圣火3</font> \n\n价格：<font color='#F0BA36'>2250金币</font>\n元素：<font color='#C40000'>圣火</font>\n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>980</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_refined_fire_tower_Description"       "将这座防御塔升级为精致的圣火之塔.\n\n价格：<font color='#F0BA36'>2250金币</font>\n元素：<font color='#C40000'>圣火</font>\n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>1225</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_refined_fire_tower_disabled_Description"      "将这座防御塔升级为精致的圣火之塔.\n<font color='#F0BA36'>需要：</font><font color='#C40000'>圣火3</font> \n\n价格：<font color='#F0BA36'>2250金币</font>\n元素：<font color='#C40000'>圣火</font>\n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>1225</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>"
 
         "DOTA_Tooltip_ability_item_upgrade_to_pure_fire_tower"                            "升级为纯正的圣火之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_pure_fire_tower_Description"                "将这座防御塔升级为纯正的圣水之塔.\n\n价格：<font color='#F0BA36'>10000金币</font> and <font color='#00BFFF'>1个纯正精华</font>\n元素：<font color='#C40000'>圣火</font>\n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>9800</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>"
+        "DOTA_Tooltip_ability_item_upgrade_to_pure_fire_tower_Description"                "将这座防御塔升级为纯正的圣水之塔.\n\n价格：<font color='#F0BA36'>10000金币</font> and <font color='#00BFFF'>1个纯正精华</font>\n元素：<font color='#C40000'>圣火</font>\n伤害类型：<font color='#C40000'>圣火</font>\n攻击力：<font color='#FFFFFF'>12250</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>"
 
 
 
@@ -1347,36 +1334,36 @@
         // Moss (Nature + Earth)
         "DOTA_Tooltip_ability_item_upgrade_to_moss_tower"       "青苔之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_disabled"      "青苔之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_Description"       "将这座防御塔升级为青苔之塔.\n\n价格：<font color='#F0BA36'>425金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#D4880F'>大地</font>\n伤害类型：<font color='#D4880F'>大地</font>\n攻击力：<font color='#FFFFFF'>400</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>\n技能：每次攻击造成额外伤害，伤害值为目标剩余生命值的一定百分比。目标每增加2%生命值，攻击伤害就增加1%。"
-        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_disabled_Description"      "将这座防御塔升级为青苔之塔.\n<font color='#F0BA36'>需要：</font><font color='#D4880F'>大地</font>+<font color='#00C400'>自然</font> \n\n价格：<font color='#F0BA36'>425金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#D4880F'>大地</font>\n攻击力：<font color='#FFFFFF'>400</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>\n技能：每次攻击造成额外伤害，伤害值为目标剩余生命值的一定百分比。目标每增加2%生命值，攻击伤害就增加1%。"
+        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_Description"       "将这座防御塔升级为青苔之塔.\n\n价格：<font color='#F0BA36'>425金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#D4880F'>大地</font>\n伤害类型：<font color='#D4880F'>大地</font>\n攻击力：<font color='#FFFFFF'>400</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每次攻击造成额外伤害，伤害值为目标剩余生命值的一定百分比。目标每增加2%生命值，攻击伤害就增加1%。"
+        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_disabled_Description"      "将这座防御塔升级为青苔之塔.\n<font color='#F0BA36'>需要：</font><font color='#D4880F'>大地</font>+<font color='#00C400'>自然</font> \n\n价格：<font color='#F0BA36'>425金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#D4880F'>大地</font>\n攻击力：<font color='#FFFFFF'>400</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每次攻击造成额外伤害，伤害值为目标剩余生命值的一定百分比。目标每增加2%生命值，攻击伤害就增加1%。"
 
         "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_2"     "菌蕈之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_2_disabled"        "菌蕈之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_2_Description"     "将这座防御塔升级为菌蕈之塔.\n\n价格：<font color='#F0BA36'>1150金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#D4880F'>大地</font>\n攻击力：<font color='#FFFFFF'>2000</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>\n技能：每次攻击造成额外伤害，伤害值为目标剩余生命值的一定百分比。目标每增加2%生命值，攻击伤害就增加1%。"
-        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_2_disabled_Description"        "将这座防御塔升级为菌蕈之塔.\n<font color='#F0BA36'>需要：</font><font color='#00C400'>自然2</font>+<font color='#D4880F'>大地2</font> \n\n价格：<font color='#F0BA36'>1150金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#D4880F'>大地</font>\n攻击力：<font color='#FFFFFF'>2000</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>\n技能：每次攻击造成额外伤害，伤害值为目标剩余生命值的一定百分比。目标每增加2%生命值，攻击伤害就增加1%。"
+        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_2_Description"     "将这座防御塔升级为菌蕈之塔.\n\n价格：<font color='#F0BA36'>1150金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#D4880F'>大地</font>\n攻击力：<font color='#FFFFFF'>2000</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每次攻击造成额外伤害，伤害值为目标剩余生命值的一定百分比。目标每增加2%生命值，攻击伤害就增加1%。"
+        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_2_disabled_Description"        "将这座防御塔升级为菌蕈之塔.\n<font color='#F0BA36'>需要：</font><font color='#00C400'>自然2</font>+<font color='#D4880F'>大地2</font> \n\n价格：<font color='#F0BA36'>1150金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#D4880F'>大地</font>\n攻击力：<font color='#FFFFFF'>2000</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每次攻击造成额外伤害，伤害值为目标剩余生命值的一定百分比。目标每增加2%生命值，攻击伤害就增加1%。"
 
         "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_3"     "真菌之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_3_disabled"        "真菌之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_3_Description"     "将这座防御塔升级为真菌之塔.\n<font color='#F0BA36'>需要：</font><font color='#D4880F'>大地3</font>+<font color='#00C400'>自然3</font> \n\n价格：<font color='#F0BA36'>2500金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#D4880F'>大地</font>\n攻击力：<font color='#FFFFFF'>10000</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>\n技能：每次攻击造成额外伤害，伤害值为目标剩余生命值的一定百分比。目标每增加2%生命值，攻击伤害就增加1%。"
-        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_3_disabled_Description"        "将这座防御塔升级为真菌之塔.\n<font color='#F0BA36'>需要：</font><font color='#00C400'>自然3</font>+<font color='#D4880F'>大地3</font> \n\n价格：<font color='#F0BA36'>2500金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#D4880F'>大地</font>\n攻击力：<font color='#FFFFFF'>10000</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>150内全额/300内半额</font>\n技能：每次攻击造成额外伤害，伤害值为目标剩余生命值的一定百分比。目标每增加2%生命值，攻击伤害就增加1%。"
+        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_3_Description"     "将这座防御塔升级为真菌之塔.\n<font color='#F0BA36'>需要：</font><font color='#D4880F'>大地3</font>+<font color='#00C400'>自然3</font> \n\n价格：<font color='#F0BA36'>2500金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#D4880F'>大地</font>\n攻击力：<font color='#FFFFFF'>10000</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每次攻击造成额外伤害，伤害值为目标剩余生命值的一定百分比。目标每增加2%生命值，攻击伤害就增加1%。"
+        "DOTA_Tooltip_ability_item_upgrade_to_moss_tower_3_disabled_Description"        "将这座防御塔升级为真菌之塔.\n<font color='#F0BA36'>需要：</font><font color='#00C400'>自然3</font>+<font color='#D4880F'>大地3</font> \n\n价格：<font color='#F0BA36'>2500金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#D4880F'>大地</font> \n伤害类型：<font color='#D4880F'>大地</font>\n攻击力：<font color='#FFFFFF'>10000</font>\n攻击距离：<font color='#FFFFFF'>700</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每次攻击造成额外伤害，伤害值为目标剩余生命值的一定百分比。目标每增加2%生命值，攻击伤害就增加1%。"
 
 
 
         // Life (Nature + Light)
         "DOTA_Tooltip_ability_item_upgrade_to_life_tower"       "生命之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_life_tower_disabled"      "生命之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_life_tower_Description"       "将这座防御塔升级为生命之塔.\n\n价格：<font color='#F0BA36'>425金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#00C400'>自然</font>\n攻击力：<font color='#FFFFFF'>420</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能： Every few creeps killed by this tower will heal you, up to a max of 75 live (150 on co-op). If you are at max lives or less, it gains a damage bonus."
-        "DOTA_Tooltip_ability_item_upgrade_to_life_tower_disabled_Description"      "将这座防御塔升级为生命之塔.\n<font color='#F0BA36'>需要：</font><font color='#E6E600'>光明</font>+<font color='#00C400'>自然</font> \n\n价格：<font color='#F0BA36'>425金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#00C400'>自然</font> \n伤害类型：<font color='#00C400'>自然</font>\n攻击力：<font color='#FFFFFF'>420</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能： Every few creeps killed by this tower will heal you, up to a max of 75 live (150 on co-op). If you are at max lives or less, it gains a damage bonus."
+        "DOTA_Tooltip_ability_item_upgrade_to_life_tower_Description"       "将这座防御塔升级为生命之塔.\n\n价格：<font color='#F0BA36'>425金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#00C400'>自然</font>\n攻击力：<font color='#FFFFFF'>420</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能： Every few creeps killed by this tower will heal you, up to a max of 70 lives (140 on co-op). If you are at 50 lives (100 on co-op) or less, it gains a damage bonus."
+        "DOTA_Tooltip_ability_item_upgrade_to_life_tower_disabled_Description"      "将这座防御塔升级为生命之塔.\n<font color='#F0BA36'>需要：</font><font color='#E6E600'>光明</font>+<font color='#00C400'>自然</font> \n\n价格：<font color='#F0BA36'>425金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#00C400'>自然</font> \n伤害类型：<font color='#00C400'>自然</font>\n攻击力：<font color='#FFFFFF'>420</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能： Every few creeps killed by this tower will heal you, up to a max of 70 lives (140 on co-op). If you are at 50 lives (100 on co-op) or less, it gains a damage bonus."
 
         "DOTA_Tooltip_ability_item_upgrade_to_life_tower_2"     "永恒之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_life_tower_2_disabled"        "永恒之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_life_tower_2_Description"     "将这座防御塔升级为永恒之塔.\n\n价格：<font color='#F0BA36'>1150金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#00C400'>自然</font>\n攻击力：<font color='#FFFFFF'>2100</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能： Every few creeps killed by this tower will heal you, up to a max of 75 live (150 on co-op). If you are at max lives or less, it gains a damage bonus."
-        "DOTA_Tooltip_ability_item_upgrade_to_life_tower_2_disabled_Description"        "将这座防御塔升级为永恒之塔.\n<font color='#F0BA36'>需要：</font><font color='#00C400'>自然2</font>+<font color='#E6E600'>光明2</font> \n\n价格：<font color='#F0BA36'>1150金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#00C400'>自然</font>\n攻击力：<font color='#FFFFFF'>2100</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能： Every few creeps killed by this tower will heal you, up to a max of 75 live (150 on co-op). If you are at max lives or less, it gains a damage bonus."
+        "DOTA_Tooltip_ability_item_upgrade_to_life_tower_2_Description"     "将这座防御塔升级为永恒之塔.\n\n价格：<font color='#F0BA36'>1150金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#00C400'>自然</font>\n攻击力：<font color='#FFFFFF'>2100</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能： Every few creeps killed by this tower will heal you, up to a max of 70 lives (140 on co-op). If you are at 50 lives (100 on co-op) or less, it gains a damage bonus."
+        "DOTA_Tooltip_ability_item_upgrade_to_life_tower_2_disabled_Description"        "将这座防御塔升级为永恒之塔.\n<font color='#F0BA36'>需要：</font><font color='#00C400'>自然2</font>+<font color='#E6E600'>光明2</font> \n\n价格：<font color='#F0BA36'>1150金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#00C400'>自然</font>\n攻击力：<font color='#FFFFFF'>2100</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能： Every few creeps killed by this tower will heal you, up to a max of 70 lives (140 on co-op). If you are at 50 lives (100 on co-op) or less, it gains a damage bonus."
 
         "DOTA_Tooltip_ability_item_upgrade_to_life_tower_3"     "猎灵之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_life_tower_3_disabled"        "猎灵之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_life_tower_3_Description"     "将这座防御塔升级为猎灵之塔.\n\n价格：<font color='#F0BA36'>2500金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#00C400'>自然</font>\n攻击力：<font color='#FFFFFF'>10500</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能： Every few creeps killed by this tower will heal you, up to a max of 75 live (150 on co-op). If you are at max lives or less, it gains a damage bonus."
-        "DOTA_Tooltip_ability_item_upgrade_to_life_tower_3_disabled_Description"        "将这座防御塔升级为猎灵之塔.\n<font color='#F0BA36'>需要：</font><font color='#00C400'>自然3</font>+<font color='#E6E600'>光明3</font> \n\n价格：<font color='#F0BA36'>2500金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#00C400'>自然</font>\n攻击力：<font color='#FFFFFF'>10500</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能： Every few creeps killed by this tower will heal you, up to a max of 75 live (150 on co-op). If you are at max lives or less, it gains a damage bonus."
+        "DOTA_Tooltip_ability_item_upgrade_to_life_tower_3_Description"     "将这座防御塔升级为猎灵之塔.\n\n价格：<font color='#F0BA36'>2500金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#00C400'>自然</font>\n攻击力：<font color='#FFFFFF'>10500</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能： Every few creeps killed by this tower will heal you, up to a max of 70 lives (140 on co-op). If you are at 50 lives (100 on co-op) or less, it gains a damage bonus."
+        "DOTA_Tooltip_ability_item_upgrade_to_life_tower_3_disabled_Description"        "将这座防御塔升级为猎灵之塔.\n<font color='#F0BA36'>需要：</font><font color='#00C400'>自然3</font>+<font color='#E6E600'>光明3</font> \n\n价格：<font color='#F0BA36'>2500金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#E6E600'>光明</font> \n伤害类型：<font color='#00C400'>自然</font>\n攻击力：<font color='#FFFFFF'>10500</font>\n攻击距离：<font color='#FFFFFF'>1150</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能： Every few creeps killed by this tower will heal you, up to a max of 70 lives (140 on co-op). If you are at 50 lives (100 on co-op) or less, it gains a damage bonus."
 
         "DOTA_Tooltip_ability_item_upgrade_to_life_tower_kills_required"                  "击杀需求："
         "DOTA_Tooltip_ability_item_upgrade_to_life_tower_2_kills_required"                "击杀需求："
@@ -1427,6 +1414,13 @@
         "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_3_disabled"       "瞬息之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_3_Description"        "将这座防御塔升级为瞬息之塔.\n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#D4880F'>大地</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#00C400'>自然</font>\n攻击力：<font color='#FFFFFF'>33000</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n技能：持续攻击时攻击力随着时间逐渐降低。停止攻击2秒或攻击力过低时恢复初始攻击力。"
         "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_3_disabled_Description"       "将这座防御塔升级为瞬息之塔.\n<font color='#F0BA36'>需要：</font><font color='#00C400'>自然</font>+<font color='#D4880F'>大地2</font>+<font color='#01A2FF'>圣水2</font> \n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#00C400'>自然</font>+<font color='#D4880F'>大地</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#00C400'>自然</font>\n攻击力：<font color='#FFFFFF'>33000</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n技能：持续攻击时攻击力随着时间逐渐降低。停止攻击3秒或攻击力过低时恢复初始攻击力。"
+
+        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_max_reduction"                          "%MAX REDUCTION:"
+        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_2_max_reduction"                        "%MAX REDUCTION:"
+        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_2_disabled_max_reduction"               "%MAX REDUCTION:"
+        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_3_max_reduction"                        "%MAX REDUCTION:"
+        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_3_disabled_max_reduction"               "%MAX REDUCTION:"
+        "DOTA_Tooltip_ability_item_upgrade_to_ephemeral_tower_disabled_max_reduction"               "%MAX REDUCTION:"
 
 
 
@@ -1714,25 +1708,25 @@
         // Ice (Light + Water)
         "DOTA_Tooltip_ability_item_upgrade_to_ice_tower"        "冰封之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_disabled"       "冰封之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_Description"        "将这座防御塔升级为冰封之塔.\n\n价格：<font color='#F0BA36'>425金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>800</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n技能：每次攻击发射一颗直线穿行的法球，对经过的敌人造成伤害并在一定距离后爆炸。"
-        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_disabled_Description"       "将这座防御塔升级为冰封之塔.\n<font color='#F0BA36'>需要：</font><font color='#E6E600'>光明</font>+<font color='#01A2FF'>圣水</font> \n\n价格：<font color='#F0BA36'>425金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>800</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n技能：每次攻击发射一颗直线穿行的法球，对经过的敌人造成伤害并在一定距离后爆炸。"
+        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_Description"        "将这座防御塔升级为冰封之塔.\n\n价格：<font color='#F0BA36'>425金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>800</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每次攻击发射一颗直线穿行的法球，对经过的敌人造成伤害并在一定距离后爆炸。"
+        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_disabled_Description"       "将这座防御塔升级为冰封之塔.\n<font color='#F0BA36'>需要：</font><font color='#E6E600'>光明</font>+<font color='#01A2FF'>圣水</font> \n\n价格：<font color='#F0BA36'>425金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>800</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每次攻击发射一颗直线穿行的法球，对经过的敌人造成伤害并在一定距离后爆炸。"
 
         "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_2"      "冻结之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_2_disabled"     "冻结之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_2_Description"      "将这座防御塔升级为冻结之塔.\n\n价格：<font color='#F0BA36'>1150金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>4000</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n技能：每次攻击发射一颗直线穿行的法球，对经过的敌人造成伤害并在一定距离后爆炸。"
-        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_2_disabled_Description"     "将这座防御塔升级为冻结之塔.\n<font color='#F0BA36'>需要：</font><font color='#E6E600'>光明2</font>+<font color='#01A2FF'>圣水2</font> \n\n价格：<font color='#F0BA36'>1150金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>4000</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n技能：每次攻击发射一颗直线穿行的法球，对经过的敌人造成伤害并在一定距离后爆炸。"
+        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_2_Description"      "将这座防御塔升级为冻结之塔.\n\n价格：<font color='#F0BA36'>1150金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>4000</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每次攻击发射一颗直线穿行的法球，对经过的敌人造成伤害并在一定距离后爆炸。"
+        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_2_disabled_Description"     "将这座防御塔升级为冻结之塔.\n<font color='#F0BA36'>需要：</font><font color='#E6E600'>光明2</font>+<font color='#01A2FF'>圣水2</font> \n\n价格：<font color='#F0BA36'>1150金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>4000</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每次攻击发射一颗直线穿行的法球，对经过的敌人造成伤害并在一定距离后爆炸。"
 
         "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_3"      "极寒之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_3_disabled"     "极寒之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_3_Description"      "将这座防御塔升级为极寒之塔.\n\n价格：<font color='#F0BA36'>2500金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>20000</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n技能：每次攻击发射一颗直线穿行的法球，对经过的敌人造成伤害并在一定距离后爆炸。"
-        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_3_disabled_Description"     "将这座防御塔升级为极寒之塔.\n<font color='#F0BA36'>需要：</font><font color='#E6E600'>光明3</font>+<font color='#01A2FF'>圣水3</font> \n\n价格：<font color='#F0BA36'>2500金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>20000</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n技能：每次攻击发射一颗直线穿行的法球，对经过的敌人造成伤害并在一定距离后爆炸。"
+        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_3_Description"      "将这座防御塔升级为极寒之塔.\n\n价格：<font color='#F0BA36'>2500金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>20000</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每次攻击发射一颗直线穿行的法球，对经过的敌人造成伤害并在一定距离后爆炸。"
+        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_3_disabled_Description"     "将这座防御塔升级为极寒之塔.\n<font color='#F0BA36'>需要：</font><font color='#E6E600'>光明3</font>+<font color='#01A2FF'>圣水3</font> \n\n价格：<font color='#F0BA36'>2500金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>20000</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>缓慢</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每次攻击发射一颗直线穿行的法球，对经过的敌人造成伤害并在一定距离后爆炸。"
 
-        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_damage"                           "伤害："
-        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_2_damage"                         "伤害："
-        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_2_disabled_damage"                "伤害："
-        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_3_damage"                         "伤害："
-        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_3_disabled_damage"                "伤害："
-        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_disabled_damage"                  "伤害："
+        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_ministun_duration"                           "STUN DURATION:"
+        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_2_ministun_duration"                         "STUN DURATION:"
+        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_2_disabled_ministun_duration"                "STUN DURATION:"
+        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_3_ministun_duration"                         "STUN DURATION:"
+        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_3_disabled_ministun_duration"                "STUN DURATION:"
+        "DOTA_Tooltip_ability_item_upgrade_to_ice_tower_disabled_ministun_duration"                  "STUN DURATION:"
 
 
 
@@ -1758,18 +1752,31 @@
         // Hail (Light + Dark + Water)
         "DOTA_Tooltip_ability_item_upgrade_to_hail_tower"       "冰雹之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_disabled"      "冰雹之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_Description"       "将这座防御塔升级为冰雹之塔.\n\n价格：<font color='#F0BA36'>900金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>800</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能：使防御塔能够在短时间内攻击多个小兵。"
-        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_disabled_Description"      "将这座防御塔升级为冰雹之塔.\n<font color='#F0BA36'>需要：</font><font color='#E6E600'>光明</font>+<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n\n价格：<font color='#F0BA36'>900金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>800</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能：使防御塔能够在短时间内攻击多个小兵。"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_Description"       "将这座防御塔升级为冰雹之塔.\n\n价格：<font color='#F0BA36'>900金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>900</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能：使防御塔能够在短时间内攻击多个小兵。"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_disabled_Description"      "将这座防御塔升级为冰雹之塔.\n<font color='#F0BA36'>需要：</font><font color='#E6E600'>光明</font>+<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n\n价格：<font color='#F0BA36'>900金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>900</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能：使防御塔能够在短时间内攻击多个小兵。"
 
         "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_2"     "彗星之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_2_disabled"        "彗星之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_2_Description"     "将这座防御塔升级为彗星之塔.\n\n价格：<font color='#F0BA36'>3500金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>4000</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能：使防御塔能够在短时间内攻击多个小兵。"
-        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_2_disabled_Description"        "将这座防御塔升级为彗星之塔.\n<font color='#F0BA36'>需要：</font><font color='#E6E600'>光明2</font>+<font color='#6C05B1'>黑暗2</font>+<font color='#01A2FF'>圣水2</font> \n\n价格：<font color='#F0BA36'>3500金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>4000</font>\n攻击距离：<font color='#FFFFFF'>1750</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能：使防御塔能够在短时间内攻击多个小兵。"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_2_Description"     "将这座防御塔升级为彗星之塔.\n\n价格：<font color='#F0BA36'>3500金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>4500</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能：使防御塔能够在短时间内攻击多个小兵。"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_2_disabled_Description"        "将这座防御塔升级为彗星之塔.\n<font color='#F0BA36'>需要：</font><font color='#E6E600'>光明2</font>+<font color='#6C05B1'>黑暗2</font>+<font color='#01A2FF'>圣水2</font> \n\n价格：<font color='#F0BA36'>3500金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>4500</font>\n攻击距离：<font color='#FFFFFF'>1750</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能：使防御塔能够在短时间内攻击多个小兵。"
 
         "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_3"     "彗星之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_3_disabled"        "彗星之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_3_Description"     "将这座防御塔升级为彗星之塔.\n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>12000</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能：使防御塔能够在短时间内攻击多个小兵。"
-        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_3_disabled_Description"        "将这座防御塔升级为彗星之塔.\n<font color='#F0BA36'>需要：</font><font color='#E6E600'>光明2</font>+<font color='#6C05B1'>黑暗2</font>+<font color='#01A2FF'>圣水2</font> \n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>12000</font>\n攻击距离：<font color='#FFFFFF'>1750</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能：使防御塔能够在短时间内攻击多个小兵。"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_3_Description"     "将这座防御塔升级为彗星之塔.\n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>13500</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能：使防御塔能够在短时间内攻击多个小兵。"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_3_disabled_Description"        "将这座防御塔升级为彗星之塔.\n<font color='#F0BA36'>需要：</font><font color='#E6E600'>光明2</font>+<font color='#6C05B1'>黑暗2</font>+<font color='#01A2FF'>圣水2</font> \n\n价格：<font color='#F0BA36'>5000金币</font>\n元素：<font color='#E6E600'>光明</font>+<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#E6E600'>光明</font>\n攻击力：<font color='#FFFFFF'>13500</font>\n攻击距离：<font color='#FFFFFF'>1750</font>\n攻击速度：<font color='#FFFFFF'>快速</font>\n技能：使防御塔能够在短时间内攻击多个小兵。"
+
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_attacks_required"                           "ATTACKS REQUIRED:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_crit_chance"                                "%CRIT CHANCE:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_2_attacks_required"                         "ATTACKS REQUIRED:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_2_crit_chance"                              "%CRIT CHANCE:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_2_disabled_attacks_required"                "ATTACKS REQUIRED:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_2_disabled_crit_chance"                     "%CRIT CHANCE:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_3_attacks_required"                         "ATTACKS REQUIRED:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_3_crit_chance"                              "%CRIT CHANCE:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_3_disabled_attacks_required"                "ATTACKS REQUIRED:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_3_disabled_crit_chance"                     "%CRIT CHANCE:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_disabled_attacks_required"                  "ATTACKS REQUIRED:"
+        "DOTA_Tooltip_ability_item_upgrade_to_hail_tower_disabled_crit_chance"                       "%CRIT CHANCE:"
 
 
 
@@ -1876,36 +1883,43 @@
         // Poison (Dark + Water)
         "DOTA_Tooltip_ability_item_upgrade_to_poison_tower"     "剧毒之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_disabled"        "剧毒之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_Description"     "将这座防御塔升级为剧毒之塔.\n\n价格：<font color='#F0BA36'>425金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>400</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每攻击四次造成一次额外伤害。"
-        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_disabled_Description"        "将这座防御塔升级为剧毒之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n\n价格：<font color='#F0BA36'>425金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>400</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每攻击四次造成一次额外伤害。"
+        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_Description"     "将这座防御塔升级为剧毒之塔.\n\n价格：<font color='#F0BA36'>425金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>200</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每攻击四次造成一次额外伤害。"
+        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_disabled_Description"        "将这座防御塔升级为剧毒之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n\n价格：<font color='#F0BA36'>425金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>200</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每攻击四次造成一次额外伤害。"
 
         "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_2"       "污染之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_2_disabled"      "污染之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_2_Description"       "将这座防御塔升级为污染之塔.\n\n价格：<font color='#F0BA36'>1150金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>2000</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每攻击四次造成一次额外伤害。"
-        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_2_disabled_Description"      "将这座防御塔升级为污染之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗2</font>+<font color='#01A2FF'>圣水2</font> \n\n价格：<font color='#F0BA36'>1150金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>2000</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每攻击四次造成一次额外伤害。"
+        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_2_Description"       "将这座防御塔升级为污染之塔.\n\n价格：<font color='#F0BA36'>1150金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>1000</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每攻击四次造成一次额外伤害。"
+        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_2_disabled_Description"      "将这座防御塔升级为污染之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗2</font>+<font color='#01A2FF'>圣水2</font> \n\n价格：<font color='#F0BA36'>1150金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>1000</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每攻击四次造成一次额外伤害。"
 
         "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_3"       "瘟疫之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_3_disabled"      "瘟疫之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_3_Description"       "将这座防御塔升级为瘟疫之塔.\n\n价格：<font color='#F0BA36'>2500金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>10000</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每攻击四次造成一次额外伤害。"
-        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_3_disabled_Description"      "将这座防御塔升级为瘟疫之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗3</font>+<font color='#01A2FF'>圣水3</font> \n\n价格：<font color='#F0BA36'>2500金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>10000</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每攻击四次造成一次额外伤害。"
+        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_3_Description"       "将这座防御塔升级为瘟疫之塔.\n\n价格：<font color='#F0BA36'>2500金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>5000</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每攻击四次造成一次额外伤害。"
+        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_3_disabled_Description"      "将这座防御塔升级为瘟疫之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗3</font>+<font color='#01A2FF'>圣水3</font> \n\n价格：<font color='#F0BA36'>2500金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#01A2FF'>圣水</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>5000</font>\n攻击距离：<font color='#FFFFFF'>900</font>\n攻击速度：<font color='#FFFFFF'>常规</font>\n作用范围：<font color='#FFFFFF'>100内全额/200内半额</font>\n技能：每攻击四次造成一次额外伤害。"
+
+        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_damage_per_second"                           "DAMAGE PER SECOND:"
+        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_2_damage_per_second"                         "DAMAGE PER SECOND:"
+        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_2_disabled_damage_per_second"                "DAMAGE PER SECOND:"
+        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_3_damage_per_second"                         "DAMAGE PER SECOND:"
+        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_3_disabled_damage_per_second"                "DAMAGE PER SECOND:"
+        "DOTA_Tooltip_ability_item_upgrade_to_poison_tower_disabled_damage_per_second"                  "DAMAGE PER SECOND:"
 
 
 
         // Magic (Dark + Fire)
         "DOTA_Tooltip_ability_item_upgrade_to_magic_tower"      "魔法之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_magic_tower_disabled"     "魔法之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_magic_tower_Description"      "将这座防御塔升级为魔法之塔.\n\n价格：<font color='#F0BA36'>425金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>300</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n技能：随着攻击增加攻击距离。"
-        "DOTA_Tooltip_ability_item_upgrade_to_magic_tower_disabled_Description"     "将这座防御塔升级为魔法之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font> \n\n价格：<font color='#F0BA36'>425金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>300</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n技能：随着攻击增加攻击距离。"
+        "DOTA_Tooltip_ability_item_upgrade_to_magic_tower_Description"      "将这座防御塔升级为魔法之塔.\n\n价格：<font color='#F0BA36'>425金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>300</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n作用范围：<font color='#FFFFFF'>50内全额</font>\n技能：随着攻击增加攻击距离。"
+        "DOTA_Tooltip_ability_item_upgrade_to_magic_tower_disabled_Description"     "将这座防御塔升级为魔法之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font> \n\n价格：<font color='#F0BA36'>425金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>300</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n作用范围：<font color='#FFFFFF'>50内全额</font>\n技能：随着攻击增加攻击距离。"
 
         "DOTA_Tooltip_ability_item_upgrade_to_magic_tower_2"        "巫术之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_magic_tower_2_disabled"       "巫术之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_magic_tower_2_Description"        "将这座防御塔升级为巫术之塔.\n\n价格：<font color='#F0BA36'>1150金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>1500</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n技能：随着攻击增加攻击距离。"
-        "DOTA_Tooltip_ability_item_upgrade_to_magic_tower_2_disabled_Description"       "将这座防御塔升级为巫术之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗2</font>+<font color='#C40000'>圣火2</font> \n\n价格：<font color='#F0BA36'>1150金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>1500</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n技能：随着攻击增加攻击距离。"
+        "DOTA_Tooltip_ability_item_upgrade_to_magic_tower_2_Description"        "将这座防御塔升级为巫术之塔.\n\n价格：<font color='#F0BA36'>1150金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>1500</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n作用范围：<font color='#FFFFFF'>50内全额</font>\n技能：随着攻击增加攻击距离。"
+        "DOTA_Tooltip_ability_item_upgrade_to_magic_tower_2_disabled_Description"       "将这座防御塔升级为巫术之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗2</font>+<font color='#C40000'>圣火2</font> \n\n价格：<font color='#F0BA36'>1150金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>1500</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n作用范围：<font color='#FFFFFF'>50内全额</font>\n技能：随着攻击增加攻击距离。"
 
         "DOTA_Tooltip_ability_item_upgrade_to_magic_tower_3"        "魅术之塔"
         "DOTA_Tooltip_ability_item_upgrade_to_magic_tower_3_disabled"       "魅术之塔"
-        "DOTA_Tooltip_ability_item_upgrade_to_magic_tower_3_Description"        "将这座防御塔升级为魅术之塔.\n\n价格：<font color='#F0BA36'>2500金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>7500</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n技能：随着攻击增加攻击距离。"
-        "DOTA_Tooltip_ability_item_upgrade_to_magic_tower_3_disabled_Description"       "将这座防御塔升级为魅术之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗3</font>+<font color='#C40000'>圣火3</font> \n\n价格：<font color='#F0BA36'>2500金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>7500</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n技能：随着攻击增加攻击距离。"
+        "DOTA_Tooltip_ability_item_upgrade_to_magic_tower_3_Description"        "将这座防御塔升级为魅术之塔.\n\n价格：<font color='#F0BA36'>2500金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>7500</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n作用范围：<font color='#FFFFFF'>50内全额</font>\n技能：随着攻击增加攻击距离。"
+        "DOTA_Tooltip_ability_item_upgrade_to_magic_tower_3_disabled_Description"       "将这座防御塔升级为魅术之塔.\n<font color='#F0BA36'>需要：</font><font color='#6C05B1'>黑暗3</font>+<font color='#C40000'>圣火3</font> \n\n价格：<font color='#F0BA36'>2500金币</font>\n元素：<font color='#6C05B1'>黑暗</font>+<font color='#C40000'>圣火</font> \n伤害类型：<font color='#6C05B1'>黑暗</font>\n攻击力：<font color='#FFFFFF'>7500</font>\n攻击距离：<font color='#FFFFFF'>1500</font>\n攻击速度：<font color='#FFFFFF'>极快</font>\n作用范围：<font color='#FFFFFF'>50内全额</font>\n技能：随着攻击增加攻击距离。"
 
 
 
