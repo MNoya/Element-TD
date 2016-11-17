@@ -620,7 +620,7 @@
         "DOTA_Tooltip_ability_dark_tower_overkill_aoe"              "AOE:"
 
         "DOTA_Tooltip_ability_fire_tower_blaze"                     "Blaze"
-        "DOTA_Tooltip_ability_fire_tower_blaze_Description"          "Each attack on the same creep increases this tower's AoE. Attacking another creep resets its AoE."
+        "DOTA_Tooltip_ability_fire_tower_blaze_Description"          "Each attack on the same creep increases this tower's AoE. Attacking another creep resets its AoE.\n\nToggle On to hit closest targets.\nATTACK TARGETING: Highest HP"
         "DOTA_Tooltip_ability_fire_tower_blaze_aoe"                  "AOE:"
         "DOTA_Tooltip_modifier_blazeit_stacks"                       "Blaze it"
         "DOTA_Tooltip_modifier_blazeit_stacks_Description"           "Taking damage over time"
@@ -709,7 +709,7 @@
         "DOTA_Tooltip_ability_poison_tower_contamination_duration"       "DURATION:"
         
         "DOTA_Tooltip_ability_life_tower_afterlife"     "Afterlife"
-        "DOTA_Tooltip_ability_life_tower_afterlife_Description"     "Every few creeps killed by this tower will heal you, up to max of 75 lives (150 on co-op). If you are at max lives or less, this tower deals <font color='#FFFFFF'>%damage_bonus_full_hp_pct%%% bonus damage.</font>\n\n<font color='#FFFFFF'>ATTACK TARGETING:</font> Lowest HP"
+        "DOTA_Tooltip_ability_life_tower_afterlife_Description"     "Every few creeps killed by this tower will heal you, up to max of 70 lives (140 on co-op). If you are at 50 lives (100 on co-op) or less, this tower deals <font color='#FFFFFF'>%damage_bonus_full_hp_pct%%% bonus damage.</font>\n\n<font color='#FFFFFF'>ATTACK TARGETING:</font> Lowest HP"
         "DOTA_Tooltip_ability_life_tower_afterlife_kills_required"      "KILLS REQUIRED:"
         "DOTA_Tooltip_ability_life_tower_afterlife_heal_amount"     "HEAL AMOUNT:"
         "DOTA_Tooltip_modifier_life_tower_counter"                                        "Life Gained"
