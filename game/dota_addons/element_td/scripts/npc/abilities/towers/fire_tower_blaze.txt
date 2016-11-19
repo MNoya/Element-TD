@@ -18,7 +18,7 @@
             "ScriptFile"        "towers/towerevents.lua"
             "Function"          "TriggerEvent"
             "Event"             "OnAbilityToggle"
-            "target_type"       "2" //TOWER_TARGETING_CLOSEST
+            "target_type"       "0" //TOWER_TARGETING_HIGHEST_HP
             "keep_target"       "1"
         }
     }
@@ -30,7 +30,7 @@
             "ScriptFile"        "towers/towerevents.lua"
             "Function"          "TriggerEvent"
             "Event"             "OnAbilityToggle"
-            "target_type"       "0" //TOWER_TARGETING_HIGHEST_HP
+            "target_type"       "2" //TOWER_TARGETING_CLOSEST
             "keep_target"       "1"
         }
     }
