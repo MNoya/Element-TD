@@ -5942,11 +5942,11 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "80"
-	    "AttackDamageMax"           "80"
-	    "Damage"                    "80"  
-	    "AOE_Full"                  "150"
-	    "AOE_Half"                  "300" 
+	    "AttackDamageMin"           "30"
+	    "AttackDamageMax"           "30"
+	    "Damage"                    "30"  
+	    "AOE_Full"                  "200"
+	    "AOE_Half"                  "400" 
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.31"
@@ -6036,11 +6036,11 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "560"
-	    "AttackDamageMax"           "560"
-	    "Damage"                    "560"  
-	    "AOE_Full"                  "150"
-	    "AOE_Half"                  "300" 
+	    "AttackDamageMin"           "210"
+	    "AttackDamageMax"           "210"
+	    "Damage"                    "210"  
+	    "AOE_Full"                  "200"
+	    "AOE_Half"                  "400" 
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.31"
@@ -6126,11 +6126,11 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "39200"
-	    "AttackDamageMax"           "39200"
-	    "Damage"                    "39200"  
-	    "AOE_Full"                  "150"
-	    "AOE_Half"                  "300" 
+	    "AttackDamageMin"           "15000"
+	    "AttackDamageMax"           "15000"
+	    "Damage"                    "15000"  
+	    "AOE_Full"                  "200"
+	    "AOE_Half"                  "400" 
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.31"
@@ -6210,11 +6210,11 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "3920"
-	    "AttackDamageMax"           "3920"
-	    "Damage"                    "3920"  
-	    "AOE_Full"                  "150"
-	    "AOE_Half"                  "300" 
+	    "AttackDamageMin"           "1500"
+	    "AttackDamageMax"           "1500"
+	    "Damage"                    "1500"  
+	    "AOE_Full"                  "200"
+	    "AOE_Half"                  "400" 
 	    "AttackRange"               "700"
 	    "AttackAcquisitionRange"    "700"
 	    "AttackRate"                "0.31"
@@ -13495,7 +13495,7 @@
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1500"
 	    "AttackAcquisitionRange"        "1500"
-	    "AttackRate"        "1.5"
+	    "AttackRate"        "1"
 	    "ProjectileModel"        "particles/units/heroes/hero_enchantress/enchantress_impetus.vpcf"
 	    "ProjectileSpeed"        "3000"
 	
@@ -13584,7 +13584,7 @@
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1500"
 	    "AttackAcquisitionRange"        "1500"
-	    "AttackRate"        "1.5"
+	    "AttackRate"        "1"
 	    "ProjectileModel"        "particles/units/heroes/hero_enchantress/enchantress_impetus.vpcf"
 	    "ProjectileSpeed"        "3000"
 	    
@@ -13673,7 +13673,7 @@
 	    "HasAbilityDesc"        "1"
 	    "AttackRange"        "1750"
 	    "AttackAcquisitionRange"        "1750"
-	    "AttackRate"        "1.5"
+	    "AttackRate"        "1"
 	    "ProjectileModel"        "particles/units/heroes/hero_enchantress/enchantress_impetus.vpcf"
 	    "ProjectileSpeed"        "3000"
 	    

@@ -6167,7 +6167,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"5000 25000 75000"
+				"multiplier"			"3300 16500 50000"
 			}
 		}
 		"AbilityCastRange"              "1500"
@@ -6208,7 +6208,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"5000 25000 75000"
+				"multiplier"			"3300 16500 50000"
 			}
 		}
 		"AbilityCastRange"              "1500"
@@ -6239,7 +6239,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"5000 25000 75000"
+				"multiplier"			"3300 16500 50000"
 			}
 		}
 		"AbilityCastRange"              "1500"
@@ -6280,7 +6280,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"5000 25000 75000"
+				"multiplier"			"3300 16500 50000"
 			}
 		}
 		"AbilityCastRange"              "1750"
@@ -6311,7 +6311,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"5000 25000 75000"
+				"multiplier"			"3300 16500 50000"
 			}
 		}
 		"AbilityCastRange"              "1750"
@@ -6343,7 +6343,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"5000 25000 75000"
+				"multiplier"			"3300 16500 50000"
 			}
 		}
 		"AbilityCastRange"              "1500"

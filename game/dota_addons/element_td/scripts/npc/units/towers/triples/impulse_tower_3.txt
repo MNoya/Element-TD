@@ -48,7 +48,7 @@
     "HasAbilityDesc"        "1"
     "AttackRange"        "1750"
     "AttackAcquisitionRange"        "1750"
-    "AttackRate"        "1.5"
+    "AttackRate"        "1"
     "ProjectileModel"        "particles/units/heroes/hero_enchantress/enchantress_impetus.vpcf"
     "ProjectileSpeed"        "3000"
     

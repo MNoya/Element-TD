@@ -85,7 +85,7 @@ function FireTower:OnCreated()
     self.modifier_name = "modifier_blazeit" --420
     self.consecutiveAttacks = 0 
 
-    self:OnAbilityToggle({target_type = TOWER_TARGETING_HIGHEST_HP}) -- set default targeting mode
+    self:OnAbilityToggle({target_type = TOWER_TARGETING_HIGHEST_HP,keep_target=true}) -- set default targeting mode
     self.tower.toggled = false
 
 --[[ Removed in 1.15, applied to Poison Tower
