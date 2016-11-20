@@ -7108,9 +7108,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "50000"
-	    "AttackDamageMax"           "50000"
-	    "Damage"                    "50000"
+	    "AttackDamageMin"           "35000"
+	    "AttackDamageMax"           "35000"
+	    "Damage"                    "35000"
 	    "AOE_Full"                  "100"
 	    "AOE_Half"                  "200"
 	    "AttackRange"               "900"
@@ -7196,9 +7196,9 @@
 	
 	    // Stats
 	    //----------------------------- 
-	    "AttackDamageMin"           "5000"
-	    "AttackDamageMax"           "5000"
-	    "Damage"                    "5000"
+	    "AttackDamageMin"           "3500"
+	    "AttackDamageMax"           "3500"
+	    "Damage"                    "3500"
 	    "AOE_Full"                  "100"
 	    "AOE_Half"                  "200"
 	    "AttackRange"               "900"
