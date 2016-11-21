@@ -1,24 +1,80 @@
 //============================================================//
 // Poison Tower: Contamination
+// Each attack applies a DoT debuff on all targets hit
 //============================================================//
 "poison_tower_contamination"
 {
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-	"MaxLevel"						"1"
-	"AbilityTextureName"			"towers/poison"
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"crit_aoe_half"					"900"
-		}
-		"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"crit_aoe_full"					"450"
-		}
-	}
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"                     "ability_datadriven"                                            
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "towers/poison"
+    "MaxLevel"                      "3"
+
+    "Modifiers"
+    {
+        "modifier_contamination"
+        {
+            "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
+            "Duration"          "%duration"
+            "IsHidden"          "1"
+            "IsDebuff"          "1"
+            "TextureName"       "towers/poison"
+            "EffectName"        "particles/custom/towers/fire/blaze.vpcf"
+            "EffectAttachType"  "follow_origin"
+
+            "ThinkInterval" "0.5"
+            "OnIntervalThink"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"        "towers/towerevents.lua"
+                    "Function"          "TriggerEvent"
+                    "Event"             "DealContaminationDamage"
+                }
+            }
+
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "mechanics/modifiers.lua"
+                    "Function"      "StackModifier"
+                    "ModifierName"  "modifier_contamination"
+                    "ModifierStack" "modifier_contamination_stacks"
+                }
+            }
+
+            "OnDestroy"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"    "mechanics/modifiers.lua"
+                    "Function"      "StackModifier"
+                    "ModifierName"  "modifier_contamination"
+                    "ModifierStack" "modifier_contamination_stacks"
+                }
+            }
+        }
+
+        "modifier_contamination_stacks"
+        {
+            "TextureName"   "towers/poison"
+            "IsDebuff"      "1"
+        }
+    }
+
+    "AbilitySpecial"
+    {
+         "01"
+             {
+                 "var_type"              "FIELD_FLOAT"
+                 "damage_per_second"     "80 400 2000"
+             }
+             "02"
+             {
+                 "var_type"              "FIELD_FLOAT"
+                 "duration"              "10.0"
+             }
+    }
 }

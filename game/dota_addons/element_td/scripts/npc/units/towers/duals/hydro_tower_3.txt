@@ -10,7 +10,7 @@
     "SoundSet"                  "Tower.Water"
     "MinimapIcon"               "minimap_tower90"
     "MinimapIconSize"           "320"
-    "AttackAnimationPoint"      "0.2"
+    "AttackAnimationPoint"      "0.15"
     "Creature"
     {
        "AttachWearables" // Bestowments of the Divine Anchor
@@ -28,12 +28,12 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "20000"
-    "AttackDamageMax"           "20000"
-    "Damage"                    "20000"
-    "AttackRange"               "900"
-    "AttackAcquisitionRange"    "900"
-    "AttackRate"                "1"
+    "AttackDamageMin"           "17500"
+    "AttackDamageMax"           "17500"
+    "Damage"                    "17500"
+    "AttackRange"               "700"
+    "AttackAcquisitionRange"    "700"
+    "AttackRate"                "0.66"
     "ProjectileSpeed"           "2000" 
 
     "Level"                     "3"

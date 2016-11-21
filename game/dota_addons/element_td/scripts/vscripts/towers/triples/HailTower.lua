@@ -19,7 +19,7 @@ nil)
 function HailTower:OnAttack(keys)
     local target = keys.target
     local caster = keys.caster
-    
+
     self.current_attacks = self.current_attacks + 1
     if self.current_attacks >= self.attacks_required then
         self.current_attacks = 0
@@ -84,13 +84,12 @@ function HailTower:GetUpgradeData()
 end
 
 function HailTower:OnCreated()
-    self.ability = AddAbility(self.tower, "hail_tower_storm")
-
-    self.attacks_required = self.ability:GetSpecialValueFor("attacks_required")
+    self.ability = AddAbility(self.tower, "hail_tower_storm", self.tower:GetLevel())
+    self.attacks_required = self.ability:GetLevelSpecialValueFor("attacks_required", self.ability:GetLevel()-1)
     self.current_attacks = 0
     self.findRadius = self.ability:GetSpecialValueFor("hail_radius") + self.tower:GetHullRadius()
     self.tower:SetModifierStackCount("modifier_storm_passive", self.tower, self.attacks_required)
-    self.crit_chance = self.ability:GetSpecialValueFor("crit_chance")
+    self.crit_chance = self.ability:GetLevelSpecialValueFor("crit_chance", self.ability:GetLevel()-1)
     self.damageMultiplier = self.ability:GetSpecialValueFor("damage_mult") / 100 
 end
 

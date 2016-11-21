@@ -241,7 +241,7 @@
         //  <font color='#hex'>text</font>  for color
         //  <b>text</b> for bold        
         "loading_screen_changelog"   "Latest Changes"
-        "loading_screen_change_text" "<h1>Version 1.14</h1><h2> October 19th, 2016</h2><br>• Minor changes to scoring<br>• Buffed laser/runic/quake/obliteration towers<br>• Rescaled slow towers<br>• Improved random formula<br>• Other minor changes"
+        "loading_screen_change_text" "<h1>Version 1.15</h1><h2> November 19th, 2016</h2><br>• Rework Fire/Poison/Geyser/Ice tower<br>• Buffed Hail/Impulse/Ephemeral tower<br>• Revert water tower ability<br>• Other minor changes"
 
         "credits_title"         "Credits"
         "credits_developers"    "Developers"

@@ -2779,7 +2779,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"max_reduction"		"60"
+				"max_reduction"		"60 40 20"
 			}
 			"03"
 			{
@@ -2907,14 +2907,14 @@
 	}
 	//=================================================================================================================
 	// Fire Tower: Blaze
-	// Each attack applies a single-target DoT debuff on all targets hit
+	// Each attack against the same target increases its AoE. Resets on switching targets.
 	//=================================================================================================================
 	"fire_tower_blaze"
 	{
 	    // General
 	    //-------------------------------------------------------------------------------------------------------------
 	    "BaseClass"                     "ability_datadriven"                                            
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 	    "AbilityTextureName"            "towers/fire"
 	    "MaxLevel"                      "4"
 	
@@ -2976,12 +2976,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_FLOAT"
-	            "damage_per_second"     "10 70 490 4900"
-	        }
-	        "02"
-	        {
-	            "var_type"              "FIELD_FLOAT"
-	            "duration"              "3.0"
+	            "aoe"     "30"
 	        }
 	    }
 	}
@@ -3380,12 +3375,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attacks_required"		"14"
+				"attacks_required"		"14 13 12"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"15"
+				"crit_chance"			"15 20 25"
 			}
 			"03"
 			{
@@ -3469,23 +3464,21 @@
 	
 		"Modifiers"
 		{
-			"modifier_hydro_delay"
-			{
-				"EffectName"		"particles/units/heroes/hero_kunkka/kunkka_spell_x_spot.vpcf"
-				"EffectAttachType"	"follow_origin"
-	
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"IsDebuff"	"1"
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"towers/towerevents.lua"
-						"Function"			"TriggerEvent"
-						"Event"				"OnDelayEnd"
-					}
-				}
-			}
+			"modifier_hydro_ability_passive"
+	 			{
+	 				"Passive"		"1"
+	 				"IsHidden"		"1"
+	 				"OnKill"
+	 				{
+	 					"RunScript"
+	 					{
+	 						"Target"			"UNIT"
+	 						"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
+	 						"Function"			"TriggerEvent"
+	 						"Event"				"CreepKilled"
+	 					}
+	 				}
+	 			}
 		}
 	
 		"AbilitySpecial"
@@ -3493,17 +3486,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_damage"		"800 4000 20000"
+				"damage"		"700 3500 17500" //800,4000,20000
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"splash_aoe"		"200"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"delay"				"1.5"
+				"aoe"			"300"
 			}
 		}
 	}
@@ -3514,124 +3502,33 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "ability_datadriven"                                            
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"            "towers/ice"
+	    "MaxLevel"                      "3"
 	
-		"BaseClass"						"ability_datadriven"											
-		"AbilityBehavior"       		"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityTextureName"			"towers/ice"
-		"MaxLevel"						"3"	
-		"AbilityCastPoint"				"0.0"
-		"AbilityCastRange"      		"1150"
-	
-	    "AOERadius"             		"200"
-	
-	 	"AbilityMultiOrder"     		"1"
-	
-		"OnSpellStart"
+	    "Modifiers"
 	    {
-	        "RunScript"
+	        "modifier_ice_tower_stun"
 	        {
-	            "ScriptFile"    "mechanics/ground_attacks.lua"
-	            "Function"      "AttackGround"
-	            "Target"        "POINT"
+	            "IsHidden"           "1"
+	            "IsDebuff"           "1"
+	        
+	            "States"
+	            {
+	                "MODIFIER_STATE_STUNNED"        "MODIFIER_STATE_VALUE_ENABLED"
+	            }
 	        }
 	    }
 	
-		"Modifiers"
-		{
-			"modifier_ice_blast_passive"
-			{
-				"Passive"	"1"
-				"IsHidden"	"1"
-				"OnAttack"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"towers/towerevents.lua"
-						"Function"			"TriggerEvent"
-						"Event"				"OnAttack"
-					}
-				}
-			}
-	
-			"modifier_attacking_ground"
+	    "AbilitySpecial"
+	    {
+	        "01"
 	        {
-	            "IsHidden"          "1"
-	    
-	            "OnOrder"
-	            {
-	                "RemoveModifier"
-	                {
-	                    "ModifierName"  "modifier_attacking_ground"
-	                    "Target"        "CASTER"
-	                }
-	                "RunScript"
-	                {
-	                    "ScriptFile"    "mechanics/ground_attacks.lua"
-	                    "Function"      "StopAttackGround"
-	                }
-	            }
-	
-	            // Attacking ground is a fake attack
-	            "OnAttack"
-	            {
-	                "RemoveModifier"
-	                {
-	                    "ModifierName"  "modifier_attacking_ground"
-	                    "Target"        "CASTER"
-	                }
-	                "RunScript"
-	                {
-	                    "ScriptFile"    "mechanics/ground_attacks.lua"
-	                    "Function"      "StopAttackGround"
-	                }
-	            }
-	
-	            "Properties"
-	            {
-	                "MODIFIER_PROPERTY_DISABLE_AUTOATTACK"  "1"
-	            }
+	            "var_type"            "FIELD_FLOAT"
+	            "ministun_duration"   "0.15 0.25 0.4"
 	        }
-		}
-	
-		"OnProjectileHitUnit"
-		{
-			"DeleteOnHit"	"0"
-			"RunScript"
-			{
-				"ScriptFile"		"towers/towerevents.lua"
-				"Function"			"TriggerEvent"
-				"Event"				"OnProjectileHit"
-			}
-		}
-	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"360 1800 9000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aoe_start"				"450"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aoe_end"				"450"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"distance"				"550"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"1000"
-			}
-		}
+	    }
 	}
 	//=================================================================================================================
 	// Impulse Tower: Impetus
@@ -3689,7 +3586,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"4000 20000 60000"
+				"multiplier"			"3300 16500 50000"
 			}
 		}
 	}
@@ -4388,27 +4285,83 @@
 	}
 	//============================================================//
 	// Poison Tower: Contamination
+	// Each attack applies a DoT debuff on all targets hit
 	//============================================================//
 	"poison_tower_contamination"
 	{
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel"						"1"
-		"AbilityTextureName"			"towers/poison"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"crit_aoe_half"					"900"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"crit_aoe_full"					"450"
-			}
-		}
+	    // General
+	    //-------------------------------------------------------------------------------------------------------------
+	    "BaseClass"                     "ability_datadriven"                                            
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"            "towers/poison"
+	    "MaxLevel"                      "3"
+	
+	    "Modifiers"
+	    {
+	        "modifier_contamination"
+	        {
+	            "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
+	            "Duration"          "%duration"
+	            "IsHidden"          "1"
+	            "IsDebuff"          "1"
+	            "TextureName"       "towers/poison"
+	            "EffectName"        "particles/custom/towers/fire/blaze.vpcf"
+	            "EffectAttachType"  "follow_origin"
+	
+	            "ThinkInterval" "0.5"
+	            "OnIntervalThink"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"        "towers/towerevents.lua"
+	                    "Function"          "TriggerEvent"
+	                    "Event"             "DealContaminationDamage"
+	                }
+	            }
+	
+	            "OnCreated"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/modifiers.lua"
+	                    "Function"      "StackModifier"
+	                    "ModifierName"  "modifier_contamination"
+	                    "ModifierStack" "modifier_contamination_stacks"
+	                }
+	            }
+	
+	            "OnDestroy"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"    "mechanics/modifiers.lua"
+	                    "Function"      "StackModifier"
+	                    "ModifierName"  "modifier_contamination"
+	                    "ModifierStack" "modifier_contamination_stacks"
+	                }
+	            }
+	        }
+	
+	        "modifier_contamination_stacks"
+	        {
+	            "TextureName"   "towers/poison"
+	            "IsDebuff"      "1"
+	        }
+	    }
+	
+	    "AbilitySpecial"
+	    {
+	         "01"
+	             {
+	                 "var_type"              "FIELD_FLOAT"
+	                 "damage_per_second"     "80 400 2000"
+	             }
+	             "02"
+	             {
+	                 "var_type"              "FIELD_FLOAT"
+	                 "duration"              "10.0"
+	             }
+	    }
 	}
 	//=================================================================================================================
 	// Polar Tower: Frostbite
@@ -4510,8 +4463,8 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"pct"					"2 4 6"
+				"var_type"				"FIELD_FLOAT"
+				"pct"					"1 2.5 4"
 			}
 			"03"
 			{
@@ -5073,7 +5026,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_creep"		"25 125 625"
+				"damage_per_creep"		"30 150 750"
 			}
 			"03"
 			{
@@ -5125,7 +5078,7 @@
 	        "01"
 	        {
 	            "var_type"            "FIELD_INTEGER"
-	            "bounce_range"        "150"
+	            "bounce_range"        "250"
 	        }
 	        "02"
 	        {

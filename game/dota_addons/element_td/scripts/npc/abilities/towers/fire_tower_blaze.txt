@@ -1,13 +1,13 @@
 //=================================================================================================================
 // Fire Tower: Blaze
-// Each attack applies a single-target DoT debuff on all targets hit
+// Each attack against the same target increases its AoE. Resets on switching targets.
 //=================================================================================================================
 "fire_tower_blaze"
 {
     // General
     //-------------------------------------------------------------------------------------------------------------
     "BaseClass"                     "ability_datadriven"                                            
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
     "AbilityTextureName"            "towers/fire"
     "MaxLevel"                      "4"
 
@@ -69,12 +69,7 @@
         "01"
         {
             "var_type"              "FIELD_FLOAT"
-            "damage_per_second"     "10 70 490 4900"
-        }
-        "02"
-        {
-            "var_type"              "FIELD_FLOAT"
-            "duration"              "3.0"
+            "aoe"     "30"
         }
     }
 }

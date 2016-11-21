@@ -29,8 +29,8 @@
 		}
 		"02"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"pct"					"2 4 6"
+			"var_type"				"FIELD_FLOAT"
+			"pct"					"1 2.5 4"
 		}
 	}
 	"AbilityCastRange"              "550"

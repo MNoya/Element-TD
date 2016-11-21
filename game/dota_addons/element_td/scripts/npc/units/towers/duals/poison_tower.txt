@@ -41,9 +41,9 @@
         "1"        "dark"
         "2"        "water"
     }
-    "Damage"        "400"
-    "AttackDamageMin"        "400"
-    "AttackDamageMax"        "400"
+    "Damage"        "200"
+    "AttackDamageMin"        "200"
+    "AttackDamageMax"        "200"
     "DamageType"        "dark"
     "ScriptClass"        "PoisonTower"
     "TowerType"        "Normal"
@@ -58,8 +58,8 @@
     "ModelScale"        "0.8"
     "ModelRotation"             "90"
     "ModelOffset"               "10"
-    "AOE_Full"        "100"
-    "AOE_Half"        "200"
+    "AOE_Full"        "150"
+    "AOE_Half"        "300"
     "BuildTime"        "2"
     "Requirements"
     {

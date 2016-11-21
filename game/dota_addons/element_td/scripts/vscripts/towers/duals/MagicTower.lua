@@ -31,8 +31,19 @@ end
 
 function MagicTower:OnAttackLanded(keys)
     local target = keys.target
-    local damage = self.tower:GetAverageTrueAttackDamage(target)
-    DamageEntity(target, self.tower, damage)
+	local damage = self.tower:GetAverageTrueAttackDamage(target)
+	DamageEntitiesInArea(target:GetOrigin(), self.halfAOE, self.tower, damage / 2);
+	DamageEntitiesInArea(target:GetOrigin(), self.fullAOE, self.tower, damage / 2);
+
+
+		local particle = ParticleManager:CreateParticle("particles/custom/towers/magic/impactedict.vpcf", PATTACH_CUSTOMORIGIN, target)
+		local origin = target:GetAbsOrigin()
+		origin.z = origin.z + 64
+		ParticleManager:SetParticleControl(particle, 0, origin)
+		ParticleManager:SetParticleControl(particle, 1, origin)
+		ParticleManager:SetParticleControl(particle, 2, origin)
+	    ParticleManager:ReleaseParticleIndex(particle)
+
 
     -- Refresh selection
     if PlayerResource:IsUnitSelected(self.playerID, self.tower) then
@@ -51,6 +62,8 @@ function OnMagicRangeDestroy(event)
 end
 
 function MagicTower:OnCreated()
+	self.fullAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"));
+	self.halfAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"));
     self.ability = AddAbility(self.tower, "magic_tower_range") 
     self.rangeStacks = 0
     self.maxStacks = self.ability:GetSpecialValueFor("max_stacks")

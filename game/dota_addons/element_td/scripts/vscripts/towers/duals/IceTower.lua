@@ -15,6 +15,37 @@ IceTower = createClass({
     },
 nil)    
 
+function IceTower:OnAttackLanded(keys)
+	local target = keys.target;
+	local damage = self.tower:GetAverageTrueAttackDamage(target)
+	DamageEntitiesInArea(target:GetOrigin(), self.halfAOE, self.tower, damage / 2);
+	DamageEntitiesInArea(target:GetOrigin(), self.fullAOE, self.tower, damage / 2);
+
+
+		local particle = ParticleManager:CreateParticle("particles/custom/towers/ice/attack.vpcf", PATTACH_CUSTOMORIGIN, target)
+		local origin = target:GetAbsOrigin()
+		origin.z = origin.z + 64
+		ParticleManager:SetParticleControl(particle, 0, origin)
+		ParticleManager:SetParticleControl(particle, 1, origin)
+		ParticleManager:SetParticleControl(particle, 2, origin)
+	    ParticleManager:ReleaseParticleIndex(particle)
+
+	local time = GameRules:GetGameTime()
+    if not target.ice_tower_stun or time >= target.ice_tower_stun+self.threshold_duration then
+        self.ability:ApplyDataDrivenModifier(self.tower, target, "modifier_ice_tower_stun", {duration=self.ministun_duration})
+        target.ice_tower_stun = GameRules:GetGameTime()
+    end
+end
+
+function IceTower:OnCreated()
+	self.fullAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"));
+	self.halfAOE =  tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"));
+    self.ability = AddAbility(self.tower, "ice_tower_ice_blast", self.tower:GetLevel())
+    self.ministun_duration = self.ability:GetSpecialValueFor("ministun_duration")
+    self.threshold_duration = 1.2
+end
+
+--[[ Removed in 1.15
 function IceTower:OnAttack(keys)
     local target = keys.target
     local origin = keys.origin or (target and target:GetAbsOrigin())
@@ -80,6 +111,6 @@ function IceTower:OnCreated()
         end
     end)
 end
+]]
 
-function IceTower:OnAttackLanded(keys) end
 RegisterTowerClass(IceTower, IceTower.className)    

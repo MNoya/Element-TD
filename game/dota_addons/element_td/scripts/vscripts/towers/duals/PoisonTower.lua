@@ -15,6 +15,28 @@ PoisonTower = createClass({
     },
 nil)    
 
+
+function PoisonTower:OnAttackLanded(keys)
+    local target = keys.target
+    local damage = self.tower:GetAverageTrueAttackDamage(target)
+
+    DamageEntitiesInArea(target:GetOrigin(), self.halfAOE, self.tower, damage / 2)
+    DamageEntitiesInArea(target:GetOrigin(), self.fullAOE, self.tower, damage / 2)
+
+    local creeps = GetCreepsInArea(target:GetAbsOrigin(), self.fullAOE)
+    for _, creep in pairs(creeps) do
+        self.ability:ApplyDataDrivenModifier(self.tower, creep, "modifier_contamination", {})
+    end 
+
+end
+
+function PoisonTower:DealContaminationDamage(keys)
+    local target = keys.target    
+    local damage = ApplyAbilityDamageFromModifiers(self.damage_per_interval, self.tower)    
+    DamageEntity(target, self.tower, damage)
+end
+
+--[[ Removed in 1.15
 function PoisonTower:OnAttackLanded(keys)
     local target = keys.target    
     local damage = self.tower:GetAverageTrueAttackDamage(target) 
@@ -43,15 +65,24 @@ function PoisonTower:OnAttackLanded(keys)
     DamageEntitiesInArea(target:GetAbsOrigin(), attackHalfAOE, self.tower, damage / 2)    
     DamageEntitiesInArea(target:GetAbsOrigin(), attackFullAOE, self.tower, damage / 2)    
 end
+]]
 
 function PoisonTower:OnCreated()
-    AddAbility(self.tower, "poison_tower_contamination")
-    self.attacks = 0
+    self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {target_type=TOWER_TARGETING_HIGHEST_HP})
     self.fullAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Full"))
     self.halfAOE = tonumber(GetUnitKeyValue(self.towerClass, "AOE_Half"))
+    self.ability = AddAbility(self.tower, "poison_tower_contamination", self.tower:GetLevel())
+    self.modifier_name = "modifier_contamination"
 
+    self.interval = 0.5 --taken from the modifier ThinkInterval value
+    self.damage_per_interval = self.ability:GetLevelSpecialValueFor("damage_per_second", self.tower:GetLevel()-1) * self.interval
+
+
+    --[[ Removed in 1.15
+    self.attacks = 0
     self.fullAOECrit = GetAbilitySpecialValue("poison_tower_contamination", "crit_aoe_full")
     self.halfAOECrit = GetAbilitySpecialValue("poison_tower_contamination", "crit_aoe_half")
+    ]]
 end
 
 RegisterTowerClass(PoisonTower, PoisonTower.className)    

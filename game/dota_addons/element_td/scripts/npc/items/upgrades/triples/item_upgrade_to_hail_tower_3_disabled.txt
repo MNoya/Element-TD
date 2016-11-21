@@ -19,5 +19,18 @@
 		"water"		"3"
 	}
 	"ItemBaseLevel" "3"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"attacks_required"		"14 13 12"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"crit_chance"			"15 20 25"
+		}
+	}
     "AbilityCastRange"              "1750"
 }
