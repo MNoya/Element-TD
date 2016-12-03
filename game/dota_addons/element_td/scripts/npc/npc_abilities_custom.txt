@@ -2660,7 +2660,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"AbilityCooldown"				"1"
+		"AbilityCooldown"				"0.5"
 		"MaxLevel"						"3"
 		"AbilityTextureName"			"towers/enchantment"
 		"AbilityCastRange"				"900"
@@ -2698,7 +2698,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"15"
+				"duration"				"10"
 			}
 			"02"
 			{
@@ -2891,12 +2891,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"110 550 1650"
+				"dot"					"100 500 1500"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"5"
+				"duration"				"7.5"
 			}
 			"04"
 			{
@@ -4374,7 +4374,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"AbilityCooldown"				"1"
+		"AbilityCooldown"				"0.5"
 		"AbilityCastRange"				"900"
 		"MaxLevel"						"3"
 		"AbilityTextureName"			"towers/polar"
@@ -4415,7 +4415,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"15"
+				"duration"				"10"
 			}
 			"02"
 			{

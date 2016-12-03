@@ -101,12 +101,12 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"dot"					"110 550 1650"
+			"dot"					"100 500 1500"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"5"
+			"duration"				"7.5"
 		}
 		"04"
 		{
