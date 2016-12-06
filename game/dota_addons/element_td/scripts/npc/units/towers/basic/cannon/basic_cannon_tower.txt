@@ -15,9 +15,9 @@
  
     // Stats
     //-----------------------------
-    "AttackDamageMin"           "45"
-    "AttackDamageMax"           "45"
-    "Damage"                    "45"
+    "AttackDamageMin"           "90"
+    "AttackDamageMax"           "90"
+    "Damage"                    "90"
     "AttackRange"               "700"
     "AttackAcquisitionRange"    "700"
     "AOE_Full"                  "100"
@@ -28,8 +28,8 @@
     "AttackGround"              "1"
 
     "Level"                     "1"
-    "Cost"                      "50"
-    "TotalCost"                 "50"
+    "Cost"                      "100"
+    "TotalCost"                 "100"
     "BuildTime"                 "1"
     "Element"                   "none" 
     "DamageType"                "composite"
