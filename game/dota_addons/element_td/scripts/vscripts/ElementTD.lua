@@ -318,7 +318,9 @@ function ElementTD:EndGameForPlayer( playerID )
     end
     UTIL_Remove(playerData.summoner.icon)
 
-    Saves:SaveGrid(playerID, playerData.toggle_grid_item.enabled)
+    if playerData.toggle_grid_item then
+        Saves:SaveGrid(playerID, playerData.toggle_grid_item.enabled)
+    end
 
     for i=0,15 do
         local ability = playerData.summoner:GetAbilityByIndex(i)
@@ -565,6 +567,18 @@ function ElementTD:InitializeHero(playerID, hero)
         SetCustomGold(playerID, playerData.gold)
     end)
 
+    -- Workaround: Fill backpack with permanent items
+    for i=0,8 do
+        local newItem = CreateItem("item_branches", nil, nil)
+        hero:AddItem(newItem)
+    end
+    for i=0,5 do
+        local item = hero:GetItemInSlot(i)
+        if item then
+            hero:RemoveItem(item)
+        end
+    end
+
     -- Give building items
     hero:AddItem(CreateItem("item_build_arrow_tower", hero, hero))
     hero:AddItem(CreateItem("item_build_cannon_tower", hero, hero))
@@ -755,6 +769,12 @@ function ElementTD:FilterExecuteOrder( filterTable )
         if unit and IsValidEntity(unit) then
             unit.orderTable = filterTable
         end
+    end
+
+    -- Prevent glyph and radar orders
+    if order_type == DOTA_UNIT_ORDER_GLYPH or order_type == DOTA_UNIT_ORDER_RADAR then
+        SendErrorMessage( issuer, "error_order_blocked" )
+        return false
     end
 
     local unit = EntIndexToHScript(units["0"])
