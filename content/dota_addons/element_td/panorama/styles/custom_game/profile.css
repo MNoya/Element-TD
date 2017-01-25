@@ -19,7 +19,7 @@
 {
     horizontal-align: left;
     vertical-align: bottom;
-    margin-bottom: 260px;
+    margin-bottom: 265px;
     height: 85px;
     width: 282px;
     flow-children: down;
@@ -36,7 +36,8 @@
 
     horizontal-align: left;
     vertical-align: bottom;
-    margin-bottom: 215px;
+    margin-bottom: 204px;
+    margin-left: 10px;
 }
 
 #MinimizePanel.Flipped

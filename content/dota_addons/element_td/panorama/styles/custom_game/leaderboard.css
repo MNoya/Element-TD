@@ -81,8 +81,8 @@ Label
     background-color: black;
     height: 30px;
     width: 220px;
-    margin-left: 300px;
-    margin-top: 5px;
+    margin-left: 360px;
+    margin-top: 12px;
 }
 
 #LeaderboardToggle:active .ToggleLabel
@@ -93,8 +93,14 @@ Label
 .AspectRatio4x3 #LeaderboardToggle, .AspectRatio5x4 #LeaderboardToggle
 {
     background-color: black;
-    margin-left: 50px;
-    margin-top: 40px;
+    margin-left: 170px;
+    margin-top: 44px;
+    width: 180px;
+}
+
+.AspectRatio16x10 #LeaderboardToggle
+{
+    margin-left: 350px;
     width: 180px;
 }
 
@@ -338,6 +344,17 @@ Label
     vertical-align: top;
     horizontal-align: right;
 }
+
+.AspectRatio16x10 #Buttons
+{
+    margin-right: 370px;
+}
+
+.AspectRatio4x3 #Buttons, .AspectRatio5x4 #Buttons
+{
+    margin-right: 170px;
+}
+
 
 #Buttons.Coop 
 {
