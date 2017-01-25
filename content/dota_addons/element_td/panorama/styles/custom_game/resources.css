@@ -366,10 +366,10 @@
 
 #MinimapOverlay
 {
-    width: 273px;
-    height: 273px;
+    width: 244px;
+    height: 244px;
     vertical-align: bottom;
-    margin-left: 15px;
+    margin-left: 0px;
 }
 
 #Version
@@ -381,7 +381,7 @@
     text-align: center;
     text-shadow: 0px 0px 3px 3.0 #000000;
     vertical-align: bottom;
-    margin-bottom: 15px;
+    margin-bottom: 2px;
 
     width: 100%;
     height: 30px;
@@ -396,8 +396,7 @@
     text-align: right;
     text-shadow: 0px 0px 2px 3.0 #000000;
     vertical-align: bottom;
-    margin-bottom: 5px;
-    margin-right: 15px;
+    margin-bottom: 2px;
 }
 
 #Coop
@@ -409,7 +408,7 @@
     text-align: left;
     text-shadow: 0px 0px 2px 3.0 #000000;
     vertical-align: bottom;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 
 #elementTD
@@ -420,7 +419,10 @@
     horizontal-align: center;
     background-size: 200px 50px;
     background-repeat: no-repeat;
-    background-image: url("file://{images}/custom_game/loading_screen/elementTD.png"); 
+    background-image: url("file://{images}/custom_game/loading_screen/elementTD.png");
+
+    margin-top: -4px;
+    margin-left: 10px;
 }
 
 #elementTDGlow
@@ -438,6 +440,9 @@
     animation-timing-function: ease;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+
+    margin-top: -4px;
+    margin-left: 10px;
 }
 
 @keyframes 'seq_glow'
