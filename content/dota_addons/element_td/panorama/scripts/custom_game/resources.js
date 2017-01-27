@@ -127,7 +127,7 @@ function CheckAspectRatio()
 
 	var width = rootHud.actuallayoutwidth;
 	var height = rootHud.actuallayoutheight;
-	// - w 1978 -h 828 for Testing Kara res.
+	// -w 1978 -h 828 for 'Set Launch Options...'
 
 	var r = gcd(width, height);
 

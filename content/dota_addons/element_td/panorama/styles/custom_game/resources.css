@@ -31,8 +31,8 @@
 
 .AspectRatio21x9 #ResourceElements
 {
-    margin-bottom: 135px;
-    margin-right: 50px;
+    margin-bottom: 110px;
+    margin-right: 8px;
     height: 64px;
     width: 200px;
 }
@@ -166,8 +166,8 @@
 
 .AspectRatio21x9 #ResourceLumber
 {
-    margin-bottom: 214px;
-    margin-right: 70px;
+    margin-bottom: 170px;
+    margin-right: 32px;
 }
 
 #LumberText
@@ -237,8 +237,8 @@
 
 .AspectRatio21x9 #ResourceGold
 {
-    margin-bottom: 214px;
-    margin-right: 160px;
+    margin-bottom: 170px;
+    margin-right: 104px;
 }
 
 //---------
@@ -261,8 +261,8 @@
 
 .AspectRatio21x9 #ResourceEssence
 {
-    margin-bottom: 214px;
-    margin-right: 10px;
+    margin-bottom: 170px;
+    margin-right: 6px;
 }
 
 #PureEssenceText
@@ -309,7 +309,7 @@
 .AspectRatio21x9 #ResourceScore
 {
     margin-bottom: 70px;
-    margin-right: 130px;
+    margin-right: 70px;
 }
 
 #ScoreLabel 
