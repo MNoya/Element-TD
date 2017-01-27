@@ -4,9 +4,17 @@
     height: 100%;
 }
 
+#ResourceUnderlay
+{
+    background-color: #000000AA;
+    vertical-align: bottom;
+    height: 21%;
+    width: 210px;
+}
+
 #ResourceElements
 {
-    margin-right: 12px;
+    margin-right: 10px;
     margin-bottom: 93px;
     height: 64px;
     width: 200px;
@@ -15,8 +23,8 @@
 
 .AspectRatio4x3 #ResourceElements, .AspectRatio5x4 #ResourceElements
 {
-    margin-bottom: 148px;
-    margin-right: 12px;
+    margin-bottom: 100px;
+    margin-right: 22px;
     height: 64px;
     width: 160px;
 }
@@ -152,8 +160,8 @@
 
 .AspectRatio4x3 #ResourceLumber, .AspectRatio5x4 #ResourceLumber
 {
-    margin-bottom: 140px;
-    margin-right: 204px;
+    margin-bottom: 170px;
+    margin-right: 34px;
 }
 
 .AspectRatio21x9 #ResourceLumber
@@ -224,7 +232,7 @@
 .AspectRatio4x3 #ResourceGold, .AspectRatio5x4 #ResourceGold
 {
     margin-bottom: 170px;
-    margin-right: 170px;
+    margin-right: 100px;
 }
 
 .AspectRatio21x9 #ResourceGold
@@ -247,8 +255,8 @@
 
 .AspectRatio4x3 #ResourceEssence, .AspectRatio5x4 #ResourceEssence
 {
-    margin-bottom: 140px;
-    margin-right: 172px;
+    margin-bottom: 170px;
+    margin-right: 5px;
 }
 
 .AspectRatio21x9 #ResourceEssence
@@ -289,13 +297,13 @@
     vertical-align: bottom;
 
     margin-bottom: 50px;
-    margin-right: 80px;
+    margin-right: 78px;
 }
 
 .AspectRatio4x3 #ResourceScore, .AspectRatio5x4 #ResourceScore
 {
-    margin-bottom: 206px;
-    margin-right: 30px;
+    margin-bottom: 50px;
+    margin-right: 78px;
 }
 
 .AspectRatio21x9 #ResourceScore
