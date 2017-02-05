@@ -50,5 +50,6 @@
         <Label id="DarkValue"  text="0" class="value"/>
       </Panel>
     </Panel>
+    <Label id="SelectSummoner" onactivate="SelectSummoner()" text="#DOTA_LevelUp" />
   </Panel>
 </root>

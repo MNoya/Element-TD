@@ -463,3 +463,53 @@
         opacity: 0.7;
     }
 }
+
+
+#SelectSummoner:active
+{
+    position: 1px 2px 0px;
+}
+
+#SelectSummoner:hover
+{
+    opacity: 2;
+    font-size: 19px;
+}
+
+#SelectSummoner
+{
+    background-color: black;
+    height: 30px;
+    width: 280px;
+    margin-left: 100px;
+    margin-top: 12px;
+    margin-right: 145px;
+    margin-bottom: 155px;
+    letter-spacing: 3px;
+    font-size: 18px;
+    text-transform: uppercase;
+    vertical-align: bottom;
+    text-align: center;
+    padding-top: 4px;
+    horizontal-align: center;
+    color: white;
+
+    animation-name: elem_glow2;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes 'elem_glow2'
+{
+    0%
+    {
+        box-shadow: #FFD70040 0px 0px 10px 0px;
+    }
+
+    100%
+    {
+        box-shadow: #FFD70040 0px 0px 30px 0px;
+    }
+}

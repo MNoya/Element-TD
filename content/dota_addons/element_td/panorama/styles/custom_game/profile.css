@@ -19,9 +19,9 @@
 {
     horizontal-align: left;
     vertical-align: bottom;
-    margin-bottom: 265px;
+    margin-bottom: 244px;
     height: 85px;
-    width: 282px;
+    width: 270px;
     flow-children: down;
 
     background-color: black;
@@ -36,8 +36,8 @@
 
     horizontal-align: left;
     vertical-align: bottom;
-    margin-bottom: 204px;
-    margin-left: 10px;
+    margin-bottom: 220px;
+    margin-left: 244px;
 }
 
 #MinimizePanel.Flipped
