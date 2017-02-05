@@ -16,17 +16,17 @@
 
     // Stats
     //----------------------------- 
-    "AttackDamageMin"           "35"
-    "AttackDamageMax"           "35"
-    "Damage"                    "35"
+    "AttackDamageMin"           "70"
+    "AttackDamageMax"           "70"
+    "Damage"                    "70"
     "AttackRange"               "900"
     "AttackAcquisitionRange"    "900"
     "AttackRate"                "0.66"
     "ProjectileSpeed"           "2500" 
 
     "Level"                     "1"
-    "Cost"                      "50"
-    "TotalCost"                 "50"
+    "Cost"                      "100"
+    "TotalCost"                 "100"
     "BuildTime"                 "1"
     "Element"                   "none"
     "DamageType"                "composite"

@@ -3,6 +3,7 @@
 		<include src="file://{resources}/scripts/clicks.js" />
 		<include src="file://{resources}/scripts/building_helper.js" />
 		<include src="file://{resources}/scripts/sounds.js" />
+		<include src="file://{resources}/scripts/700.js" />
 	</scripts>
 	<script>
 		$.Msg( "Compiled Panorama Scripts!" );

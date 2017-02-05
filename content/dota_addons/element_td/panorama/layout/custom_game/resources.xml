@@ -7,6 +7,7 @@
     <include src="file://{resources}/scripts/custom_game/resources.js" /> 
   </scripts>
   <Panel hittest="false" class="BaseHud">
+    <Panel hittest="false" id="ResourceUnderlay"></Panel>
     <Panel hittest="false" id="MinimapOverlay">
       <Label hittest="false" id='Version' text=""/>
       <Label hittest="false" id='Coop' class="Hide" text="Coop"/>
@@ -49,5 +50,6 @@
         <Label id="DarkValue"  text="0" class="value"/>
       </Panel>
     </Panel>
+    <Label id="SelectSummoner" onactivate="SelectSummoner()" text="#DOTA_LevelUp" />
   </Panel>
 </root>

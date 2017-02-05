@@ -9,7 +9,7 @@
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-	"AbilityCooldown"				"1"
+	"AbilityCooldown"				"0.5"
 	"AbilityCastRange"				"900"
 	"MaxLevel"						"3"
 	"AbilityTextureName"			"towers/polar"
@@ -50,12 +50,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"15"
+			"duration"				"10"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"health_burn"			"10 27 55"
+			"health_burn"			"12 27 60"
 		}
 	}
 }

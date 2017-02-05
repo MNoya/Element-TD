@@ -9,7 +9,7 @@
     horizontal-align: center;
     position: 0px 13% 0px;
     margin-top: -3%;
-    width: 580px;
+    width: 590px;
     padding: 20px 20px 0px 20px;
     background-color: #000000DD;
     border: 2px solid #484A48;
@@ -490,10 +490,6 @@ ToggleButton:enabled:hover Label, DOTASettingsCheckbox:enabled:hover Label
     //box-shadow: #000 -4px -4px 3px 8px;
     transition-property: background-color;
     transition-duration: 0.3s;
-}
-
-.AspectRatio21x9 #CurrentModePanel {
-    margin-bottom: 28%;
 }
 
 #DiffImage

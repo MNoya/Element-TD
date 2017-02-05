@@ -783,20 +783,12 @@
 			}
 		}
 	
-		"OnUpgrade"
-		{
-			"ApplyModifier"
-			{
-				"Target" 			"CASTER"
-				"ModifierName"		"creep_haste_delay"
-			}
-		}
-	
 		"Modifiers"
 		{
 			"creep_haste_delay"
 			{
 				"IsHidden"		"1"
+				"Passive"		"1"
 				"IsPurgable"    "0"
 				"Duration"		"%interval"
 				"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
@@ -2660,7 +2652,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"AbilityCooldown"				"1"
+		"AbilityCooldown"				"0.5"
 		"MaxLevel"						"3"
 		"AbilityTextureName"			"towers/enchantment"
 		"AbilityCastRange"				"900"
@@ -2698,17 +2690,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"15"
+				"duration"				"10"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"7 21 60"
+				"base_damage_amp"		"10 23 80"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"13 39 110"
+				"max_damage_amp"		"18 42 140"
 			}
 			"04"
 			{
@@ -2886,17 +2878,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"11 33 100"
+				"damage_amp"			"15 36 120"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"110 550 1650"
+				"dot"					"100 500 1500"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"5"
+				"duration"				"7.5"
 			}
 			"04"
 			{
@@ -3648,7 +3640,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"5 15 40"
+				"damage_taken"			"6 15 45"
 			}
 			"02"
 			{
@@ -3820,7 +3812,7 @@
 	        "01"
 	        {
 	            "var_type"              "FIELD_INTEGER"
-	            "damage"                "3 21 150 1500"
+	            "damage"                "5 35 250 2500"
 	        }
 	    }
 	}
@@ -4374,7 +4366,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-		"AbilityCooldown"				"1"
+		"AbilityCooldown"				"0.5"
 		"AbilityCastRange"				"900"
 		"MaxLevel"						"3"
 		"AbilityTextureName"			"towers/polar"
@@ -4415,12 +4407,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"15"
+				"duration"				"10"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"10 27 55"
+				"health_burn"			"12 27 60"
 			}
 		}
 	}

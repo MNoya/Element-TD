@@ -4,9 +4,17 @@
     height: 100%;
 }
 
+#ResourceUnderlay
+{
+    background-color: #000000AA;
+    vertical-align: bottom;
+    height: 21%;
+    width: 210px;
+}
+
 #ResourceElements
 {
-    margin-right: 12px;
+    margin-right: 10px;
     margin-bottom: 93px;
     height: 64px;
     width: 200px;
@@ -15,16 +23,16 @@
 
 .AspectRatio4x3 #ResourceElements, .AspectRatio5x4 #ResourceElements
 {
-    margin-bottom: 148px;
-    margin-right: 12px;
+    margin-bottom: 100px;
+    margin-right: 22px;
     height: 64px;
     width: 160px;
 }
 
 .AspectRatio21x9 #ResourceElements
 {
-    margin-bottom: 135px;
-    margin-right: 50px;
+    margin-bottom: 110px;
+    margin-right: 8px;
     height: 64px;
     width: 200px;
 }
@@ -152,14 +160,14 @@
 
 .AspectRatio4x3 #ResourceLumber, .AspectRatio5x4 #ResourceLumber
 {
-    margin-bottom: 140px;
-    margin-right: 204px;
+    margin-bottom: 170px;
+    margin-right: 34px;
 }
 
 .AspectRatio21x9 #ResourceLumber
 {
-    margin-bottom: 214px;
-    margin-right: 70px;
+    margin-bottom: 170px;
+    margin-right: 32px;
 }
 
 #LumberText
@@ -224,13 +232,13 @@
 .AspectRatio4x3 #ResourceGold, .AspectRatio5x4 #ResourceGold
 {
     margin-bottom: 170px;
-    margin-right: 170px;
+    margin-right: 100px;
 }
 
 .AspectRatio21x9 #ResourceGold
 {
-    margin-bottom: 214px;
-    margin-right: 160px;
+    margin-bottom: 170px;
+    margin-right: 104px;
 }
 
 //---------
@@ -247,14 +255,14 @@
 
 .AspectRatio4x3 #ResourceEssence, .AspectRatio5x4 #ResourceEssence
 {
-    margin-bottom: 140px;
-    margin-right: 172px;
+    margin-bottom: 170px;
+    margin-right: 5px;
 }
 
 .AspectRatio21x9 #ResourceEssence
 {
-    margin-bottom: 214px;
-    margin-right: 10px;
+    margin-bottom: 170px;
+    margin-right: 6px;
 }
 
 #PureEssenceText
@@ -289,19 +297,19 @@
     vertical-align: bottom;
 
     margin-bottom: 50px;
-    margin-right: 80px;
+    margin-right: 78px;
 }
 
 .AspectRatio4x3 #ResourceScore, .AspectRatio5x4 #ResourceScore
 {
-    margin-bottom: 206px;
-    margin-right: 30px;
+    margin-bottom: 50px;
+    margin-right: 78px;
 }
 
 .AspectRatio21x9 #ResourceScore
 {
     margin-bottom: 70px;
-    margin-right: 130px;
+    margin-right: 70px;
 }
 
 #ScoreLabel 
@@ -366,10 +374,10 @@
 
 #MinimapOverlay
 {
-    width: 273px;
-    height: 273px;
+    width: 244px;
+    height: 244px;
     vertical-align: bottom;
-    margin-left: 15px;
+    margin-left: 0px;
 }
 
 #Version
@@ -381,7 +389,7 @@
     text-align: center;
     text-shadow: 0px 0px 3px 3.0 #000000;
     vertical-align: bottom;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
 
     width: 100%;
     height: 30px;
@@ -396,8 +404,7 @@
     text-align: right;
     text-shadow: 0px 0px 2px 3.0 #000000;
     vertical-align: bottom;
-    margin-bottom: 5px;
-    margin-right: 15px;
+    margin-bottom: 8px;
 }
 
 #Coop
@@ -409,7 +416,7 @@
     text-align: left;
     text-shadow: 0px 0px 2px 3.0 #000000;
     vertical-align: bottom;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 #elementTD
@@ -420,7 +427,9 @@
     horizontal-align: center;
     background-size: 200px 50px;
     background-repeat: no-repeat;
-    background-image: url("file://{images}/custom_game/loading_screen/elementTD.png"); 
+    background-image: url("file://{images}/custom_game/loading_screen/elementTD.png");
+
+    margin-left: 24px;
 }
 
 #elementTDGlow
@@ -438,6 +447,8 @@
     animation-timing-function: ease;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+
+    margin-left: 24px;
 }
 
 @keyframes 'seq_glow'
@@ -450,5 +461,55 @@
     100%
     {
         opacity: 0.7;
+    }
+}
+
+
+#SelectSummoner:active
+{
+    position: 1px 2px 0px;
+}
+
+#SelectSummoner:hover
+{
+    opacity: 2;
+    font-size: 19px;
+}
+
+#SelectSummoner
+{
+    background-color: black;
+    height: 30px;
+    width: 280px;
+    margin-left: 100px;
+    margin-top: 12px;
+    margin-right: 145px;
+    margin-bottom: 155px;
+    letter-spacing: 3px;
+    font-size: 18px;
+    text-transform: uppercase;
+    vertical-align: bottom;
+    text-align: center;
+    padding-top: 4px;
+    horizontal-align: center;
+    color: white;
+
+    animation-name: elem_glow2;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes 'elem_glow2'
+{
+    0%
+    {
+        box-shadow: #FFD70040 0px 0px 10px 0px;
+    }
+
+    100%
+    {
+        box-shadow: #FFD70040 0px 0px 30px 0px;
     }
 }

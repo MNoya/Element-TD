@@ -9,7 +9,7 @@
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-	"AbilityCooldown"				"1"
+	"AbilityCooldown"				"0.5"
 	"MaxLevel"						"3"
 	"AbilityTextureName"			"towers/enchantment"
 	"AbilityCastRange"				"900"
@@ -47,17 +47,17 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"15"
+			"duration"				"10"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"base_damage_amp"		"7 21 60"
+			"base_damage_amp"		"10 23 80"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"max_damage_amp"		"13 39 110"
+			"max_damage_amp"		"18 42 140"
 		}
 		"04"
 		{

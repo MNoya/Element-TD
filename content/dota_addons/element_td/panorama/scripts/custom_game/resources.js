@@ -10,6 +10,7 @@ var PureEssenceUI = $( "#ResourceEssence" );
 var ScoreUI = $( "#ResourceScore" );
 var MinimapUI = $( "#MinimapOverlay" )
 var VersionUI = $("#Version")
+var ResourceUnderlay = $("#ResourceUnderlay")
 
 var lumber = $( '#LumberText' );
 var gold = $( '#GoldText' );
@@ -126,7 +127,7 @@ function CheckAspectRatio()
 
 	var width = rootHud.actuallayoutwidth;
 	var height = rootHud.actuallayoutheight;
-	// - w 1978 -h 828 for Testing Kara res.
+	// -w 1978 -h 828 for 'Set Launch Options...'
 
 	var r = gcd(width, height);
 
@@ -152,14 +153,15 @@ function gcd (a, b) {
 	return (b == 0) ? a : gcd (b, a%b);
 }
 
-function CheckLearnMode() {
-	if (Game.IsInAbilityLearnMode())
-	{
-		GameUI.SelectUnit(Root.summoner, false)
-		Game.EndAbilityLearnMode()
-	}
+function CheckElementLevelUpAvailable() {
+	var ability_points = Entities.GetAbilityPoints(Players.GetPlayerHeroEntityIndex(Players.GetLocalPlayer()))
+	$("#SelectSummoner").visible = ability_points > 0
+	$("#SelectSummoner").text = $.Localize("#DOTA_LevelUp") + ": +" + ability_points
+	$.Schedule(0.1, CheckElementLevelUpAvailable)
+}
 
-	$.Schedule(1/60, CheckLearnMode)
+function SelectSummoner() {
+	GameUI.SelectUnit(Root.summoner, false)
 }
 
 function CheckHudFlipped() {
@@ -171,6 +173,7 @@ function CheckHudFlipped() {
 		Flip(PureEssenceUI)
 		Flip(ScoreUI)
 		Flip(ElementsUI)
+		Flip(ResourceUnderlay)
         AlignRight(MinimapUI)
 
 		ScoreUI.style["margin-left"] = "85px;"
@@ -183,6 +186,7 @@ function CheckHudFlipped() {
 		AlignRight(PureEssenceUI)
 		AlignRight(ScoreUI)
 		AlignRight(ElementsUI)
+		AlignRight(ResourceUnderlay)
         Flip(MinimapUI)
 
 		ScoreUI.style["margin-left"] = "0px;"
@@ -214,7 +218,7 @@ function Setup() {
 	VersionUI.text = "Version "+CustomNetTables.GetTableValue('gameinfo', 'version').value
     $.Schedule(0.1, CheckHudFlipped)
     $.Schedule(1, CheckAspectRatio)
-    $.Schedule(1, CheckLearnMode)
+    $.Schedule(1, CheckElementLevelUpAvailable)
 }
 
 (function () {

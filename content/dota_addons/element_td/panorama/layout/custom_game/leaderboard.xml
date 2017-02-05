@@ -11,8 +11,8 @@
         <Panel id="LeaderboardToggle" onactivate="ToggleLeaderboard()">
             <Label id="ToggleLeaderboardText" class="ToggleLabel" text="#leaderboard_title" />
         </Panel>
-
         <Panel id="Leaderboard" class="Hide" onmouseover="GameUI.DenyWheel()" onmouseout="GameUI.AcceptWheel()">
+
             <Panel id="ClassicLeaderboard" class="Section">
                 <Panel class="LeaderboardHeader">
                     <Panel class="LeaderboardTitles">
@@ -91,12 +91,10 @@
 
             </Panel>
         </Panel>
-
-        <Panel id="Buttons" class="Hide">
-            <Image id="RefreshButton" onactivate="RefreshAllRanks()" />
+            <Panel id="Buttons" class="Hide">
+            <Image id="RefreshButton" onactivate="RefreshAllRanks()"/>
             <Label id="CloseButton" onactivate="ToggleLeaderboard()"/>
         </Panel>
-
         <Label class="Hide" id="LeaderboardLink" text="#leaderboard_link" />
     </Panel>
 </root>

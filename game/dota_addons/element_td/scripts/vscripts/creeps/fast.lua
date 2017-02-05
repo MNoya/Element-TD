@@ -18,7 +18,8 @@ function CastHasteSpell(keys)
 	local caster = keys.caster
 	local ability = caster:FindAbilityByName("creep_ability_fast") or caster:FindAbilityByName("creep_ability_fast_perma") or caster:FindAbilityByName("creep_ability_fast_super")
 	if ability and caster:IsAlive() then
-		caster:CastAbilityImmediately(ability, 1)
+		caster:AddNewModifier(caster,ability,"creep_haste_modifier",{duration=ability:GetSpecialValueFor("duration")})
+		ability:ApplyDataDrivenModifier(caster,caster,"creep_haste_delay",{duration=ability:GetSpecialValueFor("duration")})
 	end
 end
 
