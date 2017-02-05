@@ -783,20 +783,12 @@
 			}
 		}
 	
-		"OnUpgrade"
-		{
-			"ApplyModifier"
-			{
-				"Target" 			"CASTER"
-				"ModifierName"		"creep_haste_delay"
-			}
-		}
-	
 		"Modifiers"
 		{
 			"creep_haste_delay"
 			{
-				"IsHidden"		"1"
+				"IsHidden"		"0"
+				"Passive"		"1"
 				"IsPurgable"    "0"
 				"Duration"		"%interval"
 				"Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
