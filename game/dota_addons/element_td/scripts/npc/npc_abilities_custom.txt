@@ -787,7 +787,7 @@
 		{
 			"creep_haste_delay"
 			{
-				"IsHidden"		"0"
+				"IsHidden"		"1"
 				"Passive"		"1"
 				"IsPurgable"    "0"
 				"Duration"		"%interval"
