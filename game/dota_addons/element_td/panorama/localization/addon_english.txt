@@ -234,7 +234,7 @@
         "loading_screen_next"   "Coming Next!"
         "loading_new_map"       "New Map Available"
         "mobile_game"           "EleTD on Mobile"
-        "loading_mobile"        "Now on Mobile with Achievements!"
+        "loading_mobile"        "Now on Mobile & Steam!"
 
         // Usage
         //  <br> for break lines
@@ -242,7 +242,7 @@
         //  <font color='#hex'>text</font>  for color
         //  <b>text</b> for bold        
         "loading_screen_changelog"   "Latest Changes"
-        "loading_screen_change_text" "<h1>Version 1.15</h1><h2> November 19th, 2016</h2><br>• Rework Fire/Poison/Geyser/Ice tower<br>• Buffed Hail/Impulse/Ephemeral tower<br>• Revert water tower ability<br>• Other minor changes"
+        "loading_screen_change_text" "<h1>Version 1.16</h1><h2> February 5th, 2017</h2><br>• Fixed lots of 7.00 bugs<br>• Tweaked wave order slightly<br>• Buffed Arrow/Cannon Towers<br>• Buffed single element towers<br>• Buffed Periodic<br>• Nerfed Water<br>• Buffed Damage Amps"
 
         "credits_title"         "Credits"
         "credits_developers"    "Developers"

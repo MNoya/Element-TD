@@ -994,7 +994,7 @@
 			"fire"		"3"
 			"fire"		"3"
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_refined_fire_tower"
 	{
@@ -1114,7 +1114,7 @@
 			"light"		"3"
 			"light"		"3"
 		}
-		"AbilityCastRange"              "1500"
+		"AbilityCastRange"              "1750"
 	}
 	"item_upgrade_to_refined_light_tower"
 	{
@@ -1234,7 +1234,7 @@
 			"nature"		"3"
 			"nature"		"3"
 		}
-		"AbilityCastRange"              "700"
+		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_refined_nature_tower"
 	{
@@ -4383,12 +4383,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"7 21 60"
+				"base_damage_amp"		"10 23 80"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"13 39 110"
+				"max_damage_amp"		"18 42 140"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4429,12 +4429,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"7 21 60"
+				"base_damage_amp"		"10 23 80"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"13 39 110"
+				"max_damage_amp"		"18 42 140"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4465,12 +4465,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"7 21 60"
+				"base_damage_amp"		"10 23 80"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"13 39 110"
+				"max_damage_amp"		"18 42 140"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4508,12 +4508,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"7 21 60"
+				"base_damage_amp"		"10 23 80"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"13 39 110"
+				"max_damage_amp"		"18 42 140"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4541,12 +4541,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"7 21 60"
+				"base_damage_amp"		"10 23 80"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"13 39 110"
+				"max_damage_amp"		"18 42 140"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4578,12 +4578,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"7 21 60"
+				"base_damage_amp"		"10 23 80"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"13 39 110"
+				"max_damage_amp"		"18 42 140"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4849,12 +4849,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"11 33 100"
+				"damage_amp"			"15 36 120"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"110 550 1650"
+				"dot"					"100 500 1500"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4895,12 +4895,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"11 33 100"
+				"damage_amp"			"15 36 120"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"110 550 1650"
+				"dot"					"100 500 1500"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4931,12 +4931,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"11 33 100"
+				"damage_amp"			"15 36 120"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"110 550 1650"
+				"dot"					"100 500 1500"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -4977,12 +4977,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"11 33 100"
+				"damage_amp"			"15 36 120"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"110 550 1650"
+				"dot"					"100 500 1500"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -5013,12 +5013,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"11 33 100"
+				"damage_amp"			"15 36 120"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"110 550 1650"
+				"dot"					"100 500 1500"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -5050,12 +5050,12 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"11 33 100"
+				"damage_amp"			"15 36 120"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dot"					"110 550 1650"
+				"dot"					"100 500 1500"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6385,7 +6385,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"5 15 40"
+				"damage_taken"			"6 15 45"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6426,7 +6426,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"5 15 40"
+				"damage_taken"			"6 15 45"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6457,7 +6457,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"5 15 40"
+				"damage_taken"			"6 15 45"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6498,7 +6498,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"5 15 40"
+				"damage_taken"			"6 15 45"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6529,7 +6529,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"5 15 40"
+				"damage_taken"			"6 15 45"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -6561,7 +6561,7 @@
 	        "01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"5 15 40"
+				"damage_taken"			"6 15 45"
 			}
 	    }
 	    "AbilityCastRange"              "900"
@@ -7401,7 +7401,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"10 27 55"
+				"health_burn"			"12 27 60"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -7442,7 +7442,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"10 27 55"
+				"health_burn"			"12 27 60"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -7473,7 +7473,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"10 27 55"
+				"health_burn"			"12 27 60"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -7514,7 +7514,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"10 27 55"
+				"health_burn"			"12 27 60"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -7545,7 +7545,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"10 27 55"
+				"health_burn"			"12 27 60"
 			}
 		}
 		"AbilityCastRange"              "900"
@@ -7577,7 +7577,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"10 27 55"
+				"health_burn"			"12 27 60"
 			}
 		}
 		"AbilityCastRange"              "900"
