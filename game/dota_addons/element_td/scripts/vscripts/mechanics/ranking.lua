@@ -22,7 +22,7 @@ function Ranking:RequestInGamePlayerRanks()
     local request = RANKING_URL .. "?req=player&ids=" .. concatSteamIDs .. "&lb=" .. leaderboard_type 
 
     -- Generate URL
-    local req = CreateHTTPRequest('GET', request)
+    local req = CreateHTTPRequestScriptVM('GET', request)
     Ranking:print('GET '..request)
 
     -- Send the request

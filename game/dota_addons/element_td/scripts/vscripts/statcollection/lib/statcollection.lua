@@ -534,7 +534,7 @@ function statCollection:sendStage(stageName, payload, callback, override_host)
     local host = override_host or postLocation
 
     -- Create the request
-    local req = CreateHTTPRequest('POST', host .. stageName)
+    local req = CreateHTTPRequestScriptVM('POST', host .. stageName)
     local encoded = json.encode(payload)
     if self.TESTING then
         statCollection:print(encoded)
