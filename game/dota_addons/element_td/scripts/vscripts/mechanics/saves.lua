@@ -37,7 +37,7 @@ function Saves:SaveHasPass(playerID)
     local bHasPass = PlayerResource:HasCustomGameTicketForPlayerID(playerID) and 1 or 0
     local request = Saves.url .. "&id=" .. steamID .. "&save=1" .. "&pass=" .. bHasPass
 
-    local req = CreateHTTPRequest('GET', request)
+    local req = CreateHTTPRequestScriptVM('GET', request)
 
     -- Send another request to get the player data
     if GameRules:State_Get() == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
