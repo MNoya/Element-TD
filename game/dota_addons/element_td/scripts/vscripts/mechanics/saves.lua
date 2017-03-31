@@ -56,7 +56,7 @@ function Saves:SaveBuilder(playerID, heroName)
     local current_builder = Saves.builders[heroName] or -1
     local request = Saves.url .. "&id=" .. steamID .. "&save=1" .. "&custom_builder=" .. current_builder
 
-    local req = CreateHTTPRequest('GET', request)
+    local req = CreateHTTPRequestScriptVM('GET', request)
     
     Saves:Send(req, function(obj)
         -- Success
@@ -69,7 +69,7 @@ function Saves:SaveGrid(playerID, bEnabled)
     local state = bEnabled and 1 or 0
     local request = Saves.url .. "&id=" .. steamID .. "&save=1" .. "&grid=" .. state
 
-    local req = CreateHTTPRequest('GET', request)
+    local req = CreateHTTPRequestScriptVM('GET', request)
     
     Saves:Send(req, function(obj)
         -- Success
@@ -81,7 +81,7 @@ function Saves:LoadData(playerID)
     local steamID = PlayerResource:GetSteamAccountID(playerID)
     local request = Saves.url .. "&id=" .. steamID
 
-    local req = CreateHTTPRequest('GET', request)
+    local req = CreateHTTPRequestScriptVM('GET', request)
 
     Saves:print("Loading player " .. playerID)
     Saves:Send(req, function(obj)
