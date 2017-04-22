@@ -172,6 +172,11 @@ function UpdateUpgrades(tower)
     local data = GetPlayerData(playerID)
     local upgrades = NPC_UNITS_CUSTOM[class].Upgrades
 
+    -- do not add items to a clone tower
+    if tower:HasModifier("modifier_clone") then
+        return
+    end
+
     -- delete all items first
     for i = 0, 5, 1 do
         local item = tower:GetItemInSlot(i)
