@@ -8,7 +8,7 @@
   </scripts>
   <Panel hittest="false" class="BaseHud">
     <Panel hittest="false" id="Voting">
-      <Label id="Title" text="Vote on Game Settings"/>
+      <Label id="Title" text="#voting_title"/>
 
       <Panel hittest="false"  id="DifficultyPanel">
         <Panel id="NormalDifficulty" onmouseover="HoverDifficulty('normal')" onmouseout="MouseOverDiff('normal')" onactivate="SelectDifficulty('normal')" class="DifficultyBox">
@@ -82,7 +82,7 @@
             <ToggleButton id="challenge" onactivate="SelectCheckboxClick('challenge')" text="#abilities_challenge"/>
           </Panel>
           <Label id="ChallengeDesc" class="desc" text="#abilities_challenge_description"/>
-          <Label id="ChallengeNew" class="newlabel" text="New!"/>
+          <Label id="ChallengeNew" class="newlabel" text="#mode_new"/>
         </Panel>
       </Panel>
 
@@ -98,7 +98,7 @@
       <Panel id="Bottom">
         <Label id="Info" text="#voting_wait"/>
         <Button id="Vote" onactivate="ConfirmVote()" class="ButtonBevel">
-          <Label id="ButtonLabel" text="Confirm Vote"/>
+          <Label id="ButtonLabel" text="#voting_confirm"/>
         </Button>
         <Label id="Countdown" text="60"/>   
       </Panel>

@@ -22,7 +22,7 @@
 
 	<Panel hittest="false" class="CustomHudRoot">
 		<Panel id="FlyoutScoreboardToggle" onactivate="ToggleScoreboard()">
-			<Label id="ToggleScoreboardText" class="ToggleLabel" text="scoreboard"/>
+			<Label id="ToggleScoreboardText" class="ToggleLabel" text="#button_scoreboard"/>
 		</Panel>
 
 		<Panel hittest="false" id="TopBarScoreboard">

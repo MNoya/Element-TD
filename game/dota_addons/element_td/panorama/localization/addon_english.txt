@@ -7,6 +7,15 @@
         "addonname"                                 "Element TD"
         "addon_game_name"                           "Element TD"
 
+        "button_scoreboard"                         "Scoreboard"
+
+        "flyout_scoreboard_title"                   "Builders"
+        "flyout_scoreboard_score"                   "Score"
+        "flyout_scoreboard_networth"                "Networth"
+        "flyout_scoreboard_lives"                   "Lives"  
+        "flyout_scoreboard_remaining"               "Remaining"
+        "flyout_scoreboard_elements"                "Elements"
+
         "custom_end_screen_legend_lives"            "Lives"
         "custom_end_screen_legend_wave"             "Wave"
         "custom_end_screen_legend_score"            "Score"
@@ -32,6 +41,8 @@
         "dark_level"    "Dark Element Level<br>200% against <font color='#01A2FF'>Water</font>, 50% against <font color='#E5DE23'>Light</font>"
 
         // Interest messages
+        "etd_interest"                  "Interest (2%)"
+        "etd_interest_tooltip"          "Total Gold From Interest"
         "etd_interest_lock_leak_title"  "Interest Paused"
         "etd_interest_lock_leak"        "Your interest has been paused because you leaked<br>a wave. Kill the wave to unpause."
         "etd_interest_lock_end_title"   "Interest Stopped"
@@ -59,6 +70,7 @@
         "score"             "Total Score"
         "tooltip_score"     "This score will be sent to the leaderboard at the end of the game."
 
+        "voting_title"                      "Vote on Game Settings"
         "voting_wait"                       "Waiting for others to finish voting..."
         "difficulty_normal"                 "Normal"
         "difficulty_hard"                   "Hard"
@@ -108,7 +120,14 @@
         "express"                           "Express"
 
         "abilities_challenge"               "Challenge"
-        "abilities_challenge_description"   "Each wave has two random abilities." 
+        "abilities_challenge_description"   "Each wave has two random abilities."
+
+        "mode_new"                          "New!"
+
+        "voting_health_multi"               "Health:"
+        "voting_bounty_multi"               "Bounty:"
+        "voting_score_multi"                "Score Multiplier:"
+        "voting_confirm"                    "Confirm Vote"
 
         "DOTA_GoodGuys"                             "Summer" //Lime
         "DOTA_BadGuys"                              "Autumn" //Orange
