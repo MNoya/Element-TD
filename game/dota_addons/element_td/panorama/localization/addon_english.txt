@@ -215,6 +215,7 @@
         "sandbox_max_elements"  "Max Elements"
         "sandbox_full_life"     "Full Life"
         "sandbox_set_life"      "Set Life"
+        "sandbox_no_interest"   "No Interest"
         "sandbox_waves"         "Waves"
         "sandbox_elem_level"    "{element} level: {level}"
 

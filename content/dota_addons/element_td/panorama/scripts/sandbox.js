@@ -4,6 +4,7 @@ var free_towers = $("#free_towers")
 var god_mode = $("#god_mode")
 var zen_mode = $("#zen_mode")
 var no_cd = $("#no_cd")
+var interest = $("#no_interest")
 var pause = $("#pause")
 var wave = $("#WaveNumber")
 var speed_up = $("#speed_up")
@@ -27,6 +28,11 @@ function ToggleZenMode() {
 function ToggleNoCooldowns() {
     GameEvents.SendCustomGameEventToServer( "sandbox_toggle_no_cd", { "state": no_cd.checked }  );
 }
+
+function ToggleInterest() {
+    GameEvents.SendCustomGameEventToServer( "sandbox_toggle_interest", { "state": interest.checked }  );
+}
+
 
 function MaxElementsPressed() {
     GameEvents.SendCustomGameEventToServer( "sandbox_max_elements", {} );
