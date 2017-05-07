@@ -320,6 +320,7 @@
 	                    "Unit"          "armadillo_rider"
 	                    "Point"         "attach_almond_fx"
 	                    "offsetZ"       "30"
+	                    "yaw"			"-90"
 	                }
 	            }
 	        }
@@ -428,8 +429,8 @@
 	                    "Point"         "attach_hitloc"
 	                    "IdleAnimation" "1609" //ACT_DOTA_RELAX_LOOP
 	                    "pitch"         "90"
-	                    "yaw"           "0"
-	                    "offsetX"       "-120"
+	                    "yaw"           "90"
+	                    "offsetY"       "-120"
 	                    "offsetZ"       "30"
 	                }
 	            }
@@ -559,6 +560,7 @@
 	                    "Point"         "attach_hitloc"
 	                    "AnimateRider"  "true"
 	                    "offsetZ"       "-65"
+	                    "yaw"			"-90"
 	                }
 	            }
 	        }
