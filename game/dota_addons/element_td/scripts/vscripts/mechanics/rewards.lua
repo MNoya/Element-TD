@@ -78,7 +78,7 @@ function Rewards:Load()
         Rewards.players[steamID].tier = 25
     end
 
-    local req = CreateHTTPRequest('GET', 'http://www.eletd.com/reward_data.js')
+    local req = CreateHTTPRequestScriptVM('GET', 'http://www.eletd.com/reward_data.js')
     
     -- Send the request
     req:Send(function(res)

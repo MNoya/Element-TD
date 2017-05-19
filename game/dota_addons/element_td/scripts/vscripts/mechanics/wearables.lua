@@ -102,6 +102,7 @@ function MountVoid( event )
     local origin = prop:GetAttachmentOrigin(attach)
     rider:SetAbsOrigin(Vector(origin.x+0, origin.y+0, origin.z+0))
     rider:SetParent(prop, "attach_hitloc")
+    rider:SetAngles(0, -30, 0)
     rider:StartGesture(ACT_DOTA_IDLE)
 
     rex.rider = rider

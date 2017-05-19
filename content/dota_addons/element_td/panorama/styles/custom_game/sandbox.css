@@ -21,7 +21,7 @@
 {
     transform: translateX( 0% ) translateY( -100px );
     vertical-align: top;
-    margin-top: 240px;
+    margin-top: 230px;
     horizontal-align: left;
     padding: 4px;
     padding-left: 0px;
@@ -35,7 +35,7 @@
 {
     flow-children: right;
     horizontal-align: left;
-    height: 570px;
+    height: 610px;
     width: 350px;
     font-size: 16;
     background-color: #181818dd;

@@ -14,13 +14,13 @@
 		<Panel id="TeamsContainer">
 			<Panel id="RadiantHeader" class="Legend">
 				<Panel class="LegendPanel ScoreCol_TeamInfoAndHero">
-					<Label id="RadiantLabel" class="TeamLabel" text="Builders"/>
+					<Label id="RadiantLabel" class="TeamLabel" text="#flyout_scoreboard_title"/>
 				</Panel>
-				<Label id="TeamScoreLabel" class="LegendPanel ScoreCol_Score" text="Score" />
-				<Label id="TeamNetworthLabel" class="LegendPanel ScoreCol_Networth" text="Networth" />
-				<Label id="TeamLives" class="LegendPanel ScoreCol_Lives" text="Lives" />
-				<Label id="KillsRemaining" class="LegendPanel ScoreCol_Kills" text="Remaining" />
-				<Label class="LegendPanel ScoreCol_Elements" text="Elements" />
+				<Label id="TeamScoreLabel" class="LegendPanel ScoreCol_Score" text="#flyout_scoreboard_score" />
+				<Label id="TeamNetworthLabel" class="LegendPanel ScoreCol_Networth" text="#flyout_scoreboard_networth" />
+				<Label id="TeamLives" class="LegendPanel ScoreCol_Lives" text="#flyout_scoreboard_lives" />
+				<Label id="KillsRemaining" class="LegendPanel ScoreCol_Kills" text="#remaining" />
+				<Label class="LegendPanel ScoreCol_Elements" text="flyout_scoreboard_elements" />
 			</Panel>
 			<Panel hittest="false" id="_dynamic_team_2" class="FlyoutTeam">
 				<Panel class="FlyoutTeamData">

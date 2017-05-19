@@ -394,7 +394,7 @@ function ShowGamemodeViewer() {
 }
 
 function GetHP(difficultyName) {
-    return "Health: "+healthBonus[difficultyName]
+    return $.Localize("voting_health_multi") + " " + healthBonus[difficultyName]
 }
 
 function GetBounty(difficultyName, bEndless, bExpress) {
@@ -404,11 +404,11 @@ function GetBounty(difficultyName, bEndless, bExpress) {
         bounty = Number(bounty.substring(0,bounty.length-1)) + endlessBountyBonus
         bounty = bounty + "%"
     }
-    return "Bounty: "+bounty
+    return $.Localize("voting_bounty_multi") + " " + bounty
 }
 
 function GetScore(difficultyName) {
-    return "Score Multiplier: x" + scoreMultipliers[difficultyName]
+    return $.Localize("voting_score_multi") + " x" + scoreMultipliers[difficultyName]
 }    
 
 function ResultsClose()

@@ -60,6 +60,7 @@ local requires = {
     "towers/basic/FireTower",
     "towers/basic/NatureTower",
     "towers/basic/EarthTower",
+    "towers/basic/PeriodicTower",
 
     -- dual towers
     "towers/duals/MagicTower",

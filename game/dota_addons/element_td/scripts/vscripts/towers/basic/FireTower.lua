@@ -53,12 +53,11 @@ function FireTower:OnAttackLanded(keys)
             self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_blazeit", {})    
         end
         self.tower:SetModifierStackCount("modifier_blazeit", self.ability, self.consecutiveAttacks)
-        
+        PopupNapalmBonusDamage(self.tower, self.consecutiveAttacks * self.aoeGrowth)
     else
         self.consecutiveAttacks = 0
         self.last_target_index = target:entindex()
         self.tower:RemoveModifierByName("modifier_blazeit")
-
     end
 
     local damage = self.tower:GetAverageTrueAttackDamage(target)
@@ -67,7 +66,6 @@ function FireTower:OnAttackLanded(keys)
     DamageEntitiesInArea(target:GetOrigin(), self.fullAOE + (self.consecutiveAttacks * (self.aoeGrowth/2)), self.tower, damage / 2)
 
     self.ability:ApplyDataDrivenModifier(self.tower, self.tower, "modifier_blazeit", {})
-
 end
 
 --[[ Removed in 1.15, applied to Poison Tower

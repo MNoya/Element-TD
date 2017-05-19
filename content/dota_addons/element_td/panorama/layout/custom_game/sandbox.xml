@@ -55,6 +55,11 @@
             <TextEntry id="Life" class="NumEntry" maxchars="4" placeholder="50" oninputsubmit="SetLife()" ontabbackward="SetInputFocus(Gold)" ontabforward="SetInputFocus(Essence)"/>
           </Panel>
           
+          <Panel class="Row">
+            <ToggleButton id="no_interest" class="DemoButton" onactivate="ToggleInterest()">
+              <Label text="#sandbox_no_interest"/>
+            </ToggleButton>
+          </Panel>
 
           <!-- Gold / Lumber / Essence entry boxes --> 
           <Panel class="ThreeEntry">

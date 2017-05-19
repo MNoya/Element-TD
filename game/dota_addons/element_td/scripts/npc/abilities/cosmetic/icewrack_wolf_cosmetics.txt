@@ -44,6 +44,7 @@
                     "Point"         "attach_hitloc"
                     "AnimateRider"  "true"
                     "offsetZ"       "-65"
+                    "yaw"           "-90"
                 }
             }
         }
