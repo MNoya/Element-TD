@@ -1686,7 +1686,7 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
 
         local modelParticle = ParticleManager:CreateParticleForPlayer("particles/buildinghelper/ghost_model.vpcf", PATTACH_ABSORIGIN, entity, player)
         ParticleManager:SetParticleControl(modelParticle, 0, model_location)
-        ParticleManager:SetParticleControlEnt(modelParticle, 1, entity, 1, "attach_hitloc", entity:GetAbsOrigin(), true) -- Model attach          
+        ParticleManager:SetParticleControlEnt(modelParticle, 1, entity, 1, "world_origin", entity:GetAbsOrigin(), true) -- Model attach          
         ParticleManager:SetParticleControl(modelParticle, 3, Vector(BuildingHelper.Settings["MODEL_ALPHA"],0,0)) -- Alpha
         ParticleManager:SetParticleControl(modelParticle, 4, Vector(fMaxScale,0,0)) -- Scale
         work.particleIndex = modelParticle
@@ -1705,7 +1705,7 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
             prop:AddEffects(EF_NODRAW)
             prop.pedestalParticle = ParticleManager:CreateParticleForPlayer("particles/buildinghelper/ghost_model.vpcf", PATTACH_ABSORIGIN, prop, player)
             ParticleManager:SetParticleControl(prop.pedestalParticle, 0, offset_location)
-            ParticleManager:SetParticleControlEnt(prop.pedestalParticle, 1, prop, 1, "attach_hitloc", prop:GetAbsOrigin(), true) -- Model attach
+            ParticleManager:SetParticleControlEnt(prop.pedestalParticle, 1, prop, 1, "world_origin", prop:GetAbsOrigin(), true) -- Model attach
             ParticleManager:SetParticleControl(prop.pedestalParticle, 2, color) -- Color
             ParticleManager:SetParticleControl(prop.pedestalParticle, 3, Vector(BuildingHelper.Settings["MODEL_ALPHA"],0,0)) -- Alpha
             ParticleManager:SetParticleControl(prop.pedestalParticle, 4, Vector(scale,0,0)) -- Scale

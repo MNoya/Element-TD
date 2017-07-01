@@ -19,21 +19,6 @@ end
 function statCollection:StageCustom(payload)
     payload.matchID = tostring(GameRules:GetMatchID())
 
-    -- Send custom to lb
-    self:sendStage('s2_custom.php', payload, function(err, res)
-
-        -- Check if we got an error
-        if self:ReturnedErrors(err, res) then
-            statCollection:print("Error on sendCustom " .. eleTDLB)
-            CustomNetTables:SetTableValue("gameinfo", "game_recorded", {value="failed"})
-            return
-        end
-
-        -- Tell the user
-        statCollection:print(messageCustomComplete .. " [" .. eleTDLB .. ']')
-        CustomNetTables:SetTableValue("gameinfo", "game_recorded", {value="recorded"})
-    end, eleTDLB)
-
     -- Send custom to lb hatinacat
     self:sendStage('s2_custom.php', payload, function(err, res)
 

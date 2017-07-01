@@ -80,11 +80,11 @@
         "mode_casual"                       "Обычный"
         "mode_casual_description"           "Каждый играет на своей сложности."
 
-        "element_allpick"                   "All Pick"
+        "element_allpick"                   "Выбрать все"
         "element_allpick_description"       "Каждый может выбирать свои элементы."
-        "element_allrandom"                 "All Random"
+        "element_allrandom"                 "Все Случайный"
         "element_allrandom_description"     "Ваши элементы выбираются случайно."
-        "element_samerandom"                "Same Random"
+        "element_samerandom"                "Одинаково"
         "element_samerandom_description"    "Все получают одинаковые случайные элементы."
         "element_random"                    "Случайный"
 

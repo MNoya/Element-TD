@@ -108,7 +108,7 @@ function StartBuildingHelper( params )
 
         // Building Ghost
         modelParticle = Particles.CreateParticle("particles/buildinghelper/ghost_model.vpcf", ParticleAttachment_t.PATTACH_ABSORIGIN, localHeroIndex);
-        Particles.SetParticleControlEnt(modelParticle, 1, entindex, ParticleAttachment_t.PATTACH_ABSORIGIN_FOLLOW, "follow_origin", Entities.GetAbsOrigin(entindex), true)
+        Particles.SetParticleControlEnt(modelParticle, 1, entindex, ParticleAttachment_t.PATTACH_POINT_FOLLOW, "follow_hitloc", Entities.GetAbsOrigin(entindex), true)
         Particles.SetParticleControl(modelParticle, 2, ghost_color)
         Particles.SetParticleControl(modelParticle, 3, [model_alpha,0,0])
         Particles.SetParticleControl(modelParticle, 4, [scale,0,0])
@@ -127,7 +127,7 @@ function StartBuildingHelper( params )
         if (params.propIndex !== undefined)
         {
             propParticle = Particles.CreateParticle("particles/buildinghelper/ghost_model.vpcf", ParticleAttachment_t.PATTACH_ABSORIGIN, localHeroIndex);
-            Particles.SetParticleControlEnt(propParticle, 1, params.propIndex, ParticleAttachment_t.PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", Entities.GetAbsOrigin(params.propIndex), true)
+            Particles.SetParticleControlEnt(propParticle, 1, params.propIndex, ParticleAttachment_t.PATTACH_POINT_FOLLOW, "follow_hitloc", Entities.GetAbsOrigin(params.propIndex), true)
             Particles.SetParticleControl(propParticle, 2, ghost_color)
             Particles.SetParticleControl(propParticle, 3, [model_alpha,0,0])
             Particles.SetParticleControl(propParticle, 4, [propScale,0,0])
@@ -399,6 +399,8 @@ function SendBuildCommand( params )
 
     var mPos = GameUI.GetCursorPosition();
     var GamePos = Game.ScreenXYToWorld(mPos[0], mPos[1]);
+
+    $.Msg("build: x:", GamePos[0], " y:", GamePos[1])
 
     GameEvents.SendCustomGameEventToServer( "building_helper_build_command", { "builder": mainSelected, "X" : GamePos[0], "Y" : GamePos[1], "Z" : GamePos[2] , "Queue" : pressedShift } );
 

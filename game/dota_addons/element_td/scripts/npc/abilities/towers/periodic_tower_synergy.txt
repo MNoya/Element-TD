@@ -1,0 +1,146 @@
+//=================================================================================================================
+// Periodic Tower: Synergy
+// Provides OnProjectileHitUnit callbacks for its projectiles
+//=================================================================================================================
+"periodic_tower_synergy"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"											
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"elements/periodic"
+	"MaxLevel"						"1"
+}
+
+"periodic_tower_synergy_light"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"											
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"AbilityTextureName"			"towers/light"
+	"MaxLevel"						"1"
+	
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"	"1"
+		"RunScript"
+		{
+			"ScriptFile"		"towers/towerevents.lua"
+			"Function"			"TriggerEvent"
+			"Event"				"OnProjectileHit"
+		}
+	}
+}
+
+"periodic_tower_synergy_dark"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"											
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"AbilityTextureName"			"towers/dark"
+	"MaxLevel"						"1"
+	
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"	"1"
+		"RunScript"
+		{
+			"ScriptFile"		"towers/towerevents.lua"
+			"Function"			"TriggerEvent"
+			"Event"				"OnProjectileHit"
+		}
+	}
+}
+
+"periodic_tower_synergy_water"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"											
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"AbilityTextureName"			"towers/water"
+	"MaxLevel"						"1"
+	
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"	"1"
+		"RunScript"
+		{
+			"ScriptFile"		"towers/towerevents.lua"
+			"Function"			"TriggerEvent"
+			"Event"				"OnProjectileHit"
+		}
+	}
+}
+
+"periodic_tower_synergy_fire"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"											
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"AbilityTextureName"			"towers/fire"
+	"MaxLevel"						"1"
+	
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"	"1"
+		"RunScript"
+		{
+			"ScriptFile"		"towers/towerevents.lua"
+			"Function"			"TriggerEvent"
+			"Event"				"OnProjectileHit"
+		}
+	}
+}
+
+"periodic_tower_synergy_nature"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"											
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"AbilityTextureName"			"towers/nature"
+	"MaxLevel"						"1"
+	
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"	"1"
+		"RunScript"
+		{
+			"ScriptFile"		"towers/towerevents.lua"
+			"Function"			"TriggerEvent"
+			"Event"				"OnProjectileHit"
+		}
+	}
+}
+
+"periodic_tower_synergy_earth"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"											
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"AbilityTextureName"			"towers/earth"
+	"MaxLevel"						"1"
+	
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"	"1"
+		"RunScript"
+		{
+			"ScriptFile"		"towers/towerevents.lua"
+			"Function"			"TriggerEvent"
+			"Event"				"OnProjectileHit"
+		}
+	}
+}

@@ -1,4 +1,4 @@
-function DamageEntity(entity, attacker, damage, pure)
+function DamageEntity(entity, attacker, damage, pure, element_override)
     if not entity or not entity:IsAlive() then return end
     
     if entity:HasModifier("modifier_invulnerable") then return end
@@ -9,7 +9,11 @@ function DamageEntity(entity, attacker, damage, pure)
 
     if not pure then
         -- Modify damage based on elements
-        damage = ApplyElementalDamageModifier(damage, GetDamageType(attacker), GetArmorType(entity))
+        if not element_override then
+            damage = ApplyElementalDamageModifier(damage, GetDamageType(attacker), GetArmorType(entity))
+        else
+            damage = ApplyElementalDamageModifier(damage, element_override, GetArmorType(entity))
+        end
         element = damage
 
         -- Increment damage based on debuffs
@@ -103,10 +107,10 @@ function DamageEntity(entity, attacker, damage, pure)
     return damage, math.max(0, overkillDamage)
 end
 
-function DamageEntitiesInArea(origin, radius, attacker, damage)
+function DamageEntitiesInArea(origin, radius, attacker, damage, element_override)
     local entities = GetCreepsInArea(origin, radius)
     for _,e in pairs(entities) do
-        DamageEntity(e, attacker, damage)
+        DamageEntity(e, attacker, damage, false, element_override)
     end
 end
 --------------------------------------------------------------
