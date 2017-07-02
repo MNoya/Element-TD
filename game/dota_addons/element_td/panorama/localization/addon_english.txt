@@ -262,7 +262,7 @@
         //  <font color='#hex'>text</font>  for color
         //  <b>text</b> for bold        
         "loading_screen_changelog"   "Latest Changes"
-        "loading_screen_change_text" "<h1>Version 1.17</h1><h2> July 2nd, 2017</h2><br>• Periodic Tower Overhaul<br>• Fixed Custom Builder mount angles<br>• Fixed Building Helper<br>• Fixed Particles not showing<br>• Fixed Tower Table for Level 3 Buildings"
+        "loading_screen_change_text" "<h1>Version 1.17</h1><h2> July 2nd, 2017</h2><br>• Periodic Tower Overhaul<br>• Fixed Custom Builder mount angles<br>• Fixed Building Helper<br>• Fixed Particles not showing<br>• Fixed Tower Table for Level 3 Buildings<br>• Fixed Dota 2 7.0X update bugs"
 
         "credits_title"         "Credits"
         "credits_developers"    "Developers"
