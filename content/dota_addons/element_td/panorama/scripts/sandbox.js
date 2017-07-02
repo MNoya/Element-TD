@@ -44,6 +44,7 @@ function SetLife() {
         $('#Life').text = "999"
 
     GameEvents.SendCustomGameEventToServer( "sandbox_set_life", { "value": $('#Life').text } );
+    $('#Life').text = "";
 }
 
 function GetResources()
@@ -65,6 +66,10 @@ function GetResources()
     table['gold'] = $('#Gold').text;
     table['lumber'] = $('#Lumber').text;
     table['essence'] = $('#Essence').text;
+
+    $('#Gold').text = "";
+    $('#Lumber').text = "";
+    $('#Essence').text = "";
 
     return table;
 }
@@ -97,7 +102,6 @@ function ValueChange(name, amount)
             else
                 panel.text = max_level
     }
-
     GameEvents.SendCustomGameEventToServer( "sandbox_set_element", {element : name, level : panel.text} );
 }
 
@@ -105,6 +109,7 @@ function SetWave() {
     wave.text = wave.text.replace(/\D/g,'');
 
     GameEvents.SendCustomGameEventToServer( "sandbox_set_wave", {"wave": wave.text} );
+    wave.text = ""
 }
 
 function SpawnWave() {
@@ -113,6 +118,7 @@ function SpawnWave() {
         wave.text = 56
     
     GameEvents.SendCustomGameEventToServer( "sandbox_spawn_wave", {"wave": wave.text} );
+    wave.text = ""
 }
 
 function ClearWavePressed() {
