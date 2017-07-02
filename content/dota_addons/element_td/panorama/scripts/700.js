@@ -21,7 +21,7 @@
 	newUI.FindChildTraverse("inventory").FindChildTraverse("inventory_items").FindChildTraverse("inventory_backpack_list").style.visibility = "collapse";
 
 	// Remove Scan and Glyph
-	var glyphScanContainer = hud.FindChildTraverse("HUDElements").FindChildTraverse("lower_hud").FindChildTraverse("GlyphScanContainer");
+	var glyphScanContainer = hud.FindChildTraverse("HUDElements").FindChildTraverse("minimap_container").FindChildTraverse("GlyphScanContainer");
 	glyphScanContainer.FindChildTraverse("RadarButton").style.visibility = "collapse";
 
 	// Fix side info panel
