@@ -426,11 +426,27 @@ function RegisterGNV(msg){
     var boundX = msg.boundX
     var boundY = msg.boundY
     $.Msg("Registering GNV ["+squareX+","+squareY+"] ","Min Bounds: X="+boundX+", Y="+boundY)
-
+    $.Msg("gnvRLELen: ", msg.gnv.length)
     var arr = [];
+    // Running-length decoding
+    var strlength = "";
+    for (var i=0; i<msg.gnv.length; i++){
+        var chr = msg.gnv.charCodeAt(i);
+        if (chr >= 48 && chr <= 57) {
+            strlength = strlength + String.fromCharCode(chr);
+        } else {
+            var num = parseInt(strlength);
+            for (var j=0; j<num; j++) {
+                arr.push(String.fromCharCode(chr));
+            }
+            strlength = "";
+        }
+    }
+    msg.gnv = arr.join("");
+    arr = [];
     // Thanks to BMD for this method
     for (var i=0; i<msg.gnv.length; i++){
-        var code = msg.gnv.charCodeAt(i)-32;
+        var code = msg.gnv.charCodeAt(i)-58;
         for (var j=4; j>=0; j-=2){
             var g = (code & (3 << j)) >> j;
             if (g != 0)
@@ -463,7 +479,8 @@ function RegisterGNV(msg){
         }
 
         $.Msg(a.join(''))
-    }*/
+    }
+    */
 
     // Debug Prints
     var tab = {"0":0, "1":0, "2":0, "3":0};
@@ -471,7 +488,7 @@ function RegisterGNV(msg){
     {
         tab[arr[i].toString()]++;
     }
-    $.Msg("Free: ",tab["1"]," Blocked: ",tab["2"])
+    $.Msg("Free: ",tab["1"]," Blocked: ",tab["2"], " gnvLen: ", msg.gnv.length)
 }
 
 // Ask the server for the Terrain grid
@@ -519,6 +536,8 @@ function SnapHeight(x,y,z){
 function IsBlocked(position) {
     var y = WorldToGridPosX(position[0]) - Root.boundX
     var x = WorldToGridPosY(position[1]) - Root.boundY
+
+    //$.Msg("IsBlocked: ",position[0], " ", position[1], " ", x, " ", y)
 
     //{"BLIGHT":8,"BUILDABLE":2,"GOLDMINE":4,"BLOCKED":1}
     // Check height restriction

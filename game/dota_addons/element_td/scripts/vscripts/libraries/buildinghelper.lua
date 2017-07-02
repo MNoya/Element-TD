@@ -250,6 +250,7 @@ function BuildingHelper:InitGNV()
     -- Trigger zones named "bh_blocked" will block the terrain for construction
     local blocked_map_zones = Entities:FindAllByName("*bh_blocked")
 
+    -- Each gnv is encoded into a 2bit value and then into a character
     for y=boundY1,boundY2 do
         local shift = 4
         local byte = 0
@@ -300,14 +301,14 @@ function BuildingHelper:InitGNV()
             shift = shift - 2
 
             if shift == -2 then
-                gnv[#gnv+1] = string.char(byte+32)
+                gnv[#gnv+1] = string.char(byte+58) -- Use 58 to start after numbers
                 shift = 4
                 byte = 0
             end
         end
 
         if shift ~= 4 then
-            gnv[#gnv+1] = string.char(byte+32)
+            gnv[#gnv+1] = string.char(byte+58)
         end
 
         if ASCII_ART then
@@ -318,17 +319,39 @@ function BuildingHelper:InitGNV()
 
     local gnv_string = table.concat(gnv,'')
 
+    -- Running-length encoding
+    local last
+    local count = 0
+    local gnvRLE = {}
+    for i=1,string.len(gnv_string) do
+        local c = gnv_string:sub(i,i)
+        if last then
+            if last == c then
+                count = count + 1
+            else
+                gnvRLE[#gnvRLE+1] = count .. last
+                last = c
+                count = 1
+            end
+        else
+            last = c
+            count = count + 1
+        end
+    end
+    local gnvRLE_string = table.concat(gnvRLE,'')
+
     local squareX = boundX2 - boundX1 + 1
     local squareY = boundY2 - boundY1 + 1
 
-    BuildingHelper:print("Free: "..unblockedCount.." Blocked: "..blockedCount)
+    -- PrintTable(gnvRLE)
+    BuildingHelper:print("Free: "..unblockedCount.." Blocked: "..blockedCount .. " gnvLen: " .. string.len(gnv_string) .. "/" .. string.len(gnvRLE_string))
 
     -- Initially, the construction grid equals the terrain grid
     -- Clients will have full knowledge of the terrain grid
     -- The construction grid is only known by the server
     BuildingHelper.Grid = BuildingHelper.Terrain
 
-    BuildingHelper.Encoded = gnv_string
+    BuildingHelper.Encoded = gnvRLE_string
     BuildingHelper.squareX = squareX
     BuildingHelper.squareY = squareY
     BuildingHelper.minBoundX = boundX1
@@ -1570,6 +1593,8 @@ function BuildingHelper:AreaMeetsCriteria(size, location, grid_type, option)
     local upperBoundX = math.max(boundX1, boundX2)
     local lowerBoundY = math.min(boundY1, boundY2)
     local upperBoundY = math.max(boundY1, boundY2)
+
+    BuildingHelper:print('Pos x: ' .. originX .. ' y: ' .. originY)
 
     -- Adjust even size
     if (size % 2) == 0 then
