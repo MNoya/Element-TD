@@ -329,7 +329,7 @@ function BuildingHelper:InitGNV()
             if last == c then
                 count = count + 1
             else
-                gnvRLE[#gnvRLE+1] = count .. last
+                gnvRLE[#gnvRLE+1] = (count == 1 and "" or count) .. last
                 last = c
                 count = 1
             end

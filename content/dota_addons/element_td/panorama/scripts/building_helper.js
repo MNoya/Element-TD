@@ -436,6 +436,9 @@ function RegisterGNV(msg){
             strlength = strlength + String.fromCharCode(chr);
         } else {
             var num = parseInt(strlength);
+            if (isNaN(num)) {
+                num = 1
+            }
             for (var j=0; j<num; j++) {
                 arr.push(String.fromCharCode(chr));
             }
