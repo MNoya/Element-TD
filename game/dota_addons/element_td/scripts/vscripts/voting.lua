@@ -272,6 +272,7 @@ function FinalizeVotes()
 		-- Display player ranks
 		Timers:CreateTimer(5, function()
 			Ranking:ShowPlayerRanks()
+			Rewards:LeaderboardRewardsPresent()
 		end)
 	end)
 end

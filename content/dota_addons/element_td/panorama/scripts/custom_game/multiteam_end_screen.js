@@ -53,18 +53,21 @@ function ShowEndCredits() {
     for (var i in ids)
     {
         var steamID64 = ids[i].key
-        var panel = CreateEndCredit(steamID64)
-        panel.SetHasClass( "team_endgame", false );
-        
-        GameUI.ApplyPanelBorder(panel, steamID64)
-        GameUI.SetupAvatarTooltip(panel.FindChildInLayoutFile("AvatarImage"), $.GetContextPanel(), steamID64)
-        
-        var callback = function( panel )
-        {
-            return function(){ panel.SetHasClass( "team_endgame", 1 ); }
-        }( panel );
-        $.Schedule( delay, callback )
-        delay += delay_per_panel;
+        var tier = ids[i].value["tier"]
+        if (tier >= 2) {
+            var panel = CreateEndCredit(steamID64)
+            panel.SetHasClass( "team_endgame", false );
+            
+            GameUI.ApplyPanelBorder(panel, steamID64)
+            GameUI.SetupAvatarTooltip(panel.FindChildInLayoutFile("AvatarImage"), $.GetContextPanel(), steamID64)
+            
+            var callback = function( panel )
+            {
+                return function(){ panel.SetHasClass( "team_endgame", 1 ); }
+            }( panel );
+            $.Schedule( delay, callback )
+            delay += delay_per_panel;
+        }
     }
 }
 

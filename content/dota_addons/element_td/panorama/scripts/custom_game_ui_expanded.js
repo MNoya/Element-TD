@@ -350,7 +350,7 @@ GameUI.AcceptWheel = function() {
 GameUI.PlayerHasProfile = function (playerID) {
     var steamID64 = GameUI.GetPlayerSteamID(playerID)
     var rewardLevel = GameUI.RewardLevel(steamID64)
-    return Players.HasCustomGameTicketForPlayerID(parseInt(playerID)) || rewardLevel == "Developer" || rewardLevel == "Translator" // || rewardLevel == rewardLevel > 0
+    return Players.HasCustomGameTicketForPlayerID(parseInt(playerID)) || rewardLevel == "Developer" || rewardLevel == "Translator" || rewardLevel == rewardLevel > 0
 }
 
 // Save request by steamID

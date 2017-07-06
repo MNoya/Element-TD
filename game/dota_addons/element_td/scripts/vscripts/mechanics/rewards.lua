@@ -79,7 +79,8 @@ function Rewards:Load()
     end
 
     local req = CreateHTTPRequestScriptVM('GET', 'http://www.eletd.com/reward_data.js')
-    
+    local req2 = CreateHTTPRequestScriptVM('GET', 'http://hatinacat.com/leaderboard/leaderboard_rewards.txt')
+
     -- Send the request
     req:Send(function(res)
         if res.StatusCode ~= 200 or not res.Body then
@@ -106,6 +107,45 @@ function Rewards:Load()
             end
         end
     end)
+
+    -- Send the request
+    req2:Send(function(res)
+        if res.StatusCode ~= 200 or not res.Body then
+            print("[Rewards] Failed to contact rewards server.")
+            return
+        end
+
+        -- Try to decode the result
+        local obj, pos, err = json.decode(res.Body, 1, nil)
+
+        -- Feed the result into our callback
+        if err then
+            print("[Rewards] Error in response : " .. err)
+            return
+        end
+
+        -- Put the reward tiers in a nettable
+        if obj and obj.players then
+            for _,v in pairs(obj.players) do
+                local data = Rewards.players[v.steamID] or {}
+                if not data.tier then
+                    data.tier = v.reward
+                end
+                Rewards.players[v.steamID] = data
+                CustomNetTables:SetTableValue("rewards", v.steamID, data)
+            end
+        end
+    end)
+end
+
+-- Announces any players that are in the top 10 and are in game
+function Rewards:LeaderboardRewardsPresent()
+    for k, ply in pairs(playerIDs) do
+        local player = Rewards.players[Rewards:ConvertID64(PlayerResource:GetSteamAccountID(ply))]
+        if player ~= nil and player["tier"] == 1 then
+            ForAllConnectedPlayerIDs(function(ply) SendRewardsMessage(ply, "#etd_leaderboard_reward", GetPlayerName(ply)) end)
+        end
+    end
 end
 
 function Rewards:PlayerHasPass(playerID)

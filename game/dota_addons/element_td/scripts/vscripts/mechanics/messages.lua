@@ -9,6 +9,16 @@ function SendErrorMessage(playerID, msg)
     Sounds:EmitSoundOnClient(playerID, "General.Cancel")
 end
 
+function SendRewardsMessage(playerID, msg, name)
+    Notifications:Bottom(playerID, {
+        text = {text = msg, player = name}, 
+        style = {color = '#2196f3', ['font-weight'] = 'bold'}, 
+        duration = 5
+    })
+
+    Sounds:EmitSoundOnClient(playerID,"ui.npe_objective_complete")
+end
+
 function SendLumberMessage(playerID, msg, amount)
     Notifications:Bottom(playerID, {
         text = {text = msg, amount = amount}, 
