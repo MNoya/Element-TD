@@ -102,9 +102,22 @@ function WaveCoop:SpawnWave()
 					-- Choose an ability in sequence
 					if CHALLENGE_MODE then
 						creepBossAbilities = CreepBoss:GetAbilityList()
-						
-						local ability1 = table.remove(creepBossAbilities, math.random(#creepBossAbilities))
-						local ability2 = table.remove(creepBossAbilities, math.random(#creepBossAbilities))
+
+						-- Do not let count entities spawned count go over CREEPS_PER_WAVE
+						local rand1 = math.random(#creepBossAbilities)
+						local rand2 = math.random(#creepBossAbilities - 1)
+						if entitiesSpawned == CREEPS_PER_WAVE then
+							-- Last creep in wave cannot be bulky
+							if rand1 == 1 then
+								rand1 = rand1 + 1
+							end
+							if rand2 == 1 then
+								rand2 = rand2 + 1
+							end
+						end
+
+						local ability1 = table.remove(creepBossAbilities, rand1)
+						local ability2 = table.remove(creepBossAbilities, rand2)
 
 						entity.scriptObject.abilities = {}
 						entity.scriptObject.abilities[ability1] = AddAbility(entity, ability1) 
