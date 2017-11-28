@@ -92,7 +92,7 @@ end
 
 function PeriodicTower:OnAttackLanded(keys)
     local target = keys.target
-    local damage = self.damage
+    local damage = ApplyAbilityDamageFromModifiers(self.damage, self.tower)
     local ability_name = keys.ability:GetAbilityName()
     if ability_name == "periodic_tower_synergy_light" then
         DamageEntity(target, self.tower, damage, false, "light")
