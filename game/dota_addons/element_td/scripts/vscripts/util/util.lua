@@ -277,3 +277,10 @@ function comma_value( number )
     end
     return formatted
 end
+
+
+-- Hotfix to the 7.20 Valve clusterf-
+
+function CDOTA_BaseNPC:GetAttackRange()
+  return self:Script_GetAttackRange()
+end 

@@ -28,17 +28,7 @@ end
 function modifier_attack_targeting:OnIntervalThink()
     local unit = self:GetParent()
     if unit:HasModifier("modifier_disarmed") then return end
-    -- local findRadius = unit:GetAttackRange() + unit:GetHullRadius()
-    --[[ 
-        Changed from GetAttackRange to GetAcquisitionRange since the values are
-        essentially the same due to their properties.
-            - Essentially, Valve released something that broke GetAttackRange not
-            being available on specific occations, as to which I'll try to track down
-            though it probably boils down to `buildinghelper.lua`
-        This is only a temporary patch until Valve fixes 7.20E
-        Pleae revert as soon as this is fixed.
-    ]]-
-    local findRadius = unit:GetAcquisitionRange() + unit:GetHullRadius()
+    local findRadius = unit:GetAttackRange() + unit:GetHullRadius()
     local attackTarget = unit:GetAttackTarget()
 
     -- Stop focusing targets after leaking
