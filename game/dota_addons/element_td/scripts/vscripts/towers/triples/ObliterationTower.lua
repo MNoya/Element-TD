@@ -71,7 +71,7 @@ end
 function ObliterationTower:OnCreated()
     self.ability = AddAbility(self.tower, "obliteration_tower_obliterate")
     self.projOrigin = self.tower:GetAttachmentOrigin(self.tower:ScriptLookupAttachment("attach_attack1"))
-    self.attackRange = self.tower:GetAcquisitionRange()
+    self.attackRange = self.tower:GetAttackRange()
     self.projDuration = GetAbilitySpecialValue("obliteration_tower_obliterate", "duration")
     self.maxSplash = GetAbilitySpecialValue("obliteration_tower_obliterate", "max_aoe")
     self.initialSplash = GetAbilitySpecialValue("obliteration_tower_obliterate", "initial_aoe")

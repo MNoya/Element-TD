@@ -211,8 +211,8 @@ function DrawTowerRangeIndicator(keys)
     if IsTower(target) then
         local pos = target:GetAbsOrigin();
         pos.z = pos.z + 64;
-        DebugDrawCircle(pos, Vector(0, 175, 17), 1, target:GetAcquisitionRange(), false, 10);
-        DebugDrawText(target:GetOrigin(), "Range: " .. target:GetAcquisitionRange(), true, 10);
+        DebugDrawCircle(pos, Vector(0, 175, 17), 1, target:GetAttackRange(), false, 10);
+        DebugDrawText(target:GetOrigin(), "Range: " .. target:GetAttackRange(), true, 10);
     end
 end
 
@@ -277,3 +277,10 @@ function comma_value( number )
     end
     return formatted
 end
+
+
+-- Hotfix to the 7.20 Valve clusterf-
+
+function CDOTA_BaseNPC:GetAttackRange()
+  return self:Script_GetAttackRange()
+end 

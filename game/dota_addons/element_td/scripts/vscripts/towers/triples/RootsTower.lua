@@ -69,7 +69,7 @@ function RootsTower:OnCreated()
     self.ability = AddAbility(self.tower, "roots_tower_gaias_wrath", self.tower:GetLevel())
     
     self.width = GetAbilitySpecialValue("roots_tower_gaias_wrath", "width")
-    self.length = self.tower:GetAcquisitionRange()
+    self.length = self.tower:GetAttackRange()
     self.damagePerSecond = GetAbilitySpecialValue("roots_tower_gaias_wrath", "dps")[self.tower:GetLevel()]
 
     Timers:CreateTimer(function() 
@@ -78,7 +78,7 @@ function RootsTower:OnCreated()
                 local attackTarget = self.tower:GetAttackTarget() or self.tower:GetAggroTarget()
                 if attackTarget then
                     local distanceToTarget = (self.tower:GetAbsOrigin() - attackTarget:GetAbsOrigin()):Length2D()
-                    if distanceToTarget > self.tower:GetAcquisitionRange() then
+                    if distanceToTarget > self.tower:GetAttackRange() then
                         self.tower:Interrupt()
                     end
                 end
