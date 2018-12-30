@@ -104,7 +104,7 @@ end
 function WindstormTower:OnCreated()
     self.ability = AddAbility(self.tower, "windstorm_tower_tornado", self.tower:GetLevel())
     self.aoe = GetAbilitySpecialValue("windstorm_tower_tornado", "radius")
-    self.findRadius = self.tower:GetAttackRange() + self.tower:GetHullRadius()
+    self.findRadius = self.tower:GetAcquisitionRange() + self.tower:GetHullRadius()
     self.duration = GetAbilitySpecialValue("windstorm_tower_tornado", "duration")
     self.playerID = self.tower:GetPlayerOwnerID()
     self.damage = GetAbilitySpecialValue("windstorm_tower_tornado", "damage")[self.tower:GetLevel()]
@@ -116,7 +116,7 @@ function WindstormTower:OnCreated()
                 local attackTarget = self.tower:GetAttackTarget() or self.tower:GetAggroTarget()
                 if attackTarget then
                     local distanceToTarget = (self.tower:GetAbsOrigin() - attackTarget:GetAbsOrigin()):Length2D()
-                    if distanceToTarget > self.tower:GetAttackRange() then
+                    if distanceToTarget > self.tower:GetAcquisitionRange() then
                         self.tower:Interrupt()
                     end
                 end

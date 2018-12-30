@@ -45,7 +45,7 @@ function CannonTower:OnCreated()
                 local attackTarget = self.tower:GetAttackTarget() or self.tower:GetAggroTarget()
                 if attackTarget then
                     local distanceToTarget = (self.tower:GetAbsOrigin() - attackTarget:GetAbsOrigin()):Length2D()
-                    if distanceToTarget > self.tower:GetAttackRange() then
+                    if distanceToTarget > self.tower:GetAcquisitionRange() then
                         self.tower:Interrupt()
                     end
                 end

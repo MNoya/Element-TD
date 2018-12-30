@@ -44,7 +44,7 @@ TOWER_TARGETING_FARTHEST = 4 --Impulse, Obliteration
 TOWER_TARGETING_OLDER = 8 --Filter creep wave IDs
 function GetTowerTarget(tower, target_type, radius)
 	if tower then
-		local radius = radius or tower:GetAttackRange()
+		local radius = radius or tower:GetAcquisitionRange()
 		local find_type = FIND_CLOSEST
 		if target_type == TOWER_TARGETING_FARTHEST then
 			find_type = FIND_FARTHEST

@@ -29,7 +29,7 @@ ELEMENTS_PERIODIC = {
 function PeriodicTower:OnAttack(keys)
     local target = keys.target
     local caster = keys.caster
-    local creeps = GetCreepsInArea(self.tower:GetAbsOrigin(), self.tower:GetAttackRange())
+    local creeps = GetCreepsInArea(self.tower:GetAbsOrigin(), self.tower:GetAcquisitionRange())
     local count = 1
     local repeated = false
     local element_select = self.element_select
