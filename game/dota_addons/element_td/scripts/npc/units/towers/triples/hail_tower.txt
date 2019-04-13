@@ -56,7 +56,7 @@
     "ProjectileModel"        "particles/custom/towers/hail/attack.vpcf"
     "ProjectileSpeed"        "3000"
 
-    "Model"             "models/heroes/drow/drow.vmdl"
+    "Model"             "models/heroes/drow/drow_base.vmdl"
     "ModelScale"        "1"
     "ModelRotation"     "90"
     "ModelOffset"       "20"

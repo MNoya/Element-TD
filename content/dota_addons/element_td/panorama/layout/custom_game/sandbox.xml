@@ -2,7 +2,6 @@
   <styles>
     <include src="file://{resources}/styles/custom_game/sandbox.css" />
     <include src="s2r://panorama/styles/dotastyles.vcss_c" />
-    <include src="s2r://panorama/styles/hero_splash.vcss_c" />
     <include src="s2r://panorama/styles/popups/settings_slider.vcss_c" />
   </styles>
   <scripts>
