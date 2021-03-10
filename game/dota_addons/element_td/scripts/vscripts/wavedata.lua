@@ -590,7 +590,7 @@ function ReduceLivesForPlayer(playerID, lives)
     Sounds:EmitSoundOnClient(playerID, "ETD.Leak")
 
     if hero then
-        hero:CalculateStatBonus()
+        hero:CalculateStatBonus(true)
         UpdatePlayerHealth(playerID)
         CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=playerData.health/hero:GetMaxHealth() * 100} )
     end

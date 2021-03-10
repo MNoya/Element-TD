@@ -344,7 +344,7 @@ function statCollection:sendStage2()
         modIdentifier = self.modIdentifier,
         flags = self.flags,
         schemaVersion = schemaVersion,
-        dotaMatchID = tostring(GameRules:GetMatchID()),
+        dotaMatchID = tostring(GameRules:Script_GetMatchID()),
         players = players
     }
 

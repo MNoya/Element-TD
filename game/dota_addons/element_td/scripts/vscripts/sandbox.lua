@@ -168,7 +168,7 @@ function Sandbox:SetLife(event)
     playerData.cheated = true
 
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-    hero:CalculateStatBonus()
+    hero:CalculateStatBonus(true)
     UpdatePlayerHealth(playerID)
    
     CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=playerData.health/hero:GetMaxHealth() * 100} )
@@ -415,7 +415,7 @@ function Sandbox:Restart( event )
     -- Set life to default
     local health = GameSettings:GetMapSetting("Lives")
     newPlayerData.health = health 
-    hero:CalculateStatBonus()
+    hero:CalculateStatBonus(true)
     UpdatePlayerHealth(playerID)
     
     CustomGameEventManager:Send_ServerToAllClients("SetTopBarPlayerHealth", {playerId=playerID, health=newPlayerData.health/hero:GetMaxHealth() * 100} )

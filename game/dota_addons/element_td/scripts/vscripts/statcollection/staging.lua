@@ -17,7 +17,7 @@ function statCollection:Stage3(payload)
 end
 
 function statCollection:StageCustom(payload)
-    payload.matchID = tostring(GameRules:GetMatchID())
+    payload.matchID = tostring(GameRules:Script_GetMatchID())
 
     -- Send custom to lb hatinacat
     self:sendStage('s2_custom.php', payload, function(err, res)
