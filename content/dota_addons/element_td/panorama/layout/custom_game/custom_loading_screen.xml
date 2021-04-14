@@ -29,10 +29,10 @@
 
                 <Panel id="Promote">
                     <Panel id="Ad">
-                        <Image id="AdImage" src="file://{images}/custom_game/loading_screen/mobile.png" />
-                        <Label id="AdTitle" text="#mobile_game"/>
+                        <Image id="AdImage" src="file://{images}/custom_game/loading_screen/eletd2.png" />
+                        <!-- <Label id="AdTitle" text="#mobile_game"/> -->
                     </Panel>
-                    <Label id="PromoteTitle" class="Title" text="#loading_mobile" html="true"/>
+                    <!-- <Label id="PromoteTitle" class="Title" text="#loading_mobile" html="true"/> -->
                 </Panel>
             </Panel>
         </Panel>
