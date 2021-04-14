@@ -26,7 +26,7 @@
     "StatusManaRegen"        "0"
     "VisionDaytimeRange"        "1200"
     "VisionNighttimeRange"        "800"
-    "Model"        "models/heroes/lycan/summon_wolves.mdl"
+    "Model"        "models/heroes/lycan/summon_wolves.vmdl"
     "ModelScale"        "0.9"
     "BaseClass"        "npc_dota_creature"
     "SoundSet"        ""
