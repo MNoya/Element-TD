@@ -402,7 +402,7 @@
                 <Panel class="BuilderColumn" onmouseover="Hovering('LightBackground'); AnimateBuilderHover('LightBuilder')"
                                              onmouseout="HoverOut('LightBackground'); AnimateBuilderIdle('LightBuilder')" 
                                              onactivate="ChooseBuilder('npc_dota_hero_skywrath_mage')">
-                    <Image id="LightBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/light.png" />-->
+                    <Image id="LightBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/light.png" />
                     <DOTAScenePanel id="LightBuilder" class="BuilderPanel" map="builders" camera="light"/>
                 </Panel>
 
