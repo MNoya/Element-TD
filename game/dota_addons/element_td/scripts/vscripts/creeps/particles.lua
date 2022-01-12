@@ -73,7 +73,9 @@ end
 
 function RemoveHellSwornAmbient( event )
     local unit = event.caster
-    ParticleManager:DestroyParticle(unit.ambient_particle, true)
+    if unit.ambient_particle ~= nil then
+        ParticleManager:DestroyParticle(unit.ambient_particle, true)
+    end
 end
 
 function IceFrog( event )

@@ -27,6 +27,10 @@ if IsServer() then
 
     function modifier_out_of_world:OnDestroy( params )
         local unit = self:GetParent()
+        if unit.originalDayVision == nil or unit.originalNightVision == nil then
+            unit.originalDayVision = 575
+            unit.originalNightVision = 575
+        end
         unit:SetDayTimeVisionRange(unit.originalDayVision)
         unit:SetNightTimeVisionRange(unit.originalNightVision)
     end
