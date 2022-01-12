@@ -101,7 +101,7 @@
     border-left: 1px solid #462600;
     border-bottom: 1px solid #00000088;
 
-    box-shadow: fill #00000055 -2px -2px 6px 6px;
+    box-shadow: #00000040 0px 0px 12px 0px;
     
     flow-children: down;
 
@@ -284,7 +284,7 @@
     //border-radius: 20px;
 
     border: 2px solid #484A48;
-    box-shadow: #000 -4px -4px 3px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
 
     flow-children: down;
 }
@@ -1541,7 +1541,7 @@ Label
     //border-radius: 20px;
 
     border: 2px solid #484A48;
-    box-shadow: #000 -4px -4px 3px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
 }
 
 #CustomBuildersTitle
@@ -1621,7 +1621,7 @@ Label
 
     background-color: #000000DD;
     border: 2px solid #484A48;
-    box-shadow: #000 -4px -4px 3px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
 }
 
 #ResetBuilderButton:hover
@@ -1685,7 +1685,7 @@ Label
     border-right: 2px solid #00000088;
     border-left: 2px solid #4c434677;
     border-bottom: 2px solid #00000088;
-    box-shadow: fill #00000055 -2px -2px 4px 6px;
+    box-shadow: #00000040 0px 0px 12px 0px;
     
     flow-children: down;
     width: 360px;
@@ -1701,7 +1701,7 @@ Label
     border-right: 2px solid #000000;
     border-left: 2px solid #4c4346;
     border-bottom: 2px solid #000000;
-    box-shadow: fill #00000055 -2px -2px 4px 6px;
+    box-shadow: #00000040 0px 0px 12px 0px;
 }
 
 #AvatarName
@@ -1881,7 +1881,7 @@ Label
 
     background-color: #000000DD;
     border: 2px solid #484A48;
-    box-shadow: #000 -4px -4px 3px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
 
     flow-children: down;
     padding: 10px;

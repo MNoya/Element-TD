@@ -45,16 +45,15 @@
 {
     width: 65px;
     height: 65px;
-    margin-left: 8px;
-    margin-top: 7px;
+    margin-left: 22px;
+    margin-top: 18px;
 }
 
 #ToggleGlyph
 {
     width: 120px;
     height: 120px;
-    margin-right: -25px;
-    margin-bottom: -20px;
+    position: 25px 20px 0px;
     vertical-align: bottom;
 }
 
@@ -100,7 +99,7 @@
     flow-children: down;
     background-color: #000000DD;
     border: 2px solid #484A48;
-    box-shadow: #000 -4px -4px 3px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
 }
 
 #TitleContainer
@@ -180,7 +179,7 @@
 
     flow-children: right;
     background-color: #01A2FF09;
-    box-shadow: #000 -4px -4px 3px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
 }
 
 #FireContainer
@@ -190,7 +189,7 @@
 
     flow-children: right;
     background-color: #C4000009;
-    box-shadow: #000 -4px -4px 3px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
 }
 
 #NatureContainer
@@ -200,7 +199,7 @@
 
     flow-children: right;
     background-color: #00C40009;
-    box-shadow: #000 -4px -4px 3px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
 }
 
 #EarthContainer
@@ -210,7 +209,7 @@
 
     flow-children: right;
     background-color: #D4880F09;
-    box-shadow: #000 -4px -4px 3px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
 }
 
 #LightContainer
@@ -220,7 +219,7 @@
 
     flow-children: right;
     background-color: #E5DE2309;
-    box-shadow: #000 -4px -4px 3px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
 }
 
 #DarkContainer
@@ -230,7 +229,7 @@
 
     flow-children: right;
     background-color: #8733C809;
-    box-shadow: #000 -4px -4px 3px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
 }
 
 .Element
@@ -305,43 +304,43 @@
 
 .Glow_water
 {
-    box-shadow: 0px 0px 100% #01A2FF;
+    box-shadow: 0px 0px 35px -5px #01A2FF;
     opacity: 1.5;
 }
 
 .Glow_fire
 {
-    box-shadow: 0px 0px 100% #C40000;
+    box-shadow: 0px 0px 35px -5px #C40000;
     opacity: 1.5;
 }
 
 .Glow_nature
 {
-    box-shadow: 0px 0px 100% #00C400;
+    box-shadow: 0px 0px 35px -5px #00C400;
     opacity: 1.5;
 }
 
 .Glow_earth
 {
-    box-shadow: 0px 0px 100% #D4880F;
+    box-shadow: 0px 0px 35px -5px #D4880F;
     opacity: 1.5;
 }
 
 .Glow_light
 {
-    box-shadow: 0px 0px 100% #E5DE23;
+    box-shadow: 0px 0px 35px -5px #E5DE23;
     opacity: 1.5;
 }
 
 .Glow_dark
 {
-    box-shadow: 0px 0px 100% #8733C8;
+    box-shadow: 0px 0px 35px -5px #8733C8;
     opacity: 1.5;
 }
 
 .Glow_white
 {
-    box-shadow: 0px 0px 100% white;
+    box-shadow: 0px 0px 35px -5px white;
 }
 
 #FilterButtonContainer
@@ -389,7 +388,7 @@
     width: 100px;
     background-color: #000000DD;
     border: 2px solid #484A48;
-    box-shadow: #000 -4px -4px 3px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
     margin-right: 3px;
 }
 

@@ -13,7 +13,7 @@
     padding: 20px 20px 0px 20px;
     background-color: #000000DD;
     border: 2px solid #484A48;
-    box-shadow: #000 -4px -4px 3px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
     flow-children: down;
 }
 
@@ -27,7 +27,7 @@
     padding: 10px;
     background-color: #000000DD;
     border: 2px solid #484A48;
-    box-shadow: #000 -4px -4px 3px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
     flow-children: down;
     opacity: 1;
     transform: translatex( -200px );
@@ -144,7 +144,7 @@
     padding: 10px 30px 0px 30px;
     background-color: #000000DD;
     border: 2px solid #484A48;
-    box-shadow: #000 -4px -4px 3px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
     flow-children: down;
 }
 

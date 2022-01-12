@@ -54,7 +54,7 @@
     width: 40px;
     background-color: black;
     border-radius: 34px;
-    box-shadow: fill #000000 -3px -3px 3px 6px;
+    box-shadow: #00000040 0px 0px 12px 0px;
 }
 
 #DevName Label
@@ -203,7 +203,7 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
     border-radius: 50px;
-    box-shadow: fill #000000 -3px -3px 3px 6px;
+    box-shadow: #00000040 0px 0px 12px 0px;
 }
 
 .ContactText
@@ -477,7 +477,7 @@
 
 .local_player_team #PlayersContainer
 {
-    box-shadow: fill #ffffff40 -3px -3px 3px 6px;
+    box-shadow: #ffffff40 0px 0px 5px 0px;
 }
 
 .TeamId
@@ -899,6 +899,6 @@
     background-repeat: no-repeat;
     horizontal-align: center;
     vertical-align: center;
-    box-shadow: #000 -1px -1px 3px 2px;
+    box-shadow: #00000040 0px 0px 5px 0px;
     margin-top: 2px;
 }

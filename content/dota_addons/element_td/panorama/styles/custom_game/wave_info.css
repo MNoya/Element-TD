@@ -22,7 +22,7 @@
     border: 2px solid #484A48;
     width: 352px;
     height: 84px;
-    box-shadow: #000 -4px -4px 3px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
 }
 
 .wave
@@ -105,7 +105,7 @@ DOTAAbilityImage
     width: 84px;
     height: 84px;
     background-color: gradient( linear, 0% 100%, 0% 0%, from( #3E4B51 ), to( #5C9C68 ) );
-    box-shadow: #000 -4px -4px 4px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
 }
 
 #StartWave:hover

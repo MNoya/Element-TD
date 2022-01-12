@@ -88,7 +88,7 @@
     background-color: #000000CC;
     color: #CCCCCC;
     border: 2px solid #484A48;
-    box-shadow: #000 -4px -4px 3px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
     padding: 2px 4px 2px 4px;
     text-align: center;
 }

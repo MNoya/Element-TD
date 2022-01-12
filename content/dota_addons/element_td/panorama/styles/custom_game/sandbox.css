@@ -40,7 +40,7 @@
     font-size: 16;
     background-color: #181818dd;
     border: 2px solid #222222;
-    box-shadow: #000000aa -4px -4px 8px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
 }
 
 #ControlPanelSlideThumb
@@ -51,7 +51,7 @@
     background-color: #181818cc;
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
-    box-shadow: #00000055 -4px -4px 8px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
     vertical-align: middle;
 }
 

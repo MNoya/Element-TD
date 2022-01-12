@@ -131,7 +131,7 @@ Label
     //border-radius: 20px;
 
     border: 2px solid #484A48;
-    box-shadow: #000 -4px -4px 3px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
 
     height: 690px;
     width: 1150px;
@@ -170,7 +170,7 @@ Label
     width: 383px;
     margin-right: 2px;
     border-left: 2px solid #484A48;
-    box-shadow: #000 -4px -4px 3px 8px;
+    box-shadow: #00000040 0px 0px 12px 0px;
 
     flow-children: down;
 }
