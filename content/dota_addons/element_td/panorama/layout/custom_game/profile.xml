@@ -403,42 +403,42 @@
                                              onmouseout="HoverOut('LightBackground'); AnimateBuilderIdle('LightBuilder')" 
                                              onactivate="ChooseBuilder('npc_dota_hero_skywrath_mage')">
                     <Image id="LightBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/light.png" />
-                    <DOTAScenePanel id="LightBuilder" class="BuilderPanel" map="builders" camera="light"/>
+                    <DOTAScenePanel id="LightBuilder" class="BuilderPanel" map="builders" camera="light" particleonly='false'/>
                 </Panel>
 
                 <Panel class="BuilderColumn" onmouseover="Hovering('DarkBackground'); AnimateBuilderHover('DarkBuilder')" 
                                              onmouseout="HoverOut('DarkBackground'); AnimateBuilderIdle('DarkBuilder')" 
                                              onactivate="ChooseBuilder('npc_dota_hero_faceless_void')">
                     <Image id="DarkBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/dark.png" />
-                    <DOTAScenePanel id="DarkBuilder" class="BuilderPanel" map="builders" camera="dark"/>
+                    <DOTAScenePanel id="DarkBuilder" class="BuilderPanel" map="builders" camera="dark" particleonly='false'/>
                 </Panel>
 
                 <Panel class="BuilderColumn" onmouseover="Hovering('WaterBackground'); AnimateBuilderHover('WaterBuilder')"
                                              onmouseout="HoverOut('WaterBackground'); AnimateBuilderIdle('WaterBuilder')"
                                              onactivate="ChooseBuilder('npc_dota_hero_mirana')">
                     <Image id="WaterBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/water.png" />
-                    <DOTAScenePanel id="WaterBuilder" class="BuilderPanel" map="builders" camera="water"/>
+                    <DOTAScenePanel id="WaterBuilder" class="BuilderPanel" map="builders" camera="water" particleonly='false'/>
                 </Panel>
 
                 <Panel class="BuilderColumn" onmouseover="Hovering('FireBackground'); AnimateBuilderHover('FireBuilder')"
                                              onmouseout="HoverOut('FireBackground'); AnimateBuilderIdle('FireBuilder')"
                                              onactivate="ChooseBuilder('npc_dota_hero_warlock')">
                     <Image id="FireBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/fire.png" />
-                    <DOTAScenePanel id="FireBuilder" class="BuilderPanel" map="builders" camera="fire" unit="demon"/>
+                    <DOTAScenePanel id="FireBuilder" class="BuilderPanel" map="builders" camera="fire" unit="demon" particleonly='false'/>
                 </Panel>
 
                 <Panel class="BuilderColumn" onmouseover="Hovering('NatureBackground'); AnimateBuilderHover('NatureBuilder')"
                                              onmouseout="HoverOut('NatureBackground'); AnimateBuilderIdle('NatureBuilder')"
                                              onactivate="ChooseBuilder('npc_dota_hero_enchantress')">
                     <Image id="NatureBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/nature.png" />
-                    <DOTAScenePanel id="NatureBuilder" class="BuilderPanel" map="builders" camera="nature"/>
+                    <DOTAScenePanel id="NatureBuilder" class="BuilderPanel" map="builders" camera="nature" particleonly='false'/>
                 </Panel>
 
                 <Panel class="BuilderColumn" onmouseover="Hovering('EarthBackground'); AnimateBuilderHover('EarthBuilder')"
                                              onmouseout="HoverOut('EarthBackground'); AnimateBuilderIdle('EarthBuilder')"
                                              onactivate="ChooseBuilder('npc_dota_hero_earthshaker')">
                     <Image id="EarthBackground" class="BuilderBackground" src="file://{images}/custom_game/builders/earth.png" />
-                    <DOTAScenePanel id="EarthBuilder" class="BuilderPanel" map="builders" camera="earth"/>
+                    <DOTAScenePanel id="EarthBuilder" class="BuilderPanel" map="builders" camera="earth" particleonly='false'/>
                 </Panel>
             </Panel>
 
