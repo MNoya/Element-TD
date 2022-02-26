@@ -21,9 +21,13 @@ if not PLAYERS_NOT_VOTED then
 end
 
 function StartVoteTimer()
+	local count = 0
 	for _,playerID in pairs(playerIDs) do --add all players to the list of players that have not voted yet
 		PLAYERS_NOT_VOTED[playerID] = 1
+		count = count + 1
 	end
+
+	Log:trace("Vote population: " .. count)
 
 	CustomGameEventManager:Send_ServerToAllClients("etd_populate_vote_table", gameSettingsKV )
 

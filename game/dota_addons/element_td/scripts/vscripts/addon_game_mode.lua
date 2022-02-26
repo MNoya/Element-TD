@@ -146,6 +146,8 @@ function Precache(context)
             end
         end
     end
+
+    print("Precache Complete")
 end
 
 function Activate()
