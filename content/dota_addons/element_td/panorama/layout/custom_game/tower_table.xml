@@ -9,7 +9,7 @@
         <Panel hittest="false" id="ToggleBtn" class='ToggleButtonRoot'>
             <Panel id="TowerTableButton" onactivate="Toggle()">
                 <Image id="ImageLabel" onmouseover="HoverToggle()" onmouseout="DOTAHideTitleTextTooltip()" src="file://{images}/custom_game/tree_tower/button.png"/>
-                <Label id="TowersLabel" onmouseover="HoverToggle()" onmouseout="DOTAHideTitleTextTooltip()" text="etd_tower_table_button"/>
+                <Label id="TowersLabel" onmouseover="HoverToggle()" onmouseout="DOTAHideTitleTextTooltip()" text="#etd_tower_table_button"/>
             </Panel>
             <Image id="ToggleGlyph" onactivate="Toggle()" src="file://{images}/custom_game/tree_tower/glyph.png"/>
             <Panel id="ToggleButtonGlyph" onmouseover="HoverToggle()" onmouseout="DOTAHideTitleTextTooltip()" onactivate="Toggle()">

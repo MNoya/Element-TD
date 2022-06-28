@@ -15,7 +15,7 @@ function ShowTips(){
 
     // accepted random localized string;
     currentTip = random_number
-    var str = $.Localize("loading_screen_tip_"+random_number);
+    var str = $.Localize("#loading_screen_tip_"+random_number);
     var tip = $("#Tip")
     tip.text = str;
     tip.RemoveClass("Hide")
@@ -32,8 +32,8 @@ function ShowTips(){
 function CountTips(){
     for(i=0;;i++)
     {
-        var tip = $.Localize("loading_screen_tip_"+(i+1))
-        if (tip == "loading_screen_tip_"+(i+1)){
+        var tip = $.Localize("#loading_screen_tip_"+(i+1))
+        if (tip == "#loading_screen_tip_"+(i+1)){
             return i;
             break;
         };

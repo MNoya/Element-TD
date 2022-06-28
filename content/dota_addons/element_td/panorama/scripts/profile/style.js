@@ -189,7 +189,7 @@ function MakeFirstDual (dual_string) {
     var dual = duals[dual_string]
     if (dual)
     {
-        $("#dual").text = $.Localize(dual+"_tower_name")
+        $("#dual").text = $.Localize("#"+dual+"_tower_name")
         $("#dual_image").SetImage( "file://{images}/spellicons/towers/"+dual+".png" );
         $("#FirstDualPanel").SetPanelEvent( "onmouseover", function() {
             var tooltip_name = "item_upgrade_to_"+dual+"_tower"
@@ -212,7 +212,7 @@ function MakeFirstTriple (triple_string) {
     var triple = triples[triple_string]
     if (triple)
     {
-        $("#triple").text = $.Localize(triple+"_tower_name")
+        $("#triple").text = $.Localize("#"+triple+"_tower_name")
         $("#triple_image").SetImage( "file://{images}/spellicons/towers/"+triple+".png" );
     }
     else

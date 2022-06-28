@@ -81,9 +81,9 @@ function CreateEndCredit(steamid) {
 function UpdateWinString (endScreenVictory, winningTeamId) {
     var winningTeamDetails = Game.GetTeamDetails( winningTeamId );
 
-    endScreenVictory.SetDialogVariable( "winning_team_name", $.Localize( winningTeamDetails.team_name ) );
+    endScreenVictory.SetDialogVariable( "winning_team_name", $.Localize( "#" + winningTeamDetails.team_name ) );
 
-    var winString = $.Localize( winningTeamDetails.team_name );
+    var winString = $.Localize( "#" + winningTeamDetails.team_name );
               
     // Adjust the endscreen to the player name if its a single player team
     var playersOnWinningTeam = Game.GetPlayerIDsOnTeam( winningTeamId )
@@ -94,7 +94,7 @@ function UpdateWinString (endScreenVictory, winningTeamId) {
     }
 
     if (Game.IsCoop() && playersOnWinningTeam.length>1)
-        endScreenVictory.text = $.Localize("cooperative_victory")
+        endScreenVictory.text = $.Localize("#cooperative_victory")
     else
         endScreenVictory.SetDialogVariable( "winning_team_name", winString );
 
@@ -165,7 +165,7 @@ function UpdateWinString (endScreenVictory, winningTeamId) {
     {
         var winningTeamDetails = Game.GetTeamDetails( winningTeamId );
         if (winningTeamDetails.team_id == DOTATeam_t.DOTA_TEAM_NEUTRALS)
-            endScreenVictory.text = $.Localize("custom_end_screen_defeat_message")
+            endScreenVictory.text = $.Localize("#custom_end_screen_defeat_message")
         else
             UpdateWinString(endScreenVictory, winningTeamId)
     }

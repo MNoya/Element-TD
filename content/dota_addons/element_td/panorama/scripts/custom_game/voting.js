@@ -144,11 +144,11 @@ function SelectRadio(name) {
     else
         $("#same_random").last_state = undefined*/
 
-    $("#ElementsDesc").text = $.Localize("element_"+name+"_description")
+    $("#ElementsDesc").text = $.Localize("#element_"+name+"_description")
 }
 
 function SelectLengthRadio(name) {
-    $("#LengthDesc").text = $.Localize("length_"+name+"_description")
+    $("#LengthDesc").text = $.Localize("#length_"+name+"_description")
 }
 
 function ToggleVoteDialog( data )
@@ -226,41 +226,41 @@ function PlayerVoted( data )
 
     var difficulty = $.CreatePanel('Label', votes, '');
     difficulty.AddClass('PlayerVote');
-    difficulty.text = $.Localize("difficulty_"+data.difficulty.toLowerCase());
+    difficulty.text = $.Localize("#difficulty_"+data.difficulty.toLowerCase());
 
     if (data.elements == "SameRandom")
     {
         var elements = $.CreatePanel('Label', votes, '');
         elements.AddClass('PlayerVote');
-        elements.text = $.Localize("element_"+data.elements.toLowerCase());
+        elements.text = $.Localize("#element_"+data.elements.toLowerCase());
     }
 
     if (data.elements == "AllRandom")
     {
         var elements = $.CreatePanel('Label', votes, '');
         elements.AddClass('PlayerVote');
-        elements.text = $.Localize("element_"+data.elements.toLowerCase());
+        elements.text = $.Localize("#element_"+data.elements.toLowerCase());
     }
 
     if (data.endless == "Endless")
     {
         var endless = $.CreatePanel('Label', votes, '');
         endless.AddClass('PlayerVote');
-        endless.text = $.Localize("horde_"+data.endless.toLowerCase());
+        endless.text = $.Localize("#horde_"+data.endless.toLowerCase());
     }
 
     if (data.order == "Chaos")
     {
         var order = $.CreatePanel('Label', votes, '');
         order.AddClass('PlayerVote');
-        order.text = $.Localize("order_"+data.order.toLowerCase());
+        order.text = $.Localize("#order_"+data.order.toLowerCase());
     }
 
     if (data.length == "Express" || data.length == "Short")
     {
         var length = $.CreatePanel('Label', votes, '');
         length.AddClass('PlayerVote');
-        length.text = $.Localize("length_"+data.length.toLowerCase());
+        length.text = $.Localize("#length_"+data.length.toLowerCase());
     }
 
     playerVotes[playerID] = true;
@@ -308,7 +308,7 @@ function ShowVoteResults()
 
     var difficulty = CustomNetTables.GetTableValue("gameinfo", "difficulty").value
     var difficultyName = difficulty.toLowerCase()
-    $("#DifficultyResult").text = $.Localize("difficulty_"+difficultyName+"_mode")
+    $("#DifficultyResult").text = $.Localize("#difficulty_"+difficultyName+"_mode")
 
     // Only show the options that were accepted
     var randomChoice = CustomNetTables.GetTableValue("gameinfo", "random").value    
@@ -322,7 +322,7 @@ function ShowVoteResults()
     if (!random)
         $('#ElementsResult').GetParent().DeleteAsync(0)
     else
-        $('#ElementsResult').text = $.Localize(randomChoice.toLowerCase()+"_mode");
+        $('#ElementsResult').text = $.Localize("#" + randomChoice.toLowerCase()+"_mode");
 
     if (!rush)
         $('#EndlessResult').GetParent().DeleteAsync(0)
@@ -333,7 +333,7 @@ function ShowVoteResults()
     if (!length)
         $('#LengthResult').GetParent().DeleteAsync(0)
     else
-        $('#LengthResult').text = $.Localize("length_" + lengthChoice.toLowerCase());
+        $('#LengthResult').text = $.Localize("#length_" + lengthChoice.toLowerCase());
 
     if (!abilitiesMode)
         $('#ChallengeResult').GetParent().DeleteAsync(0)
@@ -357,7 +357,7 @@ function ShowGamemodeViewer() {
     difficulty = difficulty.value
 
     var difficultyName = difficulty.toLowerCase()
-    $("#DifficultyView").text = $.Localize("difficulty_"+difficultyName+"_mode")
+    $("#DifficultyView").text = $.Localize("#difficulty_"+difficultyName+"_mode")
 
     // Only show the options that were accepted
     var randomChoice = CustomNetTables.GetTableValue("gameinfo", "random").value    
@@ -372,7 +372,7 @@ function ShowGamemodeViewer() {
     if (!random)
         $('#ElementsView').AddClass("Hidden") //This can become visible if the player does -random afterwards
     else
-        $('#ElementsView').text = $.Localize(randomChoice.toLowerCase() + "_mode");
+        $('#ElementsView').text = $.Localize("#" + randomChoice.toLowerCase() + "_mode");
 
     if (!rush)
         $('#EndlessView').DeleteAsync(0)
@@ -383,7 +383,7 @@ function ShowGamemodeViewer() {
     if (!length)
         $('#LengthView').DeleteAsync(0)
     else
-        $('#LengthView').text = $.Localize("length_" + lengthChoice.toLowerCase());
+        $('#LengthView').text = $.Localize("#length_" + lengthChoice.toLowerCase());
 
     if (!abilitiesMode)
         $('#AbilitiesModeView').DeleteAsync(0)
@@ -394,7 +394,7 @@ function ShowGamemodeViewer() {
 }
 
 function GetHP(difficultyName) {
-    return $.Localize("voting_health_multi") + " " + healthBonus[difficultyName]
+    return $.Localize("#voting_health_multi") + " " + healthBonus[difficultyName]
 }
 
 function GetBounty(difficultyName, bEndless, bExpress) {
@@ -404,11 +404,11 @@ function GetBounty(difficultyName, bEndless, bExpress) {
         bounty = Number(bounty.substring(0,bounty.length-1)) + endlessBountyBonus
         bounty = bounty + "%"
     }
-    return $.Localize("voting_bounty_multi") + " " + bounty
+    return $.Localize("#voting_bounty_multi") + " " + bounty
 }
 
 function GetScore(difficultyName) {
-    return $.Localize("voting_score_multi") + " x" + scoreMultipliers[difficultyName]
+    return $.Localize("#voting_score_multi") + " x" + scoreMultipliers[difficultyName]
 }    
 
 function ResultsClose()
