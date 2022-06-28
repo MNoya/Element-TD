@@ -679,18 +679,21 @@ end
 
 -- This function is called once when the player fully connects and becomes "Ready" during Loading
 function ElementTD:OnConnectFull(keys)
-    
-    local entIndex = keys.index+1
+    local entIndex = keys.index
     -- The Player entity of the joining user
     local ply = EntIndexToHScript(entIndex)    
     
     Timers:CreateTimer(0.03, function() -- To prevent it from being -1 when the player is created
-        if not ply then return end -- Something went wrong
+        if not ply then
+            Log:warn("OnConnectFull something went wrong")
+            return
+        end -- Something went wrong
         
         local playerID = ply:GetPlayerID()
         if playerID and playerID ~= -1 then
             if not tableContains(playerIDs, playerID) then
                 table.insert(playerIDs, playerID)
+                Log:debug("Added " .. playerID.. " to playerIDs table")
             else
                 ElementTD:OnReconnect(playerID)
             end
