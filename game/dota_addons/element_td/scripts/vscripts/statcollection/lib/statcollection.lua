@@ -148,6 +148,22 @@ function statCollection:hookFunctions()
 
             -- Attempt to send stage 3, since the match is over
             this:sendStage3(this:calcWinnersByTeam(), true)
+
+            -- Build game array
+            local game = BuildGameArray()
+
+            -- Build players array
+            local players = BuildPlayersArray()
+
+            -- Print the schema data to the console
+            if statCollection.TESTING then
+                PrintSchema(game, players)
+            end
+
+            -- Send custom stats
+            if statCollection.HAS_SCHEMA then
+                statCollection:sendCustom({ game = game, players = players })
+            end
         end
     end
 
@@ -155,6 +171,8 @@ function statCollection:hookFunctions()
     ListenToGameEvent('game_rules_state_change', function(keys)
         -- Grab the current state
         local state = GameRules:State_Get()
+
+        statCollection:print("Game state change: " .. state)
 
         if state == DOTA_GAMERULES_STATE_CUSTOM_GAME_SETUP then
             -- Load time flag
@@ -443,6 +461,7 @@ function statCollection:sendStage3(winners, lastRound)
 end
 
 function statCollection:submitRound(args)
+    statCollection:print("Submit round")
     --We receive the winners from the custom schema, lets tell phase 3 about it!
     local returnArgs = customSchema:submitRound(args)
     self:sendStage3(returnArgs.winners, returnArgs.lastRound)
