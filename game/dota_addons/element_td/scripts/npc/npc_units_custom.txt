@@ -2193,7 +2193,7 @@
 	    "CreepAbility1"        "earth_armor"
 	    "CreepAbility2"        "creep_ability_mechanical"
 	}
-	"roshan"
+	"roshan_custom"
 	{
 	    "MinimapIcon"               "minimap_icon_white"
 	    "MinimapIconSize"           "200"

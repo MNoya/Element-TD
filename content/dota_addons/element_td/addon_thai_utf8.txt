@@ -289,7 +289,7 @@
         "robot_soldier"             "Robot Soldier"
         "rock_monster"              "Rock Monster"
         "rogue_knight"              "Rogue Knight"
-        "roshan"                    "Roshan"
+        "roshan_custom"             "Roshan"
         "sand_king"                 "Sand King"
         "satyr"                     "Satyr"
         "sea_phantom"               "Sea Phantom"

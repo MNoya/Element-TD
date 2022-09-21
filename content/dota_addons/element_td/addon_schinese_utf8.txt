@@ -297,7 +297,7 @@
         "robot_soldier"             "机器人战士"
         "rock_monster"              "岩石巨兽"
         "rogue_knight"              "流浪剑客"
-        "roshan"                    "Roshan"
+        "roshan_custom"             "Roshan"
         "sand_king"                 "沙王"
         "satyr"                     "萨特"
         "sea_phantom"               "海之魅影"

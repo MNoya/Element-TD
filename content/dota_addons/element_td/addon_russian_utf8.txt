@@ -289,7 +289,7 @@
         "robot_soldier"             "Солдат робот"
         "rock_monster"              "Каменный монстер"
         "rogue_knight"              "Король воров"
-        "roshan"                    "Рошан"
+        "roshan_custom"             "Рошан"
         "sand_king"                 "Король песков"
         "satyr"                     "Сатир"
         "sea_phantom"               "Фантом океана"

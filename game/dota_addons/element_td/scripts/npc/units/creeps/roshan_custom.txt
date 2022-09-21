@@ -1,4 +1,4 @@
-"roshan"
+"roshan_custom"
 {
     "MinimapIcon"               "minimap_icon_white"
     "MinimapIconSize"           "200"
