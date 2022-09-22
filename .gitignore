@@ -4,6 +4,7 @@
 *.vxml_c
 *.vcss_c
 *.vjs_c
+*.vtex_c
 
 panorama_debugger.cfg
 settings.kv
