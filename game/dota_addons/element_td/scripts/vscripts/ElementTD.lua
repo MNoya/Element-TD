@@ -298,21 +298,21 @@ function ElementTD:EndGameForPlayer( playerID )
     playerData.tow = tablelength(playerData.towers)
 
     if playerData.elementalUnit ~= nil and IsValidEntity(playerData.elementalUnit) and playerData.elementalUnit:IsAlive() then
-        playerData.elementalUnit:ForceKill(false)
+        playerData.elementalUnit:Kill(nil, nil)
     end
     for i,v in pairs(playerData.towers) do
-        EntIndexToHScript(i):ForceKill(false)
+        EntIndexToHScript(i):Kill(nil, nil)
     end
     if (playerData.waveObject and playerData.waveObject.creeps) then
         for l,m in pairs(playerData.waveObject.creeps) do
-            EntIndexToHScript(l):ForceKill(false)
+            EntIndexToHScript(l):Kill(nil, nil)
         end
     end
     for _,object in pairs(playerData.waveObjects) do
         for index,_ in pairs(object.creeps) do
             local creep = EntIndexToHScript(index)
             if IsValidEntity(creep) and creep.ForceKill then
-                creep:ForceKill(false)
+                creep:Kill(nil, nil)
             end
         end
     end

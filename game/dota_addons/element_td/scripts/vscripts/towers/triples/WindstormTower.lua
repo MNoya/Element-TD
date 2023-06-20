@@ -73,7 +73,7 @@ function WindstormTower:SpawnTornado(keys)
 
             if not COOP_MAP and not (pos.x > bounds.left + 400 and pos.x < bounds.right - 400 and pos.y < bounds.top - 400 and pos.y > bounds.bottom + 400) then
                 tornado:RemoveModifierByName("modifier_tornado_aura")
-                tornado:ForceKill(true)
+                tornado:Kill(nil, nil)
                 return
             end
             return 1
@@ -82,7 +82,7 @@ function WindstormTower:SpawnTornado(keys)
 
     Timers:CreateTimer(self.duration, function()
         tornado:RemoveModifierByName("modifier_tornado_aura")
-        tornado:ForceKill(true)
+        tornado:Kill(nil, nil)
     end)
 end
 

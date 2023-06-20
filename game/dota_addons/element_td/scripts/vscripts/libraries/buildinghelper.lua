@@ -863,7 +863,7 @@ function BuildingHelper:UpgradeBuilding(building, newName)
     -- Kill the old building
     building:AddEffects(EF_NODRAW) --Hide it, so that it's still accessible after this script
     building.upgraded = true --Skips visual effects
-    building:ForceKill(true) --This will call RemoveBuilding
+    building:Kill(nil, nil) --This will call RemoveBuilding
 
     -- Block the grid
     newBuilding.construction_size = BuildingHelper:GetConstructionSize(newName)
@@ -1098,7 +1098,7 @@ function BuildingHelper:StartBuilding(builder)
                     
                         -- Consume Builder
                         if bConsumesBuilder then
-                            builder:ForceKill(true)
+                            builder:Kill(nil, nil)
                         else
                             BuildingHelper:ShowBuilder(builder)
                         end
@@ -1158,7 +1158,7 @@ function BuildingHelper:StartBuilding(builder)
                     
                         -- Consume Builder
                         if bConsumesBuilder then
-                            builder:ForceKill(true)
+                            builder:Kill(nil, nil)
                         else
                             BuildingHelper:ShowBuilder(builder)
                         end

@@ -150,7 +150,7 @@ function CancelConstruction(event)
 
         tower:AddEffects(EF_NODRAW)
         ToggleGridForTower(tower)
-        tower:ForceKill(true)
+        tower:Kill(nil, nil)
     end
 
     -- Gold

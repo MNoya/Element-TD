@@ -38,7 +38,7 @@ function CreepImage:OnTakeDamage(keys)
             
             ExecuteOrderFromTable({ UnitIndex = image:GetEntityIndex(), OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION, Position = destination, Queue = false })
             if (image:GetOrigin() - destination):Length2D() <= 150 then
-                image:ForceKill(false)
+                image:Kill(nil, nil)
             end
             return 0.5
         end)
@@ -46,7 +46,7 @@ function CreepImage:OnTakeDamage(keys)
         -- Image Timer
         Timers:CreateTimer(tonumber(keys.ImageDuration), function()
             if IsValidEntity(image) and image:IsAlive() then
-                image:ForceKill(false)
+                image:Kill(nil, nil)
             end
         end)
 

@@ -111,7 +111,7 @@ function RemoveClone(clone)
     end
 
     clone:AddEffects(EF_NODRAW)
-    clone:ForceKill(true) --This will call RemoveBuilding
+    clone:Kill(nil, nil) --This will call RemoveBuilding
 end
 
 function RemoveRandomClone( playerData, name )

@@ -14,7 +14,7 @@ function SellTowerCast(keys)
 
         -- dummy unit used for showing particle effects 
         local dummy = CreateUnitByName("tower_dummy", tower:GetAbsOrigin(), false, nil, nil, PlayerResource:GetTeam(playerID))
-        Timers:CreateTimer(2, function() dummy:ForceKill(true) end)
+        Timers:CreateTimer(2, function() dummy:Kill(nil, nil) end)
 
         -- Elemental Arrow/Cannon round up
         if (towerName:match("arrow") or towerName:match("cannon")) and not towerName:match("basic") then
@@ -47,7 +47,7 @@ function SellTowerCast(keys)
         -- Kills and hide the tower, so that its running timers can still execute until it gets removed by the engine
         tower:AddEffects(EF_NODRAW)
         ToggleGridForTower(tower)
-        tower:ForceKill(true)
+        tower:Kill(nil, nil)
         playerData.towers[tower:entindex()] = nil -- remove this tower index from the player's tower list
 
         -- Grant the gold
