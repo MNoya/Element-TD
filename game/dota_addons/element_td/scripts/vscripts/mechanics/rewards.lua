@@ -276,7 +276,7 @@ function Rewards:ReplaceHero(playerID, oldHero, heroName)
     end
 
     oldHero:AddNoDraw()
-    oldHero:Kill(nil, nil)
+    oldHero:Kill(nil, oldHero)
 
     -- Remove parented units
     if oldHero.cosmetic_override and not oldHero.mapEntity then

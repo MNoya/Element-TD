@@ -382,14 +382,14 @@ function Sandbox:Restart( event )
 
     -- Elemental
     if playerData.elementalUnit ~= nil and IsValidEntity(playerData.elementalUnit) and playerData.elementalUnit:IsAlive() then
-        playerData.elementalUnit:Kill(nil, nil)
+        playerData.elementalUnit:Kill(nil, playerData.elementalUnit)
     end
 
     -- Towers
     for i,v in pairs(playerData.towers) do
         local tower = EntIndexToHScript(i)
         if IsValidEntity(tower) then
-            tower:Kill(nil, nil)
+            tower:Kill(nil, tower)
             tower:AddNoDraw()
         end
     end
@@ -397,7 +397,7 @@ function Sandbox:Restart( event )
     -- Trophies
     for k,elemental in pairs(playerData.elementTrophies) do
         if IsValidEntity(elemental) then
-            elemental:Kill(nil, nil)
+            elemental:Kill(nil, elemental)
             elemental:AddNoDraw()
         end
     end
