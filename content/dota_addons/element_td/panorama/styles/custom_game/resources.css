@@ -107,7 +107,7 @@
 .AspectRatio4x3 #ElementNature, .AspectRatio5x4 #ElementNature,
 .AspectRatio4x3 #ElementEarth, .AspectRatio5x4 #ElementEarth,
 .AspectRatio4x3 #ElementLight, .AspectRatio5x4 #ElementLight,
-.AspectRatio4x3 #ElementDark, .AspectRatio5x4 #ElementDark,
+.AspectRatio4x3 #ElementDark, .AspectRatio5x4 #ElementDark
 {
     background-size: 26px 26px;
     background-position: left 0px top 3px;

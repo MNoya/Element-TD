@@ -588,7 +588,7 @@ RadioButton Label
     flow-children: down;
 }
 
-#allpick, #samerandom, #classic, #express, 
+#allpick, #samerandom, #classic, #express
 {
     margin-bottom: 5px;
 }
