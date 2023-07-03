@@ -96,7 +96,7 @@ function trickery_tower_conjure:OnSpellStart()
     -- apply the clone modifier to the clone
     clone:AddNewModifier(clone, nil, "modifier_no_health_bar", {})
     clone:AddNewModifier(caster, self, "modifier_clone", {duration=self.clone_duration})
-    clone:AddNewModifier(caster, self, "modifier_kill", {duration=self.clone_duration})
+    -- clone:AddNewModifier(caster, self, "modifier_kill", {duration=self.clone_duration})
     self.clones[clone:entindex()] = 1 --Clones for this particular tower ability
 
     local particle = ParticleManager:CreateParticle("particles/generic_gameplay/illusion_created.vpcf", PATTACH_ABSORIGIN, clone)
