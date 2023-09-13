@@ -19,8 +19,8 @@
 				<Label id="TeamScoreLabel" class="LegendPanel ScoreCol_Score" text="#flyout_scoreboard_score" />
 				<Label id="TeamNetworthLabel" class="LegendPanel ScoreCol_Networth" text="#flyout_scoreboard_networth" />
 				<Label id="TeamLives" class="LegendPanel ScoreCol_Lives" text="#flyout_scoreboard_lives" />
-				<Label id="KillsRemaining" class="LegendPanel ScoreCol_Kills" text="#remaining" />
-				<Label class="LegendPanel ScoreCol_Elements" text="flyout_scoreboard_elements" />
+				<Label id="KillsRemaining" class="LegendPanel ScoreCol_Kills" text="#flyout_scoreboard_remaining" />
+				<Label class="LegendPanel ScoreCol_Elements" text="#flyout_scoreboard_elements" />
 			</Panel>
 			<Panel hittest="false" id="_dynamic_team_2" class="FlyoutTeam">
 				<Panel class="FlyoutTeamData">
