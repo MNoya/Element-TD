@@ -318,7 +318,7 @@ function Sandbox:ClearWave(event)
         for k,v in pairs(creeps) do
             local unit = EntIndexToHScript(v)
             if IsValidEntity(unit) then
-                unit:Kill(nil, hero)
+                unit:ForceKill(false)
             end
         end
     end
@@ -329,13 +329,13 @@ function Sandbox:ClearWave(event)
         for index,_ in pairs(object.creeps) do
             local creep = EntIndexToHScript(index)
             if IsValidEntity(creep) then
-                creep:Kill(nil, hero)
+                creep:ForceKill(false)
             end
         end
     end
 
     local elemental = playerData.elementalUnit
-    if elemental then elemental:Kill(nil, hero) end
+    if elemental then elemental:ForceKill(false) end
 
     Sandbox:StopWave({PlayerID=playerID})
 
@@ -382,14 +382,14 @@ function Sandbox:Restart( event )
 
     -- Elemental
     if playerData.elementalUnit ~= nil and IsValidEntity(playerData.elementalUnit) and playerData.elementalUnit:IsAlive() then
-        playerData.elementalUnit:Kill(nil, playerData.elementalUnit)
+        playerData.elementalUnit:ForceKill(false)
     end
 
     -- Towers
     for i,v in pairs(playerData.towers) do
         local tower = EntIndexToHScript(i)
         if IsValidEntity(tower) then
-            tower:Kill(nil, tower)
+            tower:ForceKill(false)
             tower:AddNoDraw()
         end
     end
@@ -397,7 +397,7 @@ function Sandbox:Restart( event )
     -- Trophies
     for k,elemental in pairs(playerData.elementTrophies) do
         if IsValidEntity(elemental) then
-            elemental:Kill(nil, elemental)
+            elemental:ForceKill(false)
             elemental:AddNoDraw()
         end
     end

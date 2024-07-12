@@ -14,7 +14,7 @@ function SellTowerCast(keys)
 
         -- dummy unit used for showing particle effects 
         local dummy = CreateUnitByName("tower_dummy", tower:GetAbsOrigin(), false, nil, nil, PlayerResource:GetTeam(playerID))
-        Timers:CreateTimer(2, function() dummy:Kill(nil, dummy) end)
+        Timers:CreateTimer(2, function() dummy:ForceKill(false) end)
 
         -- Elemental Arrow/Cannon round up
         if (towerName:match("arrow") or towerName:match("cannon")) and not towerName:match("basic") then
