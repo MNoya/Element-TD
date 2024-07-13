@@ -389,7 +389,7 @@ function Sandbox:Restart( event )
     for i,v in pairs(playerData.towers) do
         local tower = EntIndexToHScript(i)
         if IsValidEntity(tower) then
-            tower:ForceKill(false)
+            tower:Kill(null, tower)
             tower:AddNoDraw()
         end
     end

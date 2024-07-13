@@ -303,7 +303,7 @@ function ElementTD:EndGameForPlayer( playerID )
     for i,v in pairs(playerData.towers) do
         local tower = EntIndexToHScript(i);
         if IsValidEntity(tower) and tower.ForceKill then
-            tower:ForceKill(false)
+            tower:Kill(null, tower)
         end
     end
     if (playerData.waveObject and playerData.waveObject.creeps) then

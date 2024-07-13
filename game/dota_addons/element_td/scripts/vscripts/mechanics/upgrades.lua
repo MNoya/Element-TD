@@ -150,7 +150,7 @@ function CancelConstruction(event)
 
         tower:AddEffects(EF_NODRAW)
         ToggleGridForTower(tower)
-        tower:ForceKill(false)
+        tower:Kill(null, false)
     end
 
     -- Gold
@@ -185,27 +185,30 @@ function UpdateUpgrades(tower)
         end
     end
 
-    -- now add them again
-    if upgrades.Count then
-        local count = tonumber(upgrades.Count)
-        for i = 1, count, 1 do
-            local upgrade = upgrades[tostring(i)]
-            local cost = tonumber(NPC_UNITS_CUSTOM[upgrade].Cost)
-            local suffix = ""
+    -- Add small delay to fix items disappearing issue
+    Timers:CreateTimer(0.01, function()
+        -- now add them again
+        if upgrades.Count then
+            local count = tonumber(upgrades.Count)
+            for i = 1, count, 1 do
+                local upgrade = upgrades[tostring(i)]
+                local cost = tonumber(NPC_UNITS_CUSTOM[upgrade].Cost)
+                local suffix = ""
 
-            -- Put a _disabled item if the requirement isn't met yet
-            if NPC_UNITS_CUSTOM[upgrade].Requirements then
-                for element, level in pairs(NPC_UNITS_CUSTOM[upgrade].Requirements) do
-                    if level > data.elements[element] then
-                        suffix = "_disabled"
+                -- Put a _disabled item if the requirement isn't met yet
+                if NPC_UNITS_CUSTOM[upgrade].Requirements then
+                    for element, level in pairs(NPC_UNITS_CUSTOM[upgrade].Requirements) do
+                        if level > data.elements[element] then
+                            suffix = "_disabled"
+                        end
                     end
                 end
-            end
 
-            local item = CreateItem("item_upgrade_to_" .. upgrade .. suffix, nil, nil)
-            tower:AddItem(item)
+                local item = CreateItem("item_upgrade_to_" .. upgrade .. suffix, nil, nil)
+                tower:AddItem(item)
+            end
         end
-    end
+    end)
 end
 
 -- starts the tower building animation
