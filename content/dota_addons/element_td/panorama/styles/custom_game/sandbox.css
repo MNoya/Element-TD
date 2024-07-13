@@ -789,7 +789,7 @@
     text-shadow: 0px 0px 1px 3.0 #000000;
 }
 
-#light_level, #dark_level, #water_level, #fire_level, #nature_level, #earth_level, 
+#light_level, #dark_level, #water_level, #fire_level, #nature_level, #earth_level 
 {
     color: white;
     margin-left: 9px;

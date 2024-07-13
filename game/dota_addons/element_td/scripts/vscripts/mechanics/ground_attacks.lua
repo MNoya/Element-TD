@@ -56,7 +56,7 @@ function AttackGround( event )
         if not IsValidEntity(caster) or not caster:IsAlive() then return end
         caster:StartGesture(ACT_DOTA_ATTACK)
         ability.attack_ground_timer_attack = Timers:CreateTimer(caster:TimeUntilNextAttack(), function()
-            caster:AttackNoEarlierThan(1/caster:GetAttacksPerSecond() - start_time)
+            caster:AttackNoEarlierThan(1/caster:GetAttacksPerSecond(false) - start_time, 0)
 
             local attackSound = caster:GetAttackSound()
             if attackSound then
@@ -81,7 +81,7 @@ function AttackGround( event )
             end
         end)
 
-        local time = 1 / caster:GetAttacksPerSecond()   
+        local time = 1 / caster:GetAttacksPerSecond(false)   
 
         return  time
     end)

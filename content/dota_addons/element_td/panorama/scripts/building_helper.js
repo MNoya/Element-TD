@@ -1,5 +1,7 @@
 'use strict';
 
+$.Msg( "Compiled Building Helper!" );
+
 GameUI.SetRenderBottomInsetOverride( 0 );
 
 var state = 'disabled';

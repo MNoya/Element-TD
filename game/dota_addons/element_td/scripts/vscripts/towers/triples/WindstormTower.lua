@@ -19,10 +19,10 @@ nil)
 
 function WindstormTower:SpawnTornado(keys)
     local baseTime = 5
-    local newTime = 1 / self.tower:GetAttacksPerSecond()
+    local newTime = 1 / self.tower:GetAttacksPerSecond(false)
     StartAnimation(self.tower, {duration=newTime, activity=ACT_DOTA_TELEPORT, rate=0.5*(baseTime/newTime)})
     
-    self.next_tornado = GameRules:GetGameTime() + (1 / self.tower:GetAttacksPerSecond())
+    self.next_tornado = GameRules:GetGameTime() + (1 / self.tower:GetAttacksPerSecond(false))
 
     self.tower:EmitSound("Windstorm.TornadoSpawn")
 

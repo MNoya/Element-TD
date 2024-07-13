@@ -24,7 +24,7 @@ function VaporTower:VaporWaveAttack()
 
     if self.tower:GetHealthPercent() == 100 and #creeps > 0 then
         self.tower:StartGesture(ACT_DOTA_CAST_ABILITY_2) --crush
-        self.ability:StartCooldown(1 / self.tower:GetAttacksPerSecond())
+        self.ability:StartCooldown(1 / self.tower:GetAttacksPerSecond(false))
 
         self.tower:EmitSound("Vapor.Strike")
 
@@ -47,7 +47,7 @@ function VaporTower:OnCreated()
     self.initialAOE = GetAbilitySpecialValue(spellName, "aoe") + self.tower:GetHullRadius()
     self.playerID = self.tower:GetPlayerOwnerID()
 
-    local time = 1 / self.tower:GetAttacksPerSecond()
+    local time = 1 / self.tower:GetAttacksPerSecond(false)
     Timers:CreateTimer(time, function()
         if IsValidAlive(self.tower) then
             if self.ability:IsCooldownReady() then

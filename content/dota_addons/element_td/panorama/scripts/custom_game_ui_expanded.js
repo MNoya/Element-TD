@@ -439,16 +439,26 @@ Game.IsCoop = function() {
     var mapInfo = Game.GetMapInfo()
     if (mapInfo)
         return mapInfo.map_display_name == "element_td_coop"
+    return false
 }
 
 Game.IsExpress = function() {
-    return CustomNetTables.GetTableValue("gameinfo", "length").value == "Express"
+    var gameInfo = CustomNetTables.GetTableValue("gameinfo", "length")
+    if (gameInfo)
+        return gameInfo.value == "Express"
+    return false
 }
 
 Game.IsShort = function() {
-    return CustomNetTables.GetTableValue("gameinfo", "length").value == "Short"
+    var gameInfo = CustomNetTables.GetTableValue("gameinfo", "length")
+    if (gameInfo)
+        return gameInfo.value == "Short"
+    return false
 }
 
 Game.InterestStopped = function() {
-    return (CustomNetTables.GetTableValue("gameinfo", "interest_stopped").value == 1)
+    var gameInfo = CustomNetTables.GetTableValue("gameinfo", "interest_stopped")
+    if (gameInfo)
+        return (gameInfo.value == 1)
+    return false
 }

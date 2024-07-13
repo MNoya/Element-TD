@@ -3,7 +3,7 @@
         <include src="file://{resources}/styles/custom_game/multiteam_end_screen.css" />
     </styles>
     <scripts>
-        <include src="s2r://panorama/scripts/custom_game/end_screen_credits.js" />
+        <include src="s2r://panorama/scripts/custom_game/end_screen_credits.vjs_c" />
 	</scripts>
 	<Panel class="PlayerCredit">
         <Panel id="Avatar">

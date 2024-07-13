@@ -1,3 +1,5 @@
+$.Msg( "Compiled Panorama Scripts!" );
+
 (function () {
 	// DOTAHud Hud
 	var hud = $.GetContextPanel().GetParent().GetParent().GetParent();

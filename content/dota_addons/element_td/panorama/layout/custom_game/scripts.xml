@@ -5,8 +5,5 @@
 		<include src="file://{resources}/scripts/sounds.js" />
 		<include src="file://{resources}/scripts/700.js" />
 	</scripts>
-	<script>
-		$.Msg( "Compiled Panorama Scripts!" );
-	</script>
 	<Panel></Panel>
 </root>

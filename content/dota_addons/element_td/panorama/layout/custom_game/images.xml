@@ -1,7 +1,4 @@
-<root>
-    <script>
-        $.Msg( "Images compiled" );
-    </script>     
+<root>    
     <Panel hittest="false" class="ImagesRoot">
         <Image style="opacity:0;" src="file://{images}/spellicons/elements/composite.png" />
         <Image style="opacity:0;" src="file://{images}/spellicons/elements/dark.png" />
@@ -86,6 +83,18 @@
         <Image style="opacity:0;" src="file://{images}/custom_game/wave_info/rip.png" />
         <Image style="opacity:0;" src="file://{images}/spellicons/osfrog.png" />
 
+        <Image style="opacity:0;" src="file://{images}/resources/composite.png" />
+        <Image style="opacity:0;" src="file://{images}/resources/dark.png" />
+        <Image style="opacity:0;" src="file://{images}/resources/earth.png" />
+        <Image style="opacity:0;" src="file://{images}/resources/fire.png" />
+        <Image style="opacity:0;" src="file://{images}/resources/light.png" />
+        <Image style="opacity:0;" src="file://{images}/resources/nature.png" />
+        <Image style="opacity:0;" src="file://{images}/resources/water.png" />
+        <Image style="opacity:0;" src="file://{images}/resources/gold_icon.png" />
+        <Image style="opacity:0;" src="file://{images}/resources/lumber_icon.png" />
+        <Image style="opacity:0;" src="file://{images}/resources/mango.png" />
+        <Image style="opacity:0;" src="file://{images}/resources/periodic.png" />
+
         <Image style="opacity:0;" src="file://{images}/custom_game/ranking/Badge0.png" />
         <Image style="opacity:0;" src="file://{images}/custom_game/ranking/Badge1.png" />
         <Image style="opacity:0;" src="file://{images}/custom_game/ranking/Badge2.png" />
@@ -104,5 +113,18 @@
         <Image style="opacity:0;" src="file://{images}/custom_game/rewards/npc_dota_hero_warlock.png" />
         <Image style="opacity:0;" src="file://{images}/custom_game/rewards/npc_dota_hero_wisp.png" />
 
+        <Image style="opacity:0;" src="file://{images}/custom_game/loading_screen/light.png" />
+        <Image style="opacity:0;" src="file://{images}/custom_game/loading_screen/dark.png" />
+        <Image style="opacity:0;" src="file://{images}/custom_game/loading_screen/water.png" />
+        <Image style="opacity:0;" src="file://{images}/custom_game/loading_screen/fire.png" />
+        <Image style="opacity:0;" src="file://{images}/custom_game/loading_screen/nature.png" />
+        <Image style="opacity:0;" src="file://{images}/custom_game/loading_screen/earth.png" />
+        <Image style="opacity:0;" src="file://{images}/custom_game/loading_screen/shadow_circle.png" />
+        <Image style="opacity:0;" src="file://{images}/custom_game/loading_screen/eletd2.png" />
+        <Image style="opacity:0;" src="file://{images}/custom_game/loading_screen/mobile.png" />
+        <Image style="opacity:0;" src="file://{images}/custom_game/loading_screen/workshop_image.png" />
+        <Image style="opacity:0;" src="file://{images}/custom_game/loading_screen/workshop.png" />
+        <Image style="opacity:0;" src="file://{images}/custom_game/loading_screen/elementTD.png" />
+        <Image style="opacity:0;" src="file://{images}/custom_game/loading_screen/elementTD_glow.png" />
     </Panel>
 </root>
