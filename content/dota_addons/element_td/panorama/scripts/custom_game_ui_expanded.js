@@ -355,8 +355,6 @@ GameUI.PlayerHasProfile = function (playerID) {
 
 // Save request by steamID
 GameUI.CheckPlayerPass = function (steamID64, callback) {
-    var steamID32 = GameUI.ConvertID32(steamID64)
-
     // Mark devs as pass owners in the UI
     var rewardLevel = GameUI.RewardLevel(steamID64)
     if (rewardLevel == "Developer" || rewardLevel == "Translator")
@@ -365,21 +363,7 @@ GameUI.CheckPlayerPass = function (steamID64, callback) {
         return
     }
 
-    $.AsyncWebRequest( "http://hatinacat.com/leaderboard/data_request.php?req=save&id="+steamID32, { type: 'GET', 
-        success: function( data ) {
-            var info = JSON.parse(data);
-            if (info["save"])
-            {
-                callback(info["save"]["pass"] == 1)
-            }
-            else
-                callback(false)
-        },
-
-        error: function() {
-            callback(false)
-        }
-    })
+    callback(false)
 }
 
 GameUI.SetupAvatarTooltip = function (avatar, root, steamID64) {

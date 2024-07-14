@@ -33,6 +33,7 @@ local requires = {
     "mechanics/grid",
     "mechanics/damage",
     "mechanics/ranking",
+    "mechanics/leaderboard",
     "mechanics/random",
     "mechanics/summoner",
     "mechanics/orbs",

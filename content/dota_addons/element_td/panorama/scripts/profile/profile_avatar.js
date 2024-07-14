@@ -32,30 +32,7 @@ function RequestData() {
     $.Msg("Getting data for "+steamID32+"...")
     Loading.RemoveClass("Hide")
 
-    $.AsyncWebRequest( statsURL+steamID32, { type: 'GET', 
-        success: function( data ) {
-            var info = JSON.parse(data);
-            var player_info = info["player"]
-
-            if (player_info)
-            {
-                if (player_info["allTime"])
-                    $("#favorite_element").SetImage("file://{resources}/images/custom_game/resources/"+player_info["allTime"]["favouriteElement"]+".png");
-
-                if (player_info["rank"] || player_info["rank_exp"] || player_info["rank_frogs"])
-                    SetAvatarRanks(player_info)
-
-                if (player_info["milestones"])
-                    CreateAvatarBadges(player_info)
-            }
-            Loading.AddClass("Hide")
-            $("#FavoriteElementPanel").RemoveClass("Hide")
-        },
-
-        error: function() {
-            Loading.AddClass("Hide")
-        }
-    })
+    GameEvents.SendCustomGameEventToServer( "etd_profile_avatar_request", { 'steam_id': steamID32 } )
 
     GameUI.CheckPlayerPass(steamID64, function(hasPass) {
         Pass.SetHasClass("Hide", !hasPass)
@@ -67,9 +44,61 @@ function RequestData() {
         }
         else
         {
+           GameEvents.SendCustomGameEventToServer( "etd_player_save_request", { 'steam_id': steamID32 } )
            border.SetImage("s2r://panorama/images/profile_badges/bg_01_psd.vtex")
         }
     })
+}
+
+function OnDataRequest(data) {
+    var info = data
+
+    if (data['result'] == 0) {
+        Loading.AddClass("Hide")
+        return
+    }
+
+    var steamID64 = Root.steamID64
+    var steamID32 = GameUI.ConvertID32(steamID64)
+
+    var player_info = info["player"]
+
+    if (player_info && player_info['steamID'] == steamID32) {
+        if (player_info["allTime"])
+            $("#favorite_element").SetImage("file://{resources}/images/custom_game/resources/"+player_info["allTime"]["favouriteElement"]+".png");
+
+        if (player_info["rank"] || player_info["rank_exp"] || player_info["rank_frogs"])
+            SetAvatarRanks(player_info)
+
+        if (player_info["milestones"])
+            CreateAvatarBadges(player_info)
+    }
+    Loading.AddClass("Hide")
+    $("#FavoriteElementPanel").RemoveClass("Hide")
+}
+
+function OnPlayerSave(data) {
+    var steamID64 = Root.steamID64
+    var steamID32 = GameUI.ConvertID32(steamID64)
+
+    var hasPass = false
+
+    if (data["result"] == 1 && data["save"] && data["save"]["steamID"] == steamID32)
+    {
+        hasPass = data["save"]["pass"] == 1;
+    }
+
+    Pass.SetHasClass("Hide", !hasPass)
+
+    if (hasPass)
+    {
+        border.SetImage("s2r://panorama/images/profile_badges/bg_02_psd.vtex")
+        border.AddClass("hasPass")
+    }
+    else
+    {
+       border.SetImage("s2r://panorama/images/profile_badges/bg_01_psd.vtex")
+    }
 }
 
 function SetAvatarRanks (player_info) {
@@ -155,7 +184,6 @@ function CreateAvatarBadges(player_info) {
     Badges.SetHasClass("Hide", badgesCreated == 0)
 }
 
-
 function ShowPlayerPass(steamID64) {
     var steamID = GameUI.ConvertID32(steamID64)
 
@@ -175,6 +203,8 @@ function UpdateSteamIDFields() {
 }
 
 function Setup() {
+    GameEvents.Subscribe( "etd_profile_avatar_stats", OnDataRequest);
+    GameEvents.Subscribe( "etd_player_save", OnPlayerSave);
     UpdateSteamIDFields()
     RequestData()
 }

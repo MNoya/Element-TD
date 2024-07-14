@@ -11,69 +11,77 @@ var REFRESH_THRESHOLD = 10
 var lastRequest
 var lastRefresh
 
-function GetTopRanks(type, panel) {
-    var top = url+"&top="+MAX_RANKS+"&lb="+type
+function GetTopRanks(type) {
+    GameEvents.SendCustomGameEventToServer( "etd_leaderboard_request", { 'leaderboard_type': type } )
+}
+
+function OnTopRanks(data) {
+    var info = data
+
+    var type = info['type']
+    var panel = null
+
+    if (type == CLASSIC) {
+        panel = $("#ClassicLeaderboardContainer")
+    } else if (type == EXPRESS) {
+        panel = $("#ExpressLeaderboardContainer")
+    } else if (type == FROGS) {
+        panel = $("#FrogsLeaderboardContainer")
+    } else if (type == COOP) {
+        panel = $("#CoopLeaderboardContainer")
+    } else {
+        return
+    }
+    
+    var players = info['players']
+    var matches = info['matches']
 
     var delay = 0
-    var delay_per_panel = 0.05;
+    var delay_per_panel = 0.05
 
     var loadingSpinner = $("#Loading"+type)
     loadingSpinner.RemoveClass("Hide")
 
-    $.AsyncWebRequest( top, { type: 'GET', 
-        success: function( data ) {
-            var info = JSON.parse(data);
-            var players = info['players']
-            var matches = info['matches']
+    if (players === undefined && matches === undefined)
+    {
+        $.Msg("Error on GetTopRanks "+type)
+        loadingSpinner.AddClass("Hide")
+        $("#ErrorLB"+type).RemoveClass("Hide")
+        return
+    }
 
-            if (players === undefined && matches === undefined)
+    if (type == COOP)
+    {
+        panel.ranks = 0
+        matches = SortCoopMatches(matches)
+        for (var matchID in matches)
+        {
+            var callback = function( data, panel )
             {
-                $.Msg("Error on GetTopRanks "+type)
-                loadingSpinner.AddClass("Hide")
-                $("#ErrorLB"+type).RemoveClass("Hide")
-                return
-            }
+                return function(){ CreateTopTeamPanel(data, panel); }
+            }( matches[matchID], panel );
 
-            if (type == COOP)
-            {
-                panel.ranks = 0
-                matches = SortCoopMatches(matches)
-                for (var matchID in matches)
-                {
-                    var callback = function( data, panel )
-                    {
-                        return function(){ CreateTopTeamPanel(data, panel); }
-                    }( matches[matchID], panel );
-
-                    $.Schedule( delay, callback )
-                    delay += delay_per_panel;
-                }
-            }
-            else
-            {
-                for (var steamID in players)
-                {
-                    //$.Msg("Top "+players[steamID]['rank']+":", players[steamID])
-                    var callback = function( data, panel )
-                    {
-                        return function(){ CreateTopPlayerPanel(data, panel); }
-                    }( players[steamID], panel );
-
-                    $.Schedule( delay, callback )
-                    delay += delay_per_panel;
-                }
-            }
-            
-            loadingSpinner.AddClass("Hide")
-            $("#ErrorLB"+type).AddClass("Hide")
-        },
-
-        error: function() {
-            $.Msg("Error on GetTopRanks "+type)
-            loadingSpinner.AddClass("Hide")
-            $("#ErrorLB"+type).RemoveClass("Hide")
+            $.Schedule( delay, callback )
+            delay += delay_per_panel;
         }
-    })
+    }
+    else
+    {
+        for (var steamID in players)
+        {
+            //$.Msg("Top "+players[steamID]['rank']+":", players[steamID])
+            var callback = function( data, panel )
+            {
+                return function(){ CreateTopPlayerPanel(data, panel); }
+            }( players[steamID], panel );
+
+            $.Schedule( delay, callback )
+            delay += delay_per_panel;
+        }
+    }
+    
+    loadingSpinner.AddClass("Hide")
+    $("#ErrorLB"+type).AddClass("Hide")
 }
 
 function CreateTopPlayerPanel(data, panel) {
@@ -154,13 +162,13 @@ function CreateAllRanks() {
         $("#Buttons").AddClass("Coop")
         $("#LeaderboardLink").AddClass("Coop")
         Leaderboard.AddClass("Coop")
-        GetTopRanks(COOP, $("#CoopLeaderboardContainer"))
+        GetTopRanks(COOP)
     }
     else
     {
-        GetTopRanks(CLASSIC, $("#ClassicLeaderboardContainer"))
-        GetTopRanks(EXPRESS, $("#ExpressLeaderboardContainer"))
-        GetTopRanks(FROGS, $("#FrogsLeaderboardContainer"))
+        GetTopRanks(CLASSIC)
+        GetTopRanks(EXPRESS)
+        GetTopRanks(FROGS)
     }
 }
 
@@ -190,7 +198,7 @@ function RefreshAllRanks()
 
 function Refresh(leaderboard_type, id) {
     ClearRanks($("#"+id))
-    GetTopRanks(leaderboard_type, $("#"+id))
+    GetTopRanks(leaderboard_type)
 }
 
 function ClearRanks(panel) {
@@ -204,7 +212,7 @@ function ClearRanks(panel) {
     }
 }
 
-function SortCoopMatches (data) {
+function SortCoopMatches(data) {
     var matches = []
     for (var x = 0; x < 100; x++) 
     {
@@ -252,3 +260,7 @@ function ToggleLeaderboard()
     }
     Game.EmitSound("ui_generic_button_click")
 }
+
+(function () {
+    GameEvents.Subscribe( "etd_leaderboard_ranks", OnTopRanks);
+})();
