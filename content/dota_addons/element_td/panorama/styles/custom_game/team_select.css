@@ -246,7 +246,7 @@
 #StartGameCountdownTimer.countdown_inactive #TimerBg,
 #StartGameCountdownTimer.countdown_inactive #TimerRing,
 #StartGameCountdownTimer.countdown_inactive #TimerLabelAutoStart,
-#StartGameCountdownTimer.countdown_inactive #TimerLabelGameStart,
+#StartGameCountdownTimer.countdown_inactive #TimerLabelGameStart
 {
     opacity: 0;
 }
@@ -681,7 +681,7 @@ DOTAAvatarImage
     width: 32px;
 	height: 32px;
     opacity: 0.7;
-    background-image: url("file://{images}/custom_game/empty_slot_avatar.png");
+    background-image: url("s2r://panorama/images/custom_game/empty_slot_avatar_png.vtex");
     background-size: 32px 32px;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
