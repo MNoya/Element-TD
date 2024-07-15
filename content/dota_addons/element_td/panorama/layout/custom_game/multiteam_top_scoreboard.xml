@@ -6,9 +6,9 @@
 	</styles>
 
 	<scripts>
-		<include src="s2r://panorama/scripts/custom_game/shared_scoreboard_updater.js" />
+		<include src="file://{resources}/scripts/custom_game/shared_scoreboard_updater.js" />
 		<include src="s2r://panorama/scripts/custom_game/multiteam_top_scoreboard.vjs_c" />
-		<include src="file://{resources}/scripts/custom_game/multiteam_top_scoreboard.js" />
+		<include src="file://{resources}/scripts/custom_game/multiteam_top_scoreboard_inline.js" />
 	</scripts>
 
 	<Panel hittest="false" class="CustomHudRoot">
