@@ -19,8 +19,8 @@
       <Label hittest="false" id="GoldText" text="0" class="TitleFont" />
     </Panel>
     <Panel hittest="true" id='ResourceLumber' onmouseover="ShowTooltip('#lumber')" onmouseout="DOTAHideTitleTextTooltip()">
-      <Label hittest="false" id="LumberText" text="0" class="TitleFont" />
       <Image hittest="false" id="LumberIcon"/>
+      <Label hittest="false" id="LumberText" text="0" class="TitleFont" />
     </Panel>
     <Panel hittest="true" id='ResourceEssence' onmouseover="ShowTooltip('#essence')" onmouseout="DOTAHideTitleTextTooltip()">
       <Image hittest="false" id="PureEssenceIcon"/>

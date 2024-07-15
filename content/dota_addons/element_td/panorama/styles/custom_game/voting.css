@@ -511,6 +511,7 @@ ToggleButton:enabled:hover Label, DOTASettingsCheckbox:enabled:hover Label
 .ViewDiffLabels
 {
     flow-children: down;
+    width: 130px;
     font-size: 8px;
     vertical-align: center;
     margin-bottom: 30px;
@@ -521,9 +522,9 @@ ToggleButton:enabled:hover Label, DOTASettingsCheckbox:enabled:hover Label
 .resultsReview
 {
     color: #FFF;
-    text-align: right;
+    text-align: center;
     text-shadow: 0px 0px 3px 3.0 #000;
-    horizontal-align: right;
+    horizontal-align: center;
     margin-left: 10px;
 }
 

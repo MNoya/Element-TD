@@ -15,7 +15,7 @@
 #ResourceElements
 {
     margin-right: 10px;
-    margin-bottom: 93px;
+    margin-bottom: 103px;
     height: 64px;
     width: 200px;
     vertical-align: bottom;
@@ -154,8 +154,8 @@
 
     vertical-align: bottom;
 
-    margin-bottom: 157px;
-    margin-right: 40px;
+    margin-bottom: 167px;
+    margin-right: 36px;
 }
 
 .AspectRatio4x3 #ResourceLumber, .AspectRatio5x4 #ResourceLumber
@@ -179,7 +179,7 @@
     text-align: center;
     text-shadow: 0px 0px 3px 3.0 #000000;
 
-    margin-left: 40px;
+    margin-left: 44px;
     margin-top: 3px;
 }
 
@@ -200,7 +200,7 @@
 
     vertical-align: bottom;
 
-    margin-bottom: 157px;
+    margin-bottom: 167px;
     margin-right: 107px;
     margin-left: 107px;
 }
@@ -250,7 +250,7 @@
 
     vertical-align: bottom;
 
-    margin-bottom: 157px;
+    margin-bottom: 167px;
 }
 
 .AspectRatio4x3 #ResourceEssence, .AspectRatio5x4 #ResourceEssence
@@ -296,7 +296,7 @@
 
     vertical-align: bottom;
 
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     margin-right: 78px;
 }
 
