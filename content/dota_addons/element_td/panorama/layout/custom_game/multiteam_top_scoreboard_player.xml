@@ -5,7 +5,7 @@
 		<include src="s2r://panorama/styles/custom_game/shared_scoreboard_styles.vcss_c" />
 	</styles>
 	<scripts>
-        <include src="file://{resources}/scripts/profile/top_scoreboard.js" />
+        <include src="file://{resources}/scripts/profile/multiteam_top_scoreboard_player_inline.js" />
     </scripts>
 	<Panel hittest="false" class="ScoreboardPlayerWrapper" onmouseover="RemoveStyle(ScoreTooltipContainer, hide);RemoveStyle(ArrowUpContainer, hide)" onmouseout="AddStyle(ScoreTooltipContainer, hide);AddStyle(ArrowUpContainer, hide)">
 		<Panel hittest="false" id="RespawnIndicator">

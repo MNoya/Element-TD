@@ -5,7 +5,7 @@
 		<include src="s2r://panorama/styles/custom_game/shared_scoreboard_styles.vcss_c" />
     </styles>
 	<scripts>
-        <include src="file://{resources}/scripts/custom_game/multiteam_top_scoreboard_team.js" />
+        <include src="file://{resources}/scripts/custom_game/multiteam_top_scoreboard_team_inline.js" />
 	</scripts>
 	<Panel hittest="false" class="ScoreboardTeamWrapper">
 		<Panel hittest="false" id="ScoreboardTeam">
