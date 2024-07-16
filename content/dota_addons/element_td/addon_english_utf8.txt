@@ -205,6 +205,7 @@
         "jinx_tower_3"              "Jinx 3"
         "periodic_tower"            "Periodic"
         "elemental_summoner"        "Elemental Summoner"
+        "elemental_summoner_icon"   "Elemental Summoner Icon"
 
         // Elementals
         "dark_elemental"            "Dark Elemental"          
