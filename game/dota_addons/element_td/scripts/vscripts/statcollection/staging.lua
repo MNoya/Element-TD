@@ -32,7 +32,7 @@ function statCollection:StageCustom(payload)
         -- Tell the user
         statCollection:print(messageCustomComplete .. " [" .. hiacLB .. ']')
         CustomNetTables:SetTableValue("gameinfo", "game_recorded", {value="recorded"})
-        CustomGameEventManager:Send_ServerToAllClients("etd_game_recorded", true )
+        CustomGameEventManager:Send_ServerToAllClients("etd_game_recorded", {} )
     end, hiacLB)
 
     Saves:SavePasses()
