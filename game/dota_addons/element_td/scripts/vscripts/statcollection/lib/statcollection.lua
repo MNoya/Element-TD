@@ -101,6 +101,9 @@ function statCollection:init()
     -- Store the modIdentifier
     self.modIdentifier = modIdentifier
 
+    -- Store the dedicatedServerKey
+    self.dedicatedServerKey = GetDedicatedServerKeyV3('element_td')
+
     -- Store the schemaIdentifier
     self.SCHEMA_KEY = statInfo.schemaID
 
@@ -508,6 +511,7 @@ function statCollection:sendCustom(args)
         authKey = self.authKey,
         matchID = self.matchID,
         modIdentifier = self.modIdentifier,
+        dedicatedServerKey = self.dedicatedServerKey,
         schemaAuthKey = self.SCHEMA_KEY,
         schemaVersion = schemaVersion,
         rounds = rounds
