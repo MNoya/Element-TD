@@ -7,7 +7,7 @@
 	<scripts>
         <include src="file://{resources}/scripts/profile/multiteam_top_scoreboard_player_inline.js" />
     </scripts>
-	<Panel hittest="false" class="ScoreboardPlayerWrapper" onmouseover="RemoveStyle(ScoreTooltipContainer, hide);RemoveStyle(ArrowUpContainer, hide)" onmouseout="AddStyle(ScoreTooltipContainer, hide);AddStyle(ArrowUpContainer, hide)">
+	<Panel hittest="false" id="ScoreboardRoot" class="ScoreboardPlayerWrapper" onmouseover="RemoveStyle(ScoreTooltipContainer, hide);RemoveStyle(ArrowUpContainer, hide)" onmouseout="AddStyle(ScoreTooltipContainer, hide);AddStyle(ArrowUpContainer, hide)">
 		<Panel hittest="false" id="RespawnIndicator">
 			<Label hittest="false" id="RespawnTimer" />
 		</Panel>
@@ -20,7 +20,7 @@
 		<Panel hittest="false" id="ScoreTooltipContainer" class="hide">
 			<Label hittest="false" id="ScoreTooltip" text="0"/>
 		</Panel>
-		<Panel hittest="false" id="ScoreboardRoot" class="ScoreboardPlayer">
+		<Panel hittest="false" class="ScoreboardPlayer">
 			<Button class="PlayerPortraitWrapper" onmouseactivate="PortraitClicked();">
 				<Panel hittest="false" id="PlayerColorBar" />
 				<Panel hittest="false" class="PlayerColorBarMask" />
