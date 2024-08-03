@@ -8,19 +8,11 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"MaxLevel"						"1"
 	"AbilityTextureName"			"witch_doctor_voodoo_restoration"
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"heal_amount"			"18"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"aoe"					"300"
-		}
-	}
+	"AbilityValues"
+    {
+        "heal_amount" "18"
+        "aoe" "300"
+    }
 
 	"Modifiers"
 	{

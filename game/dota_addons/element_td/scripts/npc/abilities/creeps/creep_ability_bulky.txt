@@ -8,12 +8,8 @@
 	"MaxLevel"						"1"
 	"AbilityTextureName"			"pudge/scavenger_dragon_ability/pudge_flesh_heap"
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_health_pct"		"200"
-		}
-	}
+	"AbilityValues"
+    {
+        "bonus_health_pct" "200"
+    }
 }

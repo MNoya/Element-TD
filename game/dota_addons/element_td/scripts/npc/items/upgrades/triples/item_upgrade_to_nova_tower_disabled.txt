@@ -20,18 +20,10 @@
 	}
     "ItemBaseLevel" "1"
     "ItemCost" "900"
-	"AbilitySpecial"
-	{
-        "01"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"damage"			"300 1500 6000"
-		}
-        "02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"slow"					"-12 -28 -52"
-		}
+	"AbilityValues"
+    {
+        "damage" "300 1500 6000"
+        "slow" "-12 -28 -52"
     }
     "AbilityCastRange"              "900"
 }

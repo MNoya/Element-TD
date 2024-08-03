@@ -47,22 +47,10 @@
 		}
 	}
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"range_per_stack"		"-25"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"max_stacks"			"32"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"2"
-		}
-	}
+	"AbilityValues"
+    {
+        "range_per_stack" "-25"
+        "max_stacks" "32"
+        "duration" "2"
+    }
 }

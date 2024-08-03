@@ -38,27 +38,11 @@
  		}
   	}
 	
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"attacks_required"		"14 13 12"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"crit_chance"			"15 20 25"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_mult"			"500"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"hail_radius"			"1750"
-		}
-	}
+	"AbilityValues"
+    {
+        "attacks_required" "14 13 12"
+        "crit_chance" "15 20 25"
+        "damage_mult" "500"
+        "hail_radius" "1750"
+    }
 }

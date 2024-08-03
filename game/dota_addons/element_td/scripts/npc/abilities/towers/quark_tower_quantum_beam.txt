@@ -30,17 +30,9 @@
 			"AbilityTextureName"		"towers/quark_tower_quantum_beam"
 		}
 	}
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"15"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"max_stacks"			"11"
-		}
-	}
+	"AbilityValues"
+    {
+        "bonus_damage" "15"
+        "max_stacks" "11"
+    }
 }

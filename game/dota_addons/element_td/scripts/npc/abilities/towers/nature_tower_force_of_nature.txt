@@ -8,17 +8,9 @@
 	"AbilityTextureName"			"towers/nature"
 	"MaxLevel"						"1"
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"15"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"aoe"					"125" //if you change this you also have to change the ability description
-		}
-	}
+	"AbilityValues"
+    {
+        "damage" "15"
+        "aoe" "125"
+    }
 }

@@ -8,19 +8,11 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"MaxLevel"						"1"
 	"AbilityTextureName"			"phantom_lancer_juxtapose"
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bounty"				"50"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"health"				"50"
-		}
-	}
+	"AbilityValues"
+    {
+        "bounty" "50"
+        "health" "50"
+    }
 
 	"Modifiers"
 	{

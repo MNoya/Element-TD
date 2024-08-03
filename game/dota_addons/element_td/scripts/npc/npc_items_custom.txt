@@ -1432,14 +1432,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "425"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"15 30 100"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "15 30 100"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_blacksmith_tower_2"
@@ -1471,14 +1467,10 @@
 			"earth"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"15 30 100"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "15 30 100"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_blacksmith_tower_2_disabled"
@@ -1500,14 +1492,10 @@
 			"earth"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"15 30 100"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "15 30 100"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_blacksmith_tower_3"
@@ -1539,14 +1527,10 @@
 			"earth"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"15 30 100"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "15 30 100"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_blacksmith_tower_3_disabled"
@@ -1568,14 +1552,10 @@
 			"earth"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"15 30 100"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "15 30 100"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_blacksmith_tower_disabled"
@@ -1598,14 +1578,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "425"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"15 30 100"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "15 30 100"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_disease_tower"
@@ -1792,14 +1768,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "425"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 6000"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "240 1200 6000"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_electricity_tower_2"
@@ -1831,14 +1803,10 @@
 			"light"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 6000"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "240 1200 6000"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_electricity_tower_2_disabled"
@@ -1860,14 +1828,10 @@
 			"light"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 6000"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "240 1200 6000"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_electricity_tower_3"
@@ -1899,14 +1863,10 @@
 			"light"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 6000"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "240 1200 6000"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_electricity_tower_3_disabled"
@@ -1928,14 +1888,10 @@
 			"light"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 6000"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "240 1200 6000"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_electricity_tower_disabled"
@@ -1958,14 +1914,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "425"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 6000"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "240 1200 6000"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_flame_tower"
@@ -1998,14 +1950,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "425"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"60 300 1500"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage" "60 300 1500"
+        }
 	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_flame_tower_2"
@@ -2037,14 +1985,10 @@
 			"nature"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"60 300 1500"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage" "60 300 1500"
+        }
 	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_flame_tower_2_disabled"
@@ -2066,14 +2010,10 @@
 			"nature"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"60 300 1500"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage" "60 300 1500"
+        }
 	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_flame_tower_3"
@@ -2105,14 +2045,10 @@
 			"nature"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"60 300 1500"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage" "60 300 1500"
+        }
 	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_flame_tower_3_disabled"
@@ -2134,14 +2070,10 @@
 			"nature"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"60 300 1500"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage" "60 300 1500"
+        }
 	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_flame_tower_disabled"
@@ -2164,14 +2096,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "425"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"60 300 1500"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage" "60 300 1500"
+        }
 	    "AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_gunpowder_tower"
@@ -2204,14 +2132,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "425"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 250 1250"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "50 250 1250"
+        }
 		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_gunpowder_tower_2"
@@ -2243,14 +2167,10 @@
 			"dark"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 250 1250"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "50 250 1250"
+        }
 		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_gunpowder_tower_2_disabled"
@@ -2272,14 +2192,10 @@
 			"dark"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 250 1250"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "50 250 1250"
+        }
 		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_gunpowder_tower_3"
@@ -2311,14 +2227,10 @@
 			"dark"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 250 1250"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "50 250 1250"
+        }
 		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_gunpowder_tower_3_disabled"
@@ -2340,14 +2252,10 @@
 			"dark"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 250 1250"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "50 250 1250"
+        }
 		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_gunpowder_tower_disabled"
@@ -2370,14 +2278,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "425"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 250 1250"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "50 250 1250"
+        }
 		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_hydro_tower"
@@ -2410,14 +2314,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "425"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"		"700 3500 17500"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "700 3500 17500"
+        }
 		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_hydro_tower_2"
@@ -2449,14 +2349,10 @@
 			"earth"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"		"700 3500 17500"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "700 3500 17500"
+        }
 		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_hydro_tower_2_disabled"
@@ -2478,14 +2374,10 @@
 			"earth"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"		"700 3500 17500"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "700 3500 17500"
+        }
 		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_hydro_tower_3"
@@ -2517,14 +2409,10 @@
 			"earth"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"		"700 3500 17500"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "700 3500 17500"
+        }
 		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_hydro_tower_3_disabled"
@@ -2546,14 +2434,10 @@
 			"earth"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"		"700 3500 17500"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "700 3500 17500"
+        }
 		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_hydro_tower_disabled"
@@ -2576,14 +2460,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "425"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"		"700 3500 17500"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "700 3500 17500"
+        }
 		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_ice_tower"
@@ -2616,14 +2496,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "425"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-	                        "ministun_duration"   "0.15 0.25 0.4"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "ministun_duration" "0.15 0.25 0.4"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ice_tower_2"
@@ -2655,14 +2531,10 @@
 			"light"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-	                        "ministun_duration"   "0.15 0.25 0.4"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "ministun_duration" "0.15 0.25 0.4"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ice_tower_2_disabled"
@@ -2684,14 +2556,10 @@
 			"light"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-	                        "ministun_duration"   "0.15 0.25 0.4"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "ministun_duration" "0.15 0.25 0.4"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ice_tower_3"
@@ -2723,14 +2591,10 @@
 			"light"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-	                        "ministun_duration"   "0.15 0.25 0.4"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "ministun_duration" "0.15 0.25 0.4"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ice_tower_3_disabled"
@@ -2752,14 +2616,10 @@
 			"light"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-	                        "ministun_duration"   "0.15 0.25 0.4"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "ministun_duration" "0.15 0.25 0.4"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ice_tower_disabled"
@@ -2782,14 +2642,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "425"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-	                        "ministun_duration"   "0.15 0.25 0.4"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "ministun_duration" "0.15 0.25 0.4"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_life_tower"
@@ -2822,14 +2678,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "425"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"8 6 2"
-			}
-		}
+	    "AbilityValues"
+        {
+            "kills_required" "8 6 2"
+        }
 		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_life_tower_2"
@@ -2861,14 +2713,10 @@
 			"nature"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"8 6 2"
-			}
-		}
+	    "AbilityValues"
+        {
+            "kills_required" "8 6 2"
+        }
 		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_life_tower_2_disabled"
@@ -2890,14 +2738,10 @@
 			"nature"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"8 6 2"
-			}
-		}
+	    "AbilityValues"
+        {
+            "kills_required" "8 6 2"
+        }
 		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_life_tower_3"
@@ -2929,14 +2773,10 @@
 			"nature"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"8 6 2"
-			}
-		}
+	    "AbilityValues"
+        {
+            "kills_required" "8 6 2"
+        }
 		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_life_tower_3_disabled"
@@ -2958,14 +2798,10 @@
 			"nature"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"8 6 2"
-			}
-		}
+	    "AbilityValues"
+        {
+            "kills_required" "8 6 2"
+        }
 		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_life_tower_disabled"
@@ -2988,14 +2824,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "425"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"8 6 2"
-			}
-		}
+	    "AbilityValues"
+        {
+            "kills_required" "8 6 2"
+        }
 		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_magic_tower"
@@ -3337,19 +3169,11 @@
 			"water"		"1"
 		}
 	
-	    "AbilitySpecial"
-	    {
-	         "01"
-	             {
-	                 "var_type"              "FIELD_FLOAT"
-	                 "damage_per_second"     "80 400 2000"
-	             }
-	             "02"
-	             {
-	                 "var_type"              "FIELD_FLOAT"
-	                 "duration"              "10.0"
-	             }
-	    }
+	    "AbilityValues"
+        {
+            "damage_per_second" "80 400 2000"
+            "duration" "10.0"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_poison_tower_2"
@@ -3381,19 +3205,11 @@
 			"water"		"2"
 		}
 	
-	    "AbilitySpecial"
-	    {
-	         "01"
-	             {
-	                 "var_type"              "FIELD_FLOAT"
-	                 "damage_per_second"     "80 400 2000"
-	             }
-	             "02"
-	             {
-	                 "var_type"              "FIELD_FLOAT"
-	                 "duration"              "10.0"
-	             }
-	    }
+	    "AbilityValues"
+        {
+            "damage_per_second" "80 400 2000"
+            "duration" "10.0"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_poison_tower_2_disabled"
@@ -3415,19 +3231,11 @@
 			"water"		"2"
 		}
 	
-	    "AbilitySpecial"
-	    {
-	         "01"
-	             {
-	                 "var_type"              "FIELD_FLOAT"
-	                 "damage_per_second"     "80 400 2000"
-	             }
-	             "02"
-	             {
-	                 "var_type"              "FIELD_FLOAT"
-	                 "duration"              "10.0"
-	             }
-	    }
+	    "AbilityValues"
+        {
+            "damage_per_second" "80 400 2000"
+            "duration" "10.0"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_poison_tower_3"
@@ -3459,19 +3267,11 @@
 			"water"		"3"
 		}
 	
-	    "AbilitySpecial"
-	    {
-	         "01"
-	             {
-	                 "var_type"              "FIELD_FLOAT"
-	                 "damage_per_second"     "80 400 2000"
-	             }
-	             "02"
-	             {
-	                 "var_type"              "FIELD_FLOAT"
-	                 "duration"              "10.0"
-	             }
-	    }
+	    "AbilityValues"
+        {
+            "damage_per_second" "80 400 2000"
+            "duration" "10.0"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_poison_tower_3_disabled"
@@ -3493,19 +3293,11 @@
 			"water"		"3"
 		}
 	
-	    "AbilitySpecial"
-	    {
-	         "01"
-	             {
-	                 "var_type"              "FIELD_FLOAT"
-	                 "damage_per_second"     "80 400 2000"
-	             }
-	             "02"
-	             {
-	                 "var_type"              "FIELD_FLOAT"
-	                 "duration"              "10.0"
-	             }
-	    }
+	    "AbilityValues"
+        {
+            "damage_per_second" "80 400 2000"
+            "duration" "10.0"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_poison_tower_disabled"
@@ -3529,19 +3321,11 @@
 			"water"		"1"
 		}
 	
-	    "AbilitySpecial"
-	    {
-	         "01"
-	             {
-	                 "var_type"              "FIELD_FLOAT"
-	                 "damage_per_second"     "80 400 2000"
-	             }
-	             "02"
-	             {
-	                 "var_type"              "FIELD_FLOAT"
-	                 "duration"              "10.0"
-	             }
-	    }
+	    "AbilityValues"
+        {
+            "damage_per_second" "80 400 2000"
+            "duration" "10.0"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_quark_tower"
@@ -3728,14 +3512,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "425"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"10 20 75"
-			}
-		}
+	    "AbilityValues"
+        {
+            "duration" "10 20 75"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_trickery_tower_2"
@@ -3767,14 +3547,10 @@
 			"dark"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"10 20 75"
-			}
-		}
+	    "AbilityValues"
+        {
+            "duration" "10 20 75"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_trickery_tower_2_disabled"
@@ -3796,14 +3572,10 @@
 			"dark"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"10 20 75"
-			}
-		}
+	    "AbilityValues"
+        {
+            "duration" "10 20 75"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_trickery_tower_3"
@@ -3835,14 +3607,10 @@
 			"dark"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"10 20 75"
-			}
-		}
+	    "AbilityValues"
+        {
+            "duration" "10 20 75"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_trickery_tower_3_disabled"
@@ -3864,14 +3632,10 @@
 			"dark"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"10 20 75"
-			}
-		}
+	    "AbilityValues"
+        {
+            "duration" "10 20 75"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_trickery_tower_disabled"
@@ -3894,14 +3658,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "425"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"10 20 75"
-			}
-		}
+	    "AbilityValues"
+        {
+            "duration" "10 20 75"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_vapor_tower"
@@ -3934,19 +3694,11 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "425"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_damage"			"60 300 1500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_creep"		"30 150 750"
-			}
-		}
+	    "AbilityValues"
+        {
+            "base_damage" "60 300 1500"
+            "damage_per_creep" "30 150 750"
+        }
 		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_vapor_tower_2"
@@ -3978,19 +3730,11 @@
 			"water"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_damage"			"60 300 1500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_creep"		"30 150 750"
-			}
-		}
+	    "AbilityValues"
+        {
+            "base_damage" "60 300 1500"
+            "damage_per_creep" "30 150 750"
+        }
 		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_vapor_tower_2_disabled"
@@ -4012,19 +3756,11 @@
 			"water"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_damage"			"60 300 1500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_creep"		"30 150 750"
-			}
-		}
+	    "AbilityValues"
+        {
+            "base_damage" "60 300 1500"
+            "damage_per_creep" "30 150 750"
+        }
 		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_vapor_tower_3"
@@ -4056,19 +3792,11 @@
 			"water"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_damage"			"60 300 1500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_creep"		"30 150 750"
-			}
-		}
+	    "AbilityValues"
+        {
+            "base_damage" "60 300 1500"
+            "damage_per_creep" "30 150 750"
+        }
 		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_vapor_tower_3_disabled"
@@ -4090,19 +3818,11 @@
 			"water"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_damage"			"60 300 1500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_creep"		"30 150 750"
-			}
-		}
+	    "AbilityValues"
+        {
+            "base_damage" "60 300 1500"
+            "damage_per_creep" "30 150 750"
+        }
 		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_vapor_tower_disabled"
@@ -4125,19 +3845,11 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "425"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_damage"			"60 300 1500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_creep"		"30 150 750"
-			}
-		}
+	    "AbilityValues"
+        {
+            "base_damage" "60 300 1500"
+            "damage_per_creep" "30 150 750"
+        }
 		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_well_tower"
@@ -4170,14 +3882,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "425"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"15 30 100"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "attack_speed" "15 30 100"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_well_tower_2"
@@ -4209,14 +3917,10 @@
 			"nature"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"15 30 100"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "attack_speed" "15 30 100"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_well_tower_2_disabled"
@@ -4238,14 +3942,10 @@
 			"nature"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"15 30 100"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "attack_speed" "15 30 100"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_well_tower_3"
@@ -4277,14 +3977,10 @@
 			"nature"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"15 30 100"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "attack_speed" "15 30 100"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_well_tower_3_disabled"
@@ -4306,14 +4002,10 @@
 			"nature"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"15 30 100"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "attack_speed" "15 30 100"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_well_tower_disabled"
@@ -4336,14 +4028,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "425"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"15 30 100"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "attack_speed" "15 30 100"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_enchantment_tower"
@@ -4378,19 +4066,11 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"10 23 80"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"18 42 140"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "base_damage_amp" "10 23 80"
+            "max_damage_amp" "18 42 140"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_enchantment_tower_2"
@@ -4424,19 +4104,11 @@
 			"nature"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"10 23 80"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"18 42 140"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "base_damage_amp" "10 23 80"
+            "max_damage_amp" "18 42 140"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_enchantment_tower_2_disabled"
@@ -4460,19 +4132,11 @@
 			"nature"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"10 23 80"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"18 42 140"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "base_damage_amp" "10 23 80"
+            "max_damage_amp" "18 42 140"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_enchantment_tower_3"
@@ -4503,19 +4167,11 @@
 			"nature"	"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"10 23 80"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"18 42 140"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "base_damage_amp" "10 23 80"
+            "max_damage_amp" "18 42 140"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_enchantment_tower_3_disabled"
@@ -4536,19 +4192,11 @@
 			"nature"	"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"10 23 80"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"18 42 140"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "base_damage_amp" "10 23 80"
+            "max_damage_amp" "18 42 140"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_enchantment_tower_disabled"
@@ -4573,19 +4221,11 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"10 23 80"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"18 42 140"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "base_damage_amp" "10 23 80"
+            "max_damage_amp" "18 42 140"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ephemeral_tower"
@@ -4621,14 +4261,10 @@
 		"ItemBaseLevel" "1"
 	    "ItemCost" "900"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"max_reduction"		"60 40 20"
-			}
-		}
+		"AbilityValues"
+        {
+            "max_reduction" "60 40 20"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ephemeral_tower_2"
@@ -4663,14 +4299,10 @@
 		}
 		"ItemBaseLevel" "2"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"max_reduction"		"60 40 20"
-			}
-		}
+		"AbilityValues"
+        {
+            "max_reduction" "60 40 20"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ephemeral_tower_2_disabled"
@@ -4695,14 +4327,10 @@
 		}
 		"ItemBaseLevel" "2"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"max_reduction"		"60 40 20"
-			}
-		}
+		"AbilityValues"
+        {
+            "max_reduction" "60 40 20"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ephemeral_tower_3"
@@ -4737,14 +4365,10 @@
 		}
 		"ItemBaseLevel" "3"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"max_reduction"		"60 40 20"
-			}
-		}
+		"AbilityValues"
+        {
+            "max_reduction" "60 40 20"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ephemeral_tower_3_disabled"
@@ -4769,14 +4393,10 @@
 		}
 		"ItemBaseLevel" "3"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"max_reduction"		"60 40 20"
-			}
-		}
+		"AbilityValues"
+        {
+            "max_reduction" "60 40 20"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_ephemeral_tower_disabled"
@@ -4802,14 +4422,10 @@
 		"ItemBaseLevel" "1"
 	    "ItemCost" "900"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"max_reduction"		"60 40 20"
-			}
-		}
+		"AbilityValues"
+        {
+            "max_reduction" "60 40 20"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_erosion_tower"
@@ -4844,19 +4460,11 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"15 36 120"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dot"					"100 500 1500"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage_amp" "15 36 120"
+            "dot" "100 500 1500"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_erosion_tower_2"
@@ -4890,19 +4498,11 @@
 			"water"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"15 36 120"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dot"					"100 500 1500"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage_amp" "15 36 120"
+            "dot" "100 500 1500"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_erosion_tower_2_disabled"
@@ -4926,19 +4526,11 @@
 			"water"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"15 36 120"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dot"					"100 500 1500"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage_amp" "15 36 120"
+            "dot" "100 500 1500"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_erosion_tower_3"
@@ -4972,19 +4564,11 @@
 			"water"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"15 36 120"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dot"					"100 500 1500"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage_amp" "15 36 120"
+            "dot" "100 500 1500"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_erosion_tower_3_disabled"
@@ -5008,19 +4592,11 @@
 			"water"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"15 36 120"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dot"					"100 500 1500"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage_amp" "15 36 120"
+            "dot" "100 500 1500"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_erosion_tower_disabled"
@@ -5045,19 +4621,11 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"15 36 120"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dot"					"100 500 1500"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage_amp" "15 36 120"
+            "dot" "100 500 1500"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_flamethrower_tower"
@@ -5092,14 +4660,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"180 900 2700"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "180 900 2700"
+        }
 		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_flamethrower_tower_2"
@@ -5133,14 +4697,10 @@
 			"fire"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"180 900 2700"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "180 900 2700"
+        }
 		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_flamethrower_tower_2_disabled"
@@ -5164,14 +4724,10 @@
 			"fire"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"180 900 2700"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "180 900 2700"
+        }
 		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_flamethrower_tower_3"
@@ -5205,14 +4761,10 @@
 			"fire"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"180 900 2700"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "180 900 2700"
+        }
 		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_flamethrower_tower_3_disabled"
@@ -5236,14 +4788,10 @@
 			"fire"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"180 900 2700"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "180 900 2700"
+        }
 		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_flamethrower_tower_disabled"
@@ -5268,14 +4816,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"180 900 2700"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "180 900 2700"
+        }
 		"AbilityCastRange"              "700"
 	}
 	"item_upgrade_to_flooding_tower"
@@ -5310,14 +4854,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"220 1100 3600"
-			}
-		}
+	    "AbilityValues"
+        {
+            "splash_damage" "220 1100 3600"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_flooding_tower_2"
@@ -5351,14 +4891,10 @@
 			"dark"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"220 1100 3600"
-			}
-		}
+	    "AbilityValues"
+        {
+            "splash_damage" "220 1100 3600"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_flooding_tower_2_disabled"
@@ -5382,14 +4918,10 @@
 			"dark"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"220 1100 3600"
-			}
-		}
+	    "AbilityValues"
+        {
+            "splash_damage" "220 1100 3600"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_flooding_tower_3"
@@ -5423,14 +4955,10 @@
 			"dark"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"220 1100 3600"
-			}
-		}
+	    "AbilityValues"
+        {
+            "splash_damage" "220 1100 3600"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_flooding_tower_3_disabled"
@@ -5454,14 +4982,10 @@
 			"dark"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"220 1100 3600"
-			}
-		}
+	    "AbilityValues"
+        {
+            "splash_damage" "220 1100 3600"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_flooding_tower_disabled"
@@ -5486,14 +5010,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"220 1100 3600"
-			}
-		}
+	    "AbilityValues"
+        {
+            "splash_damage" "220 1100 3600"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_gold_tower"
@@ -5528,14 +5048,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"35 35 35"
-			}
-		}
+	    "AbilityValues"
+        {
+            "bonus_gold" "35 35 35"
+        }
 		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_gold_tower_2"
@@ -5569,14 +5085,10 @@
 			"light"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"35 35 35"
-			}
-		}
+	    "AbilityValues"
+        {
+            "bonus_gold" "35 35 35"
+        }
 		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_gold_tower_2_disabled"
@@ -5600,14 +5112,10 @@
 			"light"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"35 35 35"
-			}
-		}
+	    "AbilityValues"
+        {
+            "bonus_gold" "35 35 35"
+        }
 		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_gold_tower_3"
@@ -5641,14 +5149,10 @@
 			"light"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"35 35 35"
-			}
-		}
+	    "AbilityValues"
+        {
+            "bonus_gold" "35 35 35"
+        }
 		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_gold_tower_3_disabled"
@@ -5672,14 +5176,10 @@
 			"light"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"35 35 35"
-			}
-		}
+	    "AbilityValues"
+        {
+            "bonus_gold" "35 35 35"
+        }
 		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_gold_tower_disabled"
@@ -5704,14 +5204,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"35 35 35"
-			}
-		}
+	    "AbilityValues"
+        {
+            "bonus_gold" "35 35 35"
+        }
 		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_hail_tower"
@@ -5746,19 +5242,11 @@
 		}
 		"ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attacks_required"		"14 13 12"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"15 20 25"
-			}
-		}
+	    "AbilityValues"
+        {
+            "attacks_required" "14 13 12"
+            "crit_chance" "15 20 25"
+        }
 	    "AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_hail_tower_2"
@@ -5792,19 +5280,11 @@
 			"water"		"2"
 		}
 		"ItemBaseLevel" "2"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attacks_required"		"14 13 12"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"15 20 25"
-			}
-		}
+		"AbilityValues"
+        {
+            "attacks_required" "14 13 12"
+            "crit_chance" "15 20 25"
+        }
 	    "AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_hail_tower_2_disabled"
@@ -5828,19 +5308,11 @@
 			"water"		"2"
 		}
 		"ItemBaseLevel" "2"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attacks_required"		"14 13 12"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"15 20 25"
-			}
-		}
+		"AbilityValues"
+        {
+            "attacks_required" "14 13 12"
+            "crit_chance" "15 20 25"
+        }
 	    "AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_hail_tower_3"
@@ -5874,19 +5346,11 @@
 			"water"		"3"
 		}
 		"ItemBaseLevel" "3"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attacks_required"		"14 13 12"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"15 20 25"
-			}
-		}
+		"AbilityValues"
+        {
+            "attacks_required" "14 13 12"
+            "crit_chance" "15 20 25"
+        }
 	    "AbilityCastRange"              "1750"
 	}
 	"item_upgrade_to_hail_tower_3_disabled"
@@ -5910,19 +5374,11 @@
 			"water"		"3"
 		}
 		"ItemBaseLevel" "3"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attacks_required"		"14 13 12"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"15 20 25"
-			}
-		}
+		"AbilityValues"
+        {
+            "attacks_required" "14 13 12"
+            "crit_chance" "15 20 25"
+        }
 	    "AbilityCastRange"              "1750"
 	}
 	"item_upgrade_to_hail_tower_disabled"
@@ -5947,19 +5403,11 @@
 		}
 		"ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attacks_required"		"14 13 12"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"15 20 25"
-			}
-		}
+	    "AbilityValues"
+        {
+            "attacks_required" "14 13 12"
+            "crit_chance" "15 20 25"
+        }
 	    "AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_haste_tower"
@@ -6162,14 +5610,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"3300 16500 50000"
-			}
-		}
+	    "AbilityValues"
+        {
+            "multiplier" "3300 16500 50000"
+        }
 		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_impulse_tower_2"
@@ -6203,14 +5647,10 @@
 			"water"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"3300 16500 50000"
-			}
-		}
+	    "AbilityValues"
+        {
+            "multiplier" "3300 16500 50000"
+        }
 		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_impulse_tower_2_disabled"
@@ -6234,14 +5674,10 @@
 			"water"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"3300 16500 50000"
-			}
-		}
+	    "AbilityValues"
+        {
+            "multiplier" "3300 16500 50000"
+        }
 		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_impulse_tower_3"
@@ -6275,14 +5711,10 @@
 			"water"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"3300 16500 50000"
-			}
-		}
+	    "AbilityValues"
+        {
+            "multiplier" "3300 16500 50000"
+        }
 		"AbilityCastRange"              "1750"
 	}
 	"item_upgrade_to_impulse_tower_3_disabled"
@@ -6306,14 +5738,10 @@
 			"water"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"3300 16500 50000"
-			}
-		}
+	    "AbilityValues"
+        {
+            "multiplier" "3300 16500 50000"
+        }
 		"AbilityCastRange"              "1750"
 	}
 	"item_upgrade_to_impulse_tower_disabled"
@@ -6338,14 +5766,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"3300 16500 50000"
-			}
-		}
+	    "AbilityValues"
+        {
+            "multiplier" "3300 16500 50000"
+        }
 		"AbilityCastRange"              "1500"
 	}
 	"item_upgrade_to_jinx_tower"
@@ -6380,14 +5804,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"6 15 45"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage_taken" "6 15 45"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_jinx_tower_2"
@@ -6421,14 +5841,10 @@
 			"nature"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"6 15 45"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage_taken" "6 15 45"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_jinx_tower_2_disabled"
@@ -6452,14 +5868,10 @@
 			"nature"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"6 15 45"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage_taken" "6 15 45"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_jinx_tower_3"
@@ -6493,14 +5905,10 @@
 			"nature"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"6 15 45"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage_taken" "6 15 45"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_jinx_tower_3_disabled"
@@ -6524,14 +5932,10 @@
 			"nature"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"6 15 45"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage_taken" "6 15 45"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_jinx_tower_disabled"
@@ -6556,14 +5960,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"6 15 45"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage_taken" "6 15 45"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_laser_tower"
@@ -6764,14 +6164,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "slow" "-12 -28 -52"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_muck_tower_2"
@@ -6805,14 +6201,10 @@
 			"water"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "slow" "-12 -28 -52"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_muck_tower_2_disabled"
@@ -6836,14 +6228,10 @@
 			"water"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "slow" "-12 -28 -52"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_muck_tower_3"
@@ -6877,14 +6265,10 @@
 			"water"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "slow" "-12 -28 -52"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_muck_tower_3_disabled"
@@ -6908,14 +6292,10 @@
 			"water"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "slow" "-12 -28 -52"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_muck_tower_disabled"
@@ -6940,14 +6320,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "slow" "-12 -28 -52"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_nova_tower"
@@ -6982,19 +6358,11 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 1500 6000"
-			}
-	        "02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage" "300 1500 6000"
+            "slow" "-12 -28 -52"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_nova_tower_2"
@@ -7028,19 +6396,11 @@
 			"light"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 1500 6000"
-			}
-	        "02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage" "300 1500 6000"
+            "slow" "-12 -28 -52"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_nova_tower_2_disabled"
@@ -7064,19 +6424,11 @@
 			"light"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 1500 6000"
-			}
-	        "02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage" "300 1500 6000"
+            "slow" "-12 -28 -52"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_nova_tower_3"
@@ -7110,19 +6462,11 @@
 			"light"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 1500 6000"
-			}
-	        "02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage" "300 1500 6000"
+            "slow" "-12 -28 -52"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_nova_tower_3_disabled"
@@ -7146,19 +6490,11 @@
 			"light"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 1500 6000"
-			}
-	        "02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "damage" "300 1500 6000"
+            "slow" "-12 -28 -52"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_nova_tower_disabled"
@@ -7183,19 +6519,11 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-		"AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 1500 6000"
-			}
-	        "02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-	    }
+		"AbilityValues"
+        {
+            "damage" "300 1500 6000"
+            "slow" "-12 -28 -52"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_obliteration_tower"
@@ -7396,14 +6724,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"12 27 60"
-			}
-		}
+	    "AbilityValues"
+        {
+            "health_burn" "12 27 60"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_polar_tower_2"
@@ -7437,14 +6761,10 @@
 			"earth"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"12 27 60"
-			}
-		}
+	    "AbilityValues"
+        {
+            "health_burn" "12 27 60"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_polar_tower_2_disabled"
@@ -7468,14 +6788,10 @@
 			"earth"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"12 27 60"
-			}
-		}
+	    "AbilityValues"
+        {
+            "health_burn" "12 27 60"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_polar_tower_3"
@@ -7509,14 +6825,10 @@
 			"earth"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"12 27 60"
-			}
-		}
+	    "AbilityValues"
+        {
+            "health_burn" "12 27 60"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_polar_tower_3_disabled"
@@ -7540,14 +6852,10 @@
 			"earth"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"12 27 60"
-			}
-		}
+	    "AbilityValues"
+        {
+            "health_burn" "12 27 60"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_polar_tower_disabled"
@@ -7572,14 +6880,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"12 27 60"
-			}
-		}
+	    "AbilityValues"
+        {
+            "health_burn" "12 27 60"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_quake_tower"
@@ -7614,19 +6918,11 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"1800 9000 27000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"pct"					"1 2.5 4"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "1800 9000 27000"
+            "pct" "1 2.5 4"
+        }
 		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_quake_tower_2"
@@ -7660,19 +6956,11 @@
 			"nature"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"1800 9000 27000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"pct"					"1 2.5 4"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "1800 9000 27000"
+            "pct" "1 2.5 4"
+        }
 		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_quake_tower_2_disabled"
@@ -7696,19 +6984,11 @@
 			"nature"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"1800 9000 27000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"pct"					"1 2.5 4"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "1800 9000 27000"
+            "pct" "1 2.5 4"
+        }
 		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_quake_tower_3"
@@ -7742,19 +7022,11 @@
 			"nature"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"1800 9000 27000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"pct"					"1 2.5 4"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "1800 9000 27000"
+            "pct" "1 2.5 4"
+        }
 		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_quake_tower_3_disabled"
@@ -7778,19 +7050,11 @@
 			"nature"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"1800 9000 27000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"pct"					"1 2.5 4"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "1800 9000 27000"
+            "pct" "1 2.5 4"
+        }
 		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_quake_tower_disabled"
@@ -7815,19 +7079,11 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"1800 9000 27000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"pct"					"1 2.5 4"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "1800 9000 27000"
+            "pct" "1 2.5 4"
+        }
 		"AbilityCastRange"              "550"
 	}
 	"item_upgrade_to_roots_tower"
@@ -7862,19 +7118,11 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-	        "02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dps"					"100 500 2500"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "slow" "-12 -28 -52"
+            "dps" "100 500 2500"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_roots_tower_2"
@@ -7908,19 +7156,11 @@
 			"nature"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-	        "02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dps"					"100 500 2500"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "slow" "-12 -28 -52"
+            "dps" "100 500 2500"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_roots_tower_2_disabled"
@@ -7944,19 +7184,11 @@
 			"nature"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-	        "02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dps"					"100 500 2500"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "slow" "-12 -28 -52"
+            "dps" "100 500 2500"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_roots_tower_3"
@@ -7990,19 +7222,11 @@
 			"nature"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-	        "02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dps"					"100 500 2500"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "slow" "-12 -28 -52"
+            "dps" "100 500 2500"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_roots_tower_3_disabled"
@@ -8026,19 +7250,11 @@
 			"nature"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-	        "02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dps"					"100 500 2500"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "slow" "-12 -28 -52"
+            "dps" "100 500 2500"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_roots_tower_disabled"
@@ -8063,19 +7279,11 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-	        "01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-	        "02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dps"					"100 500 2500"
-			}
-	    }
+	    "AbilityValues"
+        {
+            "slow" "-12 -28 -52"
+            "dps" "100 500 2500"
+        }
 	    "AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_runic_tower"
@@ -8276,14 +7484,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"45 225 675"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "45 225 675"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_tidal_tower_2"
@@ -8317,14 +7521,10 @@
 			"light"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"45 225 675"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "45 225 675"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_tidal_tower_2_disabled"
@@ -8348,14 +7548,10 @@
 			"light"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"45 225 675"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "45 225 675"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_tidal_tower_3"
@@ -8389,14 +7585,10 @@
 			"light"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"45 225 675"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "45 225 675"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_tidal_tower_3_disabled"
@@ -8420,14 +7612,10 @@
 			"light"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"45 225 675"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "45 225 675"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_tidal_tower_disabled"
@@ -8452,14 +7640,10 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"45 225 675"
-			}
-		}
+	    "AbilityValues"
+        {
+            "damage" "45 225 675"
+        }
 		"AbilityCastRange"              "900"
 	}
 	"item_upgrade_to_windstorm_tower"
@@ -8494,19 +7678,11 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"600 3000 9000"
-			}
-		}
+	    "AbilityValues"
+        {
+            "slow" "-12 -28 -52"
+            "damage" "600 3000 9000"
+        }
 		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_windstorm_tower_2"
@@ -8540,19 +7716,11 @@
 			"water"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"600 3000 9000"
-			}
-		}
+	    "AbilityValues"
+        {
+            "slow" "-12 -28 -52"
+            "damage" "600 3000 9000"
+        }
 		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_windstorm_tower_2_disabled"
@@ -8576,19 +7744,11 @@
 			"water"		"2"
 		}
 	    "ItemBaseLevel" "2"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"600 3000 9000"
-			}
-		}
+	    "AbilityValues"
+        {
+            "slow" "-12 -28 -52"
+            "damage" "600 3000 9000"
+        }
 		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_windstorm_tower_3"
@@ -8622,19 +7782,11 @@
 			"water"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"600 3000 9000"
-			}
-		}
+	    "AbilityValues"
+        {
+            "slow" "-12 -28 -52"
+            "damage" "600 3000 9000"
+        }
 		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_windstorm_tower_3_disabled"
@@ -8658,19 +7810,11 @@
 			"water"		"3"
 		}
 	    "ItemBaseLevel" "3"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"600 3000 9000"
-			}
-		}
+	    "AbilityValues"
+        {
+            "slow" "-12 -28 -52"
+            "damage" "600 3000 9000"
+        }
 		"AbilityCastRange"              "1150"
 	}
 	"item_upgrade_to_windstorm_tower_disabled"
@@ -8695,19 +7839,11 @@
 		}
 	    "ItemBaseLevel" "1"
 	    "ItemCost" "900"
-	    "AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"600 3000 9000"
-			}
-		}
+	    "AbilityValues"
+        {
+            "slow" "-12 -28 -52"
+            "damage" "600 3000 9000"
+        }
 		"AbilityCastRange"              "1150"
 	}
 }

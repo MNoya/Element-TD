@@ -8,27 +8,11 @@
 	"MaxLevel"						"3"
 	"AbilityTextureName"			"naga_siren_rip_tide"
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"splash_damage"			"220 1100 3600"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"full_aoe"				"400"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"4"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"interval"				"1"
-		}
-	}
+	"AbilityValues"
+    {
+        "splash_damage" "220 1100 3600"
+        "full_aoe" "400"
+        "duration" "4"
+        "interval" "1"
+    }
 }

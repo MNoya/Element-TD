@@ -91,27 +91,11 @@
 			"EffectAttackType" "follow_origin"
 		}
 	}
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_amp"			"15 36 120"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"dot"					"100 500 1500"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"7.5"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"aoe"					"400"
-		}
-	}
+	"AbilityValues"
+    {
+        "damage_amp" "15 36 120"
+        "dot" "100 500 1500"
+        "duration" "7.5"
+        "aoe" "400"
+    }
 }

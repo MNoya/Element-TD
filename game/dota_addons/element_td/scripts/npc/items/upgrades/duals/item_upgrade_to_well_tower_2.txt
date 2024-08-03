@@ -27,13 +27,9 @@
 		"nature"		"2"
 	}
     "ItemBaseLevel" "2"
-    "AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"attack_speed"			"15 30 100"
-		}
+    "AbilityValues"
+    {
+        "attack_speed" "15 30 100"
     }
     "AbilityCastRange"              "900"
 }

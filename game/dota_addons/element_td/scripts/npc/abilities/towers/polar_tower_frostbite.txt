@@ -45,17 +45,9 @@
 		}
 	}
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"10"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"health_burn"			"12 27 60"
-		}
-	}
+	"AbilityValues"
+    {
+        "duration" "10"
+        "health_burn" "12 27 60"
+    }
 }

@@ -88,22 +88,10 @@
 		}
 	}
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"5"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"aoe"					"300"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"slow"					"-12 -28 -52"
-		}
-	}
+	"AbilityValues"
+    {
+        "duration" "5"
+        "aoe" "300"
+        "slow" "-12 -28 -52"
+    }
 }

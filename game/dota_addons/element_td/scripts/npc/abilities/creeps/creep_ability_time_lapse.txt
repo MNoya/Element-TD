@@ -14,19 +14,11 @@
 		"particle"  "particles/status_fx/status_effect_faceless_chronosphere.vpcf"
 	}
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"health_threshold"		"25"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"backtrack_duration"	"5"
-		}
-	}
+	"AbilityValues"
+    {
+        "health_threshold" "25"
+        "backtrack_duration" "5"
+    }
 
 	"Modifiers"
 	{

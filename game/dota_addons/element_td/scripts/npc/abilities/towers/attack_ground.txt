@@ -12,13 +12,9 @@
 
     "AbilityMultiOrder"             "1"
 
-    "AbilitySpecial"
+    "AbilityValues"
     {
-        "02"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "splash_aoe"            "200"
-        }
+        "splash_aoe" "200"
     }
 
     "OnSpellStart"

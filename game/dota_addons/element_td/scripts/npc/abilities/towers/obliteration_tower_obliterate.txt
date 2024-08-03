@@ -92,24 +92,12 @@
             }
         }
 	}
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"max_aoe"				"400"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"initial_aoe"			"200"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"4"
-		}
-	}
+	"AbilityValues"
+    {
+        "max_aoe" "400"
+        "initial_aoe" "200"
+        "duration" "4"
+    }
 	"OnProjectileHitUnit"
 	{
 		"DeleteOnHit"	"1"

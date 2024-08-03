@@ -8,17 +8,9 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"MaxLevel"						"1"
 	"AbilityTextureName"			"skeleton_king_reincarnation"
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"delay"					"3"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"health"				"50"
-		}
-	}
+	"AbilityValues"
+    {
+        "delay" "3"
+        "health" "50"
+    }
 }

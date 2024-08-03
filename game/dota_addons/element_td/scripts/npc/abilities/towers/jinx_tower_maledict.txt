@@ -51,32 +51,12 @@
 			}
 		}
 	}
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_taken"			"6 15 45"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"tick_interval"			"2.5"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"7.5"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"ticks"					"3"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"aoe"					"300"
-		}
-	}
+	"AbilityValues"
+    {
+        "damage_taken" "6 15 45"
+        "tick_interval" "2.5"
+        "duration" "7.5"
+        "ticks" "3"
+        "aoe" "300"
+    }
 }

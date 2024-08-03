@@ -46,27 +46,11 @@
 		}
 	}
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"kills_required"				"8 6 2"
-		}
-		"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"heal_amount"					"1"
-		}
-		"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage_bonus_full_hp_pct"		"50"
-		}
-		"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"points_per_kill"				"3 4 12"
-		}
-	}
+	"AbilityValues"
+    {
+        "kills_required" "8 6 2"
+        "heal_amount" "1"
+        "damage_bonus_full_hp_pct" "50"
+        "points_per_kill" "3 4 12"
+    }
 }

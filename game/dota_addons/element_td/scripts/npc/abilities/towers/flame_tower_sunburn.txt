@@ -94,22 +94,10 @@
         }
     }
 
-    "AbilitySpecial"
+    "AbilityValues"
     {
-        "01"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "damage"                "60 300 1500"
-        }
-        "02"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "aoe"                   "200"
-        }
-        "03"
-        {
-            "var_type"              "FIELD_FLOAT"
-            "duration"              "5"
-        }
+        "damage" "60 300 1500"
+        "aoe" "200"
+        "duration" "5"
     }
 }

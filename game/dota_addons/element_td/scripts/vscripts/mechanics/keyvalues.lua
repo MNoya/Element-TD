@@ -51,20 +51,18 @@ end
 function GetAbilitySpecialValue(abilityName, specialValue)
     if NPC_ABILITIES_CUSTOM[abilityName] then
         local kv = NPC_ABILITIES_CUSTOM[abilityName]
-        if kv.AbilitySpecial then
-            for k, v in pairs(kv.AbilitySpecial) do
-                if v[specialValue] then
-                    local result = nil
-                    if string.find(v[specialValue], " ") then -- is this value an array?
-                        result = split(v[specialValue], " ")
-                        for k2, v2 in pairs(result) do
-                            result[k2] = tonumber(v2)
-                        end
-                    else
-                        result = tonumber(v[specialValue])
+        if kv.AbilityValues then
+            if kv.AbilityValues[specialValue] then
+                local result = nil
+                if string.find(kv.AbilityValues[specialValue], " ") then -- is this value an array?
+                    result = split(kv.AbilityValues[specialValue], " ")
+                    for k2, v2 in pairs(result) do
+                        result[k2] = tonumber(v2)
                     end
-                    return result
+                else
+                    result = tonumber(kv.AbilityValues[specialValue])
                 end
+                return result
             end
         end
         return nil

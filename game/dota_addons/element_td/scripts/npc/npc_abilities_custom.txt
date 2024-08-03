@@ -725,14 +725,10 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"MaxLevel"						"1"
 		"AbilityTextureName"			"icefrog_boss"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health"				"10"
-			}
-		}
+		"AbilityValues"
+        {
+            "health" "10"
+        }
 	}
 	//============================================================//
 	// Creep Ability: Bulky									      //
@@ -744,14 +740,10 @@
 		"MaxLevel"						"1"
 		"AbilityTextureName"			"pudge/scavenger_dragon_ability/pudge_flesh_heap"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health_pct"		"200"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_health_pct" "200"
+        }
 	}
 	//============================================================================================//
 	//============================================================================================//
@@ -804,29 +796,13 @@
 				}
 			}
 		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"fast_speed_pct"		"250"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"1"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"interval"				"3"	
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"interval_tooltip"		"2"	
-			}
-		}
+		"AbilityValues"
+        {
+            "fast_speed_pct" "250"
+            "duration" "1"
+            "interval" "3"
+            "interval_tooltip" "2"
+        }
 	}
 	//============================================================//
 	// Creep Ability: Heal										  //
@@ -838,19 +814,11 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"MaxLevel"						"1"
 		"AbilityTextureName"			"witch_doctor_voodoo_restoration"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"18"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aoe"					"300"
-			}
-		}
+		"AbilityValues"
+        {
+            "heal_amount" "18"
+            "aoe" "300"
+        }
 	
 		"Modifiers"
 		{
@@ -907,14 +875,10 @@
 		"AbilityTextureName"			"modifier_illusion"
 		"AbilityCooldown"				"15"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"		"10"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "10"
+        }
 	
 		"OnSpellStart"
 		{
@@ -966,19 +930,11 @@
 		"MaxLevel"						"1"
 		"AbilityTextureName"			"creeps/shield"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"2"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"interval"				"7"	
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "2"
+            "interval" "7"
+        }
 		"Modifiers"
 		{
 			"mechanical_buff"
@@ -1005,19 +961,11 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"MaxLevel"						"1"
 		"AbilityTextureName"			"enchantress_natures_attendants"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_health_regen"	"2.5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_heal_pct"			"100"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_health_regen" "2.5"
+            "max_heal_pct" "100"
+        }
 	
 		"Modifiers"
 		{
@@ -1039,19 +987,11 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"MaxLevel"						"1"
 		"AbilityTextureName"			"phantom_lancer_juxtapose"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bounty"				"50"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health"				"50"
-			}
-		}
+		"AbilityValues"
+        {
+            "bounty" "50"
+            "health" "50"
+        }
 	
 		"Modifiers"
 		{
@@ -1089,19 +1029,11 @@
 			"particle"  "particles/status_fx/status_effect_faceless_chronosphere.vpcf"
 		}
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_threshold"		"25"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"backtrack_duration"	"5"
-			}
-		}
+		"AbilityValues"
+        {
+            "health_threshold" "25"
+            "backtrack_duration" "5"
+        }
 	
 		"Modifiers"
 		{
@@ -1125,19 +1057,11 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"MaxLevel"						"1"
 		"AbilityTextureName"			"skeleton_king_reincarnation"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"delay"					"3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health"				"50"
-			}
-		}
+		"AbilityValues"
+        {
+            "delay" "3"
+            "health" "50"
+        }
 	}
 	//============================================================//
 	// Creep Ability: Vengeance								      //
@@ -1173,24 +1097,12 @@
 			}
 		}
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aoe"					"250"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_reduction"		"-10"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"10"
-			}
-		}
+		"AbilityValues"
+        {
+            "aoe" "250"
+            "damage_reduction" "-10"
+            "duration" "10"
+        }
 	}
 	"death_prophet_particles"
 	{
@@ -2030,19 +1942,11 @@
 		"LumberCost"					"1"
 		"Element"						"dark"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"level"					"1 2 3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health"				"600 3000 15000"
-			}
-		}
+		"AbilityValues"
+        {
+            "level" "1 2 3"
+            "health" "600 3000 15000"
+        }
 	
 		"OnSpellStart"
 		{
@@ -2068,19 +1972,11 @@
 		"LumberCost"					"1"
 		"Element"						"earth"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"level"					"1 2 3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health"				"600 3000 15000"
-			}
-		}
+		"AbilityValues"
+        {
+            "level" "1 2 3"
+            "health" "600 3000 15000"
+        }
 	
 		"OnSpellStart"
 		{
@@ -2106,19 +2002,11 @@
 		"LumberCost"					"1"
 		"Element"						"fire"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"level"					"1 2 3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health"				"600 3000 15000"
-			}
-		}
+		"AbilityValues"
+        {
+            "level" "1 2 3"
+            "health" "600 3000 15000"
+        }
 	
 		"OnSpellStart"
 		{
@@ -2144,19 +2032,11 @@
 		"LumberCost"					"1"
 		"Element"						"light"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"level"					"1 2 3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health"				"600 3000 15000"
-			}
-		}
+		"AbilityValues"
+        {
+            "level" "1 2 3"
+            "health" "600 3000 15000"
+        }
 	
 		"OnSpellStart"
 		{
@@ -2182,19 +2062,11 @@
 		"LumberCost"					"1"
 		"Element"						"nature"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"level"					"1 2 3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health"				"600 3000 15000"
-			}
-		}
+		"AbilityValues"
+        {
+            "level" "1 2 3"
+            "health" "600 3000 15000"
+        }
 	
 		"OnSpellStart"
 		{
@@ -2220,19 +2092,11 @@
 		"LumberCost"					"1"
 		"Element"						"water"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"level"					"1 2 3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health"				"600 3000 15000"
-			}
-		}
+		"AbilityValues"
+        {
+            "level" "1 2 3"
+            "health" "600 3000 15000"
+        }
 	
 		"OnSpellStart"
 		{
@@ -2320,14 +2184,10 @@
 	
 	    "AbilityMultiOrder"             "1"
 	
-	    "AbilitySpecial"
-	    {
-	        "02"
-	        {
-	            "var_type"              "FIELD_INTEGER"
-	            "splash_aoe"            "200"
-	        }
-	    }
+	    "AbilityValues"
+        {
+            "splash_aoe" "200"
+        }
 	
 	    "OnSpellStart"
 	    {
@@ -2406,19 +2266,11 @@
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
 		}
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"15 30 100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"60"	
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "15 30 100"
+            "duration" "60"
+        }
 	}
 	//============================================================//
 	// Cancel Building/Upgrade
@@ -2468,14 +2320,10 @@
 	 		}
 	  	}
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aoe"					"500"
-			}
-		}
+		"AbilityValues"
+        {
+            "aoe" "500"
+        }
 	}
 	//============================================================//
 	// Disease Tower: Soul Reaper
@@ -2528,19 +2376,11 @@
 	    "AbilityTextureName"            "towers/earth"
 	    "MaxLevel"                      "1"
 	
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"              "FIELD_INTEGER"
-	            "aftershock_damage_pct" "50"
-	        }
-	        "01"
-	        {
-	            "var_type"              "FIELD_FLOAT"
-	            "aftershock_delay"      "1"
-	        }
-	    }
+	    "AbilityValues"
+        {
+            "aftershock_damage_pct" "50"
+            "aftershock_delay" "1"
+        }
 	}
 	//=================================================================================================================
 	// Earth Tower: (OLD) Landslide
@@ -2569,14 +2409,10 @@
 	        }
 	    }
 	
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_FLOAT"
-	            "ministun_duration"   "0.1"
-	        }
-	    }
+	    "AbilityValues"
+        {
+            "ministun_duration" "0.1"
+        }
 	}
 	//=================================================================================================================
 	// Electricity Tower: Arc Lightning Passive
@@ -2614,34 +2450,14 @@
 			}
 		}
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"240 1200 6000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_increase"		"20"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bounce_range"			"300"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bounce_decrease"		"25"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"jump_count"			"7"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "240 1200 6000"
+            "damage_increase" "20"
+            "bounce_range" "300"
+            "bounce_decrease" "25"
+            "jump_count" "7"
+        }
 	}
 	//=================================================================================================================
 	// Enchantment Tower: Faerie Fire
@@ -2687,29 +2503,13 @@
 				"Event"				"OnFaerieFireCast"
 			}
 		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_damage_amp"		"10 23 80"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_damage_amp"		"18 42 140"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"amp_find_radius"		"150"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "10"
+            "base_damage_amp" "10 23 80"
+            "max_damage_amp" "18 42 140"
+            "amp_find_radius" "150"
+        }
 	}
 	//=================================================================================================================
 	// Ephemeral Tower: Phasing
@@ -2763,24 +2563,12 @@
 			}
 		}
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_reduction"	"-10"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"max_reduction"		"60 40 20"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"reset_time"		"2"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage_reduction" "-10"
+            "max_reduction" "60 40 20"
+            "reset_time" "2"
+        }
 	}
 	//=================================================================================================================
 	// Erosion Tower: Acid Attack
@@ -2875,29 +2663,13 @@
 				"EffectAttackType" "follow_origin"
 			}
 		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_amp"			"15 36 120"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dot"					"100 500 1500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"7.5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aoe"					"400"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage_amp" "15 36 120"
+            "dot" "100 500 1500"
+            "duration" "7.5"
+            "aoe" "400"
+        }
 	}
 	//=================================================================================================================
 	// Fire Tower: Blaze
@@ -2965,14 +2737,10 @@
 	        }
 	    }
 	
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"              "FIELD_FLOAT"
-	            "aoe"     "30"
-	        }
-	    }
+	    "AbilityValues"
+        {
+            "aoe" "30"
+        }
 	}
 	//=================================================================================================================
 	// Flamethrower Tower: Napalm
@@ -3014,24 +2782,12 @@
 			}
 		}
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"180 900 2700"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aoe"					"350"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"5"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "180 900 2700"
+            "aoe" "350"
+            "duration" "5"
+        }
 	}
 	//=================================================================================================================
 	// Flame Tower: Sunburn
@@ -3129,24 +2885,12 @@
 	        }
 	    }
 	
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"              "FIELD_INTEGER"
-	            "damage"                "60 300 1500"
-	        }
-	        "02"
-	        {
-	            "var_type"              "FIELD_INTEGER"
-	            "aoe"                   "200"
-	        }
-	        "03"
-	        {
-	            "var_type"              "FIELD_FLOAT"
-	            "duration"              "5"
-	        }
-	    }
+	    "AbilityValues"
+        {
+            "damage" "60 300 1500"
+            "aoe" "200"
+            "duration" "5"
+        }
 	}
 	//============================================================//
 	// Flooding Tower: Flood
@@ -3158,29 +2902,13 @@
 		"MaxLevel"						"3"
 		"AbilityTextureName"			"naga_siren_rip_tide"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"splash_damage"			"220 1100 3600"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"full_aoe"				"400"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"4"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"interval"				"1"
-			}
-		}
+		"AbilityValues"
+        {
+            "splash_damage" "220 1100 3600"
+            "full_aoe" "400"
+            "duration" "4"
+            "interval" "1"
+        }
 	}
 	//=================================================================================================================
 	// Gold Tower: Arbitrage
@@ -3195,14 +2923,10 @@
 		"AbilityTextureName"			"towers/gold"
 		"MaxLevel"						"3"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"35 35 35"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_gold" "35 35 35"
+        }
 	
 	    "OnToggleOn"
 	    {
@@ -3258,19 +2982,11 @@
 	
 	    "AbilityMultiOrder"     		"1"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"50 250 1250"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"splash_aoe"			"200"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "50 250 1250"
+            "splash_aoe" "200"
+        }
 	
 		"OnSpellStart"
 	    {
@@ -3364,29 +3080,13 @@
 	 		}
 	  	}
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attacks_required"		"14 13 12"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"15 20 25"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_mult"			"500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hail_radius"			"1750"
-			}
-		}
+		"AbilityValues"
+        {
+            "attacks_required" "14 13 12"
+            "crit_chance" "15 20 25"
+            "damage_mult" "500"
+            "hail_radius" "1750"
+        }
 	}
 	//=================================================================================================================
 	// Haste Tower: Wrath
@@ -3424,24 +3124,12 @@
 			}
 		}
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"reset_time"		"4"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bat_decrease_stack" "0.03"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"cap"				"16"
-			}
-		}
+		"AbilityValues"
+        {
+            "reset_time" "4"
+            "bat_decrease_stack" "0.03"
+            "cap" "16"
+        }
 	}
 	//=================================================================================================================
 	// Hydro Tower: Ability
@@ -3475,19 +3163,11 @@
 	 			}
 		}
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"		"700 3500 17500" //800,4000,20000
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"aoe"			"300"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "700 3500 17500"
+            "aoe" "300"
+        }
 	}
 	//=================================================================================================================
 	// Ice Tower: Ice Blast
@@ -3515,14 +3195,10 @@
 	        }
 	    }
 	
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_FLOAT"
-	            "ministun_duration"   "0.15 0.25 0.4"
-	        }
-	    }
+	    "AbilityValues"
+        {
+            "ministun_duration" "0.15 0.25 0.4"
+        }
 	}
 	//=================================================================================================================
 	// Impulse Tower: Impetus
@@ -3575,14 +3251,10 @@
 				}
 			}
 		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"multiplier"			"3300 16500 50000"
-			}
-		}
+		"AbilityValues"
+        {
+            "multiplier" "3300 16500 50000"
+        }
 	}
 	//=================================================================================================================
 	// Jinx Tower: Maledict
@@ -3637,34 +3309,14 @@
 				}
 			}
 		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_taken"			"6 15 45"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"tick_interval"			"2.5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"7.5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"ticks"					"3"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aoe"					"300"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage_taken" "6 15 45"
+            "tick_interval" "2.5"
+            "duration" "7.5"
+            "ticks" "3"
+            "aoe" "300"
+        }
 	}
 	//=================================================================================================================
 	// Laser Tower: Laser
@@ -3696,24 +3348,12 @@
 				}
 			}
 		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aoe"					"100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_reduction"		"10"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_reduction_cap"	"50"
-			}
-		}
+		"AbilityValues"
+        {
+            "aoe" "100"
+            "damage_reduction" "10"
+            "damage_reduction_cap" "50"
+        }
 	}
 	//============================================================//
 	// Life Tower: Afterlife
@@ -3763,29 +3403,13 @@
 			}
 		}
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"kills_required"				"8 6 2"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"heal_amount"					"1"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_bonus_full_hp_pct"		"50"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"points_per_kill"				"3 4 12"
-			}
-		}
+		"AbilityValues"
+        {
+            "kills_required" "8 6 2"
+            "heal_amount" "1"
+            "damage_bonus_full_hp_pct" "50"
+            "points_per_kill" "3 4 12"
+        }
 	}
 	//=================================================================================================================
 	// Light Tower: Intensity
@@ -3809,14 +3433,10 @@
 	        }
 	    }
 	
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"              "FIELD_INTEGER"
-	            "damage"                "5 35 250 2500"
-	        }
-	    }
+	    "AbilityValues"
+        {
+            "damage" "5 35 250 2500"
+        }
 	}
 	//============================================================//
 	// Magic Tower: Range
@@ -3867,24 +3487,12 @@
 			}
 		}
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range_per_stack"		"-25"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_stacks"			"32"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"2"
-			}
-		}
+		"AbilityValues"
+        {
+            "range_per_stack" "-25"
+            "max_stacks" "32"
+            "duration" "2"
+        }
 	}
 	//============================================================//
 	// Moss Tower: Spore
@@ -3987,24 +3595,12 @@
 			}
 		}
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aoe"					"300"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "5"
+            "aoe" "300"
+            "slow" "-12 -28 -52"
+        }
 	}
 	//=================================================================================================================
 	// Nature Tower: Force of Nature
@@ -4016,19 +3612,11 @@
 		"AbilityTextureName"			"towers/nature"
 		"MaxLevel"						"1"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aoe"					"125" //if you change this you also have to change the ability description
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "15"
+            "aoe" "125"
+        }
 	}
 	//=================================================================================================================
 	// Nova Tower: Explode
@@ -4130,29 +3718,13 @@
 			}
 		}
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 1500 6000"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"aoe"				"900"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"			"3"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slow"				"-12 -28 -52"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "300 1500 6000"
+            "aoe" "900"
+            "duration" "3"
+            "slow" "-12 -28 -52"
+        }
 	}
 	//=================================================================================================================
 	// Obliteration Tower: Obliterate
@@ -4248,24 +3820,12 @@
 	            }
 	        }
 		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_aoe"				"400"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"initial_aoe"			"200"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"4"
-			}
-		}
+		"AbilityValues"
+        {
+            "max_aoe" "400"
+            "initial_aoe" "200"
+            "duration" "4"
+        }
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"	"1"
@@ -4343,19 +3903,11 @@
 	        }
 	    }
 	
-	    "AbilitySpecial"
-	    {
-	         "01"
-	             {
-	                 "var_type"              "FIELD_FLOAT"
-	                 "damage_per_second"     "80 400 2000"
-	             }
-	             "02"
-	             {
-	                 "var_type"              "FIELD_FLOAT"
-	                 "duration"              "10.0"
-	             }
-	    }
+	    "AbilityValues"
+        {
+            "damage_per_second" "80 400 2000"
+            "duration" "10.0"
+        }
 	}
 	//=================================================================================================================
 	// Polar Tower: Frostbite
@@ -4404,19 +3956,11 @@
 			}
 		}
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_burn"			"12 27 60"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "10"
+            "health_burn" "12 27 60"
+        }
 	}
 	//=================================================================================================================
 	// Quake Tower: Pulverize
@@ -4448,24 +3992,12 @@
 				}
 			}
 		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"1800 9000 27000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"pct"					"1 2.5 4"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aoe"					"550"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "1800 9000 27000"
+            "pct" "1 2.5 4"
+            "aoe" "550"
+        }
 	}
 	//============================================================//
 	// Quark Tower: Quantum Beam
@@ -4499,19 +4031,11 @@
 				"AbilityTextureName"		"towers/quark_tower_quantum_beam"
 			}
 		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_stacks"			"11"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_damage" "15"
+            "max_stacks" "11"
+        }
 	}
 	//=================================================================================================================
 	// Roots Tower: Gaia's Wrath
@@ -4681,29 +4205,13 @@
 	            }
 	        }
 		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dps"					"100 500 2500"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"width"					"300"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "5"
+            "slow" "-12 -28 -52"
+            "dps" "100 500 2500"
+            "width" "300"
+        }
 	}
 	//=================================================================================================================
 	// Runic Tower: Magic Attack
@@ -4751,14 +4259,10 @@
 				}
 			}
 		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"3"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "3"
+        }
 	
 		"OnProjectileHitUnit"
 		{
@@ -4792,14 +4296,10 @@
 	            "SellAmount"        "0"
 	        }
 	    }
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"              "FIELD_INTEGER"
-	            "sell_amount_tooltip"   "0"
-	        }
-	    }
+	    "AbilityValues"
+        {
+            "sell_amount_tooltip" "0"
+        }
 	}
 	//============================================================//
 	// Sell Tower 100%
@@ -4822,14 +4322,10 @@
 	            "SellAmount"        "1"
 	        }
 	    }
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"              "FIELD_INTEGER"
-	            "sell_amount_tooltip"   "100"
-	        }
-	    }
+	    "AbilityValues"
+        {
+            "sell_amount_tooltip" "100"
+        }
 	}
 	//============================================================//
 	// Sell Tower 90%
@@ -4852,14 +4348,10 @@
 	            "SellAmount"        "0.90"
 	        }
 	    }
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"              "FIELD_INTEGER"
-	            "sell_amount_tooltip"   "90"
-	        }
-	    }
+	    "AbilityValues"
+        {
+            "sell_amount_tooltip" "90"
+        }
 	}
 	//============================================================//
 	// Sell Tower 98%
@@ -4882,14 +4374,10 @@
 	            "SellAmount"        "0.98"
 	        }
 	    }
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"              "FIELD_INTEGER"
-	            "sell_amount_tooltip"   "98"
-	        }
-	    }
+	    "AbilityValues"
+        {
+            "sell_amount_tooltip" "98"
+        }
 	}
 	//============================================================================================//
 	//============================================================================================//
@@ -4950,24 +4438,12 @@
 			}
 		}
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"45 225 675"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"aoe"				"10"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"reset_time"		"2"
-			}
-		}
+		"AbilityValues"
+        {
+            "damage" "45 225 675"
+            "aoe" "10"
+            "reset_time" "2"
+        }
 	}
 	//============================================================//
 	// Trickery Tower: Conjure
@@ -4986,14 +4462,10 @@
 		"AbilityCastRange"				"900"
 		"AbilityTextureName"			"towers/trickery"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"10 20 75"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "10 20 75"
+        }
 	}
 	//=================================================================================================================
 	// Vapor Tower: Evaporate
@@ -5010,24 +4482,12 @@
 		"AbilityTextureName"			"towers/vapor"
 		"MaxLevel"						"3"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_damage"			"60 300 1500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_creep"		"30 150 750"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aoe"					"550"
-			}
-		}
+		"AbilityValues"
+        {
+            "base_damage" "60 300 1500"
+            "damage_per_creep" "30 150 750"
+            "aoe" "550"
+        }
 	
 		"Modifiers"
 		{
@@ -5067,19 +4527,11 @@
 	        }
 	    }
 	
-	    "AbilitySpecial"
-	    {
-	        "01"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "bounce_range"        "250"
-	        }
-	        "02"
-	        {
-	            "var_type"            "FIELD_INTEGER"
-	            "bounce_damage_pct"   "25"
-	        }
-	    }
+	    "AbilityValues"
+        {
+            "bounce_range" "250"
+            "bounce_damage_pct" "25"
+        }
 	}
 	//============================================================//
 	// Well Tower: Spring Forward
@@ -5099,19 +4551,11 @@
 		"AbilityTextureName"			"towers/well"
 		"AbilityCastRange"				"900"
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"15 30 100"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"60"	
-			}
-		}
+		"AbilityValues"
+        {
+            "attack_speed" "15 30 100"
+            "duration" "60"
+        }
 	}
 	//=================================================================================================================
 	// Tornado: Slow
@@ -5207,24 +4651,12 @@
 				"IsHidden"		"1"
 			}
 		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"450"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"600 3000 9000"
-			}
-		}
+		"AbilityValues"
+        {
+            "slow" "-12 -28 -52"
+            "radius" "450"
+            "damage" "600 3000 9000"
+        }
 	}
 	//=================================================================================================================
 	// Windstorm Tower: Tornado
@@ -5312,29 +4744,13 @@
 	        }
 		}
 	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow"					"-12 -28 -52"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"600 3000 9000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"450"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"duration"				"5"
-			}
-		}
+		"AbilityValues"
+        {
+            "slow" "-12 -28 -52"
+            "damage" "600 3000 9000"
+            "radius" "450"
+            "duration" "5"
+        }
 	}
 
 	//=================================================================================================================

@@ -29,18 +29,10 @@
 		"nature"		"2"
 	}
     "ItemBaseLevel" "2"
-    "AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"1800 9000 27000"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"pct"					"1 2.5 4"
-		}
-	}
+    "AbilityValues"
+    {
+        "damage" "1800 9000 27000"
+        "pct" "1 2.5 4"
+    }
 	"AbilityCastRange"              "550"
 }

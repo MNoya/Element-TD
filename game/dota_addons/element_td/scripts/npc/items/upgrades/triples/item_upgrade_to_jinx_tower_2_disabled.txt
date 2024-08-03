@@ -19,13 +19,9 @@
 		"nature"		"2"
 	}
     "ItemBaseLevel" "2"
-    "AbilitySpecial"
-	{
-        "01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_taken"			"6 15 45"
-		}
+    "AbilityValues"
+    {
+        "damage_taken" "6 15 45"
     }
     "AbilityCastRange"              "900"
 }

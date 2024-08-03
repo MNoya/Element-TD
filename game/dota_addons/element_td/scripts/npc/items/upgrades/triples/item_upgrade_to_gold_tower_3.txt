@@ -29,13 +29,9 @@
 		"light"		"3"
 	}
     "ItemBaseLevel" "3"
-    "AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_gold"			"35 35 35"
-		}
-	}
+    "AbilityValues"
+    {
+        "bonus_gold" "35 35 35"
+    }
 	"AbilityCastRange"              "1150"
 }

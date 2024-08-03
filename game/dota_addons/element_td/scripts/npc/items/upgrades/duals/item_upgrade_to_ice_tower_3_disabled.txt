@@ -17,13 +17,9 @@
 		"light"		"3"
 	}
     "ItemBaseLevel" "3"
-    "AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_FLOAT"
-                        "ministun_duration"   "0.15 0.25 0.4"
-		}
+    "AbilityValues"
+    {
+        "ministun_duration" "0.15 0.25 0.4"
     }
     "AbilityCastRange"              "900"
 }

@@ -23,17 +23,9 @@
 		"soundfile" "soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
 	}
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"15 30 100"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"60"	
-		}
-	}
+	"AbilityValues"
+    {
+        "damage" "15 30 100"
+        "duration" "60"
+    }
 }

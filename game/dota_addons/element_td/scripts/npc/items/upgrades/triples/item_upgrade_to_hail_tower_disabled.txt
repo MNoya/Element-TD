@@ -20,18 +20,10 @@
 	}
 	"ItemBaseLevel" "1"
     "ItemCost" "900"
-    "AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"attacks_required"		"14 13 12"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"crit_chance"			"15 20 25"
-		}
-	}
+    "AbilityValues"
+    {
+        "attacks_required" "14 13 12"
+        "crit_chance" "15 20 25"
+    }
     "AbilityCastRange"              "1500"
 }

@@ -17,19 +17,11 @@
 
     "AbilityMultiOrder"     		"1"
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"50 250 1250"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"splash_aoe"			"200"
-		}
-	}
+	"AbilityValues"
+    {
+        "damage" "50 250 1250"
+        "splash_aoe" "200"
+    }
 
 	"OnSpellStart"
     {

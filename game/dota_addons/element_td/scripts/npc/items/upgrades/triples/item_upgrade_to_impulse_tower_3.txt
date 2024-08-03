@@ -29,13 +29,9 @@
 		"water"		"3"
 	}
     "ItemBaseLevel" "3"
-    "AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"multiplier"			"3300 16500 50000"
-		}
-	}
+    "AbilityValues"
+    {
+        "multiplier" "3300 16500 50000"
+    }
 	"AbilityCastRange"              "1750"
 }

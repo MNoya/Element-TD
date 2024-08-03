@@ -16,17 +16,9 @@
 	"AbilityTextureName"			"towers/well"
 	"AbilityCastRange"				"900"
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"attack_speed"			"15 30 100"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"60"	
-		}
-	}
+	"AbilityValues"
+    {
+        "attack_speed" "15 30 100"
+        "duration" "60"
+    }
 }

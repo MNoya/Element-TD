@@ -8,19 +8,11 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"MaxLevel"						"1"
 	"AbilityTextureName"			"enchantress_natures_attendants"
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"bonus_health_regen"	"2.5"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"max_heal_pct"			"100"
-		}
-	}
+	"AbilityValues"
+    {
+        "bonus_health_regen" "2.5"
+        "max_heal_pct" "100"
+    }
 
 	"Modifiers"
 	{

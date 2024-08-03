@@ -29,13 +29,9 @@
 		"earth"		"2"
 	}
     "ItemBaseLevel" "2"
-    "AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"health_burn"			"12 27 60"
-		}
-	}
+    "AbilityValues"
+    {
+        "health_burn" "12 27 60"
+    }
 	"AbilityCastRange"              "900"
 }

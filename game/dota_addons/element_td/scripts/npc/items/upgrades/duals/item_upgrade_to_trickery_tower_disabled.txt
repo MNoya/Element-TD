@@ -18,13 +18,9 @@
 	}
     "ItemBaseLevel" "1"
     "ItemCost" "425"
-    "AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"10 20 75"
-		}
-	}
+    "AbilityValues"
+    {
+        "duration" "10 20 75"
+    }
 	"AbilityCastRange"              "900"
 }

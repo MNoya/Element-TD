@@ -23,12 +23,8 @@
  		}
   	}
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"aoe"					"500"
-		}
-	}
+	"AbilityValues"
+    {
+        "aoe" "500"
+    }
 }

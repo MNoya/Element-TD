@@ -8,12 +8,8 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"MaxLevel"						"1"
 	"AbilityTextureName"			"icefrog_boss"
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"health"				"10"
-		}
-	}
+	"AbilityValues"
+    {
+        "health" "10"
+    }
 }

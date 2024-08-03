@@ -17,13 +17,9 @@
 		"earth"		"3"
 	}
     "ItemBaseLevel" "3"
-    "AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"15 30 100"
-		}
-	}
+    "AbilityValues"
+    {
+        "damage" "15 30 100"
+    }
 	"AbilityCastRange"              "900"
 }

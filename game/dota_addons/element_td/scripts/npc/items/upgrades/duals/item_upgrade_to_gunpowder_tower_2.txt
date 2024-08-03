@@ -27,13 +27,9 @@
 		"dark"		"2"
 	}
     "ItemBaseLevel" "2"
-    "AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"50 250 1250"
-		}
-	}
+    "AbilityValues"
+    {
+        "damage" "50 250 1250"
+    }
 	"AbilityCastRange"              "1500"
 }

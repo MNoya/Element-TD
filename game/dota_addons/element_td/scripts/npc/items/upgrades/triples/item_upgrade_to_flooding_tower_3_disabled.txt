@@ -19,13 +19,9 @@
 		"dark"		"3"
 	}
     "ItemBaseLevel" "3"
-    "AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"splash_damage"			"220 1100 3600"
-		}
-	}
+    "AbilityValues"
+    {
+        "splash_damage" "220 1100 3600"
+    }
 	"AbilityCastRange"              "900"
 }

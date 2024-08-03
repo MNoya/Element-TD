@@ -19,13 +19,9 @@
 		"light"		"3"
 	}
     "ItemBaseLevel" "3"
-    "AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"damage"			"45 225 675"
-		}
-	}
+    "AbilityValues"
+    {
+        "damage" "45 225 675"
+    }
 	"AbilityCastRange"              "900"
 }

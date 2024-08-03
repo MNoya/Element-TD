@@ -49,27 +49,11 @@
 			}
 		}
 	}
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"fast_speed_pct"		"250"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"1"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"interval"				"3"	
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"interval_tooltip"		"2"	
-		}
-	}
+	"AbilityValues"
+    {
+        "fast_speed_pct" "250"
+        "duration" "1"
+        "interval" "3"
+        "interval_tooltip" "2"
+    }
 }

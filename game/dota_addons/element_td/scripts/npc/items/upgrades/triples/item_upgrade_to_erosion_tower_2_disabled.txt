@@ -19,18 +19,10 @@
 		"water"		"2"
 	}
     "ItemBaseLevel" "2"
-    "AbilitySpecial"
-	{
-        "01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_amp"			"15 36 120"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"dot"					"100 500 1500"
-		}
+    "AbilityValues"
+    {
+        "damage_amp" "15 36 120"
+        "dot" "100 500 1500"
     }
     "AbilityCastRange"              "900"
 }

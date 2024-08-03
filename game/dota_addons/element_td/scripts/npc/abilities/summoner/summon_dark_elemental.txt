@@ -11,19 +11,11 @@
 	"LumberCost"					"1"
 	"Element"						"dark"
 	
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"level"					"1 2 3"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"health"				"600 3000 15000"
-		}
-	}
+	"AbilityValues"
+    {
+        "level" "1 2 3"
+        "health" "600 3000 15000"
+    }
 
 	"OnSpellStart"
 	{

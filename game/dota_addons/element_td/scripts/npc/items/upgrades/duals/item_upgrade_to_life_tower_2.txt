@@ -27,13 +27,9 @@
 		"nature"		"2"
 	}
     "ItemBaseLevel" "2"
-    "AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"kills_required"				"8 6 2"
-		}
-	}
+    "AbilityValues"
+    {
+        "kills_required" "8 6 2"
+    }
 	"AbilityCastRange"              "1150"
 }

@@ -23,17 +23,9 @@
         }
     }
 
-    "AbilitySpecial"
+    "AbilityValues"
     {
-        "01"
-        {
-            "var_type"            "FIELD_INTEGER"
-            "bounce_range"        "250"
-        }
-        "02"
-        {
-            "var_type"            "FIELD_INTEGER"
-            "bounce_damage_pct"   "25"
-        }
+        "bounce_range" "250"
+        "bounce_damage_pct" "25"
     }
 }

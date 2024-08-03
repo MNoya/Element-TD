@@ -19,13 +19,9 @@
 		"fire"		"3"
 	}
     "ItemBaseLevel" "3"
-    "AbilitySpecial"
-	{
-        "01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"180 900 2700"
-		}
-	}
+    "AbilityValues"
+    {
+        "damage" "180 900 2700"
+    }
 	"AbilityCastRange"              "700"
 }

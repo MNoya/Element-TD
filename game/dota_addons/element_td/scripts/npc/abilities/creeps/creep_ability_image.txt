@@ -11,14 +11,10 @@
 	"AbilityTextureName"			"modifier_illusion"
 	"AbilityCooldown"				"15"
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"		"10"
-		}
-	}
+	"AbilityValues"
+    {
+        "duration" "10"
+    }
 
 	"OnSpellStart"
 	{

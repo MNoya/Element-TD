@@ -84,27 +84,11 @@
         }
 	}
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"slow"					"-12 -28 -52"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"600 3000 9000"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"450"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"5"
-		}
-	}
+	"AbilityValues"
+    {
+        "slow" "-12 -28 -52"
+        "damage" "600 3000 9000"
+        "radius" "450"
+        "duration" "5"
+    }
 }

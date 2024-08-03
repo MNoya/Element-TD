@@ -17,18 +17,10 @@
 		"water"		"2"
 	}
 
-    "AbilitySpecial"
+    "AbilityValues"
     {
-         "01"
-             {
-                 "var_type"              "FIELD_FLOAT"
-                 "damage_per_second"     "80 400 2000"
-             }
-             "02"
-             {
-                 "var_type"              "FIELD_FLOAT"
-                 "duration"              "10.0"
-             }
+        "damage_per_second" "80 400 2000"
+        "duration" "10.0"
     }
 	"AbilityCastRange"              "900"
 }

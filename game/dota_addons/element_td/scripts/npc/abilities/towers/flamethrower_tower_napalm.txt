@@ -38,22 +38,10 @@
 		}
 	}
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"180 900 2700"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"aoe"					"350"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"5"
-		}
-	}
+	"AbilityValues"
+    {
+        "damage" "180 900 2700"
+        "aoe" "350"
+        "duration" "5"
+    }
 }

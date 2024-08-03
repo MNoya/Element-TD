@@ -9,19 +9,11 @@
 	"MaxLevel"						"1"
 	"AbilityTextureName"			"creeps/shield"
 
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"2"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"interval"				"7"	
-		}
-	}
+	"AbilityValues"
+    {
+        "duration" "2"
+        "interval" "7"
+    }
 	"Modifiers"
 	{
 		"mechanical_buff"

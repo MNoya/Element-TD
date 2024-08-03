@@ -27,18 +27,10 @@
 		"water"		"3"
 	}
     "ItemBaseLevel" "3"
-    "AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"base_damage"			"60 300 1500"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_per_creep"		"30 150 750"
-		}
-	}
+    "AbilityValues"
+    {
+        "base_damage" "60 300 1500"
+        "damage_per_creep" "30 150 750"
+    }
 	"AbilityCastRange"              "550"
 }

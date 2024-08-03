@@ -44,14 +44,10 @@
 			}
 		}
 	}
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"3"
-		}
-	}
+	"AbilityValues"
+    {
+        "duration" "3"
+    }
 
 	"OnProjectileHitUnit"
 	{

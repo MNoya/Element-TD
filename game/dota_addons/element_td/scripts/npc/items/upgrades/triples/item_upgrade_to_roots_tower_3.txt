@@ -29,18 +29,10 @@
 		"nature"		"3"
 	}
     "ItemBaseLevel" "3"
-    "AbilitySpecial"
-	{
-        "01"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"slow"					"-12 -28 -52"
-		}
-        "02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"dps"					"100 500 2500"
-		}
+    "AbilityValues"
+    {
+        "slow" "-12 -28 -52"
+        "dps" "100 500 2500"
     }
     "AbilityCastRange"              "900"
 }

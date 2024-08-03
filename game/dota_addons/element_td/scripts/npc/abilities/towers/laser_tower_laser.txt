@@ -28,22 +28,10 @@
 			}
 		}
 	}
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"aoe"					"100"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_reduction"		"10"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_reduction_cap"	"50"
-		}
-	}
+	"AbilityValues"
+    {
+        "aoe" "100"
+        "damage_reduction" "10"
+        "damage_reduction_cap" "50"
+    }
 }

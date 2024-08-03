@@ -19,12 +19,8 @@
             "SellAmount"        "0.90"
         }
     }
-    "AbilitySpecial"
+    "AbilityValues"
     {
-        "01"
-        {
-            "var_type"              "FIELD_INTEGER"
-            "sell_amount_tooltip"   "90"
-        }
+        "sell_amount_tooltip" "90"
     }
 }
