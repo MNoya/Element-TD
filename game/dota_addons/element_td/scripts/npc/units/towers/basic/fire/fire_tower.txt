@@ -87,6 +87,7 @@
     "StatusHealthRegen"         "0"
     "StatusMana"                "0"
     "StatusManaRegen"           "0"
+    "HasInventory"              "1"
 
     // Building Size
     "ConstructionSize"          "2"

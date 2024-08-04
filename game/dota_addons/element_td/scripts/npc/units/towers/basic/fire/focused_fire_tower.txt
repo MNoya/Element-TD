@@ -73,7 +73,7 @@
     "VisionNighttimeRange"      "1900"  
     "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageType"          "DAMAGE_TYPE_ArmorPhysical"
-        "ProjectileCollisionSize"   "50"
+    "ProjectileCollisionSize"   "50"
     "RingRadius"                "80"
     "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
     "MovementSpeed"             "0"
@@ -82,6 +82,7 @@
     "StatusHealthRegen"         "0"
     "StatusMana"                "0"
     "StatusManaRegen"           "0"
+    "HasInventory"              "1"
 
     // Building Size
     "ConstructionSize"          "2"

@@ -39,6 +39,7 @@
     "StatusHealthRegen"        "0"            // Health regeneration rate"
     "StatusMana"        "0"            // Base mana"
     "StatusManaRegen"        "0"            // Mana regeneration rate"
+    "HasInventory"              "1"
     "BoundsHullName"        "DOTA_HULL_SIZE_TOWER"
     "ProjectileCollisionSize"        "50"
     "RingRadius"        "180"

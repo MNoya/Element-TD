@@ -28,6 +28,7 @@
     "StatusHealthRegen"         "0"
     "StatusMana"                "0"
     "StatusManaRegen"           "0"
+    "HasInventory"              "1"
     "TeamName"        "DOTA_TEAM_GOODGUYS"
     "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
     "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"

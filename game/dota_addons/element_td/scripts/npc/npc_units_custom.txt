@@ -3375,6 +3375,7 @@
 	    "StatusHealthRegen"        "0"            // Health regeneration rate"
 	    "StatusMana"        "0"            // Base mana"
 	    "StatusManaRegen"        "0"            // Mana regeneration rate"
+	    "HasInventory"              "1"
 	    "BoundsHullName"        "DOTA_HULL_SIZE_TOWER"
 	    "ProjectileCollisionSize"        "50"
 	    "RingRadius"        "180"
@@ -4145,7 +4146,8 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
-	
+	    "HasInventory"              "1"
+
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
 	}
@@ -4219,7 +4221,8 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
-	
+	    "HasInventory"              "1"
+
 	    // Building Size
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
@@ -4292,7 +4295,8 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
-	
+	    "HasInventory"              "1"
+
 	    // Building Size
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
@@ -4365,7 +4369,8 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
-	
+	    "HasInventory"              "1"
+
 	    // Building Size
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
@@ -4438,7 +4443,8 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
-	
+	    "HasInventory"              "1"
+
 	    // Building Size
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
@@ -4510,7 +4516,8 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
-	
+	    "HasInventory"              "1"
+
 	    // Building Size
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
@@ -4583,7 +4590,8 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
-	
+	    "HasInventory"              "1"
+
 	    // Building Size
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
@@ -4656,7 +4664,8 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
-	
+	    "HasInventory"              "1"
+
 	    // Building Size
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
@@ -4734,7 +4743,8 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
-	
+	    "HasInventory"              "1"
+
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
 	}
@@ -4810,7 +4820,8 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
-	
+	    "HasInventory"              "1"
+
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
 	}
@@ -4886,7 +4897,8 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
-	
+	    "HasInventory"              "1"
+
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
 	}
@@ -4962,7 +4974,8 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
-	
+	    "HasInventory"              "1"
+
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
 	}
@@ -5038,6 +5051,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
@@ -5114,6 +5128,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
@@ -5190,6 +5205,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
@@ -5281,6 +5297,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -5368,6 +5385,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -5451,6 +5469,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -5538,6 +5557,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -5632,6 +5652,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -5729,6 +5750,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -5815,6 +5837,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -5905,6 +5928,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -5999,6 +6023,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -6088,6 +6113,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -6174,6 +6200,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -6262,6 +6289,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -6351,6 +6379,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -6445,6 +6474,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -6534,6 +6564,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -6624,6 +6655,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -6713,6 +6745,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -6807,6 +6840,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -6892,6 +6926,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -6982,6 +7017,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -7070,6 +7106,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -7158,6 +7195,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -7249,7 +7287,8 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
-	
+	    "HasInventory"              "1"
+
 	    // Building Size
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
@@ -7344,6 +7383,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -7378,6 +7418,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -7453,6 +7494,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -7525,6 +7567,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -7596,6 +7639,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -7674,6 +7718,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -7750,6 +7795,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -7820,6 +7866,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -7899,6 +7946,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -7986,6 +8034,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -8072,6 +8121,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -8163,6 +8213,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -8250,6 +8301,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -8339,6 +8391,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -8432,6 +8485,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -8485,7 +8539,7 @@
 	            "5" { "ItemDef" "7187" } // Perforator
 	       }
 	    }
-	
+
 	    // Building Size
 	    "ConstructionSize"          "2"
 	    "BlockPathingSize"          "0"
@@ -8521,6 +8575,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -8668,6 +8723,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -8756,6 +8812,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -8841,6 +8898,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -8872,6 +8930,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -8965,6 +9024,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -9053,6 +9113,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -9141,6 +9202,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -9250,6 +9312,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -9337,6 +9400,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -9421,6 +9485,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -9513,6 +9578,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -9601,6 +9667,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -9687,6 +9754,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -9783,6 +9851,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -9874,6 +9943,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -9963,6 +10033,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -10056,6 +10127,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -10146,6 +10218,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -10232,6 +10305,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -10348,6 +10422,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -10440,6 +10515,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -10530,6 +10606,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -10619,6 +10696,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -10703,6 +10781,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -10784,6 +10863,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -10873,6 +10953,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -11005,6 +11086,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -11084,6 +11166,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -11161,6 +11244,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -11236,6 +11320,7 @@
 	    "StatusHealthRegen"         "0"
 	    "StatusMana"                "0"
 	    "StatusManaRegen"           "0"
+	    "HasInventory"              "1"
 	
 	    // Building Size
 	    "ConstructionSize"          "2"
@@ -11270,6 +11355,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -11364,6 +11450,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -11457,6 +11544,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -11550,6 +11638,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -11640,6 +11729,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -11731,6 +11821,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -11820,6 +11911,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -11914,6 +12006,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -12008,6 +12101,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -12100,6 +12194,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -12193,6 +12288,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -12287,6 +12383,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -12377,6 +12474,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -12467,6 +12565,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -12557,6 +12656,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -12647,6 +12747,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -12742,6 +12843,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -12837,6 +12939,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -12930,6 +13033,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -13023,6 +13127,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -13116,6 +13221,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -13205,6 +13311,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -13294,6 +13401,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -13383,6 +13491,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -13470,6 +13579,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -13559,6 +13669,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -13648,6 +13759,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -13735,6 +13847,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -13824,6 +13937,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -13913,6 +14027,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -14000,6 +14115,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -14091,6 +14207,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -14183,6 +14300,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -14273,6 +14391,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -14365,6 +14484,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -14457,6 +14577,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -14547,6 +14668,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -14623,6 +14745,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -14699,6 +14822,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -14775,6 +14899,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -14865,6 +14990,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -14955,6 +15081,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -15043,6 +15170,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -15137,6 +15265,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -15231,6 +15360,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -15322,6 +15452,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -15410,6 +15541,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -15499,6 +15631,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -15586,6 +15719,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -15674,6 +15808,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -15761,6 +15896,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -15848,6 +15984,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -15943,6 +16080,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -16038,6 +16176,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -16129,6 +16268,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -16222,6 +16362,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -16315,6 +16456,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -16411,6 +16553,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"            "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"                "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_BASIC"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRONG"
@@ -16445,6 +16588,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -16535,6 +16679,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
@@ -16625,6 +16770,7 @@
 	    "StatusHealthRegen"        "0"
 	    "StatusMana"        "0"
 	    "StatusManaRegen"        "0"
+	    "HasInventory"              "1"
 	    "TeamName"        "DOTA_TEAM_GOODGUYS"
 	    "CombatClassAttack"        "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 	    "CombatClassDefend"        "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"

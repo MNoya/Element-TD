@@ -70,6 +70,7 @@
     "StatusHealthRegen"         "0"
     "StatusMana"                "0"
     "StatusManaRegen"           "0"
+    "HasInventory"              "1"
 
     "ConstructionSize"          "2"
     "BlockPathingSize"          "0"
