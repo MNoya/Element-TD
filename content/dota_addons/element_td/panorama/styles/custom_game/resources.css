@@ -49,56 +49,73 @@
     height: 28px;
 }
 
+.align_center {
+    horizontal-align: center;
+}
+
+.align_right {
+    horizontal-align: right;
+}
+
+.second_row {
+    position: 0px 32px 0px;
+}
+
 #ElementWater
 {
-    horizontal-align: center;
+    width: 32px;
+    height: 32px;
     background-image: url("file://{resources}/images/custom_game/resources/water.png");
-    background-size: 32px 32px;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 #ElementFire
 {
-    horizontal-align: center;
-    position: 0px 32px 0px;
+    width: 32px;
+    height: 32px;
     background-image: url("file://{resources}/images/custom_game/resources/fire.png");
-    background-size: 32px 32px;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 #ElementNature
 {
+    width: 32px;
+    height: 32px;
     margin-right: 6px;
-    horizontal-align: right;
     background-image: url("file://{resources}/images/custom_game/resources/nature.png");
-    background-size: 32px 32px;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 #ElementEarth
 {
-    horizontal-align: right;
+    width: 32px;
+    height: 32px;
     margin-right: 6px;
-    position: 0px 32px 0px;
     background-image: url("file://{resources}/images/custom_game/resources/earth.png");
-    background-size: 32px 32px;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 #ElementLight
 {
+    width: 32px;
+    height: 32px;
     margin-left: 4px;
     background-image: url("file://{resources}/images/custom_game/resources/light.png");
-    background-size: 32px 32px;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 #ElementDark
 {
+    width: 32px;
+    height: 32px;
     margin-left: 4px;    
-    position: 0px 32px 0px;
     background-image: url("file://{resources}/images/custom_game/resources/dark.png");
-    background-size: 32px 32px;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
@@ -109,7 +126,8 @@
 .AspectRatio4x3 #ElementLight, .AspectRatio5x4 #ElementLight,
 .AspectRatio4x3 #ElementDark, .AspectRatio5x4 #ElementDark
 {
-    background-size: 26px 26px;
+    width: 26px;
+    height: 26px;
     background-position: left 0px top 3px;
 }
 

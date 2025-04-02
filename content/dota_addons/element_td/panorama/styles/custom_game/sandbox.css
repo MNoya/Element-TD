@@ -798,43 +798,55 @@
 
 #light
 {
+    width: 32px;
+    height: 32px;
     background-image: url("file://{resources}/images/custom_game/resources/light.png");
-    background-size: 32px 32px;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 #dark
 {   
+    width: 32px;
+    height: 32px;
     background-image: url("file://{resources}/images/custom_game/resources/dark.png");
-    background-size: 32px 32px;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 #water
 {
+    width: 32px;
+    height: 32px;
     background-image: url("file://{resources}/images/custom_game/resources/water.png");
-    background-size: 32px 32px;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 #fire
 {
+    width: 32px;
+    height: 32px;
     background-image: url("file://{resources}/images/custom_game/resources/fire.png");
-    background-size: 32px 32px;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 #nature
 {
+    width: 32px;
+    height: 32px;
     background-image: url("file://{resources}/images/custom_game/resources/nature.png");
-    background-size: 32px 32px;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
 #earth
 {
+    width: 32px;
+    height: 32px;
     background-image: url("file://{resources}/images/custom_game/resources/earth.png");
-    background-size: 32px 32px;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 

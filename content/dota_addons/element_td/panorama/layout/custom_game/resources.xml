@@ -31,23 +31,29 @@
       <Label hittest="false" id="ScoreText" text="0" class="TitleFont" />
     </Panel>
     <Panel hittest="true" id="ResourceElements">
-      <Panel hittest="false"  id="ElementWater" class="element no_element_levels" onmouseover="ShowTooltip('#water')" onmouseout="DOTAHideTitleTextTooltip()">
-        <Label id="WaterValue"  text="0" class="value"/>
+      <Panel hittest="false" class="element no_element_levels align_center" onmouseover="ShowTooltip('#water')" onmouseout="DOTAHideTitleTextTooltip()">
+        <Image hittest="false" id="ElementWater"/>
+        <Label id="WaterValue" text="0" class="value"/>
       </Panel>
-      <Panel hittest="false"  id="ElementFire" class="element  no_element_levels" onmouseover="ShowTooltip('#fire')" onmouseout="DOTAHideTitleTextTooltip()">
-        <Label id="FireValue"  text="0" class="value"/>
+      <Panel hittest="false" class="element no_element_levels align_center second_row" onmouseover="ShowTooltip('#fire')" onmouseout="DOTAHideTitleTextTooltip()">
+        <Image hittest="false" id="ElementFire"/>
+        <Label id="FireValue" text="0" class="value"/>
       </Panel>
-      <Panel hittest="false"  id="ElementNature" class="element  no_element_levels" onmouseover="ShowTooltip('#nature')" onmouseout="DOTAHideTitleTextTooltip()">
-        <Label id="NatureValue"  text="0" class="value"/>
+      <Panel hittest="false" class="element no_element_levels align_right" onmouseover="ShowTooltip('#nature')" onmouseout="DOTAHideTitleTextTooltip()">
+        <Image hittest="false" id="ElementNature"/>
+        <Label id="NatureValue" text="0" class="value"/>
       </Panel>
-      <Panel hittest="false"  id="ElementEarth" class="element  no_element_levels" onmouseover="ShowTooltip('#earth')" onmouseout="DOTAHideTitleTextTooltip()">
-        <Label id="EarthValue"  text="0" class="value"/>
+      <Panel hittest="false" class="element no_element_levels align_right second_row" onmouseover="ShowTooltip('#earth')" onmouseout="DOTAHideTitleTextTooltip()">
+        <Image hittest="false" id="ElementEarth"/>
+        <Label id="EarthValue" text="0" class="value"/>
       </Panel>
-      <Panel hittest="false"  id="ElementLight" class="element  no_element_levels" onmouseover="ShowTooltip('#light')" onmouseout="DOTAHideTitleTextTooltip()">
-        <Label id="LightValue"  text="0" class="value"/>
+      <Panel hittest="false" class="element no_element_levels" onmouseover="ShowTooltip('#light')" onmouseout="DOTAHideTitleTextTooltip()">
+        <Image hittest="false" id="ElementLight"/>
+        <Label id="LightValue" text="0" class="value"/>
       </Panel>
-      <Panel hittest="false"  id="ElementDark" class="element  no_element_levels" onmouseover="ShowTooltip('#dark')" onmouseout="DOTAHideTitleTextTooltip()">
-        <Label id="DarkValue"  text="0" class="value"/>
+      <Panel hittest="false" class="element no_element_levels second_row" onmouseover="ShowTooltip('#dark')" onmouseout="DOTAHideTitleTextTooltip()">
+        <Image hittest="false" id="ElementDark"/>
+        <Label id="DarkValue" text="0" class="value"/>
       </Panel>
     </Panel>
     <Label id="SelectSummoner" onactivate="SelectSummoner()" text="#DOTA_LevelUp" />
