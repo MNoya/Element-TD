@@ -34,6 +34,10 @@ $.Msg( "Compiled Panorama Scripts!" );
 	var glyphScanContainer = hud.FindChildTraverse("HUDElements").FindChildTraverse("minimap_container").FindChildTraverse("GlyphScanContainer");
 	glyphScanContainer.style.visibility = "collapse";
 
+	// Remove Roshan Timer
+	var roshanTimerContainer = hud.FindChildTraverse("HUDElements").FindChildTraverse("minimap_container").FindChildTraverse("RoshanTimerContainer");
+	roshanTimerContainer.style.visibility = "collapse";
+
 	// Fix side info panel
 	var gameinfo = hud.FindChildTraverse("CustomUIRoot").FindChildTraverse("CustomUIContainer_GameInfo");
 	gameinfo.FindChildTraverse("GameInfoPanel").style['margin-top'] = "0px";

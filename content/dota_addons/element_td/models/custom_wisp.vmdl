@@ -1,4 +1,4 @@
-<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc32:version{c5dcef98-b629-46ab-88e3-a17c005c935e} -->
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc39:version{1ceecb0d-4093-4729-ab18-b76886c64cde} -->
 {
 	rootNode = 
 	{
@@ -75,6 +75,7 @@
 					{
 						_class = "AnimFile"
 						name = "Cube"
+						is_default_idle_anim = false
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -102,5 +103,6 @@
 		primary_associated_entity = ""
 		anim_graph_name = ""
 		importer_notes = "Imported from VMDL"
+		document_sub_type = "ModelDocSubType_None"
 	}
 }
