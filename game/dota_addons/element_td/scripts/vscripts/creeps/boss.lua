@@ -93,7 +93,7 @@ function CreepBoss:OnSpawned()
         creep:SetMaxHealth(health * health_multiplier)
         creep:SetBaseMaxHealth(health * health_multiplier)
         creep:SetHealth(creep:GetMaxHealth() * health_multiplier)
-        creep:SetModelScale(creep:GetModelScale()*1.8)
+        creep:SetModelScale(creep:GetModelScale() * 1.8)
     end
 
     if creep:HasAbility("creep_ability_time_lapse") then
@@ -190,6 +190,7 @@ function CreepBoss:OnDeath(killer)
         newCreep.sector = creep.sector --coop only
         newCreep:CreatureLevelUp(newCreep.waveObject.waveNumber-newCreep:GetLevel())
         AddAbility(newCreep, creepsKV[creepClass].CreepAbility1) -- give armor ability
+        AddAbility(newCreep, creepsKV[creepClass].CreepAbility2) -- give boss ability
         
         local newEntIndex = newCreep:entindex()
         creep.waveObject:RegisterCreep(newEntIndex)

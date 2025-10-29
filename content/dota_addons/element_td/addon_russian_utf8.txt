@@ -548,8 +548,8 @@
         "DOTA_Tooltip_ability_creep_ability_image_duration"     "ВРЕМЯ ЖИЗНИ ИЛЛЮЗИИ:"
         
         "DOTA_Tooltip_ability_creep_ability_boss"                                         "Босс"
-        "DOTA_Tooltip_ability_creep_ability_boss_Description"                             "Баланс во всём. С каждой волной увеличивает своё здоровье."
-        "DOTA_Tooltip_ability_creep_ability_boss_health"                                  "%ЗДОРОВЬЕ:"
+        "DOTA_Tooltip_ability_creep_ability_boss_Description"                             "Баланс во всём. Увеличивает сопротивление урону с каждой волной."
+        "DOTA_Tooltip_ability_creep_ability_boss_damage_reduction"                        "%УМЕНЬШЕНИЕ УРОНА ЗА УРОВЕНЬ:"
         
         "DOTA_Tooltip_ability_creep_ability_swarm"                                        "Рой"
         "DOTA_Tooltip_ability_creep_ability_swarm_Description"                            "Этот крип делится на двух меньших, когда его здоровье падает ниже половины. Разделения не будет, если крип умирает с одного выстрела, когда его здоровье выше половины."

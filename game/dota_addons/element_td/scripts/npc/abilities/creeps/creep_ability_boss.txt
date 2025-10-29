@@ -10,6 +10,6 @@
 	"AbilityTextureName"			"icefrog_boss"
 	"AbilityValues"
     {
-        "health" "10"
+        "damage_reduction" "30"
     }
 }

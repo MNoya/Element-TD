@@ -47,7 +47,7 @@ function WaveCoop:RegisterCreep(index)
 	if not self.creeps[index] then
 		self.creeps[index] = index
 	else
-		Log:warn("Attemped to register creep " .. index .. " which is already register!")
+		Log:warn("Attempted to register creep " .. index .. " which is already register!")
 	end
 end
 

@@ -297,7 +297,7 @@ function SpawnEntity(entityClass, playerID, position, waveNumber)
 
         return entity
     else
-        Log:error("Attemped to create unknown creep type: " .. entityClass)
+        Log:error("Attempted to create unknown creep type: " .. entityClass)
         return nil
     end
 end

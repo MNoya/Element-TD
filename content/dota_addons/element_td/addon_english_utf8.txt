@@ -592,8 +592,8 @@
         "DOTA_Tooltip_ability_creep_ability_image_duration"     "IMAGE DURATION:"
 
         "DOTA_Tooltip_ability_creep_ability_boss"                                         "Boss"
-        "DOTA_Tooltip_ability_creep_ability_boss_Description"                             "Balance in all things. With each wave, its health increases."
-        "DOTA_Tooltip_ability_creep_ability_boss_health"                                  "%HEALTH:"
+        "DOTA_Tooltip_ability_creep_ability_boss_Description"                             "Balance in all things. With each wave, its damage reduction increases."
+        "DOTA_Tooltip_ability_creep_ability_boss_damage_reduction"                        "%DAMAGE REDUCTION:"
 
         "DOTA_Tooltip_ability_creep_ability_swarm"                                        "Swarm"
         "DOTA_Tooltip_ability_creep_ability_swarm_Description"                            "Upon dropping down to half health, this creep splits into two smaller creeps. The creep split does not happen if the creep dies in one shot while over half health."

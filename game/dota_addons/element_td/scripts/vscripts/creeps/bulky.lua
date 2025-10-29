@@ -17,11 +17,11 @@ function CreepBulky:OnSpawned()
 	local creep = self.creep
 	self.ability = self.creep:FindAbilityByName("creep_ability_bulky")
 	local health_multiplier = self.ability:GetSpecialValueFor("bonus_health_pct") * 0.01
-    local health = creep:GetHealth()
-    creep:SetMaxHealth(health * health_multiplier)
-    creep:SetBaseMaxHealth(health * health_multiplier)
-    creep:SetHealth(creep:GetMaxHealth() * health_multiplier)
-    creep:SetModelScale(creep:GetModelScale() * 1.7)
+	local health = creep:GetHealth()
+	creep:SetMaxHealth(health * health_multiplier)
+	creep:SetBaseMaxHealth(health * health_multiplier)
+	creep:SetHealth(creep:GetMaxHealth() * health_multiplier)
+	creep:SetModelScale(creep:GetModelScale() * 1.7)
 end
 
 RegisterCreepClass(CreepBulky, CreepBulky.className)

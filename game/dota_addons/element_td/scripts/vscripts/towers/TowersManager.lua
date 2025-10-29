@@ -7,7 +7,7 @@ end
 
 function RegisterTowerClass(class, name)
 	if not class and name then
-		Log:warn("Attemped to create nil class: " .. name)
+		Log:warn("Attempted to create nil class: " .. name)
 	else
 		class.OnCreated = class.OnCreated or (function(self) end)
 		class.OnBuildingFinished = class.OnBuildingFinished or (function(self) end)

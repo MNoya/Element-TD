@@ -54,7 +54,7 @@ function Wave:RegisterCreep(index)
 	if not self.creeps[index] then
 		self.creeps[index] = index
 	else
-		Log:warn("Attemped to register creep " .. index .. " which is already register!")
+		Log:warn("Attempted to register creep " .. index .. " which is already register!")
 	end
 end
 
@@ -99,7 +99,15 @@ function Wave:SpawnWave()
 
 			-- Boss mode
 			if self.waveNumber == WAVE_COUNT and not EXPRESS_MODE then
-				local bossHealth = WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier() * (math.pow(1.3,playerData.bossWaves))
+				local abilityBoss = entity:FindAbilityByName("creep_ability_boss")
+				local damageReductionValue = 1
+
+				if abilityBoss then
+						local bossDamageReduction = abilityBoss:GetSpecialValueFor("damage_reduction")
+						damageReductionValue = bossDamageReduction / 100 + 1
+				end
+
+				local bossHealth = WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier() * damageReductionValue
 				entity:SetMaxHealth(bossHealth)
 				entity:SetBaseMaxHealth(bossHealth)
 				entity:SetHealth(entity:GetMaxHealth())

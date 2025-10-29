@@ -20,9 +20,9 @@ function DamageEntity(entity, attacker, damage, pure, element_override)
         damage = ApplyDamageAmplification(damage, entity, attacker)
     end
 
-    damage = math.ceil(damage) --round up to the nearest integer
+    damage = math.ceil(damage) -- Round up to the nearest integer
     local amplified = damage
-            
+
     if GameRules.DebugDamage then
         local sourceName = attacker.class
         local targetName = entity.class
@@ -32,11 +32,44 @@ function DamageEntity(entity, attacker, damage, pure, element_override)
         end
     end
 
-    
+    -- Damage reduction for boss level
+    if entity:GetUnitName() == "icefrog" and entity.waveObject then
+        local playerData = entity.waveObject.playerData
+
+        if playerData and playerData.bossWaves and playerData.bossWaves > 0 then
+            -- Apply inverse scaling: reduce damage by the scaling factor
+            local abilityBoss = entity:FindAbilityByName("creep_ability_boss")
+            local damageReductionValue = 1
+
+            if abilityBoss then
+                local bossDamageReduction = abilityBoss:GetSpecialValueFor("damage_reduction")
+                damageReductionValue = bossDamageReduction / 100 + 1
+            end
+
+            local damageReduction = math.pow(damageReductionValue, playerData.bossWaves)
+            local reducedDamage = damage / damageReduction
+
+            local totalDamage = reducedDamage + (entity.fractionalDamage or 0)
+
+            -- Apply only the integer part now
+            local appliedDamage = math.floor(totalDamage)
+
+            entity.fractionalDamage = totalDamage - appliedDamage
+            
+            if GameRules.DebugDamage then
+                print(string.format(
+                    "[DAMAGE] Reduction: %.4f | Original %d | Reduced: %.4f | Total: %.4f | Applied: %d | Carry-over: %.4f",
+                    damageReduction, damage, reducedDamage, totalDamage, appliedDamage, entity.fractionalDamage or 0
+                ))
+            end
+            damage = appliedDamage
+        end
+    end
+
     local playerID = attacker:GetPlayerOwnerID()
     local playerData = GetPlayerData(playerID)
     if playerData.godMode then
-        damage = entity:GetMaxHealth()*2
+        damage = entity:GetMaxHealth() * 2
     elseif playerData.zenMode then
         damage = 0
     end
