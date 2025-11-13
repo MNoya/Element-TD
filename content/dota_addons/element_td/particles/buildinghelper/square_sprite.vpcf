@@ -1,10 +1,122 @@
-<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf63:version{a6e6a69e-52d3-4527-8b9c-ff3bb91aca3e} -->
 {
 	_class = "CParticleSystemDefinition"
-	m_flCullRadius = -1.000000
-	m_flConstantRadius = 64.000000
+	m_flCullRadius = -1.0
+	m_flConstantRadius = 64.0
 	m_nMaxParticles = 4
-	m_Operators =
+	m_nBehaviorVersion = 12
+	m_nFirstMultipleOverride_BackwardCompat = 2
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iControlPoint = 2
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 255.0, 255.0, 255.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 3
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 1.0
+			}
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateWithinSphereTransform"
+		},
+		{
+			m_bDisableOperator = true
+			_class = "C_INIT_InitFloat"
+			m_InputValue = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 1.0
+			}
+			m_nOutputField = 1
+		},
+		{
+			_class = "C_INIT_InitFloat"
+			m_InputValue = 
+			{
+				m_flInput0 = 0.0
+				m_flInput1 = 128.0
+				m_flOutput0 = 0.0
+				m_flOutput1 = 128.0
+				m_nMapType = "PF_MAP_TYPE_REMAP"
+				m_nType = "PF_TYPE_CONTROL_POINT_COMPONENT"
+				m_nControlPoint = 1
+				m_nVectorComponent = 0
+			}
+		},
+		{
+			_class = "C_INIT_RemapTransformToVector"
+			m_nFieldOutput = 6
+			m_vInputMax = [ 255.0, 255.0, 255.0 ]
+			m_vOutputMax = [ 1.0, 1.0, 1.0 ]
+			m_bDisableOperator = true
+			m_TransformInput = 
+			{
+				m_nControlPoint = 2
+			}
+			m_LocalSpaceTransform = 
+			{
+				m_nType = "PT_TYPE_INVALID"
+			}
+		},
+		{
+			_class = "C_INIT_PositionPlaceOnGround"
+			m_flOffset = 5.0
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_InitFloat"
+			m_InputValue = 
+			{
+				m_flInput0 = 0.0
+				m_flInput1 = 100.0
+				m_flOutput0 = 0.0
+				m_flOutput1 = 1.0
+				m_nMapType = "PF_MAP_TYPE_REMAP"
+				m_nType = "PF_TYPE_CONTROL_POINT_COMPONENT"
+				m_nControlPoint = 3
+				m_nVectorComponent = 0
+			}
+			m_nOutputField = 7
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, 6.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 6.0 ]
+		},
+	]
+	m_Operators = 
 	[
 		{
 			_class = "C_OP_Decay"
@@ -17,100 +129,31 @@
 			_class = "C_OP_RemapCPtoVector"
 			m_nCPInput = 2
 			m_nFieldOutput = 6
-			m_vInputMax =
-			[
-				255.000000,
-				255.000000,
-				255.000000,
-			]
-			m_vOutputMax =
-			[
-				1.000000,
-				1.000000,
-				1.000000,
-			]
+			m_vInputMax = [ 255.0, 255.0, 255.0 ]
+			m_vOutputMax = [ 1.0, 1.0, 1.0 ]
 		},
 	]
-	m_Renderers =
+	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
-			m_nOrientationType = 2
-			m_hTexture = resource:"materials/particle/particle_whitebox.vtex"
+			m_nOrientationType = "PARTICLE_ORIENTATION_WORLD_Z_ALIGNED"
+			m_vecTexturesInput = 
+			[
+				{
+					m_hTexture = resource:"materials/particle/particle_whitebox.vtex"
+				},
+			]
 		},
 		{
 			_class = "C_OP_RenderProjected"
-			m_hProjectedMaterial = resource:"materials/particle/particle_whitebox_projected.vmat"
 			m_bDisableOperator = true
-		},
-	]
-	m_Initializers =
-	[
-		{
-			_class = "C_INIT_RemapCPtoScalar"
-			m_nCPInput = 1
-			m_flInputMax = 128.000000
-			m_flOutputMax = 128.000000
-		},
-		{
-			_class = "C_INIT_CreateWithinSphere"
-		},
-		{
-			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMin = 1.000000
-			m_fLifetimeMax = 1.000000
-			m_bDisableOperator = true
-		},
-		{
-			_class = "C_INIT_RemapCPtoVector"
-			m_nCPInput = 2
-			m_nFieldOutput = 6
-			m_vInputMax =
+			m_vecProjectedMaterials = 
 			[
-				255.000000,
-				255.000000,
-				255.000000,
+				{
+					m_hMaterial = resource:"materials/particle/particle_whitebox_projected.vmat"
+				},
 			]
-			m_vOutputMax =
-			[
-				1.000000,
-				1.000000,
-				1.000000,
-			]
-			m_bDisableOperator = true
-		},
-		{
-			_class = "C_INIT_PositionPlaceOnGround"
-			m_flOffset = 5.000000
-			m_bDisableOperator = true
-		},
-		{
-			_class = "C_INIT_RemapCPtoScalar"
-			m_nCPInput = 3
-			m_nFieldOutput = 7
-			m_flInputMax = 100.000000
-		},
-		{
-			_class = "C_INIT_PositionOffset"
-			m_OffsetMin =
-			[
-				0.000000,
-				0.000000,
-				6.000000,
-			]
-			m_OffsetMax =
-			[
-				0.000000,
-				0.000000,
-				6.000000,
-			]
-		},
-	]
-	m_Emitters =
-	[
-		{
-			_class = "C_OP_InstantaneousEmitter"
-			m_nParticlesToEmit = 1
 		},
 	]
 }

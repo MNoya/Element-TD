@@ -1060,7 +1060,7 @@ function BuildingHelper:StartBuilding(builder)
         end
 
         local fAddedHealth = 0
-        local nHealthInterval = fMaxHealth / (buildTime / fserverFrameRate)
+        local nHealthInterval = (fMaxHealth - nInitialHealth) / (buildTime / fserverFrameRate)
         local fSmallHealthInterval = nHealthInterval - math.floor(nHealthInterval) -- just the floating point component
         nHealthInterval = math.floor(nHealthInterval)
         local fHPAdjustment = 0
@@ -1081,7 +1081,7 @@ function BuildingHelper:StartBuilding(builder)
                         end
                     end
                 else
-                    building:SetHealth(building:GetHealth() + fMaxHealth - fAddedHealth) -- round up the last little bit
+                    building:SetHealth(building:GetHealth() + (fMaxHealth - nInitialHealth) - fAddedHealth) -- round up the last little bit
 
                      -- completion: timesUp is true
                     if callbacks.onConstructionCompleted then
@@ -1091,7 +1091,7 @@ function BuildingHelper:StartBuilding(builder)
                         callbacks.onConstructionCompleted(building)
                     end
                     
-                    BuildingHelper:print("HP was off by: ".. fMaxHealth - fAddedHealth)
+                    BuildingHelper:print("HP was off by: ".. (fMaxHealth - nInitialHealth) - fAddedHealth)
 
                     -- Eject Builder
                     if bBuilderInside then

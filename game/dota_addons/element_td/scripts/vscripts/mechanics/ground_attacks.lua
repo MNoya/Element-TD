@@ -36,11 +36,11 @@ function AttackGroundPos(attacker, position)
 end
 
 ----------------------------------------------------------------------------------------------------
--- Point ground datariven ability
+-- Point ground datadriven ability
 function AttackGround( event )
     local caster = event.caster
     local ability = event.ability
-    local position = event.target_points[1]
+    local position = event.target_points[1] or Vector(caster.orderTable.position_x, caster.orderTable.position_y, caster.orderTable.position_z)
     local start_time = caster:GetAttackAnimationPoint() -- Time to wait to fire the projectile
 
     ability:ToggleOn()

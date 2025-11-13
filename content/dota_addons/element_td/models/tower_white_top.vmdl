@@ -1,4 +1,4 @@
-<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc32:version{c5dcef98-b629-46ab-88e3-a17c005c935e} -->
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:modeldoc40:version{da0ab1f8-9722-4910-94b8-10b6a08c0934} -->
 {
 	rootNode = 
 	{
@@ -12,7 +12,7 @@
 					{
 						_class = "Attachment"
 						name = "attach_attack1"
-						parent_bone = "Cube"
+						parent_bone = ""
 						relative_origin = [ 36.922874, 0.0, 200.0 ]
 						relative_angles = [ -0.0, 0.0, 0.0 ]
 						weight = 1.0
@@ -21,7 +21,7 @@
 					{
 						_class = "Attachment"
 						name = "attach_hitloc"
-						parent_bone = "Cube"
+						parent_bone = ""
 						relative_origin = [ 0.0, 0.0, 0.0 ]
 						relative_angles = [ 0.0, 0.0, 0.0 ]
 						weight = 1.0
@@ -76,6 +76,7 @@
 					{
 						_class = "AnimFile"
 						name = "cube"
+						is_default_idle_anim = false
 						activity_name = ""
 						activity_weight = 1
 						weight_list_name = ""
@@ -88,12 +89,14 @@
 						anim_markup_ordered = false
 						disable_compression = false
 						animgraph_additive = false
+						delete_from_compiled_model = false
 						source_filename = "models/cube.dmx"
 						import_bone_scales = false
 						start_frame = 0
 						end_frame = 0
 						framerate = 30.0
 						reverse = false
+						additional_anim_files = [  ]
 					},
 				]
 				default_root_bone_name = ""
@@ -103,5 +106,6 @@
 		primary_associated_entity = ""
 		anim_graph_name = ""
 		importer_notes = "Imported from VMDL"
+		document_sub_type = "ModelDocSubType_None"
 	}
 }
