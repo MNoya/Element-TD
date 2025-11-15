@@ -20,7 +20,7 @@ function CreepBulky:OnSpawned()
 	local health = creep:GetHealth()
 	creep:SetMaxHealth(health * health_multiplier)
 	creep:SetBaseMaxHealth(health * health_multiplier)
-	creep:SetHealth(creep:GetMaxHealth() * health_multiplier)
+	creep:SetHealth(creep:GetMaxHealth())
 	creep:SetModelScale(creep:GetModelScale() * 1.7)
 end
 
