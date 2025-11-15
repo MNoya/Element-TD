@@ -262,7 +262,7 @@ function ReapplyModifiers(tower, buffData)
 end
 
 function FindSellAbility( tower )
-    for i=0,15 do
+    for i=0,tower:GetAbilityCount()-1 do
         local ability = tower:GetAbilityByIndex(i)
         if ability and string.match(ability:GetAbilityName(), "sell_tower") then
             return ability

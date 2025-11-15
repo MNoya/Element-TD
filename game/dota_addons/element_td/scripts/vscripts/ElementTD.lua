@@ -329,7 +329,7 @@ function ElementTD:EndGameForPlayer( playerID )
         Saves:SaveGrid(playerID, playerData.toggle_grid_item.enabled)
     end
 
-    for i=0,15 do
+    for i=0,playerData.summoner:GetAbilityCount()-1 do
         local ability = playerData.summoner:GetAbilityByIndex(i)
         if ability then
             ability:SetHidden(true)

@@ -98,7 +98,7 @@ function GetPlayerNetworth(playerID)
 	for i,v in pairs( playerData.towers ) do
 		local tower = EntIndexToHScript( i )
 		if IsValidEntity(tower) and tower:GetHealth() == tower:GetMaxHealth() then
-			for i=0,15 do
+			for i=0,tower:GetAbilityCount()-1 do
 				local ability = tower:GetAbilityByIndex( i )
 				if ability then
 					local name = ability:GetAbilityName()
@@ -267,8 +267,7 @@ function UpdatePlayerSpells(playerID)
     local playerData = GetPlayerData(playerID)
     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
     if hero then
-        
-        for i=0,15 do
+        for i=0,hero:GetAbilityCount()-1 do
             local ability = hero:GetAbilityByIndex(i)
             if ability then
                 local abilityName = ability:GetAbilityName()

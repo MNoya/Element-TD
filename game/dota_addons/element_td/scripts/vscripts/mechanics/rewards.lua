@@ -239,7 +239,7 @@ function Rewards:HandleHeroReplacement(hero)
                 Rewards:SetCosmeticOverride(newHero, unit, reward)
 
                 -- Remove all abilities on the hero unit
-                for i=0,15 do
+                for i=0,unit:GetAbilityCount()-1 do
                     local ability = unit:GetAbilityByIndex(i)
                     if ability then
                         ability:RemoveSelf()
