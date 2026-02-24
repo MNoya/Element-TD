@@ -67,25 +67,18 @@ function BuildingHelper:Init()
           end
         })
 
-        debug.sethook(function(...)
-          local info = debug.getinfo(2)
-          local src = tostring(info.short_src)
-          local name = tostring(info.name)
-          if name ~= "__index" then
-            if string.find(src, "addon_game_mode") then
-              if GameRules:GetGameModeEntity() then
+        Timers:CreateTimer(0, function()
+            if GameRules:GetGameModeEntity() then
                 for _, func in ipairs(__ACTIVATE_HOOK.funcs) do
-                  local status, err = pcall(func)
-                  if not status then
-                    print("__ACTIVATE_HOOK callback error: " .. err)
-                  end
+                    local status, err = pcall(func)
+                    if not status then
+                        print("__ACTIVATE_HOOK callback error: " .. err)
+                    end
                 end
-
-                debug.sethook(nil, "c")
-              end
+                return nil
             end
-          end
-        end, "c")
+            return 0
+        end)
     end
 
     -- Hook the order filter

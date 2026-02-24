@@ -129,11 +129,11 @@ function Timers:Think()
       local status, nextCall
       if v.context then
         status, nextCall = xpcall(function() return v.callback(v.context, v) end, function (msg)
-                                    return msg..'\n'..debug.traceback()..'\n'
+                                    return msg -- ..'\n'..debug.traceback()..'\n'
                                   end)
       else
         status, nextCall = xpcall(function() return v.callback(v) end, function (msg)
-                                    return msg..'\n'..debug.traceback()..'\n'
+                                    return msg -- ..'\n'..debug.traceback()..'\n'
                                   end)
       end
 
