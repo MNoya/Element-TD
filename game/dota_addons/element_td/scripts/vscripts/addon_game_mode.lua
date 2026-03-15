@@ -12,6 +12,7 @@ local requires = {
     "libraries/animations",
     "libraries/attachments",
     "libraries/selection",
+    "libraries/filterchain",
     "libraries/buildinghelper",
     "statcollection/init",
 

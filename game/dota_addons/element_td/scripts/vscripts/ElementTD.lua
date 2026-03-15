@@ -74,6 +74,10 @@ function ElementTD:InitGameMode()
     ListenToGameEvent('game_rules_state_change', Dynamic_Wrap(ElementTD, 'OnGameStateChange'), self)
 
     -- Filters
+    local orderFilter = FilterChain:New()
+    orderFilter:AddFilter(Dynamic_Wrap(ElementTD, 'OrderFilter'), self)
+    GameRules:GetGameModeEntity().executeOrderFilter = orderFilter
+
     GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( ElementTD, "FilterExecuteOrder" ), self )
     GameRules:GetGameModeEntity():SetDamageFilter( Dynamic_Wrap( ElementTD, "DamageFilter" ), self )
     GameRules:GetGameModeEntity():SetTrackingProjectileFilter( Dynamic_Wrap( ElementTD, "FilterProjectile" ), self )
@@ -757,6 +761,10 @@ function ElementTD:OnReconnect(playerID)
 end
 
 function ElementTD:FilterExecuteOrder( filterTable )
+    return GameRules:GetGameModeEntity().executeOrderFilter:Execute(filterTable)
+end
+
+function ElementTD:OrderFilter( filterTable )
     local units = filterTable["units"]
     local order_type = filterTable["order_type"]
     local issuer = filterTable["issuer_player_id_const"]

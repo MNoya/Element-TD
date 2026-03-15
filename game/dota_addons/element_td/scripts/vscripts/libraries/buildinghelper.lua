@@ -2,6 +2,7 @@ BH_VERSION = "1.1.3"
 
 require('libraries/timers')
 require('libraries/selection')
+require('libraries/filterchain')
 
 if not BuildingHelper then
     BuildingHelper = class({})
@@ -84,12 +85,7 @@ function BuildingHelper:Init()
     -- Hook the order filter
     __ACTIVATE_HOOK(function()
         local mode = GameRules:GetGameModeEntity()
-        mode:SetExecuteOrderFilter(Dynamic_Wrap(BuildingHelper, 'OrderFilter'), BuildingHelper)
-        self.oldFilter = mode.SetExecuteOrderFilter
-        mode.SetExecuteOrderFilter = function(mode, fun, context)
-            BuildingHelper.nextFilter = fun
-            BuildingHelper.nextContext = context
-        end
+        mode.executeOrderFilter:AddFilter(Dynamic_Wrap(BuildingHelper, 'OrderFilter'), BuildingHelper)
     end)
 end
 
@@ -421,16 +417,6 @@ function BuildingHelper:OnSelectionUpdate(event)
 end
 
 function BuildingHelper:OrderFilter(order)
-    local ret = true    
-
-    if BuildingHelper.nextFilter then
-        ret = BuildingHelper.nextFilter(BuildingHelper.nextContext, order)
-    end
-
-    if not ret then
-        return false
-    end
-
     local issuerID = order.issuer_player_id_const
 
     if issuerID == -1 then return true end
@@ -467,7 +453,7 @@ function BuildingHelper:OrderFilter(order)
         end
     end
 
-    return ret
+    return true
 end    
 
 --[[
