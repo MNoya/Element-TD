@@ -854,8 +854,8 @@
 						"EffectAttachType"	"follow_origin"
 						"ControlPointEntities"
 						{
-							"TARGET" "attach_origin"
-							"TARGET" "attach_origin"
+							"TARGET" "attach_hitloc"
+							"TARGET" "attach_hitloc"
 						}
 					}
 				}
