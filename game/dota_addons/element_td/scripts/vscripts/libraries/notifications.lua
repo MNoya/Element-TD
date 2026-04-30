@@ -21,7 +21,7 @@ NOTIFICATIONS_VERSION = "0.88"
   -For HeroImages, there is two additional parameters:
     -hero:  (Mandatory) The hero name, e.g. "npc_dota_hero_axe".
     -imagestyle:  (Optional)  The image style to display for this hero image.  Default when 'nil' is 'icon'.  'portrait' and 'landscape' are two other options.
-  -For AboilityImages, there is one additional mandatory parameter:
+  -For AbilityImages, there is one additional mandatory parameter:
     -ability:  The ability name, e.g. "lina_fiery_soul".
   -For Images, there is one additional mandatory parameter:
     -image:  The image src string, e.g. "file://{images}/status_icons/dota_generic.psd".
