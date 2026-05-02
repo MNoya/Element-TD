@@ -2,7 +2,7 @@
 
 var skip = false
 
-// Recieves a list of entities to replace the current selection
+// Receives a list of entities to replace the current selection
 function Selection_New(msg)
 {
     var entities = msg.entities
@@ -16,7 +16,7 @@ function Selection_New(msg)
     OnUpdateSelectedUnit()
 }
 
-// Recieves a list of entities to add to the current selection
+// Receives a list of entities to add to the current selection
 function Selection_Add(msg)
 {
     var entities = msg.entities

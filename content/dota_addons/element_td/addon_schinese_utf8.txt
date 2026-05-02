@@ -351,9 +351,19 @@
         "DOTA_Tooltip_ability_sell_tower_0_Description"     "出售防御塔（不返还金币）。"
         "DOTA_Tooltip_ability_sell_tower_0_sell_amount_tooltip"     "%返还金币："
 
+        "DOTA_Tooltip_ability_tower_targeting"        "防御塔目标"
+        "DOTA_Tooltip_ability_tower_targeting_Description"        "按顺序循环切换这座防御塔的攻击目标优先级：最近、最远、最低生命、最高生命、最旧波次、最新波次。"
+
         "DOTA_Tooltip_ability_attack_ground"                                              "攻击地面"
         "DOTA_Tooltip_ability_attack_ground_Description"                                  "可以攻击地面上的指定位置，不再以单位为目标。"
         "DOTA_Tooltip_ability_attack_ground_splash_aoe"                                   "作用范围："
+
+        "etd_targeting_mode_closest"            "目标优先级：<b>最近</b>"
+        "etd_targeting_mode_farthest"           "目标优先级：<b>最远</b>"
+        "etd_targeting_mode_lowest_hp"          "目标优先级：<b>最低生命</b>"
+        "etd_targeting_mode_highest_hp"         "目标优先级：<b>最高生命</b>"
+        "etd_targeting_mode_older"              "目标优先级：<b>最早生成</b>"
+        "etd_targeting_mode_newer"              "目标优先级：<b>最新生成</b>"
 
         "DOTA_Tooltip_ability_cancel_construction"                                        "取消建造"
         "DOTA_Tooltip_ability_cancel_construction_Description"                            "停止建造防御塔，全额返还金币，恢复网格原貌"

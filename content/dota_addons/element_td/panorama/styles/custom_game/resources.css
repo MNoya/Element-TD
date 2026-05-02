@@ -7,18 +7,31 @@
 #ResourceUnderlay
 {
     background-color: #000000AA;
+    horizontal-align: right;
     vertical-align: bottom;
     height: 21%;
     width: 210px;
 }
 
+.HudFlipped #ResourceUnderlay
+{
+    horizontal-align: left;
+}
+
 #ResourceElements
 {
+    horizontal-align: right;
     margin-right: 10px;
     margin-bottom: 103px;
     height: 64px;
     width: 200px;
     vertical-align: bottom;
+}
+
+.HudFlipped #ResourceElements
+{
+    horizontal-align: left;
+    margin-right: 0px;
 }
 
 .AspectRatio4x3 #ResourceElements, .AspectRatio5x4 #ResourceElements
@@ -35,6 +48,11 @@
     margin-right: 8px;
     height: 64px;
     width: 200px;
+}
+
+.HudFlipped.AspectRatio4x3 #ResourceElements, .HudFlipped.AspectRatio5x4 #ResourceElements, .HudFlipped.AspectRatio21x9 #ResourceElements
+{
+    margin-right: 0px;
 }
 
 #ResourceElements .element
@@ -170,10 +188,18 @@
     width: 65px;
     height: 40px;
 
+    horizontal-align: right;
     vertical-align: bottom;
 
     margin-bottom: 167px;
     margin-right: 36px;
+}
+
+.HudFlipped #ResourceLumber
+{
+    horizontal-align: left;
+    margin-left: 40px;
+    margin-right: 0px;
 }
 
 .AspectRatio4x3 #ResourceLumber, .AspectRatio5x4 #ResourceLumber
@@ -186,6 +212,11 @@
 {
     margin-bottom: 170px;
     margin-right: 32px;
+}
+
+.HudFlipped.AspectRatio4x3 #ResourceLumber, .HudFlipped.AspectRatio5x4 #ResourceLumber, .HudFlipped.AspectRatio21x9 #ResourceLumber
+{
+    margin-right: 0px;
 }
 
 #LumberText
@@ -216,11 +247,18 @@
     width: 100px;
     height: 40px;
 
+    horizontal-align: right;
     vertical-align: bottom;
 
     margin-bottom: 167px;
     margin-right: 107px;
+}
+
+.HudFlipped #ResourceGold
+{
+    horizontal-align: left;
     margin-left: 107px;
+    margin-right: 0px;
 }
 
 #GoldText
@@ -253,10 +291,22 @@
     margin-right: 100px;
 }
 
+.HudFlipped.AspectRatio4x3 #ResourceGold, .HudFlipped.AspectRatio5x4 #ResourceGold
+{
+    margin-left: 100px;
+    margin-right: 0px;
+}
+
 .AspectRatio21x9 #ResourceGold
 {
     margin-bottom: 170px;
     margin-right: 104px;
+}
+
+.HudFlipped.AspectRatio21x9 #ResourceGold
+{
+    margin-left: 104px;
+    margin-right: 0px;
 }
 
 //---------
@@ -266,9 +316,16 @@
     width: 36px;
     height: 40px;
 
+    horizontal-align: right;
     vertical-align: bottom;
 
     margin-bottom: 167px;
+}
+
+.HudFlipped #ResourceEssence
+{
+    horizontal-align: left;
+    margin-right: 0px;
 }
 
 .AspectRatio4x3 #ResourceEssence, .AspectRatio5x4 #ResourceEssence
@@ -281,6 +338,11 @@
 {
     margin-bottom: 170px;
     margin-right: 6px;
+}
+
+.HudFlipped.AspectRatio4x3 #ResourceEssence, .HudFlipped.AspectRatio5x4 #ResourceEssence, .HudFlipped.AspectRatio21x9 #ResourceEssence
+{
+    margin-right: 0px;
 }
 
 #PureEssenceText
@@ -312,10 +374,18 @@
     width: 130px;
     height: 30px;
 
+    horizontal-align: right;
     vertical-align: bottom;
 
     margin-bottom: 60px;
     margin-right: 78px;
+}
+
+.HudFlipped #ResourceScore
+{
+    horizontal-align: left;
+    margin-left: 85px;
+    margin-right: 0px;
 }
 
 .AspectRatio4x3 #ResourceScore, .AspectRatio5x4 #ResourceScore
@@ -328,6 +398,11 @@
 {
     margin-bottom: 70px;
     margin-right: 70px;
+}
+
+.HudFlipped.AspectRatio4x3 #ResourceScore, .HudFlipped.AspectRatio5x4 #ResourceScore, .HudFlipped.AspectRatio21x9 #ResourceScore
+{
+    margin-right: 0px;
 }
 
 #ScoreLabel 
@@ -379,23 +454,18 @@
     }
 }
 
-
-.Flipped
-{
-    horizontal-align: left;
-}
-
-.AlignRight
-{
-    horizontal-align: right;
-}
-
 #MinimapOverlay
 {
     width: 244px;
     height: 244px;
+    horizontal-align: left;
     vertical-align: bottom;
     margin-left: 0px;
+}
+
+.HudFlipped #MinimapOverlay
+{
+    horizontal-align: right;
 }
 
 #Version

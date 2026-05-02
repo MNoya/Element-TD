@@ -2474,7 +2474,13 @@
 		"MaxLevel"						"3"
 		"AbilityTextureName"			"towers/enchantment"
 		"AbilityCastRange"				"900"
-	
+
+		"precache"
+		{
+			"particle"		"particles/custom/towers/enchantment/debuff.vpcf"
+			"particle"		"particles/units/heroes/hero_centaur/centaur_return_thin.vpcf"
+		}
+
 		"Modifiers"
 		{
 			// Damage Amp: 5%/15% base, 15%/45% if <= 2 creeps in AoE
@@ -4378,6 +4384,18 @@
         {
             "sell_amount_tooltip" "98"
         }
+	}
+	//============================================================//
+	// Tower Targeting
+	//============================================================//
+	"tower_targeting"
+	{
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "towers/tower_targeting.lua"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	    "AbilityTextureName"            "sniper_take_aim"
+	    "AbilityMultiOrder"             "1"
+	    "MaxLevel"                      "1"
 	}
 	//============================================================================================//
 	//============================================================================================//

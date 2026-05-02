@@ -227,3 +227,8 @@ function ShowFirstHighscoreMessage(playerID)
 
     GameRules:SendCustomMessage("#etd_highscore_message", playerID, 0)
 end
+
+function ShowTowerTargetingMessage(playerID, towerName)
+    Notifications:ClearBottom(playerID)
+    Notifications:Bottom(playerID, { text = towerName, style={color='#FFFFFF'}, duration = 1.5})
+end

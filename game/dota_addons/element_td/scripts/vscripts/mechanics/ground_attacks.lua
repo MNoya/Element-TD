@@ -97,6 +97,13 @@ function StopAttackGround( event )
     if (ability.attack_ground_timer_attack) then Timers:RemoveTimer(ability.attack_ground_timer_attack) end
     caster:AddNewModifier(nil, nil, "modifier_disarmed", {duration=caster:TimeUntilNextAttack()})
     caster:RemoveModifierByName("modifier_attacking_ground")
+    if caster.target_type or caster.default_target_type then
+        ApplyTowerTargeting(caster, {
+            target_type = caster.target_type or caster.default_target_type,
+            keep_target = caster.keep_target,
+            change_on_leak = caster.change_on_leak
+        })
+    end
 
     ability:ToggleOff()
 end

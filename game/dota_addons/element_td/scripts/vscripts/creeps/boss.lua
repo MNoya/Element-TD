@@ -183,6 +183,7 @@ function CreepBoss:OnDeath(killer)
 
     if creep.random_abilities["creep_ability_undead"] then
         local newCreep = CreateUnitByName(creepClass, creep:GetAbsOrigin() , false, nil, nil, DOTA_TEAM_NEUTRALS)
+        newCreep.spawn_id = creep.spawn_id
         newCreep.class = creepClass
         newCreep.playerID = creep.playerID or creep.sector
         newCreep.waveObject = creep.waveObject

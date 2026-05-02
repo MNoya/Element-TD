@@ -8,6 +8,7 @@
         "building_settings",
         "elementals",
         "towers",
+        "tower_targeting",
         "gameinfo",
         "rewards",
         "rankings",

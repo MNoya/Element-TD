@@ -184,7 +184,7 @@ function MouseOverPie () {
     }
 }
 
-// Recieved String order is alphabetical: Dark-Earth-Fire-Light-Nature-Water
+// Received String order is alphabetical: Dark-Earth-Fire-Light-Nature-Water
 function MakeFirstDual (dual_string) {
     var dual = duals[dual_string]
     if (dual)

@@ -14,6 +14,19 @@ if not WAVE_CREEPS then
     WAVE_COUNT = wavesKV["WaveCount"]
 end
 
+CREEP_SPAWN_ID = CREEP_SPAWN_ID or 0
+
+function AssignCreepSpawnID(creep)
+    if not creep then
+        return nil
+    end
+
+    CREEP_SPAWN_ID = CREEP_SPAWN_ID + 1
+    creep.spawn_id = CREEP_SPAWN_ID
+
+    return creep.spawn_id
+end
+
 -- loads the creep and health data for each wave. Randomizes the creep order if 'chaos' is set to true
 function loadWaveData(chaos)
     local settings = GameSettingsKV.GameLength["Normal"]
@@ -234,6 +247,7 @@ end
 function SpawnEntity(entityClass, playerID, position, waveNumber)
     local entity = CreateUnitByName(entityClass, position, true, nil, nil, DOTA_TEAM_NEUTRALS)
     if entity then
+        AssignCreepSpawnID(entity)
         entity:AddNewModifier(nil, nil, "modifier_phased", {})
 
         entity:SetDeathXP(0)

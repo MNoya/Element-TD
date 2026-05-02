@@ -44,13 +44,23 @@ function UpgradeTower(keys)
 
         -- Add upgrade cancelling ability
         newTower.upgradedFrom = tower:GetUnitName()
-        AddAbility(newTower, "cancel_construction")
 
         -- Set the new tower properties
         SetupTowerUpgrade(tower, newTower, buffData, stacks)
 
-        -- Hide sell ability
-        FindSellAbility(newTower):SetHidden(true)
+        -- Add cancel construction
+        AddAbility(newTower, "cancel_construction")
+
+        -- Swap the cancel construction ability with the sell ability to maintain the same hotkey position
+        sell_ability = FindSellAbility(newTower)
+
+        if sell_ability then
+            sell_ability_name = sell_ability:GetAbilityName()
+            newTower:SwapAbilities("cancel_construction", sell_ability_name, true, false)
+
+            -- Hide sell ability
+            sell_ability:SetHidden(true)
+        end
 
         -- When you sell/upgrade a tower that has been cloned in the last 60 seconds, you lose a random clone of that tower type (this is to prevent abuse with 100% sell).
         -- we must delete a random clone of this type
@@ -150,7 +160,7 @@ function CancelConstruction(event)
 
         tower:AddEffects(EF_NODRAW)
         ToggleGridForTower(tower)
-        tower:Kill(null, false)
+        tower:Kill(nil, tower)
     end
 
     -- Gold
@@ -257,14 +267,15 @@ function BuildTower(tower, baseScale)
 
             tower:SetHealth(tower:GetMaxHealth())
 
-            -- Remove building cancel ability
-            tower:RemoveAbility("cancel_construction")
-
             -- Show sell ability
             local sell_ability = FindSellAbility(tower)
+            
             if sell_ability then
-                sell_ability:SetHidden(false)
+                tower:SwapAbilities(sell_ability:GetAbilityName(), "cancel_construction", true, false)
             end
+
+            -- Remove building cancel ability
+            tower:RemoveAbility("cancel_construction")
 
             tower.scriptObject:OnBuildingFinished()
             return
@@ -353,6 +364,7 @@ function SetupTowerUpgrade(tower, newTower, buffData, stacks)
     if GetUnitKeyValue(newClass, "AOE_Full") and GetUnitKeyValue(newClass, "AOE_Half") then
         AddAbility(newTower, "splash_damage_orb")
     end
+    AddTowerTargetingAbility(newTower)
 
     tower.deleted = true --mark the old tower for deletion
 

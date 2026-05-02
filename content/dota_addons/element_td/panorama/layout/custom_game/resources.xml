@@ -22,6 +22,7 @@
       <Image hittest="false" id="LumberIcon"/>
       <Label hittest="false" id="LumberText" text="0" class="TitleFont" />
     </Panel>
+    <Label hittest="false" id="LumberDisplay" text="" visible="false" />
     <Panel hittest="true" id='ResourceEssence' onmouseover="ShowTooltip('#essence')" onmouseout="DOTAHideTitleTextTooltip()">
       <Image hittest="false" id="PureEssenceIcon"/>
       <Label hittest="false" id="PureEssenceText" text="0" class="TitleFont" />

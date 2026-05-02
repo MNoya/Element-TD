@@ -342,9 +342,19 @@
         "DOTA_Tooltip_ability_sell_tower_0_Description"     "Продажа этой башни не вернёт вам золото."
         "DOTA_Tooltip_ability_sell_tower_0_sell_amount_tooltip"     "%ЗОЛОТА ВЕРНЁТСЯ:"
 
+        "DOTA_Tooltip_ability_tower_targeting"        "Приоритет цели"
+        "DOTA_Tooltip_ability_tower_targeting_Description"        "Переключает приоритет цели этой башни по кругу: Ближайшая, Дальняя, Наименьшее здоровье, Наибольшее здоровье, Старая волна, Новая волна."
+
         "DOTA_Tooltip_ability_attack_ground"                                              "Атаковать зону"
         "DOTA_Tooltip_ability_attack_ground_Description"                                  "При использовании атакует выбранную зону. Атакуйте крипа или остановите атаку, чтобы отменить."
         "DOTA_Tooltip_ability_attack_ground_splash_aoe"                                   "РАДИУС:"
+
+        "etd_targeting_mode_closest"            "Приоритет: <b>Ближайшая</b>"
+        "etd_targeting_mode_farthest"           "Приоритет: <b>Дальняя</b>"
+        "etd_targeting_mode_lowest_hp"          "Приоритет: <b>Меньше здоровья</b>"
+        "etd_targeting_mode_highest_hp"         "Приоритет: <b>Больше здоровья</b>"
+        "etd_targeting_mode_older"              "Приоритет: <b>Самый старый крип</b>"
+        "etd_targeting_mode_newer"              "Приоритет: <b>Самый новый крип</b>"
 
         "DOTA_Tooltip_ability_cancel_construction"                                        "Остановить строительство"
         "DOTA_Tooltip_ability_cancel_construction_Description"                            "Останавливает строительство башни с полным возвратом золота и её предыдущего уровня."

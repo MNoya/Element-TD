@@ -57,6 +57,13 @@
         "tooltip_essence_coop"   "Эссенция используется для создания наиболее сильных башен.<br>Вы можете использовать её для улучшения одноэлементных башен до уровня 3 или для строительства периодической башни, если у вас есть все 6 элементов.<br>Вы можете купить Чистую Эссенцию у Создателя за 1 дерево.<br>Вы получите 1 Чистую Эссенцию на волне 45 и 50 (кооперативный режим)."
         "score"             "Общий счет"
         "tooltip_score"     "В конце игры этот счет будет отправлен в таблицу результатов."
+        "tower_tooltip_attacks_per_second" "Атак/сек"
+        "tower_tooltip_attack_speed"       "Скорость атаки"
+        "tower_tooltip_bat"                "БВА"
+        "tower_tooltip_range"              "Дальность"
+        "tower_tooltip_aoe"                "ОП"
+        "tower_tooltip_full"               "Полный"
+        "tower_tooltip_half"               "Половина"
 
         "voting_wait"                       "Ожидайте, когда другие проголосуют..."
         "difficulty_normal"                 "Легко"
@@ -122,6 +129,7 @@
         "error_not_enough_resource"                 "Недостаточно ресурса"
         "error_not_enough_essence"                  "Недостаточно Чистой Эссенции"
         "error_invalid_build_position"              "Вы не можете здесь строить"
+        "dota_hud_error_target_out_of_range"        "Цель вне зоны действия."
 
         "etd_tower_table"                           "Таблица башен"
         "etd_tower_table_button"                    "Башни"
@@ -138,6 +146,134 @@
 
         "scoring_game_completed"                    "Игра завершена!"
         "scoring_game_clear"                        "Игра очищена!"
+
+        // Towers
+        "basic_arrow_tower"         "Стрелок"
+        "dark_arrow_tower"          "Стрелок тьмы"
+        "light_arrow_tower"         "Стрелок света"
+        "fire_arrow_tower"          "Стрелок огня"
+        "nature_arrow_tower"        "Стрелок природы"
+        "water_arrow_tower"         "Стрелок воды"
+        "earth_arrow_tower"         "Стрелок земли"
+        
+        "basic_cannon_tower"        "Пушка"
+        "dark_cannon_tower"         "Пушка тьмы"
+        "light_cannon_tower"        "Пушка света"
+        "fire_cannon_tower"         "Пушка огня"
+        "nature_cannon_tower"       "Пушка природы"
+        "water_cannon_tower"        "Пушка воды"
+        "earth_cannon_tower"        "Пушка земли"
+
+        "water_tower"               "Башня воды"
+        "focused_water_tower"       "Башня воды 2"
+        "refined_water_tower"       "Башня воды 3"
+        "pure_water_tower"          "Башня чистой воды"
+        "fire_tower"                "Башня огня"
+        "focused_fire_tower"        "Башня огня 2"
+        "refined_fire_tower"        "Башня огня 3"
+        "pure_fire_tower"           "Башня чистого огня"
+        "nature_tower"              "Башня природы"
+        "focused_nature_tower"      "Башня природы 2"
+        "refined_nature_tower"      "Башня природы 3"
+        "pure_nature_tower"         "Башня чистой природы"
+        "earth_tower"               "Башня земли"
+        "focused_earth_tower"       "Башня земли 2"
+        "refined_earth_tower"       "Башня земли 3"
+        "pure_earth_tower"          "Башня чистой земли"
+        "light_tower"               "Башня света"
+        "focused_light_tower"       "Башня света 2"
+        "refined_light_tower"       "Башня света 3"
+        "pure_light_tower"          "Башня чистого света"
+        "dark_tower"                "Башня тьмы"
+        "focused_dark_tower"        "Башня тьмы 2"
+        "refined_dark_tower"        "Башня тьмы 3"
+        "pure_dark_tower"           "Башня чистой тьмы"
+        "magic_tower"               "Башня магии"
+        "magic_tower_2"             "Башня колдовства" //Sorcery
+        "magic_tower_3"             "Башня чаров" //Wizardry
+        "disease_tower"             "Башня болезни"
+        "disease_tower_2"           "Башня разложения" //Decay
+        "disease_tower_3"           "Башня смерти" //Death
+        "well_tower"                "Колодец"
+        "well_tower_2"              "Родник" //Spring
+        "well_tower_3"              "Водопад" //Waterfall
+        "blacksmith_tower"          "Кузнец"
+        "blacksmith_tower_2"        "Кузница" //Forge
+        "blacksmith_tower_3"        "Литейный завод" //Foundry
+        "moss_tower"                "Башня мха"
+        "moss_tower_2"              "Башня поганки" //Toadstool
+        "moss_tower_3"              "Башня грибка" //Fungus
+        "quark_tower"               "Башня кварка"
+        "quark_tower_2"             "Башня электрона" //Electron
+        "quark_tower_3"             "Башня атома" //Atom
+        "electricity_tower"         "Башня электричества"
+        "electricity_tower_2"       "Башня молнии" //Lightning
+        "electricity_tower_3"       "Башня энергии" //Energy
+        "flame_tower"               "Огненная башня"
+        "flame_tower_2"             "Солнечная башня" //Solar
+        "flame_tower_3"             "Башня солнца" //Sun
+        "vapor_tower"               "Башня испарения"
+        "vapor_tower_2"             "Башня тумана" //Mist
+        "vapor_tower_3"             "Башня пара" //Steam
+        "poison_tower"              "Башня яда"
+        "poison_tower_2"            "Башня загрязнения" //Pollution
+        "poison_tower_3"            "Башня чумы" //Pestilence
+        "life_tower"                "Башня жизни"
+        "life_tower_2"              "Башня вечности" //Eternal
+        "life_tower_3"              "Ловец душ" //Soul Catcher
+        "hydro_tower"               "Водяная башня"
+        "hydro_tower_2"             "Столб воды" //Spout
+        "hydro_tower_3"             "Гейзер" //Geyser
+        "trickery_tower"            "Башня обмана"
+        "trickery_tower_2"          "Башня миража" //Mirage
+        "trickery_tower_3"          "Башня фантома" //Eidolon
+        "gunpowder_tower"           "Башня пороха"
+        "gunpowder_tower_2"         "Мортира" //Mortar
+        "gunpowder_tower_3"         "Вулкан" //Vulcan
+        "ice_tower"                 "Башня льда"
+        "ice_tower_2"               "Башня заморозки" //Freezing
+        "ice_tower_3"               "Морозная башня" //Subzero
+        "muck_tower"                "Башня мерзости"
+        "muck_tower_2"              "Башня болота" //Mire
+        "gold_tower"                "Башня золота"
+        "gold_tower_2"              "Башня богатства" //Wealth
+        "windstorm_tower"           "Башня бури"
+        "windstorm_tower_2"         "Башня муссона" //Monsoon
+        "windstorm_tornado"         "Торнадо"
+        "quake_tower"               "Башня землетрясения"
+        "quake_tower_2"             "Башня разлома" //Earthbreaker
+        "enchantment_tower"         "Башня волшебства"
+        "enchantment_tower_2"       "Башня заклинаний" //Incantation
+        "flooding_tower"            "Башня потопа"
+        "flooding_tower_2"          "Башня утопления" //Drowning
+        "laser_tower"               "Лазер"
+        "laser_tower_2"             "Фазер" //Phaser
+        "hail_tower"                "Башня града"
+        "hail_tower_2"              "Башня кометы" //Comet
+        "runic_tower"               "Руническая башня"
+        "runic_tower_2"             "Оккультная башня" //Occult
+        "impulse_tower"             "Башня импульса"
+        "impulse_tower_2"           "Башня скорости" //Velocity
+        "obliteration_tower"        "Башня уничтожения"
+        "obliteration_tower_2"      "Башня аннигиляции" //Annihilation
+        "ephemeral_tower"           "Эфемерная башня"
+        "ephemeral_tower_2"         "Временная башня" //Temporal
+        "flamethrower_tower"        "Огнемет"
+        "flamethrower_tower_2"      "Огнемет 2" //Flamespewer
+        "haste_tower"               "Башня ускорения"
+        "haste_tower_2"             "Башня молниеносности" //Blitz
+        "tidal_tower"               "Башня прилива"
+        "tidal_tower_2"             "Башня цунами" //Tsunami
+        "roots_tower"               "Башня корней"
+        "roots_tower_2"             "Башня шипов" //Thorns
+        "nova_tower"                "Башня звезды"
+        "nova_tower_2"              "Башня сверхновой" //Supernova
+        "erosion_tower"             "Башня эрозии"
+        "erosion_tower_2"           "Башня коррозии" //Corrosion
+        "polar_tower"               "Полярная башня"
+        "polar_tower_2"             "Башня ледника" //Glacial
+        "jinx_tower"                "Башня сглаза"
+        "jinx_tower_2"              "Башня колдовства" //Hex
 
         // Dual/Triple Tower Names
         "magic_tower_name"               "Магии"

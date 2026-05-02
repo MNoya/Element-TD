@@ -16,7 +16,7 @@ if not playerIDs then
     EXPRESS_MODE = false
     ETD_MAX_PLAYERS = 4
 
-    VERSION = "1.17"
+    VERSION = "1.18"
     COOP_MAP = GetMapName() == "element_td_coop"
 
     START_TIME = GetSystemDate() .. " " .. GetSystemTime()
@@ -307,7 +307,7 @@ function ElementTD:EndGameForPlayer( playerID )
     for i,v in pairs(playerData.towers) do
         local tower = EntIndexToHScript(i);
         if IsValidEntity(tower) and tower.ForceKill then
-            tower:Kill(null, tower)
+            tower:Kill(nil, tower)
         end
     end
     if (playerData.waveObject and playerData.waveObject.creeps) then
@@ -898,7 +898,7 @@ function ElementTD:OrderFilter( filterTable )
             -- stop the main target target point if its out of range
             if order_type == DOTA_UNIT_ORDER_CAST_POSITION and (unit:GetAbsOrigin() - point):Length2D() > ability:GetCastRange() then
                 unit:Interrupt()
-                SendErrorMessage(issuer, "dota_hud_error_target_out_of_range")
+                SendErrorMessage(issuer, "#dota_hud_error_target_out_of_range")
             end
 
         -- Stop cast on out of range target
@@ -906,7 +906,7 @@ function ElementTD:OrderFilter( filterTable )
             local target = EntIndexToHScript(targetIndex)
             if unit:GetRangeToUnit(target) > ability:GetCastRange(unit:GetAbsOrigin(), target) then
                 unit:Interrupt()
-                SendErrorMessage(issuer, "dota_hud_error_target_out_of_range")
+                SendErrorMessage(issuer, "#dota_hud_error_target_out_of_range")
                 return false
             end
         end

@@ -11,8 +11,8 @@ SELECTION_VERSION = "1.00"
         selection folder containing selection.js and selection_filter.js, on /scripts/ folder
 
     Usage:
-    - Functions with unit_args can recieve an Entity Index, a NPC Handle, or a table of each type.
-    - Functions with unit can recieve an Entity Index or NPC Handle
+    - Functions with unit_args can receive an Entity Index, a NPC Handle, or a table of each type.
+    - Functions with unit can receive an Entity Index or NPC Handle
 
     * Create a new selection for the player
         PlayerResource:NewSelection(playerID, unit_args)

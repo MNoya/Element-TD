@@ -38,8 +38,6 @@ var tooltipsUI = {'#gold':GoldUI, '#lumber': LumberUI, '#essence': LumberUI, '#s
 				  '#light':ElementsUI,'#dark':ElementsUI,
 				};
 
-var AspectRatio21x9 = false;
-
 function ModifyLumber( data )
 {
 	var prev = parseInt(lumber.text);
@@ -51,14 +49,12 @@ function ModifyLumber( data )
 		// Keep track of the summoner
 		Root.summoner = data.summoner
 		
-		/*
-		if (diff > 0) {
+		if (diff > 0 && lumberDisplay) {
 			lumberDisplay.text = "+" + diff + " Lumber";
 			lumberDisplay.visible = true;
 			lumberDisplay.AddClass('newResource');
 			$.Schedule(3, function(){lumberDisplay.visible = false;lumberDisplay.RemoveClass('newResource');});
 		}
-		*/
 	}
 	else
 		lumber.text = 0;
@@ -69,9 +65,7 @@ function ModifyGold (data) {
 	if (data.gold != undefined)
 	{
 		gold.text = data.gold;
-		
-		if (gold.text.length > 5)
-			gold.style['margin-right'] = '0px;'
+		gold.style["margin-right"] = gold.text.length > 5 ? "0px" : "8px";
 	}
 	else
 		gold.text = 0;
@@ -123,15 +117,16 @@ function ShowTooltip( str )
 //Karawasa Resolution 21x9
 function CheckAspectRatio()
 {
-	var rootHud = LumberUI.GetParent().GetParent();
-
-	var width = rootHud.actuallayoutwidth;
-	var height = rootHud.actuallayoutheight;
+	var width = Root.actuallayoutwidth;
+	var height = Root.actuallayoutheight;
 	// -w 1978 -h 828 for 'Set Launch Options...'
+	if (!width || !height)
+	{
+		$.Schedule(0.1, CheckAspectRatio);
+		return;
+	}
 
 	var r = gcd(width, height);
-
-	var ratio = (width/height).toFixed(2);
 
 	// Aspect1:Aspect2
 	var Aspect1 = width/r;
@@ -141,12 +136,7 @@ function CheckAspectRatio()
 	//$.Msg(AspectRatio);
 	
 	// 21x9
-	if (AspectRatio == "64:27" || AspectRatio == "21:9" || AspectRatio == "43:18")
-	{
-		AspectRatio21x9 = true;
-		rootHud.SetHasClass( "AspectRatio21x9", AspectRatio21x9 );
-		$.Msg('Karawasa screen resolution enabled!');
-	}
+	Root.SetHasClass("AspectRatio21x9", AspectRatio == "64:27" || AspectRatio == "21:9" || AspectRatio == "43:18");
 }
 
 function gcd (a, b) {
@@ -165,45 +155,8 @@ function SelectSummoner() {
 }
 
 function CheckHudFlipped() {
-
-	if (Game.IsHUDFlipped())
-	{
-		Flip(LumberUI)
-		Flip(GoldUI)
-		Flip(PureEssenceUI)
-		Flip(ScoreUI)
-		Flip(ElementsUI)
-		Flip(ResourceUnderlay)
-        AlignRight(MinimapUI)
-
-		ScoreUI.style["margin-left"] = "85px;"
-		LumberUI.style["margin-left"] = "40px;"
-	}
-	else
-	{
-		AlignRight(LumberUI)
-		AlignRight(GoldUI)
-		AlignRight(PureEssenceUI)
-		AlignRight(ScoreUI)
-		AlignRight(ElementsUI)
-		AlignRight(ResourceUnderlay)
-        Flip(MinimapUI)
-
-		ScoreUI.style["margin-left"] = "0px;"
-		LumberUI.style["margin-left"] = "0px;"
-	}
-
+	Root.SetHasClass("HudFlipped", Game.IsHUDFlipped())
 	$.Schedule(1, CheckHudFlipped)
-}
-
-function Flip (panel) {
-	panel.AddClass("Flipped")
-	panel.RemoveClass("AlignRight")
-}
-
-function AlignRight (panel) {
-	panel.RemoveClass("Flipped")
-	panel.AddClass("AlignRight")
 }
 
 function Setup() {

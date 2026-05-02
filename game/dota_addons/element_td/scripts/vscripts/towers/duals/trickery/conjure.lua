@@ -86,6 +86,7 @@ function trickery_tower_conjure:OnSpellStart()
     if GetUnitKeyValue(clone.class, "AOE_Full") and GetUnitKeyValue(clone.class, "AOE_Half") then
         AddAbility(clone, "splash_damage_orb")
     end
+    AddTowerTargetingAbility(clone)
 
     -- Add the tower to the player data
     playerData.towers[clone:GetEntityIndex()] = target.class

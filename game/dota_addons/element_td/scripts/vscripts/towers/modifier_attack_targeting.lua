@@ -2,6 +2,10 @@ if not modifier_attack_targeting then
     modifier_attack_targeting = class({})
 end
 
+local function Enabled(value)
+    return value == true or tonumber(value) == 1
+end
+
 function modifier_attack_targeting:IsHidden()
     return true
 end
@@ -19,9 +23,11 @@ end
 
 function modifier_attack_targeting:OnCreated( params )
     local unit = self:GetParent()
-    unit.target_type = params.target_type
-    self.keep_target = params.keep_target == 1
-    self.change_on_leak = params.change_on_leak == 1
+    unit.target_type = tonumber(params.target_type) or unit.target_type or unit.default_target_type or TOWER_TARGETING_CLOSEST
+    self.keep_target = Enabled(params.keep_target)
+    self.change_on_leak = Enabled(params.change_on_leak)
+    unit.keep_target = self.keep_target
+    unit.change_on_leak = self.change_on_leak
     self:StartIntervalThink(0.03)
 end
 

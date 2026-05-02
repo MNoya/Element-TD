@@ -183,22 +183,25 @@ function Build( event )
         -- Building abilities
         unit:AddNewModifier(unit, nil, "modifier_no_health_bar", {})
 
-        -- Remove cancel building
-        unit:RemoveAbility("cancel_construction")
-
         -- mark this tower as a support tower if necessary
         if IsSupportTower(unit) then
              unit:AddNewModifier(unit, nil, "modifier_support_tower", {})
         end
 
         -- sell ability
+        local sell_ability_name = "sell_tower_90"
         if IsPlayerUsingRandomMode( playerID ) then
-            AddAbility(unit, "sell_tower_100")
+            sell_ability_name = "sell_tower_100"
         elseif string.match(building_name, "arrow_tower") or string.match(building_name, "cannon_tower") then
-            AddAbility(unit, "sell_tower_98")
-        else
-            AddAbility(unit, "sell_tower_90")
+            sell_ability_name = "sell_tower_98"
         end
+        AddAbility(unit, sell_ability_name)
+    
+        -- Swap the sell ability with the cancel construction ability to maintain the same hotkey position
+        unit:SwapAbilities(sell_ability_name, "cancel_construction", true, false)
+
+        -- Remove cancel building
+        unit:RemoveAbility("cancel_construction")
 
         if string.match(building_name, "cannon_tower") then
             AddAbility(unit, "attack_ground")
@@ -209,6 +212,10 @@ function Build( event )
         if GetUnitKeyValue(building_name, "AOE_Full") and GetUnitKeyValue(building_name, "AOE_Half") then
             AddAbility(unit, "splash_damage_orb")
         end
+        local targeting_ability = AddTowerTargetingAbility(unit)
+
+        -- Ensure the targeting ability is in a hotkey position
+        EnsureAbilityHotkey(unit, targeting_ability:GetAbilityName())
 
         UpdateScoreboard(playerID)
 

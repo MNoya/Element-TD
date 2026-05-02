@@ -11,7 +11,18 @@
     //background-color: black;
     vertical-align: bottom;
     horizontal-align: center;
-    margin-right: 25%;
+    margin-right: 28%;
+    tooltip-position: top;
+}
+
+.AspectRatio4x3 #TowerTooltip, .AspectRatio5x4 #TowerTooltip
+{
+    margin-right: 30%;
+}
+
+.AspectRatio21x9 #TowerTooltip
+{
+    margin-right: 23%;
 }
 
 .Hidden

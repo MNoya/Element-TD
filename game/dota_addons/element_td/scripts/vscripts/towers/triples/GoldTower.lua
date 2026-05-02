@@ -20,13 +20,9 @@ function GoldTower:OnAbilityToggle(keys)
         self.tower.toggled = not self.tower.toggled
     end
 
-    if self.tower:HasModifier("modifier_attack_targeting") then
-        self.tower:RemoveModifierByName("modifier_attack_targeting")
-    end
-
-    self.tower:AddNewModifier(self.tower, nil, "modifier_attack_targeting", {
+    ApplyTowerTargeting(self.tower, {
         target_type = tonumber(keys.target_type), 
-        keep_target = tonumber(keys.keep_target)
+        keep_target = tonumber(keys.keep_target) or 0
     })
 end
 

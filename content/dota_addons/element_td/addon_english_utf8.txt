@@ -367,9 +367,19 @@
         "DOTA_Tooltip_ability_sell_tower_0_Description"     "Sells this tower (no gold returned)."
         "DOTA_Tooltip_ability_sell_tower_0_sell_amount_tooltip"     "%GOLD RETURNED:"
 
+        "DOTA_Tooltip_ability_tower_targeting"        "Tower Targeting"
+        "DOTA_Tooltip_ability_tower_targeting_Description"        "Cycles this tower's targeting priority in order: Closest, Farthest, Lowest Health, Highest Health, Oldest Wave, Newest Wave."
+
         "DOTA_Tooltip_ability_attack_ground"                                              "Attack Ground"
-        "DOTA_Tooltip_ability_attack_ground_Description"                                  "Cast this to continously attack a selected area. Attack a creep or Stop to cancel it."
+        "DOTA_Tooltip_ability_attack_ground_Description"                                  "Cast this to continuously attack a selected area. Attack a creep or Stop to cancel it."
         "DOTA_Tooltip_ability_attack_ground_splash_aoe"                                   "AOE:"
+
+        "etd_targeting_mode_closest"            "Targeting: <b>Closest</b>"
+        "etd_targeting_mode_farthest"           "Targeting: <b>Farthest</b>"
+        "etd_targeting_mode_lowest_hp"          "Targeting: <b>Lowest Health</b>"
+        "etd_targeting_mode_highest_hp"         "Targeting: <b>Highest Health</b>"
+        "etd_targeting_mode_older"              "Targeting: <b>Oldest</b>"
+        "etd_targeting_mode_newer"              "Targeting: <b>Newest</b>"
 
         "DOTA_Tooltip_ability_cancel_construction"                                        "Cancel Construction"
         "DOTA_Tooltip_ability_cancel_construction_Description"                            "Stops a tower construction, refunding full price and reverting back to the original state of the grid."
@@ -581,7 +591,7 @@
         "DOTA_Tooltip_ability_creep_ability_undead_health"      "%REMAINING HEALTH:"
 
         "DOTA_Tooltip_ability_creep_ability_mechanical"     "Shield"
-        "DOTA_Tooltip_ability_creep_ability_mechanical_Description"     "Peridiocally turns invulnerable for short bursts, ignoring any debuffs when it does."
+        "DOTA_Tooltip_ability_creep_ability_mechanical_Description"     "Periodically turns invulnerable for short bursts, ignoring any debuffs when it does."
         "DOTA_Tooltip_ability_creep_ability_mechanical_duration"        "DURATION:"
         "DOTA_Tooltip_ability_creep_ability_mechanical_interval"        "INTERVAL:"
         "DOTA_Tooltip_mechanical_buff"                                                    "Invulnerable"

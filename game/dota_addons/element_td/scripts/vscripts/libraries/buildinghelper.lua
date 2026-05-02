@@ -848,6 +848,11 @@ function BuildingHelper:UpgradeBuilding(building, newName)
     newBuilding.construction_size = BuildingHelper:GetConstructionSize(newName)
     newBuilding.blockers = BuildingHelper:BlockGridSquares(newBuilding.construction_size, BuildingHelper:GetBlockPathingSize(newName), position)
 
+    -- Remove strange ability that the basic_cannon_tower has for some reason
+    if newBuilding:HasAbility("twin_gate_portal_warp") then
+        newBuilding:RemoveAbility("twin_gate_portal_warp")
+    end
+
     if not newBuilding:HasAbility("ability_building") then
         newBuilding:AddAbility("ability_building")
     end
@@ -898,7 +903,7 @@ function BuildingHelper:StartBuilding(builder)
     local playerID = builder:GetMainControllingPlayer()
     local work = builder.work
     local callbacks = work.callbacks
-    local building = work.entity -- The building entity
+    local building
     local unitName = work.name
     local location = work.location
     local player = PlayerResource:GetPlayer(playerID)
@@ -915,7 +920,9 @@ function BuildingHelper:StartBuilding(builder)
         BuildingHelper:ClearWorkParticles(work)
 
         -- Remove pedestal
-        BuildingHelper:RemoveEntity(work.entity.prop)
+        if work.entity then
+            BuildingHelper:RemoveEntity(work.entity.prop)
+        end
 
         -- Building canceled, refund resources
         work.refund = true
@@ -931,14 +938,12 @@ function BuildingHelper:StartBuilding(builder)
     -- Spawn point obstructions before placing the building
     local gridNavBlockers = BuildingHelper:BlockGridSquares(construction_size, pathing_size, location)
 
-    -- For overriden ghosts we need to create another unit
-    if building:GetUnitName() ~= unitName then
-        building = CreateUnitByName(unitName, location, false, playersHero, player, builder:GetTeam())
-        building:SetNeverMoveToClearSpace(true)
-    else
-        building:RemoveModifierByName("modifier_out_of_world")
-        building:RemoveEffects(EF_NODRAW)
-    end
+    -- The queued ghost is only for the pending state. Remove it once the real building is created.
+    BuildingHelper:ClearWorkParticles(work)
+
+    building = CreateUnitByName(unitName, location, false, playersHero, player, builder:GetTeam())
+    building:SetNeverMoveToClearSpace(true)
+    work.entity = building
 
     -- Make pedestal
     local pedestal = BuildingHelper.UnitKV[unitName]["PedestalModel"]
@@ -983,6 +988,11 @@ function BuildingHelper:StartBuilding(builder)
     if bPlayerCanControl then
         building:SetControllableByPlayer(playerID, true)
         building:SetOwner(playersHero)
+    end
+
+    -- Remove strange ability that the basic_cannon_tower has for some reason
+    if building:HasAbility("twin_gate_portal_warp") then
+        building:RemoveAbility("twin_gate_portal_warp")
     end
 
     -- Start construction
@@ -1675,17 +1685,7 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
         -- npc_dota_creature doesn't render cosmetics on the particle ghost, use hero names instead
         local overrideGhost = buildingTable:GetVal("OverrideBuildingGhost", "string")
         local unitName = overrideGhost or buildingName
-        local entity
-        if overrideGhost then
-            -- Use a hero dummy to project the queue particles
-            entity = BuildingHelper:GetOrCreateDummy(unitName)
-        else
-            -- Create the building entity that will be used to start construction and project the queue particles
-            entity = CreateUnitByName(unitName, model_location, false, nil, nil, builder:GetTeam())
-            entity:SetNeverMoveToClearSpace(true)
-        end
-        entity:AddEffects(EF_NODRAW)
-        entity:AddNewModifier(entity, nil, "modifier_out_of_world", {})
+        local entity = BuildingHelper:GetOrCreateDummy(unitName)
         work.entity = entity
 
         local modelParticle = ParticleManager:CreateParticleForPlayer("particles/buildinghelper/ghost_model.vpcf", PATTACH_ABSORIGIN, entity, player)
@@ -1821,7 +1821,9 @@ function BuildingHelper:ClearQueue(builder)
     -- Main work  
     if work then
         BuildingHelper:ClearWorkParticles(work)
-        BuildingHelper:RemoveEntity(work.entity.prop)
+        if work.entity then
+            BuildingHelper:RemoveEntity(work.entity.prop)
+        end
 
         -- Only refund work that hasn't been placed yet
         if not work.inProgress then
@@ -1839,7 +1841,9 @@ function BuildingHelper:ClearQueue(builder)
         work = builder.buildingQueue[1]
         work.refund = true --Refund this
         BuildingHelper:ClearWorkParticles(work)
-        BuildingHelper:RemoveEntity(work.entity.prop)
+        if work.entity then
+            BuildingHelper:RemoveEntity(work.entity.prop)
+        end
         BuildingHelper:RemoveEntity(work.entity)
         table.remove(builder.buildingQueue, 1)
 
@@ -1857,8 +1861,14 @@ function BuildingHelper:RemoveEntity(ent)
 end
 
 function BuildingHelper:ClearWorkParticles(work)
-    ParticleManager:DestroyParticle(work.particleIndex, true)
-    if work.propParticleIndex then ParticleManager:DestroyParticle(work.propParticleIndex, true) end
+    if work.particleIndex then
+        ParticleManager:DestroyParticle(work.particleIndex, true)
+        work.particleIndex = nil
+    end
+    if work.propParticleIndex then
+        ParticleManager:DestroyParticle(work.propParticleIndex, true)
+        work.propParticleIndex = nil
+    end
 end
 
 --[[
@@ -1922,8 +1932,9 @@ function BuildingHelper:GetOrCreateDummy(unitName)
         return BuildingHelper.Dummies[unitName]
     else
         BuildingHelper:print("AddBuilding "..unitName)
-        local mgd = CreateUnitByName(unitName, Vector(0,0,0), false, nil, nil, 0)
-        mgd:AddEffects(EF_NODRAW)
+        -- Spawn unit somewhere the map to avoid being seen (hidden in rocks)
+        local mgd = CreateUnitByName(unitName, Vector(-4000,0,0), false, nil, nil, 0)
+        -- mgd:AddEffects(EF_NODRAW) -- This causes the ghost model particles not to render
         mgd:AddNewModifier(mgd, nil, "modifier_out_of_world", {})
         BuildingHelper.Dummies[unitName] = mgd
         mgd.BHDUMMY = true -- Skip removing this entity

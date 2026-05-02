@@ -57,6 +57,13 @@
         "tooltip_essence_express"            "แก่นถูกใช้เพื่อสร้างป้อมที่ทรงพลังมากที่สุดของคุณ<br>คุณสามารถใช้เพื่อวิวัฒนาการป้อมธาตุเดียวที่มีเลเวล 3 หรือสร้างป้อมมหาธาตุได้ หากคุณมีธาตุครบทั้ง 6<br>คุณสามารถซื้อแก่นบริสุทธ์ด้วยใบไม้ 1 ชิ้นได้จากแท่นอัญเชิญ<br>คุณจะได้รับแก่นบริสุทธิ์ 1 ชิ้นในรอบ 24 และ 27 (โหมดด่วน)"
         "score"             "คะแนนรวม"
         "tooltip_score"     "คะแนนนี้จะถูกนำไปแสดงบนกระดานผู้นำเมื่อจบเกม"
+        "tower_tooltip_attacks_per_second" "โจมตีต่อวินาที"
+        "tower_tooltip_attack_speed"       "ความเร็วโจมตี"
+        "tower_tooltip_bat"                "เวลาการโจมตีพื้นฐาน"
+        "tower_tooltip_range"              "ระยะโจมตี"
+        "tower_tooltip_aoe"                "พื้นที่โจมตี"
+        "tower_tooltip_full"               "เต็ม"
+        "tower_tooltip_half"               "ครึ่ง"
 
         "voting_wait"                       "กำลังรอให้คนอื่น ๆ โหวต..."
         "difficulty_normal"                 "ปานกลาง"
@@ -122,6 +129,7 @@
         "error_not_enough_resource"                 "ทรัพยากรไม่เพียงพอ"
         "error_not_enough_essence"                  "แก่นบริสุทธิ์ไม่เพียงพอ"
         "error_invalid_build_position"              "คุณไม่สามารถสร้างตรงนั้นได้"
+        "dota_hud_error_target_out_of_range"        "เป้าหมายอยู่นอกระยะ"
 
         "etd_tower_table"                           "ตารางป้อม"
         "etd_tower_table_button"                    "ป้อม"
@@ -138,6 +146,135 @@
 
         "scoring_game_completed"                    "สำเร็จเกมแล้ว!"
         "scoring_game_clear"                        "ผ่านเกมแล้ว!"
+
+        // Towers
+        "basic_arrow_tower"         "ธนู"
+        "dark_arrow_tower"          "ธนูมืด"
+        "light_arrow_tower"         "ธนูแสง"
+        "fire_arrow_tower"          "ธนูไฟ"
+        "nature_arrow_tower"        "ธนูไม้"
+        "water_arrow_tower"         "ธนูน้ำ"
+        "earth_arrow_tower"         "ธนูดิน"
+        
+        "basic_cannon_tower"        "ปืนใหญ่"
+        "dark_cannon_tower"         "ปืนใหญ่มืด"
+        "light_cannon_tower"        "ปืนใหญ่แสง"
+        "fire_cannon_tower"         "ปืนใหญ่ไฟ"
+        "nature_cannon_tower"       "ปืนใหญ่ไม้"
+        "water_cannon_tower"        "ปืนใหญ่น้ำ"
+        "earth_cannon_tower"        "ปืนใหญ่ดิน"
+
+        "water_tower"               "น้ำ"
+        "focused_water_tower"       "น้ำ 2"
+        "refined_water_tower"       "น้ำ 3"
+        "pure_water_tower"          "น้ำบริสุทธิ์"
+        "fire_tower"                "ไฟ"
+        "focused_fire_tower"        "ไฟ 2"
+        "refined_fire_tower"        "ไฟ 3"
+        "pure_fire_tower"           "ไฟบริสุทธิ์"
+        "nature_tower"              "ไม้"
+        "focused_nature_tower"      "ไม้ 2"
+        "refined_nature_tower"      "ไม้ 3"
+        "pure_nature_tower"         "ไม้บริสุทธิ์"
+        "earth_tower"               "ดิน"
+        "focused_earth_tower"       "ดิน 2"
+        "refined_earth_tower"       "ดิน 3"
+        "pure_earth_tower"          "ดินบริสุทธิ์"
+        "light_tower"               "แสง"
+        "focused_light_tower"       "แสง 2"
+        "refined_light_tower"       "แสง 3"
+        "pure_light_tower"          "แสงบริสุทธิ์"
+        "dark_tower"                "มืด"
+        "focused_dark_tower"        "มืด 2"
+        "refined_dark_tower"        "มืด 3"
+        "pure_dark_tower"           "มืดบริสุทธิ์"
+        "magic_tower"               "เวทมนตร์"
+        "magic_tower_2"             "เวทมนตร์ 2" //Sorcery
+        "magic_tower_3"             "เวทมนตร์ 3" //Wizardry
+        "disease_tower"             "แพร่เชื้อ"
+        "disease_tower_2"           "แพร่เชื้อ 2" //Decay
+        "disease_tower_3"           "แพร่เชื้อ 3" //Death
+        "well_tower"                "บ่อน้ำ"
+        "well_tower_2"              "บ่อน้ำ 2" //Spring
+        "well_tower_3"              "บ่อน้ำ 3" //Waterfall
+        "blacksmith_tower"          "เสริมพลัง"
+        "blacksmith_tower_2"        "เสริมพลัง 2" //Forge
+        "blacksmith_tower_3"        "เสริมพลัง 3" //Foundry
+        "moss_tower"                "มอส"
+        "moss_tower_2"              "มอส 2" //Toadstool
+        "moss_tower_3"              "มอส 3" //Fungus
+        "quark_tower"               "ควาร์ก"
+        "quark_tower_2"             "ควาร์ก 2" //Electron
+        "quark_tower_3"             "ควาร์ก 3" //Atom
+        "electricity_tower"         "ไฟฟ้า"
+        "electricity_tower_2"       "ไฟฟ้า 2" //Lightning
+        "electricity_tower_3"       "ไฟฟ้า 3" //Energy
+        "flame_tower"               "เพลิง"
+        "flame_tower_2"             "เพลิง 2" //Solar
+        "flame_tower_3"             "เพลิง 3" //Sun
+        "vapor_tower"               "ไอน้ำ"
+        "vapor_tower_2"             "ไอน้ำ 2" //Mist
+        "vapor_tower_3"             "ไอน้ำ 3" //Steam
+        "poison_tower"              "พิษ"
+        "poison_tower_2"            "พิษ 2" //Pollution
+        "poison_tower_3"            "พิษ 3" //Pestilence
+        "life_tower"                "ชีวิต"
+        "life_tower_2"              "ชีวิต 2" //Eternal
+        "life_tower_3"              "ชีวิต 3" //Soul Catcher
+        "hydro_tower"               "ไฮโดร"
+        "hydro_tower_2"             "ไฮโดร 2" //Spout
+        "hydro_tower_3"             "ไฮโดร 3" //Geyser
+        "trickery_tower"            "มายา"
+        "trickery_tower_2"          "มายา 2" //Mirage
+        "trickery_tower_3"          "มายา 3" //Eidolon
+        "gunpowder_tower"           "ดินปืน"
+        "gunpowder_tower_2"         "ดินปืน 2" //Mortar
+        "gunpowder_tower_3"         "ดินปืน 3" //Vulcan
+        "ice_tower"                 "น้ำแข็ง"
+        "ice_tower_2"               "น้ำแข็ง 2" //Freezing
+        "ice_tower_3"               "น้ำแข็ง 3" //Subzero
+        "muck_tower"                "หนืด"
+        "muck_tower_2"              "หนืด 2" //Mire
+        "gold_tower"                "ทอง"
+        "gold_tower_2"              "ทอง 2" //Wealth
+        "windstorm_tower"           "พายุ"
+        "windstorm_tower_2"         "พายุ 2" //Monsoon
+        "windstorm_tornado"         "พายุ Tornado"
+        "quake_tower"               "สะเทือน"
+        "quake_tower_2"             "สะเทือน 2" //Earthbreaker
+        "enchantment_tower"         "อาคม"
+        "enchantment_tower_2"       "อาคม 2" //Incantation
+       "flooding_tower"           "คลื่นน้ำ"
+       "flooding_tower_2"         "คลื่นน้ำ 2" //Drowning
+        "laser_tower"               "เลเซอร์"
+        "laser_tower_2"             "เลเซอร์ 2" //Phaser
+        "hail_tower"                "ลูกสายฟ้า"
+        "hail_tower_2"              "ลูกสายฟ้า 2" //Comet
+        "runic_tower"               "รูนิก"
+        "runic_tower_2"             "รูนิก 2" //Occult
+        "impulse_tower"             "กระตุ้น"
+        "impulse_tower_2"           "กระตุ้น 2" //Velocity
+        "obliteration_tower"        "ลบล้าง"
+        "obliteration_tower_2"      "ลบล้าง 2" //Annihilation
+        "ephemeral_tower"           "ไม่ยั่งยืน"
+        "ephemeral_tower_2"         "ไม่ยั่งยืน 2" //Temporal
+        "flamethrower_tower"        "พ่นเพลิง"
+        "flamethrower_tower_2"      "พ่นเพลิง 2" //Flamespewer
+        "haste_tower"               "รวดเร็ว"
+        "haste_tower_2"             "รวดเร็ว 2" //Blitz
+        "tidal_tower"               "กระแสน้ำ"
+        "tidal_tower_2"             "กระแสน้ำ 2" //Tsunami
+        "roots_tower"               "ราก"
+        "roots_tower_2"             "ราก 2" //Thorns
+        "nova_tower"                "คลื่นไฟ"
+        "nova_tower_2"              "คลื่นไฟ 2" //Supernova
+        "erosion_tower"             "กัดกร่อน"
+        "erosion_tower_2"           "กัดกร่อน 2" //Corrosion
+        "polar_tower"               "ไอเย็น"
+        "polar_tower_2"             "ไอเย็น 2" //Glacial
+        "jinx_tower"                "สาป"
+        "jinx_tower_2"              "สาป 2" //Hex
+        "periodic_tower"            "มหาธาตุ"
 
         // Dual/Triple Tower Names
         "magic_tower_name"               "เวทมนตร์"

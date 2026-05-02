@@ -342,9 +342,19 @@
         "DOTA_Tooltip_ability_sell_tower_0_Description"     "ขายป้อมนี้ (ไม่ได้โกลด์คืน)"
         "DOTA_Tooltip_ability_sell_tower_0_sell_amount_tooltip"     "%โกลด์ที่ได้คืน:"
 
+        "DOTA_Tooltip_ability_tower_targeting"        "การเลือกเป้าหมายป้อม"
+        "DOTA_Tooltip_ability_tower_targeting_Description"        "สลับลำดับความสำคัญในการเลือกเป้าหมายของป้อมนี้วนตามลำดับ: ใกล้ที่สุด, ไกลที่สุด, พลังชีวิตน้อยที่สุด, พลังชีวิตมากที่สุด, เวฟเก่าที่สุด, เวฟใหม่ที่สุด"
+
         "DOTA_Tooltip_ability_attack_ground"                                              "โจมตีพื้น"
         "DOTA_Tooltip_ability_attack_ground_Description"                                  "ร่ายความสามารถนี้เพื่อให้โจมตีบนพื้นที่ที่เลือกอย่างต่อเนื่อง โจมตีครีปหรือกดปุ่มหยุดเพื่อยกเลิก"
         "DOTA_Tooltip_ability_attack_ground_splash_aoe"                                   "พื้นที่โจมตี:"
+
+        "etd_targeting_mode_closest"            "เป้าหมาย: <b>ใกล้ที่สุด</b>"
+        "etd_targeting_mode_farthest"           "เป้าหมาย: <b>ไกลที่สุด</b>"
+        "etd_targeting_mode_lowest_hp"          "เป้าหมาย: <b>พลังชีวิตน้อยที่สุด</b>"
+        "etd_targeting_mode_highest_hp"         "เป้าหมาย: <b>พลังชีวิตมากที่สุด</b>"
+        "etd_targeting_mode_older"              "เป้าหมาย: <b>ตัวที่เกิดก่อนสุด</b>"
+        "etd_targeting_mode_newer"              "เป้าหมาย: <b>ตัวที่เกิดล่าสุด</b>"
 
         "DOTA_Tooltip_ability_cancel_construction"                                        "ยกเลิกการก่อสร้าง"
         "DOTA_Tooltip_ability_cancel_construction_Description"                            "หยุดการก่อสร้างป้อม คืนเงินเต็มราคาและพื้นที่ย้อนคืนเป็นที่ว่างเปล่า"
