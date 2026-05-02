@@ -1933,7 +1933,7 @@ function BuildingHelper:GetOrCreateDummy(unitName)
     else
         BuildingHelper:print("AddBuilding "..unitName)
         -- Spawn unit somewhere the map to avoid being seen (hidden in rocks)
-        local mgd = CreateUnitByName(unitName, Vector(-4000,0,0), false, nil, nil, 0)
+        local mgd = CreateUnitByName(unitName, Vector(COOP_MAP and 0 or -4000,COOP_MAP and 5000 or 0,0), false, nil, nil, 0)
         -- mgd:AddEffects(EF_NODRAW) -- This causes the ghost model particles not to render
         mgd:AddNewModifier(mgd, nil, "modifier_out_of_world", {})
         BuildingHelper.Dummies[unitName] = mgd
