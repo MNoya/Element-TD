@@ -570,6 +570,7 @@ function statCollection:sendStage(stageName, payload, callback, override_host)
     req:Send(function(res)
         if res.StatusCode ~= 200 or not res.Body then
             statCollection:print(errorFailedToContactServer)
+            callback(nil, { error = errorFailedToContactServer })
             return
         end
 
