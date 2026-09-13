@@ -101,8 +101,8 @@ function statCollection:init()
     -- Store the modIdentifier
     self.modIdentifier = modIdentifier
 
-    -- Store the dedicatedServerKey
-    self.dedicatedServerKey = GetDedicatedServerKeyV3('element_td')
+    -- Set the dedicated server key. Use the public upload key for player-hosted games.
+    self.dedicatedServerKey = IsDedicatedServer() and GetDedicatedServerKeyV3('element_td') or 'ElementTD'
 
     -- Store the schemaIdentifier
     self.SCHEMA_KEY = statInfo.schemaID
