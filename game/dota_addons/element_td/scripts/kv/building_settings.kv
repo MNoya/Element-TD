@@ -6,10 +6,20 @@
     "ALT_GRID_SQUARES"          "2"
     "RANGE_OVERLAY_ALPHA"       "20"
     "MODEL_ALPHA"               "100"
-    "RECOLOR_GHOST_MODEL"       "false"
+    "RECOLOR_GHOST_MODEL"       "true"
     "RED_MODEL_WHEN_INVALID"    "true"
     "RECOLOR_BUILDING_PLACED"   "true"
     "PERMANENT_ALT_GRID"        "false"
+
+    "GHOST_PARTICLES"
+    {
+        "Default"  "particles/buildinghelper/ghost_model.vpcf"
+        "Hero"     "particles/buildinghelper/ghost_model_hero.vpcf"
+        "Overrides"
+        {
+            "npc_dota_hero_nevermore"  "particles/buildinghelper/ghost_model_shadow_fiend.vpcf"
+        }
+    }
 
     // Does this game have tree cutting methods and allows for building on them?
     "UPDATE_TREES"              "false"

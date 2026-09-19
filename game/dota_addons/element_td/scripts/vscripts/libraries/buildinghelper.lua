@@ -543,6 +543,7 @@ function BuildingHelper:AddBuilding(keys)
     -- Get a model dummy to pass it to panorama
     local mgd = BuildingHelper:GetOrCreateDummy(unitName)
     event.entindex = mgd:GetEntityIndex()
+    event.ghostParticle = BuildingHelper:GetGhostParticle(mgd)
 
     -- Range overlay
     if mgd:HasAttackCapability() then
@@ -1688,9 +1689,10 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
         local entity = BuildingHelper:GetOrCreateDummy(unitName)
         work.entity = entity
 
-        local modelParticle = ParticleManager:CreateParticleForPlayer("particles/buildinghelper/ghost_model.vpcf", PATTACH_ABSORIGIN, entity, player)
+        local ghostParticle = BuildingHelper:GetGhostParticle(entity)
+        local modelParticle = ParticleManager:CreateParticleForPlayer(ghostParticle, PATTACH_ABSORIGIN, entity, player)
         ParticleManager:SetParticleControl(modelParticle, 0, model_location)
-        ParticleManager:SetParticleControlEnt(modelParticle, 1, entity, 1, "world_origin", entity:GetAbsOrigin(), true) -- Model attach          
+        ParticleManager:SetParticleControlEnt(modelParticle, 1, entity, PATTACH_ABSORIGIN_FOLLOW, "", entity:GetAbsOrigin(), true) -- Model attach
         ParticleManager:SetParticleControl(modelParticle, 3, Vector(BuildingHelper.Settings["MODEL_ALPHA"],0,0)) -- Alpha
         ParticleManager:SetParticleControl(modelParticle, 4, Vector(fMaxScale,0,0)) -- Scale
         work.particleIndex = modelParticle
@@ -1709,7 +1711,7 @@ function BuildingHelper:AddToQueue(builder, location, bQueued)
             prop:AddEffects(EF_NODRAW)
             prop.pedestalParticle = ParticleManager:CreateParticleForPlayer("particles/buildinghelper/ghost_model.vpcf", PATTACH_ABSORIGIN, prop, player)
             ParticleManager:SetParticleControl(prop.pedestalParticle, 0, offset_location)
-            ParticleManager:SetParticleControlEnt(prop.pedestalParticle, 1, prop, 1, "world_origin", prop:GetAbsOrigin(), true) -- Model attach
+            ParticleManager:SetParticleControlEnt(prop.pedestalParticle, 1, prop, PATTACH_ABSORIGIN_FOLLOW, "", prop:GetAbsOrigin(), true) -- Model attach
             ParticleManager:SetParticleControl(prop.pedestalParticle, 2, color) -- Color
             ParticleManager:SetParticleControl(prop.pedestalParticle, 3, Vector(BuildingHelper.Settings["MODEL_ALPHA"],0,0)) -- Alpha
             ParticleManager:SetParticleControl(prop.pedestalParticle, 4, Vector(scale,0,0)) -- Scale
@@ -1924,6 +1926,17 @@ function BuildingHelper:GetPlayerTable(playerID)
     end
 
     return BuildingHelper.Players[playerID]
+end
+
+-- Keep cursor and queued previews on the same configured renderer.
+function BuildingHelper:GetGhostParticle(entity)
+    -- A running Tools match may still hold the settings from before a reload.
+    if not self.Settings["GHOST_PARTICLES"] then
+        self:LoadSettings()
+    end
+    local particles = self.Settings["GHOST_PARTICLES"]
+    local overrides = particles["Overrides"] or {}
+    return overrides[entity:GetUnitName()] or particles[entity:IsHero() and "Hero" or "Default"]
 end
 
 -- Creates an out of world dummy at map origin and stores it, reducing load from creating units

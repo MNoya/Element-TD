@@ -5,7 +5,6 @@
 	m_nMaxParticles = 1
 	m_flConstantRadius = 1.0
 	m_ConstantColor = [ 0, 0, 0, 255 ]
-	m_nConstantSequenceNumber1 = 18
 	m_bShouldSort = false
 	m_flCullRadius = -1.0
 	m_nBehaviorVersion = 12
@@ -57,6 +56,16 @@
 	]
 	m_Initializers = 
 	[
+        // Keep the pose frame fixed for the lifetime of the preview.
+        {
+            _class = "C_INIT_InitFloat"
+            m_InputValue =
+            {
+                m_nType = "PF_TYPE_LITERAL"
+                m_flLiteralValue = 0.0
+            }
+            m_nOutputField = 18
+        },
 		{
 			_class = "C_INIT_RemapInitialTransformDirectionToRotation"
 			m_flOffsetRot = 90.0
@@ -159,18 +168,28 @@
 		{
 			_class = "C_OP_RenderModels"
 			m_nManualFrameField = 18
-			m_nSubModelField = 19
-			m_nBodyGroupField = 19
+			// Preserve all default body meshes on heroes and their wearables.
+			m_nSubModelFieldType = "SUBMODEL_IGNORED_USE_MODEL_DEFAULT_MESHGROUP_MASK"
+            // Skeletal posing stays enabled to avoid a bind-pose/T-pose.
+            // Manual frame 0 and a zero rate make this a stationary preview.
+			m_bAnimated = true
+            m_ActivityName = "ACT_DOTA_IDLE"
+            m_flAnimationRate =
+            {
+                m_nType = "PF_TYPE_LITERAL"
+                m_flLiteralValue = 0.0
+            }
+			m_nAnimationField = 13
 			m_bManualAnimFrame = true
 			m_bOrientZ = true
-			m_nSkin = 1
+			m_nSkin = 0
 			m_ModelList = 
 			[
 				{
 					m_model = resource:"models/heroes/storm_spirit/storm_spirit.vmdl"
 				},
 			]
-			m_nLOD = 1
+			m_nLOD = -1
 			m_modelInput = 
 			{
 				m_nType = "PM_TYPE_CONTROL_POINT"

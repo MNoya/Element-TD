@@ -4,6 +4,11 @@ $.Msg( "Compiled Building Helper!" );
 
 GameUI.SetRenderBottomInsetOverride( 0 );
 
+// A Tools reload or another helper panel must release the previous preview.
+if (GameUI.CustomUIConfig().buildingHelperPreview)
+    GameUI.CustomUIConfig().buildingHelperPreview.dispose();
+var helperInstance = { disposed: false, subscriptions: [], updateSchedule: undefined };
+
 var state = 'disabled';
 var frame_rate = 1/30;
 var tree_update_interval = 1;
@@ -46,9 +51,6 @@ if (CustomNetTables.GetTableValue( "building_settings", "height_restriction") !=
     height_restriction = CustomNetTables.GetTableValue( "building_settings", "height_restriction").value;
 
 var GRID_TYPES = CustomNetTables.GetTableValue( "building_settings", "grid_types")
-CustomNetTables.SubscribeNetTableListener( "building_settings", function() {
-    GRID_TYPES = CustomNetTables.GetTableValue( "building_settings", "grid_types")
-})
 
 var Root = $.GetContextPanel()
 var localHeroIndex
@@ -61,10 +63,26 @@ if (! Root.loaded)
     Root.loaded = true;
 }
 
+function GetGhostColor(invalid)
+{
+    if (invalid && turn_red)
+        return [255, 0, 0];
+    return recolor_ghost ? [0, 255, 0] : [255, 255, 255];
+}
+
 function StartBuildingHelper( params )
 {
+    if (helperInstance.disposed) return;
+
+    if (helperInstance.updateSchedule !== undefined)
+    {
+        $.CancelScheduled(helperInstance.updateSchedule);
+        helperInstance.updateSchedule = undefined;
+    }
+
     if (params !== undefined)
     {
+        EndBuildingHelper();
         // Set the parameters passed by AddBuilding
         localHeroIndex = Players.GetPlayerHeroEntityIndex( Players.GetLocalPlayer() );
         state = params.state;
@@ -81,36 +99,14 @@ function StartBuildingHelper( params )
         requires = GetRequiredGridType(entindex)
         distance_to_gold_mine = HasGoldMineDistanceRestriction(entindex)
         
-        // If we chose to not recolor the ghost model, set it white
-        var ghost_color = [0, 255, 0]
-        if (!recolor_ghost)
-            ghost_color = [255,255,255]
+        var ghost_color = GetGhostColor(false);
 
         pressedShift = GameUI.IsShiftDown();
 
-        if (modelParticle !== undefined) {
-            Particles.DestroyParticleEffect(modelParticle, true)
-        }
-        if (propParticle !== undefined) {
-            Particles.DestroyParticleEffect(propParticle, true)
-        }
-        if (gridParticles !== undefined) {
-            for (var i in gridParticles) {
-                Particles.DestroyParticleEffect(gridParticles[i], true)
-            }
-        }
-        if (overlayParticles !== undefined) {
-            for (var i in overlayParticles) {
-                Particles.DestroyParticleEffect(overlayParticles[i], true)
-            }
-        }
-        if (rangeOverlay !== undefined) {
-            Particles.DestroyParticleEffect(rangeOverlay, true)
-        }
-
         // Building Ghost
-        modelParticle = Particles.CreateParticle("particles/buildinghelper/ghost_model.vpcf", ParticleAttachment_t.PATTACH_ABSORIGIN, localHeroIndex);
-        Particles.SetParticleControlEnt(modelParticle, 1, entindex, ParticleAttachment_t.PATTACH_POINT_FOLLOW, "follow_hitloc", Entities.GetAbsOrigin(entindex), true)
+        var ghostParticle = params.ghostParticle || "particles/buildinghelper/ghost_model.vpcf";
+        modelParticle = Particles.CreateParticle(ghostParticle, ParticleAttachment_t.PATTACH_ABSORIGIN, localHeroIndex);
+        Particles.SetParticleControlEnt(modelParticle, 1, entindex, ParticleAttachment_t.PATTACH_ABSORIGIN_FOLLOW, "", Entities.GetAbsOrigin(entindex), true)
         Particles.SetParticleControl(modelParticle, 2, ghost_color)
         Particles.SetParticleControl(modelParticle, 3, [model_alpha,0,0])
         Particles.SetParticleControl(modelParticle, 4, [scale,0,0])
@@ -129,7 +125,7 @@ function StartBuildingHelper( params )
         if (params.propIndex !== undefined)
         {
             propParticle = Particles.CreateParticle("particles/buildinghelper/ghost_model.vpcf", ParticleAttachment_t.PATTACH_ABSORIGIN, localHeroIndex);
-            Particles.SetParticleControlEnt(propParticle, 1, params.propIndex, ParticleAttachment_t.PATTACH_POINT_FOLLOW, "follow_hitloc", Entities.GetAbsOrigin(params.propIndex), true)
+            Particles.SetParticleControlEnt(propParticle, 1, params.propIndex, ParticleAttachment_t.PATTACH_ABSORIGIN_FOLLOW, "", Entities.GetAbsOrigin(params.propIndex), true)
             Particles.SetParticleControl(propParticle, 2, ghost_color)
             Particles.SetParticleControl(propParticle, 3, [model_alpha,0,0])
             Particles.SetParticleControl(propParticle, 4, [propScale,0,0])
@@ -141,7 +137,12 @@ function StartBuildingHelper( params )
 
     if (state == 'active')
     {   
-        $.Schedule(frame_rate, StartBuildingHelper);
+        var instance = helperInstance;
+        instance.updateSchedule = $.Schedule(frame_rate, function() {
+            if (instance.disposed) return;
+            instance.updateSchedule = undefined;
+            StartBuildingHelper();
+        });
 
         // Get all the visible entities
         var entities = Entities.GetAllEntitiesByClassname('npc_dota_building')
@@ -330,6 +331,7 @@ function StartBuildingHelper( params )
                 if (rangeOverlayActive && rangeOverlay !== undefined)
                 {
                     Particles.DestroyParticleEffect(rangeOverlay, true)
+                    rangeOverlay = undefined;
                     rangeOverlayActive = false
                 }
             }
@@ -359,12 +361,11 @@ function StartBuildingHelper( params )
                 Particles.SetParticleControl(propParticle, 0, pedestalPos)
             }
 
-            // Turn the model red if we can't build there
-            if (turn_red){
-                invalid ? Particles.SetParticleControl(modelParticle, 2, [255,0,0]) : Particles.SetParticleControl(modelParticle, 2, [255,255,255])
-                if (propParticle !== undefined)
-                    invalid ? Particles.SetParticleControl(propParticle, 2, [255,0,0]) : Particles.SetParticleControl(propParticle, 2, [255,255,255])
-            }
+            // Apply the placement tint to both the tower and its pedestal every frame.
+            var ghost_color = GetGhostColor(invalid);
+            Particles.SetParticleControl(modelParticle, 2, ghost_color);
+            if (propParticle !== undefined)
+                Particles.SetParticleControl(propParticle, 2, ghost_color);
         }
 
         if ( (!GameUI.IsShiftDown() && pressedShift) || !Entities.IsAlive( builderIndex ) )
@@ -377,14 +378,21 @@ function StartBuildingHelper( params )
 function EndBuildingHelper()
 {
     state = 'disabled'
+    if (helperInstance.updateSchedule !== undefined) {
+        $.CancelScheduled(helperInstance.updateSchedule);
+        helperInstance.updateSchedule = undefined;
+    }
     if (modelParticle !== undefined){
          Particles.DestroyParticleEffect(modelParticle, true)
+         modelParticle = undefined;
     }
     if (propParticle !== undefined){
          Particles.DestroyParticleEffect(propParticle, true)
+         propParticle = undefined;
     }
     if (rangeOverlay !== undefined){
         Particles.DestroyParticleEffect(rangeOverlay, true)
+        rangeOverlay = undefined;
     }
     for (var i in gridParticles) {
         Particles.DestroyParticleEffect(gridParticles[i], true)
@@ -392,6 +400,9 @@ function EndBuildingHelper()
     for (var i in overlayParticles) {
         Particles.DestroyParticleEffect(overlayParticles[i], true)
     }
+    gridParticles = [];
+    overlayParticles = [];
+    rangeOverlayActive = false;
 }
 
 function SendBuildCommand( params )
@@ -501,13 +512,32 @@ function RequestGNV () {
     GameEvents.SendCustomGameEventToServer( "gnv_request", {} )
 }
 
-(function () {    
-    RequestGNV()
+(function () {
+    var instance = helperInstance;
+    var endPreview = EndBuildingHelper;
+    function subscribe(name, callback) {
+        instance.subscriptions.push(GameEvents.Subscribe(name, function(params) {
+            if (!instance.disposed) callback(params);
+        }));
+    }
+    var settingsListener = CustomNetTables.SubscribeNetTableListener("building_settings", function() {
+        if (!instance.disposed)
+            GRID_TYPES = CustomNetTables.GetTableValue("building_settings", "grid_types");
+    });
+    instance.dispose = function() {
+        if (instance.disposed) return;
+        instance.disposed = true;
+        endPreview();
+        for (var i = 0; i < instance.subscriptions.length; i++)
+            GameEvents.Unsubscribe(instance.subscriptions[i]);
+        CustomNetTables.UnsubscribeNetTableListener(settingsListener);
+    };
+    GameUI.CustomUIConfig().buildingHelperPreview = instance;
 
-    GameEvents.Subscribe( "building_helper_enable", StartBuildingHelper);
-    GameEvents.Subscribe( "building_helper_end", EndBuildingHelper);
-
-    GameEvents.Subscribe( "gnv_register", RegisterGNV);
+    subscribe("building_helper_enable", StartBuildingHelper);
+    subscribe("building_helper_end", EndBuildingHelper);
+    subscribe("gnv_register", RegisterGNV);
+    RequestGNV();
 })();
 
 //-----------------------------------

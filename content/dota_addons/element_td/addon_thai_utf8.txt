@@ -50,6 +50,8 @@
         "DOTA_ToolTip_Targeting_AlliedCreeps" "ป้อมของคุณ" //Overrides the default dota tooltip
         "dota_hud_error_unit_cant_move"       "เลือกฮีโร่ของคุณเพื่อเคลื่อนที่" //Overrides the default dota tooltip
         "DOTA_LevelUp"  "ธาตุ" //Overrides the default dota tooltip
+        "recorded_timeout_title"    "หมดเวลารอการตอบกลับจากกระดานผู้นำ"
+        "recorded_timeout_tooltip"  "ไม่ได้รับการยืนยันการบันทึกผลภายใน 20 วินาที หากได้รับการยืนยันในภายหลัง ไอคอนนี้จะอัปเดต"
 
         // ******************** UNITS ********************
         // Towers

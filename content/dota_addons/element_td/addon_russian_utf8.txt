@@ -50,6 +50,8 @@
         "DOTA_ToolTip_Targeting_AlliedCreeps" "Ваши башни" //Overrides the default dota tooltip
         "dota_hud_error_unit_cant_move"       "Выберите героя, чтобы двигаться" //Overrides the default dota tooltip
         "DOTA_LevelUp"  "ЭЛЕМЕНТЫ" //Overrides the default dota tooltip
+        "recorded_timeout_title"    "Истекло время ожидания ответа таблицы лидеров"
+        "recorded_timeout_tooltip"  "Запись результата не была подтверждена в течение 20 секунд. Если подтверждение придёт позже, значок обновится."
 
         // ******************** UNITS ********************
         // Towers

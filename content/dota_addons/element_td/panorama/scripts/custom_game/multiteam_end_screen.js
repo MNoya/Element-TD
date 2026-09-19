@@ -4,43 +4,45 @@ var Credits = $("#Supporters")
 var Verify = $("#Verify")
 var Spinner = $("#Loading")
 
-function VerifyGame() {
-    var game_recorded_info = CustomNetTables.GetTableValue("gameinfo", "game_recorded")
-    if (game_recorded_info)
-    {
-        var recorded_state = game_recorded_info.value
-        Verify.state = recorded_state
-        Spinner.AddClass("hide");
-        if (recorded_state == "recorded")
-        {
-            Verify.style['background-color'] = "lime;"
-            Verify.RemoveClass("scale");
-            Verify.RemoveClass("fade");
-            $.Schedule( 0.3, function() {
-                $("#stem").RemoveClass("fade");
-                $("#kick").RemoveClass("fade");
-            })
-            return
-        }
+var RecordingTimeoutSeconds = 20;
+var RecordingTimeout = null;
 
-        else if (recorded_state == "failed")
-        {
-            Verify.style['background-color'] = "red;"
-            Verify.RemoveClass("scale");
-            Verify.RemoveClass("fade");
-            $.Schedule( 0.3, function() {
-                $("#cross").RemoveClass("hide")
-            })
-            return
-        }
+function UpdateRecordedState(info) {
+    if (!info || (info.value !== "recorded" && info.value !== "failed" && info.value !== "timed_out"))
+        return;
+
+    // A late confirmation may replace a timeout; stale messages cannot undo success.
+    if (Verify.state === "recorded" || Verify.state === info.value ||
+        (Verify.state === "failed" && info.value === "timed_out"))
+        return;
+
+    Verify.state = info.value;
+    if (RecordingTimeout !== null) {
+        $.CancelScheduled(RecordingTimeout);
+        RecordingTimeout = null;
     }
 
-    $.Schedule(0.1, VerifyGame)
+    var recorded = info.value === "recorded";
+    Spinner.AddClass("hide");
+    Verify.style['background-color'] = recorded ? "lime" : "red";
+    Verify.RemoveClass("scale");
+    Verify.RemoveClass("fade");
+    $("#stem").SetHasClass("fade", !recorded);
+    $("#kick").SetHasClass("fade", !recorded);
+    $("#cross").SetHasClass("hide", recorded);
+    $("#RecordingTimeoutBadge").SetHasClass("hide", info.value !== "timed_out");
+}
+
+function VerifyGame(info) {
+    // Events carry their own result and can arrive before the net table replicates.
+    UpdateRecordedState(info || CustomNetTables.GetTableValue("gameinfo", "game_recorded"));
 }
 
 function ShowRecordedTooltip () {
     if (Verify.state == "recorded")
         $.DispatchEvent("DOTAShowTitleTextTooltip", Verify, "#recorded_title", "#recorded_tooltip");
+    else if (Verify.state == "timed_out")
+        $.DispatchEvent("DOTAShowTitleTextTooltip", Verify, "#recorded_timeout_title", "#recorded_timeout_tooltip");
     else if (Verify.state == "failed")
         $.DispatchEvent("DOTAShowTitleTextTooltip", Verify, "#recorded_fail_title", "#recorded_fail_tooltip");
 }
@@ -109,6 +111,18 @@ function UpdateWinString (endScreenVictory, winningTeamId) {
 (function()
 {
     GameEvents.Subscribe( "etd_game_recorded", VerifyGame );
+    CustomNetTables.SubscribeNetTableListener("gameinfo", function(tableName, key, data) {
+        if (key === "game_recorded")
+            UpdateRecordedState(data);
+    });
+    // Panorama keeps this deadline even if server simulation stops after the match.
+    RecordingTimeout = $.Schedule(RecordingTimeoutSeconds, function() {
+        RecordingTimeout = null;
+        VerifyGame();
+        if (!Verify.state)
+            UpdateRecordedState({value: "timed_out"});
+    });
+    VerifyGame();
     ShowEndCredits()
     if ( ScoreboardUpdater_InitializeScoreboard === null ) { $.Msg( "WARNING: This file requires shared_scoreboard_updater.js to be included." ); }
 
@@ -181,5 +195,4 @@ function UpdateWinString (endScreenVictory, winningTeamId) {
         }
     }
 
-    $.Schedule(0.1, VerifyGame)
 })();

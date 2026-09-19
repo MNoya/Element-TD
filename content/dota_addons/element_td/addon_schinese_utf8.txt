@@ -51,6 +51,8 @@
         "DOTA_ToolTip_Targeting_AlliedCreeps" "您的防御塔"
         "dota_hud_error_unit_cant_move"       "选择英雄进行移动"
         "DOTA_LevelUp"  "元素"
+        "recorded_timeout_title"    "排行榜请求超时"
+        "recorded_timeout_tooltip"  "未在20秒内确认比赛结果已记录。若稍后收到确认，此图标仍会更新。"
 
         // ******************** UNITS ********************
         // Towers

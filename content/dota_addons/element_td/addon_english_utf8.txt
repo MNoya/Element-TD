@@ -48,6 +48,8 @@
         "DOTA_ToolTip_Targeting_AlliedCreeps" "Your Towers" //Overrides the default dota tooltip
         "dota_hud_error_unit_cant_move"       "Select your Hero to Move" //Overrides the default dota tooltip
         "DOTA_LevelUp"  "ELEMENTS" //Overrides the default dota tooltip
+        "recorded_timeout_title"    "Leaderboard request timed out"
+        "recorded_timeout_tooltip"  "Recording was not confirmed within 20 seconds. A late confirmation will still update this icon."
 
         // ******************** UNITS ********************
         // Arrow

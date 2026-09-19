@@ -1,0 +1,296 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf63:version{a6e6a69e-52d3-4527-8b9c-ff3bb91aca3e} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 1
+	m_flConstantRadius = 1.0
+	m_ConstantColor = [ 0, 0, 0, 255 ]
+	m_bShouldSort = false
+	m_flCullRadius = -1.0
+	m_nBehaviorVersion = 12
+	m_nFirstMultipleOverride_BackwardCompat = 4
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iControlPoint = 2
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 255.0, 255.0, 255.0 ]
+					m_entityName = "self"
+				},
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 3
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 4
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 1.0
+			}
+		},
+	]
+	m_Initializers = 
+	[
+        // Keep the pose frame fixed for the lifetime of the preview.
+        {
+            _class = "C_INIT_InitFloat"
+            m_InputValue =
+            {
+                m_nType = "PF_TYPE_LITERAL"
+                m_flLiteralValue = 0.0
+            }
+            m_nOutputField = 18
+        },
+		{
+			_class = "C_INIT_RemapInitialTransformDirectionToRotation"
+			m_flOffsetRot = 90.0
+			m_TransformInput = 
+			{
+				m_nControlPoint = 1
+			}
+		},
+		{
+			_class = "C_INIT_InitFloat"
+			m_InputValue = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 1.0
+			}
+			m_nOutputField = 1
+		},
+		{
+			_class = "C_INIT_CreateWithinSphereTransform"
+		},
+		{
+			_class = "C_INIT_InitFloat"
+			m_InputValue = 
+			{
+				m_nType = "PF_TYPE_LITERAL"
+				m_flLiteralValue = 18.0
+			}
+			m_nOutputField = 7
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 2.0, 0.0, 0.0 ]
+			m_OffsetMax = [ 2.0, 0.0, 0.0 ]
+			m_bLocalCoords = true
+		},
+		{
+			_class = "C_INIT_InitFloat"
+			m_InputValue = 
+			{
+				m_flInput0 = 0.0
+				m_flInput1 = 100.0
+				m_flOutput0 = 0.0
+				m_flOutput1 = 1.0
+				m_nMapType = "PF_MAP_TYPE_REMAP"
+				m_nType = "PF_TYPE_CONTROL_POINT_COMPONENT"
+				m_nControlPoint = 3
+				m_nVectorComponent = 0
+			}
+			m_nOutputField = 7
+		},
+		{
+			_class = "C_INIT_InitFloat"
+			m_InputValue = 
+			{
+				m_flInput0 = 0.0
+				m_flInput1 = 1000.0
+				m_flOutput0 = 0.0
+				m_flOutput1 = 1000.0
+				m_nMapType = "PF_MAP_TYPE_REMAP"
+				m_nType = "PF_TYPE_CONTROL_POINT_COMPONENT"
+				m_nControlPoint = 4
+				m_nVectorComponent = 0
+			}
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_Orient2DRelToCP"
+			m_nFieldOutput = 12
+			m_flRotOffset = 90.0
+			m_flOpStartFadeOutTime = 0.1
+			m_flOpEndFadeOutTime = 0.1
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_RemapCPtoScalar"
+			m_flOutputMax = 10.1
+			m_flInputMax = 10.0
+			m_nCPInput = 2
+			m_nField = 1
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_EndCapTimedDecay"
+		},
+		{
+			_class = "C_OP_RemapCPtoVector"
+			m_nCPInput = 2
+			m_nFieldOutput = 6
+			m_vInputMax = [ 255.0, 255.0, 255.0 ]
+			m_vOutputMax = [ 1.0, 1.0, 1.0 ]
+		},
+		{
+			_class = "C_OP_PositionLock"
+		},
+	]
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderModels"
+			m_nManualFrameField = 18
+			// Preserve all default body meshes on heroes and their wearables.
+			m_nSubModelFieldType = "SUBMODEL_IGNORED_USE_MODEL_DEFAULT_MESHGROUP_MASK"
+            // Skeletal posing stays enabled to avoid a bind-pose/T-pose.
+            // Manual frame 0 and a zero rate make this a stationary preview.
+			m_bAnimated = true
+            m_ActivityName = "ACT_DOTA_IDLE"
+            m_flAnimationRate =
+            {
+                m_nType = "PF_TYPE_LITERAL"
+                m_flLiteralValue = 0.0
+            }
+			m_nAnimationField = 13
+			m_bManualAnimFrame = true
+			m_bOrientZ = true
+			m_nSkin = 0
+			m_ModelList = 
+			[
+				{
+					m_model = resource:"models/heroes/shadow_fiend/shadow_fiend.vmdl"
+				},
+			]
+			m_nLOD = -1
+			m_modelInput = 
+			{
+				m_nType = "PM_TYPE_CONTROL_POINT"
+				m_nControlPoint = 1
+			}
+		},
+		{
+			_class = "C_OP_RenderModels"
+			m_EconSlotName = "head"
+			m_nManualFrameField = 18
+			// Preserve all default body meshes on heroes and their wearables.
+			m_nSubModelFieldType = "SUBMODEL_IGNORED_USE_MODEL_DEFAULT_MESHGROUP_MASK"
+            // Skeletal posing stays enabled to avoid a bind-pose/T-pose.
+            // Manual frame 0 and a zero rate make this a stationary preview.
+			m_bAnimated = true
+            m_ActivityName = "ACT_DOTA_IDLE"
+            m_flAnimationRate =
+            {
+                m_nType = "PF_TYPE_LITERAL"
+                m_flLiteralValue = 0.0
+            }
+			m_nAnimationField = 13
+			m_bManualAnimFrame = true
+			m_bOrientZ = true
+			m_nSkin = 0
+			m_ModelList = 
+			[
+				{
+					m_model = resource:"models/heroes/shadow_fiend/shadow_fiend_head.vmdl"
+				},
+			]
+			m_nLOD = -1
+			m_modelInput = 
+			{
+				m_nType = "PM_TYPE_CONTROL_POINT"
+				m_nControlPoint = 1
+			}
+		},
+		{
+			_class = "C_OP_RenderModels"
+			m_EconSlotName = "shoulder"
+			m_nManualFrameField = 18
+			// Preserve all default body meshes on heroes and their wearables.
+			m_nSubModelFieldType = "SUBMODEL_IGNORED_USE_MODEL_DEFAULT_MESHGROUP_MASK"
+            // Skeletal posing stays enabled to avoid a bind-pose/T-pose.
+            // Manual frame 0 and a zero rate make this a stationary preview.
+			m_bAnimated = true
+            m_ActivityName = "ACT_DOTA_IDLE"
+            m_flAnimationRate =
+            {
+                m_nType = "PF_TYPE_LITERAL"
+                m_flLiteralValue = 0.0
+            }
+			m_nAnimationField = 13
+			m_bManualAnimFrame = true
+			m_bOrientZ = true
+			m_nSkin = 0
+			m_ModelList = 
+			[
+				{
+					m_model = resource:"models/heroes/shadow_fiend/shadow_fiend_shoulders.vmdl"
+				},
+			]
+			m_nLOD = -1
+			m_modelInput = 
+			{
+				m_nType = "PM_TYPE_CONTROL_POINT"
+				m_nControlPoint = 1
+			}
+		},
+		{
+			_class = "C_OP_RenderModels"
+			m_EconSlotName = "arms"
+			m_nManualFrameField = 18
+			// Preserve all default body meshes on heroes and their wearables.
+			m_nSubModelFieldType = "SUBMODEL_IGNORED_USE_MODEL_DEFAULT_MESHGROUP_MASK"
+            // Skeletal posing stays enabled to avoid a bind-pose/T-pose.
+            // Manual frame 0 and a zero rate make this a stationary preview.
+			m_bAnimated = true
+            m_ActivityName = "ACT_DOTA_IDLE"
+            m_flAnimationRate =
+            {
+                m_nType = "PF_TYPE_LITERAL"
+                m_flLiteralValue = 0.0
+            }
+			m_nAnimationField = 13
+			m_bManualAnimFrame = true
+			m_bOrientZ = true
+			m_nSkin = 0
+			m_ModelList = 
+			[
+				{
+					m_model = resource:"models/heroes/shadow_fiend/shadow_fiend_arms.vmdl"
+				},
+			]
+			m_nLOD = -1
+			m_modelInput = 
+			{
+				m_nType = "PM_TYPE_CONTROL_POINT"
+				m_nControlPoint = 1
+			}
+		},
+	]
+}

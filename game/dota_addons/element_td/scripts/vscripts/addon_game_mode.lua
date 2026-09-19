@@ -139,13 +139,31 @@ end
 
 function Precache(context)
     local precache = LoadKeyValues("scripts/kv/precache.kv")
+    local precachedUnits = {}
 
     for k, a in pairs(precache) do
         for _, v in pairs(a) do
             if k == "unit" then
                 PrecacheUnitByNameSync(v, context)
+                precachedUnits[v] = true
             elseif k ~= "Async" then
                 PrecacheResource(k, v, context)
+            end
+        end
+    end
+
+    -- Placement can use a different unit from the finished tower. Load its
+    -- complete hero model and default wearables before creating a ghost dummy.
+    for _, path in ipairs({
+        "scripts/npc/npc_abilities_custom.txt",
+        "scripts/npc/npc_items_custom.txt",
+        "scripts/npc/npc_units_custom.txt"
+    }) do
+        for _, definition in pairs(LoadKeyValues(path)) do
+            local ghost = type(definition) == "table" and definition.OverrideBuildingGhost
+            if ghost and not precachedUnits[ghost] then
+                PrecacheUnitByNameSync(ghost, context)
+                precachedUnits[ghost] = true
             end
         end
     end

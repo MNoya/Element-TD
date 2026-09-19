@@ -103,12 +103,15 @@
 				<Label text="#CustomEndScreenClose" />
 			</Button>
 			<Label id="LeaderboardLink" text="#leaderboard_link" onactivate="VerifyGame();"/>
-			<Panel id="Loading" class="Spinner"/>
-			<Panel id="Verify" class="fade scale" onactivate="VerifyGame();" onmouseover="ShowRecordedTooltip()" onmouseout="DOTAHideTitleTextTooltip()">
-				<Panel id="stem" class='fade'/>
-                <Panel id="kick" class='fade'/>
-                <Label id="cross" class='hide'/>
-			</Panel>
+            <Panel id="RecordingStatus" onactivate="VerifyGame();" onmouseover="ShowRecordedTooltip()" onmouseout="DOTAHideTitleTextTooltip()">
+                <Panel id="Loading" class="Spinner" hittest="false"/>
+                <Panel id="Verify" class="fade scale" hittest="false">
+                    <Panel id="stem" class="fade" hittest="false"/>
+                    <Panel id="kick" class="fade" hittest="false"/>
+                    <Label id="cross" class="hide" hittest="false"/>
+                </Panel>
+                <Image id="RecordingTimeoutBadge" class="hide" hittest="false" src="file://{images}/custom_game/recording_timeout.svg"/>
+            </Panel>
 		</Panel>
 
 		<Panel id="CreditContainer">

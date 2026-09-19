@@ -30,6 +30,11 @@ $.Msg( "Compiled Panorama Scripts!" );
 	newUI.FindChildTraverse("right_flare").style.visibility = "collapse";
 	newUI.FindChildTraverse("inventory_composition_layer_container").style.visibility = "collapse";
 
+	// Hide Scepter and Shard indicators
+	var aghsStatusContainer = hud.FindChildTraverse("AghsStatusContainer");
+	if (aghsStatusContainer)
+		aghsStatusContainer.style.visibility = "collapse";
+
 	// Remove Scan and Glyph
 	var glyphScanContainer = hud.FindChildTraverse("HUDElements").FindChildTraverse("minimap_container").FindChildTraverse("GlyphScanContainer");
 	glyphScanContainer.style.visibility = "collapse";
