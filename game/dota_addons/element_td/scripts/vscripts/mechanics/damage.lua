@@ -32,44 +32,10 @@ function DamageEntity(entity, attacker, damage, pure, element_override)
         end
     end
 
-    -- Damage reduction for boss level
-    if entity:GetUnitName() == "icefrog" and entity.waveObject then
-        local playerData = entity.waveObject.playerData
-
-        if playerData and playerData.bossWaves and playerData.bossWaves > 0 then
-            -- Apply inverse scaling: reduce damage by the scaling factor
-            local abilityBoss = entity:FindAbilityByName("creep_ability_boss")
-            local damageReductionValue = 1
-
-            if abilityBoss then
-                local bossDamageReduction = abilityBoss:GetSpecialValueFor("damage_reduction")
-                damageReductionValue = bossDamageReduction / 100 + 1
-            end
-
-            local damageReduction = math.pow(damageReductionValue, playerData.bossWaves)
-            local reducedDamage = damage / damageReduction
-
-            local totalDamage = reducedDamage + (entity.fractionalDamage or 0)
-
-            -- Apply only the integer part now
-            local appliedDamage = math.floor(totalDamage)
-
-            entity.fractionalDamage = totalDamage - appliedDamage
-            
-            if GameRules.DebugDamage then
-                print(string.format(
-                    "[DAMAGE] Reduction: %.4f | Original %d | Reduced: %.4f | Total: %.4f | Applied: %d | Carry-over: %.4f",
-                    damageReduction, damage, reducedDamage, totalDamage, appliedDamage, entity.fractionalDamage or 0
-                ))
-            end
-            damage = appliedDamage
-        end
-    end
-
     local playerID = attacker:GetPlayerOwnerID()
     local playerData = GetPlayerData(playerID)
     if playerData.godMode then
-        damage = entity:GetMaxHealth() * 2
+        damage = GetCreepMaxHealth(entity) * 2
     elseif playerData.zenMode then
         damage = 0
     end
@@ -77,15 +43,15 @@ function DamageEntity(entity, attacker, damage, pure, element_override)
     -- Temporal creeps backtrack to where they were some seconds ago, regaining HP
     if entity:HasModifier("modifier_time_lapse") then
         local timeLapse = entity:FindAbilityByName("creep_ability_time_lapse")
-        if timeLapse and timeLapse:IsCooldownReady() and (entity:GetHealth()-damage)/entity:GetMaxHealth() <= timeLapse:GetSpecialValueFor("health_threshold")*0.01 and entity.scriptObject.Backtrack then
+        if timeLapse and timeLapse:IsCooldownReady() and (GetCreepHealth(entity)-damage)/GetCreepMaxHealth(entity) <= timeLapse:GetSpecialValueFor("health_threshold")*0.01 and entity.scriptObject.Backtrack then
             entity.scriptObject:Backtrack()
             return 0
         end
     end
 
     local overkillDamage = 0
-    if entity:GetHealth() - damage <= 0 then
-        overkillDamage = damage - entity:GetHealth()
+    if GetCreepHealth(entity) - damage <= 0 then
+        overkillDamage = damage - GetCreepHealth(entity)
 
         local hero = PlayerResource:GetSelectedHeroEntity(playerID)
         local goldBounty = entity:GetGoldBounty()
@@ -134,7 +100,7 @@ function DamageEntity(entity, attacker, damage, pure, element_override)
 
         entity:Kill(nil, attacker)
     else
-        entity:SetHealth(entity:GetHealth() - damage)
+        SetCreepHealth(entity, GetCreepHealth(entity) - damage)
     end
 
     return damage, math.max(0, overkillDamage)

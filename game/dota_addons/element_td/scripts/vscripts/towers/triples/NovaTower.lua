@@ -2,6 +2,8 @@
 -- This is a support tower. Every time this tower attacks it does X damage in an area of effect around it. 
 -- It also debuffs all creeps hit. Buff slows down movement speed by X%. Debuff does not stack. Debuff lasts X seconds.
 
+require("mechanics/slow")
+
 NovaTower = createClass({
         tower = nil,
         towerClass = "",
@@ -25,12 +27,26 @@ function NovaTower:Explode()
     DamageEntitiesInArea(self.tower:GetAbsOrigin(), self.aoe, self.tower, damage)
     self.lastExplodeTime = GameRules:GetGameTime()
     self.tower:EmitSound("Nova.Cast")
+
+    local targets = {}
+    for _, creep in pairs(GetCreepsInArea(self.tower:GetAbsOrigin(), self.slowAOE)) do
+        if creep:IsAlive() and not creep:IsInvulnerable() and not creep:IsControllableByAnyPlayer() then
+            table.insert(targets, creep)
+        end
+    end
+    ApplySlowLevel({
+        caster = self.tower,
+        ability = self.ability,
+        Name = "modifier_explode_slow",
+        target_entities = targets
+    })
 end
 
 function NovaTower:OnCreated()
     self.ability = AddAbility(self.tower, "nova_tower_explode", self.tower:GetLevel())
     self.explodeDamage = self.ability:GetLevelSpecialValueFor("damage", self.tower:GetLevel()-1)
-    self.aoe = self.ability:GetLevelSpecialValueFor("aoe", self.tower:GetLevel()-1) +self.tower:GetHullRadius()
+    self.slowAOE = self.ability:GetLevelSpecialValueFor("aoe", self.tower:GetLevel()-1)
+    self.aoe = self.slowAOE + self.tower:GetHullRadius()
     self.lastExplodeTime = 0
 end
 

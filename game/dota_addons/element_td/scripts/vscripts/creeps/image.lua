@@ -18,14 +18,13 @@ function CreepImage:OnSpawned()
 end
 
 function CreepImage:OnTakeDamage(keys)
-    if self.creep:GetHealth() > 0 and self.ability and self.ability:IsFullyCastable() and not self.creep.isImage then
+    if GetCreepHealth(self.creep) > 0 and self.ability and self.ability:IsFullyCastable() and not self.creep.isImage then
         self.ability:StartCooldown(10)    
         local image = SpawnEntity(self.creep:GetUnitName(), self.creep.playerID, self.creep:GetOrigin())    
         image.isImage = true    
-        image:SetMaxHealth(self.creep:GetMaxHealth())    
-        image:SetBaseMaxHealth(self.creep:GetMaxHealth())    
+        SetCreepMaxHealth(image, GetCreepMaxHealth(self.creep))
         image:SetDeathXP(0)    
-        image:SetHealth(self.creep:GetHealth())    
+        SetCreepHealth(image, GetCreepHealth(self.creep))
         image:SetForwardVector(self.creep:GetForwardVector())    
         AddAbility(image, "creep_ability_image")    
 

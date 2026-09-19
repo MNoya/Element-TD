@@ -32,6 +32,7 @@ local requires = {
     "mechanics/runes",
     "mechanics/upgrades",
     "mechanics/grid",
+    "mechanics/creep_health",
     "mechanics/damage",
     "mechanics/ranking",
     "mechanics/leaderboard",

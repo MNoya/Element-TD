@@ -39,13 +39,13 @@ end
 function JinxTower:OnMaledictApplied(keys)
     local target = keys.target
     target.MaledictData = {
-        ["StartingHealth"] = target:GetHealth()
+        ["StartingHealth"] = GetCreepHealth(target)
     }
 end
 
 function JinxTower:OnMaledictTick(keys)
     local target = keys.target
-    local healthLost = target.MaledictData.StartingHealth - target:GetHealth()
+    local healthLost = target.MaledictData.StartingHealth - GetCreepHealth(target)
     if healthLost > 0 then
         local damage = math.floor((healthLost * (self.damageTakenToDamage / 100)) + 0.5)
         local damage_done = DamageEntity(target, self.tower, damage)

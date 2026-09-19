@@ -62,7 +62,7 @@ function HasteTower:OnCreated()
     self.wrathStacks = 0
     self.timer = nil
     self.soundEnable = true
-    self.startingBAT = self.tower:GetBaseAttackTime()
+    self.startingBAT = self.tower:GetBaseAttackTime(true) -- Ignore modifiers when capturing the baseline BAT.
 end
 
 RegisterTowerClass(HasteTower, HasteTower.className)

@@ -54,15 +54,13 @@ function SummonElemental(keys)
     -- Adjust health bar
     -- Every five waves elemental HP goes up by 50%. So if you summon a level 1 at wave 20 you get 1,519 HP.
     local health = ElementalBaseHealth[level] * math.pow(1.5, (math.floor(playerData.nextWave / 5))) * difficulty:GetHealthMultiplier()
-    CustomNetTables:SetTableValue("elementals", tostring(elemental.marker_dummy:GetEntityIndex()), {health_marker=health/4})
+    InitializeCreepHealth(elemental, health)
+    CustomNetTables:SetTableValue("elementals", tostring(elemental.marker_dummy:GetEntityIndex()), {health_marker=elemental:GetMaxHealth()/4})
     Timers:CreateTimer(0.03, function()
         marker_dummy:AddNewModifier(elemental.marker_dummy, nil, "modifier_health_bar_markers", {})
     end)
 
     local scale = elemental:GetModelScale()
-    elemental:SetMaxHealth(health)
-    elemental:SetBaseMaxHealth(health) -- This is needed to properly set the max health otherwise it won't work sometimes
-    elemental:SetHealth(health)
     elemental:SetModelScale(scale)
     elemental:SetForwardVector(Vector(0, -1, 0))
     elemental.level = level

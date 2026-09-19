@@ -146,27 +146,36 @@ function statCollection:hookFunctions()
             -- Store the stats
             this.winner = team
 
-            -- Run the rael setGameWinner function
+            -- A stats error must never prevent the match from ending.
+            local ok, err = pcall(function()
+                -- Attempt to send stage 3, since the match is over
+                this:sendStage3(this:calcWinnersByTeam(), true)
+
+                -- Build game array
+                local game = BuildGameArray()
+
+                -- Build players array
+                local players = BuildPlayersArray()
+
+                -- Print the schema data to the console
+                if statCollection.TESTING then
+                    PrintSchema(game, players)
+                end
+
+                -- Send custom stats
+                if statCollection.HAS_SCHEMA then
+                    statCollection:sendCustom({ game = game, players = players })
+                end
+            end)
+            if not ok then
+                statCollection:print("Could not prepare final stats: " .. tostring(err))
+                local result = { value = "failed" }
+                CustomNetTables:SetTableValue("gameinfo", "game_recorded", result)
+                CustomGameEventManager:Send_ServerToAllClients("etd_game_recorded", result)
+            end
+
+            -- Queue final uploads before transitioning into POST_GAME.
             oldSetGameWinner(gameRules, team)
-
-            -- Attempt to send stage 3, since the match is over
-            this:sendStage3(this:calcWinnersByTeam(), true)
-
-            -- Build game array
-            local game = BuildGameArray()
-
-            -- Build players array
-            local players = BuildPlayersArray()
-
-            -- Print the schema data to the console
-            if statCollection.TESTING then
-                PrintSchema(game, players)
-            end
-
-            -- Send custom stats
-            if statCollection.HAS_SCHEMA then
-                statCollection:sendCustom({ game = game, players = players })
-            end
         end
     end
 
@@ -268,7 +277,7 @@ function statCollection:sendStage1()
     for playerID = 0, DOTA_MAX_TEAM_PLAYERS do
         if PlayerResource:IsValidPlayerID(playerID) then
             local player = PlayerResource:GetPlayer(playerID)
-            if GameRules:PlayerHasCustomGameHostPrivileges(player) then
+            if player and GameRules:PlayerHasCustomGameHostPrivileges(player) then
                 hostID = playerID
                 break
             end
@@ -553,33 +562,55 @@ end
 
 -- Sends the payload data for the given stage, and return the result
 -- Optional override_host can be added to reutilize this function for other sites
-function statCollection:sendStage(stageName, payload, callback, override_host)
+function statCollection:sendStage(stageName, payload, callback, override_host, timeoutSeconds)
     local host = override_host or postLocation
 
     -- Create the request
-    local req = CreateHTTPRequestScriptVM('POST', host .. stageName)
-    local encoded = json.encode(payload)
-    if self.TESTING then
-        statCollection:print(encoded)
+    local url = host .. stageName
+    local req = CreateHTTPRequestScriptVM('POST', url)
+    if not req then
+        callback(nil, { error = "Could not create stats request for " .. url })
+        return
     end
+    timeoutSeconds = timeoutSeconds or 20
+    req:SetHTTPRequestAbsoluteTimeoutMS(timeoutSeconds * 1000)
+    local encoded = json.encode(payload)
+    -- Log the destination without exposing upload credentials in the payload.
+    statCollection:print("Sending " .. url)
 
     -- Add the data
-    req:SetHTTPRequestGetOrPostParameter('payload', encoded)
+    if not req:SetHTTPRequestGetOrPostParameter('payload', encoded) then
+        callback(nil, { error = "Could not set stats payload for " .. url })
+        return
+    end
 
-    -- Send the request
-    req:Send(function(res)
-        if res.StatusCode ~= 200 or not res.Body then
-            statCollection:print(errorFailedToContactServer)
-            callback(nil, { error = errorFailedToContactServer })
+    -- Send can fail immediately without ever invoking its completion callback.
+    local startedAt = Time()
+    local sent = req:Send(function(res)
+        local elapsed = Time() - startedAt
+        local status = res and res.StatusCode or "no response"
+        statCollection:print(string.format("Response from %s: HTTP %s after %.2fs", url, tostring(status), elapsed))
+        if not res or res.StatusCode ~= 200 or not res.Body or res.Body == "" then
+            callback(nil, {
+                error = errorFailedToContactServer .. " [" .. url .. ", HTTP " .. tostring(status) .. "]",
+                timedOut = elapsed >= timeoutSeconds
+            })
             return
         end
 
-        -- Try to decode the result
-        local obj, pos, err = json.decode(res.Body, 1, nil)
+        -- An HTML error page or JSON null must not crash the completion callback.
+        local ok, obj, pos, err = pcall(json.decode, res.Body, 1, nil)
+        if not ok or err or type(obj) ~= "table" then
+            callback(nil, { error = "Invalid JSON response from " .. url })
+            return
+        end
 
         -- Feed the result into our callback
-        callback(err, obj)
+        callback(nil, obj)
     end)
+    if not sent then
+        callback(nil, { error = "Could not send stats request to " .. url })
+    end
 end
 
 -- Checks the error and result objects and returns whether its invalid or not
@@ -587,6 +618,11 @@ function statCollection:ReturnedErrors(err, res)
     if err then
         statCollection:print(errorJsonDecode)
         statCollection:print(err)
+        return true
+    end
+
+    if type(res) ~= "table" then
+        statCollection:print("The stats server returned no result object.")
         return true
     end
 

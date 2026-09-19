@@ -21,11 +21,13 @@ function CreepUndead:OnSpawned()
 end
 
 function CreepUndead:OnDeath()
+    if self.creep.hasReincarnated then return end
     local creep = self.creep
     local playerID = creep.playerID
     local creepClass = self.creepClass
 
     local newCreep = CreateUnitByName(creepClass, creep:GetAbsOrigin() , false, nil, nil, DOTA_TEAM_NEUTRALS)
+    newCreep.hasReincarnated = true
     newCreep.spawn_id = creep.spawn_id
     newCreep.class = creepClass
     newCreep.playerID = creep.playerID or creep.sector
@@ -44,10 +46,9 @@ function CreepUndead:OnDeath()
     newCreep:AddNewModifier(nil, nil, "modifier_invisible_etd", {})
     newCreep:AddNewModifier(nil, nil, "modifier_stunned", {})
     newCreep:AddNoDraw()
-    newCreep:SetMaxHealth(creep:GetMaxHealth())
-    newCreep:SetBaseMaxHealth(creep:GetMaxHealth())
+    SetCreepMaxHealth(newCreep, GetCreepMaxHealth(creep))
     newCreep:SetForwardVector(creep:GetForwardVector())
-    creep.scriptObject = self
+    newCreep.scriptObject = self
 
     local particle = ParticleManager:CreateParticle("particles/generic_hero_status/death_tombstone.vpcf", PATTACH_ABSORIGIN, creep)
     ParticleManager:SetParticleControl(particle, 2, Vector(3,0,0))
@@ -93,7 +94,7 @@ function CreepUndead:UndeadCreepRespawn()
     creep:SetMaximumGoldBounty(bounty)
     creep:SetMinimumGoldBounty(bounty)
 
-    creep:SetHealth(creep:GetMaxHealth() * 0.5) -- it spawns at a percentage of its max health
+    SetCreepHealth(creep, GetCreepMaxHealth(creep) * 0.5) -- it spawns at a percentage of its max health
 
     --create a timer for this creep so it continues walking to the destination
     if COOP_MAP then

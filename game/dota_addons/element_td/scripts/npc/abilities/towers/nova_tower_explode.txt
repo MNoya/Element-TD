@@ -36,23 +36,10 @@
 			{
 				"RunScript"
 				{
-					"Target"			"TARGET"
+					"Target"			"CASTER"
 					"ScriptFile"		"scripts/vscripts/towers/towerevents.lua"
 					"Function"			"TriggerEvent"
 					"Event"				"Explode"
-				}
-				"RunScript"
-				{
-					"ScriptFile"	"mechanics/slow.lua"
-					"Function"		"ApplySlowLevel"
-					"Name"			"modifier_explode_slow"
-					"Target"
-					{
-						"Center"		"CASTER"
-						"Radius"		"%aoe"
-						"Types"			"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
-						"ExcludeFlags"	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
-					}
 				}
 			}
 		}

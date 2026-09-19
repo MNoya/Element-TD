@@ -180,7 +180,7 @@ function GetTowerTarget(tower, target_type, radius)
             local unit = nil
             for _,v in pairs(creeps) do
                 if v:GetTeam() == DOTA_TEAM_NEUTRALS then
-                    if unit == nil or v:GetHealth() < unit:GetHealth() then
+                    if unit == nil or GetCreepHealth(v) < GetCreepHealth(unit) then
                         unit = v
                     end
                 end
@@ -190,7 +190,7 @@ function GetTowerTarget(tower, target_type, radius)
 			local unit = nil
             for _,v in pairs(creeps) do
                 if v:GetTeam() == DOTA_TEAM_NEUTRALS then
-                    if unit == nil or v:GetHealth() > unit:GetHealth() then
+                    if unit == nil or GetCreepHealth(v) > GetCreepHealth(unit) then
                         unit = v
                     end
                 end

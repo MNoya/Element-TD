@@ -48,7 +48,19 @@ function BuildGameArray()
     local game = {}
 
     -- Add game values here as game.someValue = GetSomeGameValue()
-    game.diff = GetPlayerDifficulty(0).difficultyName
+    local difficulty = GameSettings:GetGlobalDifficulty()
+    if not difficulty then
+        for playerID = 0, DOTA_MAX_PLAYERS - 1 do
+            if PlayerResource:IsValidPlayerID(playerID) and not PlayerResource:IsBroadcaster(playerID) then
+                local playerData = GetPlayerData(playerID)
+                if playerData and playerData.difficulty then
+                    difficulty = playerData.difficulty
+                    break
+                end
+            end
+        end
+    end
+    game.diff = difficulty and difficulty.difficultyName or "Unknown"
     game.exp = ElementTD:GetMapMode()
     game.ord = GameRules.sandBoxEnabled or (COOP_MAP and "Normal") or GameSettings.order
     game.cha = GameSettings.abilitiesMode
@@ -65,17 +77,13 @@ end
 -- Returns a table containing data for every player in the game
 function BuildPlayersArray()
     local players = {}
-    local host = GetListenServerHost()
-    local hostID = -1
-    if host then
-        hostID = host:GetPlayerID()
-    end
-    for playerID = 0, DOTA_MAX_PLAYERS do
+    for playerID = 0, DOTA_MAX_PLAYERS - 1 do
         if PlayerResource:IsValidPlayerID(playerID) then
-            if not PlayerResource:IsBroadcaster(playerID) then
-
-                local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-                local playerData = GetPlayerData(playerID)
+            local playerData = GetPlayerData(playerID)
+            -- Spectators and slots that never joined the game have no results.
+            if not PlayerResource:IsBroadcaster(playerID) and playerData and playerData.difficulty then
+                local player = PlayerResource:GetPlayer(playerID)
+                local isHost = player and GameRules:PlayerHasCustomGameHostPrivileges(player)
 
                 table.insert(players, {
                     -- steamID32 required in here
@@ -97,9 +105,9 @@ function BuildPlayersArray()
                     gt = playerData.goldTowerEarned > 0 and playerData.goldTowerEarned or "", -- Total gold earned from Money Towers
                     dur = round(playerData.duration), -- Total seconds from start to death/win
                     lh = PlayerResource:GetLastHits(playerID),
-                    hst = playerID == hostID or 0, -- Is this player host
+                    hst = isHost and 1 or 0, -- Is this player host
                     clr = playerData.victory, -- Did the player complete the game
-                    dif = GameSettings:GetGlobalDifficulty().difficultyName, -- Player difficulty
+                    dif = playerData.difficulty.difficultyName, -- Player difficulty
 
                     -- misc
                     cln = playerData.scoreObject.cleanWaves, -- Amount of waves without leaks

@@ -87,16 +87,12 @@ function WaveCoop:SpawnWave()
 
 				-- Set health
 				local health = WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier()
-				entity:SetMaxHealth(health)
-				entity:SetBaseMaxHealth(health)
-				entity:SetHealth(entity:GetMaxHealth())
+				InitializeCreepHealth(entity, health)
 
 				-- Boss mode
 				if self.waveNumber == WAVE_COUNT then
-					local bossHealth = WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier() * (math.pow(1.2,CURRENT_BOSS_WAVE-1))
-					entity:SetMaxHealth(bossHealth)
-					entity:SetBaseMaxHealth(bossHealth)
-					entity:SetHealth(entity:GetMaxHealth())
+					local bossHealth = GetBossMaxHealth(WAVE_HEALTH[self.waveNumber], difficulty:GetHealthMultiplier(), CURRENT_BOSS_WAVE, true)
+					InitializeCreepHealth(entity, bossHealth)
 					entity.waveNumber = CURRENT_BOSS_WAVE
 
 					-- Choose an ability in sequence

@@ -69,15 +69,15 @@ function CreepBoss:OnSpawned()
 
     if creep:HasAbility("creep_ability_regen") then
         self.regenAmount = 0
-        self.maxRegen = creep:GetMaxHealth() * self.abilities["creep_ability_regen"]:GetSpecialValueFor("max_heal_pct") * 0.01
+        self.maxRegen = GetCreepMaxHealth(creep) * self.abilities["creep_ability_regen"]:GetSpecialValueFor("max_heal_pct") * 0.01
         self.healthPercent = self.abilities["creep_ability_regen"]:GetSpecialValueFor("bonus_health_regen") * 0.01
-        self.healthTick = round(creep:GetMaxHealth() * self.healthPercent * 0.1)
+        self.healthTick = round(GetCreepMaxHealth(creep) * self.healthPercent * 0.1)
 
         Timers:CreateTimer(0.1, function()
             if not IsValidEntity(creep) or not creep:IsAlive() then return end
             
             if self.regenAmount <= self.maxRegen then
-                if creep:GetHealth() > 0 and creep:GetHealth() ~= creep:GetMaxHealth() then
+                if GetCreepHealth(creep) > 0 and GetCreepHealth(creep) ~= GetCreepMaxHealth(creep) then
                     self:RegenerateCreepHealth()
                 end
                 return 0.1
@@ -89,10 +89,9 @@ function CreepBoss:OnSpawned()
 
     if creep:HasAbility("creep_ability_bulky") then
         local health_multiplier = self.abilities["creep_ability_bulky"]:GetSpecialValueFor("bonus_health_pct") * 0.01
-        local health = creep:GetHealth()
-        creep:SetMaxHealth(health * health_multiplier)
-        creep:SetBaseMaxHealth(health * health_multiplier)
-        creep:SetHealth(creep:GetMaxHealth())
+        local health = GetCreepHealth(creep)
+        SetCreepMaxHealth(creep, health * health_multiplier)
+        SetCreepHealth(creep, GetCreepMaxHealth(creep))
         creep:SetModelScale(creep:GetModelScale() * 1.8)
     end
 
@@ -113,14 +112,14 @@ function CreepBoss:OnSpawned()
         -- We only store values during the backtrack duration with 1 decimal point
         local i = string.format("%.1f", GameRules:GetGameTime())*10
         local think_interval = 0.1
-        self.health[i] = creep:GetHealth()
+        self.health[i] = GetCreepHealth(creep)
         self.position[i] = creep:GetAbsOrigin()
 
         self.temporalTimer = Timers:CreateTimer(think_interval, function()
             if not IsValidEntity(self.creep) or not creep:IsAlive() then return end
             local time = string.format("%.1f", GameRules:GetGameTime())
 
-            self.health[time] = creep:GetHealth()
+            self.health[time] = GetCreepHealth(creep)
             self.position[time] = creep:GetAbsOrigin()
 
             -- Forget the old value
@@ -160,7 +159,7 @@ function CreepBoss:Backtrack()
     ParticleManager:SetParticleControl(particle, 0, origin)
 
     self.creep:RemoveModifierByName("modifier_time_lapse") --This stops the ability from triggering again through the damage function
-    self.creep:SetHealth(self.health[backtrack_target_time])
+    SetCreepHealth(self.creep, self.health[backtrack_target_time])
     self.creep:SetAbsOrigin(self.position[backtrack_target_time])
     self.abilities["creep_ability_time_lapse"]:SetHidden(true)
     Timers:RemoveTimer(self.temporalTimer)
@@ -170,7 +169,7 @@ end
 
 function CreepBoss:RegenerateCreepHealth()
     local creep = self.creep
-    creep:Heal(self.healthTick, nil)
+    HealCreep(creep, self.healthTick, nil)
     self.regenAmount = self.regenAmount + self.healthTick
 end
 
@@ -181,8 +180,11 @@ function CreepBoss:OnDeath(killer)
     local playerID = creep.playerID
     local creepClass = self.creepClass
 
+    if creep.hasReincarnated or not creep.random_abilities then return end
+
     if creep.random_abilities["creep_ability_undead"] then
         local newCreep = CreateUnitByName(creepClass, creep:GetAbsOrigin() , false, nil, nil, DOTA_TEAM_NEUTRALS)
+        newCreep.hasReincarnated = true
         newCreep.spawn_id = creep.spawn_id
         newCreep.class = creepClass
         newCreep.playerID = creep.playerID or creep.sector
@@ -202,10 +204,9 @@ function CreepBoss:OnDeath(killer)
         newCreep:AddNewModifier(nil, nil, "modifier_invisible_etd", {})
         newCreep:AddNewModifier(nil, nil, "modifier_stunned", {})
         newCreep:AddNoDraw()
-        newCreep:SetMaxHealth(creep:GetMaxHealth())
-        newCreep:SetBaseMaxHealth(creep:GetMaxHealth())
+        SetCreepMaxHealth(newCreep, GetCreepMaxHealth(creep))
         newCreep:SetForwardVector(creep:GetForwardVector())
-        creep.scriptObject = self
+        newCreep.scriptObject = self
 
         local undead_ability = newCreep:FindAbilityByName("creep_ability_undead")
         if undead_ability then
@@ -289,7 +290,7 @@ function CreepBoss:UndeadCreepRespawn()
         creep:SetMinimumGoldBounty(bounty)
     end
 
-    creep:SetHealth(creep:GetMaxHealth() * 0.5) -- it spawns at a percentage of its max health
+    SetCreepHealth(creep, GetCreepMaxHealth(creep) * 0.5) -- it spawns at a percentage of its max health
     
     --create a timer for this creep so it continues walking to the destination
     if COOP_MAP then
@@ -312,8 +313,8 @@ function CreepBoss:HealNearbyCreeps(keys)
 
     local entities = GetCreepsInArea(creep:GetOrigin(), aoe);
     for k, entity in pairs(entities) do
-        if entity:GetHealth() > 0 then
-            entity:Heal(entity:GetMaxHealth() * heal_percent, nil);
+        if GetCreepHealth(entity) > 0 then
+            HealCreep(entity, GetCreepMaxHealth(entity) * heal_percent, nil);
             if ability then
                 ability:ApplyDataDrivenModifier(entity, entity, "heal_effect_modifier", {})
             end

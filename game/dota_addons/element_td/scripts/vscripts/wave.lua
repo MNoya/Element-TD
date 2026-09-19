@@ -93,24 +93,12 @@ function Wave:SpawnWave()
 
 			-- Set health
 			local health = WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier()
-			entity:SetMaxHealth(health)
-			entity:SetBaseMaxHealth(health)
-			entity:SetHealth(entity:GetMaxHealth())
+			InitializeCreepHealth(entity, health)
 
 			-- Boss mode
 			if self.waveNumber == WAVE_COUNT and not EXPRESS_MODE then
-				local abilityBoss = entity:FindAbilityByName("creep_ability_boss")
-				local damageReductionValue = 1
-
-				if abilityBoss then
-						local bossDamageReduction = abilityBoss:GetSpecialValueFor("damage_reduction")
-						damageReductionValue = bossDamageReduction / 100 + 1
-				end
-
-				local bossHealth = WAVE_HEALTH[self.waveNumber] * difficulty:GetHealthMultiplier() * damageReductionValue
-				entity:SetMaxHealth(bossHealth)
-				entity:SetBaseMaxHealth(bossHealth)
-				entity:SetHealth(entity:GetMaxHealth())
+				local bossHealth = GetBossMaxHealth(WAVE_HEALTH[self.waveNumber], difficulty:GetHealthMultiplier(), playerData.bossWaves, false)
+				InitializeCreepHealth(entity, bossHealth)
 				entity.waveNumber = playerData.bossWaves
 
 				-- Choose an ability in sequence

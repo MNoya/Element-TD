@@ -18,8 +18,8 @@ nil)
 function DiseaseTower:OnAttackLanded(keys)
     local target = keys.target    
     local damage = self.tower:GetAverageTrueAttackDamage(target)
---    damage = damage * ((target:GetMaxHealth() + target:GetHealth()) / target:GetHealth())
-    damage = damage * (target:GetMaxHealth() / target:GetHealth()) * (1 + (target:GetMaxHealth() / target:GetHealth()) / 10)
+--    damage = damage * ((GetCreepMaxHealth(target) + GetCreepHealth(target)) / GetCreepHealth(target))
+    damage = damage * (GetCreepMaxHealth(target) / GetCreepHealth(target)) * (1 + (GetCreepMaxHealth(target) / GetCreepHealth(target)) / 10)
 
     if target:IsAlive() then
         local damage_done = DamageEntity(target, self.tower, damage)

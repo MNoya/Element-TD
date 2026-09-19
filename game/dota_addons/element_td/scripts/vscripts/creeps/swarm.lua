@@ -14,7 +14,7 @@ CreepSwarm = createClass({
 CreepBasic)
 
 function CreepSwarm:OnTakeDamage(keys)
-	if self.creep:GetHealth() > 0 and self.creep:GetHealthPercent() <= 50 and not self.creep.isSwarm then
+	if GetCreepHealth(self.creep) > 0 and GetCreepHealthPercent(self.creep) <= 50 and not self.creep.isSwarm then
 		self.creep.isSwarm = true
 
 		local swarm = SpawnEntity(self.creep:GetUnitName(), self.creep.playerID, self.creep:GetOrigin())
@@ -26,16 +26,14 @@ function CreepSwarm:OnTakeDamage(keys)
 		self.creep.waveObject:RegisterCreep(swarm:entindex())
 		self.creep.waveObject.creepsRemaining = self.creep.waveObject.creepsRemaining + 1 -- Increment creep count
 		swarm.isSwarm = true
-		local newMaxHealth = self.creep:GetMaxHealth()/2
-		swarm:SetMaxHealth(newMaxHealth)
-		swarm:SetBaseMaxHealth(newMaxHealth)
-		swarm:SetHealth(newMaxHealth)
+		local newMaxHealth = GetCreepMaxHealth(self.creep)/2
+		SetCreepMaxHealth(swarm, newMaxHealth)
+		SetCreepHealth(swarm, newMaxHealth)
 		swarm:SetDeathXP(0)
 		swarm:SetForwardVector(self.creep:GetForwardVector())
 
-		self.creep:SetMaxHealth(newMaxHealth)
-		self.creep:SetBaseMaxHealth(newMaxHealth)
-		self.creep:SetHealth(newMaxHealth)
+		SetCreepMaxHealth(self.creep, newMaxHealth)
+		SetCreepHealth(self.creep, newMaxHealth)
 
 		local newScale = self.creep:GetModelScale()*0.8
 

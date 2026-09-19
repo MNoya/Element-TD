@@ -24,8 +24,8 @@ function PolarTower:FrostbiteThink()
         local theChosenOne = nil
 
         for _, creep in pairs(creeps) do
-            if creep:IsAlive() and not creep:HasModifier("modifier_polar_frostbite") and creep:GetHealth() > highestHealth and not creep:IsInvulnerable() then
-                highestHealth = creep:GetHealth()
+            if creep:IsAlive() and not creep:HasModifier("modifier_polar_frostbite") and GetCreepHealth(creep) > highestHealth and not creep:IsInvulnerable() then
+                highestHealth = GetCreepHealth(creep)
                 theChosenOne = creep
             end
         end
@@ -43,11 +43,11 @@ function PolarTower:OnFrostbiteCast(keys)
         self.ability:EndCooldown()
     else
         self.ability:ApplyDataDrivenModifier(self.tower, target, "modifier_polar_frostbite", {})
-        local healthBurnAmount = math.floor(target:GetHealth() * (self.healthBurnPercent / 100))
-        target:SetHealth(target:GetHealth() - healthBurnAmount)
+        local healthBurnAmount = math.floor(GetCreepHealth(target) * (self.healthBurnPercent / 100))
+        SetCreepHealth(target, GetCreepHealth(target) - healthBurnAmount)
         target.FrostbiteData = {
             ["HealthBurnAmount"] = healthBurnAmount,
-            ["ResultingHealth"] = target:GetHealth(),
+            ["ResultingHealth"] = GetCreepHealth(target),
         }
 
         local playerID = self.tower:GetPlayerOwnerID()
@@ -95,7 +95,7 @@ function OnFrostbiteExpire(keys)
     local target = keys.target
     if target.FrostbiteData and target:IsAlive() then
         local healAmount = target.FrostbiteData.HealthBurnAmount
-        target:SetHealth(target:GetHealth() + healAmount)
+        SetCreepHealth(target, GetCreepHealth(target) + healAmount)
         target.FrostbiteData = nil
     end
 end

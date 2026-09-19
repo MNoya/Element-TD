@@ -23,8 +23,8 @@ function EnchantmentTower:FaerieFireThink()
         local theChosenOne = nil
 
         for _, creep in pairs(creeps) do
-            if creep:IsAlive() and not creep:HasModifier("modifier_faerie_fire") and creep:GetHealth() > highestHealth then
-                highesthealth = creep:GetHealth()
+            if creep:IsAlive() and not creep:HasModifier("modifier_faerie_fire") and GetCreepHealth(creep) > highestHealth then
+                highestHealth = GetCreepHealth(creep)
                 theChosenOne = creep
             end
         end

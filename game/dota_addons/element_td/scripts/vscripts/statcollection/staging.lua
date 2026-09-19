@@ -1,6 +1,6 @@
 -- This exposes the stages and can be used to send custom requests to secondary locations
 
-local hiacLB = 'http://hatinacat.com/leaderboard/'
+local hiacLB = 'https://hatinacat.com/leaderboard/'
 local eleTDLB = 'http://www.eletd.com/leaderboard/'
 local messageCustomComplete = 'Match custom stats were successfully recorded!'
 local messageCustomFailed = 'Match custom stats could not be recorded.'
@@ -43,20 +43,29 @@ function statCollection:StageCustom(payload)
     local requestFinished = false
     local requestTimedOut = false
 
-    Timers:CreateTimer(gameRecordedTimeout, function()
-        if requestFinished then
+    local function OnTimeout()
+        if requestFinished or requestTimedOut then
             return
         end
-
         requestTimedOut = true
         statCollection:print(timeoutMessage .. " [" .. hiacLB .. ']')
-        UpdateGameRecorded("failed", timeoutMessage, { color = "#FF6666" })
-    end)
+        UpdateGameRecorded("timed_out", timeoutMessage, { color = "#FF6666" })
+    end
+
+    local timeoutTimer = Timers:CreateTimer({
+        useGameTime = false,
+        endTime = gameRecordedTimeout,
+        callback = OnTimeout
+    })
 
     -- Send custom to lb hatinacat
     self:sendStage('s2_custom.php', payload, function(err, res)
         if requestFinished then
             return
+        end
+        Timers:RemoveTimer(timeoutTimer)
+        if res and res.timedOut then
+            OnTimeout()
         end
         requestFinished = true
 
@@ -72,7 +81,7 @@ function statCollection:StageCustom(payload)
         -- Tell the user
         statCollection:print(messageCustomComplete .. " [" .. hiacLB .. ']')
         UpdateGameRecorded("recorded")
-    end, hiacLB)
+    end, hiacLB, gameRecordedTimeout)
 
     Saves:SavePasses()
 end
