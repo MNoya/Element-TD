@@ -98,8 +98,13 @@ function Timers:Think()
   -- Track game time, since the dt passed in to think is actually wall-clock time not simulation time.
   local now = GameRules:GetGameTime()
 
-  -- Process timers
+  -- Callbacks can add/remove timers and rehash the live table. Iterate a
+  -- snapshot so new timers start on the next think and cannot invalidate next().
+  local pendingTimers = {}
   for k,v in pairs(Timers.timers) do
+    pendingTimers[k] = v
+  end
+  for k,v in pairs(pendingTimers) do
     local bUseGameTime = true
     if v.useGameTime ~= nil and v.useGameTime == false then
       bUseGameTime = false
@@ -118,7 +123,8 @@ function Timers:Think()
       v.endTime = now
     end
     -- Check if the timer has finished
-    if now >= v.endTime then
+    -- Another callback may have cancelled or replaced this timer.
+    if Timers.timers[k] == v and now >= v.endTime then
       -- Remove from timers list
       Timers.timers[k] = nil
 
@@ -142,7 +148,7 @@ function Timers:Think()
       -- Make sure it worked
       if status then
         -- Check if it needs to loop
-        if nextCall and not Timers.removeSelf then
+        if nextCall and not Timers.removeSelf and Timers.timers[k] == nil then
           -- Change its end time
 
           if bOldStyle then

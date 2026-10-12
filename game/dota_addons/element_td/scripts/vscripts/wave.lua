@@ -189,5 +189,8 @@ function Wave:SpawnWave()
 				return time_between_spawns
 			end
 		end
+		-- Unspawned creeps are still counted in creepsRemaining. Keep the timer
+		-- alive after a failed creation and retry without advancing the wave.
+		return time_between_spawns
 	end)
 end
